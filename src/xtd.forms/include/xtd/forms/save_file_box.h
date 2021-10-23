@@ -25,7 +25,7 @@ namespace xtd {
       /// @param file_name An output xtd::ustring that will store the selected file name.
       /// @param owner An iwin32_window that represents the owner window of the file dialog box.
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title) { return show_save_file_box(file_name, title, "", "", save_file_box_options::none, &owner); }
 
       /// @brief Displays a save file dialog box in front of a specified window.
@@ -33,7 +33,7 @@ namespace xtd {
       /// @param owner An iwin32_window that represents the owner window of the file dialog box.
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
       /// @param options A bitwise combination of enum xtd::forms::save_file_box_options to specify additional options to the file dialog box
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const save_file_box_options options) { return show_save_file_box(file_name, title, "", "", options, &owner); }
 
       /// @brief Displays a save file dialog box in front of a specified window.
@@ -41,7 +41,7 @@ namespace xtd {
       /// @param owner An iwin32_window that represents the owner window of the file dialog box.
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
       /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory) { return show_save_file_box(file_name, title, initial_directory, "", save_file_box_options::none, &owner); }
 
       /// @brief Displays a save file dialog box in front of a specified window.
@@ -50,7 +50,7 @@ namespace xtd {
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
       /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
       /// @param options A bitwise combination of enum xtd::forms::save_file_box_options to specify additional options to the file dialog box
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory, const save_file_box_options options) { return show_save_file_box(file_name, title, initial_directory, "", options, &owner); }
 
       /// @brief Displays a save file dialog box in front of a specified window.
@@ -59,7 +59,7 @@ namespace xtd {
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
       /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
       /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter) { return show_save_file_box(file_name, title, initial_directory, filter, save_file_box_options::none, &owner); }
 
       /// @brief Displays a save file dialog box in front of a specified window.
@@ -69,27 +69,27 @@ namespace xtd {
       /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
       /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @param options A bitwise combination of enum xtd::forms::save_file_box_options to specify additional options to the file dialog box
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter, const save_file_box_options options) { return show_save_file_box(file_name, title, initial_directory, filter, options, &owner); }
 
       /// @brief Displays a save file dialog box.
       /// @param file_name An output xtd::ustring that will store the selected file name.
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title) { return show_save_file_box(file_name, title, "", "", save_file_box_options::none, nullptr); }
 
       /// @brief Displays a select file dialog box.
       /// @param file_name An output xtd::ustring that will store the selected file name.
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
       /// @param options A bitwise combination of enum xtd::forms::save_file_box_options to specify additional options to the file dialog box
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const save_file_box_options options) { return show_save_file_box(file_name, title, "", "", options, nullptr); }
 
       /// @brief Displays a save file dialog box.
       /// @param file_name An output xtd::ustring that will store the selected file name.
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
       /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory) { return show_save_file_box(file_name, title, initial_directory, "", save_file_box_options::none, nullptr); }
 
       /// @brief Displays a save file dialog box.
@@ -97,7 +97,7 @@ namespace xtd {
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
       /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
       /// @param options A bitwise combination of enum xtd::forms::save_file_box_options to specify additional options to the file dialog box
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory, const save_file_box_options options) { return show_save_file_box(file_name, title, initial_directory, "", options, nullptr); }
 
       /// @brief Displays a save file dialog box.
@@ -105,7 +105,7 @@ namespace xtd {
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
       /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
       /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter) { return show_save_file_box(file_name, title, initial_directory, filter, save_file_box_options::none, nullptr); }
 
       /// @brief Displays a save file dialog box.
@@ -114,7 +114,7 @@ namespace xtd {
       /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
       /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
       /// @param options A bitwise combination of enum xtd::forms::save_file_box_options to specify additional options to the file dialog box
-      /// @remarks If dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
+      /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter, const save_file_box_options options) { return show_save_file_box(file_name, title, initial_directory, filter, options, nullptr); }
 
     private:
