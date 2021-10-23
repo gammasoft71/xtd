@@ -38,7 +38,7 @@ Some features exist only in the xtd API like [binary reader/writer](tutorial_com
 
 | To do this...                                          | See the example in this topic... |
 |--------------------------------------------------------|----------------------------------|
-| Access a file in a special folder such as My Documents | [How to: Write Text to a File](tutorial_common_io_tasks_write_a_text_file.md) |
+| Access a file in a special folder such as My Documents | [How to: Write Text to a File](tutorial_common_io_tasks_write_text_to_a_file.md) |
 | Create a directory                                     | xtd::io::directory::create_directory method<br>xtd::io::file_info::directory property |
 | Create a subdirectory                                  | xtd::io::directory_info.create_subdirectory method |
 | Rename or move a directory                             | xtd::io::directory::move method<br>xtd::io::directory_inf::move_to method |
