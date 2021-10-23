@@ -1,15 +1,14 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# C++20
+# C++17/C++20
 
 ## In This Section
 
 * [C++17](#c++17)
 * [Operating System](#operating-system)
-* [Libraries dependency](#libraries-dependency)
 * [Compilers](#compilers)
 
-## C++17/C++20
+## C++17
 
 xtd support C++17 or above.
 
