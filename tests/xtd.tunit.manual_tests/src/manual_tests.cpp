@@ -2,61 +2,13 @@
 
 using namespace xtd::tunit;
 
-enum class day {
-  sunday,
-  monday,
-  tuesday,
-  wednesday,
-  thursday,
-  friday,
-  saturday
-};
-
-std::ostream& operator<<(std::ostream& os, const day& d) {
-  switch (d) {
-    case day::sunday: os << "sunday"; break;
-    case day::monday: os << "monday"; break;
-    case day::tuesday: os << "tuesday"; break;
-    case day::wednesday: os << "wednesday"; break;
-    case day::thursday: os << "thursday"; break;
-    case day::friday: os << "friday"; break;
-    case day::saturday: os << "saturday"; break;
-  }
-  return os;
-}
-
-class foo {
-public:
-  foo() {}
-  explicit foo(int value) : value_(value) {}
-
-  int value() const {return value_;}
-  
-  bool operator==(const foo& f) const {return value_ == f.value_;}
-  bool operator!=(const foo& f) const {return !operator==(f);}
-  
-private:
-  int value_ = 0;
-};
-
-//std::ostream& operator<<(std::ostream& os, const foo& f) {return os << f.value();}
-
 namespace unit_tests {
-  class test_class_(test) {
+  class test_class_(manual_test_tunit) {
   public:
     void test_method_(test_case1) {
-      day d = day::monday;
-      assert::are_equal(day::sunday, d);
-    }
-
-    void test_method_(test_case2) {
-      foo f1(42);
-      foo f2(24);
-      assert::are_equal(f2, f1);
+      assert::are_equal(42, 0x2A, csf_);
     }
   };
 }
 
-int main() {
-  return console_unit_test().run();
-}
+startup_(tunit_main_);
