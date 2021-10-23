@@ -6,19 +6,19 @@ This is [xtd](https://github.com/gammasoft71/xtd) tutorial for the [C++](c++.md)
 
 ## Table of contents
 
-* [Introduction to xtd](introduction.md)
-* [console classes](console_classes.md)
-* [unit testing classes](unit_testing_classes.md)
-* [First programs](first_programs.md)
-* [Menus and toolbars](menus_and_toolbars.md)
-* [layout_management](layout_management.md)
-* [Events](events.md)
-* [Dialogs](dialogs.md)
-* [controls](controls.md)
-* [drag & drop](drag_and_drop.md)
-* [Graphics](graphics.md)
-* [custom_controls](custom_controls.md)
-* [tetris](tetris.md)
+* [Introduction to xtd](tutorial_ebook_introduction.md)
+* [console classes](tutorial_ebook_console_classes.md)
+* [unit testing classes](tutorial_ebook_unit_testing_classes.md)
+* [First programs](tutorial_ebook_first_programs.md)
+* [Menus and toolbars](tutorial_ebook_menus_and_toolbars.md)
+* [layout_management](tutorial_ebook_layout_management.md)
+* [Events](tutorial_ebook_events.md)
+* [Dialogs](tutorial_ebook_dialogs.md)
+* [controls](tutorial_ebook_controls.md)
+* [drag & drop](tutorial_ebook_drag_and_drop.md)
+* [Graphics](tutorial_ebook_graphics.md)
+* [custom_controls](tutorial_ebook_custom_controls.md)
+* [tetris](tutorial_ebook_tetris.md)
 
 ## xtd
 
