@@ -82,7 +82,7 @@ startup_(program);
 
 The following example shows how to write text to a new file and append new lines of text to the same file using the xtd::io::file class. The xtd::io::file::write_all_text and xtd::io::file::append_all_lines methods open and close the file automatically. If the path you provide to the xtd::io::file::write_all_text method already exists, the file is overwritten.
 
-```c+++
+```c++
 #include <xtd/xtd>
 
 using namespace xtd;
