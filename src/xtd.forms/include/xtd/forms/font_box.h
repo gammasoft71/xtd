@@ -82,15 +82,18 @@ namespace xtd {
       static dialog_result show(xtd::drawing::font& font, xtd::drawing::color& color, const iwin32_window& owner, const font_box_options options) { return show_font_box(font, &color, &owner, options); }
 
     private:
-      static dialog_result show_font_box(xtd::drawing::font& font, xtd::drawing::color* color = nullptr, const iwin32_window* owner = nullptr, font_box_options options = font_box_options::none)
-      {
-        if (color) options |= font_box_options::show_color;
+      static dialog_result show_font_box(xtd::drawing::font& font, xtd::drawing::color* color = nullptr, const iwin32_window* owner = nullptr, font_box_options options = font_box_options::none) {
         font_dialog dialog{};
+        if (color) {
+          options |= font_box_options::show_color;
+          dialog.color(*color);
+        }
         dialog.allow_simulation(options & font_box_options::allow_simulations)
               .allow_vector_fonts(options & font_box_options::allow_vector_fonts)
               .allow_vertical_fonts(options & font_box_options::allow_simulations)
               .allow_script_change(options & font_box_options::allow_script_change)
               .fixed_pitch_only(options & font_box_options::fixed_pitch_only)
+              .font(font)
               .script_only(options & font_box_options::scripts_only)
               .show_apply(options & font_box_options::show_apply)
               .show_color(options & font_box_options::show_color)
