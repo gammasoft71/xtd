@@ -1,4 +1,4 @@
-# wxStyles
+# wxWidgets Windows styles (**Internal use only**)
 
 ## Default styles
 

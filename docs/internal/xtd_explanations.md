@@ -1,4 +1,4 @@
-# xtd explanations (DRAFT)
+# xtd explanations (DRAFT) (**Internal use only**)
 
 ## Table of contents
 

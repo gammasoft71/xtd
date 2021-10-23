@@ -1,4 +1,4 @@
-# Default size of controls on Macintosh :
+# Default size of controls on Macintosh (**Internal use only**)
 
 | Control                     | width  | height |
 |-----------------------------|--------|--------|
@@ -15,7 +15,7 @@
 | time_picker                 |     82 |     28 |
 | dial(*)                     |    100 |    100 |
 | domain_up_down              |     57 |     22 |
-| dot_matrix_display(*)      |     25 |     25 |
+| dot_matrix_display(*)       |     25 |     25 |
 | font_picker                 |    168 |     21 |
 | fourteen_segment_display(*) |     13 |     25 |
 | h_scroll_bar                |    100 |     16 |
@@ -34,7 +34,7 @@
 | numeric_up_down             |     57 |     22 |
 | picture_box                 |     16 |     16 |
 | progress_bar                |     16 |     17 |
-| property_grid                |     24 |     24 |
+| property_grid               |     24 |     24 |
 | radio_button                |     18 |     18 |
 | rich_text_box               |     10 |     10 |
 | roller(*)                   |     25 |    100 |
