@@ -4,7 +4,7 @@
 
 Beyond the obvious reason of readability, it is important to follow the guidelines for parameter names because parameters are displayed in documentation and in the designer when visual design tools provide Intellisense and class browsing functionality.
 
-**✔️ DO** use lower case only and digits, separate words with underscores in parameter names.
+**✔️ DO** use snake_casing in parameter names.
 
 **✔️ DO** use descriptive parameter names.
 

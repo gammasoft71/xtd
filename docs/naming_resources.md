@@ -4,7 +4,7 @@
 
 Because localizable resources can be referenced via certain objects as if they were properties, the naming guidelines for resources are similar to property guidelines.
 
-**✔️ DO** use lower case only and digits, separate words with underscores in resource keys.
+**✔️ DO** use snake_casing in resource keys.
 
 **✔️ DO** provide descriptive rather than short identifiers.
 

@@ -21,7 +21,7 @@ public:
 
 # Names of Properties
 
-Unlike other members, properties should be given noun phrase or adjective names. That is because a property refers to data, and the name of the property reflects that. Lower case only and digits, separate words with underscores is always used for property names.
+Unlike other members, properties should be given noun phrase or adjective names. That is because a property refers to data, and the name of the property reflects that. snake_casing is always used for property names.
 
 **✔️ DO** name properties using a noun, noun phrase, or adjective.
 
@@ -86,7 +86,7 @@ The *sender* parameter represents the object that raised the event. The *sender*
 
 The field-naming guidelines apply to static public and protected fields. Internal and private fields are not covered by guidelines, and public or protected instance fields are not allowed by the Member Design Guidelines.
 
-**✔️ DO** use lower case only and digits, separate words with underscores in field names.
+**✔️ DO** use snake_casing in field names.
 
 **✔️ DO** name fields using a noun, noun phrase, or adjective.
 

@@ -4,7 +4,7 @@
 
 The naming guidelines that follow apply to general type naming.
 
-**✔️ DO** name classes and structs with nouns or noun phrases, using use lower case only and digits, separate words with underscores.
+**✔️ DO** name classes and structs with nouns or noun phrases, using snake_casing.
 
 This distinguishes type names from methods, which are named with verb phrases.
 
@@ -92,7 +92,7 @@ For example, a parameter constrained to isession might be called session_t.
 
 # Naming Enumerations
 
-Names of enumeration types (also called enums) in general should follow the standard type-naming rules (use lower case only and digits, separate words with underscores, etc.). However, there are additional guidelines that apply specifically to enums.
+Names of enumeration types (also called enums) in general should follow the standard type-naming rules (snake_casing, etc.). However, there are additional guidelines that apply specifically to enums.
 
 **✔️ DO** use a singular type name for an enumeration unless its values are bit fields.
 
