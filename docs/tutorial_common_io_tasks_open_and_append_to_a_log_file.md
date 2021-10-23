@@ -14,3 +14,6 @@ ________________________________________________________________________________
 
 © 2021 Gammasoft.
 
+<!---
+https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-open-and-append-to-a-log-file
+--->
