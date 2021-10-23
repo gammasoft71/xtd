@@ -4,7 +4,9 @@ The guidelines in this chapter lay out a simple method for using case that, when
  
 # Capitalisation Rules for Identifiers
 ​
-​As ​ISO Standard, use lower case only and digits, separate words with underscores. Do not use capitalise to differentiate words, or for that matter, anywhere in identifiers
+​As required by the ISO standard, use only lower case letters and numbers, separating words with underscores. Do not use capital letters to differentiate words, nor anywhere in identifiers. There is only one appropriate way to name identifiers:
+
+[snake_casing](https://en.wikipedia.org/wiki/Snake_case)
 
 ```c++
 ​​property_descriptor

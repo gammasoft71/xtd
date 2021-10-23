@@ -16,7 +16,7 @@ The following are examples:
  
 **❌ DO NOT** use organisational hierarchies as the basis for names in namespace hierarchies, because group names within corporations tend to be short-lived. Organise the hierarchy of namespaces around groups of related technologies.
  
-**✔️ DO** use underscore-separated, and separate namespace components with "::" (e.g., microsoft::office::power_point). If your brand employs nontraditional casing, you should follow the casing defined by your brand, even if it deviates from normal namespace casing.
+**✔️ DO** use snake_casing, and separate namespace components with "::" (e.g., microsoft::office::power_point). If your brand employs nontraditional casing, you should follow the casing defined by your brand, even if it deviates from normal namespace casing.
  
 **✔️ CONSIDER** using plural namespace names where appropriate.
  
