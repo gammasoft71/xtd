@@ -3,7 +3,7 @@
 # How to: Write a Text File
 
 The following code example demonstrates how to create a text file and write text to it using the xtd::io::stream_writer class, which is defined in the xtd.io namespace. The xtd::io::stream_writer constructor takes the name of the file to be created. If the file exists, it is overwritten (unless you pass *true* as the second xtd::io::stream_writer constructor argument).
-The file is then filed using the Write and WriteLine functions.
+The file is then filed using the xtd::io::stream_writer::write and xtd::io::stream_writer::write_line functions.
  
 ```c++
 #include <chrono>
