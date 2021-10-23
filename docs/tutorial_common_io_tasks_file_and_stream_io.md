@@ -32,7 +32,7 @@ The [xtd::io](https://codedocs.xyz/gammasoft71/xtd/group__io.html) namespace als
 
 Here are some commonly used reader and writer classes:
 
-* [xtd::io::binary_reader](xtd::io](https://codedocs.xyz/gammasoft71/xtd/group__io.html) and [xtd::io::binary_writer](xtd::io](https://codedocs.xyz/gammasoft71/xtd/group__io.html) – for reading and writing primitive data types as binary values.
+* [xtd::io::binary_reader](https://codedocs.xyz/gammasoft71/xtd/group__io.html) and [xtd::io::binary_writer](https://codedocs.xyz/gammasoft71/xtd/group__io.html) – for reading and writing primitive data types as binary values.
 * [xtd::io::stream_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1stream__reader.html) and [xtd::io::stream_writer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1stream__writer.html) – for reading and writing characters by using a value to convert the characters to and from bytes.
 * [xtd::io::string_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1string__reader.html) and [xtd::io::string_writer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1string__writer.html) – for reading and writing characters to and from strings.
 * [xtd::io::text_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1text__reader.html) and [xtd::io::text_writer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1text__writer.html) – serve as the abstract base classes for other readers and writers that read and write characters and strings, but not binary data.
