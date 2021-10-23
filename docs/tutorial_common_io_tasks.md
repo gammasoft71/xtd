@@ -4,6 +4,13 @@
 
 The xtd.io namespace provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams. For more information, see [File and Stream I/O](tutorial_common_io_tasks_file_and_stream_io.md).
 
+## Preamble
+
+Prefer in your application to use the [Input/output library](https://en.cppreference.com/w/cpp/io) and [Filesystem library](https://en.cppreference.com/w/cpp/filesystem) of the std.
+
+xtd has its own IO API because the [Filesystem library]((https://en.cppreference.com/w/cpp/filesystem) doesn't work on all OS (like for example iOS).
+
+Some features exist only in the xtd API like [binary reader/writer](tutorial_common_io_tasks_file_and_stream_io.md#readers-and-writers), [stream reader/writer](tutorial_common_io_tasks_file_and_stream_io.md#readers-and-writers), [string reader/writer](tutorial_common_io_tasks_file_and_stream_io.md#readers-and-writers) and [text reader/writer](tutorial_common_io_tasks_file_and_stream_io.md#readers-and-writers).
 
 ## Common File Tasks
 

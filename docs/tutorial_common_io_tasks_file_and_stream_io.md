@@ -8,34 +8,34 @@ A file is an ordered and named collection of bytes that has persistent storage. 
 
 ## Files and directories
 
-You can use the types in the xtd::io namespace to interact with files and directories. For example, you can get and set properties for files and directories, and retrieve collections of files and directories based on search criteria.
+You can use the types in the [xtd::io](../src/xtd.core/include/xtd/io/) namespace to interact with files and directories. For example, you can get and set properties for files and directories, and retrieve collections of files and directories based on search criteria.
 
 For path naming conventions and the ways to express a file path for Windows, macOS and Linux systems.
 
 Here are some commonly used file and directory classes:
 
-* xtd::io::file - provides static methods for creating, copying, deleting, moving, and opening files, and helps create a FileStream object.
-* xtd::io::file_info - provides instance methods for creating, copying, deleting, moving, and opening files, and helps create a FileStream object.
-* xtd::io::directory - provides static methods for creating, moving, and enumerating through directories and subdirectories.
-* xtd::io::directory_info - provides instance methods for creating, moving, and enumerating through directories and subdirectories.
-* xtd::io::path - provides methods and properties for processing directory strings in a cross-platform manner.
+* [xtd::io::file](../src/xtd.core/include/xtd/io/file.h) - provides static methods for creating, copying, deleting, moving, and opening files, and helps create a FileStream object.
+* [xtd::io::file_info](../src/xtd.core/include/xtd/io/file_info.h) - provides instance methods for creating, copying, deleting, moving, and opening files, and helps create a FileStream object.
+* [xtd::io::directory](../src/xtd.core/include/xtd/io/directory.h) - provides static methods for creating, moving, and enumerating through directories and subdirectories.
+* [xtd::io::directory_info](../src/xtd.core/include/xtd/io/directory_nfo.h) - provides instance methods for creating, moving, and enumerating through directories and subdirectories.
+* [xtd::io::path](../src/xtd.core/include/xtd/io/path.h) - provides methods and properties for processing directory strings in a cross-platform manner.
 
 You should always provide robust exception handling when calling filesystem methods. 
 
 ## Streams
 
-The std classes std::ostream and std::istream and std::iostream support reading and writing bytes.
+The std classes [std::ostream](https://en.cppreference.com/w/cpp/io/basic_iostream) and [std::istream](https://en.cppreference.com/w/cpp/io/basic_ostream) and [std::iostream](https://en.cppreference.com/w/cpp/io/basic_istream) support reading and writing bytes.
 
 ## Readers and writers
 
-The xtd::io namespace also provides types for reading characters from streams and writing them to streams. Typically, streams are designed for byte input and output. The reader and writer types handle the conversion of the characters to and from bytes so the stream can complete the operation. Each reader and writer class is associated with a stream.
+The [xtd::io](../src/xtd.core/include/xtd/io/) namespace also provides types for reading characters from streams and writing them to streams. Typically, streams are designed for byte input and output. The reader and writer types handle the conversion of the characters to and from bytes so the stream can complete the operation. Each reader and writer class is associated with a stream.
 
 Here are some commonly used reader and writer classes:
 
-* xtd::io::binary_reader and xtd::io::binary_writer – for reading and writing primitive data types as binary values.
-* xtd::io::stream_reader and xtd::io::stream_writer – for reading and writing characters by using a value to convert the characters to and from bytes.
-* xtd::io::string_reader and xtd::io::string_writer – for reading and writing characters to and from strings.
-* xtd::io::text_reader and xtd::io::text_writer – serve as the abstract base classes for other readers and writers that read and write characters and strings, but not binary data.
+* [xtd::io::binary_reader](../src/xtd.core/include/xtd/io/binary_rader.h) and [xtd::io::binary_writer](../src/xtd.core/include/xtd/io/binary_writer.h) – for reading and writing primitive data types as binary values.
+* [xtd::io::stream_reader](../src/xtd.core/include/xtd/io/stream_reader.h) and [xtd::io::stream_writer](../src/xtd.core/include/xtd/io/stream_writer.h) – for reading and writing characters by using a value to convert the characters to and from bytes.
+* [xtd::io::string_reader](../src/xtd.core/include/xtd/io/string_reader.h) and [xtd::io::string_writer](../src/xtd.core/include/xtd/io/string_writer.h) – for reading and writing characters to and from strings.
+* [xtd::io::text_reader](../src/xtd.core/include/xtd/io/text_reader.h) and [xtd::io::text_writer](../src/xtd.core/include/xtd/io/text_writer.h) – serve as the abstract base classes for other readers and writers that read and write characters and strings, but not binary data.
 
 ## Compression
 
