@@ -168,6 +168,10 @@ namespace xtd {
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
       /// @endcond
 
+      /// @brief Get state.
+      /// @return One of xtd::forms::visual_styles::push_button_state values.
+      xtd::forms::visual_styles::push_button_state state() const noexcept {return state_;}
+      
     private:
       //void wm_click(message& message);
       //void wm_mouse_up(message& message);

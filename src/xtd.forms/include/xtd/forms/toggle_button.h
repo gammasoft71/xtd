@@ -188,6 +188,10 @@ namespace xtd {
 
       void on_paint(paint_event_args& e) override;
       
+      /// @brief Get state.
+      /// @return One of xtd::forms::visual_styles::toggle_button_state values.
+      xtd::forms::visual_styles::toggle_button_state state() const noexcept {return state_;}
+
      /// @cond
       void wnd_proc(message& message) override;
       virtual void wm_mouse_double_click(message& message);

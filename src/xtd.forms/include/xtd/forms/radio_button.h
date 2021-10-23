@@ -195,6 +195,10 @@ namespace xtd {
 
       void wnd_proc(message& message) override;
 
+      /// @brief Get state.
+      /// @return One of xtd::forms::visual_styles::radio_button_state values.
+      xtd::forms::visual_styles::radio_button_state state() const noexcept {return state_;}
+      
       /// @cond
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
