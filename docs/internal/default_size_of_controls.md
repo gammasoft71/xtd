@@ -1,4 +1,4 @@
-# Default size of controls on Windows :
+# Default size of controls of xtd (**Internal use only**)
 
 ## xtd::forms::animation
 

@@ -1,4 +1,4 @@
-# Investigations to speed up the build of xtd
+# Investigations to speed up the build of xtd (**Internal use only**)
 
 ## Muultiple proocess build flags
 

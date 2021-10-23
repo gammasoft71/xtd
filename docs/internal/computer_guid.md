@@ -1,4 +1,4 @@
-# Computer guid
+# Computer guid (**Internal use only**)
 
 ## links 
 

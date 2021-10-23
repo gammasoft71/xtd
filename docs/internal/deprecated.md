@@ -1,4 +1,4 @@
-# Deprecated
+# Deprecated (**Internal use only**)
 
 Do not remove an old method immediately. but :
 

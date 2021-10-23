@@ -1,4 +1,4 @@
-# Default size of controls on Unix :
+# Default size of controls on Unix (**Internal use only**)
 
 | Control                     | width  | height |
 |-----------------------------|--------|--------|

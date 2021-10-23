@@ -1,4 +1,6 @@
-# system classes
+# Theme (**Internal use only**)
+
+## System classes
 
 * xtd::drawing::system_brushes
 * xtd::drawing::system_colors
@@ -26,7 +28,7 @@
 * xtd::forms::up_down_button_renderer
 * xtd::forms::..._renderer
 
-# theme names
+## Theme names
 
 * gnome
 * gnome (dark)
@@ -44,8 +46,7 @@
 * xtd
 * user names...
 
-theme classes :
----------------
+## Theme classes
 
 * xtd::forms::theme : main name, image name, color name, renderer name
 

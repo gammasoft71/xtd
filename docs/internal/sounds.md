@@ -1,4 +1,6 @@
-# Sound files location
+# Sounds (**Internal use only**)
+
+## System Sounds
 
 | alert       | Windows            | macOS    | linux              |
 |-------------|--------------------|----------|--------------------|
@@ -8,6 +10,8 @@
 | exclamation | MB_ICONEXCLAMATION | Hero     | dialog-warning     |
 | asterisk    | MB_ICONASTERISK    | Glass    | dialog-information |
 | ok          | 0xFFFFFFFF         | (NSBeep) | bell               |
+
+## Sound files location
 
 * Windows: c:\\Windows\\Media\\
 * macOS: /System/Library/Sounds/

@@ -1,4 +1,4 @@
-# Internal documentations
+# Internal documentations (**Internal use only**)
 
 ## Warning
 
@@ -13,7 +13,7 @@
 * [macOS default size of controls](default_size_of_controls_m.md) provides information about default control sizes on macOS.
 * [Windows default size of controls](default_size_of_controls_w.md) provides information about default control sizes on Windows.
 * [xtd default size of controls](default_size_of_controls.md) provides information about default controls for xtd.
-* [Exceptions](exceptions.txt) provides information about exceptions.
+* [Exceptions](exceptions.md) provides information about exceptions.
 * [ios_build](ios_build.md) provides information about iOS build.
 * [Process](process.md) provides information about process.
 * [Deprecated](deprecated.md) provides information about how to remove a method or class in xtd.
