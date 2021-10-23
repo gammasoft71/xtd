@@ -90,7 +90,7 @@ namespace xtd {
         }
         dialog.allow_simulation(options & font_box_options::allow_simulations)
               .allow_vector_fonts(options & font_box_options::allow_vector_fonts)
-              .allow_vertical_fonts(options & font_box_options::allow_simulations)
+              .allow_vertical_fonts(options & font_box_options::allow_vertical_fonts)
               .allow_script_change(options & font_box_options::allow_script_change)
               .fixed_pitch_only(options & font_box_options::fixed_pitch_only)
               .font(font)
