@@ -170,7 +170,7 @@ The compilers listed below are supported with xtd :
 
 * MSVC 2019 or later
 * clang version 11.0.3 (clang-1103.0.32.62) - Xcode 11.6 or later
-* GCC 9 or later
+* GCC 10 or later
 
 ## Native
 
@@ -180,9 +180,9 @@ For add a new Operating System, you juste have to implement native api for the n
 
 ### Native API by library
 
-[xtd.drawing](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing.native)
-
-[xtd.forms](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native)
+* [xtd.core](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core.native)
+* [xtd.drawing](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing.native)
+* [xtd.forms](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native)
 
 ## See also
 
