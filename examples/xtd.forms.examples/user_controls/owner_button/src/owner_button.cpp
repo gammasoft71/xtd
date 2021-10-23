@@ -18,20 +18,23 @@ namespace examples {
       if (state() == xtd::forms::visual_styles::push_button_state::hot) {
         border_color = control_paint::light(border_color, .15);
         button_color = control_paint::light(background_color, .15);
+        text_color = control_paint::light(foreground_color, .15);
       } else if (state() == xtd::forms::visual_styles::push_button_state::pressed || state() == xtd::forms::visual_styles::push_button_state::checked) {
         border_color = control_paint::light(border_color, .30);
-        border_color = button_color = control_paint::light(background_color, .30);
-        text_color = xtd::forms::theme_colors::current_theme().accent_text();
+        button_color = control_paint::light(background_color, .30);
+        text_color = control_paint::light(foreground_color, .30);
       } else if (state() == xtd::forms::visual_styles::push_button_state::disabled) {
         border_color = color::from_argb(85, 85, 55);
         text_color = xtd::forms::theme_colors::current_theme().gray_text();
-      } else if (state() == xtd::forms::visual_styles::push_button_state::default_state)
-        border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent(), 2.0/3);
+      } else if (state() == xtd::forms::visual_styles::push_button_state::default_state) {
+        border_color = control_paint::light(border_color, .15);
+        button_color = control_paint::light(background_color, .15);
+        text_color = control_paint::light(foreground_color, .15);
+      }
       
       e.graphics().fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {e.clip_rectangle().x(), e.clip_rectangle().top()}, point {e.clip_rectangle().x(), e.clip_rectangle().bottom()}, control_paint::light(button_color, .1), control_paint::dark(button_color)), e.clip_rectangle().x(), e.clip_rectangle().y(), e.clip_rectangle().width(), e.clip_rectangle().height(), e.clip_rectangle().height() / 2);
       e.graphics().draw_rounded_rectangle(pen(border_color, 1), e.clip_rectangle().x(), e.clip_rectangle().y(), e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1, e.clip_rectangle().height() / 2);
-      auto text_rect = rectangle(e.clip_rectangle().x() + 5, e.clip_rectangle().y() + 3, e.clip_rectangle().width() - 10, e.clip_rectangle().height() - 7);
-      e.graphics().draw_string(text(), font(), solid_brush(text_color),text_rect, string_format().alignment(xtd::drawing::string_alignment::center).line_alignment(xtd::drawing::string_alignment::center));
+      e.graphics().draw_string(text(), font(), solid_brush(text_color), rectangle(e.clip_rectangle().x() + 5, e.clip_rectangle().y() + 3, e.clip_rectangle().width() - 10, e.clip_rectangle().height() - 7), string_format().alignment(xtd::drawing::string_alignment::center).line_alignment(xtd::drawing::string_alignment::center));
     }
   };
 
