@@ -8,6 +8,7 @@
 
 ## Contents
 
+* [Class organization](class_organization.md) provides a proposal for class organization.
 * [Computer Guid](computer_guid.md) provides information about about computer guid.
 * [Gnome default size of controls](default_size_of_controls_g.md) provides information about default control sizes on Gnome.
 * [macOS default size of controls](default_size_of_controls_m.md) provides information about default control sizes on macOS.
