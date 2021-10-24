@@ -216,7 +216,7 @@ macro(target_startup ...)
     file(RELATIVE_PATH STARTUP_OBJECT_RELATIVE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/Properties ${CMAKE_CURRENT_SOURCE_DIR}/${MAIN_FILE})
     set(INCLUDE_FILE "#include \"${STARTUP_OBJECT_RELATIVE_PATH}\"\n")
   elseif ("${ARGV0}" STREQUAL "tunit_main_")
-    set(INCLUDE_FILE "#include <xtd/tunit_main.h>\n")
+    set(INCLUDE_FILE "#include <xtd/tunit/tunit_main.h>\n")
   endif ()
   file(WRITE ${STARTUP_FILE}
     "#pragma region xtd generated code\n"
