@@ -124,7 +124,7 @@
 | [flow_layout_panel](../src/xtd.forms/include/xtd/forms/flow_layout_panel.h)                                                   | class        | ![progress](pictures/progress25.png)  |
 | [folder_browser_box](../src/xtd.forms/include/xtd/forms/folder_browser_box.h)                                                 | static class | ![progress](pictures/progress0.png)   |
 | [folder_browser_dialog](../src/xtd.forms/include/xtd/forms/folder_browser_dialog.h)                                           | class        | ![progress](pictures/progress100.png) |
-| [font_box](../src/xtd.forms/include/xtd/forms/font_box.h)                                                                     | static class | ![progress](pictures/progress0.png)   |
+| [font_box](../src/xtd.forms/include/xtd/forms/font_box.h)                                                                     | static class | ![progress](pictures/progress100.png) |
 | [font_dialog](../src/xtd.forms/include/xtd/forms/font_dialog.h)                                                               | class        | ![progress](pictures/progress100.png) |
 | [font_picker](../src/xtd.forms/include/xtd/forms/font_picker.h)                                                               | class        | ![progress](pictures/progress100.png) |
 | [font_picker_renderer](../src/xtd.forms/include/xtd/forms/font_picker_renderer.h)                                             | static class | ![progress](pictures/progress0.png)   |
