@@ -91,6 +91,9 @@ value "The operation has timed out."
 key "Arithmetic operation resulted in an underflow."
 value "Arithmetic operation resulted in an underflow."
 
+key "Security error detected."
+value "Security error detected."
+
 key "Syntax error in XML."
 value "Syntax error in XML."
 
