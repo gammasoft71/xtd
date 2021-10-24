@@ -62,6 +62,7 @@ namespace xtd {
         /// @endcond
         
       private:
+        friend xtd::io::directory_info;
         friend xtd::native::directory;
         struct data;
         std::shared_ptr<data> data_;
@@ -86,6 +87,7 @@ namespace xtd {
         /// @endcond
         
       private:
+        friend xtd::io::directory_info;
         friend xtd::native::directory;
         struct data;
         std::shared_ptr<data> data_;
@@ -110,6 +112,7 @@ namespace xtd {
         /// @endcond
         
       private:
+        friend xtd::io::directory_info;
         friend xtd::native::directory;
         struct data;
         std::shared_ptr<data> data_;

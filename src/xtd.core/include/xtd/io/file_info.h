@@ -21,6 +21,8 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ file_info : public xtd::io::file_system_info {
     public:
+      static const file_info empty;
+      
       file_info(const xtd::ustring& path);
       
       xtd::io::directory_info directory() const;
@@ -36,6 +38,9 @@ namespace xtd {
       xtd::ustring name() const override;
 
       void remove() override;
+      
+    private:
+      file_info() = default;
     };
   }
 }
