@@ -67,3 +67,7 @@ To be able to write a class like above, you obviously need three more keywords (
 
 It changes the way of writing but the organization is much clearer.
 It looks much more like a modern language like Java or CSharp.
+
+But the change is too "disruptive", and that it risks to disturb too much the habits of c++ developers. 
+
+It will remain only conceptual.
