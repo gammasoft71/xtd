@@ -4,6 +4,8 @@
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
+This version is currently in development. See [roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) to know the list of features and their progress
+
 ## Issues
 
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #16 - WriteFile never sets number_of_bytes_written to -1
