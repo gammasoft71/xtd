@@ -10,6 +10,8 @@ using namespace std;
 using namespace xtd;
 using namespace io;
 
+const file_info file_info::empty;
+
 file_info::file_info(const xtd::ustring& path) {
   original_path_ = path;
   refresh();

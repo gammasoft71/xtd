@@ -19,6 +19,10 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ directory static_ {
     public:
+      
+      static void remove(const xtd::ustring& path);
+
+      static void remove(const xtd::ustring& path, bool recursive);
     };
   }
 }

@@ -1,5 +1,9 @@
+#include "../../../include/xtd/io/directory.h"
 #include "../../../include/xtd/io/directory_info.h"
+#include "../../../include/xtd/io/file_info.h"
+#include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/security/security_exception.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
@@ -8,6 +12,110 @@
 using namespace std;
 using namespace xtd;
 using namespace io;
+
+struct directory_info::directory_iterator::data {
+  data() = default;
+  data(const std::string& path, const std::string& pattern) : iterator_(path, pattern) {}
+  native::directory::directory_iterator iterator_;
+};
+
+directory_info::directory_iterator::directory_iterator(const ustring& path, const ustring& pattern) {
+  data_ = make_unique<data>(path, pattern);
+}
+
+directory_info::directory_iterator::directory_iterator() {
+  data_ = make_shared<data>();
+}
+
+directory_info::directory_iterator& directory_info::directory_iterator::operator++() {
+  data_->iterator_++;
+  return *this;
+}
+
+directory_info::directory_iterator directory_info::directory_iterator::operator++(int) {
+  directory_iterator result = *this;
+  ++(*this);
+  return result;
+}
+
+bool directory_info::directory_iterator::operator==(directory_info::directory_iterator other) const {
+  return data_->iterator_ == other.data_->iterator_;
+}
+
+directory_info::directory_iterator::value_type directory_info::directory_iterator::operator*() const {
+  if (data_ == nullptr) return empty;
+  return directory_info(*data_->iterator_);
+}
+
+struct directory_info::file_iterator::data {
+  data() = default;
+  data(const std::string& path, const std::string& pattern) : iterator_(path, pattern) {}
+  native::directory::file_iterator iterator_;
+};
+
+directory_info::file_iterator::file_iterator(const std::string& path, const std::string& pattern) {
+  data_ = make_shared<data>(path, pattern);
+}
+
+directory_info::file_iterator::file_iterator() {
+  data_ = make_shared<data>();
+}
+
+directory_info::file_iterator& directory_info::file_iterator::operator++() {
+  data_->iterator_++;
+  return *this;
+}
+
+directory_info::file_iterator directory_info::file_iterator::operator++(int) {
+  file_iterator result = *this;
+  ++(*this);
+  return result;
+}
+
+bool directory_info::file_iterator::operator==(directory_info::file_iterator other) const {
+  return data_->iterator_ == other.data_->iterator_;
+}
+
+directory_info::file_iterator::value_type directory_info::file_iterator::operator*() const {
+  if (data_ == nullptr) return file_info::empty;
+  return file_info(*data_->iterator_);
+}
+
+struct directory_info::file_system_iterator::data {
+  data() = default;
+  data(const std::string& path, const std::string& pattern) : iterator_(path, pattern) {}
+  native::directory::file_system_iterator iterator_;
+};
+
+directory_info::file_system_iterator::file_system_iterator(const std::string& path, const std::string& pattern) {
+  data_ = make_shared<data>(path, pattern);
+}
+
+directory_info::file_system_iterator::file_system_iterator() {
+  data_ = make_shared<data>();
+}
+
+directory_info::file_system_iterator& directory_info::file_system_iterator::operator++() {
+  data_->iterator_++;
+  return *this;
+}
+
+directory_info::file_system_iterator directory_info::file_system_iterator::operator++(int) {
+  file_system_iterator result = *this;
+  ++(*this);
+  return result;
+}
+
+bool directory_info::file_system_iterator::operator==(directory_info::file_system_iterator other) const {
+  return data_->iterator_ == other.data_->iterator_;
+}
+
+directory_info::file_system_iterator::value_type directory_info::file_system_iterator::operator*() const {
+  if (data_ == nullptr) return file_info::empty;
+  return file_info(*data_->iterator_);
+}
+
+const directory_info directory_info::empty;
 
 directory_info::directory_info(const xtd::ustring& path) {
   original_path_ = path.length() == 2 && path[1] == ':' ?  "." : path;
@@ -30,6 +138,63 @@ ustring directory_info::name() const {
   return items[items.size() - 1];
 }
 
+directory_info directory_info::parent() const {
+  if (full_path_ == path::get_path_root(full_path_)) return empty;
+  return directory_info(path::combine(full_path_, ".."));
+}
+
+directory_info directory_info::root() const {
+  return directory_info(path::get_path_root(full_path_));
+}
+
+void directory_info::create() {
+  if (native::directory::create_directory(full_path_) != 0) throw io_exception(csf_);
+}
+
+directory_info directory_info::create_subdirectory(const ustring& path) {
+  directory_info dir_info(path::combine(full_path_, path));
+  if (!dir_info.exists()) dir_info.create();
+  return dir_info;
+}
+
+directory_info::directory_iterator directory_info::enumerate_directories() const {
+  return enumerate_directories("*");
+}
+
+directory_info::directory_iterator directory_info::enumerate_directories(const xtd::ustring& pattern) const {
+  return directory_iterator(full_path_, pattern);
+}
+
+directory_info::file_iterator directory_info::enumerate_files() const {
+  return enumerate_files("*");
+}
+
+directory_info::file_iterator directory_info::enumerate_files(const xtd::ustring& pattern) const {
+  return file_iterator(full_path_, pattern);
+}
+
+directory_info::file_system_iterator directory_info::enumerate_File_system_infos() const {
+  return enumerate_File_system_infos("*");
+}
+
+directory_info::file_system_iterator directory_info::enumerate_File_system_infos(const xtd::ustring& pattern) const {
+  return file_system_iterator(full_path_, pattern);
+}
+
 void directory_info::remove() {
-  throw not_implemented_exception(csf_);
+  return remove(false);
+}
+
+void directory_info::remove(bool recursive) {
+  if (!exists()) throw security::security_exception(csf_);
+  
+  if (recursive) {
+    for (ustring item : native::directory::enumerate_files(full_path_, "*"))
+      file::remove(path::combine(full_path_, item));
+    for (ustring item : native::directory::enumerate_directories(full_path_, "*"))
+      directory_info(path::combine(full_path_, item)).remove(true);
+  }
+  
+  if (native::directory::remove_directory(full_path_) != 0)
+    throw io_exception(csf_);
 }
