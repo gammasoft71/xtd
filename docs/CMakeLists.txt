@@ -7,14 +7,15 @@ include(../scripts/cmake/xtd_version.cmake)
 
 add_sources(
   README.md
+  abstractions_abstract_types_and_interfaces.md
   abstract_class_design.md
   abstract_factory.md
-  abstractions_abstract_types_and_interfaces.md
   adapter.md
   architecture.md
   base_classes_for_implementing_abstractions.md
   bridge.md
   builder.md
+  c++.md
   capitalisation_conventions.md
   chain_of_responsibility.md
   choosing_between_class_and_struct.md
@@ -24,18 +25,14 @@ add_sources(
   command.md
   common_design_patterns.md
   composite.md
-  console_classes.md
   constructor_design.md
   contact.md
-  controls.md
   csf.md
-  custom_controls.md
   decorator.md
-  delegates_tutorial.md
   dependencies.md
+  designing_for_extensibility.md
   design_guidelines.md
   design_guidelines_for_exception.md
-  designing_for_extensibility.md
   development_status.md
   development_status_cmake.md
   development_status_themes.md
@@ -45,48 +42,37 @@ add_sources(
   development_status_xtd_drawing.md
   development_status_xtd_forms.md
   development_status_xtd_tunit.md
-  dialogs.md
   documentation.md
   downloads.md
-  drag_and_drop.md
-  ebook_tutorial.md
   enum_design.md
-  event_design.md
-  events.md
   events_and_callbacks.md
-  events_tutorial.md
+  event_design.md
   examples.md
-  exception_throwing.md
   exceptions_and_performance.md
-  extending_test.md
+  exception_throwing.md
   external_tools_libraries_and_toolkits.md
   facade.md
   factory_method.md
   field_design.md
   final.md
-  first_programs.md
   flyweight.md
   gallery.md
   gammasoft.md
   general_naming_conventions.md
   getting_started.md
-  graphics.md
   hierarchy.md
   home.md
   ignore_test_method.md
   ingore_test_method.md
   interface_design.md
   interpreter.md
-  introduction.md
   iterator.md
-  layout_management.md
   license.md
   links.md
   mediator.md
   member_design_guidelines.md
   member_overloading.md
   memento.md
-  menus_and_toolbars.md
   names_of_classes_structs_and_interfaces.md
   names_of_libraries_and_dlls.md
   names_of_namespace.md
@@ -107,7 +93,6 @@ add_sources(
   proxy.md
   release_notes.md
   roadmap.md
-  running_test.md
   singleton.md
   state.md
   static_class_design.md
@@ -118,21 +103,46 @@ add_sources(
   test_cleanup.md
   test_initialize.md
   test_method.md
-  tetris.md
   themes.md
   tools.md
   translations_status.md
   tutorials.md
+  tutorial_common_io_tasks.md
+  tutorial_common_io_tasks_copy_directories.md
+  tutorial_common_io_tasks_enumerate_directories_and_files.md
+  tutorial_common_io_tasks_file_and_stream_io.md
+  tutorial_common_io_tasks_open_and_append_to_a_log_file.md
+  tutorial_common_io_tasks_read_and_write_to_a_newly_created_data_file.md
+  tutorial_common_io_tasks_read_text_from_a_file.md
+  tutorial_common_io_tasks_write_a_text_file.md
+  tutorial_common_io_tasks_write_text_to_a_file.md
+  tutorial_delegates.md
+  tutorial_ebook.md
+  tutorial_ebook_console_classes.md
+  tutorial_ebook_controls.md
+  tutorial_ebook_custom_controls.md
+  tutorial_ebook_dialogs.md
+  tutorial_ebook_drag_and_drop.md
+  tutorial_ebook_events.md
+  tutorial_ebook_first_programs.md
+  tutorial_ebook_graphics.md
+  tutorial_ebook_introduction.md
+  tutorial_ebook_layout_management.md
+  tutorial_ebook_menus_and_toolbars.md
+  tutorial_ebook_tetris.md
+  tutorial_ebook_unit_testing_classes.md
+  tutorial_events.md
+  tutorial_writing_applicaion_console.md
+  tutorial_writing_applicaion_extending_test.md
+  tutorial_writing_applicaion_gui.md
+  tutorial_writing_applicaion_running_test.md
+  tutorial_writing_applicaion_test.md
+  tutorial_writing_applications.md
   type_design_guidelines.md
-  unit_testing_classes.md
   usage_guidelines.md
   using_standard_exception_types.md
   virtual_members.md
   visitor.md
-  writing_applications.md
-  writing_console_application.md
-  writing_gui_application.md
-  writing_test_application.md
 )
 add_sources(
   ../AUTHORS.md
