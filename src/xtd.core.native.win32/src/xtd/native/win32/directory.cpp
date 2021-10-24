@@ -41,7 +41,7 @@ directory::directory_iterator::directory_iterator() {
 
 directory::directory_iterator::~directory_iterator() {
   if (data_.use_count() == 1) {
-    FindClose(data_->handle_);
+    FindClose(data_->handle_ && data_->handle_);
     data_->handle_ = nullptr;
   }
 }
@@ -99,7 +99,7 @@ directory::file_iterator::file_iterator() {
 
 directory::file_iterator::~file_iterator() {
   if (data_.use_count() == 1) {
-    FindClose(data_->handle_);
+    FindClose(data_->handle_ && data_->handle_);
     data_->handle_ = nullptr;
   }
 }
@@ -157,7 +157,7 @@ directory::file_system_iterator::file_system_iterator() {
 
 directory::file_system_iterator::~file_system_iterator() {
   if (data_.use_count() == 1) {
-    FindClose(data_->handle_);
+    FindClose(data_->handle_ && data_->handle_);
     data_->handle_ = nullptr;
   }
 }

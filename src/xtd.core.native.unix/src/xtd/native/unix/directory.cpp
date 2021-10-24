@@ -42,7 +42,7 @@ directory::directory_iterator::directory_iterator() {
 }
 
 directory::directory_iterator::~directory_iterator() {
-  if (data_.use_count() == 1) {
+  if (data_.use_count() == 1 && data_->handle_) {
     closedir(data_->handle_);
     data_->handle_ = nullptr;
   }
@@ -96,7 +96,7 @@ directory::file_iterator::file_iterator() {
 }
 
 directory::file_iterator::~file_iterator() {
-  if (data_.use_count() == 1) {
+  if (data_.use_count() == 1 && data_->handle_) {
     closedir(data_->handle_);
     data_->handle_ = nullptr;
   }
@@ -150,7 +150,7 @@ directory::file_system_iterator::file_system_iterator() {
 }
 
 directory::file_system_iterator::~file_system_iterator() {
-  if (data_.use_count() == 1) {
+  if (data_.use_count() == 1 && data_->handle_) {
     closedir(data_->handle_);
     data_->handle_ = nullptr;
   }
@@ -228,7 +228,7 @@ int32_t directory::get_file_times(const std::string& path, std::chrono::system_c
 #endif
 
 string directory::get_full_path(const string& relative_path) {
-  vector<string> directories = native::unix::strings::split(relative_path, {path::directory_separator_char()}, true);
+  vector<string> directories = native::unix::strings::split(relative_path, {path::directory_separator_char()}, std::numeric_limits<size_t>::max(), true);
   string full_path;
   
   if (relative_path[0] != path::directory_separator_char())
