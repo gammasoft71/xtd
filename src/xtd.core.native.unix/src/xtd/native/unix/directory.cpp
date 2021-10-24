@@ -276,6 +276,18 @@ int32_t directory::set_current_directory(const std::string& directory_name) {
   return chdir(directory_name.c_str());
 }
 
+int32_t directory::set_creation_time(const std::string &path, std::chrono::system_clock::time_point &creation_time) {
+  return -1;
+}
+
 int32_t directory::set_file_attributes(const std::string& path, int32_t attributes) {
+  return -1;
+}
+
+int32_t directory::set_last_access_time(const std::string &path, std::chrono::system_clock::time_point &last_access_time) {
+  return -1;
+}
+
+int32_t directory::set_last_write_time(const std::string &path, std::chrono::system_clock::time_point &last_write_time) {
   return -1;
 }

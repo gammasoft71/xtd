@@ -22,7 +22,9 @@ namespace xtd {
       xtd::ustring name() const override;
 
       bool exists() const override;
-      
+
+      size_t length() const;
+
       void remove() override;
     };
   }

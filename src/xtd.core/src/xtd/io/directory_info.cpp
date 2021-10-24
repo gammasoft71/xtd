@@ -19,6 +19,10 @@ bool directory_info::exists() const {
   return native::directory::get_file_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory;
 }
 
+size_t directory_info::length() const {
+  return native::directory::get_file_size(full_path_);
+}
+
 ustring directory_info::name() const {
   vector<ustring> items = full_path_.split({path::directory_separator_char()});
   if (items.size() == 0)

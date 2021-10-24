@@ -36,7 +36,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the alt_directory_separator_char() property.
       /// @include directory_separator_char.cpp
       template<typename char_t>
-      static char_t alt_directory_separator_char() noexcept {return static_cast<char_t>('/');}
+      static char_t alt_directory_separator_char() noexcept {return static_cast<char_t>(alt_directory_separator_char());}
       
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return char character used to separate directory levels.
@@ -116,7 +116,7 @@ namespace xtd {
       /// @include directory_separator_char.cpp
       template<typename char_t>
       static char_t directory_separator_char() noexcept {
-        return __is_windows_os() ? static_cast<char_t>('\\') : static_cast<char_t>('/');
+        return static_cast<char_t>(directory_separator_char());
       }
       
       /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
@@ -210,7 +210,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the PathSeparator() property.
       /// @include directory_separator_char.cpp
       template<typename char_t>
-      static char_t path_separator() noexcept {return static_cast<char_t>(':');}
+      static char_t path_separator() noexcept {return static_cast<char_t>(path_separator());}
       
       /// @brief A platform-specific separator character used to separate path strings in environment variables.
       /// @par Examples
@@ -223,7 +223,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the volume_separator_char() property.
       /// @include directory_separator_char.cpp
       template<typename char_t>
-      static char_t volume_separator_char() noexcept {return  __is_windows_os() ? ':' : '/';}
+      static char_t volume_separator_char() noexcept {return  static_cast<char_t>(volume_separator_char());}
       
       /// @brief Provides a platform-specific volume separator character.
       /// @par Examples
@@ -233,7 +233,6 @@ namespace xtd {
       
     private:
       static int __get_index_path_rooted(const xtd::ustring& path);
-      static bool __is_windows_os() noexcept;
       static bool __is_drive(const xtd::ustring& path) noexcept;      
     };
   }
