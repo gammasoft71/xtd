@@ -228,6 +228,7 @@ add_sources(
   include/xtd/net/sockets/transmit_file_options.h
   include/xtd/net/sockets/udp_client.h
   include/xtd/security/secure_string.h
+  include/xtd/security/security_exception.h
   include/xtd/web/css/css_reader.h
   include/xtd/web/css/css_writer.h
   include/xtd/web/css/property.h
