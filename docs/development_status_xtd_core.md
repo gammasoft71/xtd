@@ -219,6 +219,7 @@
 | [file_info](../src/xtd.core/include/xtd/io/file_info.h)                                              | class        | ![progress](pictures/progress0.png)   |
 | [file_load_exception](../src/xtd.core/include/xtd/io/file_load_exception.h)                          | exception    | ![progress](pictures/progress100.png) |
 | [file_not_found_exception](../src/xtd.core/include/xtd/io/file_not_found_exception.h)                | exception    | ![progress](pictures/progress100.png) |
+| [file_system_info](../src/xtd.core/include/xtd/io/file_system_info.h)                                | class        | ![progress](pictures/progress100.png) |
 | [file_system_watcher](../src/xtd.core/include/xtd/io/file_system_watcher.h)                          | class        | ![progress](pictures/progress0.png)   |
 | [io_exception](../src/xtd.core/include/xtd/io/io_exception.h)                                        | exception    | ![progress](pictures/progress100.png) |
 | [path](../src/xtd.core/include/xtd/io/path.h)                                                        | static class | ![progress](pictures/progress100.png) |
