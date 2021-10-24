@@ -63,7 +63,7 @@ namespace xtd {
       /// @brief Provides a platform-specific volume separator character.
       /// @return A platform-specific volume separator character.
       /// @warning Internal use only
-      static char volume_separator();
+      static char volume_separator_char();
     };
   }
 }

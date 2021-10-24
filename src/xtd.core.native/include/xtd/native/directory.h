@@ -192,15 +192,33 @@ namespace xtd {
       static int32_t remove_file(const std::string& file);
       /// @brief Set the current directory.
       /// @param dirrectory_name The currrent directory.
-      /// @return 0 if success; otherwise failed.
+      /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
       static int32_t set_current_directory(const std::string& directory_name);
+      /// @brief Sets the creation time for the specified file or directory path.
+      /// @param path The relative or absolute path to the directory to get attribute.
+      /// @param creation_time The file or path creation time.
+      /// @return 0 if success; -1 operation is not supported; otherwise failed.
+      /// @warning Internal use only
+      static int32_t set_creation_time(const std::string& path, std::chrono::system_clock::time_point& creation_time);
       /// @brief Sets the attributes for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path attribute. (see file_attribute.h)
-      /// @return 0 if success; otherwise failed.
+      /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
       static int32_t set_file_attributes(const std::string& path, int32_t attributes);
+      /// @brief Sets the last access time for the specified file or directory path.
+      /// @param path The relative or absolute path to the directory to get attribute.
+      /// @param last_access_time The file or path last access time.
+      /// @return 0 if success; -1 operation is not supported; otherwise failed.
+      /// @warning Internal use only
+      static int32_t set_last_access_time(const std::string& path, std::chrono::system_clock::time_point& last_access_time);
+      /// @brief Sets the last write time for the specified file or directory path.
+      /// @param path The relative or absolute path to the directory to get attribute.
+      /// @param last_write_time The file or path last write time.
+      /// @return 0 if success; -1 operation is not supported; otherwise failed.
+      /// @warning Internal use only
+      static int32_t set_last_write_time(const std::string& path, std::chrono::system_clock::time_point& last_write_time);
     };
   }
 }

@@ -29,6 +29,6 @@ char path::path_separator() {
   return ':';
 }
 
-char path::volume_separator() {
+char path::volume_separator_char() {
   return '/';
 }

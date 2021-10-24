@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace io;
 
 char path::alt_directory_separator_char() noexcept {
-  return alt_directory_separator_char<char>();
+  return native::path::alt_directory_separator_char();
 }
 
 ustring path::change_extension(const ustring& path, const ustring& extension) {
@@ -44,7 +44,7 @@ ustring path::combine(const initializer_list<ustring>& paths) noexcept {
 }
 
 char path::directory_separator_char() noexcept {
-  return directory_separator_char<char>();
+  return native::path::directory_separator_char();
 }
 
 ustring path::get_directory_name(const ustring& path) {
@@ -158,20 +158,16 @@ bool path::is_path_rooted(const ustring& path) {
 }
 
 char path::path_separator() noexcept {
-  return path_separator<char>();
+  return native::path::path_separator();
 }
 
 char path::volume_separator_char() noexcept {
-  return  volume_separator_char<char>();
+  return native::path::volume_separator_char();
 }
 
 int path::__get_index_path_rooted(const ustring& path) {
   size_t index = path.find(directory_separator_char());
   return (index == ustring::npos || index == path.size() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int>(index);
-}
-
-bool path::__is_windows_os() noexcept {
-  return environment::os_version().is_windows_platform();
 }
 
 bool path::__is_drive(const ustring& path) noexcept {
