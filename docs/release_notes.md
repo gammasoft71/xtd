@@ -8,6 +8,7 @@
 
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #16 - WriteFile never sets number_of_bytes_written to -1
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #19 - operator + and operator - does not build with xtd::delegate
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #20 - cannot build unit test project created with xtdc-gui
 
 ![0.1.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_1_0.png) (beta) October 10, 2021
 
