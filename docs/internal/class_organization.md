@@ -49,15 +49,21 @@ class my_class {
 To be able to write a class like above, you obviously need three more keywords (there are already some like abastract_, interface_, ...).
 
 ```c++
-#define private_ private
-#define protected_ protected
-#define public_ public
+#define private_ private:
+#define protected_ protected:
+#define public_ public:
 ```
 
-## Conclusion
+## PRO
 
-There is just one problem but it is not really a problem if you get used to describe all the time like this.
-It is that if you forget one of the keywords to a member, it is the keyword of the previous member that will be applied...
+* More concise
+* In a big cllass with a lot of people and a lot of documents, you can see the type of access.
+
+## CON
+
+* if you forget one of the keywords to a member, it is the keyword of the previous member that will be applied
+
+## Conclusion
 
 It changes the way of writing but the organization is much clearer.
 It looks much more like a modern language like Java or CSharp.
