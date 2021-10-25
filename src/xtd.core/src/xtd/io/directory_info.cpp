@@ -222,9 +222,9 @@ void directory_info::move_to(const ustring& dest_dir_name) {
   directory_info dest_dir_info(dest_dir_name);
   
   if (dest_dir_name == "" || dest_dir_info.exists() || equals(dest_dir_info) || !path::get_path_root(full_name()).equals(path::get_path_root(dest_dir_info.full_name())) || dest_dir_info.full_name().starts_with(full_name())) throw io_exception(csf_);
-  if (!dest_dir_info.exists()) throw directory_not_found_exception(csf_);
   
   ustring target_dir_name = path::combine(dest_dir_name, full_path_.substring(full_path_.last_index_of(path::directory_separator_char()) + 1));
+  if (!dest_dir_info.exists()) throw directory_not_found_exception(csf_);
   directory::create_directory(target_dir_name);
   
   for (ustring item : native::directory::enumerate_files(full_path_, "*"))
@@ -233,7 +233,8 @@ void directory_info::move_to(const ustring& dest_dir_name) {
     directory::move(path::combine(full_path_, item), path::combine(target_dir_name, item));
   
   remove();
-  full_path_ = target_dir_name;
+  original_path_ = target_dir_name;
+  refresh();
 }
 
 void directory_info::remove() const {
