@@ -62,9 +62,9 @@ namespace xtd {
       /// @brief Gets the sound associated with the Question program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Question program event in the current Windows sound scheme.
       /// @par Examples
-      /// The following code example demonstrates the use of the xtd::system_sounds::questioon property.
+      /// The following code example demonstrates the use of the xtd::system_sounds::question property.
       /// @code
-      /// // Plays the sound associated with the Questioon system event.
+      /// // Plays the sound associated with the Question system event.
       /// system_sounds.question().play();
       /// @endcode
       static system_sound question();
