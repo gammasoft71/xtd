@@ -12,6 +12,7 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @cond
+    class directory;
     class file_info;
     /// @endcond
 
@@ -135,6 +136,7 @@ namespace xtd {
         /// @endcond
         
       private:
+        friend xtd::io::directory;
         friend xtd::io::directory_info;
         struct data;
         std::shared_ptr<data> data_;
@@ -157,6 +159,7 @@ namespace xtd {
         /// @endcond
         
       private:
+        friend xtd::io::directory;
         friend xtd::io::directory_info;
         struct data;
         std::shared_ptr<data> data_;
@@ -179,6 +182,7 @@ namespace xtd {
         /// @endcond
         
       private:
+        friend xtd::io::directory;
         friend xtd::io::directory_info;
         struct data;
         std::shared_ptr<data> data_;
@@ -238,6 +242,7 @@ namespace xtd {
   }
 }
 
+/// @cond
 namespace std {
   inline xtd::io::directory_info::directory_iterator begin(xtd::io::directory_info::directory_iterator it) {return it;}
   inline xtd::io::directory_info::directory_iterator end(xtd::io::directory_info::directory_iterator it) {return xtd::io::directory_info::directory_iterator();}
@@ -246,3 +251,4 @@ namespace std {
   inline xtd::io::directory_info::file_system_iterator begin(xtd::io::directory_info::file_system_iterator it) {return it;}
   inline xtd::io::directory_info::file_system_iterator end(xtd::io::directory_info::file_system_iterator it) {return xtd::io::directory_info::file_system_iterator();}
 }
+/// @endcond

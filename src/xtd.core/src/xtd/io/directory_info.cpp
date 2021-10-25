@@ -21,7 +21,7 @@ struct directory_info::directory_iterator::data {
 };
 
 directory_info::directory_iterator::directory_iterator(const ustring& path, const ustring& pattern) {
-  data_ = make_unique<data>(path, pattern);
+  data_ = make_shared<data>(path, pattern);
 }
 
 directory_info::directory_iterator::directory_iterator() {
