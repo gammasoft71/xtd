@@ -21,7 +21,7 @@ namespace xtd {
   namespace io {
     class text_reader {
     public:
-      virtual virtual int read() = 0;
+      virtual int read() = 0;
       ...
     };
     

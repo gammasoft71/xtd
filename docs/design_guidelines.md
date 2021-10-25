@@ -4,7 +4,7 @@ This section provides guidelines for designing libraries that extend and interac
 The goal is to help library designers ensure API consistency and ease of use by providing a unified programming model for development.
 We recommend that you follow these design guidelines when developing classes and components that extend the xtd Framework. 
 Inconsistent library design adversely affects developer productivity and discourages adoption. 
-The guidelines are organised as simple recommendations prefixed with the terms *Do*, *Consider*, *Avoid*, and *Do not*.
+The guidelines are organized as simple recommendations prefixed with the terms *Do*, *Consider*, *Avoid*, and *Do not*.
 These guidelines are intended to help class library designers understand the trade-offs between different solutions. 
 There might be situations where good library design requires that you violate these design guidelines.
 Such cases should be rare, and it is important that you have a clear and compelling reason for your decision.
