@@ -145,7 +145,7 @@ directory::file_and_directory_iterator::file_and_directory_iterator(const std::s
   string search_pattern = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + data_->pattern_;
   data_->handle_ = FindFirstFile(search_pattern.c_str(), &item);
   bool result = data_->handle_;
-  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY) || string(item.cFileName) == "." || string(item.cFileName) == "..")
+  while (result == true && (string(item.cFileName) == "." || string(item.cFileName) == "..")
     result = FindNextFile(data_->handle_, &item) != FALSE;
   if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + item.cFileName;
   else  data_->current_ = "";
