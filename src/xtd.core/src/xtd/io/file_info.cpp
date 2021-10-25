@@ -1,4 +1,5 @@
 #include "../../../include/xtd/io/file_info.h"
+#include "../../../include/xtd/io/file_not_found_exception.h"
 #include "../../../include/xtd/io/directory_info.h"
 #include "../../../include/xtd/io/path.h"
 #include "../../../include/xtd/not_implemented_exception.h"
@@ -40,11 +41,22 @@ size_t file_info::length() const {
 
 ustring file_info::name() const {
   vector<ustring> items = full_path_.split({path::directory_separator_char()});
-  if (items.size() == 0)
-    return full_path_;
+  if (items.size() == 0) return full_path_;
   return items[items.size() - 1];
 }
 
-void file_info::remove() {
+file_info file_info::copy_to(const xtd::ustring& dest_file_name) const {
+  if (!exists()) throw file_not_found_exception(csf_);
+  if (file::exists(dest_file_name)) throw io_exception(csf_);
+  if (native::directory::copy_file(full_path_, path::get_full_path(dest_file_name)) != 0) throw io_exception(csf_);
+  return file_info(dest_file_name);
+}
+
+file_info file_info::copy_to(const xtd::ustring& dest_file_name, bool overwrite) const {
+  if (overwrite && file::exists(dest_file_name)) file::remove(dest_file_name);
+  return copy_to(dest_file_name);
+}
+
+void file_info::remove() const {
   throw not_implemented_exception(csf_);
 }

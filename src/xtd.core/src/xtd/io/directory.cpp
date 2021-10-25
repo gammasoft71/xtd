@@ -2,6 +2,7 @@
 #include "../../../include/xtd/io/directory_info.h"
 #include "../../../include/xtd/io/file.h"
 #include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/system_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -20,6 +21,13 @@ directory_info directory::create_directory(const xtd::ustring& path) {
   return dir_info;
 }
 
+bool directory::exists(const xtd::ustring& path) {
+  try {
+    return directory_info(path).exists();
+  } catch (const system_exception&) {
+    return false;
+  }
+}
 
 void directory::move(const ustring& src, const ustring& dst) {
   if (path::has_extension(src))

@@ -37,7 +37,11 @@ namespace xtd {
       
       xtd::ustring name() const override;
 
-      void remove() override;
+      xtd::io::file_info copy_to(const xtd::ustring& dest_file_name) const;
+      
+      xtd::io::file_info copy_to(const xtd::ustring& dest_file_name, bool overwrite) const;
+      
+      void remove() const override;
       
     private:
       file_info() = default;

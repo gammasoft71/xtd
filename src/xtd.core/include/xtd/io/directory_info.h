@@ -204,9 +204,9 @@ namespace xtd {
       
       xtd::io::directory_info root() const;
       
-      void create();
+      void create() const;
       
-      xtd::io::directory_info create_subdirectory(const xtd::ustring& path);
+      xtd::io::directory_info create_subdirectory(const xtd::ustring& path) const;
       
       xtd::io::directory_info::directory_iterator enumerate_directories() const;
       xtd::io::directory_info::directory_iterator enumerate_directories(const xtd::ustring& pattern) const;
@@ -228,9 +228,9 @@ namespace xtd {
       
       void move_to(const xtd::ustring& dest_dir_name);
       
-      void remove() override;
+      void remove() const override;
       
-      void remove(bool recursive);
+      void remove(bool recursive) const;
       
     private:
       directory_info() = default;

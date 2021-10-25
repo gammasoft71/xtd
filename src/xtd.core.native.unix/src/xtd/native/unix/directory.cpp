@@ -184,6 +184,28 @@ directory::file_and_directory_iterator::value_type directory::file_and_directory
   return data_->current_;
 }
 
+int32_t directory::copy_file(const std::string& source_file, const std::string& target_file) {
+  FILE* source = fopen(source_file.c_str(), "rb");
+  if (source == nullptr) return -1;
+  
+  FILE* target = fopen(target_file.c_str(), "wb");
+  if (target == nullptr) {
+    fclose(source);
+    return -1;
+  }
+  
+  size_t count = 0;
+  do {
+    uint8_t buffer[1024];
+    count = fread(buffer, 1, 1024, source);
+    if (count > 0) fwrite(buffer, 1, count, target);
+  } while (count == 1024);
+  
+  fclose(source);
+  fclose(target);
+  return 0;
+}
+
 int32_t directory::create_directory(const std::string& directory_name) {
   return mkdir(directory_name.c_str(), S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IWGRP | S_IXGRP | S_IROTH | S_IWOTH | S_IXOTH);
 }
