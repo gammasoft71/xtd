@@ -21,6 +21,11 @@
 
 ## Continuous Integration build status
 
+TEMPORALY DISABLED. 
+
+We are actively looking for a solution.
+
+<!--
 | Operating system | Build    | Status                                                                                                                                                                                                 |
 |------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Windows (win32)  |  Debug   | [![Windows (win32) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml)                   |
@@ -37,6 +42,7 @@
 | Android (**)     |  Release | Coming soon...                                                                                                                                                                                         |
 
  (**) [xtd.core and xtd.tunit only](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list).
+ --->
 
 ## Features
 
