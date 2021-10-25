@@ -4,6 +4,7 @@
 #pragma once
 
 #include "file_system_info.h"
+#include <fstream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -36,13 +37,33 @@ namespace xtd {
       size_t length() const;
       
       xtd::ustring name() const override;
+      
+      std::ofstream append_text() const;
 
       xtd::io::file_info copy_to(const xtd::ustring& dest_file_name) const;
       
       xtd::io::file_info copy_to(const xtd::ustring& dest_file_name, bool overwrite) const;
       
+      std::ofstream create() const;
+      
+      std::ofstream create_text() const;
+      
+      void move_to(const xtd::ustring& dest_file_name);
+      
+      void move_to(const xtd::ustring& dest_file_name, bool overwrite);
+      
+      std::fstream open(std::ios::openmode mode) const;
+      
+      std::ifstream open_read() const;
+
+      std::ifstream open_text() const;
+      
+      std::ofstream open_write() const;
+
       void remove() const override;
       
+      void replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
+
     private:
       file_info() = default;
     };
