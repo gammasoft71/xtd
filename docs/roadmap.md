@@ -35,6 +35,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 |           | iOS platforms                   | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | button_render                   | Gammasoft |                                                 |
 | xtd.forms | check_box_render                | Gammasoft |                                                 |
+| xtd.forms | clipboard + drag & drop         | Gammasoft |                                                 |
 | xtd.forms | collapsible_panel               | Gammasoft |                                                 |
 | xtd.forms | collapsible_panel               | Gammasoft |                                                 |
 | xtd.forms | color_picker_render             | Gammasoft |                                                 |
@@ -44,7 +45,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | dot_matrix_display_render       | Gammasoft |                                                 |
 | xtd.forms | find_box                        | Bader     |                                                 |
 | xtd.forms | find_dialog                     | Bader     |                                                 |
-| xtd.forms | font_box                        | Bader     | ![status](pictures/releases/status/done.png) |
+| xtd.forms | font_box                        | Bader     | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | font_picker_render              | Gammasoft |                                                 |
 | xtd.forms | fourteen_segment_display_render | Gammasoft |                                                 |
 | xtd.forms | label_render                    | Gammasoft |                                                 |
