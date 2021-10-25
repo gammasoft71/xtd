@@ -117,7 +117,7 @@ namespace xtd {
     bool is_empty() const noexcept { return functions_.size() == 0; }
     
     /// @brief Return the size of invocation list.
-    /// @return Return the size of invocatioon list.
+    /// @return Return the size of invocation list.
     size_t size() const noexcept { return functions_.size(); }
     
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
@@ -488,7 +488,7 @@ namespace xtd {
     bool is_empty() const noexcept { return functions_.size() == 0 && no_arguments_functions_.size() == 0; }
 
     /// @brief Return the size of invocation list.
-    /// @return Return the size of invocatioon list.
+    /// @return Return the size of invocation list.
     size_t size() const noexcept { return functions_.size() + no_arguments_functions_.size(); }
 
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.

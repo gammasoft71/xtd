@@ -23,7 +23,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     /// @par Example
     /// The following example demonstrates some of the main members of the xtd::io::directory_info class.
-    /// @cond
+    /// @code
     /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
@@ -57,10 +57,10 @@ namespace xtd {
     /// };
     ///
     /// startup_(program);
-    /// @endcond
+    /// @endcode
     /// @par Example
     /// The following example demonstrates how to copy a directory and its contents.
-    /// @cond
+    /// @code
     /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
@@ -105,7 +105,7 @@ namespace xtd {
     /// startup_(copy_dir);
     ///
     /// // Output will vary based on the contents of the source directory.
-    /// @endcond
+    /// @endcode
     /// @remarks Use the xtd::io::directory_info class for typical operations such as copying, moving, renaming, creating, and deleting directories.
     /// @remarks If you are going to reuse an object several times, consider using the instance method of xtd::io::directory_info instead of the corresponding static methods of the xtd::io::directory class, because a security check will not always be necessary.
     /// @note In members that accept a path as an input string, that path must be well-formed or an exception is raised. For example, if a path is fully qualified but begins with a space, the path is not trimmed in methods of the class. Therefore, the path is malformed and an exception is raised. Similarly, a path or a combination of paths cannot be fully qualified twice. For example, "c:\temp c:\windows" also raises an exception in most cases. Ensure that your paths are well-formed when using methods that accept a path string.
@@ -118,7 +118,7 @@ namespace xtd {
     /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
     class core_export_ directory_info final : public xtd::io::file_system_info {
     public:
-      /// @brief Represent directory iterator used by xtd::io::directtory_info.
+      /// @brief Represent directory iterator used by xtd::io::directory_info.
       class directory_iterator : public std::iterator<std::input_iterator_tag, xtd::io::directory_info> {
         explicit directory_iterator(const xtd::ustring& path, const xtd::ustring& pattern);
       public:
@@ -140,7 +140,7 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
 
-      /// @brief Represent file iterator used by xtd::io::directtory_info.
+      /// @brief Represent file iterator used by xtd::io::directory_info.
       class file_iterator : public std::iterator<std::input_iterator_tag, xtd::io::file_info> {
         explicit file_iterator(const std::string& path, const std::string& pattern);
       public:
@@ -162,7 +162,7 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
 
-      /// @brief Represent file iterator used by xtd::io::directtory_info.
+      /// @brief Represent file system iterator used by xtd::io::directory_info.
       class file_system_iterator : public std::iterator<std::input_iterator_tag, std::shared_ptr<xtd::io::file_system_info>> {
         explicit file_system_iterator(const std::string& path, const std::string& pattern);
       public:
@@ -184,11 +184,14 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
 
+      /// @brief Represents the uninitialized xtd::io::directory_info object. This field is constant.
       static const directory_info empty;
       
       /// @brief Initializes a new instance of the xtd::io::directory_info class on the specified path.
       /// @param path A string specifying the path on which to create the xtd::io::directory_info.
-      ///
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
+      /// @exception xtd::argument_exception path contains invalid characters such as ", <, >, or |.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       directory_info(const xtd::ustring& path);
       
       bool exists() const override;

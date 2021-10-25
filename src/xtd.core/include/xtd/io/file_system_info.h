@@ -484,8 +484,8 @@ namespace xtd {
       void refresh();
       
       /// @brief Deletes a file or directory.
-      /// @exception xtd::io::directory_not_found_esception The specified path is invalid; for example, it is on an unmapped drive.
-      /// @exception xtd::ioo::io_exception There is an open handle on the file or directory, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks_enumerate_directories_and_files.mdd">How to: Enumerate Directories and Files</a>.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
+      /// @exception xtd::io::io_exception There is an open handle on the file or directory, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks_enumerate_directories_and_files.mdd">How to: Enumerate Directories and Files</a>.
       virtual void remove() = 0;
       
       /// @brief Returns the original path. Use the xtd::io::file_system_info::full_name or xtd::io::file_system_info::name properties for the full path or file/directory name.
