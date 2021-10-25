@@ -56,7 +56,7 @@ directory::file_iterator::file_iterator(const std::string& path, const std::stri
   data_ = make_shared<data>(path, pattern);
 }
 
-directory_info::file_iterator::file_iterator() {
+directory::file_iterator::file_iterator() {
   data_ = make_shared<data>();
 }
 
