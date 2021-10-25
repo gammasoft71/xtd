@@ -151,11 +151,11 @@ directory_info directory_info::root() const {
   return directory_info(path::get_path_root(full_path_));
 }
 
-void directory_info::create() {
+void directory_info::create() const {
   if (native::directory::create_directory(full_path_) != 0) throw io_exception(csf_);
 }
 
-directory_info directory_info::create_subdirectory(const ustring& path) {
+directory_info directory_info::create_subdirectory(const ustring& path) const {
   directory_info dir_info(path::combine(full_path_, path));
   if (!dir_info.exists()) dir_info.create();
   return dir_info;
@@ -236,11 +236,11 @@ void directory_info::move_to(const ustring& dest_dir_name) {
   full_path_ = target_dir_name;
 }
 
-void directory_info::remove() {
+void directory_info::remove() const {
   return remove(false);
 }
 
-void directory_info::remove(bool recursive) {
+void directory_info::remove(bool recursive) const {
   if (!exists()) throw security::security_exception(csf_);
   
   if (recursive) {

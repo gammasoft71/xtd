@@ -126,6 +126,12 @@ namespace xtd {
       friend xtd::io::file_info;
       friend xtd::io::file_system_info;
 
+      /// @brief Copy a specified source file to a target file.
+      /// @param source_file The source file to copy.
+      /// @param target_file The target file where copy.
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t copy_file(const std::string& source_file, const std::string& target_file);
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
       /// @param directory_name The directory to create.
       /// @return 0 if success; otherwise failed.
