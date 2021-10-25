@@ -21,7 +21,7 @@
 
 ## Continuous Integration build status
 
-TEMPORALY DISABLED. 
+TEMPORARILY DISABLED. 
 
 We are actively looking for a solution.
 
