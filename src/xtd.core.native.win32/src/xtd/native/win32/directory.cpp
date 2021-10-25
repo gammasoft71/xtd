@@ -130,7 +130,7 @@ directory::file_iterator::value_type directory::file_iterator::operator*() const
   return data_->current_;
 }
 
-struct directory::file_system_iterator::data {
+struct directory::file_and_directory_iterator::data {
   data() = default;
   data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern) {}
   std::string path_;
@@ -139,7 +139,7 @@ struct directory::file_system_iterator::data {
   mutable string current_;
 };
 
-directory::file_system_iterator::file_system_iterator(const std::string& path, const std::string& pattern) {
+directory::file_and_directory_iterator::file_and_directory_iterator(const std::string& path, const std::string& pattern) {
   data_ = make_shared<data>(path, pattern);
   WIN32_FIND_DATA item;
   string search_pattern = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + data_->pattern_;
@@ -151,18 +151,18 @@ directory::file_system_iterator::file_system_iterator(const std::string& path, c
   else  data_->current_ = "";
 }
 
-directory::file_system_iterator::file_system_iterator() {
+directory::file_and_directory_iterator::file_and_directory_iterator() {
   data_ = make_shared<data>();
 }
 
-directory::file_system_iterator::~file_system_iterator() {
+directory::file_and_directory_iterator::~file_and_directory_iterator() {
   if (data_.use_count() == 1) {
     FindClose(data_->handle_ && data_->handle_);
     data_->handle_ = nullptr;
   }
 }
 
-directory::file_system_iterator& directory::file_system_iterator::operator++() {
+directory::file_and_directory_iterator& directory::file_and_directory_iterator::operator++() {
   WIN32_FIND_DATA item;
   bool result = FindNextFile(data_->handle_, &item) != FALSE;
   while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_SYSTEM) != FILE_ATTRIBUTE_SYSTEM) || string(item.cFileName) == "." || string(item.cFileName) == "..")
@@ -173,17 +173,17 @@ directory::file_system_iterator& directory::file_system_iterator::operator++() {
   return *this;
 }
 
-directory::file_system_iterator directory::file_system_iterator::operator++(int) {
-  file_system_iterator result = *this;
+directory::file_and_directory_iterator directory::file_and_directory_iterator::operator++(int) {
+  file_and_directory_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory::file_system_iterator::operator==(directory::file_system_iterator other) const {
+bool directory::file_and_directory_iterator::operator==(directory::file_and_directory_iterator other) const {
   return data_->current_ == other.data_->current_;
 }
 
-directory::file_system_iterator::value_type directory::file_system_iterator::operator*() const {
+directory::file_and_directory_iterator::value_type directory::file_and_directory_iterator::operator*() const {
   if (data_ == nullptr) return "";
   return data_->current_;
 }
@@ -198,6 +198,10 @@ directory::directory_iterator directory::enumerate_directories(const std::string
 
 directory::file_iterator directory::enumerate_files(const std::string& path, const std::string& pattern) {
   return file_iterator(path, pattern);
+}
+
+directory::file_and_directory_iterator directory::enumerate_files_and_directories(const std::string& path, const std::string& pattern) {
+  return file_and_directory_iterator(path, pattern);
 }
 
 string directory::get_current_directory() {

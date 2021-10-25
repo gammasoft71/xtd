@@ -4,6 +4,7 @@
 #pragma once
 
 #include <iterator>
+#include <memory>
 #include "file_system_info.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -162,7 +163,7 @@ namespace xtd {
       };
 
       /// @brief Represent file iterator used by xtd::io::directtory_info.
-      class file_system_iterator : public std::iterator<std::input_iterator_tag, xtd::io::file_info> {
+      class file_system_iterator : public std::iterator<std::input_iterator_tag, std::shared_ptr<xtd::io::file_system_info>> {
         explicit file_system_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -210,9 +211,20 @@ namespace xtd {
       xtd::io::directory_info::file_iterator enumerate_files() const;
       xtd::io::directory_info::file_iterator enumerate_files(const xtd::ustring& pattern) const;
       
-      xtd::io::directory_info::file_system_iterator enumerate_File_system_infos() const;
-      xtd::io::directory_info::file_system_iterator enumerate_File_system_infos(const xtd::ustring& pattern) const;
+      xtd::io::directory_info::file_system_iterator enumerate_file_system_infos() const;
+      xtd::io::directory_info::file_system_iterator enumerate_file_system_infos(const xtd::ustring& pattern) const;
 
+      std::vector<xtd::io::directory_info> get_directories() const;
+      std::vector<xtd::io::directory_info> get_directories(const xtd::ustring& pattern) const;
+      
+      std::vector<xtd::io::file_info> get_files() const;
+      std::vector<xtd::io::file_info> get_files(const xtd::ustring& pattern) const;
+      
+      std::vector<std::shared_ptr<xtd::io::file_system_info>> get_file_system_infos() const;
+      std::vector<std::shared_ptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::ustring& pattern) const;
+      
+      void move_to(const xtd::ustring& dest_dir_name);
+      
       void remove() override;
       
       void remove(bool recursive);

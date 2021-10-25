@@ -20,6 +20,10 @@ namespace xtd {
     class core_export_ directory static_ {
     public:
       
+      static xtd::io::directory_info create_directory(const xtd::ustring& path);
+      
+      static void move(const xtd::ustring& src, const xtd::ustring& dst);
+      
       static void remove(const xtd::ustring& path);
 
       static void remove(const xtd::ustring& path, bool recursive);

@@ -95,19 +95,19 @@ namespace xtd {
       
       /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
       /// @warning Internal use only
-      class file_system_iterator : public std::iterator<std::input_iterator_tag, std::string> {
-        explicit file_system_iterator(const std::string& path, const std::string& pattern);
+      class file_and_directory_iterator : public std::iterator<std::input_iterator_tag, std::string> {
+        explicit file_and_directory_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
-        file_system_iterator();
-        file_system_iterator(const file_system_iterator&) = default;
-        file_system_iterator(file_system_iterator&&) = default;
-        ~file_system_iterator();
+        file_and_directory_iterator();
+        file_and_directory_iterator(const file_and_directory_iterator&) = default;
+        file_and_directory_iterator(file_and_directory_iterator&&) = default;
+        ~file_and_directory_iterator();
         
-        file_system_iterator& operator++();
-        file_system_iterator operator++(int);
-        bool operator==(file_system_iterator other) const;
-        bool operator!=(file_system_iterator other) const {return !operator==(other);}
+        file_and_directory_iterator& operator++();
+        file_and_directory_iterator operator++(int);
+        bool operator==(file_and_directory_iterator other) const;
+        bool operator!=(file_and_directory_iterator other) const {return !operator==(other);}
         value_type operator*() const;
         /// @endcond
         
@@ -143,12 +143,12 @@ namespace xtd {
       /// @return An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
       /// @warning Internal use only
       static file_iterator enumerate_files(const std::string& path, const std::string& pattern);
-      /// @brief Returns an iterator of full file names that match a search pattern in a specified path.
+      /// @brief Returns an iterator of full file names and full direcctory names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search.
       /// @param pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
       /// @warning Internal use only
-      static file_iterator enumerate_file_system_entries(const std::string& path, const std::string& pattern);
+      static file_and_directory_iterator enumerate_files_and_directories(const std::string& path, const std::string& pattern);
       /// @brief Get the current directory.
       /// @return The currrent directory.
       /// @warning Internal use only
@@ -231,6 +231,6 @@ namespace std {
   inline xtd::native::directory::directory_iterator end(xtd::native::directory::directory_iterator it) {return xtd::native::directory::directory_iterator();}
   inline xtd::native::directory::file_iterator begin(xtd::native::directory::file_iterator it) {return it;}
   inline xtd::native::directory::file_iterator end(xtd::native::directory::file_iterator it) {return xtd::native::directory::file_iterator();}
-  inline xtd::native::directory::file_system_iterator begin(xtd::native::directory::file_system_iterator it) {return it;}
-  inline xtd::native::directory::file_system_iterator end(xtd::native::directory::file_system_iterator it) {return xtd::native::directory::file_system_iterator();}
+  inline xtd::native::directory::file_and_directory_iterator begin(xtd::native::directory::file_and_directory_iterator it) {return it;}
+  inline xtd::native::directory::file_and_directory_iterator end(xtd::native::directory::file_and_directory_iterator it) {return xtd::native::directory::file_and_directory_iterator();}
 }

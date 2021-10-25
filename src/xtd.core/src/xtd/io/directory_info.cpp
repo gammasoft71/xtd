@@ -1,5 +1,6 @@
 #include "../../../include/xtd/io/directory.h"
 #include "../../../include/xtd/io/directory_info.h"
+#include "../../../include/xtd/io/directory_not_found_exception.h"
 #include "../../../include/xtd/io/file_info.h"
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path.h"
@@ -84,7 +85,7 @@ directory_info::file_iterator::value_type directory_info::file_iterator::operato
 struct directory_info::file_system_iterator::data {
   data() = default;
   data(const std::string& path, const std::string& pattern) : iterator_(path, pattern) {}
-  native::directory::file_system_iterator iterator_;
+  native::directory::file_and_directory_iterator iterator_;
 };
 
 directory_info::file_system_iterator::file_system_iterator(const std::string& path, const std::string& pattern) {
@@ -111,8 +112,11 @@ bool directory_info::file_system_iterator::operator==(directory_info::file_syste
 }
 
 directory_info::file_system_iterator::value_type directory_info::file_system_iterator::operator*() const {
-  if (data_ == nullptr) return file_info::empty;
-  return file_info(*data_->iterator_);
+  if (data_ == nullptr) return std::make_shared<file_info>("");
+  int32_t attributes = -1;
+  native::directory::get_file_attributes(*data_->iterator_, attributes);
+  if ((static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory) return std::make_shared<directory_info>(*data_->iterator_);
+  return std::make_shared<file_info>(*data_->iterator_);
 }
 
 const directory_info directory_info::empty;
@@ -173,12 +177,63 @@ directory_info::file_iterator directory_info::enumerate_files(const xtd::ustring
   return file_iterator(full_path_, pattern);
 }
 
-directory_info::file_system_iterator directory_info::enumerate_File_system_infos() const {
-  return enumerate_File_system_infos("*");
+directory_info::file_system_iterator directory_info::enumerate_file_system_infos() const {
+  return enumerate_file_system_infos("*");
 }
 
-directory_info::file_system_iterator directory_info::enumerate_File_system_infos(const xtd::ustring& pattern) const {
+directory_info::file_system_iterator directory_info::enumerate_file_system_infos(const xtd::ustring& pattern) const {
   return file_system_iterator(full_path_, pattern);
+}
+
+vector<directory_info> directory_info::get_directories() const {
+  return get_directories("*");
+}
+
+vector<directory_info> directory_info::get_directories(const ustring& pattern) const {
+  std::vector<directory_info> directories;
+  for (auto item : enumerate_directories(pattern))
+    directories.emplace_back(item);
+  return directories;
+}
+
+vector<file_info> directory_info::get_files() const {
+  return get_files("*");
+}
+
+vector<file_info> directory_info::get_files(const ustring& pattern) const {
+  vector<file_info> files;
+  for (auto item : enumerate_files(pattern))
+    files.emplace_back(item);
+  return files;
+}
+
+vector<shared_ptr<file_system_info>> directory_info::get_file_system_infos() const {
+  return get_file_system_infos("*");
+}
+
+vector<shared_ptr<file_system_info>> directory_info::get_file_system_infos(const ustring& pattern) const {
+  vector<shared_ptr<file_system_info>> file_system_infos;
+  for (auto item : enumerate_file_system_infos(pattern))
+    file_system_infos.emplace_back(item);
+  return file_system_infos;
+}
+
+void directory_info::move_to(const ustring& dest_dir_name) {
+  directory_info dest_dir_info(dest_dir_name);
+  
+  if (dest_dir_name == "" || dest_dir_info.exists() || equals(dest_dir_info) || !path::get_path_root(full_name()).equals(path::get_path_root(dest_dir_info.full_name())) || dest_dir_info.full_name().starts_with(full_name())) throw io_exception(csf_);
+  if (!dest_dir_info.exists()) throw directory_not_found_exception(csf_);
+  
+  ustring target_dir_name = path::combine(dest_dir_name, full_path_.substring(full_path_.last_index_of(path::directory_separator_char()) + 1));
+  directory::create_directory(target_dir_name);
+  
+  for (ustring item : native::directory::enumerate_files(full_path_, "*"))
+    file::move(path::combine(full_path_, item), path::combine(target_dir_name, item));
+  for (ustring item : native::directory::enumerate_directories(full_path_, "*"))
+    directory::move(path::combine(full_path_, item), path::combine(target_dir_name, item));
+  
+  remove();
+  full_path_ = target_dir_name;
 }
 
 void directory_info::remove() {
