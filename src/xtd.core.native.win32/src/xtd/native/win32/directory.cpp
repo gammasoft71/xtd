@@ -165,7 +165,7 @@ directory::file_and_directory_iterator::~file_and_directory_iterator() {
 directory::file_and_directory_iterator& directory::file_and_directory_iterator::operator++() {
   WIN32_FIND_DATA item;
   bool result = FindNextFile(data_->handle_, &item) != FALSE;
-  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_SYSTEM) != FILE_ATTRIBUTE_SYSTEM) || string(item.cFileName) == "." || string(item.cFileName) == "..")
+  while (result == true && (string(item.cFileName) == "." || string(item.cFileName) == ".."))
     result = FindNextFile(data_->handle_, &item) != FALSE;
   
   if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + item.cFileName;
