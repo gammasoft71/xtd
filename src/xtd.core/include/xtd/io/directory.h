@@ -19,7 +19,72 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ directory static_ {
     public:
+      /// @brief Represent directory iterator used by xtd::io::directory.
+      class directory_iterator : public std::iterator<std::input_iterator_tag, xtd::ustring> {
+        explicit directory_iterator(const xtd::ustring& path, const xtd::ustring& pattern);
+      public:
+        /// @cond
+        directory_iterator();
+        directory_iterator(const directory_iterator&) = default;
+        directory_iterator(directory_iterator&&) = default;
+        
+        directory_iterator& operator++();
+        directory_iterator operator++(int);
+        bool operator==(directory_iterator other) const;
+        bool operator!=(directory_iterator other) const {return !operator==(other);}
+        value_type operator*() const;
+        /// @endcond
+        
+      private:
+        friend xtd::io::directory;
+        struct data;
+        std::shared_ptr<data> data_;
+      };
       
+      /// @brief Represent file iterator used by xtd::io::directory.
+      class file_iterator : public std::iterator<std::input_iterator_tag, xtd::ustring> {
+        explicit file_iterator(const std::string& path, const std::string& pattern);
+      public:
+        /// @cond
+        file_iterator();
+        file_iterator(const file_iterator&) = default;
+        file_iterator(file_iterator&&) = default;
+        
+        file_iterator& operator++();
+        file_iterator operator++(int);
+        bool operator==(file_iterator other) const;
+        bool operator!=(file_iterator other) const {return !operator==(other);}
+        value_type operator*() const;
+        /// @endcond
+        
+      private:
+        friend xtd::io::directory;
+        struct data;
+        std::shared_ptr<data> data_;
+      };
+      
+      /// @brief Represent file system iterator used by xtd::io::directory.
+      class file_system_iterator : public std::iterator<std::input_iterator_tag, xtd::ustring> {
+        explicit file_system_iterator(const std::string& path, const std::string& pattern);
+      public:
+        /// @cond
+        file_system_iterator();
+        file_system_iterator(const file_system_iterator&) = default;
+        file_system_iterator(file_system_iterator&&) = default;
+        
+        file_system_iterator& operator++();
+        file_system_iterator operator++(int);
+        bool operator==(file_system_iterator other) const;
+        bool operator!=(file_system_iterator other) const {return !operator==(other);}
+        value_type operator*() const;
+        /// @endcond
+        
+      private:
+        friend xtd::io::directory;
+        struct data;
+        std::shared_ptr<data> data_;
+      };
+
       static xtd::io::directory_info create_directory(const xtd::ustring& path);
       
       static bool exists(const xtd::ustring& path);
@@ -32,3 +97,14 @@ namespace xtd {
     };
   }
 }
+
+/// @cond
+namespace std {
+  inline xtd::io::directory::directory_iterator begin(xtd::io::directory::directory_iterator it) {return it;}
+  inline xtd::io::directory::directory_iterator end(xtd::io::directory::directory_iterator it) {return xtd::io::directory::directory_iterator();}
+  inline xtd::io::directory::file_iterator begin(xtd::io::directory::file_iterator it) {return it;}
+  inline xtd::io::directory::file_iterator end(xtd::io::directory::file_iterator it) {return xtd::io::directory::file_iterator();}
+  inline xtd::io::directory::file_system_iterator begin(xtd::io::directory::file_system_iterator it) {return it;}
+  inline xtd::io::directory::file_system_iterator end(xtd::io::directory::file_system_iterator it) {return xtd::io::directory::file_system_iterator();}
+}
+/// @endcond
