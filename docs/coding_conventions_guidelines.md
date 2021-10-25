@@ -17,7 +17,7 @@ root
   |   +- movies
   +- examples
   |   +- xtd.forms
-  |   |   +- appplication
+  |   |   +- application
   |   |   +- common_dialogs
   |   |   +- components
   |   |   +- ...
