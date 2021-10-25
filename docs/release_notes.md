@@ -2,13 +2,17 @@
 
 # Release Notes
 
-![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) 
+![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
+
+This version is currently in development. See [roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) to know the list of features and their progress
 
 ## Issues
 
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #16 - WriteFile never sets number_of_bytes_written to -1
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #19 - operator + and operator - does not build with xtd::delegate
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #20 - cannot build unit test project created with xtdc-gui
+
+______________________________________________________________________________________________
 
 ![0.1.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_1_0.png) (beta) October 10, 2021
 
