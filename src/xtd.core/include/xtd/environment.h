@@ -21,6 +21,7 @@
 #include "version.h"
 #include "collections/specialized/string_vector.h"
 #include "diagnostics/stack_trace.h"
+#include "io/directory.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -305,14 +306,12 @@ namespace xtd {
     /// @param option One of the enumeration values that specifies options to use for accessing a special folder.
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
-    /// @todo Add xtd::io::directory and uncomment lines.
     static xtd::ustring get_folder_path(environment::special_folder folder, environment::special_folder_option option);
     
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
-    /// @todo Add xtd::io::__opaque_io and uncomment lines.
     static xtd::collections::specialized::string_vector get_logical_drives() {
-      return {}; //__opaque_io::get_drives();
+      return io::directory::get_logical_drives();
     }
     
     /// @brief Terminates this process and returns an exit code to the operating system.
