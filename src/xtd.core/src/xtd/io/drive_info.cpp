@@ -9,6 +9,8 @@ using namespace std;
 using namespace xtd;
 using namespace io;
 
+const drive_info drive_info::empty;
+
 drive_info::drive_info(const ustring& drive_name) : drive_name_(drive_name) {
   if (drive_name.empty()) throw argument_exception(csf_);
   auto drives = native::drive::get_drives();

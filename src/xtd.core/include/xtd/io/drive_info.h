@@ -20,6 +20,9 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ drive_info : public object {
     public:
+      /// @brief Represents the uninitialized xtd::io::directory_info object. This field is constant.
+      static const drive_info empty;
+      
       drive_info(const xtd::ustring& drive_name);
 
       size_t available_free_space() const;

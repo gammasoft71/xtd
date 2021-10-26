@@ -117,6 +117,10 @@ namespace xtd {
       
       static std::chrono::system_clock::time_point get_last_write_time(const xtd::ustring& path);
       
+      static std::vector<xtd::ustring> get_logical_drives();
+
+      static xtd::io::directory_info get_parent(const xtd::ustring& path);
+
       static void move(const xtd::ustring& src, const xtd::ustring& dst);
       
       static void remove(const xtd::ustring& path);
