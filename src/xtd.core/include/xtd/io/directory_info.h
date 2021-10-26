@@ -166,18 +166,18 @@ namespace xtd {
       };
 
       /// @brief Represent file system iterator used by xtd::io::directory_info.
-      class file_system_iterator : public std::iterator<std::input_iterator_tag, std::shared_ptr<xtd::io::file_system_info>> {
-        explicit file_system_iterator(const std::string& path, const std::string& pattern);
+      class file_system_info_iterator : public std::iterator<std::input_iterator_tag, std::shared_ptr<xtd::io::file_system_info>> {
+        explicit file_system_info_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
-        file_system_iterator();
-        file_system_iterator(const file_system_iterator&) = default;
-        file_system_iterator(file_system_iterator&&) = default;
+        file_system_info_iterator();
+        file_system_info_iterator(const file_system_info_iterator&) = default;
+        file_system_info_iterator(file_system_info_iterator&&) = default;
         
-        file_system_iterator& operator++();
-        file_system_iterator operator++(int);
-        bool operator==(file_system_iterator other) const;
-        bool operator!=(file_system_iterator other) const {return !operator==(other);}
+        file_system_info_iterator& operator++();
+        file_system_info_iterator operator++(int);
+        bool operator==(file_system_info_iterator other) const;
+        bool operator!=(file_system_info_iterator other) const {return !operator==(other);}
         value_type operator*() const;
         /// @endcond
         
@@ -218,8 +218,8 @@ namespace xtd {
       xtd::io::directory_info::file_iterator enumerate_files() const;
       xtd::io::directory_info::file_iterator enumerate_files(const xtd::ustring& pattern) const;
       
-      xtd::io::directory_info::file_system_iterator enumerate_file_system_infos() const;
-      xtd::io::directory_info::file_system_iterator enumerate_file_system_infos(const xtd::ustring& pattern) const;
+      xtd::io::directory_info::file_system_info_iterator enumerate_file_system_infos() const;
+      xtd::io::directory_info::file_system_info_iterator enumerate_file_system_infos(const xtd::ustring& pattern) const;
 
       std::vector<xtd::io::directory_info> get_directories() const;
       std::vector<xtd::io::directory_info> get_directories(const xtd::ustring& pattern) const;
@@ -248,7 +248,7 @@ namespace std {
   inline xtd::io::directory_info::directory_iterator end(xtd::io::directory_info::directory_iterator it) {return xtd::io::directory_info::directory_iterator();}
   inline xtd::io::directory_info::file_iterator begin(xtd::io::directory_info::file_iterator it) {return it;}
   inline xtd::io::directory_info::file_iterator end(xtd::io::directory_info::file_iterator it) {return xtd::io::directory_info::file_iterator();}
-  inline xtd::io::directory_info::file_system_iterator begin(xtd::io::directory_info::file_system_iterator it) {return it;}
-  inline xtd::io::directory_info::file_system_iterator end(xtd::io::directory_info::file_system_iterator it) {return xtd::io::directory_info::file_system_iterator();}
+  inline xtd::io::directory_info::file_system_info_iterator begin(xtd::io::directory_info::file_system_info_iterator it) {return it;}
+  inline xtd::io::directory_info::file_system_info_iterator end(xtd::io::directory_info::file_system_info_iterator it) {return xtd::io::directory_info::file_system_info_iterator();}
 }
 /// @endcond

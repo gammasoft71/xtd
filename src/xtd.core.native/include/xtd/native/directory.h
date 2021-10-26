@@ -21,6 +21,7 @@
 namespace xtd {
   /// @cond
   namespace io {
+    class directory;
     class directory_info;
     class file_info;
     class file_system_info;
@@ -122,6 +123,7 @@ namespace xtd {
       friend directory_iterator;
       friend drive;
       friend file_iterator;
+      friend xtd::io::directory;
       friend xtd::io::directory_info;
       friend xtd::io::file_info;
       friend xtd::io::file_system_info;

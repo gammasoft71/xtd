@@ -82,36 +82,36 @@ directory_info::file_iterator::value_type directory_info::file_iterator::operato
   return file_info(*data_->iterator_);
 }
 
-struct directory_info::file_system_iterator::data {
+struct directory_info::file_system_info_iterator::data {
   data() = default;
   data(const std::string& path, const std::string& pattern) : iterator_(path, pattern) {}
   native::directory::file_and_directory_iterator iterator_;
 };
 
-directory_info::file_system_iterator::file_system_iterator(const std::string& path, const std::string& pattern) {
+directory_info::file_system_info_iterator::file_system_info_iterator(const std::string& path, const std::string& pattern) {
   data_ = make_shared<data>(path, pattern);
 }
 
-directory_info::file_system_iterator::file_system_iterator() {
+directory_info::file_system_info_iterator::file_system_info_iterator() {
   data_ = make_shared<data>();
 }
 
-directory_info::file_system_iterator& directory_info::file_system_iterator::operator++() {
+directory_info::file_system_info_iterator& directory_info::file_system_info_iterator::operator++() {
   data_->iterator_++;
   return *this;
 }
 
-directory_info::file_system_iterator directory_info::file_system_iterator::operator++(int) {
-  file_system_iterator result = *this;
+directory_info::file_system_info_iterator directory_info::file_system_info_iterator::operator++(int) {
+  file_system_info_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory_info::file_system_iterator::operator==(directory_info::file_system_iterator other) const {
+bool directory_info::file_system_info_iterator::operator==(directory_info::file_system_info_iterator other) const {
   return data_->iterator_ == other.data_->iterator_;
 }
 
-directory_info::file_system_iterator::value_type directory_info::file_system_iterator::operator*() const {
+directory_info::file_system_info_iterator::value_type directory_info::file_system_info_iterator::operator*() const {
   if (data_ == nullptr) return std::make_shared<file_info>("");
   int32_t attributes = -1;
   native::directory::get_file_attributes(*data_->iterator_, attributes);
@@ -177,12 +177,12 @@ directory_info::file_iterator directory_info::enumerate_files(const xtd::ustring
   return file_iterator(full_path_, pattern);
 }
 
-directory_info::file_system_iterator directory_info::enumerate_file_system_infos() const {
+directory_info::file_system_info_iterator directory_info::enumerate_file_system_infos() const {
   return enumerate_file_system_infos("*");
 }
 
-directory_info::file_system_iterator directory_info::enumerate_file_system_infos(const xtd::ustring& pattern) const {
-  return file_system_iterator(full_path_, pattern);
+directory_info::file_system_info_iterator directory_info::enumerate_file_system_infos(const xtd::ustring& pattern) const {
+  return file_system_info_iterator(full_path_, pattern);
 }
 
 vector<directory_info> directory_info::get_directories() const {

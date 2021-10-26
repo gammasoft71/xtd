@@ -14,12 +14,14 @@
 
 namespace xtd::native {
   class directory;
+  class drive;
   class environment;
   class process;
   class translator;
   namespace unix {
     class strings final {
       friend xtd::native::directory;
+      friend xtd::native::drive;
       friend xtd::native::environment;
       friend xtd::native::process;
       friend xtd::native::translator;
@@ -28,6 +30,10 @@ namespace xtd::native {
       
       static bool contains(const std::string& str, const std::string& value) noexcept {
         return str.find(value) != str.npos;
+      }
+
+      static bool ends_with(const std::string& str, const std::string& value) noexcept {
+        return str.rfind(value) + value.size() == str.size();
       }
 
       template<typename separator_t, typename collection_t>

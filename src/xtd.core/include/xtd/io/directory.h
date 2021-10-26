@@ -64,18 +64,18 @@ namespace xtd {
       };
       
       /// @brief Represent file system iterator used by xtd::io::directory.
-      class file_system_iterator : public std::iterator<std::input_iterator_tag, xtd::ustring> {
-        explicit file_system_iterator(const std::string& path, const std::string& pattern);
+      class file_system_entry_iterator : public std::iterator<std::input_iterator_tag, xtd::ustring> {
+        explicit file_system_entry_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
-        file_system_iterator();
-        file_system_iterator(const file_system_iterator&) = default;
-        file_system_iterator(file_system_iterator&&) = default;
+        file_system_entry_iterator();
+        file_system_entry_iterator(const file_system_entry_iterator&) = default;
+        file_system_entry_iterator(file_system_entry_iterator&&) = default;
         
-        file_system_iterator& operator++();
-        file_system_iterator operator++(int);
-        bool operator==(file_system_iterator other) const;
-        bool operator!=(file_system_iterator other) const {return !operator==(other);}
+        file_system_entry_iterator& operator++();
+        file_system_entry_iterator operator++(int);
+        bool operator==(file_system_entry_iterator other) const;
+        bool operator!=(file_system_entry_iterator other) const {return !operator==(other);}
         value_type operator*() const;
         /// @endcond
         
@@ -87,7 +87,35 @@ namespace xtd {
 
       static xtd::io::directory_info create_directory(const xtd::ustring& path);
       
+      static xtd::io::directory::directory_iterator enumerate_directories(const xtd::ustring& path);
+      static xtd::io::directory::directory_iterator enumerate_directories(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      
+      static xtd::io::directory::file_iterator enumerate_files(const xtd::ustring& path);
+      static xtd::io::directory::file_iterator enumerate_files(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      
+      static xtd::io::directory::file_system_entry_iterator enumerate_file_system_entries(const xtd::ustring& path);
+      static xtd::io::directory::file_system_entry_iterator enumerate_file_system_entries(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      
       static bool exists(const xtd::ustring& path);
+      
+      static std::chrono::system_clock::time_point get_creation_time(const xtd::ustring& path);
+      
+      static xtd::ustring get_current_directory();
+
+      static std::vector<xtd::ustring> get_directories(const xtd::ustring& path);
+      static std::vector<xtd::ustring> get_directories(const xtd::ustring& path, const xtd::ustring& search_pattern);
+
+      static xtd::ustring get_directory_root(const xtd::ustring& path);
+
+      static std::vector<xtd::ustring> get_files(const xtd::ustring& path);
+      static std::vector<xtd::ustring> get_files(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      
+      static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path);
+      static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path, const xtd::ustring& search_pattern);
+      
+      static std::chrono::system_clock::time_point get_last_access_time(const xtd::ustring& path);
+      
+      static std::chrono::system_clock::time_point get_last_write_time(const xtd::ustring& path);
       
       static void move(const xtd::ustring& src, const xtd::ustring& dst);
       
@@ -104,7 +132,7 @@ namespace std {
   inline xtd::io::directory::directory_iterator end(xtd::io::directory::directory_iterator it) {return xtd::io::directory::directory_iterator();}
   inline xtd::io::directory::file_iterator begin(xtd::io::directory::file_iterator it) {return it;}
   inline xtd::io::directory::file_iterator end(xtd::io::directory::file_iterator it) {return xtd::io::directory::file_iterator();}
-  inline xtd::io::directory::file_system_iterator begin(xtd::io::directory::file_system_iterator it) {return it;}
-  inline xtd::io::directory::file_system_iterator end(xtd::io::directory::file_system_iterator it) {return xtd::io::directory::file_system_iterator();}
+  inline xtd::io::directory::file_system_entry_iterator begin(xtd::io::directory::file_system_entry_iterator it) {return it;}
+  inline xtd::io::directory::file_system_entry_iterator end(xtd::io::directory::file_system_entry_iterator it) {return xtd::io::directory::file_system_entry_iterator();}
 }
 /// @endcond
