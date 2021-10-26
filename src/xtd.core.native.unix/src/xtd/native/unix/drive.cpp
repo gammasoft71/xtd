@@ -18,30 +18,55 @@ using namespace xtd::native;
 namespace {
   string root_drive = {"/"};
 #if defined(__APPLE__)
-  string amovible_mounted_point() {return "/Volumes";}
-  vector<string> ram_drives = {"/Dev"};
-  vector<string> network_drives = {"/net", "/home"};
+  vector<string> ram_drives = {"/dev"};
+  vector<string> amovible_mounteds = {};
+  vector<string> amovible_mounted_points {"/System/Volumes"};
+  vector<string> network_drives = {"/System/Volumes/Data/home"};
+  vector<string> network_drive_points = {"/Volumes"};
 #else
-  string amovible_mounted_point() {return string("/media/") + [] (const std::string& variable)->string {auto value = getenv(variable.c_str()); return value ? value : "";}("USER");}
   vector<string> ram_drives = {"/run/vmblock-fuse", "/run/user/1000/gvfs"};
+  vector<string> amovible_mounteds = {};
+  vector<string> amovible_mounted_points {string("/media/") + [] (const std::string& variable)->string {auto value = getenv(variable.c_str()); return value ? value : "";}("USER")};
   vector<string> network_drives = {"/net", "/home", "/Network/Servers"};
+  vector<string> network_drive_points = {};
 #endif
 }
 
-bool drive::get_available_free_space(const std::string& root_path_name, int64_t& free_bytes, int64_t& total_number_of_bytes, int64_t& total_number_of_free_bytes) {
+bool drive::get_available_free_space(const std::string& root_path_name, size_t& free_bytes, size_t& total_number_of_bytes, size_t& total_number_of_free_bytes) {
   struct statfs stat;
   if (::statfs(root_path_name.c_str(), &stat) != 0) return false;
   
-  free_bytes = (stat.f_flags & ST_RDONLY) == ST_RDONLY ? 0 : stat.f_bavail * stat.f_bsize;
-  total_number_of_bytes = stat.f_blocks * stat.f_bsize;
-  total_number_of_free_bytes = (stat.f_flags & ST_RDONLY) == ST_RDONLY ? 0 : stat.f_bfree * stat.f_bsize;
+  free_bytes = static_cast<size_t>(stat.f_bavail * stat.f_bsize);
+  total_number_of_bytes = static_cast<size_t>(stat.f_blocks * stat.f_bsize);
+  //total_number_of_free_bytes = static_cast<size_t>((stat.f_flags & ST_RDONLY) == ST_RDONLY ? 0 : stat.f_bfree * stat.f_bsize);
+  total_number_of_free_bytes = static_cast<size_t>(stat.f_bfree * stat.f_bsize);
   return true;
 }
 
 int32_t drive::get_drive_type(const std::string& root_path_name) {
+  if (root_drive == root_path_name) return DRIVE_FIXED;
   if (find(ram_drives.begin(), ram_drives.end(), root_path_name) != ram_drives.end()) return DRIVE_RAMDISK;
-  if (root_path_name.find(amovible_mounted_point()) == 0) return DRIVE_CDROM;
   if (find(network_drives.begin(), network_drives.end(), root_path_name) != network_drives.end()) return DRIVE_REMOTE;
+  for (auto network_drive : network_drive_points)
+    if (root_path_name.find(network_drive) == 0) {
+#if defined(__APPLE__)
+      struct statfs stat;
+      if (statfs(root_path_name.c_str(), &stat) == 0 && (stat.f_flags & ST_RDONLY) == ST_RDONLY) return DRIVE_CDROM;
+      return DRIVE_REMOTE;
+#else
+      return DRIVE_REMOTE;
+#endif
+    }
+  for (auto amovible_mounted_point : amovible_mounted_points)
+    if (root_path_name.find(amovible_mounted_point) == 0) {
+#if defined(__APPLE__)
+      struct statfs stat;
+      if (statfs(root_path_name.c_str(), &stat) == 0 && (stat.f_flags & ST_RDONLY) == ST_RDONLY) return DRIVE_CDROM;
+      return DRIVE_FIXED;
+#else
+      return DRIVE_CDROM;
+#endif
+    }
   return DRIVE_FIXED;
 }
 
@@ -49,18 +74,38 @@ std::vector<std::string> drive::get_drives() {
   vector<string> drives;
   drives.push_back(root_drive);
   drives.insert(drives.end(), ram_drives.begin(), ram_drives.end());
+
+  drives.insert(drives.end(), amovible_mounteds.begin(), amovible_mounteds.end());
+
+  int32_t file_attributes = 0;
+  for (auto amovible_mounted_point : amovible_mounted_points) {
+    if ((directory::get_file_attributes(amovible_mounted_point, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
+      for (string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {
+        struct statfs stat;
+  #if defined(__APPLE__)
+        string mntonname = stat.f_mntonname;
+        if (statfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive)
+  #else
+        if (statfs(drive.c_str(), &stat) == 0)
+  #endif
+          drives.push_back(drive);
+      }
+    }
+  }
+  
   drives.insert(drives.end(), network_drives.begin(), network_drives.end());
   
-  int32_t file_attributes = 0;
-  if ((directory::get_file_attributes(amovible_mounted_point(), file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
-    for (string drive : directory::enumerate_directories(amovible_mounted_point(), "*")) {
-      struct statfs stat;
+  for (auto network_drive : network_drive_points) {
+    if ((directory::get_file_attributes(network_drive, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
+      for (string drive : directory::enumerate_directories(network_drive, "*")) {
+        struct statfs stat;
 #if defined(__APPLE__)
-      if (statfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive)
+        if (statfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive  && !unix::strings::ends_with(drive, ".timemachine")  && !unix::strings::ends_with(drive, ".localsnapshots"))
 #else
-      if (statfs(drive.c_str(), &stat) == 0)
+          if (statfs(drive.c_str(), &stat) == 0)
 #endif
-        drives.push_back(drive);
+            drives.push_back(drive);
+      }
     }
   }
   return drives;

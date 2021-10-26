@@ -13,7 +13,7 @@
 using namespace std;
 using namespace xtd::native;
 
-bool drive::get_available_free_space(const std::string& root_path_name, int64_t& free_bytes, int64_t& total_number_of_bytes, int64_t& total_number_of_free_bytes) {
+bool drive::get_available_free_space(const std::string& root_path_name, size_t& free_bytes, size_t& total_number_of_bytes, size_t& total_number_of_free_bytes) {
   return GetDiskFreeSpaceEx(root_path_name.c_str(), reinterpret_cast<PULARGE_INTEGER>(&free_bytes), reinterpret_cast<PULARGE_INTEGER>(&total_number_of_bytes), reinterpret_cast<PULARGE_INTEGER>(&total_number_of_free_bytes)) != FALSE;
 }
 
