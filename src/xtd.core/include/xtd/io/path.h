@@ -10,8 +10,6 @@
 #include "../core_export.h"
 #include "../static.h"
 #include "../ustring.h"
-/// @todo remove comment when drive_into.h will be create
-//#include "drive_into.h"
 #include "file.h"
 
 //#include <iostream>

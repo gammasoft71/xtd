@@ -1,4 +1,5 @@
 #include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/io/drive_info.h"
 #include "../../../include/xtd/environment.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/path.h>
@@ -171,11 +172,7 @@ int path::__get_index_path_rooted(const ustring& path) {
 }
 
 bool path::__is_drive(const ustring& path) noexcept {
-  /// @todo remove comment when drive_info::get_drives will be create
-  /*
-   for (auto drive : drive_info::get_drives())
-   if (drive.name() == path)
-   return true;
-   */
+  for (auto drive : drive_info::get_drives())
+    if (drive.name() == path) return true;
   return false;
 }

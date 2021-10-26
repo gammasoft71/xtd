@@ -8,6 +8,7 @@
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/literals.h>
 #include <xtd/diagnostics/process.h>
+#include <xtd/io/directory.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
@@ -83,8 +84,8 @@ bool application::allow_quit() {
 
 xtd::ustring application::common_app_data_path() {
   xtd::ustring common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
-  //if (!io::directory::exists(common_app_data_path))
-  //  io::directory::create_directory(common_app_data_path);
+  if (!io::directory::exists(common_app_data_path))
+    io::directory::create_directory(common_app_data_path);
   return common_app_data_path;
 }
 
@@ -146,8 +147,8 @@ xtd::ustring application::startup_path() {
 
 xtd::ustring application::user_app_data_path() {
   xtd::ustring user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
-  //if (!io::directory::exists(user_app_data_path))
-  //  io::directory::create_directory(user_app_data_path);
+  if (!io::directory::exists(user_app_data_path))
+    io::directory::create_directory(user_app_data_path);
   return user_app_data_path;
 }
 

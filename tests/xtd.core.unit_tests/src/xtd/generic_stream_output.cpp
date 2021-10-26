@@ -29,7 +29,7 @@ namespace unit_tests {
       assert::are_equal("false", result.str(), csf_);
     }
     
-    /// @todo Does nott work on linux with tunit but it's correct with xtd.core...
+    /// @todo Does not work on linux with tunit but it's correct with xtd.core...
     /// Mismatch with ostream operator << between xtd.core and xtd.tunit
     /// To debug when integration of xtd.core in xtd.tunit will done.
     /*

@@ -2,6 +2,7 @@
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/argument_exception.h"
 #include "../../include/xtd/convert_string.h"
+#include "../../include/xtd/io/directory.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -67,11 +68,11 @@ map<string, string>& environment::get_environment_variables(environment_variable
 ustring environment::get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
   ustring path = native::environment::get_know_folder_path(static_cast<int>(folder));
   
-  //if (option == environment::special_folder_option::none)
-  //  return !xtd::io::directory::exists(path) ? "" :  path;
+  if (option == environment::special_folder_option::none)
+    return !xtd::io::directory::exists(path) ? "" :  path;
   
-  //if (!xtd::io::directory::exists(path))
-  //  xtd::io::directory::create_directory(path);
+  if (!xtd::io::directory::exists(path))
+    xtd::io::directory::create_directory(path);
   
   return path;
 }
