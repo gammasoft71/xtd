@@ -1,6 +1,7 @@
 #include "../../../include/xtd/io/directory.h"
 #include "../../../include/xtd/io/file_info.h"
 #include "../../../include/xtd/io/directory_info.h"
+#include "../../../include/xtd/io/drive_info.h"
 #include "../../../include/xtd/io/file.h"
 #include "../../../include/xtd/io/path.h"
 #include "../../../include/xtd/system_exception.h"
@@ -209,6 +210,17 @@ system_clock::time_point directory::get_last_access_time(const ustring& path) {
 
 system_clock::time_point directory::get_last_write_time(const ustring& path) {
   return directory_info(path).last_write_time();
+}
+
+vector<ustring> directory::get_logical_drives() {
+  vector<ustring> drives;
+  for (auto drive : drive_info::get_drives())
+    drives.emplace_back(drive.name());
+  return drives;
+}
+
+directory_info directory::get_parent(const ustring& path) {
+  return directory_info(path).parent();
 }
 
 void directory::move(const ustring& src, const ustring& dst) {
