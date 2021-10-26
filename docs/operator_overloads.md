@@ -30,7 +30,7 @@ For example, if you overload the operator==, you should also overload the operat
 
 **✔️ CONSIDER** providing methods with friendly names that correspond to each overloaded operator.
 
-# Equals
+# equals
 
 The xtd::object class implement the == and != operators and used the virtual bool equals(const object&) const; method. By default this method check if the objects are the same addresses. You must just overload this method for used your own implementation.
 
@@ -64,7 +64,7 @@ static ustring form1::check_points(const point& p1, const point& p2) {
 }
 ```
 
-# ​CompareTo
+# ​compare_to
 
 The xtd::icomparable interface implement the <, <=, > and >= operators. and used the virtual int32_t compare_to(const type_t&) const; method. You must just overload this method for used your own implementation.
 
