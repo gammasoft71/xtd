@@ -207,16 +207,16 @@
 |------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
 | [binary_reader](../src/xtd.core/include/xtd/io/binary_reader.h)                                      | class        | ![progress](pictures/progress0.png)   |
 | [binary_writer](../src/xtd.core/include/xtd/io/binary_writer.h)                                      | class        | ![progress](pictures/progress0.png)   |
-| [directory](../src/xtd.core/include/xtd/io/directory.h)                                              | static class | ![progress](pictures/progress0.png)   |
-| [directory_info](../src/xtd.core/include/xtd/io/directory_info.h)                                    | class        | ![progress](pictures/progress0.png)   |
+| [directory](../src/xtd.core/include/xtd/io/directory.h)                                              | static class | ![progress](pictures/progress50.png)  |
+| [directory_info](../src/xtd.core/include/xtd/io/directory_info.h)                                    | class        | ![progress](pictures/progress50.png)  |
 | [directory_not_found_exception](../src/xtd.core/include/xtd/io/directory_not_found_exception.h)      | exception    | ![progress](pictures/progress100.png) |
-| [drive_info](../src/xtd.core/include/xtd/io/drive_info.h)                                            | class        | ![progress](pictures/progress0.png)   |
+| [drive_info](../src/xtd.core/include/xtd/io/drive_info.h)                                            | class        | ![progress](pictures/progress50.png)  |
 | [drive_not_found_exception](../src/xtd.core/include/xtd/io/drive_not_found_exception.h)              | exception    | ![progress](pictures/progress100.png) |
 | [end_of_stream_exception](../src/xtd.core/include/xtd/io/end_of_stream_exception.h)                  | exception    | ![progress](pictures/progress100.png) |
 | [file](../src/xtd.core/include/xtd/io/file.h)                                                        | static class | ![progress](pictures/progress100.png) |
 | [file_attributes](../src/xtd.core/include/xtd/io/file_attributes.h)                                  | enumeration  | ![progress](pictures/progress100.png) |
 | [file_format_exception](../src/xtd.core/include/xtd/io/file_format_exception.h)                      | exception    | ![progress](pictures/progress100.png) |
-| [file_info](../src/xtd.core/include/xtd/io/file_info.h)                                              | class        | ![progress](pictures/progress0.png)   |
+| [file_info](../src/xtd.core/include/xtd/io/file_info.h)                                              | class        | ![progress](pictures/progress50.png)  |
 | [file_load_exception](../src/xtd.core/include/xtd/io/file_load_exception.h)                          | exception    | ![progress](pictures/progress100.png) |
 | [file_not_found_exception](../src/xtd.core/include/xtd/io/file_not_found_exception.h)                | exception    | ![progress](pictures/progress100.png) |
 | [file_system_info](../src/xtd.core/include/xtd/io/file_system_info.h)                                | class        | ![progress](pictures/progress100.png) |
