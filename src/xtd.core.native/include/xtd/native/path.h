@@ -25,7 +25,7 @@ namespace xtd {
   /// @warning Internal use only
   namespace native {
     /// @cond
-    class directory;
+    class file_system;
     /// @endcond
 
     /// @brief Contains path native API.
@@ -38,7 +38,7 @@ namespace xtd {
     class core_native_export_ path final {
       path() = delete;
       friend xtd::io::path;
-      friend xtd::native::directory;
+      friend xtd::native::file_system;
     protected:
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return A platform-specific alternate character used to separate directory levels in a path string.

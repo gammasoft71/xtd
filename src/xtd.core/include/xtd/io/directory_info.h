@@ -496,7 +496,42 @@ namespace xtd {
       void move_to(const xtd::ustring& dest_dir_name);
       
       /// @brief Deletes this xtd::io::directory_info if it is empty.
+      /// @exception xtd::unauthorized_access_exception The directory contains a read-only file.
+      /// @exception xtd::io::directory_not_fond_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
+      /// @exception xtd::io::io_excpetion The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
+      /// @par Example
+      /// The following example throws an exception if you attempt to delete a directory that is not empty.
+      /// @code
+      /// #include <xtd/xtd>
       ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Specify the directories you want to manipulate.
+      ///     directory_info di1(R"(c:\MyDir)");
+      ///
+      ///     try {
+      ///       // Create the directories.
+      ///       di1.create();
+      ///       di1.create_subdirectory("temp");
+      ///
+      ///       //This operation will not be allowed because there are subdirectories.
+      ///       console::write_line("I am about to attempt to delete {0}", di1.name());
+      ///       di1.remove();
+      ///       console::write_line("The Delete operation was successful, which was unexpected.");
+      ///     } catch (const system_exception&) {
+      ///       console::write_line("The Delete operation failed as expected.");
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       void remove() const override;
       
       void remove(bool recursive) const;

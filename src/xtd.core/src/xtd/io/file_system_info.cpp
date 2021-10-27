@@ -4,7 +4,7 @@
 #include "../../../include/xtd/io/path_too_long_exception.h"
 #include "../../../include/xtd/platform_not_supported_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/directory.h>
+#include <xtd/native/file_system.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
@@ -16,7 +16,7 @@ file_attributes file_system_info::attributes() const {
 }
 
 file_system_info& file_system_info::attributes(xtd::io::file_attributes value) {
-  auto result = native::directory::set_file_attributes(full_path_, static_cast<int32_t>(value));
+  auto result = native::file_system::set_file_attributes(full_path_, static_cast<int32_t>(value));
   if (result != -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   attributes_ = value;
@@ -28,7 +28,7 @@ chrono::system_clock::time_point file_system_info::creation_time() const {
 }
 
 file_system_info& file_system_info::creation_time(chrono::system_clock::time_point value) {
-  auto result = native::directory::set_creation_time(full_path_, value);
+  auto result = native::file_system::set_creation_time(full_path_, value);
   if (result != -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   creation_time_ = value;
@@ -48,7 +48,7 @@ chrono::system_clock::time_point file_system_info::last_access_time() const {
 }
 
 xtd::io::file_system_info& file_system_info::last_access_time(std::chrono::system_clock::time_point value) {
-  auto result = native::directory::set_last_access_time(full_path_, value);
+  auto result = native::file_system::set_last_access_time(full_path_, value);
   if (result != -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   last_access_time_ = value;
@@ -60,7 +60,7 @@ chrono::system_clock::time_point file_system_info::last_write_time() const {
 }
 
 xtd::io::file_system_info& file_system_info::last_write_time(std::chrono::system_clock::time_point value) {
-  auto result = native::directory::set_last_write_time(full_path_, value);
+  auto result = native::file_system::set_last_write_time(full_path_, value);
   if (result != -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   last_write_time_ = value;
@@ -72,12 +72,12 @@ bool file_system_info::is_empty(const file_system_info& file_system_info) {
 }
 
 void file_system_info::refresh() {
-  full_path_ = native::directory::get_full_path(original_path_);
-  if (native::directory::is_path_too_long(full_path_)) throw path_too_long_exception(csf_);
+  full_path_ = native::file_system::get_full_path(original_path_);
+  if (native::file_system::is_path_too_long(full_path_)) throw path_too_long_exception(csf_);
   int32_t attributes = 0;
-  if (native::directory::get_file_attributes(full_path_, attributes) == 0) {
+  if (native::file_system::get_attributes(full_path_, attributes) == 0) {
     attributes_ = static_cast<xtd::io::file_attributes>(attributes);
-    native::directory::get_file_times(full_path_, creation_time_, last_access_time_, last_write_time_);
+    native::file_system::get_file_times(full_path_, creation_time_, last_access_time_, last_write_time_);
   }
 }
 

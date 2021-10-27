@@ -188,29 +188,7 @@ directory::file_and_directory_iterator::value_type directory::file_and_directory
   return data_->current_;
 }
 
-int32_t directory::copy_file(const std::string& source_file, const std::string& target_file) {
-  FILE* source = fopen(source_file.c_str(), "rb");
-  if (source == nullptr) return -1;
-  
-  FILE* target = fopen(target_file.c_str(), "wb");
-  if (target == nullptr) {
-    fclose(source);
-    return -1;
-  }
-  
-  size_t count = 0;
-  do {
-    uint8_t buffer[1024];
-    count = fread(buffer, 1, 1024, source);
-    if (count > 0) fwrite(buffer, 1, count, target);
-  } while (count == 1024);
-  
-  fclose(source);
-  fclose(target);
-  return 0;
-}
-
-int32_t directory::create_directory(const std::string& directory_name) {
+int32_t directory::create(const std::string& directory_name) {
   return CreateDirectoryA(directory_name.c_str(), nullptr) != FALSE ? 0 : -1;
 }
 
@@ -231,76 +209,10 @@ string directory::get_current_directory() {
   return _getcwd(path, MAX_PATH) ? path : "";
 }
 
-int32_t directory::get_file_attributes(const std::string& path, int32_t& attributes) {
-  attributes = GetFileAttributesA(path.c_str());
-  if (attributes == INVALID_FILE_ATTRIBUTES)
-    return -1;
-  return 0;
-}
-
-int32_t directory::get_file_times(const std::string& path, std::chrono::system_clock::time_point& creation_time, std::chrono::system_clock::time_point& last_access_time, std::chrono::system_clock::time_point& last_write_time) {
-  struct stat file_stat;
-  if (stat(path.c_str(), &file_stat) != 0)
-    return -1;
-  creation_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(file_stat.st_ctime));
-  last_access_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(file_stat.st_atime));
-  last_write_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(file_stat.st_mtime));
-  return 0;
-}
-
-string directory::get_full_path(const std::string& relative_path) {
-  char full_path[MAX_PATH + 1];
-  return _fullpath(full_path, relative_path.c_str(), MAX_PATH) ? full_path : "";
-}
-
-size_t directory::get_file_size(const std::string& path) {
-  WIN32_FIND_DATA file;
-  void* handle = FindFirstFileA(path.c_str(), &file);
-  if (handle == INVALID_HANDLE_VALUE)
-    return 0;
-  
-  ULARGE_INTEGER size;
-  size.HighPart = file.nFileSizeHigh;
-  size.LowPart = file.nFileSizeLow;
-  FindClose(handle);
-  return static_cast<size_t>(size.QuadPart);
-}
-
-bool directory::is_path_too_long(const std::string& path) {
-  return path.size() > MAX_PATH;
-}
-
-int32_t directory::move_file(const std::string& old_path, const std::string& new_path) {
-  int32_t file_attributes = 0;
-  if (get_file_attributes(new_path, file_attributes) == 0)
-    return -1;
-  return ::rename(old_path.c_str(), new_path.c_str());
-}
-
-int32_t directory::remove_directory(const std::string& directory_name) {
+int32_t directory::remove(const std::string& directory_name) {
   return RemoveDirectoryA(directory_name.c_str()) != FALSE ? 0 : -1;
-}
-
-int32_t directory::remove_file(const std::string& file) {
-  return ::remove(file.c_str());
 }
 
 int32_t directory::set_current_directory(const std::string& directory_name) {
   return _chdir(directory_name.c_str());
-}
-
-int32_t directory::set_creation_time(const std::string &path, std::chrono::system_clock::time_point &creation_time) {
-  return -1;
-}
-
-int32_t directory::set_file_attributes(const std::string& path, int32_t attributes) {
-  return -1;
-}
-
-int32_t directory::set_last_access_time(const std::string &path, std::chrono::system_clock::time_point &last_access_time) {
-  return -1;
-}
-
-int32_t directory::set_last_write_time(const std::string &path, std::chrono::system_clock::time_point &last_write_time) {
-  return -1;
 }

@@ -37,6 +37,7 @@ add_sources(
   src/xtd/native/unix/drive.cpp
   src/xtd/native/unix/environment.cpp
   src/xtd/native/unix/file.cpp
+  src/xtd/native/unix/file_system.cpp
   src/xtd/native/unix/guid.cpp
   src/xtd/native/unix/path.cpp
   src/xtd/native/unix/process.cpp
@@ -47,7 +48,7 @@ add_sources(
 if (APPLE)
   add_sources(
     src/xtd/native/unix/debugger.mm
-    src/xtd/native/unix/directory.mm
+    src/xtd/native/unix/file_system.mm
     src/xtd/native/unix/system_sound.mm
     src/xtd/native/unix/translator.mm
   )
