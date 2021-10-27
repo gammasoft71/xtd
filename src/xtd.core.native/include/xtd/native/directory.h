@@ -185,6 +185,11 @@ namespace xtd {
       /// @return The fulll path.
       /// @warning Internal use only
       static std::string get_full_path(const std::string& relative_path);
+      /// @brief Check if specified path is too long for the OS.
+      /// @param path The path to cjheck the size.
+      /// @return true if path too long; otherwiser false.
+      /// @warning Internal use only
+      static bool is_path_too_long(const std::string& path);
       /// @brief Moves a file or a directory and its contents to a new location.
       /// @param old_path The path of the file or directory to move.
       /// @param new_path The path to the new location for old_path. If old_path is a file, then new_path must also be a file name.

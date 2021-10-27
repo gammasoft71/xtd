@@ -4,7 +4,9 @@
 #include "../../../include/xtd/io/file_info.h"
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/io/path_too_long_exception.h"
 #include "../../../include/xtd/security/security_exception.h"
+#include "../../../include/xtd/argument_exception.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
@@ -122,6 +124,8 @@ directory_info::file_system_info_iterator::value_type directory_info::file_syste
 const directory_info directory_info::empty;
 
 directory_info::directory_info(const xtd::ustring& path) {
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   original_path_ = path.length() == 2 && path[1] == ':' ?  "." : path;
   refresh();
 }
@@ -129,10 +133,6 @@ directory_info::directory_info(const xtd::ustring& path) {
 bool directory_info::exists() const {
   int32_t attributes = 0;
   return native::directory::get_file_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory;
-}
-
-size_t directory_info::length() const {
-  return native::directory::get_file_size(full_path_);
 }
 
 ustring directory_info::name() const {
@@ -151,11 +151,16 @@ directory_info directory_info::root() const {
   return directory_info(path::get_path_root(full_path_));
 }
 
-void directory_info::create() const {
+void directory_info::create() {
   if (native::directory::create_directory(full_path_) != 0) throw io_exception(csf_);
+  refresh();
 }
 
 directory_info directory_info::create_subdirectory(const ustring& path) const {
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
+  if (native::directory::is_path_too_long(path::combine(full_path_, path))) throw path_too_long_exception(csf_);
+
   directory_info dir_info(path::combine(full_path_, path));
   if (!dir_info.exists()) dir_info.create();
   return dir_info;

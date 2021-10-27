@@ -11,12 +11,81 @@
 namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
-    /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of Directories, and aids in the creation of xtd::io::directory_stream objects.
+    /// @brief Exposes static methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
     /// @par Namespace
     /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
+    /// @par Example
+    /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
+    /// @code
+    /// #include <xtd/xtd>
+    ///
+    /// using namespace xtd;
+    /// using namespace xtd::io;
+    ///
+    /// class program {
+    /// public:
+    ///   static void main() {
+    ///     ustring source_directory = R"(C:\current)";
+    ///     ustring archive_directory = R"(C:\archive)";
+    ///
+    ///     try {
+    ///       auto txt_files = directory::enumerate_files(source_directory, "*.txt");
+    ///
+    ///       for (ustring current_file : txt_files) {
+    ///         ustring file_name = current_file.substring(source_directory.size() + 1);
+    ///         directory::move(current_file, path::combine(archive_directory, file_name));
+    ///       }
+    ///     } catch (system_exception& e) {
+    ///       console::write_line(e.message());
+    ///     }
+    ///   }
+    /// };
+    ///
+    /// startup_(program);
+    /// @endcode
+    /// @par Example
+    /// The following example demonstrates how to move a directory and all its files to a new directory. The original directory no longer exists after it has been moved.
+    /// @code
+    /// #include <xtd/xtd>
+    ///
+    /// using namespace xtd;
+    /// using namespace xtd::io;
+    ///
+    /// class program {
+    /// public:
+    ///   static void main() {
+    ///     ustring source_directory = R"(C:\source)";
+    ///     ustring destination_directory = R"(C:\destination)";
+    ///
+    ///     try {
+    ///       directory::move(source_directory, destination_directory);
+    ///     } catch (const system_exception& e) {
+    ///       console::write_line(e.message());
+    ///     }
+    ///   }
+    /// };
+    ///
+    /// startup_(program);
+    /// @endcode
+    /// @remarks Use the xtd::io::directory class for typical operations such as copying, moving, renaming, creating, and deleting directories.
+    /// * To create a directory, use one of the xtd::io::directory::create_directory methods.
+    /// * To delete a directory, use one of the xtd::io::directory::remove methods.
+    /// * To get or set the current directory for an app, use the xtd::io::directory::get_current_directory or xtd::io::directory::set_current_directory method.
+    /// * To manipulate date/time information related to the creation, access, and writing of a directory, use methods such as xtd::io::directory::set_last_access_time and xtd::io::directory::set_creation_time.
+    /// @remarks The static methods of the xtd::io::directory class perform security checks on all methods. If you are going to reuse an object several times, consider using the corresponding instance method of xtd::io::directory_info instead, because the security check will not always be necessary.
+    /// @remarks If you are performing only one directory-related action, it might be more efficient to use a static xtd::io::directory method rather than a corresponding xtd::io::directory_info instance method. Most xtd::io::directory methods require the path to the directory that you are manipulating.
+    /// @note In members that accept a string path parameter, that path must be well-formed or an exception is raised. For example, if a path is fully qualified but begins with a space (" c:\temp"), the path string isn't trimmed, so the path is considered malformed and an exception is raised. In addition, a path or a combination of paths cannot be fully qualified twice. For example, "c:\temp c:\windows" also raises an exception. Ensure that your paths are well-formed when using methods that accept a path string. For more information see xtd::io::path.
+    /// @remarks In members that accept a path, the path can refer to a file or a directory. You can use a full path, a relative path, or a Universal Naming Convention (UNC) path for a server and share name. For example, all the following are acceptable paths:
+    /// * "c:\\MyDir".
+    /// * "MyDir\\MySubdir".
+    /// * "\\\\MyServer\\MyShare".
+    /// To demand permissions for a directory and all its subdirectories, end the path string with the directory separator character. (For example, "C:\Temp\" grants access to C:\Temp\ and all its subdirectories.) To demand permissions only for a specific directory, end the path string with a period. (For example, "C:\Temp\." grants access only to C:\Temp\, not to its subdirectories.)
+    /// In members that accept a search_pattern parameter, the search string can be any combination of literal characters and two wildcard characters; * and ?. This parameter does not recognize regular expressions. For more information, see the xtd::io::directory::enumerate_directories(ustring, ustring) method or any other method that uses the search_pattern parameter.
+    /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+    /// @remarks xtd::io::directory and xtd::io::directory_info are not supported for use in Windows Store apps. For information about how to access files and folders in Windows Store apps, see <a href=https://msdn.microsoft.com/library/windows/apps/hh758319.aspx>Accessing data and files (Windows Store apps)</a>.
     class core_export_ directory static_ {
     public:
       /// @brief Represent directory iterator used by xtd::io::directory.
@@ -85,6 +154,63 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
 
+      /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
+      /// @param path The directory to create.
+      /// @return An object that represents the directory at the specified path. This object is returned regardless of whether a directory at the specified path already exists.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example creates and deletes the specified directory:
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Specify the directories you want to manipulate.
+      ///     directory_info di("c:\\MyDir");
+      ///     try {
+      ///       // Determine whether the directory exists.
+      ///       if (di.exists()) {
+      ///         // Indicate that the directory already exists.
+      ///         console::write_line("That path exists already.");
+      ///         return;
+      ///       }
+      ///
+      ///       // Try to create the directory.
+      ///       di.create();
+      ///       console::write_line("The directory was created successfully.");
+      ///
+      ///       // Delete the directory.
+      ///       di.remove();
+      ///       console::write_line("The directory was deleted successfully.");
+      ///     }
+      ///     catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @par Example
+      /// To create the directory C:\Users\User1\Public\Html when the current directory is C:\Users\User1, use any of the following calls to ensure that the backslash is interpreted properly:
+      /// @code
+      /// directory::create_directory("Public\\Html");
+      /// directory::create_directory("\\Users\\User1\\Public\\Html");
+      /// directory::create_directory("c:\\Users\\User1\\Public\\Html");
+      /// @endcode
+      /// @remarks Any and all directories specified in path are created, unless they already exist or unless some part of path is invalid. If the directory already exists, this method does not create a new directory, but it returns a DirectoryInfo object for the existing directory.
+      /// @remarks The path parameter specifies a directory path, not a file path.
+      /// @remarks Trailing spaces are removed from the end of the path parameter before creating the directory.
+      /// @remarks Creating a directory with only the colon character (:) is not supported, and will cause a not_supported_exception to be thrown.
+      /// @remarks On Unix systems, use a forward slash (/) as path separator.
       static xtd::io::directory_info create_directory(const xtd::ustring& path);
       
       static xtd::io::directory::directory_iterator enumerate_directories(const xtd::ustring& path);
@@ -123,6 +249,9 @@ namespace xtd {
 
       static void move(const xtd::ustring& src, const xtd::ustring& dst);
       
+      /// @brief Deletes an empty directory from a specified path.
+      /// @param path The name of the empty directory to remove. This directory must be writable and empty.
+      /// @exception xtd::io::io_exception A file with the same name and location specified by path exists. -or- The directory is the application's current working directory. -or- The directory specified by path is not empty. -or- The directory is read-only or contains a read-only file. -or- The directory is being used by another process.
       static void remove(const xtd::ustring& path);
 
       static void remove(const xtd::ustring& path, bool recursive);

@@ -99,6 +99,7 @@ add_sources(
   include/xtd/translator.h
   include/xtd/typeof.h
   include/xtd/types.h
+  include/xtd/unauthorized_access_exception.h
   include/xtd/underflow_exception.h
   include/xtd/unused.h
   include/xtd/using.h
