@@ -19,34 +19,18 @@ public:
       .size({ 150, 50 })
       .click += [this] {
         progress_box::show(*this, "Downloading", "Please wait...", 0, 0, 100, progress_box_options::show_cancel_button | progress_box_options::show_skip_button);
-        for(int32_t i = 0; i <= 100; ++i) {
+        for(int32_t i = progress_box::minimum(); i <= progress_box::maximum(); ++i) {
           std::this_thread::sleep_for(100ms); // Do some work...
-          progress_box::update(i, "Downloading", xtd::ustring::format("{}/{}", i, 100));
+          progress_box::update(i, "Downloading", xtd::ustring::format("{}/{}", i, progress_box::maximum()));
           if (progress_box::skipped()) i++;
           if (progress_box::cancelled()) break;
         }
         progress_box::hide();
       };
-
-    download_button2.parent(*this)
-      .text("Download All flags")
-      .location({ 10, 60 })
-      .size({ 150, 50 })
-      .click += [this] {
-      progress_box::show(*this, "Downloading", "Please wait...", 0, 0, 100, progress_box_options::all);
-      for (int32_t i = 0; i <= 100; ++i) {
-        std::this_thread::sleep_for(100ms); // Do some work...
-        progress_box::update(i, "Downloading", xtd::ustring::format("{}/{}", i, 100));
-        if (progress_box::skipped()) i++;
-        if (progress_box::cancelled()) break;
-      }
-      progress_box::hide();
-    };
   }
 
 private:
   button download_button;
-  button download_button2;
 };
 
 startup_(manual_test_form);
