@@ -90,6 +90,7 @@
 #include "translator.h"
 #include "typeof.h"
 #include "types.h"
+#include "unauthorized_access_exception.h"
 #include "underflow_exception.h"
 #include "unused.h"
 #include "using.h"

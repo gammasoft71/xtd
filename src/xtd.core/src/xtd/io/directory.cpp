@@ -3,8 +3,10 @@
 #include "../../../include/xtd/io/directory_info.h"
 #include "../../../include/xtd/io/drive_info.h"
 #include "../../../include/xtd/io/file.h"
+#include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path.h"
-#include "../../../include/xtd/system_exception.h"
+#include "../../../include/xtd/io/path_too_long_exception.h"
+#include "../../../include/xtd/argument_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -117,6 +119,8 @@ directory::file_system_entry_iterator::value_type directory::file_system_entry_i
 }
 
 directory_info directory::create_directory(const ustring& path) {
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
+  
   directory_info dir_info(path);
   if (!dir_info.exists()) {
     if (!ustring::is_empty(dir_info.parent().full_name()))

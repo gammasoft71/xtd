@@ -1,6 +1,7 @@
 #include "../../../include/xtd/io/file_system_info.h"
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/io/path_too_long_exception.h"
 #include "../../../include/xtd/platform_not_supported_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
@@ -72,6 +73,7 @@ bool file_system_info::is_empty(const file_system_info& file_system_info) {
 
 void file_system_info::refresh() {
   full_path_ = native::directory::get_full_path(original_path_);
+  if (native::directory::is_path_too_long(full_path_)) throw path_too_long_exception(csf_);
   int32_t attributes = 0;
   if (native::directory::get_file_attributes(full_path_, attributes) == 0) {
     attributes_ = static_cast<xtd::io::file_attributes>(attributes);

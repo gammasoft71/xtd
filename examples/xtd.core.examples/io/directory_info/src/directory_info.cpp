@@ -12,7 +12,6 @@ int main() {
   console::write_line("  extension = {}", di.extension());
   console::write_line("  last_access_time = {}", di.last_access_time());
   console::write_line("  last_write_time = {}", di.last_write_time());
-  console::write_line("  length = {}", di.length());
   console::write_line("  name = {}", di.name());
   console::write_line("  to_string = {}", di.to_string());
 }
@@ -26,6 +25,5 @@ int main() {
 //   extension =
 //   last_access_time = Fri Oct 22 19:22:14 2021
 //   last_write_time = Fri Oct 22 19:22:14 2021
-//   length = 96
 //   name = Debug
 //   to_string = .

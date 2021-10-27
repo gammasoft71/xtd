@@ -63,6 +63,7 @@ add_sources(
   src/xtd/tick.cpp
   src/xtd/ticks.cpp
   src/xtd/time_out_exception.cpp
+  src/xtd/unauthorized_access_exception.cpp
   src/xtd/underflow_exception.cpp
   src/xtd/ustring.cpp
   src/xtd/version.cpp
@@ -81,6 +82,8 @@ add_sources(
   src/xtd/diagnostics/process_start_info.cpp
   src/xtd/diagnostics/stopwatch.cpp
   src/xtd/diagnostics/trace_listener.cpp
+  src/xtd/io/directory.cpp
+  src/xtd/io/directory_info.cpp
   src/xtd/io/directory_not_found_exception.cpp
   src/xtd/io/drive_not_found_exception.cpp
   src/xtd/io/end_of_stream_exception.cpp

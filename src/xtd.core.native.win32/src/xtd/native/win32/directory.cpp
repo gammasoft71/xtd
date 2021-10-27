@@ -266,6 +266,10 @@ size_t directory::get_file_size(const std::string& path) {
   return static_cast<size_t>(size.QuadPart);
 }
 
+bool directory::is_path_too_long(const std::string& path) {
+  return path.size() > MAX_PATH;
+}
+
 int32_t directory::move_file(const std::string& old_path, const std::string& new_path) {
   int32_t file_attributes = 0;
   if (get_file_attributes(new_path, file_attributes) == 0)
