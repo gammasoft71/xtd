@@ -8,8 +8,10 @@
 #include "../../../include/xtd/security/security_exception.h"
 #include "../../../include/xtd/argument_exception.h"
 #include "../../../include/xtd/not_implemented_exception.h"
+#include "../../../include/xtd/unauthorized_access_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
+#include <xtd/native/file_system.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
@@ -116,7 +118,7 @@ bool directory_info::file_system_info_iterator::operator==(directory_info::file_
 directory_info::file_system_info_iterator::value_type directory_info::file_system_info_iterator::operator*() const {
   if (data_ == nullptr) return std::make_shared<file_info>("");
   int32_t attributes = -1;
-  native::directory::get_file_attributes(*data_->iterator_, attributes);
+  native::file_system::get_attributes(*data_->iterator_, attributes);
   if ((static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory) return std::make_shared<directory_info>(*data_->iterator_);
   return std::make_shared<file_info>(*data_->iterator_);
 }
@@ -132,7 +134,7 @@ directory_info::directory_info(const xtd::ustring& path) {
 
 bool directory_info::exists() const {
   int32_t attributes = 0;
-  return native::directory::get_file_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory;
+  return native::file_system::get_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory;
 }
 
 ustring directory_info::name() const {
@@ -152,14 +154,14 @@ directory_info directory_info::root() const {
 }
 
 void directory_info::create() {
-  if (native::directory::create_directory(full_path_) != 0) throw io_exception(csf_);
+  if (native::directory::create(full_path_) != 0) throw io_exception(csf_);
   refresh();
 }
 
 directory_info directory_info::create_subdirectory(const ustring& path) const {
   if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
-  if (native::directory::is_path_too_long(path::combine(full_path_, path))) throw path_too_long_exception(csf_);
+  if (native::file_system::is_path_too_long(path::combine(full_path_, path))) throw path_too_long_exception(csf_);
 
   directory_info dir_info(path::combine(full_path_, path));
   if (!dir_info.exists()) dir_info.create();
@@ -247,15 +249,39 @@ void directory_info::remove() const {
 }
 
 void directory_info::remove(bool recursive) const {
-  if (!exists()) throw security::security_exception(csf_);
+  if (!exists()) throw directory_not_found_exception(csf_);
+  
+  // I don't think is a good think that check recursively directory is read only before...
+  /*
+  function<bool(const ustring& path, bool recursive)> is_read_only = [&](const ustring& path, bool recursive) {
+    if (recursive) {
+      for (ustring item : native::directory::enumerate_files(path, "*")) {
+        if ((file_info(path::combine(path, item)).attributes() & file_attributes::read_only) == file_attributes::read_only)
+          return true;
+      }
+      for (ustring item : native::directory::enumerate_directories(path, "*")) {
+        if (is_read_only(path::combine(path, item), recursive))
+          return true;
+      }
+    }
+
+    return (directory_info(path).attributes() & file_attributes::read_only) == file_attributes::read_only;
+  };
+ 
+  if (is_read_only(full_path_, recursive) == true) throw unauthorized_access_exception(csf_);
+   */
   
   if (recursive) {
-    for (ustring item : native::directory::enumerate_files(full_path_, "*"))
+    for (ustring item : native::directory::enumerate_files(full_path_, "*")) {
+      file_info fi(path::combine(full_path_, item));
+      if ((fi.attributes() & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception(csf_);
       file::remove(path::combine(full_path_, item));
+    }
     for (ustring item : native::directory::enumerate_directories(full_path_, "*"))
       directory_info(path::combine(full_path_, item)).remove(true);
   }
   
-  if (native::directory::remove_directory(full_path_) != 0)
+  if ((attributes() & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception(csf_);
+  if (native::directory::remove(full_path_) != 0)
     throw io_exception(csf_);
 }

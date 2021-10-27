@@ -23,8 +23,6 @@ namespace xtd {
   namespace io {
     class directory;
     class directory_info;
-    class file_info;
-    class file_system_info;
   }
   /// @endcond
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
@@ -32,6 +30,7 @@ namespace xtd {
   namespace native {
     /// @cond
     class drive;
+    class file_system;
     /// @endcond
     
     /// @brief Contains directory native API.
@@ -120,25 +119,16 @@ namespace xtd {
       };
 
     protected:
-      friend directory_iterator;
       friend drive;
-      friend file_iterator;
+      friend file_system;
       friend xtd::io::directory;
       friend xtd::io::directory_info;
-      friend xtd::io::file_info;
-      friend xtd::io::file_system_info;
 
-      /// @brief Copy a specified source file to a target file.
-      /// @param source_file The source file to copy.
-      /// @param target_file The target file where copy.
-      /// @return 0 if success; otherwise failed.
-      /// @warning Internal use only
-      static int32_t copy_file(const std::string& source_file, const std::string& target_file);
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
       /// @param directory_name The directory to create.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t create_directory(const std::string& directory_name);
+      static int32_t create(const std::string& directory_name);
       /// @brief Returns an enumerable collection of directory full names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search.
       /// @param pattern The search string to match against the names of directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -161,80 +151,16 @@ namespace xtd {
       /// @return The currrent directory.
       /// @warning Internal use only
       static std::string get_current_directory();
-      /// @brief Gets the attributes for the specified file or directory path.
-      /// @param path The relative or absolute path to the directory to get attribute.
-      /// @param attribute The file or path attribute. (see file_attribute.h)
-      /// @return 0 if success; otherwise failed.
-      /// @warning Internal use only
-      static int32_t get_file_attributes(const std::string& path, int32_t& attributes);
-      /// @brief Get file size of specified path.
-      /// @param path The relative or absolute path to the directory to get size.
-      /// @return The file size.
-      /// @warning Internal use only
-      static size_t get_file_size(const std::string& path);
-      /// @brief Get file creeation time, last access time and lastt write time of specified path.
-      /// @param path The relative or absolute path to the directory to get times.
-      /// @param creation_time That contains the creation time.
-      /// @param last_access_time That contains the last access time.
-      /// @param last_write_time That contains the last write time.
-      /// @return 0 if success; otherwise failed.
-      /// @warning Internal use only
-      static int32_t get_file_times(const std::string& path, std::chrono::system_clock::time_point& creation_time, std::chrono::system_clock::time_point& last_access_time, std::chrono::system_clock::time_point& last_write_time);
-      /// @brief Get full path of specified path.
-      /// @param relative_path The relative path to the directory to search.
-      /// @return The fulll path.
-      /// @warning Internal use only
-      static std::string get_full_path(const std::string& relative_path);
-      /// @brief Check if specified path is too long for the OS.
-      /// @param path The path to cjheck the size.
-      /// @return true if path too long; otherwiser false.
-      /// @warning Internal use only
-      static bool is_path_too_long(const std::string& path);
-      /// @brief Moves a file or a directory and its contents to a new location.
-      /// @param old_path The path of the file or directory to move.
-      /// @param new_path The path to the new location for old_path. If old_path is a file, then new_path must also be a file name.
-      /// @return 0 if success; otherwise failed.
-      /// @warning Internal use only
-      static int32_t move_file(const std::string& old_path, const std::string& new_path);
       /// @brief Deletes an empty directory from a specified path.
       /// @param directory_name The name of the empty directory to remove. This directory must be writable and empty.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t remove_directory(const std::string& directory_name);
-      /// @brief Permanently deletes a speccified file.
-      /// @param file The file name to delete.
-      /// @return 0 if success; otherwise failed.
-      /// @warning Internal use only
-      static int32_t remove_file(const std::string& file);
+      static int32_t remove(const std::string& directory_name);
       /// @brief Set the current directory.
       /// @param dirrectory_name The currrent directory.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
       static int32_t set_current_directory(const std::string& directory_name);
-      /// @brief Sets the creation time for the specified file or directory path.
-      /// @param path The relative or absolute path to the directory to get attribute.
-      /// @param creation_time The file or path creation time.
-      /// @return 0 if success; -1 operation is not supported; otherwise failed.
-      /// @warning Internal use only
-      static int32_t set_creation_time(const std::string& path, std::chrono::system_clock::time_point& creation_time);
-      /// @brief Sets the attributes for the specified file or directory path.
-      /// @param path The relative or absolute path to the directory to get attribute.
-      /// @param attribute The file or path attribute. (see file_attribute.h)
-      /// @return 0 if success; -1 operation is not supported; otherwise failed.
-      /// @warning Internal use only
-      static int32_t set_file_attributes(const std::string& path, int32_t attributes);
-      /// @brief Sets the last access time for the specified file or directory path.
-      /// @param path The relative or absolute path to the directory to get attribute.
-      /// @param last_access_time The file or path last access time.
-      /// @return 0 if success; -1 operation is not supported; otherwise failed.
-      /// @warning Internal use only
-      static int32_t set_last_access_time(const std::string& path, std::chrono::system_clock::time_point& last_access_time);
-      /// @brief Sets the last write time for the specified file or directory path.
-      /// @param path The relative or absolute path to the directory to get attribute.
-      /// @param last_write_time The file or path last write time.
-      /// @return 0 if success; -1 operation is not supported; otherwise failed.
-      /// @warning Internal use only
-      static int32_t set_last_write_time(const std::string& path, std::chrono::system_clock::time_point& last_write_time);
     };
   }
 }

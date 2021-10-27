@@ -17,7 +17,7 @@
 namespace xtd {
   /// @cond
   namespace io {
-    class file;
+    class file_info;
   }
   /// @endcond
 
@@ -33,13 +33,30 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ file final {
       file() = delete;
-      friend xtd::io::file;
+      friend xtd::io::file_info;
     protected:
-      /// @brief Gets the file attributes.
-      /// @param path A string containing the file path.
-      /// @return The file attributes. (see file_attribute.h file).
+      /// @brief Copy a specified source file to a target file.
+      /// @param source_file The source file to copy.
+      /// @param target_file The target file where copy.
+      /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t get_attributes(const std::string& path);
+      static int32_t copy(const std::string& source_file, const std::string& target_file);
+      /// @brief Get file size of specified path.
+      /// @param path The relative or absolute path to the directory to get size.
+      /// @return The file size.
+      /// @warning Internal use only
+      static size_t get_size(const std::string& path);
+      /// @brief Moves a file or a directory and its contents to a new location.
+      /// @param old_path The path of the file or directory to move.
+      /// @param new_path The path to the new location for old_path. If old_path is a file, then new_path must also be a file name.
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t move(const std::string& old_path, const std::string& new_path);
+      /// @brief Permanently deletes a speccified file.
+      /// @param file The file name to delete.
+      /// @return 0 if success; otherwise failed.
+      /// @warning Internal use only
+      static int32_t remove(const std::string& file);
     };
   }
 }
