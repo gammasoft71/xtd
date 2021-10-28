@@ -24,7 +24,8 @@ fi
 echo "install needed packages and libraries..."
 case "$OSTYPE" in
   *"Darwin"*) brew update; brew install cmake;;
-  *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"* | *"openSUSE"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libgsound-dev libgtk-3-dev cmake -y;;
+  *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libgsound-dev libgtk-3-dev cmake -y;;
+  *"openSUSE"*) sudo apt update; sudo zipper update; sudo zipper in build-essential codeblocks doxygen libgsound-dev libgtk-3-dev cmake -y;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install cmake gsound-devel gtk3-devel -y;;
 esac
 
