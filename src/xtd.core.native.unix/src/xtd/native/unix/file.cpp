@@ -1,21 +1,47 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file.h>
-#include <xtd/native/file_attribute.h>
+#include <xtd/native/file_system.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstring>
+#include <unistd.h>
 #include <sys/stat.h>
 
 using namespace xtd::native;
 
-int file::get_attributes(const std::string& path) {
-  struct stat status = {};
-  if (stat(path.c_str(), &status) != 0) return -1;
-  int file_attribute = 0x00;
-  if ((status.st_mode & S_IRUSR) == S_IRUSR && (status.st_mode & S_IWUSR) == 0) file_attribute |= FILE_ATTRIBUTE_READONLY;
-  if ((status.st_mode & S_IFSOCK) == S_IFSOCK || (status.st_mode & S_IFIFO) == S_IFIFO) file_attribute |= FILE_ATTRIBUTE_SYSTEM;
-  if ((status.st_mode & S_IFDIR) == S_IFDIR) file_attribute |= FILE_ATTRIBUTE_DIRECTORY;
-  if ((status.st_mode & S_IFREG) == S_IFREG) file_attribute |= FILE_ATTRIBUTE_ARCHIVE;
-  if ((status.st_mode & S_IFBLK) == S_IFBLK || (status.st_mode & S_IFCHR) == S_IFCHR) file_attribute |= FILE_ATTRIBUTE_DEVICE;
-  if ((status.st_mode & S_IFREG) == S_IFREG) file_attribute |= FILE_ATTRIBUTE_NORMAL;
-  return file_attribute;
+int32_t file::copy(const std::string& source_file, const std::string& target_file) {
+  FILE* source = fopen(source_file.c_str(), "rb");
+  if (source == nullptr) return -1;
+  
+  FILE* target = fopen(target_file.c_str(), "wb");
+  if (target == nullptr) {
+    fclose(source);
+    return -1;
+  }
+  
+  size_t count = 0;
+  do {
+    uint8_t buffer[1024];
+    count = fread(buffer, 1, 1024, source);
+    if (count > 0) fwrite(buffer, 1, count, target);
+  } while (count == 1024);
+  
+  fclose(source);
+  fclose(target);
+  return 0;
+}
+
+size_t file::get_size(const std::string& path) {
+  struct stat status;
+  if (stat(path.c_str(), &status) != 0) return 0;
+  return static_cast<size_t>(status.st_size);
+}
+
+int32_t file::move(const std::string& old_path, const std::string& new_path) {
+  int32_t file_attributes = 0;
+  if (file_system::get_attributes(new_path, file_attributes) == 0) return -1;
+  return rename(old_path.c_str(), new_path.c_str());
+}
+
+int32_t file::remove(const std::string& file) {
+  return unlink(file.c_str());
 }

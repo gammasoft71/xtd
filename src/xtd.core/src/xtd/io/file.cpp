@@ -5,6 +5,7 @@
 #include "../../../include/xtd/io/path.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file.h>
+#include <xtd/native/file_system.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
@@ -43,15 +44,17 @@ ofstream file::create_text(const ustring& path) {
 
 bool file::exists(const ustring& path) noexcept {
   try {
-    return native::file::get_attributes(path) != -1;
+    int32_t attributes = 0;
+    return native::file_system::get_attributes(path, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) != file_attributes::directory;
   } catch(...) {
     return false;
   }
 }
 
 file_attributes file::get_attributes(const ustring& src) {
-  if (!exists(string(src))) throw file_not_found_exception(csf_);
-  return (file_attributes) native::file::get_attributes(src.c_str());
+  int32_t attributes = 0;
+  if (native::file_system::get_attributes(src, attributes) != 0) throw file_not_found_exception(csf_);
+  return static_cast<file_attributes>(attributes);
 }
 
 void file::move(const ustring& src, const ustring& dest) {

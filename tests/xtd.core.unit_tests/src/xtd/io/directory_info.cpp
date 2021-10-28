@@ -52,6 +52,18 @@ namespace unit_tests {
       assert::are_equal("directory", di.name(), csf_);
     }
 
+    void test_method_(remove_an_existing_directory) {
+      directory_info di(path::combine(test_path, "directory"));
+      di.create();
+      assert::does_not_throw([&]{di.remove();}, csf_);
+      directory_assert::does_not_exist(path::combine(test_path, "directory"));
+    }
+
+    void test_method_(remove_a_not_existing_directory) {
+      directory_info di(path::combine(test_path, "directory"));
+      assert::throws<directory_not_found_exception>([&]{di.remove();}, csf_);
+    }
+
   };
 
   const ustring test_directory_info::test_path = path::combine(path::get_temp_path(), "test_directory");

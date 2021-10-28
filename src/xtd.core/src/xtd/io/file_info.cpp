@@ -6,7 +6,8 @@
 #include "../../../include/xtd/argument_exception.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/directory.h>
+#include <xtd/native/file.h>
+#include <xtd/native/file_system.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
@@ -30,7 +31,7 @@ ustring file_info::directory_name() const {
 
 bool file_info::exists() const {
   int32_t attributes = 0;
-  return native::directory::get_file_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) != file_attributes::directory;
+  return native::file_system::get_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) != file_attributes::directory;
 }
 
 bool file_info::is_read_only() const {
@@ -38,7 +39,7 @@ bool file_info::is_read_only() const {
 }
 
 size_t file_info::length() const {
-  return native::directory::get_file_size(full_path_);
+  return native::file::get_size(full_path_);
 }
 
 ustring file_info::name() const {
@@ -54,7 +55,7 @@ std::ofstream file_info::append_text() const {
 file_info file_info::copy_to(const xtd::ustring& dest_file_name) const {
   if (!exists()) throw file_not_found_exception(csf_);
   if (file::exists(dest_file_name)) throw io_exception(csf_);
-  if (native::directory::copy_file(full_path_, path::get_full_path(dest_file_name)) != 0) throw io_exception(csf_);
+  if (native::file::copy(full_path_, path::get_full_path(dest_file_name)) != 0) throw io_exception(csf_);
   return file_info(dest_file_name);
 }
 
@@ -74,7 +75,7 @@ std::ofstream file_info::create_text() const {
 void file_info::move_to(const xtd::ustring& dest_file_name) {
   if (!exists()) throw file_not_found_exception(csf_);
   if ((attributes() & file_attributes::directory) == file_attributes::directory) throw argument_exception(csf_);
-  if (native::directory::move_file(full_path_, path::get_full_path(dest_file_name)) != 0)  throw io_exception(csf_);
+  if (native::file::move(full_path_, path::get_full_path(dest_file_name)) != 0)  throw io_exception(csf_);
   
   original_path_ = dest_file_name;
   refresh();
