@@ -8,6 +8,9 @@
 #include <cstring>
 #include <unistd.h>
 #include <sys/stat.h>
+#if !__APPLE__
+#include <linux/limits.h>
+#endif
 
 using namespace std;
 using namespace xtd::native;
