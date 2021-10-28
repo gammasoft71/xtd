@@ -2,6 +2,7 @@
 #include <xtd/native/directory.h>
 #include <xtd/native/drive.h>
 #include <xtd/native/drive_type.h>
+#include <xtd/native/file_system.h>
 #include "../../../../include/xtd/native/unix/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <map>
@@ -79,7 +80,7 @@ std::vector<std::string> drive::get_drives() {
 
   int32_t file_attributes = 0;
   for (auto amovible_mounted_point : amovible_mounted_points) {
-    if ((directory::get_file_attributes(amovible_mounted_point, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
+    if ((file_system::get_attributes(amovible_mounted_point, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
       for (string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {
         struct statfs stat;
   #if defined(__APPLE__)
@@ -96,7 +97,7 @@ std::vector<std::string> drive::get_drives() {
   drives.insert(drives.end(), network_drives.begin(), network_drives.end());
   
   for (auto network_drive : network_drive_points) {
-    if ((directory::get_file_attributes(network_drive, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
+    if ((file_system::get_attributes(network_drive, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
       for (string drive : directory::enumerate_directories(network_drive, "*")) {
         struct statfs stat;
 #if defined(__APPLE__)

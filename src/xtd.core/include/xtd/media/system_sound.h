@@ -27,7 +27,7 @@ namespace xtd {
       
       /// @brief Plays the system sound type.
       /// @par Examples
-      /// The following code example demonstrates the use of the xtd::system_sounds::asterisk property.
+      /// The following code example demonstrates the use of the xtd::media::system_sounds::asterisk property.
       /// @code
       /// // Plays the sound associated with the Asterisk system event.
       /// system_sounds.asterisk().play();

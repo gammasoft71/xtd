@@ -13,16 +13,16 @@
 #undef unix
 
 namespace xtd::native {
-  class directory;
   class drive;
   class environment;
+  class file_system;
   class process;
   class translator;
   namespace unix {
     class strings final {
-      friend xtd::native::directory;
       friend xtd::native::drive;
       friend xtd::native::environment;
+      friend xtd::native::file_system;
       friend xtd::native::process;
       friend xtd::native::translator;
     protected:

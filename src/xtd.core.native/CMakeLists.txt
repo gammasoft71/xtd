@@ -24,6 +24,7 @@ add_sources(
   include/xtd/native/environment_variable_target.h
   include/xtd/native/file.h
   include/xtd/native/file_attribute.h
+  include/xtd/native/file_system.h
   include/xtd/native/guid.h
   include/xtd/native/path.h
   include/xtd/native/platform_ids.h
