@@ -29,7 +29,7 @@ namespace xtd {
       /// @brief Whether remaining time is shown.
       show_remaining_time = 0b10000,
       /// @brief All flags except none.
-      all = show_cancel_button | show_skip_button | show_elapsed_time | show_estimated_time | show_remaining_time //| marquee
+      all = show_cancel_button | show_skip_button | show_elapsed_time | show_estimated_time | show_remaining_time
     };
 
     /// @cond
