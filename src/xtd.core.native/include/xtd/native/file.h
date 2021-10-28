@@ -17,6 +17,7 @@
 namespace xtd {
   /// @cond
   namespace io {
+    class file;
     class file_info;
   }
   /// @endcond
@@ -33,6 +34,7 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ file final {
       file() = delete;
+      friend xtd::io::file;
       friend xtd::io::file_info;
     protected:
       /// @brief Copy a specified source file to a target file.
@@ -41,6 +43,11 @@ namespace xtd {
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int32_t copy(const std::string& source_file, const std::string& target_file);
+      /// @brief Check if specified file exist.
+      /// @param path The file path to check.
+      /// @return true is file exist; otherwise false.
+      /// @warning Internal use only
+      static bool exists(const std::string& path);
       /// @brief Get file size of specified path.
       /// @param path The relative or absolute path to the directory to get size.
       /// @return The file size.
