@@ -204,6 +204,11 @@ directory::file_and_directory_iterator directory::enumerate_files_and_directorie
   return file_and_directory_iterator(path, pattern);
 }
 
+bool directory::exists(const std::string& path) {
+  int32_t attributes = 0;
+  return file_system::get_attributes(path, attributes) == 0 && (attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY;
+}
+
 string directory::get_current_directory() {
   char path[MAX_PATH + 1];
   return _getcwd(path, MAX_PATH) ? path : "";

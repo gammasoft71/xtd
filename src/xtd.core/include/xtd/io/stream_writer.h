@@ -40,7 +40,19 @@ namespace xtd {
       ~stream_writer();
       /// @endcond
       
+      /// @brief Gets a value indicating whether the xtd::io::stream_writer will flush its buffer to the underlying stream after every call to xtd::io::text_writer::write(char).
+      /// @return true to force xtd::io::stream_writer to flush its buffer; otherwise, false.
+      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::io::stream_writer::flush or xtd::io::stream_writer::close. Setting xtd::io::stream_writer::auto_flush to true means that data will be flushed from the buffer to the stream after each write operation, but the encoder state will not be flushed.
+      /// @remarks When xtd::io::stream_writer::auto_flush is set to false, xtd::io::stream_writer will do a limited amount of buffering, both internally and potentially in the encoder from the encoding you passed in. You can get better performance by setting AutoFlush to false, assuming that you always call xtd::io::stream_writer::close (or at least Flush) when you're done writing with a xtd::io::stream_writer.
+      /// @remarks For example, set xtd::io::stream_writer::auto_flush to true when you are writing to a device where the user expects immediate feedback. xtd::console::out is one of these cases: The xtd::io::stream_writer used internally for writing to xtd::console flushes all its internal state except the encoder state after every call to xtd::io::stream_writer::write.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       bool auto_flush() const;
+      /// @brief Sets a value indicating whether the xtd::io::stream_writer will flush its buffer to the underlying stream after every call to xtd::io::text_writer::write(char).
+      /// @param auto_flush true to force xtd::io::stream_writer to flush its buffer; otherwise, false.
+      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::io::stream_writer::flush or xtd::io::stream_writer::close. Setting xtd::io::stream_writer::auto_flush to true means that data will be flushed from the buffer to the stream after each write operation, but the encoder state will not be flushed.
+      /// @remarks When xtd::io::stream_writer::auto_flush is set to false, xtd::io::stream_writer will do a limited amount of buffering, both internally and potentially in the encoder from the encoding you passed in. You can get better performance by setting AutoFlush to false, assuming that you always call xtd::io::stream_writer::close (or at least Flush) when you're done writing with a xtd::io::stream_writer.
+      /// @remarks For example, set xtd::io::stream_writer::auto_flush to true when you are writing to a device where the user expects immediate feedback. xtd::console::out is one of these cases: The xtd::io::stream_writer used internally for writing to xtd::console flushes all its internal state except the encoder state after every call to xtd::io::stream_writer::write.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       void auto_flush(bool auto_flush);
 
       /// @brief Returns the underlying stream.
