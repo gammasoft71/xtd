@@ -1,5 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file.h>
+#include <xtd/native/file_attribute.h>
+#include <xtd/native/file_system.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 
@@ -28,6 +30,11 @@ int32_t file::copy(const std::string& source_file, const std::string& target_fil
   fclose(source);
   fclose(target);
   return 0;
+}
+
+bool file::exists(const std::string& path) {
+  int32_t attributes = 0;
+  return file_system::get_attributes(path, attributes) == 0 && (attributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY;
 }
 
 size_t file::get_size(const std::string& path) {

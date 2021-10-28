@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 
+#include <chrono>
 #include <cstdint>
 #include <cstdio>
 #include <fstream>
@@ -112,10 +113,37 @@ namespace xtd {
       static bool exists(const xtd::ustring& path) noexcept;
 
       /// @brief Gets the xtd::io::file_attributes of the file on the path.
-      /// @param src The path to the file.
+      /// @param path The path to the file.
       /// @return The xtd::io::file_attributes of the file on the path.
       /// @exception xtd::io::file_not_found_exception if file src does not exists.
-      static xtd::io::file_attributes get_attributes(const xtd::ustring& src);
+      static xtd::io::file_attributes get_attributes(const xtd::ustring& path);
+
+      /// @brief Returns the creation date and time of the specified file or directory.
+      /// @param path The file or directory for which to obtain creation date and time information.
+      /// @return A std::chrono::system_clock::time_point class set to the creation date and time for the specified file or directory. This value is expressed in local time.
+      /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::not_supported_excpttion path is in an invalid format.
+      static std::chrono::system_clock::time_point get_creation_time(const xtd::ustring& path);
+      
+      /// @brief Returns the date and time the specified file or directory was last accessed.
+      /// @param path The file or directory for which to obtain access date and time information.
+      /// @return A std::chrono::system_clock::time_point structure set to the date and time that the specified file or directory was last accessed. This value is expressed in local time.
+      /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::not_supported_excpttion path is in an invalid format.
+      static std::chrono::system_clock::time_point get_last_access_time(const xtd::ustring& path);
+
+      /// @brief Returns the date and time the specified file or directory was last written to.
+      /// @param path The file or directory for which to obtain write date and time information.
+      /// @return A std::chrono::system_clock::time_point structure set to the date and time that the specified file or directory was last written to. This value is expressed in local time.
+      /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::not_supported_excpttion path is in an invalid format.
+      static std::chrono::system_clock::time_point get_last_write_time(const xtd::ustring& path);
 
       /// @brief Moves a specified file to a new location, providing the option to specify a new file name.
       /// @param src The name of the file to move.
@@ -125,6 +153,16 @@ namespace xtd {
       /// @exception xtd::io::io_exception if path is empty or an invalid path.
       /// @exception xtd::io::io_exception if the caller has not the required permissions.
       static void move(const xtd::ustring& src, const xtd::ustring& dest);
+      
+      /// @brief Moves a specified file to a new location, providing the options to specify a new file name and to overwrite the destination file if it already exists.
+      /// @param src The name of the file to move.
+      /// @param dest The new path for the file.
+      /// @param overwrite true to overwrite the destination file if it already exists; false otherwise.
+      /// @return true if the file moved; otherwise, false.
+      /// @exception xtd::argument_exception if dest already exist.
+      /// @exception xtd::io::io_exception if path is empty or an invalid path.
+      /// @exception xtd::io::io_exception if the caller has not the required permissions.
+      static void move(const xtd::ustring& src, const xtd::ustring& dest, bool overwrite);
       
       /// @brief Opens a FileStream on the specified path.
       /// @param path The file to open.

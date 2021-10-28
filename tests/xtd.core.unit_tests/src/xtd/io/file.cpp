@@ -71,7 +71,7 @@ namespace unit_tests {
       existing_file << "Existing";
       existing_file.close();
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");}, csf_);
-      assert::throws<argument_exception>([] {file::copy(test_file_name, "file2.txt", false);}, csf_);
+      assert::throws<io_exception>([] {file::copy(test_file_name, "file2.txt", false);}, csf_);
       
       assert::is_true(ifstream(test_file_name).good(), csf_);
       ifstream file("file2.txt");
@@ -148,7 +148,7 @@ namespace unit_tests {
       existing_file << "Existing";
       existing_file.close();
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");}, csf_);
-      assert::throws<argument_exception>([] {file::move(test_file_name, "file2.txt");}, csf_);
+      assert::throws<io_exception>([] {file::move(test_file_name, "file2.txt");}, csf_);
       
       assert::is_true(ifstream(test_file_name).good(), csf_);
       ifstream file(test_file_name);
