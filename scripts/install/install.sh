@@ -25,7 +25,7 @@ echo "install needed packages and libraries..."
 case "$OSTYPE" in
   *"Darwin"*) brew update; brew install cmake;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libgsound-dev libgtk-3-dev cmake -y;;
-  *"openSUSE"*) sudo zypper update; sudo zypper install -t pattern devel_basis; sudo zypper in doxygen gsound-devel gtk3-devel cmake -y;;
+  *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y doxygen gsound-devel gtk3-devel cmake;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install cmake gsound-devel gtk3-devel -y;;
 esac
 
