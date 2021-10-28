@@ -213,9 +213,107 @@ namespace xtd {
       /// @remarks On Unix systems, use a forward slash (/) as path separator.
       static xtd::io::directory_info create_directory(const xtd::ustring& path);
       
+      /// @brief Returns an enumerable collection of directory full names in a specified path.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @return An xtd::io::directory::directory_iterator of the full names (including paths) for the directories in the directory specified by path.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par rExample
+      /// The following example enumerates the top-level directories in a specified path.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       // Set a variable to the My Documents path.
+      ///       ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+      ///
+      ///       vector<ustring> dirs(begin(directory::enumerate_directories(doc_path)), end(directory::enumerate_directories(doc_path)));
+      ///
+      ///       for (auto dir : dirs) {
+      ///         console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
+      ///       }
+      ///       console::write_line("{} directories found.", dirs.size());
+      ///     } catch (const unauthorized_access_exception& ex) {
+      ///       console::write_line(ex.message());
+      ///     } catch (const path_too_long_exception& ex) {
+      ///       console::write_line(ex.message());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks You can specify relative or absolute path information in the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method. The returned directory names are prefixed with the value you provided in the path parameter. For example, if you provide a relative path in the path parameter, the returned directory names will contain a relative path.
+      /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
+      /// @remarks The returned collection is not cached; each call to the xtd::io::directory::get_enumerator on the collection will start a new enumeration.
       static xtd::io::directory::directory_iterator enumerate_directories(const xtd::ustring& path);
+      /// @brief Returns an enumerable collection of directory full names that match a search pattern in a specified path.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @param search_pattern The search string to match against the names of directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An xtd::io::directory::directory_iterator of the full names (including paths) for the directories in the directory specified by path and that match the specified search pattern.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par rExample
+      /// The following example enumerates the top-level directories in a specified path that match a specified search pattern.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       ustring dir_path = R"(\\archives\2009\reports)";
+      ///
+      ///       // Create a List collection.
+      ///       auto dirs = vector<ustring>(begin(directory::enumerate_directories(dir_path, "dv_*")), end(directory::enumerate_directories(dir_path, "dv_*")));
+      ///
+      ///       // Show results.
+      ///       for (auto dir : dirs) {
+      ///         // Remove path information from string.
+      ///         console::write_line("{0}", dir.substring(dir.last_index_of("\\") + 1));
+      ///       }
+      ///       console::write_line("{0} directories found.", dirs.size());
+      ///     } catch (const unauthorized_access_exception& ex) {
+      ///       console::write_line(ex.message());
+      ///     } catch (const path_too_long_exception& ex) {
+      ///       console::write_line(ex.message());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the search_pattern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::io::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @remarks You can specify relative or absolute path information in the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method. The returned directory names are prefixed with the value you provided in the path parameter. For example, if you provide a relative path in the path parameter, the returned directory names will contain a relative path.
+      /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
+      /// @remarks The returned collection is not cached; each call to the xtd::io::directory::get_enumerator on the collection will start a new enumeration.
       static xtd::io::directory::directory_iterator enumerate_directories(const xtd::ustring& path, const xtd::ustring& search_pattern);
       
+      /// @brief Returns an enumerable collection of full file names in a specified path.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       static xtd::io::directory::file_iterator enumerate_files(const xtd::ustring& path);
       static xtd::io::directory::file_iterator enumerate_files(const xtd::ustring& path, const xtd::ustring& search_pattern);
       

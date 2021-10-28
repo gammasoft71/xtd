@@ -18,6 +18,7 @@
 namespace xtd {
   /// @cond
   namespace io {
+    class directory;
     class directory_info;
     class file;
     class file_info;
@@ -43,6 +44,7 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ file_system final {
       file_system() = delete;
+      friend xtd::io::directory;
       friend xtd::io::directory_info;
       friend xtd::io::file;
       friend xtd::io::file_info;
