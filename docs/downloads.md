@@ -75,7 +75,7 @@ cd xtd_path_name
 
 4. Create as many applications as you want with xtd.
 
-## CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, RedHat 7.5 and Ubuntu 19.04 (or later)
+## CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 (or later)
 
 1. Do the following in "Terminal" to Build and install :
 
