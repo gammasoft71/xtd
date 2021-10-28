@@ -177,6 +177,8 @@ add_sources(
   include/xtd/forms/picture_box_size_mode.h
   include/xtd/forms/progress_bar.h
   include/xtd/forms/progress_bar_style.h
+  include/xtd/forms/progress_box.h
+  include/xtd/forms/progress_box_options.h
   include/xtd/forms/progress_changed_event_args.h
   include/xtd/forms/progress_changed_event_handler.h
   include/xtd/forms/progress_dialog.h

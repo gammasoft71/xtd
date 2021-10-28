@@ -1,10 +1,10 @@
-# progress_dialog
+# progress_box
 
-demonstrates the use of [xtd::forms::progress_dialog](../../../../src/xtd.forms/include/xtd/forms/progress_dialog.h) dialog.
+demonstrates the use of [xtd::forms::progress_box](../../../../src/xtd.forms/include/xtd/forms/progress_box.h)  progress dialog.
 
 # Sources
 
-* [src/progress_dialog.cpp](src/progress_dialog.cpp)
+* [src/progress_box.cpp](src/progress_box.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run

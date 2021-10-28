@@ -44,6 +44,7 @@
 * [message_dialog](dialogs/message_dialog/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
 * [open_file_box](dialogs/open_file_box/README.md) displays a file select window, also known as a file dialog, which asks the user to select a single or multiple files. It is a modal window, blocking other actions in the application until the user closes it.
 * [open_file_dialog](dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
+* [progress_box](dialogs/progress_box/README.md) displays a progress dialog window, which shows to user a progress animation, with more details like the remaining time, estimated time and other options which can be customized with xtd::forms::progress_box_options. It is a modal window, blocking other actions in the application until the user cancels or hides it.
 * [progress_dialog](dialogs/progress_dialog/README.md) represents a progress box that displays progress box.
 * **replace_dialog** represents a replace dialog box.
 * [save_file_box](dialogs/save_file_box/README.md) displays a file save window, also known as a file dialog, which asks the user to select a path to save a single file to. It is a modal window, blocking other actions in the application until the user closes it.
