@@ -22,7 +22,7 @@ namespace xtd {
       /// @brief Gets the sound associated with the Asterisk program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Asterisk program event in the current Windows sound scheme.A SystemSound associated with the Asterisk program event in the current Windows sound scheme.
       /// @par Examples
-      /// The following code example demonstrates the use of the xtd::system_sounds::asterisk property.
+      /// The following code example demonstrates the use of the xtd::media::system_sounds::asterisk property.
       /// @code
       /// // Plays the sound associated with the Asterisk system event.
       /// system_sounds.asterisk().play();
@@ -32,7 +32,7 @@ namespace xtd {
       /// @brief Gets the sound associated with the Beep program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Beep program event in the current Windows sound scheme.
       /// @par Examples
-      /// The following code example demonstrates the use of the xtd::system_sounds::beep property.
+      /// The following code example demonstrates the use of the xtd::media::system_sounds::beep property.
       /// @code
       /// // Plays the sound associated with the Beep system event.
       /// system_sounds.asterisk().play();
@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief Gets the sound associated with the Exclamation program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Exclamation program event in the current Windows sound scheme.
       /// @par Examples
-      /// The following code example demonstrates the use of the xtd::system_sounds::exclamation property.
+      /// The following code example demonstrates the use of the xtd::media::system_sounds::exclamation property.
       /// @code
       /// // Plays the sound associated with the Exclamation system event.
       /// system_sounds.exclamation().play();
@@ -52,7 +52,7 @@ namespace xtd {
       /// @brief Gets the sound associated with the Hand program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Hand program event in the current Windows sound scheme.
       /// @par Examples
-      /// The following code example demonstrates the use of the xtd::system_sounds::hand property.
+      /// The following code example demonstrates the use of the xtd::media::system_sounds::hand property.
       /// @code
       /// // Plays the sound associated with the Hand system event.
       /// system_sounds.hand().play();
@@ -62,7 +62,7 @@ namespace xtd {
       /// @brief Gets the sound associated with the Question program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Question program event in the current Windows sound scheme.
       /// @par Examples
-      /// The following code example demonstrates the use of the xtd::system_sounds::question property.
+      /// The following code example demonstrates the use of the xtd::media::system_sounds::question property.
       /// @code
       /// // Plays the sound associated with the Question system event.
       /// system_sounds.question().play();
