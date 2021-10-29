@@ -84,6 +84,8 @@ cd xtd_path_name
 ./install
 ```
 
+*Remarks : Do not launch ./install with sudo or as su.* 
+
 2. Create as many applications as you want with xtd.
 
 
@@ -115,6 +117,8 @@ cd xtd_path_name
 cd xtd_path_name
 ./install
 ```
+
+*Remarks : Do not launch ./install with sudo or as su.* 
 
 4. Create as many applications as you want with xtd.
 
