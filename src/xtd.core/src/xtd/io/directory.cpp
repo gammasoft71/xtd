@@ -8,6 +8,7 @@
 #include "../../../include/xtd/io/path.h"
 #include "../../../include/xtd/io/path_too_long_exception.h"
 #include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/not_supported_exception.h"
 #include "../../../include/xtd/unauthorized_access_exception.h"
 #include "../../../include/xtd/diagnostics/debug.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -149,7 +150,7 @@ directory::directory_iterator directory::enumerate_directories(const ustring& pa
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
   if (!file::exists(path)) throw directory_not_found_exception(csf_);
-
+  
   return directory_iterator(path, search_pattern);
 }
 
@@ -198,7 +199,9 @@ system_clock::time_point directory::get_creation_time(const ustring& path) {
 }
 
 ustring directory::get_current_directory() {
-  return native::directory::get_current_directory();
+  auto path = native::directory::get_current_directory();
+  if (path.empty()) throw not_supported_exception(csf_);
+  return path;
 }
 
 vector<ustring> directory::get_directories(const ustring& path) {
@@ -206,10 +209,7 @@ vector<ustring> directory::get_directories(const ustring& path) {
 }
 
 vector<ustring> directory::get_directories(const ustring& path, const ustring& search_pattern) {
-  vector<ustring> directories;
-  for (auto directory : enumerate_directories(path, search_pattern))
-    directories.emplace_back(directory);
-  return directories;
+  return {begin(enumerate_directories(path, search_pattern)), end(enumerate_directories(path, search_pattern))};
 }
 
 ustring directory::get_directory_root(const ustring& path) {
@@ -221,10 +221,7 @@ vector<ustring> directory::get_files(const ustring& path) {
 }
 
 vector<ustring> directory::get_files(const ustring& path, const ustring& search_pattern) {
-  vector<ustring> files;
-  for (auto file : enumerate_files(path, search_pattern))
-    files.emplace_back(file);
-  return files;
+  return {begin(enumerate_files(path, search_pattern)), end(enumerate_files(path, search_pattern))};
 }
 
 vector<ustring> directory::get_file_system_entries(const ustring& path) {
@@ -232,10 +229,7 @@ vector<ustring> directory::get_file_system_entries(const ustring& path) {
 }
 
 vector<ustring> directory::get_file_system_entries(const ustring& path, const ustring& search_pattern) {
-  vector<ustring> file_system_entries;
-  for (auto file_system_entry : enumerate_file_system_entries(path, search_pattern))
-    file_system_entries.emplace_back(file_system_entry);
-  return file_system_entries;
+  return {begin(enumerate_file_system_entries(path, search_pattern)), end(enumerate_file_system_entries(path, search_pattern))};
 }
 
 system_clock::time_point directory::get_last_access_time(const ustring& path) {
@@ -296,4 +290,12 @@ void directory::remove(const ustring& path) {
 
 void directory::remove(const ustring& path, bool recursive) {
   directory_info(path).remove(recursive);
+}
+
+void directory::set_current_directory(const ustring& path) {
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
+  if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
+  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (native::directory::set_current_directory(path) != 0) throw io_exception(csf_);
 }

@@ -6,7 +6,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <filesystem>
 #include <vector>
 
 // Workaround : Add "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin" to PATH if needed on macOS when debugging on Xcode...
@@ -22,17 +21,18 @@ struct __update__macos_path__ {
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::io;
 
 namespace {
   int exit_code = 0;
 }
 
 ustring environment::current_directory() {
-  return std::filesystem::current_path().string();
+  return io::directory::get_current_directory();
 }
 
 void environment::current_directory(const ustring& directory_name) {
-  std::filesystem::current_path(as<std::string>(directory_name));
+  io::directory::set_current_directory(directory_name);
 }
 
 int environment::exit_code() {

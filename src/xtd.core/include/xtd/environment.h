@@ -224,10 +224,15 @@ namespace xtd {
     /// @brief Gets the fully qualified path of the current working directory.
     /// @return xtd::ustring A string containing a directory path.
     /// @remarks By definition, if this process starts in the root directory of a local or network drive, the value returned by this method is the drive name followed by a trailing slash (for example, "C:\"). If this process starts in a subdirectory, the value returned by this method is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
+    /// @exception xtd::not_supported_exception The operating system does not have current directory functionality.
     static xtd::ustring current_directory();
     
     /// @brief Sets the fully qualified path of the current working directory.
     /// @param directory_name A string containing a directory path.
+    /// @exception xtd::argument_exception Attempted to set to an empty string ("").
+    /// @exception xtd::io::io_exception An I/O error occurred.
+    /// @exception xtd::io::directory_not_found_exception Attempted to set a local path that cannot be found.
+    /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
     static void current_directory(const xtd::ustring& directory_name);
     
     /// @brief Gets a unique identifier for the current thread.
