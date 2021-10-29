@@ -194,6 +194,8 @@
 #include "net/sockets/tcp_listener.h"
 #include "net/sockets/transmit_file_options.h"
 #include "net/sockets/udp_client.h"
+#include "security/secure_string.h"
+#include "security/security_exception.h"
 #include "web/css/css_reader.h"
 #include "web/css/css_writer.h"
 #include "web/css/property.h"

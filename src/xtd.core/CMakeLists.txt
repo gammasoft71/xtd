@@ -181,6 +181,7 @@ add_sources(
   include/xtd/io/io_exception.h
   include/xtd/io/path.h
   include/xtd/io/path_too_long_exception.h
+  include/xtd/io/search_option.h
   include/xtd/io/stream_reader.h
   include/xtd/io/stream_writer.h
   include/xtd/io/string_reader.h

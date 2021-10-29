@@ -197,10 +197,7 @@ vector<directory_info> directory_info::get_directories() const {
 }
 
 vector<directory_info> directory_info::get_directories(const ustring& pattern) const {
-  std::vector<directory_info> directories;
-  for (auto item : enumerate_directories(pattern))
-    directories.emplace_back(item);
-  return directories;
+  return {begin(enumerate_directories(pattern)), end(enumerate_directories(pattern))};
 }
 
 vector<file_info> directory_info::get_files() const {
@@ -208,10 +205,7 @@ vector<file_info> directory_info::get_files() const {
 }
 
 vector<file_info> directory_info::get_files(const ustring& pattern) const {
-  vector<file_info> files;
-  for (auto item : enumerate_files(pattern))
-    files.emplace_back(item);
-  return files;
+  return {begin(enumerate_files(pattern)), end(enumerate_files(pattern))};
 }
 
 vector<shared_ptr<file_system_info>> directory_info::get_file_system_infos() const {
@@ -219,10 +213,7 @@ vector<shared_ptr<file_system_info>> directory_info::get_file_system_infos() con
 }
 
 vector<shared_ptr<file_system_info>> directory_info::get_file_system_infos(const ustring& pattern) const {
-  vector<shared_ptr<file_system_info>> file_system_infos;
-  for (auto item : enumerate_file_system_infos(pattern))
-    file_system_infos.emplace_back(item);
-  return file_system_infos;
+  return {begin(enumerate_file_system_infos(pattern)), end(enumerate_file_system_infos(pattern))};
 }
 
 void directory_info::move_to(const ustring& dest_dir_name) {

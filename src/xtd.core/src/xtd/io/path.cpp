@@ -83,7 +83,7 @@ ustring path::get_full_path(const ustring& path) {
   
   ustring full_path;
   
-  if (path[0] != directory_separator_char() && path[0] != alt_directory_separator_char()) full_path = filesystem::current_path().string();
+  if (path[0] != directory_separator_char() && path[0] != alt_directory_separator_char()) full_path = environment::current_directory();
   for (auto item : directories) {
     if (item == ".." && full_path.last_index_of(directory_separator_char()) != ustring::npos)
       full_path = full_path.substr(0, full_path.last_index_of(directory_separator_char()));

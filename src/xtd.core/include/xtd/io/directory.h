@@ -12,6 +12,10 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Exposes static methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
+    /// @code
+    /// class directory static_
+    /// @endcode
+    /// Ineheritance xtd::static_object → xtd::io::directory
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -158,9 +162,9 @@ namespace xtd {
       /// @param path The directory to create.
       /// @return An object that represents the directory at the specified path. This object is returned regardless of whether a directory at the specified path already exists.
       /// @exception xtd::io::io_exception The directory specified by path is a file.
-      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Example
       /// The following example creates and deletes the specified directory:
@@ -217,9 +221,9 @@ namespace xtd {
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @return An xtd::io::directory::directory_iterator of the full names (including paths) for the directories in the directory specified by path.
       /// @exception xtd::io::io_exception The directory specified by path is a file.
-      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par rExample
       /// The following example enumerates the top-level directories in a specified path.
@@ -261,9 +265,9 @@ namespace xtd {
       /// @param search_pattern The search string to match against the names of directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An xtd::io::directory::directory_iterator of the full names (including paths) for the directories in the directory specified by path and that match the specified search pattern.
       /// @exception xtd::io::io_exception The directory specified by path is a file.
-      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par rExample
       /// The following example enumerates the top-level directories in a specified path that match a specified search pattern.
@@ -309,14 +313,14 @@ namespace xtd {
       /// @remarks You can specify relative or absolute path information in the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method. The returned directory names are prefixed with the value you provided in the path parameter. For example, if you provide a relative path in the path parameter, the returned directory names will contain a relative path.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
       static xtd::io::directory::directory_iterator enumerate_directories(const xtd::ustring& path, const xtd::ustring& search_pattern);
-      
+
       /// @brief Returns an enumerable collection of full file names in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @return An xtd::io::directory::directory_iterator of the full names (including paths) for the files in the directory specified by path.
       /// @exception xtd::io::io_exception The directory specified by path is a file.
-      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Example
       /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
@@ -355,9 +359,9 @@ namespace xtd {
       /// @param search_pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An xtd::io::directory::directory_iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
       /// @exception xtd::io::io_exception The directory specified by path is a file.
-      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Example
       /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
@@ -403,9 +407,9 @@ namespace xtd {
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @return An xtd::io::directory::file_system_entry_iterator of file-system entries in the directory specified by path.
       /// @exception xtd::io::io_exception The directory specified by path is a file.
-      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method.
       /// @remarks The xtd::io::directory::enumerate_file_system_entries and xtd::io::directory::get_file_system_entries methods differ as follows: When you use xtd::io::directory::enumerate_file_system_entries, you can start enumerating the collection of entries before the whole collection is returned; when you use xtd::io::directory::get_file_system_entries, you must wait for the whole array of entries to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files_system_entires can be more efficient.
@@ -415,9 +419,9 @@ namespace xtd {
       /// @param serach_pattern The search string to match against the names of file-system entries in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An xtd::io::directory::file_system_entry_iterator of file-system entries in the directory specified by path and that match the specified search pattern.
       /// @exception xtd::io::io_exception The directory specified by path is a file.
-      /// @exception xttd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @exception xtd::io::directory_not_found_excpetion The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in searchPattern.
       /// | Wildcard specifier | Matches                                   |
@@ -433,20 +437,531 @@ namespace xtd {
       /// @brief Determines whether the given path refers to an existing directory on disk.
       /// @param path The path to test.
       /// @return true if path refers to an existing directory; false if the directory does not exist or an error occurs when trying to determine if the specified directory exists.
+      /// @par rExample
+      /// The following example takes an array of file or directory names on the command line, determines what kind of name it is, and processes it appropriately.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main(const vector<ustring>& args) {
+      ///     for (ustring path : args) {
+      ///       if (file::exists(path)) {
+      ///         // This path is a file
+      ///         process_file(path);
+      ///       } else if(directory::exists(path)) {
+      ///         // This path is a directory
+      ///         process_directory(path);
+      ///       } else {
+      ///         console::write_line("{0} is not a valid file or directory.", path);
+      ///       }
+      ///     }
+      ///   }
+      ///
+      ///   // Process all files in the directory passed in, recurse on any directories
+      /// ///   // that are found, and process the files they contain.
+      ///   static void process_directory(const ustring& target_directory) {
+      ///     // Process the list of files found in the directory.
+      ///     vector<ustring> file_entries = directory::get_files(target_directory);
+      ///     for (ustring file_name : file_entries)
+      ///       process_file(file_name);
+      ///
+      ///     // Recurse into subdirectories of this directory.
+      ///     vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
+      ///     for (ustring subdirectory : subdirectory_entries)
+      ///       process_directory(subdirectory);
+      ///   }
+      ///
+      ///   // Insert logic for processing found files here.
+      ///   static void process_file(const ustring& path) {
+      ///     console::write_line("Processed file '{0}'.", path);
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory.
+      /// @remarks Trailing spaces are removed from the end of the path parameter before checking whether the directory exists.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks If you do not have at a minimum read-only permission to the directory, the Exists method will return false.
+      /// @remarks The xtd::io::directory::exists method returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
       static bool exists(const xtd::ustring& path);
       
+      /// @brief Gets the creation date and time of a directory.
+      /// @param path The path of the directory.
+      /// @return A td::chrono::system_clock::time_point class that is set to the creation date and time for the specified directory. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      ///
+      /// @code
+      /// #include <chrono>
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std::chrono;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      /// The following example gets the creation time of the specified directory.
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       // Get the creation time of a well-known directory.
+      ///       system_clock::time_point tp = directory::get_creation_time(environment::current_directory());
+      ///
+      ///       // Give feedback to the user.
+      ///       if (duration_cast<days>(system_clock::now().time_since_epoch() - tp.time_since_epoch()).count() > 364) {
+      ///         console::write_line("This directory is over a year old.");
+      ///       } else if (duration_cast<days>(system_clock::now().time_since_epoch() - tp.time_since_epoch()).count() > 30) {
+      ///         console::write_line("This directory is over a month old.");
+      ///       } else if (duration_cast<days>(system_clock::now().time_since_epoch() - tp.time_since_epoch()).count() <= 1) {
+      ///         console::write_line("This directory is less than a day old.");
+      ///       } else {
+      ///         console::write_line("This directory was created on {0}", tp);
+      ///       }
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
       static std::chrono::system_clock::time_point get_creation_time(const xtd::ustring& path);
       
+      /// @brief Gets the current working directory of the application.
+      /// @return A string that contains the absolute path of the current working directory, and does not end with a backslash (\).
+      /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
+      /// @exception xtd::not_supported_exception The operating system does not have current directory functionality.
+      /// @par Example
+      /// The following example demonstrates how to use the xtd::io::directory::get_current_directory method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       // Get the current directory.
+      ///       ustring path = directory::get_current_directory();
+      ///       ustring target = R"(c:\temp)";
+      ///       console::write_line("The current directory is {0}", path);
+      ///       if (!directory::exists(target)) {
+      ///         directory::create_directory(target);
+      ///       }
+      ///
+      ///       // Change the current directory.
+      ///       environment::current_directory(target);
+      ///       if (path.equals(directory::get_current_directory())) {
+      ///         console::write_line("You are in the temp directory.");
+      ///       } else {
+      ///         console::write_line("You are not in the temp directory.");
+      ///       }
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks The current directory is distinct from the original directory, which is the one from which the process was started.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static xtd::ustring get_current_directory();
 
+      /// @brief Returns the names of subdirectories (including their paths) in the specified directory.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @return An array of the full names (including paths) of subdirectories in the specified path, or an empty array if no directories are found.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example takes an array of file or directory names on the command line, determines what kind of name it is, and processes it appropriately.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main(const vector<ustring>& args) {
+      ///     for (ustring path : args) {
+      ///       if (file::exists(path)) {
+      ///         // This path is a file
+      ///         process_file(path);
+      ///       } else if(directory::exists(path)) {
+      ///         // This path is a directory
+      ///         process_directory(path);
+      ///       } else {
+      ///         console::write_line("{0} is not a valid file or directory.", path);
+      ///       }
+      ///     }
+      ///   }
+      ///
+      ///   // Process all files in the directory passed in, recurse on any directories
+      /// ///   // that are found, and process the files they contain.
+      ///   static void process_directory(const ustring& target_directory) {
+      ///     // Process the list of files found in the directory.
+      ///     vector<ustring> file_entries = directory::get_files(target_directory);
+      ///     for (ustring file_name : file_entries)
+      ///       process_file(file_name);
+      ///
+      ///     // Recurse into subdirectories of this directory.
+      ///     vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
+      ///     for (ustring subdirectory : subdirectory_entries)
+      ///       process_directory(subdirectory);
+      ///   }
+      ///
+      ///   // Insert logic for processing found files here.
+      ///   static void process_file(const ustring& path) {
+      ///     console::write_line("Processed file '{0}'.", path);
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks This method is identical to xtd::io::directory::get_directories(ustring, ustring) with the asterisk (*) specified as the search pattern, so it returns all subdirectories.
+      /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
+      /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The names returned by this method are prefixed with the directory information provided in path.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::vector<xtd::ustring> get_directories(const xtd::ustring& path);
+      /// @brief Returns the names of subdirectories (including their paths) that match the specified search pattern in the specified directory.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @param search_pattern The search string to match against the names of subdirectories in path. This parameter can contain a combination of valid literal and wildcard characters, but it doesn't support regular expressions.
+      /// @return An array of the full names (including paths) of the subdirectories that match the search pattern in the specified directory, or an empty array if no directories are found.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      ///
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       // Only get subdirectories that begin with the letter "p."
+      ///       vector<ustring> dirs = directory::get_directories(R"(c:\)", "p*");
+      ///       console::write_line("The number of directories starting with p is {0}.", dirs.size());
+      ///       for (ustring dir : dirs) {
+      ///         console::write_line(dir);
+      ///       }
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks This method returns all subdirectories directly under the specified directory that match the specified search pattern. If the specified directory has no subdirectories, or no subdirectories match the search_pattern parameter, this method returns an empty array. Only the top directory is searched.
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the search_attern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::io::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @remarks The path parameter can specify relative or absolute path information, and is not case-sensitive. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::vector<xtd::ustring> get_directories(const xtd::ustring& path, const xtd::ustring& search_pattern);
 
+      /// @brief Returns the volume information, root information, or both for the specified path.
+      /// @param path The path of a file or directory.
+      /// @return A string that contains the volume information, root information, or both for the specified path.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example illustrates how to set the current directory and display the directory root.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Create string for a directory. This value should be an existing directory
+      ///     // or the sample will throw a DirectoryNotFoundException.
+      ///     ustring dir = R"(C:\test)";
+      ///     try {
+      ///       //Set the current directory.
+      ///       directory::set_current_directory(dir);
+      ///     } catch (const directory_not_found_exception& e) {
+      ///       console::write_line("The specified directory does not exist. {0}", e);
+      ///     }
+      ///     // Print to console the results.
+      ///     console::write_line("Root directory: {0}", directory::get_directory_root(dir));
+      ///     console::write_line("Current directory: {0}", directory::get_current_directory());
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks This method obtains the fully qualified path name of path, as returned by xtd::io::path::get_full_path, and returns root directory information. The specified path is not required to exist.
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static xtd::ustring get_directory_root(const xtd::ustring& path);
 
+      /// @brief Returns the names of files (including their paths) in the specified directory.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @return An array of the full names (including paths) for the files in the specified directory, or an empty array if no files are found.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example demonstrates how to use the GetFiles method to return file names from a user-specified location. The example is configured to catch all errors common to this method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main(const vector<ustring>& args) {
+      ///     for (ustring path : args) {
+      ///       if (file::exists(path)) {
+      ///         // This path is a file
+      ///         process_file(path);
+      ///       } else if(directory::exists(path)) {
+      ///         // This path is a directory
+      ///         process_directory(path);
+      ///       } else {
+      ///         console::write_line("{0} is not a valid file or directory.", path);
+      ///       }
+      ///     }
+      ///   }
+      ///
+      ///   // Process all files in the directory passed in, recurse on any directories
+      /// ///   // that are found, and process the files they contain.
+      ///   static void process_directory(const ustring& target_directory) {
+      ///     // Process the list of files found in the directory.
+      ///     vector<ustring> file_entries = directory::get_files(target_directory);
+      ///     for (ustring file_name : file_entries)
+      ///       process_file(file_name);
+      ///
+      ///     // Recurse into subdirectories of this directory.
+      ///     vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
+      ///     for (ustring subdirectory : subdirectory_entries)
+      ///       process_directory(subdirectory);
+      ///   }
+      ///
+      ///   // Insert logic for processing found files here.
+      ///   static void process_file(const ustring& path) {
+      ///     console::write_line("Processed file '{0}'.", path);
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
+      /// @remarks The returned file names are appended to the supplied path parameter.
+      /// @remarks This method is identical to xtd::io::directory::get_files(ustring, ustring) with the asterisk (*) specified as the search pattern.
+      /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The order of the returned file names is not guaranteed; use the std:::sort method if a specific sort order is required.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::vector<xtd::ustring> get_files(const xtd::ustring& path);
+      /// @brief Returns the names of files (including their paths) that match the specified search pattern in the specified directory.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @param search_pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An array of the full names (including paths) for the files in the specified directory that match the specified search pattern, or an empty array if no files are found.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example counts the number of files that begin with the specified letter.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       // Only get files that begin with the letter "c".
+      ///       vector<ustring> dirs = directory::get_files(R"(c:\", "c*)");
+      ///       console::write_line("The number of files starting with c is {0}.", dirs.size());
+      ///       for (ustring dir : dirs) {
+      ///         console::write_line(dir);
+      ///       }
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the search_pattern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::io::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @note When you use the asterisk wildcard character in a search_pattern such as "*.txt", the number of characters in the specified extension affects the search as follows:
+      /// * If the specified extension is exactly three characters long, the method returns files with extensions that begin with the specified extension. For example, "*.xls" returns both "book.xls" and "book.xlsx".
+      /// * In all other cases, the method returns files that exactly match the specified extension. For example, "*.ai" returns "file.ai" but not "file.aif".
+      /// <br>When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file*.txt" returns both files.
+      /// @note Because this method checks against file names with both the 8.3 file name format and the long file name format, a search pattern similar to "*1*.txt" may return unexpected file names. For example, using a search pattern of "*1*.txt" returns "longfilename.txt" because the equivalent 8.3 file name format is "LONGFI~1.TXT".
+      /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
+      /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::vector<xtd::ustring> get_files(const xtd::ustring& path, const xtd::ustring& search_pattern);
       
+      /// @brief Returns the names of all files and subdirectories in a specified path.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @return An array of the names of files and subdirectories in the specified directory, or an empty array if no files or subdirectories are found.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     program snippets;
+      ///
+      ///     ustring path = io::directory::get_current_directory();
+      ///     ustring filter = "*.exe";
+      ///
+      ///     snippets.print_file_system_entries(path);
+      ///     snippets.print_file_system_entries(path, filter);
+      ///     snippets.get_logical_drives();
+      ///     snippets.get_parent(path);
+      ///     snippets.move("C:\\proof", "C:\\Temp");
+      ///   }
+      ///
+      ///   void print_file_system_entries(const ustring& path) {
+      ///     try {
+      ///       // Obtain the file system entries in the directory path.
+      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///
+      ///    for (xtd::ustring str : directory_entries) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("Path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::directory_not_found_exception&) {
+      ///       console::write_line("The path encapsulated in the Directory object does not exist.");
+      ///     }
+      ///   }
+      ///
+      ///   void print_file_system_entries(string path, string pattern) {
+      ///     try {
+      ///       // Obtain the file system entries in the directory path that match the pattern.
+      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///
+      ///       for (ustring str : directory_entries) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("Path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::directory_not_found_exception&) {
+      ///       console::write_line("The path encapsulated in the Directory object does not exist.");
+      ///     }
+      ///   }
+      ///
+      ///   // Print out all logical drives on the system.
+      ///   void get_logical_drives() {
+      ///     try {
+      ///       vector<ustring> drives = io::directory::get_logical_drives();
+      ///
+      ///       for (ustring str : drives) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const io::io_exception&) {
+      ///       console::write_line("An I/O error occurs.");
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     }
+      ///   }
+      ///
+      ///   void get_parent(const ustring& path) {
+      ///     try {
+      ///       io::directory_info directory_info = io::directory::get_parent(path);
+      ///
+      ///       console::write_line(directory_info.full_name());
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("Path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     }
+      ///   }
+      ///
+      ///   void move(const ustring& source_path, const ustring& destination_path) {
+      ///     try {
+      ///       io::directory::move(source_path, destination_path);
+      ///       console::write_line("The directory move is complete.");
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("Path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::io_exception&) {
+      ///       console::write_line("An attempt was made to move a directory to a different volume, or destDirName already exists.");
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @code
+      /// The following example uses the xtd::io::directory::get_file_system_entries method to fill an array of strings with the names of all files and subdirectories in a user-specified location and prints each string in the array to the console. The example is configured to catch all errors common to this method.
+      /// @endcode
+      /// @remarks The order of the returned file and directory names is not guaranteed; use the std::sort method if a specific sort order is required.
+      /// @remarks The xtd::io::directory::enumerate_fileSystem_entries and xtd::io::directory::get_file_system_entries methods differ as follows: When you use xtd::io::directory::enumerate_file_system_entries, you can start enumerating the collection of entries before the whole collection is returned; when you use xtd::io::directory::get_file_system_entries, you must wait for the whole array of entries to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_file_system_enties can be more efficient.
+      /// @remarks This method is identical to xtd::io::directory::get_file_system_entries with the asterisk (*) specified as the search pattern.
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path);
       static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path, const xtd::ustring& search_pattern);
       
@@ -466,6 +981,14 @@ namespace xtd {
       static void remove(const xtd::ustring& path);
 
       static void remove(const xtd::ustring& path, bool recursive);
+
+      /// @brief Sets the fully qualified path of the current working directory.
+      /// @param path A string containing a directory path.
+      /// @exception xtd::argument_exception Attempted to set to an empty string ("").
+      /// @exception xtd::io::io_exception An I/O error occurred.
+      /// @exception xtd::io::directory_not_found_exception Attempted to set a local path that cannot be found.
+      /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
+      static void set_current_directory(const xtd::ustring& path);
     };
   }
 }

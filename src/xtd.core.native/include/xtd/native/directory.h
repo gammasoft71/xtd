@@ -154,6 +154,7 @@ namespace xtd {
       static bool exists(const std::string& path);
       /// @brief Get the current directory.
       /// @return The currrent directory.
+      /// @remarks On error the return value is an empty string ("").
       /// @warning Internal use only
       static std::string get_current_directory();
       /// @brief Deletes an empty directory from a specified path.
