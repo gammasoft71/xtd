@@ -21,8 +21,6 @@
 
 ## Continuous Integration build status
 
-TEMPORARILY DISABLED. 
-
 | Operating system | Build    | Status                                                                                                                                                                                                 |
 |------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Windows (win32)  |  Debug   | [![Windows (win32) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml)                   |
