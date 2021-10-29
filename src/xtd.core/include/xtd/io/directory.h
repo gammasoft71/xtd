@@ -859,6 +859,8 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Example
+      /// The following example uses the xtd::io::directory::get_file_system_entries method to fill an array of strings with the names of all files and subdirectories in a user-specified location and prints each string in the array to the console. The example is configured to catch all errors common to this method.
+      /// /// @code
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -953,8 +955,6 @@ namespace xtd {
       /// };
       ///
       /// startup_(program);
-      /// @code
-      /// The following example uses the xtd::io::directory::get_file_system_entries method to fill an array of strings with the names of all files and subdirectories in a user-specified location and prints each string in the array to the console. The example is configured to catch all errors common to this method.
       /// @endcode
       /// @remarks The order of the returned file and directory names is not guaranteed; use the std::sort method if a specific sort order is required.
       /// @remarks The xtd::io::directory::enumerate_fileSystem_entries and xtd::io::directory::get_file_system_entries methods differ as follows: When you use xtd::io::directory::enumerate_file_system_entries, you can start enumerating the collection of entries before the whole collection is returned; when you use xtd::io::directory::get_file_system_entries, you must wait for the whole array of entries to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_file_system_enties can be more efficient.
