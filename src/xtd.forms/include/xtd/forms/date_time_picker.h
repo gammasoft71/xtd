@@ -136,11 +136,7 @@ namespace xtd {
       /// @brief Sets the date/time value assigned to the control.
       /// @param value The date and time value assign to the control.
       virtual control& value(int32_t year, int32_t month, int32_t day) {
-        std::tm internal_value = {};
-        internal_value.tm_year = year - 1900;
-        internal_value.tm_mon = month - 1;
-        internal_value.tm_mday = day;
-        return value(mktime(&internal_value));
+        return value(year, month, day, 0, 0, 0);
       }
       /// @brief Sets the date/time value assigned to the control.
       /// @param value The date and time value assign to the control.
