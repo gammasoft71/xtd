@@ -892,9 +892,9 @@ namespace xtd {
       ///     } catch (const security::security_exception&) {
       ///       console::write_line("The caller does not have the required permission.");
       ///     } catch (const argument_exception&) {
-      ///       console::write_line("Path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
       ///     } catch (const io::directory_not_found_exception&) {
-      ///       console::write_line("The path encapsulated in the Directory object does not exist.");
+      ///       console::write_line("The path encapsulated in the directory object does not exist.");
       ///     }
       ///   }
       ///
@@ -909,9 +909,9 @@ namespace xtd {
       ///     } catch (const security::security_exception&) {
       ///       console::write_line("The caller does not have the required permission.");
       ///     } catch (const argument_exception&) {
-      ///       console::write_line("Path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
       ///     } catch (const io::directory_not_found_exception&) {
-      ///       console::write_line("The path encapsulated in the Directory object does not exist.");
+      ///       console::write_line("The path encapsulated in the directory object does not exist.");
       ///     }
       ///   }
       ///
@@ -936,7 +936,7 @@ namespace xtd {
       ///
       ///       console::write_line(directory_info.full_name());
       ///     } catch (const argument_exception&) {
-      ///       console::write_line("Path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
       ///     }
       ///   }
       ///
@@ -947,9 +947,9 @@ namespace xtd {
       ///     } catch (const security::security_exception&) {
       ///       console::write_line("The caller does not have the required permission.");
       ///     } catch (const argument_exception&) {
-      ///       console::write_line("Path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
       ///     } catch (const io::io_exception&) {
-      ///       console::write_line("An attempt was made to move a directory to a different volume, or destDirName already exists.");
+      ///       console::write_line("An attempt was made to move a directory to a different volume, or dest_dir_name already exists.");
       ///     }
       ///   }
       /// };
@@ -963,8 +963,184 @@ namespace xtd {
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path);
+      /// @brief Returns an array of file names and directory names that match a search pattern in a specified path.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @param serach_pattern The search string to match against the names of file and directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An array of file names and directory names that match the specified search criteria, or an empty array if no files or directories are found.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example uses the xtd::io::directory::get_file_system_entries method to fill an array of strings with the names of all files matching a user-specified filter in a specific location and prints each string in the array to the console. The example is configured to catch all errors common to this method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     program snippets;
+      ///
+      ///     ustring path = io::directory::get_current_directory();
+      ///     ustring filter = "*.exe";
+      ///
+      ///     snippets.print_file_system_entries(path);
+      ///     snippets.print_file_system_entries(path, filter);
+      ///     snippets.get_logical_drives();
+      ///     snippets.get_parent(path);
+      ///     snippets.move("C:\\proof", "C:\\Temp");
+      ///   }
+      ///
+      ///   void print_file_system_entries(const ustring& path) {
+      ///     try {
+      ///       // Obtain the file system entries in the directory path.
+      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///
+      ///    for (xtd::ustring str : directory_entries) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::directory_not_found_exception&) {
+      ///       console::write_line("The path encapsulated in the directory object does not exist.");
+      ///     }
+      ///   }
+      ///
+      ///   void print_file_system_entries(string path, string pattern) {
+      ///     try {
+      ///       // Obtain the file system entries in the directory path that match the pattern.
+      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///
+      ///       for (ustring str : directory_entries) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::directory_not_found_exception&) {
+      ///       console::write_line("The path encapsulated in the directory object does not exist.");
+      ///     }
+      ///   }
+      ///
+      ///   // Print out all logical drives on the system.
+      ///   void get_logical_drives() {
+      ///     try {
+      ///       vector<ustring> drives = io::directory::get_logical_drives();
+      ///
+      ///       for (ustring str : drives) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const io::io_exception&) {
+      ///       console::write_line("An I/O error occurs.");
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     }
+      ///   }
+      ///
+      ///   void get_parent(const ustring& path) {
+      ///     try {
+      ///       io::directory_info directory_info = io::directory::get_parent(path);
+      ///
+      ///       console::write_line(directory_info.full_name());
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     }
+      ///   }
+      ///
+      ///   void move(const ustring& source_path, const ustring& destination_path) {
+      ///     try {
+      ///       io::directory::move(source_path, destination_path);
+      ///       console::write_line("The directory move is complete.");
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::io_exception&) {
+      ///       console::write_line("An attempt was made to move a directory to a different volume, or dest_dir_name already exists.");
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @endcode
+      /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the search_pattern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::io::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @note When you use the asterisk wildcard character in a search_pattern such as "*.txt", the number of characters in the specified extension affects the search as follows:
+      /// * If the specified extension is exactly three characters long, the method returns files with extensions that begin with the specified extension. For example, "*.xls" returns both "book.xls" and "book.xlsx".
+      /// * In all other cases, the method returns files that exactly match the specified extension. For example, "*.ai" returns "file.ai" but not "file.aif".
+      /// <br>When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file*.txt" returns both files.
+      /// @note Because this method checks against file names with both the 8.3 file name format and the long file name format, a search pattern similar to "*1*.txt" may return unexpected file names. For example, using a search pattern of "*1*.txt" returns "longfilename.txt" because the equivalent 8.3 file name format is "LONGFI~1.TXT".
+      /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
+      /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path, const xtd::ustring& search_pattern);
       
+      /// @brief Returns the date and time the specified file or directory was last accessed.
+      /// @param path The file or directory for which to obtain access date and time information.
+      /// @return A std::chrono::system_clock::time_point class that is set to the date and time the specified file or directory was last accessed. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example demonstrates how to use GetLastAccessTime.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std::chrono;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       ustring path = R"(c:\MyDir)";
+      ///       if (!directory::exists(path)) {
+      ///         directory::create_directory(path);
+      ///       }
+      ///       directory::set_last_access_time(path, 1985, 5, 4);
+      ///
+      ///       // Get the creation time of a well-known directory.
+      ///       system_clock::time_point tp = directory::get_last_access_time(path);
+      ///       console::write_line("The last access time for this directory was {0}", tp);
+      ///
+      ///       // Update the last access time.
+      ///       directory::set_last_access_time(path, system_clock::now());
+      ///       tp = directory::get_last_access_time(path);
+      ///       console::write_line("The last access time for this directory was {0}", tp);
+      ///     }
+      ///
+      ///     catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @note This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
+      /// @remarks This method is identical to xtd::io::file::get_last_access_time.
+      /// @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::chrono::system_clock::time_point get_last_access_time(const xtd::ustring& path);
       
       static std::chrono::system_clock::time_point get_last_write_time(const xtd::ustring& path);
@@ -982,6 +1158,12 @@ namespace xtd {
 
       static void remove(const xtd::ustring& path, bool recursive);
 
+      static void set_creation_time(const xtd::ustring& path, std::chrono::system_clock::time_point creation_time);
+      static void set_creation_time(const xtd::ustring& path, time_t creation_time);
+      static void set_creation_time(const xtd::ustring& path, const std::tm& creation_time);
+      static void set_creation_time(const xtd::ustring& path, int32_t year, int32_t month, int32_t day);
+      static void set_creation_time(const xtd::ustring& path, int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second);
+
       /// @brief Sets the fully qualified path of the current working directory.
       /// @param path A string containing a directory path.
       /// @exception xtd::argument_exception Attempted to set to an empty string ("").
@@ -989,6 +1171,18 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception Attempted to set a local path that cannot be found.
       /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
       static void set_current_directory(const xtd::ustring& path);
+
+      static void set_last_access_time(const xtd::ustring& path, std::chrono::system_clock::time_point creation_time);
+      static void set_last_access_time(const xtd::ustring& path, time_t creation_time);
+      static void set_last_access_time(const xtd::ustring& path, const std::tm& creation_time);
+      static void set_last_access_time(const xtd::ustring& path, int32_t year, int32_t month, int32_t day);
+      static void set_last_access_time(const xtd::ustring& path, int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second);
+
+      static void set_last_write_time(const xtd::ustring& path, std::chrono::system_clock::time_point creation_time);
+      static void set_last_write_time(const xtd::ustring& path, time_t creation_time);
+      static void set_last_write_time(const xtd::ustring& path, const std::tm& creation_time);
+      static void set_last_write_time(const xtd::ustring& path, int32_t year, int32_t month, int32_t day);
+      static void set_last_write_time(const xtd::ustring& path, int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second);
     };
   }
 }
