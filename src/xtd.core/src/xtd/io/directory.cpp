@@ -333,21 +333,21 @@ void directory::set_current_directory(const ustring& path) {
   if (native::directory::set_current_directory(path) != 0) throw io_exception(csf_);
 }
 
-void directory::set_last_access_time(const xtd::ustring& path, system_clock::time_point creation_time) {
+void directory::set_last_access_time(const xtd::ustring& path, system_clock::time_point last_access_time) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
   
-  native::file_system::set_last_access_time(path, creation_time);
+  native::file_system::set_last_access_time(path, last_access_time);
 }
 
-void directory::set_last_access_time(const xtd::ustring& path, time_t creation_time) {
-  set_last_access_time(path, system_clock::from_time_t(creation_time));
+void directory::set_last_access_time(const xtd::ustring& path, time_t last_access_time) {
+  set_last_access_time(path, system_clock::from_time_t(last_access_time));
 }
 
-void directory::set_last_access_time(const xtd::ustring& path, const std::tm& creation_time) {
-  std::tm value = creation_time;
+void directory::set_last_access_time(const xtd::ustring& path, const std::tm& last_access_time) {
+  std::tm value = last_access_time;
   set_last_access_time(path, mktime(&value));
 }
 
@@ -366,21 +366,21 @@ void directory::set_last_access_time(const xtd::ustring& path, int32_t year, int
   set_last_access_time(path, mktime(&value));
 }
 
-void directory::set_last_write_time(const xtd::ustring& path, system_clock::time_point creation_time) {
+void directory::set_last_write_time(const xtd::ustring& path, system_clock::time_point last_write_time) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
   
-  native::file_system::set_last_write_time(path, creation_time);
+  native::file_system::set_last_write_time(path, last_write_time);
 }
 
-void directory::set_last_write_time(const xtd::ustring& path, time_t creation_time) {
-  set_last_write_time(path, system_clock::from_time_t(creation_time));
+void directory::set_last_write_time(const xtd::ustring& path, time_t last_write_time) {
+  set_last_write_time(path, system_clock::from_time_t(last_write_time));
 }
 
-void directory::set_last_write_time(const xtd::ustring& path, const std::tm& creation_time) {
-  std::tm value = creation_time;
+void directory::set_last_write_time(const xtd::ustring& path, const std::tm& last_write_time) {
+  std::tm value = last_write_time;
   set_last_write_time(path, mktime(&value));
 }
 
