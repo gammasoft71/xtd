@@ -1143,21 +1143,417 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::chrono::system_clock::time_point get_last_access_time(const xtd::ustring& path);
       
+      /// @brief Returns the date and time the specified file or directory was last written to.
+      /// @param path The file or directory for which to obtain modification date and time information.
+      /// @return A std::chrono::system_clock::time_point class that is set to the date and time the specified file or directory was last written to. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example demonstrates how to use xtd::io::directory::get_last_write_time.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std::chrono;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       ustring path = R"(c:\MyDir)";
+      ///       if (!directory::exists(path)) {
+      ///         directory::create_directory(path);
+      ///       }
+      ///       directory::set_last_write_time(path, 1985, 5, 4);
+      ///
+      ///       // Get the creation time of a well-known directory.
+      ///       system_clock::time_point tp = directory::get_last_write_time(path);
+      ///       console::write_line("The last write time for this directory was {0}", tp);
+      ///
+      ///       // Update the last write time.
+      ///       directory::set_last_write_time(path, system_clock::now());
+      ///       tp = directory::get_last_write_time(path);
+      ///       console::write_line("The last write time for this directory was {0}", tp);
+      ///     }
+      ///
+      ///     catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @note This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
+      /// @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::chrono::system_clock::time_point get_last_write_time(const xtd::ustring& path);
       
+      /// @brief Retrieves the names of the logical drives on this computer in the form "<drive letter>:\".
+      /// @return The logical drives on this computer.
+      /// @exception xtd::io::io_exception An I/O error occurred (for example, a disk error).
+      /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
+      /// @par Example
+      /// The following example uses the xtd::io::directory::get_logical_drives method to assign the name of each drive on the calling computer to an array of strings. Each member of this string array is then printed to the console. The example is configured to catch all errors common to this method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     program snippets;
+      ///
+      ///     ustring path = io::directory::get_current_directory();
+      ///     ustring filter = "*.exe";
+      ///
+      ///     snippets.print_file_system_entries(path);
+      ///     snippets.print_file_system_entries(path, filter);
+      ///     snippets.get_logical_drives();
+      ///     snippets.get_parent(path);
+      ///     snippets.move("C:\\proof", "C:\\Temp");
+      ///   }
+      ///
+      ///   void print_file_system_entries(const ustring& path) {
+      ///     try {
+      ///       // Obtain the file system entries in the directory path.
+      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///
+      ///    for (xtd::ustring str : directory_entries) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::directory_not_found_exception&) {
+      ///       console::write_line("The path encapsulated in the directory object does not exist.");
+      ///     }
+      ///   }
+      ///
+      ///   void print_file_system_entries(string path, string pattern) {
+      ///     try {
+      ///       // Obtain the file system entries in the directory path that match the pattern.
+      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///
+      ///       for (ustring str : directory_entries) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::directory_not_found_exception&) {
+      ///       console::write_line("The path encapsulated in the directory object does not exist.");
+      ///     }
+      ///   }
+      ///
+      ///   // Print out all logical drives on the system.
+      ///   void get_logical_drives() {
+      ///     try {
+      ///       vector<ustring> drives = io::directory::get_logical_drives();
+      ///
+      ///       for (ustring str : drives) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const io::io_exception&) {
+      ///       console::write_line("An I/O error occurs.");
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     }
+      ///   }
+      ///
+      ///   void get_parent(const ustring& path) {
+      ///     try {
+      ///       io::directory_info directory_info = io::directory::get_parent(path);
+      ///
+      ///       console::write_line(directory_info.full_name());
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     }
+      ///   }
+      ///
+      ///   void move(const ustring& source_path, const ustring& destination_path) {
+      ///     try {
+      ///       io::directory::move(source_path, destination_path);
+      ///       console::write_line("The directory move is complete.");
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::io_exception&) {
+      ///       console::write_line("An attempt was made to move a directory to a different volume, or dest_dir_name already exists.");
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks xtd::io::directory::get_logical_drives returns all of the accessible drives on a particular machine, including the floppy drive and any optical drives.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static std::vector<xtd::ustring> get_logical_drives();
 
+      /// @brief Retrieves the parent directory of the specified path, including both absolute and relative paths.
+      /// @param path The path for which to retrieve the parent directory.
+      /// @return The parent directory, or xtd::io::directory_info::empty if path is the root directory, including the root of a UNC server or share name.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example demonstrates how to use the xtd::io::directory::get_parent method to retrieve the parent directory of a user-specified location, "path". The value returned by the xtd::io::directory::get_parent method is then printed to the console. The example is configured to catch all errors common to this method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     program snippets;
+      ///
+      ///     ustring path = io::directory::get_current_directory();
+      ///     ustring filter = "*.exe";
+      ///
+      ///     snippets.print_file_system_entries(path);
+      ///     snippets.print_file_system_entries(path, filter);
+      ///     snippets.get_logical_drives();
+      ///     snippets.get_parent(path);
+      ///     snippets.move("C:\\proof", "C:\\Temp");
+      ///   }
+      ///
+      ///   void print_file_system_entries(const ustring& path) {
+      ///     try {
+      ///       // Obtain the file system entries in the directory path.
+      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///
+      ///    for (xtd::ustring str : directory_entries) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::directory_not_found_exception&) {
+      ///       console::write_line("The path encapsulated in the directory object does not exist.");
+      ///     }
+      ///   }
+      ///
+      ///   void print_file_system_entries(string path, string pattern) {
+      ///     try {
+      ///       // Obtain the file system entries in the directory path that match the pattern.
+      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///
+      ///       for (ustring str : directory_entries) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::directory_not_found_exception&) {
+      ///       console::write_line("The path encapsulated in the directory object does not exist.");
+      ///     }
+      ///   }
+      ///
+      ///   // Print out all logical drives on the system.
+      ///   void get_logical_drives() {
+      ///     try {
+      ///       vector<ustring> drives = io::directory::get_logical_drives();
+      ///
+      ///       for (ustring str : drives) {
+      ///         console::write_line(str);
+      ///       }
+      ///     } catch (const io::io_exception&) {
+      ///       console::write_line("An I/O error occurs.");
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     }
+      ///   }
+      ///
+      ///   void get_parent(const ustring& path) {
+      ///     try {
+      ///       io::directory_info directory_info = io::directory::get_parent(path);
+      ///
+      ///       console::write_line(directory_info.full_name());
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     }
+      ///   }
+      ///
+      ///   void move(const ustring& source_path, const ustring& destination_path) {
+      ///     try {
+      ///       io::directory::move(source_path, destination_path);
+      ///       console::write_line("The directory move is complete.");
+      ///     } catch (const security::security_exception&) {
+      ///       console::write_line("The caller does not have the required permission.");
+      ///     } catch (const argument_exception&) {
+      ///       console::write_line("path is an empty string, contains only white spaces, or contains invalid characters.");
+      ///     } catch (const io::io_exception&) {
+      ///       console::write_line("An attempt was made to move a directory to a different volume, or dest_dir_name already exists.");
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks Trailing spaces are removed from the end of the path parameter before getting the directory.
+      /// @remarks The string returned by this method consists of all characters in the path up to, but not including, the last xtd::io::path::directory_separator_char or alt_directory_separator_char. For example, passing the path "C:\Directory\SubDirectory\test.txt" to xtd::io::directory::get_parent returns "C:\Directory\SubDirectory". Passing "C:\Directory\SubDirectory" returns "C:\Directory". However, passing "C:\Directory\SubDirectory\" returns "C:\Directory\SubDirectory", because the ending directory separator is after "SubDirectory".
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static xtd::io::directory_info get_parent(const xtd::ustring& path);
 
-      static void move(const xtd::ustring& src, const xtd::ustring& dst);
+      /// @brief Moves a file or a directory and its contents to a new location.
+      /// @param source_dir_name The path of the file or directory to move.
+      /// @param dest_dir_name The path to the new location for source_dir_name. If source_dir_name is a file, then dest_dir_name must also be a file name.
+      /// @exception xtd::io::io_exception An attempt was made to move a directory to a different volume. -or- dest_dir_name already exists. See the Note in the Remarks section. -or- The source_dir_name and dest_dir_name parameters refer to the same file or directory. -or- The directory or a file within it is being used by another process.
+      /// @exception xtd::argument_exception source_dir_name or dest_dir_name is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters with the xtd::path::io::get_invalid_path_chars() method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The path specified by sourceDirName is invalid (for example, it is on an unmapped drive).
+      /// @par Example
+      /// The following example demonstrates how to move a directory and all its files to a new directory. The original directory no longer exists after it has been moved.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     ustring source_directory = R"(C:\source)";
+      ///     ustring destination_directory = R"(C:\destination)";
+      ///
+      ///     try {
+      ///       directory::move(source_directory, destination_directory);
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line(e.message());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks This method creates a new directory with the name specified by destDirName and moves the contents of sourceDirName to the newly created destination directory. If you try to move a directory to a directory that already exists, an IOException will occur. For example, an exception will occur if you try to move c:\mydir to c:\public, and c:\public already exists. Alternatively, you could specify "c:\\public\\mydir" as the destDirName parameter, provided that "mydir" does not exist under "c:\\public", or specify a new directory name such as "c:\\newdir".
+      /// @remarks The sourceDirName and destDirName arguments are permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
+      /// @remarks Trailing spaces are removed from the end of the path parameters before moving the directory.
+      /// @note xtd::io::directory::move method throws an xtd::io::io_exception in all platforms when the dest_dir_name already exists.
+      static void move(const xtd::ustring& source_dir_name, const xtd::ustring& dest_dir_name);
       
       /// @brief Deletes an empty directory from a specified path.
       /// @param path The name of the empty directory to remove. This directory must be writable and empty.
       /// @exception xtd::io::io_exception A file with the same name and location specified by path exists. -or- The directory is the application's current working directory. -or- The directory specified by path is not empty. -or- The directory is read-only or contains a read-only file. -or- The directory is being used by another process.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Exaample
+      /// The following example shows how to create a new directory and subdirectory, and then delete only the subdirectory.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     ustring sub_path = R"(C:\NewDirectory\NewSubDirectory)";
+      ///
+      ///     try {
+      ///       directory::create_directory(sub_path);
+      ///       directory::remove(sub_path);
+      ///
+      ///       bool directory_exists = directory::exists(R"(C:\NewDirectory)");
+      ///       bool sub_directory_exists = directory::exists(sub_path);
+      ///
+      ///       console::write_line("top-level directory exists: {0}", directory_exists);
+      ///       console::write_line("sub-directory exists: {0}", sub_directory_exists);
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.message());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks This method behaves identically to Delete(String, Boolean) with false specified for the second parameter.
+      /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
+      /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
+      /// @remarks This method throws an IOException if the directory specified in the path parameter contains files or subdirectories.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks In some cases, if you have the specified directory open in File Explorer, the Delete method may not be able to delete it.
       static void remove(const xtd::ustring& path);
 
+      /// @brief Deletes the specified directory and, if indicated, any subdirectories and files in the directory.
+      /// @param path The name of the directory to remove.
+      /// @param recursive true to remove directories, subdirectories, and files in path; otherwise, false.
+      /// @exception xtd::io::io_exception A file with the same name and location specified by path exists. -or- The directory is the application's current working directory. -or- The directory specified by path is not empty. -or- The directory is read-only or contains a read-only file. -or- The directory is being used by another process.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      /// The following example shows how to create a new directory, subdirectory, and file in the subdirectory, and then recursively delete all the new items.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     ustring top_path = R"(C:\NewDirectory)";
+      ///     ustring sub_path = R"(C:\NewDirectory\NewSubDirectory)";
+      ///
+      ///     try {
+      ///       directory::create_directory(sub_path);
+      ///
+      ///       using_ (stream_writer writer(sub_path + R"(\example.txt)")) {
+      ///         writer.write_line("content added");
+      ///       }
+      ///
+      ///       directory::remove(top_path, true);
+      ///
+      ///       bool directory_exists = directory::exists(top_path);
+      ///
+      ///       console::write_line("top-level directory exists: {0}", directory_exists);
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.message());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks If the recursive parameter is true, the user must have write permission for the current directory as well as for all subdirectories.
+      /// @remarks The behavior of this method differs slightly when deleting a directory that contains a reparse point, such as a symbolic link or a mount point. If the reparse point is a directory, such as a mount point, it is unmounted and the mount point is deleted. This method does not recurse through the reparse point. If the reparse point is a symbolic link to a file, the reparse point is deleted and not the target of the symbolic link.
+      /// @remarks In some cases, if you have the specified directory open in File Explorer, the xtd::io::directory::remove method may not be able to delete it.
       static void remove(const xtd::ustring& path, bool recursive);
 
+      /// @brief Sets the creation date and time for the specified file or directory.
+      /// @param path The file or directory for which to set the creation date and time information.
+      /// @param creation_time The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       static void set_creation_time(const xtd::ustring& path, std::chrono::system_clock::time_point creation_time);
       static void set_creation_time(const xtd::ustring& path, time_t creation_time);
       static void set_creation_time(const xtd::ustring& path, const std::tm& creation_time);
