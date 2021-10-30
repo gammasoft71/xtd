@@ -129,7 +129,6 @@ directory_info directory::create_directory(const ustring& path) {
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-  if (!exists(path)) throw directory_not_found_exception(csf_);
 
   directory_info dir_info(path);
   if (dir_info.exists()) return dir_info;
