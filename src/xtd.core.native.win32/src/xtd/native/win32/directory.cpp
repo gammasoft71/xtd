@@ -2,6 +2,7 @@
 
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
+#include <xtd/native/file_system.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <chrono>
 #include <string>

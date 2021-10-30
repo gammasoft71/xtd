@@ -20,6 +20,7 @@ add_sources(
   src/xtd/native/win32/drive.cpp
   src/xtd/native/win32/environment.cpp
   src/xtd/native/win32/file.cpp
+  src/xtd/native/win32/file_system.cpp
   src/xtd/native/win32/guid.cpp
   src/xtd/native/win32/path.cpp
   src/xtd/native/win32/process.cpp
