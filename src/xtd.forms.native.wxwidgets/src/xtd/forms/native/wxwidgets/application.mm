@@ -10,8 +10,7 @@ void __xtd_macos_enable_light_mode__() {
 }
 
 bool __xtd_macos_dark_mode_enabled__() {
-  //return [[[NSApp appearance] name] isEqualToString:(NSAppearanceNameDarkAqua)];
-  return [[[NSAppearance currentAppearance] name] isEqualToString:(NSAppearanceNameDarkAqua)];
+  return [[[NSAppearance currentDrawingAppearance] name] isEqualToString:(NSAppearanceNameDarkAqua)];
 }
 
 #endif
