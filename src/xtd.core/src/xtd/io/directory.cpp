@@ -128,8 +128,8 @@ directory_info directory::create_directory(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
 
   directory_info dir_info(path);
   if (dir_info.exists()) return dir_info;
@@ -148,8 +148,8 @@ directory::directory_iterator directory::enumerate_directories(const ustring& pa
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
   
   return directory_iterator(path, search_pattern);
 }
@@ -162,8 +162,8 @@ directory::file_iterator directory::enumerate_files(const ustring& path, const u
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
 
   return file_iterator(path, search_pattern);
 }
@@ -176,8 +176,8 @@ directory::file_system_entry_iterator directory::enumerate_file_system_entries(c
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
 
   return file_system_entry_iterator(path, search_pattern);
 }
@@ -190,8 +190,8 @@ system_clock::time_point directory::get_creation_time(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
 
   std::chrono::system_clock::time_point creation_time, last_access_time, last_write_time;
   native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time);
@@ -236,8 +236,8 @@ system_clock::time_point directory::get_last_access_time(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
 
   std::chrono::system_clock::time_point creation_time, last_access_time, last_write_time;
   native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time);
@@ -248,8 +248,8 @@ system_clock::time_point directory::get_last_write_time(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
 
   std::chrono::system_clock::time_point creation_time, last_access_time, last_write_time;
   native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time);
@@ -271,7 +271,7 @@ void directory::move(const ustring& src, const ustring& dst) {
   if (src.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (src.empty() || src.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(src)) throw path_too_long_exception(csf_);
-  if (!file::exists(src)) throw directory_not_found_exception(csf_);
+  if (!exists(src)) throw directory_not_found_exception(csf_);
 
   if ((file::get_attributes(src) & file_attributes::directory) == file_attributes::directory)
     directory_info(src).move_to(dst);
@@ -283,7 +283,7 @@ void directory::remove(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
 
   directory_info(path).remove();
 }
@@ -296,7 +296,7 @@ void directory::set_creation_time(const xtd::ustring& path, system_clock::time_p
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
   
   native::file_system::set_creation_time(path, creation_time);
 }
@@ -328,8 +328,8 @@ void directory::set_creation_time(const xtd::ustring& path, int32_t year, int32_
 void directory::set_current_directory(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
-  if (file::exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
   if (native::directory::set_current_directory(path) != 0) throw io_exception(csf_);
 }
 
@@ -337,7 +337,7 @@ void directory::set_last_access_time(const xtd::ustring& path, system_clock::tim
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
   
   native::file_system::set_last_access_time(path, creation_time);
 }
@@ -370,7 +370,7 @@ void directory::set_last_write_time(const xtd::ustring& path, system_clock::time
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (!file::exists(path)) throw directory_not_found_exception(csf_);
+  if (!exists(path)) throw directory_not_found_exception(csf_);
   
   native::file_system::set_last_write_time(path, creation_time);
 }
