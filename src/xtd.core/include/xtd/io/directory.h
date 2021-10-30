@@ -1554,18 +1554,329 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      ///
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Set the directory.
+      ///     ustring n = R"(C:\test\newdir)";
+      ///
+      ///     //Create the directory.
+      ///     try {
+      ///       directory::create_directory(n);
+      ///     } catch (const io_exception& e) {
+      ///       console::write_line(e);
+      ///     }
+      ///
+      ///     //Set the creation and last access times to a variable DateTime value.
+      ///     directory::set_creation_time(n, 2002, 1, 3);
+      ///     directory::set_last_access_time(n, 2002, 1, 3);
+      ///
+      ///     // Print to console the results.
+      ///     console::write_line("Creation Date: {0}", directory::get_creation_time(n));
+      ///     console::write_line("Last write time: {0}", directory::get_last_write_time(n));
+      ///     console::write_line("Last access time: {0}", directory::get_last_access_time(n));
+      ///
+      ///     //Set the last write time to a different value.
+      ///     directory::set_last_write_time(n, 1999, 1, 1);
+      ///     console::write_line("Changed last write time: {0}", directory::get_last_write_time(n));
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// // Obviously, since this sample deals with dates and times, the output will vary
+      /// // depending on when you run the executable. Here is one example of the output:
+      /// //Creation Date: 1/3/2002 12:00:00 AM
+      /// //Last write time: 12/31/1998 4:00:00 PM
+      /// //Last access time: 1/2/2002 4:00:00 PM
+      /// //Changed last write time: 1/1/1999 12:00:00 AM
+      /// @endcode
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
       static void set_creation_time(const xtd::ustring& path, std::chrono::system_clock::time_point creation_time);
+      /// @brief Sets the creation date and time for the specified file or directory.
+      /// @param path The file or directory for which to set the creation date and time information.
+      /// @param creation_time The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      ///
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Set the directory.
+      ///     ustring n = R"(C:\test\newdir)";
+      ///
+      ///     //Create the directory.
+      ///     try {
+      ///       directory::create_directory(n);
+      ///     } catch (const io_exception& e) {
+      ///       console::write_line(e);
+      ///     }
+      ///
+      ///     //Set the creation and last access times to a variable DateTime value.
+      ///     directory::set_creation_time(n, 2002, 1, 3);
+      ///     directory::set_last_access_time(n, 2002, 1, 3);
+      ///
+      ///     // Print to console the results.
+      ///     console::write_line("Creation Date: {0}", directory::get_creation_time(n));
+      ///     console::write_line("Last write time: {0}", directory::get_last_write_time(n));
+      ///     console::write_line("Last access time: {0}", directory::get_last_access_time(n));
+      ///
+      ///     //Set the last write time to a different value.
+      ///     directory::set_last_write_time(n, 1999, 1, 1);
+      ///     console::write_line("Changed last write time: {0}", directory::get_last_write_time(n));
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// // Obviously, since this sample deals with dates and times, the output will vary
+      /// // depending on when you run the executable. Here is one example of the output:
+      /// //Creation Date: 1/3/2002 12:00:00 AM
+      /// //Last write time: 12/31/1998 4:00:00 PM
+      /// //Last access time: 1/2/2002 4:00:00 PM
+      /// //Changed last write time: 1/1/1999 12:00:00 AM
+      /// @endcode
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
       static void set_creation_time(const xtd::ustring& path, time_t creation_time);
+      /// @brief Sets the creation date and time for the specified file or directory.
+      /// @param path The file or directory for which to set the creation date and time information.
+      /// @param creation_time The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      ///
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Set the directory.
+      ///     ustring n = R"(C:\test\newdir)";
+      ///
+      ///     //Create the directory.
+      ///     try {
+      ///       directory::create_directory(n);
+      ///     } catch (const io_exception& e) {
+      ///       console::write_line(e);
+      ///     }
+      ///
+      ///     //Set the creation and last access times to a variable DateTime value.
+      ///     directory::set_creation_time(n, 2002, 1, 3);
+      ///     directory::set_last_access_time(n, 2002, 1, 3);
+      ///
+      ///     // Print to console the results.
+      ///     console::write_line("Creation Date: {0}", directory::get_creation_time(n));
+      ///     console::write_line("Last write time: {0}", directory::get_last_write_time(n));
+      ///     console::write_line("Last access time: {0}", directory::get_last_access_time(n));
+      ///
+      ///     //Set the last write time to a different value.
+      ///     directory::set_last_write_time(n, 1999, 1, 1);
+      ///     console::write_line("Changed last write time: {0}", directory::get_last_write_time(n));
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// // Obviously, since this sample deals with dates and times, the output will vary
+      /// // depending on when you run the executable. Here is one example of the output:
+      /// //Creation Date: 1/3/2002 12:00:00 AM
+      /// //Last write time: 12/31/1998 4:00:00 PM
+      /// //Last access time: 1/2/2002 4:00:00 PM
+      /// //Changed last write time: 1/1/1999 12:00:00 AM
+      /// @endcode
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
       static void set_creation_time(const xtd::ustring& path, const std::tm& creation_time);
+      /// @brief Sets the creation date and time for the specified file or directory.
+      /// @param path The file or directory for which to set the creation date and time information.
+      /// @param year The year of The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @param month The month of The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @param day The day of The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      ///
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Set the directory.
+      ///     ustring n = R"(C:\test\newdir)";
+      ///
+      ///     //Create the directory.
+      ///     try {
+      ///       directory::create_directory(n);
+      ///     } catch (const io_exception& e) {
+      ///       console::write_line(e);
+      ///     }
+      ///
+      ///     //Set the creation and last access times to a variable DateTime value.
+      ///     directory::set_creation_time(n, 2002, 1, 3);
+      ///     directory::set_last_access_time(n, 2002, 1, 3);
+      ///
+      ///     // Print to console the results.
+      ///     console::write_line("Creation Date: {0}", directory::get_creation_time(n));
+      ///     console::write_line("Last write time: {0}", directory::get_last_write_time(n));
+      ///     console::write_line("Last access time: {0}", directory::get_last_access_time(n));
+      ///
+      ///     //Set the last write time to a different value.
+      ///     directory::set_last_write_time(n, 1999, 1, 1);
+      ///     console::write_line("Changed last write time: {0}", directory::get_last_write_time(n));
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// // Obviously, since this sample deals with dates and times, the output will vary
+      /// // depending on when you run the executable. Here is one example of the output:
+      /// //Creation Date: 1/3/2002 12:00:00 AM
+      /// //Last write time: 12/31/1998 4:00:00 PM
+      /// //Last access time: 1/2/2002 4:00:00 PM
+      /// //Changed last write time: 1/1/1999 12:00:00 AM
+      /// @endcode
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
       static void set_creation_time(const xtd::ustring& path, int32_t year, int32_t month, int32_t day);
+      /// @brief Sets the creation date and time for the specified file or directory.
+      /// @param path The file or directory for which to set the creation date and time information.
+      /// @param year The year of The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @param month The month of The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @param day The day of The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @param hour The hour of The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @param minute The minute of The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @param second The second of The date and time the file or directory was last written to. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Example
+      ///
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Set the directory.
+      ///     ustring n = R"(C:\test\newdir)";
+      ///
+      ///     //Create the directory.
+      ///     try {
+      ///       directory::create_directory(n);
+      ///     } catch (const io_exception& e) {
+      ///       console::write_line(e);
+      ///     }
+      ///
+      ///     //Set the creation and last access times to a variable DateTime value.
+      ///     directory::set_creation_time(n, 2002, 1, 3);
+      ///     directory::set_last_access_time(n, 2002, 1, 3);
+      ///
+      ///     // Print to console the results.
+      ///     console::write_line("Creation Date: {0}", directory::get_creation_time(n));
+      ///     console::write_line("Last write time: {0}", directory::get_last_write_time(n));
+      ///     console::write_line("Last access time: {0}", directory::get_last_access_time(n));
+      ///
+      ///     //Set the last write time to a different value.
+      ///     directory::set_last_write_time(n, 1999, 1, 1);
+      ///     console::write_line("Changed last write time: {0}", directory::get_last_write_time(n));
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// // Obviously, since this sample deals with dates and times, the output will vary
+      /// // depending on when you run the executable. Here is one example of the output:
+      /// //Creation Date: 1/3/2002 12:00:00 AM
+      /// //Last write time: 12/31/1998 4:00:00 PM
+      /// //Last access time: 1/2/2002 4:00:00 PM
+      /// //Changed last write time: 1/1/1999 12:00:00 AM
+      /// @endcode
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
       static void set_creation_time(const xtd::ustring& path, int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second);
 
-      /// @brief Sets the fully qualified path of the current working directory.
-      /// @param path A string containing a directory path.
+      /// @brief Sets the application's current working directory to the specified directory.
+      /// @param path The path to which the current working directory is set.
       /// @exception xtd::argument_exception Attempted to set to an empty string ("").
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @exception xtd::io::directory_not_found_exception Attempted to set a local path that cannot be found.
       /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
+      /// @par Example
+      /// The following example illustrates how to set the current directory and display the directory root.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Create string for a directory. This value should be an existing directory
+      ///     // or the sample will throw a DirectoryNotFoundException.
+      ///     ustring dir = R"(C:\test)";
+      ///     try {
+      ///       //Set the current directory.
+      ///       directory::set_current_directory(dir);
+      ///     } catch (const directory_not_found_exception& e) {
+      ///       console::write_line("The specified directory does not exist. {0}", e);
+      ///     }
+      ///     // Print to console the results.
+      ///     console::write_line("Root directory: {0}", directory::get_directory_root(dir));
+      ///     console::write_line("Current directory: {0}", directory::get_current_directory());
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks When the application terminates, the working directory is restored to its original location (the directory where the process was started).
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks Trailing spaces are removed from the end of the path parameter before setting the directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks If you are setting the directory to a drive with removable media (for example, "E:" for a USB flash drive), you can determine whether the drive is ready by using the IsReady property.When the application terminates, the working directory is restored to its original location (the directory where the process was started).
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
+      /// @remarks Trailing spaces are removed from the end of the path parameter before setting the directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks If you are setting the directory to a drive with removable media (for example, "E:" for a USB flash drive), you can determine whether the drive is ready by using the xtd::io::drive::is_ready property.
       static void set_current_directory(const xtd::ustring& path);
 
       static void set_last_access_time(const xtd::ustring& path, std::chrono::system_clock::time_point creation_time);
