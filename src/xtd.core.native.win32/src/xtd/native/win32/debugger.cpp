@@ -1,11 +1,11 @@
 #pragma comment(linker,"\"/manifestdependency:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debugger.h>
 #include <xtd/native/assert_dialog_results.h>
 #include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#define UNICODE
 #include <cassert>
 #include <sstream>
 #include <windows.h>

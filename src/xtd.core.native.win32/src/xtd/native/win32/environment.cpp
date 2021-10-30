@@ -1,3 +1,4 @@
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
 #include <xtd/native/constant_special_item_id_list.h>
@@ -66,19 +67,19 @@ std::map<std::string, std::string>& environment::get_environment_variables(int32
 
 std::string environment::get_know_folder_path(int32_t id) {
   if (id == CSIDL_HOME) {
-    auto path = getenv("HOMEPATH");
-    return path ? path : "";
+    auto path = win32::strings::to_wstring(getenv("HOMEPATH"));
+    return path.empty() ? win32::strings::to_string(path) : "";
   }
-  char path[MAX_PATH + 1];
-  return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path) == S_OK ? path : "";
+  wchar_t path[MAX_PATH + 1];
+  return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path) == S_OK ? win32::strings::to_string(path) : "";
 }
 
 std::string environment::get_machine_name() {
-  char machine_name[MAX_COMPUTERNAME_LENGTH + 1];
+  wchar_t machine_name[MAX_COMPUTERNAME_LENGTH + 1];
   DWORD size = MAX_COMPUTERNAME_LENGTH + 1;
   if (!GetComputerName(machine_name, &size))
     return "";
-  return machine_name;
+  return win32::strings::to_string(machine_name);
 }
 
 int32_t environment::get_os_platform_id() {
@@ -105,7 +106,7 @@ std::string environment::get_service_pack() {
   OSVERSIONINFOEX version_info {};
   version_info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
   if (GetVersionEx((LPOSVERSIONINFO)&version_info))
-    return version_info.szCSDVersion;
+    return win32::strings::to_string(version_info.szCSDVersion);
 #pragma warning(pop)
   return "";
 }
@@ -132,11 +133,11 @@ std::string environment::get_user_domain_name() {
 }
 
 std::string environment::get_user_name() {
-  char user_name[UNLEN + 1];
+  wchar_t user_name[UNLEN + 1];
   DWORD size = UNLEN + 1;
   if (!GetUserName(user_name, &size))
     return "";
-  return user_name;
+  return win32::strings::to_string(user_name);
 }
 
 bool environment::is_processor_arm() {
