@@ -50,13 +50,13 @@ size_t file::get_size(const std::string& path) {
   return static_cast<size_t>(size.QuadPart);
 }
 
-int32_t directory::move(const std::string& old_path, const std::string& new_path) {
+int32_t file::move(const std::string& old_path, const std::string& new_path) {
   int32_t file_attributes = 0;
-  if (get_file_attributes(new_path, file_attributes) == 0)
+  if (file_system::get_attributes(new_path, file_attributes) == 0)
     return -1;
   return ::rename(old_path.c_str(), new_path.c_str());
 }
 
-int32_t directory::remove(const std::string& file) {
+int32_t file::remove(const std::string& file) {
   return ::remove(file.c_str());
 }
