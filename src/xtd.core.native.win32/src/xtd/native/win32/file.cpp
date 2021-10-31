@@ -1,7 +1,9 @@
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file.h>
 #include <xtd/native/file_attribute.h>
 #include <xtd/native/file_system.h>
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 
@@ -39,7 +41,7 @@ bool file::exists(const std::string& path) {
 
 size_t file::get_size(const std::string& path) {
   WIN32_FIND_DATA file;
-  void* handle = FindFirstFileA(path.c_str(), &file);
+  void* handle = FindFirstFile(win32::strings::to_wstring(path).c_str(), &file);
   if (handle == INVALID_HANDLE_VALUE)
     return 0;
   

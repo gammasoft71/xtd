@@ -1,5 +1,7 @@
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/console.h>
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 #include <csignal>
@@ -250,13 +252,13 @@ void console::set_cursor_position(int32_t left, int32_t top) {
 }
 
 std::string console::title() {
-  char title[MAX_PATH];
+  wchar_t title[MAX_PATH];
   if (GetConsoleTitle(title, MAX_PATH) == 0) return "";
-  return title;
+  return win32::strings::to_string(title);
 }
 
 void console::title(const std::string& title) {
-  SetConsoleTitle(title.c_str());
+  SetConsoleTitle(win32::strings::to_wstring(title).c_str());
 }
 
 bool console::treat_control_c_as_input() {
