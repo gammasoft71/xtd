@@ -1,3 +1,4 @@
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/system_sound.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
