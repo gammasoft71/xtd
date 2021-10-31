@@ -103,7 +103,7 @@ In summary the goal of xtd framework is to provide a high level interface with i
 When I created xtd, I had the choice of creating my own API or using an existing API. 
 I chose to use an existing API because it is difficult to have a consistent API.
 
-I also wanted to have an AI close to the Win32 API and events because this API and events are known by many developers.
+I also wanted to have an API close to the Win32 API and events because this API and events are known by many developers.
 
 Which one to choose? It had to be the one that I knew best, that was consistent and that was complete.
 
