@@ -32,7 +32,7 @@ ustring path::combine(const ustring& path1, const ustring& path2) {
   
   stringstream ss;
   ss << path1;
-  if (path1[path1.size() - 1] != directory_separator_char()) ss <<  directory_separator_char();
+  if (path1[path1.size() - 1] != directory_separator_char()) ss << directory_separator_char();
   ss << path2;
   return ss.str();
 }
@@ -49,7 +49,7 @@ char path::directory_separator_char() noexcept {
 }
 
 ustring path::get_directory_name(const ustring& path) {
-  size_t index = path.rfind(directory_separator_char());
+  size_t index = path.last_index_of(directory_separator_char());
   if (index == ustring::npos) index = path.last_index_of(alt_directory_separator_char());
   if (index == ustring::npos) return {};
   ustring directory = path.substring(0, index);
@@ -64,7 +64,7 @@ ustring path::get_extension(const ustring& path) {
 
 ustring path::get_file_name(const ustring& path) {
   size_t index = path.last_index_of(directory_separator_char());
-  if (index == ustring::npos) index = path.rfind(alt_directory_separator_char());
+  if (index == ustring::npos) index = path.last_index_of(alt_directory_separator_char());
   return (index == ustring::npos) ? path : path.substring(index + 1);
 }
 
