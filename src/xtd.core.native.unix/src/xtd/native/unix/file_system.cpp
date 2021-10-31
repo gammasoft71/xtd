@@ -67,7 +67,12 @@ string file_system::get_full_path(const string& relative_path) {
 }
 
 bool file_system::is_path_too_long(const std::string& path) {
-  return path.size() > PATH_MAX;
+  if (path.size() > PATH_MAX) return true;
+
+  size_t index = path.rfind(native::path::directory_separator_char());
+  if (index == static_cast<size_t>(-1)) index = path.rfind(native::path::alt_directory_separator_char());
+  auto file_name =  (index == static_cast<size_t>(-1)) ? path : &path[index + 1];
+  return file_name.size() > NAME_MAX;
 }
 
 int32_t file_system::set_creation_time(const std::string &path, std::chrono::system_clock::time_point &creation_time) {
