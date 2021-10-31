@@ -1,5 +1,5 @@
+#define UNICODE
 #define _CRT_SECURE_NO_WARNINGS
-
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/path.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__

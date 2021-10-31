@@ -1,10 +1,10 @@
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process.h>
 #include <xtd/native/process_creation_flags.h>
 #include "../../../../include/xtd/native/win32/strings.h"
 #include <xtd/native/process_window_style.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#define UNICODE
 #include <filesystem>
 #include <cstdlib>
 #include <map>

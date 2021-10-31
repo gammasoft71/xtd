@@ -191,7 +191,7 @@ directory::file_and_directory_iterator::value_type directory::file_and_directory
 }
 
 int32_t directory::create(const std::string& directory_name) {
-  return CreateDirectoryA(directory_name.c_str(), nullptr) != FALSE ? 0 : -1;
+  return CreateDirectory(win32::strings::to_wstring(directory_name).c_str(), nullptr) != FALSE ? 0 : -1;
 }
 
 directory::directory_iterator directory::enumerate_directories(const std::string& path, const std::string& pattern) {
