@@ -67,10 +67,6 @@ xtd::io::file_system_info& file_system_info::last_write_time(std::chrono::system
   return *this;
 }
 
-bool file_system_info::is_empty(const file_system_info& file_system_info) {
-  return ustring::is_empty(file_system_info.original_path_);
-}
-
 void file_system_info::refresh() {
   full_path_ = native::file_system::get_full_path(original_path_);
   if (native::file_system::is_path_too_long(full_path_)) throw path_too_long_exception(csf_);

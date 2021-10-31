@@ -475,8 +475,6 @@ namespace xtd {
       /// @remarks For a file, xtd::io::file_system_info::name returns only the file name and file name extension, such as my_file.txt, not c:\dir\my_file.txt.
       virtual xtd::ustring name() const = 0;
       
-      static bool is_empty(const file_system_info& file_system_info);
-      
       /// @brief Refreshes the state of the object.
       /// @exception xtd::io::io_exception A device such as a disk drive is not ready.
       /// @remarks xtd::io::file_system_info::refresh takes a snapshot of the file from the current file system.
