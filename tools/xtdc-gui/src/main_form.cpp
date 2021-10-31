@@ -8,6 +8,7 @@
 #include "../resources/xtd_open.xpm"
 #include "../resources/xtd_new.xpm"
 #include "../resources/xtd_run.xpm"
+#include <ctype.h>
 #include <list>
 #include <filesystem>
 #include <xtd/environment.h>
@@ -423,6 +424,9 @@ main_form::main_form() {
   configure_project_name_text_box_.parent(configure_panel_);
   configure_project_name_text_box_.location({50, 210});
   configure_project_name_text_box_.width(550);
+  configure_project_name_text_box_.key_press += [&](object& sender, key_press_event_args& e) {
+    e.handled(configure_project_name_text_box_.text().size() >= 128 || !(std::isalnum(e.key_char()) || e.key_char() == U'_'));
+  };
 
   configure_project_location_label_.parent(configure_panel_);
   configure_project_location_label_.location({50, 270});

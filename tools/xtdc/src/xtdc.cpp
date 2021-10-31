@@ -2,6 +2,7 @@
 
 #include <xtd/xtd.core>
 #include <chrono>
+#include <ctype.h>
 #include <filesystem>
 #include <iostream>
 
@@ -472,6 +473,19 @@ namespace xtdc_command {
       if (name.empty()) name = filesystem::path(path).stem().string();
       if (path.empty()) path = environment::current_directory();
 
+      if (name.empty()) {
+        cout << "The name is empty." << endl;
+        return -1;
+      }
+      if (std::find_if(name.begin(), name.end(), [](auto c) {return !(isalnum(c) || c == '_');}) != name.end()) {
+        cout << "The name : \"" << name << "\" contains invalid charaters." << endl;
+        return -1;
+      }
+      if (name.size() > 128) {
+        cout << "The size of the name is invalid, the size must be less than or equal to 128." << endl;
+        return -1;
+      }
+      
       if (show_help)
         cout << ustring::join("\n", get_new_help()) << endl;
       else {
