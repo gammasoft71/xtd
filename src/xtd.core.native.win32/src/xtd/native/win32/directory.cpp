@@ -31,7 +31,7 @@ directory::directory_iterator::directory_iterator(const std::string& path, const
   string search_pattern = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + data_->pattern_;
   data_->handle_ = FindFirstFile(win32::strings::to_wstring(search_pattern).c_str(), &item);
   bool result = data_->handle_!= INVALID_HANDLE_VALUE;
-  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY) || wstring(item.cFileName) == L"." || wstring(item.cFileName) == L"..")
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY || wstring(item.cFileName) == L"." || wstring(item.cFileName) == L".."))
     result = FindNextFile(data_->handle_, &item) != FALSE;
   if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + win32::strings::to_string(item.cFileName);
   else  data_->current_ = "";
@@ -51,7 +51,7 @@ directory::directory_iterator::~directory_iterator() {
 directory::directory_iterator& directory::directory_iterator::operator++() {
   WIN32_FIND_DATA item;
   bool result = FindNextFile(data_->handle_, &item) != FALSE;
-  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY) || wstring(item.cFileName) == L"." || wstring(item.cFileName) == L"..")
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY || wstring(item.cFileName) == L"." || wstring(item.cFileName) == L".."))
     result = FindNextFile(data_->handle_, &item) != FALSE;
 
   if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + win32::strings::to_string(item.cFileName);
@@ -89,7 +89,7 @@ directory::file_iterator::file_iterator(const std::string& path, const std::stri
   string search_pattern = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + data_->pattern_;
   data_->handle_ = FindFirstFile(win32::strings::to_wstring(search_pattern).c_str(), &item);
   bool result = data_->handle_ != INVALID_HANDLE_VALUE;
-  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY) || wstring(item.cFileName) == L"." || wstring(item.cFileName) == L"..")
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY || wstring(item.cFileName) == L"." || wstring(item.cFileName) == L".."))
     result = FindNextFile(data_->handle_, &item) != FALSE;
   if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + win32::strings::to_string(item.cFileName);
   else  data_->current_ = "";
@@ -109,7 +109,7 @@ directory::file_iterator::~file_iterator() {
 directory::file_iterator& directory::file_iterator::operator++() {
   WIN32_FIND_DATA item;
   bool result = FindNextFile(data_->handle_, &item) != FALSE;
-  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY) || wstring(item.cFileName) == L"." || wstring(item.cFileName) == L"..")
+  while (result == true && ((item.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY || wstring(item.cFileName) == L"." || wstring(item.cFileName) == L".."))
     result = FindNextFile(data_->handle_, &item) != FALSE;
 
   if (result) data_->current_ = data_->path_ + (data_->path_.rfind('\\') == data_->path_.size() - 1 ? "" : "\\") + win32::strings::to_string(item.cFileName);
