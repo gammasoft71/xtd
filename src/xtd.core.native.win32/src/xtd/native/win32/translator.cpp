@@ -1,3 +1,4 @@
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/translator.h>
 #include <xtd/native/environment.h>
@@ -12,7 +13,7 @@ using namespace xtd::native;
 
 std::string translator::get_system_language() {
   if (!environment::get_environment_variable("LANG").empty()) return win32::strings::to_lower(win32::strings::substring(environment::get_environment_variable("LANG"), 0, 2));
-  char data[512] = {0};
-  GetLocaleInfoA(LOCALE_USER_DEFAULT, LOCALE_SISO639LANGNAME, data, 512);
-  return data;
+  wchar_t data[512] = {0};
+  GetLocaleInfo(LOCALE_USER_DEFAULT, LOCALE_SISO639LANGNAME, data, 512);
+  return win32::strings::to_string(data);
 }
