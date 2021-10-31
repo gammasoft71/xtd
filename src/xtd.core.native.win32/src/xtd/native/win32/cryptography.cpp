@@ -1,5 +1,7 @@
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/cryptography.h>
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 
@@ -7,15 +9,15 @@ using namespace std;
 using namespace xtd::native;
 
 namespace {
-  string get_machine_guid_str() {
-    char value[255];
+  wstring get_machine_guid_str() {
+    wchar_t value[255];
     DWORD value_size = sizeof(value);
-    return RegGetValueA(HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\Cryptography", "MachineGuid", RRF_RT_REG_SZ, nullptr, value, &value_size) == 0 ? value : "";
+    return RegGetValue(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Microsoft\\Cryptography", L"MachineGuid", RRF_RT_REG_SZ, nullptr, value, &value_size) == 0 ? value : L"";
   }
 }
 
 vector<uint8_t> cryptography::machine_guid() {
-  string guid_str = get_machine_guid_str();
+  string guid_str = win32::strings::to_string(get_machine_guid_str());
 
   static const string guid_fallback = "30395f0ed6aa4a5eb4af6f90a608c605";
   static const string hex_chars = "0123456789ABCDEF";

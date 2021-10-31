@@ -9,14 +9,26 @@
 #include <vector>
 
 namespace xtd::native {
+  class console;
+  class cryptography;
   class debugger;
+  class directory;
+  class drive;
   class environment;
+  class file;
+  class file_system;
   class process;
   class translator;
   namespace win32 {
     class strings final {
+      friend xtd::native::console;
+      friend xtd::native::cryptography;
       friend xtd::native::debugger;
+      friend xtd::native::directory;
+      friend xtd::native::drive;
       friend xtd::native::environment;
+      friend xtd::native::file;
+      friend xtd::native::file_system;
       friend xtd::native::process;
       friend xtd::native::translator;
     protected:
@@ -71,7 +83,45 @@ namespace xtd::native {
         return result;
       }
 
-      static std::wstring to_wstring(const std::string& str) {return to_wstring(str.c_str());}
+      static std::string to_string(const std::wstring& str) { return to_string(str.c_str()); }
+      static std::string to_string(const wchar_t* str) {
+        std::string out;
+        unsigned int codepoint = 0;
+        while (*str != 0) {
+          wchar_t character = static_cast<wchar_t>(*str);
+          if (character >= 0xd800 && character <= 0xdbff)
+            codepoint = ((character - 0xd800) << 10) + 0x10000;
+          else {
+            if (character >= 0xdc00 && character <= 0xdfff)
+              codepoint |= character - 0xdc00;
+            else
+              codepoint = character;
+
+            if (codepoint <= 0x7f)
+              out.append(1, static_cast<char>(codepoint));
+            else if (codepoint <= 0x7ff) {
+              out.append(1, static_cast<char>(0xc0 | ((codepoint >> 6) & 0x1f)));
+              out.append(1, static_cast<char>(0x80 | (codepoint & 0x3f)));
+            }
+            else if (codepoint <= 0xffff) {
+              out.append(1, static_cast<char>(0xe0 | ((codepoint >> 12) & 0x0f)));
+              out.append(1, static_cast<char>(0x80 | ((codepoint >> 6) & 0x3f)));
+              out.append(1, static_cast<char>(0x80 | (codepoint & 0x3f)));
+            }
+            else {
+              out.append(1, static_cast<char>(0xf0 | ((codepoint >> 18) & 0x07)));
+              out.append(1, static_cast<char>(0x80 | ((codepoint >> 12) & 0x3f)));
+              out.append(1, static_cast<char>(0x80 | ((codepoint >> 6) & 0x3f)));
+              out.append(1, static_cast<char>(0x80 | (codepoint & 0x3f)));
+            }
+            codepoint = 0;
+          }
+          ++str;
+        }
+        return out;
+      }
+
+      static std::wstring to_wstring(const std::string& str) { return to_wstring(str.c_str()); }
       static std::wstring to_wstring(const char* str) {
         std::wstring out;
         char32_t codepoint;
@@ -87,7 +137,8 @@ namespace xtd::native {
             if (codepoint > 0xffff) {
               out.append(1, static_cast<wchar_t>(0xd800 + (static_cast<char16_t>(codepoint) >> 10)));
               out.append(1, static_cast<wchar_t>(0xdc00 + (static_cast<char16_t>(codepoint) & 0x03ff)));
-            } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+            }
+            else if (codepoint < 0xd800 || codepoint >= 0xe000)
               out.append(1, static_cast<wchar_t>(codepoint));
           }
         }
@@ -110,7 +161,6 @@ namespace xtd::native {
           return false;
         }
       }
-      
     };
   }
 }

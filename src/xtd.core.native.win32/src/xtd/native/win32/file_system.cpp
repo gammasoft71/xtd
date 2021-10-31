@@ -1,5 +1,7 @@
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file_system.h>
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 
@@ -10,7 +12,7 @@ using namespace xtd::native;
 #undef min
 
 int32_t file_system::get_attributes(const string& path, int32_t& attributes) {
-  attributes = static_cast<int32_t>(GetFileAttributes(path.c_str()));
+  attributes = static_cast<int32_t>(GetFileAttributes(win32::strings::to_wstring(path).c_str()));
   return 0;
 }
 
