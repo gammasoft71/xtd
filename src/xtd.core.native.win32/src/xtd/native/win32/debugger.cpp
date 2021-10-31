@@ -46,5 +46,5 @@ int32_t debugger::show_assert_dialog(const std::string& text, const std::string&
 }
 
 void debugger::log(int32_t level, const std::string& category, const std::string& message) {
-  OutputDebugStringA(message.c_str());
+  OutputDebugString(win32::strings::to_wstring(message).c_str());
 }

@@ -12,8 +12,9 @@ using namespace xtd::native;
 #undef min
 
 int32_t file_system::get_attributes(const string& path, int32_t& attributes) {
-  attributes = static_cast<int32_t>(GetFileAttributes(win32::strings::to_wstring(path).c_str()));
-  return 0;
+  auto attrib = GetFileAttributes(win32::strings::to_wstring(path).c_str());
+  if (attrib != INVALID_FILE_ATTRIBUTES) attributes = static_cast<int32_t>(attrib);
+  return attrib != INVALID_FILE_ATTRIBUTES ? 0 : -1;
 }
 
 int32_t file_system::get_file_times(const string& path, chrono::system_clock::time_point& creation_time, chrono::system_clock::time_point& last_access_time, chrono::system_clock::time_point& last_write_time) {
