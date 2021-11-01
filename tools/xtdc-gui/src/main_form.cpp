@@ -427,6 +427,9 @@ main_form::main_form() {
   configure_project_name_text_box_.key_press += [&](object& sender, key_press_event_args& e) {
     e.handled(configure_project_name_text_box_.text().size() >= 128 || !(std::isalnum(e.key_char()) || e.key_char() == U'_'));
   };
+  configure_project_name_text_box_.key_up += [&](object& sender, key_event_args& e) {
+    next_button_.enabled(configure_project_name_text_box_.text().size() != 0);
+  };
 
   configure_project_location_label_.parent(configure_panel_);
   configure_project_location_label_.location({50, 270});
