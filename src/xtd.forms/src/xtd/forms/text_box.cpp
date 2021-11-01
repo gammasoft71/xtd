@@ -172,7 +172,7 @@ void text_box::wm_key_char(message &message) {
       key_event_args key_event_args(static_cast<keys>(message.wparam()));
       on_key_down(key_event_args);
       message.result(key_event_args.suppress_key_press());
-    } else if (message.msg() == WM_CHAR) {
+    } else if (message.msg() == WM_CHAR && std::iscntrl(static_cast<int32_t>(message.wparam())) == 0) {
       key_press_event_args key_event_args(static_cast<int32_t>(message.wparam()));
       text_ += xtd::ustring::format("{}",key_event_args.key_char());
       native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
