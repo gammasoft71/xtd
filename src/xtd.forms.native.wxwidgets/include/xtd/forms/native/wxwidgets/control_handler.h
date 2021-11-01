@@ -181,7 +181,7 @@ namespace xtd {
 
         intptr_t convert_to_virtual_key(const wxKeyEvent& key_event) {
           intptr_t key_data = VK_NONE;
-          if (key_event.GetUnicodeKey() != WXK_NONE)
+          if (key_event.GetUnicodeKey() != WXK_NONE && key_event.GetUnicodeKey() != WXK_DELETE)
             key_data = static_cast<intptr_t>(key_event.GetUnicodeKey());
           else {
             switch (key_event.GetKeyCode()) {
