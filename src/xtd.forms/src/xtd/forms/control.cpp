@@ -1059,8 +1059,9 @@ void control::wm_key_char(message& message) {
   } else if (message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) {
     key_press_event_args key_press_event_args(static_cast<int32_t>(message.wparam()));
     on_key_press(key_press_event_args);
-    message.result(key_press_event_args.handled());
-    if (!key_press_event_args.handled()) def_wnd_proc(message);
+    bool event_handled = key_press_event_args.handled() && std::iscntrl(static_cast<int32_t>(message.wparam())) == 0;
+    message.result(event_handled);
+    if (!event_handled) def_wnd_proc(message);
   } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     modifier_keys_ = key_event_args.modifiers();
