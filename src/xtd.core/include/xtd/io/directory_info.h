@@ -432,7 +432,7 @@ namespace xtd {
       /// @param path The specified path. This cannot be a different disk volume or Universal Naming Convention (UNC) name.
       /// @return The last directory specified in path.
       /// @exception xtd::argument_exception path does not specify a valid file path or contains invalid xtd::io::directory_info characters.
-      /// @exception xtd::io::directtory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::io::io_excepttion The subdirectory cannot be created. -or- A file or directory already has the name specified by path.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
@@ -475,8 +475,65 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       xtd::io::directory_info create_subdirectory(const xtd::ustring& path) const;
       
+      /// @brief Returns an enumerable collection of directory information in the current directory.
+      /// @return An xtd::io::directory_info::directory_iterator of directories in the current directory.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @par Example
+      /// The following example enumerates the subdirectories under the "My Documents" directory.
+      /// @code
+      /// #include <xtd/xtd>
+      /// 
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Set a variable to the Documents path.
+      ///     ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+      ///
+      ///     directory_info dirs(doc_path);
+      ///
+      ///     for (auto di : dirs.enumerate_directories()) {
+      ///       console::write_line("{}", di.name());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks The xtd::io::directory_info::enumerate_directories and xtd::io::directory_info::get_directories methods differ as follows:
+      /// @remarks * When you use xtd::io::directory_info::enumerate_directories, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
+      /// @remarks * When you use xtd::io::directory_info::get_directories, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_directories can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::directory_info::attributes
+      /// * xtd::io::directory_info::creation_time
+      /// * xtd::io::directory_info::last_access_time
+      /// * xtd::io::directory_info::last_write_time
       xtd::io::directory_info::directory_iterator enumerate_directories() const;
-      xtd::io::directory_info::directory_iterator enumerate_directories(const xtd::ustring& pattern) const;
+      /// @brief Returns an enumerable collection of directory information that matches a specified search pattern.
+      /// @param search_pattern The search string to match against the names of directories. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An xtd::io::directory_info::directory_iterator of directories that matches search_pattern.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @remarks searchPattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in searchPattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The searchPattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks The xtd::io::directory_info::enumerate_directories and xtd::io::directory_info::get_directories methods differ as follows:
+      /// @remarks * When you use xtd::io::directory_info::enumerate_directories, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
+      /// @remarks * When you use xtd::io::directory_info::get_directories, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_directories can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::directory_info::attributes
+      /// * xtd::io::directory_info::creation_time
+      /// * xtd::io::directory_info::last_access_time
+      /// * xtd::io::directory_info::last_write_time
+      xtd::io::directory_info::directory_iterator enumerate_directories(const xtd::ustring& search_pattern) const;
       
       xtd::io::directory_info::file_iterator enumerate_files() const;
       xtd::io::directory_info::file_iterator enumerate_files(const xtd::ustring& pattern) const;
@@ -534,6 +591,49 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       void remove() const override;
       
+      /// @brief Deletes this instance of a DirectoryInfo, specifying whether to delete subdirectories and files.
+      /// @param recursive true to delete this directory, its subdirectories, and all files; otherwise, false.
+      /// @exception xtd::unauthorized_access_exception The directory contains a read-only file.
+      /// @exception xtd::io::directory_not_fond_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
+      /// @exception xtd::io::io_excpetion The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
+      /// @par Example
+      /// The following example demonstrates deleting a directory. Because the directory is removed, first comment out the Delete line to test that the directory exists. Then uncomment the same line of code to test that the directory was removed successfully.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Make a reference to a directory.
+      ///     directory_info di("TempDir");
+      ///
+      ///     // Create the directory only if it does not already exist.
+      ///     if (di.exists() == false)
+      ///       di.create();
+      ///
+      ///     // Create a subdirectory in the directory just created.
+      ///     directory_info dis = di.create_subdirectory("SubDir");
+      ///
+      ///     // Process that directory as required.
+      ///     // ...
+      ///
+      ///     // Delete the subdirectory. The true indicates that if subdirectories
+      ///     // or files are in this directory, they are to be deleted as well.
+      ///     dis.remove(true);
+      ///
+      ///     // Delete the directory.
+      ///     di.remove(true);
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks If the xtd::io::directory_info has no files or subdirectories, this method deletes the xtd::io::directory_info even if recursive is false. Attempting to delete a xtd::io::directory_info that is not empty when recursive is false throws an xtd::io::io_exception.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       void remove(bool recursive) const;
       
     private:
