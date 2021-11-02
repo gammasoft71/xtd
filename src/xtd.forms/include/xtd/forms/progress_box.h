@@ -11,7 +11,7 @@
 namespace xtd {
 	/// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
 	namespace forms {
-		/// @brief Represents a common dialog box that displays a file save dialog to the user to select a location for saving a file.
+		/// @brief Represents a common dialog box that displays a progress dialog.
 		/// @par Namespace
 		/// xtd::forms
 		/// @par Library
@@ -328,7 +328,7 @@ namespace xtd {
 					 .show_elapsed_time(options & progress_box_options::show_elapsed_time)
 					 .show_estimated_time(options & progress_box_options::show_estimated_time)
 					 .show_remaining_time(options & progress_box_options::show_remaining_time);
-				 owner ? dialog_->show(*owner) : dialog_->show();
+				 owner ? dialog_->show_sheet(*owner) : dialog_->show();
 			 }
 		};
 	}
