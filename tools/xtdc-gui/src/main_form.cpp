@@ -30,7 +30,7 @@ using namespace xtdc_gui;
 main_form::main_form() {
   busy_box::show("Initializing...", "xtdc-gui");
   client_size({1000, 710});
-  minimum_size(size());
+  //minimum_size(size());
   icon(system_icons::from_name("xtd"));
   minimize_box(false);
   start_position(form_start_position::center_screen);
