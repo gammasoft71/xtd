@@ -39,10 +39,16 @@ namespace xtdc_gui {
     void init();
     void init_create_create_recent_projects_list_box();
     void init_startup_open_recent_projects_list_box();
+    void new_project();
     void new_project(const std::string& project_path, size_t project_type_items_index);
     void new_project(const std::string& project_path, project_type type, project_language language, project_sdk sdk);
+    void open_project();
     void open_project(const std::string& project_path);
+    void open_xtd_examples();
+    void run_project();
     void run_project(const std::string& project_path);
+    void set_auto_close();
+    void show_about_dialog();
 
     std::unique_ptr<xtd::forms::background_worker> background_worker_;
     std::unique_ptr<xtd::forms::progress_dialog> progress_dialog_;
@@ -96,7 +102,6 @@ namespace xtdc_gui {
     xtd::forms::text_box configure_project_location_text_box_;
     xtd::forms::button configure_project_location_button_;
 
-    xtd::forms::check_box auto_close_check_box_;
     xtd::forms::button previous_button_;
     xtd::forms::button next_button_;
     
