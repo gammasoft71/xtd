@@ -642,7 +642,7 @@ void control::on_layout(const event_args &e) {
 }
 
 void control::on_location_changed(const event_args &e) {
-  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
+  if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   if (can_raise_events()) location_changed(*this, e);
 }
 
@@ -915,7 +915,7 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
     native::control::location(handle_, location_);
     on_location_changed(event_args::empty);
-    if (parent_) parent().value().get().perform_layout();
+    if (parent().has_value()) parent().value().get().perform_layout();
     perform_layout();
   }
   
