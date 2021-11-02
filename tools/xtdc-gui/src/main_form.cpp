@@ -30,7 +30,7 @@ using namespace xtdc_gui;
 main_form::main_form() {
   busy_box::show("Initializing...", "xtdc-gui");
   client_size({1000, 710});
-  //minimum_size(size());
+  minimum_size(size());
   icon(system_icons::from_name("xtd"));
   minimize_box(false);
   start_position(form_start_position::center_screen);
@@ -562,9 +562,9 @@ main_form::main_form() {
         begin_invoke([&] {
           progress_dialog_->hide();
           progress_dialog_.reset();
+          background_worker_.reset();
           if (properties::settings::default_settings().auto_close()) close();
         });
-        background_worker_.reset();
       };
       background_worker_->run_worker_async(target_path);
     }
@@ -662,9 +662,9 @@ void main_form::new_project(const std::string& project_path, project_type type, 
     begin_invoke([&] {
       progress_dialog_->hide();
       progress_dialog_.reset();
+      background_worker_.reset();
       if (properties::settings::default_settings().auto_close()) close();
     });
-    background_worker_.reset();
   };
   background_worker_->run_worker_async(std::make_tuple(std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}}[type], (sdk == project_sdk::none ? std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}}[language] : std::map<project_sdk, std::string> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}}[sdk]), std::filesystem::path(project_path)));
 }
@@ -686,9 +686,9 @@ void main_form::open_project(const std::string& project_path) {
     begin_invoke([&] {
       progress_dialog_->hide();
       progress_dialog_.reset();
+      background_worker_.reset();
       if (properties::settings::default_settings().auto_close()) close();
     });
-    background_worker_.reset();
   };
   background_worker_->run_worker_async(std::filesystem::path(project_path));
 }
@@ -710,9 +710,9 @@ void main_form::run_project(const std::string& project_path) {
     begin_invoke([&] {
       progress_dialog_->hide();
       progress_dialog_.reset();
+      background_worker_.reset();
       if (properties::settings::default_settings().auto_close()) close();
     });
-    background_worker_.reset();
   };
   background_worker_->run_worker_async(std::filesystem::path(project_path));
 }
