@@ -442,7 +442,7 @@ main_form::main_form() {
     e.handled(configure_project_name_text_box_.text().size() >= 128 || !(std::isalnum(e.key_char()) || e.key_char() == U'_'));
   };
   configure_project_name_text_box_.key_up += [&](object& sender, key_event_args& e) {
-    next_button_.enabled(configure_project_name_text_box_.text().size() != 0);
+    next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
   };
 
   configure_project_location_label_.parent(configure_panel_);
@@ -454,7 +454,10 @@ main_form::main_form() {
   configure_project_location_text_box_.location({50, 300});
   configure_project_location_text_box_.width(550);
   configure_project_location_text_box_.text(properties::settings::default_settings().create_propject_folder());
-  
+  configure_project_location_text_box_.key_up += [&](object& sender, key_event_args& e) {
+    next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
+  };
+
   configure_project_location_button_.parent(configure_panel_);
   configure_project_location_button_.location({620, 300});
   configure_project_location_button_.width(37);
@@ -466,6 +469,7 @@ main_form::main_form() {
       properties::settings::default_settings().create_propject_folder(dialog.selected_path());
       properties::settings::default_settings().save();
       configure_project_location_text_box_.text(properties::settings::default_settings().create_propject_folder());
+      next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
     }
   };
 
