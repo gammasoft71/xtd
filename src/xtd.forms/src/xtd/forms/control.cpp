@@ -942,7 +942,8 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 void control::on_parent_size_changed(object& sender, const event_args& e) {
   if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this)) {
     perform_layout();
-    parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size();
+    if (parent().has_value())
+      parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size();
   }
 }
 
