@@ -266,6 +266,9 @@ main_form::main_form() {
       open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).picture());
     }
   };
+  open_xtd_example_core_list_box_.double_click += [&] {
+    next_button_.perform_click();
+  };
 
   open_xtd_example_forms_list_box_.parent(open_xtd_example_forms_tab_page_);
   open_xtd_example_forms_list_box_.location({30, 110});
@@ -279,6 +282,9 @@ main_form::main_form() {
       open_xtd_examples_information_text_box_.text(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
       open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).picture());
     }
+  };
+  open_xtd_example_forms_list_box_.double_click += [&] {
+    next_button_.perform_click();
   };
 
   open_xtd_example_tunit_list_box_.parent(open_xtd_example_tunit_tab_page_);
@@ -294,6 +300,9 @@ main_form::main_form() {
       open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).picture());
     }
   };
+  open_xtd_example_tunit_list_box_.double_click += [&] {
+    next_button_.perform_click();
+  };
 
   open_xtd_example_cmake_list_box_.parent(open_xtd_example_cmake_tab_page_);
   open_xtd_example_cmake_list_box_.location({30, 110});
@@ -307,6 +316,9 @@ main_form::main_form() {
       open_xtd_examples_information_text_box_.text(std::any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).description());
       open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).picture());
     }
+  };
+  open_xtd_example_cmake_list_box_.double_click += [&] {
+    next_button_.perform_click();
   };
 
   create_panel_.parent(*this);
