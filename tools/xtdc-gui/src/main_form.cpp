@@ -343,7 +343,7 @@ main_form::main_form() {
   };
   create_create_recent_projects_list_box_.key_down += [&](object& sender, key_event_args& e) {
     if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != create_create_recent_projects_list_box_.npos)
-      delete_from_create_recent_projects(xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()]));
+      delete_from_create_recent_projects(xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects().split({';'})[create_create_recent_projects_list_box_.selected_index()]));
   };
 
   create_language_choice_.parent(create_panel_);
