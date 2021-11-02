@@ -28,17 +28,37 @@ using namespace xtd::forms;
 using namespace xtdc_gui;
 
 main_form::main_form() {
-  busy_box::show("Initializing...", "xtdc-gui");
-  accept_button(next_button_);
+  if (properties::settings::default_settings().menu_visible()) {
+    menu({
+      {system_texts::file(), {
+        /// @todo Remove following comment when enabled menu item will work.
+        //{"Create new project", {*this, overload_<>(&main_form::new_project)}, shortcut::cmd_n},
+        {"Open a project or solution", {*this, overload_<>(&main_form::open_project)}, shortcut::cmd_o},
+        /// @todo Remove following comment when enabled menu item will work.
+        //{"Open xtd examples", {*this, &main_form::open_xtd_examples}, shortcut::cmd_e},
+        {"Run a project", {*this, overload_<>(&main_form::run_project)}, shortcut::cmd_r},
+        {"-"},
+        {system_texts::exit(), {overload_<>(&application::exit)}, menu_images::file_exit(), shortcut::alt_f4},
+      }},
+      {system_texts::options(), {
+        {"Auto close"_t, {*this, &main_form::set_auto_close}, menu_item_kind::check, properties::settings::default_settings().auto_close(), shortcut::alt_1},
+      }},
+      
+      {system_texts::help(), {
+        {system_texts::about(), {*this, &main_form::show_about_dialog}},
+      }},
+    });
+  }
+  
   client_size({1000, 710});
   minimum_size(size());
+  accept_button(next_button_);
   icon(system_icons::from_name("xtd"));
   minimize_box(false);
   start_position(form_start_position::center_screen);
-  visible_changed += [&] {
-    if (visible()) busy_box::hide();
-  };
-  
+
+  busy_box::show("Initializing...", "xtdc-gui");
+
   startup_panel_.auto_scroll(true);
   startup_panel_.parent(*this);
   startup_panel_.size(client_size() - xtd::drawing::size {0, 100});
@@ -88,11 +108,7 @@ main_form::main_form() {
   startup_open_project_button_.size({350, 100});
   startup_open_project_button_.font({startup_open_project_button_.font(), 14.0});
   startup_open_project_button_.anchor(anchor_styles::top|anchor_styles::right);
-  startup_open_project_button_.click += [&] {
-    folder_browser_dialog dialog;
-    dialog.selected_path(properties::settings::default_settings().open_propject_folder());
-    if (dialog.show_sheet_dialog(*this) == dialog_result::ok) open_project(dialog.selected_path());
-  };
+  startup_open_project_button_.click += {*this, overload_<>(&main_form::open_project)};
 
   startup_run_project_button_.parent(startup_panel_);
   startup_run_project_button_.image(xtd::forms::theme_images::current_theme().from_name("system-run", drawing::size {48, 48}));
@@ -103,11 +119,7 @@ main_form::main_form() {
   startup_run_project_button_.size({350, 100});
   startup_run_project_button_.font({startup_run_project_button_.font(), 14.0});
   startup_run_project_button_.anchor(anchor_styles::top|anchor_styles::right);
-  startup_run_project_button_.click += [&] {
-    folder_browser_dialog dialog;
-    dialog.selected_path(properties::settings::default_settings().open_propject_folder());
-    if (dialog.show_sheet_dialog(*this) == dialog_result::ok) run_project(dialog.selected_path());
-  };
+  startup_run_project_button_.click += {*this, overload_<>(&main_form::run_project)};
 
   startup_new_project_button_.parent(startup_panel_);
   startup_new_project_button_.image(xtd::forms::theme_images::current_theme().from_name("document-new", drawing::size {48, 48}));
@@ -118,13 +130,7 @@ main_form::main_form() {
   startup_new_project_button_.size({350, 100});
   startup_new_project_button_.font({startup_new_project_button_.font(), 14.0});
   startup_new_project_button_.anchor(anchor_styles::top|anchor_styles::right);
-  startup_new_project_button_.click += [&] {
-    startup_panel_.visible(false);
-    create_panel_.visible(true);
-    previous_button_.visible(true);
-    next_button_.text("&Next");
-    next_button_.visible(true);
-  };
+  startup_new_project_button_.click += {*this, overload_<>(&main_form::new_project)};
 
   startup_open_xtd_examples_button_.parent(startup_panel_);
   startup_open_xtd_examples_button_.image(xtd::forms::theme_images::current_theme().from_name("xtd", drawing::size {48, 48}));
@@ -135,14 +141,7 @@ main_form::main_form() {
   startup_open_xtd_examples_button_.size({350, 100});
   startup_open_xtd_examples_button_.font({startup_new_project_button_.font(), 14.0});
   startup_open_xtd_examples_button_.anchor(anchor_styles::top|anchor_styles::right);
-  startup_open_xtd_examples_button_.click += [&] {
-    startup_panel_.visible(false);
-    open_xtd_examples_panel_.visible(true);
-    previous_button_.visible(true);
-    next_button_.text("&Open");
-    next_button_.visible(true);
-    next_button_.enabled(true);
-  };
+  startup_open_xtd_examples_button_.click += {*this, &main_form::open_xtd_examples};
 
   open_xtd_examples_panel_.parent(*this);
   open_xtd_examples_panel_.size(client_size() - xtd::drawing::size {0, 100});
@@ -472,16 +471,6 @@ main_form::main_form() {
       next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
     }
   };
-
-  auto_close_check_box_.parent(*this);
-  auto_close_check_box_.text("&Auto close");
-  auto_close_check_box_.checked(properties::settings::default_settings().auto_close());
-  auto_close_check_box_.location({50, client_size().height() - 75});
-  auto_close_check_box_.anchor(anchor_styles::left|anchor_styles::bottom);
-  auto_close_check_box_.checked_changed += [&] {
-    properties::settings::default_settings().auto_close(auto_close_check_box_.checked());
-    properties::settings::default_settings().save();
-  };
   
   previous_button_.parent(*this);
   previous_button_.text("&Back");
@@ -490,11 +479,25 @@ main_form::main_form() {
   previous_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   previous_button_.click += [&] {
     if (open_xtd_examples_panel_.visible()) {
+      /// @todo Remove following comment when enabled menu item will work.
+      /*
+      if (menu().has_value()) {
+        menu().value().menu_items()[0].menu_items()[0].enabled(true);
+        menu().value().menu_items()[0].menu_items()[2].enabled(true);
+      }
+       */
       startup_panel_.visible(true);
       open_xtd_examples_panel_.visible(false);
       previous_button_.visible(false);
       next_button_.visible(false);
     } else if (create_panel_.visible()) {
+      /// @todo Remove following comment when enabled menu item will work.
+      /*
+      if (menu().has_value()) {
+        menu().value().menu_items()[0].menu_items()[0].enabled(true);
+        menu().value().menu_items()[0].menu_items()[2].enabled(true);
+      }
+       */
       startup_panel_.visible(true);
       create_panel_.visible(false);
       previous_button_.visible(false);
@@ -588,6 +591,8 @@ main_form::main_form() {
   };
   
   init();
+
+  busy_box::hide();
 }
 
 void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
@@ -654,6 +659,21 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
   init_startup_open_recent_projects_list_box();
 }
 
+void main_form::new_project() {
+  /// @todo Remove following comment when enabled menu item will work.
+  /*
+  if (menu().has_value()) {
+    menu().value().menu_items()[0].menu_items()[0].enabled(false);
+    menu().value().menu_items()[0].menu_items()[2].enabled(false);
+  }
+   */
+  startup_panel_.visible(false);
+  create_panel_.visible(true);
+  previous_button_.visible(true);
+  next_button_.text("&Next");
+  next_button_.visible(true);
+}
+
 void main_form::new_project(const std::string& project_path, size_t project_type_items_index) {
   auto current_project_type = create_project_type_items_control_.project_type_items()[current_project_type_index_];
   add_to_create_recent_projects(project_type_items_index);
@@ -686,6 +706,12 @@ void main_form::new_project(const std::string& project_path, project_type type, 
   background_worker_->run_worker_async(std::make_tuple(std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}}[type], (sdk == project_sdk::none ? std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}}[language] : std::map<project_sdk, std::string> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}}[sdk]), std::filesystem::path(project_path)));
 }
 
+void main_form::open_project() {
+  folder_browser_dialog dialog;
+  dialog.selected_path(properties::settings::default_settings().open_propject_folder());
+  if (dialog.show_sheet_dialog(*this) == dialog_result::ok) open_project(dialog.selected_path());
+}
+
 void main_form::open_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
   background_worker_ = std::make_unique<background_worker>();
@@ -710,6 +736,28 @@ void main_form::open_project(const std::string& project_path) {
   background_worker_->run_worker_async(std::filesystem::path(project_path));
 }
 
+void main_form::open_xtd_examples() {
+  /// @todo Remove following comment when enabled menu item will work.
+  /*
+  if (menu().has_value()) {
+    menu().value().menu_items()[0].menu_items()[0].enabled(false);
+    menu().value().menu_items()[0].menu_items()[2].enabled(false);
+  }
+   */
+  startup_panel_.visible(false);
+  open_xtd_examples_panel_.visible(true);
+  previous_button_.visible(true);
+  next_button_.text("&Open");
+  next_button_.visible(true);
+  next_button_.enabled(true);
+}
+
+void main_form::run_project() {
+  folder_browser_dialog dialog;
+  dialog.selected_path(properties::settings::default_settings().open_propject_folder());
+  if (dialog.show_sheet_dialog(*this) == dialog_result::ok) run_project(dialog.selected_path());
+}
+
 void main_form::run_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
   background_worker_ = std::make_unique<background_worker>();
@@ -732,6 +780,51 @@ void main_form::run_project(const std::string& project_path) {
     });
   };
   background_worker_->run_worker_async(std::filesystem::path(project_path));
+}
+
+void main_form::set_auto_close() {
+  properties::settings::default_settings().auto_close(!properties::settings::default_settings().auto_close());
+  properties::settings::default_settings().save();
+}
+
+void main_form::show_about_dialog() {
+  about_dialog dialog;
+  dialog.icon(system_icons::xtd_logo());
+  dialog.name("xtdc-gui");
+  dialog.version(environment::version().to_string(2));
+  dialog.long_version(environment::version().to_string(3));
+  dialog.description("Project management.");
+  dialog.copyright("Copyright (c) 2021 Gammasoft.\nAll rights reserved.");
+  dialog.website("https://gammasoft71.wixsite.com/gammasoft");
+  dialog.website_label("gammasoft website");
+  dialog.authors({"Gammasoft", "Bader", "Contributors"});
+  dialog.translators({"Gammasoft", "Contributors"});
+  dialog.artists({"Gammasoft"});
+  dialog.license("MIT License\n"
+                 "\n"
+                 "Copyright (c) 2021 Gammasoft.\n"
+                 "\n"
+                 "Permission is hereby granted, free of charge, to any person obtaining\n"
+                 "a copy of this software and associated documentation files (the\n"
+                 "\"Software\"), to deal in the Software without restriction, including\n"
+                 "without limitation the rights to use, copy, modify, merge, publish,\n"
+                 "distribute, sublicense, and/or sell copies of the Software, and to\n"
+                 "permit persons to whom the Software is furnished to do so, subject\n"
+                 "to the following conditions:\n"
+                 "\n"
+                 "The above copyright notice and this permission notice shall be\n"
+                 "included in all copies or substantial portions of the Software.\n"
+                 "\n"
+                 "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF\n"
+                 "ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO\n"
+                 "THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n"
+                 "PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT\n"
+                 "SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR\n"
+                 "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
+                 "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
+                 "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
+                 "OR OTHER DEALINGS IN THE SOFTWARE.\n");
+  dialog.show();
 }
 
 void main_form::main() {
