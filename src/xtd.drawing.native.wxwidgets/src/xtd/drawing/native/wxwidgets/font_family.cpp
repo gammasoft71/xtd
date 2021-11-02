@@ -85,7 +85,7 @@ ustring font_family::generic_monospace_name() {
 #if defined(__WXMSW__)
   return L"Courier New";
 #elif defined(__APPLE__)
-  return L"Courier";
+  return L"Courier New";
 #elif defined(__WXGTK__)
   return L"Monospace";
 #else
