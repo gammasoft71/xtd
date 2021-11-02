@@ -84,7 +84,7 @@ list_box& list_box::selected_item(const item& selected_item) {
     else {
       size_t index = it - items_.begin();
       selected_index(index);
-      selected_item_ = selected_item;
+      selected_item_ = *it;
       on_selected_value_changed(event_args::empty);
     }
   }
