@@ -66,7 +66,7 @@ domain_up_down& domain_up_down::selected_item(const item& selected_item) {
     else {
       size_t index = it - items_.begin();
       selected_index(index);
-      selected_item_ = selected_item;
+      selected_item_ = *it;
 
     }
   }
