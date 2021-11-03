@@ -96,8 +96,8 @@ control::control() {
   };
   
   controls_.item_erased += [&](size_t, reference_wrapper<control> item) {
-    item.get().destroy_control();
     item.get().parent_ = 0;
+    item.get().destroy_control();
   };
 }
 
