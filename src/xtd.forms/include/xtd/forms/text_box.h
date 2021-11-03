@@ -112,7 +112,7 @@ namespace xtd {
       virtual void on_accepts_return_changed(const event_args& e) {if (can_raise_events()) accepts_return_changed(*this, e);}
 
       void on_handle_created(const event_args& e) override;
-      
+      void on_paint(paint_event_args& e) override;
       void on_text_changed(const event_args& e) override;
       
       /// @brief Processes Windows messages.

@@ -48,10 +48,9 @@ namespace xtd {
       
       drawing::size measure_control() const override;
       
-      void on_handle_created(const event_args& e) override;
-
       void on_layout(const event_args& e) override;
-      
+      void on_paint(paint_event_args& e) override;
+
       /// @cond
       forms::border_style border_style_ = forms::border_style::none;
       /// @endcond

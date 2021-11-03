@@ -138,14 +138,13 @@ void text_box::on_handle_created(const event_args& e) {
     }
     native::text_box::text(handle(), text_.c_str());
   }
-  
-  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, border style is not none, and multiline, the border is not show.
-  if (parent().has_value()) {
-    parent().value().get().paint += [this](object& sender, paint_event_args& e) {
-      if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(parent().value().get().handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ != forms::border_style::none && multiline_)
-        e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::offset(xtd::drawing::rectangle::inflate(this->bounds(), {-2, -2}), {1, 1}));
-    };
-  }
+}
+
+void text_box::on_paint(paint_event_args& e) {
+  control::on_paint(e);
+  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, and border style is not none, the border is not show.
+  if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(parent().value().get().handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ != forms::border_style::none && multiline_)
+    e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::inflate(e.clip_rectangle(), {-3, -3}));
 }
 
 void text_box::on_text_changed(const event_args& e) {
