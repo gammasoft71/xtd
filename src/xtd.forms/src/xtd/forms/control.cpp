@@ -389,10 +389,7 @@ void control::destroy_control() {
     set_state(state::created, false);
     set_state(state::destroying, true);
     if (handle_) {
-      for(control_ref child : controls_)
-        child.get().destroy_control();
-      
-      if (parent_ != 0 && parent().has_value() && !parent().value().get().get_state(state::destroying)) {
+      if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
         parent().value().get().on_control_removed(control_event_args(*this));
         parent(nullptr);
       } else {
