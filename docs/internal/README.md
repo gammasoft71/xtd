@@ -39,7 +39,7 @@
 
 ## Informations
 
-* [xtd in numbers](sime_numbers.md) provides xtd in numbers informtions.
+* [xtd in numbers](some_numbers.md) provides xtd in numbers informtions.
 
 ## Proposals
 
