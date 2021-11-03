@@ -21,7 +21,7 @@
 * [Sounds](sounds.md) provides information about sounds.
 * [Theme](theme.md) provides information about themes.
 * [Wix themes](wix_themes.md) provides information about website themes (Wix).
-* [wxWidgets window styles](wxwidgets window styles.md) provides information about Windows styles of wxWidgets.
+* [wxWidgets window styles](wxwidgets_window_styles.md) provides information about Windows styles of wxWidgets.
 * [Speed up build](speedup_build.md) provides investigations to speed up the build of xtd.
 * [xtd explanations](xtd_explanations.md) provides xtd explanations.
 * [xtd.forms explanations](xtd_forms_explanations.md) provides xtd forms explanations.
