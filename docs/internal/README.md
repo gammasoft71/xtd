@@ -24,6 +24,7 @@
 * [wxWidgets window styles](wxwidgets window styles.md) provides information about Windows styles of wxWidgets.
 * [Speed up build](speedup_build.md) provides investigations to speed up the build of xtd.
 * [xtd explanations](xtd_explanations.md) provides xtd explanations.
+* [xtd.forms explanations](xtd_forms_explanations.md) provides xtd forms explanations.
 
 ## Code review
 
