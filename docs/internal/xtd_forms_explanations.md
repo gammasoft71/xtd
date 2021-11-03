@@ -26,6 +26,9 @@
 * [Sizes](#sizes)
 * [Ambient properties](#ambient-properties)
 * [Dock and anchor](#dock-and-anchor)
+* [Themes](#themes)
+  * [Control style](#control-style)
+  * [Dialog style](#dialog-style)
 
 ## Libraries and API
 
@@ -76,3 +79,9 @@
 ## Ambient properties
 
 ## Dock and anchor
+
+## Themes
+
+### Control style
+
+### Dialog style

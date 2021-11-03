@@ -21,6 +21,9 @@ This section contains the xtd documentation. ​
 * [License](license.md) provides license information.
 * [Links](links.md) lists the essential links.
 
+
+* [*Internal*](internal/README.md) *provides some information for xtd developers (* **Internal use only** *).*
+
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
