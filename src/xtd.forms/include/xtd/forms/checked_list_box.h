@@ -206,7 +206,8 @@ namespace xtd {
       forms::create_params create_params() const override;
 
       void on_handle_created(const event_args& e) override;
-      
+      void on_paint(paint_event_args& e) override;
+
       /// @brief Raises the checked_list_box::item_check event.
       /// @param e An item_check_event_args that contains the event data.
       virtual void on_item_check(item_check_event_args& e) {item_check(*this, e);}
