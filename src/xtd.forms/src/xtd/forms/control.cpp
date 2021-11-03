@@ -96,8 +96,8 @@ control::control() {
   };
   
   controls_.item_erased += [&](size_t, reference_wrapper<control> item) {
-    item.get().parent_ = 0;
     item.get().destroy_control();
+    item.get().parent_ = 0;
   };
 }
 
@@ -328,7 +328,7 @@ control& control::parent(const control& parent) {
 }
 
 control& control::parent(nullptr_t) {
-  if (parent_ != 0 && parent().has_value()) {
+  if (parent().has_value()) {
     for (size_t index = 0; index < parent().value().get().controls_.size(); index++) {
       if (parent().value().get().controls_[index].get().handle_ == handle_) {
         parent().value().get().controls_.erase_at(index);
@@ -385,9 +385,9 @@ void control::create_control() {
 
 void control::destroy_control() {
   if (get_state(state::created)) {
-    suspend_layout();
     set_state(state::created, false);
     set_state(state::destroying, true);
+    suspend_layout();
     if (handle_) {
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
         parent().value().get().on_control_removed(control_event_args(*this));
