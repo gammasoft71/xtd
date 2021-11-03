@@ -292,6 +292,7 @@ add_sources(
   src/xtd/forms/image_list.cpp
   src/xtd/forms/input_dialog.cpp
   src/xtd/forms/label.cpp
+  src/xtd/forms/lcd_label.cpp
   src/xtd/forms/link_label.cpp
   src/xtd/forms/link_label_clicked_event_args.cpp
   src/xtd/forms/link.cpp
