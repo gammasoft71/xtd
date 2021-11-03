@@ -328,8 +328,8 @@ control& control::parent(const control& parent) {
 }
 
 control& control::parent(nullptr_t) {
-  if (parent_ != 0) {
-    for (size_t index = 0; index < parent().has_value() && parent().value().get().controls_.size(); index++) {
+  if (parent_ != 0 && parent().has_value()) {
+    for (size_t index = 0; index < parent().value().get().controls_.size(); index++) {
       if (parent().value().get().controls_[index].get().handle_ == handle_) {
         parent().value().get().controls_.erase_at(index);
         break;
