@@ -196,7 +196,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @exception xtd::argument_exception path contains invalid characters such as ", <, >, or |.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @parr Example
+      /// @par Example
       /// The following example uses this constructor to create the specified directory and subdirectory, and demonstrates that a directory that contains subdirectories cannot be deleted.
       /// @code
       /// #include <xtd/xtd>
@@ -234,8 +234,8 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the directory exists.
       /// @return true if the directory exists; otherwise, false.
-      /// @par rExample
-      ///
+      /// @par Example
+      /// The following example demonstrates a use of the Exists property in the context of copying a source directory to a target directory.
       /// @code
       /// #include <xtd/xtd>
       ///
