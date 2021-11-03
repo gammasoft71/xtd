@@ -55,7 +55,7 @@ radio_button& radio_button::checked(bool checked) {
     checked_ = checked;
     native::radio_button::checked(handle(), checked_);
     on_checked_changed(event_args::empty);
-    if (checked_ == true && auto_check_ == true && parent_) {
+    if (checked_ == true && auto_check_ == true && parent().has_value()) {
       for (auto control : parent().value().get().controls()) {
         if (dynamic_cast<radio_button*>(&control.get()) != nullptr && &control.get() != this && static_cast<radio_button&>(control.get()).auto_check_ == true)
           static_cast<radio_button&>(control.get()).checked(false);

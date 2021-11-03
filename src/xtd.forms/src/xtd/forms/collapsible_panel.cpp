@@ -62,7 +62,7 @@ void collapsible_panel::on_control_removed(const control_event_args& e) {
 }
 
 void collapsible_panel::on_expanded_changed(const xtd::event_args& e) {
-  if (parent_) parent().value().get().perform_layout();
+  if (parent().has_value()) parent().value().get().perform_layout();
   expanded_changed(*this, e);
 }
 

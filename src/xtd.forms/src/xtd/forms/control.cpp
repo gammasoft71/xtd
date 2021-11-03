@@ -329,7 +329,7 @@ control& control::parent(const control& parent) {
 
 control& control::parent(nullptr_t) {
   if (parent_ != 0) {
-    for (size_t index = 0; index < parent().value().get().controls_.size(); index++) {
+    for (size_t index = 0; index < parent().has_value() && parent().value().get().controls_.size(); index++) {
       if (parent().value().get().controls_[index].get().handle_ == handle_) {
         parent().value().get().controls_.erase_at(index);
         break;
@@ -489,7 +489,7 @@ forms::create_params control::create_params() const {
   
   create_params.caption(text_);
   create_params.style(WS_VISIBLE | WS_CHILD);
-  if (parent_) create_params.parent(parent().value().get().handle_);
+  if (parent().has_value()) create_params.parent(parent().value().get().handle_);
   create_params.location(location_);
   create_params.size(size_);
   
@@ -527,7 +527,7 @@ void control::on_background_image_layout_changed(const event_args &e) {
 void control::on_create_control() {
   if (!parent_) top_level_controls_.push_back(control_ref(*this));
   on_parent_changed(event_args::empty);
-  if (parent_) parent().value().get().on_control_added(control_event_args(*this));
+  if (parent().has_value()) parent().value().get().on_control_added(control_event_args(*this));
   for (auto control : controls_) {
     control.get().parent_ = handle_;
     control.get().create_control();
@@ -583,7 +583,7 @@ void control::on_fore_color_changed(const event_args &e) {
 }
 
 void control::on_font_changed(const event_args &e) {
-  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
+  if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
   if (can_raise_events()) font_changed(*this, e);
 }
@@ -614,7 +614,7 @@ void control::on_handle_created(const event_args &e) {
 
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("on handle created control={}, location={}, size={}, client_size={}", *this, location(), this->size(), client_size()));
 
-  if (!get_state(control::state::recreate) && parent_) parent().value().get().perform_layout();
+  if (!get_state(control::state::recreate) && parent().has_value()) parent().value().get().perform_layout();
   if (!get_state(control::state::recreate)) perform_layout();
 }
 
@@ -692,7 +692,7 @@ void control::on_paint(paint_event_args& e) {
 }
 
 void control::on_parent_back_color_changed(const event_args &e) {
-  if (!back_color_.has_value() && parent().value().get().back_color() != parent().value().get().default_back_color()) {
+  if (!back_color_.has_value() && parent().has_value() && parent().value().get().back_color() != parent().value().get().default_back_color()) {
     if (!parent().value().get().back_color_.has_value()) recreate_handle();
     else native::control::back_color(handle_, parent().value().get().back_color());
     for (auto control : controls())
@@ -701,13 +701,13 @@ void control::on_parent_back_color_changed(const event_args &e) {
 }
 
 void control::on_parent_changed(const event_args &e) {
-  if (parent().has_value()) parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size();
+  if (parent().has_value()) parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() : parent().value().get().size();
   perform_layout();
   if (can_raise_events()) parent_changed(*this, e);
 }
 
 void control::on_parent_cursor_changed(const event_args &e) {
-  if (!cursor_.has_value() && parent().value().get().cursor() != parent().value().get().default_cursor()) {
+  if (!cursor_.has_value() && parent().has_value() && parent().value().get().cursor() != parent().value().get().default_cursor()) {
     if (!parent().value().get().cursor_.has_value()) recreate_handle();
     else native::control::cursor(handle_, parent().value().get().cursor().handle());
     for (auto control : controls())
@@ -716,14 +716,16 @@ void control::on_parent_cursor_changed(const event_args &e) {
 }
 
 void control::on_parent_enabled_changed(const event_args &e) {
-  set_state(state::enabled, parent().value().get().enabled());
-  native::control::enabled(handle_, get_state(state::enabled));
-  for (auto control : controls())
-    control.get().on_parent_enabled_changed(event_args::empty);
+  if (parent().has_value()) {
+    set_state(state::enabled, parent().value().get().enabled());
+    native::control::enabled(handle_, get_state(state::enabled));
+    for (auto control : controls())
+      control.get().on_parent_enabled_changed(event_args::empty);
+  }
 }
 
 void control::on_parent_fore_color_changed(const event_args &e) {
-  if (!fore_color_.has_value() && parent().value().get().fore_color() != parent().value().get().default_fore_color()) {
+  if (!fore_color_.has_value() && parent().has_value() && parent().value().get().fore_color() != parent().value().get().default_fore_color()) {
     if (!parent().value().get().fore_color_.has_value()) recreate_handle();
     else native::control::fore_color(handle_, parent().value().get().fore_color());
     for (auto control : controls())
@@ -732,7 +734,7 @@ void control::on_parent_fore_color_changed(const event_args &e) {
 }
 
 void control::on_parent_font_changed(const event_args &e) {
-  if (!font_.has_value() && parent().value().get().font() != parent().value().get().default_font()) {
+  if (!font_.has_value() && parent().has_value() && parent().value().get().font() != parent().value().get().default_font()) {
     if (!parent().value().get().font_.has_value()) recreate_handle();
     else native::control::font(handle_, parent().value().get().font());
     for (auto control : controls())
@@ -752,13 +754,13 @@ void control::on_resize(const event_args &e) {
 }
 
 void control::on_size_changed(const event_args &e) {
-  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
+  if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   client_rectangle_ = native::control::client_rectangle(handle_);
   if (can_raise_events()) size_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args &e) {
-  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
+  if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
   if (can_raise_events()) text_changed(*this, e);
 }
@@ -769,7 +771,7 @@ void control::on_visible_changed(const event_args &e) {
     focus();
   for (auto item : controls_)
     if (item.get().focused()) item.get().focus();
-  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
+  if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   if (can_raise_events()) visible_changed(*this, e);
 }
 
@@ -924,7 +926,7 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
     on_client_size_changed(event_args::empty);
     on_size_changed(event_args::empty);
     on_resize(event_args::empty);
-    if (parent_) parent().value().get().perform_layout();
+    if (parent().has_value()) parent().value().get().perform_layout();
     perform_layout();
   }
 }
@@ -1160,7 +1162,7 @@ void control::wm_paint(message& message) {
 
 void control::wm_scroll(message& message) {
   def_wnd_proc(message);
-  if (message.lparam() != 0)
+  if (message.lparam() != 0 && from_handle(message.lparam()).has_value())
     from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
