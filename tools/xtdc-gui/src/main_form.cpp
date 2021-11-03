@@ -32,11 +32,11 @@ main_form::main_form() {
     menu({
       {system_texts::file(), {
         /// @todo Remove following comment when enabled menu item will work.
-        //{"Create new project", {*this, overload_<>(&main_form::new_project)}, shortcut::cmd_n},
-        {"Open a project or solution", {*this, overload_<>(&main_form::open_project)}, shortcut::cmd_o},
+        //{"Create new project", {*this, overload_<>(&main_form::new_project)}, bitmap(bitmap(xtd_new_icon), menu_images::size()), shortcut::cmd_n},
+        {"Open a project or solution", {*this, overload_<>(&main_form::open_project)}, bitmap(bitmap(xtd_open_examples_icon), menu_images::size()), shortcut::cmd_o},
         /// @todo Remove following comment when enabled menu item will work.
-        //{"Open xtd examples", {*this, &main_form::open_xtd_examples}, shortcut::cmd_e},
-        {"Run a project", {*this, overload_<>(&main_form::run_project)}, shortcut::cmd_r},
+        //{"Open xtd examples", {*this, &main_form::open_xtd_examples}, bitmap(bitmap(xtd_open_icon), menu_images::size()), shortcut::cmd_e},
+        {"Run a project", {*this, overload_<>(&main_form::run_project)}, bitmap(bitmap(xtd_run_icon), menu_images::size()), shortcut::cmd_r},
         {"-"},
         {system_texts::exit(), {overload_<>(&application::exit)}, menu_images::file_exit(), shortcut::alt_f4},
       }},
@@ -45,7 +45,7 @@ main_form::main_form() {
       }},
       
       {system_texts::help(), {
-        {system_texts::about(), {*this, &main_form::show_about_dialog}},
+        {system_texts::about(), {*this, &main_form::show_about_dialog}, menu_images::help_about()},
       }},
     });
   }
