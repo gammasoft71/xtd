@@ -28,10 +28,18 @@
 * [Speed up build](speedup_build.md) provides investigations to speed up the build of xtd.
 * [ios_build](ios_build.md) provides information about iOS build.
 
+## Git
+
+* [Some useful git commands](git.md) provides some useful git commands.
+
 ## Externals tips
 
 * [Wix themes](wix_themes.md) provides information about website themes (Wix).
 * [wxWidgets window styles](wxwidgets_window_styles.md) provides information about Windows styles of wxWidgets.
+
+## Informations
+
+* [xtd in numbers](sime_numbers.md) provides xtd in numbers informtions.
 
 ## Proposals
 
