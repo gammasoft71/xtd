@@ -1021,7 +1021,6 @@ void control::do_layout_with_anchor_styles() {
     else
       top(top() + (diff.y() / 2));
   }
-
 }
 
 void control::do_layout_with_auto_size_mode() {
@@ -1045,7 +1044,7 @@ void control::wm_child_activate(message& message) {
 
 void control::wm_command(message& message) {
   def_wnd_proc(message);
-  if (message.lparam() != 0)
+  if (message.lparam() != 0 && from_handle(message.lparam()).has_value())
     from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
