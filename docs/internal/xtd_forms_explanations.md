@@ -35,7 +35,7 @@
 
 ## Libraries and API
 
-Like the whole xtd framework, **xtd.forms** provides a high level API for the user and uses a low level API to communicate in this case a graphical toolkit:
+Like the whole [xtd framework](xtd_explanations.md), **xtd.forms** provides a high level API for the user and uses a low level API to communicate in this case a graphical toolkit:
  * **xtd.forms** : high level API.
  * **xtd.forms.native** : low level API.
 
@@ -180,6 +180,83 @@ The controls do not have the same completeness. They could be classified in diff
 * Complex controls : xtd::forms::list_view, xtd::forms::tree_view, xtd::forms::rich_text_box, ...
 
 ### Parent and childs
+
+All controls must have a parent, except **xtd::forms::form** which cannot have one (An exception **xtd::invalid_operation_exception** will be generated if you try).
+
+A control must always have one and only one parent (except for xtd::forms::form which can't have any). But a parent can have several child controls.
+
+Any control can be a parent or a child. There are no restrictions.
+
+It is easy to imagine that a complex control needs several simple controls.Like for example xtd::forms::domain_up_down is composed of an xtd::forms::text_box and an xtd::forms::up_down_button.
+And that an xtd::forms::form or an xtd::forms::panel can contain an xtd::forms::domain_up_down. 
+In this case our xtd::forms::domain_up_down is a parent for xtd::forms::text_box and xtd::forms::up£_down_button and at the same time is a child for xtd::forms::form or xtd::forms::panel.
+
+You can retrieve or assign a parent to a control using the **xtd::forms::control::parent** property or by assigning the control to the parent by adding it to the **xtd::forms::control::controls** collection.
+
+A collection of controls is a particular collection, it is an **xtd::froms::layout::arranged_element_collection**.
+
+This collection has the particularity to have [events](../tutorial_events.md) on which we can connect:
+
+* item_added : occurs when an item is added to the collection.
+* item_updated : occurs when an item is updated in the collection.
+* item_erased: occurs when an item is deleted from the collection.
+
+#### Add parent
+
+With this collection we can write indifferently to add **my_form** as a perent to **my_button** :
+
+```c++
+my_button.parent(my_form);
+```
+
+Or 
+
+```c++
+my_form.contrtols().push_back(my_button);
+```
+
+Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** event will be generated.
+
+#### Remove parent
+
+In the same way, to dissociate a control from a parent or simply to remove a control from the collection of controls of a parent it is enough to call indifferently:
+
+```c++
+my_button.parent(nullptr);
+```
+
+or
+
+```c++
+my_form.controls().erase(my_button);
+```
+
+Globally behind the function **my_button.parent(nullptr)**, we call the function : **my_form.controls().erase(my_button)**. And an **item_removed** event will be generated.
+
+#### Update parent
+
+You can decide at any time to change the parent of a control. A control could very well go from a form to a dialog for example.
+
+In this case, if previously **my_button** was assigned the form **my_form** as parent :
+
+```c++
+my_button.parent(my_form);
+```
+
+Then we can decide to change the parent of my_button like this:
+
+```c++
+my_button.parent(my_dialog);
+```
+
+or this :
+
+```
+my_dialog.controls().push_back(my_button)
+```
+
+Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.coontrols().push_back(my_buttton)**. And an **item_removed** event will be generated for **my_form** and event **item_added** eventt for my_dialog.
+
 
 ### Creation
 
