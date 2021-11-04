@@ -19,7 +19,7 @@
   * [Update parent](#update-parent)
 * [Control operations](#control-operations)
   * [Create control](#create-control)
-  * [Update control(#update-control)
+  * [Update control](#update-control)
   * [Remove control](#remove-control)
 * [Containers](#containers)
   * [Scrollables](#scrollables)
