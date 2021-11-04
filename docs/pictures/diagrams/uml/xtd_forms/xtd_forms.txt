@@ -1,0 +1,37 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+skinparam packageBorderColor #60A5FF
+skinparam packageFontColor #60A5FF
+
+package "xtd.core libraries" {
+  [xtd.core]
+  [xtd.core.native]
+  [xtd.core.native.xxx]
+}
+
+package "xtd.drawing libraries" {
+  [xtd.drawing]
+  [xtd.drawing.native]
+  [xtd.drawing.native.xxx]
+}
+
+package "xtd.forms libraries" {
+  [xtd.forms]
+  [xtd.forms.native]
+  [xtd.forms.native.xxx]
+}
+
+xtd.forms ..> xtd.forms.native
+xtd.forms ..> xtd.forms.native.xxx
+xtd.forms.native.xxx ..> xtd.forms.native
+xtd.forms ..> xtd.core
+xtd.forms ..> xtd.drawing
+xtd.drawing ..> xtd.core
+
+@enduml

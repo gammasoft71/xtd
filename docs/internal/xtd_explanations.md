@@ -224,7 +224,7 @@ If there is a possible difference between GUI, you have to use the xtd.forms.nat
 
 This library is a low-level API that has access to the GUI.
 
-The role of is API is the same que l'API de le JVM of Java ou Common Language Runtime (CLR) of .Net Framework.
+The role of this API is the same as that of the Java JVM API or the Common Language Runtime (CLR) of the .Net Framework.
 
 ### xtd.forms.native.wxwidgets
 
