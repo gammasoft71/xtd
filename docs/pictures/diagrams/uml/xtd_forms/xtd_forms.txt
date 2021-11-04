@@ -30,7 +30,15 @@ package "xtd.forms libraries" {
 xtd.forms ..> xtd.forms.native
 xtd.forms ..> xtd.forms.native.xxx
 xtd.forms.native.xxx ..> xtd.forms.native
-xtd.forms ..> xtd.core
+
+xtd.core ..> xtd.core.native
+xtd.core ..> xtd.core.native.xxx
+xtd.core.native.xxx ..> xtd.core.native
+
+xtd.drawing ..> xtd.drawing.native
+xtd.drawing ..> xtd.drawing.native.xxx
+xtd.drawing.native.xxx ..> xtd.drawing.native
+
 xtd.forms ..> xtd.drawing
 xtd.drawing ..> xtd.core
 
