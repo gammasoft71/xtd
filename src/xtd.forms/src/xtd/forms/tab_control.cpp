@@ -112,6 +112,7 @@ void tab_control::recreate_handle() {
     native::tab_page::text(controls()[index].get().handle(), controls()[index].get().text());
     native::tab_page::image_index(controls()[index].get().handle(), static_cast<tab_page&>(controls()[index].get()).image_index());
   }
+  native::tab_control::selected_index(handle(), selected_index_);
 }
 
 void tab_control::wnd_proc(message& message) {
