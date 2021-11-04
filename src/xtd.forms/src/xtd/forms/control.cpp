@@ -525,9 +525,12 @@ void control::on_background_image_layout_changed(const event_args &e) {
 }
 
 void control::on_create_control() {
-  if (!parent_) top_level_controls_.push_back(control_ref(*this));
-  on_parent_changed(event_args::empty);
-  if (parent().has_value()) parent().value().get().on_control_added(control_event_args(*this));
+  if (!parent().has_value())
+    top_level_controls_.push_back(control_ref(*this));
+  else {
+    on_parent_changed(event_args::empty);
+    parent().value().get().on_control_added(control_event_args(*this));
+  }
   for (auto control : controls_) {
     control.get().parent_ = handle_;
     control.get().create_control();
