@@ -94,6 +94,8 @@ namespace xtd {
 }
 ```
 
+**Remarks :** All methods are protected. This allows to forbid a user to call one of these functions.
+
 **xtd.forms.native** is an interface library, there are no implementations and therefore no source files.
 
 Only headers with function declarations.
@@ -132,9 +134,7 @@ void xtd::forms::native::button::set_default_button(intptr_t control) {
 }
 ```
 
-**Remarks**
-
-The **xxx** of the library **xtd.forms.native.xxx** can be replaced by **wxwdigets**. End in tthe future by **qt6** or **sdl2** or others.
+**Remarks :** The **xxx** of the library **xtd.forms.native.xxx** can be replaced by **wxwdigets**. End in tthe future by **qt6** or **sdl2** or others.
 
 ## Components
 
