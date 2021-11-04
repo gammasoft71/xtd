@@ -170,13 +170,6 @@ void checked_list_box::on_handle_created(const event_args& e) {
   if (selected_index_ != npos) selected_item_ = items_[selected_index_];
 }
 
-void checked_list_box::on_paint(paint_event_args& e) {
-  list_control::on_paint(e);
-  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, and border style is not none, the border is not show.
-  if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(parent().value().get().handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ != forms::border_style::none)
-    e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::inflate(e.clip_rectangle(), {-3, -3}));
-}
-
 void checked_list_box::on_selected_value_changed(const event_args& e) {
   list_box::text(selected_item_.value());
   list_box::on_selected_value_changed(e);
