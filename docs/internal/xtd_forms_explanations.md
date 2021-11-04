@@ -215,7 +215,7 @@ my_button.parent(my_form);
 Or 
 
 ```c++
-my_form.contrtols().push_back(my_button);
+my_form.controls().push_back(my_button);
 ```
 
 Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** event will be generated.
