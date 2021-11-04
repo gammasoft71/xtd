@@ -192,7 +192,7 @@ Any control can be a parent or a child. There are no restrictions.
 It is easy to imagine that a complex control needs several simple controls.
 Like for example xtd::forms::domain_up_down is composed of an xtd::forms::text_box and an xtd::forms::up_down_button.
 And that an xtd::forms::form or an xtd::forms::panel can contain an xtd::forms::domain_up_down. 
-In this case our xtd::forms::domain_up_down is a parent for xtd::forms::text_box and xtd::forms::up£_down_button and at the same time is a child for xtd::forms::form or xtd::forms::panel.
+In this case our xtd::forms::domain_up_down is a parent for xtd::forms::text_box and xtd::forms::up_down_button and at the same time is a child for xtd::forms::form or xtd::forms::panel.
 
 You can retrieve or assign a parent to a control using the **xtd::forms::control::parent** property or by assigning the control to the parent by adding it to the **xtd::forms::control::controls** collection.
 
