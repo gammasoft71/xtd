@@ -43,7 +43,7 @@ link_label::link_label() {
     //tab_stop(true);
     invalidate();
   };
-  links_.item_erased += [&] {
+  links_.item_removed += [&] {
     invalidate();
   };
   links_.item_updated += [&] {

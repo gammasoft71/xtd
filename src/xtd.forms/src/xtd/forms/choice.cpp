@@ -25,7 +25,7 @@ choice::choice() {
     this->selected_index(selected_index);
   };
 
-  items_.item_erased += [&](size_t pos, const item& item) {
+  items_.item_removed += [&](size_t pos, const item& item) {
     native::choice::delete_item(handle(), pos);
 
     size_t selected_index = npos;

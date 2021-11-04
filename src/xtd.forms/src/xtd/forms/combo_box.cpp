@@ -28,7 +28,7 @@ combo_box::combo_box() {
     this->selected_item(selected_item);
   };
 
-  items_.item_erased += [&](size_t pos, const item& item) {
+  items_.item_removed += [&](size_t pos, const item& item) {
     native::combo_box::delete_item(handle(), pos);
 
     combo_box::item selected_item;

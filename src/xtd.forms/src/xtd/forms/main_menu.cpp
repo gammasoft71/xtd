@@ -22,7 +22,7 @@ main_menu::main_menu() {
     
   };
 
-  data_->menu_items_.item_erased += [&](size_t, std::reference_wrapper<menu_item> item) {
+  data_->menu_items_.item_removed += [&](size_t, std::reference_wrapper<menu_item> item) {
     item.get().data_->parent_.reset();
     item.get().destroy_menu();
   };
@@ -41,7 +41,7 @@ main_menu::main_menu(const std::initializer_list<menu_item>& menu_items) {
     
   };
   
-  data_->menu_items_.item_erased += [&](size_t, std::reference_wrapper<menu_item> item) {
+  data_->menu_items_.item_removed += [&](size_t, std::reference_wrapper<menu_item> item) {
     item.get().data_->parent_.reset();
     item.get().destroy_menu();
   };
@@ -62,7 +62,7 @@ main_menu::main_menu(const std::vector<menu_item>& menu_items) {
     
   };
   
-  data_->menu_items_.item_erased += [&](size_t, std::reference_wrapper<menu_item> item) {
+  data_->menu_items_.item_removed += [&](size_t, std::reference_wrapper<menu_item> item) {
     item.get().data_->parent_.reset();
     item.get().destroy_menu();
   };

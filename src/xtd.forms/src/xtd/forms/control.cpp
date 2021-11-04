@@ -95,7 +95,7 @@ control::control() {
       item.get().create_control();
   };
   
-  controls_.item_erased += [&](size_t, reference_wrapper<control> item) {
+  controls_.item_removed += [&](size_t, reference_wrapper<control> item) {
     item.get().parent_ = 0;
     item.get().destroy_control();
   };

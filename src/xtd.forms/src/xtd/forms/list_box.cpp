@@ -29,7 +29,7 @@ list_box::list_box() {
     this->selected_item(selected_item);
   };
 
-  items_.item_erased += [this](size_t index, const item& item) {
+  items_.item_removed += [this](size_t index, const item& item) {
     native::list_box::delete_item(handle(), index);
     list_box::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];

@@ -17,7 +17,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -38,7 +38,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -72,7 +72,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -102,7 +102,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -136,7 +136,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -176,7 +176,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -212,7 +212,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -242,7 +242,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -280,7 +280,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -322,7 +322,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -352,7 +352,7 @@ namespace unit_tests {
         } else
           assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -374,7 +374,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
           assert::are_equal(1U, index, csf_);
           assert::are_equal("b", value, csf_);
@@ -402,7 +402,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
           assert::are_equal(1U, index, csf_);
           assert::are_equal("b", value, csf_);
@@ -447,7 +447,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
           assert::are_equal(0U, index, csf_);
           assert::are_equal("a", value, csf_);
@@ -475,7 +475,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
           assert::are_equal(4U, index, csf_);
           assert::are_equal("e", value, csf_);
@@ -509,7 +509,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -538,7 +538,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -558,7 +558,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -580,7 +580,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -611,7 +611,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {
@@ -642,7 +642,7 @@ namespace unit_tests {
       items.item_added += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
-      items.item_erased += [&](size_t index, std::string& value) {
+      items.item_removed += [&](size_t index, std::string& value) {
         assert::fail(ustring::format("erased index = {}, value = {}", index, value), csf_);
       };
       items.item_updated += [&](size_t index, std::string& value) {

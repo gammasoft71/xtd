@@ -25,7 +25,7 @@ domain_up_down::domain_up_down() {
     this->selected_item(selected_item);
   };
 
-  items_.item_erased += [&](size_t pos, const item& item) {
+  items_.item_removed += [&](size_t pos, const item& item) {
     native::domain_up_down::delete_item(handle(), pos);
 
     domain_up_down::item selected_item;
