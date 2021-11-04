@@ -154,7 +154,7 @@ All controls inherit from component.
 
 ### Components
 
-There are several components in **xtd.forms** : xtd::forms::timer, xttd::forms::background_worker, ...
+There are several components in **xtd.forms** : xtd::forms::timer, xtd::forms::background_worker, ...
 
 ## Controls
 
