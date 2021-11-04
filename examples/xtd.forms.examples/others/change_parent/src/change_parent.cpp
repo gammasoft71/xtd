@@ -30,7 +30,7 @@ public:
 
     label1.parent(left_panel);
     label1.text("Label text");
-    label1.location({10, 10});
+    label1.location({10, 12});
     label1.auto_size(true);
 
     list_box1.parent(left_panel);
@@ -43,7 +43,23 @@ public:
     
     text_box1.parent(left_panel);
     text_box1.text("Test box 1");
-    text_box1.location({10, 190});
+    text_box1.location({100, 10});
+
+    tab_control1.parent(left_panel);
+    tab_control1.location({10, 190});
+    tab_control1.size({260, 140});
+
+    tab_page1.parent(tab_control1);
+    tab_page1.text("Page 1");
+    tab_page2.parent(tab_control1);
+    tab_page2.text("Page 2");
+    tab_page3.parent(tab_control1);
+    tab_page3.text("Page 3");
+
+    check_box1.parent(tab_page1);
+    check_box1.text("Check box 1");
+    check_box1.location({10, 10});
+    
 
     bottom_panel.parent(*this);
     bottom_panel.height(50);
@@ -53,7 +69,7 @@ public:
     bottom_panel.control_layout_style(right_button, {size_type::auto_size, content_alignment::middle_center});
     bottom_panel.padding(forms::padding(5));
     
-    left_button.text("Move to left panel");
+    left_button.text("Move controls to left panel");
     left_button.enabled(false);
     left_button.click += [&] {
       left_button.enabled(false);
@@ -63,9 +79,10 @@ public:
       list_box1.parent(left_panel);
       toggle_button1.parent(left_panel);
       text_box1.parent(left_panel);
+      tab_control1.parent(left_panel);
     };
     
-    right_button.text("Move to right panel");
+    right_button.text("Move controls to right panel");
     right_button.click += [&] {
       left_button.enabled(true);
       right_button.enabled(false);
@@ -74,6 +91,7 @@ public:
       list_box1.parent(right_panel);
       toggle_button1.parent(right_panel);
       text_box1.parent(right_panel);
+      tab_control1.parent(right_panel);
     };
   }
   
@@ -85,6 +103,11 @@ private:
   list_box list_box1;
   toggle_button toggle_button1;
   text_box text_box1;
+  tab_control tab_control1;
+  tab_page tab_page1;
+  tab_page tab_page2;
+  tab_page tab_page3;
+  check_box check_box1;
 
   panel left_panel;
   panel right_panel;
