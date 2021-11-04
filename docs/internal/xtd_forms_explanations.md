@@ -17,6 +17,10 @@
   * [Creation](#creation)
   * [Update](#update)
   * [Destruction](#destruction)
+* [Control operations](#control-operations)
+  * [Create](#create)
+  * [Update](#update)
+  * [Remove](#remove)
 * [Containers](#containers)
   * [Scrollables](#scrollables)
   * [Layauts](#layauts)
@@ -267,12 +271,13 @@ my_dialog.controls().push_back(my_button)
 
 Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_button)**. An **item_removed** event will be generated for **my_form** and an **item_added** event for my_dialog.
 
+## Control operations
 
-### Creation
+### Create
 
 ### Update
 
-### Destruction
+### Remove
 
 ## Containers
 
