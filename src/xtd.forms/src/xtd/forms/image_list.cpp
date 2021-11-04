@@ -17,7 +17,7 @@ image_list::image_list() {
     native::image_list::insert_item(data_->handle_, pos, item);
   };
   
-  data_->images_.item_erased += [&](size_t pos, const drawing::image& item) {
+  data_->images_.item_removed += [&](size_t pos, const drawing::image& item) {
     native::image_list::delete_item(data_->handle_, pos);
   };
   

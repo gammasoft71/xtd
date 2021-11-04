@@ -114,8 +114,8 @@ namespace xtd {
         /// @brief Occurs when an item is updated in the collection.
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
 
-        /// @brief Occurs when an item is erased from the collection.
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_erased;
+        /// @brief Occurs when an item is removed from the collection.
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
         
         /// @brief Returns the associated allocator
         /// @return The associate allocator.
@@ -301,7 +301,7 @@ namespace xtd {
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
         iterator erase(iterator pos) {
-          item_erased(pos - begin(), *pos);
+          item_removed(pos - begin(), *pos);
           erasing_ = true;
           iterator result = collection_.erase(pos);
           erasing_ = false;
@@ -310,7 +310,7 @@ namespace xtd {
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
          iterator erase(const_iterator pos) {
-          item_erased(pos - begin(), *pos);
+          item_removed(pos - begin(), *pos);
           erasing_ = true;
           iterator result = collection_.erase(pos);
           erasing_ = false;

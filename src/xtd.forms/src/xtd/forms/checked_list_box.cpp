@@ -30,7 +30,7 @@ checked_list_box::checked_list_box() {
     this->selected_item(selected_item);
   };
 
-  items_.item_erased += [&](size_t pos, const item& item) {
+  items_.item_removed += [&](size_t pos, const item& item) {
     native::checked_list_box::delete_item(handle(), pos);
 
     checked_list_box::item selected_item;
