@@ -874,7 +874,8 @@ void control::wnd_proc(message& message) {
     case WM_PAINT: wm_paint(message); break;
     case WM_MOVE: wm_move(message);  break;
     case WM_SETTEXT: wm_set_text(message); break;
-    case WM_SIZE:  wm_size(message); break;
+    case WM_SIZE: wm_size(message); break;
+    case WM_SIZING: wm_sizing(message); break;
     case WM_HSCROLL:
     case WM_VSCROLL: wm_scroll(message); break;
     default: def_wnd_proc(message); break;
@@ -1191,4 +1192,11 @@ void control::wm_size(message& message) {
     on_size_changed(event_args::empty);
   }
   on_resize(event_args::empty);
+}
+
+void control::wm_sizing(message& message) {
+  if (size_.width() < minimum_size_.width()) width(minimum_size_.width());
+  if (size_.height() < minimum_size_.height()) height(minimum_size_.height());
+  if (!maximum_size_.is_empty() && size_.width() > maximum_size_.width()) width(maximum_size_.width());
+  if (!maximum_size_.is_empty() && size_.height() > maximum_size_.height()) height(maximum_size_.height());
 }

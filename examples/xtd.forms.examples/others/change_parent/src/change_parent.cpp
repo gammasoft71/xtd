@@ -60,7 +60,6 @@ public:
     check_box1.text("Check box 1");
     check_box1.location({10, 10});
     
-
     bottom_panel.parent(*this);
     bottom_panel.height(50);
     bottom_panel.dock(dock_style::bottom);
