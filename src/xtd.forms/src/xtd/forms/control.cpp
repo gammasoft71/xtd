@@ -322,6 +322,7 @@ control& control::parent(const control& parent) {
   if (parent.handle_ != parent_) {
     this->parent(nullptr);
     if (parent.handle_) const_cast<control&>(parent).controls_.push_back(*this);
+    recreate_handle();
   } else if (parent.handle_ == 0 && parent_ == 0)
     const_cast<control&>(parent).controls_.push_back(*this);
   return *this;
