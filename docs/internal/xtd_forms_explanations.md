@@ -14,13 +14,13 @@
   * [Control class diagram](#control-class-diagram)
   * [Control objects](#control-objects)
 * [Parent and childs](#parent-and-childs)
-  * [Creation](#creation)
-  * [Update](#update)
-  * [Destruction](#destruction)
+  * [Add parent](#add-parent)
+  * [Remove parent](#remove-parent)
+  * [Update parent](#update-parent)
 * [Control operations](#control-operations)
-  * [Create](#create)
-  * [Update](#update)
-  * [Remove](#remove)
+  * [Create control](#create-control)
+  * [Update control(#update-control)
+  * [Remove control](#remove-control)
 * [Containers](#containers)
   * [Scrollables](#scrollables)
   * [Layauts](#layauts)
@@ -273,11 +273,11 @@ Globally behind the function **my_button.parent(my_dialog)**, we call the functi
 
 ## Control operations
 
-### Create
+### Create control
 
-### Update
+### Update control
 
-### Remove
+### Remove control
 
 ## Containers
 
