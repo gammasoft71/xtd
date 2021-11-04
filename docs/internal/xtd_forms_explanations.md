@@ -35,7 +35,7 @@
 
 ## Libraries and API
 
-Like the whole xtd framework, **xtd.forms **provides a high level API for the user and uses a low level API to communicate in this case a graphical toolkit:
+Like the whole xtd framework, **xtd.forms** provides a high level API for the user and uses a low level API to communicate in this case a graphical toolkit:
  * **xtd.forms** : high level API.
  * **xtd.forms.native** : low level API.
 
@@ -142,7 +142,7 @@ A componant provides the base implementation and enables object sharing between 
 
 A component is an integral part of xtd.forms but unlike a control, a component has no graphical interface.
 
-It will be mainly used in the future with the xdd-code<sup>1</sup> designer
+It will be mainly used in the future with the xtd-code<sup>1</sup> designer
 
 <sup>1</sup> xtd-code : code editor and designer for xtd.
 
