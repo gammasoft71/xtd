@@ -273,7 +273,37 @@ Globally behind the function **my_button.parent(my_dialog)**, we call the functi
 
 ## Control operations
 
+We can do different operations on a control:
+* Create the control.
+* Update the properties of the control.
+* Delete the control.
+* We can also retrieve the different values of the properties and its status. But for this last operation we only read the internal information of the control.
+
 ### Create control
+
+The creation of a control is a bit special. 
+Indeed, when you create a control like for example:
+
+```c++
+xtd::forms::button my_button;
+```
+
+The control is created and can be manipulated but the control as a system resource (i.e. the native toolkit object) is not created.
+
+The native control will only be created when it is assigned a parent. 
+Except for the control xtd::forms::form which creates directly the system resource (i.e. the native toolkit object) in its constructor.
+ 
+The creation of a control is done in several steps and exchanges between the different libraries.
+
+#### Sequence diagram of the creation of a control
+
+Here is the sequence diagram of the creation of an xtd::form::form.
+
+![image](../pictures/diagrams/uml/xtd_forms/form_creation.png)
+
+Here is the sequence diagram of the creation of an xtd::form::button.
+
+![image](../pictures/diagrams/uml/xtd_forms/control_creation.png)
 
 ### Update control
 
