@@ -2,11 +2,18 @@
 
 ## Table of contents
 * [Libraries and API](#libraries-and-api)
+  * [xtd.forms hierarchy diagram](#xtdforms-hierarchy-diagram)
   * [xtd.forms high level API](#xtdforms-high-level-api)
   * [xtd.forms.native low level API](#xtdformsnative-low-level-api)
 * [Components](#components)
+  * [Component type](#component-type)
+  * [Component class diagram](#component-class-diagram)
+  * [Component objects](#component-objects)
 * [Controls](#controls)
-  * [Parent and childs](#parent-and-childs)
+  * [Control type](#control-type)
+  * [Control class diagram](#control-class-diagram)
+  * [Control objects](#control-objects)
+* [Parent and childs](#parent-and-childs)
   * [Creation](#creation)
   * [Update](#update)
   * [Destruction](#destruction)
@@ -154,7 +161,7 @@ It will be mainly used in the future with the xtd-code<sup>1</sup> designer
 
 All controls inherit from component.
 
-### Components
+### Component objects
 
 There are several components in **xtd.forms** : xtd::forms::timer, xtd::forms::background_worker, ...
 
@@ -166,13 +173,13 @@ Defines the base class for controls, which are components with visual representa
 
 Unlike a component, a control always has a graphic interface.
 
-#### control class diagram
+### Control class diagram
 
 ![image](../pictures/diagrams/uml/xtd_forms/control.png)
 
 The control class provides all properties, functions and events common to the different controls. It also provides some static functions to manipulate the controls.
 
-### Controls
+### Control objects
 
 The controls do not have the same completeness. They could be classified in different categories like this:
 
@@ -181,7 +188,7 @@ The controls do not have the same completeness. They could be classified in diff
 * Picker controls : xtd::forms::color_picker, xtd::forms::date_time_picker, ...
 * Complex controls : xtd::forms::list_view, xtd::forms::tree_view, xtd::forms::rich_text_box, ...
 
-### Parent and childs
+## Parent and childs
 
 All controls must have a parent, except **xtd::forms::form** which cannot have one (An exception **xtd::invalid_operation_exception** will be generated if you try).
 
@@ -204,7 +211,7 @@ This collection has the particularity to have [events](../tutorial_events.md) on
 * item_updated : occurs when an item is updated in the collection.
 * item_erased: occurs when an item is deleted from the collection.
 
-#### Add parent
+### Add parent
 
 With this collection we can write indifferently to add **my_form** as a perent to **my_button** :
 
@@ -220,7 +227,7 @@ my_form.controls().push_back(my_button);
 
 Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** event will be generated.
 
-#### Remove parent
+### Remove parent
 
 In the same way, to dissociate a control from a parent or simply to remove a control from the collection of controls of a parent it is enough to call indifferently:
 
@@ -236,7 +243,7 @@ my_form.controls().erase(my_button);
 
 Globally behind the function **my_button.parent(nullptr)**, we call the function : **my_form.controls().erase(my_button)**. And an **item_removed** event will be generated.
 
-#### Update parent
+### Update parent
 
 You can decide at any time to change the parent of a control. A control could very well go from a form to a dialog for example.
 
