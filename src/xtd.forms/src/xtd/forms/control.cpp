@@ -331,7 +331,9 @@ control& control::parent(nullptr_t) {
   if (parent().has_value()) {
     for (size_t index = 0; index < parent().value().get().controls_.size(); index++) {
       if (parent().value().get().controls_[index].get().handle_ == handle_) {
+        auto prev_parent = parent();
         parent().value().get().controls_.erase_at(index);
+        if (!get_state(state::destroying)) prev_parent.value().get().refresh();
         break;
       }
     }
