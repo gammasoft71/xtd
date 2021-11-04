@@ -255,7 +255,7 @@ or this :
 my_dialog.controls().push_back(my_button)
 ```
 
-Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_buttton)**. An **item_removed** event will be generated for **my_form** and event **item_added** event for my_dialog.
+Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_buttton)**. An **item_removed** event will be generated for **my_form** and an **item_added** event for my_dialog.
 
 
 ### Creation
