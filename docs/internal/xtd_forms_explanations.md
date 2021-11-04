@@ -48,9 +48,11 @@ Like the whole [xtd framework](xtd_explanations.md), **xtd.forms** provides a hi
 **xtd.forms** offers all the advantages of an API in modern C++ 17/20.
 
 **xtd.forms** contains a large amount of objects such as: 
+ * components
  * controls
  * containers
- * components
+ * forms
+ * dialogs
  * and many more  
 
 **xtd.forms** has its own design, its own hierarchy and its own nomenclature.
