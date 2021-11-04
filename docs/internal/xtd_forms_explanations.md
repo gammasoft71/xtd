@@ -35,11 +35,11 @@
 
 ## Libraries and API
 
-Like the whole [xtd framework](xtd_explanations.md), **xtd.forms** provides a high level API for the user and uses a low level API to communicate in this case a graphical toolkit:
+Like the whole [xtd framework](xtd_explanations.md), **xtd.forms** provides a high level API for the user and uses a low level API to communicate, in this case, with a graphical toolkit:
  * **xtd.forms** : high level API.
  * **xtd.forms.native** : low level API.
 
-### Hierarchy diagram for xtd.forms
+### xtd.forms hierarchy diagram
 
 ![image](../pictures/diagrams/uml/xtd_forms/xtd_forms.png)
 
