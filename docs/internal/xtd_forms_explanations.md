@@ -213,7 +213,7 @@ This collection has the particularity to have [events](../tutorial_events.md) on
 
 * item_added : occurs when an item is added to the collection.
 * item_updated : occurs when an item is updated in the collection.
-* item_erased: occurs when an item is deleted from the collection.
+* item_removed : occurs when an item is deleted from the collection.
 
 ### Add parent
 
