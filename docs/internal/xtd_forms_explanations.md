@@ -317,7 +317,7 @@ When the handle is created (when the native control is created), there will be a
 Then, it's the turn of the specialized control to send its specific properties via the specialized API to **xtd::forms::native**.
 For example **xtd::forms::list_box** will send the list of strings contained in the control to the corresponding API **xtd::forms::native::list_box**, etc.
 
-The **parent_changed** and **control__added** events are only sent for a child control, in the case of a **xtd::forms::form**, these events are not sent.
+The **parent_changed** and **control_added** events are only sent for a child control, in the case of a **xtd::forms::form**, these events are not sent.
 
 When a control is created, it will automatically create all its child controls.
 
