@@ -291,7 +291,7 @@ xtd::forms::button my_button;
 The control is created and can be manipulated but the control as a system resource (i.e. the native toolkit object) is not created.
 
 The native control will only be created when it is assigned a parent. 
-Except for the control xtd::forms::form which creates directly the system resource (i.e. the native toolkit object) in its constructor.
+Except for the control **xtd::forms::form** which creates directly the system resource (i.e. the native toolkit object) in its constructor.
  
 The creation of a control is done in several steps and exchanges between the different libraries.
 
@@ -304,6 +304,22 @@ The following sequence diagram shows the creation of an xtd::form::form.
 The following sequence diagram shows the creation of an xtd::form::button.
 
 ![image](../pictures/diagrams/uml/xtd_forms/control_creation.png)
+
+If we use as parent a control that is not yet natively created (because it has no parent), the new child control will not be natively created. It is when the parent control is created that it will be created.
+
+The role of the **xtd::forms::control::create_params** function is to give the **xtd::forms::native::control::create** function the necessary set of parameters to create a native coontrol. 
+This function provides among other things a name which is the unique key to identify the control to create.
+
+For example to create an **xtd::forms::button**, the name must contain *"button"*, to create an **xtd::forms::choice**, the name must contain *"choice"* and so on for all controls.
+
+When the handle is created (when the native control is created), there will be an exchange between the base class **xtd::forms::control** and **xtd::forms::nativve::control** to transmit the different basic properties of the control like for example, the background color, the text color, etc.
+
+Then, it's the turn of the specialized control to send its specific properties via the specialized API to **xtd::forms::native**.
+For example **xtd::forms::list_box** will send the list of strings contained in the control to the corresponding API **xtd::forms::native::list_box**, etc.
+
+The **parent_changed** and **control__added** events are only sent for a child control, in the case of a **xtd::forms::form**, these events are not sent.
+
+When a control is created, it will automatically create all its child controls.
 
 ### Update control
 
