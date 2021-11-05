@@ -345,6 +345,11 @@ The following sequence diagram shows the update of a control that requires a rec
 
 ![image](../pictures/diagrams/uml/xtd_forms/control_update_with_recreate.png)
 
+If the control to be updated has no parent or its parent control has no parent and so on, which means that the control is not created natively, then in this case the update will just be stored until the native control is created.
+
+If the control to be updated has a parent and thus has a native control, then the update is propagated to the native control.
+
+In some cases, updating the control requires recreating the control such as a style change. In this case the update method will execute the xtd::control::recreate_handle() method.
 
 ### Remove control
 
