@@ -57,7 +57,7 @@ To be able to write a class like above, you obviously need three more keywords (
 ## PRO
 
 * More concise
-* In a big cllass with a lot of people and a lot of documents, you can see the type of access.
+* In a big class with a lot of people and a lot of documents, you can see the type of access.
 
 ## CON
 
