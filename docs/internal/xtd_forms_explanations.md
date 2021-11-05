@@ -323,6 +323,29 @@ When a control is created, it will automatically create all its child controls.
 
 ### Update control
 
+There are three special cases for updating a control: 
+
+* Update a control that is not yet natively created.
+* Update a natively created control.
+* Update a control that requires the recreation of the control.
+
+Of course this is completely invisible to the user.
+
+#### Sequence diagram of the creation of a control
+
+The following sequence diagram shows the update of a control that is not natively created.
+
+![image](../pictures/diagrams/uml/xtd_forms/control_update_without_parent.png)
+
+The following sequence diagram shows the update of a control that is not natively created.
+
+![image](../pictures/diagrams/uml/xtd_forms/control_update_with_parent.png)
+
+The following sequence diagram shows the update of a control that requires a recreation of the control.
+
+![image](../pictures/diagrams/uml/xtd_forms/control_update_with_recreate.png)
+
+
 ### Remove control
 
 ## Containers
