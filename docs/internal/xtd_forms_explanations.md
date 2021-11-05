@@ -387,7 +387,7 @@ In some cases, updating the control requires recreating the control such as a st
 
 An ambient property is a property on a control that, if not set, is retrieved from the parent control. 
 If the control does not have a parent and the property is not set, the control sets the ambient property with its own default value.
-Some objects derived from the xtd::forms::control class might set the property even if you do not. 
+Some objects derived from the **xtd::forms::control** class might set the property even if you do not. 
 For example, the **xtd::forms::form** class always sets the **xtd::forms::control::fore_color** and **xtd::forms::control::back_color** properties.
 
 List of ambient properties :
