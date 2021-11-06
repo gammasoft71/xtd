@@ -20,7 +20,7 @@
 * [Control operations](#control-operations)
   * [Create control](#create-control)
   * [Update control](#update-control)
-  * [Remove control](#remove-control)
+  * [Destroy control](#destroy-control)
 * [Containers](#containers)
   * [Scrollables](#scrollables)
   * [Layauts](#layauts)
@@ -28,7 +28,7 @@
   * [Form](#form)
   * [MDI and child](#mdi-and-child)
   * [dialog](#dialog)
-* [Events](#events)
+* [System Events](#system-events)
   * [Virtual and event](#virtual-and-event)
   * [Keyboard](#keyboard)
   * [Mouse](#mouse)
@@ -181,7 +181,7 @@ Unlike a component, a control always has a graphic interface.
 
 ![image](../pictures/diagrams/uml/xtd_forms/control.png)
 
-The control class provides all properties, functions and events common to the different controls. It also provides some static functions to manipulate the controls.
+The control class provides all properties, functions and [events](../tutorial_events.md) common to the different controls. It also provides some static functions to manipulate the controls.
 
 ### Control objects
 
@@ -192,6 +192,8 @@ The controls do not have the same completeness. They could be classified in diff
 * Picker controls : xtd::forms::color_picker, xtd::forms::date_time_picker, ...
 * Complex controls : xtd::forms::list_view, xtd::forms::tree_view, xtd::forms::rich_text_box, ...
 
+An xtd::forms::control can be instantiated in the same way as another control.
+
 ## Parent and childs
 
 All controls must have a parent, except **xtd::forms::form** which cannot have one (An exception **xtd::invalid_operation_exception** will be generated if you try).
@@ -201,9 +203,9 @@ A control must always have one and only one parent (except for xtd::forms::form 
 Any control can be a parent or a child. There are no restrictions.
 
 It is easy to imagine that a complex control needs several simple controls.
-Like for example xtd::forms::domain_up_down is composed of an xtd::forms::text_box and an xtd::forms::up_down_button.
-And that an xtd::forms::form or an xtd::forms::panel can contain an xtd::forms::domain_up_down. 
-In this case our xtd::forms::domain_up_down is a parent for xtd::forms::text_box and xtd::forms::up_down_button and at the same time is a child for xtd::forms::form or xtd::forms::panel.
+Like for example **xtd::forms::domain_up_down** is composed of an **xtd::forms::text_box** and an **xtd::forms::up_down_button**.
+And that an **xtd::forms::form** or an **xtd::forms::panel** can contain an **xtd::forms::domain_up_down**. 
+In this case our **xtd::forms::domain_up_down** is a parent for **xtd::forms::text_box** and **xtd::forms::up_down_button** and at the same time is a child for **xtd::forms::form** or **xtd::forms::panel**.
 
 You can retrieve or assign a parent to a control using the **xtd::forms::control::parent** property or by assigning the control to the parent by adding it to the **xtd::forms::control::controls** collection.
 
@@ -229,7 +231,7 @@ Or
 my_form.controls().push_back(my_button);
 ```
 
-Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** event will be generated.
+Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** [event](../tutorial_events.md) will be generated.
 
 ### Remove parent
 
@@ -245,7 +247,7 @@ or
 my_form.controls().erase(my_button);
 ```
 
-Globally behind the function **my_button.parent(nullptr)**, we call the function : **my_form.controls().erase(my_button)**. And an **item_removed** event will be generated.
+Globally behind the function **my_button.parent(nullptr)**, we call the function : **my_form.controls().erase(my_button)**. And an **item_removed** [event](../tutorial_events.md) will be generated.
 
 ### Update parent
 
@@ -269,7 +271,7 @@ or this :
 my_dialog.controls().push_back(my_button)
 ```
 
-Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_button)**. An **item_removed** event will be generated for **my_form** and an **item_added** event for my_dialog.
+Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_button)**. An **item_removed** [event](../tutorial_events.md) will be generated for **my_form** and an **item_added** event for my_dialog.
 
 ## Control operations
 
@@ -317,7 +319,7 @@ When the handle is created (when the native control is created), there will be a
 Then, it's the turn of the specialized control to send its specific properties via the specialized API to **xtd::forms::native**.
 For example **xtd::forms::list_box** will send the list of strings contained in the control to the corresponding API **xtd::forms::native::list_box**, etc.
 
-The **parent_changed** and **control_added** events are only sent for a child control, in the case of a **xtd::forms::form**, these events are not sent.
+The **parent_changed** and **control_added** [events](../tutorial_events.md) are only sent for a child control, in the case of a **xtd::forms::form**, these [events](../tutorial_events.md) are not sent.
 
 When a control is created, it will automatically create all its child controls.
 
@@ -351,7 +353,7 @@ If the control to be updated has a parent and thus has a native control, then th
 
 In some cases, updating the control requires recreating the control such as a style change. In this case the update method will execute the xtd::control::recreate_handle() method.
 
-### Remove control
+### Destroy control
 
 ## Containers
 
@@ -367,7 +369,7 @@ In some cases, updating the control requires recreating the control such as a st
 
 ### Dialog
 
-## Events
+## System Events
 
 ### Virtual and event
 
