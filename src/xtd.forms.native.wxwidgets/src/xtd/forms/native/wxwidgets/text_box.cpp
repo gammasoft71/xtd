@@ -27,7 +27,7 @@ size_t text_box::selection_start(intptr_t control) {
 }
 
 void text_box::append(intptr_t control, const ustring& text) {
-  if (control == 0) return;
+  if (control == 0 || !wxTheApp) return;
   static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->AppendText(convert_string::to_wstring(text));
 }
 
