@@ -109,7 +109,6 @@ namespace xtd {
       /// @brief Writes trace string to the multiline text.
       /// @param trace A string to write.
       virtual void write(const xtd::ustring& trace) {
-        if (!application::message_loop()) return;
         if (need_header()) write_header();
         text_.append_text(trace);
       }
