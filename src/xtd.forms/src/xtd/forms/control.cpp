@@ -334,7 +334,7 @@ control& control::parent(nullptr_t) {
       if (parent().value().get().controls_[index].get().handle_ == handle_) {
         auto prev_parent = parent();
         parent().value().get().controls_.erase_at(index);
-        if (!get_state(state::destroying)) prev_parent.value().get().refresh();
+        if (!get_state(state::destroying) && !prev_parent.value().get().get_state(state::destroying)) prev_parent.value().get().refresh();
         break;
       }
     }
@@ -392,6 +392,9 @@ void control::destroy_control() {
     set_state(state::destroying, true);
     suspend_layout();
     if (handle_) {
+      for(auto child : controls_)
+        child.get().parent(nullptr);
+
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
         parent().value().get().on_control_removed(control_event_args(*this));
         parent(nullptr);
