@@ -108,7 +108,6 @@ drawing::size text_box::measure_control() const {
 }
 
 void text_box::append_text(const xtd::ustring& value) {
-  if (!application::message_loop()) return;
   native::text_box::append(handle_, value);
 }
 
