@@ -90,12 +90,14 @@ control::control() {
   set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
   size_ = default_size();
   controls_.item_added += [&](size_t, reference_wrapper<control> item) {
+    on_control_added(control_event_args(item.get()));
     item.get().parent_ = handle_;
     if (handle_)
       item.get().create_control();
   };
   
   controls_.item_removed += [&](size_t, reference_wrapper<control> item) {
+    on_control_removed(control_event_args(item.get()));
     item.get().parent_ = 0;
     item.get().destroy_control();
   };
@@ -396,7 +398,6 @@ void control::destroy_control() {
         child.get().parent(nullptr);
 
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
-        parent().value().get().on_control_removed(control_event_args(*this));
         parent(nullptr);
       } else {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
@@ -532,7 +533,6 @@ void control::on_create_control() {
     top_level_controls_.push_back(control_ref(*this));
   else {
     on_parent_changed(event_args::empty);
-    parent().value().get().on_control_added(control_event_args(*this));
   }
   for (auto control : controls_) {
     control.get().parent_ = handle_;
