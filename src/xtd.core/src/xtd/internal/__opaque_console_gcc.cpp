@@ -75,7 +75,7 @@ namespace {
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
       termios backupedTermioAttributes = termioAttributes;
-      termioAttributes.c_lflag &= ~ICANON;
+      termioAttributes.c_lflag &= ~(ICANON|ECHO);
       termioAttributes.c_cc[VTIME] = 0;
       termioAttributes.c_cc[VMIN] = 1;
       tcsetattr(0, TCSANOW, &termioAttributes);
