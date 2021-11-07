@@ -203,7 +203,7 @@ namespace xtd {
     static bool is_out_redirected();
     
     /// @brief Gets a value indicating whether a key press is available in the input stream.
-    /// @param true if a key press is available; otherwise, false
+    /// @return true if a key press is available; otherwise, false.
     /// @remarks The key_available method is returned immediately; that is, the key_available method does not block input until a key press is available.
     /// @remarks Use the key_available method in conjunction with only the read_key method, not the read or read_line methods
     static bool key_available();
