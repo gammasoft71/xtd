@@ -47,11 +47,15 @@ control& tab_page::text(const ustring& text) {
 }
 
 void tab_page::destroy_handle() {
-  if (parent().has_value()) native::tab_control::delete_item(parent().value().get().handle(), parent().value().get().get_child_index(handle()));
+  if (parent().has_value()) native::tab_control::delete_page(parent().value().get().handle(), handle());
   panel::destroy_handle();
 }
 
 void tab_page::on_handle_created(const event_args& e) {
   panel::on_handle_created(e);
-  if (image_index_ != -1 && parent().has_value()) native::tab_page::image_index(handle(), image_index_);
+  native::tab_control::insert_page(parent().value().get().handle(), parent().value().get().get_child_index(handle()), handle());
+  native::tab_page::text(handle(), text_);
+  native::tab_page::image_index(handle(), image_index_);
+  if (parent().value().get().get_child_index(handle()) == static_cast<tab_control&>(parent().value().get()).selected_index_)
+    native::tab_control::selected_index(parent().value().get().handle(), static_cast<tab_control&>(parent().value().get()).selected_index_);
 }

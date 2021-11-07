@@ -37,19 +37,11 @@ namespace xtd {
         friend xtd::forms::tab_control;
         friend xtd::forms::tab_page;
       protected:
-        /// @brief Maintains performance while items are added to the tab_control one at a tab_page by preventing the control from drawing until the end_update() method is called.
-        /// @param control Tab control window handle.
-        /// @warning Internal use only
-        static void begin_update(intptr_t control);
         /// @brief Deletes specified tab page index.
         /// @param control Tab control window handle.
-        /// @param index The item index to delete.
+        /// @param page The page handle to delete.
         /// @warning Internal use only
-        static void delete_item(intptr_t control, size_t index);
-        /// @brief Resumes painting the tab_control control after painting is suspended by the begin_update method.
-        /// @param control Tab control window handle.
-        /// @warning Internal use only
-        static void end_update(intptr_t control);
+        static void delete_page(intptr_t control, intptr_t page);
         /// @brief Sets image list.
         /// @param control Tab control window handle.
         /// @param image_list The image list handle.
@@ -60,7 +52,7 @@ namespace xtd {
         /// @param index The tab page index to insert.
         /// @param page The tab page handle.
         /// @warning Internal use only
-        static void insert_item(intptr_t control, size_t index, intptr_t page);
+        static void insert_page(intptr_t control, size_t index, intptr_t page);
         /// @brief Gets selected tab page index.
         /// @param control Tab control window handle.
         /// @return The selected tab page index.
@@ -71,12 +63,6 @@ namespace xtd {
         /// @param index The selected tab page index.
         /// @warning Internal use only
         static void selected_index(intptr_t control, size_t index);
-        /// @brief Updates a specified tab page index with specified tab page handle.
-        /// @param control Tab control window handle.
-        /// @param index The tab page index to update.
-        /// @param page The tab page handle.
-        /// @warning Internal use only
-        static void update_item(intptr_t control, size_t index, intptr_t page);
       };
     }
   }
