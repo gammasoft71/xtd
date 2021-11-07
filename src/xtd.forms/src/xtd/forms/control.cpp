@@ -319,12 +319,13 @@ control& control::minimum_size(const drawing::size& size) {
   return *this;
 }
 
-
 control& control::parent(const control& parent) {
   if (parent.handle_ != parent_) {
-    this->parent(nullptr);
+    if (this->parent().has_value())
+      this->parent(nullptr);
+    else
+      on_parent_changed(event_args::empty);
     if (parent.handle_) const_cast<control&>(parent).controls_.push_back(*this);
-    recreate_handle();
   } else if (parent.handle_ == 0 && parent_ == 0)
     const_cast<control&>(parent).controls_.push_back(*this);
   return *this;
@@ -332,6 +333,7 @@ control& control::parent(const control& parent) {
 
 control& control::parent(nullptr_t) {
   if (parent().has_value()) {
+    on_parent_changed(event_args::empty);
     for (size_t index = 0; index < parent().value().get().controls_.size(); index++) {
       if (parent().value().get().controls_[index].get().handle_ == handle_) {
         auto prev_parent = parent();
@@ -394,9 +396,6 @@ void control::destroy_control() {
     set_state(state::destroying, true);
     suspend_layout();
     if (handle_) {
-      for(auto child : controls_)
-        child.get().parent(nullptr);
-
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
         parent(nullptr);
       } else {
@@ -424,11 +423,18 @@ void control::create_handle() {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
   handle_ = native::control::create(params);
   on_handle_created(event_args::empty);
+  for(auto child : controls_) {
+    child.get().parent_ = handle_;
+    child.get().create_handle();
+  }
   set_state(state::creating_handle, false);
 }
 
 void control::destroy_handle() {
-  if (handle_) native::control::unregister_wnd_proc(handle_);
+  if (!handle_) return;
+  native::control::unregister_wnd_proc(handle_);
+  for(auto child : controls_)
+    child.get().destroy_handle();
   handles_.erase(handle_);
   on_handle_destroyed(event_args::empty);
   native::control::destroy(handle_);
@@ -531,9 +537,6 @@ void control::on_background_image_layout_changed(const event_args &e) {
 void control::on_create_control() {
   if (!parent().has_value())
     top_level_controls_.push_back(control_ref(*this));
-  else {
-    on_parent_changed(event_args::empty);
-  }
   for (auto control : controls_) {
     control.get().parent_ = handle_;
     control.get().create_control();
@@ -708,7 +711,7 @@ void control::on_parent_back_color_changed(const event_args &e) {
 
 void control::on_parent_changed(const event_args &e) {
   if (parent().has_value()) parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() : parent().value().get().size();
-  perform_layout();
+  if (!get_state(state::destroying) && parent().has_value() && !parent().value().get().get_state(state::destroying)) perform_layout();
   if (can_raise_events()) parent_changed(*this, e);
 }
 
@@ -897,17 +900,8 @@ void control::recreate_handle() {
     set_state(state::recreate, true);
     for (auto control : controls()) control.get().set_state(state::parent_recreating, true);
 
-    native::control::unregister_wnd_proc(handle_);
-    handles_.erase(handle_);
-    on_handle_destroyed(event_args::empty);
-    intptr_t previous_handle = handle_;
-    handle_ = 0;
+    destroy_handle();
     create_handle();
-    for (auto control : controls()) {
-      control.get().parent_ = handle_;
-      control.get().recreate_handle();
-    }
-    native::control::destroy(previous_handle);
 
     for (auto control : controls()) control.get().set_state(state::parent_recreating, false);
     set_state(state::recreate, false);

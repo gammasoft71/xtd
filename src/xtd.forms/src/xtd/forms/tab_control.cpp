@@ -16,19 +16,6 @@ using namespace xtd::forms;
 tab_control::tab_control() {
   can_focus_ = false;
   size_ = default_size();
-
-  /*
-  controls_.item_added += [this](size_t index, std::reference_wrapper<control> item) {
-    native::tab_control::insert_item(handle(), index, item.get().handle());
-    native::tab_control::page_text(handle(), index, item.get().text());
-    if (selected_index_ == -1) selected_index_ = 0;
-  };
-   */
-  
-  /* tab_page is removed by tab_page::destroy_handle() method.
-  controls_.item_erased += [this](size_t index, std::reference_wrapper<control> item) {
-    native::tab_control::delete_item(handle_, index);
-  };*/
 }
 
 tab_control& tab_control::alignment(tab_alignment alignment) {
@@ -79,40 +66,9 @@ drawing::size tab_control::measure_control() const {
   return drawing::size(bounds.location() + bounds.size());
 }
 
-void tab_control::on_control_added(const control_event_args &e) {
-  native::tab_control::insert_item(handle(), controls().size() - 1, controls()[controls().size() - 1].get().handle());
-  //native::tab_control::page_text(handle(), controls().size() - 1, controls()[controls().size() - 1].get().text());
-  native::tab_page::text(controls()[controls().size() - 1].get().handle(), controls()[controls().size() - 1].get().text());
-  if (xtd::environment::os_version().is_linux_platform()) {
-    controls()[controls().size() - 1].get().size(size() - xtd::drawing::size(0, 40));
-    controls()[controls().size() - 1].get().client_size(size() - xtd::drawing::size(0, 40));
-  }
-  if (selected_index_ == npos) selected_index_ = 0;
-  control::on_control_added(e);
-}
-
-void tab_control::on_control_removed(const control_event_args &e) {
-  control::on_control_removed(e);
-  if (selected_index_ != npos) selected_index(npos);
-}
-
 void tab_control::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::tab_control::image_list(handle(), image_list_.handle());
-}
-
-void tab_control::recreate_handle() {
-  control::recreate_handle();
-
-  native::tab_control::image_list(handle(), image_list_.handle());
-  for (auto index = 0U; index < controls().size(); index++) {
-    native::tab_control::insert_item(handle(), index, controls()[index].get().handle());
-    //native::tab_control::page_text(handle(), index, controls()[index].get().text());
-    //native::tab_control::page_image_index(handle(), index, dynamic_cast<xtd::forms::tab_page&>(controls()[index].get()).image_index());
-    native::tab_page::text(controls()[index].get().handle(), controls()[index].get().text());
-    native::tab_page::image_index(controls()[index].get().handle(), static_cast<tab_page&>(controls()[index].get()).image_index());
-  }
-  native::tab_control::selected_index(handle(), selected_index_);
 }
 
 void tab_control::wnd_proc(message& message) {
