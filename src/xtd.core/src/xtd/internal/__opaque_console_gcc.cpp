@@ -58,16 +58,8 @@ namespace {
 
   class terminal final {
   private:
-    terminal() {
-      termios termioAttributes;
-      tcgetattr(0, &termioAttributes);
-      backupedTermioAttributes = termioAttributes;
-      termioAttributes.c_lflag &= ~ECHO;
-      tcsetattr(0, TCSANOW, &termioAttributes);
-    }
-    
+    terminal() = default;
     ~terminal() {
-      tcsetattr(0, TCSANOW, &backupedTermioAttributes);
       if (is_ansi_supported())
         std::cout << "\x1b]0;\x7" << std::flush;
     }
@@ -103,16 +95,17 @@ namespace {
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
       termios backupedTermioAttributes = termioAttributes;
-      termioAttributes.c_lflag &= ~ICANON;
+      termioAttributes.c_lflag &= ~(ICANON|ECHO);
       termioAttributes.c_cc[VTIME] = 0;
       termioAttributes.c_cc[VMIN] = 0;
       tcsetattr(0, TCSANOW, &termioAttributes);
       
-      if (read(0, &peekCharacter, 1) == -1)
-        return  false;
+      if (read(0, &peekCharacter, 1) == -1) {
+        tcsetattr(0, TCSANOW, &backupedTermioAttributes);
+        return false;
+      }
       
       tcsetattr(0, TCSANOW, &backupedTermioAttributes);
-      
       return peekCharacter != -1;
     }
     
@@ -125,7 +118,6 @@ namespace {
     
   private:
     int8_t peekCharacter {-1};
-    termios backupedTermioAttributes;
   };
   
   terminal terminal::terminal_;
