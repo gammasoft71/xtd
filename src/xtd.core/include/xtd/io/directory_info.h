@@ -433,7 +433,7 @@ namespace xtd {
       /// @return The last directory specified in path.
       /// @exception xtd::argument_exception path does not specify a valid file path or contains invalid xtd::io::directory_info characters.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
-      /// @exception xtd::io::io_excepttion The subdirectory cannot be created. -or- A file or directory already has the name specified by path.
+      /// @exception xtd::io::io_exception The subdirectory cannot be created. -or- A file or directory already has the name specified by path.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
@@ -508,10 +508,10 @@ namespace xtd {
       /// @remarks * When you use xtd::io::directory_info::get_directories, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
       /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_directories can be more efficient.
       /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
-      /// * xtd::io::directory_info::attributes
-      /// * xtd::io::directory_info::creation_time
-      /// * xtd::io::directory_info::last_access_time
-      /// * xtd::io::directory_info::last_write_time
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
       xtd::io::directory_info::directory_iterator enumerate_directories() const;
       /// @brief Returns an enumerable collection of directory information that matches a specified search pattern.
       /// @param search_pattern The search string to match against the names of directories. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -529,33 +529,470 @@ namespace xtd {
       /// @remarks * When you use xtd::io::directory_info::get_directories, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
       /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_directories can be more efficient.
       /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
-      /// * xtd::io::directory_info::attributes
-      /// * xtd::io::directory_info::creation_time
-      /// * xtd::io::directory_info::last_access_time
-      /// * xtd::io::directory_info::last_write_time
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
       xtd::io::directory_info::directory_iterator enumerate_directories(const xtd::ustring& search_pattern) const;
       
+      /// @brief Returns an enumerable collection of file information in the current directory.
+      /// @return An xtd::io::directory_info::file_iterator of the files in the current directory.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @par Example
+      /// The following example enumerates the files under a specified directory.
+      ///
+      /// If you only need the names of the files, use the static xtd::io::directory class for better performance. For an example, see the xtd::io::directory::enumerate_files method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Create a directory_info of the directory of the files to enumerate.
+      ///     directory_info dir_info(R"(\\archives1\library\)");
+      ///
+      ///     // Get the files iteror.
+      ///     auto files = dir_info.enumerate_files();
+      ///
+      ///     // Show results.
+      ///     for (auto f : files) {
+      ///       console::write_line("{0}", f.name());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @par Example
+      /// The following example shows how to enumerate files in a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.txt.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     directory_info di(R"(C:\ExampleDir)");
+      ///     console::write_line("No search pattern returns:");
+      ///     for (auto fi : di.enumerate_files()) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///
+      ///     console::write_line();
+      ///
+      ///     console::write_line("Search pattern *2* returns:");
+      ///     for (auto fi : di.enumerate_files("*2*")) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///
+      ///     console::write_line();
+      ///
+      ///     console::write_line("Search pattern test?.txt returns:");
+      ///     for (auto fi : di.enumerate_files("test?.txt")) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// /*
+      ///  This code produces output similar to the following:
+      ///
+      ///  No search pattern returns:
+      ///  log1.txt
+      ///  log2.txt
+      ///  test1.txt
+      ///  test2.txt
+      ///  test3.txt
+      ///
+      ///  Search pattern *2* returns:
+      ///  log2.txt
+      ///  test2.txt
+      ///
+      ///  Search pattern test?.txt returns:
+      ///  test1.txt
+      ///  test2.txt
+      ///  test3.txt
+      ///  */
+      /// @endcode
+      /// @remarks The xtd::io::directory_info::enumerate_files and xtd::io::directory_info::get_files methods differ as follows:
+      /// * When you use xtd::io::directory_info::enumerate_files, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
+      /// * When you use xtd::io::directory_info::get_files, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_files can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
       xtd::io::directory_info::file_iterator enumerate_files() const;
-      xtd::io::directory_info::file_iterator enumerate_files(const xtd::ustring& pattern) const;
+      /// @brief Returns an enumerable collection of file information that matches a search pattern.
+      /// @param search_pattern The search string to match against the names of files. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An xtd::io::directory_info::file_iterator of files that matches search_pattern.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @par Example
+      /// The following example shows how to enumerate files in a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.txt.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     directory_info di(R"(C:\ExampleDir)");
+      ///     console::write_line("No search pattern returns:");
+      ///     for (auto fi : di.enumerate_files()) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///
+      ///     console::write_line();
+      ///
+      ///     console::write_line("Search pattern *2* returns:");
+      ///     for (auto fi : di.enumerate_files("*2*")) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///
+      ///     console::write_line();
+      ///
+      ///     console::write_line("Search pattern test?.txt returns:");
+      ///     for (auto fi : di.enumerate_files("test?.txt")) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// /*
+      ///  This code produces output similar to the following:
+      ///
+      ///  No search pattern returns:
+      ///  log1.txt
+      ///  log2.txt
+      ///  test1.txt
+      ///  test2.txt
+      ///  test3.txt
+      ///
+      ///  Search pattern *2* returns:
+      ///  log2.txt
+      ///  test2.txt
+      ///
+      ///  Search pattern test?.txt returns:
+      ///  test1.txt
+      ///  test2.txt
+      ///  test3.txt
+      ///  */
+      /// @endcode
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks The xtd::io::directory_info::enumerate_files and xtd::io::directory_info::get_files methods differ as follows:
+      /// * When you use xtd::io::directory_info::enumerate_files, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
+      /// * When you use xtd::io::directory_info::get_files, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_files can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
+      xtd::io::directory_info::file_iterator enumerate_files(const xtd::ustring& search_pattern) const;
       
+      /// @brief Returns an enumerable collection of file system information in the current directory.
+      /// @return An xtd::io::directory_info::file_system_info_iterator of file system information in the current directory.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @remarks The xtd::io::directory_info::enumerate_file_system_infos and xtd::io::directory_info::get_file_system_infos methods differ as follows:
+      /// * When you use xtd::io::directory_info::enumerate_file_system_infos, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
+      /// * When you use xtd::io::directory_info::get_file_system_infos, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_file_system_infos can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
       xtd::io::directory_info::file_system_info_iterator enumerate_file_system_infos() const;
-      xtd::io::directory_info::file_system_info_iterator enumerate_file_system_infos(const xtd::ustring& pattern) const;
+      /// @brief Returns an enumerable collection of file system information that matches a specified search pattern.
+      /// @param search_pattern The search string to match against the names of directories. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An xtd::io::directory_info::file_system_info_iterator of file system information objects that matches search_pattern.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks The xtd::io::directory_info::enumerate_file_system_infos and xtd::io::directory_info::get_file_system_infos methods differ as follows:
+      /// * When you use xtd::io::directory_info::enumerate_file_system_infos, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
+      /// * When you use xtd::io::directory_info::get_file_system_infos, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_file_system_infos can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
+      xtd::io::directory_info::file_system_info_iterator enumerate_file_system_infos(const xtd::ustring& search_pattern) const;
 
+      /// @brief Returns the subdirectories of the current directory.
+      /// @return An array of xtd::io::directory_info objects.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @par Example
+      /// The following example retrieves all the directories in the root directory and displays the directory names.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Make a reference to a directory.
+      ///     directory_info di("c:\\");
+      ///
+      ///     // Get a reference to each directory in that directory.
+      ///     vector<directory_info> di_arr = di.get_directories();
+      ///
+      ///     // Display the names of the directories.
+      ///     for (directory_info dri : di_arr)
+      ///       console::write_line(dri.name());
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks If there are no subdirectories, this method returns an empty array. This method is not recursive.
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
       std::vector<xtd::io::directory_info> get_directories() const;
-      std::vector<xtd::io::directory_info> get_directories(const xtd::ustring& pattern) const;
+      /// @brief Returns an array of directories in the current DirectoryInfo matching the given search criteria.
+      /// @param search_pattern The search string to match against the names of directories. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An array of type xtd::io::directory_info matching search_pattern.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @par Example
+      /// TThe following example counts the directories in a path that contain the specified letter.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       directory_info di(R"(c:\)");
+      ///
+      ///       // Get only subdirectories that contain the letter "p."
+      ///       vector<directory_info> dirs = di.get_directories("*p*");
+      ///       console::write_line("The number of directories containing the letter p is {0}.", dirs.size());
+      ///
+      ///       for (directory_info di_next : dirs) {
+      ///         console::write_line("The number of files in {0} is {1}", di_next, di_next.get_files().size());
+      ///       }
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///@endcode
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
+      std::vector<xtd::io::directory_info> get_directories(const xtd::ustring& search_pattern) const;
       
+      /// @brief Returns a file list from the current directory.
+      /// @return An array of type xtd::io::file_info.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @Par Example
+      /// The following example shows how to get a list of files from a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.tx
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     directory_info di(R"(C:\ExampleDir)");
+      ///     console::write_line("No search pattern returns:");
+      ///     for (auto fi : di.get_files()) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///
+      ///     console::write_line();
+      ///
+      ///     console::write_line("Search pattern *2* returns:");
+      ///     for (auto fi : di.get_files("*2*")) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///
+      ///     console::write_line();
+      ///
+      ///     console::write_line("Search pattern test?.txt returns:");
+      ///     for (auto fi : di.get_files("test?.txt")) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// /*
+      ///  This code produces output similar to the following:
+      ///
+      ///  No search pattern returns:
+      ///  log1.txt
+      ///  log2.txt
+      ///  test1.txt
+      ///  test2.txt
+      ///  test3.txt
+      ///
+      ///  Search pattern *2* returns:
+      ///  log2.txt
+      ///  test2.txt
+      ///
+      ///  Search pattern test?.txt returns:
+      ///  test1.txt
+      ///  test2.txt
+      ///  test3.txt
+      ///  */
+      /// @endcode
+      /// @remarks The xtd::io::directory_info::enumerate_files and xtd::io::directory_info::get_files methods differ as follows:
+      /// * When you use xtd::io::directory_info::enumerate_files, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
+      /// * When you use xtd::io::directory_info::get_files, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_files can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
       std::vector<xtd::io::file_info> get_files() const;
-      std::vector<xtd::io::file_info> get_files(const xtd::ustring& pattern) const;
+      /// @brief Returns a file list from the current directory matching the given search pattern.
+      /// @param search_pattern The search string to match against the names of files. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An array of type xtd::io::file_info.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @Par Example
+      /// The following example shows how to get a list of files from a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.tx
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     directory_info di(R"(C:\ExampleDir)");
+      ///     console::write_line("No search pattern returns:");
+      ///     for (auto fi : di.get_files()) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///
+      ///     console::write_line();
+      ///
+      ///     console::write_line("Search pattern *2* returns:");
+      ///     for (auto fi : di.get_files("*2*")) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///
+      ///     console::write_line();
+      ///
+      ///     console::write_line("Search pattern test?.txt returns:");
+      ///     for (auto fi : di.get_files("test?.txt")) {
+      ///       console::write_line(fi.name());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// /*
+      ///  This code produces output similar to the following:
+      ///
+      ///  No search pattern returns:
+      ///  log1.txt
+      ///  log2.txt
+      ///  test1.txt
+      ///  test2.txt
+      ///  test3.txt
+      ///
+      ///  Search pattern *2* returns:
+      ///  log2.txt
+      ///  test2.txt
+      ///
+      ///  Search pattern test?.txt returns:
+      ///  test1.txt
+      ///  test2.txt
+      ///  test3.txt
+      ///  */
+      /// @endcode
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks The xtd::io::directory_info::enumerate_files and xtd::io::directory_info::get_files methods differ as follows:
+      /// * When you use xtd::io::directory_info::enumerate_files, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
+      /// * When you use xtd::io::directory_info::get_files, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_files can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
+      std::vector<xtd::io::file_info> get_files(const xtd::ustring& search_pattern) const;
       
       std::vector<std::shared_ptr<xtd::io::file_system_info>> get_file_system_infos() const;
-      std::vector<std::shared_ptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::ustring& pattern) const;
+      std::vector<std::shared_ptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::ustring& search_pattern) const;
       
       void move_to(const xtd::ustring& dest_dir_name);
       
       /// @brief Deletes this xtd::io::directory_info if it is empty.
       /// @exception xtd::unauthorized_access_exception The directory contains a read-only file.
-      /// @exception xtd::io::directory_not_fond_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
-      /// @exception xtd::io::io_excpetion The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
+      /// @exception xtd::io::directory_not_found_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
+      /// @exception xtd::io::io_exception The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @par Example
       /// The following example throws an exception if you attempt to delete a directory that is not empty.
@@ -594,8 +1031,8 @@ namespace xtd {
       /// @brief Deletes this instance of a DirectoryInfo, specifying whether to delete subdirectories and files.
       /// @param recursive true to delete this directory, its subdirectories, and all files; otherwise, false.
       /// @exception xtd::unauthorized_access_exception The directory contains a read-only file.
-      /// @exception xtd::io::directory_not_fond_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
-      /// @exception xtd::io::io_excpetion The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
+      /// @exception xtd::io::directory_not_found_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
+      /// @exception xtd::io::io_exception The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @par Example
       /// The following example demonstrates deleting a directory. Because the directory is removed, first comment out the Delete line to test that the directory exists. Then uncomment the same line of code to test that the directory was removed successfully.
