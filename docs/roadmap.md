@@ -27,8 +27,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Library   | Enhancements                    | Developer | status                                          |
 |-----------|---------------------------------|-----------|-------------------------------------------------|
-| xtd.core  | io::directory                   | Gammasoft | ![status](pictures/releases/status/started.png) | 
-| xtd.core  | io::directory_info              | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.core  | io::directory                   | Gammasoft | ![status](pictures/releases/status/done.png)    | 
+| xtd.core  | io::directory_info              | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.core  | io::drive_info                  | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.core  | io::file_info                   | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.core  | io::file_system_info            | Gammasoft | ![status](pictures/releases/status/done.png)    |
