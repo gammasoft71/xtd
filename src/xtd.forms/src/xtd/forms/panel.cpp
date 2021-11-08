@@ -56,10 +56,3 @@ void panel::on_layout(const event_args& e) {
   scrollable_control::on_layout(e);
   if (auto_scroll_) native::panel::virtual_size(handle(), display_rectangle().size());
 }
-
-void panel::on_paint(paint_event_args& e) {
-  scrollable_control::on_paint(e);
-  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, and border style is not none, the border is not show.
-  if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(parent().value().get().handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ != forms::border_style::none)
-    e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::inflate(e.clip_rectangle(), {-3, -3}));
-}

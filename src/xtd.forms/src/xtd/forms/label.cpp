@@ -101,9 +101,6 @@ void label::on_paint(paint_event_args& e) {
     e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
   }
   control::on_paint(e);
-  // Workaround : on macOS with wxWidgets toolkit, retina display, dark mode enabled, and border style is not none, the border is not show.
-  if (environment::os_version().is_macos_platform() && native::toolkit::name() == "wxwidgets" && screen::from_handle(parent().value().get().handle()).scale_factor() > 1. && application::dark_mode_enabled() && border_style_ != forms::border_style::none)
-    e.graphics().draw_rectangle(xtd::drawing::pens::white(), xtd::drawing::rectangle::inflate(e.clip_rectangle(), {-3, -3}));
 }
 
 void label::on_text_align_changed(const xtd::event_args& e) {
