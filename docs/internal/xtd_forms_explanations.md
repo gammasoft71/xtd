@@ -351,9 +351,23 @@ If the control to be updated has no parent or its parent control has no parent a
 
 If the control to be updated has a parent and thus has a native control, then the update is propagated to the native control.
 
-In some cases, updating the control requires recreating the control such as a style change. In this case the update method will execute the xtd::control::recreate_handle() method.
+In some cases, updating the control requires recreating the control such as a style change. In this case the update method will execute the **xtd::control::recreate_handle** method.
 
 ### Destroy control
+
+Not surprisingly a native control is destroyed when the destructor of **xtd::forms::control** is called.
+
+The native control is also destroyed when removed from its parent.
+
+When a control is destroyed, its children are destroyed too.
+
+The following sequence diagram shows the destruction of a control when the destructor is called.
+
+![image](../pictures/diagrams/uml/xtd_forms/control_destroy.png)
+
+The following sequence diagram shows the destruction of a control when the parent is deleted.
+
+![image](../pictures/diagrams/uml/xtd_forms/control_clear_parent.png)
 
 ## Containers
 
