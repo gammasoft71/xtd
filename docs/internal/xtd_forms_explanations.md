@@ -5,6 +5,9 @@
   * [xtd.forms hierarchy diagram](#xtdforms-hierarchy-diagram)
   * [xtd.forms high level API](#xtdforms-high-level-api)
   * [xtd.forms.native low level API](#xtdformsnative-low-level-api)
+* [Objects](#cobjects)
+  * [Object type](#cobject-type)
+  * [Object class diagram](#object-class-diagram)
 * [Components](#components)
   * [Component type](#component-type)
   * [Component class diagram](#component-class-diagram)
@@ -146,6 +149,20 @@ void xtd::forms::native::button::set_default_button(intptr_t control) {
 ```
 
 **Remarks :** The **xxx** of the library **xtd.forms.native.xxx** can be replaced by **wxwdigets**. End in tthe future by **qt6** or **sdl2** or others.
+
+## Objects
+
+All classes of the framework inherit from the class xtd::object.
+
+### Object type
+
+[xtd::object](../../src/xtd.core/include/xtd/object.h) supports all classes in the xtd class hierarchy and provides low-level services to derived classes.
+This is the ultimate base class of all classes in the xtd.
+It is the root of the type hierarchy.
+
+### Object class diagram
+
+![image](../pictures/diagrams/uml/xtd_forms/object.png)
 
 ## Components
 
@@ -381,6 +398,10 @@ There are simple containers like [xtd::forms::panel](../../src/xtd.forms/include
 
 There are more complex containers like [xtd::forms::tab_control](../../src/xtd.forms/include/xtd/forms/tab_control.h) and [xtd::forms::tab_page](../../src/xtd.forms/include/xtd/forms/tab_page.h).
 
+### Container class diagram
+
+![image](../pictures/diagrams/uml/xtd_forms/container_control.png)
+
 The [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) control is also a container.
 
 Even if it is included as a container, [xtd::forms::group_box](../../src/xtd.forms/include/xtd/forms/group_box.h) does not inherit from [xtd::forms::container_control](../../src/xtd.forms/include/xtd/forms/container_control.h) but from [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h). So it doesn't have the properties of a container.
@@ -398,6 +419,10 @@ The [xtd::forms::container_control](../../src/xtd.forms/include/xtd/forms/contai
 The scroll bars can be managed :
 * automatically
 * manually
+
+### scrollable control class diagram
+
+![image](../pictures/diagrams/uml/xtd_forms/scrollable_control.png)
 
 #### Manually
 
