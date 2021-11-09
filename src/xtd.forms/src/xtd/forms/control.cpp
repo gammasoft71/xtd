@@ -396,9 +396,7 @@ void control::destroy_control() {
     set_state(state::destroying, true);
     suspend_layout();
     if (handle_) {
-      if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
-        parent(nullptr);
-      } else {
+      if (!parent().has_value()) {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
           if (top_level_controls_[index].get().handle_ == handle_) {
             top_level_controls_.erase_at(index);
