@@ -24,6 +24,7 @@
   * [Create control](#create-control)
   * [Update control](#update-control)
   * [Destroy control](#destroy-control)
+  * [Some controls class diagram](#some-control-class-diagram)
 * [Containers](#containers)
   * [Container control class diagram](#container-control-class-diagram)
   * [Scrollables](#scrollables)
@@ -48,7 +49,7 @@
   * [Dialog style](#dialog-style)
 * [Resources](#resources)
 * [Settings](#settings)
-* [Some controls class diagram](#some-control-class-diagram)
+* [xtd.forms class diagram](#xtdforms-class-diagram)
 
 ## Libraries and API
 
@@ -389,6 +390,10 @@ The following sequence diagram shows the destruction of a control when the paren
 
 ![image](../pictures/diagrams/uml/xtd_forms/control_clear_parent.png)
 
+### Some controls class diagram
+
+![image](../pictures/diagrams/uml/xtd_forms/controls.png)
+
 ## Containers
 
 Containers are a specialization of controls. Although by line any control can be a container (see #parent-and-childs).
@@ -495,6 +500,6 @@ List of ambient properties :
 
 ## Settings
 
-## Some controls class diagram
+## xtd.forms class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/controls.png)
+![image](../pictures/diagrams/uml/xtd_forms/forms.png)
