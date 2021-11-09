@@ -22,7 +22,7 @@ public:
     top_panel.padding(forms::padding(5, 5, 5, 0));
 
     left_panel.border_style(forms::border_style::fixed_3d);
-    left_panel.back_color(drawing::color::blue);
+    left_panel.back_color(drawing::color::navy);
     left_panel.fore_color(drawing::color::yellow);
     right_panel.border_style(forms::border_style::fixed_3d);
     right_panel.back_color(drawing::color::dark_cyan);
