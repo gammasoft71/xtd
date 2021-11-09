@@ -16,16 +16,16 @@
   * [Control type](#control-type)
   * [Control class diagram](#control-class-diagram)
   * [Control objects](#control-objects)
-* [Parent and childs](#parent-and-childs)
-  * [Add parent](#add-parent)
-  * [Remove parent](#remove-parent)
-  * [Update parent](#update-parent)
-* [Control operations](#control-operations)
-  * [Create control](#create-control)
-  * [Update control](#update-control)
-  * [Destroy control](#destroy-control)
-  * [Control and user control](#control-and-user-control)
-  * [Some controls class diagram](#some-controls-class-diagram)
+  * [Parent and childs](#parent-and-childs)
+    * [Add parent](#add-parent)
+    * [Remove parent](#remove-parent)
+    * [Update parent](#update-parent)
+  * [Control operations](#control-operations)
+    * [Create control](#create-control)
+    * [Update control](#update-control)
+    * [Destroy control](#destroy-control)
+    * [Control and user control](#control-and-user-control)
+  *  [Some controls class diagram](#some-controls-class-diagram)
 * [Containers](#containers)
   * [Container control class diagram](#container-control-class-diagram)
   * [Scrollables](#scrollables)
@@ -221,7 +221,7 @@ The controls do not have the same completeness. They could be classified in diff
 
 An [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h) can be instantiated in the same way as another control.
 
-## Parent and childs
+### Parent and childs
 
 All controls must have a parent, except [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) which cannot have one (An exception [xtd::invalid_operation_exception](../../src/xtd.core/include/xtd/invalid_operation_exception.h) will be generated if you try).
 
@@ -244,7 +244,7 @@ This collection has the particularity to have [events](../tutorial_events.md) on
 * item_updated : occurs when an item is updated in the collection.
 * item_removed : occurs when an item is deleted from the collection.
 
-### Add parent
+#### Add parent
 
 With this collection we can write indifferently to add **my_form** as a perent to **my_button** :
 
@@ -260,7 +260,7 @@ my_form.controls().push_back(my_button);
 
 Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** [event](../tutorial_events.md) will be generated.
 
-### Remove parent
+#### Remove parent
 
 In the same way, to dissociate a control from a parent or simply to remove a control from the collection of controls of a parent it is enough to call indifferently:
 
@@ -276,7 +276,7 @@ my_form.controls().erase(my_button);
 
 Globally behind the function **my_button.parent(nullptr)**, we call the function : **my_form.controls().erase(my_button)**. And an **item_removed** [event](../tutorial_events.md) will be generated.
 
-### Update parent
+#### Update parent
 
 You can decide at any time to change the parent of a control. A control could very well go from a form to a dialog for example.
 
@@ -300,7 +300,7 @@ my_dialog.controls().push_back(my_button)
 
 Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_button)**. An **item_removed** [event](../tutorial_events.md) will be generated for **my_form** and an **item_added** event for my_dialog.
 
-## Control operations
+### Control operations
 
 We can do different operations on a control:
 * Create the control.
@@ -308,7 +308,7 @@ We can do different operations on a control:
 * Delete the control.
 * We can also retrieve the different values of the properties and its status. But for this last operation we only read the internal information of the control.
 
-### Create control
+#### Create control
 
 The creation of a control is a bit special. 
 Indeed, when you create a control like for example:
@@ -324,7 +324,7 @@ Except for the control [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/
  
 The creation of a control is done in several steps and exchanges between the different libraries.
 
-#### Sequence diagram of the creation of a control
+##### Sequence diagram of the creation of a control
 
 The following sequence diagram shows the creation of an [xtd::form::form](../../src/xtd.forms/include/xtd/forms/form.h).
 
@@ -350,7 +350,7 @@ The **parent_changed** and **control_added** [events](../tutorial_events.md) are
 
 When a control is created, it will automatically create all its child controls.
 
-### Update control
+#### Update control
 
 There are three special cases for updating a control: 
 
@@ -360,7 +360,7 @@ There are three special cases for updating a control:
 
 Of course this is completely invisible to the user.
 
-#### Sequence diagram of the creation of a control
+##### Sequence diagram of the creation of a control
 
 The following sequence diagram shows the update of a control that is not natively created.
 
@@ -380,7 +380,7 @@ If the control to be updated has a parent and thus has a native control, then th
 
 In some cases, updating the control requires recreating the control such as a style change. In this case the update method will execute the [xtd::control::recreate_handle](../../src/xtd.forms/include/xtd/forms/control.h) method.
 
-### Destroy control
+#### Destroy control
 
 Not surprisingly a native control is destroyed when the destructor of [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h) is called.
 
@@ -396,7 +396,7 @@ The following sequence diagram shows the destruction of a control when the paren
 
 ![image](../pictures/diagrams/uml/xtd_forms/control_clear_parent.png)
 
-### Example
+#### Example
 
 The following example shows the creation and destruction of a handle and the associated events.The following example shows the creation and destruction of a handle and the associated events.
 
@@ -505,7 +505,7 @@ startup_(form1);
 It is normal to have between the output lines (3-6) a destruction of the [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) and the child controls.
 Indeed when the [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) is displayed for the first time, an [xtd::forms::control::recreate_handle](../../src/xtd.forms/include/xtd/forms/control.h) is called.
 
-### Control and user control
+#### Control and user control
 
 Any control can be inherited by the user.
 
