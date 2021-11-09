@@ -29,7 +29,7 @@
   * [Container control class diagram](#container-control-class-diagram)
   * [Scrollables](#scrollables)
     * [Scrollable control class diagram](#container-control-class-diagram)
-  * [Layauts](#layauts)
+  * [Layouts](#layouts)
 * [Forms](#forms)
   * [Form](#form)
   * [MDI and child](#mdi-and-child)
@@ -444,7 +444,7 @@ The automatic mode is generally the most used and the easiest to implement.
 
 To use the automatic mode you just have to set the property [xtd::forms::scrollable_control::auto_scroll](../../src/xtd.forms/include/xtd/forms/scrollable_control.h) to *true*.
 
-### Layauts
+### Layouts
 
 ### Some container controls class diagram
 
