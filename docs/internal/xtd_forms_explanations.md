@@ -392,6 +392,88 @@ The following sequence diagram shows the destruction of a control when the paren
 
 ![image](../pictures/diagrams/uml/xtd_forms/control_clear_parent.png)
 
+### Example
+
+The following example shows the creation and destruction of a handle and the associated events.The following example shows the creation and destruction of a handle and the associated events.
+
+```c++
+#include <xtd/xtd.forms>
+
+using namespace xtd;
+using namespace xtd::diagnostics;
+using namespace xtd::drawing;
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  static void main() {
+    debug_form df;
+    application::run(form1());
+  }
+
+  form1() {
+    name("form1");
+    text("Handle creation and destruction example");
+
+    handle_created += [] (object& sender, const event_args& e) {
+      debug::write_line(ustring::format("handdle_created {}", static_cast<control&>(sender).name()));
+    };
+    handle_destroyed += [] (object& sender, const event_args& e) {
+      debug::write_line(ustring::format("handle_destroyed {}", static_cast<control&>(sender).name()));
+    };
+    control_added += [](object& sender, const control_event_args& e) {
+      debug::write_line(ustring::format("control_added {}", e.control().name()));
+    };
+    control_removed += [](object& sender, const control_event_args& e) {
+      debug::write_line(ustring::format("control_removed {}", e.control().name()));
+    };
+
+    button1.name("button1");
+    button1.text("button1");
+    button1.location({10, 10});
+    button1.parent(*this);
+    button1.handle_created += [] (object& sender, const event_args& e) {
+      debug::write_line(ustring::format("handle_created {}", static_cast<control&>(sender).name()));
+    };
+    button1.handle_destroyed += [] (object& sender, const event_args& e) {
+      debug::write_line(ustring::format("handle_destroyed {}", static_cast<control&>(sender).name()));
+    };
+    button1.click += [&] {
+      debug::write_line("------------------------------------");
+      if (label1.parent().has_value())
+        label1.parent(nullptr);
+      else
+        label1.parent(*this);
+      debug::write_line("------------------------------------");
+    };
+    button1.parent_changed += [] (object& sender, const event_args& e) {
+      debug::write_line(ustring::format("parent_changed {}", static_cast<control&>(sender).name()));
+    };
+    
+    label1.auto_size(true);
+    label1.name("label1");
+    label1.text("label1");
+    label1.location({10, 50});
+    label1.parent(*this);
+    label1.handle_created += [] (object& sender, const event_args& e) {
+      debug::write_line(ustring::format("handle_created {}", static_cast<control&>(sender).name()));
+    };
+    label1.handle_destroyed += [] (object& sender, const event_args& e) {
+      debug::write_line(ustring::format("handle_destroyed {}", static_cast<control&>(sender).name()));
+    };
+    label1.parent_changed += [] (object& sender, const event_args& e) {
+      debug::write_line(ustring::format("parent_changed {}", static_cast<control&>(sender).name()));
+    };
+  }
+
+private:
+  button button1;
+  label label1;
+};
+
+startup_(form1);
+```
+
 ### Some controls class diagram
 
 ![image](../pictures/diagrams/uml/xtd_forms/controls.png)
