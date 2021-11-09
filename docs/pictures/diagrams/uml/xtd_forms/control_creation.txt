@@ -22,10 +22,10 @@ form -> xxx  : xtd::forms::native::control::create(create_params)
 form -> form : my_button::on_handle_created()
 form -> xxx  : update control::properties(properties)
 form -> xxx  : update buttton::properties(properties)
-form -> user : my_button.handle_created event
 form -> form : my_button.on_create_control()
 form -> user : send my_button.parent_changed event
 form -> user : send my_form.control_added(my_button) event
+form -> user : my_button.handle_created event
 form -> form : create child controls
 
 @enduml

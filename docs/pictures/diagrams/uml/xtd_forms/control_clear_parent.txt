@@ -15,14 +15,13 @@ participant xtd.forms as form
 participant xtd.forms.native as native
 participant xtd.forms.native.xxx as xxx
 
-user -> form : xtd::forms::form my_form
-form -> form : my_form.create_params()
-form -> xxx  : xtd::forms::native::control::create(create_params)
-form -> form : my_form::on_handle_created()
-form -> xxx  : update control::properties(properties)
-form -> xxx  : update form::properties(properties)
-form -> form : my_form.on_create_control()
-form -> user : my_form.handle_created event
-form -> form : create child controls
+user -> form : my_button.parent(nullptr)
+form -> user : send parent_changed event
+form -> user : send my_form.control_removed(my_button) event
+form -> user : xtd::forms::control::destroy_control
+form -> form : xtd::forms::form::destroy_handle()
+form -> xxx  : xtd::forms::native::control::destroy(handle)
+form -> user : send handle_destroyed event
+form -> form : destroy child controls
 
 @enduml
