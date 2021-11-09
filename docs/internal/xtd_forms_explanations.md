@@ -446,6 +446,16 @@ To use the automatic mode you just have to set the property [xtd::forms::scrolla
 
 ### Layouts
 
+Layouts are containers that automatically organize controls in a specific order.
+
+The are some kinds layout panel :
+
+* [fixed_layout_panel](../../src/xtd.forms/include/xtd/forms/fixed_layout_panel.h)
+* [flow_layout_panel](../../src/xtd.forms/include/xtd/forms/flow_layout_panel.h)
+* [horizontal_layout_panel](../../src/xtd.forms/include/xtd/forms/horizontal_layout_panel.h)
+* [vertical_layout_panel](../../src/xtd.forms/include/xtd/forms/vertical_layout_panel.h)
+* [table_layout_panel](../../src/xtd.forms/include/xtd/forms/table_layout_panel.h)
+
 ### Some container controls class diagram
 
 ![image](../pictures/diagrams/uml/xtd_forms/containers.png)
