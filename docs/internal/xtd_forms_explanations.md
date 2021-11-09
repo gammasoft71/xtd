@@ -471,7 +471,35 @@ private:
 };
 
 startup_(form1);
+
+// This example produces the following output display if you launch the application,
+// then double-click the button1 and then close the application:
+//
+// control_added button1
+// control_added label1
+// handle_destroyed button1
+// handle_destroyed label1
+// handle_destroyed manual_test_form
+// handdle_created manual_test_form
+// handle_created button1
+// handle_created label1
+// ------------------------------------
+// parent_changed label1
+// control_removed label1
+// handle_destroyed label1
+// ------------------------------------
+// ------------------------------------
+// parent_changed label1
+// control_added label1
+// handle_created label1
+// ------------------------------------
+// handle_destroyed label1
+// handle_destroyed button1
+// handle_destroyed manual_test_form
 ```
+
+It is normal to have between the output lines (3-6) a destruction of the [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) and the child controls.
+Indeed when the [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) is displayed for the first time, an [xtd::forms::control::recreate_handle](../../src/xtd.forms/include/xtd/forms/control.h) is called.
 
 ### Some controls class diagram
 
