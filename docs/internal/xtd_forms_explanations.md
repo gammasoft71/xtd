@@ -167,7 +167,7 @@ All controls inherit from component.
 
 ### Component objects
 
-There are several components in **xtd.forms** : xtd::forms::timer, xtd::forms::background_worker, ...
+There are several components in **xtd.forms** : [xtd::forms::timer](../../src/xtd.forms/include/xtd/forms/timer.h), [xtd::forms::background_worker](](../../src/xtd.forms/include/xtd/forms/background_workerr.h), ...
 
 ## Controls
 
@@ -187,29 +187,29 @@ The control class provides all properties, functions and [events](../tutorial_ev
 
 The controls do not have the same completeness. They could be classified in different categories like this:
 
-* Simple controls : xtd::forms::label, xtd::forms::button, xtd::forms::text_box, ...
-* List controls : xtd::forms::combo_box, xtd::forms::list_box, ...
-* Picker controls : xtd::forms::color_picker, xtd::forms::date_time_picker, ...
-* Complex controls : xtd::forms::list_view, xtd::forms::tree_view, xtd::forms::rich_text_box, ...
+* Simple controls : [xtd::forms::labe](../../src/xtd.forms/include/xtd/forms/label.h)l, [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h), [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h), ...
+* List controls : [xtd::forms::combo_box](../../src/xtd.forms/include/xtd/forms/combo_box.h), [xtd::forms::list_box](../../src/xtd.forms/include/xtd/forms/list_box.h), ...
+* Picker controls : [xtd::forms::color_picker](../../src/xtd.forms/include/xtd/forms/color_picker.h), [xtd::forms::date_time_picker](../../src/xtd.forms/include/xtd/forms/date_time_picjer.h), ...
+* Complex controls : [xtd::forms::list_view](../../src/xtd.forms/include/xtd/forms/list_view.h), [xtd::forms::tree_view](../../src/xtd.forms/include/xtd/forms/tree_wiew.h), [xtd::forms::rich_text_box](../../src/xtd.forms/include/xtd/forms/rich_text_box.h), ...
 
-An xtd::forms::control can be instantiated in the same way as another control.
+An [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h) can be instantiated in the same way as another control.
 
 ## Parent and childs
 
-All controls must have a parent, except **xtd::forms::form** which cannot have one (An exception **xtd::invalid_operation_exception** will be generated if you try).
+All controls must have a parent, except [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) which cannot have one (An exception [xtd::invalid_operation_exception](../../src/xtd.core/include/xtd/invalid_operation_exception.h) will be generated if you try).
 
-A control must always have one and only one parent (except for xtd::forms::form which can't have any). But a parent can have several child controls.
+A control must always have one and only one parent (except for [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) which can't have any). But a parent can have several child controls.
 
 Any control can be a parent or a child. There are no restrictions.
 
 It is easy to imagine that a complex control needs several simple controls.
-Like for example **xtd::forms::domain_up_down** is composed of an **xtd::forms::text_box** and an **xtd::forms::up_down_button**.
-And that an **xtd::forms::form** or an **xtd::forms::panel** can contain an **xtd::forms::domain_up_down**. 
-In this case our **xtd::forms::domain_up_down** is a parent for **xtd::forms::text_box** and **xtd::forms::up_down_button** and at the same time is a child for **xtd::forms::form** or **xtd::forms::panel**.
+Like for example [xtd::forms::domain_up_down](../../src/xtd.forms/include/xtd/forms/domain_up_down.h) is composed of an [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) and an [xtd::forms::up_down_button](../../src/xtd.forms/include/xtd/forms/up_down_button.h).
+And that an [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) or an [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/pane.h) can contain an [xtd::forms::domain_up_down](../../src/xtd.forms/include/xtd/forms/domain_up_down.h). 
+In this case our [xtd::forms::domain_up_down](../../src/xtd.forms/include/xtd/forms/domain_up_down.h) is a parent for [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) and [xtd::forms::up_down_button](../../src/xtd.forms/include/xtd/forms/up_down_button.h) and at the same time is a child for [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) or [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h).
 
-You can retrieve or assign a parent to a control using the **xtd::forms::control::parent** property or by assigning the control to the parent by adding it to the **xtd::forms::control::controls** collection.
+You can retrieve or assign a parent to a control using the [xtd::forms::control::parent](../../src/xtd.forms/include/xtd/forms/control.h) property or by assigning the control to the parent by adding it to the [xtd::forms::control::controls](../../src/xtd.forms/include/xtd/forms/control.h) collection.
 
-A collection of controls is a particular collection, it is an **xtd::froms::layout::arranged_element_collection**.
+A collection of controls is a particular collection, it is an [xtd::froms::layout::arranged_element_collection](../../src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h).
 
 This collection has the particularity to have [events](../tutorial_events.md) on which we can connect:
 
@@ -293,33 +293,33 @@ xtd::forms::button my_button;
 The control is created and can be manipulated but the control as a system resource (i.e. the native toolkit object) is not created.
 
 The native control will only be created when it is assigned a parent. 
-Except for the control **xtd::forms::form** which creates directly the system resource (i.e. the native toolkit object) in its constructor.
+Except for the control [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) which creates directly the system resource (i.e. the native toolkit object) in its constructor.
  
 The creation of a control is done in several steps and exchanges between the different libraries.
 
 #### Sequence diagram of the creation of a control
 
-The following sequence diagram shows the creation of an xtd::form::form.
+The following sequence diagram shows the creation of an [xtd::form::form](../../src/xtd.forms/include/xtd/forms/form.h).
 
 ![image](../pictures/diagrams/uml/xtd_forms/form_creation.png)
 
-The following sequence diagram shows the creation of an xtd::form::button.
+The following sequence diagram shows the creation of an [xtd::form::button](../../src/xtd.forms/include/xtd/forms/button=;h).
 
 ![image](../pictures/diagrams/uml/xtd_forms/control_creation.png)
 
 If we use as parent a control that is not yet natively created (because it has no parent), the new child control will not be natively created. It is when the parent control is created that it will be created.
 
-The role of the **xtd::forms::control::create_params** function is to give the **xtd::forms::native::control::create** function the necessary set of parameters to create a native coontrol. 
+The role of the [xtd::forms::control::create_params](../../src/xtd.forms/include/xtd/forms/control.h) function is to give the [xtd::forms::native::control::create](../../src/xtd.forms.native/include/xtd/forms/native/control.h) function the necessary set of parameters to create a native coontrol. 
 This function provides among other things a name which is the unique key to identify the control to create.
 
-For example to create an **xtd::forms::button**, the name must contain *"button"*, to create an **xtd::forms::choice**, the name must contain *"choice"* and so on for all controls.
+For example to create an [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h), the name must contain *"button"*, to create an [xtd::forms::choice](../../src/xtd.forms/include/xtd/forms/choice.h), the name must contain *"choice"* and so on for all controls.
 
-When the handle is created (when the native control is created), there will be an exchange between the base class **xtd::forms::control** and **xtd::forms::nativve::control** to transmit the different basic properties of the control like for example, the background color, the text color, etc.
+When the handle is created (when the native control is created), there will be an exchange between the base class [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h) and [xtd::forms::nativve::control](../../src/xtd.forms.native/include/xtd/forms/native/control.h) to transmit the different basic properties of the control like for example, the background color, the text color, etc.
 
-Then, it's the turn of the specialized control to send its specific properties via the specialized API to **xtd::forms::native**.
-For example **xtd::forms::list_box** will send the list of strings contained in the control to the corresponding API **xtd::forms::native::list_box**, etc.
+Then, it's the turn of the specialized control to send its specific properties via the specialized API to [xtd::forms::native](../../src/xtd.forms.native/include/xtd/forms/native).
+For example [xtd::forms::list_box](../../src/xtd.forms/include/xtd/forms/list_box.h) will send the list of strings contained in the control to the corresponding API [xtd::forms::native::list_box](../../src/xtd.forms.native/include/xtd/forms/native/list_box.h), etc.
 
-The **parent_changed** and **control_added** [events](../tutorial_events.md) are only sent for a child control, in the case of a **xtd::forms::form**, these [events](../tutorial_events.md) are not sent.
+The **parent_changed** and **control_added** [events](../tutorial_events.md) are only sent for a child control, in the case of a [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h), these [events](../tutorial_events.md) are not sent.
 
 When a control is created, it will automatically create all its child controls.
 
@@ -351,11 +351,11 @@ If the control to be updated has no parent or its parent control has no parent a
 
 If the control to be updated has a parent and thus has a native control, then the update is propagated to the native control.
 
-In some cases, updating the control requires recreating the control such as a style change. In this case the update method will execute the **xtd::control::recreate_handle** method.
+In some cases, updating the control requires recreating the control such as a style change. In this case the update method will execute the [xtd::control::recreate_handle](../../src/xtd.forms/include/xtd/forms/control.h) method.
 
 ### Destroy control
 
-Not surprisingly a native control is destroyed when the destructor of **xtd::forms::control** is called.
+Not surprisingly a native control is destroyed when the destructor of [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h) is called.
 
 The native control is also destroyed when removed from its parent.
 
@@ -371,7 +371,45 @@ The following sequence diagram shows the destruction of a control when the paren
 
 ## Containers
 
+Containers are a specialization of controls. Although by line any control can be a container (see #parent-and-childs).
+
+The base class of a container is [xtd::forms::container_control](../../src/xtd.forms/include/xtd/forms/container_control.h).
+
+A container has the property to have an active focus and control. If the active control is not defined, then the first child control will have the focus.
+
+There are simple containers like [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h). 
+
+There are more complex containers like [xtd::forms::tab_control](../../src/xtd.forms/include/xtd/forms/tab_control.h) and [xtd::forms::tab_page](../../src/xtd.forms/include/xtd/forms/tab_page.h).
+
+The [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) control is also a container.
+
+Even if it is included as a container, [xtd::forms::group_box](../../src/xtd.forms/include/xtd/forms/group_box.h) does not inherit from [xtd::forms::container_control](../../src/xtd.forms/include/xtd/forms/container_control.h) but from [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h). So it doesn't have the properties of a container.
+
+The [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container is also a bit special because it does not inherit from [xtd::forms::container_control](../../src/xtd.forms/include/xtd/forms/container_control.h) but directly from [xtd::forms::scrollable_control](../../src/xtd.forms/include/xtd/forms/scrollable_control.h). 
+This means that an [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container does not have the possibility to have focus and active control.
+It will therefore be the parent container that will manage them.
+
 ### Scrollables
+
+Unlike the standard control, a container can have scroll bars (one horizontal and/or one vertical).
+
+The [xtd::forms::container_control](../../src/xtd.forms/include/xtd/forms/container_control.h) class inherits from the [xtd::forms::scrollable_control](../../src/xtd.forms/include/xtd/forms/scrollable_control.h).
+
+The scroll bars can be managed :
+* automatically
+* manually
+
+#### Manually
+
+The manual mode is not yet fully developed. But the principle is to set the properties xtd::forms::scrollable_control::h_scroll and xtd::forms::scrollable_control::v_scroll to true.
+
+Then set the value, minimum and maximum properties and specify the behavior to adopt when a scroll event occurs. Generally we scroll the client area of the container.
+
+#### Automatically
+
+The automatic mode is generally the most used and the easiest to implement.
+
+To use the automatic mode you just have to set the property [xtd::forms::scrollable_control::auto_scroll](../../src/xtd.forms/include/xtd/forms/scrollable_control.h) to *true*.
 
 ### Layauts
 
@@ -403,15 +441,15 @@ The following sequence diagram shows the destruction of a control when the paren
 
 An ambient property is a property on a control that, if not set, is retrieved from the parent control. 
 If the control does not have a parent and the property is not set, the control sets the ambient property with its own default value.
-Some objects derived from the **xtd::forms::control** class might set the property even if you do not. 
-For example, the **xtd::forms::form** class always sets the **xtd::forms::control::fore_color** and **xtd::forms::control::back_color** properties.
+Some objects derived from the [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h) class might set the property even if you do not. 
+For example, the [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) class always sets the [xtd::forms::control::fore_color](../../src/xtd.forms/include/xtd/forms/control.h) and [xtd::forms::control::back_color](../../src/xtd.forms/include/xtd/forms/control.h) properties.
 
 List of ambient properties :
 
-* xtd::forms::control::back_color
-* xtd::forms::control::cursor
-* xtd::forms::control::font
-* xtd::forms::control::fore_color
+* [xtd::forms::control::back_color](../../src/xtd.forms/include/xtd/forms/control.h)
+* [xtd::forms::control::cursor](../../src/xtd.forms/include/xtd/forms/control.h)
+* [xtd::forms::control::font](../../src/xtd.forms/include/xtd/forms/control.h)
+* [xtd::forms::control::fore_color](../../src/xtd.forms/include/xtd/forms/control.h)
 
 ## Dock and anchor
 
