@@ -438,6 +438,10 @@ To use the automatic mode you just have to set the property [xtd::forms::scrolla
 
 ### Layauts
 
+### Some container controls class diagram
+
+![image](../pictures/diagrams/uml/xtd_forms/containers.png)
+
 ## Forms
 
 ### Form
