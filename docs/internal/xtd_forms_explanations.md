@@ -401,7 +401,6 @@ The following example shows the creation and destruction of a handle and the ass
 
 using namespace xtd;
 using namespace xtd::diagnostics;
-using namespace xtd::drawing;
 using namespace xtd::forms;
 
 class form1 : public form {
