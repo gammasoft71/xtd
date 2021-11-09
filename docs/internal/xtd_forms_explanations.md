@@ -406,7 +406,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   static void main() {
-    debug_form df;
+    debug_form dbg_fmt;
     application::run(form1());
   }
 
