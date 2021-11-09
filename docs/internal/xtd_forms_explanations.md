@@ -49,7 +49,7 @@
   * [Dialog style](#dialog-style)
 * [Resources](#resources)
 * [Settings](#settings)
-* [xtd.forms class diagram](#xtdforms-class-diagram)
+* [Some xtd.forms class diagram](#some-xtdforms-class-diagram)
 
 ## Libraries and API
 
@@ -500,6 +500,6 @@ List of ambient properties :
 
 ## Settings
 
-## xtd.forms class diagram
+## Some xtd.forms class diagram
 
 ![image](../pictures/diagrams/uml/xtd_forms/forms.png)
