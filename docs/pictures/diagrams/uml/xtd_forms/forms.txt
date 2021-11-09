@@ -60,9 +60,12 @@ xtd::forms::dot_matrix_display <|-- xtd::forms::control
 xtd::forms::date_time <|-- xtd::forms::control
 xtd::forms::color_picker <|-- xtd::forms::control
 xtd::forms::collapsible_panel <|-- xtd::forms::control
+xtd::forms::up_down_button <|-- xtd::forms::button_base
 xtd::forms::toggle_button <|-- xtd::forms::button_base
+xtd::forms::switch_button <|-- xtd::forms::button_base
 xtd::forms::radio_button <|-- xtd::forms::button_base
 xtd::forms::light_button <|-- xtd::forms::button_base
+xtd::forms::command_link_button <|-- xtd::forms::button_base
 xtd::forms::check_box <|-- xtd::forms::button_base
 xtd::forms::button <|-- xtd::forms::button_base
 xtd::forms::button_base <|-- xtd::forms::control
