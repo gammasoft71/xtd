@@ -450,11 +450,11 @@ Layouts are containers that automatically organize controls in a specific order.
 
 The are some kinds layout panel :
 
-* [fixed_layout_panel](../../src/xtd.forms/include/xtd/forms/fixed_layout_panel.h)
-* [flow_layout_panel](../../src/xtd.forms/include/xtd/forms/flow_layout_panel.h)
-* [horizontal_layout_panel](../../src/xtd.forms/include/xtd/forms/horizontal_layout_panel.h)
-* [vertical_layout_panel](../../src/xtd.forms/include/xtd/forms/vertical_layout_panel.h)
-* [table_layout_panel](../../src/xtd.forms/include/xtd/forms/table_layout_panel.h)
+* [fixed_layout_panel](../../src/xtd.forms/include/xtd/forms/fixed_layout_panel.h) is used to group collections of fixed aligned controls (Exactly the same as [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h)).
+* [flow_layout_panel](../../src/xtd.forms/include/xtd/forms/flow_layout_panel.h) is used to group collections of fixed aligned controls.
+* [horizontal_layout_panel](../../src/xtd.forms/include/xtd/forms/horizontal_layout_panel.h) is used to group collections of horizontally aligned controls.
+* [vertical_layout_panel](../../src/xtd.forms/include/xtd/forms/vertical_layout_panel.h) is used to group collections of vertically aligned controls.
+* [table_layout_panel](../../src/xtd.forms/include/xtd/forms/table_layout_panel.h) represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
 
 ### Some container controls class diagram
 
