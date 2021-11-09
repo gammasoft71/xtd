@@ -608,6 +608,21 @@ Sheet is a special dialog mode on macOS :
 
 The example [form_show](../../xtd.examples/xtd.forms.examples/others/form_show/README.md) demonstates the different ways to display a [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
 
+A form can be shown with different start positions:
+* xtd::forms::form_start_postion::manual : The position of the form is determined by the Location property.
+* xtd::forms::form_start_postion::center_screen : The form is centered on the current display, and has the dimensions specified in the form's size.
+* xtd::forms::form_start_postion::windows_default_location : The form is positioned at the Windows default location and has the dimensions specified in the form's size.
+* xtd::forms::form_start_postion::windows_default_bounds : The form is positioned at the Windows default location and has the bounds determined by Windows default.
+* xtd::forms::form_start_postion::center_parent : The form is centered within the bounds of its parent form.
+
+A form can be shown with different states:
+* xtd::forms::form_window_state::normal : A default sized window.
+* xtd::forms::form_window_state::minimized : A minimized window.
+* xtd::forms::form_window_state::maximized : A maximized window.
+* xtd::forms::form_window_state::full_screen : A full screen window.
+
+The example [form_window_state](../../xtd.examples/xtd.forms.examples/others/form_window_state/README.md) demonstates the different ways to display a [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
+
 ### Form
 
 The [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) represents a window or dialog box that makes up an application's user interface.
