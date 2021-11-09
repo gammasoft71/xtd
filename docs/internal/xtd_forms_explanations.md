@@ -151,9 +151,9 @@ void xtd::forms::native::button::set_default_button(intptr_t control) {
 
 ### Component type
 
-A componant provides the base implementation and enables object sharing between applications.
+A [xtd::forms::componant](../../src/xtd.forms/include/xtd/forms/componant.h) provides the base implementation and enables object sharing between applications.
 
-A component is an integral part of xtd.forms but unlike a control, a component has no graphical interface.
+A [xtd::forms::componant](../../src/xtd.forms/include/xtd/forms/componant.h) is an integral part of xtd.forms but unlike a [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/controol.h), a [xtd::forms::componant](../../src/xtd.forms/include/xtd/forms/componant.h) has no graphical interface.
 
 It will be mainly used in the future with the xtd-code<sup>1</sup> designer
 
@@ -163,7 +163,7 @@ It will be mainly used in the future with the xtd-code<sup>1</sup> designer
 
 ![image](../pictures/diagrams/uml/xtd_forms/component.png)
 
-All controls inherit from component.
+All controls inherit from [xtd::forms::componant](../../src/xtd.forms/include/xtd/forms/componant.h).
 
 ### Component objects
 
