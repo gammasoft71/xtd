@@ -25,7 +25,9 @@
   * [Update control](#update-control)
   * [Destroy control](#destroy-control)
 * [Containers](#containers)
+  * [Container control class diagram](#container-control-class-diagram)
   * [Scrollables](#scrollables)
+    * [Scrollable control class diagram](#container-control-class-diagram)
   * [Layauts](#layauts)
 * [Forms](#forms)
   * [Form](#form)
@@ -46,6 +48,7 @@
   * [Dialog style](#dialog-style)
 * [Resources](#resources)
 * [Settings](#settings)
+* [Some controls class diagram](#some-control-class-diagram)
 
 ## Libraries and API
 
@@ -398,7 +401,7 @@ There are simple containers like [xtd::forms::panel](../../src/xtd.forms/include
 
 There are more complex containers like [xtd::forms::tab_control](../../src/xtd.forms/include/xtd/forms/tab_control.h) and [xtd::forms::tab_page](../../src/xtd.forms/include/xtd/forms/tab_page.h).
 
-### Container class diagram
+### Container control class diagram
 
 ![image](../pictures/diagrams/uml/xtd_forms/container_control.png)
 
@@ -491,3 +494,7 @@ List of ambient properties :
 ## Resources
 
 ## Settings
+
+## Some controls class diagram
+
+![image](../pictures/diagrams/uml/xtd_forms/controls.png)
