@@ -33,6 +33,7 @@
   * [Some container controls class diagram](#some-container-controls-class-diagram)
 * [Forms](#forms)
   * [Form](#form)
+  * [Form class diagram](#form-class-diagram)
   * [MDI and child](#mdi-and-child)
   * [dialog](#dialog)
 * [System Events](#system-events)
@@ -451,11 +452,11 @@ Layouts are containers that automatically organize controls in a specific order.
 
 The are some kinds layout panel :
 
-* [fixed_layout_panel](../../src/xtd.forms/include/xtd/forms/fixed_layout_panel.h) is used to group collections of fixed aligned controls (Exactly the same as [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h)).
-* [flow_layout_panel](../../src/xtd.forms/include/xtd/forms/flow_layout_panel.h) is used to group collections of fixed aligned controls.
-* [horizontal_layout_panel](../../src/xtd.forms/include/xtd/forms/horizontal_layout_panel.h) is used to group collections of horizontally aligned controls.
-* [vertical_layout_panel](../../src/xtd.forms/include/xtd/forms/vertical_layout_panel.h) is used to group collections of vertically aligned controls.
-* [table_layout_panel](../../src/xtd.forms/include/xtd/forms/table_layout_panel.h) represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
+* [xtd::forms::fixed_layout_panel](../../src/xtd.forms/include/xtd/forms/fixed_layout_panel.h) is used to group collections of fixed aligned controls (Exactly the same as [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h)).
+* [xtd::forms::flow_layout_panel](../../src/xtd.forms/include/xtd/forms/flow_layout_panel.h) is used to group collections of fixed aligned controls.
+* [xtd::forms::horizontal_layout_panel](../../src/xtd.forms/include/xtd/forms/horizontal_layout_panel.h) is used to group collections of horizontally aligned controls.
+* [xtd::forms::vertical_layout_panel](../../src/xtd.forms/include/xtd/forms/vertical_layout_panel.h) is used to group collections of vertically aligned controls.
+* [xtd::forms::table_layout_panel](../../src/xtd.forms/include/xtd/forms/table_layout_panel.h) represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
 
 ### Some container controls class diagram
 
@@ -464,6 +465,12 @@ The are some kinds layout panel :
 ## Forms
 
 ### Form
+
+The [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) represents a window or dialog box that makes up an application's user interface.
+
+### Form class diagram
+
+![image](../pictures/diagrams/uml/xtd_forms/form.png)
 
 ### MDI and child
 
