@@ -24,7 +24,7 @@
   * [Create control](#create-control)
   * [Update control](#update-control)
   * [Destroy control](#destroy-control)
-  * [Some controls class diagram](#some-control-class-diagram)
+  * [Some controls class diagram](#some-controls-class-diagram)
 * [Containers](#containers)
   * [Container control class diagram](#container-control-class-diagram)
   * [Scrollables](#scrollables)
