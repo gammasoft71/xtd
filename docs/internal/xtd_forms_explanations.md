@@ -167,7 +167,7 @@ All controls inherit from component.
 
 ### Component objects
 
-There are several components in **xtd.forms** : [xtd::forms::timer](../../src/xtd.forms/include/xtd/forms/timer.h), [xtd::forms::background_worker](](../../src/xtd.forms/include/xtd/forms/background_workerr.h), ...
+There are several components in **xtd.forms** : [xtd::forms::timer](../../src/xtd.forms/include/xtd/forms/timer.h), [xtd::forms::background_worker](../../src/xtd.forms/include/xtd/forms/background_workerr.h), ...
 
 ## Controls
 
