@@ -591,6 +591,8 @@ There are three types of forms:
 * MDI and child
 * dialog
 
+### Show
+
 These forms can be displayed in different ways:
 * Show normal : shows [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) normally.
 * Show modeless : shows modeless dialog on a [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) (specified by handle from [xtd::forms::iw32_window](../../src/xtd.forms/include/xtd/forms/iw32_window.h)) or on application.
@@ -599,7 +601,7 @@ These forms can be displayed in different ways:
 * Show sheet : Shows sheet dialog on a form (specified by handle from [xtd::forms::iw32_window](../../src/xtd.forms/include/xtd/forms/iw32_window.h)).
 * Show sheet modal : Shows sheet modal dialog on a form (specified by handle from [xtd::forms::iw32_window](../../src/xtd.forms/include/xtd/forms/iw32_window.h)).
 
-### Remarks
+#### Remarks
 
 Sheet is a special dialog mode on macOS :
 * TThe dialog is shown centered on form (if form is specifed) without title.
@@ -608,18 +610,22 @@ Sheet is a special dialog mode on macOS :
 
 The example [form_show](../../xtd.examples/xtd.forms.examples/others/form_show/README.md) demonstates the different ways to display a [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
 
+### Start position
+
 A form can be shown with different start positions:
-* xtd::forms::form_start_postion::manual : The position of the form is determined by the Location property.
-* xtd::forms::form_start_postion::center_screen : The form is centered on the current display, and has the dimensions specified in the form's size.
-* xtd::forms::form_start_postion::windows_default_location : The form is positioned at the Windows default location and has the dimensions specified in the form's size.
-* xtd::forms::form_start_postion::windows_default_bounds : The form is positioned at the Windows default location and has the bounds determined by Windows default.
-* xtd::forms::form_start_postion::center_parent : The form is centered within the bounds of its parent form.
+* [xtd::forms::form_start_postion::manual](../../src/xtd.forms/include/xtd/forms/form_start_postion.h) : The position of the form is determined by the Location property.
+* [xtd::forms::form_start_postion::center_screen](../../src/xtd.forms/include/xtd/forms/form_start_postion.h) : The form is centered on the current display, and has the dimensions specified in the form's size.
+* [xtd::forms::form_start_postion::windows_default_location](../../src/xtd.forms/include/xtd/forms/form_start_postion.h) : The form is positioned at the Windows default location and has the dimensions specified in the form's size.
+* [xtd::forms::form_start_postion::windows_default_bounds](../../src/xtd.forms/include/xtd/forms/form_start_postion.h) : The form is positioned at the Windows default location and has the bounds determined by Windows default.
+* [xtd::forms::form_start_postion::center_parent](../../src/xtd.forms/include/xtd/forms/form_start_postion.h) : The form is centered within the bounds of its parent form.
+
+### Window state
 
 A form can be shown with different states:
-* xtd::forms::form_window_state::normal : A default sized window.
-* xtd::forms::form_window_state::minimized : A minimized window.
-* xtd::forms::form_window_state::maximized : A maximized window.
-* xtd::forms::form_window_state::full_screen : A full screen window.
+* [xtd::forms::form_window_state::normal](../../src/xtd.forms/include/xtd/forms/form_window_state.h) : A default sized window.
+* [xtd::forms::form_window_state::minimized](../../src/xtd.forms/include/xtd/forms/form_window_state.h) : A minimized window.
+* [xtd::forms::form_window_state::maximized](../../src/xtd.forms/include/xtd/forms/form_window_state.h) : A maximized window.
+* [xtd::forms::form_window_state::full_screen](../../src/xtd.forms/include/xtd/forms/form_window_state.h) : A full screen window.
 
 The example [form_window_state](../../xtd.examples/xtd.forms.examples/others/form_window_state/README.md) demonstates the different ways to display a [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
 
