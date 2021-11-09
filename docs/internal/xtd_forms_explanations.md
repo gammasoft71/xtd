@@ -30,7 +30,7 @@
   * [Scrollables](#scrollables)
     * [Scrollable control class diagram](#container-control-class-diagram)
   * [Layouts](#layouts)
-  * Some container controls class diagram(#some-container-controls-class-diagram)
+  * [Some container controls class diagram](#some-container-controls-class-diagram)
 * [Forms](#forms)
   * [Form](#form)
   * [MDI and child](#mdi-and-child)
