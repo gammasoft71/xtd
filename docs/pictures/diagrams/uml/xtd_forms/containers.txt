@@ -7,49 +7,15 @@ skinparam classArrowColor #60A5FF
 skinparam noteBackgroundColor white
 skinparam noteBorderColor #60A5FF
 
-class xtd::object
-
-class xtd::forms::component
-
-class xtd::forms::control
-
-
-abstract xtd::object {
-}
-
-class xtd::forms::component {
-}
-
-class xtd::forms::control {
-}
-
-class xtd::forms::scrollable_control {
-}
-
-class xtd::forms::group_box {
-}
-
-class xtd::forms::tab_control {
-}
-
-class xtd::forms::panel {
-}
-
-class xtd::forms::tab_page {
-}
-
-class xtd::forms::container_control {
-}
-
-class xtd::forms::form {
-}
-
-class xtd::forms::user_control {
-}
-
 xtd::forms::user_control <|-- xtd::forms::container_control
 xtd::forms::form <|-- xtd::forms::container_control
+xtd::forms::splitter_panel <|-- xtd::forms::panel
 xtd::forms::tab_page <|-- xtd::forms::panel
+xtd::forms::vertical_layout_panel <|-- xtd::forms::panel
+xtd::forms::table_layout_panel <|-- xtd::forms::panel
+xtd::forms::horizontal_layout_panel <|-- xtd::forms::panel
+xtd::forms::flow_layout_panel <|-- xtd::forms::panel
+xtd::forms::fixed_layout_panel <|-- xtd::forms::panel
 xtd::forms::panel <|-- xtd::forms::scrollable_control
 xtd::forms::container_control <|-- xtd::forms::scrollable_control
 xtd::forms::tab_control <|-- xtd::forms::control
