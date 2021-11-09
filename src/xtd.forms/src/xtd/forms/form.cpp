@@ -384,8 +384,12 @@ forms::create_params form::create_params() const {
       default_location = default_location < 200 ? default_location + 20 : 40;
     }
   }
-
+  
   //diagnostics::debug::write_line("create_params = {}", create_params);
+
+  bool dialog = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || ((create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST && create_params.parent() && (create_params.style() & WS_CHILD) != WS_CHILD);
+  if (dialog && (menu_.has_value() /*|| statusn-bar_.has_value || toolbar_.has_value*/)) throw xtd::invalid_operation_exception(csf_);
+
   return create_params;
 }
 
