@@ -647,7 +647,7 @@ A dialog does not have a defined type, it is a [xtd::forms::form](../../src/xtd.
 
 The only difference is that a dialog cannot have a menu, a toolbar or a status bar.
 
-If any of the above elements are accidentally present, an exception will be generated during the dialog show.
+If any of the above elements are accidentally present, an [xtd::invalid_operation_exception](../../src/xtd.core/include/xtd/invalid_operation_exception.h) will be generated during the dialog show.
 
 ## System Events
 
