@@ -9,7 +9,7 @@ skinparam noteBorderColor #60A5FF
 
 class xtd::object
 
-xtd::object {
+class xtd::object {
 }
 
 @enduml
