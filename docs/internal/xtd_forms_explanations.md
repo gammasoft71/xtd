@@ -24,6 +24,7 @@
   * [Create control](#create-control)
   * [Update control](#update-control)
   * [Destroy control](#destroy-control)
+  * [Control and user control](#control-and-user-control)
   * [Some controls class diagram](#some-controls-class-diagram)
 * [Containers](#containers)
   * [Container control class diagram](#container-control-class-diagram)
@@ -501,6 +502,16 @@ startup_(form1);
 It is normal to have between the output lines (3-6) a destruction of the [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) and the child controls.
 Indeed when the [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) is displayed for the first time, an [xtd::forms::control::recreate_handle](../../src/xtd.forms/include/xtd/forms/control.h) is called.
 
+### Control and user control
+
+Any control can be inherited by the user.
+
+If he doesn't need any particular property of a specific control, the user will inherit [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h).
+
+If on the other hand the user wants to have the functionality of a container, then he will use [xtd::forms::user_control](../../src/xtd.forms/include/xtd/forms/user_control.h).
+
+If he doesn't know exactly how his control will evolve, the best is to use [xtd::forms::user_control](../../src/xtd.forms/include/xtd/forms/user_control.h).
+
 ### Some controls class diagram
 
 ![image](../pictures/diagrams/uml/xtd_forms/controls.png)
@@ -573,6 +584,30 @@ The are some kinds layout panel :
 
 ## Forms
 
+The forms are what we call top level controls.
+
+There are three types of forms:
+* form
+* MDI and child
+* dialog
+
+These forms can be displayed in different ways:
+* Show normal : shows [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) normally.
+* Show modeless : shows modeless dialog on a [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) (specified by handle from [xtd::forms::iw32_window](../../src/xtd.forms/include/xtd/forms/iw32_window.h)) or on application.
+* Show top most : shows top most form on application.
+* Show modal : shows modal dialog on a form (specified by handle from [xtd::forms::iw32_window](../../src/xtd.forms/include/xtd/forms/iw32_window.h)) or on application.
+* Show sheet : Shows sheet dialog on a form (specified by handle from [xtd::forms::iw32_window](../../src/xtd.forms/include/xtd/forms/iw32_window.h)).
+* Show sheet modal : Shows sheet modal dialog on a form (specified by handle from [xtd::forms::iw32_window](../../src/xtd.forms/include/xtd/forms/iw32_window.h)).
+
+### Remarks
+
+Sheet is a special dialog mode on macOS :
+* TThe dialog is shown centered on form (if form is specifed) without title.
+* The method is not blocking and you must retrieve the result of the dialog at the closing event.
+* On other platforms than macOS, is a normal dialog, but you must also retrieve the result of the dialog on the close event but the method is blocking (this can be changed in the future). 
+
+The example [form_show](../../xtd.examples/xtd.forms.examples/others/form_show/README.md) demonstates the different ways to display a [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
+
 ### Form
 
 The [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) represents a window or dialog box that makes up an application's user interface.
@@ -583,7 +618,15 @@ The [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) represents 
 
 ### MDI and child
 
+Not yet implemented.
+
 ### Dialog
+
+A dialog does not have a defined type, it is a [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
+
+The only difference is that a dialog cannot have a menu, a toolbar or a status bar.
+
+If any of the above elements are accidentally present, an exception will be generated during the dialog show.
 
 ## System Events
 
