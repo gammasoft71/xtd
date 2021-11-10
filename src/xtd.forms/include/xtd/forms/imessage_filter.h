@@ -23,7 +23,7 @@ namespace xtd {
       /// @param m The message to be dispatched. You cannot modify this message.
       /// @return true to filter the message and stop it from being dispatched; false to allow the message to continue to the next filter or control.
       /// @remarks Use pre_filter_message to filter out a message before it is dispatched to a control or form. For example, to stop the click event of a button control from being dispatched to the control, you implement the pre_filter_message method and return a true value when the click message occurs. You can also use this method to perform code work that you might need to do before the message is dispatched.
-      virtual bool pre_filter_message(const message& m) const = 0;
+      virtual bool pre_filter_message(const message& m) = 0;
     };
   }
 }
