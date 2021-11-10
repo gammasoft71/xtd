@@ -397,7 +397,10 @@ void control::destroy_control() {
     suspend_layout();
     if (handle_) {
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
+        auto parent_prev = parent();
+        parent_prev.value().get().suspend_layout();
         parent(nullptr);
+        parent_prev.value().get().resume_layout(false);
       } else {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
           if (top_level_controls_[index].get().handle_ == handle_) {
@@ -561,7 +564,7 @@ void control::on_control_added(const control_event_args &e) {
 }
 
 void control::on_control_removed(const control_event_args &e) {
-  //perform_layout();
+  perform_layout();
   size_changed -= {e.control(), &control::on_parent_size_changed};
   if (can_raise_events()) control_removed(*this, e);
 }
