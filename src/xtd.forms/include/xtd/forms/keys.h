@@ -93,10 +93,10 @@ namespace xtd {
       line_feed = 0x0000000A,
       /// @brief The CLEAR key.
       clear = 0x0000000C,
-      /// @brief The RETURN key.
-      ret = 0x0000000D,
       /// @brief The ENTER key.
       enter = 0x0000000D,
+      /// @brief The RETURN key.
+      ret = enter,
       /// @brief The SHIFT key.
       shift_key = 0x00000010,
       /// @brief The CTRL key.
@@ -138,11 +138,11 @@ namespace xtd {
       /// @brief The PAGE UP key.
       page_up = 0x00000021,
       /// @brief The PAGE UP key.
-      prior = 0x00000021,
+      prior = page_up,
       /// @brief The PAGE DOWN key.
       page_down = 0x00000022,
       /// @brief The PAGE DOWN key.
-      next = 0x00000022,
+      next = page_down,
       /// @brief The END key.
       end = 0x00000023,
       /// @brief The HOME key.
@@ -164,7 +164,7 @@ namespace xtd {
       /// @brief The PRINT SCREEN key.
       print_screen = 0x0000002C,
       /// @brief The PRINT SCREEN key.
-      snapshot = 0x0000002C,
+      snapshot = print_screen,
       /// @brief The INSERT key.
       insert = 0x0000002D,
       /// @brief The DEL key.
@@ -383,10 +383,10 @@ namespace xtd {
       launch_application1 = 0x000000B6,
       /// @brief The start application two key.
       launch_application2 = 0x000000B7,
-      /// @brief The OEM 1 key.
-      oem1 = 0x000000BA,
       /// @brief The OEM Semicolon key on a US standard keyboard.
       oem_semicolon = 0x000000BA,
+      /// @brief The OEM 1 key.
+      oem1 = oem_semicolon,
       /// @brief The OEM plus key on any country/region keyboard.
       oem_plus = 0x000000BB,
       /// @brief The OEM comma key on any country/region keyboard.
@@ -395,36 +395,36 @@ namespace xtd {
       oem_minus = 0x000000BD,
       /// @brief The OEM period key on any country/region keyboard.
       oem_period = 0x000000BE,
-      /// @brief The OEM 2 key.
-      oem2 = 0x000000BF,
       /// @brief The OEM question mark key on a US standard keyboard.
       oem_question = 0x000000BF,
-      /// @brief The OEM 3 key.
-      oem3 = 0x000000C0,
+      /// @brief The OEM 2 key.
+      oem2 = oem_question,
       /// @brief The OEM tilde key on a US standard keyboard.
-      oem_tilde = 0x000000C1,
-      /// @brief The OEM 4 key.
-      oem4 = 0x000000DB,
+      oem_tilde = 0x000000C0,
+      /// @brief The OEM 3 key.
+      oem3 = oem_tilde,
       /// @brief The OEM open bracket key on a US standard keyboard.
       oem_open_brackets = 0x000000DB,
-      /// @brief The OEM 5 key.
-      oem5 = 0x000000DC,
+      /// @brief The OEM 4 key.
+      oem4 = oem_open_brackets,
       /// @brief The OEM pipe key on a US standard keyboard.
       oem_pipe = 0x000000DC,
-      /// @brief The OEM 6 key.
-      oem6 = 0x000000DD,
+      /// @brief The OEM 5 key.
+      oem5 = oem_pipe,
       /// @brief The OEM close bracket key on a US standard keyboard.
       oem_close_brackets = 0x000000DD,
-      /// @brief The OEM 7 key.
-      oem7 = 0x000000DE,
+      /// @brief The OEM 6 key.
+      oem6 = oem_close_brackets,
       /// @brief The OEM singled/double quote key on a US standard keyboard.
       oem_quotes = 0x000000DE,
+      /// @brief The OEM 7 key.
+      oem7 = oem_quotes,
       /// @brief The OEM 8 key.
       oem8 = 0x000000DF,
-      /// @brief The OEM 102 key.
-      oem102 = 0x000000DF,
       /// @brief The OEM angle bracket or backslash key on the RT 102 key keyboard.
-      oem_backslash = 0x000000DF,
+      oem_backslash = 0x000000E2,
+      /// @brief The OEM 102 key.
+      oem102 = oem_backslash,
       /// @brief The PROCESS KEY key.
       process_key = 0x000000E5,
       /// @brief Used to pass Unicode characters as if they were keystrokes. The Packet key value is the low word of a 32-bit virtual-key value used for non-keyboard input methods.
