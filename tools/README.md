@@ -12,3 +12,4 @@ Contains xtd command line and GUI tools.
 
 * [xtdc-gui](xtdc-gui) is project management GUI application.
 * [guidgen-gui](guidgen-gui) is a guid generator GUI application.
+* [keyccodes](keycodes) displays information about the keys entered.
