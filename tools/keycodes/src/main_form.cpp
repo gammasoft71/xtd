@@ -14,7 +14,7 @@ void main_form::main() {
 }
 
 main_form::main_form() {
-  client_size(properties::settings::default_settings().client_size());
+  size(properties::settings::default_settings().size());
   location(properties::settings::default_settings().location());
   if (properties::settings::default_settings().menu_visible()) {
     menu({
@@ -87,7 +87,7 @@ void main_form::on_form_location_changed(xtd::object& sender, const xtd::event_a
 }
 
 void main_form::on_form_resize(xtd::object& sender, const xtd::event_args& e) {
-  properties::settings::default_settings().client_size(client_size());
+  properties::settings::default_settings().size(size());
   properties::settings::default_settings().save();
 }
 
