@@ -15,7 +15,6 @@ void main_form::main() {
 
 main_form::main_form() {
   client_size(properties::settings::default_settings().client_size());
-  form_border_style(form_border_style::sizable_tool_window);
   location(properties::settings::default_settings().location());
   if (properties::settings::default_settings().menu_visible()) {
     menu({
@@ -30,6 +29,7 @@ main_form::main_form() {
     });
   }
   start_position(form_start_position::manual);
+  top_most(true);
   text("Key codes");
   location_changed += {*this, &main_form::on_form_location_changed};
   resize += {*this, &main_form::on_form_resize};
