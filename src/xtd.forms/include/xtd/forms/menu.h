@@ -127,6 +127,7 @@ namespace xtd {
       /// @endcond
 
     protected:
+      friend menu_item;
       /// @brief Initializes a new instance of the Menu class.
       /// @remarks Since menu is an abstract class, only inherited classes can call the menu constructor.
       menu();

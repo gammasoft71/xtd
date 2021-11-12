@@ -254,6 +254,7 @@ namespace xtd {
       menu_item& checked(bool value) {
         if (checked_ != value) {
           checked_ = value;
+          recreate_menu();
           on_menu_item_updated(event_args::empty);
         }
         return *this;
@@ -268,6 +269,7 @@ namespace xtd {
       menu_item& enabled(bool value) {
         if (enabled_ != value) {
           enabled_ = value;
+          recreate_menu();
           on_menu_item_updated(event_args::empty);
         }
         return *this;
@@ -282,6 +284,7 @@ namespace xtd {
       menu_item& kind(xtd::forms::menu_item_kind value) {
         if (kind_ != value) {
           kind_ = value;
+          recreate_menu();
           on_menu_item_updated(event_args::empty);
         }
         return *this;
@@ -296,6 +299,7 @@ namespace xtd {
       menu_item& shortcut(xtd::forms::shortcut value) {
         if (shortcut_ != value) {
           shortcut_ = value;
+          recreate_menu();
           on_menu_item_updated(event_args::empty);
         }
         return *this;
@@ -314,6 +318,7 @@ namespace xtd {
       menu_item& text(const xtd::ustring& value) {
         if (text_ != value) {
           text_ = value;
+          recreate_menu();
           on_menu_item_updated(event_args::empty);
         }
         return *this;

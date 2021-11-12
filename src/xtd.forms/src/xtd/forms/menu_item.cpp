@@ -128,9 +128,9 @@ intptr_t menu_item::create_menu_handle() {
     std::vector<intptr_t> menu_items;
     for (auto item : data_->menu_items_)
       menu_items.push_back(item.handle());
-    return native::menu::create(text_, menu_items);
+    return native::menu::create(text_, menu_items, enabled_);
   }
-  return native::menu_item::create(text_, image_, static_cast<int>(kind_), checked_, static_cast<size_t>(shortcut_));
+  return native::menu_item::create(text_, image_, static_cast<int>(kind_), checked_, static_cast<size_t>(shortcut_), enabled_);
 }
 
 void menu_item::destroy_menu_handle(intptr_t handle) {

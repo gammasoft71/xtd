@@ -8,11 +8,11 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t menu::create(const ustring& text, const std::vector<intptr_t>& items) {
+intptr_t menu::create(const ustring& text, const std::vector<intptr_t>& items, bool enabled) {
   std::vector<wx_menu_item*> wx_menu_items;
   for (auto item : items)
     wx_menu_items.push_back(reinterpret_cast<wx_menu_item*>(item));
-  return reinterpret_cast<intptr_t>(new wx_menu_item(text, wx_menu_items));
+  return reinterpret_cast<intptr_t>(new wx_menu_item(text, wx_menu_items, enabled));
 }
 
 void menu::destroy(intptr_t menu) {
