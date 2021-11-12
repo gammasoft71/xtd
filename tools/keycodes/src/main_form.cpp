@@ -19,7 +19,7 @@ main_form::main_form() {
   if (properties::settings::default_settings().menu_visible()) {
     menu({
       {system_texts::file(), {
-        {system_texts::clear(), {*this, &main_form::on_clear_button_click}, shortcut::cmd_del},
+        {system_texts::clear(), {*this, &main_form::on_clear_button_click}, menu_images::from_name("edit-delete"), shortcut::cmd_del},
         {"-"},
         {system_texts::exit(), {overload_<>(&application::exit)}, menu_images::file_exit(), shortcut::alt_f4},
       }},
@@ -28,6 +28,7 @@ main_form::main_form() {
       }},
     });
   }
+  minimum_size({340, 340});
   start_position(form_start_position::manual);
   top_most(true);
   text("Key codes");
@@ -47,20 +48,26 @@ main_form::main_form() {
   top_panel_.height(35);
   top_panel_.parent(*this);
 
+  show_key_down_check_box_.appearance(forms::appearance::button);
   show_key_down_check_box_.checked(properties::settings::default_settings().show_key_down());
   show_key_down_check_box_.location({10, 5});
   show_key_down_check_box_.parent(top_panel_);
   show_key_down_check_box_.text("Key down"_t);
+  show_key_down_check_box_.text_align(content_alignment::middle_center);
   show_key_down_check_box_.click += {*this, &main_form::on_show_key_down_check_box_click};
 
+  show_key_press_check_box_.appearance(forms::appearance::button);
   show_key_press_check_box_.checked(properties::settings::default_settings().show_key_press());
-  show_key_press_check_box_.location({110, 5});
+  show_key_press_check_box_.location({120, 5});
   show_key_press_check_box_.parent(top_panel_);
   show_key_press_check_box_.text("Key press"_t);
+  show_key_press_check_box_.text_align(content_alignment::middle_center);
   show_key_press_check_box_.click += {*this, &main_form::on_show_key_press_check_box_click};;
 
-  clear_button_.anchor(anchor_styles::top|anchor_styles::right);
-  clear_button_.location({top_panel_.client_size().width() - clear_button_.width() - 10, 5});
+  clear_button_.image(button_images::from_name("edit-delete"));
+  clear_button_.location({230, 5});
+  clear_button_.width(100);
+  clear_button_.image_align(content_alignment::middle_left);
   clear_button_.parent(top_panel_);
   clear_button_.text("clear"_t);
   clear_button_.click += {*this, &main_form::on_clear_button_click};
