@@ -14,7 +14,6 @@ using namespace xtd::forms;
 main_menu::main_menu() {
   data_->menu_items_.item_added += [&](size_t, std::reference_wrapper<menu_item> item) {
     item.get().data_->parent_ = *this;
-    item.get().data_->parent_ = *this;
     item.get().create_menu();
   };
 
@@ -32,7 +31,6 @@ main_menu::main_menu() {
 
 main_menu::main_menu(const std::initializer_list<menu_item>& menu_items) {
   data_->menu_items_.item_added += [&](size_t, std::reference_wrapper<menu_item> item) {
-    item.get().data_->parent_ = *this;
     item.get().data_->parent_ = *this;
     item.get().create_menu();
   };
