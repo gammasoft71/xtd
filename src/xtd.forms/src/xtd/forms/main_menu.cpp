@@ -58,7 +58,7 @@ main_menu::main_menu(const std::vector<menu_item>& menu_items) {
   };
   
   data_->menu_items_.item_updated += [&](size_t, std::reference_wrapper<menu_item> item) {
-    
+    recreate_menu();
   };
   
   data_->menu_items_.item_removed += [&](size_t, std::reference_wrapper<menu_item> item) {

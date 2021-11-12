@@ -43,10 +43,10 @@ namespace xtd {
       private:
         wx_menu_item() = default;
         
-        wx_menu_item(const xtd::ustring& text, intptr_t image, wx_menu_item_kind kind, bool checked, size_t shortcut) : text_(text), shortcut_(shortcut), image_(image), kind_(kind != wx_menu_item_kind::normal ? kind : (text == "-" ? wx_menu_item_kind::separator : wx_menu_item_kind::normal)), checked_(checked) {}
+        wx_menu_item(const xtd::ustring& text, intptr_t image, wx_menu_item_kind kind, bool checked, size_t shortcut, bool enabled) : text_(text), shortcut_(shortcut), enabled_(enabled), image_(image), kind_(kind != wx_menu_item_kind::normal ? kind : (text == "-" ? wx_menu_item_kind::separator : wx_menu_item_kind::normal)), checked_(checked) {}
         
-        wx_menu_item(const xtd::ustring& text, const std::vector<wx_menu_item*>& items) : text_(text), items_(items) {}
-        wx_menu_item(const xtd::ustring& text, size_t shortcut, const std::vector<wx_menu_item*>& items) : text_(text), shortcut_(shortcut), items_(items) {}
+        wx_menu_item(const xtd::ustring& text, const std::vector<wx_menu_item*>& items, bool enabled) : text_(text), enabled_(enabled), items_(items) {}
+        wx_menu_item(const xtd::ustring& text, size_t shortcut, const std::vector<wx_menu_item*>& items, bool enabled) : text_(text), shortcut_(shortcut), enabled_(enabled), items_(items) {}
         
         const xtd::ustring& text() const {return text_;}
         size_t shortcut() const {return shortcut_;}
@@ -56,7 +56,7 @@ namespace xtd {
         bool checked() const {return checked_;}
         const std::vector<wx_menu_item*>& items() const {return items_;}
         std::vector<wx_menu_item*>& items() {return items_;}
-        
+
         static bool isAboutItem(const xtd::ustring& text) {
           wxString itemText = text;
           itemText.Replace("&", "");
@@ -200,6 +200,7 @@ namespace xtd {
               item->index_ = index++;
               if (item->image() != 0) item->menu_item_->SetBitmap({*reinterpret_cast<wxImage*>(item->image())});
               if (item->kind() == wx_menu_item_kind::check || item->kind() == wx_menu_item_kind::radio) item->menu_item_->Check(item->checked());
+              item->menu_item_->Enable(item->enabled_);
             }
           }
           

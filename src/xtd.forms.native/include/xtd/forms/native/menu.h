@@ -41,7 +41,7 @@ namespace xtd {
         /// @param items A menu item handles array.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr_t create(const xtd::ustring& text, const std::vector<intptr_t>& items);
+        static intptr_t create(const xtd::ustring& text, const std::vector<intptr_t>& items, bool enabled);
         /// @brief Destroy menu.
         /// @param menu Menu handle.
         /// @warning Internal use only
