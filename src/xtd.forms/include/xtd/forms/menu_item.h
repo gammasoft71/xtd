@@ -212,25 +212,25 @@ namespace xtd {
 
       /// @cond
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click) {menu_item(text, xtd::event_handler(on_click));}
+      menu_item(const xtd::ustring& text, delegate_type on_click) : menu_item(text, xtd::event_handler(on_click)) {}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), shortcut);}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), shortcut) {}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image) {menu_item(text, xtd::event_handler(on_click), image);}
+      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image) : menu_item(text, xtd::event_handler(on_click), image) {}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), image, shortcut);}
+      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), image, shortcut) {}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind) {menu_item(text, xtd::event_handler(on_click), kind);}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind) : menu_item(text, xtd::event_handler(on_click), kind) {}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), kind, shortcut);}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), kind, shortcut) {}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked) {menu_item(text, xtd::event_handler(on_click), kind, checked);}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked) : menu_item(text, xtd::event_handler(on_click), kind, checked) {}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), kind, checked, shortcut);}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), kind, checked, shortcut) {}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) {menu_item(text, xtd::event_handler(on_click), image, kind, checked);}
+      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) : menu_item(text, xtd::event_handler(on_click), image, kind, checked) {}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler(on_click), image, kind, checked, shortcut);}
+      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), image, kind, checked, shortcut) {}
       /// @endcond
 
       /// @brief Initializes a new instance of the class with a specified caption and an array of submenu items defined for the menu item.
