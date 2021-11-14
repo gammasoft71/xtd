@@ -834,7 +834,7 @@ The xtd::drawing::graphics defines an object used to draw lines, curves, rectang
 
 There are several methods that allow you to draw and manipulate a design whether in memory, in a control or even in an image.
 
-Here are the factories that allow to create an objett graphics :
+Here are the factories that allow to create an object graphics :
 * xtd::forms::control::create_graphics : Creates the xtd::drawing::graphics for the control.
 * xtd::drawing::image::create_graphics : Creates the xtd::drawing::graphics for the image.
 * xtd::forms::screen::create_graphics : Creates the xtd::drawing::graphics for the screen.
