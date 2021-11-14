@@ -830,13 +830,31 @@ For more information browse the different controls of xtd.
 
 ## Graphics
 
+The xtd::drawing::graphics defines an object used to draw lines, curves, rectangle, text, image, ...
+
+There are several methods that allow you to draw and manipulate a design whether in memory, in a control or even in an image.
+
+Here are the factories that allow to create an objett graphics :
+* xtd::forms::control::create_graphics : Creates the xtd::drawing::graphics for the control.
+* xtd::drawing::image::create_graphics : Creates the xtd::drawing::graphics for the image.
+* xtd::forms::screen::create_graphics : Creates the xtd::drawing::graphics for the screen.
+
+If a control has its double_buffered property set to true, then the graphics provided by xtd::forms::control::create_graphics will be double buffered.
+
+The double buffer property indicates whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
+
+By default a control is not double buffered except some like for example : xtd::forms::lcd_display, xtd::forms::dot_displlay, ...
+
 ## Sizes
 
 ## Ambient properties
 
 An ambient property is a property on a control that, if not set, is retrieved from the parent control. 
+
 If the control does not have a parent and the property is not set, the control sets the ambient property with its own default value.
+
 Some objects derived from the [xtd::forms::control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h) class might set the property even if you do not. 
+
 For example, the [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h) class always sets the [xtd::forms::control::fore_color](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h) and [xtd::forms::control::back_color](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h) properties.
 
 List of ambient properties :
