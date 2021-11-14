@@ -812,7 +812,21 @@ When creating a new custom control or an inherited control with a different visu
 
 xtd::forms::control::paint event : Occurs when the control is redrawn.
 
+The paint_event_args is composed of :
+* clip_rectangle : the rectangle in which to paint.
+* graphics : the graphics used to paint. For more information see [Graphics](#grraphics)
+
 ### Other Events
+
+There are many other events like for example :
+
+* move
+* resize
+* scroll
+* tick
+* ...
+
+For more information browse the different controls of xtd.
 
 ## Graphics
 
