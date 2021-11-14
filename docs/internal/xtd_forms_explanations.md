@@ -58,6 +58,7 @@
   * [Dialog style](#dialog-style)
 * [Resources](#resources)
 * [Settings](#settings)
+* [Translation](#translation)
 * [Some xtd.forms class diagram](#some-xtdforms-class-diagram)
 
 ## Libraries and API
@@ -902,6 +903,8 @@ List of ambient properties :
 ## Resources
 
 ## Settings
+
+## Translation
 
 ## Some xtd.forms class diagram
 
