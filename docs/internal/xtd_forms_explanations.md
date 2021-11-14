@@ -53,6 +53,7 @@
 * [Ambient properties](#ambient-properties)
 * [Auto size, dock and anchor](#auto-size-dock-and-anchor)
 * [Themes](#themes)
+* [Styles](#styles)
   * [Control style](#control-style)
   * [Dialog style](#dialog-style)
 * [Resources](#resources)
@@ -891,6 +892,8 @@ List of ambient properties :
 ## Auto size, dock and anchor
 
 ## Themes
+
+## Styles
 
 ### Control style
 
