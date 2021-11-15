@@ -49,12 +49,15 @@
   * [Paint](#paint)
   * [Other Events](#other-events)
 * [Graphics](#graphics)
-* [Size and location](#size-and-location)
+* [Size and location properties](#size-and-location-properties)
 * [Ambient properties](#ambient-properties)
-* [Auto size, dock and anchor](#auto-size-dock-and-anchor)
-  * [Auto size](#auto-size)
-  * [Dock](#dock)
-  * [anchor](#anchor)
+* [Position and layout of controls](#position-and-layout-of-controls)
+  * [Fixed position and size](#fixed-position-and-size)
+  * [Margin and Padding](#margin-and-padding)
+  * [Automatic placement and size](#automatic-placement-and-size)
+    * [Dock](#dock)
+    * [anchor](#anchor)
+    * [Automatic sizing](#automatic-sizing)
 * [Themes](#themes)
 * [Styles](#styles)
   * [Control style](#control-style)
@@ -854,7 +857,7 @@ By default a control is not double buffered except some like for example : xtd::
 
 On macOs, all controls are always double buffered.
 
-## Size and location
+## Size and location properties
 
 There are different size and locatiion properties for an xtd::forms::control. They are related to each other.
 
@@ -876,6 +879,8 @@ Here is the list of these different sizes and locations :
 * top : defines the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
 * width : defines the width of the control.
 
+For more oinformation see [Position and layout of controls](#position-and-layout-of-controls)
+
 ## Ambient properties
 
 An ambient property is a property on a control that, if not set, is retrieved from the parent control. 
@@ -893,7 +898,7 @@ List of ambient properties :
 * [xtd::forms::control::font](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h)
 * [xtd::forms::control::fore_color](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h)
 
-## Auto size, dock and anchor
+## Position and layout of controls
 
 xtd.forms has in addition to layout containers three ways to manage the size and position of a control automatically:
 
@@ -901,60 +906,39 @@ xtd.forms has in addition to layout containers three ways to manage the size and
 * xtd::forms::control::dock
 * xtd::forms::control::anchor
 
-### Auto size
+Control placement in xtd.forms is determined not only by the control, but also by the parent of the control. This chapter describes the different settings provided by controls and the different types of parent containers that affect layout.
 
-xtd::forms::control::auto_size property defines a value that indicates whether the control resizes based on its contents.
+### Fixed position and size
 
-The auto_size property is combined with the auto_size_mode property.
+The position a control appears on a parent is determined by the value of the xtd::forms::control::location property relative to the top-left of the parent surface. The top-left position coordinate in the parent is (x0,y0). The size of the control is determined by the xtd::forms::control::size property and represents the width and height of the control.
 
-Possible values for auto_size_mode :
-* xtd::forms::auto_size_mode::grow_and_shrink : The control grows or shrinks to fit its contents. The control cannot be resized manually.
-* xtd::forms::auto_size_mode::grow_only : The control grows as much as necessary to fit its contents but does not shrink smaller than the value of its size property. The form can be resized, but cannot be made so small that any of its contained controls are hidden.
+![image](../pictures/location_container.png)
 
-By default controls have auto_size_mode::auto_size_mode::grow_and_shrink except all button types, form, group_box, panel and user_control which are set to xtd::forms::auto_size_mode::growing_only.
+When a control is added to a parent that enforces automatic placement, the position and size of the control is changed. In this case, the position and size of the control may not be manually adjusted, depending on the type of parent.
 
-For example if a form contains three controls and we set the auto_size property of the form to true, then the size of the form will adapt to encompass the three controls.
+The xtd::forms::control::maximum_size and xtd::forms::control::minimum_size properties help set the minimum and maximum space a control can use.
 
-```c++
-#include <xtd/xtd>
+### Margin and Padding
 
-using namespace xtd::forms;
+There are two control properties that help with precise placement of controls: xtd::forms::control::margin and xtd::forms::control::padding.
 
-class main_form : public form {
-public:
-  main_form() {
-    auto_size(true);
-    auto_size_mode(xtd::forms::auto_size_mode::grow_and_shrink);
-    controls().push_back_range({label1, text_box1, button1});
-    
-    label1.location({10, 10});
-    label1.size({100, 20});
-    
-    text_box1.location({50, 60});
-    text_box1.size({200, 25});
-    
-    button1.location({10, 250});
-    button1.size({150, 50});
-    
-    xtd::diagnostics::debug::write_line("size = {}", client_size());
-  }
-  
-private:
-  label label1;
-  text_box text_box1;
-  button button1;
-};
+The xtd::forms::control::margin property defines the space around the control that keeps other controls a specified distance from the control's borders.
 
-int main() {
-  application::run(main_form());
-}
-```
+The xtd::forms::control::padding property defines the space in the interior of a control that keeps the control's content (for example, the value of its xtd::forms::control::text property) a specified distance from the control's borders.
 
-In this case the client_size of main_form will be :
- * width : 250
- * height : 300
+The following figure shows the xtd::forms::control::margin and xtd::forms::control::padding properties on a control.
 
-### Dock
+![image](../pictures/margin_padding.png)
+
+### Automatic placement and size
+
+Controls can be automatically placed within their parent. Some parent containers force placement while others respect control settings that guide placement. There are two properties on a control that help automatic placement and size within a parent: xtd::forms::control::dock and xtd::forms::control::anchor.
+
+Drawing order can affect automatic placement. The order in which a control is drawn determined by the control's index in the parent's Controls collection. This index is known as the Z-order. Each control is drawn in the reverse order they appear in the collection. Meaning, the collection is a first-in-last-drawn and last-in-first-drawn collection.
+
+The xtd::forms::control::minimum_size and xtd::forms::control::maximum_size properties help set the minimum and maximum space a control can use.
+
+#### Dock
 
 Controls that are docked fill the edges of the control's container, either the form or a container control.
 For example, Windows Explorer docks its tree_view control to the left side of the window and its list_view control to the right side of the window.
@@ -1006,9 +990,9 @@ int main() {
 }
 ```
 
-Controls are docked in reverse z-order and the Dock property interacts with the  auto_size property. For more information, see [Auto size](#auto-size).
+Controls are docked in reverse z-order and the Dock property interacts with the  auto_size property. For more information, see [Automatic sizing](#automatic-sizing).
 
-### Anchor
+#### Anchor
 
 When an anchored control's form is resized, the control maintains the distance between the control and the anchor positions.
 For example, if you have a text_box control that is anchored to the left, right, and bottom edges of the form, as the form is resized, the text_box control resizes horizontally so that it maintains the same distance from the right and left sides of the form.
@@ -1089,6 +1073,59 @@ int main() {
   application::run(main_form());
 }
 ```
+
+#### Automatic sizing
+
+xtd::forms::control::auto_size property defines a value that indicates whether the control resizes based on its contents.
+
+The auto_size property is combined with the auto_size_mode property.
+
+Possible values for auto_size_mode :
+* xtd::forms::auto_size_mode::grow_and_shrink : The control grows or shrinks to fit its contents. The control cannot be resized manually.
+* xtd::forms::auto_size_mode::grow_only : The control grows as much as necessary to fit its contents but does not shrink smaller than the value of its size property. The form can be resized, but cannot be made so small that any of its contained controls are hidden.
+
+By default controls have auto_size_mode::auto_size_mode::grow_and_shrink except all button types, form, group_box, panel and user_control which are set to xtd::forms::auto_size_mode::growing_only.
+
+For example if a form contains three controls and we set the auto_size property of the form to true, then the size of the form will adapt to encompass the three controls.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd::forms;
+
+class main_form : public form {
+public:
+  main_form() {
+    auto_size(true);
+    auto_size_mode(xtd::forms::auto_size_mode::grow_and_shrink);
+    controls().push_back_range({label1, text_box1, button1});
+    
+    label1.location({10, 10});
+    label1.size({100, 20});
+    
+    text_box1.location({50, 60});
+    text_box1.size({200, 25});
+    
+    button1.location({10, 250});
+    button1.size({150, 50});
+    
+    xtd::diagnostics::debug::write_line("size = {}", client_size());
+  }
+  
+private:
+  label label1;
+  text_box text_box1;
+  button button1;
+};
+
+int main() {
+  application::run(main_form());
+}
+```
+
+In this case the client_size of main_form will be :
+ * width : 250
+ * height : 300
 
 ## Themes
 
