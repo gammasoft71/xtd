@@ -1,6 +1,6 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Tutorials and books
+# Tutorials
 
 ## Tutorials
 
@@ -9,6 +9,7 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 ### xtd
 
 * [Writing applications](tutorial_writing_applications.md) provides the necessary documentation to write basic xtd applications.
+* [eBook](tutorial_ebook.md) provides a tutorial to program non trivial xtd applications.
 
 ### xtd.core
 
@@ -20,10 +21,6 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 
 * [Position and layout of controls](tutorial_position_and_layout_of_controls.md) provides a tutorial on the position and layout of the controls.
 * [Form](tutorial_form.md) provides a tutorial for using xtd::forms::form.
-
-## Books
-
-* [eBook](tutorial_ebook.md) provides a tutorial to program non trivial xtd applications.
 
 ## See also
 
