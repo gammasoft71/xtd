@@ -956,7 +956,139 @@ In this case the client_size of main_form will be :
 
 ### dock
 
+Controls that are docked fill the edges of the control's container, either the form or a container control.
+For example, Windows Explorer docks its tree_view control to the left side of the window and its list_view control to the right side of the window.
+The docking mode can be any side of the control's container, or set to fill the remaining space of the container.
+
+The following example shows the use of dock property :
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd::forms;
+
+class main_form : public form {
+public:
+  main_form() {
+    controls().push_back_range({fill_button, bottom_button, top_button, right_button, left_button});
+    size({800, 600});
+
+    left_button.dock(dock_style::left);
+    left_button.text("left");
+    left_button.width(100);
+
+    right_button.dock(dock_style::right);
+    right_button.text("right");
+    right_button.width(100);
+
+    top_button.dock(dock_style::top);
+    top_button.text("top");
+    top_button.height(100);
+
+    bottom_button.dock(dock_style::bottom);
+    bottom_button.text("bottom");
+    bottom_button.height(100);
+
+    fill_button.dock(dock_style::fill);
+    fill_button.text("fill");
+  }
+  
+private:
+  button left_button;
+  button right_button;
+  button top_button;
+  button bottom_button;
+  button fill_button;
+};
+
+int main() {
+  application::run(main_form());
+}
+```
+
+Controls are docked in reverse z-order and the Dock property interacts with the  auto_size property. For more information, see [Auto size](#auto-size).
+
 ### anchor
+
+When an anchored control's form is resized, the control maintains the distance between the control and the anchor positions.
+For example, if you have a text_box control that is anchored to the left, right, and bottom edges of the form, as the form is resized, the text_box control resizes horizontally so that it maintains the same distance from the right and left sides of the form.
+The control also positions itself vertically so that its location is always the same distance from the bottom edge of the form. If a control isn't anchored and the form is resized, the position of the control relative to the edges of the form is changed.
+
+The following example shows the use of anchor property :
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd::forms;
+
+class main_form : public form {
+public:
+  main_form() {
+    controls().push_back_range({top_left_button, top_button, top_right_button, left_button, all_button, right_button, bottom_left_button, bottom_button, bottom_right_button});
+    client_size({360, 135});
+    minimum_size(size());
+
+    top_left_button.location({10, 10});
+    top_left_button.text("top-left");
+    top_left_button.width(100);
+
+    top_button.location({130, 10});
+    top_button.text("top");
+    top_button.width(100);
+    top_button.anchor(anchor_styles::top);
+
+    top_right_button.location({250, 10});
+    top_right_button.text("top-right");
+    top_right_button.width(100);
+    top_right_button.anchor(anchor_styles::top|anchor_styles::right);
+
+    left_button.location({10, 55});
+    left_button.text("left");
+    left_button.width(100);
+    left_button.anchor(anchor_styles::left);
+
+    all_button.location({130, 55});
+    all_button.text("all");
+    all_button.width(100);
+    all_button.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+
+    right_button.location({250, 55});
+    right_button.text("right");
+    right_button.width(100);
+    right_button.anchor(anchor_styles::right);
+
+    bottom_left_button.location({10, 100});
+    bottom_left_button.text("bottom-left");
+    bottom_left_button.width(100);
+    bottom_left_button.anchor(anchor_styles::bottom|anchor_styles::left);
+
+    bottom_button.location({130, 100});
+    bottom_button.text("bottom");
+    bottom_button.width(100);
+    bottom_button.anchor(anchor_styles::bottom);
+
+    bottom_right_button.location({250, 100});
+    bottom_right_button.text("bottom-right");
+    bottom_right_button.width(100);
+    bottom_right_button.anchor(anchor_styles::bottom|anchor_styles::right);
+  }
+  
+private:
+  button top_left_button;
+  button top_button;
+  button top_right_button;
+  button left_button;
+  button all_button;
+  button right_button;
+  button bottom_left_button;
+  button bottom_button;
+  button bottom_right_button;
+};
+
+int main() {
+  application::run(main_form());
+}
+```
 
 ## Themes
 
