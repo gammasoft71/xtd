@@ -52,6 +52,9 @@
 * [Size and location](#size-and-location)
 * [Ambient properties](#ambient-properties)
 * [Auto size, dock and anchor](#auto-size-dock-and-anchor)
+  * [Auto size](#auto-size)
+  * [Dock](#dock)
+  * [anchor](#anchor)
 * [Themes](#themes)
 * [Styles](#styles)
   * [Control style](#control-style)
@@ -891,6 +894,69 @@ List of ambient properties :
 * [xtd::forms::control::fore_color](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h)
 
 ## Auto size, dock and anchor
+
+xtd.forms has in addition to layout containers three ways to manage the size and position of a control automatically:
+
+* xtd::forms::control::auto_size
+* xtd::forms::control::dock
+* xtd::forms::control::anchor
+
+### Auto size
+
+xtd::forms::control::auto_size property defines a value that indicates whether the control resizes based on its contents.
+
+The auto_size property is combined with the auto_size_mode property.
+
+Possible values for auto_size_mode :
+* xtd::forms::auto_size_mode::grow_and_shrink : The control grows or shrinks to fit its contents. The control cannot be resized manually.
+* xtd::forms::auto_size_mode::grow_only : The control grows as much as necessary to fit its contents but does not shrink smaller than the value of its size property. The form can be resized, but cannot be made so small that any of its contained controls are hidden.
+
+By default controls have auto_size_mode::auto_size_mode::grow_and_shrink except all button types, form, group_box, panel and user_control which are set to xtd::forms::auto_size_mode::growing_only.
+
+For example if a form contains three controls and we set the auto_size property of the form to true, then the size of the form will adapt to encompass the three controls.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd::forms;
+
+class main_form : public form {
+public:
+  main_form() {
+    auto_size(true);
+    auto_size_mode(xtd::forms::auto_size_mode::grow_and_shrink);
+    controls().push_back_range({label1, text_box1, button1});
+    
+    label1.location({10, 10});
+    label1.size({100, 20});
+    
+    text_box1.location({50, 60});
+    text_box1.size({200, 25});
+    
+    button1.location({10, 250});
+    button1.size({150, 50});
+    
+    xtd::diagnostics::debug::write_line("size = {}", client_size());
+  }
+  
+private:
+  label label1;
+  text_box text_box1;
+  button button1;
+};
+
+int main() {
+  application::run(main_form());
+}
+```
+
+In this case the client_size of main_form will be :
+ * width : 250
+ * height : 300
+
+### dock
+
+### anchor
 
 ## Themes
 
