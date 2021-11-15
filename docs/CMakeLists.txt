@@ -132,6 +132,8 @@ add_sources(
   tutorial_ebook_tetris.md
   tutorial_ebook_unit_testing_classes.md
   tutorial_events.md
+  tutorial_form.md
+  tutorial_position_and_layout_of_controls.md
   tutorial_writing_applicaion_console.md
   tutorial_writing_applicaion_extending_test.md
   tutorial_writing_applicaion_gui.md
