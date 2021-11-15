@@ -17,7 +17,7 @@
 |------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | Windows (x64)    | Debug   | [![Build status](https://ci.appveyor.com/api/projects/status/3t4fl6p18hqrqu6q?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd)   |
 | Ubuntu           | Debug   | [![CircleCI](https://circleci.com/gh/gammasoft71/xtd/tree/master.svg?style=svg)](https://circleci.com/gh/gammasoft71/xtd/tree/master)       |
-| macOS            | Debug   | Coming soon...                                                                                                                                                                                         |
+| macOS            | Debug   | [![Build Status](https://app.travis-ci.com/gammasoft71/xtd.svg?branch=master)](https://app.travis-ci.com/gammasoft71/xtd)                   |
 | iOS (**)         | Debug   | Coming soon...                                                                                                                              |
 | Android (**)     | Debug   | Coming soon...                                                                                                                              |
 
