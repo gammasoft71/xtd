@@ -6,7 +6,7 @@
 
 The xtd tutorials provide an overview of the important features of the xtd Framework. Each tutorial includes one or more example programs. 
 
-### Generals
+### xtd
 
 * [Writing applications](tutorial_writing_applications.md) provides the necessary documentation to write basic xtd applications.
 
