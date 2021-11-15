@@ -954,7 +954,7 @@ In this case the client_size of main_form will be :
  * width : 250
  * height : 300
 
-### dock
+### Dock
 
 Controls that are docked fill the edges of the control's container, either the form or a container control.
 For example, Windows Explorer docks its tree_view control to the left side of the window and its list_view control to the right side of the window.
@@ -1008,7 +1008,7 @@ int main() {
 
 Controls are docked in reverse z-order and the Dock property interacts with the  auto_size property. For more information, see [Auto size](#auto-size).
 
-### anchor
+### Anchor
 
 When an anchored control's form is resized, the control maintains the distance between the control and the anchor positions.
 For example, if you have a text_box control that is anchored to the left, right, and bottom edges of the form, as the form is resized, the text_box control resizes horizontally so that it maintains the same distance from the right and left sides of the form.
