@@ -107,6 +107,7 @@ add_sources(
   tools.md
   translations_status.md
   tutorials.md
+  tutorial_ambient_properties.md
   tutorial_common_io_tasks.md
   tutorial_common_io_tasks_copy_directories.md
   tutorial_common_io_tasks_enumerate_directories_and_files.md
@@ -134,6 +135,7 @@ add_sources(
   tutorial_events.md
   tutorial_form.md
   tutorial_position_and_layout_of_controls.md
+  tutorial_size_and_location_properties.md
   tutorial_writing_applicaion_console.md
   tutorial_writing_applicaion_extending_test.md
   tutorial_writing_applicaion_gui.md
