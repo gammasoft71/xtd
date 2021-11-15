@@ -21,8 +21,6 @@
 
 ## Continuous Integration build status
 
-TEMPORARILY DISABLED. 
-
 | Operating system | Build    | Status                                                                                                                                                                                                 |
 |------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | Windows (x64)    | Debug    | [![Build status](https://ci.appveyor.com/api/projects/status/3t4fl6p18hqrqu6q?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd)   |
