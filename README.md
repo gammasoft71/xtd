@@ -21,8 +21,6 @@
 | iOS (**)         | Debug   | Coming soon...                                                                                                                              |
 | Android (**)     | Debug   | Coming soon...                                                                                                                              |
 
- (**) [xtd.core and xtd.tunit only](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list).
-
 <!--
 | Operating system | Build   | Status                                                                                                                                                                                                 |
 |------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,10 +36,10 @@
 | iOS (**)         | Release | Coming soon...                                                                                                                                                                                         |
 | Android (**)     | Debug   | Coming soon...                                                                                                                                                                                         |
 | Android (**)     | Release | Coming soon...                                                                                                                                                                                         |
+--->
 
  (**) [xtd.core and xtd.tunit only](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list).
- --->
-
+ 
 ## Features
 
 * Free and open-source ([MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md));
