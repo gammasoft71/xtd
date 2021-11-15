@@ -4,10 +4,12 @@
 
 ## Tutorials
 
+* [Writing applications](tutorial_writing_applications.md) provides the necessary documentation to write basic xtd applications.
 * [Common I/O Tasks](tutorial_common_io_tasks.md) provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams
 * [Delegates](tutorial_delegates.md) provides a tutorial to cover all needed to using xtd::delegate.
 * [Events](tutorial_events.md) provides a tutorial to cover all needed to using xtd::event.
-* [Writing applications](tutorial_writing_applications.md) provides the necessary documentation to write basic xtd applications.
+* [Position and layout of controls](tutorial_position_and_layout_of_controls.md) provides a tutorial on the position and layout of the controls.
+* [Forms](tutorial_forms.md) provides a tutorial for using xtd::forms.
 
 ## Books
 
