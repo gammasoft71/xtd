@@ -9,7 +9,7 @@
 * [Delegates](tutorial_delegates.md) provides a tutorial to cover all needed to using xtd::delegate.
 * [Events](tutorial_events.md) provides a tutorial to cover all needed to using xtd::event.
 * [Position and layout of controls](tutorial_position_and_layout_of_controls.md) provides a tutorial on the position and layout of the controls.
-* [Forms](tutorial_forms.md) provides a tutorial for using xtd::forms.
+* [Form](tutorial_form.md) provides a tutorial for using xtd::forms::form.
 
 ## Books
 
