@@ -14,6 +14,8 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 ## xtd.forms
 
 * [Writing GUI application](tutorial_writing_applicaion_gui.md) describes the basic steps that you must complete to create and run a xtd.forms application from the command line.
+* [Size and location properties](tutorial_size_and_location_properties.md) provides a tutorial on the size and location properties of the controls.
+* [Ambient properties](tutorial_ambient_properties.md) provides a tutorial on the ambient properties of the controls.
 * [Position and layout of controls](tutorial_position_and_layout_of_controls.md) provides a tutorial on the position and layout of the controls.
 * [Form](tutorial_form.md) provides a tutorial for using xtd::forms::form.
 
