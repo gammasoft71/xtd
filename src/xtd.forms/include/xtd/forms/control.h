@@ -915,19 +915,27 @@ namespace xtd {
 
       /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
       /// @param value A delegate that contains a method to be called in the control's thread context.
-      void invoke(delegate<void()> value) {invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      void invoke(delegate<void()> value) {invoke(delegate<void(std::vector<std::any>)>(value), std::vector<std::any> {});}
       
       /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
       /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
       void invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args) {end_invoke(begin_invoke(value, args));}
       
+      /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
+      /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
+      /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
+      void invoke(delegate<void(std::vector<std::any>)> value, std::any arg) {end_invoke(begin_invoke(value, std::vector<std::any> {arg}));}
+
       /// @cond
       template<typename delegate_t>
       void invoke(delegate_t value, const std::vector<std::any>& args) {invoke(delegate<void(std::vector<std::any>)>(value), args);}
-      
+ 
+      template<typename delegate_t, typename args_t>
+      void invoke(delegate_t value, args_t args) {invoke(delegate<void(std::vector<std::any>)>(value), std::any(args));}
+
       template<typename delegate_t>
-      void invoke(delegate_t value) {invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      void invoke(delegate_t value) {invoke(delegate<void(std::vector<std::any>)>(value), std::vector<std::any> {});}
       /// @endcond
 
       /// @brief Forces the control to apply layout logic to all its child controls.
