@@ -18,7 +18,7 @@ font_picker::font_picker() {
 control& font_picker::color(const drawing::color& value) {
   if (color_ != value) {
     color_ = value;
-    native::font_picker::color(handle(), color_);
+    if (is_handle_created()) native::font_picker::color(handle(), color_);
     on_font_changed(event_args::empty);
   }
   return *this;
@@ -27,7 +27,7 @@ control& font_picker::color(const drawing::color& value) {
 control& font_picker::font(const drawing::font& value) {
   if (font_ != value) {
     font_ = value;
-    native::font_picker::font(handle(), font_);
+    if (is_handle_created()) native::font_picker::font(handle(), font_);
     on_font_changed(event_args::empty);
   }
   return *this;
@@ -41,8 +41,8 @@ forms::create_params font_picker::create_params() const {
 
 void font_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::font_picker::color(handle(), color_);
-  native::font_picker::font(handle(), font_);
+  if (is_handle_created()) native::font_picker::color(handle(), color_);
+  if (is_handle_created()) native::font_picker::font(handle(), font_);
 }
 
 void font_picker::on_font_changed(const event_args& e) {

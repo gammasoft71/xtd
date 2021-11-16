@@ -29,7 +29,7 @@ forms::create_params numeric_up_down::create_params() const {
 numeric_up_down& numeric_up_down::decimal_place(int32_t value) {
   if (decimal_place_ != value) {
     decimal_place_ = value;
-    native::numeric_up_down::decimal_place(handle(), decimal_place_);
+    if (is_handle_created()) native::numeric_up_down::decimal_place(handle(), decimal_place_);
   }
   return *this;
 }
@@ -37,7 +37,7 @@ numeric_up_down& numeric_up_down::decimal_place(int32_t value) {
 numeric_up_down& numeric_up_down::increment(double value) {
   if (increment_ != value) {
     increment_ = value;
-    native::numeric_up_down::increment(handle(), increment_);
+    if (is_handle_created()) native::numeric_up_down::increment(handle(), increment_);
   }
   return *this;
 }
@@ -45,7 +45,7 @@ numeric_up_down& numeric_up_down::increment(double value) {
 numeric_up_down& numeric_up_down::maximum(double value) {
   if (maximum_ != value) {
     maximum_ = value;
-    native::numeric_up_down::maximum(handle(), maximum_);
+    if (is_handle_created()) native::numeric_up_down::maximum(handle(), maximum_);
     if (minimum_ > value) minimum(value);
     if (value_ > value) this->value(value);
   }
@@ -55,7 +55,7 @@ numeric_up_down& numeric_up_down::maximum(double value) {
 numeric_up_down& numeric_up_down::minimum(double value) {
   if (minimum_ != value) {
     minimum_ = value;
-    native::numeric_up_down::minimum(handle(), minimum_);
+    if (is_handle_created()) native::numeric_up_down::minimum(handle(), minimum_);
     if (maximum_ < value) maximum(value);
     if (value_ < value) this->value(value);
   }
@@ -70,7 +70,7 @@ numeric_up_down& numeric_up_down::value(double value) {
       value_ = minimum_;
     else
       value_ = value;
-    native::numeric_up_down::value(handle(), value_);
+    if (is_handle_created()) native::numeric_up_down::value(handle(), value_);
     on_value_changed(event_args::empty);
   }
   return *this;

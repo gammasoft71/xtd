@@ -109,7 +109,7 @@ form& form::help_button(bool value) {
 form& form::icon(const xtd::drawing::icon& value) {
   if (icon_ != value) {
     icon_ = value != drawing::icon::empty ? value : system_icons::xtd_forms_logo();
-    if (show_icon_) native::form::icon(handle(), icon_);
+    if (is_handle_created() && show_icon_) native::form::icon(handle(), icon_);
   }
   return *this;
 }
@@ -125,7 +125,7 @@ form& form::maximize_box(bool value) {
 form& form::menu(const forms::main_menu& value) {
   if (!menu_.has_value() || &menu_.value() != &value) {
     menu_ = value;
-    native::form::menu(handle(), menu_.value().handle());
+    if (is_handle_created()) native::form::menu(handle(), menu_.value().handle());
   }
   return *this;
 }
@@ -133,7 +133,7 @@ form& form::menu(const forms::main_menu& value) {
 form& form::menu(nullptr_t) {
   if (menu_.has_value()) {
     menu_.reset();
-    native::form::menu(handle(), 0);
+    if (is_handle_created()) native::form::menu(handle(), 0);
   }
   return *this;
 }
@@ -191,7 +191,7 @@ form& form::top_most(bool value) {
 form& form::opacity(double opacity) {
   if (opacity_ != opacity) {
     opacity_ = opacity;
-    native::form::opacity(handle(), opacity_);
+    if (is_handle_created()) native::form::opacity(handle(), opacity_);
   }
   return *this;
 }
@@ -224,7 +224,7 @@ form& form::window_state(form_window_state value) {
 }
 
 void form::activate() {
-  native::form::activate(handle());
+  if (is_handle_created()) native::form::activate(handle());
 }
 
 void form::bring_to_front() {
@@ -239,7 +239,7 @@ void form::center_to_screen() {
 }
 
 void form::close() {
-  native::form::close(handle());
+  if (is_handle_created()) native::form::close(handle());
 }
 
 bool form::pre_process_message(xtd::forms::message& message) {
@@ -262,7 +262,7 @@ forms::dialog_result form::show_dialog() {
   recreate_handle();
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
-  result = static_cast<forms::dialog_result>(native::form::show_dialog(handle()));
+  result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_dialog(handle())) : dialog_result::cancel;
   application::raise_leave_thread_modal(event_args::empty);
   set_state(state::modal, false);
   return result;
@@ -276,7 +276,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   recreate_handle();
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
-  result = static_cast<forms::dialog_result>(native::form::show_dialog(handle()));
+  result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_dialog(handle())) : dialog_result::cancel;
   return result;
 }
 
@@ -288,7 +288,7 @@ void form::show_sheet(const iwin32_window& owner) {
   recreate_handle();
   dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
-  native::form::show_sheet(handle());
+  if (is_handle_created()) native::form::show_sheet(handle());
 }
 
 forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
@@ -299,7 +299,7 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   recreate_handle();
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
-  result = static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle()));
+  result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
   return result;
 }
 
@@ -433,10 +433,10 @@ void form::wm_close(message &message) {
 void form::on_handle_created(const event_args &e) {
   container_control::on_handle_created(e);
   if (show_icon_ && icon_ != drawing::icon::empty) native::form::icon(handle(), icon_);
-  if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
-  if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
+
+  if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
 }
 
 void form::on_handle_destroyed(const event_args &e) {
@@ -446,31 +446,33 @@ void form::on_handle_destroyed(const event_args &e) {
 
 void form::on_layout(const event_args& e) {
   scrollable_control::on_layout(e);
-  if (auto_scroll_) native::form::virtual_size(handle(), display_rectangle().size());
+  if (is_handle_created() && auto_scroll_) native::form::virtual_size(handle(), display_rectangle().size());
 }
 
 
 void form::on_location_changed(const event_args &e) {
-  if (handle_ && top() < screen::get_working_area(handle_).top()) top(screen::get_working_area(handle_).top());
+  if (handle() && top() < screen::get_working_area(handle()).top()) top(screen::get_working_area(handle()).top());
   container_control::on_location_changed(e);
 }
 
 void form::on_resize(const event_args& e) {
-  if (native::form::minimize(handle()))
-    window_state_ = forms::form_window_state::minimized;
-  else if (native::form::maximize(handle()))
-    window_state_ = forms::form_window_state::maximized;
-  else if (native::form::full_screen(handle()))
-    window_state_ = forms::form_window_state::full_screen;
-  else
-    window_state_ = forms::form_window_state::normal;
+  if (is_handle_created()) {
+    if (native::form::minimize(handle()))
+      window_state_ = forms::form_window_state::minimized;
+    else if (native::form::maximize(handle()))
+      window_state_ = forms::form_window_state::maximized;
+    else if (native::form::full_screen(handle()))
+      window_state_ = forms::form_window_state::full_screen;
+    else
+      window_state_ = forms::form_window_state::normal;
+  }
   container_control::on_resize(e);
 }
 
 void form::internal_set_window_state() {
   if (!previous_screen_)
     recreate_handle();
-  else {
+  else if (is_handle_created()) {
     switch (window_state_) {
       case form_window_state::normal: native::form::restore(handle()); break;
       case form_window_state::maximized: native::form::maximize(handle(), true); break;

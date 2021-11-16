@@ -48,7 +48,7 @@ control& date_time_picker::value(std::chrono::system_clock::time_point value) {
     if (value < min_date_) value = min_date_;
     if (value > max_date_) value = max_date_;
     value_ = value;
-    native::date_time_picker::value(handle(), value_);
+    if (is_handle_created()) native::date_time_picker::value(handle(), value_);
     on_value_changed(event_args::empty);
   }
   return *this;

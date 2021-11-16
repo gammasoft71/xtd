@@ -275,6 +275,8 @@ namespace xtd {
         
         static wxMenuBar* create_default_menu_bar() {
           wxMenuBar* default_menu_bar = new wxMenuBar;
+          default_menu_bar->Append(new wxMenu(), L"&Window");
+          default_menu_bar->Append(new wxMenu(), L"&Help");
           default_menu_bar->Bind(wxEVT_MENU, &on_exit_menu);
           return default_menu_bar;
         }

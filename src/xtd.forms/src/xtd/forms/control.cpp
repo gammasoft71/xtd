@@ -1,6 +1,7 @@
 #include <codecvt>
 #include <iostream>
 #include <set>
+#include <xtd/invalid_operation_exception.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/diagnostics/trace_switch.h>
 #include <xtd/drawing/system_fonts.h>
@@ -21,6 +22,7 @@
 #include "../../../include/xtd/forms/enable_debug.h"
 #include "../../../include/xtd/forms/form.h"
 #include "../../../include/xtd/forms/message_box.h"
+#include "../../../include/xtd/forms/screen.h"
 
 using namespace std;
 using namespace xtd;
@@ -133,7 +135,7 @@ color control::back_color() const {
 control& control::back_color(const color& color) {
   if (back_color_ != color) {
     back_color_ = color;
-    native::control::back_color(handle_, back_color_.value());
+    if (is_handle_created()) native::control::back_color(handle(), back_color_.value());
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_back_color_changed(event_args::empty);
     on_back_color_changed(event_args::empty);
@@ -169,7 +171,7 @@ control& control::background_image_layout(xtd::forms::image_layout background_im
 }
 
 bool control::can_focus() const {
-  bool visible_and_enabled = handle_ && get_state(state::visible) && get_state(state::enabled);
+  bool visible_and_enabled = handle() && get_state(state::visible) && get_state(state::enabled);
 
   optional<reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
   while (visible_and_enabled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
@@ -190,7 +192,7 @@ forms::cursor control::cursor() const {
 control& control::cursor(const forms::cursor &cursor) {
   if (cursor_ != cursor) {
     cursor_ = cursor;
-    native::control::cursor(handle_, cursor_.value().handle());
+    if (is_handle_created()) native::control::cursor(handle(), cursor_.value().handle());
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_cursor_changed(event_args::empty);
     on_cursor_changed(event_args::empty);
@@ -225,7 +227,7 @@ control& control::dock(dock_style dock) {
 control& control::enabled(bool enabled) {
   if (get_state(state::enabled) != enabled) {
     set_state(state::enabled, enabled);
-    native::control::enabled(handle_, get_state(state::enabled));
+    if (is_handle_created()) native::control::enabled(handle(), get_state(state::enabled));
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_enabled_changed(event_args::empty);
     on_enabled_changed(event_args::empty);
@@ -242,7 +244,7 @@ drawing::font control::font() const {
 control& control::font(const drawing::font& font) {
   if (font_ != font) {
     font_ = font;
-    native::control::font(handle_, font_.value());
+    if (is_handle_created()) native::control::font(handle(), font_.value());
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_font_changed(event_args::empty);
     on_font_changed(event_args::empty);
@@ -270,7 +272,7 @@ color control::fore_color() const {
 control& control::fore_color(const color& color) {
   if (fore_color_ != color) {
     fore_color_ = color;
-    native::control::fore_color(handle_, fore_color_.value());
+    if (is_handle_created()) native::control::fore_color(handle(), fore_color_.value());
     for (auto& control : controls())
       if (control.get().parent_) control.get().on_parent_fore_color_changed(event_args::empty);
     on_fore_color_changed(event_args::empty);
@@ -290,7 +292,17 @@ control& control::fore_color(nullptr_t) {
 }
 
 intptr_t control::handle() const {
+  if (invoke_required())
+    throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
   return handle_;
+}
+
+bool control::invoke_required() const {
+  return handle_created_on_thread_id_ != this_thread::get_id();
+}
+
+bool control::is_handle_created() const {
+  return handle_ != 0;
 }
 
 const drawing::size& control::maximum_size() const {
@@ -349,7 +361,7 @@ control& control::parent(nullptr_t) {
 control& control::text(const ustring& text) {
   if (text_ != text) {
     text_ = text;
-    native::control::text(handle_, text_);
+    if (is_handle_created()) native::control::text(handle(), text_);
     on_text_changed(event_args::empty);
   }
   return *this;
@@ -366,12 +378,11 @@ optional<reference_wrapper<control>> control::top_level_control() const {
 control& control::visible(bool visible) {
   if (get_state(state::visible) != visible) {
     set_state(state::visible, visible);
-    native::control::visible(handle_, get_state(state::visible));
+    if (is_handle_created()) native::control::visible(handle(), get_state(state::visible));
     on_visible_changed(event_args::empty);
   }
   return *this;
 }
-
 
 void control::bring_to_front() {
   focus();
@@ -383,7 +394,7 @@ void control::create_control() {
     set_state(state::destroyed, false);
     set_state(state::creating, true);
     create_handle();
-    send_message(handle_, WM_CREATE, 0, handle_);
+    send_message(handle(), WM_CREATE, 0, handle());
     set_state(state::creating, false);
     set_state(state::created, true);
     resume_layout();
@@ -395,7 +406,7 @@ void control::destroy_control() {
     set_state(state::created, false);
     set_state(state::destroying, true);
     suspend_layout();
-    if (handle_) {
+    if (is_handle_created()) {
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
         auto parent_prev = parent();
         parent_prev.value().get().suspend_layout();
@@ -417,36 +428,39 @@ void control::destroy_control() {
 }
 
 graphics control::create_graphics() const {
-  return graphics(native::control::create_graphics(handle_));
+  if (!is_handle_created())
+    throw invalid_operation_exception(csf_);
+  return graphics(native::control::create_graphics(handle()));
 }
 
 void control::create_handle() {
+  handle_created_on_thread_id_ = this_thread::get_id();
   set_state(state::creating_handle, true);
   auto params = create_params();
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
   handle_ = native::control::create(params);
   on_handle_created(event_args::empty);
   for(auto child : controls_) {
-    child.get().parent_ = handle_;
+    child.get().parent_ = handle();
     child.get().create_handle();
   }
   set_state(state::creating_handle, false);
 }
 
 void control::destroy_handle() {
-  if (!handle_) return;
-  native::control::unregister_wnd_proc(handle_);
+  if (!is_handle_created()) return;
+  native::control::unregister_wnd_proc(handle());
   for(auto child : controls_)
     child.get().destroy_handle();
-  handles_.erase(handle_);
+  handles_.erase(handle());
   on_handle_destroyed(event_args::empty);
-  native::control::destroy(handle_);
+  native::control::destroy(handle());
   handle_ = 0;
 }
 
 bool control::focus() {
-  if (!handle_ || !can_focus_) return false;
-  native::control::focus(handle_);
+  if (!is_handle_created() || !can_focus_) return false;
+  native::control::focus(handle());
   focused_ = true;
   return true;
 }
@@ -477,18 +491,14 @@ void control::invalidate(const drawing::rectangle& rect, bool invalidate_childre
   if (invalidate_children)
     for (auto child : controls_)
       child.get().invalidate(rect, invalidate_children);
-  native::control::invalidate(handle_, rect, true);
-}
-
-bool control::is_handle_created() const {
-  return handle_ != 0;
+  if (is_handle_created()) native::control::invalidate(handle(), rect, true);
 }
 
 shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
   while (!xtd::forms::application::message_loop()) this_thread::sleep_for(10ms);
   shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
   async->async_mutex().lock();
-  native::control::invoke_in_control_thread(handle_, value, args, async->async_mutex_, async->is_completed_);
+  if (is_handle_created()) native::control::invoke_in_control_thread(handle(), value, args, async->async_mutex_, async->is_completed_);
   this_thread::yield();
   return async;
 }
@@ -502,7 +512,7 @@ forms::create_params control::create_params() const {
   
   create_params.caption(text_);
   create_params.style(WS_VISIBLE | WS_CHILD);
-  if (parent().has_value()) create_params.parent(parent().value().get().handle_);
+  if (parent().has_value()) create_params.parent(parent().value().get().handle());
   create_params.location(location_);
   create_params.size(size_);
   
@@ -514,7 +524,7 @@ drawing::size control::measure_control() const {
 }
 
 drawing::size control::measure_text() const {
-  return drawing::size::ceiling(create_graphics().measure_string(text_, font())) + drawing::size(2, 1);
+  return drawing::size::ceiling(screen::create_graphics().measure_string(text_, font())) + drawing::size(2, 1);
 }
 
 void control::on_auto_size_changed(const event_args& e) {
@@ -541,7 +551,7 @@ void control::on_create_control() {
   if (!parent().has_value())
     top_level_controls_.push_back(control_ref(*this));
   for (auto control : controls_) {
-    control.get().parent_ = handle_;
+    control.get().parent_ = handle();
     control.get().create_control();
   }
   perform_layout();
@@ -584,7 +594,7 @@ void control::on_double_click(const event_args &e) {
 }
 
 void control::on_enabled_changed(const event_args &e) {
-  set_state(state::enabled, native::control::enabled(handle_));
+  if (is_handle_created()) set_state(state::enabled, native::control::enabled(handle()));
   refresh();
   if (can_raise_events()) enabled_changed(*this, e);
 }
@@ -605,22 +615,22 @@ void control::on_got_focus(const event_args &e) {
 }
 
 void control::on_handle_created(const event_args &e) {
-  native::control::register_wnd_proc(handle_, {*this, &control::wnd_proc_});
-  handles_[handle_] = this;
-  if (get_state(state::client_size_setted)) native::control::client_size(handle_, client_size());
-  else native::control::size(handle_, this->size());
-  if (!xtd::forms::theme_colors::current_theme().is_default() || back_color_.has_value() || back_color() != default_back_color()) native::control::back_color(handle_, back_color());
-  if (cursor_.has_value() || cursor() != default_cursor()) native::control::cursor(handle_, cursor().handle());
-  if (!xtd::forms::theme_colors::current_theme().is_default() || fore_color_.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle_, fore_color());
-  if (font_.has_value() || font() != default_font()) native::control::font(handle_, font());
-  native::control::enabled(handle_, enabled());
-  native::control::visible(handle_, visible());
-  if (focused()) native::control::focus(handle_);
+  native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
+  handles_[handle()] = this;
+  if (get_state(state::client_size_setted)) native::control::client_size(handle(), client_size());
+  else native::control::size(handle(), this->size());
+  if (!xtd::forms::theme_colors::current_theme().is_default() || back_color_.has_value() || back_color() != default_back_color()) native::control::back_color(handle(), back_color());
+  if (cursor_.has_value() || cursor() != default_cursor()) native::control::cursor(handle(), cursor().handle());
+  if (!xtd::forms::theme_colors::current_theme().is_default() || fore_color_.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle(), fore_color());
+  if (font_.has_value() || font() != default_font()) native::control::font(handle(), font());
+  native::control::enabled(handle(), enabled());
+  native::control::visible(handle(), visible());
+  if (focused()) native::control::focus(handle());
 
-  client_rectangle_ = native::control::client_rectangle(handle_);
-  client_size_ = native::control::client_size(handle_);
-  location_ = native::control::location(handle_);
-  size_ = native::control::size(handle_);
+  client_rectangle_ = native::control::client_rectangle(handle());
+  client_size_ = native::control::client_size(handle());
+  location_ = native::control::location(handle());
+  size_ = native::control::size(handle());
 
   if (can_raise_events()) handle_created(*this, e);
 
@@ -706,7 +716,7 @@ void control::on_paint(paint_event_args& e) {
 void control::on_parent_back_color_changed(const event_args &e) {
   if (!back_color_.has_value() && parent().has_value() && parent().value().get().back_color() != parent().value().get().default_back_color()) {
     if (!parent().value().get().back_color_.has_value()) recreate_handle();
-    else native::control::back_color(handle_, parent().value().get().back_color());
+    else if (is_handle_created()) native::control::back_color(handle(), parent().value().get().back_color());
     for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
@@ -721,7 +731,7 @@ void control::on_parent_changed(const event_args &e) {
 void control::on_parent_cursor_changed(const event_args &e) {
   if (!cursor_.has_value() && parent().has_value() && parent().value().get().cursor() != parent().value().get().default_cursor()) {
     if (!parent().value().get().cursor_.has_value()) recreate_handle();
-    else native::control::cursor(handle_, parent().value().get().cursor().handle());
+    else if (is_handle_created()) native::control::cursor(handle(), parent().value().get().cursor().handle());
     for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
@@ -730,7 +740,7 @@ void control::on_parent_cursor_changed(const event_args &e) {
 void control::on_parent_enabled_changed(const event_args &e) {
   if (parent().has_value()) {
     set_state(state::enabled, parent().value().get().enabled());
-    native::control::enabled(handle_, get_state(state::enabled));
+    if (is_handle_created()) native::control::enabled(handle(), get_state(state::enabled));
     for (auto control : controls())
       control.get().on_parent_enabled_changed(event_args::empty);
   }
@@ -739,7 +749,7 @@ void control::on_parent_enabled_changed(const event_args &e) {
 void control::on_parent_fore_color_changed(const event_args &e) {
   if (!fore_color_.has_value() && parent().has_value() && parent().value().get().fore_color() != parent().value().get().default_fore_color()) {
     if (!parent().value().get().fore_color_.has_value()) recreate_handle();
-    else native::control::fore_color(handle_, parent().value().get().fore_color());
+    else if (is_handle_created()) native::control::fore_color(handle(), parent().value().get().fore_color());
     for (auto control : controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
   }
@@ -748,7 +758,7 @@ void control::on_parent_fore_color_changed(const event_args &e) {
 void control::on_parent_font_changed(const event_args &e) {
   if (!font_.has_value() && parent().has_value() && parent().value().get().font() != parent().value().get().default_font()) {
     if (!parent().value().get().font_.has_value()) recreate_handle();
-    else native::control::font(handle_, parent().value().get().font());
+    else if (is_handle_created()) native::control::font(handle(), parent().value().get().font());
     for (auto control : controls())
       control.get().on_parent_font_changed(event_args::empty);
   }
@@ -759,7 +769,7 @@ void control::on_resize(const event_args &e) {
   if (size_.height() < minimum_size_.height()) height(minimum_size_.height());
   if (!maximum_size_.is_empty() && size_.width() > maximum_size_.width()) width(maximum_size_.width());
   if (!maximum_size_.is_empty() && size_.height() > maximum_size_.height()) height(maximum_size_.height());
-  client_rectangle_ = native::control::client_rectangle(handle_);
+  if (is_handle_created()) client_rectangle_ = native::control::client_rectangle(handle());
   perform_layout();
   refresh();
   if (can_raise_events()) resize(*this, e);
@@ -767,7 +777,7 @@ void control::on_resize(const event_args &e) {
 
 void control::on_size_changed(const event_args &e) {
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
-  client_rectangle_ = native::control::client_rectangle(handle_);
+  if (is_handle_created()) client_rectangle_ = native::control::client_rectangle(handle());
   if (can_raise_events()) size_changed(*this, e);
 }
 
@@ -778,7 +788,7 @@ void control::on_text_changed(const event_args &e) {
 }
 
 void control::on_visible_changed(const event_args &e) {
-  set_state(state::visible, native::control::visible(handle_));
+  if (is_handle_created()) set_state(state::visible, native::control::visible(handle()));
   if (focused())
     focus();
   for (auto item : controls_)
@@ -794,11 +804,11 @@ void control::perform_layout() {
 }
 
 drawing::point control::point_to_client(const xtd::drawing::point &p) {
-  return native::control::point_to_client(handle_, p);
+  return is_handle_created() ? native::control::point_to_client(handle(), p) : drawing::point {};
 }
 
 drawing::point control::point_to_screen(const xtd::drawing::point &p) {
-  return native::control::point_to_screen(handle_, p);
+  return is_handle_created() ? native::control::point_to_screen(handle(), p) : drawing::point {};
 }
 
 bool control::pre_process_message(xtd::forms::message& message) {
@@ -810,11 +820,11 @@ bool control::pre_process_message(xtd::forms::message& message) {
   return message_processed;
 }
 void control::refresh() const {
-  native::control::refresh(handle_);
+  if (is_handle_created()) native::control::refresh(handle());
 }
 
 intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const {
-  return native::control::send_message(handle_, hwnd, msg, wparam, lparam);
+  return is_handle_created() ? native::control::send_message(handle(), hwnd, msg, wparam, lparam) : static_cast<intptr_t>(-1);
 }
 
 void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
@@ -831,7 +841,7 @@ ustring control::to_string() const noexcept {
 }
 
 void control::update() const {
-  native::control::update(handle_);
+  if (is_handle_created()) native::control::update(handle());
 }
 
 intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
@@ -895,11 +905,11 @@ void control::wnd_proc(message& message) {
 }
 
 void control::def_wnd_proc(message& message) {
-  message.result(native::control::def_wnd_proc(handle_, message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
+  if (is_handle_created()) message.result(native::control::def_wnd_proc(handle(), message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
 }
 
 void control::recreate_handle() {
-  if (handle_ != 0) {
+  if (is_handle_created()) {
     set_state(state::recreate, true);
     for (auto control : controls()) control.get().set_state(state::parent_recreating, true);
 
@@ -919,14 +929,14 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
   if ((specified & bounds_specified::height) == bounds_specified::height) size_.height(height);
   
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
-    native::control::location(handle_, location_);
+    if (is_handle_created()) native::control::location(handle(), location_);
     on_location_changed(event_args::empty);
     if (parent().has_value()) parent().value().get().perform_layout();
     perform_layout();
   }
   
   if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height) {
-    native::control::size(handle_, size_);
+    if (is_handle_created()) native::control::size(handle(), size_);
     on_client_size_changed(event_args::empty);
     on_size_changed(event_args::empty);
     on_resize(event_args::empty);
@@ -939,7 +949,7 @@ void control::set_client_size_core(int32_t width, int32_t height) {
   client_size_.width(width);
   client_size_.height(height);
   
-  native::control::client_size(handle_, client_size_);
+  if (is_handle_created()) native::control::client_size(handle(), client_size_);
   on_client_size_changed(event_args::empty);
   on_size_changed(event_args::empty);
   on_resize(event_args::empty);
@@ -1143,8 +1153,8 @@ void control::wm_mouse_move(message& message) {
 
 void control::wm_move(message& message) {
   def_wnd_proc(message);
-  if (location_ != native::control::location(handle_)) {
-    location_ = native::control::location(handle_);
+  if (location_ != native::control::location(handle())) {
+    location_ = native::control::location(handle());
     on_location_changed(event_args::empty);
   }
 }
@@ -1186,12 +1196,12 @@ void control::wm_set_text(message& message) {
 
 void control::wm_size(message& message) {
   def_wnd_proc(message);
-  if (client_size_ != native::control::client_size(handle_)) {
-    client_size_ = native::control::client_size(handle_);
+  if (client_size_ != native::control::client_size(handle())) {
+    client_size_ = native::control::client_size(handle());
     on_client_size_changed(event_args::empty);
   }
-  if (size_ != native::control::size(handle_)) {
-    size_ = native::control::size(handle_);
+  if (size_ != native::control::size(handle())) {
+    size_ = native::control::size(handle());
     on_size_changed(event_args::empty);
   }
   on_resize(event_args::empty);

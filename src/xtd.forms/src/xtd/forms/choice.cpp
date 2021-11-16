@@ -19,14 +19,14 @@ choice::choice() {
   size_ = default_size();
 
   items_.item_added += [&](size_t pos, const item& item) {
-    native::choice::insert_item(handle(), pos, item.value());
+    if (is_handle_created()) native::choice::insert_item(handle(), pos, item.value());
     size_t selected_index = npos;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_index = selected_index_;
     this->selected_index(selected_index);
   };
 
   items_.item_removed += [&](size_t pos, const item& item) {
-    native::choice::delete_item(handle(), pos);
+    if (is_handle_created()) native::choice::delete_item(handle(), pos);
 
     size_t selected_index = npos;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_index = selected_index_;
@@ -34,7 +34,7 @@ choice::choice() {
   };
   
   items_.item_updated += [&](size_t pos, const item& item) {
-    native::choice::update_item(handle(), pos, item.value());
+    if (is_handle_created()) native::choice::update_item(handle(), pos, item.value());
     size_t selected_index = npos;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_index = selected_index_;
     this->selected_index(selected_index);
@@ -45,7 +45,7 @@ list_control& choice::selected_index(size_t selected_index) {
   if (selected_index_ != selected_index) {
     if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
     selected_index_ = selected_index;
-    native::choice::selected_index(handle(), selected_index_);
+    if (is_handle_created()) native::choice::selected_index(handle(), selected_index_);
     
     item selected_item;
     if (selected_index_ != npos) selected_item = items_[selected_index_];
@@ -80,11 +80,11 @@ choice& choice::sorted(bool sorted) {
 }
 
 void choice::begin_update() {
-  native::choice::begin_update(handle());
+  if (is_handle_created()) native::choice::begin_update(handle());
 }
 
 void choice::end_update() {
-  native::choice::end_update(handle());
+  if (is_handle_created()) native::choice::end_update(handle());
 }
 
 forms::create_params choice::create_params() const {

@@ -58,7 +58,7 @@ scroll_bar& scroll_bar::value(int32_t value) {
   if (value < minimum_ || value > maximum_) throw argument_out_of_range_exception(csf_);
   if (value_ != value) {
     value_ = value;
-    native::scroll_bar::value(handle(), value);
+    if (is_handle_created()) native::scroll_bar::value(handle(), value);
     on_value_changed(event_args::empty);
   }
   return *this;
@@ -82,7 +82,7 @@ void scroll_bar::on_handle_created(const event_args &e) {
 }
 
 void scroll_bar::on_scroll(const event_args &e) {
-  value_ = native::scroll_bar::value(handle());
+  if (is_handle_created()) value_ = native::scroll_bar::value(handle());
   scroll(*this, e);
 }
 

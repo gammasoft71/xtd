@@ -45,5 +45,5 @@ forms::create_params user_control::create_params() const {
 void user_control::on_layout(const event_args& e) {
   if (!application::message_loop()) return;
   scrollable_control::on_layout(e);
-  if (auto_scroll_) native::user_control::virtual_size(handle(), display_rectangle().size());
+  if (is_handle_created() && auto_scroll_) native::user_control::virtual_size(handle(), display_rectangle().size());
 }

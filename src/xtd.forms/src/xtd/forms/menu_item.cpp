@@ -130,16 +130,16 @@ intptr_t menu_item::create_menu_handle() {
       menu_items.push_back(item.handle());
     return native::menu::create(text_, menu_items, enabled_);
   }
-  return native::menu_item::create(text_, image_, static_cast<int>(kind_), checked_, static_cast<size_t>(shortcut_), enabled_);
+  return native::menu_item::create_old(text_, image_, static_cast<int>(kind_), checked_, static_cast<size_t>(shortcut_), enabled_);
 }
 
 void menu_item::destroy_menu_handle(intptr_t handle) {
   if (is_parent()) return native::menu::destroy(handle);
-  return native::menu_item::destroy(handle);
+  return native::menu_item::destroy_old(handle);
 }
 
 int menu_item::menu_id() const {
-  return native::menu_item::menu_id(data_->handle_);
+  return native::menu_item::menu_id_old(data_->handle_);
 }
 
 ustring menu_item::to_string() const noexcept {

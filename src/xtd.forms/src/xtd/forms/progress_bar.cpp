@@ -15,7 +15,7 @@ progress_bar::progress_bar() {
 progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_speed) {
   if (marquee_animation_speed_ != marquee_animation_speed) {
     marquee_animation_speed_ = marquee_animation_speed;
-    native::progress_bar::marquee(handle(), style_ == progress_bar_style::marquee, marquee_animation_speed_);
+    if (is_handle_created()) native::progress_bar::marquee(handle(), style_ == progress_bar_style::marquee, marquee_animation_speed_);
   }
   return *this;
 }
@@ -23,7 +23,7 @@ progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_spe
 progress_bar& progress_bar::maximum(int32_t maximum) {
   if (maximum_ != maximum) {
     maximum_ = maximum;
-    native::progress_bar::maximum(handle(), maximum_);
+    if (is_handle_created()) native::progress_bar::maximum(handle(), maximum_);
     if (minimum_ > maximum) minimum(maximum);
     if (value_ > maximum) value(maximum);
   }
@@ -33,7 +33,7 @@ progress_bar& progress_bar::maximum(int32_t maximum) {
 progress_bar& progress_bar::minimum(int32_t minimum) {
   if (minimum_ != minimum) {
     minimum_ = minimum;
-    native::progress_bar::minimum(handle(), minimum_);
+    if (is_handle_created()) native::progress_bar::minimum(handle(), minimum_);
     if (maximum_ < minimum) maximum(minimum);
     if (value_ < minimum) value(minimum);
   }
@@ -57,7 +57,7 @@ progress_bar& progress_bar::step(int32_t step) {
 progress_bar& progress_bar::style(progress_bar_style style) {
   if (style_ != style) {
     style_ = style;
-    native::progress_bar::marquee(handle(), style_ == progress_bar_style::marquee, marquee_animation_speed_);
+    if (is_handle_created()) native::progress_bar::marquee(handle(), style_ == progress_bar_style::marquee, marquee_animation_speed_);
     if (style_ != progress_bar_style::marquee)
       recreate_handle();
   }
@@ -72,7 +72,7 @@ progress_bar& progress_bar::value(int32_t value) {
       value_ = minimum_;
     else
       value_ = value;
-    native::progress_bar::value(handle(), value_);
+    if (is_handle_created()) native::progress_bar::value(handle(), value_);
   }
   return *this;
 }

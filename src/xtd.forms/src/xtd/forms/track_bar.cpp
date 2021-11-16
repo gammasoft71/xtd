@@ -16,7 +16,7 @@ track_bar::track_bar() {
 track_bar& track_bar::large_change(int32_t large_change) {
   if (large_change_ != large_change) {
     large_change_ = large_change;
-    native::track_bar::large_change(handle(), large_change_);
+    if (is_handle_created()) native::track_bar::large_change(handle(), large_change_);
   }
   return *this;
 }
@@ -24,7 +24,7 @@ track_bar& track_bar::large_change(int32_t large_change) {
 track_bar& track_bar::maximum(int32_t maximum) {
   if (maximum_ != maximum) {
     maximum_ = maximum;
-    native::track_bar::maximum(handle(), maximum_);
+    if (is_handle_created()) native::track_bar::maximum(handle(), maximum_);
     if (minimum_ > maximum) minimum(maximum);
     if (value_ > maximum) value(maximum);
   }
@@ -34,7 +34,7 @@ track_bar& track_bar::maximum(int32_t maximum) {
 track_bar& track_bar::minimum(int32_t minimum) {
   if (minimum_ != minimum) {
     minimum_ = minimum;
-    native::track_bar::minimum(handle(), minimum_);
+    if (is_handle_created()) native::track_bar::minimum(handle(), minimum_);
     if (maximum_ < minimum) maximum(minimum);
     if (value_ < minimum) value(minimum);
   }
@@ -52,7 +52,7 @@ track_bar& track_bar::orientation(forms::orientation orientation) {
 track_bar& track_bar::small_change(int32_t small_change) {
   if (small_change_ != small_change) {
     small_change_ = small_change;
-    native::track_bar::small_change(handle(), small_change_);
+    if (is_handle_created()) native::track_bar::small_change(handle(), small_change_);
   }
   return *this;
 }
@@ -60,7 +60,7 @@ track_bar& track_bar::small_change(int32_t small_change) {
 track_bar& track_bar::tick_frequency(int32_t tick_frequency) {
   if (tick_frequency_ != tick_frequency) {
     tick_frequency_ = tick_frequency;
-    native::track_bar::tick_frequency(handle(), tick_frequency_);
+    if (is_handle_created()) native::track_bar::tick_frequency(handle(), tick_frequency_);
   }
   return *this;
 }
@@ -81,7 +81,7 @@ track_bar& track_bar::value(int32_t value) {
       value_ = minimum_;
     else
       value_ = value;
-    native::track_bar::value(handle(), value_);
+    if (is_handle_created()) native::track_bar::value(handle(), value_);
     on_value_changed(event_args::empty);
   }
   return *this;
@@ -118,7 +118,7 @@ drawing::size track_bar::measure_control() const {
 }
 
 void track_bar::on_scroll(const event_args &e) {
-  value_ = native::track_bar::value(handle());
+  if (is_handle_created()) value_ = native::track_bar::value(handle());
   scroll(*this, e);
 }
 

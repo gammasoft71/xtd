@@ -72,13 +72,6 @@ void form::maximize(intptr_t control, bool maximize) {
 void form::menu(intptr_t control, intptr_t menu) {
   if (control == 0) return;
 
-#if defined(__APPLE__)
-  if (menu != 0) {
-    if (reinterpret_cast<wxMenuBar*>(menu)->FindMenu("Window") == wxNOT_FOUND) reinterpret_cast<wxMenuBar*>(menu)->Append(new wxMenu(), "&Window");
-    if (reinterpret_cast<wxMenuBar*>(menu)->FindMenu("Help") == wxNOT_FOUND) reinterpret_cast<wxMenuBar*>(menu)->Append(new wxMenu(), "&Help");
-  }
-#endif
-
   //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
   if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) {
     if (menu != 0) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);

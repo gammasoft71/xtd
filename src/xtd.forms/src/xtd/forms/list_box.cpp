@@ -23,21 +23,21 @@ list_box::list_box() {
   size_ = default_size();
 
   items_.item_added += [this](size_t index, const item& item) {
-    native::list_box::insert_item(handle(), index, item.value());
+    if (is_handle_created()) native::list_box::insert_item(handle(), index, item.value());
     list_box::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
   };
 
   items_.item_removed += [this](size_t index, const item& item) {
-    native::list_box::delete_item(handle(), index);
+    if (is_handle_created()) if (is_handle_created()) native::list_box::delete_item(handle(), index);
     list_box::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
   };
   
   items_.item_updated += [this](size_t index, const item& item) {
-    native::list_box::update_item(handle(), index, item.value());
+    if (is_handle_created()) native::list_box::update_item(handle(), index, item.value());
     list_box::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
@@ -56,7 +56,7 @@ list_control& list_box::selected_index(size_t selected_index) {
   if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
   if (selected_index_ != selected_index) {
     selected_index_ = selected_index;
-    native::list_box::selected_index(handle(), selected_index_);
+    if (is_handle_created()) native::list_box::selected_index(handle(), selected_index_);
     
     item selected_item;
     if (selected_index_ != npos) selected_item = items_[selected_index_];
@@ -68,7 +68,7 @@ list_control& list_box::selected_index(size_t selected_index) {
 }
 
 vector<size_t> list_box::selected_indices() const {
-  return native::list_box::selected_indices(handle());
+  return is_handle_created() ? native::list_box::selected_indices(handle()) : vector<size_t> {};
 }
 
 list_box& list_box::selected_item(const item& selected_item) {
@@ -115,11 +115,11 @@ list_box& list_box::sorted(bool sorted) {
 }
 
 void list_box::begin_update() {
-  native::list_box::begin_update(handle());
+  if (is_handle_created()) native::list_box::begin_update(handle());
 }
 
 void list_box::end_update() {
-  native::list_box::end_update(handle());
+  if (is_handle_created()) native::list_box::end_update(handle());
 }
 
 forms::create_params list_box::create_params() const {

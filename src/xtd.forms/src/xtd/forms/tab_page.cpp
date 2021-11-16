@@ -33,15 +33,14 @@ scrollable_control& tab_page::auto_scroll(bool auto_scroll) {
 tab_page& tab_page::image_index(int32_t value) {
   if (image_index_ != value) {
     image_index_ = value;
-     if (parent().has_value()) native::tab_page::image_index(handle(), image_index_);
+     if (is_handle_created() && parent().has_value()) native::tab_page::image_index(handle(), image_index_);
   }
   return *this;
 }
 
 control& tab_page::text(const ustring& text) {
   if (text_ != text) {
-    if (parent().has_value())
-      if (parent().has_value()) native::tab_page::text(handle(), text);
+    if (is_handle_created() && parent().has_value()) native::tab_page::text(handle(), text);
   }
   return control::text(text);
 }
