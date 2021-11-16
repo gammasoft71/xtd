@@ -136,6 +136,7 @@ add_sources(
   tutorial_form.md
   tutorial_position_and_layout_of_controls.md
   tutorial_size_and_location_properties.md
+  tutorial_thread_safe_control_call.md
   tutorial_writing_applicaion_console.md
   tutorial_writing_applicaion_extending_test.md
   tutorial_writing_applicaion_gui.md
