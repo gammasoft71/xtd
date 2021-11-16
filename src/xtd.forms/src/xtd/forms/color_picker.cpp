@@ -19,7 +19,7 @@ color_picker::color_picker() {
 void color_picker::color(const drawing::color& value) {
   if (color_ != value) {
     color_ = value;
-    native::color_picker::color(handle(), color_);
+    if (is_handle_created()) native::color_picker::color(handle(), color_);
     on_color_changed(event_args::empty);
   }
 }

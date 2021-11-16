@@ -24,14 +24,14 @@ checked_list_box::checked_list_box() {
   size_ = default_size();
 
   items_.item_added += [&](size_t pos, const item& item) {
-    native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
+    if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
     checked_list_box::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
   };
 
   items_.item_removed += [&](size_t pos, const item& item) {
-    native::checked_list_box::delete_item(handle(), pos);
+    if (is_handle_created()) native::checked_list_box::delete_item(handle(), pos);
 
     checked_list_box::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
@@ -39,7 +39,7 @@ checked_list_box::checked_list_box() {
   };
   
   items_.item_updated += [&](size_t pos, const item& item) {
-    native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
+    if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
     checked_list_box::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
@@ -64,7 +64,7 @@ list_control& checked_list_box::selected_index(size_t selected_index) {
   if (selected_index_ != selected_index) {
     if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
     selected_index_ = selected_index;
-    native::checked_list_box::selected_index(handle(), selected_index_);
+    if (is_handle_created()) native::checked_list_box::selected_index(handle(), selected_index_);
     
     item selected_item;
     if (selected_index_ != npos) selected_item = items_[selected_index_];
@@ -76,7 +76,7 @@ list_control& checked_list_box::selected_index(size_t selected_index) {
 }
 
 vector<size_t> checked_list_box::selected_indices() const {
-  return native::checked_list_box::selected_indices(handle());
+  return is_handle_created() ? native::checked_list_box::selected_indices(handle()) : vector<size_t> {};
 }
 
 list_box& checked_list_box::selected_item(const item& selected_item) {
@@ -102,11 +102,11 @@ vector<checked_list_box::item> checked_list_box::selected_items() const {
 }
 
 void checked_list_box::begin_update() {
-  native::checked_list_box::begin_update(handle());
+  if (is_handle_created()) native::checked_list_box::begin_update(handle());
 }
 
 void checked_list_box::end_update() {
-  native::checked_list_box::end_update(handle());
+  if (is_handle_created()) native::checked_list_box::end_update(handle());
 }
 
 bool checked_list_box::get_item_checked(size_t index) const {

@@ -63,7 +63,7 @@ toggle_button& toggle_button::check_state(forms::check_state check_state) {
       checked_ = check_state_ != forms::check_state::unchecked;
       on_checked_changed(event_args::empty);
     }
-    native::toggle_button::check_state(handle(), static_cast<int32_t>(check_state_));
+    if (is_handle_created()) native::toggle_button::check_state(handle(), static_cast<int32_t>(check_state_));
     on_check_state_changed(event_args::empty);
   }
   return *this;

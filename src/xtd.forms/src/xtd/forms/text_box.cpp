@@ -40,12 +40,12 @@ text_box& text_box::password_char(char32_t value) {
 }
 
 size_t text_box::selection_length() const {
-  selection_length_ = native::text_box::selection_length(handle());
+  if (is_handle_created()) selection_length_ = native::text_box::selection_length(handle());
   return text_box_base::selection_length();
 }
 
 size_t text_box::selection_start() const {
-  selection_start_ = native::text_box::selection_start(handle());
+  if (is_handle_created()) selection_start_ = native::text_box::selection_start(handle());
   return text_box_base::selection_start();
 }
 
@@ -58,9 +58,9 @@ control& text_box::text(const ustring& text) {
   if (text_ != text) {
     text_ = text;
     if (!use_system_password_char_ && password_char_) {
-      native::text_box::text(handle(), "");
+      if (is_handle_created()) native::text_box::text(handle(), "");
       for (size_t count = 0; count < text.size(); count++)
-        native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
+        if (is_handle_created()) native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
     } else {
       switch (character_casing_) {
         case xtd::forms::character_casing::normal: text_ = text; break;
@@ -68,7 +68,7 @@ control& text_box::text(const ustring& text) {
         case xtd::forms::character_casing::lower: text_ = text.to_lower(); break;
         default: break;
       }
-      native::text_box::text(handle(), text_.c_str());
+      if (is_handle_created()) native::text_box::text(handle(), text_.c_str());
     }
     on_text_changed(event_args::empty);
   }
@@ -108,12 +108,12 @@ drawing::size text_box::measure_control() const {
 }
 
 void text_box::append_text(const xtd::ustring& value) {
-  native::text_box::append(handle_, value);
+  if (is_handle_created()) native::text_box::append(handle(), value);
 }
 
 void text_box::select(size_t start, size_t length) {
   text_box_base::select(start, length);  
-  native::text_box::select(handle_, selection_start_, selection_length_);
+  if (is_handle_created()) native::text_box::select(handle(), selection_start_, selection_length_);
 }
 
 void text_box::on_handle_created(const event_args& e) {

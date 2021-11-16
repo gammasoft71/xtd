@@ -54,5 +54,5 @@ drawing::size panel::measure_control() const {
 
 void panel::on_layout(const event_args& e) {
   scrollable_control::on_layout(e);
-  if (auto_scroll_) native::panel::virtual_size(handle(), display_rectangle().size());
+  if (is_handle_created() && auto_scroll_) native::panel::virtual_size(handle(), display_rectangle().size());
 }

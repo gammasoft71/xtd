@@ -27,10 +27,10 @@ picture_box& picture_box::image(const drawing::image& image) {
   if (!image_.has_value() || image_.value().handle() != image.handle()) {
     if (image != drawing::image::empty) {
       image_ = image;
-      native::picture_box::image(handle(), image_.value());
+      if (is_handle_created()) native::picture_box::image(handle(), image_.value());
     } else {
       image_.reset();
-      native::picture_box::reset(handle());
+      if (is_handle_created()) native::picture_box::reset(handle());
     }
   }
   return *this;
@@ -39,7 +39,7 @@ picture_box& picture_box::image(const drawing::image& image) {
 picture_box& picture_box::image(nullptr_t) {
   if (image_.has_value()) {
     image_.reset();
-    native::picture_box::reset(handle());
+    if (is_handle_created()) native::picture_box::reset(handle());
   }
   return *this;
 }

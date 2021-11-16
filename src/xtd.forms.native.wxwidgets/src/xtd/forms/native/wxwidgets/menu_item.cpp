@@ -11,16 +11,16 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t menu_item::create(const ustring& text, const xtd::drawing::image& image, int32_t kind, bool checked, size_t shortcut, bool enabled) {
+intptr_t menu_item::create_old(const ustring& text, const xtd::drawing::image& image, int32_t kind, bool checked, size_t shortcut, bool enabled) {
   static map<int32_t, wx_menu_item_kind> kinds = {{MI_NORMAL, wx_menu_item_kind::normal}, {MI_CHECK, wx_menu_item_kind::check}, {MI_RADIO, wx_menu_item_kind::radio}, {MI_DROPDOWN, wx_menu_item_kind::drop_down}, {MI_SEPARATOR, wx_menu_item_kind::separator}};
   return reinterpret_cast<intptr_t>(new wx_menu_item(text, image.handle(), kinds[kind], checked, shortcut, enabled));
 }
 
-void menu_item::destroy(intptr_t menu_item) {
+void menu_item::destroy_old(intptr_t menu_item) {
   if (!menu_item) return;
   delete reinterpret_cast<wx_menu_item*>(menu_item);
 }
 
-int32_t menu_item::menu_id(intptr_t menu_item) {
+int32_t menu_item::menu_id_old(intptr_t menu_item) {
   return reinterpret_cast<wx_menu_item*>(menu_item)->item_id;
 }

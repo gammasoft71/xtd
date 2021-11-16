@@ -493,6 +493,10 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets a value indicating whether the caller must call an invoke method when making method calls to the control because the caller is on a different thread than the one the control was created on.
+      /// @return true if the control's xttd::forms::control::handle was created on a different thread than the calling thread (indicating that you must make calls to the control through an invoke method); otherwise, false.
+      bool invoke_required() const;
+      
       /// @brief Gets a value indicating whether the control has a handle associated with it.
       /// @return true if a handle has been assigned to the control; otherwise, false.
       /// @remarks Use the is_handle_created property to determine whether create_handle has been called.
@@ -1729,6 +1733,7 @@ namespace xtd {
       xtd::ustring text_;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
+      std::thread::id handle_created_on_thread_id_;
       /// @endcond
       
     private:

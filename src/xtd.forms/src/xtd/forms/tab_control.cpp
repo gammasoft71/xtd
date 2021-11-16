@@ -29,7 +29,7 @@ tab_control& tab_control::alignment(tab_alignment alignment) {
 tab_control& tab_control::selected_index(size_t selected_index) {
   if (selected_index_ != selected_index) {
     selected_index_ = selected_index;
-    native::tab_control::selected_index(handle(), selected_index_);
+    if (is_handle_created()) native::tab_control::selected_index(handle(), selected_index_);
     on_selected_index_changed(event_args::empty);
   }
   return *this;

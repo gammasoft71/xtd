@@ -78,14 +78,14 @@ void loading_indicator::start() {
   is_running_ = true;
   if (loading_indicator_style_ != xtd::forms::loading_indicator_style::system)
     timer_.start();
-  else
-    native::loading_indicator::start(handle_);
+  else if (is_handle_created())
+    native::loading_indicator::start(handle());
 }
 
 void loading_indicator::stop() {
   is_running_ = false;
   if (loading_indicator_style_ != xtd::forms::loading_indicator_style::system)
     timer_.stop();
-  else
-    native::loading_indicator::stop(handle_);
+  else if (is_handle_created())
+    native::loading_indicator::stop(handle());
 }

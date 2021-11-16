@@ -53,7 +53,7 @@ radio_button& radio_button::auto_check(bool auto_check) {
 radio_button& radio_button::checked(bool checked) {
   if (checked_ != checked) {
     checked_ = checked;
-    native::radio_button::checked(handle(), checked_);
+    if (is_handle_created()) native::radio_button::checked(handle(), checked_);
     on_checked_changed(event_args::empty);
     if (checked_ == true && auto_check_ == true && parent().has_value()) {
       for (auto control : parent().value().get().controls()) {

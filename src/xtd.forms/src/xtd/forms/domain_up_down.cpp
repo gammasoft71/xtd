@@ -19,14 +19,14 @@ domain_up_down::domain_up_down() {
   size_ = default_size();
 
   items_.item_added += [&](size_t pos, const item& item) {
-    native::domain_up_down::insert_item(handle(), pos, item.value());
+    if (is_handle_created()) native::domain_up_down::insert_item(handle(), pos, item.value());
     domain_up_down::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
   };
 
   items_.item_removed += [&](size_t pos, const item& item) {
-    native::domain_up_down::delete_item(handle(), pos);
+    if (is_handle_created()) native::domain_up_down::delete_item(handle(), pos);
 
     domain_up_down::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
@@ -36,7 +36,7 @@ domain_up_down::domain_up_down() {
   items_.item_updated += [&](size_t pos, const item& item) {
     static bool update_disabled = false;
     if (update_disabled) return;
-    native::domain_up_down::update_item(handle(), pos, item.value());
+    if (is_handle_created()) native::domain_up_down::update_item(handle(), pos, item.value());
     domain_up_down::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
@@ -47,7 +47,7 @@ domain_up_down& domain_up_down::selected_index(size_t selected_index) {
   if (selected_index != npos && selected_index >= items_.size()) argument_out_of_range_exception("Selected index greater than items size");
   if (selected_index_ != selected_index) {
     selected_index_ = selected_index;
-    native::domain_up_down::selected_index(handle(), selected_index_);
+    if (is_handle_created()) native::domain_up_down::selected_index(handle(), selected_index_);
     
     item selected_item;
     if (selected_index_ != npos) selected_item = items_[selected_index_];
@@ -101,14 +101,16 @@ void domain_up_down::on_handle_created(const event_args &e) {
 }
 
 void domain_up_down::on_text_changed(const event_args& e) {
-  text_ = native::control::text(handle());
-  if (selected_index_ != native::domain_up_down::selected_index(handle())) {
-    selected_index_ = native::domain_up_down::selected_index(handle());
-    if (selected_index_ == npos)
-      selected_item_ = "";
-    else
-      selected_item_ = items_[selected_index_];
-    on_selected_item_changed(event_args::empty);
+  if (is_handle_created()) {
+    text_ = native::control::text(handle());
+    if (selected_index_ != native::domain_up_down::selected_index(handle())) {
+      selected_index_ = native::domain_up_down::selected_index(handle());
+      if (selected_index_ == npos)
+        selected_item_ = "";
+      else
+        selected_item_ = items_[selected_index_];
+      on_selected_item_changed(event_args::empty);
+    }
   }
   up_down_base::on_text_changed(e);
 }

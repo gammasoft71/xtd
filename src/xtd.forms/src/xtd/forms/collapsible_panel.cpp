@@ -25,7 +25,7 @@ collapsible_panel& collapsible_panel::border_style(forms::border_style border_st
 collapsible_panel& collapsible_panel::expanded(bool expanded) {
   if (expanded_ != expanded) {
     expanded_ = expanded;
-    native::collapsible_panel::expanded(handle_, expanded_);
+    if (is_handle_created()) native::collapsible_panel::expanded(handle(), expanded_);
     on_expanded_changed(event_args::empty);
   }
   return *this;
@@ -68,7 +68,7 @@ void collapsible_panel::on_expanded_changed(const xtd::event_args& e) {
 
 void collapsible_panel::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  size(native::control::size(handle_));
+  size(native::control::size(handle()));
 }
 
 drawing::size collapsible_panel::measure_control() const {
@@ -88,7 +88,7 @@ void collapsible_panel::wnd_proc(message &message) {
 }
 
 void collapsible_panel::wm_command(message &message) {
-  expanded_ = native::collapsible_panel::expanded(handle_);
-  size(native::control::size(handle_));
+  expanded_ = native::collapsible_panel::expanded(handle());
+  size(native::control::size(handle()));
   on_expanded_changed(event_args::empty);
 }
