@@ -56,6 +56,7 @@ In both examples, the background thread sleeps for one second to simulate work b
 ### Example: Use the xtd::forms::control::invoke method
 
 The following example demonstrates a pattern for ensuring thread-safe calls to a xtd.forms control. It queries the xtd::forms::control::invoke_required property, which compares the control's creating thread ID to the calling thread ID. If they're different, you should call the xtd::forms::control::invoke method.
+
 The *write_text_safe* enables setting the xtd::forms::text_box control's xtd::forms::control::text property to a new value. The method queries xtd::forms::control::invoke_required. If xtd::forms::control::invoke_required returns true, *write_text_safe* recursively calls itself, passing the method as a delegate to the xtd::forms::control::invoke method. If xtd::forms::control::invoke_required returns false, *write_text_safe* sets the xtd::forms::text_box::text directly. The *button1_click* event handler creates the new thread and runs the *write_text_safe* method.
 
 ```c++
@@ -75,7 +76,9 @@ void write_text_safe() {
 ### Example: Use a BackgroundWorker
 
 An easy way to implement multithreading is with the xtd::forms::background_worker component, which uses an event-driven model. The background thread raises the xtd::forms::background_worker::do_work event, which doesn't interact with the main thread. The main thread runs the xtd::forms::background_worker::progress_changed and xtd::forms::background_worker::run_worker_completed event handlers, which can call the main thread's controls.
+
 To make a thread-safe call by using xtd::forms::background_worker, handle the xtd::forms::background_worker::do_work event. There are two events the background worker uses to report status: xtd::forms::background_worker::progress_changed and xtd::forms::background_worker::run_worker_completed. The xtd::forms::background_worker::progress_changed event is used to communicate status updates to the main thread, and the xtd::forms::background_worker::run_worker_completed event is used to signal that the background worker has completed its work. To start the background thread, call xtd::forms::background_worker::run_worker_async.
+
 The example counts from 0 to 10 in the xtd::forms::background_worker::do_work event, pausing for one second between counts. It uses the xtd::forms::background_worker::progress_changed event handler to report the number back to the main thread and set the xtd::forms::text_box control's xtd::forms::text_box::text property. For the xtd::forms::background_worker::progress_changed event to work, the xtd::forms::background_worker::worker_reports_progress property must be set to true.
 
 ```c++
