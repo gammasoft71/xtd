@@ -303,7 +303,7 @@ control& control::fore_color(nullptr_t) {
 }
 
 intptr_t control::handle() const {
-  if (check_for_illegal_cross_thread_calls_ && invoke_required())
+  if (check_for_illegal_cross_thread_calls() && invoke_required())
     throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
   return handle_;
 }
