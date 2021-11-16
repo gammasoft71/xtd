@@ -3,6 +3,7 @@
 #include <set>
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/diagnostics/debug.h>
+#include <xtd/diagnostics/debugger.h>
 #include <xtd/diagnostics/trace_switch.h>
 #include <xtd/drawing/system_fonts.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
@@ -56,6 +57,8 @@ namespace {
     return name == "9f5767d6-7a21-4ebe-adfe-2427b2024a55" || name == "d014d407-851c-49c1-a343-3380496a639a";
   }
 }
+
+bool control::check_for_illegal_cross_thread_calls_ = diagnostics::debugger::is_attached();
 
 control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
 }
@@ -183,6 +186,14 @@ bool control::can_focus() const {
   return can_focus_;
 }
 
+bool control::check_for_illegal_cross_thread_calls() {
+  return check_for_illegal_cross_thread_calls_;
+}
+
+void control::check_for_illegal_cross_thread_calls(bool value) {
+  check_for_illegal_cross_thread_calls_ = value;
+}
+
 forms::cursor control::cursor() const {
   for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
     if (control->cursor_.has_value()) return control->cursor_.value();
@@ -292,7 +303,7 @@ control& control::fore_color(nullptr_t) {
 }
 
 intptr_t control::handle() const {
-  if (invoke_required())
+  if (check_for_illegal_cross_thread_calls_ && invoke_required())
     throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
   return handle_;
 }

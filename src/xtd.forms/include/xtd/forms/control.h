@@ -376,6 +376,17 @@ namespace xtd {
       /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
       virtual bool created() {return get_state(state::created);}
       
+      /// @brief Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
+      /// @return true if calls on the wrong thread are caught; otherwise, false.
+      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtdd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
+      /// @warning Be careful, some OS don't support cross-thread UI operations!
+      static bool check_for_illegal_cross_thread_calls();
+      /// @brief Sets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
+      /// @param value true if calls on the wrong thread are caught; otherwise, false.
+      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtdd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
+      /// @warning Be careful, some OS don't support cross-thread UI operations!
+      static void check_for_illegal_cross_thread_calls(bool value);
+
       /// @brief Gets the cursor that is displayed when the mouse pointer is over the control.
       /// @return A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
       virtual forms::cursor cursor() const;
@@ -1709,12 +1720,14 @@ namespace xtd {
       drawing::rectangle client_rectangle_;
       drawing::size client_size_;
       control_collection controls_;
+      static bool check_for_illegal_cross_thread_calls_;
       std::optional<forms::cursor> cursor_;
       dock_style dock_ = dock_style::none;
       bool focused_ = false;
       std::optional<drawing::color> fore_color_;
       std::optional<drawing::font> font_;
       intptr_t handle_ = 0;
+      std::thread::id handle_created_on_thread_id_;
       drawing::point location_;
       forms::padding margin_ {3};
       drawing::size maximum_size_;
@@ -1733,7 +1746,6 @@ namespace xtd {
       xtd::ustring text_;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
-      std::thread::id handle_created_on_thread_id_;
       /// @endcond
       
     private:
