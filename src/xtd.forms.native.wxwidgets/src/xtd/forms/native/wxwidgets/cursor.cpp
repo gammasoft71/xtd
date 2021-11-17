@@ -40,12 +40,11 @@ void cursor::destroy(intptr_t cursor) {
   delete reinterpret_cast<wxCursor*>(cursor);
 }
 
-#if defined (__APPLE__)
-#elif defined (__WXMSW__)
+#if defined (__WXMSW__)
 void cursor::hide() {
   ShowCursor(FALSE);
 }
-#else
+#elif !defined (__APPLE__)
 void cursor::hide() {
 }
 #endif
@@ -62,12 +61,11 @@ point cursor::position() {
   return {position.x, position.y};
 }
 
-#if defined (__APPLE__)
-#elif defined (__WXMSW__)
+#if defined (__WXMSW__)
 void cursor::position(const point& position) {
   SetCursorPos(position.x(), position.y());
 }
-#else
+#elif !defined (__APPLE__)
 void cursor::position(const point& position) {
   wxWindow* window = wxGetActiveWindow();
   if (window) {
@@ -81,12 +79,11 @@ drawing::size cursor::size(intptr_t cursor) {
   return {32, 32};
 }
 
-#if defined (__APPLE__)
-#elif defined (__WXMSW__)
+#if defined (__WXMSW__)
 void cursor::show() {
   ShowCursor(TRUE);
 }
-#else
+#elif !defined (__APPLE__)
 void cursor::show() {
 }
 #endif

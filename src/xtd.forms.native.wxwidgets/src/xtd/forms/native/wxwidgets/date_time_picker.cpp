@@ -1,4 +1,5 @@
 #include <tuple>
+#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/date_time_picker.h>
 #include <xtd/forms/native/content_alignment.h>
@@ -10,7 +11,8 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 std::chrono::system_clock::time_point date_time_picker::value(intptr_t control) {
-  if (!control) return {};
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (reinterpret_cast<control_handler*>(control)->control() == 0) return {};
   wxDateTime wx_date_time;
   if (dynamic_cast<wxTimePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control()))
     wx_date_time = static_cast<wxTimePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue();
@@ -20,7 +22,7 @@ std::chrono::system_clock::time_point date_time_picker::value(intptr_t control) 
 }
 
 void date_time_picker::value(intptr_t control, std::chrono::system_clock::time_point date_time) {
-  if (control == 0) return;
+  if (!control || !wxTheApp) throw argument_exception(csf_);
   wxDateTime wx_date_time {std::chrono::system_clock::to_time_t(date_time)};
   if (dynamic_cast<wxTimePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control()))
     static_cast<wxTimePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(wx_date_time);

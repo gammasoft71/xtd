@@ -1,3 +1,4 @@
+#include <xtd/argument_exception.h>
 #include <xtd/cdebug.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button.h>
@@ -8,6 +9,7 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 void button::set_default_button(intptr_t control) {
-  if (control == 0 || reinterpret_cast<wx_button*>(control)->owner_draw_) return;
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())->SetDefault();
 }

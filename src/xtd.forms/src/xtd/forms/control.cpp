@@ -916,7 +916,7 @@ void control::wnd_proc(message& message) {
 }
 
 void control::def_wnd_proc(message& message) {
-  if (is_handle_created()) message.result(native::control::def_wnd_proc(handle(), message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
+  if (is_handle_created() && message.handle()) message.result(native::control::def_wnd_proc(handle(), message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
 }
 
 void control::recreate_handle() {

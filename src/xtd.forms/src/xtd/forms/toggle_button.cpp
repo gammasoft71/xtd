@@ -63,7 +63,7 @@ toggle_button& toggle_button::check_state(forms::check_state check_state) {
       checked_ = check_state_ != forms::check_state::unchecked;
       on_checked_changed(event_args::empty);
     }
-    if (is_handle_created()) native::toggle_button::check_state(handle(), static_cast<int32_t>(check_state_));
+    if (is_handle_created() && flat_style_ == flat_style::system) native::toggle_button::check_state(handle(), static_cast<int32_t>(check_state_));
     on_check_state_changed(event_args::empty);
   }
   return *this;
@@ -102,7 +102,7 @@ drawing::size toggle_button::measure_control() const {
 
 void toggle_button::on_handle_created(const event_args &e) {
   button_base::on_handle_created(e);
-  native::toggle_button::check_state(handle(), static_cast<int32_t>(check_state_));
+  if (flat_style_ == flat_style::system) native::toggle_button::check_state(handle(), static_cast<int32_t>(check_state_));
   if (flat_style_ != xtd::forms::flat_style::system && check_state_ != xtd::forms::check_state::unchecked) invalidate();
 }
 

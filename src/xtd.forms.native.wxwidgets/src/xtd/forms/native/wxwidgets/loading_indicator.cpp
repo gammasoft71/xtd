@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/loading_indicator.h>
@@ -9,11 +10,13 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 void loading_indicator::start(intptr_t control) {
-  if (control == 0 || reinterpret_cast<wx_loading_indicator*>(control)->owner_draw_) return;
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   static_cast<wxActivityIndicator*>(reinterpret_cast<wx_loading_indicator*>(control)->control())->Start();
 }
 
 void loading_indicator::stop(intptr_t control) {
-  if (control == 0 || reinterpret_cast<wx_loading_indicator*>(control)->owner_draw_) return;
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   static_cast<wxActivityIndicator*>(reinterpret_cast<wx_loading_indicator*>(control)->control())->Stop();
 }
