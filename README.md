@@ -14,7 +14,7 @@
 ## Continuous Integration build status
 
 | Operating system | Build   | Status                                                                                                                                               |
-|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Windows (x64)    | Debug   | [![Windows (x64)](https://img.shields.io/appveyor/build/gammasoft71/xtd/master)](https://ci.appveyor.com/project/gammasoft71/xtd/branch/master)      |
 | macOS            | Debug   | [![macOS](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml) |
 | Ubuntu           | Debug   | [![Ubuntu](https://img.shields.io/circleci/build/github/gammasoft71/xtd)](https://circleci.com/gh/gammasoft71/xtd/tree/master)                       |
