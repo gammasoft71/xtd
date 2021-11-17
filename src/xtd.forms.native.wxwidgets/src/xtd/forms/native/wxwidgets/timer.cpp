@@ -1,9 +1,11 @@
 #include <stdexcept>
+#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/timer.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_timer.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <wx/app.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;
@@ -16,6 +18,7 @@ intptr_t timer::create(int32_t interval, const delegate<void(const event_args&)>
 }
 
 void timer::destroy(intptr_t handle) {
+  if (!handle || !wxTheApp) throw argument_exception(csf_);
   wx_timer* timer = reinterpret_cast<class wx_timer*>(handle);
   timer->timer().Stop();
   delete timer;

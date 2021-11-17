@@ -53,7 +53,7 @@ radio_button& radio_button::auto_check(bool auto_check) {
 radio_button& radio_button::checked(bool checked) {
   if (checked_ != checked) {
     checked_ = checked;
-    if (is_handle_created()) native::radio_button::checked(handle(), checked_);
+    if (is_handle_created() && flat_style_ == flat_style::system) native::radio_button::checked(handle(), checked_);
     on_checked_changed(event_args::empty);
     if (checked_ == true && auto_check_ == true && parent().has_value()) {
       for (auto control : parent().value().get().controls()) {
@@ -101,7 +101,7 @@ drawing::size radio_button::measure_control() const {
 
 void radio_button::on_handle_created(const event_args &e) {
   button_base::on_handle_created(e);
-  native::radio_button::checked(handle(), checked_);
+  if (flat_style_ == flat_style::system) native::radio_button::checked(handle(), checked_);
 }
 
 void radio_button::on_paint(paint_event_args& e) {

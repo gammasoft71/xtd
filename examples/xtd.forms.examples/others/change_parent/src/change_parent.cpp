@@ -98,6 +98,9 @@ private:
   horizontal_layout_panel top_panel;
   horizontal_layout_panel bottom_panel;
 
+  panel left_panel;
+  panel right_panel;
+
   label label1;
   list_box list_box1;
   toggle_button toggle_button1;
@@ -107,9 +110,6 @@ private:
   tab_page tab_page2;
   tab_page tab_page3;
   check_box check_box1;
-
-  panel left_panel;
-  panel right_panel;
 
   button left_button;
   button right_button;

@@ -34,8 +34,8 @@ forms::create_params command_link_button::create_params() const {
 void command_link_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   if (image_ != drawing::image::empty || (image_list_.images().size() && image_index_ > -1)) {
-    native::command_link_button::image(handle(), image_ != drawing::image::empty ? image_ : image_list_.images()[image_index_]);
-    native::command_link_button::image_align(handle(), static_cast<uint32_t>(image_align_));
+    if (flat_style_ == flat_style::system) native::command_link_button::image(handle(), image_ != drawing::image::empty ? image_ : image_list_.images()[image_index_]);
+    if (flat_style_ == flat_style::system) native::command_link_button::image_align(handle(), static_cast<uint32_t>(image_align_));
     if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text_);
     native::control::location(handle(), location_);
     native::control::size(handle(), size_);

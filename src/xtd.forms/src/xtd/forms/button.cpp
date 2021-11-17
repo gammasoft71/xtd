@@ -34,7 +34,7 @@ void button::notify_default(bool value) {
   if (enabled()) state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
   if (flat_style_ != xtd::forms::flat_style::system) invalidate();
   else {
-    if (is_handle_created() && value) native::button::set_default_button(handle());
+    if (is_handle_created() && value && flat_style_ == xtd::forms::flat_style::system) native::button::set_default_button(handle());
     else recreate_handle();
   }
 }
@@ -73,7 +73,7 @@ void button::on_handle_created(const event_args& e) {
       native::control::location(handle(), location_);
       native::control::size(handle(), size_);
     }
-    if (default_button_) native::button::set_default_button(handle());
+    if (default_button_ && flat_style_ == xtd::forms::flat_style::system) native::button::set_default_button(handle());
   }
 }
 
