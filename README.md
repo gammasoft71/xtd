@@ -13,7 +13,6 @@
 
 ## Continuous Integration build status
 
-<!---
 | Operating system | Build   | Status                                                                                                                                         |
 |------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Windows (x64)    | Debug   | [![Build status](https://img.shields.io/appveyor/build/gammasoft71/xtd/master)](https://ci.appveyor.com/project/gammasoft71/xtd/branch/master) |
@@ -21,8 +20,8 @@
 | Ubuntu           | Debug   | [![CircleCI](https://img.shields.io/circleci/build/github/gammasoft71/xtd)](https://circleci.com/gh/gammasoft71/xtd/tree/master)               |
 | iOS (**)         | Debug   | Coming soon...                                                                                                                                 |
 | Android (**)     | Debug   | Coming soon...                                                                                                                                 |
--->
 
+<!---
 | Operating system | Build   | Status                                                                                                                                                                                                 |
 |------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Windows (win32)  | Debug   | [![Windows (win32) Debug](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml/badge.svg)](https://github.com/gammasoft71/xtd/actions/workflows/windows_win32.yml)                   |
@@ -37,6 +36,7 @@
 | iOS (**)         | Release | Coming soon...                                                                                                                                                                                         |
 | Android (**)     | Debug   | Coming soon...                                                                                                                                                                                         |
 | Android (**)     | Release | Coming soon...                                                                                                                                                                                         |
+-->
 
  (**) [xtd.core and xtd.tunit only](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list).
  
