@@ -10,10 +10,10 @@ void __xtd_macos_enable_light_mode__() {
 }
 
 bool __xtd_macos_dark_mode_enabled__() {
-#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_VERSION_11
-  return [[[NSAppearance currentDrawingAppearance] name] isEqualToString:(NSAppearanceNameDarkAqua)];
-#else
+#if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_VERSION_11
   return [[[NSAppearance currentAppearance] name] isEqualToString:(NSAppearanceNameDarkAqua)];
+#else
+  return [[[NSAppearance currentDrawingAppearance] name] isEqualToString:(NSAppearanceNameDarkAqua)];
 #endif
 }
 
