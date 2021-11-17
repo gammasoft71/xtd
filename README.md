@@ -13,13 +13,13 @@
 
 ## Continuous Integration build status
 
-| Operating system | Build   | Status                                                                                                                                          |
-|------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| Windows (x64)    | Debug   | [![Windows (x64)](https://img.shields.io/appveyor/build/gammasoft71/xtd/master)](https://ci.appveyor.com/project/gammasoft71/xtd/branch/master) |
-| macOS            | Debug   | [![macOS](https://img.shields.io/github/checks-status/gammasoft71/xtd/master)](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml)  |
-| Ubuntu           | Debug   | [![Ubuntu](https://img.shields.io/circleci/build/github/gammasoft71/xtd)](https://circleci.com/gh/gammasoft71/xtd/tree/master)                  |
-| iOS (**)         |         | Coming soon...                                                                                                                                  |
-| Android (**)     |         | Coming soon...                                                                                                                                  |
+| Operating system | Build   | Status                                                                                                                                                         |
+|------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Windows (x64)    | Debug   | [![Windows (x64)](https://img.shields.io/appveyor/build/gammasoft71/xtd/master)](https://ci.appveyor.com/project/gammasoft71/xtd/branch/master)                |
+| macOS            | Debug   | [![macOS](https://img.shields.io/github/workflow/status/gammasoft71/xtd/macOS%20Debug/master)](https://github.com/gammasoft71/xtd/actions/workflows/macos.yml) |
+| Ubuntu           | Debug   | [![Ubuntu](https://img.shields.io/circleci/build/github/gammasoft71/xtd)](https://circleci.com/gh/gammasoft71/xtd/tree/master)                                 |
+| iOS (**)         |         | Coming soon...                                                                                                                                                 |
+| Android (**)     |         | Coming soon...                                                                                                                                                 |
 
  (**) [xtd.core and xtd.tunit only](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list).
  
