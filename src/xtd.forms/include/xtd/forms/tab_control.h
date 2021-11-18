@@ -83,6 +83,9 @@ namespace xtd {
 
       drawing::size measure_control() const override;
 
+      void on_control_added(const control_event_args &e) override;
+      void on_control_removed(const control_event_args &e) override;
+
       void on_handle_created(const event_args& e) override;
 
       /// @brief Raises the tab_control::selected_index_changed event.
