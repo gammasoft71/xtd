@@ -66,6 +66,16 @@ drawing::size tab_control::measure_control() const {
   return drawing::size(bounds.location() + bounds.size());
 }
 
+void tab_control::on_control_added(const control_event_args &e) {
+  control::on_control_added(e);
+  if (selected_index_ == npos) selected_index_ = 0;
+}
+
+void tab_control::on_control_removed(const control_event_args &e) {
+  control::on_control_removed(e);
+  if (controls().size() == 0) selected_index_ = -1;
+}
+
 void tab_control::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::tab_control::image_list(handle(), image_list_.handle());
