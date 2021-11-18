@@ -28,6 +28,7 @@ void form::activate(intptr_t control) {
 
 void form::close(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->Close();
 }
 
