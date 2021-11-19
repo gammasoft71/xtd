@@ -41,30 +41,37 @@ namespace xtd {
         }
 
         virtual void SetBackgroundColour(const wxColour& colour) {
+          if (!control_) return;
           control_->SetBackgroundColour(colour);
         }
 
         virtual void SetCursor(const wxCursor& cursor) {
+          if (!control_) return;
           control_->SetCursor(cursor);
         }
 
         virtual void SetForegroundColour(const wxColour& colour) {
+          if (!control_) return;
           control_->SetForegroundColour(colour);
         }
 
         virtual void SetPosition(const wxPoint& pt) {
+          if (!control_) return;
           control_->SetPosition(pt);
         }
 
         virtual wxSize GetClientSize() const {
+          if (!control_) return {};
           return control_->GetClientSize();
         }
 
         virtual void SetClientSize(int32_t width, int32_t height) {
+          if (!control_) return;
           control_->SetClientSize(width, height);
         }
 
         virtual void SetSize(int32_t width, int32_t height) {
+          if (!control_) return;
           control_->SetSize(width, height);
         }
 
@@ -79,11 +86,11 @@ namespace xtd {
         }
 
         wxWindow* control() const { return control_; }
-        virtual wxWindow* main_control() const { return control_->GetMainWindowOfCompositeControl(); }
+        virtual wxWindow* main_control() const { return !control_ ? nullptr : control_->GetMainWindowOfCompositeControl(); }
 
         void reset_control() { control_ = nullptr; }
 
-        virtual bool enable_send_paint_event() const { return control() == main_control(); }
+        virtual bool enable_send_paint_event() const { return control() && control() == main_control(); }
 
         void clear_control() { control_ = nullptr; }
 
