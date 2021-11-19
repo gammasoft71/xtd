@@ -19,6 +19,7 @@ intptr_t timer::create(int32_t interval, const delegate<void(const event_args&)>
 
 void timer::destroy(intptr_t handle) {
   if (!handle) throw argument_exception(csf_);
+  if (!wxTheApp) return;
   wx_timer* timer = reinterpret_cast<class wx_timer*>(handle);
   timer->timer().Stop();
   delete timer;
