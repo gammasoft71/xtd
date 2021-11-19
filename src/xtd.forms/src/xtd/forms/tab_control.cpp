@@ -73,7 +73,7 @@ void tab_control::on_control_added(const control_event_args &e) {
 
 void tab_control::on_control_removed(const control_event_args &e) {
   control::on_control_removed(e);
-  if (controls().size() == 0L) selected_index_ = -1;
+  if (controls().size() == 0) selected_index_ = npos;
 }
 
 void tab_control::on_handle_created(const event_args& e) {
