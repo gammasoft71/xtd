@@ -54,6 +54,7 @@ radio_button& radio_button::checked(bool checked) {
   if (checked_ != checked) {
     checked_ = checked;
     if (is_handle_created() && flat_style_ == flat_style::system) native::radio_button::checked(handle(), checked_);
+    if (flat_style_ != flat_style::system) invalidate();
     on_checked_changed(event_args::empty);
     if (checked_ == true && auto_check_ == true && parent().has_value()) {
       for (auto control : parent().value().get().controls()) {
