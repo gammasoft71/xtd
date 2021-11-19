@@ -27,11 +27,11 @@ namespace examples {
       link_label2.auto_size(true);
       link_label2.parent(*this);
       link_label2.text("Gammasoft presents xtd framework");
-      link_label2.links().push_back({0, 9, "https://gammasoft71.wixsite.com/gammasoft"_s});
-      link_label2.links().push_back({19, 3, "https://gammasoft71.wixsite.com/xtdpro"_s});
+      link_label2.links().push_back({0, 9, "https://gammasoft71.wixsite.com/gammasoft"});
+      link_label2.links().push_back({19, 3, "https://gammasoft71.wixsite.com/xtdpro"});
       link_label2.link_clicked += [](object& sender, link_label_clicked_event_args& e) {
         e.visited(true);
-        process::start(as<string>(e.link().link_data()));
+        process::start(as<ustring>(e.link().link_data()));
       };
 
       link_label3.location({10, 70});
