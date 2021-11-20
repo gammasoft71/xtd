@@ -186,7 +186,7 @@ namespace xtd {
             def_process_event(1, event);
 #if !defined(__APPLE__)
             // Workaround : Floating frame on parent frame does not close on wxEVT_CLOSE_WINDOW. Then destroys it.
-            if (event_handler_->control() && (event_handler_->control()->GetWindowStyle() & wxFRAME_FLOAT_ON_PARENT) == wxFRAME_FLOAT_ON_PARENT) event_handler_->destroy();
+            if (event_handler_->control() && (event_handler_->control()->GetWindowStyle() & wxFRAME_FLOAT_ON_PARENT) == wxFRAME_FLOAT_ON_PARENT) event_handler_->control()->Destroy();
 #endif
           }
         }
