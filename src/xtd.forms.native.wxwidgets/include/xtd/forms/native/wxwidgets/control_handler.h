@@ -18,26 +18,13 @@ namespace xtd {
         void create(args_type&& ...args) {
           control_ = new control_wrapper<control_type>(this, args...);
           control_->SetClientData(this);
-          destroyed_ = false;
           def_wnd_proc = std::bind(&control_wrapper<control_type>::def_wnd_proc, static_cast<control_wrapper<control_type>*>(control_), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6);
         }
 
-        void destroy() {
-          def_wnd_proc = nullptr;
-          wnd_proc = nullptr;
-          destroyed_ = true;
-          control_->Destroy();
-        }
-
         intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
-          if (destroyed_) return 0;
           if (xtd::drawing::native::wx_application::message_filter(hwnd, msg, wparam, lparam, handle)) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 1, handle);
           if (!wnd_proc) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 0, handle);
-
-          //return wnd_proc(hwnd, msg, wparam, lparam, handle);
-          intptr_t result = 0;
-          if (wnd_proc && !destroyed_) result = wnd_proc(hwnd, msg, wparam, lparam, handle);
-          return result;
+          return wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
 
         virtual void SetBackgroundColour(const wxColour& colour) {
@@ -101,7 +88,6 @@ namespace xtd {
 
       private:
         wxWindow* control_ = nullptr;
-        bool destroyed_ = false;
       };
     }
   }
