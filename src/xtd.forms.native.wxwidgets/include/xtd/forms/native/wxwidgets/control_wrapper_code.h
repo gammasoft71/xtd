@@ -18,10 +18,7 @@ namespace xtd {
         if (event_handler_ == nullptr) return false;
         if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
         //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", ustring::full_class_name<control_t>(), to_string(event)));
-        if (event.GetEventType() == wxEVT_DESTROY) {
-          //def_process_event(event);
-          return process_result_;
-        }
+        if (event.GetEventType() == wxEVT_DESTROY) return process_result_;
 
         if (is_clipboard_event(event.GetEventType())) process_clipboard_event(event);
         else if (is_command_event(event.GetEventType())) process_command_event(event);

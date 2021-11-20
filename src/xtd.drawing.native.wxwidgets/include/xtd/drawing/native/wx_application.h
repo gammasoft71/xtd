@@ -53,6 +53,11 @@ namespace xtd {
           return wxApp::ProcessEvent(event);
         }
         
+        bool ProcessIdle() override {
+          processIdle();
+          return wxApp::wxAppBase::ProcessIdle();
+        }
+        
         intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           return wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
@@ -66,6 +71,7 @@ namespace xtd {
         xtd::event<wx_application, xtd::delegate<bool()>> thread_exception;
         
         std::exception_ptr exceptionStored;
+        xtd::delegate<void()> processIdle;
       };
     }
   }
