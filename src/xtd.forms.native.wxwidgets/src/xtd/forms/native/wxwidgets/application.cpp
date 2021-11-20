@@ -38,6 +38,16 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 using namespace xtd::forms::native;
 
+std::vector<control_handler*> __control_handler_to_delete_items__;
+
+namespace {
+  void process_idle() {
+    for (control_handler* item : __control_handler_to_delete_items__)
+      delete item;
+    __control_handler_to_delete_items__.clear();
+  }
+}
+
 event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
 
 bool application::allow_quit() {
@@ -126,6 +136,7 @@ void application::exit() {
 
 void application::initialize() {
   drawing::native::toolkit::initialize();
+  static_cast<wx_application*>(wxApp::GetInstance())->processIdle += process_idle;
 #if defined(__WXMSW__)
   init_dark_mode(__xtd_win32_enable_dark_mode__);
 #elif defined(__WXGTK__)

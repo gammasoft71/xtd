@@ -59,6 +59,8 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+extern std::vector<control_handler*> __control_handler_to_delete_items__;
+
 namespace {
   intptr_t set_control_extra_options(intptr_t control) {
     allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
@@ -149,7 +151,8 @@ void control::destroy(intptr_t control) {
   if (!control) throw argument_exception(csf_);
   if (reinterpret_cast<control_handler*>(control)->control() == 0 || !wxTheApp) return;
   reinterpret_cast<control_handler*>(control)->destroy();
-  delete reinterpret_cast<class control_handler*>(control);
+  // Do not delete control_handler here because wxwidgets defers the deletion of wxWindow in the idle event so the deletion of handler_control will also be done in the idle event.
+  __control_handler_to_delete_items__.push_back(reinterpret_cast<class control_handler*>(control));
 }
 
 drawing::rectangle control::client_rectangle(intptr_t control) {
