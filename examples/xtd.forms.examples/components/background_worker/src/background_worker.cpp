@@ -13,10 +13,8 @@ namespace examples {
       text("Background worker example");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-      controls().push_back_range({panel_command, progress});
       form_closed += [&] {
-        if (worker.is_busy())
-          worker.cancel_async();
+        worker.cancel_async();
       };
       
       panel_command.parent(*this);
