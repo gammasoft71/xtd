@@ -11,7 +11,10 @@ using namespace xtd::forms::native;
 
 void picture_box::image(intptr_t control, const drawing::image& image) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   wxSize current_size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
   static_cast<wxStaticBitmapBase*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
   if (reinterpret_cast<wx_picture_box*>(control)->auto_size) {
@@ -25,6 +28,9 @@ void picture_box::image(intptr_t control, const drawing::image& image) {
 
 void picture_box::reset(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   static_cast<wxStaticBitmapBase*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmap(wxNullBitmap);
 }
