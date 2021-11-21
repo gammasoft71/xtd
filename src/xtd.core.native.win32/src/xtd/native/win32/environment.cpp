@@ -68,7 +68,7 @@ std::map<std::string, std::string>& environment::get_environment_variables(int32
 std::string environment::get_know_folder_path(int32_t id) {
   if (id == CSIDL_HOME) {
     auto path = win32::strings::to_wstring(getenv("HOMEPATH"));
-    return path.empty() ? win32::strings::to_string(path) : "";
+    return path.empty() ? "" : win32::strings::to_string(path);
   }
   wchar_t path[MAX_PATH + 1];
   return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path) == S_OK ? win32::strings::to_string(path) : "";
