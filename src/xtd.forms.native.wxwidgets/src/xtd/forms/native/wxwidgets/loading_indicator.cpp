@@ -11,12 +11,18 @@ using namespace xtd::forms::native;
 
 void loading_indicator::start(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   static_cast<wxActivityIndicator*>(reinterpret_cast<wx_loading_indicator*>(control)->control())->Start();
 }
 
 void loading_indicator::stop(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   static_cast<wxActivityIndicator*>(reinterpret_cast<wx_loading_indicator*>(control)->control())->Stop();
 }

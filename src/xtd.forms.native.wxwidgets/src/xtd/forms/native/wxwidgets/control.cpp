@@ -78,7 +78,10 @@ extern int32_t __mainloop_runnning__;
 
 void control::back_color(intptr_t control, const color& color) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
 
@@ -143,7 +146,11 @@ intptr_t control::create_graphics(intptr_t control) {
 
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
   if (!control || !handle) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return static_cast<intptr_t>(-1);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return static_cast<intptr_t>(-1);
+  }
+
   return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
 }
 
@@ -157,57 +164,84 @@ void control::destroy(intptr_t control) {
 
 drawing::rectangle control::client_rectangle(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return {};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return {};
+  }
   wxRect rect = reinterpret_cast<control_handler*>(control)->control()->GetClientRect();
   return {{rect.GetX(), rect.GetY()}, client_size(control)};
 }
 
 drawing::size control::client_size(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return {};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return {};
+  }
   wxSize size = reinterpret_cast<control_handler*>(control)->GetClientSize();
   return {size.GetWidth(), size.GetHeight()};
 }
 
 void control::client_size(intptr_t control, const drawing::size& size) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->SetClientSize(size.width(), size.height());
 }
 
 void control::cursor(intptr_t control, intptr_t cursor) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->SetCursor(cursor ? *reinterpret_cast<wxCursor*>(cursor) : wxNullCursor);
 }
 
 bool control::enabled(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return false;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return false;
+  }
   return reinterpret_cast<control_handler*>(control)->control()->IsEnabled();
 }
 
 void control::enabled(intptr_t control, bool enabled) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->control()->Enable(enabled);
 }
 
 void control ::focus(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->control()->SetFocus();
 }
 
 void control::fore_color(intptr_t control, const color& color) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
 
 void control::font(intptr_t control, const drawing::font& font) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->control()->SetFont(*reinterpret_cast<wxFont*>(font.handle()));
 }
 
@@ -215,7 +249,10 @@ void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vect
   if (!control || !wxTheApp || !wxTheApp->IsMainLoopRunning() || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled()) {
     invoked->unlock();
   } else {
-    if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+    if (!reinterpret_cast<control_handler*>(control)->control()) {
+      wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+      return;
+    }
     reinterpret_cast<control_handler*>(control)->control()->CallAfter([=] {
       invoker(args);
       *completed = true;
@@ -226,101 +263,149 @@ void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vect
 
 point control::location(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return {};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return {};
+  }
   wxPoint location = reinterpret_cast<control_handler*>(control)->control()->GetPosition();
   return {location.x, location.y};
 }
 
 void control::location(intptr_t control, const point& location) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->SetPosition({location.x(), location.y()});
 }
 
 drawing::point control::point_to_screen(intptr_t control, const drawing::point& p) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return {};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return {};
+  }
   wxPoint result = reinterpret_cast<control_handler*>(control)->control()->ClientToScreen(wxPoint(p.x(), p.y()));
   return {result.x, result.y};
 }
 
 drawing::point control::point_to_client(intptr_t control, const drawing::point& p) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return {};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return {};
+  }
   wxPoint result = reinterpret_cast<control_handler*>(control)->control()->ScreenToClient(wxPoint(p.x(), p.y()));
   return {result.x, result.y};
 }
 
 drawing::size control::size(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return {};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return {};
+  }
   wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
   return {size.GetWidth(), size.GetHeight()};
 }
 
 void control::size(intptr_t control, const drawing::size& size) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
 }
 
 ustring control::text(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return "";
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return "";
+  }
   return xtd::convert_string::to_string(reinterpret_cast<control_handler*>(control)->control()->GetLabel().c_str().AsWChar());
 }
 
 void control::text(intptr_t control, const ustring& text) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->control()->SetLabel(convert_string::to_wstring(text));
 }
 
 bool control::visible(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return false;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return false;
+  }
   return reinterpret_cast<control_handler*>(control)->control()->IsShown();
 }
 
 void control::visible(intptr_t control, bool visible) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->control()->Show(visible);
 }
 
 void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->main_control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), erase_background);
   reinterpret_cast<control_handler*>(control)->main_control()->Update();
 }
 
 void control::refresh(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->main_control()->Refresh();
 }
 
 void control::update(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->main_control()->Update();
 }
 
 void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   if (!control) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->wnd_proc = wnd_proc;
 }
 
 void control::unregister_wnd_proc(intptr_t control) {
   if (!control) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->wnd_proc = nullptr;
 }
 
 intptr_t control::send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
   if (!control) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return static_cast<intptr_t>(-1);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return static_cast<intptr_t>(-1);
+  }
   return reinterpret_cast<control_handler*>(control)->send_message(hwnd, msg, wparam, lparam, 0);
 }

@@ -22,19 +22,28 @@ void __toggle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
 
 void form::activate(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->control()->Raise();
 }
 
 void form::close(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->control()->Close();
 }
 
 bool form::full_screen(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return false;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return false;
+  }
 #if defined(__APPLE__)
   return __toggle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
 #else
@@ -44,7 +53,10 @@ bool form::full_screen(intptr_t control) {
 
 void form::full_screen(intptr_t control, bool full_screen) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
 #if defined(__APPLE__)
   __toggle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), full_screen);
 #else
@@ -54,14 +66,20 @@ void form::full_screen(intptr_t control, bool full_screen) {
 
 void form::icon(intptr_t control, const xtd::drawing::icon& icon) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   if (icon == drawing::icon::empty) static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetIcon(wxIcon());
   else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
 }
 
 bool form::maximize(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return false;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return false;
+  }
 #if defined(__WXGTK__)
     xtd::drawing::size form_size = control::size(control);
     xtd::drawing::size screen_size = screen::working_area(screen::from_handle(control)).size();
@@ -73,13 +91,19 @@ bool form::maximize(intptr_t control) {
 
 void form::maximize(intptr_t control, bool maximize) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->Maximize(maximize);
 }
 
 void form::menu(intptr_t control, intptr_t menu) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
   if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) {
     if (menu != 0) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
@@ -90,7 +114,10 @@ void form::menu(intptr_t control, intptr_t menu) {
 
 bool form::minimize(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return false;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return false;
+  }
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsIconized();
 }
 
@@ -101,7 +128,10 @@ void form::minimize(intptr_t control, bool minimize) {
 
 void form::restore(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   full_screen(control, false);
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->Restore();
 #if defined(__WXGTK__)
@@ -112,7 +142,10 @@ void form::restore(intptr_t control) {
 
 int32_t form::show_dialog(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return 0;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return 0;
+  }
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_dialog work only with dialog"_t, current_stack_frame_);
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   return dialog->ShowModal();
@@ -120,7 +153,10 @@ int32_t form::show_dialog(intptr_t control) {
 
 void form::show_sheet(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet work only with dialog"_t, current_stack_frame_);
 #if defined(__APPLE__)
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowWindowModal();
@@ -131,7 +167,10 @@ void form::show_sheet(intptr_t control) {
 
 int32_t form::show_sheet_dialog(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return 0;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return 0;
+  }
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet_dialog work only with dialog"_t, current_stack_frame_);
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
 #if defined(__APPLE__)
@@ -153,20 +192,29 @@ int32_t form::show_sheet_dialog(intptr_t control) {
 
 void form::end_dialog(intptr_t control, int32_t result) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("end_dialog work only with dialog"_t, current_stack_frame_);
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->EndModal(result);
 }
 
 void form::opacity(intptr_t control, double opacity) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetTransparent(static_cast<uint8_t>(255 * (1.0 - opacity)));
 }
 
 void form::virtual_size(intptr_t control, const drawing::size& size) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   reinterpret_cast<control_handler*>(control)->main_control()->SetVirtualSize(wxSize(size.width(), size.height()));
   if (dynamic_cast<wxMainPanel*>(reinterpret_cast<control_handler*>(control)->main_control())) static_cast<wxMainPanel*>(reinterpret_cast<control_handler*>(control)->main_control())->SetScrollRate(10, 10);
 }

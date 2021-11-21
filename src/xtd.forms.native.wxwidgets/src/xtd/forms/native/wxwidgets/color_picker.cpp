@@ -11,13 +11,19 @@ using namespace xtd::forms::native;
 
 color color_picker::color(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return {};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return {};
+  }
   wxColour colour = static_cast<wxColourPickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetColour();
   return color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
 }
 
 void color_picker::color(intptr_t control, const drawing::color& color) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
   static_cast<wxColourPickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
