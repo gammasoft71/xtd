@@ -33,16 +33,19 @@ namespace xtd {
           // Workaround : with wxWidgets version <= 3.1.4 when wxSpinCtrlDouble lost focus the value is changed by error.
           value_ = static_cast<wxSpinCtrlDouble*>(control())->GetValue();
           control()->Bind(wxEVT_SPINCTRLDOUBLE, [&](wxCommandEvent& event) {
+            if (!control()) return;
             value_ = static_cast<wxSpinCtrlDouble*>(control())->GetValue();
             refresh_ = true;
           });
           
           control()->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
+            if (!control()) return;
             value_ = static_cast<wxSpinCtrlDouble*>(control())->GetValue();
             refresh_ = false;
           });
           
           control()->Bind(wxEVT_KILL_FOCUS, [&](wxFocusEvent& event) {
+            if (!control()) return;
             if (refresh_) static_cast<wxSpinCtrlDouble*>(control())->SetValue(value_);
           });
           // <-- Workaround
