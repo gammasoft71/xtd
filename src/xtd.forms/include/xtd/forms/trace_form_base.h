@@ -76,6 +76,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the trace_form_base class with specified caption text.
       /// @param text A string that represent the caption text oof the debug form.
       trace_form_base(const xtd::ustring& text) {
+        close_box(false);
         name("9f5767d6-7a21-4ebe-adfe-2427b2024a55");
         text_.name("d014d407-851c-49c1-a343-3380496a639a");
 
@@ -98,12 +99,6 @@ namespace xtd {
       
       void on_fore_color_changed(const xtd::event_args& e) override {
         text_.fore_color(fore_color());
-      }
-
-      void on_form_closing(form_closing_event_args& e) override {
-        e.cancel(true);
-        window_state(form_window_state::minimized);
-        form::on_form_closing(e);
       }
 
       /// @brief Writes trace string to the multiline text.
