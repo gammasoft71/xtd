@@ -32,16 +32,19 @@ namespace xtd {
           }
 #endif
 
-          timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
-            if (event.GetTimer().GetId() == timer_marquee.GetId() && !static_cast<wxGauge*>(control())->IsBeingDeleted())
-              static_cast<wxGauge*>(control())->Pulse();
-          });
+          timer_marquee.Bind(wxEVT_TIMER, &wx_progress_bar::on_progrress_marquee_timer, this);
         }
-        
+
         ~wx_progress_bar() {
+          timer_marquee.Unbind(wxEVT_TIMER, &wx_progress_bar::on_progrress_marquee_timer, this);
           timer_marquee.Stop();
         }
 
+        void on_progrress_marquee_timer(wxTimerEvent& event) {
+          if (event.GetTimer().GetId() == timer_marquee.GetId() && control() && !static_cast<wxGauge*>(control())->IsBeingDeleted())
+            static_cast<wxGauge*>(control())->Pulse();
+        }
+  
         void marquee(bool marquee, size_t animation_speed) {
           if (marquee) timer_marquee.Start(static_cast<int32_t>(animation_speed));
           else timer_marquee.Stop();
