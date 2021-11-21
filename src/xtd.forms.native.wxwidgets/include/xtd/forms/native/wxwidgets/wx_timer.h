@@ -19,17 +19,23 @@ namespace xtd {
         friend xtd::forms::native::timer;
       private:
         wx_timer(delegate<void(const event_args&)> tick) : tick_(tick) {
-          timer_.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
-            try {
-              tick_(event_args::empty);
-            } catch(...) {
-            }
-          });
+          timer_.Bind(wxEVT_TIMER, &wx_timer::on_tick, this);
+        }
+
+        ~wx_timer() {
+          timer_.Unbind(wxEVT_TIMER, &wx_timer::on_tick, this);
+        }
+
+        wxTimer& timer() {return timer_;}
+
+      private:
+        void on_tick(wxTimerEvent& event) {
+          try {
+            tick_(event_args::empty);
+          } catch (...) {
+          }
         }
         
-        wxTimer& timer() {return timer_;}
-        
-      private:
         delegate<void(const event_args&)> tick_;
         wxTimer timer_;
       };
