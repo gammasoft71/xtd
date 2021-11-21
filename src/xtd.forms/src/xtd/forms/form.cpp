@@ -415,17 +415,19 @@ void form::wm_activate(message &message) {
 void form::wm_close(message &message) {
   form_closing_event_args event_args;
   on_form_closing(event_args);
+  message.result(event_args.cancel() == true);
   if (event_args.cancel() != true) {
     can_close_ = true;
     hide();
-    if (get_state(state::modal)) {
+    if (!get_state(state::modal))
+      destroy_control();
+    else {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
       application::raise_leave_thread_modal(event_args::empty);
       parent_ = parent_before_show_dialog_;
       set_state(state::modal, false);
     }
-    message.result(1);
     on_form_closed(form_closed_event_args());
   }
 }
