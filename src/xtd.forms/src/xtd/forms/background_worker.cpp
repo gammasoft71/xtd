@@ -8,7 +8,10 @@ background_worker::background_worker() {
 }
 
 background_worker::~background_worker() {
-  if (thread_.joinable()) thread_.join();
+  if (thread_.joinable()) {
+    if (cancellation_pending_) thread_.detach();
+    else thread_.join();
+  }
 }
 
 void background_worker::cancel_async() {
