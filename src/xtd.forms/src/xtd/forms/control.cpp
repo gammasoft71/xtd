@@ -1142,8 +1142,9 @@ void control::wm_mouse_up(message& message) {
   mouse_buttons_ &= ~e.button();
   /// @todo Fix check ckient rect mouse up when client rect will updated when form is moved on other screen.
   //if (client_rectangle().contains(e.location()))
-  on_click(event_args::empty);
-  on_mouse_click(e);
+    on_click(event_args::empty);
+    on_mouse_click(e);
+  //}
   on_mouse_up(e);
 }
 
