@@ -19,8 +19,6 @@ xtdc run
 # Output
 
 ```
-my_vl
-    size:    3
-    Capacity: 4
-    Values:   Hello   World   !
+-16 = -16: Round-trips
+-16 = 4294967280: Round-trip
 ```
