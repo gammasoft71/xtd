@@ -75,22 +75,22 @@ namespace xtd {
     /// @return Returns true if the architecture is big-endian; false if it is little-endian.
     /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
     /// @par Examples
-    /// The following code example illustrates the use of the is_little_endian field.
-    /// @include bit_converters_is_big_endian.cpp
+    /// The following code example illustrates the use of the is_big_endian field.
+    /// @include bit_converter_is_big_endian.cpp
     static constexpr bool is_big_endian = __endian_query__ == 0x01;
     /// @brief Indicates the byte_t order ("endianness") in which data is stored in this computer architecture.
     /// @return Returns true if the architecture is little-endian; false if it is big-endian.
     /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
     /// @par Examples
     /// The following code example illustrates the use of the is_little_endian field.
-    /// @include bit_converters_is_little_endian.cpp
+    /// @include bit_converter_is_little_endian.cpp
     static constexpr bool is_little_endian = __endian_query__ == 0x04;
     /// @brief Indicates the byte_t order ("endianness") in which data is stored in this computer architecture.
     /// @return Returns One of xtd::bit_converter::endian values.
     /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
     /// @par Examples
-    /// The following code example illustrates the use of the is_little_endian field.
-    /// @include bit_converters_endianness.cpp
+    /// The following code example illustrates the use of the endianness field.
+    /// @include bit_converter_endianness.cpp
     static constexpr endian endianness = is_little_endian ? endian::little : endian::big;
     
     /// @brief Converts the specified double-precision floating point number to a 64-bit signed integer.
