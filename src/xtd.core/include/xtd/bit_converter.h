@@ -49,7 +49,7 @@ namespace xtd {
   class core_export_ bit_converter final static_ {
   private:
     static constexpr uint32_t __endian_value__ = 0x01020304;
-    static constexpr int8_t __endian_query__ = (const uint8_t&)__endian_value__;
+    static constexpr uint8_t __endian_query__ = static_cast<const uint8_t&>(__endian_value__);
 
   public:
     /// @brief Represents the byte_t order ("endianness") in which data is stored in this computer architecture.
@@ -77,14 +77,14 @@ namespace xtd {
     /// @par Examples
     /// The following code example illustrates the use of the is_big_endian field.
     /// @include bit_converter_is_big_endian.cpp
-    static constexpr bool is_big_endian = __endian_query__ == 0x01;
+    static constexpr bool is_big_endian = __endian_query__ == 0x01U;
     /// @brief Indicates the byte_t order ("endianness") in which data is stored in this computer architecture.
     /// @return Returns true if the architecture is little-endian; false if it is big-endian.
     /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
     /// @par Examples
     /// The following code example illustrates the use of the is_little_endian field.
     /// @include bit_converter_is_little_endian.cpp
-    static constexpr bool is_little_endian = __endian_query__ == 0x04;
+    static constexpr bool is_little_endian = __endian_query__ == 0x04U;
     /// @brief Indicates the byte_t order ("endianness") in which data is stored in this computer architecture.
     /// @return Returns One of xtd::bit_converter::endian values.
     /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
