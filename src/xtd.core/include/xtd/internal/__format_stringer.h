@@ -260,6 +260,13 @@ inline std::basic_string<char_t> __format_stringer(value_t value) {
   return ss.str();
 }
 
+template<typename char_t, typename value_t>
+inline std::basic_string<char_t> __format_stringer(const bool& value) {
+  std::basic_stringstream<char_t> ss;
+  ss << std::boolalpha << value;
+  return ss.str();
+}
+
 template<typename char_t, typename value_t, int32_t len>
 inline std::basic_string<char_t> __format_stringer(const char*& value) {
   std::basic_stringstream<char_t> ss;
