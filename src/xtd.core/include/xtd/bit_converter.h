@@ -47,7 +47,20 @@ namespace xtd {
   /// The following code example illustrates the use of several bit_converter class methods.
   /// @include bit_converter.cpp
   class core_export_ bit_converter final static_ {
+  private:
+    static constexpr uint32_t __endian_value__ = 0x01020304;
+    static constexpr int8_t __endian_query__ = (const uint8_t&)__endian_value__;
+
   public:
+    /// @brief Represents the byte_t order ("endianness") in which data is stored in this computer architecture.
+    /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
+    enum class endian {
+      /// @brief Represnets "Little-endian" order.
+      little,
+      /// @brief Represnets "Big-endian" order.
+      big,
+    };
+    
     /// @cond
 #if defined(__linux__) && defined(_LP64)
     using llong = long long int;
@@ -59,13 +72,27 @@ namespace xtd {
     /// @endcond
 
     /// @brief Indicates the byte_t order ("endianness") in which data is stored in this computer architecture.
+    /// @return Returns true if the architecture is big-endian; false if it is little-endian.
+    /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
+    /// @par Examples
+    /// The following code example illustrates the use of the is_little_endian field.
+    /// @include bit_converters_is_big_endian.cpp
+    static constexpr bool is_big_endian = __endian_query__ == 0x01;
+    /// @brief Indicates the byte_t order ("endianness") in which data is stored in this computer architecture.
     /// @return Returns true if the architecture is little-endian; false if it is big-endian.
     /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
     /// @par Examples
     /// The following code example illustrates the use of the is_little_endian field.
-    /// @include bit_converters_little_endian.cpp
-    static const bool is_little_endian;
-
+    /// @include bit_converters_is_little_endian.cpp
+    static constexpr bool is_little_endian = __endian_query__ == 0x04;
+    /// @brief Indicates the byte_t order ("endianness") in which data is stored in this computer architecture.
+    /// @return Returns One of xtd::bit_converter::endian values.
+    /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
+    /// @par Examples
+    /// The following code example illustrates the use of the is_little_endian field.
+    /// @include bit_converters_endianness.cpp
+    static constexpr endian endianness = is_little_endian ? endian::little : endian::big;
+    
     /// @brief Converts the specified double-precision floating point number to a 64-bit signed integer.
     /// @param value The number to convert.
     /// @return A 64-bit signed integer whose value is equivalent to value.
@@ -340,5 +367,10 @@ namespace xtd {
     /// @include bit_converterto_string3.cpp
     static xtd::ustring to_string(const std::vector<byte_t>& value, size_t start_index, size_t length);
   };
+
+  /// @cond
+  inline std::ostream& operator<<(std::ostream& os, bit_converter::endian value) {return os << to_string(value, {{bit_converter::endian::little, "little"}, {bit_converter::endian::big, "big"}});}
+  inline std::wostream& operator<<(std::wostream& os, bit_converter::endian value) {return os << to_string(value, {{bit_converter::endian::little, L"little"}, {bit_converter::endian::big, L"big"}});}
+  /// @endcond
 }
 

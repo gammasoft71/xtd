@@ -5,12 +5,6 @@
 using namespace std;
 using namespace xtd;
 
-namespace {
-  static const int32_t __xtd_endian__ = 1;
-}
-
-const bool bit_converter::is_little_endian = *(char*)&__xtd_endian__ == 1;
-
 int64_t bit_converter::double_to_int64_bits(double value) {
   int64_t result = 0;
   memcpy(&result, &value, sizeof(value));
