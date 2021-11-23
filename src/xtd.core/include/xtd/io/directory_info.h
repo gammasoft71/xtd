@@ -984,9 +984,238 @@ namespace xtd {
       /// * xtd::io::file_system_info::size
       std::vector<xtd::io::file_info> get_files(const xtd::ustring& search_pattern) const;
       
+      /// @brief Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and subdirectories in a directory.
+      /// @return An array of strongly typed xtd::io::file_system_info entries.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @par Example
+      /// The following example counts the files and directories under the specified directory.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       console::write_line("Enter the path to a directory:");
+      ///
+      ///       ustring directory = console::read_line();
+      ///
+      ///       // Create a new directory_info object.
+      ///       directory_info dir(directory);
+      ///
+      ///       if (!dir.exists()) {
+      ///         throw directory_not_found_exception("The directory does not exist.", csf_);
+      ///       }
+      ///
+      ///       // Call the GetFileSystemInfos method.
+      ///       std::vector<std::shared_ptr<file_system_info>> infos = dir.get_file_system_infos();
+      ///
+      ///       console::write_line("Working...");
+      ///
+      ///       // Pass the result to the list_directories_and_files
+      ///       // method defined below.
+      ///       list_directories_and_files(infos);
+      ///
+      ///       // Display the results to the console.
+      ///       console::write_line("Directories: {0}", directories);
+      ///       console::write_line("Files: {0}", files);
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line(e.message());
+      ///     }
+      ///   }
+      ///
+      /// private:
+      ///   static void list_directories_and_files(std::vector<std::shared_ptr<file_system_info>> fs_info) {
+      ///     // Iterate through each item.
+      ///     for (std::shared_ptr<file_system_info> i : fs_info) {
+      ///       // Check to see if this is a directory_info object.
+      ///       if (is<directory_info>(i)) {
+      ///         // Add one to the directory count.
+      ///         directories++;
+      ///
+      ///         // Cast the object to a directory_info object.
+      ///         std::shared_ptr<directory_info> d_info = as<directory_info>(i);
+      ///
+      ///         // Iterate through all sub-directories.
+      ///         list_directories_and_files(d_info->get_file_system_infos());
+      ///       }
+      ///       // Check to see if this is a FileInfo object.
+      ///       else if (is<file_info>(i)) {
+      ///         // Add one to the file count.
+      ///         files++;
+      ///       }
+      ///     }
+      ///   }
+      ///
+      ///   inline static long files = 0;
+      ///   inline static long directories = 0;
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks The xtd::io::directory_info::enumerate_file_system_infos and xtd::io::directory_info::get_file_system_infos methods differ as follows:
+      /// * When you use xtd::io::directory_info::enumerate_file_system_infos, you can start enumerating the collection of xtd::io::file_system_info objects before the whole collection is returned.
+      /// * When you use xtd::io::directory_info::get_file_system_infos, you must wait for the whole array of xtd::io::file_system_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_file_system_infos can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::file_system_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
       std::vector<std::shared_ptr<xtd::io::file_system_info>> get_file_system_infos() const;
+      /// @brief Retrieves an array of strongly typed FileSystemInfo objects representing the files and subdirectories that match the specified search criteria.
+      /// @param search_pattern The search string to match against the names of directories and files. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @return An array of strongly typed xtd::io::file_system_info entries.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @par Example
+      /// The following example counts the files and directories that match the specified search pattern.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       console::write_line("Enter the path to a directory:");
+      ///
+      ///       ustring directory = console::read_line();
+      ///
+      ///       console::write_line("Enter a search string (for example *p*):");
+      ///
+      ///       ustring search_string = console::read_line();
+      ///
+      ///       // Create a new directory_info object.
+      ///       directory_info dir(directory);
+      ///
+      ///       if (!dir.exists()) {
+      ///         throw directory_not_found_exception("The directory does not exist.", csf_);
+      ///       }
+      ///
+      ///       // Call the GetFileSystemInfos method.
+      ///       std::vector<std::shared_ptr<file_system_info>> infos = dir.get_file_system_infos(search_string);
+      ///
+      ///       console::write_line("Working...");
+      ///
+      ///       // Pass the result to the list_directories_and_files
+      ///       // method defined below.
+      ///       list_directories_and_files(infos, search_string);
+      ///
+      ///       // Display the results to the console.
+      ///       console::write_line("Directories: {0}", directories);
+      ///       console::write_line("Files: {0}", files);
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line(e.message());
+      ///     }
+      ///   }
+      ///
+      /// private:
+      ///   static void list_directories_and_files(std::vector<std::shared_ptr<file_system_info>> fs_info, const ustring& search_string) {
+      ///     // Iterate through each item.
+      ///     for (std::shared_ptr<file_system_info> i : fs_info) {
+      ///       // Check to see if this is a directory_info object.
+      ///       if (is<directory_info>(i)) {
+      ///         // Add one to the directory count.
+      ///         directories++;
+      ///
+      ///         // Cast the object to a directory_info object.
+      ///         std::shared_ptr<directory_info> d_info = as<directory_info>(i);
+      ///
+      ///         // Iterate through all sub-directories.
+      ///         list_directories_and_files(d_info->get_file_system_infos(search_string), search_string);
+      ///       }
+      ///       // Check to see if this is a FileInfo object.
+      ///       else if (is<file_info>(i)) {
+      ///         // Add one to the file count.
+      ///         files++;
+      ///       }
+      ///     }
+      ///   }
+      ///
+      ///   inline static long files = 0;
+      ///   inline static long directories = 0;
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// |--------------------|-------------------------------------------|
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks The xtd::io::directory_info::enumerate_file_system_infos and xtd::io::directory_info::get_file_system_infos methods differ as follows:
+      /// * When you use xtd::io::directory_info::enumerate_file_system_infos, you can start enumerating the collection of xtd::io::file_system_info objects before the whole collection is returned.
+      /// * When you use xtd::io::directory_info::get_file_system_infos, you must wait for the whole array of xtd::io::file_system_info objects to be returned before you can access the array.
+      /// @remarks Therefore, when you are working with many files and directories, xtd::io::directory_info::enumerate_file_system_infos can be more efficient.
+      /// @remarks This method pre-populates the values of the following xtd::io::file_system_info properties:
+      /// * xtd::io::file_system_info::attributes
+      /// * xtd::io::file_system_info::creation_time
+      /// * xtd::io::file_system_info::last_access_time
+      /// * xtd::io::file_system_info::last_write_time
+      /// * xtd::io::file_system_info::size
       std::vector<std::shared_ptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::ustring& search_pattern) const;
       
+      /// @brief Moves a DirectoryInfo instance and its contents to a new path.
+      /// @param dest_dir_name The name and path to which to move this directory. The destination cannot be another disk volume or a directory with the identical name. It can be an existing directory to which you want to add this directory as a subdirectory.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::io::io_exception The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
+      /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
+      /// @Par Example
+      /// The following example demonstrates moving a directory.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Make a reference to a directory.
+      ///     directory_info di("TempDir");
+      ///
+      ///     // Create the directory only if it does not already exist.
+      ///     if (di.exists() == false)
+      ///       di.create();
+      ///
+      ///     // Create a subdirectory in the directory just created.
+      ///     directory_info dis = di.create_subdirectory("SubDir");
+      ///
+      ///     // Move the main directory. Note that the contents move with the directory.
+      ///     if (directory::exists("NewTempDir") == false)
+      ///       di.move_to("NewTempDir");
+      ///
+      ///     try {
+      ///       // Attempt to delete the subdirectory. Note that because it has been
+      ///       // moved, an exception is thrown.
+      ///       dis.remove(true);
+      ///     } catch (const system_exception&) {
+      ///       // Handle this exception in some way, such as with the following code:
+      ///       // console::write_line("That directory does not exist.");
+      ///     }
+      ///
+      ///     // Point the directory_info reference to the new directory.
+      ///     //di = directory_info("NewTempDir");
+      ///
+      ///     // Delete the directory.
+      ///     //di.remove(true);
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks This method throws an IOException if, for example, you try to move c:\mydir to c:\public, and c:\public already exists. You must specify "c:\\public\\mydir" as the destDirName parameter, or specify a new directory name such as "c:\\newdir".
+      /// @remarks This method permits moving a directory to a read-only directory. The read/write attribute of neither directory is affected.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       void move_to(const xtd::ustring& dest_dir_name);
       
       /// @brief Deletes this xtd::io::directory_info if it is empty.
