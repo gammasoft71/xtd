@@ -384,12 +384,8 @@ namespace xtd {
   /// @ingroup xtd_core
   template<typename new_type_t, typename current_type_t>
   bool is(std::shared_ptr<current_type_t>& value) {
-    try {
-      unused_(dynamic_pointer_cast<new_type_t>(value));
-      return true;
-    } catch (const std::exception&) {
-      return false;
-    }
+    auto result = dynamic_pointer_cast<new_type_t>(value);
+    if (result) return true;
     return false;
   }
 }
