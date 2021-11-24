@@ -38,7 +38,6 @@ namespace xtd {
       protected:
         /// @brief Creates menu.
         /// @param text The text associated with this menu.
-        /// @param menu_items A menu item handles array.
         /// @return The created menu handle.
         /// @warning Internal use only
         static intptr_t create(const xtd::ustring& text);
@@ -46,14 +45,23 @@ namespace xtd {
         /// @param menu Menu handle.
         /// @warning Internal use only
         static void destroy(intptr_t menu);
+        /// @brief Insert specified item to specisified position.
+        /// @param menu Menu handle.
+        /// @param pos Position to insert menu item.
+        /// @param menu_item Menu item to insert.
+        /// @warning Internal use only
+        static void insert_item(intptr_t menu, size_t pos,  intptr_t menu_item);
+        /// @brief Insert specified menu item to specisified position.
+        /// @param menu Menu handle.
+        /// @param pos Position to insert menu item.
+        /// @param menu_item Menu item to insert.
+        /// @warning Internal use only
+        static void insert_menu(intptr_t menu, size_t pos,  intptr_t menu_item);
         /// @brief Gets native menu handle.
         /// @param menu Menu handle.
         /// @return The native menu handle.
         /// @warning Internal use only
         static intptr_t native_handle(intptr_t menu);
-
-        static void insert_item(intptr_t menu, size_t pos,  intptr_t menu_item);
-        static void insert_menu(intptr_t menu, size_t pos,  intptr_t menu_item);
       };
     }
   }

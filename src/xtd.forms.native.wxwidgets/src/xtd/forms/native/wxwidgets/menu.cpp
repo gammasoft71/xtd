@@ -23,11 +23,6 @@ void menu::destroy(intptr_t menu) {
   delete reinterpret_cast<wxMenu*>(menu);
 }
 
-intptr_t menu::native_handle(intptr_t menu) {
-  if (menu == 0) throw argument_exception(csf_);
-  return menu;
-}
-
 void menu::insert_item(intptr_t menu, size_t pos,  intptr_t menu_item) {
   if (menu == 0) throw argument_exception(csf_);
   if (menu_item == 0) throw argument_exception(csf_);
@@ -38,4 +33,9 @@ void menu::insert_menu(intptr_t menu, size_t pos,  intptr_t menu_item) {
   if (menu == 0) throw argument_exception(csf_);
   if (menu_item == 0) throw argument_exception(csf_);
   reinterpret_cast<wxMenu*>(menu)->Insert(pos, wxID_ANY, reinterpret_cast<wxMenu*>(menu_item)->GetTitle(), reinterpret_cast<wxMenu*>(menu_item));
+}
+
+intptr_t menu::native_handle(intptr_t menu) {
+  if (menu == 0) throw argument_exception(csf_);
+  return menu;
 }

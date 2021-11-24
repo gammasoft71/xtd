@@ -107,7 +107,6 @@ menu_item& menu_item::enabled(bool value) {
   if (enabled_ != value) {
     enabled_ = value;
     if (handle()) native::menu_item::enabled(handle(), enabled_);
-    on_menu_item_updated(event_args::empty);
   }
   return *this;
 }
@@ -116,7 +115,6 @@ menu_item& menu_item::checked(bool value) {
   if (checked_ != value) {
     checked_ = value;
     if (handle()) native::menu_item::checked(handle(), checked_);
-    on_menu_item_updated(event_args::empty);
   }
   return *this;
 }
@@ -130,7 +128,6 @@ menu_item& menu_item::kind(xtd::forms::menu_item_kind value) {
     kind_ = value;
     throw not_implemented_exception(csf_);
     //recreate_menu();
-    on_menu_item_updated(event_args::empty);
   }
   return *this;
 }
@@ -148,7 +145,6 @@ menu_item& menu_item::text(const xtd::ustring& value) {
   if (text_ != value) {
     text_ = value;
     if (handle()) native::menu_item::text(handle(), text_, static_cast<size_t>(shortcut_));
-    on_menu_item_updated(event_args::empty);
   }
   return *this;
 }

@@ -35,7 +35,13 @@ namespace xtd {
       class forms_native_export_ menu_item final static_ {
         friend xtd::forms::menu_item;
       protected:
-        /// @brief Creates menu item.
+        /// @brief Checked menu item.
+        /// @param menu_item Menu item handle.
+        /// @param checked true if menu item is checked; otherwise false.
+        /// @warning Internal use only
+        static void checked(intptr_t menu_item, bool checked);
+        /// @brief Creates menu item with specified menu.
+        /// @param menu Menu handle.
         /// @param text The text associated with this menu_item.
         /// @param image A xtd::drawing::image associated with this menu_item.
         /// @param kind A menu item kind.
@@ -47,12 +53,7 @@ namespace xtd {
         /// @param menu_item Menu item handle.
         /// @warning Internal use only
         static void destroy(intptr_t menu_item);
-        /// @brief Enabledd menu item.
-        /// @param menu_item Menu item handle.
-        /// @param checked true if menu item is checked; otherwise false.
-        /// @warning Internal use only
-        static void checked(intptr_t menu_item, bool checked);
-        /// @brief Enabledd menu item.
+        /// @brief Enabled menu item.
         /// @param menu_item Menu item handle.
         /// @param enabled true if menu item is enabled; otherwise false.
         /// @warning Internal use only
