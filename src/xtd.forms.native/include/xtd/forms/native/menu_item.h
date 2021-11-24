@@ -39,22 +39,20 @@ namespace xtd {
         /// @param text The text associated with this menu_item.
         /// @param image A xtd::drawing::image associated with this menu_item.
         /// @param kind A menu item kind.
-        /// @param checked true if menu item is checked; otherwise false.
         /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
-        /// @param enabled true if menu item is enabled; otherwise false.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr_t create(intptr_t menu, const xtd::ustring& text, const xtd::drawing::image& image, int32_t kind, bool checked, size_t shortcut, bool enabled);
+        static intptr_t create(intptr_t menu, const xtd::ustring& text, const xtd::drawing::image& image, int32_t kind, size_t shortcut);
         /// @brief Destroy menu_item.
         /// @param menu_item Menu item handle.
         /// @warning Internal use only
         static void destroy(intptr_t menu_item);
-        /// @brief Enabledd menuu item.
+        /// @brief Enabledd menu item.
         /// @param menu_item Menu item handle.
         /// @param checked true if menu item is checked; otherwise false.
         /// @warning Internal use only
         static void checked(intptr_t menu_item, bool checked);
-        /// @brief Enabledd menuu item.
+        /// @brief Enabledd menu item.
         /// @param menu_item Menu item handle.
         /// @param enabled true if menu item is enabled; otherwise false.
         /// @warning Internal use only
@@ -64,6 +62,12 @@ namespace xtd {
         /// @return Id corresponding to menu_item handle.
         /// @warning Internal use only
         static int32_t menu_id(intptr_t menu_item);
+        /// @brief Set text menu item.
+        /// @param menu_item Menu item handle.
+        /// @param text The text associated with this menu_item.
+        /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
+        /// @warning Internal use only
+        static void text(intptr_t menu_item, const xtd::ustring& text, size_t shortcut);
       };
     }
   }

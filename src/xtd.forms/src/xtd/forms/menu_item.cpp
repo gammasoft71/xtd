@@ -1,3 +1,4 @@
+#include <xtd/not_implemented_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/menu.h>
 #include <xtd/forms/native/menu_item.h>
@@ -124,11 +125,39 @@ bool menu_item::is_parent() const {
   return is_parent_ || menu::is_parent();
 }
 
+menu_item& menu_item::kind(xtd::forms::menu_item_kind value) {
+  if (kind_ != value) {
+    kind_ = value;
+    throw not_implemented_exception(csf_);
+    //recreate_menu();
+    on_menu_item_updated(event_args::empty);
+  }
+  return *this;
+}
+
+menu_item& menu_item::shortcut(xtd::forms::shortcut value) {
+  if (shortcut_ != value) {
+    shortcut_ = value;
+    recreate_menu();
+    if (handle()) native::menu_item::text(handle(), text_, static_cast<size_t>(shortcut_));
+  }
+  return *this;
+}
+
+menu_item& menu_item::text(const xtd::ustring& value) {
+  if (text_ != value) {
+    text_ = value;
+    if (handle()) native::menu_item::text(handle(), text_, static_cast<size_t>(shortcut_));
+    on_menu_item_updated(event_args::empty);
+  }
+  return *this;
+}
+
 intptr_t menu_item::create_menu_handle() {
   if (is_parent() || data_->main_menu_.has_value() || data_->context_menu_.has_value()) return native::menu::create(text_);
   
   if (text_ == "-") kind_ = xtd::forms::menu_item_kind::separator;
-  auto handle = native::menu_item::create(data_->parent_.value()->handle(), text_, image_, static_cast<int>(kind_), checked_, static_cast<size_t>(shortcut_), enabled_);
+  auto handle = native::menu_item::create(data_->parent_.value()->handle(), text_, image_, static_cast<int>(kind_), static_cast<size_t>(shortcut_));
   handles_[native::menu_item::menu_id(handle)] = make_shared<menu_item>(*this);
   return handle;
 }
@@ -149,7 +178,11 @@ void menu_item::on_item_added(size_t pos, std::reference_wrapper<menu_item> item
   item.get().data_->parent_ = make_unique<menu_item>(*this);
   if (!item.get().handle()) item.get().create_menu();
   if (item.get().is_parent() || item.get().data_->main_menu_.has_value()) native::menu::insert_menu(handle(), pos, item.get().handle());
-  else native::menu::insert_item(handle(), pos, item.get().handle());
+  else {
+    native::menu::insert_item(handle(), pos, item.get().handle());
+    native::menu_item::enabled(item.get().handle(), item.get().enabled());
+    if (item.get().kind() == menu_item_kind::check || item.get().kind() == menu_item_kind::radio) native::menu_item::checked(item.get().handle(), item.get().checked());
+  }
 }
 
 void menu_item::on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) {
