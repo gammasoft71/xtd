@@ -114,14 +114,10 @@ namespace {
   }
 }
 
-intptr_t menu_item::create(intptr_t menu, const ustring& text, const xtd::drawing::image& image, int32_t kind, bool checked, size_t shortcut, bool enabled) {
+intptr_t menu_item::create(intptr_t menu, const ustring& text, const xtd::drawing::image& image, int32_t kind, size_t shortcut) {
   static map<int32_t, wxItemKind> kinds = {{MI_NORMAL, wxITEM_NORMAL}, {MI_CHECK, wxITEM_CHECK}, {MI_RADIO, wxITEM_RADIO}, {MI_DROPDOWN, wxITEM_DROPDOWN}, {MI_SEPARATOR, wxITEM_SEPARATOR}};
   auto wx_menu_item = new wxMenuItem(menu == 0 ? nullptr : reinterpret_cast<wxMenu*>(menu), make_window_id(text), convert_string::to_wstring(make_item_text(text, shortcut)), wxEmptyString, kinds[kind]);
-  if (image.handle() != 0)
-    wx_menu_item->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
-  if (kind == MI_CHECK || kind == MI_RADIO) wx_menu_item->Check(checked);
-  wx_menu_item->Enable(enabled);
-  
+  if (image.handle() != 0) wx_menu_item->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
   return reinterpret_cast<intptr_t>(wx_menu_item);
 }
 
@@ -142,4 +138,9 @@ void menu_item::enabled(intptr_t menu_item, bool enabled) {
 int32_t menu_item::menu_id(intptr_t menu_item) {
   if (menu_item == 0) throw argument_exception(csf_);
   return reinterpret_cast<wxMenuItem*>(menu_item)->GetId();
+}
+
+void menu_item::text(intptr_t menu_item, const xtd::ustring& text, size_t shortcut) {
+  if (menu_item == 0) throw argument_exception(csf_);
+  reinterpret_cast<wxMenuItem*>(menu_item)->SetItemLabel(convert_string::to_wstring(make_item_text(text, shortcut)));
 }

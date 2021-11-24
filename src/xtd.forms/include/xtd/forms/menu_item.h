@@ -266,17 +266,10 @@ namespace xtd {
       /// @brief Gets a value that represents the kind of menu item.
       /// @return One of the xtd::forms::menu_item_kind value.
       xtd::forms::menu_item_kind kind() const {return kind_;}
-      /// @brief Gets a value that represents the kind of menu item.
+      /// @brief Sets a value that represents the kind of menu item.
       /// @param value One of the xtd::forms::menu_item_kind value.
       /// @return Current menu_item.
-      menu_item& kind(xtd::forms::menu_item_kind value) {
-        if (kind_ != value) {
-          kind_ = value;
-          recreate_menu();
-          on_menu_item_updated(event_args::empty);
-        }
-        return *this;
-      }
+      menu_item& kind(xtd::forms::menu_item_kind value);
       
       /// @brief Gets a value indicating the shortcut key associated with the menu item.
       /// @return One of the xtd::forms::shortcut values. The default is xtd::forms::shortcut::none.
@@ -284,14 +277,7 @@ namespace xtd {
       /// @brief Sets a value indicating the shortcut key associated with the menu item.
       /// @param value One of the xtd::forms::shortcut values. The default is xtd::forms::shortcut::none.
       /// @return Current menu_item.
-      menu_item& shortcut(xtd::forms::shortcut value) {
-        if (shortcut_ != value) {
-          shortcut_ = value;
-          recreate_menu();
-          on_menu_item_updated(event_args::empty);
-        }
-        return *this;
-      }
+      menu_item& shortcut(xtd::forms::shortcut value);
 
       /// @brief Gets a value indicating the caption of the menu item.
       /// @return The text caption of the menu item.
@@ -303,14 +289,7 @@ namespace xtd {
       /// @return Current menu_item.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item& text(const xtd::ustring& value) {
-        if (text_ != value) {
-          text_ = value;
-          recreate_menu();
-          on_menu_item_updated(event_args::empty);
-        }
-        return *this;
-      }
+      menu_item& text(const xtd::ustring& value);
 
       /// @brief Returns a string that represents the menu control.
       /// @return A string that represents the current menu.
