@@ -305,7 +305,6 @@ namespace xtd {
       
       void on_item_added(size_t pos, std::reference_wrapper<menu_item> item) override;
       void on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) override;
-      virtual void on_menu_item_updated(const event_args& e) {}
 
       /// @cond
       xtd::ustring text_;

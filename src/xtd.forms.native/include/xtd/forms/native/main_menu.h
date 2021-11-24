@@ -34,7 +34,6 @@ namespace xtd {
         friend xtd::forms::main_menu;
       protected:
         /// @brief Creates main menu.
-        /// @param menu_items A menu item handles array.
         /// @return The created main menu handle.
         /// @warning Internal use only
         static intptr_t create();
@@ -42,7 +41,11 @@ namespace xtd {
         /// @param main_menu Main menu handle.
         /// @warning Internal use only
         static void destroy(intptr_t main_menu);
-
+        /// @brief Insert specified menu item to specisified position.
+        /// @param main_menu Main menu handle.
+        /// @param pos Position to insert menu item.
+        /// @param menu_item Menu item to insert.
+        /// @warning Internal use only
         static void insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item);
       };
     }
