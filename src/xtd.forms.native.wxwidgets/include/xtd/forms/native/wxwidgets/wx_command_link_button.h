@@ -8,6 +8,7 @@
 #include <xtd/argument_exception.h>
 #include <xtd/convert_string.h>
 #include <xtd/environment.h>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_images.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/application.h>
