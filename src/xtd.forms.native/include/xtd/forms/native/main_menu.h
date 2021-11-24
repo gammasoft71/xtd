@@ -37,11 +37,13 @@ namespace xtd {
         /// @param menu_items A menu item handles array.
         /// @return The created main menu handle.
         /// @warning Internal use only
-        static intptr_t create(const std::vector<intptr_t>& menu_items);
+        static intptr_t create();
         /// @brief Destroy main menu.
         /// @param main_menu Main menu handle.
         /// @warning Internal use only
         static void destroy(intptr_t main_menu);
+
+        static void insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item);
       };
     }
   }

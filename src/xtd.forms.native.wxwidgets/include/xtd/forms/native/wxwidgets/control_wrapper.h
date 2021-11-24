@@ -40,7 +40,6 @@
 #include <wx/textctrl.h>
 #include <wx/timer.h>
 #include <wx/tglbtn.h>
-#include "wx_menu.h"
 
 namespace xtd {
   namespace forms {

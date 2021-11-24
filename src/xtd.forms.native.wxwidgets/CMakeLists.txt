@@ -43,7 +43,6 @@ add_sources(
   include/xtd/forms/native/wxwidgets/wx_label.h
   include/xtd/forms/native/wxwidgets/wx_list_box.h
   include/xtd/forms/native/wxwidgets/wx_loading_indicator.h
-  include/xtd/forms/native/wxwidgets/wx_menu.h
   include/xtd/forms/native/wxwidgets/wx_numeric_up_down.h
   include/xtd/forms/native/wxwidgets/wx_panel.h
   include/xtd/forms/native/wxwidgets/wx_picture_box.h

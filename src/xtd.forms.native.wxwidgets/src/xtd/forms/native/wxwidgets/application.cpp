@@ -9,7 +9,6 @@
 #include <xtd/forms/native/application.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_menu.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 #include <xtd/drawing/system_colors.h>
@@ -39,6 +38,8 @@ using namespace xtd::drawing::native;
 using namespace xtd::forms::native;
 
 std::vector<control_handler*> __control_handler_to_delete_items__;
+
+wxMenuBar* __create_default_menu_bar__();
 
 namespace {
   void process_idle() {
@@ -144,7 +145,7 @@ void application::initialize() {
   __gtk_menu_images__(__xtd_gtk_enable_menu_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
 #elif defined(__APPLE__)
-  wxMenuBar::MacSetCommonMenuBar(wx_menu_bar::create_default_menu_bar());
+  wxMenuBar::MacSetCommonMenuBar(__create_default_menu_bar__());
 #endif
 }
 
