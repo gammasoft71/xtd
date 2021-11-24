@@ -251,14 +251,7 @@ namespace xtd {
       /// @brief Sets a value indicating whether a check mark appears next to the text of the menu item.
       /// @param value true if there is a check mark next to the menu item; otherwise, false. The default is false.
       /// @return Current menu_item.
-      menu_item& checked(bool value) {
-        if (checked_ != value) {
-          checked_ = value;
-          recreate_menu();
-          on_menu_item_updated(event_args::empty);
-        }
-        return *this;
-      }
+      menu_item& checked(bool value);
       
       /// @brief Gets a value indicating whether the menu item is enabled.
       /// @return true if the menu item is enabled; otherwise, false. The default is true.
@@ -266,14 +259,9 @@ namespace xtd {
       /// @brief Gets a value indicating whether the menu item is enabled.
       /// @param value true if the menu item is enabled; otherwise, false. The default is true.
       /// @return Current menu_item.
-      menu_item& enabled(bool value) {
-        if (enabled_ != value) {
-          enabled_ = value;
-          recreate_menu();
-          on_menu_item_updated(event_args::empty);
-        }
-        return *this;
-      }
+      menu_item& enabled(bool value);
+      
+      bool is_parent() const override;
       
       /// @brief Gets a value that represents the kind of menu item.
       /// @return One of the xtd::forms::menu_item_kind value.
@@ -336,6 +324,8 @@ namespace xtd {
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
       
+      void on_item_added(size_t pos, std::reference_wrapper<menu_item> item) override;
+      void on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) override;
       virtual void on_menu_item_updated(const event_args& e) {}
 
       /// @cond
@@ -345,6 +335,7 @@ namespace xtd {
       bool checked_ = false;
       xtd::forms::shortcut shortcut_ = xtd::forms::shortcut::none;
       bool enabled_ = true;
+      bool is_parent_ = false;
       /// @endcond
     };
   }

@@ -36,7 +36,6 @@ namespace xtd {
       main_menu(const std::vector<menu_item>& menu_items);
       /// @cond
       main_menu(const std::initializer_list<menu_item>& menu_items);
-      ~main_menu();
       /// @endcond
 
       /// @brief A factory to create a main menu with specified on click event handler.
@@ -83,6 +82,9 @@ namespace xtd {
       intptr_t create_menu_handle() override;
       
       void destroy_menu_handle(intptr_t handle) override;
+
+      void on_item_added(size_t pos, std::reference_wrapper<menu_item> item) override;
+      void on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) override;
 
     private:
       friend class form;

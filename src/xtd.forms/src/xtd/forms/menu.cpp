@@ -8,38 +8,48 @@
 #include "../../../include/xtd/forms/main_menu.h"
 #include "../../../include/xtd/forms/menu_item.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-std::map<intptr_t, menu*> menu::handles_;
+map<intptr_t, shared_ptr<menu>> menu::handles_;
 
 menu::menu() {
-  data_ = std::make_shared<data>();
-  data_->mdi_list_item_ = std::make_unique<menu_item>();
+  data_ = make_shared<data>();
+  //data_->mdi_list_item_ = make_unique<menu_item>();
+  data_->menu_items_.item_added += {*this, &menu::on_item_added};
+  data_->menu_items_.item_removed += {*this, &menu::on_item_removed};
 }
 
 menu::menu(const menu_item_collection& items) {
-  data_ = std::make_shared<data>();
-  data_->owner_ = this;
-  //data_->mdi_list_item_ = std::make_unique<menu_item>();
-  menu_items(items);
+  data_ = make_shared<data>();
+  //data_->mdi_list_item_ = make_unique<menu_item>();
+  data_->menu_items_.item_added += {*this, &menu::on_item_added};
+  data_->menu_items_.item_removed += {*this, &menu::on_item_removed};
+  data_->menu_items_.push_back_range(items);
 }
 
-menu::menu(const std::initializer_list<menu_item>& items) {
-  data_ = std::make_shared<data>();
-  data_->owner_ = this;
-  //data_->mdi_list_item_ = std::make_unique<menu_item>();
-  menu_items(items);
+menu::menu(const initializer_list<menu_item>& items) {
+  data_ = make_shared<data>();
+  //data_->mdi_list_item_ = make_unique<menu_item>();
+  data_->menu_items_.item_added += {*this, &menu::on_item_added};
+  data_->menu_items_.item_removed += {*this, &menu::on_item_removed};
+  data_->menu_items_.push_back_range(items);
 }
 
-menu::menu(const std::vector<menu_item>& items) {
-  data_ = std::make_shared<data>();
-  data_->owner_ = this;
-  //data_->mdi_list_item_ = std::make_unique<menu_item>();
-  menu_items(items);
+menu::menu(const vector<menu_item>& items) {
+  data_ = make_shared<data>();
+  //data_->mdi_list_item_ = make_unique<menu_item>();
+  data_->menu_items_.item_added += {*this, &menu::on_item_added};
+  data_->menu_items_.item_removed += {*this, &menu::on_item_removed};
+  data_->menu_items_.push_back_range(items);
 }
 
 menu::~menu() {
+  data_->menu_items_.item_added -= {*this, &menu::on_item_added};
+  data_->menu_items_.item_removed -= {*this, &menu::on_item_removed};
+  if (data_.use_count() == 1)
+    destroy_menu();
 }
 
 bool menu::is_parent() const {
@@ -58,28 +68,28 @@ menu& menu::menu_items(const menu_item_collection& value) {
   return *this;
 }
 
-menu& menu::menu_items(const std::initializer_list<menu_item>& value) {
+menu& menu::menu_items(const initializer_list<menu_item>& value) {
   data_->menu_items_.clear();
   for (const auto& item : value)
     data_->menu_items_.push_back(item);
   return *this;
 }
 
-menu& menu::menu_items(const std::vector<menu_item>& value) {
+menu& menu::menu_items(const vector<menu_item>& value) {
   data_->menu_items_.clear();
   for (const auto& item : value)
     data_->menu_items_.push_back(item);
   return *this;
 }
 
-std::optional<context_menu> menu::get_context_menu() const {
+optional<context_menu> menu::get_context_menu() const {
   const menu* item = this;
   while (item)
     if (dynamic_cast<const context_menu*>(item)) return static_cast<const context_menu&>(*item);
   return {};
 }
 
-std::optional<main_menu> menu::get_main_menu() const {
+optional<main_menu> menu::get_main_menu() const {
   const menu* item = this;
   while (item)
     if (dynamic_cast<const main_menu*>(item)) return static_cast<const main_menu&>(*item);
@@ -103,36 +113,27 @@ void menu::merge_menu(const menu& menu_src) {
 }
 
 void menu::create_menu() {
-  data_->handle_ = create_menu_handle();
-  for(auto menu_item : data_->menu_items_)
-    menu_item.create_menu();
+  if (!data_->handle_) {
+    data_->handle_ = create_menu_handle();
+    /*
+    for (auto item : data_->menu_items_) {
+      item.data_->parent_ = make_unique<menu_item>(*static_cast<menu_item*>(this));
+      item.create_menu();
+    }
+     */
+  }
 }
 
 void menu::destroy_menu() {
-  for(auto menu_item : data_->menu_items_)
-    menu_item.destroy_menu();
-  destroy_menu_handle(data_->handle_);
+  if (data_->handle_) {
+    for (auto menu_item : data_->menu_items_)
+      menu_item.destroy_menu();
+    destroy_menu_handle(data_->handle_);
+  }
 }
 
 void menu::recreate_menu() {
   destroy_menu();
   create_menu();
-}
-
-void menu::add_handles(const menu_item_collection& menu_items) {
-  for (auto& menu_item :  menu_items) {
-    if (menu_item.data_->menu_items_.size() != 0) {
-      handles_[native::menu::native_handle(menu_item.data_->handle_)] = const_cast<menu_item_collection::value_type*>(&menu_item);
-      add_handles(menu_item.data_->menu_items_);
-    }
-  }
-}
-
-void menu::remove_handles(const menu_item_collection& menu_items) {
-  for (auto& menu_item :  menu_items) {
-    handles_.erase(menu_item.data_->handle_);
-    if (menu_item.data_->menu_items_.size() != 0)
-      remove_handles(menu_item.data_->menu_items_);
-  }
 }
 

@@ -7,91 +7,53 @@
 #include "../../../include/xtd/forms/shortcut.h"
 #include "../../../include/xtd/forms/system_texts.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
 main_menu::main_menu() {
-  data_->menu_items_.item_added += [&](size_t, std::reference_wrapper<menu_item> item) {
-    item.get().data_->parent_ = *this;
-    item.get().create_menu();
-  };
-
-  data_->menu_items_.item_updated += [&](size_t, std::reference_wrapper<menu_item> item) {
-    
-  };
-
-  data_->menu_items_.item_removed += [&](size_t, std::reference_wrapper<menu_item> item) {
-    item.get().data_->parent_.reset();
-    item.get().destroy_menu();
-  };
-
-  data_->handle_ = create_menu_handle();
+  create_menu();
 }
 
 main_menu::main_menu(const std::initializer_list<menu_item>& menu_items) {
-  data_->menu_items_.item_added += [&](size_t, std::reference_wrapper<menu_item> item) {
-    item.get().data_->parent_ = *this;
-    item.get().create_menu();
-  };
-  
-  data_->menu_items_.item_updated += [&](size_t, std::reference_wrapper<menu_item> item) {
-    
-  };
-  
-  data_->menu_items_.item_removed += [&](size_t, std::reference_wrapper<menu_item> item) {
-    item.get().data_->parent_.reset();
-    item.get().destroy_menu();
-  };
-  
+  create_menu();
   data_->menu_items_.push_back_range(menu_items);
-  
-  data_->handle_ = create_menu_handle();
 }
 
 main_menu::main_menu(const std::vector<menu_item>& menu_items) {
-  data_->menu_items_.item_added += [&](size_t, std::reference_wrapper<menu_item> item) {
-    item.get().data_->parent_ = *this;
-    item.get().create_menu();
-  };
-  
-  data_->menu_items_.item_updated += [&](size_t, std::reference_wrapper<menu_item> item) {
-    recreate_menu();
-  };
-  
-  data_->menu_items_.item_removed += [&](size_t, std::reference_wrapper<menu_item> item) {
-    item.get().data_->parent_.reset();
-    item.get().destroy_menu();
-  };
-  
+  create_menu();
   data_->menu_items_.push_back_range(menu_items);
-  
-  data_->handle_ = create_menu_handle();
-}
-
-
-main_menu::~main_menu() {
-  if (data_.use_count() == 1) destroy_menu_handle(data_->handle_);
 }
 
 intptr_t main_menu::create_menu_handle() {
-  std::vector<intptr_t> menu_items;
-  for(auto menu_item : data_->menu_items_)
-    menu_items.push_back(menu_item.data_->handle_);
-  auto handle = native::main_menu::create(menu_items);
-  handles_.clear();
-  add_handles(data_->menu_items_);
-  return handle;
+  return native::main_menu::create();
 }
 
 void main_menu::destroy_menu_handle(intptr_t handle) {
-  remove_handles(data_->menu_items_);
-  return native::main_menu::destroy(handle);
+  if (handle) native::main_menu::destroy(handle);
+}
+
+void main_menu::on_item_added(size_t pos, std::reference_wrapper<menu_item> item) {
+  menu::on_item_added(pos, item);
+  item.get().data_->main_menu_ = make_unique<main_menu>(*this);
+  item.get().data_->parent_ = make_unique<main_menu>(*this);
+  if (!item.get().handle()) item.get().create_menu();
+  native::main_menu::insert_item(handle(), pos, item.get().handle());
+}
+
+void main_menu::on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) {
+  menu::on_item_removed(pos, item);
+  //item.get().data_->parent_.reset();
+  //item.get().destroy_menu();
 }
 
 void main_menu::wm_click(message& message) {
-  auto& menu = static_cast<menu_item*>(handles_[message.lparam()])->menu_items()[message.wparam()];
-  menu.data_->callback(menu);
+  auto it = handles_.find(message.wparam());
+  if (it != handles_.end()) {
+    auto& menu = static_cast<menu_item&>(*it->second);
+    menu.data_->callback(menu);
+  }
 }
 
 xtd::forms::main_menu main_menu::create_standard_items(const xtd::event_handler& on_click) {

@@ -31,11 +31,9 @@ main_form::main_form() {
   if (properties::settings::default_settings().menu_visible()) {
     menu({
       {system_texts::file(), {
-        /// @todo Remove following comment when enabled menu item will work.
-        //{"Create new project", {*this, overload_<>(&main_form::new_project)}, bitmap(bitmap(xtd_new_icon), menu_images::size()), shortcut::cmd_n},
+        {"Create new project", {*this, overload_<>(&main_form::new_project)}, bitmap(bitmap(xtd_new_icon), menu_images::size()), shortcut::cmd_n},
         {"Open a project or solution", {*this, overload_<>(&main_form::open_project)}, bitmap(bitmap(xtd_open_examples_icon), menu_images::size()), shortcut::cmd_o},
-        /// @todo Remove following comment when enabled menu item will work.
-        //{"Open xtd examples", {*this, &main_form::open_xtd_examples}, bitmap(bitmap(xtd_open_icon), menu_images::size()), shortcut::cmd_e},
+        {"Open xtd examples", {*this, &main_form::open_xtd_examples}, bitmap(bitmap(xtd_open_icon), menu_images::size()), shortcut::cmd_e},
         {"Run a project", {*this, overload_<>(&main_form::run_project)}, bitmap(bitmap(xtd_run_icon), menu_images::size()), shortcut::cmd_r},
         {"-"},
         {system_texts::exit(), {overload_<>(&application::exit)}, menu_images::file_exit(), shortcut::alt_f4},
@@ -479,25 +477,19 @@ main_form::main_form() {
   previous_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   previous_button_.click += [&] {
     if (open_xtd_examples_panel_.visible()) {
-      /// @todo Remove following comment when enabled menu item will work.
-      /*
       if (menu().has_value()) {
         menu().value().menu_items()[0].menu_items()[0].enabled(true);
         menu().value().menu_items()[0].menu_items()[2].enabled(true);
       }
-       */
       startup_panel_.visible(true);
       open_xtd_examples_panel_.visible(false);
       previous_button_.visible(false);
       next_button_.visible(false);
     } else if (create_panel_.visible()) {
-      /// @todo Remove following comment when enabled menu item will work.
-      /*
       if (menu().has_value()) {
         menu().value().menu_items()[0].menu_items()[0].enabled(true);
         menu().value().menu_items()[0].menu_items()[2].enabled(true);
       }
-       */
       startup_panel_.visible(true);
       create_panel_.visible(false);
       previous_button_.visible(false);
@@ -660,13 +652,10 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
 }
 
 void main_form::new_project() {
-  /// @todo Remove following comment when enabled menu item will work.
-  /*
   if (menu().has_value()) {
     menu().value().menu_items()[0].menu_items()[0].enabled(false);
     menu().value().menu_items()[0].menu_items()[2].enabled(false);
   }
-   */
   startup_panel_.visible(false);
   create_panel_.visible(true);
   previous_button_.visible(true);
@@ -737,13 +726,10 @@ void main_form::open_project(const std::string& project_path) {
 }
 
 void main_form::open_xtd_examples() {
-  /// @todo Remove following comment when enabled menu item will work.
-  /*
   if (menu().has_value()) {
     menu().value().menu_items()[0].menu_items()[0].enabled(false);
     menu().value().menu_items()[0].menu_items()[2].enabled(false);
   }
-   */
   startup_panel_.visible(false);
   open_xtd_examples_panel_.visible(true);
   previous_button_.visible(true);

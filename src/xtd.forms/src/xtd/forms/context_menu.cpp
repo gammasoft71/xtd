@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 context_menu::context_menu() {
-  data_->handle_ = create_menu_handle();
+  create_menu();
 }
 
 context_menu::~context_menu() {
@@ -19,5 +19,5 @@ intptr_t context_menu::create_menu_handle() {
 }
 
 void context_menu::destroy_menu_handle(intptr_t handle) {
-  return native::context_menu::destroy(handle);
+  if (handle) native::context_menu::destroy(handle);
 }

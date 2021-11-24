@@ -45,7 +45,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether this menu contains any menu items.
       /// @return true if this menu contains menu_item objects; otherwise, false. The default is false.
-      bool is_parent() const;
+      virtual bool is_parent() const;
 
       /// @brief Gets a value indicating the menu_item that is used to display a list of multiple document interface (MDI) child forms.
       /// @return A MenuItem that represents the menu item displaying a list of MDI child forms that are open in the application.
@@ -151,25 +151,24 @@ namespace xtd {
 
       /// @brief Destroy the handle to the Menu.
       /// @param handle A handle to the menu.
-      virtual void destroy_menu_handle(intptr_t handle) = 0;
+      virtual void destroy_menu_handle(intptr_t handle) {}
+
+      virtual void on_item_added(size_t pos, std::reference_wrapper<menu_item> item) {}
+      virtual void on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) {}
 
       /// @cond
       virtual void create_menu();
       virtual void destroy_menu();
       void recreate_menu();
 
-      void add_handles(const menu_item_collection& menu_items);
-      void remove_handles(const menu_item_collection& menu_items);
-
       struct data {
         intptr_t handle_ = 0;
-        menu* owner_ = nullptr;
-        std::optional<std::reference_wrapper<menu>> context_menu_;
+        std::optional<std::unique_ptr<menu>> context_menu_;
         menu_item_collection menu_items_;
         std::unique_ptr<menu_item> mdi_list_item_;
-        std::optional<std::reference_wrapper<menu>> main_menu_;
+        std::optional<std::unique_ptr<menu>> main_menu_;
         xtd::ustring name_;
-        std::optional<std::reference_wrapper<menu>> parent_;
+        std::optional<std::unique_ptr<menu>> parent_;
         std::any tag_;
         xtd::event_handler on_click_;
         void callback(xtd::forms::menu& menu) {
@@ -177,7 +176,7 @@ namespace xtd {
         };
       };
       std::shared_ptr<data> data_;
-      static std::map<intptr_t, menu*> handles_;
+      static std::map<intptr_t, std::shared_ptr<menu>> handles_;
       /// @endcond
     };
   }

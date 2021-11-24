@@ -7,7 +7,6 @@
 #include <xtd/forms/native/form.h>
 #include <xtd/forms/native/screen.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_menu.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/apptrait.h>
 
@@ -19,6 +18,24 @@ using namespace xtd::forms::native;
 
 bool __toggle_full_screen_frame__(wxTopLevelWindow* control);
 void __toggle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
+
+static void __on_exit_menu__(wxCommandEvent& event) {
+  if (event.GetId() == wxID_EXIT) {
+    for (auto window : wxTopLevelWindows)
+      if (!window->Close())
+        return;
+    wxTheApp->ExitMainLoop();
+  } else event.Skip();
+}
+
+wxMenuBar* __create_default_menu_bar__() {
+  wxMenuBar* default_menu_bar = new wxMenuBar;
+  default_menu_bar->Append(new wxMenu(), L"&Window");
+  default_menu_bar->Append(new wxMenu(), L"&Help");
+  default_menu_bar->Bind(wxEVT_MENU, &__on_exit_menu__);
+  return default_menu_bar;
+}
+
 
 void form::activate(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
@@ -109,7 +126,7 @@ void form::menu(intptr_t control, intptr_t menu) {
     if (menu != 0) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
     return;
   }
-  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetMenuBar(menu != 0 ? reinterpret_cast<wx_menu_bar*>(menu) : wx_menu_bar::create_default_menu_bar());
+  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetMenuBar(menu != 0 ? reinterpret_cast<wxMenuBar*>(menu) : __create_default_menu_bar__());
 }
 
 bool form::minimize(intptr_t control) {
