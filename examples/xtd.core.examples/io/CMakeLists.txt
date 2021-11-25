@@ -7,4 +7,5 @@ add_projects(
   directory_info
   drive_info
   file_info
+  file_info2
 )

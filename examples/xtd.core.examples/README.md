@@ -117,8 +117,10 @@
 
 ## [IO](io/README.md)
 
-* [directory_info](io/directory_info/README.md) shows how to use [xtd::io::directory_info](../../src/xtd.core/include/xtd/io.directory_info.h) class.
-* [file_info](io/file_info/README.md) shows how to use [xtd::io::file_info](../../src/xtd.core/include/xtd/io.file_info.h) class.
+* [directory_info](io/directory_info/README.md) shows how to use [xtd::io::directory_info](../../src/xtd.core/include/xtd/io/directory_info.h) class.
+* [drive_info](io/drive_info/README.md) shows how to use [xtd::io::drive_info](../../src/xtd.core/include/xtd/io/drive_info.h) class.
+* [file_info](io/file_info/README.md) shows how to use [xtd::io::file_info](../../src/xtd.core/include/xtd/io/file_info.h) class.
+* [file_info2](io/file_info2/README.md) shows how to use [xtd::io::file_info](../../src/xtd.core/include/xtd/io/file_info.h) class.
 
 ## [Keywords](keywords/README.md)
 
