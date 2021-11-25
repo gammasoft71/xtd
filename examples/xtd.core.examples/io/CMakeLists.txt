@@ -5,5 +5,6 @@ find_package(xtd REQUIRED)
 
 add_projects(
   directory_info
+  drive_info
   file_info
 )
