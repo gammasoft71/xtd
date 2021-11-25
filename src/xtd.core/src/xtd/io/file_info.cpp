@@ -15,8 +15,8 @@ using namespace io;
 
 const file_info file_info::empty;
 
-file_info::file_info(const xtd::ustring& path) {
-  original_path_ = path;
+file_info::file_info(const xtd::ustring& file_name) {
+  original_path_ = file_name;
   refresh();
 }
 
@@ -29,12 +29,24 @@ ustring file_info::directory_name() const {
 }
 
 bool file_info::exists() const {
-  int32_t attributes = 0;
-  return native::file_system::get_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) != file_attributes::directory;
+  try {
+    int32_t attributes = 0;
+    return native::file_system::get_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) != file_attributes::directory;
+  } catch(...) {
+    return false;
+  }
 }
 
 bool file_info::is_read_only() const {
   return (attributes() & file_attributes::read_only) == file_attributes::read_only;
+}
+
+void file_info::is_read_only(bool value) {
+  int32_t attributes;
+  if (native::file_system::get_attributes(full_path_, attributes) != 0) throw io_exception(csf_);
+  if (value) attributes |= static_cast<int32_t>(file_attributes::read_only);
+  else attributes &= ~static_cast<int32_t>(file_attributes::read_only);
+  if (native::file_system::set_file_attributes(full_path_, attributes) != 0) throw io_exception(csf_);
 }
 
 size_t file_info::length() const {
