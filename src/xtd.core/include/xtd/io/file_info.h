@@ -750,6 +750,56 @@ namespace xtd {
       /// @remarks This method is a wrapper for the functionality provided by xtd::io::file::create.
       std::ofstream create() const;
       
+      /// @brief Creates a std::ofstream that writes a new text file.
+      /// @return A new std::ofstream.
+      /// @exception xtd::unauthorized_access_exception The file name is a directory.
+      /// @exception xtd::io::io_exception The disk is read-only.
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
+      /// @par Example
+      /// The following example demonstrates the xtd::io::file°info::create_text method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     ustring path = R"(c:\temp\MyTest.txt)";
+      ///     file_info fi(path);
+      ///
+      ///     if (!fi.exists()) {
+      ///       //Create a file to write to.
+      ///       using_(ofstream ofs(fi.create_text())) {
+      ///         stream_writer sw(ofs);
+      ///         sw.write_line("Hello");
+      ///         sw.write_line("And");
+      ///         sw.write_line("Welcome");
+      ///       }
+      ///     }
+      ///
+      ///     //Open the file to read from.
+      ///     using_(ifstream ifs(fi.open_text())) {
+      ///       stream_reader sr(ifs);
+      ///       while (!sr.end_of_stream()) {
+      ///         console::write_line(sr.read_line());
+      ///       }
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// // This code produces output similar to the following;
+      /// // results may vary based on the computer/file structure/etc.:
+      /// //
+      /// // Hello
+      /// // And
+      /// // Welcome
+      /// @endcode
+      /// @remarks By default, full read/write access to new files is granted to all users.
       std::ofstream create_text() const;
       
       void move_to(const xtd::ustring& dest_file_name);
