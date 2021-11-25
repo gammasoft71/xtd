@@ -450,10 +450,304 @@ namespace xtd {
       /// @encoode
       std::ofstream append_text() const;
 
+      /// @brief Copies an existing file to a new file, disallowing the overwriting of an existing file.
+      /// @param desy_file_name The name of the new file to copy to.
+      /// @return A new file with a fully qualified path.
+      /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
+      /// @exception xtd::io_io_exception An error occurs, or the destination file already exists and overwrite is false.
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
+      /// @exception xtd::io::directory_not_found_exception The directory specified in dest_file_name does not exist.
+      /// @exception xtd::unauthorized_access_exceptionA directory path is passed in, or the file is being moved to a different drive.
+      /// @exception xtd::ioo::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xttd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
+      /// @par Example
+      /// The following example demonstrates both overloads of the td::io::file_info::copy_to method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     ustring path = R"(c:\SoureFile.txt)";
+      ///     ustring path2 = R"(c:\NewFile.txt)";
+      ///     file_info fi1(path);
+      ///     file_info fi2(path2);
+      ///
+      ///     try {
+      ///       // Create the source file.
+      ///       using_(ofstream s(fi1.create())) {
+      ///       }
+      ///
+      ///       //Ensure that the target file does not exist.
+      ///       if (file::exists(path2)) {
+      ///         fi2.remove();
+      ///       }
+      /// 
+      ///       //Copy the file.f
+      ///    fi1.copy_to(path2);
+      ///       console::write_line("{0} was copied to {1}.", path, path2);
+      ///     } catch (const io_exception& ioex) {
+      ///       console::write_line(ioex.message());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// // This code produces output similar to the following;
+      /// // results may vary based on the computer/file structure/etc.:
+      /// // Add as many lines as you like...
+      /// // Add another line to the output...
+      /// @endcode
+      /// @par Example
+      /// The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     try {
+      ///       // Create a reference to a file, which might or might not exist.
+      ///       // If it does not exist, it is not yet created.
+      ///       file_info fi("temp.txt");
+      ///       // Create a writer, ready to add entries to the file.
+      ///       ofstream ofs(fi.append_text());
+      ///       stream_writer sw(ofs);
+      ///       sw.write_line("Add as many lines as you like...");
+      ///       sw.write_line("Add another line to the output...");
+      ///       sw.flush();
+      ///       sw.close();
+      ///       // Get the information out of the file and display it.
+      ///       ifstream ifs(fi.open_read());
+      ///       stream_reader sr(ifs);
+      ///       console::write_line("This is the information in the first file:");
+      ///       while (sr.peek() != -1)
+      ///         console::write_line(sr.read_line());
+      ///       // Copy this file to another file. The file will not be overwritten if it already exists.
+      ///       file_info newfi = fi.copy_to("newTemp.txt");
+      ///       // Get the information out of the new file and display it.
+      ///       ifs = newfi.open_read();
+      ///       sr = stream_reader(ifs);
+      ///       console::write_line("{0}This is the information in the second file:", environment::new_line());
+      ///       while (sr.peek() != -1)
+      ///         console::write_line(sr.read_line());
+      ///     } catch(const system_exception& e) {
+      ///       console::write_line(e.message());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// // This code produces output similar to the following;
+      /// // results may vary based on the computer/file structure/etc.:
+      /// //
+      /// // This is the information in the first file:
+      /// // Add as many lines as you like...
+      /// // Add another line to the output...
+      ///
+      /// // This is the information in the second file:
+      /// // Add as many lines as you like...
+      /// // Add another line to the output...
+      /// @encode
+      /// @remarks Use the xtd::io::file_info::copy_to(ustring, bool) method to allow overwriting of an existing file.
+      /// @warning Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior
       xtd::io::file_info copy_to(const xtd::ustring& dest_file_name) const;
-      
+      /// @brief Copies an existing file to a new file, allowing the overwriting of an existing file.
+      /// @param dest_file_name The name of the new file to copy to.
+      /// @param overwrite true to allow an existing file to be overwritten; otherwise, false.
+      /// @return A new file, or an overwrite of an existing file if overwrite is true. If the file exists and overwrite is false, an xtd::io::ioo_exception is thrown.
+      /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
+      /// @exception xtd::io_io_exception An error occurs, or the destination file already exists and overwrite is false.
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
+      /// @exception xtd::io::directory_not_found_exception The directory specified in dest_file_name does not exist.
+      /// @exception xtd::unauthorized_access_exceptionA directory path is passed in, or the file is being moved to a different drive.
+      /// @exception xtd::ioo::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xttd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
+      /// @par Example
+      /// The following example demonstrates both overloads of the td::io::file_info::copy_to method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     ustring path = R"(c:\SoureFile.txt)";
+      ///     ustring path2 = R"(c:\NewFile.txt)";
+      ///     file_info fi1(path);
+      ///     file_info fi2(path2);
+      ///
+      ///     try {
+      ///       // Create the source file.
+      ///       using_(ofstream s(fi1.create())) {
+      ///       }
+      ///
+      ///       //Ensure that the target file does not exist.
+      ///       if (file::exists(path2)) {
+      ///         fi2.remove();
+      ///       }
+      ///
+      ///       //Copy the file.f
+      ///    fi1.copy_to(path2);
+      ///       console::write_line("{0} was copied to {1}.", path, path2);
+      ///     } catch (const io_exception& ioex) {
+      ///       console::write_line(ioex.message());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// // This code produces output similar to the following;
+      /// // results may vary based on the computer/file structure/etc.:
+      /// // Add as many lines as you like...
+      /// // Add another line to the output...
+      /// @endcode
+      /// @par Example
+      /// The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Create a reference to a file, which might or might not exist.
+      ///     // If it does not exist, it is not yet created.
+      ///     file_info fi("temp.txt");
+      ///     // Create a writer, ready to add entries to the file.
+      ///     ofstream ofs(fi.append_text());
+      ///     stream_writer sw(ofs);
+      ///     sw.write_line("Add as many lines as you like...");
+      ///     sw.write_line("Add another line to the output...");
+      ///     sw.flush();
+      ///     sw.close();
+      ///     // Get the information out of the file and display it.
+      ///     ifstream ifs(fi.open_read());
+      ///     stream_reader sr(ifs);
+      ///     console::write_line("This is the information in the first file:");
+      ///     while (sr.peek() != -1)
+      ///       console::write_line(sr.read_line());
+      ///     // Copy this file to another file. The true parameter specifies that the file will be overwritten if it already exists.
+      ///     file_info newfi = fi.copy_to("newTemp.txt", true);
+      ///     // Get the information out of the new file and display it.
+      ///     ifs = newfi.open_read();
+      ///     sr = stream_reader(ifs);
+      ///     console::write_line("{0}This is the information in the second file:", environment::new_line());
+      ///     while (sr.peek() != -1)
+      ///       console::write_line(sr.read_line());
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// // This code produces output similar to the following;
+      /// // results may vary based on the computer/file structure/etc.:
+      /// //
+      /// // This is the information in the first file:
+      /// // Add as many lines as you like...
+      /// // Add another line to the output...
+      /// // Add as many lines as you like...
+      /// // Add another line to the output...
+      ///
+      /// // This is the information in the second file:
+      /// // Add as many lines as you like...
+      /// // Add another line to the output...
+      /// // Add as many lines as you like...
+      /// // Add another line to the output...
+      /// @encode
+      /// @remarks Use this method to allow or prevent overwriting of an existing file. Use the xtd::io::file_info::copy_to(ustring) method to prevent overwriting of an existing file by default.
+      /// @warning Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior
       xtd::io::file_info copy_to(const xtd::ustring& dest_file_name, bool overwrite) const;
       
+      /// @brief Creates a file.
+      /// @return A new file.
+      /// @par Example
+      /// The following example creates a reference to a file, and then creates the file on disk using xtd::io::file_info.create().
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Create a reference to a file.
+      ///     file_info fi("temp.txt");
+      ///     // Actually create the file.
+      ///     ofstream ofs( fi.create());
+      ///     // Modify the file as required, and then close the file.
+      ///     ofs.close();
+      ///     // Delete the file.
+      ///     fi.remove();
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @par Example
+      /// The following example creates a file, adds some text to it, and reads from the file.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     ustring path = R"(c:\MyTest.txt)";
+      ///     file_info fi(path);
+      ///
+      ///     // Delete the file if it exists.
+      ///     if (fi.exists())
+      ///       fi.remove();
+      ///
+      ///     //Create the file.
+      ///     using_ (ofstream ofs(fi.create())){
+      ///       ustring s = "This is some text in the file.";
+      ///       vector<char> info(s.begin(), s.end());
+      ///
+      ///       //Add some information to the file.
+      ///       ofs.write(&info[0], info.size());
+      ///     }
+      ///
+      ///     //Open the stream and read it back.
+      ///     using_(ifstream ifs(fi.open_text())) {
+      ///       stream_reader sr(ifs);
+      ///       while (!sr.end_of_stream()) {
+      ///         console::write_line(sr.read_line());
+      ///       }
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      ///
+      /// // This code produces output similar to the following;
+      /// // results may vary based on the computer/file structure/etc.:
+      /// //
+      /// // This is some text in the file.
+      /// @endcode
+      /// @remarks By default, full read/write access to new files is granted to all users.
+      /// @remarks This method is a wrapper for the functionality provided by xtd::io::file::create.
       std::ofstream create() const;
       
       std::ofstream create_text() const;
