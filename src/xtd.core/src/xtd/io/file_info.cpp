@@ -4,7 +4,6 @@
 #include "../../../include/xtd/io/directory_info.h"
 #include "../../../include/xtd/io/path.h"
 #include "../../../include/xtd/argument_exception.h"
-#include "../../../include/xtd/not_implemented_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file.h>
 #include <xtd/native/file_system.h>
@@ -103,7 +102,8 @@ std::ofstream file_info::open_write() const {
 }
 
 void file_info::remove() const {
-  throw not_implemented_exception(csf_);
+  if (!exists()) return;
+  file::remove(full_path_);
 }
 
 void file_info::replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name) {
