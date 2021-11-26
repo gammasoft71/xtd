@@ -20,12 +20,20 @@ namespace {
     return itemText == L"help";
   }
   
-   static bool is_window_item(const xtd::ustring& text) {
-   wxString itemText = text;
-   itemText.Replace(L"&", L"");
-   itemText.Replace(L".", L"");
-   itemText.LowerCase();
-   return itemText == L"window";
+  static bool is_view_item(const xtd::ustring& text) {
+    wxString itemText = text;
+    itemText.Replace(L"&", L"");
+    itemText.Replace(L".", L"");
+    itemText.LowerCase();
+    return itemText == L"view";
+  }
+  
+  static bool is_window_item(const xtd::ustring& text) {
+    wxString itemText = text;
+    itemText.Replace(L"&", L"");
+    itemText.Replace(L".", L"");
+    itemText.LowerCase();
+    return itemText == L"window";
   }
 }
 #endif
@@ -48,15 +56,16 @@ void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, 
   
 #if defined(__APPLE__)
   if (is_help_item(convert_string::to_wstring(text))) {
+    auto has_view_menu = false;
     auto has_window_menu = false;
+
+    for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index) {
+      if (is_view_item(convert_string::to_wstring(text))) has_view_menu = true;
+      if (is_window_item(convert_string::to_wstring(text))) has_window_menu = true;
+    }
     
-    for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index)
-      if (is_window_item(convert_string::to_wstring(text))) {
-        has_window_menu = true;
-        break;
-      }
-    
-    if (!has_window_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&Window");
+    if (!has_view_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&View"_t);
+    if (!has_window_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&Window"_t);
   }
 #endif
   

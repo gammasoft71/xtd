@@ -19,7 +19,7 @@ using namespace xtd::forms::native;
 bool __toggle_full_screen_frame__(wxTopLevelWindow* control);
 void __toggle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
 
-static void __on_exit_menu__(wxCommandEvent& event) {
+static void __on_command_menu__(wxCommandEvent& event) {
   if (event.GetId() == wxID_EXIT) {
     for (auto window : wxTopLevelWindows)
       if (!window->Close())
@@ -30,9 +30,9 @@ static void __on_exit_menu__(wxCommandEvent& event) {
 
 wxMenuBar* __create_default_menu_bar__() {
   wxMenuBar* default_menu_bar = new wxMenuBar;
-  default_menu_bar->Append(new wxMenu(), L"&Window");
-  default_menu_bar->Append(new wxMenu(), L"&Help");
-  default_menu_bar->Bind(wxEVT_MENU, &__on_exit_menu__);
+  default_menu_bar->Append(new wxMenu(), L"&View"_t);
+  default_menu_bar->Append(new wxMenu(), L"&Window"_t);
+  default_menu_bar->Bind(wxEVT_MENU, &__on_command_menu__);
   return default_menu_bar;
 }
 
