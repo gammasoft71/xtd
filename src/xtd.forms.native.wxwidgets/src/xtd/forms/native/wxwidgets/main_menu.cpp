@@ -55,15 +55,19 @@ void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, 
   auto wx_main_menu = reinterpret_cast<wxMenuBar*>(main_menu);
   
 #if defined(__APPLE__)
+  if (is_window_item(convert_string::to_wstring(text))) {
+    bool has_view_menu = false;
+    for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index)
+      if (is_view_item(convert_string::to_wstring(text))) has_view_menu = true;
+    if (!has_view_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&View"_t);
+  }
+  
   if (is_help_item(convert_string::to_wstring(text))) {
-    auto has_view_menu = false;
-    auto has_window_menu = false;
-
+    bool has_view_menu = false, has_window_menu = false;
     for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index) {
       if (is_view_item(convert_string::to_wstring(text))) has_view_menu = true;
       if (is_window_item(convert_string::to_wstring(text))) has_window_menu = true;
     }
-    
     if (!has_view_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&View"_t);
     if (!has_window_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&Window"_t);
   }
