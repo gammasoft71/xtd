@@ -17,16 +17,7 @@ main_form::main_form() {
   size(properties::settings::default_settings().size());
   location(properties::settings::default_settings().location());
   if (properties::settings::default_settings().menu_visible()) {
-    menu({
-      {system_texts::file(), {
-        {system_texts::clear(), {*this, &main_form::on_clear_button_click}, menu_images::from_name("edit-delete"), shortcut::cmd_del},
-        {"-"},
-        {system_texts::exit(), {overload_<>(&application::exit)}, menu_images::file_exit(), shortcut::alt_f4},
-      }},
-      {system_texts::help(), {
-        {system_texts::about(), {*this, &main_form::show_about_dialog}, menu_images::help_about()},
-      }},
-    });
+    menu(main_menu_);
   }
   minimum_size({340, 340});
   start_position(form_start_position::manual);

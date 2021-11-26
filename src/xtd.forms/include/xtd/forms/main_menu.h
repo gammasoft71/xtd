@@ -2,6 +2,8 @@
 /// @brief Contains xtd::forms::main_menu menu.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <memory>
+#include <vector>
 #include "menu_item.h"
 #include "message.h"
 #include "theme_images.h"
@@ -33,49 +35,54 @@ namespace xtd {
       main_menu();
       /// @brief Initialize a new instance of main_menu class.
       /// @param menu_items An array of menu_item objects that will be added to the main_menu.
-      main_menu(const std::vector<menu_item>& menu_items);
+      main_menu(const std::vector<std::reference_wrapper<menu_item>>& menu_items);
       /// @cond
-      main_menu(const std::initializer_list<menu_item>& menu_items);
+      main_menu(const std::initializer_list<std::reference_wrapper<menu_item>>& menu_items);
       /// @endcond
 
       /// @brief A factory to create a main menu with specified on click event handler.
+      /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
-      static xtd::forms::main_menu create_standard_items(const xtd::event_handler& on_click);
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified image size and on click event handler.
+      /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
       /// @param image_size A xtd::drawing::size that represent the menu item image size.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
-      static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& image_size, const xtd::event_handler& on_click);
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::drawing::size& image_size, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified theme and on click event handler.
+      /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
       /// @param theme The theme of menu item image.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
-      static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::event_handler& on_click);
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified theme, image size and on click event handler.
+      /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
       /// @param theme The theme of menu item image.
       /// @param image_size A xtd::drawing::size that represent the menu item image size.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
-      static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified theme, image size and on click event handler.
+      /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
       /// @param theme The theme of menu item image.
       /// @param image_size A xtd::drawing::size that represent the menu item image size.
       /// @param on_click an event handler to respond on lick event.
       /// @return new main menu instance.
-      static xtd::forms::main_menu create_standard_items(const xtd::forms::theme_images& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::forms::theme_images& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
 
       /// @cond
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(on_click_type on_click) {return create_standard_items(xtd::event_handler(on_click));}
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, on_click_type on_click) {return create_standard_items(menu_items, xtd::event_handler(on_click));}
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(size, xtd::event_handler(on_click));}
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(menu_items, size, xtd::event_handler(on_click));}
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, on_click_type on_click) {return create_standard_items(theme, xtd::event_handler(on_click));}
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, on_click_type on_click) {return create_standard_items(menu_items, theme, xtd::event_handler(on_click));}
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(theme, size, xtd::event_handler(on_click));}
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(menu_items, theme, size, xtd::event_handler(on_click));}
       template<typename on_click_type>
-      static xtd::forms::main_menu create_standard_items(const xtd::forms::theme_images& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(theme, size, xtd::event_handler(on_click));}
+      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::forms::theme_images& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(menu_items, theme, size, xtd::event_handler(on_click));}
       /// @endcond
  
     protected:

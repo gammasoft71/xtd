@@ -97,7 +97,7 @@ menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_clic
   create_menu();
 }
 
-menu_item::menu_item(const xtd::ustring& text, const std::vector<menu_item>& items) : text_(text) {
+menu_item::menu_item(const xtd::ustring& text, const std::vector<std::reference_wrapper<menu_item>>& items) : text_(text) {
   is_parent_ = true;
   create_menu();
   data_->menu_items_.push_back_range(items);
@@ -153,8 +153,8 @@ intptr_t menu_item::create_menu_handle() {
   if (is_parent() || data_->main_menu_.has_value() || data_->context_menu_.has_value()) return native::menu::create();
   
   if (text_ == "-") kind_ = xtd::forms::menu_item_kind::separator;
-  auto handle = native::menu_item::create(data_->parent_.value()->handle(), text_, image_, static_cast<int>(kind_), static_cast<size_t>(shortcut_));
-  handles_[native::menu_item::menu_id(handle)] = make_shared<menu_item>(*this);
+  auto handle = native::menu_item::create(data_->parent_.value().get().handle(), text_, image_, static_cast<int>(kind_), static_cast<size_t>(shortcut_));
+  handles_.insert({native::menu_item::menu_id(handle), reference_wrapper<menu>(*this)});
   return handle;
 }
 
@@ -171,7 +171,7 @@ int menu_item::menu_id() const {
 
 void menu_item::on_item_added(size_t pos, std::reference_wrapper<menu_item> item) {
   menu::on_item_added(pos, item);
-  item.get().data_->parent_ = make_unique<menu_item>(*this);
+  item.get().data_->parent_ = *this;
   if (!item.get().handle()) item.get().create_menu();
   if (item.get().is_parent() || item.get().data_->main_menu_.has_value()) native::menu::insert_menu(handle(), pos, item.get().handle(), item.get().text());
   else {

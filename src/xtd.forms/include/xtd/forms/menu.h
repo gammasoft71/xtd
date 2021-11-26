@@ -32,7 +32,7 @@ namespace xtd {
     class forms_export_ menu : public component {
     public:
       /// @brief Represents a collection of menu_item objects.
-      using menu_item_collection = layout::arranged_element_collection<menu_item>;
+      using menu_item_collection = layout::arranged_element_collection<std::reference_wrapper<menu_item>>;
       
       /// @cond
       ~menu();
@@ -66,8 +66,8 @@ namespace xtd {
       /// @remarks You can use this property to obtain a reference to the list of menu items that are currently stored in the menu. For main_menu and context_menu objects, the menu_items property contains the entire menu structure in the control. For the menu_item class, the menu_items property contains the list of submenu items associated with the menu_item. With the reference to the collection of menu items for the menu (provided by this property), you can add and remove menu items, determine the total number of menu items, and clear the list of menu items from the collection. For more information on maintaining the menu item collection for a menu, see the xtd::forms::menu::menu_item_collection documentation.
       menu& menu_items(const menu_item_collection& value);
       /// @cond
-      menu& menu_items(const std::initializer_list<menu_item>& value);
-      menu& menu_items(const std::vector<menu_item>& value);
+      menu& menu_items(const std::initializer_list<std::reference_wrapper<menu_item>>& value);
+      menu& menu_items(const std::vector<std::reference_wrapper<menu_item>>& value);
       /// @endcond
 
       /// @brief Gets the name of the menu.
@@ -98,12 +98,12 @@ namespace xtd {
       /// @brief Gets the context_menu that contains this menu.
       /// @return The context_menu that contains this menu. The default is no value.
       /// @remarks This method allows you to obtain a reference to the context_menu that this menu is contained in. This property returns no value if the menu is not contained in a context_menu. This can occur if the menu is contained in a menu_item or main_menu, or if the menu is not contained in any menu. You can use this property to determine whether a menu is currently being used, and also to determine where.
-      std::optional<context_menu> get_context_menu() const;
+      std::optional<std::reference_wrapper<context_menu>> get_context_menu() const;
 
       /// @brief Gets the main_menu that contains this menu.
       /// @return The main_menu that contains this menu. The default is has no value.
       /// @remarks This method allows you to obtain a reference to the main_menu that this menu is contained in. This property returns no value if the menu is not contained in a main_menu. This can occur if the menu is contained in a menu_item or context_menu, or if the menu is not contained in any menu. You can use this property to determine whether a menu is currently being used, and also to determine where.
-      std::optional<main_menu> get_main_menu() const;
+      std::optional<std::reference_wrapper<main_menu>> get_main_menu() const;
 
       /// @brief Merges the MenuItem objects of one menu with the current menu.
       /// @param menu_src The menu whose menu items are merged with the menu items of the current menu.
@@ -136,8 +136,9 @@ namespace xtd {
       /// @remarks Since menu is an abstract class, only inherited classes can call the menu constructor.
       explicit menu(const menu_item_collection& items);
       /// @cond
-      explicit menu(const std::initializer_list<menu_item>& items);
-      explicit menu(const std::vector<menu_item>& items);
+      explicit menu(const std::initializer_list<std::reference_wrapper<menu_item>>& items);
+      explicit menu(const std::vector<std::reference_wrapper<menu_item>>& items);
+      menu(const menu&) = delete;
       /// @endcond
 
       /// @brief Copies the menu that is passed as a parameter to the current menu.
@@ -163,12 +164,12 @@ namespace xtd {
 
       struct data {
         intptr_t handle_ = 0;
-        std::optional<std::unique_ptr<menu>> context_menu_;
+        std::optional<std::reference_wrapper<menu>> context_menu_;
         menu_item_collection menu_items_;
         std::unique_ptr<menu_item> mdi_list_item_;
-        std::optional<std::unique_ptr<menu>> main_menu_;
+        std::optional<std::reference_wrapper<menu>> main_menu_;
         xtd::ustring name_;
-        std::optional<std::unique_ptr<menu>> parent_;
+        std::optional<std::reference_wrapper<menu>> parent_;
         std::any tag_;
         xtd::event_handler on_click_;
         void callback(xtd::forms::menu& menu) {
@@ -176,7 +177,7 @@ namespace xtd {
         };
       };
       std::shared_ptr<data> data_;
-      static std::map<intptr_t, std::shared_ptr<menu>> handles_;
+      static std::map<int32_t, std::reference_wrapper<menu>> handles_;
       /// @endcond
     };
   }
