@@ -39,7 +39,7 @@ void main_menu::on_item_added(size_t pos, std::reference_wrapper<menu_item> item
   item.get().data_->main_menu_ = make_unique<main_menu>(*this);
   item.get().data_->parent_ = make_unique<main_menu>(*this);
   if (!item.get().handle()) item.get().create_menu();
-  native::main_menu::insert_item(handle(), pos, item.get().handle());
+  native::main_menu::insert_item(handle(), pos, item.get().handle(), item.get().text());
 }
 
 void main_menu::on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) {

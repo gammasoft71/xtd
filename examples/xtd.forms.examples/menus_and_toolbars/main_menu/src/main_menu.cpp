@@ -13,7 +13,7 @@ namespace examples {
           {system_texts::new_(), {*this, &form1::on_menu_click}, menu_images::file_new(), shortcut::cmd_n},
           {"-"},
           {system_texts::open(), {*this, &form1::on_menu_click}, menu_images::file_open(), shortcut::cmd_o},
-          {"Open recen", {
+          {"Open recent", {
             {"Path/File1", {*this, &form1::on_menu_click}},
             {"Path/File2", {*this, &form1::on_menu_click}},
             {"Path/File3", {*this, &form1::on_menu_click}},

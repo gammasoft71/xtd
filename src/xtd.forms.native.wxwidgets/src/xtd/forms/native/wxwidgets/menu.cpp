@@ -10,11 +10,8 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t menu::create(const ustring& text) {
-  auto wx_menu = new wxMenu();
-  wx_menu->SetTitle(convert_string::to_wstring(text));
-  
-  return reinterpret_cast<intptr_t>(wx_menu);
+intptr_t menu::create() {
+  return reinterpret_cast<intptr_t>(new wxMenu());
 }
 
 void menu::destroy(intptr_t menu) {
@@ -23,16 +20,16 @@ void menu::destroy(intptr_t menu) {
   delete reinterpret_cast<wxMenu*>(menu);
 }
 
-void menu::insert_item(intptr_t menu, size_t pos,  intptr_t menu_item) {
+void menu::insert_item(intptr_t menu, size_t pos, intptr_t menu_item) {
   if (menu == 0) throw argument_exception(csf_);
   if (menu_item == 0) throw argument_exception(csf_);
   reinterpret_cast<wxMenu*>(menu)->Insert(pos, reinterpret_cast<wxMenuItem*>(menu_item));
 }
 
-void menu::insert_menu(intptr_t menu, size_t pos,  intptr_t menu_item) {
+void menu::insert_menu(intptr_t menu, size_t pos, intptr_t menu_item, const ustring& text) {
   if (menu == 0) throw argument_exception(csf_);
   if (menu_item == 0) throw argument_exception(csf_);
-  reinterpret_cast<wxMenu*>(menu)->Insert(pos, wxID_ANY, reinterpret_cast<wxMenu*>(menu_item)->GetTitle(), reinterpret_cast<wxMenu*>(menu_item));
+  reinterpret_cast<wxMenu*>(menu)->Insert(pos, wxID_ANY, convert_string::to_wstring(text), reinterpret_cast<wxMenu*>(menu_item));
 }
 
 intptr_t menu::native_handle(intptr_t menu) {

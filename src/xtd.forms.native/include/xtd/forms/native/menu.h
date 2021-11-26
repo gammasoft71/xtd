@@ -37,10 +37,9 @@ namespace xtd {
         friend xtd::forms::menu_item;
       protected:
         /// @brief Creates menu.
-        /// @param text The text associated with this menu.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr_t create(const xtd::ustring& text);
+        static intptr_t create();
         /// @brief Destroy menu.
         /// @param menu Menu handle.
         /// @warning Internal use only
@@ -55,8 +54,9 @@ namespace xtd {
         /// @param menu Menu handle.
         /// @param pos Position to insert menu item.
         /// @param menu_item Menu item to insert.
+        /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void insert_menu(intptr_t menu, size_t pos,  intptr_t menu_item);
+        static void insert_menu(intptr_t menu, size_t pos,  intptr_t menu_item, const xtd::ustring& text);
         /// @brief Gets native menu handle.
         /// @param menu Menu handle.
         /// @return The native menu handle.
