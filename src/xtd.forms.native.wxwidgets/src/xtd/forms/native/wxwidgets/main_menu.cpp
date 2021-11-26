@@ -1,4 +1,5 @@
 #include <xtd/argument_exception.h>
+#include <xtd/convert_string.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/main_menu.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
@@ -39,19 +40,18 @@ void main_menu::destroy(intptr_t main_menu) {
   reinterpret_cast<wxMenuBar*>(main_menu)->Destroy();
 }
 
-void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item) {
+void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, const ustring& text) {
   if (main_menu == 0) throw argument_exception(csf_);
   if (menu_item == 0) throw argument_exception(csf_);
 
   auto wx_main_menu = reinterpret_cast<wxMenuBar*>(main_menu);
-  auto wx_menu_item = reinterpret_cast<wxMenu*>(menu_item);
   
 #if defined(__APPLE__)
-  if (is_help_item(wx_menu_item->GetTitle().c_str().AsWChar())) {
+  if (is_help_item(convert_string::to_wstring(text))) {
     auto has_window_menu = false;
     
     for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index)
-      if (is_window_item(wx_main_menu->GetMenu(index)->GetTitle().c_str().AsWChar())) {
+      if (is_window_item(convert_string::to_wstring(text))) {
         has_window_menu = true;
         break;
       }
@@ -60,5 +60,5 @@ void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item) 
   }
 #endif
   
-  wx_main_menu->Insert(pos, wx_menu_item, wx_menu_item->GetTitle());
+  wx_main_menu->Insert(pos, reinterpret_cast<wxMenu*>(menu_item), convert_string::to_wstring(text));
 }
