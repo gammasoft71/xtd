@@ -1,13 +1,4 @@
 #include "main_form.h"
-#include "../properties/settings.h"
-#include "../resources/xtd_console.xpm"
-#include "../resources/xtd_gui.xpm"
-#include "../resources/xtd_tunit.xpm"
-#include "../resources/xtd_cmake.xpm"
-#include "../resources/xtd_open_examples.xpm"
-#include "../resources/xtd_open.xpm"
-#include "../resources/xtd_new.xpm"
-#include "../resources/xtd_run.xpm"
 #include <ctype.h>
 #include <list>
 #include <filesystem>
@@ -28,25 +19,8 @@ using namespace xtd::forms;
 using namespace xtdc_gui;
 
 main_form::main_form() {
-  if (properties::settings::default_settings().menu_visible()) {
-    menu({
-      {system_texts::file(), {
-        {"Create new project", {*this, overload_<>(&main_form::new_project)}, bitmap(bitmap(xtd_new_icon), menu_images::size()), shortcut::cmd_n},
-        {"Open a project or solution", {*this, overload_<>(&main_form::open_project)}, bitmap(bitmap(xtd_open_examples_icon), menu_images::size()), shortcut::cmd_o},
-        {"Open xtd examples", {*this, &main_form::open_xtd_examples}, bitmap(bitmap(xtd_open_icon), menu_images::size()), shortcut::cmd_e},
-        {"Run a project", {*this, overload_<>(&main_form::run_project)}, bitmap(bitmap(xtd_run_icon), menu_images::size()), shortcut::cmd_r},
-        {"-"},
-        {system_texts::exit(), {overload_<>(&application::exit)}, menu_images::file_exit(), shortcut::alt_f4},
-      }},
-      {system_texts::options(), {
-        {"Auto close"_t, {*this, &main_form::set_auto_close}, menu_item_kind::check, properties::settings::default_settings().auto_close(), shortcut::alt_1},
-      }},
-      
-      {system_texts::help(), {
-        {system_texts::about(), {*this, &main_form::show_about_dialog}, menu_images::help_about()},
-      }},
-    });
-  }
+  if (properties::settings::default_settings().menu_visible())
+    menu(main_menu_);
   
   client_size({1000, 710});
   minimum_size(size());
@@ -478,8 +452,8 @@ main_form::main_form() {
   previous_button_.click += [&] {
     if (open_xtd_examples_panel_.visible()) {
       if (menu().has_value()) {
-        menu().value().menu_items()[0].menu_items()[0].enabled(true);
-        menu().value().menu_items()[0].menu_items()[2].enabled(true);
+        file_open_project_menu_item_.enabled(true);
+        file_run_project_menu_item_.enabled(true);
       }
       startup_panel_.visible(true);
       open_xtd_examples_panel_.visible(false);
@@ -487,8 +461,8 @@ main_form::main_form() {
       next_button_.visible(false);
     } else if (create_panel_.visible()) {
       if (menu().has_value()) {
-        menu().value().menu_items()[0].menu_items()[0].enabled(true);
-        menu().value().menu_items()[0].menu_items()[2].enabled(true);
+        file_open_project_menu_item_.enabled(true);
+        file_run_project_menu_item_.enabled(true);
       }
       startup_panel_.visible(true);
       create_panel_.visible(false);
@@ -653,8 +627,8 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
 
 void main_form::new_project() {
   if (menu().has_value()) {
-    menu().value().menu_items()[0].menu_items()[0].enabled(false);
-    menu().value().menu_items()[0].menu_items()[2].enabled(false);
+    file_open_project_menu_item_.enabled(false);
+    file_run_project_menu_item_.enabled(false);
   }
   startup_panel_.visible(false);
   create_panel_.visible(true);
@@ -727,8 +701,8 @@ void main_form::open_project(const std::string& project_path) {
 
 void main_form::open_xtd_examples() {
   if (menu().has_value()) {
-    menu().value().menu_items()[0].menu_items()[0].enabled(false);
-    menu().value().menu_items()[0].menu_items()[2].enabled(false);
+    file_open_project_menu_item_.enabled(false);
+    file_run_project_menu_item_.enabled(false);
   }
   startup_panel_.visible(false);
   open_xtd_examples_panel_.visible(true);

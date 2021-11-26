@@ -13,11 +13,5 @@ namespace unit_tests {
       assert::is_not_zero(menu.handle(), csf_);
       assert::is_zero(menu.menu_items().size(), csf_);
     }
-
-    void test_method_(copy_main_menu) {
-      main_menu menu1;
-      main_menu menu2(menu1);
-      assert::are_equal(menu1.handle(), menu2.handle(), csf_);
-    }
   };
 }

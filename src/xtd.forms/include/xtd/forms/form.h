@@ -139,7 +139,7 @@ namespace xtd {
       
       /// @brief Gets the main_menu that is displayed in the form.
       /// @return A main_menu that represents the menu to display in the form.
-      virtual std::optional<forms::main_menu> menu() const {return menu_;}
+      virtual std::optional<std::reference_wrapper<forms::main_menu>> menu() const {return menu_;}
       /// @brief Sets the main_menu that is displayed in the form.
       /// @param value A main_menu that represents the menu to display in the form.
       /// @return Current form.
@@ -329,7 +329,7 @@ namespace xtd {
       bool help_button_ = true;
       xtd::drawing::icon icon_ = xtd::drawing::icon::empty;
       bool maximize_box_ = true;
-      std::optional<forms::main_menu> menu_;
+      std::optional<std::reference_wrapper<forms::main_menu>> menu_;
       bool minimize_box_ = true;
       std::shared_ptr<screen> previous_screen_;
       bool show_icon_ = true;

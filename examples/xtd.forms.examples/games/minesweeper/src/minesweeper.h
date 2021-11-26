@@ -1,5 +1,8 @@
 #pragma once
+#include "../properties/resources.h"
+#include "../properties/settings.h"
 #include "cell.h"
+#include "high_scores_dialog.h"
 #include "level.h"
 #include <xtd/xtd>
 
@@ -31,8 +34,6 @@ namespace minesweeper {
     void check_neighbors(const xtd::drawing::point& cell_location);
     int checked_cell(const xtd::drawing::point& cell_location);
 
-    xtd::forms::main_menu create_main_menu();
-    
     void draw_cell(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     void draw_unchecked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     void draw_checked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
@@ -66,6 +67,36 @@ namespace minesweeper {
     xtd::forms::lcd_label mine_count_label_;
     xtd::forms::lcd_label stopwatch_label_;
     xtd::forms::button start_game_;
+    
+    xtd::forms::menu_item game_new_game_menu_item_ {"&New games", {[&] {new_game();}}, xtd::forms::shortcut::f2};
+    xtd::forms::menu_item game_separator1_menu_item_ {"-"};
+    xtd::forms::menu_item game_beginner_menu_item_ {"&Beginner", {[&] {change_level(level::beginner);}}, xtd::forms::menu_item_kind::radio, xtd::as<level>(properties::settings::default_settings().level()) == level::beginner};
+    xtd::forms::menu_item game_inermediate_menu_item_ {"&Intermediate", {[&] {change_level(level::intermediate);}}, xtd::forms::menu_item_kind::radio, xtd::as<level>(properties::settings::default_settings().level()) == level::intermediate};
+    xtd::forms::menu_item game_expert_menu_item_ {"&Expert", {[&] {change_level(level::expert);}}, xtd::forms::menu_item_kind::radio, xtd::as<level>(properties::settings::default_settings().level()) == level::expert};
+    xtd::forms::menu_item game_custom_menu_item_ {"&Custom...", {*this, &minesweeper_form::on_custom_menu_click}, xtd::forms::menu_item_kind::radio, xtd::as<level>(properties::settings::default_settings().level()) == level::custom};
+    xtd::forms::menu_item game_separator2_menu_item_ {"-"};
+    xtd::forms::menu_item game_marks_menu_item_ {"&Marks [?]", {[&](xtd::object& sender, const xtd::event_args& e) {
+      properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
+      properties::settings::default_settings().save();
+    }}, xtd::forms::menu_item_kind::check, properties::settings::default_settings().marks()};
+    xtd::forms::menu_item game_original_color_menu_item_ {"&Original color", {[&](xtd::object& sender, const xtd::event_args& e) {
+      properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());
+      properties::settings::default_settings().save();
+      update_colors();
+    }}, xtd::forms::menu_item_kind::check, properties::settings::default_settings().original_color()};
+    xtd::forms::menu_item game_separator3_menu_item_ {"-"};
+    xtd::forms::menu_item game_best_times_menu_item_ {"Best &times...", {[&] {high_scores_dialog().show_dialog(*this);}}};
+    xtd::forms::menu_item game_separator4_menu_item_ {"-"};
+    xtd::forms::menu_item game_exit_menu_item_ {xtd::forms::system_texts::exit(), {overload_<>(xtd::forms::application::exit)}};
+    xtd::forms::menu_item game_menu_item_ {"&Game", {game_new_game_menu_item_, game_separator1_menu_item_, game_beginner_menu_item_, game_inermediate_menu_item_, game_expert_menu_item_, game_custom_menu_item_, game_separator2_menu_item_, game_marks_menu_item_, game_original_color_menu_item_, game_separator3_menu_item_, game_best_times_menu_item_, game_separator4_menu_item_, game_exit_menu_item_}};
+    xtd::forms::menu_item help_content_menu_item_ {"&Contents", {[&] {}}, xtd::forms::shortcut::f1};
+    xtd::forms::menu_item help_search_menu_item_ {"&Search for Help On...", {[&] {}}};
+    xtd::forms::menu_item help_how_to_menu_item_ {"&How to Use Help", {[&] {}}};
+    xtd::forms::menu_item help_separator1_menu_item_ {"-"};
+    xtd::forms::menu_item help_about_menu_item_ {xtd::forms::system_texts::about(), {*this, &minesweeper_form::on_about_menuu_click}};
+    xtd::forms::menu_item help_menu_item_ {xtd::forms::system_texts::help(), {help_content_menu_item_, help_search_menu_item_, help_how_to_menu_item_, help_separator1_menu_item_, help_about_menu_item_}};
+    xtd::forms::main_menu main_menu_ {game_menu_item_, help_menu_item_};
+
     xtd::forms::timer stopwatch_timer_;
     grid_size grid_size_ {9, 9};
     int mine_count_ = 0;

@@ -12,7 +12,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-map<intptr_t, shared_ptr<menu>> menu::handles_;
+map<int32_t, reference_wrapper<menu>> menu::handles_;
 
 menu::menu() {
   data_ = make_shared<data>();
@@ -29,7 +29,7 @@ menu::menu(const menu_item_collection& items) {
   data_->menu_items_.push_back_range(items);
 }
 
-menu::menu(const initializer_list<menu_item>& items) {
+menu::menu(const initializer_list<std::reference_wrapper<menu_item>>& items) {
   data_ = make_shared<data>();
   //data_->mdi_list_item_ = make_unique<menu_item>();
   data_->menu_items_.item_added += {*this, &menu::on_item_added};
@@ -37,7 +37,7 @@ menu::menu(const initializer_list<menu_item>& items) {
   data_->menu_items_.push_back_range(items);
 }
 
-menu::menu(const vector<menu_item>& items) {
+menu::menu(const vector<std::reference_wrapper<menu_item>>& items) {
   data_ = make_shared<data>();
   //data_->mdi_list_item_ = make_unique<menu_item>();
   data_->menu_items_.item_added += {*this, &menu::on_item_added};
@@ -68,31 +68,31 @@ menu& menu::menu_items(const menu_item_collection& value) {
   return *this;
 }
 
-menu& menu::menu_items(const initializer_list<menu_item>& value) {
+menu& menu::menu_items(const initializer_list<reference_wrapper<menu_item>>& value) {
   data_->menu_items_.clear();
   for (const auto& item : value)
     data_->menu_items_.push_back(item);
   return *this;
 }
 
-menu& menu::menu_items(const vector<menu_item>& value) {
+menu& menu::menu_items(const vector<reference_wrapper<menu_item>>& value) {
   data_->menu_items_.clear();
   for (const auto& item : value)
     data_->menu_items_.push_back(item);
   return *this;
 }
 
-optional<context_menu> menu::get_context_menu() const {
-  const menu* item = this;
+optional<reference_wrapper<context_menu>> menu::get_context_menu() const {
+  menu* item = const_cast<menu*>(this);
   while (item)
-    if (dynamic_cast<const context_menu*>(item)) return static_cast<const context_menu&>(*item);
+    if (dynamic_cast<context_menu*>(item)) return static_cast<context_menu&>(*item);
   return {};
 }
 
-optional<main_menu> menu::get_main_menu() const {
-  const menu* item = this;
+optional<reference_wrapper<main_menu>> menu::get_main_menu() const {
+  menu* item = const_cast<menu*>(this);
   while (item)
-    if (dynamic_cast<const main_menu*>(item)) return static_cast<const main_menu&>(*item);
+    if (dynamic_cast<main_menu*>(item)) return static_cast<main_menu&>(*item);
   return {};
 }
 
@@ -115,19 +115,11 @@ void menu::merge_menu(const menu& menu_src) {
 void menu::create_menu() {
   if (!data_->handle_) {
     data_->handle_ = create_menu_handle();
-    /*
-    for (auto item : data_->menu_items_) {
-      item.data_->parent_ = make_unique<menu_item>(*static_cast<menu_item*>(this));
-      item.create_menu();
-    }
-     */
   }
 }
 
 void menu::destroy_menu() {
   if (data_->handle_) {
-    for (auto menu_item : data_->menu_items_)
-      menu_item.destroy_menu();
     destroy_menu_handle(data_->handle_);
   }
 }

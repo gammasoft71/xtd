@@ -123,9 +123,9 @@ form& form::maximize_box(bool value) {
 }
 
 form& form::menu(const forms::main_menu& value) {
-  if (!menu_.has_value() || &menu_.value() != &value) {
-    menu_ = value;
-    if (is_handle_created()) native::form::menu(handle(), menu_.value().handle());
+  if (!menu_.has_value() || &menu_.value().get() != &value) {
+    menu_ = const_cast<forms::main_menu&>(value);
+    if (is_handle_created()) native::form::menu(handle(), menu_.value().get().handle());
   }
   return *this;
 }
@@ -397,7 +397,7 @@ void form::wnd_proc(message &message) {
   switch (message.msg()) {
     case WM_ACTIVATE: wm_activate(message); break;
     case WM_CLOSE: wm_close(message); break;
-    case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().wm_click(message); break;
+    case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().get().wm_click(message); break;
     default: container_control::wnd_proc(message); break;
   }
 }
@@ -438,7 +438,7 @@ void form::on_handle_created(const event_args &e) {
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
 
-  if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
+  if (menu_.has_value()) native::form::menu(handle(), menu_.value().get().handle());
 }
 
 void form::on_handle_destroyed(const event_args &e) {
