@@ -327,6 +327,10 @@ xtd::ustring system_texts::view() {
   return "&View"_t;
 }
 
+xtd::ustring system_texts::window() {
+  return "&Window"_t;
+}
+
 xtd::ustring system_texts::yes() {
   return "&Yes"_t;
 }

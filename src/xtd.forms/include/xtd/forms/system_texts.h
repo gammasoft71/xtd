@@ -183,6 +183,8 @@ namespace xtd {
       static xtd::ustring up();
       /// @brief Gets a system-defined text that has a string value of "&View". This field is constant.
       static xtd::ustring view();
+      /// @brief Gets a system-defined text that has a string value of "&Window". This field is constant.
+      static xtd::ustring window();
       /// @brief Gets a system-defined text that has a string value of "&Yes". This field is constant.
       static xtd::ustring yes();
       /// @brief Gets a system-defined text that has a string value of "Zoom &In". This field is constant.
