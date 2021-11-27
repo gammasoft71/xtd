@@ -802,6 +802,23 @@ namespace xtd {
       /// @remarks By default, full read/write access to new files is granted to all users.
       std::ofstream create_text() const;
       
+      /// @brief Moves a specified file to a new location, providing the option to specify a new file name.
+      /// @param dest_file_name The path to move the file to, which can specify a different file name.
+      /// @exception xtd::io::io_exception An I/O error occurs, such as the destination file already exists or the destination device is not ready.
+      /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
+      /// @exception xttd::security::security_exception The caller does not have the required permission.
+      /// @exception UnauthorizedAccessException destFileName is read-only or is a directory.
+      /// @exception xtd::io::file_not_found_exception The file is not found.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
+      /// @par Example
+      ///
+      /// @code
+      ///
+      /// @endcode
+      /// @remarks This method works across disk volumes. For example, the file c:\MyFile.txt can be moved to d:\public and renamed NewFile.txt.
+      /// @remarks This method does not overwrite the destination file if it already exists. For that purpose, call xtd::ioo::file_info::move_to(ustring, bool) instead.
       void move_to(const xtd::ustring& dest_file_name);
       
       void move_to(const xtd::ustring& dest_file_name, bool overwrite);
@@ -814,6 +831,79 @@ namespace xtd {
       
       std::ofstream open_write() const;
 
+      /// @brief Permanently deletes a file.
+      /// @exception xtd::io::io_exception The target file is open or memory-mapped on a computer running Microsoft Windows NT. -or- There is an open handle on the file, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see How to: Enumerate Directories and Files.
+      /// @exception xrd::security::security_exception The caller does not have the required permission.
+      /// @exception xtd::unauthorized_access_exception The path is a directory.
+      /// @par Example
+      /// The following example demonstrates the xtd::io::file_info::remove method.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     ustring path = R"(c:\MyTest.txt)";
+      ///     file_info fi1(path);
+      ///
+      ///     try {
+      ///       using_ (ofstream ofs = fi1.create_text()) {}
+      ///       ustring path2 = path + "temp";
+      ///       file_info fi2(path2);
+      ///
+      ///       //Ensure that the target does not exist.
+      ///       fi2.remove();
+      ///
+      ///       //Copy the file.
+      ///       fi1.copy_to(path2);
+      ///       console::write_line("{0} was copied to {1}.", path, path2);
+      ///
+      ///       //Delete the newly created file.
+      ///       fi2.remove();
+      ///       console::write_line("{0} was successfully deleted.", path2);
+      ///     } catch (const system_exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      /// ///
+      /// /// startup_(program);
+      ///
+      /// // This code produces output similar to the following;
+      /// // results may vary based on the computer/file structure/etc.:
+      /// //
+      /// //c:\MyTest.txt was copied to c:\MyTest.txttemp.
+      /// //c:\MyTest.txttemp was successfully deleted.
+      /// @endcode
+      /// @par Example
+      /// The following example creates, closes, and deletes a file.
+      /// @code
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace std;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static void main() {
+      ///     // Create a reference to a file.
+      ///     file_info fi("temp.txt");
+      ///     // Actually create the file.
+      ///     ofstream ofs = fi.create();
+      ///     // Modify the file as required, and then close the file.
+      ///     ofs.close();
+      ///     // Delete the file.
+      ///     fi.remove();
+      ///   }
+      /// };
+      ///
+      /// startup_(program);
+      /// @endcode
+      /// @remarks If the file does not exist, this method does nothing.
       void remove() const override;
       
       void replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
