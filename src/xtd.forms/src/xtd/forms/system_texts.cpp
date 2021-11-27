@@ -8,7 +8,7 @@ xtd::ustring system_texts::abort() {
 }
 
 xtd::ustring system_texts::about() {
-  return "&About"_t;
+  return "&About..."_t;
 }
 
 xtd::ustring system_texts::actual_size() {
