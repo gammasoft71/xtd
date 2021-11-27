@@ -57,16 +57,19 @@ void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, 
 #if defined(__APPLE__)
   if (is_window_item(convert_string::to_wstring(text))) {
     bool has_view_menu = false;
-    for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index)
-      if (is_view_item(convert_string::to_wstring(text))) has_view_menu = true;
+    for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index) {
+      auto title = wx_main_menu->GetMenu(index)->GetTitle();
+      if (is_view_item(title.c_str().AsWChar())) has_view_menu = true;
+    }
     if (!has_view_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&View"_t);
   }
   
   if (is_help_item(convert_string::to_wstring(text))) {
     bool has_view_menu = false, has_window_menu = false;
     for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index) {
-      if (is_view_item(convert_string::to_wstring(text))) has_view_menu = true;
-      if (is_window_item(convert_string::to_wstring(text))) has_window_menu = true;
+      auto title = wx_main_menu->GetMenu(index)->GetTitle();
+      if (is_view_item(title.c_str().AsWChar())) has_view_menu = true;
+      if (is_window_item(title.c_str().AsWChar())) has_window_menu = true;
     }
     if (!has_view_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&View"_t);
     if (!has_window_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&Window"_t);
