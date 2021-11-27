@@ -150,7 +150,8 @@ menu_item& menu_item::shortcut(xtd::forms::shortcut value) {
 menu_item& menu_item::text(const xtd::ustring& value) {
   if (text_ != value) {
     text_ = value;
-    if (handle()) native::menu_item::text(handle(), text_, static_cast<size_t>(shortcut_));
+    if (handle() && (is_parent() || data_->main_menu_.has_value() || data_->context_menu_.has_value())) native::menu::text(handle(), text_);
+    else if (handle()) native::menu_item::text(handle(), text_, static_cast<size_t>(shortcut_));
   }
   return *this;
 }
