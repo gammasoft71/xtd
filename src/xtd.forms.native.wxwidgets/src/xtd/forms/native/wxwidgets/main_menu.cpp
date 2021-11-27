@@ -20,14 +20,6 @@ namespace {
     return itemText == L"help";
   }
   
-  static bool is_view_item(const xtd::ustring& text) {
-    wxString itemText = text;
-    itemText.Replace(L"&", L"");
-    itemText.Replace(L".", L"");
-    itemText.LowerCase();
-    return itemText == L"view";
-  }
-  
   static bool is_window_item(const xtd::ustring& text) {
     wxString itemText = text;
     itemText.Replace(L"&", L"");
@@ -55,23 +47,16 @@ void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, 
   auto wx_main_menu = reinterpret_cast<wxMenuBar*>(main_menu);
   
 #if defined(__APPLE__)
-  if (is_window_item(convert_string::to_wstring(text))) {
-    bool has_view_menu = false;
-    for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index) {
-      auto title = wx_main_menu->GetMenu(index)->GetTitle();
-      if (is_view_item(title.c_str().AsWChar())) has_view_menu = true;
-    }
-    if (!has_view_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&View"_t);
-  }
-  
+  // If the user doesn't have a "Window" menu and has a "Help" menu, the "Window" menu will be generated and
+  // added automatically by macOS and added at the end of the menu.
+  // Generally we want the last menu to be the "Help" menu, so we will create the "Window" menu so that
+  // it is placed in front of the "Help" menu.
   if (is_help_item(convert_string::to_wstring(text))) {
-    bool has_view_menu = false, has_window_menu = false;
+    bool has_window_menu = false;
     for (size_t index = 0; index < wx_main_menu->GetMenuCount(); ++index) {
       auto title = wx_main_menu->GetMenu(index)->GetTitle();
-      if (is_view_item(title.c_str().AsWChar())) has_view_menu = true;
       if (is_window_item(title.c_str().AsWChar())) has_window_menu = true;
     }
-    if (!has_view_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&View"_t);
     if (!has_window_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&Window"_t);
   }
 #endif
