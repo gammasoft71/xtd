@@ -1,3 +1,7 @@
+#include "../resources/xtd_console.xpm"
+#include "../resources/xtd_gui.xpm"
+#include "../resources/xtd_tunit.xpm"
+#include "../resources/xtd_cmake.xpm"
 #include "main_form.h"
 #include <ctype.h>
 #include <list>

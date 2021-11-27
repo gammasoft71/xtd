@@ -2,10 +2,6 @@
 /// @brief Contains main_form class.
 #pragma once
 #include "../properties/settings.h"
-#include "../resources/xtd_console.xpm"
-#include "../resources/xtd_gui.xpm"
-#include "../resources/xtd_tunit.xpm"
-#include "../resources/xtd_cmake.xpm"
 #include "../resources/xtd_open_examples.xpm"
 #include "../resources/xtd_open.xpm"
 #include "../resources/xtd_new.xpm"
