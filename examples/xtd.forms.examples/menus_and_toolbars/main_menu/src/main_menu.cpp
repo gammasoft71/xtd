@@ -67,7 +67,7 @@ namespace examples {
     menu_item options_separator2 {"-"};
     menu_item options_value_g {"Value G", {*this, &form1::on_menu_click}, menu_item_kind::radio, static_cast<shortcut>(keys::alt|keys::shift|keys::left)};
     menu_item options_value_h {"Value H", {*this, &form1::on_menu_click}, menu_item_kind::radio};
-    menu_item options_value_i {"-"};
+    menu_item options_value_i {"Value I", {*this, &form1::on_menu_click}, menu_item_kind::radio};
 
     menu_item help_about {system_texts::about(), {*this, &form1::on_menu_click}};
 
