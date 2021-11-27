@@ -2,7 +2,9 @@
 #include <xtd/forms/native/menu.h>
 #include <xtd/forms/native/menu_item.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/as.h>
 #include <xtd/argument_exception.h>
+#include <xtd/is.h>
 #include "../../../include/xtd/forms/menu.h"
 #include "../../../include/xtd/forms/context_menu.h"
 #include "../../../include/xtd/forms/main_menu.h"
@@ -80,6 +82,14 @@ menu& menu::menu_items(const vector<reference_wrapper<menu_item>>& value) {
   for (const auto& item : value)
     data_->menu_items_.push_back(item);
   return *this;
+}
+
+bool menu::equals(const menu& value) const noexcept {
+  return data_ == value.data_;
+}
+
+bool menu::equals(const object& obj) const noexcept {
+  return is<menu>(obj) && equals(as<menu>(obj));
 }
 
 optional<reference_wrapper<context_menu>> menu::get_context_menu() const {
