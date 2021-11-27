@@ -29,7 +29,7 @@ menu::menu(const menu_item_collection& items) {
   data_->menu_items_.push_back_range(items);
 }
 
-menu::menu(const initializer_list<std::reference_wrapper<menu_item>>& items) {
+menu::menu(const initializer_list<menu_item_ref>& items) {
   data_ = make_shared<data>();
   //data_->mdi_list_item_ = make_unique<menu_item>();
   data_->menu_items_.item_added += {*this, &menu::on_item_added};
@@ -37,7 +37,7 @@ menu::menu(const initializer_list<std::reference_wrapper<menu_item>>& items) {
   data_->menu_items_.push_back_range(items);
 }
 
-menu::menu(const vector<std::reference_wrapper<menu_item>>& items) {
+menu::menu(const vector<menu_item_ref>& items) {
   data_ = make_shared<data>();
   //data_->mdi_list_item_ = make_unique<menu_item>();
   data_->menu_items_.item_added += {*this, &menu::on_item_added};
