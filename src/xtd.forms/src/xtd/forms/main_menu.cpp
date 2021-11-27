@@ -16,11 +16,6 @@ main_menu::main_menu() {
   create_menu();
 }
 
-main_menu::main_menu(const std::initializer_list<menu_item_ref>& menu_items) {
-  create_menu();
-  data_->menu_items_.push_back_range(menu_items);
-}
-
 main_menu::main_menu(const std::initializer_list<const_menu_item_ref>& menu_items) {
   create_menu();
   for (auto& item : menu_items)
