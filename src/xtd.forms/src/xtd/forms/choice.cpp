@@ -49,8 +49,10 @@ list_control& choice::selected_index(size_t selected_index) {
     
     item selected_item;
     if (selected_index_ != npos) selected_item = items_[selected_index_];
-    this->selected_item(selected_item);
-    
+    //this->selected_item(selected_item);
+    selected_item_ = selected_item;
+    on_selected_value_changed(event_args::empty);
+
     on_selected_index_changed(event_args::empty);
   }
   return *this;
