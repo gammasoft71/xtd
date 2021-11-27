@@ -30,12 +30,9 @@ static void __on_command_menu__(wxCommandEvent& event) {
 
 wxMenuBar* __create_default_menu_bar__() {
   wxMenuBar* default_menu_bar = new wxMenuBar;
-  default_menu_bar->Append(new wxMenu(), L"&View"_t);
-  default_menu_bar->Append(new wxMenu(), L"&Window"_t);
   default_menu_bar->Bind(wxEVT_MENU, &__on_command_menu__);
   return default_menu_bar;
 }
-
 
 void form::activate(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
@@ -117,15 +114,12 @@ void form::maximize(intptr_t control, bool maximize) {
 
 void form::menu(intptr_t control, intptr_t menu) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
-  if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) {
-    if (menu != 0) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
-    return;
-  }
+  
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetMenuBar(menu != 0 ? reinterpret_cast<wxMenuBar*>(menu) : __create_default_menu_bar__());
 }
 
