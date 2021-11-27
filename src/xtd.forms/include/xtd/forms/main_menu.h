@@ -35,9 +35,9 @@ namespace xtd {
       main_menu();
       /// @brief Initialize a new instance of main_menu class.
       /// @param menu_items An array of menu_item objects that will be added to the main_menu.
-      main_menu(const std::vector<std::reference_wrapper<menu_item>>& menu_items);
+      main_menu(const std::vector<menu_item_ref>& menu_items);
       /// @cond
-      main_menu(const std::initializer_list<std::reference_wrapper<menu_item>>& menu_items);
+      main_menu(const std::initializer_list<menu_item_ref>& menu_items);
       /// @endcond
 
       /// @brief A factory to create a main menu with specified on click event handler.
@@ -90,8 +90,8 @@ namespace xtd {
       
       void destroy_menu_handle(intptr_t handle) override;
 
-      void on_item_added(size_t pos, std::reference_wrapper<menu_item> item) override;
-      void on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) override;
+      void on_item_added(size_t pos, menu_item_ref item) override;
+      void on_item_removed(size_t pos, menu_item_ref item) override;
 
     private:
       friend class form;

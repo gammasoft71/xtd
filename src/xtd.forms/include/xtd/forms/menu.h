@@ -18,6 +18,14 @@ namespace xtd {
     class main_menu;
     class menu_item;
     /// @endcond
+    
+    /// @brief Represents a menu item reference.
+    /// @par Namespace
+    /// xtd::forms
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
+    using menu_item_ref = std::reference_wrapper<menu_item>;
 
     /// @brief Represents the base functionality for all menus. Although tool_strip_drop_down and tool_strip_drop_down_menu replace and add functionality to the menu control of previous versions, menu is retained for both backward compatibility and future use if you choose.
     /// @par Namespace
@@ -32,7 +40,7 @@ namespace xtd {
     class forms_export_ menu : public component {
     public:
       /// @brief Represents a collection of menu_item objects.
-      using menu_item_collection = layout::arranged_element_collection<std::reference_wrapper<menu_item>>;
+      using menu_item_collection = layout::arranged_element_collection<menu_item_ref>;
       
       /// @cond
       ~menu();
@@ -66,8 +74,8 @@ namespace xtd {
       /// @remarks You can use this property to obtain a reference to the list of menu items that are currently stored in the menu. For main_menu and context_menu objects, the menu_items property contains the entire menu structure in the control. For the menu_item class, the menu_items property contains the list of submenu items associated with the menu_item. With the reference to the collection of menu items for the menu (provided by this property), you can add and remove menu items, determine the total number of menu items, and clear the list of menu items from the collection. For more information on maintaining the menu item collection for a menu, see the xtd::forms::menu::menu_item_collection documentation.
       menu& menu_items(const menu_item_collection& value);
       /// @cond
-      menu& menu_items(const std::initializer_list<std::reference_wrapper<menu_item>>& value);
-      menu& menu_items(const std::vector<std::reference_wrapper<menu_item>>& value);
+      menu& menu_items(const std::initializer_list<menu_item_ref>& value);
+      menu& menu_items(const std::vector<menu_item_ref>& value);
       /// @endcond
 
       /// @brief Gets the name of the menu.
@@ -136,8 +144,8 @@ namespace xtd {
       /// @remarks Since menu is an abstract class, only inherited classes can call the menu constructor.
       explicit menu(const menu_item_collection& items);
       /// @cond
-      explicit menu(const std::initializer_list<std::reference_wrapper<menu_item>>& items);
-      explicit menu(const std::vector<std::reference_wrapper<menu_item>>& items);
+      explicit menu(const std::initializer_list<menu_item_ref>& items);
+      explicit menu(const std::vector<menu_item_ref>& items);
       menu(const menu&) = delete;
       /// @endcond
 
@@ -154,8 +162,8 @@ namespace xtd {
       /// @param handle A handle to the menu.
       virtual void destroy_menu_handle(intptr_t handle) {}
 
-      virtual void on_item_added(size_t pos, std::reference_wrapper<menu_item> item) {}
-      virtual void on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) {}
+      virtual void on_item_added(size_t pos, menu_item_ref item) {}
+      virtual void on_item_removed(size_t pos, menu_item_ref item) {}
 
       /// @cond
       virtual void create_menu();

@@ -16,7 +16,7 @@ namespace xtd {
     class main_menu;
     class context_menu;
     /// @endcond
-  
+    
     /// @brief Represents an individual item that is displayed within a main_menu or context_menu.
     /// @par Namespace
     /// xtd::forms
@@ -239,8 +239,12 @@ namespace xtd {
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       /// @remarks The items parameter enables you to assign an array of menu items to define a submenu of this menu item. Each item in the array can also have an array of menu items assigned to it. This enables you to create complete menu structures and assign them to the constructor for the menu item.
-      menu_item(const xtd::ustring& text, const std::vector<std::reference_wrapper<menu_item>>& items);
+      menu_item(const xtd::ustring& text, const std::vector<menu_item_ref>& items);
 
+      /// @cond
+      menu_item(const xtd::ustring& text, const std::initializer_list<menu_item_ref>& items);
+      /// @endcond
+      
       /// @brief Gets a value indicating the Windows identifier for this menu item.
       /// @return The Windows identifier for this menu item.
       int32_t menu_id() const;
@@ -303,8 +307,8 @@ namespace xtd {
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
       
-      void on_item_added(size_t pos, std::reference_wrapper<menu_item> item) override;
-      void on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) override;
+      void on_item_added(size_t pos, menu_item_ref item) override;
+      void on_item_removed(size_t pos, menu_item_ref item) override;
 
       /// @cond
       xtd::ustring text_;

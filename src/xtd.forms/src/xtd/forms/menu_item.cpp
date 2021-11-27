@@ -97,7 +97,13 @@ menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_clic
   create_menu();
 }
 
-menu_item::menu_item(const xtd::ustring& text, const std::vector<std::reference_wrapper<menu_item>>& items) : text_(text) {
+menu_item::menu_item(const xtd::ustring& text, const std::vector<menu_item_ref>& items) : text_(text) {
+  is_parent_ = true;
+  create_menu();
+  data_->menu_items_.push_back_range(items);
+}
+
+menu_item::menu_item(const xtd::ustring& text, const std::initializer_list<menu_item_ref>& items) {
   is_parent_ = true;
   create_menu();
   data_->menu_items_.push_back_range(items);
@@ -169,7 +175,7 @@ int menu_item::menu_id() const {
   return native::menu_item::menu_id(data_->handle_);
 }
 
-void menu_item::on_item_added(size_t pos, std::reference_wrapper<menu_item> item) {
+void menu_item::on_item_added(size_t pos, menu_item_ref item) {
   menu::on_item_added(pos, item);
   item.get().data_->parent_ = *this;
   if (!item.get().handle()) item.get().create_menu();
@@ -181,7 +187,7 @@ void menu_item::on_item_added(size_t pos, std::reference_wrapper<menu_item> item
   }
 }
 
-void menu_item::on_item_removed(size_t pos, std::reference_wrapper<menu_item> item) {
+void menu_item::on_item_removed(size_t pos, menu_item_ref item) {
   menu::on_item_removed(pos, item);
   //item.get().data_->parent_.reset();
   //item.get().destroy_menu();
