@@ -60,7 +60,9 @@ list_control& list_box::selected_index(size_t selected_index) {
     
     item selected_item;
     if (selected_index_ != npos) selected_item = items_[selected_index_];
-    this->selected_item(selected_item);
+    //this->selected_item(selected_item);
+    selected_item_ = selected_item;
+    on_selected_value_changed(event_args::empty);
     
     on_selected_index_changed(event_args::empty);
   }
@@ -80,8 +82,7 @@ list_box& list_box::selected_item(const item& selected_item) {
         if (selected_index() >= items().size()) selected_item_ = items()[items().size() - 1];
         else selected_item_ = items()[selected_index()];
       }
-    }
-    else {
+    } else {
       size_t index = it - items_.begin();
       selected_index(index);
       selected_item_ = *it;
