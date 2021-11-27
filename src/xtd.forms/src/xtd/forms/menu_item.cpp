@@ -189,8 +189,8 @@ void menu_item::on_item_added(size_t pos, menu_item_ref item) {
 
 void menu_item::on_item_removed(size_t pos, menu_item_ref item) {
   menu::on_item_removed(pos, item);
-  //item.get().data_->parent_.reset();
-  //item.get().destroy_menu();
+  item.get().data_->parent_.reset();
+  native::menu::remove_item(handle(), pos);
 }
 
 ustring menu_item::to_string() const noexcept {

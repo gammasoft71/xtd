@@ -62,6 +62,11 @@ namespace xtd {
         /// @return The native menu handle.
         /// @warning Internal use only
         static intptr_t native_handle(intptr_t menu);
+        /// @brief Remove menu item from specisified position.
+        /// @param menu Menu handle.
+        /// @param pos Position to insert menu item.
+        /// @warning Internal use only
+        static void remove_item(intptr_t menu, size_t pos);
       };
     }
   }

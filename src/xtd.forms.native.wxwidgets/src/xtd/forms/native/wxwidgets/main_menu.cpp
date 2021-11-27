@@ -75,3 +75,8 @@ void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, 
   
   wx_main_menu->Insert(pos, reinterpret_cast<wxMenu*>(menu_item), convert_string::to_wstring(text));
 }
+
+void main_menu::remove_item(intptr_t main_menu, size_t pos) {
+  if (main_menu == 0) throw argument_exception(csf_);
+  reinterpret_cast<wxMenuBar*>(main_menu)->Remove(pos);
+}

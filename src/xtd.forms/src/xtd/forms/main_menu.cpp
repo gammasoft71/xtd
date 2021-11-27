@@ -44,8 +44,8 @@ void main_menu::on_item_added(size_t pos, menu_item_ref item) {
 
 void main_menu::on_item_removed(size_t pos, menu_item_ref item) {
   menu::on_item_removed(pos, item);
-  //item.get().data_->parent_.reset();
-  //item.get().destroy_menu();
+  item.get().data_->parent_.reset();
+  native::main_menu::remove_item(handle(), pos);
 }
 
 void main_menu::wm_click(message& message) {
