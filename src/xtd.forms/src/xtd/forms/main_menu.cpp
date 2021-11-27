@@ -49,7 +49,7 @@ void main_menu::on_item_removed(size_t pos, std::reference_wrapper<menu_item> it
 }
 
 void main_menu::wm_click(message& message) {
-  auto it = handles_.find(message.wparam());
+  auto it = handles_.find(static_cast<int32_t>(message.wparam()));
   if (it != handles_.end()) {
     auto& menu = static_cast<menu_item&>(it->second.get());
     menu.data_->callback(menu);
