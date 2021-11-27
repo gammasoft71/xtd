@@ -243,6 +243,7 @@ namespace xtd {
 
       /// @cond
       menu_item(const xtd::ustring& text, const std::initializer_list<menu_item_ref>& items);
+      menu_item(const xtd::ustring& text, const std::initializer_list<const_menu_item_ref>& items);
       /// @endcond
       
       /// @brief Gets a value indicating the Windows identifier for this menu item.

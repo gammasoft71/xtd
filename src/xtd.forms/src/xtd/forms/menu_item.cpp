@@ -109,6 +109,13 @@ menu_item::menu_item(const xtd::ustring& text, const std::initializer_list<menu_
   data_->menu_items_.push_back_range(items);
 }
 
+menu_item::menu_item(const xtd::ustring& text, const std::initializer_list<const_menu_item_ref>& items) : text_(text) {
+  is_parent_ = true;
+  create_menu();
+  for (auto& item : items)
+    data_->menu_items_.push_back(menu_item_ref(const_cast<menu_item&>(item.get())));
+}
+
 menu_item& menu_item::enabled(bool value) {
   if (enabled_ != value) {
     enabled_ = value;

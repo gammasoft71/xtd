@@ -29,15 +29,16 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of main_menu::create_standard_items factory.
     /// @include main_menu_create_standard_items.cpp
-    class forms_export_ main_menu : public menu {
-    public:
-      /// @brief Initialize a new instance of main_menu class.
-      main_menu();
-      /// @brief Initialize a new instance of main_menu class.
-      /// @param menu_items An array of menu_item objects that will be added to the main_menu.
-      main_menu(const std::vector<menu_item_ref>& menu_items);
-      /// @cond
-      main_menu(const std::initializer_list<menu_item_ref>& menu_items);
+  class forms_export_ main_menu : public menu {
+  public:
+    /// @brief Initialize a new instance of main_menu class.
+    main_menu();
+    /// @brief Initialize a new instance of main_menu class.
+    /// @param menu_items An array of menu_item objects that will be added to the main_menu.
+    main_menu(const std::vector<menu_item_ref>& menu_items);
+    /// @cond
+    main_menu(const std::initializer_list<menu_item_ref>& menu_items);
+    main_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
       /// @endcond
 
       /// @brief A factory to create a main menu with specified on click event handler.
