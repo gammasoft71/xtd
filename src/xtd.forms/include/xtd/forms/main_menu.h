@@ -37,7 +37,6 @@ namespace xtd {
     /// @param menu_items An array of menu_item objects that will be added to the main_menu.
     main_menu(const std::vector<menu_item_ref>& menu_items);
     /// @cond
-    main_menu(const std::initializer_list<menu_item_ref>& menu_items);
     main_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
       /// @endcond
 

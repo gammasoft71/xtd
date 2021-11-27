@@ -242,7 +242,6 @@ namespace xtd {
       menu_item(const xtd::ustring& text, const std::vector<menu_item_ref>& items);
 
       /// @cond
-      menu_item(const xtd::ustring& text, const std::initializer_list<menu_item_ref>& items);
       menu_item(const xtd::ustring& text, const std::initializer_list<const_menu_item_ref>& items);
       /// @endcond
       

@@ -103,12 +103,6 @@ menu_item::menu_item(const xtd::ustring& text, const std::vector<menu_item_ref>&
   data_->menu_items_.push_back_range(items);
 }
 
-menu_item::menu_item(const xtd::ustring& text, const std::initializer_list<menu_item_ref>& items) : text_(text) {
-  is_parent_ = true;
-  create_menu();
-  data_->menu_items_.push_back_range(items);
-}
-
 menu_item::menu_item(const xtd::ustring& text, const std::initializer_list<const_menu_item_ref>& items) : text_(text) {
   is_parent_ = true;
   create_menu();
