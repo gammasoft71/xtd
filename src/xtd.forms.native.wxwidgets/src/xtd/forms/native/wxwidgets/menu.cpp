@@ -36,3 +36,8 @@ intptr_t menu::native_handle(intptr_t menu) {
   if (menu == 0) throw argument_exception(csf_);
   return menu;
 }
+
+void menu::remove_item(intptr_t menu, size_t pos) {
+  if (menu == 0) throw argument_exception(csf_);
+  reinterpret_cast<wxMenu*>(menu)->Remove(reinterpret_cast<wxMenu*>(menu)->FindItemByPosition(pos));
+}
