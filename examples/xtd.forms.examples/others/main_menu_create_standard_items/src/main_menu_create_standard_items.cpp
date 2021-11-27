@@ -16,7 +16,7 @@ namespace examples {
     
   private:
     void on_menu_click(object& sender, const event_args& e) {
-      list_box1.items().push_back(ustring::format("{} clicked", as<menu_item&>(sender).text()));
+      list_box1.items().push_back(ustring::format("{} clicked", as<menu_item>(sender).text()));
       list_box1.selected_index(list_box1.items().size() - 1);
       // The 10th item of menu_items is the file exit menu item.
       if (*menu_items[10] == sender) application::exit();
