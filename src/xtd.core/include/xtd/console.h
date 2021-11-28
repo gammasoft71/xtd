@@ -279,7 +279,22 @@ namespace xtd {
     /// @remarks By default, the out property is set to the standard output stream.
     /// @remarks A std::ostream that encapsulates a std::ofstream can be used to send output to a file.
     static void set_out(const std::ostream& os);
+
+    /// @brief Sets the position of the console window relative to the screen buffer.
+    /// @param left The column position of the upper left corner of the console window.
+    /// @param top The row position of the upper left corner of the console window.
+    static void set_window_position(int32_t left, int32_t top);
     
+    /// @brief Sets the height and width of the console window to the specified values.
+    /// @param width The width of the console window measured in columns.
+    /// @param height The height of the console window measured in rows.
+    /// @exception ArgumentOutOfRangeException width or height is less than or equal to zero.  -or-  width plus WindowLeft or height plus WindowTop is greater than or equal to Int16.MaxValue.  -or-  width or height is greater than the largest possible window width or height for the current screen resolution and console font.
+    /// @par Example
+    /// This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size.
+    /// The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates.
+    /// @include console_window_size.cpp
+    static void set_window_size(int32_t width, int32_t height);
+
     /// @brief Gets the title to display in the console title bar.
     /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
     static xtd::ustring title();
