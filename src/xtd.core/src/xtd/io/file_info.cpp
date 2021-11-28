@@ -59,8 +59,8 @@ ustring file_info::name() const {
   return items[items.size() - 1];
 }
 
-std::ofstream file_info::append_text() const {
-  return file::append_text(full_path_);
+stream_writer file_info::append_text() const {
+  return stream_writer(full_path_, true);
 }
 
 file_info file_info::copy_to(const xtd::ustring& dest_file_name) const {
@@ -79,8 +79,8 @@ std::ofstream file_info::create() const {
   return file::create(full_path_);
 }
 
-std::ofstream file_info::create_text() const {
-  return file::create_text(full_path_);
+stream_writer file_info::create_text() const {
+  return stream_writer(full_path_);
 }
 
 void file_info::move_to(const xtd::ustring& dest_file_name) {
@@ -105,8 +105,8 @@ std::ifstream file_info::open_read() const {
   return file::open_read(full_path_);
 }
 
-std::ifstream file_info::open_text() const {
-  return file::open_text(full_path_);
+stream_reader file_info::open_text() const {
+  return stream_reader(full_path_);
 }
 
 std::ofstream file_info::open_write() const {
@@ -118,8 +118,9 @@ void file_info::remove() const {
   file::remove(full_path_);
 }
 
-void file_info::replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name) {
+file_info file_info::replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name) {
   file::replace(full_path_, destination_file_name, destination_backup_file_name);
-  original_path_ = destination_file_name;
+  original_path_ = destination_backup_file_name;
   refresh();
+  return file_info(destination_file_name);
 }

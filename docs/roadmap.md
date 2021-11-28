@@ -29,8 +29,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 |-----------|---------------------------------|-----------|-------------------------------------------------|
 | xtd.core  | io::directory                   | Gammasoft | ![status](pictures/releases/status/done.png)    | 
 | xtd.core  | io::directory_info              | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| xtd.core  | io::drive_info                  | Gammasoft | ![status](pictures/releases/status/started.png) |
-| xtd.core  | io::file_info                   | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.core  | io::drive_info                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| xtd.core  | io::file_info                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.core  | io::file_system_info            | Gammasoft | ![status](pictures/releases/status/done.png)    |
 |           | iOS platforms                   | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | button_render                   | Gammasoft |                                                 |
@@ -41,7 +41,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | color_picker_render             | Gammasoft |                                                 |
 | xtd.forms | command_link_button_render      | Gammasoft |                                                 |
 | xtd.forms | command_link_buttons            | Bader     |                                                 |
-| xtd.forms | context_menu                    | Bader     |                                                 |
+| xtd.forms | context_menu                    | Gammasoft |                                                 |
 | xtd.forms | dot_matrix_display_render       | Gammasoft |                                                 |
 | xtd.forms | find_box                        | Bader     |                                                 |
 | xtd.forms | find_dialog                     | Bader     |                                                 |
