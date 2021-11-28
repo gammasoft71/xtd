@@ -813,10 +813,8 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
       /// @par Example
-      ///
-      /// @code
-      ///
-      /// @endcode
+      /// The following example demonstrates moving a file to a different location and renaming the file.
+      /// @include file_info_move_to.cpp
       /// @remarks This method works across disk volumes. For example, the file c:\MyFile.txt can be moved to d:\public and renamed NewFile.txt.
       /// @remarks This method does not overwrite the destination file if it already exists. For that purpose, call xtd::ioo::file_info::move_to(ustring, bool) instead.
       void move_to(const xtd::ustring& dest_file_name);
