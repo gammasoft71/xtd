@@ -459,7 +459,7 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The directory specified in dest_file_name does not exist.
       /// @exception xtd::unauthorized_access_exceptionA directory path is passed in, or the file is being moved to a different drive.
       /// @exception xtd::ioo::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @exception xttd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
+      /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
       /// @par Example
       /// The following example demonstrates both overloads of the td::io::file_info::copy_to method.
       /// @code
@@ -571,7 +571,7 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The directory specified in dest_file_name does not exist.
       /// @exception xtd::unauthorized_access_exceptionA directory path is passed in, or the file is being moved to a different drive.
       /// @exception xtd::ioo::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @exception xttd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
+      /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
       /// @par Example
       /// The following example demonstrates both overloads of the td::io::file_info::copy_to method.
       /// @code
@@ -806,8 +806,8 @@ namespace xtd {
       /// @param dest_file_name The path to move the file to, which can specify a different file name.
       /// @exception xtd::io::io_exception An I/O error occurs, such as the destination file already exists or the destination device is not ready.
       /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
-      /// @exception xttd::security::security_exception The caller does not have the required permission.
-      /// @exception UnauthorizedAccessException destFileName is read-only or is a directory.
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
+      /// @exception xtd::unauthorized_access_exception dest_file_name is read-only or is a directory.
       /// @exception xtd::io::file_not_found_exception The file is not found.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
