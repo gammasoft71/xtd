@@ -215,6 +215,16 @@ void console::set_out(const std::ostream& os)  {
   out.rdbuf(os.rdbuf());
 }
 
+void console::set_window_position(int32_t left, int32_t top) {
+  window_left(left);
+  window_top(top);
+}
+
+void console::set_window_size(int32_t width, int32_t height) {
+  window_width(width);
+  window_height(height);
+}
+
 ustring console::title() {
   return __opaque_console::title();
 }
