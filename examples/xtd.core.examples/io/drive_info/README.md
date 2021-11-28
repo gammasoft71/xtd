@@ -4,7 +4,7 @@ Show how to use [xtd::io::drive_info](../../../../src/xtd.core/include/xtd/io/dr
 
 ## Sources
 
-[src/directory_info.cpp](src/drive_info.cpp)
+[src/drive_info.cpp](src/drive_info.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

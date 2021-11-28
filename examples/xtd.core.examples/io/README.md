@@ -6,4 +6,4 @@
 * [drive_info](drive_info/README.md) shows how to use [xtd::io::drive_info](../../../src/xtd.core/include/xtd/io/drive_info.h) class.
 * [file_info](file_info/README.md) shows how to use [xtd::io::file_info](../../../src/xtd.core/include/xtd/io/file_info.h) class.
 * [file_info2](file_info2/README.md) shows how to use [xtd::io::file_info](../../../src/xtd.core/include/xtd/io/file_info.h) class.
-* [file_info2](file_info_move_to/README.md) shows how to use [xtd::io::file_info::move_to](../../../src/xtd.core/include/xtd/io/file_info.h) method.
+* [file_info_move_to](file_info_move_to/README.md) shows how to use [xtd::io::file_info::move_to](../../../src/xtd.core/include/xtd/io/file_info.h) method.
