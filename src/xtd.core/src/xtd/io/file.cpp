@@ -233,7 +233,7 @@ void file::remove(const ustring& path) {
 
 void file::replace(const ustring& source_file_name, const ustring& destination_file_name, const ustring& destination_backup_file_name) {
   if (!exists(source_file_name) || !exists(destination_file_name)) throw file_not_found_exception(csf_);
-  copy(destination_file_name, destination_backup_file_name);
+  if (destination_backup_file_name != "") copy(destination_file_name, destination_backup_file_name);
   move(source_file_name, destination_file_name, true);
 }
 

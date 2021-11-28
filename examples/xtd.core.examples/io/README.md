@@ -6,4 +6,10 @@
 * [drive_info](drive_info/README.md) shows how to use [xtd::io::drive_info](../../../src/xtd.core/include/xtd/io/drive_info.h) class.
 * [file_info](file_info/README.md) shows how to use [xtd::io::file_info](../../../src/xtd.core/include/xtd/io/file_info.h) class.
 * [file_info2](file_info2/README.md) shows how to use [xtd::io::file_info](../../../src/xtd.core/include/xtd/io/file_info.h) class.
+* [file_info_append_text](file_info_append_text/README.md) shows how to use [xtd::io::file_info::append_text](../../../src/xtd.core/include/xtd/io/file_info.h) method.
 * [file_info_move_to](file_info_move_to/README.md) shows how to use [xtd::io::file_info::move_to](../../../src/xtd.core/include/xtd/io/file_info.h) method.
+* [file_info_open](file_info_open/README.md) shows how to use [xtd::io::file_info::open](../../../src/xtd.core/include/xtd/io/file_info.h) method.
+* [file_info_open_read](file_info_open_read/README.md) shows how to use [xtd::io::file_info::open_read](../../../src/xtd.core/include/xtd/io/file_info.h) method.
+* [file_info_open_text](file_info_open_text/README.md) shows how to use [xtd::io::file_info::open_text](../../../src/xtd.core/include/xtd/io/file_info.h) method.
+* [file_info_open_write](file_info_open_write/README.md) shows how to use [xtd::io::file_info::open_write](../../../src/xtd.core/include/xtd/io/file_info.h) method.
+* [file_info_replace](file_info_replace/README.md) shows how to use [xtd::io::file_info::replace](../../../src/xtd.core/include/xtd/io/file_info.h) method.

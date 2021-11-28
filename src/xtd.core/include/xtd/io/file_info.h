@@ -4,6 +4,8 @@
 #pragma once
 
 #include "file_system_info.h"
+#include "stream_reader.h"
+#include "stream_writer.h"
 #include <fstream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -113,7 +115,7 @@ namespace xtd {
       
       /// @brief Gets a value that determines if the current file is read only.
       /// @return true if the current file is read only; otherwise, false.
-      /// @exception xtd::io::file_not_found_exception The file described by the current FileInfo object could not be found.
+      /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
       /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform. -or- The caller does not have the required permission.
       /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
@@ -150,7 +152,7 @@ namespace xtd {
       ///
       ///   // Sets the read-only value of a file.
       ///   static void set_file_read_access(const ustring& file_name, bool set_read_only) {
-      ///     // Create a new FileInfo object.
+      ///     // Create a new xtd::io::file_info object.
       ///     file_info f_info(file_name);
       ///
       ///     // Set the IsReadOnly property.
@@ -159,7 +161,7 @@ namespace xtd {
       ///
       ///   // Returns wether a file is read-only.
       ///   static bool is_file_read_only(const ustring& file_name) {
-      ///     // Create a new FileInfo object.
+      ///     // Create a new xtd::io::file_info object.
       ///     file_info f_info(file_name);
       ///
       ///     // Return the IsReadOnly property value.
@@ -182,7 +184,7 @@ namespace xtd {
       bool is_read_only() const;
       /// @brief Sets a value that determines if the current file is read only.
       /// @param value true if the current file is read only; otherwise, false.
-      /// @exception xtd::io::file_not_found_exception The file described by the current FileInfo object could not be found.
+      /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
       /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform. -or- The caller does not have the required permission.
       /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
@@ -219,7 +221,7 @@ namespace xtd {
       ///
       ///   // Sets the read-only value of a file.
       ///   static void set_file_read_access(const ustring& file_name, bool set_read_only) {
-      ///     // Create a new FileInfo object.
+      ///     // Create a new xtd::io::file_info object.
       ///     file_info f_info(file_name);
       ///
       ///     // Set the IsReadOnly property.
@@ -228,7 +230,7 @@ namespace xtd {
       ///
       ///   // Returns wether a file is read-only.
       ///   static bool is_file_read_only(const ustring& file_name) {
-      ///     // Create a new FileInfo object.
+      ///     // Create a new xtd::io::file_info object.
       ///     file_info f_info(file_name);
       ///
       ///     // Return the IsReadOnly property value.
@@ -296,7 +298,7 @@ namespace xtd {
       /// // The size of wt3d.ini is 234 bytes.
       /// //@endcode
       /// @remarks
-      /// The value of the Length property is pre-cached if the current instance of the FileInfo object was returned from any of the following DirectoryInfo methods:
+      /// The value of the Length property is pre-cached if the current instance of the xtd::io::file_info object was returned from any of the following DirectoryInfo methods:
       /// * xtd::io::file_info::get_directories
       /// * xtd::io::file_info::_det_files
       /// * xtd::io::file_info::get_file_system_infos
@@ -341,77 +343,11 @@ namespace xtd {
       /// @remarks The name of the file includes the file extension.
       xtd::ustring name() const override;
 
-      /// @brief Creates a std::ofstream that appends text to the file represented by this instance of the xtd::io::file_info.
+      /// @brief Creates a xtd::io::stream_writer that appends text to the file represented by this instance of the xtd::io::file_info.
       /// @return a new A new std::ofstream.
-      /// @epar Examplle
-      ///
-      /// @code
-      /// #include <xtd/xtd>
-      ///
-      /// using namespace std;
-      /// using namespace xtd;
-      /// using namespace xtd::io;
-      ///
-      /// class program {
-      /// public:
-      ///   static void main() {
-      ///     file_info fi(R"(c:\MyTest.txt)");
-      ///
-      ///     // This text is added only once to the file.
-      ///     if (!fi.exists())  {
-      ///       //Create a file to write to.
-      ///       using_ (ofstream s(fi.create_text())) {
-      ///         stream_writer ws(s);
-      ///         stream_writer sw(s);
-      ///         sw.write_line("Hello");
-      ///         sw.write_line("And");
-      ///         sw.write_line("Welcome");
-      ///       }
-      ///     }
-      ///
-      ///     // This text will always be added, making the file longer over time
-      ///     // if it is not deleted.
-      ///     using_ (ofstream s = fi.append_text()) {
-      ///       stream_writer sw(s);
-      ///       sw.write_line("This");
-      ///       sw.write_line("is Extra");
-      ///       sw.write_line("Text");
-      ///     }
-      ///
-      ///     //Open the file to read from.
-      ///     using_ (ifstream s = fi.open_text()) {
-      ///       stream_reader sr(s);
-      ///       while (!sr.end_of_stream()) {
-      ///         console::write_line(sr.read_line());
-      ///       }
-      ///     }
-      ///   }
-      /// };
-      ///
-      /// startup_(program);
-      ///
-      /// // This code produces output similar to the following;
-      /// // results may vary based on the computer/file structure/etc.:
-      /// //
-      /// // Hello
-      /// // And
-      /// /// // Welcome
-      /// // This
-      /// // is Extra
-      /// // Text
-      ///
-      /// //When you run this application a second time, you will see the following output:
-      /// //
-      /// // Hello
-      /// // And
-      /// // Welcome
-      /// // This
-      /// // is Extra
-      /// /// // Text
-      /// // This
-      /// // is Extra
-      /// // Text
-      /// @endcode
+      /// @par Examplle
+      /// The following example appends text to a file and reads from the file.
+      /// @include file_info_append_text.cpp
       /// @par Example
       /// The following example demonstrates appending text to the end of a file and also displays the result of the append operation to the console. The first time this routine is called, the file is created if it does not exist. After that, the specified text is appended to the file.
       /// @code
@@ -426,8 +362,7 @@ namespace xtd {
       ///   static void main() {
       ///     file_info fi("temp.txt");
       ///      // Create a writer, ready to add entries to the file.
-      ///     ofstream ofs(fi.append_text());
-      ///     stream_writer sw(ofs);
+      ///     stream_writer sw = fi.append_text();
       ///     sw.write_line("Add as many lines as you like...");
       ///     sw.write_line("Add another line to the output...");
       ///     sw.flush();
@@ -448,7 +383,7 @@ namespace xtd {
       /// // Add as many lines as you like...
       /// // Add another line to the output...
       /// @encoode
-      std::ofstream append_text() const;
+      xtd::io::stream_writer append_text() const;
 
       /// @brief Copies an existing file to a new file, disallowing the overwriting of an existing file.
       /// @param desy_file_name The name of the new file to copy to.
@@ -703,49 +638,7 @@ namespace xtd {
       /// @endcode
       /// @par Example
       /// The following example creates a file, adds some text to it, and reads from the file.
-      /// @code
-      /// #include <xtd/xtd>
-      ///
-      /// using namespace std;
-      /// using namespace xtd;
-      /// using namespace xtd::io;
-      ///
-      /// class program {
-      /// public:
-      ///   static void main() {
-      ///     ustring path = R"(c:\MyTest.txt)";
-      ///     file_info fi(path);
-      ///
-      ///     // Delete the file if it exists.
-      ///     if (fi.exists())
-      ///       fi.remove();
-      ///
-      ///     //Create the file.
-      ///     using_ (ofstream ofs(fi.create())){
-      ///       ustring s = "This is some text in the file.";
-      ///       vector<char> info(s.begin(), s.end());
-      ///
-      ///       //Add some information to the file.
-      ///       ofs.write(&info[0], info.size());
-      ///     }
-      ///
-      ///     //Open the stream and read it back.
-      ///     using_(ifstream ifs(fi.open_text())) {
-      ///       stream_reader sr(ifs);
-      ///       while (!sr.end_of_stream()) {
-      ///         console::write_line(sr.read_line());
-      ///       }
-      ///     }
-      ///   }
-      /// };
-      ///
-      /// startup_(program);
-      ///
-      /// // This code produces output similar to the following;
-      /// // results may vary based on the computer/file structure/etc.:
-      /// //
-      /// // This is some text in the file.
-      /// @endcode
+      /// @include file_info_open.cpp
       /// @remarks By default, full read/write access to new files is granted to all users.
       /// @remarks This method is a wrapper for the functionality provided by xtd::io::file::create.
       std::ofstream create() const;
@@ -756,51 +649,10 @@ namespace xtd {
       /// @exception xtd::io::io_exception The disk is read-only.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @par Example
-      /// The following example demonstrates the xtd::io::file°info::create_text method.
-      /// @code
-      /// #include <xtd/xtd>
-      ///
-      /// using namespace std;
-      /// using namespace xtd;
-      /// using namespace xtd::io;
-      ///
-      /// class program {
-      /// public:
-      ///   static void main() {
-      ///     ustring path = R"(c:\temp\MyTest.txt)";
-      ///     file_info fi(path);
-      ///
-      ///     if (!fi.exists()) {
-      ///       //Create a file to write to.
-      ///       using_(ofstream ofs(fi.create_text())) {
-      ///         stream_writer sw(ofs);
-      ///         sw.write_line("Hello");
-      ///         sw.write_line("And");
-      ///         sw.write_line("Welcome");
-      ///       }
-      ///     }
-      ///
-      ///     //Open the file to read from.
-      ///     using_(ifstream ifs(fi.open_text())) {
-      ///       stream_reader sr(ifs);
-      ///       while (!sr.end_of_stream()) {
-      ///         console::write_line(sr.read_line());
-      ///       }
-      ///     }
-      ///   }
-      /// };
-      ///
-      /// startup_(program);
-      ///
-      /// // This code produces output similar to the following;
-      /// // results may vary based on the computer/file structure/etc.:
-      /// //
-      /// // Hello
-      /// // And
-      /// // Welcome
-      /// @endcode
+      /// The following example demonstrates the xtd::io::file_info::create_text method.
+      /// @include file_info_open_text.cpp
       /// @remarks By default, full read/write access to new files is granted to all users.
-      std::ofstream create_text() const;
+      xtd::io::stream_writer create_text() const;
       
       /// @brief Moves a specified file to a new location, providing the option to specify a new file name.
       /// @param dest_file_name The path to move the file to, which can specify a different file name.
@@ -819,19 +671,70 @@ namespace xtd {
       /// @remarks This method does not overwrite the destination file if it already exists. For that purpose, call xtd::ioo::file_info::move_to(ustring, bool) instead.
       void move_to(const xtd::ustring& dest_file_name);
       
+      /// @brief Moves a specified file to a new location, providing the options to specify a new file name and to overwrite the destination file if it already exists.
+      /// @param dest_file_name The path to move the file to, which can specify a different file name.
+      /// @param overwrite true to overwrite the destination file if it already exists; false otherwise.
+      /// @exception xtd::io::io_exception An I/O error occurred, such as the destination device is not ready.
+      /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
+      /// @exception xtd::unauthorized_access_exception dest_file_name is read-only or is a directory.
+      /// @exception xtd::io::file_not_found_exception The file is not found.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
+      /// @par Example
+      /// The following example demonstrates moving a file to a different location and renaming the file.
+      /// @include file_info_move_to.cpp
+      /// @remarks This method works across disk volumes. For example, the file c:\MyFile.txt can be moved to d:\public and renamed NewFile.txt.
       void move_to(const xtd::ustring& dest_file_name, bool overwrite);
       
+      /// @brief
+      /// @param mode A std::ios::openmode constant specifying the mode (for example, std::ios::openmode::in or std::ios::openmode::app) in which to open the file.
+      /// @return A file opened in the specified mode, with read/write access and unshared.
+      /// @exception xtd::io::file_not_found_exception The file is not found.
+      /// @exception xtd::unauthorized_access_exception The file is read-only or is a directory.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::io::io_exception The file is already open.
+      /// @par Example
+      /// The following example opens a file, adds some information to the file, and reads the file.
+      /// @include file_info_open.cpp
       std::fstream open(std::ios::openmode mode) const;
       
+      /// @brief Creates a read-only std::ifstream.
+      /// @return A new read-only std::ifstream.
+      /// @exception xtd::unauthorized_access_exception name is read-only or is a directory.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @exception xtd::io::io_exception The file is already open.
+      /// @par Example
+      /// The following example opens a file as read-only and reads from it.
+      /// @include file_info_open_read.cpp
+      /// @remarks This method returns a read-only std::ifstream object.
       std::ifstream open_read() const;
 
-      std::ifstream open_text() const;
+      /// @brief Creates a xtd::io::stream_reader that reads from an existing text file.
+      /// @return A new xtd::io::stream_reader.
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
+      /// @exception xtd::io::file_not_found_exception The file is not found.
+      /// @exception xtd::unauthorized_access_exception name is read-only or is a directory.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
+      /// @par Example
+      /// The following example demonstrates the xtd::io::file_info::create_text method.
+      /// @include file_info_open_text.cpp
+      xtd::io::stream_reader open_text() const;
       
+      /// @brief Creates a write-only std::ofstream.
+      /// @return A write-only unshared std::ofstream object for a new or existing file.
+      /// @exception xtd::unauthorized_access_exception The path specified when creating an instance of the xtd::io::file_info object is read-only or is a directory.
+      /// @exception xtd::io::directory_not_found_exception The path specified when creating an instance of the xtd::io::file_info object is invalid, such as being on an unmapped drive.
+      /// @par Example
+      /// The following example opens a file for writing and then reads from the file.
+      /// @include file_info_open.cpp
+      /// @return The xtd::io::file_info::open_write method opens a file if one already exists for the file path, or creates a new file if one does not exist. For an existing file, it does not append the new text to the existing text. Instead, it overwrites the existing characters with the new characters. If you overwrite a longer string (such as "This is a test of the open_write method") with a shorter string (like "Second run"), the file will contain a mix of the strings ("Second runtest of the open_write method").
       std::ofstream open_write() const;
 
       /// @brief Permanently deletes a file.
       /// @exception xtd::io::io_exception The target file is open or memory-mapped on a computer running Microsoft Windows NT. -or- There is an open handle on the file, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see How to: Enumerate Directories and Files.
-      /// @exception xrd::security::security_exception The caller does not have the required permission.
+      /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @exception xtd::unauthorized_access_exception The path is a directory.
       /// @par Example
       /// The following example demonstrates the xtd::io::file_info::remove method.
@@ -904,7 +807,19 @@ namespace xtd {
       /// @remarks If the file does not exist, this method does nothing.
       void remove() const override;
       
-      void replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
+      /// @brief Replaces the contents of a specified file with the file described by the current xtd::io::file_info object, deleting the original file, and creating a backup of the replaced file.
+      /// @param destination_file_name The name of a file to replace with the current file.
+      /// @param destination_backup_file_name The name of a file with which to create a backup of the file described by the destFileName parameter.
+      /// @return A xtd::io::file_info object that encapsulates information about the file described by the destFileName parameter.
+      /// @exception xtd::argument_exception The path described by the destFileName parameter was not of a legal form. -or- The path described by the destBackupFileName parameter was not of a legal form.
+      /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found. -or- The file described by the destinationFileName parameter could not be found.
+      /// @exception xtd::platform_not_supported_exception The current operating system is not Microsoft Windows NT or later.
+      /// @par Example
+      /// The following example uses the xtd::io::file_info::replace method to replace a file with another file and create a backup of the replaced file.
+      /// @include file_info_replace.cpp
+      /// @remarks The Replace method replaces the contents of a specified file with the contents of the file described by the current xtd::io::file_info object. It also creates a backup of the file that was replaced. Finally, it returns a new xtd::io::file_info object that describes the overwritten file.
+      /// @remarks Pass an empty string ("") to the dest_backup_file_name parameter if you do not want to create a backup of the file being replaced.
+      file_info replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
 
     private:
       file_info() = default;
