@@ -4,7 +4,7 @@ Show how to use [xtd::io::file_info::move_to](../../../../src/xtd.core/include/x
 
 ## Sources
 
-[src/directory_info.cpp](src/file_info_move_to.cpp)
+[src/file_info_move_to.cpp](src/file_info_move_to.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
