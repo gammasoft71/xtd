@@ -8,4 +8,5 @@ add_projects(
   drive_info
   file_info
   file_info2
+  file_info_move_to
 )
