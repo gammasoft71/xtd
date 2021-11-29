@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::context_menu](../../../../src/xtd.forms/inc
 
 # Sources
 
-* [src/main_menu.cpp](src/context_menu.cpp)
+* [src/context_menu.cpp](src/context_menu.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
