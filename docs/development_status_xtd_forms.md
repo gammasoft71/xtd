@@ -80,7 +80,7 @@
 | [component](../src/xtd.forms/include/xtd/forms/component.h)                                                                   | class        | ![progress](pictures/progress75.png)  |
 | [container_control](../src/xtd.forms/include/xtd/forms/container_control.h)                                                   | class        | ![progress](pictures/progress75.png)  |
 | [content_alignment](../src/xtd.forms/include/xtd/forms/content_alignment.h)                                                   | enumeration  | ![progress](pictures/progress100.png) |
-| [context_menu](../src/xtd.forms/include/xtd/forms/context_menu.h)                                                             | class        | ![progress](pictures/progress0.png)   |
+| [context_menu](../src/xtd.forms/include/xtd/forms/context_menu.h)                                                             | class        | ![progress](pictures/progress100.png) |
 | [context_menu_strip](../src/xtd.forms/include/xtd/forms/context_menu_strip.h)                                                 | class        | ![progress](pictures/progress0.png)   |
 | [control](../src/xtd.forms/include/xtd/forms/control.h)                                                                       | class        | ![progress](pictures/progress75.png)  |
 | [control_event_args](../src/xtd.forms/include/xtd/forms/control_event_args.h)                                                 | class        | ![progress](pictures/progress100.png) |
