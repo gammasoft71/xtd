@@ -194,6 +194,26 @@ void control::check_for_illegal_cross_thread_calls(bool value) {
   check_for_illegal_cross_thread_calls_ = value;
 }
 
+std::optional<std::reference_wrapper<xtd::forms::context_menu>> control::context_menu() const {
+  return context_menu_;
+}
+
+control& control::context_menu(xtd::forms::context_menu& value) {
+  if (!context_menu_.has_value() || &context_menu_.value().get() != &value) {
+    context_menu_ = const_cast<forms::context_menu&>(value);
+  }
+  return *this;
+}
+
+control& control::context_menu(nullptr_t) {
+  if (context_menu_.has_value()) {
+    context_menu_.reset();
+    if (is_handle_created()) native::control::context_menu(handle(), 0);
+  }
+  return *this;
+}
+
+
 forms::cursor control::cursor() const {
   for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
     if (control->cursor_.has_value()) return control->cursor_.value();
@@ -1106,10 +1126,11 @@ void control::wm_kill_focus(message& message) {
 
 void control::wm_mouse_down(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
-  def_wnd_proc(message);
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   mouse_buttons_ |= e.button();
+  if (mouse_buttons_ == forms::mouse_buttons::right && context_menu_.has_value()) native::control::context_menu(handle(), context_menu_.value().get().handle());
+  else def_wnd_proc(message);
   on_mouse_down(e);
 }
 

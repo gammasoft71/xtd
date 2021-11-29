@@ -18,7 +18,13 @@ namespace xtd {
     public:
       /// @brief Initialize context_menu class.
       context_menu();
-      
+      /// @brief Initialize a new instance of context_menu class.
+      /// @param menu_items An array of menu_item objects that will be added to the main_menu.
+      context_menu(const std::vector<menu_item_ref>& menu_items);
+      /// @cond
+      context_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
+      /// @endcond
+
       /// @cond
       ~context_menu();
       /// @endcond
@@ -26,6 +32,8 @@ namespace xtd {
     protected:
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
+      void on_item_added(size_t pos, menu_item_ref item) override;
+      void on_item_removed(size_t pos, menu_item_ref item) override;
     };
   }
 }
