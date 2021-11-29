@@ -60,7 +60,7 @@
 
 ## [Menus and Toolbars](menus_and_toolbars/README.md)
 
-* **context_menu** represents a shortcut menu.
+* [context_menu](menus_and_toolbars/context_menu/README.md) represents a shortcut menu.
 * **context_menu_strip** represents a shortcut menu.
 * [main_menu](menus_and_toolbars/main_menu/README.md) provides a main menu system for a form.
 * **menu_strip** provides a menu system for a form.
