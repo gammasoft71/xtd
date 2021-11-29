@@ -16,6 +16,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 namespace {
+#if defined(__APPLE__)
   static bool is_about_item(const xtd::ustring& text) {
     wxString itemText = text;
     itemText.Replace("&", "");
@@ -39,6 +40,7 @@ namespace {
     itemText.LowerCase();
     return itemText == "preferences" || itemText == "options";
   }
+#endif
 
   static xtd::ustring make_item_text(const xtd::ustring& text, size_t shortcut) {
     using namespace std::literals;
