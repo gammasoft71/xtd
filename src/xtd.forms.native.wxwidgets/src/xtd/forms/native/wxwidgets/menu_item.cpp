@@ -107,9 +107,11 @@ namespace {
   }
   
   static wxWindowID make_window_id(const xtd::ustring& text) {
+#if defined(__APPLE__)
     if (is_about_item(text)) return wxID_ABOUT;
     if (is_quit_item(text)) return wxID_EXIT;
     if (is_preferences_item(text)) return wxID_PREFERENCES;
+#endif
     return wxID_ANY;
   }
 }
