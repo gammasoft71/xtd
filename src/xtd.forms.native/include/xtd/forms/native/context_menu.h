@@ -41,6 +41,34 @@ namespace xtd {
         /// @param context_menu Context menu window handle to destroy.
         /// @warning Internal use only
         static void destroy(intptr_t context_menu);
+        /// @brief Insert specified item to specisified position.
+        /// @param context_menu Context menu handle.
+        /// @param pos Position to insert menu item.
+        /// @param menu_item Menu item to insert.
+        /// @warning Internal use only
+        static void insert_item(intptr_t context_menu, size_t pos,  intptr_t menu_item);
+        /// @brief Insert specified menu item to specisified position.
+        /// @param context_menu Context menu handle.
+        /// @param pos Position to insert menu item.
+        /// @param menu_item Menu item to insert.
+        /// @param text The text associated with this menu.
+        /// @warning Internal use only
+        static void insert_menu(intptr_t context_menu, size_t pos,  intptr_t menu_item, const xtd::ustring& text);
+        /// @brief Gets native menu handle.
+        /// @param context_menu Context menu handle.
+        /// @return The native menu handle.
+        /// @warning Internal use only
+        static intptr_t native_handle(intptr_t context_menu);
+        /// @brief Remove menu item from specisified position.
+        /// @param context_menu Context menu handle.
+        /// @param pos Position to insert menu item.
+        /// @warning Internal use only
+        static void remove_item(intptr_t context_menu, size_t pos);
+        /// @brief Set text menu.
+        /// @param context_menu Context menu handle.
+        /// @param text The text associated with this menu.
+        /// @warning Internal use only
+        static void text(intptr_t context_menu, const xtd::ustring& text);
       };
     }
   }
