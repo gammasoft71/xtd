@@ -88,6 +88,11 @@ namespace xtd {
         /// @param size A size that represents the dimensions of the client area of the control.
         /// @warning Internal use only
         static void client_size(intptr_t control, const drawing::size& size);
+        /// @brief Sets the context that is displayed in the control.
+        /// @param control Control handle.
+        /// @param menu A menu handle that represents the menu to display in the form.
+        /// @warning Internal use only
+        static void context_menu(intptr_t control, intptr_t context_menu);
         /// @brief Creates control.
         /// @param create_param A xtd::forms::create_param object that contains needed parameters to create control.
         /// @return The created control window handle.

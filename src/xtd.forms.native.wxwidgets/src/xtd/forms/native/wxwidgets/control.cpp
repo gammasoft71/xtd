@@ -85,6 +85,15 @@ void control::back_color(intptr_t control, const color& color) {
   reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
 
+void control::context_menu(intptr_t control, intptr_t context_menu) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  reinterpret_cast<control_handler*>(control)->control()->PopupMenu(context_menu ? reinterpret_cast<wxMenu*>(context_menu) : nullptr);
+}
+
 intptr_t control::create(const forms::create_params& create_params) {
   application::initialize(); // Must be first
   if (create_params.class_name() == "button") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_button(create_params)));
