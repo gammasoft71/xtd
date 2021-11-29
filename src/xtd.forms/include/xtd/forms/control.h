@@ -26,6 +26,7 @@
 #include "auto_size_mode.h"
 #include "bounds_specified.h"
 #include "component.h"
+#include "context_menu.h"
 #include "control_event_handler.h"
 #include "control_ref.h"
 #include "control_styles.h"
@@ -356,6 +357,18 @@ namespace xtd {
       /// @return The company name or creator of the application containing the control.
       virtual xtd::ustring company_name() const {return "Gammasoft";}
       
+      /// @brief Gets the xtd::forms::context_menu that is displayed in the control.
+      /// @return A xtd::forms::context_menu that represents the context menu to display in the control.
+      virtual std::optional<std::reference_wrapper<xtd::forms::context_menu>> context_menu() const;
+      /// @brief Sets the xtd::forms::context_menu that is displayed in the control.
+      /// @param value A xtd::forms::context_menu that represents the context menu to display in the control.
+      /// @return Current control.
+      virtual control& context_menu(xtd::forms::context_menu& value);
+      /// @brief Sets the xtd::forms::context_menu that is displayed in the control.
+      /// @param value A xtd::forms::context_menu that represents the context menu to display in the control.
+      /// @return Current control.
+      virtual control& context_menu(nullptr_t);
+
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
       /// @remarks A control can act as a parent to a collection of controls. For example, when several controls are added to a form, each of the controls is a member of the control::control_collection assigned to the controls property of the form, which is derived from the control class.
@@ -1729,6 +1742,7 @@ namespace xtd {
       drawing::size client_size_;
       control_collection controls_;
       static bool check_for_illegal_cross_thread_calls_;
+      std::optional<std::reference_wrapper<xtd::forms::context_menu>> context_menu_;
       std::optional<forms::cursor> cursor_;
       dock_style dock_ = dock_style::none;
       bool focused_ = false;
