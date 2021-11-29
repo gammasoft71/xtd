@@ -56,3 +56,11 @@ void context_menu::on_item_removed(size_t pos, menu_item_ref item) {
   item.get().data_->parent_.reset();
   native::context_menu::remove_item(handle(), pos);
 }
+
+void context_menu::wm_click(message& message) {
+  auto it = handles_.find(static_cast<int32_t>(message.wparam()));
+  if (it != handles_.end()) {
+    auto& menu = static_cast<menu_item&>(it->second.get());
+    menu.data_->callback(menu);
+  }
+}
