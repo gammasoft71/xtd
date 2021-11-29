@@ -7,7 +7,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("Main menu example");
+      text("Context menu example");
 
       list_box1.parent(*this);
       list_box1.dock(dock_style::fill);
