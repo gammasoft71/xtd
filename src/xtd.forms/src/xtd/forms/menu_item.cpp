@@ -179,6 +179,8 @@ int menu_item::menu_id() const {
 
 void menu_item::on_item_added(size_t pos, menu_item_ref item) {
   menu::on_item_added(pos, item);
+  item.get().data_->context_menu_ = data_->context_menu_;
+  item.get().data_->main_menu_ = data_->main_menu_;
   item.get().data_->parent_ = *this;
   if (!item.get().handle()) item.get().create_menu();
   if (item.get().is_parent() || item.get().data_->main_menu_.has_value()) native::menu::insert_menu(handle(), pos, item.get().handle(), item.get().text());
