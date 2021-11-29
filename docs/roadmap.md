@@ -41,7 +41,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | color_picker_render             | Gammasoft |                                                 |
 | xtd.forms | command_link_button_render      | Gammasoft |                                                 |
 | xtd.forms | command_link_buttons            | Bader     |                                                 |
-| xtd.forms | context_menu                    | Gammasoft |                                                 |
+| xtd.forms | context_menu                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | dot_matrix_display_render       | Gammasoft |                                                 |
 | xtd.forms | find_box                        | Bader     |                                                 |
 | xtd.forms | find_dialog                     | Bader     |                                                 |
