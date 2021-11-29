@@ -4,6 +4,7 @@ project(menus_and_toolbars)
 find_package(xtd REQUIRED)
 
 add_projects(
+  context_menu
   main_menu
 #  context_menu_strip
 #  menu_strip
