@@ -3,11 +3,16 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "menu.h"
+#include "message.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class control;
+    /// @endcond
+    
     /// @brief Represents a shortcut menu.
     /// @par Namespace
     /// xtd::forms
@@ -34,6 +39,10 @@ namespace xtd {
       void destroy_menu_handle(intptr_t handle) override;
       void on_item_added(size_t pos, menu_item_ref item) override;
       void on_item_removed(size_t pos, menu_item_ref item) override;
+      
+    private:
+      friend class control;
+      void wm_click(message& message);
     };
   }
 }

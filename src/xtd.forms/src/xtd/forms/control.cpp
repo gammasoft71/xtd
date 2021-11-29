@@ -925,6 +925,7 @@ void control::wnd_proc(message& message) {
       // System events
     case WM_COMMAND: wm_command(message); break;
     case WM_PAINT: wm_paint(message); break;
+    case WM_MENUCOMMAND: if (context_menu_.has_value()) context_menu_.value().get().wm_click(message); break;
     case WM_MOVE: wm_move(message);  break;
     case WM_SETTEXT: wm_set_text(message); break;
     case WM_SIZE: wm_size(message); break;
