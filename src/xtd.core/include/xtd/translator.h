@@ -2,7 +2,6 @@
 /// @brief Contains xtd::translator class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <filesystem>
 #include <string>
 #include <vector>
 #include "collections/specialized/string_map.h"

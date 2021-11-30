@@ -80,11 +80,6 @@ process_start_info& process_start_info::file_name(const ustring& value) {
   return *this;
 }
 
-process_start_info& process_start_info::file_name(const std::filesystem::path& value) {
-  file_name_ = value.string();
-  return *this;
-}
-
 process_start_info& process_start_info::file_name(const char* value) {
   file_name_ = value;
   return *this;

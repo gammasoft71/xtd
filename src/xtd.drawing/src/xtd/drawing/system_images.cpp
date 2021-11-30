@@ -1,9 +1,11 @@
 #include "../../../include/xtd/drawing/bitmap.h"
 #include "../../../include/xtd/drawing/system_colors.h"
 #include "../../../include/xtd/drawing/system_images.h"
-#include <filesystem>
 #include <map>
 #include <xtd/environment.h>
+#include <xtd/io/directory.h>
+#include <xtd/io/file.h>
+#include <xtd/io/path.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_images.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
@@ -27,13 +29,13 @@
 // *   dark folder item gradient : fg(78, 139, 182), bg(94, 153, 185)
 
 using namespace std;
-using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::io;
 
 namespace {
-  static path system_images_resource_path() {
-  return path(__XTD_RESOURCES_PATH__)/"share"/"xtd"/"resources"/"system_images";
+  static ustring system_images_resource_path() {
+    return path::combine({__XTD_RESOURCES_PATH__, "share", "xtd", "resources", "system_images"});
 }
 
   drawing::size get_closed_size(const drawing::size& size) {
@@ -50,7 +52,7 @@ image system_images::from_name(const ustring& theme, const ustring& name, const 
   auto dark_mode = (system_colors::window().get_lightness() < 0.5 && !theme.ends_with(" (light)")) || theme.ends_with(" (dark)");
   string theme_name = theme.replace(" (dark)", "").replace(" (light)", "");
 
-  auto theme_path = exists(system_images_resource_path()/theme_name) ? system_images_resource_path()/theme_name : system_images_resource_path()/default_theme().c_str();
+  auto theme_path = directory::exists(path::combine(system_images_resource_path(), theme_name)) ? path::combine(system_images_resource_path(), theme_name) : path::combine(system_images_resource_path(), default_theme());
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
   
   if (theme == default_theme()) {
@@ -59,24 +61,24 @@ image system_images::from_name(const ustring& theme, const ustring& name, const 
   }
 
   if (dark_mode) {
-    if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str()).string());
+    if (file::exists(path::combine(theme_path, default_size_names[it_sizes - default_sizes.begin()], name + "-dark.png"))) return bitmap(path::combine(theme_path, default_size_names[it_sizes - default_sizes.begin()], name + "-dark.png"));
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-      if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str()).string()), *it_sizes);
+      if (file::exists(path::combine(theme_path, default_size_names[it - default_sizes.begin()], name + "-dark.png"))) return bitmap(bitmap(path::combine(theme_path, default_size_names[it - default_sizes.begin()], name + "-dark.png")), *it_sizes);
   }
   
-  if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str())) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str()).string());
+  if (file::exists(path::combine(theme_path, default_size_names[it_sizes - default_sizes.begin()], name + ".png"))) return bitmap(path::combine(theme_path, default_size_names[it_sizes - default_sizes.begin()], name + ".png"));
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-    if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str())) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str()).string()), *it_sizes);
+    if (file::exists(path::combine(theme_path, default_size_names[it - default_sizes.begin()], name + ".png"))) return bitmap(bitmap(path::combine(theme_path, default_size_names[it - default_sizes.begin()], name + ".png")), *it_sizes);
   
   if (dark_mode) {
-    if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png").c_str()).string());
+    if (file::exists(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it_sizes - default_sizes.begin()], name + "-dark.png"))) return bitmap(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it_sizes - default_sizes.begin()], name + "-dark.png"));
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-      if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str())) return bitmap(bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png").c_str()).string()), *it_sizes);
+      if (file::exists(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it - default_sizes.begin()], name + "-dark.png"))) return bitmap(bitmap(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it - default_sizes.begin()], name + "-dark.png")), *it_sizes);
   }
 
-  if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str())) return bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png").c_str()).string());
+  if (file::exists(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it_sizes - default_sizes.begin()], name + ".png"))) return bitmap(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it_sizes - default_sizes.begin()], name + ".png"));
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-    if (exists(system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str())) return bitmap(bitmap((system_images_resource_path()/fallback_theme().c_str()/default_size_names[it - default_sizes.begin()]/(name + ".png").c_str()).string()), *it_sizes);
+    if (file::exists(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it - default_sizes.begin()], name + ".png"))) return bitmap(bitmap(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it - default_sizes.begin()], name + ".png")), *it_sizes);
 
   return image::empty;
 }

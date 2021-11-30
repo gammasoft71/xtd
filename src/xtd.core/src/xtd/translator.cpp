@@ -3,17 +3,17 @@
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/ustring.h"
 #include "../../include/xtd/collections/specialized/string_map.h"
+#include "../../include/xtd/io/directory.h"
 #include "../../include/xtd/io/file.h"
 #include "../../include/xtd/io/path.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/translator.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <filesystem>
 #include <map>
 
 using namespace std;
-using namespace std::filesystem;
 using namespace xtd;
+using namespace xtd::io;
 using namespace xtd::collections::specialized;
 
 map<ustring, string_map> translator::language_values_;
@@ -60,12 +60,11 @@ const char* translator::translate(const xtd::ustring& language, const char* valu
 }
 
 void translator::parse_locale(const xtd::ustring& locale_path) {
-  std::filesystem::path std_path(std::string(locale_path).c_str());
-  if (!std::filesystem::exists(std_path) || !std::filesystem::is_directory(std_path)) return;
-  for (auto locale_item : std::filesystem::directory_iterator(std_path)) {
-    if (!locale_item.is_directory() || language_ != xtd::ustring(locale_item.path().filename().string()).to_lower()) continue;
-    for (auto language_item : std::filesystem::directory_iterator(locale_item.path()))
-      if (language_item.path().extension() == ".strings") parse_file(language_item.path().string(), language_);
+  if (!directory::exists(locale_path)) return;
+  for (auto locale_item : directory::get_directories(locale_path)) {
+    if (language_ != path::get_file_name(locale_item).to_lower()) continue;
+    for (auto language_item : directory::get_files(locale_item))
+      if (path::get_extension(language_item) == ".strings") parse_file(language_item, language_);
   }
 }
 

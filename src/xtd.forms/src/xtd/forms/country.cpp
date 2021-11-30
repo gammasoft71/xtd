@@ -1,13 +1,13 @@
+#include <xtd/io/path.h>
 #include "../../../include/xtd/forms/country.h"
 #include "../../../include/xtd/forms/countries.h"
 #include "../../../include/xtd/forms/theme_images.h"
-#include <filesystem>
 
 using namespace std;
 using namespace xtd;
-using namespace std::filesystem;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::io;
 
 const vector<ustring> country::enclosed_letters {"\U0001F1E6", "\U0001F1E7", "\U0001F1E8", "\U0001F1E9", "\U0001F1EA", "\U0001F1EB", "\U0001F1EC", "\U0001F1ED", "\U0001F1EE", "\U0001F1EF", "\U0001F1F0", "\U0001F1F1", "\U0001F1F2", "\U0001F1F3", "\U0001F1F4", "\U0001F1F5", "\U0001F1F6", "\U0001F1F7", "\U0001F1F8", "\U0001F1F9", "\U0001F1FA", "\U0001F1FB", "\U0001F1FC", "\U0001F1FD", "\U0001F1FE", "\U0001F1FF"};
 
@@ -16,7 +16,7 @@ const country country::empty() {
 }
 
 const image country::flag() const {
-  return bitmap((path(__XTD_RESOURCES_PATH__)/"share"/"xtd"/"resources"/"countries"/(alpha_2_code().to_lower() + ".png").c_str()).string());
+  return bitmap(path::combine({__XTD_RESOURCES_PATH__, "share", "xtd", "resources", "countries", alpha_2_code().to_lower() + ".png"}));
 }
 
 const image country::flag_squared() const {
