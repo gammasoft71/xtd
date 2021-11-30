@@ -1,4 +1,5 @@
 #include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/bit_converter.h"
 #include "../../../include/xtd/unauthorized_access_exception.h"
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/file_not_found_exception.h"
@@ -52,13 +53,75 @@ size_t binary_writer::seek(size_t offset, std::ios::seekdir origin) {
   return stream_->tellp();
 }
 
+void binary_writer::write(bool value) {
+  write(bit_converter::get_bytes(value));
+}
+
 void binary_writer::write(byte_t value) {
   if (!stream_) throw io_exception(csf_);
   stream_->put(static_cast<char>(value));
 }
 
-void binary_writer::write(const std::vector<byte_t>& value) {
+void binary_writer::write(char value) {
   if (!stream_) throw io_exception(csf_);
-  for (auto b : value)
-    write(b);
+  stream_->put(value);
+}
+
+void binary_writer::write(const std::vector<byte_t>& value) {
+  write(value, 0, value.size());
+}
+
+void binary_writer::write(const std::vector<byte_t>& buffer, size_t index, size_t count) {
+  if (!stream_) throw io_exception(csf_);
+  if (index + count > buffer.size()) throw argument_exception(csf_);
+  for (size_t i = index; i < (index + count); ++i)
+    write(buffer[i]);
+}
+
+void binary_writer::write(const std::vector<char>& value) {
+  write(value, 0, value.size());
+}
+
+void binary_writer::write(const std::vector<char>& buffer, size_t index, size_t count) {
+  if (!stream_) throw io_exception(csf_);
+  if (index + count > buffer.size()) throw argument_exception(csf_);
+  for (size_t i = index; i < (index + count); ++i)
+    write(buffer[i]);
+}
+
+void binary_writer::write(double value) {
+  write(bit_converter::get_bytes(value));
+}
+
+void binary_writer::write(int16_t value) {
+  write(bit_converter::get_bytes(value));
+}
+
+void binary_writer::write(int32_t value) {
+  write(bit_converter::get_bytes(value));
+}
+
+void binary_writer::write(int64_t value) {
+  write(bit_converter::get_bytes(value));
+}
+
+void binary_writer::write(sbyte_t value) {
+  if (!stream_) throw io_exception(csf_);
+  stream_->put(static_cast<char>(value));
+}
+
+void binary_writer::write(float value) {
+  write(bit_converter::get_bytes(value));
+}
+
+void binary_writer::write(uint16_t value) {
+  write(bit_converter::get_bytes(value));
+}
+
+void binary_writer::write(uint32_t value) {
+  write(bit_converter::get_bytes(value));
+}
+
+void binary_writer::write(uint64_t value) {
+  write(bit_converter::get_bytes(value));
 }
