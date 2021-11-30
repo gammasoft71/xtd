@@ -85,6 +85,8 @@ namespace xtd {
       
       virtual void write(float value);
       
+      virtual void write(const ustring& value);
+
       virtual void write(uint16_t value);
       
       virtual void write(uint32_t value);
