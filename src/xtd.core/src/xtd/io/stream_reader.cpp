@@ -39,12 +39,12 @@ void stream_reader::close() {
 
 int32_t stream_reader::peek() const {
   if (!stream_) return EOF;
-  int value = stream_->peek();
+  int32_t value = stream_->peek();
   return value;
 }
 
 int32_t stream_reader::read() {
   if (!stream_) return EOF;
-  int value = stream_->get();
+  int32_t value = stream_->get();
   return value;
 }
