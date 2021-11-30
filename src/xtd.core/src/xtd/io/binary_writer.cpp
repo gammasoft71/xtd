@@ -51,3 +51,14 @@ size_t binary_writer::seek(size_t offset, std::ios::seekdir origin) {
   stream_->seekp(offset, origin);
   return stream_->tellp();
 }
+
+void binary_writer::write(byte_t value) {
+  if (!stream_) throw io_exception(csf_);
+  stream_->put(static_cast<char>(value));
+}
+
+void binary_writer::write(const std::vector<byte_t>& value) {
+  if (!stream_) throw io_exception(csf_);
+  for (auto b : value)
+    write(b);
+}

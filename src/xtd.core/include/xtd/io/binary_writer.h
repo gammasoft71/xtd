@@ -45,6 +45,10 @@ namespace xtd {
       
       virtual size_t seek(size_t offset, std::ios::seekdir origin);
 
+      virtual void write(byte_t value);
+
+      virtual void write(const std::vector<byte_t>& value);
+
     private:
       std::ostream* stream_ = nullptr;
       bool delete_when_destroy_ = false;
