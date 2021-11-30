@@ -66,13 +66,25 @@ namespace xtd {
       }
 
       virtual void write(const std::vector<byte_t>& value);
-      
-      virtual void write(const std::vector<byte_t>& buffer, size_t index, size_t count);
-      
-      virtual void write(const std::vector<char>& value);
+      /// @cond
+      virtual void write(const std::initializer_list<byte_t>& value);
+      /// @endcond
 
-      virtual void write(const std::vector<char>& buffer, size_t index, size_t count);      
-      
+      virtual void write(const std::vector<byte_t>& buffer, size_t index, size_t count);
+      /// @cond
+      virtual void write(const std::initializer_list<byte_t>& buffer, size_t index, size_t count);
+      /// @endcond
+
+      virtual void write(const std::vector<char>& value);
+      /// @cond
+      virtual void write(const std::initializer_list<char>& value);
+      /// @endcond
+
+      virtual void write(const std::vector<char>& buffer, size_t index, size_t count);
+      /// @cond
+      virtual void write(const std::initializer_list<char>& buffer, size_t index, size_t count);
+      /// @endcond
+
       virtual void write(double value);
 
       virtual void write(int16_t value);
