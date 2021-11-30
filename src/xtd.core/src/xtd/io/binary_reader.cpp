@@ -1,0 +1,98 @@
+#include "../../../include/xtd/io/binary_reader.h"
+#include "../../../include/xtd/io/end_of_stream_exception.h"
+#include "../../../include/xtd/io/file.h"
+#include "../../../include/xtd/io/file_not_found_exception.h"
+#include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/bit_converter.h"
+
+using namespace std;
+using namespace xtd;
+using namespace xtd::io;
+
+binary_reader::binary_reader(const ustring& path) : stream_(new ifstream(path, ios::binary)), delete_when_destroy_(true) {
+  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
+  if (!file::exists(path)) throw file_not_found_exception(csf_);
+}
+
+binary_reader::binary_reader(istream& stream) : stream_(&stream) {
+}
+
+binary_reader::~binary_reader() {
+  if (delete_when_destroy_ && stream_) {
+    if (stream_ && dynamic_cast<ifstream*>(stream_)) static_cast<ifstream*>(stream_)->close();
+    delete stream_;
+  }
+}
+
+optional<reference_wrapper<istream>> binary_reader::base_stream() const {
+  return stream_ ? optional<reference_wrapper<istream>>(*stream_) : optional<reference_wrapper<istream>>();
+}
+
+bool binary_reader::end_of_stream() const {
+  return peek_char() == EOF;
+}
+
+void binary_reader::close() {
+  if (stream_ && dynamic_cast<ifstream*>(stream_)) static_cast<ifstream*>(stream_)->close();
+  if (delete_when_destroy_ && stream_) delete stream_;
+  stream_ = nullptr;
+}
+
+int32_t binary_reader::peek_char() const {
+  if (!stream_) return EOF;
+  int32_t value = stream_->peek();
+  return value;
+}
+
+int32_t binary_reader::read() {
+  if (!stream_) return EOF;
+  int32_t value = stream_->get();
+  return value;
+}
+
+size_t binary_reader::read(std::vector<byte_t>& buffer, size_t index, size_t count) {
+  if (index + count > buffer.size()) throw argument_exception(csf_);
+  for (auto i = 0U; i < count; i++) {
+    auto current = read();
+    if (current == EOF) return i;
+    buffer[index + i] = static_cast<byte_t>(current);
+  }
+  return count;
+}
+
+size_t binary_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
+  if (index + count > buffer.size()) throw argument_exception(csf_);
+  for (auto i = 0U; i < count; i++) {
+    auto current = read();
+    if (current == EOF) return i;
+    buffer[index + i] = static_cast<char>(current);
+  }
+  return count;
+}
+
+bool binary_reader::read_boolean() {
+  return bit_converter::to_boolean(read_bytes(sizeof(bool)), 0);
+}
+
+byte_t binary_reader::read_byte() {
+  return static_cast<byte_t>(read());
+}
+
+std::vector<byte_t> binary_reader::read_bytes(size_t count) {
+  vector<byte_t> result(count);
+  if (read(result, 0, count) != count)
+    throw end_of_stream_exception(csf_);
+  return result;
+}
+
+char binary_reader::read_char() {
+  return static_cast<char>(read());
+}
+
+std::vector<char> binary_reader::read_chars(size_t count) {
+  vector<char> result(count);
+  if (read(result, 0, count) != count)
+    throw end_of_stream_exception(csf_);
+  return result;
+}
