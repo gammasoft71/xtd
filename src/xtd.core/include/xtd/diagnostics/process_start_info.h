@@ -2,7 +2,6 @@
 /// @brief Contains xtd::diagnostics::process_start_info class.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <filesystem>
 #include <map>
 #include <memory>
 #include <string>
@@ -130,12 +129,6 @@ namespace xtd {
       /// @remarks You must set at least the xtd::diagnostics::process_start_info::file_name property before you start the process. The file name is any application or document. A document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
       /// @remarks The set of file types available to you depends in part on the value of the xtd::diagnostics::process_start_info::use_shell_execute property. If xtd::diagnostics::process_start_info::use_shell_execute is true, you can start any document and perform operations on the file, such as printing, with the xtd::diagnostics::process component. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables with the xtd::diagnostics::process component.
       process_start_info& file_name(const xtd::ustring& value);
-      /// @brief Sets the application or document to start.
-      /// @param value string The name of the application to start, or the name of a document of a file type that is associated with an application and that has a default open action available to it. The default is an empty string ("").
-      /// @return The current instance of process_start_info.
-      /// @remarks You must set at least the xtd::diagnostics::process_start_info::file_name property before you start the process. The file name is any application or document. A document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
-      /// @remarks The set of file types available to you depends in part on the value of the xtd::diagnostics::process_start_info::use_shell_execute property. If xtd::diagnostics::process_start_info::use_shell_execute is true, you can start any document and perform operations on the file, such as printing, with the xtd::diagnostics::process component. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables with the xtd::diagnostics::process component.
-      process_start_info& file_name(const std::filesystem::path& value);
       /// @cond
       process_start_info& file_name(const char* value);
       /// @endcond
