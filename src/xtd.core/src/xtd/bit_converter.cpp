@@ -52,15 +52,18 @@ vector<byte_t> bit_converter::get_bytes(float value) {
 }
 
 vector<byte_t> bit_converter::get_bytes(uint16_t value) {
-  return {byte_t(value & 0x00FF), byte_t((value & 0xFF00) >> 8)};
+  if (is_little_endian) return {byte_t(value & 0x00FF), byte_t((value & 0xFF00) >> 8)};
+  return {byte_t((value & 0xFF00) >> 8), byte_t(value & 0x00FF)};
 }
 
 vector<byte_t> bit_converter::get_bytes(uint32_t value) {
-  return {byte_t(value & 0x000000FF), byte_t((value & 0x0000FF00) >> 8), byte_t((value & 0x00FF0000) >> 16), byte_t((value & 0xFF000000) >> 24)};
+  if (is_little_endian) return {byte_t(value & 0x000000FF), byte_t((value & 0x0000FF00) >> 8), byte_t((value & 0x00FF0000) >> 16), byte_t((value & 0xFF000000) >> 24)};
+  return {byte_t((value & 0xFF000000) >> 24), byte_t((value & 0x00FF0000) >> 16), byte_t((value & 0x0000FF00) >> 8), byte_t(value & 0x000000FF)};
 }
 
 vector<byte_t> bit_converter::get_bytes(uint64_t value) {
-  return {byte_t(value & 0x00000000000000FF), byte_t((value & 0x000000000000FF00) >> 8), byte_t((value & 0x0000000000FF0000) >> 16), byte_t((value & 0x00000000FF000000) >> 24), byte_t((value & 0x000000FF00000000) >> 32), byte_t((value & 0x0000FF0000000000) >> 40), byte_t((value & 0x00FF000000000000) >> 48), byte_t((value & 0xFF00000000000000) >> 56)};
+  if (is_little_endian) return {byte_t(value & 0x00000000000000FF), byte_t((value & 0x000000000000FF00) >> 8), byte_t((value & 0x0000000000FF0000) >> 16), byte_t((value & 0x00000000FF000000) >> 24), byte_t((value & 0x000000FF00000000) >> 32), byte_t((value & 0x0000FF0000000000) >> 40), byte_t((value & 0x00FF000000000000) >> 48), byte_t((value & 0xFF00000000000000) >> 56)};
+  return {byte_t((value & 0xFF00000000000000) >> 56), byte_t((value & 0x00FF000000000000) >> 48), byte_t((value & 0x0000FF0000000000) >> 40), byte_t((value & 0x000000FF00000000) >> 32), byte_t((value & 0x00000000FF000000) >> 24), byte_t((value & 0x0000000000FF0000) >> 16), byte_t((value & 0x000000000000FF00) >> 8), byte_t(value & 0x00000000000000FF)};
 }
 
 vector<byte_t> bit_converter::get_bytes(llong value) {
