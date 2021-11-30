@@ -73,6 +73,8 @@ namespace xtd {
       virtual sbyte_t read_sbyte();
 
       virtual float read_single();
+      
+      virtual ustring read_string();
 
       virtual uint16_t read_uint16();
       
