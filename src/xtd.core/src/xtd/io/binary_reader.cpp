@@ -123,7 +123,7 @@ float binary_reader::read_single() {
 
 ustring binary_reader::read_string() {
   int32_t length = read_int32();
-  return ustring(read_chars(length).data(), length);
+  return ustring(read_chars(length).data(), static_cast<size_t>(length));
 }
 
 uint16_t binary_reader::read_uint16() {
