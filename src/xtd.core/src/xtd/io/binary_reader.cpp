@@ -96,3 +96,39 @@ std::vector<char> binary_reader::read_chars(size_t count) {
     throw end_of_stream_exception(csf_);
   return result;
 }
+
+double binary_reader::read_double() {
+  return bit_converter::to_double(read_bytes(sizeof(double)), 0);
+}
+
+int16_t binary_reader::read_int16() {
+  return bit_converter::to_int16(read_bytes(sizeof(int16_t)), 0);
+}
+
+int32_t binary_reader::read_int32() {
+  return bit_converter::to_int32(read_bytes(sizeof(int32_t)), 0);
+}
+
+int64_t binary_reader::read_int64() {
+  return bit_converter::to_int16(read_bytes(sizeof(int64_t)), 0);
+}
+
+sbyte_t binary_reader::read_sbyte() {
+  return static_cast<sbyte_t>(read());
+}
+
+float binary_reader::read_single() {
+  return bit_converter::to_single(read_bytes(sizeof(float)), 0);
+}
+
+uint16_t binary_reader::read_uint16() {
+  return bit_converter::to_int16(read_bytes(sizeof(int16_t)), 0);
+}
+
+uint32_t binary_reader::read_uint32() {
+  return bit_converter::to_int32(read_bytes(sizeof(int32_t)), 0);
+}
+
+uint64_t binary_reader::read_uint64() {
+  return bit_converter::to_int16(read_bytes(sizeof(int64_t)), 0);
+}

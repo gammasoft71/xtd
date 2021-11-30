@@ -61,6 +61,24 @@ namespace xtd {
       virtual char read_char();
       
       virtual std::vector<char> read_chars(size_t count);
+
+      virtual double read_double();
+      
+      virtual int16_t read_int16();
+      
+      virtual int32_t read_int32();
+      
+      virtual int64_t read_int64();
+      
+      virtual sbyte_t read_sbyte();
+
+      virtual float read_single();
+
+      virtual uint16_t read_uint16();
+      
+      virtual uint32_t read_uint32();
+      
+      virtual uint64_t read_uint64();
       
     private:
       std::istream* stream_ = nullptr;
