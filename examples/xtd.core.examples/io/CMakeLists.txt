@@ -4,6 +4,8 @@ project(io)
 find_package(xtd REQUIRED)
 
 add_projects(
+  binary_reader
+  binary_reader2
   directory_info
   drive_info
   file_info
