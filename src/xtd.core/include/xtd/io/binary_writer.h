@@ -5,6 +5,8 @@
 
 #include <fstream>
 #include <optional>
+#include <array>
+#include <vector>
 #include "../object.h"
 #include "../ustring.h"
 
@@ -45,9 +47,49 @@ namespace xtd {
       
       virtual size_t seek(size_t offset, std::ios::seekdir origin);
 
+      virtual void write(bool value);
+      
       virtual void write(byte_t value);
+      
+      virtual void write(char value);
+      
+      template<size_t size>
+      void write(const std::array<byte_t, size>& buffer) {
+        for (auto b : buffer)
+          write(b);
+      }
+      
+      template<size_t size>
+      void write(const std::array<char, size>& buffer) {
+        for (auto c : buffer)
+          write(c);
+      }
 
       virtual void write(const std::vector<byte_t>& value);
+      
+      virtual void write(const std::vector<byte_t>& buffer, size_t index, size_t count);
+      
+      virtual void write(const std::vector<char>& value);
+
+      virtual void write(const std::vector<char>& buffer, size_t index, size_t count);      
+      
+      virtual void write(double value);
+
+      virtual void write(int16_t value);
+      
+      virtual void write(int32_t value);
+      
+      virtual void write(int64_t value);
+      
+      virtual void write(sbyte_t value);
+      
+      virtual void write(float value);
+      
+      virtual void write(uint16_t value);
+      
+      virtual void write(uint32_t value);
+      
+      virtual void write(uint64_t value);
 
     private:
       std::ostream* stream_ = nullptr;

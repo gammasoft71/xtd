@@ -5,6 +5,7 @@
 
 #include <fstream>
 #include <optional>
+#include <vector>
 #include "../object.h"
 #include "../ustring.h"
 
