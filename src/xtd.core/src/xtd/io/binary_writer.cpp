@@ -71,10 +71,6 @@ void binary_writer::write(const std::vector<byte_t>& value) {
   write(value, 0, value.size());
 }
 
-void binary_writer::write(const std::initializer_list<byte_t>& value) {
-  write(vector<byte>(value));
-}
-
 void binary_writer::write(const std::vector<byte_t>& buffer, size_t index, size_t count) {
   if (!stream_) throw io_exception(csf_);
   if (index + count > buffer.size()) throw argument_exception(csf_);
@@ -82,16 +78,8 @@ void binary_writer::write(const std::vector<byte_t>& buffer, size_t index, size_
     write(buffer[i]);
 }
 
-void binary_writer::write(const std::initializer_list<byte_t>& buffer, size_t index, size_t count) {
-  write(vector<byte>(buffer), index, count);
-}
-
 void binary_writer::write(const std::vector<char>& value) {
   write(value, 0, value.size());
-}
-
-void binary_writer::write(const std::initializer_list<char>& value) {
-  write(vector<char>(value));
 }
 
 void binary_writer::write(const std::vector<char>& buffer, size_t index, size_t count) {
@@ -99,10 +87,6 @@ void binary_writer::write(const std::vector<char>& buffer, size_t index, size_t 
   if (index + count > buffer.size()) throw argument_exception(csf_);
   for (size_t i = index; i < (index + count); ++i)
     write(buffer[i]);
-}
-
-void binary_writer::write(const std::initializer_list<char>& buffer, size_t index, size_t count) {
-  write(vector<char>(buffer), index, count);
 }
 
 void binary_writer::write(double value) {

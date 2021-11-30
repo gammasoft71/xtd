@@ -66,24 +66,12 @@ namespace xtd {
       }
 
       virtual void write(const std::vector<byte_t>& value);
-      /// @cond
-      virtual void write(const std::initializer_list<byte_t>& value);
-      /// @endcond
 
       virtual void write(const std::vector<byte_t>& buffer, size_t index, size_t count);
-      /// @cond
-      virtual void write(const std::initializer_list<byte_t>& buffer, size_t index, size_t count);
-      /// @endcond
 
       virtual void write(const std::vector<char>& value);
-      /// @cond
-      virtual void write(const std::initializer_list<char>& value);
-      /// @endcond
 
       virtual void write(const std::vector<char>& buffer, size_t index, size_t count);
-      /// @cond
-      virtual void write(const std::initializer_list<char>& buffer, size_t index, size_t count);
-      /// @endcond
 
       virtual void write(double value);
 
@@ -116,6 +104,36 @@ namespace xtd {
       virtual void write(uint32_t value);
       
       virtual void write(uint64_t value);
+      
+      binary_writer& operator<<(bool value) {write(value); return *this;}
+      binary_writer& operator<<(byte value) {write(value); return *this;}
+      binary_writer& operator<<(char value) {write(value); return *this;}
+      template<size_t size>
+      binary_writer& operator<<(const std::array<byte_t, size>& value) {write(value); return *this;}
+      template<size_t size>
+      binary_writer& operator<<(const std::array<char, size>& value) {write(value); return *this;}
+      binary_writer& operator<<(const std::vector<byte_t>& value) {write(value); return *this;}
+      binary_writer& operator<<(const std::vector<char>& value) {write(value); return *this;}
+      binary_writer& operator<<(double value) {write(value); return *this;}
+      binary_writer& operator<<(int16_t value) {write(value); return *this;}
+      binary_writer& operator<<(int32_t value) {write(value); return *this;}
+      binary_writer& operator<<(int64_t value) {write(value); return *this;}
+      binary_writer& operator<<(sbyte value) {write(value); return *this;}
+      binary_writer& operator<<(float value) {write(value); return *this;}
+      binary_writer& operator<<(const ustring& value) {write(value); return *this;}
+      binary_writer& operator<<(const std::string& value) {write(value); return *this;}
+      binary_writer& operator<<(const std::u8string& value) {write(value); return *this;}
+      binary_writer& operator<<(const std::u16string& value) {write(value); return *this;}
+      binary_writer& operator<<(const std::u32string& value) {write(value); return *this;}
+      binary_writer& operator<<(const std::wstring& value) {write(value); return *this;}
+      binary_writer& operator<<(const char* value) {write(value); return *this;}
+      binary_writer& operator<<(const char8_t* value) {write(value); return *this;}
+      binary_writer& operator<<(const char16_t* value) {write(value); return *this;}
+      binary_writer& operator<<(const char32_t* value) {write(value); return *this;}
+      binary_writer& operator<<(const wchar_t* value) {write(value); return *this;}
+      binary_writer& operator<<(uint16_t value) {write(value); return *this;}
+      binary_writer& operator<<(uint32_t value) {write(value); return *this;}
+      binary_writer& operator<<(uint64_t value) {write(value); return *this;}
 
     private:
       std::ostream* stream_ = nullptr;

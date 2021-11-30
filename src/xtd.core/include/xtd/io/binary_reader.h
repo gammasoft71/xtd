@@ -14,11 +14,17 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Reads primitive data types as binary values in a specific encoding.
+    /// @code
+    /// class binary_reader : public xtd::object
+    /// @endcode
+    /// Ineheritance xtd::object → xtd::io::binary_reader
     /// @par Namespace
     /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
+    /// @remarks The xtd:io::binary_reader class provides methods that simplify reading primitive data types from a stream. For example, you can use the xtd:io::binary_reader::read_boolean method to read the next byte as a bool value and advance the current position in the stream by one byte. The class includes read methods that support different data types.
+    /// @remarks When you create a new instance of the xtd:io::binary_reader and whether to leave the stream open after disposing the xtd:io::binary_reader object.
     class binary_reader : public object {
     public:
       /// @brief Initializes a new instance of the xtd::io::binary_reader class for the specified file name.
@@ -83,6 +89,20 @@ namespace xtd {
       
       virtual uint64_t read_uint64();
       
+      binary_reader& operator>>(bool& value) {value = read_boolean(); return *this;}
+      binary_reader& operator>>(byte_t& value) {value = read_byte(); return *this;}
+      binary_reader& operator>>(char& value) {value = read_char(); return *this;}
+      binary_reader& operator>>(double& value) {value = read_double(); return *this;}
+      binary_reader& operator>>(int16_t& value) {value = read_int16(); return *this;}
+      binary_reader& operator>>(int32_t& value) {value = read_int32(); return *this;}
+      binary_reader& operator>>(int64_t& value) {value = read_int64(); return *this;}
+      binary_reader& operator>>(sbyte_t& value) {value = read_sbyte(); return *this;}
+      binary_reader& operator>>(float& value) {value = read_single(); return *this;}
+      binary_reader& operator>>(ustring& value) {value = read_string(); return *this;}
+      binary_reader& operator>>(uint16_t& value) {value = read_uint16(); return *this;}
+      binary_reader& operator>>(uint32_t& value) {value = read_uint32(); return *this;}
+      binary_reader& operator>>(uint64_t& value) {value = read_uint64(); return *this;}
+
     private:
       std::istream* stream_ = nullptr;
       bool delete_when_destroy_ = false;
