@@ -86,6 +86,18 @@ namespace xtd {
       virtual void write(float value);
       
       virtual void write(const ustring& value);
+      /// @cond
+      virtual void write(const std::string& value);
+      virtual void write(const std::u8string& value);
+      virtual void write(const std::u16string& value);
+      virtual void write(const std::u32string& value);
+      virtual void write(const std::wstring& value);
+      virtual void write(const char* value);
+      virtual void write(const char8_t* value);
+      virtual void write(const char16_t* value);
+      virtual void write(const char32_t* value);
+      virtual void write(const wchar_t* value);
+      /// @endcond
 
       virtual void write(uint16_t value);
       

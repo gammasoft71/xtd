@@ -19,7 +19,7 @@ binary_writer::binary_writer(const ustring& path) : stream_(new ofstream(path, i
   if (!dynamic_cast<ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception(csf_);
 }
 
-binary_writer::binary_writer(ostream& stream) {
+binary_writer::binary_writer(ostream& stream) : stream_(&stream) {
   if (!stream_->good()) throw io_exception(csf_);
   stream_->flush();
 }
@@ -118,6 +118,46 @@ void binary_writer::write(const ustring& value) {
   write(static_cast<int32_t>(value.size()));
   for (auto c : value)
     write(c);
+}
+
+void binary_writer::write(const string& value) {
+  write(ustring(value));
+}
+
+void binary_writer::write(const std::u8string& value) {
+  write(ustring(value));
+}
+
+void binary_writer::write(const std::u16string& value) {
+  write(ustring(value));
+}
+
+void binary_writer::write(const std::u32string& value) {
+  write(ustring(value));
+}
+
+void binary_writer::write(const std::wstring& value) {
+  write(ustring(value));
+}
+
+void binary_writer::write(const char* value) {
+  write(ustring(value));
+}
+
+void binary_writer::write(const char8_t* value) {
+  write(ustring(value));
+}
+
+void binary_writer::write(const char16_t* value) {
+  write(ustring(value));
+}
+
+void binary_writer::write(const char32_t* value) {
+  write(ustring(value));
+}
+
+void binary_writer::write(const wchar_t* value) {
+  write(ustring(value));
 }
 
 void binary_writer::write(uint16_t value) {
