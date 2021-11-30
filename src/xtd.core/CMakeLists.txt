@@ -165,6 +165,7 @@ add_sources(
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__string_formatter.h
   include/xtd/io/binary_reader.h
+  include/xtd/io/binary_writer.h
   include/xtd/io/directory.h
   include/xtd/io/directory_info.h
   include/xtd/io/directory_not_found_exception.h
@@ -290,6 +291,7 @@ add_sources(
   src/xtd/internal/__opaque_console_win32.cpp
   src/xtd/internal/__parse.cpp
   src/xtd/io/binary_reader.cpp
+  src/xtd/io/binary_writer.cpp
   src/xtd/io/directory.cpp
   src/xtd/io/directory_info.cpp
   src/xtd/io/file.cpp
