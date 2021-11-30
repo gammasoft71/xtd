@@ -132,6 +132,7 @@
 #include "diagnostics/trace_options.h"
 #include "diagnostics/trace_source.h"
 #include "diagnostics/trace_switch.h"
+#include "io/binary_reader.h"
 #include "io/directory.h"
 #include "io/directory_info.h"
 #include "io/directory_not_found_exception.h"
