@@ -133,6 +133,7 @@
 #include "diagnostics/trace_source.h"
 #include "diagnostics/trace_switch.h"
 #include "io/binary_reader.h"
+#include "io/binary_writer.h"
 #include "io/directory.h"
 #include "io/directory_info.h"
 #include "io/directory_not_found_exception.h"
