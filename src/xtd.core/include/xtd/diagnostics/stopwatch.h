@@ -11,6 +11,10 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a set of methods and properties that you can use to accurately measure elapsed time.
+    /// @code
+    /// class core_export_ stopwatch : public xtd::object
+    /// @endcode
+    /// Ineheritance xtd::object → xtd::diagnostics::stopwatch
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -24,7 +28,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to use the xtd::diagnostics::stopwatch class to determine the execution time for an application.
     /// @include stopwatch.cpp
-    class stopwatch : public object{
+    class core_export_ stopwatch : public xtd::object{
     public:
       /// @brief Initializes a new instance of the xtd::diagnostics::stopwatch class.
       /// @remarks The returned xtd::diagnostics::stopwatch instance is stopped, and the xtd::diagnostics::stopwatch::elapsed time property of the instance is zero.

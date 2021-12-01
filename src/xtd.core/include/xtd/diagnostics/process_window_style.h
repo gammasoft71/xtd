@@ -9,6 +9,9 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Specified how a new window should appear when the system starts a process.
+    /// @code
+    /// enum class process_window_style
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

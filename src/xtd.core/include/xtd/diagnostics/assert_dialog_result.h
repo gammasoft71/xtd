@@ -9,6 +9,9 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
   /// @brief Specifies identifiers to indicate the return value of an assert dialog box.
+    /// @code
+    /// enum class assert_dialog_result
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

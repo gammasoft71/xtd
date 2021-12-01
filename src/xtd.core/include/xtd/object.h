@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <string>
 #include <memory>
+#include "core_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,7 +24,7 @@ namespace xtd {
   /// @par Examples
   /// The following example defines a point type derived from the object class and victuals many of the virtual methods of the object class. In addition, the example shows how to call many of the static and instance methods of the object class.
   /// @include object.cpp
-  class object {
+  class core_export_ object {
   public:
     /// @brief Create a new instance of the ultimate base class object
     /// @remarks This constructor is called by constructors in derived classes, but it can also be used to directly create an instance of the object class.

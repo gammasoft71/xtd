@@ -15,6 +15,10 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides the abstract base class for the listeners who monitor trace and debug output.
+    /// @code
+    /// class core_export_ trace_listener abstract_
+    /// @endcode
+    /// Ineheritance xtd::abstract_object → xtd::diagnostics::trace_listener
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -25,7 +29,7 @@ namespace xtd {
     ///  * To enable debugging with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file but in this case, the compiler options for debug is not activated.
     ///  * To enable tracing with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your project, or you can add #define TRACE to the top of your file.
     /// @note <b>to Inheritors:</b> Inherit from this class to implement a custom listener for the debug and trace classes. At a minimum, you must implement the write and write_line methods. Additionally, you can implement the fail, close and flush methods.
-    class trace_listener abstract_ {
+    class core_export_ trace_listener abstract_ {
     public:
       /// @brief Initializes a new instance of the trace_listener class.
       /// @remarks The following table shows initial property values for an instance of trace_listener.

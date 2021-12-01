@@ -16,6 +16,10 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the call stack for the current thread.
+    /// @code
+    /// class core_export_ stack_frame : public xtd::object
+    /// @endcode
+    /// Ineheritance xtd::object → xtd::diagnostics::stack_frame
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -26,7 +30,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates the use of the xtd::diagnostics::stack_frame class to provide the stack frame information for a stack trace.
     /// @include stack_frame.cpp
-    class stack_frame : public object {
+    class core_export_ stack_frame : public xtd::object {
     public:
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class.
       stack_frame();

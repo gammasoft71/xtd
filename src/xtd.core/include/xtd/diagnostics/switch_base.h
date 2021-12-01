@@ -14,6 +14,10 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides an abstract base class to create new debugging and tracing switches.
+    /// @code
+    /// class core_export_ switch_base : public xtd::object
+    /// @endcode
+    /// Ineheritance xtd::object → xtd::diagnostics::switch_base
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -23,7 +27,7 @@ namespace xtd {
     /// @remarks This class is the base class for the boolean_switch, source_switch and the trace_switch classes. These switches meet most debugging and tracing needs.
     /// @par Notes to implementers
     /// If you need trace levels, or mechanisms for setting switch levels different from those provided by boolean_switch, source_switch and trace_switch, you can inherit from switch_base. When inheriting from this class, you must implement the switch_setting method.
-    class switch_base : public object {
+    class core_export_ switch_base : public xtd::object {
     public:
       /// @cond
       switch_base(const switch_base& value) = default;

@@ -10,6 +10,10 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a simple on/off switch that controls debugging and tracing output.
+    /// @code
+    /// class core_export_ boolean_switch : public xtd::diagnostics::switch_base
+    /// @endcode
+    /// Ineheritance xtd::diagnostics::switch_base → xtd::diagnostics::boolean_switch
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -38,7 +42,7 @@ namespace xtd {
     /// @note These debug and trace compiler switches are not required when using the xtd::diagnostics::boolean_switch class in isolation. They are only required in conjunction with xtd::diagnostics::trace or xtd::diagnostics::debug methods that are conditionally compiled.
     /// @remarks For more information on instrumenting your application, see xtd::diagnostics::debug and xtd::diagnostics::trace.
     /// @note To improve performance, you can make xtd::diagnostics::boolean_switch members static in your class.
-    class boolean_switch : public xtd::diagnostics::switch_base {
+    class core_export_ boolean_switch : public xtd::diagnostics::switch_base {
     public:
       /// @brief Initializes a new instance of the xtd::diagnostics::boolean_switch class with the specified display name and description.
       /// @param display_name The name to display on a user interface.
