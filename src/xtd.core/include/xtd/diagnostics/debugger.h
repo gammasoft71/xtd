@@ -23,6 +23,10 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Enables communication with a debugger. This class cannot be inherited.
+    /// @code
+    /// class core_export_ debugger static_
+    /// @endcode
+    /// Ineheritance xtd::static_object → xtd::diagnostics::debugger
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

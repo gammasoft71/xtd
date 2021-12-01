@@ -17,6 +17,10 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides the base class for trace filter implementations.
+    /// @code
+    /// class core_export_ trace_filter abstract_
+    /// @endcode
+    /// Ineheritance xtd::abstract_object → xtd::diagnostics::trace_filter
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -24,7 +28,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks Trace filters can be used by trace listeners to provide an extra layer of filtering beyond that provided by trace switches. The trace filter for a trace listener can be found in the listener's filter property. Trace switches determine if a trace is to be sent to the trace listeners. Trace filters allow the individual trace listeners to determine whether or not the trace is to be written to the associated output medium. For example, as determined by each trace filter, a trace may be written to the console by a console_trace_listener, but not to the event log by a event_log_trace_listener.
     /// @remarks Filters that inherit from the trace_filter class can be used by trace listeners that inherit from the trace_listener class to perform filtering of events being traced. trace_filter contains a single method, should_trace, which takes event data and returns a flag indicating whether the event should be traced.
-    class trace_filter abstract_ {
+    class core_export_ trace_filter abstract_ {
     public:
       /// @brief When overridden in a derived class, determines whether the trace listener should trace the event.
       /// @param cache The trace_event_cache that contains information for the trace event.

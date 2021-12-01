@@ -12,6 +12,9 @@ namespace xtd {
     /// @brief The xtd::collections::specialized namespace contains specialized and strongly-typed collections; for example, a linked list dictionary, a bit vector, and collections that contain only strings.
     namespace specialized {
       /// @brief Implements a std::pair with the key and the value strongly typed to be strings.
+      /// @code
+      /// using string_pair = std::pair<xtd::ustring, xtd::ustring>
+      /// @endcode
       /// @par Namespace
       /// xtd::collections
       /// @par Library

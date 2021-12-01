@@ -15,6 +15,10 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a set of methods and properties that enable applications to trace the execution of code and associate trace messages with their source.
+    /// @code
+    /// class core_export_ trace_source : public xtd::object
+    /// @endcode
+    /// Ineheritance xtd::object → xtd::diagnostics::trace_source
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -29,7 +33,7 @@ namespace xtd {
     /// @remarks The trace_event_type enumeration is used to define the event type of the trace message. Trace filters use the trace_event_type to determine if a trace listener should produce the trace message.
     /// @remarks The trace listeners can optionally have an additional layer of filtering through a trace filter. If a trace listener has an associated filter, the listener calls the should_trace method on that filter to determine whether or not to produce the trace information.
     /// @remarks The trace listeners use the values of the trace class properties indent, indent_size, and  auto_flush to format trace output.
-    class trace_source : public object {
+    class core_export_ trace_source : public xtd::object {
     public:
       /// @brief Initializes a new instance of the Trace_Source class, using the specified name for the source.
       /// @param name The name of the source (typically, the name of the application).

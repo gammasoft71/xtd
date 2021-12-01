@@ -9,6 +9,9 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Indicates the priority that the system associates with a process. This value, together with the priority value of each thread of the process, determines each thread's base priority level.
+    /// @code
+    /// enum class process_priority_class
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

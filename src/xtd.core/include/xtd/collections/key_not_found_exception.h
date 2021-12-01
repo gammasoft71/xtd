@@ -8,6 +8,10 @@
 namespace xtd {
   namespace collections {
     /// @brief The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
+    /// @code
+    /// class key_not_found_exception : public xtd::system_exception
+    /// @endcode
+    /// Ineheritance xtd::system_exception → xtd::collections::key_not_found_exception
     /// @par Namespace
     /// xtd::collections
     /// @par Library
@@ -16,7 +20,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an key_not_found_exception.
     /// @include key_not_found_exception.cpp
-    class key_not_found_exception : public system_exception {
+    class key_not_found_exception : public xtd::system_exception {
     public:
       /// @brief Create a new instance of class key_not_found_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.

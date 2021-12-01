@@ -10,6 +10,10 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides data for the xtd::diagnostics::process::output_data_received and xtd::diagnostics::process::error_data_received events.
+    /// @code
+    /// class data_received_event_args final : public xtd::event_args
+    /// @endcode
+    /// Ineheritance xtd::event_args → xtd::diagnostics::data_received_event_args
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

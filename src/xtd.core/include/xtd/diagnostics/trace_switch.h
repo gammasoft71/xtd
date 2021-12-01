@@ -11,6 +11,10 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a multilevel switch to control tracing and debug output without recompiling your code.
+    /// @code
+    /// class core_export_ trace_switch : public xtd::diagnostics::switch_base
+    /// @endcode
+    /// Ineheritance xtd::diagnostics::switch_base → xtd::diagnostics::trace_switch
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -18,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks You can use a trace switch to filter out messages based on their importance. The trace_switch class provides the trace_error, trace_warning, trace_info, and trace_verbose properties to test the level of the switch. The level property gets or sets the switch's trace_level.
     /// @remarks You can set the level of a trace_switch through the application configuration file and then use the configured trace_switch level in your application. Alternately, you can create a trace_switch in your code and set the level directly to instrument a specific section of code.
-    class trace_switch : public xtd::diagnostics::switch_base {
+    class core_export_ trace_switch : public xtd::diagnostics::switch_base {
     public:
       /// @brief Initializes a new instance of the xtd::diagnostics::trace_switch class, using the specified display name and description.
       /// @param display_name The name to display on a user interface.
