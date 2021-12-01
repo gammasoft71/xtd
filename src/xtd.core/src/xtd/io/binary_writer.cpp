@@ -50,7 +50,7 @@ void binary_writer::flush() {
 size_t binary_writer::seek(size_t offset, std::ios::seekdir origin) {
   if (!stream_) throw io_exception(csf_);
   stream_->seekp(offset, origin);
-  return stream_->tellp();
+  return static_cast<size_t>(stream_->tellp());
 }
 
 void binary_writer::write(bool value) {
