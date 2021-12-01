@@ -593,9 +593,6 @@ void control::on_click(const event_args &e) {
 }
 
 void control::on_client_size_changed(const event_args &e) {
-  perform_layout();
-  // The following line has been commented to avoid flickering
-  //refresh();
   if (can_raise_events()) client_size_changed(*this, e);
 }
 
