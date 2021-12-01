@@ -594,7 +594,8 @@ void control::on_click(const event_args &e) {
 
 void control::on_client_size_changed(const event_args &e) {
   perform_layout();
-  refresh();
+  // The following line has been commented to avoid flickering
+  //refresh();
   if (can_raise_events()) client_size_changed(*this, e);
 }
 
@@ -802,7 +803,8 @@ void control::on_resize(const event_args &e) {
   if (!maximum_size_.is_empty() && size_.height() > maximum_size_.height()) height(maximum_size_.height());
   if (is_handle_created()) client_rectangle_ = native::control::client_rectangle(handle());
   perform_layout();
-  refresh();
+  // The following line has been commented to avoid flickering
+  //refresh();
   if (can_raise_events()) resize(*this, e);
 }
 
