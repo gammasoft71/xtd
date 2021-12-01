@@ -16,7 +16,7 @@ namespace xtd {
       /// class socket_exception : public xtd::system_exception
       /// @endcode
       /// @par Ineheritance
-      /// xtd::system_exception → xtd::net::socket_exception
+      /// xtd::system_exception → xtd::net::sockets::socket_exception
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

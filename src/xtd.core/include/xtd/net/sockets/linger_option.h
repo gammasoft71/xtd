@@ -20,7 +20,7 @@ namespace xtd {
       /// class core_export_ linger_option : public xtd::object
       /// @endcode
       /// @par Ineheritance
-      /// xtd::object → xtd::net::linger_option
+      /// xtd::object → xtd::net::sockets::linger_option
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

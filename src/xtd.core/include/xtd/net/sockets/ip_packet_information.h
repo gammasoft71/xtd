@@ -24,7 +24,7 @@ namespace xtd {
       /// class core_export_ ip_packet_information : public xtd::object
       /// @endcode
       /// @par Ineheritance
-      /// xtd::object → xtd::net::ip_packet_information
+      /// xtd::object → xtd::net::sockets::ip_packet_information
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

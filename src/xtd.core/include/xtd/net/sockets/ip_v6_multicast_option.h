@@ -20,7 +20,7 @@ namespace xtd {
       /// class core_export_ ip_v6_multicast_option : public xtd::object
       /// @endcode
       /// @par Ineheritance
-      /// xtd::object → xtd::net::ip_v6_multicast_option
+      /// xtd::object → xtd::net::sockets::ip_v6_multicast_option
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
