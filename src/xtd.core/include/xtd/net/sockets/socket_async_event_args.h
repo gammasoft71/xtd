@@ -27,6 +27,11 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Represents an asynchronous socket operation.
+      /// @code
+      /// class core_export_ socket_async_event_args : public xtd::event_args
+      /// @endcode
+      /// @par Ineheritance
+      /// xtd::event_args → xtd::net::socket_async_event_args
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
@@ -43,7 +48,7 @@ namespace xtd {
       /// 5. If the asynchronous socket method (xxx_async) returns false, the operation completed synchronously. The context properties may be queried for the operation result.
       /// 6. Reuse the context for another operation, put it back in the pool, or discard it.
       /// @remarks The lifetime of the new asynchronous socket operation context object is determined by references by the application code and asynchronous I/O references. It is not necessary for the application to retain a reference to an asynchronous socket operation context object after it is submitted as a parameter to one of the asynchronous socket operation methods. It will remain referenced until the completion callback returns. However it is advantageous for the application to retain the reference to the context so that it can be reused for a future asynchronous socket operation.
-      class socket_async_event_args : public xtd::event_args {
+      class core_export_ socket_async_event_args : public xtd::event_args {
       public:
         /// @brief Creates an empty xtd::net::sockets::socket_async_event_args instance.
         /// @remarks After calling this constructor all properties will have their default values:

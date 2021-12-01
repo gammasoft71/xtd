@@ -16,6 +16,9 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief A value that enables restriction of an IPv6 socket to a specified scope, such as addresses with the same link local or site local prefix.
+      /// @code
+      /// enum class ip_protection_level
+      /// @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

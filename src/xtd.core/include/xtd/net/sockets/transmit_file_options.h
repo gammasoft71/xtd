@@ -16,12 +16,15 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief The TransmitFileOptions enumeration defines values used in file transfer requests.
-      /// @remarks This enumeration has a flags attribute that allows a bitwise combination of its member values.
+      /// @code
+      /// enum class transmit_file_options
+      /// @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core
+      /// @remarks This enumeration has a flags attribute that allows a bitwise combination of its member values.
       /// @note The flags xtd::net::sockets::transmit_file_options::disconnect and xtd::net::sockets::transmit_file_options::reuse_socket return the socket to a disconnected, reusable state after the file has been transmitted. These flags should not be used on a socket where quality of service (QOS) has been requested, because the service provider might immediately delete any quality of service associated with the socket before the file transfer has completed. The best approach for a QOS-enabled socket is to call xtd::net::sockets::socket::close when the file transfer has completed, rather than relying on these flags.
       enum class transmit_file_options {
         /// @brief Use the default thread to process long file transfer requests.
