@@ -67,8 +67,8 @@ void binary_writer::write(char value) {
   stream_->put(value);
 }
 
-void binary_writer::write(const std::vector<byte_t>& value) {
-  write(value, 0, value.size());
+void binary_writer::write(const std::vector<byte_t>& buffer) {
+  write(buffer, 0, buffer.size());
 }
 
 void binary_writer::write(const std::vector<byte_t>& buffer, size_t index, size_t count) {
@@ -78,8 +78,8 @@ void binary_writer::write(const std::vector<byte_t>& buffer, size_t index, size_
     write(buffer[i]);
 }
 
-void binary_writer::write(const std::vector<char>& value) {
-  write(value, 0, value.size());
+void binary_writer::write(const std::vector<char>& buffer) {
+  write(buffer, 0, buffer.size());
 }
 
 void binary_writer::write(const std::vector<char>& buffer, size_t index, size_t count) {
