@@ -799,6 +799,7 @@ void control::on_resize(const event_args &e) {
   if (!maximum_size_.is_empty() && size_.width() > maximum_size_.width()) width(maximum_size_.width());
   if (!maximum_size_.is_empty() && size_.height() > maximum_size_.height()) height(maximum_size_.height());
   if (is_handle_created()) client_rectangle_ = native::control::client_rectangle(handle());
+  if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
   // The following line has been commented to avoid flickering
   //refresh();
@@ -806,7 +807,6 @@ void control::on_resize(const event_args &e) {
 }
 
 void control::on_size_changed(const event_args &e) {
-  if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   if (is_handle_created()) client_rectangle_ = native::control::client_rectangle(handle());
   if (can_raise_events()) size_changed(*this, e);
 }
@@ -971,8 +971,6 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
     on_client_size_changed(event_args::empty);
     on_size_changed(event_args::empty);
     on_resize(event_args::empty);
-    if (parent().has_value()) parent().value().get().perform_layout();
-    perform_layout();
   }
 }
 
