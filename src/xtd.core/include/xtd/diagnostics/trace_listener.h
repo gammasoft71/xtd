@@ -18,7 +18,8 @@ namespace xtd {
     /// @code
     /// class core_export_ trace_listener abstract_
     /// @endcode
-    /// Ineheritance xtd::abstract_object → xtd::diagnostics::trace_listener
+    /// @par Ineheritance
+    /// xtd::abstract_object → xtd::diagnostics::trace_listener
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

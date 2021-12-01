@@ -18,7 +18,8 @@ namespace xtd {
     /// @code
     /// class core_export_ trace_source : public xtd::object
     /// @endcode
-    /// Ineheritance xtd::object → xtd::diagnostics::trace_source
+    /// @par Ineheritance
+    /// xtd::object → xtd::diagnostics::trace_source
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

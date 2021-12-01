@@ -19,7 +19,8 @@ namespace xtd {
     /// @code
     /// class core_export_ process_start_info final : public xtd::object
     /// @endcode
-    /// Ineheritance xtd::object → xtd::diagnostics::process_start_info
+    /// @par Ineheritance
+    /// xtd::object → xtd::diagnostics::process_start_info
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

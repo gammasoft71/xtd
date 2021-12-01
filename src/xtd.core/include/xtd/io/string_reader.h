@@ -11,12 +11,17 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Implements a xtd::io::text_reader that reads from a string.
+    /// @code
+    /// class core_export_ string_reader : public xtd::io::text_reader
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::io::text_reader → xtd::io::string_reader
     /// @par Namespace
     /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class string_reader : public xtd::io::text_reader {
+    class core_export_ string_reader : public xtd::io::text_reader {
     public:
       /// @brief Initializes a new instance of the stream_reader class for the specified file name.
       /// @param path The complete file path to be read.

@@ -21,12 +21,17 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents a writer that can write a sequential series of characters.
+    /// @code
+    /// class core_export_ text_writer : public xtd::object
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::object → xtd::io::text_writer
     /// @par Namespace
     /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class core_export_ text_writer : public object {
+    class core_export_ text_writer : public xtd::object {
     public:
       /// @brief Gets the line terminator string used by the current text_writer.
       const xtd::ustring& new_line() const noexcept;
@@ -209,19 +214,33 @@ namespace xtd {
     };
     
     /// @brief Represents a null text writer.
+    /// @code
+    /// class core_export_ null_text_writer : public xtd::io::text_writer
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::io::text_writer → xtd::io::null_text_writer
+    /// @par Namespace
+    /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class null_text_writer : public text_writer {
+    class core_export_ null_text_writer : public xtd::io::text_writer {
     public:
       void write(const xtd::ustring&) override;
     };
     
     /// @brief Represents a synchronized text writer.
+    /// @code
+    /// class core_export_ synchronized_text_writer : public xtd::io::text_writer
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::io::text_writer → xtd::io::synchronized_text_writer
+    /// @par Namespace
+    /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class synchronized_text_writer : public text_writer {
+    class core_export_ synchronized_text_writer : public xtd::io::text_writer {
     public:
       void write(const xtd::ustring& value) override ;
       

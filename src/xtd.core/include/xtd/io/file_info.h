@@ -17,6 +17,11 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::fstream objects.
+    /// @code
+    /// class core_export_ file_info : public xtd::io::file_system_info
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::io::file_system_info → xtd::io::file_info
     /// @par Namespace
     /// xtd::io
     /// @par Library

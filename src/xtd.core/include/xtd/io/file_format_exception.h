@@ -9,6 +9,11 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief The exception that is thrown when the format of an argument does not meet the parameter specifications of the invoked method.
+    /// @code
+    /// class file_format_exception : public xtd::format_exception
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::format_exception → xtd::io::file_format_exception
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -17,7 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an file_format_exception.
     /// @include file_format_exception.cpp
-    class file_format_exception : public format_exception {
+    class file_format_exception : public xtd::format_exception {
     public:
       /// @brief Create a new instance of class file_format_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.

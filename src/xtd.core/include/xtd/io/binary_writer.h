@@ -16,9 +16,10 @@ namespace xtd {
   namespace io {
     /// @brief Writes primitive types in binary to a stream and supports writing strings.
     /// @code
-    /// class binary_writer : public xtd::object
+    /// class core_export_ binary_writer : public xtd::object
     /// @endcode
-    /// Ineheritance xtd::object → xtd::io::binary_writer
+    /// @par Ineheritance
+    /// xtd::object → xtd::io::binary_writer
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -32,7 +33,7 @@ namespace xtd {
     /// @include binary_reader2.cpp
     /// @remarks The xtd::io::binary_writer class provides methods that simplify writing primitive data types to a stream. For example, you can use the Write method to write a Boolean value to the stream as a one-byte value. The class includes write methods that support different data types.
     /// @remarks When you create a new instance of the xtd::io::binary_writer class, you provide the stream to write to.
-    class binary_writer : public object {
+    class core_export_ binary_writer : public xtd::object {
     public:
       /// @brief Initializes a new instance of the binary_writer class for the specified file name.
       /// @param path The complete file path to be read.

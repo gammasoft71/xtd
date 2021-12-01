@@ -9,6 +9,11 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief The exception that is thrown when trying to access a drive or share that is not available.
+    /// @code
+    /// class drive_not_found_exception : public xtd::io::io_exception
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::io::io_exception → xtd::io::drive_not_found_exception
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -17,7 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an drive_not_found_exception.
     /// @include drive_not_found_exception.cpp
-    class drive_not_found_exception : public io_exception {
+    class drive_not_found_exception : public xtd::io::io_exception {
     public:
       /// @brief Create a new instance of class drive_not_found_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.

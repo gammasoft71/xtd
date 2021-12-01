@@ -17,7 +17,8 @@ namespace xtd {
     /// @code
     /// class core_export_ trace_event_cache : public xtd::object
     /// @endcode
-    /// Ineheritance xtd::object → xtd::diagnostics::trace_event_cache
+    /// @par Ineheritance
+    /// xtd::object → xtd::diagnostics::trace_event_cache
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

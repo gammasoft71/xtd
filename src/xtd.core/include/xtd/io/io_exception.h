@@ -9,6 +9,11 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief The exception that is thrown when an I/O error occurs.
+    /// @code
+    /// class io_exception : public xtd::system_exception
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::system_exception → xtd::io::io_exception
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -17,7 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an io_exception.
     /// @include io_exception.cpp
-    class io_exception : public system_exception {
+    class io_exception : public xtd::system_exception {
     public:
       /// @brief Create a new instance of class io_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
