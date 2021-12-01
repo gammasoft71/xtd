@@ -14,7 +14,8 @@ namespace xtd {
     /// @code
     /// class core_export_ stopwatch : public xtd::object
     /// @endcode
-    /// Ineheritance xtd::object → xtd::diagnostics::stopwatch
+    /// @par Ineheritance
+    /// xtd::object → xtd::diagnostics::stopwatch
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

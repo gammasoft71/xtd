@@ -20,7 +20,8 @@ namespace xtd {
     /// @code
     /// class core_export_ trace_filter abstract_
     /// @endcode
-    /// Ineheritance xtd::abstract_object → xtd::diagnostics::trace_filter
+    /// @par Ineheritance
+    /// xtd::abstract_object → xtd::diagnostics::trace_filter
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

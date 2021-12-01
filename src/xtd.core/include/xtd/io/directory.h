@@ -13,9 +13,10 @@ namespace xtd {
   namespace io {
     /// @brief Exposes static methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
     /// @code
-    /// class directory static_
+    /// class core_export_ directory static_
     /// @endcode
-    /// Ineheritance xtd::static_object → xtd::io::directory
+    /// @par Ineheritance
+    /// xtd::static_object → xtd::io::directory
     /// @par Namespace
     /// xtd::io
     /// @par Library

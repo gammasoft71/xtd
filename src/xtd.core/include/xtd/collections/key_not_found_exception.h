@@ -11,7 +11,8 @@ namespace xtd {
     /// @code
     /// class key_not_found_exception : public xtd::system_exception
     /// @endcode
-    /// Ineheritance xtd::system_exception → xtd::collections::key_not_found_exception
+    /// @par Ineheritance
+    /// xtd::system_exception → xtd::collections::key_not_found_exception
     /// @par Namespace
     /// xtd::collections
     /// @par Library

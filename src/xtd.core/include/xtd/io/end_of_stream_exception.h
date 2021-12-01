@@ -9,6 +9,11 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief The exception that is thrown when reading is attempted past the end of a stream.
+    /// @code
+    /// class end_of_stream_exception : public xtd::io::io_exception
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::io::io_exception → xtd::io::end_of_stream_exception
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -17,7 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an end_of_stream_exception.
     /// @include end_of_stream_exception.cpp
-    class end_of_stream_exception : public io_exception {
+    class end_of_stream_exception : public xtd::io::io_exception {
     public:
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.

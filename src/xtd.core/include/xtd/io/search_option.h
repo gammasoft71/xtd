@@ -9,6 +9,11 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow top_directory_onlying and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Specifies whether to search the current directory, or the current directory and all subdirectories.
+    /// @code
+    /// enum class search_option
+    /// @endcode
+    /// @par Namespace
+    /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core

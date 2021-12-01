@@ -22,7 +22,8 @@ namespace xtd {
     /// @code
     /// class core_export_ stack_trace : public xtd::object
     /// @endcode
-    /// Ineheritance xtd::object → xtd::diagnostics::stack_trace
+    /// @par Ineheritance
+    /// xtd::object → xtd::diagnostics::stack_trace
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

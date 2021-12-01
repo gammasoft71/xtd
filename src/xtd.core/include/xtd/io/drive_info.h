@@ -14,9 +14,10 @@ namespace xtd {
   namespace io {
     /// @brief Provides access to information on a drive.
     /// @code
-    /// class drive_info : public xtd::object
+    /// class core_export_ drive_info : public xtd::object
     /// @endcode
-    /// Ineheritance xtd::object → xtd::io::drive_info
+    /// @par Ineheritance
+    /// xtd::object → xtd::io::drive_info
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -26,7 +27,7 @@ namespace xtd {
     /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
     /// @include drive_info.cpp
     /// @remarks This class models a drive and provides methods and properties to query for drive information. Use xtd::io::drive_info to determine what drives are available, and what type of drives they are. You can also query to determine the capacity and available free space on the drive.
-    class core_export_ drive_info : public object {
+    class core_export_ drive_info : public xtd::object {
     public:
       /// @brief Represents the uninitialized xtd::io::drive_info object. This field is constant.
       static const drive_info empty;

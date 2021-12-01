@@ -15,9 +15,10 @@ namespace xtd {
   namespace io {
     /// @brief Reads primitive data types as binary values in a specific encoding.
     /// @code
-    /// class binary_reader : public xtd::object
+    /// class core_export_ binary_reader : public xtd::object
     /// @endcode
-    /// Ineheritance xtd::object → xtd::io::binary_reader
+    /// @par Ineheritance
+    /// xtd::object → xtd::io::binary_reader
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -31,7 +32,7 @@ namespace xtd {
     /// @include binary_reader2.cpp
     /// @remarks The xtd:io::binary_reader class provides methods that simplify reading primitive data types from a stream. For example, you can use the xtd:io::binary_reader::read_boolean method to read the next byte as a bool value and advance the current position in the stream by one byte. The class includes read methods that support different data types.
     /// @remarks When you create a new instance of the xtd:io::binary_reader and whether to leave the stream open after disposing the xtd:io::binary_reader object.
-    class binary_reader : public object {
+    class core_export_ binary_reader : public xtd::object {
     public:
       /// @brief Initializes a new instance of the xtd::io::binary_reader class for the specified file name.
       /// @param path The complete file path to be read.

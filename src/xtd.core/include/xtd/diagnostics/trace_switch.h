@@ -14,7 +14,8 @@ namespace xtd {
     /// @code
     /// class core_export_ trace_switch : public xtd::diagnostics::switch_base
     /// @endcode
-    /// Ineheritance xtd::diagnostics::switch_base → xtd::diagnostics::trace_switch
+    /// @par Ineheritance
+    /// xtd::diagnostics::switch_base → xtd::diagnostics::trace_switch
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

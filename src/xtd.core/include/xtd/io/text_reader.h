@@ -21,12 +21,17 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents a reader that can read a sequential series of characters.
+    /// @code
+    /// class core_export_ text_reader : public xtd::object
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::object → xtd::io::text_reader
     /// @par Namespace
     /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class core_export_ text_reader : public object {
+    class core_export_ text_reader : public xtd::object {
     public:
       /// @brief Provides a text_reader with no data to read from.
       /// @remarks Reading from the null text reader is similar to reading from the end of a stream:
@@ -79,20 +84,33 @@ namespace xtd {
       text_reader() = default;
     };
     
-    /// @brief Represents a null text reader.
+    /// @code
+    /// class core_export_ null_text_reader : public xtd::io::text_reader
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::io::text_reader → xtd::io::null_text_reader
+    /// @par Namespace
+    /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class null_text_reader : public text_reader {
+    class core_export_ null_text_reader : public xtd::io::text_reader {
     public:
       int32_t read() override;
     };
     
     /// @brief Represents a synchronized text reader.
+    /// @code
+    /// class core_export_ synchronized_text_reader : public xtd::io::text_reader
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::io::text_reader → xtd::io::synchronized_text_reader
+    /// @par Namespace
+    /// xtd::io
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class synchronized_text_reader : public text_reader {
+    class core_export_ synchronized_text_reader : public xtd::io::text_reader {
     public:
       int32_t read() override;
       

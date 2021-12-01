@@ -9,6 +9,9 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Provides attributes for files and directories.
+    /// @code
+    /// enum class file_attributes
+    /// @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

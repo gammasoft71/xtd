@@ -15,6 +15,11 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.
+    /// @code
+    /// class core_export_ file_system_info abstract_
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::abstract_object → xtd::io::file_system_info
     /// @par Namespace
     /// xtd::io
     /// @par Library
