@@ -12,6 +12,11 @@ namespace xtd {
   /// @brief The xtd::media namespace contains classes for playing sound files and accessing sounds provided by the system.
   namespace media {
     /// @brief Retrieves sounds associated with a set of Windows operating system sound-event types. This class cannot be inherited.
+    /// @code
+    /// class core_export_ system_sounds static_
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::static_object → xtd::media::system_sounds
     /// @par Namespace
     /// xtd::media
     /// @par Library
