@@ -205,8 +205,8 @@
 
 | Name                                                                                                 | Type         | Status                                |
 |------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [binary_reader](../src/xtd.core/include/xtd/io/binary_reader.h)                                      | class        | ![progress](pictures/progress0.png)   |
-| [binary_writer](../src/xtd.core/include/xtd/io/binary_writer.h)                                      | class        | ![progress](pictures/progress0.png)   |
+| [binary_reader](../src/xtd.core/include/xtd/io/binary_reader.h)                                      | class        | ![progress](pictures/progress100.png) |
+| [binary_writer](../src/xtd.core/include/xtd/io/binary_writer.h)                                      | class        | ![progress](pictures/progress100.png) |
 | [directory](../src/xtd.core/include/xtd/io/directory.h)                                              | static class | ![progress](pictures/progress100.png) |
 | [directory_info](../src/xtd.core/include/xtd/io/directory_info.h)                                    | class        | ![progress](pictures/progress100.png) |
 | [directory_not_found_exception](../src/xtd.core/include/xtd/io/directory_not_found_exception.h)      | exception    | ![progress](pictures/progress100.png) |
