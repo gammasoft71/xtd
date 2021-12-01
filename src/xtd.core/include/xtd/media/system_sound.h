@@ -11,13 +11,17 @@ namespace xtd {
   namespace media {
     class system_sounds;
     /// @brief Represents a system sound type.
+    /// @code
+    /// class core_export_ system_sound : public xtd::object
+    /// @endcode
+    /// @par Ineheritance
+    /// xtd::object → xtd::media::system_sound
     /// @par Namespace
     /// xtd::media
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core media
-    
-    class core_export_ system_sound : public object {
+    class core_export_ system_sound : public xtd::object {
     public:
       /// @cond
       system_sound() = default;
