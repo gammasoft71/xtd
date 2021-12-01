@@ -28,7 +28,7 @@ namespace xtd {
       /// class core_export_ send_packets_element : public xtd::object
       /// @endcode
       /// @par Ineheritance
-      /// xtd::object → xtd::net::send_packets_element
+      /// xtd::object → xtd::net::sockets::send_packets_element
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

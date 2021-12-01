@@ -17,7 +17,7 @@ namespace xtd {
       /// class core_export_ network_stream : public std::iostream
       /// @endcode
       /// @par Ineheritance
-      /// std::iostream → xtd::net::network_stream
+      /// std::iostream → xtd::net::sockets::network_stream
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

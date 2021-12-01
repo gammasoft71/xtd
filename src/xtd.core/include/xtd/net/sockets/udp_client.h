@@ -19,7 +19,7 @@ namespace xtd {
       /// class coore_export_ udp_client : public xtd::object
       /// @endcode
       /// @par Ineheritance
-      /// xtd::object → xtd::net::udp_client
+      /// xtd::object → xtd::net::sockets::udp_client
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
