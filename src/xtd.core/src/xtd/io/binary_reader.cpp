@@ -76,7 +76,7 @@ bool binary_reader::read_boolean() {
 }
 
 byte_t binary_reader::read_byte() {
-  return static_cast<byte_t>(read());
+  return read_bytes(sizeof(byte_t))[0];
 }
 
 std::vector<byte_t> binary_reader::read_bytes(size_t count) {
@@ -87,7 +87,7 @@ std::vector<byte_t> binary_reader::read_bytes(size_t count) {
 }
 
 char binary_reader::read_char() {
-  return static_cast<char>(read());
+  return read_bytes(sizeof(char))[0];
 }
 
 std::vector<char> binary_reader::read_chars(size_t count) {
@@ -114,7 +114,7 @@ int64_t binary_reader::read_int64() {
 }
 
 sbyte_t binary_reader::read_sbyte() {
-  return static_cast<sbyte_t>(read());
+  return read_bytes(sizeof(sbyte_t))[0];
 }
 
 float binary_reader::read_single() {
