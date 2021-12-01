@@ -12,6 +12,11 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Listens for connections from TCP network clients.
+      /// @code
+      /// class core_export_ tcp_listener : public xtd::object
+      /// @endcode
+      /// @par Ineheritance
+      /// xtd::object → xtd::net::tcp_listener
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
@@ -27,7 +32,7 @@ namespace xtd {
       /// @par Examples
       /// The following example shows how to use IPv6 xtd::net::sockets::tcp_listener class with use xtd::net::sockets::tcp_client, xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
       /// @include tcp_client_ip_v6.cpp
-      class tcp_listener : public xtd::object {
+      class core_export_ tcp_listener : public xtd::object {
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
           async_result_socket(std::any async_state) : async_state_(async_state) {}

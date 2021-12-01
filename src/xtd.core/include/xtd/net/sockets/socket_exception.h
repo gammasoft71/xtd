@@ -12,6 +12,11 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief The exception that is thrown when a socket error occurs.
+      /// @code
+      /// class socket_exception : public xtd::system_exception
+      /// @endcode
+      /// @par Ineheritance
+      /// xtd::system_exception → xtd::net::socket_exception
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
@@ -20,7 +25,7 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to throw and catch an socket_exception.
       /// @include socket_exception.cpp
-      class socket_exception : public system_exception {
+      class socket_exception : public xtd::system_exception {
       public:
         /// @brief Create a new instance of class socket_exception
         /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.

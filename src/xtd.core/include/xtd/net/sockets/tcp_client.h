@@ -20,6 +20,11 @@ namespace xtd {
       /// @endcond
 
       /// @brief Provides client connections for TCP network services.
+      /// @code
+      /// class core_export_ tcp_client : public xtd::object
+      /// @endcode
+      /// @par Ineheritance
+      /// xtd::object → xtd::net::tcp_client
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
@@ -36,7 +41,7 @@ namespace xtd {
       /// @par Examples
       /// The following example shows how to use IPv6 xtd::net::sockets::tcp_client class with xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
       /// @include tcp_client_ip_v6.cpp
-      class tcp_client : public xtd::object {
+      class core_export_ tcp_client : public xtd::object {
       public:
         /// @brief Initializes a new instance of the xtd::net::sockets::tcp_client class.
         /// @remarks This constructor creates a new xtd::net::sockets::tcp_client and allows the underlying service provider to assign the most appropriate local IP address and port number. You must first call the xtd::net::sockets::tcp_client::connect method before sending and receiving data.

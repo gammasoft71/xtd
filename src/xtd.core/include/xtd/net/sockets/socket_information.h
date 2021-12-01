@@ -16,6 +16,11 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Encapsulates the information that is necessary to duplicate a xtd::net::sockets::socket.
+      /// @code
+      /// class core_export_ socket_information : public xtd::object
+      /// @endcode
+      /// @par Ineheritance
+      /// xtd::object → xtd::net::socket_information
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

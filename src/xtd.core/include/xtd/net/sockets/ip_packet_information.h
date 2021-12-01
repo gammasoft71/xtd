@@ -20,12 +20,17 @@ namespace xtd {
       /// @endcond
       
       /// @brief Gets the network interface information that is associated with a call to xtd::net::sockets::socket::receive_message_from or xtd::net::sockets::socket::end_receive_message_from.
+      /// @code
+      /// class core_export_ ip_packet_information : public xtd::object
+      /// @endcode
+      /// @par Ineheritance
+      /// xtd::object → xtd::net::ip_packet_information
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core
-      class ip_packet_information : public xtd::object {
+      class core_export_ ip_packet_information : public xtd::object {
       public:
         /// @brief Creates an empty xtd::net::sockets::ip_packet_information instance.
         ip_packet_information() = default;
