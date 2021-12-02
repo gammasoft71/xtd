@@ -1248,7 +1248,6 @@ void control::wm_paint(message& message) {
   on_paint(e);
 }
 
-
 void control::wm_erase_background(message& message) {
   paint_event_args e(*this, client_rectangle_);
   e.message_ = message;
