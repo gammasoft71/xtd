@@ -22,6 +22,7 @@ char path::directory_separator_char() {
 }
 
 string path::get_temp_path() {
+  /// @todo Use GetTTempPath : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-gettemppatha
   if (getenv("TMP") != nullptr)  return getenv("TMP");
   if (getenv("TEMP") != nullptr) return getenv("TEMP");
   if (getenv("USERPROFILE") != nullptr) return getenv("USERPROFILE");

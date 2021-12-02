@@ -54,6 +54,15 @@ namespace unit_tests {
     }
     
     void test_method_(create_directory_with_path_too_long) {
+      // Windows :
+      //   https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=cmd
+      //   #define MAX_PATH 260
+      // macOS :
+      //   #define PATH_MAX 1024 /* max bytes in pathname */
+      //   #define NAME_MAX  255 /* max bytes in a file name */
+      // Linux :
+      //   #define PATH_MAX 4096 /* # chars in a path name including nul */
+      //   #define NAME_MAX  255 /* max bytes in a file name */
       assert::throws<path_too_long_exception>([]{directory::create_directory("directory"_s + ustring(260, '1'));}, csf_);
     }
   };

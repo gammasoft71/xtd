@@ -35,11 +35,13 @@ std::string environment::get_desktop_environment() {
 }
 
 std::string environment::get_environment_variable(const std::string& variable) {
+  /// @todo Use GetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getenvironmentvariable
   auto value = getenv(variable.c_str());
   return value ? value : "";
 }
 
 std::map<std::string, std::string>& environment::get_environment_variables(int32_t target) {
+  /// @todo Use GetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getenvironmentvariable
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     static std::map<std::string, std::string> envs;
     if (envs.size() == 0) {
@@ -67,6 +69,7 @@ std::map<std::string, std::string>& environment::get_environment_variables(int32
 
 std::string environment::get_know_folder_path(int32_t id) {
   if (id == CSIDL_HOME) {
+    /// @todo Use GetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getenvironmentvariable
     auto path = getenv("HOMEPATH");
     return path ? path : "";
   }
@@ -143,12 +146,14 @@ std::string environment::get_user_name() {
 bool environment::is_processor_arm() {
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
+  /// @todo check compare
   return (system_info.wProcessorArchitecture & (PROCESSOR_ARCHITECTURE_ARM | PROCESSOR_ARCHITECTURE_ARM64)) != 0;
 }
 
 bool environment::is_os_64_bit() {
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
+  /// @todo check compare
   return (system_info.wProcessorArchitecture & (PROCESSOR_ARCHITECTURE_AMD64 | PROCESSOR_ARCHITECTURE_ARM64 | PROCESSOR_ARCHITECTURE_IA64)) != 0;
 }
 
@@ -157,9 +162,11 @@ std::string environment::new_line() {
 }
 
 void environment::set_environment_variable(const std::string& name, const std::string& value) {
+  /// @todo Use SetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setenvironmentvariable
   _putenv((name + "=" + value).c_str());
 }
 
 void environment::unset_environment_variable(const std::string& name) {
+  /// @todo Use SetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setenvironmentvariable
   _putenv((name+ "=").c_str());
 }

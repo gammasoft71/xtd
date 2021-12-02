@@ -18,6 +18,7 @@ int32_t file_system::get_attributes(const string& path, int32_t& attributes) {
 }
 
 int32_t file_system::get_file_times(const string& path, chrono::system_clock::time_point& creation_time, chrono::system_clock::time_point& last_access_time, chrono::system_clock::time_point& last_write_time) {
+  /// @todo Use GetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfiletime
   struct stat file_stat;
   if (stat(path.c_str(), &file_stat) != 0)
     return -1;
@@ -28,6 +29,7 @@ int32_t file_system::get_file_times(const string& path, chrono::system_clock::ti
 }
 
 string file_system::get_full_path(const string& relative_path) {
+  /// @todo Use GetFullPathName : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfullpathnamea
   char full_path[MAX_PATH + 1];
   return _fullpath(full_path, relative_path.c_str(), MAX_PATH) ? full_path : "";
 }
@@ -37,17 +39,21 @@ bool file_system::is_path_too_long(const string& path) {
 }
 
 int32_t file_system::set_creation_time(const string &path, chrono::system_clock::time_point &creation_time) {
+  /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }
 
 int32_t file_system::set_file_attributes(const string& path, int32_t attributes) {
+  /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }
 
 int32_t file_system::set_last_access_time(const string &path, chrono::system_clock::time_point &last_access_time) {
+  /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }
 
 int32_t file_system::set_last_write_time(const string &path, chrono::system_clock::time_point &last_write_time) {
+  /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }
