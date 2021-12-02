@@ -738,8 +738,13 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
 }
 
 void control::on_paint(paint_event_args& e) {
+  def_wnd_proc(e.message_);
   if (background_image_ != xtd::drawing::image::empty) control_paint::draw_image(e.graphics(), background_image_, e.clip_rectangle(), background_image_layout_);
   if (can_raise_events()) paint(*this, e);
+}
+
+void control::on_paint_background(paint_event_args& e) {
+  def_wnd_proc(e.message_);
 }
 
 void control::on_parent_back_color_changed(const event_args &e) {
@@ -923,6 +928,7 @@ void control::wnd_proc(message& message) {
     case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
       // System events
     case WM_COMMAND: wm_command(message); break;
+    case WM_ERASEBKGND: wm_erase_background(message); break;
     case WM_PAINT: wm_paint(message); break;
     case WM_MENUCOMMAND: if (context_menu_.has_value()) context_menu_.value().get().wm_click(message); break;
     case WM_MOVE: wm_move(message);  break;
@@ -1202,9 +1208,16 @@ void control::wm_mouse_wheel(message& message) {
 }
 
 void control::wm_paint(message& message) {
-  def_wnd_proc(message);
   paint_event_args e(*this, client_rectangle_);
+  e.message_ = message;
   on_paint(e);
+}
+
+
+void control::wm_erase_background(message& message) {
+  paint_event_args e(*this, client_rectangle_);
+  e.message_ = message;
+  on_paint_background(e);
 }
 
 void control::wm_scroll(message& message) {

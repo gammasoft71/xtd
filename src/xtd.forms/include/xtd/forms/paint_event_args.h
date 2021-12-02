@@ -7,6 +7,7 @@
 #include <xtd/drawing/graphics.h>
 #include <xtd/drawing/rectangle.h>
 #include "../forms_export.h"
+#include "message.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -46,9 +47,11 @@ namespace xtd {
       drawing::graphics& graphics();
             
     private:
+      friend class xtd::forms::control;
       xtd::forms::control* control_ = nullptr;
       mutable xtd::drawing::graphics* graphics_ = nullptr;
       xtd::drawing::rectangle clip_rectangle_;
+      xtd::forms::message message_; // need for xtd::forms::control::on_paint_ xtd::forms::control::on_paint_background to call def_wnd_proc method.
     };
   }
 }
