@@ -1637,6 +1637,12 @@ namespace xtd {
       /// @ingroup events
       virtual void on_paint(paint_event_args& e);
       
+      /// @brief Paints the background of the control.
+      /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
+      /// @remarks The xtd::forms::control::on_paint_background method enables derived classes to handle Windows background erase requests.
+      virtual void on_paint_background(paint_event_args& e);
+      
       /// @brief Raises the control::parent_back_color_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1791,6 +1797,7 @@ namespace xtd {
       void wm_move(message& message);
       void wm_mouse_wheel(message& message);
       void wm_paint(message& message);
+      void wm_erase_background(message& message);
       void wm_scroll(message& message);
       void wm_set_focus(message& message);
       void wm_set_text(message& message);
