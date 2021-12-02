@@ -13,6 +13,7 @@ using namespace xtd::native;
 #undef min
 
 int32_t file::copy(const std::string& source_file, const std::string& target_file) {
+  /// @todo Use CopyFile : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfile
   FILE* source = fopen(source_file.c_str(), "rb");
   if (source == nullptr) return -1;
   
@@ -53,6 +54,7 @@ size_t file::get_size(const std::string& path) {
 }
 
 int32_t file::move(const std::string& old_path, const std::string& new_path) {
+  /// @todo Use MoveFile : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefile
   int32_t file_attributes = 0;
   if (file_system::get_attributes(new_path, file_attributes) == 0)
     return -1;
@@ -60,5 +62,6 @@ int32_t file::move(const std::string& old_path, const std::string& new_path) {
 }
 
 int32_t file::remove(const std::string& file) {
+  /// @todo DeleteFile : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deletefile
   return ::remove(file.c_str());
 }
