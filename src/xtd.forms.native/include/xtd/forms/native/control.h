@@ -221,6 +221,26 @@ namespace xtd {
         /// @param location 
         /// @warning Internal use only
         static void location(intptr_t control, const drawing::point& location);
+        /// @brief Sets the maximum height and maximum width of the client area of the control.
+        /// @param control Control window handle.
+        /// @param size The size that represents the height and width of the control in pixels.
+        /// @warning Internal use only
+        static void maximum_client_size(intptr_t control, const drawing::size& size);
+        /// @brief Sets the maximum height and maximum width of the control.
+        /// @param control Control window handle.
+        /// @param size The size that represents the height and width of the control in pixels.
+        /// @warning Internal use only
+        static void maximum_size(intptr_t control, const drawing::size& size);
+        /// @brief Sets the minimum height and minimum width of the client area of the control.
+        /// @param control Control window handle.
+        /// @param size The size that represents the height and width of the control in pixels.
+        /// @warning Internal use only
+        static void minimum_client_size(intptr_t control, const drawing::size& size);
+        /// @brief Sets the minimum height and minimum width of the control.
+        /// @param control Control window handle.
+        /// @param size The size that represents the height and width of the control in pixels.
+        /// @warning Internal use only
+        static void minimum_size(intptr_t control, const drawing::size& size);
         /// @brief Computes the location of the specified screen point into client coordinates.
         /// @param control Control window handle.
         /// @param p The screen coordinate xtd::drawing::point to convert.
