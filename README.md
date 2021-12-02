@@ -8,6 +8,17 @@
 
 [![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://github.com/gammasoft71/xtd/blob/master/docs/license.md) [![Language](https://img.shields.io/badge/language-C++17/20-brightgreen.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#c++17) [![Reference Guide](https://codedocs.xyz/gammasoft71/xtd.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html) [![documentation](https://img.shields.io/badge/markdown-documentation-brightgreen.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/home.md) [![web](https://img.shields.io/badge/website-xtd-brightgreen.svg)](https://gammasoft71.wixsite.com/xtdpro) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
 
+## Contents
+
+* [Continuous Integration build status](#continuous-integration-build-status)
+* [Features](#features)
+* [Links](#links)
+* [Examples](#examples)
+* [Getting Started](#getting-started)
+* [Development status](#development-status)
+* [Contributing](#contributing)
+* [Gallery](#gallery)
+
 ## Continuous Integration build status
 
 At each commit, a build and unit tests are performed for the following configurations :
@@ -31,8 +42,9 @@ At each commit, a build and unit tests are performed for the following configura
 * written in efficient, modern C++17 / C++20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
 * and [highly portable](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#operating-system-supported);
 
-### For more information see
+### Links
 
+For more information about xtd see :
 * [website](https://gammasoft71.wixsite.com/xtdpro)
 * [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
 * [sources](https://github.com/gammasoft71/xtd) 
