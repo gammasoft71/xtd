@@ -448,7 +448,6 @@ void form::on_layout(const event_args& e) {
   if (is_handle_created() && auto_scroll_) native::form::virtual_size(handle(), display_rectangle().size());
 }
 
-
 void form::on_location_changed(const event_args &e) {
   if (handle() && top() < screen::get_working_area(handle()).top()) top(screen::get_working_area(handle()).top());
   container_control::on_location_changed(e);
