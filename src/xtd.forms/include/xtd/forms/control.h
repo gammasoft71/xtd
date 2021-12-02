@@ -562,6 +562,19 @@ namespace xtd {
         return *this;
       }
 
+      /// @brief Gets the client size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
+      /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
+      /// @par Examples
+      /// The following code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @include form_resize.cpp
+      virtual const drawing::size& maximum_client_size() const;
+      /// @brief Sets the client size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
+      /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
+      /// @par Examples
+      /// The following code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @include form_resize.cpp
+      virtual control& maximum_client_size(const drawing::size& size);
+
       /// @brief Gets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
@@ -575,6 +588,19 @@ namespace xtd {
       /// @include form_resize.cpp
       virtual control& maximum_size(const drawing::size& size);
       
+      /// @brief Gets the client size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
+      /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
+      /// @par Examples
+      /// The following code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @include form_resize.cpp
+      virtual const drawing::size& minimum_client_size() const;
+      /// @brief Sets the client size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
+      /// @param size An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
+      /// @par Examples
+      /// The following code shows how to set minimum size, set maximum size, move and resize a form.
+      /// @include form_resize.cpp
+      virtual control& minimum_client_size(const drawing::size& size);
+
       /// @brief Gets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
@@ -1758,7 +1784,9 @@ namespace xtd {
       std::thread::id handle_created_on_thread_id_;
       drawing::point location_;
       forms::padding margin_ {3};
+      drawing::size maximum_client_size_;
       drawing::size maximum_size_;
+      drawing::size minimum_client_size_;
       drawing::size minimum_size_;
       forms::padding padding_;
       static forms::keys modifier_keys_;
