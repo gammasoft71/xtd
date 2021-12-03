@@ -116,7 +116,7 @@ control& control::anchor(anchor_styles anchor) {
   if (anchor_ != anchor) {
     anchor_ = anchor;
     set_state(state::docked, false);
-    if (handle() && parent()) anchorin_ = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
+    if (handle() && parent()) anchoring_ = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
     perform_layout();
   }
   return *this;
@@ -672,7 +672,7 @@ void control::on_got_focus(const event_args &e) {
 
 void control::on_handle_created(const event_args &e) {
   native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
-  if (parent().has_value()) anchorin_ = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
+  if (parent().has_value()) anchoring_ = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
   handles_[handle()] = this;
   if (get_state(state::client_size_setted)) {
     native::control::maximum_client_size(handle(), maximum_client_size());
@@ -1089,18 +1089,18 @@ void control::do_layout_with_anchor_styles() {
     if ((anchor_ & anchor_styles::left) == anchor_styles::left && (anchor_ & anchor_styles::right) != anchor_styles::right)
       left(left());
     else if ((anchor_ & anchor_styles::left) == anchor_styles::left && (anchor_ & anchor_styles::right) == anchor_styles::right)
-      width(parent().value().get().client_size().width() - anchorin_.right() - left());
+      width(parent().value().get().client_size().width() - anchoring_.right() - left());
     else if ((anchor_ & anchor_styles::left) != anchor_styles::left && (anchor_ & anchor_styles::right) == anchor_styles::right)
-      left(parent().value().get().client_size().width() - width() - anchorin_.right());
+      left(parent().value().get().client_size().width() - width() - anchoring_.right());
     else
       left(parent().value().get().client_size().width() / 2 -  width() / 2);
 
     if ((anchor_ & anchor_styles::top) == anchor_styles::top && (anchor_ & anchor_styles::bottom) != anchor_styles::bottom)
       top(top());
     else if ((anchor_ & anchor_styles::top) == anchor_styles::top && (anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
-      height(parent().value().get().client_size().height() - anchorin_.bottom() - top());
+      height(parent().value().get().client_size().height() - anchoring_.bottom() - top());
     else if ((anchor_ & anchor_styles::top) != anchor_styles::top && (anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
-      top(parent().value().get().client_size().height() - height() - anchorin_.bottom());
+      top(parent().value().get().client_size().height() - height() - anchoring_.bottom());
     else
       top(parent().value().get().client_size().height() / 2 - height() / 2);
   }

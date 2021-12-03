@@ -1763,7 +1763,7 @@ namespace xtd {
       void set_state(control::state flag, bool value) { state_ = value ? (control::state)((int32_t)state_ | (int32_t)flag) : (control::state)((int32_t)state_ & ~(int32_t)flag); }
 
       anchor_styles anchor_ = anchor_styles::top | anchor_styles::left;
-      forms::padding anchorin_;
+      forms::padding anchoring_;
       drawing::point auto_scroll_point_;
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
       std::optional<drawing::color> back_color_;
