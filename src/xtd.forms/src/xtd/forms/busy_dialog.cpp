@@ -17,29 +17,29 @@ namespace {
 busy_dialog* busy_box::dialog_ = nullptr;
 
 void busy_dialog::reset() {
-  dialog_style_ = xtd::forms::dialog_style::standard;
-  icon_ = xtd::drawing::image::empty;
-  text_ = "";
-  description_ = "";
+  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->icon = xtd::drawing::image::empty;
+  data_->text = "";
+  data_->description = "";
 }
 
 void busy_dialog::show() {
-  native_ = dialog_style_ == xtd::forms::dialog_style::system;
-  if (native_)
-    handle_ = native::busy_dialog::create(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), text_, description_, back_color_, fore_color_, opacity_);
+  data_->native = data_->dialog_style == xtd::forms::dialog_style::system;
+  if (data_->native)
+    data_->handle = native::busy_dialog::create(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->text, data_->description, data_->back_color, data_->fore_color, data_->opacity);
   application::do_events();
 }
 
 void busy_dialog::show(const iwin32_window& owner) {
-  native_ = dialog_style_ == xtd::forms::dialog_style::system;
-  if (native_)
-    handle_ = native::busy_dialog::create(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), text_, description_, back_color_, fore_color_, opacity_);
+  data_->native = data_->dialog_style == xtd::forms::dialog_style::system;
+  if (data_->native)
+    data_->handle = native::busy_dialog::create(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->text, data_->description, data_->back_color, data_->fore_color, data_->opacity);
   application::do_events();
 }
 
 void busy_dialog::hide() {
-  if (!handle_) return;
-  if (native_) native::busy_dialog::destroy(handle_);
-  native_ = false;
-  handle_ = 0;
+  if (!data_->handle) return;
+  if (data_->native) native::busy_dialog::destroy(data_->handle);
+  data_->native = false;
+  data_->handle = 0;
 }
