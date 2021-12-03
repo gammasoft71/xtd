@@ -116,6 +116,7 @@ control& control::anchor(anchor_styles anchor) {
   if (anchor_ != anchor) {
     anchor_ = anchor;
     set_state(state::docked, false);
+    if (handle() && parent()) anchorin_ = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
     perform_layout();
   }
   return *this;
@@ -671,6 +672,7 @@ void control::on_got_focus(const event_args &e) {
 
 void control::on_handle_created(const event_args &e) {
   native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
+  if (parent().has_value()) anchorin_ = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
   handles_[handle()] = this;
   if (get_state(state::client_size_setted)) {
     native::control::maximum_client_size(handle(), maximum_client_size());
@@ -791,7 +793,6 @@ void control::on_parent_back_color_changed(const event_args &e) {
 }
 
 void control::on_parent_changed(const event_args &e) {
-  if (parent().has_value()) parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() : parent().value().get().size();
   if (!get_state(state::destroying) && parent().has_value() && !parent().value().get().get_state(state::destroying)) perform_layout();
   if (can_raise_events()) parent_changed(*this, e);
 }
@@ -1028,8 +1029,6 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 void control::on_parent_size_changed(object& sender, const event_args& e) {
   if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this)) {
     perform_layout();
-    if (parent().has_value())
-      parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size();
   }
 }
 
@@ -1086,26 +1085,24 @@ void control::do_layout_children_with_dock_style() {
 }
 
 void control::do_layout_with_anchor_styles() {
-  if (parent().has_value() && parent_size_ != drawing::size::empty) {
-    point diff = (parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size()) - parent_size_;
-
+  if (parent().has_value()) {
     if ((anchor_ & anchor_styles::left) == anchor_styles::left && (anchor_ & anchor_styles::right) != anchor_styles::right)
       left(left());
     else if ((anchor_ & anchor_styles::left) == anchor_styles::left && (anchor_ & anchor_styles::right) == anchor_styles::right)
-      width(width() + diff.x());
+      width(parent().value().get().client_size().width() - anchorin_.right() - left());
     else if ((anchor_ & anchor_styles::left) != anchor_styles::left && (anchor_ & anchor_styles::right) == anchor_styles::right)
-      left(left() + diff.x());
+      left(parent().value().get().client_size().width() - width() - anchorin_.right());
     else
-      left(left() + (diff.x() / 2));
+      left(parent().value().get().client_size().width() / 2 -  width() / 2);
 
     if ((anchor_ & anchor_styles::top) == anchor_styles::top && (anchor_ & anchor_styles::bottom) != anchor_styles::bottom)
       top(top());
     else if ((anchor_ & anchor_styles::top) == anchor_styles::top && (anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
-      height(height() + diff.y());
+      height(parent().value().get().client_size().height() - anchorin_.bottom() - top());
     else if ((anchor_ & anchor_styles::top) != anchor_styles::top && (anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
-      top(top() + diff.y());
+      top(parent().value().get().client_size().height() - height() - anchorin_.bottom());
     else
-      top(top() + (diff.y() / 2));
+      top(parent().value().get().client_size().height() / 2 - height() / 2);
   }
 }
 
