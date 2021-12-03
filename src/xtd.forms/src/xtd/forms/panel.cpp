@@ -13,9 +13,9 @@ using namespace xtd;
 using namespace xtd::forms;
 
 panel::panel() {
-  auto_size_mode_ = forms::auto_size_mode::grow_only;
-  can_focus_ = false;
-  size_ = default_size();
+  data_->auto_size_mode = forms::auto_size_mode::grow_only;
+  data_->can_focus = false;
+  data_->size = default_size();
 }
 
 panel& panel::auto_size_mode(forms::auto_size_mode value) {

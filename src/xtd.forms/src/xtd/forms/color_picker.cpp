@@ -12,8 +12,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 color_picker::color_picker() {
-  can_focus_ = false;
-  size_ = default_size();
+  data_->can_focus = false;
+  data_->size = default_size();
 }
 
 void color_picker::color(const drawing::color& value) {

@@ -10,8 +10,8 @@ using namespace xtd::forms;
 
 h_scroll_bar::h_scroll_bar() {
   v_scroll_ = false;
-  can_focus_ = false;
-  size_ = default_size();
+  data_->can_focus = false;
+  data_->size = default_size();
 }
 
 forms::create_params h_scroll_bar::create_params() const {

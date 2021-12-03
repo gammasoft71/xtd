@@ -8,8 +8,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 progress_bar::progress_bar() {
-  can_focus_ = false;
-  size_ = default_size();
+  data_->can_focus = false;
+  data_->size = default_size();
 }
 
 progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_speed) {

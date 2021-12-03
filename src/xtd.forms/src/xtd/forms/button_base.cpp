@@ -8,8 +8,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 button_base::button_base() {
-  auto_size_mode_ = forms::auto_size_mode::grow_only;
-  size_ = default_size();
+  data_->auto_size_mode = forms::auto_size_mode::grow_only;
+  data_->size = default_size();
 }
 
 button_base& button_base::flat_style(xtd::forms::flat_style flat_style) {

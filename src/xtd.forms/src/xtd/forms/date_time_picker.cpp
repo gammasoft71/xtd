@@ -11,10 +11,10 @@ using namespace xtd;
 using namespace xtd::forms;
 
 date_time_picker::date_time_picker() {
-  //back_color_ = default_back_color();
-  //fore_color_ = default_fore_color();
-  can_focus_ = false;
-  size_ = default_size();
+  //data_->back_color = default_back_color();
+  //data_->fore_color = default_fore_color();
+  data_->can_focus = false;
+  data_->size = default_size();
 }
 
 control& date_time_picker::format(date_time_picker_format format) {

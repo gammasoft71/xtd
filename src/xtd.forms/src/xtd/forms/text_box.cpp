@@ -18,9 +18,9 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 text_box::text_box() {
-  //back_color_ = default_back_color();
-  //fore_color_ = default_fore_color();
-  size_ = default_size();
+  //data_->back_color = default_back_color();
+  //data_->fore_color = default_fore_color();
+  data_->size = default_size();
 }
 
 text_box& text_box::character_casing(xtd::forms::character_casing value) {
@@ -50,25 +50,25 @@ size_t text_box::selection_start() const {
 }
 
 const ustring& text_box::text() const {
-  if (!use_system_password_char_ && password_char_) return text_;
+  if (!use_system_password_char_ && password_char_) return data_->text;
   return text_box_base::text();
 }
 
 control& text_box::text(const ustring& text) {
-  if (text_ != text) {
-    text_ = text;
+  if (data_->text != text) {
+    data_->text = text;
     if (!use_system_password_char_ && password_char_) {
       if (is_handle_created()) native::text_box::text(handle(), "");
       for (size_t count = 0; count < text.size(); count++)
         if (is_handle_created()) native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
     } else {
       switch (character_casing_) {
-        case xtd::forms::character_casing::normal: text_ = text; break;
-        case xtd::forms::character_casing::upper: text_ = text.to_upper(); break;
-        case xtd::forms::character_casing::lower: text_ = text.to_lower(); break;
+        case xtd::forms::character_casing::normal: data_->text = text; break;
+        case xtd::forms::character_casing::upper: data_->text = text.to_upper(); break;
+        case xtd::forms::character_casing::lower: data_->text = text.to_lower(); break;
         default: break;
       }
-      if (is_handle_created()) native::text_box::text(handle(), text_.c_str());
+      if (is_handle_created()) native::text_box::text(handle(), data_->text.c_str());
     }
     on_text_changed(event_args::empty);
   }
@@ -104,7 +104,7 @@ forms::create_params text_box::create_params() const {
 }
 
 drawing::size text_box::measure_control() const {
-  return drawing::size(client_size_.width(), static_cast<int32_t>(font().get_height()) + 2 + (border_style_ == border_style::none ? 0 : 4));
+  return drawing::size(client_size().width(), static_cast<int32_t>(font().get_height()) + 2 + (border_style_ == border_style::none ? 0 : 4));
 }
 
 void text_box::append_text(const xtd::ustring& value) {
@@ -120,23 +120,23 @@ void text_box::on_handle_created(const event_args& e) {
   text_box_base::on_handle_created(e);
   /*
   switch (character_casing_) {
-    case xtd::forms::character_casing::upper: text_ = text_.to_upper(text_); break;
-    case xtd::forms::character_casing::lower: text_ = text_.to_lower(text_); break;
+    case xtd::forms::character_casing::upper: data_->text = data_->text.to_upper(data_->text); break;
+    case xtd::forms::character_casing::lower: data_->text = data_->text.to_lower(data_->text); break;
     default: break;
   }*/
 
   if (!use_system_password_char_ && password_char_) {
-    auto text = text_;
+    auto text = data_->text;
     native::text_box::text(handle(), "");
     for (size_t count = 0; count < text.size(); count++)
       native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
   } else {
     switch (character_casing_) {
-      case xtd::forms::character_casing::upper: text_ = text_.to_upper(); break;
-      case xtd::forms::character_casing::lower: text_ = text_.to_lower(); break;
+      case xtd::forms::character_casing::upper: data_->text = data_->text.to_upper(); break;
+      case xtd::forms::character_casing::lower: data_->text = data_->text.to_lower(); break;
       default: break;
     }
-    native::text_box::text(handle(), text_.c_str());
+    native::text_box::text(handle(), data_->text.c_str());
   }
 }
 
@@ -168,7 +168,7 @@ void text_box::wm_key_char(message &message) {
       message.result(key_event_args.suppress_key_press());
     } else if (message.msg() == WM_CHAR && std::iscntrl(static_cast<int32_t>(message.wparam())) == 0) {
       key_press_event_args key_event_args(static_cast<int32_t>(message.wparam()));
-      text_ += xtd::ustring::format("{}",key_event_args.key_char());
+      data_->text += xtd::ustring::format("{}",key_event_args.key_char());
       native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
       message.result(true);
     } else if (message.msg() == WM_KEYUP) {
@@ -184,8 +184,8 @@ void text_box::wm_set_text(message &message) {
     on_text_changed(event_args::empty);
   } else {
     def_wnd_proc(message);
-    if (text_ != convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam()))) {
-      text_ = convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam()));
+    if (data_->text != convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam()))) {
+      data_->text = convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam()));
       on_text_changed(event_args::empty);
     }
   }

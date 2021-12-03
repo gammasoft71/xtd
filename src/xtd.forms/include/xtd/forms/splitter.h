@@ -23,7 +23,7 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the splitter class.
       splitter() {
-        size_ = default_size();
+        data_->size = default_size();
         dock(xtd::forms::dock_style::left);
       }
       
@@ -72,7 +72,7 @@ namespace xtd {
         return *this;
       }
       
-      forms::cursor default_cursor() const override {return dock_ == dock_style::left || dock_ == dock_style::right ? xtd::forms::cursors::vsplit() : xtd::forms::cursors::hsplit();}
+      forms::cursor default_cursor() const override {return dock() == dock_style::left || dock() == dock_style::right ? xtd::forms::cursors::vsplit() : xtd::forms::cursors::hsplit();}
       
       drawing::size default_size() const override {return {3, 3};}
       

@@ -24,8 +24,8 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the split_container class.
       split_container() {
-        can_focus_ = false;
-        size_ = default_size();
+        data_->can_focus = false;
+        data_->size = default_size();
         controls().push_back_range({panel2_, splitter_, panel1_});
         arrange_children();
       }

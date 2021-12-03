@@ -25,7 +25,7 @@ namespace xtd {
 
       /// @brief Gets the mode by which the user_control automatically resizes itself.
       /// @return An auto_size_mode enumerated value. The default is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
+      virtual forms::auto_size_mode auto_size_mode() const {return data_->auto_size_mode;}
       /// @brief Sets the mode by which the panel automatically resizes itself.
       /// @param value An auto_size_mode enumerated value. The default is grow_only.
       /// @return Current user_control instance.

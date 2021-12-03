@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 up_down_base::up_down_base() {
-  size_ = default_size();
+  data_->size = default_size();
 }
 
 up_down_base& up_down_base::border_style(forms::border_style value) {

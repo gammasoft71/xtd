@@ -12,7 +12,7 @@ using namespace xtd::forms;
 
 command_link_button::command_link_button() {
   flat_style_ = xtd::forms::flat_style::system;
-  size_ = default_size();
+  data_->size = default_size();
   text_align(content_alignment::middle_left);
 }
 
@@ -36,9 +36,9 @@ void command_link_button::on_handle_created(const event_args& e) {
   if (image_ != drawing::image::empty || (image_list_.images().size() && image_index_ > -1)) {
     if (flat_style_ == flat_style::system) native::command_link_button::image(handle(), image_ != drawing::image::empty ? image_ : image_list_.images()[image_index_]);
     if (flat_style_ == flat_style::system) native::command_link_button::image_align(handle(), static_cast<uint32_t>(image_align_));
-    if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text_);
-    native::control::location(handle(), location_);
-    native::control::size(handle(), size_);
+    if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text());
+    native::control::location(handle(), location());
+    native::control::size(handle(), size());
   }
 }
 

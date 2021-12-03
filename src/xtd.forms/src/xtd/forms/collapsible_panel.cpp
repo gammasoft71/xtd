@@ -10,8 +10,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 collapsible_panel::collapsible_panel() {
-  auto_size_mode_ = forms::auto_size_mode::grow_and_shrink;
-  can_focus_ = false;
+  data_->auto_size_mode = forms::auto_size_mode::grow_and_shrink;
+  data_->can_focus = false;
 }
 
 collapsible_panel& collapsible_panel::border_style(forms::border_style border_style) {

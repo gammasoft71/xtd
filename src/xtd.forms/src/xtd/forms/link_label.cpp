@@ -38,7 +38,7 @@ link_label::link_label() {
   override_cursor_ = xtd::forms::cursors::hand();
   
   links_.item_added += [&] {
-    if (links_.size() == 2 && links_[0].start() == 0 && links_[0].length() == text_.length())
+    if (links_.size() == 2 && links_[0].start() == 0 && links_[0].length() == data_->text.length())
       links_.erase_at(0);
     //tab_stop(true);
     invalidate();
@@ -166,7 +166,7 @@ void link_label::on_paint(paint_event_args& e) {
   
   size_t line_number = 0;
   size_t index = 0;
-  for (auto line : text_.split({'\n'})) {
+  for (auto line : data_->text.split({'\n'})) {
     auto text_location = get_text_location(line_number);
     size_t line_index = 0;
     drawing::size size_text;
@@ -237,7 +237,7 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
 
 xtd::drawing::point link_label::get_text_location(size_t line_number) const {
   size_t line_index = 0;
-  for (auto line : text_.split({'\n'})) {
+  for (auto line : data_->text.split({'\n'})) {
     std::vector<std::tuple<xtd::drawing::rectangle, bool>> text_rects;
     point text_location;
     drawing::size text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font()));
@@ -263,7 +263,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
  
   size_t line_number = 0;
   size_t index = 0;
-  for (auto line : text_.split({'\n'})) {
+  for (auto line : data_->text.split({'\n'})) {
     size_t line_index = 0;
     auto text_location = get_text_location(line_number);
     drawing::size size_text;
