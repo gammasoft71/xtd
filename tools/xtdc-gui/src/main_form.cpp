@@ -27,7 +27,7 @@ main_form::main_form() {
     menu(main_menu_);
   
   client_size({1000, 710});
-  minimum_size(size());
+  minimum_client_size(client_size());
   accept_button(next_button_);
   icon(system_icons::from_name("xtd"));
   minimize_box(false);
