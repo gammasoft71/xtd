@@ -12,7 +12,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 up_down_button::up_down_button() {
-  data_->size = default_size();
+  size(default_size());
 }
 
 forms::create_params up_down_button::create_params() const {

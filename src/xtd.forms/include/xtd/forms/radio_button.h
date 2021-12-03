@@ -104,7 +104,7 @@ namespace xtd {
       /// @par Note to Inheritors
       /// When overriding on_appearance_changed(const event_args&) in a derived class, be sure to call the base class' on_appearance_changed(const event_args&) method so that registered delegates receive the event.
       virtual void on_appearance_changed(const event_args& e) {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (flat_style() != xtd::forms::flat_style::system) invalidate();
         appearance_changed(*this, e);
       }
       
@@ -115,7 +115,7 @@ namespace xtd {
       /// @par Note to Inheritors
       /// When overriding on_checked_changed(const event_args&) in a derived class, be sure to call the base class' on_checked_changed(const event_args&) method so that registered delegates receive the event.
       virtual void on_checked_changed(const event_args& e) {
-        if (flat_style_ != xtd::forms::flat_style::system)  {
+        if (flat_style() != xtd::forms::flat_style::system)  {
           if (!checked_) state_ = xtd::forms::visual_styles::radio_button_state::unchecked_normal;
           else state_ = xtd::forms::visual_styles::radio_button_state::checked_normal;
           invalidate();
@@ -124,7 +124,7 @@ namespace xtd {
       }
 
       void on_enabled_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) {
+        if (flat_style() != xtd::forms::flat_style::system) {
           if (!checked_) state_ = enabled() ? xtd::forms::visual_styles::radio_button_state::unchecked_normal : xtd::forms::visual_styles::radio_button_state::unchecked_disabled;
           else state_ = enabled() ? xtd::forms::visual_styles::radio_button_state::checked_normal : xtd::forms::visual_styles::radio_button_state::checked_disabled;
         }
@@ -133,7 +133,7 @@ namespace xtd {
       
       void on_got_focus(const event_args& e) override {
         button_base::on_got_focus(e);
-        if (flat_style_ != xtd::forms::flat_style::system) {
+        if (flat_style() != xtd::forms::flat_style::system) {
           if (!checked_) state_ = enabled() ? xtd::forms::visual_styles::radio_button_state::unchecked_normal : xtd::forms::visual_styles::radio_button_state::unchecked_disabled;
           else state_ = enabled() ? xtd::forms::visual_styles::radio_button_state::checked_normal : xtd::forms::visual_styles::radio_button_state::checked_disabled;
         }
@@ -145,14 +145,14 @@ namespace xtd {
 
       void on_lost_focus(const event_args& e) override {
         button_base::on_lost_focus(e);
-        if (flat_style_ != xtd::forms::flat_style::system) {
+        if (flat_style() != xtd::forms::flat_style::system) {
           if (!checked_) state_ = enabled() ? xtd::forms::visual_styles::radio_button_state::unchecked_normal : xtd::forms::visual_styles::radio_button_state::unchecked_disabled;
           else state_ = enabled() ? xtd::forms::visual_styles::radio_button_state::checked_normal : xtd::forms::visual_styles::radio_button_state::checked_disabled;
         }
       }
       
       void on_mouse_down(const mouse_event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) {
+        if (flat_style() != xtd::forms::flat_style::system) {
           if (!checked_) state_ = xtd::forms::visual_styles::radio_button_state::unchecked_pressed;
           else state_ = xtd::forms::visual_styles::radio_button_state::checked_pressed;
         }
@@ -160,7 +160,7 @@ namespace xtd {
       }
       
       void on_mouse_enter(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) {
+        if (flat_style() != xtd::forms::flat_style::system) {
           if (!checked_) state_ = xtd::forms::visual_styles::radio_button_state::unchecked_hot;
           else state_ = xtd::forms::visual_styles::radio_button_state::checked_hot;
         }
@@ -168,7 +168,7 @@ namespace xtd {
       }
       
       void on_mouse_leave(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) {
+        if (flat_style() != xtd::forms::flat_style::system) {
           if (!checked_) state_ = xtd::forms::visual_styles::radio_button_state::unchecked_normal;
           else state_ = xtd::forms::visual_styles::radio_button_state::checked_normal;
         }
@@ -176,7 +176,7 @@ namespace xtd {
       }
       
       void on_mouse_move(const mouse_event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system && (e.button() & mouse_buttons::left) == mouse_buttons::left && !client_rectangle().contains(e.location()) && (state_ == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state_ == xtd::forms::visual_styles::radio_button_state::checked_pressed)) {
+        if (flat_style() != xtd::forms::flat_style::system && (e.button() & mouse_buttons::left) == mouse_buttons::left && !client_rectangle().contains(e.location()) && (state_ == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state_ == xtd::forms::visual_styles::radio_button_state::checked_pressed)) {
           if (!checked_) state_ = xtd::forms::visual_styles::radio_button_state::unchecked_hot;
           else state_ = xtd::forms::visual_styles::radio_button_state::checked_hot;
         }
@@ -184,7 +184,7 @@ namespace xtd {
       }
       
       void on_mouse_up(const mouse_event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system && (state_ == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state_ == xtd::forms::visual_styles::radio_button_state::checked_pressed)) {
+        if (flat_style() != xtd::forms::flat_style::system && (state_ == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state_ == xtd::forms::visual_styles::radio_button_state::checked_pressed)) {
           if (!checked_) state_ = xtd::forms::visual_styles::radio_button_state::unchecked_hot;
           else state_ = xtd::forms::visual_styles::radio_button_state::checked_hot;
         }

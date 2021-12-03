@@ -11,8 +11,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 command_link_button::command_link_button() {
-  flat_style_ = xtd::forms::flat_style::system;
-  data_->size = default_size();
+  flat_style(xtd::forms::flat_style::system);
+  size(default_size());
   text_align(content_alignment::middle_left);
 }
 
@@ -33,10 +33,10 @@ forms::create_params command_link_button::create_params() const {
 
 void command_link_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
-  if (image_ != drawing::image::empty || (image_list_.images().size() && image_index_ > -1)) {
-    if (flat_style_ == flat_style::system) native::command_link_button::image(handle(), image_ != drawing::image::empty ? image_ : image_list_.images()[image_index_]);
-    if (flat_style_ == flat_style::system) native::command_link_button::image_align(handle(), static_cast<uint32_t>(image_align_));
-    if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text());
+  if (image() != drawing::image::empty || (image_list().images().size() && image_index() > -1)) {
+    if (flat_style() == flat_style::system) native::command_link_button::image(handle(), image() != drawing::image::empty ? image() : image_list().images()[image_index()]);
+    if (flat_style() == flat_style::system) native::command_link_button::image_align(handle(), static_cast<uint32_t>(image_align()));
+    if (image_align() != content_alignment::middle_center) native::control::text(handle(), text());
     native::control::location(handle(), location());
     native::control::size(handle(), size());
   }

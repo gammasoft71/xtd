@@ -852,6 +852,20 @@ namespace xtd {
       /// @param handle The window handle (HWND) to search for.
       /// @return A control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
       static std::optional<control_ref> from_handle(intptr_t handle);
+      
+      /// @brief Gets a value indicating how a control will behave when its auto_size property is enabled.
+      /// @return auto_size_mode One of the xtd::forms::auto_size_mode values.
+      auto_size_mode get_auto_size_mode() const;
+      
+      /// @cond
+      /// @todo Remove when render is done.
+      std::optional<xtd::drawing::color> get_back_color() const {return data_->back_color;}
+      /// @endcond
+      
+      /// @cond
+      /// @todo Remove when render is done.
+      std::optional<xtd::drawing::color> get_fore_color() const {return data_->fore_color;}
+      /// @endcond
 
       /// @brief Retrieves the index of a control within the control collection.
       /// @param child The control to search for in the control collection.

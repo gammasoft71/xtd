@@ -114,13 +114,13 @@ namespace xtd {
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       virtual void on_checked_changed(const event_args& e) {
-        if (flat_style_ != xtd::forms::flat_style::system && enabled()) {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::toggle_button_state::unchecked_normal;
           else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::toggle_button_state::checked_normal;
           else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::toggle_button_state::mixed_normal;
         }
         checked_changed(*this, e);
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (flat_style() != xtd::forms::flat_style::system) invalidate();
       }
       
       /// @brief Raises the toggle_button::check_state_changed event.
@@ -128,17 +128,17 @@ namespace xtd {
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_check_state_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       virtual void on_check_state_changed(const event_args& e) {
-        if (flat_style_ != xtd::forms::flat_style::system && enabled()) {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::toggle_button_state::unchecked_normal;
           else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::toggle_button_state::checked_normal;
           else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::toggle_button_state::mixed_normal;
         }
         check_state_changed(*this, e);
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (flat_style() != xtd::forms::flat_style::system) invalidate();
       }
 
       void on_enabled_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) {
+        if (flat_style() != xtd::forms::flat_style::system) {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ = enabled() ? xtd::forms::visual_styles::toggle_button_state::unchecked_normal : xtd::forms::visual_styles::toggle_button_state::unchecked_disabled;
           else if (check_state_ == xtd::forms::check_state::checked) state_ = enabled() ? xtd::forms::visual_styles::toggle_button_state::checked_normal : xtd::forms::visual_styles::toggle_button_state::checked_disabled;
           else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = enabled() ? xtd::forms::visual_styles::toggle_button_state::mixed_normal : xtd::forms::visual_styles::toggle_button_state::mixed_disabled;
@@ -151,7 +151,7 @@ namespace xtd {
       void on_handle_created(const event_args& e) override;
 
       void on_mouse_down(const mouse_event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system && enabled()) {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::toggle_button_state::unchecked_pressed;
           else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::toggle_button_state::checked_pressed;
           else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::toggle_button_state::mixed_pressed;
@@ -160,7 +160,7 @@ namespace xtd {
       }
       
       void on_mouse_enter(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system && enabled()) {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ =  (mouse_buttons_ & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::toggle_button_state::unchecked_pressed : xtd::forms::visual_styles::toggle_button_state::unchecked_hot;
           else if (check_state_ == xtd::forms::check_state::checked) state_ = (mouse_buttons_ & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::toggle_button_state::checked_pressed : xtd::forms::visual_styles::toggle_button_state::checked_hot;
           else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = (mouse_buttons_ & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::toggle_button_state::mixed_pressed : xtd::forms::visual_styles::toggle_button_state::mixed_hot;
@@ -169,7 +169,7 @@ namespace xtd {
       }
       
       void on_mouse_leave(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system && enabled()) {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::toggle_button_state::unchecked_normal;
           else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::toggle_button_state::checked_normal;
           else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::toggle_button_state::mixed_normal;
@@ -178,7 +178,7 @@ namespace xtd {
       }
       
       void on_mouse_up(const mouse_event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system && enabled() && (state_ == xtd::forms::visual_styles::toggle_button_state::unchecked_pressed || state_ == xtd::forms::visual_styles::toggle_button_state::checked_pressed || state_ == xtd::forms::visual_styles::toggle_button_state::mixed_pressed)) {
+        if (flat_style() != xtd::forms::flat_style::system && enabled() && (state_ == xtd::forms::visual_styles::toggle_button_state::unchecked_pressed || state_ == xtd::forms::visual_styles::toggle_button_state::checked_pressed || state_ == xtd::forms::visual_styles::toggle_button_state::mixed_pressed)) {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::toggle_button_state::unchecked_hot;
           else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::toggle_button_state::checked_hot;
           else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::toggle_button_state::mixed_hot;

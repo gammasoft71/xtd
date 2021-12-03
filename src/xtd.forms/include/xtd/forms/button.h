@@ -106,7 +106,7 @@ namespace xtd {
 
       /// @brief Gets the mode by which the button automatically resizes itself.
       /// @return One of the AutoSizeMode values. The default value is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return data_->auto_size_mode;}
+      virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is grow only.
       virtual button& auto_size_mode(forms::auto_size_mode value);
@@ -126,7 +126,7 @@ namespace xtd {
       void on_click(const event_args& e) override;
 
       void on_enabled_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) state_ = enabled() ? (default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
+        if (flat_style() != xtd::forms::flat_style::system) state_ = enabled() ? (default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
         button_base::on_enabled_changed(e);
       }
 
@@ -137,23 +137,23 @@ namespace xtd {
       void on_mouse_down(const mouse_event_args& e) override {
         auto_repeat_timer_.interval_milliseconds(auto_repeat_delay_);
         auto_repeat_timer_.enabled(auto_repeat_);
-        if (flat_style_ != xtd::forms::flat_style::system && enabled()) state_ = xtd::forms::visual_styles::push_button_state::pressed;
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) state_ = xtd::forms::visual_styles::push_button_state::pressed;
         button_base::on_mouse_down(e);
       }
 
       void on_mouse_enter(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system && enabled()) state_ = (mouse_buttons_ & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::push_button_state::pressed : xtd::forms::visual_styles::push_button_state::hot;
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) state_ = (mouse_buttons_ & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::push_button_state::pressed : xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_enter(e);
       }
 
       void on_mouse_leave(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system && enabled()) state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;;
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;;
         button_base::on_mouse_leave(e);
       }
       
       void on_mouse_up(const mouse_event_args& e) override {
         auto_repeat_timer_.enabled(false);
-        if (flat_style_ != xtd::forms::flat_style::system && enabled() && state_ == xtd::forms::visual_styles::push_button_state::pressed) state_ = xtd::forms::visual_styles::push_button_state::hot;
+        if (flat_style() != xtd::forms::flat_style::system && enabled() && state_ == xtd::forms::visual_styles::push_button_state::pressed) state_ = xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_up(e);
       }
       
