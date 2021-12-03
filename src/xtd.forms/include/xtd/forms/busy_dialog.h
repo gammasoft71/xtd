@@ -35,94 +35,95 @@ namespace xtd {
       
       /// @brief Gets the background color for the dialog.
       /// @return A xtd::drawing::color that represents the background color of the dialog.
-      xtd::drawing::color back_color() const {return back_color_;}
+      xtd::drawing::color back_color() const {return data_->back_color;}
       /// @brief Sets the background color for the dialog.
       /// @param color A xtd::drawing::color that represents the background color of the dialog.
       /// @return Current busy_dialog instance.
       busy_dialog& back_color(const xtd::drawing::color& color) {
-        back_color_ = color;
+        data_->back_color = color;
         return *this;
       }
       
       /// @brief Gets the dialog style color for the dialog.
       /// @return A xtd::forms::dialog_style that represents the dialog style of the dialog.
-      xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      xtd::forms::dialog_style dialog_style() const {return data_->dialog_style;}
       /// @brief Sets the dialog style color for the dialog.
       /// @param dialog_style A xtd::forms::dialog_style that represents the dialog style of the dialog.
       /// @return Current busy_dialog instance.
       busy_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
-        dialog_style_ = dialog_style;
+        data_->dialog_style = dialog_style;
         return *this;
       }
       
       /// @brief Gets the foreground color for the dialog.
       /// @return A xtd::drawing::color that represents the foreground color of the dialog.
-      xtd::drawing::color fore_color() const {return fore_color_;}
+      xtd::drawing::color fore_color() const {return data_->fore_color;}
       /// @brief Sets the foreground color for the dialog.
       /// @param color A xtd::drawing::color that represents the foreground color of the dialog.
       /// @return Current busy_dialog instance.
       busy_dialog& fore_color(const xtd::drawing::color& color) {
-        fore_color_ = color;
+        data_->fore_color = color;
         return *this;
       }
       
       /// @brief Gets the dialog title.
       /// @return The dialog title.
-      const xtd::ustring& text() const {return text_;}
+      const xtd::ustring& text() const {return data_->text;}
       /// @brief Sets the dialog title.
       /// @param text The dialog title.
       /// @return Current busy_dialog instance.
       busy_dialog& text(const xtd::ustring& text) {
-        text_ = text;
+        data_->text = text;
         return *this;
       }
       
       /// @brief Gets the product description.
       /// @return The product description.
-      const xtd::ustring& description() const {return description_;}
+      const xtd::ustring& description() const {return data_->description;}
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current busy_dialog instance.
       busy_dialog& description(const xtd::ustring& description) {
-        description_ = description;
+        data_->description = description;
         return *this;
       }
       
       /// @brief Gets the product icon.
       /// @return The product icon.
-      xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_));}
+      xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon));}
       /// @brief Sets the product icon.
       /// @param icon The product icon.
       /// @return Current busy_dialog instance.
       busy_dialog& icon(const xtd::drawing::icon& icon) {
-        icon_ = icon.to_bitmap();
+        data_->icon = icon.to_bitmap();
         return *this;
       }
       /// @brief Sets the product icon.
       /// @param image The product icon.
       /// @return Current busy_dialog instance.
       busy_dialog& icon(const xtd::drawing::image& image) {
-        icon_ = image;
+        data_->icon = image;
         return *this;
       }
       /// @brief Sets the product icon.
       /// @param bitmap The product icon.
       /// @return Current busy_dialog instance.
       busy_dialog& icon(const xtd::drawing::bitmap& bitmap) {
-        icon_ = bitmap;
+        data_->icon = bitmap;
         return *this;
       }
 
       /// @brief Gets the dialog opacity.
       /// @return The dialog opacity.
       /// @remarks 0 full opacity; 1.0 full opacity.
-      double opacity() const {return opacity_;}
+      double opacity() const {return data_->opacity
+        ;}
       /// @brief Gets the dialog opacity.
       /// @param opacity The dialog opacity.
       /// @return Current busy_dialog instance.
       /// @remarks 0 full opacity; 1.0 full opacity.
       busy_dialog& opacity(double opacity) {
-        opacity_ = opacity;
+        data_->opacity = opacity;
         return *this;
       }
 
@@ -138,15 +139,18 @@ namespace xtd {
       void hide();
 
     private:
-      xtd::drawing::color back_color_ = xtd::forms::theme_colors::current_theme().control();
-      xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::system;
-      xtd::drawing::color fore_color_ = xtd::forms::theme_colors::current_theme().control_text();
-      xtd::drawing::image icon_;
-      xtd::ustring text_;
-      xtd::ustring description_;
-      double opacity_ = 0.;
-      bool native_ = false;
-      intptr_t handle_ = 0;
+      struct data {
+        xtd::drawing::color back_color = xtd::forms::theme_colors::current_theme().control();
+        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
+        xtd::drawing::color fore_color = xtd::forms::theme_colors::current_theme().control_text();
+        xtd::drawing::image icon;
+        xtd::ustring text;
+        xtd::ustring description;
+        double opacity = 0.;
+        bool native = false;
+        intptr_t handle = 0;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
