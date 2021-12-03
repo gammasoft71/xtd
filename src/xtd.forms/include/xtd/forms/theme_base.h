@@ -93,7 +93,7 @@ namespace xtd {
       static const theme empty;
       
       static theme current_theme() {
-        if (current_theme_ == theme::empty) current_theme_ = default_theme();
+        if (current_theme_ == theme::empty()) current_theme_ = default_theme();
         return current_theme_;
       }
       static void current_theme(const theme& theme) {current_theme_ = theme;}

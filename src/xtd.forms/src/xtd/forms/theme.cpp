@@ -2,8 +2,7 @@
 
 using namespace xtd::forms;
 
-const theme theme::empty {};
-theme theme::current_theme_;
+theme theme::current_theme_ = theme::default_theme();
 
 theme theme::theme_from_name(const xtd::ustring& name) {
   if (name == default_theme_name()) return theme(default_theme_name(), theme_style::system_auto, true);
