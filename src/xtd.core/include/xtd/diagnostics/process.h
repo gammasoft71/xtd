@@ -54,7 +54,7 @@ namespace xtd {
       /// @ingroup xtd_core events
       class error_data_received_event : protected xtd::diagnostics::data_received_event_handler {
         friend process;
-        void set_data(data* data) {data_ = data;}
+        void set_data(process::data* data) {data_ = data;}
       public:
         /// @brief Gets a value indicate if the event is empty.
         /// @return true if event does not contains functions; otherwise false.
@@ -99,7 +99,7 @@ namespace xtd {
         }
         
       private:
-        data* data_ = nullptr;
+        process::data* data_ = nullptr;
       };
 
       /// @brief Represents a process exit event.
@@ -109,7 +109,7 @@ namespace xtd {
       /// @ingroup xtd_core events
       class exit_event : protected xtd::event_handler {
         friend process;
-        void set_data(data* data) {data_ = data;}
+        void set_data(process::data* data) {data_ = data;}
       public:
         /// @brief Gets a value indicate if the event is empty.
         /// @return true if event does not contains functions; otherwise false.
@@ -154,7 +154,7 @@ namespace xtd {
         }
         
       private:
-        data* data_ = nullptr;
+        process::data* data_ = nullptr;
       };
       
       /// @brief Represents a process output data received event.
@@ -164,7 +164,7 @@ namespace xtd {
       /// @ingroup xtd_core events
       class output_data_received_event : protected xtd::diagnostics::data_received_event_handler {
         friend process;
-        void set_data(data* data) {data_ = data;}
+        void set_data(process::data* data) {data_ = data;}
       public:
         /// @brief Gets a value indicate if the event is empty.
         /// @return true if event does not contains functions; otherwise false.
@@ -209,7 +209,7 @@ namespace xtd {
         }
         
       private:
-        data* data_ = nullptr;
+        process::data* data_ = nullptr;
       };
       
       /// @brief Represents a point in time.
