@@ -50,8 +50,7 @@ menu::menu(const vector<menu_item_ref>& items) {
 menu::~menu() {
   data_->menu_items_.item_added -= {*this, &menu::on_item_added};
   data_->menu_items_.item_removed -= {*this, &menu::on_item_removed};
-  if (data_.use_count() == 1)
-    destroy_menu();
+  destroy_menu();
 }
 
 bool menu::is_parent() const {
