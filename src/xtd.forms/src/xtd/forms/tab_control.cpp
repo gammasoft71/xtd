@@ -14,8 +14,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 tab_control::tab_control() {
-  can_focus_ = false;
-  size_ = default_size();
+  data_->can_focus = false;
+  data_->size = default_size();
 }
 
 tab_control& tab_control::alignment(tab_alignment alignment) {

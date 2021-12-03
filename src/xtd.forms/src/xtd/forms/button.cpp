@@ -69,9 +69,9 @@ void button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   if (flat_style_ == xtd::forms::flat_style::system) {
     if (image_ != drawing::image::empty || (image_list_.images().size() && image_index_ > -1)) {
-      if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text_);
-      native::control::location(handle(), location_);
-      native::control::size(handle(), size_);
+      if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text());
+      native::control::location(handle(), location());
+      native::control::size(handle(), size());
     }
     if (default_button_ && flat_style_ == xtd::forms::flat_style::system) native::button::set_default_button(handle());
   }
@@ -80,9 +80,9 @@ void button::on_handle_created(const event_args& e) {
 void button::on_paint(paint_event_args& e) {
   if (flat_style_ != xtd::forms::flat_style::system) {
     text_format_flags flags = to_text_format_flags(text_align_);
-    if (flat_style_ == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_, flat_appearance_);
-    else if (flat_style_ == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_, flat_appearance_);
-    else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), xtd::environment::os_version().is_macos_platform() && default_button_ && state_ == xtd::forms::visual_styles::push_button_state::hot ? xtd::forms::visual_styles::push_button_state::default_state  : state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    if (flat_style_ == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !data_->back_color.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : data_->back_color, !data_->fore_color.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : data_->fore_color, flat_appearance_);
+    else if (flat_style_ == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !data_->back_color.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : data_->back_color, !data_->fore_color.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : data_->fore_color, flat_appearance_);
+    else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), xtd::environment::os_version().is_macos_platform() && default_button_ && state_ == xtd::forms::visual_styles::push_button_state::hot ? xtd::forms::visual_styles::push_button_state::default_state  : state_, !data_->back_color.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : data_->back_color, !data_->fore_color.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : data_->fore_color);
   }
   button_base::on_paint(e);
 }

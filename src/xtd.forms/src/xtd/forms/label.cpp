@@ -19,8 +19,8 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 label::label() {
-  can_focus_ = false;
-  size_ = default_size();
+  data_->can_focus = false;
+  data_->size = default_size();
 }
 
 label& label::border_style(xtd::forms::border_style border_style) {
@@ -98,7 +98,7 @@ void label::on_paint(paint_event_args& e) {
       case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
       default: break;
     }
-    e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
+    e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
   }
   control::on_paint(e);
 }

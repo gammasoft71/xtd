@@ -13,8 +13,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 user_control::user_control() {
-  auto_size_mode_ = forms::auto_size_mode::grow_only;
-  size_ = default_size();
+  data_->auto_size_mode = forms::auto_size_mode::grow_only;
+  data_->size = default_size();
 }
 
 user_control& user_control::auto_size_mode(forms::auto_size_mode value) {

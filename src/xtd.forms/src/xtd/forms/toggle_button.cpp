@@ -34,7 +34,7 @@ namespace {
 }
 
 toggle_button::toggle_button() {
-  size_ = default_size();
+  data_->size = default_size();
 }
 
 toggle_button& toggle_button::auto_check(bool auto_check) {
@@ -109,9 +109,9 @@ void toggle_button::on_handle_created(const event_args &e) {
 void toggle_button::on_paint(paint_event_args& e) {
   if (flat_style_ != xtd::forms::flat_style::system) {
     text_format_flags flags = to_text_format_flags(text_align_);
-    if (flat_style_ == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_, flat_appearance_);
-    else if (flat_style_ == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_, flat_appearance_);
-    else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    if (flat_style_ == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !data_->back_color.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : data_->back_color, !data_->fore_color.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : data_->fore_color, flat_appearance_);
+    else if (flat_style_ == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !data_->back_color.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : data_->back_color, !data_->fore_color.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : data_->fore_color, flat_appearance_);
+    else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !data_->back_color.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : data_->back_color, !data_->fore_color.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : data_->fore_color);
   }
   button_base::on_paint(e);
 }

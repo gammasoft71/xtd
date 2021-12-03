@@ -39,7 +39,7 @@ tab_page& tab_page::image_index(int32_t value) {
 }
 
 control& tab_page::text(const ustring& text) {
-  if (text_ != text) {
+  if (data_->text != text) {
     if (is_handle_created() && parent().has_value()) native::tab_page::text(handle(), text);
   }
   return control::text(text);
@@ -53,7 +53,7 @@ void tab_page::destroy_handle() {
 void tab_page::on_handle_created(const event_args& e) {
   panel::on_handle_created(e);
   native::tab_control::insert_page(parent().value().get().handle(), parent().value().get().get_child_index(handle()), handle());
-  native::tab_page::text(handle(), text_);
+  native::tab_page::text(handle(), data_->text);
   native::tab_page::image_index(handle(), image_index_);
   if (parent().value().get().get_child_index(handle()) == static_cast<tab_control&>(parent().value().get()).selected_index_)
     native::tab_control::selected_index(parent().value().get().handle(), static_cast<tab_control&>(parent().value().get()).selected_index_);

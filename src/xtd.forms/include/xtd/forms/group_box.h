@@ -32,7 +32,7 @@ namespace xtd {
 
       /// @brief Gets how the group_box behaves when its auto_size property is enabled
       /// @return One of the xtd::forms::auto_size_mode values. The default is xtd::forms::auto_size_mode::grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
+      virtual forms::auto_size_mode auto_size_mode() const {return data_->auto_size_mode;}
       /// @brief Sets how the group_box behaves when its auto_size property is enabled
       /// @param value One of the xtd::forms::auto_size_mode values. The default is xtd::forms::auto_size_mode::grow_only.
       /// @return Current group_box.

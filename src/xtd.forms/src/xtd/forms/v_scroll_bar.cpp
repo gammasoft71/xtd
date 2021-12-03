@@ -9,8 +9,8 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 v_scroll_bar::v_scroll_bar() {
-  can_focus_ = false;
-  size_ = default_size();
+  data_->can_focus = false;
+  data_->size = default_size();
 }
 
 forms::create_params v_scroll_bar::create_params() const {
