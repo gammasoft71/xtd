@@ -1697,7 +1697,7 @@ namespace xtd {
         anchor_styles anchor = anchor_styles::top | anchor_styles::left;
         forms::padding anchoring;
         drawing::point auto_scroll_point;
-        auto_size_mode auto_size_mode = auto_size_mode::grow_and_shrink;
+        forms::auto_size_mode auto_size_mode = forms::auto_size_mode::grow_and_shrink;
         std::optional<drawing::color> back_color;
         xtd::drawing::image background_image = xtd::drawing::image::empty;
         xtd::forms::image_layout background_image_layout = xtd::forms::image_layout::tile;
