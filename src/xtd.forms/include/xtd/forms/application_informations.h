@@ -22,31 +22,31 @@ namespace xtd {
     public:
       /// @brief Gets the company name associated with the application.
       /// @return The company name.
-      static const xtd::ustring& company_name() {return instance().company_name_;}
+      static const xtd::ustring& company_name() {return instance().data_->company_name;}
       /// @brief Sets the company name associated with the application.
       /// @param company_name The company name.
-      static void company_name(const xtd::ustring& company_name) {instance().company_name_ = company_name;}
+      static void company_name(const xtd::ustring& company_name) {instance().data_->company_name = company_name;}
       
       /// @brief Gets the product description associated with the application.
       /// @return The product description.
-      static xtd::ustring product_description() {return instance().product_description_;}
+      static xtd::ustring product_description() {return instance().data_->product_description;}
       /// @brief Sets the product description associated with the application.
       /// @param product_name The product description.
-      static void product_description(const xtd::ustring& product_description) {instance().product_description_ = product_description;}
+      static void product_description(const xtd::ustring& product_description) {instance().data_->product_description = product_description;}
       
       /// @brief Gets the product name associated with the application.
       /// @return The product name.
-      static xtd::ustring product_name() {return instance().product_name_;}
+      static xtd::ustring product_name() {return instance().data_->product_name;}
       /// @brief Sets the product name associated with the application.
       /// @param product_name The product name.
-      static void product_name(const xtd::ustring& product_name) {instance().product_name_ = product_name;}
+      static void product_name(const xtd::ustring& product_name) {instance().data_->product_name = product_name;}
 
       /// @brief Gets the product version associated with the application.
       /// @return The product version.
-      static xtd::ustring product_version() {return instance().product_version_;}
+      static xtd::ustring product_version() {return instance().data_->product_version;}
       /// @brief Sets the product version associated with the application.
       /// @param product_version The product version.
-      static void product_version(const xtd::ustring& product_version) {instance().product_version_ = product_version;}
+      static void product_version(const xtd::ustring& product_version) {instance().data_->product_version = product_version;}
 
     private:
       static application_informations& instance() {
@@ -54,10 +54,13 @@ namespace xtd {
         return application_informations;
       }
       application_informations() = default;
-      xtd::ustring company_name_;
-      xtd::ustring product_description_;
-      xtd::ustring product_name_;
-      xtd::ustring product_version_;
+      struct data {
+        xtd::ustring company_name;
+        xtd::ustring product_description;
+        xtd::ustring product_name;
+        xtd::ustring product_version;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
