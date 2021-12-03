@@ -28,14 +28,14 @@ namespace xtd {
       /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
       /// @return true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
       /// @remarks Set auto_ellipsis to true to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to false if you want AutoEllipsis to be true. If AutoSize is true, the control will grow to fit the text and an ellipsis will not appear.
-      bool auto_ellipsis() const {return auto_ellipsis_;}
+      bool auto_ellipsis() const {return data_->auto_ellipsis;}
       
       /// @brief Sets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
       /// @param true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
       /// @remarks Set auto_ellipsis to true to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to false if you want AutoEllipsis to be true. If AutoSize is true, the control will grow to fit the text and an ellipsis will not appear.
       virtual button_base& auto_ellipsis(bool auto_ellipsis) {
-        if (auto_ellipsis_ != auto_ellipsis)
-          auto_ellipsis_ = auto_ellipsis;
+        if (data_->auto_ellipsis != auto_ellipsis)
+          data_->auto_ellipsis = auto_ellipsis;
         return *this;
       }
       
@@ -43,20 +43,20 @@ namespace xtd {
       control& auto_size(bool auto_size) override {
         control::auto_size(auto_size);
         if (get_state(state::auto_size))
-          auto_ellipsis_ = false;
+          data_->auto_ellipsis = false;
         return *this;
       }
 
       /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
       /// @return The xtd::forms::flat_button_appearance appearance.
-      const xtd::forms::flat_button_appearance& flat_appearance() const {return flat_appearance_;}
+      const xtd::forms::flat_button_appearance& flat_appearance() const {return data_->flat_appearance;}
       /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
       /// @return The xtd::forms::flat_button_appearance appearance.
-      xtd::forms::flat_button_appearance& flat_appearance() {return flat_appearance_;}
+      xtd::forms::flat_button_appearance& flat_appearance() {return data_->flat_appearance;}
 
       /// @brief Gets the flat style appearance of the button control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
-      virtual xtd::forms::flat_style flat_style() const {return flat_style_;}
+      virtual xtd::forms::flat_style flat_style() const {return data_->flat_style;}
       /// @brief Sets the flat style appearance of the button control.
       /// @param flat_style One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
       virtual xtd::forms::button_base& flat_style(xtd::forms::flat_style flat_style);
@@ -65,7 +65,7 @@ namespace xtd {
       /// @return The Image displayed on the button control. The default value is xtd::drawing::image::empty.
       /// @remarks When the image property is set, the image_list property will be set to xtd::forms::image_list::empty, and the image_index property will be set to its default, -1.
       /// @note If the flat_style property is set to xtd::forms::flat_style::system, any images assigned to the image property are not displayed.
-      virtual const drawing::image& image() const {return image_;}
+      virtual const drawing::image& image() const {return data_->image;}
       /// @brief Sets the image that is displayed on a button control.
       /// @param value The Image displayed on the button control. The default value is xtd::drawing::image::empty.
       /// @remarks When the image property is set, the image_list property will be set to xtd::forms::image_list::empty, and the image_index property will be set to its default, -1.
@@ -74,7 +74,7 @@ namespace xtd {
       
       /// @brief Gets the alignment of the image on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
-      virtual content_alignment image_align() const {return image_align_;}
+      virtual content_alignment image_align() const {return data_->image_align;}
       /// @brief Gets the alignment of the image on the button control.
       /// @param value One of the content_alignment values. The default is middle_center.
       virtual button_base& image_align(content_alignment value);
@@ -84,7 +84,7 @@ namespace xtd {
       /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
       /// @remarks image_key and image_index are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored. If you set the image_key property, the image_index property is automatically set to -1. Alternatively, if you set the image_index property, the image_key is automatically set to an empty string ("").
       /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a button control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the button, the image_index value changes to 1.
-      virtual int32_t image_index() const {return image_index_;}
+      virtual int32_t image_index() const {return data_->image_index;}
       /// @brief Sets the image list index value of the image displayed on the button control.
       /// @return A zero-based index, which represents the image position in an image_list. The default is -1.
       /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
@@ -94,17 +94,17 @@ namespace xtd {
 
       /// @brief Gets the image_list that contains the image displayed on a button control.
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
-      virtual const forms::image_list& image_list() const {return image_list_;}
+      virtual const forms::image_list& image_list() const {return data_->image_list;}
       /// @brief Gets the image_list that contains the image displayed on a button control.
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
-      virtual forms::image_list& image_list() {return image_list_;}
+      virtual forms::image_list& image_list() {return data_->image_list;}
       /// @brief Sets the image_list that contains the image displayed on a button control.
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
       virtual button_base& image_list(const forms::image_list& value);
 
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
-      virtual content_alignment text_align() const {return text_align_;}
+      virtual content_alignment text_align() const {return data_->text_align;}
       /// @brief Gets the alignment of the text on the button control.
       /// @param value One of the content_alignment values. The default is middle_center.
       virtual button_base& text_align(content_alignment value);
@@ -132,69 +132,69 @@ namespace xtd {
       drawing::size measure_control() const override;
 
       void on_back_color_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_parent_back_color_changed(e);
       }
       
       void on_enabled_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_enabled_changed(e);
       }
 
       void on_font_changed(const xtd::event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_font_changed(e);
       }
       
       void on_fore_color_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_fore_color_changed(e);
       }
 
       /// @brief Raises the button_base::image_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_image_changed(const xtd::event_args& e) {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         if (can_raise_events()) image_changed(*this, e);
       }
       
       void on_mouse_down(const mouse_event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_mouse_down(e);
       }
       
       void on_mouse_enter(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_mouse_enter(e);
       }
       
       void on_mouse_leave(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_mouse_leave(e);
       }
       
       void on_mouse_up(const mouse_event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_mouse_up(e);
       }
 
       void on_parent_back_color_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_parent_back_color_changed(e);
       }
 
       void on_parent_fore_color_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_parent_fore_color_changed(e);
       }
 
       void on_resize(const xtd::event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_resize(e);
       }
       
       void on_text_changed(const xtd::event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_text_changed(e);
       }
 
@@ -203,14 +203,18 @@ namespace xtd {
       xtd::drawing::rectangle compute_image_bounds() {return compute_image_bounds({0, 0, width(), height()});}
       xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle);
 
-      bool auto_ellipsis_ = false;
-      xtd::forms::flat_button_appearance flat_appearance_;
-      xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
-      xtd::drawing::image image_ = xtd::drawing::image::empty;
-      xtd::forms::image_list image_list_ = xtd::forms::image_list::empty;
-      int32_t image_index_ = -1;
-      content_alignment image_align_ = content_alignment::middle_center;
-      content_alignment text_align_ = content_alignment::middle_center;
+    private:
+      struct data {
+        bool auto_ellipsis = false;
+        xtd::forms::flat_button_appearance flat_appearance;
+        xtd::forms::flat_style flat_style = xtd::forms::flat_style::standard;
+        xtd::drawing::image image = xtd::drawing::image::empty;
+        xtd::forms::image_list image_list = xtd::forms::image_list::empty;
+        int32_t image_index = -1;
+        content_alignment image_align = content_alignment::middle_center;
+        content_alignment text_align = content_alignment::middle_center;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
       /// @endcond
     };
   }

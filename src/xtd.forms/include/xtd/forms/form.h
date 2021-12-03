@@ -61,7 +61,7 @@ namespace xtd {
       
       /// @brief Gets the mode by which the form automatically resizes itself.
       /// @return An auto_size_mode enumerated value. The default is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return data_->auto_size_mode;}
+      virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
       /// @brief Sets the mode by which the form automatically resizes itself.
       /// @param value An auto_size_mode enumerated value. The default is grow_only.
       /// @return Current form.

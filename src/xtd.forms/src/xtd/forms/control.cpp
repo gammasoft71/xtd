@@ -793,6 +793,10 @@ optional<reference_wrapper<control>> control::from_handle(intptr_t handle) {
   }
 }
 
+forms::auto_size_mode control::get_auto_size_mode() const {
+  return data_->auto_size_mode;
+}
+
 size_t control::get_child_index(intptr_t child) const {
   for (size_t index = 0;index < controls().size(); ++index)
     if (controls()[index].get().handle() == child) return index;
@@ -1193,9 +1197,9 @@ intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intp
   return is_handle_created() ? native::control::send_message(handle(), hwnd, msg, wparam, lparam) : static_cast<intptr_t>(-1);
 }
 
-void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
-  if (data_->auto_size_mode != auto_size_mode) {
-    data_->auto_size_mode = auto_size_mode;
+void control::set_auto_size_mode(forms::auto_size_mode value) {
+  if (data_->auto_size_mode != value) {
+    data_->auto_size_mode = value;
     perform_layout();
   }
 }
