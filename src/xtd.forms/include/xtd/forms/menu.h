@@ -191,10 +191,6 @@ namespace xtd {
         xtd::ustring name_;
         std::optional<std::reference_wrapper<menu>> parent_;
         std::any tag_;
-        xtd::event_handler on_click_;
-        void callback(xtd::forms::menu& menu) {
-          on_click_(menu, event_args::empty);
-        };
       };
       std::shared_ptr<data> data_;
       static std::map<int32_t, std::reference_wrapper<menu>> handles_;

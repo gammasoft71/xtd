@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include <string>
+#include <xtd/event.h>
 #include <xtd/drawing/image.h>
 #include "menu.h"
 #include "menu_item_kind.h"
@@ -295,17 +296,30 @@ namespace xtd {
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       menu_item& text(const xtd::ustring& value);
 
+      /// @brief Generates a xtd::forms::menu_item::click event for the xtd::forms::menu_item, simulating a click by a user.
+      /// @remarks You can use this menu to activate a menu item through code without passing any event information. For example, if you want to activate a menu item based on an action that occurs in your application, you can call the xtd::forms::menu_item::perform_click method for that xtd::forms::menu_item.
+      void perform_click();
+      
       /// @brief Returns a string that represents the menu control.
       /// @return A string that represents the current menu.
       /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
       xtd::ustring to_string() const noexcept override;
 
+      /// @brief Occurs when the menu item is clicked or selected using a shortcut key or access key defined for the menu item.
+      /// @remarks The xtd::forms::menu_item::click event occurs when this xtd::forms::menu_item is clicked by the user. This event also occurs if the user selects the menu item using the keyboard and presses the Enter key. It can also occur if an access key or shortcut key is pressed that is associated with the xtd::forms::menu_item.
+      event<menu_item, event_handler> click;
+      
     protected:
       friend main_menu;
       friend context_menu;
 
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
+      
+      /// @brief Raises the Click event.
+      /// @param e An xtd::event_args that contains the event data.
+      /// @remarks Raising an event invokes the event handler through a delegate.
+      virtual void on_click(const event_args& e);
       
       void on_item_added(size_t pos, menu_item_ref item) override;
       void on_item_removed(size_t pos, menu_item_ref item) override;
