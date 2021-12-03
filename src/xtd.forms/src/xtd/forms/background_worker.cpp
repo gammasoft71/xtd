@@ -8,15 +8,15 @@ background_worker::background_worker() {
 }
 
 background_worker::~background_worker() {
-  if (thread_.joinable()) {
-    if (cancellation_pending_) thread_.detach();
-    else thread_.join();
+  if (data_->thread.joinable()) {
+    if (data_->cancellation_pending) data_->thread.detach();
+    else data_->thread.join();
   }
 }
 
 void background_worker::cancel_async() {
-  if (worker_supports_cancellation_)
-    cancellation_pending_ = true;
+  if (data_->worker_supports_cancellation)
+    data_->cancellation_pending = true;
 }
 
 void background_worker::report_progress(int32_t percent_progress) {
@@ -24,26 +24,26 @@ void background_worker::report_progress(int32_t percent_progress) {
 }
 
 void background_worker::report_progress(int32_t percent_progress, std::any user_state) {
-  if (worker_reports_progress_) {
-    e_ = {percent_progress, user_state};
-    invoker_->begin_invoke([&] {
-      on_progress_changed(e_);
+  if (data_->worker_reports_progress) {
+    data_->event = {percent_progress, user_state};
+    data_->invoker->begin_invoke([&] {
+      on_progress_changed(data_->event);
     });
   }
 }
 
 void background_worker::run_worker_async() {
-  is_busy_ = true;
-  if (thread_.joinable()) thread_.join();
-  invoker_ = std::make_unique<form>();
-  thread_ = std::thread([&] {
-    do_work_event_args e(argument_);
+  data_->is_busy = true;
+  if (data_->thread.joinable()) data_->thread.join();
+  data_->invoker = std::make_unique<form>();
+  data_->thread = std::thread([&] {
+    do_work_event_args e(data_->argument);
     on_do_work(e);
-    is_busy_ = false;
-    invoker_->begin_invoke([&] {
-      on_run_worker_completed(run_worker_completed_event_args(std::any(), std::optional<std::reference_wrapper<std::exception>>(), cancellation_pending_));
-      invoker_ = nullptr;
-      cancellation_pending_ = false;
+    data_->is_busy = false;
+    data_->invoker->begin_invoke([&] {
+      on_run_worker_completed(run_worker_completed_event_args(std::any(), std::optional<std::reference_wrapper<std::exception>>(), data_->cancellation_pending));
+      data_->invoker = nullptr;
+      data_->cancellation_pending = false;
     });
   });
 }

@@ -40,29 +40,29 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the application has requested cancellation of a background operation.
       /// @return true if the application has requested cancellation of a background operation; otherwise, false. The default is false.
-      bool cancellation_pending() const {return cancellation_pending_;}
+      bool cancellation_pending() const {return data_->cancellation_pending;}
       
       /// @brief Gets a value indicating whether the background_worker is running an asynchronous operation.
       /// @return true, if the background_worker is running an asynchronous operation; otherwise, false.
-      bool is_busy() const {return is_busy_;}
+      bool is_busy() const {return data_->is_busy;}
       
       /// @brief Gets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
       /// @return true if the background_worker supports progress updates; otherwise false. The default is false.
       /// @remarks Set the worker_reports_progress property to true if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
-      bool worker_reports_progress() const {return worker_reports_progress_;}
+      bool worker_reports_progress() const {return data_->worker_reports_progress;}
       /// @brief Sets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
       /// @param value true if the background_worker supports progress updates; otherwise false. The default is false.
       /// @remarks Set the worker_reports_progress property to true if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
-      void worker_reports_progress(bool value) {worker_reports_progress_ = value;}
+      void worker_reports_progress(bool value) {data_->worker_reports_progress = value;}
 
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @return true if the background_worker supports cancellation; otherwise false. The default is false.
       /// @remarks Set the worker_supports_cancellation property to true if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
-      bool worker_supports_cancellation() const {return worker_supports_cancellation_;}
+      bool worker_supports_cancellation() const {return data_->worker_supports_cancellation;}
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @param value true if the background_worker supports cancellation; otherwise false. The default is false.
       /// @remarks Set the worker_supports_cancellation property to true if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
-      void worker_supports_cancellation(bool value) {worker_supports_cancellation_ = value;}
+      void worker_supports_cancellation(bool value) {data_->worker_supports_cancellation = value;}
 
       /// @brief Requests cancellation of a pending background operation.
       /// @remarks cancel_async submits a request to terminate the pending background operation and sets the cancellation_pending property to true.
@@ -88,7 +88,7 @@ namespace xtd {
       /// @param argument A parameter for use by the background operation to be executed in the do_work event handler.
       template<typename argument_t>
       void run_worker_async(argument_t argument) {
-        argument_ = argument;
+        data_->argument = argument;
         run_worker_async();
       }
 
@@ -114,14 +114,17 @@ namespace xtd {
       event<background_worker, run_worker_completed_event_handler> run_worker_completed;
       
     private:
-      std::any argument_;
-      bool cancellation_pending_ = false;
-      bool is_busy_ = false;
-      bool worker_reports_progress_ = false;
-      bool worker_supports_cancellation_ = false;
-      progress_changed_event_args e_ {0, std::any()};
-      std::unique_ptr<form> invoker_;
-      std::thread thread_;
+      struct data {
+        std::any argument;
+        bool cancellation_pending = false;
+        bool is_busy = false;
+        bool worker_reports_progress = false;
+        bool worker_supports_cancellation = false;
+        progress_changed_event_args event {0, std::any()};
+        std::unique_ptr<form> invoker;
+        std::thread thread;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
