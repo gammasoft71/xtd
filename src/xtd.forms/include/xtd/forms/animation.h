@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Initialize a new instance of animation class.
       animation();
       
-      drawing::size default_size() const override {return {200, 100};}
+      drawing::size default_size() const override;
       
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
       /// @return A long integer representing the elapsed time for the current frame, in milliseconds.
@@ -65,11 +65,13 @@ namespace xtd {
     private:
       void on_frames_timer_tick(object& timer, const xtd::event_args& e);
       
-      int32_t frame_counter_ = 0;
-      int32_t frames_per_second_ = 10;
-      xtd::diagnostics::stopwatch stopwatch_;
-      xtd::forms::timer frames_timer_;
+      struct data {
+        int32_t frame_counter = 0;
+        int32_t frames_per_second = 10;
+        xtd::diagnostics::stopwatch stopwatch;
+        xtd::forms::timer frames_timer;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
-
