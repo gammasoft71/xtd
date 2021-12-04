@@ -23,6 +23,9 @@ namespace xtd {
     /// @include key_not_found_exception.cpp
     class key_not_found_exception : public xtd::system_exception {
     public:
+      /// @name Constructors
+      /// @{
+      
       /// @brief Create a new instance of class key_not_found_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
@@ -75,6 +78,8 @@ namespace xtd {
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       explicit key_not_found_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
+      
+      /// @}
       
       /// @cond
       key_not_found_exception(const key_not_found_exception&) = default;
