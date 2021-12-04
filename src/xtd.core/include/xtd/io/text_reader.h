@@ -33,13 +33,20 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ text_reader : public xtd::object {
     public:
+      /// @name Fields
+      
+      /// @{
       /// @brief Provides a text_reader with no data to read from.
       /// @remarks Reading from the null text reader is similar to reading from the end of a stream:
       /// @remarks read and peek methods return EOF.
       /// @remarks read_block method returns zero.
       /// @remarks read_line and read_to_end methods return a string Empty.
       static null_text_reader& null() noexcept;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Closes the xtd::io::text_reader and releases any system resources associated with the text_reader
       virtual void close();
       
@@ -78,10 +85,15 @@ namespace xtd {
       /// @param reader The text_reader object to synchronize.
       /// @return text_reader A thread-safe text_reader object.
       static synchronized_text_reader synchronised(text_reader& reader) noexcept;
+      /// @}
       
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::io::text_reader class.
       text_reader() = default;
+      /// @}
     };
     
     /// @code
@@ -96,7 +108,11 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ null_text_reader : public xtd::io::text_reader {
     public:
+      /// @name Methods
+      
+      /// @{
       int32_t read() override;
+      /// @}
     };
     
     /// @brief Represents a synchronized text reader.
@@ -112,7 +128,11 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ synchronized_text_reader : public xtd::io::text_reader {
     public:
+      /// @name Methods
+      
+      /// @{
       int32_t read() override;
+      /// @}
       
     private:
       friend class text_reader;

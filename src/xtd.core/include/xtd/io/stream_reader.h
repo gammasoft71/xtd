@@ -24,6 +24,9 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ stream_reader : public xtd::io::text_reader {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the stream_reader class for the specified file name.
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters as defined by xtd::io::path::invalid_path_chars.
@@ -31,10 +34,14 @@ namespace xtd {
       /// @brief Initializes a new instance of the stream_reader class for the specified stream.
       /// @param stream The stream to be read.
       stream_reader(std::istream& stream);
+      /// @}
       /// @cond
       ~stream_reader();
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
       std::optional<std::reference_wrapper<std::istream>> base_stream() const;
@@ -42,7 +49,11 @@ namespace xtd {
       /// @brief Gets a value that indicates whether the current stream position is at the end of the stream.
       /// @return true if the current stream position is at the end of the stream; otherwise false.
       bool end_of_stream() const;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Closes the stream_reader object and the underlying stream, and releases any system resources associated with the reader.
       void close() override;
 
@@ -53,6 +64,7 @@ namespace xtd {
       /// @brief Reads the next character from the input stream and advances the character position by one character.
       /// @return The next character from the input stream, or EOF if no more characters are available.
       int32_t read() override;
+      /// @}
       
     private:
       std::istream* stream_ = nullptr;

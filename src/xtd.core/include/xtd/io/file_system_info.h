@@ -81,16 +81,15 @@ namespace xtd {
     /// // File entry C:\pagefile.sys was created on Saturday, December 27, 2003
     /// @endcode
     class core_export_ file_system_info abstract_ {
-    protected:
-      /// @brief Initializes a new instance of the xtd::io::file_system_info class.
-      file_system_info() = default;
-      
     public:
       /// @cond
       file_system_info(const file_system_info&) = default;
       file_system_info& operator=(const file_system_info&) = default;
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the attributes for the current file or directory.
       /// @return xtd::io::file_attributes of the current xtd::io::file_system_info.
       /// @exception xtd::io::file_not_found_exception The specified file doesn't exist. Only thrown when setting the property value.
@@ -479,7 +478,11 @@ namespace xtd {
       /// @remarks For a directory, xtd::io::file_system_info::name returns only the name of the parent directory, such as dir, not c:\dir. For a subdirectory, xtd::io::file_system_info::name returns only the name of the subdirectory, such as sub1, not c:\dir\sub1.
       /// @remarks For a file, xtd::io::file_system_info::name returns only the file name and file name extension, such as my_file.txt, not c:\dir\my_file.txt.
       virtual xtd::ustring name() const = 0;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Refreshes the state of the object.
       /// @exception xtd::io::io_exception A device such as a disk drive is not ready.
       /// @remarks xtd::io::file_system_info::refresh takes a snapshot of the file from the current file system.
@@ -497,12 +500,24 @@ namespace xtd {
       /// * xtd::io::file_system_info::name, to get the name of the file or directory, without any parent path information.
       /// * xtd::io::file_system_info::full_name, to get the fully qualified path of the file or directory.
       xtd::ustring to_string() const noexcept override;
+      /// @}
       
     protected:
+      /// @name Protcted constructors
+      
+      /// @{
+      /// @brief Initializes a new instance of the xtd::io::file_system_info class.
+      file_system_info() = default;
+      /// @}
+      
+      /// @name Protected fields
+      
+      /// @{
       /// @brief Represents the fully qualified path of the directory or file.
       xtd::ustring full_path_;
       /// @brief The path originally specified by the user, whether relative or absolute.
       xtd::ustring original_path_;
+      /// @}
       
     private:
       xtd::io::file_attributes attributes_ = static_cast<xtd::io::file_attributes>(0);

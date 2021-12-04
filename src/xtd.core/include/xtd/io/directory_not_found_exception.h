@@ -24,6 +24,9 @@ namespace xtd {
     /// @include directory_not_found_exception.cpp
     class directory_not_found_exception : public xtd::io::io_exception {
     public:
+      /// @name Constructors
+
+      /// @{      
       /// @brief Create a new instance of class directory_not_found_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
@@ -76,7 +79,7 @@ namespace xtd {
       /// @param help_link Help link string associate to the exception.
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       explicit directory_not_found_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : io_exception(message, inner_exception, error, help_link, info) {}
-      
+      /// @}
       /// @cond
       directory_not_found_exception(const directory_not_found_exception&) = default;
       directory_not_found_exception& operator=(const directory_not_found_exception&) = default;

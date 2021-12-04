@@ -193,9 +193,16 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
 
+      /// @name Fields
+      
+      /// @{      
       /// @brief Represents the uninitialized xtd::io::directory_info object. This field is constant.
       static const directory_info empty;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::io::directory_info class on the specified path.
       /// @param path A string specifying the path on which to create the xtd::io::directory_info.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
@@ -236,7 +243,11 @@ namespace xtd {
       /// @remarks This constructor does not check if a directory exists. This constructor is a placeholder for a string that is used to access the disk in subsequent operations.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       directory_info(const xtd::ustring& path);
+      /// @}
       
+      /// @name Properrties
+      
+      /// @{
       /// @brief Gets a value indicating whether the directory exists.
       /// @return true if the directory exists; otherwise, false.
       /// @par Example
@@ -388,7 +399,11 @@ namespace xtd {
       ///  */
       /// @endcode
       xtd::io::directory_info root() const;
+      /// @}
       
+      /// @name Methods
+
+      /// @{
       /// @brief Creates a directory.
       /// @exception xtd::io::io_exception The directory cannot be created.
       /// @par Example
@@ -1306,6 +1321,7 @@ namespace xtd {
       /// @remarks If the xtd::io::directory_info has no files or subdirectories, this method deletes the xtd::io::directory_info even if recursive is false. Attempting to delete a xtd::io::directory_info that is not empty when recursive is false throws an xtd::io::io_exception.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       void remove(bool recursive) const;
+      /// @}
       
     private:
       directory_info() = default;
