@@ -22,9 +22,11 @@ namespace xtd {
   }
   /// @endcond
 
+  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
+    /// @internal
     /// @brief Contains drive native API.
     /// @par Namespace
     /// xtd::native
@@ -37,6 +39,7 @@ namespace xtd {
     protected:
       friend class xtd::io::drive_info;
       
+      /// @internal
       /// @brief Gets available free space for specified root path.
       /// @param root_path_name root path name to get available free space.
       /// @param free_bytes Return number of free bytes in bytes.
@@ -45,15 +48,18 @@ namespace xtd {
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool get_available_free_space(const std::string& root_path_name, size_t& free_bytes, size_t& total_number_of_bytes, size_t& total_number_of_free_bytes);
+      /// @internal
       /// @brief Gets drive type.
       /// @param root_path_name root path name to get drive type.
       /// @return The drive type (see drive_type.h file).
       /// @warning Internal use only
       static int32_t get_drive_type(const std::string& root_path_name);
+      /// @internal
       /// @brief Gets system drive names array.
       /// @return An array of system drive names.
       /// @warning Internal use only
       static std::vector<std::string> get_drives();
+      /// @internal
       /// @brief Gets volume information
       /// @param root_path_name The root path name of the volume
       /// @param volume_name The name of the volume.
@@ -61,6 +67,7 @@ namespace xtd {
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool get_volume_information(const std::string& root_path_name, std::string& volume_name, std::string& file_system_name);
+      /// @internal
       /// @brief Sets volume label
       /// @param root_path_name The root path name of the volume
       /// @param volume The volume name to set.

@@ -11,6 +11,7 @@
 
 #include <cstdint>
 
+/// @internal
 /// @brief The environment variable is stored or retrieved from the environment block associated with the current process.
 /// @par Library
 /// xtd.core.native
@@ -18,6 +19,7 @@
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr int32_t ENVIRONMENT_VARIABLE_TARGET_PROCESS = 0;
+/// @internal
 /// @brief The environment variable is stored or retrieved from the HKEY_CURRENT_USER\Environment key in the Windows operating system registry.
 /// @par Library
 /// xtd.core.native
@@ -25,6 +27,7 @@ constexpr int32_t ENVIRONMENT_VARIABLE_TARGET_PROCESS = 0;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr int32_t ENVIRONMENT_VARIABLE_TARGET_USER = 1;
+/// @internal
 /// @brief The environment variable is stored or retrieved from the HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment key in the Windows operating system registry.
 /// @par Library
 /// xtd.core.native

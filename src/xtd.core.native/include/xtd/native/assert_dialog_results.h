@@ -11,6 +11,7 @@
 
 #include <cstdint>
  
+/// @internal
 /// @brief The assert dialog return value is Abort (usually sent from a button labeled Abort).
 /// @par Library
 /// xtd.core.native
@@ -18,6 +19,7 @@
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr int32_t ADR_ABORT = 3;
+/// @internal
 /// @brief The assert dialog return value is Retry (usually sent from a button labeled Retry).
 /// @par Library
 /// xtd.core.native
@@ -25,6 +27,7 @@ constexpr int32_t ADR_ABORT = 3;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr int32_t ADR_RETRY = 4;
+/// @internal
 /// @brief The assert dialog return value is Ignore (usually sent from a button labeled Ignore).
 /// @par Library
 /// xtd.core.native

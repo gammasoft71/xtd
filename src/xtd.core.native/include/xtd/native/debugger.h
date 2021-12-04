@@ -27,9 +27,11 @@ namespace xtd {
   }
   /// @endcond
   
+  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
+    /// @internal
     /// @brief Contains debugger native API.
     /// @par Namespace
     /// xtd::native
@@ -43,23 +45,28 @@ namespace xtd {
       friend xtd::diagnostics::debugger;
       friend xtd::diagnostics::default_trace_listener;
     protected:
+      /// @internal
       /// @brief Signals a breakpoint to an attached debugger.
       /// @warning Internal use only
       static void debug_break();
+      /// @internal
       /// @brief Gets a value that indicates whether a debugger is attached to the process.
       /// @return true if a debugger is attached; otherwise, false.
       /// @warning Internal use only
       static bool is_attached();
+      /// @internal
       /// @brief Checks to see if logging is enabled by an attached debugger.
       /// @return true if a debugger is attached and logging is enabled; otherwise, false.
       /// @warning Internal use only
       static bool is_logging();
+      /// @internal
       /// @brief Launches and attaches a debugger to the process.
       /// @return true if the startup is successful or if the debugger is already attached; otherwise, false.
       /// @remarks If a debugger is already attached, nothing happens.
       /// @remarks Debugger launch is only supported on Windows operating system. On Unix and macOS operating systems, the method returns true without launching a debugger.
       /// @warning Internal use only
       static bool launch();
+      /// @internal
       /// @brief Displays an assert dialog that shows the text.
       /// @param text The assert dialog text.
       /// @param caption The assert dialog caption.
@@ -67,6 +74,7 @@ namespace xtd {
       /// @remarks In general the assert dialog is a system message box.
       /// @warning Internal use only
      static int32_t show_assert_dialog(const std::string& text, const std::string& caption);
+      /// @internal
       /// @brief Posts a message for the attached debugger.
       /// @param level A description of the importance of the message.
       /// @param category The category of the message.
