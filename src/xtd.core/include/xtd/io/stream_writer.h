@@ -24,6 +24,9 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ stream_writer : public xtd::io::text_writer {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the stream_writer class for the specified file name.
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
@@ -41,10 +44,14 @@ namespace xtd {
       /// @brief Initializes a new instance of the stream_writer class for the specified stream.
       /// @param stream The stream to be read.
       stream_writer(std::ostream& stream, bool append);
+      /// @}
       /// @cond
       ~stream_writer();
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the xtd::io::stream_writer will flush its buffer to the underlying stream after every call to xtd::io::text_writer::write(char).
       /// @return true to force xtd::io::stream_writer to flush its buffer; otherwise, false.
       /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::io::stream_writer::flush or xtd::io::stream_writer::close. Setting xtd::io::stream_writer::auto_flush to true means that data will be flushed from the buffer to the stream after each write operation, but the encoder state will not be flushed.
@@ -63,7 +70,11 @@ namespace xtd {
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
       std::optional<std::reference_wrapper<std::ostream>> base_stream() const;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Closes the stream_writer object and the underlying stream, and releases any system resources associated with the reader.
       void close() override;
       
@@ -76,6 +87,7 @@ namespace xtd {
       /// @param value The value to write
       /// @exception io::io_exception An I/O error occurs.
       void write(const xtd::ustring& value) override;
+      /// @}
 
     private:
       std::ostream* stream_ = nullptr;

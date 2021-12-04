@@ -37,9 +37,16 @@ namespace xtd {
     /// @remarks By default, full read/write access to new files is granted to all users.
     class core_export_ file_info : public xtd::io::file_system_info {
     public:
+      /// @name Fields
+      
+      /// @{
       /// @brief Represents the uninitialized xtd::io::file_info object. This field is constant.
       static const file_info empty;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::io::file_info class, which acts as a wrapper for a file path.
       /// @param file_name The fully qualified name of the new file, or the relative file name. Do not end the path with the directory separator character.
       /// @exception xtd:argument_exception The file name is empty, contains only white spaces, or contains invalid characters.
@@ -53,7 +60,11 @@ namespace xtd {
       /// @include file_info.cpp
       /// @remarks You can specify either the fully qualified or the relative file name, but the security check gets the fully qualified name.
       file_info(const xtd::ustring& file_name);
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets an instance of the parent directory.
       /// @return A xtd::io::directory_info object representing the parent directory of this file.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
@@ -347,7 +358,11 @@ namespace xtd {
       /// @remarks When first called, xtd::io::file_info calls Refresh and caches information about the file. On subsequent calls, you must call Refresh to get the latest copy of the information.
       /// @remarks The name of the file includes the file extension.
       xtd::ustring name() const override;
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Creates a xtd::io::stream_writer that appends text to the file represented by this instance of the xtd::io::file_info.
       /// @return a new A new std::ofstream.
       /// @par Examplle
@@ -825,6 +840,7 @@ namespace xtd {
       /// @remarks The Replace method replaces the contents of a specified file with the contents of the file described by the current xtd::io::file_info object. It also creates a backup of the file that was replaced. Finally, it returns a new xtd::io::file_info object that describes the overwritten file.
       /// @remarks Pass an empty string ("") to the dest_backup_file_name parameter if you do not want to create a backup of the file being replaced.
       file_info replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
+      /// @}
 
     private:
       file_info() = default;

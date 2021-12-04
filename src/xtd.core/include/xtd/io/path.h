@@ -31,6 +31,9 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ path static_ {
     public:
+      /// @name Fields
+      
+      /// @{
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return char_t character used to separate directory levels.
       /// @remarks This method can have the same value as directory_separator_char. alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
@@ -50,6 +53,55 @@ namespace xtd {
       /// @include directory_separator_char.cpp
       static char alt_directory_separator_char() noexcept;
       
+      /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
+      /// @return char_t Platform-specific character used to separate directory levels.
+      /// @remarks alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
+      /// @par Examples
+      /// The following code example demonstrates the use of the directory_separator_char() property.
+      /// @include directory_separator_char.cpp
+      template<typename char_t>
+      static char_t directory_separator_char() noexcept {
+        return static_cast<char_t>(directory_separator_char());
+      }
+      
+      /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
+      /// @return char Platform-specific character used to separate directory levels.
+      /// @remarks alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
+      /// @par Examples
+      /// The following code example demonstrates the use of the directory_separator_char() property.
+      /// @include directory_separator_char.cpp
+      static char directory_separator_char() noexcept;
+      
+      /// @brief A platform-specific separator character used to separate path strings in environment variables.
+      /// @par Examples
+      /// The following code example demonstrates the use of the PathSeparator() property.
+      /// @include directory_separator_char.cpp
+      template<typename char_t>
+      static char_t path_separator() noexcept {return static_cast<char_t>(path_separator());}
+      
+      /// @brief A platform-specific separator character used to separate path strings in environment variables.
+      /// @par Examples
+      /// The following code example demonstrates the use of the PathSeparator() property.
+      /// @include directory_separator_char.cpp
+      static char path_separator() noexcept;
+      
+      /// @brief Provides a platform-specific volume separator character.
+      /// @par Examples
+      /// The following code example demonstrates the use of the volume_separator_char() property.
+      /// @include directory_separator_char.cpp
+      template<typename char_t>
+      static char_t volume_separator_char() noexcept {return  static_cast<char_t>(volume_separator_char());}
+      
+      /// @brief Provides a platform-specific volume separator character.
+      /// @par Examples
+      /// The following code example demonstrates the use of the volume_separator_char() property.
+      /// @include directory_separator_char.cpp
+      static char volume_separator_char() noexcept;
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
       /// @brief Changes the extension of a path string.
       /// @param path The path information to modify. The path cannot contain any of the characters defined in GetInvalidPathchar_ts.
       /// @param extension The new extension (with or without a leading period). Specify null to remove an existing extension from path.
@@ -110,25 +162,6 @@ namespace xtd {
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       static xtd::ustring combine(const std::initializer_list<xtd::ustring>& paths) noexcept;
-      
-      /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
-      /// @return char_t Platform-specific character used to separate directory levels.
-      /// @remarks alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
-      /// @par Examples
-      /// The following code example demonstrates the use of the directory_separator_char() property.
-      /// @include directory_separator_char.cpp
-      template<typename char_t>
-      static char_t directory_separator_char() noexcept {
-        return static_cast<char_t>(directory_separator_char());
-      }
-      
-      /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
-      /// @return char Platform-specific character used to separate directory levels.
-      /// @remarks alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
-      /// @par Examples
-      /// The following code example demonstrates the use of the directory_separator_char() property.
-      /// @include directory_separator_char.cpp
-      static char directory_separator_char() noexcept;
       
       /// @brief Returns the directory information for the specified path string.
       /// @param path the path of a file or directory.
@@ -207,32 +240,6 @@ namespace xtd {
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
       static bool is_path_rooted(const xtd::ustring& path);
-      
-      /// @brief A platform-specific separator character used to separate path strings in environment variables.
-      /// @par Examples
-      /// The following code example demonstrates the use of the PathSeparator() property.
-      /// @include directory_separator_char.cpp
-      template<typename char_t>
-      static char_t path_separator() noexcept {return static_cast<char_t>(path_separator());}
-      
-      /// @brief A platform-specific separator character used to separate path strings in environment variables.
-      /// @par Examples
-      /// The following code example demonstrates the use of the PathSeparator() property.
-      /// @include directory_separator_char.cpp
-      static char path_separator() noexcept;
-      
-      /// @brief Provides a platform-specific volume separator character.
-      /// @par Examples
-      /// The following code example demonstrates the use of the volume_separator_char() property.
-      /// @include directory_separator_char.cpp
-      template<typename char_t>
-      static char_t volume_separator_char() noexcept {return  static_cast<char_t>(volume_separator_char());}
-      
-      /// @brief Provides a platform-specific volume separator character.
-      /// @par Examples
-      /// The following code example demonstrates the use of the volume_separator_char() property.
-      /// @include directory_separator_char.cpp
-      static char volume_separator_char() noexcept;
       
     private:
       static int __get_index_path_rooted(const xtd::ustring& path);

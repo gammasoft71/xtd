@@ -159,6 +159,9 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
 
+      /// @name Methods
+      
+      /// @{      
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
       /// @param path The directory to create.
       /// @return An object that represents the directory at the specified path. This object is returned regardless of whether a directory at the specified path already exists.
@@ -2375,6 +2378,7 @@ namespace xtd {
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static void set_last_write_time(const xtd::ustring& path, int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second);
+      /// @}
     };
   }
 }

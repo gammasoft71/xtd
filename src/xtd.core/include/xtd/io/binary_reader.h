@@ -34,6 +34,9 @@ namespace xtd {
     /// @remarks When you create a new instance of the xtd:io::binary_reader and whether to leave the stream open after disposing the xtd:io::binary_reader object.
     class core_export_ binary_reader : public xtd::object {
     public:
+      /// @name Constructors
+
+      /// @{      
       /// @brief Initializes a new instance of the xtd::io::binary_reader class for the specified file name.
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters as defined by xtd::io::path::invalid_path_chars.
@@ -46,10 +49,14 @@ namespace xtd {
       /// @include binary_reader.cpp
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       binary_reader(std::istream& stream);
+      /// @}
       /// @cond
       ~binary_reader();
       /// @endcond
 
+      /// @name Properties
+
+      /// @{
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
       /// @warning Using the underlying stream while reading or while using the xtd::io::binary_reader can cause data loss and corruption. For example, the same bytes might be read more than once, bytes might be skipped, or character reading might become unpredictable.
@@ -59,7 +66,11 @@ namespace xtd {
       /// @brief Gets a value that indicates whether the current stream position is at the end of the stream.
       /// @return true if the current stream position is at the end of the stream; otherwise false.
       bool end_of_stream() const;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Closes the xtd::io::binary_reader object and the underlying stream, and releases any system resources associated with the reader.
       void close();
 
@@ -218,6 +229,7 @@ namespace xtd {
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual uint64_t read_uint64();
+      /// @}
 
       /// @cond
       binary_reader& operator>>(bool& value) {value = read_boolean(); return *this;}

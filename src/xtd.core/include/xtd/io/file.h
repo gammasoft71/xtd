@@ -32,6 +32,9 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ file static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Appends lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to append to the file.
@@ -289,6 +292,7 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       static std::ofstream write_text(const xtd::ustring& path);
+      /// @}
     };
   }
 }

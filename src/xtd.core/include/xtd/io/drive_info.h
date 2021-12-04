@@ -29,15 +29,26 @@ namespace xtd {
     /// @remarks This class models a drive and provides methods and properties to query for drive information. Use xtd::io::drive_info to determine what drives are available, and what type of drives they are. You can also query to determine the capacity and available free space on the drive.
     class core_export_ drive_info : public xtd::object {
     public:
+      /// @name Constructors
+      
+      /// @{      
       /// @brief Represents the uninitialized xtd::io::drive_info object. This field is constant.
       static const drive_info empty;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Provides access to information on the specified drive.
       /// @param drive_name A valid drive path or drive letter. This can be either uppercase or lowercase, 'a' to 'z'. A null value is not valid.
       /// @exception xtd::argument_exception drive_name does not refer to a valid drive.
       /// @remarks Use this class to obtain information on drives. The drive name must be either an uppercase or lowercase letter from 'a' to 'z'. You cannot use this method to obtain information on drive names that are null or use UNC (\\server\share) paths.
       drive_info(const xtd::ustring& drive_name);
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Indicates the amount of available free space on a drive, in bytes.
       /// @return The amount of free space available on the drive, in bytes.
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
@@ -121,7 +132,11 @@ namespace xtd {
       /// @include drive_info.cpp
       /// @remarks The label length is determined by the operating system. For example, NTFS allows a volume label to be up to 32 characters long.
       xtd::ustring volume_label() const;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Retrieves the drive names of all logical drives on a computer.
       /// @return An array of type xtd::ioo::drive_info that represents the logical drives on a computer.
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
@@ -136,6 +151,7 @@ namespace xtd {
       /// @return The name of the drive.
       /// @remarks This method returns the xtd::io::drive_info::name property.
       xtd::ustring to_string() const noexcept override;
+      /// @}
 
     private:
       drive_info() = default;

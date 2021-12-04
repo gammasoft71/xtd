@@ -35,6 +35,9 @@ namespace xtd {
     /// @remarks When you create a new instance of the xtd::io::binary_writer class, you provide the stream to write to.
     class core_export_ binary_writer : public xtd::object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the binary_writer class for the specified file name.
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
@@ -43,15 +46,23 @@ namespace xtd {
       /// @brief Initializes a new instance of the binary_writer class for the specified stream.
       /// @param stream The stream to be read.
       binary_writer(std::ostream& stream);
+      /// @}
       /// @cond
       ~binary_writer();
       /// @endcond
       
+      /// @name Properties
+
+      /// @{
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       std::optional<std::reference_wrapper<std::ostream>> base_stream() const;
+      /// @}
       
+      /// @name Methods
+
+      /// @{
       /// @brief Closes the xtd::io::binary_writer object and the underlying stream, and releases any system resources associated with the reader.
       virtual void close();
       
@@ -206,6 +217,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual void write(uint64_t value);
+      /// @}
       
       /// @cond
       binary_writer& operator<<(bool value) {write(value); return *this;}

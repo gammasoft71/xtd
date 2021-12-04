@@ -33,16 +33,27 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ text_writer : public xtd::object {
     public:
-      /// @brief Gets the line terminator string used by the current text_writer.
-      const xtd::ustring& new_line() const noexcept;
-      /// @brief Sets the line terminator string used by the current text_writer.
-      void new_line(const xtd::ustring& new_line) noexcept;
-
+      /// @name Fields
+      
+      /// @{
       /// @brief Provides a text_writer with no backing store that can be written to, but not read from.
       /// @remarks Use null to redirect output to a stream that will not consume any operating system resources.
       /// @remarks When the text_writer::write methods are invoked on null, the call simply returns, and no data is actually written to any backing store.
       static null_text_writer& null() noexcept;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
+      /// @brief Gets the line terminator string used by the current text_writer.
+      const xtd::ustring& new_line() const noexcept;
+      /// @brief Sets the line terminator string used by the current text_writer.
+      void new_line(const xtd::ustring& new_line) noexcept;
+      /// @}
+
+      /// @name Methods
+      
+      /// @{
       /// @brief Closes the xtd::io::text_reader and releases any system resources associated with the text_reader
       virtual void close();
       
@@ -206,10 +217,17 @@ namespace xtd {
       /// @exception io::io_exception An I/O error occurs.
       template<typename ... args_t>
       void write_line(const xtd::ustring& fmt, args_t&& ... args) noexcept {write_line(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
+      /// @}
 
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::io::text_writer class.
       text_writer() = default;
+      /// @}
+
+    private:
       xtd::ustring new_line_ = "\n";
     };
     
