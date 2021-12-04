@@ -11,8 +11,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 font_picker::font_picker() {
-  data_->can_focus = false;
-  data_->size = default_size();
+  set_can_focus(false);
+  size(default_size());
 }
 
 control& font_picker::color(const drawing::color& value) {

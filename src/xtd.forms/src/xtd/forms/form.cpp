@@ -24,13 +24,13 @@ using namespace xtd::forms;
 std::optional<std::reference_wrapper<form>> form::active_form_;
 
 form::form() {
-  data_->auto_size_mode = forms::auto_size_mode::grow_only;
-  //data_->back_color = default_back_color();
-  //data_->fore_color = default_fore_color();
-  data_->cursor = default_cursor();
+  set_auto_size_mode(forms::auto_size_mode::grow_only);
+  //back_color(default_back_color());
+  //fore_color(default_fore_color());
+  cursor(default_cursor());
   icon_ = system_icons::xtd_forms_logo();
-  data_->font = default_font();
-  data_->size = default_size();
+  font(default_font());
+  size(default_size());
   set_state(state::visible, false);
   set_state(state::top_level, true);
   create_control();
@@ -269,9 +269,9 @@ forms::dialog_result form::show_dialog() {
 }
 
 forms::dialog_result form::show_dialog(const iwin32_window& owner) {
-  parent_before_show_dialog_ = data_->parent;
+  parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
-  if (owner.handle() != handle()) data_->parent = owner.handle();
+  if (owner.handle() != handle()) set_parent(owner.handle());
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
@@ -281,9 +281,9 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
 }
 
 void form::show_sheet(const iwin32_window& owner) {
-  parent_before_show_dialog_ = data_->parent;
+  parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
-  if (owner.handle() != handle()) data_->parent = owner.handle();
+  if (owner.handle() != handle()) set_parent(owner.handle());
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
   dialog_result_ = forms::dialog_result::none;
@@ -292,9 +292,9 @@ void form::show_sheet(const iwin32_window& owner) {
 }
 
 forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
-  parent_before_show_dialog_ = data_->parent;
+  parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
-  if (owner.handle() != handle()) data_->parent = owner.handle();
+  if (owner.handle() != handle()) set_parent(owner.handle());
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
@@ -380,7 +380,7 @@ forms::create_params form::create_params() const {
         break;
     }
     
-    if (start_position_ == form_start_position::windows_default_location || start_position_ == form_start_position::windows_default_bounds || (start_position_ == form_start_position::center_parent && !data_->parent)) {
+    if (start_position_ == form_start_position::windows_default_location || start_position_ == form_start_position::windows_default_bounds || (start_position_ == form_start_position::center_parent && parent().has_value())) {
       default_location = default_location < 200 ? default_location + 20 : 40;
     }
   }
@@ -422,7 +422,7 @@ void form::wm_close(message &message) {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
       application::raise_leave_thread_modal(event_args::empty);
-      data_->parent = parent_before_show_dialog_;
+      set_parent(parent_before_show_dialog_);
       set_state(state::modal, false);
     }
     on_form_closed(form_closed_event_args());

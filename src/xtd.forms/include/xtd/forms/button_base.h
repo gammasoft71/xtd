@@ -202,6 +202,7 @@ namespace xtd {
       text_format_flags to_text_format_flags(content_alignment text_align);
       xtd::drawing::rectangle compute_image_bounds() {return compute_image_bounds({0, 0, width(), height()});}
       xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle);
+      /// @endcond
 
     private:
       struct data {
@@ -215,7 +216,6 @@ namespace xtd {
         content_alignment text_align = content_alignment::middle_center;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
-      /// @endcond
     };
   }
 }

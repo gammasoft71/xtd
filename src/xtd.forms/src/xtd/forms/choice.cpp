@@ -14,9 +14,9 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 choice::choice() {
-  //data_->back_color = default_back_color();
-  //data_->fore_color = default_fore_color();
-  data_->size = default_size();
+  //back_color(default_back_color());
+  //fore_color(default_fore_color());
+  size(default_size());
 
   items_.item_added += [&](size_t pos, const item& item) {
     if (is_handle_created()) native::choice::insert_item(handle(), pos, item.value());
@@ -115,16 +115,16 @@ void choice::on_selected_value_changed(const event_args& e) {
 }
 
 void choice::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
-  drawing::size current_size = data_->size;
+  drawing::size current_size = size();
   list_control::set_bounds_core(x, y, width, height, specified);
-  if (data_->size != current_size)
+  if (size() != current_size)
     recreate_handle();
 }
 
 void choice::set_client_size_core(int32_t width, int32_t height) {
-  drawing::size current_size = data_->size;
+  drawing::size current_size = size();
   list_control::set_client_size_core(width, height);
-  if (data_->size != current_size)
+  if (size() != current_size)
     recreate_handle();
 }
 

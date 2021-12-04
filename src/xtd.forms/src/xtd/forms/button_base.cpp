@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 button_base::button_base() {
-  control::data_->auto_size_mode = forms::auto_size_mode::grow_only;
+  set_auto_size_mode(forms::auto_size_mode::grow_only);
   size(default_size());
 }
 

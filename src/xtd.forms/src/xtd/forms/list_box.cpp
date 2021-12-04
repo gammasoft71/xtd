@@ -18,9 +18,9 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 list_box::list_box() {
-  //data_->back_color = default_back_color();
-  //data_->fore_color = default_fore_color();
-  data_->size = default_size();
+  //back_color(default_back_color());
+  //fore_color(default_fore_color());
+  size(default_size());
 
   items_.item_added += [this](size_t index, const item& item) {
     if (is_handle_created()) native::list_box::insert_item(handle(), index, item.value());

@@ -32,7 +32,7 @@ namespace xtd {
       dot_matrix_display() {
         auto_size(true);
         double_buffered(true);
-        data_->size = default_size();
+        size(default_size());
       }
 
       /// @brief Gets background dot color.
@@ -144,7 +144,7 @@ namespace xtd {
 
       /// @brief Gets thickness of dot.
       /// @return A int32_t that represent the dot thickness.
-      virtual int32_t thickness() const {return thickness_.value_or(data_->size.height() < (matrix_size_.height() * 2) ? 1 : (data_->size.height() - matrix_size_.height()) / matrix_size_.height());}
+      virtual int32_t thickness() const {return thickness_.value_or(size().height() < (matrix_size_.height() * 2) ? 1 : (size().height() - matrix_size_.height()) / matrix_size_.height());}
       /// @brief Sets thickness of dot.
       /// @param value A int32_t that represent the dot thickness.
       /// @return Current dot_matrix_display.

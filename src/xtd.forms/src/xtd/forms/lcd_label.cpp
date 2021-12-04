@@ -605,8 +605,8 @@ void lcd_label::sixteen_segment_display_digit::set_thickness(int32_t value) {
 }
 
 lcd_label::lcd_label() {
-  data_->auto_size_mode = forms::auto_size_mode::grow_and_shrink;
-  data_->size = default_size();
+  set_auto_size_mode(forms::auto_size_mode::grow_and_shrink);
+  size(default_size());
 }
 
 xtd::drawing::color lcd_label::back_digit_color() const {
@@ -712,7 +712,7 @@ lcd_label& lcd_label::thickness(int32_t value) {
 }
 
 control& lcd_label::text(const xtd::ustring& value) {
-  if (data_->text != value) {
+  if (text() != value) {
     suspend_layout();
     std::wstring str = convert_string::to_wstring(value);
     if (str.size() < digits_.size()) {
@@ -789,8 +789,8 @@ void lcd_label::on_resize(const event_args& e) {
 }
 
 drawing::size lcd_label::measure_control() const {
-  if (digits_.size() == 0) return {0, data_->size.height()};
-  return drawing::size((dynamic_cast<control*>(digits_[0].get())->width() - 2 + digit_spacing()) * static_cast<int32_t>(digits_.size()) - digit_spacing() + 2, data_->size.height());
+  if (digits_.size() == 0) return {0, size().height()};
+  return drawing::size((dynamic_cast<control*>(digits_[0].get())->width() - 2 + digit_spacing()) * static_cast<int32_t>(digits_.size()) - digit_spacing() + 2, size().height());
 }
 
 void lcd_label::on_digit_click(object& sender, const event_args& e) {
@@ -812,7 +812,7 @@ void lcd_label::on_digit_mouse_up(object& sender, const mouse_event_args& e) {
 void lcd_label::set_digits_params() {
   int32_t offset_left = 0;
   for (auto& digit : digits_) {
-    dynamic_cast<control*>(digit.get())->height(data_->size.height());
+    dynamic_cast<control*>(digit.get())->height(size().height());
     dynamic_cast<control*>(digit.get())->left(offset_left);
     digit->set_back_digit_color(back_digit_color());
     digit->set_back_digit_opacity(back_digit_opacity_);
