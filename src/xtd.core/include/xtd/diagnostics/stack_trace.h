@@ -36,9 +36,16 @@ namespace xtd {
     /// @remarks xtd::diagnostics::stack_trace might not report as many method calls as expected, due to code transformations that occur during optimization.
     class core_export_ stack_trace : public xtd::object {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents a stack_frame collection.
       using stack_frame_collection = std::vector<xtd::diagnostics::stack_frame>;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class from the caller's frame.
       /// @par Examples
       /// The following code example displays the first and last function calls in a stack trace.
@@ -195,7 +202,19 @@ namespace xtd {
       stack_trace(const stack_trace&) = default;
       stack_trace& operator=(const stack_trace&) = default;
       /// @endcond
+      /// @}
       
+      /// @name Fields
+      
+      /// @{
+      /// @brief Defines the default for the number of methods to omit from the stack trace. This field is constant.
+      /// @remarks The default value for the number of methods to skip at the beginning of the stack trace. The value of this constant is 0.
+      static constexpr size_t METHODS_TO_SKIP = 0;
+      /// @}
+      
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the number of frames in the stack trace.
       /// @return The number of frames in the stack trace.
       /// @par Examples
@@ -232,7 +251,11 @@ namespace xtd {
       /// }
       /// @endcode
       size_t frame_count() const;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets the specified stack frame.
       /// @param index The index of the stack frame requested.
       /// @return The specified stack frame.
@@ -299,15 +322,12 @@ namespace xtd {
       /// debug::write_line(ustring::format("{}\n{}", fr.get_method(), st.to_string());
       /// @endcode
       xtd::ustring to_string() const noexcept;
-
+      /// @}
+      
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_trace& stack_trace) noexcept {return os << stack_trace.to_string();}
       /// @endcond
 
-      /// @brief Defines the default for the number of methods to omit from the stack trace. This field is constant.
-      /// @remarks The default value for the number of methods to skip at the beginning of the stack trace. The value of this constant is 0.
-      static constexpr size_t METHODS_TO_SKIP = 0;
-      
     private:
       friend class xtd::system_exception;
       stack_trace(const xtd::ustring& str, size_t skip_frames, bool need_file_info);

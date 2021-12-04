@@ -34,6 +34,9 @@ namespace xtd {
     /// @remarks You can change the value of any process_start_info property up to the time that the process starts. After you start the process, changing these values has no effect.
     class core_export_ process_start_info final : public xtd::object {
     public:
+      /// @name Constructors
+      
+      /// @{      
       /// @brief Initializes a new instance of the xtd::diagnostics::process_start_info class without specifying a file name with which to start the process.
       /// @remarks You must set at least the xtd::diagnostics::process_start_info::file_name property before you start the process. The file name is any application or document. In this case, a document is defined to be any file type that has an open or default action associated with it. You can view registered file types and their associated applications for your computer by using the Folder Options dialog box, which is available through the operating system. The Advanced button leads to a dialog box that shows whether there is an open action associated with a specific registered file type.
       /// @remarks Optionally, you can also set other properties before you start the process. The xtd::diagnostics::process_start_info::verb property supplies actions to take, such as "print", with the file indicated in the xtd::diagnostics::process_start_info::file_name property. The xtd::diagnostics::process_start_info::arguments property supplies a way to pass command-line arguments_ to the file when the system opens it.
@@ -56,7 +59,11 @@ namespace xtd {
       process_start_info(const process_start_info& process_start_info) = default;
       process_start_info& operator=(const process_start_info&) = default;
       /// @endcond
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the set of command-line arguments to use when starting the application.
       /// @return File type–specific arguments that the system can associate with the application specified in the xtd::diagnostics::process_start_info::file_name property. The default is an empty string ("").
       const xtd::ustring& arguments() const;
@@ -851,7 +858,8 @@ namespace xtd {
       /// @note When xtd::diagnostics::process_start_info::use_shell_execute is true, the working directory of the application that starts the executable is also the working directory of the executable.
       /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is false, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
       process_start_info& working_directory(const xtd::ustring& value);
-      
+      /// @}
+
     private:
       xtd::ustring file_name_;
       xtd::ustring arguments_;

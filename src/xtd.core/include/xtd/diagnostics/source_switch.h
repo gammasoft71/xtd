@@ -26,6 +26,9 @@ namespace xtd {
     /// @remarks The switch is used to check whether a trace should be propagated or ignored. Each trace_source trace method calls the should_trace method before calling the listeners. If the should_trace method returns false, the trace is ignored and the trace method exits. If the should_trace method returns true, the trace is passed to the listeners.
     class core_export_ source_switch : public xtd::diagnostics::switch_base {
     public:
+      /// @name Constructors
+      
+      /// @{      
       /// @brief Initializes a new instance of the source_switch class, specifying the name of the source.
       /// @param name The name of the source.
       /// @remarks The name parameter is used to set the value of the display_name property.
@@ -35,7 +38,11 @@ namespace xtd {
       /// @param default_switch_value The default value for the switch.
       /// @remarks The display_name parameter is used to set the value of the display_name property; the default_switch_value parameter is saved as a field and used to initialize the value property on first reference.
       source_switch(const xtd::ustring& display_name, const xtd::ustring& default_switch_value);
-
+      /// @}
+      
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the level of the switch.
       /// @return One of the SourceLevels values that represents the event level of the switch.
       /// @remarks This property gets its value from the switch_setting property. Setting this property also modifies the switch_setting property.
@@ -44,13 +51,18 @@ namespace xtd {
       /// @param level One of the SourceLevels values that represents the event level of the switch.
       /// @remarks This property gets its value from the switch_setting property. Setting this property also modifies the switch_setting property.
       void level(xtd::diagnostics::source_levels level);
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Determines if trace listeners should be called, based on the trace event type.
       /// @param event_type One of the trace_event_type values.
       /// @return true if the trace listeners should be called; otherwise, false.
       /// @remarks This method is called by the trace methods in the trace_source class to determine whether listeners should be called to write a trace.
       /// @note Application code should not call this method; it is intended to be called only by methods in the trace_source class.
       bool should_trace(xtd::diagnostics::trace_event_type event_type);
+      /// @}
       
     protected:
       /// @brief Invoked when the value of the value property changes.

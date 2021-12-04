@@ -23,9 +23,16 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents the base type of the collection.
       using base = std::vector<value_type>;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified allocator (optional).
       /// @param allocator The allocator associate to the collection (optional).
       /// @remarks If allocator not specified, the std::allocator<value_type> is used.
@@ -33,6 +40,7 @@ namespace xtd {
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
       /// @param il The initializer list that contains xtd::diagnostics::trace_listener items to fill the collection.
       trace_listener_collection(const std::initializer_list<value_type>& il);
+      /// @}
       /// @cond
       trace_listener_collection(const base& collection);
       trace_listener_collection(const trace_listener_collection& collection);
@@ -42,6 +50,9 @@ namespace xtd {
       bool operator!=(const trace_listener_collection& value) const;
       /// @endcond
       
+      /// @name Operators
+      
+      /// @{
       using base::operator[];
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
@@ -75,6 +86,7 @@ namespace xtd {
       /// }
       /// @endcode
       reference operator[](const xtd::ustring& name);
+      /// @}
 
     private:
       inline static value_type empty_;

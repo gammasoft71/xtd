@@ -25,6 +25,9 @@ namespace xtd {
     /// @remarks You can set the level of a trace_switch through the application configuration file and then use the configured trace_switch level in your application. Alternately, you can create a trace_switch in your code and set the level directly to instrument a specific section of code.
     class core_export_ trace_switch : public xtd::diagnostics::switch_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::trace_switch class, using the specified display name and description.
       /// @param display_name The name to display on a user interface.
       /// @param description The description of the switch.
@@ -37,7 +40,11 @@ namespace xtd {
       /// @param default_switch_value The default value of the switch.
       /// @remarks The display_name parameter is used to set the value of the xtd::diagnostics::trace_switch::display_name property, the description parameter is use to set the value of the xtd::diagnostics::trace_switch::description property, and the default_switch_value parameter is saved as a field and used to initialize the xtd::diagnostics::trace_switch::value property on first reference.
       trace_switch(const xtd::ustring& display_name, const xtd::ustring& description, const xtd::ustring& default_switch_value);
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the trace level that determines the messages the switch allows.
       /// @return One of the xtd::diagnostics::trace_level values that specifies the level of messages that are allowed by the switch.
       /// @remarks Setting this property updates the xtd::diagnostics::trace_switch::trace_error, xtd::diagnostics::trace_switch::trace_warning, xtd::diagnostics::trace_switch::trace_info, and xtd::diagnostics::trace_switch::trace_verbose properties to reflect the new value.
@@ -62,11 +69,15 @@ namespace xtd {
       /// @brief Gets a value indicating whether the switch allows warning messages.
       /// @return true if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::warning, xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, false.
       bool trace_warning() const;
+      /// @}
 
     protected:
-      void on_switch_setting_changed() override;
+      /// @name Protected methods
       
+      /// @{
+      void on_switch_setting_changed() override;      
       void on_value_changed() override;
+      /// @}
     };
   }
 }

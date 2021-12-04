@@ -24,10 +24,17 @@ namespace xtd {
     /// @remarks This class filters events based on the value of the xtd::diagnostics::event_type_filter::event_type property. This property can be set by code to specify the event type of messages that should be traced by the listener. The value of the property indicates the threshold at which to begin tracing. Event types at and above the specified level are traced. The xtd::diagnostics::event_type_filter::should_trace method, called by listeners to determine if an event should be traced, uses the value of the xtd::diagnostics::event_type_filter::event_type property.
     class core_export_ event_type_filter : public xtd::diagnostics::trace_filter {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the event_type_filter class.
       /// @param level A bitwise combination of the xtd::diagnostics::source_levels values that specifies the event type of the messages to trace.
       event_type_filter(xtd::diagnostics::source_levels level);
-
+      /// @}
+      
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the event type of the messages to trace.
       /// @return A bitwise combination of the xtd::diagnostics::source_levels values.
       /// @remarks The xtd::diagnostics::event_type_filter::event_type property indicates the level at which to trace.
@@ -36,7 +43,11 @@ namespace xtd {
       /// @param level A bitwise combination of the xtd::diagnostics::source_levels values.
       /// @remarks The xtd::diagnostics::event_type_filter::event_type property indicates the level at which to trace.
       void event_type(xtd::diagnostics::source_levels level);
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Determines whether the trace listener should trace the event.
       /// @param cache The xtd::diagnostics::trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
@@ -47,6 +58,7 @@ namespace xtd {
       /// @param data_array A trace data object.
       /// @remarks If the value of the event_type parameter is greater than or equal to the value of the xtd::diagnostics::event_type_filter::event_type property, the method returns true.
       bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const xtd::ustring& message, std::any data1, const std::vector<std::any>& data_array) override;
+      /// @}
       
     private:
       xtd::diagnostics::source_levels level_ = xtd::diagnostics::source_levels::off;

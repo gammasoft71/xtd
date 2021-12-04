@@ -37,6 +37,9 @@ namespace xtd {
       bool operator!=(const switch_base& value) const;
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the custom switch attributes
       /// @rettur nA StringDictionary containing the case-insensitive custom attributes for the trace switch.
       const std::map<xtd::ustring, xtd::ustring>& attributes() const;
@@ -56,8 +59,12 @@ namespace xtd {
       /// @return The name used to identify the switch. The default value is an empty string ("").
       /// @remarks When you create a new switch_base object, the display_name finds initial switch settings. For more information, see the switch_base constructor.
       const xtd::ustring& display_name() const;
+      /// @}
 
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the switch_base class.
       /// @param display_name The name of the switch.
       /// @param description The description for the switch.
@@ -71,7 +78,11 @@ namespace xtd {
       /// @param default_switch_value The default value for the switch.
       /// @remarks The display_name parameter is used to set the value of the display_name property, and the description parameter is use to set the value of the description property. The default_switch_value parameter is the value for the switch if the value property is not set by code.
       switch_base(const xtd::ustring& display_name, const xtd::ustring& description, const xtd::ustring& default_switch_value);
+      /// @}
       
+      /// @name Protected properties
+      
+      /// @{
       /// @brief Gets the current setting for this switch.
       /// @return The current setting for this switch. The default is zero.
       int32_t switch_setting() const;
@@ -91,7 +102,11 @@ namespace xtd {
       /// @par Notes to inheritors
       /// You should override the on_value_changed() method and provide a conversion operation that sets the appropriate switch_setting value for your switch.
       void value(const xtd::ustring& value);
+      /// @}
       
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Gets the custom attributes supported by the switch.
       /// @return A string array that contains the names of the custom attributes supported by the switch, or null if there no custom attributes are supported.
       /// @remarks The default implementation for the get_supported_attributes method returns {} (empty array). If a switch is added in a configuration file and custom attributes are specified that are not included in the string array returned by get_supported_attributes, a configuration_exception is thrown when the switch is loaded.
@@ -107,6 +122,7 @@ namespace xtd {
       /// @par Not to Inheritors
       /// You should override this method and use a conversion that sets the appropriate switch_setting value for your switch.
       virtual void on_value_changed();
+      /// @}
       
     private:
       xtd::ustring display_name_;

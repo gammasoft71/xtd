@@ -49,12 +49,16 @@ namespace xtd {
     /// @include debug.cpp
     class core_export_ debug static_ {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents a collection of xtd::diagnostics::trace_listener.
       using listener_collection = xtd::diagnostics::trace_listener_collection;
-
-      /// @name Properties
-      /// @{
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
       /// @return true if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, false.
       /// @remarks The default is false.
@@ -114,12 +118,11 @@ namespace xtd {
       /// @param use_global_lock true if the global lock is to be used; otherwise, false. The default is true.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The xtd::diagnostics::debug::is_thread_safe property is used to determine if the listener is thread safe. The global lock is not used only if the value of xtd::diagnostics::debug::use_global_lock is false and the value of xtd::diagnostics::debug::is_thread_safe is true. The default behavior is to use the global lock.
       static void use_global_lock(bool use_global_lock);
-
       /// @}
 
       /// @name Methods
-      /// @{
       
+      /// @{
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @par Examples
@@ -448,7 +451,6 @@ namespace xtd {
         return false;
       }
       /// @endcond
-
       /// @}
       
     private:

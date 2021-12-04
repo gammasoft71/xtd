@@ -25,17 +25,28 @@ namespace xtd {
     /// @note This filter is provided because multiple trace sources can simultaneously use the same trace listener.
     class core_export_ source_filter : public xtd::diagnostics::trace_filter {
     public:
+      /// @name Constructors
+      
+      /// @{      
       /// @brief Initializes a new instance of the xtd::diagnostics::source_filter class, specifying the name of the trace source.
       /// @param source The name of the trace source.
       source_filter(const xtd::ustring& source);
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
       const xtd::ustring& source() const;
       /// @brief Gets the name of the trace source.
       /// @param source The name of the trace source.
       void source(const xtd::ustring& source);
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Determines whether the trace listener should trace the event.
       /// @param cache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
@@ -45,6 +56,7 @@ namespace xtd {
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
       bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const xtd::ustring& message, std::any data1, const std::vector<std::any>& data_array) override;
+      /// @}
       
     private:
       xtd::ustring source_;

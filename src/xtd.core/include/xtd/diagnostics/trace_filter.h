@@ -31,6 +31,9 @@ namespace xtd {
     /// @remarks Filters that inherit from the trace_filter class can be used by trace listeners that inherit from the trace_listener class to perform filtering of events being traced. trace_filter contains a single method, should_trace, which takes event data and returns a flag indicating whether the event should be traced.
     class core_export_ trace_filter abstract_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief When overridden in a derived class, determines whether the trace listener should trace the event.
       /// @param cache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
@@ -40,11 +43,19 @@ namespace xtd {
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
       virtual bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const xtd::ustring& message, std::any data1, const std::vector<std::any>& data_array) = 0;
+      /// @}
 
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the trace_filter class.
       trace_filter() = default;
+      /// @}
 
+      /// @name Protectted methods
+      
+      /// @{
       /// @brief determines whether the trace listener should trace the event.
       /// @param cache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
@@ -60,6 +71,7 @@ namespace xtd {
       /// @param message Message to write.
       /// @param data1 A trace data object.
       bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const xtd::ustring& message, std::any data1);
+      /// @}
     };
   }
 }

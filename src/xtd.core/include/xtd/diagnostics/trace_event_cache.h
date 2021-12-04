@@ -26,16 +26,28 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ trace_event_cache : public xtd::object {
     public:
+      /// @name Alias
+      
+      /// @{
       //using clock = std::chrono::high_resolution_clock;
       using clock = std::chrono::system_clock;
+      /// @}
+
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the trace_event_cache class.
       trace_event_cache() = default;
+      /// @}
       
       /// @cond
       trace_event_cache(const trace_event_cache& tec);
       trace_event_cache& operator=(const trace_event_cache& tec) = default;
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the call stack for the current thread.
       /// @return string A string containing stack trace information. This value can be an empty string ("").
       /// @remarks The Callstack property gets the call stack from the StackTrace property of the Environment class. The property value lists method calls in reverse chronological order. That is, the most recent method call is described first. One line of stack trace information is listed for each method call on the stack. For more information, see StackTrace.
@@ -65,6 +77,7 @@ namespace xtd {
       /// @return int64 The tick counter value of the underlying timer mechanism.
       /// @remarks The get accessor calls the Stopwatch.GetTimestamp method to get the timestamp. If the Stopwatch class uses a high-resolution performance counter, GetTimestamp returns the current value of that counter. If the Stopwatch class uses the system timer, GetTimestamp returns the Ticks property of DateTime.Now.
       int64_t timestamp() const;
+      /// @}
     
     private:
       mutable clock::time_point date_time_ = clock::time_point::min();
