@@ -51,6 +51,9 @@ namespace xtd {
     public:
       /// @brief Represents a collection of xtd::diagnostics::trace_listener.
       using listener_collection = xtd::diagnostics::trace_listener_collection;
+
+      /// @name Properties
+      /// @{
       
       /// @brief Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
       /// @return true if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, false.
@@ -112,6 +115,11 @@ namespace xtd {
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The xtd::diagnostics::debug::is_thread_safe property is used to determine if the listener is thread safe. The global lock is not used only if the value of xtd::diagnostics::debug::use_global_lock is false and the value of xtd::diagnostics::debug::is_thread_safe is true. The default behavior is to use the global lock.
       static void use_global_lock(bool use_global_lock);
 
+      /// @}
+
+      /// @name Methods
+      /// @{
+      
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @par Examples
@@ -441,6 +449,8 @@ namespace xtd {
       }
       /// @endcond
 
+      /// @}
+      
     private:
       friend trace;
       static xtd::diagnostics::assert_dialog_result assert_dialog(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
