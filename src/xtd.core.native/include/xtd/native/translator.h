@@ -17,9 +17,11 @@ namespace xtd {
   class translator;
   /// @endcond
 
+  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
+    /// @internal
     /// @brief Contains translator native API.
     /// @par Namespace
     /// xtd::native
@@ -31,6 +33,7 @@ namespace xtd {
       translator() = delete;
       friend xtd::translator;
     protected:
+      /// @internal
       /// @brief Gets the system language.
       /// @return std::string A string containing the system language.
       /// @warning Internal use only
