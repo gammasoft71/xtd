@@ -32,6 +32,9 @@ namespace xtd {
     /// @note <b>to Inheritors:</b> Inherit from this class to implement a custom listener for the debug and trace classes. At a minimum, you must implement the write and write_line methods. Additionally, you can implement the fail, close and flush methods.
     class core_export_ trace_listener abstract_ {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the trace_listener class.
       /// @remarks The following table shows initial property values for an instance of trace_listener.
       /// | Property     | Default Value          |
@@ -50,7 +53,11 @@ namespace xtd {
       /// @brief Initializes a new instance of the trace_listener class using the specified name as the listener.
       /// @param name The name of the trace_listener.
       explicit trace_listener(const xtd::ustring& name);
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the indent level.
       /// @return unsigned int The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
@@ -103,7 +110,11 @@ namespace xtd {
       /// * The Write and WriteLine methods of the ConsoleTraceListener, DefaultTraceListener, and TextWriterTraceListener classes.
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
       void trace_output_options(const trace_options& trace_output_options);
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief When overridden in a derived class, closes the output stream so it no longer receives tracing or debugging output.
       /// @remarks Use this method when the output is going to a file, such as to the TextWriterTraceListener. After a call to this method, you must reinitialize the object.
       virtual void close();
@@ -286,6 +297,7 @@ namespace xtd {
       /// @brief Writes the message to the listener you create when you implement the trace_listener class followed by a line terminator.followed by a line terminator.
       /// @param message A string you want to write.
       virtual void write_line(const xtd::ustring& message) = 0;
+      /// @}
       
       /// @cond
       template<typename object>
@@ -298,6 +310,9 @@ namespace xtd {
       /// @endcond
 
     protected:
+      /// @name Protected properties
+      
+      /// @{
       /// @brief Gets a value indicating whether to indent the output.
       /// @return true if the output should be indented; otherwise, false.
       bool need_indent() const;
@@ -308,7 +323,11 @@ namespace xtd {
       /// @brief Sets a value indicating whether the trace listener is thread safe.
       /// @param thread_safe true if the trace listener is thread safe; otherwise, false. The default is false.
       void thread_safe(bool thread_safe);
+      /// @}
 
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to false.
       /// @remarks This method writes the indent and resets the NeedIndent property to false. Call this method if NeedIndent is true when you are overriding the Write and WriteLine methods. By default, this method uses blank spaces for indentation. The size of the indent is determined by the values of the IndentSize and IndentLevel properties. The IndentLevel property represents the number of times the indent of the size specified by the IndentSize property is applied. This method is called by the DefaultTraceListener and TextWriterTraceListener classes.
       virtual void write_indent() {
@@ -318,6 +337,7 @@ namespace xtd {
           write(xtd::ustring(indent_size_, ' '));
 #endif
       }
+      /// @}
 
     private:
       void write_event_cache(const trace_event_cache& event_cache);

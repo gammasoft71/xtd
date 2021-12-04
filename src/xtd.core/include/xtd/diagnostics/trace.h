@@ -35,9 +35,16 @@ namespace xtd {
     /// @include debug.cpp
     class core_export_ trace static_ {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents a collection of xtd::diagnostics::trace_listener.
       using listener_collection = xtd::diagnostics::trace_listener_collection;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Get whether Flush should be called on the Listeners after every write.
       /// @return true if Flush is called on the Listeners after every write; otherwise, false.
       /// @remarks The default is false.
@@ -97,7 +104,11 @@ namespace xtd {
       /// @param use_global_lock true if the global lock is to be used; otherwise, false. The default is true.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is false and the value of IsThreadSafe is true. The default behavior is to use the global lock.
       static void use_global_lock(bool use_global_lock);
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @par Examples
@@ -413,6 +424,7 @@ namespace xtd {
         if (condition) write_line_(xtd::ustring::format("", message), category);
 #endif
       }
+      /// @}
       
       /// @cond
       static inline bool __should_aborted__(bool condition) { return __should_aborted__(condition, "", csf_); }

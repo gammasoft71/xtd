@@ -22,6 +22,9 @@ namespace xtd {
     /// @ingroup xtd_core diagnostics debug
     class core_export_ ostream_trace_listener : public xtd::diagnostics::trace_listener {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::ostream_trace_listener class with a specified ostream.
       /// @param ostream An std::ostream that represents the stream the xtd::diagnostics::ostream_trace_listener writes to.
       /// @remarks This constructor initializes the name property to an empty string ("").
@@ -29,14 +32,22 @@ namespace xtd {
       /// @cond
       ~ostream_trace_listener();
       /// @endcond
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the underlying stream.
       /// @return A std::ostream that represents the stream the ostream_trace_listener writes to.
       virtual const std::ostream& ostream() const;
       /// @brief Sets the underlying stream.
       /// @param ostream A std::ostream that represents the stream the ostream_trace_listener writes to.
       virtual void ostream(const std::ostream& ostream);
-
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
       void close() override;
       void flush() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
@@ -57,6 +68,7 @@ namespace xtd {
         write_line_(message);
 #endif
       }
+      /// @}
       
     private:
       void flush_();

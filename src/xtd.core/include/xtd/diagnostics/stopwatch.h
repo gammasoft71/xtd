@@ -31,6 +31,9 @@ namespace xtd {
     /// @include stopwatch.cpp
     class core_export_ stopwatch : public xtd::object{
     public:
+      /// @name Constructors
+
+      /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::stopwatch class.
       /// @remarks The returned xtd::diagnostics::stopwatch instance is stopped, and the xtd::diagnostics::stopwatch::elapsed time property of the instance is zero.
       /// @remarks Use the xtd::diagnostics::stopwatch::start method to begin measuring elapsed time with the new xtd::diagnostics::stopwatch instance. Use the xtd::diagnostics::stopwatch::start_new method to initialize a new xtd::diagnostics::stopwatch instance and immediately start it.
@@ -38,12 +41,16 @@ namespace xtd {
       /// The following example initializes a xtd::diagnostics::stopwatch instance by using a simple class constructor.
       /// @include stopwatch_constructor.cpp
       stopwatch() = default;
+      /// @}
       
       /// @cond
       stopwatch(const stopwatch&) = default;
       stopwatch& operator=(const stopwatch&) = default;
       /// @endcond
       
+      /// @name Properties
+
+      /// @{
       /// @brief Gets the frequency of the timer as the number of nanoseconds per second. This field is read-only.
       /// @return The frequency of the timer as the number of nanoseconds per second.
       static int64_t frequency();
@@ -97,7 +104,11 @@ namespace xtd {
       /// @return true if the xtd::diagnostics::stopwatch instance is currently running and measuring elapsed time for an interval; otherwise, false.
       /// @remarks A xtd::diagnostics::stopwatch instance begins running with a call to xtd::diagnostics::stopwatch::start or xtd::diagnostics::stopwatch::start_new. The instance stops running with a call to xtd::diagnostics::stopwatch::stop or xtd::diagnostics::stopwatch::reset.
       bool is_running() const;
+      /// @}
       
+      /// @name Methods
+
+      /// @{
       /// @brief Gets the current number of nanoseconds in the timer mechanism.
       /// @return A long integer representing the nanosecond counter value of the underlying timer mechanism.
       static int64_t get_timestamp();
@@ -134,6 +145,7 @@ namespace xtd {
       /// The following example initializes a xtd::diagnostics::stopwatch instance by using a simple class constructor.
       /// @include stopwatch_constructor.cpp
       void stop();
+      /// @}
       
     private:
       explicit stopwatch(bool start);

@@ -36,6 +36,9 @@ namespace xtd {
     /// @remarks The trace listeners use the values of the trace class properties indent, indent_size, and  auto_flush to format trace output.
     class core_export_ trace_source : public xtd::object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the Trace_Source class, using the specified name for the source.
       /// @param name The name of the source (typically, the name of the application).
       explicit trace_source(const xtd::ustring& name);
@@ -43,7 +46,11 @@ namespace xtd {
       /// @param name The name of the source (typically, the name of the application).
       /// @param default_level A bitwise combination of the enumeration values that specifies the default source level at which to trace
       explicit trace_source(const xtd::ustring& name, xtd::diagnostics::source_levels default_levels);
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the collection of trace listeners for the trace source.
       /// @return A trace_listener_collection that contains the active trace listeners associated with the source.
       /// @remarks Use this property to access and perform operations on the trace listeners.
@@ -68,7 +75,11 @@ namespace xtd {
       /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
       /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns true, the listeners are called.
       void source_switch(const xtd::diagnostics::source_switch& source_switch);
+      /// @}
             
+      /// @name Methods
+      
+      /// @{
       /// @brief Closes all the trace listeners in the trace listener collection.
       /// @remarks The close method calls the close method of each trace listener in the listeners collection.
       void close();
@@ -172,6 +183,7 @@ namespace xtd {
           listener->trace_transfer(trace_event_cache(), name_, id, message, related_activity_id);
 #endif
       }
+      /// @}
       
     private:
       std::map<xtd::ustring, xtd::ustring> attributes_;

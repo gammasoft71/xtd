@@ -56,10 +56,17 @@ namespace xtd {
         friend process;
         void set_data(process::data* data) {data_ = data;}
       public:
+        /// @name Methods
+        
+        /// @{
         /// @brief Gets a value indicate if the event is empty.
         /// @return true if event does not contains functions; otherwise false.
         bool is_empty() const noexcept;
+        /// @}
         
+        /// @name Operators
+        
+        /// @{
         /// @brief Adds an handler to the event.
         /// @param handler Handler to add.
         /// @return The current event instance.
@@ -97,6 +104,7 @@ namespace xtd {
           data_->error_data_received_callback_-=(function);
           return data_received_event_handler::operator-=(function);
         }
+        /// @}
         
       private:
         process::data* data_ = nullptr;
@@ -111,10 +119,17 @@ namespace xtd {
         friend process;
         void set_data(process::data* data) {data_ = data;}
       public:
+        /// @name Methods
+        
+        /// @{
         /// @brief Gets a value indicate if the event is empty.
         /// @return true if event does not contains functions; otherwise false.
         bool is_empty() const noexcept;
+        /// @}
         
+        /// @name Operators
+        
+        /// @{
         /// @brief Adds an handler to the event.
         /// @param handler Handler to add.
         /// @return The current event instance.
@@ -152,6 +167,7 @@ namespace xtd {
           data_->exit_callback_-=(function);
           return xtd::event_handler::operator-=(function);
         }
+        /// @}
         
       private:
         process::data* data_ = nullptr;
@@ -166,10 +182,17 @@ namespace xtd {
         friend process;
         void set_data(process::data* data) {data_ = data;}
       public:
+        /// @name Methods
+        
+        /// @{
         /// @brief Gets a value indicate if the event is empty.
         /// @return true if event does not contains functions; otherwise false.
         bool is_empty() const noexcept;
+        /// @}
         
+        /// @name Operators
+        
+        /// @{
         /// @brief Adds an handler to the event.
         /// @param handler Handler to add.
         /// @return The current event instance.
@@ -207,14 +230,22 @@ namespace xtd {
           data_->output_data_received_callback_-=(function);
           return xtd::diagnostics::data_received_event_handler::operator-=(function);
         }
+        /// @}
         
       private:
         process::data* data_ = nullptr;
       };
       
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents a point in time.
       using time_point = std::chrono::system_clock::time_point;
-
+      /// @}
+      
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::process class.
       /// @remarks If you do not specify the machine_name property, the default is the local computer, (".").
       /// @remarks You have two options for associating a new xtd::diagnostics::process component with a process on the computer. The first option is to use the constructor to create the xtd::diagnostics::process component, set the appropriate members of the xtd::diagnostics::process::start_info property and call xtd::diagnostics::process::start to associate the xtd::diagnostics::process with a new system process. The second option is to associate the xtd::diagnostics::process with a running system process by using xtd::diagnostics::process:get_process_by_id or one of the xtd::diagnostics::process::get_processes return values.
@@ -223,12 +254,17 @@ namespace xtd {
       /// @remarks Any executable file that you can call from the command line can be started in one of two ways: by setting the appropriate members of the xtd::diagnostics::process:start_info property and calling the xtd::diagnostics::process::start method with no parameters, or by passing the appropriate parameter to the static_start member.
       /// @remarks You can create a xtd::diagnostics::processes component by using the constructor, one of the static xtd::diagnostics::process::start overloads, or any of the xtd::diagnostics::process::get_process_by_id, xtd::diagnostics::process::get_processes, or xtd::diagnostics::process::get_processes_by_name methods. After you have done so, you have a view into the associated process. This is not a dynamic view that updates itself automatically when the process properties have changed in memory. Instead, you must call xtd::diagnostics::process::refresh for the component to update the xtd::diagnostics::process property information in your application.
       process();
+      /// @}
+
       /// @cond
       process(const process&) = default;
       process& operator=(const process& value);
       ~process();
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the base priority xof the associated process.
       /// @return The base priority, which is computed from the xtd::diagnostics::process::priority_class of the associated process.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
@@ -691,7 +727,11 @@ namespace xtd {
       /// @return An object that indicates when the process started. An exception is thrown if the process is not running.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       time_point start_time() const;
-
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
       /// @brief Frees all the resources that are associated with this component.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks The xtd::diagnostics::process::close method causes the process to stop waiting for exit if it was waiting, closes the process handle, and clears process-specific properties. Close does not close the standard output, input, and error readers and writers in case they are being referenced externally.
@@ -790,12 +830,17 @@ namespace xtd {
       /// @remarks The event is enabled during asynchronous read operations on xtd::diagnostics::process::standard_output. To start asynchronous read operations, you must redirect the standard_output stream of a xtd::diagnostics::process, add your event handler to the xtd::diagnostics::process::Output_data_received event, and call xtd::diagnostics::process::begin_output_read_line. Thereafter, the xtd::diagnostics::process::output_dData_rReceived event signals each time the process writes a line to the redirected xtd::diagnostics::process::standard_output stream, until the process exits or calls xtd::diagnostics::process::cancel_output_read.
       /// @note The application that is processing the asynchronous output should call the WaitForExit method to ensure that the output buffer has been flushed.
       output_data_received_event output_data_received;
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Raises the xtd::diagnostics::process::exited event.
       /// @remarks xtd::diagnostics::process::on_exited is the API method that raises the xtd::diagnostics::process::exited event. Calling xtd::diagnostics::process::on_exited causes the xtd::diagnostics::process::exited event to occur and is the only way to raise the event using the Process component. xtd::diagnostics::process::on_exited is primarily used when deriving classes from the component.
       /// @remarks As an alternative to xtd::diagnostics::process::xtd::diagnostics::process::on_eExited, you can write your own event handler. You create your own event handler delegate and your own event-handling method.
       virtual void on_exited();
+      /// @}
       
     private:
       struct data {

@@ -35,6 +35,9 @@ namespace xtd {
     /// @ingroup xtd_core diagnostics debug
     class core_export_ debugger static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets a value that indicates whether a debugger is attached to the process.
       /// @return true if a debugger is attached; otherwise, false.
       static bool is_attached();
@@ -65,6 +68,7 @@ namespace xtd {
       /// @remarks If there is no debugger attached, this method has no effect. The debugger might or might not report the message, depending upon its settings.
       /// @note The category parameter is limited to 256 characters. std::string longer than 256 characters are truncated.
       static void log(int level, xtd::ustring& category, const xtd::ustring& message);
+      /// @}
     };
   }
 }

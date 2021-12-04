@@ -33,6 +33,10 @@ namespace xtd {
     /// @include stack_frame.cpp
     class core_export_ stack_frame : public xtd::object {
     public:
+
+      /// @name Constructors
+      
+      /// @{      
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class.
       stack_frame();
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that corresponds to a frame above the current stack frame.
@@ -79,11 +83,23 @@ namespace xtd {
       bool operator==(const stack_frame& sf) const {return file_name_ == sf.file_name_ && file_line_number_ == sf.file_line_number_ && method_name_ == sf.method_name_ && file_column_number_ == sf.file_column_number_ && offset_ == sf.offset_;}
       bool operator!=(const stack_frame& sf) const {return !operator==(sf);}
       /// @endcond
+      /// @}
       
+      /// @name Fields
+      
+      /// @{
       /// @brief Return an empty stack frame.
       /// @return Empty stack frame.
       static stack_frame empty() noexcept;
 
+      /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
+      /// @remarks The value of this constant is std::numeric_limit<uint32_t>::max().
+      static constexpr const uint32_t OFFSET_UNKNOWN = std::numeric_limits<uint32_t>::max();
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file column number, or 0 (zero) if the file column number cannot be determined.
       /// @par Examples
@@ -176,10 +192,7 @@ namespace xtd {
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_frame& stack_frame) noexcept {return os << stack_frame.to_string();}
       /// @endcond
-
-      /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
-      /// @remarks The value of this constant is std::numeric_limit<uint32_t>::max().
-      static constexpr const uint32_t OFFSET_UNKNOWN = std::numeric_limits<uint32_t>::max();
+      /// @}
       
     private:
       friend class stack_trace;

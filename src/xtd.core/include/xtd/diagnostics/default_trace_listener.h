@@ -27,6 +27,9 @@ namespace xtd {
     /// @include default_trace_listener.cpp
     class core_export_ default_trace_listener : public xtd::diagnostics::trace_listener {
     public:
+      /// @name Constructors
+      
+      /// @{      
       /// @brief Initializes a new instance of the default_trace_listener class with "default" as its xtd::diagnostics::default_trace_listener::name property value.
       /// @par Examples
       /// The following code example removes the xtd::diagnostics::default_trace_listener provided by the application from the xtd::diagnostics::trace::listeners collection and then creates a new xtd::diagnostics::default_trace_listener and adds it to the xtd::diagnostics::trace::listeners collection.
@@ -46,7 +49,11 @@ namespace xtd {
       /// @cond
       ~default_trace_listener();
       /// @endcond
-
+      /// @}
+      
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the application is running in user-interface mode.
       /// @return true if user-interface mode is enabled; otherwise, false.
       ///  @par Examples
@@ -110,7 +117,11 @@ namespace xtd {
       ///   default_listener->log_file_name(args[1]);
       /// @endcode
       void log_file_name(const xtd::ustring log_file_name);
-
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
       void close() override;
       void flush() override;
       
@@ -119,6 +130,7 @@ namespace xtd {
       
       using xtd::diagnostics::trace_listener::write_line;
       void write_line(const xtd::ustring& message) override;
+      /// @}
       
     private:
 #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
