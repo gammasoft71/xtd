@@ -24,7 +24,7 @@ combo_box::combo_box() {
   items_.item_added += [&](size_t pos, const item& item) {
     if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
     combo_box::item selected_item;
-    if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
+    if (selected_index() != npos && selected_index() < items_.size()) selected_item = items_[selected_index()];
     this->selected_item(selected_item);
   };
 
@@ -32,14 +32,14 @@ combo_box::combo_box() {
     if (is_handle_created()) native::combo_box::delete_item(handle(), pos);
 
     combo_box::item selected_item;
-    if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
+    if (selected_index() != npos && selected_index() < items_.size()) selected_item = items_[selected_index()];
     this->selected_item(selected_item);
   };
   
   items_.item_updated += [&](size_t pos, const item& item) {
     if (is_handle_created()) native::combo_box::update_item(handle(), pos, item.value());
     combo_box::item selected_item;
-    if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
+    if (selected_index() != npos && selected_index() < items_.size()) selected_item = items_[selected_index()];
     this->selected_item(selected_item);
   };
 }
@@ -54,13 +54,13 @@ combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
 }
 
 list_control& combo_box::selected_index(size_t selected_index) {
-  if (selected_index_ != selected_index) {
+  if (this->selected_index() != selected_index) {
     if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
-    selected_index_ = selected_index;
-    if (is_handle_created()) native::combo_box::selected_index(handle(), selected_index_);
+    set_selected_index(selected_index);
+    if (is_handle_created()) native::combo_box::selected_index(handle(), this->selected_index());
     
     item selected_item;
-    if (selected_index_ != npos) selected_item = items_[selected_index_];
+    if (this->selected_index() != npos) selected_item = items_[this->selected_index()];
     //this->selected_item(selected_item);
     selected_item_ = selected_item;
     on_selected_value_changed(event_args::empty);
@@ -130,8 +130,8 @@ void combo_box::on_handle_created(const event_args& e) {
   items_.sorted(sorted_);
   for (size_t index = 0; index < items_.size(); ++index)
     native::combo_box::insert_item(handle(), index, items_[index].value());
-  native::combo_box::selected_index(handle(), selected_index_);
-  if (selected_index_ != npos) selected_item_ = items_[selected_index_];
+  native::combo_box::selected_index(handle(), selected_index());
+  if (selected_index() != npos) selected_item_ = items_[selected_index()];
 }
 
 void combo_box::on_selected_value_changed(const event_args& e) {
@@ -165,7 +165,7 @@ void combo_box::wnd_proc(message& message) {
 
 void combo_box::wm_mouse_double_click(message& message) {
   selected_index(native::combo_box::selected_index(handle()));
-  if (selected_index_ != npos) selected_item(items_[selected_index_]);
+  if (selected_index() != npos) selected_item(items_[selected_index()]);
   if (allow_selection())
     list_control::wnd_proc(message);
 }
@@ -177,7 +177,7 @@ void combo_box::wm_mouse_down(message& message) {
 
 void combo_box::wm_mouse_up(message& message) {
   selected_index(native::combo_box::selected_index(handle()));
-  if (selected_index_ != npos) selected_item(items_[selected_index_]);
+  if (selected_index() != npos) selected_item(items_[selected_index()]);
   if (allow_selection())
     list_control::wnd_proc(message);
 }
@@ -185,5 +185,5 @@ void combo_box::wm_mouse_up(message& message) {
 void combo_box::wm_reflect_command(message& message) {
   def_wnd_proc(message);
   selected_index(native::combo_box::selected_index(handle()));
-  if (selected_index_ != npos) selected_item(items_[selected_index_]);
+  if (selected_index() != npos) selected_item(items_[selected_index()]);
 }
