@@ -23,7 +23,7 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the splitter class.
       splitter() {
-        data_->size = default_size();
+        size(default_size());
         dock(xtd::forms::dock_style::left);
       }
       

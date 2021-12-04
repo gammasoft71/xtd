@@ -12,7 +12,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 picture_box::picture_box() {
-  data_->size = default_size();
+  size(default_size());
 }
 
 picture_box& picture_box::border_style(forms::border_style border_style) {

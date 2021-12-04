@@ -1216,6 +1216,18 @@ void control::set_state(control::state flag, bool value) {
   data_->state = value ? (control::state)((int32_t)data_->state | (int32_t)flag) : (control::state)((int32_t)data_->state & ~(int32_t)flag);
 }
 
+void control::set_can_focus(bool value) {
+  data_->can_focus = value;
+}
+
+void control::set_mouse_buttons(forms::mouse_buttons value) {
+  mouse_buttons_ = value;
+}
+
+void control::set_parent(intptr_t handle) {
+  data_->parent = handle;
+}
+
 void control::set_style(control_styles flag, bool value) {
   data_->style = value ? (control_styles)((int32_t)data_->style | (int32_t)flag) : (control_styles)((int32_t)data_->style & ~(int32_t)flag);
 }

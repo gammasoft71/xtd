@@ -1679,6 +1679,12 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) in a derived class, be sure to call the base class's set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method to force the bounds of the control to change. Derived classes can add size restrictions to the set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method.
       virtual void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified);
+
+      /// @brief Sets a value indicating whether the control can receive focus.
+      /// @param value true if the control can receive focus; otherwise, false.
+      /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
+      void set_can_focus(bool value);
+
       
       /// @brief Sets the size of the client area of the control.
       /// @param width The client area width, in pixels.
@@ -1689,6 +1695,14 @@ namespace xtd {
       /// When overriding set_client_size_core(int32_t, int32_t) in a derived class, be sure to call the base class's set_client_size_core(int32_t, int32_t) method so that the client_size property is adjusted.
       virtual void set_client_size_core(int32_t width, int32_t height);
         
+      /// @brief Sets a value indicating which of the mouse buttons is in a pressed state.
+      /// @param value A bitwise combination of the mouse_buttons enumeration values. The default is none.
+      static void set_mouse_buttons(forms::mouse_buttons value);
+
+      /// @brief Sets the parent handle of the control.
+      /// @param handle The parent handle.
+      void set_parent(intptr_t handle);
+
       /// @brief Sets a specified control_styles flag to either true or false.
       /// @param flag The control_styles bit to set.
       /// @param value true to apply the specified style to the control; otherwise, false.
@@ -1706,6 +1720,35 @@ namespace xtd {
       /// @cond
       bool get_state(control::state flag) const;
       void set_state(control::state flag, bool value);
+      /// @endcond
+      
+    private:
+      void on_parent_size_changed(object& sender, const event_args& e);
+      void do_layout_children_with_dock_style();
+      void do_layout_with_auto_size_mode();
+      void do_layout_with_anchor_styles();
+      control(const xtd::ustring& name, bool);
+      intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
+      void wm_child_activate(message& message);
+      void wm_create(message& message);
+      void wm_command(message& message);
+      void wm_key_char(message& message);
+      void wm_kill_focus(message& message);
+      void wm_mouse_down(message& message);
+      void wm_mouse_double_click(message& message);
+      void wm_mouse_enter(message& message);
+      void wm_mouse_leave(message& message);
+      void wm_mouse_up(message& message);
+      void wm_mouse_move(message& message);
+      void wm_move(message& message);
+      void wm_mouse_wheel(message& message);
+      void wm_paint(message& message);
+      void wm_erase_background(message& message);
+      void wm_scroll(message& message);
+      void wm_set_focus(message& message);
+      void wm_set_text(message& message);
+      void wm_size(message& message);
+      void wm_sizing(message& message);
 
       struct data {
         anchor_styles anchor = anchor_styles::top | anchor_styles::left;
@@ -1744,43 +1787,14 @@ namespace xtd {
         std::any tag;
         xtd::ustring text;
       };
-     
+      
       static bool check_for_illegal_cross_thread_calls_;
       static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
-
-      std::shared_ptr<data> data_ = std::make_shared<data>();
-      /// @endcond
       
-    private:
-      void on_parent_size_changed(object& sender, const event_args& e);
-      void do_layout_children_with_dock_style();
-      void do_layout_with_auto_size_mode();
-      void do_layout_with_anchor_styles();
-      control(const xtd::ustring& name, bool);
-      intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
-      void wm_child_activate(message& message);
-      void wm_create(message& message);
-      void wm_command(message& message);
-      void wm_key_char(message& message);
-      void wm_kill_focus(message& message);
-      void wm_mouse_down(message& message);
-      void wm_mouse_double_click(message& message);
-      void wm_mouse_enter(message& message);
-      void wm_mouse_leave(message& message);
-      void wm_mouse_up(message& message);
-      void wm_mouse_move(message& message);
-      void wm_move(message& message);
-      void wm_mouse_wheel(message& message);
-      void wm_paint(message& message);
-      void wm_erase_background(message& message);
-      void wm_scroll(message& message);
-      void wm_set_focus(message& message);
-      void wm_set_text(message& message);
-      void wm_size(message& message);
-      void wm_sizing(message& message);
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

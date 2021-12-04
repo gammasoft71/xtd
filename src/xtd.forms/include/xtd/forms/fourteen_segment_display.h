@@ -57,22 +57,22 @@ namespace xtd {
       virtual void draw_segment_g1(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() / 2 - 1 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), size().height() / 2 + offset, size().width() / 2 - 1 - abs(offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + abs(2 * offset), data_->size.height() / 2 + offset, data_->size.width() / 2 - 1 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), 2 + abs(2 * offset), size().height() / 2 + offset, size().width() / 2 - 1 - abs(offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() / 2 - 1 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), size().height() / 2 + offset, size().width() / 2 - 1 - abs(offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::expanded) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() /2 - 1 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), size().height() / 2 + offset, size().width() /2 - 1 - abs(offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::design) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() /2 - 1 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), size().height() / 2 + offset, size().width() /2 - 1 - abs(offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness(), data_->size.height() / 2 + offset, data_->size.width() / 2 - 1 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), 2 + thickness(), size().height() / 2 + offset, size().width() / 2 - 1 - abs(offset), size().height() / 2 + offset);
         }
       }
 
@@ -82,22 +82,22 @@ namespace xtd {
       virtual void draw_segment_g2(drawing::graphics& graphics, const drawing::color& color) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), data_->size.width() / 2 + 1 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() - 3 - thickness() / 2 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), size().width() / 2 + 1 + abs(offset), size().height() / 2 + offset, size().width() - 3 - thickness() / 2 - abs(offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), data_->size.width() / 2 + 1 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() - 3 - abs(2 * offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), size().width() / 2 + 1 + abs(offset), size().height() / 2 + offset, size().width() - 3 - abs(2 * offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), data_->size.width() / 2 + 1 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() - 3 - thickness() / 2 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), size().width() / 2 + 1 + abs(offset), size().height() / 2 + offset, size().width() - 3 - thickness() / 2 - abs(offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::expanded) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), data_->size.width() / 2 + 1 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() - 3 - thickness() / 2 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), size().width() / 2 + 1 + abs(offset), size().height() / 2 + offset, size().width() - 3 - thickness() / 2 - abs(offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::design) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), data_->size.width() / 2 + 1 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() - 3 - thickness() / 2 - abs(offset), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), size().width() / 2 + 1 + abs(offset), size().height() / 2 + offset, size().width() - 3 - thickness() / 2 - abs(offset), size().height() / 2 + offset);
         } else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-            graphics.draw_line(drawing::pen(color), data_->size.width() / 2 + 1 + abs(offset), data_->size.height() / 2 + offset, data_->size.width() - 3 - thickness(), data_->size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), size().width() / 2 + 1 + abs(offset), size().height() / 2 + offset, size().width() - 3 - thickness(), size().height() / 2 + offset);
         }
       }
 
@@ -106,8 +106,8 @@ namespace xtd {
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_h(drawing::graphics& graphics, const drawing::color& color) {
         for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-          graphics.draw_line(drawing::pen(color), 2 + thickness() + abs(offset), 2 + thickness(), data_->size.width() / 2 - thickness() / 2 - 2, data_->size.height() / 2 - 2 - thickness() / 2 - abs(offset));
-          graphics.draw_line(drawing::pen(color), 2 + thickness(), 2 + thickness() + abs(offset), data_->size.width() / 2 - 2 - thickness() / 2 - abs(offset), data_->size.height() / 2 - 2 - thickness() / 2);
+          graphics.draw_line(drawing::pen(color), 2 + thickness() + abs(offset), 2 + thickness(), size().width() / 2 - thickness() / 2 - 2, size().height() / 2 - 2 - thickness() / 2 - abs(offset));
+          graphics.draw_line(drawing::pen(color), 2 + thickness(), 2 + thickness() + abs(offset), size().width() / 2 - 2 - thickness() / 2 - abs(offset), size().height() / 2 - 2 - thickness() / 2);
         }
       }
       
@@ -116,7 +116,7 @@ namespace xtd {
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_i(drawing::graphics& graphics, const drawing::color& color) {
         for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-          graphics.draw_line(drawing::pen(color), data_->size.width() / 2 - offset, 2 + thickness(), data_->size.width() / 2 - offset, data_->size.height() / 2 - 1 - abs(offset));
+          graphics.draw_line(drawing::pen(color), size().width() / 2 - offset, 2 + thickness(), size().width() / 2 - offset, size().height() / 2 - 1 - abs(offset));
       }
 
       /// @brief Draw segment j on specified graphics with specified color.
@@ -124,8 +124,8 @@ namespace xtd {
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_j(drawing::graphics& graphics, const drawing::color& color) {
         for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-          graphics.draw_line(drawing::pen(color), data_->size.width() - 3 - thickness() - abs(offset), 2 + thickness(), data_->size.width()  /2 + 2 + thickness() / 2, data_->size.height() / 2 - 2 - thickness() / 2 - abs(offset));
-          graphics.draw_line(drawing::pen(color), data_->size.width() - 3 - thickness(), 2 + thickness() + abs(offset), data_->size.width() /2 + 2 + thickness() / 2 + abs(offset), data_->size.height() / 2 - 2 - thickness() / 2);
+          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), 2 + thickness(), size().width()  /2 + 2 + thickness() / 2, size().height() / 2 - 2 - thickness() / 2 - abs(offset));
+          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), 2 + thickness() + abs(offset), size().width() /2 + 2 + thickness() / 2 + abs(offset), size().height() / 2 - 2 - thickness() / 2);
         }
       }
       
@@ -134,8 +134,8 @@ namespace xtd {
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_k(drawing::graphics& graphics, const drawing::color& color) {
         for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-          graphics.draw_line(drawing::pen(color), data_->size.width() / 2 - 2 - thickness() / 2 - abs(offset), data_->size.height() / 2 + 2 + thickness() / 2, 2 + thickness(), data_->size.height() - 3 - thickness() - abs(offset));
-          graphics.draw_line(drawing::pen(color), data_->size.width() / 2 - 2 - thickness() / 2, data_->size.height() / 2 + 2 + thickness() / 2 + abs(offset), 2 + thickness() + abs(offset), data_->size.height() - 3 - thickness());
+          graphics.draw_line(drawing::pen(color), size().width() / 2 - 2 - thickness() / 2 - abs(offset), size().height() / 2 + 2 + thickness() / 2, 2 + thickness(), size().height() - 3 - thickness() - abs(offset));
+          graphics.draw_line(drawing::pen(color), size().width() / 2 - 2 - thickness() / 2, size().height() / 2 + 2 + thickness() / 2 + abs(offset), 2 + thickness() + abs(offset), size().height() - 3 - thickness());
         }
       }
 
@@ -144,7 +144,7 @@ namespace xtd {
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_l(drawing::graphics& graphics, const drawing::color& color) {
         for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
-          graphics.draw_line(drawing::pen(color), data_->size.width() / 2 - offset, data_->size.height() / 2 + 1 - thickness() / 2 + thickness() / 2 + abs(offset), data_->size.width() / 2 - offset, data_->size.height() - 3 - thickness());
+          graphics.draw_line(drawing::pen(color), size().width() / 2 - offset, size().height() / 2 + 1 - thickness() / 2 + thickness() / 2 + abs(offset), size().width() / 2 - offset, size().height() - 3 - thickness());
       }
       
       /// @brief Draw segment m on specified graphics with specified color.
@@ -152,8 +152,8 @@ namespace xtd {
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_m(drawing::graphics& graphics, const drawing::color& color) {
         for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-          graphics.draw_line(drawing::pen(color), data_->size.width()  /2 + 2 + thickness() / 2 + abs(offset), data_->size.height() / 2 + 2 + thickness() / 2, data_->size.width() - 3 - thickness(), data_->size.height() - 3 - thickness() - abs(offset));
-          graphics.draw_line(drawing::pen(color), data_->size.width()  /2 + 2 + thickness() / 2, data_->size.height() / 2 + 2 + thickness() / 2 + abs(offset), data_->size.width() - 3 - thickness() - abs(offset), data_->size.height() - 3 - thickness());
+          graphics.draw_line(drawing::pen(color), size().width()  /2 + 2 + thickness() / 2 + abs(offset), size().height() / 2 + 2 + thickness() / 2, size().width() - 3 - thickness(), size().height() - 3 - thickness() - abs(offset));
+          graphics.draw_line(drawing::pen(color), size().width()  /2 + 2 + thickness() / 2, size().height() / 2 + 2 + thickness() / 2 + abs(offset), size().width() - 3 - thickness() - abs(offset), size().height() - 3 - thickness());
         }
       }
 

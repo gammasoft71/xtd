@@ -19,8 +19,8 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 label::label() {
-  data_->can_focus = false;
-  data_->size = default_size();
+  set_can_focus(false);
+  size(default_size());
 }
 
 label& label::border_style(xtd::forms::border_style border_style) {

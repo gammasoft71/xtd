@@ -24,7 +24,7 @@ namespace xtd {
       /// @brief Sets thickness of segment.
       /// @param value A int32_t that represent the segment thickness.
       /// @return Current seven_segment_display.
-      int32_t thickness() const override {return thickness_.value_or(data_->size.height() < 20 ? 1 : (data_->size.height() / 20 + ((data_->size.height() / 20) % 2 ? 0 : 1)));}
+      int32_t thickness() const override {return thickness_.value_or(size().height() < 20 ? 1 : (size().height() / 20 + ((size().height() / 20) % 2 ? 0 : 1)));}
       
     protected:
       void on_paint(paint_event_args& e) override {
@@ -44,8 +44,8 @@ namespace xtd {
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_h(drawing::graphics& graphics, const drawing::color& color) {
         for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-          graphics.draw_line(drawing::pen(color), data_->size.width() - 3 - thickness() - abs(offset), 2 + thickness(), 2 + thickness(), data_->size.height() / 2 - 2 - thickness() / 2 - abs(offset));
-          graphics.draw_line(drawing::pen(color), data_->size.width() - 3 - thickness(), 2 + thickness() + abs(offset), 2 + thickness() + abs(offset), data_->size.height() / 2 - 2 - thickness() / 2);
+          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), 2 + thickness(), 2 + thickness(), size().height() / 2 - 2 - thickness() / 2 - abs(offset));
+          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), 2 + thickness() + abs(offset), 2 + thickness() + abs(offset), size().height() / 2 - 2 - thickness() / 2);
         }
       }
       
@@ -54,8 +54,8 @@ namespace xtd {
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_i(drawing::graphics& graphics, const drawing::color& color) {
         for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-          graphics.draw_line(drawing::pen(color), data_->size.width() - 3 - thickness() - abs(offset), data_->size.height() / 2 + 2 + thickness() / 2, 2 + thickness(), data_->size.height() - 3 - thickness() - abs(offset));
-          graphics.draw_line(drawing::pen(color), data_->size.width() - 3 - thickness(), data_->size.height() / 2 + 2 + thickness() / 2 + abs(offset), 2 + thickness() + abs(offset), data_->size.height() - 3 - thickness());
+          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), size().height() / 2 + 2 + thickness() / 2, 2 + thickness(), size().height() - 3 - thickness() - abs(offset));
+          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), size().height() / 2 + 2 + thickness() / 2 + abs(offset), 2 + thickness() + abs(offset), size().height() - 3 - thickness());
         }
       }
     };

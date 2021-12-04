@@ -224,9 +224,9 @@ namespace xtd {
       
       void on_mouse_enter(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
-          if (check_state_ == xtd::forms::check_state::unchecked) state_ =  (mouse_buttons_ & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::unchecked_pressed : xtd::forms::visual_styles::check_box_state::unchecked_hot;
-          else if (check_state_ == xtd::forms::check_state::checked) state_ = (mouse_buttons_ & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::checked_pressed : xtd::forms::visual_styles::check_box_state::checked_hot;
-          else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = (mouse_buttons_ & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::mixed_pressed : xtd::forms::visual_styles::check_box_state::mixed_hot;
+          if (check_state_ == xtd::forms::check_state::unchecked) state_ =  (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::unchecked_pressed : xtd::forms::visual_styles::check_box_state::unchecked_hot;
+          else if (check_state_ == xtd::forms::check_state::checked) state_ = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::checked_pressed : xtd::forms::visual_styles::check_box_state::checked_hot;
+          else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::mixed_pressed : xtd::forms::visual_styles::check_box_state::mixed_hot;
         }
         button_base::on_mouse_enter(e);
       }

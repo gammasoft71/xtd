@@ -142,7 +142,7 @@ namespace xtd {
       }
 
       void on_mouse_enter(const event_args& e) override {
-        if (flat_style() != xtd::forms::flat_style::system && enabled()) state_ = (mouse_buttons_ & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::push_button_state::pressed : xtd::forms::visual_styles::push_button_state::hot;
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) state_ = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::push_button_state::pressed : xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_enter(e);
       }
 

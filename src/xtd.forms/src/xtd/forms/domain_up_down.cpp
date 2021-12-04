@@ -14,9 +14,9 @@ using namespace xtd;
 using namespace xtd::forms;
 
 domain_up_down::domain_up_down() {
-  //data_->back_color = default_back_color();
-  //data_->fore_color = default_fore_color();
-  data_->size = default_size();
+  //back_color(default_back_color());
+  //fore_color(default_fore_color());
+  size(default_size());
 
   items_.item_added += [&](size_t pos, const item& item) {
     if (is_handle_created()) native::domain_up_down::insert_item(handle(), pos, item.value());
@@ -98,12 +98,12 @@ void domain_up_down::on_handle_created(const event_args &e) {
     native::domain_up_down::insert_item(handle(), index, items_[index].value());
   native::domain_up_down::selected_index(handle(), selected_index_);
   if (selected_index_ != npos) selected_item_ = items_[selected_index_];
-  else native::control::text(handle(), data_->text);
+  else native::control::text(handle(), text());
 }
 
 void domain_up_down::on_text_changed(const event_args& e) {
   if (is_handle_created()) {
-    data_->text = native::control::text(handle());
+    text(native::control::text(handle()));
     if (selected_index_ != native::domain_up_down::selected_index(handle())) {
       selected_index_ = native::domain_up_down::selected_index(handle());
       if (selected_index_ == npos)

@@ -10,7 +10,7 @@ using namespace xtd::forms;
 
 track_bar::track_bar() {
   set_state(state::auto_size, true);
-  data_->size = default_size();
+  size(default_size());
 }
 
 track_bar& track_bar::large_change(int32_t large_change) {
@@ -113,8 +113,8 @@ void track_bar::on_handle_created(const event_args &e) {
 }
 
 drawing::size track_bar::measure_control() const {
-  if (orientation_ == forms::orientation::vertical) return {default_size().height(), data_->size.height()};
-  return {data_->size.width(), default_size().height()};
+  if (orientation_ == forms::orientation::vertical) return {default_size().height(), size().height()};
+  return {size().width(), default_size().height()};
 }
 
 void track_bar::on_scroll(const event_args &e) {

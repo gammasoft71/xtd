@@ -148,7 +148,7 @@ void check_box::wm_mouse_double_click(message &message) {
 void check_box::wm_mouse_down(message &message) {
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
-  mouse_buttons_ |= e.button();
+  set_mouse_buttons(mouse_buttons() | e.button());
   on_mouse_down(e);
 }
 
@@ -160,7 +160,7 @@ void check_box::wm_mouse_up(message &message) {
       case forms::check_state::indeterminate: check_state(forms::check_state::unchecked); break;
     }
   mouse_event_args e = mouse_event_args::create(message);
-  mouse_buttons_ &= ~e.button();
+  set_mouse_buttons(mouse_buttons() & ~e.button());
   if (client_rectangle().contains(e.location())) on_click(event_args::empty);
   on_mouse_click(e);
   on_mouse_up(e);
