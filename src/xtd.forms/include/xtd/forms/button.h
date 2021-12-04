@@ -56,51 +56,51 @@ namespace xtd {
       /// @brief Initializes a new instance of the button class.
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.
       button() {
-        auto_repeat_timer_.tick += [&] {
-          auto_repeat_timer_.enabled(false);
+        data_->auto_repeat_timer.tick += [&] {
+          data_->auto_repeat_timer.enabled(false);
           if (enabled()) {
             perform_click();
-            auto_repeat_timer_.interval_milliseconds(auto_repeat_interval_);
-            auto_repeat_timer_.enabled(auto_repeat_);
+            data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_interval);
+            data_->auto_repeat_timer.enabled(data_->auto_repeat);
           }
         };
       }
       
       /// @brief Gets if this button instance is auto repeat.
       /// @return true, if is auto repeat; otherwise false. Default is false.
-      virtual bool auto_repeat() const {return auto_repeat_;}
+      virtual bool auto_repeat() const {return data_->auto_repeat;}
       /// @brief Sets if this button instance is auto repeat.
       /// @param auto_repeat true, if is auto repeat; otherwise false. Default is false.
       /// @return This button.
       virtual button& auto_repeat(bool auto_repeat) {
-        if (auto_repeat_ != auto_repeat) {
-          auto_repeat_ = auto_repeat;
-          if (!auto_repeat_) auto_repeat_timer_.enabled(false);
+        if (data_->auto_repeat != auto_repeat) {
+          data_->auto_repeat = auto_repeat;
+          if (!data_->auto_repeat) data_->auto_repeat_timer.enabled(false);
         }
         return *this;
       }
       
       /// @brief Gets the auto repeat delay.
       /// @return Auto repeat delay in milliseconds. Default is 300 ms.
-      virtual int32_t auto_repeat_delay() const {return auto_repeat_delay_;}
+      virtual int32_t auto_repeat_delay() const {return data_->auto_repeat_delay;}
       /// @brief Gets the auto repeat delay.
       /// @param auto_repeat_delay Auto repeat delay in milliseconds. Default is 300 ms.
       /// @return This button.
       virtual button& auto_repeat_delay(int32_t auto_repeat_delay) {
-        if (auto_repeat_delay_ != auto_repeat_delay)
-          auto_repeat_delay_ = auto_repeat_delay;
+        if (data_->auto_repeat_delay != auto_repeat_delay)
+          data_->auto_repeat_delay = auto_repeat_delay;
         return *this;
       }
       
       /// @brief Gets the auto repeat interval.
       /// @return Auto repeat interval in milliseconds. Default is 100 ms.
-      virtual int32_t auto_repeat_interval() const {return auto_repeat_interval_;}
+      virtual int32_t auto_repeat_interval() const {return data_->auto_repeat_interval;}
       /// @brief Gets the auto repeat interval.
       /// @param auto_repeat_delay Auto repeat interval in milliseconds. Default is 100 ms.
       /// @return This button.
       virtual button& auto_repeat_interval(int32_t auto_repeat_interval) {
-        if (auto_repeat_interval_ != auto_repeat_interval)
-          auto_repeat_interval_ = auto_repeat_interval;
+        if (data_->auto_repeat_interval != auto_repeat_interval)
+          data_->auto_repeat_interval = auto_repeat_interval;
         return *this;
       }
 
@@ -111,7 +111,7 @@ namespace xtd {
       /// @param value One of the AutoSizeMode values. The default value is grow only.
       virtual button& auto_size_mode(forms::auto_size_mode value);
       
-      forms::dialog_result dialog_result() const override {return dialog_result_;}
+      forms::dialog_result dialog_result() const override {return data_->dialog_result;}
       control& dialog_result(forms::dialog_result dialog_result) override;
 
       void notify_default(bool value) override;
@@ -126,7 +126,7 @@ namespace xtd {
       void on_click(const event_args& e) override;
 
       void on_enabled_changed(const event_args& e) override {
-        if (flat_style() != xtd::forms::flat_style::system) state_ = enabled() ? (default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
+        if (flat_style() != xtd::forms::flat_style::system) data_->state = enabled() ? (data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
         button_base::on_enabled_changed(e);
       }
 
@@ -135,25 +135,25 @@ namespace xtd {
       void on_image_changed(const xtd::event_args& e) override;
 
       void on_mouse_down(const mouse_event_args& e) override {
-        auto_repeat_timer_.interval_milliseconds(auto_repeat_delay_);
-        auto_repeat_timer_.enabled(auto_repeat_);
-        if (flat_style() != xtd::forms::flat_style::system && enabled()) state_ = xtd::forms::visual_styles::push_button_state::pressed;
+        data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_delay);
+        data_->auto_repeat_timer.enabled(data_->auto_repeat);
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = xtd::forms::visual_styles::push_button_state::pressed;
         button_base::on_mouse_down(e);
       }
 
       void on_mouse_enter(const event_args& e) override {
-        if (flat_style() != xtd::forms::flat_style::system && enabled()) state_ = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::push_button_state::pressed : xtd::forms::visual_styles::push_button_state::hot;
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::push_button_state::pressed : xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_enter(e);
       }
 
       void on_mouse_leave(const event_args& e) override {
-        if (flat_style() != xtd::forms::flat_style::system && enabled()) state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;;
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;;
         button_base::on_mouse_leave(e);
       }
       
       void on_mouse_up(const mouse_event_args& e) override {
-        auto_repeat_timer_.enabled(false);
-        if (flat_style() != xtd::forms::flat_style::system && enabled() && state_ == xtd::forms::visual_styles::push_button_state::pressed) state_ = xtd::forms::visual_styles::push_button_state::hot;
+        data_->auto_repeat_timer.enabled(false);
+        if (flat_style() != xtd::forms::flat_style::system && enabled() && data_->state == xtd::forms::visual_styles::push_button_state::pressed) data_->state = xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_up(e);
       }
       
@@ -164,23 +164,23 @@ namespace xtd {
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       //void wnd_proc(message& message) override;
 
-      /// @cond
-      forms::dialog_result dialog_result_ = forms::dialog_result::none;
-      /// @endcond
-
       /// @brief Get state.
       /// @return One of xtd::forms::visual_styles::push_button_state values.
-      xtd::forms::visual_styles::push_button_state state() const noexcept {return state_;}
+      xtd::forms::visual_styles::push_button_state state() const noexcept {return data_->state;}
       
     private:
       //void wm_click(message& message);
       //void wm_mouse_up(message& message);
-      bool auto_repeat_ = false;
-      timer auto_repeat_timer_;
-      int32_t auto_repeat_delay_ = 300;
-      int32_t auto_repeat_interval_ = 100;
-      bool default_button_ = false;
-      xtd::forms::visual_styles::push_button_state state_ = xtd::forms::visual_styles::push_button_state::normal;
+      struct data {
+        bool auto_repeat = false;
+        timer auto_repeat_timer;
+        int32_t auto_repeat_delay = 300;
+        int32_t auto_repeat_interval = 100;
+        bool default_button = false;
+        forms::dialog_result dialog_result = forms::dialog_result::none;
+        xtd::forms::visual_styles::push_button_state state = xtd::forms::visual_styles::push_button_state::normal;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
    };
   }
 }

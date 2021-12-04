@@ -64,7 +64,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of check_box appearance.
       /// @include check_box.cpp
-      virtual forms::appearance appearance() const {return appearance_;}
+      virtual forms::appearance appearance() const {return data_->appearance;}
       /// @brief Gets the value that determines the appearance of a check_box control.
       /// @param appearance One of the appearance values. The default value is normal.
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
@@ -76,7 +76,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of check_box auto_check.
       /// @include check_box.cpp
-      virtual bool auto_check() const {return auto_check_;}
+      virtual bool auto_check() const {return data_->auto_check;}
       /// @brief Sets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
       /// @param auto_check true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
@@ -84,7 +84,7 @@ namespace xtd {
       
       /// @brief Gets the horizontal and vertical alignment of the check mark on a check_box control.
       /// @return One of the content_alignment values. The default value is middle_left.
-      virtual content_alignment check_align() const {return check_align_;}
+      virtual content_alignment check_align() const {return data_->check_align;}
       /// @brief Sets the horizontal and vertical alignment of the check mark on a check_box control.
       /// @param check_align One of the content_alignment values. The default value is middle_left.
       virtual check_box& check_align(content_alignment check_align);
@@ -95,7 +95,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of check_box checked.
       /// @include check_box.cpp
-      virtual bool checked() const {return checked_;}
+      virtual bool checked() const {return data_->checked;}
       /// @brief Sets a value indicating whether the check_box is in the checked state.
       /// @param checked true if the check_box is in the checked state; otherwise, false. The default value is false.
       /// @remarks When the value is true, the check_box portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
@@ -113,7 +113,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of check_box check_state.
       /// @include check_box.cpp
-      virtual forms::check_state check_state() const {return check_state_;}
+      virtual forms::check_state check_state() const {return data_->check_state;}
       /// @brief Sets the state of the check_box.
       /// @param check_state One of the check_state enumeration values. The default value is unchecked.
       /// @remarks The following table describes the xtd::forms::appearance of the check_box control in its different states for the normal and button style control check_box::appearance.
@@ -137,7 +137,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of check_box three_state.
       /// @include check_box.cpp
-      virtual bool three_state() const {return three_state_;}
+      virtual bool three_state() const {return data_->three_state;}
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
@@ -180,9 +180,9 @@ namespace xtd {
       /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       virtual void on_checked_changed(const event_args& e) {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
-          if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::check_box_state::unchecked_normal;
-          else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::check_box_state::checked_normal;
-          else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::check_box_state::mixed_normal;
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
         }
         checked_changed(*this, e);
         if (flat_style() != xtd::forms::flat_style::system) invalidate();
@@ -194,9 +194,9 @@ namespace xtd {
       /// @remarks The on_check_state_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       virtual void on_check_state_changed(const event_args& e) {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
-          if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::check_box_state::unchecked_normal;
-          else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::check_box_state::checked_normal;
-          else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::check_box_state::mixed_normal;
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
         }
         check_state_changed(*this, e);
         if (flat_style() != xtd::forms::flat_style::system) invalidate();
@@ -204,9 +204,9 @@ namespace xtd {
 
       void on_enabled_changed(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system) {
-          if (check_state_ == xtd::forms::check_state::unchecked) state_ = enabled() ? xtd::forms::visual_styles::check_box_state::unchecked_normal : xtd::forms::visual_styles::check_box_state::unchecked_disabled;
-          else if (check_state_ == xtd::forms::check_state::checked) state_ = enabled() ? xtd::forms::visual_styles::check_box_state::checked_normal : xtd::forms::visual_styles::check_box_state::checked_disabled;
-          else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = enabled() ? xtd::forms::visual_styles::check_box_state::mixed_normal : xtd::forms::visual_styles::check_box_state::mixed_disabled;
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::unchecked_normal : xtd::forms::visual_styles::check_box_state::unchecked_disabled;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::checked_normal : xtd::forms::visual_styles::check_box_state::checked_disabled;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::mixed_normal : xtd::forms::visual_styles::check_box_state::mixed_disabled;
         }
         button_base::on_enabled_changed(e);
       }
@@ -215,36 +215,36 @@ namespace xtd {
 
       void on_mouse_down(const mouse_event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
-          if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::check_box_state::unchecked_pressed;
-          else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::check_box_state::checked_pressed;
-          else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::check_box_state::mixed_pressed;
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_pressed;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_pressed;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_pressed;
         }
         button_base::on_mouse_down(e);
       }
       
       void on_mouse_enter(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
-          if (check_state_ == xtd::forms::check_state::unchecked) state_ =  (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::unchecked_pressed : xtd::forms::visual_styles::check_box_state::unchecked_hot;
-          else if (check_state_ == xtd::forms::check_state::checked) state_ = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::checked_pressed : xtd::forms::visual_styles::check_box_state::checked_hot;
-          else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::mixed_pressed : xtd::forms::visual_styles::check_box_state::mixed_hot;
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::unchecked_pressed : xtd::forms::visual_styles::check_box_state::unchecked_hot;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::checked_pressed : xtd::forms::visual_styles::check_box_state::checked_hot;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::mixed_pressed : xtd::forms::visual_styles::check_box_state::mixed_hot;
         }
         button_base::on_mouse_enter(e);
       }
       
       void on_mouse_leave(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
-          if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::check_box_state::unchecked_normal;
-          else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::check_box_state::checked_normal;
-          else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::check_box_state::mixed_normal;
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
         }
         button_base::on_mouse_leave(e);
       }
       
       void on_mouse_up(const mouse_event_args& e) override {
-        if (flat_style() != xtd::forms::flat_style::system && enabled() && (state_ == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state_ == xtd::forms::visual_styles::check_box_state::checked_pressed || state_ == xtd::forms::visual_styles::check_box_state::mixed_pressed)) {
-          if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::check_box_state::unchecked_hot;
-          else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::check_box_state::checked_hot;
-          else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::check_box_state::mixed_hot;
+        if (flat_style() != xtd::forms::flat_style::system && enabled() && (data_->state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || data_->state == xtd::forms::visual_styles::check_box_state::checked_pressed || data_->state == xtd::forms::visual_styles::check_box_state::mixed_pressed)) {
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_hot;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_hot;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_hot;
         }
         button_base::on_mouse_up(e);
       }
@@ -253,22 +253,26 @@ namespace xtd {
   
       /// @brief Get state.
       /// @return One of xtd::forms::visual_styles::check_box_state values.
-      xtd::forms::visual_styles::check_box_state state() const noexcept {return state_;}
+      xtd::forms::visual_styles::check_box_state state() const noexcept {return data_->state;}
 
      /// @cond
       void wnd_proc(message& message) override;
       virtual void wm_mouse_double_click(message& message);
       virtual void wm_mouse_down(message& message);
       virtual void wm_mouse_up(message& message);
-
-      forms::appearance appearance_ = forms::appearance::normal;
-      bool auto_check_ = true;
-      bool three_state_ = 0;
-      bool checked_ = false;
-      content_alignment check_align_ = content_alignment::middle_left;
-      forms::check_state check_state_ = forms::check_state::unchecked;
-      xtd::forms::visual_styles::check_box_state state_ = xtd::forms::visual_styles::check_box_state::unchecked_normal;
       /// @endcond
+
+    private:
+      struct data {
+        forms::appearance appearance = forms::appearance::normal;
+        bool auto_check = true;
+        bool three_state = 0;
+        bool checked = false;
+        content_alignment check_align = content_alignment::middle_left;
+        forms::check_state check_state = forms::check_state::unchecked;
+        xtd::forms::visual_styles::check_box_state state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

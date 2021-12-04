@@ -39,8 +39,8 @@ check_box::check_box() {
 }
 
 check_box& check_box::appearance(forms::appearance appearance) {
-  if (appearance_ != appearance) {
-    appearance_ = appearance;
+  if (data_->appearance != appearance) {
+    data_->appearance = appearance;
     recreate_handle();
     on_appearance_changed(event_args::empty);
   }
@@ -48,8 +48,8 @@ check_box& check_box::appearance(forms::appearance appearance) {
 }
 
 check_box& check_box::auto_check(bool auto_check) {
-  if (auto_check_ != auto_check)
-    auto_check_ = auto_check;
+  if (data_->auto_check != auto_check)
+    data_->auto_check = auto_check;
   return *this;
 }
 
@@ -59,29 +59,29 @@ check_box& check_box::checked(bool checked) {
 }
 
 check_box& check_box::check_align(content_alignment check_align) {
-  if (check_align_ != check_align) {
-    check_align_ = check_align;
+  if (data_->check_align != check_align) {
+    data_->check_align = check_align;
     recreate_handle();
   }
   return *this;
 }
 
 check_box& check_box::check_state(forms::check_state check_state) {
-  if (check_state_ != check_state) {
-    check_state_ = check_state;
-    if (checked_ != (check_state_ != forms::check_state::unchecked)) {
-      checked_ = check_state_ != forms::check_state::unchecked;
+  if (data_->check_state != check_state) {
+    data_->check_state = check_state;
+    if (data_->checked != (data_->check_state != forms::check_state::unchecked)) {
+      data_->checked = data_->check_state != forms::check_state::unchecked;
       on_checked_changed(event_args::empty);
     }
-    if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32_t>(check_state_));
+    if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32_t>(data_->check_state));
     on_check_state_changed(event_args::empty);
   }
   return *this;
 }
 
 check_box& check_box::three_state(bool three_state) {
-  if (three_state_ != three_state) {
-    three_state_ = three_state;
+  if (data_->three_state != three_state) {
+    data_->three_state = three_state;
     recreate_handle();
   }
   return *this;
@@ -91,12 +91,12 @@ forms::create_params check_box::create_params() const {
   forms::create_params create_params = button_base::create_params();
   
   create_params.class_name("checkbox");
-  if (three_state_) create_params.style(create_params.style() | (auto_check_ ? BS_AUTO3STATE : BS_3STATE));
-  else if (auto_check_) create_params.style(create_params.style() | BS_AUTOCHECKBOX);
+  if (data_->three_state) create_params.style(create_params.style() | (data_->auto_check ? BS_AUTO3STATE : BS_3STATE));
+  else if (data_->auto_check) create_params.style(create_params.style() | BS_AUTOCHECKBOX);
   else create_params.style(create_params.style() | BS_CHECKBOX);
-  if (appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
+  if (data_->appearance == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
 
-  switch (check_align_) {
+  switch (data_->check_align) {
     case content_alignment::top_right:
     case content_alignment::middle_right:
     case content_alignment::bottom_right: create_params.style(create_params.style() | BS_RIGHTBUTTON); break;
@@ -112,21 +112,21 @@ drawing::size check_box::measure_control() const {
 
 void check_box::on_handle_created(const event_args &e) {
   button_base::on_handle_created(e);
-  if (flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32_t>(check_state_));
-  if (flat_style() != xtd::forms::flat_style::system && check_state_ != xtd::forms::check_state::unchecked) invalidate();
+  if (flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32_t>(data_->check_state));
+  if (flat_style() != xtd::forms::flat_style::system && data_->check_state != xtd::forms::check_state::unchecked) invalidate();
 }
 
 void check_box::on_paint(paint_event_args& e) {
   if (flat_style() != xtd::forms::flat_style::system) {
     text_format_flags flags = to_text_format_flags(text_align());
-    if (appearance_ == xtd::forms::appearance::normal) {
-      if (flat_style() == xtd::forms::flat_style::flat) check_box_renderer::draw_flat_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds({18, 0, width(), height()}), focused(), state_, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
-      else if (flat_style() == xtd::forms::flat_style::popup) check_box_renderer::draw_popup_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds({18, 0, width(), height()}), focused(), state_, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
-      else theme_renderers::current_theme().draw_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds({18, 0, width(), height()}), focused(), state_, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
-    } else if (appearance_ == xtd::forms::appearance::button) {
-      if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(state_), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-      else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(state_), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-      else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(state_), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
+    if (data_->appearance == xtd::forms::appearance::normal) {
+      if (flat_style() == xtd::forms::flat_style::flat) check_box_renderer::draw_flat_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds({18, 0, width(), height()}), focused(), data_->state, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
+      else if (flat_style() == xtd::forms::flat_style::popup) check_box_renderer::draw_popup_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds({18, 0, width(), height()}), focused(), data_->state, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
+      else theme_renderers::current_theme().draw_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds({18, 0, width(), height()}), focused(), data_->state, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
+    } else if (data_->appearance == xtd::forms::appearance::button) {
+      if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
+      else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
+      else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
     }
   }
   button_base::on_paint(e);
@@ -153,7 +153,7 @@ void check_box::wm_mouse_down(message &message) {
 }
 
 void check_box::wm_mouse_up(message &message) {
-  if (auto_check_)
+  if (data_->auto_check)
     switch (check_state()) {
       case forms::check_state::unchecked: check_state(forms::check_state::checked); break;
       case forms::check_state::checked: check_state(three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;

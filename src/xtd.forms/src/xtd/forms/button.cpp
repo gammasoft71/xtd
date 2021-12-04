@@ -24,14 +24,14 @@ button& button::auto_size_mode(forms::auto_size_mode value) {
 }
 
 control& button::dialog_result(forms::dialog_result dialog_result) {
-  if (dialog_result_ != dialog_result)
-    dialog_result_ = dialog_result;
+  if (data_->dialog_result != dialog_result)
+    data_->dialog_result = dialog_result;
   return *this;
 }
 
 void button::notify_default(bool value) {
-  default_button_ = value;
-  if (enabled()) state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
+  data_->default_button = value;
+  if (enabled()) data_->state = data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
   if (flat_style() != xtd::forms::flat_style::system) invalidate();
   else {
     if (is_handle_created() && value && flat_style() == xtd::forms::flat_style::system) native::button::set_default_button(handle());
@@ -55,7 +55,7 @@ forms::create_params button::create_params() const {
 
 void button::on_click(const event_args& e) {
   if (enabled()) button_base::on_click(e);
-  if (dialog_result_ != forms::dialog_result::none &&  top_level_control().has_value() && static_cast<form&>(top_level_control().value().get()).modal()) {
+  if (data_->dialog_result != forms::dialog_result::none &&  top_level_control().has_value() && static_cast<form&>(top_level_control().value().get()).modal()) {
     static_cast<form&>(top_level_control().value().get()).dialog_result(dialog_result());
     static_cast<form&>(top_level_control().value().get()).close();
   }
@@ -73,16 +73,16 @@ void button::on_handle_created(const event_args& e) {
       native::control::location(handle(), location());
       native::control::size(handle(), size());
     }
-    if (default_button_ && flat_style() == xtd::forms::flat_style::system) native::button::set_default_button(handle());
+    if (data_->default_button && flat_style() == xtd::forms::flat_style::system) native::button::set_default_button(handle());
   }
 }
 
 void button::on_paint(paint_event_args& e) {
   if (flat_style() != xtd::forms::flat_style::system) {
     text_format_flags flags = to_text_format_flags(text_align());
-    if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), state_, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-    else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), state_, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-    else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), xtd::environment::os_version().is_macos_platform() && default_button_ && state_ == xtd::forms::visual_styles::push_button_state::hot ? xtd::forms::visual_styles::push_button_state::default_state  : state_, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
+    if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), data_->state, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
+    else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), data_->state, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
+    else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), xtd::environment::os_version().is_macos_platform() && data_->default_button && data_->state == xtd::forms::visual_styles::push_button_state::hot ? xtd::forms::visual_styles::push_button_state::default_state  : data_->state, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
   }
   button_base::on_paint(e);
 }
