@@ -110,15 +110,15 @@ namespace xtd {
       /// @brief Gets the collection of items in this checked_list_box.
       /// @return The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @remarks The items property enables you to obtain a reference to the list of items that are currently stored in a checked_list_box control. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
-      object_collection& items() {return items_;}
+      object_collection& items() {return data_->items;}
       /// @brief Gets the collection of items in this checked_list_box.
       /// @return The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @remarks The items property enables you to obtain a reference to the list of items that are currently stored in a checked_list_box control. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
-      const object_collection& items() const {return items_;}
+      const object_collection& items() const {return data_->items;}
       /// @brief Sets the collection of items in this checked_list_box.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       const list_box& items(const object_collection& items) {
-        items_ = items;
+        data_->items = items;
         return *this;
       }
       
@@ -134,7 +134,7 @@ namespace xtd {
       /// @return An object that represents the current selection in the control.
       /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
       /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
-      const item& selected_item() const {return selected_item_;}
+      const item& selected_item() const {return data_->selected_item;}
       /// @brief Sets the currently selected item in the list_box.
       /// @param selected_item An object that represents the current selection in the control.
       /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
@@ -151,7 +151,7 @@ namespace xtd {
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       control& text(const xtd::ustring& text) override {
-        selected_item_ = {text};
+        data_->selected_item = {text};
         return *this;
       }
   
@@ -201,7 +201,7 @@ namespace xtd {
       event<checked_list_box, item_check_event_handler> item_check;
 
     protected:
-      bool allow_selection() override {return selection_mode_ != forms::selection_mode::none;}
+      bool allow_selection() override {return selection_mode() != forms::selection_mode::none;}
 
       forms::create_params create_params() const override;
 
@@ -223,10 +223,12 @@ namespace xtd {
       
       void wm_mouse_up(message& message) override;
       
-      /// @cond
-      object_collection items_;
-      item selected_item_;
-      /// @endcond
+    private:
+      struct data {
+        object_collection items;
+        item selected_item;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

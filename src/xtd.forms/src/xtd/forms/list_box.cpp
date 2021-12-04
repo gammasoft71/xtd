@@ -22,46 +22,46 @@ list_box::list_box() {
   //fore_color(default_fore_color());
   size(default_size());
 
-  items_.item_added += [this](size_t index, const item& item) {
+  data_->items.item_added += [this](size_t index, const item& item) {
     if (is_handle_created()) native::list_box::insert_item(handle(), index, item.value());
     list_box::item selected_item;
-    if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
+    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
 
-  items_.item_removed += [this](size_t index, const item& item) {
+  data_->items.item_removed += [this](size_t index, const item& item) {
     if (is_handle_created()) if (is_handle_created()) native::list_box::delete_item(handle(), index);
     list_box::item selected_item;
-    if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
+    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
   
-  items_.item_updated += [this](size_t index, const item& item) {
+  data_->items.item_updated += [this](size_t index, const item& item) {
     if (is_handle_created()) native::list_box::update_item(handle(), index, item.value());
     list_box::item selected_item;
-    if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
+    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
 }
 
 list_box& list_box::border_style(forms::border_style border_style) {
-  if (border_style_ != border_style) {
-    border_style_ = border_style;
+  if (data_->border_style != border_style) {
+    data_->border_style = border_style;
     recreate_handle();
   }
   return *this;
 }
 
 list_control& list_box::selected_index(size_t selected_index) {
-  if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
-  if (selected_index_ != selected_index) {
-    selected_index_ = selected_index;
-    if (is_handle_created()) native::list_box::selected_index(handle(), selected_index_);
+  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
+  if (this->selected_index() != selected_index) {
+    set_selected_index(selected_index);
+    if (is_handle_created()) native::list_box::selected_index(handle(), this->selected_index());
     
     item selected_item;
-    if (selected_index_ != npos) selected_item = items_[selected_index_];
+    if (this->selected_index() != npos) selected_item = data_->items[this->selected_index()];
     //this->selected_item(selected_item);
-    selected_item_ = selected_item;
+    data_->selected_item = selected_item;
     on_selected_value_changed(event_args::empty);
     
     on_selected_index_changed(event_args::empty);
@@ -74,18 +74,18 @@ vector<size_t> list_box::selected_indices() const {
 }
 
 list_box& list_box::selected_item(const item& selected_item) {
-  if (selected_item_ != selected_item) {
-    auto it = std::find(items_.begin(), items_.end(), selected_item);
-    if (it == items_.end()) {
-      if (selected_index() == npos || items().size() == 0) selected_item_ = "";
+  if (data_->selected_item != selected_item) {
+    auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
+    if (it == data_->items.end()) {
+      if (selected_index() == npos || items().size() == 0) data_->selected_item = "";
       else {
-        if (selected_index() >= items().size()) selected_item_ = items()[items().size() - 1];
-        else selected_item_ = items()[selected_index()];
+        if (selected_index() >= items().size()) data_->selected_item = items()[items().size() - 1];
+        else data_->selected_item = items()[selected_index()];
       }
     } else {
-      size_t index = it - items_.begin();
+      size_t index = it - data_->items.begin();
       selected_index(index);
-      selected_item_ = *it;
+      data_->selected_item = *it;
       on_selected_value_changed(event_args::empty);
     }
   }
@@ -95,22 +95,22 @@ list_box& list_box::selected_item(const item& selected_item) {
 vector<list_box::item> list_box::selected_items() const {
   vector<item> items;
   for (size_t index : selected_indices())
-    items.push_back(items_[index]);
+    items.push_back(data_->items[index]);
   return items;
 }
 
 list_box& list_box::selection_mode(forms::selection_mode selection_mode) {
-  if (selection_mode_ != selection_mode) {
-    selection_mode_ = selection_mode;
+  if (data_->selection_mode != selection_mode) {
+    data_->selection_mode = selection_mode;
     recreate_handle();
   }
   return *this;
 }
 
 list_box& list_box::sorted(bool sorted) {
-  if (sorted_ != sorted) {
-    sorted_ = sorted;
-    items_.sorted(sorted_);
+  if (data_->sorted != sorted) {
+    data_->sorted = sorted;
+    data_->items.sorted(data_->sorted);
   }
   return *this;
 }
@@ -129,7 +129,7 @@ forms::create_params list_box::create_params() const {
   create_params.class_name("listbox");
   create_params.style(create_params.style() | LBS_HASSTRINGS);
 
-  switch (selection_mode_) {
+  switch (data_->selection_mode) {
   case selection_mode::none: create_params.style(create_params.style() | LBS_NOSEL); break;
   case selection_mode::one:  break;
   case selection_mode::multi_simple: create_params.style(create_params.style() | LBS_MULTIPLESEL); break;
@@ -138,26 +138,26 @@ forms::create_params list_box::create_params() const {
   }
 
   // Do not use native control sort
-  //if (sorted_) create_params.style(create_params.style() | LBS_SORT);
+  //if (data_->sorted) create_params.style(create_params.style() | LBS_SORT);
 
-  if (border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (data_->border_style == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
 
   return create_params;
 }
 
 void list_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
-  items_.sorted(sorted_);
-  for (size_t index = 0; index < items_.size(); ++index)
-    native::list_box::insert_item(handle(), index, items_[index].value());
-  if (selection_mode_ == forms::selection_mode::none) selected_index(npos);
-  native::list_box::selected_index(handle(), selected_index_);
-  if (selected_index_ != npos) selected_item_ = items_[selected_index_];
+  data_->items.sorted(data_->sorted);
+  for (size_t index = 0; index < data_->items.size(); ++index)
+    native::list_box::insert_item(handle(), index, data_->items[index].value());
+  if (data_->selection_mode == forms::selection_mode::none) selected_index(npos);
+  native::list_box::selected_index(handle(), selected_index());
+  if (selected_index() != npos) data_->selected_item = data_->items[selected_index()];
 }
 
 void list_box::on_selected_value_changed(const event_args& e) {
-  list_control::text(selected_item_.value());
+  list_control::text(data_->selected_item.value());
   list_control::on_selected_value_changed(e);
 }
 
@@ -174,7 +174,7 @@ void list_box::wnd_proc(message& message) {
 
 void list_box::wm_mouse_double_click(message& message) {
   selected_index(native::list_box::selected_index(handle()));
-  if (selected_index_ != npos) selected_item(items_[selected_index_]);
+  if (selected_index() != npos) selected_item(data_->items[selected_index()]);
   if (allow_selection())
     list_control::wnd_proc(message);
 }
@@ -186,7 +186,7 @@ void list_box::wm_mouse_down(message& message) {
 
 void list_box::wm_mouse_up(message& message) {
   selected_index(native::list_box::selected_index(handle()));
-  if (selected_index_ != npos) selected_item(items_[selected_index_]);
+  if (selected_index() != npos) selected_item(data_->items[selected_index()]);
   if (allow_selection())
     list_control::wnd_proc(message);
 }
@@ -194,5 +194,5 @@ void list_box::wm_mouse_up(message& message) {
 void list_box::wm_reflect_command(message& message) {
   def_wnd_proc(message);
   selected_index(native::list_box::selected_index(handle()));
-  if (selected_index_ != npos) selected_item(items_[selected_index_]);
+  if (selected_index() != npos) selected_item(data_->items[selected_index()]);
 }

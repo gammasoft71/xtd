@@ -81,7 +81,7 @@ namespace xtd {
 
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      virtual size_t selected_index() const {return selected_index_;}
+      virtual size_t selected_index() const {return data_->selected_index;}
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current list_control.
@@ -116,9 +116,15 @@ namespace xtd {
       /// @brief Raises the list_control::selected_value_changed event.
       virtual void on_selected_value_changed(const event_args& e) {selected_value_changed(*this, e);}
 
-      /// @cond
-      size_t selected_index_ = npos;
-      /// @endcond;
+      /// @brief Set the currently selected item.
+      /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
+      void set_selected_index(size_t value) {data_->selected_index = value;}
+
+    private:
+      struct data {
+        size_t selected_index = npos;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

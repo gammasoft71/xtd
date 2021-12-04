@@ -33,7 +33,7 @@ namespace xtd {
 
       /// @brief Gets the type of border that is drawn around the list_box.
       /// @return One of the xtd::forms::border_styleforms::border_style values. The default is fixed_single.
-      virtual forms::border_style border_style() const {return border_style_;}
+      virtual forms::border_style border_style() const {return data_->border_style;}
       /// @brief Sets the type of border that is drawn around the list_box.
       /// @param border_style One of the xtd::forms::border_styleforms::border_style values. The default is fixed_single.
       /// @return Current list_box.
@@ -48,16 +48,16 @@ namespace xtd {
       /// @brief Gets the items of the list_box.
       /// @return An list_box::object_collection representing the items in the list_box.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the list_box. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
-      object_collection& items() {return items_;}
+      object_collection& items() {return data_->items;}
       /// @brief Gets the items of the list_box.
       /// @return An list_box::object_collection representing the items in the list_box.
-      const object_collection& items() const {return items_;}
+      const object_collection& items() const {return data_->items;}
       /// @brief Sets the items of the list_box.
       /// @param items An list_box::object_collection representing the items in the list_box.
       /// @return Current list_box.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the list_box. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
       const list_box& items(const object_collection& items) {
-        items_ = items;
+        data_->items = items;
         return *this;
       }
       
@@ -77,7 +77,7 @@ namespace xtd {
       /// @return An object that represents the current selection in the control.
       /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
       /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
-      const item& selected_item() const {return selected_item_;}
+      const item& selected_item() const {return data_->selected_item;}
       /// @brief Sets the currently selected item in the list_box.
       /// @param selected_item An object that represents the current selection in the control.
       /// @return Current list_box.
@@ -94,7 +94,7 @@ namespace xtd {
       /// @brief Gets the method in which items are selected in the list_box.
       /// @return One of the selection_mode values. The default is selection_mode::one.
       /// @remarks The selection_mode property enables you to determine how many items in the list_box a user can select at one time and how the user can make multiple-selections. When the selection_mode property is set to selection_mode::multi_extended, pressing SHIFT and clicking the mouse or pressing SHIFT and one of the arrow keys (UP ARROW, DOWN ARROW, LEFT ARROW, and RIGHT ARROW) extends the selection from the previously selected item to the current item. Pressing CTRL and clicking the mouse selects or deselects an item in the list. When the property is set to selection_mode::multi_simple, a mouse click or pressing the SPACEBAR selects or deselects an item in the list.
-      virtual forms::selection_mode selection_mode() const {return selection_mode_;}
+      virtual forms::selection_mode selection_mode() const {return data_->selection_mode;}
       /// @brief Sets the method in which items are selected in the list_box.
       /// @param selection_mode One of the selection_mode values. The default is selection_mode::one.
       /// @return Current list_box.
@@ -104,7 +104,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the items in the list_box are sorted alphabetically.
       /// @return true if items in the control are sorted; otherwise, false. The default is false.
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a list_box. As items are added to a sorted list_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
-      virtual bool sorted() const {return sorted_;}
+      virtual bool sorted() const {return data_->sorted;}
       /// @brief Sets a value indicating whether the items in the list_box are sorted alphabetically.
       /// @param sorted true if items in the control are sorted; otherwise, false. The default is false.
       /// @return Current list_box.
@@ -124,7 +124,7 @@ namespace xtd {
       void end_update();
       
     protected:
-      bool allow_selection() override {return selection_mode_ != forms::selection_mode::none;}
+      bool allow_selection() override {return data_->selection_mode != forms::selection_mode::none;}
 
       forms::create_params create_params() const override;
 
@@ -149,13 +149,15 @@ namespace xtd {
       /// @param message The message the top-level window sent to the list_box control.
       virtual void wm_mouse_up(message& message);
       
-      /// @cond
-      forms::border_style border_style_ = forms::border_style::fixed_single;
-      object_collection items_;
-      item selected_item_;
-      forms::selection_mode selection_mode_ = forms::selection_mode::one;
-      bool sorted_ = false;
-      /// @endcond
+    private:
+      struct data {
+        forms::border_style border_style = forms::border_style::fixed_single;
+        object_collection items;
+        item selected_item;
+        forms::selection_mode selection_mode = forms::selection_mode::one;
+        bool sorted = false;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
