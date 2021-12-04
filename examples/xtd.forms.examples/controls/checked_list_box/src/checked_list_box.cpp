@@ -12,9 +12,9 @@ namespace examples {
       client_size({200, 240});
 
       checked_list_box1.parent(*this);
-      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
       checked_list_box1.location({20, 20});
       checked_list_box1.size({160, 200});
+      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
 
       for (auto index = 1; index <= 10; ++index)
         checked_list_box1.items().push_back({ustring::format("Item {}", index), index % 2 != 0});
