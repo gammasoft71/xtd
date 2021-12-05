@@ -19,6 +19,7 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    /// @brief Synchronizes the buffers with the associated character sequence 
     int sync() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
       if (!str().empty()) {

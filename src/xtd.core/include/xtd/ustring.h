@@ -47,6 +47,9 @@ namespace xtd {
   /// @remarks xtd::ustring is inherited from std::basic_string<char> and therefore offers the full (immutable) API of std::string.
   class ustring : public object, public std::basic_string<char> {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initializes a new instance of xtd::ustring.
     ustring() noexcept;
     /// @brief Initializes a new instance of xtd::ustring with specified allocator.
@@ -316,6 +319,7 @@ namespace xtd {
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<wchar_t> il, const allocator_type& allocator);
+    /// @}
 
     /// @cond
     /*
@@ -420,6 +424,9 @@ namespace xtd {
     ustring substr(size_type index = 0, size_type count = npos) const;    
    /// @endcond
     
+    /// @name Methods
+    
+    /// @{
     /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
@@ -1252,6 +1259,7 @@ namespace xtd {
         return false;
       }
     }
+    /// @}
 
     /// @cond
     friend std::ostream& operator<<(std::ostream& stream, const ustring& str) {return stream << str.c_str();}

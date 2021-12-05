@@ -18,7 +18,15 @@ namespace xtd {
   /// @ingroup xtd_core
   class processor final : public object {
   public:
+    /// @name Constructors
+    
+    /// @{
+    /// @brief Initialise a new instance oof xtd::processor class.
+    /// @param architecture One of xtd::architectuure_id valuues.
+    /// @param is_64_bit true if 64 bit architecture; otherwise false.
+    /// @param core_count THe number of cores.
     processor(xtd::architecture_id architecture, bool is_64_bit, uint32_t core_count) : architecture_(architecture), is_64_bit_(is_64_bit), core_count_(core_count) {}
+    /// @}
 
     /// @cond
     processor() = default;
@@ -27,6 +35,9 @@ namespace xtd {
     friend std::ostream& operator <<(std::ostream& os, const processor& processor) noexcept {return os << processor.to_string();}
     /// @endcond
     
+    /// @name Properties
+    
+    /// @{
     /// @brief Gets a xtd::platform_id enumeration value that identifies the operating system platform.
     /// @return xtd::platform_id One of the xtd::platform_id values.
     xtd::architecture_id architecture() const noexcept {return architecture_;}
@@ -55,10 +66,15 @@ namespace xtd {
       }
       return architecture_string_;
     }
+    /// @}
     
+    /// @name Methods
+    
+    /// @{
     /// @brief Converts the value of this processor object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
     xtd::ustring to_string() const noexcept {return architecture_string();}
+    /// @}
     
   private:
     xtd::architecture_id architecture_ = xtd::architecture_id::unknown;

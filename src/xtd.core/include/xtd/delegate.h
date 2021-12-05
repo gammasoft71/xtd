@@ -29,9 +29,16 @@ namespace xtd {
   template<typename result_t>
   class delegate<result_t()> : public object {
   public:
+    /// @name Alias
+    
+    /// @{
     /// @brief function_t pointer type
     using function_t = std::function <result_t()>;
+    /// @}
     
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initializes an empty delegate.
     delegate() = default;
     /// @brief Initializes a delegate that invokes the specified delegate instance.
@@ -61,21 +68,11 @@ namespace xtd {
     delegate(const object1_t& object, result_t(object2_t::*method)()) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object))));
     }
+    /// @}
 
-    /// @brief invokes the method represented by the current delegate.
-    /// @param arguments The parameter list.
-    /// @return result_t The return value.
-    result_t operator()() const {
-      if (data_->functions.size() == 0) return result_t();
-      
-      for (size_t i = 0; i < data_->functions.size() - 1; i++) {
-        if (data_->functions[i] == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
-        data_->functions[i]();
-      }
-      if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
-      return data_->functions.back()();
-    }
-
+    /// @name Methods
+    
+    /// @{
     /// @brief Gets the delegates array
     /// @return The delegates array.
     const std::vector<function_t>& functions() const {return data_->functions;}
@@ -160,7 +157,25 @@ namespace xtd {
       }
       return result;
     }
+    /// @}
     
+    /// @name Operators
+    
+    /// @{
+    /// @brief invokes the method represented by the current delegate.
+    /// @param arguments The parameter list.
+    /// @return result_t The return value.
+    result_t operator()() const {
+      if (data_->functions.size() == 0) return result_t();
+      
+      for (size_t i = 0; i < data_->functions.size() - 1; i++) {
+        if (data_->functions[i] == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+        data_->functions[i]();
+      }
+      if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+      return data_->functions.back()();
+    }
+
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
@@ -185,6 +200,7 @@ namespace xtd {
       data_->functions.push_back(function);
       return *this;
     }
+    /// @}
     
     /// @cond
     delegate operator+(const delegate& other) noexcept {
@@ -268,11 +284,18 @@ namespace xtd {
   template<typename result_t, typename... arguments_t>
   class delegate<result_t(arguments_t...)> : public object {
   public:
+    /// @name Alias
+    
+    /// @{
     /// @brief no_arguments_function_t pointer type
     using no_arguments_function_t = std::function <result_t()>;
     /// @brief function_t pointer type
     using function_t = std::function <result_t(arguments_t...)>;
+    /// @}
 
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initializes an empty delegate.
     delegate() = default;
     /// @brief Initializes a delegate that invokes the specified delegate instance.
@@ -315,6 +338,7 @@ namespace xtd {
     delegate(const object1_t& object, result_t(object2_t::*method)()) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object))));
     }
+    /// @}
 
     /// @cond
     template<typename object1_t, typename object2_t, typename a1_t>
@@ -418,32 +442,9 @@ namespace xtd {
     }
     /// @endcond
 
-    /// @brief invokes the method represented by the current delegate.
-    /// @param arguments The parameter list.
-    /// @return result_t The return value.
-    result_t operator()(arguments_t... arguments) const {
-      if (data_->no_arguments_functions.size() == 0 && data_->functions.size() == 0) return result_t();
-
-      if (data_->no_arguments_functions.size()) {
-        for (size_t i = 0; i < data_->no_arguments_functions.size() - (data_->functions.size() == 0 ? 1 : 0); i++) {
-          if (data_->no_arguments_functions[i] == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
-          data_->no_arguments_functions[i]();
-        }
-        
-        if (data_->functions.size() == 0) {
-          if (data_->no_arguments_functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
-          return data_->no_arguments_functions.back()();
-        }
-      }
-
-      for (size_t i = 0; i < data_->functions.size() - 1; i++) {
-        if (data_->functions[i] == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
-        data_->functions[i](arguments...);
-      }
-      if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
-      return data_->functions.back()(arguments...);
-    }
+    /// @name Methods
     
+    /// @{
     /// @brief Gets the no arguments delegates array
     /// @return The delegates array.
     const std::vector<no_arguments_function_t>& no_arguments_functions() const {return data_->no_arguments_functions;}
@@ -560,7 +561,37 @@ namespace xtd {
       }
       return result;
     }
+    /// @}
 
+    /// @name Operators
+    
+    /// @{
+    /// @brief invokes the method represented by the current delegate.
+    /// @param arguments The parameter list.
+    /// @return result_t The return value.
+    result_t operator()(arguments_t... arguments) const {
+      if (data_->no_arguments_functions.size() == 0 && data_->functions.size() == 0) return result_t();
+      
+      if (data_->no_arguments_functions.size()) {
+        for (size_t i = 0; i < data_->no_arguments_functions.size() - (data_->functions.size() == 0 ? 1 : 0); i++) {
+          if (data_->no_arguments_functions[i] == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+          data_->no_arguments_functions[i]();
+        }
+        
+        if (data_->functions.size() == 0) {
+          if (data_->no_arguments_functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+          return data_->no_arguments_functions.back()();
+        }
+      }
+      
+      for (size_t i = 0; i < data_->functions.size() - 1; i++) {
+        if (data_->functions[i] == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+        data_->functions[i](arguments...);
+      }
+      if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+      return data_->functions.back()(arguments...);
+    }
+    
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
@@ -583,6 +614,7 @@ namespace xtd {
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
     bool operator!=(const delegate& delegate) const { return !operator==(delegate); }
+    /// @}
 
     /// @cond
     template<typename type_t>

@@ -92,6 +92,9 @@ namespace xtd {
   /// @endcode
   class version final : public object, public icomparable<version> {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initializes a new instance of the xtd::version class.
     /// @remarks This constructor creates a xtd::version object with the following property values.
     /// | Property               | Value |
@@ -154,6 +157,7 @@ namespace xtd {
     /// The following code example demonstrates the xtd::version constructor, and xtd::version::major, xtd::version::minor, xtd::version::build, xtd::version::revision, xtd::version::major_revision, and xtd::version::minor_revision properties.
     /// @include version.cpp
     version(int32_t major, int32_t minor, int32_t build, int32_t revision);
+    /// @}
 
     /// @cond
     version(const version&) noexcept = default;
@@ -163,6 +167,9 @@ namespace xtd {
     bool operator!=(const version& v) const noexcept;
     /// @endcond
 
+    /// @name Properties
+    
+    /// @{
     /// @brief Gets the value of the build component of the version number for the current xtd::version object.
     /// @return The build number, or -1 if the build number is undefined.
     /// @remarks For example, if the version number is 6.2.1.3, the build number is 1. If the version number is 6.2, the build number is undefined.
@@ -192,7 +199,11 @@ namespace xtd {
     /// @return The revision number, or -1 if the revision number is undefined.
     /// @remarks For example, if the version number is 6.2.1.3, the revision number is 3. If the version number is 6.2, the revision number is undefined.
     int32_t revision() const noexcept;
+    /// @}
 
+    /// @name Methods
+    
+    /// @{
     /// @brief Compares the current xtd::version object to a specified object and returns an indication of their relative values.
     /// @param version An object to compare.
     /// @return A signed integer that indicates the relative values of the two objects, as shown in the following table.
@@ -267,6 +278,7 @@ namespace xtd {
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods.
     static bool try_parse(const xtd::ustring& input, version& result) noexcept;
+    /// @}
 
   private:
     int32_t major_ = 0;

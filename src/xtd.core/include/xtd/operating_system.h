@@ -22,6 +22,9 @@ namespace xtd {
   /// @remarks By design, the operating_system class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the operating_system class. If you need a type to contain other information about an operating system, create your own type, then include a field of type operating_system and any additional fields or methods that you require.
   class operating_system final : public object {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
     /// @param platform One of the xtd::platform_id values that indicates the operating system platform.
     /// @param version A Version object that indicates the version of the operating system.
@@ -54,6 +57,7 @@ namespace xtd {
     /// @exception ArgumentNullException version is null.
     /// @exception ArgumentException platform is not a xtd::platform_id enumeration value.
     operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::ustring& service_pack, const xtd::ustring& desktop_environment, bool is_64_bit) : platform_(platform), version_(version), service_pack_(service_pack), desktop_environment_(desktop_environment), is_64_bit_(is_64_bit) {}
+    /// @}
 
     /// @cond
     operating_system() = default;
@@ -62,28 +66,15 @@ namespace xtd {
     friend std::ostream& operator <<(std::ostream& os, const operating_system& operating_system) noexcept {return os << operating_system.to_string();}
     /// @endcond
     
+    /// @name Properties
+    
+    /// @{
     /// @brief Gets the desktop environment .
     /// @return string The desktop environment for the operating system, if not found empty string ("").
     /// @remarks On Windows is always "windows".
     /// @remarks On macOS is always "macos".
     /// @remarks On linux it can be "budgie", "cinnamon",  "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor-qt", "unity", "xfce".
     xtd::ustring desktop_environment() const {return desktop_environment_;}
-    
-    /// @brief Determines whether the current operating system is a 64-bit operating system.
-    /// @return true if the operating system is 64-bit; otherwise, false.
-    bool is_64_bit() const noexcept {return is_64_bit_;}
-
-    /// @brief Determines whether the current platform is macOS family.
-    /// @return true if the current platform is macOS family; otherwise, false.
-    bool is_macos_platform() const noexcept {return platform_ == xtd::platform_id::macos || platform_ == xtd::platform_id::ios;}
-    
-    /// @brief Determines whether the current platform is Unix family.
-    /// @return true if the current platform is Unix family; otherwise, false.
-    bool is_linux_platform() const noexcept {return platform_ == xtd::platform_id::unix || platform_ == xtd::platform_id::android;}
-    
-    /// @brief Determines whether the current platform is Windows family.
-    /// @return true if the current platform is Windows family; otherwise, false.
-    bool is_windows_platform() const noexcept {return platform_ == xtd::platform_id::win32_nt || platform_ == xtd::platform_id::win32s || platform_ == xtd::platform_id::win32_windows || platform_ == xtd::platform_id::win_ce || platform_ == xtd::platform_id::xbox;}
     
     /// @brief Gets the concatenated string representation of the platform identifier.
     /// @return The string representation of the values returned by the platform.
@@ -117,10 +108,59 @@ namespace xtd {
       if (!service_pack_.empty()) version_string_ += ustring::format(" {}", service_pack());
       return version_string_;
     }
+    /// @}
     
+    /// @name Methods
+    
+    /// @{
+    /// @brief Determines whether the current operating system is a 64-bit operating system.
+    /// @return true if the operating system is 64-bit; otherwise, false.
+    bool is_64_bit() const noexcept {return is_64_bit_;}
+
+    /// @brief Determines whether the current platform is Unix family.
+    /// @return true if the current platform is Unix family; otherwise, false.
+    bool is_android() const noexcept {return platform_ == xtd::platform_id::android;}
+
+    /// @brief Determines whether the current platform is iOS.
+    /// @return true if the current platform is macOS family; otherwise, false.
+    bool is_ios() const noexcept {return platform_ == xtd::platform_id::ios;}
+
+    /// @brief Determines whether the current platform is macOS.
+    /// @return true if the current platform is macOS family; otherwise, false.
+    bool is_macos() const noexcept {return platform_ == xtd::platform_id::macos;}
+    
+    /// @brief Determines whether the current platform is macOS family.
+    /// @return true if the current platform is macOS family; otherwise, false.
+    bool is_macos_platform() const noexcept {return platform_ == xtd::platform_id::macos || platform_ == xtd::platform_id::ios || platform_ == xtd::platform_id::tvos || platform_ == xtd::platform_id::watchos;}
+
+    /// @brief Determines whether the current platform is Unix family.
+    /// @return true if the current platform is Unix family; otherwise, false.
+    bool is_linux() const noexcept {return platform_ == xtd::platform_id::unix;}
+
+    /// @brief Determines whether the current platform is Unix family.
+    /// @return true if the current platform is Unix family; otherwise, false.
+    bool is_linux_platform() const noexcept {return platform_ == xtd::platform_id::unix || platform_ == xtd::platform_id::android;}
+
+    /// @brief Determines whether the current platform is macOS family.
+    /// @return true if the current platform is macOS family; otherwise, false.
+    bool is_tvos() const noexcept {return platform_ == xtd::platform_id::ios;}
+    
+    /// @brief Determines whether the current platform is macOS family.
+    /// @return true if the current platform is macOS family; otherwise, false.
+    bool is_watchos_platform() const noexcept {return platform_ == xtd::platform_id::tvos || platform_ == xtd::platform_id::watchos;}
+
+    /// @brief Determines whether the current platform is Windows family.
+    /// @return true if the current platform is Windows family; otherwise, false.
+    bool is_windows() const noexcept {return platform_ == xtd::platform_id::win32_nt || platform_ == xtd::platform_id::win32s || platform_ == xtd::platform_id::win32_windows;}
+
+    /// @brief Determines whether the current platform is Windows family.
+    /// @return true if the current platform is Windows family; otherwise, false.
+    bool is_windows_platform() const noexcept {return platform_ == xtd::platform_id::win32_nt || platform_ == xtd::platform_id::win32s || platform_ == xtd::platform_id::win32_windows || platform_ == xtd::platform_id::win_ce || platform_ == xtd::platform_id::xbox;}
+
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
     xtd::ustring to_string() const noexcept {return version_string();}
+    /// @}
     
   private:
     xtd::platform_id platform_ = xtd::platform_id::unknown;

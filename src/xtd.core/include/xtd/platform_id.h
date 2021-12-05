@@ -31,10 +31,18 @@ namespace xtd {
     xbox,
     /// @brief The operating system is Macintosh.
     macos,
-    /// @brief The operating system is IOs Apple.
+    /// @brief The operating system is iOS Apple.
     ios,
     /// @brief The operating system is Android.
     android,
+    /// @brief The operating system is Linux.
+    linux,
+    /// @brief The operating system is tvOS Apple.
+    tvos,
+    /// @brief The operating system is watchOS Apple.
+    watchos,
+    /// @biref The operating system is other.
+    other,
   };
 
   inline std::ostream& operator<<(std::ostream& os, platform_id value) {return os << to_string(value, {{platform_id::unknown, "unknown"}, {platform_id::win32s, "win32s"}, {platform_id::win32_windows, "win32_windows"}, {platform_id::win32_nt, "win32_nt"}, {platform_id::win_ce, "win_ce"}, {platform_id::unix, "unix"}, {platform_id::xbox, "xbox"}, {platform_id::macos, "macos"}, {platform_id::ios, "ios"}, {platform_id::android, "android"}});}

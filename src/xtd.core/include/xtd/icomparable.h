@@ -17,6 +17,9 @@ namespace xtd {
   template <typename type_t>
   class icomparable interface_ {
   public:
+    /// @name Methods
+    
+    /// @{
     /// @brief Compares the current instance with another object of the same type.
     /// @param obj An object to compare with this instance.
     /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
@@ -41,6 +44,7 @@ namespace xtd {
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
     virtual int32_t compare_to(const type_t& obj) const noexcept = 0;
+    /// @}
     
     ///@cond
     // Not correct for an interface but necessary for C++ language.

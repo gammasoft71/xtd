@@ -18,13 +18,20 @@ namespace xtd {
   /// @ingroup xtd_core system
   class translator final static_ {
   public:
+    /// @name Properties
+    
+    /// @{
     static xtd::ustring language();
     static void language(const xtd::ustring& language);
     
     static std::vector<xtd::ustring> languages();
 
     static xtd::ustring system_language();
+    /// @}
 
+    /// @name Metthods
+    
+    /// @{
     static void add_value(const xtd::ustring& language, const xtd::ustring& key, const xtd::ustring& value);
     
     static void parse_locale(const xtd::ustring& locale_path);
@@ -35,6 +42,7 @@ namespace xtd {
     static xtd::ustring translate(const xtd::ustring& language, const xtd::ustring& value);
     static const char* translate(const char* value) {return translate(language(), value);}
     static const char* translate(const xtd::ustring& language, const char* value);
+    /// @}
 
   private:
     static void initialize();

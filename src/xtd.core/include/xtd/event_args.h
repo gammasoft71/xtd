@@ -17,17 +17,25 @@ namespace xtd {
   /// @remarks To pass an object that does not contain any data, use the empty field.
   class core_export_ event_args : public object {
   public:
+    /// @name Fields
+    
+    /// @{
+    /// @brief Provides a value to use with events that do not have event data.
+    /// @remarks Pass this value to event handlers that are associated with events that do not have data.
+    static const event_args empty;
+    /// @}
+
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initializes a new instance of the event_args class.
     /// @remarks To pass an object that does not contain any data, use the empty field.
     event_args() = default;
+    /// @}
     
     /// @cond
     event_args(const event_args& event_args) = default;
     event_args& operator=(const event_args& event_args) = default;
     /// @endcond
-
-    /// @brief Provides a value to use with events that do not have event data.
-    /// @remarks Pass this value to event handlers that are associated with events that do not have data.
-    static const event_args empty;
   };
 }

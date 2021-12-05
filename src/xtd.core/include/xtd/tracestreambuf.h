@@ -16,6 +16,10 @@ namespace xtd {
   /// @ingroup xtd_core
   class tracestreambuf : public object, public std::stringbuf {
   public:
+    /// @name Methods
+    
+    /// @{
+    /// @brief Synchronizes the buffers with the associated character sequence
     int sync() override {
 #if defined(TRACE)
       if (!str().empty()) {

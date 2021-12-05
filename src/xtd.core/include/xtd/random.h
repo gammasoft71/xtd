@@ -36,6 +36,9 @@ namespace xtd {
   /// @include random3.cpp
   class random : public object {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initializes a new instance of the random class, using a default generated seed value
     random() : generator_(static_cast<uint32_t>(environment::tick_count().count())) {}
     
@@ -46,7 +49,11 @@ namespace xtd {
     /// @brief Initializes a new instance of the random class, using a specified random device value.
     /// @param random_device A random device value.
     explicit random(std::random_device& random_device) : generator_(random_device()) {}
+    /// @}
     
+    /// @name Methods
+    
+    /// @{
     /// @brief Returns a nonnegative random number.
     /// @return A 32-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32_t>::max())
     virtual int32_t next() const {return next(std::numeric_limits<int32_t>::max());}
@@ -134,6 +141,7 @@ namespace xtd {
     /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
     /// @remarks This method is the public version of the protected method, sample
     virtual double next_double() const{return sample();}
+    /// @}
     
   protected:
     /// @brief Returns a random number between 0.0 and 1.0

@@ -21,10 +21,17 @@ namespace xtd {
   class event : protected handler_t {
     friend object_t;
   public:
+    /// @name Methods
+    
+    /// @{
     /// @brief Gets a value indicate if the event is empty.
     /// @return true if evcent does not contains functions; otherwise false.
     bool is_empty() const noexcept { return handler_t::is_empty(); }
+    /// @}
 
+    /// @name Operators
+    
+    /// @{
     /// @brief Adds an handler to the event.
     /// @param handler Handler to add.
     /// @return The current event instance.
@@ -68,5 +75,6 @@ namespace xtd {
     handler_t& operator-=(fn_t function) noexcept {
       return handler_t::operator-=(function);
     }
+    /// @}
   };
 }

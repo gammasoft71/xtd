@@ -18,6 +18,9 @@ namespace xtd {
   /// @remarks The icomparable<T> interface defines the compare_to method, which determines the sort order of instances of the implementing type. The iequatable<T> interface defines the equals method, which determines the equality of instances of the implementing type.
   class iequatable interface_ {
   public:
+    /// @name Methods
+    
+    /// @{
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return true if the current object is equal to the other parameter; otherwise, false.
@@ -27,6 +30,7 @@ namespace xtd {
     /// @param obj An object to compare with this object.
     /// @return true if the current object is equal to the other parameter; otherwise, false.
     virtual bool equals(const object&) const noexcept = 0;
+    /// @}
     
     ///@cond
     // Not correct for an interface but necessary for C++ language.

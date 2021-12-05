@@ -107,7 +107,7 @@ namespace xtd {
     int32_t year() const noexcept {return cpp_ / 100;}
     /// @}
     
-    /// @name Constructors
+    /// @name Methods
     
     /// @{
     /// @brief Converts the value of this operating_system object to its equivalent string representation.

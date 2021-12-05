@@ -23,9 +23,16 @@ namespace xtd {
   /// @ingroup xtd_core exceptions
   class core_export_ system_exception : public object, public std::exception {
   public:
+    /// @name Alias
+    
+    /// @{
     /// @brief Optional reference wrapper on std::exception
     using exception_ref = std::optional<std::reference_wrapper<const std::exception>>;
+    /// @}
     
+    /// @name Constructors
+    
+    /// @{
     /// @brief Create a new instance of class system_exception
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
@@ -79,12 +86,16 @@ namespace xtd {
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     system_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& information = xtd::diagnostics::stack_frame::empty()) : system_exception(message, &inner_exception, error, help_link, information) {}
+    /// @}
     
     /// @cond
     system_exception(const system_exception&) = default;
     system_exception& operator=(const system_exception&) = default;
     /// @endcond
     
+    /// @name Properties
+    
+    /// @{
     /// @brief Get file path where exception occurred
     /// @return A string represent file path where exception occurred
     virtual const xtd::ustring& file_path() const noexcept {return information_.get_file_name();}
@@ -124,7 +135,11 @@ namespace xtd {
     /// @brief Gets a string representation of the immediate frames on the call stack.
     /// @return A string that describes the immediate frames of the call stack.
     virtual xtd::ustring stack_trace() const noexcept {return stack_trace_to_string();}
+    /// @}
     
+    /// @name Methods
+    
+    /// @{
     /// @brief Returns a string that represents the current exception.
     /// @return A string that represents the current exception.
     xtd::ustring to_string() const noexcept override;
@@ -138,6 +153,7 @@ namespace xtd {
     /// @brief Get message associate to the exception
     /// @return A string represent a massage associate to the exception
     const char* what() const noexcept override {return message().empty() ? name().c_str() : message().c_str();}
+    /// @}
 
   private:
     system_exception(const xtd::ustring& message, const std::exception* inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& information);
