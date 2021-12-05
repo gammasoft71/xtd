@@ -29,6 +29,9 @@ namespace xtd {
     /// @ingroup xtd_core net
     class core_export_ ip_address : public xtd::object, public xtd::iequatable<ip_address> {
     public:
+      /// @name Fields
+      
+      /// @{
       /// @brief Provides an IP address that indicates that the server must listen for client activity on all network interfaces. This field is constant.
       /// @remarks The td::net::ip_address::any field is equivalent to 0.0.0.0 in dotted-quad notation
       static ip_address any;
@@ -51,7 +54,11 @@ namespace xtd {
       /// @brief Provides an IP address that indicates that no network interface should be used. This field is constant.
       /// @remarks The td::net::ip_address::none field is equivalent to 255.255.255.255 in dotted-quad notation.
       static ip_address none;
+      /// @}
 
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::net::ip_address.
       /// @remarks ip_address is initialized by default value xtd::net::ip_address::none.
       ip_address() = default;
@@ -75,6 +82,7 @@ namespace xtd {
       /// @param quad_part_address3 The third quad part of the IP address.
       /// @param quad_part_address4 The fourth quad part of the IP address.
       ip_address(byte_t quad_part_address1, byte_t quad_part_address2, byte_t quad_part_address3, byte_t quad_part_address4);
+      /// @}
 
       /// @cond
       ip_address(ip_address&& ip_address) = default;
@@ -83,6 +91,9 @@ namespace xtd {
       friend std::ostream& operator <<(std::ostream& os, const ip_address& address) noexcept {return os << address.to_string();}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the address family of the IP address.
       /// @return Returns sockets::address_family::inter_network for IPv4 or sockets::address_family::inter_network_v6 for IPv6.
       sockets::address_family address_family() const noexcept;
@@ -117,7 +128,11 @@ namespace xtd {
       /// @param value A uint32_t that specifies the scope of the address.
       /// @exception xtd::net::sockets::socket_exception if address_family = sockets::address_family::inter_network
       ip_address& scope_id(uint32_t value);
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       bool equals(const object& other) const noexcept override;
       bool equals(const ip_address& other) const noexcept override;
       
@@ -269,6 +284,7 @@ namespace xtd {
       /// @param address The xtd::net::ip_address version of the string.
       /// @return bool true if str is a valid IP address; otherwise, false.
       static bool try_parse(const ustring& str, ip_address& address);
+      /// @}
 
     private:
       friend xtd::net::sockets::socket;

@@ -30,15 +30,22 @@ namespace xtd {
       friend std::ostream& operator <<(std::ostream& os, const end_point& end_point) noexcept {return os << end_point.to_string();}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
+      /// @brief Gets the address family to which the endpoint belongs.
+      /// @return One of the address_family values.
+      sockets::address_family address_family() const noexcept;
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
       /// @brief Creates an xtd::net::end_point instance from a socket_address instance.
       /// @param socket_address The socket address that serves as the endpoint for a connection.
       /// @return A new xtd::net::end_point instance that is initialized from the specified xtd::net::socket_address instance.
       /// @exception xtd::not_supported_exception Any attempt is made to access the method when the method is not overridden in a descendant class.
        virtual std::unique_ptr<end_point> create(const socket_address& socket_address) const;
-      
-      /// @brief Gets the address family to which the endpoint belongs.
-      /// @return One of the address_family values.
-      sockets::address_family address_family() const noexcept;
       
       /// @brief Serializes endpoint information into a socket_address instance.
       /// @return A new xtd::net::socket_address instance that contains the endpoint information.
@@ -47,10 +54,15 @@ namespace xtd {
       /// @brief Returns a string that represents the current object.
       /// @return A string that represents the current object.
        ustring to_string() const noexcept override;
+      /// @}
       
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::net::end_point class.
       explicit end_point(sockets::address_family address_family) : address_family_(address_family) {}
+      /// @}
       
       /// @cond
       end_point() = default;

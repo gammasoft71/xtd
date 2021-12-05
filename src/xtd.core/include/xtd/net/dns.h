@@ -20,6 +20,9 @@ namespace xtd {
     /// @ingroup xtd_core net
     class core_export_ dns static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Returns the Internet Protocol (IP) addresses for the specified host.
       /// @param host_name_or_address The host name or IP address to resolve.
       /// @return An array of type xtd::net::ip_address that holds the IP addresses for the host that is specified by the host_name_or_address parameter..
@@ -38,6 +41,7 @@ namespace xtd {
       /// @brief Gets the host name of the local computer.
       /// @return string A string that contains the DNS host name of the local computer.
       static xtd::ustring get_host_name();
+      /// @}
     };
   }
 }
