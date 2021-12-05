@@ -22,8 +22,12 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ ip_host_entry : public xtd::object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::net::ip_host_entry.
       ip_host_entry() = default;
+      /// @}
       
       /// @cond
       ip_host_entry(ip_host_entry&& ip_host_entry) = default;
@@ -32,6 +36,9 @@ namespace xtd {
       friend std::ostream& operator <<(std::ostream& os, const ip_host_entry& host_entry) noexcept {return os << host_entry.to_string();}
      /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Get List of IP addresses that are associated with a host.
       /// @return An xtd::net::ip_address array of IP addresses that are associated with a host.
       const std::vector<xtd::net::ip_address>& address_list() const noexcept;
@@ -61,7 +68,8 @@ namespace xtd {
       /// @param hist_name A string represent the DNS name of the host.
       /// @return The current instance.
       ip_host_entry& host_name(const xtd::ustring& host_name) noexcept;
-
+      /// @}
+      
     private:
       std::vector<xtd::net::ip_address> address_list_;
       std::vector<xtd::ustring> aliases_;

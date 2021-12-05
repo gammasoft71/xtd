@@ -15,11 +15,19 @@ namespace xtd {
     namespace css {
       class css_reader : public object {
       public:
+        /// @name Constructors
+        
+        /// @{
         css_reader(std::istream& stream) {parse_text(xtd::io::stream_reader(stream).read_to_end());}
         css_reader(xtd::io::text_reader& text_reader) {parse_text(text_reader.read_to_end());}
         css_reader(const xtd::ustring& text) {parse_text(text);}
+        /// @}
         
+        /// @name Properties
+        
+        /// @{
         const xtd::web::css::selector_map& selectors() const {return selectors_;}
+        /// @}
         
       private:
         void parse_text(xtd::ustring text) {

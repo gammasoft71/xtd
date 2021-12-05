@@ -12,10 +12,31 @@ namespace xtd {
     namespace css {
       class property : public object{
       public:
+        /// @name Constructors
+        
+        /// @{
         property() = default;
         explicit property(const xtd::ustring& value) : value_(value) {}
-        operator xtd::ustring() {return value_;}
+        /// @}
+
+        /// @name Operators
         
+        /// @{
+        operator xtd::ustring() {return value_;}
+        friend std::ostream& operator <<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
+        /// @}
+
+        /// @name Properties
+        
+        /// @{
+        const xtd::ustring& value() const {return value_;}
+        template<typename value_t>
+        uintptr_t value() const {return xtd::parse<value_t>(value_);}
+        /// @}
+        
+        /// @name Methods
+        
+        /// @{
         static property from(bool value) {return property(ustring::format("{}", value));}
         static property from(double value) {return property(ustring::format("{}", value));}
         static property from(float value) {return property(ustring::format("{}", value));}
@@ -31,10 +52,6 @@ namespace xtd {
         template<typename value_t>
         static property from(value_t value) {return property(ustring::format("{}", value));}
         
-        const xtd::ustring& value() const {return value_;}
-        template<typename value_t>
-        uintptr_t value() const {return xtd::parse<value_t>(value_);}
-
         bool to_boolean() const {return xtd::parse<bool>(value_);}
         double to_double() const {return xtd::parse<double>(value_);}
         int8_t to_int8() const {return xtd::parse<int8_t>(value_);}
@@ -51,8 +68,7 @@ namespace xtd {
         uintptr_t to_uintptr() const {return xtd::parse<uintptr_t>(value_);}
         template<typename value_t>
         uintptr_t to() const {return xtd::parse<value_t>(value_);}
-
-        friend std::ostream& operator <<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
+        /// @}
         
       private:
         xtd::ustring value_;
