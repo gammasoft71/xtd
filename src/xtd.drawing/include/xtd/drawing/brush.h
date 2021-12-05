@@ -36,9 +36,13 @@ namespace xtd {
       bool operator!=(const brush& value) const {return !operator==(value);}
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
+      /// @}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::brush& brush) noexcept {
@@ -49,13 +53,22 @@ namespace xtd {
     protected:
       friend class graphics;
 
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initialize a new instance of brush class.
       brush();
+      /// @}
       
+      /// @name Protected methods
+      
+      /// @{
       /// @brief In a derived class, sets a reference to a GDI+ brush object.
       /// @param brush A pointer to the GDI+ brush object.
       void set_native_brush(intptr_t brush);
+      /// @}
       
+    //private:
       /// @cond
       struct data {
         intptr_t handle_ = 0;

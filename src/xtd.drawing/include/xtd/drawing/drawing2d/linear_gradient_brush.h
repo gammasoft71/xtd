@@ -25,8 +25,11 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrate the use of linear_gradient_brush class.
       /// @include fill_rectangle.cpp
-       class drawing_export_ linear_gradient_brush final : public brush {
+      class drawing_export_ linear_gradient_brush final : public brush {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the linear_gradient_brush class with the specified points and colors.
         /// @param point1 A xtd::drawing::point structure that represents the starting point of the linear gradient.
         /// @param point2 A xtd::drawing::point structure that represents the endpoint of the linear gradient.
@@ -95,7 +98,8 @@ namespace xtd {
           data_->linear_colors_ = {color1, color2};
           recreate_handle();
         }
-
+        /// @}
+        
         /// @cond
         linear_gradient_brush(const linear_gradient_brush& value);
         linear_gradient_brush& operator=(const linear_gradient_brush& value);
@@ -103,6 +107,9 @@ namespace xtd {
         bool operator!=(const linear_gradient_brush& value) const {return !operator==(value);}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the starting and ending colors of the gradient.
         /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
         const std::array<xtd::drawing::color, 2>& linear_colors() const {return data_->linear_colors_;}
@@ -113,11 +120,12 @@ namespace xtd {
         /// @param linear_colors An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
         /// @return Current linear_gradient_brush instance.
         xtd::drawing::drawing2d::linear_gradient_brush& linear_colors(const std::array<xtd::drawing::color, 2>& linear_colors);
-
+        
         /// @brief Gets a rectangular region that defines the starting and ending points of the gradient.
         /// @return A xtd::drawing::rectangle_f structure that specifies the starting and ending points of the gradient.
         xtd::drawing::rectangle_f rectangle() const;
-      
+        /// @}
+        
       private:
         linear_gradient_brush();
         void recreate_handle();
@@ -131,3 +139,4 @@ namespace xtd {
     }
   }
 }
+

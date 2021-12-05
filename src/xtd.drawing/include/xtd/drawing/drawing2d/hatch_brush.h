@@ -30,6 +30,9 @@ namespace xtd {
       /// @include fill_rectangle.cpp
       class drawing_export_ hatch_brush final : public brush {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::drawing::drawing2d::hatch_brush class with the specified xtd::drawing::drawing2d::hatch_style enumeration and foreground color.
         /// @param hatch_style One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing2d::hatch_brush.
@@ -40,7 +43,8 @@ namespace xtd {
         /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @param back_color The xtd::drawing::color structure that represents the color of spaces between the lines drawn by this xtd::drawing::drawing2d::hatch_brush.
         hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color);
-
+        /// @}
+        
         /// @cond
         hatch_brush(const hatch_brush& value);
         hatch_brush& operator=(const hatch_brush& value);
@@ -48,6 +52,9 @@ namespace xtd {
         bool operator!=(const hatch_brush& value) const {return !operator==(value);}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the color of spaces between the hatch lines drawn by this hatch_brush object.
         /// @return A xtd::drawing::color structure that represents the background color for this hatch_brush.
         xtd::drawing::color background_color() const {return data_->back_color_;}
@@ -59,8 +66,9 @@ namespace xtd {
         /// @brief Gets the hatch style of this hatch_brush object.
         /// @return One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern of this hatch_brush.
         xtd::drawing::drawing2d::hatch_style hatch_style() const {return data_->hatch_style_;}
-
-        private:
+        /// @}
+        
+      private:
         hatch_brush();
         void recreate_handle();
         struct data {
@@ -73,3 +81,4 @@ namespace xtd {
     }
   }
 }
+

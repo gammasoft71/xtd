@@ -35,6 +35,9 @@ namespace xtd {
         bool operator!=(const color_palette& value) const {return !operator==(value);}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets an array of color structures.
         /// @return The array of color structure that make up this color_palette.
         const std::vector<color>& entries() const {return entries_;}
@@ -45,6 +48,7 @@ namespace xtd {
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
         int32_t flags() const {return flags_;}
+        /// @}
         
       private:
         friend class xtd::drawing::image;

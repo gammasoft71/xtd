@@ -38,6 +38,9 @@ namespace xtd {
     /// @endcode
     class drawing_export_ color : public object {
     public:
+      /// @name Fields
+      
+      /// @{
       /// @brief Represents a color that is null.
       static const xtd::drawing::color empty;
       
@@ -466,9 +469,14 @@ namespace xtd {
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF9ACD32. This field is constant.
       static const xtd::drawing::color yellow_green;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of xtd::drawing::color class.
       color() = default;
+      /// @}
       
       /// @cond
       color(const color& color) = default;
@@ -477,6 +485,9 @@ namespace xtd {
       bool operator!=(const color& value) const {return !operator==(value);}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the alpha component value of this xtd::drawing::color class.
       /// @return byte The alpha component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
@@ -577,7 +588,11 @@ namespace xtd {
       /// }
       /// @endcode
       uint8_t r() const {return (uint8_t)((to_argb() & 0x00FF0000) >> 16);}
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
       /// @param color2 The second color.
@@ -1188,6 +1203,7 @@ namespace xtd {
       /// }
       /// @endcode
       xtd::ustring to_string() const noexcept override;
+      /// @}
       
     private:
       explicit color(uint32_t argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {}

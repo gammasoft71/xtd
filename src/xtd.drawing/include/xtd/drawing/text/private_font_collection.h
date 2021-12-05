@@ -23,9 +23,16 @@ namespace xtd {
       /// @remarks The xtd::drawing::text::private_font_collection class allows applications to install a private version of an existing font without the requirement to replace the system version of the font. For example, GDI+ can create a private version of the Arial font in addition to the Arial font that the system uses. xtd::drawing::text::private_font_collection can also be used to install fonts that do not exist in the operating system. This is a temporary font install that does not affect the system-installed collection. To see the installed collection, use the xtd::drawing::text::installed_font_collection class.
       class drawing_export_ private_font_collection final : public font_collection {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::drawing::text::private_font_collection class.
         private_font_collection();
+        /// @}
         
+        /// @name Methods
+        
+        /// @{
         /// @brief Adds a font from the specified file to this xtd::drawing::text::private_font_collection.
         /// @param filename A string that contains the file name of the font to add.
         /// @exception std::invalid_argument The specified font is not supported or the font file cannot be found.
@@ -36,6 +43,7 @@ namespace xtd {
         /// @param length The memory length of the font to add.
         /// @remarks To use the memory font, text on a control must be rendered with GDI+. Use the set_compatible_text_rendering_default method, passing true, to set GDI+ rendering on the application, or on individual controls by setting the control's use_compatible_text_rendering property to true. Some controls cannot be rendered with GDI+.
         void add_memory_font(intptr_t memory, size_t length);
+        /// @}
       };
     }
   }

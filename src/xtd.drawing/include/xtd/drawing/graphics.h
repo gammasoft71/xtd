@@ -53,10 +53,17 @@ namespace xtd {
       ~graphics();
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the handle device context that the graphics is bound to.
       /// @return An intptr_t that contains the handle device context of the graphics.
       intptr_t handle() const {return data_->handle_;}
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Clears the entire drawing surface and fills it with the specified background color.
       /// @param color xtd::drawing::color structure that represents the background color of the drawing surface.
       void clear(const color& color);
@@ -229,6 +236,7 @@ namespace xtd {
       void translate_clip(float dx, float dy) {translate_clip(static_cast<int32_t>(dx), static_cast<int32_t>(dy));}
 
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
+      /// @}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::graphics& graphics) noexcept {
