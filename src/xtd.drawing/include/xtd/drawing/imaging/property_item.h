@@ -28,6 +28,9 @@ namespace xtd {
         property_item() = default;
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the ID of the property.
         /// @return The integer that represents the ID of the property.
         /// @remarks The following table shows the property tags and their IDs.
@@ -523,6 +526,7 @@ namespace xtd {
         /// @param value A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
         void value(const std::vector<uint8_t>& value) {value_ = value;}
+        /// @}
 
       private:
         int32_t id_ = 0;

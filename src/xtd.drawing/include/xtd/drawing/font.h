@@ -38,6 +38,9 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ font final : public object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief IInitializes a new Font that uses the specified existing xtd::drawing::font and size.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
@@ -151,6 +154,7 @@ namespace xtd {
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       font(const drawing::font_family& font_family, float em_size) : font(font_family, em_size, font_style::regular, graphics_unit::point, 0, false) {}
+      /// @}
 
       /// @cond
       font(const font& value);
@@ -159,18 +163,10 @@ namespace xtd {
       bool operator!=(const font& value) const {return !operator==(value);}
       ~font();
       /// @endcond
-      
-      /// @brief Converts this font_family to a human-readable string representation.
-      /// @return The string that represents this font_family.
-      xtd::ustring to_string() const noexcept override {
-        //return ustring::format("[{}: ]", ustring::class_name(*this));
-        return ustring::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", ustring::class_name(*this), data_->font_family_.name(), data_->size_, (int32_t)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
-      }
-      
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font& font) noexcept {return os << font.to_string();}
-      /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value that indicates whether this xtd::drawing::font is bold.
       /// @return true if this xtd::drawing::font is bold; otherwise, false.
       bool bold() const {return (data_->style_ & font_style::bold) == font_style::bold;}
@@ -265,7 +261,11 @@ namespace xtd {
       /// @brief Gets the unit of measure for this xtd::drawing::font.
       /// @return A graphics_unit that represents the unit of measure for this xtd::drawing::font.
       graphics_unit unit() const {return data_->unit_;}
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Creates a font from the specified Windows handle to a device context.
       /// @param hdc A handle to a device context.
       /// @return The font this method creates.
@@ -300,6 +300,18 @@ namespace xtd {
       /// @remarks When using this method, you must dispose of the resulting Hfont using the GDI DeleteObject method to ensure the resources are released.
       intptr_t to_hfont() const;
       
+      /// @brief Converts this font_family to a human-readable string representation.
+      /// @return The string that represents this font_family.
+      xtd::ustring to_string() const noexcept override {
+        //return ustring::format("[{}: ]", ustring::class_name(*this));
+        return ustring::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", ustring::class_name(*this), data_->font_family_.name(), data_->size_, (int32_t)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
+      }
+      /// @}
+      
+      /// @cond
+      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font& font) noexcept {return os << font.to_string();}
+      /// @endcond
+
     private:
       friend class graphics;
       friend class system_fonts;

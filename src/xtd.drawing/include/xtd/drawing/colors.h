@@ -19,6 +19,9 @@ namespace xtd {
     /// @remarks The color objects returned by this class are immutable, meaning their properties cannot be changed.
     class drawing_export_ colors final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief A system-defined color object.
       static xtd::drawing::color transparent();
       
@@ -444,6 +447,7 @@ namespace xtd {
       
       /// @brief A system-defined color object.
       static xtd::drawing::color yellow_green();
+      /// @}
     };
   }
 }

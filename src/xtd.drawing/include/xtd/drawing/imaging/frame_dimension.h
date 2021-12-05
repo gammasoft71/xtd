@@ -22,9 +22,13 @@ namespace xtd {
       /// @ingroup xtd_drawing
       class frame_dimension final : public object {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the FrameDimension class using the specified Guid structure.
         /// @param guid A Guid structure that contains a GUID for this frame_dimension object.
         explicit frame_dimension(const xtd::guid& guid) : guid_(guid) {}
+        /// @}
         
         /// @cond
         frame_dimension(const frame_dimension&) = default;
@@ -33,6 +37,9 @@ namespace xtd {
         bool operator!=(const frame_dimension& value) const {return !operator==(value);}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets a globally unique identifier (GUID) that represents this frame_dimension object.
         /// @return A guid structure that contains a GUID that represents this frame_dimension object.
         const xtd::guid& guid() const {return guid_;}
@@ -48,6 +55,7 @@ namespace xtd {
         /// @brief Gets the time dimension.
         /// @return The time dimension.
         static frame_dimension time() {return frame_dimension(xtd::guid("6aedbd6d-3fb5-418a-83a6-7f45229dc872"));}
+        /// @}
         
       private:
         xtd::guid guid_;

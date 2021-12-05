@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_core media
     class core_export_ system_sounds static_ {
     public:
-      /// @name Methods
+      /// @name Properties
       
       /// @{
       /// @brief Gets the sound associated with the Asterisk program event in the current Windows sound scheme.

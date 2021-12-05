@@ -18,6 +18,16 @@ namespace xtd {
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
     class drawing_export_ bitmap : public xtd::drawing::image {
     public:
+      /// @name Fields
+      
+      /// @{
+      /// @brief Represent an empty bitmap.
+      static bitmap empty;
+      /// @}
+
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the bitmap class from the specified existing image.
       /// @param original The xtd::drawing::image from which to create the new bitmap.
       explicit bitmap(const image& original) : xtd::drawing::image(original) {}
@@ -46,7 +56,11 @@ namespace xtd {
       /// @brief Initializes a new instance of the Bitmap class with the specified size.
       /// @param size the size, in pixels, of the new bitmap.
       explicit bitmap(const xtd::drawing::size& size) : xtd::drawing::image(size.width(), size.height()) {}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Creates a copy of the section of this Bitmap defined with a specified rectangle.
       /// @param rect Defines the portion of this bitmap to copy.
       bitmap clone(const rectangle& rect) {return bitmap(*this, rect);}
@@ -70,9 +84,7 @@ namespace xtd {
       /// @param y The y-coordinate of the pixel to retrieve.
       /// @param color A xtd::drawing::color structure that represents the color of the specified pixel.
       void set_pixel(int32_t x, int32_t y, const drawing::color& color);
-
-      /// @brief Represent an empty bitmap.
-      static bitmap empty;
+      /// @}
       
     private:
       bitmap() = default;

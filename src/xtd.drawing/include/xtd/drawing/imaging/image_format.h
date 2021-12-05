@@ -28,10 +28,14 @@ namespace xtd {
         image_format() = default;
         /// @endcond
 
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the image_format class by using the specified guid structure.
         /// @param guid The guid structure that specifies a particular image format.
         /// @remarks Typically you use the static properties of the image_format class to specify a particular format such as Png or Jpeg, rather than constructing a new image_format.
         explicit image_format(const guid& guid) : guid_(guid) {}
+        /// @}
         
         /// @cond
         image_format(const image_format&) = default;
@@ -44,6 +48,9 @@ namespace xtd {
         bool operator>=(const image_format& value) const {return guid_ >= value.guid_;}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets a guid structure that represents this image_format object.
         /// @return A guid structure that represents this image_format object.
         const xtd::guid guid() const {return guid_;}
@@ -183,10 +190,15 @@ namespace xtd {
         /// @brief Gets the truevision targa (tga) image format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format tga() {return image_format(xtd::guid("b96b3ccd-0728-11d3-9d7b-0000f81ef32e"));}
+        /// @}
 
+        /// @name Methods
+        
+        /// @{
         /// @brief Converts this image_format object to a human-readable string.
         /// @return A string that represents this image_format object.
         xtd::ustring to_string() const noexcept override {return ustring::format("[image_format: {}]", guid_);}
+        /// @}
         
         /// @cond
         friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::imaging::image_format& image_format) noexcept {

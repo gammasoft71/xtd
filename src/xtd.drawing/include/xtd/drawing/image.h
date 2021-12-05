@@ -42,6 +42,16 @@ namespace xtd {
       bool operator!=(const image& image) const {return !operator==(image);}
       /// @endcond
       
+      /// @name Fields
+      
+      /// @{
+      /// @brief Represent an empty xtd::drawing::image.
+      static image empty;
+      /// @}
+
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets attribute flags for the pixel data of this Image.
       /// @return The integer representing a bitwise combination of image_flags for this Image.
       /// @remarks The integer value returned from this method will correspond to a sum of image_flags, as described in the following table.
@@ -132,7 +142,11 @@ namespace xtd {
       /// @brief Gets the width, in pixels, of this image.
       /// @return The width, in pixels, of this image.
       int32_t width() const {return data_->size_.width();}
+      /// @}
   
+      /// @name Methods
+      
+      /// @{
       /// @brief Creates the xtd::drawing::graphics for the image.
       /// @return A xtd::drawing::graphics for the image.
       /// @ingroup drawing
@@ -152,8 +166,7 @@ namespace xtd {
       void save(const xtd::ustring& filename) const;
       void save(const xtd::ustring& filename, const imaging::image_format& format) const;
       void save(std::ostream& stream, const imaging::image_format& format) const;
-
-      static image empty;
+      /// @}
       
     protected:
       explicit image(intptr_t hbitmap);
