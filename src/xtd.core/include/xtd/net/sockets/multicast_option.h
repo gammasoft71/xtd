@@ -35,6 +35,9 @@ namespace xtd {
       /// @remarks Use xtd::net::sockets::socket_option_name::drop_membership to drop a multicast group.
       class core_export_ multicast_option : public xtd::object {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::multicast_option class.
         multicast_option() = default;
         /// @brief Initializes a new instance of the xtd::net::sockets::multicast_option class with the specified IP multicast group and the local interface address.
@@ -49,6 +52,7 @@ namespace xtd {
         /// @param interface_index The address of the interface.
         /// @exception xtd::argument_out_of_range_exception interface_index > 0x00FFFFFF.
         multicast_option(const xtd::net::ip_address& group, uint32_t interface_index);
+        /// @}
 
         /// @cond
         multicast_option(multicast_option&& multicast_option) = default;
@@ -57,6 +61,9 @@ namespace xtd {
         friend std::ostream& operator <<(std::ostream& os, const multicast_option& mo) noexcept {return os << mo.to_string();}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the IP address of a multicast group.
         /// @return An xtd::net::ip_address that contains the Internet address of a multicast group.
         const xtd::net::ip_address& group() const noexcept;
@@ -83,6 +90,7 @@ namespace xtd {
         /// @param value An xtd::net::ip_address that contains the local address associated with a multicast group.
         /// @return the current instance.
         multicast_option& local_address(const xtd::net::ip_address& value) noexcept;
+        /// @}
         
       private:
         xtd::net::ip_address group_ = xtd::net::ip_address::none;

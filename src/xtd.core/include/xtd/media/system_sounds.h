@@ -24,6 +24,9 @@ namespace xtd {
     /// @ingroup xtd_core media
     class core_export_ system_sounds static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets the sound associated with the Asterisk program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Asterisk program event in the current Windows sound scheme.A SystemSound associated with the Asterisk program event in the current Windows sound scheme.
       /// @par Examples
@@ -73,6 +76,7 @@ namespace xtd {
       /// system_sounds.question().play();
       /// @endcode
       static system_sound question();
+      /// @}
     };
   }
 }

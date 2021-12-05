@@ -46,6 +46,9 @@ namespace xtd {
         };
         
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Creates a new instance of the network_stream class for the specified xtd::net::sockets::socket.
         /// @param socket The xtd::net::sockets::socket that the xtd::net::sockets::network_stream will use to send and receive data.
         /// @remarks The xtd::net::sockets::network_stream is created with read/write access to the specified xtd::net::sockets::socket. The xtd::net::sockets::network_stream does not own the underlying xtd::net::sockets::socket, so calling the close method does not close the xtd::net::sockets::socket.
@@ -56,7 +59,11 @@ namespace xtd {
         /// @param owns_socket Set to true to indicate that the xtd::net::sockets::network_stream will take ownership of the xtd::net::sockets::socket; otherwise, false.
         /// @remarks The xtd::net::sockets::network_stream is created with read/write access to the specified xtd::net::sockets::socket. If the value of owns_socket parameter is true, the xtd::net::sockets::network_stream takes ownership of the underlying xtd::net::sockets::socket, and calling the close method also closes the underlying xtd::net::sockets::socket.
         network_stream(const xtd::net::sockets::socket& socket, bool owns_socket);
+        /// @}
 
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be read.
         /// @return true if data is available on the stream to be read; otherwise, false.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -68,6 +75,7 @@ namespace xtd {
         /// @return A xtd::net::sockets::socket that represents the underlying network connection.
         /// @remarks Classes deriving from xtd::net::sockets::network_stream can use this property to get the underlying xtd::net::sockets::socket. Use the underlying xtd::net::sockets::socket returned from the xtd::net::sockets::socketproperty if you require access beyond that which xtd::net::sockets::network_stream provides.
         xtd::net::sockets::socket socket() const;
+        /// @}
         
       private:
         socket_streambuf stream_buf_;

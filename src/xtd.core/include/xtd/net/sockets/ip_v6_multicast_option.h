@@ -28,6 +28,9 @@ namespace xtd {
       /// @ingroup xtd_core
       class core_export_ ip_v6_multicast_option : public xtd::object {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::ip_v6_multicast_option class.
         ip_v6_multicast_option() = default;
         /// @brief Initializes a new version of the xtd::net::sockets::ip_v6_multicast_option class for the specified IP multicast group.
@@ -37,6 +40,7 @@ namespace xtd {
         /// @param group The xtd::net::ip_address of the multicast group.
         /// @param interface_index The address of the interface.
         ip_v6_multicast_option(const xtd::net::ip_address& group, uint32_t interface_index);
+        /// @}
 
         /// @cond
         ip_v6_multicast_option(ip_v6_multicast_option&& ip_v6_multicast_option) = default;
@@ -45,6 +49,9 @@ namespace xtd {
         friend std::ostream& operator <<(std::ostream& os, const ip_v6_multicast_option& mo) noexcept {return os << mo.to_string();}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the IP address of a multicast group.
         /// @return An xtd::net::ip_address that contains the Internet address of a multicast group.
         const xtd::net::ip_address& group() const noexcept;
@@ -62,6 +69,7 @@ namespace xtd {
         /// @return the current instance.
        /// @remarks This property specifies the interface on which data is received or sent.
         ip_v6_multicast_option& interface_index(uint32_t value) noexcept;
+        /// @}
 
       private:
         xtd::net::ip_address group_ = xtd::net::ip_address::ip_v6_none;

@@ -29,6 +29,9 @@ namespace xtd {
       bool equals(const system_sound& sound) const noexcept;
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Plays the system sound type.
       /// @par Examples
       /// The following code example demonstrates the use of the xtd::media::system_sounds::asterisk property.
@@ -37,6 +40,7 @@ namespace xtd {
       /// system_sounds.asterisk().play();
       /// @endcode
       void play() const;
+      /// @}
       
     private:
       friend class system_sounds;

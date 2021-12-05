@@ -43,6 +43,9 @@ namespace xtd {
       /// @include tcp_client_ip_v6.cpp
       class core_export_ tcp_client : public xtd::object {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::tcp_client class.
         /// @remarks This constructor creates a new xtd::net::sockets::tcp_client and allows the underlying service provider to assign the most appropriate local IP address and port number. You must first call the xtd::net::sockets::tcp_client::connect method before sending and receiving data.
         /// @note This constructor works only with IPv4 address types.
@@ -64,6 +67,7 @@ namespace xtd {
         /// @remarks If IPv6 is enabled and the xtd::net::sockets::tcp_client method is called to connect to a host that resolves to both IPv6 and IPv4 addresses, the connection to the IPv6 address will be attempted first before the IPv4 address. This may have the effect of delaying the time to establish the connection if the host is not listening on the IPv6 address.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         tcp_client(const xtd::ustring& hostname, uint16_t port);
+        /// @}
 
         /// @cond
         tcp_client(tcp_client&&) = default;
@@ -75,6 +79,9 @@ namespace xtd {
         bool operator!=(const tcp_client& s) const {return !operator==(s);};
         /// @endcond
 
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the amount of data that has been received from the network and is available to be read.
         /// @return The number of bytes of data received from the network and available to be read.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
@@ -232,7 +239,11 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::tcp_client::send_timeout property determines the amount of time that the xtd::net::sockets::send method will block until it is able to return successfully. This time is measured in milliseconds..
         /// @remarks After you call the Write method, the underlying xtd::net::sockets::socket returns the number of bytes actually sent to the host. The xtd::net::sockets::tcp_client::send_timeout property determines the amount of time a xtd::net::sockets::tcp_client will wait before receiving the number of bytes returned. If the time-out expires before the Send method successfully completes, xtd::net::sockets::tcp_client will throw a xtd::net::sockets::socket_exception. There is no time-out by default.
         tcp_client& send_timeout(int32_t value);
+        /// @}
 
+        /// @name Methods
+        
+        /// @{
         /// @brief Begins an asynchronous request for a remote host connection. The remote host is specified by an xtd::net::ip_address and a port number (uint16_t).
         /// @param address The xtd::net::ip_address of the remote host.
         /// @param port The port number of the remote host.
@@ -320,8 +331,12 @@ namespace xtd {
         /// @note You must close the xtd::net::sockets::network_stream when you are through sending and receiving data. Closing xtd::net::sockets::tcp_client does not release the xtd::net::sockets::network_stream.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         xtd::net::sockets::network_stream get_stream() const;
+        /// @}
 
       protected:
+        /// @name Protected properties
+        
+        /// @{
         /// @brief Gets a value that indicates whether a connection has been made.
         /// @return true if the connection has been made; otherwise, false.
         /// @remarks Classes deriving from xtd::net::sockets::tcp_client can use this property to determine if a connection attempt has succeeded. It does not monitor the ongoing connection state of xtd::net::sockets::tcp_client. If the remote host closes the connection, xtd::net::sockets::tcp_client::active will not be updated. If you are deriving from xtd::net::sockets::tcp_client and require closer attention to the connection state, use the xtd::net::sockets::tcp_client::client::connected property of the xtd::net::sockets::socket returned by the xtd::net::sockets::tcp_client::client property.
@@ -331,6 +346,7 @@ namespace xtd {
         /// @return This current instance.
         /// @remarks Classes deriving from xtd::net::sockets::tcp_client can use this property to determine if a connection attempt has succeeded. It does not monitor the ongoing connection state of xtd::net::sockets::tcp_client. If the remote host closes the connection, xtd::net::sockets::tcp_client::active will not be updated. If you are deriving from xtd::net::sockets::tcp_client and require closer attention to the connection state, use the xtd::net::sockets::tcp_client::client::connected property of the xtd::net::sockets::socket returned by the xtd::net::sockets::tcp_client::client property.
         tcp_client& active(bool value) noexcept;
+        /// @}
         
       private:
         friend tcp_listener;

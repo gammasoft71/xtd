@@ -61,6 +61,9 @@ namespace xtd {
         };
 
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::tcp_listener class with the specified local endpoint.
         /// @param local_end_point An xtd::net::ip_end_point that represents the local endpoint to which to bind the listener xtd::net::sockets::socket.
         /// @remarks This constructor allows you to specify the local IP address and port number on which to listen for incoming connection attempts.
@@ -79,6 +82,7 @@ namespace xtd {
         /// @remarks Call the xtd::net::sockets::tcp_listener::start method to begin listening for incoming connection attempts.
         /// @note The 0 for local port functionality is not available.
         tcp_listener(const xtd::net::ip_address& ip_address, uint16_t port);
+        /// @}
         
         /// @cond
         tcp_listener(tcp_listener&&) = default;
@@ -90,6 +94,9 @@ namespace xtd {
         bool operator!=(const tcp_listener& s) const {return !operator==(s);};
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlying socket to listen to a specific port.
         /// @return true if the xtd::net::sockets::tcp_listener allows only one xtd::net::sockets::tcp_listener to listen to a specific port; otherwise, false. .
         /// @exception xtd::invalid_operation_exception The xtd::net::sockets::tcp_listener has been started. Call the xtd::net::sockets::tcp_listener::stop() method and then set the xtd::net::sockets::tcp_listener::exclusive_address_use property.
@@ -125,7 +132,11 @@ namespace xtd {
         /// @remarks Use the underlying xtd::net::sockets::socket returned by the xtd::net::sockets::tcp_listener::server property if you require access beyond that which xtd::net::sockets::tcp_listener provides.
         /// @note The xtd::net::sockets::tcp_listener::server property only returns the xtd::net::sockets::socket used to listen for incoming client connection requests. Use the xtd::net::sockets::tcp_listener::accept_socket method to accept a pending connection request and obtain a xtd::net::sockets::socket for sending and receiving data. You can also use the xtd::net::sockets::tcp_listener::accept_tcp_client method to accept a pending connection request and obtain a xtd::net::sockets::tcp_client for sending and receiving data.
         xtd::net::sockets::socket server() const noexcept;
+        /// @}
         
+        /// @name Methods
+        
+        /// @{
         /// @brief Accepts a pending connection request.
         /// @return A xtd::net::sockets::socket used to send and receive data.
         /// @exception xtd::invalid_operation_exception The listener has not been started with a call to xtd::net::sockets::tcp_listener::start.
@@ -230,13 +241,18 @@ namespace xtd {
         /// @note The xtd::net::sockets::tcp_listener::stop method also closes the underlying xtd::net::sockets::socket, and creates a new xtd::net::sockets::socket for the xtd::net::sockets::tcp_listener. If you set any properties on the underlying xtd::net::sockets::socket prior to calling the xtd::net::sockets::tcp_listener::stop method, those properties will not carry over to the new xtd::net::sockets::socket.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void stop();
+        /// @}
 
       protected:
+        /// @name Protected properties
+        
+        /// @{
         /// @brief Gets a value that indicates whether xtd::net::sockets::tcp_listener is actively listening for client connections.
         /// @return true if xtd::net::sockets::tcp_listener is actively listening; otherwise, false.
         /// @remarks Classes deriving from xtd::net::sockets::tcp_listener can use this property to determine if the xtd::net::sockets::socket is currently listening for incoming connection attempts.
         /// @remarks The Active property can be used to avoid redundant xtd::net::sockets::tcp_listener::start attempts.
         bool active() const noexcept;
+        /// @}
 
       private:
         struct data;

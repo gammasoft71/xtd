@@ -50,6 +50,9 @@ namespace xtd {
       /// @remarks The lifetime of the new asynchronous socket operation context object is determined by references by the application code and asynchronous I/O references. It is not necessary for the application to retain a reference to an asynchronous socket operation context object after it is submitted as a parameter to one of the asynchronous socket operation methods. It will remain referenced until the completion callback returns. However it is advantageous for the application to retain the reference to the context so that it can be reused for a future asynchronous socket operation.
       class core_export_ socket_async_event_args : public xtd::event_args {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Creates an empty xtd::net::sockets::socket_async_event_args instance.
         /// @remarks After calling this constructor all properties will have their default values:
         /// * Object references will be null.
@@ -62,7 +65,11 @@ namespace xtd {
         /// @brief Initializes the SocketAsyncEventArgs.
         /// @param suppress_execution_context_flow Whether to disable the capturing and flow of execution context. Execution context flow should only be disabled if it's handled by higher layers.
         socket_async_event_args(bool suppress_execution_context_flow);
+        /// @}
 
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the socket to use or the socket created for accepting a connection with an asynchronous socket method.
         /// @return The xtd::net::sockets::socket to use or the socket created for accepting a connection with an asynchronous socket method.
         /// @remarks This property can be used to provide an already created Socket that will be used for an asynchronous socket accept operation. Upon completion of the accept operation, it is the socket representing the accepted connection. If not supplied (set to empty) before calling the xtd::net::sockets::socket::acceptA_async method, a new socket will be created automatically and be accessible in the completion callback with this property.
@@ -83,7 +90,11 @@ namespace xtd {
         /// @remarks This property gets the data buffer currently associated with the xtd::net::sockets::socket_async_event_args instance. To set the buffer, the xtd::net::sockets::socket_async_event_args::set_buffer method must be used.
         /// @remarks This property is used with the xtd::net::sockets::socket::accept_async, xtd::net::sockets::socket::connect_async, xtd::net::sockets::socket::receive_async, xtd::net::sockets::socket::receive_from_async, xtd::net::sockets::socket::receive_message_from_async, xtd::net::sockets::socket::send_async, and xtd::net::sockets::socket::send_to_async methods.
         std::vector<byte_t>& buffer() noexcept;
+        /// @}
         
+        /// @name Methods
+        
+        /// @{
         /// @brief Sets the region of memory to use as a buffer with an asynchronous socket method.
         /// @param memory_buffer The region of memory to use as a buffer with an asynchronous socket method.
         void set_buffer(const std::vector<byte_t>& memory_buffer);
@@ -104,14 +115,22 @@ namespace xtd {
         /// @remarks The offset and count parameters can't be negative numbers. The combination of the offset and count parameters must be in bounds of the data array in the buffer parameter.
         /// @remarks This method sets the xtd::net::sockets::socket_async_event_args::buffer property to the buffer parameter, the xtd::net::sockets::socket_async_event_args::count property to the count parameter, and the xtd::net::sockets::socket_async_event_args::offset property to the offset parameter.
         void set_buffer(const std::vector<byte_t>& buffer, size_t count, size_t offset);
+        /// @}
 
+        /// @name Events
+        
+        /// @{
         /// @brief The event used to complete an asynchronous operation.
         /// @remarks The xtd::net::sockets::socket_async_event_args::completed event provides a way for client applications to complete an asynchronous socket operation. An event handler should be attached to the event within a xtd::net::sockets::socket_async_event_args instance when an asynchronous socket operation is initiated, otherwise the application will not be able to determine when the operation completes.
         /// @remarks The completion callback delegates referenced by the xtd::net::sockets::socket_async_event_args::completed event contains program logic to finish processing the asynchronous socket operation for the client.
         /// @remarks When the event is signaled, the application uses the xtd::net::sockets::socket_async_event_args object parameter to obtain the status of the completed asynchronous socket operation.
         xtd::event<socket_async_event_args, xtd::delegate<void(const socket_async_event_args&)>> completed;
+        /// @}
         
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Represents a method that is called when an asynchronous operation completes.
         /// @param e The event that is signaled.
         /// @remarks This method is not callable by user code. This method gets called by the internals of the xtd::net::sockets::socket_async_event_args object when the current operation is complete. This method is used with all asynchronous socket (xxx_async) methods.
@@ -120,6 +139,7 @@ namespace xtd {
         /// @remarks The caller's xtd::net::sockets::socket_async_event_args::on_completed method provides a way for client applications to complete an asynchronous socket operation. A callback delegate must be implemented when an asynchronous socket operation is initiated. The completion callback delegate(s) inherited from the xtd::net::sockets::socket_async_event_args::on_completed method must contain program logic to finish processing the asynchronous socket operation for the client.
         /// @remarks When an asynchronous operation is signaled, the application uses the xtd::net::sockets::socket_async_event_args object parameter to obtain status of the completed asynchronous socket operation.
         virtual void on_complete(const socket_async_event_args& e);
+        /// @}
         
       private:
         friend socket;

@@ -30,6 +30,9 @@ namespace xtd {
       /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a xtd::net::sockets::socket when the xtd::net::sockets::socket::linger_state property is not set and for a xtd::net::sockets::tcp_client when the xtd::net::sockets::tcp_client::linger_state property is not set.
       class core_export_ linger_option : public xtd::object {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::linger_option class.
         linger_option() = default;
         /// @brief Initializes a new version of the xtd::net::sockets::linger_option class for the specified IP multicast group.
@@ -45,6 +48,7 @@ namespace xtd {
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
         linger_option(bool enabled, uint32_t linger_time);
+        /// @}
 
         /// @cond
         linger_option(linger_option&& linger_option) = default;
@@ -53,6 +57,9 @@ namespace xtd {
         friend std::ostream& operator <<(std::ostream& os, const linger_option& mo) noexcept {return os << mo.to_string();}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets a value that indicates whether to linger after the xtd::net::sockets::socket is closed.
         /// @return true if the xtd::net::sockets::socket should linger after xtd::net::sockets::socket::close is called; otherwise, false.
         /// @remarks You can use the xtd::net::sockets::linger_option::enabled property to determine whether the xtd::net::sockets::socket will linger after closing. Change this value to true or false and pass the altered xtd::net::sockets::linger_option to the xtd::net::sockets::socket::set_socket_option method or set the xtd::net::sockets::socket::linger_state or xtd::net::sockets::tcp_client::linger_state property to disable or enable lingering.
@@ -104,6 +111,7 @@ namespace xtd {
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
         linger_option& linger_time(uint32_t value) noexcept;
+        /// @}
 
       private:
         bool enabled_ = false;
