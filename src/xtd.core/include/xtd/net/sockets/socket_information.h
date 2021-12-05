@@ -29,8 +29,12 @@ namespace xtd {
       /// @remarks xtd::net::sockets::socket::duplicate_and_close creates a xtd::net::sockets::socket_information instance for use with the xtd::net::sockets::socket::socket constructor.
       class core_export_ socket_information : public xtd::object {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::socket_information class.
         socket_information() = default;
+        /// @}
 
         /// @cond
         socket_information(socket_information&& socket_information) = default;
@@ -39,6 +43,9 @@ namespace xtd {
         friend std::ostream& operator <<(std::ostream& os, const socket_information& mo) noexcept {return os << mo.to_string();}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the options for a xtd::net::sockets::socket.
         /// @return A xtd::net::sockets::socket_information_options instance.
         /// @remarks Options include xtd::net::sockets::socket_information_options::connected, xtd::net::sockets::socket_information_options::listening, xtd::net::sockets::socket_information_options::non_blocking, and xtd::net::sockets::socket_information_options::use_only_overlapped_io.
@@ -56,6 +63,7 @@ namespace xtd {
         /// @param value An array of byte.
         /// @return This current instance.
         socket_information& protocol_information(const std::vector<byte_t>& value) noexcept;
+        /// @}
 
       private:
         xtd::net::sockets::socket_information_options options_ = xtd::net::sockets::socket_information_options::none;

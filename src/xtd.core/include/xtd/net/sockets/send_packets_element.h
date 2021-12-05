@@ -37,9 +37,16 @@ namespace xtd {
       /// @remarks The xtd::net::sockets::send_packets_element class is used to enhance the xtd::net::sockets::socket class for use by server applications that use asynchronous network I/O to achieve the highest performance. The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::send_packets_async method.
       class core_export_ send_packets_element : public xtd::object {
       public:
+        /// @name Alias
+        
+        /// @{
         /// @brief Represent ta std::ifstream reference.
         using ifstream_ref = std::reference_wrapper<std::ifstream>;
+        /// @}
         
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class
         send_packets_element() = default;
         
@@ -98,12 +105,16 @@ namespace xtd {
         /// @param file_stream The file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         send_packets_element(std::ifstream& file_stream);
+        /// @}
 
         /// @cond
         send_packets_element(send_packets_element&& socket) = default;
         ~send_packets_element();
         /// @endcond
 
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the buffer to be sent if the xtd::net::sockets::send_packets_element object was initialized with a buffer parameter.
         /// @return The byte buffer to send if the xtd::net::sockets::send_packets_element object was initialized with a buffer parameter.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::buffer property is empty if the xtd::net::sockets::send_packets_element object was not initialized with a buffer parameter.
@@ -135,6 +146,7 @@ namespace xtd {
         /// @return The offset, in bytes, from the beginning of the data buffer or file to the location in the buffer or file to start sending the data.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::offset property is zero if the xtd::net::sockets::send_packets_element class was not initialized with an offset parameter.
         size_t offset() const noexcept;
+        /// @}
 
       private:
         std::vector<byte_t> buffer_;

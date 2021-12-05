@@ -132,6 +132,9 @@ namespace xtd {
         };
 
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class.
         socket();
         
@@ -159,6 +162,7 @@ namespace xtd {
         /// @remarks The address_family parameter specifies the addressing scheme that the xtd::net::sockets::socket class uses, the socket_type parameter specifies the type of the xtd::net::sockets::socket class, and the protocol_type parameter specifies the protocol used by xtd::net::sockets::socket. The three parameters are not independent. Some address families restrict which protocols can be used with them, and often the xtd::net::sockets::socket type is implicit in the protocol. If the combination of address family, xtd::net::sockets::socket type, and protocol type results in an invalid xtd::net::sockets::socket, this constructor throws a xtd::net::sockets::socket_exception.
         /// @note If this constructor throws a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type);
+        /// @}
         
         /// @cond
         socket(socket&&) = default;
@@ -170,6 +174,9 @@ namespace xtd {
         bool operator!=(const socket& s) const {return !operator==(s);};
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the address family of the xtd::net::sockets::socket.
         /// @return One of the xtd::net::sockets::address_family values.
         /// @remarks The xtd::net::sockets::address_family specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use. This property is read-only and is set when the xtd::net::sockets::socket is created.
@@ -485,7 +492,11 @@ namespace xtd {
         /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket is ignored by the TCP/IP stack if a successful connection has been established using the socket.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& ttl(byte_t value);
+        /// @}
         
+        /// @name Methods
+        
+        /// @{
         /// @brief Creates a new xtd::net::sockets::socket for a newly created connection.
         /// @return A xtd::net::sockets::socket for a newly created connection.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -1523,6 +1534,7 @@ namespace xtd {
         /// @remarks Setting how to xtd::net::sockets::socket_shutdown::both disables both sends and receives as described above.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void shutdown(xtd::net::sockets::socket_shutdown how);
+        /// @}
         
       private:
         static xtd::net::sockets::socket_error get_last_error_();

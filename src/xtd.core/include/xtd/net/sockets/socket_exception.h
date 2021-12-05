@@ -27,6 +27,9 @@ namespace xtd {
       /// @include socket_exception.cpp
       class socket_exception : public xtd::system_exception {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Create a new instance of class socket_exception
         /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
         /// @remarks Message is set with the default message associate to the exception.
@@ -83,6 +86,7 @@ namespace xtd {
         /// @param error One of xtd::net::sockets::socket_error values .
         /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
         explicit socket_exception(const xtd::net::sockets::socket_error& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), std::error_code(static_cast<int32_t>(error), std::system_category()), info) {}
+        /// @}
 
         /// @cond
         socket_exception(const socket_exception&) = default;

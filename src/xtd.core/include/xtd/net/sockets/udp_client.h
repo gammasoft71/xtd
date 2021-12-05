@@ -67,6 +67,9 @@ namespace xtd {
         };
 
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::udp_client class
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @remarks This constructor creates a new xtd::net::sockets::udp_client and allows the underlying service provider to assign the most appropriate local IPv4 address and port number. If this constructor is used, the xtd::net::sockets::udp_client instance is set with an address family of IPv4 that cannot be changed or overwritten by a connect method call with an IPv6 target.
@@ -113,6 +116,7 @@ namespace xtd {
         /// @remarks This constructor initializes a new xtd::net::sockets::udp_client and establishes a remote host using the hostname and port parameters. Establishing a default remote host is optional. If you use this constructor, you do not have to specify a remote host in each call to the xtd::net::sockets::udp_client::send method. Specifying a default remote host limits you to that host only. You can change the default remote host at any time by calling the xtd::net::sockets::udp_client::connect method. If you want to specify a remote host in your call to the xtd::net::sockets::udp_client::send method, do not use this constructor.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         udp_client(const xtd::ustring& hostname, uint16_t port);
+        /// @}
 
         /// @cond
         udp_client(udp_client&&) = default;
@@ -124,6 +128,9 @@ namespace xtd {
         bool operator!=(const udp_client& s) const {return !operator==(s);};
         /// @endcond
 
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the amount of data received from the network that is available to read.
         /// @return The number of bytes of data received from the network.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
@@ -225,6 +232,9 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         udp_client& ttl(byte_t value);
 
+        /// @name Methods
+        
+        /// @{
         /// @brief Enables or disables Network Address Translation (NAT) traversal on a xtd::net::sockets::udp_client instance.
         /// @param allowed A boolean value that specifies whether to enable or disable NAT traversal.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
@@ -453,8 +463,12 @@ namespace xtd {
         /// @remarks If you want to send datagrams to a different remote host, you must call the xtd::net::sockets::udp_client::connect method and specify the desired remote host. Use either of the other xtd::net::sockets::udp_client::send method overloads to send datagrams to a broadcast address.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t send(const std::vector<byte_t>& dgram, size_t bytes);
+        /// @}
 
       protected:        
+        /// @name Protected properties
+        
+        /// @{
         /// @brief Gets a value that indicates whether a connection has been made.
         /// @return bool true if the connection has been made; otherwise, false.
         /// @remarks Classes deriving from xtd::net::sockets::udp_client can use this property to determine if a default remote host has been established. You can establish a default remote host by using the appropriate constructor or by calling the xtd::net::sockets::udp_client::connect method. If you do establish a default remote host, you cannot specify a remote host in your call to xtd::net::sockets::udp_client::send.
@@ -464,6 +478,7 @@ namespace xtd {
         /// @return This current instance.
         /// @remarks Classes deriving from xtd::net::sockets::udp_client can use this property to determine if a default remote host has been established. You can establish a default remote host by using the appropriate constructor or by calling the xtd::net::sockets::udp_client::connect method. If you do establish a default remote host, you cannot specify a remote host in your call to xtd::net::sockets::udp_client::send.
         udp_client& active(bool value) noexcept;
+        /// @}
 
       private:
         udp_client(const xtd::net::sockets::socket& socket);
