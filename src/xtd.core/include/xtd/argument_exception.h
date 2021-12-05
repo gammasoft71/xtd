@@ -18,6 +18,9 @@ namespace xtd {
   /// @todo add param_name property and constructors param (param_nam is the parameter that cause the exception).
   class argument_exception : public system_exception {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Create a new instance of class argument_exception
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
@@ -70,6 +73,7 @@ namespace xtd {
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     explicit argument_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
+    /// @}
 
     /// @cond
     argument_exception(const argument_exception&) = default;

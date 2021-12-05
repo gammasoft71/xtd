@@ -19,6 +19,9 @@ namespace xtd {
   /// @remarks This class cannot be inherited.
   class convert static_ {
   public:
+    /// @name Methods
+    
+    /// @{
     /// @brief Convert std::any to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -5413,5 +5416,6 @@ namespace xtd {
     static ustring to_ustring(type_t value) noexcept {
       return ustring::format("{}", value);
     }
+    /// @}
   };
 }

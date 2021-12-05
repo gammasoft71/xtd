@@ -71,6 +71,9 @@ namespace xtd {
 #endif
     /// @endcond
 
+    /// @name Fields
+    
+    /// @{
     /// @brief Indicates the byte_t order ("endianness") in which data is stored in this computer architecture.
     /// @return Returns true if the architecture is big-endian; false if it is little-endian.
     /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
@@ -92,7 +95,11 @@ namespace xtd {
     /// The following code example illustrates the use of the endianness field.
     /// @include bit_converter_endianness.cpp
     static constexpr endian endianness = is_little_endian ? endian::little : endian::big;
+    /// @}
     
+    /// @name Methods
+    
+    /// @{
     /// @brief Converts the specified double-precision floating point number to a 64-bit signed integer.
     /// @param value The number to convert.
     /// @return A 64-bit signed integer whose value is equivalent to value.
@@ -366,6 +373,7 @@ namespace xtd {
     /// The following code example converts byte_t std::vectors to xtd::ustring objects with the to_string method.
     /// @include bit_converterto_string3.cpp
     static xtd::ustring to_string(const std::vector<byte_t>& value, size_t start_index, size_t length);
+    /// @}
   };
 
   /// @cond

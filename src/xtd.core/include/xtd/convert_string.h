@@ -19,6 +19,9 @@ namespace xtd {
   /// @remarks To change the encoded format use xtd::text::encoding with xtd::ustring class.
   class convert_string static_ {
   public:
+    /// @name Methods
+    
+    /// @{
     /// @brief Converts std::string to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -1033,5 +1036,6 @@ namespace xtd {
     /// wstring s1 = string_converter::to_wstring(c1);
     /// @endcode
     static std::wstring to_wstring(wchar_t* str) noexcept;
+    /// @}
   };
 }

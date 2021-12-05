@@ -41,14 +41,6 @@ void console::background_color(console_color color) {
   __opaque_console::background_color(color);
 }
 
-void console::beep() {
-  beep(800, 200);
-}
-
-void console::beep(uint32_t frequency, uint32_t duration) {
-  __opaque_console::beep(frequency, duration);
-}
-
 int32_t console::buffer_height() {
   return __opaque_console::buffer_height();
 }
@@ -67,10 +59,6 @@ void console::buffer_width(int32_t width) {
 
 bool console::caps_lock() {
   return __opaque_console::caps_lock();
-}
-
-void console::clear() {
-  __opaque_console::clear();
 }
 
 int32_t console::cursor_left() {
@@ -149,6 +137,78 @@ bool console::number_lock() {
   return __opaque_console::number_lock();
 }
 
+int32_t console::output_code_page() {
+  return __opaque_console::output_code_page();
+}
+
+bool console::output_code_page(int32_t code_page) {
+  return __opaque_console::output_code_page(code_page);
+}
+
+ustring console::title() {
+  return __opaque_console::title();
+}
+
+void console::title(const ustring& title) {
+  __opaque_console::title(title);
+}
+
+bool console::treat_control_c_as_input() {
+  return __opaque_console::treat_control_c_as_input();
+}
+
+void console::treat_control_c_as_input(bool treat_control_c_as_input) {
+  return __opaque_console::treat_control_c_as_input(treat_control_c_as_input);
+}
+
+int32_t console::window_height() {
+  return __opaque_console::window_height();
+}
+
+void console::window_height(int32_t height) {
+  __opaque_console::window_height(height);
+}
+
+int32_t console::window_left() {
+  return __opaque_console::window_left();
+}
+
+void console::window_left(int32_t left) {
+  __opaque_console::window_left(left);
+}
+
+int32_t console::window_top() {
+  return __opaque_console::window_top();
+}
+
+void console::window_top(int32_t top) {
+  __opaque_console::window_top(top);
+}
+
+int32_t console::window_width() {
+  return __opaque_console::window_width();
+}
+
+void console::window_width(int32 width) {
+  __opaque_console::window_width(width);
+}
+
+void console::beep() {
+  beep(800, 200);
+}
+
+void console::beep(uint32_t frequency, uint32_t duration) {
+  __opaque_console::beep(frequency, duration);
+}
+
+void console::clear() {
+  __opaque_console::clear();
+}
+
+std::pair<int32_t, int32_t> console::get_cursor_position() {
+  return {cursor_left(), cursor_top()};
+}
+
 std::ostream console::open_standard_error() {
   return std::ostream(__get_err_rdbuf());
 }
@@ -159,14 +219,6 @@ std::istream console::open_standard_input() {
 
 std::ostream console::open_standard_output() {
   return std::ostream(__get_out_rdbuf());
-}
-
-int32_t console::output_code_page() {
-  return __opaque_console::output_code_page();
-}
-
-bool console::output_code_page(int32_t code_page) {
-  return __opaque_console::output_code_page(code_page);
 }
 
 ustring console::read_line() {
@@ -223,54 +275,6 @@ void console::set_window_position(int32_t left, int32_t top) {
 void console::set_window_size(int32_t width, int32_t height) {
   window_width(width);
   window_height(height);
-}
-
-ustring console::title() {
-  return __opaque_console::title();
-}
-
-void console::title(const ustring& title) {
-  __opaque_console::title(title);
-}
-
-bool console::treat_control_c_as_input() {
-  return __opaque_console::treat_control_c_as_input();
-}
-
-void console::treat_control_c_as_input(bool treat_control_c_as_input) {
-  return __opaque_console::treat_control_c_as_input(treat_control_c_as_input);
-}
-
-int32_t console::window_height() {
-  return __opaque_console::window_height();
-}
-
-void console::window_height(int32_t height) {
-  __opaque_console::window_height(height);
-}
-
-int32_t console::window_left() {
-  return __opaque_console::window_left();
-}
-
-void console::window_left(int32_t left) {
-  __opaque_console::window_left(left);
-}
-
-int32_t console::window_top() {
-  return __opaque_console::window_top();
-}
-
-void console::window_top(int32_t top) {
-  __opaque_console::window_top(top);
-}
-
-int32_t console::window_width() {
-  return __opaque_console::window_width();
-}
-
-void console::window_width(int32 width) {
-  __opaque_console::window_width(width);
 }
 
 void console::write_line() {

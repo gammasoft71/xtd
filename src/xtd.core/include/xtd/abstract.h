@@ -21,10 +21,18 @@ namespace xtd {
   /// };
   /// @endcode
   class abstract_object : public xtd::object {
-  protected:
-    abstract_object() = default;
   public:
+    /// @cond
     ~abstract_object() override = 0;
+    /// @endcond
+
+  protected:
+    /// @name Protected Constructors
+    
+    /// @{
+    /// @brief Initializes a new instance of the xtd::abstract_object class.
+    abstract_object() = default;
+    /// @}
   };
 
   /// @brief This keyword is used to represents an abstract class.
