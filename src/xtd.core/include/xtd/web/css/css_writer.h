@@ -14,17 +14,28 @@ namespace xtd {
     namespace css {
       class css_writer : public object {
       public:
+        /// @name Constructors
+        
+        /// @{
         css_writer(std::ostream& stream) : text_writer_(new xtd::io::stream_writer(stream)) {}
         css_writer(xtd::io::text_writer& text_writer) : text_writer_(&text_writer), delete_when_destroy_(false) {}
         css_writer(const xtd::ustring& path) : text_writer_(new xtd::io::stream_writer(path)) {}
-        ~css_writer() {
-          if (delete_when_destroy_ && text_writer_) delete text_writer_;
-        }
+        /// @}
+        /// @cond
+        ~css_writer() {if (delete_when_destroy_ && text_writer_) delete text_writer_;}
+        /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         const xtd::web::css::selector_map& selectors() const {return selectors_;}
         xtd::web::css::selector_map& selectors() {return selectors_;}
         void selectors(const xtd::web::css::selector_map& selector) {selectors_ = selector;}
+        /// @}
         
+        /// @name Methods
+        
+        /// @{
         void write() {
           if (!text_writer_) return;
           for (auto selector : selectors_) {
@@ -34,6 +45,7 @@ namespace xtd {
             text_writer_->write_line("}");
           }
         }
+        /// @}
 
       private:
         xtd::web::css::selector_map selectors_;

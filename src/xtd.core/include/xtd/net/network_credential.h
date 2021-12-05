@@ -22,6 +22,9 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ network_credential : public xtd::object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::net::network_credential class.
       network_credential() = default;
       /// @brief Initializes a new instance of the xtd::net::network_credential class with the specified user name and password.
@@ -32,6 +35,7 @@ namespace xtd {
       network_credential(const xtd::ustring& user_name, const xtd::security::secure_string& password, const xtd::ustring& domain);
       /// @brief Initializes a new instance of the xtd::net::network_credential class with the specified user name, password and domain.
       network_credential(const xtd::ustring& user_name, const xtd::ustring& password, const xtd::ustring& domain);
+      /// @}
 
       /// @cond
       network_credential(network_credential&& network_credential) = default;
@@ -40,6 +44,9 @@ namespace xtd {
       friend std::ostream& operator <<(std::ostream& os, const network_credential& host_entry) noexcept {return os << host_entry.to_string();}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the domain or computer name that verifies the credentials.
       /// @return The name of the domain associated with the credentials.
       /// @remarks The xtd::net::network_credential::domain property specifies the domain or realm to which the user name belongs. Typically, this is the host computer name where the application runs or the user domain for the currently logged in user.
@@ -69,6 +76,7 @@ namespace xtd {
       /// @brief Sets the user name associated with the credentials.
       /// @param value The user name associated with the credentials.
       network_credential& user_name(const xtd::ustring& value) noexcept;
+      /// @}
 
     private:
       xtd::ustring user_name_;

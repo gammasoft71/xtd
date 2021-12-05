@@ -17,6 +17,9 @@ namespace xtd {
     /// @ingroup xtd_core security
     class secure_string final : public xtd::object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::security::secure_string class.
       secure_string() = default;
 
@@ -25,6 +28,7 @@ namespace xtd {
       /// @param length The number of elements of value to include in the new instance.
       /// @remarks This constructor initializes the new xtd::security::secure_string object to the number of characters in value specified by length; the value of the instance is then encrypted.
       secure_string(const char value[], size_t length);
+      /// @}
 
       /// @cond
       secure_string(secure_string&&) = default;
@@ -33,6 +37,9 @@ namespace xtd {
       bool empty() const noexcept;
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets underlying encrypted data.
       /// @return The underlying encrypted data.
       intptr_t data() const noexcept;
@@ -40,11 +47,16 @@ namespace xtd {
       /// @brief Gets underlying encrypted data size.
       /// @return The underlying encrypted data size.
       size_t size() const noexcept;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets decrypted data.
       /// @brief A encrypted byte array.
       /// @warning This is a more convenient but less secure alternative to using xtd::security::secure_string::data.
       std::string to_unsecure_string() const noexcept;
+      /// @}
       
     private:
       std::vector<byte_t> data_;
