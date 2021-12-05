@@ -17,6 +17,9 @@ namespace xtd {
   /// @include time_out_exception.cpp
   class time_out_exception : public system_exception {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Create a new instance of class time_out_exception
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
@@ -69,6 +72,7 @@ namespace xtd {
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     explicit time_out_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
+    /// @}
 
     /// @cond
     time_out_exception(const time_out_exception&) = default;

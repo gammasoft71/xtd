@@ -19,6 +19,9 @@ namespace xtd {
   /// @include math.cpp
   class math static_ {
   public:
+    /// @name Fields
+    
+    /// @{
     /// @brief Represents the natural logarithmic base, specified by the constant, e. This field is constant.
     /// @remarks The value of this field is 2.7182818284590452354.
     static constexpr double e = 2.7182818284590452354;
@@ -49,7 +52,11 @@ namespace xtd {
     /// @brief Represents the number of radians in one turn, specified by the constant, τ.
     /// @remarks The value of this field is 2.7182818284590451.
     static constexpr double tau = 2.7182818284590451;
+    /// @}
 
+    /// @name Methods
+    
+    /// @{
     /// @brief Returns the absolute value of a decimal number
     /// @param value A number in the range std::numeric_limit<decimal_t>::lowest() <= value <= std::numeric_limit<decimal_t>::max().
     /// @return A decimal number, x, such that 0 <= x <= std::numeric_limit<decimal_t>::max()std::numeric_limit<decimal_t>::max().
@@ -603,5 +610,6 @@ namespace xtd {
     /// | math::negative_infinity | math::negative_infinity |
     /// | math::positive_infinity | math::positive_infinity |
     static double truncate(double value);
+    /// @}
   };
 }

@@ -26,9 +26,13 @@ namespace xtd {
   /// @include object.cpp
   class core_export_ object {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Create a new instance of the ultimate base class object
     /// @remarks This constructor is called by constructors in derived classes, but it can also be used to directly create an instance of the object class.
     object() = default;
+    /// @}
 
     /// @cond
     object(const object&) = default;
@@ -37,6 +41,9 @@ namespace xtd {
     //friend std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {return os << obj.to_string();}
     /// @endcond
 
+    /// @name Methods
+    
+    /// @{
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return true if the specified object is equal to the current object. otherwise, false.
@@ -88,6 +95,7 @@ namespace xtd {
     /// The following code example demonstrates what to_string returns.
     /// @include object_to_string.cpp
     virtual xtd::ustring to_string() const noexcept;
+    /// @}
   };
   
   /// @cond

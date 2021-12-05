@@ -17,6 +17,9 @@ namespace xtd {
   /// @include null_pointer_exception.cpp
   class null_pointer_exception : public system_exception {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Create a new instance of class null_pointer_exception
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
@@ -69,6 +72,7 @@ namespace xtd {
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     explicit null_pointer_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
+    /// @}
 
     /// @cond
     null_pointer_exception(const null_pointer_exception&) = default;

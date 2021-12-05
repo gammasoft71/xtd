@@ -16,7 +16,11 @@ namespace xtd {
   /// @see xtd::console::foreground_color method.
   class foreground_color final : public object {
   public:
+    /// @name Constructors
+    
+    /// @{
     explicit foreground_color(console_color color) : color_(color) {}
+    /// @}
     
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const foreground_color& color) {

@@ -16,7 +16,12 @@ namespace xtd {
   /// @see xtd::console::reset_color method.
   class reset_color final : public object {
   public:
+    /// @name Constructors
+    
+    /// @{
+    /// @brief Initialize a new insttance of xtd::reset_coloor class.
     reset_color() = default;
+    /// @}
     
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const reset_color&) {

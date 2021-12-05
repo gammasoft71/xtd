@@ -20,6 +20,9 @@ namespace xtd {
   /// @note The async_result class is the implementation of xtd::iasync_result that is returned by the begin_invoke method when you use a delegate to call a method asynchronously.
   class iasync_result interface_ {
   public:
+    /// @name Methods
+    
+    /// @{
     /// @brief Gets a user-defined object that qualifies or contains information about an asynchronous operation.
     /// @return A user-defined object that qualifies or contains information about an asynchronous operation.
     /// @remarks This property returns the object that is the last parameter of the method that initiates an asynchronous operation.
@@ -54,5 +57,6 @@ namespace xtd {
     /// @par Notes to Callers
     /// Clients that poll for operation status (as opposed to waiting on a synchronization object) use this property to determine the status of the operation.
     virtual bool is_completed() const noexcept = 0;
+    /// @}
   };
 }
