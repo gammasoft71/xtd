@@ -25,6 +25,9 @@ namespace xtd {
   /// @include console_out.cpp
   class console final static_ {
   public:
+    /// @name Fields
+    
+    /// @{
     /// @brief Gets the error output stream. A std::basic_ostream<char_t> that represents the error output stream.
     static std::ostream error;
     /// @brief Gets the standard input stream. A std::basic_istream<char_t> that represents the standard input stream.
@@ -37,15 +40,11 @@ namespace xtd {
     /// The following sample illustrates the use of the out property.
     /// @include console_in_out.cpp
     static std::ostream out;
+    /// @}
     
-    /// @brief Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
-    /// @remarks This event is used in conjunction with xtd::console_cancel_event_handler and xtd::console_cancel_event_args. The cancel_key_press event enables a console application to intercept the Ctrl+C signal so the event handler can decide whether to continue executing or terminate. For more information about handling events, see Handling and Raising Events.
-    /// @remarks When the user presses either Ctrl+C or Ctrl+Break, the cancel_key_press event is fired and the application's console_cancel_event_handler event handler is executed. The event handler is passed a console_cancel_event_args object that has two useful properties:
-    /// * special_key, which allows you to determine whether the handler was invoked as a result of the user pressing Ctrl+C (the property value is console_special_key::control_c) or Ctrl+Break (the property value is console_special_key.control_break).
-    /// * Cancel, which allows you to determine how to your application should respond to the user pressing Ctrl+C or Ctrl+Break. By default, the cancel property is false, which causes program execution to terminate when the event handler exits. Changing its property to true specifies that the application should continue to execute.
-    /// @note If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to false, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to true, you can ensure that pressing Ctrl+C will not terminate the application.
-    static event<console, console_cancel_event_handler> cancel_key_press;
+    /// @name Properties
     
+    /// @{
     /// @brief Gets the background color of the console.
     /// @return the background console_color.
     /// @remarks A get operation for a Windows-based application, in which a console does not exist, returns console_color::black.
@@ -60,20 +59,6 @@ namespace xtd {
     /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
     static void background_color(console_color color);
-    
-    /// @brief Plays the sound of a beep through the console speaker.
-    /// @remarks By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds
-    /// @par Examples
-    /// The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times.
-    /// @include console_beep.cpp
-    static void beep();
-    /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
-    /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
-    /// @param duration The duration of the beep measured in milliseconds
-    /// @par Examples
-    /// This example demonstrates the beep method by playing the first few notes of a song through the console speaker.
-    /// @include console_song.cpp
-    static void beep(uint32_t frequency, uint32_t duration);
     
     /// @brief Gets the height of the buffer area.
     /// @return The current height, in rows, of the buffer area.
@@ -104,18 +89,6 @@ namespace xtd {
     /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
     /// @return true if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
     static bool caps_lock();
-    
-    /// @brief Clears the console buffer and corresponding console window of display information.
-    /// @remarks Using the clear method is equivalent invoking the MS-DOS cls command in the command prompt window.
-    /// @remarks When the Clear method is called, the cursor automatically scrolls to the top-left corner of the window and the contents of the screen buffer are set to blanks using the current foreground background colors.
-    /// @par Examples
-    /// The following example uses the clear method to clear the console before it executes a loop, prompts the user to select a foreground and background color and to enter a string to display. If the user chooses not to exit the program, the console's original foreground and background colors are restored and the Clear method is called again before re-executing the loop.
-    /// @include console_clear.cpp
-    /// The example relies on a get_key_press method to validate the user's selection of a foreground and background color.
-    /// @par Examples
-    /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
-    /// @include console_cursor.cpp
-    static void clear();
     
     /// @brief Gets the column position of the cursor within the buffer area.
     /// @return The current position, in columns, of the cursor.
@@ -219,19 +192,6 @@ namespace xtd {
     /// @param true if NUM LOCK is turned on; false if NUM LOCK is turned off.
     static bool number_lock();
     
-    /// @brief Acquires the standard error stream.
-    /// @return The standard error stream.
-    /// @remarks This method can be used to reacquire the standard error stream after it has been changed by the set_error method.
-    static std::ostream open_standard_error();
-    /// @brief Acquires the standard input stream.
-    /// @return The standard input stream.
-    /// @remarks This method can be used to reacquire the standard input stream after it has been changed by the set_int method.
-    static std::istream open_standard_input();
-    /// @brief Acquires the standard output stream.
-    /// @return The standard output stream.
-    /// @remarks This method can be used to reacquire the standard output stream after it has been changed by the set_output method.
-    static std::ostream open_standard_output();
-    
     /// @brief Gets the code page the console uses to write output.
     /// @return The code page used to write console output.
     static int32_t output_code_page();
@@ -239,61 +199,6 @@ namespace xtd {
     /// @param code_page The code page used to write console output.
     /// @return true if the code page changed; otherwise false.
     static bool output_code_page(int32_t code_page);
-    
-    /// @brief Reads the next line of characters from the standard input stream.
-    /// @return The next line of characters from the input stream, or "" if no more lines are available.
-    static xtd::ustring read_line();
-    /// @brief Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
-    /// @return ConsoleKeyInfo A ConsoleKeyInfo object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key.
-    /// The ConsoleKeyInfo object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
-    static console_key_info read_key();
-    /// @brief Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window.
-    /// @param intercept Determines whether to display the pressed key in the console window. true to not display the pressed key; otherwise, false
-    /// @return ConsoleKeyInfo A ConsoleKeyInfo object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key.
-    /// The ConsoleKeyInfo object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
-    static console_key_info read_key(bool intercept);
-    
-    /// @brief Sets the foreground and background console colors to their defaults.
-    /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
-    static bool reset_color();
-    
-    /// @brief Sets the position of the cursor.
-    /// @param left The column position of the cursor. Columns are numbered from left to right starting at 0.
-    /// @param top The row position of the cursor. Rows are numbered from top to bottom starting at 0.
-    /// @remarks Use the set_cursor_position method to specify where the next write operation in the console window is to begin. If the specified cursor position is outside the area that is currently visible in the console window, the window origin changes automatically to make the cursor visible.
-    /// @remarks The cursor automatically moves to the next character position each time a character is written to the console window. If the cursor is at the bottom right character position of the console window, the next write operation causes the console window to scroll so the cursor remains visible. If you want to write a character to the bottom right character position without causing the console window to scroll, use the move_buffer_area method to move a character to that position.
-    static void set_cursor_position(int32_t left, int32_t top);
-    
-    /// @brief Sets the error property to the specified std::ostream object.
-    /// @param os A stream that is the new standard error output.
-    /// @remarks By default, the error property is set to the standard error output stream.
-    /// @remarks A std::ostream that encapsulates a std::ofstream can be used to send error messages to a file.
-    static void set_error(const std::ostream& os);
-    /// @brief Sets the int property to the specified std::istream object.
-    /// @param os A stream that is the new standard input.
-    /// @remarks By default, the in property is set to the standard input stream.
-    /// @remarks A std::istream that encapsulates a std::ifstream can be used to receiver input from a file.
-    static void set_in(const std::istream& is);
-    /// @brief Sets the out property to the specified std::ostream object.
-    /// @param os A stream that is the new standard output.
-    /// @remarks By default, the out property is set to the standard output stream.
-    /// @remarks A std::ostream that encapsulates a std::ofstream can be used to send output to a file.
-    static void set_out(const std::ostream& os);
-
-    /// @brief Sets the position of the console window relative to the screen buffer.
-    /// @param left The column position of the upper left corner of the console window.
-    /// @param top The row position of the upper left corner of the console window.
-    static void set_window_position(int32_t left, int32_t top);
-    
-    /// @brief Sets the height and width of the console window to the specified values.
-    /// @param width The width of the console window measured in columns.
-    /// @param height The height of the console window measured in rows.
-    /// @exception ArgumentOutOfRangeException width or height is less than or equal to zero.  -or-  width plus WindowLeft or height plus WindowTop is greater than or equal to Int16.MaxValue.  -or-  width or height is greater than the largest possible window width or height for the current screen resolution and console font.
-    /// @par Example
-    /// This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size.
-    /// The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates.
-    /// @include console_window_size.cpp
-    static void set_window_size(int32_t width, int32_t height);
 
     /// @brief Gets the title to display in the console title bar.
     /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
@@ -340,7 +245,110 @@ namespace xtd {
     /// @brief Sets the width of the console window area.
     /// @param width The width of the console window measured in columns.
     static void window_width(int32 width);
+    /// @}
     
+    /// @name Methods
+    
+    /// @{
+    /// @brief Plays the sound of a beep through the console speaker.
+    /// @remarks By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds
+    /// @par Examples
+    /// The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times.
+    /// @include console_beep.cpp
+    static void beep();
+    /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
+    /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
+    /// @param duration The duration of the beep measured in milliseconds
+    /// @par Examples
+    /// This example demonstrates the beep method by playing the first few notes of a song through the console speaker.
+    /// @include console_song.cpp
+    static void beep(uint32_t frequency, uint32_t duration);
+    
+    /// @brief Clears the console buffer and corresponding console window of display information.
+    /// @remarks Using the clear method is equivalent invoking the MS-DOS cls command in the command prompt window.
+    /// @remarks When the Clear method is called, the cursor automatically scrolls to the top-left corner of the window and the contents of the screen buffer are set to blanks using the current foreground background colors.
+    /// @par Examples
+    /// The following example uses the clear method to clear the console before it executes a loop, prompts the user to select a foreground and background color and to enter a string to display. If the user chooses not to exit the program, the console's original foreground and background colors are restored and the Clear method is called again before re-executing the loop.
+    /// @include console_clear.cpp
+    /// The example relies on a get_key_press method to validate the user's selection of a foreground and background color.
+    /// @par Examples
+    /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
+    /// @include console_cursor.cpp
+    static void clear();
+
+    /// @brief Gets the position of the cursor.
+    /// @return The column and row position of the cursor.
+    /// @remarks Columns are numbered from left to right starting at 0. Rows are numbered from top to bottom starting at 0.
+    static std::pair<int32_t, int32_t> get_cursor_position();
+    
+    /// @brief Acquires the standard error stream.
+    /// @return The standard error stream.
+    /// @remarks This method can be used to reacquire the standard error stream after it has been changed by the set_error method.
+    static std::ostream open_standard_error();
+    /// @brief Acquires the standard input stream.
+    /// @return The standard input stream.
+    /// @remarks This method can be used to reacquire the standard input stream after it has been changed by the set_int method.
+    static std::istream open_standard_input();
+    /// @brief Acquires the standard output stream.
+    /// @return The standard output stream.
+    /// @remarks This method can be used to reacquire the standard output stream after it has been changed by the set_output method.
+    static std::ostream open_standard_output();
+
+    /// @brief Reads the next line of characters from the standard input stream.
+    /// @return The next line of characters from the input stream, or "" if no more lines are available.
+    static xtd::ustring read_line();
+    /// @brief Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
+    /// @return ConsoleKeyInfo A ConsoleKeyInfo object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key.
+    /// The ConsoleKeyInfo object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
+    static console_key_info read_key();
+    /// @brief Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window.
+    /// @param intercept Determines whether to display the pressed key in the console window. true to not display the pressed key; otherwise, false
+    /// @return ConsoleKeyInfo A ConsoleKeyInfo object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key.
+    /// The ConsoleKeyInfo object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
+    static console_key_info read_key(bool intercept);
+    
+    /// @brief Sets the foreground and background console colors to their defaults.
+    /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
+    static bool reset_color();
+    
+    /// @brief Sets the position of the cursor.
+    /// @param left The column position of the cursor. Columns are numbered from left to right starting at 0.
+    /// @param top The row position of the cursor. Rows are numbered from top to bottom starting at 0.
+    /// @remarks Use the set_cursor_position method to specify where the next write operation in the console window is to begin. If the specified cursor position is outside the area that is currently visible in the console window, the window origin changes automatically to make the cursor visible.
+    /// @remarks The cursor automatically moves to the next character position each time a character is written to the console window. If the cursor is at the bottom right character position of the console window, the next write operation causes the console window to scroll so the cursor remains visible. If you want to write a character to the bottom right character position without causing the console window to scroll, use the move_buffer_area method to move a character to that position.
+    static void set_cursor_position(int32_t left, int32_t top);
+    
+    /// @brief Sets the error property to the specified std::ostream object.
+    /// @param os A stream that is the new standard error output.
+    /// @remarks By default, the error property is set to the standard error output stream.
+    /// @remarks A std::ostream that encapsulates a std::ofstream can be used to send error messages to a file.
+    static void set_error(const std::ostream& os);
+    /// @brief Sets the int property to the specified std::istream object.
+    /// @param os A stream that is the new standard input.
+    /// @remarks By default, the in property is set to the standard input stream.
+    /// @remarks A std::istream that encapsulates a std::ifstream can be used to receiver input from a file.
+    static void set_in(const std::istream& is);
+    /// @brief Sets the out property to the specified std::ostream object.
+    /// @param os A stream that is the new standard output.
+    /// @remarks By default, the out property is set to the standard output stream.
+    /// @remarks A std::ostream that encapsulates a std::ofstream can be used to send output to a file.
+    static void set_out(const std::ostream& os);
+    
+    /// @brief Sets the position of the console window relative to the screen buffer.
+    /// @param left The column position of the upper left corner of the console window.
+    /// @param top The row position of the upper left corner of the console window.
+    static void set_window_position(int32_t left, int32_t top);
+    
+    /// @brief Sets the height and width of the console window to the specified values.
+    /// @param width The width of the console window measured in columns.
+    /// @param height The height of the console window measured in rows.
+    /// @exception ArgumentOutOfRangeException width or height is less than or equal to zero.  -or-  width plus WindowLeft or height plus WindowTop is greater than or equal to Int16.MaxValue.  -or-  width or height is greater than the largest possible window width or height for the current screen resolution and console font.
+    /// @par Example
+    /// This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size.
+    /// The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates.
+    /// @include console_window_size.cpp
+    static void set_window_size(int32_t width, int32_t height);
+
     /// @brief Writes the text representation of the specified value to the standard output stream.
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
@@ -377,6 +385,16 @@ namespace xtd {
     /// @param values Values to write,
     template<typename ... args_t>
     static void write_line(const xtd::ustring& fmt, args_t&& ... values) {write_line_(xtd::ustring::format(fmt, std::forward<args_t>(values)...));}
+
+    
+    /// @brief Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
+    /// @remarks This event is used in conjunction with xtd::console_cancel_event_handler and xtd::console_cancel_event_args. The cancel_key_press event enables a console application to intercept the Ctrl+C signal so the event handler can decide whether to continue executing or terminate. For more information about handling events, see Handling and Raising Events.
+    /// @remarks When the user presses either Ctrl+C or Ctrl+Break, the cancel_key_press event is fired and the application's console_cancel_event_handler event handler is executed. The event handler is passed a console_cancel_event_args object that has two useful properties:
+    /// * special_key, which allows you to determine whether the handler was invoked as a result of the user pressing Ctrl+C (the property value is console_special_key::control_c) or Ctrl+Break (the property value is console_special_key.control_break).
+    /// * Cancel, which allows you to determine how to your application should respond to the user pressing Ctrl+C or Ctrl+Break. By default, the cancel property is false, which causes program execution to terminate when the event handler exits. Changing its property to true specifies that the application should continue to execute.
+    /// @note If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to false, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to true, you can ensure that pressing Ctrl+C will not terminate the application.
+    static event<console, console_cancel_event_handler> cancel_key_press;
+    /// @}
 
     /// @cond
     static void __internal_cancel_key_press__(xtd::console_cancel_event_args& e);

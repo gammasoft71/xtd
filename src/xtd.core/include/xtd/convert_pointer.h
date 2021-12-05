@@ -18,6 +18,9 @@ namespace xtd {
   /// @remarks This class cannot be inherited.
   class convert_pointer static_ {
   public:
+    /// @name Methods
+    
+    /// @{
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd
@@ -381,5 +384,6 @@ namespace xtd {
       }
       throw invalid_cast_exception(csf_);
     }
+    /// @}
   };
 }

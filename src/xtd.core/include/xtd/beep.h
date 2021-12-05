@@ -16,6 +16,9 @@ namespace xtd {
   /// @see xtd::console::beep method.
   class beep final : public object {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Plays the sound of a beep through the console speaker.
     /// @remarks By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds
     beep() = default;
@@ -24,6 +27,7 @@ namespace xtd {
     /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
     /// @param duration The duration of the beep measured in milliseconds
     beep(uint32_t frequency, uint32_t duration) : frequency_(frequency), duration_(duration) {}
+    // @}
     
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const beep& b) {

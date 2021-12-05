@@ -16,6 +16,9 @@ namespace xtd {
   /// @ingroup xtd_core
   class debugstreambuf : public object, public std::stringbuf {
   public:
+    /// @name Methods
+    
+    /// @{
     int sync() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
       if (!str().empty()) {
@@ -27,5 +30,6 @@ namespace xtd {
 #endif
       return 0;
     }
+    /// @}
   };
 }

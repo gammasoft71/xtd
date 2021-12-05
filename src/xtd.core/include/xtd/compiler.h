@@ -22,7 +22,13 @@ namespace xtd {
   /// @remarks By design, the operating_system class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the operating_system class. If you need a type to contain other information about C++ libraries, create your own type, then include a field of compiler type and any additional fields or methods that you require.
   class compiler final : public object {
   public:
+    /// @name Constructors
+    
+    /// @{
+    /// @brief Initialise a new xtd::compiler class.
+    /// @param compiler_id One of xtd::compiler_id values.
     compiler(xtd::compiler_id compiler_id) : compiler_id_(compiler_id) {}
+    /// @}
     
     /// @cond
     compiler() = default;
@@ -31,6 +37,9 @@ namespace xtd {
     friend std::ostream& operator <<(std::ostream& os, const compiler& compiler) noexcept {return os << compiler.to_string();}
     /// @endcond
     
+    /// @name Properties
+    
+    /// @{
     xtd::build_type build_type() const noexcept {return build_type_;}
     
     xtd::compiler_id compiler_id() const noexcept {return compiler_id_;}
@@ -49,10 +58,15 @@ namespace xtd {
     }
     
     const xtd::version& version() const noexcept {return version_;}
+    /// @}
     
+    /// @name Methods
+    
+    /// @{
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
     xtd::ustring to_string() const noexcept {return version_string();}
+    /// @}
     
   private:
 #if defined(_MSC_VER)
