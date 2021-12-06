@@ -34,6 +34,9 @@ namespace xtd {
       class forms_native_export_ image_list final static_ {
         friend xtd::forms::image_list;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Creates image list.
         /// @param image_size A xtd::drawing::size image size.
         /// @return The created control window handle.
@@ -60,6 +63,7 @@ namespace xtd {
         /// @param image The xtd::drawing::image image.
         /// @warning Internal use only
         static void update_item(intptr_t image_list, size_t index, const drawing::image& image);
+        /// @}
       };
     }
   }

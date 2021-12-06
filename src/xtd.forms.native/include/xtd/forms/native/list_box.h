@@ -35,6 +35,9 @@ namespace xtd {
       class forms_native_export_ list_box final static_ {
         friend xtd::forms::list_box;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Maintains performance while items are added to the list_box one at a time by preventing the control from drawing until the end_update() method is called.
         /// @param control List box window handle.
         /// @warning Internal use only
@@ -75,6 +78,7 @@ namespace xtd {
         /// @param value The text value.
         /// @warning Internal use only
         static void update_item(intptr_t control, size_t index, const xtd::ustring& value);
+        /// @}
       };
     }
   }

@@ -34,6 +34,9 @@ namespace xtd {
       class forms_native_export_ picture_box final static_ {
         friend xtd::forms::picture_box;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets the image that is displayed by picture_box.
         /// @param control Control window handle.
         /// @param image The xtd::drawing::image to display.
@@ -43,6 +46,7 @@ namespace xtd {
         /// @param control Control window handle.
         /// @warning Internal use only
         static void reset(intptr_t control);
+        /// @}
       };
     }
   }

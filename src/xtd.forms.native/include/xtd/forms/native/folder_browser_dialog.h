@@ -37,6 +37,9 @@ namespace xtd {
       class forms_native_export_ folder_browser_dialog final static_ {
         friend xtd::forms::folder_browser_dialog;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Shows dialog.
         /// @param hwnd Parent window handle.
         /// @param description The description to display.
@@ -57,6 +60,7 @@ namespace xtd {
         /// @remarks When dialog closed and if result is true, the selected_path parameter contains the new selected path.
         /// @warning Internal use only
         static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& description, environment::special_folder root_folder, xtd::ustring& selected_path, size_t options);
+        /// @}
       };
     }
   }

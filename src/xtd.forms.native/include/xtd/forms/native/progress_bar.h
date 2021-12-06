@@ -33,6 +33,9 @@ namespace xtd {
       class forms_native_export_ progress_bar final static_ {
         friend xtd::forms::progress_bar;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets value indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
         /// @param control Control window handle.
         /// @param marquee true if progress_bar is marquee; otherwise false.
@@ -54,6 +57,7 @@ namespace xtd {
         /// @param value The position within the range of the progress bar.
         /// @warning Internal use only
         static void value(intptr_t control, int32_t value);
+        /// @}
       };
     }
   }

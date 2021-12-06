@@ -33,6 +33,9 @@ namespace xtd {
       class forms_native_export_ collapsible_panel final static_ {
         friend xtd::forms::collapsible_panel;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
         /// @param control Collapsible panel window handle.
         /// @return true if collapsible_panel is expanded; otherwise false.
@@ -43,6 +46,7 @@ namespace xtd {
         /// @param expanded true if collapsible_panel is expanded; otherwise false.
         /// @warning Internal use only
         static void expanded(intptr_t handle, bool expanded);
+        /// @}
       };
     }
   }

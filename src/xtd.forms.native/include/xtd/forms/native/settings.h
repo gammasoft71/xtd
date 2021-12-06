@@ -37,6 +37,9 @@ namespace xtd {
       class forms_native_export_ settings final static_ {
         friend xtd::forms::settings;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Create settings.
         /// @return The settings handle created.
         /// @warning Internal use only
@@ -66,6 +69,7 @@ namespace xtd {
         /// @param value A string to write.
         /// @warning Internal use only
         static void write(intptr_t settings, const xtd::ustring& key, const xtd::ustring& value);
+        /// @}
       };
     }
   }

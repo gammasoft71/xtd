@@ -33,11 +33,15 @@ namespace xtd {
       class forms_native_export_ toggle_button final static_ {
         friend xtd::forms::toggle_button;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets check state.
         /// @param control Toggle button window handle.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
         static void check_state(intptr_t control, int check_state);
+        /// @}
       };
     }
   }

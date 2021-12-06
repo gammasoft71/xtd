@@ -36,6 +36,9 @@ namespace xtd {
       class forms_native_export_ input_dialog final static_ {
         friend xtd::forms::input_dialog;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Shows dialog.
         /// @param hwnd Parent window handle.
         /// @param text A xtd::ustring that specifies the caption title of dialog.
@@ -63,6 +66,7 @@ namespace xtd {
         /// @remarks When dialog closed and if result is true, the value parameter contains the new string value.
         /// @warning Internal use only
         static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, xtd::ustring& value, int32_t character_casting, bool multiline, bool use_system_password_char, bool word_wrap);
+        /// @}
       };
     }
   }

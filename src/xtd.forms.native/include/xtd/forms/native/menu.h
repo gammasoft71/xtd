@@ -36,6 +36,9 @@ namespace xtd {
         friend xtd::forms::menu;
         friend xtd::forms::menu_item;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Creates menu.
         /// @return The created menu handle.
         /// @warning Internal use only
@@ -72,6 +75,7 @@ namespace xtd {
         /// @param text The text associated with this menu.
         /// @warning Internal use only
         static void text(intptr_t menu, const xtd::ustring& text);
+        /// @}
       };
     }
   }

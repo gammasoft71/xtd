@@ -33,6 +33,9 @@ namespace xtd {
       class forms_native_export_ numeric_up_down final static_ {
         friend xtd::forms::numeric_up_down;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets the number of decimal places to display in the spin box (also known as an up-down control).
         /// @param control Numeric up down window handle.
         /// @param decimal_place The number of decimal places to display in the spin box.
@@ -63,6 +66,7 @@ namespace xtd {
         /// @param value The numeric value of the numeric_up_down control.
         /// @warning Internal use only
         static void value(intptr_t control, double value);
+        /// @}
       };
     }
   }

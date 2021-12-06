@@ -33,6 +33,9 @@ namespace xtd {
       class forms_native_export_ up_down_button final static_ {
         friend xtd::forms::up_down_button;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets the maximum allowed value for the up_down_button control.
         /// @param control Up down button window handle.
         /// @param maximum The maximum allowed value for the up down button.
@@ -53,6 +56,7 @@ namespace xtd {
         /// @param value The numeric value of the up down button control.
         /// @warning Internal use only
         static void value(intptr_t control, int32_t value);
+        /// @}
       };
     }
   }

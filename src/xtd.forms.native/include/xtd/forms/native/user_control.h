@@ -33,11 +33,15 @@ namespace xtd {
       class forms_native_export_ user_control final static_ {
         friend xtd::forms::user_control;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Set virtual size
         /// @param control User control window handle.
         /// @param size A virtual xtd::drawing::size.
         /// @warning Internal use only
         static void virtual_size(intptr_t control, const drawing::size& size);
+        /// @}
       };
     }
   }

@@ -36,6 +36,9 @@ namespace xtd {
         friend xtd::forms::tab_control;
         friend xtd::forms::tab_page;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets image index associate to the tab page.
         /// @param control Tab page window handle.
         /// @param image_index The image index.
@@ -46,6 +49,7 @@ namespace xtd {
         /// @param text The text string.
         /// @warning Internal use only
         static void text(intptr_t control, const xtd::ustring& text);
+        /// @}
       };
     }
   }

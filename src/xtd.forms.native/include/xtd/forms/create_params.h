@@ -23,14 +23,21 @@ namespace xtd {
     /// @note The constants used to set the style, ex_style, and class_style properties are defined in the xtd.forms.native library as constants.
     class create_params {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the create_params class.
       create_params() = default;
+      /// @}
       
       /// @cond
       create_params(const create_params&) = default;
       create_params& operator=(create_params&) = default;
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the control's initial text.
       /// @return The control's initial text.
       const xtd::ustring& caption() const {return caption_;}
@@ -183,10 +190,15 @@ namespace xtd {
         location_.y(y);
         return *this;
       }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Returns a string that represents the current object.
       /// @return A string that represents the current object.
       xtd::ustring to_string() const {return ustring::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", class_name_, caption_, style_, ex_style_, location_.x(), location_.y(), size_.width(), size_.height());}
+      /// @}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const create_params& create_params) noexcept {return os << create_params.to_string();}

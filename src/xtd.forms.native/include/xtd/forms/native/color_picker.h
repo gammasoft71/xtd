@@ -34,6 +34,9 @@ namespace xtd {
       class forms_native_export_ color_picker final static_ {
         friend xtd::forms::color_picker;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets picker color.
         /// @param control Control window handle.
         /// @return A xtd::drawing::color from picker.
@@ -44,6 +47,7 @@ namespace xtd {
         /// @param color A xtd::drawing::color to picker.
         /// @warning Internal use only
         static void color(intptr_t control, const drawing::color& color);
+        /// @}
       };
     }
   }

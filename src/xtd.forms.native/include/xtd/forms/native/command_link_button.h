@@ -34,6 +34,9 @@ namespace xtd {
       class forms_native_export_ command_link_button final static_ {
         friend xtd::forms::command_link_button;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets image.
         /// @param control Command link button window handle.
         /// @param image A xtd::drawing::image to set.
@@ -44,6 +47,7 @@ namespace xtd {
         /// @param align A bitwise combination of the content alignment flags.
         /// @warning Internal use only
         static void image_align(intptr_t control, uint32_t align);
+        /// @}
       };
     }
   }

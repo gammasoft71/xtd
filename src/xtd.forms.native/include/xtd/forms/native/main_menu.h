@@ -33,6 +33,9 @@ namespace xtd {
       class forms_native_export_ main_menu final static_ {
         friend xtd::forms::main_menu;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Creates main menu.
         /// @return The created main menu handle.
         /// @warning Internal use only
@@ -53,6 +56,7 @@ namespace xtd {
         /// @param pos Position to insert menu item.
         /// @warning Internal use only
         static void remove_item(intptr_t main_menu, size_t pos);
+        /// @}
       };
     }
   }

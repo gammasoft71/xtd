@@ -38,6 +38,9 @@ namespace xtd {
       class forms_native_export_ progress_dialog final static_ {
         friend xtd::forms::progress_dialog;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets whether user has clicked on cancel button.
         /// @param dialog Progress dialog window handle.
         /// @return true if user has clicked on cancel button; otherwise false.
@@ -107,6 +110,7 @@ namespace xtd {
         /// @param value The position within the range of the progress bar. The default is 0.
         /// @warning Internal use only
         static void value(intptr_t dialog, int32_t value);
+        /// @}
       };
     }
   }

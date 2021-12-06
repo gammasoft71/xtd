@@ -37,6 +37,9 @@ namespace xtd {
         friend xtd::forms::context_menu;
         friend xtd::forms::menu_item;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Checked menu item.
         /// @param menu_item Menu item handle.
         /// @param checked true if menu item is checked; otherwise false.
@@ -71,6 +74,7 @@ namespace xtd {
         /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
         /// @warning Internal use only
         static void text(intptr_t menu_item, const xtd::ustring& text, size_t shortcut);
+        /// @}
       };
     }
   }

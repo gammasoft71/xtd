@@ -36,6 +36,9 @@ namespace xtd {
       class forms_native_export_ cursor final static_ {
         friend xtd::forms::cursor;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Creates cursor.
         /// @return The created cursor handle.
         /// @warning Internal use only
@@ -87,6 +90,7 @@ namespace xtd {
         /// @param cursor Cursor handle.
         /// @warning Internal use only
         static void show();
+        /// @}
       };
     }
   }

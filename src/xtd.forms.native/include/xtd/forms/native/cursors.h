@@ -33,6 +33,9 @@ namespace xtd {
       class forms_native_export_ cursors final static_ {
         friend xtd::forms::cursors;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets the cursor that appears when an application starts.
         /// @return The cursor that represents the cursor that appears when an application starts.
         /// @warning Internal use only
@@ -191,6 +194,7 @@ namespace xtd {
         /// @return The cursor that represents the zoom out cursor.
         /// @warning Internal use only
         static intptr_t zoom_out();
+        /// @}
       };
     }
   }

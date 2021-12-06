@@ -38,6 +38,9 @@ namespace xtd {
       class forms_native_export_ busy_dialog final static_ {
         friend xtd::forms::busy_dialog;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Creates and shows busy dialog.
         /// @param hwnd Parent window handle.
         /// @param icon An icon value that specifies the icon to display.
@@ -53,6 +56,7 @@ namespace xtd {
         /// @param dialog Busy dialog window handle to destroy.
         /// @warning Internal use only
         static void destroy(intptr_t dialog);
+        /// @}
       };
     }
   }

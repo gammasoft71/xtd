@@ -47,11 +47,14 @@ namespace xtd {
         friend xtd::forms::control;
         friend xtd::forms::native::control;
         friend xtd::forms::native::message_box;
-         friend xtd::forms::native::screen;
+        friend xtd::forms::native::screen;
         friend xtd::forms::native::settings;
         friend xtd::forms::native::timer;
         friend xtd::forms::native::wx_command_link_button;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets a value indicating whether the caller can quit this application.
         /// @return true if the caller can quit this application; otherwise, false.
         /// @warning Internal use only
@@ -112,6 +115,7 @@ namespace xtd {
         /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
         /// @warning Internal use only
         static void use_wait_cursor(bool use_wait_cursor);
+        /// @}
       };
     }
   }

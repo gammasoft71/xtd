@@ -34,6 +34,9 @@ namespace xtd {
       class forms_native_export_ form final static_ {
         friend xtd::forms::form;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Activates the form and gives it focus.
         /// @param control Control window handle.
         /// @warning Internal use only
@@ -113,6 +116,7 @@ namespace xtd {
         /// @param size A virtual xtd::drawing::size.
         /// @warning Internal use only
         static void virtual_size(intptr_t control, const drawing::size& size);
+        /// @}
       };
     }
   }
