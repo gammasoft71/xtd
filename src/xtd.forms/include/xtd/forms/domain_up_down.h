@@ -22,6 +22,9 @@ namespace xtd {
       /// @brief Represent an item contained in the domain_up_down::object_collection collection.
        class item {
        public:
+         /// @name Constructors
+         
+         /// @{
          /// @brief Initializes a new instance of the item class.
          item() = default;
          /// @brief Initializes a new instance of the item class with specified value.
@@ -31,6 +34,8 @@ namespace xtd {
          /// @param value a string that represent the item.
          /// @param tag an object that contains data about the item.
          item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
+         /// @}
+
          /// @cond
          item(const char* value) : value_(value) {}
          item(const item& value) = default;
@@ -44,6 +49,9 @@ namespace xtd {
          friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
          /// @endcond
          
+         /// @name Properties
+         
+         /// @{
          /// @brief Gets the value of the item.
          /// @return A xtd::ustring that represent the value of item.
          virtual const xtd::ustring& value() const {return value_;}
@@ -51,22 +59,45 @@ namespace xtd {
          /// @brief Gets the tag of the item.
          /// @return A std::any that represent the tag of item.
          virtual std::any tag() const {return tag_;}
+         /// @}
          
+         /// @name Methods
+         
+         /// @{
          /// @brief Returns a string containing the vague of the item.
          /// @return A string containing the value of the item.
          xtd::ustring to_string() const {return value_;}
+         /// @}
 
        private:
          xtd::ustring value_;
          std::any tag_;
        };
       
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents the collection of items in a list_control.
       using object_collection = layout::arranged_element_collection<item>;
+      /// @}
 
+      /// @name Fields
+      
+      /// @{
+      /// @brief This is a special value equal to the maximum value representable by the type size_t.
+      static const size_t npos = std::numeric_limits<size_t>::max();
+      /// @}
+      
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the DomainUpDown class.
       domain_up_down();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets an object representing the collection of the items contained in this domain_up_down. Gets an object representing the collection of the items contained in this domain_up_down.
       /// @return A domain_up_down::object_collection representing the items in the domain_up_down.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the domain_up_down. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
@@ -104,9 +135,17 @@ namespace xtd {
       /// @param value true if the list starts again when the user reaches the beginning or end of the collection; otherwise, false. The default value is false.
       /// @return Current domain_up_down.
       virtual domain_up_down& wrap(bool value);
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       forms::create_params create_params() const override;
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the selected_item property has been changed.
       /// @ingroup events
       event<domain_up_down, event_handler> selected_item_changed;
@@ -114,9 +153,7 @@ namespace xtd {
       /// @brief Occurs when the value property has been changed.
       /// @ingroup events
       event<domain_up_down, event_handler> value_changed;
-
-      /// @brief This is a special value equal to the maximum value representable by the type size_t.
-      static const size_t npos = std::numeric_limits<size_t>::max();
+      /// @}
 
     protected:
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}

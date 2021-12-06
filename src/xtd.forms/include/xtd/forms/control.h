@@ -127,7 +127,7 @@ namespace xtd {
         std::shared_ptr<bool> is_completed_ = std::make_shared<bool>(false);
         std::shared_ptr<std::shared_mutex> async_mutex_ = std::make_shared<std::shared_mutex>();
       };
-      /// @cond
+      /// @endcond
       
     public:
       /// @brief Represents a collection of controls.
