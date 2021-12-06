@@ -40,6 +40,9 @@ namespace xtd {
         friend xtd::forms::native::form;
         friend xtd::forms::screen;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets number of screens.
         /// @return Number of screens.
         /// @warning Internal use only
@@ -98,6 +101,7 @@ namespace xtd {
         /// @return A screen index for the display that contains the point. In multiple display environments where no display contains the point, the display closest to the specified point is returned.
         /// @warning Internal use only
         static size_t from_point(const drawing::point& point);
+        /// @}
       };
     }
   }

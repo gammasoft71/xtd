@@ -36,6 +36,9 @@ namespace xtd {
       class forms_native_export_ about_dialog final static_ {
         friend xtd::forms::about_dialog;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Shows about dialog.
         /// @param hwnd Window handle.
         /// @param icon An icon value that specifies the icon to display.
@@ -53,6 +56,7 @@ namespace xtd {
         /// @param license A string that specifies the license text to display.
         /// @warning Internal use only
         static void show(intptr_t hwnd, const xtd::drawing::icon& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<xtd::ustring>& creators, const std::vector<xtd::ustring>& designers, const std::vector<xtd::ustring>& doc_writers, const std::vector<xtd::ustring>& translators, const xtd::ustring& license);
+        /// @}
       };
     }
   }

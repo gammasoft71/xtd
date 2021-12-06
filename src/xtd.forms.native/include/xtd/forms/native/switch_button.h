@@ -33,11 +33,15 @@ namespace xtd {
       class forms_native_export_ switch_button final static_ {
         friend xtd::forms::switch_button;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets checked.
         /// @param control Switch button window handle.
         /// @param checked true if the switch button is checked; otherwise, false.
         /// @warning Internal use only
         static void checked(intptr_t control, bool checked);
+        /// @}
       };
     }
   }

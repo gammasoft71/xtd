@@ -35,6 +35,9 @@ namespace xtd {
       class forms_native_export_ choice final static_ {
         friend xtd::forms::choice;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the end_update() method is called.
         /// @param control Choice window handle.
         /// @warning Internal use only
@@ -70,6 +73,7 @@ namespace xtd {
         /// @param value The text value.
         /// @warning Internal use only
         static void update_item(intptr_t control, size_t pos, const xtd::ustring& value);
+        /// @}
       };
     }
   }

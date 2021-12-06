@@ -34,6 +34,9 @@ namespace xtd {
       class forms_native_export_ scroll_bar final static_ {
         friend xtd::forms::scroll_bar;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets a value to be added to or subtracted from the value property when the scroll box is moved a large distance.
         /// @param control scroll bar window handle.
         /// @param large_change A numeric value. The default is 5.
@@ -64,6 +67,7 @@ namespace xtd {
         /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
         /// @warning Internal use only
         static void value(intptr_t control, int32_t value);
+        /// @}
       };
     }
   }

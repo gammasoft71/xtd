@@ -36,6 +36,9 @@ namespace xtd {
       class forms_native_export_ message_box final static_ {
         friend xtd::forms::message_dialog;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Shows dialog.
         /// @param hwnd Parent window handle.
         /// @param text The text to display in the message box.
@@ -54,6 +57,7 @@ namespace xtd {
         /// @param display_help_button true to show the Help button; otherwise, false.
         /// @warning Internal use only
         static void show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& caption, uint32_t options, bool display_help_button);
+        /// @}
       };
     }
   }

@@ -34,10 +34,14 @@ namespace xtd {
       class forms_native_export_ button final static_ {
         friend xtd::forms::button;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Mark button as default.
         /// @param control Button window handle.
         /// @warning Internal use only
         static void set_default_button(intptr_t control);
+        /// @}
       };
     }
   }

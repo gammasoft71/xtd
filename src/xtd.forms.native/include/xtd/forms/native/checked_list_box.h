@@ -35,6 +35,9 @@ namespace xtd {
       class forms_native_export_ checked_list_box final static_ {
         friend xtd::forms::checked_list_box;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Maintains performance while items are added to the checked_list_box one at a time by preventing the control from drawing until the end_update() method is called.
         /// @param control Checked list box window handle.
         /// @warning Internal use only
@@ -89,6 +92,7 @@ namespace xtd {
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
         static void update_item(intptr_t control, size_t index, const xtd::ustring& value, int32_t check_state);
+        /// @}
       };
     }
   }

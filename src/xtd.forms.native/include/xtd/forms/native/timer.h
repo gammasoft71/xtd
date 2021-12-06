@@ -35,6 +35,9 @@ namespace xtd {
       class forms_native_export_ timer final static_ {
         friend xtd::forms::timer;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Create and start timer.
         /// @param interval An int32_t specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
         /// @param tick The delegate called at each elapsed interval until the destroy call.
@@ -45,6 +48,7 @@ namespace xtd {
         /// @param timer timer handle.
         /// @warning Internal use only
         static void destroy(intptr_t timer);
+        /// @}
       };
     }
   }

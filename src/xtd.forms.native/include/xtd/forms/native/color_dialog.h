@@ -37,6 +37,9 @@ namespace xtd {
       class forms_native_export_ color_dialog final static_ {
         friend xtd::forms::color_dialog;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Shows dialog.
         /// @param hwnd Parent window handle.
         /// @param color A xtd::drawing::color that specifies the color to display.
@@ -54,6 +57,7 @@ namespace xtd {
         /// @remarks When dialog closed and if result is true, the color parameter contains the new chosen color.
         /// @warning Internal use only
         static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, xtd::drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options);
+        /// @}
       };
     }
   }

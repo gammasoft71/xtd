@@ -35,6 +35,9 @@ namespace xtd {
       class forms_native_export_ font_picker final static_ {
         friend xtd::forms::font_picker;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets the color selected by the user.
         /// @param control Control window handle.
         /// @return The color selected by the user. If a color is not selected, the default value is black.
@@ -55,6 +58,7 @@ namespace xtd {
         /// @param font The selected font.
         /// @warning Internal use only
         static void font(intptr_t control, const drawing::font& font);
+        /// @}
       };
     }
   }

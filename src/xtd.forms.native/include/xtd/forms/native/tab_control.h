@@ -37,6 +37,9 @@ namespace xtd {
         friend xtd::forms::tab_control;
         friend xtd::forms::tab_page;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Deletes specified tab page index.
         /// @param control Tab control window handle.
         /// @param page The page handle to delete.
@@ -63,6 +66,7 @@ namespace xtd {
         /// @param index The selected tab page index.
         /// @warning Internal use only
         static void selected_index(intptr_t control, size_t index);
+        /// @}
       };
     }
   }

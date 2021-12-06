@@ -33,6 +33,9 @@ namespace xtd {
       class forms_native_export_ context_menu final static_ {
         friend xtd::forms::context_menu;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Creates context menu.
         /// @return The created context menu window handle.
         /// @warning Internal use only
@@ -69,6 +72,7 @@ namespace xtd {
         /// @param text The text associated with this menu.
         /// @warning Internal use only
         static void text(intptr_t context_menu, const xtd::ustring& text);
+        /// @}
       };
     }
   }

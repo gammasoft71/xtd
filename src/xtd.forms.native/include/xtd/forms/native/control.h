@@ -67,6 +67,9 @@ namespace xtd {
         friend xtd::forms::paint_event_args;
         friend xtd::forms::native::form;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets the background color for the control.
         /// @param control Control window handle.
         /// @param color A xtd::drawing::color that represents the background color of the control.
@@ -323,6 +326,7 @@ namespace xtd {
           if (it != ids.end()) return it->second;
           return ustring::format("{}", id);
         }
+        /// @}
       };
     }
   }

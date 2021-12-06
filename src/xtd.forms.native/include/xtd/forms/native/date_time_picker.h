@@ -34,6 +34,9 @@ namespace xtd {
       class forms_native_export_ date_time_picker final static_ {
         friend xtd::forms::date_time_picker;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets the date/time value assigned to the control.
         /// @param control Date time picker handle.
         /// @return The date and time value assign to the control.
@@ -44,6 +47,7 @@ namespace xtd {
         /// @param date_time The date and time value assign to the control.
         /// @warning Internal use only
         static void value(intptr_t control, std::chrono::system_clock::time_point date_time);
+        /// @}
       };
     }
   }

@@ -36,6 +36,9 @@ namespace xtd {
       class forms_native_export_ font_dialog final static_ {
         friend xtd::forms::font_dialog;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Shows dialog.
         /// @param hwnd Parent window handle.
         /// @param font The selected font.
@@ -58,6 +61,7 @@ namespace xtd {
         /// @remarks When dialog closed and if result is true, the font parameter contains the new font, and the color parameter contains the now color.
         /// @warning Internal use only
         static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color);
+        /// @}
       };
     }
   }

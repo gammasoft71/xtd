@@ -35,6 +35,9 @@ namespace xtd {
       class forms_native_export_ text_box final static_ {
         friend xtd::forms::text_box;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets the number of characters selected in the text box.
         /// @param control Text box window handle.
         /// @return The number of characters selected in the text box.
@@ -66,6 +69,7 @@ namespace xtd {
         /// @param text The text string.
         /// @warning Internal use only
         static void text(intptr_t control, const xtd::ustring& text);
+        /// @}
       };
     }
   }

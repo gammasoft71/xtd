@@ -40,6 +40,9 @@ namespace xtd {
         friend xtd::forms::open_file_dialog;
         friend xtd::forms::save_file_dialog;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Shows open file dialog.
         /// @param hwnd Parent window handle.
         /// @param default_ext The default file name extension. The returned string does not include the period.
@@ -102,6 +105,7 @@ namespace xtd {
         /// @remarks When dialog closed and if result is true, the file_name parameter contains the new chosen file name and if option contains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
         /// @warning Internal use only
         static void run_save_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& default_ext, xtd::ustring& file_name, std::vector<xtd::ustring>& file_names, const xtd::ustring& filter, size_t filter_index, const xtd::ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const xtd::ustring& title);
+        /// @}
       };
     }
   }

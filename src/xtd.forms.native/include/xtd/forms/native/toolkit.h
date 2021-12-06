@@ -34,6 +34,9 @@ namespace xtd {
       /// @warning Internal use only
       class toolkit final static_ {
       public:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Get the name of the toolkit
         /// @return The name of the toolkit
         static xtd::ustring name();
@@ -43,6 +46,7 @@ namespace xtd {
         /// @brief Get the version of the toolkit
         /// @return The version of the toolkit
         static xtd::version version();
+        /// @}
       };
     }
   }

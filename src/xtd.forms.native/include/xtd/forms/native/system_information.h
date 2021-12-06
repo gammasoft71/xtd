@@ -36,6 +36,9 @@ namespace xtd {
       class forms_native_export_ system_information final static_ {
         friend xtd::forms::system_information;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Gets the active window tracking delay.
         /// @return The active window tracking delay, in milliseconds.
         /// @warning Internal use only
@@ -123,6 +126,7 @@ namespace xtd {
         /// @return A value that indicates the current type of font smoothing.
         /// @warning Internal use only
         static int32_t font_smoothing_type();
+        /// @}
       };
     }
   }

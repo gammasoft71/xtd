@@ -33,11 +33,15 @@ namespace xtd {
       class forms_native_export_ check_box final static_ {
         friend xtd::forms::check_box;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Sets check state.
         /// @param control Check box window handle.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
         static void check_state(intptr_t control, int32_t check_state);
+        /// @}
       };
     }
   }
