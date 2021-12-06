@@ -31,6 +31,9 @@ namespace xtd {
       class drawing_native_export_ system_colors final static_ {
         friend xtd::drawing::color;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         static uint32_t to_argb(intptr_t color);
         static intptr_t accent();
         static intptr_t accent_text();
@@ -69,6 +72,7 @@ namespace xtd {
         static intptr_t window_text();
         static intptr_t text_box();
         static intptr_t text_box_text();
+        /// @}
       };
     }
   }

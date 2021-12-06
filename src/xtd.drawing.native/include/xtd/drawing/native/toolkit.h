@@ -45,8 +45,12 @@ namespace xtd {
         friend xtd::drawing::native::system_colors;
         friend xtd::forms::native::application;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         static intptr_t initialize();
         static void shutdown(intptr_t handle);
+        /// @}
       };
     }
   }

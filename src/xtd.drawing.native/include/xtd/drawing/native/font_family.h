@@ -36,6 +36,9 @@ namespace xtd {
         friend xtd::drawing::text::installed_font_collection;
         friend xtd::drawing::font_family;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         static intptr_t create(const xtd::ustring& name);
         static void destroy(intptr_t font_family);
         static xtd::ustring generic_serif_name();
@@ -47,6 +50,7 @@ namespace xtd {
         static int32_t get_line_spacing(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout);
         static xtd::ustring get_name(intptr_t font_family, int32_t language);
         static bool is_style_available(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
+        /// @}
       };
     }
   }

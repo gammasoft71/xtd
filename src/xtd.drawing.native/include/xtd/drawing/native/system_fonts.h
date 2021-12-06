@@ -31,6 +31,9 @@ namespace xtd {
       class drawing_native_export_ system_fonts final static_ {
         friend xtd::drawing::system_fonts;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         static intptr_t caption_font();
         static intptr_t default_font();
         static intptr_t dialog_font();
@@ -39,6 +42,7 @@ namespace xtd {
         static intptr_t message_box_font();
         static intptr_t small_caption_font();
         static intptr_t status_font();
+        /// @}
       };
     }
   }
