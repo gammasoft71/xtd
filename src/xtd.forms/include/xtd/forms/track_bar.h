@@ -24,10 +24,17 @@ namespace xtd {
     /// @include track_bar.cpp
     class forms_export_ track_bar : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the track_bar class.
       /// @remarks The track_bar is created with a default horizontal orientation and a range of 0 to 10, with a tick mark shown for every value.
       track_bar();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the default size of the control.
       /// @return A size that represents the default size of the control.
       drawing::size default_size() const override {return {104, 45};}
@@ -110,7 +117,11 @@ namespace xtd {
       /// @return Current track_bar instance.
       /// @remarks The Value property contains the number that represents the current position of the scroll box on the track bar.
       virtual track_bar& value(int32_t value);
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Sets the minimum and maximum values for a xtd::forms::track_bar.
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
@@ -124,7 +135,11 @@ namespace xtd {
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
       /// @ingroup events
       event<track_bar, event_handler> scroll;
@@ -132,8 +147,12 @@ namespace xtd {
       /// @brief Occurs when the value property of a track bar changes, either by movement of the scroll box or by manipulation in code.
       /// @ingroup events
       event<track_bar, event_handler> value_changed;
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
@@ -181,8 +200,11 @@ namespace xtd {
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
+      /// @}
 
-      /// @cond
+    private:
+      void wm_scroll(message& message);
+
       int32_t large_change_ = 5;
       int32_t maximum_ = 10;
       int32_t minimum_ = 0;
@@ -191,10 +213,6 @@ namespace xtd {
       int32_t tick_frequency_ = 1;
       forms::tick_style tick_style_ = forms::tick_style::bottom_right;
       int32_t value_ = 0;
-      /// @endcond
-
-    private:
-      void wm_scroll(message& message);
     };
   }
 }

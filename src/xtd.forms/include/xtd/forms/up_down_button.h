@@ -20,9 +20,18 @@ namespace xtd {
     /// @include up_down_button.cpp
     class forms_export_ up_down_button : public button_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of up_down_button class.
       up_down_button();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
+      drawing::size default_size() const override {return {18, 34};}
+      
       /// @brief Gets the maximum value for the up_down_button control.
       /// @return The maximum value for the up down button. The default value is 100.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
@@ -68,7 +77,11 @@ namespace xtd {
       /// @param value true if value can be wrapped; otherwise false. The default is false.
       /// @return Current numeric_up_down.
       virtual up_down_button& wrapped(bool value);
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Sets the minimum and maximum values for a track_bar.
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
@@ -82,7 +95,11 @@ namespace xtd {
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
       /// @ingroup events
       event<up_down_button, event_handler> scroll;
@@ -90,11 +107,13 @@ namespace xtd {
       /// @brief Occurs when the value of the value property changes.
       /// @ingroup events
       event<up_down_button, event_handler> value_changed;
+      /// @}
       
     protected:
       
-      drawing::size default_size() const override {return {18, 34};}
-
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
       
       /// @brief Overrides control::on_handle_created(const event_args&)
@@ -118,17 +137,16 @@ namespace xtd {
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
+      /// @}
 
-      /// @cond
+    private:
+      void wm_scroll(message& message);
+
       bool wrapped_ = false;
       int32_t maximum_ = 100;
       int32_t minimum_ = 0;
       forms::orientation orientation_ = forms::orientation::vertical;
       int32_t value_ = 0;
-      /// @endcond
-
-      private:
-        void wm_scroll(message& message);
     };
   }
 }

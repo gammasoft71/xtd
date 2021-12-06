@@ -19,6 +19,9 @@ namespace xtd {
     /// @ingroup xtd_forms debug
     class trace_form_base : public xtd::forms::form {
     public:
+      /// @name Properties
+      
+      /// @{
       xtd::forms::control& dock(xtd::forms::dock_style dock) override {
         if (dock == xtd::forms::dock_style::left) bounds({xtd::forms::screen::get_working_area(handle()).left(), xtd::forms::screen::get_working_area(handle()).top(), xtd::forms::screen::get_working_area(handle()).width() / 4, xtd::forms::screen::get_working_area(handle()).height()});
         else if (dock == xtd::forms::dock_style::top) bounds({xtd::forms::screen::get_working_area(handle()).left(), xtd::forms::screen::get_working_area(handle()).top(), xtd::forms::screen::get_working_area(handle()).width(), xtd::forms::screen::get_working_area(handle()).height() / 4});
@@ -71,8 +74,12 @@ namespace xtd {
         }
         return *this;
       }
+      /// @}
 
    protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the trace_form_base class with specified caption text.
       /// @param text A string that represent the caption text oof the debug form.
       trace_form_base(const xtd::ustring& text) {
@@ -92,7 +99,11 @@ namespace xtd {
         text_.word_wrap(false);
         update_format();
       }
+      /// @}
       
+      /// @name Protected methods
+      
+      /// @{
       void on_back_color_changed(const xtd::event_args& e) override {
         text_.back_color(back_color());
       }
@@ -137,6 +148,7 @@ namespace xtd {
           need_header_ = value;
         return *this;
       }
+      /// @}
 
     private:
       using form::name;

@@ -17,6 +17,9 @@ namespace xtd {
     /// @ingroup xtd_forms
     class vertical_control_layout_style : public control_layout_style {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialises a new instance of vertical control layout style class.
       vertical_control_layout_style() = default;
       /// @brief Initialises a new instance of vertical control layout style class with specified height.
@@ -117,17 +120,26 @@ namespace xtd {
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
       vertical_control_layout_style(int32_t height, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), height_(static_cast<float>(height)) {}
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the height value for a control.
       /// @return The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       std::optional<float> height() const {return height_;}
       /// @brief Sets the height value for a control.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       void height(float height) {height_ = height;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
       xtd::ustring to_string() const noexcept override {return ustring::format("vertical_control_layout_style=[expanded={}, align={}, size_type={}, height={}]", expanded(), align(), size_type(), height_.value_or(-1));}
+      /// @}
       
       /// @cond
       bool operator==(const vertical_control_layout_style& value) const {return height_ == value.height_ && control_layout_style::operator==(value);}
