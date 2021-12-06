@@ -17,7 +17,7 @@ namespace xtd {
       
       /// @{
       using image_getter = xtd::delegate<xtd::drawing::image(const xtd::ustring& name, const xtd::drawing::size& size)>;
-      /// &}
+      /// @}
 
       /// @name Fieds
       

@@ -37,7 +37,7 @@ namespace xtd {
       /// @param new_value One of the check_state values that indicates whether to change the check box for the item to be checked, unchecked, or indeterminate.
       /// @param current_value One of the check_state values that indicates whether the check box for the item is currently checked, unchecked, or indeterminate.
       item_check_event_args(size_t index, check_state new_value, check_state current_value) : index_(index), new_value_(new_value), current_value_(current_value) {}
-      /// &}
+      /// @}
       
       /// @name Properties
       
