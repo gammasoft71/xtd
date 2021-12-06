@@ -16,11 +16,23 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class animation_updated_event_args : public xtd::event_args {
     public:
-      animation_updated_event_args(int32_t frame_counter, int64_t elapsed_milliseconds) : frame_counter_(frame_counter), elapsed_milliseconds_(elapsed_milliseconds) {}
+      /// @name Constructors
       
+      /// @{
+      animation_updated_event_args(int32_t frame_counter, int64_t elapsed_milliseconds) : frame_counter_(frame_counter), elapsed_milliseconds_(elapsed_milliseconds) {}
+      /// @}
+      
+      /// @name Properties
+      
+      /// @{
+      /// @brief Gets elepased time in milliseconds.
+      /// @return Elapsed time in milliseconds
       int64_t elapsed_milliseconds() const {return elapsed_milliseconds_;}
       
+      /// @brief Gets frame counter.
+      /// @return Frame counter.
       int32_t frame_counter() const {return frame_counter_;}
+      /// @}
       
     private:
       int32_t frame_counter_ = 0;

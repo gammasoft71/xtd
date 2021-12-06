@@ -53,6 +53,9 @@ namespace xtd {
     /// @include application_and_exception.cpp
     class forms_export_ application final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets a value indicating whether the caller can quit this application.
       /// @return true if the caller can quit this application; otherwise, false.
       /// @remarks This method returns false if it is called from a control being hosted within a Web browser. Thus, the control cannot quit the application.
@@ -278,7 +281,11 @@ namespace xtd {
       /// @remarks To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
       static void set_unhandled_exception_mode (unhandled_exception_mode mode, bool thread_scope);
        */
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the application is about to shut down.
       /// @ingroup events
       /// @remarks You must attach the event handlers to the application_exit event to perform unhandled, required tasks before the application stops running. You can close files opened by this application, or dispose of objects that garbage collection did not reclaim.
@@ -313,6 +320,7 @@ namespace xtd {
       /// @ingroup events
       /// @remarks You must attach the event handlers to the thread_exit event to perform any unhandled, required tasks before the thread stops running. Close files opened by this thread, or dispose of objects that the garbage collector did not reclaim.
       static event<application, delegate<void(const event_args&)>> thread_exit;
+      /// @}
 
     private:
       friend class form;

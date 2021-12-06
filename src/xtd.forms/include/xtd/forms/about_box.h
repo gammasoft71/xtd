@@ -43,6 +43,9 @@ namespace xtd {
     /// @include about_box.cpp
     class forms_export_ about_box final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Represents a author collection.
       using author_collection = xtd::forms::about_dialog::author_collection;
       /// @brief Represents a artist collection.
@@ -452,6 +455,7 @@ namespace xtd {
       /// @param artists A artists_collection that specifies the designers collection.
       /// @param license A string that specifies the license text to display.
       static void show(const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::bitmap& icon, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators, const artist_collection& artists, const xtd::ustring& license) {show_about_dialog(nullptr, text, caption, icon, version, long_version, copyright, website, website_label, authors, documenters, translators, artists, license);}
+      /// @}
 
     private:
       template<typename icon_t>

@@ -58,6 +58,9 @@ namespace xtd {
           arranged_element_collection* owner = nullptr;
         };
         
+        /// @name Alias
+        
+        /// @{
         /// @brief Represents the allocator type of the collection.
         using allocator_type = std::allocator<value_type>;
         /// @brief Represents the size type of the collection.
@@ -80,7 +83,18 @@ namespace xtd {
         using reverse_iterator = typename std::vector<value_type>::reverse_iterator;
         /// @brief Represents the const reverse iterator type of the collection.
         using const_reverse_iterator = typename std::vector<value_type>::const_reverse_iterator;
+        /// @}
         
+        /// @name Fields
+        
+        /// @{
+        /// @brief This is a special value equal to the maximum value representable by the type size_t.
+        static const size_type npos = std::numeric_limits<size_type>::max();
+        /// @}
+
+        /// @name Constructors
+        
+        /// @{
         /// @brief Creates a new object xtd::forms::layout::arranged_element_collection with specified allocator (optional).
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
@@ -91,6 +105,7 @@ namespace xtd {
           for (auto item : il)
             push_back(item);
         }
+        /// @}
 
         /// @cond
         arranged_element_collection(const std::vector<type_t>& collection) {
@@ -108,15 +123,9 @@ namespace xtd {
         bool operator!=(const arranged_element_collection& value) const {return !operator==(value);}
         /// @endcond
         
-        /// @brief Occurs when an item is added to the collection.
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_added;
-
-        /// @brief Occurs when an item is updated in the collection.
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
-
-        /// @brief Occurs when an item is removed from the collection.
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
+        /// @name Methods
         
+        /// @{
         /// @brief Returns the associated allocator
         /// @return The associate allocator.
         allocator_type get_allocator() const {return collection_.get_allocator();}
@@ -154,17 +163,6 @@ namespace xtd {
         /// @brief Direct access to the underlying array.
         /// @return The underlying array.
         const_pointer data() const {return collection_.data();}
-        
-        /// @brief Access specified element.
-        /// @return The requested element.
-        reference operator[](size_type pos) {
-          collection_[pos].pos = pos;
-          collection_[pos].owner = this;
-          return collection_[pos];
-        }
-        /// @brief Access specified element.
-        /// @return The requested element.
-        const_reference operator[](size_type pos) const {return collection_[pos];}
         
         /// @brief Returns an iterator to the beginning.
         /// @return The iterator to the beginning.
@@ -408,9 +406,35 @@ namespace xtd {
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         std::vector<type_t> to_vector() const {return to_array();}
-
-        /// @brief This is a special value equal to the maximum value representable by the type size_t.
-        static const size_type npos = std::numeric_limits<size_type>::max();
+        /// @}
+        
+        /// @name Operators
+        
+        /// @{
+        /// @brief Access specified element.
+        /// @return The requested element.
+        reference operator[](size_type pos) {
+          collection_[pos].pos = pos;
+          collection_[pos].owner = this;
+          return collection_[pos];
+        }
+        /// @brief Access specified element.
+        /// @return The requested element.
+        const_reference operator[](size_type pos) const {return collection_[pos];}
+        /// @}
+        
+        /// @name Events
+        
+        /// @{
+        /// @brief Occurs when an item is added to the collection.
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_added;
+        
+        /// @brief Occurs when an item is updated in the collection.
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
+        
+        /// @brief Occurs when an item is removed from the collection.
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
+        /// @}
 
       private:
         std::vector<value_type, allocator_type> collection_;
