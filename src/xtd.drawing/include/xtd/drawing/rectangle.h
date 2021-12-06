@@ -24,11 +24,19 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ rectangle : public object {
     public:
-      static const rectangle empty;
+      /// @name Fields
       
+      /// @{
+      static const rectangle empty;
+      /// @}
+      
+      /// @name Constructors
+      
+      /// @{
       rectangle() = default;
       rectangle(int32_t x, int32_t y, int32_t width, int32_t height) : x_(x), y_(y), width_(width), height_(height) {}
       rectangle(const point& location, const drawing::size& size) : rectangle(location.x(), location.y(), size.width(), size.height()) {}
+      /// @}
 
       /// @cond
       rectangle(const rectangle&) = default;
@@ -36,8 +44,11 @@ namespace xtd {
       operator rectangle_f() const {return rectangle_f(static_cast<float>(x_), static_cast<float>(y_), static_cast<float>(width_), static_cast<float>(height_));}
       bool operator==(const rectangle& value) const {return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;}
       bool operator!=(const rectangle& value) const {return !operator==(value);}
-/// @endcond
+      /// @endcond
             
+      /// @name Properties
+      
+      /// @{
       int32_t bottom() const {return y_ + height_;}
       
       int32_t height() const {return height_;}
@@ -73,7 +84,11 @@ namespace xtd {
 
       int32_t width() const {return width_;}
       void width(int32_t width) {width_ = width;}
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       static rectangle ceiling(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::ceil(rect.x())), static_cast<int32_t>(std::ceil(rect.y())), static_cast<int32_t>(std::ceil(rect.width())), static_cast<int32_t>(std::ceil(rect.height())));}
       
       bool contains(const point& pt) const {return contains(pt.x(), pt.y());}
@@ -127,6 +142,7 @@ namespace xtd {
       static rectangle trunc(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::trunc(rect.x())), static_cast<int32_t>(std::trunc(rect.y())), static_cast<int32_t>(std::trunc(rect.width())), static_cast<int32_t>(std::trunc(rect.height())));}
       
       xtd::ustring to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      /// @}
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::rectangle& rectangle) noexcept {return os << rectangle.to_string();}

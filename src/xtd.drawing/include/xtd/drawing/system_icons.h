@@ -23,6 +23,9 @@ namespace xtd {
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
     class system_icons final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       static xtd::drawing::icon application() {return application(default_size());}
       static xtd::drawing::icon application(const xtd::drawing::size& size) {return from_name("application-x-executable", size);}
       static xtd::drawing::icon error() {return error(default_size());}
@@ -55,11 +58,16 @@ namespace xtd {
       static xtd::drawing::icon xtd_logo(const xtd::drawing::size& size) {return from_name("xtd", size);}
       static xtd::drawing::icon xtd_forms_logo() {return xtd_forms_logo(default_size());}
       static xtd::drawing::icon xtd_forms_logo(const xtd::drawing::size& size) {return from_name("xtd-forms", size);}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       static xtd::drawing::icon from_name(const xtd::ustring& name) {return from_name(system_images::default_theme(), name, default_size());}
       static xtd::drawing::icon from_name(const xtd::ustring& name, const xtd::drawing::size& size) {return from_name(system_images::default_theme(), name, size);}
       static xtd::drawing::icon from_name(const xtd::ustring& theme, const xtd::ustring& name) {return from_name(theme, name, default_size());}
       static xtd::drawing::icon from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name(theme, name, size)));}
+      /// @}
     };
   }
 }

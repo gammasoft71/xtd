@@ -21,7 +21,11 @@ namespace xtd {
     /// @include fill_rectangle.cpp
     class drawing_export_ solid_brush final : public brush {
     public:
+      /// @name Constructors
+      
+      /// @{
       solid_brush(const drawing::color& color) {this->color(color);}
+      /// @}
 
       /// @cond
       solid_brush(const solid_brush& value);
@@ -30,8 +34,12 @@ namespace xtd {
       bool operator!=(const solid_brush& value) const {return !operator==(value);}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       const drawing::color& color() const {return data_->color_;}
       solid_brush& color(const drawing::color& color);
+      /// @}
       
     private:
       solid_brush();

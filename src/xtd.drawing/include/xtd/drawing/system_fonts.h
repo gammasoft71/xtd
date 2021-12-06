@@ -19,6 +19,9 @@ namespace xtd {
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
     class drawing_export_ system_fonts final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a font that is used to display text in the title bars of windows.
       static xtd::drawing::font caption_font();
       
@@ -52,6 +55,7 @@ namespace xtd {
       
       /// @brief Gets a font that is used to display text in the status bar.
       static xtd::drawing::font status_font();
+      /// @}
     };
   }
 }

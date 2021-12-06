@@ -47,9 +47,16 @@ namespace xtd {
     /// @endcode
     class drawing_export_ point : public object {
     public:
+      /// @name Fields
+      
+      /// @{
       /// @brief Represents a point that has x and y values set to zero.
       static const point empty;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the point class
       /// @remarks x and y values are set to zero.
       point() = default;
@@ -124,6 +131,7 @@ namespace xtd {
       /// }
       /// @endcode
       point (const size& sz);
+      /// @}
 
       /// @cond
       point(const point&) = default;
@@ -131,6 +139,9 @@ namespace xtd {
       operator point_f() const {return point_f(static_cast<float>(x_), static_cast<float>(y_));}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether this point is empty.
       /// @return true if both X and Y are 0; otherwise, false.
       bool is_empty() const {return *this == point::empty;}
@@ -226,7 +237,11 @@ namespace xtd {
       /// }
       /// @endcode
       void y(int32_t y) {y_ = y;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Adds the specified size to the specified point.
       /// @param pt The point to add.
       /// @param sz The size to add.
@@ -297,6 +312,7 @@ namespace xtd {
       /// @param value The point_f to convert.
       /// @return The point this method converts to.
       static point truncate(const point_f& value);
+      /// @}
 
       /// @cond
       bool operator==(const point& value) const {return x_ == value.x_ && y_ == value.y_;}

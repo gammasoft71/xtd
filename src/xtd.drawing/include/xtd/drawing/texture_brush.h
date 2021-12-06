@@ -21,7 +21,11 @@ namespace xtd {
     /// @include fill_rectangle.cpp
     class drawing_export_ texture_brush final : public brush {
     public:
+      /// @name Constructors
+      
+      /// @{
       texture_brush(const drawing::image& image) {this->image(image);}
+      /// @}
 
       /// @cond
       texture_brush(const texture_brush& value);
@@ -30,8 +34,12 @@ namespace xtd {
       bool operator!=(const texture_brush& value) const {return !operator==(value);}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       const drawing::image& image() const {return data_->image_;}
       texture_brush& image(const drawing::image& image);
+      /// @}
       
     private:
       texture_brush();

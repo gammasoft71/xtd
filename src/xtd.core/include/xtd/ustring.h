@@ -47,6 +47,14 @@ namespace xtd {
   /// @remarks xtd::ustring is inherited from std::basic_string<char> and therefore offers the full (immutable) API of std::string.
   class ustring : public object, public std::basic_string<char> {
   public:
+    /// @name Fields
+    
+    /// @{
+    /// @brief Represents the empty string.
+    /// @remarks The value of this method is the zero-length string, "".
+    static ustring empty_string() noexcept;
+    /// @}
+    
     /// @name Constructors
     
     /// @{
@@ -657,10 +665,6 @@ namespace xtd {
     /// @return true if the value parameter occurs within this string, or if value is the empty string (""); otherwise, false.
     bool contains(const ustring& value) const noexcept;
     
-    /// @brief Represents the empty string.
-    /// @remarks The value of this method is the zero-length string, "".
-    static ustring empty_string() noexcept;
-
     /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
