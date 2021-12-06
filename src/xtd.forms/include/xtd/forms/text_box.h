@@ -21,9 +21,16 @@ namespace xtd {
     /// @include text_box.cpp
     class forms_export_ text_box : public text_box_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief initializes a new instance of the text_box class.
       text_box();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether pressing ENTER in a multiline text_box control creates a new line of text in the control or activates the default button for the form.
       /// @return true if the ENTER key creates a new line of text in a multiline version of the control; false if the ENTER key activates the default button for the form. The default is false.
       /// @remarks If the value of this property is false, the user must press CTRL+ENTER to create a new line in a multiline text_box control. If there is no default button for the form, the ENTER key will always create a new line of text in the control, regardless of the value of this property.
@@ -93,18 +100,28 @@ namespace xtd {
       /// @return Current text_box instance.
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
       virtual text_box& use_system_password_char(bool value);
+      /// @}
+
+      /// @name Methods
       
+      /// @{
+      void append_text(const xtd::ustring& value) override;
+      void select(size_t start, size_t length) override;
+      /// @}
+
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the accepts_return property has changed.
       /// @ingroup events
       event<text_box, event_handler> accepts_return_changed;
-
-      void append_text(const xtd::ustring& value) override;
-      
-      void select(size_t start, size_t length) override;
+      /// @}
 
     protected:
-      forms::create_params create_params() const override;
+      /// @name Protected methods
       
+      /// @{
+      forms::create_params create_params() const override;
       drawing::size measure_control() const override;
       
       /// @brief Raises the text_box::accepts_return_changed event.
@@ -118,16 +135,18 @@ namespace xtd {
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
+      /// @}
 
       /// @cond
       void wm_key_char(message& message);
       void wm_set_text(message& message);
+      /// @endcond
 
+    private:
       bool accepts_return_ = false;
       xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;
       char32_t password_char_ = 0;
       bool use_system_password_char_ = false;
-      /// @endcond
     };
   }
 }

@@ -25,9 +25,23 @@ namespace xtd {
     /// @include tab_control.cpp
     class forms_export_ tab_control : public control {
     public:
+      /// @name Fields
+      
+      /// @{
+      /// @brief This is a special value equal to the maximum value representable by the type size_t.
+      static const size_t npos = std::numeric_limits<size_t>::max();
+      /// @}
+      
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the tab_control class.
       tab_control();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the area of the control (for example, along the top) where the tabs are aligned.
       /// @return One of the xtd::forms::tab_alignment values. The default is top.
       virtual tab_alignment alignment() const {return alignment_;}
@@ -70,15 +84,20 @@ namespace xtd {
       /// @return A control_collection that contains the control objects in this tab_control.
       /// @remarks The order of tab pages in this collection reflects the order the tabs appear in the control.
       virtual const control_collection& tab_pages() const {return controls();}
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the selected_index property has changed.
       /// @ingroup events
       event<tab_control, event_handler> selected_index_changed;
+      /// @}
 
-      /// @brief This is a special value equal to the maximum value representable by the type size_t.
-      static const size_t npos = std::numeric_limits<size_t>::max();
-      
     protected:
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
 
       drawing::size measure_control() const override;
@@ -93,6 +112,7 @@ namespace xtd {
       virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}
 
       void wnd_proc(message& message) override;
+      /// @}
       
       /// @cond
       virtual void wm_reflect_command(message& message);
@@ -103,10 +123,12 @@ namespace xtd {
           if (controls()[index].get().handle() == page) return index;
         return npos;
       }
+      /// @endcond
+
+    private:
       tab_alignment alignment_ = tab_alignment::top;
       forms::image_list image_list_;
       size_t selected_index_ = npos;
-      /// @endcond
     };
   }
 }

@@ -21,12 +21,23 @@ namespace xtd {
     /// @include splitter.cpp
     class forms_export_ splitter : public xtd::forms::control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the splitter class.
       splitter() {
         size(default_size());
         dock(xtd::forms::dock_style::left);
       }
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
+      forms::cursor default_cursor() const override {return dock() == dock_style::left || dock() == dock_style::right ? xtd::forms::cursors::vsplit() : xtd::forms::cursors::hsplit();}
+      
+      drawing::size default_size() const override {return {3, 3};}
+
       using xtd::forms::control::dock;
       /// @brief Sets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @param dock One of the dock_style values. The default is none.
@@ -71,12 +82,12 @@ namespace xtd {
         }
         return *this;
       }
-      
-      forms::cursor default_cursor() const override {return dock() == dock_style::left || dock() == dock_style::right ? xtd::forms::cursors::vsplit() : xtd::forms::cursors::hsplit();}
-      
-      drawing::size default_size() const override {return {3, 3};}
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       void on_mouse_down(const mouse_event_args& e) override {
         control::on_mouse_down(e);
         mouse_down_location = control::dock() == dock_style::left || control::dock() == dock_style::right ? cursor::position().x() : cursor::position().y();
@@ -130,6 +141,7 @@ namespace xtd {
       void on_handle_created(const event_args& e) override {
         control::on_handle_created(e);
       }
+      /// @}
       
     private:
       bool default_width_ = true;

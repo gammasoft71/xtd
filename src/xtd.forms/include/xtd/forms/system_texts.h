@@ -21,6 +21,9 @@ namespace xtd {
     /// @include texts.cpp
     class forms_export_ system_texts final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a system-defined text that has a string value of "&Abort". This field is constant.
       static xtd::ustring abort();
       /// @brief Gets a system-defined text that has a string value of "&About". This field is constant.
@@ -193,6 +196,7 @@ namespace xtd {
       static xtd::ustring zoom_out();
       /// @brief Gets a system-defined text that has a string value of "Zoom to &Fit". This field is constant.
       static xtd::ustring zoom_to_fit();
+      /// }
     };
   }
 }

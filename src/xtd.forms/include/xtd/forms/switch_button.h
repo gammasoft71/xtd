@@ -18,9 +18,16 @@ namespace xtd {
     /// @include switch_button.cpp
     class switch_button : public button_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// Initialize new instance of switch_button class.
       switch_button() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the checked and the switch_button's appearance are automatically changed when the switch_button is clicked.
       /// @return true if the checked value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked in the click event handler.
@@ -121,12 +128,20 @@ namespace xtd {
         }
         return *this;
       }
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the checked property changes.
       /// @ingroup events
       event<switch_button, event_handler> checked_changed;
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Raises the switch_button::checked_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
@@ -195,6 +210,7 @@ namespace xtd {
         }
         button_base::on_paint(e);
       }
+      /// @}
       
     private:
       std::optional<xtd::drawing::color> checked_back_color_;
