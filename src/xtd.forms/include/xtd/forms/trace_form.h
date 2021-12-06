@@ -24,6 +24,9 @@ namespace xtd {
     /// @include trace_form.cpp
     class trace_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the trace_form class.
       trace_form() : trace_form_base("Trace") {
         xtd::diagnostics::trace::listeners().push_back(listener_);
@@ -31,17 +34,26 @@ namespace xtd {
         visible(true);
 #endif
       }
+      /// @}
+      
       /// @cond
       ~trace_form() {xtd::diagnostics::trace::listeners().erase(std::find(xtd::diagnostics::trace::listeners().begin(), xtd::diagnostics::trace::listeners().end(), listener_));}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
       const xtd::diagnostics::trace_listener& trace_listener() const {return *listener_;}
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
       xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       void write(const xtd::ustring& trace) override {
 #if defined(TRACE)
         trace_form_base::write(trace);
@@ -54,6 +66,7 @@ namespace xtd {
       }
       
       void flush() override {}
+      /// @}
       
     private:
       std::shared_ptr<xtd::diagnostics::trace_listener> listener_ = xtd::forms::control_trace_listener::create(*this);

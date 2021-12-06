@@ -14,6 +14,18 @@ namespace xtd {
   namespace forms {
     class forms_export_ theme_base : public object {
     public:
+      /// @name Alias
+      
+      /// @{
+      using theme_name_collection = std::vector<xtd::ustring>;
+      /// @}
+      
+      /// @name Fields
+      
+      /// @{
+      static const theme_base empty;
+      /// @}
+
       /// @cond
       theme_base(const theme_base&) = default;
       theme_base& operator=(const theme_base&) = default;
@@ -22,7 +34,16 @@ namespace xtd {
       friend std::ostream& operator<<(std::ostream& os, const theme_base& theme) noexcept {return os << theme.to_string();}
       /// @endcond
       
-      using theme_name_collection = std::vector<xtd::ustring>;
+      /// @name Properties
+      
+      /// @{
+      static xtd::ustring default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? fallback_theme_name() :  xtd::environment::os_version().desktop_environment();}
+      
+      static xtd::ustring fallback_theme_name() {return "symbolic";}
+      
+      bool is_default() const {return is_default_;}
+
+      static const theme_name_collection& theme_names() {return theme_names_;}
 
       virtual const xtd::ustring& name() const {return name_;}
       theme_base& name(const xtd::ustring& name) {
@@ -35,30 +56,32 @@ namespace xtd {
         theme_style_ = theme_style;
         return *this;
       }
+      /// @}
       
-      bool is_default() const {return is_default_;}
+      /// @name Methods
       
+      /// @{
       xtd::ustring to_string() const noexcept override {return xtd::ustring::format("[name={}, style={}, is_default={}] ", name_, theme_style_, is_default_);}
-      
-      static xtd::ustring default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? fallback_theme_name() :  xtd::environment::os_version().desktop_environment();}
-      
-      static xtd::ustring fallback_theme_name() {return "symbolic";}
-      
-      static const theme_name_collection& theme_names() {return theme_names_;}
-      
-      static const theme_base empty;
+      /// @}
       
     protected:
+      /// @name Protcted constructors
+      
+      /// @{
       theme_base() = default;
       explicit theme_base(const xtd::ustring& name) : name_(name) {}
       theme_base(const xtd::ustring& name, xtd::forms::theme_style theme_style) : name_(name), theme_style_(theme_style) {}
       theme_base(const xtd::ustring& name, xtd::forms::theme_style theme_style, bool is_default) : name_(name), theme_style_(theme_style), is_default_(is_default) {}
+      /// @}
       
+      /// @name Protected properties
+      
+      /// @{
       theme_base& is_default(bool is_default) {
         is_default_ = is_default;
         return *this;
       }
-      
+      /// @}
 
     private:
       xtd::ustring name_;

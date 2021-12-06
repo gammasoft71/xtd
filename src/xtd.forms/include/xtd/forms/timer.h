@@ -28,16 +28,23 @@ namespace xtd {
     /// @include timer.cpp
     class forms_export_ timer final : public component {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the timer class.
       /// @remarks When a new timer is created, it is disabled; that is, enabled is set to false. To enable the timer, call the start method or set enabled to true.
       /// @remarks If the timer is disabled and the timer is out of scope, the timer will be destroyed.
       timer() = default;
+      /// @}
 
       /// @cond
       timer(const timer&) = delete;
       ~timer() {stop();}
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets whether the timer is running.
       /// @return true if the timer is currently enabled; otherwise, false. The default is false.
       /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false.
@@ -65,7 +72,11 @@ namespace xtd {
       /// @param interval An int32_t specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
       void interval_milliseconds(int32_t interval);
+      /// @}
 
+      /// @name Metthods
+      
+      /// @{
       /// @brief Stops the timer.
       /// @remarks You can also stop the timer by setting the enabled property to false.
       void start() {enabled(true);}
@@ -73,16 +84,25 @@ namespace xtd {
       /// @brief Starts the timer.
       /// @remarks You can also start the timer by setting the enabled property to true.
       void stop() {enabled(false);}
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the specified timer interval has elapsed and the timer is enabled.
       /// @ingroup events
       /// @remarks Calling the Assert method on the xtd::diagnostics::debug class from within the tick event may not behave as expected, as displaying the assertion dialog box may cause Windows to raise the tick event repeatedly. We recommend that you refrain from testing assertions within this event, and use the write, write_if, write_line, or write_line_if methods instead.
       event<timer, event_handler> tick;
+      /// @}
 
     protected:
+      /// @name Prootected methods
+      
+      /// @{
       /// @brief Raises the xtd::forms::timer::tick event.
       /// @param e An event_args that contains the event data. This is always xtd::event_args::empty.
       void on_tick(const event_args& e);
+      /// @}
       
     private:
       bool enabled_ = false;
