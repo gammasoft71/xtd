@@ -51,13 +51,20 @@ namespace xtd {
     /// @include check_box.cpp
     class forms_export_ check_box : public button_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the CheckBox class.
       /// @remarks By default, when a new check_box is instantiated, auto_check is set to true, checked is set to false, and appearance is set to normal.
       /// @par Examples
       /// The following code example demonstrate the use of check_box constructor.
       /// @include check_box.cpp
       check_box();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the value that determines the appearance of a check_box control.
       /// @return One of the appearance values. The default value is normal.
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
@@ -142,7 +149,11 @@ namespace xtd {
       /// @param three_state true if the check_box is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
       virtual check_box& three_state(bool three_state);
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the appearance property changes.
       /// @ingroup events
       event<check_box, event_handler> appearance_changed;
@@ -154,8 +165,20 @@ namespace xtd {
       /// @brief Occurs when the value of the check_state property changes.
       /// @ingroup events
       event<check_box, event_handler> check_state_changed;
+      /// @}
 
     protected:
+      /// @name Protected properties
+      
+      /// @{
+      /// @brief Get state.
+      /// @return One of xtd::forms::visual_styles::check_box_state values.
+      xtd::forms::visual_styles::check_box_state state() const noexcept {return data_->state;}
+      /// @}
+      
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
@@ -250,11 +273,8 @@ namespace xtd {
       }
 
       void on_paint(paint_event_args& e) override;
+      /// @}
   
-      /// @brief Get state.
-      /// @return One of xtd::forms::visual_styles::check_box_state values.
-      xtd::forms::visual_styles::check_box_state state() const noexcept {return data_->state;}
-
      /// @cond
       void wnd_proc(message& message) override;
       virtual void wm_mouse_double_click(message& message);

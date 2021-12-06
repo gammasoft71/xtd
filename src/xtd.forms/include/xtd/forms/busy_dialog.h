@@ -27,12 +27,19 @@ namespace xtd {
     /// @include busy_dialog.cpp
     class forms_export_ busy_dialog  final : public component {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the busy_dialog class.
       busy_dialog() = default;
+      /// @}
       /// @cond
       ~busy_dialog() {hide();}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the background color for the dialog.
       /// @return A xtd::drawing::color that represents the background color of the dialog.
       xtd::drawing::color back_color() const {return data_->back_color;}
@@ -55,28 +62,6 @@ namespace xtd {
         return *this;
       }
       
-      /// @brief Gets the foreground color for the dialog.
-      /// @return A xtd::drawing::color that represents the foreground color of the dialog.
-      xtd::drawing::color fore_color() const {return data_->fore_color;}
-      /// @brief Sets the foreground color for the dialog.
-      /// @param color A xtd::drawing::color that represents the foreground color of the dialog.
-      /// @return Current busy_dialog instance.
-      busy_dialog& fore_color(const xtd::drawing::color& color) {
-        data_->fore_color = color;
-        return *this;
-      }
-      
-      /// @brief Gets the dialog title.
-      /// @return The dialog title.
-      const xtd::ustring& text() const {return data_->text;}
-      /// @brief Sets the dialog title.
-      /// @param text The dialog title.
-      /// @return Current busy_dialog instance.
-      busy_dialog& text(const xtd::ustring& text) {
-        data_->text = text;
-        return *this;
-      }
-      
       /// @brief Gets the product description.
       /// @return The product description.
       const xtd::ustring& description() const {return data_->description;}
@@ -88,6 +73,17 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets the foreground color for the dialog.
+      /// @return A xtd::drawing::color that represents the foreground color of the dialog.
+      xtd::drawing::color fore_color() const {return data_->fore_color;}
+      /// @brief Sets the foreground color for the dialog.
+      /// @param color A xtd::drawing::color that represents the foreground color of the dialog.
+      /// @return Current busy_dialog instance.
+      busy_dialog& fore_color(const xtd::drawing::color& color) {
+        data_->fore_color = color;
+        return *this;
+      }
+
       /// @brief Gets the product icon.
       /// @return The product icon.
       xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon));}
@@ -126,6 +122,24 @@ namespace xtd {
         data_->opacity = opacity;
         return *this;
       }
+      
+      /// @brief Gets the dialog title.
+      /// @return The dialog title.
+      const xtd::ustring& text() const {return data_->text;}
+      /// @brief Sets the dialog title.
+      /// @param text The dialog title.
+      /// @return Current busy_dialog instance.
+      busy_dialog& text(const xtd::ustring& text) {
+        data_->text = text;
+        return *this;
+      }
+      /// @}
+
+      /// @name Methods
+      
+      /// @{
+      /// @brief Hides busy dialog box.
+      void hide();
 
       /// @brief Resets all properties to empty string.
       void reset();
@@ -134,9 +148,7 @@ namespace xtd {
       void show();
       /// @brief Runs busy dialog box.
       void show(const iwin32_window& owner);
-
-      /// @brief Hides busy dialog box.
-      void hide();
+      /// @}
 
     private:
       struct data {

@@ -20,12 +20,17 @@ namespace xtd {
     /// @include collapsible_panel.cpp
     class forms_export_ collapsible_panel : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the collapsible_panel class.
       collapsible_panel();
+      /// @}
 
-      /// @cond
+      /// @name Properties
+      
+      /// @{
       virtual bool auto_size() const override {return true;}
-      /// @cond
 
       /// @brief Get the border style for the control.
       /// @return One of the border_style values. The default is border_style::none.
@@ -49,7 +54,11 @@ namespace xtd {
       const xtd::drawing::size& client_size() const override {return control::client_size();}
       const xtd::drawing::size& size() const override {return control::size();}
       /// @endcond
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Collapse the collapsible_panel.
       /// @remarks Collapsing the collapsible_panel is equivalent to setting the expanded property to false. After the collapse method is called, the expanded property returns a value of false until the expand method is called.
       void collapse() {expanded(false);}
@@ -57,12 +66,20 @@ namespace xtd {
       /// @brief Expand the collapsible_panel.
       /// @remarks Expanding the collapsible_panel is equivalent to setting the expanded property to true. After the expand method is called, the expanded property returns a value of true until the collapse method is called.
       void expand() {expanded(true);}
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the expanded property changes.
       /// @ingroup events
       xtd::event<collapsible_panel, xtd::event_handler> expanded_changed;
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
       
       drawing::size measure_control() const override;
@@ -77,17 +94,16 @@ namespace xtd {
       void on_handle_created(const event_args& e) override;
 
       void wnd_proc(message& message) override;
+      /// @}
 
-      /// @cond
-      forms::border_style border_style_ = forms::border_style::none;
-      bool expanded_ = false;
-      /// @endcond
-      
     private:
       control& auto_size(bool auto_size) override {return control::auto_size(auto_size);}
       control& client_size(const xtd::drawing::size& client_size) override {return control::size(client_size);}
       control& size(const xtd::drawing::size& size) override {return control::size(size);}
       void wm_command(message& message);
+
+      forms::border_style border_style_ = forms::border_style::none;
+      bool expanded_ = false;
     };
   }
 }

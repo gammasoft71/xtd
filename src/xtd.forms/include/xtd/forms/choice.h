@@ -24,9 +24,16 @@ namespace xtd {
     /// @include choice.cpp
     class forms_export_ choice : public list_control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the choice class.
       choice();
+      //// @}
 
+      /// @name Properties
+      
+      /// @{
       virtual drawing::size default_size() const override {return {121, 23};}
       
       /// @brief Gets an object representing the collection of the items contained in this choice.
@@ -68,15 +75,23 @@ namespace xtd {
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       control& text(const xtd::ustring& text) override {return *this;}
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the EndUpdate() method is called.
       /// @remarks The preferred way to add multiple items to the choice is to use the push_back_range method of the choice::object_collection class (through the items property of the choice). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the choice::object_collection class, you can use the begin_update method to prevent the control from repainting the choice each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the choice to repaint. This way of adding items can prevent flickered drawing of the choice when a large number of items are being added to the list.
       void begin_update();
       /// @brief Resumes painting the choice control after painting is suspended by the begin_update method.
       /// @remarks The preferred way to add multiple items to the choice is to use the push_back_range method of the choice::object_collection class (through the items property of the choice). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the choice::object_collection class, you can use the begin_update method to prevent the control from repainting the choice each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the choice to repaint. This way of adding items can prevent flickered drawing of the choice when a large number of items are being added to the list.
       void end_update();
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
       
       void on_handle_created(const event_args& e) override;
@@ -104,6 +119,7 @@ namespace xtd {
       /// @brief Processes the mouse up message the choice control receives from the top-level window.
       /// @param message The message the top-level window sent to the choice control.
       virtual void wm_mouse_up(message& message);
+      /// @}
 
       /// @cond
       object_collection items_;

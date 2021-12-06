@@ -18,24 +18,32 @@ namespace xtd {
     /// @remarks A cancelable event is raised by a component when it is about to perform an action that can be canceled, such as the closing event of a form.
     class cancel_event_args : public event_args {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the cancel_event_args class with the cancel property set to false.
       cancel_event_args() = default;
 
       /// @brief Initializes a new instance of the cancel_event_args class with the cancel property set to the given value.
       /// @param cancel true to cancel the event; otherwise, false.
       explicit cancel_event_args(bool cancel) : cancel_(cancel) {};
+      /// @}
 
       /// @cond
       cancel_event_args(const cancel_event_args& cancel_event_args) = default;
       cancel_event_args& operator=(const cancel_event_args& cancel_event_args) = default;
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the event should be canceled.
       /// @return true if the event should be canceled; otherwise, false.
       virtual bool cancel() const {return cancel_;}
       /// @brief Sets a value indicating whether the event should be canceled.
       /// @param cancel true if the event should be canceled; otherwise, false.
       virtual void cancel(bool cancel) {cancel_ = cancel;}
+      /// @}
 
     protected:
       bool cancel_ = false;

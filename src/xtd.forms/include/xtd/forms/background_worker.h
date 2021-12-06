@@ -30,14 +30,21 @@ namespace xtd {
     /// @include background_worker.cpp
     class forms_export_ background_worker : public component {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the background_worker class.
       /// @remarks This constructor initializes a background_worker.
       background_worker();
+      /// @}
       
       /// @cond
       ~background_worker();
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the application has requested cancellation of a background operation.
       /// @return true if the application has requested cancellation of a background operation; otherwise, false. The default is false.
       bool cancellation_pending() const {return data_->cancellation_pending;}
@@ -63,7 +70,11 @@ namespace xtd {
       /// @param value true if the background_worker supports cancellation; otherwise false. The default is false.
       /// @remarks Set the worker_supports_cancellation property to true if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
       void worker_supports_cancellation(bool value) {data_->worker_supports_cancellation = value;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Requests cancellation of a pending background operation.
       /// @remarks cancel_async submits a request to terminate the pending background operation and sets the cancellation_pending property to true.
       /// @remarks When you call cancel_async, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check thecancellation_pending property to see if it has been set to true.
@@ -100,7 +111,11 @@ namespace xtd {
       /// @param percent_progress The percentage, from 0 to 100, of the background operation that is complete.
       /// @param user_state A unique object indicating the user state. Returned as the user_state property of the progress_changed_even_args.
       void report_progress(int32_t percent_progress, std::any user_state);
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when run_worker_async() is called.
       /// @ingroup events
       event<background_worker, do_work_event_handler> do_work;
@@ -112,6 +127,7 @@ namespace xtd {
       /// @brief Occurs when the background operation has completed, has been canceled, or has raised an exception.
       /// @ingroup events
       event<background_worker, run_worker_completed_event_handler> run_worker_completed;
+      /// @}
       
     private:
       struct data {

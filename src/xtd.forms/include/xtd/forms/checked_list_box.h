@@ -28,6 +28,9 @@ namespace xtd {
       /// @brief Represent an item contained in the checked_list_box::object_collection collection.
       class item : public list_box::item {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the item class.
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
@@ -55,6 +58,7 @@ namespace xtd {
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
         item(const xtd::ustring& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {}
+        /// @}
         
         /// @cond
         item(const char* value) : list_box::item(value) {}
@@ -68,6 +72,9 @@ namespace xtd {
         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
         /// @endcond
 
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets a value indicating whether the item is in the checked state.
         /// @return true if the item is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
         virtual bool checked() const {return check_state_ != forms::check_state::unchecked;}
@@ -76,11 +83,15 @@ namespace xtd {
         /// @return One of the check_state enumeration values. The default value is unchecked.
         /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
         virtual forms::check_state check_state() const {return check_state_;}
+        /// @}
         
       private:
         forms::check_state check_state_ = forms::check_state::unchecked;
       };
       
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents the collection of items in a checked_list_box.
       using object_collection = layout::arranged_element_collection<item>;
 
@@ -92,11 +103,19 @@ namespace xtd {
 
       /// @brief Represents the collection of selected items in the list_box.
       using selected_object_collection = std::vector<item>;
+      /// @}
 
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the checked_list_box class.
       /// @remarks By default, checked_list_box uses set_style and the resize_redraw value of control_styles to specify that the control is redrawn when resized.
       checked_list_box();
+      /// @}
     
+      /// @name Properties
+      
+      /// @{
       /// @brief Collection of checked indexes in this checked_list_box.
       /// @return The checked_list_box::checked_index_collection collection for the checked_list_box.
       /// @remarks The collection of checked indexes is a subset of the indexes into the collection of all items in the checked_list_box control. These indexes specify items in a checked or indeterminate state.
@@ -154,7 +173,11 @@ namespace xtd {
         data_->selected_item = {text};
         return *this;
       }
+      /// @}
   
+      /// @name Methods
+      
+      /// @{
       /// @brief Maintains performance while items are added to the checked_list_box one at a time by preventing the control from drawing until the end_update() method is called.
       /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void begin_update();
@@ -196,13 +219,25 @@ namespace xtd {
       /// @param index The index of the item to set the check state for.
       /// @param text A string that represent the text value.
       void set_item_text(size_t index, const xtd::ustring& text);
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the checked state of an item changes.
       event<checked_list_box, item_check_event_handler> item_check;
+      /// @}
 
     protected:
+      /// @name Protected properties
+      
+      /// @{
       bool allow_selection() override {return selection_mode() != forms::selection_mode::none;}
+      /// @}
 
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
 
       void on_handle_created(const event_args& e) override;
@@ -222,6 +257,7 @@ namespace xtd {
       void wm_mouse_down(message& message) override;
       
       void wm_mouse_up(message& message) override;
+      /// @}
       
     private:
       struct data {

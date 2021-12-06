@@ -21,6 +21,9 @@ namespace xtd {
     /// @include busy_box.cpp
     class forms_export_ busy_box final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Hides a busy box in front.
       static void hide() {
         delete dialog_;
@@ -105,6 +108,7 @@ namespace xtd {
       /// @param fore_color A color that represents the background color of the busy box.
       /// @param opacity A float that represents the opacity of the busy box. (0: full opacity and 1.0 no opacity)
       static void show(const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {show_busy_dialog(nullptr, text, caption, icon, back_color, fore_color, opacity);}
+      /// @}
       
     private:
       static busy_dialog* dialog_;

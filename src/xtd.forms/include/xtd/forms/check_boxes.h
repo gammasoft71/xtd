@@ -20,6 +20,9 @@ namespace xtd {
     /// @include check_boxes.cpp
     class check_boxes final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Create a system-defined check_box that represent abort check_box.
       /// @param location The check_box location in pixels.
       /// @param size The check_box size in pixels.
@@ -1250,6 +1253,7 @@ namespace xtd {
       /// @param fore_core The check_box foreground color.
       /// @return The created check_box.
       static std::unique_ptr<check_box> zoom_to_fit(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(parent, system_texts::zoom_to_fit(), location, size, back_color, fore_color);}
+      /// @}
     };
   }
 }
