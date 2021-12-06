@@ -31,6 +31,9 @@ namespace xtd {
       class drawing_native_export_ graphics final static_ {
         friend xtd::drawing::graphics;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         static void clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void destroy(intptr_t hdc);
         static void draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
@@ -51,6 +54,7 @@ namespace xtd {
         static void measure_string(intptr_t hdc, const xtd::ustring& text, intptr_t font, int32_t& width, int32_t& height);
         static void rotate_transform(intptr_t hdc, float angle);
         static void translate_clip(intptr_t hdc, int32_t dx, int32_t dy);
+        /// @}
       };
     }
   }

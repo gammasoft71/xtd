@@ -43,6 +43,9 @@ namespace xtd {
           std::vector<uint8_t> value;
         };
         
+        /// @name Protected methods
+        
+        /// @{
         static void color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags);
         static intptr_t create(const xtd::ustring& filename);
         static intptr_t create(std::istream& stream);
@@ -66,6 +69,7 @@ namespace xtd {
         static void save(intptr_t image, const xtd::ustring& filename);
         static void save(intptr_t image, const xtd::ustring& filename, size_t raw_format);
         static void save(intptr_t image, std::ostream& stream, size_t raw_format);
+        /// @}
       };
     }
   }

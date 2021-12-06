@@ -40,6 +40,9 @@ namespace xtd {
           std::vector<uint8_t> value;
         };
         
+        /// @name Protected methods
+        
+        /// @{
         static intptr_t create(const xtd::ustring& filename);
         static intptr_t create(std::istream& stream);
         static intptr_t create(const char* const* bits);
@@ -49,6 +52,7 @@ namespace xtd {
         static void save(intptr_t icon, const xtd::ustring& filename);
         static void save(intptr_t icon, std::ostream& stream, size_t raw_format);
         static intptr_t to_image(intptr_t icon);
+        /// @}
       };
     }
   }

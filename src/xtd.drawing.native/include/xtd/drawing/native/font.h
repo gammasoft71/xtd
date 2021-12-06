@@ -32,6 +32,9 @@ namespace xtd {
       class drawing_native_export_ font final static_ {
         friend xtd::drawing::font;
       protected:
+        /// @name Protected methods
+        
+        /// @{
         /// @brief Creates font.
         /// @param family_name A string representation of the font family for the new font.
         /// @param em_size The em-size of the new font in the units specified by the unit parameter.
@@ -51,6 +54,7 @@ namespace xtd {
         static void get_information(intptr_t font, xtd::ustring& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font);
         static float height(intptr_t font);
         static float height(intptr_t font, intptr_t hdc);
+        /// @}
       };
     }
   }
