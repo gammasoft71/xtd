@@ -29,6 +29,9 @@ namespace xtd {
     /// @include message_box.cpp
     class message_box final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Displays a message box in front of the specified window.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       static dialog_result show(const iwin32_window& owner) {return show_message_dialog(&owner);}
@@ -126,6 +129,7 @@ namespace xtd {
       /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       /// @param display_help_button true to show the Help button; otherwise, false. The default is false.
       static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button) {return show_message_dialog(nullptr, text, caption, buttons, icon, default_button, options, display_help_button);}
+      /// @}
       
     private:
       static dialog_result show_message_dialog(const iwin32_window* owner, const xtd::ustring& text = "", const xtd::ustring& caption = "", message_box_buttons buttons = message_box_buttons::ok, message_box_icon icon = message_box_icon::none, message_box_default_button default_button = message_box_default_button::button1, message_box_options options = static_cast<message_box_options>(0), bool display_help_button = false) {

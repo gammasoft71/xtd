@@ -28,6 +28,9 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class forms_export_ mouse_event_args : public event_args {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the MouseEventArgs class.
       mouse_event_args() = default;
       /// @brief Initializes a new instance of the MouseEventArgs class.
@@ -43,12 +46,16 @@ namespace xtd {
       /// @param location The location of a mouse click, in pixels.
       /// @param delta A signed count of the number of detents the wheel has rotated.
       mouse_event_args(mouse_buttons button, int32_t clicks, const drawing::point& location, int32_t delta) : button_(button), location_(location), clicks_(clicks), delta_(delta) {}
+      /// @}
 
       /// @cond
       mouse_event_args(const mouse_event_args& mouse_event_args) = default;
       mouse_event_args& operator=(const mouse_event_args& mouse_event_args) = default;
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets which mouse button was pressed.
       /// @return One of the xtd::forms::mouse_buttons values.
       mouse_buttons button() const {return button_;}
@@ -72,6 +79,7 @@ namespace xtd {
       /// @brief Gets the y-coordinate of the mouse during the generating mouse event.
       /// @return The y-coordinate of the mouse, in pixels.
       int32_t y() const {return location().y();}
+      /// @}
       
     private:
       friend class button;

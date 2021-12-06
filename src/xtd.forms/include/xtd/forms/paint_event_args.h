@@ -26,6 +26,9 @@ namespace xtd {
     /// @remarks The paint event occurs when a control is redrawn. A paint_event_args specifies the graphics to use to paint the control and the clip_rectangle in which to paint.
     class forms_export_ paint_event_args : public event_args {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the paint_event_args class with the specified control, clipping rectangle.
       /// @param control The xtd::forms::control used to paint the item.
       /// @param clip_rectangle The xtd::drawing::rectangle that represents the rectangle in which to paint.
@@ -34,10 +37,15 @@ namespace xtd {
       /// @param graphics_ The xtd::drawing::graphics used to paint the item.
       /// @param clip_rectangle The xtd::drawing::rectangle that represents the rectangle in which to paint.
       paint_event_args(xtd::drawing::graphics& graphics, const drawing::rectangle& clip_rectangle) : graphics_(&graphics), clip_rectangle_(clip_rectangle) {};
+      /// @}
+
       /// @cond
       ~paint_event_args();
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the rectangle in which to paint.
       /// @return The xtd::drawing::rectangle in which to paint.
       const drawing::rectangle& clip_rectangle() const {return clip_rectangle_;}
@@ -45,6 +53,7 @@ namespace xtd {
       /// @brief Gets the graphics used to paint.
       /// @return The xtd::drawing::graphics object used to paint. The xtd::drawing::graphics object provides methods for drawing objects on the display device.
       drawing::graphics& graphics();
+      /// @}
             
     private:
       friend class xtd::forms::control;

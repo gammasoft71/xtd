@@ -30,10 +30,17 @@ namespace xtd {
     /// @include progress_bar.cpp
     class forms_export_ progress_bar : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the progress_bar class.
       /// @remarks By default, the minimum property is set to 0, the maximum property is set to 100, and the step property is set to 10.
       progress_bar();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the default size of the control.
       /// @return A size that represents the default size of the control.
       drawing::size default_size() const override {return {100, 23};}
@@ -108,7 +115,11 @@ namespace xtd {
       /// @remarks If the value specified is less than the value of the minimum property, the value property is set to minimum.
       /// @remarks The minimum and maximum values of the value property are specified by the minimum and maximum properties. This property enables you to increment or decrement the value of the progress bar directly. To perform consistent increases in the value of the progress_bar control you can use the step property with the perform_step method. To increase the progress bar value by varying amounts, use the increment method.
       virtual progress_bar& value(int32_t value);
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Advances the current position of the progress bar by the specified amount.
       /// @param value The amount by which to increment the progress bar's current position.
       /// @remarks The increment method enables you to increment the value of the progress bar by a specific amount. This method of incrementing the progress bar is similar to using the step property with the perform_step method. The value property specifies the current position of the progress_bar. If, after calling the increment method, the value property is greater than the value of the maximum property, the value property remains at the value of the maximum property. If, after calling the increment method with a negative value specified in the value parameter, the Value property is less than the value of the minimum property, the value property remains at the value of the minimum property.
@@ -139,8 +150,12 @@ namespace xtd {
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
+      ///@}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
@@ -148,8 +163,9 @@ namespace xtd {
       /// @brief Overrides control::on_handle_created(const event_args&)
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
+      /// @}
       
-      /// @cond
+    private:
       size_t marquee_animation_speed_ = 100;
       int32_t maximum_ = 100;
       int32_t minimum_ = 0;
@@ -157,7 +173,6 @@ namespace xtd {
       int32_t step_ = 10;
       progress_bar_style style_ = progress_bar_style::blocks;
       int32_t value_ = 0;
-      /// @endcond
     };
   }
 }

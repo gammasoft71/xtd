@@ -23,15 +23,23 @@ namespace xtd {
       progress_changed_event_args& operator=(const progress_changed_event_args&) = default;
       /// @endcond
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the DoWorkEventArgs class.
       /// @param argument Specifies an argument for an asynchronous operation.
       progress_changed_event_args(int32_t progress_percentage, const std::any& user_state) : progress_percentage_(progress_percentage), user_state_(user_state) {}
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       int32_t progress_percentage() const {return progress_percentage_;}
 
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
       std::any user_state() const {return user_state_;}
+      /// @}
       
     private:
       int32_t progress_percentage_ = 0;

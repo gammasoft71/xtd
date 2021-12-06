@@ -17,16 +17,27 @@ namespace xtd {
     /// @include nine_segment_display.cpp
     class nine_segment_display : public seven_segment_display {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of nine_segment_display class.
       nine_segment_display() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       using seven_segment_display::thickness;
       /// @brief Sets thickness of segment.
       /// @param value A int32_t that represent the segment thickness.
       /// @return Current seven_segment_display.
       int32_t thickness() const override {return thickness_.value_or(size().height() < 20 ? 1 : (size().height() / 20 + ((size().height() / 20) % 2 ? 0 : 1)));}
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       void on_paint(paint_event_args& e) override {
         seven_segment_display::on_paint(e);
         if ((value_ & forms::segments::h) == forms::segments::h) draw_segment_h(e.graphics(), fore_color());
@@ -58,6 +69,7 @@ namespace xtd {
           graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), size().height() / 2 + 2 + thickness() / 2 + abs(offset), 2 + thickness() + abs(offset), size().height() - 3 - thickness());
         }
       }
+      /// @}
     };
   }
 }

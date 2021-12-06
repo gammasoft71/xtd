@@ -22,6 +22,26 @@ namespace xtd {
     /// @include progress_box.cpp
     class progress_box final static_{
     public:
+      /// @name Properties
+      
+      /// @{
+      /// @brief Check if the progress dialog is canceled
+      /// @return true if the progress dialog is canceled
+      static bool cancelled() { return dialog_ && dialog_->cancelled(); }
+      /// @brief Check if the progress dialog is skipped
+      /// @return true if the progress dialog is skipped
+      static bool skipped() { return dialog_ && dialog_->skipped(); }
+      /// @brief Gets the minimum value of the range of the progress dialog.
+      /// @return The minimum value of the range. The default is 0.
+      static int32_t minimum() { return dialog_ ? dialog_->minimum() : 0; }
+      /// @brief Gets the maximum value of the range of the progress dialog.
+      /// @return The maximum value of the range. The default is 100.
+      static int32_t maximum() { return dialog_ ? dialog_->maximum() : 100; }
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
       /// @brief Hides a progress box in front.
       static void hide() { delete dialog_; dialog_ = nullptr; }
 
@@ -240,7 +260,6 @@ namespace xtd {
       /// @param options A bitwise combination of enum xtd::forms::progress_box_options to specify additional options to the progress dialog box.
       static void show(const iwin32_window & owner, const xtd::ustring & title, const xtd::ustring & message, const int32_t initial_value, const int32_t minimum, const int32_t maximum, const bool marquee, const size_t marquee_animation_speed, const std::vector<xtd::ustring>&informations, const progress_box_options options) { show_progress_box(&owner, options, title, message, initial_value, minimum, maximum, marquee, marquee_animation_speed, informations); }
 
-
       /// @brief Updates progress box
       /// @param options A bitwise combination of enum xtd::forms::progress_box_options to specify additional options to the progress dialog box.
       static void update(const progress_box_options options) { if (dialog_) dialog_->show_cancel_button(options & progress_box_options::show_cancel_button).show_skip_button(options & progress_box_options::show_skip_button).show_elapsed_time(options & progress_box_options::show_elapsed_time).show_estimated_time(options & progress_box_options::show_estimated_time).show_remaining_time(options & progress_box_options::show_remaining_time);; }
@@ -296,19 +315,7 @@ namespace xtd {
       /// @param marquee_animation_speed An integer that indicates the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @param informations An std::vector of xtd::ustring that specifies the information texts of the progress dialog.
       static void update(const int32_t value, const xtd::ustring & title, const xtd::ustring & message, const int32_t minimum, const int32_t maximum, const bool marquee, const size_t marquee_animation_speed, const std::vector<xtd::ustring>&informations) { if (dialog_) dialog_->value(value).text(title).message(message).minimum(minimum).maximum(maximum).marquee(marquee).marquee_animation_speed(marquee_animation_speed).informations(informations); }
-
-      /// @brief Check if the progress dialog is canceled
-      /// @return true if the progress dialog is canceled
-      static bool cancelled() { return dialog_ && dialog_->cancelled(); }
-      /// @brief Check if the progress dialog is skipped
-      /// @return true if the progress dialog is skipped
-      static bool skipped() { return dialog_ && dialog_->skipped(); }
-      /// @brief Gets the minimum value of the range of the progress dialog.
-      /// @return The minimum value of the range. The default is 0.
-      static int32_t minimum() { return dialog_ ? dialog_->minimum() : 0; }
-      /// @brief Gets the maximum value of the range of the progress dialog.
-      /// @return The maximum value of the range. The default is 100.
-      static int32_t maximum() { return dialog_ ? dialog_->maximum() : 100; }
+      /// @}
 
      private:
        inline static progress_dialog * dialog_;

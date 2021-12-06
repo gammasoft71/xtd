@@ -21,6 +21,9 @@ namespace xtd {
     /// @include open_file_box.cpp
     class open_file_box final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Displays a select file dialog box in front of a specified window.
       /// @param file_name An output xtd::ustring that will store the selected file name.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
@@ -235,6 +238,7 @@ namespace xtd {
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output file_names parameter will contain the selected file paths, otherwise it will be ignored.
       static xtd::forms::dialog_result show(std::vector<xtd::ustring>& file_names, const xtd::ustring& title, const xtd::ustring& initial_directory, const xtd::ustring& filter, const open_file_box_options options) {return show_open_file_box<true>(file_names, title, initial_directory, filter, options, nullptr);}
+      /// @}
   
     private:
       template<const bool multiselect, typename output_t>
