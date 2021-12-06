@@ -22,9 +22,16 @@ namespace xtd {
     /// @include animation.cpp
     class animation : public xtd::forms::control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of animation class.
       animation();
+      /// }
       
+      /// @name Properties
+      
+      /// @{
       drawing::size default_size() const override;
       
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
@@ -45,22 +52,35 @@ namespace xtd {
       /// @brief Returns if the animation is started.
       /// @return true if the animation is running; otherwise false.
       virtual bool is_running() const;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Starts animation of the animation control.
       void start();
       
       /// @brief Stops animation of the animation control.
       void stop();
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the specified interval specified by xtd::animation::frames_per_seconds has elapsed and the animation is started.
       /// @remarks You can use this event to do things like advancing animation parameters, checking the mouse position, etc.
       /// @ingroup events
       xtd::event<animation, animation_updated_event_handler> updated;
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Raises the updated event.
       /// @param e An event_args that contains the event data. This is always xtd::event_args::empty.
       virtual void on_updated(const xtd::forms::animation_updated_event_args& e);
+      /// @}
       
     private:
       void on_frames_timer_tick(object& timer, const xtd::event_args& e);

@@ -17,6 +17,9 @@ namespace xtd {
     /// @ingroup xtd_forms
     class resources final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& cursor_arrow() {
         if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("arrow{}.png", get_os_postfix())))) return xtd::drawing::bitmap::empty;
@@ -58,6 +61,7 @@ namespace xtd {
         static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd_forms.png"));
         return bitmap;
       }
+      /// @}
 
     private:
       static std::string get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";}

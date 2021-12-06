@@ -18,8 +18,12 @@ namespace xtd {
       /// @ingroup xtd_forms
       class sorter_none : public object {
       public:
+        /// @name Operators
+        
+        /// @{
         template<typename type_t>
         void operator()(type_t first, type_t last) {}
+        /// @}
       };
     }
   }

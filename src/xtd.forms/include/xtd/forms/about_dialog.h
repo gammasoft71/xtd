@@ -49,6 +49,9 @@ namespace xtd {
     /// @include about_dialog_system.cpp
     class forms_export_ about_dialog final : public component {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents a author collection.
       using author_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       /// @brief Represents a artist collection.
@@ -57,10 +60,18 @@ namespace xtd {
       using documenter_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       /// @brief Represents a translator collection.
       using translator_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
+      /// @}
 
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the about_dialog class.
       about_dialog() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the artists array.
       /// @return The artists array.
       const artist_collection& artists() const {return data_->artists;}
@@ -240,7 +251,11 @@ namespace xtd {
         data_->website_label = website_label;
         return *this;
       }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Resets all properties to empty string.
       void reset();
       
@@ -248,6 +263,7 @@ namespace xtd {
       void show();
       /// @brief Runs about dialog box.
       void show(const iwin32_window& owner);
+      /// @}
 
     private:
       struct data {
