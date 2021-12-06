@@ -39,12 +39,16 @@ namespace xtd {
       guid() = delete;
       friend xtd::guid;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Generates a globally unique identifier (GUID).
       /// @return A 16-element byte array containing GUID.
       /// @remarks A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.
       /// @warning Internal use only
       static std::vector<uint8_t> new_guid();
+      /// @}
     };
   }
 }

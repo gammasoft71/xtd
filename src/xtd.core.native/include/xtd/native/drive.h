@@ -39,6 +39,9 @@ namespace xtd {
     protected:
       friend class xtd::io::drive_info;
       
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Gets available free space for specified root path.
       /// @param root_path_name root path name to get available free space.
@@ -74,6 +77,7 @@ namespace xtd {
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool set_Volume_label(const std::string& root_path_name, const std::string& volume_name);
+      /// @}
     };
   }
 }

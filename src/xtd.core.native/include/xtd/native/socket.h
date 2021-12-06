@@ -45,6 +45,9 @@ namespace xtd {
       friend xtd::net::socket_address;
       friend xtd::net::sockets::socket;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Gets the native address family value corresponding to xtd address family.
       /// @return The native address family value corresponding to xtd address family (see address_family_constants.h).
@@ -301,6 +304,7 @@ namespace xtd {
       /// @brief Startup the socket library.
       /// @warning Internal use only
       static void startup();
+      /// @}
     };
   }
 }

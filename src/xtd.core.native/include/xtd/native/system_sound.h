@@ -36,11 +36,15 @@ namespace xtd {
       system_sound() = delete;
       friend xtd::media::system_sound;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Play system sound.
       /// @param sound The sound to play (see souund.h).
       /// @warning Internal use only
       static void play(uint32_t sound);
+      /// @}
     };
   }
 }

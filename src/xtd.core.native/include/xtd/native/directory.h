@@ -45,6 +45,11 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ directory final {
       directory() = delete;
+      friend drive;
+      friend file_system;
+      friend xtd::io::directory;
+      friend xtd::io::directory_info;
+      
     public:
       /// @internal
       /// @brief Represent directory iterator used by xtd::native::directtory::enumerate_directories.
@@ -125,11 +130,9 @@ namespace xtd {
       };
 
     protected:
-      friend drive;
-      friend file_system;
-      friend xtd::io::directory;
-      friend xtd::io::directory_info;
-
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
       /// @param directory_name The directory to create.
@@ -181,6 +184,7 @@ namespace xtd {
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
       static int32_t set_current_directory(const std::string& directory_name);
+      /// @}
     };
   }
 }

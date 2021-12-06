@@ -45,6 +45,9 @@ namespace xtd {
       friend xtd::diagnostics::debugger;
       friend xtd::diagnostics::default_trace_listener;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Signals a breakpoint to an attached debugger.
       /// @warning Internal use only
@@ -82,6 +85,7 @@ namespace xtd {
       /// @remarks If there is no debugger attached, this method has no effect. The debugger might or might not report the message, depending upon its settings.
       /// @warning Internal use only
       static void log(int32_t level, const std::string& category, const std::string& message);
+      /// @}
     };
   }
 }

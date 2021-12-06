@@ -39,6 +39,9 @@ namespace xtd {
       friend xtd::io::file;
       friend xtd::io::file_info;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Copy a specified source file to a target file.
       /// @param source_file The source file to copy.
@@ -71,6 +74,7 @@ namespace xtd {
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int32_t remove(const std::string& file);
+      /// @}
     };
   }
 }

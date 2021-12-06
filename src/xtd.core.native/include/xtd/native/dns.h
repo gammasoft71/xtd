@@ -42,6 +42,9 @@ namespace xtd {
       friend xtd::net::dns;
       friend __using_dns__;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Closes the file /etc/hosts.
       /// @warning Internal use only
@@ -92,6 +95,7 @@ namespace xtd {
       /// @brief Opens the file /etc/hosts.
       /// @warning Internal use only
       static void startup();
+      /// @}
     };
   }
 }
