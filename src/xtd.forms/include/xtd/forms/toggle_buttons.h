@@ -20,6 +20,9 @@ namespace xtd {
     /// @include toggle_buttons.cpp
     class forms_export_ toggle_buttons final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Create a system-defined toggle_button that represent abort toggle_button.
       /// @param location The toggle_button location in pixels.
       /// @param size The toggle_button size in pixels.
@@ -1250,6 +1253,7 @@ namespace xtd {
       /// @param fore_core The toggle_button foreground color.
       /// @return The created toggle_button.
       static std::unique_ptr<toggle_button> zoom_to_fit(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<toggle_button>(parent, system_texts::zoom_to_fit(), location, size, back_color, fore_color);}
+      /// @}
     };
   }
 }

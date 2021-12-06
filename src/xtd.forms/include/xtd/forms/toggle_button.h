@@ -29,10 +29,17 @@ namespace xtd {
     /// @include toggle_button.cpp
     class forms_export_ toggle_button : public button_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the CheckBox class.
       /// @remarks By default, when a new toggle_button is instantiated, auto_check is set to true, checked is set to false, and appearance is set to normal.
       toggle_button();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the checked or check_state values and the toggle_button's appearance are automatically changed when the toggle_button is clicked.
       /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
@@ -90,7 +97,11 @@ namespace xtd {
       /// @param three_state true if the toggle_button is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
       virtual toggle_button& three_state(bool three_state);
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the checked property changes.
       /// @ingroup events
       event<toggle_button, event_handler> checked_changed;
@@ -98,8 +109,12 @@ namespace xtd {
       /// @brief Occurs when the value of the check_state property changes.
       /// @ingroup events
       event<toggle_button, event_handler> check_state_changed;
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
@@ -191,20 +206,22 @@ namespace xtd {
       /// @brief Get state.
       /// @return One of xtd::forms::visual_styles::toggle_button_state values.
       xtd::forms::visual_styles::toggle_button_state state() const noexcept {return state_;}
+      /// @}
 
      /// @cond
       void wnd_proc(message& message) override;
       virtual void wm_mouse_double_click(message& message);
       virtual void wm_mouse_down(message& message);
       virtual void wm_mouse_up(message& message);
+      /// @endcond
 
+    private:
       bool auto_check_ = true;
       bool three_state_ = 0;
       bool checked_ = false;
       content_alignment check_align_ = content_alignment::middle_left;
       forms::check_state check_state_ = forms::check_state::unchecked;
       xtd::forms::visual_styles::toggle_button_state state_ = xtd::forms::visual_styles::toggle_button_state::unchecked_normal;
-      /// @endcond
     };
   }
 }
