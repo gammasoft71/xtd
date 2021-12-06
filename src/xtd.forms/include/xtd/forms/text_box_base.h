@@ -19,6 +19,9 @@ namespace xtd {
     /// @remarks This class implements the core features of text manipulation controls, such as xtd::forms::text_box and xtd::forms::rich_text_box. These include text selection, xtd::forms::clipboard functionality, multiline text control support, and many events.
     class text_box_base : public control {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether pressing the TAB key in a multiline text box control types a TAB character in the control instead of moving the focus to the next control in the tab order.
       /// @return true if users can enter tabs in a multiline text box using the TAB key; false if pressing the TAB key moves the focus. The default is false.
       virtual bool accepts_tab() const {return accepts_tab_;}
@@ -48,7 +51,6 @@ namespace xtd {
         }
         return *this;
       }
-
 
       forms::cursor default_cursor() const override {return forms::cursors::ibeam();}
 
@@ -149,7 +151,11 @@ namespace xtd {
         select(text().size(), 0);
         resume_layout();
       }
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Clears all text from the text box control.
       /// @remarks You can use this method to clear the contents of the control instead of assigning the text property an empty string.
       void clear() {
@@ -174,7 +180,11 @@ namespace xtd {
       void select_all() {
         select(0, text().size());
       }
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the accepts_tab property has changed.
       /// @ingroup events
       event<text_box_base, event_handler> accepts_tab_changed;
@@ -190,11 +200,19 @@ namespace xtd {
       /// @brief Occurs when the value of the read_only property has changed.
       /// @ingroup events
       event<text_box_base, event_handler> read_only_changed;
+      /// @}
 
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief initializes a new instance of the text_box_base class.
       text_box_base() = default;
+      /// @}
 
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Raises the text_box_base::accepts_tab_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_accepts_tab_changed(const event_args& e) {
@@ -218,8 +236,9 @@ namespace xtd {
       virtual void on_read_only_changed(const event_args& e) {
         if (can_raise_events()) read_only_changed(*this, e);
       }
+      /// @}
 
-      /// @cond
+    private:
       bool accepts_tab_ = false;
       xtd::forms::border_style border_style_ = xtd::forms::border_style::fixed_single;
       bool multiline_ = false;
@@ -227,7 +246,6 @@ namespace xtd {
       bool word_wrap_ = true;
       mutable size_t selection_start_ = 0;
       mutable size_t selection_length_ = 0;
-      /// @endcond
     };
   }
 }

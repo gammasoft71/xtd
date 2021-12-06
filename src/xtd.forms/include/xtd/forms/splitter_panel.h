@@ -23,8 +23,12 @@ namespace xtd {
     class splitter_panel : public panel {
       friend class split_container;
     protected:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of splitter_panel.
       splitter_panel() = default;
+      /// @}
     };
   }
 }

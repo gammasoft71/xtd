@@ -27,6 +27,9 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class switch_button_renderer static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       static void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::push_button_state& state) {draw_button(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, xtd::drawing::image::empty, xtd::drawing::rectangle(0, 0, 0, 0), false, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}
       static void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, bool focused, xtd::forms::visual_styles::push_button_state& state) {draw_button(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, xtd::drawing::image::empty, xtd::drawing::rectangle(0, 0, 0, 0), true, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}
       static void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state) {draw_button(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, image, image_bounds, focused, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}
@@ -61,6 +64,7 @@ namespace xtd {
       static void draw_popup_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state) {draw_popup_button(g, bounds, text, font, xtd::forms::text_format_flags::default_format, image, image_bounds, focused, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}
       static void draw_popup_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state) {draw_popup_button(g, bounds, text, font, flags, image, image_bounds, focused, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}
       static void draw_popup_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
+      /// @}
 
     private:
       static xtd::ustring default_theme() {return theme_renderers::current_theme().name();}

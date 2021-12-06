@@ -40,12 +40,12 @@ text_box& text_box::password_char(char32_t value) {
 }
 
 size_t text_box::selection_length() const {
-  if (is_handle_created()) selection_length_ = native::text_box::selection_length(handle());
+  if (is_handle_created()) const_cast<text_box*>(this)->text_box_base::selection_length(native::text_box::selection_length(handle()));
   return text_box_base::selection_length();
 }
 
 size_t text_box::selection_start() const {
-  if (is_handle_created()) selection_start_ = native::text_box::selection_start(handle());
+  if (is_handle_created()) const_cast<text_box*>(this)->text_box_base::selection_start(native::text_box::selection_start(handle()));
   return text_box_base::selection_start();
 }
 
@@ -88,23 +88,23 @@ forms::create_params text_box::create_params() const {
   
   create_params.class_name("textbox");
   
-  if (border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style() == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
 
-  if (accepts_return_) create_params.style(create_params.style() | ES_WANTRETURN);
-  if (accepts_tab_) create_params.style(create_params.style() | ES_WANTTAB);
-  if (multiline_) create_params.style(create_params.style() | ES_MULTILINE);
-  if (use_system_password_char_) create_params.style(create_params.style() | ES_PASSWORD);
-  if (read_only_) create_params.style(create_params.style() | ES_READONLY);
-  if (!word_wrap_) create_params.style(create_params.style() | ES_AUTOHSCROLL);
-  if (character_casing_ == xtd::forms::character_casing::upper) create_params.style(create_params.style() | ES_UPPERCASE);
-  if (character_casing_ == xtd::forms::character_casing::lower) create_params.style(create_params.style() | ES_LOWERCASE);
+  if (accepts_return()) create_params.style(create_params.style() | ES_WANTRETURN);
+  if (accepts_tab()) create_params.style(create_params.style() | ES_WANTTAB);
+  if (multiline()) create_params.style(create_params.style() | ES_MULTILINE);
+  if (use_system_password_char()) create_params.style(create_params.style() | ES_PASSWORD);
+  if (read_only()) create_params.style(create_params.style() | ES_READONLY);
+  if (!word_wrap()) create_params.style(create_params.style() | ES_AUTOHSCROLL);
+  if (character_casing() == xtd::forms::character_casing::upper) create_params.style(create_params.style() | ES_UPPERCASE);
+  if (character_casing() == xtd::forms::character_casing::lower) create_params.style(create_params.style() | ES_LOWERCASE);
 
   return create_params;
 }
 
 drawing::size text_box::measure_control() const {
-  return drawing::size(client_size().width(), static_cast<int32_t>(font().get_height()) + 2 + (border_style_ == border_style::none ? 0 : 4));
+  return drawing::size(client_size().width(), static_cast<int32_t>(font().get_height()) + 2 + (border_style() == border_style::none ? 0 : 4));
 }
 
 void text_box::append_text(const xtd::ustring& value) {
@@ -113,7 +113,7 @@ void text_box::append_text(const xtd::ustring& value) {
 
 void text_box::select(size_t start, size_t length) {
   text_box_base::select(start, length);  
-  if (is_handle_created()) native::text_box::select(handle(), selection_start_, selection_length_);
+  if (is_handle_created()) native::text_box::select(handle(), selection_start(), selection_length());
 }
 
 void text_box::on_handle_created(const event_args& e) {

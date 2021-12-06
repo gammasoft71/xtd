@@ -27,7 +27,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      using seven_segment_display::thickness;
       /// @brief Sets thickness of segment.
       /// @param value A int32_t that represent the segment thickness.
       /// @return Current seven_segment_display.

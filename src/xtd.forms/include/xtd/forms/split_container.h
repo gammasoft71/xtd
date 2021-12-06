@@ -22,6 +22,9 @@ namespace xtd {
     /// @include split_container.cpp
     class forms_export_ split_container : public  xtd::forms::scrollable_control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the split_container class.
       split_container() {
         set_can_focus(false);
@@ -29,7 +32,11 @@ namespace xtd {
         controls().push_back_range({panel2_, splitter_, panel1_});
         arrange_children();
       }
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       drawing::size default_size() const override {return {150, 100};}
 
       /// @brief Gets a value indicating the horizontal or vertical orientation of the split_container panels.
@@ -103,11 +110,16 @@ namespace xtd {
         }
         return *this;
       }
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       void on_resize(const event_args& e) override {
         xtd::forms::scrollable_control::on_resize(e);
       }
+      /// @}
       
     private:
       void arrange_children() {

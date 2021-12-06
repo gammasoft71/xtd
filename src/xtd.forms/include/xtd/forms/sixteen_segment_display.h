@@ -17,10 +17,16 @@ namespace xtd {
     /// @include sixteen_segment_display.cpp
     class sixteen_segment_display : public fourteen_segment_display {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of nine_segment_display class.
       sixteen_segment_display() = default;
+      /// @}
 
-      using fourteen_segment_display::thickness;
+      /// @name Properties
+      
+      /// @{
       /// @brief Sets thickness of segment.
       /// @param value A int32_t that represent the segment thickness.
       /// @return Current seven_segment_display.
@@ -35,8 +41,12 @@ namespace xtd {
         }
         return *this;
       }
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       void on_paint(paint_event_args& e) override {
         fourteen_segment_display::on_paint(e);
         if ((value() & forms::segments::a1) == forms::segments::a1) draw_segment_a1(e.graphics(), fore_color());
@@ -202,10 +212,15 @@ namespace xtd {
             graphics.draw_line(drawing::pen(color), size().width() / 2 - offset, size().height() / 2 + 1 - thickness() / 2 + thickness() / 2 + abs(offset), size().width() / 2 - offset, size().height() - 3 - thickness());
         }
       }
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       void draw_segment_a(drawing::graphics& graphics, const drawing::color& color) override {}
       void draw_segment_d(drawing::graphics& graphics, const drawing::color& color) override {}
+      /// @}
 
     private:
       std::optional<int32_t> thickness_;

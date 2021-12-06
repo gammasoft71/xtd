@@ -22,9 +22,16 @@ namespace xtd {
     /// @include colored_tab_pages.cpp
     class forms_export_ tab_page : public panel {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the tab_page class.
       tab_page();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       using panel::auto_scroll;
       /// @brief Sets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.
       /// @param value true if the container enables auto-scrolling; otherwise, false. The default value is false.
@@ -49,13 +56,22 @@ namespace xtd {
       /// @param text The text associated with this control.
       /// @return Current control instance.
       control& text(const xtd::ustring& text) override;
+      /// @}
 
+      /// @name Metthods
+      
+      /// @{
       void destroy_handle() override;
+      /// @}
 
     protected:
+      /// @name Prottected methods
+      
+      /// @{
       forms::create_params create_params() const override;
 
       void on_handle_created(const event_args& e) override;
+      /// @}
 
     private:
       int32_t image_index_ = -1;
