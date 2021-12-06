@@ -25,6 +25,9 @@ namespace xtd {
     /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
     class forms_export_ button_base : public control {
     public:      
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
       /// @return true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
       /// @remarks Set auto_ellipsis to true to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to false if you want AutoEllipsis to be true. If AutoSize is true, the control will grow to fit the text and an ellipsis will not appear.
@@ -108,11 +111,16 @@ namespace xtd {
       /// @brief Gets the alignment of the text on the button control.
       /// @param value One of the content_alignment values. The default is middle_center.
       virtual button_base& text_align(content_alignment value);
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the image property changes.
       /// @ingroup events
       /// @remarks This event is raised if the image property is changed by either a programmatic modification or user interaction.
       event<button_base, event_handler> image_changed;
+      /// @}
 
     protected:
       /// @brief Initializes a new instance of the ButtonBase class.

@@ -21,6 +21,9 @@ namespace xtd {
     /// @include color_box.cpp
     class color_box final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Displays a color box in front of the specified window. The color box displays a color.
       /// @param color A xtd::drawing::color that specifies the color to display.
       /// @param owner A iwin32_window that represents the owner window of the color box.
@@ -61,6 +64,7 @@ namespace xtd {
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
       static xtd::forms::dialog_result show(xtd::drawing::color& color, color_box_styles styles, const std::vector<xtd::drawing::color>& custom_colors) {return show_color_box(color, nullptr, styles, custom_colors);}
+      /// @}
       
     private:
       static xtd::forms::dialog_result show_color_box(xtd::drawing::color& color, const xtd::forms::iwin32_window* owner = nullptr, color_box_styles styles = color_box_styles::alpha_color|color_box_styles::allow_full_open, const std::optional<std::vector<xtd::drawing::color>>& custom_colors = std::optional<std::vector<xtd::drawing::color>> {}) {

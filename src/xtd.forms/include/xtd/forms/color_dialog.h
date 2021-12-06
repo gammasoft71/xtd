@@ -24,6 +24,9 @@ namespace xtd {
     /// @include color_dialog.cpp
     class forms_export_ color_dialog : public common_dialog {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the color_dialog class.
       /// @remarks When you create an instance of ColorDialog, the following read/write properties are set to initial values.
       /// | Property         | Initial Value         |
@@ -38,7 +41,11 @@ namespace xtd {
       /// | solid_color_only | false                 |
       /// @remarks You can change the value for any of these properties through a separate call to the property.
       color_dialog() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the dialog box shows alpha values and an opacity selector (slider).
       /// @return true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
       bool alpha_color() const {return get_option(CC_ALPHACOLOR);}
@@ -138,11 +145,19 @@ namespace xtd {
         set_option(CC_SOLIDCOLOR, solid_color_only);
         return *this;
       }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Resets all options to their default values, the last selected color to black, and the custom colors to their default values.
       void reset() override;
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return true if the dialog box was successfully run; otherwise, false.
@@ -151,6 +166,7 @@ namespace xtd {
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       void run_sheet(intptr_t owner) override;
+      /// @}
 
     private:
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}

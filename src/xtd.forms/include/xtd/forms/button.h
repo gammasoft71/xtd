@@ -53,6 +53,9 @@ namespace xtd {
     /// @include bitmap_button.cpp
     class forms_export_ button : public ibutton_control, public button_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the button class.
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.
       button() {
@@ -65,7 +68,11 @@ namespace xtd {
           }
         };
       }
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets if this button instance is auto repeat.
       /// @return true, if is auto repeat; otherwise false. Default is false.
       virtual bool auto_repeat() const {return data_->auto_repeat;}
@@ -113,12 +120,28 @@ namespace xtd {
       
       forms::dialog_result dialog_result() const override {return data_->dialog_result;}
       control& dialog_result(forms::dialog_result dialog_result) override;
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       void notify_default(bool value) override;
 
       void perform_click() override;
+      /// @}
       
     protected:
+      /// @name Protected properties
+      
+      /// @{
+      /// @brief Get state.
+      /// @return One of xtd::forms::visual_styles::push_button_state values.
+      xtd::forms::visual_styles::push_button_state state() const noexcept {return data_->state;}
+      /// @}
+      
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
 
       drawing::size measure_control() const override;
@@ -163,11 +186,8 @@ namespace xtd {
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       //void wnd_proc(message& message) override;
+      /// @}
 
-      /// @brief Get state.
-      /// @return One of xtd::forms::visual_styles::push_button_state values.
-      xtd::forms::visual_styles::push_button_state state() const noexcept {return data_->state;}
-      
     private:
       //void wm_click(message& message);
       //void wm_mouse_up(message& message);

@@ -18,6 +18,9 @@ namespace xtd {
     /// @ingroup xtd_forms components
     class button_images final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Add image object.
       /// @return A xtd::drawing::image that represent "list-add".
       static xtd::drawing::image add() {return add(xtd::forms::theme_images::current_theme(), size());}
@@ -219,7 +222,11 @@ namespace xtd {
       /// @brief Gets the height and width of the button images.
       /// @return The size that represents the height and width of the button images in pixels (16 x 16).
       static xtd::drawing::size size() {return {16, 16};}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets image object with specified name.
       /// @param name the image name to get.
       /// @return A xtd::drawing::image that represent the specified name.
@@ -255,6 +262,7 @@ namespace xtd {
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
       static xtd::drawing::image from_name(const xtd::forms::theme_images& theme, const xtd::ustring& name, const xtd::drawing::size& size) {return theme.from_name(name, size);}
+      /// @}
     };
   }
 }

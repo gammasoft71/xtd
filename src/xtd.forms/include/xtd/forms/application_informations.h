@@ -20,6 +20,9 @@ namespace xtd {
     /// @include application_informations.cpp
     class application_informations : public object {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the company name associated with the application.
       /// @return The company name.
       static const xtd::ustring& company_name() {return instance().data_->company_name;}
@@ -47,6 +50,7 @@ namespace xtd {
       /// @brief Sets the product version associated with the application.
       /// @param product_version The product version.
       static void product_version(const xtd::ustring& product_version) {instance().data_->product_version = product_version;}
+      /// @}
 
     private:
       static application_informations& instance() {
