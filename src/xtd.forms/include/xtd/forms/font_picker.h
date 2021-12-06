@@ -50,9 +50,13 @@ namespace xtd {
       control& font(const drawing::font& font) override;
       /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the font property changes.
       /// @ingroup events
       event<font_picker, event_handler> font_changed;
+      /// @}
 
     protected:
       /// @name Protected methods
