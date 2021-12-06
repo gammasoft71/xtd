@@ -22,15 +22,26 @@ namespace xtd {
     /// @include list_box.cpp
     class forms_export_ list_box : public list_control {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents the collection containing the indexes to the selected items in a list_box.
       using selected_index_collection = std::vector<size_t>;
       
       /// @brief Represents the collection of selected items in the list_box.
       using selected_object_collection = std::vector<item>;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the list_box class.
       list_box();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the type of border that is drawn around the list_box.
       /// @return One of the xtd::forms::border_styleforms::border_style values. The default is fixed_single.
       virtual forms::border_style border_style() const {return data_->border_style;}
@@ -115,22 +126,27 @@ namespace xtd {
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       control& text(const xtd::ustring& text) override {return *this;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Maintains performance while items are added to the list_box one at a time by preventing the control from drawing until the EndUpdate() method is called.
       /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void begin_update();
       /// @brief Resumes painting the list_box control after painting is suspended by the begin_update method.
       /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void end_update();
+      /// @}
       
     protected:
+      /// @name Protetced methods
+      
+      /// @{
       bool allow_selection() override {return data_->selection_mode != forms::selection_mode::none;}
-
       forms::create_params create_params() const override;
-
       void on_handle_created(const event_args& e) override;
       void on_selected_value_changed(const event_args& e) override;
-
       void wnd_proc(message& message) override;
       
       /// @brief Processes the command message the list_box control receives from the top-level window.
@@ -148,6 +164,7 @@ namespace xtd {
       /// @brief Processes the mouse up message the list_box control receives from the top-level window.
       /// @param message The message the top-level window sent to the list_box control.
       virtual void wm_mouse_up(message& message);
+      /// @}
       
     private:
       struct data {

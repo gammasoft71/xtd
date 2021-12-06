@@ -24,6 +24,9 @@ namespace xtd {
         /// @brief Represent the sorter class used by list_control::object_collection collection.
         class sorter {
         public:
+          /// @name Operators
+          
+          /// @{
           /// @brief sorter functor.
           /// @param first the fist iterator to sort.
           /// @param last the last iterator to sort.
@@ -32,8 +35,12 @@ namespace xtd {
           void operator()(type_t first, type_t last) {
             std::sort(first, last);
           }
+          /// @}
         };
 
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the item class.
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
@@ -43,6 +50,8 @@ namespace xtd {
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
         item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
+        /// @}
+        
         /// @cond
         item(const char* value) : value_(value) {}
         item(const item& value) = default;
@@ -59,6 +68,9 @@ namespace xtd {
         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the value of the item.
         /// @return A xtd::ustring that represent the value of item.
         virtual const xtd::ustring& value() const {return value_;}
@@ -66,19 +78,38 @@ namespace xtd {
         /// @brief Gets the tag of the item.
         /// @return A std::any that represent the tag of item.
         virtual std::any tag() const {return tag_;}
+        /// @}
         
+        /// @name Methods
+        
+        /// @{
         /// @brief Returns a string containing the value of the item.
         /// @return A string containing the value of the item.
         xtd::ustring to_string() const {return value_;}
+        /// @}
         
       private:
         xtd::ustring value_;
         std::any tag_;
       };
    
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents the collection of items in a list_control.
       using object_collection = layout::arranged_element_collection<item, item::sorter>;
+      /// @}
 
+      /// @name Fields
+      
+      /// @{
+      /// @brief This is a special value equal to the maximum value representable by the type size_t.
+      static const size_t npos = std::numeric_limits<size_t>::max();
+      /// @}
+      
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       virtual size_t selected_index() const {return data_->selected_index;}
@@ -86,7 +117,11 @@ namespace xtd {
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current list_control.
       virtual list_control& selected_index(size_t selected_index) = 0;
-                  
+      /// @}
+
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the selected_index property changes.
       /// @ingroup events
       event<list_control, event_handler> selected_index_changed;
@@ -94,20 +129,24 @@ namespace xtd {
       /// @brief Occurs when the selected_value property changes.
       /// @ingroup events
       event<list_control, event_handler> selected_value_changed;
+      /// @}
 
-      /// @brief This is a special value equal to the maximum value representable by the type size_t.
-      static const size_t npos = std::numeric_limits<size_t>::max();
-      
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the list_control class.
       list_control();
+      /// @}
   
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Gets a value indicating whether the list enables selection of list items.
       /// @return true if the list enables list item selection; otherwise, false. The default is true.
       virtual bool allow_selection() {return true;}
       
       virtual drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
-      
       virtual drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
       /// @brief Raises the list_control::selected_index_changed event.
@@ -119,6 +158,7 @@ namespace xtd {
       /// @brief Set the currently selected item.
       /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       void set_selected_index(size_t value) {data_->selected_index = value;}
+      /// @}
 
     private:
       struct data {
