@@ -111,7 +111,7 @@ drawing::size link_label::measure_control() const {
   rectangle bounds;
   for (auto [rect, is_link] : generate_text_rects())
     bounds = drawing::rectangle::make_union(bounds, rect);
-  return bounds.size() + drawing::size(2, 1) + drawing::size(border_style_ == border_style::none ? 0 : 4, border_style_ == border_style::none ? 0 : 4);
+  return bounds.size() + drawing::size(2, 1) + drawing::size(border_style() == border_style::none ? 0 : 4, border_style() == border_style::none ? 0 : 4);
 }
 
 void link_label::on_cursor_changed(const event_args &e) {
@@ -241,7 +241,7 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const {
     std::vector<std::tuple<xtd::drawing::rectangle, bool>> text_rects;
     point text_location;
     drawing::size text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font()));
-    switch (text_align_) {
+    switch (text_align()) {
       case content_alignment::top_left: text_location = point(0, text_size.height() * as<int32_t>(line_number)); break;
       case content_alignment::top_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, text_size.height() * as<int32_t>(line_number)); break;
       case content_alignment::top_right: text_location = point(client_rectangle().width() - text_size.width(), text_size.height() * as<int32_t>(line_number)); break;

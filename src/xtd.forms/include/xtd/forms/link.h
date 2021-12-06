@@ -26,6 +26,9 @@ namespace xtd {
     /// @remarks You can display multiple links in a single xtd::forms::link_label control. Each xtd::forms::link_label::link is added into the xtd::forms::link_label::link_collection associated with the xtd::forms::link_label control. To obtain the collection of links defined in a xtd::forms::link_label control, use the xtd::forms::link_label::links property.
     class link : public object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::forms::link class.
       link() = default;
       /// @brief Initializes a new instance of the xtd::forms::link_label::link class with the specified starting location and number of characters after the starting location within the xtd::forms::link_label.
@@ -37,6 +40,8 @@ namespace xtd {
       /// @param length The number of characters, after the starting character, to include in the link area.
       /// @param link_data The data associated with the link.
       link(size_t start, size_t length, std::any link_data);
+      /// @}
+      
       /// @cond
       link(const link&) = default;
       link(link&&) = default;
@@ -45,6 +50,9 @@ namespace xtd {
       bool operator!=(const link& other) const {return !operator==(other);}
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a text description of the link.
       /// @return A xtd::ustring representing a text description of the link.
       const xtd::ustring& description() const;
@@ -120,6 +128,7 @@ namespace xtd {
       /// @remarks A xtd::forms::link_label control does not automatically denote that a link is a visited link. To display the link as a visited link, you can set the value of this property to true in an event handler for the xtd::forms::link_label::link_clicked event of a xtd::forms::link_label. A visited link is displayed using the color specified in the xtd::forms::link_label::visited_link_color property of the xtd::forms::link_label control. Once the form containing the xtd::forms::link_label control is closed, the all display state associated with the link is deleted. In order to retain the display state of the link, you need to store the display state of the link in a registry setting associated with your application.
       /// @note If you have only one link specified in a xtd::forms::link_label control, you can use the xtd::forms::link_label::link_visited property of the xtd::forms::link_label to specify the link as visited. You can also use the xtd::forms::link_label::link_visited property if you have multiple links defined, but the setting only applies to the first link defined in the control.
       link& visited(bool value);
+      /// @}
 
     private:
       friend link_label;

@@ -29,9 +29,16 @@ namespace xtd {
     /// @include input_dialog_password.cpp
     class forms_export_ input_dialog : public common_dialog {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the input_dialog class.
       input_dialog() = default;
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the character casing.
       /// @return One of the xtd::forms::character_casing values. The default value is xtd::forms::character_casing::normal.
       xtd::forms::character_casing character_casing() const {return character_casing_;}
@@ -143,15 +150,24 @@ namespace xtd {
           word_wrap_ = word_wrap;
         return *this;
       }
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Resets all properties to empty string.
       void reset() override;
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       bool run_dialog(intptr_t owner) override;
       void run_sheet(intptr_t owner) override;
+      /// @}
 
-      /// @cond
+    private:
       xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       bool multiline_ = false;
@@ -160,7 +176,6 @@ namespace xtd {
       bool use_system_password_char_ = false;
       xtd::ustring value_;
       bool word_wrap_ = true;
-      /// @endcond
     };
   }
 }

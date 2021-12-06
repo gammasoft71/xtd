@@ -25,9 +25,16 @@ namespace xtd {
     /// @include hello_world_label.cpp
     class forms_export_ label : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of label class.
       label();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
@@ -59,15 +66,21 @@ namespace xtd {
       /// @return Current label instance.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.
       virtual xtd::forms::label& text_align(xtd::forms::content_alignment text_align);
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the xtd::forms::label::text_align property has changed.
       event<label, event_handler> text_align_changed;
+      /// @}
 
     protected:
+      /// @name Protected methods
+    
+      /// @{
       xtd::forms::create_params create_params() const override;
-      
       xtd::drawing::size measure_control() const override;
-      
       void on_font_changed(const xtd::event_args& e) override;
       void on_paint(xtd::forms::paint_event_args& e) override;      
       void on_resize(const xtd::event_args& e) override;
@@ -79,12 +92,12 @@ namespace xtd {
       virtual void on_text_align_changed(const xtd::event_args& e);
       
       void on_text_changed(const xtd::event_args& e) override;
+      /// @}
 
-      /// @cond
+    private:
       xtd::forms::border_style border_style_ = xtd::forms::border_style::none;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
       xtd::forms::content_alignment text_align_ = xtd::forms::content_alignment::top_left;
-      /// @endcond
     };
   }
 }

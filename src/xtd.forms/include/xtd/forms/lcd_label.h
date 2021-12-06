@@ -146,9 +146,16 @@ namespace xtd {
       };
 
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialise a new lcd_label class.
       lcd_label();
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets background digit color.
       /// @return A xtd::drawing color that represent the background digit color.
       /// @remarks Do not confuse back_digit_color and back_color. Background digit color is the color when digit is off.
@@ -227,21 +234,20 @@ namespace xtd {
       /// @return A string that represent valid characters.
       /// @remarks The valid characters are different according to lcd_style.
       xtd::ustring valid_characters();
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       drawing::size default_size() const override;
-      
-      void on_back_color_changed(const event_args& e) override;
-      
-      void on_fore_color_changed(const event_args& e) override;
-
-      void on_handle_created(const event_args& e) override;
-      
-      void on_size_changed(const event_args& e) override;
-      
-      void on_resize(const event_args& e) override;
-
       drawing::size measure_control() const override;
+      void on_back_color_changed(const event_args& e) override;
+      void on_fore_color_changed(const event_args& e) override;
+      void on_handle_created(const event_args& e) override;
+      void on_size_changed(const event_args& e) override;
+      void on_resize(const event_args& e) override;
+      /// @}
 
     private:
       void on_digit_click(object& sender, const event_args& e);

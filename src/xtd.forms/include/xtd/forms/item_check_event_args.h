@@ -29,12 +29,19 @@ namespace xtd {
       item_check_event_args& operator=(const item_check_event_args& item_check_event_args) = default;
       /// @endcond
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the item_check_event_args class.
       /// @param index The zero-based index of the item to change.
       /// @param new_value One of the check_state values that indicates whether to change the check box for the item to be checked, unchecked, or indeterminate.
       /// @param current_value One of the check_state values that indicates whether the check box for the item is currently checked, unchecked, or indeterminate.
       item_check_event_args(size_t index, check_state new_value, check_state current_value) : index_(index), new_value_(new_value), current_value_(current_value) {}
+      /// &}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating the current state of the item's check box.
       /// @return One of the check_state values.
       /// @remarks This property enables you to determine the check state of the specified item in the checked_list_box before the check state change to apply is made.
@@ -53,6 +60,7 @@ namespace xtd {
       /// @param new_value One of the check_state values.
       /// @remarks This property enables you to determine the new check state for the specified item before the check state is changed by the checked_list_box control. In addition to determining the new check state, you can use this property in an event handler for the ItemCheck event to change the state to a different check state than the one specified. For example, if the user placed a check mark next to an item in the checked_list_box that you have determined should not be checked based on the state of your application, you can override the change in the check mark state by setting this property to its previous setting or to a different check state.
       void new_value(check_state new_value) {new_value_ = new_value;}
+      /// @}
 
     private:
       size_t index_ = std::numeric_limits<size_t>::max();

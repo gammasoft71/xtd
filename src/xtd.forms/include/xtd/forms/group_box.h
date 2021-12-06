@@ -27,9 +27,16 @@ namespace xtd {
     /// @include group_box_and_radio_button.cpp
     class forms_export_ group_box : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the group_box class.
       group_box();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets how the group_box behaves when its auto_size property is enabled
       /// @return One of the xtd::forms::auto_size_mode values. The default is xtd::forms::auto_size_mode::grow_only.
       virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
@@ -39,21 +46,21 @@ namespace xtd {
       virtual group_box& auto_size_mode(forms::auto_size_mode value);
       
       drawing::size default_size() const override {return {200, 100};}
+      /// @}
       
     protected:
+      /// @name Protectd methods
+      
+      /// @{
       forms::create_params create_params() const override;
-      
       drawing::size measure_control() const override;
-      
       void on_font_changed(const xtd::event_args& e) override;
-      
       void on_resize(const xtd::event_args& e) override;
-      
       void on_text_changed(const xtd::event_args& e) override;
+      /// }
       
-      /// @cond
+    private:
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::system;
-      /// @endcond
     };
   }
 }

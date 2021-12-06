@@ -22,6 +22,9 @@ namespace xtd {
     /// @note Some controls will process certain key strokes on key_down. For example, rich_text_box processes the Enter key before key_press is called. In such cases, you cannot cancel the key_press event, and must cancel the key stroke from key_down instead.
     class key_press_event_args : public event_args {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the KeyPressEventArgs class.
       /// @remarks Use the control::modifier_keys property to get the current state of the modifier keys.
       key_press_event_args() = default;
@@ -29,11 +32,16 @@ namespace xtd {
       /// @param key_char The ASCII character corresponding to the key the user pressed.
       /// @remarks Use the control::modifier_keys property to get the current state of the modifier keys.
       key_press_event_args(char32_t key_char) : key_char_(key_char) {}
+      /// @}
+      
       /// @cond
       key_press_event_args(const key_press_event_args& key_press_event_args) = default;
       key_press_event_args& operator=(const key_press_event_args& key_press_event_args) = default;
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the key_press event was handled.
       /// @return true if the event is handled; otherwise, false.
       /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the key_press event.
@@ -83,6 +91,7 @@ namespace xtd {
       /// * Arrow keys.
       /// @note For information about how to detect any of the non-character keys mentioned above, see the key_event_args class.
       void key_char(char32_t key_char) {key_char_ = key_char;}
+      /// @}
 
     private:
       char32_t key_char_;
