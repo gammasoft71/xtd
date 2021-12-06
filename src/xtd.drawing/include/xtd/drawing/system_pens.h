@@ -18,6 +18,9 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ system_pens final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a pen that is the color of the active border.
       static xtd::drawing::pen active_border();
       
@@ -119,6 +122,7 @@ namespace xtd {
       
       /// @brief Gets a pen that is the color of the accent
       static xtd::drawing::pen accent();
+      /// @}
     };
   }
 }

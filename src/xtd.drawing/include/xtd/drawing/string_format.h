@@ -24,6 +24,9 @@ namespace xtd {
     /// @remarks Many common formats are provided through the string_format_flags enumeration. string_format objects can be changed.
     class drawing_export_ string_format final : public object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new string_format object.
       /// @remarks The following table shows initial property values for an instance of string_format class.
       /// | property       | initial value |
@@ -31,15 +34,39 @@ namespace xtd {
       /// | format_flag    | 0             |
       /// | hotkey_prefix  | none          |
       string_format() = default;
-      
       /// @brief Initializes a new string_format object from the specified existing string_format object.
       /// @param format The string_format object from which to initialize the new string_format object.
       string_format(const xtd::drawing::string_format& format) = default;
-
       /// @brief Initializes a new string_format object with the specified string_format_flags enumeration.
       /// @param options The StringFormatFlags enumeration for the new StringFormat object.
       explicit string_format(xtd::drawing::string_format_flags options) : format_flags_(options) {}
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
+      /// @brief Gets horizontal alignment of the string.
+      /// @return A string_alignment enumeration that specifies the horizontal alignment of the string.
+      /// @remarks Use line_alignment to specify the vertical alignment of the string.
+      xtd::drawing::string_alignment alignment() const {return alignment_;}
+      /// @brief Sets horizontal alignment of the string.
+      /// @param alignment A string_alignment enumeration that specifies the horizontal alignment of the string.
+      /// @remarks Use line_alignment to specify the vertical alignment of the string.
+      xtd::drawing::string_format& alignment(xtd::drawing::string_alignment alignment) {
+        alignment_ = alignment;
+        return *this;
+      }
+      
+      /// @brief Gets a string_formatFlags enumeration that contains formatting information.
+      /// @return A string_formatFlags enumeration that contains formatting information.
+      xtd::drawing::string_format_flags format_flags() const {return format_flags_;}
+      /// @brief Sets a string_formatFlags enumeration that contains formatting information.
+      /// @param format_flag A string_formatFlags enumeration that contains formatting information.
+      xtd::drawing::string_format& format_flags(xtd::drawing::string_format_flags format_flag) {
+        format_flags_ = format_flag;
+        return *this;
+      }
+      
       /// @brief Gets a generic default string_format object.
       /// @return The generic default string_format object.
       /// @remarks The following table shows initial property values for a generic default instance of the string_format class.
@@ -67,28 +94,6 @@ namespace xtd {
       /// | hotkey_prefix  | none                                                 |
       /// | trimming       | none                                                 |
       static xtd::drawing::string_format generic_typographic() {return xtd::drawing::string_format(xtd::drawing::string_format_flags::no_clip|xtd::drawing::string_format_flags::fit_black_box|xtd::drawing::string_format_flags::line_limit);}
-      
-      /// @brief Gets horizontal alignment of the string.
-      /// @return A string_alignment enumeration that specifies the horizontal alignment of the string.
-      /// @remarks Use line_alignment to specify the vertical alignment of the string.
-      xtd::drawing::string_alignment alignment() const {return alignment_;}
-      /// @brief Sets horizontal alignment of the string.
-      /// @param alignment A string_alignment enumeration that specifies the horizontal alignment of the string.
-      /// @remarks Use line_alignment to specify the vertical alignment of the string.
-      xtd::drawing::string_format& alignment(xtd::drawing::string_alignment alignment) {
-        alignment_ = alignment;
-        return *this;
-      }
-
-      /// @brief Gets a string_formatFlags enumeration that contains formatting information.
-      /// @return A string_formatFlags enumeration that contains formatting information.
-      xtd::drawing::string_format_flags format_flags() const {return format_flags_;}
-      /// @brief Sets a string_formatFlags enumeration that contains formatting information.
-      /// @param format_flag A string_formatFlags enumeration that contains formatting information.
-      xtd::drawing::string_format& format_flags(xtd::drawing::string_format_flags format_flag) {
-        format_flags_ = format_flag;
-        return *this;
-      }
       
       /// @brief Gets the HotkeyPrefix object for this string_format object.
       /// @return The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
@@ -123,6 +128,7 @@ namespace xtd {
         trimming_ = trimming;
         return *this;
       }
+      /// @}
 
     private:
       xtd::drawing::hotkey_prefix hotkey_prefix_ = xtd::drawing::hotkey_prefix::none;

@@ -27,11 +27,19 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ rectangle_f : public object {
     public:
-      static const rectangle_f empty;
+      /// @name Fields
       
+      /// @{
+      static const rectangle_f empty;
+      /// @}
+      
+      /// @name Constructors
+      
+      /// @{
       rectangle_f() = default;
       rectangle_f(float x, float y, float width, float height) : x_(x), y_(y), width_(width), height_(height) {}
       rectangle_f(const point_f& location, const size_f& size) : rectangle_f(location.x(), location.y(), size.width(), size.height()) {}
+      /// @}
 
       /// @cond
       rectangle_f(const rectangle_f&) = default;
@@ -40,6 +48,9 @@ namespace xtd {
       bool operator!=(const rectangle_f& value) const {return !operator==(value);}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       float bottom() const {return y_ + height_;}
       
       float height() const {return height_;}
@@ -75,7 +86,11 @@ namespace xtd {
       
       float width() const {return width_;}
       void width(float width) {width_ = width;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       bool contains(float x, float y) const {return x_ <= x && x < x_ + width_ && y_ <= y && y < y_ + height_;}
       bool contains(const point_f& pt) const {return contains(pt.x(), pt.y());}
       bool contains(const rectangle_f& rect) const {return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ &&  (rect.y_ + rect.height_) <= (y_ + height_);}
@@ -123,6 +138,7 @@ namespace xtd {
       }
       
       xtd::ustring to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      /// @}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::rectangle_f& rectangle) noexcept {return os << rectangle.to_string();}

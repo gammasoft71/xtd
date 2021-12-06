@@ -18,6 +18,9 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ system_brushes final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a solid_brush that is the color of the active border.
       static xtd::drawing::solid_brush active_border();
       
@@ -119,6 +122,7 @@ namespace xtd {
       
       /// @brief Gets a solid_brush that is the color of the accent.
       static xtd::drawing::solid_brush accent();
+      /// @}
     };
   }
 }
