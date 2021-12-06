@@ -38,6 +38,9 @@ namespace xtd {
       process() = delete;
       friend xtd::diagnostics::process;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Contains the created process handle and created standard streams :
       /// * [0] : The created process handle.
@@ -103,6 +106,7 @@ namespace xtd {
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool wait(intptr_t process, int32_t& exit_code);
+      /// @}
     };
   }
 }

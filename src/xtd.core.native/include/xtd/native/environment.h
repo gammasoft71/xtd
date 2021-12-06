@@ -44,6 +44,9 @@ namespace xtd {
       friend xtd::environment;
       friend xtd::native::translator;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Returns a string array containing the command-line arguments for the current process.
       /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
@@ -148,6 +151,7 @@ namespace xtd {
       /// @param variable The name of an environment variable.
       /// @warning Internal use only
       static void unset_environment_variable(const std::string& name);
+      /// @}
     };
   }
 }

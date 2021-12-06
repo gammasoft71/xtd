@@ -42,6 +42,9 @@ namespace xtd {
       friend xtd::io::path;
       friend xtd::native::file_system;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return A platform-specific alternate character used to separate directory levels in a path string.
@@ -72,6 +75,7 @@ namespace xtd {
       /// @return A platform-specific volume separator character.
       /// @warning Internal use only
       static char volume_separator_char();
+      /// @}
     };
   }
 }

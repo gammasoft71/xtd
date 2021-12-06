@@ -33,11 +33,15 @@ namespace xtd {
       translator() = delete;
       friend xtd::translator;
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @internal
       /// @brief Gets the system language.
       /// @return std::string A string containing the system language.
       /// @warning Internal use only
       static std::string get_system_language();
+      /// @}
     };
   }
 }

@@ -31,6 +31,9 @@ namespace xtd {
     class core_native_export_ console final {
       console() = delete;
     protected:
+      /// @name Protected methods
+
+      /// @{
       /// @internal
       /// @brief Gets the background color of the console.
       /// @return the background console color.
@@ -248,6 +251,7 @@ namespace xtd {
       /// @param width The width of the console window measured in columns.
       /// @warning Internal use only
       static void window_width(int32_t width);
+      /// @}
     };
   }
 }
