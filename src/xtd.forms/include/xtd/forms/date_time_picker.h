@@ -21,8 +21,17 @@ namespace xtd {
     /// @include date_time_picker.cpp
     class forms_export_ date_time_picker : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the date_time_picker class.
       date_time_picker();
+      /// @}
+
+      /// @name Properties
+      
+      /// @{
+      drawing::size default_size() const override {return {100, 25};}
 
       /// @brief Gets the format of the date and time displayed in the control.
       /// @return One of the date_time_picker_format values. The default is long_format.
@@ -150,18 +159,22 @@ namespace xtd {
         internal_value.tm_sec = second;
         return value(mktime(&internal_value));
       }
-
-      drawing::size default_size() const override {return {100, 25};}
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the value property changes.
       /// @ingroup events
       event<date_time_picker, event_handler> value_changed;
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
-      
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
-      
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
       /// @brief Raises the date_time_picker::value_changed event.
@@ -169,8 +182,8 @@ namespace xtd {
       virtual void on_value_changed(const event_args& e);
       
       void on_handle_created(const event_args& e) override;
-      
       void wnd_proc(message& message) override;
+      /// @}
       
     private:
       void wm_click(message& message);

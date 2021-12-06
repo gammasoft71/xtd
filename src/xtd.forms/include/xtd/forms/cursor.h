@@ -34,12 +34,23 @@ namespace xtd {
     /// @include cursors.cpp
     class forms_export_ cursor : public object {
     public:
+      /// @name Fields
+      
+      /// @{
+      /// @brief Represent none cursor.
+      static cursor none;
+      /// @}
+      
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the cursor class.
       cursor();
       /// @brief Initializes a new instance of the Cursor class from the specified Windows handle.
       /// @param handle An IntPtr that represents the Windows handle of the cursor to create.
       /// @remarks You must free the cursor handle when you are done with it.
       explicit cursor(intptr_t handle) : cursor(handle, false, "") {}
+      /// @}
       
       /// @cond
       cursor(const cursor& value) = default;
@@ -87,7 +98,11 @@ namespace xtd {
       /// @param tag A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       void tag(std::any tag) {data_->tag_ = tag;}
+      /// @}
       
+      /// @name Methodds
+      
+      /// @{
       /// @brief Copies the handle of this cursor.
       /// @return An intptr_t that represents the cursor's handle.
       /// @remarks The handle created as a result of calling this method must be deleted of when you are done with it.
@@ -115,6 +130,7 @@ namespace xtd {
       /// @brief Returns a string containing the name of the cursor.
       /// @return A string containing the name of the cursor.
       xtd::ustring to_string() const noexcept override;
+      /// @}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const cursor& value) noexcept {return os << value.to_string();}
@@ -122,9 +138,6 @@ namespace xtd {
       bool operator!=(const cursor& value) const {return !operator==(value);}
       /// @endcond
 
-      /// @brief Represent none cursor.
-      static cursor none;
-      
     private:
       friend class xtd::forms::cursors;
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);

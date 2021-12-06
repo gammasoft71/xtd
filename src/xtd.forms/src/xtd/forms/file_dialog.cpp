@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void file_dialog::reset() {
-  dialog_result_ = xtd::forms::dialog_result::none;
+  set_dialog_result(xtd::forms::dialog_result::none);
   auto_upgrade_enabled_ = true;
   default_ext_ = "";
   file_name_ = "";

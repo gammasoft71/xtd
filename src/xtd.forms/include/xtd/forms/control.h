@@ -114,7 +114,6 @@ namespace xtd {
         mirrored = 0,
          */
       };
-      /// @endcond
       
       class async_result_invoke : public xtd::iasync_result {
       public:
@@ -128,18 +127,28 @@ namespace xtd {
         std::shared_ptr<bool> is_completed_ = std::make_shared<bool>(false);
         std::shared_ptr<std::shared_mutex> async_mutex_ = std::make_shared<std::shared_mutex>();
       };
+      /// @cond
       
     public:
       /// @brief Represents a collection of controls.
       class control_collection : public xtd::forms::layout::arranged_element_collection<control_ref> {
       public:
+        /// @name Alias
+        
+        /// @{
         /// @brief Represents the base type of the collection.
         using base = xtd::forms::layout::arranged_element_collection<control_ref>;
+        /// @}
         
+        /// @name Constructors
+        
+        /// @{
         /// @brief Creates a new object xtd::forms::control::control_collection with specified allocator (optional).
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         explicit control_collection(const allocator_type& allocator = allocator_type());
+        /// @}
+
         /// @cond
         control_collection(const base& collection);
         control_collection(const control_collection& collection);
@@ -147,6 +156,9 @@ namespace xtd {
         control_collection(control_collection&&) = default;
         /// @endcond
         
+        /// @name Operators
+        
+        /// @{
         using base::operator[];
         /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
@@ -158,8 +170,12 @@ namespace xtd {
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
         std::optional<value_type> operator[](const xtd::ustring& name);
+        /// @}
       };
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the control class with default settings.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       control();
@@ -211,6 +227,7 @@ namespace xtd {
         this->width(width);
         this->height(height);
       }
+      /// @}
       
       /// @cond
       control(control&&) = delete;
@@ -218,6 +235,9 @@ namespace xtd {
       ~control();
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
       /// @return A bitwise combination of the anchor_styles values. The default is top and left.
       /// @remarks Use the anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
@@ -690,26 +710,11 @@ namespace xtd {
       /// @param width The width of the control in pixels.
       /// @return Current control.
       virtual control& width(int32_t width);
-      
-      /// @brief Add child control.
-      /// @param parent A control that represents the parent or container control of the control.
-      /// @param child A control to add to parent.
-      /// @return Current control.
-      friend control& operator<<(control& parent, control& child) {
-        child.parent(parent);
-        return parent;
-      }
-      
-      /// @brief Remove child control.
-      /// @param parent A control that represents the parent or container control of the control.
-      /// @param child A control to remove to parent.
-      /// @return Current control.
-      friend control& operator>>(control& parent, control& child) {
-        if (child.parent().has_value() && &child.parent().value().get() == &parent)
-          child.parent(nullptr);
-        return parent;
-      }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Executes the specified delegate asynchronously on the thread that the control's underlying handle was created on.
       /// @param value A delegate to a method that takes no parameters.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
@@ -1015,6 +1020,30 @@ namespace xtd {
       /// * You can call the refresh method, which forces the control to redraw itself and all its children. This is equivalent to setting the invalidate method to true and using it with update.
       /// @remarks The invalidate method governs what gets painted or repainted. The update method governs when the painting or repainting occurs. If you use the invalidate and update methods together rather than calling refresh, what gets repainted depends on which overload of invalidate you use. The update method just forces the control to be painted immediately, but the invalidate method governs what gets painted when you call the update method.
       virtual void update() const;
+      /// @}
+      
+      /// @name Operators
+      
+      /// @{
+      /// @brief Add child control.
+      /// @param parent A control that represents the parent or container control of the control.
+      /// @param child A control to add to parent.
+      /// @return Current control.
+      control& operator<<(control& child) {
+        child.parent(*this);
+        return *this;
+      }
+      
+      /// @brief Remove child control.
+      /// @param parent A control that represents the parent or container control of the control.
+      /// @param child A control to remove to parent.
+      /// @return Current control.
+      control& operator>>(control& child) {
+        if (child.parent().has_value() && &child.parent().value().get() == this)
+          child.parent(nullptr);
+        return *this;
+      }
+      /// @}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::control& control) noexcept {
@@ -1026,6 +1055,9 @@ namespace xtd {
       bool operator<(const control& value) const {return this < &value;}
       /// @endcond
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the auto_size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the auto_size property is changed by either a programmatic modification or user interaction.
@@ -1407,12 +1439,16 @@ namespace xtd {
       /// @ingroup events
       /// @remarks This event is raised if the visible property is changed by either a programmatic modification or user interaction.
       event<control, event_handler> visible_changed;
+      /// @}
 
     protected:
       friend class application;
       friend class paint_event_args;
       friend class screen;
       
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       /// @remarks The create_params property should not be overridden and used to adjust the properties of your derived control. Properties such as the create_params::caption, create_params::width, and create_params::height should be set by the corresponding properties in your control such as control::text, control::width and control::height. The create_params should only be extended when you are wrapping a standard Windows control class or to set styles not provided by the forms namespace.
@@ -1716,6 +1752,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// Inheriting controls should call the base class's wnd_proc(message&) method to process any messages that they do not handle.
       virtual void wnd_proc(message& m);
+      /// @}
 
       /// @cond
       bool get_state(control::state flag) const;

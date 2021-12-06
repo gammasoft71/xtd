@@ -34,10 +34,16 @@ namespace xtd {
       bool operator!=(const country& value) const {return !operator==(value);}
       /// @endcond
       
+      /// @name Fields
+      
+      /// @{
       /// @brief Get an empty country.
       /// @return An empty country
       static const country empty();
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the country alpha 2 code.
       /// @return A string that represent the alpha 2 code.
       virtual const xtd::ustring alpha_2_code() const {return alpha_2_code_;}
@@ -65,7 +71,11 @@ namespace xtd {
       /// @brief Gets the country numeric code.
       /// @return A signed-integer that represent the numeric code.
       virtual int numeric_code() const {return numeric_code_;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets a country from alpha 2 code.
       /// @return If exist a xtd::forms::country that represent alpha 2 coded; otherwise xtd::forms::country::empty.
       static country from_alpha_2_code(const xtd::ustring& alpha_2_code);
@@ -82,6 +92,7 @@ namespace xtd {
       /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
       /// @return A string containing the name, alpha codes and numeric code of the country.
       virtual xtd::ustring to_string() const noexcept override;
+      /// @}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::country& country) noexcept {

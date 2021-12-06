@@ -19,6 +19,9 @@ namespace xtd {
     /// @include countries.cpp
     class forms_export_ countries final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief A system-defined country object.
       /// @image html af.png
       static const country afghanistan();
@@ -766,10 +769,15 @@ namespace xtd {
       /// @brief A system-defined country object.
       /// @image html zw.png
       static const country zimbabwe();
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Get All countries collection.
       /// @return Countries collection.
       static const std::vector<country>& get_countries();
+      /// @}
     };
   }
 }
