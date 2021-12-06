@@ -39,10 +39,17 @@ namespace xtd {
     /// @include form.cpp
     class forms_export_ form : public container_control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the Form class.
       /// @remarks The default size of a form is 300 pixels in height and 300 pixels in width.
       form();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the button on the form that is clicked when the user presses the ENTER key.
       /// @return An ibutton_control that represents the button to use as the accept button for the form.
       std::optional<std::reference_wrapper<ibutton_control>> accept_button() const {return accept_button_;}
@@ -229,7 +236,11 @@ namespace xtd {
       /// @param value A form_window_state that represents whether form is minimized, maximized, full_screen, or normal. The default is form_window_state::normal.
       /// @return Current form.
       virtual form& window_state(form_window_state value);
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Activates the form and gives it focus.
       /// @remarks Activating a form brings it to the front if this is the active application, or it flashes the window caption if this is not the active application. The form must be visible for this method to have any effect. To determine the active form in an application, use the active_form property or the active_mdi_child property if your forms are in a Multiple-document interface (MDI) application.
       void activate();
@@ -264,7 +275,11 @@ namespace xtd {
       /// @return One of the dialog_result values.
       /// @remarks Sheet mode is only available on macOS. For other platform show_dialog is underlying called.
       virtual forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the form is activated in code or by the user.
       /// @ingroup events
       event<form, event_handler> activated;
@@ -280,10 +295,14 @@ namespace xtd {
       /// @brief Occurs before the form is closed.
       /// @ingroup events
       event<form, form_closing_event_handler> form_closing;
+      /// @}
 
     protected:
       friend class application;
       
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
    
       /// @brief Raises the form::activated event.
@@ -317,11 +336,16 @@ namespace xtd {
       /// @brief Processes the close message the form control receives as the top-level window.
       /// @param message The message sent to the top-level window.
       virtual void wm_close(message& message);
+      /// @}
       
-      /// @cond
+    private:
+      friend class application_context;
+      void internal_set_window_state();
+
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;
       static std::optional<std::reference_wrapper<form>> active_form_;
+      bool can_close_ = false;
       bool close_box_ = true;
       bool control_box_ = true;
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
@@ -331,21 +355,15 @@ namespace xtd {
       bool maximize_box_ = true;
       std::optional<std::reference_wrapper<forms::main_menu>> menu_;
       bool minimize_box_ = true;
+      double opacity_ = 1.0;
+      intptr_t owner_ = 0;
+      intptr_t parent_before_show_dialog_ = 0;
       std::shared_ptr<screen> previous_screen_;
       bool show_icon_ = true;
       bool show_in_taskbar_ = true;
       form_start_position start_position_ = form_start_position::windows_default_location;
-      form_window_state window_state_ = form_window_state::normal;
-      /// @endcond
-      
-    private:
-      friend class application_context;
-      bool can_close_ = false;
       bool top_most_ = false;
-      intptr_t owner_ = 0;
-      void internal_set_window_state();
-      intptr_t parent_before_show_dialog_ = 0;
-      double opacity_ = 1.0;
+      form_window_state window_state_ = form_window_state::normal;
     };
   }
 }

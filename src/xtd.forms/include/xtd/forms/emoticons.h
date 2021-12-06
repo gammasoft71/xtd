@@ -19,6 +19,9 @@ namespace xtd {
     /// @include emoticons.cpp
     class forms_export_ emoticons final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       // 00080-00FF Latin 1 Supplement
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x000000A9, 0x0000FE0F}. This field is constant.
@@ -2582,8 +2585,15 @@ namespace xtd {
       static const xtd::forms::emoticon diya_lamp;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x0001FA95. This field is constant.
       static const xtd::forms::emoticon banjo;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief Gets emoticons collection.
+      /// @return Emoticons collection.
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
+      /// @}
     };
   }
 }

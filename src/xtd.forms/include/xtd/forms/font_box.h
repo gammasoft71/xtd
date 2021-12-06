@@ -21,6 +21,9 @@ namespace xtd {
     /// @include font_box.cpp
     class font_box final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Displays a font dialog box.
       /// @param font An output xtd::drawing::font that will store the selected font.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
@@ -80,6 +83,7 @@ namespace xtd {
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is xtd::forms::dialog_result::ok, the output parameters font and color will contain the selected font and color, otherwise they will be ignored.
       static dialog_result show(xtd::drawing::font& font, xtd::drawing::color& color, const iwin32_window& owner, const font_box_options options) { return show_font_box(font, &color, &owner, options); }
+      /// @}
 
     private:
       static dialog_result show_font_box(xtd::drawing::font& font, xtd::drawing::color* color = nullptr, const iwin32_window* owner = nullptr, font_box_options options = font_box_options::none) {

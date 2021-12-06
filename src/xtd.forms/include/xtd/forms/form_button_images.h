@@ -19,6 +19,9 @@ namespace xtd {
     /// @ingroup xtd_forms components
     class form_button_images final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Close image object.
       /// @return A xtd::drawing::image that represent "window-close".
       static xtd::drawing::image close() {return close(xtd::forms::theme_images::current_theme(), size());}
@@ -471,6 +474,7 @@ namespace xtd {
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
       static xtd::drawing::image from_name(const xtd::forms::theme_images& theme, const xtd::ustring& name, bool maximized_form) {return from_name(theme, name, size(maximized_form));}
+      /// @}
     };
   }
 }

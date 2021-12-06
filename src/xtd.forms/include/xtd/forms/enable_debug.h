@@ -35,6 +35,9 @@ namespace xtd {
       enable_debug operator+(const enable_debug& value) const {return enable_debug(value_ + value.value_);}
       /// @endcond
 
+      /// @name Fields
+      
+      /// @{
       /// @brief Represent none debug.
       static const enable_debug none;
       /// @brief Represent creation debug.
@@ -51,17 +54,26 @@ namespace xtd {
       static const enable_debug workaround;
       /// @brief Represent all debug.
       static const enable_debug all;
+      
+      /// @name Properties
+      
+      /// @{
+      /// @brief Gets a trace switch to configure debug traces.
+      /// @return a xtd::diagnostics::trace_switch to configure debug traces.
+      static xtd::diagnostics::trace_switch& trace_switch() {return trace_switch_;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets enable_debug flags status.
       /// @return true if enable_debug flags is on; otherwise false.
       static bool get(const enable_debug& flags) {return (values_.value_ & flags.value_) == flags.value_;}
       /// @brief Sets enable_debug flags status.
       /// @param on true if enable_debug flags is on; otherwise false.
       static void set(const enable_debug& flags, bool on) {values_.value_ = on ? (values_.value_ | flags.value_) : (values_.value_ & ~flags.value_);}
+      /// @}
       
-      /// @brief Gets a trace switch to configure debug traces.
-      /// @return a xtd::diagnostics::trace_switch to configure debug traces.
-      static xtd::diagnostics::trace_switch& trace_switch() {return trace_switch_;}
 
     private:
       explicit enable_debug(uint64_t value) : value_(value) {}

@@ -40,9 +40,16 @@ namespace xtd {
     /// If the user of your application changes the folder in the file_dialog, then the current working directory for your application is set to the location specified in the file_dialog. To prevent this, set the restore_directory property to true.
     class forms_export_ file_dialog : public common_dialog {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the common_dialog class.
       file_dialog() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the dialog box automatically adds an extension to a file name if the user omits the extension.
       /// @return true if the dialog box adds an extension to a file name if the user omits the extension; otherwise, false. The default value is true.
       virtual bool add_extension() const {return get_option(OFN_ADDEXTENSION);}
@@ -289,7 +296,11 @@ namespace xtd {
         set_option(OFN_NOVALIDATE, !value);
         return *this;
       }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Resets all properties to their default values.
       /// @remarks When overriding reset() in a derived class, be sure to call the base class's reset() method.
       void reset() override;
@@ -299,6 +310,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override {
         return ustring::format("{}: title: {}, filename: {}", ustring::full_class_name(*this), title_, file_name_);
       }
+      /// @}
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::file_dialog& dialog) noexcept {
@@ -307,6 +319,9 @@ namespace xtd {
       /// @endcond
 
     protected:      
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Runs file dialog box.
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return true if the file could be opened; otherwise, false.
@@ -315,10 +330,18 @@ namespace xtd {
       /// @brief Runs file dialog box in sheet mode.
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
       void run_sheet(intptr_t hwnd_owner) override;
+      /// @}
 
       /// @cond
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
+      /// @endcond
+      
+    private:
+      friend class open_file_dialog;
+      friend class save_file_dialog;
+      virtual bool run_file_dialog(intptr_t hwnd_owner) = 0;
+      virtual void run_file_sheet(intptr_t hwnd_owner) = 0;
 
       bool auto_upgrade_enabled_ = true;
       xtd::ustring default_ext_ = "";
@@ -330,13 +353,6 @@ namespace xtd {
       size_t options_ = OFN_HIDEREADONLY | OFN_PATHMUSTEXIST | OFN_ADDEXTENSION;
       bool support_multi_dotted_extensions_ = true;
       xtd::ustring title_ = "";
-      /// @endcond
-      
-    private:
-      friend class open_file_dialog;
-      friend class save_file_dialog;
-      virtual bool run_file_dialog(intptr_t hwnd_owner) = 0;
-      virtual void run_file_sheet(intptr_t hwnd_owner) = 0;
     };
   }
 }

@@ -25,6 +25,9 @@ namespace xtd {
     /// @include exception_box.cpp
     class exception_box final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Displays a exception box in front of the specified window. The exception box displays an unknown exception.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
       static dialog_result show(const iwin32_window& owner) {return show_exception_box(&owner);}
@@ -54,6 +57,7 @@ namespace xtd {
       /// @param exception An exception to display.
       /// @param caption A string that specifies the title bar caption to display.
       static dialog_result show(const std::exception& exception, const xtd::ustring& caption) {return show_exception_box(nullptr, &exception, caption);}
+      /// @}
       
     private:
       static dialog_result show_exception_box(const iwin32_window* owner, const std::exception* exception = nullptr, const xtd::ustring& caption = "") {

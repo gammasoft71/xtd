@@ -24,9 +24,15 @@ namespace xtd {
     /// @include emoticons.cpp
     class forms_export_ emoticon : public object {
     public:
+      /// @name Fields
+      
+      /// @{
       /// @brief Represents an empty emoticon.
       static const emoticon empty();
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
       /// @param name A string that represent the name of emoticon
       /// @param codepoints An initializer list of char32_t that represent the emoticon.
@@ -53,6 +59,7 @@ namespace xtd {
       /// @brief Initialize a new instance of emoticon class with specified codepoint.
       /// @param codepoints A char32_t that represent the emoticon.
       emoticon(char32_t codepoint) : codepoints_({codepoint}) {}
+      /// @}
       
       /// @cond
       template<typename type_t>
@@ -95,6 +102,9 @@ namespace xtd {
       }
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets name of emoticon.
       /// @return A string that represent the name of emoticon.
       const xtd::ustring& name() const {return name_;}
@@ -102,7 +112,11 @@ namespace xtd {
       /// @brief Gets codepoints of emoticon.
       /// @return An array of char32_t that represent the emoticon.
       const std::vector<char32_t>& codepoints() const {return codepoints_;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Returns a string containing the codepoints of the emoticons.
       /// @return A string containing the codepoints of the emoticon. Empty string ("") for none codepoints.
       xtd::ustring to_string() const noexcept override {
@@ -126,6 +140,7 @@ namespace xtd {
         }
         return result;
       }
+      /// @}
       
     private:
       xtd::ustring name_;

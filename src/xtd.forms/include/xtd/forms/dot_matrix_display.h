@@ -22,19 +22,30 @@ namespace xtd {
     /// @include dot_matrix_display.cpp
     class dot_matrix_display : public control {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents a dots collection.
       using dots_collection =  std::vector<std::vector<bool>>;
       
       /// @brief Represents a point collection.
       using points_collection =  std::vector<xtd::drawing::point>;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of dot_matrix_display class.
       dot_matrix_display() {
         auto_size(true);
         double_buffered(true);
         size(default_size());
       }
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets background dot color.
       /// @return A xtd::drawing color that represent the background dot color.
       /// @remarks Do not confuse back_dot_color and back_color. Background dot color is the color when dot is off.
@@ -68,6 +79,8 @@ namespace xtd {
         }
         return *this;
       }
+      
+      drawing::size default_size() const override {return {25, 25};}
 
       /// @brief Gets dot matrix style.
       /// @return One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
@@ -155,7 +168,16 @@ namespace xtd {
         }
         return *this;
       }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
+      /// @brief Gets specified dot point status.
+      /// @param point dot point location in the matrix.
+      /// @return true if specified dot point is on; otherwise false.
+      virtual bool get_dot(const drawing::point& point) const {return dots_[point.y()][point.x()];}
+      
       /// @brief Sets all dots with specified boolean.
       /// @param on true to set all dots to on; otherwise false.
       virtual void set_all_dots(bool on) {
@@ -163,11 +185,6 @@ namespace xtd {
           for (int32_t x = 0; x < static_cast<int32_t>(dots_[y].size()); x++)
             dots_[y][x] = on;
       }
-      
-      /// @brief Gets specified dot point status.
-      /// @param point dot point location in the matrix.
-      /// @return true if specified dot point is on; otherwise false.
-      virtual bool get_dot(const drawing::point& point) const {return dots_[point.y()][point.x()];}
       
       /// @brief Sets specified dot point status.
       /// @param point dot point location in the matrix.
@@ -192,10 +209,12 @@ namespace xtd {
         for (auto point : points)
           set_dot(point, on);
       }
+      /// @}
 
     protected:
-      drawing::size default_size() const override {return {25, 25};}
+      /// @name Protected methods
       
+      /// @{
       void on_back_color_changed(const event_args& e) override {
         control::on_back_color_changed(e);
         invalidate();
@@ -234,8 +253,9 @@ namespace xtd {
         else if (dot_matrix_style_ == dot_matrix_style::square)
           graphics.fill_rectangle(drawing::solid_brush(color), (1 + x) * point.x(), (1 + y) * point.y(), thickness(), thickness());
       }
+      /// @}
 
-      /// @cond
+    private:
       drawing::size matrix_size_ = {7, 7};
       dots_collection dots_ = dots_collection(matrix_size_.width(), std::vector<bool>(matrix_size_.height(), false));
       bool show_back_dot_ = true;
@@ -243,7 +263,6 @@ namespace xtd {
       double back_dot_opacity_ = 0.95;
       forms::dot_matrix_style dot_matrix_style_ = forms::dot_matrix_style::standard;
       std::optional<int32_t> thickness_;
-      /// @endcond
     };
   }
 }

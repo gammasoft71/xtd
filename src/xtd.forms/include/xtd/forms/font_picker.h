@@ -19,9 +19,16 @@ namespace xtd {
     /// @include font_picker.cpp
     class forms_export_ font_picker : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the font_picker class.
       font_picker();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
@@ -32,6 +39,8 @@ namespace xtd {
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
       control& color(const drawing::color& color);
       
+      drawing::size default_size() const override {return {100, 25};}
+
       /// @brief Gets the selected font.
       /// @return The selected font.
       drawing::font font() const override {return font_;}
@@ -39,14 +48,16 @@ namespace xtd {
       /// @param font The selected font.
       /// @return Current control.
       control& font(const drawing::font& font) override;
-      
-      drawing::size default_size() const override {return {100, 25};}
+      /// @}
       
       /// @brief Occurs when the value of the font property changes.
       /// @ingroup events
       event<font_picker, event_handler> font_changed;
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
       
       /// @brief Raises the font_changed event.
@@ -59,6 +70,7 @@ namespace xtd {
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
+      /// @}
       
     private:
       void wm_click(message& message);

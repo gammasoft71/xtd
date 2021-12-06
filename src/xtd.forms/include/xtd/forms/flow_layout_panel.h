@@ -20,11 +20,19 @@ namespace xtd {
     /// @include flow_layout_panel.cpp
     class flow_layout_panel : public panel {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialises a new instance of fixed layout panel class.
       flow_layout_panel() = default;
+    }
       
     protected:
+    /// @name Protected methods
+    
+    /// @{
       void on_layout(const xtd::event_args& e) override;
+    /// @}
     };
   }
 }
