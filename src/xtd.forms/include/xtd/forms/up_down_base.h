@@ -17,6 +17,9 @@ namespace xtd {
     /// @ingroup xtd_forms
     class forms_export_ up_down_base : public container_control {
     public:      
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the border style for the spin box (also known as an up-down control).
       /// @return One of the border_style values. The default value is fixed_single.
       virtual forms::border_style border_style() const {return border_style_;}
@@ -24,16 +27,24 @@ namespace xtd {
       /// @param value One of the border_style values. The default value is fixed_single.
       /// @return Current up_down_base.
       virtual up_down_base& border_style(forms::border_style value);
+      /// @}
 
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initialize a new instance of up_down_base class.
       up_down_base();
+      /// @}
 
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
+      /// @}
 
-      /// @cond
+    private:
       forms::border_style border_style_ = forms::border_style::fixed_single;
-      /// @endcond
     };
   }
 }

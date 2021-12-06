@@ -19,12 +19,25 @@ namespace xtd {
     /// @include v_scroll_bar.cpp
     class forms_export_ v_scroll_bar : public scroll_bar {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of v_scroll_bar class.
       v_scroll_bar();
+      /// @}
+      
+      /// @name Properties
+      
+      /// @{
       xtd::drawing::size default_size() const override {return {17, 80};}
+      /// @}
       
     protected:
+      /// @name Protectedd methods
+      
+      /// @{
       xtd::forms::create_params create_params() const override;
+      /// @}
     };
   }
 }

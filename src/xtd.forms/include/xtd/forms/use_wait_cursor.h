@@ -21,9 +21,14 @@ namespace xtd {
     /// @include use_wait_cursor.cpp
     class use_wait_cursor : public object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of use_wait_cursor class.
       /// @remarks The xtd::forms::application::use_wait_cursor(true) is called in the constructor and xtd::forms::application::use_wait_cursor(false) is called in the destructor.
       use_wait_cursor() {xtd::forms::application::use_wait_cursor(true);}
+      /// @}
+
       /// @cond
       ~use_wait_cursor() {xtd::forms::application::use_wait_cursor(false);}
       /// @endcond

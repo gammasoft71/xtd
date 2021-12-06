@@ -20,9 +20,16 @@ namespace xtd {
     /// @include user_control.cpp
     class forms_export_ user_control : public container_control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialises a new instance of user_control class.
       user_control();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the mode by which the user_control automatically resizes itself.
       /// @return An auto_size_mode enumerated value. The default is grow_only.
       virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
@@ -42,15 +49,19 @@ namespace xtd {
       virtual user_control& border_style(forms::border_style border_style);
 
       drawing::size default_size() const override {return {150, 150};}
+      /// @}
       
     protected:
+      /// @name Protected methodds
+      
+      /// @{
       forms::create_params create_params() const override;
       
       void on_layout(const event_args& e) override;
+      /// @}
 
-      /// @cond
+    private:
       forms::border_style border_style_ = forms::border_style::none;
-      /// @endcond
     };
   }
 }

@@ -21,9 +21,16 @@ namespace xtd {
     /// @include vertical_layout_panel.cpp
     class vertical_layout_panel : public panel {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialises a new instance of vertical layout panel class.
       vertical_layout_panel() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets vertical control layout style for all child controls.
       /// @return The vertical control layout style collection.
       const vertical_control_layout_style_collection& control_layout_styles() const {return control_layout_styles_;}
@@ -38,11 +45,16 @@ namespace xtd {
       /// @param value The vertical control layout style for the specified control.
       /// @exception xtd::argument_exception container does not contains control.
       vertical_layout_panel& control_layout_style(const control_ref& control, const vertical_control_layout_style& value);
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       void on_control_added(const xtd::forms::control_event_args& e) override;
       void on_control_removed(const xtd::forms::control_event_args& e) override;
       void on_layout(const xtd::event_args& e) override;
+      /// @}
 
     private:
       vertical_control_layout_style_collection control_layout_styles_;
