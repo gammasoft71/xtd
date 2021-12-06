@@ -31,15 +31,23 @@ namespace xtd {
     /// @include main_menu_create_standard_items.cpp
     class forms_export_ main_menu : public menu {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of main_menu class.
       main_menu();
       /// @brief Initialize a new instance of main_menu class.
       /// @param menu_items An array of menu_item objects that will be added to the main_menu.
       main_menu(const std::vector<menu_item_ref>& menu_items);
+      /// @}
+      
       /// @cond
       main_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief A factory to create a main menu with specified on click event handler.
       /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
       /// @param on_click an event handler to respond on lick event.
@@ -231,6 +239,7 @@ namespace xtd {
       /// | 27       | help separator1    |
       /// | 28       | help about         |
       static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::forms::theme_images& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
+      /// @}
       
       /// @cond
       template<typename on_click_type>
@@ -246,10 +255,14 @@ namespace xtd {
       /// @endcond
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
       void on_item_added(size_t pos, menu_item_ref item) override;
       void on_item_removed(size_t pos, menu_item_ref item) override;
+      /// @}
       
     private:
       friend class form;

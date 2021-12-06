@@ -23,8 +23,15 @@ namespace xtd {
     /// @include picture_box.cpp
     class forms_export_ picture_box : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       picture_box();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
@@ -61,8 +68,12 @@ namespace xtd {
       /// @return Current picture_box.
       /// @remarks By default, in normal mode, the Image is positioned in the upper-left corner of the picture_box, and any part of the image that is too big for the picture_box is clipped. Using the stretch_image value causes the image to stretch or shrink to fit the picture_box. Using the zoom value causes the image to be stretched or shrunk to fit the picture_box; however, the aspect ratio in the original is maintained.
       picture_box& size_mode(picture_box_size_mode size_mode);
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
 
       /// @brief Overrides the on_handle_created(const event_args&) method.
@@ -70,6 +81,7 @@ namespace xtd {
       void on_handle_created(const event_args& e) override;
 
       drawing::size measure_control() const override;
+      /// @}
 
       /// @cond
       forms::border_style border_style_ = forms::border_style::none;

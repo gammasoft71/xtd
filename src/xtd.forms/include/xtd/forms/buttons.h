@@ -20,7 +20,7 @@ namespace xtd {
     /// @include buttons.cpp
     class buttons final static_ {
     public:
-      /// @name Properties
+      /// @name Methods
       
       /// @{
       /// @brief Create a system-defined button that represent abort button.

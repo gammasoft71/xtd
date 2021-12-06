@@ -48,13 +48,29 @@ namespace xtd {
     /// @remarks The menu class also defines the nested class menu::menu_item_collection. This class defines the collection of menu_item objects used by the menu_items property. You can use the methods of the menu::menu_item_collection class to add and remove menu items from a main_menu, context_menu, or menu_item.
     class forms_export_ menu : public component, public iequatable<menu> {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents a collection of menu_item objects.
       using menu_item_collection = layout::arranged_element_collection<menu_item_ref>;
+      /// @}
       
+      /// @name Fields
+      
+      /// @{
+      /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a handle.
+      static constexpr const int find_handle = 0;
+      /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a shortcut.
+      static constexpr const int find_shortcut = 1;
+      /// @}
+
       /// @cond
       ~menu();
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value representing the window handle for the menu.
       /// @return The HMENU value of the menu.
       /// @remarks You can use this property to obtain the handle to the menu to perform special operations to the menu outside of the functionality provided by this class or its derived classes.
@@ -111,7 +127,11 @@ namespace xtd {
         data_->tag_ = value;
         return *this;
       }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       bool equals(const menu&) const noexcept override;
       bool equals(const object&) const noexcept override;
 
@@ -134,12 +154,8 @@ namespace xtd {
       /// @return A string that represents the current menu.
       /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
       xtd::ustring to_string() const noexcept override;
+      /// @}
       
-      /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a handle.
-      static constexpr const int find_handle = 0;
-      /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a shortcut.
-      static constexpr const int find_shortcut = 1;
-
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::menu& menu) noexcept {
         return os << menu.to_string();
@@ -148,6 +164,10 @@ namespace xtd {
 
     protected:
       friend menu_item;
+
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the Menu class.
       /// @remarks Since menu is an abstract class, only inherited classes can call the menu constructor.
       menu();
@@ -155,12 +175,17 @@ namespace xtd {
       /// @param items An array of type MenuItem containing the objects to add to the menu.
       /// @remarks Since menu is an abstract class, only inherited classes can call the menu constructor.
       explicit menu(const menu_item_collection& items);
+      /// @}
+      
       /// @cond
       explicit menu(const std::initializer_list<menu_item_ref>& items);
       explicit menu(const std::vector<menu_item_ref>& items);
       menu(const menu&) = delete;
       /// @endcond
 
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Copies the menu that is passed as a parameter to the current menu.
       /// @param menu_src The Menu to copy.
       /// @remarks This method copies the entire list of menuItem objects (stored in the menu passed in to menu_src) into the current menu. You can use this method in your derived class to clone menu_item objects. They can then be reused by other classes that derive from menu, such as main_menu, context_menu, and menu_item.
@@ -176,6 +201,7 @@ namespace xtd {
 
       virtual void on_item_added(size_t pos, menu_item_ref item) {}
       virtual void on_item_removed(size_t pos, menu_item_ref item) {}
+      /// @}
 
       /// @cond
       virtual void create_menu();

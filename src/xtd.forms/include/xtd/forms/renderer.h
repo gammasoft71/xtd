@@ -29,12 +29,27 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class forms_export_ renderer : public object {
     public:
+      /// @name Alias
+      
+      /// @{
       using button_renderer = xtd::delegate<void(xtd::drawing::graphics, const xtd::drawing::rectangle&, const xtd::ustring&, const xtd::drawing::font&, xtd::forms::text_format_flags, const xtd::drawing::image&, const xtd::drawing::rectangle&, bool focused, xtd::forms::visual_styles::push_button_state, const std::optional<xtd::drawing::color>&, const std::optional<xtd::drawing::color>&)>;
       using check_box_renderer = xtd::delegate<void(xtd::drawing::graphics, const xtd::drawing::rectangle&, const xtd::ustring&, const xtd::drawing::font&, xtd::forms::text_format_flags, const xtd::drawing::image&, const xtd::drawing::rectangle&, bool focused, xtd::forms::visual_styles::check_box_state, const std::optional<xtd::drawing::color>&, const std::optional<xtd::drawing::color>&)>;
       using radio_button_renderer = xtd::delegate<void(xtd::drawing::graphics, const xtd::drawing::rectangle&, const xtd::ustring&, const xtd::drawing::font&, xtd::forms::text_format_flags, const xtd::drawing::image&, const xtd::drawing::rectangle&, bool focused, xtd::forms::visual_styles::radio_button_state, const std::optional<xtd::drawing::color>&, const std::optional<xtd::drawing::color>&)>;
+      /// @}
 
+      /// @name Fields
+      
+      /// @{
+      static const renderer empty;
+      /// @}
+      
+      /// @name Constructors
+      
+      /// @{
       renderer() = default;
       explicit renderer(const xtd::ustring& name) : name_(name) {}
+      /// @}
+
       /// @cond
       renderer(const renderer&) = default;
       renderer& operator=(const renderer&) = default;
@@ -43,6 +58,9 @@ namespace xtd {
       friend std::ostream& operator<<(std::ostream& os, const renderer& theme) noexcept {return os << theme.to_string();}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       virtual const xtd::ustring& name() const {return name_;}
       renderer& name(const xtd::ustring& name) {
         name_ = name;
@@ -57,7 +75,11 @@ namespace xtd {
       
       radio_button_renderer radio_button_render() const  {return radio_button_renderer_;}
       void radio_button_render(radio_button_renderer radio_button_renderer) {radio_button_renderer_ = radio_button_renderer;}
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {button_renderer_(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);}
       void draw_check_box(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {check_box_renderer_(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);}
       void draw_radio_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {radio_button_renderer_(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);}
@@ -66,11 +88,8 @@ namespace xtd {
         if (!name_.empty()) return xtd::ustring::format("{}, name: {}", ustring::full_class_name(*this), name_);
         return xtd::ustring::format(xtd::ustring::full_class_name(*this));
       }
+      /// @}
 
-      static const renderer empty;
-      
-    protected:
-      
     private:
       static void default_button_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       static void default_check_box_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);

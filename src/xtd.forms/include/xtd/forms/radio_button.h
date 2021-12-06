@@ -25,10 +25,17 @@ namespace xtd {
     /// @include radio_button.cpp
     class forms_export_ radio_button : public button_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the radio_button class.
       /// @remarks The default view of the radio_button has its text aligned to the right of the button and the auto_check property is set to true.
       radio_button();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value determining the appearance of the radio_button.
       /// @return One of the appearance values. The default value is normal.
       /// @remarks If the appearance value is set to normal, then the radio_button control is drawn with a circular check box. If the value is set to button, then the radio_button is drawn as a control that can be toggled to an up or down state. Either type can display text, an image, or both.
@@ -70,7 +77,11 @@ namespace xtd {
       /// @brief Gets the default size of the control.
       /// @return Returns a size with a width of 104 and a height of 24.
       drawing::size default_size() const override {return {104, 25};}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Generates a click event for the control, simulating a click by a user.
       void perform_click();
 
@@ -78,7 +89,11 @@ namespace xtd {
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       xtd::ustring to_string() const noexcept override {return ustring::format("{}, checked: {}", ustring::full_class_name(*this), checked_);}
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the appearance property value changes.
       /// @ingroup events
       event<radio_button, event_handler> appearance_changed;
@@ -86,8 +101,20 @@ namespace xtd {
       /// @brief Occurs when the value of the checked property changes.
       /// @ingroup events
       event<radio_button, event_handler> checked_changed;
+      /// @}
 
     protected:
+      /// @name Protected properties
+      
+      /// @{
+      /// @brief Get state.
+      /// @return One of xtd::forms::visual_styles::radio_button_state values.
+      xtd::forms::visual_styles::radio_button_state state() const noexcept {return state_;}
+      /// @}
+      
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
@@ -194,22 +221,20 @@ namespace xtd {
       void on_paint(paint_event_args& e) override;
 
       void wnd_proc(message& message) override;
+      /// @}
 
-      /// @brief Get state.
-      /// @return One of xtd::forms::visual_styles::radio_button_state values.
-      xtd::forms::visual_styles::radio_button_state state() const noexcept {return state_;}
-      
       /// @cond
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
+      /// @endcond
 
+    private:
       forms::appearance appearance_ = forms::appearance::normal;
       bool auto_check_ = true;
       bool checked_ = false;
       content_alignment check_align_ = content_alignment::middle_left;
       xtd::forms::visual_styles::radio_button_state state_ = xtd::forms::visual_styles::radio_button_state::unchecked_normal;
-      /// @endcond
     };
   }
 }

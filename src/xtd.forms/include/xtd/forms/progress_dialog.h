@@ -23,10 +23,20 @@ namespace xtd {
     /// @include progress_dialog.cpp
     class forms_export_ progress_dialog  final : public component {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the progress_dialog class.
       progress_dialog() = default;
+      /// @}
+
+      /// @cond
       ~progress_dialog() {hide();}
+      /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets whether user has clicked on cancel button.
       /// @return true if user has clicked on cancel button; otherwise false.
       bool cancelled() const;
@@ -105,9 +115,6 @@ namespace xtd {
       /// @remarks This property specifies the lower limit of the value property. When the value of the minimum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the minimum property, the progress bar is empty. To change the value of the progress bar, use the step property with the perform_step method, use the increment method, or set the value of the value property directly.
       progress_dialog& minimum(int32_t minimum);
 
-      /// @brief Resume progress dialog box after Abort button clicked.
-      void resume();
-
       /// @brief Gets a value that indicates whether cancel button is shown.
       /// @return true if cancel button shown; otherwise false. By default false.
       bool show_cancel_button() const {return !get_option(PROGDLG_NOCANCEL);}
@@ -183,7 +190,11 @@ namespace xtd {
       /// @remarks If the value specified is less than the value of the minimum property, the value property is set to minimum.
       /// @remarks The minimum and maximum values of the value property are specified by the minimum and maximum properties. This property enables you to increment or decrement the value of the progress bar directly. To perform consistent increases in the value of the progress_bar control you can use the step property with the perform_step method. To increase the progress bar value by varying amounts, use the increment method.
       progress_dialog& value(int32_t value);
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Hides progress dialog box.
       void hide();
 
@@ -199,7 +210,10 @@ namespace xtd {
 
       /// @brief Resets all properties to empty string.
       void reset();
-      
+
+      /// @brief Resume progress dialog box after Abort button clicked.
+      void resume();
+
       /// @brief Runs progress dialog box.
       void show();
       /// @brief Runs progress dialog box.
@@ -214,6 +228,7 @@ namespace xtd {
       void show_dialog(const iwin32_window& owner);
       /// @brief Runs progress dialog box.
       void show_sheet_dialog(const iwin32_window& owner);
+      /// @}
 
     private:
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}

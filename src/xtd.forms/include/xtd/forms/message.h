@@ -30,6 +30,9 @@ namespace xtd {
       message& operator=(const message&) = default;
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the window handle of the message.
       /// @return The window handle of the message.
       /// @remarks Window handle is a value that uniquely identifies a window on the system. This property returns a handle of the window whose window procedure receives this message. It is useful when your code need to interact with some native Windows API functions that expect window handles as parameters.
@@ -70,12 +73,16 @@ namespace xtd {
       /// @param value The wparam field of the message.
       /// @remarks The value of this field depends on the message. Use the wparam field to get information that is important to handling the message. This field is typically used to store small pieces of information, such as flags.
       void wparam(intptr_t value) {wparam_ = value;}
+      /// @}
       
       /// @cond
       intptr_t handle() const {return handle_;}
       void handle(intptr_t value) {handle_ = value;}
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Creates a new message.
       /// @param hwnd The window handle that the message is for.
       /// @param msg The message ID.The message ID.
@@ -99,6 +106,7 @@ namespace xtd {
       /// @brief Returns a string that represents the current message.
       /// @return A xtd::ustring that represents the current message.
       xtd::ustring to_string() const noexcept override;
+      /// @}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::message& message) noexcept {

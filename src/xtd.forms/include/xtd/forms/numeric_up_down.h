@@ -23,9 +23,16 @@ namespace xtd {
     /// @include numeric_up_down.cpp
     class forms_export_ numeric_up_down : public up_down_base {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the numeric_up_down class.
       numeric_up_down();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the number of decimal places to display in the spin box (also known as an up-down control). This property doesn't affect the value property.
       /// @return The number of decimal places to display in the spin box. The default is 0.
       /// @remarks When the decimal_places property is set, the update_edit_text method is called to update the spin box's display to the new format.
@@ -83,7 +90,11 @@ namespace xtd {
       /// @param value true if value can be wrapped; otherwise false. The default is false.
       /// @return Current numeric_up_down.
       virtual numeric_up_down& wrapped(bool value);
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Sets the minimum and maximum values for a track_bar.
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
@@ -97,18 +108,23 @@ namespace xtd {
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value property has been changed in some way.
       /// @ingroup events
       event<numeric_up_down, event_handler> value_changed;
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
-      
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
-      
       drawing::size default_size() const override {return {120, 21};}
-
       forms::create_params create_params() const override;
       
       /// @brief Overrides control::on_handle_created(const event_args&)
@@ -120,11 +136,13 @@ namespace xtd {
       virtual void on_value_changed(const event_args& e);
 
       void wnd_proc(message& message) override;
+      /// @}
 
       /// @cond
       void wm_command(message& message);
       /// @endcond
 
+    private:
       int32_t decimal_place_ = 0;
       double increment_ = 1.0;
       double maximum_ = 100.0;

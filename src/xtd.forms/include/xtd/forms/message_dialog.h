@@ -33,9 +33,16 @@ namespace xtd {
     /// @include message_dialog.cpp
     class forms_export_ message_dialog final : public component {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the message_dialog class.
       message_dialog() = default;
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets buttons to display in the message dialog.
       /// @return One of the xtd::forms::message_dialog_buttons values that specifies which buttons to display in the message dialog.
       xtd::forms::message_dialog_buttons buttons() const {return buttons_;}
@@ -135,7 +142,11 @@ namespace xtd {
           text_ = text;
         return *this;
       }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Resets all properties to empty string.
       void reset();
 
@@ -147,7 +158,11 @@ namespace xtd {
       void show_sheet(const iwin32_window& owner);
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
       /// @ingroup events
       event<message_dialog, help_event_handler> help_request;
@@ -155,6 +170,7 @@ namespace xtd {
       /// @brief Occurs when the user close a message dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
       event<message_dialog, dialog_closed_event_handler> dialog_closed;
+      /// @}
       
     private:
       /// @cond

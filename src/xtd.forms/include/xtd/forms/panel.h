@@ -20,9 +20,16 @@ namespace xtd {
     /// @include panel.cpp
     class forms_export_ panel : public scrollable_control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialises a new instance of panel class.
       panel();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the mode by which the panel automatically resizes itself.
       /// @return An auto_size_mode enumerated value. The default is grow_only.
       virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
@@ -42,13 +49,16 @@ namespace xtd {
       virtual panel& border_style(forms::border_style border_style);
 
       drawing::size default_size() const override {return {200, 100};}
+      /// @}
       
     protected:
+      /// @name Protetced methods
+      
+      /// @{
       forms::create_params create_params() const override;
-      
       drawing::size measure_control() const override;
-      
       void on_layout(const event_args& e) override;
+      /// @}
 
       /// @cond
       forms::border_style border_style_ = forms::border_style::none;

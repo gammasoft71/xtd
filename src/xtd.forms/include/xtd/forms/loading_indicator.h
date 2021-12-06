@@ -25,9 +25,16 @@ namespace xtd {
     /// @include hello_world_loading_indicator.cpp
     class forms_export_ loading_indicator : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of loading_indicator class.
       loading_indicator();
+      /// @}
 
+      /// @name Propeties
+      
+      /// @{
       xtd::drawing::size default_size() const override {return {32, 32};}
       
       /// @brief Gets the flat style appearance of the loading_indicator control.
@@ -43,20 +50,26 @@ namespace xtd {
       /// @brief Returns if the loading indicator animation is started.
       /// @return true if the loading indicator is running; otherwise false.
       bool is_running() const {return is_running_;}
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Starts animation of the loading indicator.
       void start();
       /// @brief Stops animation of the loading indicator.
       void stop();
+      /// @}
       
     protected:
+      /// @name Protected method
+      
+      /// @{
       xtd::forms::create_params create_params() const override;
-      
       xtd::drawing::size measure_control() const override;
-      
       void on_handle_created(const event_args& e) override;
-      
       void on_paint(xtd::forms::paint_event_args& e) override;
+      /// @}
       
     private:
       void on_timer_tick(object& timer, const xtd::event_args& e);

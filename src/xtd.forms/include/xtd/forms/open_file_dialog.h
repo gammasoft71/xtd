@@ -20,9 +20,16 @@ namespace xtd {
     /// @include open_file_dialog.cpp
     class forms_export_ open_file_dialog final : public file_dialog {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the open_file_dialog class.
       open_file_dialog() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Opens the file with read only permission selected by the user.
       /// @return The read only file selected by the user.
       std::ifstream open_file() const {return io::file::open_read(xtd::ustring(file_name_));}
@@ -39,6 +46,7 @@ namespace xtd {
         set_option(OFN_ALLOWMULTISELECT, value);
         return *this;
       }
+      /// @}
 
     private:
       bool run_file_dialog(intptr_t hwnd_owner) override;

@@ -26,6 +26,9 @@ namespace xtd {
     /// @ingroup xtd_forms menus_and_toolbars
     class forms_export_ menu_item : public xtd::forms::menu {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a menu_item with a blank caption.
       /// @remarks Once you have created a blank menu_item using this constructor, you can use the properties and methods of the menu_item class to specify the appearance and behavior of your menu_item.
       menu_item();
@@ -241,11 +244,15 @@ namespace xtd {
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       /// @remarks The items parameter enables you to assign an array of menu items to define a submenu of this menu item. Each item in the array can also have an array of menu items assigned to it. This enables you to create complete menu structures and assign them to the constructor for the menu item.
       menu_item(const xtd::ustring& text, const std::vector<menu_item_ref>& items);
+      /// @}
 
       /// @cond
       menu_item(const xtd::ustring& text, const std::initializer_list<const_menu_item_ref>& items);
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating the Windows identifier for this menu item.
       /// @return The Windows identifier for this menu item.
       int32_t menu_id() const;
@@ -295,7 +302,11 @@ namespace xtd {
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       menu_item& text(const xtd::ustring& value);
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Generates a xtd::forms::menu_item::click event for the xtd::forms::menu_item, simulating a click by a user.
       /// @remarks You can use this menu to activate a menu item through code without passing any event information. For example, if you want to activate a menu item based on an action that occurs in your application, you can call the xtd::forms::menu_item::perform_click method for that xtd::forms::menu_item.
       void perform_click();
@@ -304,15 +315,23 @@ namespace xtd {
       /// @return A string that represents the current menu.
       /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
       xtd::ustring to_string() const noexcept override;
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the menu item is clicked or selected using a shortcut key or access key defined for the menu item.
       /// @remarks The xtd::forms::menu_item::click event occurs when this xtd::forms::menu_item is clicked by the user. This event also occurs if the user selects the menu item using the keyboard and presses the Enter key. It can also occur if an access key or shortcut key is pressed that is associated with the xtd::forms::menu_item.
       event<menu_item, event_handler> click;
+      /// @}
       
     protected:
       friend main_menu;
       friend context_menu;
 
+      /// @name Protected methods
+      
+      /// @{
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
       
@@ -323,7 +342,9 @@ namespace xtd {
       
       void on_item_added(size_t pos, menu_item_ref item) override;
       void on_item_removed(size_t pos, menu_item_ref item) override;
+      /// @}
 
+    private:
       /// @cond
       xtd::ustring text_;
       xtd::drawing::image image_ = xtd::drawing::image::empty;

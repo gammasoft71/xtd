@@ -18,6 +18,9 @@ namespace xtd {
     /// @ingroup xtd_forms
     class menu_images final static_ {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief File new image object.
       /// @return A xtd::drawing::image that represent "document-new".
       static xtd::drawing::image file_new() {return file_new(xtd::forms::theme_images::current_theme(), size());}
@@ -365,6 +368,7 @@ namespace xtd {
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
       static xtd::drawing::image from_name(const xtd::forms::theme_images& theme, const xtd::ustring& name, const xtd::drawing::size& size) {return theme.from_name(name, size);}
+      /// @}
     };
   }
 }
