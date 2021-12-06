@@ -28,6 +28,9 @@ namespace xtd {
     /// @ingroup xtd_forms drawing
     class forms_export_ control_paint final static_ {
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
       /// @param color2 The second color.
@@ -160,6 +163,7 @@ namespace xtd {
         
         return string_format;
       }
+      /// @}
     };
   }
 }

@@ -21,9 +21,16 @@ namespace xtd {
     /// @include color_picker.cpp
     class forms_export_ color_picker : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the color_picker class.
       color_picker();
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
@@ -48,12 +55,20 @@ namespace xtd {
         }
         return *this;
       }
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the value of the color property changes.
       /// @ingroup events
       event<color_picker, event_handler> color_changed;
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
       
       /// @brief Raises the color_changed event.
@@ -61,8 +76,8 @@ namespace xtd {
       void on_color_changed(const event_args& e);
       
       void on_handle_created(const event_args& e) override;
-      
       void wnd_proc(message& message) override;
+      /// @}
       
     private:
       void wm_click(message& message);

@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void folder_browser_dialog::reset() {
-  dialog_result_ = xtd::forms::dialog_result::none;
+  set_dialog_result(xtd::forms::dialog_result::none);
   options_ = BIF_USENEWUI;
 }
 

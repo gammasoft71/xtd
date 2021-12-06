@@ -20,6 +20,9 @@ namespace xtd {
     /// @include cursors.cpp
     class forms_export_ cursors final static_ {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the cursor that appears when an application starts.
       /// @return The cursor that represents the cursor that appears when an application starts.
       /// @par Appearance
@@ -682,8 +685,15 @@ namespace xtd {
       ///   </tr>
       /// </table>
       static cursor zoom_out();
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
+      /// @brief Gets all cursors.
+      /// @return cursor array.
       static const std::vector<cursor>& get_cursors();
+      /// @}
     };
   }
 }

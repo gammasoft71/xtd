@@ -23,10 +23,17 @@ namespace xtd {
       do_work_event_args& operator=(const do_work_event_args& do_work_event_args) = default;
       /// @endcond
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the DoWorkEventArgs class.
       /// @param argument Specifies an argument for an asynchronous operation.
       do_work_event_args(const std::any& argument) : argument_(argument) {}
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
       std::any argument() const {return argument_;}
@@ -37,6 +44,7 @@ namespace xtd {
       /// @brief Sets a value that represents the result of an asynchronous operation.
       /// @param value A std::any representing the result of an asynchronous operation.
       void result(std::any value) {result_ = value;}
+      /// @}
 
     private:
       std::any argument_;

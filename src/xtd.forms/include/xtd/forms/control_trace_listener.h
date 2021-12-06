@@ -18,21 +18,33 @@ namespace xtd {
     /// @par Examples
     class control_trace_listener : public xtd::diagnostics::trace_listener {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the control_trace_listener class with specified control_trace.
       /// @param control_trace A control that inherits to the icontrol_trace interface.
       /// @see see xtd::forms::icontrol_trace interface.
       control_trace_listener(xtd::forms::icontrol_trace& control_trace) : control_trace_(&control_trace) {}
+      /// @}
+
       /// @cond
       ~control_trace_listener() {flush();}
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Get icontroll_trace object.
       /// @return The icontrol_trace object used.
       virtual xtd::forms::icontrol_trace& control_trace() {return *control_trace_;}
       /// @brief Set icontroll_trace object.
       /// @param control_trace The icontrol_trace object to use.
       virtual void control_trace(xtd::forms::icontrol_trace& control_trace) {control_trace_ = &control_trace;}
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Create new control_trace_listener.
       /// @return New created trace listener.
       static std::shared_ptr<xtd::diagnostics::trace_listener> create(xtd::forms::icontrol_trace& control_trace) {return std::make_shared<control_trace_listener>(control_trace);}
@@ -66,6 +78,7 @@ namespace xtd {
         need_indent(true);
 #endif
       }
+      /// @}
       
     private:
       xtd::forms::icontrol_trace* control_trace_ = nullptr;

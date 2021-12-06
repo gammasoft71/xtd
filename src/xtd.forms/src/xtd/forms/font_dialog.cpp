@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void font_dialog::reset() {
-  dialog_result_ = xtd::forms::dialog_result::none;
+  set_dialog_result(xtd::forms::dialog_result::none);
   color_ = xtd::forms::theme_colors::current_theme().control_text();
   font_ = drawing::system_fonts::default_font();
   max_size_ = 0;

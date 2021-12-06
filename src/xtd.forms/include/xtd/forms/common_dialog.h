@@ -30,9 +30,16 @@ namespace xtd {
     /// @remarks Inherited classes are required to implement run_dialog by invoking show_dialog to create a specific common dialog box. Inherited classes can optionally override hook_proc to implement specific dialog box hook functionality.
     class common_dialog : public component {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the common_dialog class.
       common_dialog() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Get async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
@@ -48,7 +55,11 @@ namespace xtd {
         tag_ = tag;
         return*this;
       }
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief When overridden in a derived class, resets the properties of a common dialog box to their default values.
       /// @par Notes to Inheritors
       /// Inheriting classes can override this method to reset their properties.
@@ -96,7 +107,11 @@ namespace xtd {
         }
         return dialog_result_;
       }
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
       /// @ingroup events
       event<common_dialog, help_event_handler> help_request;
@@ -104,12 +119,14 @@ namespace xtd {
       /// @brief Occurs when the user close a common dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
       event<common_dialog, dialog_closed_event_handler> dialog_closed;
+      /// @}
       
     protected:
-      /// @cond
       friend struct ::__xtd_forms_common_dialog_closed_caller__;
-      /// @endcond
       
+      /// @name Peotected methods
+      
+      /// @{
       /// @brief Raises the common_dialog::dialog_close event.
       /// @param e An common_dialog_close_event_args that provides the event data.
       /// @remarks This method is invoked when the common dialog box is closed.
@@ -134,10 +151,14 @@ namespace xtd {
       /// @remarks The result will done in async. Check result_dialog property after dialog box closed to obtain the result.
       virtual void run_sheet(intptr_t hwnd_owner) = 0;
 
-      /// @cond
+      /// @brief Set async dialog_result result after dialog box is closing.
+      /// @param value ok if the user clicks OK in the dialog box; otherwise, cancel.
+      void set_dialog_result(xtd::forms::dialog_result value) {dialog_result_ = value;}
+      /// @}
+      
+    private:
       std::any tag_;
       xtd::forms::dialog_result dialog_result_ = xtd::forms::dialog_result::none;
-      /// @endcond
     };
   }
 }

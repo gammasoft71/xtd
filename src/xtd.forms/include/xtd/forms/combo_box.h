@@ -26,9 +26,16 @@ namespace xtd {
     /// @include combo_box.cpp
     class forms_export_ combo_box : public list_control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the combo_box class.
       combo_box();
+      /// @}
 
+      /// @name Porperties
+      
+      /// @{
       virtual drawing::size default_size() const override {return {121, 23};}
       
       /// @brief Gets a value specifying the style of the combo box.
@@ -83,32 +90,40 @@ namespace xtd {
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       control& text(const xtd::ustring& text) override {return *this;}
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Maintains performance while items are added to the combo_box one at a time by preventing the control from drawing until the EndUpdate() method is called.
       /// @remarks The preferred way to add multiple items to the combo_box is to use the push_back_range method of the combo_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void begin_update();
       /// @brief Resumes painting the combo_box control after painting is suspended by the begin_update method.
       /// @remarks The preferred way to add multiple items to the combo_box is to use the push_back_range method of the combo_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void end_update();
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the drop_down_style property has changed.
       /// @ingroup events
       event<combo_box, event_handler> drop_down_style_changed;
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
 
       /// @brief Raises the combo_box::drop_down_style_changed event.
       virtual void on_drop_down_style_changed(const event_args& e);
       
       void on_handle_created(const event_args& e) override;
-
       void on_selected_value_changed(const event_args& e) override;
-
       void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override;
-
       void set_client_size_core(int32_t width, int32_t height) override;
-      
       void wnd_proc(message& message) override;
       
       /// @brief Processes the command message the list_box control receives from the top-level window.
@@ -126,16 +141,16 @@ namespace xtd {
       /// @brief Processes the mouse up message the list_box control receives from the top-level window.
       /// @param message The message the top-level window sent to the list_box control.
       virtual void wm_mouse_up(message& message);
+      /// @}
       
-      /// @cond
+    private:
       int32_t drop_down_height_ = 0;
       combo_box_style drop_down_style_ = combo_box_style::drop_down;
       int32_t drop_down_width_ = 0;
       object_collection items_;
       item selected_item_;
       bool sorted_ = false;
-      bool user_set_size_ = false;
-      /// @endcond
+      //bool user_set_size_ = false;
     };
   }
 }

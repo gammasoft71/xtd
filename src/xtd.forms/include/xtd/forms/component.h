@@ -19,12 +19,17 @@ namespace xtd {
     /// @ingroup xtd_forms components
     /// @remarks component is the base class for all components and controls.
     class component : public xtd::object {
-    public:
-      
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initialises a new instance of the component class.
       component() = default;
+      /// @}
       
+      /// @name Protected properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the component can raise an event.
       /// @return true if the component can raise events; otherwise, false. The default is true.
       /// @remarks The default implementation of this property always returns true. Classes that inherit from the Component class should override this property to provide the ability to disable the raising of events.
@@ -33,6 +38,7 @@ namespace xtd {
       /// @brief Gets a value that indicates whether the component is currently in design mode.
       /// @return true if the component is in design mode; otherwise, false.
       bool design_mode() const {return design_mode_;}
+      /// @}
       
     private:
       bool design_mode_ = false;
