@@ -25,7 +25,7 @@ namespace xtd {
       /// @{
       /// @brief Initialises a new instance of fixed layout panel class.
       flow_layout_panel() = default;
-    }
+      /// @}
       
     protected:
     /// @name Protected methods

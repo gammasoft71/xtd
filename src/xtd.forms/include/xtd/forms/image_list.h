@@ -24,11 +24,27 @@ namespace xtd {
     /// @include image_list.cpp
     class forms_export_ image_list final : public component {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Encapsulates the collection of xtd::drawing::image objects in an image_list.
       using image_collection = layout::arranged_element_collection<drawing::image>;
+      /// @}
 
+      /// @name Fields
+      
+      /// @{
+      /// @brief Represents an image_list empty.
+      static image_list empty;
+      /// @}
+      
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance ao image_list class.
       image_list();
+      /// @}
+
       /// @cond
       ~image_list();
       image_list(const image_list&) = default;
@@ -37,6 +53,9 @@ namespace xtd {
       bool operator!=(const image_list& value) const {return !operator==(value);}
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the handle of the image list object.
       /// @return The handle for the image list. The default is 0.
       intptr_t handle() const {return data_->handle_;}
@@ -73,10 +92,8 @@ namespace xtd {
         data_->tag_ = tag;
         return *this;
       }
+      /// @}
       
-      /// @brief Represents an image_list empty.
-      static image_list empty;
-
     private:
       struct data {
         intptr_t handle_ = 0;

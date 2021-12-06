@@ -21,6 +21,9 @@ namespace xtd {
     /// Implement this interface in classes that act as button controls. The members of this interface will provide basic button functionality, such as providing a dialog_result to the parent form or the ability to perform a click event, or acting as the default button of a form.
     class ibutton_control interface_  {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the value returned to the parent form when the button is clicked.
       /// @return One of the DialogResult values.
       /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
@@ -29,7 +32,11 @@ namespace xtd {
       /// @param dialog_result One of the DialogResult values.
       /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
       virtual control& dialog_result(forms::dialog_result dialog_result) = 0;
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Notifies a control that it is the default button so that its appearance and behavior is adjusted accordingly.
       /// @param value true if the control should behave as a default button; otherwise false.
       /// @remarks This method is called by a parent form to make a control the default button. Default buttons are set to have an extra thick border.
@@ -38,6 +45,7 @@ namespace xtd {
       /// @brief Generates a click event for the control.
       /// @remarks This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button.
       virtual void perform_click() = 0;
+      /// @}
     };
   }
 }
