@@ -31,6 +31,9 @@ namespace xtd {
     /// @include link_label.cpp
     class link_label : public label {
     public:
+      /// @name Alias
+      
+      /// @{
       /// @brief Represents a link within a link_label control.
       /// @remarks The xtd::forms::link_label::link class defines the properties of a link within a xtd::forms::link_label control. You can use these properties to provide data to the xtd::forms::link_label::link_clicked event of the xtd::forms::link_label control to perform tasks when the link is clicked in the control. The xtd::forms::link_label::link_data property enables you to define information that the xtd::forms::link_label::link_clicked event can use to display a URL within your web browser or to open a file.
       /// @remarks In addition to information related to the link, the properties of the xtd::forms::link_label::link class also help define the text of the xtd::forms::link_label::lLink and its display state. The xtd::forms::link_label::start and xtd::forms::link_label::length properties define the location and length of text from the text of the xtd::forms::link_label control to display as a link. The xtd::forms::link_label::enabled property allows you to display the link as a disabled link, and the xtd::forms::link_label::visited property can alert the user that they already visited the specified link in the current instance of the xtd::forms::link_label.
@@ -40,13 +43,22 @@ namespace xtd {
       /// @brief Represents a collection of controls.
       class link_collection : public xtd::forms::layout::arranged_element_collection<xtd::forms::link_label::link> {
       public:
+        /// @name Link
+        
+        /// @{
         /// @brief Represents the base type of the collection.
         using base = xtd::forms::layout::arranged_element_collection<xtd::forms::link_label::link>;
+        /// @}
         
+        /// @name Constructors
+        
+        /// @{
         /// @brief Creates a new object xtd::forms::control::control_collection with specified allocator (optional).
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         explicit link_collection(const allocator_type& allocator = allocator_type());
+        /// @}
+        
         /// @cond
         link_collection(const base& collection);
         link_collection(const link_collection& collection);
@@ -54,6 +66,9 @@ namespace xtd {
         link_collection(link_collection&&) = default;
         /// @endcond
         
+        /// @name Operators
+        
+        /// @{
         using base::operator[];
         /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
@@ -65,14 +80,22 @@ namespace xtd {
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
         /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
         reference operator[](const xtd::ustring& name);
+        /// @}
 
       private:
        inline static value_type empty_;
       };
 
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new default instance of the xtd::forms::link_label class.
       link_label();
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the color used to display an active link.
       /// @return A xtd::drawing::color that represents the color to display an active link. The default color is specified by the system, typically this color is xtd::drawing::color::red in light mode and xtd::drawing::color::from_argb(0xFFD03E3D) in dark mode.
       /// @remarks An active link is a link that is in the process of being clicked. This is similar to the depressed state of a xtd::forms::button control. You can use this property to specify the color that the link is displayed in when the link is in the process of being clicked.
@@ -97,12 +120,19 @@ namespace xtd {
       
       const xtd::drawing::color& visited_link_color() const;
       link_label& visited_link_color(const xtd::drawing::color& color);
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       event<link_label, link_label_clicked_event_handler> link_clicked;
+      /// @}
 
     protected:
-      xtd::drawing::size measure_control() const override;
+      /// @name Protected methods
       
+      /// @{
+      xtd::drawing::size measure_control() const override;
       void on_cursor_changed(const xtd::event_args& e) override;
       void on_mouse_click(const xtd::forms::mouse_event_args& e) override;
       void on_mouse_down(const xtd::forms::mouse_event_args& e) override;
@@ -112,7 +142,10 @@ namespace xtd {
       void on_text_align_changed(const xtd::event_args& e) override;
       void on_text_changed(const xtd::event_args& e) override;
       
+      /// @brief Gets link from point.
+      /// @return xtd::forms::label::link corresponding to the point.
       link_label::link& point_in_link(const xtd::drawing::point& point);
+      /// @}
 
     private:
       xtd::drawing::point get_text_location(size_t line) const;
