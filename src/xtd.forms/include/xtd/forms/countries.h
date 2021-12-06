@@ -774,7 +774,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Get All countries collection.
+      /// @brief Get countries collection.
       /// @return Countries collection.
       static const std::vector<country>& get_countries();
       /// @}

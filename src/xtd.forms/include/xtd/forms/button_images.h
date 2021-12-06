@@ -18,7 +18,7 @@ namespace xtd {
     /// @ingroup xtd_forms components
     class button_images final static_ {
     public:
-      /// @name Properties
+      /// @name Methods
       
       /// @{
       /// @brief Add image object.

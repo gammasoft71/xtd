@@ -19,8 +19,13 @@ namespace xtd {
     /// @ingroup xtd_forms
     class flat_button_appearance : public object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::forms::flat_button_appearance class.
       flat_button_appearance() = default;
+      /// @}
+
       /// @cond
       flat_button_appearance(const flat_button_appearance&) = default;
       flat_button_appearance(flat_button_appearance&&) = default;
@@ -29,6 +34,9 @@ namespace xtd {
       bool operator!=(const flat_button_appearance& other) const {return !operator==(other);}
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the color of the border around the button.
       /// @return A xtd::drawing::color structure representing the color of the border around the button.
       std::optional<xtd::drawing::color> border_color() const;
@@ -84,6 +92,7 @@ namespace xtd {
       /// @param color nullptr.
       /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& mouse_over_back_color(nullptr_t color);
+      /// @}
 
     private:
       std::optional<xtd::drawing::color> border_color_;

@@ -21,13 +21,20 @@ namespace xtd {
     /// @include folder_browser_dialog.cpp
     class forms_export_ folder_browser_dialog final : public common_dialog {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the folder_browser_dialog class.
       /// @remarks The parameterless constructor initializes properties to their default values.
       /// @remarks When a new folder_browser_dialog is created, the root_folder property is set to xtd::environment::special_folder::desktop, the description property is set to an empty string (""), the selected_path property is set to an empty string, and the show_new_folder_button property is set to true.
       /// @remarks Typically, after creating a new folder_browser_dialog, you set the root_folder to the location from which to start browsing. Optionally, you can set the selected_path to the path of a subfolder of root_folder that will initially be selected. You can also optionally set the description property to provide additional instructions to the user. Finally, call the show_dialog or show_sheet or show_sheet_dialog method to display the dialog box to the user. When the dialog box is closed and the dialog result from show_dialog is dialog_result::ok, the selected_path will be a string containing the path to the selected folder.
       /// @remarks folder_browser_dialog is a modal dialog box; therefore, when shown, it blocks the rest of the application until the user has chosen a folder. When a dialog box is displayed modally, no input (keyboard or mouse click) can occur except to objects on the dialog box. The program must hide or close the dialog box (usually in response to some user action) before input to the calling program can occur.
       folder_browser_dialog() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value that indicates whether the dialog will be automatically upgraded to enable new features.
       /// @return true if the the dialog will be automatically upgraded to enable new features; otherwise, false. The default value is true.
       bool auto_upgrade_enable() const {return get_option(BIF_USENEWUI);}
@@ -90,11 +97,19 @@ namespace xtd {
         set_option(BIF_NONEWFOLDERBUTTON, !value);
         return *this;
       }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Resets all options to their default values, the last selected color to black, and the custom colors to their default values.
       void reset() override;
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return true if the dialog box was successfully run; otherwise, false.
@@ -103,6 +118,7 @@ namespace xtd {
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       void run_sheet(intptr_t owner) override;
+      /// @}
 
     private:
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}

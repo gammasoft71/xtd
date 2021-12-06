@@ -26,6 +26,9 @@ namespace xtd {
     /// @include font_dialog.cpp
     class forms_export_ font_dialog : public common_dialog {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the font_dialog class.
       /// @remarks When you create an instance of font_dialog, the following read/write properties are initialized.
       /// | Property             | Initial value |
@@ -45,7 +48,11 @@ namespace xtd {
       /// | show_help            | false         |
       /// @remarks You can change the value for any of these properties through a separate call to the property.
       font_dialog() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the user can change the character set specified in the Script combo box to display a character set other than the one currently displayed.
       /// @return true if the user can change the character set specified in the Script combo box; otherwise, false. The default value is true.
       /// @remarks The Script combo box found on the Font dialog box contains character sets associated with the selected font.
@@ -217,17 +224,29 @@ namespace xtd {
         set_option(CF_SHOWHELP, show_help);
         return *this;
       }
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
+      /// @brief Resets all dialog box options to their default values.
+      /// @remarks When the options are reset, the strikethrough, underline, and color effects are enabled. The fonts listed include only the screen fonts supported by the system.
+      void reset() override;
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the user clicks the Apply button in the font dialog box.
       /// @ingroup events
       /// @remarks Every time the Apply button is clicked, another apply event is raised.
       event<font_dialog, event_handler> apply;
-      
-      /// @brief Resets all dialog box options to their default values.
-      /// @remarks When the options are reset, the strikethrough, underline, and color effects are enabled. The fonts listed include only the screen fonts supported by the system.
-      void reset() override;
-      
+      /// @}
+
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Raises the font_dialog::apply event.
       /// @param e An event_args that contains the data.
       /// @remarks Raising an event invokes the event handler through a delegate.
@@ -244,6 +263,7 @@ namespace xtd {
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       void run_sheet(intptr_t owner) override;
+      /// @}
 
     private:
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}

@@ -29,9 +29,16 @@ namespace xtd {
     /// @include exception_dialog.cpp
     class forms_export_ exception_dialog final : public component {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the exception_dialog class.
       exception_dialog() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Get async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
@@ -70,7 +77,11 @@ namespace xtd {
           text_ = text;
         return *this;
       }
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Resets all properties to empty string.
       void reset();
       
@@ -83,12 +94,20 @@ namespace xtd {
       void show_sheet(const iwin32_window& owner);
       /// @brief Runs exception dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
+      /// @}
       
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the user close an exception dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
       event<exception_dialog, dialog_closed_event_handler> dialog_closed;
+      /// @}
 
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Raises the close event.
       /// @param e An exception_dialog_closed_event_args that provides the event data.
       /// @remarks This method is invoked when the exception dialog box is closed.
@@ -96,6 +115,7 @@ namespace xtd {
         dialog_result_ = e.dialog_result();
         dialog_closed(*this, e);
       }
+      /// @}
       
     private:
       xtd::forms::dialog_result dialog_result_ = xtd::forms::dialog_result::none;
