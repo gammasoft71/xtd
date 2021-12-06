@@ -25,12 +25,20 @@ namespace xtd {
     /// @include settings_example.cpp
     class forms_export_ settings : public object {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of settings class.
       settings();
+      /// @}
+
       /// @cond
       ~settings();
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Reads a value for specified key. If not found default value is used.
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
@@ -65,6 +73,7 @@ namespace xtd {
       void write(const xtd::ustring& key, type_t&& value) {
         write_string(key, xtd::ustring::format("{}", value));
       }
+      /// @}
       
     private:
       xtd::ustring read_string(const xtd::ustring& key, const xtd::ustring& default_value);

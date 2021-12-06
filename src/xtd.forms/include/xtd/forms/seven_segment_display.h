@@ -22,12 +22,19 @@ namespace xtd {
     /// @include seven_segment_display.cpp
     class seven_segment_display : public control {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialize a new instance of seven_segment_display class.
       seven_segment_display() {
         double_buffered(true);
         size(default_size());
       }
+      /// @}
 
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets background segment color.
       /// @return A xtd::drawing color that represent the background segment color.
       /// @remarks Do not confuse back_segment_color and back_color. Background segment color is the color when segment is off.
@@ -59,6 +66,8 @@ namespace xtd {
         }
         return *this;
       }
+      
+      drawing::size default_size() const override {return {13, 25};}
       
       /// @brief Gets a value indicate if background segments are shown.
       /// @return true if background segments are shown; otherwise false
@@ -115,7 +124,11 @@ namespace xtd {
         }
         return *this;
       }
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets if specified xtd::forms::segments combination is on.
       /// @return true if xtd::forms::segments combination is on; otherwise false.
       virtual bool get_segments(forms::segments segment) const {return (value_ & segment) == segment;}
@@ -123,10 +136,12 @@ namespace xtd {
       /// @param segment A xtd::forms::segments combination to set.
       /// @param on true to set to on; otherwise false.
       virtual void set_segments(forms::segments segment, bool value) { value_ = value ? (value_ | segment) : (value_ & ~segment); }
+      /// @}
 
     protected:
-      drawing::size default_size() const override {return {13, 25};}
-
+      /// @name Protected methods
+      
+      /// @{
       void on_back_color_changed(const event_args& e) override {
         control::on_back_color_changed(e);
         invalidate();
@@ -424,15 +439,15 @@ namespace xtd {
           }
         }
       }
+      /// @}
 
-      /// @cond
+    private:
       forms::segments value_ = forms::segments::none;
       bool show_back_segment_ = true;
       std::optional<drawing::color> back_segment_color_;
       double back_segment_opacity_ = 0.95;
       forms::segment_style segment_style_ = forms::segment_style::standard;
       std::optional<int32_t> thickness_;
-      /// @endcond
     };
   }
 }

@@ -32,6 +32,16 @@ namespace xtd {
       /// @param value A int32_t that represent the segment thickness.
       /// @return Current seven_segment_display.
       int32_t thickness() const override {return thickness_.value_or(size().height() < 20 ? 1 : (size().height() / 20 + ((size().height() / 20) % 2 ? 0 : 1)));}
+      /// @brief Sets thickness of segment.
+      /// @param value A int32_t that represent the segment thickness.
+      /// @return Current seven_segment_display.
+      seven_segment_display& thickness(int32_t value) override {
+        if (!thickness_.has_value() || thickness_.value() != value) {
+          thickness_ = value;
+          invalidate();
+        }
+        return *this;
+      }
       /// @}
       
     protected:
@@ -40,8 +50,8 @@ namespace xtd {
       /// @{
       void on_paint(paint_event_args& e) override {
         seven_segment_display::on_paint(e);
-        if ((value_ & forms::segments::h) == forms::segments::h) draw_segment_h(e.graphics(), fore_color());
-        if ((value_ & forms::segments::i) == forms::segments::i) draw_segment_i(e.graphics(), fore_color());
+        if ((value() & forms::segments::h) == forms::segments::h) draw_segment_h(e.graphics(), fore_color());
+        if ((value() & forms::segments::i) == forms::segments::i) draw_segment_i(e.graphics(), fore_color());
       }
       
       void draw_back_digit(drawing::graphics& graphics) override {
@@ -70,6 +80,9 @@ namespace xtd {
         }
       }
       /// @}
+
+    private:
+      std::optional<int32_t> thickness_;
     };
   }
 }

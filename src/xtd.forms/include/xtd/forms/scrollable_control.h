@@ -17,6 +17,9 @@ namespace xtd {
     /// @ingroup xtd_forms
     class forms_export_ scrollable_control : public control {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.
       /// @return true if the container enables auto-scrolling; otherwise, false. The default value is false.
       virtual bool auto_scroll() const {return auto_scroll_;}
@@ -76,11 +79,19 @@ namespace xtd {
         }
         return *this;
       }
+      /// @}
 
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initialize a new instance of scrollable_control class.
       scrollable_control() = default;
+      /// @}
 
+      /// @name Protected methods
+      
+      /// @{
       forms::create_params create_params() const override;
 
       void on_layout(const event_args& e) override {
@@ -97,7 +108,9 @@ namespace xtd {
           display_rectangle_.height(display_rectangle_.height() + auto_scroll_margin_.height());
         }
       }
+      /// @}
 
+    private:
       /// @cond
       bool auto_scroll_ = false;
       bool h_scroll_ = false;

@@ -33,6 +33,9 @@ namespace xtd {
       screen& operator=(const screen&) = default;
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets an array of all displays on the system.
       /// @return An array of type screen, containing all displays on the system.
       static std::vector<screen> all_screens();
@@ -91,7 +94,11 @@ namespace xtd {
       /// @return A xtd::drawing::graphics for the screen.
       /// @ingroup drawing
       static drawing::graphics create_graphics();
+      /// @}
 
+      /// @name Methods
+      
+      /// @{
       /// @brief Retrieves a screen for the display that contains the largest portion of the specified control.
       /// @param control A xtd::forms::control for which to retrieve a Screen.
       /// @return A screen for the display that contains the largest region of the specified control. In multiple display environments where no display contains the control, the display closest to the specified control is returned.
@@ -162,6 +169,7 @@ namespace xtd {
       /// @param rect The xtd::drawing::rectangle that specifies the area for which to retrieve the working area.
       /// @return A xtd::drawing::rectangle that specifies the working area. In multiple display environments where no display contains the specified rectangle, the display closest to the rectangle is returned.
       static drawing::rectangle get_working_area(const drawing::rectangle& rect);
+      /// @}
                                   
     private:
       screen() = default;

@@ -21,6 +21,9 @@ namespace xtd {
     /// @include save_file_box.cpp
     class save_file_box final static_{
     public:
+      /// @name Methods
+      
+      /// @{
       /// @brief Displays a save file dialog box in front of a specified window.
       /// @param file_name An output xtd::ustring that will store the selected file name.
       /// @param owner An If xtd::forms::iwin32_window that represents the owner window of the file dialog box.
@@ -128,6 +131,7 @@ namespace xtd {
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is ok, the output file_name parameter will contain the selected file path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter, const save_file_box_options options) { return show_save_file_box(file_name, title, initial_directory, filter, options, nullptr); }
+      /// @}
 
     private:
       static xtd::forms::dialog_result show_save_file_box(xtd::ustring& output, const xtd::ustring& title, const xtd::ustring& initial_directory = "", const xtd::ustring& filter = "", const save_file_box_options options = save_file_box_options::none, const iwin32_window* owner = nullptr) {

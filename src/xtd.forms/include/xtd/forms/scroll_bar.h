@@ -16,6 +16,9 @@ namespace xtd {
     /// @ingroup xtd_forms
     class forms_export_ scroll_bar : public control {
     public:
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a value to be added to or subtracted from the xtd::forms::scroll_bar::value property when the scroll box is moved a large distance.
       /// @return A numeric value. The default value is 10.
       /// @exception xtd::argument_out_of_range_exception The assigned value is less than 0.
@@ -70,7 +73,11 @@ namespace xtd {
       /// @param value A numeric value that is within the Minimum and Maximum range. The default value is 0.
       /// @exception xtd::argument_out_of_range_exception The assigned value is less than the xtd::forms::scroll_bar::minimum property value. -or- The assigned value is greater than the xtd::forms::scroll_bar::maximum property value.
       virtual scroll_bar& value(int32_t value);
+      /// @}
 
+      /// @name Events
+      
+      /// @{
       /// @brief Occurs when the scroll box has been moved by either a mouse or keyboard action.
       /// @ingroup events
       event<scroll_bar, event_handler> scroll;
@@ -78,11 +85,19 @@ namespace xtd {
       /// @brief Occurs when the xtd::forms::scroll_bar::value property is changed, either by a xtd::forms::scroll_bar::scroll event or programmatically.
       /// @ingroup events
       event<scroll_bar, event_handler> value_changed;
+      /// @}
 
     protected:
+      /// @name Protected constructors
+      
+      /// @{
       /// @brief Initializes a new instance of scroll_bar class.
       scroll_bar() = default;
+      /// @}
  
+      /// @name Protected methods
+      
+      /// @{
       xtd::forms::create_params create_params() const override;
       
       void on_handle_created(const event_args& e) override;
@@ -107,6 +122,7 @@ namespace xtd {
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
+      /// @}
       
       /// @cond
       int32_t large_change_ = 10;
