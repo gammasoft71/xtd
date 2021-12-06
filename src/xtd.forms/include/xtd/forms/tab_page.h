@@ -27,9 +27,9 @@ namespace xtd {
 
       using panel::auto_scroll;
       /// @brief Sets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.
-      /// @param auto_scroll true if the container enables auto-scrolling; otherwise, false. The default value is false.
+      /// @param value true if the container enables auto-scrolling; otherwise, false. The default value is false.
       /// @return Current scrollable_control instance.
-      scrollable_control& auto_scroll(bool auto_scroll) override;
+      scrollable_control& auto_scroll(bool value) override;
 
       /// @brief Gets the image list index value of the image displayed on the tab_page control.
       /// @return A zero-based index, which represents the image position in an image_list. The default is -1.

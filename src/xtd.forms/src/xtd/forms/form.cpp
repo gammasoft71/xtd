@@ -445,7 +445,7 @@ void form::on_handle_destroyed(const event_args &e) {
 
 void form::on_layout(const event_args& e) {
   scrollable_control::on_layout(e);
-  if (is_handle_created() && auto_scroll_) native::form::virtual_size(handle(), display_rectangle().size());
+  if (is_handle_created() && auto_scroll()) native::form::virtual_size(handle(), display_rectangle().size());
 }
 
 void form::on_location_changed(const event_args &e) {

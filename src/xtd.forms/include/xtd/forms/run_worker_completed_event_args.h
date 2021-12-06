@@ -24,10 +24,17 @@ namespace xtd {
       run_worker_completed_event_args& operator=(const run_worker_completed_event_args& do_work_event_args) = default;
       /// @endcond
       
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the DoWorkEventArgs class.
       /// @param argument Specifies an argument for an asynchronous operation.
       run_worker_completed_event_args(const std::any& result, std::optional<std::reference_wrapper<std::exception>> exception, bool cancel) : cancel_(cancel), exception_(exception), result_(result) {}
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       bool cancel() const {return cancel_;}
       void cancel(bool value) {cancel_ = value;}
       
@@ -36,6 +43,7 @@ namespace xtd {
       std::any user_state() const {return user_state_;}
       
       std::any result() const {return result_;}
+      /// @}
 
     private:
       bool cancel_ = false;

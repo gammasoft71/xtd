@@ -20,12 +20,20 @@ namespace xtd {
     /// @include save_file_dialog.cpp
     class forms_export_ save_file_dialog final : public file_dialog {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initializes a new instance of the save_file_dialog class.
       save_file_dialog() = default;
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Opens the file with read/write permission selected by the user.
       /// @return The read/write file selected by the user.
       std::fstream open_file() const {return io::file::open(xtd::ustring(file_name_), std::ios::binary | std::ios::in | std::ios::out);}
+      /// @}
 
     private:
       bool run_file_dialog(intptr_t hwnd_owner) override;
