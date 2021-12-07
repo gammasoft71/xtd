@@ -10,7 +10,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Follow by looking at examples of xtd](../examples/README.md)
 * How to install
   * [Read download and install](downloads.md)
-  € [How to check xtd version](guide_check_version.md)
+  * [How to check xtd version](guide_check_version.md)
 * Delegates and lambdas
   * [Overview](guide_delegates_and_lambdas.md)
 * Event
