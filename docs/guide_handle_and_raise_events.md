@@ -18,11 +18,11 @@ The event is usually a member of the event sender; for example, the [click](http
 To define an event, you use the [xtd::event](tutorial_events.md) class in your [event](tutorial_events.md) class signature, and you specify the delegate type for the event. 
 Delegates are described in the next section.
 
-In general, to trigger an event, you add a method marked as **protected** and **virtual**. Name this method **on_**event_name; for example, **on_data_received**. 
+In general, to trigger an event, you add a method marked as ```protected``` and ```virtual```. Name this method ```on_```event_name; for example, ```on_data_received```. 
 The method must take a parameter that specifies an event data object, which is an object of type [xtd::event_ags](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) or a derived type. You provide this method to allow derived classes to override the event trigger logic. 
-A derived class must always call the **on_**event_name method of the base class to ensure that the registered delegates receive the event.
+A derived class must always call the ```on_```event_name method of the base class to ensure that the registered delegates receive the event.
 
-The following example shows how to declare an event named **threshold_reached**. The event is associated with the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate and triggered by a method called **on_threshold_reached**.
+The following example shows how to declare an event named ```threshold_reached```. The event is associated with the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate and triggered by a method called ```on_threshold_reached```.
 
 ```c++
 class counter {
@@ -63,7 +63,7 @@ A delegate acts as an event dispatcher for the class that raises the event by ma
 
 For scenarios where the xtd::event_handler and [xtd::generic_event_handler<event_args_t>](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegates do not work, you can define a delegate. Scenarios that require a delegate to be defined are very rare, such as when you have to work with code that does not recognize generics. 
 You mark a delegate with the [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) class in the declaration. 
-The following example shows how to declare a delegate named **threshold_reached_event_handler**.
+The following example shows how to declare a delegate named ```threshold_reached_event_handler```.
 
 ```c++
 public:
@@ -85,9 +85,9 @@ You can pass the value [xtd::event_args::empty](https://codedocs.xyz/gammasoft71
 The [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate includes the [xtd:event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) class as a parameter.
 
 When you want to create a custom event data class, create a class that derives from [xtd:event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html), and then provide all the members needed to pass the event-related data.
-In general, you should use the same naming scheme as xtd and end the name of your event data class with **_event_args**.
+In general, you should use the same naming scheme as xtd and end the name of your event data class with ```_event_args```.
 
-The following example shows an event data class named **threshold_reached_event_args***.
+The following example shows an event data class named ```threshold_reached_event_args```*.
 It contains properties specific to the triggered event.
 
 ```c++
@@ -112,8 +112,8 @@ This method must match the delegate signature of the event you are handling.
 In the event handler, you perform the required actions when the event is triggered, such as collecting user input after the user clicks a button. 
 To receive notifications when the event occurs, your event handler method must subscribe to the event.
 
-The following example shows an event handling method named **c_threshold_reached** that matches the signature of the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate.
-The method subscribes to the **threshold_reached** event.
+The following example shows an event handling method named ```c_threshold_reached``` that matches the signature of the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate.
+The method subscribes to the ```threshold_reached``` event.
 
 ```c++
 class program {
