@@ -3,8 +3,72 @@
 # Delegates and lambdas
 
 Delegates define a type that specifies a particular method signature. 
-A method (static or instance) that satisfies this signature can be assigned to a variable of this type and then called directly (with the appropriate arguments) or passed as an argument to another method and then called.
-The following example demonstrates the use of delegates.
+A method (instance, functor, static) that satisfies this signature can be assigned to a variable of this type and then called directly (with the appropriate arguments) or passed as an argument to another method and then called.
+
+The following example demonstrates the use of delegates with instance mthed.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+class stringer {
+public:
+  ustring reverse_string(const ustring& s) {
+    ustring result = s;
+    std::reverse(result.begin(), result.end());
+    return result;
+  }
+};
+
+class program {
+public:
+  using reverse = delegate<ustring(const ustring& s)>;
+  
+  static void main(const std::vector<ustring>& args) {
+    stringer s;
+    reverse rev(s, &stringer::reverse_string);
+    
+    console::write_line(rev("a string"));
+  }
+};
+
+startup_(program);
+```
+
+
+The following example demonstrates the use of delegates with functor.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+struct string_reverser {
+  ustring operator()(const ustring& s) {
+    ustring result = s;
+    std::reverse(result.begin(), result.end());
+    return result;
+  }
+};
+
+class program {
+public:
+  using reverse = delegate<ustring(const ustring& s)>;
+  
+  static void main(const std::vector<ustring>& args) {
+    string_reverser sr;
+    reverse rev(sr);
+    
+    console::write_line(rev("a string"));
+  }
+};
+
+startup_(program);
+```
+
+The following example demonstrates the use of delegates with static method.
+
 
 ```c++
 #include <xtd/xtd>
@@ -70,7 +134,7 @@ public:
 startup_(program);
 ```
 
-For this simple example, having a method defined outside of the ```main``` method seems a bit superfluous. c++11 introduced the concept of [lambda expression](https://en.cppreference.com/w/cpp/language/lambda), which let you create "inline" methods without having to specify any additional type or method.
+For this simple example, having a method defined outside of the ```main``` method seems a bit superfluous. c++11 introduced the concept of [lambda expressions](https://en.cppreference.com/w/cpp/language/lambda), which let you create "inline" methods without having to specify any additional type or method.
 
 We can now take our example above and rewrite it using a lambda expression.
 The program will continue running exactly the same.
