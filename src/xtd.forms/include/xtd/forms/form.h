@@ -282,18 +282,22 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the form is activated in code or by the user.
       /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<form, event_handler> activated;
       
       /// @brief Occurs when the form loses focus and is no longer the active form.
       /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<form, event_handler> deactivate;
 
       /// @brief Occurs after the form is closed.
       /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<form, form_closed_event_handler> form_closed;
       
       /// @brief Occurs before the form is closed.
       /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<form, form_closing_event_handler> form_closing;
       /// @}
 

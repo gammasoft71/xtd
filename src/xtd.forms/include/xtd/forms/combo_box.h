@@ -108,6 +108,7 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the drop_down_style property has changed.
       /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<combo_box, event_handler> drop_down_style_changed;
       /// @}
       

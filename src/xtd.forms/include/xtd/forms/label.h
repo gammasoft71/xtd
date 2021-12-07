@@ -72,6 +72,7 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the value of the xtd::forms::label::text_align property has changed.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<label, event_handler> text_align_changed;
       /// @}
 
