@@ -1,20 +1,30 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Guides
+# Hello World
 
-The xtd guides provide an explanation on how to use the important features of the xtd Framework. 
+First, download and install the [xtd](download.md) on your computer.
 
-* Get started
-  * [Hello World](guide_hello_world.md)
-* Delegates and lambdas
-  * [Overview](guide_delegates_and_lambdas.md)
-* Event
-  * [Overview](guide_handle_and_raise_events.md)
-  * [Raise and consume events](guide_raise_and_consume_events.md)
-  * [Observer Design PatternObserver Design Pattern](guide_observer_design_pattern.md)
+Next, open a terminal, Command Prompt, or bash. Enter the following xtdc commands to create and run an xtd application:
+
+```shell
+xtdc new console sample1
+xtdc run sample1
+```
+You see the following output:
+
+```
+Hello, World!
+```
+
+Congratulations! You've created a simple xtd application.
+
+# Next steps
+
+Get started developing xtd applications by following a step-by-step [tutorials](tutorials.md).
 
 # See also
 ​
+* [Guides](guides.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
