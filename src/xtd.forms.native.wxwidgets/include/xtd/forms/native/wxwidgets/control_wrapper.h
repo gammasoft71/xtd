@@ -56,7 +56,7 @@ namespace xtd {
         ~control_wrapper();
 
         intptr_t def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {
-          if (handle != 0) {
+          if (handle != 0 && !control_t::IsBeingDeleted()) {
             wxEvent* event = reinterpret_cast<wxEvent*>(handle);
             event->Skip(!result);
             process_result_ = control_t::ProcessEvent(*event);
