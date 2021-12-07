@@ -6,6 +6,8 @@ The xtd guides provide an explanation on how to use the important features of th
 
 * Get started
   * [Hello World](guide_hello_world.md)
+  * [Get strated tutorials](tutorias.md)
+  * [Follow by looking at examples of xtd](../examples/README.md)
 * Delegates and lambdas
   * [Overview](guide_delegates_and_lambdas.md)
 * Event

@@ -7,8 +7,7 @@ This Section provides a getting started documentation.
 ## In this section
 
 * [Installation](downloads.md) provides download and install documentation.
-* [Portability](portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
-* [Guides](guides.md) and [Tutorials](tutorials.md) provides xtd guides and tutorials.
+* [Guides](guides.md) provides xtd guides and tutorials.
 * [Examples](../examples/README.md) provides some examples.
 
 ## See also

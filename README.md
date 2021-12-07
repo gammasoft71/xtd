@@ -235,8 +235,7 @@ End 2 tests from 1 test case ran. (0 ms total)
 ## Getting Started
 
 * [Installation](https://github.com/gammasoft71/xtd/blob/master/docs/downloads.md) provides download and install documentation.
-* [Portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
-* [Guides](https://github.com/gammasoft71/xtd/blob/master/docs/guides.md) and [Tutorials](https://github.com/gammasoft71/xtd/blob/master/docs/tutorials.md) provides xtd guides and tutorials.
+* [Guides](https://github.com/gammasoft71/xtd/blob/master/docs/guides.md) provides xtd guides and tutorials.
 * [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides some examples.
 
 ## Development status
