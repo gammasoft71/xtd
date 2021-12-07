@@ -15,7 +15,8 @@ namespace xtd {
 
       template<typename control_t>
       inline bool control_wrapper<control_t>::ProcessEvent(wxEvent& event) {
-        if (event_handler_ == nullptr) return false;
+        if (event_handler_ == nullptr || event_handler_->control() == nullptr) return false;
+        if (event_handler_->control()->IsBeingDeleted()) return false;
         if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
         //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", ustring::full_class_name<control_t>(), to_string(event)));
         if (event.GetEventType() == wxEVT_DESTROY) return process_result_;
