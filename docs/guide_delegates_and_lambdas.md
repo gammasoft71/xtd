@@ -5,7 +5,7 @@
 Delegates define a type that specifies a particular method signature. 
 A method (instance, functor, static) that satisfies this signature can be assigned to a variable of this type and then called directly (with the appropriate arguments) or passed as an argument to another method and then called.
 
-The following example demonstrates the use of delegates with instance mthed.
+The following example demonstrates the use of delegates with instance method.
 
 ```c++
 #include <xtd/xtd>
