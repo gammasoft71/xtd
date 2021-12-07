@@ -143,8 +143,7 @@ For more information, see [Events](tutorial_events.md).
 
 # See also
 ​
-* [Member Design Guidelines](member_design_guidelines.md)
-* [Design Guidelines](design_guidelines.md)
+* [Guides](guides.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
