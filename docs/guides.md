@@ -5,7 +5,7 @@
 The xtd guides provide an explanation on how to use the important features of the xtd Framework. 
 
 * Delegates and lambdas
-  * [Overview]()
+  * [Overview](guide_delegates_and_lambdas.md)
 * Event
   * [Overview](guide_handle_and_raise_events.md)
   * [Raise and consume events](guide_raise_and_consume_events.md)
