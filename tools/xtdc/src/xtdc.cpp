@@ -1,6 +1,7 @@
 #include "project_management.h"
 
 #include <xtd/xtd.core>
+#include <xtd/system_report.h>
 #include <chrono>
 #include <ctype.h>
 #include <filesystem>
@@ -317,27 +318,48 @@ namespace xtdc_command {
     static vector<ustring> get_info() noexcept {
       return {
         "",
-        "xtdc:",
-        ustring::format("  Version: {}", get_version_number()),
+        get_xtd_version(),
+        //"",
+        "Operating System:",
+        ustring::format("  Name: {}", system_report::operating_system().name()),
+        ustring::format("  Version: {}", system_report::operating_system().version()),
+        ustring::format("  Service pack: {}", system_report::operating_system().service_pack()),
+        ustring::format("  Desktop environment: {}", system_report::operating_system().desktop_environment()),
+        ustring::format("  64 bit: {}", system_report::operating_system().is_64_bit()),
         "",
-        "System Environment:",
-        ustring::format("  OS Name:    {}", get_os_name()),
-        ustring::format("  OS Version: {}", environment::os_version().version().to_string(2)),
-        ustring::format("  Base Path:  {}", get_base_path())
+        "Compiler:",
+        ustring::format("  Name: {}", system_report::compiler().name()),
+        ustring::format("  Version: {}", system_report::compiler().version()),
+        ustring::format("  Mode: {}", system_report::compiler().is_build_type_debug() ? "Debug" : "Release"),
+        ustring::format("  64 bit: {}", system_report::compiler().is_64_bit()),
+        "",
+        "Language:",
+        ustring::format("  Name: {}", system_report::language().name()),
+        ustring::format("  Version: {}", system_report::language().version()),
+        ustring::format("  Experimental: {}", system_report::language().is_experimental_language()),
+        ustring::format("  Supported: {}", system_report::language().is_supported()),
+        "",
       };
     }
 
-    static string get_os_name() noexcept {
-      static map<platform_id, string> names = {{platform_id::unknown, "Unknown System"}, {platform_id::win32s, "Windows"}, {platform_id::win32_windows, "Windows"}, {platform_id::win32_nt, "Windows NT"}, {platform_id::win_ce, "Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, };
-      return names[environment::os_version().platform()];
+    static string get_xtd_version() noexcept {
+      ustring result = ustring::format("xtd Framework:{}", environment::new_line());
+      for (auto library : system_report::xtd_libraries()) {
+        result += ustring::format("  {}", library.name(), environment::new_line());
+        result += ustring::format("    Version: {}{}", library.version(), environment::new_line());
+        result += ustring::format("    include path: {}{}", library.include_path(), environment::new_line());
+        result += ustring::format("    library path: {}{}", library.library_path(), environment::new_line());
+        result += ustring::format("    resources path: {}{}", library.resources_path(), environment::new_line());
+      }
+      return std::move(result);
     }
 
     static string get_version() noexcept {
       return ustring::format("xtdc version {}, © {:L} by Gammasoft", get_version_number(), chrono::system_clock::now());
     }
-    
+
     static string get_version_number() noexcept {
-      return /*environment::version().to_string()*/ version(1, 0, 0).to_string();
+      return environment::version().to_string();
     }
      
     static bool is_ansi_supported() noexcept {
