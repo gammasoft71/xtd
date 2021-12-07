@@ -10,7 +10,7 @@ The examples use concepts described in the [events](guide_handle_and_raise_event
 ## Example 1
 
 The first example shows how to raise and consume an event that doesn't have data. 
-It contains a class named **counter** that has an event named **threshold_reached**. 
+It contains a class named ```counter``` that has an event named ```threshold_reached```. 
 This event is raised when a counter value equals or exceeds a threshold value. 
 The [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate is associated with the event, because no event data is provided.
 
@@ -145,7 +145,7 @@ startup_(console_application1::program);
 ## Example 3
 
 The next example shows how to declare a delegate for an event. 
-The delegate is named **threshold_reached_event_handler**. 
+The delegate is named ```threshold_reached_event_handler```. 
 This is just an illustration. Typically, you do not have to declare a delegate for an event, because you can use either the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) or the [xtd::generic_event_handler<event_args_t>](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate. 
 You should declare a delegate only in rare scenarios, such as making your class available to legacy code that cannot use generics.
 
