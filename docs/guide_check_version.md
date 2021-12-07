@@ -1,6 +1,6 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Observer Design Pattern
+# How to check that xtd is already installed
 
 This article teaches you how to check which version of the xtd Framework is installed on your computer.
 If any command in this article fails, you don't have the xtd Framework installed. For more information, see the [install](downloads.md) article.
