@@ -262,7 +262,9 @@ namespace xtdc_command {
     
     bool is_linux_gui_app(const std::filesystem::path& path) const {
       if (!std::filesystem::exists(path)) return false;
-      auto lines = xtd::io::file::read_all_lines((std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::home).c_str())/".local"/"share"/"applications"/xtd::ustring::format("{}.desktop", path.filename()).c_str()).string());
+      auto config_file = std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::home).c_str())/".local"/"share"/"applications"/xtd::ustring::format("{}.desktop", path.filename()).c_str();
+      if (!std::filesystem::exists(config_file)) return false;
+      auto lines = xtd::io::file::read_all_lines(config_file.string());
       for (auto line : lines)
         if (line.to_lower() == "terminael=false") return true;
       return false;
