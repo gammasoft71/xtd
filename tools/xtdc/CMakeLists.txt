@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtdc)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
+add_references(xtd)
 add_sources(
   src/project_language.h
   src/project_management.h
