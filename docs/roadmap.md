@@ -52,7 +52,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | fourteen_segment_display_render | Gammasoft |                                                 |
 | xtd.forms | label_render                    | Gammasoft |                                                 |
 | xtd.forms | lcd_label_render                | Gammasoft |                                                 |
-| xtd.forms | light_button                    | Gammasoft |                                                 |
+| xtd.forms | light_button                    | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | light_button_render             | Gammasoft |                                                 |
 | xtd.forms | light_buttons                   | Bader     |                                                 |
 | xtd.forms | month_calender                  | Bader     |                                                 |
