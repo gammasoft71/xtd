@@ -1220,6 +1220,10 @@ void control::set_can_focus(bool value) {
   data_->can_focus = value;
 }
 
+void control::set_text(const xtd::ustring& text) {
+  data_->text = text;
+}
+
 void control::set_mouse_buttons(forms::mouse_buttons value) {
   mouse_buttons_ = value;
 }

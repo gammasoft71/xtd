@@ -1483,7 +1483,7 @@ namespace xtd {
       friend class application;
       friend class paint_event_args;
       friend class screen;
-      
+
       /// @name Protected methods
       
       /// @{
@@ -1759,7 +1759,11 @@ namespace xtd {
       /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
       void set_can_focus(bool value);
 
-      
+      /// @brief Sets the text associated with this control.
+      /// @param text The text associated with this control.
+      /// @return Current control.
+      virtual void set_text(const xtd::ustring& text);
+
       /// @brief Sets the size of the client area of the control.
       /// @param width The client area width, in pixels.
       /// @param height The client area height, in pixels.
