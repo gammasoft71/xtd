@@ -41,6 +41,7 @@ add_sources(
   include/xtd/forms/native/wxwidgets/wx_form.h
   include/xtd/forms/native/wxwidgets/wx_group_box.h
   include/xtd/forms/native/wxwidgets/wx_label.h
+  include/xtd/forms/native/wxwidgets/wx_light_button.h
   include/xtd/forms/native/wxwidgets/wx_list_box.h
   include/xtd/forms/native/wxwidgets/wx_loading_indicator.h
   include/xtd/forms/native/wxwidgets/wx_numeric_up_down.h
@@ -88,6 +89,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/image_list.cpp
   src/xtd/forms/native/wxwidgets/input_dialog.cpp
   src/xtd/forms/native/wxwidgets/label.cpp
+  src/xtd/forms/native/wxwidgets/light_button.cpp
   src/xtd/forms/native/wxwidgets/list_box.cpp
   src/xtd/forms/native/wxwidgets/loading_indicator.cpp
   src/xtd/forms/native/wxwidgets/main_menu.cpp

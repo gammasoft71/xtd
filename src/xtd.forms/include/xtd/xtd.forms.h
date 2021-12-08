@@ -131,6 +131,7 @@
 #include "xtd/forms/known_themed_color.h"
 #include "xtd/forms/label.h"
 #include "xtd/forms/lcd_label.h"
+#include "xtd/forms/light_button.h"
 #include "xtd/forms/link_label.h"
 #include "xtd/forms/link_label_clicked_event_args.h"
 #include "xtd/forms/link_label_clicked_event_handler.h"

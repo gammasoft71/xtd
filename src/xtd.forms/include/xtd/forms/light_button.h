@@ -1,0 +1,290 @@
+/// @file
+/// @brief Contains xtd::forms::light_button control.
+/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+#pragma once
+#include <xtd/drawing/system_colors.h>
+#include "appearance.h"
+#include "button_base.h"
+#include "check_state.h"
+#include "visual_styles/check_box_state.h"
+
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
+  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
+  namespace forms {
+    /// @brief Represents a Windows light_button control.
+    /// @par Namespace
+    /// xtd::forms
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms controls
+    /// @remarks A Button can be clicked by using the mouse, ENTER key, or SPACEBAR if the light_button has focus.
+    /// @remarks Set the accept_light_button or cancel_light_button property of a form to allow users to click a light_button by pressing the ENTER or ESC keys even if the light_button does not have focus. This gives the form the behavior of a dialog box.
+    /// @remarks When you display a form using the show_dialog method, you can use the dialog_result property of a light_button to specify the return value of show_dialog.
+    /// @remarks You can change the light_button's appearance. For example, to make it appear flat for a Web look, set the flat_style property to flat_style::flat. The flat_style property can also be set to flat_style::popup, which appears flat until the mouse pointer passes over the light_button; then the light_button takes on the standard Windows light_button appearance.
+    /// @note If the control that has focus accepts and processes the ENTER key press, the light_button does not process it. For example, if a multiline text_box or another light_button has focus, that control processes the ENTER key press instead of the accept light_button.
+    /// @par Appearance
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <th style="width:100px"></th>
+    ///     <th><b>Windows</b></th>
+    ///     <th><b>macOS</b></th>
+    ///     <th><b>Gnome</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Light</th>
+    ///     <td>@image html control_light_button_w.png</td>
+    ///     <td>@image html control_light_button_m.png</td>
+    ///     <td>@image html control_light_button_g.png</td>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Dark</th>
+    ///     <td>@image html control_light_button_wd.png</td>
+    ///     <td>@image html control_light_button_md.png</td>
+    ///     <td>@image html control_light_button_gd.png</td>
+    ///   </tr>
+    /// </table>
+    /// @par Examples
+    /// The following code example demonstrate the use of light_button control.
+    /// @include light_button.cpp
+    /// @par Examples
+    /// The following code example demonstrate the use of light_button control with bitmap.
+    /// @include bitmap_light_button.cpp
+    class forms_export_ light_button : public button_base {
+    public:
+      /// @name Constructors
+      
+      /// @{
+      /// @brief Initializes a new instance of the light_button class.
+      /// @remarks By default the light_button displays no caption. To specify the caption text, set the text property.
+      light_button() = default;
+      /// @}
+      
+      /// @name Properties
+      
+      /// @{
+      /// @brief Gets a value indicating whether the checked or check_state values and the light_button's appearance are automatically changed when the light_button is clicked.
+      /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
+      /// @par Examples
+      /// The following code example demonstrate the use of light_button auto_check.
+      /// @include light_button.cpp
+      virtual bool auto_check() const {return data_->auto_check;}
+      /// @brief Sets a value indicating whether the checked or check_state values and the light_button's appearance are automatically changed when the light_button is clicked.
+      /// @param auto_check true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
+      virtual light_button& auto_check(bool auto_check);
+      
+      /// @brief Gets a value indicating whether the light_button is in the checked state.
+      /// @return true if the light_button is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
+      /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
+      /// @par Examples
+      /// The following code example demonstrate the use of light_button checked.
+      /// @include light_button.cpp
+      virtual bool checked() const {return data_->checked;}
+      /// @brief Sets a value indicating whether the light_button is in the checked state.
+      /// @param checked true if the light_button is in the checked state; otherwise, false. The default value is false.
+      /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
+      virtual light_button& checked(bool checked);
+      
+      /// @brief Gets the state of the light_button.
+      /// @return One of the check_state enumeration values. The default value is unchecked.
+      /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
+      /// @remarks The following table describes the xtd::forms::appearance of the light_button control in its different states for the normal and button style control light_button::appearance.
+      /// | Check_state   |  appearance::normal                                                    | appearance::button                     |
+      /// |---------------|------------------------------------------------------------------------|----------------------------------------|
+      /// | checked       | The light_button displays a check mark.                                   | The control appears sunken.            |
+      /// | unchecked     | The CheckBox is empty.                                                 | The control appears raised.            |
+      /// | indeterminate | The CheckBox displays a check mark and is shaded.                      | The control appears flat.              |
+      /// @par Examples
+      /// The following code example demonstrate the use of light_button check_state.
+      /// @include light_button.cpp
+      virtual forms::check_state check_state() const {return data_->check_state;}
+      /// @brief Sets the state of the light_button.
+      /// @param check_state One of the check_state enumeration values. The default value is unchecked.
+      /// @remarks The following table describes the xtd::forms::appearance of the light_button control in its different states for the normal and button style control light_button::appearance.
+      /// | Check_state   |  appearance::normal                                                    | appearance::button                |
+      /// |--------------------|------------------------------------------------------------------------|----------------------------------------|
+      /// | checked         | The light_button displays a check mark.                        | The control appears sunken. |
+      /// | unchecked     | The CheckBox is empty.                                               | The control appears raised.   |
+      /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.        |
+      /// @par Examples
+      /// The following code example demonstrate the use of light_button check_state.
+      /// @include light_button.cpp
+      virtual light_button& check_state(forms::check_state check_state);
+      
+      virtual drawing::color default_light_off_color() const {return drawing::system_colors::window();}
+      virtual drawing::color default_light_on_color() const {return drawing::system_colors::accent();}
+      
+      /// @brief Gets the horizontal and vertical alignment of the check mark on a light_button control.
+      /// @return One of the content_alignment values. The default value is middle_left.
+      virtual content_alignment light_align() const {return data_->light_align;}
+      /// @brief Sets the horizontal and vertical alignment of the check mark on a light_button control.
+      /// @param check_align One of the content_alignment values. The default value is middle_left.
+      virtual light_button& light_align(content_alignment light_align);
+
+      virtual drawing::color light_off_color() const;
+      virtual light_button& light_off_color(const drawing::color& value);
+      /// @cond
+      virtual light_button& light_off_color(nullptr_t);
+      /// @endcond
+
+      virtual drawing::color light_on_color() const;
+      virtual light_button& light_on_color(const drawing::color& value);
+      /// @cond
+      virtual light_button& light_on_color(nullptr_t);
+      /// @endcond
+      
+      /// @brief Gets a value indicating whether the light_button will allow three check states rather than two.
+      /// @return true if the light_button is able to display three check states; otherwise, false. The default value is false.
+      /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
+      /// @par Examples
+      /// The following code example demonstrate the use of light_button three_state.
+      /// @include light_button.cpp
+      virtual bool three_state() const {return data_->three_state;}
+      /// @brief Gets a value indicating whether the light_button will allow three check states rather than two.
+      /// @param three_state true if the light_button is able to display three check states; otherwise, false. The default value is false.
+      /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
+      virtual light_button& three_state(bool three_state);
+      /// @}
+
+      /// @name Methods
+      
+      /// @{
+      virtual void perform_click();
+      /// @}
+      
+      /// @name Events
+      
+      /// @{
+      /// @brief Occurs when the value of the checked property changes.
+      /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      event<light_button, event_handler> checked_changed;
+      
+      /// @brief Occurs when the value of the check_state property changes.
+      /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      event<light_button, event_handler> check_state_changed;
+      /// @}
+
+    protected:
+      /// @name Protected properties
+      
+      /// @{
+      /// @brief Get state.
+      /// @return One of xtd::forms::visual_styles::push_button_state values.
+      xtd::forms::visual_styles::check_box_state state() const noexcept {return data_->state;}
+      /// @}
+      
+      /// @name Protected methods
+      
+      /// @{
+      forms::create_params create_params() const override;
+
+      drawing::size measure_control() const override;
+      
+      /// @brief Raises the light_button::checked_changed event.
+      /// @param e An event_args that contains the event data.
+      /// @remarks Raising an event invokes the event handler through a delegate.
+      /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      virtual void on_checked_changed(const event_args& e) {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
+        }
+        checked_changed(*this, e);
+        if (flat_style() != xtd::forms::flat_style::system) invalidate();
+      }
+      
+      /// @brief Raises the light_button::check_state_changed event.
+      /// @param e An event_args that contains the event data.
+      /// @remarks Raising an event invokes the event handler through a delegate.
+      /// @remarks The on_check_state_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      virtual void on_check_state_changed(const event_args& e) {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
+        }
+        check_state_changed(*this, e);
+        if (flat_style() != xtd::forms::flat_style::system) invalidate();
+      }
+
+      void on_enabled_changed(const event_args& e) override {
+        if (flat_style() != xtd::forms::flat_style::system) {
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::unchecked_normal : xtd::forms::visual_styles::check_box_state::unchecked_disabled;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::checked_normal : xtd::forms::visual_styles::check_box_state::checked_disabled;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::mixed_normal : xtd::forms::visual_styles::check_box_state::mixed_disabled;
+        }
+        button_base::on_enabled_changed(e);
+      }
+
+      void on_handle_created(const event_args& e) override;
+      
+      void on_image_changed(const xtd::event_args& e) override;
+
+      void on_mouse_down(const mouse_event_args& e) override {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_pressed;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_pressed;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_pressed;
+        }
+        button_base::on_mouse_down(e);
+      }
+      
+      void on_mouse_enter(const event_args& e) override {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::unchecked_pressed : xtd::forms::visual_styles::check_box_state::unchecked_hot;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::checked_pressed : xtd::forms::visual_styles::check_box_state::checked_hot;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::mixed_pressed : xtd::forms::visual_styles::check_box_state::mixed_hot;
+        }
+        button_base::on_mouse_enter(e);
+      }
+      
+      void on_mouse_leave(const event_args& e) override {
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
+        }
+        button_base::on_mouse_leave(e);
+      }
+      
+      void on_mouse_up(const mouse_event_args& e) override {
+        if (flat_style() != xtd::forms::flat_style::system && enabled() && (data_->state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || data_->state == xtd::forms::visual_styles::check_box_state::checked_pressed || data_->state == xtd::forms::visual_styles::check_box_state::mixed_pressed)) {
+          if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_hot;
+          else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_hot;
+          else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_hot;
+        }
+        button_base::on_mouse_up(e);
+      }
+
+      void on_paint(paint_event_args& e) override;
+      /// @}
+
+      /// @cond
+      void wnd_proc(message& message) override;
+      virtual void wm_mouse_double_click(message& message);
+      virtual void wm_mouse_down(message& message);
+      virtual void wm_mouse_up(message& message);
+      /// @endcond
+
+    private:
+      //void wm_click(message& message);
+      //void wm_mouse_up(message& message);
+      struct data {
+        bool auto_check = true;
+        bool three_state = 0;
+        bool checked = false;
+        content_alignment light_align = content_alignment::middle_left;
+        forms::check_state check_state = forms::check_state::unchecked;
+        std::optional<xtd::drawing::color> light_on_color;
+        std::optional<xtd::drawing::color> light_off_color;
+        xtd::forms::visual_styles::check_box_state state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
+   };
+  }
+}
