@@ -15,6 +15,7 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #25 - xtdc-gui crashes with projects with space in name
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #26 - When resizing xtdc-gui, the graphics get messed up
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #27 - cannot delete recent projects in xtdc-gui
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #31 - xtdc-gui panels redraw over each other
 ______________________________________________________________________________________________
 
 ![0.1.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_1_0.png) (beta) October 10, 2021
