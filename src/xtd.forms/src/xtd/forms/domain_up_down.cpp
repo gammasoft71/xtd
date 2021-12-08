@@ -103,7 +103,7 @@ void domain_up_down::on_handle_created(const event_args &e) {
 
 void domain_up_down::on_text_changed(const event_args& e) {
   if (is_handle_created()) {
-    text(native::control::text(handle()));
+    set_text(native::control::text(handle()));
     if (selected_index_ != native::domain_up_down::selected_index(handle())) {
       selected_index_ = native::domain_up_down::selected_index(handle());
       if (selected_index_ == npos)
