@@ -636,6 +636,7 @@ void main_form::new_project() {
   }
   startup_panel_.visible(false);
   create_panel_.visible(true);
+  open_xtd_examples_panel_.visible(false);
   previous_button_.visible(true);
   next_button_.text("&Next");
   next_button_.visible(true);
@@ -710,6 +711,7 @@ void main_form::open_xtd_examples() {
   }
   startup_panel_.visible(false);
   open_xtd_examples_panel_.visible(true);
+  create_panel_.visible(false);
   previous_button_.visible(true);
   next_button_.text("&Open");
   next_button_.visible(true);
