@@ -52,6 +52,7 @@ add_sources(
   include/xtd/forms/native/image_list.h
   include/xtd/forms/native/input_dialog.h
   include/xtd/forms/native/label.h
+  include/xtd/forms/native/light_button.h
   include/xtd/forms/native/list_box.h
   include/xtd/forms/native/list_box_styles.h
   include/xtd/forms/native/loading_indicator.h

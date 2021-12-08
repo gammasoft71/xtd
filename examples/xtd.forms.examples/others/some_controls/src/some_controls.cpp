@@ -2,16 +2,10 @@
 
 using namespace xtd::forms;
 
-namespace xtd {
-  namespace forms {
-    using light_button = button;
-  }
-}
-
 class form1 : public form {
 public:
   static void main() {
-    xtd::forms::application::run(form1());
+    application::run(form1());
   }
 
   form1() {
@@ -69,6 +63,7 @@ public:
     image_button1.image(button_images::from_name("xtd"));
     
     light_button1.parent(tab_page_buttons);
+    light_button1.checked(true);
     light_button1.location({10, 90});
     light_button1.text("Light");
     

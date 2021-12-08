@@ -17,6 +17,7 @@ namespace xtd {
       class wx_button;
       class wx_check_box;
       class wx_command_link_button;
+      class wx_light_button;
       class wx_radio_button;
       class wx_switch_button;
       class wx_toggle_button;
@@ -31,6 +32,7 @@ namespace xtd {
         friend xtd::forms::native::wx_button;
         friend xtd::forms::native::wx_check_box;
         friend xtd::forms::native::wx_command_link_button;
+        friend xtd::forms::native::wx_light_button;
         friend xtd::forms::native::wx_radio_button;
         friend xtd::forms::native::wx_switch_button;
         friend xtd::forms::native::wx_toggle_button;

@@ -52,6 +52,7 @@
 #include "forms/native/image_list.h"
 #include "forms/native/input_dialog.h"
 #include "forms/native/label.h"
+#include "forms/native/light_button.h"
 #include "forms/native/list_box.h"
 #include "forms/native/list_box_styles.h"
 #include "forms/native/main_menu.h"
