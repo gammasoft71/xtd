@@ -18,6 +18,7 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 #include <wx/scrolwin.h>
+#include <wx/settings.h>
 #include "control_handler.h"
 
 namespace xtd {
@@ -71,14 +72,22 @@ namespace xtd {
           bool dialog = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || ((create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST && create_params.parent() && (create_params.style() & WS_CHILD) != WS_CHILD);
           if (dialog) control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
           else control_handler::create<wxFrame>(create_params.parent() && (create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
-#if defined(__WIN32__) || defined(__APPLE__)
+#if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
+#elif defined(__APPLE__)
+          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+            control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+            control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+          }
 #endif
+          boxSizer_ = new wxBoxSizer(wxVERTICAL);
           panel_ = new wxMainPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
-#if defined(__WIN32__) || defined(__APPLE__)
+          boxSizer_->Add(panel_, wxSizerFlags().Proportion(-1).Expand());
+          control()->SetSizerAndFit(boxSizer_);
+#if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             panel_->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             panel_->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
@@ -160,6 +169,7 @@ namespace xtd {
         }
 
       private:
+        wxBoxSizer* boxSizer_;
         wxMainPanel* panel_;
       };
     }
