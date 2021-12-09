@@ -12,41 +12,13 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a Windows light_button control.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms controls
-    /// @remarks A Button can be clicked by using the mouse, ENTER key, or SPACEBAR if the light_button has focus.
-    /// @remarks Set the accept_light_button or cancel_light_button property of a form to allow users to click a light_button by pressing the ENTER or ESC keys even if the light_button does not have focus. This gives the form the behavior of a dialog box.
-    /// @remarks When you display a form using the show_dialog method, you can use the dialog_result property of a light_button to specify the return value of show_dialog.
-    /// @remarks You can change the light_button's appearance. For example, to make it appear flat for a Web look, set the flat_style property to flat_style::flat. The flat_style property can also be set to flat_style::popup, which appears flat until the mouse pointer passes over the light_button; then the light_button takes on the standard Windows light_button appearance.
-    /// @note If the control that has focus accepts and processes the ENTER key press, the light_button does not process it. For example, if a multiline text_box or another light_button has focus, that control processes the ENTER key press instead of the accept light_button.
-    /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_light_button_w.png</td>
-    ///     <td>@image html control_light_button_m.png</td>
-    ///     <td>@image html control_light_button_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_light_button_wd.png</td>
-    ///     <td>@image html control_light_button_md.png</td>
-    ///     <td>@image html control_light_button_gd.png</td>
-    ///   </tr>
-    /// </table>
-    /// @par Examples
-    /// The following code example demonstrate the use of light_button control.
-    /// @include light_button.cpp
+    /// @remarks Use a light_button to give the user an option, such as true/false or yes/no. The light_button control can display an image or text or both.
+    /// @remarks light_button and radio_button controls have a similar function: they allow the user to choose from a list of options. light_button controls let the user pick a combination of options. In contrast, radio_button controls allow a user to choose from mutually exclusive options.
+    /// @remarks The appearance property determines whether the light_button appears as a typical light_button or as a button.
+    /// @remarks The three_state property determines whether the control supports two or three states. Use the checked property to get or set the value of a two-state light_button control and use the check_state property to get or set the value of a three-state light_button control.
+    /// @note If the three_state property is set to true, the checked property will return true for either a checked or indeterminate state.
+    /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
+    /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
     /// @par Examples
     /// The following code example demonstrate the use of light_button control with bitmap.
     /// @include bitmap_light_button.cpp
@@ -91,11 +63,11 @@ namespace xtd {
       /// @return One of the check_state enumeration values. The default value is unchecked.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
       /// @remarks The following table describes the xtd::forms::appearance of the light_button control in its different states for the normal and button style control light_button::appearance.
-      /// | Check_state   |  appearance::normal                                                    | appearance::button                     |
-      /// |---------------|------------------------------------------------------------------------|----------------------------------------|
-      /// | checked       | The light_button displays a check mark.                                   | The control appears sunken.            |
-      /// | unchecked     | The CheckBox is empty.                                                 | The control appears raised.            |
-      /// | indeterminate | The CheckBox displays a check mark and is shaded.                      | The control appears flat.              |
+      /// | Check_state   |  appearance::normal                                 | appearance::button          |
+      /// |---------------|-----------------------------------------------------|-----------------------------|
+      /// | checked       | The light_button displays a light on.               | The control appears sunken. |
+      /// | unchecked     | The light_button displays a light off.              | The control appears raised. |
+      /// | indeterminate | The light_button displays a light on and is shaded. | The control appears flat.   |
       /// @par Examples
       /// The following code example demonstrate the use of light_button check_state.
       /// @include light_button.cpp
@@ -103,19 +75,28 @@ namespace xtd {
       /// @brief Sets the state of the light_button.
       /// @param check_state One of the check_state enumeration values. The default value is unchecked.
       /// @remarks The following table describes the xtd::forms::appearance of the light_button control in its different states for the normal and button style control light_button::appearance.
-      /// | Check_state   |  appearance::normal                                                    | appearance::button                |
-      /// |--------------------|------------------------------------------------------------------------|----------------------------------------|
-      /// | checked         | The light_button displays a check mark.                        | The control appears sunken. |
-      /// | unchecked     | The CheckBox is empty.                                               | The control appears raised.   |
-      /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.        |
+      /// | Check_state   |  appearance::normal                                 | appearance::button          |
+      /// |---------------|-----------------------------------------------------|-----------------------------|
+      /// | checked       | The light_button displays a light on.               | The control appears sunken. |
+      /// | unchecked     | The light_button displays a light off.              | The control appears raised. |
+      /// | indeterminate | The light_button displays a light on and is shaded. | The control appears flat.   |
       /// @par Examples
       /// The following code example demonstrate the use of light_button check_state.
       /// @include light_button.cpp
       virtual light_button& check_state(forms::check_state check_state);
       
+      /// @brief Gets the default light off color of the light_button.
+      /// @return The default light off color of the light_button.
       virtual drawing::color default_light_off_color() const {return drawing::system_colors::window();}
+
+      /// @brief Gets the default light on color of the light_button.
+      /// @return The default light on color of the light_button.
       virtual drawing::color default_light_on_color() const {return drawing::system_colors::accent();}
       
+      /// @brief Gets the default size of the control.
+      /// @return The default size.
+      drawing::size default_size() const override {return {104, 25};}
+
       /// @brief Gets the horizontal and vertical alignment of the check mark on a light_button control.
       /// @return One of the content_alignment values. The default value is middle_left.
       virtual content_alignment light_align() const {return data_->light_align;}
@@ -123,13 +104,21 @@ namespace xtd {
       /// @param check_align One of the content_alignment values. The default value is middle_left.
       virtual light_button& light_align(content_alignment light_align);
 
+      /// @brief Gets the light off color for the light_button.
+      /// @return A xtd::drawing::color that represents the light off color of the light_button. The default is the value of the default_light_off_color property.
       virtual drawing::color light_off_color() const;
+      /// @brief Sets the light off color for the light_button.
+      /// @param value A xtd::drawing::color that represents the light off color of the light_button. The default is the value of the default_light_off_color property.
       virtual light_button& light_off_color(const drawing::color& value);
       /// @cond
       virtual light_button& light_off_color(nullptr_t);
       /// @endcond
 
+      /// @brief Gets the light on color for the light_button.
+      /// @return A xtd::drawing::color that represents the light on color of the light_button. The default is the value of the default_light_on_color property.
       virtual drawing::color light_on_color() const;
+      /// @brief Sets the light on color for the light_button.
+      /// @param value A xtd::drawing::color that represents the light on color of the light_button. The default is the value of the default_light_on_color property.
       virtual light_button& light_on_color(const drawing::color& value);
       /// @cond
       virtual light_button& light_on_color(nullptr_t);
@@ -148,12 +137,6 @@ namespace xtd {
       virtual light_button& three_state(bool three_state);
       /// @}
 
-      /// @name Methods
-      
-      /// @{
-      virtual void perform_click();
-      /// @}
-      
       /// @name Events
       
       /// @{
