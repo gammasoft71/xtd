@@ -58,14 +58,14 @@ public:
     image_button1.location({110, 50});
     image_button1.image(button_images::from_name("xtd"));
     
+    switch_button1.parent(tab_page_buttons);
+    switch_button1.location({10, 90});
+    
     light_button1.parent(tab_page_buttons);
     light_button1.checked(true);
-    light_button1.location({10, 90});
+    light_button1.location({110, 90});
     light_button1.text("Light");
-    
-    switch_button1.parent(tab_page_buttons);
-    switch_button1.location({110, 90});
-    
+
     radio_button1.parent(tab_page_buttons);
     radio_button1.auto_size(true);
     radio_button1.checked(true);
@@ -245,8 +245,8 @@ private:
   toggle_button toggle_button1;
   button flat_button1;
   button image_button1;
-  light_button light_button1;
   switch_button switch_button1;
+  light_button light_button1;
   radio_button radio_button1;
   radio_button radio_button2;
   check_box check_box1;
