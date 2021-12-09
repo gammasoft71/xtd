@@ -23,6 +23,7 @@ add_projects(
   h_scroll_bar
   label
   lcd_label
+  light_button
   link_label
   list_box
   loading_indicator
