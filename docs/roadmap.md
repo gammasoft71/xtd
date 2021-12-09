@@ -52,7 +52,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | fourteen_segment_display_render | Gammasoft |                                                 |
 | xtd.forms | label_render                    | Gammasoft |                                                 |
 | xtd.forms | lcd_label_render                | Gammasoft |                                                 |
-| xtd.forms | light_button                    | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.forms | light_button                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | light_button_render             | Gammasoft |                                                 |
 | xtd.forms | light_buttons                   | Bader     |                                                 |
 | xtd.forms | month_calender                  | Bader     |                                                 |
@@ -72,7 +72,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | switch_button_render            | Gammasoft |                                                 |
 | xtd.forms | themes                          | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | toggle_button_render            | Gammasoft |                                                 |
-| xtd.forms | toolbar_bar                     | Bader     |                                                 |
+| xtd.forms | toolbar_bar                     | Gammasoft | ![status](pictures/releases/status/started.png) |
 
 ## Release 0.3.0 (beta)
 
