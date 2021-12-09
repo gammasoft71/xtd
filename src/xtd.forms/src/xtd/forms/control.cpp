@@ -746,11 +746,12 @@ void control::create_handle() {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
   data_->handle = native::control::create(params);
   native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
-  on_handle_created(event_args::empty);
+  handles_[handle()] = this;
   for(auto child : data_->controls) {
     child.get().data_->parent = handle();
     child.get().create_handle();
   }
+  on_handle_created(event_args::empty);
   set_state(state::creating_handle, false);
 }
 
@@ -967,7 +968,6 @@ void control::on_got_focus(const event_args &e) {
 
 void control::on_handle_created(const event_args &e) {
   if (parent().has_value()) data_->anchoring = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
-  handles_[handle()] = this;
   if (get_state(state::client_size_setted)) {
     native::control::maximum_client_size(handle(), maximum_client_size());
     native::control::minimum_client_size(handle(), minimum_client_size());
