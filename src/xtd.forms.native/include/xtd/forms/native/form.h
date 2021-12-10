@@ -90,6 +90,11 @@ namespace xtd {
         /// @param menu A menu handle that represents the menu to display in the form.
         /// @warning Internal use only
         static void menu(intptr_t control, intptr_t menu);
+        /// @brief Sets form opacity.
+        /// @param control Control window handle.
+        /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
+        /// @warning Internal use only
+        static void opacity(intptr_t control, double opacity);
         /// @brief Restore form in normal state (not minimized, not maximized and not full screen).
         /// @param control Control window handle.
         /// @warning Internal use only
@@ -106,11 +111,11 @@ namespace xtd {
         /// @param control Control window handle.
         /// @warning Internal use only
         static int32_t show_sheet_dialog(intptr_t control);
-        /// @brief Sets form opacity.
+        /// @brief Sets the tool_bar that is displayed in the form.
         /// @param control Control window handle.
-        /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
+        /// @param tool_bar A tool bar handle that represents the tool bar to display in the form.
         /// @warning Internal use only
-        static void opacity(intptr_t control, double opacity);
+        static void tool_bar(intptr_t control, intptr_t tool_bar);
         /// @brief Set virtual size
         /// @param control Control window handle.
         /// @param size A virtual xtd::drawing::size.

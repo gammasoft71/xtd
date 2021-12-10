@@ -15,6 +15,7 @@
 #include "ibutton_control.h"
 #include "main_menu.h"
 #include "screen.h"
+#include "tool_bar.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -197,6 +198,18 @@ namespace xtd {
       /// @return Current form.
       virtual form& start_position(form_start_position value);
 
+      /// @brief Gets the tool_bar that is displayed in the form.
+      /// @return A tool_bar that represents the tool bar to display in the form.
+      virtual std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar() const {return tool_bar_;}
+      /// @brief Sets the tool_bar that is displayed in the form.
+      /// @param value A tool_bar that represents the tool bar to display in the form.
+      /// @return Current form.
+      virtual form& tool_bar(const forms::tool_bar& value);
+      /// @brief Sets the tool_bar that is displayed in the form.
+      /// @param value A tool_bar that represents the tool bar to display in the form.
+      /// @return Current form.
+      virtual form& tool_bar(nullptr_t);
+      
       /// @brief Gets a value indicating whether to display the form as a top-level window.
       /// @return true to display the form as a top-level window; otherwise, false. The default is true.
       /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to false has no effect.
@@ -366,6 +379,7 @@ namespace xtd {
       bool show_icon_ = true;
       bool show_in_taskbar_ = true;
       form_start_position start_position_ = form_start_position::windows_default_location;
+      std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar_;
       bool top_most_ = false;
       form_window_state window_state_ = form_window_state::normal;
     };

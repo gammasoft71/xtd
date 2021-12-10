@@ -180,6 +180,22 @@ form& form::top_level(bool top_level) {
   return *this;
 }
 
+form& form::tool_bar(const forms::tool_bar& value) {
+  if (!tool_bar_.has_value() || &tool_bar_.value().get() != &value) {
+    tool_bar_ = const_cast<forms::tool_bar&>(value);
+    if (is_handle_created()) native::form::tool_bar(handle(), tool_bar_.value().get().handle());
+  }
+  return *this;
+}
+
+form& form::tool_bar(nullptr_t) {
+  if (tool_bar_.has_value()) {
+    tool_bar_.reset();
+    if (is_handle_created()) native::form::tool_bar(handle(), 0);
+  }
+  return *this;
+}
+
 form& form::top_most(bool value) {
   if (top_most_ != value) {
     top_most_ = value;
@@ -436,11 +452,13 @@ void form::on_handle_created(const event_args &e) {
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
 
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().get().handle());
+  if (tool_bar_.has_value()) native::form::tool_bar(handle(), tool_bar_.value().get().handle());
 }
 
 void form::on_handle_destroyed(const event_args &e) {
   container_control::on_handle_destroyed(e);
   native::form::menu(handle(), 0);
+  native::form::tool_bar(handle(), 0);
 }
 
 void form::on_layout(const event_args& e) {
