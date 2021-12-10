@@ -56,7 +56,7 @@ const ustring& text_box::text() const {
 
 control& text_box::text(const ustring& text) {
   if (control::text() != text) {
-    control::text(text);
+    set_text(text);
     if (!use_system_password_char_ && password_char_) {
       if (is_handle_created()) native::text_box::text(handle(), "");
       for (size_t count = 0; count < text.size(); count++)
