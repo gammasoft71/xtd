@@ -54,7 +54,7 @@ namespace guidgen {
     }
     
     static string get_version() {
-      return ustring::format("guidgen version {}, © {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
+      return ustring::format("guidgen version {}, (c) {:L} by Gammasoft", environment::version(), chrono::system_clock::now());
     }
 
     static bool process_arguments(const vector<ustring>& args, string& format, int& count, bool& show_version, bool& show_help) {
