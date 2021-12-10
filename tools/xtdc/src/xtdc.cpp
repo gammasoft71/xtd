@@ -355,7 +355,7 @@ namespace xtdc_command {
     }
 
     static string get_version() noexcept {
-      return ustring::format("xtdc version {}, © {:L} by Gammasoft", get_version_number(), chrono::system_clock::now());
+      return ustring::format("xtdc version {}, (c) {:L} by Gammasoft", get_version_number(), chrono::system_clock::now());
     }
 
     static string get_version_number() noexcept {
