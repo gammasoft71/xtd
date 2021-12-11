@@ -19,12 +19,12 @@ namespace examples {
       tool_bar1.parent(*this);
     }
     
+  private:
     void on_tool_bar_item_click(object& sender, const event_args& e) {
       list_box1.items().push_back(ustring::format("{} clicked", as<tool_bar_button>(sender).text()));
       list_box1.selected_index(list_box1.items().size() - 1);
     }
     
-  private:
     list_box list_box1;
     forms::tool_bar tool_bar1;
     
