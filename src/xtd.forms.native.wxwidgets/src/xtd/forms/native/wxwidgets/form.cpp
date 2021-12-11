@@ -201,7 +201,7 @@ int32_t form::show_sheet_dialog(intptr_t control) {
 #endif
 }
 
-#include <wx/artprov.h>
+//#include <wx/artprov.h>
 
 void form::tool_bar(intptr_t control, intptr_t tool_bar) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
@@ -210,6 +210,7 @@ void form::tool_bar(intptr_t control, intptr_t tool_bar) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
+  /*
   control_handler* hwnd = reinterpret_cast<control_handler*>(tool_bar);
   if (tool_bar) {
     dynamic_cast<wxToolBar*>(hwnd->control())->Reparent(reinterpret_cast<control_handler*>(control)->control());
@@ -219,6 +220,7 @@ void form::tool_bar(intptr_t control, intptr_t tool_bar) {
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? dynamic_cast<wxToolBar*>(hwnd->control()) : nullptr);
 
   if (tool_bar) dynamic_cast<wxToolBar*>(hwnd->control())->Realize();
+  */
 }
 
 void form::end_dialog(intptr_t control, int32_t result) {
