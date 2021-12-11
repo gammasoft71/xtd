@@ -18,6 +18,7 @@ namespace guidgen_gui {
       using namespace xtd::forms;
       
       client_size({645, 350});
+      minimum_client_size(client_size());
       controls().push_back_range({count_label_, count_numeric_up_down_, format_label_, format_choice_, generate_button_, result_text_box_});
       text("Guid generator"_t);
       
