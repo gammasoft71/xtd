@@ -211,7 +211,7 @@ void form::tool_bar(intptr_t control, intptr_t tool_bar) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  throw not_implemented_exception(csf_);
+  if (tool_bar) throw not_implemented_exception(csf_);
   /*
   control_handler* hwnd = reinterpret_cast<control_handler*>(tool_bar);
   if (tool_bar) {
