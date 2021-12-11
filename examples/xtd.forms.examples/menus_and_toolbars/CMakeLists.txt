@@ -9,6 +9,7 @@ add_projects(
 #  context_menu_strip
 #  menu_strip
 #  status_strip
+  tool_bar
 #  tool_strip
 # tool_strip_container
 )
