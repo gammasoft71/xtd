@@ -1,6 +1,7 @@
 #include <chrono>
 #include <thread>
 #include <xtd/argument_exception.h>
+#include <xtd/not_implemented_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
@@ -210,6 +211,7 @@ void form::tool_bar(intptr_t control, intptr_t tool_bar) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
+  throw not_implemented_exception(csf_);
   /*
   control_handler* hwnd = reinterpret_cast<control_handler*>(tool_bar);
   if (tool_bar) {
