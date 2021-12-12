@@ -21,6 +21,7 @@ namespace {
       case picture_box_size_mode::center_image: return xtd::forms::image_layout::center;
       case picture_box_size_mode::zoom: return xtd::forms::image_layout::zoom;
     }
+    return xtd::forms::image_layout::none;
   }
 }
 
