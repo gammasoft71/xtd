@@ -42,7 +42,7 @@ control& tab_page::text(const ustring& text) {
   if (control::text() != text) {
     if (is_handle_created() && parent().has_value()) native::tab_page::text(handle(), text);
   }
-  return control::text(text);
+  return set_text(text);
 }
 
 void tab_page::destroy_handle() {

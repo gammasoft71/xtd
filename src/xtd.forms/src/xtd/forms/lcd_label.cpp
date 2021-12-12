@@ -742,7 +742,7 @@ control& lcd_label::text(const xtd::ustring& value) {
     for (size_t index = 0; index < str.size(); index++)
       digits_[index]->set_character(str[index]);
     set_digits_params();
-    control::text(value);
+    set_text(value);
     resume_layout();
   }
   return *this;
