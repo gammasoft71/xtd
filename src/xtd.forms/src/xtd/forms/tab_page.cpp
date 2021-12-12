@@ -41,8 +41,9 @@ tab_page& tab_page::image_index(int32_t value) {
 control& tab_page::text(const ustring& text) {
   if (control::text() != text) {
     if (is_handle_created() && parent().has_value()) native::tab_page::text(handle(), text);
+    set_text(text);
   }
-  return set_text(text);
+  return *this;
 }
 
 void tab_page::destroy_handle() {
