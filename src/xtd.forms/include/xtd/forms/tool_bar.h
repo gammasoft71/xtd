@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 #include "button.h"
+#include "border_style.h"
 #include "image_list.h"
 #include "panel.h"
 #include "tool_bar_button.h"
@@ -23,7 +24,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of tool_bar control.
     /// @include tool_bar.cpp
-    class forms_export_ tool_bar : public panel {
+    class forms_export_ tool_bar : public control {
       class tool_bar_button_control : public xtd::forms::button {
       public:
         tool_bar_button_control() = default;
@@ -74,22 +75,23 @@ namespace xtd {
       /// @name Protetced methods
       
       /// @{
-
+      void on_paint(xtd::forms::paint_event_args& e) override;
       /// @}
 
       /// @cond
       /// @endcond
 
     private:
+      void fill();
+      
       void on_item_added(size_t pos, tool_bar_item_ref item);
       
       void on_item_updated(size_t pos, tool_bar_item_ref item);
       
       void on_item_removed(size_t pos, tool_bar_item_ref item);
-      
-      void fill();
-      
+
       struct data {
+        forms::border_style border_style;
         xtd::forms::image_list image_list;
         tool_bar_item_collection items;
         std::vector<std::shared_ptr<xtd::forms::control>> tool_bar_items;

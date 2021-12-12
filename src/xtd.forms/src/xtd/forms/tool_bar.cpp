@@ -1,13 +1,13 @@
 #include <xtd/as.h>
 #include <xtd/is.h>
 #include <xtd/drawing/system_pens.h>
+#include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/tool_bar.h"
 #include "../../../include/xtd/forms/tool_bar_images.h"
 
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
-
 
 void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
   control::on_paint(e);
@@ -19,29 +19,22 @@ void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
   e.graphics().draw_line(system_pens::gray_text(), point {left, top}, point {right, bottom});
 }
 
-
 tool_bar::tool_bar() {
   data_->items.item_added += {*this, &tool_bar::on_item_added};
   data_->items.item_updated += {*this, &tool_bar::on_item_updated};
   data_->items.item_removed += {*this, &tool_bar::on_item_removed};
   
   data_->image_list.image_size(tool_bar_images::size());
-  border_style(forms::border_style::none);
+  data_->border_style = forms::border_style::fixed_single;
   dock(xtd::forms::dock_style::top);
+  padding(2);
   size(default_size());
-  height(tool_bar_images::size().height() + 8);
+  height(tool_bar_images::size().height() + 10);
 }
 
-void tool_bar::on_item_added(size_t pos, tool_bar_item_ref item) {
-  fill();
-}
-
-void tool_bar::on_item_updated(size_t pos, tool_bar_item_ref item) {
-  fill();
-}
-
-void tool_bar::on_item_removed(size_t pos, tool_bar_item_ref item) {
-  fill();
+void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
+  control::on_paint(e);
+  control_paint::draw_border_from_back_color(e.graphics(), data_->border_style, back_color(), e.clip_rectangle());
 }
 
 void tool_bar::fill() {
@@ -60,7 +53,7 @@ void tool_bar::fill() {
       button_control->flat_style(xtd::forms::flat_style::flat);
       button_control->flat_appearance().border_size(0);
       button_control->image_align(content_alignment::middle_center);
-      button_control->width(data_->image_list.image_size().width() + 8);
+      button_control->width(data_->image_list.image_size().width() + 6);
       
       if (button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
       //button_control->text(button_item.text());
@@ -74,6 +67,18 @@ void tool_bar::fill() {
       data_->tool_bar_items.push_back(separator_control);
     }
   }
+}
+
+void tool_bar::on_item_added(size_t pos, tool_bar_item_ref item) {
+  fill();
+}
+
+void tool_bar::on_item_updated(size_t pos, tool_bar_item_ref item) {
+  fill();
+}
+
+void tool_bar::on_item_removed(size_t pos, tool_bar_item_ref item) {
+  fill();
 }
 
 const xtd::forms::image_list& tool_bar::image_list() const {
