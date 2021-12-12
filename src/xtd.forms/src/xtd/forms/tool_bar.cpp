@@ -34,7 +34,8 @@ tool_bar::tool_bar() {
 
 void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
   control::on_paint(e);
-  control_paint::draw_border_from_back_color(e.graphics(), data_->border_style, back_color(), e.clip_rectangle());
+  if (control_appearance() == forms::control_appearance::standard)
+    control_paint::draw_border_from_back_color(e.graphics(), data_->border_style, back_color(), e.clip_rectangle());
 }
 
 void tool_bar::fill() {

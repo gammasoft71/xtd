@@ -7,6 +7,7 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/pens.h>
 #include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/user_control.h"
 
 using namespace xtd;
@@ -25,7 +26,8 @@ user_control& user_control::auto_size_mode(forms::auto_size_mode value) {
 user_control& user_control::border_style(forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;
-    recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    else invalidate();
   }
   return *this;
 }
@@ -36,8 +38,10 @@ forms::create_params user_control::create_params() const {
   create_params.class_name("usercontrol");
   create_params.style(create_params.style() | WS_CLIPSIBLINGS);
   
-  if (border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (control_appearance() == forms::control_appearance::system) {
+    if (border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+    else if (border_style_ != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  }
   
   return create_params;
 }
@@ -46,4 +50,10 @@ void user_control::on_layout(const event_args& e) {
   if (!application::message_loop()) return;
   scrollable_control::on_layout(e);
   if (is_handle_created() && auto_scroll()) native::user_control::virtual_size(handle(), display_rectangle().size());
+}
+
+void user_control::on_paint(paint_event_args& e) {
+  container_control::on_paint(e);
+  if (control_appearance() == forms::control_appearance::standard)
+    control_paint::draw_border_from_back_color(e.graphics(), border_style(), back_color(), e.clip_rectangle());
 }

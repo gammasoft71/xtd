@@ -11,6 +11,7 @@
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/label.h"
 #include "../../../include/xtd/forms/screen.h"
 
@@ -54,9 +55,10 @@ forms::create_params label::create_params() const {
   create_params.class_name("label");
   create_params.style(create_params.style() | SS_LEFT);
 
-  if (border_style_ == xtd::forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style_ == xtd::forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  if (flat_style_ != xtd::forms::flat_style::system) create_params.style(create_params.style() | SS_OWNERDRAW);
+  if (flat_style_ == xtd::forms::flat_style::system) {
+    if (border_style_ == xtd::forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+    else if (border_style_ != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  } else create_params.style(create_params.style() | SS_OWNERDRAW);
 
   switch (text_align_) {
     case content_alignment::top_left: create_params.style(create_params.style() | SS_TOP | SS_LEFT); break;
@@ -84,7 +86,9 @@ void label::on_font_changed(const xtd::event_args& e) {
 }
 
 void label::on_paint(paint_event_args& e) {
+  control::on_paint(e);
   if (flat_style_ != xtd::forms::flat_style::system) {
+    control_paint::draw_border_from_back_color(e.graphics(), border_style(), back_color(), e.clip_rectangle());
     xtd::drawing::string_format string_format;
     switch (text_align_) {
       case content_alignment::top_left: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::near); break;
@@ -100,7 +104,6 @@ void label::on_paint(paint_event_args& e) {
     }
     e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
   }
-  control::on_paint(e);
 }
 
 void label::on_text_align_changed(const xtd::event_args& e) {

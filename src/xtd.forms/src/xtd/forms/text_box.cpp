@@ -89,7 +89,7 @@ forms::create_params text_box::create_params() const {
   create_params.class_name("textbox");
   
   if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style() == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
 
   if (accepts_return()) create_params.style(create_params.style() | ES_WANTRETURN);
   if (accepts_tab()) create_params.style(create_params.style() | ES_WANTTAB);

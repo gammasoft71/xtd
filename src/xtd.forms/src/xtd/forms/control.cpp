@@ -279,6 +279,18 @@ control& control::context_menu(nullptr_t) {
   return *this;
 }
 
+forms::control_appearance control::control_appearance() const {
+  return data_->control_appearance;
+}
+
+control& control::control_appearance(forms::control_appearance value) {
+  if (data_->control_appearance != value) {
+    data_->control_appearance = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 control::control_collection& control::controls() {
   return data_->controls;
 }
