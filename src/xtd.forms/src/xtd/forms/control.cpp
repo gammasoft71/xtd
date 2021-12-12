@@ -967,7 +967,6 @@ void control::on_got_focus(const event_args &e) {
 }
 
 void control::on_handle_created(const event_args &e) {
-  if (parent().has_value()) data_->anchoring = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
   if (get_state(state::client_size_setted)) {
     native::control::maximum_client_size(handle(), maximum_client_size());
     native::control::minimum_client_size(handle(), minimum_client_size());
@@ -990,6 +989,8 @@ void control::on_handle_created(const event_args &e) {
   data_->client_size = native::control::client_size(handle());
   data_->location = native::control::location(handle());
   data_->size = native::control::size(handle());
+
+  if (parent().has_value()) data_->anchoring = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
 
   if (can_raise_events()) handle_created(*this, e);
 
