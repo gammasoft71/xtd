@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd::forms
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms  menus_and_toolbars
     class tool_bar_separator : public tool_bar_item {
     public:
       /// @name Constructors
