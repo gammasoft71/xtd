@@ -1,10 +1,24 @@
 #include <xtd/as.h>
 #include <xtd/is.h>
+#include <xtd/drawing/system_pens.h>
 #include "../../../include/xtd/forms/tool_bar.h"
 #include "../../../include/xtd/forms/tool_bar_images.h"
 
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
+
+
+void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
+  control::on_paint(e);
+  auto left = e.clip_rectangle().width() / 2;
+  auto top = 4;
+  auto right = left;
+  auto bottom = e.clip_rectangle().height() - 4;
+
+  e.graphics().draw_line(system_pens::gray_text(), point {left, top}, point {right, bottom});
+}
+
 
 tool_bar::tool_bar() {
   data_->items.item_added += {*this, &tool_bar::on_item_added};

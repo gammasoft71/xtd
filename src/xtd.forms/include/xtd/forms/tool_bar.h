@@ -43,6 +43,8 @@ namespace xtd {
       class tool_bar_separator_control : public xtd::forms::control {
       public:
         tool_bar_separator_control() = default;
+      protected:
+        void on_paint(paint_event_args& e) override;
       };
       
     public:
