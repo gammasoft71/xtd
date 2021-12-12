@@ -15,8 +15,10 @@ void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
   auto top = 4;
   auto right = left;
   auto bottom = e.clip_rectangle().height() - 4;
+  auto percent_of_color = 1.0/3;
+  auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
 
-  e.graphics().draw_line(system_pens::gray_text(), point {left, top}, point {right, bottom});
+  e.graphics().draw_line(color, point {left, top}, point {right, bottom});
 }
 
 tool_bar::tool_bar() {
