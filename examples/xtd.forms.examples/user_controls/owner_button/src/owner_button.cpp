@@ -11,8 +11,8 @@ namespace examples {
       auto accentuate_color = [](const color& c, float percent) {
         return application::dark_mode_enabled() ? control_paint::light(c, percent) : control_paint::dark(c, percent);
       };
-      auto background_color = back_color_.value_or(theme_colors::current_theme().control());
-      auto foreground_color = fore_color_.value_or(theme_colors::current_theme().control_text());
+      auto background_color = get_back_color().value_or(theme_colors::current_theme().control());
+      auto foreground_color = get_fore_color().value_or(theme_colors::current_theme().control_text());
       auto button_color = accentuate_color(background_color, .05);
       auto border_color = accentuate_color(background_color, .15);
       auto text_color = foreground_color;
