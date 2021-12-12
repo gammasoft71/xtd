@@ -141,7 +141,7 @@ forms::create_params list_box::create_params() const {
   //if (data_->sorted) create_params.style(create_params.style() | LBS_SORT);
 
   if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (data_->border_style == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  else if (data_->border_style != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
 
   return create_params;
 }

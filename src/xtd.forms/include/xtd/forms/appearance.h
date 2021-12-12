@@ -18,7 +18,7 @@ namespace xtd {
     enum class appearance {
       /// @brief The default appearance defined by the control class.
       normal = 0,
-      /// @brief The appearance of a  button.
+      /// @brief The appearance of a button.
       button = 1,
       /// @brief The appearance of a switch button.
       switch_button = 2,

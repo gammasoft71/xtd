@@ -60,6 +60,7 @@ namespace xtd {
       /// }
       
     private:
+      using control::control_appearance;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::system;
     };
   }

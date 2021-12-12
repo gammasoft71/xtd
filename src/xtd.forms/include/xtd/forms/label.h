@@ -96,6 +96,7 @@ namespace xtd {
       /// @}
 
     private:
+      using control::control_appearance;
       xtd::forms::border_style border_style_ = xtd::forms::border_style::none;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
       xtd::forms::content_alignment text_align_ = xtd::forms::content_alignment::top_left;

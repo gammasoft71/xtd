@@ -58,6 +58,7 @@ add_sources(
   include/xtd/forms/content_alignment.h
   include/xtd/forms/context_menu.h
   include/xtd/forms/control.h
+  include/xtd/forms/control_appearance.h
   include/xtd/forms/control_event_args.h
   include/xtd/forms/control_event_handler.h
   include/xtd/forms/control_layout_style.h

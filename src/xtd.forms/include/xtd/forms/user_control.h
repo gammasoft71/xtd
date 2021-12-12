@@ -56,8 +56,8 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const override;
-      
       void on_layout(const event_args& e) override;
+      void on_paint(paint_event_args& e) override;
       /// @}
 
     private:

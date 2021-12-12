@@ -27,6 +27,7 @@
 #include "bounds_specified.h"
 #include "component.h"
 #include "context_menu.h"
+#include "control_appearance.h"
 #include "control_event_handler.h"
 #include "control_ref.h"
 #include "control_styles.h"
@@ -390,6 +391,19 @@ namespace xtd {
       /// @param value A xtd::forms::context_menu that represents the context menu to display in the control.
       /// @return Current control.
       virtual control& context_menu(nullptr_t);
+
+      /// @brief Gets control appearance.
+      /// @return One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
+      /// @Remarks The control appearance determine how the control is drawed :
+      /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
+      /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
+      virtual forms::control_appearance control_appearance() const;
+      /// @brief Sets control appearance.
+      /// @param value One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
+      /// @Remarks The control appearance determine how the control is drawed :
+      /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
+      /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
+      virtual control& control_appearance(forms::control_appearance value);
 
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
@@ -1841,6 +1855,7 @@ namespace xtd {
         bool can_raise_events = true;
         drawing::rectangle client_rectangle;
         drawing::size client_size;
+        forms::control_appearance control_appearance = forms::control_appearance::standard;
         control_collection controls;
         std::optional<std::reference_wrapper<xtd::forms::context_menu>> context_menu;
         std::optional<forms::cursor> cursor;

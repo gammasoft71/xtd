@@ -214,6 +214,8 @@ namespace xtd {
       /// @endcond
 
     private:
+      using control::control_appearance;
+
       struct data {
         bool auto_ellipsis = false;
         xtd::forms::flat_button_appearance flat_appearance;

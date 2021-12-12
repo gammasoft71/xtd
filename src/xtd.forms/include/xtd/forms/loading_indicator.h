@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
-#include "border_style.h"
 #include "content_alignment.h"
 #include "loading_indicator_style.h"
 
