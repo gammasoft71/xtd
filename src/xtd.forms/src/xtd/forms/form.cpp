@@ -561,6 +561,9 @@ void form::internal_set_window_state() {
 void form::create_system_tool_bar() {
   if (!tool_bar_.has_value()) return;
 
+  // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
+  auto prev_client_size = client_size();
+  
   system_tool_bar_ = make_shared<system_tool_bar>();
   system_tool_bar_->parent(*this);
   system_tool_bar_->image_list(tool_bar_.value().get().image_list());
@@ -569,12 +572,15 @@ void form::create_system_tool_bar() {
   if (native::form::tool_bar(handle(), system_tool_bar_->handle())) {
     if (tool_bar_.value().get().parent().has_value()) system_tool_bar_previous_parent_ = &tool_bar_.value().get().parent().value().get();
     tool_bar_.value().get().parent(nullptr);
-    perform_layout();
   } else {
     system_tool_bar_->parent(nullptr);
     system_tool_bar_.reset();
   }
+
+  // Workaround : Force the client size with the previously saved client size.
+  client_size(prev_client_size);
 }
+
 void form::destroy_system_tool_bar() {
   if (!system_tool_bar_) return;
   native::form::tool_bar(handle(), 0);
