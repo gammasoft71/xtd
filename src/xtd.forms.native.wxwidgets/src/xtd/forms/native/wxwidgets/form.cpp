@@ -202,27 +202,25 @@ int32_t form::show_sheet_dialog(intptr_t control) {
 #endif
 }
 
-//#include <wx/artprov.h>
+#include <wx/artprov.h>
 
-void form::tool_bar(intptr_t control, intptr_t tool_bar) {
+bool form::tool_bar(intptr_t control, intptr_t tool_bar) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (tool_bar != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have tool bar"_t, current_stack_frame_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return;
-  }
-  if (tool_bar) throw not_implemented_exception(csf_);
-  /*
-  control_handler* hwnd = reinterpret_cast<control_handler*>(tool_bar);
-  if (tool_bar) {
-    dynamic_cast<wxToolBar*>(hwnd->control())->Reparent(reinterpret_cast<control_handler*>(control)->control());
-     dynamic_cast<wxToolBar*>(hwnd->control())->AddTool(wxID_SAVE, "&Save", wxArtProvider::GetBitmap(wxART_FILE_SAVE, wxART_TOOLBAR, {32, 32}));
+    return false;
   }
 
-  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? dynamic_cast<wxToolBar*>(hwnd->control()) : nullptr);
+//#if !defined(__APPLE__)
+//  return false;
+//#endif
 
-  if (tool_bar) dynamic_cast<wxToolBar*>(hwnd->control())->Realize();
-  */
+  //if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_SAVE, "&Save", wxArtProvider::GetBitmap(wxART_FILE_SAVE, wxART_TOOLBAR, {32, 32}));
+ 
+  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control()) : nullptr);
+  if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->Realize();
+  return true;
 }
 
 void form::end_dialog(intptr_t control, int32_t result) {

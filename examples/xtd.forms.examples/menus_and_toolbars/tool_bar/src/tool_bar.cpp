@@ -17,6 +17,7 @@ namespace examples {
       
       tool_bar1.items().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar_separator2, about_tool_bar_button});
       tool_bar1.parent(*this);
+      tool_bar(tool_bar1);
     }
     
   private:
