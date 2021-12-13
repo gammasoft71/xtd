@@ -3,7 +3,6 @@
 #include <xtd/drawing/system_pens.h>
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/tool_bar.h"
-#include "../../../include/xtd/forms/tool_bar_images.h"
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -17,7 +16,6 @@ void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
   auto bottom = e.clip_rectangle().height() - 4;
   auto percent_of_color = 1.0/3;
   auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
-
   e.graphics().draw_line(color, point {left, top}, point {right, bottom});
 }
 
@@ -26,12 +24,12 @@ tool_bar::tool_bar() {
   data_->items.item_updated += {*this, &tool_bar::on_item_updated};
   data_->items.item_removed += {*this, &tool_bar::on_item_removed};
   
-  data_->image_list.image_size(tool_bar_images::size());
+  data_->image_list.image_size(environment::os_version().is_windows_platform() ? drawing::size {16, 16} : drawing::size {24, 24});
   data_->border_style = forms::border_style::fixed_single;
   dock(xtd::forms::dock_style::top);
   padding(2);
   size(default_size());
-  height(tool_bar_images::size().height() + 10);
+  height(data_->image_list.image_size().height() + 10);
 }
 
 void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
@@ -95,7 +93,7 @@ xtd::forms::image_list& tool_bar::image_list() {
 xtd::forms::tool_bar& tool_bar::image_list(const xtd::forms::image_list& value) {
   if (data_->image_list != value) {
     data_->image_list = value;
-    height(tool_bar_images::size().height() + 8);
+    height(data_->image_list.image_size().height() + 8);
   }
   return *this;
 }

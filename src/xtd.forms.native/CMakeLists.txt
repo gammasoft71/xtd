@@ -84,6 +84,7 @@ add_sources(
   include/xtd/forms/native/text_box.h
   include/xtd/forms/native/timer.h
   include/xtd/forms/native/toggle_button.h
+  include/xtd/forms/native/tool_bar.h
   include/xtd/forms/native/toolkit.h
   include/xtd/forms/native/track_bar.h
   include/xtd/forms/native/track_bar_styles.h

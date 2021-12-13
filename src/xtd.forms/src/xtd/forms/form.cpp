@@ -1,6 +1,8 @@
 #include <random>
 #include <stdexcept>
+#include <xtd/as.h>
 #include <xtd/invalid_operation_exception.h>
+#include <xtd/is.h>
 #include <xtd/literals.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/system_icons.h>
@@ -9,6 +11,7 @@
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/form.h>
+#include <xtd/forms/native/tool_bar.h>
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
@@ -20,6 +23,23 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+
+class form::system_tool_bar : public control {
+public:
+  system_tool_bar() {
+  }
+  
+protected:
+  forms::create_params create_params() const override {
+    forms::create_params create_params = control::create_params();
+    
+    create_params.class_name("toolbar");
+    
+    return create_params;
+  }
+  
+private:
+};
 
 std::optional<std::reference_wrapper<form>> form::active_form_;
 
@@ -183,15 +203,15 @@ form& form::top_level(bool top_level) {
 form& form::tool_bar(const forms::tool_bar& value) {
   if (!tool_bar_.has_value() || &tool_bar_.value().get() != &value) {
     tool_bar_ = const_cast<forms::tool_bar&>(value);
-    if (is_handle_created()) native::form::tool_bar(handle(), tool_bar_.value().get().handle());
+    if (is_handle_created()) create_system_tool_bar();
   }
   return *this;
 }
 
 form& form::tool_bar(nullptr_t) {
   if (tool_bar_.has_value()) {
+    if (is_handle_created()) destroy_system_tool_bar();
     tool_bar_.reset();
-    if (is_handle_created()) native::form::tool_bar(handle(), 0);
   }
   return *this;
 }
@@ -452,13 +472,12 @@ void form::on_handle_created(const event_args &e) {
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
 
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().get().handle());
-  if (tool_bar_.has_value()) native::form::tool_bar(handle(), tool_bar_.value().get().handle());
+  if (tool_bar_.has_value()) create_system_tool_bar();
 }
 
 void form::on_handle_destroyed(const event_args &e) {
   container_control::on_handle_destroyed(e);
   native::form::menu(handle(), 0);
-  native::form::tool_bar(handle(), 0);
 }
 
 void form::on_layout(const event_args& e) {
@@ -497,4 +516,37 @@ void form::internal_set_window_state() {
       default: break;
     }
   }
+}
+
+void form::create_system_tool_bar() {
+  if (!tool_bar_.has_value()) return;
+
+  system_tool_bar_ = make_shared<system_tool_bar>();
+  system_tool_bar_->parent(*this);
+  
+  for (auto& item : tool_bar_.value().get().items()) {
+    if (is<tool_bar_button>(item.get())) {
+      auto& button_item = as<tool_bar_button>(item.get());
+      native::tool_bar::add_tool_bar_button(system_tool_bar_->handle(), button_item.text(), button_item.image_index() < tool_bar_.value().get().image_list().images().size() ? tool_bar_.value().get().image_list().images()[button_item.image_index()].handle() : image::empty.handle());
+    } else if (is<tool_bar_separator>(item.get())) {
+      native::tool_bar::add_tool_bar_separator(system_tool_bar_->handle());
+    }
+  }
+  
+  if (native::form::tool_bar(handle(), system_tool_bar_->handle())) {
+    if (tool_bar_.value().get().parent().has_value()) system_tool_bar_previouos_parent_ = &tool_bar_.value().get().parent().value().get();
+    tool_bar_.value().get().parent(nullptr);
+    perform_layout();
+  } else {
+    system_tool_bar_->parent(nullptr);
+    system_tool_bar_.reset();
+  }
+}
+void form::destroy_system_tool_bar() {
+  if (!system_tool_bar_) return;
+  native::form::tool_bar(handle(), 0);
+  system_tool_bar_->parent(nullptr);
+  system_tool_bar_.reset();
+  if (system_tool_bar_previouos_parent_) tool_bar_.value().get().parent(*system_tool_bar_previouos_parent_);
+  system_tool_bar_previouos_parent_ = nullptr;
 }
