@@ -10,6 +10,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/apptrait.h>
+#include <wx/toolbar.h>
 
 using namespace std::literals;
 using namespace std::this_thread;
@@ -218,7 +219,7 @@ bool form::tool_bar(intptr_t control, intptr_t tool_bar) {
 
   //if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_SAVE, "&Save", wxArtProvider::GetBitmap(wxART_FILE_SAVE, wxART_TOOLBAR, {32, 32}));
  
-  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control()) : nullptr);
+  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control()) : nullptr);
   if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->Realize();
   return true;
 }
