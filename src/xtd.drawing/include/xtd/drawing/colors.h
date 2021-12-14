@@ -2,6 +2,7 @@
 /// @brief Contains xtd::drawing::colors factory.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include <vector>
 #include <xtd/static.h>
 #include "../drawing_export.h"
 #include "color.h"
@@ -447,6 +448,9 @@ namespace xtd {
       
       /// @brief A system-defined color object.
       static xtd::drawing::color yellow_green();
+      
+      /// @brief Gets an array of known colors.
+      static std::vector<xtd::drawing::color> get_colors();
       /// @}
     };
   }

@@ -757,8 +757,8 @@ void control::create_handle() {
   auto params = create_params();
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
   data_->handle = native::control::create(params);
-  native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
   handles_[handle()] = this;
+  native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
   for(auto child : data_->controls) {
     child.get().data_->parent = handle();
     child.get().create_handle();
@@ -1091,7 +1091,7 @@ void control::on_paint_background(paint_event_args& e) {
 }
 
 void control::on_parent_back_color_changed(const event_args &e) {
-  if (!data_->back_color.has_value() && parent().has_value() && parent().value().get().back_color() != parent().value().get().default_back_color()) {
+  if (!data_->back_color.has_value() && parent().has_value() && parent().value().get().back_color() != back_color()) {
     if (!parent().value().get().data_->back_color.has_value()) recreate_handle();
     else if (is_handle_created()) native::control::back_color(handle(), parent().value().get().back_color());
     for (auto control : controls())
@@ -1105,7 +1105,7 @@ void control::on_parent_changed(const event_args &e) {
 }
 
 void control::on_parent_cursor_changed(const event_args &e) {
-  if (!data_->cursor.has_value() && parent().has_value() && parent().value().get().cursor() != parent().value().get().default_cursor()) {
+  if (!data_->cursor.has_value() && parent().has_value() && parent().value().get().cursor() != cursor()) {
     if (!parent().value().get().data_->cursor.has_value()) recreate_handle();
     else if (is_handle_created()) native::control::cursor(handle(), parent().value().get().cursor().handle());
     for (auto control : controls())
@@ -1123,7 +1123,7 @@ void control::on_parent_enabled_changed(const event_args &e) {
 }
 
 void control::on_parent_fore_color_changed(const event_args &e) {
-  if (!data_->fore_color.has_value() && parent().has_value() && parent().value().get().fore_color() != parent().value().get().default_fore_color()) {
+  if (!data_->fore_color.has_value() && parent().has_value() && parent().value().get().fore_color() != fore_color()) {
     if (!parent().value().get().data_->fore_color.has_value()) recreate_handle();
     else if (is_handle_created()) native::control::fore_color(handle(), parent().value().get().fore_color());
     for (auto control : controls())
@@ -1132,7 +1132,7 @@ void control::on_parent_fore_color_changed(const event_args &e) {
 }
 
 void control::on_parent_font_changed(const event_args &e) {
-  if (!data_->font.has_value() && parent().has_value() && parent().value().get().font() != parent().value().get().default_font()) {
+  if (!data_->font.has_value() && parent().has_value() && parent().value().get().font() != font()) {
     if (!parent().value().get().data_->font.has_value()) recreate_handle();
     else if (is_handle_created()) native::control::font(handle(), parent().value().get().font());
     for (auto control : controls())
