@@ -29,7 +29,7 @@ namespace xtd {
 
       /// @name Properties
       /// @{
-      drawing::size default_size() const override {return {120, 100};}
+      drawing::size default_size() const override {return {150, 120};}
 
       /// @brief Gets the range date from the calendar.
       /// @return pair of 'from date' and 'to date' value range.
