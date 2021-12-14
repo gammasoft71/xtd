@@ -188,8 +188,8 @@ namespace xtd {
       }
       
       static void draw_border_from_back_color(xtd::drawing::graphics& graphics, xtd::forms::border_style border, const xtd::drawing::color& back_color, const xtd::drawing::rectangle& rect) {
-        auto percent_of_color = back_color.get_lightness() < 1.0/2 ? 1.0/3 : 2.0/3;
-        draw_border(graphics, border, xtd::forms::control_paint::light(back_color, percent_of_color), rect, back_color.get_lightness() < 1.0/2);
+        auto percent_of_color = back_color.is_dark() ? 1.0/3 : 2.0/3;
+        draw_border(graphics, border, xtd::forms::control_paint::light(back_color, percent_of_color), rect, back_color.is_dark());
       }
 
       /// @brief Draws the specified image in a specified rectangle with specified layout.

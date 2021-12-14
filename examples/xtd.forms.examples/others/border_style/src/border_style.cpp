@@ -49,9 +49,15 @@ namespace examples {
       colors.selected_index_changed += [&] {
         auto color = as<drawing::color>(colors.selected_item().tag());
         colored_panel.back_color(color);
-        colored_panel.fore_color(color.get_lightness() < 1.0/2 ? control_paint::light(color, 2.0/3) : control_paint::dark(color, 2.0/3));
+        colored_panel.fore_color(color.is_dark() ? control_paint::light(color, 2.0/3) : control_paint::dark(color, 2.0/3));
+        lightness_label.text(ustring::format(("ligthness = {}"), color.get_lightness()));
       };
       colors.selected_index(0);
+      
+      lightness_label.parent(control_panel);
+      lightness_label.auto_size(true);
+      lightness_label.location({360, 37});
+      lightness_label.text(ustring::format(("ligthness = {}"), colored_panel.back_color().get_lightness()));
     }
     
   private:
@@ -73,6 +79,7 @@ namespace examples {
     panel control_panel;
     label choose_color_label;
     choice colors;
+    label lightness_label;
   };
 }
 
