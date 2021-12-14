@@ -60,6 +60,7 @@
 #include "forms/native/menu_item.h"
 #include "forms/native/message_box.h"
 #include "forms/native/message_box_styles.h"
+#include "forms/native/month_calendar.h"
 #include "forms/native/mouse_key.h"
 #include "forms/native/numeric_up_down.h"
 #include "forms/native/panel.h"
