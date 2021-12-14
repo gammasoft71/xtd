@@ -384,7 +384,7 @@ namespace xtd {
       bool show_in_taskbar_ = true;
       form_start_position start_position_ = form_start_position::windows_default_location;
       std::shared_ptr<system_tool_bar> system_tool_bar_;
-      control* system_tool_bar_previouos_parent_ = nullptr;
+      control* system_tool_bar_previous_parent_ = nullptr;
       std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar_;
       bool top_most_ = false;
       form_window_state window_state_ = form_window_state::normal;
