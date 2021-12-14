@@ -757,8 +757,8 @@ void control::create_handle() {
   auto params = create_params();
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
   data_->handle = native::control::create(params);
-  native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
   handles_[handle()] = this;
+  native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
   for(auto child : data_->controls) {
     child.get().data_->parent = handle();
     child.get().create_handle();
