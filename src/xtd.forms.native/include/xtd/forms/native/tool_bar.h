@@ -37,8 +37,8 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        static void add_tool_bar_button(intptr_t control, const xtd::ustring& text, intptr_t image);
-        static void add_tool_bar_separator(intptr_t control);
+        static intptr_t add_tool_bar_button(intptr_t control, const xtd::ustring& text, intptr_t image);
+        static intptr_t add_tool_bar_separator(intptr_t control);
         /// @}
       };
     }
