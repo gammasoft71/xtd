@@ -33,6 +33,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_light_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_list_box.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_loading_indicator.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_month_calendar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_numeric_up_down.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_panel.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_picture_box.h"
@@ -115,6 +116,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "lightbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_light_button(create_params)));
   if (create_params.class_name() == "listbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_list_box(create_params)));
   if (create_params.class_name() == "loadingindicator") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_loading_indicator(create_params)));
+  if (create_params.class_name() == "monthcalendar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_month_calendar(create_params)));
   if (create_params.class_name() == "numericupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_numeric_up_down(create_params)));
   if (create_params.class_name() == "panel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_panel(create_params)));
   if (create_params.class_name() == "picturebox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));

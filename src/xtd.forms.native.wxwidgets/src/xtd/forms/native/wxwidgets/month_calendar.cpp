@@ -8,10 +8,6 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t month_calendar::create() {
-  return reinterpret_cast<intptr_t>(new wx_month_calendar());
-}
-
 void month_calendar::value(const intptr_t control, const std::chrono::system_clock::time_point date) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {

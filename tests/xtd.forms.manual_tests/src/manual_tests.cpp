@@ -17,7 +17,7 @@ public:
      
     m_month_calendar.parent(*this);
     m_month_calendar.location({ 10, 10 });
-    m_month_calendar.size({ 150, 150 });
+    m_month_calendar.size({ 250, 200 });
     m_month_calendar.value(system_clock::now());
     m_month_calendar.range_date(system_clock::now() - months(3), system_clock::now() + months(3));
     m_month_calendar.value_changed += [](object&, const event_args& e) {
