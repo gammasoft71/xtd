@@ -106,6 +106,7 @@ namespace examples {
     color_editor() {
       border_style(forms::border_style::fixed_3d);
       size({300, 400});
+      minimum_size(size());
 
       label_alpha.parent(*this);
       label_alpha.location({10, 15});
@@ -118,6 +119,7 @@ namespace examples {
       track_bar_alpha.maximum(255);
       track_bar_alpha.size({190, 25});
       track_bar_alpha.tick_style(tick_style::none);
+      track_bar_alpha.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       track_bar_alpha.value_changed += [&] {
         color(drawing::color::from_argb(as<uint8_t>(track_bar_alpha.value()), color_.r(), color_.g(), color_.b()));
       };
@@ -126,6 +128,7 @@ namespace examples {
       numeric_up_down_alpha.bounds({240, 12, 50, 20});
       numeric_up_down_alpha.minimum(0);
       numeric_up_down_alpha.maximum(255);
+      numeric_up_down_alpha.anchor(anchor_styles::top | anchor_styles::right);
       numeric_up_down_alpha.value_changed += [&] {
         color(drawing::color::from_argb(as<uint8_t>(numeric_up_down_alpha.value()), color_.r(), color_.g(), color_.b()));
       };
@@ -141,6 +144,7 @@ namespace examples {
       track_bar_red.maximum(255);
       track_bar_red.size({190, 25});
       track_bar_red.tick_style(tick_style::none);
+      track_bar_red.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       track_bar_red.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), as<uint8_t>(track_bar_red.value()), color_.g(), color_.b()));
       };
@@ -149,6 +153,7 @@ namespace examples {
       numeric_up_down_red.bounds({240, 57, 50, 20});
       numeric_up_down_red.minimum(0);
       numeric_up_down_red.maximum(255);
+      numeric_up_down_red.anchor(anchor_styles::top | anchor_styles::right);
       numeric_up_down_red.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), as<uint8_t>(numeric_up_down_red.value()), color_.g(), color_.b()));
       };
@@ -164,6 +169,7 @@ namespace examples {
       track_bar_green.maximum(255);
       track_bar_green.size({190, 25});
       track_bar_green.tick_style(tick_style::none);
+      track_bar_green.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       track_bar_green.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), color_.r(), as<uint8_t>(track_bar_green.value()), color_.b()));
       };
@@ -172,6 +178,7 @@ namespace examples {
       numeric_up_down_green.bounds({240, 102, 50, 20});
       numeric_up_down_green.minimum(0);
       numeric_up_down_green.maximum(255);
+      numeric_up_down_green.anchor(anchor_styles::top | anchor_styles::right);
       numeric_up_down_green.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), color_.r(), as<uint8_t>(numeric_up_down_green.value()), color_.b()));
       };
@@ -187,6 +194,7 @@ namespace examples {
       track_bar_blue.maximum(255);
       track_bar_blue.size({190, 25});
       track_bar_blue.tick_style(tick_style::none);
+      track_bar_blue.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       track_bar_blue.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<uint8_t>(track_bar_blue.value())));
       };
@@ -195,6 +203,7 @@ namespace examples {
       numeric_up_down_blue.bounds({240, 147, 50, 20});
       numeric_up_down_blue.minimum(0);
       numeric_up_down_blue.maximum(255);
+      numeric_up_down_blue.anchor(anchor_styles::top | anchor_styles::right);
       numeric_up_down_blue.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<uint8_t>(numeric_up_down_blue.value())));
       };
@@ -204,7 +213,7 @@ namespace examples {
       panel_color_box.size({190, 190});
       panel_color_box.back_color(color_);
       panel_color_box.border_style(forms::border_style::fixed_3d);
-      //panel_color_box.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
+      panel_color_box.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
     }
     
     void color(const drawing::color& value) {
