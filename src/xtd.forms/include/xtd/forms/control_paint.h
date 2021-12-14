@@ -78,16 +78,21 @@ namespace xtd {
       static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle, xtd::forms::button_state state) {draw_button(graphics, rectangle.x(), rectangle.y(), rectangle.width(), rectangle.height(), state);}
       static void draw_button(xtd::drawing::graphics& graphics, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::button_state state);
 
+      
       static void draw_border(xtd::drawing::graphics& graphics, xtd::forms::border_style border, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect) {
+        draw_border(graphics, border, color, rect, false);
+      }
+
+      static void draw_border(xtd::drawing::graphics& graphics, xtd::forms::border_style border, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect, bool light) {
         if (border == xtd::forms::border_style::none) return;
         
-        auto percent_of_color = 1.0/3;
-        auto dark_color = color.get_lightness() < 0.5 ? xtd::forms::control_paint::light(color, percent_of_color) : xtd::forms::control_paint::dark(color, percent_of_color);
+        auto percent_of_color = 2.0/3;
+        auto dark_color = xtd::forms::control_paint::dark(color, percent_of_color);
         auto light_color = color;
         auto rect_border = xtd::drawing::rectangle::inflate(rect, xtd::drawing::size {-1, -1});
         
         if (border == xtd::forms::border_style::fixed_single) {
-          graphics.draw_rectangle(xtd::drawing::pen(dark_color, 1), rect_border);
+          graphics.draw_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), rect_border);
         } else if (border == xtd::forms::border_style::fixed_3d) {
           // top
           graphics.draw_line(xtd::drawing::pen(dark_color, 1), xtd::drawing::point {rect_border.left(), rect_border.top()}, xtd::drawing::point {rect_border.right(), rect_border.top()});
@@ -158,31 +163,33 @@ namespace xtd {
           // right
           graphics.draw_line(xtd::drawing::pen(dark_color, 1), xtd::drawing::point {rect_border.right(), rect_border.top()}, xtd::drawing::point {rect_border.right(), rect_border.bottom()});
           graphics.draw_line(xtd::drawing::pen(light_color, 1), xtd::drawing::point {rect_border.right() - 1, rect_border.top() + 1}, xtd::drawing::point {rect_border.right() - 1, rect_border.bottom() - 1});
-        } else if (border == xtd::forms::border_style::fixed_double) {
-          graphics.draw_rectangle(xtd::drawing::pen(dark_color, 1), rect_border);
-          graphics.draw_rectangle(xtd::drawing::pen(dark_color, 1), xtd::drawing::rectangle::inflate(xtd::drawing::rectangle::offset(rect_border, {2, 2}), {-4, -4}));
-        } else if (border == xtd::forms::border_style::dotted_single) {
-          xtd::drawing::pen dot_pen(dark_color, 1);
+        } if (border == xtd::forms::border_style::rounded_single) {
+          graphics.draw_rounded_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), rect_border, 4);
+        } else if (border == xtd::forms::border_style::dot_single) {
+          xtd::drawing::pen dot_pen(light ? light_color : dark_color, 1);
           dot_pen.dash_style(xtd::drawing::dash_style::dot);
           graphics.draw_rectangle(dot_pen, rect_border);
-        } else if (border == xtd::forms::border_style::dashed_single) {
-          xtd::drawing::pen dash_pen(dark_color, 1);
+        } else if (border == xtd::forms::border_style::dash_single) {
+          xtd::drawing::pen dash_pen(light ? light_color : dark_color, 1);
           dash_pen.dash_style(xtd::drawing::dash_style::dash);
           graphics.draw_rectangle(dash_pen, rect_border);
-        } else if (border == xtd::forms::border_style::dashed_dotted_single) {
-          xtd::drawing::pen dash_pen(dark_color, 1);
+        } else if (border == xtd::forms::border_style::dash_dot_single) {
+          xtd::drawing::pen dash_pen(light ? light_color : dark_color, 1);
           dash_pen.dash_style(xtd::drawing::dash_style::dash_dot);
           graphics.draw_rectangle(dash_pen, rect_border);
-        } else if (border == xtd::forms::border_style::dashed_dotted_dotted_single) {
-          xtd::drawing::pen dash_pen(dark_color, 1);
+        } else if (border == xtd::forms::border_style::dash_dot_dot_single) {
+          xtd::drawing::pen dash_pen(light ? light_color : dark_color, 1);
           dash_pen.dash_style(xtd::drawing::dash_style::dash_dot_dot);
           graphics.draw_rectangle(dash_pen, rect_border);
+        } else if (border == xtd::forms::border_style::fixed_double) {
+          graphics.draw_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), rect_border);
+          graphics.draw_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), xtd::drawing::rectangle::inflate(xtd::drawing::rectangle::offset(rect_border, {2, 2}), {-4, -4}));
         }
       }
       
       static void draw_border_from_back_color(xtd::drawing::graphics& graphics, xtd::forms::border_style border, const xtd::drawing::color& back_color, const xtd::drawing::rectangle& rect) {
-        auto percent_of_color = 1.0/4;
-        draw_border(graphics, border, back_color.get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color, percent_of_color) : xtd::forms::control_paint::dark(back_color, percent_of_color), rect);
+        auto percent_of_color = back_color.is_dark() ? 1.0/3 : 2.0/3;
+        draw_border(graphics, border, xtd::forms::control_paint::light(back_color, percent_of_color), rect, back_color.is_dark());
       }
 
       /// @brief Draws the specified image in a specified rectangle with specified layout.

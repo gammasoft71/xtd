@@ -8,6 +8,7 @@ add_projects(
   application_run
   auto_scroll
   bitmap_button
+  border_style
   button2
   button3
   button4
