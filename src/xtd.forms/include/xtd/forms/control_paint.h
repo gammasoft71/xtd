@@ -163,9 +163,8 @@ namespace xtd {
           // right
           graphics.draw_line(xtd::drawing::pen(dark_color, 1), xtd::drawing::point {rect_border.right(), rect_border.top()}, xtd::drawing::point {rect_border.right(), rect_border.bottom()});
           graphics.draw_line(xtd::drawing::pen(light_color, 1), xtd::drawing::point {rect_border.right() - 1, rect_border.top() + 1}, xtd::drawing::point {rect_border.right() - 1, rect_border.bottom() - 1});
-        } else if (border == xtd::forms::border_style::fixed_double) {
-          graphics.draw_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), rect_border);
-          graphics.draw_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), xtd::drawing::rectangle::inflate(xtd::drawing::rectangle::offset(rect_border, {2, 2}), {-4, -4}));
+        } if (border == xtd::forms::border_style::rounded_single) {
+          graphics.draw_rounded_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), rect_border, 4);
         } else if (border == xtd::forms::border_style::dot_single) {
           xtd::drawing::pen dot_pen(light ? light_color : dark_color, 1);
           dot_pen.dash_style(xtd::drawing::dash_style::dot);
@@ -182,6 +181,9 @@ namespace xtd {
           xtd::drawing::pen dash_pen(light ? light_color : dark_color, 1);
           dash_pen.dash_style(xtd::drawing::dash_style::dash_dot_dot);
           graphics.draw_rectangle(dash_pen, rect_border);
+        } else if (border == xtd::forms::border_style::fixed_double) {
+          graphics.draw_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), rect_border);
+          graphics.draw_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), xtd::drawing::rectangle::inflate(xtd::drawing::rectangle::offset(rect_border, {2, 2}), {-4, -4}));
         }
       }
       
