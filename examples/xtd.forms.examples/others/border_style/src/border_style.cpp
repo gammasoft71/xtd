@@ -9,9 +9,9 @@ namespace examples {
   public:
     form1() {
       text("Border style example");
-      client_size({690, 400});
-      maximum_client_size({690, 400});
-      minimum_client_size({690, 400});
+      client_size({700, 400});
+      maximum_client_size(client_size());
+      minimum_client_size(client_size());
 
       colored_panel.parent(*this);
       colored_panel.border_style(forms::border_style::fixed_3d);
@@ -19,16 +19,16 @@ namespace examples {
 
       label_with_none_border.border_style(forms::border_style::none).text_align(content_alignment::middle_center).text("none").location({20, 20}).size({150, 50}).parent(colored_panel);
       label_with_fixed_single_border.border_style(forms::border_style::fixed_single).text_align(content_alignment::middle_center).text("fixed_single").location({190, 20}).size({150, 50}).parent(colored_panel);
-      label_with_thin_sunken_border.border_style(forms::border_style::thin_sunken).text_align(content_alignment::middle_center).text("thin_sunken /\nfixed_3d").location({350, 20}).size({150, 50}).parent(colored_panel);
-      label_with_thin_raised_border.border_style(forms::border_style::thin_raised).text_align(content_alignment::middle_center).text("thin_raised").location({520, 20}).size({150, 50}).parent(colored_panel);
+      label_with_thin_sunken_border.border_style(forms::border_style::thin_sunken).text_align(content_alignment::middle_center).text("thin_sunken /\nfixed_3d").location({360, 20}).size({150, 50}).parent(colored_panel);
+      label_with_thin_raised_border.border_style(forms::border_style::thin_raised).text_align(content_alignment::middle_center).text("thin_raised").location({530, 20}).size({150, 50}).parent(colored_panel);
       label_with_bevel_sunken_border.border_style(forms::border_style::bevel_sunken).text_align(content_alignment::middle_center).text("bevel_sunken").location({20, 90}).size({150, 50}).parent(colored_panel);
       label_with_bevel_raised_border.border_style(forms::border_style::bevel_raised).text_align(content_alignment::middle_center).text("bevel_raised").location({190, 90}).size({150, 50}).parent(colored_panel);
-      label_with_etched_border.border_style(forms::border_style::etched).text_align(content_alignment::middle_center).text("etched").location({350, 90}).size({150, 50}).parent(colored_panel);
-      label_with_bump_border.border_style(forms::border_style::bump).text_align(content_alignment::middle_center).text("bump").location({520, 90}).size({150, 50}).parent(colored_panel);
+      label_with_etched_border.border_style(forms::border_style::etched).text_align(content_alignment::middle_center).text("etched").location({360, 90}).size({150, 50}).parent(colored_panel);
+      label_with_bump_border.border_style(forms::border_style::bump).text_align(content_alignment::middle_center).text("bump").location({530, 90}).size({150, 50}).parent(colored_panel);
       label_with_rounded_single_border.border_style(forms::border_style::rounded_single).text_align(content_alignment::middle_center).text("rounded_single").location({20, 160}).size({150, 50}).parent(colored_panel);
       label_with_dot_single_border.border_style(forms::border_style::dot_single).text_align(content_alignment::middle_center).text("dot_single").location({190, 160}).size({150, 50}).parent(colored_panel);
-      label_with_dash_single_border.border_style(forms::border_style::dash_single).text_align(content_alignment::middle_center).text("dash_single").location({350, 160}).size({150, 50}).parent(colored_panel);
-      label_with_dash_dot_single_border.border_style(forms::border_style::dash_dot_single).text_align(content_alignment::middle_center).text("dash_dot_single").location({520, 160}).size({150, 50}).parent(colored_panel);
+      label_with_dash_single_border.border_style(forms::border_style::dash_single).text_align(content_alignment::middle_center).text("dash_single").location({360, 160}).size({150, 50}).parent(colored_panel);
+      label_with_dash_dot_single_border.border_style(forms::border_style::dash_dot_single).text_align(content_alignment::middle_center).text("dash_dot_single").location({530, 160}).size({150, 50}).parent(colored_panel);
       label_with_dash_dot_dot_single_border.border_style(forms::border_style::dash_dot_dot_single).text_align(content_alignment::middle_center).text("dash_dot_dot_single").location({20, 230}).size({150, 50}).parent(colored_panel);
       label_with_fixed_double_border.border_style(forms::border_style::fixed_double).text_align(content_alignment::middle_center).text("fixed_double").location({190, 230}).size({150, 50}).parent(colored_panel);
 
