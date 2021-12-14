@@ -1,6 +1,7 @@
 #include <xtd/as.h>
 #include "../../../include/xtd/forms/link_label.h"
 #include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/screen.h"
 
 using namespace std;
@@ -211,6 +212,7 @@ void link_label::on_paint(paint_event_args& e) {
     index += line_index + 1;
     ++line_number;
   }
+  control_paint::draw_border(e.graphics(), border_style(), back_color(), e.clip_rectangle());
 }
 
 void link_label::on_text_align_changed(const event_args& e) {
