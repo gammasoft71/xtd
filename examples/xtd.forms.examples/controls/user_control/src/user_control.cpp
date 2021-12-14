@@ -16,7 +16,7 @@ namespace examples {
 
   class operation : public user_control {
   public:
-    operation() {size_ = default_size();}
+    operation() {size(default_size());}
     
     operation_status status() const {return status_;}
     void status(operation_status status) {
