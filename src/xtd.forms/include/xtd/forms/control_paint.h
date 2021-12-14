@@ -163,6 +163,9 @@ namespace xtd {
           // right
           graphics.draw_line(xtd::drawing::pen(dark_color, 1), xtd::drawing::point {rect_border.right(), rect_border.top()}, xtd::drawing::point {rect_border.right(), rect_border.bottom()});
           graphics.draw_line(xtd::drawing::pen(light_color, 1), xtd::drawing::point {rect_border.right() - 1, rect_border.top() + 1}, xtd::drawing::point {rect_border.right() - 1, rect_border.bottom() - 1});
+        } else if (border == xtd::forms::border_style::themed) {
+          graphics.draw_rectangle(xtd::drawing::pen(dark_color, 1), rect_border);
+          graphics.draw_rectangle(xtd::drawing::pen(light_color, 1), xtd::drawing::rectangle::inflate(xtd::drawing::rectangle::offset(rect_border, {1, 1}), {-2, -2}));
         } if (border == xtd::forms::border_style::rounded_single) {
           graphics.draw_rounded_rectangle(xtd::drawing::pen(light ? light_color : dark_color, 1), rect_border, 4);
         } else if (border == xtd::forms::border_style::dot_single) {
