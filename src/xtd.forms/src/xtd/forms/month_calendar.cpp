@@ -16,13 +16,13 @@ month_calendar::month_calendar() {
   size(default_size());
 }
 
-std::pair<std::chrono::system_clock::time_point, std::chrono::system_clock::time_point> xtd::forms::month_calendar::range_date() const {
+std::pair<std::chrono::system_clock::time_point, std::chrono::system_clock::time_point> xtd::forms::month_calendar::date_range() const {
   std::chrono::system_clock::time_point from_date{}, to_date{};
   native::month_calendar::get_date_range(handle(), from_date, to_date);
   return std::make_pair(from_date, to_date);
 }
 
-control& xtd::forms::month_calendar::range_date(const std::chrono::system_clock::time_point from_date, const std::chrono::system_clock::time_point to_date) {
+control& xtd::forms::month_calendar::date_range(const std::chrono::system_clock::time_point from_date, const std::chrono::system_clock::time_point to_date) {
   native::month_calendar::set_date_range(handle(), from_date, to_date);
   min_date(from_date);
   max_date(to_date);
