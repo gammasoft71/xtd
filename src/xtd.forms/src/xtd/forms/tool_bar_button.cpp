@@ -6,7 +6,15 @@ using namespace xtd::forms;
 tool_bar_button::tool_bar_button(const ustring& text) : text_(text) {
 }
 
+tool_bar_button::tool_bar_button(const ustring& text, const event_handler& on_click) : text_(text) {
+  click += on_click;
+}
+
 tool_bar_button::tool_bar_button(size_t image_index) : image_index_(image_index) {
+}
+
+tool_bar_button::tool_bar_button(size_t image_index, const event_handler& on_click) : image_index_(image_index) {
+  click += on_click;
 }
 
 tool_bar_button::tool_bar_button(const ustring& text, size_t image_index) : text_(text), image_index_(image_index) {

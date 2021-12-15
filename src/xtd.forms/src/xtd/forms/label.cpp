@@ -87,7 +87,7 @@ void label::on_font_changed(const xtd::event_args& e) {
 void label::on_paint(paint_event_args& e) {
   control::on_paint(e);
   if (flat_style_ != xtd::forms::flat_style::system) {
-    control_paint::draw_border_from_back_color(e.graphics(), border_style(), back_color(), e.clip_rectangle());
+    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), back_color(), e.clip_rectangle());
     xtd::drawing::string_format string_format;
     switch (text_align_) {
       case content_alignment::top_left: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::near); break;
