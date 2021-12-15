@@ -172,7 +172,7 @@ void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::draw
     auto target_ratio = as<float>(width) / height;
     auto image_ratio = as<float>(image.width()) / image.height();
     auto ratio = target_ratio > image_ratio ? as<float>(height) / image.height() : as<float>(width) / image.width();
-    auto image_rect = xtd::drawing::rectangle((width - image.width() * ratio) / 2, (height - image.height() * ratio) / 2, image.width() * ratio, image.height() * ratio);
+    auto image_rect = xtd::drawing::rectangle(as<int32_t>(width - image.width() * ratio) / 2, as<int32_t>(height - image.height() * ratio) / 2, as<int32_t>(image.width() * ratio), as<int32_t>(image.height() * ratio));
     graphics.draw_image(image, image_rect);
   }
 }
