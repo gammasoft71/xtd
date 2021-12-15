@@ -24,7 +24,8 @@ namespace xtd {
       /// @remarks Same as xtd::forms::border_style::fixed_3d.
       thin_sunken = 2,
       /// @brief A three-dimensional border.
-      fixed_3d = thin_sunken,
+      /// @remarks Same as xtd::forms::border_style::thin_sunken.
+     fixed_3d = thin_sunken,
       /// @brief A thin raised border.
       thin_raised = 3,
       /// @brief A bevel sunken border.
