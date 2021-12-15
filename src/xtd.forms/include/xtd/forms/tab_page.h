@@ -26,7 +26,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the tab_page class.
-      tab_page();
+      tab_page() = default;
       /// @}
 
       /// @name Properties

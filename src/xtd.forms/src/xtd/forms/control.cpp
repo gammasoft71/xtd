@@ -93,7 +93,6 @@ control::control() {
   set_state(state::enabled, true);
   set_state(state::visible, true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
-  data_->size = default_size();
   data_->controls.item_added += [&](size_t, reference_wrapper<control> item) {
     on_control_added(control_event_args(item.get()));
     item.get().data_->parent = data_->handle;
@@ -203,7 +202,7 @@ int32_t control::bottom() const {
 }
 
 drawing::rectangle control::bounds() const {
-  return {data_->location, data_->size};
+  return {location(), size()};
 }
 
 control& control::bounds(const drawing::rectangle& bounds) {
@@ -440,10 +439,10 @@ control& control::fore_color(nullptr_t) {
   return *this;
 }
 
-int32_t control::height() const {return data_->size.height();}
+int32_t control::height() const {return size().height();}
 
 control& control::height(int32_t height) {
-  if (data_->size.height() != height)
+  if (size().height() != height)
     set_bounds_core(0, 0, 0, height, bounds_specified::height);
   return *this;
 }
@@ -499,7 +498,7 @@ const drawing::size& control::maximum_client_size() const {
 control& control::maximum_client_size(const drawing::size& size) {
   if (data_->maximum_client_size != size) {
     data_->maximum_client_size = size;
-    client_size({data_->size.width() > data_->maximum_client_size.width() ? data_->maximum_client_size.width() : client_size().width(), data_->size.height() > data_->maximum_client_size.height() ? data_->maximum_client_size.height() : client_size().height()});
+    client_size({this->size().width() > maximum_client_size().width() ? data_->maximum_client_size.width() : client_size().width(), this->size().height() > maximum_client_size().height() ? maximum_client_size().height() : client_size().height()});
     if (handle()) native::control::maximum_client_size(handle(), data_->maximum_client_size);
   }
   return *this;
@@ -512,7 +511,7 @@ const drawing::size& control::maximum_size() const {
 control& control::maximum_size(const drawing::size& size) {
   if (data_->maximum_size != size) {
     data_->maximum_size = size;
-    this->size({data_->size.width() > data_->maximum_size.width() ? data_->maximum_size.width() : this->size().width(), data_->size.height() > data_->maximum_size.height() ? data_->maximum_size.height() : this->size().height()});
+    this->size({this->size().width() > maximum_size().width() ? maximum_size().width() : this->size().width(), this->size().height() > maximum_size().height() ? maximum_size().height() : this->size().height()});
     if (handle()) native::control::maximum_size(handle(), data_->maximum_size);
   }
   return *this;
@@ -525,7 +524,7 @@ const drawing::size& control::minimum_client_size() const {
 control& control::minimum_client_size(const drawing::size& size) {
   if (data_->minimum_client_size != size) {
     data_->minimum_client_size = size;
-    client_size({data_->size.width() < data_->minimum_client_size.width() ? data_->minimum_client_size.width() : client_size().width(), data_->size.height() < data_->minimum_client_size.height() ? data_->minimum_client_size.height() : client_size().height()});
+    client_size({this->size().width() < minimum_client_size().width() ? minimum_client_size().width() : client_size().width(), this->size().height() < minimum_client_size().height() ? minimum_client_size().height() : client_size().height()});
     if (handle()) native::control::minimum_client_size(handle(), data_->minimum_client_size);
   }
   return *this;
@@ -538,7 +537,7 @@ const drawing::size& control::minimum_size() const {
 control& control::minimum_size(const drawing::size& size) {
   if (data_->minimum_size != size) {
     data_->minimum_size = size;
-    this->size({data_->size.width() < data_->minimum_size.width() ? data_->minimum_size.width() : this->size().width(), data_->size.height() < data_->minimum_size.height() ? data_->minimum_size.height() : this->size().height()});
+    this->size({this->size().width() < minimum_size().width() ? minimum_size().width() : this->size().width(), this->size().height() < minimum_size().height() ? minimum_size().height() : this->size().height()});
     if (handle()) native::control::minimum_size(handle(), data_->minimum_size);
   }
   return *this;
@@ -614,12 +613,12 @@ int32_t control::right() const {
   return left() + width();
 }
 
-const drawing::size& control::size() const {
-  return data_->size;
+drawing::size control::size() const {
+  return data_->size.value_or(default_size());
 }
 
 control& control::size(const drawing::size& size) {
-  if (get_state(state::client_size_setted) || data_->size != size) {
+  if (get_state(state::client_size_setted) || this->size() != size) {
     set_state(state::client_size_setted, false);
     set_bounds_core(0, 0, size.width(), size.height(), bounds_specified::size);
   }
@@ -680,11 +679,11 @@ control& control::visible(bool visible) {
 }
 
 int32_t control::width() const {
-  return data_->size.width();
+  return size().width();
 }
 
 control& control::width(int32_t width) {
-  if (data_->size.width() != width)
+  if (size().width() != width)
     set_bounds_core(0, 0, width, 0, bounds_specified::width);
   return *this;
 }
@@ -873,7 +872,7 @@ forms::create_params control::create_params() const {
   create_params.style(WS_VISIBLE | WS_CHILD);
   if (parent().has_value()) create_params.parent(parent().value().get().handle());
   create_params.location(data_->location);
-  create_params.size(data_->size);
+  create_params.size(size());
   
   return create_params;
 }
@@ -1349,23 +1348,29 @@ void control::recreate_handle() {
 void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
   if ((specified & bounds_specified::x) == bounds_specified::x) data_->location.x(x);
   if ((specified & bounds_specified::y) == bounds_specified::y) data_->location.y(y);
-  if ((specified & bounds_specified::width) == bounds_specified::width) data_->size.width(width);
-  if ((specified & bounds_specified::height) == bounds_specified::height) data_->size.height(height);
+  if ((specified & bounds_specified::width) == bounds_specified::width) {
+    if (!data_->size.has_value()) data_->size = default_size();
+    data_->size.value().width(width);
+  }
+  if ((specified & bounds_specified::height) == bounds_specified::height) {
+    if (!data_->size.has_value()) data_->size = default_size();
+    data_->size.value().height(height);
+  }
   
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
-    if (is_handle_created()) native::control::location(handle(), data_->location);
+    if (is_handle_created()) native::control::location(handle(), location());
     on_location_changed(event_args::empty);
     if (parent().has_value()) parent().value().get().perform_layout();
     perform_layout();
   }
   
   if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height) {
-    if (data_->size.width() < data_->minimum_size.width()) data_->size.width(data_->minimum_size.width());
-    if (data_->size.height() < data_->minimum_size.height()) data_->size.height(data_->minimum_size.height());
-    if (!data_->maximum_size.is_empty() && data_->size.width() > data_->maximum_size.width()) data_->size.width(data_->maximum_size.width());
-    if (!data_->maximum_size.is_empty() && data_->size.height() > data_->maximum_size.height()) data_->size.height(data_->maximum_size.height());
+    if (size().width() < minimum_size().width()) data_->size.value().width(minimum_size().width());
+    if (size().height() < minimum_size().height()) data_->size.value().height(minimum_size().height());
+    if (!maximum_size().is_empty() && size().width() > maximum_size().width()) data_->size.value().width(maximum_size().width());
+    if (!maximum_size().is_empty() && size().height() > maximum_size().height()) data_->size.value().height(maximum_size().height());
 
-    if (is_handle_created()) native::control::size(handle(), data_->size);
+    if (is_handle_created()) native::control::size(handle(), size());
     on_client_size_changed(event_args::empty);
     on_size_changed(event_args::empty);
     on_resize(event_args::empty);
@@ -1633,7 +1638,7 @@ void control::wm_size(message& message) {
     data_->client_size = native::control::client_size(handle());
     on_client_size_changed(event_args::empty);
   }
-  if (data_->size != native::control::size(handle())) {
+  if (size() != native::control::size(handle())) {
     data_->size = native::control::size(handle());
     on_size_changed(event_args::empty);
   }

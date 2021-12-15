@@ -30,7 +30,6 @@ xtd::forms::visual_styles::push_button_state to_push_button_style(xtd::forms::vi
 }
 
 radio_button::radio_button() {
-  size(default_size());
   text_align(content_alignment::middle_left);
 }
 

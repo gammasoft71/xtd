@@ -17,12 +17,6 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-text_box::text_box() {
-  //back_color(default_back_color());
-  //fore_color(default_fore_color());
-  size(default_size());
-}
-
 text_box& text_box::character_casing(xtd::forms::character_casing value) {
   if (character_casing_ != value) {
     character_casing_ = value;

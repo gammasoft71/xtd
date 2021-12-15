@@ -15,7 +15,6 @@ using namespace xtd::forms;
 
 user_control::user_control() {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
-  size(default_size());
 }
 
 user_control& user_control::auto_size_mode(forms::auto_size_mode value) {

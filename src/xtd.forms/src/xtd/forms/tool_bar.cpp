@@ -8,6 +8,14 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+tool_bar::tool_bar_button_control::tool_bar_button_control() {
+  set_can_focus(false);
+}
+
+tool_bar::tool_bar_separator_control::tool_bar_separator_control() {
+  set_can_focus(false);
+}
+
 void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
   control::on_paint(e);
   auto left = e.clip_rectangle().width() / 2;
@@ -28,8 +36,8 @@ tool_bar::tool_bar() {
   data_->border_style = forms::border_style::fixed_single;
   dock(xtd::forms::dock_style::top);
   padding(2);
-  size(default_size());
   height(data_->image_list.image_size().height() + 10);
+  set_can_focus(false);
 }
 
 void tool_bar::on_paint(xtd::forms::paint_event_args& e) {

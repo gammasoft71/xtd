@@ -25,7 +25,7 @@ namespace xtd {
       
       /// @{
       /// @brief initializes a new instance of the text_box class.
-      text_box();
+      text_box() = default;
       /// @}
 
       /// @name Properties
