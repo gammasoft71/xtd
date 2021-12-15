@@ -27,7 +27,7 @@ namespace xtd {
     class forms_export_ tool_bar : public control {
       class tool_bar_button_control : public xtd::forms::button {
       public:
-        tool_bar_button_control() = default;
+        tool_bar_button_control();
         
         void tool_bar_item(tool_bar_item_ref value) {tool_bar_item_ = value;}
         
@@ -43,7 +43,7 @@ namespace xtd {
       
       class tool_bar_separator_control : public xtd::forms::control {
       public:
-        tool_bar_separator_control() = default;
+        tool_bar_separator_control();
       protected:
         void on_paint(paint_event_args& e) override;
       };

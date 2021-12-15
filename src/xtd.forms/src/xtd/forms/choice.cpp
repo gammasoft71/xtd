@@ -14,10 +14,6 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 choice::choice() {
-  //back_color(default_back_color());
-  //fore_color(default_fore_color());
-  size(default_size());
-
   items_.item_added += [&](size_t pos, const item& item) {
     if (is_handle_created()) native::choice::insert_item(handle(), pos, item.value());
     size_t selected_index = npos;

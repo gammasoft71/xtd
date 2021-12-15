@@ -35,23 +35,25 @@ namespace xtd {
       etched = 6,
       /// @brief A bump border.
       bump = 7,
+      /// @brief A themed border.
+      themed = 8,
       /// @brief A double-line border.
-      rounded_single = 8,
+      rounded_single = 9,
       /// @brief A single dot line border.
-      dot_single = 9,
+      dot_single = 10,
       /// @brief A single dash line border.
-      dash_single = 10,
+      dash_single = 11,
       /// @brief A single dash dot line border.
-      dash_dot_single = 11,
+      dash_dot_single = 12,
       /// @brief A single dash dot dot line border.
-      dash_dot_dot_single = 12,
+      dash_dot_dot_single = 13,
       /// @brief A double-line border.
-      fixed_double = 13,
+      fixed_double = 14,
     };
 
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, border_style value) {return os << to_string(value, {{border_style::none, "none"}, {border_style::fixed_single, "fixed_single"}, {border_style::fixed_3d, "fixed_3d"}, {border_style::thin_raised, "thin_raised"}, {border_style::bevel_sunken, "bevel_sunken"}, {border_style::bevel_raised, "bevel_raised"}, {border_style::etched, "etched"}, {border_style::bump, "bump"}, {border_style::fixed_double, "fixed_double"}, {border_style::rounded_single, "rounded_single"}, {border_style::dot_single, "dot_single"}, {border_style::dash_single, "dash_single"}, {border_style::dash_dot_single, "dash_dot_single"}, {border_style::dash_dot_dot_single, "dash_dot_dot_single"}});}
-    inline std::wostream& operator<<(std::wostream& os, border_style value) {return os << to_string(value, {{border_style::none, L"none"}, {border_style::fixed_single, L"fixed_single"}, {border_style::fixed_3d, L"fixed_3d"}, {border_style::thin_raised, L"thin_raised"}, {border_style::bevel_sunken, L"bevel_sunken"}, {border_style::bevel_raised, L"bevel_raised"}, {border_style::etched, L"etched"}, {border_style::bump, L"bump"}, {border_style::fixed_double, L"fixed_double"}, {border_style::rounded_single, L"rounded_single"}, {border_style::dot_single, L"dot_single"}, {border_style::dash_single, L"dash_single"}, {border_style::dash_dot_single, L"dash_dot_single"}, {border_style::dash_dot_dot_single, L"dash_dot_dot_single"}});}
+    inline std::ostream& operator<<(std::ostream& os, border_style value) {return os << to_string(value, {{border_style::none, "none"}, {border_style::fixed_single, "fixed_single"}, {border_style::fixed_3d, "fixed_3d"}, {border_style::thin_raised, "thin_raised"}, {border_style::bevel_sunken, "bevel_sunken"}, {border_style::bevel_raised, "bevel_raised"}, {border_style::etched, "etched"}, {border_style::bump, "bump"}, {border_style::themed, "themed"}, {border_style::fixed_double, "fixed_double"}, {border_style::rounded_single, "rounded_single"}, {border_style::dot_single, "dot_single"}, {border_style::dash_single, "dash_single"}, {border_style::dash_dot_single, "dash_dot_single"}, {border_style::dash_dot_dot_single, "dash_dot_dot_single"}});}
+    inline std::wostream& operator<<(std::wostream& os, border_style value) {return os << to_string(value, {{border_style::none, L"none"}, {border_style::fixed_single, L"fixed_single"}, {border_style::fixed_3d, L"fixed_3d"}, {border_style::thin_raised, L"thin_raised"}, {border_style::bevel_sunken, L"bevel_sunken"}, {border_style::bevel_raised, L"bevel_raised"}, {border_style::etched, L"etched"}, {border_style::bump, L"bump"}, {border_style::themed, L"themed"}, {border_style::fixed_double, L"fixed_double"}, {border_style::rounded_single, L"rounded_single"}, {border_style::dot_single, L"dot_single"}, {border_style::dash_single, L"dash_single"}, {border_style::dash_dot_single, L"dash_dot_single"}, {border_style::dash_dot_dot_single, L"dash_dot_dot_single"}});}
     /// @endcond
   }
 }

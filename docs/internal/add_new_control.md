@@ -17,7 +17,7 @@ For the example we create the control light_button.
 1. Add new wxwidgestt helper class : [wx_light_button.h](../../src/xtd.forms.native.wxwidgets/includde/xtd/forms/native/wxwigets/wx_light_button.h)
 2. Add new native source file : [light_button.cpp](../../src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwigets/light_button.cpp)
 3. Update the file [CMakeLists.txt](../../src/xtd.forms.native.wxwidgets/CMakeLists.txt) and add new files created wx_light_button.h and light_button.cpp.
-4. Update [control.cpp](../../src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwigets/control_button.cpp) :
+4. Update [control.cpp](../../src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwigets/control.cpp) :
   * Add wx_light_button include file.
   * add in control::crrate method the following line :
   ```

@@ -34,7 +34,6 @@ namespace {
 }
 
 check_box::check_box() {
-  size(default_size());
   text_align(content_alignment::middle_left);
 }
 

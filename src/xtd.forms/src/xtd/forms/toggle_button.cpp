@@ -33,10 +33,6 @@ namespace {
   }
 }
 
-toggle_button::toggle_button() {
-  size(default_size());
-}
-
 toggle_button& toggle_button::auto_check(bool auto_check) {
   if (auto_check_ != auto_check)
     auto_check_ = auto_check;

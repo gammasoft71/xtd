@@ -52,7 +52,7 @@ namespace xtd {
 
       /// @cond
       const xtd::drawing::size& client_size() const override {return control::client_size();}
-      const xtd::drawing::size& size() const override {return control::size();}
+      xtd::drawing::size size() const override {return control::size();}
       /// @endcond
       /// @}
 

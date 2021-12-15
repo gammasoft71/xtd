@@ -9,7 +9,6 @@ using namespace xtd::forms;
 
 progress_bar::progress_bar() {
   set_can_focus(false);
-  size(default_size());
 }
 
 progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_speed) {

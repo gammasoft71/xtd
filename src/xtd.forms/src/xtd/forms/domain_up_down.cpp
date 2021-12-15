@@ -14,10 +14,6 @@ using namespace xtd;
 using namespace xtd::forms;
 
 domain_up_down::domain_up_down() {
-  //back_color(default_back_color());
-  //fore_color(default_fore_color());
-  size(default_size());
-
   items_.item_added += [&](size_t pos, const item& item) {
     if (is_handle_created()) native::domain_up_down::insert_item(handle(), pos, item.value());
     domain_up_down::item selected_item;
