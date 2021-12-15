@@ -28,7 +28,6 @@ namespace xtd {
       /// @brief Initialize a new instance of seven_segment_display class.
       seven_segment_display() {
         double_buffered(true);
-        size(default_size());
       }
       /// @}
 

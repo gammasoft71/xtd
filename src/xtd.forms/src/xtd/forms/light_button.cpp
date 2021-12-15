@@ -38,10 +38,6 @@ namespace {
   }
 }
 
-light_button::light_button() {
-  size(default_size());
-}
-
 light_button& light_button::auto_check(bool auto_check) {
   if (data_->auto_check != auto_check)
     data_->auto_check = auto_check;

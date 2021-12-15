@@ -29,7 +29,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the light_button class.
       /// @remarks By default the light_button displays no caption. To specify the caption text, set the text property.
-      light_button();
+      light_button() = default;
       /// @}
       
       /// @name Properties

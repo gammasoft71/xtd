@@ -10,7 +10,6 @@ using namespace xtd::forms;
 
 track_bar::track_bar() {
   set_state(state::auto_size, true);
-  size(default_size());
 }
 
 track_bar& track_bar::large_change(int32_t large_change) {

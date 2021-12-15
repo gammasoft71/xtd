@@ -15,9 +15,6 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 combo_box::combo_box() {
-  //back_color(default_back_color());
-  //fore_color(default_fore_color());
-  size(default_size());
   drop_down_width_ = default_size().width();
   drop_down_height_ = static_cast<int32_t>(font().get_height()) * 9;
 

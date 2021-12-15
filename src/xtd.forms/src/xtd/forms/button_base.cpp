@@ -9,7 +9,6 @@ using namespace xtd::forms;
 
 button_base::button_base() {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
-  size(default_size());
 }
 
 button_base& button_base::flat_style(xtd::forms::flat_style flat_style) {

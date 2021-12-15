@@ -36,7 +36,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the tab_control class.
-      tab_control();
+      tab_control() = default;
       /// @}
 
       /// @name Properties

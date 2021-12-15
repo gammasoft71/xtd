@@ -10,7 +10,6 @@ using namespace xtd::forms;
 
 v_scroll_bar::v_scroll_bar() {
   set_can_focus(false);
-  size(default_size());
 }
 
 forms::create_params v_scroll_bar::create_params() const {

@@ -21,7 +21,6 @@ using namespace xtd::forms;
 
 label::label() {
   set_can_focus(false);
-  size(default_size());
 }
 
 label& label::border_style(xtd::forms::border_style border_style) {

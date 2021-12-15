@@ -10,13 +10,6 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-date_time_picker::date_time_picker() {
-  //back_color(default_back_color());
-  //fore_color(default_fore_color());
-  set_can_focus(false);
-  size(default_size());
-}
-
 control& date_time_picker::format(date_time_picker_format format) {
   if (format_ != format) {
     format_ = format;

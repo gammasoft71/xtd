@@ -7,10 +7,6 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-up_down_base::up_down_base() {
-  size(default_size());
-}
-
 up_down_base& up_down_base::border_style(forms::border_style value) {
   if (border_style_ != value) {
     border_style_ = value;

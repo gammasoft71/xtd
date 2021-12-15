@@ -34,7 +34,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initialize a new instance of up_down_base class.
-      up_down_base();
+      up_down_base() = default;
       /// @}
 
       /// @name Protected methods

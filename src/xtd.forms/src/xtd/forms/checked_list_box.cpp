@@ -19,10 +19,6 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 checked_list_box::checked_list_box() {
-  //back_color(default_back_color());
-  //fore_color(default_fore_color());
-  size(default_size());
-
   data_->items.item_added += [&](size_t pos, const item& item) {
     if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
     checked_list_box::item selected_item;

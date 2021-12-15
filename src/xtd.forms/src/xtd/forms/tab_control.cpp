@@ -13,11 +13,6 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-tab_control::tab_control() {
-  set_can_focus(false);
-  size(default_size());
-}
-
 tab_control& tab_control::alignment(tab_alignment alignment) {
   if (alignment_ != alignment) {
     alignment_ = alignment;

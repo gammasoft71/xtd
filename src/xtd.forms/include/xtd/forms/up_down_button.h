@@ -24,7 +24,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of up_down_button class.
-      up_down_button();
+      up_down_button() = default;
       /// @}
 
       /// @name Properties

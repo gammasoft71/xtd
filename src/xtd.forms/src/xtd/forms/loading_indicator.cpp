@@ -22,7 +22,6 @@ namespace {
 
 loading_indicator::loading_indicator() {
   set_can_focus(false);
-  size(default_size());
   timer_.interval_milliseconds(interval_);
   timer_.tick += {*this, &loading_indicator::on_timer_tick};
 }
