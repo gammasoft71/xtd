@@ -63,5 +63,5 @@ void panel::on_layout(const event_args& e) {
 void panel::on_paint(paint_event_args& e) {
   scrollable_control::on_paint(e);
   if (control_appearance() == forms::control_appearance::standard)
-    control_paint::draw_border_from_back_color(e.graphics(), border_style(), back_color(), e.clip_rectangle());
+    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), back_color(), e.clip_rectangle());
 }
