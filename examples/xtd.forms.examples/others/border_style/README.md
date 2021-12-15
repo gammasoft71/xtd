@@ -1,6 +1,6 @@
 # border_style
 
-demonstrates the use of [xtd::forms::label::border_syle](../../../../src/xtd.forms/include/xtd/forms/label.h) property.
+demonstrates the use of [xtd::forms::label::border_style](../../../../src/xtd.forms/include/xtd/forms/label.h) property.
 
 # Sources
 
