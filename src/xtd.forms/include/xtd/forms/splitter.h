@@ -26,7 +26,6 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the splitter class.
       splitter() {
-        size(default_size());
         dock(xtd::forms::dock_style::left);
       }
       /// @}

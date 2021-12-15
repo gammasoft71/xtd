@@ -10,12 +10,6 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-numeric_up_down::numeric_up_down() {
-  //back_color(default_back_color());
-  //fore_color(default_fore_color());
-  size(default_size());
-}
-
 forms::create_params numeric_up_down::create_params() const {
   forms::create_params create_params = up_down_base::create_params();
   

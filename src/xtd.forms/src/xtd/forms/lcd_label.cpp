@@ -606,7 +606,7 @@ void lcd_label::sixteen_segment_display_digit::set_thickness(int32_t value) {
 
 lcd_label::lcd_label() {
   set_auto_size_mode(forms::auto_size_mode::grow_and_shrink);
-  size(default_size());
+  set_can_focus(false);
 }
 
 xtd::drawing::color lcd_label::back_digit_color() const {

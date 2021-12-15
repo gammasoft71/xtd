@@ -25,12 +25,13 @@ namespace examples {
       label_with_bevel_raised_border.border_style(forms::border_style::bevel_raised).text_align(content_alignment::middle_center).text("bevel_raised").location({190, 90}).size({150, 50}).parent(colored_panel);
       label_with_etched_border.border_style(forms::border_style::etched).text_align(content_alignment::middle_center).text("etched").location({360, 90}).size({150, 50}).parent(colored_panel);
       label_with_bump_border.border_style(forms::border_style::bump).text_align(content_alignment::middle_center).text("bump").location({530, 90}).size({150, 50}).parent(colored_panel);
-      label_with_rounded_single_border.border_style(forms::border_style::rounded_single).text_align(content_alignment::middle_center).text("rounded_single").location({20, 160}).size({150, 50}).parent(colored_panel);
-      label_with_dot_single_border.border_style(forms::border_style::dot_single).text_align(content_alignment::middle_center).text("dot_single").location({190, 160}).size({150, 50}).parent(colored_panel);
-      label_with_dash_single_border.border_style(forms::border_style::dash_single).text_align(content_alignment::middle_center).text("dash_single").location({360, 160}).size({150, 50}).parent(colored_panel);
-      label_with_dash_dot_single_border.border_style(forms::border_style::dash_dot_single).text_align(content_alignment::middle_center).text("dash_dot_single").location({530, 160}).size({150, 50}).parent(colored_panel);
-      label_with_dash_dot_dot_single_border.border_style(forms::border_style::dash_dot_dot_single).text_align(content_alignment::middle_center).text("dash_dot_dot_single").location({20, 230}).size({150, 50}).parent(colored_panel);
-      label_with_fixed_double_border.border_style(forms::border_style::fixed_double).text_align(content_alignment::middle_center).text("fixed_double").location({190, 230}).size({150, 50}).parent(colored_panel);
+      label_with_themed_border.border_style(forms::border_style::themed).text_align(content_alignment::middle_center).text("themed").location({20, 160}).size({150, 50}).parent(colored_panel);
+      label_with_rounded_single_border.border_style(forms::border_style::rounded_single).text_align(content_alignment::middle_center).text("rounded_single").location({190, 160}).size({150, 50}).parent(colored_panel);
+      label_with_dot_single_border.border_style(forms::border_style::dot_single).text_align(content_alignment::middle_center).text("dot_single").location({360, 160}).size({150, 50}).parent(colored_panel);
+      label_with_dash_single_border.border_style(forms::border_style::dash_single).text_align(content_alignment::middle_center).text("dash_single").location({530, 160}).size({150, 50}).parent(colored_panel);
+      label_with_dash_dot_single_border.border_style(forms::border_style::dash_dot_single).text_align(content_alignment::middle_center).text("dash_dot_single").location({20, 230}).size({150, 50}).parent(colored_panel);
+      label_with_dash_dot_dot_single_border.border_style(forms::border_style::dash_dot_dot_single).text_align(content_alignment::middle_center).text("dash_dot_dot_single").location({190, 230}).size({150, 50}).parent(colored_panel);
+      label_with_fixed_double_border.border_style(forms::border_style::fixed_double).text_align(content_alignment::middle_center).text("fixed_double").location({360, 230}).size({150, 50}).parent(colored_panel);
 
       control_panel.parent(*this);
       control_panel.border_style(forms::border_style::fixed_3d);
@@ -70,6 +71,7 @@ namespace examples {
     label label_with_bevel_raised_border;
     label label_with_etched_border;
     label label_with_bump_border;
+    label label_with_themed_border;
     label label_with_rounded_single_border;
     label label_with_dot_single_border;
     label label_with_dash_single_border;

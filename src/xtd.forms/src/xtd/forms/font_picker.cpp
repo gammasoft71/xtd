@@ -10,11 +10,6 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-font_picker::font_picker() {
-  set_can_focus(false);
-  size(default_size());
-}
-
 control& font_picker::color(const drawing::color& value) {
   if (color_ != value) {
     color_ = value;

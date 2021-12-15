@@ -670,7 +670,7 @@ namespace xtd {
 
       /// @brief Gets the height and width of the control.
       /// @return The size that represents the height and width of the control in pixels.
-      virtual const drawing::size& size() const;
+      virtual drawing::size size() const;
       /// @brief Sets the height and width of the control.
       /// @param size The size that represents the height and width of the control in pixels.
       /// @return Current control.
@@ -1875,7 +1875,7 @@ namespace xtd {
         bool mouse_in = false;
         xtd::ustring name;
         intptr_t parent = 0;
-        drawing::size size;
+        std::optional<drawing::size> size;
         control::state state = control::state::empty;
         control_styles style = control_styles::none;
         std::any tag;

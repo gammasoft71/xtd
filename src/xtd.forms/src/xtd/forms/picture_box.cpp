@@ -26,7 +26,7 @@ namespace {
 }
 
 picture_box::picture_box() {
-  size(default_size());
+  set_can_focus(false);
 }
 
 picture_box& picture_box::border_style(forms::border_style border_style) {

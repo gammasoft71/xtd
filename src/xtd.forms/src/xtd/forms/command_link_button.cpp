@@ -12,7 +12,6 @@ using namespace xtd::forms;
 
 command_link_button::command_link_button() {
   flat_style(xtd::forms::flat_style::system);
-  size(default_size());
   text_align(content_alignment::middle_left);
 }
 
