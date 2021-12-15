@@ -31,14 +31,14 @@ namespace xtd {
       /// @{
       drawing::size default_size() const override {return {150, 120};}
 
-      /// @brief Gets the range date from the calendar.
+      /// @brief Gets the date range of the calendar.
       /// @return pair of 'from date' and 'to date' value range.
-      virtual std::pair<std::chrono::system_clock::time_point, std::chrono::system_clock::time_point> range_date() const;
-      /// @brief Sets the range date to the calendar.
+      virtual std::pair<std::chrono::system_clock::time_point, std::chrono::system_clock::time_point> date_range() const;
+      /// @brief Sets date range to the calendar.
       /// @param from_date: lower date of the calendar.
       /// @param to_date: upper date of the calendar.
       /// @return Current month_calendar.
-      virtual control& range_date(const std::chrono::system_clock::time_point from_date, const std::chrono::system_clock::time_point to_date);
+      virtual control& date_range(const std::chrono::system_clock::time_point from_date, const std::chrono::system_clock::time_point to_date);
 
 #pragma region questionable
 #if 0
