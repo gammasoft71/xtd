@@ -24,6 +24,7 @@ add_sources(
   include/xtd/forms/auto_size_mode.h
   include/xtd/forms/background_worker.h
   include/xtd/forms/boot_mode.h
+  include/xtd/forms/border_sides.h
   include/xtd/forms/border_style.h
   include/xtd/forms/bounds_specified.h
   include/xtd/forms/busy_box.h

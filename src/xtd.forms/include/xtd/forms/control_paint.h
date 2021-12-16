@@ -13,6 +13,7 @@
 #include <xtd/drawing/system_fonts.h>
 #include "../forms_export.h"
 #include "button_state.h"
+#include "border_sides.h"
 #include "border_style.h"
 #include "image_layout.h"
 #include "text_format_flags.h"
@@ -82,11 +83,11 @@ namespace xtd {
       static void draw_button(const xtd::forms::control& control, xtd::drawing::graphics& graphics, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::button_state state);
 
       
-      static void draw_border(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect);
+      static void draw_border(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, xtd::forms::border_sides sides, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect);
 
-      static void draw_border(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect, bool light);
+      static void draw_border(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, xtd::forms::border_sides sides, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect, bool light);
       
-      static void draw_border_from_back_color(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, const xtd::drawing::color& back_color, const xtd::drawing::rectangle& rect);
+      static void draw_border_from_back_color(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, xtd::forms::border_sides sides, const xtd::drawing::color& back_color, const xtd::drawing::rectangle& rect);
 
       /// @brief Draws the specified image in a specified rectangle with specified layout.
       /// @param xtd::drawing::graphics The Graphics to draw on.

@@ -22,6 +22,14 @@ user_control& user_control::auto_size_mode(forms::auto_size_mode value) {
   return *this;
 }
 
+user_control& user_control::border_sides(forms::border_sides border_sides) {
+  if (border_sides_ != border_sides) {
+    border_sides_ = border_sides;
+    invalidate();
+  }
+  return *this;
+}
+
 user_control& user_control::border_style(forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;
@@ -54,5 +62,5 @@ void user_control::on_layout(const event_args& e) {
 void user_control::on_paint(paint_event_args& e) {
   container_control::on_paint(e);
   if (control_appearance() == forms::control_appearance::standard)
-    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), back_color(), e.clip_rectangle());
+    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
 }

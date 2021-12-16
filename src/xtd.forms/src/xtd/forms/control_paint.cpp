@@ -8,128 +8,181 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace {
-  static void draw_fixed_single_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
-    graphics.draw_rectangle(pen(light ? light_color : dark_color, 1), rect);
+  static void draw_fixed_single_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
+    auto color = light ? light_color : dark_color;
+    if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(pen(color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+    if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(pen(color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+    if ((sides & border_sides::bottom) == border_sides::bottom) graphics.draw_line(pen(color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+    if ((sides & border_sides::right) == border_sides::right) graphics.draw_line(pen(color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
   }
   
-  static void draw_thin_sunken_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect) {
-    // top
-    graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
-    // left
-    graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
-    // bottom
-    graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
-    // right
-    graphics.draw_line(pen(light_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
+  static void draw_thin_sunken_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect) {
+    if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+    if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+    if ((sides & border_sides::bottom) == border_sides::bottom) graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+    if ((sides & border_sides::right) == border_sides::right) graphics.draw_line(pen(light_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
   }
   
-  static void draw_thin_raised_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect) {
-    // top
-    graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
-    // left
-    graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
-    // bottom
-    graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
-    // right
-    graphics.draw_line(pen(dark_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
+  static void draw_thin_raised_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect) {
+    if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+    if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+    if ((sides & border_sides::bottom) == border_sides::bottom) graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+    if ((sides & border_sides::right) == border_sides::right) graphics.draw_line(pen(dark_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
   }
   
-  static void draw_bevel_sunken_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect) {
-    // top
-    graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
-    graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.right() - 1, rect.top() + 1});
-    // left
-    graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
-    graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.left() + 1, rect.bottom() - 1});
-    // bottom
-    graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
-    graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.bottom() - 1}, point {rect.right() - 1, rect.bottom() - 1});
-    // right
-    graphics.draw_line(pen(light_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
-    graphics.draw_line(pen(light_color, 1), point {rect.right() - 1, rect.top() + 1}, point {rect.right() - 1, rect.bottom() - 1});
+  static void draw_bevel_sunken_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect) {
+    if ((sides & border_sides::top) == border_sides::top) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+      graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.right() - 1, rect.top() + 1});
+    }
+    if ((sides & border_sides::left) == border_sides::left) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+      graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.left() + 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::bottom) == border_sides::bottom) {
+      graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.bottom() - 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::right) == border_sides::right) {
+      graphics.draw_line(pen(light_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(light_color, 1), point {rect.right() - 1, rect.top() + 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
   }
   
-  static void draw_bevel_raised_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect) {
-    // top
-    graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
-    graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.right() - 1, rect.top() + 1});
-    // left
-    graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
-    graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.left() + 1, rect.bottom() - 1});
-    // bottom
-    graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
-    graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.bottom() - 1}, point {rect.right() - 1, rect.bottom() - 1});
-    // right
-    graphics.draw_line(pen(dark_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
-    graphics.draw_line(pen(dark_color, 1), point {rect.right() - 1, rect.top() + 1}, point {rect.right() - 1, rect.bottom() - 1});
+  static void draw_bevel_raised_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect) {
+    if ((sides & border_sides::top) == border_sides::top) {
+      graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+      graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.right() - 1, rect.top() + 1});
+    }
+    if ((sides & border_sides::left) == border_sides::left) {
+      graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+      graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.left() + 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::bottom) == border_sides::bottom) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.bottom() - 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::right) == border_sides::right) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(dark_color, 1), point {rect.right() - 1, rect.top() + 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
   }
   
-  static void draw_etched_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect) {
-    // top
-    graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
-    graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.right() - 1, rect.top() + 1});
-    // left
-    graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
-    graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.left() + 1, rect.bottom() - 1});
-    // bottom
-    graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
-    graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.bottom() - 1}, point {rect.right() - 1, rect.bottom() - 1});
-    // right
-    graphics.draw_line(pen(light_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
-    graphics.draw_line(pen(dark_color, 1), point {rect.right() - 1, rect.top() + 1}, point {rect.right() - 1, rect.bottom() - 1});
+  static void draw_etched_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect) {
+    if ((sides & border_sides::top) == border_sides::top) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+      graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.right() - 1, rect.top() + 1});
+    }
+    if ((sides & border_sides::left) == border_sides::left) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+      graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.left() + 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::bottom) == border_sides::bottom) {
+      graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.bottom() - 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::right) == border_sides::right) {
+      graphics.draw_line(pen(light_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(dark_color, 1), point {rect.right() - 1, rect.top() + 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
   }
   
-  static void draw_bump_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect) {
-    // top
-    graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
-    graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.right() - 1, rect.top() + 1});
-    // left
-    graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
-    graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.left() + 1, rect.bottom() - 1});
-    // bottom
-    graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
-    graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.bottom() - 1}, point {rect.right() - 1, rect.bottom() - 1});
-    // right
-    graphics.draw_line(pen(dark_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
-    graphics.draw_line(pen(light_color, 1), point {rect.right() - 1, rect.top() + 1}, point {rect.right() - 1, rect.bottom() - 1});
+  static void draw_bump_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect) {
+    if ((sides & border_sides::top) == border_sides::top) {
+      graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+      graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.right() - 1, rect.top() + 1});
+    }
+    if ((sides & border_sides::left) == border_sides::left) {
+      graphics.draw_line(pen(light_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+      graphics.draw_line(pen(dark_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.left() + 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::bottom) == border_sides::bottom) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.bottom() - 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::right) == border_sides::right) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(light_color, 1), point {rect.right() - 1, rect.top() + 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
   }
   
-  static void draw_themed_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect) {
-    graphics.draw_rectangle(pen(dark_color, 1), rect);
-    graphics.draw_rectangle(pen(light_color, 1), rectangle::inflate(rectangle::offset(rect, {1, 1}), {-2, -2}));
+  static void draw_themed_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect) {
+    if ((sides & border_sides::top) == border_sides::top) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+      graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.right() - 1, rect.top() + 1});
+    }
+    if ((sides & border_sides::left) == border_sides::left) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+      graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.top() + 1}, point {rect.left() + 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::bottom) == border_sides::bottom) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(light_color, 1), point {rect.left() + 1, rect.bottom() - 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
+    if ((sides & border_sides::right) == border_sides::right) {
+      graphics.draw_line(pen(dark_color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(light_color, 1), point {rect.right() - 1, rect.top() + 1}, point {rect.right() - 1, rect.bottom() - 1});
+    }
   }
   
-  static void draw_rounded_single_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
+  static void draw_rounded_single_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
     graphics.draw_rounded_rectangle(pen(light ? light_color : dark_color, 1), rect, 4);
   }
   
-  static void draw_dot_single_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
+  static void draw_dot_single_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
     pen dot_pen(light ? light_color : dark_color, 1);
     dot_pen.dash_style(dash_style::dot);
-    graphics.draw_rectangle(dot_pen, rect);
+    if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(dot_pen, point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+    if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(dot_pen, point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+    if ((sides & border_sides::bottom) == border_sides::bottom) graphics.draw_line(dot_pen, point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+    if ((sides & border_sides::right) == border_sides::right) graphics.draw_line(dot_pen, point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
   }
   
-  static void draw_dash_single_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
+  static void draw_dash_single_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
     pen dash_pen(light ? light_color : dark_color, 1);
     dash_pen.dash_style(dash_style::dash);
-    graphics.draw_rectangle(dash_pen, rect);
+    if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+    if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+    if ((sides & border_sides::bottom) == border_sides::bottom) graphics.draw_line(dash_pen, point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+    if ((sides & border_sides::right) == border_sides::right) graphics.draw_line(dash_pen, point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
   }
   
-  static void draw_dash_dot_single_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
+  static void draw_dash_dot_single_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
     pen dash_pen(light ? light_color : dark_color, 1);
     dash_pen.dash_style(dash_style::dash_dot);
-    graphics.draw_rectangle(dash_pen, rect);
+    if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+    if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+    if ((sides & border_sides::bottom) == border_sides::bottom) graphics.draw_line(dash_pen, point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+    if ((sides & border_sides::right) == border_sides::right) graphics.draw_line(dash_pen, point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
   }
   
-  static void draw_dash_dot_dot_single_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
+  static void draw_dash_dot_dot_single_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
     pen dash_pen(light ? light_color : dark_color, 1);
     dash_pen.dash_style(dash_style::dash_dot_dot);
-    graphics.draw_rectangle(dash_pen, rect);
+    if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+    if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+    if ((sides & border_sides::bottom) == border_sides::bottom) graphics.draw_line(dash_pen, point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+    if ((sides & border_sides::right) == border_sides::right) graphics.draw_line(dash_pen, point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
   }
   
-  static void draw_fixed_double_border(drawing::graphics& graphics, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
-    graphics.draw_rectangle(pen(light ? light_color : dark_color, 1), rect);
-    graphics.draw_rectangle(pen(light ? light_color : dark_color, 1), rectangle::inflate(rectangle::offset(rect, {2, 2}), {-4, -4}));
+  static void draw_fixed_double_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
+    auto color = light ? light_color : dark_color;
+    if ((sides & border_sides::top) == border_sides::top) {
+      graphics.draw_line(pen(color, 1), point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
+      graphics.draw_line(pen(color, 1), point {rect.left() + 2, rect.top() + 2}, point {rect.right() - 2, rect.top() + 2});
+    }
+    if ((sides & border_sides::left) == border_sides::left) {
+      graphics.draw_line(pen(color, 1), point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
+      graphics.draw_line(pen(color, 1), point {rect.left() + 2, rect.top() + 2}, point {rect.left() + 2, rect.bottom() - 2});
+    }
+    if ((sides & border_sides::bottom) == border_sides::bottom) {
+      graphics.draw_line(pen(color, 1), point {rect.left(), rect.bottom()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(color, 1), point {rect.left() + 2, rect.bottom() - 2}, point {rect.right() - 2, rect.bottom() - 2});
+    }
+    if ((sides & border_sides::right) == border_sides::right) {
+      graphics.draw_line(pen(color, 1), point {rect.right(), rect.top()}, point {rect.right(), rect.bottom()});
+      graphics.draw_line(pen(color, 1), point {rect.right() - 2, rect.top() + 2}, point {rect.right() - 2, rect.bottom() - 2});
+    }
   }
 }
 
@@ -161,11 +214,11 @@ void control_paint::draw_button(const forms::control& control, drawing::graphics
   
 }
 
-void control_paint::draw_border(const forms::control& control, drawing::graphics& graphics, border_style border, const drawing::color& color, const rectangle& rect) {
-  draw_border(control, graphics, border, color, rect, color.is_light());
+void control_paint::draw_border(const forms::control& control, drawing::graphics& graphics, border_style border, border_sides sides, const drawing::color& color, const rectangle& rect) {
+  draw_border(control, graphics, border, sides, color, rect, color.is_light());
 }
 
-void control_paint::draw_border(const forms::control& control, drawing::graphics& graphics, border_style border, const drawing::color& color, const rectangle& rect, bool light) {
+void control_paint::draw_border(const forms::control& control, drawing::graphics& graphics, border_style border, border_sides sides, const drawing::color& color, const rectangle& rect, bool light) {
   auto percent_of_color = 2.0/3;
   auto dark_color = dark(color, percent_of_color);
   auto light_color = color;
@@ -173,26 +226,26 @@ void control_paint::draw_border(const forms::control& control, drawing::graphics
   
   switch (border) {
     case border_style::none: break;
-    case border_style::fixed_single: draw_fixed_single_border(graphics, dark_color, light_color, border_rect, light); break;
-    case border_style::thin_sunken: draw_thin_sunken_border(graphics, dark_color, light_color, border_rect); break;
-    case border_style::thin_raised: draw_thin_raised_border(graphics, dark_color, light_color, border_rect); break;
-    case border_style::bevel_sunken: draw_bevel_sunken_border(graphics, dark_color, light_color, border_rect); break;
-    case border_style::bevel_raised: draw_bevel_raised_border(graphics, dark_color, light_color, border_rect); break;
-    case border_style::etched: draw_etched_border(graphics, dark_color, light_color, border_rect); break;
-    case border_style::bump: draw_bump_border(graphics, dark_color, light_color, border_rect); break;
-    case border_style::themed: draw_themed_border(graphics, dark_color, light_color, border_rect); break;
-    case border_style::rounded_single: draw_rounded_single_border(graphics, dark_color, light_color, border_rect, light); break;
-    case border_style::dot_single: draw_dot_single_border(graphics, dark_color, light_color, border_rect, light); break;
-    case border_style::dash_single: draw_dash_single_border(graphics, dark_color, light_color, border_rect, light); break;
-    case border_style::dash_dot_single: draw_dash_dot_single_border(graphics, dark_color, light_color, border_rect, light); break;
-    case border_style::dash_dot_dot_single: draw_dash_dot_dot_single_border(graphics, dark_color, light_color, border_rect, light); break;
-    case border_style::fixed_double: draw_fixed_double_border(graphics, dark_color, light_color, border_rect, light); break;
+    case border_style::fixed_single: draw_fixed_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::thin_sunken: draw_thin_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::thin_raised: draw_thin_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::bevel_sunken: draw_bevel_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::bevel_raised: draw_bevel_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::etched: draw_etched_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::bump: draw_bump_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::themed: draw_themed_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::rounded_single: draw_rounded_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::dot_single: draw_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::dash_single: draw_dash_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::dash_dot_single: draw_dash_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::dash_dot_dot_single: draw_dash_dot_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::fixed_double: draw_fixed_double_border(graphics, sides, dark_color, light_color, border_rect, light); break;
   }
 }
 
-void control_paint::draw_border_from_back_color(const forms::control& control, drawing::graphics& graphics, border_style border, const color& back_color, const rectangle& rect) {
+void control_paint::draw_border_from_back_color(const forms::control& control, drawing::graphics& graphics, border_style border, border_sides sides, const color& back_color, const rectangle& rect) {
   auto percent_of_color = back_color.is_dark() ? 1.0/3 : 2.0/3;
-  draw_border(control, graphics, border, light(back_color, percent_of_color), rect, back_color.is_dark());
+  draw_border(control, graphics, border, sides, light(back_color, percent_of_color), rect, back_color.is_dark());
 }
 
 void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle, xtd::forms::image_layout image_layout) {draw_image(graphics, image, rectangle.x(), rectangle.y(), rectangle.width(), rectangle.height(), image_layout);}

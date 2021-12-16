@@ -2,9 +2,11 @@
 /// @brief Contains xtd::forms::text_box_base control.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include "control.h"
 #include <xtd/bit_converter.h>
 #include <xtd/argument_out_of_range_exception.h>
+#include "border_sides.h"
+#include "border_style.h"
+#include "control.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -33,6 +35,19 @@ namespace xtd {
           accepts_tab_ = value;
           recreate_handle();
           on_accepts_tab_changed(event_args::empty);
+        }
+        return *this;
+      }
+      
+      /// @brief Get the border sides for the control.
+      /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
+      virtual forms::border_sides border_sides() const {return border_sides_;}
+      /// @brief Set the border sides for the control.
+      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual text_box_base& border_sides(forms::border_sides border_sides) {
+        if (border_sides_ != border_sides) {
+          border_sides_ = border_sides;
+          invalidate();
         }
         return *this;
       }
@@ -244,6 +259,7 @@ namespace xtd {
 
     private:
       bool accepts_tab_ = false;
+      xtd::forms::border_sides border_sides_ = xtd::forms::border_sides::all;
       xtd::forms::border_style border_style_ = xtd::forms::border_style::fixed_single;
       bool multiline_ = false;
       bool read_only_ = false;
