@@ -47,6 +47,14 @@ label& label::flat_style(xtd::forms::flat_style flat_style) {
   return *this;
 }
 
+label& label::shadow(bool value) {
+  if (shadow_ != value) {
+    shadow_ = value;
+    invalidate();
+  }
+  return *this;
+}
+
 label& label::text_align(content_alignment text_align) {
   if (text_align_ != text_align) {
     text_align_ = text_align;
@@ -109,7 +117,12 @@ void label::on_paint(paint_event_args& e) {
       case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
       default: break;
     }
-    e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
+    auto rect = xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height());
+    if (shadow()) {
+      e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? control_paint::dark(back_color()) : control_paint::dark(application::theme().theme_colors().gray_text())), rectangle::offset(rect, {1, 1}), string_format);
+      e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), rectangle::offset(rect, {-1, -1}), string_format);
+    } else
+      e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), rect, string_format);
   }
 }
 

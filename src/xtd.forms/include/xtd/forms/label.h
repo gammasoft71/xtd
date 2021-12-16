@@ -65,6 +65,13 @@ namespace xtd {
 
       xtd::drawing::size default_size() const override {return {100, 23};}
       
+      /// @brief Gets a value that allows to draw a drop shadow under the text.
+      /// @return true allows to draw a drop shadow under the text; otherwise false.
+      virtual bool shadow() const {return shadow_;}
+      /// @brief Sets a value that allows to draw a drop shadow under the text.
+      /// @param value true allows to draw a drop shadow under the text; otherwise false.
+      virtual label& shadow(bool value);
+
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.
@@ -108,6 +115,7 @@ namespace xtd {
       xtd::forms::border_sides border_sides_ = xtd::forms::border_sides::all;
       xtd::forms::border_style border_style_ = xtd::forms::border_style::none;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
+      bool shadow_ = false;
       xtd::forms::content_alignment text_align_ = xtd::forms::content_alignment::top_left;
     };
   }
