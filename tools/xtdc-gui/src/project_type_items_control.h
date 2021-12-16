@@ -78,6 +78,7 @@ namespace xtdc_gui {
       }
       
       auto_scroll(true);
+      padding(4);
       back_color(xtd::forms::theme_colors::current_theme().window());
       border_style(xtd::forms::border_style::fixed_3d);
     }
