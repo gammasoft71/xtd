@@ -181,15 +181,15 @@ form& form::maximize_box(bool value) {
 form& form::menu(const forms::main_menu& value) {
   if (!menu_.has_value() || &menu_.value().get() != &value) {
     menu_ = const_cast<forms::main_menu&>(value);
-    if (is_handle_created()) native::form::menu(handle(), menu_.value().get().handle());
+    if (is_handle_created()) create_system_menu();
   }
   return *this;
 }
 
 form& form::menu(nullptr_t) {
   if (menu_.has_value()) {
+    if (is_handle_created()) destroy_system_menu();
     menu_.reset();
-    if (is_handle_created()) native::form::menu(handle(), 0);
   }
   return *this;
 }
@@ -507,13 +507,13 @@ void form::on_handle_created(const event_args &e) {
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
 
-  if (menu_.has_value()) native::form::menu(handle(), menu_.value().get().handle());
+  if (menu_.has_value()) create_system_menu();
   if (tool_bar_.has_value()) create_system_tool_bar();
 }
 
 void form::on_handle_destroyed(const event_args &e) {
   container_control::on_handle_destroyed(e);
-  native::form::menu(handle(), 0);
+  destroy_system_menu();
 }
 
 void form::on_layout(const event_args& e) {
@@ -554,6 +554,30 @@ void form::internal_set_window_state() {
   }
 }
 
+void form::create_system_menu() {
+  if (!menu_.has_value()) return;
+  
+  // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
+  auto prev_client_size = client_size();
+  
+  native::form::menu(handle(), menu_.value().get().handle());
+  
+  // Workaround : Force the client size with the previously saved client size.
+  client_size(prev_client_size);
+}
+
+void form::destroy_system_menu() {
+  if (!menu_) return;
+
+  // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
+  auto prev_client_size = client_size();
+
+  native::form::menu(handle(), 0);
+
+  // Workaround : Force the client size with the previously saved client size.
+  client_size(prev_client_size);
+}
+
 void form::create_system_tool_bar() {
   if (!tool_bar_.has_value()) return;
 
@@ -579,9 +603,16 @@ void form::create_system_tool_bar() {
 
 void form::destroy_system_tool_bar() {
   if (!system_tool_bar_) return;
+
+  // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
+  auto prev_client_size = client_size();
+
   native::form::tool_bar(handle(), 0);
   system_tool_bar_->parent(nullptr);
   system_tool_bar_.reset();
   if (system_tool_bar_previous_parent_) tool_bar_.value().get().parent(*system_tool_bar_previous_parent_);
   system_tool_bar_previous_parent_ = nullptr;
+
+  // Workaround : Force the client size with the previously saved client size.
+  client_size(prev_client_size);
 }
