@@ -32,7 +32,7 @@ picture_box::picture_box() {
 picture_box& picture_box::border_sides(forms::border_sides border_sides) {
   if (border_sides_ != border_sides) {
     border_sides_ = border_sides;
-    invalidate();
+    if (control_appearance() == forms::control_appearance::standard) invalidate();
   }
   return *this;
 }

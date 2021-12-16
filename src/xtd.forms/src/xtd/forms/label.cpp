@@ -26,7 +26,7 @@ label::label() {
 label& label::border_sides(forms::border_sides border_sides) {
   if (border_sides_ != border_sides) {
     border_sides_ = border_sides;
-    invalidate();
+    if (control_appearance() == forms::control_appearance::standard) invalidate();
   }
   return *this;
 }
@@ -50,7 +50,7 @@ label& label::flat_style(xtd::forms::flat_style flat_style) {
 label& label::shadow(bool value) {
   if (shadow_ != value) {
     shadow_ = value;
-    invalidate();
+    if (control_appearance() == forms::control_appearance::standard) invalidate();
   }
   return *this;
 }
