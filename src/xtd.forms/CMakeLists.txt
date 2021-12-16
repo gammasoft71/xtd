@@ -164,7 +164,6 @@ add_sources(
   include/xtd/forms/message_dialog_options.h
   include/xtd/forms/message_loop_callback.h
   include/xtd/forms/month_calendar.h
-  include/xtd/forms/month_calendar_styles.h
   include/xtd/forms/mouse_buttons.h
   include/xtd/forms/mouse_event_args.h
   include/xtd/forms/mouse_event_handler.h
