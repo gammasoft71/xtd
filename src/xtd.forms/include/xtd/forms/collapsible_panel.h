@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
+#include "border_sides.h"
 #include "border_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -32,6 +33,13 @@ namespace xtd {
       /// @{
       virtual bool auto_size() const override {return true;}
 
+      /// @brief Get the border sides for the control.
+      /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
+      virtual forms::border_sides border_sides() const {return border_sides_;}
+      /// @brief Set the border sides for the control.
+      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual collapsible_panel& border_sides(forms::border_sides border_sides);
+      
       /// @brief Get the border style for the control.
       /// @return One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
@@ -103,6 +111,7 @@ namespace xtd {
       control& size(const xtd::drawing::size& size) override {return control::size(size);}
       void wm_command(message& message);
 
+      forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::none;
       bool expanded_ = false;
     };

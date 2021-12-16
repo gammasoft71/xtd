@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
+#include "border_sides.h"
 #include "border_style.h"
 #include "content_alignment.h"
 #include "flat_style.h"
@@ -35,6 +36,13 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Get the border sides for the control.
+      /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
+      virtual forms::border_sides border_sides() const {return border_sides_;}
+      /// @brief Set the border sides for the control.
+      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual label& border_sides(forms::border_sides border_sides);
+
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
@@ -57,6 +65,13 @@ namespace xtd {
 
       xtd::drawing::size default_size() const override {return {100, 23};}
       
+      /// @brief Gets a value that allows to draw a drop shadow under the text.
+      /// @return true allows to draw a drop shadow under the text; otherwise false.
+      virtual bool shadow() const {return shadow_;}
+      /// @brief Sets a value that allows to draw a drop shadow under the text.
+      /// @param value true allows to draw a drop shadow under the text; otherwise false.
+      virtual label& shadow(bool value);
+
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.
@@ -97,8 +112,10 @@ namespace xtd {
 
     private:
       using control::control_appearance;
+      xtd::forms::border_sides border_sides_ = xtd::forms::border_sides::all;
       xtd::forms::border_style border_style_ = xtd::forms::border_style::none;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
+      bool shadow_ = false;
       xtd::forms::content_alignment text_align_ = xtd::forms::content_alignment::top_left;
     };
   }

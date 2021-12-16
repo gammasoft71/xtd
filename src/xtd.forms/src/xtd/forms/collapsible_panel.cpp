@@ -14,6 +14,14 @@ collapsible_panel::collapsible_panel() {
   set_can_focus(false);
 }
 
+collapsible_panel& collapsible_panel::border_sides(forms::border_sides border_sides) {
+  if (border_sides_ != border_sides) {
+    border_sides_ = border_sides;
+    invalidate();
+  }
+  return *this;
+}
+
 collapsible_panel& collapsible_panel::border_style(forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;

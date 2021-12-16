@@ -23,6 +23,14 @@ panel& panel::auto_size_mode(forms::auto_size_mode value) {
   return *this;
 }
 
+panel& panel::border_sides(forms::border_sides border_sides) {
+  if (border_sides_ != border_sides) {
+    border_sides_ = border_sides;
+    invalidate();
+  }
+  return *this;
+}
+
 panel& panel::border_style(forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;
@@ -63,5 +71,5 @@ void panel::on_layout(const event_args& e) {
 void panel::on_paint(paint_event_args& e) {
   scrollable_control::on_paint(e);
   if (control_appearance() == forms::control_appearance::standard)
-    control_paint::draw_border_from_back_color(e.graphics(), border_style(), back_color(), e.clip_rectangle());
+    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
 }

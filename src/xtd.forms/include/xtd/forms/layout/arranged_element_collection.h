@@ -383,9 +383,16 @@ namespace xtd {
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         template<typename collection_t>
-        void push_back_range(collection_t collection) {
-          for(const auto& item : collection)
+        void push_back_range(collection_t&& collection) {
+          for(auto& item : collection)
             push_back(value_type(item));
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        template<typename iterator_t>
+        void push_back_range(iterator_t begin, iterator_t end) {
+          for(auto it = begin; it != end; ++it)
+            push_back(value_type(*it));
         }
 
         /// @brief Sorts the content.

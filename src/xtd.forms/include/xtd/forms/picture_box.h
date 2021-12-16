@@ -4,6 +4,7 @@
 #pragma once
 #include <optional>
 #include "control.h"
+#include "border_sides.h"
 #include "border_style.h"
 #include "picture_box_size_mode.h"
 #include <xtd/drawing/image.h>
@@ -32,6 +33,13 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Get the border sides for the control.
+      /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
+      virtual forms::border_sides border_sides() const {return border_sides_;}
+      /// @brief Set the border sides for the control.
+      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual picture_box& border_sides(forms::border_sides border_sides);
+      
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
@@ -85,6 +93,7 @@ namespace xtd {
       /// @}
 
       /// @cond
+      forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::none;
       std::optional<drawing::image> image_;
       picture_box_size_mode size_mode_ = picture_box_size_mode::normal;
