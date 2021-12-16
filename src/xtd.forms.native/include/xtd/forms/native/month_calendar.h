@@ -40,7 +40,7 @@ namespace xtd {
         /// @param control: month_calendar handle.
         /// @param date: The date to set to the calendar.
         /// @warning Internal use only
-        static void value(const intptr_t control, const std::chrono::system_clock::time_point date);
+        static void value(const intptr_t control, std::chrono::system_clock::time_point date);
         /// @brief Gets selected date from the calendar.
         /// @param control: month_calendar handle.
         /// @return selected date.
