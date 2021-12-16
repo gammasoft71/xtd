@@ -23,7 +23,7 @@ namespace xtd {
       /// @name Constructors
       /// @{
       /// @brief Initializes a new instance of the month_calendar class.
-      month_calendar();
+      month_calendar() = default;
       /// @}
       /// @name Properties
       /// @{
