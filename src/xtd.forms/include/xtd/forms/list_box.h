@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
 #include "layout/arranged_element_collection.h"
+#include "border_sides.h"
 #include "border_style.h"
 #include "list_control.h"
 #include "selection_mode.h"
@@ -42,6 +43,13 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Get the border sides for the control.
+      /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
+      virtual forms::border_sides border_sides() const {return data_->border_sides;}
+      /// @brief Set the border sides for the control.
+      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual list_box& border_sides(forms::border_sides border_sides);
+      
       /// @brief Gets the type of border that is drawn around the list_box.
       /// @return One of the xtd::forms::border_styleforms::border_style values. The default is fixed_single.
       virtual forms::border_style border_style() const {return data_->border_style;}
@@ -168,6 +176,7 @@ namespace xtd {
       
     private:
       struct data {
+        forms::border_sides border_sides = forms::border_sides::all;
         forms::border_style border_style = forms::border_style::fixed_single;
         object_collection items;
         item selected_item;

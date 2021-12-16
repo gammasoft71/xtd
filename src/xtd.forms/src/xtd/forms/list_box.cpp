@@ -40,6 +40,14 @@ list_box::list_box() {
   };
 }
 
+list_box& list_box::border_sides(forms::border_sides border_sides) {
+  if (data_->border_sides != border_sides) {
+    data_->border_sides = border_sides;
+    invalidate();
+  }
+  return *this;
+}
+
 list_box& list_box::border_style(forms::border_style border_style) {
   if (data_->border_style != border_style) {
     data_->border_style = border_style;

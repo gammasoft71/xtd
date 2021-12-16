@@ -5,6 +5,7 @@
 #include "tool_bar_item.h"
 #include <xtd/event.h>
 #include <xtd/event_handler.h>
+#include <xtd/forms/image_list.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -24,7 +25,9 @@ namespace xtd {
       /// @brief Initialises a new instance of xtd::forms::tool_bar_button class.
       tool_bar_button() = default;
       tool_bar_button(const xtd::ustring& text);
+      tool_bar_button(const xtd::ustring& text, const xtd::event_handler& on_click);
       tool_bar_button(size_t image_index);
+      tool_bar_button(size_t image_index, const xtd::event_handler& on_click);
       tool_bar_button(const xtd::ustring& text, size_t image_index);
       tool_bar_button(const xtd::ustring& text, size_t image_index, const xtd::event_handler& on_click);
       /// @}
@@ -66,7 +69,7 @@ namespace xtd {
       
     private:
       xtd::ustring text_;
-      size_t image_index_ = 0;
+      size_t image_index_ = xtd::forms::image_list::image_collection::npos;
     };
   }
 }

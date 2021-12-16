@@ -38,6 +38,13 @@ namespace xtd {
       /// @return Current user_control instance.
       virtual user_control& auto_size_mode(forms::auto_size_mode value);
       
+      /// @brief Get the border sides for the control.
+      /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
+      virtual forms::border_sides border_sides() const {return border_sides_;}
+      /// @brief Set the border sides for the control.
+      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual user_control& border_sides(forms::border_sides border_sides);
+      
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
@@ -61,6 +68,7 @@ namespace xtd {
       /// @}
 
     private:
+      forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::none;
     };
   }

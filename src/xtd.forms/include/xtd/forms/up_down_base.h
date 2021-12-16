@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::up_down_base control.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
+#include "border_sides.h"
 #include "border_style.h"
 #include "container_control.h"
 
@@ -20,6 +21,13 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Get the border sides for the control.
+      /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
+      virtual forms::border_sides border_sides() const {return border_sides_;}
+      /// @brief Set the border sides for the control.
+      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual up_down_base& border_sides(forms::border_sides border_sides);
+      
       /// @brief Gets the border style for the spin box (also known as an up-down control).
       /// @return One of the border_style values. The default value is fixed_single.
       virtual forms::border_style border_style() const {return border_style_;}
@@ -44,6 +52,7 @@ namespace xtd {
       /// @}
 
     private:
+      forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::fixed_single;
     };
   }

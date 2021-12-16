@@ -28,6 +28,7 @@
 #include "xtd/forms/busy_box.h"
 #include "xtd/forms/busy_dialog.h"
 #include "xtd/forms/boot_mode.h"
+#include "xtd/forms/border_sides.h"
 #include "xtd/forms/border_style.h"
 #include "xtd/forms/bounds_specified.h"
 #include "xtd/forms/button.h"

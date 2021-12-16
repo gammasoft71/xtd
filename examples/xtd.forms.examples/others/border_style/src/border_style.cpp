@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -7,84 +8,112 @@ using namespace xtd::forms;
 namespace examples {
   class form1 : public form {
   public:
+    static void main() {
+      application::run(form1());
+    }
+    
     form1() {
       text("Border style example");
-      client_size({700, 400});
+      client_size({700, 170 + as<int>(20 + bordered_labels.size() / 4 * 70)});
+      controls().push_back_range({colored_panel, control_panel});
       maximum_client_size(client_size());
       minimum_client_size(client_size());
 
-      colored_panel.parent(*this);
-      colored_panel.border_style(forms::border_style::fixed_3d);
+      colored_panel.controls().push_back_range(bordered_labels);
       colored_panel.dock(dock_style::fill);
 
-      label_with_none_border.border_style(forms::border_style::none).text_align(content_alignment::middle_center).text("none").location({20, 20}).size({150, 50}).parent(colored_panel);
-      label_with_fixed_single_border.border_style(forms::border_style::fixed_single).text_align(content_alignment::middle_center).text("fixed_single").location({190, 20}).size({150, 50}).parent(colored_panel);
-      label_with_thin_sunken_border.border_style(forms::border_style::thin_sunken).text_align(content_alignment::middle_center).text("thin_sunken /\nfixed_3d").location({360, 20}).size({150, 50}).parent(colored_panel);
-      label_with_thin_raised_border.border_style(forms::border_style::thin_raised).text_align(content_alignment::middle_center).text("thin_raised").location({530, 20}).size({150, 50}).parent(colored_panel);
-      label_with_bevel_sunken_border.border_style(forms::border_style::bevel_sunken).text_align(content_alignment::middle_center).text("bevel_sunken").location({20, 90}).size({150, 50}).parent(colored_panel);
-      label_with_bevel_raised_border.border_style(forms::border_style::bevel_raised).text_align(content_alignment::middle_center).text("bevel_raised").location({190, 90}).size({150, 50}).parent(colored_panel);
-      label_with_etched_border.border_style(forms::border_style::etched).text_align(content_alignment::middle_center).text("etched").location({360, 90}).size({150, 50}).parent(colored_panel);
-      label_with_bump_border.border_style(forms::border_style::bump).text_align(content_alignment::middle_center).text("bump").location({530, 90}).size({150, 50}).parent(colored_panel);
-      label_with_themed_border.border_style(forms::border_style::themed).text_align(content_alignment::middle_center).text("themed").location({20, 160}).size({150, 50}).parent(colored_panel);
-      label_with_rounded_single_border.border_style(forms::border_style::rounded_single).text_align(content_alignment::middle_center).text("rounded_single").location({190, 160}).size({150, 50}).parent(colored_panel);
-      label_with_dot_single_border.border_style(forms::border_style::dot_single).text_align(content_alignment::middle_center).text("dot_single").location({360, 160}).size({150, 50}).parent(colored_panel);
-      label_with_dash_single_border.border_style(forms::border_style::dash_single).text_align(content_alignment::middle_center).text("dash_single").location({530, 160}).size({150, 50}).parent(colored_panel);
-      label_with_dash_dot_single_border.border_style(forms::border_style::dash_dot_single).text_align(content_alignment::middle_center).text("dash_dot_single").location({20, 230}).size({150, 50}).parent(colored_panel);
-      label_with_dash_dot_dot_single_border.border_style(forms::border_style::dash_dot_dot_single).text_align(content_alignment::middle_center).text("dash_dot_dot_single").location({190, 230}).size({150, 50}).parent(colored_panel);
-      label_with_fixed_double_border.border_style(forms::border_style::fixed_double).text_align(content_alignment::middle_center).text("fixed_double").location({360, 230}).size({150, 50}).parent(colored_panel);
+      for (auto index = 0UL; index < bordered_labels.size(); ++index) {
+        bordered_labels[index].border_style(border_styles[index]);
+        bordered_labels[index].bounds(rectangle(as<int>(20 + index % 4 * 170), as<int>(20 + index / 4 * 70), 150, 50));
+        bordered_labels[index].text(convert::to_string(border_styles[index]));
+        bordered_labels[index].text_align(content_alignment::middle_center);
+      }
 
-      control_panel.parent(*this);
-      control_panel.border_style(forms::border_style::fixed_3d);
+      control_panel.border_sides(border_sides::top);
+      control_panel.border_style(border_style::etched);
+      control_panel.controls().push_back_range({choose_color_label, colors_chooser, select_sides_label, top_side, left_side, bottom_side, right_side});
       control_panel.dock(dock_style::bottom);
-      
-      choose_color_label.parent(control_panel);
-      choose_color_label.location({20, 37});
+
+      choose_color_label.auto_size(true);
+      choose_color_label.location({20, 39});
       choose_color_label.text("Choose color");
 
-      colors.parent(control_panel);
-      for (drawing::color color : colors::get_colors())
-        colors.items().push_back({color.name(), color});
-      colors.items()[0] = {back_color().name(), back_color()};
-      colors.location({120, 35});
-      colors.width(200);
-      colors.selected_index_changed += [&] {
-        auto color = as<drawing::color>(colors.selected_item().tag());
+      for (auto color : colors::get_colors())
+        colors_chooser.items().push_back({color.name(), color});
+      colors_chooser.items()[0] = {back_color().name(), back_color()}; // Replace transparent color by control color.
+      colors_chooser.bounds({120, 37, 220, colors_chooser.default_size().height()});
+      colors_chooser.selected_index(0);
+
+      colors_chooser.selected_index_changed += [&] {
+        auto color = as<drawing::color>(colors_chooser.selected_item().tag());
         colored_panel.back_color(color);
         colored_panel.fore_color(color.is_dark() ? control_paint::light(color, 2.0/3) : control_paint::dark(color, 2.0/3));
-        lightness_label.text(ustring::format(("ligthness = {}"), color.get_lightness()));
       };
-      colors.selected_index(0);
+
+      select_sides_label.auto_size(true);
+      select_sides_label.location({380, 39});
+      select_sides_label.text("Select sides");
       
-      lightness_label.parent(control_panel);
-      lightness_label.auto_size(true);
-      lightness_label.location({360, 37});
-      lightness_label.text(ustring::format(("ligthness = {}"), colored_panel.back_color().get_lightness()));
+      top_side.checked(true);
+      top_side.flat_style(xtd::forms::flat_style::flat);
+      top_side.checked(true);
+      top_side.location({495, 15});
+      top_side.size({50, 10});
+      top_side.checked_changed += [&] {
+        if (top_side.checked()) border_sides |= forms::border_sides::top;
+        else border_sides &= ~forms::border_sides::top;
+        for (auto& bordered_label : bordered_labels)
+          bordered_label.border_sides(border_sides);
+      };
+
+      left_side.checked(true);
+      left_side.flat_style(xtd::forms::flat_style::flat);
+      left_side.location({480, 25});
+      left_side.size({10, 50});
+      left_side.checked_changed += [&] {
+        if (left_side.checked()) border_sides |= forms::border_sides::left;
+        else border_sides &= ~forms::border_sides::left;
+        for (auto& bordered_label : bordered_labels)
+          bordered_label.border_sides(border_sides);
+      };
+
+      right_side.checked(true);
+      right_side.flat_style(xtd::forms::flat_style::flat);
+      right_side.location({550, 25});
+      right_side.size({10, 50});
+      right_side.checked_changed += [&] {
+        if (right_side.checked()) border_sides |= forms::border_sides::right;
+        else border_sides &= ~forms::border_sides::right;
+        for (auto& bordered_label : bordered_labels)
+          bordered_label.border_sides(border_sides);
+      };
+
+      bottom_side.checked(true);
+      bottom_side.flat_style(xtd::forms::flat_style::flat);
+      bottom_side.location({495, 75});
+      bottom_side.size({50, 10});
+      bottom_side.checked_changed += [&] {
+        if (bottom_side.checked()) border_sides |= forms::border_sides::bottom;
+        else border_sides &= ~forms::border_sides::bottom;
+        for (auto& bordered_label : bordered_labels)
+          bordered_label.border_sides(border_sides);
+      };
     }
     
   private:
+    inline static const vector<border_style> border_styles {border_style::none, border_style::fixed_single, border_style::thin_sunken, border_style::thin_raised, border_style::bevel_sunken, border_style::bevel_raised, border_style::etched, border_style::bump, border_style::themed, border_style::rounded_single, border_style::dot_single, border_style::dash_single, border_style::dash_dot_single, border_style::dash_dot_dot_single, border_style::fixed_double};
     panel colored_panel;
-    label label_with_none_border;
-    label label_with_fixed_single_border;
-    label label_with_thin_sunken_border;
-    label label_with_thin_raised_border;
-    label label_with_bevel_sunken_border;
-    label label_with_bevel_raised_border;
-    label label_with_etched_border;
-    label label_with_bump_border;
-    label label_with_themed_border;
-    label label_with_rounded_single_border;
-    label label_with_dot_single_border;
-    label label_with_dash_single_border;
-    label label_with_dash_dot_single_border;
-    label label_with_dash_dot_dot_single_border;
-    label label_with_fixed_double_border;
+    vector<label> bordered_labels {border_styles.size()};
+    forms::border_sides border_sides = forms::border_sides::all;
     panel control_panel;
     label choose_color_label;
-    choice colors;
-    label lightness_label;
+    choice colors_chooser;
+    label select_sides_label;
+    toggle_button top_side;
+    toggle_button left_side;
+    toggle_button bottom_side;
+    toggle_button right_side;
   };
 }
 
-int main() {
-  application::run(examples::form1());
-}
+startup_(examples::form1);

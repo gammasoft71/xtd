@@ -23,6 +23,14 @@ label::label() {
   set_can_focus(false);
 }
 
+label& label::border_sides(forms::border_sides border_sides) {
+  if (border_sides_ != border_sides) {
+    border_sides_ = border_sides;
+    invalidate();
+  }
+  return *this;
+}
+
 label& label::border_style(xtd::forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;
@@ -35,6 +43,14 @@ label& label::flat_style(xtd::forms::flat_style flat_style) {
   if (flat_style_ != flat_style) {
     flat_style_ = flat_style;
     recreate_handle();
+  }
+  return *this;
+}
+
+label& label::shadow(bool value) {
+  if (shadow_ != value) {
+    shadow_ = value;
+    invalidate();
   }
   return *this;
 }
@@ -87,7 +103,7 @@ void label::on_font_changed(const xtd::event_args& e) {
 void label::on_paint(paint_event_args& e) {
   control::on_paint(e);
   if (flat_style_ != xtd::forms::flat_style::system) {
-    control_paint::draw_border_from_back_color(e.graphics(), border_style(), back_color(), e.clip_rectangle());
+    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
     xtd::drawing::string_format string_format;
     switch (text_align_) {
       case content_alignment::top_left: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::near); break;
@@ -101,7 +117,12 @@ void label::on_paint(paint_event_args& e) {
       case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
       default: break;
     }
-    e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height()), string_format);
+    auto rect = xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height());
+    if (shadow()) {
+      e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? control_paint::dark(back_color()) : control_paint::dark(application::theme().theme_colors().gray_text())), rectangle::offset(rect, {1, 1}), string_format);
+      e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), rectangle::offset(rect, {-1, -1}), string_format);
+    } else
+      e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), rect, string_format);
   }
 }
 

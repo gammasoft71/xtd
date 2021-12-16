@@ -29,22 +29,31 @@ picture_box::picture_box() {
   set_can_focus(false);
 }
 
+picture_box& picture_box::border_sides(forms::border_sides border_sides) {
+  if (border_sides_ != border_sides) {
+    border_sides_ = border_sides;
+    invalidate();
+  }
+  return *this;
+}
+
 picture_box& picture_box::border_style(forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;
-    recreate_handle();
+    if (is_handle_created() && control_appearance() == forms::control_appearance::system) recreate_handle();
+    else invalidate();
   }
   return *this;
 }
 
 picture_box& picture_box::image(const drawing::image& image) {
   if (!image_.has_value() || image_.value().handle() != image.handle()) {
-    if (image != drawing::image::empty) {
+    if (image == drawing::image::empty)
+      this->image(nullptr);
+    else {
       image_ = image;
       if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::image(handle(), image_.value());
-    } else {
-      image_.reset();
-      if (is_handle_created()) native::picture_box::reset(handle());
+      else invalidate();
     }
   }
   return *this;
@@ -53,7 +62,8 @@ picture_box& picture_box::image(const drawing::image& image) {
 picture_box& picture_box::image(nullptr_t) {
   if (image_.has_value()) {
     image_.reset();
-    if (is_handle_created()) native::picture_box::reset(handle());
+    if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::reset(handle());
+    else invalidate();
   }
   return *this;
 }
@@ -104,7 +114,7 @@ void picture_box::on_handle_created(const event_args &e) {
 void picture_box::on_paint(paint_event_args& e) {
   control::on_paint(e);
   if (control_appearance() == forms::control_appearance::standard) {
-    control_paint::draw_border_from_back_color(e.graphics(), border_style(), back_color(), e.clip_rectangle());
+    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
     if (image().has_value())
       control_paint::draw_image(e.graphics(), image().value(), e.clip_rectangle(),to_image_layout(size_mode()));
   }
