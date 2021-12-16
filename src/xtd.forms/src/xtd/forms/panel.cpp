@@ -26,7 +26,7 @@ panel& panel::auto_size_mode(forms::auto_size_mode value) {
 panel& panel::border_sides(forms::border_sides border_sides) {
   if (border_sides_ != border_sides) {
     border_sides_ = border_sides;
-    invalidate();
+    if (control_appearance() == forms::control_appearance::standard) invalidate();
   }
   return *this;
 }

@@ -25,7 +25,7 @@ user_control& user_control::auto_size_mode(forms::auto_size_mode value) {
 user_control& user_control::border_sides(forms::border_sides border_sides) {
   if (border_sides_ != border_sides) {
     border_sides_ = border_sides;
-    invalidate();
+    if (control_appearance() == forms::control_appearance::standard) invalidate();
   }
   return *this;
 }
