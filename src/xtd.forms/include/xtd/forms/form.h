@@ -360,7 +360,9 @@ namespace xtd {
       void internal_set_window_state();
       class system_tool_bar;
 
+      void create_system_menu();
       void create_system_tool_bar();
+      void destroy_system_menu();
       void destroy_system_tool_bar();
 
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;

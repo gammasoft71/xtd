@@ -66,10 +66,10 @@ namespace xtd {
       xtd::drawing::size default_size() const override {return {100, 23};}
       
       /// @brief Gets a value that allows to draw a drop shadow under the text.
-      /// @return true allows to draw a drop shadow under the text; otherwise false.
+      /// @return true allows to draw a drop shadow under the text; otherwise false. The default is false.
       virtual bool shadow() const {return shadow_;}
       /// @brief Sets a value that allows to draw a drop shadow under the text.
-      /// @param value true allows to draw a drop shadow under the text; otherwise false.
+      /// @param value true allows to draw a drop shadow under the text; otherwise false. The default is false.
       virtual label& shadow(bool value);
 
       /// @brief Gets the alignment of the text on the button control.
