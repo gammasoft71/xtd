@@ -52,7 +52,7 @@ void month_calendar::get_date_range(const intptr_t control, std::chrono::system_
     return;
   }
 
-  if (wxCalendarCtrl* wx_calendar_ctrl = dynamic_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control())) {
+  if (const wxCalendarCtrl* wx_calendar_ctrl = dynamic_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control())) {
     wxDateTime wx_from_date{}, wx_to_date{};
     wx_calendar_ctrl->GetDateRange(&wx_from_date, &wx_to_date);
     from_date = std::chrono::system_clock::from_time_t(wx_from_date.GetTicks());

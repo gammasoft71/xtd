@@ -11,6 +11,7 @@
 #include "control_handler.h"
 #include <wx/calctrl.h> // wxCalendarCtrl
 #include <chrono> // std::chrono::system_clock
+#include "../../../../../../xtd.forms/include/xtd/forms/month_calendar_styles.h"
 
 namespace xtd {
 	namespace forms {
@@ -56,6 +57,22 @@ namespace xtd {
 				//void SetClientSize(int32_t width, int32_t height) override {
 				//	SetSize(width, height);
 				//}
+
+				static long style_to_wx_style(size_t style, size_t ex_style) {
+					long wx_style = 0;
+
+					if(month_calendar_styles::all & long long(style))
+					{
+					}
+					if ((style & DTS_UPDOWN) == DTS_UPDOWN) wx_style |= wxDP_SPIN;
+					else wx_style |= wxDP_DROPDOWN;
+					if ((style & DTS_SHOWNONE) == DTS_SHOWNONE) wx_style |= wxDP_ALLOWNONE;
+					if ((style & DTS_SHORTDATECENTURYFORMAT) == DTS_SHORTDATECENTURYFORMAT) wx_style |= wxDP_SHOWCENTURY;
+					if ((style & DTS_LONGDATEFORMAT) == DTS_LONGDATEFORMAT) wx_style |= wxDP_SHOWCENTURY;
+
+					return wx_style;
+				}
+
 			};
 		}
 	}

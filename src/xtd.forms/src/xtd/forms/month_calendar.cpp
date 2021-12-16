@@ -24,8 +24,11 @@ std::pair<std::chrono::system_clock::time_point, std::chrono::system_clock::time
 
 control& xtd::forms::month_calendar::date_range(const std::chrono::system_clock::time_point from_date, const std::chrono::system_clock::time_point to_date) {
   native::month_calendar::set_date_range(handle(), from_date, to_date);
-  min_date(from_date);
-  max_date(to_date);
+#pragma region Questionable
+  //TODO
+  //min_date(from_date);
+  //max_date(to_date);
+#pragma endregion
   return *this;
 }
 
