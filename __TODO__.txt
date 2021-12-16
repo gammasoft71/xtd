@@ -1,5 +1,7 @@
-[] Fix default size to a proper size
-[] Impl wx_month_calendar wxCAL_SHOW_HOLIDAYS styles
+[x] Fix default size to a proper size
+[] Impl month_calendar_styles 
+[] Impl getters and setters wxCalendarCtrl setholidayscolor...
+[] Fix events such as click +=  callback triggers a stackoverflow exception
 [] Impl value_changed event
 [] Document all added/modified files properly
 [] Remove this todo file
