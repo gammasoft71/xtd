@@ -9,13 +9,6 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-month_calendar::month_calendar() {
-  //back_color(default_back_color());
-  //fore_color(default_fore_color());
-  set_can_focus(true);
-  size(default_size());
-}
-
 control& month_calendar::max_date(std::chrono::system_clock::time_point max_date) {
   if (max_date_ != max_date) {
     max_date_ = max_date;
