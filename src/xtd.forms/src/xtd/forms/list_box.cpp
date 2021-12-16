@@ -43,7 +43,7 @@ list_box::list_box() {
 list_box& list_box::border_sides(forms::border_sides border_sides) {
   if (data_->border_sides != border_sides) {
     data_->border_sides = border_sides;
-    invalidate();
+    if (control_appearance() == forms::control_appearance::standard) invalidate();
   }
   return *this;
 }

@@ -69,7 +69,7 @@ void loading_indicator::on_paint(paint_event_args& e) {
 
 void loading_indicator::on_timer_tick(object& timer, const xtd::event_args& e) {
   if (++frame_ == intervals_) frame_ = 0;
-  invalidate();
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
 }
 
 
