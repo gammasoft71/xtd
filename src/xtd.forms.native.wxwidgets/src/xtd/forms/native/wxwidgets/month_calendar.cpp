@@ -15,9 +15,8 @@ void month_calendar::value(const intptr_t control, const std::chrono::system_clo
     return;
   }
 
-  if (wxCalendarCtrl* wx_calendar_ctrl = dynamic_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control())) {
-    wx_calendar_ctrl->SetDate(wxDateTime(std::chrono::system_clock::to_time_t(date)));
-  }
+  wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control());
+  wx_calendar_ctrl->SetDate(wxDateTime(std::chrono::system_clock::to_time_t(date)));
 }
 
 std::chrono::system_clock::time_point month_calendar::value(const intptr_t control) {
@@ -27,8 +26,6 @@ std::chrono::system_clock::time_point month_calendar::value(const intptr_t contr
     return std::chrono::system_clock::time_point();
   }
 
-  if (wxCalendarCtrl* wx_calendar_ctrl = dynamic_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control())) {
-    return std::chrono::system_clock::from_time_t(wx_calendar_ctrl->GetDate().GetTicks());
-  }
-  return std::chrono::system_clock::time_point();
+  wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control());
+  return std::chrono::system_clock::from_time_t(wx_calendar_ctrl->GetDate().GetTicks());
 }
