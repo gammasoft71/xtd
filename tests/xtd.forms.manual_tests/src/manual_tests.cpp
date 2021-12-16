@@ -1,6 +1,8 @@
 #include <xtd/xtd.forms>
 
+using namespace xtd;
 using namespace xtd::forms;
+using namespace std::chrono;
 using namespace std::chrono_literals;
 
 class manual_test_form : public form {
@@ -11,26 +13,31 @@ public:
 
   manual_test_form() {
     text("Manual tests");
-    client_size({250, 150});
-     
-    download_button.parent(*this)
-      .text("Download")
-      .location({ 10, 10 })
-      .size({ 150, 50 })
-      .click += [this] {
-        progress_box::show(*this, "Downloading", "Please wait...", 0, 0, 100, progress_box_options::show_cancel_button | progress_box_options::show_skip_button);
-        for(int32_t i = progress_box::minimum(); i <= progress_box::maximum(); ++i) {
-          std::this_thread::sleep_for(100ms); // Do some work...
-          progress_box::update(i, "Downloading", xtd::ustring::format("{}/{}", i, progress_box::maximum()));
-          if (progress_box::skipped()) i++;
-          if (progress_box::cancelled()) break;
-        }
-        progress_box::hide();
-      };
+    client_size({ 640, 480 });
+
+    m_month_calendar.parent(*this);
+    m_month_calendar.location({ 10, 10 });
+    m_month_calendar.value(system_clock::now());
+    m_month_calendar.min_date(system_clock::now() - months(3));
+    m_month_calendar.max_date(system_clock::now() + months(3));
+    m_month_calendar.value_changed += [this](object&, const event_args& e) {
+      message_box::show(ustring::format("month_calendar value_changed event: {}", stringify_date(m_month_calendar.value())));
+    };
+    m_month_calendar.click += [this]() {
+      message_box::show(ustring::format("month_calendar click event: {}", stringify_date(m_month_calendar.value())));
+    };
+  }
+
+  ustring stringify_date(const system_clock::time_point& date, const ustring& format = "%Y-%m-%d %H:%M:%S") {
+    std::time_t tt = std::chrono::system_clock::to_time_t(date);
+    std::tm tm = *std::gmtime(&tt); //GMT (UTC)
+    std::ostringstream ss{};
+    ss << std::put_time(&tm, format.c_str());
+    return ss.str();
   }
 
 private:
-  button download_button;
+  month_calendar m_month_calendar;
 };
 
 startup_(manual_test_form);

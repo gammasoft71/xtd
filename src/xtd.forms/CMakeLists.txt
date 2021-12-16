@@ -163,6 +163,7 @@ add_sources(
   include/xtd/forms/message_dialog_icon.h
   include/xtd/forms/message_dialog_options.h
   include/xtd/forms/message_loop_callback.h
+  include/xtd/forms/month_calendar.h
   include/xtd/forms/mouse_buttons.h
   include/xtd/forms/mouse_event_args.h
   include/xtd/forms/mouse_event_handler.h
@@ -312,6 +313,7 @@ add_sources(
   src/xtd/forms/menu_item.cpp
   src/xtd/forms/message.cpp
   src/xtd/forms/message_dialog.cpp
+  src/xtd/forms/month_calendar.cpp
   src/xtd/forms/mouse_event_args.cpp
   src/xtd/forms/numeric_up_down.cpp
   src/xtd/forms/open_file_dialog.cpp
