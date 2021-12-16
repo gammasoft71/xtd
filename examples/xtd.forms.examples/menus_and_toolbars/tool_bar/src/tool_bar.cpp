@@ -10,7 +10,7 @@ namespace examples {
       text("Toolbar example");
       client_size({820, 500});
       controls().push_back_range({list_box1, tool_bar1});
-      //çé"&@tool_bar(tool_bar1);
+      tool_bar(tool_bar1);
 
       list_box1.dock(dock_style::fill);
       
