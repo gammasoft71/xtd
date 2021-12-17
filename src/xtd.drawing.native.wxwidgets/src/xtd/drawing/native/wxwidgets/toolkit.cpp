@@ -24,6 +24,7 @@ namespace {
     debug::write_line_if(show_wx_assert.enabled(), "--------");
     debug::write_line_if(show_wx_assert.enabled(), ustring::format("cond={}, msg={}", cond, msg));
     debug::write_line_if(show_wx_assert.enabled(), ustring::format("  at {} in {}:line {}", func, file, line));
+    debug_break_();
   }
 }
 
