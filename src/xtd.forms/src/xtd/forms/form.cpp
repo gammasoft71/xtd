@@ -11,7 +11,6 @@
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/form.h>
-#include <xtd/forms/native/tool_bar.h>
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
@@ -23,63 +22,6 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
-
-class form::system_tool_bar : public control {
-public:
-  system_tool_bar() {
-  }
-
-  const xtd::forms::image_list& image_list() const {return *image_list_;};
-  form::system_tool_bar& image_list(const xtd::forms::image_list& value) {
-    image_list_ = &value;
-    return *this;
-  }
-
-  
-  const tool_bar::tool_bar_item_collection& tool_bar_items() const {return tool_bar_items_;}
-  form::system_tool_bar& tool_bar_items(const tool_bar::tool_bar_item_collection& value) {
-    tool_bar_items_ = value;
-    
-    for (auto& item : tool_bar_items_) {
-      if (is<tool_bar_button>(item.get())) {
-        auto& button_item = as<tool_bar_button>(item.get());
-        tool_bar_item_handles_.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < image_list_->images().size() ? image_list_->images()[button_item.image_index()].handle() : image::empty.handle()));
-      } else if (is<tool_bar_separator>(item.get())) {
-        tool_bar_item_handles_.push_back(native::tool_bar::add_tool_bar_separator(handle()));
-      }
-    }
-    
-    return *this;
-  }
-
-protected:
-  forms::create_params create_params() const override {
-    forms::create_params create_params = control::create_params();
-    
-    create_params.class_name("toolbar");
-    
-    return create_params;
-  }
-  
-  void wnd_proc(message& message) override {
-    if (message.msg() == WM_MENUCOMMAND && handle() == message.hwnd()) wm_click(message);
-    else control::wnd_proc(message);
-  }
-  
-private:
-  void wm_click(message& message) {
-    for (size_t index = 0; index < tool_bar_item_handles_.size(); ++index) {
-      if (index < tool_bar_item_handles_.size() && message.wparam() == tool_bar_item_handles_[index]) {
-        tool_bar_items_[index].get().perform_click();
-        break;
-      }
-    }
-  }
-  
-  std::vector<intptr_t> tool_bar_item_handles_;
-  tool_bar::tool_bar_item_collection tool_bar_items_;
-  const xtd::forms::image_list* image_list_ = nullptr;
-};
 
 std::optional<std::reference_wrapper<form>> form::active_form_;
 
@@ -239,14 +181,14 @@ form& form::top_level(bool top_level) {
 form& form::tool_bar(const forms::tool_bar& value) {
   if (!tool_bar_.has_value() || &tool_bar_.value().get() != &value) {
     tool_bar_ = const_cast<forms::tool_bar&>(value);
-    if (is_handle_created()) create_system_tool_bar();
+    tool_bar_.value().get().set_system_tool_bar();
   }
   return *this;
 }
 
 form& form::tool_bar(nullptr_t) {
   if (tool_bar_.has_value()) {
-    if (is_handle_created()) destroy_system_tool_bar();
+    tool_bar_.value().get().reset_system_tool_bar();
     tool_bar_.reset();
   }
   return *this;
@@ -508,7 +450,6 @@ void form::on_handle_created(const event_args &e) {
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
 
   if (menu_.has_value()) create_system_menu();
-  if (tool_bar_.has_value()) create_system_tool_bar();
 }
 
 void form::on_handle_destroyed(const event_args &e) {
@@ -573,45 +514,6 @@ void form::destroy_system_menu() {
   auto prev_client_size = client_size();
 
   native::form::menu(handle(), 0);
-
-  // Workaround : Force the client size with the previously saved client size.
-  client_size(prev_client_size);
-}
-
-void form::create_system_tool_bar() {
-  if (!tool_bar_.has_value()) return;
-
-  // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
-  auto prev_client_size = client_size();
-  
-  system_tool_bar_ = make_shared<system_tool_bar>();
-  system_tool_bar_->parent(*this);
-  system_tool_bar_->image_list(tool_bar_.value().get().image_list());
-  system_tool_bar_->tool_bar_items(tool_bar_.value().get().items());
-  
-  if (native::form::tool_bar(handle(), system_tool_bar_->handle())) {
-    if (tool_bar_.value().get().parent().has_value()) system_tool_bar_previous_parent_ = &tool_bar_.value().get().parent().value().get();
-    tool_bar_.value().get().parent(nullptr);
-  } else {
-    system_tool_bar_->parent(nullptr);
-    system_tool_bar_.reset();
-  }
-
-  // Workaround : Force the client size with the previously saved client size.
-  client_size(prev_client_size);
-}
-
-void form::destroy_system_tool_bar() {
-  if (!system_tool_bar_) return;
-
-  // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
-  auto prev_client_size = client_size();
-
-  native::form::tool_bar(handle(), 0);
-  system_tool_bar_->parent(nullptr);
-  system_tool_bar_.reset();
-  if (system_tool_bar_previous_parent_) tool_bar_.value().get().parent(*system_tool_bar_previous_parent_);
-  system_tool_bar_previous_parent_ = nullptr;
 
   // Workaround : Force the client size with the previously saved client size.
   client_size(prev_client_size);

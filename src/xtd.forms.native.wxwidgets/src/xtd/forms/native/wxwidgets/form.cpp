@@ -10,7 +10,6 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/apptrait.h>
-#include <wx/toolbar.h>
 
 using namespace std::literals;
 using namespace std::this_thread;
@@ -201,27 +200,6 @@ int32_t form::show_sheet_dialog(intptr_t control) {
 #else
   return dialog->ShowModal();
 #endif
-}
-
-#include <wx/artprov.h>
-
-bool form::tool_bar(intptr_t control, intptr_t tool_bar) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (tool_bar != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have tool bar"_t, current_stack_frame_);
-  if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return false;
-  }
-
-//#if !defined(__APPLE__)
-//  return false;
-//#endif
-
-  //if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_SAVE, "&Save", wxArtProvider::GetBitmap(wxART_FILE_SAVE, wxART_TOOLBAR, {32, 32}));
- 
-  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control()) : nullptr);
-  if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->Realize();
-  return true;
 }
 
 void form::end_dialog(intptr_t control, int32_t result) {

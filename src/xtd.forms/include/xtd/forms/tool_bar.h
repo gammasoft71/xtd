@@ -15,6 +15,10 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class form;
+    /// @endcond
+    
     /// @brief Represents a Windows toolbar.
     /// @par Namespace
     /// xtd::forms
@@ -25,6 +29,8 @@ namespace xtd {
     /// The following code example demonstrate the use of tool_bar control.
     /// @include tool_bar.cpp
     class forms_export_ tool_bar : public control {
+      class system_tool_bar;
+
       class tool_bar_button_control : public xtd::forms::button {
       public:
         tool_bar_button_control();
@@ -72,28 +78,35 @@ namespace xtd {
       /// @}
       
     protected:
+      friend form;
       /// @name Protetced methods
       
       /// @{
+      void on_handle_created(const event_args &e) override;
+      void on_handle_destroyed(const event_args &e) override;
       void on_paint(xtd::forms::paint_event_args& e) override;
       /// @}
 
       /// @cond
+      void set_system_tool_bar();
+      void reset_system_tool_bar();
       /// @endcond
 
     private:
+      void create_system_tool_bar();
+      void destroy_system_tool_bar();
       void fill();
       
       void on_item_added(size_t pos, tool_bar_item_ref item);
-      
       void on_item_updated(size_t pos, tool_bar_item_ref item);
-      
       void on_item_removed(size_t pos, tool_bar_item_ref item);
 
       struct data {
         forms::border_style border_style;
         xtd::forms::image_list image_list;
         tool_bar_item_collection items;
+        bool is_system_tool_bar = false;
+        std::shared_ptr<system_tool_bar> internal_system_tool_bar;
         std::vector<std::shared_ptr<xtd::forms::control>> tool_bar_items;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();

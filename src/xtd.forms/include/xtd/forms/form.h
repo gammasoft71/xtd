@@ -358,12 +358,9 @@ namespace xtd {
     private:
       friend class application_context;
       void internal_set_window_state();
-      class system_tool_bar;
 
       void create_system_menu();
-      void create_system_tool_bar();
       void destroy_system_menu();
-      void destroy_system_tool_bar();
 
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;
@@ -385,8 +382,6 @@ namespace xtd {
       bool show_icon_ = true;
       bool show_in_taskbar_ = true;
       form_start_position start_position_ = form_start_position::windows_default_location;
-      std::shared_ptr<system_tool_bar> system_tool_bar_;
-      control* system_tool_bar_previous_parent_ = nullptr;
       std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar_;
       bool top_most_ = false;
       form_window_state window_state_ = form_window_state::normal;

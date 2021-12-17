@@ -1,12 +1,74 @@
 #include <xtd/as.h>
 #include <xtd/is.h>
 #include <xtd/drawing/system_pens.h>
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/tool_bar.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/tool_bar.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+
+class tool_bar::system_tool_bar : public control {
+public:
+  system_tool_bar() {
+  }
+  
+  const xtd::forms::image_list& image_list() const {return *image_list_;};
+  tool_bar::system_tool_bar& image_list(const xtd::forms::image_list& value) {
+    image_list_ = &value;
+    return *this;
+  }
+  
+  
+  const tool_bar::tool_bar_item_collection& tool_bar_items() const {return tool_bar_items_;}
+  tool_bar::system_tool_bar& tool_bar_items(const tool_bar::tool_bar_item_collection& value) {
+    tool_bar_items_ = value;
+    
+    for (auto& item : tool_bar_items_) {
+      if (is<tool_bar_button>(item.get())) {
+        auto& button_item = as<tool_bar_button>(item.get());
+        tool_bar_item_handles_.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < image_list_->images().size() ? image_list_->images()[button_item.image_index()].handle() : image::empty.handle()));
+      } else if (is<tool_bar_separator>(item.get())) {
+        tool_bar_item_handles_.push_back(native::tool_bar::add_tool_bar_separator(handle()));
+      }
+    }
+    
+    return *this;
+  }
+  
+protected:
+  forms::create_params create_params() const override {
+    forms::create_params create_params = control::create_params();
+    
+    create_params.class_name("toolbar");
+    
+    return create_params;
+  }
+  
+  void wnd_proc(message& message) override {
+    if (message.msg() == WM_MENUCOMMAND && handle() == message.hwnd()) wm_click(message);
+    else control::wnd_proc(message);
+  }
+  
+private:
+  void wm_click(message& message) {
+    for (size_t index = 0; index < tool_bar_item_handles_.size(); ++index) {
+      if (index < tool_bar_item_handles_.size() && message.wparam() == tool_bar_item_handles_[index]) {
+        tool_bar_items_[index].get().perform_click();
+        break;
+      }
+    }
+  }
+  
+  std::vector<intptr_t> tool_bar_item_handles_;
+  tool_bar::tool_bar_item_collection tool_bar_items_;
+  const xtd::forms::image_list* image_list_ = nullptr;
+};
 
 tool_bar::tool_bar_button_control::tool_bar_button_control() {
   set_can_focus(false);
@@ -40,10 +102,31 @@ tool_bar::tool_bar() {
   set_can_focus(false);
 }
 
+void tool_bar::on_handle_created(const event_args &e) {
+  control::on_handle_created(e);
+  if (data_->is_system_tool_bar) create_system_tool_bar();
+}
+
+void tool_bar::on_handle_destroyed(const event_args &e) {
+  control::on_handle_destroyed(e);
+  if (data_->internal_system_tool_bar) data_->internal_system_tool_bar->parent(nullptr);
+  data_->internal_system_tool_bar.reset();
+}
+
 void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
   control::on_paint(e);
   if (control_appearance() == forms::control_appearance::standard)
     control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
+}
+
+void tool_bar::set_system_tool_bar() {
+  data_->is_system_tool_bar = true;
+  if (is_handle_created()) create_system_tool_bar();
+}
+
+void tool_bar::reset_system_tool_bar() {
+  data_->is_system_tool_bar = false;
+  if (is_handle_created()) destroy_system_tool_bar();
 }
 
 void tool_bar::fill() {
@@ -116,4 +199,42 @@ const tool_bar::tool_bar_item_collection& tool_bar::items() const {
 
 tool_bar::tool_bar_item_collection& tool_bar::items() {
   return data_->items;
+}
+
+void tool_bar::create_system_tool_bar() {
+  if (!data_->is_system_tool_bar) return;
+  
+  // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
+  auto prev_client_size = parent().value().get().client_size();
+  
+  data_->internal_system_tool_bar = make_shared<system_tool_bar>();
+  data_->internal_system_tool_bar->parent(parent().value().get());
+  data_->internal_system_tool_bar->image_list(image_list());
+  data_->internal_system_tool_bar->tool_bar_items(items());
+  
+  if (native::tool_bar::set_system_tool_bar(parent().value().get().handle(), data_->internal_system_tool_bar->handle())) {
+    control::hide();
+  } else {
+    data_->is_system_tool_bar = false;
+    data_->internal_system_tool_bar->parent(nullptr);
+    data_->internal_system_tool_bar.reset();
+  }
+  
+  // Workaround : Force the client size with the previously saved client size.
+  parent().value().get().client_size(prev_client_size);
+}
+
+void tool_bar::destroy_system_tool_bar() {
+  if (!data_->internal_system_tool_bar) return;
+  
+  // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
+  auto prev_client_size = parent().value().get().client_size();
+  
+  native::tool_bar::set_system_tool_bar(handle(), 0);
+  data_->internal_system_tool_bar->parent(nullptr);
+  data_->internal_system_tool_bar.reset();
+  control::show();
+  
+  // Workaround : Force the client size with the previously saved client size.
+  parent().value().get().client_size(prev_client_size);
 }
