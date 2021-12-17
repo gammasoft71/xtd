@@ -758,11 +758,11 @@ void control::create_handle() {
   data_->handle = native::control::create(params);
   handles_[handle()] = this;
   native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
-  on_handle_created(event_args::empty);
   for(auto child : data_->controls) {
     child.get().data_->parent = handle();
     child.get().create_handle();
   }
+  on_handle_created(event_args::empty);
   set_state(state::creating_handle, false);
 }
 
