@@ -111,11 +111,6 @@ namespace xtd {
         /// @param control Control window handle.
         /// @warning Internal use only
         static int32_t show_sheet_dialog(intptr_t control);
-        /// @brief Sets the tool_bar that is displayed in the form.
-        /// @param control Control window handle.
-        /// @param tool_bar A tool bar handle that represents the tool bar to display in the form.
-        /// @warning Internal use only
-        static bool tool_bar(intptr_t control, intptr_t tool_bar);
         /// @brief Set virtual size
         /// @param control Control window handle.
         /// @param size A virtual xtd::drawing::size.
