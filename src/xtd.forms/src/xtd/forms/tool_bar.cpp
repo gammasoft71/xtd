@@ -152,50 +152,24 @@ void tool_bar::fill() {
     perform_layout();
   }
   if (data_->is_system_tool_bar) {
-    // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-    auto prev_client_size = parent().value().get().client_size();
-    
+    parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
     native::tool_bar::set_system_tool_bar(parent().value().get().handle(), handle());
-    
-    // Workaround : Force the client size with the previously saved client size.
-    parent().value().get().client_size(prev_client_size);
   }
 }
 
 void tool_bar::on_item_added(size_t pos, tool_bar_item_ref item) {
-  // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  auto prev_client_size = parent().value().get().client_size();
-  
-  controls().clear();
-  data_->tool_bar_items.clear();
+  parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   recreate_handle();
-  
-  // Workaround : Force the client size with the previously saved client size.
-  parent().value().get().client_size(prev_client_size);
 }
 
 void tool_bar::on_item_updated(size_t pos, tool_bar_item_ref item) {
-  // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  auto prev_client_size = parent().value().get().client_size();
-  
-  controls().clear();
-  data_->tool_bar_items.clear();
+  parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   recreate_handle();
-  
-  // Workaround : Force the client size with the previously saved client size.
-  parent().value().get().client_size(prev_client_size);
 }
 
 void tool_bar::on_item_removed(size_t pos, tool_bar_item_ref item) {
-  // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  auto prev_client_size = parent().value().get().client_size();
-  
-  controls().clear();
-  data_->tool_bar_items.clear();
+  parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   recreate_handle();
-  
-  // Workaround : Force the client size with the previously saved client size.
-  parent().value().get().client_size(prev_client_size);
 }
 
 dock_style tool_bar::dock() const {
