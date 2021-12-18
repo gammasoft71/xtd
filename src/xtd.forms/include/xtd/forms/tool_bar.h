@@ -67,9 +67,26 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Get the border sides for the control.
+      /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
+      virtual forms::border_sides border_sides() const {return data_->border_sides;}
+      /// @brief Set the border sides for the control.
+      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual tool_bar& border_sides(forms::border_sides border_sides);
+      
+      /// @brief Gets the border style for the control.
+      /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
+      /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
+      virtual forms::border_style border_style() const {return data_->border_style;}
+      /// @brief Sets the border style for the control.
+      /// @param border_style One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
+      /// @return Current panel instance.
+      /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
+      virtual tool_bar& border_style(forms::border_style border_style);
+
       const xtd::forms::image_list& image_list() const;
       xtd::forms::image_list& image_list();
-      xtd::forms::tool_bar& image_list(const xtd::forms::image_list& value);
+      tool_bar& image_list(const xtd::forms::image_list& value);
       
       xtd::drawing::size default_size() const override;
       
@@ -102,6 +119,7 @@ namespace xtd {
       void on_item_removed(size_t pos, tool_bar_item_ref item);
 
       struct data {
+        forms::border_sides border_sides = forms::border_sides::all;
         forms::border_style border_style;
         xtd::forms::image_list image_list;
         tool_bar_item_collection items;

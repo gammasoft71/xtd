@@ -24,7 +24,6 @@ public:
     return *this;
   }
   
-  
   const tool_bar::tool_bar_item_collection& tool_bar_items() const {return tool_bar_items_;}
   tool_bar::system_tool_bar& tool_bar_items(const tool_bar::tool_bar_item_collection& value) {
     tool_bar_items_ = value;
@@ -100,6 +99,23 @@ tool_bar::tool_bar() {
   padding(2);
   height(data_->image_list.image_size().height() + 10);
   set_can_focus(false);
+}
+
+tool_bar& tool_bar::border_sides(forms::border_sides border_sides) {
+  if (data_->border_sides != border_sides) {
+    data_->border_sides = border_sides;
+    if (control_appearance() == forms::control_appearance::standard) invalidate();
+  }
+  return *this;
+}
+
+tool_bar& tool_bar::border_style(forms::border_style border_style) {
+  if (data_->border_style != border_style) {
+    data_->border_style = border_style;
+    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    else invalidate();
+  }
+  return *this;
 }
 
 void tool_bar::on_handle_created(const event_args &e) {
