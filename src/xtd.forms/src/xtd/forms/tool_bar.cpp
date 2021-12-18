@@ -13,6 +13,22 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+namespace {
+  struct parent_client_size_guard {
+    parent_client_size_guard(control& control) : control_(&control) {
+      client_size_ = control_->parent().value().get().client_size();
+    }
+    
+    ~parent_client_size_guard() {
+      control_->parent().value().get().client_size(client_size_);
+    }
+    
+  private:
+    control* control_;
+    drawing::size client_size_;
+  };
+}
+
 tool_bar::tool_bar_button_control::tool_bar_button_control() {
   set_can_focus(false);
 }
