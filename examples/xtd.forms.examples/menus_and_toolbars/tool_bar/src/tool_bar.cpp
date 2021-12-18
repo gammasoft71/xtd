@@ -42,15 +42,15 @@ namespace examples {
     tool_bar_button about_tool_bar_button {system_texts::about(), 7, {*this, &form1::on_tool_bar_item_click}};
 
     forms::tool_bar tool_bar2;
-    tool_bar_button play_tool_bar_button {"Play", 0, {*this, &form1::on_tool_bar_item_click}};
+    tool_bar_button play_tool_bar_button {"&Play", 0, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_separator tool_bar2_separator1;
-    tool_bar_button skip_backward_tool_bar_button {"Skip backward", 1, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_button stop_tool_bar_button {"Stop", 2, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_button skip_forward_tool_bar_button {"Skip forward", 3, {*this, &form1::on_tool_bar_item_click}};
+    tool_bar_button skip_backward_tool_bar_button {"Skip &Backward", 1, {*this, &form1::on_tool_bar_item_click}};
+    tool_bar_button stop_tool_bar_button {"S&top", 2, {*this, &form1::on_tool_bar_item_click}};
+    tool_bar_button skip_forward_tool_bar_button {"Skip &Forward", 3, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_separator tool_bar2_separator2;
-    tool_bar_button record_tool_bar_button {"Record", 4, {*this, &form1::on_tool_bar_item_click}};
+    tool_bar_button record_tool_bar_button {"&Record", 4, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_separator tool_bar2_separator3;
-    tool_bar_button eject_tool_bar_button {"Eject", 5, {*this, &form1::on_tool_bar_item_click}};
+    tool_bar_button eject_tool_bar_button {"&Eject", 5, {*this, &form1::on_tool_bar_item_click}};
   };
 }
 
