@@ -181,14 +181,14 @@ form& form::top_level(bool top_level) {
 form& form::tool_bar(const forms::tool_bar& value) {
   if (!tool_bar_.has_value() || &tool_bar_.value().get() != &value) {
     tool_bar_ = const_cast<forms::tool_bar&>(value);
-    tool_bar_.value().get().set_system_tool_bar();
+    tool_bar_.value().get().is_system_tool_bar(true);
   }
   return *this;
 }
 
 form& form::tool_bar(nullptr_t) {
   if (tool_bar_.has_value()) {
-    tool_bar_.value().get().reset_system_tool_bar();
+    tool_bar_.value().get().is_system_tool_bar(false);
     tool_bar_.reset();
   }
   return *this;
