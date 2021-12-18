@@ -1,3 +1,4 @@
+#include <xtd/as.h>
 #include <xtd/environment.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
@@ -74,6 +75,9 @@ void tab_control::on_control_removed(const control_event_args &e) {
 void tab_control::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::tab_control::image_list(handle(), image_list_.handle());
+  
+  for (auto& control : controls())
+    native::tab_page::image_index(as<tab_page>(control.get()).handle(), as<tab_page>(control.get()).image_index());
 }
 
 void tab_control::wnd_proc(message& message) {
