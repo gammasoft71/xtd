@@ -71,19 +71,19 @@ namespace xtd {
         else if (event.GetEventType() == wxEVT_TOGGLEBUTTON) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_MENU) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MENUCOMMAND, event.GetId(), reinterpret_cast<intptr_t>(event.GetEventObject()), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_CALENDAR_DOUBLECLICKED) {
-          NMHDR nmhrd {reinterpret_cast<intptr_t>(event_handler_), static_cast<intptr_t>(event.GetId()), MCN_SELECT};
+          NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_SELECT};
           event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
         } else if (event.GetEventType() == wxEVT_CALENDAR_SEL_CHANGED) {
-          NMHDR nmhrd {reinterpret_cast<intptr_t>(event_handler_), static_cast<intptr_t>(event.GetId()), MCN_SELCHANGE};
+          NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_SELCHANGE};
           event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
         } else if (event.GetEventType() == wxEVT_CALENDAR_PAGE_CHANGED) {
-          NMHDR nmhrd {reinterpret_cast<intptr_t>(event_handler_), static_cast<intptr_t>(event.GetId()), MCN_VIEWCHANGE};
+          NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_VIEWCHANGE};
           event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
         } else if (event.GetEventType() == wxEVT_CALENDAR_WEEK_CLICKED) {
-          NMHDR nmhrd {reinterpret_cast<intptr_t>(event_handler_), static_cast<intptr_t>(event.GetId()), MCN_VIEWCHANGE};
+          NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_VIEWCHANGE};
           event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
         } else if (event.GetEventType() == wxEVT_CALENDAR_WEEKDAY_CLICKED) {
-          NMHDR nmhrd {reinterpret_cast<intptr_t>(event_handler_), static_cast<intptr_t>(event.GetId()), MCN_VIEWCHANGE};
+          NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_VIEWCHANGE};
           event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
         } else def_process_event(event);
       }
