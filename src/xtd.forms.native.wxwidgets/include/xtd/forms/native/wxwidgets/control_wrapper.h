@@ -23,6 +23,10 @@
 #include <xtd/forms/native/scroll_bar_styles.h>
 #include <xtd/forms/native/virtual_keys.h>
 #include <xtd/forms/native/window_styles.h>
+#ifdef WIN32
+#include <Windows.h>
+#include <Commctrl.h>
+#endif
 #include <wx/calctrl.h>
 #include <wx/checkbox.h>
 #include <wx/choice.h>

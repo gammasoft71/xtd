@@ -1605,8 +1605,8 @@ void control::wm_notify(message& message) {
   def_wnd_proc(message);
   if (message.lparam() != 0) {
     NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
-    if (from_handle(nmhdr->hwndFrom).has_value())
-      from_handle(nmhdr->hwndFrom).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
+    if (from_handle(reinterpret_cast<intptr_t>(nmhdr->hwndFrom)).has_value())
+      from_handle(reinterpret_cast<intptr_t>(nmhdr->hwndFrom)).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
   }
 }
 

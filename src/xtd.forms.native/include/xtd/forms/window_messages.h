@@ -5,6 +5,11 @@
 #include <cstddef>
 #include <cstdint>
 
+#ifndef WIN32
+struct HWND__ {};
+typedef struct HWND__* HWND;
+#endif
+
 #ifndef WM_NULL
 /// @brief Performs no operation. An application sends the WM_NULL message if it wants to post a message that the recipient window will ignore.
 /// @par Library
@@ -1740,7 +1745,6 @@ constexpr size_t BN_DBLCLK = BN_DOUBLECLICKED;
 constexpr size_t BN_SETFOCUS = 6;
 constexpr size_t BN_KILLFOCUS = 7;
 
-
 constexpr size_t EN_SETFOCUS = 0x0100;
 constexpr size_t EN_KILLFOCUS = 0x0200;
 constexpr size_t EN_CHANGE = 0x0300;
@@ -1754,16 +1758,18 @@ constexpr size_t EN_ALIGN_RTL_EC = 0x0701;
 constexpr size_t EN_BEFORE_PASTE = 0x0800;
 constexpr size_t EN_AFTER_PASTE = 0x0801;
 
-constexpr uint32_t MCN_VIEWCHANGE = (0 - 750); // MCN_SELECT -4  - give state of calendar view
-constexpr uint32_t MCN_SELCHANGE = ((0-750)+1);
-constexpr uint32_t MCN_GETDAYSTATE = ((0-750)+3);
-constexpr uint32_t MCN_SELECT = ((0-750)+4);
+constexpr uint32_t MCN_VIEWCHANGE = uint32_t(0 - 750); // MCN_SELECT -4  - give state of calendar view
+constexpr uint32_t MCN_SELCHANGE = uint32_t((0-750)+1);
+constexpr uint32_t MCN_GETDAYSTATE = uint32_t((0-750)+3);
+constexpr uint32_t MCN_SELECT = uint32_t((0-750)+4);
 
+#ifndef WIN32
 struct NMHDR {
-  intptr_t hwndFrom;
-  intptr_t idFrom;
+  HWND hwndFrom;
+  uintptr_t idFrom;
   uint32_t code;
 };
+#endif
 
 template<typename type1_t, typename type2_t>
 uint16_t MAKEWORD(type1_t a, type2_t b) {
