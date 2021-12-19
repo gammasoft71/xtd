@@ -27,7 +27,7 @@ namespace xtd {
       /// @}
       /// @name Properties
       /// @{
-      drawing::size default_size() const override { return { 220, 140 }; }
+      drawing::size default_size() const override { return {227, 162}; }
 
       /// @brief Gets the maximum date that can be selected in the control.
       /// @return The maximum date that can be selected in the control.
@@ -150,6 +150,8 @@ namespace xtd {
       /// @name Events
       
       /// @{
+      event<month_calendar, event_handler> date_changed;
+      event<month_calendar, event_handler> date_selected;
       /// @brief Occurs when the value of the value property changes.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -164,16 +166,21 @@ namespace xtd {
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
+      virtual void on_date_changed(const event_args& e);
+      virtual void on_date_selected(const event_args& e);
       /// @brief Raises the month_calendar::value_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
-      
+
       void on_handle_created(const event_args& e) override;
       void wnd_proc(message& message) override;
       /// @}
       
     private:
-      void wm_click(message& message);
+      void wm_notify(message& message);
+      void wm_date_selected(message& message);
+      void wm_date_changed(message& message);
+      void wm_view_changed(message& message);
 
       std::chrono::system_clock::time_point max_date_ = std::chrono::system_clock::time_point::max();
       std::chrono::system_clock::time_point min_date_ = std::chrono::system_clock::time_point::min();

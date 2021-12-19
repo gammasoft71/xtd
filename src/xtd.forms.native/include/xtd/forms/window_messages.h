@@ -1754,6 +1754,17 @@ constexpr size_t EN_ALIGN_RTL_EC = 0x0701;
 constexpr size_t EN_BEFORE_PASTE = 0x0800;
 constexpr size_t EN_AFTER_PASTE = 0x0801;
 
+constexpr uint32_t MCN_VIEWCHANGE = (0 - 750); // MCN_SELECT -4  - give state of calendar view
+constexpr uint32_t MCN_SELCHANGE = ((0-750)+1);
+constexpr uint32_t MCN_GETDAYSTATE = ((0-750)+3);
+constexpr uint32_t MCN_SELECT = ((0-750)+4);
+
+struct NMHDR {
+  intptr_t hwndFrom;
+  intptr_t idFrom;
+  uint32_t code;
+};
+
 template<typename type1_t, typename type2_t>
 uint16_t MAKEWORD(type1_t a, type2_t b) {
   return static_cast<uint16_t>((static_cast<uint16_t>((static_cast<uint32_t>(a)) & 0xff)) | (static_cast<uint16_t>(static_cast<uint16_t>((static_cast<uint32_t>(b)) & 0xff))) << 8);
