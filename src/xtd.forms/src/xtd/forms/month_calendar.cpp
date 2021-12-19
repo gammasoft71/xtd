@@ -44,6 +44,14 @@ forms::create_params month_calendar::create_params() const {
   return create_params;
 }
 
+void month_calendar::on_date_changed(const event_args& e) {
+  if (can_raise_events()) date_changed(*this, e);
+}
+
+void month_calendar::on_date_selected(const event_args& e) {
+  if (can_raise_events()) date_selected(*this, e);
+}
+
 void month_calendar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::month_calendar::value(handle(), value_);
@@ -55,13 +63,43 @@ void month_calendar::on_value_changed(const event_args& e) {
 
 void month_calendar::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_COMMAND: wm_click(message); break;
+    case WM_LBUTTONDOWN:
+    case WM_MBUTTONDOWN:
+    case WM_RBUTTONDOWN:
+    case WM_XBUTTONDOWN:
+    case WM_LBUTTONUP:
+    case WM_MBUTTONUP:
+    case WM_RBUTTONUP:
+    case WM_XBUTTONUP:
+    case WM_LBUTTONDBLCLK:
+    case WM_MBUTTONDBLCLK:
+    case WM_RBUTTONDBLCLK:
+    case WM_XBUTTONDBLCLK: def_wnd_proc(message); break; // Mouse events are not supported
+    case WM_REFLECT + WM_NOTIFY: wm_notify(message); break;
     default: control::wnd_proc(message);
   }
 }
 
-void month_calendar::wm_click(message& message) {
-  def_wnd_proc(message);
+void month_calendar::wm_notify(message& message) {
+  control::def_wnd_proc(message);
+  NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
+  switch (nmhdr->code) {
+    case MCN_SELECT: wm_date_selected(message); break;
+    case MCN_SELCHANGE: wm_date_changed(message); break;
+    case MCN_VIEWCHANGE: wm_view_changed(message); break;
+    default: break;
+  }
+}
+
+void month_calendar::wm_date_selected(message& message) {
+  on_date_selected(event_args::empty);
+}
+
+void month_calendar::wm_date_changed(message& message) {
   value(native::month_calendar::value(handle()));
-  on_value_changed(event_args::empty);
+  on_date_changed(event_args::empty);
+}
+
+void month_calendar::wm_view_changed(message& message) {
+  // Do something or not if view changed
 }

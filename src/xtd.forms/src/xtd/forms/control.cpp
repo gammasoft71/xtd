@@ -1318,6 +1318,7 @@ void control::wnd_proc(message& message) {
     case WM_PAINT: wm_paint(message); break;
     case WM_MENUCOMMAND: if (data_->context_menu.has_value()) data_->context_menu.value().get().wm_click(message); break;
     case WM_MOVE: wm_move(message);  break;
+    case WM_NOTIFY: wm_notify(message);  break;
     case WM_SETTEXT: wm_set_text(message); break;
     case WM_SIZE: wm_size(message); break;
     case WM_SIZING: wm_sizing(message); break;
@@ -1598,6 +1599,15 @@ void control::wm_mouse_wheel(message& message) {
     on_mouse_horizontal_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
   else
     on_mouse_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
+}
+
+void control::wm_notify(message& message) {
+  def_wnd_proc(message);
+  if (message.lparam() != 0) {
+    NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
+    if (from_handle(nmhdr->hwndFrom).has_value())
+      from_handle(nmhdr->hwndFrom).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
+  }
 }
 
 void control::wm_paint(message& message) {

@@ -1835,6 +1835,7 @@ namespace xtd {
       void wm_mouse_move(message& message);
       void wm_move(message& message);
       void wm_mouse_wheel(message& message);
+      void wm_notify(message& message);
       void wm_paint(message& message);
       void wm_erase_background(message& message);
       void wm_scroll(message& message);
