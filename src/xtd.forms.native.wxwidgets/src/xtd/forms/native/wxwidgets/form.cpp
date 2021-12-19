@@ -2,6 +2,13 @@
 #include <thread>
 #include <xtd/argument_exception.h>
 #include <xtd/not_implemented_exception.h>
+#ifdef WIN32
+#include <winsock2.h>
+#include <Windows.h>
+#include <Commctrl.h>
+#undef max
+#undef min
+#endif
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>

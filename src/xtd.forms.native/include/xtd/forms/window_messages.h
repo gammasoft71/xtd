@@ -5,12 +5,10 @@
 #include <cstddef>
 #include <cstdint>
 
-#ifndef WIN32
+#ifndef WM_NULL
 struct HWND__ {};
 typedef struct HWND__* HWND;
-#endif
 
-#ifndef WM_NULL
 /// @brief Performs no operation. An application sends the WM_NULL message if it wants to post a message that the recipient window will ignore.
 /// @par Library
 /// xtd.forms.native
@@ -955,7 +953,7 @@ constexpr int32_t WM_CTLCOLORSTATIC = 0x0138;
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 /// @remarks For more info see https://docs.microsoft.com .
-constexpr int32_t WM_GETHMENU = 0x01E1;
+constexpr int32_t MN_GETHMENU = 0x01E1;
 // not defined 0x01E2 - 0x019F
 /// @brief Posted to a window when the cursor moves. If the mouse is not captured, the message is posted to the window that contains the cursor. Otherwise, the message is posted to the window that has captured the mouse.
 /// @par Library
@@ -1358,7 +1356,7 @@ constexpr int32_t WM_POINTERHWHEEL = 0x024F;
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 /// @remarks For more info see https://docs.microsoft.com .
-constexpr int32_t WM_POINTERHITTEST = 0x0250;
+constexpr int32_t DM_POINTERHITTEST = 0x0250;
 // not defined 0x0251 - 0x0280
 /// @brief Sent to an application when a window is activated. A window receives this message through its WindowProc function.v
 /// @par Library
@@ -1763,13 +1761,11 @@ constexpr uint32_t MCN_SELCHANGE = uint32_t((0-750)+1);
 constexpr uint32_t MCN_GETDAYSTATE = uint32_t((0-750)+3);
 constexpr uint32_t MCN_SELECT = uint32_t((0-750)+4);
 
-#ifndef WIN32
 struct NMHDR {
   HWND hwndFrom;
   uintptr_t idFrom;
   uint32_t code;
 };
-#endif
 
 template<typename type1_t, typename type2_t>
 uint16_t MAKEWORD(type1_t a, type2_t b) {
@@ -1801,11 +1797,10 @@ inline uint8_t HIBYTE(type_t value) {
   return static_cast<uint8_t>((static_cast<uint32_t>(value) >> 8) & 0xFF);
 }
 
+constexpr int32_t UDN_DELTAPOS = -722;
 #endif
 
 constexpr int32_t WM_REFLECT = WM_USER + 0x1C00;
-
-constexpr int32_t UDN_DELTAPOS = -722;
 
 constexpr int32_t WM_MOUSEENTER = WM_USER + 0x0001;
 
