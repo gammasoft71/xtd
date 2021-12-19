@@ -39,13 +39,21 @@ tool_bar::tool_bar_separator_control::tool_bar_separator_control() {
 
 void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
   control::on_paint(e);
-  auto left = e.clip_rectangle().width() / 2;
-  auto top = 4;
-  auto right = left;
-  auto bottom = e.clip_rectangle().height() - 4;
   auto percent_of_color = 1.0/3;
   auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
-  e.graphics().draw_line(color, point {left, top}, point {right, bottom});
+  if (dock() == dock_style::left || dock() == dock_style::right) {
+    auto left = 4;
+    auto top = e.clip_rectangle().height() / 2;
+    auto right = e.clip_rectangle().width() - 4;
+    auto bottom = top;
+    e.graphics().draw_line(color, point {left, top}, point {right, bottom});
+  } else {
+    auto left = e.clip_rectangle().width() / 2;
+    auto top = 4;
+    auto right = left;
+    auto bottom = e.clip_rectangle().height() - 4;
+    e.graphics().draw_line(color, point {left, top}, point {right, bottom});
+  }
 }
 
 tool_bar::tool_bar() {
@@ -58,6 +66,7 @@ tool_bar::tool_bar() {
   dock(xtd::forms::dock_style::top);
   padding(2);
   height(data_->image_list.image_size().height() + 10);
+  width(data_->image_list.image_size().width() + 10);
   set_can_focus(false);
 }
 
@@ -129,12 +138,14 @@ void tool_bar::fill() {
         auto button_control = std::make_shared<tool_bar_button_control>();
         button_control->parent(*this);
         button_control->tool_bar_item(button_item);
-        button_control->dock(dock_style::left);
+        if (dock() == dock_style::left || dock() == dock_style::right) button_control->dock(dock_style::top);
+        else button_control->dock(dock_style::left);
         button_control->flat_style(xtd::forms::flat_style::flat);
         button_control->flat_appearance().border_size(0);
         button_control->image_align(content_alignment::middle_center);
+        button_control->height(data_->image_list.image_size().height() + 6);
         button_control->width(data_->image_list.image_size().width() + 6);
-         
+
         if (button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
         //button_control->text(button_item.text());
         data_->tool_bar_items.push_back(button_control);
@@ -144,7 +155,9 @@ void tool_bar::fill() {
       else {
         auto separator_control = std::make_shared<tool_bar_separator_control>();
         separator_control->parent(*this);
-        separator_control->dock(dock_style::left);
+        if (dock() == dock_style::left || dock() == dock_style::right) separator_control->dock(dock_style::top);
+        else separator_control->dock(dock_style::left);
+        separator_control->height(data_->image_list.image_size().height() / 2);
         separator_control->width(data_->image_list.image_size().width() / 2);
         data_->tool_bar_items.push_back(separator_control);
       }
@@ -179,7 +192,12 @@ dock_style tool_bar::dock() const {
 
 control& tool_bar::dock(dock_style dock) {
   if (data_->is_system_tool_bar) data_->non_system_dock = dock;
-  else control::dock(dock);
+  else {
+    int32_t current_size = this->dock() == dock_style::top || this->dock() == dock_style::bottom ? height() : width();
+    control::dock(dock);
+    if (this->dock() == dock_style::top || this->dock() ==  dock_style::bottom) height(current_size);
+    else width(current_size);
+  }
   return *this;
 }
 
