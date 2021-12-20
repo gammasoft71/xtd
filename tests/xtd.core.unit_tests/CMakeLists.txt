@@ -18,6 +18,7 @@ add_sources(
   src/xtd/convert.cpp
   src/xtd/convert_pointer.cpp
   src/xtd/convert_string.cpp
+  src/xtd/date_time.cpp
   src/xtd/divided_by_zero_exception.cpp
   src/xtd/domain_exception.cpp
   src/xtd/delegate.cpp
