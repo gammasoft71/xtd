@@ -49,9 +49,8 @@ namespace xtd {
 
     /// @{
     date_time_kind kind() const noexcept;
-    
+    xtd::ticks ticks() const noexcept;
     /// @}
-    
     
     /// @name Methods
     
@@ -71,4 +70,9 @@ namespace xtd {
   /// @cond
   std::ostream& operator <<(std::ostream& os, const date_time& ver) noexcept;
   /// @endcond
+
+  template<>
+  inline std::string to_string(const date_time& value, const std::string& fmt, const std::locale& loc) {
+    return value.to_string(fmt);
+  }
 }
