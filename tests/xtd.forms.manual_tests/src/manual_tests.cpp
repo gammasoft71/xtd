@@ -17,25 +17,24 @@ public:
     text("Manual tests");
     client_size({ 640, 480 });
 
-    m_month_calendar.parent(*this);
-    m_month_calendar.location({ 10, 10 });
-    m_month_calendar.value(system_clock::now());
-    m_month_calendar.min_date(system_clock::now() - months(3));
-    m_month_calendar.max_date(system_clock::now() + months(3));
-    m_month_calendar.date_changed += [&](object&, const event_args& e) {
-      debug::write_line(ustring::format("month_calendar date_changed event: {:d}", m_month_calendar.value()));
+    month_calendar1.parent(*this);
+    month_calendar1.location({ 10, 10 });
+    month_calendar1.selection_range({system_clock::now(), system_clock::now()});
+    month_calendar1.min_date(system_clock::now() - months(3));
+    month_calendar1.max_date(system_clock::now() + months(3));
+    month_calendar1.date_changed += [&](object&, const event_args& e) {
+      debug::write_line(ustring::format("month_calendar date_changed event: [{:d}, {:d}]", month_calendar1.selection_start(), month_calendar1.selection_end()));
     };
-    m_month_calendar.date_selected += [&](object&, const event_args& e) {
-      debug::write_line(ustring::format("month_calendar date_selected event: {:d}", m_month_calendar.value()));
-      debug::write_line("month_calendar date selected");
+    month_calendar1.date_selected += [&](object&, const event_args& e) {
+      debug::write_line(ustring::format("month_calendar date_selected event: [{:d}, {:d}]", month_calendar1.selection_start(), month_calendar1.selection_end()));
     };
-    m_month_calendar.click += [&](object&, const event_args& e) {
-      debug::write_line("Click must not trigged!!!");
+    month_calendar1.click += [&](object&, const event_args& e) {
+      assert_(false);
     };
   }
 
 private:
-  month_calendar m_month_calendar;
+  month_calendar month_calendar1;
 };
 
 startup_(manual_test_form);

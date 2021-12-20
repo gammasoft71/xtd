@@ -199,6 +199,7 @@ add_sources(
   include/xtd/forms/scrollable_control.h
   include/xtd/forms/screen.h
   include/xtd/forms/selection_mode.h
+  include/xtd/forms/selection_range.h
   include/xtd/forms/segment_style.h
   include/xtd/forms/segments.h
   include/xtd/forms/settings.h
@@ -330,6 +331,7 @@ add_sources(
   src/xtd/forms/screen.cpp
   src/xtd/forms/scroll_bar.cpp
   src/xtd/forms/scrollable_control.cpp
+  src/xtd/forms/selection_range.cpp
   src/xtd/forms/settings.cpp
   src/xtd/forms/split_container.cpp
   src/xtd/forms/splitter.cpp

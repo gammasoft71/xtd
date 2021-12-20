@@ -4,6 +4,7 @@
 #pragma once
 #include <chrono>
 #include "control.h"
+#include "selection_range.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,133 +21,74 @@ namespace xtd {
     /// @include month_calendar.cpp
     class forms_export_ month_calendar : public control {
     public:
+      using time_point = std::chrono::system_clock::time_point;
+
       /// @name Constructors
       /// @{
       /// @brief Initializes a new instance of the month_calendar class.
       month_calendar() = default;
       /// @}
+      
       /// @name Properties
       /// @{
-      drawing::size default_size() const override { return {227, 162}; }
+      drawing::size default_size() const override {return {227, 140};}
 
       /// @brief Gets the maximum date that can be selected in the control.
       /// @return The maximum date that can be selected in the control.
-      virtual std::chrono::system_clock::time_point max_date() const {return max_date_;}
+      virtual time_point max_date() const;
       /// @brief Sets the maximum date that can be selected in the control.
-      /// @param max_date The maximum date that can be selected in the control.
+      /// @param value The maximum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual control& max_date(std::chrono::system_clock::time_point max_date);
+      virtual month_calendar& max_date(time_point value);
       /// @brief Sets the maximum date that can be selected in the control.
-      /// @param max_date The maximum date that can be selected in the control.
-      /// @return Current month_calendar.
-      virtual control& max_date(time_t max_date) {return this->max_date(std::chrono::system_clock::from_time_t(max_date));}
+      /// @param value The maximum date that can be selected in the control.
+      /// @returnmonth_calendar Current month_calendar.
+      virtual month_calendar& max_date(time_t value);
       /// @brief Sets the maximum date that can be selected in the control.
-      /// @param max_date The maximum date that can be selected in the control.
+      /// @param value The maximum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual control& max_date(const std::tm& max_date) {
-        std::tm internal_max_date = max_date;
-        return this->max_date(mktime(&internal_max_date));
-      }
+      virtual month_calendar& max_date(const std::tm& value);
       /// @brief Sets the maximum date that can be selected in the control.
-      /// @param max_date The maximum date that can be selected in the control.
+      /// @param value The maximum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual control& max_date(int32_t year, int32_t month, int32_t day) {
-        std::tm internal_max_date = {};
-        internal_max_date.tm_year = year - 1900;
-        internal_max_date.tm_mon = month - 1;
-        internal_max_date.tm_mday = day;
-        return max_date(std::mktime(&internal_max_date));
-      }
-      /// @brief Sets the maximum date that can be selected in the control.
-      /// @param max_date The maximum date that can be selected in the control.
-      /// @return Current month_calendar.
-      virtual control& max_date(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second) {
-        std::tm internal_max_date = {};
-        internal_max_date.tm_year = year - 1900;
-        internal_max_date.tm_mon = month - 1;
-        internal_max_date.tm_mday = day;
-        internal_max_date.tm_hour = hour;
-        internal_max_date.tm_min = minute;
-        internal_max_date.tm_sec = second;
-        return max_date(std::mktime(&internal_max_date));
-      }
+      virtual month_calendar& max_date(int32_t year, int32_t month, int32_t day);
 
       /// @brief Gets the minimum date that can be selected in the control.
       /// @return The minimum date that can be selected in the control.
-      virtual std::chrono::system_clock::time_point min_date() const {return max_date_;}
+      virtual time_point min_date() const;
       /// @brief Sets the minimum date that can be selected in the control.
-      /// @param max_date The minimum date that can be selected in the control.
+      /// @param value The minimum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual control& min_date(std::chrono::system_clock::time_point min_date);
+      virtual month_calendar& min_date(time_point value);
       /// @brief Sets the minimum date that can be selected in the control.
-      /// @param max_date The minimum date that can be selected in the control.
+      /// @param value The minimum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual control& min_date(time_t min_date) {return this->min_date(std::chrono::system_clock::from_time_t(min_date));}
+      virtual month_calendar& min_date(time_t value);
       /// @brief Sets the minimum date that can be selected in the control.
-      /// @param max_date The minimum date that can be selected in the control.
+      /// @param value The minimum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual control& min_date(const std::tm& min_date) {
-        std::tm internal_min_date = min_date;
-        return this->min_date(std::mktime(&internal_min_date));
-      }
+      virtual month_calendar& min_date(const std::tm& value);
       /// @brief Sets the minimum date that can be selected in the control.
-      /// @param max_date The minimum date that can be selected in the control.
+      /// @param value The minimum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual control& min_date(int32_t year, int32_t month, int32_t day) {
-        std::tm internal_min_date = {};
-        internal_min_date.tm_year = year - 1900;
-        internal_min_date.tm_mon = month - 1;
-        internal_min_date.tm_mday = day;
-        return min_date(std::mktime(&internal_min_date));
-      }
-      /// @brief Sets the minimum date that can be selected in the control.
-      /// @param max_date The minimum date that can be selected in the control.
-      /// @return Current month_calendar.
-      virtual control& min_date(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second) {
-        std::tm internal_min_date = {};
-        internal_min_date.tm_year = year - 1900;
-        internal_min_date.tm_mon = month - 1;
-        internal_min_date.tm_mday = day;
-        internal_min_date.tm_hour = hour;
-        internal_min_date.tm_min = minute;
-        internal_min_date.tm_sec = second;
-        return min_date(std::mktime(&internal_min_date));
-      }
+      virtual month_calendar& min_date(int32_t year, int32_t month, int32_t day);
 
-      /// @brief Gets the date value assigned to the control.
-      /// @return The date and time value assign to the control.
-      virtual std::chrono::system_clock::time_point value() const {return value_;}
-      /// @brief Sets the date value assigned to the control.
-      /// @param value The date and time value assign to the control.
-      virtual control& value(std::chrono::system_clock::time_point value);
-      /// @brief Sets the date value assigned to the control.
-      /// @param value The date and time value assign to the control.
-      virtual control& value(time_t value) {return this->value(std::chrono::system_clock::from_time_t(value));}
-      /// @brief Sets the date value assigned to the control.
-      /// @param value The date and time value assign to the control.
-      virtual control& value(const std::tm& value) {
-        std::tm internal_value = value;
-        return this->value(std::mktime(&internal_value));
-      }
-      /// @brief Sets the date value assigned to the control.
-      /// @param value The date and time value assign to the control.
-      virtual control& value(int32_t year, int32_t month, int32_t day) {
-        return value(year, month, day, 0, 0, 0);
-      }
-      /// @brief Sets the date value assigned to the control.
-      /// @param value The date and time value assign to the control.
-      virtual control& value(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second) {
-        std::tm internal_value = {};
-        internal_value.tm_year = year - 1900;
-        internal_value.tm_mon = month - 1;
-        internal_value.tm_mday = day;
-        internal_value.tm_hour = hour;
-        internal_value.tm_min = minute;
-        internal_value.tm_sec = second;
-        return value(std::mktime(&internal_value));
-      }
+      virtual time_point selection_end() const;
+      virtual month_calendar& selection_end(time_point value);
+      virtual month_calendar& selection_end(time_t value);
+      virtual month_calendar& selection_end(const std::tm& value);
+      virtual month_calendar& selection_end(int32_t year, int32_t month, int32_t day);
+
+      virtual time_point selection_start() const;
+      virtual month_calendar& selection_start(time_point value);
+      virtual month_calendar& selection_start(time_t value);
+      virtual month_calendar& selection_start(const std::tm& value);
+      virtual month_calendar& selection_start(int32_t year, int32_t month, int32_t day);
+
+      virtual forms::selection_range selection_range() const;
+      virtual month_calendar& selection_range(const forms::selection_range& value);
       /// @}
-      
+
       /// @name Events
       
       /// @{
@@ -170,14 +112,20 @@ namespace xtd {
       /// @}
       
     private:
+      static time_point clear_hours_minutes_seconds(time_point value) {return std::chrono::system_clock::from_time_t(std::chrono::system_clock::to_time_t(value) / 86400 * 86400);}
       void wm_notify(message& message);
       void wm_date_selected(message& message);
       void wm_date_changed(message& message);
       void wm_view_changed(message& message);
 
-      std::chrono::system_clock::time_point max_date_ = std::chrono::system_clock::time_point::max();
-      std::chrono::system_clock::time_point min_date_ = std::chrono::system_clock::time_point::min();
-      std::chrono::system_clock::time_point value_ = std::chrono::system_clock::now();
+      struct data {
+        time_point min_date = clear_hours_minutes_seconds(time_point::min());
+        time_point max_date = clear_hours_minutes_seconds(time_point::max());
+        time_point selection_start = clear_hours_minutes_seconds(std::chrono::system_clock::now());
+        time_point selection_end = clear_hours_minutes_seconds(std::chrono::system_clock::now());
+      };
+
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
