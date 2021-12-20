@@ -6,12 +6,15 @@ using namespace xtd;
 
 namespace {
   constexpr ticks ticks_offset_1970 = ticks(621672202500000000LL);
-};
+}
 
 date_time date_time::max_value = xtd::ticks(2534022971990000000LL) + ticks_offset_1970;
 date_time date_time::min_value = xtd::ticks(0);
 
-date_time::date_time(xtd::ticks ticks) : value_(ticks) {  
+date_time::date_time(xtd::ticks ticks) : value_(ticks) {
+}
+
+date_time::date_time(xtd::ticks ticks, xtd::date_time_kind kind) : value_(ticks), kind_(kind) {
 }
 
 date_time_kind date_time::kind() const noexcept {

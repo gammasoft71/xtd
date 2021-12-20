@@ -36,6 +36,7 @@ namespace xtd {
     /// @{
     date_time() = default;
     date_time(xtd::ticks ticks);
+    date_time(xtd::ticks ticks, xtd::date_time_kind kind);
     /// @}
     
     /// @cond
