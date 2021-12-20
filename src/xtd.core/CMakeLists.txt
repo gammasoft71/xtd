@@ -41,6 +41,7 @@ add_sources(
   include/xtd/convert_string.h
   include/xtd/cpp_language.h
   include/xtd/ctrace.h
+  include/xtd/date_time.h
   include/xtd/debugstreambuf.h
   include/xtd/delegate.h
   include/xtd/divided_by_zero_exception.h
@@ -249,6 +250,7 @@ add_sources(
   src/xtd/convert.cpp
   src/xtd/convert_pointer.cpp
   src/xtd/convert_string.cpp
+  src/xtd/date_time.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
