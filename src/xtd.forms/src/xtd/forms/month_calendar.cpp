@@ -9,31 +9,142 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-control& month_calendar::max_date(std::chrono::system_clock::time_point max_date) {
-  if (max_date_ != max_date) {
-    max_date_ = max_date;
-    if (max_date_ < min_date_) min_date_ = max_date_;
-   value(value_);
+namespace {
+  static std::tm make_tm(int32_t year, int32_t month, int32_t day) {
+    std::tm date = {};
+    date.tm_year = year - 1900;
+    date.tm_mon = month - 1;
+    date.tm_mday = day;
+    return date;
+  }
+}
+
+month_calendar::time_point month_calendar::max_date() const {
+  return data_->max_date;
+}
+
+month_calendar& month_calendar::max_date(time_point value) {
+  value = clear_hours_minutes_seconds(value);
+  if (data_->max_date != value) {
+    data_->max_date = value;
+    if (data_->max_date < data_->min_date) data_->min_date = data_->max_date;
+    if (is_handle_created()) native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
+    selection_start(data_->selection_start);
+    selection_end(data_->selection_end);
   }
   return *this;
 }
 
-control& month_calendar::min_date(std::chrono::system_clock::time_point min_date) {
-  if (min_date_ != min_date) {
-    min_date_ = min_date;
-    if (max_date_ < min_date_) max_date_ = min_date_;
-    value(value_);
+month_calendar& month_calendar::max_date(time_t value) {
+  return max_date(std::chrono::system_clock::from_time_t(value));
+}
+
+month_calendar& month_calendar::max_date(const std::tm& value) {
+  std::tm date = value;
+  return this->max_date(mktime(&date));
+}
+
+month_calendar& month_calendar::max_date(int32_t year, int32_t month, int32_t day) {
+  std::tm date = make_tm(year, month, day);
+  return max_date(std::mktime(&date));
+}
+
+month_calendar::time_point month_calendar::min_date() const {
+  return data_->min_date;
+}
+
+month_calendar& month_calendar::month_calendar::min_date(time_point value) {
+  value = clear_hours_minutes_seconds(value);
+  if (data_->min_date != value) {
+    data_->min_date = value;
+    if (data_->max_date < data_->min_date) data_->max_date = data_->min_date;
+    if (is_handle_created()) native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
+    selection_start(data_->selection_start);
+    selection_end(data_->selection_end);
   }
   return *this;
 }
 
-control& month_calendar::value(std::chrono::system_clock::time_point value) {
-  if (value_ != value) {
-    if (value < min_date_) value = min_date_;
-    if (value > max_date_) value = max_date_;
-    value_ = value;
-    if (is_handle_created()) native::month_calendar::value(handle(), value_);
-   }
+month_calendar& month_calendar::min_date(time_t value) {
+  return min_date(std::chrono::system_clock::from_time_t(value)); 
+}
+
+month_calendar& month_calendar::min_date(const std::tm& value) {
+  std::tm date = value;
+  return min_date(std::mktime(&date));
+}
+month_calendar& month_calendar::min_date(int32_t year, int32_t month, int32_t day) {
+  std::tm date = make_tm(year, month, day);
+  return min_date(std::mktime(&date));
+}
+
+month_calendar::time_point month_calendar::selection_end() const {
+  return data_->selection_end;
+}
+
+month_calendar& month_calendar::selection_end(std::chrono::system_clock::time_point value) {
+  value = clear_hours_minutes_seconds(value);
+  if (value < data_->min_date) value = data_->min_date;
+  if (value > data_->max_date) value = data_->max_date;
+  if (data_->selection_end != value) {
+    data_->selection_end = value;
+    if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
+    on_date_selected(event_args::empty);
+  }
+  return *this;
+}
+
+month_calendar& month_calendar::selection_end(time_t value) {
+  return selection_end(std::chrono::system_clock::from_time_t(value));
+}
+
+month_calendar& month_calendar::selection_end(const std::tm& value) {
+  std::tm date = value;
+  return selection_end(std::mktime(&date));
+}
+
+month_calendar& month_calendar::selection_end(int32_t year, int32_t month, int32_t day) {
+  std::tm date = make_tm(year, month, day);
+  return selection_end(std::mktime(&date));
+}
+
+month_calendar::time_point month_calendar::selection_start() const {
+  return data_->selection_start;
+}
+
+month_calendar& month_calendar::selection_start(time_point value) {
+  value = clear_hours_minutes_seconds(value);
+  if (value < data_->min_date) value = data_->min_date;
+  if (value > data_->max_date) value = data_->max_date;
+  if (data_->selection_start != value) {
+    data_->selection_start = value;
+    if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
+    on_date_selected(event_args::empty);
+  }
+  return *this;
+}
+
+month_calendar& month_calendar::selection_start(time_t value) {
+  return selection_start(std::chrono::system_clock::from_time_t(value));
+}
+
+month_calendar& month_calendar::selection_start(const std::tm& value) {
+  std::tm date = value;
+  return selection_start(std::mktime(&date));
+}
+
+month_calendar& month_calendar::selection_start(int32_t year, int32_t month, int32_t day) {
+  std::tm date = make_tm(year, month, day);
+  return selection_start(std::mktime(&date));
+}
+
+forms::selection_range month_calendar::selection_range() const {
+  return {data_->selection_start, data_->selection_end};
+}
+
+month_calendar& month_calendar::selection_range(const forms::selection_range& value) {
+  data_->selection_start = value.start();
+  data_->selection_end = value.end();
   return *this;
 }
 
@@ -53,7 +164,8 @@ void month_calendar::on_date_selected(const event_args& e) {
 
 void month_calendar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::month_calendar::value(handle(), value_);
+  native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
+  native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
 }
 
 void month_calendar::wnd_proc(message& message) {
@@ -86,12 +198,16 @@ void month_calendar::wm_notify(message& message) {
 }
 
 void month_calendar::wm_date_selected(message& message) {
-  value_ = native::month_calendar::value(handle());
+  auto selection_range = native::month_calendar::selection_range(handle());
+  data_->selection_start = selection_range.first;
+  data_->selection_end = selection_range.second;
   on_date_selected(event_args::empty);
 }
 
 void month_calendar::wm_date_changed(message& message) {
-  value_ = native::month_calendar::value(handle());
+  auto selection_range = native::month_calendar::selection_range(handle());
+  data_->selection_start = selection_range.first;
+  data_->selection_end = selection_range.second;
   on_date_changed(event_args::empty);
 }
 

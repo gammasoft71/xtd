@@ -40,12 +40,19 @@ namespace xtd {
         /// @param control: month_calendar handle.
         /// @param date: The date to set to the calendar.
         /// @warning Internal use only
-        static void value(const intptr_t control, std::chrono::system_clock::time_point date);
+        static void allowable_dates(const intptr_t control, std::chrono::system_clock::time_point min_date, std::chrono::system_clock::time_point max_date);
+        /// @name Protected methods
+        /// @{
+        /// @brief Sets date to the calendar.
+        /// @param control: month_calendar handle.
+        /// @param date: The date to set to the calendar.
+        /// @warning Internal use only
+        static void selection_range(const intptr_t control, std::chrono::system_clock::time_point date_start, std::chrono::system_clock::time_point date_end);
         /// @brief Gets selected date from the calendar.
         /// @param control: month_calendar handle.
         /// @return selected date.
         /// @warning Internal use only
-        static std::chrono::system_clock::time_point value(const intptr_t control);
+        static std::pair<std::chrono::system_clock::time_point, std::chrono::system_clock::time_point> selection_range(const intptr_t control);
         /// @}
       };
     }
