@@ -152,10 +152,6 @@ namespace xtd {
       /// @{
       event<month_calendar, event_handler> date_changed;
       event<month_calendar, event_handler> date_selected;
-      /// @brief Occurs when the value of the value property changes.
-      /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
-      event<month_calendar, event_handler> value_changed;
       /// @}
 
     protected:
@@ -168,9 +164,6 @@ namespace xtd {
       
       virtual void on_date_changed(const event_args& e);
       virtual void on_date_selected(const event_args& e);
-      /// @brief Raises the month_calendar::value_changed event.
-      /// @param e An event_args that contains the event data.
-      virtual void on_value_changed(const event_args& e);
 
       void on_handle_created(const event_args& e) override;
       void wnd_proc(message& message) override;

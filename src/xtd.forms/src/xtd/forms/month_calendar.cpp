@@ -33,8 +33,7 @@ control& month_calendar::value(std::chrono::system_clock::time_point value) {
     if (value > max_date_) value = max_date_;
     value_ = value;
     if (is_handle_created()) native::month_calendar::value(handle(), value_);
-    on_value_changed(event_args::empty);
-  }
+   }
   return *this;
 }
 
@@ -57,12 +56,9 @@ void month_calendar::on_handle_created(const event_args& e) {
   native::month_calendar::value(handle(), value_);
 }
 
-void month_calendar::on_value_changed(const event_args& e) {
-  if (can_raise_events()) value_changed(*this, e);
-}
-
 void month_calendar::wnd_proc(message& message) {
   switch (message.msg()) {
+    case WM_REFLECT + WM_NOTIFY: wm_notify(message); break;
     case WM_LBUTTONDOWN:
     case WM_MBUTTONDOWN:
     case WM_RBUTTONDOWN:
@@ -75,13 +71,11 @@ void month_calendar::wnd_proc(message& message) {
     case WM_MBUTTONDBLCLK:
     case WM_RBUTTONDBLCLK:
     case WM_XBUTTONDBLCLK: def_wnd_proc(message); break; // Mouse events are not supported
-    case WM_REFLECT + WM_NOTIFY: wm_notify(message); break;
     default: control::wnd_proc(message);
   }
 }
 
 void month_calendar::wm_notify(message& message) {
-  control::def_wnd_proc(message);
   NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
   switch (nmhdr->code) {
     case MCN_SELECT: wm_date_selected(message); break;
@@ -92,11 +86,12 @@ void month_calendar::wm_notify(message& message) {
 }
 
 void month_calendar::wm_date_selected(message& message) {
+  value_ = native::month_calendar::value(handle());
   on_date_selected(event_args::empty);
 }
 
 void month_calendar::wm_date_changed(message& message) {
-  value(native::month_calendar::value(handle()));
+  value_ = native::month_calendar::value(handle());
   on_date_changed(event_args::empty);
 }
 
