@@ -19,6 +19,10 @@ namespace {
   }
 }
 
+month_calendar::month_calendar() {
+  control_appearance(forms::control_appearance::system);
+}
+
 month_calendar::time_point month_calendar::max_date() const {
   return data_->max_date;
 }
