@@ -33,20 +33,20 @@ namespace {
   // Number of days in a non-leap year
   const int64_t days_per_year = 365;
   // Number of days in 4 years
-  const int64_t days_per_4_years = days_per_year * 4 + 1;       // 1461
+  const int64_t days_per_4_years = days_per_year * 4 + 1; // 1461
   // Number of days in 100 years
-  const int64_t days_per_100_years = days_per_4_years * 25 - 1;  // 36524
+  const int64_t days_per_100_years = days_per_4_years * 25 - 1; // 36524
   // Number of days in 400 years
   const int64_t days_per_400_years = days_per_100_years * 4 + 1; // 146097
   
   // Number of days from 1/1/0001 to 12/31/1600
-  const int64_t days_to_1601 = days_per_400_years * 4;          // 584388
+  const int64_t days_to_1601 = days_per_400_years * 4; // 584388
   // Number of days from 1/1/0001 to 12/30/1899
   const int64_t days_to_1899 = days_per_400_years * 4 + days_per_100_years * 3 - 367;
   // Number of days from 1/1/0001 to 12/31/1969
   const int64_t days_to_1970 = days_per_400_years * 4 + days_per_100_years * 3 + days_per_4_years * 17 + days_per_year; // 719,162
   // Number of days from 1/1/0001 to 12/31/9999
-  const int64_t days_to_10000 = days_per_400_years * 25 - 366;  // 3652059
+  const int64_t days_to_10000 = days_per_400_years * 25 - 366; // 3652059
  
   const int64_t min_ticks = 0;
   const int64_t max_ticks = days_to_10000 * ticks_per_day - 1;
@@ -101,12 +101,84 @@ date_time::date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour,
   set_date_time(year, month, day, hour, minute, second, millisecond, kind);
 }
 
+date_time date_time::date() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return date_time(year, month, day, 0, 0, 0, 0, kind_);
+}
+
+uint32_t date_time::day() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return day;
+}
+
+xtd::day_of_week date_time::day_fo_week() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return static_cast<xtd::day_of_week>(day_of_week);
+}
+
+uint32_t date_time::day_of_year() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return day_of_year;
+}
+
+uint32_t date_time::hour() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return hour;
+}
+
 date_time_kind date_time::kind() const noexcept {
   return kind_;
 }
 
+date_time date_time::now() noexcept {
+  return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::local);
+}
+
+uint32_t date_time::second() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return second;
+}
+
 xtd::ticks date_time::ticks() const noexcept {
   return value_;
+}
+
+date_time::time_point date_time::time_of_day() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return duration_cast<time_point>(chrono::hours(hour)) + duration_cast<time_point>(chrono::minutes(minute)) + duration_cast<time_point>(chrono::seconds(second));
+}
+
+date_time date_time::to_day() noexcept {
+  date_time to_day = now();
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  to_day.get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return date_time(year, month, day, 0, 0, 0, 0, to_day.kind_);
+}
+
+date_time date_time::utc_now() noexcept {
+  return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::utc);
+}
+
+uint32_t date_time::years() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return year;
 }
 
 date_time date_time::from_time_t(std::time_t value) {
@@ -120,14 +192,6 @@ date_time date_time::from_time_t(std::time_t value, date_time_kind kind) {
   return result;
 }
 
-date_time date_time::now() {
-  return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::local);
-}
-
-date_time date_time::utc_now() {
-  return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::utc);
-}
-
 xtd::ustring date_time::to_string() const noexcept {
   return to_string("G");
 }
@@ -135,12 +199,10 @@ xtd::ustring date_time::to_string() const noexcept {
 ustring date_time::to_string(const ustring& format) const {
   auto fmt = format;
   if (fmt.empty()) fmt =  "G";
-  if (fmt.size() > 1) __format_exception("Invalid format");
-  
-  uint32 day_of_year = 0;
+  if (fmt.size() > 1) format_exception("Invalid format", csf_);
+    
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32 day_of_week = 0;
-  
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   tm time {};
   time.tm_year = year - 1900;
