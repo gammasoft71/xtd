@@ -22,7 +22,7 @@ int32_t date_time::now(uint64_t& seconds, uint32_t& milliseconds, uint32_t& time
   seconds = make_gmt_time(st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);
   milliseconds = st.wMilliseconds;
   daylight = (tzi.Bias == (tzi.StandardBias + tzi.DaylightBias) && tzi.DaylightBias != 0);
-  time_zone = (int32)tzi.Bias;
+  time_zone = (uint32_t)tzi.Bias;
   return 0;
 }
 
@@ -39,7 +39,7 @@ int32_t date_time::gmt_time(time_t time, uint32_t& year, uint32_t& month, uint32
   hour = st.wHour;
   minute = st.wMinute;
   second = st.wSecond;
-  day_of_year = (int32)((time - make_gmt_time(st.wYear, 1, 1, 0, 0, 0)) / (86400)) + 1;
+  day_of_year = (uint32_t)((time - make_gmt_time(st.wYear, 1, 1, 0, 0, 0)) / (86400)) + 1;
   day_of_week = st.wDayOfWeek;
   return 0;
 }
@@ -60,7 +60,7 @@ int32_t date_time::local_time(time_t time, uint32_t& year, uint32_t& month, uint
   hour = st.wHour;
   minute = st.wMinute;
   second = st.wSecond;
-  day_of_year = (int32)((time - make_gmt_time(st.wYear, 1, 1, 0, 0, 0)) / (86400)) + 1;
+  day_of_year = (uint32_t)((time - make_gmt_time(st.wYear, 1, 1, 0, 0, 0)) / (86400)) + 1;
   day_of_week = st.wDayOfWeek;
   return 0;
 }
