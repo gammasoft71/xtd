@@ -93,9 +93,9 @@ namespace xtd {
     
     bool equals(const date_time&) const noexcept override;
     bool equals(const object&) const noexcept override;
-    static date_time from_binary(int64_t date_data);
-    static date_time from_file_time(int64_t fileTime);
-    static date_time from_file_time_utc(int64_t fileTime);
+    static date_time from_binary(time_t date_data);
+    static date_time from_file_time(time_t fileTime);
+    static date_time from_file_time_utc(time_t fileTime);
     template<typename rep_t, typename period_t>
     static date_time from_duration(std::chrono::duration<rep_t, period_t> value) {
       return date_time(std::chrono::duration_cast<xtd::ticks>(value), date_time_kind::unspecified);
@@ -110,10 +110,20 @@ namespace xtd {
     static date_time from_tm(tm& value, date_time_kind kind);
     bool is_daylight_saving_time() const noexcept;
     static bool is_leap_year(uint32_t year);
+    xtd::ustring parse() const;
+    static date_time specify_kind(date_time value, date_time_kind kind);
+    time_point subtract(const date_time& value) const;
+    date_time subtract(time_point value) const;
+    time_t to_binary() const;
     date_time to_local_time() const;
+    const xtd::ustring to_long_date_string() const;
+    const xtd::ustring to_long_time_string() const;
+    const xtd::ustring to_short_date_string() const;
+    const xtd::ustring to_short_time_string() const;
     xtd::ustring to_string() const noexcept override;
     xtd::ustring to_string(const ustring& format) const;
     std::time_t to_time_t() const;
+    date_time to_universal_time() const;
     /// @}
     
     /// @Name Operators

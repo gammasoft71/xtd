@@ -5,6 +5,7 @@
 #include "../include/xtd/format_exception.h"
 #include "../include/xtd/invalid_operation_exception.h"
 #include "../include/xtd/date_time.h"
+#include "../include/xtd/not_implemented_exception.h"
 #include "../include/xtd/unused.h"
 
 using namespace std;
@@ -245,15 +246,15 @@ bool date_time::equals(const object& other) const noexcept {
   return dynamic_cast<const date_time*>(&other) && equals(static_cast<const date_time&>(other));
 }
 
-date_time date_time::from_binary(int64_t date_data) {
+date_time date_time::from_binary(time_t date_data) {
   return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32_t>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
 }
 
-date_time date_time::from_file_time(int64_t file_time){
+date_time date_time::from_file_time(time_t file_time){
   return from_file_time_utc(file_time).to_local_time();
 }
 
-date_time date_time::from_file_time_utc(int64_t file_time) {
+date_time date_time::from_file_time_utc(time_t file_time) {
   return date_time(xtd::ticks(file_time + 621355968000000000LL), date_time_kind::utc);
 }
 
@@ -288,6 +289,29 @@ bool date_time::is_leap_year(uint32_t year) {
   return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 }
 
+xtd::ustring date_time::parse() const {
+  throw not_implemented_exception(csf_);
+}
+
+date_time date_time::specify_kind(date_time value, date_time_kind kind) {
+  if (kind == date_time_kind::local && value.kind_ != date_time_kind::local) return value.to_local_time();
+  if (kind == date_time_kind::utc && value.kind_ != date_time_kind::utc) return value.to_universal_time();
+  if (kind == date_time_kind::unspecified) return date_time(value.value_, date_time_kind::unspecified);
+  return value;
+}
+
+date_time::time_point date_time::subtract(const date_time& value) const {
+  return time_point(duration_cast<time_point>(value_ - value.value_));
+}
+
+date_time date_time::subtract(time_point value) const {
+  return date_time(value_ - duration_cast<xtd::ticks>(value));
+}
+
+time_t date_time::to_binary() const {
+  return (duration_cast<chrono::seconds>(value_).count() & 0x3FFFFFFFFFFFFFFFLL) + ((static_cast<int64>(kind_) << 62) & 0xC000000000000000LL);
+}
+
 date_time date_time::to_local_time() const {
   if (kind_ != date_time_kind::unspecified) return date_time(value_, date_time_kind::local);
   
@@ -298,6 +322,22 @@ date_time date_time::to_local_time() const {
   if (seconds == -1) throw invalid_operation_exception(csf_);
   
   return date_time(duration_cast<xtd::ticks>(chrono::seconds(seconds) + seconds_offset_1970), date_time_kind::local);
+}
+
+const xtd::ustring date_time::to_long_date_string() const {
+  return to_string("n");
+}
+
+const xtd::ustring date_time::to_long_time_string() const {
+  return to_string("T");
+}
+
+const xtd::ustring date_time::to_short_date_string() const {
+  return to_string("D");
+}
+
+const xtd::ustring date_time::to_short_time_string() const {
+  return to_string("V");
 }
 
 xtd::ustring date_time::to_string() const noexcept {
@@ -367,6 +407,18 @@ std::time_t date_time::to_time_t() const {
 
 date_time::operator date_time::time_point() const {
   return time_point(value_);
+}
+
+date_time date_time::to_universal_time() const {
+  if (kind_ != date_time_kind::unspecified) return date_time(value_, date_time_kind::utc);
+  
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, dayOfYear = 0;
+  int32_t dayOfWeek = 0;
+  native::date_time::gmt_time((duration_cast<chrono::seconds>(value_) - seconds_offset_1970).count(), year, month, day, hour, minute, second, dayOfYear, dayOfWeek);
+  
+  time_t seconds = native::date_time::make_local_time(year, month, day, hour, minute, second);
+  if (seconds == -1) throw invalid_operation_exception(csf_);
+  return date_time(duration_cast<xtd::ticks>(chrono::seconds(seconds) + seconds_offset_1970), date_time_kind::utc);
 }
 
 date_time& date_time::operator+=(date_time value) {
