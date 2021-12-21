@@ -15,6 +15,7 @@ add_sources(
   include/xtd/native/console.h
   include/xtd/native/constant_special_item_id_list.h
   include/xtd/native/cryptography.h
+  include/xtd/native/date_time.h
   include/xtd/native/debugger.h
   include/xtd/native/directory.h
   include/xtd/native/dns.h

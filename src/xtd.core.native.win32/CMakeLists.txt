@@ -14,6 +14,7 @@ add_sources(
   include/xtd/native/win32/strings.h
   src/xtd/native/win32/console.cpp
   src/xtd/native/win32/cryptography.cpp
+  src/xtd/native/win32/date_time.cpp
   src/xtd/native/win32/debugger.cpp
   src/xtd/native/win32/directory.cpp
   src/xtd/native/win32/dns.cpp

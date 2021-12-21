@@ -29,5 +29,5 @@ namespace xtd {
   /// This example sho how to use Unused():
   /// @include unused.cpp
   #define unused_ \
-    unused
+    xtd::unused
 }

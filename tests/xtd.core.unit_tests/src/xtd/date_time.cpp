@@ -31,7 +31,7 @@ namespace unit_tests {
     void test_method_(create_date_max_value) {
       date_time d = date_time::max_value;
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
-      assert::are_equal(ticks(2534022971990000000LL) + ticks(621672202500000000LL), d.ticks(), csf_);
+      assert::are_equal(ticks(3155378975999999999LL), d.ticks(), csf_);
       //assert::are_equal("9999-12-31 23:59:59", d.to_string("u"), csf_);
     }
     
@@ -57,11 +57,17 @@ namespace unit_tests {
     }
 
     void test_method_(create_date_now) {
-      assert::are_equal(date_time_kind::unspecified, date_time::now().kind(), csf_);
+      assert::are_equal(date_time_kind::local, date_time::now().kind(), csf_);
       assert::is_not_zero(date_time::now().ticks().count(), csf_);
       assert::are_equal(system_clock::to_time_t(system_clock::now()), date_time::now().to_time_t(), csf_);
     }
-    
+
+    void test_method_(create_date_utc_now) {
+      assert::are_equal(date_time_kind::utc, date_time::utc_now().kind(), csf_);
+      assert::is_not_zero(date_time::now().ticks().count(), csf_);
+      assert::are_equal(system_clock::to_time_t(system_clock::now()), date_time::now().to_time_t(), csf_);
+    }
+
     void test_method_(from_time_t) {
       struct tm tms = make_tm(1971, 1, 5, 21, 10, 30);
       date_time d = date_time::from_time_t(std::mktime(&tms));
