@@ -24,6 +24,7 @@ namespace xtd {
   
   class core_export_ date_time : public object {
   public:
+    using time_point = xtd::ticks;
     /// @name Fields
     
     /// @{
@@ -54,8 +55,22 @@ namespace xtd {
     /// @name Properties
 
     /// @{
+    date_time date() const noexcept;
+    uint32_t day() const noexcept;
+    xtd::day_of_week day_fo_week() const noexcept;
+    uint32_t day_of_year() const noexcept;
+    uint32_t hour() const noexcept;
     date_time_kind kind() const noexcept;
+    uint32_t millisecond() const noexcept;
+    uint32_t minute() const noexcept;
+    uint32_t month() const noexcept;
+    static date_time now() noexcept;
+    uint32_t second() const noexcept;
     xtd::ticks ticks() const noexcept;
+    time_point time_of_day() const noexcept;
+    static date_time to_day() noexcept;
+    static date_time utc_now() noexcept;
+    uint32_t years() const noexcept;
     /// @}
     
     /// @name Methods
@@ -63,8 +78,6 @@ namespace xtd {
     /// @{
     static date_time from_time_t(std::time_t value);
     static date_time from_time_t(std::time_t value, date_time_kind kind);
-    static date_time now();
-    static date_time utc_now();
     xtd::ustring to_string() const noexcept override;
     xtd::ustring to_string(const ustring& format) const;
     std::time_t to_time_t() const;
