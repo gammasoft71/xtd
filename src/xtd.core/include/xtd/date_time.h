@@ -24,7 +24,7 @@ namespace xtd {
     saturday
   };
   
-  class core_export_ date_time : public iequatable<date_time>, public object {
+  class core_export_ date_time : public icomparable<date_time>, public iequatable<date_time>, public object {
   public:
     using time_point = xtd::ticks;
     /// @name Fields
@@ -78,6 +78,8 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    int32_t compare_to(const object& obj) const noexcept override;
+    int32_t compare_to(const date_time& value) const noexcept override;
     bool equals(const date_time&) const noexcept override;
     bool equals(const object&) const noexcept override;
     static date_time from_time_t(std::time_t value);

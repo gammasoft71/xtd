@@ -181,6 +181,19 @@ uint32_t date_time::years() const noexcept {
   return year;
 }
 
+int32_t date_time::compare_to(const object& obj) const noexcept {
+  if (!dynamic_cast<const date_time*>(&obj)) return 1;
+  return compare_to(static_cast<const date_time&>(obj));
+}
+
+int32_t date_time::compare_to(const date_time& value) const noexcept {
+  if (value_ < value.value_) return -1;
+  if (value_ > value.value_) return 1;
+  if ( kind_ < value.kind_) return -1;
+  if (kind_ < value.kind_) return 1;
+  return 0;
+}
+
 bool date_time::equals(const date_time& other) const noexcept {
   return value_ == other.value_ && kind_ == other.kind_;
 }
