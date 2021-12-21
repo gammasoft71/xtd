@@ -181,6 +181,14 @@ uint32_t date_time::years() const noexcept {
   return year;
 }
 
+bool date_time::equals(const date_time& other) const noexcept {
+  return value_ == other.value_ && kind_ == other.kind_;
+}
+
+bool date_time::equals(const object& other) const noexcept {
+  return dynamic_cast<const date_time*>(&other) && equals(static_cast<const date_time&>(other));
+}
+
 date_time date_time::from_time_t(std::time_t value) {
   return from_time_t(value, date_time_kind::unspecified);
 }

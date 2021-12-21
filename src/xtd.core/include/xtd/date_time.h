@@ -1,6 +1,8 @@
 #pragma once
 #include <chrono>
 #include <ctime>
+#include "icomparable.h"
+#include "iequatable.h"
 #include "object.h"
 #include "ticks.h"
 #include "ustring.h"
@@ -22,7 +24,7 @@ namespace xtd {
     saturday
   };
   
-  class core_export_ date_time : public object {
+  class core_export_ date_time : public iequatable<date_time>, public object {
   public:
     using time_point = xtd::ticks;
     /// @name Fields
@@ -76,6 +78,8 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    bool equals(const date_time&) const noexcept override;
+    bool equals(const object&) const noexcept override;
     static date_time from_time_t(std::time_t value);
     static date_time from_time_t(std::time_t value, date_time_kind kind);
     xtd::ustring to_string() const noexcept override;
