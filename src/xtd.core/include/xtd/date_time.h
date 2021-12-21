@@ -37,6 +37,11 @@ namespace xtd {
     date_time() = default;
     date_time(xtd::ticks ticks);
     date_time(xtd::ticks ticks, xtd::date_time_kind kind);
+    date_time(uint32_t year, uint32_t month, uint32_t day);
+    date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second);
+    date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, date_time_kind kind);
+    date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond);
+    date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
     /// @}
     
     /// @cond
@@ -58,12 +63,16 @@ namespace xtd {
     /// @{
     static date_time from_time_t(std::time_t value);
     static date_time now();
+    static date_time utc_now();
     xtd::ustring to_string() const noexcept override;
     xtd::ustring to_string(const ustring& format) const;
     std::time_t to_time_t() const;
     /// @}
     
   private:
+    void get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year,  int32_t& day_of_week) const;
+    void set_date_time(uint32_t year, uint32 month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
+
     xtd::ticks value_ {0};
     date_time_kind kind_ {date_time_kind::unspecified};
   };

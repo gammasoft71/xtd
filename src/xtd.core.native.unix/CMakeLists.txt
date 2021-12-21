@@ -31,6 +31,7 @@ add_sources(
   include/xtd/native/unix/strings.h
   src/xtd/native/unix/console.cpp
   src/xtd/native/unix/cryptography.cpp
+  src/xtd/native/unix/date_time.cpp
   src/xtd/native/unix/debugger.cpp
   src/xtd/native/unix/directory.cpp
   src/xtd/native/unix/dns.cpp
