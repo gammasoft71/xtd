@@ -35,6 +35,12 @@ int32_t date_time::gmt_time(time_t time, uint32_t& year, uint32_t& month, uint32
   return 0;
 }
 
+bool date_time::is_daylight(time_t time) {
+  struct tm value;
+  localtime_r(&time, &value);
+  return value.tm_isdst != 0;
+}
+
 int32_t date_time::local_time(time_t time, uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week) {
   struct tm value;
   if (localtime_r(&time, &value) == nullptr)
