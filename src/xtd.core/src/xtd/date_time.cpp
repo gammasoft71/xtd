@@ -181,6 +181,42 @@ uint32_t date_time::years() const noexcept {
   return year;
 }
 
+date_time date_time::add(time_point value) const {
+  return date_time(value_ + value, kind_);
+}
+
+date_time date_time::add_days(double value) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_day)), kind_);
+}
+
+date_time date_time::add_hours(double value) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_hour)), kind_);
+}
+
+date_time date_time::add_milliseconds(double value) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_millisecond)), kind_);
+}
+
+date_time date_time::add_minutes(double value) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_minute)), kind_);
+}
+
+date_time date_time::add_months(double value) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_day * 31)), kind_);
+}
+
+date_time date_time::add_seconds(double value) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_second)), kind_);
+}
+
+date_time date_time::add_ticks(int64 value) const {
+  return date_time(value_ + xtd::ticks(value), kind_);
+}
+
+date_time date_time::add_years(double value) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_day * 365)), kind_);
+}
+
 int32_t date_time::compare_to(const object& obj) const noexcept {
   if (!dynamic_cast<const date_time*>(&obj)) return 1;
   return compare_to(static_cast<const date_time&>(obj));
@@ -194,12 +230,31 @@ int32_t date_time::compare_to(const date_time& value) const noexcept {
   return 0;
 }
 
+int32_t date_time::days_in_month(uint32_t year, uint32_t month) {
+  if (month < 1 || month > 12) throw argument_out_of_range_exception(csf_);
+  if (month == 2) return is_leap_year(year) ? 29 : 28;
+  if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
+  return 31;
+}
+
 bool date_time::equals(const date_time& other) const noexcept {
   return value_ == other.value_ && kind_ == other.kind_;
 }
 
 bool date_time::equals(const object& other) const noexcept {
   return dynamic_cast<const date_time*>(&other) && equals(static_cast<const date_time&>(other));
+}
+
+date_time date_time::from_binary(int64_t date_data) {
+  return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32_t>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
+}
+
+date_time date_time::from_file_time(int64_t file_time){
+  return from_file_time_utc(file_time).to_local_time();
+}
+
+date_time date_time::from_file_time_utc(int64_t file_time) {
+  return date_time(xtd::ticks(file_time + 621355968000000000LL), date_time_kind::utc);
 }
 
 date_time date_time::from_time_t(std::time_t value) {
@@ -211,6 +266,38 @@ date_time date_time::from_time_t(std::time_t value, date_time_kind kind) {
   result.value_ = duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970);
   result.kind_ = kind;
   return result;
+}
+
+date_time date_time::from_tm(tm& value) {
+  return from_tm(value, date_time_kind::unspecified);
+}
+
+date_time date_time::from_tm(tm& value, date_time_kind kind) {
+  date_time result;
+  result.value_ = duration_cast<xtd::ticks>(chrono::seconds(mktime(&value)) + seconds_offset_1970);
+  result.kind_ = kind;
+  return result;
+}
+
+bool date_time::is_daylight_saving_time() const noexcept {
+  if (kind_ != date_time_kind::local) return false;
+  return native::date_time::is_daylight((duration_cast<chrono::seconds>(value_) - seconds_offset_1970).count());
+}
+
+bool date_time::is_leap_year(uint32_t year) {
+  return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+}
+
+date_time date_time::to_local_time() const {
+  if (kind_ != date_time_kind::unspecified) return date_time(value_, date_time_kind::local);
+  
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
+  native::date_time::gmt_time((duration_cast<chrono::seconds>(value_) - seconds_offset_1970).count(), year, month, day, hour, minute, second, day_of_year, day_of_week);
+  time_t seconds = native::date_time::make_gmt_time(year, month, day, hour, minute, second);
+  if (seconds == -1) throw invalid_operation_exception(csf_);
+  
+  return date_time(duration_cast<xtd::ticks>(chrono::seconds(seconds) + seconds_offset_1970), date_time_kind::local);
 }
 
 xtd::ustring date_time::to_string() const noexcept {
@@ -276,6 +363,58 @@ ustring date_time::to_string(const ustring& format) const {
 
 std::time_t date_time::to_time_t() const {
   return (duration_cast<chrono::seconds>(value_) - seconds_offset_1970).count();
+}
+
+date_time::operator date_time::time_point() const {
+  return time_point(value_);
+}
+
+date_time& date_time::operator+=(date_time value) {
+  value_ += value.value_;
+  return *this;
+}
+
+date_time& date_time::operator-=(date_time value) {
+  value_ -= value.value_;
+  return *this;
+}
+
+date_time date_time::operator+() {
+  return date_time(+value_, kind_);
+}
+
+date_time date_time::operator-() {
+  return date_time(-value_, kind_);
+}
+
+date_time date_time::operator+(const date_time& value) const {
+  date_time result = *this;
+  result.value_ += value.value_;
+  return result;
+}
+
+date_time date_time::operator-(const date_time& value) const {
+  date_time result = *this;
+  result.value_ -= value.value_;
+  return result;
+}
+
+date_time& date_time::operator++() {
+  ++value_;
+  return *this;
+}
+
+date_time date_time::operator++(int) {
+  return date_time(value_++, kind_);
+}
+
+date_time& date_time::operator--() {
+  --value_;
+  return *this;
+}
+
+date_time date_time::operator--(int) {
+  return date_time(value_--, kind_);
 }
 
 void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year,  int32_t& day_of_week) const {

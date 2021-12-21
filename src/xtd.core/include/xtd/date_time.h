@@ -78,15 +78,58 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    date_time add(time_point value) const;
+    date_time add_days(double value) const;
+    date_time add_hours(double value) const;
+    date_time add_milliseconds(double value) const;
+    date_time add_minutes(double value) const;
+    date_time add_months(double value) const;
+    date_time add_seconds(double value) const;
+    date_time add_ticks(int64 value) const;
+    date_time add_years(double value) const;
     int32_t compare_to(const object& obj) const noexcept override;
     int32_t compare_to(const date_time& value) const noexcept override;
+    static int32_t days_in_month(uint32_t year, uint32_t month);
+    
     bool equals(const date_time&) const noexcept override;
     bool equals(const object&) const noexcept override;
+    static date_time from_binary(int64_t date_data);
+    static date_time from_file_time(int64_t fileTime);
+    static date_time from_file_time_utc(int64_t fileTime);
+    template<typename rep_t, typename period_t>
+    static date_time from_duration(std::chrono::duration<rep_t, period_t> value) {
+      return date_time(std::chrono::duration_cast<xtd::ticks>(value), date_time_kind::unspecified);
+    }
+    template<typename rep_t, typename period_t>
+    static date_time from_duration(std::chrono::duration<rep_t, period_t> value, date_time_kind kind) {
+      return date_time(std::chrono::duration_cast<xtd::ticks>(value), kind);
+    }
     static date_time from_time_t(std::time_t value);
     static date_time from_time_t(std::time_t value, date_time_kind kind);
+    static date_time from_tm(tm& value);
+    static date_time from_tm(tm& value, date_time_kind kind);
+    bool is_daylight_saving_time() const noexcept;
+    static bool is_leap_year(uint32_t year);
+    date_time to_local_time() const;
     xtd::ustring to_string() const noexcept override;
     xtd::ustring to_string(const ustring& format) const;
     std::time_t to_time_t() const;
+    /// @}
+    
+    /// @Name Operators
+    
+    /// @{
+    operator time_point() const;
+    date_time& operator+=(date_time value);
+    date_time& operator-=(date_time value);
+    date_time operator+();
+    date_time operator-();
+    date_time operator+(const date_time& value) const;
+    date_time operator-(const date_time& value) const;
+    date_time& operator++();
+    date_time operator++(int);
+    date_time& operator--();
+    date_time operator--(int);
     /// @}
     
   private:
