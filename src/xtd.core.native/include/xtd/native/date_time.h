@@ -38,7 +38,6 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      static int32_t now(uint64_t& seconds, uint32_t& milliseconds, uint32_t& time_zone, bool& daylight);
       static int32_t gmt_time(time_t time, uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week);
       static int32_t local_time(time_t time, uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week);
       static time_t make_gmt_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second);
