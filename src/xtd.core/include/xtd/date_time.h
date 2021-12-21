@@ -62,6 +62,7 @@ namespace xtd {
     
     /// @{
     static date_time from_time_t(std::time_t value);
+    static date_time from_time_t(std::time_t value, date_time_kind kind);
     static date_time now();
     static date_time utc_now();
     xtd::ustring to_string() const noexcept override;

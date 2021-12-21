@@ -13,19 +13,6 @@ namespace {
   constexpr int64_t ticks_diff_betwin_date_time_file_and_os = 116444736000000000ULL; // Diff between 01/01/1601 and 01/01/1970 in ticks.
 }
 
-int32_t date_time::now(uint64_t& seconds, uint32_t& milliseconds, uint32_t& time_zone, bool& daylight) {
-  TIME_ZONE_INFORMATION tzi {};
-  if (GetTimeZoneInformation(&tzi) == TIME_ZONE_ID_UNKNOWN) return -1;
-  
-  SYSTEMTIME st {};
-  GetSystemTime(&st);
-  seconds = make_gmt_time(st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);
-  milliseconds = st.wMilliseconds;
-  daylight = (tzi.Bias == (tzi.StandardBias + tzi.DaylightBias) && tzi.DaylightBias != 0);
-  time_zone = (uint32_t)tzi.Bias;
-  return 0;
-}
-
 int32_t date_time::gmt_time(time_t time, uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week) {
   ULARGE_INTEGER uli {};
   uli.QuadPart = (time * ticks_per_second) + ticks_diff_betwin_date_time_file_and_os;

@@ -57,7 +57,7 @@ namespace {
   
   //constexpr ticks ticks_offset_1970 = ticks(621672202500000000LL);
   //constexpr seconds seconds_offset_1970 = seconds(62167220250LL);
-  constexpr ticks ticks_offset_1970 = ticks(ticks_per_day * days_to_1970);
+  //constexpr ticks ticks_offset_1970 = ticks(ticks_per_day * days_to_1970);
   constexpr seconds seconds_offset_1970 = seconds(seconds_per_day * days_to_1970);
  }
 
@@ -110,31 +110,22 @@ xtd::ticks date_time::ticks() const noexcept {
 }
 
 date_time date_time::from_time_t(std::time_t value) {
+  return from_time_t(value, date_time_kind::unspecified);
+}
+
+date_time date_time::from_time_t(std::time_t value, date_time_kind kind) {
   date_time result;
   result.value_ = duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970);
+  result.kind_ = kind;
   return result;
 }
 
 date_time date_time::now() {
-  uint64_t secondes = 0;
-  uint32_t milliseconds = 0;
-  uint32_t time_zone = 0;
-  bool daylight = false;
-  
-  if (native::date_time::now(secondes, milliseconds, time_zone, daylight) != 0) return date_time();
-  
-  return date_time(duration_cast<xtd::ticks>(chrono::seconds(secondes)) + duration_cast<xtd::ticks>(chrono::milliseconds(milliseconds)) + ticks_offset_1970, date_time_kind::local);
+  return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::local);
 }
 
 date_time date_time::utc_now() {
-  uint64_t secondes = 0;
-  uint32_t milliseconds = 0;
-  uint32_t time_zone = 0;
-  bool daylight = false;
-  
-  if (native::date_time::now(secondes, milliseconds, time_zone, daylight) != 0) return date_time();
-  
-  return date_time(duration_cast<xtd::ticks>(chrono::seconds(secondes)) + duration_cast<xtd::ticks>(chrono::milliseconds(milliseconds)) + ticks_offset_1970, date_time_kind::utc);
+  return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::utc);
 }
 
 xtd::ustring date_time::to_string() const noexcept {

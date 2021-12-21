@@ -19,17 +19,6 @@ struct timeb {
 int ftime(struct timeb*);
 #endif
 
-int32_t date_time::now(uint64_t& seconds, uint32_t& milliseconds, uint32_t& time_zone, bool& daylight) {
-  struct timeb value;
-  if (ftime(&value) != 0) return -1;
-  
-  seconds = value.time;
-  milliseconds = value.millitm;
-  time_zone = value.timezone;
-  daylight = value.dstflag != 0;
-  return 0;
-}
-
 int32_t date_time::gmt_time(time_t time, uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week) {
   struct tm value;
   if (gmtime_r(&time, &value) == nullptr)
