@@ -46,7 +46,7 @@ See [xtd libraries hierarchy](hierarchy.md).
 # Getting Started
 
 * [Installation](downloads.md) provides download and install documentation.
-* [Portability](portability.md) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
+* [Guides](guides.md) provides xtd guides and tutorials.
 * [Examples](../examples/README.md) provides some examples.
 
 ______________________________________________________________________________________________
