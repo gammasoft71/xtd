@@ -2,6 +2,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/date_time.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <time.h>
 #include <Windows.h>
 
 using namespace std;
