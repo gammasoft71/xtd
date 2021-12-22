@@ -42,6 +42,8 @@ add_sources(
   include/xtd/cpp_language.h
   include/xtd/ctrace.h
   include/xtd/date_time.h
+  include/xtd/date_time_kind.h
+  include/xtd/day_of_week.h
   include/xtd/debugstreambuf.h
   include/xtd/delegate.h
   include/xtd/divided_by_zero_exception.h

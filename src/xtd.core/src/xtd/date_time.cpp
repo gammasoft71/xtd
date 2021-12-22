@@ -19,13 +19,7 @@ namespace {
   const int64_t ticks_per_minute = ticks_per_second * 60;
   const int64_t ticks_per_hour = ticks_per_minute * 60;
   const int64_t ticks_per_day = ticks_per_hour * 24;
-  
-  // Number of milliseconds per time unit
-  const int64_t mllis_per_second = 1000;
-  const int64_t millis_per_minute = mllis_per_second * 60;
-  const int64_t millis_per_our = millis_per_minute * 60;
-  const int64_t millis_per_day = millis_per_our * 24;
-  
+   
   // Number of seconds per time unit
   const int64_t seconds_per_minute = 60;
   const int64_t seconds_per_our = seconds_per_minute * 60;
@@ -42,40 +36,24 @@ namespace {
   
   // Number of days from 1/1/0001 to 12/31/1600
   const int64_t days_to_1601 = days_per_400_years * 4; // 584388
-  // Number of days from 1/1/0001 to 12/30/1899
-  const int64_t days_to_1899 = days_per_400_years * 4 + days_per_100_years * 3 - 367;
   // Number of days from 1/1/0001 to 12/31/1969
   const int64_t days_to_1970 = days_per_400_years * 4 + days_per_100_years * 3 + days_per_4_years * 17 + days_per_year; // 719,162
   // Number of days from 1/1/0001 to 12/31/9999
   const int64_t days_to_10000 = days_per_400_years * 25 - 366; // 3652059
  
-  const int64_t min_ticks = 0;
-  const int64_t max_ticks = days_to_10000 * ticks_per_day - 1;
-  const int64_t max_millis = days_to_10000 * millis_per_day;
+  const ticks min_ticks = ticks(0);
+  const ticks max_ticks = ticks(days_to_10000 * ticks_per_day - 1);
   
-  const int64_t file_time_offset = days_to_1601 * ticks_per_day;
-  const int64_t double_date_offset = days_to_1899 * ticks_per_day;
+  const ticks file_time_offset = ticks(days_to_1601 * ticks_per_day);
   
-  //constexpr ticks ticks_offset_1970 = ticks(621672202500000000LL);
-  //constexpr seconds seconds_offset_1970 = seconds(62167220250LL);
-  //constexpr ticks ticks_offset_1970 = ticks(ticks_per_day * days_to_1970);
   constexpr seconds seconds_offset_1970 = seconds(seconds_per_day * days_to_1970);
  }
 
-date_time date_time::max_value = xtd::ticks(max_ticks);
-date_time date_time::min_value = xtd::ticks(min_ticks);
+date_time date_time::max_value = max_ticks;
+date_time date_time::min_value = min_ticks;
 
 date_time::date_time(xtd::ticks ticks) : value_(ticks) {
   if (ticks.count() < min_value.value_.count() || ticks.count() > max_value.value_.count()) throw argument_out_of_range_exception(csf_);
-  
-  /// @todo remove after using it...
-  unused_(max_millis);
-  unused_(file_time_offset);
-  unused_(double_date_offset);
-  unused_(seconds_offset_1970);
-
-  unused_(days_to_1970);
-  unused_(seconds_per_day);
 }
 
 date_time::date_time(xtd::ticks ticks, xtd::date_time_kind kind) : value_(ticks), kind_(kind) {
@@ -246,16 +224,16 @@ bool date_time::equals(const object& other) const noexcept {
   return dynamic_cast<const date_time*>(&other) && equals(static_cast<const date_time&>(other));
 }
 
-date_time date_time::from_binary(time_t date_data) {
+date_time date_time::from_binary(int64_t date_data) {
   return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32_t>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
 }
 
-date_time date_time::from_file_time(time_t file_time){
+date_time date_time::from_file_time(xtd::ticks file_time){
   return from_file_time_utc(file_time).to_local_time();
 }
 
-date_time date_time::from_file_time_utc(time_t file_time) {
-  return date_time(xtd::ticks(file_time + 621355968000000000LL), date_time_kind::utc);
+date_time date_time::from_file_time_utc(xtd::ticks file_time) {
+  return date_time(file_time + file_time_offset, date_time_kind::utc);
 }
 
 date_time date_time::from_time_t(std::time_t value) {
@@ -308,7 +286,7 @@ date_time date_time::subtract(time_point value) const {
   return date_time(value_ - duration_cast<xtd::ticks>(value));
 }
 
-time_t date_time::to_binary() const {
+int64_t date_time::to_binary() const {
   return (duration_cast<chrono::seconds>(value_).count() & 0x3FFFFFFFFFFFFFFFLL) + ((static_cast<int64>(kind_) << 62) & 0xC000000000000000LL);
 }
 
