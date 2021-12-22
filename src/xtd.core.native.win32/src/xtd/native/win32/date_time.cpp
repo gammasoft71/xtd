@@ -59,7 +59,7 @@ int32_t date_time::local_time(time_t time, uint32_t& year, uint32_t& month, uint
   return 0;
 }
 
-time_t date_time::make_gmt_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second) {
+int32_t date_time::make_gmt_time(time_t& time, uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second) {
   SYSTEMTIME st {(WORD)year, (WORD)month, 0, (WORD)day, (WORD)hour, (WORD)minute, (WORD)second, 0};
   FILETIME ft {};
   if (SystemTimeToFileTime(&st, &ft) == 0) return -1;
@@ -67,10 +67,11 @@ time_t date_time::make_gmt_time(uint32_t year, uint32_t month, uint32_t day, uin
   ULARGE_INTEGER lt = {ft.dwLowDateTime, ft.dwHighDateTime};
   lt.QuadPart -= ticks_diff_betwin_date_time_file_and_os;
   lt.QuadPart /= ticks_per_second;
-  return lt.QuadPart;
+  time =  lt.QuadPart;
+  return 0;
 }
 
-time_t date_time::make_local_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second) {
+int32_t date_time::make_local_time(time_t& time, uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second) {
   SYSTEMTIME st {(WORD)year, (WORD)month, 0, (WORD)day, (WORD)hour, (WORD)minute, (WORD)second, 0};
   FILETIME ft {};
   if (SystemTimeToFileTime(&st, &ft) == 0) return -1;
@@ -81,5 +82,6 @@ time_t date_time::make_local_time(uint32_t year, uint32_t month, uint32_t day, u
   ULARGE_INTEGER lt {ftUtc.dwLowDateTime, ftUtc.dwHighDateTime};
   lt.QuadPart -= ticks_diff_betwin_date_time_file_and_os;
   lt.QuadPart /= ticks_per_second;
-  return lt.QuadPart;
+  time = lt.QuadPart;
+  return 0;
 }
