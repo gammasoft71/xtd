@@ -69,6 +69,10 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    template<typename rep_t, typename period_t>
+    date_time add(std::chrono::duration<rep_t, period_t> value) const {
+      return add(std::chrono::duration_cast<time_point>(value));
+    }
     date_time add(time_point value) const;
     date_time add_days(double value) const;
     date_time add_hours(double value) const;
@@ -104,6 +108,10 @@ namespace xtd {
     xtd::ustring parse() const;
     static date_time specify_kind(date_time value, date_time_kind kind);
     time_point subtract(const date_time& value) const;
+    template<typename rep_t, typename period_t>
+    date_time subtract(std::chrono::duration<rep_t, period_t> value) const {
+      return subtract(std::chrono::duration_cast<time_point>(value));
+    }
     date_time subtract(time_point value) const;
     int64_t to_binary() const;
     date_time to_local_time() const;
