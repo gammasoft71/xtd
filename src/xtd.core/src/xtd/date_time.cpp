@@ -119,6 +119,20 @@ date_time_kind date_time::kind() const noexcept {
   return kind_;
 }
 
+uint32_t date_time::minute() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return minute;
+}
+
+uint32_t date_time::month() const noexcept {
+  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32 day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return month;
+}
+
 date_time date_time::now() noexcept {
   return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::local);
 }
@@ -153,7 +167,7 @@ date_time date_time::utc_now() noexcept {
   return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::utc);
 }
 
-uint32_t date_time::years() const noexcept {
+uint32_t date_time::year() const noexcept {
   uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);

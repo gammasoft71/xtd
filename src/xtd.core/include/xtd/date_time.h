@@ -63,7 +63,7 @@ namespace xtd {
     time_point time_of_day() const noexcept;
     static date_time to_day() noexcept;
     static date_time utc_now() noexcept;
-    uint32_t years() const noexcept;
+    uint32_t year() const noexcept;
     /// @}
     
     /// @name Methods
