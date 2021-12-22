@@ -21,8 +21,6 @@ namespace xtd {
     /// @include month_calendar.cpp
     class forms_export_ month_calendar : public control {
     public:
-      using time_point = std::chrono::system_clock::time_point;
-
       /// @name Constructors
       /// @{
       /// @brief Initializes a new instance of the month_calendar class.
@@ -35,55 +33,25 @@ namespace xtd {
 
       /// @brief Gets the maximum date that can be selected in the control.
       /// @return The maximum date that can be selected in the control.
-      virtual time_point max_date() const;
+      virtual date_time max_date() const;
       /// @brief Sets the maximum date that can be selected in the control.
       /// @param value The maximum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual month_calendar& max_date(time_point value);
-      /// @brief Sets the maximum date that can be selected in the control.
-      /// @param value The maximum date that can be selected in the control.
-      /// @returnmonth_calendar Current month_calendar.
-      virtual month_calendar& max_date(time_t value);
-      /// @brief Sets the maximum date that can be selected in the control.
-      /// @param value The maximum date that can be selected in the control.
-      /// @return Current month_calendar.
-      virtual month_calendar& max_date(const std::tm& value);
-      /// @brief Sets the maximum date that can be selected in the control.
-      /// @param value The maximum date that can be selected in the control.
-      /// @return Current month_calendar.
-      virtual month_calendar& max_date(int32_t year, int32_t month, int32_t day);
+      virtual month_calendar& max_date(date_time value);
 
       /// @brief Gets the minimum date that can be selected in the control.
       /// @return The minimum date that can be selected in the control.
-      virtual time_point min_date() const;
+      virtual date_time min_date() const;
       /// @brief Sets the minimum date that can be selected in the control.
       /// @param value The minimum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual month_calendar& min_date(time_point value);
-      /// @brief Sets the minimum date that can be selected in the control.
-      /// @param value The minimum date that can be selected in the control.
-      /// @return Current month_calendar.
-      virtual month_calendar& min_date(time_t value);
-      /// @brief Sets the minimum date that can be selected in the control.
-      /// @param value The minimum date that can be selected in the control.
-      /// @return Current month_calendar.
-      virtual month_calendar& min_date(const std::tm& value);
-      /// @brief Sets the minimum date that can be selected in the control.
-      /// @param value The minimum date that can be selected in the control.
-      /// @return Current month_calendar.
-      virtual month_calendar& min_date(int32_t year, int32_t month, int32_t day);
+      virtual month_calendar& min_date(date_time value);
 
-      virtual time_point selection_end() const;
-      virtual month_calendar& selection_end(time_point value);
-      virtual month_calendar& selection_end(time_t value);
-      virtual month_calendar& selection_end(const std::tm& value);
-      virtual month_calendar& selection_end(int32_t year, int32_t month, int32_t day);
+      virtual date_time selection_end() const;
+      virtual month_calendar& selection_end(date_time value);
 
-      virtual time_point selection_start() const;
-      virtual month_calendar& selection_start(time_point value);
-      virtual month_calendar& selection_start(time_t value);
-      virtual month_calendar& selection_start(const std::tm& value);
-      virtual month_calendar& selection_start(int32_t year, int32_t month, int32_t day);
+      virtual date_time selection_start() const;
+      virtual month_calendar& selection_start(date_time value);
 
       virtual forms::selection_range selection_range() const;
       virtual month_calendar& selection_range(const forms::selection_range& value);
@@ -112,17 +80,16 @@ namespace xtd {
       /// @}
       
     private:
-      static time_point clear_hours_minutes_seconds(time_point value) {return std::chrono::system_clock::from_time_t(std::chrono::system_clock::to_time_t(value) / 86400 * 86400);}
       void wm_notify(message& message);
       void wm_date_selected(message& message);
       void wm_date_changed(message& message);
       void wm_view_changed(message& message);
 
       struct data {
-        time_point min_date = clear_hours_minutes_seconds(time_point::min());
-        time_point max_date = clear_hours_minutes_seconds(time_point::max());
-        time_point selection_start = clear_hours_minutes_seconds(std::chrono::system_clock::now());
-        time_point selection_end = clear_hours_minutes_seconds(std::chrono::system_clock::now());
+        date_time min_date = date_time::min_value;
+        date_time max_date = date_time::max_value;
+        date_time selection_start = date_time::now();
+        date_time selection_end = date_time::now();
       };
 
       std::shared_ptr<data> data_ = std::make_shared<data>();

@@ -9,26 +9,15 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace {
-  static std::tm make_tm(int32_t year, int32_t month, int32_t day) {
-    std::tm date = {};
-    date.tm_year = year - 1900;
-    date.tm_mon = month - 1;
-    date.tm_mday = day;
-    return date;
-  }
-}
-
 month_calendar::month_calendar() {
   control_appearance(forms::control_appearance::system);
 }
 
-month_calendar::time_point month_calendar::max_date() const {
+date_time month_calendar::max_date() const {
   return data_->max_date;
 }
 
-month_calendar& month_calendar::max_date(time_point value) {
-  value = clear_hours_minutes_seconds(value);
+month_calendar& month_calendar::max_date(date_time value) {
   if (data_->max_date != value) {
     data_->max_date = value;
     if (data_->max_date < data_->min_date) data_->min_date = data_->max_date;
@@ -39,26 +28,11 @@ month_calendar& month_calendar::max_date(time_point value) {
   return *this;
 }
 
-month_calendar& month_calendar::max_date(time_t value) {
-  return max_date(std::chrono::system_clock::from_time_t(value));
-}
-
-month_calendar& month_calendar::max_date(const std::tm& value) {
-  std::tm date = value;
-  return this->max_date(mktime(&date));
-}
-
-month_calendar& month_calendar::max_date(int32_t year, int32_t month, int32_t day) {
-  std::tm date = make_tm(year, month, day);
-  return max_date(std::mktime(&date));
-}
-
-month_calendar::time_point month_calendar::min_date() const {
+date_time month_calendar::min_date() const {
   return data_->min_date;
 }
 
-month_calendar& month_calendar::month_calendar::min_date(time_point value) {
-  value = clear_hours_minutes_seconds(value);
+month_calendar& month_calendar::month_calendar::min_date(date_time value) {
   if (data_->min_date != value) {
     data_->min_date = value;
     if (data_->max_date < data_->min_date) data_->max_date = data_->min_date;
@@ -69,25 +43,11 @@ month_calendar& month_calendar::month_calendar::min_date(time_point value) {
   return *this;
 }
 
-month_calendar& month_calendar::min_date(time_t value) {
-  return min_date(std::chrono::system_clock::from_time_t(value)); 
-}
-
-month_calendar& month_calendar::min_date(const std::tm& value) {
-  std::tm date = value;
-  return min_date(std::mktime(&date));
-}
-month_calendar& month_calendar::min_date(int32_t year, int32_t month, int32_t day) {
-  std::tm date = make_tm(year, month, day);
-  return min_date(std::mktime(&date));
-}
-
-month_calendar::time_point month_calendar::selection_end() const {
+date_time month_calendar::selection_end() const {
   return data_->selection_end;
 }
 
-month_calendar& month_calendar::selection_end(std::chrono::system_clock::time_point value) {
-  value = clear_hours_minutes_seconds(value);
+month_calendar& month_calendar::selection_end(date_time value) {
   if (value < data_->min_date) value = data_->min_date;
   if (value > data_->max_date) value = data_->max_date;
   if (data_->selection_end != value) {
@@ -98,26 +58,11 @@ month_calendar& month_calendar::selection_end(std::chrono::system_clock::time_po
   return *this;
 }
 
-month_calendar& month_calendar::selection_end(time_t value) {
-  return selection_end(std::chrono::system_clock::from_time_t(value));
-}
-
-month_calendar& month_calendar::selection_end(const std::tm& value) {
-  std::tm date = value;
-  return selection_end(std::mktime(&date));
-}
-
-month_calendar& month_calendar::selection_end(int32_t year, int32_t month, int32_t day) {
-  std::tm date = make_tm(year, month, day);
-  return selection_end(std::mktime(&date));
-}
-
-month_calendar::time_point month_calendar::selection_start() const {
+date_time month_calendar::selection_start() const {
   return data_->selection_start;
 }
 
-month_calendar& month_calendar::selection_start(time_point value) {
-  value = clear_hours_minutes_seconds(value);
+month_calendar& month_calendar::selection_start(date_time value) {
   if (value < data_->min_date) value = data_->min_date;
   if (value > data_->max_date) value = data_->max_date;
   if (data_->selection_start != value) {
@@ -126,20 +71,6 @@ month_calendar& month_calendar::selection_start(time_point value) {
     on_date_selected(event_args::empty);
   }
   return *this;
-}
-
-month_calendar& month_calendar::selection_start(time_t value) {
-  return selection_start(std::chrono::system_clock::from_time_t(value));
-}
-
-month_calendar& month_calendar::selection_start(const std::tm& value) {
-  std::tm date = value;
-  return selection_start(std::mktime(&date));
-}
-
-month_calendar& month_calendar::selection_start(int32_t year, int32_t month, int32_t day) {
-  std::tm date = make_tm(year, month, day);
-  return selection_start(std::mktime(&date));
 }
 
 forms::selection_range month_calendar::selection_range() const {

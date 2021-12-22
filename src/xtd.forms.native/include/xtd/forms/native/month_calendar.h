@@ -10,8 +10,8 @@
 
 #include "../create_params.h"
 #include <xtd/static.h>
+#include <xtd/date_time.h>
 #include <xtd/forms_native_export.h>
-#include <chrono>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -41,19 +41,20 @@ namespace xtd {
         /// @param min_date: The minimum date allowable to the calendar.
         /// @param max_date: The maximum date allowable to the calendar.
         /// @warning Internal use only
-        static void allowable_dates(const intptr_t control, std::chrono::system_clock::time_point min_date, std::chrono::system_clock::time_point max_date);
+        static void allowable_dates(const intptr_t control, date_time min_date, date_time max_date);
         /// @name Protected methods
         /// @{
-        /// @brief Sets date to the calendar.
+        /// @brief Sets selection range to the calendar.
         /// @param control: month_calendar handle.
-        /// @param date: The date to set to the calendar.
+        /// @param date_start: The range date start.
+        /// @param date_end: The range date end.
         /// @warning Internal use only
-        static void selection_range(const intptr_t control, std::chrono::system_clock::time_point date_start, std::chrono::system_clock::time_point date_end);
-        /// @brief Gets selected date from the calendar.
+        static void selection_range(const intptr_t control, date_time date_start, date_time date_end);
+        /// @brief Gets selection range from the calendar.
         /// @param control: month_calendar handle.
-        /// @return selected date.
+        /// @return selection range.
         /// @warning Internal use only
-        static std::pair<std::chrono::system_clock::time_point, std::chrono::system_clock::time_point> selection_range(const intptr_t control);
+        static std::pair<date_time, date_time> selection_range(const intptr_t control);
         /// @}
       };
     }
