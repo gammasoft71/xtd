@@ -27,7 +27,9 @@ int32_t date_time::gmt_time(time_t time, uint32_t& year, uint32_t& month, uint32
   hour = st.wHour;
   minute = st.wMinute;
   second = st.wSecond;
-  day_of_year = (uint32_t)((time - make_gmt_time(st.wYear, 1, 1, 0, 0, 0)) / (86400)) + 1;
+  time_t seconds;
+  make_gmt_time(seconds, st.wYear, 1, 1, 0, 0, 0);
+  day_of_year = (uint32_t)((time - seconds) / (86400)) + 1;
   day_of_week = st.wDayOfWeek;
   return 0;
 }
@@ -54,7 +56,9 @@ int32_t date_time::local_time(time_t time, uint32_t& year, uint32_t& month, uint
   hour = st.wHour;
   minute = st.wMinute;
   second = st.wSecond;
-  day_of_year = (uint32_t)((time - make_gmt_time(st.wYear, 1, 1, 0, 0, 0)) / (86400)) + 1;
+  time_t seconds;
+  make_gmt_time(seconds, st.wYear, 1, 1, 0, 0, 0);
+  day_of_year = (uint32_t)((time - seconds) / (86400)) + 1;
   day_of_week = st.wDayOfWeek;
   return 0;
 }
