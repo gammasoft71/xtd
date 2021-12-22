@@ -216,8 +216,8 @@ int32_t date_time::compare_to(const object& obj) const noexcept {
 }
 
 int32_t date_time::compare_to(const date_time& value) const noexcept {
-  if (value_ < value.value_) return -1;
-  if (value_ > value.value_) return 1;
+  if (value_.count() < value.value_.count()) return -1;
+  if (value_.count() > value.value_.count()) return 1;
   if ( kind_ < value.kind_) return -1;
   if (kind_ < value.kind_) return 1;
   return 0;
@@ -231,7 +231,7 @@ int32_t date_time::days_in_month(uint32_t year, uint32_t month) {
 }
 
 bool date_time::equals(const date_time& other) const noexcept {
-  return value_ == other.value_ && kind_ == other.kind_;
+  return value_.count() == other.value_.count() && kind_ == other.kind_;
 }
 
 bool date_time::equals(const object& other) const noexcept {
@@ -310,8 +310,10 @@ date_time date_time::to_local_time() const {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
   native::date_time::gmt_time((duration_cast<chrono::seconds>(value_) - seconds_offset_1970).count(), year, month, day, hour, minute, second, day_of_year, day_of_week);
-  time_t seconds = native::date_time::make_gmt_time(year, month, day, hour, minute, second);
-  if (seconds == -1) throw invalid_operation_exception(csf_);
+  
+  time_t seconds;
+  if (native::date_time::make_gmt_time(seconds, year, month, day, hour, minute, second) != 0)
+    return date_time(value_, date_time_kind::local);
   
   return date_time(duration_cast<xtd::ticks>(chrono::seconds(seconds) + seconds_offset_1970), date_time_kind::local);
 }
@@ -408,8 +410,10 @@ date_time date_time::to_universal_time() const {
   int32_t dayOfWeek = 0;
   native::date_time::gmt_time((duration_cast<chrono::seconds>(value_) - seconds_offset_1970).count(), year, month, day, hour, minute, second, dayOfYear, dayOfWeek);
   
-  time_t seconds = native::date_time::make_local_time(year, month, day, hour, minute, second);
-  if (seconds == -1) throw invalid_operation_exception(csf_);
+  time_t seconds;
+  if (native::date_time::make_local_time(seconds, year, month, day, hour, minute, second) != 0)
+    return date_time(value_, date_time_kind::utc);
+  
   return date_time(duration_cast<xtd::ticks>(chrono::seconds(seconds) + seconds_offset_1970), date_time_kind::utc);
 }
 
@@ -494,9 +498,14 @@ void date_time::set_date_time(uint32_t year, uint32 month, uint32_t day, uint32_
       (year == max_year && month == max_month && day == max_day && hour == max_hour && minute == max_minute && second > max_second))
     throw argument_out_of_range_exception(csf_);
   
-  int64 seconds = kind == date_time_kind::local ? native::date_time::make_local_time(year, month, day, hour, minute, second) : native::date_time::make_gmt_time(year, month, day, hour, minute, second);
-  if (seconds == -1)
-    throw invalid_operation_exception(csf_);
+  time_t seconds;
+  if (kind == date_time_kind::local) {
+    if (native::date_time::make_local_time(seconds, year, month, day, hour, minute, second) != 0)
+      throw invalid_operation_exception(csf_);
+  } else {
+    if (native::date_time::make_gmt_time(seconds, year, month, day, hour, minute, second) == -1)
+      throw invalid_operation_exception(csf_);
+  }
   
   kind_ = kind;
   value_ = duration_cast<xtd::ticks>(chrono::seconds(seconds) + seconds_offset_1970);

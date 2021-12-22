@@ -57,7 +57,7 @@ int32_t date_time::local_time(time_t time, uint32_t& year, uint32_t& month, uint
   return 0;
 }
 
-time_t date_time::make_gmt_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second) {
+int32_t date_time::make_gmt_time(time_t& time, uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second) {
   struct tm local_time {};
   local_time.tm_year = year - 1900;
   local_time.tm_mon = month - 1;
@@ -66,24 +66,33 @@ time_t date_time::make_gmt_time(uint32_t year, uint32_t month, uint32_t day, uin
   local_time.tm_min = minute;
   local_time.tm_sec = second;
   local_time.tm_isdst = -1;
+
   time_t local = mktime(&local_time);
-  
   struct tm gmt_time;
-  if (gmtime_r(&local, &gmt_time) == 0)
+  if (gmtime_r(&local, &gmt_time) == nullptr)
     return -1;
   
   time_t gmt = mktime(&gmt_time);
-  return local + (local - gmt + (gmt_time.tm_isdst > 0 ? 3600 : 0));
+  time = local + (local - gmt + (gmt_time.tm_isdst > 0 ? 3600 : 0));
+  return  0;
 }
 
-time_t date_time::make_local_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second) {
-  struct tm local_time {};
-  local_time.tm_year = year - 1900;
-  local_time.tm_mon = month - 1;
-  local_time.tm_mday = day;
-  local_time.tm_hour = hour;
-  local_time.tm_min = minute;
-  local_time.tm_sec = second;
-  local_time.tm_isdst = -1;
-  return mktime(&local_time);
+int32_t date_time::make_local_time(time_t& time, uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second) {
+  struct tm gmt_time {};
+  gmt_time.tm_year = year - 1900;
+  gmt_time.tm_mon = month - 1;
+  gmt_time.tm_mday = day;
+  gmt_time.tm_hour = hour;
+  gmt_time.tm_min = minute;
+  gmt_time.tm_sec = second;
+  gmt_time.tm_isdst = -1;
+
+  time_t gmt = mktime(&gmt_time);
+  struct tm local_time;
+  if (gmtime_r(&gmt, &local_time) == nullptr)
+    return -1;
+
+  time_t local = mktime(&local_time);
+  time = gmt + (gmt - local + (local_time.tm_isdst > 0 ? 3600 : 0));
+  return 0;
 }
