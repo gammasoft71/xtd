@@ -9,8 +9,8 @@
 /// @endcond
 
 #include "../create_params.h"
+#include <xtd/date_time.h>
 #include <xtd/static.h>
-#include <ctime>
 #include <xtd/forms_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -44,17 +44,17 @@ namespace xtd {
         /// @param min_date: The minimum date allowable to the date time picker.
         /// @param max_date: The maximum date allowable to the date time picker.
         /// @warning Internal use only
-        static void allowable_dates(const intptr_t control, std::chrono::system_clock::time_point min_date, std::chrono::system_clock::time_point max_date);
+        static void allowable_dates(const intptr_t control, date_time min_date, date_time max_date);
         /// @brief Gets the date/time value assigned to the control.
         /// @param control Date time picker handle.
         /// @return The date and time value assign to the control.
         /// @warning Internal use only
-        static std::chrono::system_clock::time_point value(intptr_t control);
+        static date_time value(intptr_t control);
         /// @brief Sets the date/time value assigned to the control.
         /// @param control Date time picker handle.
-        /// @param date_time The date and time value assign to the control.
+        /// @param value The date and time value assign to the control.
         /// @warning Internal use only
-        static void value(intptr_t control, std::chrono::system_clock::time_point date_time);
+        static void value(intptr_t control, date_time value);
         /// @}
       };
     }
