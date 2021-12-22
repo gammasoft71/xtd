@@ -36,9 +36,10 @@ namespace xtd {
       protected:
         /// @name Protected methods
         /// @{
-        /// @brief Sets date to the calendar.
-        /// @param control: month_calendar handle.
-        /// @param date: The date to set to the calendar.
+        /// @brief Sets allowable date range to the calendar.
+        /// @param control: month calendar handle.
+        /// @param min_date: The minimum date allowable to the calendar.
+        /// @param max_date: The maximum date allowable to the calendar.
         /// @warning Internal use only
         static void allowable_dates(const intptr_t control, std::chrono::system_clock::time_point min_date, std::chrono::system_clock::time_point max_date);
         /// @name Protected methods

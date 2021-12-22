@@ -40,6 +40,7 @@ control& date_time_picker::max_date(std::chrono::system_clock::time_point value)
     max_date_ = value;
     if (max_date_ < min_date_) min_date_ = max_date_;
     this->value(value_);
+    if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), min_date_, max_date_);
   }
   return *this;
 }
@@ -72,6 +73,7 @@ control& date_time_picker::min_date(std::chrono::system_clock::time_point value)
     min_date_ = value;
     if (max_date_ < min_date_) max_date_ = min_date_;
     this->value(value_);
+    if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), min_date_, max_date_);
   }
   return *this;
 }
@@ -142,6 +144,7 @@ forms::create_params date_time_picker::create_params() const {
 
 void date_time_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
+  native::date_time_picker::allowable_dates(handle(), min_date_, max_date_);
   native::date_time_picker::value(handle(), value_);
 }
 
