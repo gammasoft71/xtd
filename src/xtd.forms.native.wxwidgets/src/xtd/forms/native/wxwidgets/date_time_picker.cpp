@@ -10,6 +10,21 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+void date_time_picker::allowable_dates(const intptr_t control, std::chrono::system_clock::time_point min_date, std::chrono::system_clock::time_point max_date) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  wxDateTime wx_min_date {std::chrono::system_clock::to_time_t(min_date)};
+  wxDateTime wx_max_date {std::chrono::system_clock::to_time_t(max_date)};
+  if (dynamic_cast<wxTimePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())) {
+    // No range for WxTimePickerCtrl
+    //static_cast<wxTimePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetRange(wx_min_date, wx_max_date);
+  } else
+    static_cast<wxDatePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetRange(wx_min_date, wx_max_date);
+}
+
 std::chrono::system_clock::time_point date_time_picker::value(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {

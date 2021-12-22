@@ -37,6 +37,14 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
+        /// @name Protected methods
+        /// @{
+        /// @brief Sets allowable date range to the date time picker.
+        /// @param control: Date time picker handle.
+        /// @param min_date: The minimum date allowable to the date time picker.
+        /// @param max_date: The maximum date allowable to the date time picker.
+        /// @warning Internal use only
+        static void allowable_dates(const intptr_t control, std::chrono::system_clock::time_point min_date, std::chrono::system_clock::time_point max_date);
         /// @brief Gets the date/time value assigned to the control.
         /// @param control Date time picker handle.
         /// @return The date and time value assign to the control.
