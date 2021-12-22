@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::selection_range control.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <chrono>
+#include <xtd/date_time.h>
 #include <xtd/object.h>
 #include "../forms_export.h"
 
@@ -12,13 +12,11 @@ namespace xtd {
   namespace forms {
     class forms_export_ selection_range : public object {
     public:
-      using time_point = std::chrono::system_clock::time_point;
-
       /// @Name Constructors
 
       /// @{
       selection_range() = default;
-      selection_range(time_point start, time_point end);
+      selection_range(date_time start, date_time end);
       /// @}
 
       /// @cond
@@ -31,25 +29,17 @@ namespace xtd {
       /// @Name Properties
 
       /// @{
-      virtual time_point end() const;
-      virtual void end(time_point value);
-      virtual void end(time_t value);
-      virtual void end(const std::tm& value);
-      virtual void end(int32_t year, int32_t month, int32_t day);
-      virtual void end(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second);
+      virtual date_time end() const;
+      virtual void end(date_time value);
 
 
-      virtual time_point start() const;
-      virtual void start(time_point value);
-      virtual void start(time_t value);
-      virtual void start(const std::tm& value);
-      virtual void start(int32_t year, int32_t month, int32_t day);
-      virtual void start(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second);
+      virtual date_time start() const;
+      virtual void start(date_time value);
       /// @}
 
     private:
-      time_point start_;
-      time_point end_;
+      date_time start_;
+      date_time end_;
     };
   }
 }

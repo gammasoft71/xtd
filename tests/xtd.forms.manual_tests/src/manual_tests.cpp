@@ -19,9 +19,9 @@ public:
 
     month_calendar1.parent(*this);
     month_calendar1.location({ 10, 10 });
-    month_calendar1.selection_range({system_clock::now(), system_clock::now()});
-    month_calendar1.min_date(system_clock::now() - months(3));
-    month_calendar1.max_date(system_clock::now() + months(3));
+    month_calendar1.selection_range({date_time::now(), date_time::now()});
+    month_calendar1.min_date(date_time::now().subtract(months(3)));
+    month_calendar1.max_date(date_time::now().add(months(3)));
     month_calendar1.date_changed += [&](object&, const event_args& e) {
       debug::write_line(ustring::format("month_calendar date_changed event: [{:d}, {:d}]", month_calendar1.selection_start(), month_calendar1.selection_end()));
     };

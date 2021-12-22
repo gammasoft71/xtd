@@ -1,5 +1,6 @@
 #include <xtd/xtd>
 
+using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -13,9 +14,9 @@ public:
     picker1.value_changed += [&] {
       label1.text(ustring::format("{:d}", picker1.value()));
     };
-    picker1.max_date(date_time::now());
-    picker1.min_date({1975, 4, 4});
-    picker1.value({1975, 4, 4});
+    picker1.max_date(date_time::now().add(months(3)));
+    picker1.min_date(date_time::now().subtract(months(3)));
+    picker1.value(date_time::now());
 
     label1.location({10, 50});
     label1.size({380, 340});
