@@ -1,6 +1,8 @@
 #pragma once
 #include <chrono>
 #include <ctime>
+#include "date_time_kind.h"
+#include "day_of_week.h"
 #include "icomparable.h"
 #include "iequatable.h"
 #include "object.h"
@@ -8,25 +10,14 @@
 #include "ustring.h"
 
 namespace xtd {
-  enum class date_time_kind {
-    unspecified,
-    utc,
-    local,
-  };
-  
-  enum class day_of_week {
-    sunday,
-    monday,
-    tuesday,
-    wednesday,
-    thursday,
-    friday,
-    saturday
-  };
-  
   class core_export_ date_time : public icomparable<date_time>, public iequatable<date_time>, public object {
   public:
+    /// @name Alias
+    
+    /// @{
     using time_point = xtd::ticks;
+    /// @}
+    
     /// @name Fields
     
     /// @{
@@ -93,9 +84,9 @@ namespace xtd {
     
     bool equals(const date_time&) const noexcept override;
     bool equals(const object&) const noexcept override;
-    static date_time from_binary(time_t date_data);
-    static date_time from_file_time(time_t fileTime);
-    static date_time from_file_time_utc(time_t fileTime);
+    static date_time from_binary(int64_t date_data);
+    static date_time from_file_time(xtd::ticks fileTime);
+    static date_time from_file_time_utc(xtd::ticks fileTime);
     template<typename rep_t, typename period_t>
     static date_time from_duration(std::chrono::duration<rep_t, period_t> value) {
       return date_time(std::chrono::duration_cast<xtd::ticks>(value), date_time_kind::unspecified);
@@ -114,7 +105,7 @@ namespace xtd {
     static date_time specify_kind(date_time value, date_time_kind kind);
     time_point subtract(const date_time& value) const;
     date_time subtract(time_point value) const;
-    time_t to_binary() const;
+    int64_t to_binary() const;
     date_time to_local_time() const;
     const xtd::ustring to_long_date_string() const;
     const xtd::ustring to_long_time_string() const;
