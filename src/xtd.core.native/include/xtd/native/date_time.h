@@ -10,8 +10,7 @@
 
 #include <xtd/core_native_export.h>
 #include <cstddef>
-#include <string>
-#include <vector>
+#include <ctime>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
