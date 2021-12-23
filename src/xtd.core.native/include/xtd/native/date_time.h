@@ -38,11 +38,7 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      static int32_t gmt_time(time_t time, uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week);
-      static bool is_daylight(time_t time);
-      static int32_t local_time(time_t time, uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week);
-      static int32_t make_gmt_time(time_t& gmt_time, uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second);
-      static int32_t make_local_time(time_t& local_time, uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second);
+      static bool is_daylight(std::time_t time);
       /// @}
     };
   }

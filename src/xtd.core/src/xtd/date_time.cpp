@@ -5,8 +5,10 @@
 #include "../include/xtd/format_exception.h"
 #include "../include/xtd/invalid_operation_exception.h"
 #include "../include/xtd/date_time.h"
+#include "../include/xtd/math.h"
 #include "../include/xtd/not_implemented_exception.h"
 #include "../include/xtd/unused.h"
+#include <mutex>
 
 using namespace std;
 using namespace std::chrono;
@@ -47,7 +49,59 @@ namespace {
   const ticks file_time_offset = ticks(days_to_1601 * ticks_per_day);
   
   constexpr seconds seconds_offset_1970 = seconds(seconds_per_day * days_to_1970);
- }
+ 
+  static uint32_t extract_years(int64_t& days) {
+    int64_t year = 1;
+    
+    if (days >= days_per_400_years) {
+      int64_t chunks = days / days_per_400_years;
+      year += chunks * 400;
+      days -= chunks * days_per_400_years;
+    }
+    
+    if (days >= days_per_100_years) {
+      int64_t chunks = days / days_per_100_years;
+      if (chunks == 4) chunks = 3;
+      year += chunks * 100;
+      days -= chunks * days_per_100_years;
+    }
+    
+    if (days >= days_per_4_years) {
+      int64_t chunks = days / days_per_4_years;
+      year += chunks * 4;
+      days -= chunks * days_per_4_years;
+    }
+    
+    if (days >= days_per_year) {
+      int64_t chunks = days / days_per_year;
+      if (chunks == 4) chunks = 3;
+      year += chunks;
+      days -= chunks * days_per_year;
+    }
+
+    return static_cast<uint32_t>(year);
+  }
+  
+  static uint32_t extract_month(int64_t& days, uint32_t year) {
+    uint32_t month = 1;
+    
+    for (int64_t days_in_month = date_time::days_in_month(year, month); days >= days_in_month; days_in_month = date_time::days_in_month(year, month)) {
+      ++month;
+      days -= days_in_month;
+    }
+
+    return month;
+  }
+
+  /// @todo Remove this methode when time_zone is implemented.
+  static xtd::ticks offset_local() {
+    static mutex offset_local_mutex;
+    lock_guard<mutex> lock(offset_local_mutex);
+    time_t raw_time;
+    time(&raw_time);
+    return date_time::from_tm(*localtime(&raw_time)).ticks() - date_time::from_tm(*gmtime(&raw_time)).ticks();
+  }
+}
 
 date_time date_time::max_value = max_ticks;
 date_time date_time::min_value = min_ticks;
@@ -81,36 +135,36 @@ date_time::date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour,
 }
 
 date_time date_time::date() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return date_time(year, month, day, 0, 0, 0, 0, kind_);
 }
 
 uint32_t date_time::day() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return day;
 }
 
 xtd::day_of_week date_time::day_fo_week() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return static_cast<xtd::day_of_week>(day_of_week);
 }
 
 uint32_t date_time::day_of_year() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return day_of_year;
 }
 
 uint32_t date_time::hour() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return hour;
 }
@@ -120,26 +174,26 @@ date_time_kind date_time::kind() const noexcept {
 }
 
 uint32_t date_time::minute() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return minute;
 }
 
 uint32_t date_time::month() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return month;
 }
 
 date_time date_time::now() noexcept {
-  return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::local);
+  return from_time_t(system_clock::to_time_t(system_clock::now())).to_local_time();
 }
 
 uint32_t date_time::second() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return second;
 }
@@ -149,16 +203,16 @@ xtd::ticks date_time::ticks() const noexcept {
 }
 
 date_time::time_point date_time::time_of_day() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return duration_cast<time_point>(chrono::hours(hour)) + duration_cast<time_point>(chrono::minutes(minute)) + duration_cast<time_point>(chrono::seconds(second));
 }
 
 date_time date_time::to_day() noexcept {
   date_time to_day = now();
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   to_day.get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return date_time(year, month, day, 0, 0, 0, 0, to_day.kind_);
 }
@@ -168,8 +222,8 @@ date_time date_time::utc_now() noexcept {
 }
 
 uint32_t date_time::year() const noexcept {
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return year;
 }
@@ -251,25 +305,20 @@ date_time date_time::from_file_time_utc(xtd::ticks file_time) {
 }
 
 date_time date_time::from_time_t(std::time_t value) {
-  return from_time_t(value, date_time_kind::unspecified);
+  return from_time_t(value, date_time_kind::local);
 }
 
 date_time date_time::from_time_t(std::time_t value, date_time_kind kind) {
-  date_time result;
-  result.value_ = duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970);
-  result.kind_ = kind;
-  return result;
+  if (kind == date_time_kind::local) return date_time(duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970)).to_local_time();
+  return date_time(duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970), kind);
 }
 
 date_time date_time::from_tm(tm& value) {
-  return from_tm(value, date_time_kind::unspecified);
+  return from_tm(value, date_time_kind::local);
 }
 
 date_time date_time::from_tm(tm& value, date_time_kind kind) {
-  date_time result;
-  result.value_ = duration_cast<xtd::ticks>(chrono::seconds(mktime(&value)) + seconds_offset_1970);
-  result.kind_ = kind;
-  return result;
+  return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, math::min(value.tm_sec, 59), kind);
 }
 
 bool date_time::is_daylight_saving_time() const noexcept {
@@ -305,17 +354,17 @@ int64_t date_time::to_binary() const {
 }
 
 date_time date_time::to_local_time() const {
-  if (kind_ != date_time_kind::unspecified) return date_time(value_, date_time_kind::local);
-  
+  /// @todo Replace this methode by time_zone::convert_time_to_local when time_zone is implemented.
+  if (kind_ == date_time_kind::local) return *this;
+
+  auto offset_local = ::offset_local();
+  if (value_ + offset_local > max_value.value_) return date_time(value_, date_time_kind::local);
+
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
-  native::date_time::gmt_time((duration_cast<chrono::seconds>(value_) - seconds_offset_1970).count(), year, month, day, hour, minute, second, day_of_year, day_of_week);
+  get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
   
-  time_t seconds;
-  if (native::date_time::make_gmt_time(seconds, year, month, day, hour, minute, second) != 0)
-    return date_time(value_, date_time_kind::local);
-  
-  return date_time(duration_cast<xtd::ticks>(chrono::seconds(seconds) + seconds_offset_1970), date_time_kind::local);
+  return date_time(ticks() + offset_local, date_time_kind::local);
 }
 
 const xtd::ustring date_time::to_long_date_string() const {
@@ -343,60 +392,69 @@ ustring date_time::to_string(const ustring& format) const {
   if (fmt.empty()) fmt =  "G";
   if (fmt.size() > 1) format_exception("Invalid format", csf_);
     
-  uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32 day_of_week = 0;
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
-  tm time {};
-  time.tm_year = year - 1900;
-  time.tm_mon = month - 1;
-  time.tm_mday = day;
-  time.tm_hour = hour;
-  time.tm_min = minute;
-  time.tm_sec = second;
-  time.tm_yday = day_of_year - 1;
-  time.tm_wday = day_of_week;
-  time.tm_isdst = -1;
   
   switch (fmt[0]) {
     case 'd': return __sprintf("%02d/%02d/%d", month, day, year);
     case 'D': return __sprintf("%d/%02d/%d", month, day, year);
-    case 'f': return __tm_formatter("%Ec", time, std::locale());
-    case 'F': return __tm_formatter("%c", time, std::locale());
-    case 'g': return __tm_formatter("%Ec", time, std::locale());
-    case 'G': return __tm_formatter("%c", time, std::locale());
-    case 'h': return __sprintf("%s", __get_brief_weekday_name<char>(time, std::locale()).c_str());
-    case 'H': return __sprintf("%s", __get_weekday_name<char>(time, std::locale()).c_str());
+    case 'f': return __tm_formatter("%Ec", to_tm(), std::locale());
+    case 'F': return __tm_formatter("%c", to_tm(), std::locale());
+    case 'g': return __tm_formatter("%Ec", to_tm(), std::locale());
+    case 'G': return __tm_formatter("%c", to_tm(), std::locale());
+    case 'h': return __sprintf("%s", __get_brief_weekday_name<char>(to_tm(), std::locale()).c_str());
+    case 'H': return __sprintf("%s", __get_weekday_name<char>(to_tm(), std::locale()).c_str());
     case 'i': return __sprintf("%02d", day);
     case 'I': return __sprintf("%d", day);
-    case 'j': return __sprintf("%s", __get_brief_month_name<char>(time, std::locale()).c_str());
-    case 'J': return __sprintf("%s", __get_month_name<char>(time, std::locale()).c_str());
-    case 'k': return __sprintf("%02d", time.tm_mon + 1);
-    case 'K': return __sprintf("%d", time.tm_mon + 1);
-    case 'l': return __sprintf("%02d", time.tm_year % 100);
-    case 'L': return __sprintf("%d", time.tm_year + 1900);
+    case 'j': return __sprintf("%s", __get_brief_month_name<char>(to_tm(), std::locale()).c_str());
+    case 'J': return __sprintf("%s", __get_month_name<char>(to_tm(), std::locale()).c_str());
+    case 'k': return __sprintf("%02d", month);
+    case 'K': return __sprintf("%d", month);
+    case 'l': return __sprintf("%02d", year % 100);
+    case 'L': return __sprintf("%d", year);
     case 'm':
-    case 'M': return __sprintf("%s %d", __get_month_name<char>(time, std::locale()).c_str(), day);
-    case 'n': return __sprintf("%s, %d %s %d", __get_weekday_name<char>(time, std::locale()).c_str(), day, __get_month_name<char>(time, std::locale()).c_str(), time.tm_year + 1900);
-    case 'N': return __sprintf("%s, %d %s %d %d:%02d:%02d", __get_weekday_name<char>(time, std::locale()).c_str(), day, __get_month_name<char>(time, std::locale()).c_str(), time.tm_year + 1900, time.tm_hour, time.tm_min, time.tm_sec);
+    case 'M': return __sprintf("%s %d", __get_month_name<char>(to_tm(), std::locale()).c_str(), day);
+    case 'n': return __sprintf("%s, %d %s %d", __get_weekday_name<char>(to_tm(), std::locale()).c_str(), day, __get_month_name<char>(to_tm(), std::locale()).c_str(), year);
+    case 'N': return __sprintf("%s, %d %s %d %d:%02d:%02d", __get_weekday_name<char>(to_tm(), std::locale()).c_str(), day, __get_month_name<char>(to_tm(), std::locale()).c_str(), year, hour, minute, second);
     case 'o':
-    case 'O': return __sprintf("%d %s %d", day, __get_month_name<char>(time, std::locale()).c_str(), time.tm_year + 1900);
-    case 's': return __sprintf("%d-%02d-%02dT%02d:%02d:%02d", time.tm_year + 1900, time.tm_mon+1, day, time.tm_hour, time.tm_min, time.tm_sec);
-    case 't': return __sprintf("%02d:%02d:%02d", time.tm_hour, time.tm_min, time.tm_sec);
-    case 'T': return __sprintf("%d:%02d:%02d", time.tm_hour, time.tm_min, time.tm_sec);
-    case 'u': return __sprintf("%d-%02d-%02d %02d:%02d:%02d", time.tm_year + 1900, time.tm_mon+1, day, time.tm_hour, time.tm_min, time.tm_sec);
-    case 'U': return __sprintf("%s, %d %s %d %d:%02d:%02d", __get_weekday_name<char>(time, std::locale()).c_str(), day, __get_month_name<char>(time, std::locale()).c_str(), time.tm_year + 1900, time.tm_hour, time.tm_min, time.tm_sec);
-    case 'v': return __sprintf("%02d:%02d", time.tm_hour, time.tm_min);
-    case 'V': return __sprintf("%d:%02d", time.tm_hour, time.tm_min);
-    case 'y': return __sprintf("%s %d", __get_month_name<char>(time, std::locale()).c_str(), time.tm_year % 100);
-    case 'Y': return __sprintf("%s %d", __get_month_name<char>(time, std::locale()).c_str(), time.tm_year + 1900);
+    case 'O': return __sprintf("%d %s %d", day, __get_month_name<char>(to_tm(), std::locale()).c_str(), year);
+    case 's': return __sprintf("%d-%02d-%02dT%02d:%02d:%02d", year, month, day, hour, minute, second);
+    case 't': return __sprintf("%02d:%02d:%02d", hour, minute, second);
+    case 'T': return __sprintf("%d:%02d:%02d", hour, minute, second);
+    case 'u': return __sprintf("%d-%02d-%02d %02d:%02d:%02d", year, month, day, hour, minute, second);
+    case 'U': return __sprintf("%s, %d %s %d %d:%02d:%02d", __get_weekday_name<char>(to_tm(), std::locale()).c_str(), day, __get_month_name<char>(to_tm(), std::locale()).c_str(), year, hour, minute, second);
+    case 'v': return __sprintf("%02d:%02d", hour, minute);
+    case 'V': return __sprintf("%d:%02d", hour, minute);
+    case 'y': return __sprintf("%s %d", __get_month_name<char>(to_tm(), std::locale()).c_str(), year % 100);
+    case 'Y': return __sprintf("%s %d", __get_month_name<char>(to_tm(), std::locale()).c_str(), year);
     case 'z':
-    case 'Z': return __tm_formatter("%Z", time, std::locale());
-    default: format_exception("Invalid format"); return {};
+    case 'Z': return __tm_formatter("%Z", to_tm(), std::locale());
   }
+  throw format_exception("Invalid format");
 }
 
 std::time_t date_time::to_time_t() const {
-  return (duration_cast<chrono::seconds>(value_) - seconds_offset_1970).count();
+  return (duration_cast<chrono::seconds>(to_universal_time().value_) - seconds_offset_1970).count();
+}
+
+std::tm date_time::to_tm() const {
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
+
+  std::tm result;
+  result.tm_sec = static_cast<int32_t>(second);
+  result.tm_min = static_cast<int32_t>(minute);
+  result.tm_hour = static_cast<int32_t>(hour);
+  result.tm_mday = static_cast<int32_t>(day);
+  result.tm_mon = static_cast<int32_t>(month - 1);
+  result.tm_year = static_cast<int32_t>(year - 1900);
+  result.tm_wday = day_of_week;
+  result.tm_yday = static_cast<int32_t>(day_of_year);
+  result.tm_isdst = is_daylight_saving_time();
+  
+  return result;
 }
 
 date_time::operator date_time::time_point() const {
@@ -404,17 +462,17 @@ date_time::operator date_time::time_point() const {
 }
 
 date_time date_time::to_universal_time() const {
-  if (kind_ != date_time_kind::unspecified) return date_time(value_, date_time_kind::utc);
+  /// @todo Replace this methode by time_zone::convert_time_to_utc when time_zone is implemented.
+  if (kind_ == date_time_kind::utc) return *this;
   
-  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, dayOfYear = 0;
-  int32_t dayOfWeek = 0;
-  native::date_time::gmt_time((duration_cast<chrono::seconds>(value_) - seconds_offset_1970).count(), year, month, day, hour, minute, second, dayOfYear, dayOfWeek);
+  auto offset_local = ::offset_local();
+  if (value_ < offset_local) return date_time(value_, date_time_kind::utc);
+
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
   
-  time_t seconds;
-  if (native::date_time::make_local_time(seconds, year, month, day, hour, minute, second) != 0)
-    return date_time(value_, date_time_kind::utc);
-  
-  return date_time(duration_cast<xtd::ticks>(chrono::seconds(seconds) + seconds_offset_1970), date_time_kind::utc);
+  return date_time(ticks() - offset_local, date_time_kind::utc);
 }
 
 date_time& date_time::operator+=(date_time value) {
@@ -465,21 +523,26 @@ date_time date_time::operator--(int) {
   return date_time(value_--, kind_);
 }
 
-void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year,  int32_t& day_of_week) const {
-  if (kind_ == date_time_kind::local)
-    native::date_time::local_time(to_time_t(), year, month, day, hour, minute, second, day_of_year, day_of_week);
-  else
-    native::date_time::gmt_time(to_time_t(), year, month, day, hour, minute, second, day_of_year, day_of_week);
+void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week) const {
+  int64_t days = value_.count() / ticks_per_day;
+  year = extract_years(days);
+  day_of_year = static_cast<uint32_t>(days);
+  month = extract_month(days, year);
+  day = static_cast<uint32_t>(days + 1);
+  hour = static_cast<uint32_t>(value_.count() / ticks_per_hour % 24);
+  minute = static_cast<uint32_t>(value_.count() / ticks_per_minute % 60);
+  second = static_cast<uint32_t>(value_.count() / ticks_per_second% 60);
+  day_of_week = (static_cast<int32_t>(value_.count() / ticks_per_day + 1) % 7);
 }
 
-void date_time::set_date_time(uint32_t year, uint32 month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind) {
-  uint32 day_of_year = 0;
-  int32 day_of_week = 0;
+void date_time::set_date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind) {
+  uint32_t day_of_year = 0;
+  int32_t day_of_week = 0;
   
-  uint32 max_year = 1, max_month = 1, max_day = 1, max_hour = 0, max_minute = 0, max_second = 0;
+  uint32_t max_year = 1, max_month = 1, max_day = 1, max_hour = 0, max_minute = 0, max_second = 0;
   max_value.get_date_time(max_year, max_month, max_day, max_hour, max_minute, max_second, day_of_year, day_of_week);
   
-  uint32 min_year = 1, min_month = 1, min_day = 1, min_hour = 0, min_minute = 0, min_second = 0;
+  uint32_t min_year = 1, min_month = 1, min_day = 1, min_hour = 0, min_minute = 0, min_second = 0;
   min_value.get_date_time(min_year, min_month, min_day, min_hour, min_minute, min_second, day_of_year, day_of_week);
   
   if (year  < min_year ||
@@ -498,17 +561,15 @@ void date_time::set_date_time(uint32_t year, uint32 month, uint32_t day, uint32_
       (year == max_year && month == max_month && day == max_day && hour == max_hour && minute == max_minute && second > max_second))
     throw argument_out_of_range_exception(csf_);
   
-  time_t seconds;
-  if (kind == date_time_kind::local) {
-    if (native::date_time::make_local_time(seconds, year, month, day, hour, minute, second) != 0)
-      throw invalid_operation_exception(csf_);
-  } else {
-    if (native::date_time::make_gmt_time(seconds, year, month, day, hour, minute, second) == -1)
-      throw invalid_operation_exception(csf_);
-  }
+  int64_t days = day + 1;
   
+  for (uint32_t i = 1; i < month; ++i)
+    days += days_in_month(year, month);
+  
+  --year;
+  days += (year * days_per_year) + (year / 4) - (year / 100) + (year / 400);
+  value_ = xtd::ticks(days * ticks_per_day + hour * ticks_per_hour + minute * ticks_per_minute + second * ticks_per_second + millisecond * ticks_per_millisecond);
   kind_ = kind;
-  value_ = duration_cast<xtd::ticks>(chrono::seconds(seconds) + seconds_offset_1970);
 }
 
 std::ostream& xtd::operator<<(std::ostream& os, const date_time& dt) noexcept {
