@@ -18,7 +18,7 @@ namespace xtd {
     /// @code
     /// class core_export_ file_system_info abstract_
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::abstract_object → xtd::io::file_system_info
     /// @par Namespace
     /// xtd::io

@@ -17,7 +17,7 @@ namespace xtd {
     /// @code
     /// class core_export_ binary_reader : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::io::binary_reader
     /// @par Namespace
     /// xtd::io

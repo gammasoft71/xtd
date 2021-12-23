@@ -14,7 +14,7 @@ namespace xtd {
     /// @code
     /// class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> → xtd::diagnostics::trace_listener_collection
     /// @par Namespace
     /// xtd::diagnostics

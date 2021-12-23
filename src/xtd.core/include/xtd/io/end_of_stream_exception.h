@@ -12,7 +12,7 @@ namespace xtd {
     /// @code
     /// class end_of_stream_exception : public xtd::io::io_exception
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::end_of_stream_exception
     /// @par Namespace
     /// xtd::io

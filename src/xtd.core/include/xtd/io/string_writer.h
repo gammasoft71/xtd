@@ -14,7 +14,7 @@ namespace xtd {
     /// @code
     /// class core_export_ string_writer : public xtd::io::text_writer
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::text_writer → xtd::io::string_writer
     /// @par Namespace
     /// xtd::io

@@ -13,7 +13,7 @@ namespace xtd {
     /// @code
     /// class core_export_ default_trace_listener : public xtd::diagnostics::trace_listener
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::diagnostics::trace_listener → xtd::diagnostics::default_trace_listener
     /// @par Namespace
     /// xtd::diagnostics

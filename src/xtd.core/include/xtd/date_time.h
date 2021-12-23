@@ -12,8 +12,24 @@
 #include "ticks.h"
 #include "ustring.h"
 
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  class core_export_ date_time : public icomparable<date_time>, public iequatable<date_time>, public object {
+  /// @brief Represents an instant in time, typically expressed as a date and time of day.
+  /// @code
+  /// class core_export_ date_time : public xtd::icomparable<date_time>, public xtd::iequatable<date_time>, public xtd::object
+  /// @endcode
+  /// @par Inheritance
+  /// xtd::object → xtd::date_time
+  /// @par Implements
+  /// xtd::icomparable <>, xtd::iequatable <>
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
+  /// @remarks The xtd::date_time value type represents dates and times with values ranging from 00:00:00 (midnight), January 1, 0001 Anno Domini (Common Era) through 11:59:59 P.M., December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
+  /// @remarks Time values are measured in 100-nanosecond units called ticks. A particular date is the number of ticks since 12:00 midnight, January 1, 0001 A.D. (C.E.) in the GregorianCalendar calendar. The number excludes ticks that would be added by leap seconds. For example, a ticks value of 31241376000000000L represents the date Friday, January 01, 0100 12:00:00 midnight. A xtd::date_time value is always expressed in the context of an explicit or default calendar.
+  class core_export_ date_time : public xtd::icomparable<date_time>, public xtd::iequatable<date_time>, public xtd::object {
   public:
     /// @name Alias
     
@@ -31,8 +47,17 @@ namespace xtd {
     /// @name Constructors
     
     /// @{
+    /// @brief Initializes a new instance of the xtd::date_time structure.
     date_time() = default;
+    /// @brief Initializes a new instance of the DateTime structure to a specified number of ticks.
+    /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
+    /// @exception xtd::argument_out_of_range_exception ticks is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
     date_time(xtd::ticks ticks);
+    /// @brief Initializes a new instance of the xtd::date_time structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.
+    /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
+    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
+    /// @exception xtd::argument_out_of_range_exception ticks is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
     date_time(xtd::ticks ticks, xtd::date_time_kind kind);
     date_time(uint32_t year, uint32_t month, uint32_t day);
     date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second);
@@ -129,7 +154,7 @@ namespace xtd {
     date_time to_universal_time() const;
     /// @}
     
-    /// @Name Operators
+    /// @name Operators
     
     /// @{
     operator time_point() const;

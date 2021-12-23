@@ -15,7 +15,7 @@ namespace xtd {
     /// @code
     /// class core_export_ system_sounds static_
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::static_object → xtd::media::system_sounds
     /// @par Namespace
     /// xtd::media

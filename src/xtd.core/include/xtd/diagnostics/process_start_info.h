@@ -19,7 +19,7 @@ namespace xtd {
     /// @code
     /// class core_export_ process_start_info final : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::diagnostics::process_start_info
     /// @par Namespace
     /// xtd::diagnostics

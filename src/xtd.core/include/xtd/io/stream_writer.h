@@ -15,7 +15,7 @@ namespace xtd {
     /// @code
     /// class core_export_ stream_writer : public xtd::io::text_writer
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::text_writer → xtd::io::stream_writer
     /// @par Namespace
     /// xtd::io

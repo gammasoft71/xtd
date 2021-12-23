@@ -18,7 +18,7 @@ namespace xtd {
     /// @code
     /// class core_export_ binary_writer : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::io::binary_writer
     /// @par Namespace
     /// xtd::io

@@ -23,7 +23,7 @@ namespace xtd {
       /// @code
       /// class core_export_ ip_packet_information : public xtd::object
       /// @endcode
-      /// @par Ineheritance
+      /// @par Inheritance
       /// xtd::object → xtd::net::sockets::ip_packet_information
       /// @par Namespace
       /// xtd::net::sockets

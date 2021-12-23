@@ -13,7 +13,7 @@ namespace xtd {
     /// @code
     /// class data_received_event_args final : public xtd::event_args
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::event_args → xtd::diagnostics::data_received_event_args
     /// @par Namespace
     /// xtd::diagnostics

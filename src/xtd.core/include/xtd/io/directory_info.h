@@ -20,7 +20,7 @@ namespace xtd {
     /// @code
     /// class core_export_ directory_info final : public xtd::io::file_system_info
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::file_system_info → xtd::io::directory_info
     /// @par Namespace
     /// xtd::io

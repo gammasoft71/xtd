@@ -12,7 +12,7 @@ namespace xtd {
     /// @code
     /// class file_not_found_exception : public xtd::io::io_exception
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::file_not_found_exception
     /// @par Namespace
     /// xtd::io

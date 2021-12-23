@@ -27,7 +27,7 @@ namespace xtd {
     /// @code
     /// class core_export_ debug static_
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::static_object → xtd::diagnostics::debug
     /// @par Namespace
     /// xtd::diagnostics

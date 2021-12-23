@@ -13,7 +13,7 @@ namespace xtd {
     /// @code
     /// class core_export_ boolean_switch : public xtd::diagnostics::switch_base
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::diagnostics::switch_base → xtd::diagnostics::boolean_switch
     /// @par Namespace
     /// xtd::diagnostics
