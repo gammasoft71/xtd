@@ -23,10 +23,10 @@ public:
     month_calendar1.min_date(date_time::now().subtract(months(3)));
     month_calendar1.max_date(date_time::now().add(months(3)));
     month_calendar1.date_changed += [&](object&, const event_args& e) {
-      debug::write_line(ustring::format("month_calendar date_changed event: [{:d}, {:d}]", month_calendar1.selection_start(), month_calendar1.selection_end()));
+      debug::write_line(ustring::format("month_calendar date_changed event: [{:u}, {:u}]", month_calendar1.selection_start(), month_calendar1.selection_end()));
     };
     month_calendar1.date_selected += [&](object&, const event_args& e) {
-      debug::write_line(ustring::format("month_calendar date_selected event: [{:d}, {:d}]", month_calendar1.selection_start(), month_calendar1.selection_end()));
+      debug::write_line(ustring::format("month_calendar date_selected event: [{:u}, {:u}]", month_calendar1.selection_start(), month_calendar1.selection_end()));
     };
     month_calendar1.click += [&](object&, const event_args& e) {
       assert_(false);
