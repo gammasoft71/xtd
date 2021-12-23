@@ -28,7 +28,7 @@ namespace xtd {
     /// @code
     /// class core_export_ process final : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::diagnostics::process
     /// @par Namespace
     /// xtd::diagnostics

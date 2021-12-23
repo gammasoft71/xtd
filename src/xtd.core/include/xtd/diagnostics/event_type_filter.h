@@ -13,7 +13,7 @@ namespace xtd {
     /// @code
     /// class core_export_ event_type_filter : public xtd::diagnostics::trace_filter
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::diagnostics::trace_filter → xtd::diagnostics::event_type_filter
     /// @par Namespace
     /// xtd::diagnostics

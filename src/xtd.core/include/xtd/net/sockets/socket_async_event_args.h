@@ -30,7 +30,7 @@ namespace xtd {
       /// @code
       /// class core_export_ socket_async_event_args : public xtd::event_args
       /// @endcode
-      /// @par Ineheritance
+      /// @par Inheritance
       /// xtd::event_args → xtd::net::sockets::socket_async_event_args
       /// @par Namespace
       /// xtd::net::sockets

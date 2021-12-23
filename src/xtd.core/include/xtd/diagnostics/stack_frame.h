@@ -19,7 +19,7 @@ namespace xtd {
     /// @code
     /// class core_export_ stack_frame : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::diagnostics::stack_frame
     /// @par Namespace
     /// xtd::diagnostics

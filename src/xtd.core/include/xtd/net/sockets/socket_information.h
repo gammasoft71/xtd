@@ -19,7 +19,7 @@ namespace xtd {
       /// @code
       /// class core_export_ socket_information : public xtd::object
       /// @endcode
-      /// @par Ineheritance
+      /// @par Inheritance
       /// xtd::object → xtd::net::sockets::socket_information
       /// @par Namespace
       /// xtd::net::sockets

@@ -12,7 +12,7 @@ namespace xtd {
     /// @code
     /// class drive_not_found_exception : public xtd::io::io_exception
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::drive_not_found_exception
     /// @par Namespace
     /// xtd::io

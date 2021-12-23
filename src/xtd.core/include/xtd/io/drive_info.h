@@ -16,7 +16,7 @@ namespace xtd {
     /// @code
     /// class core_export_ drive_info : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::io::drive_info
     /// @par Namespace
     /// xtd::io

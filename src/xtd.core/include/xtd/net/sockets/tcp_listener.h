@@ -15,7 +15,7 @@ namespace xtd {
       /// @code
       /// class core_export_ tcp_listener : public xtd::object
       /// @endcode
-      /// @par Ineheritance
+      /// @par Inheritance
       /// xtd::object → xtd::net::sockets::tcp_listener
       /// @par Namespace
       /// xtd::net::sockets

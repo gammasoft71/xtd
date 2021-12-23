@@ -18,7 +18,7 @@ namespace xtd {
     /// @code
     /// class core_export_ trace_source : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::diagnostics::trace_source
     /// @par Namespace
     /// xtd::diagnostics

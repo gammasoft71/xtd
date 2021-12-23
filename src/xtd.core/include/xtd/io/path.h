@@ -22,7 +22,7 @@ namespace xtd {
     /// @code
     /// class core_export_ path static_
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::static_object → xtd::io::path
     /// @par Namespace
     /// xtd::io

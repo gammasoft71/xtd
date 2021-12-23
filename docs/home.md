@@ -16,7 +16,7 @@
 * and [highly portable](portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](portability.md#operating-system-supported);
 
 
-[![architecture_logo](pictures/block_diagram.png)](hierarchy.md)
+[![architecture_logo](pictures/block_diagram_onion.png)](hierarchy.md)
 
 # ... composed of several libraries
 

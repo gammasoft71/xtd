@@ -12,7 +12,7 @@ namespace xtd {
     /// @code
     /// class io_exception : public xtd::system_exception
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::system_exception → xtd::io::io_exception
     /// @par Namespace
     /// xtd::io

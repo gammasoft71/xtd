@@ -22,7 +22,7 @@ namespace xtd {
     /// @code
     /// class core_export_ stack_trace : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::diagnostics::stack_trace
     /// @par Namespace
     /// xtd::diagnostics

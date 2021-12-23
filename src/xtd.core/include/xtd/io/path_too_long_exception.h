@@ -12,7 +12,7 @@ namespace xtd {
     /// @code
     /// class path_too_long_exception : public xtd::io::io_exception
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::path_too_long_exception
     /// @par Namespace
     /// xtd::io

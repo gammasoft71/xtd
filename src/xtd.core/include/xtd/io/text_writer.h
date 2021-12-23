@@ -24,7 +24,7 @@ namespace xtd {
     /// @code
     /// class core_export_ text_writer : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::io::text_writer
     /// @par Namespace
     /// xtd::io
@@ -235,7 +235,7 @@ namespace xtd {
     /// @code
     /// class core_export_ null_text_writer : public xtd::io::text_writer
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::text_writer → xtd::io::null_text_writer
     /// @par Namespace
     /// xtd::io
@@ -251,7 +251,7 @@ namespace xtd {
     /// @code
     /// class core_export_ synchronized_text_writer : public xtd::io::text_writer
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::text_writer → xtd::io::synchronized_text_writer
     /// @par Namespace
     /// xtd::io

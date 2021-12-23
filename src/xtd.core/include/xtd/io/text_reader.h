@@ -24,7 +24,7 @@ namespace xtd {
     /// @code
     /// class core_export_ text_reader : public xtd::object
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::object → xtd::io::text_reader
     /// @par Namespace
     /// xtd::io
@@ -99,7 +99,7 @@ namespace xtd {
     /// @code
     /// class core_export_ null_text_reader : public xtd::io::text_reader
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::text_reader → xtd::io::null_text_reader
     /// @par Namespace
     /// xtd::io
@@ -119,7 +119,7 @@ namespace xtd {
     /// @code
     /// class core_export_ synchronized_text_reader : public xtd::io::text_reader
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::text_reader → xtd::io::synchronized_text_reader
     /// @par Namespace
     /// xtd::io

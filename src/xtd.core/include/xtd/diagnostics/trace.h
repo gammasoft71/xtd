@@ -12,7 +12,7 @@ namespace xtd {
     /// @code
     /// class core_export_ trace static_
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::static_object → xtd::diagnostics::trace
     /// @par Namespace
     /// xtd::diagnostics

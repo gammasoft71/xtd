@@ -14,7 +14,7 @@ namespace xtd {
     /// @code
     /// class core_export_ string_reader : public xtd::io::text_reader
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::io::text_reader → xtd::io::string_reader
     /// @par Namespace
     /// xtd::io

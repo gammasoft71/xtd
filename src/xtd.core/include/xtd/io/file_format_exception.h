@@ -12,7 +12,7 @@ namespace xtd {
     /// @code
     /// class file_format_exception : public xtd::format_exception
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::format_exception → xtd::io::file_format_exception
     /// @par Namespace
     /// xtd::io

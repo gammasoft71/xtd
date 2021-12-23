@@ -13,7 +13,7 @@ namespace xtd {
     /// @code
     /// class core_export_ console_trace_listener : public xtd::diagnostics::ostream_trace_listener
     /// @endcode
-    /// @par Ineheritance
+    /// @par Inheritance
     /// xtd::diagnostics::ostream_trace_listener → xtd::diagnostics::console_trace_listener
     /// @par Namespace
     /// xtd::diagnostics
