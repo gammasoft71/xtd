@@ -101,8 +101,8 @@ namespace xtd {
     }
     static date_time from_time_t(std::time_t value);
     static date_time from_time_t(std::time_t value, date_time_kind kind);
-    static date_time from_tm(tm& value);
-    static date_time from_tm(tm& value, date_time_kind kind);
+    static date_time from_tm(std::tm& value);
+    static date_time from_tm(std::tm& value, date_time_kind kind);
     bool is_daylight_saving_time() const noexcept;
     static bool is_leap_year(uint32_t year);
     xtd::ustring parse() const;
@@ -122,6 +122,7 @@ namespace xtd {
     xtd::ustring to_string() const noexcept override;
     xtd::ustring to_string(const ustring& format) const;
     std::time_t to_time_t() const;
+    std::tm to_tm() const;
     date_time to_universal_time() const;
     /// @}
     
@@ -143,7 +144,7 @@ namespace xtd {
     
   private:
     void get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year,  int32_t& day_of_week) const;
-    void set_date_time(uint32_t year, uint32 month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
+    void set_date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
 
     xtd::ticks value_ {0};
     date_time_kind kind_ {date_time_kind::unspecified};

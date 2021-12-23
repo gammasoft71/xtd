@@ -12,6 +12,6 @@ namespace xtd {
     local,
   };
 
-  inline std::ostream& operator<<(std::ostream& os, const date_time_kind value) {return os << to_string(value, { {date_time_kind::unspecified, "unspecified,"}, {date_time_kind::utc, "utc,"}, {date_time_kind::local, "local,"}});}
-  inline std::wostream& operator<<(std::wostream& os, const date_time_kind value) {return os << to_string(value, { {date_time_kind::unspecified, L"unspecified,"}, {date_time_kind::utc, L"utc,"}, {date_time_kind::local, L"local,"}});}
+  inline std::ostream& operator<<(std::ostream& os, const date_time_kind value) {return os << to_string(value, { {date_time_kind::unspecified, "unspecified"}, {date_time_kind::utc, "utc"}, {date_time_kind::local, "local"}});}
+  inline std::wostream& operator<<(std::wostream& os, const date_time_kind value) {return os << to_string(value, { {date_time_kind::unspecified, L"unspecified"}, {date_time_kind::utc, L"utc"}, {date_time_kind::local, L"local"}});}
 }

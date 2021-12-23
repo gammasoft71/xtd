@@ -70,7 +70,7 @@ namespace unit_tests {
 
     void test_method_(from_time_t) {
       struct tm tms = make_tm(1971, 1, 5, 21, 10, 30);
-      date_time d = date_time::from_time_t(std::mktime(&tms));
+      date_time d = date_time::from_time_t(std::mktime(&tms), date_time_kind::local);
       assert::are_equal(std::mktime(&tms), d.to_time_t(), csf_);
     }
 
