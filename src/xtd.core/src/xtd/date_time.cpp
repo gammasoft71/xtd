@@ -561,10 +561,10 @@ void date_time::set_date_time(uint32_t year, uint32_t month, uint32_t day, uint3
       (year == max_year && month == max_month && day == max_day && hour == max_hour && minute == max_minute && second > max_second))
     throw argument_out_of_range_exception(csf_);
   
-  int64_t days = day + 1;
+  int64_t days = day - 1;
   
-  for (uint32_t i = 1; i < month; ++i)
-    days += days_in_month(year, month);
+  for (uint32_t index = 1; index < month; ++index)
+    days += days_in_month(year, index);
   
   --year;
   days += (year * days_per_year) + (year / 4) - (year / 100) + (year / 400);
