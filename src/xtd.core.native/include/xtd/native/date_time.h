@@ -37,6 +37,10 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @internal
+      /// @brief Indicates whether the ttime_t is within the daylight saving time range for the current time zone.
+      /// @return true if the time is within the daylight saving time range for the local time zone; otherwise false.
+      /// @warning Internal use only
       static bool is_daylight(std::time_t time);
       /// @}
     };
