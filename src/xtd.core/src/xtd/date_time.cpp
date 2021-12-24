@@ -173,6 +173,10 @@ date_time_kind date_time::kind() const noexcept {
   return kind_;
 }
 
+uint32_t date_time::millisecond() const noexcept {
+  return duration_cast<chrono::milliseconds>(value_).count() % 1000;
+}
+
 uint32_t date_time::minute() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
