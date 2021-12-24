@@ -218,7 +218,7 @@ date_time date_time::to_day() noexcept {
 }
 
 date_time date_time::utc_now() noexcept {
-  return from_time_t(system_clock::to_time_t(system_clock::now()), date_time_kind::utc);
+  return from_time_t_utc(system_clock::to_time_t(system_clock::now()));
 }
 
 uint32_t date_time::year() const noexcept {
@@ -305,20 +305,19 @@ date_time date_time::from_file_time_utc(xtd::ticks file_time) {
 }
 
 date_time date_time::from_time_t(std::time_t value) {
-  return from_time_t(value, date_time_kind::local);
+  return date_time(duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970)).to_local_time();
 }
 
-date_time date_time::from_time_t(std::time_t value, date_time_kind kind) {
-  if (kind == date_time_kind::local) return date_time(duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970)).to_local_time();
-  return date_time(duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970), kind);
+date_time date_time::from_time_t_utc(std::time_t value) {
+  return date_time(duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970), date_time_kind::utc);
 }
 
-date_time date_time::from_tm(tm& value) {
-  return from_tm(value, date_time_kind::local);
+date_time date_time::from_tm(const tm& value) {
+  return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, math::min(value.tm_sec, 59), date_time_kind::local);
 }
 
-date_time date_time::from_tm(tm& value, date_time_kind kind) {
-  return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, math::min(value.tm_sec, 59), kind);
+date_time date_time::from_tm_utc(const tm& value) {
+  return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, math::min(value.tm_sec, 59), date_time_kind::utc);
 }
 
 bool date_time::is_daylight_saving_time() const noexcept {
