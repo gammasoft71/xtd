@@ -41,7 +41,7 @@ void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
   control::on_paint(e);
   auto percent_of_color = 1.0/3;
   auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
-  if (dock() == dock_style::left || dock() == dock_style::right) {
+  if (dock() == dock_style::top || dock() == dock_style::bottom) {
     auto left = 4;
     auto top = e.clip_rectangle().height() / 2;
     auto right = e.clip_rectangle().width() - 4;
