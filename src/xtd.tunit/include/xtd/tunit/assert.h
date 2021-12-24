@@ -2588,7 +2588,7 @@ namespace xtd {
       /// @endcode
       template<typename value_t>
       static void is_zero(const value_t& value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (value == 0)
+        if (value == static_cast<value_t>(0))
           succeed(message, stack_frame);
         else
           base_assert::fail("zero", base_assert::to_string(value), message, stack_frame);
