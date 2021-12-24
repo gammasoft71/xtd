@@ -25,21 +25,21 @@ namespace unit_tests {
       date_time d;
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
       assert::are_equal(ticks(0), d.ticks(), csf_);
-      //assert::are_equal("0-01-01 00:00:00", d.to_string("u"), csf_);
+      assert::are_equal("1-01-01 00:00:00", d.to_string("u"), csf_);
     }
     
     void test_method_(create_date_max_value) {
       date_time d = date_time::max_value;
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
       assert::are_equal(ticks(3155378975999999999LL), d.ticks(), csf_);
-      //assert::are_equal("9999-12-31 23:59:59", d.to_string("u"), csf_);
+      assert::are_equal("9999-12-31 23:59:59", d.to_string("u"), csf_);
     }
     
     void test_method_(create_date_min_value) {
       date_time d = date_time::min_value;
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
       assert::are_equal(ticks(0), d.ticks(), csf_);
-      //assert::are_equal("0-01-01 00:00:00", d.to_string("u"), csf_);
+      assert::are_equal("1-01-01 00:00:00", d.to_string("u"), csf_);
     }
     
     void test_method_(create_date_with_ticks) {
