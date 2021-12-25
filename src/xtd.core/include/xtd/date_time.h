@@ -14,6 +14,10 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class time_zone_info;
+  /// @endcond
+  
   /// @brief Represents an instant in time, typically expressed as a date and time of day.
   /// @code
   /// class core_export_ date_time : public xtd::icomparable<date_time>, public xtd::iequatable<date_time>, public xtd::object
@@ -171,6 +175,7 @@ namespace xtd {
     /// @}
     
   private:
+    friend class time_zone_info;
     void get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year,  int32_t& day_of_week) const;
     void set_date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
 
@@ -179,7 +184,7 @@ namespace xtd {
   };
   
   /// @cond
-  std::ostream& operator <<(std::ostream& os, const date_time& ver) noexcept;
+  std::ostream& operator <<(std::ostream& os, const date_time& value) noexcept;
   /// @endcond
 
   template<>

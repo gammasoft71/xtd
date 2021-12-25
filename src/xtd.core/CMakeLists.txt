@@ -97,6 +97,8 @@ add_sources(
   include/xtd/tick.h
   include/xtd/ticks.h
   include/xtd/time_out_exception.h
+  include/xtd/time_zone_info.h
+  include/xtd/time_zone_not_found_exception.h
   include/xtd/to_string.h
   include/xtd/tracestreambuf.h
   include/xtd/translator.h
@@ -261,6 +263,7 @@ add_sources(
   src/xtd/object.cpp
 # src/xtd/signal_catcher.cpp
   src/xtd/system_exception.cpp
+  src/xtd/time_zone_info.cpp
   src/xtd/to_string.cpp
   src/xtd/translator.cpp
   src/xtd/types.cpp
