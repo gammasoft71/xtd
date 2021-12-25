@@ -106,10 +106,10 @@ namespace xtd {
     date_time add_hours(double value) const;
     date_time add_milliseconds(double value) const;
     date_time add_minutes(double value) const;
-    date_time add_months(double value) const;
+    date_time add_months(int32_t value) const;
     date_time add_seconds(double value) const;
     date_time add_ticks(int64 value) const;
-    date_time add_years(double value) const;
+    date_time add_years(int32_t value) const;
     int32_t compare_to(const object& obj) const noexcept override;
     int32_t compare_to(const date_time& value) const noexcept override;
     static int32_t days_in_month(uint32_t year, uint32_t month);
