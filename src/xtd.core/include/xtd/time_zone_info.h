@@ -211,6 +211,8 @@ namespace xtd {
     bool equals(const time_zone_info& tzi) const noexcept override;
     bool equals(const object& obj) const noexcept override;
     
+    std::vector<adjustement_rule> get_adjustement_rules() const;
+    
     bool is_daylight_saving_time (const xtd::date_time& date_time) const;
 
     /// @brief Retrieves a time_zone_info object from the registry based on its identifier.
@@ -230,6 +232,7 @@ namespace xtd {
     ustring display_name_;
     ustring standard_name_;
     bool supports_daylight_saving_time_ = false;
+    std::vector<adjustement_rule> adjustement_rules_;
   };
 
   /// @cond
