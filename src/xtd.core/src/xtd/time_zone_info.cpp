@@ -166,6 +166,10 @@ bool time_zone_info::equals(const object& obj) const noexcept {
   return is<time_zone_info>(obj) && equals(static_cast<const time_zone_info&>(obj));
 }
 
+std::vector<time_zone_info::adjustement_rule> time_zone_info::get_adjustement_rules() const {
+  return adjustement_rules_;
+}
+
 bool time_zone_info::is_daylight_saving_time(const xtd::date_time& date_time) const {
   if (date_time.kind() != date_time_kind::local || !supports_daylight_saving_time()) return false;
   return false;
