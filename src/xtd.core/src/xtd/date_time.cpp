@@ -50,7 +50,7 @@ namespace {
   
   constexpr seconds seconds_offset_1970 = seconds(seconds_per_day * days_to_1970);
  
-  static uint32_t extract_years(int64_t& days) {
+  static uint32_t get_years(int64_t& days) {
     int64_t year = 1;
     
     if (days >= days_per_400_years) {
@@ -82,7 +82,7 @@ namespace {
     return static_cast<uint32_t>(year);
   }
   
-  static uint32_t extract_month(int64_t& days, uint32_t year) {
+  static uint32_t get_months(int64_t& days, uint32_t year) {
     uint32_t month = 1;
     
     for (int64_t days_in_month = date_time::days_in_month(year, month); days >= days_in_month; days_in_month = date_time::days_in_month(year, month)) {
@@ -236,24 +236,42 @@ date_time date_time::add(time_point value) const {
   return date_time(value_ + value, kind_);
 }
 
-date_time date_time::add_days(double value) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_day)), kind_);
+date_time date_time::add_days(double days) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(days * ticks_per_day)), kind_);
 }
 
-date_time date_time::add_hours(double value) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_hour)), kind_);
+date_time date_time::add_hours(double hours) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(hours * ticks_per_hour)), kind_);
 }
 
-date_time date_time::add_milliseconds(double value) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_millisecond)), kind_);
+date_time date_time::add_milliseconds(double milliseconds) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(milliseconds * ticks_per_millisecond)), kind_);
 }
 
-date_time date_time::add_minutes(double value) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_minute)), kind_);
+date_time date_time::add_minutes(double minute) const {
+  return date_time(value_ + xtd::ticks(static_cast<int64_t>(minute * ticks_per_minute)), kind_);
 }
 
-date_time date_time::add_months(double value) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_day * 31)), kind_);
+date_time date_time::add_months(int32_t months) const {
+  if (months < -120000 || months > 120000) throw argument_out_of_range_exception(csf_);
+  
+  uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
+  int32_t day_of_week = 0;
+  get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+
+  int32_t i = month - 1 + months;
+  if (i >= 0) {
+    month = static_cast<uint32_t>(i % 12 + 1);
+    year = year + static_cast<uint32_t>(i / 12);
+  }
+  else {
+    month = static_cast<uint32_t>(12 + (i + 1) % 12);
+    year = year + static_cast<uint32_t>((i - 11) / 12);
+  }
+  if (year < 1U || year > 9999U) throw argument_out_of_range_exception(csf_);
+  uint32_t days = static_cast<uint32_t>(days_in_month(year, month));
+  if (day > days) day = days;
+  return date_time(year, month, day, hour, minute, second, kind_);
 }
 
 date_time date_time::add_seconds(double value) const {
@@ -264,8 +282,8 @@ date_time date_time::add_ticks(int64 value) const {
   return date_time(value_ + xtd::ticks(value), kind_);
 }
 
-date_time date_time::add_years(double value) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_day * 365)), kind_);
+date_time date_time::add_years(int32_t value) const {
+  return add_months(value * 12);
 }
 
 int32_t date_time::compare_to(const object& obj) const noexcept {
@@ -528,9 +546,9 @@ date_time date_time::operator--(int) {
 
 void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week) const {
   int64_t days = value_.count() / ticks_per_day;
-  year = extract_years(days);
+  year = get_years(days);
   day_of_year = static_cast<uint32_t>(days);
-  month = extract_month(days, year);
+  month = get_months(days, year);
   day = static_cast<uint32_t>(days + 1);
   hour = static_cast<uint32_t>(value_.count() / ticks_per_hour % 24);
   minute = static_cast<uint32_t>(value_.count() / ticks_per_minute % 60);

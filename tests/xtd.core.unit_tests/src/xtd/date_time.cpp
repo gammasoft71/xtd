@@ -246,6 +246,34 @@ namespace unit_tests {
       assert::is_not_zero(date_time::now().ticks().count(), csf_);
       assert::are_equal(system_clock::to_time_t(system_clock::now()), date_time::now().to_time_t(), csf_);
     }
+    
+    void test_method_(from_duration) {
+      date_time d = date_time::from_duration(hours(12));
+      assert::are_equal(date_time_kind::local, d.kind(), csf_);
+      assert::are_equal(duration_cast<ticks>(hours(12)), d.ticks(), csf_);
+      assert::are_equal(1U, d.year(), csf_);
+      assert::are_equal(1U, d.month(), csf_);
+      assert::are_equal(1U, d.day(), csf_);
+      assert::are_equal(12U, d.hour(), csf_);
+      assert::is_zero(d.minute(), csf_);
+      assert::is_zero(d.second(), csf_);
+      assert::is_zero(d.millisecond(), csf_);
+      assert::are_equal("1-01-01 12:00:00", d.to_string("u"), csf_);
+    }
+    
+    void test_method_(from_duration_utc) {
+      date_time d = date_time::from_duration_utc(hours(12));
+      assert::are_equal(date_time_kind::utc, d.kind(), csf_);
+      assert::are_equal(duration_cast<ticks>(hours(12)), d.ticks(), csf_);
+      assert::are_equal(1U, d.year(), csf_);
+      assert::are_equal(1U, d.month(), csf_);
+      assert::are_equal(1U, d.day(), csf_);
+      assert::are_equal(12U, d.hour(), csf_);
+      assert::is_zero(d.minute(), csf_);
+      assert::is_zero(d.second(), csf_);
+      assert::is_zero(d.millisecond(), csf_);
+      assert::are_equal("1-01-01 12:00:00", d.to_string("u"), csf_);
+    }
 
     void test_method_(from_time_t) {
       struct tm tms = make_tm(1971, 1, 5, 21, 10, 30);
@@ -292,6 +320,146 @@ namespace unit_tests {
       assert::are_equal(30U, d.second(), csf_);
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
+    }
+    
+    void test_method_(add_duration) {
+      date_time d1(seconds(20), date_time_kind::local);
+      date_time d2 = d1.add(seconds(22));
+      assert::are_equal(duration_cast<ticks>(seconds(42)), d2.ticks(), csf_);
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(1U, d2.year(), csf_);
+      assert::are_equal(1U, d2.month(), csf_);
+      assert::are_equal(1U, d2.day(), csf_);
+      assert::is_zero(d2.hour(), csf_);
+      assert::is_zero(d2.minute(), csf_);
+      assert::are_equal(42U, d2.second());
+      assert::is_zero(d2.millisecond(), csf_);
+    }
+    
+    void test_method_(add_time_point) {
+      date_time d1(date_time::time_point(20), date_time_kind::local);
+      date_time d2 = d1.add(date_time::time_point(22));
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(ticks(42), d2.ticks(), csf_);
+      assert::are_equal(1U, d2.year(), csf_);
+      assert::are_equal(1U, d2.month(), csf_);
+      assert::are_equal(1U, d2.day(), csf_);
+      assert::is_zero(d2.hour(), csf_);
+      assert::is_zero(d2.minute(), csf_);
+      assert::is_zero(d2.second(), csf_);
+      assert::is_zero(d2.millisecond(), csf_);
+    }
+    
+    void test_method_(add_time_days) {
+      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
+      date_time d2 = d1.add_days(6.5);
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(1971U, d2.year(), csf_);
+      assert::are_equal(1U, d2.month(), csf_);
+      assert::are_equal(12U, d2.day(), csf_);
+      assert::are_equal(9U, d2.hour(), csf_);
+      assert::are_equal(10U, d2.minute(), csf_);
+      assert::are_equal(30U, d2.second(), csf_);
+      assert::is_zero(d2.millisecond(), csf_);
+      assert::are_equal("1971-01-12 09:10:30", d2.to_string("u"), csf_);
+    }
+    
+    void test_method_(add_time_hours) {
+      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
+      date_time d2 = d1.add_hours(6.5);
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(1971U, d2.year(), csf_);
+      assert::are_equal(1U, d2.month(), csf_);
+      assert::are_equal(6U, d2.day(), csf_);
+      assert::are_equal(3U, d2.hour(), csf_);
+      assert::are_equal(40U, d2.minute(), csf_);
+      assert::are_equal(30U, d2.second(), csf_);
+      assert::is_zero(d2.millisecond(), csf_);
+      assert::are_equal("1971-01-06 03:40:30", d2.to_string("u"), csf_);
+    }
+    
+    void test_method_(add_time_milliseconds) {
+      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
+      date_time d2 = d1.add_milliseconds(6.5);
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(1971U, d2.year(), csf_);
+      assert::are_equal(1U, d2.month(), csf_);
+      assert::are_equal(5U, d2.day(), csf_);
+      assert::are_equal(21U, d2.hour(), csf_);
+      assert::are_equal(10U, d2.minute(), csf_);
+      assert::are_equal(30U, d2.second(), csf_);
+      assert::are_equal(6U, d2.millisecond(), csf_);
+      assert::are_equal("1971-01-05 21:10:30", d2.to_string("u"), csf_);
+    }
+
+    void test_method_(add_time_minutes) {
+      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
+      date_time d2 = d1.add_minutes(6.5);
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(1971U, d2.year(), csf_);
+      assert::are_equal(1U, d2.month(), csf_);
+      assert::are_equal(5U, d2.day(), csf_);
+      assert::are_equal(21U, d2.hour(), csf_);
+      assert::are_equal(17U, d2.minute(), csf_);
+      assert::are_equal(0U, d2.second(), csf_);
+      assert::is_zero(d2.millisecond(), csf_);
+      assert::are_equal("1971-01-05 21:17:00", d2.to_string("u"), csf_);
+    }
+
+    void test_method_(add_time_months) {
+      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
+      date_time d2 = d1.add_months(6);
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(1971U, d2.year(), csf_);
+      assert::are_equal(7U, d2.month(), csf_);
+      assert::are_equal(5U, d2.day(), csf_);
+      assert::are_equal(21U, d2.hour(), csf_);
+      assert::are_equal(10U, d2.minute(), csf_);
+      assert::are_equal(30U, d2.second(), csf_);
+      assert::is_zero(d2.millisecond(), csf_);
+      assert::are_equal("1971-07-05 21:10:30", d2.to_string("u"), csf_);
+    }
+    
+    void test_method_(add_time_seconds) {
+      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
+      date_time d2 = d1.add_seconds(6.5);
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(1971U, d2.year(), csf_);
+      assert::are_equal(1U, d2.month(), csf_);
+      assert::are_equal(5U, d2.day(), csf_);
+      assert::are_equal(21U, d2.hour(), csf_);
+      assert::are_equal(10U, d2.minute(), csf_);
+      assert::are_equal(36U, d2.second(), csf_);
+      assert::are_equal(500U, d2.millisecond(), csf_);
+      assert::are_equal("1971-01-05 21:10:36", d2.to_string("u"), csf_);
+    }
+    
+    void test_method_(add_time_ticks) {
+      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
+      date_time d2 = d1.add_ticks(65000000);
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(1971U, d2.year(), csf_);
+      assert::are_equal(1U, d2.month(), csf_);
+      assert::are_equal(5U, d2.day(), csf_);
+      assert::are_equal(21U, d2.hour(), csf_);
+      assert::are_equal(10U, d2.minute(), csf_);
+      assert::are_equal(36U, d2.second(), csf_);
+      assert::are_equal(500U, d2.millisecond(), csf_);
+      assert::are_equal("1971-01-05 21:10:36", d2.to_string("u"), csf_);
+    }
+    
+    void test_method_(add_time_years) {
+      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
+      date_time d2 = d1.add_years(6);
+      assert::are_equal(date_time_kind::local, d2.kind(), csf_);
+      assert::are_equal(1977U, d2.year(), csf_);
+      assert::are_equal(1U, d2.month(), csf_);
+      assert::are_equal(5U, d2.day(), csf_);
+      assert::are_equal(21U, d2.hour(), csf_);
+      assert::are_equal(10U, d2.minute(), csf_);
+      assert::are_equal(30U, d2.second(), csf_);
+      assert::is_zero(d2.millisecond(), csf_);
+      assert::are_equal("1977-01-05 21:10:30", d2.to_string("u"), csf_);
     }
   };
 }
