@@ -12,6 +12,8 @@
 /// @endcond
 
 #include <string>
+#include "icomparable.h"
+#include "iequatable.h"
 #include "string_comparison.h"
 #include "string_split_options.h"
 #include "types.h"
@@ -45,7 +47,7 @@ namespace xtd {
   /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::ustring object is a sequential collection of xtd::char8 objects that represent a string; a xtd::char8 object corresponds to a UTF-8 code unit. The value of the xtd::ustring object is the content of the sequential collection of xtd::char8 objects, and unlike std::basic_string that value is immutable (that is, it is read-only).
   /// @remarks if you want the same mutable string class, you can use xtd::text::ustring_builder class.
   /// @remarks xtd::ustring is inherited from std::basic_string<char> and therefore offers the full (immutable) API of std::string.
-  class ustring : public object, public std::basic_string<char> {
+  class ustring : public xtd::icomparable<ustring>, public xtd::iequatable<ustring>, public object, public std::basic_string<char> {
   public:
     /// @name Fields
     
@@ -405,8 +407,6 @@ namespace xtd {
       return *this;
     }
 
-    bool operator==(const ustring& other) const;
-    bool operator!=(const ustring& other) const;
     bool operator==(const std::string other) const;
     bool operator!=(const std::string other) const;
     bool operator==(const value_type* other) const;
@@ -544,7 +544,10 @@ namespace xtd {
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
     static int compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept;
-    
+
+    int32_t compare_to(const ustring& tzi) const noexcept override;
+    int32_t compare_to(const object& obj) const noexcept override;
+
     /// @brief Concatenates four specified instances of string.
     /// @param str_a The first string to concatenate.
     /// @param str_b The second string to concatenate.
@@ -664,7 +667,10 @@ namespace xtd {
     /// @param value The string to seek.
     /// @return true if the value parameter occurs within this string, or if value is the empty string (""); otherwise, false.
     bool contains(const ustring& value) const noexcept;
-    
+
+    bool equals(const ustring& tzi) const noexcept override;
+    bool equals(const object& obj) const noexcept override;
+
     /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.

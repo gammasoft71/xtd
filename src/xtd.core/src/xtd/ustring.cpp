@@ -447,14 +447,6 @@ ustring& ustring::operator+=(const std::initializer_list<wchar_t>& il) {
 }
 
 
-bool ustring::operator==(const ustring& other) const {
-  return std::basic_string<value_type>(*this) == std::basic_string<value_type>(other);
-}
-
-bool ustring::operator!=(const ustring& other) const {
-  return !operator==(other);
-}
-
 bool ustring::operator==(const std::string other) const {
   return *this == ustring(other);
 }
@@ -569,6 +561,15 @@ int ustring::compare(const ustring& str_a, size_t index_a, const ustring& str_b,
   return sa.compare(sb);
 }
 
+int32_t ustring::compare_to(const object& obj) const noexcept {
+  if (!dynamic_cast<const ustring*>(&obj)) return 1;
+  return compare_to(static_cast<const ustring&>(obj));
+}
+
+int32_t ustring::compare_to(const ustring& value) const noexcept {
+  return compare(*this, value);
+}
+
 ustring ustring::concat(const ustring& str_a, const ustring& str_b, const ustring& str_c, const ustring& str_d) noexcept {
   return str_a + str_b + str_c + str_d;
 }
@@ -625,6 +626,14 @@ ustring ustring::concat(const std::initializer_list<const char8_t*>& values) noe
 
 bool ustring::contains(const ustring& value) const noexcept {
   return find(value) != npos;
+}
+
+bool ustring::equals(const ustring& other) const noexcept {
+  return compare_to(other) == 0;
+}
+
+bool ustring::equals(const object& other) const noexcept {
+  return dynamic_cast<const ustring*>(&other) && equals(static_cast<const ustring&>(other));
 }
 
 ustring ustring::empty_string() noexcept {
