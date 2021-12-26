@@ -60,7 +60,7 @@ install
 
 2. Install Homebrew
   
-   After Xcode, to build xtd, you need to install package manager [Homebrew](https://brew.sh)).
+   After Xcode, to build xtd, you need to install package manager [Homebrew](https://brew.sh).
    
 ```shell
 /usr/bin/ruby -e "$(curl -fsSL ttps://raw.githubusercontent.com/Homebrew/install/master/install)"
