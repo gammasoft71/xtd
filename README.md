@@ -46,7 +46,7 @@ At each commit, a build and unit tests are performed for the following configura
 
 For more information about xtd see :
 * [website](https://gammasoft71.wixsite.com/xtdpro)
-* [wiki](https://github.com/gammasoft71/xtd/wiki)
+* [wiki](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
 * [sources](https://github.com/gammasoft71/xtd) 
 * [project](https://sourceforge.net/projects/xtdpro/) 
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)
