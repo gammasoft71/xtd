@@ -6,7 +6,7 @@
 
 (*) See [portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) for more information.
 
-[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://github.com/gammasoft71/xtd/blob/master/docs/license.md) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#c++17) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html) [![documentation](https://img.shields.io/badge/markdown-documentation-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/home.md) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.wixsite.com/xtdpro) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
+[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://github.com/gammasoft71/xtd/blob/master/docs/license.md) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#c++17) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html) [![documentation](https://img.shields.io/badge/wiki-documentation-004080.svg)](https://github.com/gammasoft71/xtd/wiki) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.wixsite.com/xtdpro) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
 
 ## Contents
 
@@ -46,7 +46,7 @@ At each commit, a build and unit tests are performed for the following configura
 
 For more information about xtd see :
 * [website](https://gammasoft71.wixsite.com/xtdpro)
-* [markdown documentations](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
+* [wiki](https://github.com/gammasoft71/xtd/wiki)
 * [sources](https://github.com/gammasoft71/xtd) 
 * [project](https://sourceforge.net/projects/xtdpro/) 
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)

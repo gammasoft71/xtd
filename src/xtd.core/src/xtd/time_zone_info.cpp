@@ -67,7 +67,7 @@ namespace {
 #if defined(_WIN32)
 int daylight = 0;
 long timezone = 0;
-char* tzname[2] = {"Local", "Local"};
+const char* tzname[2] = {"Local", "Local"};
 #define tzset _tzset
 #endif
 
