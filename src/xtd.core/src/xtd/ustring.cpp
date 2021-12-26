@@ -446,6 +446,13 @@ ustring& ustring::operator+=(const std::initializer_list<wchar_t>& il) {
   return *this;
 }
 
+bool ustring::operator==(const ustring& other) const {
+  return std::basic_string<value_type>(*this) == std::basic_string<value_type>(other);
+}
+
+bool ustring::operator!=(const ustring& other) const {
+  return !operator==(other);
+}
 
 bool ustring::operator==(const std::string other) const {
   return *this == ustring(other);
