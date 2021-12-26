@@ -261,8 +261,6 @@ The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) li
 
 **Your feedback is important for the evolution of the project.**
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/gammasoft71)
-
 ## Gallery
 
 [![minesweeper](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/minesweeper.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/README.md)
