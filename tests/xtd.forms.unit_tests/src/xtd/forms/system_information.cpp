@@ -1,4 +1,6 @@
 #include <xtd/forms/system_information.h>
+#include <xtd/forms/form.h>
+#include <xtd/xtd.tunit>
 #if defined(_WIN32)
 #include <Windows.h>
 #undef max
@@ -6,8 +8,6 @@
 #elif defined(__APPLE__)
 #include "get_double_click_time.h"
 #endif
-#include <xtd/forms/form.h>
-#include <xtd/xtd.tunit>
 
 using namespace xtd::drawing;
 using namespace xtd::forms;
