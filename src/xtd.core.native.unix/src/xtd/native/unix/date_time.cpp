@@ -3,6 +3,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <chrono>
 #include <cstdio>
+#include <cstdarg>
 #include <ctime>
 
 using namespace std;
