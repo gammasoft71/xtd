@@ -42,10 +42,12 @@ namespace xtd {
     /// @{
     /// @brief Provides information about a specific time change, such as the change from daylight saving time to standard time or vice versa, in a particular time zone.
     /// @code
-    /// class transition_time : public xtd::object
+    /// class transition_time : public xtd::iequatable<transition_time>, public xtd::object
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::time_zone_info::transition_time
+    /// @par Implements
+    /// xtd::iequatable <>
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -144,7 +146,7 @@ namespace xtd {
         if (month < 1 || month > 12 || day < 1 || day > 31) throw argument_out_of_range_exception(csf_);
         transition_time result;
         result.day_ = day;
-        result.is_fixed_date_rule_ = true;
+        result.is_fixed_date_rule_ = false;
         result.month_ = month;
         result.time_of_day_ = time_of_day;
         return result;
@@ -185,6 +187,22 @@ namespace xtd {
       uint32_t week_ = 0;
     };
     
+    /// @brief Provides information about a time zone adjustment, such as the transition to and from daylight saving time.
+    /// @code
+    /// class adjustement_rule : public xtd::iequatable<adjustement_rule>, public xtd::object
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::object → xtd::adjustement_rule
+    /// @par Implements
+    /// xtd::iequatable <>
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core system
+    /// @remarks The xtd::time_zone_info::adjustment_rule class defines the effective start and end dates of a particular time change to and from daylight saving time, respectively, as well as its delta (the exact amount by which the adjustment causes the time zone's standard time to change). In addition, two properties return xtd::txtd::time_zone_info::transition_time objects that define when each transition to and from standard time occurs.
+    /// @note An instance of the xtd::time_zone_info::adjustment_rule class is immutable. Once an object has been created, its values cannot be modified.
+    /// @remarks To create a xtd::time_zone_info::adjustment_rule object, call the static xtd::time_zone_info::adjustment_rule::create_adjustment_rule method. You can then supply an array of xtd::time_zone_info::adjustment_rule objects to two of the overloads of the xtd::time_zone_info::create_custom_time_zone method. To retrieve the adjustment rules of a particular time zone, call its xtd::time_zone_info::get_adjustment_rules method, which returns an array of xtd::time_zone_info::adjustment_rule objects.
     class adjustement_rule : public xtd::iequatable<adjustement_rule>, public xtd::object {
     public:
       /// @cond
@@ -197,6 +215,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief 
       const xtd::date_time& date_end() const noexcept {return date_end_;}
       
       const xtd::date_time& date_start() const noexcept {return date_start_;}
@@ -219,7 +238,7 @@ namespace xtd {
     private:
       xtd::date_time date_end_ {date_time::max_value};
       xtd::date_time date_start_ {date_time::min_value};
-      xtd::ticks daylight_delta_ {std::chrono::duration_cast<xtd::ticks>(std::chrono::hours(1))};
+      xtd::ticks daylight_delta_ {0};
       transition_time daylight_transition_end_;
       transition_time daylight_transition_start_;
     };
