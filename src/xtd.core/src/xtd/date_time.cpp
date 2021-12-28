@@ -94,14 +94,14 @@ namespace {
     return month;
   }
 
-  /// @todo Remove this methode when time_zone is implemented.
   static xtd::ticks offset_local(const date_time& dt) {
     static mutex offset_local_mutex;
     lock_guard<mutex> lock(offset_local_mutex);
-    time_t raw_time;
-    time(&raw_time);
-    return date_time::from_tm(*localtime(&raw_time)).ticks() - date_time::from_tm(*gmtime(&raw_time)).ticks();
-
+    time_t raw_time = (dt.ticks() - seconds_offset_1970).count();
+    if (dt.year() < 1970 || dt.year() > 2037)time(&raw_time);
+    return duration_cast<xtd::ticks>(std::chrono::seconds(mktime(localtime(&raw_time)) - mktime(gmtime(&raw_time))));
+    
+    /// @todo Add this methode when time_zone is implemented.
     /*
     ticks daylight_saving_time_offset;
     if (time_zone_info::local().supports_daylight_saving_time() && dt.is_daylight_saving_time()) {
@@ -386,7 +386,6 @@ int64_t date_time::to_binary() const {
 }
 
 date_time date_time::to_local_time() const {
-  /// @todo Replace this methode by time_zone::convert_time_to_local when time_zone is implemented.
   if (kind_ == date_time_kind::local) return *this;
 
   auto offset_local = ::offset_local(*this);
@@ -494,7 +493,6 @@ date_time::operator date_time::time_point() const {
 }
 
 date_time date_time::to_universal_time() const {
-  /// @todo Replace this methode by time_zone::convert_time_to_utc when time_zone is implemented.
   if (kind_ == date_time_kind::utc) return *this;
   
   auto offset_local = ::offset_local(*this);
