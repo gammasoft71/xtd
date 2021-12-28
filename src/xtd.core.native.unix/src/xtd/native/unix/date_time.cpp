@@ -264,3 +264,9 @@ bool date_time::is_daylight(time_t time) {
   localtime_r(&time, &value);
   return value.tm_isdst != 0;
 }
+
+time_t date_time::utc_offset(time_t time) {
+  tm value;
+  localtime_r(&time, &value);
+  return value.tm_gmtoff;
+}
