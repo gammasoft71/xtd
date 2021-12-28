@@ -93,24 +93,6 @@ namespace {
 
     return month;
   }
-
-  static xtd::ticks offset_local(const date_time& dt) {
-    static mutex offset_local_mutex;
-    lock_guard<mutex> lock(offset_local_mutex);
-    time_t raw_time = (dt.ticks() - seconds_offset_1970).count();
-    if (dt.year() < 1970 || dt.year() > 2037)time(&raw_time);
-    return duration_cast<xtd::ticks>(std::chrono::seconds(mktime(localtime(&raw_time)) - mktime(gmtime(&raw_time))));
-    
-    /// @todo Add this methode when time_zone is implemented.
-    /*
-    ticks daylight_saving_time_offset;
-    if (time_zone_info::local().supports_daylight_saving_time() && dt.is_daylight_saving_time()) {
-      daylight_saving_time_offset = duration_cast<ticks>(hours(1));
-    }
-    
-    return -(time_zone_info::local().base_utc_offset() + daylight_saving_time_offset);
-     */
-  }
 }
 
 date_time date_time::max_value = max_ticks;
@@ -388,14 +370,14 @@ int64_t date_time::to_binary() const {
 date_time date_time::to_local_time() const {
   if (kind_ == date_time_kind::local) return *this;
 
-  auto offset_local = ::offset_local(*this);
-  if (value_ + offset_local > max_value.value_) return date_time(value_, date_time_kind::local);
+  auto utc_offset = this->utc_offset();
+  if (value_ + utc_offset > max_value.value_) return date_time(value_, date_time_kind::local);
 
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
   
-  return date_time(ticks() + offset_local, date_time_kind::local);
+  return date_time(ticks() + utc_offset, date_time_kind::local);
 }
 
 const xtd::ustring date_time::to_long_date_string() const {
@@ -495,14 +477,14 @@ date_time::operator date_time::time_point() const {
 date_time date_time::to_universal_time() const {
   if (kind_ == date_time_kind::utc) return *this;
   
-  auto offset_local = ::offset_local(*this);
-  if (value_ < offset_local) return date_time(value_, date_time_kind::utc);
+  auto utc_offset = this->utc_offset();
+  if (value_ < utc_offset) return date_time(value_, date_time_kind::utc);
   
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
   
-  return date_time(ticks() - offset_local, date_time_kind::utc);
+  return date_time(ticks() - utc_offset, date_time_kind::utc);
   //return time_zone_info::convert_to_utc(*this);
 }
 
@@ -564,6 +546,10 @@ void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, ui
   minute = static_cast<uint32_t>(value_.count() / ticks_per_minute % 60);
   second = static_cast<uint32_t>(value_.count() / ticks_per_second% 60);
   day_of_week = (static_cast<int32_t>(value_.count() / ticks_per_day + 1) % 7);
+}
+
+xtd::ticks date_time::utc_offset() const {
+  return duration_cast<xtd::ticks>(std::chrono::seconds(native::date_time::utc_offset((duration_cast<seconds>(value_) - seconds_offset_1970).count())));
 }
 
 void date_time::set_date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind) {

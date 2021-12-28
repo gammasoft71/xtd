@@ -96,6 +96,12 @@ namespace xtd {
       static std::vector<time_zone_info> get_system_time_zones();
 
       /// @internal
+      /// @brief Get the utc offset for the specified local time.
+      /// @return the utc offset for the specified local time in seconds.
+      /// @warning Internal use only
+      static time_t utc_offset(std::time_t time);
+
+      /// @internal
       /// @brief Indicates whether the ttime_t is within the daylight saving time range for the current time zone.
       /// @return true if the time is within the daylight saving time range for the local time zone; otherwise false.
       /// @warning Internal use only
