@@ -2,12 +2,15 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/date_time.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <Windows.h>
+#include <time.h>
 #include <chrono>
 #include <cmath>
 #include <cstdarg>
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
+#include <mutex>
 
 int daylight = 0;
 long timezone = 0;
@@ -226,6 +229,13 @@ namespace {
     if (formatted_string == "NAN") formatted_string = "nan";
     return formatted_string;
   }
+
+  void TimetToFileTime(time_t t, LPFILETIME pft) {
+    ULARGE_INTEGER time_value;
+    time_value.QuadPart = (t * 10000000LL) + 116444736000000000LL;
+    pft->dwLowDateTime = time_value.LowPart;
+    pft->dwHighDateTime = time_value.HighPart;
+  }
 }
 
 date_time::time_zone_info date_time::get_local_time_zone() {
@@ -263,7 +273,19 @@ bool date_time::is_daylight(time_t time) {
 }
 
 time_t date_time::utc_offset(time_t time) {
-  tm value;
-  localtime_s(&value, &time);
-  return value.tm_gmtoff;
+  FILETIME file_time_local;
+  TimetToFileTime(time, &file_time_local);
+
+  SYSTEMTIME system_time;
+  FileTimeToSystemTime(&file_time_local, &system_time);
+  SYSTEMTIME system_time_local;
+  SystemTimeToTzSpecificLocalTime(nullptr, &system_time, &system_time_local);
+
+  FILETIME file_time_utc;
+  SystemTimeToFileTime(&system_time_local, &file_time_utc);
+
+  ULARGE_INTEGER ticks_local = { file_time_local.dwLowDateTime, file_time_local.dwHighDateTime };
+  ULARGE_INTEGER ticks_utc = { file_time_utc.dwLowDateTime, file_time_utc.dwHighDateTime };
+
+  return (ticks_utc.QuadPart - ticks_local.QuadPart) / 10000000;
 }
