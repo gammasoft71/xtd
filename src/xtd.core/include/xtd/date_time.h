@@ -125,16 +125,16 @@ namespace xtd {
     static date_time from_file_time_utc(xtd::ticks fileTime);
     template<typename rep_t, typename period_t>
     static date_time from_duration(std::chrono::duration<rep_t, period_t> value) {
-      return date_time(std::chrono::duration_cast<xtd::ticks>(value), date_time_kind::local);
+      return from_duration(value, date_time_kind::unspecified);
     }
     template<typename rep_t, typename period_t>
-    static date_time from_duration_utc(std::chrono::duration<rep_t, period_t> value) {
-      return date_time(std::chrono::duration_cast<xtd::ticks>(value), date_time_kind::utc);
+    static date_time from_duration(std::chrono::duration<rep_t, period_t> value, date_time_kind kind) {
+      return date_time(std::chrono::duration_cast<xtd::ticks>(value), kind);
     }
     static date_time from_time_t(std::time_t value);
-    static date_time from_time_t_utc(std::time_t value);
+    static date_time from_time_t(std::time_t value, date_time_kind kind);
     static date_time from_tm(const std::tm& value);
-    static date_time from_tm_utc(const std::tm& value);
+    static date_time from_tm(const std::tm& value, date_time_kind kind);
     bool is_daylight_saving_time() const noexcept;
     static bool is_leap_year(uint32_t year);
     xtd::ustring parse() const;
