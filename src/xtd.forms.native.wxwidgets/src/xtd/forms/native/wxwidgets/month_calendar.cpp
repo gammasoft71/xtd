@@ -38,6 +38,6 @@ pair<date_time, date_time> month_calendar::selection_range(const intptr_t contro
     return {};
   }
 
-  auto date = date_time::from_time_t(static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetDate().GetTicks());
+  auto date = date_time(date_time::from_time_t(static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetDate().GetTicks(), date_time_kind::local).ticks(), date_time_kind::unspecified);
   return {date, date};
 }
