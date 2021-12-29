@@ -12,11 +12,11 @@ public:
     
     picker1.location({10, 10});
     picker1.value_changed += [&] {
-      label1.text(ustring::format("{:d}", picker1.value()));
+      label1.text(ustring::format("{:u}", picker1.value()));
     };
-    picker1.max_date(date_time::now().add(months(3)));
-    picker1.min_date(date_time::now().subtract(months(3)));
     picker1.value(date_time::now());
+    picker1.max_date(picker1.value().add(months(3)));
+    picker1.min_date(picker1.value().add(months(-3)));
 
     label1.location({10, 50});
     label1.size({380, 340});
@@ -24,9 +24,9 @@ public:
     picker2.location({10, 90});
     picker2.format(date_time_picker_format::time);
     picker2.value_changed += [&] {
-      label2.text(ustring::format("{:t}", picker2.value()));
+      label2.text(ustring::format("{:u}", picker2.value()));
     };
-    picker2.value({2000, 1, 1, 13, 0, 0});
+    picker2.value(date_time::now());
     picker2.max_date(picker2.value().add(hours(3)));
     picker2.min_date(picker2.value().add(hours(-3)));
 

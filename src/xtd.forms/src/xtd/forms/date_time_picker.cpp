@@ -26,8 +26,8 @@ control& date_time_picker::max_date(date_time value) {
   if (max_date_ != value) {
     max_date_ = value;
     if (max_date_ < min_date_) min_date_ = max_date_;
-    this->value(value_);
     if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), min_date_, max_date_);
+    this->value(value_);
   }
   return *this;
 }
@@ -40,8 +40,8 @@ control& date_time_picker::min_date(date_time value) {
   if (min_date_ != value) {
     min_date_ = value;
     if (max_date_ < min_date_) max_date_ = min_date_;
-    this->value(value_);
     if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), min_date_, max_date_);
+    this->value(value_);
   }
   return *this;
 }
@@ -92,6 +92,8 @@ void date_time_picker::wnd_proc(message &message) {
 
 void date_time_picker::wm_click(message& message) {
   def_wnd_proc(message);
+  if (native::date_time_picker::value(handle()) < min_date_) native::date_time_picker::value(handle(), min_date_);
+  if (native::date_time_picker::value(handle()) > max_date_) native::date_time_picker::value(handle(), max_date_);
   value(native::date_time_picker::value(handle()));
   on_value_changed(event_args::empty);
 }
