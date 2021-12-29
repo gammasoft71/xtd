@@ -9,7 +9,6 @@
 #include "../include/xtd/not_implemented_exception.h"
 #include "../include/xtd/time_zone_info.h"
 #include "../include/xtd/unused.h"
-#include <mutex>
 
 using namespace std;
 using namespace std::chrono;
