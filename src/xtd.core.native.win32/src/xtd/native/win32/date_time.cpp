@@ -277,12 +277,13 @@ time_t date_time::utc_offset(time_t time) {
   TimetToFileTime(time, &file_time_local);
 
   SYSTEMTIME system_time;
-  FileTimeToSystemTime(&file_time_local, &system_time);
+  if (FileTimeToSystemTime(&file_time_local, &system_time) == 0) return 0;
+  
   SYSTEMTIME system_time_local;
-  SystemTimeToTzSpecificLocalTime(nullptr, &system_time, &system_time_local);
+  if (SystemTimeToTzSpecificLocalTime(nullptr, &system_time, &system_time_local) == 0) return 0;
 
   FILETIME file_time_utc;
-  SystemTimeToFileTime(&system_time_local, &file_time_utc);
+  if (SystemTimeToFileTime(&system_time_local, &file_time_utc) == 0) return 0;
 
   ULARGE_INTEGER ticks_local = { file_time_local.dwLowDateTime, file_time_local.dwHighDateTime };
   ULARGE_INTEGER ticks_utc = { file_time_utc.dwLowDateTime, file_time_utc.dwHighDateTime };
