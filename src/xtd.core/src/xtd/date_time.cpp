@@ -449,8 +449,7 @@ ustring date_time::to_string(const ustring& format) const {
 }
 
 std::time_t date_time::to_time_t() const {
-  if (kind_ != date_time_kind::local) return (duration_cast<chrono::seconds>(to_local_time().value_) - seconds_offset_1970).count();
-  return (duration_cast<chrono::seconds>(to_universal_time().value_) - seconds_offset_1970).count();
+  return (duration_cast<chrono::seconds>(value_ - utc_offset()) - seconds_offset_1970).count();
 }
 
 std::tm date_time::to_tm() const {
