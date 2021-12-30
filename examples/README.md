@@ -13,6 +13,7 @@
 * [Collections](xtd.core.examples/collections/README.md) contains collections examples.
 * [Console](xtd.core.examples/console/README.md) contains console examples.
 * [Convert](xtd.core.examples/convert/README.md) contains convert examples.
+* [Date time](xtd.core.examples/date_time/README.md) contains date time examples.
 * [Delegates](xtd.core.examples/delegates/README.md) contains delegates examples.
 * [Diagnostics](xtd.core.examples/diagnostics/README.md) contains diagnostics examples.
 * [Environment](xtd.core.examples/environment/README.md) contains environment examples.
