@@ -426,7 +426,7 @@ ustring date_time::to_string(const ustring& format) const {
     case 'k': return __sprintf("%02d", month);
     case 'K': return __sprintf("%d", month);
     case 'l': return __sprintf("%02d", year % 100);
-    case 'L': return __sprintf("%d", year);
+    case 'L': return __sprintf("%04d", year);
     case 'm':
     case 'M': return __sprintf("%s %d", __get_month_name<char>(to_tm(), std::locale()).c_str(), day);
     case 'n': return __sprintf("%s, %d %s %d", __get_weekday_name<char>(to_tm(), std::locale()).c_str(), day, __get_month_name<char>(to_tm(), std::locale()).c_str(), year);

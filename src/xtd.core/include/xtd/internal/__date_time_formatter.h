@@ -113,7 +113,7 @@ inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time,
     case 'k': return __sprintf(L"%02d", time.tm_mon + 1);
     case 'K': return __sprintf(L"%d", time.tm_mon + 1);
     case 'l': return __sprintf(L"%02d", time.tm_year % 100);
-    case 'L': return __sprintf(L"%d", time.tm_year + 1900);
+    case 'L': return __sprintf(L"%04d", time.tm_year + 1900);
     case 'm':
     case 'M': return __sprintf(L"%ls %d", __get_month_name<wchar_t>(time, loc).c_str(), time.tm_mday);
     case 'n': return __sprintf(L"%ls, %d %ls %d", __get_weekday_name<wchar_t>(time, loc).c_str(), time.tm_mday, __get_month_name<wchar_t>(time, loc).c_str(), time.tm_year + 1900);
