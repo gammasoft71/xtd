@@ -17,7 +17,7 @@ namespace xtd {
     /// class forms_export_ light_button : public xtd::forms::button_base
     /// @endcode
     /// @par Inheritance
-    /// xtd::object → xtd::component → xtd::forms::control → xtd::forms::button_base → xtd::forms::light_button
+    /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::button_base → xtd::forms::light_button
     /// @par Namespace
     /// xtd::forms
     /// @par Library
