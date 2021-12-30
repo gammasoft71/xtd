@@ -9,6 +9,7 @@ add_projects(
   collections
   console
   convert
+  date_time
   delegates
   diagnostics
   environment

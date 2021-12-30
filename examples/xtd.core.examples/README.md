@@ -46,6 +46,11 @@
 * [to_int32](convert/to_int32/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
 * [to_ustring](convert/to_ustring/README.md) shows how to use [xtd::convert](../../src/xtd.core/include/xtd/convert.h) class.
 
+# [Date time](date_time/README.md)
+
+* [date_time](date_time/date_time/README.md) shows how to use [xtd::date_time](../../src/xtd.core/include/xtd/datte_time.h) class.
+* [date_time_ticks](date_time/date_time_ticks/README.md) shows how to use [xtd::date_time](.././src/xtd.core/include/xtd/datte_time.h) class with ticks constructors.
+
 # [Delegates](delegates/README.md)
 
 * [action](delegates/action/README.md) shows how to use [xtd::action](../../src/xtd.core/include/xtd/action.h) alias.

@@ -26,9 +26,9 @@ namespace xtd {
         wx_date_time_picker(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           if ((create_params.style() & DTS_TIMEFORMAT) == DTS_TIMEFORMAT)
-            control_handler::create<wxTimePickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxDefaultDateTime, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+            control_handler::create<wxTimePickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxDefaultDateTime, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style_time_picker(create_params.style(), create_params.ex_style()));
           else
-            control_handler::create<wxDatePickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxDefaultDateTime, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+            control_handler::create<wxDatePickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxDefaultDateTime, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style_date_picker(create_params.style(), create_params.ex_style()));
 #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::window().r(), xtd::drawing::system_colors::window().g(), xtd::drawing::system_colors::window().b(), xtd::drawing::system_colors::window().a()));
@@ -37,7 +37,7 @@ namespace xtd {
 #endif
         }
         
-        static long style_to_wx_style(size_t style, size_t ex_style) {
+        static long style_to_wx_style_date_picker(size_t style, size_t ex_style) {
           long wx_style = 0;
           
           if ((style & DTS_UPDOWN) == DTS_UPDOWN) wx_style |= wxDP_SPIN;
@@ -45,7 +45,13 @@ namespace xtd {
           if ((style & DTS_SHOWNONE) == DTS_SHOWNONE) wx_style |= wxDP_ALLOWNONE;
           if ((style & DTS_SHORTDATECENTURYFORMAT) == DTS_SHORTDATECENTURYFORMAT) wx_style |= wxDP_SHOWCENTURY;
           if ((style & DTS_LONGDATEFORMAT) == DTS_LONGDATEFORMAT) wx_style |= wxDP_SHOWCENTURY;
-
+          
+          return wx_style;
+        }
+        
+        static long style_to_wx_style_time_picker(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
           return wx_style;
         }
 
