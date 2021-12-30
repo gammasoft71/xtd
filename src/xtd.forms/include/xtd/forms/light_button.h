@@ -12,6 +12,17 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Represents a Windows light_button.
+    /// @code
+    /// class forms_export_ light_button : public xtd::forms::button_base
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::forms::button_base → xtd::forms::light_button
+    /// @par Namespace
+    /// xtd::forms
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms controls
     /// @remarks Use a light_button to give the user an option, such as true/false or yes/no. The light_button control can display an image or text or both.
     /// @remarks light_button and radio_button controls have a similar function: they allow the user to choose from a list of options. light_button controls let the user pick a combination of options. In contrast, radio_button controls allow a user to choose from mutually exclusive options.
     /// @remarks The appearance property determines whether the light_button appears as a typical light_button or as a button.
@@ -21,8 +32,8 @@ namespace xtd {
     /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
     /// @par Examples
     /// The following code example demonstrate the use of light_button control with bitmap.
-    /// @include bitmap_light_button.cpp
-    class forms_export_ light_button : public button_base {
+    /// @include light_button.cpp
+    class forms_export_ light_button : public xtd::forms::button_base {
     public:
       /// @name Constructors
       
