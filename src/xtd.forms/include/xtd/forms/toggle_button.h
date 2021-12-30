@@ -11,6 +11,11 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows toggle_button.
+    /// @code
+    /// class forms_export_ toggle_button : public xtd::forms::button_base
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::button_base → xtd::forms::toggle_button
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -27,7 +32,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of toggle_button control.
     /// @include toggle_button.cpp
-    class forms_export_ toggle_button : public button_base {
+    class forms_export_ toggle_button : public xtd::forms::button_base {
     public:
       /// @name Constructors
       

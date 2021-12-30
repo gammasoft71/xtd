@@ -12,6 +12,11 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a Windows command link button control.
+    /// @code
+    /// class forms_export_ command_link_button : public xtd::forms::button_base
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::button_base → xtd::forms::command_link_button
     /// @par Namespace
     /// xtd::forms
     /// @par Library
