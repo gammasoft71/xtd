@@ -88,14 +88,14 @@ namespace xtd {
     /// @include date_time_max_value.cpp
     static const date_time max_value;
     /// @brief Represents the smallest possible value of xtd::date_time. This field is read-only.
-    /// @remarks The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 0001, in the Gregorian calendar.
-    /// @remarks xtd::date_time::min_vvalue defines the date and time that is assigned to an uninitialized xtd::date_time variable. The following example illustrates this.
-    /// @include date_time_min_value.cpp
     /// @par Examples
     /// The following example instantiates a xtd::date_time object by passing its constructor an xtd::ticks value that represents a number of ticks.
     /// Before invoking the constructor, the example ensures that this value is greater than or equal to date_time::min_value.ticks() and less than or equal to date_time::max_value.ticks().
     /// If not, it throws an xtd::argument_out_of_range_exception.
     /// @include date_time_max_value.cpp
+    /// @remarks The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 0001, in the Gregorian calendar.
+    /// @remarks xtd::date_time::min_vvalue defines the date and time that is assigned to an uninitialized xtd::date_time variable. The following example illustrates this.
+    /// @include date_time_min_value.cpp
     static const date_time min_value;
     /// @}
     
@@ -103,21 +103,89 @@ namespace xtd {
     
     /// @{
     /// @brief Initializes a new instance of the xtd::date_time structure.
+    /// @Remarks xtd::date_time is initialized by default with xtd::date_time::min_value.
     date_time() = default;
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified number of ticks.
     /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
     /// @exception xtd::argument_out_of_range_exception ticks is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
     /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
+    /// @par Example
+    /// The following example demonstrates one of the xtd::date_time constructors.
+    /// @include date_time_ticks.cpp
     date_time(xtd::ticks ticks);
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.
     /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
     /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
     /// @exception xtd::argument_out_of_range_exception ticks is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
     date_time(xtd::ticks ticks, xtd::date_time_kind kind);
+    /// @brief Initializes a new instance of the xtd::date_time structure to the specified year, month, and day.
+    /// @param year The year (1 through 9999).
+    /// @param month The month (1 through 12).
+    /// @param day The day (1 through the number of days in month).
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month.
+    /// @par Example
+    /// The following example uses the date_time(uint32_t, uint32_t, uint32_t) constructor to instantiate a xtd::date_time value. The example also illustrates that this overload creates a xtd::date_time value whose time component equals midnight (or 0:00).
+    /// @code
+    /// date_time date1(2010, 8, 18);
+    /// console::write_line(date1.to_string());
+    /// // The example displays the following output:
+    /// //      8/18/2010 12:00:00 AM
+    /// @endcode
+    /// @remarks This constructor interprets year, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32_t year, uint32_t month, uint32_t day);
+    /// @brief Initializes a new instance of the xttd::date_time structure to the specified year, month, day, hour, minute, and second.
+    /// @param year The year (1 through 9999).
+    /// @param month The month (1 through 12).
+    /// @param day The day (1 through the number of days in month).
+    /// @param hour The hours (0 through 23).
+    /// @param minute The minutes (0 through 59).
+    /// @param second The seconds (0 through 59).
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month. -or- hour is less than 0 or greater than 23. -or- minute is less than 0 or greater than 59. -or- second is less than 0 or greater than 59.
+    /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
+    /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second);
+    /// @brief Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.
+    /// @param year The year (1 through 9999).
+    /// @param month The month (1 through 12).
+    /// @param day The day (1 through the number of days in month).
+    /// @param hour The hours (0 through 23).
+    /// @param minute The minutes (0 through 59).
+    /// @param second The seconds (0 through 59).
+    /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month. -or- hour is less than 0 or greater than 23. -or- minute is less than 0 or greater than 59 -or- second is less than 0 or greater than 59.
+    /// @par Example
+    /// The following example uses the date_time(uint32_t, uint32_t, uint32_tt, uint32_tt, uint32_t, uint32_t, xtd::date_time_kind) constructor to instantiate a xtd::date_time value.
+    /// @code
+    /// date_time date1(2010, 8, 18, 16, 32, 0, date_time_kind::local);
+    /// console::write_line("{0} {1}", date1, date1.kind());
+    /// // The example displays the following output, in this case for en-us culture:
+    /// //      8/18/2010 4:32:00 PM Localv
+    /// @endcode
+    /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
+    /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, date_time_kind kind);
+    /// @brief Initializes a new instance of the xtd::date_time structure to the specified year, month, day, hour, minute, second, and millisecond.
+    /// @param year The year (1 through 9999).
+    /// @param month The month (1 through 12).
+    /// @param day The day (1 through the number of days in month).
+    /// @param hour The hours (0 through 23).
+    /// @param minute The minutes (0 through 59).
+    /// @param second The seconds (0 through 59).
+    /// @param millisecond The milliseconds (0 through 999).
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month. -or- hour is less than 0 or greater than 23. -or- minute is less than 0 or greater than 59 -or- second is less than 0 or greater than 59 -or- millisecond is less than 0 or greater than 999.
+    /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond);
+    /// @brief Initializes a new instance of the xtd::date_time structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.
+    /// @param year The year (1 through 9999).
+    /// @param month The month (1 through 12).
+    /// @param day The day (1 through the number of days in month).
+    /// @param hour The hours (0 through 23).
+    /// @param minute The minutes (0 through 59).
+    /// @param second The seconds (0 through 59).
+    /// @param millisecond The milliseconds (0 through 999).
+    /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month. -or- hour is less than 0 or greater than 23. -or- minute is less than 0 or greater than 59 -or- second is less than 0 or greater than 59 -or- millisecond is less than 0 or greater than 999.
+    /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
     /// @}
     
