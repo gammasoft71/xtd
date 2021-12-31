@@ -199,11 +199,102 @@ namespace xtd {
     /// @name Properties
 
     /// @{
+    /// @brief Gets the date component of this instance.
+    /// @return A new object with the same date as this instance, and the time value set to 12:00:00 midnight (00:00:00).
+    /// @par Example
+    /// The following example uses the xtd::date_time::date property to extract the date component of a xtd::date_time value with its time component set to zero (or 0:00:00, or midnight). It also illustrates that, depending on the format string used when displaying the xtd::date_time value, the time component can continue to appear in formatted output.
+    /// @include date_time_date.cpp
+    /// @remarks The value of the xtd::date_time::kind property of the returned xtd::date_time value is the same as that of the current instance.
+    /// @remarks Because the xtd::date_time type represents both dates and times in a single type, it is important to avoid misinterpreting a date returned by the xtd::date property as a date and time.
     date_time date() const noexcept;
+    
+    /// @brief Gets the day of the month represented by this instance.
+    /// @return The day component, expressed as a value between 1 and 31.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::day property.
+    /// @code
+    /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
+    /// // year gets 1999.
+    /// uint32_t year = moment.year();
+    ///
+    /// // month gets 1 (January).
+    /// uint23_t month = moment.month();
+    ///
+    /// // day gets 13.
+    /// uint23_t day = moment.day();
+    ///
+    /// // hour gets 3.
+    /// uint23_t hour = moment.hour();
+    ///
+    /// // minute gets 57.
+    /// uint23_t minute = moment.minute();
+    ///
+    /// // second gets 32.
+    /// uint23_t second = moment.second();
+    ///
+    /// // millisecond gets 11.
+    /// uint23_t millisecond = moment.millisecond();
+    /// @endcode
+    /// @remarks The xtd::date_time::day property always returns the day of the month in the Gregorian calendar.
     uint32_t day() const noexcept;
-    xtd::day_of_week day_fo_week() const noexcept;
+    
+    /// @brief Gets the day of the week represented by this instance.
+    /// @return An enumerated constant that indicates the day of the week of this xtd::date_time value.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::day_of_week property and the xtd::day_of_week enumeration.
+    /// @include date_time_day_of_week.cpp
+    /// @remarks The value of the constants in the xtd::day_of_week enumeration ranges from xtd::day_of_week::sunday to xtd::day_of_week::saturday. If cast to an integer, its value ranges from zero (which indicates xtd::day_of_week::sunday) to six (which indicates xtd::day_of_week::saturday).
+    /// @remarks The xtd::date_time::day_of_week property returns an enumerated constant; it does not reflect a system's regional and language settings. To retrieve a string representing a localized weekday name for a particular date, call one of the overloads of the xtd::date_time::to_string method that includes a format parameter and pass it either the "h" or "H" format strings.
+    xtd::day_of_week day_of_week() const noexcept;
+    
+    /// @brief Gets the day of the year represented by this instance.
+    /// @return The day of the year, expressed as a value between 1 and 366.
+    /// @par Example
+    /// The following example displays the day of the year of December 31 for the years 2010-2020 in the Gregorian calendar. Note that the example shows that December 31 is the 366th day of the year in leap years.
+    /// @include date_time_day_of_year.cpp
+    /// @remarks The xtd::date_time::day_of_year property takes leap years into account when it calculates the day of the year. The property value always reflects the day of the year in the Gregorian calendar, regardless of the current culture's current calendar.
     uint32_t day_of_year() const noexcept;
+    
+    /// @brief Gets the hour component of the date represented by this instance.
+    /// @return The hour component, expressed as a value between 0 and 23.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::hour property.
+    /// @code
+    /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
+    /// // year gets 1999.
+    /// uint32_t year = moment.year();
+    ///
+    /// // month gets 1 (January).
+    /// uint23_t month = moment.month();
+    ///
+    /// // day gets 13.
+    /// uint23_t day = moment.day();
+    ///
+    /// // hour gets 3.
+    /// uint23_t hour = moment.hour();
+    ///
+    /// // minute gets 57.
+    /// uint23_t minute = moment.minute();
+    ///
+    /// // second gets 32.
+    /// uint23_t second = moment.second();
+    ///
+    /// // millisecond gets 11.
+    /// uint23_t millisecond = moment.millisecond();
+    /// @endcode
+    /// @remarks The value of the xtd::date_time::hour property is always expressed using a 24-hour clock. To retrieve a string that represents the hour of a date and time using a 12-hour clock, call the xtd::date_time::to_string(ustring) method with the "x" format specifier. For example:
+    /// @code
+    /// date_time date1(2008, 4, 1, 18, 53, 0);
+    /// console::write_line(date1.to_string("X"));                                   // Displays 6
+    /// console::write_line("{0}, {1}", date1.to_string("X"), date1.to_string("a")); // Displays 6 PM
+    /// @endcode
     uint32_t hour() const noexcept;
+    
+    /// @brief Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.
+    /// @return One of the enumeration values that indicates what the current time represents. The default is xtd::date_time_kind::unspecified.
+    /// @par Example
+    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the Kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
+    /// @include date_time_specify_kind.cpp
     date_time_kind kind() const noexcept;
     uint32_t millisecond() const noexcept;
     uint32_t minute() const noexcept;
