@@ -4,7 +4,7 @@ Shows how to use [xtd::date_time::to_string](../../../../src/xtd.core/include/xt
 
 # Sources
 
-[src/date_time_specify_kind.cpp](src/date_time_to_string_format.cpp)
+[src/date_time_to_string_format.cpp](src/date_time_to_string_format.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
