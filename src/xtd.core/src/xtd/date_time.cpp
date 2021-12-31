@@ -94,8 +94,8 @@ namespace {
   }
 }
 
-date_time date_time::max_value = max_ticks;
-date_time date_time::min_value = min_ticks;
+const date_time date_time::max_value = max_ticks;
+const date_time date_time::min_value = min_ticks;
 
 date_time::date_time(xtd::ticks ticks) : value_(ticks) {
   if (ticks.count() < min_value.value_.count() || ticks.count() > max_value.value_.count()) throw argument_out_of_range_exception(csf_);
