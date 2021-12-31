@@ -4,7 +4,7 @@ Shows how to use [xtd::date_time::min_value](../../../../src/xtd.core/include/xt
 
 # Sources
 
-[src/date_time_min_valuedate_time_min_value.cpp](src/date_time_min_value.cpp)
+[src/date_time_min_value.cpp](src/date_time_min_value.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
