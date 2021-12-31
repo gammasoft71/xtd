@@ -19,4 +19,18 @@ xtdc run
 # Output
 
 ```
+utc_now: ........... 2021-12-31 17:08:41, Kind = utc
+now: ............... 2021-12-31 18:08:41, Kind = local
+
+utc: ............... 2021-12-31 17:08:41, Kind = utc
+  to_local_time:     2021-12-31 18:08:41, Kind = local
+  to_universal_time: 2021-12-31 17:08:41, Kind = utc
+
+local: ............. 2021-12-31 18:08:41, Kind = local
+  to_local_time:     2021-12-31 18:08:41, Kind = local
+  to_universal_time: 2021-12-31 17:08:41, Kind = utc
+
+unspecified: ....... 2021-12-31 18:08:41, Kind = unspecified
+  to_local_time:     2021-12-31 19:08:41, Kind = local
+  to_universal_time: 2021-12-31 17:08:41, Kind = utc
 ```

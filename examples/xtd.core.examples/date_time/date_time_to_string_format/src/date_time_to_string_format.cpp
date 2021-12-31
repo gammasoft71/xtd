@@ -45,6 +45,8 @@ public:
     console::write_line(date1.to_string("Y")); // April 2008
     console::write_line(date1.to_string("z")); // UTC
     console::write_line(date1.to_string("Z")); // UTC
+    
+    // Other format generate a xtd::format_exception exception
   }
 };
 
@@ -52,3 +54,41 @@ startup_(program);
 
 // This code can produces the following output:
 //
+// PM
+// 04/01/2008
+// 4/01/2008
+// Tue Apr  1 18:07:05 2008
+// Tue Apr  1 18:07:05 2008
+// Tue Apr  1 18:07:05 2008
+// Tue Apr  1 18:07:05 2008
+// Tue
+// Tuesday
+// 01
+// 1
+// Apr
+// April
+// 04
+// 4
+// 08
+// 2008
+// April 1
+// April 1
+// Tuesday, 1 April 2008
+// Tuesday, 1 April 2008 18:07:05
+// 1 April 2008
+// 1 April 2008
+// 2008-04-01T18:07:05
+// 18:07:05
+// 18:07:05
+// 2008-04-01 18:07:05
+// Tuesday, 1 April 2008 18:07:05
+// 18:07
+// 18:07
+// 18
+// 18
+// 06
+// 6
+// April 8
+// April 2008
+// UTC
+// UTC
