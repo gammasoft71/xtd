@@ -448,8 +448,8 @@ ustring date_time::to_string(const ustring& format) const {
     case 'y': return __sprintf("%s %d", __get_month_name<char>(to_tm(), std::locale()).c_str(), year % 100);
     case 'Y': return __sprintf("%s %d", __get_month_name<char>(to_tm(), std::locale()).c_str(), year);
     case 'z':
-    case 'Z': return __tm_formatter("%Z", to_tm(), std::locale());
-  }
+    case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
+ }
   throw format_exception("Invalid format");
 }
 
@@ -472,7 +472,6 @@ std::tm date_time::to_tm() const {
   result.tm_wday = day_of_week;
   result.tm_yday = static_cast<int32_t>(day_of_year);
   result.tm_isdst = is_daylight_saving_time();
-  result.tm_zone = const_cast<char*>(kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str());
   return result;
 }
 
