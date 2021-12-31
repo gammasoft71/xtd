@@ -139,7 +139,7 @@ uint32_t date_time::day() const noexcept {
   return day;
 }
 
-xtd::day_of_week date_time::day_fo_week() const noexcept {
+xtd::day_of_week date_time::day_of_week() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
@@ -411,6 +411,7 @@ ustring date_time::to_string(const ustring& format) const {
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   
   switch (fmt[0]) {
+    case 'a': return __sprintf("%s", hour / 12 ? "PM" : "AM");
     case 'd': return __sprintf("%02d/%02d/%d", month, day, year);
     case 'D': return __sprintf("%d/%02d/%d", month, day, year);
     case 'f': return __tm_formatter("%Ec", to_tm(), std::locale());
@@ -440,6 +441,10 @@ ustring date_time::to_string(const ustring& format) const {
     case 'U': return __sprintf("%s, %d %s %d %d:%02d:%02d", __get_weekday_name<char>(to_tm(), std::locale()).c_str(), day, __get_month_name<char>(to_tm(), std::locale()).c_str(), year, hour, minute, second);
     case 'v': return __sprintf("%02d:%02d", hour, minute);
     case 'V': return __sprintf("%d:%02d", hour, minute);
+    case 'w': return __sprintf("%02d", hour);
+    case 'W': return __sprintf("%d", hour);
+    case 'x': return __sprintf("%02d", hour % 12);
+    case 'X': return __sprintf("%d", hour % 12);
     case 'y': return __sprintf("%s %d", __get_month_name<char>(to_tm(), std::locale()).c_str(), year % 100);
     case 'Y': return __sprintf("%s %d", __get_month_name<char>(to_tm(), std::locale()).c_str(), year);
     case 'z':
@@ -467,7 +472,7 @@ std::tm date_time::to_tm() const {
   result.tm_wday = day_of_week;
   result.tm_yday = static_cast<int32_t>(day_of_year);
   result.tm_isdst = is_daylight_saving_time();
-  
+  result.tm_zone = const_cast<char*>(kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str());
   return result;
 }
 
@@ -539,7 +544,7 @@ date_time date_time::operator--(int) {
 void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week) const {
   int64_t days = value_.count() / ticks_per_day;
   year = get_years(days);
-  day_of_year = static_cast<uint32_t>(days);
+  day_of_year = static_cast<uint32_t>(days + 1);
   month = get_months(days, year);
   day = static_cast<uint32_t>(days + 1);
   hour = static_cast<uint32_t>(value_.count() / ticks_per_hour % 24);
