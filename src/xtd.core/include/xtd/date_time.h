@@ -293,7 +293,7 @@ namespace xtd {
     /// @brief Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.
     /// @return One of the enumeration values that indicates what the current time represents. The default is xtd::date_time_kind::unspecified.
     /// @par Example
-    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the Kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
+    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
     /// @include date_time_specify_kind.cpp
     date_time_kind kind() const noexcept;
     uint32_t millisecond() const noexcept;
