@@ -17,7 +17,7 @@ void date_time_picker::allowable_dates(const intptr_t control, date_time min_dat
     return;
   }
   wxDateTime wx_min_date_time(min_date.day(), static_cast<wxDateTime::Month>(min_date.month()-1), min_date.year(), min_date.hour(), min_date.minute(), min_date.second());
-  wxDateTime wx_max_date_time(max_date.day(), static_cast<wxDateTime::Month>(max_date.month()-1), max_date.year());
+  wxDateTime wx_max_date_time(max_date.day(), static_cast<wxDateTime::Month>(max_date.month()-1), max_date.year(), max_date.hour(), max_date.minute(), max_date.second());
   if (dynamic_cast<wxTimePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())) {
     // No range for WxTimePickerCtrl
     //static_cast<wxTimePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetRange(wx_min_date_time, wx_max_date_time);
