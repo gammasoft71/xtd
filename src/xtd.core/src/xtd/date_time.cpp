@@ -294,8 +294,8 @@ int32_t date_time::compare_to(const object& obj) const noexcept {
 int32_t date_time::compare_to(const date_time& value) const noexcept {
   if (value_.count() < value.value_.count()) return -1;
   if (value_.count() > value.value_.count()) return 1;
-  if ( kind_ < value.kind_) return -1;
-  if (kind_ < value.kind_) return 1;
+  if (kind_ < value.kind_) return -1;
+  if (kind_ > value.kind_) return 1;
   return 0;
 }
 
