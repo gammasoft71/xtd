@@ -17,7 +17,9 @@ void month_calendar::allowable_dates(const intptr_t control, date_time min_date,
   }
 
   wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control());
-  wx_calendar_ctrl->SetDateRange({min_date.to_tm()}, {max_date.to_tm()});
+  wxDateTime wx_min_date_time(min_date.day(), static_cast<wxDateTime::Month>(min_date.month()-1), min_date.year());
+  wxDateTime wx_max_date_time(max_date.day(), static_cast<wxDateTime::Month>(max_date.month()-1), max_date.year());
+  wx_calendar_ctrl->SetDateRange(wx_min_date_time, wx_max_date_time);
 }
 
 void month_calendar::selection_range(const intptr_t control, date_time date_start, date_time date_end) {
@@ -28,7 +30,8 @@ void month_calendar::selection_range(const intptr_t control, date_time date_star
   }
 
   wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control());
-  wx_calendar_ctrl->SetDate({date_start.to_tm()});
+  wxDateTime wx_date_time(date_start.day(), static_cast<wxDateTime::Month>(date_start.month()-1), date_start.year());
+  wx_calendar_ctrl->SetDate(wx_date_time);
 }
 
 pair<date_time, date_time> month_calendar::selection_range(const intptr_t control) {
@@ -39,6 +42,6 @@ pair<date_time, date_time> month_calendar::selection_range(const intptr_t contro
   }
 
   wxDateTime wx_date_time = static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetDate();
-  date_time date = date_time(static_cast<uint32_t>(wx_date_time.GetYear()), static_cast<uint32_t>(wx_date_time.GetMonth()), static_cast<uint32_t>(wx_date_time.GetDay()), static_cast<uint32_t>(wx_date_time.GetHour()), static_cast<uint32_t>(wx_date_time.GetHour()), static_cast<uint32_t>(wx_date_time.GetMinute()), static_cast<uint32_t>(wx_date_time.GetSecond()), date_time_kind::unspecified);
+  date_time date = date_time(wx_date_time.GetYear(), static_cast<uint32_t>(wx_date_time.GetMonth()) + 1, wx_date_time.GetDay(), 0, 0, 0, date_time_kind::unspecified);
   return {date, date};
 }
