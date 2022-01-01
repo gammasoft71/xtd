@@ -326,9 +326,80 @@ namespace xtd {
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
     /// @endcode
+    /// @remarks You can display the string representation of the xtd::date::time::millisecond property by using the "b" or "B" format specifier. For example, the following code displays a string that contains the number of milliseconds in a date and time to the console.
+    /// @code
+    /// date_time date1(2008, 1, 1, 0, 30, 45, 125);
+    /// console::write_line("milliseconds: {0:b}", date1); // displays milliseconds: 125
+    /// @endcode
+    /// @remarks You can also display the millisecond component together with the other components of a date and time value by using the "s" standard format specifier. For example:
+    /// @code
+    /// date_time date2(2008, 1, 1, 0, 30, 45, 125);
+    /// Console.WriteLine("Date: {0:s}", date2);
+    /// // Displays the following output to the console:
+    /// //      Date: 2008-01-01T00:30:45.1250000
+    /// @endcode
     uint32_t millisecond() const noexcept;
+    
+    /// @brief Gets the minute component of the date represented by this instance.
+    /// @return The minute component, expressed as a value between 0 and 59.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::minute property.
+    /// @code
+    /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
+    /// // year gets 1999.
+    /// uint32_t year = moment.year();
+    ///
+    /// // month gets 1 (January).
+    /// uint23_t month = moment.month();
+    ///
+    /// // day gets 13.
+    /// uint23_t day = moment.day();
+    ///
+    /// // hour gets 3.
+    /// uint23_t hour = moment.hour();
+    ///
+    /// // minute gets 57.
+    /// uint23_t minute = moment.minute();
+    ///
+    /// // second gets 32.
+    /// uint23_t second = moment.second();
+    ///
+    /// // millisecond gets 11.
+    /// uint23_t millisecond = moment.millisecond();
+    /// @endcode
     uint32_t minute() const noexcept;
+    
+    /// @brief Gets the month component of the date represented by this instance.
+    /// @return The month component, expressed as a value between 1 and 12.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::month property.
+    /// @code
+    /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
+    /// // year gets 1999.
+    /// uint32_t year = moment.year();
+    ///
+    /// // month gets 1 (January).
+    /// uint23_t month = moment.month();
+    ///
+    /// // day gets 13.
+    /// uint23_t day = moment.day();
+    ///
+    /// // hour gets 3.
+    /// uint23_t hour = moment.hour();
+    ///
+    /// // minute gets 57.
+    /// uint23_t minute = moment.minute();
+    ///
+    /// // second gets 32.
+    /// uint23_t second = moment.second();
+    ///
+    /// // millisecond gets 11.
+    /// uint23_t millisecond = moment.millisecond();
+    /// @endcode
     uint32_t month() const noexcept;
+    
+    /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the local time.
+    /// @return An object whose value is the current local date and time.
     static date_time now() noexcept;
     uint32_t second() const noexcept;
     xtd::ticks ticks() const noexcept;
