@@ -6,8 +6,10 @@ using namespace xtd;
 class program {
 public:
   static void main() {
-    date_time date1(2008, 4, 1, 18, 7, 5);
+    date_time date1(2008, 4, 1, 18, 7, 5, 20);
     console::write_line(date1.to_string("a")); // PM
+    console::write_line(date1.to_string("b")); // 020
+    console::write_line(date1.to_string("B")); // 20
     console::write_line(date1.to_string("d")); // 04/01/2008
     console::write_line(date1.to_string("D")); // 4/01/2008
     console::write_line(date1.to_string("f")); // Tue Apr  1 18:07:05 2008
@@ -24,7 +26,7 @@ public:
     console::write_line(date1.to_string("K")); // 4
     console::write_line(date1.to_string("l")); // 08
     console::write_line(date1.to_string("L")); // 2008
-    console::write_line(date1.to_string("m")); // April 1
+    console::write_line(date1.to_string("m")); // 2008
     console::write_line(date1.to_string("M")); // April 1
     console::write_line(date1.to_string("n")); // Tuesday, 1 April 2008
     console::write_line(date1.to_string("N")); // Tuesday, 1 April 2008 18:07:05
@@ -55,6 +57,8 @@ startup_(program);
 // This code can produces the following output:
 //
 // PM
+// 020
+// 20
 // 04/01/2008
 // 4/01/2008
 // Tue Apr  1 18:07:05 2008
@@ -71,7 +75,7 @@ startup_(program);
 // 4
 // 08
 // 2008
-// April 1
+// 2008
 // April 1
 // Tuesday, 1 April 2008
 // Tuesday, 1 April 2008 18:07:05
