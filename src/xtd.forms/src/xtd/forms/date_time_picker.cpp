@@ -94,6 +94,8 @@ void date_time_picker::wm_click(message& message) {
   def_wnd_proc(message);
   if (native::date_time_picker::value(handle()) < min_date_) native::date_time_picker::value(handle(), min_date_);
   if (native::date_time_picker::value(handle()) > max_date_) native::date_time_picker::value(handle(), max_date_);
-  value(native::date_time_picker::value(handle()));
-  on_value_changed(event_args::empty);
+  if (value_ != native::date_time_picker::value(handle())) {
+    value_ = native::date_time_picker::value(handle());
+    on_value_changed(event_args::empty);
+  }
 }
