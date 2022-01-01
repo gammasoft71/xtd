@@ -294,8 +294,6 @@ int32_t date_time::compare_to(const object& obj) const noexcept {
 int32_t date_time::compare_to(const date_time& value) const noexcept {
   if (value_.count() < value.value_.count()) return -1;
   if (value_.count() > value.value_.count()) return 1;
-  if (kind_ < value.kind_) return -1;
-  if (kind_ > value.kind_) return 1;
   return 0;
 }
 
@@ -307,7 +305,7 @@ int32_t date_time::days_in_month(uint32_t year, uint32_t month) {
 }
 
 bool date_time::equals(const date_time& other) const noexcept {
-  return value_.count() == other.value_.count() && kind_ == other.kind_;
+  return value_.count() == other.value_.count();
 }
 
 bool date_time::equals(const object& other) const noexcept {
@@ -331,8 +329,7 @@ date_time date_time::from_time_t(std::time_t value) {
 }
 
 date_time date_time::from_time_t(std::time_t value, date_time_kind kind) {
-  if (kind == date_time_kind::local) return date_time(duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970)).to_local_time();
-  return date_time(duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970), kind);
+  return date_time::specify_kind(date_time(duration_cast<xtd::ticks>(chrono::seconds(value) + seconds_offset_1970), date_time_kind::utc), kind);
 }
 
 date_time date_time::from_tm(const tm& value) {
@@ -443,7 +440,7 @@ ustring date_time::to_string(const ustring& format) const {
     case 'N': return ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", ::to_string("%A", to_tm(), std::locale()), day, ::to_string("%B", to_tm(), std::locale()), year, hour, minute, second);
     case 'o':
     case 'O': return ustring::format("{:D} {} {:D}", day, ::to_string("%B", to_tm(), std::locale()), year);
-    case 's': return ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
+    case 's': return ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
     case 't': return ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
     case 'T': return ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second);
     case 'u': return ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
@@ -463,7 +460,7 @@ ustring date_time::to_string(const ustring& format) const {
 }
 
 std::time_t date_time::to_time_t() const {
-  return (duration_cast<chrono::seconds>(value_ - utc_offset()) - seconds_offset_1970).count();
+  return (duration_cast<chrono::seconds>(date_time::specify_kind(*this, date_time_kind::utc).value_) - seconds_offset_1970).count();
 }
 
 std::tm date_time::to_tm() const {
