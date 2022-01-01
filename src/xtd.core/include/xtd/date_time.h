@@ -298,6 +298,34 @@ namespace xtd {
     /// @remarks You can explicitly set the xtd::date_time::xtd::date_time::kind property of a new xtd::date_time value to a particular xtd::date_time_kind value by calling the xtd::date_time::specify_kind method.
     /// @remarks The xtd::date_time::kind property allows a xtd::date_time value to clearly reflect either Coordinated Universal Time (UTC) or the local time. In contrast, the xtd::date_time_offset structure can unambiguously reflect any time in any time zone as a single point in time.
     date_time_kind kind() const noexcept;
+    
+    /// @brief Gets the milliseconds component of the date represented by this instance.
+    /// @return The milliseconds component, expressed as a value between 0 and 999.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::millisecond property.
+    /// @code
+    /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
+    /// // year gets 1999.
+    /// uint32_t year = moment.year();
+    ///
+    /// // month gets 1 (January).
+    /// uint23_t month = moment.month();
+    ///
+    /// // day gets 13.
+    /// uint23_t day = moment.day();
+    ///
+    /// // hour gets 3.
+    /// uint23_t hour = moment.hour();
+    ///
+    /// // minute gets 57.
+    /// uint23_t minute = moment.minute();
+    ///
+    /// // second gets 32.
+    /// uint23_t second = moment.second();
+    ///
+    /// // millisecond gets 11.
+    /// uint23_t millisecond = moment.millisecond();
+    /// @endcode
     uint32_t millisecond() const noexcept;
     uint32_t minute() const noexcept;
     uint32_t month() const noexcept;
