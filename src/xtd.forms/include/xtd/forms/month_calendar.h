@@ -29,7 +29,7 @@ namespace xtd {
       
       /// @name Properties
       /// @{
-      drawing::size default_size() const override {return {227, 140};}
+      drawing::size default_size() const override {return {227, 162};}
 
       /// @brief Gets the maximum date that can be selected in the control.
       /// @return The maximum date that can be selected in the control.
