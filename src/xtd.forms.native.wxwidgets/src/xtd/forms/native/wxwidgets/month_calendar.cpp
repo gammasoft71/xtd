@@ -17,7 +17,7 @@ void month_calendar::allowable_dates(const intptr_t control, date_time min_date,
   }
 
   wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control());
-  wx_calendar_ctrl->SetDateRange(min_date.to_time_t(), max_date.to_time_t());
+  wx_calendar_ctrl->SetDateRange({min_date.to_tm()}, {max_date.to_tm()});
 }
 
 void month_calendar::selection_range(const intptr_t control, date_time date_start, date_time date_end) {
@@ -28,7 +28,7 @@ void month_calendar::selection_range(const intptr_t control, date_time date_star
   }
 
   wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control());
-  wx_calendar_ctrl->SetDate(date_start.to_time_t());
+  wx_calendar_ctrl->SetDate({date_start.to_tm()});
 }
 
 pair<date_time, date_time> month_calendar::selection_range(const intptr_t control) {
@@ -38,6 +38,7 @@ pair<date_time, date_time> month_calendar::selection_range(const intptr_t contro
     return {};
   }
 
-  auto date = date_time(date_time::from_time_t(static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetDate().GetTicks(), date_time_kind::local).ticks(), date_time_kind::unspecified);
+  wxDateTime wx_date_time = static_cast<wxCalendarCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetDate();
+  date_time date = date_time(static_cast<uint32_t>(wx_date_time.GetYear()), static_cast<uint32_t>(wx_date_time.GetMonth()), static_cast<uint32_t>(wx_date_time.GetDay()), static_cast<uint32_t>(wx_date_time.GetHour()), static_cast<uint32_t>(wx_date_time.GetHour()), static_cast<uint32_t>(wx_date_time.GetMinute()), static_cast<uint32_t>(wx_date_time.GetSecond()), date_time_kind::unspecified);
   return {date, date};
 }
