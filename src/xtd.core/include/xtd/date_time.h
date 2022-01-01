@@ -295,6 +295,8 @@ namespace xtd {
     /// @par Example
     /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
     /// @include date_time_specify_kind.cpp
+    /// @remarks You can explicitly set the xtd::date_time::xtd::date_time::kind property of a new xtd::date_time value to a particular xtd::date_time_kind value by calling the xtd::date_time::specify_kind method.
+    /// @remarks The xtd::date_time::kind property allows a xtd::date_time value to clearly reflect either Coordinated Universal Time (UTC) or the local time. In contrast, the xtd::date_time_offset structure can unambiguously reflect any time in any time zone as a single point in time.
     date_time_kind kind() const noexcept;
     uint32_t millisecond() const noexcept;
     uint32_t minute() const noexcept;
