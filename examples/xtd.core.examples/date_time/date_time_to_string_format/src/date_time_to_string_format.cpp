@@ -32,7 +32,7 @@ public:
     console::write_line(date1.to_string("N")); // Tuesday, 1 April 2008 18:07:05
     console::write_line(date1.to_string("o")); // 1 April 2008
     console::write_line(date1.to_string("O")); // 1 April 2008
-    console::write_line(date1.to_string("s")); // 2008-04-01T18:07:05
+    console::write_line(date1.to_string("s")); // 2008-04-01T18:07:05.0200000
     console::write_line(date1.to_string("t")); // 18:07:05
     console::write_line(date1.to_string("T")); // 18:07:05
     console::write_line(date1.to_string("u")); // 2008-04-01 18:07:05
@@ -81,7 +81,7 @@ startup_(program);
 // Tuesday, 1 April 2008 18:07:05
 // 1 April 2008
 // 1 April 2008
-// 2008-04-01T18:07:05
+// 2008-04-01T18:07:05.0200000
 // 18:07:05
 // 18:07:05
 // 2008-04-01 18:07:05
