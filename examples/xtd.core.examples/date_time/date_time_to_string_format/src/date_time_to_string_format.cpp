@@ -6,10 +6,10 @@ using namespace xtd;
 class program {
 public:
   static void main() {
-    date_time date1(2008, 4, 1, 18, 7, 5, 20);
+    date_time date1(2008, 4, 1, 18, 7, 5, 16);
     console::write_line(date1.to_string("a")); // PM
-    console::write_line(date1.to_string("b")); // 020
-    console::write_line(date1.to_string("B")); // 20
+    console::write_line(date1.to_string("b")); // 016
+    console::write_line(date1.to_string("B")); // 16
     console::write_line(date1.to_string("d")); // 04/01/2008
     console::write_line(date1.to_string("D")); // 4/01/2008
     console::write_line(date1.to_string("f")); // Tue Apr  1 18:07:05 2008
@@ -32,7 +32,7 @@ public:
     console::write_line(date1.to_string("N")); // Tuesday, 1 April 2008 18:07:05
     console::write_line(date1.to_string("o")); // 1 April 2008
     console::write_line(date1.to_string("O")); // 1 April 2008
-    console::write_line(date1.to_string("s")); // 2008-04-01T18:07:05.0200000
+    console::write_line(date1.to_string("s")); // 2008-04-01T18:07:05.0160000
     console::write_line(date1.to_string("t")); // 18:07:05
     console::write_line(date1.to_string("T")); // 18:07:05
     console::write_line(date1.to_string("u")); // 2008-04-01 18:07:05
@@ -57,8 +57,8 @@ startup_(program);
 // This code can produces the following output:
 //
 // PM
-// 020
-// 20
+// 016
+// 16
 // 04/01/2008
 // 4/01/2008
 // Tue Apr  1 18:07:05 2008
@@ -81,7 +81,7 @@ startup_(program);
 // Tuesday, 1 April 2008 18:07:05
 // 1 April 2008
 // 1 April 2008
-// 2008-04-01T18:07:05.0200000
+// 2008-04-01T18:07:05.0160000
 // 18:07:05
 // 18:07:05
 // 2008-04-01 18:07:05

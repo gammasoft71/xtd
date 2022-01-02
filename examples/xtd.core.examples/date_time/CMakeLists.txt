@@ -10,7 +10,10 @@ add_projects(
   date_time_day_of_year
   date_time_max_value
   date_time_min_value
+  date_time_now
+  date_time_now2
   date_time_specify_kind
+  date_time_sprintf
   date_time_ticks
   date_time_to_string_format
 )
