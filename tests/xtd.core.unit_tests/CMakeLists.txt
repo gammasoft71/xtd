@@ -13,6 +13,7 @@ add_sources(
   src/xtd/arithmetic_exception.cpp
   src/xtd/as.cpp
   src/xtd/bit_converter.cpp
+  src/xtd/box.cpp
   src/xtd/bytes_assert.h
   src/xtd/console_key_info.cpp
   src/xtd/convert.cpp
