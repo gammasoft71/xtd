@@ -16,6 +16,7 @@
 #include "beep.h"
 #include "bit_converter.h"
 #include "block_scope.h"
+#include "box.h"
 #include "build_type.h"
 #include "cdebug.h"
 #include "cnull.h"
