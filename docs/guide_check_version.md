@@ -15,7 +15,7 @@ xtdc --version
 You get output similar to the following.
 
 ```
-xtdc version 0.2.0, © 2021 by Gammasoft
+xtdc version 0.2.0, © 2022 by Gammasoft
 ```
 
 The xtdc version corresponds to the xtd version.
@@ -32,4 +32,4 @@ You'll also get other environmental related information, such as the operating s
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.
