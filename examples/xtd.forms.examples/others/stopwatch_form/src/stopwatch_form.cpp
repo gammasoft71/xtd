@@ -1,16 +1,18 @@
 #include <xtd/xtd>
+#include "../properties/resources.h"
 
 using namespace std::literals;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
-class stop_watch_form : public form {
+class main_form : public form {
 public:
-  stop_watch_form() {
+  main_form() {
     text("Stopwatch");
     start_position(form_start_position::center_screen);
     client_size({275, 120});
+    icon(stopwatch_form::properties::resources::stopwatch_ico());
     form_border_style(forms::form_border_style::fixed_single);
     maximize_box(false);
     
@@ -27,22 +29,22 @@ public:
     start_stop.parent(*this);
     start_stop.location({10, 80});
     start_stop.text("Start");
-    start_stop.click += event_handler(*this, &stop_watch_form::on_start_stop_click);
+    start_stop.click += event_handler(*this, &main_form::on_start_stop_click);
     
     pause_resume.parent(*this);
     pause_resume.location({100, 80});
     pause_resume.text("Pause");
     pause_resume.enabled(false);
-    pause_resume.click += event_handler(*this, &stop_watch_form::on_pause_resume_click);
+    pause_resume.click += event_handler(*this, &main_form::on_pause_resume_click);
     
     reset.parent(*this);
     reset.location({190, 80});
     reset.text("Reset");
     reset.enabled(false);
-    reset.click += event_handler(*this, &stop_watch_form::on_reset_click);
+    reset.click += event_handler(*this, &main_form::on_reset_click);
     
     timer_chrono.interval(11ms);
-    timer_chrono.tick += event_handler(*this, &stop_watch_form::on_timer_tick);
+    timer_chrono.tick += event_handler(*this, &main_form::on_timer_tick);
   }
   
 private:
@@ -88,5 +90,5 @@ private:
 };
 
 auto main()->int {
-  xtd::forms::application::run(stop_watch_form());
+  xtd::forms::application::run(main_form());
 }
