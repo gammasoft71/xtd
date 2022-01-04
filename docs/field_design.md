@@ -22,4 +22,4 @@ If there are predefined instances of the type, declare them with public static M
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

@@ -34,4 +34,4 @@ This structural code demonstrates the Composite pattern which allows the creatio
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

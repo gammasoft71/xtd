@@ -18,4 +18,4 @@ See [xtd libraries architecture](architecture.md).
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

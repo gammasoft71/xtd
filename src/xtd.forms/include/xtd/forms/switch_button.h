@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::switch_button control.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #include <optional>
 #include "button_base.h"
 #include "control_paint.h"

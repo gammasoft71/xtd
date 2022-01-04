@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::tool_bar_item compnent.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "component.h"
 

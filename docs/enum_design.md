@@ -71,4 +71,4 @@ If you have real data about application incompatibilities caused by additions to
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

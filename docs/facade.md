@@ -34,4 +34,4 @@ This structural code demonstrates the Facade pattern which provides a simplified
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

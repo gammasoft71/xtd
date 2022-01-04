@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::scrollable_control control.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
 #include "system_information.h"

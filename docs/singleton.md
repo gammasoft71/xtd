@@ -35,4 +35,4 @@ This structural code demonstrates the Singleton pattern which assures only a sin
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

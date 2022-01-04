@@ -286,12 +286,12 @@ void minesweeper_form::on_about_menuu_click(object& sender, const xtd::event_arg
   about_dialog.version("1.0");
   about_dialog.long_version("1.0.0");
   about_dialog.description("The goal of the game is to uncover all the squares\nthat do not contain mines."_t);
-  about_dialog.copyright("Copyright (c) 2021 Gammasoft.\nAll rights reserved."_t);
+  about_dialog.copyright("Copyright (c) 2022 Gammasoft.\nAll rights reserved."_t);
   about_dialog.website("https://gammasoft71.wixsite.com/gammasoft"_t);
   about_dialog.website_label("gammasoft website"_t);
   about_dialog.license("MIT License\n"
                        "\n"
-                       "Copyright (c) 2021 Gammasoft.\n"
+                       "Copyright (c) 2022 Gammasoft.\n"
                        "\n"
                        "Permission is hereby granted, free of charge, to any person obtaining\n"
                        "a copy of this software and associated documentation files (the\n"

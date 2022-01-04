@@ -4,7 +4,7 @@
  
 [MIT License](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2021 [Gammasoft](https://gammasoft71.wixsite.com/gammasoft).
+Copyright (c) 2022 [Gammasoft](https://gammasoft71.wixsite.com/gammasoft).
 
 
 
@@ -20,4 +20,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPL
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

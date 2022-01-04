@@ -23,4 +23,4 @@ In all other cases, you should define your types as classes.
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

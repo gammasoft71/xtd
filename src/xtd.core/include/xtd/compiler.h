@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::compiler class.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <vector>
 #include "build_type.h"

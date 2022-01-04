@@ -35,4 +35,4 @@ This structural code demonstrates the Prototype pattern in which new objects are
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

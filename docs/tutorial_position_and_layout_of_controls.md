@@ -254,4 +254,4 @@ In this case the client_size of main_form will be :
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

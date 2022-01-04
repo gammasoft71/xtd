@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains folder browser info flags constants.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <cstddef>
 

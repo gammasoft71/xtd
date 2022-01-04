@@ -26,4 +26,4 @@ This section contains the xtd documentation. ​
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.
