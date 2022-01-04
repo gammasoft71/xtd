@@ -60,6 +60,13 @@ add_sources(
   gammasoft.md
   general_naming_conventions.md
   getting_started.md
+  guides.md
+  guide_check_version.md
+  guide_delegates_and_lambdas.md
+  guide_handle_and_raise_events.md
+  guide_hello_world.md
+  guide_observer_design_pattern.md
+  guide_raise_and_consume_events.md
   hierarchy.md
   home.md
   ignore_test_method.md
@@ -117,6 +124,7 @@ add_sources(
   tutorial_common_io_tasks_read_text_from_a_file.md
   tutorial_common_io_tasks_write_a_text_file.md
   tutorial_common_io_tasks_write_text_to_a_file.md
+  tutorial_date_time.md
   tutorial_delegates.md
   tutorial_ebook.md
   tutorial_ebook_console_classes.md
