@@ -21,8 +21,7 @@ public:
     watch_panel.fore_color(drawing::color::lime);
 
     watch.parent(watch_panel);
-    watch.location({10, 7});
-    watch.size({214, 32});
+    watch.bounds({10, 8, 214, 33});
     watch.text("00:00:00.000");
     
     start_stop.parent(*this);
@@ -76,7 +75,7 @@ private:
   };
 
   void on_timer_tick(object& sender, const event_args& e) {
-    watch.text(ustring::format("{0:H}:{0:M}:{0:S}.{1:D3}", stopwatch.elapsed(), stopwatch.elapsed_milliseconds() % 1000));
+    watch.text(ustring::format("{0:H}:{0:M}:{0:S}.{0:L}", stopwatch.elapsed()));
   };
 
   stopwatch stopwatch;
