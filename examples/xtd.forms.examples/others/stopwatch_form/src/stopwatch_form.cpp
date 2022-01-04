@@ -80,7 +80,7 @@ private:
     watch.text(ustring::format("{0:H}:{0:M}:{0:S}.{0:L}", stopwatch.elapsed()));
   };
 
-  stopwatch stopwatch;
+  xtd::diagnostics::stopwatch stopwatch;
   panel watch_panel;
   lcd_label watch;
   button start_stop;
