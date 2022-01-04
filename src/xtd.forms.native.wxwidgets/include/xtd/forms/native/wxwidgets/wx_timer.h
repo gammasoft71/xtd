@@ -32,6 +32,7 @@ namespace xtd {
         void on_tick(wxTimerEvent& event) {
           try {
             tick_(event_args::empty);
+            wxYield();
           } catch (...) {
           }
         }
