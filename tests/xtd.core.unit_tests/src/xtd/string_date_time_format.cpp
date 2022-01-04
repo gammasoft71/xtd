@@ -271,7 +271,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_sortable_argument) {
-      assert::are_equal("2019-01-02T03:04:05", ustring::format("{0:s}", make_time<value_t>(2019, 1, 2, 3, 4, 5)), csf_);
+      assert::are_equal("2019-01-02T03:04:05.0000000", ustring::format("{0:s}", make_time<value_t>(2019, 1, 2, 3, 4, 5)), csf_);
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_time_argument_and_zero_fill) {

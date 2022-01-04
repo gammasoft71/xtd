@@ -572,6 +572,16 @@ namespace xtd {
   std::ostream& operator <<(std::ostream& os, const date_time& value) noexcept;
   /// @endcond
 
+  /// @brief Convert a specified value into a string with specified format and locale.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @param value Value to convert.
+  /// @param fmt A composite format string.
+  /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
+  /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::string to_string(const date_time& value, const std::string& fmt, const std::locale& loc) {
     return value.to_string(fmt);

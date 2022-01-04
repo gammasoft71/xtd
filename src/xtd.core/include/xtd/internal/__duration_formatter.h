@@ -53,6 +53,8 @@ inline std::basic_string<char_t> __duration_formatter(std::basic_string<char_t> 
     case 'G': return __make_string_from_duration<char_t>(value);
     case 'h': return __sprintf(std::basic_string<char_t> {'%', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24);
     case 'H': return __sprintf(std::basic_string<char_t> {'%', '0', '2', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24);
+    case 'l': return __sprintf(std::basic_string<char_t> {'%', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::milliseconds>(value).count() % 1000);
+    case 'L': return __sprintf(std::basic_string<char_t> {'%', '0', '3', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::milliseconds>(value).count() % 1000);
     case 'm': return __sprintf(std::basic_string<char_t> {'%', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60);
     case 'M': return __sprintf(std::basic_string<char_t> {'%', '0', '2', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60);
     case 'n': return __sprintf(std::basic_string<char_t> {'%', 'l', 'u'}.c_str(), std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000UL);
