@@ -148,4 +148,4 @@ For more information, see [Events](tutorial_events.md).
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

@@ -67,4 +67,4 @@ The number excludes ticks that would be added by leap seconds. For example, a ti
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.
