@@ -242,7 +242,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::string to_string(const std::chrono::system_clock::time_point& value, const std::string& fmt, const std::locale& loc) {return __date_time_formatter(fmt, std::chrono::system_clock::to_time_t(value), loc);}
+  inline std::string to_string(const std::chrono::system_clock::time_point& value, const std::string& fmt, const std::locale& loc) {return __date_time_formatter(fmt, std::chrono::system_clock::to_time_t(value), std::chrono::duration_cast<std::chrono::nanoseconds>(value.time_since_epoch()).count() % 1000000000, loc);}
 
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -255,7 +255,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc) {return __date_time_formatter(fmt, value, loc);}
+  inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc) {return __date_time_formatter(fmt, value, 0, loc);}
 
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -571,7 +571,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::wstring to_string(const std::chrono::system_clock::time_point& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formatter(fmt, std::chrono::system_clock::to_time_t(value), loc);}
+  inline std::wstring to_string(const std::chrono::system_clock::time_point& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formatter(fmt, std::chrono::system_clock::to_time_t(value), std::chrono::duration_cast<std::chrono::milliseconds>(value.time_since_epoch()).count()  % 1000000000, loc);}
  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -584,7 +584,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formatter(fmt, value, loc);}
+  inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formatter(fmt, value, 0, loc);}
 
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
