@@ -19,4 +19,4 @@ The extensibility afforded by non-final types is much appreciated by framework u
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

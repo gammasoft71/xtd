@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::item_check_event_args event args.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 #include <limits>

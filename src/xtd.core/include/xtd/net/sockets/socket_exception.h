@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::sockets::socket_exception exception.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "../../system_exception.h"
 #include "socket_error.h"

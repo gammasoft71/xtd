@@ -37,4 +37,4 @@ For more oinformation see [Position and layout of controls](tutorial_position_an
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

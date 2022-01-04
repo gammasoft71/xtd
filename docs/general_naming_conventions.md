@@ -82,4 +82,4 @@ This will assist discovery when browsing documentation, or using Intellisense. T
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

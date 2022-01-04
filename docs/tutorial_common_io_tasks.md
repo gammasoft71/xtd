@@ -55,7 +55,7 @@ Some features exist only in the xtd API like [binary reader/writer](tutorial_com
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.
 
 <!---
 https://docs.microsoft.com/en-us/dotnet/standard/io/common-i-o-tasks

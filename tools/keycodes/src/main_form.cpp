@@ -143,7 +143,7 @@ void main_form::show_about_dialog() {
   dialog.version(environment::version().to_string(2));
   dialog.long_version(environment::version().to_string(3));
   dialog.description("Displays information about the keys entered");
-  dialog.copyright("Copyright (c) 2021 Gammasoft.\nAll rights reserved.");
+  dialog.copyright("Copyright (c) 2022 Gammasoft.\nAll rights reserved.");
   dialog.website("https://gammasoft71.wixsite.com/gammasoft");
   dialog.website_label("gammasoft website");
   dialog.authors({"Gammasoft", "Bader", "Contributors"});
@@ -151,7 +151,7 @@ void main_form::show_about_dialog() {
   dialog.artists({"Gammasoft"});
   dialog.license("MIT License\n"
                  "\n"
-                 "Copyright (c) 2021 Gammasoft.\n"
+                 "Copyright (c) 2022 Gammasoft.\n"
                  "\n"
                  "Permission is hereby granted, free of charge, to any person obtaining\n"
                  "a copy of this software and associated documentation files (the\n"

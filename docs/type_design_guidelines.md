@@ -35,4 +35,4 @@ Delegates, exceptions, attributes, arrays, and collections are all special cases
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

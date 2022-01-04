@@ -466,7 +466,7 @@ endmacro()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  assembly_copyright("© 2021 by Gammasoft.")
+##  assembly_copyright("© 2022 by Gammasoft.")
 ##
 ##  target_type(GUI_APPLICATION)
 ## @endcode

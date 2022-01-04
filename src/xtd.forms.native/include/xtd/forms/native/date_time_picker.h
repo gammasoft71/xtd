@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::native::date_time_picker API.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #ifndef __XTD_FORMS_NATIVE_LIBRARY__

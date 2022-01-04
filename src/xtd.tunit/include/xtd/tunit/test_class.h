@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::test_class class.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "../tunit_export.h"
 #include "class_initialize_attribute.h"

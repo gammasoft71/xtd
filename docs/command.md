@@ -34,4 +34,4 @@ This structural code demonstrates the Command pattern which stores requests as o
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

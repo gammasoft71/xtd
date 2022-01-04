@@ -33,4 +33,4 @@ Property getters should be simple operations and should not have any preconditio
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

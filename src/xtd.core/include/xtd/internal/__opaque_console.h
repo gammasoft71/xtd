@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains __opaque_console class.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #ifndef __XTD_CORE_INTERNAL__

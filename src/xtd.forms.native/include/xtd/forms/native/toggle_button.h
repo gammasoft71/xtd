@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::native::toggle_button API.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.#pragma once
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.#pragma once
 #pragma once
 /// @cond
 #ifndef __XTD_FORMS_NATIVE_LIBRARY__

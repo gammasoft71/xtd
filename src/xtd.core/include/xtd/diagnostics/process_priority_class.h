@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::process_priority_class enum class.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "../ustring.h"
 

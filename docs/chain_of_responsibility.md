@@ -34,4 +34,4 @@ This structural code demonstrates the Chain of Responsibility pattern in which s
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.

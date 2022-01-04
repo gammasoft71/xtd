@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::color_box_styles enum class.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/ustring.h>
 

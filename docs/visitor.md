@@ -34,4 +34,4 @@ This structural code demonstrates the Visitor pattern in which an object travers
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.
