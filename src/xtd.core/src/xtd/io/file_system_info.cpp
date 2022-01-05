@@ -35,6 +35,14 @@ file_system_info& file_system_info::creation_time(const date_time& value) {
   return *this;
 }
 
+xtd::date_time file_system_info::creation_time_utc() const {
+  return creation_time().to_universal_time();
+}
+
+xtd::io::file_system_info& file_system_info::creation_time_utc(const xtd::date_time& value) {
+  return creation_time(value.to_local_time());
+}
+
 ustring file_system_info::extension() const {
   return path::get_extension(full_path_);
 }
@@ -55,6 +63,14 @@ file_system_info& file_system_info::last_access_time(const date_time& value) {
   return *this;
 }
 
+xtd::date_time file_system_info::last_access_time_utc() const {
+  return last_access_time().to_universal_time();
+}
+
+xtd::io::file_system_info& file_system_info::last_access_time_utc(const xtd::date_time& value) {
+  return last_access_time(value.to_local_time());
+}
+
 const date_time& file_system_info::last_write_time() const {
   return last_write_time_;
 }
@@ -65,6 +81,14 @@ file_system_info& file_system_info::last_write_time(const date_time& value) {
   if (result != 0) throw io_exception(csf_);
   last_write_time_ = value;
   return *this;
+}
+
+xtd::date_time file_system_info::last_write_time_utc() const {
+  return last_write_time().to_universal_time();
+}
+
+xtd::io::file_system_info& file_system_info::last_write_time_utc(const xtd::date_time& value) {
+  return last_write_time(value.to_local_time());
 }
 
 void file_system_info::refresh() {
