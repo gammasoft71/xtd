@@ -17,14 +17,14 @@ int32_t file_system::get_attributes(const string& path, int32_t& attributes) {
   return attrib != INVALID_FILE_ATTRIBUTES ? 0 : -1;
 }
 
-int32_t file_system::get_file_times(const string& path, chrono::system_clock::time_point& creation_time, chrono::system_clock::time_point& last_access_time, chrono::system_clock::time_point& last_write_time) {
+int32_t file_system::get_file_times(const string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
   /// @todo Use GetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfiletime
   struct stat file_stat;
   if (stat(path.c_str(), &file_stat) != 0)
     return -1;
-  creation_time = chrono::system_clock::from_time_t(static_cast<time_t>(file_stat.st_ctime));
-  last_access_time = chrono::system_clock::from_time_t(static_cast<time_t>(file_stat.st_atime));
-  last_write_time = chrono::system_clock::from_time_t(static_cast<time_t>(file_stat.st_mtime));
+  creation_time = static_cast<time_t>(file_stat.st_ctime);
+  last_access_time = static_cast<time_t>(file_stat.st_atime);
+  last_write_time = static_cast<time_t>(file_stat.st_mtime);
   return 0;
 }
 
@@ -38,7 +38,7 @@ bool file_system::is_path_too_long(const string& path) {
   return path.size() > MAX_PATH;
 }
 
-int32_t file_system::set_creation_time(const string &path, chrono::system_clock::time_point &creation_time) {
+int32_t file_system::set_creation_time(const string &path, time_t creation_time) {
   /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }
@@ -48,12 +48,12 @@ int32_t file_system::set_file_attributes(const string& path, int32_t attributes)
   return -1;
 }
 
-int32_t file_system::set_last_access_time(const string &path, chrono::system_clock::time_point &last_access_time) {
+int32_t file_system::set_last_access_time(const string &path, time_t last_access_time) {
   /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }
 
-int32_t file_system::set_last_write_time(const string &path, chrono::system_clock::time_point &last_write_time) {
+int32_t file_system::set_last_write_time(const string &path, time_t last_write_time) {
   /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }

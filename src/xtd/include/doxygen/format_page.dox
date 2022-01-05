@@ -224,7 +224,7 @@
 ///
 /// @code
 /// std::string my_name = "Fred";
-/// xtd::console::write_line(xtd::ustring::format("Name = {0}, hours = {1:hh}, minutes = {1:mm}", myName, std::chrono::system_clock::now()));
+/// xtd::console::write_line(xtd::ustring::format("Name = {0}, hours = {1:hh}, minutes = {1:mm}", myName, date_time::now()));
 /// // Depending on the current time, the example displays output like the following:
 /// //
 /// // Name = Fred, hours = 11, minutes = 30

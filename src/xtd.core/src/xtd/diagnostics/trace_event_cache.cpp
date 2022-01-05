@@ -9,9 +9,9 @@ ustring trace_event_cache::call_stack() const {
   return stack_trace(true).to_string();
 }
 
-trace_event_cache::clock::time_point trace_event_cache::date_time() const {
-  if (date_time_ == clock::time_point::min())
-    date_time_ = clock::now();
+const date_time& trace_event_cache::date_time() const {
+  if (date_time_ == date_time::min_value)
+    date_time_ = date_time::now();
   return date_time_;
 }
 

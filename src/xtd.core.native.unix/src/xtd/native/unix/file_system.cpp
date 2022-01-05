@@ -35,13 +35,13 @@ int32_t file_system::get_attributes(const std::string& path, int32_t& attributes
 }
 
 #if !__APPLE__
-int32_t file_system::get_file_times(const std::string& path, std::chrono::system_clock::time_point& creation_time, std::chrono::system_clock::time_point& last_access_time, std::chrono::system_clock::time_point& last_write_time) {
+int32_t file_system::get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
   struct stat status;
   if (stat(path.c_str(), &status) != 0) return -1;
   
-  creation_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(status.st_ctime));
-  last_access_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(status.st_atime));
-  last_write_time = std::chrono::system_clock::from_time_t(static_cast<time_t>(status.st_mtime));
+  creation_time = static_cast<time_t>(status.st_ctime);
+  last_access_time = static_cast<time_t>(status.st_atime);
+  last_write_time = static_cast<time_t>(status.st_mtime);
   return 0;
 }
 #endif
@@ -75,7 +75,7 @@ bool file_system::is_path_too_long(const std::string& path) {
   return file_name.size() > NAME_MAX;
 }
 
-int32_t file_system::set_creation_time(const std::string &path, std::chrono::system_clock::time_point &creation_time) {
+int32_t file_system::set_creation_time(const std::string &path, time_t creation_time) {
   return -1;
 }
 
@@ -83,10 +83,10 @@ int32_t file_system::set_file_attributes(const std::string& path, int32_t attrib
   return -1;
 }
 
-int32_t file_system::set_last_access_time(const std::string &path, std::chrono::system_clock::time_point &last_access_time) {
+int32_t file_system::set_last_access_time(const std::string &path, time_t last_access_time) {
   return -1;
 }
 
-int32_t file_system::set_last_write_time(const std::string &path, std::chrono::system_clock::time_point &last_write_time) {
+int32_t file_system::set_last_write_time(const std::string &path, time_t last_write_time) {
   return -1;
 }
