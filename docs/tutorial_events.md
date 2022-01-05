@@ -200,7 +200,7 @@ protected:
     // Event will be null if there are no subscribers
     if (!raise_event.is_empty()) {
       // Format the string to send inside the CustomEventArgs parameter
-      e.message(ustring::format("{} at {}", e.message(), std::chrono::system_clock::now()));
+      e.message(ustring::format("{} at {}", e.message(), date_time::now()));
       
       // Call to raise the event.
       raise_event(*this, e);

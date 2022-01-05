@@ -134,7 +134,7 @@ int32_t process::exit_code() const {
   return data_->exit_code_.value();
 }
 
-process::time_point process::exit_time() const {
+date_time process::exit_time() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   return data_->exit_time_;
 }
@@ -210,7 +210,7 @@ process& process::start_info(const process_start_info& value) {
   return *this;
 }
 
-process::time_point process::start_time() const {
+date_time process::start_time() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   return data_->start_time_;
 }
@@ -237,7 +237,7 @@ bool process::start() {
     try {
       process.data_->handle_.reset();
       process.data_->exit_code_.reset();
-      process.data_->start_time_ = system_clock::now();
+      process.data_->start_time_ = date_time::now();
       int32_t process_creation_flags = 0;
       if (process.start_info().create_no_window()) process_creation_flags |= CREATE_NO_WINDOW;
       int32_t process_window_style = 0;
@@ -255,11 +255,11 @@ bool process::start() {
       }
       if (process.data_->handle_ == 0) throw invalid_operation_exception("The system cannot find the file specified", current_stack_frame_);
       allow_to_continue = true;
-      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, ustring::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : ustring::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.time_since_epoch())).count() % 1000000));
+      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, ustring::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : ustring::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.ticks())).count() % 1000000));
       int32_t exit_code = 0;
       process.data_->exit_code_ =  native::process::wait(process.data_->handle_.value(), exit_code) ? exit_code : -1;
-      process.data_->exit_time_ = system_clock::now();
-      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.time_since_epoch())).count() % 1000000, process.data_->exit_code_));
+      process.data_->exit_time_ = date_time::now();
+      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.ticks()).count() % 1000000, process.data_->exit_code_));
       if (!process.data_->exit_code_.has_value() || process.data_->exit_code_ == -1 || process.data_->exit_code_ == 0x00ffffff) throw invalid_operation_exception("The system cannot find the file specified", current_stack_frame_);
       process.on_exited();
     } catch(...) {

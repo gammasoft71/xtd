@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "../tunit_export.h"
-#include <chrono>
+#include <xtd/date_time.h>
 #include <cstdlib>
 #include <string>
 
@@ -137,11 +137,11 @@ namespace xtd {
 
       /// @brief Gets unit test end time.
       /// @return Unit test end time.
-      std::chrono::time_point<std::chrono::system_clock> end_time() const noexcept {return end_time_;}
+      const xtd::date_time& end_time() const noexcept {return end_time_;}
 
       /// @brief Gets unit test start time.
       /// @return Unit test start time.
-      std::chrono::time_point<std::chrono::system_clock> start_time() const noexcept {return start_time_;}
+      const xtd::date_time& start_time() const noexcept {return start_time_;}
 
     private:
       friend class unit_test;
@@ -154,8 +154,8 @@ namespace xtd {
         return ((pattern[0] == '?') || (name[0] == pattern[0])) && pattern_compare(name.substr(1), pattern.substr(1));
       }
 
-      void end_time(const std::chrono::time_point<std::chrono::system_clock>& end_time) noexcept {start_time_ = end_time;}
-      void start_time(const std::chrono::time_point<std::chrono::system_clock>& start_time) noexcept {start_time_ = start_time;}
+      void end_time(const xtd::date_time& end_time) noexcept {start_time_ = end_time;}
+      void start_time(const xtd::date_time& start_time) noexcept {start_time_ = start_time;}
 
       bool also_run_ignored_tests_ = false;
       std::string filter_tests_ = "*.*";
@@ -168,8 +168,8 @@ namespace xtd {
       bool shuffle_tests_ = false;
       int random_seed_ = 0;
       int repeat_tests_ = 1;
-      std::chrono::time_point<std::chrono::system_clock> start_time_;
-      std::chrono::time_point<std::chrono::system_clock> end_time_;
+      xtd::date_time start_time_;
+      xtd::date_time end_time_;
     };
   }
 }

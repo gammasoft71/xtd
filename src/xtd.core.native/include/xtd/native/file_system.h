@@ -70,7 +70,7 @@ namespace xtd {
       /// @param last_write_time That contains the last write time.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t get_file_times(const std::string& path, std::chrono::system_clock::time_point& creation_time, std::chrono::system_clock::time_point& last_access_time, std::chrono::system_clock::time_point& last_write_time);
+      static int32_t get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time);
       /// @internal
       /// @brief Get full path of specified path.
       /// @param relative_path The relative path to the directory to search.
@@ -89,7 +89,7 @@ namespace xtd {
       /// @param creation_time The file or path creation time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static int32_t set_creation_time(const std::string& path, std::chrono::system_clock::time_point& creation_time);
+      static int32_t set_creation_time(const std::string& path, time_t creation_time);
       /// @internal
       /// @brief Sets the attributes for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
@@ -103,14 +103,14 @@ namespace xtd {
       /// @param last_access_time The file or path last access time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static int32_t set_last_access_time(const std::string& path, std::chrono::system_clock::time_point& last_access_time);
+      static int32_t set_last_access_time(const std::string& path, time_t last_access_time);
       /// @internal
       /// @brief Sets the last write time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param last_write_time The file or path last write time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static int32_t set_last_write_time(const std::string& path, std::chrono::system_clock::time_point& last_write_time);
+      static int32_t set_last_write_time(const std::string& path, time_t last_write_time);
     };
   }
 }

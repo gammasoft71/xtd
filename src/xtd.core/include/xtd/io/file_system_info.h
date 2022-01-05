@@ -3,10 +3,10 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include <chrono>
 #include <memory>
 #include "../abstract.h"
 #include "../core_export.h"
+#include "../date_time.h"
 #include "../ustring.h"
 #include "file_attributes.h"
 
@@ -182,7 +182,7 @@ namespace xtd {
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
       /// @endcode
-      std::chrono::system_clock::time_point creation_time() const;
+      const xtd::date_time& creation_time() const;
       /// @brief Gets the creation time of the current file or directory.
       /// @param value The creation date and time of the current xtd::io::file_system_info object.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
@@ -203,7 +203,7 @@ namespace xtd {
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
       /// @endcode
-      xtd::io::file_system_info& creation_time(std::chrono::system_clock::time_point value);
+      xtd::io::file_system_info& creation_time(const xtd::date_time& value);
 
       /// @brief Gets a value indicating whether the file or directory exists.
       /// @return true if the file or directory exists; otherwise, false.
@@ -286,7 +286,7 @@ namespace xtd {
       ///
       ///     // Update the CreationTime, LastWriteTime and LastAccessTime.
       ///     try {
-      ///       auto now = std::chrono::system_clock::now();
+      ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
       ///     } catch (const system_exception& e) {
       ///       console::write_line("Error: {0}", e.message());
@@ -305,7 +305,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      std::chrono::system_clock::time_point last_access_time() const;
+      const xtd::date_time& last_access_time() const;
       /// @brief Sets the time the current file or directory was last accessed.
       /// @param value The time that the current file or directory was last accessed.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
@@ -341,7 +341,7 @@ namespace xtd {
       ///
       ///     // Update the CreationTime, LastWriteTime and LastAccessTime.
       ///     try {
-      ///       auto now = std::chrono::system_clock::now();
+      ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
       ///     } catch (const system_exception& e) {
       ///       console::write_line("Error: {0}", e.message());
@@ -360,7 +360,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      xtd::io::file_system_info& last_access_time(std::chrono::system_clock::time_point value);
+      xtd::io::file_system_info& last_access_time(const xtd::date_time& value);
       
       /// @brief Gets the time when the current file or directory was last written to.
       /// @return The time the current file was last written.
@@ -397,7 +397,7 @@ namespace xtd {
       ///
       ///     // Update the CreationTime, LastWriteTime and LastAccessTime.
       ///     try {
-      ///       auto now = std::chrono::system_clock::now();
+      ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
       ///     } catch (const system_exception& e) {
       ///       console::write_line("Error: {0}", e.message());
@@ -416,7 +416,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      std::chrono::system_clock::time_point last_write_time() const;
+      const xtd::date_time& last_write_time() const;
       /// @brief Sets the time when the current file or directory was last written to.
       /// @param value The time the current file was last written.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
@@ -452,7 +452,7 @@ namespace xtd {
       ///
       ///     // Update the CreationTime, LastWriteTime and LastAccessTime.
       ///     try {
-      ///       auto now = std::chrono::system_clock::now();
+      ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
       ///     } catch (const system_exception& e) {
       ///       console::write_line("Error: {0}", e.message());
@@ -471,7 +471,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      xtd::io::file_system_info& last_write_time(std::chrono::system_clock::time_point value);
+      xtd::io::file_system_info& last_write_time(const xtd::date_time& value);
 
       /// @brief For files, gets the name of the file. For directories, gets the name of the last directory in the hierarchy if a hierarchy exists. Otherwise, the Name property gets the name of the directory.
       /// @return A xtd::ustring that is the name of the parent directory, the name of the last directory in the hierarchy, or the name of a file, including the file name extension.
@@ -521,9 +521,9 @@ namespace xtd {
       
     private:
       xtd::io::file_attributes attributes_ = static_cast<xtd::io::file_attributes>(0);
-      std::chrono::system_clock::time_point creation_time_;
-      std::chrono::system_clock::time_point last_access_time_;
-      std::chrono::system_clock::time_point last_write_time_;
+      xtd::date_time creation_time_;
+      xtd::date_time last_access_time_;
+      xtd::date_time last_write_time_;
     };
   }
 }

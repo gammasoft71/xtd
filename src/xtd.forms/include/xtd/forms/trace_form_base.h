@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::trace_form_base dialog.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <chrono>
 #include <xtd/drawing/font_family.h>
+#include <xtd/date_time.h>
 #include "form.h"
 #include "text_box.h"
 
@@ -130,8 +130,8 @@ namespace xtd {
       /// @brief Writes header, if needed. Writes date and/or time and header_separator.
       /// @param trace A string to write.
       virtual void write_header() {
-        auto now =  std::chrono::system_clock::now();
-        text_.append_text(xtd::ustring::format(format_, now, (std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())).count() % 1000000, header_separator_));
+        auto now =  xtd::date_time::now();
+        text_.append_text(xtd::ustring::format(format_, now, now.ticks() % 1000000, header_separator_));
         need_header_ = false;
       }
       

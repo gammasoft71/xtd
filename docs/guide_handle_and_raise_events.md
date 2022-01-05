@@ -96,12 +96,12 @@ public:
   int threshold() const {return threshold_;}
   void threshold(int value) {threshold_ = value;}
     
-  std::chrono::system_clock::time_point time_reached() const {return time_reached_;}
-  void time_reached(std::chrono::system_clock::time_point value) {time_reached_ = value;}
+  const xtd::date_time& time_reached() const {return time_reached_;}
+  void time_reached(const xtd::date_time& value) {time_reached_ = value;}
     
 private:
   int threshold_ = 0;
-  std::chrono::system_clock::time_point time_reached_;
+  xtd::date_time time_reached_;
 };
 ```
 

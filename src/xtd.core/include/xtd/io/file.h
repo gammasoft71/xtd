@@ -9,6 +9,7 @@
 #include <fstream>
 #include <vector>
 #include "../core_export.h"
+#include "../date_time.h"
 #include "../static.h"
 #include "../ustring.h"
 #include "file_attributes.h"
@@ -128,30 +129,30 @@ namespace xtd {
 
       /// @brief Returns the creation date and time of the specified file or directory.
       /// @param path The file or directory for which to obtain creation date and time information.
-      /// @return A std::chrono::system_clock::time_point class set to the creation date and time for the specified file or directory. This value is expressed in local time.
+      /// @return A xtd::date_time class set to the creation date and time for the specified file or directory. This value is expressed in local time.
       /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_excpttion path is in an invalid format.
-      static std::chrono::system_clock::time_point get_creation_time(const xtd::ustring& path);
+      static xtd::date_time get_creation_time(const xtd::ustring& path);
       
       /// @brief Returns the date and time the specified file or directory was last accessed.
       /// @param path The file or directory for which to obtain access date and time information.
-      /// @return A std::chrono::system_clock::time_point structure set to the date and time that the specified file or directory was last accessed. This value is expressed in local time.
+      /// @return A xtd::date_time structure set to the date and time that the specified file or directory was last accessed. This value is expressed in local time.
       /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_excpttion path is in an invalid format.
-      static std::chrono::system_clock::time_point get_last_access_time(const xtd::ustring& path);
+      static xtd::date_time get_last_access_time(const xtd::ustring& path);
 
       /// @brief Returns the date and time the specified file or directory was last written to.
       /// @param path The file or directory for which to obtain write date and time information.
-      /// @return A std::chrono::system_clock::time_point structure set to the date and time that the specified file or directory was last written to. This value is expressed in local time.
+      /// @return A xtd::date_time structure set to the date and time that the specified file or directory was last written to. This value is expressed in local time.
       /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_excpttion path is in an invalid format.
-      static std::chrono::system_clock::time_point get_last_write_time(const xtd::ustring& path);
+      static xtd::date_time get_last_write_time(const xtd::ustring& path);
 
       /// @brief Moves a specified file to a new location, providing the option to specify a new file name.
       /// @param src The name of the file to move.

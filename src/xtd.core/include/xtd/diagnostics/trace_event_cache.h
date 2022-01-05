@@ -2,10 +2,10 @@
 /// @brief Contains xtd::diagnostics::trace_event_cache class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <chrono>
 #include <string>
 #include <thread>
 #include <vector>
+#include "../date_time.h"
 #include "../object.h"
 #include "../ustring.h"
 
@@ -26,13 +26,6 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ trace_event_cache : public xtd::object {
     public:
-      /// @name Alias
-      
-      /// @{
-      //using clock = std::chrono::high_resolution_clock;
-      using clock = std::chrono::system_clock;
-      /// @}
-
       /// @name Constructors
       
       /// @{
@@ -56,7 +49,7 @@ namespace xtd {
       /// @brief Gets the date and time at which the event trace occurred.
       /// @return DateTime A DateTime structure whose value is a date and time expressed in Coordinated Universal Time (UTC).
       /// @remarks The first time the property is accessed in an instance of the trace_event_cache class, the current time is returned. Subsequent queries of this property in that instance return that same DateTime value, allowing it to be used as a timestamp.
-      clock::time_point date_time() const;
+      const xtd::date_time& date_time() const;
       
       /// @brief Gets the correlation data, contained in a stack.
       /// @return A Stack containing correlation data.
@@ -80,7 +73,7 @@ namespace xtd {
       /// @}
     
     private:
-      mutable clock::time_point date_time_ = clock::time_point::min();
+      mutable xtd::date_time date_time_ = xtd::date_time::min_value;
     };
   }
 }
