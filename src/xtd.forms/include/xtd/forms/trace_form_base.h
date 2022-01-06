@@ -131,7 +131,7 @@ namespace xtd {
       /// @param trace A string to write.
       virtual void write_header() {
         auto now =  xtd::date_time::now();
-        text_.append_text(xtd::ustring::format(format_, now, (now.ticks() % 1000000).count(), header_separator_));
+        text_.append_text(xtd::ustring::format(format_, now, (now.ticks() / 10 % 1000000).count(), header_separator_));
         need_header_ = false;
       }
       
