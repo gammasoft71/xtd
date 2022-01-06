@@ -1,0 +1,2 @@
+// xtd.dore
+noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h
