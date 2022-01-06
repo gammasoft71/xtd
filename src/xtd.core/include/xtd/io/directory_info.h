@@ -242,7 +242,7 @@ namespace xtd {
       /// @endcode
       /// @remarks This constructor does not check if a directory exists. This constructor is a placeholder for a string that is used to access the disk in subsequent operations.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
-      directory_info(const xtd::ustring& path);
+      explicit directory_info(const xtd::ustring& path);
       /// @}
       
       /// @name Properrties

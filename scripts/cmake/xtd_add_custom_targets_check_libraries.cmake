@@ -9,7 +9,7 @@ if (XTD_ADD_COMMAND_CPPCHECK)
     -j 8
     --language=c++
     --report-progress
-    --std=c++14
+    --std=c++17
     --suppressions-list=${CMAKE_BINARY_DIR}/cppcheck_false_positive
     --template='[{file}:{line}]: ({severity}) {{id}} {message}'
   )

@@ -42,10 +42,10 @@ namespace xtd {
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened
-      binary_writer(const xtd::ustring& path);
+      explicit binary_writer(const xtd::ustring& path);
       /// @brief Initializes a new instance of the binary_writer class for the specified stream.
       /// @param stream The stream to be read.
-      binary_writer(std::ostream& stream);
+      explicit binary_writer(std::ostream& stream);
       /// @}
       /// @cond
       ~binary_writer();

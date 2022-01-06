@@ -31,7 +31,7 @@ namespace xtd {
       
       /// @brief Initializes a new instance of the data_received_event_args class.
       /// @param data The line that was written by an associated Process to its redirected xtd::diagnostics::process::standard_output or xtd::diagnostics::process::standard_error stream.
-      data_received_event_args(const xtd::ustring& data) : data_(data) {}
+      explicit data_received_event_args(const xtd::ustring& data) : data_(data) {}
       
       /// @cond
       data_received_event_args(const data_received_event_args&) = default;

@@ -35,7 +35,7 @@ namespace xtd {
       class core_export_ tcp_listener : public xtd::object {
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
-          async_result_socket(std::any async_state) : async_state_(async_state) {}
+          explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
           std::any async_state() const noexcept override {return async_state_;}
           std::shared_mutex& async_mutex() override {return async_mutex_;}
           bool completed_synchronously() const noexcept override {return false;}
@@ -50,13 +50,13 @@ namespace xtd {
         
         class async_result_accept_socket : public async_result_socket {
         public:
-          async_result_accept_socket(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_accept_socket(std::any async_state) : async_result_socket(async_state) {}
           xtd::net::sockets::socket socket_;
         };
         
         class async_result_accept_tcp_client : public async_result_socket {
         public:
-          async_result_accept_tcp_client(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_accept_tcp_client(std::any async_state) : async_result_socket(async_state) {}
           xtd::net::sockets::tcp_client tcp_client_;
         };
 

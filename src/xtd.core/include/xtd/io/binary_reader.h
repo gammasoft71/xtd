@@ -41,14 +41,14 @@ namespace xtd {
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters as defined by xtd::io::path::invalid_path_chars.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
-      binary_reader(const xtd::ustring& path);
+      explicit binary_reader(const xtd::ustring& path);
       /// @brief Initializes a new instance of the xtd::io::binary_reader class for the specified stream.
       /// @param stream The stream to be read.
       /// @par Example
       /// The following code example demonstrates how to store and retrieve application settings in a file.
       /// @include binary_reader.cpp
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
-      binary_reader(std::istream& stream);
+      explicit binary_reader(std::istream& stream);
       /// @}
       /// @cond
       ~binary_reader();

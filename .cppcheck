@@ -1,2 +1,5 @@
 // xtd.dore
+constParameter:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/convert_pointer.h
+noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/delegate.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h
+unusedPrivateFunction:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace.h

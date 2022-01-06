@@ -30,7 +30,7 @@ namespace xtd {
       string_writer() = default;
       /// @brief Initializes a new instance of the stream_writer class for the specified string.
       /// @param str base string.
-      string_writer(const xtd::ustring& str);
+      explicit string_writer(const xtd::ustring& str);
       /// @}
       
       /// @name Properties

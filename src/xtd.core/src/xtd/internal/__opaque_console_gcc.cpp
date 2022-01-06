@@ -127,8 +127,8 @@ namespace {
     class input_list {
     public:
       input_list() {}
-      input_list(const std::list<int>& chars) : chars(chars) {}
-      input_list(std::initializer_list<int> il) : chars(il) {}
+      explicit input_list(const std::list<int>& chars) : chars(chars) {}
+      explicit input_list(std::initializer_list<int> il) : chars(il) {}
       input_list(const input_list& il) : chars(il.chars) {}
       
       input_list& operator =(const input_list& il) {
@@ -166,7 +166,7 @@ namespace {
             result << "^[";
           else
             result << char(*iterator & 0xFF);
-          iterator++;
+          ++iterator;
         }
         return result.str();
       }

@@ -64,7 +64,7 @@ namespace xtd {
         socket_async_event_args() = default;
         /// @brief Initializes the SocketAsyncEventArgs.
         /// @param suppress_execution_context_flow Whether to disable the capturing and flow of execution context. Execution context flow should only be disabled if it's handled by higher layers.
-        socket_async_event_args(bool suppress_execution_context_flow);
+        explicit socket_async_event_args(bool suppress_execution_context_flow);
         /// @}
 
         /// @name Properties
@@ -114,7 +114,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception An argument was out of range. This exception occurs if the offset parameter is greater than the length of the array in the xtd::net::sockets::socket_async_event_args::buffer property. This exception also occurs if the count parameter is greater than the length of the array in the xtd::net::sockets::socket_async_event_args::buffer property minus the offset parameter.
         /// @remarks The offset and count parameters can't be negative numbers. The combination of the offset and count parameters must be in bounds of the data array in the buffer parameter.
         /// @remarks This method sets the xtd::net::sockets::socket_async_event_args::buffer property to the buffer parameter, the xtd::net::sockets::socket_async_event_args::count property to the count parameter, and the xtd::net::sockets::socket_async_event_args::offset property to the offset parameter.
-        void set_buffer(const std::vector<byte_t>& buffer, size_t count, size_t offset);
+        void set_buffer(const std::vector<byte_t>& buffer, size_t offset, size_t count);
         /// @}
 
         /// @name Events
