@@ -74,12 +74,9 @@ track_bar& track_bar::tick_style(forms::tick_style tick_style) {
 
 track_bar& track_bar::value(int32_t value) {
   if (value_ != value) {
-    if (value > maximum_)
-      value_ = maximum_;
-    if (value < minimum_)
-      value_ = minimum_;
-    else
-      value_ = value;
+    if (value > maximum_) value_ = maximum_;
+    else if (value < minimum_) value_ = minimum_;
+    else value_ = value;
     if (is_handle_created()) native::track_bar::value(handle(), value_);
     on_value_changed(event_args::empty);
   }

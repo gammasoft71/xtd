@@ -232,8 +232,8 @@ namespace xtd {
 
       /// @cond
       void wm_mouse_double_click(message& message);
-      void wm_mouse_down(message& message);
-      void wm_mouse_up(message& message);
+      void wm_mouse_down(const message& message);
+      void wm_mouse_up(const message& message);
       /// @endcond
 
     private:

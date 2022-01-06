@@ -118,7 +118,7 @@ namespace xtd {
       
       class async_result_invoke : public xtd::iasync_result {
       public:
-        async_result_invoke(std::any async_state) : async_state_(async_state) {}
+        explicit async_result_invoke(std::any async_state) : async_state_(async_state) {}
         std::any async_state() const noexcept override {return async_state_;}
         std::shared_mutex& async_mutex() override {return *async_mutex_;}
         bool completed_synchronously() const noexcept override {return false;}
@@ -151,7 +151,7 @@ namespace xtd {
         /// @}
 
         /// @cond
-        control_collection(const base& collection);
+        explicit control_collection(const base& collection);
         control_collection(const control_collection& collection);
         control_collection& operator=(const control_collection& collection);
         control_collection(control_collection&&) = default;
@@ -1836,8 +1836,8 @@ namespace xtd {
       void wm_move(message& message);
       void wm_mouse_wheel(message& message);
       void wm_notify(message& message);
-      void wm_paint(message& message);
-      void wm_erase_background(message& message);
+      void wm_paint(const message& message);
+      void wm_erase_background(const message& message);
       void wm_scroll(message& message);
       void wm_set_focus(message& message);
       void wm_set_text(message& message);

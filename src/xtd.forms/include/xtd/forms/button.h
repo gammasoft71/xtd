@@ -101,8 +101,7 @@ namespace xtd {
       /// @param auto_repeat_delay Auto repeat delay in milliseconds. Default is 300 ms.
       /// @return This button.
       virtual button& auto_repeat_delay(int32_t auto_repeat_delay) {
-        if (data_->auto_repeat_delay != auto_repeat_delay)
-          data_->auto_repeat_delay = auto_repeat_delay;
+        data_->auto_repeat_delay = auto_repeat_delay;
         return *this;
       }
       
@@ -113,8 +112,7 @@ namespace xtd {
       /// @param auto_repeat_delay Auto repeat interval in milliseconds. Default is 100 ms.
       /// @return This button.
       virtual button& auto_repeat_interval(int32_t auto_repeat_interval) {
-        if (data_->auto_repeat_interval != auto_repeat_interval)
-          data_->auto_repeat_interval = auto_repeat_interval;
+        data_->auto_repeat_interval = auto_repeat_interval;
         return *this;
       }
 

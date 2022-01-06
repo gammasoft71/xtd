@@ -47,8 +47,7 @@ check_box& check_box::appearance(forms::appearance appearance) {
 }
 
 check_box& check_box::auto_check(bool auto_check) {
-  if (data_->auto_check != auto_check)
-    data_->auto_check = auto_check;
+  data_->auto_check = auto_check;
   return *this;
 }
 

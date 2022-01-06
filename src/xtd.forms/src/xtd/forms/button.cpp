@@ -24,8 +24,7 @@ button& button::auto_size_mode(forms::auto_size_mode value) {
 }
 
 control& button::dialog_result(forms::dialog_result dialog_result) {
-  if (data_->dialog_result != dialog_result)
-    data_->dialog_result = dialog_result;
+  data_->dialog_result = dialog_result;
   return *this;
 }
 

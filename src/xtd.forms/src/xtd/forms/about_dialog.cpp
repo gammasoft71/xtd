@@ -29,7 +29,7 @@ namespace {
   class credits_item_panel : public horizontal_layout_panel {
   public:
     credits_item_panel() {
-      padding(5);
+      padding(forms::padding {5});
       controls().push_back_range({title_label_, names_label_});
       title_label_.text_align(content_alignment::top_right);
       title_label_.font({title_label_.font(), font_style::bold});

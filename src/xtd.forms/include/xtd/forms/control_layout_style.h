@@ -23,14 +23,14 @@ namespace xtd {
       control_layout_style() = default;
       /// @brief Initialises a new instance of control layout style class with specified size type.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container.
-      control_layout_style(xtd::forms::size_type size_type) : size_type_(size_type) {}
+      explicit control_layout_style(xtd::forms::size_type size_type) : size_type_(size_type) {}
       /// @brief Initialises a new instance of control layout style class with specified expanded.
       /// @param expanded true if control expanded; otherwise false.
-      control_layout_style(bool expanded) : expanded_(expanded) {}
+      explicit control_layout_style(bool expanded) : expanded_(expanded) {}
       /// @brief Initialises a new instance of control layout style class with specified content alignment.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values..
-      control_layout_style(xtd::forms::content_alignment align) : align_(align) {}
+      explicit control_layout_style(xtd::forms::content_alignment align) : align_(align) {}
       /// @brief Initialises a new instance of control layout style class with specified size type and expanded.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container.
       /// @param expanded true if control expanded; otherwise false.

@@ -120,15 +120,14 @@ progress_dialog& progress_dialog::show_remaining_time(bool show_remaining_time) 
 }
 
 progress_dialog& progress_dialog::step(int32_t step) {
-  if (step_ != step)
-    step_ = step;
+  step_ = step;
   return *this;
 }
 
 progress_dialog& progress_dialog::value(int32_t value) {
   if (value_ != value) {
     if (value > maximum_) value_ = maximum_;
-    if (value < minimum_) value_ = minimum_;
+    else if (value < minimum_) value_ = minimum_;
     else value_ = value;
     native::progress_dialog::value(handle_, value_);
   }

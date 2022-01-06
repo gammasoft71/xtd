@@ -36,8 +36,10 @@ forms::create_params font_picker::create_params() const {
 
 void font_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  if (is_handle_created()) native::font_picker::color(handle(), color_);
-  if (is_handle_created()) native::font_picker::font(handle(), font_);
+  if (is_handle_created()) {
+    native::font_picker::color(handle(), color_);
+    native::font_picker::font(handle(), font_);
+  }
 }
 
 void font_picker::on_font_changed(const event_args& e) {

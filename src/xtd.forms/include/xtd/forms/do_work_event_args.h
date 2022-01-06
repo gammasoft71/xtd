@@ -28,7 +28,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the DoWorkEventArgs class.
       /// @param argument Specifies an argument for an asynchronous operation.
-      do_work_event_args(const std::any& argument) : argument_(argument) {}
+      explicit do_work_event_args(const std::any& argument) : argument_(argument) {}
       /// @}
       
       /// @name Properties

@@ -83,8 +83,7 @@ form& form::control_box(bool value) {
 }
 
 form& form::dialog_result(forms::dialog_result value) {
-  if (dialog_result_ != value)
-    dialog_result_ = value;
+  dialog_result_ = value;
   return *this;
 }
 
@@ -166,8 +165,7 @@ form& form::show_icon(bool value) {
 }
 
 form& form::start_position(form_start_position start_position) {
-  if (start_position_ != start_position)
-    start_position_ = start_position;
+  start_position_ = start_position;
   return *this;
 }
 
@@ -274,9 +272,9 @@ forms::dialog_result form::show_dialog() {
   set_state(state::modal, true);
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
-  forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
+  dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
-  result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_dialog(handle())) : dialog_result::cancel;
+  forms::dialog_result result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_dialog(handle())) : dialog_result::cancel;
   application::raise_leave_thread_modal(event_args::empty);
   set_state(state::modal, false);
   return result;
@@ -288,10 +286,9 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   if (owner.handle() != handle()) set_parent(owner.handle());
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
-  forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
+  dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
-  result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_dialog(handle())) : dialog_result::cancel;
-  return result;
+  return is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_dialog(handle())) : dialog_result::cancel;
 }
 
 void form::show_sheet(const iwin32_window& owner) {
@@ -311,15 +308,14 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   if (owner.handle() != handle()) set_parent(owner.handle());
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
-  forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
+  dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
-  result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
-  return result;
+  return is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
 }
 
 forms::create_params form::create_params() const {
   forms::create_params create_params = container_control::create_params();
-  create_params.style(create_params.style() & !WS_CHILD);
+  create_params.style(create_params.style() | ~WS_CHILD);
   static int32_t default_location = 0;
   if (default_location == 0) {
     std::random_device rand;

@@ -139,7 +139,6 @@ void radio_button_renderer::draw_radio_button_macos(graphics g, const rectangle&
 }
 
 void radio_button_renderer::draw_radio_button_macos_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
-  auto background_color = back_color.has_value() ? back_color.value() : color::transparent;
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = control_paint::dark(back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control(), 0.05);
   auto button_color = xtd::forms::theme_colors::current_theme().button_face();
@@ -191,7 +190,7 @@ void radio_button_renderer::draw_radio_button_symbolic_dark(graphics g, const re
   } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot) {
     border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
     button_color = control_paint::light(background_color, .1);
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_hot) {
+  } else if (state == xtd::forms::visual_styles::radio_button_state::checked_hot) {
     border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
     button_color = xtd::forms::theme_colors::current_theme().accent();
   } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {
@@ -225,7 +224,7 @@ void radio_button_renderer::draw_radio_button_symbolic_light(graphics g, const r
   } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot) {
     border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
     button_color = control_paint::dark(background_color, .1);
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_hot) {
+  } else if (state == xtd::forms::visual_styles::radio_button_state::checked_hot) {
     border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
     button_color = xtd::forms::theme_colors::current_theme().accent();
   } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {

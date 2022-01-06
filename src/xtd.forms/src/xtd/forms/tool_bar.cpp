@@ -15,7 +15,7 @@ using namespace xtd::forms;
 
 namespace {
   struct parent_client_size_guard {
-    parent_client_size_guard(control& control) : control_(&control) {
+    explicit parent_client_size_guard(control& control) : control_(&control) {
       client_size_ = control_->parent().value().get().client_size();
     }
     
@@ -64,7 +64,7 @@ tool_bar::tool_bar() {
   data_->image_list.image_size(environment::os_version().is_windows_platform() ? drawing::size {16, 16} : drawing::size {24, 24});
   data_->border_style = forms::border_style::thin_raised; // forms::border_style::fixed_single;
   dock(xtd::forms::dock_style::top);
-  padding(2);
+  padding(forms::padding {2});
   height(data_->image_list.image_size().height() + 10);
   width(data_->image_list.image_size().width() + 10);
   set_can_focus(false);
@@ -234,7 +234,7 @@ void tool_bar::wnd_proc(message& message) {
   else control::wnd_proc(message);
 }
 
-void tool_bar::wm_click(message& message) {
+void tool_bar::wm_click(const message& message) {
   for (size_t index = 0; index < data_->system_tool_bar_item_handles.size(); ++index) {
     if (index < data_->system_tool_bar_item_handles.size() && message.wparam() == data_->system_tool_bar_item_handles[index]) {
       data_->items[index].get().perform_click();
