@@ -347,21 +347,21 @@ inline std::string __format_stringer<char, std::u8string&>(std::u8string& value)
 }
 
 template<>
-inline std::string __format_stringer<char, std::u16string&>(std::u16string& value) {
+inline std::string __format_stringer<char, const std::u16string&>(const std::u16string& value) {
   std::basic_stringstream<char> ss;
   ss << __to_string<char>(value);
   return ss.str();
 }
 
 template<>
-inline std::string __format_stringer<char, std::u32string&>(std::u32string& value) {
+inline std::string __format_stringer<char, const std::u32string&>(const std::u32string& value) {
   std::basic_stringstream<char> ss;
   ss << __to_string<char>(value);
   return ss.str();
 }
 
 template<>
-inline std::string __format_stringer<char, std::wstring&>(std::wstring& value) {
+inline std::string __format_stringer<char, const std::wstring&>(const std::wstring& value) {
   std::basic_stringstream<char> ss;
   ss << __to_string<char>(value);
   return ss.str();
@@ -480,21 +480,21 @@ inline std::wstring __format_stringer<wchar_t, std::u8string&>(std::u8string& va
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, std::u16string&>(std::u16string& value) {
+inline std::wstring __format_stringer<wchar_t, const std::u16string&>(const std::u16string& value) {
   std::basic_stringstream<wchar_t> ss;
   ss << __to_string<wchar_t>(value);
   return ss.str();
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, std::u32string&>(std::u32string& value) {
+inline std::wstring __format_stringer<wchar_t, const std::u32string&>(const std::u32string& value) {
   std::basic_stringstream<wchar_t> ss;
   ss << __to_string<wchar_t>(value);
   return ss.str();
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, std::string&>(std::string& value) {
+inline std::wstring __format_stringer<wchar_t, const std::string&>(const std::string& value) {
   std::basic_stringstream<wchar_t> ss;
   ss << __to_string<wchar_t>(value);
   return ss.str();
