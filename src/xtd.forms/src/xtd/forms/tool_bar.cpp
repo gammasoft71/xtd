@@ -46,13 +46,13 @@ void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
     auto top = e.clip_rectangle().height() / 2;
     auto right = e.clip_rectangle().width() - 4;
     auto bottom = top;
-    e.graphics().draw_line(color, point {left, top}, point {right, bottom});
+    e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
   } else {
     auto left = e.clip_rectangle().width() / 2;
     auto top = 4;
     auto right = left;
     auto bottom = e.clip_rectangle().height() - 4;
-    e.graphics().draw_line(color, point {left, top}, point {right, bottom});
+    e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
   }
 }
 

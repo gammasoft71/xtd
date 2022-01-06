@@ -130,7 +130,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      point (const size& sz);
+      explicit point (const size& sz);
       /// @}
 
       /// @cond

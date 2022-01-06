@@ -35,7 +35,7 @@ namespace xtd {
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
       /// @remarks The brush property determines how the xtd::drawing::pen draws lines. Lines are drawn as if they are filled rectangles, with the characteristics of the specified brush.
       /// @remarks The width property of the new xtd::drawing::pen  is set to 1 (the default).
-      pen(const xtd::drawing::brush& brush);
+      explicit pen(const xtd::drawing::brush& brush);
       
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
@@ -47,7 +47,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::color.
       /// @param color A xtd::drawing::color structure that indicates the color of this xtd::drawing::pen.
       /// @remarks The color property is set to the color specified by the color parameter. The width property is set to 1 (the default).
-      pen(const xtd::drawing::color& color);
+      explicit pen(const xtd::drawing::color& color);
       
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::color.
       /// @param color A xtd::drawing::color structure that indicates the color of this xtd::drawing::pen.

@@ -38,3 +38,17 @@ useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:623
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:630
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:930
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:944
+
+// __________________________________________________________________________________________________________________________
+//                                                                                                                   xtd.dore
+duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/bitmap.h
+duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/solid_brush.h
+duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/texture_brush.h
+duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_brush.h
+duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_brush.h
+
+// To be reviewed...
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/font_family.cpp:28
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp:89
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp:115
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/text/installed_font_collection.cpp:12
