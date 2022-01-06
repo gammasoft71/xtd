@@ -27,7 +27,7 @@ namespace xtd {
     /// @{
     /// @brief Initialise a new xtd::compiler class.
     /// @param compiler_id One of xtd::compiler_id values.
-    compiler(xtd::compiler_id compiler_id) : compiler_id_(compiler_id) {}
+    explicit compiler(xtd::compiler_id compiler_id) : compiler_id_(compiler_id) {}
     /// @}
     
     /// @cond
@@ -65,7 +65,7 @@ namespace xtd {
     /// @{
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    xtd::ustring to_string() const noexcept {return version_string();}
+    xtd::ustring to_string() const noexcept override {return version_string();}
     /// @}
     
   private:

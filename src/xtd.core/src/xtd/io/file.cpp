@@ -217,7 +217,6 @@ ustring file::read_all_text(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!exists(path)) throw file_not_found_exception(csf_);
   
-  vector<ustring> contents;
   stream_reader sr(path);
   return sr.read_to_end();
 }

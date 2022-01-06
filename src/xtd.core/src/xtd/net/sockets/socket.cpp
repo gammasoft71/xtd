@@ -48,22 +48,19 @@ struct socket::data {
   xtd::net::sockets::socket_type socket_type = xtd::net::sockets::socket_type::unknown;
 };
 
-socket::socket() {
-  data_ = std::make_shared<data>();
+socket::socket() : data_{make_shared<data>()} {
 }
-socket::socket(intptr_t handle) {
+socket::socket(intptr_t handle) : data_{make_shared<data>()} {
   debug::write_if(show_debug_socket.enabled(), ustring::format("socket::socket(handle) : socket=[{}]", handle));
   if (handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[handle_invalid]");
     throw argument_exception(csf_);
   }
-  data_ = std::make_shared<data>();
   data_->handle = handle;
   debug::write_line_if(show_debug_socket.enabled(), " succeed");
 }
 
-socket::socket(const socket_information& socket_information) {
-  //data_ = std::make_shared<data>();
+socket::socket(const socket_information& socket_information) /*: data_{make_shared<data>()}*/ {
   if (data_) throw not_implemented_exception(csf_);
 }
 

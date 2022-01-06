@@ -68,7 +68,7 @@ namespace xtd {
       class core_export_ socket : public xtd::object {
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
-          async_result_socket(std::any async_state) : async_state_(async_state) {}
+          explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
           std::any async_state() const noexcept override {return async_state_;}
           std::shared_mutex& async_mutex() override {return async_mutex_;}
           bool completed_synchronously() const noexcept override {return false;}
@@ -83,51 +83,51 @@ namespace xtd {
         
         class async_result_accept : public async_result_socket {
         public:
-          async_result_accept(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_accept(std::any async_state) : async_result_socket(async_state) {}
           std::any socket_;
         };
         
         class async_result_connect : public async_result_socket {
         public:
-          async_result_connect(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_connect(std::any async_state) : async_result_socket(async_state) {}
         };
         
         class async_result_disconnect : public async_result_socket {
         public:
-          async_result_disconnect(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_disconnect(std::any async_state) : async_result_socket(async_state) {}
         };
         
         class async_result_receive : public async_result_socket {
         public:
-          async_result_receive(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_receive(std::any async_state) : async_result_socket(async_state) {}
           size_t number_of_bytes_received_ = 0;
         };
         
         class async_result_receive_from : public async_result_socket {
         public:
-          async_result_receive_from(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_receive_from(std::any async_state) : async_result_socket(async_state) {}
           std::shared_ptr<xtd::net::end_point> end_point_;
           size_t number_of_bytes_received_ = 0;
         };
         
         class async_result_receive_message_from : public async_result_socket {
         public:
-          async_result_receive_message_from(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_receive_message_from(std::any async_state) : async_result_socket(async_state) {}
           std::shared_ptr<xtd::net::end_point> end_point_;
-          xtd::net::sockets::socket_flags socket_flags_;
+          xtd::net::sockets::socket_flags socket_flags_ = xtd::net::sockets::socket_flags::none;
           size_t number_of_bytes_received_ = 0;
           xtd::net::sockets::ip_packet_information ip_packet_information_;
         };
         
         class async_result_send : public async_result_socket {
         public:
-          async_result_send(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_send(std::any async_state) : async_result_socket(async_state) {}
           size_t number_of_bytes_sent_ = 0;
         };
         
         class async_result_send_to : public async_result_socket {
         public:
-          async_result_send_to(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_send_to(std::any async_state) : async_result_socket(async_state) {}
           size_t number_of_bytes_sent_ = 0;
         };
 
@@ -142,11 +142,11 @@ namespace xtd {
         /// @param handle The socket handle for the socket that the xtd::net::sockets::socket object will encapsulate.
         /// @exception xtd::argument_exception The handle is invalid.
         /// @remarks This method populates the xtd::net::sockets::socket instance with data gathered from the supplied intptr_t. Different operating systems provide varying levels of support for querying a socket handle or file descriptor for its properties and configuration. Some of the public APIs on the resulting xtd::net::sockets::socket instance may differ based on operating system, such as xtd::net::sockets::socket::protocol_type and xtd::net::sockets::socket::blocking.
-        socket(intptr_t handle);
+        explicit socket(intptr_t handle);
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class using the specified value returned from xtd::net::sockets::socket::duplicate_and_close.
         /// @param socket_information The socket information returned by xtd::net::sockets::socket::duplicate_and_close.
         /// @remarks If you call the xtd::net::sockets::socket constructor multiple times with the same byte array as the argument for each call, you will create multiple xtd::net::sockets::socket with the same underlying socket. This practice is strongly discouraged.
-        socket(const xtd::net::sockets::socket_information& socket_information);
+        explicit socket(const xtd::net::sockets::socket_information& socket_information);
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class using the specified socket type and protocol. If the operating system supports IPv6, this constructor creates a dual-mode socket; otherwise, it creates an IPv4 socket.
         /// @param socket_type One of the xtd::net::sockets::socket_type values.
         /// @param protocol_type One of the xtd::net::sockets::protocol_type values.

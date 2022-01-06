@@ -29,7 +29,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the event_type_filter class.
       /// @param level A bitwise combination of the xtd::diagnostics::source_levels values that specifies the event type of the messages to trace.
-      event_type_filter(xtd::diagnostics::source_levels level);
+      explicit event_type_filter(xtd::diagnostics::source_levels level);
       /// @}
       
       /// @name Properties

@@ -27,9 +27,7 @@ const xtd::diagnostics::source_switch& trace_source::source_switch() const {
 }
 
 void trace_source::source_switch(const xtd::diagnostics::source_switch& source_switch) {
-  if (source_switch_ != source_switch) {
-    source_switch_ = source_switch;
-  }
+  source_switch_ = source_switch;
 }
 
 void trace_source::close() {

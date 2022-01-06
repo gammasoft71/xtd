@@ -34,7 +34,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::diagnostics::console_trace_listener class with an option to write trace output to the standard output stream or the standard error stream.
       /// @param use_error_stream true to write tracing and debugging output to the standard error stream; false to write tracing and debugging output to the standard output stream.
       /// @remarks This constructor initializes a xtd::diagnostics::console_trace_listener object to write messages to either the std::cout or the std::cerr stream. Its xtd::diagnostics::console_trace_listener::name property is initialized to an empty string ("").
-      console_trace_listener(bool use_error_stream);
+      explicit console_trace_listener(bool use_error_stream);
       
       /// @}
       

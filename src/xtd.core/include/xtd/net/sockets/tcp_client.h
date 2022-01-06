@@ -54,10 +54,10 @@ namespace xtd {
         /// @param local_end_point The xtd::net::ip_end_point to which you bind the TCP xtd::net::sockets::socket.
         /// @remarks This constructor creates a new xtd::net::sockets::tcp_client and binds it to the xtd::net::ip_end_point specified by the local_end_point parameter. Before you call this constructor, you must create an xtd::net::ip_end_point using the IP address and port number from which you intend to send and receive data. You do not need to specify a local IP address and port number before connecting and communicating. If you create a xtd::net::sockets::tcp_client using any other constructor, the underlying service provider will assign the most appropriate local IP address and port number.
         /// @remarks You must call the xtd::net::sockets::tcp_client::connect method before sending and receiving data.
-        tcp_client(const xtd::net::ip_end_point& end_point);
+        explicit tcp_client(const xtd::net::ip_end_point& end_point);
         /// @brief The xtd::net::sockets::address_family of the IP protocol.
         /// @exception xtd::argument_exception The family parameter is not equal to xtd::net::sockets::address_family::inter_network -or- The family parameter is not equal to xtd::net::sockets::address_family::inter_network_v6.
-        tcp_client(xtd::net::sockets::address_family address_family);
+        explicit tcp_client(xtd::net::sockets::address_family address_family);
         /// @brief Initializes a new instance of the xtd::net::sockets::tcp_client class and connects to the specified port on the specified host.
         /// @param hostname The DNS name of the remote host to which you intend to connect.
         /// @param port The port number of the remote host to which you intend to connect.
@@ -350,7 +350,7 @@ namespace xtd {
         
       private:
         friend tcp_listener;
-        tcp_client(const xtd::net::sockets::socket& socket);
+        explicit tcp_client(const xtd::net::sockets::socket& socket);
         struct data;
         std::shared_ptr<data> data_;
       };

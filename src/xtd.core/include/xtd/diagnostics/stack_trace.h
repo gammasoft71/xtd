@@ -135,7 +135,7 @@ namespace xtd {
       /// @param exception The exception object from which to construct the stack trace.
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread, and does not contain file name, line number, or column information.
       /// @remarks The resulting stack trace describes the stack at the time of the exception.
-      stack_trace(const std::exception& exception);
+      explicit stack_trace(const std::exception& exception);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class from the caller's frame, skipping the specified number of frames.
       /// @param skip_frames The number of frames up the stack from which to start the trace.
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread, and does not contain file name, line number, or column information.
@@ -321,7 +321,7 @@ namespace xtd {
       /// stack_trace st(fr);
       /// debug::write_line(ustring::format("{}\n{}", fr.get_method(), st.to_string());
       /// @endcode
-      xtd::ustring to_string() const noexcept;
+      xtd::ustring to_string() const noexcept override;
       /// @}
       
       /// @cond

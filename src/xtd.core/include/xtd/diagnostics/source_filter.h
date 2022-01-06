@@ -30,7 +30,7 @@ namespace xtd {
       /// @{      
       /// @brief Initializes a new instance of the xtd::diagnostics::source_filter class, specifying the name of the trace source.
       /// @param source The name of the trace source.
-      source_filter(const xtd::ustring& source);
+      explicit source_filter(const xtd::ustring& source);
       /// @}
 
       /// @name Properties
