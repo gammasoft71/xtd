@@ -851,7 +851,7 @@ std::vector<ustring> ustring::split(const std::vector<value_type>& separators, s
   std::vector<ustring> list;
   ustring sub_string;
   std::vector<value_type> split_char_separators = separators.size() == 0 ? std::vector<value_type> {9, 10, 11, 12, 13, 32} : separators;
-  for (const_iterator it = begin(); it != end(); it++) {
+  for (const_iterator it = begin(); it != end(); ++it) {
     bool is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
     if (!is_separator) sub_string.append(ustring(1, *it));
     if ((static_cast<size_t>(it - begin()) == length() - 1 || is_separator) && (sub_string.length() > 0 || (sub_string.length() == 0 && options != string_split_options::remove_empty_entries))) {
