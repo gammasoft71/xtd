@@ -36,6 +36,8 @@ namespace xtd {
       explicit stream_reader(std::istream& stream);
       /// @}
       /// @cond
+      stream_reader(const stream_reader&) = delete;
+      stream_reader& operator=(const stream_reader&) = delete;
       ~stream_reader();
       /// @endcond
       

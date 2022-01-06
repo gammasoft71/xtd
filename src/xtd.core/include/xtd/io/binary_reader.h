@@ -51,6 +51,8 @@ namespace xtd {
       explicit binary_reader(std::istream& stream);
       /// @}
       /// @cond
+      binary_reader(const binary_reader&) = delete;
+      binary_reader& operator=(const binary_reader&) = delete;
       ~binary_reader();
       /// @endcond
 

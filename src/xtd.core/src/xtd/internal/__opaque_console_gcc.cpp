@@ -175,12 +175,12 @@ namespace {
         input_list result;
         std::string::const_iterator iterator = value.begin();
         while (iterator != value.end()) {
-          if (*iterator == '^' &&  *(iterator + 1) == '[') {
+          if (*iterator == '^' && (iterator + 1) != value.end() && *(iterator + 1) == '[') {
             result.chars.push_back(27);
-            iterator++;
+            ++iterator;
           } else
             result.chars.push_back(*iterator);
-          iterator++;
+          ++iterator;
         }
         return result;
       }
@@ -250,12 +250,12 @@ namespace {
     static std::string to_string(bool b) {return b ? "true" : "false";}
     
     static int to_key(input_list& inputs) {
-      int key = 0;
+      int result = 0;
       int index = 1;
       for (auto c : inputs)
-        key |= (c & 0xFF) << (8 * index--);
+        result |= (c & 0xFF) << (8 * index--);
       inputs.clear();
-      return key;
+      return result;
     }
     
     static key_info to_key_info(int key) {

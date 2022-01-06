@@ -52,7 +52,7 @@ namespace xtd {
         /// @brief Creates a new instance of the network_stream class for the specified xtd::net::sockets::socket.
         /// @param socket The xtd::net::sockets::socket that the xtd::net::sockets::network_stream will use to send and receive data.
         /// @remarks The xtd::net::sockets::network_stream is created with read/write access to the specified xtd::net::sockets::socket. The xtd::net::sockets::network_stream does not own the underlying xtd::net::sockets::socket, so calling the close method does not close the xtd::net::sockets::socket.
-        network_stream(const xtd::net::sockets::socket& socket);
+        explicit network_stream(const xtd::net::sockets::socket& socket);
 
         /// @brief Initializes a new instance of the xtd::net::sockets::network_stream class for the specified xtd::net::sockets::socket with the specified xtd::net::sockets::socket ownership.
         /// @param socket The xtd::net::sockets::socket that the xtd::net::sockets::network_stream will use to send and receive data.
