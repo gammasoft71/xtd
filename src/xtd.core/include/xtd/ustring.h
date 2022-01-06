@@ -709,16 +709,17 @@ namespace xtd {
       ustring result;
       size_t index = 0;
       std::vector<__format_information<char>> formats;
-      typename ustring::const_iterator begin_format_iterator =  fmt.cend();
-      typename ustring::const_iterator end_format_iterator =  fmt.cend();
-      for (typename ustring::const_iterator iterator = fmt.cbegin(); iterator != fmt.cend(); ++iterator) {
+      auto begin_format_iterator =  fmt.end();
+      auto end_format_iterator =  fmt.end();
+      for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
         if (*iterator == '{') {
-          ++iterator;
+          if (++iterator == fmt.end())
+            __throw_ustring_format_exception_open_bracket();
           if (*iterator == '{')
             result += *iterator;
           else {
             begin_format_iterator = iterator;
-            while (*iterator != '}' && iterator != fmt.end()) ++iterator;
+            while (iterator != fmt.end() && *iterator != '}') ++iterator;
             if (iterator == fmt.end())
               __throw_ustring_format_exception_open_bracket();
             end_format_iterator = iterator;
@@ -762,7 +763,7 @@ namespace xtd {
             formats.push_back(fi);
           }
         } else if (*iterator == '}') {
-          if (++iterator == fmt.cend())
+          if (++iterator == fmt.end())
             __throw_ustring_format_exception_close_bracket();
           if (*iterator != '}')
             __throw_ustring_format_exception_close_bracket();

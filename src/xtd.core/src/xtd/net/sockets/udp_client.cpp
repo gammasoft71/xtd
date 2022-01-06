@@ -12,10 +12,10 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 
 struct udp_client::data {
-  static constexpr const size_t max_udp_size = 0x10000;
+  //static constexpr const size_t max_udp_size = 0x10000;
   socket client_socket {address_family::inter_network, socket_type::dgram, protocol_type::udp};
   bool active = false;
-  vector<byte_t> buffer = vector<byte_t>(max_udp_size);
+  vector<byte_t> buffer = vector<byte_t>(0x10000);
 };
 
 udp_client::udp_client() : data_{make_shared<data>()} {

@@ -127,7 +127,7 @@ void tcp_listener::start(size_t backlog) {
       data_->server_socket.listen(backlog);
     } catch (const socket_exception& e) {
       stop();
-      throw e;
+      throw socket_exception(e);
     }
   }
   data_->active = true;

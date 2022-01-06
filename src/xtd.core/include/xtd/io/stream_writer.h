@@ -46,6 +46,8 @@ namespace xtd {
       stream_writer(std::ostream& stream, bool append);
       /// @}
       /// @cond
+      stream_writer(const stream_writer&) = delete;
+      stream_writer& operator=(const stream_writer&) = delete;
       ~stream_writer();
       /// @endcond
       

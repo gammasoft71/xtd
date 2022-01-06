@@ -68,8 +68,7 @@ socket::socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::pr
   if (data_->address_family == address_family::inter_network_v6) dual_mode(true);
 }
 
-socket::socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
-  data_ = std::make_shared<data>();
+socket::socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) : data_{make_shared<data>()} {
   data_->address_family = address_family;
   data_->socket_type = socket_type;
   data_->protocol_type = protocol_type;
@@ -489,7 +488,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<byte_t>
   
   std::shared_ptr<async_result_send> ar = make_shared<async_result_send>(state);
   ar->async_mutex().lock();
-  thread operation_thread([](socket s, const std::vector<byte_t> buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  thread operation_thread([](socket s, const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send(buffer, offset, size, socket_flags, ar->error_code_);
       ar->is_completed_ = true;
@@ -909,7 +908,7 @@ void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
   if (native::socket::set_socket_linger_option(data_->handle, option_value.enabled(), option_value.linger_time()) != 0) throw socket_exception(get_last_error_(), csf_);
 }
 
-void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, xtd::net::sockets::multicast_option option_value) {
+void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::multicast_option& option_value) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   uint32_t multicast_address = option_value.group().address_;
@@ -917,7 +916,7 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_opti
   if (native::socket::set_socket_multicast_option(data_->handle, static_cast<int32_t>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_(), csf_);
 }
 
-void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, xtd::net::sockets::ip_v6_multicast_option option_value) {
+void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::ip_v6_multicast_option& option_value) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   if (native::socket::set_socket_ip_v6_multicast_option(data_->handle, static_cast<int32_t>(socket_option_name), option_value.group().get_address_bytes(), option_value.interface_index()) != 0) throw socket_exception(get_last_error_(), csf_);

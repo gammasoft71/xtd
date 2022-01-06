@@ -2,4 +2,8 @@
 constParameter:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/convert_pointer.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/delegate.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h
+unreadVariable:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h:712
+unreadVariable:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h:713
+StlMissingComparison:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h:714
 unusedPrivateFunction:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace.h
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h:212
