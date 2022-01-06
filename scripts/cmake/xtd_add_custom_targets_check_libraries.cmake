@@ -23,10 +23,10 @@ if (XTD_ADD_COMMAND_CPPCHECK)
   endif()
   
   # cppcheck All
-  #list(APPEND CPPCHECK_ARGS_ALL ${CPPCHECK_ARGS} ${CMAKE_SOURCE_DIR}/src/xtd/src ${CMAKE_SOURCE_DIR}/src/xtd.core/src ${CMAKE_SOURCE_DIR}/src/xtd.drawing/src ${CMAKE_SOURCE_DIR}/src/xtd.forms/src ${CMAKE_SOURCE_DIR}/src/xtd.System.tunit/src)
-  #configure_file(${CMAKE_SOURCE_DIR}/.cppcheck ${CMAKE_BINARY_DIR}/cppcheck_false_positive @ONLY)
-  #add_custom_target(check COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_ALL} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
-  #set_target_properties(check PROPERTIES FOLDER commands)
+  list(APPEND CPPCHECK_ARGS_ALL ${CPPCHECK_ARGS} ${CMAKE_SOURCE_DIR}/src)
+  configure_file(${CMAKE_SOURCE_DIR}/.cppcheck ${CMAKE_BINARY_DIR}/cppcheck_false_positive @ONLY)
+  add_custom_target(check COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_ALL} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
+  set_target_properties(check PROPERTIES FOLDER commands)
   
   # cppcheck xtd
   list(APPEND CPPCHECK_ARGS_XTD ${CPPCHECK_ARGS} ${CMAKE_SOURCE_DIR}/src/xtd/src)
@@ -43,12 +43,12 @@ if (XTD_ADD_COMMAND_CPPCHECK)
   # cppcheck xtd.drawing
   list(APPEND CPPCHECK_ARGS_XTD_DRAWING ${CPPCHECK_ARGS} ${CMAKE_SOURCE_DIR}/src/xtd.drawing/src)
   configure_file(${CMAKE_SOURCE_DIR}/.cppcheck ${CMAKE_BINARY_DIR}/cppcheck_false_positive @ONLY)
-  add_custom_target(check.xtd.drawing COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_XTD_CORE} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
+  add_custom_target(check.xtd.drawing COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_XTD_DRAWING} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
   set_target_properties(check.xtd.drawing PROPERTIES FOLDER commands)
   
   # cppcheck xtd.forms
   list(APPEND CPPCHECK_ARGS_XTD_FORMS ${CPPCHECK_ARGS} ${CMAKE_SOURCE_DIR}/src/xtd.forms/src)
   configure_file(${CMAKE_SOURCE_DIR}/.cppcheck ${CMAKE_BINARY_DIR}/cppcheck_false_positive @ONLY)
-  add_custom_target(check.xtd.forms COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_XTD_CORE} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
+  add_custom_target(check.xtd.forms COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_XTD_FORMS} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
   set_target_properties(check.xtd.forms PROPERTIES FOLDER commands)
   endif ()

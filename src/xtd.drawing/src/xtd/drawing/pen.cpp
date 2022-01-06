@@ -52,9 +52,7 @@ pen::~pen() {
 }
 
 pen& pen::alignment(drawing2d::pen_alignment alignment) {
-  if (data_->alignment_ != alignment) {
-    data_->alignment_ = alignment;
-  }
+  data_->alignment_ = alignment;
   return *this;
 }
 
@@ -111,9 +109,7 @@ pen& pen::dash_style(drawing::dash_style dash_style) {
 }
 
 pen& pen::type(drawing2d::pen_type type) {
-  if (data_->type_ != type) {
     data_->type_ = type;
-  }
   return *this;
 }
 

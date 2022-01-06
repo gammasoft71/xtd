@@ -17,8 +17,7 @@ texture_brush& texture_brush::image(const drawing::image& image) {
   return *this;
 }
 
-texture_brush::texture_brush(const texture_brush& value) : brush(value) {
-  data_ = value.data_;
+texture_brush::texture_brush(const texture_brush& value) : brush(value), data_(value.data_) {
 }
 
 texture_brush& texture_brush::operator=(const texture_brush& value) {

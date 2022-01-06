@@ -451,7 +451,7 @@ main_form::main_form() {
   previous_button_.parent(*this);
   previous_button_.text("&Back");
   previous_button_.visible(false);
-  previous_button_.location(client_size() - xtd::drawing::size {215, 75});
+  previous_button_.location(point(client_size() - xtd::drawing::size {215, 75}));
   previous_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   previous_button_.click += [&] {
     if (open_xtd_examples_panel_.visible()) {
@@ -490,7 +490,7 @@ main_form::main_form() {
   next_button_.text("&Next");
   next_button_.visible(false);
   next_button_.enabled(false);
-  next_button_.location(client_size() - xtd::drawing::size {125, 75});
+  next_button_.location(point(client_size() - xtd::drawing::size {125, 75}));
   next_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   next_button_.click += [&] {
     if (create_panel_.visible()) {

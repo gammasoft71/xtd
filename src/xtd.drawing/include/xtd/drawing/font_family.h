@@ -37,11 +37,11 @@ namespace xtd {
       /// @brief Initializes a new xtd::drawing::font_family with the specified name.
       /// @param name The name of the new xtd::drawing::font_family.
       /// @exception std::invalid_argument name is an empty string ("") - or - name specifies a font that is not installed on the computer running the application.
-      font_family(const xtd::ustring& name);
+      explicit font_family(const xtd::ustring& name);
 
       /// @brief Initializes a new xtd::drawing::font_family from the specified generic font family.
       /// @param generic_font_families The xtd::drawing::text::generic_font_families from which to create the new font_family.
-      font_family(text::generic_font_families generic_font_families);
+      explicit font_family(text::generic_font_families generic_font_families);
 
       /// @brief Initializes a new xtd::drawing::font_family in the specified font_collection with the specified name.
       /// @param name The name of the new xtd::drawing::font_family.
