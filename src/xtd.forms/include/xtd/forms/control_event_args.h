@@ -32,7 +32,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the control_event_args class for the specified control.
       /// @param control The control to store in this event.
-      control_event_args(const forms::control& control) : control_(&control) {}
+      explicit control_event_args(const forms::control& control) : control_(&control) {}
       /// @}
       
       /// @name Properties

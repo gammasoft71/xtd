@@ -48,8 +48,7 @@ progress_bar& progress_bar::orientation(forms::orientation orientation) {
 }
 
 progress_bar& progress_bar::step(int32_t step) {
-  if (step_ != step)
-    step_ = step;
+  step_ = step;
   return *this;
 }
 
@@ -65,12 +64,9 @@ progress_bar& progress_bar::style(progress_bar_style style) {
 
 progress_bar& progress_bar::value(int32_t value) {
   if (value_ != value) {
-    if (value > maximum_)
-      value_ = maximum_;
-    if (value < minimum_)
-      value_ = minimum_;
-    else
-      value_ = value;
+    if (value > maximum_) value_ = maximum_;
+    else if (value < minimum_) value_ = minimum_;
+    else value_ = value;
     if (is_handle_created()) native::progress_bar::value(handle(), value_);
   }
   return *this;

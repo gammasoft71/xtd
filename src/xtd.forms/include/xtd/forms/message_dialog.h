@@ -50,8 +50,7 @@ namespace xtd {
       /// @param buttons One of the xtd::forms::message_dialog_buttons values that specifies which buttons to display in the message dialog.
       /// @return Current message dialog.
       message_dialog& buttons(xtd::forms::message_dialog_buttons buttons) {
-        if (buttons_ != buttons)
-          buttons_ = buttons;
+        buttons_ = buttons;
         return *this;
       }
       
@@ -62,8 +61,7 @@ namespace xtd {
       /// @param default_button One of the xtd::forms::message_dialog_default_button values that specifies the default button for the message dialog.
       /// @return Current message dialog.
       message_dialog& default_button(xtd::forms::message_dialog_default_button default_button) {
-        if (default_button_ != default_button)
-          default_button_ = default_button;
+        default_button_ = default_button;
         return *this;
       }
       
@@ -74,8 +72,7 @@ namespace xtd {
       /// @param display_help_button true to show the Help button; otherwise, false. The default is false.
       /// @return Current message dialog.
       message_dialog& display_help_button(bool display_help_button) {
-        if (display_help_button_ != display_help_button)
-          display_help_button_ = display_help_button;
+        display_help_button_ = display_help_button;
         return *this;
       }
 
@@ -90,8 +87,7 @@ namespace xtd {
       /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
       /// @return Current message dialog.
       message_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
-        if (dialog_style_ != dialog_style)
-          dialog_style_ = dialog_style;
+        dialog_style_ = dialog_style;
         return *this;
       }
       
@@ -102,8 +98,7 @@ namespace xtd {
       /// @param icon One of the xtd::forms::message_dialog_icon values that specifies which icon to display in the message dialog.
       /// @return Current message dialog.
       message_dialog& icon(xtd::forms::message_dialog_icon icon) {
-        if (icon_ != icon)
-          icon_ = icon;
+        icon_ = icon;
         return *this;
       }
 
@@ -114,8 +109,7 @@ namespace xtd {
       /// @param options One of the xtd::forms::message_dialog_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       /// @return Current message dialog.
       message_dialog& options(xtd::forms::message_dialog_options options) {
-        if (options_ != options)
-          options_ = options;
+        options_ = options;
         return *this;
       }
       
@@ -126,8 +120,7 @@ namespace xtd {
       /// @param message The text message.
       /// @return Current message_dialog instance.
       message_dialog& message(const xtd::ustring& message) {
-        if (message_ != message)
-          message_ = message;
+        message_ = message;
         return *this;
       }
       
@@ -138,8 +131,7 @@ namespace xtd {
       /// @param text The new dialog caption text.
       /// @return Current message_dialog instance.
       message_dialog& text(const xtd::ustring& text) {
-        if (text_ != text)
-          text_ = text;
+        text_ = text;
         return *this;
       }
       /// @}

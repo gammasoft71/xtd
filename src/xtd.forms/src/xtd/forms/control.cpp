@@ -486,8 +486,7 @@ forms::padding control::margin() const {
 }
 
 control& control::margin(const forms::padding& margin) {
-  if (data_->margin != margin)
-    data_->margin = margin;
+  data_->margin = margin;
   return *this;
 }
 
@@ -565,8 +564,7 @@ forms::padding control::padding() const {
 }
 
 control& control::padding(const forms::padding& padding) {
-  if (data_->padding != padding)
-    data_->padding = padding;
+  data_->padding = padding;
   return *this;
 }
 
@@ -581,7 +579,7 @@ control& control::parent(const control& parent) {
     else
       on_parent_changed(event_args::empty);
     if (parent.data_->handle) const_cast<control&>(parent).data_->controls.push_back(*this);
-  } else if (parent.data_->handle == 0 && data_->parent == 0)
+  } else if (parent.data_->handle == 0)
     const_cast<control&>(parent).data_->controls.push_back(*this);
   return *this;
 }
@@ -1610,13 +1608,13 @@ void control::wm_notify(message& message) {
   }
 }
 
-void control::wm_paint(message& message) {
+void control::wm_paint(const message& message) {
   paint_event_args e(*this, data_->client_rectangle);
   e.message_ = message;
   on_paint(e);
 }
 
-void control::wm_erase_background(message& message) {
+void control::wm_erase_background(const message& message) {
   paint_event_args e(*this, data_->client_rectangle);
   e.message_ = message;
   on_paint_background(e);
