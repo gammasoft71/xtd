@@ -59,7 +59,7 @@ public:
   virtual ~StackWalkerAdapter () {}
   
 protected:
-  void OnCallstackEntry override (CallstackEntryType /*eType*/, CallstackEntry &entry) {
+  void OnCallstackEntry(CallstackEntryType /*eType*/, CallstackEntry &entry) override {
     if (entry.lineFileName[0] == 0)
       discard_idx = -1; // skip all entries from now on
     
@@ -76,16 +76,16 @@ protected:
       stack.push_back(e);
     }
   }
-  void OnOutput override (LPCSTR /*szText*/) {
+  void OnOutput(LPCSTR /*szText*/) override {
     // discard (should never be called)
   }
-  void OnSymInit override (LPCSTR /*szSearchPath*/, DWORD /*symOptions*/, LPCSTR /*szUserName*/) {
+  void OnSymInit(LPCSTR /*szSearchPath*/, DWORD /*symOptions*/, LPCSTR /*szUserName*/) override {
     // discard
   }
-  void OnLoadModule override (LPCSTR /*img*/, LPCSTR /*mod*/, DWORD64 /*baseAddr*/, DWORD /*size*/, DWORD /*result*/, LPCSTR /*symType*/, LPCSTR /*pdbName*/, ULONGLONG /*fileVersion*/) {
+  void OnLoadModule(LPCSTR /*img*/, LPCSTR /*mod*/, DWORD64 /*baseAddr*/, DWORD /*size*/, DWORD /*result*/, LPCSTR /*symType*/, LPCSTR /*pdbName*/, ULONGLONG /*fileVersion*/) override {
     // discard
   }
-  void OnDbgHelpErr override (LPCSTR /*szFuncName*/, DWORD /*gle*/, DWORD64 /*addr*/) {
+  void OnDbgHelpErr(LPCSTR /*szFuncName*/, DWORD /*gle*/, DWORD64 /*addr*/) override {
     // discard
   }
   
