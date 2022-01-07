@@ -320,7 +320,7 @@ namespace xtd {
         /// @param first The last iterator range which the content will be erased.
         iterator erase(iterator first, iterator last) {
           iterator result = end();
-          for (iterator it = first; it <= last; it++)
+          for (iterator it = first; it <= last; ++it)
             result = erase(it);
           return result;
         }
@@ -329,7 +329,7 @@ namespace xtd {
         /// @param first The last iterator range which the content will be erased.
         iterator erase(const_iterator first, const_iterator last) {
           iterator result = this->bend();
-          for (const_iterator it = first; it <= last; it++)
+          for (const_iterator it = first; it <= last; ++it)
             result = erase(it);
           return result;
         }

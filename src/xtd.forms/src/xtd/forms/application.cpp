@@ -2,8 +2,8 @@
 #if !defined(_WIN32)
 #include <unistd.h>
 #endif
-#include <chrono>
 #include <xtd/io/path.h>
+#include <xtd/date_time.h>
 #include <xtd/environment.h>
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/literals.h>
@@ -19,6 +19,7 @@
 #include "../../../include/xtd/forms/theme.h"
 
 using namespace std;
+using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -381,9 +382,9 @@ void application::wm_activate_app(message& message) {
 }
 
 void application::wm_enter_idle(message& message) {
-  static chrono::high_resolution_clock::time_point last_idle_time;
-  if (chrono::high_resolution_clock::now() - last_idle_time >= chrono::milliseconds(100)) {
-    last_idle_time = chrono::high_resolution_clock::now();
+  static date_time last_idle_time;
+  if (duration_cast<milliseconds>((date_time::now() - last_idle_time).ticks()) >= chrono::milliseconds(100)) {
+    last_idle_time = date_time::now();
     application::idle(event_args::empty);
   }
   if (!application::idle.is_empty()) native::application::do_idle();

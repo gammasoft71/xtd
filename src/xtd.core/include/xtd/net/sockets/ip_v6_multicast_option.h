@@ -35,7 +35,7 @@ namespace xtd {
         ip_v6_multicast_option() = default;
         /// @brief Initializes a new version of the xtd::net::sockets::ip_v6_multicast_option class for the specified IP multicast group.
         /// @param group The xtd::net::ip_address of the multicast group.
-        ip_v6_multicast_option(const xtd::net::ip_address& group);
+        explicit ip_v6_multicast_option(const xtd::net::ip_address& group);
         /// @brief Initializes a new instance of the xtd::net::sockets::ip_v6_multicast_option class with the specified IP multicast group and the local interface address.
         /// @param group The xtd::net::ip_address of the multicast group.
         /// @param interface_index The address of the interface.

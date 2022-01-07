@@ -50,15 +50,15 @@ namespace xtd {
       
       /// @brief Initialize a new instance of emoticon class with specified codepoints.
       /// @param codepoints An initializer list of char32_t that represent the emoticon.
-      emoticon(std::initializer_list<char32_t> codepoints) : codepoints_(codepoints) {}
+      explicit emoticon(std::initializer_list<char32_t> codepoints) : codepoints_(codepoints) {}
       
       /// @brief Initialize a new instance of emoticon class with specified codepoints.
       /// @param codepoints An array of char32_t that represent the emoticon.
-      emoticon(const std::vector<char32_t>& codepoints) : codepoints_(codepoints) {}
+      explicit emoticon(const std::vector<char32_t>& codepoints) : codepoints_(codepoints) {}
       
       /// @brief Initialize a new instance of emoticon class with specified codepoint.
       /// @param codepoints A char32_t that represent the emoticon.
-      emoticon(char32_t codepoint) : codepoints_({codepoint}) {}
+      explicit emoticon(char32_t codepoint) : codepoints_({codepoint}) {}
       /// @}
       
       /// @cond
@@ -78,19 +78,19 @@ namespace xtd {
       emoticon(const xtd::ustring& name, type_t codepoint) : name_(name), codepoints_({static_cast<char32_t>(codepoint)}) {}
       
       template<typename type_t>
-      emoticon(std::initializer_list<type_t> codepoints) {
+      explicit emoticon(std::initializer_list<type_t> codepoints) {
         for(auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       
       template<typename type_t>
-      emoticon(const std::vector<type_t>& codepoints) {
+      explicit emoticon(const std::vector<type_t>& codepoints) {
         for(auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
 
       template<typename type_t>
-      emoticon(type_t codepoint) : codepoints_({static_cast<char32_t>(codepoint)}) {}
+      explicit emoticon(type_t codepoint) : codepoints_({static_cast<char32_t>(codepoint)}) {}
 
       emoticon() = default;
       emoticon(const emoticon&) = default;

@@ -39,8 +39,7 @@ namespace {
 }
 
 light_button& light_button::auto_check(bool auto_check) {
-  if (data_->auto_check != auto_check)
-    data_->auto_check = auto_check;
+  data_->auto_check = auto_check;
   return *this;
 }
 
@@ -160,7 +159,7 @@ void light_button::on_paint(paint_event_args& e) {
     if (data_->light_align == content_alignment::top_right || data_->light_align == content_alignment::top_center || data_->light_align == content_alignment::top_left) top = e.clip_rectangle().top() + 5;
     else if (data_->light_align == content_alignment::bottom_right || data_->light_align == content_alignment::bottom_center || data_->light_align == content_alignment::bottom_left) top = e.clip_rectangle().bottom() - 20;
     e.graphics().fill_rounded_rectangle(drawing::solid_brush(light_color), drawing::rectangle {left, top, 10, 16}, 2);
-    e.graphics().draw_rounded_rectangle(drawing::solid_brush(drawing::color::dark(back_color())), drawing::rectangle {left, top, 9, 15}, 2);
+    e.graphics().draw_rounded_rectangle(drawing::pen(drawing::solid_brush(drawing::color::dark(back_color()))), drawing::rectangle {left, top, 9, 15}, 2);
   }
   button_base::on_paint(e);
 }

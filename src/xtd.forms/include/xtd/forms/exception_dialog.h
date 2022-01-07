@@ -73,8 +73,7 @@ namespace xtd {
       /// @param text The new dialog caption text.
       /// @return Current input_dialog instance.
       exception_dialog& text(const xtd::ustring& text) {
-        if (text_ != text)
-          text_ = text;
+        text_ = text;
         return *this;
       }
       /// @}

@@ -36,7 +36,7 @@ namespace xtd {
       /// @param text The caption for the menu item.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      menu_item(const xtd::ustring& text);
+      explicit menu_item(const xtd::ustring& text);
       /// @brief Initializes a new instance of the class with a specified caption, and associated shortcut key for the menu item.
       /// @param text The caption for the menu item.
       /// @param shortcut One of the xtd::forms::shortcut values.

@@ -40,7 +40,7 @@ namespace xtd {
       class core_export_ udp_client : public xtd::object {
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
-          async_result_socket(std::any async_state) : async_state_(async_state) {}
+          explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
           std::any async_state() const noexcept override {return async_state_;}
           std::shared_mutex& async_mutex() override {return async_mutex_;}
           bool completed_synchronously() const noexcept override {return false;}
@@ -55,15 +55,15 @@ namespace xtd {
 
         class async_result_receive : public async_result_socket {
         public:
-          async_result_receive(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_receive(std::any async_state) : async_result_socket(async_state) {}
           std::vector<byte_t> buffer_;
           xtd::net::ip_end_point remote_end_point_;
         };
 
         class async_result_send : public async_result_socket {
         public:
-          async_result_send(std::any async_state) : async_result_socket(async_state) {}
-          size_t number_of_bytes_sent_;
+          explicit async_result_send(std::any async_state) : async_result_socket(async_state) {}
+          size_t number_of_bytes_sent_ = 0;
         };
 
       public:

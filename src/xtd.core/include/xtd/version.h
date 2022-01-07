@@ -114,7 +114,7 @@ namespace xtd {
     /// @remarks The format of the version number is as follows. Optional components are shown in square brackets ('[' and ']'):
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// @remarks All defined components must be integers greater than or equal to 0. For example, if the major number is 6, the minor number is 2, the build number is 1, and the revision number is 3, then version should be "6.2.1.3".
-    version(const xtd::ustring& version);
+    explicit version(const xtd::ustring& version);
     /// @brief Initializes a new instance of the xtd::version class using the specified major and minor values.
     /// @param major The major version number.
     /// @param minor The minor version number.

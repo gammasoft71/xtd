@@ -59,7 +59,7 @@ namespace xtd {
       /// When the properties are first retrieved, xtd::io::file_info calls the xtd::io::file_info::refresh method and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       /// @include file_info.cpp
       /// @remarks You can specify either the fully qualified or the relative file name, but the security check gets the fully qualified name.
-      file_info(const xtd::ustring& file_name);
+      explicit file_info(const xtd::ustring& file_name);
       /// @}
       
       /// @name Properties

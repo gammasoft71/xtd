@@ -28,7 +28,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the stream_reader class for the specified file name.
       /// @param path The complete file path to be read.
-      string_reader(const xtd::ustring& input);
+      explicit string_reader(const xtd::ustring& input);
       /// @}
       
       /// @name Methods

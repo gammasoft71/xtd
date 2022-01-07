@@ -18,7 +18,7 @@ namespace {
   map<intptr_t, tuple<intptr_t, intptr_t, wstring, wstring, wstring, wstring>> process_infos;
   class file_handle_streambuf : public std::streambuf {
   public:
-    file_handle_streambuf(HANDLE file_handle) : file_handle_(file_handle) {}
+    explicit file_handle_streambuf(HANDLE file_handle) : file_handle_(file_handle) {}
     ~file_handle_streambuf() { CloseHandle(file_handle_); }
 
   protected:
@@ -48,7 +48,7 @@ namespace {
 
   class process_istream : public std::istream {
   public:
-    process_istream(HANDLE file_handle) : std::istream(&stream_buf_), stream_buf_(file_handle) {}
+    explicit process_istream(HANDLE file_handle) : std::istream(&stream_buf_), stream_buf_(file_handle) {}
 
   private:
     file_handle_streambuf stream_buf_;
@@ -56,7 +56,7 @@ namespace {
 
   class process_ostream : public std::ostream {
   public:
-    process_ostream(HANDLE file_handle) : std::ostream(&stream_buf_), stream_buf_(file_handle) {}
+    explicit process_ostream(HANDLE file_handle) : std::ostream(&stream_buf_), stream_buf_(file_handle) {}
 
   private:
     file_handle_streambuf stream_buf_;

@@ -79,12 +79,12 @@ namespace console_application1 {
     int threshold() const {return threshold_;}
     void threshold(int value) {threshold_ = value;}
     
-    std::chrono::system_clock::time_point time_reached() const {return time_reached_;}
-    void time_reached(std::chrono::system_clock::time_point value) {time_reached_ = value;}
+    const date_time& time_reached() const {return time_reached_;}
+    void time_reached(const datte_time& value) {time_reached_ = value;}
     
   private:
     int threshold_ = 0;
-    std::chrono::system_clock::time_point time_reached_;
+    date_time time_reached_;
   };
 
   class counter : public object {
@@ -102,7 +102,7 @@ namespace console_application1 {
       if (total >= threshold) {
         threshold_reached_event_args args;
         args.threshold(threshold);
-        args.time_reached(std::chrono::system_clock::now());
+        args.time_reached(date_time::now());
         on_threshold_reached(args);
       }
     }
@@ -160,12 +160,12 @@ namespace console_application1 {
     int threshold() const {return threshold_;}
     void threshold(int value) {threshold_ = value;}
     
-    std::chrono::system_clock::time_point time_reached() const {return time_reached_;}
-    void time_reached(std::chrono::system_clock::time_point value) {time_reached_ = value;}
+    const date_time& time_reached() const {return time_reached_;}
+    void time_reached(coonst date_time& value) {time_reached_ = value;}
     
   private:
     int threshold_ = 0;
-    std::chrono::system_clock::time_point time_reached_;
+    date_time time_reached_;
   };
   
   using threshold_reached_event_handler = delegate<void(object&, const threshold_reached_event_args&)>;
@@ -185,7 +185,7 @@ namespace console_application1 {
       if (total >= threshold) {
         threshold_reached_event_args args;
         args.threshold(threshold);
-        args.time_reached(std::chrono::system_clock::now());
+        args.time_reached(date_time::now());
         on_threshold_reached(args);
       }
     }

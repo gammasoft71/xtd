@@ -60,7 +60,7 @@ namespace xtd {
         /// @}
         
         /// @cond
-        link_collection(const base& collection);
+        explicit link_collection(const base& collection);
         link_collection(const link_collection& collection);
         link_collection& operator=(const link_collection& collection);
         link_collection(link_collection&&) = default;

@@ -27,7 +27,7 @@ void socket_async_event_args::set_buffer(const vector<byte_t>& memory_buffer) {
   memory_buffer_ = memory_buffer;
 }
 
-void socket_async_event_args::set_buffer(size_t count, size_t offset) {
+void socket_async_event_args::set_buffer(size_t offset, size_t count) {
   set_buffer(buffer_, offset, count);
 }
 

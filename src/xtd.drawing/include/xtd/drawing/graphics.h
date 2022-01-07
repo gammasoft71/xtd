@@ -251,7 +251,7 @@ namespace xtd {
       friend xtd::forms::paint_event_args;
       friend xtd::forms::screen;
 
-      graphics(intptr_t handle) {data_->handle_ = handle;}
+      explicit graphics(intptr_t handle) {data_->handle_ = handle;}
       void draw_image_disabled(const xtd::drawing::image& image, int32_t x, int32_t y, float brightness);
       
       struct data {

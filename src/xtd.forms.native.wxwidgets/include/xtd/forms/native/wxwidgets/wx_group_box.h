@@ -109,7 +109,7 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::group_box;
       private:
-        wx_group_box(const forms::create_params& create_params) {
+        explicit wx_group_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           owner_draw_ = (create_params.style() & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_)

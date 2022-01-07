@@ -38,11 +38,11 @@ namespace xtd {
       main_menu();
       /// @brief Initialize a new instance of main_menu class.
       /// @param menu_items An array of menu_item objects that will be added to the main_menu.
-      main_menu(const std::vector<menu_item_ref>& menu_items);
+      explicit main_menu(const std::vector<menu_item_ref>& menu_items);
       /// @}
       
       /// @cond
-      main_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
+      explicit main_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
       /// @endcond
       
       /// @name Methods

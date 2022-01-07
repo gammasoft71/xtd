@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "../core_export.h"
+#include "../date_time.h"
 #include "../event.h"
 #include "../event_handler.h"
 #include "../object.h"
@@ -10,7 +11,6 @@
 #include "data_received_event_handler.h"
 #include "process_priority_class.h"
 #include "process_start_info.h"
-#include <chrono>
 #include <functional>
 #include <memory>
 #include <optional>
@@ -236,13 +236,6 @@ namespace xtd {
         process::data* data_ = nullptr;
       };
       
-      /// @name Alias
-      
-      /// @{
-      /// @brief Represents a point in time.
-      using time_point = std::chrono::system_clock::time_point;
-      /// @}
-      
       /// @name Constructors
       
       /// @{
@@ -313,10 +306,10 @@ namespace xtd {
       int32_t exit_code() const;
 
       /// @brief Gets the time that the associated process exited.
-      /// @return A std::chrono::system_clock::time_point that indicates when the associated process was terminated.
+      /// @return A xtd::date_time that indicates when the associated process was terminated.
       /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::exit_time property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks If the process has not terminated, attempting to retrieve the xtd::diagnostics::process::exit_time property throws an exception. Use xtd::diagnostics::process::has_exited before getting the xtd::diagnostics::process::exit_time property to determine whether the associated process has terminated.
-      time_point exit_time() const;
+      xtd::date_time exit_time() const;
 
       /// @brief Gets the native handle of the associated process.
       /// @return The handle that the operating system assigned to the associated process when the process was started. The system uses this handle to keep track of process attributes.
@@ -726,7 +719,7 @@ namespace xtd {
       /// @brief Gets the time that the associated process was started.
       /// @return An object that indicates when the process started. An exception is thrown if the process is not running.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
-      time_point start_time() const;
+      xtd::date_time start_time() const;
       /// @}
       
       /// @name Methods
@@ -857,8 +850,8 @@ namespace xtd {
         std::unique_ptr<std::istream> standard_output_;
         std::unique_ptr<std::istream> standard_error_;
         std::thread thread_;
-        process::time_point start_time_;
-        process::time_point exit_time_;
+        xtd::date_time start_time_;
+        xtd::date_time exit_time_;
         bool enable_raising_events_ = false;
         std::optional<int32_t> exit_code_;
         event_handler exit_callback_;

@@ -112,7 +112,7 @@ namespace xtd {
     /// @par Example
     /// The following example demonstrates one of the xtd::date_time constructors.
     /// @include date_time_ticks.cpp
-    date_time(xtd::ticks ticks);
+    explicit date_time(xtd::ticks ticks);
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.
     /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
     /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.

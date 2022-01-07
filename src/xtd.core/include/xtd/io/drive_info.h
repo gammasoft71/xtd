@@ -43,7 +43,7 @@ namespace xtd {
       /// @param drive_name A valid drive path or drive letter. This can be either uppercase or lowercase, 'a' to 'z'. A null value is not valid.
       /// @exception xtd::argument_exception drive_name does not refer to a valid drive.
       /// @remarks Use this class to obtain information on drives. The drive name must be either an uppercase or lowercase letter from 'a' to 'z'. You cannot use this method to obtain information on drive names that are null or use UNC (\\server\share) paths.
-      drive_info(const xtd::ustring& drive_name);
+      explicit drive_info(const xtd::ustring& drive_name);
       /// @}
 
       /// @name Properties

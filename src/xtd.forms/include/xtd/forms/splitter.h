@@ -63,9 +63,7 @@ namespace xtd {
       /// @param min_size The minimum distance, in pixels, between the splitter control and the container edge that the control is docked to. The default is 25.
       /// @return Current splitter instance.
       virtual splitter& min_size(int min_size) {
-        if (min_size_ != min_size) {
-          min_size_ = min_size;
-        }
+        min_size_ = min_size;
         return *this;
       }
       
@@ -76,9 +74,7 @@ namespace xtd {
       /// @param splitter_style One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
       /// @return Current splitter instance.
       virtual splitter& splitter_style(xtd::forms::splitter_style splitter_style) {
-        if (splitter_style_ != splitter_style) {
-          splitter_style_ = splitter_style;
-        }
+        splitter_style_ = splitter_style;
         return *this;
       }
       /// @}

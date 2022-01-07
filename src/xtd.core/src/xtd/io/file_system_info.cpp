@@ -15,7 +15,7 @@ file_attributes file_system_info::attributes() const {
   return attributes_;
 }
 
-file_system_info& file_system_info::attributes(xtd::io::file_attributes value) {
+file_system_info& file_system_info::attributes(file_attributes value) {
   auto result = native::file_system::set_file_attributes(full_path_, static_cast<int32_t>(value));
   if (result != -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
@@ -23,16 +23,24 @@ file_system_info& file_system_info::attributes(xtd::io::file_attributes value) {
   return *this;
 }
 
-chrono::system_clock::time_point file_system_info::creation_time() const {
+const date_time& file_system_info::creation_time() const {
   return creation_time_;
 }
 
-file_system_info& file_system_info::creation_time(chrono::system_clock::time_point value) {
-  auto result = native::file_system::set_creation_time(full_path_, value);
+file_system_info& file_system_info::creation_time(const date_time& value) {
+  auto result = native::file_system::set_creation_time(full_path_, value.to_time_t());
   if (result != -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   creation_time_ = value;
   return *this;
+}
+
+xtd::date_time file_system_info::creation_time_utc() const {
+  return creation_time().to_universal_time();
+}
+
+xtd::io::file_system_info& file_system_info::creation_time_utc(const xtd::date_time& value) {
+  return creation_time(value.to_local_time());
 }
 
 ustring file_system_info::extension() const {
@@ -43,28 +51,44 @@ ustring file_system_info::full_name() const {
   return full_path_;
 }
 
-chrono::system_clock::time_point file_system_info::last_access_time() const {
+const date_time& file_system_info::last_access_time() const {
   return last_access_time_;
 }
 
-xtd::io::file_system_info& file_system_info::last_access_time(std::chrono::system_clock::time_point value) {
-  auto result = native::file_system::set_last_access_time(full_path_, value);
+file_system_info& file_system_info::last_access_time(const date_time& value) {
+  auto result = native::file_system::set_last_access_time(full_path_, value.to_time_t());
   if (result != -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   last_access_time_ = value;
   return *this;
 }
 
-chrono::system_clock::time_point file_system_info::last_write_time() const {
+xtd::date_time file_system_info::last_access_time_utc() const {
+  return last_access_time().to_universal_time();
+}
+
+xtd::io::file_system_info& file_system_info::last_access_time_utc(const xtd::date_time& value) {
+  return last_access_time(value.to_local_time());
+}
+
+const date_time& file_system_info::last_write_time() const {
   return last_write_time_;
 }
 
-xtd::io::file_system_info& file_system_info::last_write_time(std::chrono::system_clock::time_point value) {
-  auto result = native::file_system::set_last_write_time(full_path_, value);
+file_system_info& file_system_info::last_write_time(const date_time& value) {
+  auto result = native::file_system::set_last_write_time(full_path_, value.to_time_t());
   if (result != -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   last_write_time_ = value;
   return *this;
+}
+
+xtd::date_time file_system_info::last_write_time_utc() const {
+  return last_write_time().to_universal_time();
+}
+
+xtd::io::file_system_info& file_system_info::last_write_time_utc(const xtd::date_time& value) {
+  return last_write_time(value.to_local_time());
 }
 
 void file_system_info::refresh() {
@@ -73,10 +97,14 @@ void file_system_info::refresh() {
   int32_t attributes = 0;
   if (native::file_system::get_attributes(full_path_, attributes) == 0) {
     attributes_ = static_cast<xtd::io::file_attributes>(attributes);
-    native::file_system::get_file_times(full_path_, creation_time_, last_access_time_, last_write_time_);
+    time_t creation_time, last_access_time, last_write_time;
+    native::file_system::get_file_times(full_path_, creation_time, last_access_time, last_write_time);
+    creation_time_ = date_time::from_time_t(creation_time, date_time_kind::local);
+    last_access_time_ = date_time::from_time_t(last_access_time, date_time_kind::local);
+    last_write_time_ = date_time::from_time_t(last_write_time, date_time_kind::local);
   }
 }
 
-xtd::ustring file_system_info::to_string() const noexcept {
+ustring file_system_info::to_string() const noexcept {
   return original_path_;
 }

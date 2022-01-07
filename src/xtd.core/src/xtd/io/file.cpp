@@ -87,37 +87,37 @@ file_attributes file::get_attributes(const ustring& path) {
   return static_cast<file_attributes>(attributes);
 }
 
-std::chrono::system_clock::time_point file::get_creation_time(const xtd::ustring& path) {
+date_time file::get_creation_time(const xtd::ustring& path) {
   if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
 
-  std::chrono::system_clock::time_point creation_time, last_access_time, last_write_time;
+  time_t creation_time, last_access_time, last_write_time;
   if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception(csf_);
-  return creation_time;
+  return date_time::from_time_t(creation_time, date_time_kind::local);
 }
 
-std::chrono::system_clock::time_point file::get_last_access_time(const xtd::ustring& path) {
+date_time file::get_last_access_time(const xtd::ustring& path) {
   if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
 
-  std::chrono::system_clock::time_point creation_time, last_access_time, last_write_time;
+  time_t creation_time, last_access_time, last_write_time;
   if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception(csf_);
-  return last_access_time;
+  return date_time::from_time_t(last_access_time, date_time_kind::local);
 }
 
-std::chrono::system_clock::time_point file::get_last_write_time(const xtd::ustring& path) {
+date_time file::get_last_write_time(const xtd::ustring& path) {
   if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
 
-  std::chrono::system_clock::time_point creation_time, last_access_time, last_write_time;
+  time_t creation_time, last_access_time, last_write_time;
   if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception(csf_);
-  return last_write_time;
+  return date_time::from_time_t(last_write_time, date_time_kind::local);
 }
 
 void file::move(const ustring& src, const ustring& dest) {
@@ -217,7 +217,6 @@ ustring file::read_all_text(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!exists(path)) throw file_not_found_exception(csf_);
   
-  vector<ustring> contents;
   stream_reader sr(path);
   return sr.read_to_end();
 }

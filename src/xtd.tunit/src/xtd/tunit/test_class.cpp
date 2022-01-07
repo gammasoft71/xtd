@@ -17,10 +17,10 @@ void test_class::run(const unit_test& unit_test) {
   
   unit_test.event_listener_->on_class_start(xtd::tunit::class_event_args(*this, unit_test));
   
-  start_time_point = std::chrono::high_resolution_clock::now();
+  start_time_point = date_time::now();
   for (auto& test_method : tests_)
     test_method.run(unit_test, *this);
-  end_time_point = std::chrono::high_resolution_clock::now();
+  end_time_point = date_time::now();
   unit_test.event_listener_->on_class_end(xtd::tunit::class_event_args(*this, unit_test));
   
   unit_test.event_listener_->on_class_cleanup_start(xtd::tunit::class_event_args(*this, unit_test));

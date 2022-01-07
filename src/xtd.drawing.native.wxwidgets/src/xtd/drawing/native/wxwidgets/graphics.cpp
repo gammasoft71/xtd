@@ -18,7 +18,7 @@ using namespace xtd::drawing::native;
 namespace {
   class graphics_context {
   public:
-    graphics_context(intptr_t hdc) : hdc_(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()) {
+    explicit graphics_context(intptr_t hdc) : hdc_(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()) {
       brush_ = hdc_.GetBrush();
       pen_ = hdc_.GetPen();
       back_color_ = hdc_.GetTextBackground();

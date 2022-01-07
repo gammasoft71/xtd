@@ -191,7 +191,8 @@ inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<
 
 template <typename char_t, typename char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, std::any value) {
-  if (const auto it = __any_stringer__.find(std::type_index(value.type())); it != __any_stringer__.cend())
+  auto it = __any_stringer__.find(std::type_index(value.type())); 
+  if (it != __any_stringer__.cend())
     return os << it->second(value);
   return os << "(unregistered)";
 }

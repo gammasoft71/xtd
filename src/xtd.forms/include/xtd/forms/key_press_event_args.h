@@ -31,7 +31,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the KeyPressEventArgs class.
       /// @param key_char The ASCII character corresponding to the key the user pressed.
       /// @remarks Use the control::modifier_keys property to get the current state of the modifier keys.
-      key_press_event_args(char32_t key_char) : key_char_(key_char) {}
+      explicit key_press_event_args(char32_t key_char) : key_char_(key_char) {}
       /// @}
       
       /// @cond

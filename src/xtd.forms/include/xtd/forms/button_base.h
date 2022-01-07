@@ -44,8 +44,7 @@ namespace xtd {
       /// @param true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
       /// @remarks Set auto_ellipsis to true to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to false if you want AutoEllipsis to be true. If AutoSize is true, the control will grow to fit the text and an ellipsis will not appear.
       virtual button_base& auto_ellipsis(bool auto_ellipsis) {
-        if (data_->auto_ellipsis != auto_ellipsis)
-          data_->auto_ellipsis = auto_ellipsis;
+        data_->auto_ellipsis = auto_ellipsis;
         return *this;
       }
       

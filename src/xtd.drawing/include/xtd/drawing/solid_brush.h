@@ -24,7 +24,7 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      solid_brush(const drawing::color& color) {this->color(color);}
+      explicit solid_brush(const drawing::color& color) {this->color(color);}
       /// @}
 
       /// @cond

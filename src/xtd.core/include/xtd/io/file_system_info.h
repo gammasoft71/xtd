@@ -3,10 +3,10 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include <chrono>
 #include <memory>
 #include "../abstract.h"
 #include "../core_export.h"
+#include "../date_time.h"
 #include "../ustring.h"
 #include "file_attributes.h"
 
@@ -182,7 +182,7 @@ namespace xtd {
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
       /// @endcode
-      std::chrono::system_clock::time_point creation_time() const;
+      const xtd::date_time& creation_time() const;
       /// @brief Gets the creation time of the current file or directory.
       /// @param value The creation date and time of the current xtd::io::file_system_info object.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
@@ -203,7 +203,39 @@ namespace xtd {
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
       /// @endcode
-      xtd::io::file_system_info& creation_time(std::chrono::system_clock::time_point value);
+      xtd::io::file_system_info& creation_time(const xtd::date_time& value);
+
+      /// @brief Gets the creation time, in coordinated universal time (UTC), of the current file or directory.
+      /// @return The creation date and time in UTC format of the current xtd::io::file_system_info object.
+      /// @remarks This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
+      /// @remarks The value of the xtd::io::directory_info::creation_time_utc property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following xtd::io::directory_info methods:
+      /// @remarks * xtd::io::directory_info::get_directories
+      /// @remarks * xtd::io::directory_info::get_files
+      /// @remarks * xtd::io::directory_info::get_file_system_infos
+      /// @remarks * xtd::io::directory_info::enumerate_directories
+      /// @remarks * xtd::io::directory_info::enumerate_files
+      /// @remarks * xtd::io::directory_info::enumerate_file_system_infos
+      /// @remarks To get the latest value, call the xtd::io::file_system_info::refresh method.
+      /// @remarks If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
+      /// @remarks On Unix platforms that do not support creation or birth time, this property returns the older of the time of the last status change and the time of the last modification. On other platforms, it returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
+      /// @remarks NTFS-formatted drives may cache file meta-info, such as file creation time, for a short period of time. This process is known as file tunneling. As a result, it may be necessary to explicitly set the creation time of a file if you are overwriting or replacing an existing file.
+      xtd::date_time creation_time_utc() const;
+      /// @brief Sets the creation time, in coordinated universal time (UTC), of the current file or directory.
+      /// @param value The creation date and time in UTC format of the current xtd::io::file_system_info object.
+      /// @return This current object.
+      /// @remarks This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
+      /// @remarks The value of the xtd::io::directory_info::creation_time_utc property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following xtd::io::directory_info methods:
+      /// @remarks * xtd::io::directory_info::get_directories
+      /// @remarks * xtd::io::directory_info::get_files
+      /// @remarks * xtd::io::directory_info::get_file_system_infos
+      /// @remarks * xtd::io::directory_info::enumerate_directories
+      /// @remarks * xtd::io::directory_info::enumerate_files
+      /// @remarks * xtd::io::directory_info::enumerate_file_system_infos
+      /// @remarks To get the latest value, call the xtd::io::file_system_info::refresh method.
+      /// @remarks If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
+      /// @remarks On Unix platforms that do not support creation or birth time, this property returns the older of the time of the last status change and the time of the last modification. On other platforms, it returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
+      /// @remarks NTFS-formatted drives may cache file meta-info, such as file creation time, for a short period of time. This process is known as file tunneling. As a result, it may be necessary to explicitly set the creation time of a file if you are overwriting or replacing an existing file.
+      xtd::io::file_system_info& creation_time_utc(const xtd::date_time& value);
 
       /// @brief Gets a value indicating whether the file or directory exists.
       /// @return true if the file or directory exists; otherwise, false.
@@ -286,7 +318,7 @@ namespace xtd {
       ///
       ///     // Update the CreationTime, LastWriteTime and LastAccessTime.
       ///     try {
-      ///       auto now = std::chrono::system_clock::now();
+      ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
       ///     } catch (const system_exception& e) {
       ///       console::write_line("Error: {0}", e.message());
@@ -305,7 +337,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      std::chrono::system_clock::time_point last_access_time() const;
+      const xtd::date_time& last_access_time() const;
       /// @brief Sets the time the current file or directory was last accessed.
       /// @param value The time that the current file or directory was last accessed.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
@@ -341,7 +373,7 @@ namespace xtd {
       ///
       ///     // Update the CreationTime, LastWriteTime and LastAccessTime.
       ///     try {
-      ///       auto now = std::chrono::system_clock::now();
+      ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
       ///     } catch (const system_exception& e) {
       ///       console::write_line("Error: {0}", e.message());
@@ -360,8 +392,39 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      xtd::io::file_system_info& last_access_time(std::chrono::system_clock::time_point value);
-      
+      xtd::io::file_system_info& last_access_time(const xtd::date_time& value);
+
+      /// @brief Gets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.
+      /// @return The UTC time that the current file or directory was last accessed.
+      /// @note This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
+      /// @remarks The value of the xtd::io::file_system::last_access_time_utc property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following xtd::io::directory_info methods:
+      /// * xtd::io::directory_info::get_directories
+      /// * xtd::io::directory_info::get_files
+      /// * xtd::io::directory_info::getFile_system_infos
+      /// * xtd::io::directory_info::enumerate_directories
+      /// * xtd::io::directory_info::enumerate_files
+      /// * xtd::io::directory_info::enumerate_file_system_infos
+      /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
+      /// * If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      xtd::date_time last_access_time_utc() const;
+      /// @brief Sets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.
+      /// @param vvalue The UTC time that the current file or directory was last accessed.
+      /// @return This current object.
+      /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
+      /// @remarks The value of the xtd::io::file_system::last_access_time_utc property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following xtd::io::directory_info methods:
+      /// * xtd::io::directory_info::get_directories
+      /// * xtd::io::directory_info::get_files
+      /// * xtd::io::directory_info::getFile_system_infos
+      /// * xtd::io::directory_info::enumerate_directories
+      /// * xtd::io::directory_info::enumerate_files
+      /// * xtd::io::directory_info::enumerate_file_system_infos
+      /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
+      /// * If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
+      xtd::io::file_system_info& last_access_time_utc(const xtd::date_time& value);
+
       /// @brief Gets the time when the current file or directory was last written to.
       /// @return The time the current file was last written.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
@@ -397,7 +460,7 @@ namespace xtd {
       ///
       ///     // Update the CreationTime, LastWriteTime and LastAccessTime.
       ///     try {
-      ///       auto now = std::chrono::system_clock::now();
+      ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
       ///     } catch (const system_exception& e) {
       ///       console::write_line("Error: {0}", e.message());
@@ -416,7 +479,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      std::chrono::system_clock::time_point last_write_time() const;
+      const xtd::date_time& last_write_time() const;
       /// @brief Sets the time when the current file or directory was last written to.
       /// @param value The time the current file was last written.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
@@ -452,7 +515,7 @@ namespace xtd {
       ///
       ///     // Update the CreationTime, LastWriteTime and LastAccessTime.
       ///     try {
-      ///       auto now = std::chrono::system_clock::now();
+      ///       auto now = date_time::now();
       ///       fsi.creation_time(now).last_write_time(now).last_access_time(now);
       ///     } catch (const system_exception& e) {
       ///       console::write_line("Error: {0}", e.message());
@@ -462,7 +525,7 @@ namespace xtd {
       ///
       /// startup_(touch);
       /// @endcode
-      /// @note This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
+      /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks The value of the xtd::io::file_system_info::last_write_time property is pre-cached if the current instance of the xtd::io::file_system_info object was returned from any of the following xtd::io::directory_info methods:
       /// * xtd::io::directory_info::get_directories
       /// * xtd::io::directory_info::get_files
@@ -471,7 +534,34 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      xtd::io::file_system_info& last_write_time(std::chrono::system_clock::time_point value);
+      xtd::io::file_system_info& last_write_time(const xtd::date_time& value);
+
+      /// @brief Gets the time, in coordinated universal time (UTC), when the current file or directory was last written to.
+      /// @return The UTC time when the current file was last written to.
+      /// @note This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
+      /// @remarks The value of the LastWriteTimeUtc property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following xtd::io::directory_info methods:
+      /// * xtd::io::directory_info::GetDirectories
+      /// * xtd::io::directory_info::GetFiles
+      /// * xtd::io::directory_info::GetFileSystemInfos
+      /// * xtd::io::directory_info::EnumerateDirectories
+      /// * xtd::io::directory_info::EnumerateFiles
+      /// * xtd::io::directory_info::EnumerateFileSystemInfos
+      /// @remarks To get the latest value, call the xtd::io::file_system_info::refresh method.
+      /// @remarks If the file or directory described in the xtd::io::file_system_info object does not exist, or if the file system that contains this file or directory does not support this information, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
+      xtd::date_time last_write_time_utc() const;
+      /// @brief Sets the time, in coordinated universal time (UTC), when the current file or directory was last written to.
+      /// @param value The UTC time when the current file was last written to.
+      /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
+      /// @remarks The value of the LastWriteTimeUtc property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following xtd::io::directory_info methods:
+      /// * xtd::io::directory_info::GetDirectories
+      /// * xtd::io::directory_info::GetFiles
+      /// * xtd::io::directory_info::GetFileSystemInfos
+      /// * xtd::io::directory_info::EnumerateDirectories
+      /// * xtd::io::directory_info::EnumerateFiles
+      /// * xtd::io::directory_info::EnumerateFileSystemInfos
+      /// @remarks To get the latest value, call the xtd::io::file_system_info::refresh method.
+      /// @remarks If the file or directory described in the xtd::io::file_system_info object does not exist, or if the file system that contains this file or directory does not support this information, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
+      xtd::io::file_system_info& last_write_time_utc(const xtd::date_time& value);
 
       /// @brief For files, gets the name of the file. For directories, gets the name of the last directory in the hierarchy if a hierarchy exists. Otherwise, the Name property gets the name of the directory.
       /// @return A xtd::ustring that is the name of the parent directory, the name of the last directory in the hierarchy, or the name of a file, including the file name extension.
@@ -521,9 +611,9 @@ namespace xtd {
       
     private:
       xtd::io::file_attributes attributes_ = static_cast<xtd::io::file_attributes>(0);
-      std::chrono::system_clock::time_point creation_time_;
-      std::chrono::system_clock::time_point last_access_time_;
-      std::chrono::system_clock::time_point last_write_time_;
+      xtd::date_time creation_time_;
+      xtd::date_time last_access_time_;
+      xtd::date_time last_write_time_;
     };
   }
 }

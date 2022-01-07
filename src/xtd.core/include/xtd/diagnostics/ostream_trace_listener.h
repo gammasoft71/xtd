@@ -28,7 +28,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::diagnostics::ostream_trace_listener class with a specified ostream.
       /// @param ostream An std::ostream that represents the stream the xtd::diagnostics::ostream_trace_listener writes to.
       /// @remarks This constructor initializes the name property to an empty string ("").
-      ostream_trace_listener(const std::ostream& ostream);
+      explicit ostream_trace_listener(const std::ostream& ostream);
       /// @cond
       ~ostream_trace_listener();
       /// @endcond
