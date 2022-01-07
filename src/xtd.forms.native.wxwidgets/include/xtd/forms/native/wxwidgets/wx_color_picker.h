@@ -21,7 +21,7 @@ namespace xtd {
         friend xtd::forms::native::color_picker;
         friend xtd::forms::native::control;
       private:
-        wx_color_picker(const xtd::forms::create_params& create_params) {
+        explicit wx_color_picker(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           int style = wxCLRP_DEFAULT_STYLE;
           if ((create_params.style() & CC_ALPHACOLOR) == CC_ALPHACOLOR) style |= wxCLRP_SHOW_ALPHA;

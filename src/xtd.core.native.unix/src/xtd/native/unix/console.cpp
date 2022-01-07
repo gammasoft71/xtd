@@ -130,8 +130,8 @@ namespace {
     class input_list {
     public:
       input_list() {}
-      input_list(const std::list<int32_t>& chars) : chars(chars) {}
-      input_list(std::initializer_list<int32_t> il) : chars(il) {}
+      explicit input_list(const std::list<int32_t>& chars) : chars(chars) {}
+      explicit input_list(std::initializer_list<int32_t> il) : chars(il) {}
       input_list(const input_list& il) : chars(il.chars) {}
       
       input_list& operator =(const input_list& il) {
@@ -169,7 +169,7 @@ namespace {
             result << "^[";
           else
             result << char(*iterator & 0xFF);
-          iterator++;
+          ++iterator;
         }
         return result.str();
       }
@@ -178,12 +178,12 @@ namespace {
         input_list result;
         std::string::const_iterator iterator = value.begin();
         while (iterator != value.end()) {
-          if (*iterator == '^' &&  *(iterator + 1) == '[') {
+          if (*iterator == '^' && (iterator + 1) != value.end() &&  *(iterator + 1) == '[') {
             result.chars.push_back(27);
-            iterator++;
+            ++iterator;
           } else
             result.chars.push_back(*iterator);
-          iterator++;
+          ++iterator;
         }
         return result;
       }
@@ -245,12 +245,12 @@ namespace {
     static std::string to_string(bool b) {return b ? "true" : "false";}
     
     static int32_t to_key(input_list& inputs) {
-      int32_t key = 0;
+      int32_t result = 0;
       int32_t index = 1;
       for (auto c : inputs)
-        key |= (c & 0xFF) << (8 * index--);
+        result |= (c & 0xFF) << (8 * index--);
       inputs.clear();
-      return key;
+      return result;
     }
     
     static key_info to_key_info(int32_t key) {

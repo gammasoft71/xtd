@@ -24,7 +24,7 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::tab_page;
       private:
-        wx_tab_page(const forms::create_params& create_params) {
+        explicit wx_tab_page(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           if ((create_params.ex_style() & WS_EX_AUTOSCROLL) == WS_EX_AUTOSCROLL)
             control_handler::create<wxScrolled<wxPanel>>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, style_to_wx_style(create_params.style(), create_params.ex_style()));

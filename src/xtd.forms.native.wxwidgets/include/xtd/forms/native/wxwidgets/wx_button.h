@@ -28,7 +28,7 @@ namespace xtd {
         friend xtd::forms::native::button;
         friend xtd::forms::native::control;
       private:
-        wx_button(const xtd::forms::create_params& create_params) {
+        explicit wx_button(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           owner_draw_ = (create_params.style() & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_) {

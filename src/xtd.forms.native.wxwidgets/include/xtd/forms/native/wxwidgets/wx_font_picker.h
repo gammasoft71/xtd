@@ -20,7 +20,7 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::font_picker;
       private:
-        wx_font_picker(const xtd::forms::create_params& create_params) {
+        explicit wx_font_picker(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           control_handler::create<wxFontPickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxFont(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()));
 #if defined(__WIN32__)

@@ -24,7 +24,7 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::loading_indicator;
       private:
-        wx_loading_indicator(const forms::create_params& create_params) {
+        explicit wx_loading_indicator(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           owner_draw_ = (create_params.style() & LI_OWNERDRAW) == LI_OWNERDRAW;
           if (owner_draw_) control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()));

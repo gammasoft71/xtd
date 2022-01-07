@@ -17,7 +17,7 @@ using namespace xtd::drawing::native;
 namespace {
  class StdInputStreamAdapter : public wxInputStream {
  public:
-    StdInputStreamAdapter(std::istream& stream): stream_{stream} {}
+    explicit StdInputStreamAdapter(std::istream& stream): stream_{stream} {}
 
   protected:
     bool IsSeekable()  const override {return true;}
@@ -46,7 +46,7 @@ namespace {
 
   class StdOutputStreamAdapter : public wxOutputStream {
   public:
-    StdOutputStreamAdapter(std::ostream& stream): stream_{stream} {}
+    explicit StdOutputStreamAdapter(std::ostream& stream): stream_{stream} {}
     
   protected:
     bool IsSeekable()  const override {return false;}

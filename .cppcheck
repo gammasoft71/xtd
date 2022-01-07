@@ -1,5 +1,8 @@
 // __________________________________________________________________________________________________________________________
 //                                                                                                                   xtd.dore
+sizeofDivisionMemfunc:@CMAKE_SOURCE_DIR@src/xtd.3rdparty.call_stack/stack_walker.cpp:538
+unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/console.cpp:378
+unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/console.cpp:379
 constParameter:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/convert_pointer.h
 knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp:21
 knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp:33
@@ -54,6 +57,11 @@ internalAstError:@CMAKE_SOURCE_DIR@/src/xtd.tunit/include/xtd/tunit/assert.h
 
 // __________________________________________________________________________________________________________________________
 //                                                                                                             To be reviewed
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/include/xtd/native/unix/strings.h:131
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/process.cpp:108
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.win32/include/xtd/native/win32/strings.h:82
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/date_time.cpp:239
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.win32/src/xtd/native/win32/date_time.cpp:246
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h:212
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/path.h:156
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/directory.cpp:261
@@ -77,6 +85,9 @@ useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/font_family.c
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp:89
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp:115
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/text/installed_font_collection.cpp:12
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/checked_list_box.cpp:108
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/file_dialog.cpp:53
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/list_box.cpp:86
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h:409
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h:68
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h:74

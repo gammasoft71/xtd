@@ -22,7 +22,7 @@ namespace xtd {
         friend xtd::forms::native::collapsible_panel;
         friend xtd::forms::native::control;
       private:
-        wx_collapsible_panel(const forms::create_params& create_params) {
+        explicit wx_collapsible_panel(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           control_handler::create<wxCollapsiblePane>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()));
 #if defined(__WIN32__)

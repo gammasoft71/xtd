@@ -21,7 +21,7 @@ namespace xtd {
         friend xtd::forms::native::choice;
         friend xtd::forms::native::control;
       private:
-        wx_choice(const forms::create_params& create_params) {
+        explicit wx_choice(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
 #if defined(__WXMSW__)
           int32_t height = 23;

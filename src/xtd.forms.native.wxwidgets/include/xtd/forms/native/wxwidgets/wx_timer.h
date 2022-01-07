@@ -18,7 +18,7 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::timer;
       private:
-        wx_timer(delegate<void(const event_args&)> tick) : tick_(tick) {
+        explicit wx_timer(delegate<void(const event_args&)> tick) : tick_(tick) {
           timer_.Bind(wxEVT_TIMER, &wx_timer::on_tick, this);
         }
 
