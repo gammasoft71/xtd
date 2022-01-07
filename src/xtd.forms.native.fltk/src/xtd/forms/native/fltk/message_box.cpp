@@ -14,42 +14,42 @@ using namespace xtd::forms::native;
 namespace {
   int32_t result_for_ok_cancel(int32_t result) {
     switch (result) {
-    case 1: return IDOK;
-    case 2: return IDCANCEL;
+      case 1: return IDOK;
+      case 2: return IDCANCEL;
     }
     return IDCANCEL;
   }
   
   int32_t result_for_abort_retry_ignore(int32_t result) {
     switch (result) {
-    case 0: return IDABORT;
-    case 1: return IDRETRY;
-    case 2: return IDIGNORE;
+      case 0: return IDABORT;
+      case 1: return IDRETRY;
+      case 2: return IDIGNORE;
     }
     return IDCANCEL;
   }
   
   int32_t result_for_yes_no_cancel(int32_t result) {
     switch (result) {
-    case 0: return IDYES;
-    case 1: return IDNO;
-    case 2: return IDCANCEL;
+      case 0: return IDYES;
+      case 1: return IDNO;
+      case 2: return IDCANCEL;
     }
     return IDCANCEL;
   }
   
   int32_t result_for_yes_no(int32_t result) {
     switch (result) {
-    case 1: return IDYES;
-    case 2: return IDNO;
+      case 1: return IDYES;
+      case 2: return IDNO;
     }
     return IDCANCEL;
   }
   
   int32_t result_for_retry_cancel(int32_t result) {
     switch (result) {
-    case 1: return IDRETRY;
-    case 2: return IDCANCEL;
+      case 1: return IDRETRY;
+      case 2: return IDCANCEL;
     }
     return IDCANCEL;
   }

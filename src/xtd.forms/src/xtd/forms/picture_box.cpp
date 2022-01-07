@@ -15,11 +15,11 @@ using namespace xtd::forms;
 namespace {
   static xtd::forms::image_layout to_image_layout(picture_box_size_mode size_mode) {
     switch (size_mode) {
-    case picture_box_size_mode::normal: return xtd::forms::image_layout::none;
-    case picture_box_size_mode::stretch_image: return xtd::forms::image_layout::stretch;
-    case picture_box_size_mode::auto_size: return xtd::forms::image_layout::none;
-    case picture_box_size_mode::center_image: return xtd::forms::image_layout::center;
-    case picture_box_size_mode::zoom: return xtd::forms::image_layout::zoom;
+      case picture_box_size_mode::normal: return xtd::forms::image_layout::none;
+      case picture_box_size_mode::stretch_image: return xtd::forms::image_layout::stretch;
+      case picture_box_size_mode::auto_size: return xtd::forms::image_layout::none;
+      case picture_box_size_mode::center_image: return xtd::forms::image_layout::center;
+      case picture_box_size_mode::zoom: return xtd::forms::image_layout::zoom;
     }
     return xtd::forms::image_layout::none;
   }
@@ -87,11 +87,11 @@ forms::create_params picture_box::create_params() const {
     else if (border_style_ != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
     
     switch (size_mode_) {
-    case picture_box_size_mode::normal: create_params.style(create_params.style() | SS_BITMAP_NORMAL); break;
-    case picture_box_size_mode::stretch_image: create_params.style(create_params.style() | SS_BITMAP_STRETCH); break;
-    case picture_box_size_mode::auto_size: create_params.style(create_params.style() | SS_BITMAP_AUTOSIZE); break;
-    case picture_box_size_mode::center_image: create_params.style(create_params.style() | SS_BITMAP_CENTER); break;
-    case picture_box_size_mode::zoom: create_params.style(create_params.style() | SS_BITMAP_ZOOM); break;
+      case picture_box_size_mode::normal: create_params.style(create_params.style() | SS_BITMAP_NORMAL); break;
+      case picture_box_size_mode::stretch_image: create_params.style(create_params.style() | SS_BITMAP_STRETCH); break;
+      case picture_box_size_mode::auto_size: create_params.style(create_params.style() | SS_BITMAP_AUTOSIZE); break;
+      case picture_box_size_mode::center_image: create_params.style(create_params.style() | SS_BITMAP_CENTER); break;
+      case picture_box_size_mode::zoom: create_params.style(create_params.style() | SS_BITMAP_ZOOM); break;
     }
   }
   

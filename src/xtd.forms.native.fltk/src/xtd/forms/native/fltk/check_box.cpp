@@ -8,19 +8,19 @@ using namespace xtd::forms::native;
 namespace {
   int to_check_box_state(int value) {
     switch (value) {
-    case BST_UNCHECKED: return FL_CHECK_BOX_UNCHECKED;
-    case BST_CHECKED: return FL_CHECK_BOX_CHECKED;
-    case BST_INDETERMINATE: return FL_CHECK_BOX_INDETERMINATE;
-    default: return FL_CHECK_BOX_UNCHECKED;
+      case BST_UNCHECKED: return FL_CHECK_BOX_UNCHECKED;
+      case BST_CHECKED: return FL_CHECK_BOX_CHECKED;
+      case BST_INDETERMINATE: return FL_CHECK_BOX_INDETERMINATE;
+      default: return FL_CHECK_BOX_UNCHECKED;
     }
   }
   
   int from_check_box_state(int value) {
     switch (value) {
-    case FL_CHECK_BOX_UNCHECKED: return BST_UNCHECKED;
-    case FL_CHECK_BOX_CHECKED: return BST_CHECKED;
-    case FL_CHECK_BOX_INDETERMINATE: return BST_INDETERMINATE;
-    default: return BST_UNCHECKED;
+      case FL_CHECK_BOX_UNCHECKED: return BST_UNCHECKED;
+      case FL_CHECK_BOX_CHECKED: return BST_CHECKED;
+      case FL_CHECK_BOX_INDETERMINATE: return BST_INDETERMINATE;
+      default: return BST_UNCHECKED;
     }
   }
 }

@@ -143,39 +143,39 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
   
   if (properties::settings::default_settings().original_color()) {
     switch (cell.neighbors()) {
-    case 1: text_color = color::blue; break;
-    case 2: text_color = color::green; break;
-    case 3: text_color = color::red; break;
-    case 4: text_color = color::dark_blue; break;
-    case 5: text_color = color::dark_red; break;
-    case 6: text_color = color::teal; break;
-    case 7: text_color = color::dark_magenta; break;
-    case 8: text_color = color::black; break;
-    default: return;
+      case 1: text_color = color::blue; break;
+      case 2: text_color = color::green; break;
+      case 3: text_color = color::red; break;
+      case 4: text_color = color::dark_blue; break;
+      case 5: text_color = color::dark_red; break;
+      case 6: text_color = color::teal; break;
+      case 7: text_color = color::dark_magenta; break;
+      case 8: text_color = color::black; break;
+      default: return;
     }
   } else if (back_color().get_brightness() < 0.5f) {
     switch (cell.neighbors()) {
-    case 1: text_color = color::light_sky_blue; break;
-    case 2: text_color = color::from_argb(0x30, 0xDC, 0x66); break;
-    case 3: text_color = color::from_argb(0xD0, 0x3E, 0x3D); break;
-    case 4: text_color = color::dodger_blue; break;
-    case 5: text_color = color::orange; break;
-    case 6: text_color = color::light_sea_green; break;
-    case 7: text_color = color::from_argb(0xC6, 0x5E, 0xE9); break;
-    case 8: text_color = fore_color(); break;
-    default: return;
+      case 1: text_color = color::light_sky_blue; break;
+      case 2: text_color = color::from_argb(0x30, 0xDC, 0x66); break;
+      case 3: text_color = color::from_argb(0xD0, 0x3E, 0x3D); break;
+      case 4: text_color = color::dodger_blue; break;
+      case 5: text_color = color::orange; break;
+      case 6: text_color = color::light_sea_green; break;
+      case 7: text_color = color::from_argb(0xC6, 0x5E, 0xE9); break;
+      case 8: text_color = fore_color(); break;
+      default: return;
     }
   } else {
     switch (cell.neighbors()) {
-    case 1: text_color = color::blue; break;
-    case 2: text_color = color::green; break;
-    case 3: text_color = color::red; break;
-    case 4: text_color = color::dodger_blue; break;
-    case 5: text_color = color::dark_orange; break;
-    case 6: text_color = color::teal; break;
-    case 7: text_color = color::dark_magenta; break;
-    case 8: text_color = fore_color(); break;
-    default: return;
+      case 1: text_color = color::blue; break;
+      case 2: text_color = color::green; break;
+      case 3: text_color = color::red; break;
+      case 4: text_color = color::dodger_blue; break;
+      case 5: text_color = color::dark_orange; break;
+      case 6: text_color = color::teal; break;
+      case 7: text_color = color::dark_magenta; break;
+      case 8: text_color = fore_color(); break;
+      default: return;
     }
   }
   auto text = std::to_string(cell.neighbors());

@@ -35,12 +35,12 @@ void pen::dash_pattern(intptr_t pen, std::vector<float> dash_pattern) {
 void pen::dash_style(intptr_t pen, uint32_t dash_style) {
   reinterpret_cast<wx_pen*>(pen)->SetStyle(wxPENSTYLE_USER_DASH);
   switch (dash_style) {
-  case 0: reinterpret_cast<wx_pen*>(pen)->dashes = {1}; break;
-  case 1: reinterpret_cast<wx_pen*>(pen)->dashes = {3, 2}; break;
-  case 2: reinterpret_cast<wx_pen*>(pen)->dashes = {1, 1}; break;
-  case 3: reinterpret_cast<wx_pen*>(pen)->dashes = {3, 1, 1, 1}; break;
-  case 4: reinterpret_cast<wx_pen*>(pen)->dashes = {3, 1, 1, 1, 1, 1}; break;
-  default: break;
+    case 0: reinterpret_cast<wx_pen*>(pen)->dashes = {1}; break;
+    case 1: reinterpret_cast<wx_pen*>(pen)->dashes = {3, 2}; break;
+    case 2: reinterpret_cast<wx_pen*>(pen)->dashes = {1, 1}; break;
+    case 3: reinterpret_cast<wx_pen*>(pen)->dashes = {3, 1, 1, 1}; break;
+    case 4: reinterpret_cast<wx_pen*>(pen)->dashes = {3, 1, 1, 1, 1, 1}; break;
+    default: break;
   }
   reinterpret_cast<wxPen*>(pen)->SetDashes(reinterpret_cast<wx_pen*>(pen)->dashes.size(), reinterpret_cast<wx_pen*>(pen)->dashes.data());
 }

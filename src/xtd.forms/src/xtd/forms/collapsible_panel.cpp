@@ -90,8 +90,8 @@ drawing::size collapsible_panel::measure_control() const {
 
 void collapsible_panel::wnd_proc(message& message) {
   switch (message.msg()) {
-  case  WM_COMMAND: wm_command(message); break;
-  default: control::wnd_proc(message);
+    case  WM_COMMAND: wm_command(message); break;
+    default: control::wnd_proc(message);
   }
 }
 

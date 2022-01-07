@@ -65,10 +65,10 @@ forms::create_params date_time_picker::create_params() const {
   forms::create_params create_params = control::create_params();
   create_params.class_name("datetimepicker");
   switch (format_) {
-  case date_time_picker_format::long_format: create_params.style(create_params.style() | DTS_LONGDATEFORMAT); break;
-  case date_time_picker_format::short_format: create_params.style(create_params.style() | DTS_SHORTDATEFORMAT); break;
-  case date_time_picker_format::time: create_params.style(create_params.style() | DTS_TIMEFORMAT); break;
-  default: create_params.style(create_params.style() | DTS_LONGDATEFORMAT); break;
+    case date_time_picker_format::long_format: create_params.style(create_params.style() | DTS_LONGDATEFORMAT); break;
+    case date_time_picker_format::short_format: create_params.style(create_params.style() | DTS_SHORTDATEFORMAT); break;
+    case date_time_picker_format::time: create_params.style(create_params.style() | DTS_TIMEFORMAT); break;
+    default: create_params.style(create_params.style() | DTS_LONGDATEFORMAT); break;
   }
   return create_params;
 }
@@ -85,8 +85,8 @@ void date_time_picker::on_value_changed(const event_args& e) {
 
 void date_time_picker::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_COMMAND: wm_click(message); break;
-  default: control::wnd_proc(message);
+    case WM_COMMAND: wm_click(message); break;
+    default: control::wnd_proc(message);
   }
 }
 

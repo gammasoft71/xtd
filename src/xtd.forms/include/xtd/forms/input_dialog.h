@@ -49,9 +49,9 @@ namespace xtd {
         if (character_casing_ != character_casing) {
           character_casing_ = character_casing;
           switch (character_casing_) {
-          case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
-          case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
-          default: break;
+            case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
+            case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
+            default: break;
           }
         }
         return *this;
@@ -125,9 +125,9 @@ namespace xtd {
       input_dialog& value(const xtd::ustring& value) {
         if (value != value_) {
           switch (character_casing_) {
-          case xtd::forms::character_casing::normal: value_ = value; break;
-          case xtd::forms::character_casing::upper: value_ = value.to_upper(); break;
-          case xtd::forms::character_casing::lower: value_ = value.to_lower(); break;
+            case xtd::forms::character_casing::normal: value_ = value; break;
+            case xtd::forms::character_casing::upper: value_ = value.to_upper(); break;
+            case xtd::forms::character_casing::lower: value_ = value.to_lower(); break;
           }
         }
         return *this;

@@ -57,10 +57,10 @@ control& text_box::text(const ustring& text) {
         if (is_handle_created()) native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
     } else {
       switch (character_casing_) {
-      case xtd::forms::character_casing::normal: set_text(text); break;
-      case xtd::forms::character_casing::upper: set_text(text.to_upper()); break;
-      case xtd::forms::character_casing::lower: set_text(text.to_lower()); break;
-      default: break;
+        case xtd::forms::character_casing::normal: set_text(text); break;
+        case xtd::forms::character_casing::upper: set_text(text.to_upper()); break;
+        case xtd::forms::character_casing::lower: set_text(text.to_lower()); break;
+        default: break;
       }
       if (is_handle_created()) native::text_box::text(handle(), control::text());
     }
@@ -126,9 +126,9 @@ void text_box::on_handle_created(const event_args& e) {
       native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
   } else {
     switch (character_casing_) {
-    case xtd::forms::character_casing::upper: set_text(text().to_upper()); break;
-    case xtd::forms::character_casing::lower: set_text(text().to_lower()); break;
-    default: break;
+      case xtd::forms::character_casing::upper: set_text(text().to_upper()); break;
+      case xtd::forms::character_casing::lower: set_text(text().to_lower()); break;
+      default: break;
     }
     native::text_box::text(handle(), text());
   }
@@ -144,11 +144,11 @@ void text_box::on_text_changed(const event_args& e) {
 
 void text_box::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_KEYDOWN: wm_key_char(message); break;
-  case WM_CHAR: wm_key_char(message); break;
-  case WM_KEYUP: wm_key_char(message); break;
-  case WM_SETTEXT: wm_set_text(message); break;
-  default: control::wnd_proc(message);
+    case WM_KEYDOWN: wm_key_char(message); break;
+    case WM_CHAR: wm_key_char(message); break;
+    case WM_KEYUP: wm_key_char(message); break;
+    case WM_SETTEXT: wm_set_text(message); break;
+    default: control::wnd_proc(message);
   }
 }
 

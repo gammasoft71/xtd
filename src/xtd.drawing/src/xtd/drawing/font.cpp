@@ -83,14 +83,14 @@ font::~font() {
 
 float font::size_in_points() const {
   switch (data_->unit_) {
-  case graphics_unit::world:
-  case graphics_unit::display:
-  case graphics_unit::pixel: return data_->size_ / 96.0f * native::font::dpi();
-  case graphics_unit::point: return data_->size_;
-  case graphics_unit::inch: return data_->size_ * native::font::dpi();
-  case graphics_unit::document: return data_->size_ / 300.0f * native::font::dpi();
-  case graphics_unit::millimeter: return data_->size_ / 25.4f * native::font::dpi();
-  default: return data_->size_;
+    case graphics_unit::world:
+    case graphics_unit::display:
+    case graphics_unit::pixel: return data_->size_ / 96.0f * native::font::dpi();
+    case graphics_unit::point: return data_->size_;
+    case graphics_unit::inch: return data_->size_ * native::font::dpi();
+    case graphics_unit::document: return data_->size_ / 300.0f * native::font::dpi();
+    case graphics_unit::millimeter: return data_->size_ / 25.4f * native::font::dpi();
+    default: return data_->size_;
   }
 }
 

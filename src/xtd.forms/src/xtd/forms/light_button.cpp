@@ -21,19 +21,19 @@ using namespace xtd::forms;
 namespace {
   xtd::forms::visual_styles::push_button_state to_push_button_style(xtd::forms::visual_styles::check_box_state state) {
     switch (state) {
-    case xtd::forms::visual_styles::check_box_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
-    case xtd::forms::visual_styles::check_box_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
-    case xtd::forms::visual_styles::check_box_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
-    case xtd::forms::visual_styles::check_box_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-    case xtd::forms::visual_styles::check_box_state::checked_normal: return xtd::forms::visual_styles::push_button_state::normal;
-    case xtd::forms::visual_styles::check_box_state::checked_hot: return xtd::forms::visual_styles::push_button_state::hot;
-    case xtd::forms::visual_styles::check_box_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
-    case xtd::forms::visual_styles::check_box_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-    case xtd::forms::visual_styles::check_box_state::mixed_normal: return xtd::forms::visual_styles::push_button_state::normal;
-    case xtd::forms::visual_styles::check_box_state::mixed_hot: return xtd::forms::visual_styles::push_button_state::hot;
-    case xtd::forms::visual_styles::check_box_state::mixed_pressed: return xtd::forms::visual_styles::push_button_state::normal;
-    case xtd::forms::visual_styles::check_box_state::mixed_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-    default: return xtd::forms::visual_styles::push_button_state::normal;
+      case xtd::forms::visual_styles::check_box_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
+      case xtd::forms::visual_styles::check_box_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
+      case xtd::forms::visual_styles::check_box_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
+      case xtd::forms::visual_styles::check_box_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+      case xtd::forms::visual_styles::check_box_state::checked_normal: return xtd::forms::visual_styles::push_button_state::normal;
+      case xtd::forms::visual_styles::check_box_state::checked_hot: return xtd::forms::visual_styles::push_button_state::hot;
+      case xtd::forms::visual_styles::check_box_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
+      case xtd::forms::visual_styles::check_box_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+      case xtd::forms::visual_styles::check_box_state::mixed_normal: return xtd::forms::visual_styles::push_button_state::normal;
+      case xtd::forms::visual_styles::check_box_state::mixed_hot: return xtd::forms::visual_styles::push_button_state::hot;
+      case xtd::forms::visual_styles::check_box_state::mixed_pressed: return xtd::forms::visual_styles::push_button_state::normal;
+      case xtd::forms::visual_styles::check_box_state::mixed_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+      default: return xtd::forms::visual_styles::push_button_state::normal;
     }
   }
 }
@@ -171,10 +171,10 @@ drawing::size light_button::measure_control() const {
 
 void light_button::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_LBUTTONDOWN: wm_mouse_down(message); break;
-  case WM_LBUTTONUP: wm_mouse_up(message); break;
-  case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
-  default: button_base::wnd_proc(message);
+    case WM_LBUTTONDOWN: wm_mouse_down(message); break;
+    case WM_LBUTTONUP: wm_mouse_up(message); break;
+    case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
+    default: button_base::wnd_proc(message);
   }
 }
 
@@ -192,9 +192,9 @@ void light_button::wm_mouse_down(message& message) {
 void light_button::wm_mouse_up(message& message) {
   if (data_->auto_check)
     switch (check_state()) {
-    case forms::check_state::unchecked: check_state(forms::check_state::checked); break;
-    case forms::check_state::checked: check_state(three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;
-    case forms::check_state::indeterminate: check_state(forms::check_state::unchecked); break;
+      case forms::check_state::unchecked: check_state(forms::check_state::checked); break;
+      case forms::check_state::checked: check_state(three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;
+      case forms::check_state::indeterminate: check_state(forms::check_state::unchecked); break;
     }
   mouse_event_args e = mouse_event_args::create(message);
   set_mouse_buttons(mouse_buttons() & ~e.button());

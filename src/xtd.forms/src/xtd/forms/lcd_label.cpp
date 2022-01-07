@@ -726,12 +726,12 @@ control& lcd_label::text(const xtd::ustring& value) {
     if (str.size() > digits_.size())
       for (size_t index = digits_.size(); index < str.size(); index++) {
         switch (lcd_style_) {
-        case lcd_style::seven_segment_display: digits_.push_back(std::make_shared<seven_segment_display_digit>()); break;
-        case lcd_style::nine_segment_display: digits_.push_back(std::make_shared<nine_segment_display_digit>()); break;
-        case lcd_style::fourteen_segment_display: digits_.push_back(std::make_shared<fourteen_segment_display_digit>()); break;
-        case lcd_style::sixteen_segment_display: digits_.push_back(std::make_shared<sixteen_segment_display_digit>()); break;
-        case lcd_style::dot_matrix_display: digits_.push_back(std::make_shared<dot_matrix_display_digit>()); break;
-        default: throw argument_exception("lcd_style invalid", current_stack_frame_);
+          case lcd_style::seven_segment_display: digits_.push_back(std::make_shared<seven_segment_display_digit>()); break;
+          case lcd_style::nine_segment_display: digits_.push_back(std::make_shared<nine_segment_display_digit>()); break;
+          case lcd_style::fourteen_segment_display: digits_.push_back(std::make_shared<fourteen_segment_display_digit>()); break;
+          case lcd_style::sixteen_segment_display: digits_.push_back(std::make_shared<sixteen_segment_display_digit>()); break;
+          case lcd_style::dot_matrix_display: digits_.push_back(std::make_shared<dot_matrix_display_digit>()); break;
+          default: throw argument_exception("lcd_style invalid", current_stack_frame_);
         }
         dynamic_cast<control*>(digits_[digits_.size() - 1].get())->parent(*this);
         dynamic_cast<control*>(digits_[digits_.size() - 1].get())->click += {*this, &lcd_label::on_digit_click};
@@ -750,12 +750,12 @@ control& lcd_label::text(const xtd::ustring& value) {
 
 xtd::ustring lcd_label::valid_characters() {
   switch (lcd_style_) {
-  case lcd_style::seven_segment_display: return std::make_shared<seven_segment_display_digit>()->get_valid_characters();
-  case lcd_style::nine_segment_display: return std::make_shared<nine_segment_display_digit>()->get_valid_characters();
-  case lcd_style::fourteen_segment_display: return std::make_shared<fourteen_segment_display_digit>()->get_valid_characters();
-  case lcd_style::sixteen_segment_display: return std::make_shared<sixteen_segment_display_digit>()->get_valid_characters();
-  case lcd_style::dot_matrix_display: return std::make_shared<dot_matrix_display_digit>()->get_valid_characters();
-  default: throw argument_exception("lcd_style invalid", current_stack_frame_);
+    case lcd_style::seven_segment_display: return std::make_shared<seven_segment_display_digit>()->get_valid_characters();
+    case lcd_style::nine_segment_display: return std::make_shared<nine_segment_display_digit>()->get_valid_characters();
+    case lcd_style::fourteen_segment_display: return std::make_shared<fourteen_segment_display_digit>()->get_valid_characters();
+    case lcd_style::sixteen_segment_display: return std::make_shared<sixteen_segment_display_digit>()->get_valid_characters();
+    case lcd_style::dot_matrix_display: return std::make_shared<dot_matrix_display_digit>()->get_valid_characters();
+    default: throw argument_exception("lcd_style invalid", current_stack_frame_);
   }
 }
 

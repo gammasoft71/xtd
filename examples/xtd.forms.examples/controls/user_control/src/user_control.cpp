@@ -87,10 +87,10 @@ namespace examples {
     void on_operation_click(object& sender, const event_args& e) {
       examples::operation& operation = as<examples::operation&>(sender);
       switch (operation.status()) {
-      case operation_status::none: operation.status(operation_status::running); break;
-      case operation_status::running: operation.status(operation_status::succeed); break;
-      case operation_status::succeed: operation.status(operation_status::failed); break;
-      case operation_status::failed: operation.status(operation_status::none); break;
+        case operation_status::none: operation.status(operation_status::running); break;
+        case operation_status::running: operation.status(operation_status::succeed); break;
+        case operation_status::succeed: operation.status(operation_status::failed); break;
+        case operation_status::failed: operation.status(operation_status::none); break;
       }
     }
     

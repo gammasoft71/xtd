@@ -23,8 +23,8 @@ namespace xtd {
   
   inline std::ostream& operator<<(std::ostream& os, xtd::string_split_options options) {
     switch (options) {
-    case xtd::string_split_options::none: os << "none"; break;
-    case xtd::string_split_options::remove_empty_entries: os << "remove_empty_entries"; break;
+      case xtd::string_split_options::none: os << "none"; break;
+      case xtd::string_split_options::remove_empty_entries: os << "remove_empty_entries"; break;
     }
     return os;
   }

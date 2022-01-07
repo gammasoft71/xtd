@@ -21,6 +21,7 @@ if (XTD_ENABLE_ASTYLE)
     --indent-preproc-define
     --indent-preproc-cond
     --indent-col1-comments
+    --indent-switches
     --pad-oper
     --pad-comma
     --pad-header

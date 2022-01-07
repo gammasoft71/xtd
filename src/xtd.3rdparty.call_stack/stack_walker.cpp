@@ -612,33 +612,33 @@ cleanup:
       const char* szSymType = "-unknown-";
       if (GetModuleInfo(hProcess, baseAddr, &Module) != FALSE) {
         switch (Module.SymType) {
-        case SymNone:
-          szSymType = "-nosymbols-";
-          break;
-        case SymCoff:
-          szSymType = "COFF";
-          break;
-        case SymCv:
-          szSymType = "CV";
-          break;
-        case SymPdb:
-          szSymType = "PDB";
-          break;
-        case SymExport:
-          szSymType = "-exported-";
-          break;
-        case SymDeferred:
-          szSymType = "-deferred-";
-          break;
-        case SymSym:
-          szSymType = "SYM";
-          break;
-        case 8: //SymVirtual:
-          szSymType = "Virtual";
-          break;
-        case 9: // SymDia:
-          szSymType = "DIA";
-          break;
+          case SymNone:
+            szSymType = "-nosymbols-";
+            break;
+          case SymCoff:
+            szSymType = "COFF";
+            break;
+          case SymCv:
+            szSymType = "CV";
+            break;
+          case SymPdb:
+            szSymType = "PDB";
+            break;
+          case SymExport:
+            szSymType = "-exported-";
+            break;
+          case SymDeferred:
+            szSymType = "-deferred-";
+            break;
+          case SymSym:
+            szSymType = "SYM";
+            break;
+          case 8: //SymVirtual:
+            szSymType = "Virtual";
+            break;
+          case 9: // SymDia:
+            szSymType = "DIA";
+            break;
         }
       }
       m_parent->OnLoadModule(img, mod, baseAddr, size, result, szSymType, Module.LoadedImageName, fileVersion);
@@ -954,39 +954,39 @@ BOOL StackWalker::ShowCallstack(HANDLE hThread, const CONTEXT* context, PReadPro
       if (m_sw->GetModuleInfo(m_hProcess, s.AddrPC.Offset, &Module) != FALSE) {
         // got module info OK
         switch (Module.SymType) {
-        case SymNone:
-          csEntry.symTypeString = "-nosymbols-";
-          break;
-        case SymCoff:
-          csEntry.symTypeString = "COFF";
-          break;
-        case SymCv:
-          csEntry.symTypeString = "CV";
-          break;
-        case SymPdb:
-          csEntry.symTypeString = "PDB";
-          break;
-        case SymExport:
-          csEntry.symTypeString = "-exported-";
-          break;
-        case SymDeferred:
-          csEntry.symTypeString = "-deferred-";
-          break;
-        case SymSym:
-          csEntry.symTypeString = "SYM";
-          break;
-          #if API_VERSION_NUMBER >= 9
-        case SymDia:
-          csEntry.symTypeString = "DIA";
-          break;
-          #endif
-        case 8: //SymVirtual:
-          csEntry.symTypeString = "Virtual";
-          break;
-        default:
-          //_snprintf( ty, sizeof ty, "symtype=%ld", (long) Module.SymType );
-          csEntry.symTypeString = NULL;
-          break;
+          case SymNone:
+            csEntry.symTypeString = "-nosymbols-";
+            break;
+          case SymCoff:
+            csEntry.symTypeString = "COFF";
+            break;
+          case SymCv:
+            csEntry.symTypeString = "CV";
+            break;
+          case SymPdb:
+            csEntry.symTypeString = "PDB";
+            break;
+          case SymExport:
+            csEntry.symTypeString = "-exported-";
+            break;
+          case SymDeferred:
+            csEntry.symTypeString = "-deferred-";
+            break;
+          case SymSym:
+            csEntry.symTypeString = "SYM";
+            break;
+            #if API_VERSION_NUMBER >= 9
+          case SymDia:
+            csEntry.symTypeString = "DIA";
+            break;
+            #endif
+          case 8: //SymVirtual:
+            csEntry.symTypeString = "Virtual";
+            break;
+          default:
+            //_snprintf( ty, sizeof ty, "symtype=%ld", (long) Module.SymType );
+            csEntry.symTypeString = NULL;
+            break;
         }
         
         // TODO: Mache dies sicher...!

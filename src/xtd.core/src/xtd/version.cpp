@@ -82,9 +82,9 @@ version version::parse(const xtd::ustring& input) {
     versions.push_back(it->str());
     
   switch (versions.size()) {
-  case 2: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]));
-  case 3: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]));
-  case 4: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]), ustring::parse<int32_t>(versions[3]));
+    case 2: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]));
+    case 3: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]));
+    case 4: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]), ustring::parse<int32_t>(versions[3]));
   }
   
   throw xtd::argument_exception(csf_);

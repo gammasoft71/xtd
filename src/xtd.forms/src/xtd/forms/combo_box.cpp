@@ -107,9 +107,9 @@ forms::create_params combo_box::create_params() const {
   //if (sorted_) create_params.style(create_params.style() | CBS_SORT);
   
   switch (drop_down_style_) {
-  case combo_box_style::drop_down_list: create_params.style(create_params.style() | CBS_DROPDOWNLIST); break;
-  case combo_box_style::drop_down: create_params.style(create_params.style() | CBS_DROPDOWN); break;
-  case combo_box_style::simple: create_params.style(create_params.style() | CBS_SIMPLE); break;
+    case combo_box_style::drop_down_list: create_params.style(create_params.style() | CBS_DROPDOWNLIST); break;
+    case combo_box_style::drop_down: create_params.style(create_params.style() | CBS_DROPDOWN); break;
+    case combo_box_style::simple: create_params.style(create_params.style() | CBS_SIMPLE); break;
   }
   
   if (drop_down_style_ == combo_box_style::simple && size().height() == default_size().height())
@@ -152,11 +152,11 @@ void combo_box::set_client_size_core(int32_t width, int32_t height) {
 
 void combo_box::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_LBUTTONDOWN: wm_mouse_down(message); break;
-  case WM_LBUTTONUP: wm_mouse_up(message); break;
-  case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
-  case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-  default: list_control::wnd_proc(message);
+    case WM_LBUTTONDOWN: wm_mouse_down(message); break;
+    case WM_LBUTTONUP: wm_mouse_up(message); break;
+    case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+    default: list_control::wnd_proc(message);
   }
 }
 

@@ -369,10 +369,10 @@ intptr_t application::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, int
 
 void application::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_ACTIVATEAPP: wm_activate_app(message); break;
-  case WM_ENTERIDLE: wm_enter_idle(message); break;
-  case WM_QUIT: wm_quit(message); break;
-  default: break;
+    case WM_ACTIVATEAPP: wm_activate_app(message); break;
+    case WM_ENTERIDLE: wm_enter_idle(message); break;
+    case WM_QUIT: wm_quit(message); break;
+    default: break;
   }
 }
 

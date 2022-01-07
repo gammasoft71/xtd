@@ -46,10 +46,10 @@ forms::create_params tab_control::create_params() const {
   create_params.style(create_params.style() | WS_CLIPSIBLINGS);
   
   switch (alignment_) {
-  case tab_alignment::bottom: create_params.style(create_params.style() | TCS_BOTTOM); break;
-  case tab_alignment::left: create_params.style(create_params.style() | TCS_VERTICAL); break;
-  case tab_alignment::right: create_params.style(create_params.style() | TCS_VERTICAL | TCS_RIGHT); break;
-  default: break;
+    case tab_alignment::bottom: create_params.style(create_params.style() | TCS_BOTTOM); break;
+    case tab_alignment::left: create_params.style(create_params.style() | TCS_VERTICAL); break;
+    case tab_alignment::right: create_params.style(create_params.style() | TCS_VERTICAL | TCS_RIGHT); break;
+    default: break;
   }
   
   return create_params;
@@ -82,8 +82,8 @@ void tab_control::on_handle_created(const event_args& e) {
 
 void tab_control::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-  default: control::wnd_proc(message);
+    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+    default: control::wnd_proc(message);
   }
 }
 

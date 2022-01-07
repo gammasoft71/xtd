@@ -25,8 +25,8 @@ namespace xtd {
 /// @cond
 inline std::ostream& operator<<(std::ostream& os, xtd::string_comparison sc) {
   switch (sc) {
-  case xtd::string_comparison::ordinal: os << "ordinal"; break;
-  case xtd::string_comparison::ordinal_ignore_case: os << "ordinal_ignore_case"; break;
+    case xtd::string_comparison::ordinal: os << "ordinal"; break;
+    case xtd::string_comparison::ordinal_ignore_case: os << "ordinal_ignore_case"; break;
   }
   return os;
 }

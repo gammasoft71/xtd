@@ -179,10 +179,10 @@ int32_t socket::poll(intptr_t handle, int32_t microseconds, int32_t mode) {
   FD_ZERO(&fdset);
   FD_SET(static_cast<SOCKET>(handle), &fdset);
   switch (mode) {
-  case SELECT_MODE_READ: return ::select(0, &fdset, nullptr, nullptr, microseconds == -1 ? nullptr : &timeout);
-  case SELECT_MODE_WRITE: return ::select(0, nullptr, &fdset, nullptr, microseconds == -1 ? nullptr : &timeout);
-  case SELECT_MODE_ERROR: return ::select(0, nullptr, nullptr, &fdset, microseconds == -1 ? nullptr : &timeout);
-  default: return -1;
+    case SELECT_MODE_READ: return ::select(0, &fdset, nullptr, nullptr, microseconds == -1 ? nullptr : &timeout);
+    case SELECT_MODE_WRITE: return ::select(0, nullptr, &fdset, nullptr, microseconds == -1 ? nullptr : &timeout);
+    case SELECT_MODE_ERROR: return ::select(0, nullptr, nullptr, &fdset, microseconds == -1 ? nullptr : &timeout);
+    default: return -1;
   }
 }
 

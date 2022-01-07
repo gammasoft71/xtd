@@ -134,11 +134,11 @@ forms::create_params list_box::create_params() const {
   create_params.style(create_params.style() | LBS_HASSTRINGS);
   
   switch (data_->selection_mode) {
-  case selection_mode::none: create_params.style(create_params.style() | LBS_NOSEL); break;
-  case selection_mode::one:  break;
-  case selection_mode::multi_simple: create_params.style(create_params.style() | LBS_MULTIPLESEL); break;
-  case selection_mode::multi_extended: create_params.style(create_params.style() | LBS_MULTIPLESEL | LBS_EXTENDEDSEL); break;
-  default: break;
+    case selection_mode::none: create_params.style(create_params.style() | LBS_NOSEL); break;
+    case selection_mode::one:  break;
+    case selection_mode::multi_simple: create_params.style(create_params.style() | LBS_MULTIPLESEL); break;
+    case selection_mode::multi_extended: create_params.style(create_params.style() | LBS_MULTIPLESEL | LBS_EXTENDEDSEL); break;
+    default: break;
   }
   
   // Do not use native control sort
@@ -168,11 +168,11 @@ void list_box::on_selected_value_changed(const event_args& e) {
 
 void list_box::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_LBUTTONDOWN: wm_mouse_down(message); break;
-  case WM_LBUTTONUP: wm_mouse_up(message); break;
-  case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
-  case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-  default: list_control::wnd_proc(message);
+    case WM_LBUTTONDOWN: wm_mouse_down(message); break;
+    case WM_LBUTTONUP: wm_mouse_up(message); break;
+    case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+    default: list_control::wnd_proc(message);
   }
 }
 
