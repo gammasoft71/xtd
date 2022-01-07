@@ -1,5 +1,5 @@
 #include <xtd/xtd>
-#include "properties/settings.hpp"
+#include "properties/settings.h"
 
 using namespace xtd::forms;
 
