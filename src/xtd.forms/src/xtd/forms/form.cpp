@@ -325,20 +325,20 @@ forms::create_params form::create_params() const {
   create_params.style(create_params.style() | WS_CLIPCHILDREN);
   
   switch (form_border_style_) {
-  case forms::form_border_style::none: break;
-  case forms::form_border_style::fixed_single: create_params.style(create_params.style() | WS_BORDER); break;
-  case forms::form_border_style::sizable: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); break;
-  case forms::form_border_style::fixed_3d: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE); break;
-  case forms::form_border_style::fixed_dialog: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME); break;
-  case forms::form_border_style::fixed_tool_window: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
-  case forms::form_border_style::sizable_tool_window: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
-  default: break;
+    case forms::form_border_style::none: break;
+    case forms::form_border_style::fixed_single: create_params.style(create_params.style() | WS_BORDER); break;
+    case forms::form_border_style::sizable: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); break;
+    case forms::form_border_style::fixed_3d: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE); break;
+    case forms::form_border_style::fixed_dialog: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME); break;
+    case forms::form_border_style::fixed_tool_window: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
+    case forms::form_border_style::sizable_tool_window: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
+    default: break;
   }
   
   switch (window_state_) {
-  case form_window_state::maximized: create_params.style(create_params.style() | WS_MAXIMIZE); break;
-  case form_window_state::minimized: create_params.style(create_params.style() | WS_MINIMIZE); break;
-  default: break;
+    case form_window_state::maximized: create_params.style(create_params.style() | WS_MAXIMIZE); break;
+    case form_window_state::minimized: create_params.style(create_params.style() | WS_MINIMIZE); break;
+    default: break;
   }
   
   if (form_border_style_ != form_border_style::none) create_params.style(create_params.style() | WS_CAPTION);
@@ -362,30 +362,30 @@ forms::create_params form::create_params() const {
   
   if (previous_screen_) {
     switch (start_position_) {
-    case form_start_position::manual:
-      create_params.location(location());
-      create_params.size(size());
-      if (application::open_forms().size() == 1) default_location = 40;
-      break;
-    case form_start_position::center_screen:
-      create_params.location({(previous_screen_->working_area().width() - width()) / 2, (previous_screen_->working_area().height() - height()) / 2});
-      create_params.size(size());
-      break;
-    case form_start_position::windows_default_location:
-      create_params.location({default_location, default_location});
-      create_params.size(size());
-      break;
-    case form_start_position::windows_default_bounds:
-      create_params.location({default_location, default_location});
-      create_params.size({previous_screen_->working_area().width() / 4 * 3, previous_screen_->working_area().height() / 4 * 3});
-      break;
-    case form_start_position::center_parent:
-      if (parent().has_value())
-        create_params.location({parent().value().get().left() + (parent().value().get().width() - width()) / 2, parent().value().get().top() + (parent().value().get().height() - height()) / 2});
-      else
+      case form_start_position::manual:
+        create_params.location(location());
+        create_params.size(size());
+        if (application::open_forms().size() == 1) default_location = 40;
+        break;
+      case form_start_position::center_screen:
+        create_params.location({(previous_screen_->working_area().width() - width()) / 2, (previous_screen_->working_area().height() - height()) / 2});
+        create_params.size(size());
+        break;
+      case form_start_position::windows_default_location:
         create_params.location({default_location, default_location});
-      create_params.size(size());
-      break;
+        create_params.size(size());
+        break;
+      case form_start_position::windows_default_bounds:
+        create_params.location({default_location, default_location});
+        create_params.size({previous_screen_->working_area().width() / 4 * 3, previous_screen_->working_area().height() / 4 * 3});
+        break;
+      case form_start_position::center_parent:
+        if (parent().has_value())
+          create_params.location({parent().value().get().left() + (parent().value().get().width() - width()) / 2, parent().value().get().top() + (parent().value().get().height() - height()) / 2});
+        else
+          create_params.location({default_location, default_location});
+        create_params.size(size());
+        break;
     }
     
     if (start_position_ == form_start_position::windows_default_location || start_position_ == form_start_position::windows_default_bounds || (start_position_ == form_start_position::center_parent && parent().has_value()))
@@ -399,10 +399,10 @@ forms::create_params form::create_params() const {
 
 void form::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_ACTIVATE: wm_activate(message); break;
-  case WM_CLOSE: wm_close(message); break;
-  case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().get().wm_click(message); break;
-  default: container_control::wnd_proc(message); break;
+    case WM_ACTIVATE: wm_activate(message); break;
+    case WM_CLOSE: wm_close(message); break;
+    case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().get().wm_click(message); break;
+    default: container_control::wnd_proc(message); break;
   }
 }
 
@@ -479,11 +479,11 @@ void form::internal_set_window_state() {
     recreate_handle();
   else if (is_handle_created()) {
     switch (window_state_) {
-    case form_window_state::normal: native::form::restore(handle()); break;
-    case form_window_state::maximized: native::form::maximize(handle(), true); break;
-    case form_window_state::minimized: native::form::minimize(handle(), true); break;
-    case form_window_state::full_screen: native::form::full_screen(handle(), true); break;
-    default: break;
+      case form_window_state::normal: native::form::restore(handle()); break;
+      case form_window_state::maximized: native::form::maximize(handle(), true); break;
+      case form_window_state::minimized: native::form::minimize(handle(), true); break;
+      case form_window_state::full_screen: native::form::full_screen(handle(), true); break;
+      default: break;
     }
   }
 }

@@ -31,9 +31,9 @@ namespace {
     
     wxFileOffset OnSysSeek(wxFileOffset pos, wxSeekMode mode) override {
       switch (mode) {
-      case wxFromStart: stream_.seekg(pos, std::ios::beg); break;
-      case wxFromEnd: stream_.seekg(pos, std::ios::end); break;
-      case wxFromCurrent: stream_.seekg(pos, std::ios::cur); break;
+        case wxFromStart: stream_.seekg(pos, std::ios::beg); break;
+        case wxFromEnd: stream_.seekg(pos, std::ios::end); break;
+        case wxFromCurrent: stream_.seekg(pos, std::ios::cur); break;
       }
       return stream_.tellg();
     }

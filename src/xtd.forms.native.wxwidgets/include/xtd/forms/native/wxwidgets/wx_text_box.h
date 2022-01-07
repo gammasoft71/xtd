@@ -33,16 +33,16 @@ namespace xtd {
           if (character_casing_ != character_casing::normal) {
             control()->Bind(wxEVT_CHAR, [&](wxKeyEvent & event) {
               switch (character_casing_) {
-              case character_casing::normal: static_cast<wxTextCtrl*>(control())->WriteText(wxString::Format("%c", event.GetUnicodeKey())); break;
-              case character_casing::upper: static_cast<wxTextCtrl*>(control())->WriteText(wxString::Format("%c", std::toupper(event.GetUnicodeKey()))); break;
-              case character_casing::lower: static_cast<wxTextCtrl*>(control())->WriteText(wxString::Format("%c", std::tolower(event.GetUnicodeKey()))); break;
+                case character_casing::normal: static_cast<wxTextCtrl*>(control())->WriteText(wxString::Format("%c", event.GetUnicodeKey())); break;
+                case character_casing::upper: static_cast<wxTextCtrl*>(control())->WriteText(wxString::Format("%c", std::toupper(event.GetUnicodeKey()))); break;
+                case character_casing::lower: static_cast<wxTextCtrl*>(control())->WriteText(wxString::Format("%c", std::tolower(event.GetUnicodeKey()))); break;
               }
             });
             
             switch (character_casing_) {
-            case character_casing::upper: static_cast<wxTextCtrl*>(control())->SetValue(wxString(xtd::convert_string::to_wstring(create_params.caption().to_upper()))); break;
-            case character_casing::lower: static_cast<wxTextCtrl*>(control())->SetValue(wxString(xtd::convert_string::to_wstring(create_params.caption().to_lower()))); break;
-            default: break;
+              case character_casing::upper: static_cast<wxTextCtrl*>(control())->SetValue(wxString(xtd::convert_string::to_wstring(create_params.caption().to_upper()))); break;
+              case character_casing::lower: static_cast<wxTextCtrl*>(control())->SetValue(wxString(xtd::convert_string::to_wstring(create_params.caption().to_lower()))); break;
+              default: break;
             }
           }
           #if defined(__WIN32__)

@@ -27,11 +27,11 @@ namespace xtd {
     if (fmt.size() > 1) throw xtd::format_exception("Format can contains only one character.");
     
     switch (fmt[0]) {
-    case 'l': return xtd::ustring::format("(x={}, y={})", p.x, p.y);
-    case 'L': return xtd::ustring::format("(X={}, Y={})", p.x, p.y);
-    case 'g':
-    case 'G': return xtd::ustring::format("({}, {})", p.x, p.y);
-    default: throw xtd::format_exception("Format invalid argument.");
+      case 'l': return xtd::ustring::format("(x={}, y={})", p.x, p.y);
+      case 'L': return xtd::ustring::format("(X={}, Y={})", p.x, p.y);
+      case 'g':
+      case 'G': return xtd::ustring::format("({}, {})", p.x, p.y);
+      default: throw xtd::format_exception("Format invalid argument.");
     }
   }
 }

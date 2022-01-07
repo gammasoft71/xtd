@@ -19,13 +19,13 @@ enum day {
 
 std::ostream& operator<<(std::ostream& os, day d) {
   switch (d) {
-  case sunday: os << "sunday"; break;
-  case monday: os << "monday"; break;
-  case tuesday: os << "tuesday"; break;
-  case wednesday: os << "wednesday"; break;
-  case thursday: os << "thursday"; break;
-  case friday: os << "friday"; break;
-  case saturday: os << "saturday"; break;
+    case sunday: os << "sunday"; break;
+    case monday: os << "monday"; break;
+    case tuesday: os << "tuesday"; break;
+    case wednesday: os << "wednesday"; break;
+    case thursday: os << "thursday"; break;
+    case friday: os << "friday"; break;
+    case saturday: os << "saturday"; break;
   }
   return os;
 }

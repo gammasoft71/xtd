@@ -225,21 +225,21 @@ void control_paint::draw_border(const forms::control& control, drawing::graphics
   auto border_rect = screen::from_control(control).high_resolution() ? rect : rectangle::inflate(rect,  drawing::size {-1, -1});
   
   switch (border) {
-  case border_style::none: break;
-  case border_style::fixed_single: draw_fixed_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-  case border_style::thin_sunken: draw_thin_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
-  case border_style::thin_raised: draw_thin_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
-  case border_style::bevel_sunken: draw_bevel_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
-  case border_style::bevel_raised: draw_bevel_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
-  case border_style::etched: draw_etched_border(graphics, sides, dark_color, light_color, border_rect); break;
-  case border_style::bump: draw_bump_border(graphics, sides, dark_color, light_color, border_rect); break;
-  case border_style::themed: draw_themed_border(graphics, sides, dark_color, light_color, border_rect); break;
-  case border_style::rounded_single: draw_rounded_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-  case border_style::dot_single: draw_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-  case border_style::dash_single: draw_dash_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-  case border_style::dash_dot_single: draw_dash_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-  case border_style::dash_dot_dot_single: draw_dash_dot_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-  case border_style::fixed_double: draw_fixed_double_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::none: break;
+    case border_style::fixed_single: draw_fixed_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::thin_sunken: draw_thin_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::thin_raised: draw_thin_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::bevel_sunken: draw_bevel_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::bevel_raised: draw_bevel_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::etched: draw_etched_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::bump: draw_bump_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::themed: draw_themed_border(graphics, sides, dark_color, light_color, border_rect); break;
+    case border_style::rounded_single: draw_rounded_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::dot_single: draw_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::dash_single: draw_dash_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::dash_dot_single: draw_dash_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::dash_dot_dot_single: draw_dash_dot_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+    case border_style::fixed_double: draw_fixed_double_border(graphics, sides, dark_color, light_color, border_rect, light); break;
   }
 }
 

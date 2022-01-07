@@ -91,8 +91,8 @@ void numeric_up_down::on_value_changed(const event_args& e) {
 
 void numeric_up_down::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_COMMAND: wm_command(message); break;
-  default: up_down_base::wnd_proc(message);
+    case WM_COMMAND: wm_command(message); break;
+    default: up_down_base::wnd_proc(message);
   }
 }
 

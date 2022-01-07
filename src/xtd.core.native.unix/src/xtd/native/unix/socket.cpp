@@ -248,10 +248,10 @@ int32_t socket::poll(intptr_t handle, int32_t microseconds, int32_t mode) {
   pollfd poll_fd {};
   poll_fd.fd = static_cast<int32_t>(handle);
   switch (mode) {
-  case SELECT_MODE_READ: poll_fd.events = POLLIN; break;
-  case SELECT_MODE_WRITE: poll_fd.events = POLLOUT; break;
-  case SELECT_MODE_ERROR: poll_fd.events = POLLERR; break;
-  default: return -1;
+    case SELECT_MODE_READ: poll_fd.events = POLLIN; break;
+    case SELECT_MODE_WRITE: poll_fd.events = POLLOUT; break;
+    case SELECT_MODE_ERROR: poll_fd.events = POLLERR; break;
+    default: return -1;
   }
   return ::poll(&poll_fd, 1, microseconds);
 }

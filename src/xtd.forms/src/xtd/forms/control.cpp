@@ -1279,48 +1279,48 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 void control::wnd_proc(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), ustring::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
-  // keyboard:
-  case WM_CREATE: wm_create(message); break;
-  case WM_CHAR:
-  case WM_KEYDOWN:
-  case WM_KEYUP:
-  case WM_SYSCHAR:
-  case WM_SYSKEYDOWN:
-  case WM_SYSKEYUP: wm_key_char(message); break;
-  // mouse events
-  case WM_LBUTTONDOWN:
-  case WM_MBUTTONDOWN:
-  case WM_RBUTTONDOWN:
-  case WM_XBUTTONDOWN: wm_mouse_down(message); break;
-  case WM_LBUTTONUP:
-  case WM_MBUTTONUP:
-  case WM_RBUTTONUP:
-  case WM_XBUTTONUP: wm_mouse_up(message); break;
-  case WM_LBUTTONDBLCLK:
-  case WM_MBUTTONDBLCLK:
-  case WM_RBUTTONDBLCLK:
-  case WM_XBUTTONDBLCLK: wm_mouse_double_click(message); break;
-  case WM_MOUSEMOVE: wm_mouse_move(message); break;
-  case WM_MOUSEENTER: wm_mouse_enter(message); break;
-  case WM_MOUSELEAVE: wm_mouse_leave(message); break;
-  case WM_CHILDACTIVATE: wm_child_activate(message); break;
-  case WM_SETFOCUS: wm_set_focus(message); break;
-  case WM_KILLFOCUS: wm_kill_focus(message); break;
-  case WM_MOUSEHWHEEL:
-  case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
-  // System events
-  case WM_COMMAND: wm_command(message); break;
-  case WM_ERASEBKGND: wm_erase_background(message); break;
-  case WM_PAINT: wm_paint(message); break;
-  case WM_MENUCOMMAND: if (data_->context_menu.has_value()) data_->context_menu.value().get().wm_click(message); break;
-  case WM_MOVE: wm_move(message);  break;
-  case WM_NOTIFY: wm_notify(message);  break;
-  case WM_SETTEXT: wm_set_text(message); break;
-  case WM_SIZE: wm_size(message); break;
-  case WM_SIZING: wm_sizing(message); break;
-  case WM_HSCROLL:
-  case WM_VSCROLL: wm_scroll(message); break;
-  default: def_wnd_proc(message); break;
+    // keyboard:
+    case WM_CREATE: wm_create(message); break;
+    case WM_CHAR:
+    case WM_KEYDOWN:
+    case WM_KEYUP:
+    case WM_SYSCHAR:
+    case WM_SYSKEYDOWN:
+    case WM_SYSKEYUP: wm_key_char(message); break;
+    // mouse events
+    case WM_LBUTTONDOWN:
+    case WM_MBUTTONDOWN:
+    case WM_RBUTTONDOWN:
+    case WM_XBUTTONDOWN: wm_mouse_down(message); break;
+    case WM_LBUTTONUP:
+    case WM_MBUTTONUP:
+    case WM_RBUTTONUP:
+    case WM_XBUTTONUP: wm_mouse_up(message); break;
+    case WM_LBUTTONDBLCLK:
+    case WM_MBUTTONDBLCLK:
+    case WM_RBUTTONDBLCLK:
+    case WM_XBUTTONDBLCLK: wm_mouse_double_click(message); break;
+    case WM_MOUSEMOVE: wm_mouse_move(message); break;
+    case WM_MOUSEENTER: wm_mouse_enter(message); break;
+    case WM_MOUSELEAVE: wm_mouse_leave(message); break;
+    case WM_CHILDACTIVATE: wm_child_activate(message); break;
+    case WM_SETFOCUS: wm_set_focus(message); break;
+    case WM_KILLFOCUS: wm_kill_focus(message); break;
+    case WM_MOUSEHWHEEL:
+    case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
+    // System events
+    case WM_COMMAND: wm_command(message); break;
+    case WM_ERASEBKGND: wm_erase_background(message); break;
+    case WM_PAINT: wm_paint(message); break;
+    case WM_MENUCOMMAND: if (data_->context_menu.has_value()) data_->context_menu.value().get().wm_click(message); break;
+    case WM_MOVE: wm_move(message);  break;
+    case WM_NOTIFY: wm_notify(message);  break;
+    case WM_SETTEXT: wm_set_text(message); break;
+    case WM_SIZE: wm_size(message); break;
+    case WM_SIZING: wm_sizing(message); break;
+    case WM_HSCROLL:
+    case WM_VSCROLL: wm_scroll(message); break;
+    default: def_wnd_proc(message); break;
   }
 }
 

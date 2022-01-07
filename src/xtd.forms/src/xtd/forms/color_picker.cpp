@@ -41,8 +41,8 @@ void color_picker::on_color_changed(const event_args& e) {
 
 void color_picker::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_COMMAND: wm_click(message); break;
-  default: control::wnd_proc(message);
+    case WM_COMMAND: wm_click(message); break;
+    default: control::wnd_proc(message);
   }
 }
 

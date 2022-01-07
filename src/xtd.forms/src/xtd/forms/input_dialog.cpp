@@ -115,9 +115,9 @@ void input_dialog::reset() {
 
 bool input_dialog::run_dialog(intptr_t owner) {
   switch (character_casing_) {
-  case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
-  case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
-  default: break;
+    case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
+    case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
+    default: break;
   }
   if (dialog_style_ == xtd::forms::dialog_style::standard) {
     input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_, word_wrap_);
@@ -133,9 +133,9 @@ bool input_dialog::run_dialog(intptr_t owner) {
 
 void input_dialog::run_sheet(intptr_t owner) {
   switch (character_casing_) {
-  case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
-  case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
-  default: break;
+    case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
+    case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
+    default: break;
   }
   if (!owner)
     run_dialog(owner);

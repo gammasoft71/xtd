@@ -20,13 +20,13 @@ namespace unit_tests {
   
   std::ostream& operator<<(std::ostream& os, wday d) {
     switch (d) {
-    case wday::sunday: os << "sunday"; break;
-    case wday::monday: os << "monday"; break;
-    case wday::tuesday: os << "tuesday"; break;
-    case wday::wednesday: os << "wednesday"; break;
-    case wday::thursday: os << "thursday"; break;
-    case wday::friday: os << "friday"; break;
-    case wday::saturday: os << "saturday"; break;
+      case wday::sunday: os << "sunday"; break;
+      case wday::monday: os << "monday"; break;
+      case wday::tuesday: os << "tuesday"; break;
+      case wday::wednesday: os << "wednesday"; break;
+      case wday::thursday: os << "thursday"; break;
+      case wday::friday: os << "friday"; break;
+      case wday::saturday: os << "saturday"; break;
     }
     return os;
   }

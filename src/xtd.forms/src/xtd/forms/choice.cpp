@@ -126,11 +126,11 @@ void choice::set_client_size_core(int32_t width, int32_t height) {
 
 void choice::wnd_proc(message& message) {
   switch (message.msg()) {
-  case WM_LBUTTONDOWN: wm_mouse_down(message); break;
-  case WM_LBUTTONUP: wm_mouse_up(message); break;
-  case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
-  case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-  default: list_control::wnd_proc(message);
+    case WM_LBUTTONDOWN: wm_mouse_down(message); break;
+    case WM_LBUTTONUP: wm_mouse_up(message); break;
+    case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+    default: list_control::wnd_proc(message);
   }
 }
 

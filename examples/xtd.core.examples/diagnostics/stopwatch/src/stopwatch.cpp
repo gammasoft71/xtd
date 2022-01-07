@@ -50,70 +50,70 @@ public:
         stopwatch time_per_parse;
         
         switch (operation) {
-        case 0:
-          // Parse a valid integer using a try-catch statement.
-          
-          // Start a new stopwatch timer.
-          time_per_parse = stopwatch::start_new();
-          
-          try {
-            input_num = parse<int>("0");
-          } catch (const system_exception&) {
-            input_num = 0;
-          }
-          
-          // Stop the timer, and save the elapsed ticks for the operation.
-          time_per_parse.stop();
-          ticks_this_time = time_per_parse.elapsed_ticks();
-          break;
-          
-        case 1:
-          // Parse a valid integer using the try_parse statement.
-          
-          // Start a new stopwatch timer.
-          time_per_parse = stopwatch::start_new();
-          
-          if (!try_parse<int>("0", input_num))
-            input_num = 0;
+          case 0:
+            // Parse a valid integer using a try-catch statement.
             
-          // Stop the timer, and save the elapsed ticks for the operation.
-          time_per_parse.stop();
-          ticks_this_time = time_per_parse.elapsed_ticks();
-          break;
-          
-        case 2:
-          // Parse an invalid value using a try-catch statement.
-          
-          // Start a new stopwatch timer.
-          time_per_parse = stopwatch::start_new();
-          
-          try {
-            input_num = parse<int>("a");
-          } catch (const system_exception&) {
-            input_num = 0;
-          }
-          
-          // Stop the timer, and save the elapsed ticks for the operation.
-          time_per_parse.stop();
-          ticks_this_time = time_per_parse.elapsed_ticks();
-          break;
-          
-        case 3:
-          // Parse an invalid value using the try_parse statement.
-          
-          // Start a new stopwatch timer.
-          time_per_parse = stopwatch::start_new();
-          
-          if (!try_parse("a", input_num))
-            input_num = 0;
+            // Start a new stopwatch timer.
+            time_per_parse = stopwatch::start_new();
             
-          // Stop the timer, and save the elapsed ticks for the operation.
-          time_per_parse.stop();
-          ticks_this_time = time_per_parse.elapsed_ticks();
-          break;
-          
-        default:
-          break;
+            try {
+              input_num = parse<int>("0");
+            } catch (const system_exception&) {
+              input_num = 0;
+            }
+            
+            // Stop the timer, and save the elapsed ticks for the operation.
+            time_per_parse.stop();
+            ticks_this_time = time_per_parse.elapsed_ticks();
+            break;
+            
+          case 1:
+            // Parse a valid integer using the try_parse statement.
+            
+            // Start a new stopwatch timer.
+            time_per_parse = stopwatch::start_new();
+            
+            if (!try_parse<int>("0", input_num))
+              input_num = 0;
+              
+            // Stop the timer, and save the elapsed ticks for the operation.
+            time_per_parse.stop();
+            ticks_this_time = time_per_parse.elapsed_ticks();
+            break;
+            
+          case 2:
+            // Parse an invalid value using a try-catch statement.
+            
+            // Start a new stopwatch timer.
+            time_per_parse = stopwatch::start_new();
+            
+            try {
+              input_num = parse<int>("a");
+            } catch (const system_exception&) {
+              input_num = 0;
+            }
+            
+            // Stop the timer, and save the elapsed ticks for the operation.
+            time_per_parse.stop();
+            ticks_this_time = time_per_parse.elapsed_ticks();
+            break;
+            
+          case 3:
+            // Parse an invalid value using the try_parse statement.
+            
+            // Start a new stopwatch timer.
+            time_per_parse = stopwatch::start_new();
+            
+            if (!try_parse("a", input_num))
+              input_num = 0;
+              
+            // Stop the timer, and save the elapsed ticks for the operation.
+            time_per_parse.stop();
+            ticks_this_time = time_per_parse.elapsed_ticks();
+            break;
+            
+          default:
+            break;
         }
         
         // Skip over the time for the first operation, just in case it caused a one-time performance hit.
