@@ -11,16 +11,14 @@ public:
     
     // Create a file to write to.
     
-    using_(auto stream = fi1.create_text()) {
-      stream_writer sw(stream);
+    using_(stream_writer sw = fi1.create_text()) {
       sw.write_line("Hello");
       sw.write_line("And");
       sw.write_line("Welcome");
     }
     
     // Open the file to read from.
-    using_(auto stream = fi1.open_text()) {
-      stream_reader sr(stream);
+    using_(stream_reader sr = fi1.open_text()) {
       while (!sr.end_of_stream())
         console::write_line(sr.read_line());
     }
