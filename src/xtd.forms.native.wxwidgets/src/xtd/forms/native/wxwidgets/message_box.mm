@@ -22,7 +22,7 @@ namespace {
     else if ((style & MB_OKCANCEL) == MB_OKCANCEL) result = return_code == NSAlertFirstButtonReturn ? IDOK : IDCANCEL;
     return result;
   }
-
+  
   static NSAlertStyle convert_to_icon(uint32_t style) {
     if ((style & MB_ICONINFORMATION) == MB_ICONINFORMATION) return NSAlertStyleInformational;
     if ((style & MB_ICONEXCLAMATION) == MB_ICONEXCLAMATION) return NSAlertStyleCritical;
@@ -56,7 +56,7 @@ namespace {
     [alert setAlertStyle:convert_to_icon(style)];
     if (display_help_button)
       [alert setShowsHelp:YES];
-    
+      
     if (NSApp == nullptr) {
       [NSApplication sharedApplication];
       [NSApp finishLaunching];
@@ -75,10 +75,10 @@ int32_t message_box::show(intptr_t control, const ustring& text, const ustring& 
 
 void message_box::show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
-    NSAlert *alert = create_alert(text, caption, style, display_help_button);
-    [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler:^(NSModalResponse return_code) {
-      on_dialog_closed(convert_to_dialog_rsult(style, return_code));
-    }];
+    NSAlert* alert = create_alert(text, caption, style, display_help_button);
+    [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler: ^ (NSModalResponse return_code) {
+            on_dialog_closed(convert_to_dialog_rsult(style, return_code));
+          }];
   }
 }
 #endif
