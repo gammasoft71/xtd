@@ -315,7 +315,7 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
 
 forms::create_params form::create_params() const {
   forms::create_params create_params = container_control::create_params();
-  create_params.style(create_params.style() | ~WS_CHILD);
+  create_params.style(create_params.style() & ~WS_CHILD);
   static int32_t default_location = 0;
   if (default_location == 0) {
     std::random_device rand;
