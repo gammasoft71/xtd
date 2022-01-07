@@ -51,4 +51,10 @@ if (XTD_ADD_COMMAND_CPPCHECK)
   configure_file(${CMAKE_SOURCE_DIR}/.cppcheck ${CMAKE_BINARY_DIR}/cppcheck_false_positive @ONLY)
   add_custom_target(check.xtd.forms COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_XTD_FORMS} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
   set_target_properties(check.xtd.forms PROPERTIES FOLDER commands)
-  endif ()
+  
+  # cppcheck xtd.tunit
+  list(APPEND CPPCHECK_ARGS_XTD_TUNIT ${CPPCHECK_ARGS} ${CMAKE_SOURCE_DIR}/src/xtd.tunit/src)
+  configure_file(${CMAKE_SOURCE_DIR}/.cppcheck ${CMAKE_BINARY_DIR}/cppcheck_false_positive @ONLY)
+  add_custom_target(check.xtd.tunit COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_XTD_TUNIT} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
+  set_target_properties(check.xtd.tunit PROPERTIES FOLDER commands)
+endif ()

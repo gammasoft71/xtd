@@ -44,7 +44,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::assert::are_equal(24, int(24)); // test ok.
-      /// xtd::tunit::assert::are_equal(23, int(24)); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::arextd.tunit/include/xtd/tunit/assert.hxtd.tunit/include/xtd/tunit/assert.h_equal(23, int(24)); // test throws an assertion_error exception.
       /// @endcode
       template<typename expected_t, typename actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}

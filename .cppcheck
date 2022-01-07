@@ -7,6 +7,7 @@ knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_i
 knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp:81
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/delegate.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h
+noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace_listener_collection.h
 StlMissingComparison:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h:714
 unreadVariable:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h:712
 unreadVariable:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h:713
@@ -18,27 +19,6 @@ virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/binary_w
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/stream_writer.h:85
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/string_writer.h:59
 
-// To be reviewed...
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h:212
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/path.h:156
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/directory.cpp:261
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/drive_info.cpp:71
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/stream_writer.h:85
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp:812
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp:816
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp:820
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp:50
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp:124
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/translator.cpp:40
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:595
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:602
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:609
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:616
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:623
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:630
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:930
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:944
-
 // __________________________________________________________________________________________________________________________
 //                                                                                                                xtd.drawing
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/bitmap.h
@@ -46,12 +26,6 @@ duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/solid
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/texture_brush.h
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_brush.h
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_brush.h
-
-// To be reviewed...
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/font_family.cpp:28
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp:89
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp:115
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/text/installed_font_collection.cpp:12
 
 // __________________________________________________________________________________________________________________________
 //                                                                                                                  xtd.forms
@@ -71,7 +45,38 @@ virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/cont
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/context_menu.h:44
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/menu.h:208
 
-// To be reviewed...
+// __________________________________________________________________________________________________________________________
+//                                                                                                                  xtd.tunit
+internalAstError:@CMAKE_SOURCE_DIR@/src/xtd.tunit/include/xtd/tunit/assert.h
+
+// __________________________________________________________________________________________________________________________
+//                                                                                                                        xtd
+
+// __________________________________________________________________________________________________________________________
+//                                                                                                             To be reviewed
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h:212
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/path.h:156
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/directory.cpp:261
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/drive_info.cpp:71
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/stream_writer.h:85
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp:812
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp:816
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp:820
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp:50
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp:124
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/translator.cpp:40
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:595
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:602
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:609
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:616
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:623
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:630
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:930
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:944
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/font_family.cpp:28
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp:89
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp:115
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/text/installed_font_collection.cpp:12
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h:409
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h:68
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h:74
@@ -82,3 +87,4 @@ useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/checked_list_box.
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/checked_list_box.cpp:98
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/country.cpp:28
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/list_box.cpp:102
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd/src/xtd/system_report.cpp:152
