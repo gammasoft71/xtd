@@ -1,6 +1,6 @@
 // __________________________________________________________________________________________________________________________
 //                                                                                                                   xtd.dore
-sizeofDivisionMemfunc:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.cpp:538
+sizeofDivisionMemfunc:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.cpp:536
 unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/console.cpp:378
 unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/console.cpp:379
 constParameter:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/convert_pointer.h
@@ -62,7 +62,7 @@ useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.win32/include/xtd/native/win32/strings.h:82
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/date_time.cpp:239
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.win32/src/xtd/native/win32/date_time.cpp:246
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h:212
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h:209
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/path.h:156
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/directory.cpp:261
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/drive_info.cpp:71
@@ -71,7 +71,7 @@ useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp:8
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp:816
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp:820
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp:50
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp:124
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp:123
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/translator.cpp:40
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:595
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp:602
