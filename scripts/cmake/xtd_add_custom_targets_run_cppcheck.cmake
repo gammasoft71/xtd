@@ -1,10 +1,10 @@
-option(XTD_ENABLE_CPPCHECK "Enable run cppcheck command" OFF)
+option(XTD_ENABLE_CPPCHECK "Enable run cppcheck command" ON)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
   
 if (XTD_ENABLE_CPPCHECK)
   # cppcheck command line arguments
   list(APPEND CPPCHECK_ARGS
-    --enable=warning,style,performance,portability
+    --enable=warning,style,performance,portability,unusedFunction,missingInclude
     --error-exitcode=1
     -j 8
     --language=c++

@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(scripts)
 include(cmake/xtd_commands.cmake)
 include(cmake/xtd_version.cmake)
-include(cmake/xtd_add_custom_targets_check_libraries.cmake)
+include(cmake/xtd_add_custom_targets_run_cppcheck.cmake)
 
 add_sources(
   run_tests.cmd
