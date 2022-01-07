@@ -5,11 +5,11 @@ namespace {
   uint32_t to_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue) {
     return (alpha << 24) + (red << 16) + (green << 8) + blue;
   }
-
+  
   uint32_t to_argb(uint8_t red, uint8_t green, uint8_t blue) {
     return to_argb(255, red, green, blue);
   }
-
+  
   uint32_t to_argb(NSColor* color) {
     const CGFloat* components = CGColorGetComponents(color.CGColor);
     uint32_t alpha = CGColorGetAlpha(color.CGColor) * 0xFF;
@@ -43,7 +43,7 @@ intptr_t __xtd__macos_system_colors_button_face__() {
     argb |= 0x23000000;
   }
   return argb;
-
+  
 }
 
 intptr_t __xtd__macos_system_colors_button_text__() {

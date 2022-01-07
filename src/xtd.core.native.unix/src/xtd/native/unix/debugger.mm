@@ -31,9 +31,9 @@ bool debugger::launch() {
 }
 
 int32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
-#if !defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE)
+  #if !defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE)
   NSModalResponse return_code = NSAlertSecondButtonReturn;
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+  NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
   @autoreleasepool {
     NSAlert* alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle:@"Abort"];
@@ -46,10 +46,10 @@ int32_t debugger::show_assert_dialog(const std::string& text, const std::string&
   }
   [pool release];
   return return_code == NSAlertFirstButtonReturn ? ADR_ABORT : (return_code == NSAlertSecondButtonReturn ? ADR_RETRY : ADR_IGNORE);
-#else
+  #else
   /// @todo iOS : Show dialog box...
   return ADR_RETRY;
-#endif
+  #endif
 }
 
 void debugger::log(int32_t level, const std::string& category, const std::string& message) {
