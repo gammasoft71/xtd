@@ -15,6 +15,7 @@ if (XTD_ENABLE_ASTYLE)
     --attach-inlines
     --attach-extern-c
     --attach-closing-while
+    --fill-empty-lines
     --indent-namespaces
     --indent-after-parens
     --indent-preproc-define
