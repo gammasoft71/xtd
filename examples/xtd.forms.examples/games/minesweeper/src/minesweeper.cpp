@@ -279,7 +279,7 @@ void minesweeper_form::mark_cell(int x, int y) {
   invalidate();
 }
 
-void minesweeper_form::on_about_menuu_click(object& sender, const xtd::event_args& e) {
+void minesweeper_form::on_about_menu_click(object& sender, const xtd::event_args& e) {
   about_dialog about_dialog;
   about_dialog.icon(properties::resources::minesweeper_png());
   about_dialog.name("Minesweeper"_t);
@@ -314,6 +314,10 @@ void minesweeper_form::on_about_menuu_click(object& sender, const xtd::event_arg
                        "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
                        "OR OTHER DEALINGS IN THE SOFTWARE.\n");
   about_dialog.show();
+}
+
+void minesweeper_form::on_help_content_menu_click(object& sender, const xtd::event_args& e) {
+  diagnostics::process::start("https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/resources/help.md");
 }
 
 void minesweeper_form::on_custom_menu_click(object& sender, const xtd::event_args& e) {

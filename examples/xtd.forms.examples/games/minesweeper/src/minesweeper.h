@@ -49,8 +49,9 @@ namespace minesweeper {
 
     void mark_cell(int x, int y);
 
-    void on_about_menuu_click(object& sender, const xtd::event_args& e);
+    void on_about_menu_click(object& sender, const xtd::event_args& e);
     void on_custom_menu_click(object& sender, const xtd::event_args& e);
+    void on_help_content_menu_click(object& sender, const xtd::event_args& e);
     void on_game_panel_mouse_up(object& sender, const xtd::forms::mouse_event_args& e);
     void on_game_panel_paint(object& sender, xtd::forms::paint_event_args& e);
     void on_status_panel_paint(object& sender, xtd::forms::paint_event_args& e);
@@ -89,11 +90,11 @@ namespace minesweeper {
     xtd::forms::menu_item game_separator4_menu_item_ {"-"};
     xtd::forms::menu_item game_exit_menu_item_ {xtd::forms::system_texts::exit(), {overload_<>(xtd::forms::application::exit)}};
     xtd::forms::menu_item game_menu_item_ {"&Game", {game_new_game_menu_item_, game_separator1_menu_item_, game_beginner_menu_item_, game_inermediate_menu_item_, game_expert_menu_item_, game_custom_menu_item_, game_separator2_menu_item_, game_marks_menu_item_, game_original_color_menu_item_, game_separator3_menu_item_, game_best_times_menu_item_, game_separator4_menu_item_, game_exit_menu_item_}};
-    xtd::forms::menu_item help_content_menu_item_ {"&Contents", {[&] {}}, xtd::forms::shortcut::f1};
+    xtd::forms::menu_item help_content_menu_item_ {"&Contents", {*this, &minesweeper_form::on_help_content_menu_click}, xtd::forms::shortcut::f1};
     xtd::forms::menu_item help_search_menu_item_ {"&Search for Help On...", {[&] {}}};
     xtd::forms::menu_item help_how_to_menu_item_ {"&How to Use Help", {[&] {}}};
     xtd::forms::menu_item help_separator1_menu_item_ {"-"};
-    xtd::forms::menu_item help_about_menu_item_ {xtd::forms::system_texts::about(), {*this, &minesweeper_form::on_about_menuu_click}};
+    xtd::forms::menu_item help_about_menu_item_ {xtd::forms::system_texts::about(), {*this, &minesweeper_form::on_about_menu_click}};
     xtd::forms::menu_item help_menu_item_ {xtd::forms::system_texts::help(), {help_content_menu_item_, help_search_menu_item_, help_how_to_menu_item_, help_separator1_menu_item_, help_about_menu_item_}};
     xtd::forms::main_menu main_menu_ {game_menu_item_, help_menu_item_};
 
