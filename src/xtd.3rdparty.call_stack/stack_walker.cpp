@@ -186,12 +186,8 @@ DWORD64
 
 class StackWalkerInternal {
 public:
-  StackWalkerInternal(StackWalker *parent, HANDLE hProcess) {
-    m_parent = parent;
-    m_hDbhHelp = NULL;
+  StackWalkerInternal(StackWalker *parent, HANDLE hProcess) : m_parent(parent), m_hDbhHelp(NULL), m_hProcess(hProcess), m_szSymPath(NULL) {
     pSC = NULL;
-    m_hProcess = hProcess;
-    m_szSymPath = NULL;
     pSFTA = NULL;
     pSGLFA = NULL;
     pSGMB = NULL;
@@ -693,7 +689,7 @@ public:
       return FALSE;
     }
     memcpy(pData, pModuleInfo, sizeof(IMAGEHLP_MODULE64_V2));
-    if (pSGMI(hProcess, baseAddr, (IMAGEHLP_MODULE64_V2*) pData) != FALSE) {
+    if (pSGMI(hProcess, baseAddr, reinterpret_cast<IMAGEHLP_MODULE64_V2*>(pData)) != FALSE) {
       // only copy as much memory as is reserved...
       memcpy(pModuleInfo, pData, sizeof(IMAGEHLP_MODULE64_V2));
       pModuleInfo->SizeOfStruct = sizeof(IMAGEHLP_MODULE64_V2);
@@ -707,20 +703,9 @@ public:
 };
 
 // #############################################################
-StackWalker::StackWalker(DWORD dwProcessId, HANDLE hProcess) {
-  m_options = OptionsAll;
-  m_modulesLoaded = FALSE;
-  m_hProcess = hProcess;
-  m_sw = new StackWalkerInternal(this, m_hProcess);
-  m_dwProcessId = dwProcessId;
-  m_szSymPath = NULL;
+StackWalker::StackWalker(DWORD dwProcessId, HANDLE hProcess) : m_sw(new StackWalkerInternal(this, m_hProcess)), m_hProcess(hProcess), m_dwProcessId(dwProcessId), m_modulesLoaded (FALSE), m_szSymPath(NULL), m_options(OptionsAll) {
 }
-StackWalker::StackWalker(int options, LPCSTR szSymPath, DWORD dwProcessId, HANDLE hProcess) {
-  m_options = options;
-  m_modulesLoaded = FALSE;
-  m_hProcess = hProcess;
-  m_sw = new StackWalkerInternal(this, m_hProcess);
-  m_dwProcessId = dwProcessId;
+StackWalker::StackWalker(int options, LPCSTR szSymPath, DWORD dwProcessId, HANDLE hProcess) : m_sw(new StackWalkerInternal(this, m_hProcess)), m_hProcess(hProcess), m_dwProcessId(dwProcessId), m_modulesLoaded(FALSE), m_szSymPath(NULL), m_options(options) {
   if (szSymPath != NULL) {
     m_szSymPath = _strdup(szSymPath);
     m_options |= SymBuildPath;

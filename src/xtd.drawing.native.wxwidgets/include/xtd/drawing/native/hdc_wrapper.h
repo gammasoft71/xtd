@@ -33,17 +33,17 @@ namespace xtd {
         
         template<typename hdc_t, typename ...args_type>
         void create(args_type&& ...args) {
-          hdc_t* hdc = new hdc_t(args...);
-          hdc_ = hdc;
-          graphics_ = create_graphics(*hdc);
+          hdc_t* handle = new hdc_t(args...);
+          hdc_ = handle;
+          graphics_ = create_graphics(*handle);
         }
         
         void create_memory_hdc(wxBitmap* bitmap, wxImage* image) {
-          auto hdc = new wxMemoryDC(*bitmap);
-          hdc_ = hdc;
+          auto handle = new wxMemoryDC(*bitmap);
+          hdc_ = handle;
           bitmap_ = bitmap;
           image_ = image;
-          graphics_ = create_graphics(*hdc);
+          graphics_ = create_graphics(*handle);
         }
         
         void apply_update() {

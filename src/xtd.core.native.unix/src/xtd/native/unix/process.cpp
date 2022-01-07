@@ -27,7 +27,7 @@ using namespace xtd::native;
 namespace {
   class file_descriptor_streambuf : public streambuf {
   public:
-    file_descriptor_streambuf(int file_descriptor) : file_descriptor_(file_descriptor) {}
+    explicit file_descriptor_streambuf(int file_descriptor) : file_descriptor_(file_descriptor) {}
     ~file_descriptor_streambuf() {close(file_descriptor_);}
     
   protected:
@@ -54,7 +54,7 @@ namespace {
 
   class process_istream : public istream {
   public:
-    process_istream(int file_descriptor) : istream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_istream(int file_descriptor) : istream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
@@ -62,7 +62,7 @@ namespace {
   
   class process_ostream : public ostream {
   public:
-    process_ostream(int file_descriptor) : ostream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_ostream(int file_descriptor) : ostream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
