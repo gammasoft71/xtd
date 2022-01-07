@@ -72,3 +72,4 @@ tools/xtdc-gui/properties/settings.h
 tools/keycodes/properties/resources.h
 tools/keycodes/properties/settings.h
 tools/keycodes/properties/startup.cpp
+examples/xtd.forms.examples/others/stopwatch_form/properties/resources.h
