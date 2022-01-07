@@ -58,7 +58,7 @@ socket_address ip_end_point::serialize() const {
   size_t index = 2;
   for (byte_t b : bit_converter::get_bytes(ip_address::host_to_network_order(port_)))
     result[index++] = b;
-  
+    
   if (address_.address_family() == address_family::inter_network_v6) {
     index = 8;
     for (byte_t b : address_.get_address_bytes())

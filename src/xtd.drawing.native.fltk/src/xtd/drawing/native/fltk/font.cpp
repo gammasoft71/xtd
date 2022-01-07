@@ -7,29 +7,29 @@
 using namespace xtd::drawing::native;
 
 namespace {
-#if defined(__WXOSX__)
+  #if defined(__WXOSX__)
   Fl_Fontsize points_to_native_font_graphics_untit(float size) {
     return static_cast<Fl_Fontsize>(size / font::dpi() * 96.0f);  // font is in pixels and not in points
   }
-
+  
   Fl_Fontsize native_font_graphics_untit_to_points(float size) {
     return static_cast<Fl_Fontsize>(size / 96.0f * font::dpi());  // font is in pixels and not in points
   }
-#else
+  #else
   Fl_Fontsize points_to_native_font_graphics_untit(float size) {
     return static_cast<Fl_Fontsize>(size);  // font is in points
   }
-
+  
   Fl_Fontsize native_font_graphics_untit_to_points(float size) {
     return static_cast<Fl_Fontsize>(size);  // font is in points
   }
-#endif
-
+  #endif
+  
   std::map<std::string, Fl_Font>& fonts() {
     static std::map<std::string, Fl_Font> fonts;
     if (fonts.empty()) {
       Fl_Font count = Fl::set_fonts();
-      for(Fl_Font index = 0; index < count; ++index) {
+      for (Fl_Font index = 0; index < count; ++index) {
         int attribute = 0;
         std::string name = Fl::get_font_name(index, &attribute);
         fonts[name] = index;

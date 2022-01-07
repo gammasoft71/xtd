@@ -64,13 +64,13 @@ namespace xtd {
       /// @cond
       template<typename type_t>
       emoticon(const xtd::ustring& name, std::initializer_list<type_t> codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       
       template<typename type_t>
       emoticon(const xtd::ustring& name, const std::vector<type_t>& codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       
@@ -79,19 +79,19 @@ namespace xtd {
       
       template<typename type_t>
       explicit emoticon(std::initializer_list<type_t> codepoints) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       
       template<typename type_t>
       explicit emoticon(const std::vector<type_t>& codepoints) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
-
+      
       template<typename type_t>
       explicit emoticon(type_t codepoint) : codepoints_({static_cast<char32_t>(codepoint)}) {}
-
+      
       emoticon() = default;
       emoticon(const emoticon&) = default;
       emoticon& operator=(const emoticon&) = default;
@@ -113,7 +113,7 @@ namespace xtd {
       /// @return An array of char32_t that represent the emoticon.
       const std::vector<char32_t>& codepoints() const {return codepoints_;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -122,9 +122,9 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override {
         std::string result;
         for (auto codepoint : codepoints_) {
-          if (codepoint < 0x80) {
+          if (codepoint < 0x80)
             result.push_back(static_cast<char>(codepoint));
-          } else  if (codepoint < 0x800) {
+          else  if (codepoint < 0x800) {
             result.push_back(static_cast<char>((codepoint >> 6) | 0xc0));
             result.push_back(static_cast<char>((codepoint & 0x3f) | 0x80));
           } else if (codepoint < 0x10000) {

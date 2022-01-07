@@ -61,7 +61,7 @@ namespace xtd {
       /// @param value true if the background_worker supports progress updates; otherwise false. The default is false.
       /// @remarks Set the worker_reports_progress property to true if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
       void worker_reports_progress(bool value) {data_->worker_reports_progress = value;}
-
+      
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @return true if the background_worker supports cancellation; otherwise false. The default is false.
       /// @remarks Set the worker_supports_cancellation property to true if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
@@ -71,7 +71,7 @@ namespace xtd {
       /// @remarks Set the worker_supports_cancellation property to true if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
       void worker_supports_cancellation(bool value) {data_->worker_supports_cancellation = value;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -91,7 +91,7 @@ namespace xtd {
       /// @brief Raises the background_worker::run_worker_completed event.
       /// @param e An event_args that contains the event data.
       virtual void on_run_worker_completed(const run_worker_completed_event_args& e) {run_worker_completed(*this, e);}
-
+      
       /// @brief Starts execution of a background operation.
       void run_worker_async();
       
@@ -102,7 +102,7 @@ namespace xtd {
         data_->argument = argument;
         run_worker_async();
       }
-
+      
       /// @brief Raises the ProgressChanged event.
       /// @param percent_progress The percentage, from 0 to 100, of the background operation that is complete.
       void report_progress(int32_t percent_progress);
@@ -112,7 +112,7 @@ namespace xtd {
       /// @param user_state A unique object indicating the user state. Returned as the user_state property of the progress_changed_even_args.
       void report_progress(int32_t percent_progress, std::any user_state);
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -120,12 +120,12 @@ namespace xtd {
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<background_worker, do_work_event_handler> do_work;
-
+      
       /// @brief Occurs when report_progress(int32_t) is called.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<background_worker, progress_changed_event_handler> progress_changed;
-
+      
       /// @brief Occurs when the background operation has completed, has been canceled, or has raised an exception.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.

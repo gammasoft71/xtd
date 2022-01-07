@@ -25,14 +25,14 @@ public:
       down_box(FL_NO_BOX);
       color(FL_BACKGROUND_COLOR);
       selection_color(FL_BACKGROUND_COLOR);
-      align(FL_ALIGN_CENTER|FL_ALIGN_INSIDE);
+      align(FL_ALIGN_CENTER | FL_ALIGN_INSIDE);
     } else {
       color(FL_BACKGROUND_COLOR);
       selection_color(FL_FOREGROUND_COLOR);
-      align(FL_ALIGN_LEFT|FL_ALIGN_INSIDE);
+      align(FL_ALIGN_LEFT | FL_ALIGN_INSIDE);
     }
   }
-
+  
   int state() const {return state_;}
   void state(int state) {
     if (state_ !=  state) {
@@ -42,14 +42,14 @@ public:
       if (when() & FL_WHEN_CHANGED) this->do_callback();
     }
   }
-
-  int handle (int event) override {
+  
+  int handle(int event) override {
     if (event == FL_PUSH || event == FL_DRAG) return true;
     if (event == FL_RELEASE || (event == FL_KEYBOARD && Fl::focus() == this && Fl::event_key() == ' ' && !(Fl::event_state() & (FL_SHIFT | FL_CTRL | FL_ALT | FL_META)))) {
       if (auto_check_) {
         state(FL_RADIO_CHECKED);
         if (this->parent()) {
-          for ( int index = 0; index < this->parent()->children(); index++) {
+          for (int index = 0; index < this->parent()->children(); index++) {
             if (this->parent()->child(index) != this && dynamic_cast<Fl_Radio_Toggle_Button*>(this->parent()->child(index)) && static_cast<Fl_Radio_Toggle_Button*>(this->parent()->child(index))->auto_check())
               static_cast<Fl_Radio_Toggle_Button*>(this->parent()->child(index))->state(FL_RADIO_UNCHECKED);
           }

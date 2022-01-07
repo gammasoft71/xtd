@@ -31,7 +31,7 @@ namespace xtd {
   /// }
   /// @endcode
   /// @remarks same as #block_scope_
-  #define using_(...) \
-    for (bool __xtd_using__ = true; __xtd_using__; __xtd_using__ = false)\
-      for (__VA_ARGS__; __xtd_using__; __xtd_using__ = false)
+#define using_(...) \
+  for (bool __xtd_using__ = true; __xtd_using__; __xtd_using__ = false)\
+    for (__VA_ARGS__; __xtd_using__; __xtd_using__ = false)
 }

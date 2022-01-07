@@ -26,7 +26,7 @@ namespace xtd {
       /// @brief Initialises a new instance of user_control class.
       user_control();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -54,7 +54,7 @@ namespace xtd {
       /// @return Current user_control instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual user_control& border_style(forms::border_style border_style);
-
+      
       drawing::size default_size() const override {return {150, 150};}
       /// @}
       
@@ -66,7 +66,7 @@ namespace xtd {
       void on_layout(const event_args& e) override;
       void on_paint(paint_event_args& e) override;
       /// @}
-
+      
     private:
       forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::none;

@@ -16,10 +16,10 @@ namespace {
   xtd::ustring get_hotkey_prefix_locations(const xtd::ustring& str, std::vector<size_t>& locations) {
     auto offset = 0U;
     for (auto index = 0U; index < str.size(); index++) {
-      if (str[index] == '&' && str[index+1] != '&') {
+      if (str[index] == '&' && str[index + 1] != '&')
         locations.push_back(index + offset);
-      } else if (str[index] == '&' && str[index+1] == '&') {
-        offset-=2;
+      else if (str[index] == '&' && str[index + 1] == '&') {
+        offset -= 2;
         ++index;
       }
     }
@@ -28,7 +28,7 @@ namespace {
       new_str = new_str.remove(locations[index], 1);
     return new_str;
   }
-
+  
   void draw_string(graphics g, const ustring& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
     vector<size_t> hotkey_prefix_locations;
     ustring text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
@@ -71,16 +71,16 @@ void radio_button_renderer::draw_radio_button_gnome_dark(graphics g, const recta
   auto button_color = control_paint::light(background_color, .05);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
-
-  if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed) {
+  
+  if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed)
     button_color = control_paint::light(button_color, 0.1);
-  } else if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
     if (!back_color.has_value()) border_color = color::from_argb(90, 90, 90);
     text_color = mark_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
-
+  
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 17, 17};
   g.fill_ellipse(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.15), button_color), button_rectangle);
   g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
@@ -99,16 +99,16 @@ void radio_button_renderer::draw_radio_button_gnome_light(graphics g, const rect
   auto button_color = control_paint::light(background_color, 0.25);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
-
-  if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed) {
+  
+  if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed)
     button_color = control_paint::dark(button_color, 0.1);
-  } else if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
     if (!back_color.has_value()) border_color = color::from_argb(90, 90, 90);
     text_color = mark_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
-
+  
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 17, 17};
   g.fill_ellipse(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.5), button_color), button_rectangle);
   g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
@@ -145,9 +145,9 @@ void radio_button_renderer::draw_radio_button_macos_dark(graphics g, const recta
   auto text_color = control_paint::light(foreground_color, 0.1);
   auto mark_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent_text(), 0.15);
   
-  if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {
+  if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed)
     button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent(), 0.15);
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
     button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().button_face(), 0.7);
@@ -185,17 +185,17 @@ void radio_button_renderer::draw_radio_button_symbolic_dark(graphics g, const re
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
   
-  if (state == xtd::forms::visual_styles::radio_button_state::checked_normal) {
+  if (state == xtd::forms::visual_styles::radio_button_state::checked_normal)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot) {
-    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot) {
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0 / 3);
     button_color = control_paint::light(background_color, .1);
   } else if (state == xtd::forms::visual_styles::radio_button_state::checked_hot) {
-    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0 / 3);
     button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {
+  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
@@ -219,17 +219,17 @@ void radio_button_renderer::draw_radio_button_symbolic_light(graphics g, const r
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
   
-  if (state == xtd::forms::visual_styles::radio_button_state::checked_normal) {
+  if (state == xtd::forms::visual_styles::radio_button_state::checked_normal)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot) {
-    border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot) {
+    border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().active_border(), 2.0 / 3);
     button_color = control_paint::dark(background_color, .1);
   } else if (state == xtd::forms::visual_styles::radio_button_state::checked_hot) {
-    border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+    border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().active_border(), 2.0 / 3);
     button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {
+  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
@@ -258,11 +258,11 @@ void radio_button_renderer::draw_radio_button_windows_dark(graphics g, const rec
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
   
-  if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_hot) {
+  if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_hot)
     border_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
     if (!back_color.has_value()) border_color = color::from_argb(90, 90, 90);
     text_color = mark_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
@@ -286,11 +286,11 @@ void radio_button_renderer::draw_radio_button_windows_light(graphics g, const re
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().control_text();
   
-  if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_hot) {
+  if (state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_hot)
     border_color = mark_color = xtd::forms::theme_colors::current_theme().highlight();
-  }else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_pressed)
     border_color = mark_color = xtd::forms::theme_colors::current_theme().highlight();
-  } else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
     if (!back_color.has_value()) border_color = xtd::forms::theme_colors::current_theme().gray_text();
     text_color = mark_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
@@ -304,7 +304,7 @@ void radio_button_renderer::draw_radio_button_windows_light(graphics g, const re
   if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
-
+  
 }
 
 void radio_button_renderer::draw_radio_button_xtd(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {

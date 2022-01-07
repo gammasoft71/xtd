@@ -15,11 +15,11 @@ using namespace xtd::forms;
 namespace {
   static xtd::forms::image_layout to_image_layout(picture_box_size_mode size_mode) {
     switch (size_mode) {
-      case picture_box_size_mode::normal: return xtd::forms::image_layout::none;
-      case picture_box_size_mode::stretch_image: return xtd::forms::image_layout::stretch;
-      case picture_box_size_mode::auto_size: return xtd::forms::image_layout::none;
-      case picture_box_size_mode::center_image: return xtd::forms::image_layout::center;
-      case picture_box_size_mode::zoom: return xtd::forms::image_layout::zoom;
+    case picture_box_size_mode::normal: return xtd::forms::image_layout::none;
+    case picture_box_size_mode::stretch_image: return xtd::forms::image_layout::stretch;
+    case picture_box_size_mode::auto_size: return xtd::forms::image_layout::none;
+    case picture_box_size_mode::center_image: return xtd::forms::image_layout::center;
+    case picture_box_size_mode::zoom: return xtd::forms::image_layout::zoom;
     }
     return xtd::forms::image_layout::none;
   }
@@ -85,13 +85,13 @@ forms::create_params picture_box::create_params() const {
   if (control_appearance() == forms::control_appearance::system) {
     if (border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
     else if (border_style_ != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  
+    
     switch (size_mode_) {
-      case picture_box_size_mode::normal: create_params.style(create_params.style() | SS_BITMAP_NORMAL); break;
-      case picture_box_size_mode::stretch_image: create_params.style(create_params.style() | SS_BITMAP_STRETCH); break;
-      case picture_box_size_mode::auto_size: create_params.style(create_params.style() | SS_BITMAP_AUTOSIZE); break;
-      case picture_box_size_mode::center_image: create_params.style(create_params.style() | SS_BITMAP_CENTER); break;
-      case picture_box_size_mode::zoom: create_params.style(create_params.style() | SS_BITMAP_ZOOM); break;
+    case picture_box_size_mode::normal: create_params.style(create_params.style() | SS_BITMAP_NORMAL); break;
+    case picture_box_size_mode::stretch_image: create_params.style(create_params.style() | SS_BITMAP_STRETCH); break;
+    case picture_box_size_mode::auto_size: create_params.style(create_params.style() | SS_BITMAP_AUTOSIZE); break;
+    case picture_box_size_mode::center_image: create_params.style(create_params.style() | SS_BITMAP_CENTER); break;
+    case picture_box_size_mode::zoom: create_params.style(create_params.style() | SS_BITMAP_ZOOM); break;
     }
   }
   
@@ -105,7 +105,7 @@ drawing::size picture_box::measure_control() const {
   return size;
 }
 
-void picture_box::on_handle_created(const event_args &e) {
+void picture_box::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   if (image_.has_value() && image_.value() != drawing::image::empty && control_appearance() == forms::control_appearance::system)
     native::picture_box::image(handle(), image_.value());
@@ -116,6 +116,6 @@ void picture_box::on_paint(paint_event_args& e) {
   if (control_appearance() == forms::control_appearance::standard) {
     control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
     if (image().has_value())
-      control_paint::draw_image(e.graphics(), image().value(), e.clip_rectangle(),to_image_layout(size_mode()));
+      control_paint::draw_image(e.graphics(), image().value(), e.clip_rectangle(), to_image_layout(size_mode()));
   }
 }

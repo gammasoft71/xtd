@@ -13,7 +13,7 @@ public:
     client_size({800, 450});
     controls().push_back_range({group_box_properties, button_demo});
     
-    group_box_properties.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::bottom);
+    group_box_properties.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);
     group_box_properties.controls().push_back({panel_properties});
     group_box_properties.location({10, 10});
     group_box_properties.size({340, 430});
@@ -22,23 +22,23 @@ public:
     panel_properties.auto_scroll(true);
     panel_properties.controls().push_back_range({label_text, text_box_text, label_text_align, choice_text_align, label_image, choice_image, label_image_align, choice_image_align, label_flat_style, choice_flat_style, label_back_color, color_picker_back_color, label_fore_color, color_picker_fore_color, label_width, numeric_up_down_width, label_height, numeric_up_down_height, label_auto_size, check_box_auto_size, label_default_button, check_box_default_buttton, label_enebaled, check_box_enabled});
     panel_properties.dock(dock_style::fill);
-
+    
     label_text.auto_size(true);
     label_text.location({10, 13});
     label_text.text("Text: ");
-
+    
     text_box_text.text_changed += [&] {
       button_demo.text(text_box_text.text());
     };
     text_box_text.location({100, 10});
     text_box_text.text("&Click me!");
     text_box_text.width(200);
-    text_box_text.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    text_box_text.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_text_align.auto_size(true);
     label_text_align.location({10, 48});
     label_text_align.text("text_align: ");
-
+    
     choice_text_align.selected_value_changed += [&] {
       button_demo.text_align(any_cast<content_alignment>(choice_text_align.selected_item().tag()));
     };
@@ -46,8 +46,8 @@ public:
     choice_text_align.items().push_back_range({{"top_left", content_alignment::top_left}, {"top_center", content_alignment::top_center}, {"top_right", content_alignment::top_right}, {"middle_left", content_alignment::middle_left}, {"middle_center", content_alignment::middle_center}, {"middle_right", content_alignment::middle_right}, {"bottom_left", content_alignment::bottom_left}, {"bottom_center", content_alignment::bottom_center}, {"bottom_right", content_alignment::bottom_right}});
     choice_text_align.selected_index(4);
     choice_text_align.width(200);
-    choice_text_align.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    choice_text_align.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_image.text("image: ");
     label_image.auto_size(true);
     label_image.location({10, 83});
@@ -61,8 +61,8 @@ public:
     choice_image.selected_index(0);
     choice_image.location({100, 80});
     choice_image.width(200);
-    choice_image.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    choice_image.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_image_align.text("image_align: ");
     label_image_align.auto_size(true);
     label_image_align.location({10, 118});
@@ -74,8 +74,8 @@ public:
     choice_image_align.selected_index(4);
     choice_image_align.location({100, 115});
     choice_image_align.width(200);
-    choice_image_align.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    choice_image_align.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_flat_style.text("flat_style: ");
     label_flat_style.auto_size(true);
     label_flat_style.location({10, 153});
@@ -87,8 +87,8 @@ public:
     choice_flat_style.selected_index(2);
     choice_flat_style.location({100, 150});
     choice_flat_style.width(200);
-    choice_flat_style.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    choice_flat_style.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_back_color.text("back_color: ");
     label_back_color.auto_size(true);
     label_back_color.location({10, 188});
@@ -100,8 +100,8 @@ public:
     };
     color_picker_back_color.location({100, 185});
     color_picker_back_color.width(200);
-    color_picker_back_color.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    color_picker_back_color.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_fore_color.text("fore_color: ");
     label_fore_color.auto_size(true);
     label_fore_color.location({10, 223});
@@ -113,8 +113,8 @@ public:
     };
     color_picker_fore_color.location({100, 220});
     color_picker_fore_color.width(200);
-    color_picker_fore_color.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    color_picker_fore_color.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_width.text("width: ");
     label_width.auto_size(true);
     label_width.location({10, 258});
@@ -126,8 +126,8 @@ public:
     numeric_up_down_width.set_range(0, std::numeric_limits<int32_t>::max());
     numeric_up_down_width.location({100, 255});
     numeric_up_down_width.width(200);
-    numeric_up_down_width.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    numeric_up_down_width.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_height.text("height: ");
     label_height.auto_size(true);
     label_height.location({10, 293});
@@ -139,8 +139,8 @@ public:
     numeric_up_down_height.set_range(0, std::numeric_limits<int32_t>::max());
     numeric_up_down_height.location({100, 290});
     numeric_up_down_height.width(200);
-    numeric_up_down_height.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    numeric_up_down_height.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_auto_size.text("auto_size: ");
     label_auto_size.auto_size(true);
     label_auto_size.location({10, 328});
@@ -159,8 +159,8 @@ public:
     check_box_auto_size.width(200);
     check_box_auto_size.text("false");
     check_box_auto_size.text_align(content_alignment::middle_center);
-    check_box_auto_size.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    check_box_auto_size.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_default_button.text("default: ");
     label_default_button.auto_size(true);
     label_default_button.location({10, 363});
@@ -176,8 +176,8 @@ public:
     check_box_default_buttton.width(200);
     check_box_default_buttton.text("false");
     check_box_default_buttton.text_align(content_alignment::middle_center);
-    check_box_default_buttton.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    check_box_default_buttton.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     label_enebaled.text("enabled: ");
     label_enebaled.auto_size(true);
     label_enebaled.location({10, 398});
@@ -192,8 +192,8 @@ public:
     check_box_enabled.width(200);
     check_box_enabled.text("true");
     check_box_enabled.text_align(content_alignment::middle_center);
-    check_box_enabled.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
-
+    check_box_enabled.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+    
     button_demo.location({380, 30});
     button_demo.click += [&] {
       message_box::show(*this, "Button clicked", "Button appearance");
@@ -227,7 +227,7 @@ private:
   check_box check_box_default_buttton;
   label label_enebaled;
   check_box check_box_enabled;
-
+  
   button button_demo;
 };
 

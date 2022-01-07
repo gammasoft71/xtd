@@ -21,13 +21,13 @@ namespace xtd {
         explicit wx_timer(delegate<void(const event_args&)> tick) : tick_(tick) {
           timer_.Bind(wxEVT_TIMER, &wx_timer::on_tick, this);
         }
-
+        
         ~wx_timer() {
           timer_.Unbind(wxEVT_TIMER, &wx_timer::on_tick, this);
         }
-
+        
         wxTimer& timer() {return timer_;}
-
+        
       private:
         void on_tick(wxTimerEvent& event) {
           try {

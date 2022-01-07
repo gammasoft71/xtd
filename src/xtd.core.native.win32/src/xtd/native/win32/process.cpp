@@ -20,7 +20,7 @@ namespace {
   public:
     explicit file_handle_streambuf(HANDLE file_handle) : file_handle_(file_handle) {}
     ~file_handle_streambuf() { CloseHandle(file_handle_); }
-
+    
   protected:
     int underflow() override {
       DWORD number_of_bytes_read = 0;
@@ -31,7 +31,7 @@ namespace {
       }
       return std::streambuf::underflow(); // EOF
     }
-
+    
     int overflow(int c) override {
       value_ = static_cast<char>(c);
       DWORD number_of_bytes_written = 0;
@@ -41,27 +41,27 @@ namespace {
       }
       return std::streambuf::overflow(c); // EOF
     }
-
+    
     HANDLE file_handle_;
     char value_ = EOF;
   };
-
+  
   class process_istream : public std::istream {
   public:
     explicit process_istream(HANDLE file_handle) : std::istream(&stream_buf_), stream_buf_(file_handle) {}
-
+    
   private:
     file_handle_streambuf stream_buf_;
   };
-
+  
   class process_ostream : public std::ostream {
   public:
     explicit process_ostream(HANDLE file_handle) : std::ostream(&stream_buf_), stream_buf_(file_handle) {}
-
+    
   private:
     file_handle_streambuf stream_buf_;
   };
-
+  
   void initialize() {
     static auto initilized = false;
     if (initilized) return;
@@ -95,7 +95,7 @@ intptr_t process::shell_execute(const std::string& verb, const std::string& file
   auto wworking_directory =  working_directory != "" ? win32::strings::to_wstring(working_directory) : filesystem::current_path().wstring();
   SHELLEXECUTEINFO shell_execute_info = {};
   shell_execute_info.cbSize = sizeof(SHELLEXECUTEINFO);
-  shell_execute_info.fMask = SEE_MASK_NOCLOSEPROCESS|SEE_MASK_FLAG_NO_UI;
+  shell_execute_info.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
   shell_execute_info.hwnd = nullptr;
   shell_execute_info.lpVerb = wverb != L"" ? wverb.c_str() : nullptr;
   shell_execute_info.lpFile = wfile_name.c_str();
@@ -147,7 +147,7 @@ process::started_process process::start(const string& file_name, const string& a
   if (redirect_standard_error) CloseHandle(pipe_stderr[1]);
   
   process_infos[reinterpret_cast<intptr_t>(process_information.hProcess)] = make_tuple(reinterpret_cast<intptr_t>(process_information.hProcess), reinterpret_cast<intptr_t>(process_information.hThread), L"", win32::strings::to_wstring(file_name), win32::strings::to_wstring(arguments), win32::strings::to_wstring(working_directory));
-
+  
   return make_tuple(reinterpret_cast<intptr_t>(process_information.hProcess), static_cast<int32_t>(process_information.dwProcessId), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
 }
 

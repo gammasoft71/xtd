@@ -21,19 +21,19 @@ using namespace xtd::forms;
 namespace {
   xtd::forms::visual_styles::push_button_state to_push_button_style(xtd::forms::visual_styles::check_box_state state) {
     switch (state) {
-      case xtd::forms::visual_styles::check_box_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::check_box_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
-      case xtd::forms::visual_styles::check_box_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::check_box_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      case xtd::forms::visual_styles::check_box_state::checked_normal: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::check_box_state::checked_hot: return xtd::forms::visual_styles::push_button_state::hot;
-      case xtd::forms::visual_styles::check_box_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::check_box_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      case xtd::forms::visual_styles::check_box_state::mixed_normal: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::check_box_state::mixed_hot: return xtd::forms::visual_styles::push_button_state::hot;
-      case xtd::forms::visual_styles::check_box_state::mixed_pressed: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::check_box_state::mixed_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      default: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::check_box_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::check_box_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
+    case xtd::forms::visual_styles::check_box_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::check_box_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    case xtd::forms::visual_styles::check_box_state::checked_normal: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::check_box_state::checked_hot: return xtd::forms::visual_styles::push_button_state::hot;
+    case xtd::forms::visual_styles::check_box_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::check_box_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    case xtd::forms::visual_styles::check_box_state::mixed_normal: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::check_box_state::mixed_hot: return xtd::forms::visual_styles::push_button_state::hot;
+    case xtd::forms::visual_styles::check_box_state::mixed_pressed: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::check_box_state::mixed_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    default: return xtd::forms::visual_styles::push_button_state::normal;
     }
   }
 }
@@ -86,7 +86,7 @@ light_button& light_button::light_off_color(const drawing::color& value) {
     data_->light_off_color = value;
     invalidate();
   }
-    
+  
   return *this;
 }
 
@@ -95,7 +95,7 @@ light_button& light_button::light_off_color(nullptr_t) {
     data_->light_off_color.reset();
     invalidate();
   }
-
+  
   return *this;
 }
 
@@ -103,12 +103,12 @@ drawing::color light_button::light_on_color() const {
   return data_->light_on_color.value_or(default_light_on_color());
 }
 
-light_button& light_button::light_on_color(const drawing::color& value){
+light_button& light_button::light_on_color(const drawing::color& value) {
   if (!data_->light_on_color.has_value() || data_->light_on_color.value() != value) {
     data_->light_on_color = value;
     invalidate();
   }
-
+  
   return *this;
 }
 
@@ -147,7 +147,7 @@ void light_button::on_paint(paint_event_args& e) {
     if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
     else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
     else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
-
+    
     drawing::color light_color = light_off_color();
     if (data_->check_state == check_state::checked) light_color = light_on_color();
     else if (data_->check_state == check_state::indeterminate) light_color = drawing::color::dark(light_on_color());
@@ -155,7 +155,7 @@ void light_button::on_paint(paint_event_args& e) {
     int left = e.clip_rectangle().left() + 5;
     if (data_->light_align == content_alignment::top_right || data_->light_align == content_alignment::middle_right || data_->light_align == content_alignment::bottom_right) left = e.clip_rectangle().right() - 15;
     else if (data_->light_align == content_alignment::top_center || data_->light_align == content_alignment::middle_center || data_->light_align == content_alignment::bottom_center) left = e.clip_rectangle().left() + (e.clip_rectangle().width() / 2) - 5;
-    int top = e.clip_rectangle().top() +  (e.clip_rectangle().height() / 2) - 7;
+    int top = e.clip_rectangle().top() + (e.clip_rectangle().height() / 2) - 7;
     if (data_->light_align == content_alignment::top_right || data_->light_align == content_alignment::top_center || data_->light_align == content_alignment::top_left) top = e.clip_rectangle().top() + 5;
     else if (data_->light_align == content_alignment::bottom_right || data_->light_align == content_alignment::bottom_center || data_->light_align == content_alignment::bottom_left) top = e.clip_rectangle().bottom() - 20;
     e.graphics().fill_rounded_rectangle(drawing::solid_brush(light_color), drawing::rectangle {left, top, 10, 16}, 2);
@@ -169,32 +169,32 @@ drawing::size light_button::measure_control() const {
   return button_base::measure_text();
 }
 
-void light_button::wnd_proc(message &message) {
+void light_button::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_LBUTTONDOWN: wm_mouse_down(message); break;
-    case WM_LBUTTONUP: wm_mouse_up(message); break;
-    case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
-    default: button_base::wnd_proc(message);
+  case WM_LBUTTONDOWN: wm_mouse_down(message); break;
+  case WM_LBUTTONUP: wm_mouse_up(message); break;
+  case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
+  default: button_base::wnd_proc(message);
   }
 }
 
-void light_button::wm_mouse_double_click(message &message) {
+void light_button::wm_mouse_double_click(message& message) {
   on_double_click(event_args::empty);
 }
 
-void light_button::wm_mouse_down(message &message) {
+void light_button::wm_mouse_down(message& message) {
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   set_mouse_buttons(mouse_buttons() | e.button());
   on_mouse_down(e);
 }
 
-void light_button::wm_mouse_up(message &message) {
+void light_button::wm_mouse_up(message& message) {
   if (data_->auto_check)
     switch (check_state()) {
-      case forms::check_state::unchecked: check_state(forms::check_state::checked); break;
-      case forms::check_state::checked: check_state(three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;
-      case forms::check_state::indeterminate: check_state(forms::check_state::unchecked); break;
+    case forms::check_state::unchecked: check_state(forms::check_state::checked); break;
+    case forms::check_state::checked: check_state(three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;
+    case forms::check_state::indeterminate: check_state(forms::check_state::unchecked); break;
     }
   mouse_event_args e = mouse_event_args::create(message);
   set_mouse_buttons(mouse_buttons() & ~e.button());

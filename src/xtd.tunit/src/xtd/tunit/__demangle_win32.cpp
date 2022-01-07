@@ -6,7 +6,7 @@
 #include <vector>
 
 namespace {
-  void erase_all_sub_str(std::string & main_str, const std::string & to_erase) {
+  void erase_all_sub_str(std::string& main_str, const std::string& to_erase) {
     size_t pos;
     while ((pos = main_str.find(to_erase)) != std::string::npos)
       main_str.erase(pos, to_erase.length());

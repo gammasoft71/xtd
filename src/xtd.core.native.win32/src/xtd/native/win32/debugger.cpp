@@ -30,7 +30,7 @@ bool debugger::launch() {
   UINT system_dir_size = GetSystemDirectory(system_dir.data(), (UINT)system_dir.length());
   if (system_dir_size == 0) return false;
   system_dir.resize(system_dir_size);
-
+  
   STARTUPINFO startup_info = {};
   startup_info.cb = sizeof(startup_info);
   PROCESS_INFORMATION process_information = {};

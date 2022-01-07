@@ -44,7 +44,7 @@ namespace xtd {
       
       std::any result() const {return result_;}
       /// @}
-
+      
     private:
       bool cancel_ = false;
       std::optional<std::reference_wrapper<std::exception>> exception_;

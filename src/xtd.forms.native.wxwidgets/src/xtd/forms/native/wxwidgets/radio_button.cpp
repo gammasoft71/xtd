@@ -18,7 +18,6 @@ void radio_button::checked(intptr_t control, bool checked) {
   if (dynamic_cast<wxRadioButton*>(radio_button->control()) != nullptr) {
     radio_button->hidden_radio_button->SetValue(!checked);
     static_cast<wxRadioButton*>(radio_button->control())->SetValue(checked);
-  } else {
+  } else
     static_cast<wxToggleButton*>(radio_button->control())->SetValue(checked);
-  }
 }

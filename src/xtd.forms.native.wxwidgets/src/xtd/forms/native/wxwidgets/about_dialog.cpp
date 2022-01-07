@@ -19,8 +19,7 @@ namespace {
       allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
       refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
       UnhookWindowsHookEx(handle_hook);
-    }
-    else
+    } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
     return 0;
   }
@@ -46,8 +45,8 @@ void about_dialog::show(intptr_t hwnd, const xtd::drawing::icon& icon, const ust
       about_info.AddArtist(convert_string::to_wstring(designer));
     about_info.SetLicense(convert_string::to_wstring(license));
   }
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
-#endif
+  #endif
   wxAboutBox(about_info);
 }

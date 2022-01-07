@@ -10,7 +10,7 @@
 /// @endcond
 
 #include <cstdint>
- 
+
 #ifndef NORMAL_PRIORITY_CLASS
 /// @internal
 /// @brief Process with no special scheduling needs.

@@ -15,7 +15,7 @@ namespace examples {
       timer.tick += event_handler(*this, &wiggly::on_timer_tick);
       timer.enabled(true);
     }
-
+    
   protected:
     void on_paint(paint_event_args& e) override {
       static const vector sins = {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
@@ -27,17 +27,17 @@ namespace examples {
         pos.x(pos.x() + as<int>(e.graphics().measure_string(ustring::format("{}", wiggly_text[i]), font()).width()));
       }
     }
-
+    
   private:
     void on_timer_tick(object& sender, const event_args& e) {
       step++;
       invalidate();
     }
-
+    
     forms::timer timer;
     int step = 0;
   };
-
+  
   class form1 : public form {
   public:
     form1() {

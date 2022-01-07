@@ -32,7 +32,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the combo_box class.
       combo_box();
       /// @}
-
+      
       /// @name Porperties
       
       /// @{
@@ -102,7 +102,7 @@ namespace xtd {
       /// @remarks The preferred way to add multiple items to the combo_box is to use the push_back_range method of the combo_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void end_update();
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -117,7 +117,7 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const override;
-
+      
       /// @brief Raises the combo_box::drop_down_style_changed event.
       virtual void on_drop_down_style_changed(const event_args& e);
       
@@ -134,7 +134,7 @@ namespace xtd {
       /// @brief Processes the mouse double-click message the list_box control receives from the top-level window.
       /// @param message The message the top-level window sent to the list_box control.
       virtual void wm_mouse_double_click(message& message);
-
+      
       /// @brief Processes the mouse down message the list_box control receives from the top-level window.
       /// @param message The message the top-level window sent to the list_box control.
       virtual void wm_mouse_down(message& message);

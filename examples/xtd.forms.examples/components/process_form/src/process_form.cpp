@@ -11,7 +11,7 @@ public:
     text("Process form example");
     controls().push_back(layout_panel);
     client_size({350, 540});
-
+    
     layout_panel.controls().push_back_range({xtd_web_button, write_mail_button, open_home_folder_button, open_readme_txt_file_button, open_gammasoft_png_file_button, open_calculator_button});
     layout_panel.dock(dock_style::fill);
     layout_panel.control_layout_style(xtd_web_button, {size_type::auto_size, true});
@@ -20,21 +20,21 @@ public:
     layout_panel.control_layout_style(open_readme_txt_file_button, {size_type::auto_size, true});
     layout_panel.control_layout_style(open_gammasoft_png_file_button, {size_type::auto_size, true});
     layout_panel.control_layout_style(open_calculator_button, {size_type::auto_size, true});
-
+    
     xtd_web_button.image(button_images::from_name("text-html", drawing::size(64, 64)));
     xtd_web_button.image_align(content_alignment::middle_left);
     xtd_web_button.text("Open xtd website...");
     xtd_web_button.click += [] {
       process::start("https://gammasoft71.wixsite.com/xtdpro");
     };
-
+    
     write_mail_button.image(button_images::from_name("document-send", drawing::size(64, 64)));
     write_mail_button.image_align(content_alignment::middle_left);
     write_mail_button.text("Write mail...");
     write_mail_button.click += [] {
       process::start("mailto:gammasoft71@gmail.com");
     };
-
+    
     open_home_folder_button.image(button_images::from_name("folder-home", drawing::size(64, 64)));
     open_home_folder_button.image_align(content_alignment::middle_left);
     open_home_folder_button.text("Open home folder...");
@@ -57,7 +57,7 @@ public:
       drawing::system_images::from_name("gammasoft", drawing::size(512, 512)).save(path::combine(path::get_temp_path(), "gammasoft.png"));
       process::start(process_start_info("gammasoft.png").working_directory(path::get_temp_path()));
     };
-
+    
     open_calculator_button.image(button_images::from_name("accessories-calculator", drawing::size(64, 64)));
     open_calculator_button.image_align(content_alignment::middle_left);
     open_calculator_button.text("Launch Calculator...");

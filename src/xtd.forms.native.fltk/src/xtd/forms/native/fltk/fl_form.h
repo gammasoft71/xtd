@@ -8,7 +8,7 @@
 
 class Fl_Form : public Fl_Window {
 public:
-  Fl_Form(int x, int y, int w, int h , const char* l = 0) : Fl_Window(x, y, w, h, l) {
+  Fl_Form(int x, int y, int w, int h, const char* l = 0) : Fl_Window(x, y, w, h, l) {
     resizable_control_.hide();
     resizable(resizable_control_);
   }

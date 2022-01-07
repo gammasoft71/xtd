@@ -20,14 +20,14 @@ link_label::link_collection& link_label::link_collection::operator=(const link_l
 }
 
 link_label::link_collection::const_reference link_label::link_collection::operator[](const ustring& name) const {
-  for(auto& item : *this)
-    if(item.name() == name) return item;
+  for (auto& item : *this)
+    if (item.name() == name) return item;
   return empty_;
 }
 
 link_label::link_collection::reference link_label::link_collection::operator[](const ustring& name) {
-  for(auto& item : *this)
-    if(item.name() == name) return item;
+  for (auto& item : *this)
+    if (item.name() == name) return item;
   return empty_;
 }
 
@@ -109,7 +109,7 @@ drawing::size link_label::measure_control() const {
   return bounds.size() + drawing::size(2, 1) + drawing::size(border_style() == border_style::none ? 0 : 4, border_style() == border_style::none ? 0 : 4);
 }
 
-void link_label::on_cursor_changed(const event_args &e) {
+void link_label::on_cursor_changed(const event_args& e) {
   label::on_cursor_changed(e);
   if (!mouse_hover_)
     original_cursor_ = cursor();
@@ -171,7 +171,7 @@ void link_label::on_paint(paint_event_args& e) {
       if (!link.enabled()) color = disabled_link_color_;
       else if (link.active_) color = active_link_color_;
       else if (link.visited()) color = visited_link_color_;
-
+      
       if (index < link.start()) {
         text = line.substring(line_index, link.start() - line_index);
         size_text = drawing::size::ceiling(e.graphics().measure_string(text, font()));
@@ -227,7 +227,7 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
       if (rect.contains(point)) return links_[link_index];
       ++link_index;
     }
-
+    
   return link_empty_;
 }
 
@@ -237,16 +237,16 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const {
     point text_location;
     drawing::size text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font()));
     switch (text_align()) {
-      case content_alignment::top_left: text_location = point(0, text_size.height() * as<int32_t>(line_number)); break;
-      case content_alignment::top_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, text_size.height() * as<int32_t>(line_number)); break;
-      case content_alignment::top_right: text_location = point(client_rectangle().width() - text_size.width(), text_size.height() * as<int32_t>(line_number)); break;
-      case content_alignment::middle_left: text_location = point(0, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32_t>(line_number)); break;
-      case content_alignment::middle_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32_t>(line_number)); break;
-      case content_alignment::middle_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32_t>(line_number)); break;
-      case content_alignment::bottom_left: text_location = point(0, client_rectangle().height() - text_size.height() + text_size.height() * as<int32_t>(line_number)); break;
-      case content_alignment::bottom_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() - text_size.height() + text_size.height() * as<int32_t>(line_number)); break;
-      case content_alignment::bottom_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() - text_size.height() + text_size.height() * as<int32_t>(line_number)); break;
-      default: break;
+    case content_alignment::top_left: text_location = point(0, text_size.height() * as<int32_t>(line_number)); break;
+    case content_alignment::top_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, text_size.height() * as<int32_t>(line_number)); break;
+    case content_alignment::top_right: text_location = point(client_rectangle().width() - text_size.width(), text_size.height() * as<int32_t>(line_number)); break;
+    case content_alignment::middle_left: text_location = point(0, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32_t>(line_number)); break;
+    case content_alignment::middle_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32_t>(line_number)); break;
+    case content_alignment::middle_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32_t>(line_number)); break;
+    case content_alignment::bottom_left: text_location = point(0, client_rectangle().height() - text_size.height() + text_size.height() * as<int32_t>(line_number)); break;
+    case content_alignment::bottom_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() - text_size.height() + text_size.height() * as<int32_t>(line_number)); break;
+    case content_alignment::bottom_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() - text_size.height() + text_size.height() * as<int32_t>(line_number)); break;
+    default: break;
     }
     if (line_number == line_index) return text_location;
     ++line_index;
@@ -289,7 +289,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
     index += line_index + 1;
     ++line_number;
   }
-
+  
   return text_rects;
 }
 

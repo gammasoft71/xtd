@@ -59,7 +59,7 @@ namespace xtd {
           explicit async_result_accept_tcp_client(std::any async_state) : async_result_socket(async_state) {}
           xtd::net::sockets::tcp_client tcp_client_;
         };
-
+        
       public:
         /// @name Constructors
         
@@ -120,7 +120,7 @@ namespace xtd {
         /// @remarks Set this property before calling xtd::net::sockets::tcp_listener::start, or call the xtd::net::sockets::tcp_listener::stop method and then set this property.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         tcp_listener& exclusive_address_use(bool value);
-
+        
         /// @brief Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.
         /// @return The xtd::net::end_point to which the xtd::net::sockets::socket is bound.
         /// @remarks You can use the xtd::net::sockets::tcp_listener::local_end_point property to identify the local network interface and port number being used to listen for incoming client connection requests, after a socket connection has been made. You must first cast this xtd::net::end_point to an xtd::net::ip_end_point. You can then call the xtd::net::ip_end_point::address property to retrieve the local IP address, and the xtd::net::ip_end_point::port property to retrieve the local port number.
@@ -168,7 +168,7 @@ namespace xtd {
         /// @note You can call the xtd::net::sockets::socket::remote_end_point property of the returned xtd::net::sockets::socket to identify the remote host's network address and port number.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         std::shared_ptr<xtd::iasync_result> begin_accept_socket(xtd::async_callback callback, const std::any& state);
-
+        
         /// @brief Begins an asynchronous operation to accept an incoming connection attempt.
         /// @param async_result An xtd::async_callback delegate that references the method to invoke when the operation is complete.
         /// @param state A user-defined object containing information about the accept operation. This object is passed to the callback delegate when the operation is complete.
@@ -179,7 +179,7 @@ namespace xtd {
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_ccp_client method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         std::shared_ptr<xtd::iasync_result> begin_accept_tcp_client(xtd::async_callback callback, const std::any& state);
-
+        
         /// @brief Creates a new xtd::net::sockets::tcp_listener instance to listen on the specified port.
         /// @param port The port on which to listen for incoming connection attempts.
         /// @return xtd::net::sockets::tcp_listener A new xtd::net::sockets::tcp_listener instance to listen on the specified port.
@@ -195,7 +195,7 @@ namespace xtd {
         /// @note You can call the xtd::net::sockets::socket::remote_end_point property of the returned xtd::net::sockets::socket to identify the remote host's network address and port number.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         xtd::net::sockets::socket end_accept_socket(std::shared_ptr<xtd::iasync_result> async_result);
-
+        
         /// @brief Asynchronously accepts an incoming connection attempt and creates a new xtd::net::sockets::tcp_client to handle remote host communication.
         /// @param async_result An xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_tcp_client(xtd::async_callback, std::any) method.
         /// @param state A user-defined object containing information about the accept operation. This object is passed to the callback delegate when the operation is complete.
@@ -215,7 +215,7 @@ namespace xtd {
         /// @remarks This non-blocking method determines if there are any pending connection requests. Because the xtd::net::sockets::tcp_listener::accept_socket and xtd::net::sockets::tcp_listener::accept_tcp_client methods block execution until
         /// @remarks the xtd::net::sockets::tcp_listener::start method has queued an incoming connection request, the xtd::net::sockets::tcp_listener::pending method can be used to determine if connections are available before attempting to accept them.
         bool pending();
-
+        
         /// @brief xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @remarks The xtd::net::sockets::tcp_listener::start method initializes the underlying xtd::net::sockets::socket, binds it to a local endpoint, and listens for incoming connection attempts. If a connection request is received, the xtd::net::sockets::tcp_listener::start method will queue the request and continue listening for additional requests until you call the xtd::net::sockets::tcp_listener::stop method. If xtd::net::sockets::tcp_listener receives a connection request after it has already queued the maximum number of connections, it will throw a xtd::net::sockets::socket_exception on the client.
@@ -242,7 +242,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void stop();
         /// @}
-
+        
       protected:
         /// @name Protected properties
         
@@ -253,7 +253,7 @@ namespace xtd {
         /// @remarks The Active property can be used to avoid redundant xtd::net::sockets::tcp_listener::start attempts.
         bool active() const noexcept;
         /// @}
-
+        
       private:
         struct data;
         std::shared_ptr<data> data_;

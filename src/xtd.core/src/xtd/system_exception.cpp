@@ -22,7 +22,7 @@ ustring system_exception::to_string() const noexcept {
 
 ustring system_exception::stack_trace_to_string() const noexcept {
   if (!stack_trace_) return information_.to_string();
-
+  
   size_t skip_frames = stack_trace_->frame_count();
   for (size_t index = 0; index < stack_trace_->frame_count(); ++index)
     if (stack_trace_->get_frame(index).get_method().starts_with(name()))

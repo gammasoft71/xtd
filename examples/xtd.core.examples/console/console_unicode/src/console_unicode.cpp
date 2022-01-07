@@ -18,7 +18,7 @@ int main() {
   
   console::write_line("Current code page: {}\n", console::output_code_page());
   // Display the characters.
-  for(auto ch : chars) {
+  for (auto ch : chars) {
     console::write("{0}  ", ch);
     if (console::cursor_left() >= 70)
       console::write_line();

@@ -77,7 +77,7 @@ namespace xtd {
     /// @remarks The next(value_t) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
     template<typename value_t>
     value_t next(value_t max_value) const {return next(0, max_value);}
-
+    
     /// @brief Returns a random number within a specified range.
     /// @param min_value The inclusive lower bound of the random number returned
     /// @param max_value The exclusive upper bound of the random number returned. max_value must be greater than or equal to min_value.
@@ -90,7 +90,7 @@ namespace xtd {
       if (min_value == max_value) return min_value;
       return min_value + static_cast<int32_t>(std::round(sample() * std::numeric_limits<int32_t>::max())) % ((max_value - 1) - min_value + 1);
     }
-
+    
     /// @brief Returns a random number within a specified range.
     /// @param min_value The inclusive lower bound of the random number returned
     /// @param max_value The exclusive upper bound of the random number returned. max_value must be greater than or equal to min_value.
@@ -104,12 +104,12 @@ namespace xtd {
       if (min_value == max_value) return min_value;
       return min_value + static_cast<value_t>(std::round(sample() * std::numeric_limits<value_t>::max())) % ((max_value - 1) - min_value + 1);
     }
-
+    
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<uint8_t>::max().
     virtual void next_bytes(std::vector<uint8_t>& buffer) const {next_bytes(buffer.data(), buffer.size());}
-
+    
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @exception argument_null_exception buffer is null.
@@ -119,7 +119,7 @@ namespace xtd {
       for (size_t index = 0; index < buffer_size; index++)
         buffer[index] = next<uint8_t>(0, std::numeric_limits<uint8_t>::max());
     }
-
+    
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
@@ -134,13 +134,13 @@ namespace xtd {
     void next_values(value_t* buffer, size_t buffer_size) const {
       if (buffer == nullptr) throw argument_null_exception(current_stack_frame_);
       for (size_t index = 0; index < buffer_size; index++)
-      buffer[index] = next<value_t>(0, std::numeric_limits<value_t>::max());
+        buffer[index] = next<value_t>(0, std::numeric_limits<value_t>::max());
     }
-
+    
     /// @brief Returns a random number between 0.0 and 1.0
     /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
     /// @remarks This method is the public version of the protected method, sample
-    virtual double next_double() const{return sample();}
+    virtual double next_double() const {return sample();}
     /// @}
     
   protected:
@@ -151,7 +151,7 @@ namespace xtd {
       static std::uniform_real_distribution<> distribution_(0, 1);
       return distribution_(generator_);
     }
-
+    
   private:
     mutable std::default_random_engine generator_;
   };

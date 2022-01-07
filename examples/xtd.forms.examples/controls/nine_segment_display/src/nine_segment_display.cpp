@@ -12,7 +12,7 @@ public:
     nine_segment_display1.location({(client_size().width() - nine_segment_display1.width()) / 2, (client_size().height() - nine_segment_display1.height()) / 2});
     nine_segment_display1.parent(*this);
     nine_segment_display1.fore_color(color::red);
-    nine_segment_display1.anchor(anchor_styles::top|anchor_styles::bottom);
+    nine_segment_display1.anchor(anchor_styles::top | anchor_styles::bottom);
     
     timer1.interval(300ms);
     timer1.enabled(true);
@@ -33,14 +33,14 @@ private:
   std::vector<segments> chaser = {
     segments::none,
     segments::a,
-    segments::a|segments::b,
-    segments::a|segments::b|segments::c,
-    segments::a|segments::b|segments::c|segments::d,
-    segments::a|segments::b|segments::c|segments::d|segments::e,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h|segments::i,
+    segments::a | segments::b,
+    segments::a | segments::b | segments::c,
+    segments::a | segments::b | segments::c | segments::d,
+    segments::a | segments::b | segments::c | segments::d | segments::e,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g | segments::h,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g | segments::h | segments::i,
     segments::dp,
     segments::pc
   };

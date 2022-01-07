@@ -16,9 +16,9 @@ namespace xtd {
           this->control()->copy_label(create_params.caption().c_str());
           static_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
         }
-          
+        
         bool sorted() const {return this->sorted_;}
-          
+        
       private:
         bool sorted_ = false;
       };

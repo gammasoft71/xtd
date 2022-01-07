@@ -22,13 +22,13 @@ namespace xtd {
     /// @{
     /// @brief Initializes a new instance of the console_cancel_event_args class.
     console_cancel_event_args() = default;
-
+    
     /// @brief Initializes a new instance of the console_cancel_event_args class.
     /// @param cancel true if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues..
     /// @param special_key One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value..
     console_cancel_event_args(bool cancel, console_special_key special_key) : cancel_(cancel), special_key_(special_key) {}
     /// @}
-
+    
     /// @cond
     console_cancel_event_args(const console_cancel_event_args&) = default;
     console_cancel_event_args& operator=(const console_cancel_event_args&) = default;
@@ -49,7 +49,7 @@ namespace xtd {
     /// @return One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value.
     console_special_key special_key() const {return special_key_;}
     /// @}
-
+    
   private:
     bool cancel_ = false;
     console_special_key special_key_ = static_cast<console_special_key>(0);

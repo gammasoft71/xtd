@@ -37,7 +37,7 @@ namespace xtd {
       /// @remarks By default, the minimum property is set to 0, the maximum property is set to 100, and the step property is set to 10.
       progress_bar();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -116,7 +116,7 @@ namespace xtd {
       /// @remarks The minimum and maximum values of the value property are specified by the minimum and maximum properties. This property enables you to increment or decrement the value of the progress bar directly. To perform consistent increases in the value of the progress_bar control you can use the step property with the perform_step method. To increase the progress bar value by varying amounts, use the increment method.
       virtual progress_bar& value(int32_t value);
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -136,7 +136,7 @@ namespace xtd {
       /// @brief Advances the current position of the progress bar by the amount of the Step property.
       /// @remarks The perform_step method increments the value of the progress bar by the amount specified by the step property. You can use the Step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
       void perform_step() {increment(step());}
-
+      
       /// @brief Sets the minimum and maximum values for a xtd::forms::progress_bar.
       /// @param min_value The lower limit of the range of the progress bar.
       /// @param max_value The upper limit of the range of the progress bar.
@@ -145,7 +145,7 @@ namespace xtd {
         minimum(min_value);
         maximum(min_value > max_value ? min_value : max_value);
       }
-
+      
       /// @brief Returns a string that represents the progress_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.

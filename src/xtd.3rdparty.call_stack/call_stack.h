@@ -12,7 +12,7 @@ namespace stacktrace {
   /** Call-stack entry datastructure. */
   struct entry {
     /** Default constructor that clears all fields. */
-    entry () : file(""), line(0), function(""), offset(0), column(0) {}
+    entry() : file(""), line(0), function(""), offset(0), column(0) {}
     
     std::string file;     ///< filename
     size_t      line;     ///< line number
@@ -21,7 +21,7 @@ namespace stacktrace {
     size_t      column;   ///< column number
     
     /** Serialize entry into a text string. */
-    std::string to_string () const {
+    std::string to_string() const {
       std::ostringstream os;
       os << file << " (" << line << "): " << function;
       return os.str();
@@ -33,12 +33,12 @@ namespace stacktrace {
   public:
     /** Stack-trace constructor.
      \param num_discard - number of stack entries to discard at the top. */
-    explicit call_stack (const size_t num_discard = 0);
+    explicit call_stack(const size_t num_discard = 0);
     
-    virtual ~call_stack () throw();
+    virtual ~call_stack() throw();
     
     /** Serializes the entire call-stack into a text string. */
-    std::string to_string () const {
+    std::string to_string() const {
       std::ostringstream os;
       for (size_t i = 0; i < stack.size(); i++)
         os << stack[i].to_string() << std::endl;

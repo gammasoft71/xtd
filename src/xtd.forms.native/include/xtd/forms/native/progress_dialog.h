@@ -45,7 +45,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @return true if user has clicked on cancel button; otherwise false.
         /// @warning Internal use only
-       static bool cancelled(intptr_t dialog);
+        static bool cancelled(intptr_t dialog);
         /// @brief Creates progress dialog.
         /// @param hwnd Parent window handle.
         /// @param text A string that specifies the title bar caption to display.
@@ -56,7 +56,7 @@ namespace xtd {
         /// @param maximum The maximum value of the range.
         /// @param value The position within the range of the progress bar. The default is 0.
         /// @param options A bitwise progress dialog flags value.
-       /// @return The created progress dialog window handle.
+        /// @return The created progress dialog window handle.
         /// @warning Internal use only
         static intptr_t create(intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, const std::vector<xtd::ustring>& informations, size_t marquee_animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options);
         /// @brief Destroys progress dialog.

@@ -28,12 +28,12 @@ namespace xtd {
       /// @brief Initializes a new instance of the date_time_picker class.
       date_time_picker() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
       drawing::size default_size() const override {return {100, 25};}
-
+      
       /// @brief Gets the format of the date and time displayed in the control.
       /// @return One of the date_time_picker_format values. The default is long_format.
       /// @remarks This property determines the date/time format the date is displayed in. The date/time format is based on the user's regional settings in their operating system.
@@ -51,7 +51,7 @@ namespace xtd {
       /// @param value The maximum date and time that can be selected in the control.
       /// @return Current date_time_picker.
       virtual control& max_date(date_time value);
-
+      
       /// @brief Gets the minimum date and time that can be selected in the control.
       /// @return The minimum date and time that can be selected in the control.
       virtual date_time min_date() const;
@@ -59,7 +59,7 @@ namespace xtd {
       /// @param value The minimum date and time that can be selected in the control.
       /// @return Current date_time_picker.
       virtual control& min_date(date_time value);
-
+      
       /// @brief Gets the date/time value assigned to the control.
       /// @return The date and time value assign to the control.
       virtual date_time value() const;
@@ -76,7 +76,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<date_time_picker, event_handler> value_changed;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       

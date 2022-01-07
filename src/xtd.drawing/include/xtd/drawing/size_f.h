@@ -35,20 +35,20 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the Size class that has a Height and Width value of 0.
       size_f() = default;
-
+      
       /// @brief Initializes a new instance of the Size class from the specified Point class.
       /// @param point The Point class from which to initialize this Size class
       explicit size_f(const xtd::drawing::point_f& point);
-
+      
       /// @brief Initializes a new instance of the Size class from the specified dimensions.
       /// @param width The width component of the new Size
       /// @param height The height component of the new Size
       size_f(float width, float height) : width_(width), height_(height) {}
       /// @}
-
+      
       /// @cond
       size_f(const xtd::drawing::size_f&) = default;
-      bool operator==(const xtd::drawing::size_f& value) const {return width_ == value.width_ && height_ == value.height_;}      
+      bool operator==(const xtd::drawing::size_f& value) const {return width_ == value.width_ && height_ == value.height_;}
       bool operator!=(const xtd::drawing::size_f& value) const {return !operator==(value);}
       size_f& operator=(const xtd::drawing::size_f& size) = default;
       size_f operator+(const xtd::drawing::size_f& size) const;
@@ -60,7 +60,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-
+      
       /// @brief Tests whether this Size class has width and height of 0.
       /// @return bool Returns true  when this Size class has both a width and height of 0; otherwise, false.
       bool is_empty() const {return *this == size_f::empty;}
@@ -84,7 +84,7 @@ namespace xtd {
       /// @remarks The unit for the Height and Width of the Size class depend on the PageUnit and PageScale settings for the Graphics object that is used to draw.
       void width(float width) {width_ = width;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -93,14 +93,14 @@ namespace xtd {
       /// @param size2 The second Size class to add.
       /// @return Size A Size class that is the result of the addition operation.
       static xtd::drawing::size_f add(const xtd::drawing::size_f& size1, const xtd::drawing::size_f& size2);
-
+      
       /// @brief Returns the result of subtracting specified size from the specified size.
       /// @param sz1 The Size to be subtracted from.
       /// @param sz2 The Size to subtract from the Size.
       /// @return The Size that is the result of the subtraction operation.
       /// @exception ArgumentNullException sz1 or sz2 are null.
       static xtd::drawing::size_f subtract(const xtd::drawing::size_f& sz1, const xtd::drawing::size_f& sz2);
-
+      
       /// @brief Creates a human-readable string that represents this size class.
       /// @return string A string that represents this size.
       xtd::ustring to_string() const noexcept override {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}

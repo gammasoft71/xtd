@@ -73,7 +73,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-       
+      
       /// @brief Validates that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -285,7 +285,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       /// @brief Validates that string does not start with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -393,7 +393,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-       
+      
       /// @brief Validates that string does not end with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -497,7 +497,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-     
+      
       /// @brief Validates that does not match regex pattern.
       /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.

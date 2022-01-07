@@ -16,19 +16,19 @@ using namespace xtd::forms;
 namespace {
   xtd::forms::visual_styles::push_button_state to_push_button_style(xtd::forms::visual_styles::toggle_button_state state) {
     switch (state) {
-      case xtd::forms::visual_styles::toggle_button_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::toggle_button_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
-      case xtd::forms::visual_styles::toggle_button_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::checked;
-      case xtd::forms::visual_styles::toggle_button_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      case xtd::forms::visual_styles::toggle_button_state::checked_normal: return xtd::forms::visual_styles::push_button_state::checked;
-      case xtd::forms::visual_styles::toggle_button_state::checked_hot: return xtd::forms::visual_styles::push_button_state::checked;
-      case xtd::forms::visual_styles::toggle_button_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::checked;
-      case xtd::forms::visual_styles::toggle_button_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      case xtd::forms::visual_styles::toggle_button_state::mixed_normal: return xtd::forms::visual_styles::push_button_state::default_state;
-      case xtd::forms::visual_styles::toggle_button_state::mixed_hot: return xtd::forms::visual_styles::push_button_state::default_state;
-      case xtd::forms::visual_styles::toggle_button_state::mixed_pressed: return xtd::forms::visual_styles::push_button_state::default_state;
-      case xtd::forms::visual_styles::toggle_button_state::mixed_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      default: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::toggle_button_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::toggle_button_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
+    case xtd::forms::visual_styles::toggle_button_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::checked;
+    case xtd::forms::visual_styles::toggle_button_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    case xtd::forms::visual_styles::toggle_button_state::checked_normal: return xtd::forms::visual_styles::push_button_state::checked;
+    case xtd::forms::visual_styles::toggle_button_state::checked_hot: return xtd::forms::visual_styles::push_button_state::checked;
+    case xtd::forms::visual_styles::toggle_button_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::checked;
+    case xtd::forms::visual_styles::toggle_button_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    case xtd::forms::visual_styles::toggle_button_state::mixed_normal: return xtd::forms::visual_styles::push_button_state::default_state;
+    case xtd::forms::visual_styles::toggle_button_state::mixed_hot: return xtd::forms::visual_styles::push_button_state::default_state;
+    case xtd::forms::visual_styles::toggle_button_state::mixed_pressed: return xtd::forms::visual_styles::push_button_state::default_state;
+    case xtd::forms::visual_styles::toggle_button_state::mixed_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    default: return xtd::forms::visual_styles::push_button_state::normal;
     }
   }
 }
@@ -80,12 +80,12 @@ forms::create_params toggle_button::create_params() const {
   else if (auto_check_) create_params.style(create_params.style() | BS_AUTOCHECKBOX);
   else create_params.style(create_params.style() | BS_CHECKBOX);
   create_params.style(create_params.style() | BS_PUSHLIKE);
-
+  
   switch (check_align_) {
-    case content_alignment::top_right:
-    case content_alignment::middle_right:
-    case content_alignment::bottom_right: create_params.style(create_params.style() | BS_RIGHTBUTTON); break;
-    default: break;
+  case content_alignment::top_right:
+  case content_alignment::middle_right:
+  case content_alignment::bottom_right: create_params.style(create_params.style() | BS_RIGHTBUTTON); break;
+  default: break;
   }
   
   return create_params;
@@ -95,7 +95,7 @@ drawing::size toggle_button::measure_control() const {
   return button_base::measure_text() + drawing::size(18, 0);
 }
 
-void toggle_button::on_handle_created(const event_args &e) {
+void toggle_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   if (flat_style() == flat_style::system) native::toggle_button::check_state(handle(), static_cast<int32_t>(check_state_));
   if (flat_style() != xtd::forms::flat_style::system && check_state_ != xtd::forms::check_state::unchecked) invalidate();
@@ -111,32 +111,32 @@ void toggle_button::on_paint(paint_event_args& e) {
   button_base::on_paint(e);
 }
 
-void toggle_button::wnd_proc(message &message) {
+void toggle_button::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_LBUTTONDOWN: wm_mouse_down(message); break;
-    case WM_LBUTTONUP: wm_mouse_up(message); break;
-    case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
-    default: button_base::wnd_proc(message);
+  case WM_LBUTTONDOWN: wm_mouse_down(message); break;
+  case WM_LBUTTONUP: wm_mouse_up(message); break;
+  case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
+  default: button_base::wnd_proc(message);
   }
 }
 
-void toggle_button::wm_mouse_double_click(message &message) {
+void toggle_button::wm_mouse_double_click(message& message) {
   on_double_click(event_args::empty);
 }
 
-void toggle_button::wm_mouse_down(message &message) {
+void toggle_button::wm_mouse_down(message& message) {
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   set_mouse_buttons(mouse_buttons() | e.button());
   on_mouse_down(e);
 }
 
-void toggle_button::wm_mouse_up(message &message) {
+void toggle_button::wm_mouse_up(message& message) {
   if (auto_check_)
     switch (check_state()) {
-      case forms::check_state::unchecked: check_state(forms::check_state::checked); break;
-      case forms::check_state::checked: check_state(three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;
-      case forms::check_state::indeterminate: check_state(forms::check_state::unchecked); break;
+    case forms::check_state::unchecked: check_state(forms::check_state::checked); break;
+    case forms::check_state::checked: check_state(three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;
+    case forms::check_state::indeterminate: check_state(forms::check_state::unchecked); break;
     }
   mouse_event_args e = mouse_event_args::create(message);
   set_mouse_buttons(mouse_buttons() & ~e.button());

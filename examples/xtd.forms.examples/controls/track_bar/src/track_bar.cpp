@@ -17,7 +17,7 @@ public:
     
     label1.location({150, 50});
     label1.parent(*this);
-
+    
     track_bar1.location({50, 50});
     track_bar1.maximum(200);
     track_bar1.auto_size(false);

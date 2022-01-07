@@ -168,14 +168,14 @@ constexpr size_t WS_TABSTOP = 0x00010000;
 /// @ingroup xtd_forms_native ws
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr size_t WS_OVERLAPPEDWINDOW = WS_OVERLAPPED|WS_CAPTION|WS_SYSMENU|WS_THICKFRAME|WS_MINIMIZEBOX|WS_MAXIMIZEBOX;
+constexpr size_t WS_OVERLAPPEDWINDOW = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX;
 /// @brief Creates a pop-up window with the WS_BORDER, WS_POPUP, and WS_SYSMENU styles. The WS_CAPTION style must be combined with the WS_POPUPWINDOW style to make the Control menu visible.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ws
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr size_t WS_POPUPWINDOW = WS_POPUP|WS_BORDER|WS_SYSMENU;
+constexpr size_t WS_POPUPWINDOW = WS_POPUP | WS_BORDER | WS_SYSMENU;
 /// @brief Same as the WS_CHILD style.
 /// @par Library
 /// xtd.forms.native

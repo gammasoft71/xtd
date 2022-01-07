@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::text;
 
-installed_font_collection::installed_font_collection() {  
-  for(const xtd::ustring& family : native::font_family::installed_font_families())
+installed_font_collection::installed_font_collection() {
+  for (const xtd::ustring& family : native::font_family::installed_font_families())
     families_.push_back(font_family(family));
 }

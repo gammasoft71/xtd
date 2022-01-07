@@ -89,38 +89,38 @@ void application::do_idle() {
 }
 
 void application::enable_dark_mode() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = 1;
-#elif defined(__WXGTK__)
+  #elif defined(__WXGTK__)
   __xtd_gtk_enable_dark_mode__ = true;
-#elif defined(__APPLE__)
+  #elif defined(__APPLE__)
   initialize();
   __xtd_macos_enable_dark_mode__();
-#endif
+  #endif
 }
 
 void application::enable_button_images() {
-#if defined(__WXGTK__)
+  #if defined(__WXGTK__)
   __xtd_gtk_enable_button_images__ = true;
-#endif
+  #endif
 }
 
 void application::enable_light_mode() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = 0;
-#elif defined(__WXGTK__)
+  #elif defined(__WXGTK__)
   __xtd_gtk_enable_dark_mode__ = false;
-#elif defined(__APPLE__)
+  #elif defined(__APPLE__)
   initialize(); // Must be first
   __xtd_macos_enable_light_mode__();
-#endif
+  #endif
 }
 
 void application::enable_menu_images() {
-#if defined(__WXGTK__)
+  #if defined(__WXGTK__)
   // This option does not work with wxWidgets...
   //__xtd_gtk_enable_menu_images__ = true;
-#endif
+  #endif
 }
 
 void application::enable_visual_style() {
@@ -138,15 +138,15 @@ void application::exit() {
 void application::initialize() {
   drawing::native::toolkit::initialize();
   static_cast<wx_application*>(wxApp::GetInstance())->processIdle += process_idle;
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   init_dark_mode(__xtd_win32_enable_dark_mode__);
-#elif defined(__WXGTK__)
+  #elif defined(__WXGTK__)
   __gtk_button_images__(__xtd_gtk_enable_button_images__);
   __gtk_menu_images__(__xtd_gtk_enable_menu_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
-#elif defined(__APPLE__)
+  #elif defined(__APPLE__)
   wxMenuBar::MacSetCommonMenuBar(__create_default_menu_bar__());
-#endif
+  #endif
 }
 
 void application::register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter_proc) {

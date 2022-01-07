@@ -25,7 +25,7 @@ namespace xtd {
         explicit wx_collapsible_panel(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           control_handler::create<wxCollapsiblePane>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()));
-#if defined(__WIN32__)
+          #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
@@ -34,16 +34,16 @@ namespace xtd {
             control()->GetChildren()[1]->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->GetChildren()[1]->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
-#endif
+          #endif
           //static_cast<wxCollapsiblePane*>(control())->Layout();
           static_cast<wxCollapsiblePane*>(control())->Collapse(false);
           static_cast<wxCollapsiblePane*>(control())->Collapse(true);
         }
-
+        
         wxWindow* main_control() const override {
           return static_cast<wxCollapsiblePane*>(control())->GetPane();
         }
-
+        
         void SetClientSize(int32_t width, int32_t height) override {
         }
         

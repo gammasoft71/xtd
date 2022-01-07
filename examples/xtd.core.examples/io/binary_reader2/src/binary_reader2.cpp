@@ -11,9 +11,9 @@ public:
     write_default_values();
     display_values();
   }
-
+  
   static void write_default_values() {
-    using_(fstream fs = file::open(file_name, ios::out|ios::binary|ios::trunc)) {
+    using_(fstream fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {
       binary_writer writer(fs);
       writer << 1.250F;
       writer << R"(c:\Temp)";
@@ -27,9 +27,9 @@ public:
     ustring temp_directory;
     int auto_save_time;
     bool show_status_bar;
-
+    
     if (file::exists(file_name)) {
-      using_(fstream fs = file::open(file_name, ios::in|ios::binary)) {
+      using_(fstream fs = file::open(file_name, ios::in | ios::binary)) {
         binary_reader reader(fs);
         reader >> aspect_ratio;
         reader >> temp_directory;

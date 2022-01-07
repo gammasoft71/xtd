@@ -86,7 +86,7 @@ namespace xtd {
     static type_t& to_ref(type_t* value) {
       return *value;
     }
-
+    
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd
@@ -108,7 +108,7 @@ namespace xtd {
       }
       throw invalid_cast_exception(csf_);
     }
-
+    
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd
@@ -130,7 +130,7 @@ namespace xtd {
       }
       throw invalid_cast_exception(csf_);
     }
-
+    
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd
@@ -152,7 +152,7 @@ namespace xtd {
       }
       throw invalid_cast_exception(csf_);
     }
-
+    
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd
@@ -206,7 +206,7 @@ namespace xtd {
     static type_t* to_ptr(type_t* value) {
       return value;
     }
-
+    
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd

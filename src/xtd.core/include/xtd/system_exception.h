@@ -107,7 +107,7 @@ namespace xtd {
     /// @brief Gets or sets if the generation of the stack trace is enabled.
     static bool enable_stack_trace() {return enable_stack_trace_;}
     static void enable_stack_trace(bool enable) {enable_stack_trace_ = enable;}
-
+    
     /// @brief Get error associate to the exception
     /// @return An error_code represent a Error associate to the exception
     virtual std::error_code error_code() const noexcept {return error_;}
@@ -143,18 +143,18 @@ namespace xtd {
     /// @brief Returns a string that represents the current exception.
     /// @return A string that represents the current exception.
     xtd::ustring to_string() const noexcept override;
-
+    
     /// @cond
     friend std::ostream& operator<<(std::ostream& os, const xtd::system_exception& e) noexcept {
       return os << e.to_string();
     }
     /// @endcond
-
+    
     /// @brief Get message associate to the exception
     /// @return A string represent a massage associate to the exception
     const char* what() const noexcept override {return message().empty() ? name().c_str() : message().c_str();}
     /// @}
-
+    
   private:
     system_exception(const xtd::ustring& message, const std::exception* inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& information);
     xtd::ustring stack_trace_to_string() const noexcept;

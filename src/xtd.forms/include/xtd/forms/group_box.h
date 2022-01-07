@@ -33,7 +33,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the group_box class.
       group_box();
       /// @}
-
+      
       /// @name Properties
       
       /// @{

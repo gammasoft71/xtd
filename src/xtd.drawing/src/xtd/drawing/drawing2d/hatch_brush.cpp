@@ -28,7 +28,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_vertical_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{2, 0}, {2, 1}, {2, 2}, {2, 3}, {2, 4}, {2, 5}, {2, 6}, {2, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -38,7 +38,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_forward_diagonal_texture(const color& fore_color, const color& back_color) {
     static point_collection antialiasing_points {{5, 0}, {7, 0}, {0, 1}, {6, 1}, {1, 2}, {7, 2}, {0, 3}, {2, 3}, {1, 4}, {3, 4}, {2, 5}, {4, 5}, {3, 6}, {5, 6}, {4, 7}, {6, 7}};
     static point_collection points {{6, 0}, {7, 1}, {0, 2}, {1, 3}, {2, 4}, {3, 5}, {4, 6}, {5, 7}};
@@ -51,7 +51,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_backward_diagonal_texture(const color& fore_color, const color& back_color) {
     static point_collection antialiasing_points {{4, 0}, {6, 0}, {3, 1}, {5, 1}, {2, 2}, {4, 2}, {1, 3}, {3, 3}, {0, 4}, {2, 4}, {7, 5}, {1, 5}, {6, 6}, {0, 6}, {5, 7}, {7, 7}};
     static point_collection points {{5, 0}, {4, 1}, {3, 2}, {2, 3}, {1, 4}, {0, 5}, {7, 6}, {6, 7}};
@@ -64,7 +64,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_cross_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}, {2, 0}, {2, 1}, {2, 2}, {2, 3}, {2, 5}, {2, 6}, {2, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -74,7 +74,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_diagonal_cross_texture(const color& fore_color, const color& back_color) {
     static point_collection antialiasing_points {{5, 0}, {7, 0}, {0, 1}, {6, 1}, {1, 2}, {7, 2}, {0, 3}, {2, 3}, {1, 4}, {3, 4}, {2, 5}, {4, 5}, {3, 6}, {5, 6}, {4, 7}, {6, 7}, {4, 0}, {6, 0}, {3, 1}, {5, 1}, {2, 2}, {4, 2}, {1, 3}, {3, 3}, {0, 4}, {2, 4}, {7, 5}, {1, 5}, {6, 6}, {0, 6}, {5, 7}, {7, 7}};
     static point_collection points {{6, 0}, {7, 1}, {0, 2}, {1, 3}, {2, 4}, {3, 5}, {4, 6}, {5, 7}, {5, 0}, {4, 1}, {3, 2}, {2, 3}, {1, 4}, {0, 5}, {7, 6}, {6, 7}};
@@ -87,7 +87,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_percent_05_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{6, 0}, {2, 4}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -97,7 +97,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_percent_10_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{2, 0}, {6, 2}, {2, 4}, {6, 6}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -107,7 +107,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_percent_20_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{2, 0}, {6, 0}, {0, 2}, {4, 2}, {2, 4}, {6, 4}, {0, 6}, {4, 6}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -117,7 +117,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_percent_25_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{2, 0}, {6, 0}, {0, 1}, {4, 1}, {2, 2}, {6, 2}, {0, 3}, {4, 3}, {2, 4}, {6, 4}, {0, 5}, {4, 5}, {2, 6}, {6, 6}, {0, 7}, {4, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -127,7 +127,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_percent_30_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 0}, {2, 0}, {4, 0}, {6, 0}, {3, 1}, {7, 1}, {0, 2}, {2, 2}, {4, 2}, {6, 2}, {1, 3}, {5, 3}, {0, 4}, {2, 4}, {4, 4}, {6, 4}, {3, 5}, {7, 5}, {0, 6}, {2, 6}, {4, 6}, {6, 6}, {1, 7}, {5, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -157,23 +157,23 @@ namespace {
         if (index % 2 == 0) graphics.draw_point(pen(fore_color, 1), x, y);
     return bitmap;
   }
-
+  
   image create_percent_60_texture(const color& fore_color, const color& back_color) {
     return create_percent_40_texture(back_color, fore_color);
   }
-
+  
   image create_percent_70_texture(const color& fore_color, const color& back_color) {
     return create_percent_30_texture(back_color, fore_color);
   }
-
+  
   image create_percent_75_texture(const color& fore_color, const color& back_color) {
     return create_percent_25_texture(back_color, fore_color);
   }
-
+  
   image create_percent_80_texture(const color& fore_color, const color& back_color) {
     return create_percent_20_texture(back_color, fore_color);
   }
-
+  
   image create_percent_90_texture(const color& fore_color, const color& back_color) {
     return create_percent_10_texture(back_color, fore_color);
   }
@@ -209,7 +209,7 @@ namespace {
   }
   
   image create_dark_upward_diagonal_texture(const color& fore_color, const color& back_color) {
-    static point_collection points {{1, 0}, {2, 0}, {5, 0}, {6, 0}, {0, 1}, {1, 1}, {4, 1}, {5, 1}, {0, 2}, {3, 2}, {4, 2}, {7, 2}, {2, 3}, {3, 3}, {6, 3}, {7, 3}, {1, 4}, {2, 4}, {5, 4}, {6, 4}, {0, 5}, {1, 5}, {4, 5}, {5, 5}, {0,6 }, {3, 6}, {4, 6}, {7, 6}, {2, 7}, {3, 7}, {6, 7}, {7, 7}};
+    static point_collection points {{1, 0}, {2, 0}, {5, 0}, {6, 0}, {0, 1}, {1, 1}, {4, 1}, {5, 1}, {0, 2}, {3, 2}, {4, 2}, {7, 2}, {2, 3}, {3, 3}, {6, 3}, {7, 3}, {1, 4}, {2, 4}, {5, 4}, {6, 4}, {0, 5}, {1, 5}, {4, 5}, {5, 5}, {0, 6 }, {3, 6}, {4, 6}, {7, 6}, {2, 7}, {3, 7}, {6, 7}, {7, 7}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
@@ -217,11 +217,11 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_wide_downward_diagonal_texture(const color& fore_color, const color& back_color) {
     return create_light_downward_diagonal_texture(back_color, fore_color);
   }
-
+  
   image create_wide_upward_diagonal_texture(const color& fore_color, const color& back_color) {
     return create_light_upward_diagonal_texture(back_color, fore_color);
   }
@@ -247,7 +247,7 @@ namespace {
   }
   
   image create_narrow_horizontal_texture(const color& fore_color, const color& back_color) {
-    static point_collection points {{0 , 0}, {1 , 0}, {2 , 0}, {3 , 0}, {4 , 0}, {5 , 0}, {6 , 0}, {7 , 0}, {0 , 2}, {1 , 2}, {2 , 2}, {3 , 2}, {4 , 2}, {5 , 2}, {6 , 2}, {7 , 2}, {0 , 4}, {1 , 4}, {2 , 4}, {3 , 4}, {4 , 4}, {5 , 4}, {6 , 4}, {7 , 4}, {0 , 6}, {1 , 6}, {2 , 6}, {3 , 6}, {4 , 6}, {5 , 6}, {6 , 6}, {7 , 6}};
+    static point_collection points {{0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {6, 0}, {7, 0}, {0, 2}, {1, 2}, {2, 2}, {3, 2}, {4, 2}, {5, 2}, {6, 2}, {7, 2}, {0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}, {0, 6}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}, {6, 6}, {7, 6}};
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
@@ -265,7 +265,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_dark_horizontal_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {6, 0}, {7, 0}, {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1}, {6, 1}, {7, 1}, {0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}, {0, 5}, {1, 5}, {2, 5}, {3, 5}, {4, 5}, {5, 5}, {6, 5}, {7, 5}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -285,7 +285,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_dashed_downward_diagonal_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 0}, {4, 0}, {1, 1}, {5, 1}, {2, 6}, {6, 6}, {3, 7}, {7, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -295,7 +295,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_dashed_upward_diagonal_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{3, 0}, {7, 0}, {2, 1}, {6, 1}, {1, 6}, {5, 6}, {0, 7}, {4, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -305,7 +305,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_dashed_horizontal_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 0}, {1, 0}, {6, 0}, {7, 0}, {2, 4}, {3, 4}, {4, 4}, {5, 4}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -365,7 +365,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_diagonal_brick_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{5, 0}, {6, 0}, {4, 1}, {7, 1}, {0, 2}, {3, 2}, {1, 3}, {2, 3}, {1, 4}, {0, 5}, {7, 6}, {6, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -375,7 +375,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_horizontal_brick_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {6, 0}, {7, 0}, {6, 1}, {6, 2}, {6, 3}, {0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}, {2, 5}, {2, 6}, {2, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -385,7 +385,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_weave_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{2, 0}, {6, 0}, {5, 1}, {7, 1}, {0, 2}, {4, 2}, {1, 3}, {3, 3}, {5, 3}, {2, 4}, {6, 4}, {3, 5}, {5, 5}, {7, 5}, {0, 6}, {4, 6}, {1, 7}, {3, 7}, {7, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -395,7 +395,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_plaid_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{2, 0}, {3, 0}, {4, 0}, {5, 0}, {2, 1}, {3, 1}, {4, 1}, {5, 1}, {2, 2}, {3, 2}, {4, 2}, {5, 2}, {2, 3}, {3, 3}, {4, 3}, {5, 3}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -408,7 +408,7 @@ namespace {
         if (index % 2 == 0) graphics.draw_point(pen(fore_color, 1), x, y);
     return bitmap;
   }
-
+  
   image create_divot_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{2, 1}, {1, 2}, {2, 3}, {5, 5}, {6, 6}, {5, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -418,7 +418,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_dotted_grid_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{2, 0}, {2, 2}, {0, 4}, {2, 4}, {4, 4}, {6, 4}, {2, 6}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -428,7 +428,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_dotted_diamond_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{6, 0}, {0, 2}, {4, 2}, {2, 4}, {0, 6}, {4, 6}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -438,7 +438,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_shingle_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{6, 0}, {7, 0}, {0, 1}, {1, 2}, {1, 3}, {0, 4}, {1, 4}, {2, 5}, {7, 5}, {3, 6}, {6, 6}, {4, 7}, {5, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -448,7 +448,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_trellis_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {6, 0}, {7, 0}, {0, 1}, {3, 1}, {4, 1}, {7, 1}, {0, 2}, {1, 2}, {2, 2}, {3, 2}, {4, 2}, {5, 2}, {6, 2}, {7, 2}, {1, 3}, {2, 3}, {5, 3}, {6, 3}, {0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}, {0, 5}, {3, 5}, {4, 5}, {7, 5}, {0, 6}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}, {6, 6}, {7, 6}, {1, 7}, {2, 7}, {5, 7}, {6, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -458,7 +458,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_sphere_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 0}, {1, 0}, {3, 0}, {4, 0}, {5, 0}, {7, 0}, {2, 1}, {5, 1}, {6, 1}, {2, 2}, {3, 2}, {4, 2}, {5, 2}, {6, 2}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {6, 3}, {0, 4}, {1, 4}, {3, 4}, {4, 4}, {5, 4}, {7, 4}, {1, 5}, {2, 5}, {6, 5}, {0, 6}, {1, 6}, {2, 6}, {6, 6}, {7, 6}, {0, 7}, {1, 7}, {2, 7}, {6, 7}, {7, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -468,7 +468,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_small_grid_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {6, 0}, {7, 0}, {2, 1}, {6, 1}, {2, 2}, {6, 2}, {2, 3}, {6, 3}, {0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}, {2, 5}, {6, 5}, {2, 6}, {6, 6}, {2, 7}, {6, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -478,7 +478,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_small_checker_board_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{1, 0}, {2, 0}, {5, 0}, {6, 0}, {0, 1}, {3, 1}, {4, 1}, {7, 1}, {0, 2}, {3, 2}, {4, 2}, {7, 2}, {1, 3}, {2, 3}, {5, 3}, {6, 3}, {1, 4}, {2, 4}, {5, 4}, {6, 4}, {0, 5}, {3, 5}, {4, 5}, {7, 5}, {0, 6}, {3, 6}, {4, 6}, {7, 6}, {1, 7}, {2, 7}, {5, 7}, {6, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -488,7 +488,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_large_checker_board_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{0, 0}, {1, 0}, {6, 0}, {7, 0}, {0, 1}, {1, 1}, {6, 1}, {7, 1}, {0, 2}, {1, 2}, {6, 2}, {7, 2}, {0, 3}, {1, 3}, {6, 3}, {7, 3}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {2, 5}, {3, 5}, {4, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}, {5, 6}, {2, 7}, {3, 7}, {4, 7}, {5, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -498,7 +498,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_outlined_diamond_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{4, 0}, {6, 0}, {3, 1}, {7, 1}, {0, 2}, {2, 2}, {1, 3}, {0, 4}, {2, 4}, {3, 5}, {7, 5}, {4, 6}, {6, 6}, {5, 7}};
     auto bitmap = drawing::bitmap(8, 8);
@@ -508,7 +508,7 @@ namespace {
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
-
+  
   image create_solid_diamond_texture(const color& fore_color, const color& back_color) {
     static point_collection points {{3, 0}, {4, 0}, {5, 0}, {6, 0}, {7, 0}, {4, 1}, {5, 1}, {6, 1}, {5, 2}, {5, 4}, {4, 5}, {5, 5}, {6, 5}, {3, 6}, {4, 6}, {5, 6}, {6, 6}, {7, 6}, {0, 7}, {2, 7}, {3, 7}, {4, 7}, {5, 7}, {6, 7}, {7, 7}};
     auto bitmap = drawing::bitmap(8, 8);

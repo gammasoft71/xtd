@@ -37,11 +37,11 @@ namespace xtd::native {
       static bool contains(const std::string& str, const std::string& value) noexcept {
         return str.find(value) != str.npos;
       }
-
+      
       static bool ends_with(const std::string& str, const std::string& value) noexcept {
         return to_lower(str).rfind(to_lower(value)) + to_lower(value).size() == str.size();
       }
-
+      
       static std::string replace(const std::string& str, const std::string& old_string, const std::string& new_string) noexcept {
         std::string result(str);
         size_t index = 0;
@@ -70,19 +70,19 @@ namespace xtd::native {
         
         return list;
       }
-
+      
       static std::string substring(const std::string& str, size_t start_index, size_t length) noexcept {
         if (start_index >= str.size()) return "";
         return str.substr(start_index, length);
       }
-
+      
       static const std::string to_lower(const std::string& str) noexcept {
         std::string result;
-        for(auto c : str)
+        for (auto c : str)
           result.push_back(static_cast<char>(tolower(c)));
         return result;
       }
-
+      
       static std::string to_string(const std::wstring& str) { return to_string(str.c_str()); }
       static std::string to_string(const wchar_t* str) {
         std::string out;
@@ -96,19 +96,17 @@ namespace xtd::native {
               codepoint |= character - 0xdc00;
             else
               codepoint = character;
-
+              
             if (codepoint <= 0x7f)
               out.append(1, static_cast<char>(codepoint));
             else if (codepoint <= 0x7ff) {
               out.append(1, static_cast<char>(0xc0 | ((codepoint >> 6) & 0x1f)));
               out.append(1, static_cast<char>(0x80 | (codepoint & 0x3f)));
-            }
-            else if (codepoint <= 0xffff) {
+            } else if (codepoint <= 0xffff) {
               out.append(1, static_cast<char>(0xe0 | ((codepoint >> 12) & 0x0f)));
               out.append(1, static_cast<char>(0x80 | ((codepoint >> 6) & 0x3f)));
               out.append(1, static_cast<char>(0x80 | (codepoint & 0x3f)));
-            }
-            else {
+            } else {
               out.append(1, static_cast<char>(0xf0 | ((codepoint >> 18) & 0x07)));
               out.append(1, static_cast<char>(0x80 | ((codepoint >> 12) & 0x3f)));
               out.append(1, static_cast<char>(0x80 | ((codepoint >> 6) & 0x3f)));
@@ -120,7 +118,7 @@ namespace xtd::native {
         }
         return out;
       }
-
+      
       static std::wstring to_wstring(const std::string& str) { return to_wstring(str.c_str()); }
       static std::wstring to_wstring(const char* str) {
         std::wstring out;
@@ -137,14 +135,13 @@ namespace xtd::native {
             if (codepoint > 0xffff) {
               out.append(1, static_cast<wchar_t>(0xd800 + (static_cast<char16_t>(codepoint) >> 10)));
               out.append(1, static_cast<wchar_t>(0xdc00 + (static_cast<char16_t>(codepoint) & 0x03ff)));
-            }
-            else if (codepoint < 0xd800 || codepoint >= 0xe000)
+            } else if (codepoint < 0xd800 || codepoint >= 0xe000)
               out.append(1, static_cast<wchar_t>(codepoint));
           }
         }
         return out;
       }
-
+      
       static std::string trim_end(const std::string& str, const std::vector<char>& trim_chars) noexcept {
         if (!str.size()) return str;
         std::string result(str);
@@ -157,7 +154,7 @@ namespace xtd::native {
         try {
           value = std::atoi(str.c_str());
           return true;
-        } catch(...) {
+        } catch (...) {
           return false;
         }
       }

@@ -275,7 +275,7 @@ double math::round(double value) {
 double math::round(double value, int32_t decimals) {
   double multiplicator = 1.0;
   for (int32_t index = 0; index < decimals; index++)
-      multiplicator *= 10.0;
+    multiplicator *= 10.0;
   return math::floor((value * multiplicator) + 0.5) / multiplicator;
 }
 

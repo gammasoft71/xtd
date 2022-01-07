@@ -115,7 +115,7 @@ namespace xtd {
         data_->auto_repeat_interval = auto_repeat_interval;
         return *this;
       }
-
+      
       /// @brief Gets the mode by which the button automatically resizes itself.
       /// @return One of the AutoSizeMode values. The default value is grow_only.
       virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
@@ -126,12 +126,12 @@ namespace xtd {
       forms::dialog_result dialog_result() const override {return data_->dialog_result;}
       control& dialog_result(forms::dialog_result dialog_result) override;
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       void notify_default(bool value) override;
-
+      
       void perform_click() override;
       /// @}
       
@@ -148,32 +148,32 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const override;
-
+      
       drawing::size measure_control() const override;
-
+      
       void on_click(const event_args& e) override;
-
+      
       void on_enabled_changed(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system) data_->state = enabled() ? (data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
         button_base::on_enabled_changed(e);
       }
-
+      
       void on_handle_created(const event_args& e) override;
       
       void on_image_changed(const xtd::event_args& e) override;
-
+      
       void on_mouse_down(const mouse_event_args& e) override {
         data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_delay);
         data_->auto_repeat_timer.enabled(data_->auto_repeat);
         if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = xtd::forms::visual_styles::push_button_state::pressed;
         button_base::on_mouse_down(e);
       }
-
+      
       void on_mouse_enter(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::push_button_state::pressed : xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_enter(e);
       }
-
+      
       void on_mouse_leave(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;;
         button_base::on_mouse_leave(e);
@@ -186,13 +186,13 @@ namespace xtd {
       }
       
       void on_paint(paint_event_args& e) override;
-
+      
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       //void wnd_proc(message& message) override;
       /// @}
-
+      
     private:
       //void wm_click(message& message);
       //void wm_mouse_up(message& message);
@@ -206,6 +206,6 @@ namespace xtd {
         xtd::forms::visual_styles::push_button_state state = xtd::forms::visual_styles::push_button_state::normal;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
-   };
+    };
   }
 }

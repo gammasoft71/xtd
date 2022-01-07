@@ -14,7 +14,7 @@ int main() {
     server_socket.bind(ip_end_point(ip_address::any, 9400));
     server_socket.listen();
     socket new_socket = server_socket.accept();
-
+    
     while (!terminate_app) {
       vector<byte_t> buffer(256);
       size_t number_of_byte_received = new_socket.receive(buffer);
@@ -25,7 +25,7 @@ int main() {
   thread client([&] {
     socket client_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
     client_socket.connect(ip_address::loopback, 9400);
-
+    
     auto counter = 1;
     while (!terminate_app) {
       auto str = ustring::format("counter={}", counter++);
@@ -33,7 +33,7 @@ int main() {
       this_thread::sleep_for(50ms);
     }
   });
-
+  
   console::read_key();
   terminate_app = true;
   server.join();

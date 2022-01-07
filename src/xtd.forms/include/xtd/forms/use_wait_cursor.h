@@ -28,7 +28,7 @@ namespace xtd {
       /// @remarks The xtd::forms::application::use_wait_cursor(true) is called in the constructor and xtd::forms::application::use_wait_cursor(false) is called in the destructor.
       use_wait_cursor() {xtd::forms::application::use_wait_cursor(true);}
       /// @}
-
+      
       /// @cond
       ~use_wait_cursor() {xtd::forms::application::use_wait_cursor(false);}
       /// @endcond

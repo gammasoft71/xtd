@@ -35,11 +35,11 @@ namespace unit_tests {
     void test_method_(wchar_t_as_int) {
       assert::is_true(is<int>(as<int>((wchar_t)'a')), csf_);
     }
-
+    
     void test_method_(unsigned_char_as_int) {
       assert::is_true(is<int>(as<int>((unsigned char)'a')), csf_);
     }
-
+    
     void test_method_(literal_char_as_int) {
       assert::is_true(is<int>(as<int>('a')), csf_);
     }
@@ -59,43 +59,43 @@ namespace unit_tests {
     void test_method_(literal_wchar_t_as_int) {
       assert::is_true(is<int>(as<int>(L'a')), csf_);
     }
-
+    
     void test_method_(short_as_double) {
       assert::is_true(is<double>(as<double>((short)42)), csf_);
     }
-
+    
     void test_method_(int_as_double) {
       assert::is_true(is<double>(as<double>((int)42)), csf_);
     }
-
+    
     void test_method_(long_as_double) {
       assert::is_true(is<double>(as<double>((long)42)), csf_);
     }
-
+    
     void test_method_(long_long_as_double) {
       assert::is_true(is<double>(as<double>((long long)42)));
     }
-
+    
     void test_method_(long_long_int_as_double) {
       assert::is_true(is<double>(as<double>((long long int)42)), csf_);
     }
-
+    
     void test_method_(int8_t_as_double) {
       assert::is_true(is<double>(as<double>((int8_t)42)), csf_);
     }
-
+    
     void test_method_(int16_t_as_double) {
       assert::is_true(is<double>(as<double>((int16_t)42)), csf_);
     }
-
+    
     void test_method_(int32_t_as_double) {
       assert::is_true(is<double>(as<double>((int32_t)42)), csf_);
     }
-
+    
     void test_method_(int64_t_as_double) {
       assert::is_true(is<double>(as<double>((int64_t)42)), csf_);
     }
-
+    
     void test_method_(llong_t_as_double) {
       assert::is_true(is<double>(as<double>((llong_t)42)), csf_);
     }
@@ -111,7 +111,7 @@ namespace unit_tests {
     void test_method_(literal_long_llong_as_double) {
       assert::is_true(is<double>(as<double>(42ll)), csf_);
     }
-
+    
     void test_method_(unsigned_short_as_double) {
       assert::is_true(is<double>(as<double>((unsigned short)42)), csf_);
     }
@@ -135,7 +135,7 @@ namespace unit_tests {
     void test_method_(unsigned_as_double) {
       assert::is_true(is<double>(as<double>((unsigned)42)), csf_);
     }
-
+    
     void test_method_(uint8_t_as_double) {
       assert::is_true(is<double>(as<double>((uint8_t)42)), csf_);
     }
@@ -175,15 +175,15 @@ namespace unit_tests {
     void test_method_(intptr_t_as_int) {
       assert::is_true(is<int>(as<int>((intptr_t)42)), csf_);
     }
-
+    
     void test_method_(uintptr_t_as_int) {
       assert::is_true(is<int>(as<int>((uintptr_t)42)), csf_);
     }
-
+    
     void test_method_(float_as_int) {
       assert::is_true(is<int>(as<int>((float)42.f)), csf_);
     }
-
+    
     void test_method_(double_as_int) {
       assert::is_true(is<int>(as<int>((double)42.)), csf_);
     }
@@ -195,7 +195,7 @@ namespace unit_tests {
     void test_method_(long_double_as_int) {
       assert::is_true(is<int>(as<int>((long double)42.)), csf_);
     }
-
+    
     void test_method_(literal_float_as_int) {
       assert::is_true(is<int>(as<int>(42.f)), csf_);
     }
@@ -207,7 +207,7 @@ namespace unit_tests {
     void test_method_(literal_decimal_as_int) {
       assert::is_true(is<int>(as<int>(42.l)), csf_);
     }
-
+    
     void test_method_(ref_as_base) {
       struct base {virtual ~base() = default;};
       struct derived : public base {};
@@ -224,9 +224,9 @@ namespace unit_tests {
       
       derived o;
       derived& d = o;
-      assert::throws<invalid_cast_exception>([&]{as<other>(d);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {as<other>(d);}, csf_);
     }
-
+    
     void test_method_(const_ref_as_base) {
       struct base {virtual ~base() = default;};
       struct derived : public base {};
@@ -243,9 +243,9 @@ namespace unit_tests {
       
       derived o;
       const derived& d = o;
-      assert::throws<invalid_cast_exception>([&]{as<other>(d);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {as<other>(d);}, csf_);
     }
-
+    
     void test_method_(ptr_as_base) {
       struct base {virtual ~base() = default;};
       struct derived : public base {};
@@ -262,9 +262,9 @@ namespace unit_tests {
       
       derived o;
       derived* d = &o;
-      assert::throws<invalid_cast_exception>([&]{as<other>(d);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {as<other>(d);}, csf_);
     }
-
+    
     void test_method_(const_ptr_as_base) {
       struct base {virtual ~base() = default;};
       struct derived : public base {};
@@ -281,9 +281,9 @@ namespace unit_tests {
       
       derived o;
       const derived* d = &o;
-      assert::throws<invalid_cast_exception>([&]{as<other>(d);}, csf_);
+      assert::throws<invalid_cast_exception>([&] {as<other>(d);}, csf_);
     }
-
+    
   };
 }
 

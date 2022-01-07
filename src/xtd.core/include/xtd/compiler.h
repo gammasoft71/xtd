@@ -47,7 +47,7 @@ namespace xtd {
     bool is_build_type_debug() const noexcept {return build_type_ == xtd::build_type::debug; }
     
     static bool is_64_bit() noexcept {return sizeof(size_t) == 8;}
-
+    
     xtd::ustring name() const noexcept {
       static std::map<xtd::compiler_id, xtd::ustring> names {{compiler_id::unknown, "<unknown>"}, {compiler_id::microsoft_visual_studio, "Microsoft Visual Studio"}, {compiler_id::clang, "clang"}, {compiler_id::gcc, "gcc"}};
       return names[compiler_id()];
@@ -69,28 +69,28 @@ namespace xtd {
     /// @}
     
   private:
-#if defined(_MSC_VER)
+    #if defined(_MSC_VER)
     xtd::compiler_id compiler_id_ = xtd::compiler_id::microsoft_visual_studio;
-#elif defined(__clang__)
+    #elif defined(__clang__)
     xtd::compiler_id compiler_id_ = xtd::compiler_id::clang;
-#elif defined(__GNUC__)
+    #elif defined(__GNUC__)
     xtd::compiler_id compiler_id_ = xtd::compiler_id::gcc;
-#else
+    #else
     xtd::compiler_id compiler_id_ = xtd::compiler_id::unknown;
-#endif
-#if defined(_MSC_VER)
-    xtd::version version_ {_MSC_VER/100, _MSC_VER%100, 0};
-#elif defined(__clang__)
-    xtd::version version_ {__clang_major__ , __clang_minor__, __clang_patchlevel__};
-#elif defined(__GNUC__)
-    xtd::version version_ {__GNUC__ , __GNUC_MINOR__, __GNUC_PATCHLEVEL__};
-#else
+    #endif
+    #if defined(_MSC_VER)
+    xtd::version version_ {_MSC_VER / 100, _MSC_VER % 100, 0};
+    #elif defined(__clang__)
+    xtd::version version_ {__clang_major__, __clang_minor__, __clang_patchlevel__};
+    #elif defined(__GNUC__)
+    xtd::version version_ {__GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__};
+    #else
     xtd::version version_;
-#endif
-#if defined(NDEBUG)
+    #endif
+    #if defined(NDEBUG)
     xtd::build_type build_type_ = xtd::build_type::release;
-#else
+    #else
     xtd::build_type build_type_ = xtd::build_type::debug;
-#endif
+    #endif
   };
 }

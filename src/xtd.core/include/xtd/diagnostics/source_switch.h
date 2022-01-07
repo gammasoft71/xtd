@@ -28,7 +28,7 @@ namespace xtd {
     public:
       /// @name Constructors
       
-      /// @{      
+      /// @{
       /// @brief Initializes a new instance of the source_switch class, specifying the name of the source.
       /// @param name The name of the source.
       /// @remarks The name parameter is used to set the value of the display_name property.
@@ -52,7 +52,7 @@ namespace xtd {
       /// @remarks This property gets its value from the switch_setting property. Setting this property also modifies the switch_setting property.
       void level(xtd::diagnostics::source_levels level);
       /// @}
-
+      
       /// @name Methods
       
       /// @{

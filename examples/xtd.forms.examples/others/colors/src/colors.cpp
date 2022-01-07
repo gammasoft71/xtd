@@ -12,7 +12,7 @@ namespace examples {
         size({200, 30});
         color(drawing::color::empty);
       }
-
+      
       void on_paint(paint_event_args& e) override {
         e.graphics().fill_rectangle(solid_brush(system_colors::control()), 0, 0, 100, e.clip_rectangle().height());
         e.graphics().fill_rectangle(solid_brush(color_), 0, 0, 100, e.clip_rectangle().height());
@@ -27,18 +27,18 @@ namespace examples {
           invalidate();
         }
       }
-
+      
     private:
       drawing::color color_;
     };
-
+    
   public:
     color_chooser() {
       border_style(forms::border_style::fixed_3d);
       back_color(system_colors::window());
       fore_color(system_colors::window_text());
       auto_scroll(true);
-
+      
       for (drawing::known_color known_color = drawing::known_color::text_box_text; known_color >= drawing::known_color::active_border; known_color = drawing::known_color(int(known_color) - 1)) {
         auto color = std::make_shared<color_panel>();
         color->dock(dock_style::top);
@@ -46,12 +46,12 @@ namespace examples {
         color->tag(colors_.size());
         colors_.push_back(color);
         controls().push_back(*color);
-        color->click += [&](object& sender, const event_args& e) {
+        color->click += [&](object & sender, const event_args & e) {
           selected_index(colors_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
         };
       }
     }
-
+    
     size_t selected_index() const {return selected_index_;}
     void selected_index(size_t value) {
       if (selected_index_ != value) {
@@ -59,7 +59,7 @@ namespace examples {
         on_selected_index_changed(event_args::empty);
       }
     }
-
+    
     const drawing::color& selected_color() const {return selected_color_;}
     void selected_color(const drawing::color& value) {
       if (selected_color_ != value) {
@@ -67,12 +67,12 @@ namespace examples {
         on_selected_color_changed(event_args::empty);
       }
     }
-
+    
     event<color_chooser, event_handler> selected_index_changed;
     event<color_chooser, event_handler> selected_color_changed;
-
+    
     static const size_t npos = std::numeric_limits<size_t>::max();
-
+    
   private:
     void on_selected_index_changed(const event_args& e) {
       if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(back_color());
@@ -100,19 +100,19 @@ namespace examples {
     drawing::color selected_color_ = drawing::color::empty;
     std::vector<std::shared_ptr<color_panel>> colors_;
   };
-
+  
   class color_editor : public user_control {
   public:
     color_editor() {
       border_style(forms::border_style::fixed_3d);
       size({300, 400});
       minimum_size(size());
-
+      
       label_alpha.parent(*this);
       label_alpha.location({10, 15});
       label_alpha.auto_size(true);
       label_alpha.text("A");
-
+      
       track_bar_alpha.parent(*this);
       track_bar_alpha.location({40, 12});
       track_bar_alpha.auto_size(false);
@@ -123,7 +123,7 @@ namespace examples {
       track_bar_alpha.value_changed += [&] {
         color(drawing::color::from_argb(as<uint8_t>(track_bar_alpha.value()), color_.r(), color_.g(), color_.b()));
       };
-
+      
       numeric_up_down_alpha.parent(*this);
       numeric_up_down_alpha.bounds({240, 12, 50, 20});
       numeric_up_down_alpha.minimum(0);
@@ -137,7 +137,7 @@ namespace examples {
       label_red.location({10, 60});
       label_red.auto_size(true);
       label_red.text("R");
-
+      
       track_bar_red.parent(*this);
       track_bar_red.location({40, 57});
       track_bar_red.auto_size(false);
@@ -148,7 +148,7 @@ namespace examples {
       track_bar_red.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), as<uint8_t>(track_bar_red.value()), color_.g(), color_.b()));
       };
-
+      
       numeric_up_down_red.parent(*this);
       numeric_up_down_red.bounds({240, 57, 50, 20});
       numeric_up_down_red.minimum(0);
@@ -157,12 +157,12 @@ namespace examples {
       numeric_up_down_red.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), as<uint8_t>(numeric_up_down_red.value()), color_.g(), color_.b()));
       };
-
+      
       label_green.parent(*this);
       label_green.location({10, 105});
       label_green.auto_size(true);
       label_green.text("G");
-
+      
       track_bar_green.parent(*this);
       track_bar_green.location({40, 102});
       track_bar_green.auto_size(false);
@@ -173,7 +173,7 @@ namespace examples {
       track_bar_green.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), color_.r(), as<uint8_t>(track_bar_green.value()), color_.b()));
       };
-
+      
       numeric_up_down_green.parent(*this);
       numeric_up_down_green.bounds({240, 102, 50, 20});
       numeric_up_down_green.minimum(0);
@@ -182,12 +182,12 @@ namespace examples {
       numeric_up_down_green.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), color_.r(), as<uint8_t>(numeric_up_down_green.value()), color_.b()));
       };
-
+      
       label_blue.parent(*this);
       label_blue.location({10, 150});
       label_blue.auto_size(true);
       label_blue.text("B");
-
+      
       track_bar_blue.parent(*this);
       track_bar_blue.location({40, 147});
       track_bar_blue.auto_size(false);
@@ -198,7 +198,7 @@ namespace examples {
       track_bar_blue.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<uint8_t>(track_bar_blue.value())));
       };
-
+      
       numeric_up_down_blue.parent(*this);
       numeric_up_down_blue.bounds({240, 147, 50, 20});
       numeric_up_down_blue.minimum(0);
@@ -207,7 +207,7 @@ namespace examples {
       numeric_up_down_blue.value_changed += [&] {
         color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<uint8_t>(numeric_up_down_blue.value())));
       };
-
+      
       panel_color_box.parent(*this);
       panel_color_box.location({55, 195});
       panel_color_box.size({190, 190});
@@ -224,7 +224,7 @@ namespace examples {
     }
     
     event<color_editor, event_handler> color_changed;
-
+    
   protected:
     void on_color_changed(const event_args& e) {
       panel_color_box.back_color(color_);
@@ -240,7 +240,7 @@ namespace examples {
     }
     
   private:
-    
+  
     void on_argb_changed() {
       color(drawing::color::from_argb(as<uint8_t>(track_bar_alpha.value()), as<uint8_t>(track_bar_red.value()), as<uint8_t>(track_bar_green.value()), as<uint8_t>(track_bar_blue.value())));
     }
@@ -260,14 +260,14 @@ namespace examples {
     panel panel_color_box;
     drawing::color color_ = drawing::color::empty;
   };
-
+  
   class main_form : public form {
   public:
     main_form() {
       text("Colors example");
       start_position(form_start_position::manual);
       location({300, 200});
-      client_size ({640, 420});
+      client_size({640, 420});
       
       colors.parent(*this);
       colors.location({10, 10});
@@ -276,12 +276,12 @@ namespace examples {
       colors.selected_color_changed += [&] {
         editor.color(colors.selected_color());
       };
-
+      
       editor.parent(*this);
       editor.location({330, 10});
       editor.size({300, 400});
       editor.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
-
+      
       colors.selected_index(0);
     }
     

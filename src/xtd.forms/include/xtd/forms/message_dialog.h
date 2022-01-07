@@ -39,7 +39,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the message_dialog class.
       message_dialog() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -75,7 +75,7 @@ namespace xtd {
         display_help_button_ = display_help_button;
         return *this;
       }
-
+      
       /// @brief Get async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
@@ -101,7 +101,7 @@ namespace xtd {
         icon_ = icon;
         return *this;
       }
-
+      
       /// @brief Gets options will be used for the message box.
       /// @return One of the xtd::forms::message_dialog_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       xtd::forms::message_dialog_options options() const {return options_;}
@@ -135,13 +135,13 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       /// @brief Resets all properties to empty string.
       void reset();
-
+      
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog();
       /// @brief Runs message dialog box.
@@ -151,7 +151,7 @@ namespace xtd {
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -178,7 +178,7 @@ namespace xtd {
         dialog_result_ = e.dialog_result();
         dialog_closed(*this, e);
       }
-
+      
       xtd::forms::message_dialog_buttons buttons_ = xtd::forms::message_dialog_buttons::ok;
       xtd::forms::message_dialog_default_button default_button_ = xtd::forms::message_dialog_default_button::button1;
       xtd::forms::dialog_result dialog_result_ = xtd::forms::dialog_result::none;

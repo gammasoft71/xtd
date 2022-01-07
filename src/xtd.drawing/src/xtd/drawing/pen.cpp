@@ -58,12 +58,12 @@ pen& pen::alignment(drawing2d::pen_alignment alignment) {
 
 std::unique_ptr<drawing::brush> pen::brush() const {
   switch (data_->type_) {
-    case drawing2d::pen_type::solid_color: return make_unique<solid_brush>(data_->color_); break;
-    case drawing2d::pen_type::hatch_fill: //return make_unique<drawing2d::hatch_brush>(data_->color_); break;
-    case drawing2d::pen_type::texture_fill: //return make_unique<texture_brush>(data_->color_); break;
-    case drawing2d::pen_type::path_gradient: //return make_unique<drawing2d::path_gradient_brush>(data_->color_); break;
-    case drawing2d::pen_type::linear_gradient: //return make_unique<drawing2d::linear_gradient_brush>(data_->color_); break;
-    default: throw xtd::argument_exception("pen type invalid"_t, current_stack_frame_); break;
+  case drawing2d::pen_type::solid_color: return make_unique<solid_brush>(data_->color_); break;
+  case drawing2d::pen_type::hatch_fill: //return make_unique<drawing2d::hatch_brush>(data_->color_); break;
+  case drawing2d::pen_type::texture_fill: //return make_unique<texture_brush>(data_->color_); break;
+  case drawing2d::pen_type::path_gradient: //return make_unique<drawing2d::path_gradient_brush>(data_->color_); break;
+  case drawing2d::pen_type::linear_gradient: //return make_unique<drawing2d::linear_gradient_brush>(data_->color_); break;
+  default: throw xtd::argument_exception("pen type invalid"_t, current_stack_frame_); break;
   }
 }
 
@@ -71,14 +71,14 @@ pen& pen::brush(const drawing::brush& brush) {
   if (dynamic_cast<const drawing::solid_brush*>(&brush) != nullptr) {
     data_->type_ = drawing2d::pen_type::solid_color;
     color(static_cast<const drawing::solid_brush&>(brush).color());
-  //} else if (dynamic_cast<const drawing2d::hatch_brush*>(&brush) != nullptr) {
-  //  type_ = drawing2d::pen_type::hatch_fill;
-  //} else if (dynamic_cast<const texture_brush*>(&brush) != nullptr) {
-  //  type_ = drawing2d::pen_type::texture_fill;
-  //} else if (dynamic_cast<const drawing2d::path_gradient_brush*>(&brush) != nullptr) {
-  //  type_ = drawing2d::pen_type::path_gradient;
-  //} else if (dynamic_cast<const drawing2d::linear_gradient_brush*>(&brush) != nullptr) {
-  //  type_ = drawing2d::pen_type::linear_gradient;
+    //} else if (dynamic_cast<const drawing2d::hatch_brush*>(&brush) != nullptr) {
+    //  type_ = drawing2d::pen_type::hatch_fill;
+    //} else if (dynamic_cast<const texture_brush*>(&brush) != nullptr) {
+    //  type_ = drawing2d::pen_type::texture_fill;
+    //} else if (dynamic_cast<const drawing2d::path_gradient_brush*>(&brush) != nullptr) {
+    //  type_ = drawing2d::pen_type::path_gradient;
+    //} else if (dynamic_cast<const drawing2d::linear_gradient_brush*>(&brush) != nullptr) {
+    //  type_ = drawing2d::pen_type::linear_gradient;
   } else
     throw xtd::argument_exception("brush invalid"_t, current_stack_frame_);
   return *this;
@@ -109,7 +109,7 @@ pen& pen::dash_style(drawing::dash_style dash_style) {
 }
 
 pen& pen::type(drawing2d::pen_type type) {
-    data_->type_ = type;
+  data_->type_ = type;
   return *this;
 }
 

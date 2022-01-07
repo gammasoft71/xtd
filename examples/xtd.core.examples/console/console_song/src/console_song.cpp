@@ -81,7 +81,8 @@ int main() {
     note(tone::a, duration::half),
     note(tone::b, duration::quarter),
     note(tone::d, duration::quarter),
-    note(tone::d, duration::half)};
+    note(tone::d, duration::half)
+  };
   // Play the song
   play(mary);
 }

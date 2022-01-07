@@ -130,7 +130,7 @@ namespace xtd {
         if (actual.to_lower() != expected.to_lower())
           assert::succeed(message, stack_frame);
         else
-          base_assert::fail("not " + base_assert::to_string(expected)+ ", ignoring case", base_assert::to_string(actual), message, stack_frame);
+          base_assert::fail("not " + base_assert::to_string(expected) + ", ignoring case", base_assert::to_string(actual), message, stack_frame);
       }
       
       /// @brief Asserts that string contains an item.
@@ -189,7 +189,7 @@ namespace xtd {
         else
           base_assert::fail("string containing " + base_assert::to_string(item), base_assert::to_string(string), message, stack_frame);
       }
-       
+      
       /// @brief Asserts that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -303,7 +303,7 @@ namespace xtd {
         else
           base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, stack_frame);
       }
- 
+      
       /// @brief Asserts that string does not start with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -474,7 +474,7 @@ namespace xtd {
         else
           base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, stack_frame);
       }
-       
+      
       /// @brief Asserts that matches regex pattern.
       /// @param regex_pattern the regex pattern.
       /// @param actual the actual value.

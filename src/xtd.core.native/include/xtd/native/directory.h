@@ -25,7 +25,7 @@ namespace xtd {
     class directory_info;
   }
   /// @endcond
-
+  
   /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
@@ -62,7 +62,7 @@ namespace xtd {
         directory_iterator(const directory_iterator&) = default;
         directory_iterator(directory_iterator&&) = default;
         ~directory_iterator();
-
+        
         directory_iterator& operator++();
         directory_iterator operator++(int);
         bool operator==(directory_iterator other) const;
@@ -128,7 +128,7 @@ namespace xtd {
         struct data;
         std::shared_ptr<data> data_;
       };
-
+      
     protected:
       /// @name Protected methods
       

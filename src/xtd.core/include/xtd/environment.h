@@ -188,7 +188,7 @@ namespace xtd {
       /// @brief The file system directory that contains home folder.
       home = 64
     };
-
+    
     /// @brief Specifies options to use for getting the path to a special folder.
     /// @remarks The System.Environment.SpecialFolderOption enumeration is used to define the precise behavior of the Environment.GetFolderPath method.
     enum class special_folder_option {
@@ -199,7 +199,7 @@ namespace xtd {
       /// @brief The path to the folder is created if it does not already exist.
       create = 32768
     };
-
+    
     /// @name Properties
     
     /// @{
@@ -223,7 +223,7 @@ namespace xtd {
       static xtd::cpp_language cpp_language;
       return cpp_language;
     }
-
+    
     /// @brief Gets the fully qualified path of the current working directory.
     /// @return xtd::ustring A string containing a directory path.
     /// @remarks By definition, if this process starts in the root directory of a local or network drive, the value returned by this method is the drive name followed by a trailing slash (for example, "C:\"). If this process starts in a subdirectory, the value returned by this method is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
@@ -241,7 +241,7 @@ namespace xtd {
     /// @brief Gets a unique identifier for the current thread.
     /// @return A std::thread::id that represents a unique identifier for this thread.
     static std::thread::id current_thread_id() {return std::this_thread::get_id();}
-
+    
     /// @brief Gets the exit code of the process.
     /// @return A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
@@ -254,7 +254,7 @@ namespace xtd {
     /// @warning The exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
     static void exit_code(int value);
-
+    
     /// @brief Determines whether the current operating system is a 64-bit operating system.
     /// @return true if the operating system is 64-bit; otherwise, false.
     static bool is_64_bit_operating_system() {return os_version().is_64_bit();}
@@ -293,7 +293,7 @@ namespace xtd {
     /// @brief Gets an operating_system object that contains the current platform identifier and version number.
     /// @return An object that contains the platform identifier and version number.
     static xtd::processor processor_information();
-
+    
     /// @brief Gets current stack trace information.
     /// @return A string containing stack trace information. This value can be empty "".
     static xtd::ustring stack_trace() {
@@ -364,7 +364,7 @@ namespace xtd {
       result += buffer;
       return result;
     }
-
+    
     /// @brief Returns a string array containing the command-line arguments for the current process.
     /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
     /// @remarks The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to string empty "". The remaining elements contain any additional tokens entered on the command line.
@@ -399,12 +399,12 @@ namespace xtd {
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
     /// @todo Add xtd::registry and uncomment lines.
     static xtd::ustring get_environment_variable(const xtd::ustring& variable, environment_variable_target target);
-
+    
     /// @brief Retrieves all environment variable names and their values from the current process.
     /// @return std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found.
     /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned std::map.
     static std::map<std::string, std::string>& get_environment_variables() {return get_environment_variables(environment_variable_target::process);}
-
+    
     /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
     /// @param target One of the environment_variable_target values.
     /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
@@ -412,7 +412,7 @@ namespace xtd {
     /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned std::map.
     /// @todo Add xtd::registry and uncomment lines.
     static std::map<std::string, std::string>& get_environment_variables(environment_variable_target target);
-
+    
     /// @brief Gets the path to the system special folder that is identified by the specified enumeration.
     /// @param folder One of enumeration values that identifies a system special folder.
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
@@ -431,7 +431,7 @@ namespace xtd {
     static xtd::collections::specialized::string_vector get_logical_drives() {
       return io::directory::get_logical_drives();
     }
-
+    
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.
     /// @param value A value to assign to variable.
@@ -453,7 +453,7 @@ namespace xtd {
     static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value, environment_variable_target target);
   };
   /// @}
-
+  
   /// @cond
   inline std::ostream& operator<<(std::ostream& os, environment::special_folder value) {return os << to_string(value, {{environment::special_folder::desktop, "desktop"}, {environment::special_folder::programs, "programs"}, {environment::special_folder::my_documents, "my_documents"}, {environment::special_folder::personal, "personal"}, {environment::special_folder::favorites, "favorites"}, {environment::special_folder::startup, "startup"}, {environment::special_folder::recent, "recent"}, {environment::special_folder::send_to, "send_to"}, {environment::special_folder::start_menu, "start_menu"}, {environment::special_folder::personal, "my_music"}, {environment::special_folder::my_videos, "my_videos"}, {environment::special_folder::desktop_directory, "desktop_directory"}, {environment::special_folder::my_computer, "my_computer"}, {environment::special_folder::network_shortcuts, "network_shortcuts"}, {environment::special_folder::fonts, "fonts"}, {environment::special_folder::templates, "templates"}, {environment::special_folder::common_start_menu, "common_start_menu"}, {environment::special_folder::common_programs, "common_programs"}, {environment::special_folder::common_startup, "common_startup"}, {environment::special_folder::common_desktop_directory, "common_desktop_directory"}, {environment::special_folder::application_data, "application_data"}, {environment::special_folder::printer_shortcuts, "printer_shortcuts"}, {environment::special_folder::local_application_data, "local_application_data"}, {environment::special_folder::internet_cache, "internet_cache"}, {environment::special_folder::cookies, "cookies"}, {environment::special_folder::history, "history"}, {environment::special_folder::common_application_data, "common_application_data"}, {environment::special_folder::windows, "windows"}, {environment::special_folder::system, "system"}, {environment::special_folder::program_files, "program_files"}, {environment::special_folder::my_pictures, "my_pictures"}, {environment::special_folder::user_profile, "user_profile"}, {environment::special_folder::system_x86, "system_x86"}, {environment::special_folder::program_files_x86, "program_files_x86"}, {environment::special_folder::common_program_files, "common_program_files"}, {environment::special_folder::common_program_files_x86, "common_program_files_x86"}, {environment::special_folder::common_templates, "common_templates"}, {environment::special_folder::common_documents, "common_documents"}, {environment::special_folder::common_admin_tools, "common_admin_tools"}, {environment::special_folder::admin_tools, "admin_tools"}, {environment::special_folder::common_music, "common_music"}, {environment::special_folder::common_pictures, "common_pictures"}, {environment::special_folder::common_videos, "common_videos"}, {environment::special_folder::resources, "resources"}, {environment::special_folder::localized_resources, "localized_resources"}, {environment::special_folder::common_oem_links, "common_oem_links"}, {environment::special_folder::cd_burning, "cd_burning"}, {environment::special_folder::home, "home"}});}
   inline std::wostream& operator<<(std::wostream& os, environment::special_folder value) {return os << to_string(value, {{environment::special_folder::desktop, L"desktop"}, {environment::special_folder::programs, L"programs"}, {environment::special_folder::my_documents, L"my_documents"}, {environment::special_folder::personal, L"personal"}, {environment::special_folder::favorites, L"favorites"}, {environment::special_folder::startup, L"startup"}, {environment::special_folder::recent, L"recent"}, {environment::special_folder::send_to, L"send_to"}, {environment::special_folder::start_menu, L"start_menu"}, {environment::special_folder::personal, L"my_music"}, {environment::special_folder::my_videos, L"my_videos"}, {environment::special_folder::desktop_directory, L"desktop_directory"}, {environment::special_folder::my_computer, L"my_computer"}, {environment::special_folder::network_shortcuts, L"network_shortcuts"}, {environment::special_folder::fonts, L"fonts"}, {environment::special_folder::templates, L"templates"}, {environment::special_folder::common_start_menu, L"common_start_menu"}, {environment::special_folder::common_programs, L"common_programs"}, {environment::special_folder::common_startup, L"common_startup"}, {environment::special_folder::common_desktop_directory, L"common_desktop_directory"}, {environment::special_folder::application_data, L"application_data"}, {environment::special_folder::printer_shortcuts, L"printer_shortcuts"}, {environment::special_folder::local_application_data, L"local_application_data"}, {environment::special_folder::internet_cache, L"internet_cache"}, {environment::special_folder::cookies, L"cookies"}, {environment::special_folder::history, L"history"}, {environment::special_folder::common_application_data, L"common_application_data"}, {environment::special_folder::windows, L"windows"}, {environment::special_folder::system, L"system"}, {environment::special_folder::program_files, L"program_files"}, {environment::special_folder::my_pictures, L"my_pictures"}, {environment::special_folder::user_profile, L"user_profile"}, {environment::special_folder::system_x86, L"system_x86"}, {environment::special_folder::program_files_x86, L"program_files_x86"}, {environment::special_folder::common_program_files, L"common_program_files"}, {environment::special_folder::common_program_files_x86, L"common_program_files_x86"}, {environment::special_folder::common_templates, L"common_templates"}, {environment::special_folder::common_documents, L"common_documents"}, {environment::special_folder::common_admin_tools, L"common_admin_tools"}, {environment::special_folder::admin_tools, L"admin_tools"}, {environment::special_folder::common_music, L"common_music"}, {environment::special_folder::common_pictures, L"common_pictures"}, {environment::special_folder::common_videos, L"common_videos"}, {environment::special_folder::resources, L"resources"}, {environment::special_folder::localized_resources, L"localized_resources"}, {environment::special_folder::common_oem_links, L"common_oem_links"}, {environment::special_folder::cd_burning, L"cd_burning"}, {environment::special_folder::home, L"home"}});}

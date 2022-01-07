@@ -22,13 +22,13 @@ namespace xtd {
           if (bitmap_) delete bitmap_;
           if (hdc_) delete hdc_;
         }
- 
+        
         wxGraphicsContext* graphics() {
           /// @Workaround : With wxWidgets on Gtk, we need recreate graphics context otherwise only the first operation is taken into account.
           if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix" && bitmap_ && image_) return wxGraphicsContext::Create(wxMemoryDC(*bitmap_));
           return graphics_;
         }
-
+        
         wxDC& hdc() {return *hdc_;}
         
         template<typename hdc_t, typename ...args_type>
@@ -49,7 +49,7 @@ namespace xtd {
         void apply_update() {
           if (bitmap_ && image_) *image_ = bitmap_->ConvertToImage();
         }
-
+        
       private:
         template<typename hdc_t>
         wxGraphicsContext* create_graphics(const hdc_t& hdc) {return wxGraphicsContext::Create(hdc);}

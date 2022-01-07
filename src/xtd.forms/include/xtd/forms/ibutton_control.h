@@ -33,7 +33,7 @@ namespace xtd {
       /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
       virtual control& dialog_result(forms::dialog_result dialog_result) = 0;
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -41,7 +41,7 @@ namespace xtd {
       /// @param value true if the control should behave as a default button; otherwise false.
       /// @remarks This method is called by a parent form to make a control the default button. Default buttons are set to have an extra thick border.
       virtual void notify_default(bool value) = 0;
-
+      
       /// @brief Generates a click event for the control.
       /// @remarks This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button.
       virtual void perform_click() = 0;

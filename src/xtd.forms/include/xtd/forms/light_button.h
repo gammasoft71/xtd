@@ -99,7 +99,7 @@ namespace xtd {
       /// @brief Gets the default light off color of the light_button.
       /// @return The default light off color of the light_button.
       virtual drawing::color default_light_off_color() const {return drawing::system_colors::window();}
-
+      
       /// @brief Gets the default light on color of the light_button.
       /// @return The default light on color of the light_button.
       virtual drawing::color default_light_on_color() const {return drawing::system_colors::accent();}
@@ -107,14 +107,14 @@ namespace xtd {
       /// @brief Gets the default size of the control.
       /// @return The default size.
       drawing::size default_size() const override {return {104, 25};}
-
+      
       /// @brief Gets the horizontal and vertical alignment of the check mark on a light_button control.
       /// @return One of the content_alignment values. The default value is middle_left.
       virtual content_alignment light_align() const {return data_->light_align;}
       /// @brief Sets the horizontal and vertical alignment of the check mark on a light_button control.
       /// @param check_align One of the content_alignment values. The default value is middle_left.
       virtual light_button& light_align(content_alignment light_align);
-
+      
       /// @brief Gets the light off color for the light_button.
       /// @return A xtd::drawing::color that represents the light off color of the light_button. The default is the value of the default_light_off_color property.
       virtual drawing::color light_off_color() const;
@@ -124,7 +124,7 @@ namespace xtd {
       /// @cond
       virtual light_button& light_off_color(nullptr_t);
       /// @endcond
-
+      
       /// @brief Gets the light on color for the light_button.
       /// @return A xtd::drawing::color that represents the light on color of the light_button. The default is the value of the default_light_on_color property.
       virtual drawing::color light_on_color() const;
@@ -147,7 +147,7 @@ namespace xtd {
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
       virtual light_button& three_state(bool three_state);
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -161,7 +161,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<light_button, event_handler> check_state_changed;
       /// @}
-
+      
     protected:
       /// @name Protected properties
       
@@ -175,7 +175,7 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const override;
-
+      
       drawing::size measure_control() const override;
       
       /// @brief Raises the light_button::checked_changed event.
@@ -205,7 +205,7 @@ namespace xtd {
         check_state_changed(*this, e);
         if (flat_style() != xtd::forms::flat_style::system) invalidate();
       }
-
+      
       void on_enabled_changed(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system) {
           if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::unchecked_normal : xtd::forms::visual_styles::check_box_state::unchecked_disabled;
@@ -214,11 +214,11 @@ namespace xtd {
         }
         button_base::on_enabled_changed(e);
       }
-
+      
       void on_handle_created(const event_args& e) override;
       
       void on_image_changed(const xtd::event_args& e) override;
-
+      
       void on_mouse_down(const mouse_event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
           if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_pressed;
@@ -254,17 +254,17 @@ namespace xtd {
         }
         button_base::on_mouse_up(e);
       }
-
+      
       void on_paint(paint_event_args& e) override;
       /// @}
-
+      
       /// @cond
       void wnd_proc(message& message) override;
       virtual void wm_mouse_double_click(message& message);
       virtual void wm_mouse_down(message& message);
       virtual void wm_mouse_up(message& message);
       /// @endcond
-
+      
     private:
       //void wm_click(message& message);
       //void wm_mouse_up(message& message);
@@ -279,6 +279,6 @@ namespace xtd {
         xtd::forms::visual_styles::check_box_state state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
-   };
+    };
   }
 }

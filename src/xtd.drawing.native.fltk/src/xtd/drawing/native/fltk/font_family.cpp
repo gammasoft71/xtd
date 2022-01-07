@@ -11,20 +11,20 @@
 using namespace xtd::drawing::native;
 
 namespace {
-#if defined(__WXOSX__)
+  #if defined(__WXOSX__)
   float pixel_to_native_font_graphics_untit(float size) {
     return size;  // font is in points
   }
-#else
+  #else
   float pixel_to_native_font_graphics_untit(float size) {
     return size / 96.0f * font::dpi();  // font is in pixels and not in points
   }
-#endif
+  #endif
   const std::set<std::string>& families() {
     static std::set<std::string> families;
     if (families.size() == 0) {
       Fl_Font count = Fl::set_fonts();
-      for(Fl_Font index = 0; index < count; ++index) {
+      for (Fl_Font index = 0; index < count; ++index) {
         int attribute = 0;
         std::string name = Fl::get_font_name(index, &attribute);
         if (attribute == 0) families.insert(name);

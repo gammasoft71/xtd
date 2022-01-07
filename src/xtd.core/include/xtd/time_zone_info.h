@@ -71,7 +71,7 @@ namespace xtd {
       transition_time(transition_time&&) = default;
       transition_time& operator=(const transition_time&) = default;
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -141,7 +141,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12. -or- The day parameter is less than 1 or greater than 31.
       /// @remarks This method creates a fixed-date rule (that is, a time change that occurs on a specific day of a specific month). For example, a time change that always occurs on October 28 follows a fixed-date rule.
       /// @remarks For transitions from standard time to daylight saving time, the timeOfDay argument represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time. Note that this is a xtd::date_time value whose year, month, and date values must all equal 1.
-      static transition_time create_fixed_date_rule (date_time time_of_day, uint32_t month, uint32_t day) {
+      static transition_time create_fixed_date_rule(date_time time_of_day, uint32_t month, uint32_t day) {
         if (time_of_day.year() != 1 || time_of_day.month() != 1 || time_of_day.day() != 1 || time_of_day.kind() != date_time_kind::unspecified) throw argument_exception(csf_);
         if (month < 1 || month > 12 || day < 1 || day > 31) throw argument_out_of_range_exception(csf_);
         transition_time result;
@@ -162,7 +162,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12. -or- The week parameter is less than 1 or greater than 5.
       /// @remarks This method creates a floating-date rule (that is, a time change that occurs on a specific day of a specific week of a specific month). For example, a time change that occurs on the last Sunday of October follows a floating-date rule.
       /// @remarks For transitions from standard time to daylight saving time, the time_of_day argument represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time. Note that this is a xtd::date_time value whose year, month, and date values must all equal 1.
-      static transition_time create_floating_date_rule (date_time time_of_day, uint32_t month, uint32_t week, xtd::day_of_week day_of_week) {
+      static transition_time create_floating_date_rule(date_time time_of_day, uint32_t month, uint32_t week, xtd::day_of_week day_of_week) {
         if (time_of_day.year() != 1 || time_of_day.month() != 1 || time_of_day.day() != 1 || time_of_day.kind() != date_time_kind::unspecified) throw argument_exception(csf_);
         if (month < 1 || month > 12 || week < 1 || week > 5) throw argument_out_of_range_exception(csf_);
         transition_time result;
@@ -177,7 +177,7 @@ namespace xtd {
       bool equals(const transition_time& tt) const noexcept override {return day_ == tt.day_ && day_of_week_ == tt.day_of_week_ && is_fixed_date_rule_ == tt.is_fixed_date_rule_ && month_ == tt.month_ && time_of_day_ == tt.time_of_day_ && week_ == tt.week_;}
       bool equals(const object& obj) const noexcept override {return is<transition_time>(obj) && equals(static_cast<const transition_time&>(obj));}
       /// @}
-
+      
     private:
       uint32_t day_ = 0;
       xtd::day_of_week day_of_week_ = xtd::day_of_week::sunday;
@@ -215,15 +215,15 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief 
+      /// @brief
       const xtd::date_time& date_end() const noexcept {return date_end_;}
       
       const xtd::date_time& date_start() const noexcept {return date_start_;}
-
+      
       xtd::ticks daylight_delta() const noexcept {return daylight_delta_;}
-
+      
       transition_time daylight_transition_end() const noexcept {return daylight_transition_end_;}
-
+      
       transition_time daylight_transition_start() const noexcept {return daylight_transition_start_;}
       /// @}
       
@@ -234,7 +234,7 @@ namespace xtd {
       bool equals(const adjustement_rule& ar) const noexcept override {return date_end_ == ar.date_end_ && date_start_ == ar.date_start_ && daylight_delta_ == ar.daylight_delta_ && daylight_transition_end_ == ar.daylight_transition_end_ && daylight_transition_start_ == ar.daylight_transition_start_;}
       bool equals(const object& obj) const noexcept override {return is<adjustement_rule>(obj) && equals(static_cast<const adjustement_rule&>(obj));}
       /// @}
-    
+      
     private:
       xtd::date_time date_end_ {date_time::max_value};
       xtd::date_time date_start_ {date_time::min_value};
@@ -243,7 +243,7 @@ namespace xtd {
       transition_time daylight_transition_start_;
     };
     /// @}
-        
+    
     /// @cond
     time_zone_info() = default;
     time_zone_info(const ustring& id, const ticks& base_utc_offset, const ustring& daylight_name, const ustring& display_name, const ustring& standard_name, bool supports_daylight_saving_time);
@@ -342,22 +342,22 @@ namespace xtd {
     
     static xtd::date_time convert_time(const xtd::date_time& date_time, const xtd::time_zone_info& destination_time_zone);
     static xtd::date_time convert_time(const xtd::date_time& date_time, const xtd::time_zone_info& source_time_zone, const xtd::time_zone_info& destination_time_zone);
-
+    
     static xtd::date_time convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::ustring& destination_time_zone_id);
     static xtd::date_time convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::time_zone_info& source_time_zone_id, const xtd::time_zone_info& destination_time_zone_id);
-
+    
     static xtd::date_time convert_from_utc(const xtd::date_time& date_time, const xtd::time_zone_info& destination_time_zone);
-
+    
     static xtd::date_time convert_to_utc(const xtd::date_time& date_time, const xtd::time_zone_info& source_time_zone);
     static xtd::date_time convert_to_utc(const xtd::date_time& date_time);
-
+    
     bool equals(const time_zone_info& tzi) const noexcept override;
     bool equals(const object& obj) const noexcept override;
     
     std::vector<adjustement_rule> get_adjustement_rules() const;
     
-    bool is_daylight_saving_time (const xtd::date_time& date_time) const;
-
+    bool is_daylight_saving_time(const xtd::date_time& date_time) const;
+    
     /// @brief Retrieves a time_zone_info object from the registry based on its identifier.
     /// @param id The time zone identifier, which corresponds to the Id property.
     /// @return An object whose identifier is the value of the id parameter.
@@ -377,7 +377,7 @@ namespace xtd {
     bool supports_daylight_saving_time_ = false;
     std::vector<adjustement_rule> adjustement_rules_;
   };
-
+  
   /// @cond
   std::ostream& operator <<(std::ostream& os, const time_zone_info& tzi) noexcept;
   /// @endcond

@@ -91,7 +91,7 @@ void translator::parse_file(const xtd::ustring& file, const xtd::ustring& langua
 void translator::initialize() {
   static mutex mutex_init;
   lock_guard<mutex> lock(mutex_init);
-
+  
   if (language_.empty()) {
     if (!std::locale().name().empty() && std::locale().name() != "C") language_ = ustring(std::locale().name()).substring(0, 2).to_lower();
     else language_ = system_language();
@@ -99,7 +99,7 @@ void translator::initialize() {
   
   static xtd::ustring language_initialized ;
   if (language_initialized == language_ || language_values_.find(language_) != language_values_.end()) return;
-    
+  
   parse_locale(io::path::combine(__XTD_INSTALL_PATH__, "share", "xtd", "locale"));
   if (xtd::environment::os_version().is_macos_platform()) parse_locale(io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "locale"));
   else parse_locale(io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "locale"));

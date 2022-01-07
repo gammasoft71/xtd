@@ -158,7 +158,7 @@ namespace xtd {
     /// @include version.cpp
     version(int32_t major, int32_t minor, int32_t build, int32_t revision);
     /// @}
-
+    
     /// @cond
     version(const version&) noexcept = default;
     version& operator=(const version&) noexcept = default;
@@ -166,7 +166,7 @@ namespace xtd {
     bool operator==(const version& v) const noexcept;
     bool operator!=(const version& v) const noexcept;
     /// @endcond
-
+    
     /// @name Properties
     
     /// @{
@@ -200,7 +200,7 @@ namespace xtd {
     /// @remarks For example, if the version number is 6.2.1.3, the revision number is 3. If the version number is 6.2, the revision number is undefined.
     int32_t revision() const noexcept;
     /// @}
-
+    
     /// @name Methods
     
     /// @{
@@ -236,7 +236,7 @@ namespace xtd {
     /// * xtd::version 1.1.2 is older than version 1.1.2.4
     /// * xtd::version 1.2.5 is newer than version 1.2.3.4
     int32_t compare_to(const version& version) const noexcept override;
-
+    
     /// @brief Converts the string representation of a version number to an equivalent Version object.
     /// @param input A string that contains a version number to convert.
     /// @return An object that is equivalent to the version number specified in the input parameter.
@@ -279,14 +279,14 @@ namespace xtd {
     /// where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods.
     static bool try_parse(const xtd::ustring& input, version& result) noexcept;
     /// @}
-
+    
   private:
     int32_t major_ = 0;
     int32_t minor_ = 0;
     int32_t build_ = -1;
     int32_t revision_ = -1;
   };
-
+  
   /// @cond
   std::ostream& operator <<(std::ostream& os, const version& ver) noexcept;
   /// @endcond

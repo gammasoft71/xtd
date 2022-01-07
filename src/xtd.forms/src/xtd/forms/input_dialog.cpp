@@ -35,38 +35,38 @@ namespace {
         input_panel_.back_color(theme_colors::current_theme().window());
         input_text_box_.back_color(theme_colors::current_theme().text_box());
       }
-      input_panel_.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right|anchor_styles::bottom);
+      input_panel_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       input_panel_.bounds({0, 0, 330, 115 - 42 + offset_multiline});
       input_panel_.controls().push_back_range({message_label_, input_text_box_});
-
-      message_label_.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
+      
+      message_label_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
       message_label_.bounds({10, 10, 310, 23});
       message_label_.text(message);
-
-      input_text_box_.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right|anchor_styles::bottom);
+      
+      input_text_box_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       input_text_box_.bounds({10, 35, 310, 23 + offset_multiline});
       input_text_box_.character_casing(character_casing);
       input_text_box_.multiline(multiline);
       input_text_box_.text(value);
       input_text_box_.use_system_password_char(use_system_password_char);
       input_text_box_.word_wrap(word_wrap);
-
-      cancel_button_.anchor(anchor_styles::right|anchor_styles::bottom);
+      
+      cancel_button_.anchor(anchor_styles::right | anchor_styles::bottom);
       cancel_button_.dialog_result(forms::dialog_result::cancel);
       cancel_button_.text(system_texts::cancel());
       cancel_button_.location({xtd::environment::os_version().is_windows_platform() ? 245 : 160, 81 + offset_multiline});
-
-      ok_button_.anchor(anchor_styles::right|anchor_styles::bottom);
+      
+      ok_button_.anchor(anchor_styles::right | anchor_styles::bottom);
       ok_button_.dialog_result(forms::dialog_result::ok);
       ok_button_.text(system_texts::ok());
       ok_button_.location({xtd::environment::os_version().is_windows_platform() ? 160 : 245, 81 + offset_multiline});
-    
+      
       //active_control(input_text_box_);
       input_text_box_.focus();
     }
     
     xtd::ustring value() const {return input_text_box_.text();}
-
+    
     forms::dialog_result show_dialog() override {
       start_position(form_start_position::center_screen);
       return form::show_dialog();
@@ -91,7 +91,7 @@ namespace {
         form::show_sheet(control::from_handle(owner).value());
       }
     }
-
+    
   private:
     panel input_panel_;
     panel button_panel_;
@@ -115,9 +115,9 @@ void input_dialog::reset() {
 
 bool input_dialog::run_dialog(intptr_t owner) {
   switch (character_casing_) {
-    case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
-    case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
-    default: break;
+  case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
+  case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
+  default: break;
   }
   if (dialog_style_ == xtd::forms::dialog_style::standard) {
     input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_, word_wrap_);
@@ -133,16 +133,16 @@ bool input_dialog::run_dialog(intptr_t owner) {
 
 void input_dialog::run_sheet(intptr_t owner) {
   switch (character_casing_) {
-    case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
-    case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
-    default: break;
+  case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
+  case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
+  default: break;
   }
   if (!owner)
     run_dialog(owner);
   else {
     if (dialog_style_ == xtd::forms::dialog_style::standard) {
       std::shared_ptr<input_dialog_standard> dialog = std::make_shared<input_dialog_standard>(text_, message_, value_, character_casing_, multiline_, use_system_password_char_, word_wrap_);
-      dialog->form_closed += [&, dialog](object& sender, const form_closed_event_args& e) {
+      dialog->form_closed += [&, dialog](object & sender, const form_closed_event_args & e) {
         if (dialog->dialog_result() == dialog_result::ok) value_ = dialog->value();
         on_dialog_closed(dialog_closed_event_args(dialog->dialog_result()));
       };

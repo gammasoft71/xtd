@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Provides a Padding object with no padding.
       static const padding empty;
       /// @}
-
+      
       /// @name Constructors
       
       /// @{
@@ -101,7 +101,7 @@ namespace xtd {
           left_ = left;
         }
       }
-
+      
       /// @brief Gets the padding value for the right edge.
       /// @return The padding, in pixels, for the right edge.
       /// @remarks Setting this value can also alter the all property.
@@ -115,7 +115,7 @@ namespace xtd {
           right_ = right;
         }
       }
-
+      
       /// @brief Gets the padding value for the top edge.
       /// @return The padding, in pixels, for the top edge.
       /// @remarks Setting this value can also alter the all property.
@@ -155,7 +155,7 @@ namespace xtd {
         if (p1.all_ && p2.all_) return {p1.left_ - p2.left_};
         return {p1.left_ - p2.left_, p1.top_ - p2.top_, p1.right_ - p2.right_, p1.bottom_ - p2.bottom_};
       }
-
+      
       /// @brief Returns a string that represents the current padding.
       /// @return A string that represents the current padding.
       /// @remarks This method returns a string containing the labeled values of the padding for all four edges.
@@ -166,7 +166,7 @@ namespace xtd {
       bool operator==(const padding& p) const {return all_ == p.all_ && left_ == p.left_ && top_ == p.top_ && right_ == p.right_ && bottom_ == p.bottom_;}
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::padding& padding) noexcept {return os << padding.to_string();}
       /// @endcond
-                                        
+      
     private:
       bool all_ = true;
       int left_ = 0;

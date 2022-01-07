@@ -9,7 +9,7 @@ namespace examples {
     form1() {
       text("Input dialog password example");
       controls().push_back_range({button1, label1});
-
+      
       button1.location({10, 10});
       button1.auto_size(true);
       button1.text("Password...");
@@ -22,7 +22,7 @@ namespace examples {
         if (input_dialog.show_sheet_dialog(*this) == dialog_result::ok)
           label1.text(input_dialog.value());
       };
-
+      
       label1.location({10, 50});
       label1.auto_size(true);
       label1.text("sysad47@74dasys");

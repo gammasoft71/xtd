@@ -44,7 +44,7 @@ namespace xtd {
       /// @param data_array A trace data object.
       virtual bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32_t id, const xtd::ustring& message, std::any data1, const std::vector<std::any>& data_array) = 0;
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       
@@ -52,7 +52,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the trace_filter class.
       trace_filter() = default;
       /// @}
-
+      
       /// @name Protectted methods
       
       /// @{

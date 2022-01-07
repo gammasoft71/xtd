@@ -10,206 +10,206 @@ using namespace xtd::forms;
 namespace {
   renderer system_renderer_getter() {
     renderer renderer(theme_renderers::default_theme_name());
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer gnome_dark_renderer_getter() {
     renderer renderer("gnome (dark)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("gnome (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("gnome (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("gnome (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer gnome_light_renderer_getter() {
     renderer renderer("gnome (light)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("gnome (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("gnome (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("gnome (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer gnome_renderer_getter() {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? gnome_dark_renderer_getter() : gnome_light_renderer_getter();
   }
-
+  
   renderer kde_dark_renderer_getter() {
     renderer renderer("kde (dark)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("kde (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("kde (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("kde (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer kde_light_renderer_getter() {
     renderer renderer("kde (light)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("kde (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("kde (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("kde (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer kde_renderer_getter() {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? kde_dark_renderer_getter() : kde_light_renderer_getter();
   }
-
+  
   renderer macos_dark_renderer_getter() {
     renderer renderer("macos (dark)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("macos (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("macos (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("macos (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer macos_light_renderer_getter() {
     renderer renderer("macos (light)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("macos (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("macos (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("macos (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer macos_renderer_getter() {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? macos_dark_renderer_getter() : macos_light_renderer_getter();
   }
-
+  
   renderer symbolic_dark_renderer_getter() {
     renderer renderer("symbolic (dark)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("symbolic (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("symbolic (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("symbolic (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer symbolic_light_renderer_getter() {
     renderer renderer("symbolic (light)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("symbolic (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("symbolic (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("symbolic (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer symbolic_renderer_getter() {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? symbolic_dark_renderer_getter() : symbolic_light_renderer_getter();
   }
-
+  
   renderer windows_dark_renderer_getter() {
     renderer renderer("windows (dark)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("windows (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("windows (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("windows (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer windows_light_renderer_getter() {
     renderer renderer("windows (light)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("windows (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("windows (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("windows (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer windows_renderer_getter() {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? windows_dark_renderer_getter() : windows_light_renderer_getter();
   }
-
+  
   renderer xtd_dark_renderer_getter() {
     renderer renderer("xtd (dark)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("xtd (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("xtd (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("xtd (dark)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer xtd_light_renderer_getter() {
     renderer renderer("xtd (light)");
-    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       button_renderer::draw_button("xtd (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.check_box_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       check_box_renderer::draw_check_box("xtd (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
-    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+    renderer.radio_button_render({[](xtd::drawing::graphics g, const xtd::drawing::rectangle & bounds, const xtd::ustring & text, const xtd::drawing::font & font, xtd::forms::text_format_flags flags, const xtd::drawing::image & image, const xtd::drawing::rectangle & image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
       radio_button_renderer::draw_radio_button("xtd (light)", g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
     }});
     return renderer;
   }
-
+  
   renderer xtd_renderer_getter() {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? xtd_dark_renderer_getter() : xtd_light_renderer_getter();
   }

@@ -16,9 +16,9 @@ int main() {
     intptr_t handle = 0;
     // The following line is commented out so that the exception is generated.
     //handle = create_handle();
-
+    
     destroy_handle(handle);
-  } catch(const system_exception& e) {
+  } catch (const system_exception& e) {
     console::write_line("Exception occured :");
     console::write_line("-------------------");
     console::write_line(e);

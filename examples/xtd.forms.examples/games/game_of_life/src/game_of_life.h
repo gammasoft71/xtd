@@ -12,7 +12,7 @@ namespace game_of_life {
     static void main() {
       xtd::forms::application::run(game_of_life::form_game_of_life());
     }
-
+    
     form_game_of_life() {
       text("John Conway's Game of Life");
       client_size({715, 485});
@@ -28,8 +28,8 @@ namespace game_of_life {
       button_run_.click += [&] {
         run_enabled_ = !run_enabled_;
         button_run_.text(run_enabled_ ? "Stop" : "Run");
-        button_clear_.enabled(!run_enabled_ );
-        button_next_.enabled(!run_enabled_ );
+        button_clear_.enabled(!run_enabled_);
+        button_next_.enabled(!run_enabled_);
       };
       
       button_next_.parent(*this);
@@ -110,20 +110,20 @@ namespace game_of_life {
       panel_grid_.size({695, 395});
       panel_grid_.double_buffered(true);
       
-      panel_grid_.mouse_down += [&](object& sender, const xtd::forms::mouse_event_args& e) {
+      panel_grid_.mouse_down += [&](object & sender, const xtd::forms::mouse_event_args & e) {
         current_state_ = grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] == cell::populated ? cell::empty : cell::populated;
         grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
         panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
       };
       
-      panel_grid_.mouse_move += [&](object& sender, const xtd::forms::mouse_event_args& e) {
+      panel_grid_.mouse_move += [&](object & sender, const xtd::forms::mouse_event_args & e) {
         if (e.button() == xtd::forms::mouse_buttons::left) {
           grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
           panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
         }
       };
       
-      panel_grid_.paint += [&](object& sender, xtd::forms::paint_event_args& e) {
+      panel_grid_.paint += [&](object & sender, xtd::forms::paint_event_args & e) {
         e.graphics().clear(back_color());
         if ((track_bar_zoom_.value() * grid::columns) >= panel_grid_.client_size().width() && (track_bar_zoom_.value() * grid::rows) >= panel_grid_.client_size().height())
           for (auto y = 0; y < panel_grid_.client_size().height(); y += zoom_)
@@ -155,7 +155,7 @@ namespace game_of_life {
           label_iterations_.text(xtd::ustring::format("Iterations : {}", iterations_));
         });
       };
-
+      
       thread_run_ = std::thread([&] {
         while (!closed_) {
           if (!run_enabled_)
@@ -165,7 +165,7 @@ namespace game_of_life {
             static auto lastRunTime = std::chrono::high_resolution_clock::now();
             auto elapsedTime = std::chrono::high_resolution_clock::now() - lastRunTime;
             if (elapsedTime < std::chrono::milliseconds(interval_milliseconds_)) std::this_thread::sleep_for(std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
-            else std::this_thread::yield(); 
+            else std::this_thread::yield();
             lastRunTime = std::chrono::high_resolution_clock::now();
           }
         }
@@ -189,7 +189,7 @@ namespace game_of_life {
     
     void random() {
       std::random_device rand;
-      auto max = std::uniform_int_distribution<int>{ 50, 200 }(rand);
+      auto max = std::uniform_int_distribution<int> { 50, 200 }(rand);
       auto max_x = panel_grid_.client_size().width() / zoom_;
       auto max_y = panel_grid_.client_size().height() / zoom_;
       for (auto counter = 0; counter < max; counter++) {
@@ -205,7 +205,7 @@ namespace game_of_life {
       auto width = 0U;
       for (auto line : figure)
         if (line.length() > width) width = xtd::as<int>(line.length());
-      
+        
       auto start_x = (panel_grid_.client_size().width() / zoom_ / 2) - (width / 2);
       auto y = (panel_grid_.client_size().height() / zoom_ / 2) - (height / 2);
       
@@ -389,7 +389,7 @@ namespace game_of_life {
         "                        **     **",
       });
     }
-
+    
     void small_exploder() {
       fill_figure({
         " * ",
@@ -398,7 +398,7 @@ namespace game_of_life {
         " * "
       });
     }
-
+    
     void toad() {
       fill_figure({
         " ***",
@@ -426,8 +426,8 @@ namespace game_of_life {
     int offset_y_ = 200;
     bool closed_ = false;
     bool run_enabled_ = false;
-    int interval_milliseconds_ = 1000/speed_;
-
+    int interval_milliseconds_ = 1000 / speed_;
+    
     xtd::forms::button button_run_;
     xtd::forms::button button_next_;
     xtd::forms::button button_clear_;

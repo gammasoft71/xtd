@@ -16,7 +16,7 @@ namespace xtd {
     /// @cond
     class control;
     /// @endcond
-
+    
     /// @brief Provides data for the paint event.
     /// @par Namespace
     /// xtd::forms
@@ -38,11 +38,11 @@ namespace xtd {
       /// @param clip_rectangle The xtd::drawing::rectangle that represents the rectangle in which to paint.
       paint_event_args(xtd::drawing::graphics& graphics, const drawing::rectangle& clip_rectangle) : graphics_(&graphics), clip_rectangle_(clip_rectangle) {};
       /// @}
-
+      
       /// @cond
       ~paint_event_args();
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -54,7 +54,7 @@ namespace xtd {
       /// @return The xtd::drawing::graphics object used to paint. The xtd::drawing::graphics object provides methods for drawing objects on the display device.
       drawing::graphics& graphics();
       /// @}
-            
+      
     private:
       friend class xtd::forms::control;
       xtd::forms::control* control_ = nullptr;

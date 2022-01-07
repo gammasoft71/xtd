@@ -14,10 +14,10 @@ namespace {
   ustring get_hotkey_prefix_locations(const ustring& str, std::vector<size_t>& locations) {
     size_t offset = 0;
     for (auto index = 0U; index < str.size(); index++) {
-      if (str[index] == '&' && str[index+1] != '&') {
+      if (str[index] == '&' && str[index + 1] != '&')
         locations.push_back(index + offset);
-      } else if (str[index] == '&' && str[index+1] == '&') {
-        offset-=2;
+      else if (str[index] == '&' && str[index + 1] == '&') {
+        offset -= 2;
         ++index;
       }
     }
@@ -102,7 +102,7 @@ void graphics::draw_string(const ustring& text, const font& font, const brush& b
       y += (layout_rectangle.height() - text_size.height());
       height -= (layout_rectangle.height() - text_size.height());
     }
-
+    
     auto lines = text.split({'\n'});
     for (auto line : lines) {
       if (line.empty()) line = " ";
@@ -129,9 +129,9 @@ void graphics::draw_string(const ustring& text, const font& font, const brush& b
             g.draw_string(text_without_hotkey_prefi.substring(hotkey_prefix_locations[index], chunk_size), font, solid_brush(text_color), button_rect, to_string_format(flags));
           }
          */
-         native::graphics::draw_string(data_->handle_, drawable_line, font.data_->handle_, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+        native::graphics::draw_string(data_->handle_, drawable_line, font.data_->handle_, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
       }
-
+      
       y += line_size.height();
     }
   }
@@ -157,7 +157,7 @@ graphics graphics::from_image(const image& image) {
   return graphics(native::graphics::from_image(image.handle()));
 }
 
-size_f graphics::measure_string(const ustring &text, const font &font) {
+size_f graphics::measure_string(const ustring& text, const font& font) {
   int32_t width = 0;
   int32_t height = 0;
   native::graphics::measure_string(data_->handle_, text, font.handle(), width, height);

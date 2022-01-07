@@ -31,6 +31,6 @@ namespace xtd {
   ///   }
   /// }
   /// @endcode
-  #define nameof_(...) \
+#define nameof_(...) \
   std::string(#__VA_ARGS__)
 }

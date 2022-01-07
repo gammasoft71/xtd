@@ -55,7 +55,7 @@ namespace xtd {
       /// @remarks The td::net::ip_address::none field is equivalent to 255.255.255.255 in dotted-quad notation.
       static ip_address none;
       /// @}
-
+      
       /// @name Constructors
       
       /// @{
@@ -83,7 +83,7 @@ namespace xtd {
       /// @param quad_part_address4 The fourth quad part of the IP address.
       ip_address(byte_t quad_part_address1, byte_t quad_part_address2, byte_t quad_part_address3, byte_t quad_part_address4);
       /// @}
-
+      
       /// @cond
       ip_address(ip_address&& ip_address) = default;
       ip_address(const ip_address& ip_address) = default;
@@ -114,7 +114,7 @@ namespace xtd {
       /// @brief Gets whether the address is an IPv6 site local address.
       /// @return bool true if the IP address is an IPv6 site local address; otherwise, false.
       bool is_ip_v6_site_local() const noexcept;
-
+      
       /// @brief Gets whether the address is an IPv6 Teredo address.
       /// @return true if the IP address is an IPv6 Teredo address; otherwise, false.
       /// @remarks A Teredo address is an IPv6 address with the prefix of 2001::/32. Teredo addresses can be returned through normal DNS name resolution or enumerated as an IPv6 address assigned to a local interface.
@@ -129,7 +129,7 @@ namespace xtd {
       /// @exception xtd::net::sockets::socket_exception if address_family = sockets::address_family::inter_network
       ip_address& scope_id(uint32_t value);
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -139,7 +139,7 @@ namespace xtd {
       /// @brief Provides a copy of the IPAddress as an array of bytes.
       /// @return  A byte array.
       std::vector<byte_t> get_address_bytes() const;
-
+      
       /// @brief Converts a Double value from host byte order to network byte order.
       /// @param host The number to convert, expressed in host byte order.
       /// @return A Double value, expressed in network byte order.
@@ -195,7 +195,7 @@ namespace xtd {
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
       static uint64_t host_to_network_order(uint64_t host);
-
+      
       /// @brief Indicates whether the specified IP address is the loopback address.
       /// @param address An IP address.
       /// @return bool true if address is the loopback address; otherwise, false.
@@ -205,12 +205,12 @@ namespace xtd {
       /// @return An IPv4 address.
       /// @remarks Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt.
       ip_address map_to_ip_v4() const noexcept;
-
+      
       /// @brief Maps the xtd::net::ip_address object to an IPv6 address.
       /// @return An IPv6 address.
       /// @remarks Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt.
       ip_address map_to_ip_v6() const noexcept;
-
+      
       /// @brief Converts a Double value from network byte order to host byte order.
       /// @param network The number to convert, expressed in network byte order.
       /// @return A Double value, expressed in host byte order.
@@ -285,7 +285,7 @@ namespace xtd {
       /// @return bool true if str is a valid IP address; otherwise, false.
       static bool try_parse(const ustring& str, ip_address& address);
       /// @}
-
+      
     private:
       friend xtd::net::sockets::socket;
       static constexpr const size_t number_of_numbers_ = 8;

@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::security;
 
-process_start_info::process_start_info(const ustring& file_name) : file_name_(file_name ) {
+process_start_info::process_start_info(const ustring& file_name) : file_name_(file_name) {
 }
 
 process_start_info::process_start_info(const ustring& file_name, const ustring& arguments) : file_name_(file_name), arguments_(arguments) {
@@ -104,7 +104,7 @@ process_start_info& process_start_info::password(const xtd::security::secure_str
 }
 
 ustring process_start_info::password_in_clear_text() const {
-   return password_.to_unsecure_string();
+  return password_.to_unsecure_string();
 }
 
 process_start_info& process_start_info::password_in_clear_text(const ustring& value) {

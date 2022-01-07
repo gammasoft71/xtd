@@ -26,7 +26,7 @@ namespace xtd {
       /// Separator menu item.
       separator = 4,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, menu_item_kind value) {return os << to_string(value, {{menu_item_kind::normal, "normal"}, {menu_item_kind::check, "check"}, {menu_item_kind::radio, "radio"}, {menu_item_kind::drop_down, "drop_down"}, {menu_item_kind::separator, "separator"}});}
     inline std::wostream& operator<<(std::wostream& os, menu_item_kind value) {return os << to_string(value, {{menu_item_kind::normal, L"normal"}, {menu_item_kind::check, L"check"}, {menu_item_kind::radio, L"radio"}, {menu_item_kind::drop_down, L"drop_down"}, {menu_item_kind::separator, L"separator"}});}

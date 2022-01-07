@@ -294,7 +294,7 @@ namespace xtd {
       /// @endcode
       /// @remarks Stack frames are numbered starting at 0, which is the last stack frame pushed.
       const xtd::diagnostics::stack_frame& get_frame(size_t index);
-            
+      
       /// @brief Returns a copy of all stack frames in the current stack trace.
       /// @return An array of type xtd::diagnostics::stack_frame representing the function calls in the stack trace.
       /// @par Examples
@@ -327,7 +327,7 @@ namespace xtd {
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_trace& stack_trace) noexcept {return os << stack_trace.to_string();}
       /// @endcond
-
+      
     private:
       friend class xtd::system_exception;
       stack_trace(const xtd::ustring& str, size_t skip_frames, bool need_file_info);

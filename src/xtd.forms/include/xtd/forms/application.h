@@ -25,7 +25,7 @@ namespace xtd {
     class input_dialog;
     class message_box;
     /// @endcond
-
+    
     /// @brief Represents a collection of form objects.
     /// @par Namespace
     /// xtd::forms
@@ -74,7 +74,7 @@ namespace xtd {
       /// @remarks If the key does not exist, it is created in the following format: local_machine\software\company_name\product_name\product_version
       static microsoft::win32::registry_key common_app_data_registry();
        */
-
+      
       /// @brief Gets the company name associated with the application.
       /// @return The company name.
       /// @remarks company_name is taken from the application_informations containing the current application. You can set it by setting application_informations::company_name property. For more information, see application_informations.
@@ -86,7 +86,7 @@ namespace xtd {
       /// }
       /// @endcode
       static xtd::ustring company_name();
-
+      
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
       static xtd::ustring executable_name();
@@ -97,7 +97,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether a message loop exists on this thread.
       /// @return true if a message loop exists; otherwise, false.
-       static bool message_loop();
+      static bool message_loop();
       
       /// @brief Gets a collection of open forms owned by the application.
       /// @return A form_collection containing all the currently open forms owned by this application.
@@ -117,14 +117,14 @@ namespace xtd {
       /// @brief Gets the path for the executable file that started the application, not including the executable name.
       /// @return The path for the executable file that started the application.
       static xtd::ustring startup_path();
-
+      
       /// @brief Gets the path for the application data of a user.
       /// @return The path for the application data of a user.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
       /// @remarks Data stored in this path is part of user profile that is enabled for roaming. A roaming user works on more than one computer in a network. The user profile for a roaming user is kept on a server on the network and is loaded onto a system when the user logs on. For a user profile to be considered for roaming, the operating system must support roaming profiles and it must be enabled.
       /// @remarks A typical base path is "C:\Documents and Settings\username\Application Data".
       static xtd::ustring user_app_data_path();
-
+      
       /*
        /// @brief Gets the registry key for the application data of a user.
        /// @return A registry_key representing the registry key for the application data specific to the user.
@@ -178,14 +178,14 @@ namespace xtd {
       
       /// @brief Enables dark mode for the application.
       static void enable_dark_mode();
-
+      
       /// @brief Enables light mode for the application.
       static void enable_light_mode();
       
       /// @brief Enables menu images  for the application.
       /// @remarks This method has an effect only on linux.
       static void enable_menu_images();
-
+      
       /// @brief Enables visual styles for the application.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       static void enable_visual_styles();
@@ -222,7 +222,7 @@ namespace xtd {
       /// @param value The implementation of the imessage_filter to remove from the application.
       /// @remarks You can remove a message filter when you no longer want to capture Windows messages before they are dispatched.
       static void remove_message_filter(const imessage_filter& value);
-
+      
       /// @brief Shuts down the application and starts a new instance immediately.
       /// @remarks Applications are restarted in the context in which they were initially run.
       /// @remarks If your application was originally supplied command-line options when it first executed, restart will launch the application again with the same options.
@@ -238,7 +238,7 @@ namespace xtd {
       /// The following code example demonstrate the use of application run method.
       /// @include application_run.cpp
       static void run();
-
+      
       /// @brief Begins running a standard application message loop on the current thread, with an application_context.
       /// @param context An ApplicationContext in which the application is run.
       /// @remarks The message loop runs until Exit or exit_thread is called or the thread_exit event is raised on the context object.
@@ -260,7 +260,7 @@ namespace xtd {
       static void theme(const xtd::forms::theme& theme);
       static const xtd::forms::theme& theme();
       static const std::vector<xtd::ustring>& theme_names();
-
+      
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions.
       /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.
@@ -269,7 +269,7 @@ namespace xtd {
       /// @remarks To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
       static void set_unhandled_exception_mode (unhandled_exception_mode mode);
        */
-
+      
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions, optionally applying thread-specific behavior.
       /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.
@@ -282,7 +282,7 @@ namespace xtd {
       static void set_unhandled_exception_mode (unhandled_exception_mode mode, bool thread_scope);
        */
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -291,12 +291,12 @@ namespace xtd {
       /// @remarks You must attach the event handlers to the application_exit event to perform unhandled, required tasks before the application stops running. You can close files opened by this application, or dispose of objects that garbage collection did not reclaim.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       static event<application, delegate<void(const event_args&)>> application_exit;
-
+      
       /// @brief Occurs when the application is about to enter a modal state.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       static event<application, delegate<void(const event_args&)>> enter_thread_modal;
-
+      
       /// @brief Occurs when the application finishes processing and is about to enter the idle state.
       /// @ingroup events
       /// @remarks If you have tasks that you must perform before the thread becomes idle, attach them to this event.
@@ -305,7 +305,7 @@ namespace xtd {
       /// @include application_idle.cpp
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       static event<application, delegate<void(const event_args&)>> idle;
-
+      
       /// @brief Occurs when the application is about to leave a modal state.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -320,19 +320,19 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       static event<threading::thread_exception_event_handler> thread_exception;
        */
-
+      
       /// @brief Occurs when a thread is about to shut down. When the main thread for an application is about to be shut down, this event is raised first, followed by an application_exit event.
       /// @ingroup events
       /// @remarks You must attach the event handlers to the thread_exit event to perform any unhandled, required tasks before the thread stops running. Close files opened by this thread, or dispose of objects that the garbage collector did not reclaim.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       static event<application, delegate<void(const event_args&)>> thread_exit;
       /// @}
-
+      
     private:
       friend class form;
       friend class input_dialog;
       friend class message_box;
-
+      
       static void on_app_thread_exit(object& sender, const event_args& e);
       static bool on_app_thread_exception();
       static void raise_enter_thread_modal(const event_args& e);
@@ -342,7 +342,7 @@ namespace xtd {
       static void wm_activate_app(message& message);
       static void wm_enter_idle(message& message);
       static void wm_quit(message& message);
-
+      
       static bool use_visual_styles_;
       static bool use_wait_cursor_;
       static bool message_loop_;

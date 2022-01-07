@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @{
       int32_t progress_percentage() const {return progress_percentage_;}
-
+      
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
       std::any user_state() const {return user_state_;}

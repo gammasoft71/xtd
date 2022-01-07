@@ -129,10 +129,10 @@ directory_info directory::create_directory(const ustring& path) {
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
-
+  
   directory_info dir_info(path);
   if (dir_info.exists()) return dir_info;
-
+  
   if (!ustring::is_empty(dir_info.parent().full_name()))
     create_directory(dir_info.parent().full_name());
   dir_info.create();
@@ -163,7 +163,7 @@ directory::file_iterator directory::enumerate_files(const ustring& path, const u
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
-
+  
   return file_iterator(path, search_pattern);
 }
 
@@ -177,7 +177,7 @@ directory::file_system_entry_iterator directory::enumerate_file_system_entries(c
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
-
+  
   return file_system_entry_iterator(path, search_pattern);
 }
 
@@ -191,7 +191,7 @@ date_time directory::get_creation_time(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
-
+  
   time_t creation_time, last_access_time, last_write_time;
   native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time);
   return date_time::from_time_t(creation_time, date_time_kind::local);
@@ -237,7 +237,7 @@ date_time directory::get_last_access_time(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
-
+  
   time_t creation_time, last_access_time, last_write_time;
   native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time);
   return date_time::from_time_t(last_access_time, date_time_kind::local);
@@ -249,7 +249,7 @@ date_time directory::get_last_write_time(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
-
+  
   time_t creation_time, last_access_time, last_write_time;
   native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time);
   return date_time::from_time_t(last_write_time, date_time_kind::local);
@@ -271,7 +271,7 @@ void directory::move(const ustring& src, const ustring& dst) {
   if (src.empty() || src.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(src)) throw path_too_long_exception(csf_);
   if (!exists(src)) throw directory_not_found_exception(csf_);
-
+  
   if ((file::get_attributes(src) & file_attributes::directory) == file_attributes::directory)
     directory_info(src).move_to(dst);
   else
@@ -283,7 +283,7 @@ void directory::remove(const ustring& path) {
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
-
+  
   directory_info(path).remove();
 }
 

@@ -12,7 +12,7 @@ namespace unit_tests {
       int i = 0;
       assert::is_zero(i);
     }
-
+    
     void test_method_(test_case_failed) {
       int i = 42;
       assert::is_zero(i);

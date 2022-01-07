@@ -16,10 +16,10 @@ void test_(test_assert_is_not_null_nullptr_failed, test_output) {
   std::stringstream ss;
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
-                "  FAILED  test_assert_is_not_null_nullptr_failed.test_case_failed\n"
-                "    Expected: not null\n"
-                "    But was:  null\n"
-                "End 1 test from 1 test case ran.\n", ss.str());
+    "  FAILED  test_assert_is_not_null_nullptr_failed.test_case_failed\n"
+    "    Expected: not null\n"
+    "    But was:  null\n"
+    "End 1 test from 1 test case ran.\n", ss.str());
 }
 
 void test_(test_assert_is_not_null_nullptr_failed, test_result) {

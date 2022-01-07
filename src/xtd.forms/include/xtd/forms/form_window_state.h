@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief A full screen window.
       full_screen = 3,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, form_window_state value) {return os << to_string(value, {{form_window_state::normal, "normal"}, {form_window_state::minimized, "minimized"}, {form_window_state::maximized, "maximized"}, {form_window_state::full_screen, "full_screen"}});}
     inline std::wostream& operator<<(std::wostream& os, form_window_state value) {return os << to_string(value, {{form_window_state::normal, L"normal"}, {form_window_state::minimized, L"minimized"}, {form_window_state::maximized, L"maximized"}, {form_window_state::full_screen, L"full_screen"}});}

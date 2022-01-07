@@ -34,11 +34,11 @@ using namespace xtd::drawing::native;
 
 namespace {
   bool is_windows_dark_mode() {
-#if defined(__WXMSW__)
+    #if defined(__WXMSW__)
     DWORD value = 0, value_size = sizeof(value);
     if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) == ERROR_SUCCESS)
       return __xtd_win32_enable_dark_mode__ != 0 && (value == 0 || __xtd_win32_enable_dark_mode__ == 1);
-#endif
+    #endif
     return false;
   }
   
@@ -53,34 +53,34 @@ uint32_t system_colors::to_argb(intptr_t color) {
 
 intptr_t system_colors::accent() {
   toolkit::initialize(); // Must be first
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   return __xtd__macos_system_colors_accent_control__();
-#elif defined(__WXMSW__)
+  #elif defined(__WXMSW__)
   if (is_windows_dark_mode()) return 0xFF00A0FA;
   return 0xFFD2E8F8;
-#else
+  #else
   return menu_highlight();
-#endif
+  #endif
 }
 
 intptr_t system_colors::accent_text() {
   toolkit::initialize(); // Must be first
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   return __xtd__macos_system_colors_accent_text__();
-#else
+  #else
   if (is_windows_dark_mode()) return 0xFFFFFFFF;
   return highlight_text();
-#endif
+  #endif
 }
 
 intptr_t system_colors::active_border() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF2C2C2C;
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   return __xtd__macos_system_colors_active_border__();
-#else
+  #else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_ACTIVEBORDER));
-#endif
+  #endif
 }
 
 intptr_t system_colors::active_caption() {
@@ -103,14 +103,14 @@ intptr_t system_colors::app_workspace() {
 
 intptr_t system_colors::button_face() {
   toolkit::initialize(); // Must be first
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   return __xtd__macos_system_colors_button_face__();
-#elif defined(__WXMSW__)
+  #elif defined(__WXMSW__)
   if (is_windows_dark_mode()) return 0xFF353535;
   return ::to_argb(0xFFFFFFFF);
-#else
+  #else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
-#endif
+  #endif
 }
 
 intptr_t system_colors::button_highlight() {
@@ -128,11 +128,11 @@ intptr_t system_colors::button_shadow() {
 intptr_t system_colors::control() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF191919;
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   return __xtd__macos_system_colors_control__();
-#else
+  #else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
-#endif
+  #endif
 }
 
 intptr_t system_colors::control_dark() {
@@ -162,11 +162,11 @@ intptr_t system_colors::control_light_light() {
 intptr_t system_colors::control_text() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0XFFFFFFFF;
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   return __xtd__macos_system_colors_control_text__();
-#else
+  #else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT));
-#endif
+  #endif
 }
 
 intptr_t system_colors::desktop() {
@@ -272,23 +272,23 @@ intptr_t system_colors::scroll_bar() {
 
 intptr_t system_colors::text_box() {
   toolkit::initialize(); // Must be first
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   return __xtd__macos_system_colors_text_box__();
-#else
+  #else
   if (is_windows_dark_mode()) return 0xFF121212;
   return window();
-#endif
+  #endif
 }
 
 intptr_t system_colors::text_box_text() {
   toolkit::initialize(); // Must be first
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   
   return __xtd__macos_system_colors_text_box_text__();
-#else
+  #else
   if (is_windows_dark_mode()) return 0xFFFFFFFF;
   return window_text();
-#endif
+  #endif
 }
 
 intptr_t system_colors::window() {

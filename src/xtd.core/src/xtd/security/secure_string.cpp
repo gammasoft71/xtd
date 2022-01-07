@@ -17,7 +17,7 @@ namespace {
       result.push_back(value[index] != key[index % key.size()] ? value[index] ^ key[index % key.size()] : value[index]);
     return result;
   }
-
+  
   ustring decrypt(const xtd::guid& guid, const byte_t value[], size_t length) {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
     return ustring(reinterpret_cast<const char*>(encrypt(guid, reinterpret_cast<const char*>(value), length).data()), length);

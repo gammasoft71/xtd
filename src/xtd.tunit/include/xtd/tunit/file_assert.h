@@ -22,7 +22,7 @@ namespace xtd {
       /// @cond
       file_assert() = delete;
       /// @endcond
-
+      
       /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -241,7 +241,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
       /// @endcond
-
+      
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.

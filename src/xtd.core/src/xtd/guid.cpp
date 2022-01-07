@@ -118,7 +118,7 @@ ustring guid::to_string(ustring format) const {
   
   if (format.size() != 1 || ustring("ndbpx").index_of(format) == ustring::npos)
     throw xtd::format_exception(current_stack_frame_);
-  
+    
   bool hyphens = format != "n" && format != "x";
   bool braces = format == "b";
   bool parentheses = format == "p";
@@ -143,6 +143,6 @@ ustring guid::to_string(ustring format) const {
     result = "{" + result + "}";
   if (parentheses)
     result = "(" + result + ")";
-  
+    
   return result;
 }

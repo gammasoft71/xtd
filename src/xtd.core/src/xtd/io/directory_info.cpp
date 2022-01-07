@@ -162,7 +162,7 @@ directory_info directory_info::create_subdirectory(const ustring& path) const {
   if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path::combine(full_path_, path))) throw path_too_long_exception(csf_);
-
+  
   directory_info dir_info(path::combine(full_path_, path));
   if (!dir_info.exists()) dir_info.create();
   return dir_info;
@@ -229,7 +229,7 @@ void directory_info::move_to(const ustring& dest_dir_name) {
     file::move(path::combine(full_path_, item), path::combine(target_dir_name, item));
   for (ustring item : native::directory::enumerate_directories(full_path_, "*"))
     directory::move(path::combine(full_path_, item), path::combine(target_dir_name, item));
-  
+    
   remove();
   original_path_ = target_dir_name;
   refresh();
@@ -255,10 +255,10 @@ void directory_info::remove(bool recursive) const {
           return true;
       }
     }
-
+  
     return (directory_info(path).attributes() & file_attributes::read_only) == file_attributes::read_only;
   };
- 
+  
   if (is_read_only(full_path_, recursive) == true) throw unauthorized_access_exception(csf_);
    */
   

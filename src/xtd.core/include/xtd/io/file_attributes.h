@@ -47,7 +47,7 @@ namespace xtd {
       /// @brief The file or directory is encrypted. For a file, this means that all data in the file is encrypted. For a directory, this means that encryption is the default for newly created files and directories.
       encrypted = 0x4000
     };
-
+    
     /// @cond
     inline file_attributes& operator^=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
     inline file_attributes& operator&=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}

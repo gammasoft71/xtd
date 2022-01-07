@@ -22,7 +22,7 @@ namespace xtd {
       /// @cond
       collection_assert() = delete;
       /// @endcond
-
+      
       /// @brief Asserts that all collection items are of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -103,7 +103,7 @@ namespace xtd {
         assert::succeed(message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that all collection items are not null.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -174,7 +174,7 @@ namespace xtd {
           }
         assert::succeed(message, stack_frame);
       }
-
+      
       /// @cond
       template<typename item_t>
       static void all_items_are_not_null(const std::initializer_list<item_t>& collection) {all_items_are_not_null(collection, "", xtd::diagnostics::stack_frame::empty());}
@@ -192,7 +192,7 @@ namespace xtd {
         assert::succeed(message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that all collection items are unique.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -261,7 +261,7 @@ namespace xtd {
         }
         assert::succeed(message, stack_frame);
       }
-
+      
       /// @cond
       template<typename item_t>
       static void all_items_are_unique(const std::initializer_list<item_t>& collection) {all_items_are_unique(collection, "", xtd::diagnostics::stack_frame::empty());}
@@ -280,7 +280,7 @@ namespace xtd {
         assert::succeed(message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that all collection items are equal.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -387,7 +387,7 @@ namespace xtd {
           assert::succeed(message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that all collection items are equivalent.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -510,7 +510,7 @@ namespace xtd {
           assert::succeed(message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that all collection items are not equal.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -617,7 +617,7 @@ namespace xtd {
           assert::succeed(message, stack_frame);
       }
       /// @endcond
- 
+      
       /// @brief Asserts that all collection items are not equivalent.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -740,7 +740,7 @@ namespace xtd {
           assert::succeed(message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that collection contains all items.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -859,7 +859,7 @@ namespace xtd {
         assert::succeed(message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that collection contains all items.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.

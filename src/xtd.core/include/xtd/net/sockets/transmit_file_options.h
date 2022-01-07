@@ -40,7 +40,7 @@ namespace xtd {
         /// @brief Use kernel asynchronous procedure calls (APCs) instead of worker threads to process long file transfer requests. Long requests are defined as requests that require more than a single read from the file or a cache; the request therefore depends on the size of the file and the specified length of the send packet.
         use_kernel_apc = 0b100000,
       };
-
+      
       /// @cond
       inline transmit_file_options& operator^=(transmit_file_options& lhs, transmit_file_options rhs) {lhs = static_cast<transmit_file_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
       inline transmit_file_options& operator&=(transmit_file_options& lhs, transmit_file_options rhs) {lhs = static_cast<transmit_file_options>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}

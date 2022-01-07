@@ -52,7 +52,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-close".
       static xtd::drawing::image close(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-close", size);}
-
+      
       /// @brief Close hovered image object.
       /// @return A xtd::drawing::image that represent "window-close-hovered".
       static xtd::drawing::image close_hovered() {return close_hovered(xtd::forms::theme_images::current_theme(), size());}
@@ -83,7 +83,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-close-hovered".
       static xtd::drawing::image close_hovered(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-close-hovered", size);}
-
+      
       /// @brief Fullscreen image object.
       /// @return A xtd::drawing::image that represent "window-fullscreen".
       static xtd::drawing::image fullscreen() {return fullscreen(xtd::forms::theme_images::current_theme(), size());}
@@ -114,7 +114,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-fullscreen".
       static xtd::drawing::image fullscreen(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-fullscreen", size);}
-
+      
       /// @brief Close image object.
       /// @return A xtd::drawing::image that represent "window-fullscreen-hovered".
       static xtd::drawing::image fullscreen_hovered() {return fullscreen_hovered(xtd::forms::theme_images::current_theme(), size());}
@@ -145,7 +145,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-fullscreen-hovered".
       static xtd::drawing::image fullscreen_hovered(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-fullscreen-hovered", size);}
-
+      
       /// @brief Maximize image object.
       /// @return A xtd::drawing::image that represent "window-maximize".
       static xtd::drawing::image maximize() {return maximize(xtd::forms::theme_images::current_theme(), size());}
@@ -176,7 +176,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-maximize".
       static xtd::drawing::image maximize(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-maximize", size);}
-
+      
       /// @brief Maximize hovered image object.
       /// @return A xtd::drawing::image that represent "window-maximize-hovered".
       static xtd::drawing::image maximize_hovered() {return maximize_hovered(xtd::forms::theme_images::current_theme(), size());}
@@ -207,7 +207,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-maximize-hovered".
       static xtd::drawing::image maximize_hovered(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-maximize-hovered", size);}
-
+      
       /// @brief Minimize image object.
       /// @return A xtd::drawing::image that represent "window-minimize".
       static xtd::drawing::image minimize() {return minimize(xtd::forms::theme_images::current_theme(), size());}
@@ -238,7 +238,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-minimize".
       static xtd::drawing::image minimize(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-minimize", size);}
-
+      
       /// @brief Minimize hovered image object.
       /// @return A xtd::drawing::image that represent "window-close".
       static xtd::drawing::image minimize_hovered() {return minimize_hovered(xtd::forms::theme_images::current_theme(), size());}
@@ -269,7 +269,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-minimize-hovered".
       static xtd::drawing::image minimize_hovered(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-minimize-hovered", size);}
-
+      
       /// @brief Restore image object.
       /// @return A xtd::drawing::image that represent "window-restore".
       static xtd::drawing::image restore() {return restore(xtd::forms::theme_images::current_theme(), size());}
@@ -300,7 +300,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-restore".
       static xtd::drawing::image restore(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-restore", size);}
-
+      
       /// @brief Restore hovered image object.
       /// @return A xtd::drawing::image that represent "window-restore-hovered".
       static xtd::drawing::image restore_hovered() {return restore_hovered(xtd::forms::theme_images::current_theme(), size());}
@@ -331,7 +331,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-restore-hovered".
       static xtd::drawing::image restore_hovered(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-restore-hovered", size);}
-
+      
       /// @brief System menu image object.
       /// @return A xtd::drawing::image that represent "window-system-menu".
       static xtd::drawing::image system_menu() {return system_menu(xtd::forms::theme_images::current_theme(), size());}
@@ -362,7 +362,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-system-menu".
       static xtd::drawing::image system_menu(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-system-menu", size);}
-
+      
       /// @brief System menu hovered image object.
       /// @return A xtd::drawing::image that represent "window-system-menu-hovered".
       static xtd::drawing::image system_menu_hovered() {return system_menu_hovered(xtd::forms::theme_images::current_theme(), size());}
@@ -393,7 +393,7 @@ namespace xtd {
       /// @param size a xtd::drawing::size represent the sie of the image.
       /// @return A xtd::drawing::image that represent "window-system-menu-hovered".
       static xtd::drawing::image system_menu_hovered(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "window-system-menu-hovered", size);}
-
+      
       /// @brief Gets the height and width of the button images.
       /// @return The size that represents the height and width of the button images in pixels.
       /// @remarks The following table show size by operating system :

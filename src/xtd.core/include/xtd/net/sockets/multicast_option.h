@@ -53,7 +53,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception interface_index > 0x00FFFFFF.
         multicast_option(const xtd::net::ip_address& group, uint32_t interface_index);
         /// @}
-
+        
         /// @cond
         multicast_option(multicast_option&& multicast_option) = default;
         multicast_option(const multicast_option& multicast_option) = default;
@@ -71,7 +71,7 @@ namespace xtd {
         /// @param value An xtd::net::ip_address that contains the Internet address of a multicast group.
         /// @return the current instance.
         multicast_option& group(const xtd::net::ip_address& value) noexcept;
-
+        
         /// @brief Gets the interface index that is associated with a multicast group.
         /// @return A uint32_t value that specifies the address of the interface.
         /// @remarks This property specifies the interface on which data is received or sent.
@@ -82,7 +82,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception value > 0x00FFFFFF.
         /// @remarks This property specifies the interface on which data is received or sent.
         multicast_option& interface_index(uint32_t value);
-
+        
         /// @brief Gets the local IP address associated with a multicast group.
         /// @return An xtd::net::ip_address that contains the local address associated with a multicast group.
         const xtd::net::ip_address& local_address() const noexcept;

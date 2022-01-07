@@ -8,7 +8,7 @@ namespace xtd::drawing::native {
     fl_pen(Fl_Color color) : color_(color) {}
     fl_pen(Fl_Color color, int32_t width) : color_(color), width_(width) {}
     fl_pen(Fl_Color color, int32_t width, int32_t style) : color_(color), width_(width), style_(style) {}
-
+    
     Fl_Color color() const {return this->color_;}
     void color(Fl_Color color) {this->color_ = color;}
     
@@ -17,7 +17,7 @@ namespace xtd::drawing::native {
     
     int32_t width() const {return this->width_;}
     void width(int32_t width) {this->width_ = width;}
-
+    
   private:
     Fl_Color color_ = FL_BLACK;
     int32_t width_ = 1;

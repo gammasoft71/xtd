@@ -11,7 +11,7 @@ namespace unit_tests {
       shared_ptr<string> s;
       assert::is_null(s);
     }
-
+    
     void test_method_(test_case_failed) {
       shared_ptr<string> s = make_shared<string>("string");
       assert::is_null(s);

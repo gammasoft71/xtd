@@ -19,13 +19,13 @@ namespace xtd {
       /// @{
       using color_getter = xtd::delegate<xtd::drawing::color(xtd::forms::known_themed_color)>;
       /// @}
-
+      
       /// @name Fields
       
       /// @{
       static const theme_colors empty;
       /// @}
-
+      
       /// @name Constructors
       
       /// @{
@@ -81,15 +81,15 @@ namespace xtd {
       xtd::drawing::color window() const {return from_known_themed_color(xtd::forms::known_themed_color::window);}
       xtd::drawing::color window_frame() const {return from_known_themed_color(xtd::forms::known_themed_color::window_frame);}
       xtd::drawing::color window_text() const {return from_known_themed_color(xtd::forms::known_themed_color::window_text);}
-
+      
       static theme_colors current_theme() {
         if (current_theme_ == theme_colors::empty) current_theme_ = default_theme();
         return current_theme_;
       }
-
+      
       static theme_colors default_theme() {return theme_from_name(default_theme_name());}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -97,10 +97,10 @@ namespace xtd {
       static void current_theme(const xtd::ustring& name) {current_theme(theme_from_name(name));}
       
       static theme_colors theme_from_name(const xtd::ustring& theme_color_name);
-
+      
       xtd::drawing::color from_known_themed_color(xtd::forms::known_themed_color known_themed_color) const {return color_getter_(known_themed_color);}
       /// @}
-
+      
     private:
       theme_colors(const xtd::ustring& name, xtd::forms::theme_style theme_style, const color_getter& color_getter, bool is_default) : theme_base(name, theme_style, is_default), color_getter_(color_getter) {}
       color_getter color_getter_;

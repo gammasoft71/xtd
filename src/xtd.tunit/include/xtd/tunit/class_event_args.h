@@ -20,11 +20,11 @@ namespace xtd {
       /// @brief Create a new instance of class class_event_args.
       /// @param test_class Current class_test.
       class_event_args(const xtd::tunit::test_class& test_class, const xtd::tunit::unit_test& unit_test) : xtd::tunit::tunit_event_args(unit_test), tc_(test_class) {}
-
+      
       /// @brief Gets current class test.
       /// @return Current class test.
       const xtd::tunit::test_class& test_class() const noexcept {return tc_;}
-
+      
     private:
       const xtd::tunit::test_class& tc_;
     };

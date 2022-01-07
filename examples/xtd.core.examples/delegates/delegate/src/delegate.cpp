@@ -20,7 +20,7 @@ int main() {
   ustring str("World");
   //example_function f = {instance, &::object::hello};
   example_function f = {std::bind(&::object::hello, &instance, std::placeholders::_1)};
-
+  
   // equivalent to instance.hello(str)
   f(str);
   f = goodbye;

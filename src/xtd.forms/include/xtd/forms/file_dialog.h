@@ -14,7 +14,7 @@ namespace xtd {
     class open_file_dialog;
     class save_file_dialog;
     /// @endcond
-
+    
     /// @brief Displays a dialog box from which the user can select a file.
     /// @par Namespace
     /// xtd::forms
@@ -60,7 +60,7 @@ namespace xtd {
         set_option(OFN_ADDEXTENSION, value);
         return *this;
       }
-
+      
       /// @brief Gets a value indicating whether this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista.
       /// @return true if this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista; otherwise, false. The default is true.
       /// @remarks If this property is false, the file_dialog class will have a Windows XP-style appearance and behavior on Windows Vista.
@@ -75,7 +75,7 @@ namespace xtd {
         auto_upgrade_enabled_ = value;
         return *this;
       }
-
+      
       /// @brief Gets a value indicating whether the dialog box displays a warning if the user specifies a file name that does not exist.
       /// @return true if the dialog box displays a warning if the user specifies a file name that does not exist; otherwise, false. The default value is false.
       /// @remarks The default value is true for an inheriting open_file_dialog and false for an inheriting save_file_dialog.
@@ -112,7 +112,7 @@ namespace xtd {
         default_ext_ = value;
         return *this;
       }
-
+      
       /// @brief Gets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
       /// @return true if the dialog box returns the location of the file referenced by the shortcut; otherwise, false. The default value is true.
       virtual bool dereference_link() const {return !get_option(OFN_NODEREFERENCELINKS);}
@@ -140,12 +140,12 @@ namespace xtd {
         file_name_ = value;
         return *this;
       }
-
+      
       /// @brief Gets the file names of all selected files in the dialog box.
       /// @return An array of type string, containing the file names of all selected files in the dialog box.
       /// @remarks Each file name includes both the file path and the extension. If no files are selected, this method returns an empty array.
       virtual const std::vector<xtd::ustring> file_names() const {return file_names_;}
-
+      
       /// @brief Gets the current file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box.
       /// @return The file filtering options available in the dialog box.
       /// @remarks For each filtering option, the filter string contains a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options are separated by the vertical bar.
@@ -168,7 +168,7 @@ namespace xtd {
         filter_ = value;
         return *this;
       }
-
+      
       /// @brief Gets the index of the filter currently selected in the file dialog box.
       /// @return A value containing the index of the filter currently selected in the file dialog box. The default value is 1.
       /// @remarks Use the filter_index property to set which filtering option is shown first to the user. You can also use the value of filter_index after showing the file dialog to perform special file operations depending upon the filter chosen.
@@ -183,7 +183,7 @@ namespace xtd {
         filter_index_ = value;
         return *this;
       }
-
+      
       /// @brief Gets the initial directory displayed by the file dialog box.
       /// @return The initial directory displayed by the file dialog box. The default is an empty string ("").
       /// @remarks The InitialDirectory property is typically set using one of the following sources:
@@ -209,7 +209,7 @@ namespace xtd {
       /// @return A bitwise combination of internal values that initializes the file_dialog.
       /// @return The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the file_dialog class to get and set the options.
       size_t options() const {return options_;}
-
+      
       /// @brief Gets a value indicating whether the dialog box restores the directory to the previously selected directory before closing.
       /// @return true if the dialog box restores the current directory to the previously selected directory if the user changed the directory while searching for files; otherwise, false. The default value is false.
       virtual bool restore_directory() const {return get_option(OFN_NOCHANGEDIR);}
@@ -255,7 +255,7 @@ namespace xtd {
         set_option(OFN_SHOWPREVIEW, value);
         return *this;
       }
-
+      
       /// @brief Gets whether the dialog box supports displaying and saving files that have multiple file name extensions.Gets or sets whether the dialog box supports displaying and saving files that have multiple file name extensions.
       /// @return true if the dialog box supports multiple file name extensions; otherwise, false. The default is false.
       /// @remarks Sometimes users must open and save files that use multiple file name extensions. For example, the application manifest files used by the click_once deployment technology end in the complex file name extension ".exe.manifest". Setting this property to true enables you to set the FFilter property to a multi-dotted extension.
@@ -297,28 +297,28 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       /// @brief Resets all properties to their default values.
       /// @remarks When overriding reset() in a derived class, be sure to call the base class's reset() method.
       void reset() override;
-
+      
       /// @brief Provides a string version of this object.
       /// @return A string version of this object.
       xtd::ustring to_string() const noexcept override {
         return ustring::format("{}: title: {}, filename: {}", ustring::full_class_name(*this), title_, file_name_);
       }
       /// @}
-
+      
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::file_dialog& dialog) noexcept {
         return os << dialog.to_string();
       }
       /// @endcond
-
-    protected:      
+      
+    protected:
       /// @name Protected methods
       
       /// @{
@@ -331,7 +331,7 @@ namespace xtd {
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
       void run_sheet(intptr_t hwnd_owner) override;
       /// @}
-
+      
       /// @cond
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
@@ -342,7 +342,7 @@ namespace xtd {
       friend class save_file_dialog;
       virtual bool run_file_dialog(intptr_t hwnd_owner) = 0;
       virtual void run_file_sheet(intptr_t hwnd_owner) = 0;
-
+      
       bool auto_upgrade_enabled_ = true;
       xtd::ustring default_ext_ = "";
       xtd::ustring file_name_ = "";

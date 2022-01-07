@@ -28,7 +28,7 @@ namespace xtd {
     /// @return true if evcent does not contains functions; otherwise false.
     bool is_empty() const noexcept { return handler_t::is_empty(); }
     /// @}
-
+    
     /// @name Operators
     
     /// @{

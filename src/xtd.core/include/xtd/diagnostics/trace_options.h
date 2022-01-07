@@ -34,7 +34,7 @@ namespace xtd {
       /// @brief Write the call stack, which is represented by the return value of the Environment.StackTrace property.
       callstack = 0b100000
     };
-
+    
     /// @cond
     inline xtd::diagnostics::trace_options& operator^=(xtd::diagnostics::trace_options& lhs, xtd::diagnostics::trace_options rhs) {lhs = static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
     inline xtd::diagnostics::trace_options& operator&=(xtd::diagnostics::trace_options& lhs, xtd::diagnostics::trace_options rhs) {lhs = static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}

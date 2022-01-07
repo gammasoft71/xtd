@@ -15,7 +15,7 @@ public:
     group_box1.location({10, 10});
     group_box1.size({305, 460});
     group_box1.text("Group box 1");
-
+    
     group_box2.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
     group_box2.parent(*this);
     group_box2.location({325, 10});

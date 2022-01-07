@@ -34,7 +34,7 @@ int main() {
     
     client_socket.send_to(vector<byte_t> {0xFF}, ip_end_point(ip_address::loopback, 9400));
   });
-
+  
   console::read_key();
   terminate_app = true;
   server.join();

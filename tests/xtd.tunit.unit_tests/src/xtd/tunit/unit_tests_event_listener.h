@@ -34,7 +34,7 @@ namespace assert_unit_tests {
       if (e.test().message() != "")
         os_ << "    " << e.test().message() << std::endl;
     }
-
+    
     void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
       event_listener::on_test_succeed(e);
       os_ << "  SUCCEED " << e.test_class().name() << "." << e.test().name() << std::endl;

@@ -49,7 +49,7 @@ namespace xtd {
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
         linger_option(bool enabled, uint32_t linger_time);
         /// @}
-
+        
         /// @cond
         linger_option(linger_option&& linger_option) = default;
         linger_option(const linger_option& linger_option) = default;
@@ -84,7 +84,7 @@ namespace xtd {
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
         linger_option& enabled(bool value) noexcept;
-
+        
         /// @brief Gets the amount of time to remain connected after calling the xtd::net::sockets::socket::close method if data remains to be sent.
         /// @return The amount of time, in seconds, to remain connected after calling xtd::net::sockets::socket::close.
         /// @remarks Use this value if you want to determine how long a closed xtd::net::sockets::socket will attempt to transfer unsent data before timing out. You can also set this value to the desired time-out period, in seconds.
@@ -112,7 +112,7 @@ namespace xtd {
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
         linger_option& linger_time(uint32_t value) noexcept;
         /// @}
-
+        
       private:
         bool enabled_ = false;
         uint32_t linger_time_ = 0;

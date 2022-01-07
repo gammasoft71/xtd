@@ -20,6 +20,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core events
-     using data_received_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::diagnostics::data_received_event_args& e)>;
+    using data_received_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::diagnostics::data_received_event_args& e)>;
   }
 }

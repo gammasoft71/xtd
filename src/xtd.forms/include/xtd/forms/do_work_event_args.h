@@ -45,7 +45,7 @@ namespace xtd {
       /// @param value A std::any representing the result of an asynchronous operation.
       void result(std::any value) {result_ = value;}
       /// @}
-
+      
     private:
       std::any argument_;
       std::any result_;

@@ -199,7 +199,7 @@ namespace xtd {
     /// @param code_page The code page used to write console output.
     /// @return true if the code page changed; otherwise false.
     static bool output_code_page(int32_t code_page);
-
+    
     /// @brief Gets the title to display in the console title bar.
     /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
     static xtd::ustring title();
@@ -275,7 +275,7 @@ namespace xtd {
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
     static void clear();
-
+    
     /// @brief Gets the position of the cursor.
     /// @return The column and row position of the cursor.
     /// @remarks Columns are numbered from left to right starting at 0. Rows are numbered from top to bottom starting at 0.
@@ -293,7 +293,7 @@ namespace xtd {
     /// @return The standard output stream.
     /// @remarks This method can be used to reacquire the standard output stream after it has been changed by the set_output method.
     static std::ostream open_standard_output();
-
+    
     /// @brief Reads the next line of characters from the standard input stream.
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
     static xtd::ustring read_line();
@@ -348,7 +348,7 @@ namespace xtd {
     /// The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates.
     /// @include console_window_size.cpp
     static void set_window_size(int32_t width, int32_t height);
-
+    
     /// @brief Writes the text representation of the specified value to the standard output stream.
     /// @tparam arg_t The type of the value to write.
     /// @param value The value to write,
@@ -385,7 +385,7 @@ namespace xtd {
     /// @param values Values to write,
     template<typename ... args_t>
     static void write_line(const xtd::ustring& fmt, args_t&& ... values) {write_line_(xtd::ustring::format(fmt, std::forward<args_t>(values)...));}
-
+    
     
     /// @brief Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
     /// @remarks This event is used in conjunction with xtd::console_cancel_event_handler and xtd::console_cancel_event_args. The cancel_key_press event enables a console application to intercept the Ctrl+C signal so the event handler can decide whether to continue executing or terminate. For more information about handling events, see Handling and Raising Events.
@@ -396,7 +396,7 @@ namespace xtd {
     /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
     static event<console, console_cancel_event_handler> cancel_key_press;
     /// @}
-
+    
     /// @cond
     static void __internal_cancel_key_press__(xtd::console_cancel_event_args& e);
     /// @endcond

@@ -23,12 +23,11 @@ namespace {
       allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
       refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
       UnhookWindowsHookEx(handle_hook);
-    }
-    else
+    } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
     return 0;
   }
-
+  
   int CALLBACK OnBrowserCalllback(HWND hwnd, UINT message, LPARAM lParam, LPARAM data) {
     if (message == BFFM_INITIALIZED && !wstring(reinterpret_cast<wchar_t*>(data)).empty())
       SendMessage(hwnd, BFFM_SETSELECTION, 1, data);
@@ -46,11 +45,11 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description
   browserInfo.lParam = reinterpret_cast<LPARAM>(wselected_path.c_str());
   wstring wdescription = xtd::convert_string::to_wstring(description);
   browserInfo.lpszTitle = wdescription.c_str();
-
+  
   browserInfo.ulFlags = options;
-
+  
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
-
+  
   PCIDLIST_ABSOLUTE result = SHBrowseForFolder(&browserInfo);
   if (result) {
     wchar_t path[MAX_PATH];
@@ -67,13 +66,13 @@ void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed
 
 #else
 namespace {
-// Workaround : with wxWidgets version <= 3.1.4 wxDirDialog ShowWindowModal method doesn't exists on other platform that macOS
-#if defined(__APPLE__)
+  // Workaround : with wxWidgets version <= 3.1.4 wxDirDialog ShowWindowModal method doesn't exists on other platform that macOS
+  #if defined(__APPLE__)
   using DirDialog = wxDirDialog;
-#else
+  #else
   class DirDialog : public wxDirDialog {
   public:
-    explicit DirDialog(wxWindow *parent, const wxString& message = wxDirSelectorPromptStr, const wxString& defaultPath = "", long style = wxDD_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, const wxString& name = wxDirDialogNameStr) : wxDirDialog(parent, message, defaultPath, style, pos, size, name) {}
+    explicit DirDialog(wxWindow* parent, const wxString& message = wxDirSelectorPromptStr, const wxString& defaultPath = "", long style = wxDD_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, const wxString& name = wxDirDialogNameStr) : wxDirDialog(parent, message, defaultPath, style, pos, size, name) {}
     void ShowWindowModal() {
       SetReturnCode(ShowModal());
       wxWindowModalDialogEvent event(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, GetId());
@@ -81,7 +80,7 @@ namespace {
       wxPostEvent(this, event);
     }
   };
-#endif
+  #endif
 }
 
 bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
@@ -93,7 +92,7 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description
 
 void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
   wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), xtd::convert_string::to_wstring(description), xtd::convert_string::to_wstring((!selected_path.empty() && wxDirExists(wxString(convert_string::to_wstring(selected_path))) ? selected_path : environment::get_folder_path(root_folder))), wxDD_DEFAULT_STYLE));
-  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, &selected_path](wxWindowModalDialogEvent& event) {
+  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, &selected_path](wxWindowModalDialogEvent & event) {
     auto result = event.GetReturnCode() == wxID_OK;
     selected_path = dialog->GetPath().c_str().AsWChar();
     on_dialog_closed(result);

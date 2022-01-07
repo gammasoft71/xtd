@@ -28,9 +28,9 @@ namespace xtd {
       /// @brief The button has a flat, two-dimensional appearance.
       flat = 0b100000000000000,
       /// @brief All flags except normal are set.
-      all = inactive|pushed|checked|flat,
+      all = inactive | pushed | checked | flat,
     };
-
+    
     /// @cond
     inline button_state& operator +=(button_state& lhs, button_state rhs) {lhs = static_cast<button_state>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
     inline button_state& operator -=(button_state& lhs, button_state rhs) {lhs = static_cast<button_state>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}

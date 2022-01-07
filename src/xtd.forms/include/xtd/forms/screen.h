@@ -39,7 +39,7 @@ namespace xtd {
       /// @brief Gets an array of all displays on the system.
       /// @return An array of type screen, containing all displays on the system.
       static std::vector<screen> all_screens();
-
+      
       /// @brief Gets the number of bits of memory, associated with one pixel of data.
       /// @return The number of bits of memory, associated with one pixel of data.
       /// @remarks Typically, the number of bits per pixel for a screen is useful when working with bitmaps.
@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether a particular display is high resolution.
       /// @return true if this display is high resolution; otherwise, false.
       bool high_resolution() const {return scale_factor_ > 1.;}
-
+      
       /// @brief Gets the number of pixels per inch of the display.
       /// @return The number of pixels per inch of the display.
       /// @remarks See get_standard_pixels_per_inch() for more informations.
@@ -73,7 +73,7 @@ namespace xtd {
       /// @remarks If scale factor is equal to 1.0 is a standard display; greater than 1.0 is a high DPI display.
       /// @remarks See get_standard_pixels_per_inch() for more informations.
       double scale_factor() const {return scale_factor_;}
-
+      
       /// @brief Gets the primary display.
       /// @return The primary display.
       /// @remarks For a single display system, the primary display is the only display.
@@ -95,7 +95,7 @@ namespace xtd {
       /// @ingroup drawing
       static drawing::graphics create_graphics();
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -108,7 +108,7 @@ namespace xtd {
       /// @param handle The window handle for which to retrieve the screen.
       /// @return A screen for the display that contains the largest region of the object. In multiple display environments where no display contains any portion of the specified handle, the display closest to the object is returned.
       static screen from_handle(intptr_t handle);
-
+      
       /// @brief Retrieves a screen for the display that contains the specified point.
       /// @param point A xtd::drawing::point that specifies the location for which to retrieve a screen.
       /// @return A screen for the display that contains the point. In multiple display environments where no display contains the point, the display closest to the specified point is returned.
@@ -170,7 +170,7 @@ namespace xtd {
       /// @return A xtd::drawing::rectangle that specifies the working area. In multiple display environments where no display contains the specified rectangle, the display closest to the rectangle is returned.
       static drawing::rectangle get_working_area(const drawing::rectangle& rect);
       /// @}
-                                  
+      
     private:
       screen() = default;
       screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const xtd::ustring& device_name, int32_t pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {}
@@ -182,6 +182,6 @@ namespace xtd {
       bool primary_ = false;
       double scale_factor_ = 1.;
       drawing::rectangle working_area_;
-    };                           
+    };
   }
 }

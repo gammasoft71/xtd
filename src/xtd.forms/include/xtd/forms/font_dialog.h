@@ -87,7 +87,7 @@ namespace xtd {
         set_option(CF_NOVECTORFONTS, !allow_vector_fonts);
         return *this;
       }
-
+      
       /// @brief Gets a value indicating whether the dialog box displays both vertical and horizontal fonts or only horizontal fonts.
       /// @return true if both vertical and horizontal fonts are allowed; otherwise, false. The default value is true.
       bool allow_vertical_fonts() const {return !get_option(CF_NOVERTFONTS);}
@@ -98,7 +98,7 @@ namespace xtd {
         set_option(CF_NOVERTFONTS, !allow_vertical_fonts);
         return *this;
       }
-
+      
       /// @brief Gets the selected font color.
       /// @return The color of the selected font. The default value is Black.
       drawing::color color() const {return color_;}
@@ -120,7 +120,7 @@ namespace xtd {
         set_option(CF_FIXEDPITCHONLY, fixed_pitch_only);
         return *this;
       }
-
+      
       /// @brief Gets the selected font.
       /// @return The selected font.
       drawing::font font() const {return font_;}
@@ -233,7 +233,7 @@ namespace xtd {
       /// @remarks When the options are reset, the strikethrough, underline, and color effects are enabled. The fonts listed include only the screen fonts supported by the system.
       void reset() override;
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -243,7 +243,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<font_dialog, event_handler> apply;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -260,16 +260,16 @@ namespace xtd {
       /// @return true if the dialog box was successfully run; otherwise, false.
       /// @remarks The run_dialog method is invoked when the user of a font dialog box calls the show_dialog method.
       bool run_dialog(intptr_t owner) override;
-
+      
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       void run_sheet(intptr_t owner) override;
       /// @}
-
+      
     private:
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
-
+      
       drawing::color color_ = xtd::forms::theme_colors::current_theme().control_text();
       drawing::font font_ = drawing::system_fonts::default_font();
       size_t max_size_ = 0;

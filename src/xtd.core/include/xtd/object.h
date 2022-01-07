@@ -33,14 +33,14 @@ namespace xtd {
     /// @remarks This constructor is called by constructors in derived classes, but it can also be used to directly create an instance of the object class.
     object() = default;
     /// @}
-
+    
     /// @cond
     object(const object&) = default;
     object& operator=(const object&) = default;
     virtual ~object() = default;
     //friend std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {return os << obj.to_string();}
     /// @endcond
-
+    
     /// @name Methods
     
     /// @{
@@ -64,7 +64,7 @@ namespace xtd {
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
     virtual size_t get_hash_code() const noexcept;
-
+    
     /// @brief Gets the type of the current instance.
     /// @return The type instance that represents the exact runtime type of the current instance.
     /// @par Examples

@@ -51,7 +51,7 @@ namespace xtd {
         /// @brief Gets the resolution dimension.
         /// @return The resolution dimension.
         static frame_dimension resolution() {return frame_dimension(xtd::guid("84236f7b-3bd3-428f-8dab-4ea1439ca315"));}
-
+        
         /// @brief Gets the time dimension.
         /// @return The time dimension.
         static frame_dimension time() {return frame_dimension(xtd::guid("6aedbd6d-3fb5-418a-83a6-7f45229dc872"));}

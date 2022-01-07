@@ -66,9 +66,9 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       forms::cursor default_cursor() const override {return forms::cursors::ibeam();}
-
+      
       /// @brief Gets the lines of text in a text box control.
       /// @return An array of strings that contains the text in a text box control.
       /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to true and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
@@ -117,7 +117,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets the number of characters selected in the text box.
       /// @return The number of characters selected in the text box.
       /// @remarks You can use this property to determine if any characters are currently selected in the text box control before performing operations on the selected text. When the value of the selection_length property is set to a value that is larger than the number of characters within the text of the control, the value of the selection_length property is set to the entire length of text within the control minus the value of the selection_start property (if any value is specified for the selection_start property).
@@ -157,7 +157,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Appends text to the current text of a text box.
       /// @param value The text to append to the current contents of the text box.
       virtual void append_text(const xtd::ustring& value) {
@@ -220,7 +220,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<text_box_base, event_handler> read_only_changed;
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       
@@ -228,7 +228,7 @@ namespace xtd {
       /// @brief initializes a new instance of the text_box_base class.
       text_box_base() = default;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -249,14 +249,14 @@ namespace xtd {
       virtual void on_multiline_changed(const event_args& e) {
         if (can_raise_events()) multiline_changed(*this, e);
       }
-
+      
       /// @brief Raises the text_box_base::read_only_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_read_only_changed(const event_args& e) {
         if (can_raise_events()) read_only_changed(*this, e);
       }
       /// @}
-
+      
     private:
       bool accepts_tab_ = false;
       xtd::forms::border_sides border_sides_ = xtd::forms::border_sides::all;

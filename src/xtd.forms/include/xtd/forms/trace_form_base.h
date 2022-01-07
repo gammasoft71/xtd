@@ -44,7 +44,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       const xtd::ustring& name() const override {return form::name();}
       
       /// @brief Gets a value indicate if date is showing before trace text.
@@ -75,8 +75,8 @@ namespace xtd {
         return *this;
       }
       /// @}
-
-   protected:
+      
+    protected:
       /// @name Protected constructors
       
       /// @{
@@ -86,7 +86,7 @@ namespace xtd {
         close_box(false);
         name("9f5767d6-7a21-4ebe-adfe-2427b2024a55");
         text_.name("d014d407-851c-49c1-a343-3380496a639a");
-
+        
         dock(xtd::forms::dock_style::bottom);
         start_position(xtd::forms::form_start_position::manual);
         font(xtd::drawing::font(xtd::drawing::font_family::generic_monospace(), font().size()));
@@ -111,7 +111,7 @@ namespace xtd {
       void on_fore_color_changed(const xtd::event_args& e) override {
         text_.fore_color(fore_color());
       }
-
+      
       /// @brief Writes trace string to the multiline text.
       /// @param trace A string to write.
       virtual void write(const xtd::ustring& trace) {
@@ -143,13 +143,13 @@ namespace xtd {
       /// @param value true if header needed; otherwise false.
       /// @remarks After each line terminator, header was needed.
       /// @return Current trace_form_base.
-     virtual trace_form_base& need_header(bool value) {
+      virtual trace_form_base& need_header(bool value) {
         if (need_header_ != value)
           need_header_ = value;
         return *this;
       }
       /// @}
-
+      
     private:
       using form::name;
       
@@ -159,7 +159,7 @@ namespace xtd {
         else if (show_date_) format_ = "{0:L}-{0:k}-{0:i}{2}" + format_;
         else if (show_time_) format_ = "{0:t}.{1:D6}{2}" + format_;
       }
-
+      
       bool need_header_ = true;
       bool show_date_ = true;
       bool show_time_ = true;

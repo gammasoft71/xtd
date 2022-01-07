@@ -198,7 +198,7 @@ namespace xtd {
     /// string s1 = string_converter::to_string(c1);
     /// @endcode
     static std::string to_string(wchar_t* str) noexcept;
-
+    
     /// @brief Converts std::string to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
@@ -370,7 +370,7 @@ namespace xtd {
     /// ustring s1 = string_converter::to_ustring(c1);
     /// @endcode
     static xtd::ustring to_ustring(wchar_t* str) noexcept;
-
+    
     /// @brief Converts std::string to std::u8string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -533,7 +533,7 @@ namespace xtd {
     /// u8string s1 = string_converter::to_u8string(c1);
     /// @endcode
     static std::u8string to_u8string(wchar_t* str) noexcept;
-
+    
     /// @brief Converts std::string to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -702,7 +702,7 @@ namespace xtd {
     /// u16string s1 = string_converter::to_u16string(c1);
     /// @endcode
     static std::u16string to_u16string(wchar_t* str) noexcept;
-
+    
     /// @brief Converts std::string to std::u32string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -869,7 +869,7 @@ namespace xtd {
     /// u32string s1 = string_converter::to_u32string(c1);
     /// @endcode
     static std::u32string to_u32string(wchar_t* str) noexcept;
-
+    
     /// @brief Converts std::string to std::wstring.
     /// @param str string to convert.
     /// @return The converted string.

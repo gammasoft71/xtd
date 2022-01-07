@@ -11,7 +11,7 @@ namespace unit_tests {
       double d = numeric_limits<double>::quiet_NaN();
       assert::is_NaN(d);
     }
-
+    
     void test_method_(test_case_failed) {
       double d = 3.14159;
       assert::is_NaN(d);

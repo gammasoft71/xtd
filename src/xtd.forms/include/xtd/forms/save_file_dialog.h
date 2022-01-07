@@ -34,7 +34,7 @@ namespace xtd {
       /// @return The read/write file selected by the user.
       std::fstream open_file() const {return io::file::open(xtd::ustring(file_name_), std::ios::binary | std::ios::in | std::ios::out);}
       /// @}
-
+      
     private:
       bool run_file_dialog(intptr_t hwnd_owner) override;
       void run_file_sheet(intptr_t owner) override;

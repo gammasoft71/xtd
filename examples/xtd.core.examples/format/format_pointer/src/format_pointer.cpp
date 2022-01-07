@@ -10,13 +10,13 @@ int main() {
   cout << ustring::format("{}", ptr) << endl;
   cout << ustring::format("{}", *ptr) << endl;
   delete ptr;
-
+  
   shared_ptr<int> sptr;
   cout << ustring::format("{}", sptr) << endl;
   sptr = make_shared<int>(42);
   cout << ustring::format("{}", sptr) << endl;
   cout << ustring::format("{}", *sptr) << endl;
-
+  
   unique_ptr<int> uptr;
   cout << ustring::format("{}", uptr) << endl;
   uptr = make_unique<int>(42);

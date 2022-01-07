@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief The maximized window style. By default, the system enlarges a maximized window so that it fills the screen or, in the case of a child window, the parent window's client area. If the window has a title bar, the system automatically moves it to the top of the screen or to the top of the parent window's client area. Also, the system disables the window's sizing border and the window-positioning capability of the title bar so that the user cannot move the window by dragging the title bar.
       maximized = 3,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, xtd::diagnostics::process_window_style value) {return os << to_string(value, {{diagnostics::process_window_style::normal, "normal"}, {diagnostics::process_window_style::hidden, "hidden"}, {diagnostics::process_window_style::minimized, "minimized"}, {diagnostics::process_window_style::maximized, "maximized"}});}
     inline std::wostream& operator<<(std::wostream& os, xtd::diagnostics::process_window_style value) {return os << to_string(value, {{diagnostics::process_window_style::normal, L"normal"}, {diagnostics::process_window_style::hidden, L"hidden"}, {diagnostics::process_window_style::minimized, L"minimized"}, {diagnostics::process_window_style::maximized, L"maximized"}});}

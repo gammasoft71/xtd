@@ -10,7 +10,7 @@ int __tunit_argc;
 char** __tunit_argv;
 
 namespace {
-  __attribute__((constructor)) void startup_program(int argc, char **argv) {
+  __attribute__((constructor)) void startup_program(int argc, char** argv) {
     __tunit_argc = argc;
     __tunit_argv = argv;
   }

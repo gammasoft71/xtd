@@ -35,7 +35,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the input_dialog class.
       input_dialog() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -49,9 +49,9 @@ namespace xtd {
         if (character_casing_ != character_casing) {
           character_casing_ = character_casing;
           switch (character_casing_) {
-            case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
-            case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
-            default: break;
+          case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
+          case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
+          default: break;
           }
         }
         return *this;
@@ -80,7 +80,7 @@ namespace xtd {
         multiline_ = multiline;
         return *this;
       }
-
+      
       /// @brief Gets the text message.
       /// @return The text message.
       xtd::ustring message() const {return message_;}
@@ -102,7 +102,7 @@ namespace xtd {
         text_ = text;
         return *this;
       }
-
+      
       /// @brief Gets use system password char status.
       /// @return true if dialog text box use system password char status; otherwise false.
       /// @remarks The default value is false.
@@ -125,14 +125,14 @@ namespace xtd {
       input_dialog& value(const xtd::ustring& value) {
         if (value != value_) {
           switch (character_casing_) {
-            case xtd::forms::character_casing::normal: value_ = value; break;
-            case xtd::forms::character_casing::upper: value_ = value.to_upper(); break;
-            case xtd::forms::character_casing::lower: value_ = value.to_lower(); break;
+          case xtd::forms::character_casing::normal: value_ = value; break;
+          case xtd::forms::character_casing::upper: value_ = value.to_upper(); break;
+          case xtd::forms::character_casing::lower: value_ = value.to_lower(); break;
           }
         }
         return *this;
       }
-
+      
       /// @brief Gets word wrap status.
       /// @return true if dialog text box is word wrap; otherwise false.
       /// @remarks The default value is true.
@@ -153,7 +153,7 @@ namespace xtd {
       /// @brief Resets all properties to empty string.
       void reset() override;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -161,7 +161,7 @@ namespace xtd {
       bool run_dialog(intptr_t owner) override;
       void run_sheet(intptr_t owner) override;
       /// @}
-
+      
     private:
       xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;

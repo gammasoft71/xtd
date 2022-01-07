@@ -41,7 +41,7 @@ namespace xtd {
         double_buffered(true);
       }
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -60,7 +60,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets the background dot opacity.
       /// @return A double-precision value between 0.0 and 1.0 that represent the background dot opacity.
       virtual double back_dot_opacity() const {return back_dot_opacity_;}
@@ -80,7 +80,7 @@ namespace xtd {
       }
       
       drawing::size default_size() const override {return {25, 25};}
-
+      
       /// @brief Gets dot matrix style.
       /// @return One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
       virtual forms::dot_matrix_style dot_matrix_style() const {return dot_matrix_style_;}
@@ -94,7 +94,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets all dots status.
       /// @return A dots_collection that represent all dots status.
       virtual const dots_collection& dots() const {return dots_;}
@@ -109,7 +109,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets the matrix size. Number of height dots.
       /// @return A int32_t represent the height dots of the matrix. The default is 7.
       virtual int32_t matrix_height() const {return matrix_size_.height();}
@@ -139,7 +139,7 @@ namespace xtd {
           invalidate();
         }
       }
-
+      
       /// @brief Gets a value indicate if background dots are shown.
       /// @return true if background dots are shown; otherwise false
       virtual bool show_back_dot() const {return show_back_dot_;}
@@ -153,7 +153,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets thickness of dot.
       /// @return A int32_t that represent the dot thickness.
       virtual int32_t thickness() const {return thickness_.value_or(size().height() < (matrix_size_.height() * 2) ? 1 : (size().height() - matrix_size_.height()) / matrix_size_.height());}
@@ -168,7 +168,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -194,7 +194,7 @@ namespace xtd {
           invalidate();
         }
       }
-
+      
       /// @brief Sets specified dots to on.
       /// @param points Dot points collection tha contains locations in the matrix.
       virtual void set_dots(const points_collection& points) {
@@ -209,7 +209,7 @@ namespace xtd {
           set_dot(point, on);
       }
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -223,7 +223,7 @@ namespace xtd {
         control::on_fore_color_changed(e);
         invalidate();
       }
-
+      
       void on_paint(paint_event_args& e) override {
         if (back_color() != default_back_color()) e.graphics().clear(back_color());
         for (int32_t y = 0; y < static_cast<int32_t>(dots_.size()); y++) {
@@ -239,7 +239,7 @@ namespace xtd {
         int32_t width = static_cast<int32_t>(static_cast<double>(height()) / matrix_height() * matrix_width());
         return drawing::size(width, height());
       }
-
+      
       /// @brief Draw specified dot point with specified color on specified graphics.
       /// @param graphics Define the control graphics where draw the specified dot point.
       /// @param color The dot color to draw.
@@ -253,7 +253,7 @@ namespace xtd {
           graphics.fill_rectangle(drawing::solid_brush(color), (1 + x) * point.x(), (1 + y) * point.y(), thickness(), thickness());
       }
       /// @}
-
+      
     private:
       drawing::size matrix_size_ = {7, 7};
       dots_collection dots_ = dots_collection(matrix_size_.width(), std::vector<bool>(matrix_size_.height(), false));

@@ -15,14 +15,14 @@ namespace unit_tests {
       assert::are_equal(socket_information_options::none, si.options(), csf_);
       assert::is_empty(si.protocol_information(), csf_);
     }
-
+    
     void test_method_(set_options) {
       socket_information si;
-      si.options(socket_information_options::connected|socket_information_options::listening);
-      assert::are_equal(socket_information_options::connected|socket_information_options::listening, si.options(), csf_);
+      si.options(socket_information_options::connected | socket_information_options::listening);
+      assert::are_equal(socket_information_options::connected | socket_information_options::listening, si.options(), csf_);
       assert::is_empty(si.protocol_information(), csf_);
     }
-
+    
     void test_method_(set_protocol_information) {
       socket_information si;
       si.protocol_information({1, 2, 3, 4, 5});

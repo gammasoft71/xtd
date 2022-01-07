@@ -26,15 +26,15 @@ namespace xtd {
       settings(const settings&) = default;
       settings& operator=(const settings&) = default;
       /// @endcond
-
+      
       /// @brief Get default settings instance.
       /// @return Default settings instance.
       static xtd::tunit::settings& default_settings() noexcept;
-
+      
       /// @brief Gets also run ignored test.
       /// @return true if also run ignored test; otherwise false.
       bool also_run_ignored_tests() const noexcept {return also_run_ignored_tests_;}
-
+      
       /// @brief Sets also run ignored test.
       /// @param also_run_ignored_tests  true if also run ignored test; otherwise false.
       void also_run_ignored_tests(bool also_run_ignored_tests) noexcept {also_run_ignored_tests_ = also_run_ignored_tests;}
@@ -55,20 +55,20 @@ namespace xtd {
       /// @return filter tests.
       /// @remarks The value by default is "*.*".
       const std::string& filter_tests() const noexcept {return filter_tests_;}
-
+      
       /// @brief Sets filter tests.
       /// @param filter_tests filter tests.
       /// @remarks The value by default is "*.*".
       void filter_tests(const std::string& filter_tests) noexcept {filter_tests_ = filter_tests;}
-
+      
       /// @brief Return true if a specified test class name and specified test name match with the current filter tests.
       /// @return Return true if class name and test name match with the current filter tests; otherwise false.
       bool is_match_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {return pattern_compare(test_class_name + "." + test_name, filter_tests_);}
-
+      
       /// @brief Gets list tests.
       /// @return true if list tests; otherwise false.
       bool list_tests() const noexcept {return list_tests_;}
-
+      
       /// @brief Sets list tests.
       /// @param list_tests true if list tests; otherwise false.
       void list_tests(bool list_tests) noexcept {list_tests_ = list_tests;}
@@ -126,7 +126,7 @@ namespace xtd {
       /// @param repeat_tests Repeat test count.
       /// @remarks By default is set to 1 (no repeat).
       void repeat_tests(int repeat_tests) noexcept {repeat_tests_ = repeat_tests;}
-
+      
       /// @brief Gets if show duration for each test.
       /// @return true if show duration for each test; otherwise false.
       bool show_duration() const noexcept {return show_duration_;}
@@ -134,15 +134,15 @@ namespace xtd {
       /// @brief Sets if show duration for each test.
       /// @param show_duration true if show duration for each test; otherwise false.
       void show_duration(bool show_duration) noexcept {show_duration_ = show_duration;}
-
+      
       /// @brief Gets unit test end time.
       /// @return Unit test end time.
       const xtd::date_time& end_time() const noexcept {return end_time_;}
-
+      
       /// @brief Gets unit test start time.
       /// @return Unit test start time.
       const xtd::date_time& start_time() const noexcept {return start_time_;}
-
+      
     private:
       friend class unit_test;
       
@@ -153,10 +153,10 @@ namespace xtd {
         if (pattern[0] == '*') return pattern_compare(name, pattern.substr(1)) || pattern_compare(name.substr(1), pattern);
         return ((pattern[0] == '?') || (name[0] == pattern[0])) && pattern_compare(name.substr(1), pattern.substr(1));
       }
-
+      
       void end_time(const xtd::date_time& end_time) noexcept {start_time_ = end_time;}
       void start_time(const xtd::date_time& start_time) noexcept {start_time_ = start_time;}
-
+      
       bool also_run_ignored_tests_ = false;
       std::string filter_tests_ = "*.*";
       int exit_status_ = EXIT_SUCCESS;

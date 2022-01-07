@@ -66,11 +66,11 @@ bool form::full_screen(intptr_t control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return false;
   }
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   return __toggle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
-#else
+  #else
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsFullScreen();
-#endif
+  #endif
 }
 
 void form::full_screen(intptr_t control, bool full_screen) {
@@ -79,11 +79,11 @@ void form::full_screen(intptr_t control, bool full_screen) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   __toggle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), full_screen);
-#else
+  #else
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->ShowFullScreen(full_screen);
-#endif
+  #endif
 }
 
 void form::icon(intptr_t control, const xtd::drawing::icon& icon) {
@@ -102,13 +102,13 @@ bool form::maximize(intptr_t control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return false;
   }
-#if defined(__WXGTK__)
-    xtd::drawing::size form_size = control::size(control);
-    xtd::drawing::size screen_size = screen::working_area(screen::from_handle(control)).size();
-    return form_size.width() == screen_size.width() && form_size.height() == screen_size.height();
-#else
+  #if defined(__WXGTK__)
+  xtd::drawing::size form_size = control::size(control);
+  xtd::drawing::size screen_size = screen::working_area(screen::from_handle(control)).size();
+  return form_size.width() == screen_size.width() && form_size.height() == screen_size.height();
+  #else
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsMaximized();
-#endif
+  #endif
 }
 
 void form::maximize(intptr_t control, bool maximize) {
@@ -153,10 +153,10 @@ void form::restore(intptr_t control) {
   }
   full_screen(control, false);
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->Restore();
-#if defined(__WXGTK__)
+  #if defined(__WXGTK__)
   maximize(control, false);
   minimize(control, false);
-#endif
+  #endif
 }
 
 int32_t form::show_dialog(intptr_t control) {
@@ -177,11 +177,11 @@ void form::show_sheet(intptr_t control) {
     return;
   }
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet work only with dialog"_t, current_stack_frame_);
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowWindowModal();
-#else
+  #else
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowModal();
-#endif
+  #endif
 }
 
 int32_t form::show_sheet_dialog(intptr_t control) {
@@ -192,10 +192,10 @@ int32_t form::show_sheet_dialog(intptr_t control) {
   }
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet_dialog work only with dialog"_t, current_stack_frame_);
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   if (!dialog->GetParent()) return dialog->ShowModal();
   int32_t result = wxID_ANY;
-  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&](wxWindowModalDialogEvent& event) {
+  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&](wxWindowModalDialogEvent & event) {
     result = event.GetReturnCode();
   });
   dialog->ShowWindowModal();
@@ -204,9 +204,9 @@ int32_t form::show_sheet_dialog(intptr_t control) {
     sleep_for(100ms);
   }
   return result;
-#else
+  #else
   return dialog->ShowModal();
-#endif
+  #endif
 }
 
 void form::end_dialog(intptr_t control, int32_t result) {

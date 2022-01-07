@@ -9,7 +9,7 @@ public:
   
   const ustring& name() const noexcept {return name_;}
   const ustring& rank() const noexcept {return rank_;}
-
+  
   ustring to_string() const noexcept {return to_string("F");}
   ustring to_string(const ustring& fmt) const {
     if (fmt == "F") return name_ + " (" + rank_ + ")";

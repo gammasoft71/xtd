@@ -41,7 +41,7 @@ screen screen::from_rectangle(const rectangle& rect) {
   return from_point(rect.location());
 }
 
- rectangle screen::get_bounds(const control& control) {
+rectangle screen::get_bounds(const control& control) {
   return from_control(control).bounds();
 }
 

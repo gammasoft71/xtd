@@ -23,7 +23,7 @@ namespace unit_tests {
       assert::are_equal("xtd::system_exception : System error.", e.to_string(), csf_);
       assert::are_equal("System error.", e.what(), csf_);
     }
-
+    
     void test_method_(default_creator_with_current_stack_frame) {
       auto info = current_stack_frame_;
       system_exception e(info);
@@ -73,7 +73,7 @@ namespace unit_tests {
       assert::are_equal("xtd::system_exception\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("xtd::system_exception", e.what(), csf_);
     }
-
+    
     void test_method_(creator_with_message) {
       system_exception e("Test excpetion message.");
       assert::are_equal(0, e.error_code().value(), csf_);
@@ -89,7 +89,7 @@ namespace unit_tests {
       assert::are_equal("xtd::system_exception : Test excpetion message.", e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
-
+    
     void test_method_(creator_with_message_and_stack_frame) {
       auto info = current_stack_frame_;
       system_exception e("Test excpetion message.", info);
@@ -106,7 +106,7 @@ namespace unit_tests {
       assert::are_equal("xtd::system_exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
-
+    
     void test_method_(creator_with_message_error_and_stack_frame) {
       auto info = current_stack_frame_;
       system_exception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), info);
@@ -123,7 +123,7 @@ namespace unit_tests {
       assert::are_equal("xtd::system_exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
-
+    
     void test_method_(creator_with_message_help_link_and_stack_frame) {
       auto info = current_stack_frame_;
       system_exception e("Test excpetion message.", "https://codedocs.xyz/gammasoft71/xtd_core/", info);
@@ -140,7 +140,7 @@ namespace unit_tests {
       assert::are_equal("xtd::system_exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
-
+    
     void test_method_(creator_with_message_error_help_link_and_stack_frame) {
       auto info = current_stack_frame_;
       system_exception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
@@ -157,7 +157,7 @@ namespace unit_tests {
       assert::are_equal("xtd::system_exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
-
+    
     void test_method_(creator_with_message_and_inner_exception) {
       argument_exception inner_exception;
       system_exception e("Test excpetion message.", inner_exception);
@@ -270,7 +270,7 @@ namespace unit_tests {
       assert::are_equal("xtd::system_exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
-
+    
     void test_method_(copy_operator) {
       argument_exception inner_exception;
       auto info = current_stack_frame_;
@@ -290,7 +290,7 @@ namespace unit_tests {
       assert::are_equal("xtd::system_exception : Test excpetion message.\n" + info.to_string(), e.to_string(), csf_);
       assert::are_equal("Test excpetion message.", e.what(), csf_);
     }
-
+    
     void test_method_(ostream_operator) {
       argument_exception inner_exception;
       auto info = current_stack_frame_;

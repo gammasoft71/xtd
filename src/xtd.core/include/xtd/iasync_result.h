@@ -48,7 +48,7 @@ namespace xtd {
     /// @par Notes to Callers
     /// Use this property to determine if the asynchronous operation completed synchronously. For example, this property can return true for an asynchronous I/O operation if the I/O request was small.
     virtual bool completed_synchronously() const noexcept = 0;
-
+    
     /// @brief Gets a value that indicates whether the asynchronous operation has completed.
     /// @return true if the operation is complete; otherwise, false.
     /// @remarks When this property is true, you can assume it is safe to discard any resources you allocate for use by the asynchronous operation.

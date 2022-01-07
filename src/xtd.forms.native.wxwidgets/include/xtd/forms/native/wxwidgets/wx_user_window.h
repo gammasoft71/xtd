@@ -36,8 +36,8 @@ namespace xtd {
         friend xtd::forms::native::wx_radio_button;
         friend xtd::forms::native::wx_switch_button;
         friend xtd::forms::native::wx_toggle_button;
-
-        explicit wx_user_window(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxNO_BORDER, const wxString& name = wxASCII_STR(wxPanelNameStr)) : wxPanel(parent, winid, pos, size, style, name) {}
+        
+        explicit wx_user_window(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxNO_BORDER, const wxString& name = wxASCII_STR(wxPanelNameStr)) : wxPanel(parent, winid, pos, size, style, name) {}
         
         void set_accepts_focus(bool accepts_focus) {accepts_focus_ = accepts_focus;}
         

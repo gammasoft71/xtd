@@ -8,7 +8,7 @@ using namespace xtd::drawing;
 int main() {
   point location = {10, 235};
   cout << ustring::format("location = {}", location) << endl;
-
+  
   location.x(location.x() + 20);
   location.y(location.y() - 15);
   cout << ustring::format("location = {}", location) << endl;

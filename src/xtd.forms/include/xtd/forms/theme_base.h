@@ -25,7 +25,7 @@ namespace xtd {
       /// @{
       static const theme_base empty;
       /// @}
-
+      
       /// @cond
       theme_base(const theme_base&) = default;
       theme_base& operator=(const theme_base&) = default;
@@ -42,9 +42,9 @@ namespace xtd {
       static xtd::ustring fallback_theme_name() {return "symbolic";}
       
       bool is_default() const {return is_default_;}
-
+      
       static const theme_name_collection& theme_names() {return theme_names_;}
-
+      
       virtual const xtd::ustring& name() const {return name_;}
       theme_base& name(const xtd::ustring& name) {
         name_ = name;
@@ -82,7 +82,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
     private:
       xtd::ustring name_;
       xtd::forms::theme_style theme_style_ = xtd::forms::theme_style::undefined;
@@ -112,20 +112,20 @@ namespace xtd {
       bool operator==(const theme& value) const {return theme_base::operator==(value);}
       bool operator!=(const theme& value) const {return !operator==(value);}
       /// @endcond
-      
+
       static const theme empty;
-      
+
       static theme current_theme() {
         if (current_theme_ == theme::empty()) current_theme_ = default_theme();
         return current_theme_;
       }
       static void current_theme(const theme& theme) {current_theme_ = theme;}
       static void current_theme(const xtd::ustring& name) {current_theme_ = theme_from_name(name);}
-      
+
       static theme default_theme() {return theme_from_name(default_theme_name());}
-      
+
       static theme theme_from_name(const xtd::ustring& theme_name);
-      
+
     private:
       theme(const xtd::ustring& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default) {}
       static theme current_theme_;

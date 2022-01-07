@@ -11,7 +11,7 @@ namespace unit_tests {
     void test_method_(equals_with_another_object) {
       assert::is_false(object().equals(object()), csf_);
     }
-
+    
     void test_method_(equals_with_same_object) {
       object object1;
       object& object2 = object1;
@@ -58,6 +58,6 @@ namespace unit_tests {
     
     void test_method_(object_to_string) {
       assert::are_equal("xtd::object", object().to_string(), csf_);
-    }    
+    }
   };
 }

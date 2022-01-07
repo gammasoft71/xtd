@@ -28,13 +28,13 @@ namespace xtd {
       enable_debug() = default;
       enable_debug(const enable_debug&) = default;
       enable_debug& operator=(const enable_debug&) = default;
-
+      
       bool operator==(const enable_debug& value) const {return value_ == value.value_;}
       bool operator!=(const enable_debug& value) const  {return !operator==(value);}
       enable_debug operator|(const enable_debug& value) const {return enable_debug(value_ | value.value_);}
       enable_debug operator+(const enable_debug& value) const {return enable_debug(value_ + value.value_);}
       /// @endcond
-
+      
       /// @name Fields
       
       /// @{
@@ -62,7 +62,7 @@ namespace xtd {
       /// @return a xtd::diagnostics::trace_switch to configure debug traces.
       static xtd::diagnostics::trace_switch& trace_switch() {return trace_switch_;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -74,7 +74,7 @@ namespace xtd {
       static void set(const enable_debug& flags, bool on) {values_.value_ = on ? (values_.value_ | flags.value_) : (values_.value_ & ~flags.value_);}
       /// @}
       
-
+      
     private:
       explicit enable_debug(uint64_t value) : value_(value) {}
       

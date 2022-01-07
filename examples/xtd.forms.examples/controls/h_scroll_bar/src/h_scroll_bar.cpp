@@ -7,7 +7,7 @@ namespace examples {
   public:
     form1() {
       text("horizontal scroll bar example");
-
+      
       h_scroll_bar1.parent(*this);
       h_scroll_bar1.location({30, 40});
       

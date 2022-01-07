@@ -88,14 +88,14 @@ drawing::size collapsible_panel::measure_control() const {
   return drawing::size(bounds.location() + bounds.size());
 }
 
-void collapsible_panel::wnd_proc(message &message) {
+void collapsible_panel::wnd_proc(message& message) {
   switch (message.msg()) {
-    case  WM_COMMAND: wm_command(message); break;
-    default: control::wnd_proc(message);
+  case  WM_COMMAND: wm_command(message); break;
+  default: control::wnd_proc(message);
   }
 }
 
-void collapsible_panel::wm_command(message &message) {
+void collapsible_panel::wm_command(message& message) {
   expanded_ = native::collapsible_panel::expanded(handle());
   size(native::control::size(handle()));
   on_expanded_changed(event_args::empty);

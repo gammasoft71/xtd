@@ -24,7 +24,7 @@ namespace xtd {
       directory_assume() = delete;
       /// @endcond
       
-#if defined(__cpp_lib_filesystem)
+      #if defined(__cpp_lib_filesystem)
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -82,7 +82,7 @@ namespace xtd {
           assert::abort();
         }
       }
-
+      
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -140,8 +140,8 @@ namespace xtd {
           assert::abort();
         }
       }
-#endif
-
+      #endif
+      
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.

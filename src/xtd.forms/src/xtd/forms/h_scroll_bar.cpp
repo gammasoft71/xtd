@@ -15,8 +15,8 @@ h_scroll_bar::h_scroll_bar() {
 
 forms::create_params h_scroll_bar::create_params() const {
   forms::create_params create_params = scroll_bar::create_params();
-
+  
   create_params.style(create_params.style() | SBS_HORZ);
-
+  
   return create_params;
 }

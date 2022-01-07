@@ -17,23 +17,23 @@ using namespace xtd::forms;
 combo_box::combo_box() {
   drop_down_width_ = default_size().width();
   drop_down_height_ = static_cast<int32_t>(font().get_height()) * 9;
-
-  items_.item_added += [&](size_t pos, const item& item) {
+  
+  items_.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
     combo_box::item selected_item;
     if (selected_index() != npos && selected_index() < items_.size()) selected_item = items_[selected_index()];
     this->selected_item(selected_item);
   };
-
-  items_.item_removed += [&](size_t pos, const item& item) {
+  
+  items_.item_removed += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::delete_item(handle(), pos);
-
+    
     combo_box::item selected_item;
     if (selected_index() != npos && selected_index() < items_.size()) selected_item = items_[selected_index()];
     this->selected_item(selected_item);
   };
   
-  items_.item_updated += [&](size_t pos, const item& item) {
+  items_.item_updated += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::update_item(handle(), pos, item.value());
     combo_box::item selected_item;
     if (selected_index() != npos && selected_index() < items_.size()) selected_item = items_[selected_index()];
@@ -61,7 +61,7 @@ list_control& combo_box::selected_index(size_t selected_index) {
     //this->selected_item(selected_item);
     selected_item_ = selected_item;
     on_selected_value_changed(event_args::empty);
-
+    
     on_selected_index_changed(event_args::empty);
   }
   return *this;
@@ -100,21 +100,21 @@ void combo_box::end_update() {
 
 forms::create_params combo_box::create_params() const {
   forms::create_params create_params = list_control::create_params();
-
+  
   create_params.class_name("combobox");
-
+  
   // Do not use native control sort
   //if (sorted_) create_params.style(create_params.style() | CBS_SORT);
   
   switch (drop_down_style_) {
-    case combo_box_style::drop_down_list: create_params.style(create_params.style() | CBS_DROPDOWNLIST); break;
-    case combo_box_style::drop_down: create_params.style(create_params.style() | CBS_DROPDOWN); break;
-    case combo_box_style::simple: create_params.style(create_params.style() | CBS_SIMPLE); break;
+  case combo_box_style::drop_down_list: create_params.style(create_params.style() | CBS_DROPDOWNLIST); break;
+  case combo_box_style::drop_down: create_params.style(create_params.style() | CBS_DROPDOWN); break;
+  case combo_box_style::simple: create_params.style(create_params.style() | CBS_SIMPLE); break;
   }
-
+  
   if (drop_down_style_ == combo_box_style::simple && size().height() == default_size().height())
     create_params.height(create_params.height() + drop_down_height_);
-  
+    
   return create_params;
 }
 

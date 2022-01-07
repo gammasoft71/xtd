@@ -90,15 +90,15 @@ forms::create_params track_bar::create_params() const {
   
   if (orientation_ == forms::orientation::vertical) create_params.style(create_params.style() | TBS_VERT);
   else create_params.style(create_params.style() | TBS_HORZ);
-
+  
   if (tick_style_ == forms::tick_style::none) create_params.style(create_params.style() | TBS_NOTICKS);
   else if (tick_style_ == forms::tick_style::top_left) create_params.style(create_params.style() | TBS_TOP);
   else if (tick_style_ == forms::tick_style::both) create_params.style(create_params.style() | TBS_BOTH);
-
+  
   return create_params;
 }
 
-void track_bar::on_handle_created(const event_args &e) {
+void track_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::track_bar::large_change(handle(), large_change_);
   native::track_bar::maximum(handle(), maximum_);
@@ -113,24 +113,24 @@ drawing::size track_bar::measure_control() const {
   return {size().width(), default_size().height()};
 }
 
-void track_bar::on_scroll(const event_args &e) {
+void track_bar::on_scroll(const event_args& e) {
   if (is_handle_created()) value_ = native::track_bar::value(handle());
   scroll(*this, e);
 }
 
-void track_bar::on_value_changed(const event_args &e) {
+void track_bar::on_value_changed(const event_args& e) {
   value_changed(*this, e);
 }
 
-void track_bar::wnd_proc(message &message) {
+void track_bar::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_REFLECT + WM_HSCROLL:
-    case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
-    default: control::wnd_proc(message);
+  case WM_REFLECT + WM_HSCROLL:
+  case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
+  default: control::wnd_proc(message);
   }
 }
 
-void track_bar::wm_scroll(message &message) {
+void track_bar::wm_scroll(message& message) {
   on_scroll(event_args::empty);
   on_value_changed(event_args::empty);
 }

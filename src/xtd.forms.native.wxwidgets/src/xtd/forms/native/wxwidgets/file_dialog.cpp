@@ -20,7 +20,7 @@ namespace {
   #else
   class FileDialog : public wxFileDialog {
   public:
-    explicit FileDialog(wxWindow *parent, const wxString& message = wxFileSelectorPromptStr, const wxString& defaultDir = wxEmptyString, const wxString& defaultFile = wxEmptyString, const wxString& wildCard = wxFileSelectorDefaultWildcardStr, long style = wxFD_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& sz = wxDefaultSize, const wxString& name = wxFileDialogNameStr) : wxFileDialog(parent, message, defaultDir, defaultFile, wildCard, style, pos, sz, name) {}
+    explicit FileDialog(wxWindow* parent, const wxString& message = wxFileSelectorPromptStr, const wxString& defaultDir = wxEmptyString, const wxString& defaultFile = wxEmptyString, const wxString& wildCard = wxFileSelectorDefaultWildcardStr, long style = wxFD_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& sz = wxDefaultSize, const wxString& name = wxFileDialogNameStr) : wxFileDialog(parent, message, defaultDir, defaultFile, wildCard, style, pos, sz, name) {}
     void ShowWindowModal() {
       SetReturnCode(ShowModal());
       wxWindowModalDialogEvent event(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, GetId());
@@ -29,7 +29,7 @@ namespace {
     }
   };
   #endif
-
+  
   wxWindowPtr<FileDialog> create_file_dialog(intptr_t hwnd, bool open_dialog, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
     long wx_style = open_dialog ? wxFD_OPEN : wxFD_SAVE;
     if ((options & OFN_NODEREFERENCELINKS) == OFN_NODEREFERENCELINKS) wx_style |= wxFD_NO_FOLLOW;
@@ -42,7 +42,7 @@ namespace {
     file_dialog->SetFilterIndex(static_cast<int32_t>(filter_index - 1));
     return file_dialog;
   }
-
+  
   void get_results(const FileDialog& dialog, size_t options, ustring& file_name, std::vector<ustring>& file_names) {
     if ((options & OFN_ALLOWMULTISELECT) != OFN_ALLOWMULTISELECT)
       file_name = convert_string::to_string(dialog.GetPath().c_str().AsWChar());
@@ -65,7 +65,7 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ust
 
 void file_dialog::run_open_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
   wxWindowPtr<FileDialog> dialog(create_file_dialog(hwnd, true, default_ext, file_name, file_names, filter, filter_index, initial_directory, options, support_multi_dotted_extensions, title));
-  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, options, &file_name, &file_names](wxWindowModalDialogEvent& event) {
+  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, options, &file_name, &file_names](wxWindowModalDialogEvent & event) {
     auto result = event.GetReturnCode() == wxID_OK;
     if (result) get_results(*dialog, options, file_name, file_names);
     on_dialog_closed(result);
@@ -82,7 +82,7 @@ bool file_dialog::run_save_dialog(intptr_t hwnd, const ustring& default_ext, ust
 
 void file_dialog::run_save_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
   wxWindowPtr<FileDialog> dialog(create_file_dialog(hwnd, false, default_ext, file_name, file_names, filter, filter_index, initial_directory, options, support_multi_dotted_extensions, title));
-  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, &file_name](wxWindowModalDialogEvent& event) {
+  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, &file_name](wxWindowModalDialogEvent & event) {
     auto result = event.GetReturnCode() == wxID_OK;
     if (result) file_name = dialog->GetPath().c_str().AsWChar();
     on_dialog_closed(result);

@@ -35,7 +35,7 @@ namespace xtd {
         /// @brief The IP protection level is restricted. This value would be used by intranet applications that do not implement Internet scenarios. These applications are generally not tested or hardened against Internet-style attacks. This setting will limit the received traffic to link-local only.
         restricted = 30
       };
-
+      
       /// @cond
       inline std::ostream& operator<<(std::ostream& os, ip_protection_level value) {return os << to_string(value, {{ip_protection_level::unspecified, "unspecified"}, {ip_protection_level::unrestricted, "unrestricted"}, {ip_protection_level::edge_restricted, "edge_restricted"}, {ip_protection_level::restricted, "restricted"}});}
       inline std::wostream& operator<<(std::wostream& os, ip_protection_level value) {return os << to_string(value, {{ip_protection_level::unspecified, L"unspecified"}, {ip_protection_level::unrestricted, L"unrestricted"}, {ip_protection_level::edge_restricted, L"edge_restricted"}, {ip_protection_level::restricted, L"restricted"}});}

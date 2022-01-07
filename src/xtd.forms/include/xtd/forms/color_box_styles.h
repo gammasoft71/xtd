@@ -31,7 +31,7 @@ namespace xtd {
       /// @brief The dialog box will restrict users to selecting solid colors only.
       solid_color_only = 0b100000,
     };
-
+    
     /// @cond
     inline color_box_styles& operator +=(color_box_styles& lhs, color_box_styles rhs) {lhs = static_cast<color_box_styles>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
     inline color_box_styles& operator -=(color_box_styles& lhs, color_box_styles rhs) {lhs = static_cast<color_box_styles>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}

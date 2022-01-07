@@ -18,7 +18,7 @@ namespace xtd {
     /// @cond
     class rectangle;
     /// @endcond
-
+    
     /// @brief Stores a set of four floating-points that represent the location and size of a rectangle.
     /// @par Namespace
     /// xtd::drawing
@@ -40,7 +40,7 @@ namespace xtd {
       rectangle_f(float x, float y, float width, float height) : x_(x), y_(y), width_(width), height_(height) {}
       rectangle_f(const point_f& location, const size_f& size) : rectangle_f(location.x(), location.y(), size.width(), size.height()) {}
       /// @}
-
+      
       /// @cond
       rectangle_f(const rectangle_f&) = default;
       rectangle_f& operator=(const rectangle_f&) = default;
@@ -57,10 +57,10 @@ namespace xtd {
       void height(float height) {height_ = height;}
       
       bool is_empty() const {return *this == rectangle_f::empty;}
-
+      
       float left() const {return x_;}
       void left(float left) {x_ = left;}
-
+      
       point_f location() const {return {x_, y_};}
       void location(const point_f& location) {
         x_ = location.x();
@@ -68,16 +68,16 @@ namespace xtd {
       }
       
       float right() const {return x_ + width_;}
-
+      
       size_f size() const {return {width_, height_};}
       void size(const size_f& size) {
         width_ = size.width();
         height_ = size.height();
       }
-
+      
       float top() const {return y_;}
       void top(float top) {y_ = top;}
-
+      
       float x() const {return x_;}
       void x(float x) {x_ = x;}
       
@@ -87,14 +87,14 @@ namespace xtd {
       float width() const {return width_;}
       void width(float width) {width_ = width;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       bool contains(float x, float y) const {return x_ <= x && x < x_ + width_ && y_ <= y && y < y_ + height_;}
       bool contains(const point_f& pt) const {return contains(pt.x(), pt.y());}
-      bool contains(const rectangle_f& rect) const {return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ &&  (rect.y_ + rect.height_) <= (y_ + height_);}
-
+      bool contains(const rectangle_f& rect) const {return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ && (rect.y_ + rect.height_) <= (y_ + height_);}
+      
       static rectangle_f from_ltrb(float left, float top, float right, float bottom) {return rectangle_f(left, top, right - left, bottom - top);}
       
       void inflate(const drawing::size_f& sz) {inflate(sz.width(), sz.height());}
@@ -108,9 +108,9 @@ namespace xtd {
         result.inflate(width, height);
         return result;
       }
-
+      
       bool intersects_with(const rectangle_f& rect) const {return (rect.x_ < x_ + width_) && (x_ < (rect.x_ + rect.width_)) && (rect.y_ < y_ + height_) && (y_ < rect.y_ + rect.height_);}
-
+      
       static rectangle_f make_intersect(const rectangle_f& a, const rectangle_f& b) {
         auto result = a;
         result.make_intersect(b);
@@ -124,7 +124,7 @@ namespace xtd {
         return result;
       }
       void make_union(const rectangle_f& rect);
-
+      
       void offset(const point_f& pt) {offset(pt.x(), pt.y());}
       void offset(float dx, float dy) {
         x_ += dx;

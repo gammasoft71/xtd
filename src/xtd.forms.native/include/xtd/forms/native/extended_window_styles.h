@@ -155,14 +155,14 @@ constexpr size_t WS_EX_APPWINDOW = 0x00040000;
 /// @ingroup xtd_forms_native ex_ws
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr size_t WS_EX_OVERLAPPEDWINDOW = WS_EX_WINDOWEDGE|WS_EX_CLIENTEDGE;
+constexpr size_t WS_EX_OVERLAPPEDWINDOW = WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE;
 /// @brief Combines the WS_EX_WINDOWEDGE and WS_EX_TOPMOST styles.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ex_ws
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr size_t WS_EX_PALETTEWINDOW = WS_EX_WINDOWEDGE|WS_EX_TOOLWINDOW|WS_EX_TOPMOST;
+constexpr size_t WS_EX_PALETTEWINDOW = WS_EX_WINDOWEDGE | WS_EX_TOOLWINDOW | WS_EX_TOPMOST;
 
 /// @brief The window is a layered window. This style cannot be used if the window has a class style of either CS_OWNDC or CS_CLASSDC. However, Microsoft Windows 8 does support the WS_EX_LAYERED style for child windows, where previous Windows versions support it only for top-level windows.
 /// @par Library

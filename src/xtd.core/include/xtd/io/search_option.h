@@ -24,7 +24,7 @@ namespace xtd {
       /// @brief Includes the current directory and all its subdirectories in a search operation. This option includes reparse points such as mounted drives and symbolic links in the search.
       all_directories = 1,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, search_option value) {return os << to_string(value, {{search_option::top_directory_only, "top_directory_only"}, {search_option::all_directories, "all_directories"}});}
     inline std::wostream& operator<<(std::wostream& os, search_option value) {return os << to_string(value, {{search_option::top_directory_only, L"top_directory_only"}, {search_option::all_directories, L"all_directories"}});}

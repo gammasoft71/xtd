@@ -21,9 +21,9 @@ int main() {
   
   // display string stream on cout line by line
   string line;
-  while(std::getline(ss, line))
+  while (std::getline(ss, line))
     cout << line << endl;
-  
+    
   return result;
 }
 

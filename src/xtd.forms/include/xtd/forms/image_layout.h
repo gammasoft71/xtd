@@ -26,7 +26,7 @@ namespace xtd {
       /// @brief The image is enlarged within the control's client rectangle.
       zoom = 4,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, image_layout value) {return os << to_string(value, {{image_layout::none, "none"}, {image_layout::tile, "tile"}, {image_layout::center, "center"}, {image_layout::stretch, "stretch"}, {image_layout::zoom, "zoom"}});}
     inline std::wostream& operator<<(std::wostream& os, image_layout value) {return os << to_string(value, {{image_layout::none, L"none"}, {image_layout::tile, L"tile"}, {image_layout::center, L"center"}, {image_layout::stretch, L"stretch"}, {image_layout::zoom, L"zoom"}});}

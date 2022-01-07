@@ -9,7 +9,7 @@ namespace xtd::drawing::native {
     
     Fl_Font font() const {return this->font_;}
     Fl_Fontsize size() const {return this->size_;}
-
+    
   private:
     Fl_Font font_ = FL_HELVETICA;
     Fl_Fontsize size_ = FL_NORMAL_SIZE;

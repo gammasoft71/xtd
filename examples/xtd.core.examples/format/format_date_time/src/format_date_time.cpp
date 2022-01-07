@@ -8,7 +8,7 @@ int main() {
   // Instead previous line you can use following lines :
   // auto t = std::time(nullptr);
   // auto date_time = *std::localtime(&t);
-
+  
   cout << ustring::format("{}", date_time) << endl;
   cout << ustring::format("{:d}", date_time) << endl;
   cout << ustring::format("{:D}", date_time) << endl;

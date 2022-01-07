@@ -15,14 +15,14 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
   current_unit_test_ = &unit_test;
   
   if (ignored() && settings::default_settings().also_run_ignored_tests()) status_ = test_status::not_started;
-
+  
   if ((std::string(reinterpret_cast<const char*>(__internal_tunit_unit_tests_mode__)) == "internal_tests" || settings::default_settings().repeat_test() != 1) && (aborted() || failed() || succeed())) status_ = test_status::not_started;
-
+  
   if (settings::default_settings().is_match_test_name(test_class.name(), name())) {
     if (ignored()) {
       try {
         assert::ignore();
-      } catch(const xtd::tunit::ignore_error&) {
+      } catch (const xtd::tunit::ignore_error&) {
         unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
       }
     } else if (not_started()) {
@@ -45,19 +45,19 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
           unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
         }
          */
-      } catch(const xtd::tunit::abort_error&) {
+      } catch (const xtd::tunit::abort_error&) {
         unit_test.event_listener_->on_test_aborted(xtd::tunit::test_event_args(*this, test_class, unit_test));
-      } catch(const xtd::tunit::assert_error&) {
+      } catch (const xtd::tunit::assert_error&) {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
-      } catch(const xtd::tunit::ignore_error&) {
+      } catch (const xtd::tunit::ignore_error&) {
         unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
-      } catch(const std::exception& e) {
+      } catch (const std::exception& e) {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         xtd::tunit::test::current_test().message_ = "Exception <" + __tunit_demangle(typeid(e).name()) + "> throws" + " (" + e.what() + ")";
         xtd::tunit::test::current_test().status_ = test::test_status::failed;
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
-      } catch(...) {
+      } catch (...) {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         xtd::tunit::test::current_test().message_ = "Exception <unknown> throws";
         xtd::tunit::test::current_test().status_ = test::test_status::failed;

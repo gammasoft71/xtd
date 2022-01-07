@@ -1757,9 +1757,9 @@ constexpr size_t EN_BEFORE_PASTE = 0x0800;
 constexpr size_t EN_AFTER_PASTE = 0x0801;
 
 constexpr uint32_t MCN_VIEWCHANGE = uint32_t(0 - 750); // MCN_SELECT -4  - give state of calendar view
-constexpr uint32_t MCN_SELCHANGE = uint32_t((0-750)+1);
-constexpr uint32_t MCN_GETDAYSTATE = uint32_t((0-750)+3);
-constexpr uint32_t MCN_SELECT = uint32_t((0-750)+4);
+constexpr uint32_t MCN_SELCHANGE = uint32_t((0 - 750) + 1);
+constexpr uint32_t MCN_GETDAYSTATE = uint32_t((0 - 750) + 3);
+constexpr uint32_t MCN_SELECT = uint32_t((0 - 750) + 4);
 
 struct NMHDR {
   HWND hwndFrom;

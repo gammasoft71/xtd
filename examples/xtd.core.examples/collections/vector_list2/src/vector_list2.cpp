@@ -15,7 +15,7 @@ using namespace xtd::collections;
 int main() {
   register_any_stringer<platform_id>([](platform_id value) {return ustring::format("{}", value);});
   register_any_stringer<seconds>([](seconds value) {return ustring::format("{}", value);});
-
+  
   // Creates and initializes a new vector_list.
   vector_list vector_list = {true, 42, "This is a string"_s, platform_id::win32s, u8"Another string"_s, 4.2f, hours(2) + minutes(25) + seconds(43)};
   

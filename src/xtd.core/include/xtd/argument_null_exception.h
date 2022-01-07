@@ -73,7 +73,7 @@ namespace xtd {
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     explicit argument_null_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : argument_exception(message, inner_exception, error, help_link, info) {}
     /// @}
-
+    
     /// @cond
     argument_null_exception(const argument_null_exception&) = default;
     argument_null_exception& operator=(const argument_null_exception&) = default;

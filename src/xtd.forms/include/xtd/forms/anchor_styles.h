@@ -30,7 +30,7 @@ namespace xtd {
       /// @brief All flags except none.
       all = top | bottom | left | right,
     };
-
+    
     /// @cond
     inline anchor_styles& operator +=(anchor_styles& lhs, anchor_styles rhs) {lhs = static_cast<anchor_styles>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
     inline anchor_styles& operator -=(anchor_styles& lhs, anchor_styles rhs) {lhs = static_cast<anchor_styles>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}

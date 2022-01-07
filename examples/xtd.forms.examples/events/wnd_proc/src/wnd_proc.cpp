@@ -12,7 +12,7 @@ namespace examples {
       text("form1");
       font({font().font_family(), 18.0f, drawing::font_style::bold, drawing::graphics_unit::point, 0});
     }
-
+    
   protected:
     void on_paint(paint_event_args& e) override {
       form::on_paint(e);
@@ -29,17 +29,17 @@ namespace examples {
     void wnd_proc(message& m) override {
       // Listen for operating system messages.
       switch (m.msg()) {
-          // The WM_ACTIVATEAPP message occurs when the application becomes the active application or becomes inactive.
-        case WM_ACTIVATEAPP:
-          // The wparam value identifies what is occurring.
-          app_active = (as<int>(m.wparam()) != 0);
-          // Invalidate to get new text painted.
-          invalidate();
-          break;
+      // The WM_ACTIVATEAPP message occurs when the application becomes the active application or becomes inactive.
+      case WM_ACTIVATEAPP:
+        // The wparam value identifies what is occurring.
+        app_active = (as<int>(m.wparam()) != 0);
+        // Invalidate to get new text painted.
+        invalidate();
+        break;
       }
       form::wnd_proc(m);
     }
-
+    
   private:
     bool app_active = true;
   };

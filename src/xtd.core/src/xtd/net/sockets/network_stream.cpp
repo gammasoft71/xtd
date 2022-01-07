@@ -16,7 +16,7 @@ int network_stream::socket_streambuf::underflow() {
   std::vector<byte_t> buffer(1);
   if (socket_.receive(buffer) == 1) {
     value_ = static_cast<char>(buffer[0]);
-    setg(&value_, &value_, &value_+1);
+    setg(&value_, &value_, &value_ + 1);
     return value_;
   }
   return std::streambuf::underflow(); // EOF

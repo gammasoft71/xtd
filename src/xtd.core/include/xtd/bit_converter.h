@@ -50,7 +50,7 @@ namespace xtd {
   private:
     static constexpr uint32_t __endian_value__ = 0x01020304;
     static constexpr uint8_t __endian_query__ = static_cast<const uint8_t&>(__endian_value__);
-
+    
   public:
     /// @brief Represents the byte_t order ("endianness") in which data is stored in this computer architecture.
     /// @remarks Different computer architectures store data using different byte_t orders. "Big-endian" means the most significant byte_t is on the left end of a word. "Little-endian" means the most significant byte_t is on the right end of a word.
@@ -62,15 +62,15 @@ namespace xtd {
     };
     
     /// @cond
-#if defined(__linux__) && defined(_LP64)
+    #if defined(__linux__) && defined(_LP64)
     using llong = long long int;
     using ullong = unsigned long long int;
-#else
+    #else
     using llong = long;
     using ullong = unsigned long;
-#endif
+    #endif
     /// @endcond
-
+    
     /// @name Fields
     
     /// @{
@@ -108,7 +108,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of several Double values to int64_t values with the double_to_int64_bits method.
     /// @include bit_converterdouble_to_int64_bits.cpp
     static int64_t double_to_int64_bits(double value);
-
+    
     /// @brief Returns the specified Boolean value as an std::vector of bytes.
     /// @param value A Boolean value.
     /// @return An std::vector of bytes with length 1.
@@ -116,7 +116,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of Boolean values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesBoolean.cpp
     static std::vector<byte_t> get_bytes(bool value);
-
+    
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.
     /// @return An std::vector of bytes with length 4.
@@ -124,7 +124,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of Char values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
     static std::vector<byte_t> get_bytes(char value);
-
+    
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.
     /// @return An std::vector of bytes with length 4.
@@ -132,7 +132,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of Char values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
     static std::vector<byte_t> get_bytes(char16_t value);
-
+    
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.
     /// @return An std::vector of bytes with length 4.
@@ -140,7 +140,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of Char values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
     static std::vector<byte_t> get_bytes(char32_t value);
-
+    
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.
     /// @return An std::vector of bytes with length 4.
@@ -148,7 +148,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of Char values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
     static std::vector<byte_t> get_bytes(wchar_t value);
-
+    
     /// @brief Returns the specified double value as an std::vector of bytes.
     /// @param value A double value.
     /// @return An std::vector of bytes with length 8.
@@ -156,7 +156,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of double values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesDouble.cpp
     static std::vector<byte_t> get_bytes(double value);
-
+    
     /// @brief Returns the specified int16_t value as an std::vector of bytes.
     /// @param value A int16_t value.
     /// @return An std::vector of bytes with length 2.
@@ -164,7 +164,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of int16_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesint16_t.cpp
     static std::vector<byte_t> get_bytes(int16_t value);
-
+    
     /// @brief Returns the specified int32_t value as an std::vector of bytes.
     /// @param value A int32_t value.
     /// @return An std::vector of bytes with length 4.
@@ -172,7 +172,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of int32_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesint32_t.cpp
     static std::vector<byte_t> get_bytes(int32_t value);
-
+    
     /// @brief Returns the specified int64_t value as an std::vector of bytes.
     /// @param value A int64_t value.
     /// @return An std::vector of bytes with length 8.
@@ -180,7 +180,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of int64_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesint64_t.cpp
     static std::vector<byte_t> get_bytes(int64_t value);
-
+    
     /// @brief Returns the specified single value as an std::vector of bytes.
     /// @param value A single value.
     /// @return An std::vector of bytes with length 4.
@@ -188,7 +188,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of single values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesSingle.cpp
     static std::vector<byte_t> get_bytes(float value);
-
+    
     /// @brief Returns the specified uint16_t value as an std::vector of bytes.
     /// @param value A uint16_t value.
     /// @return An std::vector of bytes with length 2.
@@ -196,7 +196,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of uint16_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesUint16_t.cpp
     static std::vector<byte_t> get_bytes(uint16_t value);
-
+    
     /// @brief Returns the specified uint32_t value as an std::vector of bytes.
     /// @param value A uint32_t value.
     /// @return An std::vector of bytes with length 4.
@@ -204,7 +204,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of uint32_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesUint32_t.cpp;
     static std::vector<byte_t> get_bytes(uint32_t value);
-
+    
     /// @brief Returns the specified uint64_t value as an std::vector of bytes.
     /// @param value A uint64_t value.
     /// @return An std::vector of bytes with length 8.
@@ -212,30 +212,30 @@ namespace xtd {
     /// The following code example converts the bit patterns of uint64_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesUint64_t.cpp
     static std::vector<byte_t> get_bytes(uint64_t value);
-
+    
     /// @cond
     static std::vector<byte_t> get_bytes(llong value);
     static std::vector<byte_t> get_bytes(ullong value);
     /// @endcond
-
+    
     /// @brief Converts the specified 32-bit signed integer to a single-precision floating point number.
     /// @param value The number to convert.
     /// @return A single-precision floating point number whose value is equivalent to value.
     /// @remarks Typically, value is an integer that is returned by the single_to_int32_bits method.
     static float int32_bits_to_single(int32_t value);
-
+    
     /// @brief Converts the specified 64-bit signed integer to a double-precision floating point number.
     /// @param value The number to convert.
     /// @return A double-precision floating point number whose value is equivalent to value.
     /// @remarks Typically, value is an integer that is returned by the double_to_int64_bits method.
     static double int64_bits_to_double(int64_t value);
-
+    
     /// @brief Converts the specified single-precision floating point number to a 32-bit signed integer.
     /// @param value The number to convert.
     /// @return A 32-bit signed integer whose value is equivalent to value.
     /// @remarks The order of bits in the integer returned by the double_to_int64_bits method depends on whether the computer architecture is little-endian or big-endian.
     static int32_t single_to_int32_bits(float value);
-
+    
     /// @brief Returns a Boolean value converted from one byte_t at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -246,7 +246,7 @@ namespace xtd {
     /// The following code example converts elements of byte_t std::vectors to Boolean values with the to_boolean method.
     /// @include bit_converterto_boolean.cpp
     static bool to_boolean(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Returns a char32_t converted from two bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -256,7 +256,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_char method converts the bytes from index start_index to start_index + 3 to an int32_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static char32_t to_char(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Returns a double-precision floating point number converted from eight bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -266,7 +266,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_double method converts the bytes from index start_index to start_index + 7 to a Double value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static double to_double(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Returns a 16-bit signed integer converted from two bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -276,7 +276,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_int16 method converts the bytes from index start_index to start_index + 1 to an int16_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static int16_t to_int16(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Returns a 32-bit signed integer converted from two bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -286,7 +286,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_int32 method converts the bytes from index start_index to start_index + 3 to an int32_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static int32_t to_int32(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Returns a 64-bit signed integer converted from two bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -296,7 +296,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_int64 method converts the bytes from index start_index to start_index + 7 to an int64_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static int64_t to_int64(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Returns a single-precision floating point number converted from eight bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -306,7 +306,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_single method converts the bytes from index start_index to start_index + 3 to a Double value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static float to_single(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Returns a 16-bit unsigned integer converted from two bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -316,7 +316,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_uint16 method converts the bytes from index start_index to start_index + 1 to an Uint16_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint16_t to_uint16(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Returns a 32-bit signed integer converted from two bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -326,7 +326,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_uint32 method converts the bytes from index start_index to start_index + 3 to an Uint32_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint32_t to_uint32(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Returns a 64-bit unsigned integer converted from two bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -336,7 +336,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_uint64 method converts the bytes from index start_index to start_index + 7 to an Uint64_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint64_t to_uint64(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Converts the numeric value of each element of a specified std::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
     /// @param value An std::vector of bytes.
     /// @return xtd::ustring A xtd::ustring of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
@@ -346,7 +346,7 @@ namespace xtd {
     /// The following code example converts byte_t std::vectors to xtd::ustring objects with the to_string method.
     /// @include bit_converterto_string.cpp
     static xtd::ustring to_string(const std::vector<byte_t>& value);
-
+    
     /// @brief Converts the numeric value of each element of a specified sub std::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -358,7 +358,7 @@ namespace xtd {
     /// The following code example converts byte_t std::vectors to xtd::ustring objects with the to_string method.
     /// @include bit_converterto_string2.cpp
     static xtd::ustring to_string(const std::vector<byte_t>& value, size_t start_index);
-
+    
     /// @brief Converts the numeric value of each element of a specified sub std::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
@@ -375,7 +375,7 @@ namespace xtd {
     static xtd::ustring to_string(const std::vector<byte_t>& value, size_t start_index, size_t length);
     /// @}
   };
-
+  
   /// @cond
   inline std::ostream& operator<<(std::ostream& os, bit_converter::endian value) {return os << to_string(value, {{bit_converter::endian::little, "little"}, {bit_converter::endian::big, "big"}});}
   inline std::wostream& operator<<(std::wostream& os, bit_converter::endian value) {return os << to_string(value, {{bit_converter::endian::little, L"little"}, {bit_converter::endian::big, L"big"}});}

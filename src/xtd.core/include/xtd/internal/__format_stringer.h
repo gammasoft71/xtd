@@ -21,7 +21,7 @@
 /// @cond
 namespace xtd {
   class ustring;
-
+  
   template<typename value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc);
   template<>
@@ -68,7 +68,7 @@ namespace xtd {
   inline std::string to_string(const char32_t& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const wchar_t& value, const std::string& fmt, const std::locale& loc);
-
+  
   template<typename value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc);
   template<>
@@ -116,7 +116,7 @@ namespace xtd {
   inline std::wstring to_string(const char32_t& value, const std::wstring& fmt, const std::locale& loc);
   template<>
   inline std::wstring to_string(const wchar_t& value, const std::wstring& fmt, const std::locale& loc);
-
+  
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
     auto it = values.find(value);
@@ -137,21 +137,21 @@ namespace xtd {
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t>& values) {
     std::map<type_t, string_t, std::greater<type_t>> descending_values;
-    for(auto item : values) descending_values[item.first] = item.second;
+    for (auto item : values) descending_values[item.first] = item.second;
     return to_string(value, descending_values);
   }
   
   template<typename type_t>
   inline std::string to_string(type_t value, const std::initializer_list<std::pair<type_t, std::string>>& il) {
     std::map<type_t, std::string, std::greater<type_t>> values;
-    for(auto item : il) values[item.first] = item.second;
+    for (auto item : il) values[item.first] = item.second;
     return to_string(value, values);
   }
   
   template<typename type_t>
   inline std::wstring to_string(type_t value, const std::initializer_list<std::pair<type_t, std::wstring>>& il) {
     std::map<type_t, std::wstring, std::greater<type_t>> values;
-    for(auto item : il) values[item.first] = item.second;
+    for (auto item : il) values[item.first] = item.second;
     return to_string(value, values);
   }
 }
@@ -159,19 +159,16 @@ namespace xtd {
 template<typename char_t>
 inline std::basic_string<char_t> __codepoint_to_string(char32_t codepoint) {
   std::basic_string<char_t> result;
-  if (codepoint < 0x80) {
+  if (codepoint < 0x80)
     result.push_back(static_cast<char_t>(codepoint));
-  }
   else  if (codepoint < 0x800) {
     result.push_back(static_cast<char_t>((codepoint >> 6) | 0xc0));
     result.push_back(static_cast<char_t>((codepoint & 0x3f) | 0x80));
-  }
-  else if (codepoint < 0x10000) {
+  } else if (codepoint < 0x10000) {
     result.push_back(static_cast<char_t>((codepoint >> 12) | 0xe0));
     result.push_back(static_cast<char_t>(((codepoint >> 6) & 0x3f) | 0x80));
     result.push_back(static_cast<char_t>((codepoint & 0x3f) | 0x80));
-  }
-  else {
+  } else {
     result.push_back(static_cast<char_t>((codepoint >> 18) | 0xf0));
     result.push_back(static_cast<char_t>(((codepoint >> 12) & 0x3f) | 0x80));
     result.push_back(static_cast<char_t>(((codepoint >> 6) & 0x3f) | 0x80));

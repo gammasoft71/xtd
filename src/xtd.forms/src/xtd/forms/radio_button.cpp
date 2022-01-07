@@ -16,15 +16,15 @@ using namespace xtd::forms;
 namespace {
   xtd::forms::visual_styles::push_button_state to_push_button_style(xtd::forms::visual_styles::radio_button_state state) {
     switch (state) {
-      case xtd::forms::visual_styles::radio_button_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::radio_button_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
-      case xtd::forms::visual_styles::radio_button_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::radio_button_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      case xtd::forms::visual_styles::radio_button_state::checked_normal: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::radio_button_state::checked_hot: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::radio_button_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::radio_button_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      default: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::radio_button_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::radio_button_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
+    case xtd::forms::visual_styles::radio_button_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
+    case xtd::forms::visual_styles::radio_button_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    case xtd::forms::visual_styles::radio_button_state::checked_normal: return xtd::forms::visual_styles::push_button_state::pressed;
+    case xtd::forms::visual_styles::radio_button_state::checked_hot: return xtd::forms::visual_styles::push_button_state::pressed;
+    case xtd::forms::visual_styles::radio_button_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
+    case xtd::forms::visual_styles::radio_button_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    default: return xtd::forms::visual_styles::push_button_state::normal;
     }
   }
 }
@@ -82,12 +82,12 @@ forms::create_params radio_button::create_params() const {
   if (auto_check_) create_params.style(create_params.style() | BS_AUTORADIOBUTTON);
   else create_params.style(create_params.style() | BS_RADIOBUTTON);
   if (appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
-
+  
   switch (check_align_) {
-    case content_alignment::top_right:
-    case content_alignment::middle_right:
-    case content_alignment::bottom_right: create_params.style(create_params.style() | BS_RIGHTBUTTON); break;
-    default: break;
+  case content_alignment::top_right:
+  case content_alignment::middle_right:
+  case content_alignment::bottom_right: create_params.style(create_params.style() | BS_RIGHTBUTTON); break;
+  default: break;
   }
   
   return create_params;
@@ -97,7 +97,7 @@ drawing::size radio_button::measure_control() const {
   return button_base::measure_text() + drawing::size(24, 0);
 }
 
-void radio_button::on_handle_created(const event_args &e) {
+void radio_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   if (flat_style() == flat_style::system) native::radio_button::checked(handle(), checked_);
 }
@@ -118,12 +118,12 @@ void radio_button::on_paint(paint_event_args& e) {
   button_base::on_paint(e);
 }
 
-void radio_button::wnd_proc(message &message) {
+void radio_button::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_LBUTTONDOWN: wm_mouse_down(message); break;
-    case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
-    case WM_LBUTTONUP: wm_mouse_up(message); break;
-    default: button_base::wnd_proc(message);
+  case WM_LBUTTONDOWN: wm_mouse_down(message); break;
+  case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
+  case WM_LBUTTONUP: wm_mouse_up(message); break;
+  default: button_base::wnd_proc(message);
   }
 }
 
@@ -131,7 +131,7 @@ void radio_button::wm_mouse_double_click(message& message) {
   on_double_click(event_args::empty);
 }
 
-void radio_button::wm_mouse_down(const message &message) {
+void radio_button::wm_mouse_down(const message& message) {
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   set_mouse_buttons(mouse_buttons() | e.button());

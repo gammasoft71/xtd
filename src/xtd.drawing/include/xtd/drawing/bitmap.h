@@ -24,7 +24,7 @@ namespace xtd {
       /// @brief Represent an empty bitmap.
       static bitmap empty;
       /// @}
-
+      
       /// @name Constructors
       
       /// @{
@@ -57,7 +57,7 @@ namespace xtd {
       /// @param size the size, in pixels, of the new bitmap.
       explicit bitmap(const xtd::drawing::size& size) : xtd::drawing::image(size.width(), size.height()) {}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -67,12 +67,12 @@ namespace xtd {
       /// @brief Creates a copy of the section of this Bitmap defined with a specified rectangle.
       /// @param rect Defines the portion of this bitmap to copy.
       bitmap clone(const rectangle_f& rect) {return bitmap(*this, xtd::drawing::rectangle::ceiling(rect));}
-
+      
       /// @cond
       bitmap(const bitmap& bitmap) = default;
       bitmap& operator=(const bitmap& bitmap) = default;
       /// @endcond
-
+      
       /// @brief Gets the color of the specified pixel in this bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.

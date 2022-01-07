@@ -52,20 +52,20 @@ namespace xtd {
           xtd::net::sockets::socket_error error_code_ = xtd::net::sockets::socket_error::success;
           std::exception_ptr exception_;
         };
-
+        
         class async_result_receive : public async_result_socket {
         public:
           explicit async_result_receive(std::any async_state) : async_result_socket(async_state) {}
           std::vector<byte_t> buffer_;
           xtd::net::ip_end_point remote_end_point_;
         };
-
+        
         class async_result_send : public async_result_socket {
         public:
           explicit async_result_send(std::any async_state) : async_result_socket(async_state) {}
           size_t number_of_bytes_sent_ = 0;
         };
-
+        
       public:
         /// @name Constructors
         
@@ -117,7 +117,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         udp_client(const xtd::ustring& hostname, uint16_t port);
         /// @}
-
+        
         /// @cond
         udp_client(udp_client&&) = default;
         udp_client(const udp_client&) = default;
@@ -127,7 +127,7 @@ namespace xtd {
         bool operator==(const udp_client& s) const {return data_ == s.data_;};
         bool operator!=(const udp_client& s) const {return !operator==(s);};
         /// @endcond
-
+        
         /// @name Properties
         
         /// @{
@@ -149,7 +149,7 @@ namespace xtd {
         /// @return This current instance.
         /// @remarks xtd::net::sockets::udp_client creates a xtd::net::sockets::socket used to send and receive data over a network. Classes deriving from xtd::net::sockets::udp_client can use this property to get or set this xtd::net::sockets::socket. Use the underlying xtd::net::sockets::socket returned from xtd::net::sockets::udp_client::client if you require access beyond that which xtd::net::sockets::udp_client provides. You can also use xtd::net::sockets::udp_client::client to set the underlying xtd::net::sockets::socket to an existing xtd::net::sockets::socket. This is useful if you want to take advantage of the simplicity of xtd::net::sockets::udp_client using a pre-existing xtd::net::sockets::socket.
         udp_client& client(const xtd::net::sockets::socket& value) noexcept;
-
+        
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::udp_client allows Internet Protocol (IP) datagrams to be fragmented.
         /// @return true if the xtd::net::sockets::udp_client allows datagram fragmentation; otherwise, false. The default is true.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
@@ -165,7 +165,7 @@ namespace xtd {
         /// @remarks Datagrams require fragmentation when their size exceeds the Maximum Transfer Unit (MTU) of the transmission medium. Datagrams may be fragmented by the sending host or by an intermediate router. If a datagram must be fragmented, and the xtd::net::sockets::socket_option_name::dont_fragment option is set, the datagram is discarded, and an Internet Control Message Protocol (ICMP) error message is sent back to the sender of the datagram.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         udp_client& dont_fragment(bool value);
-
+        
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::udp_client may send or receive broadcast packets.
         /// @return true if the xtd::net::sockets::udp_client allows broadcast packets; otherwise, false. The default is false.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
@@ -199,7 +199,7 @@ namespace xtd {
         /// @remarks This property must be set before the underlying socket is bound to a client port. If you call xtd::net::sockets::udp_client.xtd::net::sockets::udp_client(Int32), xtd::net::sockets::udp_client.xtd::net::sockets::udp_client(Int32, xtd::net::sockets::address_family), xtd::net::sockets::udp_client.xtd::net::sockets::udp_client(xtd::net::ip_end_point), or xtd::net::sockets::udp_client.xtd::net::sockets::udp_client(String, Int32), the client port is bound as a side effect of the constructor, and you cannot subsequently set the xtd::net::sockets::udp_client::exclusive_address_use property
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         udp_client& exclusive_address_use(bool value);
-
+        
         /// @brief Gets a boolean value that specifies whether outgoing multicast packets are delivered to the sending application.
         /// @return true if the xtd::net::sockets::udp_client receives outgoing multicast packets; otherwise, false.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
@@ -231,7 +231,7 @@ namespace xtd {
         /// @remarks The TTL value indicates the maximum number of routers a packet can traverse before the router discards the packet and an Internet Control Message Protocol (ICMP) "TTL exceeded" error message is returned to the sender.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         udp_client& ttl(byte_t value);
-
+        
         /// @name Methods
         
         /// @{
@@ -252,7 +252,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_receive operation must be completed by calling the xtd::net::sockets::udp_client::end_receive method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation is complete. To block until the operation is complete, use the xtd::net::sockets::udp_client::receive method.
         std::shared_ptr<xtd::iasync_result> begin_receive(xtd::async_callback callback, const std::any& state);
-
+        
         /// @brief xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by the host name and port number.
         /// @param dgram A byte array that contains the data to be sent.
         /// @param bytes The number of bytes to send.
@@ -284,7 +284,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_send operation must be completed by calling the xtd::net::sockets::udp_client::end_send method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation is complete, use one of the xtd::net::sockets::udp_client::send method overloads.
         std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<byte_t>& dgram, size_t bytes, xtd::async_callback callback, const std::any& state);
-
+        
         /// @brief  Closes the UDP connection
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @remarks The xtd::net::sockets::udp_client::close disables the underlying xtd::net::sockets::socket and releases all managed and unmanaged resources associated with the xtd::net::sockets::udp_client.
@@ -326,7 +326,7 @@ namespace xtd {
         /// @note Since the UDP protocol is connectionless, the xtd::net::sockets::udp_client::connect method does not block. Do not call the xtd::net::sockets::udp_client::connect method if you intend to receive multicasted datagrams.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void connect(const xtd::ustring& hostname, uint16_t port);
-
+        
         /// @brief Leaves a multicast group.
         /// @param multicast_address The xtd::net::ip_address of the multicast group to leave.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
@@ -342,7 +342,7 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::udp_client::drop_multicast_group method withdraws the xtd::net::sockets::udp_client from the multicast group identified by the specified xtd::net::ip_address. After calling the xtd::net::sockets::udp_client::drop_multicast_group method, the underlying xtd::net::sockets::socket sends an Internet Group Management Protocol (IGMP) packet to the router, removing the router from the multicast group. After a xtd::net::sockets::udp_client withdraws from the group, it will no longer be able to receive datagrams sent to that group.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void drop_multicast_group(const xtd::net::ip_address& multicast_address, uint32_t if_index);
-
+        
         /// @brief Ends a pending asynchronous receive.
         /// @param async_result An xtd::iasync_result object returned by a call to xtd::net::sockets::udp_client::begin_receive(xtd::async_callback, Object).
         /// @param remote_end_point The specified remote endpoint.
@@ -354,7 +354,7 @@ namespace xtd {
         /// @remarks To perform this operation synchronously, use the xtd::net::sockets::udp_client::receive method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         std::vector<byte_t> end_receive(std::shared_ptr<xtd::iasync_result> async_result, xtd::net::ip_end_point& remote_end_point);
-
+        
         /// @brief Ends a pending asynchronous send.
         /// @param async_result An xtd::iasync_result object returned by a call to xtd::net::sockets::udp_client::begin_send.
         /// @return If successful, the number of bytes sent to the xtd::net::sockets::udp_client.
@@ -365,7 +365,7 @@ namespace xtd {
         /// @remarks To perform this operation synchronously, use the xtd::net::sockets::udp_client::send method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t end_send(std::shared_ptr<xtd::iasync_result> async_result);
-
+        
         /// @brief Adds a xtd::net::sockets::udp_client to a multicast group.
         /// @param multicast_address The multicast xtd::net::ip_address of the group you want to join.
         /// @exception argument_exception The IP address is not compatible with the xtd::net::sockets::address_family value that defines the addressing scheme of the socket.
@@ -415,7 +415,7 @@ namespace xtd {
         /// @note You cannot call xtd::net::sockets::udp_client::join_multicast_group on a xtd::net::sockets::udp_client constructed without a specific local port (that is, using the xtd::net::sockets::udp_client() or xtd::net::sockets::udp_client(xtd::net::sockets::address_family) constructor).
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void join_multicast_group(const xtd::net::ip_address& multicast_address, const xtd::net::ip_address& local_address);
-
+        
         /// @brief Returns a UDP datagram that was sent by a remote host.
         /// @param remote_end_point An xtd::net::ip_end_point that represents the remote host from which the data was sent.
         /// @return An array of type Byte that contains datagram data.
@@ -464,8 +464,8 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t send(const std::vector<byte_t>& dgram, size_t bytes);
         /// @}
-
-      protected:        
+        
+      protected:
         /// @name Protected properties
         
         /// @{
@@ -479,7 +479,7 @@ namespace xtd {
         /// @remarks Classes deriving from xtd::net::sockets::udp_client can use this property to determine if a default remote host has been established. You can establish a default remote host by using the appropriate constructor or by calling the xtd::net::sockets::udp_client::connect method. If you do establish a default remote host, you cannot specify a remote host in your call to xtd::net::sockets::udp_client::send.
         udp_client& active(bool value) noexcept;
         /// @}
-
+        
       private:
         udp_client(const xtd::net::sockets::socket& socket);
         struct data;

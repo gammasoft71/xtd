@@ -19,7 +19,7 @@ namespace xtd {
     class main_menu;
     class menu_item;
     /// @endcond
-
+    
     /// @brief Represents a menu item reference.
     /// @par Namespace
     /// xtd::forms
@@ -27,7 +27,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     using menu_item_ref = std::reference_wrapper<menu_item>;
-
+    
     /// @brief Represents a menu item reference.
     /// @par Namespace
     /// xtd::forms
@@ -35,7 +35,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     using const_menu_item_ref = std::reference_wrapper<const menu_item>;
-
+    
     /// @brief Represents the base functionality for all menus. Although tool_strip_drop_down and tool_strip_drop_down_menu replace and add functionality to the menu control of previous versions, menu is retained for both backward compatibility and future use if you choose.
     /// @par Namespace
     /// xtd::forms
@@ -63,11 +63,11 @@ namespace xtd {
       /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a shortcut.
       static constexpr const int find_shortcut = 1;
       /// @}
-
+      
       /// @cond
       ~menu();
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -79,12 +79,12 @@ namespace xtd {
       /// @brief Gets a value indicating whether this menu contains any menu items.
       /// @return true if this menu contains menu_item objects; otherwise, false. The default is false.
       virtual bool is_parent() const;
-
+      
       /// @brief Gets a value indicating the menu_item that is used to display a list of multiple document interface (MDI) child forms.
       /// @return A MenuItem that represents the menu item displaying a list of MDI child forms that are open in the application.
       /// @remarks You can use this property to determine whether a menu_item has been specified to display the list of open child windows in an MDI application. To use a specific menu_item as an MDI list, set the mdi_list property in the menu_item to be used.
       const menu_item& mdi_list_item() const;
-
+      
       /// @brief Gets a value indicating the collection of menu_item objects associated with the menu.
       /// @return A menu::menu_item_collection that represents the list of menu_item objects stored in the menu.
       /// @remarks You can use this property to obtain a reference to the list of menu items that are currently stored in the menu. For main_menu and context_menu objects, the menu_items property contains the entire menu structure in the control. For the menu_item class, the menu_items property contains the list of submenu items associated with the menu_item. With the reference to the collection of menu items for the menu (provided by this property), you can add and remove menu items, determine the total number of menu items, and clear the list of menu items from the collection. For more information on maintaining the menu item collection for a menu, see the xtd::forms::menu::menu_item_collection documentation.
@@ -102,12 +102,12 @@ namespace xtd {
       menu& menu_items(const std::initializer_list<menu_item_ref>& value);
       menu& menu_items(const std::vector<menu_item_ref>& value);
       /// @endcond
-
+      
       /// @brief Gets the name of the menu.
       /// @return A string representing the name.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
       const xtd::ustring& name() const {return data_->name_;}
-
+      
       /// @brief Sets the name of the menu.
       /// @param value A string representing the name.
       /// @return Current menu class.
@@ -116,7 +116,7 @@ namespace xtd {
         data_->name_ = value;
         return *this;
       }
-
+      
       /// @brief Gets user-defined data associated with the control.
       /// @return An object representing the data.
       std::any tag() const {return data_->tag_;}
@@ -128,28 +128,28 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       bool equals(const menu&) const noexcept override;
       bool equals(const object&) const noexcept override;
-
+      
       /// @brief Gets the context_menu that contains this menu.
       /// @return The context_menu that contains this menu. The default is no value.
       /// @remarks This method allows you to obtain a reference to the context_menu that this menu is contained in. This property returns no value if the menu is not contained in a context_menu. This can occur if the menu is contained in a menu_item or main_menu, or if the menu is not contained in any menu. You can use this property to determine whether a menu is currently being used, and also to determine where.
       std::optional<std::reference_wrapper<context_menu>> get_context_menu() const;
-
+      
       /// @brief Gets the main_menu that contains this menu.
       /// @return The main_menu that contains this menu. The default is has no value.
       /// @remarks This method allows you to obtain a reference to the main_menu that this menu is contained in. This property returns no value if the menu is not contained in a main_menu. This can occur if the menu is contained in a menu_item or context_menu, or if the menu is not contained in any menu. You can use this property to determine whether a menu is currently being used, and also to determine where.
       std::optional<std::reference_wrapper<main_menu>> get_main_menu() const;
-
+      
       /// @brief Merges the MenuItem objects of one menu with the current menu.
       /// @param menu_src The menu whose menu items are merged with the menu items of the current menu.
       /// @exception std::invalid_argument It was attempted to merge the menu with itself.
       virtual void merge_menu(const menu& menu_src);
-
+      
       /// @brief Returns a string that represents the menu control.
       /// @return A string that represents the current menu.
       /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
@@ -161,10 +161,10 @@ namespace xtd {
         return os << menu.to_string();
       }
       /// @endcond
-
+      
     protected:
       friend menu_item;
-
+      
       /// @name Protected constructors
       
       /// @{
@@ -182,7 +182,7 @@ namespace xtd {
       explicit menu(const std::vector<menu_item_ref>& items);
       menu(const menu&) = delete;
       /// @endcond
-
+      
       /// @name Protected methods
       
       /// @{
@@ -190,24 +190,24 @@ namespace xtd {
       /// @param menu_src The Menu to copy.
       /// @remarks This method copies the entire list of menuItem objects (stored in the menu passed in to menu_src) into the current menu. You can use this method in your derived class to clone menu_item objects. They can then be reused by other classes that derive from menu, such as main_menu, context_menu, and menu_item.
       void clone_menu(const menu& menu_src);
-
+      
       /// @brief Creates a new handle to the Menu.
       /// @return A handle to the menu if the method succeeds; otherwise, 0.
       virtual intptr_t create_menu_handle() = 0;
-
+      
       /// @brief Destroy the handle to the Menu.
       /// @param handle A handle to the menu.
       virtual void destroy_menu_handle(intptr_t handle) {}
-
+      
       virtual void on_item_added(size_t pos, menu_item_ref item) {}
       virtual void on_item_removed(size_t pos, menu_item_ref item) {}
       /// @}
-
+      
       /// @cond
       virtual void create_menu();
       virtual void destroy_menu();
       void recreate_menu();
-
+      
       struct data {
         intptr_t handle_ = 0;
         std::optional<std::reference_wrapper<menu>> context_menu_;

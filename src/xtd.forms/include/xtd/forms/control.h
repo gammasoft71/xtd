@@ -78,7 +78,7 @@ namespace xtd {
         creating_handle = 0b10000,
         recreate = 0b100000,
         parent_recreating = 0b1000000,
-
+        
         client_size_setted = 0b10000000,
         modal = 0b100000000,
         top_level = 0b1000000000,
@@ -88,10 +88,10 @@ namespace xtd {
         tab_stop = 0b10000000000000,
         allow_drop = 0b100000000000000,
         drop_target = 0b1000000000000000,
-
+        
         layout_deferred = 0b10000000000000000,
         docked = 0b100000000000000000,
-
+        
         double_click_fired = 0b1000000000000000000,
         double_buffered = 0b10000000000000000000,
         /*
@@ -100,8 +100,8 @@ namespace xtd {
         mouse_pressed = 0,
         use_wait_cursor = 0,
          */
-
-         /*
+        
+        /*
         is_accessible = 0,
         no_zorder = 0,
         size_locked_by_os = 0,
@@ -113,7 +113,7 @@ namespace xtd {
         hosted_in_dialog = 0,
         validation_cancelled = 0,
         mirrored = 0,
-         */
+        */
       };
       
       class async_result_invoke : public xtd::iasync_result {
@@ -149,7 +149,7 @@ namespace xtd {
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         explicit control_collection(const allocator_type& allocator = allocator_type());
         /// @}
-
+        
         /// @cond
         explicit control_collection(const base& collection);
         control_collection(const control_collection& collection);
@@ -270,7 +270,7 @@ namespace xtd {
       /// @return Current control.
       /// @remarks This property is not relevant for this class.
       virtual control& auto_size(bool auto_size);
-
+      
       /// @brief Gets the background color for the control.
       /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
       /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
@@ -287,7 +287,7 @@ namespace xtd {
       /// @cond
       virtual control& back_color(nullptr_t);
       /// @endcond
-
+      
       /// @brief Gets the background image displayed in the control.
       /// @return An xtd::drawing::image that represents the image to display in the background of the control.
       /// @remarks Use the background_image property to place a graphic image onto a control.
@@ -359,13 +359,13 @@ namespace xtd {
       /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtdd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
       /// @warning Be careful, some OS don't support cross-thread UI operations!
       static void check_for_illegal_cross_thread_calls(bool value);
-
+      
       /// @brief Gets the rectangle that represents the client area of the control.
       /// @return A rectangle that represents the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
       /// @remarks Because client coordinates are relative to the upper-left corner of the client area of the control, the coordinates of the upper-left corner of the rectangle returned by this property are (0,0). You can use this property to obtain the size and coordinates of the client area of the control for tasks such as drawing on the surface of the control.
       virtual const drawing::rectangle& client_rectangle() const;
-
+      
       /// @brief Gets the height and width of the client area of the control.
       /// @return A size that represents the dimensions of the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
@@ -391,7 +391,7 @@ namespace xtd {
       /// @param value A xtd::forms::context_menu that represents the context menu to display in the control.
       /// @return Current control.
       virtual control& context_menu(nullptr_t);
-
+      
       /// @brief Gets control appearance.
       /// @return One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
       /// @Remarks The control appearance determine how the control is drawed :
@@ -404,7 +404,7 @@ namespace xtd {
       /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
       /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
       virtual control& control_appearance(forms::control_appearance value);
-
+      
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
       /// @remarks A control can act as a parent to a collection of controls. For example, when several controls are added to a form, each of the controls is a member of the control::control_collection assigned to the controls property of the form, which is derived from the control class.
@@ -419,12 +419,12 @@ namespace xtd {
       /// @remarks When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. Doing so will increase the performance of applications with many controls.
       /// @remarks Use the controls property to iterate through all controls of a form, including nested controls. Use the get_next_control method to retrieve the previous or next child control in the tab order. Use the active_control property to get or set the active control of a container control.
       virtual const control_collection& controls() const;
-
+      
       /// @brief Gets a value indicating whether the control has been created.
       /// @return true if the control has been created; otherwise, false.
       /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
       virtual bool created();
-
+      
       /// @brief Gets the cursor that is displayed when the mouse pointer is over the control.
       /// @return A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
       virtual forms::cursor cursor() const;
@@ -435,20 +435,20 @@ namespace xtd {
       /// @cond
       virtual control& cursor(nullptr_t);
       /// @endcond
-
+      
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
       virtual drawing::color default_back_color() const {return xtd::forms::theme_colors::current_theme().control();}
-
+      
       /// @brief Gets the default cursor for the control.
       /// @return An object of type xtd::forms::cursor representing the current default cursor.
       virtual forms::cursor default_cursor() const {return cursors::default_cursor();}
-
+      
       /// @brief Gets the default font of the control.
       /// @return The default font of the control. The value returned will vary depending on the user's operating system the local culture setting of their system.
       virtual drawing::font default_font() const;
-
+      
       /// @brief Gets the default foreground color of the control.
       /// @return The default foreground color of the control. The default is control_text.
       virtual drawing::color default_fore_color() const {return xtd::forms::theme_colors::current_theme().control_text();}
@@ -480,7 +480,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding the dock property in a derived class, use the base class's dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the dock property; you can override only one if needed.
       virtual control& dock(dock_style dock);
-
+      
       /// @brief Gets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
       /// @return true if the surface of the control should be drawn using double buffering; otherwise, false.
       virtual bool double_buffered() const;
@@ -496,11 +496,11 @@ namespace xtd {
       /// @param enabled true if the control can respond to user interaction; otherwise, false. The default is true.
       /// @return Current control.
       virtual control& enabled(bool enabled);
-
+      
       /// @brief Gets a value indicating whether the control has input focus.
       /// @return true if the control has focus; otherwise, false.
       virtual bool focused() const;
-
+      
       /// @brief Gets the font of the text displayed by the control.
       /// @return The font to apply to the text displayed by the control. The default is the value of the default_font property.
       virtual drawing::font font() const;
@@ -511,7 +511,7 @@ namespace xtd {
       /// @cond
       virtual control& font(nullptr_t);
       /// @endcond
-
+      
       /// @brief Gets the foreground color of the control.
       /// @return The foreground color of the control. The default is the value of the default_fore_color property.
       virtual drawing::color fore_color() const;
@@ -522,7 +522,7 @@ namespace xtd {
       /// @cond
       virtual control& fore_color(nullptr_t);
       /// @endcond
-
+      
       /// @brief Gets the window handle that the control is bound to.
       /// @return An intptr_t that contains the window handle (HWND) of the control.
       intptr_t handle() const override;
@@ -551,7 +551,7 @@ namespace xtd {
       /// @param left An int32_t representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
       /// @return Current control.
       virtual control& left(int32_t left);
-
+      
       /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
       /// @return The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
       virtual drawing::point location() const;
@@ -567,7 +567,7 @@ namespace xtd {
       /// @param margin A padding representing the space between controls.
       /// @return Current control.
       virtual control& margin(const forms::padding& margin);
-
+      
       /// @brief Gets the client size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
@@ -580,7 +580,7 @@ namespace xtd {
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
       virtual control& maximum_client_size(const drawing::size& size);
-
+      
       /// @brief Gets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
@@ -606,7 +606,7 @@ namespace xtd {
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
       virtual control& minimum_client_size(const drawing::size& size);
-
+      
       /// @brief Gets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
       /// @par Examples
@@ -655,7 +655,7 @@ namespace xtd {
       /// @param nullptr.
       /// @return Current control.
       virtual control& parent(std::nullptr_t);
-
+      
       /// @brief Gets the product name of the assembly containing the control.
       /// @return The product name of the assembly containing the control.
       virtual xtd::ustring product_name() const;
@@ -667,7 +667,7 @@ namespace xtd {
       /// @brief Gets the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
       /// @return An int32_t representing the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
       virtual int32_t right() const;
-
+      
       /// @brief Gets the height and width of the control.
       /// @return The size that represents the height and width of the control in pixels.
       virtual drawing::size size() const;
@@ -696,7 +696,7 @@ namespace xtd {
       /// @param text The text associated with this control.
       /// @return Current control.
       virtual control& text(const xtd::ustring& text);
-
+      
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @return An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       virtual int32_t top() const;
@@ -708,7 +708,7 @@ namespace xtd {
       /// @brief Gets the parent control that is not parented by another Windows Forms control. Typically, this is the outermost Form that the control is contained in.
       /// @return The control that represents the top-level control that contains the current control.
       virtual std::optional<control_ref> top_level_control() const;
-
+      
       /// @brief Gets a value indicating whether the control and all its child controls are displayed.
       /// @return true if the control and all its child controls are displayed; otherwise, false. The default is true.
       virtual bool visible() const;
@@ -716,7 +716,7 @@ namespace xtd {
       /// @param visible true if the control and all its child controls are displayed; otherwise, false. The default is true.
       /// @return Current control.
       virtual control& visible(bool visible);
-
+      
       /// @brief Gets the width of the control.
       /// @return The width of the control in pixels.
       virtual int32_t width() const;
@@ -725,7 +725,7 @@ namespace xtd {
       /// @return Current control.
       virtual control& width(int32_t width);
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -747,11 +747,11 @@ namespace xtd {
       template<typename delegate_t>
       std::shared_ptr<xtd::iasync_result> begin_invoke(delegate_t value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
       /// @endcond
-
+      
       /// @brief Brings the control to the front of the z-order.
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the paint event.
       virtual void bring_to_front();
-
+      
       /// @brief A factory to create a specified control with specified location ,size back_color and fore_color.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
@@ -823,7 +823,7 @@ namespace xtd {
         if (fore_color != drawing::color::empty) item->fore_color(fore_color);
         return item;
       }
-
+      
       /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
       /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.
       /// @remarks create_control does not create a control handle if the control's visible property is false. You can either call the create_control method or access the handle property to create the control's handle regardless of the control's visibility, but in this case, no window handles are created for the control's children.
@@ -840,22 +840,22 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding create_handle() in a derived class, be sure to call the base class's create_handle() method to ensure that the handle is created.
       virtual void create_handle();
-
+      
       /// @brief Forces the destruction of the visible control, including the destruction of the handle and any visible child controls.
       /// @remarks The destroy_control method forces a handle to be destroyed for the control and its child controls.
       /// @par Notes to Inheritors
       /// When overriding destroy_control() in a derived class, be sure to call the base class's destroy_control() method to ensure that the handle is destroyed.
       virtual void destroy_control();
-
+      
       /// @brief Destroys the handle associated with the control.
       /// @par Notes to Inheritors
       /// When overriding destroy_handle() in a derived class, be sure to call the base class's destroy_handle() method to ensure that the handle is destroyed.
       virtual void destroy_handle();
-
+      
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
       void end_invoke(std::shared_ptr<xtd::iasync_result> async);
-
+      
       /// @brief Sets input focus to the control.
       /// @return true if the input focus request was successful; otherwise, false.
       /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them.
@@ -866,7 +866,7 @@ namespace xtd {
       /// @return The control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
       /// @remarks This method searches up the window handle parent chain until it finds a handle that is associated with a control. This method is more reliable than the from_handle method, because it correctly returns controls that own more than one handle.
       static std::optional<control_ref> from_child_handle(intptr_t handle);
-
+      
       /// @brief Returns the control that is currently associated with the specified handle.
       /// @param handle The window handle (HWND) to search for.
       /// @return A control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
@@ -885,18 +885,18 @@ namespace xtd {
       /// @todo Remove when render is done.
       std::optional<xtd::drawing::color> get_fore_color() const {return data_->fore_color;}
       /// @endcond
-
+      
       /// @brief Retrieves the index of a control within the control collection.
       /// @param child The control to search for in the control collection.
       /// @return A zero-based index value that represents the location of the specified child control within the control collection.
       /// @exception xtd::argument_exception The child control is not in the control::control_collection.
       size_t get_child_index(intptr_t child) const;
-
+      
       /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
       /// @param child The control to search for in the control collection.
       /// @@param throw_exception true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, false.
       size_t get_child_index(intptr_t child, bool& throw_exception) const;
-
+      
       /// @brief Conceals the control from the user.
       /// @remarks Hiding the control is equivalent to setting the visible property to false. After the hide method is called, the visible property returns a value of false until the show method is called.
       virtual void hide();
@@ -904,12 +904,12 @@ namespace xtd {
       /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate() const;
-
+      
       /// @brief Invalidates a specific region of the control and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(bool invalidate_children) const;
-
+      
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
       /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
@@ -920,7 +920,7 @@ namespace xtd {
       /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
-
+      
       /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
       /// @param value A delegate that contains a method to be called in the control's thread context.
       void invoke(delegate<void()> value);
@@ -934,18 +934,18 @@ namespace xtd {
       /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
       void invoke(delegate<void(std::vector<std::any>)> value, std::any arg);
-
+      
       /// @cond
       template<typename delegate_t>
       void invoke(delegate_t value, const std::vector<std::any>& args) {invoke(delegate<void(std::vector<std::any>)>(value), args);}
- 
+      
       template<typename delegate_t, typename args_t>
       void invoke(delegate_t value, args_t args) {invoke(delegate<void(std::vector<std::any>)>(value), std::any(args));}
-
+      
       template<typename delegate_t>
       void invoke(delegate_t value) {invoke(delegate<void(std::vector<std::any>)>(value), std::vector<std::any> {});}
       /// @endcond
-
+      
       /// @brief Forces the control to apply layout logic to all its child controls.
       /// @remarks If the suspend_layout method was called before calling the perform_layout method, the layout event is suppressed.
       void perform_layout();
@@ -965,7 +965,7 @@ namespace xtd {
       /// @return true if the message was processed by the control; otherwise, false.
       /// @remarks pre_process_message is called by the application's message loop to preprocess input messages before they are dispatched. Possible values for the msg parameter are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
       virtual bool pre_process_message(xtd::forms::message& message);
-
+      
       /// @brief Forces the control to invalidate its client area and immediately redraw itself and any child controls.
       /// @par Notes to Inheritors
       /// When overriding refresh() in a derived class, be sure to call the base class's refresh() method so the control and its child controls are invalidated and redrawn.
@@ -1003,7 +1003,7 @@ namespace xtd {
       /// @param width The new width property value of the control.
       /// @param height The new height property value of the control.
       void set_bounds(int32_t x, int32_t y, int32_t width, int32_t height);
-
+      
       /// @brief Sets the specified bounds of the control to the specified location and size.
       /// @param x The new left property value of the control.
       /// @param y The new top property value of the control.
@@ -1011,7 +1011,7 @@ namespace xtd {
       /// @param height The new height property value of the control.
       /// @param specified A bitwise combination of the xtd::forms::bounds_specified values. For any parameter not specified, the current value will be used.
       void set_bounds(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified);
-
+      
       /// @brief Displays the control to the user.
       /// @remarks Showing the control is equivalent to setting the visible property to true. After the show method is called, the visible property returns a value of true until the hide method is called.
       virtual void show();
@@ -1068,7 +1068,7 @@ namespace xtd {
       bool operator!=(const control& value) const {return !operator==(value);}
       bool operator<(const control& value) const {return this < &value;}
       /// @endcond
-
+      
       /// @name Events
       
       /// @{
@@ -1077,13 +1077,13 @@ namespace xtd {
       /// @remarks This event is raised if the auto_size property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> auto_size_changed;
-
+      
       /// @brief Occurs when the value of the back_color property changes.
       /// @ingroup events
       /// @remarks This event is raised if the back_color property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> back_color_changed;
-
+      
       /// @brief Occurs when the value of the background_image property changes.
       /// @ingroup events
       /// @remarks This event is raised if the background_image property is changed by either a programmatic modification or user interaction
@@ -1127,13 +1127,13 @@ namespace xtd {
       /// @remarks This event is raised if the client_size property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> client_size_changed;
-        
+      
       /// @brief Occurs when the value of the cursor property changes.
       /// @ingroup events
       /// @remarks This event is raised if the cursor property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> cursor_changed;
-
+      
       /// @brief Occurs when a new control is added to the control::control_collection.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -1149,7 +1149,7 @@ namespace xtd {
       /// @remarks This event is raised if the dock property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> dock_changed;
-        
+      
       /// @brief Occurs when the control is double-clicked.
       /// @ingroup events
       /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the click and double_click events of a xtd::forms::form, the click and double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the double_click event, the click event might be raised twice.
@@ -1174,7 +1174,7 @@ namespace xtd {
       /// @include mouse_events.cpp
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> double_click;
-
+      
       /// @brief Occurs when the control receives focus.
       /// @ingroup events
       /// @remarks When you change the focus by using the keyboard (TAB, SHIFT+TAB, and so on), by calling the select or select_next_control methods, or by setting the container_control::active_control property to the current form, focus events occur in the following order:
@@ -1214,7 +1214,7 @@ namespace xtd {
       /// @remarks This event is raised if the enabled property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> enabled_changed;
-
+      
       /// @brief Occurs when the value of the fore_color property changes.
       /// @ingroup events
       /// @remarks This event is raised if the fore_color property is changed by either a programmatic modification or user interaction.
@@ -1473,13 +1473,13 @@ namespace xtd {
       /// @include dot_matrix_display.cpp
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> resize;
-        
+      
       /// @brief Occurs when the value of the size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the size property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> size_changed;
-
+      
       /// @brief Occurs when the value of the text property changes.
       /// @ingroup events
       /// @remarks This event is raised if the text property is changed by either a programmatic modification or user interaction.
@@ -1492,12 +1492,12 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> visible_changed;
       /// @}
-
+      
     protected:
       friend class application;
       friend class paint_event_args;
       friend class screen;
-
+      
       /// @name Protected methods
       
       /// @{
@@ -1511,13 +1511,13 @@ namespace xtd {
       /// @brief Sends the specified message to the default window procedure.
       /// @param message The Windows Message to process.
       virtual void def_wnd_proc(message& message);
-
+      
       /// @brief Retrieves the value of the specified control style bit for the control.
       /// @param flag The control_styles bit to return the value from.
       /// @return true if the specified control style bit is set to true; otherwise, false.
       /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit and the bool value to set the bit to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
       bool get_style(control_styles flag) const;
-
+      
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       virtual drawing::size measure_control() const;
@@ -1575,17 +1575,17 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_cursor_changed(const event_args& e);
-
+      
       /// @brief Raises the control::dock_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_dock_changed(const event_args& e);
-        
+      
       /// @brief Raises the double_click event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_double_click(const event_args& e);
-
+      
       /// @brief Raises the control::enabled_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1630,12 +1630,12 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_key_up(key_event_args& e);
-
+      
       /// @brief Raises the control::layout event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_layout(const event_args& e);
-
+      
       /// @brief Raises the control::location_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1706,12 +1706,12 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_parent_back_color_changed(const event_args& e);
-        
+      
       /// @brief Raises the control::parent_cursor_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_parent_cursor_changed(const event_args& e);
-
+      
       /// @brief Raises the control::parent_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1726,7 +1726,7 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_parent_fore_color_changed(const event_args& e);
-
+      
       /// @brief Raises the control::parent_font_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1736,12 +1736,12 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_resize(const event_args& e);
-        
+      
       /// @brief Raises the control::size_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_size_changed(const event_args& e);
-
+      
       /// @brief Raises the control::text_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1751,11 +1751,11 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_visible_changed(const event_args& e);
-
+      
       /// @brief Forces the re-creation of the handle for the control.
       /// @remarks The recreate_handle method is called whenever parameters are needed for a new control, but using a call from update_styles to create_params is insufficient. This method also calls destroy_handle and create_handle and sets recreating_handle to true.
       virtual void recreate_handle();
- 
+      
       /// @brief Performs the work of setting the specified bounds of this control.
       /// @param x The new left property value of the control.
       /// @param y The new top property value of the control.
@@ -1767,17 +1767,17 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) in a derived class, be sure to call the base class's set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method to force the bounds of the control to change. Derived classes can add size restrictions to the set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method.
       virtual void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified);
-
+      
       /// @brief Sets a value indicating whether the control can receive focus.
       /// @param value true if the control can receive focus; otherwise, false.
       /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
       void set_can_focus(bool value);
-
+      
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control.
       virtual void set_text(const xtd::ustring& text);
-
+      
       /// @brief Sets the size of the client area of the control.
       /// @param width The client area width, in pixels.
       /// @param height The client area height, in pixels.
@@ -1786,22 +1786,22 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding set_client_size_core(int32_t, int32_t) in a derived class, be sure to call the base class's set_client_size_core(int32_t, int32_t) method so that the client_size property is adjusted.
       virtual void set_client_size_core(int32_t width, int32_t height);
-        
+      
       /// @brief Sets a value indicating which of the mouse buttons is in a pressed state.
       /// @param value A bitwise combination of the mouse_buttons enumeration values. The default is none.
       static void set_mouse_buttons(forms::mouse_buttons value);
-
+      
       /// @brief Sets the parent handle of the control.
       /// @param handle The parent handle.
       void set_parent(intptr_t handle);
-
+      
       /// @brief Sets a specified control_styles flag to either true or false.
       /// @param flag The control_styles bit to set.
       /// @param value true to apply the specified style to the control; otherwise, false.
       /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit (or bits) and the bool value to set the bit(s) to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
       /// @warning Setting the control style bits can substantially change the behavior of the control. Review the control_styles enumeration documentation to understand the effects of changing the control style bits before calling the set_style method.
       void set_style(control_styles flag, bool value);
-
+      
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
@@ -1809,7 +1809,7 @@ namespace xtd {
       /// Inheriting controls should call the base class's wnd_proc(message&) method to process any messages that they do not handle.
       virtual void wnd_proc(message& m);
       /// @}
-
+      
       /// @cond
       bool get_state(control::state flag) const;
       void set_state(control::state flag, bool value);
@@ -1843,7 +1843,7 @@ namespace xtd {
       void wm_set_text(message& message);
       void wm_size(message& message);
       void wm_sizing(message& message);
-
+      
       struct data {
         anchor_styles anchor = anchor_styles::top | anchor_styles::left;
         forms::padding anchoring;

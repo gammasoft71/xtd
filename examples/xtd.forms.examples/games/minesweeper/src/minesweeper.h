@@ -28,12 +28,12 @@ namespace minesweeper {
     
   private:
     void change_level(level l);
-
+    
     void new_game();
     
     void check_neighbors(const xtd::drawing::point& cell_location);
     int checked_cell(const xtd::drawing::point& cell_location);
-
+    
     void draw_cell(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     void draw_unchecked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     void draw_checked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
@@ -44,11 +44,11 @@ namespace minesweeper {
     void draw_error(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle, minesweeper::cell cell);
     void draw_border_unchecked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle);
     void draw_border_checked(xtd::forms::paint_event_args& e, const xtd::drawing::rectangle& clip_rectangle);
-
+    
     void game_over();
-
+    
     void mark_cell(int x, int y);
-
+    
     void on_about_menu_click(object& sender, const xtd::event_args& e);
     void on_custom_menu_click(object& sender, const xtd::event_args& e);
     void on_help_content_menu_click(object& sender, const xtd::event_args& e);
@@ -60,9 +60,9 @@ namespace minesweeper {
     
     void uncover_cell(int x, int y);
     void update_colors();
-
+    
     void you_win();
-
+    
     xtd::forms::panel game_panel_;
     xtd::forms::panel status_panel_;
     xtd::forms::lcd_label mine_count_label_;
@@ -76,15 +76,17 @@ namespace minesweeper {
     xtd::forms::menu_item game_expert_menu_item_ {"&Expert", {[&] {change_level(level::expert);}}, xtd::forms::menu_item_kind::radio, xtd::as<level>(properties::settings::default_settings().level()) == level::expert};
     xtd::forms::menu_item game_custom_menu_item_ {"&Custom...", {*this, &minesweeper_form::on_custom_menu_click}, xtd::forms::menu_item_kind::radio, xtd::as<level>(properties::settings::default_settings().level()) == level::custom};
     xtd::forms::menu_item game_separator2_menu_item_ {"-"};
-    xtd::forms::menu_item game_marks_menu_item_ {"&Marks [?]", {[&](xtd::object& sender, const xtd::event_args& e) {
-      properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
-      properties::settings::default_settings().save();
-    }}, xtd::forms::menu_item_kind::check, properties::settings::default_settings().marks()};
-    xtd::forms::menu_item game_original_color_menu_item_ {"&Original color", {[&](xtd::object& sender, const xtd::event_args& e) {
-      properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());
-      properties::settings::default_settings().save();
-      update_colors();
-    }}, xtd::forms::menu_item_kind::check, properties::settings::default_settings().original_color()};
+    xtd::forms::menu_item game_marks_menu_item_ {"&Marks [?]", {[&](xtd::object & sender, const xtd::event_args & e) {
+        properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
+        properties::settings::default_settings().save();
+      }
+      }, xtd::forms::menu_item_kind::check, properties::settings::default_settings().marks()};
+    xtd::forms::menu_item game_original_color_menu_item_ {"&Original color", {[&](xtd::object & sender, const xtd::event_args & e) {
+        properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());
+        properties::settings::default_settings().save();
+        update_colors();
+      }
+      }, xtd::forms::menu_item_kind::check, properties::settings::default_settings().original_color()};
     xtd::forms::menu_item game_separator3_menu_item_ {"-"};
     xtd::forms::menu_item game_best_times_menu_item_ {"Best &times...", {[&] {high_scores_dialog().show_dialog(*this);}}};
     xtd::forms::menu_item game_separator4_menu_item_ {"-"};
@@ -97,7 +99,7 @@ namespace minesweeper {
     xtd::forms::menu_item help_about_menu_item_ {xtd::forms::system_texts::about(), {*this, &minesweeper_form::on_about_menu_click}};
     xtd::forms::menu_item help_menu_item_ {xtd::forms::system_texts::help(), {help_content_menu_item_, help_search_menu_item_, help_how_to_menu_item_, help_separator1_menu_item_, help_about_menu_item_}};
     xtd::forms::main_menu main_menu_ {game_menu_item_, help_menu_item_};
-
+    
     xtd::forms::timer stopwatch_timer_;
     grid_size grid_size_ {9, 9};
     int mine_count_ = 0;

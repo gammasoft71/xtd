@@ -15,8 +15,8 @@ void test_(one_test_one_test_case, test_output) {
   std::stringstream ss;
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
-                "  SUCCEED one_test_one_test_case.test_case1\n"
-                "End 1 test from 1 test case ran.\n", ss.str());
+    "  SUCCEED one_test_one_test_case.test_case1\n"
+    "End 1 test from 1 test case ran.\n", ss.str());
 }
 
 void test_(one_test_one_test_case, test_result) {

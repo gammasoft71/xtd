@@ -65,7 +65,7 @@ namespace xtd {
       /// @param cursor A cursor that represents the mouse cursor. The default is cursor::none.
       /// @remarks Setting the current property changes the cursor currently displayed. The application may or may not continue to listen for mouse events. To signal that the application should not respond to mouse events during a long-running operation, use the application::use_wait_cursor property. In most cases, however, it's better to use a background thread to manage a long-running operation, and leave your user interface accessible to the user.
       static void current(const xtd::forms::cursor& cursor);
-
+      
       /// @brief Gets the handle of the cursor.
       /// @return An intptr_t that represents the cursor's handle.
       /// @remarks This is not a copy of the handle; do not destroy it.
@@ -84,7 +84,7 @@ namespace xtd {
       /// @param position A point that represents the cursor's position in screen coordinates.
       /// @remarks The position property is identical to the control::mouse_position property.
       static void position(const drawing::point& position);
-
+      
       /// @brief Gets the size of the cursor object.
       /// @return A size that represents the width and height of the cursor.
       drawing::size size() const {return data_->size_;}
@@ -118,7 +118,7 @@ namespace xtd {
       /// @return A new cursor instance.
       /// @remarks The hot spot location is top left (0, 0).
       static cursor from_bitmap(const xtd::drawing::bitmap& bitmap) {return from_bitmap(bitmap, {});}
-
+      
       /// @brief Hides the cursor.
       /// @brief The show and hide method calls must be balanced. For every call to the hide method there must be a corresponding call to the show method.
       static void hide();
@@ -137,12 +137,12 @@ namespace xtd {
       bool operator==(const cursor& value) const {return data_ == value.data_;}
       bool operator!=(const cursor& value) const {return !operator==(value);}
       /// @endcond
-
+      
     private:
       friend class xtd::forms::cursors;
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
       cursor(intptr_t handle, bool destroyable, const xtd::ustring& name);
-
+      
       struct data {
         intptr_t handle_ = 0;
         bool destroyable_ = true;

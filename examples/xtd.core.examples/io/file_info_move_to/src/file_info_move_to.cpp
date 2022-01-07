@@ -63,12 +63,10 @@ private:
   static void ensure_source_file_exists() {
     file_info f_info(source_path);
     ustring dir_path = f_info.directory().full_name();
-    if (!directory::exists(dir_path)) {
+    if (!directory::exists(dir_path))
       directory::create_directory(dir_path);
-    }
-    if (file::exists(dest_path)) {
+    if (file::exists(dest_path))
       file::remove(dest_path);
-    }
     console::write("Creating file ");
     console::write(f_info.full_name());
     console::write_line(".");
@@ -89,9 +87,8 @@ private:
   static void write_file_content(int total_element) {
     vector<ustring> lines;
     lines.push_back("<?xml version=\"1.0\" standalone=\"yes\"?>");
-    for (int index  = 0; index < total_element; ++index) {
+    for (int index  = 0; index < total_element; ++index)
       lines.push_back(ustring::format("<MyElement Index=\"{0}\">\nMyElement at position {0}.", index));
-    }
     file::write_all_lines(source_path, lines);
   }
   
@@ -112,9 +109,8 @@ private:
       console::write_line("file contents:");
       console::write_line();
       stream_reader reader(f_info.full_name());
-      while (!reader.end_of_stream()) {
+      while (!reader.end_of_stream())
         console::write_line(reader.read_line());
-      }
       console::write_line();
     } catch (const system_exception& ex) {
       display_exception(ex);

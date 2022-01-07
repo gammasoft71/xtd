@@ -43,7 +43,7 @@ namespace xtd {
       /// @brief Get async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
-
+      
       /// @brief Gets an object that contains data about the control.
       /// @return The object that contains data about the common_dialog.
       /// @remarks Use this property to store arbitrary information about the control.
@@ -64,7 +64,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// Inheriting classes can override this method to reset their properties.
       virtual void reset() = 0;
-
+      
       /// @brief Runs a common dialog box with a default owner.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks This method implements run_dialog.
@@ -108,7 +108,7 @@ namespace xtd {
         return dialog_result_;
       }
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -116,7 +116,7 @@ namespace xtd {
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<common_dialog, help_event_handler> help_request;
-
+      
       /// @brief Occurs when the user close a common dialog box with dialog close button or other dialog buttons.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -136,7 +136,7 @@ namespace xtd {
         dialog_result_ = e.dialog_result();
         dialog_closed(*this, e);
       }
-
+      
       /// @brief Raises the common_dialog::help_request event.
       /// @param e An help_event_args that provides the event data.
       /// @remarks This method is invoked when the Help button is clicked. Inheriting classes can override this method to handle the event.
@@ -152,7 +152,7 @@ namespace xtd {
       /// @return true if the dialog box was successfully run; otherwise, false.
       /// @remarks The result will done in async. Check result_dialog property after dialog box closed to obtain the result.
       virtual void run_sheet(intptr_t hwnd_owner) = 0;
-
+      
       /// @brief Set async dialog_result result after dialog box is closing.
       /// @param value ok if the user clicks OK in the dialog box; otherwise, cancel.
       void set_dialog_result(xtd::forms::dialog_result value) {dialog_result_ = value;}

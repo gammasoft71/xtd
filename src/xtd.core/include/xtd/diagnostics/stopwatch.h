@@ -29,10 +29,10 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to use the xtd::diagnostics::stopwatch class to determine the execution time for an application.
     /// @include stopwatch.cpp
-    class core_export_ stopwatch : public xtd::object{
+    class core_export_ stopwatch : public xtd::object {
     public:
       /// @name Constructors
-
+      
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::stopwatch class.
       /// @remarks The returned xtd::diagnostics::stopwatch instance is stopped, and the xtd::diagnostics::stopwatch::elapsed time property of the instance is zero.
@@ -49,7 +49,7 @@ namespace xtd {
       /// @endcond
       
       /// @name Properties
-
+      
       /// @{
       /// @brief Gets the frequency of the timer as the number of nanoseconds per second. This field is read-only.
       /// @return The frequency of the timer as the number of nanoseconds per second.
@@ -82,14 +82,14 @@ namespace xtd {
       /// The following example demonstrates how to use the xtd::diagnostics::stopwatch class to determine the execution time for an application.
       /// @include stopwatch.cpp
       int64_t elapsed_milliseconds() const;
-
+      
       /// @brief Gets the total elapsed time measured by the current instance, in nanoseconds.
       /// @return A long integer representing the total number of nanoseconds measured by the current instance.
       /// @remarks This property represents the number of elapsed nanoseconds in the underlying timer mechanism. A nanosecond is the smallest unit of time that the stopwatch timer can measure. Use the Frequency field to convert the ElapsedTicks value into a number of seconds.
       /// @remarks You can query the properties xtd::diagnostics::stopwatch::elapsed, xtd::diagnostics::stopwatch::elapsed_milliseconds, xtd::diagnostics::stopwatch::elapsed_ticks, and xtd::diagnostics::stopwatch::elapsed_nanoseconds while the xtd::diagnostics::stopwatch instance is running or stopped. The elapsed time properties steadily increase while the xtd::diagnostics::stopwatch is running; they remain constant when the instance is stopped.
       /// @remarks By default, the elapsed time value of a xtd::diagnostics::stopwatch instance equals the total of all measured time intervals. Each call to start begins counting at the cumulative elapsed time; each call to xtd::diagnostics::stopwatch::stop ends the current interval measurement and freezes the cumulative elapsed time value. Use the xtd::diagnostics::stopwatch::reset method to clear the cumulative elapsed time in an existing xtd::diagnostics::stopwatch instance.
       int64_t elapsed_nanoseconds() const;
-
+      
       /// @brief Gets the total elapsed time measured by the current instance, in timer ticks.
       /// @return A long integer representing the total number of timer ticks measured by the current instance.
       /// @remarks This property represents elapsed time rounded down to the nearest whole nanoseconds value. For higher precision measurements, use the xtd::diagnostics::stopwatch::elapsed_nanoseconds property.
@@ -107,7 +107,7 @@ namespace xtd {
       /// @}
       
       /// @name Methods
-
+      
       /// @{
       /// @brief Gets the current number of nanoseconds in the timer mechanism.
       /// @return A long integer representing the nanosecond counter value of the underlying timer mechanism.

@@ -195,7 +195,7 @@ color control_paint::average(const color& color1, const color& color2, double we
 }
 
 color control_paint::dark(const xtd::drawing::color& base_color) {
-  return dark(base_color, 1.0/3);
+  return dark(base_color, 1.0 / 3);
 }
 
 color control_paint::dark(const color& base_color, double perc_of_dark_dark) {
@@ -211,7 +211,7 @@ void control_paint::draw_button(const forms::control& control, drawing::graphics
 }
 
 void control_paint::draw_button(const forms::control& control, drawing::graphics& graphics, int32_t x, int32_t y, int32_t width, int32_t height, button_state state) {
-  
+
 }
 
 void control_paint::draw_border(const forms::control& control, drawing::graphics& graphics, border_style border, border_sides sides, const drawing::color& color, const rectangle& rect) {
@@ -219,32 +219,32 @@ void control_paint::draw_border(const forms::control& control, drawing::graphics
 }
 
 void control_paint::draw_border(const forms::control& control, drawing::graphics& graphics, border_style border, border_sides sides, const drawing::color& color, const rectangle& rect, bool light) {
-  auto percent_of_color = 2.0/3;
+  auto percent_of_color = 2.0 / 3;
   auto dark_color = dark(color, percent_of_color);
   auto light_color = color;
   auto border_rect = screen::from_control(control).high_resolution() ? rect : rectangle::inflate(rect,  drawing::size {-1, -1});
   
   switch (border) {
-    case border_style::none: break;
-    case border_style::fixed_single: draw_fixed_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-    case border_style::thin_sunken: draw_thin_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
-    case border_style::thin_raised: draw_thin_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
-    case border_style::bevel_sunken: draw_bevel_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
-    case border_style::bevel_raised: draw_bevel_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
-    case border_style::etched: draw_etched_border(graphics, sides, dark_color, light_color, border_rect); break;
-    case border_style::bump: draw_bump_border(graphics, sides, dark_color, light_color, border_rect); break;
-    case border_style::themed: draw_themed_border(graphics, sides, dark_color, light_color, border_rect); break;
-    case border_style::rounded_single: draw_rounded_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-    case border_style::dot_single: draw_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-    case border_style::dash_single: draw_dash_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-    case border_style::dash_dot_single: draw_dash_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-    case border_style::dash_dot_dot_single: draw_dash_dot_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
-    case border_style::fixed_double: draw_fixed_double_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+  case border_style::none: break;
+  case border_style::fixed_single: draw_fixed_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+  case border_style::thin_sunken: draw_thin_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
+  case border_style::thin_raised: draw_thin_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
+  case border_style::bevel_sunken: draw_bevel_sunken_border(graphics, sides, dark_color, light_color, border_rect); break;
+  case border_style::bevel_raised: draw_bevel_raised_border(graphics, sides, dark_color, light_color, border_rect); break;
+  case border_style::etched: draw_etched_border(graphics, sides, dark_color, light_color, border_rect); break;
+  case border_style::bump: draw_bump_border(graphics, sides, dark_color, light_color, border_rect); break;
+  case border_style::themed: draw_themed_border(graphics, sides, dark_color, light_color, border_rect); break;
+  case border_style::rounded_single: draw_rounded_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+  case border_style::dot_single: draw_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+  case border_style::dash_single: draw_dash_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+  case border_style::dash_dot_single: draw_dash_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+  case border_style::dash_dot_dot_single: draw_dash_dot_dot_single_border(graphics, sides, dark_color, light_color, border_rect, light); break;
+  case border_style::fixed_double: draw_fixed_double_border(graphics, sides, dark_color, light_color, border_rect, light); break;
   }
 }
 
 void control_paint::draw_border_from_back_color(const forms::control& control, drawing::graphics& graphics, border_style border, border_sides sides, const color& back_color, const rectangle& rect) {
-  auto percent_of_color = back_color.is_dark() ? 1.0/3 : 2.0/3;
+  auto percent_of_color = back_color.is_dark() ? 1.0 / 3 : 2.0 / 3;
   draw_border(control, graphics, border, sides, light(back_color, percent_of_color), rect, back_color.is_dark());
 }
 
@@ -252,17 +252,17 @@ void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::draw
 
 
 void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::image_layout image_layout) {
-  if (image_layout == xtd::forms::image_layout::none) {
+  if (image_layout == xtd::forms::image_layout::none)
     graphics.draw_image(image, x, y);
-  } else if (image_layout == xtd::forms::image_layout::tile) {
+  else if (image_layout == xtd::forms::image_layout::tile) {
     for (int32_t offset_y = 0; offset_y < height; offset_y += image.size().height())
       for (int32_t offset_x = 0; offset_x < width; offset_x += image.size().width())
         graphics.draw_image(image, x + offset_x, y + offset_y);
-  } else if (image_layout == xtd::forms::image_layout::center) {
+  } else if (image_layout == xtd::forms::image_layout::center)
     graphics.draw_image(image, x + (width - image.width()) / 2, y + (height - image.height()) / 2);
-  } else if (image_layout == xtd::forms::image_layout::stretch) {
+  else if (image_layout == xtd::forms::image_layout::stretch)
     graphics.draw_image(image, x, y, width, height);
-  } else if (image_layout == xtd::forms::image_layout::zoom) {
+  else if (image_layout == xtd::forms::image_layout::zoom) {
     auto target_ratio = as<float>(width) / height;
     auto image_ratio = as<float>(image.width()) / image.height();
     auto ratio = target_ratio > image_ratio ? as<float>(height) / image.height() : as<float>(width) / image.width();
@@ -288,7 +288,7 @@ void control_paint::draw_image_disabled(xtd::drawing::graphics& graphics, const 
 }
 
 xtd::drawing::color control_paint::light(const xtd::drawing::color& base_color) {
-  return light(base_color, 1.0/3);
+  return light(base_color, 1.0 / 3);
 }
 
 xtd::drawing::color control_paint::light(const xtd::drawing::color& base_color, double perc_of_light_light) {

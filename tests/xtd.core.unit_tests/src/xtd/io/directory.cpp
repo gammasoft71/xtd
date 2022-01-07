@@ -34,7 +34,7 @@ namespace unit_tests {
       directory::create_directory(path::combine(test_path, "directory"));
       directory_assert::exists(path::combine(test_path, "directory"), csf_);
     }
-
+    
     void test_method_(create_directory_with_three_directories) {
       directory_assume::does_not_exist(path::combine(test_path, "directory1", "directory2", "directory3"), csf_);
       directory::create_directory(path::combine(test_path, "directory1", "directory2", "directory3"));
@@ -42,15 +42,15 @@ namespace unit_tests {
     }
     
     void test_method_(create_directory_with_empty_path) {
-      assert::throws<argument_exception>([]{directory::create_directory("");}, csf_);
+      assert::throws<argument_exception>([] {directory::create_directory("");}, csf_);
     }
     
     void test_method_(create_directory_with_path_that_contains_spaces) {
-      assert::throws<argument_exception>([]{directory::create_directory("   ");}, csf_);
+      assert::throws<argument_exception>([] {directory::create_directory("   ");}, csf_);
     }
     
     void test_method_(create_directory_with_path_that_contains_invalid_characters) {
-      assert::throws<argument_exception>([]{directory::create_directory("direct<ory1");}, csf_);
+      assert::throws<argument_exception>([] {directory::create_directory("direct<ory1");}, csf_);
     }
     
     void test_method_(create_directory_with_path_too_long) {
@@ -63,9 +63,9 @@ namespace unit_tests {
       // Linux :
       //   #define PATH_MAX 4096 /* # chars in a path name including nul */
       //   #define NAME_MAX  255 /* max bytes in a file name */
-      assert::throws<path_too_long_exception>([]{directory::create_directory("directory"_s + ustring(260, '1'));}, csf_);
+      assert::throws<path_too_long_exception>([] {directory::create_directory("directory"_s + ustring(260, '1'));}, csf_);
     }
   };
-
+  
   const ustring test_directory::test_path = path::combine(path::get_temp_path(), "test_directory");
 }

@@ -28,7 +28,7 @@ ip_address::ip_address(const vector<byte_t>& address) {
   
   if (address.size() == 4) {
     address_family_ = sockets::address_family::inter_network;
-    address_ = ((address[3] << 24 | address[2] <<16 | address[1] << 8| address[0]) & 0x0FFFFFFFF);
+    address_ = ((address[3] << 24 | address[2] << 16 | address[1] << 8 | address[0]) & 0x0FFFFFFFF);
   }
   
   if (address.size() == 16) {
@@ -42,11 +42,11 @@ ip_address::ip_address(const vector<byte_t>& address, uint32_t scope_id) : addre
   if (address.size() != 16) throw argument_exception(csf_);
   
   scope_id_ = scope_id;
-   for (auto index = 0U; index < number_of_numbers_; index++)
+  for (auto index = 0U; index < number_of_numbers_; index++)
     numbers_[index] = (static_cast<int16_t>(address[index * 2]) << 8) + static_cast<int16_t>(address[(index * 2) + 1]);
 }
 
-ip_address::ip_address(byte_t quad_part_address1, byte_t quad_part_address2, byte_t quad_part_address3, byte_t quad_part_address4) : address_((quad_part_address4 << 24 | quad_part_address3 <<16 | quad_part_address2 << 8| quad_part_address1) & 0x0FFFFFFFF) {
+ip_address::ip_address(byte_t quad_part_address1, byte_t quad_part_address2, byte_t quad_part_address3, byte_t quad_part_address4) : address_((quad_part_address4 << 24 | quad_part_address3 << 16 | quad_part_address2 << 8 | quad_part_address1) & 0x0FFFFFFFF) {
 }
 
 ip_address::ip_address(const std::vector<uint16_t>& numbers, uint32_t scope_id) : numbers_(numbers), scope_id_(scope_id), address_family_(sockets::address_family::inter_network_v6) {
@@ -238,10 +238,9 @@ ip_address ip_address::parse(const ustring& str) {
 }
 
 ustring ip_address::to_string() const noexcept {
-  if (address_family_ == sockets::address_family::inter_network) {
+  if (address_family_ == sockets::address_family::inter_network)
     return ustring::join(".", get_address_bytes());
-  }
-  
+    
   ustring str;
   for (auto number : numbers_)
     str += ustring::format("{:x}:", number);

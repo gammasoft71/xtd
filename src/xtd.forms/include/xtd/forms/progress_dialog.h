@@ -29,7 +29,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the progress_dialog class.
       progress_dialog() = default;
       /// @}
-
+      
       /// @cond
       ~progress_dialog() {hide();}
       /// @endcond
@@ -40,7 +40,7 @@ namespace xtd {
       /// @brief Gets whether user has clicked on cancel button.
       /// @return true if user has clicked on cancel button; otherwise false.
       bool cancelled() const;
-
+      
       /// @brief Gets whether user has clicked on skip button.
       /// @return true if user has clicked on skip button; otherwise false.
       bool skipped() const;
@@ -66,7 +66,7 @@ namespace xtd {
       /// @param informations The information texts.
       /// @return Current progress_dialog instance.
       progress_dialog& informations(const std::vector<xtd::ustring>& informations);
-
+      
       /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
       /// @return tree is marquee; otherwise false. The default is false.
       bool marquee() const {return get_option(PROGDLG_MARQUEEPROGRESS);}
@@ -85,7 +85,7 @@ namespace xtd {
       /// @remarks A marquee-style progress indicator does not display progress; instead it indicates that an operation is occurring by moving the progress block across the progress bar.
       /// @remarks Since the marquee animation speed is a time period, setting the value to a higher number results in a slower speed and a lower number results in a faster speed.
       progress_dialog& marquee_animation_speed(size_t marquee_animation_speed);
-
+      
       /// @brief Gets the maximum value of the range of the control.
       /// @return The maximum value of the range. The default is 100.
       /// @remarks This property specifies the upper limit of the value property. When the value of the maximum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the maximum property, the progress bar is completely filled.
@@ -114,7 +114,7 @@ namespace xtd {
       /// @return Current progress_dialog instance.
       /// @remarks This property specifies the lower limit of the value property. When the value of the minimum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the minimum property, the progress bar is empty. To change the value of the progress bar, use the step property with the perform_step method, use the increment method, or set the value of the value property directly.
       progress_dialog& minimum(int32_t minimum);
-
+      
       /// @brief Gets a value that indicates whether cancel button is shown.
       /// @return true if cancel button shown; otherwise false. By default false.
       bool show_cancel_button() const {return !get_option(PROGDLG_NOCANCEL);}
@@ -138,7 +138,7 @@ namespace xtd {
       /// @param show_estimated_time true if estimated time is shown; otherwise false. By default false.
       /// @return Current progress_dialog instance.
       progress_dialog& show_estimated_time(bool show_estimated_time);
-
+      
       /// @brief Gets a value that indicates whether remaining time is shown.
       /// @return true if remaining time is shown; otherwise false. By default false.
       bool show_remaining_time() const {return !get_option(PROGDLG_AUTOTIME);}
@@ -146,7 +146,7 @@ namespace xtd {
       /// @param show_remaining_time true if remaining time is shown; otherwise false. By default false.
       /// @return Current progress_dialog instance.
       progress_dialog& show_remaining_time(bool show_remaining_time);
-
+      
       /// @brief Gets a value that indicates whether skip button is shown.
       /// @return true if skip button shown; otherwise false. By default false.
       bool show_skip_button() const {return !get_option(PROGDLG_NOSKIP);}
@@ -154,7 +154,7 @@ namespace xtd {
       /// @param show_skip_button true if skip button is shown; otherwise false. By default false.
       /// @return Current progress_dialog instance.
       progress_dialog& show_skip_button(bool show_skip_button);
-
+      
       /// @brief Gets the amount by which a call to the PerformStep() method increases the current position of the progress bar.
       /// @return The amount by which to increment the progress bar with each call to the perform_step() method. The default is 10.
       /// @remarks You can use the step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
@@ -163,7 +163,7 @@ namespace xtd {
       /// @param step The amount by which to increment the progress bar with each call to the perform_step() method. The default is 10.
       /// @remarks You can use the step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
       virtual progress_dialog& step(int32_t step);
-
+      
       /// @brief Gets the dialog title.
       /// @return The dialog title.
       const xtd::ustring& text() const {return text_;}
@@ -177,7 +177,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets the current position of the progress bar.
       /// @return The position within the range of the progress bar. The default is 0.
       /// @remarks If the value specified is greater than the value of the maximum property, the value property is set to maximum.
@@ -191,13 +191,13 @@ namespace xtd {
       /// @remarks The minimum and maximum values of the value property are specified by the minimum and maximum properties. This property enables you to increment or decrement the value of the progress bar directly. To perform consistent increases in the value of the progress_bar control you can use the step property with the perform_step method. To increase the progress bar value by varying amounts, use the increment method.
       progress_dialog& value(int32_t value);
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       /// @brief Hides progress dialog box.
       void hide();
-
+      
       /// @brief Advances the current position of the progress bar by the specified amount.
       /// @param increment The amount by which to increment the progress bar's current position.
       /// @remarks The increment method enables you to increment the value of the progress bar by a specific amount. This method of incrementing the progress bar is similar to using the step property with the perform_step method. The value property specifies the current position of the progress_bar. If, after calling the increment method, the value property is greater than the value of the maximum property, the value property remains at the value of the maximum property. If, after calling the increment method with a negative value specified in the value parameter, the Value property is less than the value of the minimum property, the value property remains at the value of the minimum property.
@@ -207,13 +207,13 @@ namespace xtd {
       /// @brief Advances the current position of the progress bar by the amount of the Step property.
       /// @remarks The perform_step method increments the value of the progress bar by the amount specified by the step property. You can use the Step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
       void perform_step() {increment(step());}
-
+      
       /// @brief Resets all properties to empty string.
       void reset();
-
+      
       /// @brief Resume progress dialog box after Abort button clicked.
       void resume();
-
+      
       /// @brief Runs progress dialog box.
       void show();
       /// @brief Runs progress dialog box.
@@ -229,7 +229,7 @@ namespace xtd {
       /// @brief Runs progress dialog box.
       void show_sheet_dialog(const iwin32_window& owner);
       /// @}
-
+      
     private:
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
@@ -243,7 +243,7 @@ namespace xtd {
       xtd::ustring message_;
       int32_t minimum_ = 0;
       bool native_ = false;
-      size_t options_ = PROGDLG_NORMAL|PROGDLG_NOCANCEL|PROGDLG_NOSKIP;
+      size_t options_ = PROGDLG_NORMAL | PROGDLG_NOCANCEL | PROGDLG_NOSKIP;
       const iwin32_window* owner_ = nullptr;
       int32_t step_ = 10;
       xtd::ustring text_;

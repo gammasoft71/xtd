@@ -33,7 +33,7 @@ namespace xtd {
     virtual ~interface() = default;
     /// @endcond
   };
-
+  
   /// @brief This keyword is use to represent an interface.
   /// @par Library
   /// xtd.core
@@ -52,6 +52,6 @@ namespace xtd {
   ///   std:::string to_string() const override {return "foo";}
   /// };
   /// @endcode
-  #define interface_ \
-    : public xtd::interface
+#define interface_ \
+: public xtd::interface
 }

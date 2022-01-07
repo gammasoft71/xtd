@@ -11,7 +11,7 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test_bit_converter) {
-    public:
+  public:
     void test_method_(get_bytes_boolean) {
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(false)) {
         bytes_assert::are_equal(0, bytes, csf_);
@@ -21,7 +21,7 @@ namespace unit_tests {
         bytes_assert::are_equal(1, bytes, csf_);
       }
     }
-
+    
     void test_method_(get_bytes_char) {
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(' ')) {
         bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes, csf_);
@@ -51,7 +51,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0x7B, 0x00, 0x00, 0x00, bytes, csf_);
       }
     }
-
+    
     void test_method_(get_bytes_double) {
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(0.0)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
@@ -121,7 +121,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0x7F, bytes, csf_);
       }
     }
-
+    
     void test_method_(get_bytes_int16) {
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(static_cast<int16_t>(0))) {
         bytes_assert::are_equal(0x00, 0x00, bytes, csf_);
@@ -151,7 +151,7 @@ namespace unit_tests {
         bytes_assert::are_equal(0xFF, 0x7F, bytes, csf_);
       }
     }
-
+    
     void test_method_(get_bytes_int32) {
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(0)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, bytes, csf_);
@@ -284,7 +284,7 @@ namespace unit_tests {
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(1.23456789E+35f)) {
         bytes_assert::are_equal(0x1E, 0x37, 0xBE, 0x79, bytes, csf_);
       }
-
+      
       
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<float>::lowest())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0x7F, 0xFF, bytes, csf_);
@@ -327,11 +327,11 @@ namespace unit_tests {
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(static_cast<uint16_t>(0))) {
         bytes_assert::are_equal(0x00, 0x00, bytes, csf_);
       }
-            
+      
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<uint16_t>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, bytes, csf_);
       }
-
+      
       using_(vector<uint8_t> bytes = bit_converter::get_bytes(std::numeric_limits<uint16_t>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, bytes, csf_);
       }
@@ -398,7 +398,7 @@ namespace unit_tests {
     }
     
     void test_method_(to_boolean) {
-      assert::throws<out_of_range>([]{bit_converter::to_boolean({0}, 1);}, csf_);
+      assert::throws<out_of_range>([] {bit_converter::to_boolean({0}, 1);}, csf_);
       
       assert::is_false(bit_converter::to_boolean({0}, 0), csf_);
       assert::is_true(bit_converter::to_boolean({1}, 0), csf_);

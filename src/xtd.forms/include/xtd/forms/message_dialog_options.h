@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief The message box is displayed on the active desktop.
       service_notification = 0x00200000L
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, message_dialog_options value) {return os << to_string(value, {{message_dialog_options::default_desktop_only, "default_desktop_only"}, {message_dialog_options::right_align, "right_align"}, {message_dialog_options::rtl_reading, "rtl_reading"}, {message_dialog_options::service_notification, "service_notification"}});}
     inline std::wostream& operator<<(std::wostream& os, message_dialog_options value) {return os << to_string(value, {{message_dialog_options::default_desktop_only, L"default_desktop_only"}, {message_dialog_options::right_align, L"right_align"}, {message_dialog_options::rtl_reading, L"rtl_reading"}, {message_dialog_options::service_notification, L"service_notification"}});}

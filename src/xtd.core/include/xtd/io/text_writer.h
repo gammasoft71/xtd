@@ -19,7 +19,7 @@ namespace xtd {
     class null_text_writer;
     class synchronized_text_writer;
     /// @endcond
-
+    
     /// @brief Represents a writer that can write a sequential series of characters.
     /// @code
     /// class core_export_ text_writer : public xtd::object
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief Sets the line terminator string used by the current text_writer.
       void new_line(const xtd::ustring& new_line) noexcept;
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param reader The TextReader object to synchronize.
       /// @return text_writer A thread-safe text_writer object.
       static synchronized_text_writer synchronised(text_writer& writer) noexcept;
-
+      
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
@@ -90,7 +90,7 @@ namespace xtd {
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
       void write(int8_t value);
-
+      
       /// @brief Writes the specified int16_t value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
@@ -125,14 +125,14 @@ namespace xtd {
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
       void write(uint64_t value);
-
+      
       /// @brief Writes the specified value_t value to the text stream.
       /// @tparam value_t The type of value to write.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
       template<typename value_t>
       void write(value_t value) {write(xtd::ustring::format("{}", value));}
-
+      
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write with format
@@ -203,14 +203,14 @@ namespace xtd {
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
       void write_line(uint64_t value);
-
+      
       /// @brief Writes the specified value_t value and new line to the text stream.
       /// @tparam value_t The type of value to write.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
       template<typename value_t>
       void write_line(value_t value) {write_line(xtd::ustring::format("{}", value));}
-
+      
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write with format.
@@ -218,7 +218,7 @@ namespace xtd {
       template<typename ... args_t>
       void write_line(const xtd::ustring& fmt, args_t&& ... args) noexcept {write_line(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       
@@ -226,7 +226,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::io::text_writer class.
       text_writer() = default;
       /// @}
-
+      
     private:
       xtd::ustring new_line_ = "\n";
     };

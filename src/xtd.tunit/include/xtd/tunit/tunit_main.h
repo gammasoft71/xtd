@@ -14,4 +14,4 @@ public:
 /// @endcond
 
 #define tunit_main_ \
-__tunit_main
+  __tunit_main

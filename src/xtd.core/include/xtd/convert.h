@@ -236,11 +236,11 @@ namespace xtd {
     static std::any to_any(type_t value) {
       try {
         return std::any(value);
-      } catch(...) {
+      } catch (...) {
         throw xtd::invalid_cast_exception(csf_);
       }
     }
-
+    
     /// @brief Convert std::any to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.

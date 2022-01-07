@@ -39,7 +39,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the list_box class.
       list_box();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -91,7 +91,7 @@ namespace xtd {
       /// @remarks For a multiple-selection list_box, this property returns a collection containing the indexes to all items that are selected in the list_box. For a single-selection ListBox, this property returns a collection containing a single element containing the index of the only selected item in the list_box. For more information about how to manipulate the items of the collection, see list_box::selected_index_collection.
       /// @remarks The list_box class provides a number of ways to reference selected items. Instead of using the selected_indices property to obtain the index position of the currently selected item in a single-selection list_box, you can use the selected_index property. If you want to obtain the item that is currently selected in the list_box, instead of the index position of the item, use the selected_item property. In addition, you can use the selected_items property if you want to obtain all the selected items in a multiple-selection list_box.
       virtual selected_index_collection selected_indices() const;
-
+      
       /// @brief Gets the currently selected item in the list_box.
       /// @return An object that represents the current selection in the control.
       /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
@@ -119,7 +119,7 @@ namespace xtd {
       /// @return Current list_box.
       /// @remarks The selection_mode property enables you to determine how many items in the list_box a user can select at one time and how the user can make multiple-selections. When the selection_mode property is set to selection_mode::multi_extended, pressing SHIFT and clicking the mouse or pressing SHIFT and one of the arrow keys (UP ARROW, DOWN ARROW, LEFT ARROW, and RIGHT ARROW) extends the selection from the previously selected item to the current item. Pressing CTRL and clicking the mouse selects or deselects an item in the list. When the property is set to selection_mode::multi_simple, a mouse click or pressing the SPACEBAR selects or deselects an item in the list.
       virtual list_box& selection_mode(forms::selection_mode selection_mode);
-
+      
       /// @brief Gets a value indicating whether the items in the list_box are sorted alphabetically.
       /// @return true if items in the control are sorted; otherwise, false. The default is false.
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a list_box. As items are added to a sorted list_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
@@ -135,7 +135,7 @@ namespace xtd {
       /// @param text The text associated with this control.
       control& text(const xtd::ustring& text) override {return *this;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -164,7 +164,7 @@ namespace xtd {
       /// @brief Processes the mouse double-click message the list_box control receives from the top-level window.
       /// @param message The message the top-level window sent to the list_box control.
       virtual void wm_mouse_double_click(message& message);
-
+      
       /// @brief Processes the mouse down message the list_box control receives from the top-level window.
       /// @param message The message the top-level window sent to the list_box control.
       virtual void wm_mouse_down(message& message);

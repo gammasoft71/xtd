@@ -15,7 +15,7 @@ namespace unit_tests {
       assert::is_false(linger.enabled(), csf_);
       assert::is_zero(linger.linger_time(), csf_);
     }
-
+    
     void test_method_(constructor_wtih_enabled_and_linger_time) {
       linger_option linger(true, 5);
       assert::is_true(linger.enabled(), csf_);

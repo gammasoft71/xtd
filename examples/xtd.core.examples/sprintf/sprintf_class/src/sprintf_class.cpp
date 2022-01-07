@@ -9,7 +9,7 @@ public:
   
   const ustring& name() const noexcept {return name_;}
   const ustring& rank() const noexcept {return rank_;}
-
+  
   ustring to_string() const noexcept {return name_ + " (" + rank_ + ")";}
   
 private:
@@ -21,7 +21,7 @@ using characters = vector<character>;
 
 int main() {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
-    cout << ustring::sprintf("%s", c.to_string()) << endl;
+  cout << ustring::sprintf("%s", c.to_string()) << endl;
 }
 
 // This code produces the following output :

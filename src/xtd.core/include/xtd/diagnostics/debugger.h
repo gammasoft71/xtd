@@ -41,7 +41,7 @@ namespace xtd {
       /// @brief Gets a value that indicates whether a debugger is attached to the process.
       /// @return true if a debugger is attached; otherwise, false.
       static bool is_attached();
-
+      
       /// @brief Signals a breakpoint to an attached debugger.
       /// @par Examples
       /// The following code example demonstrates how to stop the debugger at the call to write_line.
@@ -50,17 +50,17 @@ namespace xtd {
       /// console::write_line("Hello, world.");
       /// @endcode
       static void debug_break();
-
+      
       /// @brief Checks to see if logging is enabled by an attached debugger.
       /// @return true if a debugger is attached and logging is enabled; otherwise, false.
       static bool is_logging();
-
+      
       /// @brief Launches and attaches a debugger to the process.
       /// @return true if the startup is successful or if the debugger is already attached; otherwise, false.
       /// @remarks If a debugger is already attached, nothing happens.
       /// @remarks Debugger launch is only supported on Windows. On Unix and macOS operating systems, the method returns true without launching a debugger.
       static bool launch();
-
+      
       /// @brief Posts a message for the attached debugger.
       /// @param level A description of the importance of the message.
       /// @param category The category of the message.

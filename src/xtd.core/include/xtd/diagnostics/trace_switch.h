@@ -41,7 +41,7 @@ namespace xtd {
       /// @remarks The display_name parameter is used to set the value of the xtd::diagnostics::trace_switch::display_name property, the description parameter is use to set the value of the xtd::diagnostics::trace_switch::description property, and the default_switch_value parameter is saved as a field and used to initialize the xtd::diagnostics::trace_switch::value property on first reference.
       trace_switch(const xtd::ustring& display_name, const xtd::ustring& description, const xtd::ustring& default_switch_value);
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -57,25 +57,25 @@ namespace xtd {
       /// @brief Gets a value indicating whether the switch allows error-handling messages.
       /// @return true if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::error, xtd::diagnostics::trace_level::warning, xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, false.
       bool trace_error() const;
-
+      
       /// @brief Gets a value indicating whether the switch allows informational messages.
       /// @return true if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, false.
       bool trace_info() const;
-
+      
       /// @brief Gets a value indicating whether the switch allows all messages.
       /// @return true if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::verbose; otherwise, false.
       bool trace_verbose() const;
-
+      
       /// @brief Gets a value indicating whether the switch allows warning messages.
       /// @return true if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::warning, xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, false.
       bool trace_warning() const;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
       /// @{
-      void on_switch_setting_changed() override;      
+      void on_switch_setting_changed() override;
       void on_value_changed() override;
       /// @}
     };

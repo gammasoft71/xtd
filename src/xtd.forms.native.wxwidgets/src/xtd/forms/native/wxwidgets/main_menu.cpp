@@ -43,10 +43,10 @@ void main_menu::destroy(intptr_t main_menu) {
 void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, const ustring& text) {
   if (main_menu == 0) throw argument_exception(csf_);
   if (menu_item == 0) throw argument_exception(csf_);
-
+  
   auto wx_main_menu = reinterpret_cast<wxMenuBar*>(main_menu);
   
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   // If the user doesn't have a "Window" menu and has a "Help" menu, the "Window" menu will be generated and
   // added automatically by macOS and added at the end of the menu.
   // Generally we want the last menu to be the "Help" menu, so we will create the "Window" menu so that
@@ -59,7 +59,7 @@ void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, 
     }
     if (!has_window_menu) wx_main_menu->Insert(pos++, new wxMenu, L"&Window"_t);
   }
-#endif
+  #endif
   
   wx_main_menu->Insert(pos, reinterpret_cast<wxMenu*>(menu_item), convert_string::to_wstring(text));
 }

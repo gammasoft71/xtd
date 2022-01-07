@@ -25,25 +25,25 @@ namespace xtd {
     static void language(const xtd::ustring& language);
     
     static std::vector<xtd::ustring> languages();
-
+    
     static xtd::ustring system_language();
     /// @}
-
+    
     /// @name Metthods
     
     /// @{
     static void add_value(const xtd::ustring& language, const xtd::ustring& key, const xtd::ustring& value);
     
     static void parse_locale(const xtd::ustring& locale_path);
-
+    
     static void parse_file(const xtd::ustring& file, const xtd::ustring& language);
-
+    
     static xtd::ustring translate(const xtd::ustring& value) {return translate(language(), value);}
     static xtd::ustring translate(const xtd::ustring& language, const xtd::ustring& value);
     static const char* translate(const char* value) {return translate(language(), value);}
     static const char* translate(const xtd::ustring& language, const char* value);
     /// @}
-
+    
   private:
     static void initialize();
     static std::map<xtd::ustring, xtd::collections::specialized::string_map> language_values_;

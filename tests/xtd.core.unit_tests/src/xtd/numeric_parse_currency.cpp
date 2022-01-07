@@ -58,18 +58,18 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_currency_with_two_leading_plus_sign) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("++42", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("++42", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_leading_minus_sign) {
       if (std::is_signed<Value>::value)
         assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("-42", number_styles::currency), csf_);
       else
-        assert::throws<format_exception>([]{xtd::parse<Value>("-42", number_styles::currency);}, csf_);
+        assert::throws<format_exception>([] {xtd::parse<Value>("-42", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_two_leading_minus_sign) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("--42", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("--42", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_trailing_plus_sign) {
@@ -77,29 +77,29 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_currency_with_two_trailing_plus_sign) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("42++", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("42++", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_trailing_minus_sign) {
       if (std::is_signed<Value>::value)
         assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("42-", number_styles::currency), csf_);
       else
-        assert::throws<format_exception>([]{xtd::parse<Value>("42-", number_styles::currency);}, csf_);
+        assert::throws<format_exception>([] {xtd::parse<Value>("42-", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_two_trailing_minus_sign) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("42--", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("42--", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_parentheses) {
       if (std::is_signed<Value>::value)
         assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("(42)", number_styles::currency), csf_);
       else
-        assert::throws<format_exception>([]{xtd::parse<Value>("(42)", number_styles::currency);}, csf_);
+        assert::throws<format_exception>([] {xtd::parse<Value>("(42)", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_two_parentheses) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("((42))", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("((42))", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_decimal_point) {
@@ -107,7 +107,7 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_currency_with_two_decimal_point) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("4.2.0", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("4.2.0", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_thousands) {
@@ -117,11 +117,11 @@ namespace unit_tests {
     
     void test_method_(parse_styles_currency_with_two_thousands) {
       if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
-        assert::throws<format_exception>([]{xtd::parse<Value>("1,,234", number_styles::currency);}, csf_);
+        assert::throws<format_exception>([] {xtd::parse<Value>("1,,234", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_exponent) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("4E+01", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("4E+01", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_leading_currency_symbol) {
@@ -131,9 +131,9 @@ namespace unit_tests {
     void test_method_(parse_styles_currency_with_trailing_currency_symbol) {
       assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42$", number_styles::currency), csf_);
     }
-
+    
     void test_method_(parse_styles_currency_with_binary_specifier) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("0b101010", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("0b101010", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_with_octal_specifier) {
@@ -141,11 +141,11 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_currency_with_hexa_specifier) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("0x2A", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("0x2A", number_styles::currency);}, csf_);
     }
     
     void test_method_(parse_styles_currency_invalid) {
-      assert::throws<format_exception>([]{xtd::parse<Value>("z42", number_styles::currency);}, csf_);
+      assert::throws<format_exception>([] {xtd::parse<Value>("z42", number_styles::currency);}, csf_);
     }
   };
 }

@@ -29,7 +29,7 @@ namespace xtd {
       return os;
     }
     /// @endcond
-
+    
   private:
     console_color color_;
   };

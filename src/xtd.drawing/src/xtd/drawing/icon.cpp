@@ -10,7 +10,7 @@ using namespace xtd::drawing;
 
 icon icon::empty;
 
-icon::icon(const ustring &filename) {
+icon::icon(const ustring& filename) {
   data_->handle_ = native::icon::create(filename);
 }
 

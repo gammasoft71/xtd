@@ -20,7 +20,7 @@ namespace unit_tests {
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
     }
-
+    
     void test_method_(start_stopwatch) {
       stopwatch s;
       s.start();
@@ -31,7 +31,7 @@ namespace unit_tests {
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
     }
-
+    
     void test_method_(start_start_stopwatch) {
       stopwatch s;
       s.start();
@@ -43,7 +43,7 @@ namespace unit_tests {
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
     }
-
+    
     void test_method_(stop_without_start_stopwatch) {
       stopwatch s;
       s.stop();
@@ -54,7 +54,7 @@ namespace unit_tests {
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
     }
-
+    
     void test_method_(start_stop_stopwatch) {
       stopwatch s;
       s.start();
@@ -66,7 +66,7 @@ namespace unit_tests {
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
     }
-
+    
     void test_method_(start_stop_reset_stopwatch) {
       stopwatch s;
       s.start();
@@ -79,7 +79,7 @@ namespace unit_tests {
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
     }
-
+    
     void test_method_(start_reset_stopwatch) {
       stopwatch s;
       s.start();
@@ -91,7 +91,7 @@ namespace unit_tests {
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
     }
-
+    
     void test_method_(reset_stopwatch) {
       stopwatch s;
       s.reset();
@@ -101,7 +101,7 @@ namespace unit_tests {
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
     }
-
+    
     void test_method_(restart_stopwatch) {
       stopwatch s;
       s.restart();
@@ -112,7 +112,7 @@ namespace unit_tests {
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
     }
-
+    
     void test_method_(start_new_stopwatch) {
       auto s = stopwatch::start_new();
       sleep_for(1ms);
@@ -122,7 +122,7 @@ namespace unit_tests {
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
     }
-
+    
     void test_method_(cumulative_elapsed_stopwatch) {
       stopwatch s;
       s.start();

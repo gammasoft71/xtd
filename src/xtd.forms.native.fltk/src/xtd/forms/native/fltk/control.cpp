@@ -124,7 +124,7 @@ void control::enabled(intptr_t control, bool enabled) {
   if (enabled)
     reinterpret_cast<control_handler*>(control)->control()->activate();
   else
-  reinterpret_cast<control_handler*>(control)->control()->deactivate();
+    reinterpret_cast<control_handler*>(control)->control()->deactivate();
 }
 
 void control ::focus(intptr_t control) {
@@ -165,7 +165,7 @@ drawing::point control::point_to_screen(intptr_t control, const drawing::point& 
   if (control == 0) return p;
   drawing::point screen = p + drawing::size(reinterpret_cast<control_handler*>(control)->control()->x(), reinterpret_cast<control_handler*>(control)->control()->y());
   Fl_Widget* parent = reinterpret_cast<control_handler*>(control)->control()->parent();
-  while(parent) {
+  while (parent) {
     screen = screen + drawing::size(parent->x(), parent->y());
     parent = parent->parent();
   }
@@ -176,7 +176,7 @@ drawing::point control::point_to_client(intptr_t control, const drawing::point& 
   if (control == 0) return p;
   drawing::point client = p - drawing::size(reinterpret_cast<control_handler*>(control)->control()->x(), reinterpret_cast<control_handler*>(control)->control()->y());
   Fl_Widget* parent = reinterpret_cast<control_handler*>(control)->control()->parent();
-  while(parent) {
+  while (parent) {
     client = client - drawing::size(parent->x(), parent->y());
     parent = parent->parent();
   }
@@ -223,13 +223,13 @@ void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool 
 
 void control::refresh(intptr_t control) {
   if (control == 0) return;
-
+  
   reinterpret_cast<control_handler*>(control)->control()->redraw();
 }
 
 void control::update(intptr_t control) {
   if (control == 0) return;
-
+  
   reinterpret_cast<control_handler*>(control)->control()->redraw();
 }
 

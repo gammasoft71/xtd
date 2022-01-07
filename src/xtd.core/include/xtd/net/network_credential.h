@@ -36,7 +36,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::net::network_credential class with the specified user name, password and domain.
       network_credential(const xtd::ustring& user_name, const xtd::ustring& password, const xtd::ustring& domain);
       /// @}
-
+      
       /// @cond
       network_credential(network_credential&& network_credential) = default;
       network_credential(const network_credential& network_credential) = default;
@@ -77,7 +77,7 @@ namespace xtd {
       /// @param value The user name associated with the credentials.
       network_credential& user_name(const xtd::ustring& value) noexcept;
       /// @}
-
+      
     private:
       xtd::ustring user_name_;
       xtd::security::secure_string password_;

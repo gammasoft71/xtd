@@ -55,7 +55,7 @@ private:
   //void on_test_aborted(const xtd::tunit::test_event_args& e) const override {
   //  event_listener::on_test_aborted(e);
   //}
-
+  
   void on_test_failed(const xtd::tunit::test_event_args& e) const override {
     event_listener::on_test_failed(e);
     cout << e.test().stack_frame().get_file_name() << ":" << e.test().stack_frame().get_file_line_number() << ": Failure" << endl;
@@ -68,11 +68,11 @@ private:
   //void on_test_ignored(const xtd::tunit::test_event_args& e) const override {
   //  event_listener::on_test_ignored(e);
   //}
-
+  
   //void on_test_end(const xtd::tunit::test_event_args& e) const override {
   //  event_listener::on_test_end(e);
   //}
-
+  
   //void on_test_cleanup_start(const xtd::tunit::test_event_args& e) const override {
   //  event_listener::on_test_cleanup_start(e);
   //}
@@ -80,7 +80,7 @@ private:
   //void on_test_cleanup_end(const xtd::tunit::test_event_args& e) const override {
   //  event_listener::on_test_cleanup_end(e);
   //}
- 
+  
   //void on_class_cleanup_start(const xtd::tunit::class_event_args& e) const override {
   //  event_listener::on_class_cleanup_start(e);
   //}
@@ -93,7 +93,7 @@ private:
     event_listener::on_class_end(e);
     cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms)" << endl;
   }
-
+  
   //void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const override {
   //  event_listener::on_unit_test_cleanup_start(e);
   //}
@@ -102,16 +102,15 @@ private:
     event_listener::on_unit_test_cleanup_end(e);
     cout << endl << "[----------] Global test environment tear-down" << endl;
   }
-
+  
   void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override {
     event_listener::on_unit_test_end(e);
     cout << "[==========] " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << endl;
     cout << "[  PASSED  ] " << e.unit_test().succeed_test_count() << " tests." << endl;
     if (e.unit_test().failed_test_count()) {
       cout << "[  FAILED  ] " << e.unit_test().failed_test_count() << " test, listed below:" << endl;
-      for(string name : e.unit_test().failed_test_names()) {
+      for (string name : e.unit_test().failed_test_names())
         cout << "[  FAILED  ] " << name << endl;
-      }
       cout << endl;
       cout << " " << e.unit_test().failed_test_count() << " FAILED TEST" << endl;
     }
@@ -131,14 +130,14 @@ namespace unit_tests {
   public:
     void test_method_(test_case1) {
     }
-
+    
     void test_method_(test_case2) {
     }
-
+    
     void test_method_(test_case3) {
       assert::is_true(false, "Your message...");
     }
-
+    
     void ignore_test_method_(test_case4) {
     }
   };

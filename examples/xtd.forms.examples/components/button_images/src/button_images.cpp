@@ -8,28 +8,28 @@ namespace examples {
     form1() {
       text("Button images example");
       client_size({310, 170});
-
+      
       button_ok.parent(*this);
       button_ok.image(button_images::ok());
       button_ok.image_align(content_alignment::middle_left);
       button_ok.text(system_texts::ok());
       button_ok.location({10, 10});
       button_ok.width(90);
-
+      
       button_apply.parent(*this);
       button_apply.image(button_images::apply());
       button_apply.image_align(content_alignment::middle_left);
       button_apply.text(system_texts::apply());
       button_apply.location({110, 10});
       button_apply.width(90);
-
+      
       button_cancel.parent(*this);
       button_cancel.image(button_images::cancel());
       button_cancel.image_align(content_alignment::middle_left);
       button_cancel.text(system_texts::cancel());
       button_cancel.location({210, 10});
       button_cancel.width(90);
-
+      
       button_yes.parent(*this);
       button_yes.image(button_images::yes());
       button_yes.image_align(content_alignment::middle_left);
@@ -43,7 +43,7 @@ namespace examples {
       button_no.text(system_texts::no());
       button_no.location({110, 50});
       button_no.width(90);
-
+      
       button_add.parent(*this);
       button_add.image(button_images::add());
       button_add.image_align(content_alignment::middle_left);
@@ -57,7 +57,7 @@ namespace examples {
       button_remove.text(system_texts::remove());
       button_remove.location({110, 90});
       button_remove.width(90);
-
+      
       button_previous.parent(*this);
       button_previous.image(button_images::previous());
       button_previous.image_align(content_alignment::middle_left);

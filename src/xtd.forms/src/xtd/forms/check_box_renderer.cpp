@@ -17,10 +17,10 @@ namespace {
   xtd::ustring get_hotkey_prefix_locations(const xtd::ustring& str, std::vector<size_t>& locations) {
     auto offset = 0U;
     for (auto index = 0U; index < str.size(); index++) {
-      if (str[index] == '&' && str[index+1] != '&') {
+      if (str[index] == '&' && str[index + 1] != '&')
         locations.push_back(index + offset);
-      } else if (str[index] == '&' && str[index+1] == '&') {
-        offset-=2;
+      else if (str[index] == '&' && str[index + 1] == '&') {
+        offset -= 2;
         ++index;
       }
     }
@@ -29,7 +29,7 @@ namespace {
       new_str = new_str.remove(locations[index], 1);
     return new_str;
   }
-
+  
   void draw_string(graphics g, const ustring& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
     vector<size_t> hotkey_prefix_locations;
     ustring text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
@@ -72,16 +72,16 @@ void check_box_renderer::draw_check_box_gnome_dark(graphics g, const rectangle& 
   auto button_color = control_paint::dark(background_color, 0.1);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
-
-  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed) {
+  
+  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed)
     button_color = control_paint::light(button_color, 0.1);
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
+  else if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     if (!back_color.has_value()) border_color = color::from_argb(90, 90, 90);
     text_color = mark_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
-
+  
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 16, 16};
   g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.15), button_color), button_rectangle, 3);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}), 3);
@@ -103,16 +103,16 @@ void check_box_renderer::draw_check_box_gnome_light(graphics g, const rectangle&
   auto button_color = control_paint::light(background_color, 0.25);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
-
-  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed) {
+  
+  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed)
     button_color = control_paint::dark(button_color, 0.1);
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
+  else if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::mixed_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     if (!back_color.has_value()) border_color = color::from_argb(90, 90, 90);
     text_color = mark_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
-
+  
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 16, 16};
   g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.5), button_color), button_rectangle, 3);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}), 3);
@@ -152,16 +152,16 @@ void check_box_renderer::draw_check_box_macos_dark(graphics g, const rectangle& 
   auto text_color = control_paint::light(foreground_color, 0.1);
   auto mark_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent_text(), 0.15);
   
-  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
+  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed)
     button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent(), 0.15);
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
     button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().button_face(), 0.7);
   }
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
-  if (state == xtd::forms::visual_styles::check_box_state::unchecked_normal || state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed ||state == xtd::forms::visual_styles::check_box_state::unchecked_disabled)
+  if (state == xtd::forms::visual_styles::check_box_state::unchecked_normal || state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::unchecked_disabled)
     g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {button_rectangle.x(), button_rectangle.top()}, point {button_rectangle.x(), button_rectangle.bottom()}, control_paint::dark(button_color, .5), button_color), button_rectangle, 4);
   else
     g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 4);
@@ -183,16 +183,16 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
   auto button_color = back_color.has_value() ? color::from_argb(128, xtd::forms::theme_colors::current_theme().control()) : xtd::forms::theme_colors::current_theme().button_face();
   auto text_color = foreground_color;
   auto mark_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent_text(), 0.15);
-
-  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
+  
+  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed)
     button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     border_color = mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
     button_color = back_color.has_value() ? color::from_argb(210, 255, 255, 255) : control_paint::dark(button_color, 0.04);
   }
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
-  if (state == xtd::forms::visual_styles::check_box_state::unchecked_normal || state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed ||state == xtd::forms::visual_styles::check_box_state::unchecked_disabled)
+  if (state == xtd::forms::visual_styles::check_box_state::unchecked_normal || state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::unchecked_disabled)
     g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, button_color, control_paint::light(button_color)), button_rectangle, 4);
   else
     g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 4);
@@ -206,7 +206,7 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
   if (image != image::empty && (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
-
+  
 }
 
 void check_box_renderer::draw_check_box_symbolic(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -221,18 +221,18 @@ void check_box_renderer::draw_check_box_symbolic_dark(graphics g, const rectangl
   auto button_color = control_paint::light(background_color, .05);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
-
-  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::mixed_normal) {
+  
+  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::mixed_normal)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot) {
-    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot) {
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0 / 3);
     button_color = control_paint::light(background_color, .1);
   } else if (state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
-    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0 / 3);
     button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
+  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
@@ -259,18 +259,17 @@ void check_box_renderer::draw_check_box_symbolic_light(graphics g, const rectang
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
   
-  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::mixed_normal) {
+  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::mixed_normal)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  }
   else if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot) {
-    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0 / 3);
     button_color = control_paint::dark(background_color, .1);
   } else if (state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
-    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0 / 3);
     button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
+  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
@@ -301,16 +300,16 @@ void check_box_renderer::draw_check_box_windows_dark(graphics g, const rectangle
   auto button_color = control_paint::light(background_color, .1);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
-
-  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
+  
+  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot)
     border_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed)
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     if (!back_color.has_value()) border_color = color::from_argb(90, 90, 90);
     text_color = mark_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
-
+  
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 14, 14};
   g.fill_rectangle(solid_brush(button_color), button_rectangle);
   g.draw_rectangle(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
@@ -332,16 +331,16 @@ void check_box_renderer::draw_check_box_windows_light(graphics g, const rectangl
   auto button_color = control_paint::light(background_color, .75);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().control_text();
-
-  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
+  
+  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot)
     border_color = mark_color = xtd::forms::theme_colors::current_theme().highlight();
-  }else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed)
     border_color = mark_color = xtd::forms::theme_colors::current_theme().highlight();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     if (!back_color.has_value()) border_color = xtd::forms::theme_colors::current_theme().gray_text();
     text_color = mark_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
-
+  
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 6, 12, 12};
   g.fill_rectangle(solid_brush(button_color), button_rectangle);
   g.draw_rectangle(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));

@@ -22,7 +22,7 @@ public:
     // Assign the log file specification from the command line, if entered.
     if (args.size() >= 2)
       default_listener->log_file_name(args[1]);
-    
+      
     // Validate the number of possibilities argument.
     if (args.size() >= 1) {
       // Verify that the argument is a number within the correct range.
@@ -69,7 +69,7 @@ public:
       console::write_line("{0} {1}", binomial, result);
     }
   }
-
+  
   static decimal calc_binomial(xtd::decimal possibilities, decimal outcomes) {
     // Calculate a binomial coefficient, and minimize the chance of overflow.
     decimal result = 1;

@@ -19,7 +19,7 @@ namespace xtd {
     class system_sound;
   }
   /// @endcond
-
+  
   /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only

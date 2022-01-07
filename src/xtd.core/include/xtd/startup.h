@@ -46,27 +46,27 @@ namespace xtd {
   /// @par
   /// This example show a main method with argument and return code
   /// @include main4.cpp
-  #define startup_(main_class) \
-    int main(int argc, char* argv[]) {\
-      try {\
-        struct startup final static_ {\
-          static int run(void (*main_function)(), int, char*[]) {main_function(); return xtd::environment::exit_code();}\
-          static int run(int (*main_function)(), int, char*[]) {return main_function();}\
-          static int run(void (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {main_function(argc, argv); return xtd::environment::exit_code();}\
-          static int run(void (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}\
-          static int run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}\
-          static int run(int (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {return main_function(argc, argv);}\
-          static int run(int (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}\
-          static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}\
-        };\
-        return startup::run(main_class::main, argc, argv);\
-      } catch(const xtd::system_exception& e) {\
-        __startup_catch_exception__(e);\
-      } catch(const std::exception& e) {\
-        __startup_catch_exception__(e);\
-      } catch(...) {\
-        __startup_catch_exception__();\
-      }\
+#define startup_(main_class) \
+  int main(int argc, char* argv[]) {\
+    try {\
+      struct startup final static_ {\
+        static int run(void (*main_function)(), int, char*[]) {main_function(); return xtd::environment::exit_code();}\
+        static int run(int (*main_function)(), int, char*[]) {return main_function();}\
+        static int run(void (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {main_function(argc, argv); return xtd::environment::exit_code();}\
+        static int run(void (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}\
+        static int run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}\
+        static int run(int (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {return main_function(argc, argv);}\
+        static int run(int (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}\
+        static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}\
+      };\
+      return startup::run(main_class::main, argc, argv);\
+    } catch(const xtd::system_exception& e) {\
+      __startup_catch_exception__(e);\
+    } catch(const std::exception& e) {\
+      __startup_catch_exception__(e);\
+    } catch(...) {\
+      __startup_catch_exception__();\
     }\
-    int __startup_force_to_end_with_semicolon__ = 0
+  }\
+  int __startup_force_to_end_with_semicolon__ = 0
 }

@@ -9,7 +9,7 @@ public:
     client_size({195, 75});
     minimize_box(false);
     text("Dialog");
-
+    
     ok_button.dialog_result(dialog_result::ok);
     ok_button.location({60, 40});
     ok_button.parent(*this);
@@ -31,6 +31,6 @@ int main() {
   button.click += [&] {
     dialog().show_dialog(form);
   };
-
+  
   application::run(form);
 }

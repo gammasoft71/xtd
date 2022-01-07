@@ -53,7 +53,7 @@ namespace xtd {
     /// @remarks The value of this field is 2.7182818284590451.
     static constexpr double tau = 2.7182818284590451;
     /// @}
-
+    
     /// @name Methods
     
     /// @{
@@ -71,7 +71,7 @@ namespace xtd {
     /// @param value A number in the range std::numeric_limit<float>::lowest() <= value <= std::numeric_limit<float>::max().
     /// @return A single-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<float>::max().
     static float abs(float value);
-
+    
     /// @brief Returns the absolute value of a 16-bit signed integer.
     /// @param value A number in the range std::numeric_limit<int16_t>::lowest() <= value <= std::numeric_limit<int16_t>::max().
     /// @return A 16-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int16_t>::max().
@@ -101,7 +101,7 @@ namespace xtd {
     /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<llong_t>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<llong_t>::lowest().
     static llong_t abs(llong_t value);
-
+    
     /// @brief Returns the angle whose cosine is the specified number.
     /// @param value A number representing a cosine, where -1 <= value <= 1.
     /// @return An angle, A, measured in radians, such that 0 <= A <= PI. -or- math::NaN if value < -1 or d > 1.
@@ -132,13 +132,13 @@ namespace xtd {
     /// * If x is negative and y is 0, A = -PI/2.
     /// @remarks The return value is the angle in the Cartesian plane formed by the x-axis, and a vector starting from the origin, (0,0), and terminating at the point, (x,y).
     static double atan2(double y, double x);
-
+    
     /// @brief Produces the full product of two 32-bit numbers.
     /// @param a The first int32 to multiply.
     /// @param b The second int32 to multiply.
     /// @return The int64 containing the product of the specified numbers.
     static int64_t big_mul(int32_t a, int32_t b);
-
+    
     /// @brief Returns the smallest integer greater than or equal to the specified double-precision floating-point number.
     /// @param value A double-precision floating-point number.
     /// @return The smallest integer greater than or equal to value. If value is equal to xtd::math::NaN, xtd::math::negative_infinity, or xtd::math::positive_infinity, that value is returned.
@@ -158,12 +158,12 @@ namespace xtd {
     /// @param value An angle, measured in radians.
     /// @return The hyperbolic cosine of value. If value is equal to xtd::math::negative_infinity() or xtd::math::positive_:infinity, xtd::math::positive_infinity is returned. If value is equal to xtd::math::NaN, xtd::math::NaN is returned.
     static double cosh(double value);
-
+    
     /// @brief Convert degrees to radians.
     /// @param degrees A double-precision floating-point number.
     /// @return A converted degrees from radians.
     static double degrees_to_radians(double degrees);
-
+    
     /// @brief Calculates the quotient of two 32-bit signed integers and also returns the remainder in an output parameter.
     /// @param dividend The dividend.
     /// @param divisor The divisor.
@@ -177,7 +177,7 @@ namespace xtd {
     /// @param remainder An angle, measured in radians.
     /// @return The remainder.
     static int64_t div_rem(int64_t dividend, int64_t divisor, int64_t& remainder);
-
+    
     /// @brief Returns e raised to the specified power.
     /// @param value A number specifying a power.
     /// @return The number e raised to the power d. If value equals xtd::math::NaN or xtd::math::positive_infinity, that value is returned. If value equals xtd::math::negative_infinity, 0 is returned.
@@ -200,7 +200,7 @@ namespace xtd {
     /// * If x - (y Q) is zero, the value +0 is returned if x is positive, or -0 if x is negative.
     /// * If y = 0, xtd::math::NaN is returned.
     static double ieee_remainder(double dividend, double divisor);
-
+    
     /// @brief Returns a value indicating whether the specified number evaluates to negative or positive infinity.
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, false.
@@ -210,17 +210,17 @@ namespace xtd {
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to xtd::math::negative_infinity; otherwise, false.
     static bool is_negative_infinity(double value);
-
+    
     /// @brief Returns a value indicating whether the specified number evaluates to positive infinity.
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to xtd::math::positive_infinity; otherwise, false.
     static bool is_positive_infinity(double value);
-
+    
     /// @brief Returns a value indicating whether the specified number evaluates to not a number.
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to not a number; otherwise, false.
     static bool is_NaN(double value);
-
+    
     /// @brief Returns the natural (base e) logarithm of a specified number.
     /// @param value A number whose logarithm is to be found.
     /// @return One of the values in the following table.
@@ -268,7 +268,7 @@ namespace xtd {
     /// | Equal to xtd::math::positive_infinity | xtd::math::positive_infinity                                  |
     /// @remarks Parameter value is specified as a base 10 number.
     static double log10(double value);
-
+    
     /// @brief Returns the larger of two 8-bit unsigned integers.
     /// @param a The first of two 8-bit unsigned integers to compare.
     /// @param b The second of two 8-bit unsigned integers to compare.
@@ -310,7 +310,7 @@ namespace xtd {
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static llong_t max(llong_t a, llong_t b);
-
+    
     /// @brief Returns the larger of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
@@ -346,7 +346,7 @@ namespace xtd {
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static ullong_t max(ullong_t a, ullong_t b);
-
+    
     /// @brief Returns the smaller of two 8-bit unsigned integers.
     /// @param a The first of two 8-bit unsigned integers to compare.
     /// @param b The second of two 8-bit unsigned integers to compare.
@@ -388,7 +388,7 @@ namespace xtd {
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static llong_t min(llong_t a, llong_t b);
-
+    
     /// @brief Returns the smaller of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
@@ -424,7 +424,7 @@ namespace xtd {
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static ullong_t min(ullong_t a, ullong_t b);
-
+    
     /// @brief Returns a specified number raised to the specified power.
     /// @param x A double-precision floating-point number to be raised to a power.
     /// @param y A double-precision floating-point number that specifies a power.
@@ -449,12 +449,12 @@ namespace xtd {
     /// | x = math::positive_infinity; y < 0                                                                               | 0                       |
     /// | x = math::positive_infinity; y > 0.                                                                              | math::positive_infinity |
     static double pow(double x, double y);
-
+    
     /// @brief Convert radians to degrees.
     /// @param radians A double-precision floating-point number.
     /// @return A converted radians from degrees.
     static double radians_to_degrees(double radians);
-
+    
     /// @brief Rounds a double-precision floating-point value to the nearest integral value.
     /// @param value A double-precision floating-point number to be rounded.
     /// @return The integer nearest value. If the fractional component of a is halfway between two integers, one of which is even and the other odd, then the even number is returned. Note that this method returns a double instead of an integral type.
@@ -476,7 +476,7 @@ namespace xtd {
     /// @param decimals The number of decimal places in the return value.
     /// @return The number nearest to d that contains a number of fractional digits equal to decimals.
     static double round(double value, int32_t decimals);
-
+    
     /// @brief Returns a value indicating the sign of a double-precision floating-point number.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
@@ -538,7 +538,7 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     static int32_t sign(llong_t value);
-
+    
     /// @brief Returns a value indicating the sign of an 8-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
@@ -569,7 +569,7 @@ namespace xtd {
     /// @param value An angle, measured in radians.
     /// @return double The sine of a. If a is equal to math::NaN, math::negative_infinity, or math::positive_infinity, this method returns math::NaN.
     static double sinh(double value);
-
+    
     /// @brief Returns the square root of a specified number.
     /// @param value The number whose square root is to be found.
     /// @return One of the values in the following table.

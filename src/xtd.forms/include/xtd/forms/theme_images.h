@@ -18,13 +18,13 @@ namespace xtd {
       /// @{
       using image_getter = xtd::delegate<xtd::drawing::image(const xtd::ustring& name, const xtd::drawing::size& size)>;
       /// @}
-
+      
       /// @name Fieds
       
       /// @{
       static const theme_images empty;
       /// @}
-
+      
       /// @name Constructors
       
       /// @{
@@ -44,10 +44,10 @@ namespace xtd {
       
       /// @{
       static theme_images default_theme() {return theme_from_name(default_theme_name());}
-
+      
       static xtd::drawing::size default_size() {return {32, 32};}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -61,7 +61,7 @@ namespace xtd {
       static void current_theme(const xtd::ustring& name) {current_theme(theme_from_name(name));}
       
       static theme_images theme_from_name(const xtd::ustring& theme_name);
-
+      
       xtd::drawing::image from_name(const xtd::ustring& name) const {return from_name(name, default_size());}
       xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size) const {return image_getter_(name, size);}
       /// @}

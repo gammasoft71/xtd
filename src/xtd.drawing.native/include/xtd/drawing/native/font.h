@@ -18,7 +18,7 @@ namespace xtd {
     /// @cond
     class font;
     /// @endcond
-
+    
     /// @brief The xtd::drawing::native namespace contains internal native API definitions to access underlying toolkits used by xtd.drawing library.
     /// @warning Internal use only
     namespace native {

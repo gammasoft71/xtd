@@ -10,7 +10,7 @@ public:
     location({400, 200});
     start_position(form_start_position::manual);
     text("Message dialog (show sheet) exemple");
-
+    
     button_show_message.location({10, 10});
     button_show_message.text("Message...");
     button_show_message.width(100);
@@ -20,7 +20,7 @@ public:
       dialog->message("Hello, World!");
       dialog->buttons(xtd::forms::message_dialog_buttons::ok_cancel);
       dialog->icon(xtd::forms::message_dialog_icon::warning);
-      dialog->dialog_closed += [this, dialog](object& sender, const dialog_closed_event_args& e) {
+      dialog->dialog_closed += [this, dialog](object & sender, const dialog_closed_event_args & e) {
         label_dialog_result.text(ustring::format("dialog_result = {}", e.dialog_result()));
       };
       dialog->show_sheet(*this);

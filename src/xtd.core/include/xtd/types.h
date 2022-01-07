@@ -38,7 +38,7 @@ public:
   bool operator>(char c) const {return value_ > c;}
   bool operator<=(char c) const {return value_ <= c;}
   bool operator>=(char c) const {return value_ >= c;}
-
+  
   friend std::ostream& operator <<(std::ostream& os, const char8_t& c) noexcept {return os << std::to_string(static_cast<int32_t>(c.value_));}
   
 private:
@@ -46,7 +46,7 @@ private:
 };
 
 namespace std {
-  using u8string=basic_string<char8_t>;
+  using u8string = basic_string<char8_t>;
 }
 #endif
 /// @endcond
@@ -63,15 +63,15 @@ namespace xtd {
   using ushort_t = unsigned short;
   using ulong_t = unsigned long;
   
-#if defined(__linux__) && defined(_LP64)
+  #if defined(__linux__) && defined(_LP64)
   using llong_t = long long int;
   using ullong_t = unsigned long long int;
-#else
+  #else
   using llong_t = long;
   using ullong_t = unsigned long;
-#endif
+  #endif
   /// @endcond
-
+  
   /// @brief Represents a 8-bit unsigned integer.
   /// @par Namespace
   /// xtd
@@ -95,7 +95,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   using char16 = char16_t;
-
+  
   /// @brief Represents a 32-bit unicode character.
   /// @par Namespace
   /// xtd

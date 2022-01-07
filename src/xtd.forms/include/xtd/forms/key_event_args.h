@@ -35,7 +35,7 @@ namespace xtd {
       key_event_args(const xtd::forms::key_event_args& key_event_args) = default;
       key_event_args& operator=(const xtd::forms::key_event_args& key_event_args) = default;
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -63,7 +63,7 @@ namespace xtd {
       /// @brief Gets the keyboard code for a key_down or key_up event.
       /// @return A xtd::forms::keys value that is the key code for the event.
       keys key_code() const {return key_data_ & xtd::forms::keys::key_code;}
- 
+      
       /// @brief Gets the key data for a key_down or key_up event.
       /// @return A xtd::forms::keys representing the key code for the key that was pressed, combined with modifier flags that indicate which combination of CMD, CTRL, SHIFT, and ALT keys was pressed at the same time.
       /// @remarks You can use constants from Keys to extract information from the key_data property. Use the bitwise AND operator to compare data returned by key_data with constants in Keys to obtain information about which keys the user pressed. To determine whether a specific modifier key was pressed, use the command, control, shift, and alt properties.
@@ -72,7 +72,7 @@ namespace xtd {
       /// @brief Gets the keyboard value for a key_down or key_up event.
       /// @return The integer representation of the key_code property.
       int key_value() const {return static_cast<int>(key_data_) & 0xFFFF;}
-
+      
       /// @brief Gets the modifier flags for a key_down or key_up event. The flags indicate which combination of CMD, CTRL, SHIFT, and ALT keys was pressed.
       /// @return A xtd::forms::keys value representing one or more modifier flags.
       keys modifiers() const {return key_data_ & xtd::forms::keys::modifiers;}

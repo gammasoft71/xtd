@@ -18,7 +18,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-
+    
     using form_closed_event_handler = delegate<void(object& sender, const form_closed_event_args& e)>;
   }
 }

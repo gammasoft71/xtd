@@ -9,7 +9,7 @@ namespace examples {
       // Write arguments to the console output
       for (ustring arg : environment::get_command_line_args())
         console::write_line(arg);
-
+        
       // return 42
       environment::exit_code(42);
     }

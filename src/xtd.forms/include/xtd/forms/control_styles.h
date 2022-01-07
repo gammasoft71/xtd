@@ -64,7 +64,7 @@ namespace xtd {
       /// @brief Specifies that the value of the control's text property, if set, determines the control's default active accessibility name and shortcut key.
       use_text_for_accessibility = 0b1000000000000000000,
     };
-
+    
     /// @cond
     inline control_styles& operator +=(control_styles& lhs, control_styles rhs) {lhs = static_cast<control_styles>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
     inline control_styles& operator -=(control_styles& lhs, control_styles rhs) {lhs = static_cast<control_styles>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}

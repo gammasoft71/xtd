@@ -20,7 +20,7 @@ public:
   
   void animation_speed(int animation_speed) {this->animation_speed_ = animation_speed;}
   int animation_speed() const {return animation_speed_;}
-
+  
   void marquee(bool marquee) {
     this->marquee_ = marquee;
     if (this->marquee_) Fl::add_timeout((double)this->animation_speed_ / 1000, on_marquee_timer_tick, this);
@@ -29,7 +29,7 @@ public:
   
   int marquee_width() const {return this->marquee_width_;}
   void marquee_width(int marquee_width) {this->marquee_width_ = marquee_width;}
-
+  
   void draw() override {
     this->Fl_Progress::draw();
     if (this->marquee_) {
@@ -55,7 +55,7 @@ private:
         ((Fl_Progress_Bar*)progress)->marquee_pos_ = ((Fl_Progress_Bar*)progress)->marquee_pos_ + ((Fl_Progress_Bar*)progress)->marquee_width_;
       }
     }
-
+    
     ((Fl_Progress_Bar*)progress)->redraw();
     if (((Fl_Progress_Bar*)progress)->marquee()) Fl::repeat_timeout((double)((Fl_Progress_Bar*)progress)->animation_speed_ / 1000, on_marquee_timer_tick, progress);
   }

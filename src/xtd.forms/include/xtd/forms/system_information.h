@@ -35,287 +35,287 @@ namespace xtd {
       /// @return One of the ArrangeDirection values that indicates the direction in which the operating system arranges minimized windows.
       /// @remarks The arrange_direction property indicates the direction in which minimized windows are arranged on the desktop or in a Multiple Document Interface (MDI) container.
       static xtd::forms::arrange_direction arrange_direction();
-
+      
       /// @brief Gets an ArrangeStartingPosition value that indicates the starting position from which the operating system arranges minimized windows.
       /// @return One of the ArrangeStartingPosition values that indicates the starting position from which the operating system arranges minimized windows.
       /// @remarks The ArrangeStartingPosition property indicates the corner of a screen or window in which the operating system begins to arrange minimized windows.
       static xtd::forms::arrange_starting_position arrange_starting_position();
-
+      
       /// @brief Gets a BootMode value that indicates the boot mode the system was started in.
       /// @return One of the boot_mode values that indicates the boot mode the system was started in.
       /// @remarks The boot_mode property indicates whether the operating system was started in a normal or safe boot mode.
       static xtd::forms::boot_mode boot_mode();
-
+      
       /// @brief Gets the thickness, in pixels, of a three-dimensional (3-D) style window or system control border.
       /// @return A size that indicates the width, in pixels, of a 3-D style vertical border, and the height, in pixels, of a 3-D style horizontal border.
       /// @remarks The border_3d_size property indicates the thickness, in pixels, of a three-dimensional (3-D) style system control border.
       /// @remarks The Width property of the border_3d_size property indicates the width of a vertical 3-D border. The Height property of the border_3d_size property indicates the height of a horizontal 3-D border.
       /// @remarks The border_size property indicates the thickness of a window or system control border that is not a 3-D style border.
       static xtd::drawing::size border_3d_size();
-
+      
       /// @brief Gets the border multiplier factor that is used when determining the thickness of a window's sizing border.
       /// @return The multiplier used to determine the thickness of a window's sizing border.
       static int32_t border_multiplier_factor();
-
+      
       /// @brief Gets the thickness, in pixels, of a flat-style window or system control border.
       /// @return A size that indicates the width, in pixels, of a vertical border, and the height, in pixels, of a horizontal border.
       /// @remarks The border_size property indicates the thickness of a flat-style system control border in pixels.
       /// @remarks The Width property of the border_size property indicates the width of a vertical flat-style border. The Height property of the border_size property indicates the height of a horizontal flat-style border.
       /// @remarks The border_3d_size property of the SystemInformation class indicates the thickness of a three-dimensional (3-D) style window or system control border.
       static xtd::drawing::size border_size();
-
+      
       /// @brief Gets the standard size, in pixels, of a button in a window's title bar.
       /// @return A size that indicates the standard dimensions, in pixels, of a button in a window's title bar.
       /// @remarks The caption_button_size property indicates the standard dimensions of a button in the title bar of a window.
       /// @remarks The value of this property can be used to ensure that a button is properly sized to fit within the title bar of a window. Window caption buttons should be sized less than or equal to the standard dimensions for window caption buttons to ensure that they can be displayed in view correctly.
       static xtd::drawing::size caption_button_size();
-
+      
       /// @brief Gets the height, in pixels, of the standard title bar area of a window.
       /// @return The height, in pixels, of the standard title bar area of a window.
       /// @remarks The caption_height property indicates the height of the standard window title bar area, in pixels.
       static int32_t caption_height();
-
+      
       /// @brief Gets the caret blink time
       /// @return The caret blink time.
       static int32_t caret_blink_time();
-
+      
       /// @brief Gets the width, in pixels, of the caret in edit controls.
       /// @return The width, in pixels, of the caret in edit controls.
       static int32_t caret_width();
-
+      
       /// @brief Gets the NetBIOS computer name of the local computer.
       /// @return The name of this computer.
       /// @remarks The ComputerName property retrieves the NetBIOS name of the local computer. This is accomplished with a call into the native System Information function GetComputerName. This name is established at system startup_, when the system reads it from the registry. If the local computer is a node in a cluster, ComputerName returns the name of the cluster virtual server.
       /// @remarks You can use the computer_name method to determine the name of the computer that is displayed to other users on a network.
       static xtd::ustring computer_name();
-
+      
       /// @brief Gets the maximum size, in pixels, that a cursor can occupy.
       /// @return A size that indicates the maximum dimensions of a cursor in pixels.
       /// @remarks The system cannot create cursors of other sizes.
       static xtd::drawing::size cursor_size();
-
+      
       /// @brief Gets a value indicating whether the operating system is capable of handling double-byte character set (DBCS) characters.
       /// @return true if the operating system supports DBCS; otherwise, false.
       /// @remarks The dbcs_enabled property indicates whether the current operating system supports DBCS.
       static bool dbcs_enabled();
-
+      
       /// @brief Gets a value indicating whether the debug version of USER.EXE is installed.
       /// @return true if the debugging version of USER.EXE is installed; otherwise, false.
       static bool debug_os();
-
+      
       /// @brief Gets the dimensions, in pixels, of the area within which the user must click twice for the operating system to consider the two clicks a double-click.
       /// @return A size that indicates the dimensions, in pixels, of the area within which the user must click twice for the operating system to consider the two clicks a double-click.
       /// @remarks The double_click_size property indicates the size of a rectangular area centered around the point at which the last click occurred. To cause a double-click, a second click must occur within the area of the rectangle before the double-click time elapses.
       static xtd::drawing::size double_click_size();
-
+      
       /// @brief Gets the maximum number of milliseconds that can elapse between a first click and a second click for the OS to consider the mouse action a double-click.
       /// @return The maximum amount of time, in milliseconds, that can elapse between a first click and a second click for the OS to consider the mouse action a double-click.
       /// @remarks A double-click is a series of two clicks of the mouse button, the second occurring within a specified length of time after, and within a specified distance from, the first. The double-click time is the maximum number of milliseconds that can elapse between the first and second click of a double-click.
       /// @remarks The double_click_time property indicates the maximum number of milliseconds that can elapse before a second click for the second click to cause a double-click.
       static int32_t double_click_time();
-
+      
       /// @brief Gets a value indicating whether the user has enabled full window drag.
       /// @return true if the user has enabled full window drag; otherwise, false.
       /// @remarks When this property is true, the content of a window is refreshed during a window move or resize drag, using the current position and size as they are updated.
       static bool drag_full_windows();
-
+      
       /// @brief Gets the width and height of a rectangle centered on the point the mouse button was pressed, within which a drag operation will not begin.
       /// @return A size that specifies the area of a rectangle, in pixels, centered on the point the mouse button was pressed, within which a drag operation will not begin.
       /// @remarks The drag_size property indicates the size, in pixels, of a rectangle centered around the point at which the mouse button was pressed. Windows uses the rectangle as a boundary within which it does not start a drag operation.
       /// @remarks A user can hold a mouse button down and move the mouse within this area before a drag operation begins, which enables the user to click and release the mouse button easily without unintentionally starting a drag operation.
       static xtd::drawing::size drag_size();
-
+      
       /// @brief Gets the thickness, in pixels, of the frame border of a window that has a caption and is not resizable.
       /// @return A size that specifies the thickness, in pixels, of a fixed sized window border.
       /// @remarks The fixed_frame_border_size property indicates the thickness of the frame, in pixels, around the perimeter of a window that has a caption but is not sizable.
       /// @remarks The Width property of fixed_frame_border_size is the height of the horizontal border and the Height property of fixed_frame_border_size is the width of the vertical border.
       static xtd::drawing::size fixed_frame_border_size();
-
+      
       /// @brief Gets the font smoothing contrast value used in ClearType smoothing.
       /// @return The ClearType font smoothing contrast value.
       static int32_t font_smoothing_contrast();
-
+      
       /// @brief Gets the current type of font smoothing.
       /// @return A value that indicates the current type of font smoothing.
       static int32_t font_smoothing_type();
-
+      
       /// @brief Gets the thickness, in pixels, of the resizing border that is drawn around the perimeter of a window that is being drag resized.
       /// @return A size that indicates the thickness, in pixels, of the width of a vertical resizing border and the height of a horizontal resizing border.
       /// @remarks The frame_border_size property indicates the width and height of the resizing border for a window.
       /// @remarks The Width value of this property is the width of a vertical resizing border. The Height value of this property is the height of a horizontal resizing border.
       static xtd::drawing::size frame_border_size();
-
+      
       /// @brief Gets a value indicating whether the user has enabled the high-contrast mode accessibility feature.
       /// @return true if the user has enabled high-contrast mode; otherwise, false.
       /// @remarks The high-contrast accessibility feature can make the screen easier for some users to view by enabling a color scheme that can heighten screen contrast with alternative color combinations. Some of the schemes also change font sizes for easier reading.
       /// @remarks The high-contrast mode feature can be enabled or disabled through the Accessibility Options control panel.
       static bool high_contrast();
-
+      
       /// @brief Gets the thickness of the left and right edges of the system focus rectangle, in pixels.
       /// @return The thickness of the left and right edges of the system focus rectangle, in pixels.
       /// @remarks The HorizontalFocusThickness property indicates the width of the left and right edges of the system focus rectangle, in pixels. The system focus rectangle is used to draw user's attention to a window or area by displaying a rectangular highlighted outline.
       static int32_t horizontal_focus_thickness();
-
+      
       /// @brief Gets the thickness of the left and right edges of the sizing border around the perimeter of a window being resized, in pixels.
       /// @return The width of the left and right edges of the sizing border around the perimeter of a window being resized, in pixels.
       /// @remarks The HorizontalResizeBorderThickness property indicates the width of the vertical sizing border around the perimeter of a window being resized.
       static int32_t horizontal_resize_border_thickness();
-
+      
       /// @brief Gets the width, in pixels, of the arrow bitmap on the horizontal scroll bar.
       /// @return The width, in pixels, of the arrow bitmap on the horizontal scroll bar.
       static int32_t horizontal_scroll_bar_arrow_width();
-
+      
       /// @brief Gets the default height, in pixels, of the horizontal scroll bar.
       /// @return The default height, in pixels, of the horizontal scroll bar.
       static int32_t horizontal_scroll_bar_height();
-
+      
       /// @brief Gets the width, in pixels, of the scroll box in a horizontal scroll bar.
       /// @return The width, in pixels, of the scroll box in a horizontal scroll bar.
       static int32_t horizontal_scroll_bar_bhumb_width();
-
+      
       /// @brief Gets the width, in pixels, of an icon arrangement cell in large icon view.
       /// @return The width, in pixels, of an icon arrangement cell in large icon view.
       /// @remarks The IconHorizontalSpacing property indicates the width of the space for an icon in large icon view. The system uses this distance to arrange icons in large icon view.
       static int32_t icon_horizontal_spacing();
-
+      
       /// @brief Gets the dimensions, in pixels, of the Windows default program icon size.
       /// @return A size that indicates the default dimensions, in pixels, for a program icon.
       static xtd::drawing::size icon_size();
-
+      
       /// @brief Gets the size, in pixels, of the grid square used to arrange icons in a large-icon view.
       /// @return A size that specifies the dimensions, in pixels, of the grid square used to arrange icons in a large-icon view.
       /// @remarks The icon_spacing_size property indicates the size of the grid rectangle that each icon fits into when the system arranges them in a large-icon view. This value is always greater than or equal to icon_size.
       static xtd::drawing::size icon_spacing_size();
-
+      
       /// @brief Gets the height, in pixels, of an icon arrangement cell in large icon view.
       /// @return The height, in pixels, of an icon arrangement cell in large icon view.
       /// @remarks The icon_vertical_spacing property indicates the width of the space for an icon in large icon view. The system uses this distance to arrange icons in large icon view.
       static int32_t icon_vertical_spacing();
-
+      
       /// @brief Gets a value indicating whether active window tracking is enabled.
       /// @return true if active window tracking is enabled; otherwise, false.
       /// @remarks The is_active_window_tracking_enabled property indicates whether active window tracking is enabled. Active window tracking causes any window the mouse is directly over to become the active window.
       static bool is_active_window_tracking_enabled();
-
+      
       /// @brief Gets a value indicating whether the slide-open effect for combo boxes is enabled.
       /// @return true if the slide-open effect for combo boxes is enabled; otherwise, false.
       /// @remarks The is_combo_box_animation_enabled property indicates whether the slide-open effect for system control combo boxes is enabled.
       /// @remarks When the slide-open effect for system control combo boxes is enabled, the drop down menu of a combo box slides into view when it is displayed, instead of being immediately fully drawn in view.
       static bool is_combo_box_animation_enabled();
-
+      
       /// @brief Gets a value indicating whether the drop shadow effect is enabled.
       /// @return true if the drop shadow effect is enabled; otherwise, false.
       static bool is_drop_shadow_enabled();
-
+      
       /// @brief Gets a value indicating whether native user menus have a flat menu appearance.
       /// @return true if native user menus have a flat menu appearance; otherwise, false.
       static bool is_flat_menu_enabled();
-
+      
       /// @brief Gets a value indicating whether font smoothing is enabled.
       /// @return bool true if the font smoothing feature is enabled; otherwise, false.
       /// @remarks This font smoothing feature uses font antialiasing to make font curves appear smoother by painting pixels at different gray levels.
       static bool is_font_smoothing_enabled();
-
+      
       /// @brief Gets a value indicating whether hot tracking of user-interface elements, such as menu names on menu bars, is enabled.
       /// @return bool true if hot tracking of user-interface elements is enabled; otherwise, false.
       /// @remarks The IsHotTrackingEnabled property indicates whether hot tracking of user-interface elements is enabled. Hot tracking means that when the cursor moves over an item, it is highlighted but not selected.
       static bool is_hot_tracking_enabled();
-
+      
       /// @brief Gets a value indicating whether icon-title wrapping is enabled.
       /// @return bool true if the icon-title wrapping feature is enabled; otherwise, false.
       static bool is_icon_title_wrapping_enabled();
-
+      
       /// @brief Gets a value indicating whether the user relies on the keyboard instead of the mouse, and prefers applications to display keyboard interfaces that would otherwise be hidden.
       /// @return bool true if keyboard preferred mode is enabled; otherwise, false.
       /// @remarks The IsKeyboardPreferred property indicates whether the user has indicated a preference for keyboard-based input interfaces.
       static bool is_keyboard_preferred();
-
+      
       /// @brief Gets a value indicating whether the smooth-scrolling effect for list boxes is enabled.
       /// @return true if smooth-scrolling is enabled; otherwise, false.
       /// @remarks The is_list_box_smooth_scrolling_enabled property indicates whether the smooth-scrolling effect for system control list boxes is enabled.
       static bool is_list_box_smooth_scrolling_enabled();
-
+      
       /// @brief Gets a value indicating whether menu fade or slide animation features are enabled.
       /// @return true if menu fade or slide animation is enabled; otherwise, false.
       /// @remarks The is_menu_animation_enabled property indicates whether either of the fade or slide animation features of system control menus is enabled.
       /// @remarks If the value of this property is true, the IsMenuFadeEnabled property indicates whether menus use fade or slide animation.
       static bool is_menu_animation_enabled();
-
+      
       /// @brief Gets a value indicating whether menu fade animation is enabled.
       /// @return true if fade animation is enabled; false if it is disabled.
       /// @remarks The is_menu_fade_enabled property indicates whether a menu uses fade animation, if menu animation is enabled. The IsMenuAnimationEnabled property indicates whether menu animation is enabled.
       /// @remarks If menu animation is enabled and the value of this property is true, menus use fade animation. If menu animation is enabled and the value of this property is false, menus use slide animation. If menu animation is disabled, the value of this property is meaningless.
       static bool is_menu_fade_enabled();
-
+      
       /// @brief Gets a value indicating whether window minimize and restore animation is enabled.
       /// @return true if window minimize and restore animation is enabled; otherwise, false.
       /// @remarks The is_minimize_restore_animation_enabled property indicates whether the window minimize and restore sequence is animated.
       static bool is_minimize_restore_animation_enabled();
-
+      
       /// @brief Gets a value indicating whether the selection fade effect is enabled.
       /// @return true if the selection fade effect is enabled; otherwise, false.
       /// @remarks The is_selection_fade_enabled property indicates whether the selection fade effect is enabled. The selection fade effect causes a menu item selected by the user to remain on the screen briefly while fading out after the menu is dismissed.
       static bool is_selection_fade_enabled();
-
+      
       /// @brief Gets a value indicating whether the snap-to-default-button feature is enabled.
       /// @return true if the snap-to-default-button feature is enabled; otherwise, false.
       /// @remarks The is_snap_to_default_enabled property indicates whether the snap-to-default-button feature is enabled. If the feature is enabled, the mouse cursor automatically moves to the default button, such as OK or Apply, of a dialog box.
       static bool is_snap_to_default_enabled();
-
+      
       /// @brief Gets a value indicating whether the gradient effect for window title bars is enabled.
       /// @return true if the gradient effect for window title bars is enabled; otherwise, false.
       /// @remarks The is_title_bar_gradient_enabled property indicates whether the background of window title bars are drawn using a gradient fill effect.
       /// @note This property is supported only on Windows 98, Windows Millennium Edition, Windows 2000, Windows XP, and the Windows Server 2003 family.
       static bool is_title_bar_gradient_enabled();
-
+      
       /// @brief Gets a value indicating whether tool_tip animation is enabled.
       /// @return true if tool_tip animation is enabled; otherwise, false.
       /// @remarks The is_tool_tip_animation_enabled property indicates whether tool_tips can fade or slide into view.
       /// @note This property is supported only on Windows 2000, Windows XP, and the Windows Server 2003 family. On other platforms, this property returns false.
       static bool is_tool_tip_animation_enabled();
-
+      
       /// @brief Gets the height, in pixels, of the Kanji window at the bottom of the screen for double-byte character set (DBCS) versions of Windows.
       /// @return The height, in pixels, of the Kanji window.
       /// @remarks The kanji_window_height property indicates the height of the Kanji window on operating systems that support DBCS. The DbcsEnabled property indicates whether the operating system supports DBCS.
       static int32_t kanji_window_height();
-
+      
       /// @brief Gets the keyboard repeat-delay setting.
       /// @return The keyboard repeat-delay setting, from 0 (approximately 250 millisecond delay) through 3 (approximately 1 second delay).
       /// @remarks This property indicates the amount of time that elapses after a key is pressed and held down until keystroke repeat messages are sent by the operating system. This value is in the range from 0 (approximately 250 millisecond delay) through 3 (approximately 1 second delay). The actual delay associated with each value may vary depending on the hardware.
       /// @remarks The keyboard_speed property indicates the repeat speed setting that determines the length of time between each keystroke repeat message sent by the operating system.
       static int32_t keyboard_delay();
-
+      
       /// @brief Gets the keyboard repeat-speed setting.
       /// @return The keyboard repeat-speed setting, from 0 (approximately 2.5 repetitions per second) through 31 (approximately 30 repetitions per second).
       /// @remarks This property indicates the time between each keystroke repeat message that is sent when a user presses and holds a key down. This is a value in the range from 0 (approximately 2.5 repetitions per second) through 31 (approximately 30 repetitions per second). The actual repeat rates are hardware-dependent and may vary from a linear scale by as much as 20%.
       /// @remarks The keyboard_delay property indicates the length of time after a key is pressed and held down before keystroke repeat messages are sent by the operating system.
       static int32_t keyboard_speed();
-
+      
       /// @brief Gets the default maximum dimensions, in pixels, of a window that has a caption and sizing borders.
       /// @return A size that specifies the maximum dimensions, in pixels, to which a window can be sized.
       /// @remarks The max_window_track_size property indicates the maximum dimensions to which a user can drag resize a window. The value returned by max_>window_track_size refers to the dimensions of the entire desktop.
       static xtd::drawing::size max_window_track_size();
-
+      
       /// @brief Gets a value indicating whether menu access keys are always underlined.
       /// @return true if menu access keys are always underlined; false if they are underlined only when the menu is activated or receives focus.
       /// @remarks The menu_access_keys_underlined property indicates whether the menu shortcut keys are underlined in menu text even when the menu has not been activated or received focus.
       static bool menu_access_keys_underlined();
-
+      
       /// @brief Gets the default width, in pixels, for menu-bar buttons and the height, in pixels, of a menu bar.
       /// @return A size that indicates the default width for menu-bar buttons, in pixels, and the height of a menu bar, in pixels.
       /// @remarks The size.width() value of this property indicates the default width for a button on a menu-bar, in pixels. The size.height() value of this property indicates the height of a menu bar, in pixels.
       static xtd::drawing::size menu_bar_button_size();
-
+      
       /// @brief Gets the default dimensions, in pixels, of menu-bar buttons.
       /// @return A size that indicates the default dimensions, in pixels, of menu-bar buttons.
       /// @remarks This property indicates the default dimensions, in pixels, for menu-bar buttons, such as the child window close button used in the multiple document interface.
       static xtd::drawing::size menu_button_size();
-
+      
       /// @brief Gets the dimensions, in pixels, of the default size of a menu check mark area.
       /// @return A size that indicates the default size, in pixels, of a menu check mark area.
       /// @remarks The menu_check_size property indicates the size of the image used by Windows to display a check mark area next to a selected menu item.
       static xtd::drawing::size menu_check_size();
-
+      
       /// @brief Gets the font used to display text on menus.
       /// @return The Font used to display text on menus.
       /// @remarks The menu_font property indicates the font used to display text on menus.

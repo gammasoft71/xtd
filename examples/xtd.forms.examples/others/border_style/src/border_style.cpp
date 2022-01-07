@@ -18,38 +18,38 @@ namespace examples {
       controls().push_back_range({colored_panel, control_panel});
       maximum_client_size(client_size());
       minimum_client_size(client_size());
-
+      
       colored_panel.controls().push_back_range(bordered_labels);
       colored_panel.dock(dock_style::fill);
-
+      
       for (auto index = 0UL; index < bordered_labels.size(); ++index) {
         bordered_labels[index].border_style(border_styles[index]);
         bordered_labels[index].bounds(rectangle(as<int>(20 + index % 4 * 170), as<int>(20 + index / 4 * 70), 150, 50));
         bordered_labels[index].text(convert::to_string(border_styles[index]));
         bordered_labels[index].text_align(content_alignment::middle_center);
       }
-
+      
       control_panel.border_sides(border_sides::top);
       control_panel.border_style(border_style::etched);
       control_panel.controls().push_back_range({choose_color_label, colors_chooser, select_sides_label, top_side, left_side, bottom_side, right_side});
       control_panel.dock(dock_style::bottom);
-
+      
       choose_color_label.auto_size(true);
       choose_color_label.location({20, 39});
       choose_color_label.text("Choose color");
-
+      
       for (auto color : colors::get_colors())
         colors_chooser.items().push_back({color.name(), color});
       colors_chooser.items()[0] = {back_color().name(), back_color()}; // Replace transparent color by control color.
       colors_chooser.bounds({120, 37, 220, colors_chooser.default_size().height()});
       colors_chooser.selected_index(0);
-
+      
       colors_chooser.selected_index_changed += [&] {
         auto color = as<drawing::color>(colors_chooser.selected_item().tag());
         colored_panel.back_color(color);
-        colored_panel.fore_color(color.is_dark() ? control_paint::light(color, 2.0/3) : control_paint::dark(color, 2.0/3));
+        colored_panel.fore_color(color.is_dark() ? control_paint::light(color, 2.0 / 3) : control_paint::dark(color, 2.0 / 3));
       };
-
+      
       select_sides_label.auto_size(true);
       select_sides_label.location({380, 39});
       select_sides_label.text("Select sides");
@@ -65,7 +65,7 @@ namespace examples {
         for (auto& bordered_label : bordered_labels)
           bordered_label.border_sides(border_sides);
       };
-
+      
       left_side.checked(true);
       left_side.flat_style(xtd::forms::flat_style::flat);
       left_side.location({480, 25});
@@ -76,7 +76,7 @@ namespace examples {
         for (auto& bordered_label : bordered_labels)
           bordered_label.border_sides(border_sides);
       };
-
+      
       right_side.checked(true);
       right_side.flat_style(xtd::forms::flat_style::flat);
       right_side.location({550, 25});
@@ -87,7 +87,7 @@ namespace examples {
         for (auto& bordered_label : bordered_labels)
           bordered_label.border_sides(border_sides);
       };
-
+      
       bottom_side.checked(true);
       bottom_side.flat_style(xtd::forms::flat_style::flat);
       bottom_side.location({495, 75});

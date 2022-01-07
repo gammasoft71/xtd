@@ -7,7 +7,7 @@ namespace examples {
   public:
     form1() {
       text("Label example");
-
+      
       label1.parent(*this);
       label1.text("Label 1");
       label1.location({10, 10});

@@ -9,27 +9,27 @@ namespace examples {
     form1() {
       text("Progress bar example");
       client_size({300, 300});
-
+      
       progress_bar1.parent(*this);
       progress_bar1.location({50, 50});
       progress_bar1.width(200);
-
+      
       progress_bar2.parent(*this);
       progress_bar2.location({50, 80});
       progress_bar2.value(50);
       progress_bar2.width(200);
-
+      
       progress_bar3.parent(*this);
       progress_bar3.location({50, 110});
       progress_bar3.maximum(300);
       progress_bar3.increment(300);
       progress_bar3.width(200);
-
+      
       progress_bar4.parent(*this);
       progress_bar4.location({50, 140});
       progress_bar4.step(1);
       progress_bar4.width(200);
-
+      
       progress_bar5.parent(*this);
       progress_bar5.location({50, 170});
       progress_bar5.maximum(200);

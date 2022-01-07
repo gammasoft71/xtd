@@ -38,7 +38,7 @@ namespace xtd {
     /// @param value Volue used to initialize object.
     box(const type_t& value) : value_(value) {}
     /// @}
-
+    
     /// @cond
     box(const box&) = default;
     box(box&&) = default;
@@ -48,9 +48,9 @@ namespace xtd {
       return *this;
     };
     /// @endcond
-
+    
     /// @name Properties
-
+    
     /// @{
     /// @brief Gets the underlying value.
     /// @return Return the underlying value.
@@ -65,46 +65,46 @@ namespace xtd {
       return *this;
     }
     /// @}
-
+    
     /// @name Opertors
     
     /// @{
     operator type_t() const {return value_;}
     /// @}
-
+    
     /// @name Methods
     
     /// @{
     bool equals(const object& value) const noexcept override {return dynamic_cast<const box<type_t>*>(&value) ? equals(static_cast<const box<type_t>&>(value)) : false;}
     bool equals(const box& value) const noexcept override {return value_ == value.value_;}
-      
+    
     int32_t compare_to(const object& value) const noexcept override {return dynamic_cast<const box<type_t>*>(&value) ? compare_to(static_cast<const box<type_t>&>(value)) : -1;}
     int32_t compare_to(const box& value) const noexcept override {
       if (value_ < value.value_) return -1;
       if (value_ > value.value_) return 1;
       return 0;
     }
-
+    
     /// @brief Converts the string to its type_t equivalent.
     /// @param value A string containing a type_t to convert.
     /// @return A type_t equivalent to the number contained in value.
     static type_t parse(const xtd::ustring& value) {return xtd::parse<type_t>(value);}
-
+    
     xtd::ustring to_string() const noexcept override {return xtd::ustring::format("{}", value_);}
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
     /// @return The string representation of the value of this instance as specified by format.
     xtd::ustring to_string(const xtd::ustring& format) const noexcept {return xtd::ustring::format(xtd::ustring::format("{{:{}}}", format), value_);}
-
+    
     /// @brief Converts the string to its type_t equivalent. A return value indicates whether the conversion succeeded or failed.
     /// @param value A string containing a type_t to convert.
     /// @param result A type_t equivalent to the number contained in value.
     /// @return true if s was converted successfully; otherwise, false.
     static bool try_parse(const xtd::ustring& value, type_t& result) {return xtd::try_parse<type_t>(value, result);}
     /// @}
-
+    
   private:
-      type_t value_ {};
+    type_t value_ {};
   };
   
   /// @brief Represents a boxed integer object.
@@ -130,7 +130,7 @@ namespace xtd {
     box_integer(box_integer&&) = default;
     box_integer& operator=(const box_integer&) = default;
     /// @endcond
-
+    
     /// @brief Represents the largest possible value of type_t. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<type_t>::max().
     static constexpr type_t max_value = std::numeric_limits<type_t>::max();
@@ -138,7 +138,7 @@ namespace xtd {
     /// @remarks The value of this field is std::numeric_limits<type_t>::lowest().
     static constexpr type_t min_value = std::numeric_limits<type_t>::lowest();
   };
-      
+  
   /// @brief Represents a boxed floating point object.
   /// @code
   /// class box_floating_point : public xtd::box<type_t>
@@ -161,7 +161,7 @@ namespace xtd {
     box_floating_point(const type_t& value) : box_integer<type_t>(value) {}
     box_floating_point(const box_floating_point&) = default;
     box_floating_point(box_floating_point&&) = default;
-     box_floating_point& operator=(const box_floating_point&) = default;
+    box_floating_point& operator=(const box_floating_point&) = default;
     /// @endcond
     
     /// @brief Represents the smallest positive type_t value greater than zero. This field is constant.
@@ -186,7 +186,7 @@ namespace xtd {
     static constexpr double __get_epsilon(double) noexcept {return 4.94066e-324;}
     static constexpr float __get_epsilon(float) noexcept {return 1.401298E-45f;}
   };
-   
+  
   /// @brief Represent a boxed bool.
   /// @par Namespace
   /// xtd
@@ -203,7 +203,7 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = true;
   /// @endcode
   using boolean_object = box<bool>;
-      
+  
   /// @brief Represent a boxed single.
   /// @par Namespace
   /// xtd
@@ -252,7 +252,7 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = 3.14;
   /// @endcode
   using decimal_object = box_floating_point<decimal_t>;
-
+  
   /// @brief Represent a boxed sbyte.
   /// @par Namespace
   /// xtd
@@ -333,7 +333,7 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = 42;
   /// @endcode
   using intptr_object = box_integer<intptr_t>;
-
+  
   /// @brief Represent a boxed byte.
   /// @par Namespace
   /// xtd
@@ -414,7 +414,7 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = 42;
   /// @endcode
   using uintptr_object = box_integer<uintptr_t>;
-
+  
   /// @brief Represent a boxed size_t.
   /// @par Namespace
   /// xtd
@@ -431,7 +431,7 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = 42;
   /// @endcode
   using size_object = box_integer<size_t>;
-
+  
   /// @brief Represent a boxed char.
   /// @par Namespace
   /// xtd
@@ -510,10 +510,10 @@ namespace xtd {
   /// wchar_object boxed_object = unboxed_object;
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", r
-      /// esult); // Display: result = a;
+  /// esult); // Display: result = a;
   /// @endcode
   using wchar_object = box_integer<wchar_t>;
-
+  
   /// @brief Allows to box an object
   /// @param value Object to box.
   /// @return Boxed object.

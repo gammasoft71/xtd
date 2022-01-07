@@ -10,7 +10,7 @@ namespace examples {
     form1() {
       text("List box example");
       client_size({360, 240});
-
+      
       layout_panel.parent(*this);
       layout_panel.controls().push_back_range({list_box_left, list_box_right});
       layout_panel.control_layout_style(list_box_left, {size_type::auto_size, true});
@@ -25,7 +25,7 @@ namespace examples {
           list_box_left.items().erase_at(list_box_left.selected_index());
         }
       };
-
+      
       list_box_right.sorted(true);
       list_box_right.double_click += [&] {
         if (list_box_right.selected_index() != list_box_right.npos) {

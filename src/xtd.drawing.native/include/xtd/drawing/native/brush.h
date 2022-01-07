@@ -22,7 +22,7 @@ namespace xtd {
     class solid_brush;
     class texture_brush;
     /// @endcond
-
+    
     /// @brief The xtd::drawing::native namespace contains internal native API definitions to access underlying toolkits used by xtd.drawing library.
     /// @warning Internal use only
     namespace native {

@@ -15,20 +15,20 @@ namespace examples {
       label1.location({10, 10});
       label1.auto_size(true);
       label1.fore_color(color::dodger_blue);
-
+      
       button1.parent(*this);
       button1.text("Start");
       button1.location({10, 90});
-      button1.click += [&](object& sender, const event_args& e) {
+      button1.click += [&](object & sender, const event_args & e) {
         timer1.enabled(!timer1.enabled());
-        button1.text(timer1.enabled() ? "Stop": "Start");
+        button1.text(timer1.enabled() ? "Stop" : "Start");
       };
-
+      
       timer1.interval(100ms);
-      timer1.tick += [&](object& sender, const event_args& e) {
+      timer1.tick += [&](object & sender, const event_args & e) {
         label1.text(ustring::format("{:F1}", ++counter / 10.0));
       };
-
+      
       text("Timer example");
       client_size({230, 130});
     }

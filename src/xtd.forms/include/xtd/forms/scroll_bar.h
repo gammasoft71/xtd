@@ -64,7 +64,7 @@ namespace xtd {
       /// @remarks When the user presses one of the arrow keys or clicks one of the scroll bar buttons, the xtd::forms::scroll_bar::value property changes according to the value set in the xtd::forms::scroll_bar::small_change property.
       /// @remarks User interface guidelines suggest that the xtd::forms::scroll_bar::small_change and xtd::forms::scroll_bar::large_change properties are set relative to the size of the view that the user sees, not to the total size including the unseen part. For example, if you have a picture box with scroll bars displaying a large image, the xtd::forms::scroll_bar::small_change and xtd::forms::scroll_bar::large_change properties should be set relative to the size of the picture box, not to the size of the image.
       virtual scroll_bar& small_change(int32_t small_change);
-
+      
       /// @brief Gets or sets a numeric value that represents the current position of the scroll box on the scroll bar control.
       /// @return A numeric value that is within the Minimum and Maximum range. The default value is 0.
       /// @exception xtd::argument_out_of_range_exception The assigned value is less than the xtd::forms::scroll_bar::minimum property value. -or- The assigned value is greater than the xtd::forms::scroll_bar::maximum property value.
@@ -74,7 +74,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception The assigned value is less than the xtd::forms::scroll_bar::minimum property value. -or- The assigned value is greater than the xtd::forms::scroll_bar::maximum property value.
       virtual scroll_bar& value(int32_t value);
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -88,7 +88,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<scroll_bar, event_handler> value_changed;
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       
@@ -96,14 +96,14 @@ namespace xtd {
       /// @brief Initializes a new instance of scroll_bar class.
       scroll_bar() = default;
       /// @}
- 
+      
       /// @name Protected methods
       
       /// @{
       xtd::forms::create_params create_params() const override;
       
       void on_handle_created(const event_args& e) override;
-
+      
       /// @brief Raises the xtd::forms::scroll_bar::scroll event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
@@ -119,7 +119,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding xtd::forms::scroll_bar::on_value_changed in a derived class, be sure to call the base class' xtd::forms::scroll_bar::on_value_changed method so that registered delegates receive the event.
       virtual void on_value_changed(const event_args& e);
-
+      
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.

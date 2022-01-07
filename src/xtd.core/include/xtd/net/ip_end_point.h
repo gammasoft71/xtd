@@ -41,7 +41,7 @@ namespace xtd {
       /// @param port The port number associated with the address, or 0 to specify any available port. port is in host order.
       ip_end_point(const xtd::net::ip_address& address, uint16_t port);
       /// @}
-
+      
       /// @cond
       ip_end_point() = default;
       ip_end_point(ip_end_point&&) = default;
@@ -68,7 +68,7 @@ namespace xtd {
       /// @param value An integer value in the range min_port to max_port indicating the port number of the endpoint.
       ip_end_point& port(uint16_t value);
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -77,7 +77,7 @@ namespace xtd {
       /// @return A new end_point instance that is initialized from the specified xtd::net::socket_address instance.
       /// @exception xtd::not_supported_exception Any attempt is made to access the method when the method is not overridden in a descendant class.
       std::unique_ptr<end_point> create(const xtd::net::socket_address& socket_address) const override;
-
+      
       /// @brief Serializes endpoint information into a socket_address instance.
       /// @return A new xtd::net::socket_address instance that contains the endpoint information.
       xtd::net::socket_address serialize() const override;
@@ -86,7 +86,7 @@ namespace xtd {
       /// @return string A string that represents the current object.
       xtd::ustring to_string() const noexcept override;
       ///@}
-
+      
     private:
       xtd::net::ip_address address_;
       uint16_t port_ = 0;

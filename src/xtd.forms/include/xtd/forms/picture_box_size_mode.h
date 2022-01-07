@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief The size of the image is increased or decreased maintaining the size ratio.
       zoom = 4,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, picture_box_size_mode value) {return os << to_string(value, {{picture_box_size_mode::normal, "normal"}, {picture_box_size_mode::stretch_image, "stretch_image"}, {picture_box_size_mode::auto_size, "auto_size"}, {picture_box_size_mode::center_image, "center_image"}, {picture_box_size_mode::zoom, "zoom"}});}
     inline std::wostream& operator<<(std::wostream& os, picture_box_size_mode value) {return os << to_string(value, {{picture_box_size_mode::normal, L"normal"}, {picture_box_size_mode::stretch_image, L"stretch_image"}, {picture_box_size_mode::auto_size, L"auto_size"}, {picture_box_size_mode::center_image, L"center_image"}, {picture_box_size_mode::zoom, L"zoom"}});}

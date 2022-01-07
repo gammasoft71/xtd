@@ -230,7 +230,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::string to_string(const long double& value, const std::string& fmt, const std::locale& loc) {return __fixed_point_formatter(fmt, value, loc);}
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -243,7 +243,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::string to_string(const std::chrono::system_clock::time_point& value, const std::string& fmt, const std::locale& loc) {return __date_time_formatter(fmt, std::chrono::system_clock::to_time_t(value), std::chrono::duration_cast<std::chrono::nanoseconds>(value.time_since_epoch()).count() % 1000000000, loc);}
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -256,7 +256,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc) {return __date_time_formatter(fmt, value, 0, loc);}
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -269,7 +269,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename type_t, typename Period>
   inline std::string to_string(const std::chrono::duration<type_t, Period>& value, const std::string& fmt, const std::locale& loc) {return __duration_formatter(fmt, value, loc);}
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -282,7 +282,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::string to_string(const char8_t& value, const std::string& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -321,7 +321,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::string to_string(const wchar_t& value, const std::string& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
-
+  
   /// @cond
   std::string to_string(const char* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const char8_t* value, const std::string& fmt, const std::locale& loc);
@@ -347,7 +347,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
-
+  
   /// @cond
   inline std::string to_string(const char*  value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
   /// @endcond
@@ -364,7 +364,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc) {return __to_string_enum(value, fmt, loc, std::is_enum<value_t>());}
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -559,7 +559,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::wstring to_string(const long double& value, const std::wstring& fmt, const std::locale& loc) {return __fixed_point_formatter(fmt, value, loc);}
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -572,7 +572,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::wstring to_string(const std::chrono::system_clock::time_point& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formatter(fmt, std::chrono::system_clock::to_time_t(value), std::chrono::duration_cast<std::chrono::milliseconds>(value.time_since_epoch()).count()  % 1000000000, loc);}
- 
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -585,7 +585,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formatter(fmt, value, 0, loc);}
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -598,7 +598,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename type_t, typename Period>
   inline std::wstring to_string(const std::chrono::duration<type_t, Period>& value, const std::wstring& fmt, const std::locale& loc) {return __duration_formatter(fmt, value, loc);}
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -663,11 +663,11 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::wstring to_string(const wchar_t& value, const std::wstring& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
-
+  
   /// @cond
   inline std::wstring to_string(const wchar_t*  value, const std::wstring& fmt, const std::locale& loc) {return __string_formatter(fmt, value, loc);}
   /// @endcond
-
+  
   /// @brief Convert a specified value into a string with specified format.
   /// @par Namespace
   /// xtd
@@ -679,7 +679,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt) {return to_string(value, fmt, std::locale());}
-
+  
   /// @cond
   inline std::wstring to_string(const wchar_t*  value, const std::wstring& fmt) {return to_string(value, fmt, std::locale());}
   /// @endcond

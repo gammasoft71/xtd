@@ -71,7 +71,7 @@ namespace xtd {
         bool operator>=(const item& value) const {return list_box::item::operator>=(value);}
         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
         /// @endcond
-
+        
         /// @name Properties
         
         /// @{
@@ -94,17 +94,17 @@ namespace xtd {
       /// @{
       /// @brief Represents the collection of items in a checked_list_box.
       using object_collection = layout::arranged_element_collection<item>;
-
+      
       /// @brief Encapsulates the collection of indexes of checked items (including items in an indeterminate state)
       using checked_index_collection = std::vector<size_t>;
-
+      
       /// @brief Encapsulates the collection of checked items, including items in an indeterminate state, in a checked_list_box control.
       using checked_item_collection = std::vector<item>;
-
+      
       /// @brief Represents the collection of selected items in the list_box.
       using selected_object_collection = std::vector<item>;
       /// @}
-
+      
       /// @name Constructors
       
       /// @{
@@ -112,7 +112,7 @@ namespace xtd {
       /// @remarks By default, checked_list_box uses set_style and the resize_redraw value of control_styles to specify that the control is redrawn when resized.
       checked_list_box();
       /// @}
-    
+      
       /// @name Properties
       
       /// @{
@@ -159,7 +159,7 @@ namespace xtd {
       /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
       /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
       list_box& selected_item(const item& selected_item);
-
+      
       /// @brief Gets a collection containing the currently selected items in the list_box.
       /// @return A list_box::selected_object_collection containing the currently selected items in the control.
       /// @remarks For a multiple-selection list_box, this property returns a collection containing all items that are selected in the list_box. For a single-selection list_box, this property returns a collection containing a single element containing the only selected item in the list_box. For more information about how to manipulate the items of the collection, see list_box::selected_object_collection.
@@ -174,7 +174,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-  
+      
       /// @name Methods
       
       /// @{
@@ -184,7 +184,7 @@ namespace xtd {
       /// @brief Resumes painting the checked_list_box control after painting is suspended by the begin_update method.
       /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void end_update();
-
+      
       /// @brief Returns a value indicating whether the specified item is checked.
       /// @param index The index of the item.
       /// @return true if the item is checked; otherwise, false.
@@ -196,25 +196,25 @@ namespace xtd {
       /// @return One of the check_state values.
       /// @remarks The get_item_check_state method provides the ability to get the check_state value of an item, given the index. If you never set the check state of an item to indeterminate, then use the getItem_checked method.
       forms::check_state get_item_check_state(size_t index) const;
-
+      
       /// @brief Returns the text value of the current item.
       /// @param index The index of the item.
       /// @return A string that represent the text value of the current item.
       const xtd::ustring& get_item_text(size_t index) const;
-
+      
       /// @brief Sets check_state for the item at the specified index to checked.
       /// @param index The index of the item to set the check state for.
       /// @param checked true to set the item as checked; otherwise, false.
       /// @remarks When a value of true is passed, this method sets the check_state value to checked. A value of false sets check_state to unchecked.
       void set_item_checked(size_t index, bool checked);
-
+      
       /// @brief Sets the check state of the item at the specified index.
       /// @param index The index of the item to set the check state for.
       /// @param check_state One of the check_state values.
       /// @remarks The set_item_check_state method raises the item_check event.
       /// @remarks Items whose check_state is set to indeterminate appear with a check mark in the check box, but the box is grayed to indicate the indeterminate status of the checked item.
       void set_item_check_state(size_t index, forms::check_state check_state);
-
+      
       /// @brief Sets the text value of the item at the specified index.
       /// @param index The index of the item to set the check state for.
       /// @param text A string that represent the text value.
@@ -228,33 +228,33 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<checked_list_box, item_check_event_handler> item_check;
       /// @}
-
+      
     protected:
       /// @name Protected properties
       
       /// @{
       bool allow_selection() override {return selection_mode() != forms::selection_mode::none;}
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
       forms::create_params create_params() const override;
-
+      
       void on_handle_created(const event_args& e) override;
-
+      
       /// @brief Raises the checked_list_box::item_check event.
       /// @param e An item_check_event_args that contains the event data.
       virtual void on_item_check(item_check_event_args& e) {item_check(*this, e);}
       
       void on_selected_value_changed(const event_args& e) override;
-
+      
       void wnd_proc(message& message) override;
       
       void wm_reflect_command(message& message) override;
       
       void wm_mouse_double_click(message& message) override;
-
+      
       void wm_mouse_down(message& message) override;
       
       void wm_mouse_up(message& message) override;

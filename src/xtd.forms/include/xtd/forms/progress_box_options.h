@@ -18,7 +18,7 @@ namespace xtd {
     enum class progress_box_options {
       /// @brief No options.
       none = 0b0,
-      /// @brief Whether cancel button is shown. 
+      /// @brief Whether cancel button is shown.
       show_cancel_button = 0b1,
       /// @brief Whether skip button is shown.
       show_skip_button = 0b10,
@@ -31,7 +31,7 @@ namespace xtd {
       /// @brief All flags except none.
       all = show_cancel_button | show_skip_button | show_elapsed_time | show_estimated_time | show_remaining_time
     };
-
+    
     /// @cond
     inline progress_box_options& operator +=(progress_box_options& lhs, progress_box_options rhs) noexcept { lhs = static_cast<progress_box_options>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs; }
     inline progress_box_options& operator -=(progress_box_options& lhs, progress_box_options rhs) noexcept { lhs = static_cast<progress_box_options>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs; }
@@ -44,7 +44,7 @@ namespace xtd {
     inline bool operator &(progress_box_options lhs, progress_box_options rhs) noexcept { return static_cast<bool>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); }
     inline progress_box_options operator |(progress_box_options lhs, progress_box_options rhs) noexcept { return static_cast<progress_box_options>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); }
     inline progress_box_options operator ^(progress_box_options lhs, progress_box_options rhs) noexcept { return static_cast<progress_box_options>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); }
-
+    
     inline std::ostream& operator<<(std::ostream& os, progress_box_options value) { return os << to_string(value, { {progress_box_options::none, "none"}, {progress_box_options::show_cancel_button, "show_cancel_button"}, {progress_box_options::show_skip_button, "show_skip_button"}, {progress_box_options::show_elapsed_time, "show_elapsed_time"}, {progress_box_options::show_estimated_time, "show_estimated_time"}, {progress_box_options::show_remaining_time, "show_remaining_time"}, {progress_box_options::all, "all"} }); }
     inline std::wostream& operator<<(std::wostream& os, progress_box_options value) { return os << to_string(value, { {progress_box_options::none, L"none"}, {progress_box_options::show_cancel_button, L"show_cancel_button"}, {progress_box_options::show_skip_button, L"show_skip_button"}, {progress_box_options::show_elapsed_time, L"show_elapsed_time"}, {progress_box_options::show_estimated_time, L"show_estimated_time"}, {progress_box_options::show_remaining_time, L"show_remaining_time"}, {progress_box_options::all, L"all"} }); }
     /// @endcond

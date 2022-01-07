@@ -20,7 +20,7 @@ namespace xtd {
       /// @brief System style dialog.
       system = 1,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, dialog_style value) {return os << to_string(value, {{dialog_style::standard, "standard"}, {dialog_style::system, "system"}});}
     inline std::wostream& operator<<(std::wostream& os, dialog_style value) {return os << to_string(value, {{dialog_style::standard, L"standard"}, {dialog_style::system, L"system"}});}

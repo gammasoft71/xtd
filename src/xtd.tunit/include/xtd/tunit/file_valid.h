@@ -23,7 +23,7 @@ namespace xtd {
       /// @cond
       file_valid() = delete;
       /// @endcond
-
+      
       /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -105,7 +105,7 @@ namespace xtd {
       static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           file_assert::are_equal(expected, actual, message, stack_frame);
-        } catch(...) {
+        } catch (...) {
           base_assert::error();
         }
       }
@@ -216,7 +216,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
       /// @endcond
-
+      
       /// @brief Validate that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -298,7 +298,7 @@ namespace xtd {
       static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           file_assert::are_not_equal(expected, actual, message, stack_frame);
-        } catch(...) {
+        } catch (...) {
           base_assert::error();
         }
       }
@@ -467,7 +467,7 @@ namespace xtd {
       static void exists(const std::basic_string<Char>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           file_assert::exists(file, message, stack_frame);
-        } catch(...) {
+        } catch (...) {
           base_assert::error();
         }
       }
@@ -540,7 +540,7 @@ namespace xtd {
       static void does_not_exist(const std::basic_string<Char>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           file_assert::does_not_exist(file, message, stack_frame);
-        } catch(...) {
+        } catch (...) {
           base_assert::error();
         }
       }

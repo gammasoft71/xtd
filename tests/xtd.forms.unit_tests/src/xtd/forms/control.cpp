@@ -44,28 +44,28 @@ namespace unit_tests {
       assert::are_equal(1U, form.controls().size(), csf_);
       assert::are_equal(control, form.controls()[0].get(), csf_);
     }
-
+    
     void test_method_(create_control_with_parent_back_color) {
       form form;
       control control;
       control.parent(form);
       assert::are_equal(form.back_color(), control.back_color(), csf_);
     }
-
+    
     void test_method_(create_control_with_parent_fore_color) {
       form form;
       control control;
       control.parent(form);
       assert::are_equal(form.fore_color(), control.fore_color(), csf_);
     }
-
+    
     void test_method_(create_control_with_parent_handle) {
       form form;
       control control;
       control.parent(form);
       assert::is_not_zero(control.handle(), csf_);
     }
-
+    
     void test_method_(create_control_with_parent_parent) {
       form form;
       control control;

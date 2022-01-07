@@ -17,9 +17,9 @@
 using namespace std;
 
 namespace stacktrace {
-  call_stack::call_stack (const size_t /*num_discard*/) {
+  call_stack::call_stack(const size_t /*num_discard*/) {
     ProcessInformation processInformation = ProcessInformation::GetProcessInformation();
-
+    
     StackFrames::const_iterator it;
     for (it = processInformation.GetStackFrames().begin(); it != processInformation.GetStackFrames().end(); ++it) {
       stacktrace::entry e;
@@ -38,7 +38,7 @@ namespace stacktrace {
     }
   }
   
-  call_stack::~call_stack () throw() {
+  call_stack::~call_stack() throw() {
     // automatic cleanup
   }
 } // namespace stacktrace
@@ -53,20 +53,20 @@ namespace stacktrace {
  *  Source: http://stackwalker.codeplex.com/ */
 class StackWalkerAdapter : public StackWalker {
 public:
-  explicit StackWalkerAdapter (const size_t num_discard) :
-  StackWalker(StackWalker::RetrieveVerbose | StackWalker::SymBuildPath), // do not use public Microsoft-Symbol-Server
-  discard_idx(static_cast<int>(num_discard)+2) {}
-  virtual ~StackWalkerAdapter () {}
+  explicit StackWalkerAdapter(const size_t num_discard) :
+    StackWalker(StackWalker::RetrieveVerbose | StackWalker::SymBuildPath), // do not use public Microsoft-Symbol-Server
+    discard_idx(static_cast<int>(num_discard) + 2) {}
+  virtual ~StackWalkerAdapter() {}
   
 protected:
-  void OnCallstackEntry(CallstackEntryType /*eType*/, CallstackEntry &entry) override {
+  void OnCallstackEntry(CallstackEntryType /*eType*/, CallstackEntry& entry) override {
     if (entry.lineFileName[0] == 0)
       discard_idx = -1; // skip all entries from now on
-    
+      
     // discard first N stack entries
-    if (discard_idx > 0) {
+    if (discard_idx > 0)
       discard_idx--;
-    } else if (discard_idx == 0) {
+    else if (discard_idx == 0) {
       stacktrace::entry e;
       e.file = entry.lineFileName;
       e.line = entry.lineNumber;
@@ -98,16 +98,16 @@ private:
 
 namespace stacktrace {
   // windows 32 & 64 bit impl.
-  call_stack::call_stack (const size_t num_discard /*= 0*/) {
+  call_stack::call_stack(const size_t num_discard /*= 0*/) {
     StackWalkerAdapter sw(num_discard);
     sw.ShowCallstack();
     stack = sw.stack;
   }
   
-  call_stack::~call_stack () throw() {
+  call_stack::~call_stack() throw() {
     // automatic cleanup
   }
-
+  
   /*
   std::string to_string () const {
     std::ostringstream os;

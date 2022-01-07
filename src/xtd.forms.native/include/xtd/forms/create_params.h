@@ -74,7 +74,7 @@ namespace xtd {
         class_style_ = class_style;
         return *this;
       }
-
+      
       /// @brief Gets a bitwise combination of extended window style values.
       /// @return A bitwise combination of the extended window style values.
       /// @remarks The ex_style property supports extended appearance and initial state values to apply to the control.
@@ -89,7 +89,7 @@ namespace xtd {
         ex_style_ = ex_style;
         return *this;
       }
-
+      
       /// @brief Gets the initial height of the control.
       /// @return The numeric value that represents the initial height of the control.
       int32_t height() const {return size_.height();}
@@ -100,7 +100,7 @@ namespace xtd {
         size_.height(height);
         return *this;
       }
-
+      
       /// @brief Gets the initial location of the control.
       /// @return The xtd::drawing::point that represents the initial location of the control.
       drawing::point location() const {return location_;}
@@ -111,7 +111,7 @@ namespace xtd {
         location_ = location;
         return *this;
       }
-
+      
       /// @brief Gets additional parameter information needed to create the control.
       /// @return An intptr_t that holds additional parameter information needed to create the control.
       intptr_t param() const {return param_;}
@@ -122,7 +122,7 @@ namespace xtd {
         param_ = param;
         return *this;
       }
-
+      
       /// @brief Gets or sets the control's parent.
       /// @return An intptr_t that contains the window handle of the control's parent.
       intptr_t parent() const {return parent_;}
@@ -133,7 +133,7 @@ namespace xtd {
         parent_ = parent;
         return *this;
       }
-
+      
       /// @brief Gets a bitwise combination of window style values.
       /// @return A bitwise combination of the window style values.
       /// @remarks The Style property controls the appearance of the control and its initial state.
@@ -146,7 +146,7 @@ namespace xtd {
         style_ = style;
         return *this;
       }
-
+      
       /// @brief Gets the initial size of the control.
       /// @return The xtd::drawing::size that represents the initial size of the control.
       drawing::size size() const {return size_;}
@@ -157,7 +157,7 @@ namespace xtd {
         size_ = size;
         return *this;
       }
-
+      
       /// @brief Gets the initial width of the control.
       /// @return The numeric value that represents the initial width of the control.
       int32_t width() const {return size_.width();}
@@ -168,7 +168,7 @@ namespace xtd {
         size_.width(width);
         return *this;
       }
-
+      
       /// @brief Gets the initial left position of the control.
       /// @return The numeric value that represents the initial left position of the control.
       int32_t x() const {return location_.x();}
@@ -191,7 +191,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -203,7 +203,7 @@ namespace xtd {
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const create_params& create_params) noexcept {return os << create_params.to_string();}
       /// @endcond
-
+      
     private:
       xtd::ustring caption_;
       xtd::ustring class_name_;

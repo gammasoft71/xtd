@@ -23,7 +23,7 @@ namespace xtd {
       /// @brief The third button on the message box is the default button.
       button3 = 0x00000200L
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, message_dialog_default_button value) {return os << to_string(value, {{message_dialog_default_button::button1, "button1"}, {message_dialog_default_button::button2, "button2"}, {message_dialog_default_button::button3, "button3"}});}
     inline std::wostream& operator<<(std::wostream& os, message_dialog_default_button value) {return os << to_string(value, {{message_dialog_default_button::button1, L"button1"}, {message_dialog_default_button::button2, L"button2"}, {message_dialog_default_button::button3, L"button3"}});}

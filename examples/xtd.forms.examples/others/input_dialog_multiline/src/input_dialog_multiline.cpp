@@ -10,7 +10,7 @@ namespace examples {
       auto_scroll(true);
       text("Input dialog multiline example");
       controls().push_back_range({button1, label1});
-
+      
       button1.location({10, 10});
       button1.auto_size(true);
       button1.text("Lines...");
@@ -23,7 +23,7 @@ namespace examples {
         if (input_dialog.show_dialog(*this) == dialog_result::ok)
           label1.text(input_dialog.value());
       };
-
+      
       label1.location({10, 50});
       label1.auto_size(true);
       label1.text("line 1\nline 2");

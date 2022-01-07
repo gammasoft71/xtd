@@ -51,7 +51,7 @@ namespace xtd {
           operator type_t() {return *this;}
           friend std::ostream& operator<<(std::ostream& os, const value_type& value) {return os << static_cast<const type_t&>(value);}
           /// @endcond
-                    
+          
         private:
           friend class arranged_element_collection;
           size_t pos = std::numeric_limits<size_t>::max();
@@ -91,14 +91,14 @@ namespace xtd {
         /// @brief This is a special value equal to the maximum value representable by the type size_t.
         static const size_type npos = std::numeric_limits<size_type>::max();
         /// @}
-
+        
         /// @name Constructors
         
         /// @{
         /// @brief Creates a new object xtd::forms::layout::arranged_element_collection with specified allocator (optional).
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
-        explicit arranged_element_collection(const allocator_type& allocator = allocator_type()) : collection_(allocator) {}        
+        explicit arranged_element_collection(const allocator_type& allocator = allocator_type()) : collection_(allocator) {}
         /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
         /// @param il The initializer list that contains items to fill the collection.
         arranged_element_collection(const std::initializer_list<type_t>& il) {
@@ -106,7 +106,7 @@ namespace xtd {
             push_back(item);
         }
         /// @}
-
+        
         /// @cond
         arranged_element_collection(const std::vector<type_t>& collection) {
           for (auto item : collection)
@@ -142,21 +142,21 @@ namespace xtd {
         /// @param pos The position of the element to return.
         /// @exception std::out_of_range pos is greater than arranged_element_collection::size.
         const_reference at(size_type pos) const {return collection_.at(pos);}
-       
+        
         /// @brief Access the first element.
         /// @return The first element.
         reference front() {return collection_.front();}
         /// @brief Access the first element.
         /// @return The first element.
         const_reference front() const {return collection_.front();}
-       
+        
         /// @brief Access the last element.
         /// @return The last element.
         reference back() {return collection_.back();}
         /// @brief Access the last element.
         /// @return The last element.
         const_reference back() const {return collection_.back();}
-    
+        
         /// @brief Direct access to the underlying array.
         /// @return The underlying array.
         pointer data() {return collection_.data();}
@@ -193,7 +193,7 @@ namespace xtd {
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         const_reverse_iterator crbegin() const {return collection_.crbegin();}
-
+        
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         reverse_iterator rend() {return collection_.rend();}
@@ -244,7 +244,7 @@ namespace xtd {
           while (it != end())
             it = erase(it);
         }
-
+        
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param value The element to insert.
@@ -287,7 +287,7 @@ namespace xtd {
           if (sorted_) sort();
           return result;
         }
-
+        
         /// @brief Inserts specified element at specified index.
         /// @param pos The index before which the content will be inserted.
         /// @param value The element to insert.
@@ -295,7 +295,7 @@ namespace xtd {
           if (index > size()) throw argument_out_of_range_exception(current_stack_frame_);
           insert(begin() + index, value);
         }
-
+        
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
         iterator erase(iterator pos) {
@@ -307,7 +307,7 @@ namespace xtd {
         }
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
-         iterator erase(const_iterator pos) {
+        iterator erase(const_iterator pos) {
           item_removed(pos - begin(), *pos);
           erasing_ = true;
           iterator result = collection_.erase(pos);
@@ -340,7 +340,7 @@ namespace xtd {
           if (index > size()) throw argument_out_of_range_exception(current_stack_frame_);
           erase(begin() + index);
         }
-
+        
         /// @brief Adds an element to the end.
         /// @param item The element to add.
         void push_back(const value_type& item) {
@@ -365,42 +365,42 @@ namespace xtd {
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         void push_back_range(const arranged_element_collection& collection) {
-          for(value_type item : collection)
+          for (value_type item : collection)
             push_back(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         void push_back_range(const std::vector<value_type>& collection) {
-          for(value_type item : collection)
+          for (value_type item : collection)
             push_back(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         void push_back_range(const std::initializer_list<value_type>& collection) {
-          for(value_type item : collection)
+          for (value_type item : collection)
             push_back(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         template<typename collection_t>
         void push_back_range(collection_t&& collection) {
-          for(auto& item : collection)
+          for (auto& item : collection)
             push_back(value_type(item));
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         template<typename iterator_t>
         void push_back_range(iterator_t begin, iterator_t end) {
-          for(auto it = begin; it != end; ++it)
+          for (auto it = begin; it != end; ++it)
             push_back(value_type(*it));
         }
-
+        
         /// @brief Sorts the content.
         void sort() {
           sorter_t sorter;
           sorter(begin(), end());
         }
-
+        
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         std::vector<type_t> to_array() const {
@@ -445,7 +445,7 @@ namespace xtd {
         /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
         /// @}
-
+        
       private:
         std::vector<value_type, allocator_type> collection_;
         bool inserting_ = false;

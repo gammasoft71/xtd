@@ -45,21 +45,21 @@ namespace unit_tests {
       assert::are_equal("b", list_box.items()[3], csf_);
       assert::are_equal(2, any_cast<int>(list_box.items()[3].tag()), csf_);
     }
-     
+    
     void test_method_(sorted_add_items) {
       form form;
       list_box list_box;
       list_box.parent(form);
       list_box.sorted(true);
       list_box.items().push_back_range({"d", "a", "c", "b"});
-
+      
       assert::are_equal(4U, list_box.items().size(), csf_);
       assert::are_equal("a", list_box.items()[0], csf_);
       assert::are_equal("b", list_box.items()[1], csf_);
       assert::are_equal("c", list_box.items()[2], csf_);
       assert::are_equal("d", list_box.items()[3], csf_);
     }
-
+    
     void test_method_(unsorted_add_items_then_make_sorted) {
       form form;
       list_box list_box;
@@ -73,7 +73,7 @@ namespace unit_tests {
       assert::are_equal("c", list_box.items()[2], csf_);
       assert::are_equal("d", list_box.items()[3], csf_);
     }
-
+    
     void test_method_(unsorted_add_items_then_make_std_sorted) {
       form form;
       list_box list_box;
@@ -93,16 +93,16 @@ namespace unit_tests {
       list_box list_box;
       list_box.parent(form);
       
-      assert::throws<argument_exception>([&]{list_box.selected_index(0);}, csf_);
+      assert::throws<argument_exception>([&] {list_box.selected_index(0);}, csf_);
     }
     
     void test_method_(selection_index_with_bad_index) {
       form form;
       list_box list_box;
-      list_box.parent(form);      
+      list_box.parent(form);
       list_box.items().push_back_range({"d", "a", "c", "b"});
-
-      assert::throws<argument_exception>([&]{list_box.selected_index(4);}, csf_);
+      
+      assert::throws<argument_exception>([&] {list_box.selected_index(4);}, csf_);
     }
   };
 }

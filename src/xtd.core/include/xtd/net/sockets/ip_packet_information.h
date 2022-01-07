@@ -38,25 +38,25 @@ namespace xtd {
         /// @brief Creates an empty xtd::net::sockets::ip_packet_information instance.
         ip_packet_information() = default;
         /// @}
-
+        
         /// @cond
         ip_packet_information(ip_packet_information&&) = default;
         ip_packet_information(const ip_packet_information&) = default;
         ip_packet_information& operator=(const ip_packet_information&) = default;
         /// @endcond
-
+        
         /// @name Properties
         
         /// @{
         /// @brief Gets the origin information of the packet that was received as a result of calling the xtd::net::sockets::socket::receive_message_from method or xtd::net::sockets::socket::end_receive_message_from method.
         /// @return An xtd::net::ip_address that indicates the origin information of the packet that was received as a result of calling the xtd::net::sockets::socket::receive_message_from method or xtd::net::sockets::socket::end_receive_message_from method. For packets that were sent from a unicast address, the xtd::net::sockets::ip_packet_information::address property will return the xtd::net::ip_address of the sender; for multicast or broadcast packets, the xtd::net::sockets::ip_packet_information::address property will return the multicast or broadcast xtd::net::ip_address.
         const xtd::net::ip_address& address() const noexcept;
-
+        
         /// @brief Gets the network interface information that is associated with a call to xtd::net::sockets::socket::receive_message_from method or xtd::net::sockets::socket::end_receive_message_from.
         /// @return An int32_t value, which represents the index of the network interface. You can use this index with xtd::net::network_information::network_interface::get_all_network_interfaces() to get more information about the relevant interface.
         int32_t interface() const noexcept;
         /// @}
-
+        
       private:
         friend class socket;
         xtd::net::ip_address address_;

@@ -31,11 +31,11 @@ namespace xtd::native {
       static bool contains(const std::string& str, const std::string& value) noexcept {
         return str.find(value) != str.npos;
       }
-
+      
       static bool ends_with(const std::string& str, const std::string& value) noexcept {
         return str.rfind(value) + value.size() == str.size();
       }
-
+      
       template<typename separator_t, typename collection_t>
       static std::string join(const separator_t& separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
       
@@ -52,7 +52,7 @@ namespace xtd::native {
         }
         return ss.str();
       }
-
+      
       static size_t last_index_of(const std::string& str, char value) noexcept {
         return last_index_of(str, value, 0, str.size());
       }
@@ -78,7 +78,7 @@ namespace xtd::native {
         size_t result = str.rfind(value, start_index + count - value.size());
         return result < start_index ? str.npos : result;
       }
-
+      
       static std::string remove(const std::string& str, size_t start_index) noexcept {
         return remove(str, start_index, str.size() - start_index);
       }
@@ -88,7 +88,7 @@ namespace xtd::native {
         std::string result(str);
         return result.erase(start_index, count);
       }
-
+      
       static std::string replace(const std::string& str, const std::string& old_string, const std::string& new_string) noexcept {
         std::string result(str);
         size_t index = 0;
@@ -124,10 +124,10 @@ namespace xtd::native {
         
         return list;
       }
-
+      
       static const std::string to_lower(const std::string& str) noexcept {
         std::string result;
-        for(auto c : str)
+        for (auto c : str)
           result.push_back(static_cast<char>(tolower(c)));
         return result;
       }
@@ -136,8 +136,8 @@ namespace xtd::native {
         if (start_index >= str.size()) return "";
         return str.substr(start_index, length);
       }
-
-
+      
+      
       static std::string trim_end(const std::string& str, const std::vector<char>& trim_chars) noexcept {
         if (!str.size()) return str;
         std::string result(str);
@@ -150,7 +150,7 @@ namespace xtd::native {
         try {
           value = std::atoi(str.c_str());
           return true;
-        } catch(...) {
+        } catch (...) {
           return false;
         }
       }

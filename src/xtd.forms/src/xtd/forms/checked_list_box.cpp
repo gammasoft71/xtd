@@ -19,22 +19,22 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 checked_list_box::checked_list_box() {
-  data_->items.item_added += [&](size_t pos, const item& item) {
+  data_->items.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
     checked_list_box::item selected_item;
     if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
-
-  data_->items.item_removed += [&](size_t pos, const item& item) {
+  
+  data_->items.item_removed += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::checked_list_box::delete_item(handle(), pos);
-
+    
     checked_list_box::item selected_item;
     if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
   
-  data_->items.item_updated += [&](size_t pos, const item& item) {
+  data_->items.item_updated += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
     checked_list_box::item selected_item;
     if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
@@ -44,14 +44,14 @@ checked_list_box::checked_list_box() {
 
 checked_list_box::checked_index_collection checked_list_box::checked_indices() const {
   checked_index_collection indices;
-  for(size_t index = 0; index < data_->items.size(); index++)
+  for (size_t index = 0; index < data_->items.size(); index++)
     if (data_->items[index].checked()) indices.push_back(index);
   return indices;
 }
- 
+
 checked_list_box::checked_item_collection checked_list_box::checked_items() const {
   checked_item_collection items;
-  for(checked_list_box::item item : data_->items)
+  for (checked_list_box::item item : data_->items)
     if (item.checked()) items.push_back(item);
   return items;
 }
@@ -67,7 +67,7 @@ list_control& checked_list_box::selected_index(size_t selected_index) {
     //this->selected_item(selected_item);
     data_->selected_item = selected_item;
     on_selected_value_changed(event_args::empty);
-
+    
     on_selected_index_changed(event_args::empty);
   }
   return *this;
@@ -137,10 +137,10 @@ void checked_list_box::set_item_text(size_t index, const xtd::ustring& text) {
 
 forms::create_params checked_list_box::create_params() const {
   forms::create_params create_params = list_box::create_params();
-
+  
   create_params.class_name("checkedlistbox");
   create_params.style(create_params.style() | LBS_HASSTRINGS);
-
+  
   switch (selection_mode()) {
   case selection_mode::none: create_params.style(create_params.style() | LBS_NOSEL); break;
   case selection_mode::one:  break;
@@ -148,10 +148,10 @@ forms::create_params checked_list_box::create_params() const {
   case selection_mode::multi_extended: create_params.style(create_params.style() | LBS_MULTIPLESEL | LBS_EXTENDEDSEL); break;
   default: break;
   }
-
+  
   // Do not use native control sort
   //if (sorted_) create_params.style(create_params.style() | LBS_SORT);
-
+  
   if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (border_style() == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   

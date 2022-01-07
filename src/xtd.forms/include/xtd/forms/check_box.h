@@ -66,7 +66,7 @@ namespace xtd {
       /// @include check_box.cpp
       check_box();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -81,7 +81,7 @@ namespace xtd {
       /// @param appearance One of the appearance values. The default value is normal.
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
       virtual check_box& appearance(forms::appearance appearance);
-
+      
       /// @brief Gets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
       /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
@@ -174,7 +174,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<check_box, event_handler> check_state_changed;
       /// @}
-
+      
     protected:
       /// @name Protected properties
       
@@ -190,12 +190,12 @@ namespace xtd {
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
-
+      
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This method is not relevant for this class.
       drawing::size measure_control() const override;
-
+      
       /// @brief Raises the check_box::appearance_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
@@ -232,7 +232,7 @@ namespace xtd {
         check_state_changed(*this, e);
         if (flat_style() != xtd::forms::flat_style::system) invalidate();
       }
-
+      
       void on_enabled_changed(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system) {
           if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::unchecked_normal : xtd::forms::visual_styles::check_box_state::unchecked_disabled;
@@ -243,7 +243,7 @@ namespace xtd {
       }
       
       void on_handle_created(const event_args& e) override;
-
+      
       void on_mouse_down(const mouse_event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
           if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_pressed;
@@ -279,17 +279,17 @@ namespace xtd {
         }
         button_base::on_mouse_up(e);
       }
-
+      
       void on_paint(paint_event_args& e) override;
       /// @}
-  
-     /// @cond
+      
+      /// @cond
       void wnd_proc(message& message) override;
       virtual void wm_mouse_double_click(message& message);
       virtual void wm_mouse_down(message& message);
       virtual void wm_mouse_up(message& message);
       /// @endcond
-
+      
     private:
       struct data {
         forms::appearance appearance = forms::appearance::normal;

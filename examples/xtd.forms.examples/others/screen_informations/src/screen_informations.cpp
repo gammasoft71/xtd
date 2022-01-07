@@ -11,7 +11,7 @@ public:
     client_size({450, 300});
     fore_color(colors::yellow());
     text("Screen informations example");
-
+    
     screen_informations_text_box.dock(dock_style::fill);
     screen_informations_text_box.multiline(true);
     screen_informations_text_box.parent(*this);

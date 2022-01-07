@@ -21,7 +21,7 @@ public:
     watch_panel.bounds({20, 10, 235, 50});
     watch_panel.back_color(drawing::color::average(drawing::color::black, drawing::color::lime, 0.25));
     watch_panel.fore_color(drawing::color::lime);
-
+    
     watch.parent(watch_panel);
     watch.bounds({10, 8, 214, 33});
     watch.text("00:00:00.000");
@@ -51,7 +51,7 @@ private:
   void on_start_stop_click(object& sender, const event_args& e) {
     if (stopwatch.is_running()) stopwatch.stop();
     else stopwatch.start();
-
+    
     timer_chrono.enabled(stopwatch.is_running());
     start_stop.text(timer_chrono.enabled() ? "Stop" :  "Start");
     pause_resume.enabled(timer_chrono.enabled());
@@ -75,11 +75,11 @@ private:
     start_stop.text("Start");
     pause_resume.text("Pause");
   };
-
+  
   void on_timer_tick(object& sender, const event_args& e) {
     watch.text(ustring::format("{0:H}:{0:M}:{0:S}.{0:L}", stopwatch.elapsed()));
   };
-
+  
   xtd::diagnostics::stopwatch stopwatch;
   panel watch_panel;
   lcd_label watch;

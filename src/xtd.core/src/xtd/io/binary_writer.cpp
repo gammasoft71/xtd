@@ -11,7 +11,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
-binary_writer::binary_writer(const ustring& path) : stream_(new ofstream(path, ios::out|ios::binary|ios_base::trunc)), delete_when_destroy_(true) {
+binary_writer::binary_writer(const ustring& path) : stream_(new ofstream(path, ios::out | ios::binary | ios_base::trunc)), delete_when_destroy_(true) {
   if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (!file::exists(path)) throw file_not_found_exception(csf_);

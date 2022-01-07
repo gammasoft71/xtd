@@ -14,7 +14,7 @@ int main() {
   bool a_bool = true;
   
   console::write_line("This example of methods of the BitConverter class"
-                     "\ngenerates the following output.\n");
+    "\ngenerates the following output.\n");
   console::write_line(formatter, "argument", "byte array");
   console::write_line(formatter, "--------", "----------");
   

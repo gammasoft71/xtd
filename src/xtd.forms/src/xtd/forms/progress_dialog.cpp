@@ -149,7 +149,7 @@ void progress_dialog::reset() {
   maximum_ = 100;
   message_ = "";
   minimum_ = 0;
-  options_ = PROGDLG_NORMAL|PROGDLG_NOCANCEL|PROGDLG_NOSKIP;
+  options_ = PROGDLG_NORMAL | PROGDLG_NOCANCEL | PROGDLG_NOSKIP;
   step_ = 10;
   text_ = "";
   value_ = 0;

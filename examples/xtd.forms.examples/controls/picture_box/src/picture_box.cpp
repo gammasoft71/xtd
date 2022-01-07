@@ -10,7 +10,7 @@ namespace picture_box {
     form1() {
       text("Picture box example");
       client_size({300, 345});
-
+      
       choice1.parent(*this);
       choice1.location({20, 20});
       choice1.width(260);
@@ -20,7 +20,7 @@ namespace picture_box {
       choice1.selected_value_changed += [&] {
         picture_box1.size_mode(std::any_cast<picture_box_size_mode>(choice1.selected_item().tag()));
       };
-
+      
       picture_box1.parent(*this);
       picture_box1.border_style(border_style::etched);
       picture_box1.location({20, 65});

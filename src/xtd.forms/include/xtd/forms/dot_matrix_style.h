@@ -14,15 +14,15 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-  enum class dot_matrix_style {
-    /// @brief Round dot matrix style.
-    round,
-    /// @brief Square dot matrix style.
-    square,
-    /// @brief Standard (or round) dot matrix style.
-    standard = round,
-  };
-
+    enum class dot_matrix_style {
+      /// @brief Round dot matrix style.
+      round,
+      /// @brief Square dot matrix style.
+      square,
+      /// @brief Standard (or round) dot matrix style.
+      standard = round,
+    };
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, dot_matrix_style value) {return os << to_string(value, {{dot_matrix_style::standard, "standard"}, {dot_matrix_style::square, "square"}});}
     inline std::wostream& operator<<(std::wostream& os, dot_matrix_style value) {return os << to_string(value, {{dot_matrix_style::standard, L"standard"}, {dot_matrix_style::square, L"square"}});}

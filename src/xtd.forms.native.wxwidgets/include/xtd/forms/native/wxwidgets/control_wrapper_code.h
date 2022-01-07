@@ -12,7 +12,7 @@ namespace xtd {
       inline control_wrapper<control_t>::~control_wrapper() {
         if (event_handler_) event_handler_->reset_control();
       }
-
+      
       template<typename control_t>
       inline bool control_wrapper<control_t>::ProcessEvent(wxEvent& event) {
         if (event_handler_ == nullptr || event_handler_->control() == nullptr) return false;
@@ -20,7 +20,7 @@ namespace xtd {
         if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
         //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", ustring::full_class_name<control_t>(), to_string(event)));
         if (event.GetEventType() == wxEVT_DESTROY) return process_result_;
-
+        
         if (is_clipboard_event(event.GetEventType())) process_clipboard_event(event);
         else if (is_command_event(event.GetEventType())) process_command_event(event);
         else if (is_cursor_event(event.GetEventType())) process_cursor_event(event);
@@ -35,22 +35,22 @@ namespace xtd {
         else if (is_text_event(event.GetEventType())) process_text_event(event);
         else if (is_thread_event(event.GetEventType())) process_thread_event(event);
         else def_process_event(event);
-
+        
         class post_process_event {
         public:
           explicit post_process_event(bool* process_result) : process_result_(process_result) {}
           ~post_process_event() { *process_result_ = true; }
           bool* process_result_;
         } post_process_event(&process_result_);
-
+        
         return process_result_;
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_clipboard_event(wxEvent& event) {
         def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_command_event(wxEvent& event) {
         //if (event.GetEventType() == wxEVT_BUTTON && (event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom())) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED,  event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
@@ -87,30 +87,30 @@ namespace xtd {
           event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
         } else def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_cursor_event(wxEvent& event) {
         def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_generic_command_event(wxEvent& event) {
         def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_help_event(wxEvent& event) {
         def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_gesture_event(wxEvent& event) {
         def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_key_event(wxEvent& event) {
-#if defined(__APPLE__)
+        #if defined(__APPLE__)
         if (event.GetEventType() == wxEVT_KEY_DOWN && static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == functionRawKeyCode) {
           if (!functionKeyModifierIsDown) functionKeyModifierIsDown = true;
           else {
@@ -118,32 +118,32 @@ namespace xtd {
             event.SetEventType(wxEVT_KEY_UP);
           }
         }
-#endif
+        #endif
         if (event.GetEventType() == wxEVT_KEY_DOWN) event.Skip(!event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_KEYDOWN, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_CHAR) event.Skip(!event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CHAR, static_cast<wxKeyEvent&>(event).GetUnicodeKey(), 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_KEY_UP) event.Skip(!event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_KEYUP, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr_t>(&event)));
         else def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_mouse_event(wxEvent& event) {
         wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
         wxMouseState mouse_state = wxGetMouseState();
         int32_t virtual_keys = 0;
-
-#if defined(__APPLE__)
+        
+        #if defined(__APPLE__)
         if (mouse_state.RawControlDown()) virtual_keys |= MK_COMMAND;
         if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
-#else
+        #else
         if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
-#endif
+        #endif
         if (mouse_state.ShiftDown()) virtual_keys |= MK_SHIFT;
         if (mouse_state.LeftIsDown()) virtual_keys |= MK_LBUTTON;
         if (mouse_state.MiddleIsDown()) virtual_keys |= MK_MBUTTON;
         if (mouse_state.RightIsDown()) virtual_keys |= MK_RBUTTON;
         if (mouse_state.Aux1IsDown()) virtual_keys |= MK_XBUTTON1;
         if (mouse_state.Aux2IsDown()) virtual_keys |= MK_XBUTTON2;
-
+        
         if (event.GetEventType() == wxEVT_LEFT_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONDOWN, MK_LBUTTON | virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_MIDDLE_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONDOWN, MK_MBUTTON | virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_RIGHT_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONDOWN, MK_RBUTTON | virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
@@ -168,12 +168,12 @@ namespace xtd {
         else if (event.GetEventType() == wxEVT_AUX2_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDBLCLK, MK_XBUTTON2 | virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
         else def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_scroll_event(wxEvent& event) {
         def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_scrollbar_event(wxEvent& event) {
         if (event.GetEventType() == wxEVT_SCROLL_TOP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_TOP, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
@@ -186,22 +186,21 @@ namespace xtd {
         else if (event.GetEventType() == wxEVT_SCROLL_THUMBRELEASE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_ENDSCROLL, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_spin_event(wxEvent& event) {
         if (event.GetEventType() == wxEVT_SPIN_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEDOWN, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_SPIN_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEUP, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_system_event(wxEvent& event) {
         wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
         if (event.GetEventType() == wxEVT_CLOSE_WINDOW) {
           if (event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event)))
             static_cast<wxCloseEvent&>(event).Veto();
-        }
-        else if (event.GetEventType() == wxEVT_ACTIVATE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_ACTIVATE, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()), static_cast<wxActivateEvent&>(event).GetActive() ? (static_cast<wxActivateEvent&>(event).GetActivationReason() == wxActivateEvent::Reason::Reason_Mouse ? WA_CLICKACTIVE : WA_ACTIVE) : WA_INACTIVE, reinterpret_cast<intptr_t>(&event));
+        } else if (event.GetEventType() == wxEVT_ACTIVATE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_ACTIVATE, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()), static_cast<wxActivateEvent&>(event).GetActive() ? (static_cast<wxActivateEvent&>(event).GetActivationReason() == wxActivateEvent::Reason::Reason_Mouse ? WA_CLICKACTIVE : WA_ACTIVE) : WA_INACTIVE, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_DESTROY) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_ERASE_BACKGROUND) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_ERASEBKGND, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()), 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_MOVE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
@@ -216,16 +215,15 @@ namespace xtd {
         //else if (event.GetEventType() == wxEVT_EXIT_SIZEMOVE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_EXITSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
         else def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_text_event(wxEvent& event) {
         if (event.GetEventType() == wxEVT_TEXT) {
           if (event.GetId() == this->GetId()) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_SETTEXT, 0, reinterpret_cast<intptr_t>(static_cast<wxCommandEvent&>(event).GetString().c_str().AsWChar()), reinterpret_cast<intptr_t>(&event));
-        }
-        else
+        } else
           def_process_event(event);
       }
-
+      
       template<typename control_t>
       inline void control_wrapper<control_t>::process_thread_event(wxEvent& event) {
         def_process_event(event);

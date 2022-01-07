@@ -22,6 +22,6 @@ startup_(examples::program);
 /*
  This example of the bit_converter::endianness field generates
  the following output when run on x86-class computers.
- 
+
  endianness:  little
  */

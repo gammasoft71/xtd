@@ -13,40 +13,40 @@ namespace unit_tests {
       assert::is_zero(s.length(), csf_);
       assert::is_true(ustring::is_empty(s), csf_);
     }
-
+    
     void test_method_(constructor_with_ustring) {
       ustring s1 = "test";
       ustring s2 = s1;
       assert::are_equal(4U, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
-
+    
     void test_method_(constructor_with_literal) {
       ustring s = "test";
       assert::are_equal(4U, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
-
+    
     void test_method_(constructor_with_string) {
       string s1 = "test";
       ustring s2 = s1;
       assert::are_equal(4U, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
-
+    
     void test_method_(constructor_with_w_literal) {
       ustring s = L"test";
       assert::are_equal(4U, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
-
+    
     void test_method_(constructor_with_wstring) {
       wstring s1 = L"test";
       ustring s2 = s1;
       assert::are_equal(4U, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
-
+    
     void test_method_(constructor_with_u8_literal) {
       ustring s = u8"test";
       assert::are_equal(4U, s.length(), csf_);
@@ -59,7 +59,7 @@ namespace unit_tests {
       assert::are_equal(4U, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
-
+    
     void test_method_(constructor_with_u16_literal) {
       ustring s = u"test";
       assert::are_equal(4U, s.length(), csf_);
@@ -72,7 +72,7 @@ namespace unit_tests {
       assert::are_equal(4U, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
-
+    
     void test_method_(constructor_with_u32_literal) {
       ustring s = U"test";
       assert::are_equal(4U, s.length(), csf_);
@@ -85,7 +85,7 @@ namespace unit_tests {
       assert::are_equal(4U, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
-
+    
     void test_method_(compare) {
       assert::is_zero(ustring::compare("a", "a"), csf_);
       assert::is_negative(ustring::compare("a", "b"), csf_);

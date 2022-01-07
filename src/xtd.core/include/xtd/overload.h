@@ -26,7 +26,7 @@ namespace xtd {
     template <typename result_t, typename type_t>
     static constexpr auto of(result_t (type_t::*method)(args_t...)) noexcept -> decltype(method) {return method;}
   };
-
+  
   /// @brief Represents class that use to determine one of const overloaded methods.
   /// @par Library
   /// xtd.core
@@ -53,7 +53,7 @@ namespace xtd {
     static constexpr auto of(result_t (type_t::*method)(args_t...) const) noexcept -> decltype(method) {return method;}
     /// @}
   };
-
+  
   /// @brief Represents class that use to determine one of const and non const overloaded methods.
   /// @par Library
   /// xtd.core
@@ -86,14 +86,14 @@ namespace xtd {
     template <typename result_t>
     static constexpr auto of(result_t (*method)(args_t...)) noexcept -> decltype(method) {return method;}
   };
-
+  
   /// @cond
   template <typename... args_t>
   inline const overload<args_t...> overload_;
-
+  
   template <typename... args_t>
   inline const const_overload<args_t...> const_overload_;
-
+  
   template <typename... args_t>
   inline const non_const_overload<args_t...> non_const_overload_;
   /// @endcond

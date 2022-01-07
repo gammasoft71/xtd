@@ -113,7 +113,7 @@ namespace xtd {
         return os << message.to_string();
       }
       /// @endcond
-
+      
       
     private:
       message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam) {counter_++;}

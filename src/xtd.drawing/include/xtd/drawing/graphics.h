@@ -31,7 +31,7 @@ namespace xtd {
   }
 }
 /// @endcond
-  
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
@@ -100,7 +100,7 @@ namespace xtd {
       /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to ending point of the arc.
       /// @remarks This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries of a rectangle. The arc is the portion of the perimeter of the ellipse between the start_angle parameter and the start_angle + sweep_angle parameters.
       void draw_arc(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {draw_arc(pen, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<int32_t>(start_angle), static_cast<int32_t>(sweep_angle));}
-
+      
       /// @brief Draws a Bézier spline defined by four Point structures.
       /// @param pen xtd::drawing::pen structure that determines the color, width, and style of the curve.
       /// @param pt1 xtd::drawing::point structure that represents the starting point of the curve.
@@ -141,7 +141,7 @@ namespace xtd {
       /// @param y4 The y-coordinate of the ending point of the curve.
       /// @remarks The Bézier curve is drawn from the first point to the fourth point. The second and third points are control points that determine the shape of the curve.
       void draw_bezier(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4);
-
+      
       /// @brief Draws an ellipse specified by a bounding xtd::drawing::rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
       /// @param rect xtd::drawing::rectangle structure that defines the boundaries of the ellipse.
@@ -177,7 +177,7 @@ namespace xtd {
       void draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {draw_image(image, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height));}
       void draw_image(const xtd::drawing::image& image, int32_t x, int32_t y);
       void draw_image(const xtd::drawing::image& image, float x, float y) {draw_image(image, static_cast<int32_t>(x), static_cast<int32_t>(y));}
-
+      
       void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& p1, const point& p2) {draw_line(pen, p1.x(), p1.y(), p2.x(), p2.y());}
       void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p1, const point_f& p2) {draw_line(pen, p1.x(), p1.y(), p2.x(), p2.y());}
       void draw_line(const xtd::drawing::pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
@@ -197,14 +197,14 @@ namespace xtd {
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float radius) {draw_rounded_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height(), radius);}
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height, float radius) {draw_rounded_rectangle(pen, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<int32_t>(radius));}
-
+      
       void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const string_format& format);
       void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle) {draw_string(text, font, brush, layout_rectangle, string_format());}
       void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {draw_string(text, font, brush, point.x(), point.y(), format);}
       void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {draw_string(text, font, brush, point.x(), point.y(), string_format());}
       void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, const string_format& format);
       void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {draw_string(text, font, brush, x, y, string_format());}
-
+      
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {fill_ellipse(brush, rect.x(), rect.y(), rect.width(), rect.height());}
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect) {fill_ellipse(brush, rect.x(), rect.y(), rect.width(), rect.height());}
       void fill_ellipse(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
@@ -214,27 +214,27 @@ namespace xtd {
       void fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {fill_pie(brush, rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);}
       void fill_pie(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
       void fill_pie(const xtd::drawing::brush& brush, float x, float y, float width, float height, float start_angle, float sweep_angle) {fill_pie(brush, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<int32_t>(start_angle), static_cast<int32_t>(sweep_angle));}
-
+      
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {fill_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height());}
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect) {fill_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height());}
       void fill_rectangle(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
       void fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height) {fill_rectangle(brush, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height));}
-
+      
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, int32_t radius) {fill_rounded_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height(), radius);}
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float radius) {fill_rounded_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height(), radius);}
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height, float radius) {fill_rounded_rectangle(brush, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<int32_t>(radius));}
-
+      
       static graphics from_image(const xtd::drawing::image& image);
       
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
       void rotate_transform(float angle);
-
+      
       void translate_clip(int32_t dx, int32_t dy);
-
+      
       void translate_clip(float dx, float dy) {translate_clip(static_cast<int32_t>(dx), static_cast<int32_t>(dy));}
-
+      
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       /// @}
       
@@ -250,7 +250,7 @@ namespace xtd {
       friend xtd::forms::control_paint;
       friend xtd::forms::paint_event_args;
       friend xtd::forms::screen;
-
+      
       explicit graphics(intptr_t handle) {data_->handle_ = handle;}
       void draw_image_disabled(const xtd::drawing::image& image, int32_t x, int32_t y, float brightness);
       

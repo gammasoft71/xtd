@@ -15,7 +15,7 @@ intptr_t tool_bar::add_tool_bar_button(intptr_t control, const xtd::ustring& tex
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return 0;
   }
-
+  
   auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(control)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image));
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }

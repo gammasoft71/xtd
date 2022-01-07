@@ -30,9 +30,9 @@ namespace xtd {
       /// @brief Initializes a new instance of the debug_form class.
       debug_form() : trace_form_base("Debug") {
         xtd::diagnostics::debug::listeners().push_back(listener_);
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         visible(true);
-#endif
+        #endif
       }
       /// @}
       
@@ -55,18 +55,18 @@ namespace xtd {
       
       /// @{
       void flush() override {}
-
+      
       void write(const xtd::ustring& debug) override {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         trace_form_base::write(debug);
-#endif
+        #endif
       }
       void write_line(const xtd::ustring& debug) override {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         trace_form_base::write_line(debug);
-#endif
+        #endif
       }
-     /// @}
+      /// @}
       
     private:
       std::shared_ptr<xtd::diagnostics::trace_listener> listener_ = xtd::forms::control_trace_listener::create(*this);

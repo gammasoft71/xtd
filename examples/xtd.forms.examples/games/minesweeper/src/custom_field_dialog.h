@@ -37,14 +37,14 @@ namespace minesweeper {
     /// @param value The custom mines number.
     /// @remarks The value is between 10 and 667.
     void custom_mines(int value) noexcept;
-
+    
     static constexpr const int minimum_height = 8;
     static constexpr const int maximum_height = 24;
     static constexpr const int minimum_width = 8;
     static constexpr const int maximum_width = 30;
     static constexpr const int minimum_mines = 10;
     static constexpr const int maximum_mines = 667;
-
+    
   private:
     void on_text_box_key_press(object& sender, xtd::forms::key_press_event_args& e);
     xtd::forms::label message_label_;

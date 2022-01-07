@@ -36,7 +36,7 @@ namespace xtd {
       bool operator==(const switch_base& value) const;
       bool operator!=(const switch_base& value) const;
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -60,7 +60,7 @@ namespace xtd {
       /// @remarks When you create a new switch_base object, the display_name finds initial switch settings. For more information, see the switch_base constructor.
       const xtd::ustring& display_name() const;
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       
@@ -89,7 +89,7 @@ namespace xtd {
       /// @brief Sets the current setting for this switch.
       /// @param switch_setting The current setting for this switch. The default is zero.
       void switch_setting(int32_t switch_setting);
-
+      
       /// @brief Gets the value of the switch.
       /// @return A string representing the value of the switch.
       /// @remarks The on_value_changed method is called when the value of the value property is changed. The on_value_changed method parses the value of this property and converts it to an integer value, which is then used to set the switch_setting property.

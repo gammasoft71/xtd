@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Initialize a new instance of h_scroll_bar class.
       h_scroll_bar();
       /// @}
-
+      
       /// @name Properties
       
       /// @{

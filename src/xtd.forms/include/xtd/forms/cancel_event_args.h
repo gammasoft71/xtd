@@ -23,17 +23,17 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the cancel_event_args class with the cancel property set to false.
       cancel_event_args() = default;
-
+      
       /// @brief Initializes a new instance of the cancel_event_args class with the cancel property set to the given value.
       /// @param cancel true to cancel the event; otherwise, false.
       explicit cancel_event_args(bool cancel) : cancel_(cancel) {};
       /// @}
-
+      
       /// @cond
       cancel_event_args(const cancel_event_args& cancel_event_args) = default;
       cancel_event_args& operator=(const cancel_event_args& cancel_event_args) = default;
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -44,7 +44,7 @@ namespace xtd {
       /// @param cancel true if the event should be canceled; otherwise, false.
       virtual void cancel(bool cancel) {cancel_ = cancel;}
       /// @}
-
+      
     protected:
       bool cancel_ = false;
     };

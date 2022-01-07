@@ -15,7 +15,7 @@ namespace tutorial {
       button_quit.location(xtd::drawing::point(20, 20));
       button_quit.click += xtd::event_handler(*this, &form_button::on_quit);
     }
-
+    
     static void main() {
       xtd::forms::application::run(form_button());
     }

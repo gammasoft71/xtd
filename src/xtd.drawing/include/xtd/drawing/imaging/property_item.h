@@ -527,7 +527,7 @@ namespace xtd {
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
         void value(const std::vector<uint8_t>& value) {value_ = value;}
         /// @}
-
+        
       private:
         int32_t id_ = 0;
         int32_t len_ = 0;

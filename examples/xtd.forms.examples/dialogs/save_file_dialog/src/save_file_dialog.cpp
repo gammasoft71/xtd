@@ -8,7 +8,7 @@ public:
   form1() {
     text("Save file dialog example");
     controls().push_back(button1);
-
+    
     button1.location({10, 10});
     button1.text("Save...");
     button1.click += [&] {
@@ -19,7 +19,7 @@ public:
       if (dialog.show_sheet_dialog(*this) == dialog_result::ok)
         label1.text(ustring::format("File = {0}", dialog.file_name()));
     };
-
+    
     label1.parent(*this);
     label1.text("File = ");
     label1.auto_size(true);

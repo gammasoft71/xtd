@@ -23,16 +23,16 @@ namespace unit_tests {
       assert::are_equal("0", c.name(), csf_);
       
       assert::are_equal("color [empty]", c.to_string(), csf_);
-
+      
       assert::is_true(c.is_empty(), csf_);
       assert::is_false(c.is_known_color(), csf_);
       assert::is_false(c.is_system_color(), csf_);
       assert::is_false(c.is_named_color(), csf_);
-
+      
       assert::are_equal(0U, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
-
+    
     void test_method_(create_from_argb_0) {
       color c = color::from_argb(0);
       
@@ -45,9 +45,9 @@ namespace unit_tests {
       assert::are_equal(0, c.b(), csf_);
       assert::are_equal(0, c.handle(), csf_);
       assert::are_equal("0", c.name(), csf_);
-
+      
       assert::are_equal("color [a=0, r=0, g=0, b=0]", c.to_string(), csf_);
-
+      
       assert::is_false(c.is_empty(), csf_);
       assert::is_false(c.is_known_color(), csf_);
       assert::is_false(c.is_system_color(), csf_);
@@ -56,7 +56,7 @@ namespace unit_tests {
       assert::are_equal(0U, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
-
+    
     void test_method_(create_from_argb_0x12_0x34_0x56_0x78) {
       color c = color::from_argb(0x12, 0x34, 0x56, 0x78);
       
@@ -81,7 +81,7 @@ namespace unit_tests {
       assert::are_equal(0x12345678U, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
-
+    
     void test_method_(create_from_argb_0x12_0x34_0x56) {
       color c = color::from_argb(0x12, 0x34, 0x56);
       
@@ -106,7 +106,7 @@ namespace unit_tests {
       assert::are_equal(0xFF123456U, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
-
+    
     void test_method_(create_from_argb_0x20_color_blue) {
       color c = color::from_argb(0x20, color::blue);
       
@@ -131,7 +131,7 @@ namespace unit_tests {
       assert::are_equal(0x200000FFU, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
-
+    
     void test_method_(create_from_argb_0x12345678) {
       color c = color::from_argb(0x12345678);
       
@@ -159,7 +159,7 @@ namespace unit_tests {
     
     void test_method_(create_from_hsb_240_1_1) {
       color c = color::from_hsb(240, 1.0f, 1.0f);
-
+      
       assert::are_equal(color::from_hsb(240, 1.0f, 1.0f), c);
       assert::are_not_equal(color(), c);
       assert::are_not_equal(color::empty, c);
@@ -174,7 +174,7 @@ namespace unit_tests {
       assert::are_equal(240, c.get_hue(), csf_);
       assert::are_equal(1.0f, c.get_saturation(), csf_);
       assert::are_equal(1.0f, c.get_brightness(), csf_);
-
+      
       assert::are_equal("color [a=255, r=0, g=0, b=255]", c.to_string(), csf_);
       
       assert::is_false(c.is_empty(), csf_);
@@ -218,7 +218,7 @@ namespace unit_tests {
     void test_method_(create_from_know_color_invalid) {
       assert::throws<argument_exception>([] {color::from_known_color((known_color)7654);});
     }
-
+    
     void test_method_(create_from_know_color_transparent) {
       color c = color::from_known_color(known_color::transparent);
       
@@ -3743,7 +3743,7 @@ namespace unit_tests {
       assert::are_equal(0xFFFFFF00U, c.to_argb(), csf_);
       assert::are_equal(known_color::yellow, c.to_known_color(), csf_);
     }
-
+    
     void test_method_(create_from_name_transparent) {
       color c = color::from_name("transparent");
       

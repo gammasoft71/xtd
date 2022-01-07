@@ -18,15 +18,15 @@ namespace {
   string indent_string(int32_t indent) {
     return indent_string(indent, default_size_indent);
   }
-    
+  
   string generate_stack_trace_string_report(int32_t indent) {
     std::string report = ustring::format("{}Stack trace{}", indent_string(indent), environment::new_line());
     auto stack_trace = system_report::stack_trace();
     for (auto frame : stack_trace.get_frames())
-      report += ustring::format("{}{}{}", indent_string(indent +1), frame, environment::new_line());
+      report += ustring::format("{}{}{}", indent_string(indent + 1), frame, environment::new_line());
     return report + environment::new_line();
   }
-
+  
   string generate_libraries_string_report(int32_t indent) {
     std::string report = ustring::format("{}xtd libraries{}", indent_string(indent), environment::new_line());
     for (auto library : system_report::xtd_libraries()) {
@@ -86,42 +86,42 @@ namespace {
     report += ustring::format("{}Name: {}{}", indent_string(indent + 1), locale.name(), environment::new_line());
     return report + environment::new_line();
   }
-
+  
   string generate_environment_variables_string_report(int32_t indent) {
     std::string report = ustring::format("{}Environment variables{}", indent_string(indent), environment::new_line());
     for (auto environment_variable : system_report::environment_variables())
       report += ustring::format("{}{}={}{}", indent_string(indent + 1), environment_variable.first, environment_variable.second, environment::new_line());
     return report + environment::new_line();
   }
-
+  
   string generate_special_folders_string_report(int32_t indent) {
     std::string report = ustring::format("{}Special folders{}", indent_string(indent), environment::new_line());
     for (auto special_folder : system_report::special_folders())
       report += ustring::format("{}{}: {}{}", indent_string(indent + 1), special_folder.first, special_folder.second, environment::new_line());
     return report + environment::new_line();
   }
-
+  
   string generate_system_colors_string_report(int32_t indent) {
     std::string report = ustring::format("{}System colors{}", indent_string(indent), environment::new_line());
     for (auto system_color : system_report::system_colors())
       report += ustring::format("{}{}: {}{}", indent_string(indent + 1), system_color.first, system_color.second, environment::new_line());
     return report + environment::new_line();
   }
-
+  
   string generate_generic_font_families_string_report(int32_t indent) {
     std::string report = ustring::format("{}Generic font families{}", indent_string(indent), environment::new_line());
     for (auto font_family : system_report::generic_font_families())
       report += ustring::format("{}{}: {}{}", indent_string(indent + 1), font_family.first, font_family.second, environment::new_line());
     return report + environment::new_line();
   }
-
+  
   string generate_system_fonts_string_report(int32_t indent) {
     std::string report = ustring::format("{}System fonts{}", indent_string(indent), environment::new_line());
     for (auto system_font : system_report::system_fonts())
       report += ustring::format("{}{}: {}{}", indent_string(indent + 1), system_font.first, system_font.second, environment::new_line());
     return report + environment::new_line();
   }
-
+  
   string generate_screens_report(int32_t indent) {
     std::string report = ustring::format("{}Screens{}", indent_string(indent), environment::new_line());
     for (auto screen : system_report::screens()) {
@@ -133,7 +133,7 @@ namespace {
     }
     return report + environment::new_line();
   }
-
+  
   string generate_system_informations_string_report(int32_t indent) {
     std::string report = ustring::format("{}System informations{}", indent_string(indent), environment::new_line());
     for (auto system_information : system_report::system_informations())

@@ -25,8 +25,8 @@ namespace xtd {
       /// @brief The date_time_picker control displays the date/time value in a custom format.
       custom = 8,
     };
-
-  /// @cond
+    
+    /// @cond
     inline std::ostream& operator<<(std::ostream& os, date_time_picker_format value) {return os << to_string(value, {{date_time_picker_format::long_format, "long_format"}, {date_time_picker_format::short_format, "short_format"}, {date_time_picker_format::time, "time"}, {date_time_picker_format::custom, "custom"}});}
     inline std::wostream& operator<<(std::wostream& os, date_time_picker_format value) {return os << to_string(value, {{date_time_picker_format::long_format, L"long_format"}, {date_time_picker_format::short_format, L"short_format"}, {date_time_picker_format::time, L"time"}, {date_time_picker_format::custom, L"custom"}});}
     /// @endcond

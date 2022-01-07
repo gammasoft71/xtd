@@ -20,7 +20,7 @@ namespace xtd {
       /// @brief The appearance of the control is determined by the user's operating system.
       system,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, control_appearance value) {return os << to_string(value, {{control_appearance::standard, "standard"}, {control_appearance::system, "system"}});}
     inline std::wostream& operator<<(std::wostream& os, control_appearance value) {return os << to_string(value, {{control_appearance::standard, L"standard"}, {control_appearance::system, L"system"}});}

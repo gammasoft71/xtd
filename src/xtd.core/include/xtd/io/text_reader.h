@@ -19,7 +19,7 @@ namespace xtd {
     class null_text_reader;
     class synchronized_text_reader;
     /// @endcond
-
+    
     /// @brief Represents a reader that can read a sequential series of characters.
     /// @code
     /// class core_export_ text_reader : public xtd::object

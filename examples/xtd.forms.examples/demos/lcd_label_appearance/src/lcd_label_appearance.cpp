@@ -24,7 +24,7 @@ namespace examples {
         }
       };
       choice_lcd_style.selected_index(0);
-
+      
       choice_segment_style.location({140, 10});
       choice_segment_style.selected_value_changed += [&] {
         auto style = choice_segment_style.selected_item().tag();
@@ -34,7 +34,7 @@ namespace examples {
           lcd_label_label.segment_style(std::any_cast<forms::segment_style>(choice_segment_style.selected_item().tag()));
       };
       choice_segment_style.selected_index(0);
-
+      
       numeric_up_down_height.location({270, 10});
       numeric_up_down_height.set_range(1, 400);
       numeric_up_down_height.value_changed += [&] {
@@ -60,7 +60,7 @@ namespace examples {
       lcd_label_label.location({10, 45});
       lcd_label_label.text("1234567890");
       lcd_label_label.auto_size(true);
-
+      
       text("LCD label example");
       controls().push_back_range({choice_lcd_style, choice_segment_style, numeric_up_down_height, color_picker_up_down_fore_color, check_box_show_digit_background, lcd_label_label});
     }

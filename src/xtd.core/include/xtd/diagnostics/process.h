@@ -82,7 +82,7 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::diagnostics::data_received_event_handler& operator+=(fn_t function) noexcept {
-          data_->error_data_received_callback_+=(function);
+          data_->error_data_received_callback_ += (function);
           return xtd::diagnostics::data_received_event_handler::operator+=(function);
         }
         
@@ -101,7 +101,7 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::diagnostics::data_received_event_handler& operator -=(fn_t function) noexcept {
-          data_->error_data_received_callback_-=(function);
+          data_->error_data_received_callback_ -= (function);
           return data_received_event_handler::operator-=(function);
         }
         /// @}
@@ -109,7 +109,7 @@ namespace xtd {
       private:
         process::data* data_ = nullptr;
       };
-
+      
       /// @brief Represents a process exit event.
       /// @par Library
       /// xtd.core
@@ -145,7 +145,7 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::event_handler& operator+=(fn_t function) noexcept {
-          data_->exit_callback_+=(function);
+          data_->exit_callback_ += (function);
           return xtd::event_handler::operator+=(function);
         }
         
@@ -164,7 +164,7 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::event_handler& operator -=(fn_t function) noexcept {
-          data_->exit_callback_-=(function);
+          data_->exit_callback_ -= (function);
           return xtd::event_handler::operator-=(function);
         }
         /// @}
@@ -208,7 +208,7 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::diagnostics::data_received_event_handler& operator+=(fn_t function) noexcept {
-          data_->output_data_received_callback_+=(function);
+          data_->output_data_received_callback_ += (function);
           return xtd::diagnostics::data_received_event_handler::operator+=(function);
         }
         
@@ -227,7 +227,7 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::diagnostics::data_received_event_handler& operator -=(fn_t function) noexcept {
-          data_->output_data_received_callback_-=(function);
+          data_->output_data_received_callback_ -= (function);
           return xtd::diagnostics::data_received_event_handler::operator-=(function);
         }
         /// @}
@@ -248,7 +248,7 @@ namespace xtd {
       /// @remarks You can create a xtd::diagnostics::processes component by using the constructor, one of the static xtd::diagnostics::process::start overloads, or any of the xtd::diagnostics::process::get_process_by_id, xtd::diagnostics::process::get_processes, or xtd::diagnostics::process::get_processes_by_name methods. After you have done so, you have a view into the associated process. This is not a dynamic view that updates itself automatically when the process properties have changed in memory. Instead, you must call xtd::diagnostics::process::refresh for the component to update the xtd::diagnostics::process property information in your application.
       process();
       /// @}
-
+      
       /// @cond
       process(const process&) = default;
       process& operator=(const process& value);
@@ -291,7 +291,7 @@ namespace xtd {
       /// @remarks There's a cost associated with watching for a process to exit. If xtd::diagnostics::process::enable_raising_events is true, the xtd::diagnostics::process::exited event is raised when the associated process terminates. Your procedures for the xtd::diagnostics::process::exited event run at that time.
       /// @remarks Sometimes, your application starts a process but doesn't require notification of its closure. For example, your application can start Notepad to allow the user to perform text editing but make no further use of the Notepad application. You can choose to avoid notification when the process exits because it's not relevant to the continued operation of your application. Setting xtd::diagnostics::process::enable_raising_events to false can save system resources.
       process& enable_raising_events(bool value);
-
+      
       /// @brief Gets the value that the associated process specified when it terminated.
       /// @return The code that the associated process specified when it terminated.
       /// @exception xtd::invalid_operation_exception The process has not exited. -or- The process xtd::diagnostics::process::handle is not valid.
@@ -304,13 +304,13 @@ namespace xtd {
       /// @remarks You can use the xtd::diagnostics::process::close_main_window or the xtd::diagnostics::process::kill method to cause an associated process to exit.
       /// @remarks There are two ways of being notified when the associated process exits: synchronously and asynchronously. Synchronous notification relies on calling the xtd::diagnostics::process::wait_for_exit method to pause the processing of your application until the associated component exits. Asynchronous notification relies on the xtd::diagnostics::process::exited event. When using asynchronous notification, xtd::diagnostics::process::enable_raising_events must be set to true for the xtd::diagnostics::process component to receive notification that the process has exited.
       int32_t exit_code() const;
-
+      
       /// @brief Gets the time that the associated process exited.
       /// @return A xtd::date_time that indicates when the associated process was terminated.
       /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::exit_time property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks If the process has not terminated, attempting to retrieve the xtd::diagnostics::process::exit_time property throws an exception. Use xtd::diagnostics::process::has_exited before getting the xtd::diagnostics::process::exit_time property to determine whether the associated process has terminated.
       xtd::date_time exit_time() const;
-
+      
       /// @brief Gets the native handle of the associated process.
       /// @return The handle that the operating system assigned to the associated process when the process was started. The system uses this handle to keep track of process attributes.
       /// @exception xtd::invalid_operation_exception The process has not been started or has exited. The xtd::diagnostics::process::handle property cannot be read because there is no process associated with this xtd::diagnostics::process instance. -or- The xtd::diagnostics::process instance has been attached to a running process but you do not have the necessary permissions to get a handle with full access rights.
@@ -328,7 +328,7 @@ namespace xtd {
       /// @remarks A process can terminate independently of your code. If you started the process using this component, the system updates the value of xtd::diagnostics::process::has_exited automatically, even if the associated process exits independently.
       /// @note When standard output has been redirected to asynchronous event handlers, it is possible that output processing will not have completed when HasExited returns true. To ensure that asynchronous event handling has been completed, call the xtd::diagnostics::wait_for_exit() overload that takes no parameter before checking xtd::diagnostics::has_exited.
       bool has_exited() const;
-
+      
       /// @brief Gets the unique identifier for the associated process.
       /// @return The system-generated unique identifier of the process that is referenced by this process instance.
       /// @exception xtd::invalid_operation_exception The process's Id property has not been set.
@@ -337,14 +337,14 @@ namespace xtd {
       /// @remarks Process identifiers can be reused by the system. The xtd::diagnostics::process::id property value is unique only while the associated process is running. After the process has terminated, the system can reuse the xtd::diagnostics::process::id property value for an unrelated process.
       /// @remarks Because the identifier is unique on the system, you can pass it to other threads as an alternative to passing a xtd::diagnostics::process instance. This action can save system resources yet guarantee that the process is correctly identified.
       int32_t id() const;
-
+      
       /// @brief Gets the name of the computer the associated process is running on.
       /// @return The name of the computer that the associated process is running on.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks You can view statistical data and process information for processes running on remote computers but you cannot call xtd::diagnostics::process::start, xtd::diagnostics::process::close_main_window, or xtd::diagnostics::process::kill on remote computers.
       /// @note When the associated process is executing on the local machine, this property returns a period (".") for the machine name. You should use the xtd::environment::machine_name property to get the correct machine name.
       ustring machine_name() const;
-
+      
       /// @brief Gets the overall priority category for the associated process.
       /// @return The priority category for the associated process, from which the xtd::diagnostics::process::base_priority of the process is calculated.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
@@ -384,7 +384,7 @@ namespace xtd {
       /// @remarks The xtd::diagnostics::process::process_name property holds an executable file name, such as Outlook, that does not include the .exe extension or the path. It is helpful for getting and manipulating all the processes that are associated with the same executable file.
       /// @remarks You can call xtd::diagnostics::process::get_processes_by_name, passing it an executable file name, to retrieve an array that contains every running instance on the specified computer. You can use this array, for example, to shut down all the running instances of the executable file.
       ustring process_name() const;
-
+      
       /// @brief Gets a stream used to read the error output of the application.
       /// @return A std::istream that can be used to read the standard error stream of the application.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
@@ -494,7 +494,7 @@ namespace xtd {
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
       /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_error_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::process::standard_error stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::sstream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       std::istream& standard_error();
-
+      
       /// @brief Gets a stream used to write the input of the application.
       /// @return A std::ostream that can be used to write the standard input stream of the application.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processes object.
@@ -559,7 +559,7 @@ namespace xtd {
       /// @remarks A xtd::diagnostics::process can read input text from its standard input stream, typically the keyboard. By redirecting the xtd::diagnostics::process::standard_input stream, you can programmatically specify the input. For example, instead of using keyboard input, you can provide text from the contents of a designated file or output from another application.
       /// @note To use xtd::diagnostics::process::standard_input, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_input to true. Otherwise, writing to the xtd::diagnostics::process::standard_input stream throws an exception.
       std::ostream& standard_input();
-
+      
       /// @brief Gets a stream used to read the textual output of the application.
       /// @return A std::istream that can be used to read the standard output stream of the application.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
@@ -684,7 +684,7 @@ namespace xtd {
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
       /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_output_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::process::standard_output stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::stream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       std::istream& standard_output();
-
+      
       /// @brief Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics::process.
       /// @return The xtd::diagnostics::process_start_info that represents the data with which to start the process. These arguments include the name of the executable file or document used to start the process.
       /// @par Examples
@@ -715,7 +715,7 @@ namespace xtd {
       /// @remarks You can change the parameters specified in the xtd::diagnostics::process::start_info property up to the time that you call the xtd::diagnostics::process::start method on the process. After you start the process, changing the xtd::diagnostics::process::start_info values does not affect or restart the associated process. If you call the xtd::diagnostics::process::start(xtd::diagnostics::process_start_info) method with the xtd::diagnostics::process_start_info. xtd::diagnostics::process::start_info::user_name and xtd::diagnostics::process::start_info::password properties set, the unmanaged CreateProcessWithLogonW function is called, which starts the process in a new window even if the xtd::diagnostics::process::start_info::create_no_window property value is true or the xtd::diagnostics::process::start_info::window_style property value is xtd::diagnostics::process_window_style::hidden.
       /// @remarks You should only access the xtd::diagnostics::process::start_info property on a xtd::diagnostics::process object returned by the Start method. For example, you should not access the xtd::diagnostics::process::start_info property on a xtd::diagnostics::process object returned by xtd::diagnostics::process::get_processes.
       process& start_info(const xtd::diagnostics::process_start_info& value);
-
+      
       /// @brief Gets the time that the associated process was started.
       /// @return An object that indicates when the process started. An exception is thrown if the process is not running.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
@@ -739,7 +739,7 @@ namespace xtd {
       /// @remarks Data edited by the process or resources allocated to the process can be lost if you call xtd::diagnostics::process::kill. xtd::diagnostics::process::kill causes an abnormal process termination and should be used only when necessary. xtd::diagnostics::process::close_main_window enables an orderly termination of the process and closes all windows, so it is preferable for applications with an interface. If xtd::diagnostics::process::close_main_window fails, you can use xtd::diagnostics::process::kill to terminate the process. xtd::diagnostics::process::kill is the only way to terminate processes that do not have graphical interfaces.
       /// @remarks You can call xtd::diagnostics::process::kill and xtd::diagnostics::process::close_main_window only for processes that are running on the local computer. You cannot cause processes on remote computers to exit. You can only view information for processes running on remote computers.
       void kill();
-
+      
       /// @brief Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_info property of this Process component and associates it with the component.
       /// @return true if a process resource is started; false if no new process resource is started (for example, if an existing process is reused).
       /// @exception xtd::invalid_operation_exception No file name was specified in the xtd::diagnostics::process component's xtd::diagnostics::process::start_info.
@@ -785,7 +785,7 @@ namespace xtd {
       /// @remarks If you have a path variable declared in your system using quotes, you must fully qualify that path when starting any process found in that location. Otherwise, the system will not find the path. For example, if c:\mypath is not in your path, and you add it using quotation marks: path = %path%;"c:\mypath", you must fully qualify any process in c:\mypath when starting it.
       /// @remarks Whenever you use xtd::diagnostics::process::start to start a process, you might need to close it or you risk losing system resources. Close processes using xtd::diagnostics::process::close_main_window or Kill. You can check whether a process has already been closed by using its xtd::diagnostics::process::has_exited property.
       static process start(const ustring& file_name, const ustring& arguments);
-
+      
       /// @brief Instructs the xtd::diagnostics::process component to wait indefinitely for the associated process to exit.
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks xtd::diagnostics::process::wait_for_exit() makes the current thread wait until the associated process terminates. It should be called after all other methods are called on the process. To avoid blocking the current thread, use the xtd::diagnostics::process::exited event.
@@ -807,7 +807,7 @@ namespace xtd {
       /// @}
       
       /// @name Events
-
+      
       /// @{
       /// @brief Occurs when an application writes to its redirected xtd::diagnostics::process::standard_error stream.
       /// @remarks The xtd::diagnostics::process::error_data_received event indicates that the associated xtd::diagnostics::process has written a line that's terminated with a newline (carriage return (CR), line feed (LF), or CR+LF) to its redirected xtd::diagnostics::process::standard_error stream.

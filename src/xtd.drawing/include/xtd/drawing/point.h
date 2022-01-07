@@ -16,7 +16,7 @@ namespace xtd {
     /// @cond
     class size;
     /// @endcond
-
+    
     /// @brief Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional plane.
     /// @par Namespace
     /// xtd::drawing
@@ -83,8 +83,8 @@ namespace xtd {
       ///   label1.text = "Bottom Right Alignment";
       /// }
       /// @endcode
-      explicit point(int32_t dw) : x_(dw & 0x0000FFFF), y_((dw & 0xFFFF0000)>>16) {}
-
+      explicit point(int32_t dw) : x_(dw & 0x0000FFFF), y_((dw & 0xFFFF0000) >> 16) {}
+      
       /// @brief Initializes a new instance of the point class with the specified coordinates.
       /// @param x The horizontal position of the point.
       /// @param y The vertical position of the point.
@@ -130,9 +130,9 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      explicit point (const size& sz);
+      explicit point(const size& sz);
       /// @}
-
+      
       /// @cond
       point(const point&) = default;
       point& operator=(const point&) = default;
@@ -145,7 +145,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether this point is empty.
       /// @return true if both X and Y are 0; otherwise, false.
       bool is_empty() const {return *this == point::empty;}
-
+      
       /// @brief Gets the x-coordinate of this point.
       /// @return The x-coordinate of this point.
       /// @par Examples
@@ -238,7 +238,7 @@ namespace xtd {
       /// @endcode
       void y(int32_t y) {y_ = y;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -260,7 +260,7 @@ namespace xtd {
       /// @cond
       static point add(const point& pt1, const point& pt2);
       /// @endcond
-
+      
       /// @brief Converts the specified point_f to a point by rounding the values of the point_f to the next higher integer values.
       /// @param value The point_f to convert.
       /// @return The point this method converts to.
@@ -288,12 +288,12 @@ namespace xtd {
       /// }
       /// @endcode
       void offset(const point& p) {offset(p.x_, p.y_);}
-
+      
       /// @brief Converts the specified point_f to a point object by rounding the point_f values to the nearest integer.
       /// @param value The point_f to convert.
       /// @return The point this method converts to.
       static point round(const point_f& value);
-
+      
       /// @brief Returns the result of subtracting specified Size from the specified point.
       /// @param pt The point to be subtracted from.
       /// @param sz The size to subtract from the point.
@@ -303,21 +303,21 @@ namespace xtd {
       /// @cond
       static point subtract(const point& pt1, const point& pt2);
       /// @endcond
-
+      
       /// @brief Converts this point to a human-readable string.
       /// @return A string that represents this point.
       xtd::ustring to_string() const noexcept override {return  ustring::format("{{x={}, y={}}}", x_, y_);}
-
+      
       /// @brief Converts the specified point_f to a point by truncating the values of the point_f.
       /// @param value The point_f to convert.
       /// @return The point this method converts to.
       static point truncate(const point_f& value);
       /// @}
-
+      
       /// @cond
       bool operator==(const point& value) const {return x_ == value.x_ && y_ == value.y_;}
       bool operator!=(const point& value) const {return !operator==(value);}
-
+      
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point& point) noexcept {
         return os << point.to_string();
       }
@@ -337,7 +337,7 @@ namespace xtd {
       int32_t y_ = 0;
     };
   }
-
+  
   template<>
   inline drawing::point parse<drawing::point>(const std::string& str) {
     auto values = xtd::ustring(str).replace("}", "").replace(" y=", "").replace("{x=", "").split({','});

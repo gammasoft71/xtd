@@ -20,6 +20,6 @@ int main() {
     message_target = show_windows_message;
   else
     message_target = write_line;
-  
+    
   message_target("Hello, World!");
 }

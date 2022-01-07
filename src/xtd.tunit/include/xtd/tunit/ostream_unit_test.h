@@ -33,7 +33,7 @@ namespace xtd {
       /// @return The ostream used by this instance.
       /// @warning Used it only if you need to write specific user messages. If you change or redirect it when tests running, the unit test output result will be indeterminate.
       std::ostream& ostream() {return os_;}
-
+      
       int list_tests(const std::vector<std::string>& tests) override {
         for (auto name : tests)
           os_ << name << std::endl;

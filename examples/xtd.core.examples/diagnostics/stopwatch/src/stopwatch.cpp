@@ -12,15 +12,15 @@ public:
       console::write_line("Operations timed using the system's high-resolution performance counter.");
     else
       console::write_line("Operations timed using the standard date time.");
-    
+      
     long frequency = stopwatch::frequency();
     console::write_line("  Timer frequency in ticks per second = {0}", frequency);
-    long nanosec_per_tick = (1000L*1000L*1000L) / frequency;
+    long nanosec_per_tick = (1000L * 1000L * 1000L) / frequency;
     console::write_line("  Timer is accurate within {0} nanoseconds", nanosec_per_tick);
   }
   
   static void time_operations() {
-    long nanosec_per_tick = (1000L*1000L*1000L) / stopwatch::frequency();
+    long nanosec_per_tick = (1000L * 1000L * 1000L) / stopwatch::frequency();
     const long num_iterations = 10000;
     
     // Define the operation title names.
@@ -50,70 +50,70 @@ public:
         stopwatch time_per_parse;
         
         switch (operation) {
-          case 0:
-            // Parse a valid integer using a try-catch statement.
+        case 0:
+          // Parse a valid integer using a try-catch statement.
+          
+          // Start a new stopwatch timer.
+          time_per_parse = stopwatch::start_new();
+          
+          try {
+            input_num = parse<int>("0");
+          } catch (const system_exception&) {
+            input_num = 0;
+          }
+          
+          // Stop the timer, and save the elapsed ticks for the operation.
+          time_per_parse.stop();
+          ticks_this_time = time_per_parse.elapsed_ticks();
+          break;
+          
+        case 1:
+          // Parse a valid integer using the try_parse statement.
+          
+          // Start a new stopwatch timer.
+          time_per_parse = stopwatch::start_new();
+          
+          if (!try_parse<int>("0", input_num))
+            input_num = 0;
             
-            // Start a new stopwatch timer.
-            time_per_parse = stopwatch::start_new();
+          // Stop the timer, and save the elapsed ticks for the operation.
+          time_per_parse.stop();
+          ticks_this_time = time_per_parse.elapsed_ticks();
+          break;
+          
+        case 2:
+          // Parse an invalid value using a try-catch statement.
+          
+          // Start a new stopwatch timer.
+          time_per_parse = stopwatch::start_new();
+          
+          try {
+            input_num = parse<int>("a");
+          } catch (const system_exception&) {
+            input_num = 0;
+          }
+          
+          // Stop the timer, and save the elapsed ticks for the operation.
+          time_per_parse.stop();
+          ticks_this_time = time_per_parse.elapsed_ticks();
+          break;
+          
+        case 3:
+          // Parse an invalid value using the try_parse statement.
+          
+          // Start a new stopwatch timer.
+          time_per_parse = stopwatch::start_new();
+          
+          if (!try_parse("a", input_num))
+            input_num = 0;
             
-            try {
-              input_num = parse<int>("0");
-            } catch (const system_exception&) {
-              input_num = 0;
-            }
-            
-            // Stop the timer, and save the elapsed ticks for the operation.
-            time_per_parse.stop();
-            ticks_this_time = time_per_parse.elapsed_ticks();
-            break;
-            
-          case 1:
-            // Parse a valid integer using the try_parse statement.
-            
-            // Start a new stopwatch timer.
-            time_per_parse = stopwatch::start_new();
-            
-            if (!try_parse<int>("0", input_num))
-              input_num = 0;
-            
-            // Stop the timer, and save the elapsed ticks for the operation.
-            time_per_parse.stop();
-            ticks_this_time = time_per_parse.elapsed_ticks();
-            break;
-            
-          case 2:
-            // Parse an invalid value using a try-catch statement.
-            
-            // Start a new stopwatch timer.
-            time_per_parse = stopwatch::start_new();
-            
-            try {
-              input_num = parse<int>("a");
-            } catch (const system_exception&) {
-              input_num = 0;
-            }
-            
-            // Stop the timer, and save the elapsed ticks for the operation.
-            time_per_parse.stop();
-            ticks_this_time = time_per_parse.elapsed_ticks();
-            break;
-            
-          case 3:
-            // Parse an invalid value using the try_parse statement.
-            
-            // Start a new stopwatch timer.
-            time_per_parse = stopwatch::start_new();
-            
-            if (!try_parse("a", input_num))
-              input_num = 0;
-            
-            // Stop the timer, and save the elapsed ticks for the operation.
-            time_per_parse.stop();
-            ticks_this_time = time_per_parse.elapsed_ticks();
-            break;
-            
-          default:
-            break;
+          // Stop the timer, and save the elapsed ticks for the operation.
+          time_per_parse.stop();
+          ticks_this_time = time_per_parse.elapsed_ticks();
+          break;
+          
+        default:
+          break;
         }
         
         // Skip over the time for the first operation, just in case it caused a one-time performance hit.
@@ -121,7 +121,7 @@ public:
           time_10k_operations.reset();
           time_10k_operations.start();
         } else  {
-          
+        
           // Update operation statistics for iterations 1-10000.
           if (max_ticks < ticks_this_time) {
             index_slowest = i;
@@ -148,7 +148,7 @@ public:
       console::write_line("{0} Summary:", operation_names[operation]);
       console::write_line("  Slowest time:  #{0}/{1} = {2} ticks", index_slowest, num_iterations, max_ticks);
       console::write_line("  Fastest time:  #{0}/{1} = {2} ticks", index_fastest, num_iterations, min_ticks);
-      console::write_line("  Average time:  {0} ticks = {1} nanoseconds", num_ticks / num_iterations, (num_ticks * nanosec_per_tick) / num_iterations );
+      console::write_line("  Average time:  {0} ticks = {1} nanoseconds", num_ticks / num_iterations, (num_ticks * nanosec_per_tick) / num_iterations);
       console::write_line("  Total time looping through {0} operations: {1} milliseconds", num_iterations, milli_sec);
     }
   }

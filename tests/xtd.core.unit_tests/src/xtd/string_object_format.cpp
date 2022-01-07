@@ -25,13 +25,13 @@ namespace xtd {
   std::string to_string(const point& p, const std::string& fmt, const std::locale& loc) {
     if (fmt.empty()) return xtd::ustring::format("({}, {})", p.x, p.y);
     if (fmt.size() > 1) throw xtd::format_exception("Format can contains only one character.");
-
+    
     switch (fmt[0]) {
-      case 'l': return xtd::ustring::format("(x={}, y={})", p.x, p.y);
-      case 'L': return xtd::ustring::format("(X={}, Y={})", p.x, p.y);
-      case 'g':
-      case 'G': return xtd::ustring::format("({}, {})", p.x, p.y);
-      default: throw xtd::format_exception("Format invalid argument.");
+    case 'l': return xtd::ustring::format("(x={}, y={})", p.x, p.y);
+    case 'L': return xtd::ustring::format("(X={}, Y={})", p.x, p.y);
+    case 'g':
+    case 'G': return xtd::ustring::format("({}, {})", p.x, p.y);
+    default: throw xtd::format_exception("Format invalid argument.");
     }
   }
 }
@@ -66,9 +66,9 @@ namespace unit_tests {
     void test_method_(format_point_with_label_uppercase_argument) {
       assert::are_equal("(X=42, Y=24)", xtd::ustring::format("{0:L}", point {42, 24}), csf_);
     }
-
+    
     void test_method_(format_point_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([]{xtd::ustring::format("{0:, }", point {42, 24});}, csf_);
+      assert::throws<xtd::format_exception>([] {xtd::ustring::format("{0:, }", point {42, 24});}, csf_);
     }
   };
 }

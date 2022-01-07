@@ -17,8 +17,8 @@ void test_(test_string_assert_are_equal_ignoring_case_const_wchar_t_pointer_succ
   std::stringstream ss;
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
-                "  SUCCEED test_string_assert_are_equal_ignoring_case_const_wchar_t_pointer_succeed.test_case_succeed\n"
-                "End 1 test from 1 test case ran.\n", ss.str());
+    "  SUCCEED test_string_assert_are_equal_ignoring_case_const_wchar_t_pointer_succeed.test_case_succeed\n"
+    "End 1 test from 1 test case ran.\n", ss.str());
 }
 
 void test_(test_string_assert_are_equal_ignoring_case_const_wchar_t_pointer_succeed, test_result) {

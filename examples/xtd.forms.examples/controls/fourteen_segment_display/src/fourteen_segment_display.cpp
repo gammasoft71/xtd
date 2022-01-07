@@ -12,7 +12,7 @@ public:
     fourteen_segment_display1.location({(client_size().width() - fourteen_segment_display1.width()) / 2, (client_size().height() - fourteen_segment_display1.height()) / 2});
     fourteen_segment_display1.parent(*this);
     fourteen_segment_display1.fore_color(color::red);
-    fourteen_segment_display1.anchor(anchor_styles::top|anchor_styles::bottom);
+    fourteen_segment_display1.anchor(anchor_styles::top | anchor_styles::bottom);
     
     timer1.interval(300ms);
     timer1.enabled(true);
@@ -33,19 +33,19 @@ private:
   std::vector<segments> chaser = {
     segments::none,
     segments::a,
-    segments::a|segments::b,
-    segments::a|segments::b|segments::c,
-    segments::a|segments::b|segments::c|segments::d,
-    segments::a|segments::b|segments::c|segments::d|segments::e,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1|segments::g2,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1|segments::g2|segments::h,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l,
-    segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l|segments::m,
+    segments::a | segments::b,
+    segments::a | segments::b | segments::c,
+    segments::a | segments::b | segments::c | segments::d,
+    segments::a | segments::b | segments::c | segments::d | segments::e,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g1,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g1 | segments::g2,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g1 | segments::g2 | segments::h,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g1 | segments::g2 | segments::h | segments::i,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g1 | segments::g2 | segments::h | segments::i | segments::j,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g1 | segments::g2 | segments::h | segments::i | segments::j | segments::k,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g1 | segments::g2 | segments::h | segments::i | segments::j | segments::k | segments::l,
+    segments::a | segments::b | segments::c | segments::d | segments::e | segments::f | segments::g1 | segments::g2 | segments::h | segments::i | segments::j | segments::k | segments::l | segments::m,
     segments::dp,
     segments::pc
   };

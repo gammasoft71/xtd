@@ -16,7 +16,7 @@ namespace xtd {
     /// @cond
     class size;
     /// @endcond
-
+    
     /// @brief Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimensional plane.
     /// @par Namespace
     /// xtd::drawing
@@ -37,7 +37,7 @@ namespace xtd {
       point_f() = default;
       point_f(float x, float y) : x_(x), y_(y) {}
       /// @}
-
+      
       /// @cond
       point_f(const point_f&) = default;
       point_f& operator=(const point_f&) = default;
@@ -55,10 +55,10 @@ namespace xtd {
       void x(float x) {x_ = x;}
       
       float y() const {return y_;}
-
+      
       void y(float y) {y_ = y;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -68,10 +68,10 @@ namespace xtd {
         x_ += dx;
         y_ += dy;
       }
-
+      
       xtd::ustring to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + "}";}
       /// @}
-
+      
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point_f& point) noexcept {
         return os << point.to_string();

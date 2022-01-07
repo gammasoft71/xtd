@@ -41,10 +41,10 @@ ip_host_entry dns::get_host_entry(const ustring& host_name_or_address) {
   host_entry.host_name(native::dns::get_host_name(host));
   for (auto address : native::dns::get_addresses(host))
     host_entry.address_list().push_back(ip_address(address));
-  
+    
   for (auto alias : native::dns::get_aliases(host))
     host_entry.aliases().push_back(alias);
-  
+    
   native::dns::destroy(host);
   return host_entry;
 }

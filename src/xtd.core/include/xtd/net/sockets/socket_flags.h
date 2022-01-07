@@ -46,7 +46,7 @@ namespace xtd {
         /// @brief Partial send or receive for message.
         partial = 0x8000,
       };
-
+      
       /// @cond
       inline socket_flags& operator^=(socket_flags& lhs, socket_flags rhs) {lhs = static_cast<socket_flags>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
       inline socket_flags& operator&=(socket_flags& lhs, socket_flags rhs) {lhs = static_cast<socket_flags>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}

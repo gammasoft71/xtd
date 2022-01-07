@@ -29,7 +29,7 @@ minesweeper_form::minesweeper_form() {
   status_panel_.parent(*this);
   status_panel_.paint += paint_event_handler(*this, &minesweeper_form::on_status_panel_paint);
   status_panel_.resize += event_handler(*this, &minesweeper_form::on_status_panel_resize);
-
+  
   mine_count_label_.auto_size(true);
   mine_count_label_.back_color(color::black);
   mine_count_label_.fore_color(color::red);
@@ -86,11 +86,11 @@ void minesweeper_form::new_game() {
   for (auto y = 0; y < grid_size_.height(); y++)
     for (auto x = 0; x < grid_size_.width(); x++)
       cells_[x][y].clear();
-  
+      
   std::random_device rand;
   for (auto count = 0; count < mine_count_; count++) {
-    auto x = std::uniform_int_distribution<int>{0, grid_size_.width() - 1}(rand);;
-    auto y = std::uniform_int_distribution<int>{0, grid_size_.height() - 1}(rand);;
+    auto x = std::uniform_int_distribution<int> {0, grid_size_.width() - 1}(rand);;
+    auto y = std::uniform_int_distribution<int> {0, grid_size_.height() - 1}(rand);;
     
     if (cells_[x][y].has_mine()) {
       count--;
@@ -105,7 +105,7 @@ void minesweeper_form::new_game() {
         for (auto xx = x - 1; xx <= x + 1; xx++)
           if (yy >= 0 && yy < grid_size_.height() && xx >= 0 && xx < grid_size_.width() && cells_[xx][yy].has_mine())
             cells_[x][y].neighbors(cells_[x][y].neighbors() + 1);
-  
+            
   mine_count_label_.text(ustring::format("{:D3}", mine_count_ - flagged_mine_count_));
   stopwatch_label_.text("000");
   start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
@@ -143,39 +143,39 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
   
   if (properties::settings::default_settings().original_color()) {
     switch (cell.neighbors()) {
-      case 1: text_color = color::blue; break;
-      case 2: text_color = color::green; break;
-      case 3: text_color = color::red; break;
-      case 4: text_color = color::dark_blue; break;
-      case 5: text_color = color::dark_red; break;
-      case 6: text_color = color::teal; break;
-      case 7: text_color = color::dark_magenta; break;
-      case 8: text_color = color::black; break;
-      default: return;
+    case 1: text_color = color::blue; break;
+    case 2: text_color = color::green; break;
+    case 3: text_color = color::red; break;
+    case 4: text_color = color::dark_blue; break;
+    case 5: text_color = color::dark_red; break;
+    case 6: text_color = color::teal; break;
+    case 7: text_color = color::dark_magenta; break;
+    case 8: text_color = color::black; break;
+    default: return;
     }
   } else if (back_color().get_brightness() < 0.5f) {
     switch (cell.neighbors()) {
-      case 1: text_color = color::light_sky_blue; break;
-      case 2: text_color = color::from_argb(0x30, 0xDC, 0x66); break;
-      case 3: text_color = color::from_argb(0xD0, 0x3E, 0x3D); break;
-      case 4: text_color = color::dodger_blue; break;
-      case 5: text_color = color::orange; break;
-      case 6: text_color = color::light_sea_green; break;
-      case 7: text_color = color::from_argb(0xC6, 0x5E, 0xE9); break;
-      case 8: text_color = fore_color(); break;
-      default: return;
+    case 1: text_color = color::light_sky_blue; break;
+    case 2: text_color = color::from_argb(0x30, 0xDC, 0x66); break;
+    case 3: text_color = color::from_argb(0xD0, 0x3E, 0x3D); break;
+    case 4: text_color = color::dodger_blue; break;
+    case 5: text_color = color::orange; break;
+    case 6: text_color = color::light_sea_green; break;
+    case 7: text_color = color::from_argb(0xC6, 0x5E, 0xE9); break;
+    case 8: text_color = fore_color(); break;
+    default: return;
     }
   } else {
     switch (cell.neighbors()) {
-      case 1: text_color = color::blue; break;
-      case 2: text_color = color::green; break;
-      case 3: text_color = color::red; break;
-      case 4: text_color = color::dodger_blue; break;
-      case 5: text_color = color::dark_orange; break;
-      case 6: text_color = color::teal; break;
-      case 7: text_color = color::dark_magenta; break;
-      case 8: text_color = fore_color(); break;
-      default: return;
+    case 1: text_color = color::blue; break;
+    case 2: text_color = color::green; break;
+    case 3: text_color = color::red; break;
+    case 4: text_color = color::dodger_blue; break;
+    case 5: text_color = color::dark_orange; break;
+    case 6: text_color = color::teal; break;
+    case 7: text_color = color::dark_magenta; break;
+    case 8: text_color = fore_color(); break;
+    default: return;
     }
   }
   auto text = std::to_string(cell.neighbors());
@@ -255,7 +255,7 @@ void minesweeper_form::game_over() {
   game_over_ = true;
   start_game_.image(bitmap(properties::resources::smiley2(), {24, 24}));
   for (auto y = 0; y < grid_size_.height(); y++) {
-    for (auto x = 0; x <grid_size_.width(); x++) {
+    for (auto x = 0; x < grid_size_.width(); x++) {
       if (cells_[x][y].state() == cell_state::exploded_mine) continue;
       if (cells_[x][y].state() == cell_state::flag && !cells_[x][y].has_mine())
         cells_[x][y].state(cell_state::error);
@@ -290,29 +290,29 @@ void minesweeper_form::on_about_menu_click(object& sender, const xtd::event_args
   about_dialog.website("https://gammasoft71.wixsite.com/gammasoft"_t);
   about_dialog.website_label("gammasoft website"_t);
   about_dialog.license("MIT License\n"
-                       "\n"
-                       "Copyright (c) 2022 Gammasoft.\n"
-                       "\n"
-                       "Permission is hereby granted, free of charge, to any person obtaining\n"
-                       "a copy of this software and associated documentation files (the\n"
-                       "\"Software\"), to deal in the Software without restriction, including\n"
-                       "without limitation the rights to use, copy, modify, merge, publish,\n"
-                       "distribute, sublicense, and/or sell copies of the Software, and to\n"
-                       "permit persons to whom the Software is furnished to do so, subject\n"
-                       "to the following conditions:\n"
-                       "\n"
-                       "The above copyright notice and this permission notice shall be\n"
-                       "included in all copies or substantial portions of the Software.\n"
-                       "\n"
-                       "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF\n"
-                       "ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO\n"
-                       "THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n"
-                       "PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT\n"
-                       "SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR\n"
-                       "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
-                       "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
-                       "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
-                       "OR OTHER DEALINGS IN THE SOFTWARE.\n");
+    "\n"
+    "Copyright (c) 2022 Gammasoft.\n"
+    "\n"
+    "Permission is hereby granted, free of charge, to any person obtaining\n"
+    "a copy of this software and associated documentation files (the\n"
+    "\"Software\"), to deal in the Software without restriction, including\n"
+    "without limitation the rights to use, copy, modify, merge, publish,\n"
+    "distribute, sublicense, and/or sell copies of the Software, and to\n"
+    "permit persons to whom the Software is furnished to do so, subject\n"
+    "to the following conditions:\n"
+    "\n"
+    "The above copyright notice and this permission notice shall be\n"
+    "included in all copies or substantial portions of the Software.\n"
+    "\n"
+    "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF\n"
+    "ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO\n"
+    "THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n"
+    "PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT\n"
+    "SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR\n"
+    "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
+    "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
+    "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
+    "OR OTHER DEALINGS IN THE SOFTWARE.\n");
   about_dialog.show();
 }
 
@@ -440,21 +440,21 @@ void minesweeper_form::you_win() {
   stopwatch_timer_.enabled(false);
   game_over_ = true;
   for (auto y = 0; y < grid_size_.height(); y++)
-    for (auto x = 0; x <grid_size_.width(); x++)
+    for (auto x = 0; x < grid_size_.width(); x++)
       if (cells_[x][y].state() != cell_state::flag && cells_[x][y].has_mine())
         cells_[x][y].state(cell_state::mine);
-
+        
   start_game_.image(bitmap(properties::resources::smiley3(), {24, 24}));
   mine_count_label_.text("000");
-
-  if (level_ != level::custom && stopwatch_count_ < std::map<level, int> {{level::beginner, properties::settings::default_settings().beginner_high_scores_value()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_value()}, {level::expert, properties::settings::default_settings().expert_high_scores_value()}}[level_]) {
-    auto gamer_name = std::map<level, ustring> {{level::beginner, properties::settings::default_settings().beginner_high_scores_name()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_name()}, {level::expert, properties::settings::default_settings().expert_high_scores_name()}}[level_];
+  
+  if (level_ != level::custom && stopwatch_count_ < std::map<level, int> {{level::beginner, properties::settings::default_settings().beginner_high_scores_value()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_value()}, {level::expert, properties::settings::default_settings().expert_high_scores_value()}} [level_]) {
+    auto gamer_name = std::map<level, ustring> {{level::beginner, properties::settings::default_settings().beginner_high_scores_name()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_name()}, {level::expert, properties::settings::default_settings().expert_high_scores_name()}} [level_];
     minesweeper::input_name_dialog input_name_dialog;
     input_name_dialog.gammer_name(gamer_name);
     input_name_dialog.level(level_);
     if (input_name_dialog.show_dialog(*this) == dialog_result::ok)
       gamer_name = input_name_dialog.gammer_name();
-    
+      
     std::map<level, delegate<void(int)>> set_settings_high_scores_values {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_value}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_value}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_value}}};
     std::map<level, delegate<void(ustring)>> set_settings_high_scores_names {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_name}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_name}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_name}}};
     set_settings_high_scores_values[level_](stopwatch_count_);

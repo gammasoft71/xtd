@@ -90,7 +90,7 @@ namespace xtd {
       /// @exception xtd::io::file_not_found_exception if file src does not exists.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       static void copy(const xtd::ustring& src, const xtd::ustring& dest);
-  
+      
       /// @brief Copies an existing file to a new file. Overwriting a file of the same name is allowed.
       /// @param src The file to be opened for reading.
       /// @param dest The name of the destination file. This cannot be a directory.
@@ -105,7 +105,7 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path -or- file dest exists.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be created.
       static std::ofstream create(const xtd::ustring& path);
-
+      
       /// @brief Creates or opens a file for writing text.
       /// @brief Creates or overwrites a file in the specified path.
       /// @param The path and name of the file to create.
@@ -113,20 +113,20 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path -or- file dest exists.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be created.
       static std::ofstream create_text(const xtd::ustring& path);
-
+      
       /// @brief Determines whether the specified file exists.
       /// @param path The file to check.
       /// @return true if the caller has the required permissions and path contains the name of an existing file; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
       static bool exists(const xtd::ustring& path) noexcept;
-
+      
       /// @brief Gets the xtd::io::file_attributes of the file on the path.
       /// @param path The path to the file.
       /// @return The xtd::io::file_attributes of the file on the path.
       /// @exception xtd::io::file_not_found_exception if file src does not exists.
       static xtd::io::file_attributes get_attributes(const xtd::ustring& path);
-
+      
       /// @brief Returns the creation date and time of the specified file or directory.
       /// @param path The file or directory for which to obtain creation date and time information.
       /// @return A xtd::date_time class set to the creation date and time for the specified file or directory. This value is expressed in local time.
@@ -144,7 +144,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_excpttion path is in an invalid format.
       static xtd::date_time get_last_access_time(const xtd::ustring& path);
-
+      
       /// @brief Returns the date and time the specified file or directory was last written to.
       /// @param path The file or directory for which to obtain write date and time information.
       /// @return A xtd::date_time structure set to the date and time that the specified file or directory was last written to. This value is expressed in local time.
@@ -153,7 +153,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_excpttion path is in an invalid format.
       static xtd::date_time get_last_write_time(const xtd::ustring& path);
-
+      
       /// @brief Moves a specified file to a new location, providing the option to specify a new file name.
       /// @param src The name of the file to move.
       /// @param dest The new path for the file.
@@ -180,7 +180,7 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       static std::fstream open(const xtd::ustring& path, std::ios::openmode mode);
-
+      
       /// @brief Opens an existing file for reading.
       /// @param path The file to be opened for reading.
       /// @return A std::ifstream on the specified path.
@@ -194,14 +194,14 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       static std::ifstream open_text(const xtd::ustring& path);
-
+      
       /// @brief Opens an existing file for writing.
       /// @param path The file to be opened for writing.
       /// @return A std::ofstream on the specified path.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       static std::ofstream open_write(const xtd::ustring& path);
-    
+      
       /// @brief Opens a binary file, reads the contents of the file into a byte array, and then closes the file.
       /// @param path The file to open for reading.
       /// @return A byte array containing the contents of the file.
@@ -209,7 +209,7 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters -or- The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       static std::vector<uint8_t> read_all_bytes(const xtd::ustring& path);
-
+      
       /// @brief Opens a binary file, reads the contents of the file into a byte array, and then closes the file.
       /// @param path The file to open for reading.
       /// @return A byte array containing the contents of the file.
@@ -225,14 +225,14 @@ namespace xtd {
       /// @remarks This method also returns an empty array if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns an empty array regardless of the existence of path.
       static std::vector<xtd::ustring> read_all_lines(const xtd::ustring& path);
-
+      
       /// @brief Opens a text file, reads all text of the file, and then closes the file.
       /// @param path The file to open for reading.
       /// @return A string containing all text of the file.
       /// @remarks This method also returns empty string if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns empty string regardless of the existence of file.
       static xtd::ustring read_all_text(const xtd::ustring& path);
-
+      
       /// @brief Deletes the specified file.
       /// @param path The name of the file to be deleted.
       /// @return std::ofstream An unshared std::ofstream that provides access to the specified file, with the specified mode and access.
@@ -246,7 +246,7 @@ namespace xtd {
       /// @param ignore_metadata_errors true to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, false.
       /// @return false source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal false and destination_backup_file_name bad format or on ani io error; otherwise true.
       static void replace(const xtd::ustring& source_file_name, const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
-
+      
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to write to the file.
@@ -260,7 +260,7 @@ namespace xtd {
         for (const auto& line : contents)
           sw.write_line(line);
       }
- 
+      
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to write to the file.
@@ -274,7 +274,7 @@ namespace xtd {
         for (const auto& line : contents)
           sw.write_line(line);
       }
-
+      
       /// @brief Writes text to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The text to write to the file.
@@ -286,7 +286,7 @@ namespace xtd {
         xtd::io::stream_writer sw(path);
         sw.write(text);
       }
-   
+      
       /// @brief Creates a std::ofstream that appends text to an existing file.
       /// @param path The path to the file to write to.
       /// @return A std::ofstream that writes text to an existing file.

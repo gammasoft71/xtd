@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the color_picker class.
       color_picker();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -56,7 +56,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Events
       
       /// @{

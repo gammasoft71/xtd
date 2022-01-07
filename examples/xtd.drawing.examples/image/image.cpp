@@ -8,7 +8,7 @@ using namespace xtd::drawing;
 
 int main() {
   bitmap img = bitmap(logo_xpm);
-
+  
   cout << ustring::format("handle = 0x{:X}", img.handle()) << endl;
   cout << ustring::format("horizontal resolution = {}", img.horizontal_resolution()) << endl;
   cout << ustring::format("physical dimension = {}", img.physical_dimension()) << endl;

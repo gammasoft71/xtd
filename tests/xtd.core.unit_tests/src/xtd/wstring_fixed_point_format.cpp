@@ -14,7 +14,7 @@ namespace unit_tests {
   test_class_attribute<test_wstring_fixed_point_format<float>> test_wstring_fixed_point_format_class_float_attr {"test_wstring_fixed_point_format<float>"};
   test_class_attribute<test_wstring_fixed_point_format<double>> test_wstring_fixed_point_format_class_double_attr {"test_wstring_fixed_point_format<double>"};
   test_class_attribute<test_wstring_fixed_point_format<long double>> test_wstring_fixed_point_format_class_long_double_attr {"test_wstring_fixed_point_format<long double>"};
-
+  
   template<typename Value>
   class test_wstring_fixed_point_format : public test_class {
   public:
@@ -29,9 +29,9 @@ namespace unit_tests {
     void test_method_(format_with_decimals_with_default_argument) {
       assert::are_equal(L"42.24", ustring::format(L"{0}", static_cast<Value>(42.24)), csf_);
     }
-
+    
     void test_method_(format_without_format_argument_separator) {
-      assert::throws<format_exception>([]{ustring::format(L"{0F}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<format_exception>([] {ustring::format(L"{0F}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_left_alignment) {
@@ -59,7 +59,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_alignment_invalid) {
-      assert::throws<format_exception>([]{ustring::format(L"{0,a}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<format_exception>([] {ustring::format(L"{0,a}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_currency_argument) {
@@ -77,22 +77,22 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_currency_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:C100}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:C100}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_currency_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:C-5}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:C-5}", static_cast<Value>(42.24));}, csf_);
     }
-
+    
     void test_method_(format_with_currency_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Ca}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:Ca}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_exponencial_argument) {
       assert::are_equal(L"4.224000e+01", ustring::format(L"{0:e}", static_cast<Value>(42.24)), csf_);
     }
     
-   void test_method_(format_with_exponencial_argument_and_one_digit_precision) {
+    void test_method_(format_with_exponencial_argument_and_one_digit_precision) {
       if (std::is_same<Value, float>::value)
         assert::are_equal(L"4.22400017E+01", ustring::format(L"{0:E8}", static_cast<Value>(42.24)), csf_);
       else
@@ -107,15 +107,15 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_exponencial_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:E100}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:E100}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_exponencial_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:E-8}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:E-8}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_exponencial_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Ea}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:Ea}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_fixed_point_argument) {
@@ -134,15 +134,15 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_fixed_point_argument_and_three_digitis_precision) {
-      assert::throws<format_exception>([]{ustring::format(L"{0F100}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<format_exception>([] {ustring::format(L"{0F100}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_fixed_point_argument_and_negative_precision) {
-      assert::throws<format_exception>([]{ustring::format(L"{0F-4}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<format_exception>([] {ustring::format(L"{0F-4}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_fixed_point_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Fa}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:Fa}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_general_argument) {
@@ -175,25 +175,25 @@ namespace unit_tests {
     void test_method_(format_with_generals_argument_and_three_digitis_precision) {
       assert::are_equal(L"42", ustring::format(L"{0:G10}", static_cast<Value>(42.0)), csf_);
     }
-
+    
     void test_method_(format_with_decimals_with_general_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:G100}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:G100}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_general_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:G-4}", static_cast<Value>(42.0));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:G-4}", static_cast<Value>(42.0));}, csf_);
     }
-
+    
     void test_method_(format_with_decimals_with_general_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:G-4}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:G-4}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_decimals_with_general_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Ga}", static_cast<Value>(42.0));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:Ga}", static_cast<Value>(42.0));}, csf_);
     }
     
     void test_method_(format_with_general_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Ga}", static_cast<Value>(42.24));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:Ga}", static_cast<Value>(42.24));}, csf_);
     }
     
     void test_method_(format_with_number_argument) {
@@ -218,15 +218,15 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_number_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:N100}", static_cast<Value>(1234567.89));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:N100}", static_cast<Value>(1234567.89));}, csf_);
     }
-
+    
     void test_method_(format_with_number_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:N-4}", static_cast<Value>(1234567.89));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:N-4}", static_cast<Value>(1234567.89));}, csf_);
     }
     
     void test_method_(format_with_number_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Na}", static_cast<Value>(1234567.89));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:Na}", static_cast<Value>(1234567.89));}, csf_);
     }
     
     void test_method_(format_with_percent_argument) {
@@ -242,15 +242,15 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_percent_argument_and_three_digitis_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:P100}", static_cast<Value>(0.42));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:P100}", static_cast<Value>(0.42));}, csf_);
     }
-
+    
     void test_method_(format_with_percent_argument_and_negative_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:P-2}", static_cast<Value>(0.42));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:P-2}", static_cast<Value>(0.42));}, csf_);
     }
     
     void test_method_(format_with_percent_argument_and_invalid_precision) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:Pa}", static_cast<Value>(0.42));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:Pa}", static_cast<Value>(0.42));}, csf_);
     }
     
     void test_method_(format_with_alignment_before_format) {
@@ -258,11 +258,11 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_alignmentafter_format) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:F,6}", static_cast<Value>(42.0));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:F,6}", static_cast<Value>(42.0));}, csf_);
     }
-
+    
     void test_method_(format_with_invalid_format) {
-      assert::throws<xtd::format_exception>([]{ustring::format(L"{0:V}", static_cast<Value>(42.0));}, csf_);
+      assert::throws<xtd::format_exception>([] {ustring::format(L"{0:V}", static_cast<Value>(42.0));}, csf_);
     }
   };
 }

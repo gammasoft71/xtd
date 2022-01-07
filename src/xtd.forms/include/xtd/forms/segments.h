@@ -62,7 +62,7 @@ namespace xtd {
       /// @brief The cp segment (punctuation colon).
       pc = 0b100000000000000000,
     };
-
+    
     /// @cond
     inline segments& operator +=(segments& lhs, segments rhs) {lhs = static_cast<segments>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
     inline segments& operator -=(segments& lhs, segments rhs) {lhs = static_cast<segments>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}

@@ -30,7 +30,7 @@ namespace xtd {
       /// @brief All the control's edges are docked to the all edges of its containing control and sized appropriately.
       fill = 5,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, dock_style value) {return os << to_string(value, {{dock_style::none, "none"}, {dock_style::top, "top"}, {dock_style::bottom, "bottom"}, {dock_style::left, "left"}, {dock_style::right, "right"}, {dock_style::fill, "fill"}});}
     inline std::wostream& operator<<(std::wostream& os, dock_style value) {return os << to_string(value, {{dock_style::none, L"none"}, {dock_style::top, L"top"}, {dock_style::bottom, L"bottom"}, {dock_style::left, L"left"}, {dock_style::right, L"right"}, {dock_style::fill, L"fill"}});}

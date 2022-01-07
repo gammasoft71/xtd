@@ -5,7 +5,7 @@
 class control : public xtd::object {
 public:
   control() = default;
-
+  
   const xtd::ustring& text() const {return text_;}
   void text(const xtd::ustring& text) {
     if (text_ != text) {
@@ -15,7 +15,7 @@ public:
   }
   
   xtd::event<control, xtd::event_handler> text_changed;
-
+  
 protected:
   void on_text_changed(const xtd::event_args& e) {text_changed(*this, e);}
   
@@ -26,7 +26,7 @@ private:
 class button : public control {
 public:
   button() = default;
-
+  
   xtd::event<button, xtd::event_handler> click;
   
   void perform_click() {on_click(xtd::event_args::empty);}
@@ -38,7 +38,7 @@ protected:
 int main() {
   button button1;
   
-  button1.text_changed += [](xtd::object& sender, const xtd::event_args& e)  {
+  button1.text_changed += [](xtd::object & sender, const xtd::event_args & e)  {
     std::cout << "text_changed [text=" << as<control>(sender).text() << "]" << std::endl;
   };
   

@@ -12,7 +12,7 @@ namespace xtd {
     /// @cond
     class control;
     /// @endcond
-
+    
     /// @brief Provides data for the control_added and control_removed events.
     /// @par Namespace
     /// xtd::forms
@@ -33,7 +33,7 @@ namespace xtd {
       help_event_args(const help_event_args& control_event_args) = default;
       help_event_args& operator=(const help_event_args& help_event_args) = default;
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -45,7 +45,7 @@ namespace xtd {
       /// @param handled true if the event is handled; otherwise, false. The default is false.
       /// @remarks If you do not set this property to true the event will be passed to Windows for additional processing.
       void handled(bool handled) {handled_ = handled;}
-
+      
       /// @brief Gets the screen coordinates of the mouse pointer.
       /// @return A xtd::drawing::point representing the screen coordinates of the mouse pointer.
       /// @remarks You can use this information to provide help based on the position of the mouse pointer.

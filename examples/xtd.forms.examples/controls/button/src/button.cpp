@@ -8,7 +8,7 @@ namespace examples {
   public:
     form1() {
       text("Button example");
-
+      
       button1.parent(*this);
       button1.text("Button 1");
       button1.location({50, 50});

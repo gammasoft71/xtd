@@ -68,5 +68,5 @@ void track_bar::value(intptr_t control, int32_t value) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
- static_cast<wxSlider*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(value);
+  static_cast<wxSlider*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(value);
 }

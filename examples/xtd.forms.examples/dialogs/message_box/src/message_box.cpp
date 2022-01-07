@@ -10,7 +10,7 @@ public:
     location({400, 200});
     start_position(form_start_position::manual);
     text("Message box exemple");
-
+    
     button_show_message.location({10, 10});
     button_show_message.text("Message...");
     button_show_message.width(100);

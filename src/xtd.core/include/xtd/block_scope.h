@@ -19,7 +19,7 @@ namespace xtd {
   /// }
   /// @endcode
   /// @remarks same as #using_
-  #define block_scope_(...) \
-    for (bool __xtd_block_scope__ = true; __xtd_block_scope__; __xtd_block_scope__ = false)\
-      for (__VA_ARGS__; __xtd_block_scope__; __xtd_block_scope__ = false)
+#define block_scope_(...) \
+  for (bool __xtd_block_scope__ = true; __xtd_block_scope__; __xtd_block_scope__ = false)\
+    for (__VA_ARGS__; __xtd_block_scope__; __xtd_block_scope__ = false)
 }

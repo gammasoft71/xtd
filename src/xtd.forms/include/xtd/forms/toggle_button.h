@@ -41,7 +41,7 @@ namespace xtd {
       /// @remarks By default, when a new toggle_button is instantiated, auto_check is set to true, checked is set to false, and appearance is set to normal.
       toggle_button() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -117,7 +117,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<toggle_button, event_handler> check_state_changed;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -125,7 +125,7 @@ namespace xtd {
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
-
+      
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This metod is not relevant for this class.
@@ -158,7 +158,7 @@ namespace xtd {
         check_state_changed(*this, e);
         if (flat_style() != xtd::forms::flat_style::system) invalidate();
       }
-
+      
       void on_enabled_changed(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system) {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ = enabled() ? xtd::forms::visual_styles::toggle_button_state::unchecked_normal : xtd::forms::visual_styles::toggle_button_state::unchecked_disabled;
@@ -171,7 +171,7 @@ namespace xtd {
       /// @brief Raises the handle_created event.
       /// @param e An event_args that contains the event data.
       void on_handle_created(const event_args& e) override;
-
+      
       void on_mouse_down(const mouse_event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::toggle_button_state::unchecked_pressed;
@@ -183,7 +183,7 @@ namespace xtd {
       
       void on_mouse_enter(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system && enabled()) {
-          if (check_state_ == xtd::forms::check_state::unchecked) state_ =  (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::toggle_button_state::unchecked_pressed : xtd::forms::visual_styles::toggle_button_state::unchecked_hot;
+          if (check_state_ == xtd::forms::check_state::unchecked) state_ = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::toggle_button_state::unchecked_pressed : xtd::forms::visual_styles::toggle_button_state::unchecked_hot;
           else if (check_state_ == xtd::forms::check_state::checked) state_ = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::toggle_button_state::checked_pressed : xtd::forms::visual_styles::toggle_button_state::checked_hot;
           else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::toggle_button_state::mixed_pressed : xtd::forms::visual_styles::toggle_button_state::mixed_hot;
         }
@@ -207,21 +207,21 @@ namespace xtd {
         }
         button_base::on_mouse_up(e);
       }
-
+      
       void on_paint(paint_event_args& e) override;
       
       /// @brief Get state.
       /// @return One of xtd::forms::visual_styles::toggle_button_state values.
       xtd::forms::visual_styles::toggle_button_state state() const noexcept {return state_;}
       /// @}
-
-     /// @cond
+      
+      /// @cond
       void wnd_proc(message& message) override;
       virtual void wm_mouse_double_click(message& message);
       virtual void wm_mouse_down(message& message);
       virtual void wm_mouse_up(message& message);
       /// @endcond
-
+      
     private:
       bool auto_check_ = true;
       bool three_state_ = 0;

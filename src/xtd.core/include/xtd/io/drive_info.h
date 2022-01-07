@@ -31,7 +31,7 @@ namespace xtd {
     public:
       /// @name Constructors
       
-      /// @{      
+      /// @{
       /// @brief Represents the uninitialized xtd::io::drive_info object. This field is constant.
       static const drive_info empty;
       /// @}
@@ -45,7 +45,7 @@ namespace xtd {
       /// @remarks Use this class to obtain information on drives. The drive name must be either an uppercase or lowercase letter from 'a' to 'z'. You cannot use this method to obtain information on drive names that are null or use UNC (\\server\share) paths.
       explicit drive_info(const xtd::ustring& drive_name);
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -59,7 +59,7 @@ namespace xtd {
       /// @include drive_info.cpp
       /// @remarks This property indicates the amount of free space available on the drive. Note that this number may be different from the xtd::io::drive_info::total_free_space number because this property takes into account disk quotas.
       size_t available_free_space() const;
-
+      
       /// @brief Gets the name of the file system, such as NTFS or FAT32.
       /// @return The name of the file system on the specified drive.
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
@@ -70,7 +70,7 @@ namespace xtd {
       /// @include drive_info.cpp
       /// @remarks Use xtd::io::drive_info::drive_format to determine what formatting a drive uses.
       xtd::ustring drive_format() const;
-
+      
       /// @brief Gets the drive type, such as CD-ROM, removable, network, or fixed.
       /// @return One of the enumeration values that specifies a drive type.
       /// @par Example
@@ -99,7 +99,7 @@ namespace xtd {
       /// @brief Gets the root directory of a drive.
       /// @return An object that contains the root directory of the drive.
       xtd::io::directory_info root_directory() const noexcept;
-
+      
       /// @brief Gets the total amount of free space available on a drive, in bytes.
       /// @return The total free space available on a drive, in bytes.
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
@@ -152,7 +152,7 @@ namespace xtd {
       /// @remarks This method returns the xtd::io::drive_info::name property.
       xtd::ustring to_string() const noexcept override;
       /// @}
-
+      
     private:
       drive_info() = default;
       

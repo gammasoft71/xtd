@@ -305,7 +305,7 @@ namespace xtd {
           assert::abort();
         }
       }
-
+      
       /// @brief Validates that string does not start with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.

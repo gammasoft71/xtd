@@ -35,7 +35,7 @@ namespace xtd {
         virtual wchar_t get_character() const = 0;
         virtual xtd::ustring get_valid_characters() const = 0;
         virtual int32_t get_thickness() const = 0;
-
+        
         virtual void set_back_digit_color(const xtd::drawing::color& value) = 0;
         virtual void set_back_digit_opacity(double value) = 0;
         virtual void set_character(wchar_t value) = 0;
@@ -44,7 +44,7 @@ namespace xtd {
         virtual void set_show_back_digit(bool value) = 0;
         virtual void set_thickness(int32_t value) = 0;
       };
-
+      
       class dot_matrix_display_digit : public dot_matrix_display, public idigit {
       public:
         dot_matrix_display_digit() = default;
@@ -64,7 +64,7 @@ namespace xtd {
       private:
         wchar_t character_ = ' ';
       };
-
+      
       class fourteen_segment_display_digit : public fourteen_segment_display, public idigit {
       public:
         fourteen_segment_display_digit() = default;
@@ -84,7 +84,7 @@ namespace xtd {
       private:
         wchar_t character_ = ' ';
       };
-
+      
       class nine_segment_display_digit : public nine_segment_display, public idigit {
       public:
         nine_segment_display_digit() = default;
@@ -104,15 +104,15 @@ namespace xtd {
       private:
         wchar_t character_ = ' ';
       };
-
+      
       class seven_segment_display_digit : public seven_segment_display, public idigit {
       public:
         seven_segment_display_digit() = default;
-
+        
         wchar_t get_character() const override;
         xtd::ustring get_valid_characters() const override;
         int32_t get_thickness() const override;
-
+        
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
         void set_character(wchar_t value) override;
@@ -120,11 +120,11 @@ namespace xtd {
         void set_dot_matrix_style(forms::dot_matrix_style value) override;
         void set_show_back_digit(bool value) override;
         void set_thickness(int32_t value) override;
-
+        
       private:
         wchar_t character_ = ' ';
       };
-
+      
       class sixteen_segment_display_digit : public sixteen_segment_display, public idigit {
       public:
         sixteen_segment_display_digit() = default;
@@ -144,7 +144,7 @@ namespace xtd {
       private:
         wchar_t character_ = ' ';
       };
-
+      
     public:
       /// @name Constructors
       
@@ -182,7 +182,7 @@ namespace xtd {
       /// @param value true if background digits are shown; otherwise false
       /// @return Current lcd_label.
       lcd_label& show_back_digit(bool value);
-
+      
       /// @brief Gets the digit spacing.
       /// @return A int32_t represent the digit spacing.
       int32_t digit_spacing() const;
@@ -215,7 +215,7 @@ namespace xtd {
       /// @param value One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
       /// @return Current lcd_label.
       lcd_label& dot_matrix_style(forms::dot_matrix_style value);
-
+      
       /// @brief Gets thickness of lcd.
       /// @return A int32_t that represent the lcd thickness.
       int32_t thickness() const;
@@ -223,7 +223,7 @@ namespace xtd {
       /// @param value A int32_t that represent the lcd thickness.
       /// @return Current lcd_label.
       lcd_label& thickness(int32_t value);
-
+      
       using control::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
@@ -235,7 +235,7 @@ namespace xtd {
       /// @remarks The valid characters are different according to lcd_style.
       xtd::ustring valid_characters();
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -248,14 +248,14 @@ namespace xtd {
       void on_size_changed(const event_args& e) override;
       void on_resize(const event_args& e) override;
       /// @}
-
+      
     private:
       void on_digit_click(object& sender, const event_args& e);
       void on_digit_mouse_down(object& sender, const mouse_event_args& e);
       void on_digit_mouse_move(object& sender, const mouse_event_args& e);
       void on_digit_mouse_up(object& sender, const mouse_event_args& e);
       void set_digits_params();
-
+      
       bool show_back_digit_ = true;
       std::optional<xtd::drawing::color> back_digit_color_;
       double back_digit_opacity_ = 0.95;

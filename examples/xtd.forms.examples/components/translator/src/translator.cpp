@@ -13,7 +13,7 @@ public:
     
     open_button.location({10, 10});
     open_button.text("Open"_t);
-
+    
     close_button.location({100, 10});
     close_button.text("Close"_t);
     
@@ -31,7 +31,7 @@ private:
 int main() {
   try {
     locale::global(locale("ru_RU.utf-8"));
-  } catch(const std::exception& e) {
+  } catch (const std::exception& e) {
     message_box::show(ustring::format("Make sure russian locale is installed on your system :\n\n{}", e.what()), "Exception");
     return -1;
   }

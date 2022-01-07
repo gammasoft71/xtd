@@ -73,7 +73,7 @@ namespace xtd {
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     explicit platform_not_supported_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : not_supported_exception(message, inner_exception, error, help_link, info) {}
     /// @}
-
+    
     /// @cond
     platform_not_supported_exception(const platform_not_supported_exception&) = default;
     platform_not_supported_exception& operator=(const platform_not_supported_exception&) = default;

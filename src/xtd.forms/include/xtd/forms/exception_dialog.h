@@ -65,7 +65,7 @@ namespace xtd {
         exception_ = &exception;
         return *this;
       }
-
+      
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
       xtd::ustring text() const {return text_;}
@@ -103,7 +103,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<exception_dialog, dialog_closed_event_handler> dialog_closed;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       

@@ -10,8 +10,8 @@ namespace xtd {
   namespace forms {
     /// @cond
     class split_container;
-  /// @endcond
-  
+    /// @endcond
+    
     /// @brief Creates a panel that is associated with a split_container.
     /// @par Namespace
     /// xtd::forms

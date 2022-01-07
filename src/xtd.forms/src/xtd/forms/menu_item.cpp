@@ -18,10 +18,10 @@ menu_item::menu_item(const xtd::ustring& text) : text_(text) {
 menu_item::menu_item(const xtd::ustring& text, xtd::forms::shortcut shortcut) : text_(text), shortcut_(shortcut) {
 }
 
-menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image) : text_(text),image_(image)  {
+menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image) : text_(text), image_(image)  {
 }
 
-menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : text_(text),image_(image), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : text_(text), image_(image), shortcut_(shortcut) {
 }
 
 menu_item::menu_item(const xtd::ustring& text, xtd::forms::menu_item_kind kind) : text_(text), kind_(kind) {
@@ -56,11 +56,11 @@ menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_clic
   click += on_click;
 }
 
-menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image) : text_(text),image_(image)  {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image) : text_(text), image_(image)  {
   click += on_click;
 }
 
-menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : text_(text),image_(image), shortcut_(shortcut) {
+menu_item::menu_item(const xtd::ustring& text, const xtd::event_handler& on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : text_(text), image_(image), shortcut_(shortcut) {
   click += on_click;
 }
 

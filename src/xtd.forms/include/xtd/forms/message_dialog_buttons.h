@@ -29,7 +29,7 @@ namespace xtd {
       /// @brief The message box contains Retry and Cancel buttons.
       retry_cancel = 5
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, message_dialog_buttons value) {return os << to_string(value, {{message_dialog_buttons::ok, "ok"}, {message_dialog_buttons::ok_cancel, "ok_cancel"}, {message_dialog_buttons::abort_retry_ignore, "abort_retry_ignore"}, {message_dialog_buttons::yes_no_cancel, "yes_no_cancel"}, {message_dialog_buttons::yes_no, "yes_no"}, {message_dialog_buttons::retry_cancel, "retry_cancel"}});}
     inline std::wostream& operator<<(std::wostream& os, message_dialog_buttons value) {return os << to_string(value, {{message_dialog_buttons::ok, L"ok"}, {message_dialog_buttons::ok_cancel, L"ok_cancel"}, {message_dialog_buttons::abort_retry_ignore, L"abort_retry_ignore"}, {message_dialog_buttons::yes_no_cancel, L"yes_no_cancel"}, {message_dialog_buttons::yes_no, L"yes_no"}, {message_dialog_buttons::retry_cancel, L"retry_cancel"}});}

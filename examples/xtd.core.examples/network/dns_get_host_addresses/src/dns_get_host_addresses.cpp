@@ -7,7 +7,7 @@ using namespace xtd::net;
 int main() {
   vector<ip_address> addresses = dns::get_host_addresses("www.google.com");
   console::write_line("www.google.com addresses:");
-  for(auto address : addresses)
+  for (auto address : addresses)
     console::write_line("  * {}", address);
 }
 

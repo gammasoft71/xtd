@@ -40,56 +40,56 @@ namespace unit_tests {
       std::cout << result.str() << std::endl;
       assert::are_equal("exception: Invalid format", result.str(), csf_);
     }*/
-
+    
     void test_method_(write_deque) {
       stringstream result;
       console::set_out(result);
       console::write(std::deque<std::string> {"One", "Two", "Three"});
       assert::are_equal("[One, Two, Three]", result.str(), csf_);
     }
-
+    
     void test_method_(write_duration) {
       stringstream result;
       console::set_out(result);
       console::write(std::chrono::hours(3) + std::chrono::minutes(32) + std::chrono::seconds(24) + std::chrono::nanoseconds(54300));
       assert::are_equal("03:32:24:000054300", result.str(), csf_);
     }
-
+    
     void test_method_(write_forward_list) {
       stringstream result;
       console::set_out(result);
       console::write(std::forward_list<std::string> {"One", "Two", "Three"});
       assert::are_equal("[One, Two, Three]", result.str(), csf_);
     }
-
+    
     void test_method_(write_initializer_list) {
       stringstream result;
       console::set_out(result);
       console::write({"One", "Two", "Three"});
       assert::are_equal("[One, Two, Three]", result.str(), csf_);
     }
-
+    
     void test_method_(write_list) {
       stringstream result;
       console::set_out(result);
       console::write(std::list<std::string> {"One", "Two", "Three"});
       assert::are_equal("[One, Two, Three]", result.str(), csf_);
     }
-
+    
     void test_method_(write_map) {
       stringstream result;
       console::set_out(result);
       console::write(std::map<std::string, int> {{"One", 1}, {"Two", 2}, {"Three", 3}});
       assert::are_equal("{(One, 1), (Three, 3), (Two, 2)}", result.str(), csf_);
     }
-
+    
     void test_method_(write_multimap) {
       stringstream result;
       console::set_out(result);
       console::write(std::multimap<std::string, int> {{"One", 1}, {"Two", 2}, {"Three", 3}});
       assert::are_equal("{(One, 1), (Three, 3), (Two, 2)}", result.str(), csf_);
     }
-
+    
     void test_method_(write_multiset) {
       stringstream result;
       console::set_out(result);
@@ -117,14 +117,14 @@ namespace unit_tests {
       console::write(std::make_pair("One", 2));
       assert::are_equal("(One, 2)", result.str(), csf_);
     }
-
+    
     void test_method_(write_set) {
       stringstream result;
       console::set_out(result);
       console::write(std::set<std::string> {"One", "Two", "Three"});
       assert::are_equal("{One, Three, Two}", result.str(), csf_);
     }
-
+    
     void test_method_(write_tuple) {
       stringstream result;
       console::set_out(result);
@@ -141,7 +141,7 @@ namespace unit_tests {
       string_assert::contains("(Two, 2)", result.str(), csf_);
       string_assert::contains("(Three, 3)", result.str(), csf_);
     }
-
+    
     void test_method_(write_unordered_multimap) {
       stringstream result;
       console::set_out(result);
@@ -151,7 +151,7 @@ namespace unit_tests {
       string_assert::contains("(Two, 2)", result.str(), csf_);
       string_assert::contains("(Three, 3)", result.str(), csf_);
     }
-
+    
     void test_method_(write_unordered_multiset) {
       stringstream result;
       console::set_out(result);

@@ -9,10 +9,10 @@ namespace unit_tests {
     explicit class_with_insert_stream_operator(int value) : value_(value) {}
     
     int value() const noexcept {return value_;}
-
+    
     bool operator==(const class_with_insert_stream_operator& c) const noexcept {return value_ == c.value_;}
     bool operator!=(const class_with_insert_stream_operator& c) const noexcept {return !operator==(c);}
-
+    
     friend std::ostream& operator<<(std::ostream& os, const class_with_insert_stream_operator& c) {
       return os << "(value = " << c.value_ << ")";
     }
@@ -20,7 +20,7 @@ namespace unit_tests {
   private:
     int value_ = 0;
   };
-
+  
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
@@ -28,7 +28,7 @@ namespace unit_tests {
       class_with_insert_stream_operator c2(42);
       assert::are_equal(c1, c2);
     }
-
+    
     void test_method_(test_case_failed) {
       class_with_insert_stream_operator c1(42);
       class_with_insert_stream_operator c2(24);

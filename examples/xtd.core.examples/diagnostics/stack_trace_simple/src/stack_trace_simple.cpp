@@ -5,12 +5,12 @@ using namespace xtd::diagnostics;
 
 class stack_trace_sample {
 public:
-  void my_public_method () {
+  void my_public_method() {
     my_protected_method();
   }
   
 protected:
-  void my_protected_method () {
+  void my_protected_method() {
     my_internal_class mic;
     mic.throws_exception();
   }
@@ -29,9 +29,9 @@ private:
           // Note that at this level, there are four stack frames, one for each method invocation.
           stack_frame sf = st.get_frame(i);
           console::write_line();
-          console::write_line(stack_indent + " Method: {0}", sf.get_method() );
-          console::write_line(  stack_indent + " File: {0}", sf.get_file_name());
-          console::write_line(  stack_indent + " Line Number: {0}", sf.get_file_line_number());
+          console::write_line(stack_indent + " Method: {0}", sf.get_method());
+          console::write_line(stack_indent + " File: {0}", sf.get_file_name());
+          console::write_line(stack_indent + " Line Number: {0}", sf.get_file_line_number());
           stack_indent += "  ";
         }
         throw e;

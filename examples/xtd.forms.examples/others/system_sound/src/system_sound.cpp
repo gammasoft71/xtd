@@ -12,7 +12,7 @@ namespace example {
       controls().push_back(layout_panel);
       padding(5);
       text("System sound example");
-
+      
       layout_panel.dock(dock_style::fill);
       layout_panel.controls().push_back_range({button_asterisk, button_beep, button_exclamation, button_hand, button_question});
       layout_panel.control_layout_style(button_asterisk, {size_type::auto_size, true});
@@ -20,7 +20,7 @@ namespace example {
       layout_panel.control_layout_style(button_exclamation, {size_type::auto_size, true});
       layout_panel.control_layout_style(button_hand, {size_type::auto_size, true});
       layout_panel.control_layout_style(button_question, {size_type::auto_size, true});
-
+      
       button_asterisk.text("asterisk");
       button_asterisk.image(button_images::from_name("dialog-information", drawing::size(64, 64)));
       button_asterisk.image_align(content_alignment::top_center);
@@ -44,7 +44,7 @@ namespace example {
       button_exclamation.click += [&] {
         system_sounds::exclamation().play();
       };
-
+      
       button_hand.text("hand");
       button_hand.image(button_images::from_name("dialog-error", drawing::size(64, 64)));
       button_hand.image_align(content_alignment::top_center);
@@ -52,7 +52,7 @@ namespace example {
       button_hand.click += [&] {
         system_sounds::hand().play();
       };
-
+      
       button_question.text("question");
       button_question.image(button_images::from_name("dialog-question", drawing::size(64, 64)));
       button_question.image_align(content_alignment::top_center);

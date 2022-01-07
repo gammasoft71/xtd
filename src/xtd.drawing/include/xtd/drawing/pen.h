@@ -21,7 +21,7 @@ namespace xtd {
     /// @cond
     class graphics;
     /// @endcond
-
+    
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     /// @par Library
     /// xtd.drawing
@@ -71,7 +71,7 @@ namespace xtd {
       /// @return A xtd::drawing2d::pen_alignment that represents the alignment for this xtd::drawing::pen.
       /// @remarks This property determines how the xtd::drawing::pen draws closed curves and polygons. The td::drawing2d::pen_alignment enumeration specifies five values; however, only two values - td::drawing2d::pen_alignment::center and td::drawing2d::pen_alignment::inset - will change the appearance of a drawn line. td::drawing2d::pen_alignment::center is the default value for this property and specifies that the width of the pen is centered on the outline of the curve or polygon. A value of td::drawing2d::pen_alignment::inset for this property specifies that the width of the pen is inside the outline of the curve or polygon. The other three values, td::drawing2d::pen_alignment::right, td::drawing2d::pen_alignment::left, and td::drawing2d::pen_alignment::outset, will result in a pen that is centered.
       xtd::drawing::drawing2d::pen_alignment alignment() const {return data_->alignment_;}
-
+      
       /// @brief Sets the alignment for this xtd::drawing::pen.
       /// @param alignment A xtd::drawing2d::pen_alignment that represents the alignment for this xtd::drawing::pen.
       /// @remarks This property determines how the xtd::drawing::pen draws closed curves and polygons. The td::drawing2d::pen_alignment enumeration specifies five values; however, only two values - td::drawing2d::pen_alignment::center and td::drawing2d::pen_alignment::inset - will change the appearance of a drawn line. td::drawing2d::pen_alignment::center is the default value for this property and specifies that the width of the pen is centered on the outline of the curve or polygon. A value of td::drawing2d::pen_alignment::inset for this property specifies that the width of the pen is inside the outline of the curve or polygon. The other three values, td::drawing2d::pen_alignment::right, td::drawing2d::pen_alignment::left, and td::drawing2d::pen_alignment::outset, will result in a pen that is centered.
@@ -86,7 +86,7 @@ namespace xtd {
       std::vector<float> dash_pattern() const {return data_->dash_pattern_;}
       xtd::drawing::pen& dash_pattern(const std::initializer_list<float>& il) {return dash_pattern(std::vector<float>(il));}
       xtd::drawing::pen& dash_pattern(const std::vector<float>& dash_pattern);
-
+      
       xtd::drawing::dash_style dash_style() const {return data_->dash_style_;}
       xtd::drawing::pen& dash_style(drawing::dash_style dash_style);
       
@@ -108,7 +108,7 @@ namespace xtd {
         return os << pen.to_string();
       }
       /// @endcond
-
+      
     private:
       pen();
       friend class graphics;

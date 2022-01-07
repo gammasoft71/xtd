@@ -32,7 +32,7 @@ namespace xtd {
       /// @brief Initialize a new instance of label class.
       label();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief Set the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
       virtual label& border_sides(forms::border_sides border_sides);
-
+      
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
@@ -62,7 +62,7 @@ namespace xtd {
       /// @return Current label instance.
       /// @remarks When the flat_style property is set to xtd::forms::flat_style::system, any values assigned to the image_list, image, image_index, and image_align properties are ignored. In addition, the text_align property ignores any property values that are not vertical property settings. Horizontally aligned settings of the text_align property are aligned to the top of the control. For example, if you set the text_align property to content_alignment::top_center, content_alignment::middle_center, or content_alignment::bottom_center, when the flat_style property is set to xtd::forms::flat_style::system, the text in the label control will be aligned to the top and center locations within the bounds of the control.
       virtual xtd::forms::label& flat_style(xtd::forms::flat_style flat_style);
-
+      
       xtd::drawing::size default_size() const override {return {100, 23};}
       
       /// @brief Gets a value that allows to draw a drop shadow under the text.
@@ -71,7 +71,7 @@ namespace xtd {
       /// @brief Sets a value that allows to draw a drop shadow under the text.
       /// @param value true allows to draw a drop shadow under the text; otherwise false. The default is false.
       virtual label& shadow(bool value);
-
+      
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.
@@ -90,15 +90,15 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<label, event_handler> text_align_changed;
       /// @}
-
+      
     protected:
       /// @name Protected methods
-    
+      
       /// @{
       xtd::forms::create_params create_params() const override;
       xtd::drawing::size measure_control() const override;
       void on_font_changed(const xtd::event_args& e) override;
-      void on_paint(xtd::forms::paint_event_args& e) override;      
+      void on_paint(xtd::forms::paint_event_args& e) override;
       void on_resize(const xtd::event_args& e) override;
       
       /// @brief Raises the xtd::forms::label::text_align_changed event.
@@ -109,7 +109,7 @@ namespace xtd {
       
       void on_text_changed(const xtd::event_args& e) override;
       /// @}
-
+      
     private:
       using control::control_appearance;
       xtd::forms::border_sides border_sides_ = xtd::forms::border_sides::all;
