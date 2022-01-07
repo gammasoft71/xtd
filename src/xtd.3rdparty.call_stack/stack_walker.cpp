@@ -840,9 +840,10 @@ BOOL StackWalker::ShowCallstack(HANDLE hThread, const CONTEXT* context, PReadPro
   
   if (context == NULL) {
     // If no context is provided, capture the context
-    if (hThread == GetCurrentThread())
+    if (hThread == GetCurrentThread()) {
+      context = NULL; // Not needed but force if parens with macro...
       GET_CURRENT_CONTEXT(c, USED_CONTEXT_FLAGS);
-    else {
+    } else {
       SuspendThread(hThread);
       memset(&c, 0, sizeof(CONTEXT));
       c.ContextFlags = USED_CONTEXT_FLAGS;
