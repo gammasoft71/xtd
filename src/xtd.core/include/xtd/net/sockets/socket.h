@@ -130,7 +130,7 @@ namespace xtd {
           explicit async_result_send_to(std::any async_state) : async_result_socket(async_state) {}
           size_t number_of_bytes_sent_ = 0;
         };
-
+        
       public:
         /// @name Constructors
         
@@ -205,14 +205,14 @@ namespace xtd {
         /// @remarks If you are in blocking mode, and you make a method call which does not complete immediately, your application will block execution until the requested operation completes. If you want execution to continue even though the requested operation is not complete, change the xtd::net::sockets::socket::blocking property to false. The xtd::net::sockets::socket::blocking property has no effect on asynchronous methods. If you are sending and receiving data asynchronously and want to block execution, use the xtd::threading::manual_reset_event class.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         socket& blocking(bool value);
-
+        
         /// @brief Gets a value that indicates whether a xtd::net::sockets::socket is connected to a remote host as of the last xtd::net::sockets::socket::send or xtd::net::sockets::socket::receive operation.
         /// @return true if the xtd::net::sockets::socket was connected to a remote resource as of the most recent operation; otherwise, false.
         /// @remarks The xtd::net::sockets::socket::connected property gets the connection state of the xtd::net::sockets::socket as of the last I/O operation. When it returns false, the xtd::net::sockets::socket was either never connected, or is no longer connected. xtd::net::sockets::socket::connected is not thread-safe; it may return true after an operation is aborted when the xtd::net::sockets::socket is disconnected from another thread.
         /// @remarks The value of the xtd::net::sockets::socket::connected property reflects the state of the connection as of the most recent operation. If you need to determine the current state of the connection, make a nonblocking, zero-byte xtd::net::sockets::socket::send call. If the call returns successfully or throws a WAEWOULDBLOCK error code (10035), then the socket is still connected; otherwise, the socket is no longer connected.
         /// @remarks If you call xtd::net::sockets::socket::connect on a User Datagram Protocol (UDP) socket, the xtd::net::sockets::socket::connected property always returns true; however, this action does not change the inherent connectionless nature of UDP.
         bool connected() const noexcept;
-
+        
         /// @brief Gets a value that specifies whether the xtd::net::sockets::socket allows Internet Protocol (IP) datagrams to be fragmented.
         /// @return true if the xtd::net::sockets::socket doesn't allow datagram fragmentation; otherwise, false. The default is true.
         /// @exception xtd::not_supported_exception The socket is not in the xtd::net::sockets::address_family::inter_network family.
@@ -228,7 +228,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& dont_fragment(bool value);
-
+        
         /// @brief Gets a value that specifies whether the xtd::net::sockets::socket is a dual-mode socket used for both IPv4 and IPv6.
         /// @return true if the xtd::net::sockets::socket is a dual-mode socket; otherwise, false. The default is true if the socket was created by calling the xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is false.
         /// @exception xtd::not_supported_exception The socket is not in the xtd::net::sockets::address_family::inter_network_v6 family.
@@ -262,7 +262,7 @@ namespace xtd {
         /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket will have no effect.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& enable_broadcast(bool value);
-
+        
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::socket allows only one process to bind to a port.
         /// @return true if the xtd::net::sockets::socket allows only one socket to bind to a specific port; otherwise, false. The default is true for Windows Server 2003 and Windows XP Service Pack 2, and false for all other versions.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
@@ -283,11 +283,11 @@ namespace xtd {
         /// @remarks This property must be set before xtd::net::sockets::socket::bind is called; otherwise an xtd::invalid_operation_exception will be thrown.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& exclusive_address_use(bool value);
-
+        
         /// @brief Gets the operating system handle for the xtd::net::sockets::socket.
         /// @return An intptr_t that represents the operating system handle for the xtd::net::sockets::socket.
         intptr_t handle() const noexcept;
-
+        
         /// @brief Gets a value that indicates whether the xtd::net::sockets::socket is bound to a specific local port.
         /// @return true if the xtd::net::sockets::socket is bound to a local port; otherwise, false.
         /// @remarks A socket is considered bound to a local port if it is explicitly bound by calling the xtd::net::sockets::socket::bind method, or implicitly bound by calling members like xtd::net::sockets::socket::connect, xtd::net::sockets::socket::send_to, or xtd::net::sockets::socket::receive_from, which use an ephemeral local port (a free port greater than 1024, selected by the operating system.) Servers use the xtd::net::sockets::socket::bind method to bind to a well-known port so that clients may connect to them.
@@ -330,7 +330,7 @@ namespace xtd {
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and override.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& linger_state(const xtd::net::sockets::linger_option& value);
-
+        
         /// @brief Gets the local endpoint.
         /// @return The xtd::net::end_point that the xtd::net::sockets::socket is using for communications.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -408,7 +408,7 @@ namespace xtd {
         /// @remarks A larger buffer size potentially reduces the number of empty acknowledgements (TCP packets with no data portion), but might also delay the recognition of connection difficulties. Consider increasing the buffer size if you are transferring large files, or you are using a high bandwidth, high latency connection (such as a satellite broadband provider.)
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& receive_buffer_size(size_t value);
-
+        
         /// @brief Gets a value that specifies the amount of time after which a synchronous xtd::net::sockets::socket::receive call will time out.
         /// @return The time-out value, in milliseconds. The default value is 0, which indicates an infinite time-out period. Specifying -1 also indicates an infinite time-out period.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
@@ -432,7 +432,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented protocol, the xtd::net::sockets::socket::remote_end_point property gets the xtd::net::sockets::end_point that contains the remote IP address and port number to which the xtd::net::sockets::socket is connected. If you are using a connectionless protocol, xtd::net::sockets::socket::remote_end_point contains the default remote IP address and port number with which the xtd::net::sockets::socket will communicate. You must cast this xtd::net::end_point to an xtd::net::ip_end_point before retrieving any information. You can then call the xtd::net::ip_end_point::address method to retrieve the remote xtd::net::ip_address, and the xtd::net::ip_end_point::port method to retrieve the remote port number.
         /// @remarks The xtd::net::sockets::socket::remote_end_point is set after a call to either xtd::net::sockets::socket::accept or xtd::net::sockets::socket::connect. If you try to access this property earlier, xtd::net::sockets::socket::remote_end_point will throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         std::shared_ptr<xtd::net::end_point> remote_end_point() const;
-
+        
         /// @brief Gets a value that specifies the size of the send buffer of the xtd::net::sockets::socket.
         /// @return An size_t that contains the size, in bytes, of the send buffer. The default is 8192.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
@@ -465,12 +465,12 @@ namespace xtd {
         /// @remarks This option applies to synchronous Send calls only. If the time-out period is exceeded, the Send method will throw a xtd::net::sockets::socket::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& send_timeout(int32_t value);
-
+        
         /// @brief Gets the type of the xtd::net::sockets::socket.
         /// @return One of the xtd::net::sockets::socket_type values.
         /// @remarks xtd::net::sockets::socket::socket_type is read-only and is set when the xtd::net::sockets::socket is created.
         xtd::net::sockets::socket_type socket_type() const noexcept;
-
+        
         /// @brief Gets a value that specifies the Time To Live (TTL) value of Internet Protocol (IP) packets sent by the xtd::net::sockets::socket.
         /// @return The TTL value.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
@@ -527,7 +527,7 @@ namespace xtd {
         /// @remarks The completion callback method should examine the xtd::net::sockets::socket_async_event_args::socket_error property to determine if the xtd::net::sockets::socket::accept_async operation was successful.
         /// @remarks The xtd::net::sockets::socket_async_event_args::completed event can occur in some cases when no connection has been accepted and cause the xtd::net::sockets::socket_async_event_args::socket_error property to be set to xtd::net::sockets::socket_error::connection_reset. This can occur as a result of port scanning using a half-open SYN type scan (a SYN -> SYN-ACK -> RST sequence). Applications using the xtd::net::sockets::socket::accept_async method should be prepared to handle this condition.
         bool accept_async(xtd::net::sockets::socket_async_event_args& e);
-
+        
         /// @brief Begins an asynchronous operation to accept an incoming connection attempt.
         /// @param callback The xtd::async_callback delegate.
         /// @param state An object that contains state information for this request.
@@ -543,7 +543,7 @@ namespace xtd {
         /// @note You can use the xtd::net::sockets::socket::remote_end_point property of the returned xtd::net::sockets::socket::socket to identify the remote host's network address and port number.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         std::shared_ptr<xtd::iasync_result> begin_accept(xtd::async_callback callback, const std::any& state);
-
+        
         /// @brief Begins an asynchronous request for a remote host connection.
         /// @param remote_end_point An xtd::net::end_point that represents the remote host.
         /// @param callback The xtd::async_callback delegate.
@@ -605,7 +605,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note If this socket has previously been disconnected, then xtd::net::sockets::socket::begin_connect must be called on a thread that will not exit until the operation is complete. This is a limitation of the underlying provider. Also the xtd::net::end_point that is used must be different.
         std::shared_ptr<xtd::iasync_result> begin_connect(const xtd::ustring& host, uint16_t port, xtd::async_callback callback, const std::any& state);
-
+        
         /// @brief Begins an asynchronous request to disconnect from a remote endpoint.
         /// @param reuse_socket true if this socket can be reused after the connection is closed; otherwise, false.
         /// @param callback The xtd::async_callback delegate.
@@ -742,7 +742,7 @@ namespace xtd {
         /// @note state is an instantiation of a user-defined class.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
         std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state);
-
+        
         /// @brief Sends data asynchronously to a specific remote host.
         /// @param buffer An array of type byte_t that contains the data to send.
         /// @param offset The zero-based position in buffer at which to begin sending data.
@@ -764,7 +764,7 @@ namespace xtd {
         /// @remarks If you specify the xtd::net::sockets::socket_flags::dont_route flag as the socket_flags parameter, the data you are sending will not be routed.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         std::shared_ptr<xtd::iasync_result> begin_send_to(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
-
+        
         /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
         /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -780,14 +780,14 @@ namespace xtd {
         void bind(const end_point_t& local_end_point) {
           bind_(std::make_shared<end_point_t>(local_end_point));
         }
-
+        
         /// @brief Closes the xtd::net::sockets::socket connection and releases all associated resources.
         /// @remarks The xtd::net::sockets::socket::close method closes the remote host connection and releases all resources associated with the xtd::net::sockets::socket. Upon closing, the xtd::net::sockets::socket::connected property is set to false.
         /// @remarks For connection-oriented protocols, it is recommended that you call xtd::net::sockets::socket::shutdown before calling the xtd::net::sockets::socket::close method. This ensures that all data is sent and received on the connected socket before it is closed.
         /// @remarks If you need to call xtd::net::sockets::socket::close without first calling xtd::net::sockets::socket::shutdown, you can ensure that data queued for outgoing transmission will be sent by setting the xtd::net::sockets::socket::dont_linger xtd::net::sockets::socket option to false and specifying a non-zero time-out interval. xtd::net::sockets::socket::close will then block until this data is sent or until the specified time-out expires. If you set xtd::net::sockets::socket::dont_linger to false and specify a zero time-out interval, xtd::net::sockets::socket::close releases the connection and automatically discards outgoing queued data.
         /// @note To set the xtd::net::sockets::socket::dont_linger socket option to false, create a xtd::net::sockets::linger_option, set the xtd::net::sockets::linger_option::enabled property to true, and set the xtd::net::sockets::linger_option::linger_time property to the desired time out period. Use this xtd::net::sockets::linger_option along with the xtd::net::sockets::socket::dont_linger socket option to call the xtd::net::sockets::socket::set_socket_linger_option method.
         void close();
-
+        
         /// @brief Establishes a connection to a remote host.
         /// @param remote_end_point An xtd::net::end_point that represents the remote device.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -799,7 +799,7 @@ namespace xtd {
         /// @note If the socket has been previously disconnected, then you cannot use this method to restore the connection. Use one of the asynchronous xtd::net::sockets::socket::begin_connect methods to reconnect. This is a limitation of the underlying provider.
         template<typename end_point_t>
         void connect(const end_point_t& remote_end_point) {
-         connect_(std::make_shared<end_point_t>(remote_end_point));
+          connect_(std::make_shared<end_point_t>(remote_end_point));
         }
         
         /// @brief Establishes a connection to a remote host. The host is specified by an IP address and a port number.
@@ -879,7 +879,7 @@ namespace xtd {
         /// @remarks xtd::net::sockets::socket::end_disconnect completes a call to xtd::net::sockets::socket::begin_disconnect. The xtd::net::sockets::socket::end_disconnect method blocks until the disconnect completes. For information about asynchronous operations, see Asynchronous Programming Model (APM).
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void end_disconnect(std::shared_ptr<xtd::iasync_result> async_result);
-       
+        
         /// @brief Ends a pending asynchronous read.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
         /// @return The number of bytes received.
@@ -910,7 +910,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         size_t end_receive(std::shared_ptr<xtd::iasync_result> async_result, xtd::net::sockets::socket_error& error_code);
-
+        
         /// @brief Ends a pending asynchronous read from a specific endpoint.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
         /// @param end_point The source xtd::net::end_point.
@@ -970,7 +970,7 @@ namespace xtd {
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
         size_t end_send(std::shared_ptr<xtd::iasync_result> async_result, xtd::net::sockets::socket_error& error_code);
-
+        
         /// @brief Ends a pending asynchronous send to a specific location.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
         /// @return If successful, the number of bytes sent; otherwise, an invalid xtd::net::sockets::socket::socket error.
@@ -983,7 +983,7 @@ namespace xtd {
         /// @remarks If you are using a connectionless protocol, xtd::net::sockets::socket::end_send_to will block until the datagram is sent. If you are using a connection-oriented protocol, xtd::net::sockets::socket::end_send_to will block until the requested number of bytes are sent. There is no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::begin_send_to method means that the underlying system has had room to buffer your data for a network send.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t end_send_to(std::shared_ptr<xtd::iasync_result> async_result);
-
+        
         /// @brief Gets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option level.
         /// @param socket_option_name The platform-defined option name.
@@ -993,7 +993,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         size_t get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t size_option_value) const;
-
+        
         /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
         /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
@@ -1027,7 +1027,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         xtd::net::sockets::ip_v6_multicast_option get_socket_ip_v6_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const;
-
+        
         /// @brief Sets low-level operating modes for the xtd::net::sockets::socket using numerical control codes.
         /// @param io_control_code An int32_t value that specifies the control code of the operation to perform.
         /// @param option_in_value A byte array that contains the input data required by the operation.
@@ -1079,7 +1079,7 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::socket::poll method checks the state of the xtd::net::sockets::socket. Specify xtd::net::sockets::select_mode::select_read for the select_mode parameter to determine if the xtd::net::sockets::socket is readable. Specify xtd::net::sockets::select_mode::select_write to determine if the xtd::net::sockets::socket is writable. Use SelectMode.SelectError to detect an error condition. Poll will block execution until the specified time period, measured in microseconds, elapses. Set the microSeconds parameter to a negative integer if you would like to wait indefinitely for a response. If you want to check the status of multiple sockets, you might prefer to use the xtd::net::sockets::socket::select method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         bool poll(int32_t micro_seconds, xtd::net::sockets::select_mode mode);
-
+        
         /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
         /// @param buffer An array of type byte that is the storage location for the received data.
         /// @return The number of bytes received.
@@ -1234,7 +1234,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
         size_t receive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
- 
+        
         size_t receive_message_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::net::sockets::ip_packet_information& ip_packet_information);
         
         /// @brief Determines the status of one or more sockets.
@@ -1252,8 +1252,8 @@ namespace xtd {
         /// @remarks Use the xtd::net::sockets::socket::poll method if you only want to determine the status of a single xtd::net::sockets::socket.
         /// @note This method cannot detect certain kinds of connection problems, such as a broken network cable, or that the remote host was shut down ungracefully. You must attempt to send or receive data to detect these kinds of errors.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        static size_t select(std::vector<socket>& check_read,std::vector<socket>& check_write, std::vector<socket>& check_error, int32_t microseconds);
-
+        static size_t select(std::vector<socket>& check_read, std::vector<socket>& check_write, std::vector<socket>& check_error, int32_t microseconds);
+        
         /// @brief Sends data to a connected xtd::net::sockets::socket.
         /// @param buffer An array of type byte that contains the data to be sent.
         /// @return The number of bytes sent to the xtd::net::sockets::socket.
@@ -1395,7 +1395,7 @@ namespace xtd {
         /// @remarks If you are using a connectionless protocol in blocking mode, xtd::net::sockets::socket::send_to will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket_option_name::broadcast. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t send_to(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
-
+        
         /// @brief Sets the IP protection level on a socket.
         /// @param level The IP protection level to set on this socket.The IP protection level to set on this socket.
         /// @exception xtd::argument_exception The level argument is set to xtd::net::sockets::ip_protection_level::unspecified.
@@ -1439,7 +1439,7 @@ namespace xtd {
         /// @remarks <br />For more information on these options, refer to the xtd::net::sockets::socket_option_name enumeration.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value);
-
+        
         /// @brief Sets the specified xtd::net::sockets::socket option to the specified integer value.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
         /// @param socket_option_name One of the xtd::net::sockets::socket_option_name values.
@@ -1501,7 +1501,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::ip_v6_multicast_option& option_value);
-
+        
         /// @brief Sets a socket option value using platform-specific level and name identifiers.
         /// @param socket_option_level The platform-defined option name.
         /// @param socket_option_name The platform-defined option name.
@@ -1513,7 +1513,7 @@ namespace xtd {
         /// @remarks The SetRawSocketOption(Int32, Int32, ReadOnlySpan<byte>) method should be used only when SocketOptionLevel and SocketOptionName do not expose the required option.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t option_value_size);
-       
+        
         /// @brief Disables sends and receives on a xtd::net::sockets::socket.
         /// @param how One of the xtd::net::sockets::socket_shutdown values that specifies the operation that will no longer be allowed.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.

@@ -16,7 +16,7 @@ public:
         console::write_line("{}:", locale_name);
         console::write_line("   Local date and time: {}, {}", local_date.to_string(), local_date.kind());
         console::write_line("   UTC date and time: {}, {}\n", utc_date.to_string(), utc_date.kind());
-      } catch(const exception& e) {
+      } catch (const exception& e) {
         console::write_line(ustring::format("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e.what()), "Exception");
       }
     }

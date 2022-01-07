@@ -81,11 +81,11 @@ namespace xtd {
         /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
         reference operator[](const xtd::ustring& name);
         /// @}
-
+        
       private:
-       inline static value_type empty_;
+        inline static value_type empty_;
       };
-
+      
       /// @name Constructors
       
       /// @{
@@ -130,7 +130,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<link_label, link_label_clicked_event_handler> link_clicked;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -149,7 +149,7 @@ namespace xtd {
       /// @return xtd::forms::label::link corresponding to the point.
       link_label::link& point_in_link(const xtd::drawing::point& point);
       /// @}
-
+      
     private:
       xtd::drawing::point get_text_location(size_t line) const;
       std::vector<std::tuple<xtd::drawing::rectangle, bool>> generate_text_rects() const;

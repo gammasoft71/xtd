@@ -33,7 +33,7 @@ namespace xtd {
       /// @brief Opens the file with read only permission selected by the user.
       /// @return The read only file selected by the user.
       std::ifstream open_file() const {return io::file::open_read(xtd::ustring(file_name_));}
- 
+      
       /// @brief Gets a value indicating whether the dialog box allows multiple files to be selected.
       /// @return true if the dialog box allows multiple files to be selected together or concurrently; otherwise, false. The default value is false.
       /// @remarks Use the file_names property to access the full list of selected file names.
@@ -47,7 +47,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
     private:
       bool run_file_dialog(intptr_t hwnd_owner) override;
       void run_file_sheet(intptr_t owner) override;

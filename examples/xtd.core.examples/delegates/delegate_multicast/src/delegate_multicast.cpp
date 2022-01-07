@@ -15,7 +15,7 @@ public:
   void write_trace(const ustring& str) {
     ctrace << str << environment::new_line;
   }
-
+  
   void write_trace2(const ustring& str) {
     ctrace << "2 " << str << environment::new_line;
   }
@@ -23,8 +23,8 @@ public:
 
 int main() {
   ::write write;
-
-  write += [](const ustring& str)  {
+  
+  write += [](const ustring & str)  {
     console::out << str << environment::new_line;
   };
   
@@ -34,11 +34,11 @@ int main() {
   
   write += write_debug;
   write += {tracer(), &tracer::write_trace};
-
+  
   tracer t;
   write += {t, &tracer::write_trace2}; // add
   write -= {t, &tracer::write_trace2}; // then remove
-
+  
   struct writer {
     writer() = default;
     void operator()(const ustring& str) {

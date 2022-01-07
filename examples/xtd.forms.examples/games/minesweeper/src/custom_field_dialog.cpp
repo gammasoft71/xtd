@@ -39,13 +39,13 @@ custom_field_dialog::custom_field_dialog() {
   custom_height_label_.location({20, 67});
   custom_height_label_.parent(*this);
   custom_height_label_.text("Height:"_t);
-
+  
   custom_height_text_box_.key_press += key_press_event_handler(*this, &custom_field_dialog::on_text_box_key_press);
   custom_height_text_box_.location({85, 65});
   custom_height_text_box_.parent(*this);
   custom_height_text_box_.text(ustring::format("{}", custom_height_));
   custom_height_text_box_.width(50);
-
+  
   custom_width_label_.auto_size(true);
   custom_width_label_.location({20, 97});
   custom_width_label_.parent(*this);
@@ -56,7 +56,7 @@ custom_field_dialog::custom_field_dialog() {
   custom_width_text_box_.parent(*this);
   custom_width_text_box_.text(ustring::format("{}", custom_width_));
   custom_width_text_box_.width(50);
-
+  
   custom_mines_label_.auto_size(true);
   custom_mines_label_.location({20, 127});
   custom_mines_label_.parent(*this);
@@ -67,7 +67,7 @@ custom_field_dialog::custom_field_dialog() {
   custom_mines_text_box_.parent(*this);
   custom_mines_text_box_.text(ustring::format("{}", custom_mines_));
   custom_mines_text_box_.width(50);
-
+  
   ok_button_.parent(*this);
   ok_button_.location({165, 65});
   ok_button_.text(xtd::forms::system_texts::ok());

@@ -50,23 +50,23 @@ namespace xtd {
       /// @{
       void close() override;
       void flush() override {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         flush_();
-#endif
+        #endif
       }
       
       using xtd::diagnostics::trace_listener::write;
       void write(const xtd::ustring& message) override {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_(message);
-#endif
+        #endif
       }
       
       using xtd::diagnostics::trace_listener::write_line;
       void write_line(const xtd::ustring& message) override {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line_(message);
-#endif
+        #endif
       }
       /// @}
       

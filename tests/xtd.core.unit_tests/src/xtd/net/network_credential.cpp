@@ -15,7 +15,7 @@ namespace unit_tests {
       assert::is_zero(nc.secure_password().size(), csf_);
       assert::is_empty(nc.domain(), csf_);
     }
-
+    
     void test_method_(create_with_user_name_and_password) {
       network_credential nc("gammasoft", "sysadmin!nimdasys");
       assert::are_equal("gammasoft", nc.user_name(), csf_);
@@ -23,7 +23,7 @@ namespace unit_tests {
       assert::are_equal("sysadmin!nimdasys", nc.secure_password().to_unsecure_string(), csf_);
       assert::is_empty(nc.domain(), csf_);
     }
-
+    
     void test_method_(create_with_user_name_password_and_domain) {
       network_credential nc("gammasoft", "sysadmin!nimdasys", "domain");
       assert::are_equal("gammasoft", nc.user_name(), csf_);

@@ -8,7 +8,7 @@ namespace examples {
   public:
     form1() {
       text("Up down button example");
-
+      
       up_down_button1.parent(*this);
       up_down_button1.location({10, 10});
       up_down_button1.value_changed += [&] {
@@ -18,7 +18,7 @@ namespace examples {
       up_down_button1.maximum(20);
       up_down_button1.value(15);
       up_down_button1.wrapped(true);
-
+      
       label1.parent(*this);
       label1.location({10, 50});
     }

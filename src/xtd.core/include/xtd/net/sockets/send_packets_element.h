@@ -54,7 +54,7 @@ namespace xtd {
         /// @param buffer A byte array of data to send using the xtd::net::sockets::socket::send_packets_async method.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         explicit send_packets_element(const std::vector<byte_t>& buffer);
-
+        
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified range of the file with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
         /// @param file_path The filename of the file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
         /// @param offset The offset, in bytes, from the beginning of the file to the location in the file to start sending the file specified in the file_path parameter.
@@ -63,7 +63,7 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         /// @remarks Universal Naming Convention (UNC) paths are supported by the file_path parameter. If the file is in the current working directory, no path information needs to be specified.
         send_packets_element(const xtd::ustring& file_path, size_t offset, size_t count, bool end_of_packet);
-
+        
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified range of the buffer with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
         /// @param buffer A byte array of data to send using the xtd::net::sockets::socket::send_packets_async method.
         /// @param offset The offset, in bytes, from the beginning of the buffer to the location in the buffer to start sending the data specified in the buffer parameter.
@@ -71,7 +71,7 @@ namespace xtd {
         /// @param end_of_packet Specifies that this element should not be combined with the next element in a single send request from the sockets layer to the transport. This flag is used for granular control of the content of each message on a datagram or message-oriented socket.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         send_packets_element(const std::vector<byte_t>& buffer, size_t offset, size_t count, bool end_of_packet);
-
+        
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified range of the file with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
         /// @param file_path The filename of the file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
         /// @param offset The offset, in bytes, from the beginning of the file to the location in the file to start sending the file specified in the file_path parameter.
@@ -87,31 +87,31 @@ namespace xtd {
         /// @param end_of_packet Specifies that this element should not be combined with the next element in a single send request from the sockets layer to the transport. This flag is used for granular control of the content of each message on a datagram or message-oriented socket.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         send_packets_element(std::ifstream& file_stream, size_t offset, size_t count, bool end_of_packet);
-
+        
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified range of the buffer with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
         /// @param buffer A byte array of data to send using the xtd::net::sockets::socket::send_packets_async method.
         /// @param offset The offset, in bytes, from the beginning of the buffer to the location in the buffer to start sending the data specified in the buffer parameter.
         /// @param count The number bytes to send starting from the offset parameter. If count is zero, no bytes are sent.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         send_packets_element(const std::vector<byte_t>& buffer, size_t offset, size_t count);
-
+        
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified file.
         /// @param file_path The filename of the file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         /// @remarks Universal Naming Convention (UNC) paths are supported by the file_path parameter. If the file is in the current working directory, no path information needs to be specified.
         explicit send_packets_element(const xtd::ustring& file_path);
-
+        
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified FileStream object.
         /// @param file_stream The file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         explicit send_packets_element(std::ifstream& file_stream);
         /// @}
-
+        
         /// @cond
         send_packets_element(send_packets_element&& socket) = default;
         ~send_packets_element();
         /// @endcond
-
+        
         /// @name Properties
         
         /// @{
@@ -141,13 +141,13 @@ namespace xtd {
         /// @remarks An object representation of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a std::ifstream parameter.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::file_stream property is empty if the xtd::net::sockets::send_packets_element object was not initialized with a file_stream parameter.
         std::optional<ifstream_ref> file_stream() const noexcept;
-
+        
         /// @brief Gets the offset, in bytes, from the beginning of the data buffer or file to the location in the buffer or file to start sending the data.
         /// @return The offset, in bytes, from the beginning of the data buffer or file to the location in the buffer or file to start sending the data.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::offset property is zero if the xtd::net::sockets::send_packets_element class was not initialized with an offset parameter.
         size_t offset() const noexcept;
         /// @}
-
+        
       private:
         std::vector<byte_t> buffer_;
         size_t count_ = 0;

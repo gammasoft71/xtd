@@ -35,8 +35,8 @@ namespace xtd {
     class core_export_ binary_reader : public xtd::object {
     public:
       /// @name Constructors
-
-      /// @{      
+      
+      /// @{
       /// @brief Initializes a new instance of the xtd::io::binary_reader class for the specified file name.
       /// @param path The complete file path to be read.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters as defined by xtd::io::path::invalid_path_chars.
@@ -55,9 +55,9 @@ namespace xtd {
       binary_reader& operator=(const binary_reader&) = delete;
       ~binary_reader();
       /// @endcond
-
+      
       /// @name Properties
-
+      
       /// @{
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
@@ -75,7 +75,7 @@ namespace xtd {
       /// @{
       /// @brief Closes the xtd::io::binary_reader object and the underlying stream, and releases any system resources associated with the reader.
       void close();
-
+      
       /// @brief Returns the next available character and does not advance the byte or character position.
       /// @return The next available character, or EOF if no more characters are available or the stream does not support seeking.
       /// @exception xtd::io::io_exception An I/O error occurred.
@@ -109,7 +109,7 @@ namespace xtd {
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual size_t read(std::vector<char>& buffer, size_t index, size_t count);
-
+      
       /// @brief Reads a boolean value from the current stream and advances the current position of the stream by one byte.
       /// @return true if the byte is nonzero; otherwise, false.
       /// @exception EndOfStreamException The end of the stream is reached.
@@ -151,7 +151,7 @@ namespace xtd {
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual std::vector<char> read_chars(size_t count);
-
+      
       /// @brief Reads an 8-byte floating point value from the current stream and advances the current position of the stream by eight bytes.
       /// @return An 8-byte floating point value read from the current stream.
       /// @exception xtd::io::end_of_stream_exception The end of the stream is reached.
@@ -191,7 +191,7 @@ namespace xtd {
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual sbyte_t read_sbyte();
-
+      
       /// @brief Reads an 4-byte floating point value from the current stream and advances the current position of the stream by four bytes.
       /// @return An 4-byte floating point value read from the current stream.
       /// @exception xtd::io::end_of_stream_exception The end of the stream is reached.
@@ -207,7 +207,7 @@ namespace xtd {
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual ustring read_string();
-
+      
       /// @brief Reads a 2-byte unsigned integer from the current stream and advances the current position of the stream by two bytes.
       /// @return A 2-byte unsigned integer read from the current stream.
       /// @exception xtd::io::end_of_stream_exception The end of the stream is reached.
@@ -232,7 +232,7 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual uint64_t read_uint64();
       /// @}
-
+      
       /// @cond
       binary_reader& operator>>(bool& value) {value = read_boolean(); return *this;}
       binary_reader& operator>>(byte_t& value) {value = read_byte(); return *this;}
@@ -248,7 +248,7 @@ namespace xtd {
       binary_reader& operator>>(uint32_t& value) {value = read_uint32(); return *this;}
       binary_reader& operator>>(uint64_t& value) {value = read_uint64(); return *this;}
       /// @endcond
-
+      
     private:
       std::istream* stream_ = nullptr;
       bool delete_when_destroy_ = false;

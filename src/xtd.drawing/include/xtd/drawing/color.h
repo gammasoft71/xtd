@@ -469,7 +469,7 @@ namespace xtd {
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF9ACD32. This field is constant.
       static const xtd::drawing::color yellow_green;
-
+      
       /// @Brief Represent the lightness threshold.
       /// @remarks If color::get_lightness() less than lightness_threshold is dark color; otherwise is light color.
       static constexpr double lightness_threshold = 0.5;
@@ -552,7 +552,7 @@ namespace xtd {
       /// @brief Gets the native handle of this xtd::drawing::color class.
       /// @remarks For internal use only, needed for system_colors.
       intptr_t handle() const {return handle_;}
-
+      
       /// @Brief Gets a value indicating wheter this xtd::drawing::color structure is dark color.
       /// @remarks return true if dark color; otherwise false.
       bool is_dark() const {return get_lightness() < lightness_threshold;}
@@ -565,11 +565,11 @@ namespace xtd {
       /// @return bool Returns true if this xtd::drawing::color was created from a predefined color by using either the from_name method or the from_known_color method; otherwise, false.
       /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the is_known_color property is applied to a xtd::drawing::color structure that is created by using the from_argb method, is_known_color returns false, even if the ARGB value matches the ARGB value of a predefined color.
       bool is_known_color() const {return known_color_ != (xtd::drawing::known_color)0;}
-
+      
       /// @Brief Gets a value indicating wheter this xtd::drawing::color structure is light color.
       /// @remarks return true if light color; otherwise false.
       bool is_light() const {return get_lightness() >= lightness_threshold;}
-
+      
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created by using either the FromName method or the FromKnownColor method; otherwise, false.
       bool is_named_color() const {return name_ != ustring::format("{:X8}", argb_) && name_ != "0";}
@@ -617,7 +617,7 @@ namespace xtd {
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
       static color average(const color& color1, const color& color2, double weight, bool average_alpha) {return from_argb(average_alpha ? static_cast<uint8_t>(color1.a() * (1 - weight) + color2.a() * weight) : static_cast<uint8_t>(color1.a()), static_cast<uint8_t>(color1.r() * (1 - weight) + color2.r() * weight), static_cast<uint8_t>(color1.g() * (1 - weight) + color2.g() * weight), static_cast<uint8_t>(color1.b() * (1 - weight) + color2.b() * weight));}
-
+      
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
       /// @param color2 The second color.
@@ -630,7 +630,7 @@ namespace xtd {
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the second color, while a value of 0.0 will return the first color.
       static color average(const color& color1, const color& color2, double weight) {return average(color1, color2, weight, false);}
-
+      
       /// @brief Returns a darker version of the specified color.
       /// @param color The color to dark.
       /// @return the darker color result.
@@ -639,7 +639,7 @@ namespace xtd {
       /// @brief Returns a darker version of the specified color.
       /// @param color The color to dark.
       /// @return the darker color result.
-      static color dark(const color& color) {return color::dark(color, 1.0/3);}
+      static color dark(const color& color) {return color::dark(color, 1.0 / 3);}
       
       /// @brief Returns a lighter version of the specified color.
       /// @param color The color to light.
@@ -649,8 +649,8 @@ namespace xtd {
       /// @brief Returns a lighter version of the specified color.
       /// @param color The color to light.
       /// @return the lighter color result.
-      static color light(const color& color) {return color::light(color, 1.0/3);}
-
+      static color light(const color& color) {return color::light(color, 1.0 / 3);}
+      
       /// @brief Creates a xtd::drawing::color class from a 32-bit ARGB value.
       /// @param argb A value specifying the 32-bit ARGB value
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
@@ -851,7 +851,7 @@ namespace xtd {
       /// }
       /// @endcode
       static xtd::drawing::color from_argb(uint8_t red, uint8_t green, uint8_t blue);
-
+      
       /// @brief Creates a xtd::drawing::color class from native handle.
       /// @param handle the handle for the new xtd::drawing::color.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
@@ -1221,7 +1221,7 @@ namespace xtd {
       explicit color(uint32_t argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {}
       explicit color(intptr_t handle)  : handle_(handle), name_(ustring::format("{:X}h", handle)), empty_(false) {}
       color(const color& color, const xtd::drawing::known_color& know_color);
-
+      
       uint32_t argb_ = 0;
       intptr_t handle_ = 0;
       xtd::drawing::known_color known_color_ = (xtd::drawing::known_color)0;
@@ -1233,7 +1233,7 @@ namespace xtd {
     inline std::ostream& operator<<(std::ostream& os, color value) {return os << value.to_string();}
     /// @endcond
   }
-
+  
   /// @brief Creates a xtd::drawing::color class from the specified name.
   /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
   /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.

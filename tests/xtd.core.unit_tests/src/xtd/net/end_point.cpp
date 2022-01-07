@@ -33,7 +33,7 @@ namespace unit_tests {
       assert::are_equal(address_family::unix, ep.address_family(), csf_);
       assert::are_equal("unix", ep.to_string(), csf_);
     }
-
+    
     void test_method_(create_end_point_with_address_family_inter_network) {
       tend_point ep(address_family::inter_network);
       assert::are_equal(address_family::inter_network, ep.address_family(), csf_);
@@ -57,13 +57,13 @@ namespace unit_tests {
       assert::are_equal(address_family::apple_talk, ep.address_family(), csf_);
       assert::are_equal("apple_talk", ep.to_string(), csf_);
     }
-
+    
     void test_method_(create_end_point_with_address_family_inter_network_v6) {
       tend_point ep(address_family::inter_network_v6);
       assert::are_equal(address_family::inter_network_v6, ep.address_family(), csf_);
       assert::are_equal("inter_network_v6", ep.to_string(), csf_);
     }
-
+    
     void test_method_(create_end_point_with_address_family_max) {
       tend_point ep(address_family::max);
       assert::are_equal(address_family::max, ep.address_family(), csf_);
@@ -72,12 +72,12 @@ namespace unit_tests {
     
     void test_method_(end_point_create) {
       tend_point ep;
-      assert::throws<not_implemented_exception>([&]{ep.create(socket_address(address_family::inter_network));}, csf_);
+      assert::throws<not_implemented_exception>([&] {ep.create(socket_address(address_family::inter_network));}, csf_);
     }
     
     void test_method_(end_point_serialize) {
       tend_point ep;
-      assert::throws<not_implemented_exception>([&]{ep.serialize();}, csf_);
+      assert::throws<not_implemented_exception>([&] {ep.serialize();}, csf_);
     }
   };
 }

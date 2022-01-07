@@ -28,7 +28,7 @@ namespace xtd {
       /// @brief Hides minimized windows by moving them off the visible area of the screen.
       hide = 8
     };
-
+    
     /// @cond
     inline arrange_starting_position& operator +=(arrange_starting_position& lhs, arrange_starting_position rhs) {lhs = static_cast<arrange_starting_position>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
     inline arrange_starting_position& operator -=(arrange_starting_position& lhs, arrange_starting_position rhs) {lhs = static_cast<arrange_starting_position>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}

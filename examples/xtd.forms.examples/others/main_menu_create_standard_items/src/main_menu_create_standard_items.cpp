@@ -21,7 +21,7 @@ namespace examples {
       // The 10th item of menu_items is the file exit menu item.
       if (*menu_items[10] == sender) application::exit();
     }
-
+    
     vector<unique_ptr<menu_item>> menu_items;
     unique_ptr<main_menu> main_menu1 = main_menu::create_standard_items(menu_items, {*this, &form1::on_menu_click});
     

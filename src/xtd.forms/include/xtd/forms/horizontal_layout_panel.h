@@ -45,7 +45,7 @@ namespace xtd {
       /// @exception xtd::argument_exception container does not contains control.
       horizontal_layout_panel& control_layout_style(const control_ref& control, const horizontal_control_layout_style& value);
       /// @}
-
+      
     protected:
       /// @name Protected methods
       

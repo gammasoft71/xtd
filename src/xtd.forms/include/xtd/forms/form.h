@@ -47,7 +47,7 @@ namespace xtd {
       /// @remarks The default size of a form is 300 pixels in height and 300 pixels in width.
       form();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -86,7 +86,7 @@ namespace xtd {
       /// @param value  An ibutton_control that represents the cancel button for the form.
       /// @return Current form.
       form& cancel_button(nullptr_t);
-
+      
       /// @brief Gets a value indicating whether a close box is displayed in the caption bar of the form.
       /// @return true if the form displays a close box in the upper-left corner of the form; otherwise, false. The default is true.
       virtual bool close_box() const {return close_box_;}
@@ -102,7 +102,7 @@ namespace xtd {
       /// @param value true if the form displays a control box in the upper-right corner of the form; otherwise, false. The default is true.
       /// @return Current form.
       virtual form& control_box(bool value);
-
+      
       drawing::size default_size() const override {return {300, 300};}
       
       /// @brief Gets the dialog result for the form.
@@ -128,7 +128,7 @@ namespace xtd {
       /// @param value An icon that represents the icon for the form.
       /// @return Current form.
       virtual form& icon(const xtd::drawing::icon& value);
-
+      
       /// @brief Gets a value indicating whether a Help button should be displayed in the caption box of the form.
       /// @return true to display a Help button in the form's caption bar; otherwise, false. The default is false.
       virtual bool help_button() const {return help_button_;}
@@ -156,7 +156,7 @@ namespace xtd {
       /// @param value A main_menu that represents the menu to display in the form.
       /// @return Current form.
       virtual form& menu(nullptr_t);
-
+      
       /// @brief Gets a value indicating whether the Minimize button is displayed in the caption bar of the form.
       /// @return true to display a Minimize button for the form; otherwise, false. The default is true.
       virtual bool minimize_box() const {return minimize_box_;}
@@ -164,7 +164,7 @@ namespace xtd {
       /// @param value true to display a Minimize button for the form; otherwise, false. The default is true.
       /// @return Current form.
       virtual form& minimize_box(bool value);
-
+      
       /// @brief Gets a value indicating whether this form is displayed modally.
       /// @return true if the form is displayed modally; otherwise, false.
       bool modal() const {return get_state(state::modal);}
@@ -176,12 +176,12 @@ namespace xtd {
       /// @param value A form that represents the form that is the owner of this form.
       /// @return Current form.
       virtual form& owner(const control& value);
-
+      
       using container_control::parent;
       /// @brief Sets the parent container of the control.
       /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
       control& parent(const control& value) override;
-
+      
       /// @brief Gets a value indicating whether an icon is displayed in the caption bar of the form.
       /// @return true if the form displays an icon in the caption bar; otherwise, false. The default is true.
       virtual bool show_icon() const {return show_icon_;}
@@ -189,7 +189,7 @@ namespace xtd {
       /// @param value true if the form displays an icon in the caption bar; otherwise, false. The default is true.
       /// @return Current form.
       virtual form& show_icon(bool value);
-
+      
       /// @brief Gets the starting position of the form at run time.
       /// @return A form_start_position that represents the starting position of the form.
       virtual form_start_position start_position() const {return start_position_;}
@@ -197,7 +197,7 @@ namespace xtd {
       /// @param value A form_start_position that represents the starting position of the form.
       /// @return Current form.
       virtual form& start_position(form_start_position value);
-
+      
       /// @brief Gets the tool_bar that is displayed in the form.
       /// @return A tool_bar that represents the tool bar to display in the form.
       virtual std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar() const {return tool_bar_;}
@@ -220,7 +220,7 @@ namespace xtd {
       /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to false has no effect.
       /// @remarks A top-level form is a window that has no parent form, or whose parent form is the desktop window. Top-level windows are typically used as the main form in an application.
       virtual form& top_level(bool top_level);
-
+      
       /// @brief Gets a value indicating whether the form should be displayed as a topmost form.
       /// @return true to display the form as a topmost form; otherwise, false. The default is false.
       virtual bool top_most() const {return top_most_;}
@@ -235,7 +235,7 @@ namespace xtd {
       /// @brief Sets form opacity.
       /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
       virtual form& opacity(double opacity);
-
+      
       using container_control::visible;
       /// @brief Sets a value indicating whether the control and all its child controls are displayed.
       /// @param visible true if the control and all its child controls are displayed; otherwise, false. The default is true.
@@ -259,7 +259,7 @@ namespace xtd {
       void activate();
       
       void bring_to_front() override;
-
+      
       /// @brief Centers the position of the form within the bounds of the parent form.
       /// @remarks Do not call the center_to_screen method directly from your code. Instead, set the start_position property to center_parent.
       /// @remarks If the form or dialog is top-level, then center_to_parent centers the form with respect to the screen or desktop.
@@ -269,7 +269,7 @@ namespace xtd {
       /// @remarks When a form is closed, all resources created within the object are closed and the form is disposed. You can prevent the closing of a form at run time by handling the closing event and setting the cancel property of the cancel_event_args passed as a parameter to your event handler. If the form you are closing is the startup form of your application, your application ends.
       void close();
       
-      bool pre_process_message(xtd::forms::message& message) override; 
+      bool pre_process_message(xtd::forms::message& message) override;
       
       /// @brief Shows the form as a modal dialog box.
       /// @return One of the dialog_result values.
@@ -302,7 +302,7 @@ namespace xtd {
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<form, event_handler> deactivate;
-
+      
       /// @brief Occurs after the form is closed.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -313,7 +313,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<form, form_closing_event_handler> form_closing;
       /// @}
-
+      
     protected:
       friend class application;
       
@@ -321,7 +321,7 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const override;
-   
+      
       /// @brief Raises the form::activated event.
       /// @param e An event_args that contains the event data.
       virtual void on_activated(const event_args& e) {activated(*this, e);}
@@ -330,8 +330,8 @@ namespace xtd {
       /// @param e An event_args that contains the event data.
       virtual void on_deactivate(const event_args& e) {deactivate(*this, e);}
       
-      void on_handle_created(const event_args &e) override;
-      void on_handle_destroyed(const event_args &e) override;
+      void on_handle_created(const event_args& e) override;
+      void on_handle_destroyed(const event_args& e) override;
       
       /// @brief Raises the form::form_closed event.
       /// @param e A form_closed_event_args that contains the event data.
@@ -340,7 +340,7 @@ namespace xtd {
       /// @brief Raises the form::form_closing event.
       /// @param e A form_closing_event_args that contains the event data.
       virtual void on_form_closing(form_closing_event_args& e) {form_closing(*this, e);}
-
+      
       void on_layout(const event_args& e) override;
       void on_location_changed(const event_args& e) override;
       void on_resize(const event_args& e) override;
@@ -358,10 +358,10 @@ namespace xtd {
     private:
       friend class application_context;
       void internal_set_window_state();
-
+      
       void create_system_menu();
       void destroy_system_menu();
-
+      
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;
       static std::optional<std::reference_wrapper<form>> active_form_;

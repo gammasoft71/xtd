@@ -14,9 +14,9 @@ using namespace xtd::native;
 
 std::vector<uint8_t> guid::new_guid() {
   std::vector<uint8_t> guid(16);
-#if !defined(__ANDROID__)
+  #if !defined(__ANDROID__)
   uuid_generate(guid.data());
-#else
+  #else
   // http://tools.ietf.org/html/rfc4122
   //
   // 0                   1                   2                   3
@@ -45,6 +45,6 @@ std::vector<uint8_t> guid::new_guid() {
   std::for_each(guid.begin(), guid.end(), [&](uint8_t& value) {value = static_cast<int8_t>(rand_byte_distribution(rand));});
   guid[6] = (guid[6] & 0x0f) | 0x40;
   guid[8] = (guid[8] & 0x3f) | 0x80;
-#endif
+  #endif
   return guid;
 }

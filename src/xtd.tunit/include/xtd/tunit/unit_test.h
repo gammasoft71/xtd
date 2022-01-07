@@ -22,7 +22,7 @@ namespace xtd {
     template <typename test_class_t>
     class test_class_attribute;
     /// @endcond
-
+    
     /// @brief The template class.
     /// @par Namespace
     /// xtd::tunit
@@ -34,7 +34,7 @@ namespace xtd {
       explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept;
       
       unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, int argc, char* argv[]) noexcept : arguments(argv + 1, argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {}
-
+      
       /// @cond
       virtual ~unit_test() {}
       /// @endcond
@@ -44,23 +44,23 @@ namespace xtd {
       int run() {
         if (parse_arguments(arguments))
           return xtd::tunit::settings::default_settings().exit_status();
-
+          
         if (xtd::tunit::settings::default_settings().list_tests()) {
           std::vector<std::string> tests;
           for (auto test_class : test_classes())
-            for(auto test : test_class.test()->tests())
+            for (auto test : test_class.test()->tests())
               tests.push_back(test_class.test()->name() + '.' + test.name());
           return list_tests(tests);
         }
-
+        
         if (xtd::tunit::settings::default_settings().shuffle_test()) {
           std::random_device rd;
           std::mt19937 g = xtd::tunit::settings::default_settings().random_seed() == 0 ? std::mt19937(rd()) : std::mt19937(xtd::tunit::settings::default_settings().random_seed());
           std::shuffle(test_classes().begin(), test_classes().end(), g);
         }
-          
+        
         for (repeat_iteration_ = 1; repeat_iteration_ <= xtd::tunit::settings::default_settings().repeat_test() || xtd::tunit::settings::default_settings().repeat_test() < 0; ++repeat_iteration_) {
-           try {
+          try {
             event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
             
             event_listener_->on_unit_test_initialize_start(xtd::tunit::tunit_event_args(*this));
@@ -72,21 +72,21 @@ namespace xtd {
               if (test_class.test()->test_count())
                 test_class.test()->run(*this);
             end_time_point_ = xtd::date_time::now();
-
+            
             event_listener_->on_unit_test_cleanup_start(xtd::tunit::tunit_event_args(*this));
             unit_test_cleanup();
             event_listener_->on_unit_test_cleanup_end(xtd::tunit::tunit_event_args(*this));
             
             event_listener_->on_unit_test_end(xtd::tunit::tunit_event_args(*this));
-          } catch(const std::exception&) {
+          } catch (const std::exception&) {
             xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
             // do error...
-          } catch(...) {
+          } catch (...) {
             xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
             // do error...
           }
         }
-
+        
         xtd::tunit::settings::default_settings().end_time(xtd::date_time::now());
         write_xml();
         
@@ -113,7 +113,7 @@ namespace xtd {
           count += test_class.test()->test_count();
         return count;
       }
-
+      
       size_t aborted_test_count() const noexcept {
         size_t count = 0;
         for (auto& test_class : test_classes())
@@ -129,21 +129,21 @@ namespace xtd {
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
       }
-
+      
       std::chrono::milliseconds elapsed_time() const noexcept {
         using namespace std::chrono_literals;
         if (start_time_point_.ticks() == 0ms && end_time_point_.ticks() == 0ms) return 0ms;
         if (end_time_point_.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((xtd::date_time::now() - start_time_point_).ticks());
         return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point_ - start_time_point_).ticks());
       }
-
+      
       size_t ignored_test_count() const noexcept {
         size_t count = 0;
         for (auto test_class : test_classes())
           count += test_class.test()->ignored_test_count();
         return count;
       }
-
+      
       std::vector<std::string> ignored_test_names() const noexcept {
         std::vector<std::string> names;
         for (auto& test_class : test_classes())
@@ -151,7 +151,7 @@ namespace xtd {
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
       }
-
+      
       size_t failed_test_count() const noexcept {
         size_t count = 0;
         for (auto& test_class : test_classes())
@@ -159,7 +159,7 @@ namespace xtd {
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) count++;
         return count;
       }
-
+      
       std::vector<std::string> failed_test_names() const noexcept {
         std::vector<std::string> names;
         for (auto& test_class : test_classes())
@@ -167,7 +167,7 @@ namespace xtd {
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
       }
-
+      
       size_t succeed_test_count() const noexcept {
         size_t count = 0;
         for (auto& test_class : test_classes())
@@ -175,7 +175,7 @@ namespace xtd {
             if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;
         return count;
       }
-
+      
       std::vector<std::string> succeed_test_names() const noexcept {
         std::vector<std::string> names;
         for (auto& test_class : test_classes())
@@ -196,7 +196,8 @@ namespace xtd {
           else if (arg == "--list_tests") xtd::tunit::settings::default_settings().list_tests(true);
           else if (arg == "--output_color=true") xtd::tunit::settings::default_settings().output_color(true);
           else if (arg == "--output_color=false") xtd::tunit::settings::default_settings().output_color(false);
-          else if (arg.find("--output_xml") == 0) { xtd::tunit::settings::default_settings().output_xml(true);
+          else if (arg.find("--output_xml") == 0) {
+            xtd::tunit::settings::default_settings().output_xml(true);
             if (arg[12] == '=') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(13));
           } else if (arg.find("--random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(std::stoi(arg.substr(14)));
           else if (arg.find("--repeat_tests=") == 0) xtd::tunit::settings::default_settings().repeat_tests(std::stoi(arg.substr(15)));
@@ -206,14 +207,14 @@ namespace xtd {
         }
         return false;
       }
-
+      
     private:
       template <typename test_class_t>
       friend class xtd::tunit::test_class_attribute;
       friend class xtd::tunit::test_class;
       friend class xtd::tunit::test;
       friend class xtd::tunit::base_assert;
-
+      
       static void add(const xtd::tunit::registered_test_class& test_class) {test_classes().push_back(test_class);}
       
       void unit_test_cleanup() {
@@ -232,7 +233,7 @@ namespace xtd {
         const size_t last_slash_idx = filename.find_last_of("\\/");
         if (std::string::npos != last_slash_idx)
           filename.erase(0, last_slash_idx + 1);
-        
+          
         const size_t period_idx = filename.rfind('.');
         if (std::string::npos != period_idx)
           filename.erase(period_idx);
@@ -256,7 +257,7 @@ namespace xtd {
         ss << "T" << std::setfill('0') << std::setw(2) << tm.tm_hour << ":" << std::setfill('0') << std::setw(2) << tm.tm_min << ":" << std::setfill('0') << std::setw(2) << tm.tm_sec;
         return ss.str();
       }
-
+      
       std::string status_to_string(const xtd::tunit::test& test) {
         std::stringstream ss;
         if (test.not_started() || test.ignored()) ss << "notrun";
@@ -305,7 +306,7 @@ namespace xtd {
           file.close();
         }
       }
-
+      
       std::vector<std::string> arguments;
       std::string name_ = "AllTests";
       std::unique_ptr<xtd::tunit::event_listener> event_listener_;

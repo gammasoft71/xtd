@@ -98,7 +98,7 @@ namespace xtd {
       static void fail(const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         base_assert::fail("", "", message, stack_frame);
       }
-
+      
       /// @brief Ignore current test. This is used by the other Assert functions.
       /// @par Examples
       /// @code
@@ -163,7 +163,7 @@ namespace xtd {
       /// xtd::tunit::assert::succeed("User message...", csf_); // test ok.
       /// @endcode
       static void succeed(const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
-
+      
     protected:
       static void fail(const std::string& actual, const std::string& expected, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
@@ -176,7 +176,7 @@ namespace xtd {
       
       template <typename value_t>
       static std::string to_string(const value_t* value) {return __tunit_to_string(value);}
-
+      
       template<typename collection_t>
       static std::string join_items(const collection_t& collection) {return __tunit_join__items(collection);}
       

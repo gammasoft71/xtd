@@ -16,7 +16,7 @@ namespace {
           codepoint |= character - 0xdc00;
         else
           codepoint = character;
-        
+          
         if (codepoint <= 0x7f)
           out.append(1, static_cast<target_t>(codepoint));
         else if (codepoint <= 0x7ff) {

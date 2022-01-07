@@ -20,59 +20,59 @@ namespace xtd {
     class forms_export_ domain_up_down : public up_down_base {
     public:
       /// @brief Represent an item contained in the domain_up_down::object_collection collection.
-       class item {
-       public:
-         /// @name Constructors
-         
-         /// @{
-         /// @brief Initializes a new instance of the item class.
-         item() = default;
-         /// @brief Initializes a new instance of the item class with specified value.
-         /// @param value a string that represent the item.
-         item(const xtd::ustring& value) : value_(value) {}
-         /// @brief Initializes a new instance of the item class with specified value and tag.
-         /// @param value a string that represent the item.
-         /// @param tag an object that contains data about the item.
-         item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
-         /// @}
-
-         /// @cond
-         item(const char* value) : value_(value) {}
-         item(const item& value) = default;
-         virtual ~item() = default;
-         bool operator==(const item& value) const {return value_ == value.value_;}
-         bool operator!=(const item& value) const {return !operator==(value);}
-         bool operator<(const item& value) const {return value_ < value.value_;}
-         bool operator<=(const item& value) const {return value_ <= value.value_;}
-         bool operator>(const item& value) const {return value_ > value.value_;}
-         bool operator>=(const item& value) const {return value_ >= value.value_;}
-         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
-         /// @endcond
-         
-         /// @name Properties
-         
-         /// @{
-         /// @brief Gets the value of the item.
-         /// @return A xtd::ustring that represent the value of item.
-         virtual const xtd::ustring& value() const {return value_;}
-         
-         /// @brief Gets the tag of the item.
-         /// @return A std::any that represent the tag of item.
-         virtual std::any tag() const {return tag_;}
-         /// @}
-         
-         /// @name Methods
-         
-         /// @{
-         /// @brief Returns a string containing the vague of the item.
-         /// @return A string containing the value of the item.
-         xtd::ustring to_string() const {return value_;}
-         /// @}
-
-       private:
-         xtd::ustring value_;
-         std::any tag_;
-       };
+      class item {
+      public:
+        /// @name Constructors
+        
+        /// @{
+        /// @brief Initializes a new instance of the item class.
+        item() = default;
+        /// @brief Initializes a new instance of the item class with specified value.
+        /// @param value a string that represent the item.
+        item(const xtd::ustring& value) : value_(value) {}
+        /// @brief Initializes a new instance of the item class with specified value and tag.
+        /// @param value a string that represent the item.
+        /// @param tag an object that contains data about the item.
+        item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
+        /// @}
+        
+        /// @cond
+        item(const char* value) : value_(value) {}
+        item(const item& value) = default;
+        virtual ~item() = default;
+        bool operator==(const item& value) const {return value_ == value.value_;}
+        bool operator!=(const item& value) const {return !operator==(value);}
+        bool operator<(const item& value) const {return value_ < value.value_;}
+        bool operator<=(const item& value) const {return value_ <= value.value_;}
+        bool operator>(const item& value) const {return value_ > value.value_;}
+        bool operator>=(const item& value) const {return value_ >= value.value_;}
+        friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
+        /// @endcond
+        
+        /// @name Properties
+        
+        /// @{
+        /// @brief Gets the value of the item.
+        /// @return A xtd::ustring that represent the value of item.
+        virtual const xtd::ustring& value() const {return value_;}
+        
+        /// @brief Gets the tag of the item.
+        /// @return A std::any that represent the tag of item.
+        virtual std::any tag() const {return tag_;}
+        /// @}
+        
+        /// @name Methods
+        
+        /// @{
+        /// @brief Returns a string containing the vague of the item.
+        /// @return A string containing the value of the item.
+        xtd::ustring to_string() const {return value_;}
+        /// @}
+        
+      private:
+        xtd::ustring value_;
+        std::any tag_;
+      };
       
       /// @name Alias
       
@@ -80,7 +80,7 @@ namespace xtd {
       /// @brief Represents the collection of items in a list_control.
       using object_collection = layout::arranged_element_collection<item>;
       /// @}
-
+      
       /// @name Fields
       
       /// @{
@@ -94,7 +94,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the DomainUpDown class.
       domain_up_down();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -127,7 +127,7 @@ namespace xtd {
       /// @param item The selected item based on the selected_index value. The default value is item::empty.
       /// @return Current domain_up_down.
       domain_up_down& selected_item(const item& selected_item);
-
+      
       /// @brief Gets a value indicating whether the collection of items continues to the first or last item if the user continues past the end of the list.
       /// @return true if the list starts again when the user reaches the beginning or end of the collection; otherwise, false. The default value is false.
       virtual bool wrap() {return wrap_;}
@@ -150,26 +150,26 @@ namespace xtd {
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<domain_up_down, event_handler> selected_item_changed;
-
+      
       /// @brief Occurs when the value property has been changed.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<domain_up_down, event_handler> value_changed;
       /// @}
-
+      
     protected:
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
       
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
       drawing::size default_size() const override {return {150, 21};}
-
+      
       void on_handle_created(const event_args& e) override;
       
       /// @brief Raises the domain_up_down::selected_item_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_selected_item_changed(const event_args& e);
-
+      
       void on_text_changed(const event_args& e) override;
       
       /// @cond

@@ -90,7 +90,7 @@ namespace xtd {
         return *this;
       }
       /// @endcond
-
+      
       /// @brief Gets a value indicating whether the switch_button is rounded appearance.
       /// @return true if the switch_button is in the rounded appearance; otherwise, false. The default value is true.
       virtual bool rounded() const {return rounded_;}
@@ -119,7 +119,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets a value indicating whether the switch_button text is shown.
       /// @return true if the switch_button text is shown; otherwise, false. The default value is false.
       virtual bool show_text() const {return show_text_;}
@@ -134,7 +134,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -143,7 +143,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<switch_button, event_handler> checked_changed;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -153,7 +153,7 @@ namespace xtd {
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       virtual void on_checked_changed(const event_args& e) {checked_changed(*this, e);}
-
+      
       void on_mouse_down(const mouse_event_args& e) override {
         button_base::on_mouse_down(e);
         if (auto_check_) checked(!checked());
@@ -168,27 +168,27 @@ namespace xtd {
         button_base::on_resize(e);
         invalidate();
       }
-
+      
       void on_paint(paint_event_args& e) override {
         drawing::color button_back_color = checked_ ? checked_back_color() : xtd::forms::theme_colors::current_theme().gray_text();
         drawing::color text_color = checked_ ? fore_color() : drawing::color::average(button_back_color, fore_color(), .33);
         drawing::color slider_color = this->slider_color();
         xtd::ustring text = checked_ ? "ON" : "OFF";
-
+        
         if (!enabled()) {
           button_back_color = drawing::color::average(back_color(), button_back_color, .33);
           text_color = drawing::color::average(button_back_color, text_color, .33);
           slider_color = drawing::color::average(button_back_color, slider_color, .33);
         }
-
+        
         if (rounded_) {
           float height = static_cast<float>(e.clip_rectangle().height() - e.clip_rectangle().height() % 2);
           float offset = (e.clip_rectangle().width() - height) / 2.0f - 0.5f;
           drawing::point_f slider_location(checked_ ? drawing::point_f(e.clip_rectangle().width() - height - offset / 2.0f + 2.0f, 2.0f) : drawing::point_f(offset / 2.0f + 2.0f, 2.0f));
-
+          
           drawing::size_f string_size = e.graphics().measure_string(text, font());
-          drawing::point_f string_location(checked_ ? drawing::point_f(slider_location.x() - string_size.width() - 2, (height- string_size.height()) / 2) : drawing::point_f(slider_location.x() + static_cast<float>(height - 4) + 2, (height - string_size.height()) / 2));
-
+          drawing::point_f string_location(checked_ ? drawing::point_f(slider_location.x() - string_size.width() - 2, (height - string_size.height()) / 2) : drawing::point_f(slider_location.x() + static_cast<float>(height - 4) + 2, (height - string_size.height()) / 2));
+          
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), offset / 2.0f, .0f, static_cast<float>(height), static_cast<float>(height), 90.0f, 180.0f);
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - height - offset / 2.0f - 0.5f, .0f, static_cast<float>(height), static_cast<float>(height), 270.0f, 180.0f);
           e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), height / 2.0f + offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().width() - height) - offset, static_cast<float>(height));
@@ -197,10 +197,10 @@ namespace xtd {
         } else {
           drawing::size_f slider_size(static_cast<float>((e.clip_rectangle().width() - 6) / 2), static_cast<float>(e.clip_rectangle().height() - 6));
           drawing::point_f slider_location(checked_ ? drawing::point_f(width() / 2.0f, 3.0f) : drawing::point_f(3.0f, 3.0f));
-
+          
           drawing::size_f string_size = e.graphics().measure_string(text, font());
           drawing::point_f string_location(checked_ ? drawing::point_f((width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2) : drawing::point_f(width() / 2 + (width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2));
-
+          
           e.graphics().clear(button_back_color);
           if (show_text_) e.graphics().draw_string(text, font(), drawing::solid_brush(text_color), string_location);
           e.graphics().draw_line(drawing::pen(control_paint::dark(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().right(), e.clip_rectangle().top());

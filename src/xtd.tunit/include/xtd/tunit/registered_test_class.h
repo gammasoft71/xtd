@@ -22,9 +22,9 @@ namespace xtd {
       
     private:
       friend class xtd::tunit::unit_test;
-
+      
       const std::shared_ptr<xtd::tunit::test_class>& test() const noexcept {return tc_;}
-
+      
       std::shared_ptr<xtd::tunit::test_class> tc_;
     };
   }

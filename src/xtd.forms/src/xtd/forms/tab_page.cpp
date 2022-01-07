@@ -30,7 +30,7 @@ scrollable_control& tab_page::auto_scroll(bool value) {
 tab_page& tab_page::image_index(int32_t value) {
   if (image_index_ != value) {
     image_index_ = value;
-     if (is_handle_created() && parent().has_value()) native::tab_page::image_index(handle(), image_index_);
+    if (is_handle_created() && parent().has_value()) native::tab_page::image_index(handle(), image_index_);
   }
   return *this;
 }

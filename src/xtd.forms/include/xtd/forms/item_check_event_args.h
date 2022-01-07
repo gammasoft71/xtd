@@ -61,7 +61,7 @@ namespace xtd {
       /// @remarks This property enables you to determine the new check state for the specified item before the check state is changed by the checked_list_box control. In addition to determining the new check state, you can use this property in an event handler for the ItemCheck event to change the state to a different check state than the one specified. For example, if the user placed a check mark next to an item in the checked_list_box that you have determined should not be checked based on the state of your application, you can override the change in the check mark state by setting this property to its previous setting or to a different check state.
       void new_value(check_state new_value) {new_value_ = new_value;}
       /// @}
-
+      
     private:
       size_t index_ = std::numeric_limits<size_t>::max();
       check_state new_value_ = check_state::indeterminate;

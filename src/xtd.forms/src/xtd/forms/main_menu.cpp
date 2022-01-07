@@ -84,7 +84,7 @@ unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique
   auto file_print_preview_menu_item = make_unique<menu_item>(system_texts::print_preview(), on_click, menu_images::file_print_preview(theme, size));
   auto file_separator3_menu_item = make_unique<menu_item>("-");
   auto file_exit_menu_item = make_unique<menu_item>(system_texts::exit(), on_click, shortcut::alt_f4);
-
+  
   auto edit_undo_menu_item = make_unique<menu_item>(system_texts::undo(), on_click, shortcut::cmd_z);
   auto edit_redo_menu_item = make_unique<menu_item>(system_texts::redo(), on_click, shortcut::cmd_shift_z);
   auto edit_separator1_menu_item = make_unique<menu_item>("-");
@@ -93,21 +93,21 @@ unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique
   auto edit_paste_menu_item = make_unique<menu_item>(system_texts::paste(), on_click, menu_images::edit_paste(theme, size), shortcut::cmd_v);
   auto edit_separator2_menu_item = make_unique<menu_item>("-");
   auto edit_select_all_menu_item = make_unique<menu_item>(system_texts::select_all(), on_click, shortcut::cmd_a);
-
+  
   auto tools_customize_menu_item = make_unique<menu_item>(system_texts::customize(), on_click);
   auto tools_options_menu_item = make_unique<menu_item>(system_texts::options(), on_click);
-
+  
   auto help_contents_menu_item = make_unique<menu_item>(system_texts::contents(), on_click);
   auto help_index_menu_item = make_unique<menu_item>(system_texts::index(), on_click);
   auto help_search_menu_item = make_unique<menu_item>(system_texts::search(), on_click);
   auto help_separator1_menu_item = make_unique<menu_item>("-");
   auto help_about_menu_item = make_unique<menu_item>(system_texts::about(), on_click);
-
+  
   auto file_menu_item = make_unique<menu_item>(system_texts::file(), vector<menu_item_ref> {*file_new_menu_item, *file_open_menu_item, *file_separator1_menu_item, *file_save_menu_item, *file_save_as_menu_item, *file_separator2_menu_item, *file_print_menu_item, *file_print_preview_menu_item, *file_separator3_menu_item, *file_exit_menu_item});
   auto edit_menu_item = make_unique<menu_item>(system_texts::edit(), vector<menu_item_ref> {*edit_undo_menu_item, *edit_redo_menu_item, *edit_separator1_menu_item, *edit_cut_menu_item, *edit_copy_menu_item, *edit_paste_menu_item, *edit_separator2_menu_item, *edit_select_all_menu_item});
   auto tools_menu_item = make_unique<menu_item>(system_texts::tools(), vector<menu_item_ref> {*tools_customize_menu_item, *tools_options_menu_item});
   auto help_menu_item = make_unique<menu_item>(system_texts::help(), vector<menu_item_ref> {*help_contents_menu_item, *help_index_menu_item, *help_search_menu_item, *help_separator1_menu_item, *help_about_menu_item});
-
+  
   auto main_menu_with__standard_items = make_unique<main_menu>(vector<menu_item_ref> {*file_menu_item, *edit_menu_item, *tools_menu_item, *help_menu_item});
   
   menu_items.clear();
@@ -140,6 +140,6 @@ unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique
   menu_items.emplace_back(move(help_search_menu_item));
   menu_items.emplace_back(move(help_separator1_menu_item));
   menu_items.emplace_back(move(help_about_menu_item));
-
+  
   return main_menu_with__standard_items;
 }

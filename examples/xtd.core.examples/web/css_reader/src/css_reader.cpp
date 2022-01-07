@@ -14,23 +14,23 @@ void write_selectors(const selector_map& selectors) {
 
 int main() {
   css_reader reader(".user_box {\n"
-                    "  display: none;\n"
-                    "  position: fixed;\n"
-                    "  z-index: 100;\n"
-                    "  width: 100%;\n"
-                    "  height: 100%;\n"
-                    "  left: 300;\n"
-                    "  top: 200;\n"
-                    "  background: #4080FA;\n"
-                    "  filter: alpha(opacity=40);\n"
-                    "  opacity: 0.4;\n"
-                    "}");
-
+    "  display: none;\n"
+    "  position: fixed;\n"
+    "  z-index: 100;\n"
+    "  width: 100%;\n"
+    "  height: 100%;\n"
+    "  left: 300;\n"
+    "  top: 200;\n"
+    "  background: #4080FA;\n"
+    "  filter: alpha(opacity=40);\n"
+    "  opacity: 0.4;\n"
+    "}");
+    
   console::write_line("Write all selectors and all properties :");
   console::write_line("----------------------------------------");
   write_selectors(reader.selectors());
   console::write_line();
-
+  
   console::write_line("Get specific properties :");
   console::write_line("-------------------------");
   console::write_line("filter = {}", reader.selectors().at(".user_box").properties().at("filter"));

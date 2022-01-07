@@ -42,7 +42,7 @@ int main() {
   // Or following lines :
   // auto t = std::time(nullptr);
   // auto date_time = *std::localtime(&t);
-
+  
   cout << ustring::sprintf("%s", date_time_to_string(date_time)) << endl;
   cout << ustring::sprintf("%s", date_time_to_string("Y", date_time)) << endl;
   cout << ustring::sprintf("%s", date_time_to_string("EY", date_time)) << endl;

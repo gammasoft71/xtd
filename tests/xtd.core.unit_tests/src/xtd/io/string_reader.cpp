@@ -120,7 +120,7 @@ namespace unit_tests {
     void test_method_(read_to_end_with_multi_line_string) {
       assert::are_equal("Line 1\nLine 2\nLine 3", string_reader("Line 1\nLine 2\nLine 3").read_to_end(), csf_);
     }
-
+    
     void test_method_(peek_and_read) {
       string_reader sr("abcde");
       assert::are_equal('a', sr.peek(), csf_);
@@ -155,6 +155,6 @@ namespace unit_tests {
       assert::are_equal("ne 1\nLine 2\nLine 3", sr.read_to_end(), csf_);
       assert::are_equal(EOF, sr.read(), csf_);
     }
-
+    
   };
 }

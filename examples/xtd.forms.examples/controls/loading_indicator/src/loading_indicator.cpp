@@ -7,7 +7,7 @@ namespace examples {
   public:
     form1() {
       text("Loading indicator example");
-
+      
       loading_indicator1.parent(*this);
       loading_indicator1.location({10, 10});
       loading_indicator1.fore_color(xtd::drawing::system_colors::accent());

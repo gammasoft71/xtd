@@ -144,7 +144,7 @@ ustring bit_converter::to_string(const vector<byte_t>& value, size_t start_index
   if (value.size() == 0 && start_index == 0 && length == 0) return "";
   if (start_index >= value.size()) throw xtd::argument_out_of_range_exception(current_stack_frame_);
   if (start_index + length > value.size()) throw argument_out_of_range_exception(current_stack_frame_);
-
+  
   ustring str;
   for (size_t index = start_index; index < start_index + length; index++) {
     str += ustring::format("{:X2}", value[index]);

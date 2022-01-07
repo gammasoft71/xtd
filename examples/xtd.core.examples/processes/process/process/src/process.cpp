@@ -17,7 +17,7 @@ int main() {
       // on the desktop, it must terminate itself or you can do it programmatically
       // from this application using the kill method.
     }
-  } catch(const exception& e) {
+  } catch (const exception& e) {
     console::write_line(e.what());
   }
 }

@@ -35,9 +35,9 @@ namespace xtd {
         struct texture_brush {
           wxImage texture;
         };
-
+        
         wx_brush() = default;
-
+        
         void create_solid_brush(const wxColour& color) {
           brush_type_ = brush_type::solid;
           solid_brush_.color = color;
@@ -59,7 +59,7 @@ namespace xtd {
         bool is_solid_brush() const {return brush_type_ == brush_type::solid;}
         bool is_linear_gradiant_brush() const {return brush_type_ == brush_type::linear_gradient;}
         bool is_texture_brush() const {return brush_type_ == brush_type::texture;}
-
+        
         const solid_brush& get_solid_brush() const {return solid_brush_;}
         solid_brush& get_solid_brush() {return solid_brush_;}
         

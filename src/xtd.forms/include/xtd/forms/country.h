@@ -16,7 +16,7 @@ namespace xtd {
     /// @cond
     class countries;
     /// @endcond
-
+    
     /// @brief Represent a country with name, alpha codes, numeric code, emoticon and flag.
     /// @par Namespace
     /// xtd::forms
@@ -40,18 +40,18 @@ namespace xtd {
       /// @brief Get an empty country.
       /// @return An empty country
       static const country empty();
-
+      
       /// @name Properties
       
       /// @{
       /// @brief Gets the country alpha 2 code.
       /// @return A string that represent the alpha 2 code.
       virtual const xtd::ustring alpha_2_code() const {return alpha_2_code_;}
-
+      
       /// @brief Gets the country alpha 3 code.
       /// @return A string that represent the alpha 3 code.
       virtual const xtd::ustring alpha_3_code() const {return alpha_3_code_;}
-
+      
       /// @brief Gets the country emoticon.
       /// @return A string that represent the emoticon.
       virtual const xtd::ustring emoticon() const {return emoticon_;}
@@ -63,16 +63,16 @@ namespace xtd {
       /// @brief Gets the country flag.
       /// @return A xtd::drawing::image that represent the flag of 1024 x 1024 pixels.
       virtual const xtd::drawing::image flag_squared() const;
-
+      
       /// @brief Gets the country name.
       /// @return A string that represent the country.
       virtual const xtd::ustring name() const {return name_;}
-
+      
       /// @brief Gets the country numeric code.
       /// @return A signed-integer that represent the numeric code.
       virtual int numeric_code() const {return numeric_code_;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -88,7 +88,7 @@ namespace xtd {
       /// @brief Gets a country from numeric code.
       /// @return If exist a xtd::forms::country that represent numeric coded; otherwise xtd::forms::country::empty.
       static country from_numeric_code(int numeric_code);
-
+      
       /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
       /// @return A string containing the name, alpha codes and numeric code of the country.
       virtual xtd::ustring to_string() const noexcept override;
@@ -99,13 +99,13 @@ namespace xtd {
         return os << country.to_string();
       }
       /// @endcond
-
+      
     private:
       friend class countries;
       
       static const std::vector<xtd::ustring> enclosed_letters;
       country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int numeric_code) : name_(name), alpha_2_code_(alpha_2_code), alpha_3_code_(alpha_3_code), numeric_code_(numeric_code), emoticon_(enclosed_letters[alpha_2_code[0] - 'A'] + enclosed_letters[alpha_2_code[1] - 'A']) {}
-
+      
       xtd::ustring name_;
       xtd::ustring alpha_2_code_;
       xtd::ustring alpha_3_code_;

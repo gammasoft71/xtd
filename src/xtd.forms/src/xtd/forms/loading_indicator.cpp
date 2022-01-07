@@ -59,8 +59,8 @@ void loading_indicator::on_paint(paint_event_args& e) {
     const float width = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / radius_factor_;
     for (int n = 0; n < intervals_; n++) {
       const int opacity_index = enabled() ? n + 1 : 2;
-      const int opacity = opacity_index*(255 + 1)/intervals_ - 1;
-      e.graphics().fill_ellipse(xtd::drawing::solid_brush(xtd::drawing::color::from_argb(static_cast<uint8_t>(opacity), fore_color())), -(radius_factor_ / 2.f - 1.f) * width + width / radius_factor_ * 2.f, -(radius_factor_ / 2.f - 1.f) * height + height / radius_factor_ * 2.f, 2.f * width, 2.f *height);
+      const int opacity = opacity_index * (255 + 1) / intervals_ - 1;
+      e.graphics().fill_ellipse(xtd::drawing::solid_brush(xtd::drawing::color::from_argb(static_cast<uint8_t>(opacity), fore_color())), -(radius_factor_ / 2.f - 1.f) * width + width / radius_factor_ * 2.f, -(radius_factor_ / 2.f - 1.f) * height + height / radius_factor_ * 2.f, 2.f * width, 2.f * height);
       e.graphics().rotate_transform(angle);
     }
   }

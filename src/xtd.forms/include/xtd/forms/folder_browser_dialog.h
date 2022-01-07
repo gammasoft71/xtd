@@ -58,7 +58,7 @@ namespace xtd {
         description_ = value;
         return *this;
       }
-
+      
       /// @brief Gets the root folder where the browsing starts from.
       /// @return One of the environment::special_folder values. The default is environment::special_folder::desktop.
       /// @remarks Only the specified folder and any subfolders that are beneath it will appear in the dialog box and be selectable. The selected_path property, along with root_folder, determines what the selected folder will be when the dialog box is displayed, as long as SelectedPath is an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
@@ -98,7 +98,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -119,11 +119,11 @@ namespace xtd {
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       void run_sheet(intptr_t owner) override;
       /// @}
-
+      
     private:
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
-
+      
       xtd::ustring description_;
       environment::special_folder root_folder_ = environment::special_folder::desktop;
       xtd::ustring selected_path_;

@@ -43,7 +43,7 @@ namespace xtd {
       /// @brief Sets the product name associated with the application.
       /// @param product_name The product name.
       static void product_name(const xtd::ustring& product_name) {instance().data_->product_name = product_name;}
-
+      
       /// @brief Gets the product version associated with the application.
       /// @return The product version.
       static xtd::ustring product_version() {return instance().data_->product_version;}
@@ -51,7 +51,7 @@ namespace xtd {
       /// @param product_version The product version.
       static void product_version(const xtd::ustring& product_version) {instance().data_->product_version = product_version;}
       /// @}
-
+      
     private:
       static application_informations& instance() {
         static application_informations application_informations;

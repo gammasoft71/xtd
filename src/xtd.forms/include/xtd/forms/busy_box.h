@@ -72,7 +72,7 @@ namespace xtd {
       /// @param fore_color A color that represents the background color of the busy box.
       /// @param opacity A float that represents the opacity of the busy box. (0: full opacity and 1.0 no full opacity)
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {show_busy_dialog(&owner, text, caption, icon, back_color, fore_color, opacity);}
-
+      
       /// @brief Displays a busy box.
       static void show() {show_busy_dialog(nullptr);}
       /// @brief Displays a busy box. The busy box displays a message, title bar caption, button, and icon.

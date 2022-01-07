@@ -33,7 +33,7 @@ namespace xtd {
       /// @brief Specifies that both the location and size property values are defined.
       all = 0b1111,
     };
-
+    
     /// @cond
     inline bounds_specified& operator +=(bounds_specified& lhs, bounds_specified rhs) {lhs = static_cast<bounds_specified>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
     inline bounds_specified& operator -=(bounds_specified& lhs, bounds_specified rhs) {lhs = static_cast<bounds_specified>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}

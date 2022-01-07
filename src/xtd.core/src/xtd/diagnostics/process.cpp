@@ -29,22 +29,22 @@ bool process::error_data_received_event::is_empty() const noexcept {
 }
 
 data_received_event_handler& process::error_data_received_event::operator+=(const data_received_event_handler& handler) noexcept {
-  data_->error_data_received_callback_+=(handler);
+  data_->error_data_received_callback_ += (handler);
   return data_received_event_handler::operator+=(handler);
 }
 
 data_received_event_handler& process::error_data_received_event::operator+=(const typename data_received_event_handler::function_t& function) noexcept {
-  data_->error_data_received_callback_+=(function);
+  data_->error_data_received_callback_ += (function);
   return data_received_event_handler::operator+=(function);
 }
 
 data_received_event_handler& process::error_data_received_event::operator-=(const data_received_event_handler& handler) noexcept {
-  data_->error_data_received_callback_-=(handler);
+  data_->error_data_received_callback_ -= (handler);
   return data_received_event_handler::operator-=(handler);
 }
 
 data_received_event_handler& process::error_data_received_event::operator-=(const typename data_received_event_handler::function_t& function) noexcept {
-  data_->error_data_received_callback_-=(function);
+  data_->error_data_received_callback_ -= (function);
   return data_received_event_handler::operator-=(function);
 }
 
@@ -53,22 +53,22 @@ bool process::exit_event::is_empty() const noexcept {
 }
 
 event_handler& process::exit_event::operator+=(const event_handler& handler) noexcept {
-  data_->exit_callback_+=(handler);
+  data_->exit_callback_ += (handler);
   return event_handler::operator+=(handler);
 }
 
 event_handler& process::exit_event::operator+=(const typename event_handler::function_t& function) noexcept {
-  data_->exit_callback_+=(function);
+  data_->exit_callback_ += (function);
   return event_handler::operator+=(function);
 }
 
 event_handler& process::exit_event::operator-=(const event_handler& handler) noexcept {
-  data_->exit_callback_-=(handler);
+  data_->exit_callback_ -= (handler);
   return event_handler::operator-=(handler);
 }
 
 event_handler& process::exit_event::operator-=(const typename event_handler::function_t& function) noexcept {
-  data_->exit_callback_-=(function);
+  data_->exit_callback_ -= (function);
   return event_handler::operator-=(function);
 }
 
@@ -77,22 +77,22 @@ bool process::output_data_received_event::is_empty() const noexcept {
 }
 
 data_received_event_handler& process::output_data_received_event::operator+=(const data_received_event_handler& handler) noexcept {
-  data_->output_data_received_callback_+=(handler);
+  data_->output_data_received_callback_ += (handler);
   return data_received_event_handler::operator+=(handler);
 }
 
 data_received_event_handler& process::output_data_received_event::operator+=(const typename data_received_event_handler::function_t& function) noexcept {
-  data_->output_data_received_callback_+=(function);
+  data_->output_data_received_callback_ += (function);
   return data_received_event_handler::operator+=(function);
 }
 
 data_received_event_handler& process::output_data_received_event::operator-=(const data_received_event_handler& handler) noexcept {
-  data_->output_data_received_callback_-=(handler);
+  data_->output_data_received_callback_ -= (handler);
   return data_received_event_handler::operator-=(handler);
 }
 
 data_received_event_handler& process::output_data_received_event::operator-=(const typename data_received_event_handler::function_t& function) noexcept {
-  data_->output_data_received_callback_-=(function);
+  data_->output_data_received_callback_ -= (function);
   return data_received_event_handler::operator-=(function);
 }
 
@@ -233,7 +233,7 @@ bool process::start() {
   //if (data_->handle_.has_value() && !data_->exit_code_.has_value()) return false;
   if (data_->thread_.joinable()) return false;
   bool allow_to_continue = false;
-  data_->thread_ = thread([](class process process, bool& allow_to_continue) {
+  data_->thread_ = thread([](class process process, bool & allow_to_continue) {
     try {
       process.data_->handle_.reset();
       process.data_->exit_code_.reset();
@@ -242,9 +242,9 @@ bool process::start() {
       if (process.start_info().create_no_window()) process_creation_flags |= CREATE_NO_WINDOW;
       int32_t process_window_style = 0;
       
-      if (process.start_info().use_shell_execute()) {
+      if (process.start_info().use_shell_execute())
         process.data_->handle_ = native::process::shell_execute(process.start_info().verb(), process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
-      } else {
+      else {
         auto [handle, id, standard_input, standard_output, standard_error] = native::process::start(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style, process_creation_flags, make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
         process.data_->handle_ = handle;
         process.data_->id_ = id;
@@ -262,12 +262,12 @@ bool process::start() {
       debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.ticks()).count() % 1000000, process.data_->exit_code_));
       if (!process.data_->exit_code_.has_value() || process.data_->exit_code_ == -1 || process.data_->exit_code_ == 0x00ffffff) throw invalid_operation_exception("The system cannot find the file specified", current_stack_frame_);
       process.on_exited();
-    } catch(...) {
+    } catch (...) {
       process.data_->exception_pointer_ = std::current_exception();
       allow_to_continue = true;
     }
   }, *this, std::ref(allow_to_continue));
-  while(!allow_to_continue) this_thread::yield();
+  while (!allow_to_continue) this_thread::yield();
   if (data_->exception_pointer_) {
     if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
     std::exception_ptr exception_pointer = data_->exception_pointer_;
@@ -277,7 +277,7 @@ bool process::start() {
   return true;
 }
 
-process process::start(const process_start_info &start_info) {
+process process::start(const process_start_info& start_info) {
   process process;
   process.start_info(start_info);
   process.start();

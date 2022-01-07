@@ -27,12 +27,12 @@ namespace xtd {
       /// @brief Initializes a new instance of the collapsible_panel class.
       collapsible_panel();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
       virtual bool auto_size() const override {return true;}
-
+      
       /// @brief Get the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
       virtual forms::border_sides border_sides() const {return border_sides_;}
@@ -48,7 +48,7 @@ namespace xtd {
       /// @param border_style One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
       virtual collapsible_panel& border_style(forms::border_style border_style);
-
+      
       drawing::size default_size() const override {return {0, 0};}
       
       /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
@@ -57,20 +57,20 @@ namespace xtd {
       /// @brief Sets a value indicating whether the collapsible_panel is in the expanded.
       /// @param expanded true if collapsible_panel is expanded; otherwise false.
       collapsible_panel& expanded(bool expanded);
-
+      
       /// @cond
       const xtd::drawing::size& client_size() const override {return control::client_size();}
       xtd::drawing::size size() const override {return control::size();}
       /// @endcond
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       /// @brief Collapse the collapsible_panel.
       /// @remarks Collapsing the collapsible_panel is equivalent to setting the expanded property to false. After the collapse method is called, the expanded property returns a value of false until the expand method is called.
       void collapse() {expanded(false);}
-
+      
       /// @brief Expand the collapsible_panel.
       /// @remarks Expanding the collapsible_panel is equivalent to setting the expanded property to true. After the expand method is called, the expanded property returns a value of true until the collapse method is called.
       void expand() {expanded(true);}
@@ -84,7 +84,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       xtd::event<collapsible_panel, xtd::event_handler> expanded_changed;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -99,18 +99,18 @@ namespace xtd {
       
       /// @brief Raises the collapsible_panel::expanded_changed event.
       virtual void on_expanded_changed(const xtd::event_args& e);
-
+      
       void on_handle_created(const event_args& e) override;
-
+      
       void wnd_proc(message& message) override;
       /// @}
-
+      
     private:
       control& auto_size(bool auto_size) override {return control::auto_size(auto_size);}
       control& client_size(const xtd::drawing::size& client_size) override {return control::size(client_size);}
       control& size(const xtd::drawing::size& size) override {return control::size(size);}
       void wm_command(message& message);
-
+      
       forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::none;
       bool expanded_ = false;

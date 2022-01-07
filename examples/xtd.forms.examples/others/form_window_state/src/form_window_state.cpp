@@ -10,11 +10,11 @@ public:
     *this << button_full_screen << button_maximize << button_minimize << button_normal;
     text("Window state example");
     resize += [&] {
-      button_full_screen.enabled(window_state() != form_window_state::full_screen && window_state() != form_window_state::maximized);
-      button_maximize.enabled(window_state() != form_window_state::maximized && window_state() != form_window_state::full_screen);
+      button_full_screen.enabled(window_state() != form_window_state::full_screen&& window_state() != form_window_state::maximized);
+      button_maximize.enabled(window_state() != form_window_state::maximized&& window_state() != form_window_state::full_screen);
       button_normal.enabled(window_state() != form_window_state::normal);
-      button_minimize.enabled(window_state() != form_window_state::minimized && window_state() != form_window_state::full_screen);
-
+      button_minimize.enabled(window_state() != form_window_state::minimized&& window_state() != form_window_state::full_screen);
+      
       ctrace << ustring::format("resize: {}, {}", size(), window_state()) << std::endl;
     };
     client_size({410, 200});
@@ -26,7 +26,7 @@ public:
     button_full_screen.click += [&] {
       window_state(form_window_state::full_screen);
     };
-
+    
     button_maximize.location({110, 10});
     button_maximize.text("Maximize");
     button_maximize.width(90);
@@ -40,7 +40,7 @@ public:
     button_normal.click += [&] {
       window_state(form_window_state::normal);
     };
-
+    
     button_minimize.location({310, 10});
     button_minimize.text("Minimize");
     button_minimize.width(90);

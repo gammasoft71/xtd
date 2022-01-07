@@ -36,9 +36,9 @@ namespace unit_tests {
     void test_method_(format_location_with_zero_alignment) {
       assert::are_equal("(42, 24)", ustring::format("{0,0}", ::size_sof {42, 24}), csf_);
     }
-
+    
     void test_method_(format_location_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([]{xtd::ustring::format("{0:G}", ::size_sof {42, 24});}, csf_);
+      assert::throws<xtd::format_exception>([] {xtd::ustring::format("{0:G}", ::size_sof {42, 24});}, csf_);
     }
   };
 }

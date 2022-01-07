@@ -30,9 +30,9 @@ namespace xtd {
       /// @brief Specifies the millimeter as the unit of measure.
       millimeter = 6
     };
-
+    
     /// @cond
-   inline std::ostream& operator<<(std::ostream& os, graphics_unit value) {return os << xtd::to_string(value, {{graphics_unit::world, "world"}, {graphics_unit::display, "display"}, {graphics_unit::pixel, "pixel"}, {graphics_unit::point, "point"}, {graphics_unit::inch, "inch"}, {graphics_unit::document, "document"}, {graphics_unit::millimeter, "millimeter"}});}
+    inline std::ostream& operator<<(std::ostream& os, graphics_unit value) {return os << xtd::to_string(value, {{graphics_unit::world, "world"}, {graphics_unit::display, "display"}, {graphics_unit::pixel, "pixel"}, {graphics_unit::point, "point"}, {graphics_unit::inch, "inch"}, {graphics_unit::document, "document"}, {graphics_unit::millimeter, "millimeter"}});}
     inline std::wostream& operator<<(std::wostream& os, graphics_unit value) {return os << xtd::to_string(value, {{graphics_unit::world, L"world"}, {graphics_unit::display, L"display"}, {graphics_unit::pixel, L"pixel"}, {graphics_unit::point, L"point"}, {graphics_unit::inch, L"inch"}, {graphics_unit::document, L"document"}, {graphics_unit::millimeter, L"millimeter"}});}
     /// @endcond
   }

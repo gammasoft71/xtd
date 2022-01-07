@@ -11,33 +11,33 @@ namespace xtd {
       emoticon(const std::string& name, const std::vector<char32_t>& codepoints) : name_(name), codepoints_(codepoints) {}
       emoticon(const std::string& name, char32_t codepoint) : name_(name), codepoints_({codepoint}) {}
       emoticon(const std::string& name, std::initializer_list<char> codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       emoticon(const std::string& name, const std::vector<char>& codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       emoticon(const std::string& name, char codepoint) : name_(name), codepoints_({static_cast<char32_t>(codepoint)}) {}
       emoticon(const std::string& name, std::initializer_list<char16_t> codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       emoticon(const std::string& name, const std::vector<char16_t>& codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       emoticon(const std::string& name, char16_t codepoint) : name_(name), codepoints_({static_cast<char32_t>(codepoint)}) {}
       emoticon(const std::string& name, std::initializer_list<int32_t> codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       emoticon(const std::string& name, const std::vector<int32_t>& codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
+        for (auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       emoticon(const std::string& name, int32_t codepoint) : name_(name), codepoints_({static_cast<char32_t>(codepoint)}) {}
-
+      
       /// @cond
       emoticon() = default;
       emoticon(const emoticon&) = default;
@@ -48,19 +48,19 @@ namespace xtd {
         return os << emoticon.to_string();
       }
       /// @endcond
-
+      
       const std::string& name() const {return name_;}
-
+      
       const std::vector<char32_t>& codepoints() const {return codepoints_;}
-
+      
       std::string to_string() const {
         if (!value_.empty()) return value_;
         
         std::string result;
         for (auto codepoint : codepoints_) {
-          if (codepoint < 0x80) {
+          if (codepoint < 0x80)
             result.push_back(static_cast<char>(codepoint));
-          } else  if (codepoint < 0x800) {
+          else  if (codepoint < 0x800) {
             result.push_back(static_cast<char>((codepoint >> 6) | 0xc0));
             result.push_back(static_cast<char>((codepoint & 0x3f) | 0x80));
           } else if (codepoint < 0x10000) {
@@ -68,15 +68,15 @@ namespace xtd {
             result.push_back(static_cast<char>(((codepoint >> 6) & 0x3f) | 0x80));
             result.push_back(static_cast<char>((codepoint & 0x3f) | 0x80));
           } else {
-          result.push_back(static_cast<char>((codepoint >> 18) | 0xf0));
-          result.push_back(static_cast<char>(((codepoint >> 12) & 0x3f) | 0x80));
-          result.push_back(static_cast<char>(((codepoint >> 6) & 0x3f) | 0x80));
-          result.push_back(static_cast<char>((codepoint & 0x3f) | 0x80));
+            result.push_back(static_cast<char>((codepoint >> 18) | 0xf0));
+            result.push_back(static_cast<char>(((codepoint >> 12) & 0x3f) | 0x80));
+            result.push_back(static_cast<char>(((codepoint >> 6) & 0x3f) | 0x80));
+            result.push_back(static_cast<char>((codepoint & 0x3f) | 0x80));
           }
         }
         return result;
       }
-
+      
     private:
       std::string name_;
       std::vector<char32_t> codepoints_;
@@ -84,7 +84,7 @@ namespace xtd {
     };
   }
 }
-  
+
 const xtd::forms::emoticon xtd::forms::emoticon::empty() {return xtd::forms::emoticon();}
 
 namespace xtd {
@@ -1148,12 +1148,12 @@ namespace xtd {
       static const xtd::forms::emoticon sponge;
       static const xtd::forms::emoticon receipt;
       static const xtd::forms::emoticon nazar_amulet;
-
+      
       /// 1FA70-1F7FF Symbols and Pictographs Extended-A
       
-
+      
       /// F100-1F1FF Enclosed Alphanumeric  (Flags)
-
+      
       static const xtd::forms::emoticon flag_of_afghanistan;
       static const xtd::forms::emoticon flag_of_aland_islands;
       static const xtd::forms::emoticon flag_of_albania;
@@ -1403,23 +1403,23 @@ namespace xtd {
       static const xtd::forms::emoticon flag_of_yemen;
       static const xtd::forms::emoticon flag_of_zambia;
       static const xtd::forms::emoticon flag_of_zimbabwe;
-
+      
       static const std::vector<xtd::forms::emoticon>& get_animals();
       
       static const std::vector<xtd::forms::emoticon>& get_animals_and_nature();
       
       static const std::vector<xtd::forms::emoticon>& get_cats();
-
+      
       static const std::vector<xtd::forms::emoticon>& get_emoji();
-
+      
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
-
+      
       static const std::vector<xtd::forms::emoticon>& get_faces();
-
+      
       static const std::vector<xtd::forms::emoticon>& get_flags();
-
+      
       static const std::vector<xtd::forms::emoticon>& get_nature();
-
+      
       static const std::vector<xtd::forms::emoticon>& get_weather();
     };
   }
@@ -2794,42 +2794,42 @@ std::string to_string(char32_t code) {
 
 std::string to_string(const std::initializer_list<char16_t>& codes) {
   std::string result;
-  for(auto code : codes)
+  for (auto code : codes)
     result.append(to_string(code));
   return result;
 }
 
 std::string to_string(const std::vector<char16_t>& codes) {
   std::string result;
-  for(auto code : codes)
+  for (auto code : codes)
     result.append(to_string(code));
   return result;
 }
 
 std::string to_string(const std::u16string& codes) {
   std::string result;
-  for(auto code : codes)
+  for (auto code : codes)
     result.append(to_string(code));
   return result;
 }
 
 std::string to_string(const std::initializer_list<char32_t>& codes) {
   std::string result;
-  for(auto code : codes)
+  for (auto code : codes)
     result.append(to_string(code));
   return result;
 }
 
 std::string to_string(const std::vector<char32_t>& codes) {
   std::string result;
-  for(auto code : codes)
+  for (auto code : codes)
     result.append(to_string(code));
   return result;
 }
 
 std::string to_string(const std::u32string& codes) {
   std::string result;
-  for(auto code : codes)
+  for (auto code : codes)
     result.append(to_string(code));
   return result;
 }
@@ -2840,11 +2840,11 @@ int main() {
   auto emoticons_choice = control::create<choice>(*main_form, "", {10, 10}, {150, 30});
   for (const auto& emoticon : emoticons::get_emoticons())
     emoticons_choice->items().push_back({strings::format("{} {}", emoticon, emoticon.name()), emoticon});
-
+    
   auto emoticon_label = control::create<label>(*main_form, "", {10, 50});
   emoticon_label->auto_size(true).font({main_form->font(), 128});
   emoticon_label->text(emoticon("test", {0x1F486, 0x1F3FD, 0x200D, 0x2640, 0xFE0F}).to_string());
-
+  
   emoticons_choice->selected_value_changed += [&] {
     emoticon_label->text(any_cast<emoticon>(emoticons_choice->selected_item().tag()).to_string());
   };

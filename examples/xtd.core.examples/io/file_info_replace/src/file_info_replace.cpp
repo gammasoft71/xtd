@@ -14,7 +14,7 @@ public:
       ustring original_file  = "test.txt";
       ustring file_to_replace = "test2.txt";
       ustring backup_of_file_to_replace = "test2.txt.bak";
-
+      
       if (file::exists(original_file) && file::exists(file_to_replace)) {
         console::write_line("Move the contents of " + original_file + " into " + file_to_replace + ", delete " + original_file + ", and create a backup of " + file_to_replace + ".");
         
@@ -22,9 +22,8 @@ public:
         replace_file(original_file, file_to_replace, backup_of_file_to_replace);
         
         console::write_line("Done");
-      } else {
+      } else
         console::write_line("Either the file {0} or {1} doesn't exist.", original_file, file_to_replace);
-      }
     } catch (const system_exception& e) {
       console::write_line(e.message());
     }

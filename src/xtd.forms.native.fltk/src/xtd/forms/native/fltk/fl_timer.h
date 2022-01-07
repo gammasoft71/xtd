@@ -24,11 +24,11 @@ namespace xtd {
           try {
             ((fl_timer*)timer)->tick_(event_args::empty);
             if (((fl_timer*)timer)->enable_timer_)
-            Fl::add_timeout(((fl_timer*)timer)->interval_, on_timer_tick);
-          } catch(...) {
+              Fl::add_timeout(((fl_timer*)timer)->interval_, on_timer_tick);
+          } catch (...) {
           }
         }
-
+        
         delegate<void(const event_args&)> tick_;
         bool enable_timer_ = false;
         double interval_ = 1000;

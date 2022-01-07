@@ -8,7 +8,7 @@ class program {
 public:
   static void main() {
     file_info fi(path::combine(path::get_temp_path(), "MyTest.txt"));
-
+    
     // This text is added only once to the file.
     if (!fi.exists())  {
       //Create a file to write to.
@@ -18,7 +18,7 @@ public:
         sw.write_line("Welcome");
       }
     }
-
+    
     // This text will always be added, making the file longer over time
     // if it is not deleted.
     using_(stream_writer sw = fi.append_text()) {
@@ -26,12 +26,11 @@ public:
       sw.write_line("is Extra");
       sw.write_line("Text");
     }
-
+    
     //Open the file to read from.
     using_(stream_reader sr = fi.open_text()) {
-      while (!sr.end_of_stream()) {
+      while (!sr.end_of_stream())
         console::write_line(sr.read_line());
-      }
     }
   }
 };

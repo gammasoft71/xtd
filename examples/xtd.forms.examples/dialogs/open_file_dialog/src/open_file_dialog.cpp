@@ -9,7 +9,7 @@ public:
   form1() {
     text("Open file dialog example");
     controls().push_back(button1);
-
+    
     button1.location({10, 10});
     button1.text("Open...");
     button1.click += [&] {
@@ -22,7 +22,7 @@ public:
         label1.text(ustring::format("File = {}", file_name));
       }
     };
-
+    
     label1.parent(*this);
     label1.text("File = ");
     label1.auto_size(true);

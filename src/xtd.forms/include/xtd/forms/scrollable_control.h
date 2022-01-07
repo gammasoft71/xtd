@@ -33,7 +33,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets the size of the auto-scroll margin.
       /// @return A size that represents the height and width of the auto-scroll margin in pixels.
       drawing::size auto_scroll_margin() const {return auto_scroll_margin_;}
@@ -47,7 +47,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets the rectangle that represents the virtual display area of the control.
       /// @return A rectangle that represents the display area of the control.
       drawing::rectangle display_rectangle() const override {return display_rectangle_;}
@@ -65,7 +65,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets a value indicating whether the vertical scroll bar is visible.
       /// @return true if the vertical scroll bar is visible; otherwise, false.
       virtual bool v_scroll() const {return v_scroll_;}
@@ -80,7 +80,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       
@@ -88,12 +88,12 @@ namespace xtd {
       /// @brief Initialize a new instance of scrollable_control class.
       scrollable_control() = default;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
       forms::create_params create_params() const override;
-
+      
       void on_layout(const event_args& e) override {
         control::on_layout(e);
         if (auto_scroll_) {
@@ -109,7 +109,7 @@ namespace xtd {
         }
       }
       /// @}
-
+      
     private:
       /// @cond
       bool auto_scroll_ = false;

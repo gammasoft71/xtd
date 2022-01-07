@@ -26,7 +26,7 @@ namespace xtd {
       /// @brief Arranges vertically, from bottom to top.
       up = 0x0004,
     };
-
+    
     /// @cond
     inline arrange_direction& operator +=(arrange_direction& lhs, arrange_direction rhs) {lhs = static_cast<arrange_direction>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
     inline arrange_direction& operator -=(arrange_direction& lhs, arrange_direction rhs) {lhs = static_cast<arrange_direction>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}

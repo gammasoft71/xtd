@@ -25,8 +25,8 @@ namespace xtd {
     class directory_not_found_exception : public xtd::io::io_exception {
     public:
       /// @name Constructors
-
-      /// @{      
+      
+      /// @{
       /// @brief Create a new instance of class directory_not_found_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.

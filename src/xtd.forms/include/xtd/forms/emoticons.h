@@ -28,7 +28,7 @@ namespace xtd {
       static const xtd::forms::emoticon copyright_sign;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x000000AE, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon registered_sign;
-
+      
       // 2000-206F - General Punctuation
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x0000200D. This field is constant.
@@ -37,7 +37,7 @@ namespace xtd {
       static const xtd::forms::emoticon double_exclamation_mark;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00002049, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon exclamation_question_mark;
-
+      
       // 2100-214F Letterlike Symbols
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00002122, 0x0000FE0F}. This field is constant.
@@ -63,7 +63,7 @@ namespace xtd {
       static const xtd::forms::emoticon leftwards_arrow_with_hook;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x000021AA, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon rightwards_arrow_with_hook;
-
+      
       // 2300-23FF Miscellaneous Technical
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x0000231A. This field is constant.
@@ -107,7 +107,7 @@ namespace xtd {
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x000024C2, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon circled_latin_capital_letter_m;
-
+      
       /// 25A0 25FF Geometric Shapes
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x000025AA, 0x0000FE0F}. This field is constant.
@@ -126,7 +126,7 @@ namespace xtd {
       static const xtd::forms::emoticon white_medium_small_square;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x000025FE. This field is constant.
       static const xtd::forms::emoticon black_medium_small_square;
-
+      
       // 2600-26FF Miscellaneous Symbols
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00002600, 0x0000FE0F}. This field is constant.
@@ -293,7 +293,7 @@ namespace xtd {
       static const xtd::forms::emoticon tent;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x000026FD. This field is constant.
       static const xtd::forms::emoticon fuel_pump;
-
+      
       // 2700-27BF Dingbats
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00002702, 0x0000FE0F}. This field is constant.
@@ -362,14 +362,14 @@ namespace xtd {
       static const xtd::forms::emoticon curly_loop;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x000027BF. This field is constant.
       static const xtd::forms::emoticon double_curly_loop;
-
+      
       // 2900-297F Supplemental Arrows-B
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00002934, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon arrow_pointing_rightwards_then_curving_upwards;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00002935, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon arrow_pointing_rightwards_then_curving_downwards;
-
+      
       /// 2B00-2BFF Miscellaneous Symbols And Arrows
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00002B05, 0x0000FE0F}. This field is constant.
@@ -386,21 +386,21 @@ namespace xtd {
       static const xtd::forms::emoticon white_medium_star;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x00002B55. This field is constant.
       static const xtd::forms::emoticon heavy_large_circle;
-
+      
       // 3000-303F CJK Symbols and Punctuation
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00003030, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon wavy_dash;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x0000303D, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon part_alternation_mark;
-
+      
       // 3200-32FF Enclosed CJK Letters and Months
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00003297, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon circled_ideograph_congratulation;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x00003299, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon circled_ideograph_secret;
-
+      
       // FE00-FE0F Variation Selectors
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x0000FE0F. This field is constant.
@@ -410,12 +410,12 @@ namespace xtd {
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x0001F004. This field is constant.
       static const xtd::forms::emoticon mahjong_tile_red_dragon;
-
+      
       // 1F0A0-1F0FF Playing Cards
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x0001F0CF. This field is constant.
       static const xtd::forms::emoticon playing_card_black_joker;
-
+      
       // 1F100-1F1FF Enclosed Alphanumeric Supplement
       
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of {0x0001F170, 0x0000FE0F}. This field is constant.

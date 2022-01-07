@@ -87,7 +87,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-save".
       static xtd::drawing::image file_save(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "document-save", size);}
-
+      
       /// @brief File save as image object.
       /// @return A xtd::drawing::image that represent "document-save-as".
       static xtd::drawing::image file_save_as() {return file_save_as(xtd::forms::theme_images::current_theme(), size());}
@@ -109,7 +109,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-save-as".
       static xtd::drawing::image file_save_as(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "document-save-as", size);}
-
+      
       /// @brief File print image object.
       /// @return A xtd::drawing::image that represent "document-print".
       static xtd::drawing::image file_print() {return file_print(xtd::forms::theme_images::current_theme(), size());}
@@ -153,7 +153,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-print-preview".
       static xtd::drawing::image file_print_preview(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "document-print-preview", size);}
-
+      
       /// @brief File page setup image object.
       /// @return A xtd::drawing::image that represent "document-page-setup".
       static xtd::drawing::image file_page_setup() {return file_page_setup(xtd::forms::theme_images::current_theme(), size());}
@@ -175,7 +175,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-page-setup".
       static xtd::drawing::image file_page_setup(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "document-page-setup", size);}
-
+      
       /// @brief File exit image object.
       /// @return A xtd::drawing::image that represent  "application-exit".
       static xtd::drawing::image file_exit() {return file_exit(xtd::forms::theme_images::current_theme(), size());}
@@ -329,7 +329,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-previous".
       static xtd::drawing::image view_back(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "go-previous", size);}
-
+      
       /// @brief View forward image object.
       /// @return A xtd::drawing::image that represent  "go-next".
       static xtd::drawing::image view_forward() {return view_forward(xtd::forms::theme_images::current_theme(), size());}
@@ -351,7 +351,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "go-next".
       static xtd::drawing::image view_forward(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "go-next", size);}
-
+      
       /// @brief Help about image object.
       /// @return A xtd::drawing::image that represent "help-about".
       static xtd::drawing::image help_about() {return help_about(xtd::forms::theme_images::current_theme(), size());}
@@ -373,7 +373,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "help-about".
       static xtd::drawing::image help_about(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "help-about", size);}
-
+      
       /// @brief Gets the height and width of the menu images.
       /// @return The size that represents the height and width of the menu images in pixels (16 x 16).
       static xtd::drawing::size size() {return xtd::environment::os_version().is_windows_platform() ? xtd::drawing::size {16, 16} : xtd::drawing::size {32, 32};}

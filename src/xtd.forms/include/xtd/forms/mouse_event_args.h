@@ -48,7 +48,7 @@ namespace xtd {
       /// @param delta A signed count of the number of detents the wheel has rotated.
       mouse_event_args(mouse_buttons button, int32_t clicks, const drawing::point& location, int32_t delta) : button_(button), location_(location), clicks_(clicks), delta_(delta) {}
       /// @}
-
+      
       /// @cond
       mouse_event_args(const mouse_event_args& mouse_event_args) = default;
       mouse_event_args& operator=(const mouse_event_args& mouse_event_args) = default;
@@ -60,11 +60,11 @@ namespace xtd {
       /// @brief Gets which mouse button was pressed.
       /// @return One of the xtd::forms::mouse_buttons values.
       mouse_buttons button() const {return button_;}
-
+      
       /// @brief Gets the number of times the mouse button was pressed and released.
       /// @return An Int32_t that contains the number of times the mouse button was pressed and released.
       int32_t clicks() const {return clicks_;}
-
+      
       /// @brief Gets a signed count of the number of detents the mouse wheel has rotated, multiplied by the WHEEL_DELTA constant. A detent is one notch of the mouse wheel.
       /// @return A signed count of the number of detents the mouse wheel has rotated, multiplied by the WHEEL_DELTA constant.
       int32_t delta() const {return delta_;}

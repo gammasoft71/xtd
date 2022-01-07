@@ -30,7 +30,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the choice class.
       choice();
       //// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -87,7 +87,7 @@ namespace xtd {
       /// @remarks The preferred way to add multiple items to the choice is to use the push_back_range method of the choice::object_collection class (through the items property of the choice). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the choice::object_collection class, you can use the begin_update method to prevent the control from repainting the choice each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the choice to repaint. This way of adding items can prevent flickered drawing of the choice when a large number of items are being added to the list.
       void end_update();
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -95,11 +95,11 @@ namespace xtd {
       forms::create_params create_params() const override;
       
       void on_handle_created(const event_args& e) override;
-
+      
       void on_selected_value_changed(const event_args& e) override;
-
+      
       void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override;
-
+      
       void set_client_size_core(int32_t width, int32_t height) override;
       
       void wnd_proc(message& message) override;
@@ -111,7 +111,7 @@ namespace xtd {
       /// @brief Processes the mouse double-click message the choice control receives from the top-level window.
       /// @param message The message the top-level window sent to the choice control.
       virtual void wm_mouse_double_click(message& message);
-
+      
       /// @brief Processes the mouse down message the choice control receives from the top-level window.
       /// @param message The message the top-level window sent to the choice control.
       virtual void wm_mouse_down(message& message);
@@ -120,7 +120,7 @@ namespace xtd {
       /// @param message The message the top-level window sent to the choice control.
       virtual void wm_mouse_up(message& message);
       /// @}
-
+      
       /// @cond
       object_collection items_;
       item selected_item_;

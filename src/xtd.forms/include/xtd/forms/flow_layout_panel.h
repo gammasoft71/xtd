@@ -28,11 +28,11 @@ namespace xtd {
       /// @}
       
     protected:
-    /// @name Protected methods
-    
-    /// @{
+      /// @name Protected methods
+      
+      /// @{
       void on_layout(const xtd::event_args& e) override;
-    /// @}
+      /// @}
     };
   }
 }

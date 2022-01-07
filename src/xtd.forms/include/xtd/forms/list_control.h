@@ -37,7 +37,7 @@ namespace xtd {
           }
           /// @}
         };
-
+        
         /// @name Constructors
         
         /// @{
@@ -92,14 +92,14 @@ namespace xtd {
         xtd::ustring value_;
         std::any tag_;
       };
-   
+      
       /// @name Alias
       
       /// @{
       /// @brief Represents the collection of items in a list_control.
       using object_collection = layout::arranged_element_collection<item, item::sorter>;
       /// @}
-
+      
       /// @name Fields
       
       /// @{
@@ -118,7 +118,7 @@ namespace xtd {
       /// @return Current list_control.
       virtual list_control& selected_index(size_t selected_index) = 0;
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -126,13 +126,13 @@ namespace xtd {
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<list_control, event_handler> selected_index_changed;
-
+      
       /// @brief Occurs when the selected_value property changes.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<list_control, event_handler> selected_value_changed;
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       
@@ -140,7 +140,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the list_control class.
       list_control();
       /// @}
-  
+      
       /// @name Protected methods
       
       /// @{
@@ -153,15 +153,15 @@ namespace xtd {
       
       /// @brief Raises the list_control::selected_index_changed event.
       virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}
-
+      
       /// @brief Raises the list_control::selected_value_changed event.
       virtual void on_selected_value_changed(const event_args& e) {selected_value_changed(*this, e);}
-
+      
       /// @brief Set the currently selected item.
       /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       void set_selected_index(size_t value) {data_->selected_index = value;}
       /// @}
-
+      
     private:
       struct data {
         size_t selected_index = npos;

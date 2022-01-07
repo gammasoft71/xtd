@@ -15,16 +15,16 @@ namespace {
   static std::string get_os_postfix() noexcept {
     return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";
   }
- 
+  
   static std::string forms_resource_path() {
-#if defined(__XTD_RESOURCES_PATH__)
+    #if defined(__XTD_RESOURCES_PATH__)
     return xtd::io::path::combine(__XTD_RESOURCES_PATH__, "share", "xtd", "resources");
-#else
+    #else
     return "";
-#endif
+    #endif
   }
-
-  static intptr_t create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot ) {
+  
+  static intptr_t create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot) {
     if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_postfix())))) return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
     wxImage image(std::string(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_postfix()))));
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());

@@ -14,11 +14,11 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   float pixel_to_native_font_graphics_untit(float size) {
     return size;  // font is in points
   }
-#else
+  #else
   float pixel_to_native_font_graphics_untit(float size) {
     auto dpi = 72;
     if (wxTheApp) {
@@ -27,7 +27,7 @@ namespace {
     }
     return size / 96.0f * dpi;  // font is in pixels and not in points
   }
-#endif
+  #endif
 }
 
 intptr_t font_family::create(const ustring& name) {
@@ -46,15 +46,15 @@ ustring font_family::generic_serif_name() {
   wxFont font(font_info);
   return font.GetFaceName().c_str().AsWChar();
    */
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return L"Times New Roman";
-#elif defined(__APPLE__)
+  #elif defined(__APPLE__)
   return L"Times New Roman";
-#elif defined(__WXGTK__)
+  #elif defined(__WXGTK__)
   return L"Serif";
-#else
+  #else
   return L"Serif";
-#endif
+  #endif
 }
 
 ustring font_family::generic_sans_serif_name() {
@@ -64,15 +64,15 @@ ustring font_family::generic_sans_serif_name() {
   wxFont font(font_info);
   return font.GetFaceName().c_str().AsWChar();
    */
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return L"Microsoft Sans Serif";
-#elif defined(__APPLE__)
+  #elif defined(__APPLE__)
   return L"Arial";
-#elif defined(__WXGTK__)
+  #elif defined(__WXGTK__)
   return L"Sans";
-#else
+  #else
   return L"Sans";
-#endif
+  #endif
 }
 
 ustring font_family::generic_monospace_name() {
@@ -82,15 +82,15 @@ ustring font_family::generic_monospace_name() {
   wxFont font(font_info);
   return font.GetFaceName().c_str().AsWChar();
    */
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return L"Courier New";
-#elif defined(__APPLE__)
+  #elif defined(__APPLE__)
   return L"Courier New";
-#elif defined(__WXGTK__)
+  #elif defined(__WXGTK__)
   return L"Monospace";
-#else
+  #else
   return L"Monospace";
-#endif
+  #endif
 }
 
 std::vector<ustring> font_family::installed_font_families() {

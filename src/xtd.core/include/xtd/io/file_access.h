@@ -20,7 +20,7 @@ namespace xtd {
       /// @brief The file is a read_write file. The file is part of the operating read_write or is used exclusively by the operating read_write.
       read_write = 0b11,
     };
-
+    
     /// @cond
     inline file_access& operator^=(file_access& lhs, file_access rhs) {lhs = static_cast<file_access>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
     inline file_access& operator&=(file_access& lhs, file_access rhs) {lhs = static_cast<file_access>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}

@@ -14,7 +14,7 @@ namespace xtd {
     /// @cond
     class link_label;
     /// @endcond
-
+    
     /// @brief Represents a Windows label control that can display hyperlinks.
     /// @par Namespace
     /// xtd::forms
@@ -32,7 +32,7 @@ namespace xtd {
       /// @param button One of the xtd::forms::mouse_buttons values that indicate which mouse button was pressed.
       link_label_clicked_event_args(const xtd::forms::link& link, xtd::forms::mouse_buttons button);
       /// @}
-
+      
       /// @name Properties
       
       /// @{

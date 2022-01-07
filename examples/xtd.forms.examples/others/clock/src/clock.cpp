@@ -14,7 +14,7 @@ int main() {
   timer timer;
   timer.interval(100ms);
   timer.enabled(true);
-
+  
   form form_main;
   form_main.text("Clock");
   form_main.start_position(form_start_position::center_screen);
@@ -46,6 +46,6 @@ int main() {
     show_seconds = !show_seconds;
     center_to_screen_next_time = true;
   };
-
+  
   application::run(form_main);
 }

@@ -38,7 +38,7 @@ namespace xtd {
       key_press_event_args(const key_press_event_args& key_press_event_args) = default;
       key_press_event_args& operator=(const key_press_event_args& key_press_event_args) = default;
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -50,7 +50,7 @@ namespace xtd {
       /// @param handled true if the event is handled; otherwise, false.
       /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the key_press event.
       void handled(bool handled) {handled_ = handled;}
-
+      
       /// @brief Gets the character corresponding to the key pressed.
       /// @return The ASCII character that is composed. For example, if the user presses SHIFT + K, this property returns an uppercase K.
       /// @remarks Use the key_char property to sample keystrokes at run time and to modify keystrokes under special run-time circumstances. For example, you can use key_char to disable non-numeric keypresses when the user enters a ZIP code, change all alphabetical keypresses to uppercase in a data entry field, or monitor the keyboard or other key input device for specific key combinations.
@@ -92,7 +92,7 @@ namespace xtd {
       /// @note For information about how to detect any of the non-character keys mentioned above, see the key_event_args class.
       void key_char(char32_t key_char) {key_char_ = key_char;}
       /// @}
-
+      
     private:
       char32_t key_char_;
       bool handled_ = false;

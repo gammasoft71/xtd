@@ -79,7 +79,7 @@ namespace xtd {
         }
       }
       /// @}
-
+      
     private:
       std::optional<int32_t> thickness_;
     };

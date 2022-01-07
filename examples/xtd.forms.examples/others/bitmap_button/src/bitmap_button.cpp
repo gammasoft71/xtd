@@ -16,7 +16,7 @@ public:
     button1.location({50, 50});
     button1.width(100);
     button1.text("Gammasoft");
-
+    
     button2.location({50, 80});
     button2.width(120);
     button2.image(image::from_data(gammasoft_16x16_xpm));

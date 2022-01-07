@@ -21,7 +21,7 @@ namespace xtd {
       /// @brief The control or element is oriented vertically.
       vertical = 1,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, orientation value) {return os << to_string(value, {{orientation::horizontal, "horizontal"}, {orientation::vertical, "vertical"}});}
     inline std::wostream& operator<<(std::wostream& os, orientation value) {return os << to_string(value, {{orientation::horizontal, L"horizontal"}, {orientation::vertical, L"vertical"}});}

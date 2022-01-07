@@ -23,7 +23,7 @@ namespace xtd {
       /// @brief Initialize a new instance of nine_segment_display class.
       sixteen_segment_display() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -42,7 +42,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -54,7 +54,7 @@ namespace xtd {
         if ((value() & forms::segments::d1) == forms::segments::d1) draw_segment_d1(e.graphics(), fore_color());
         if ((value() & forms::segments::d2) == forms::segments::d2) draw_segment_d2(e.graphics(), fore_color());
       }
- 
+      
       void draw_back_digit(drawing::graphics& graphics) override {
         fourteen_segment_display::draw_back_digit(graphics);
         draw_segment_a1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
@@ -62,7 +62,7 @@ namespace xtd {
         draw_segment_d1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
         draw_segment_d2(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
       }
-
+      
       /// @brief Draw segment a1 on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
@@ -187,7 +187,7 @@ namespace xtd {
             graphics.draw_line(drawing::pen(color), size().width() / 2 - offset, 2 + thickness(), size().width() / 2 - offset, size().height() / 2 - 1 - abs(offset));
         }
       }
-  
+      
       /// @brief Draw segment l on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
@@ -213,7 +213,7 @@ namespace xtd {
         }
       }
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -221,7 +221,7 @@ namespace xtd {
       void draw_segment_a(drawing::graphics& graphics, const drawing::color& color) override {}
       void draw_segment_d(drawing::graphics& graphics, const drawing::color& color) override {}
       /// @}
-
+      
     private:
       std::optional<int32_t> thickness_;
     };

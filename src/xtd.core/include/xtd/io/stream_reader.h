@@ -58,7 +58,7 @@ namespace xtd {
       /// @{
       /// @brief Closes the stream_reader object and the underlying stream, and releases any system resources associated with the reader.
       void close() override;
-
+      
       /// @brief Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.
       /// @return An integer representing the next character to be read, or EOF if no more characters are available or the stream does not support seeking.
       int32_t peek() const override;

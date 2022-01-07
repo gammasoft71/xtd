@@ -79,11 +79,11 @@ forms::create_params progress_bar::create_params() const {
   
   if (style_ == forms::progress_bar_style::continuous) create_params.style(create_params.style() | PBS_SMOOTH);
   if (orientation_ == forms::orientation::vertical) create_params.style(create_params.style() | PBS_VERTICAL);
-
+  
   return create_params;
 }
 
-void progress_bar::on_handle_created(const event_args &e) {
+void progress_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::progress_bar::maximum(handle(), maximum_);
   native::progress_bar::minimum(handle(), minimum_);

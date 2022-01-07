@@ -20,16 +20,16 @@ namespace xtd {
       /// @brief Create a new instance of ignore_error class.
       /// @param message Message string associate to the error.
       explicit ignore_error(const xtd::ustring& message) : message_(message) {}
-
+      
       /// @brief Create a new instance of ignore_error class.
       /// @param message Message string associate to the error.
       explicit ignore_error(const char* message) : message_(message) {}
-
+      
       /// @cond
       ignore_error(const ignore_error&) = default;
       ignore_error& operator=(const ignore_error&) = default;
       /// @endcond
-
+      
       /// @brief Returns a string that represents the current ignore_error.
       /// @return string A string that represents the current ignore_error.
       const char* what() const noexcept {return message_.c_str();}

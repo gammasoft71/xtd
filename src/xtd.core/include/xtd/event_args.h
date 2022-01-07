@@ -24,7 +24,7 @@ namespace xtd {
     /// @remarks Pass this value to event handlers that are associated with events that do not have data.
     static const event_args empty;
     /// @}
-
+    
     /// @name Constructors
     
     /// @{

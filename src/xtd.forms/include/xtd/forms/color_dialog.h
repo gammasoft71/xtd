@@ -65,7 +65,7 @@ namespace xtd {
         set_option(CC_PREVENTFULLOPEN, allow_full_open);
         return *this;
       }
-
+      
       /// @brief Gets a value indicating whether the dialog box displays all available colors in the set of basic colors.
       /// @return true if the dialog box displays all available colors in the set of basic colors; otherwise, false. The default value is false.
       bool any_color() const {return get_option(CC_ANYCOLOR);}
@@ -75,7 +75,7 @@ namespace xtd {
         set_option(CC_ANYCOLOR, any_color);
         return *this;
       }
-
+      
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the dialog box at run time, as defined in color structure.
@@ -104,7 +104,7 @@ namespace xtd {
           custom_colors_[index] = xtd::drawing::color::white;
         return *this;
       }
-
+      
       /// @brief Gets a value indicating whether the controls used to create custom colors are visible when the dialog box is opened
       /// @return true if the custom color controls are available when the dialog box is opened; otherwise, false. The default value is false.
       /// @remarks By default, the custom color controls are not visible when the dialog box is first opened. You must click the Custom Colors button to display them.
@@ -146,7 +146,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -162,16 +162,16 @@ namespace xtd {
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return true if the dialog box was successfully run; otherwise, false.
       bool run_dialog(intptr_t owner) override;
-
+      
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
       void run_sheet(intptr_t owner) override;
       /// @}
-
+      
     private:
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
-
+      
       drawing::color color_ = drawing::color::black;
       std::vector<xtd::drawing::color> custom_colors_ {16, xtd::drawing::color::white};
       size_t options_ = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;

@@ -102,7 +102,7 @@ namespace xtd {
     /// @remarks "{0xCA761232, 0xED42, 0x11CE, {0xBA, 0xCD, 0x00, 0xAA, 0x00, 0x57, 0xB2, 0x23}}"
     explicit guid(const ustring& guid);
     /// @}
-
+    
     /// @cond
     guid(const guid&) = default;
     guid& operator=(const guid&) = default;
@@ -132,7 +132,7 @@ namespace xtd {
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
     int32_t compare_to(const guid& value) const noexcept override;
-
+    
     bool equals(const object& g) const noexcept override;
     bool equals(const guid& g) const noexcept override;
     
@@ -145,7 +145,7 @@ namespace xtd {
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return A 16-element byte array.
     const std::vector<byte_t>& to_byte_array() const noexcept;
-
+    
     /// @brief Returns a string representation of the value of this instance in registry format.
     /// @return The value of this xtd::guid, formatted by using the "D" format specifier as follows:
     /// xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -175,7 +175,7 @@ namespace xtd {
   private:
     std::vector<byte_t> data_ = std::vector<byte_t>(16);
   };
-
+  
   /// @cond
   template<>
   inline std::string to_string(const guid& value, const std::string& fmt, const std::locale& loc) {

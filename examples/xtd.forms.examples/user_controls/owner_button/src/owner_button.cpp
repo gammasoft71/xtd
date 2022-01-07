@@ -8,7 +8,7 @@ namespace examples {
   class owner_button : public button {
   protected:
     void on_paint(paint_event_args& e) override {
-      auto accentuate_color = [](const color& c, float percent) {
+      auto accentuate_color = [](const color & c, float percent) {
         return application::dark_mode_enabled() ? control_paint::light(c, percent) : control_paint::dark(c, percent);
       };
       auto background_color = get_back_color().value_or(theme_colors::current_theme().control());
@@ -35,7 +35,7 @@ namespace examples {
       e.graphics().draw_string(text(), font(), solid_brush(text_color), rectangle(e.clip_rectangle().x() + 5, e.clip_rectangle().y() + 3, e.clip_rectangle().width() - 10, e.clip_rectangle().height() - 7), string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));
     }
   };
-
+  
   class form1 : public form {
   public:
     form1() {
@@ -54,7 +54,7 @@ namespace examples {
       owner_button3.back_color(color::blue);
       owner_button3.fore_color(color::white);
       owner_button3.text("Button 3");
-
+      
       text("Owner button example");
       client_size({370, 270});
       controls().push_back_range({owner_button1, owner_button2, owner_button3});

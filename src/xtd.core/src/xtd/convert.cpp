@@ -158,7 +158,7 @@ std::any convert::to_any(wchar_t* value) noexcept {
 bool convert::to_boolean(any value) {
   try {
     return any_cast<bool>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -302,7 +302,7 @@ bool convert::to_boolean(wchar_t* value) {
 byte_t convert::to_byte(any value) {
   try {
     return any_cast<byte_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -404,11 +404,11 @@ byte_t convert::to_byte(const ustring& value) {
 
 byte_t convert::to_byte(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<byte_t>(value, number_styles::binary_number); break;
-    case 8: return parse<byte_t>(value, number_styles::octal_number); break;
-    case 10: return parse<byte_t>(value, number_styles::integer); break;
-    case 16: return parse<byte_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<byte_t>(value, number_styles::binary_number); break;
+  case 8: return parse<byte_t>(value, number_styles::octal_number); break;
+  case 10: return parse<byte_t>(value, number_styles::integer); break;
+  case 16: return parse<byte_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -475,7 +475,7 @@ byte_t convert::to_byte(wchar_t* value) {
 char convert::to_char(any value) {
   try {
     return any_cast<char>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -829,10 +829,10 @@ char8_t convert::to_char8(wchar_t* value) {
 char16_t convert::to_char16(any value) {
   try {
     return any_cast<char16_t>(value);
-  } catch(...) {
+  } catch (...) {
     try {
       return *any_cast<char16_t*>(value);
-    } catch(...) {
+    } catch (...) {
       throw invalid_cast_exception(csf_);
     }
   }
@@ -1009,10 +1009,10 @@ char16_t convert::to_char16(wchar_t* value) {
 char32_t convert::to_char32(any value) {
   try {
     return any_cast<char32_t>(value);
-  } catch(...) {
+  } catch (...) {
     try {
       return *any_cast<char32_t*>(value);
-    } catch(...) {
+    } catch (...) {
       throw invalid_cast_exception(csf_);
     }
   }
@@ -1187,10 +1187,10 @@ char32_t convert::to_char32(wchar_t* value) {
 wchar_t convert::to_wchar(any value) {
   try {
     return any_cast<wchar_t>(value);
-  } catch(...) {
+  } catch (...) {
     try {
       return *any_cast<wchar_t*>(value);
-    } catch(...) {
+    } catch (...) {
       throw invalid_cast_exception(csf_);
     }
   }
@@ -1367,7 +1367,7 @@ wchar_t convert::to_wchar(wchar_t* value) {
 decimal_t convert::to_decimal(any value) {
   try {
     return any_cast<decimal_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -1515,7 +1515,7 @@ decimal_t convert::to_decimal(wchar_t* value) {
 double convert::to_double(any value) {
   try {
     return any_cast<double>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -1663,7 +1663,7 @@ double convert::to_double(wchar_t* value) {
 float convert::to_single(any value) {
   try {
     return any_cast<float>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -1811,7 +1811,7 @@ float convert::to_single(wchar_t* value) {
 int16_t convert::to_int16(any value) {
   try {
     return any_cast<int16_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -1909,11 +1909,11 @@ int16_t convert::to_int16(const ustring& value) {
 
 int16_t convert::to_int16(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<int16_t>(value, number_styles::binary_number); break;
-    case 8: return parse<int16_t>(value, number_styles::octal_number); break;
-    case 10: return parse<int16_t>(value, number_styles::integer); break;
-    case 16: return parse<int16_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<int16_t>(value, number_styles::binary_number); break;
+  case 8: return parse<int16_t>(value, number_styles::octal_number); break;
+  case 10: return parse<int16_t>(value, number_styles::integer); break;
+  case 16: return parse<int16_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -1980,7 +1980,7 @@ int16_t convert::to_int16(wchar_t* value) {
 int32_t convert::to_int32(any value) {
   try {
     return any_cast<int32_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -2074,11 +2074,11 @@ int32_t convert::to_int32(const ustring& value) {
 
 int32_t convert::to_int32(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<int32_t>(value, number_styles::binary_number); break;
-    case 8: return parse<int32_t>(value, number_styles::octal_number); break;
-    case 10: return parse<int32_t>(value, number_styles::integer); break;
-    case 16: return parse<int32_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<int32_t>(value, number_styles::binary_number); break;
+  case 8: return parse<int32_t>(value, number_styles::octal_number); break;
+  case 10: return parse<int32_t>(value, number_styles::integer); break;
+  case 16: return parse<int32_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -2145,7 +2145,7 @@ int32_t convert::to_int32(wchar_t* value) {
 int64_t convert::to_int64(any value) {
   try {
     return any_cast<int64_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -2234,11 +2234,11 @@ int64_t convert::to_int64(const ustring& value) {
 
 int64_t convert::to_int64(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<int64_t>(value, number_styles::binary_number); break;
-    case 8: return parse<int64_t>(value, number_styles::octal_number); break;
-    case 10: return parse<int64_t>(value, number_styles::integer); break;
-    case 16: return parse<int64_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<int64_t>(value, number_styles::binary_number); break;
+  case 8: return parse<int64_t>(value, number_styles::octal_number); break;
+  case 10: return parse<int64_t>(value, number_styles::integer); break;
+  case 16: return parse<int64_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -2305,7 +2305,7 @@ int64_t convert::to_int64(wchar_t* value) {
 llong_t convert::to_llong(any value) {
   try {
     return any_cast<llong_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -2394,11 +2394,11 @@ llong_t convert::to_llong(const ustring& value) {
 
 llong_t convert::to_llong(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<llong_t>(value, number_styles::binary_number); break;
-    case 8: return parse<llong_t>(value, number_styles::octal_number); break;
-    case 10: return parse<llong_t>(value, number_styles::integer); break;
-    case 16: return parse<llong_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<llong_t>(value, number_styles::binary_number); break;
+  case 8: return parse<llong_t>(value, number_styles::octal_number); break;
+  case 10: return parse<llong_t>(value, number_styles::integer); break;
+  case 16: return parse<llong_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -2465,7 +2465,7 @@ llong_t convert::to_llong(wchar_t* value) {
 sbyte_t convert::to_sbyte(any value) {
   try {
     return any_cast<sbyte_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -2566,11 +2566,11 @@ sbyte_t convert::to_sbyte(const ustring& value) {
 
 sbyte_t convert::to_sbyte(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<sbyte_t>(value, number_styles::binary_number); break;
-    case 8: return parse<sbyte_t>(value, number_styles::octal_number); break;
-    case 10: return parse<sbyte_t>(value, number_styles::integer); break;
-    case 16: return parse<sbyte_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<sbyte_t>(value, number_styles::binary_number); break;
+  case 8: return parse<sbyte_t>(value, number_styles::octal_number); break;
+  case 10: return parse<sbyte_t>(value, number_styles::integer); break;
+  case 16: return parse<sbyte_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -2637,7 +2637,7 @@ sbyte_t convert::to_sbyte(wchar_t* value) {
 uint16_t convert::to_uint16(any value) {
   try {
     return any_cast<uint16_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -2736,11 +2736,11 @@ uint16_t convert::to_uint16(const ustring& value) {
 
 uint16_t convert::to_uint16(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<uint16_t>(value, number_styles::binary_number); break;
-    case 8: return parse<uint16_t>(value, number_styles::octal_number); break;
-    case 10: return parse<uint16_t>(value, number_styles::integer); break;
-    case 16: return parse<uint16_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<uint16_t>(value, number_styles::binary_number); break;
+  case 8: return parse<uint16_t>(value, number_styles::octal_number); break;
+  case 10: return parse<uint16_t>(value, number_styles::integer); break;
+  case 16: return parse<uint16_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -2807,7 +2807,7 @@ uint16_t convert::to_uint16(wchar_t* value) {
 uint32_t convert::to_uint32(any value) {
   try {
     return any_cast<uint32_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -2904,11 +2904,11 @@ uint32_t convert::to_uint32(const ustring& value) {
 
 uint32_t convert::to_uint32(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<uint32_t>(value, number_styles::binary_number); break;
-    case 8: return parse<uint32_t>(value, number_styles::octal_number); break;
-    case 10: return parse<uint32_t>(value, number_styles::integer); break;
-    case 16: return parse<uint32_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<uint32_t>(value, number_styles::binary_number); break;
+  case 8: return parse<uint32_t>(value, number_styles::octal_number); break;
+  case 10: return parse<uint32_t>(value, number_styles::integer); break;
+  case 16: return parse<uint32_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -2975,7 +2975,7 @@ uint32_t convert::to_uint32(wchar_t* value) {
 uint64_t convert::to_uint64(any value) {
   try {
     return any_cast<uint64_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -3074,11 +3074,11 @@ uint64_t convert::to_uint64(const string& value) {
 
 uint64_t convert::to_uint64(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<uint64_t>(value, number_styles::binary_number); break;
-    case 8: return parse<uint64_t>(value, number_styles::octal_number); break;
-    case 10: return parse<uint64_t>(value, number_styles::integer); break;
-    case 16: return parse<uint64_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<uint64_t>(value, number_styles::binary_number); break;
+  case 8: return parse<uint64_t>(value, number_styles::octal_number); break;
+  case 10: return parse<uint64_t>(value, number_styles::integer); break;
+  case 16: return parse<uint64_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3141,7 +3141,7 @@ uint64_t convert::to_uint64(wchar_t* value) {
 ullong_t convert::to_ullong(any value) {
   try {
     return any_cast<ullong_t>(value);
-  } catch(...) {
+  } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
@@ -3236,11 +3236,11 @@ ullong_t convert::to_ullong(const ustring& value) {
 
 ullong_t convert::to_ullong(const ustring& value, byte_t from_base) {
   switch (from_base) {
-    case 2: return parse<ullong_t>(value, number_styles::binary_number); break;
-    case 8: return parse<ullong_t>(value, number_styles::octal_number); break;
-    case 10: return parse<ullong_t>(value, number_styles::integer); break;
-    case 16: return parse<ullong_t>(value, number_styles::hex_number); break;
-    default: throw argument_exception(csf_);
+  case 2: return parse<ullong_t>(value, number_styles::binary_number); break;
+  case 8: return parse<ullong_t>(value, number_styles::octal_number); break;
+  case 10: return parse<ullong_t>(value, number_styles::integer); break;
+  case 16: return parse<ullong_t>(value, number_styles::hex_number); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3318,11 +3318,11 @@ ustring convert::to_string(byte_t value) noexcept {
 
 ustring convert::to_string(byte_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3364,11 +3364,11 @@ ustring convert::to_string(int16_t value) {
 
 ustring convert::to_string(int16_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3378,11 +3378,11 @@ ustring convert::to_string(int32_t value) {
 
 ustring convert::to_string(int32_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3392,11 +3392,11 @@ ustring convert::to_string(int64_t value) {
 
 ustring convert::to_string(int64_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3406,11 +3406,11 @@ ustring convert::to_string(llong_t value) {
 
 ustring convert::to_string(llong_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3420,11 +3420,11 @@ ustring convert::to_string(sbyte_t value) {
 
 ustring convert::to_string(sbyte_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3434,11 +3434,11 @@ ustring convert::to_string(uint16_t value) noexcept {
 
 ustring convert::to_string(uint16_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3448,11 +3448,11 @@ ustring convert::to_string(uint32_t value) noexcept {
 
 ustring convert::to_string(uint32_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3462,11 +3462,11 @@ ustring convert::to_string(uint64_t value) noexcept {
 
 ustring convert::to_string(uint64_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 
@@ -3476,11 +3476,11 @@ ustring convert::to_string(ullong_t value) noexcept {
 
 ustring convert::to_string(ullong_t value, byte_t from_base) {
   switch (from_base) {
-    case 2: return ustring::format("{:B}", value); break;
-    case 8: return ustring::format("{:O}", value); break;
-    case 10: return ustring::format("{:D}", value); break;
-    case 16: return ustring::format("{:X}", value); break;
-    default: throw argument_exception(csf_);
+  case 2: return ustring::format("{:B}", value); break;
+  case 8: return ustring::format("{:O}", value); break;
+  case 10: return ustring::format("{:D}", value); break;
+  case 16: return ustring::format("{:X}", value); break;
+  default: throw argument_exception(csf_);
   }
 }
 

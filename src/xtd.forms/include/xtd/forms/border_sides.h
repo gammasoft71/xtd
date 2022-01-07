@@ -30,7 +30,7 @@ namespace xtd {
       /// @brief All flags except none.
       all = top | bottom | left | right,
     };
-
+    
     /// @cond
     inline border_sides& operator +=(border_sides& lhs, border_sides rhs) {lhs = static_cast<border_sides>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
     inline border_sides& operator -=(border_sides& lhs, border_sides rhs) {lhs = static_cast<border_sides>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}

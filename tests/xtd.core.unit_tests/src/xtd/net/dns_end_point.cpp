@@ -32,13 +32,13 @@ namespace unit_tests {
       assert::are_equal(address_family::inter_network_v6, end_point.address_family(), csf_);
       assert::are_equal("inter_network_v6/localhost:9500", end_point.to_string(), csf_);
     }
-
+    
     void test_method_(constructor_with_host_empty) {
-      assert::throws<argument_exception>([]{dns_end_point end_point("", 9500, address_family::inter_network);}, csf_);
+      assert::throws<argument_exception>([] {dns_end_point end_point("", 9500, address_family::inter_network);}, csf_);
     }
     
     void test_method_(constructor_with_address_family_invalid) {
-      assert::throws<argument_exception>([]{dns_end_point end_point("localhost", 9500, address_family::apple_talk);}, csf_);
+      assert::throws<argument_exception>([] {dns_end_point end_point("localhost", 9500, address_family::apple_talk);}, csf_);
     }
   };
 }

@@ -13,7 +13,7 @@ namespace xtd {
     /// @cond
     class control;
     /// @endcond
-
+    
     /// @brief Provides data for the control_added and control_removed events.
     /// @par Namespace
     /// xtd::forms

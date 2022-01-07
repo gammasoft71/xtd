@@ -16,7 +16,7 @@ public:
     
     text_report_tab_page.text("text");
     xml_report_tab_page.text("xml");
-
+    
     text_reports_text_box.dock(dock_style::fill);
     text_reports_text_box.font({drawing::font_family::generic_monospace(), text_reports_text_box.font().size()});
     text_reports_text_box.multiline(true);
@@ -24,7 +24,7 @@ public:
     text_reports_text_box.read_only(true);
     text_reports_text_box.text(system_report::to_string());
     text_reports_text_box.word_wrap(false);
-
+    
     xml_reports_text_box.dock(dock_style::fill);
     xml_reports_text_box.font({drawing::font_family::generic_monospace(), xml_reports_text_box.font().size()});
     xml_reports_text_box.multiline(true);

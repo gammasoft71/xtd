@@ -122,14 +122,14 @@ namespace xtd {
         else
           base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
       }
-
+      
       static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (wcscmp(actual, expected) == 0)
           succeed(message, stack_frame);
         else
           base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
       }
-
+      
       static void are_equal(float expected, float actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::isnan(actual) && std::isnan(expected))
           succeed(message, stack_frame);
@@ -397,7 +397,7 @@ namespace xtd {
         else
           base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
       }
-
+      
       /// @cond
       static void are_not_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (strcmp(actual, expected) != 0)
@@ -405,21 +405,21 @@ namespace xtd {
         else
           base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
       }
-
+      
       static void are_not_equal(const char8_t* expected, const char8_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (ustring(actual) != ustring(expected))
           succeed(message, stack_frame);
         else
           base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
       }
-
+      
       static void are_not_equal(const char16_t* expected, const char16_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::u16string(actual) != std::u16string(expected))
           succeed(message, stack_frame);
         else
           base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
       }
-
+      
       static void are_not_equal(const char32_t* expected, const char32_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::u32string(actual) != std::u32string(expected))
           succeed(message, stack_frame);
@@ -434,7 +434,7 @@ namespace xtd {
           base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -668,7 +668,7 @@ namespace xtd {
         else
           base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, stack_frame);
       }
-
+      
       static void contains(char16_t item, const char16_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         ustring s(values);
         auto result = std::find(s.begin(), s.end(), item);
@@ -686,7 +686,7 @@ namespace xtd {
         else
           base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, stack_frame);
       }
-
+      
       static void contains(wchar_t item, const wchar_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         ustring s(values);
         auto result = std::find(s.begin(), s.end(), item);
@@ -845,7 +845,7 @@ namespace xtd {
         else
           base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
       }
-
+      
       static void is_empty(const char16_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         ustring s(value);
         if (ustring::is_empty(s))
@@ -861,7 +861,7 @@ namespace xtd {
         else
           base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
       }
-
+      
       static void is_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         ustring s(value);
         if (ustring::is_empty(s))
@@ -1006,14 +1006,14 @@ namespace xtd {
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_greater(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::u32string(val1) > std::u32string(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_greater(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (wcscmp(val1, val2) > 0)
           succeed(message, stack_frame);
@@ -1021,7 +1021,7 @@ namespace xtd {
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -1090,28 +1090,28 @@ namespace xtd {
         else
           base_assert::fail("greather than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_greater_or_equal(const char8_t* val1, const char8_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (ustring(val1) >= ustring(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_greater_or_equal(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::u16string(val1) >= std::u16string(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_greater_or_equal(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::u32string(val1) >= std::u32string(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (wcscmp(val1, val2) >= 0)
           succeed(message, stack_frame);
@@ -1119,7 +1119,7 @@ namespace xtd {
           base_assert::fail("greather than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1231,9 +1231,8 @@ namespace xtd {
       static void is_less(const value1_t& val1, const value2_t& val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (val1 < val2)
           succeed(message, stack_frame);
-        else {
+        else
           base_assert::fail("less than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
-        }
       }
       
       /// @cond
@@ -1243,28 +1242,28 @@ namespace xtd {
         else
           base_assert::fail("less than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_less(const char8_t* val1, const char8_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (ustring(val1) < ustring(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_less(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::u16string(val1) < std::u16string(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_less(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::u32string(val1) < std::u32string(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_less(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (wcscmp(val1, val2) < 0)
           succeed(message, stack_frame);
@@ -1272,7 +1271,7 @@ namespace xtd {
           base_assert::fail("less than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief Asserts that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -1341,28 +1340,28 @@ namespace xtd {
         else
           base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_less_or_equal(const char8_t* val1, const char8_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (ustring(val1) < ustring(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_less_or_equal(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::u16string(val1) < std::u16string(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_less_or_equal(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::u32string(val1) < std::u32string(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
-
+      
       static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (wcscmp(val1, val2) <= 0)
           succeed(message, stack_frame);
@@ -1370,7 +1369,7 @@ namespace xtd {
           base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
       /// @endcond
-
+      
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1706,7 +1705,7 @@ namespace xtd {
         else
           base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
       }
-
+      
       static void is_not_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (!ustring::is_empty(ustring(value)))
           succeed(message, stack_frame);

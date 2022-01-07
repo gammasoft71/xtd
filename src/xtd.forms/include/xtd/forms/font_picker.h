@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the font_picker class.
       font_picker() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -40,7 +40,7 @@ namespace xtd {
       control& color(const drawing::color& color);
       
       drawing::size default_size() const override {return {100, 25};}
-
+      
       /// @brief Gets the selected font.
       /// @return The selected font.
       drawing::font font() const override {return font_;}
@@ -58,7 +58,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<font_picker, event_handler> font_changed;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       

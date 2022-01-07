@@ -12,8 +12,8 @@ public:
     dot_matrix_display1.location({(client_size().width() - dot_matrix_display1.width()) / 2, (client_size().height() - dot_matrix_display1.height()) / 2});
     dot_matrix_display1.parent(*this);
     dot_matrix_display1.fore_color(color::red);
-    dot_matrix_display1.anchor(anchor_styles::top|anchor_styles::bottom);
-   
+    dot_matrix_display1.anchor(anchor_styles::top | anchor_styles::bottom);
+    
     timer1.interval(300ms);
     timer1.enabled(true);
     timer1.tick += [&] {

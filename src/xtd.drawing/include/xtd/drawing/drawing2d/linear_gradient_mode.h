@@ -26,7 +26,7 @@ namespace xtd {
         /// @brief Specifies a gradient from upper right to lower left.
         backward_diagonal = 3
       };
-
+      
       /// @cond
       inline std::ostream& operator<<(std::ostream& os, linear_gradient_mode value) {return os << to_string(value, {{linear_gradient_mode::horizontal, "horizontal"}, {linear_gradient_mode::vertical, "vertical"}, {linear_gradient_mode::forward_diagonal, "forward_diagonal"}, {linear_gradient_mode::backward_diagonal, "backward_diagonal"}});}
       inline std::wostream& operator<<(std::wostream& os, linear_gradient_mode value) {return os << to_string(value, {{linear_gradient_mode::horizontal, L"horizontal"}, {linear_gradient_mode::vertical, L"vertical"}, {linear_gradient_mode::forward_diagonal, L"forward_diagonal"}, {linear_gradient_mode::backward_diagonal, L"backward_diagonal"}});}

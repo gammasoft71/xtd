@@ -20,16 +20,16 @@ namespace xtd {
       /// @brief Create a new instance of assert_error class.
       /// @param message Message string associate to the error.
       explicit assert_error(const xtd::ustring& message) : message_(message) {}
-
+      
       /// @brief Create a new instance of assert_error class.
       /// @param message Message string associate to the error.
       explicit assert_error(const char* message) : message_(message) {}
-
+      
       /// @cond
       assert_error(const assert_error&) = default;
       assert_error& operator=(const assert_error&) = default;
       /// @endcond
-
+      
       /// @brief Returns a string that represents the current assert_error.
       /// @return string A string that represents the current assert_error.
       const char* what() const noexcept {return message_.c_str();}

@@ -117,14 +117,14 @@ namespace xtd {
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
       horizontal_control_layout_style(int32_t width, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), width_(static_cast<float>(width)) {}
-
+      
       /// @brief Gets the width value for a control.
       /// @return The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       std::optional<float> width() const {return width_;}
       /// @brief Sets the width value for a control.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       void width(float width) {width_ = width;}
-
+      
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
       xtd::ustring to_string() const noexcept override {return ustring::format("horizontal_control_layout_style=[expanded={}, align={}, size_type={}, width={}]", expanded(), align(), size_type(), width_.value_or(-1));}
@@ -136,7 +136,7 @@ namespace xtd {
         return os << control_layout_style.to_string();
       }
       /// @endcond
-
+      
     private:
       std::optional<float> width_;
     };

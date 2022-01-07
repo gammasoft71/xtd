@@ -39,18 +39,18 @@ void vertical_layout_panel::on_layout(const event_args& e) {
   
   size_t auto_size_control_count = count_if(control_layout_styles_.begin(), control_layout_styles_.end(), [](auto layout_style)->bool {return layout_style.first.get().visible() && layout_style.second.size_type() == size_type::auto_size;});
   int32_t auto_size_height = client_size().height() - static_cast<int32_t>(control_layout_styles().size() * padding().top()) - static_cast<int32_t>(control_layout_styles().size() * padding().bottom());
-
+  
   int32_t absolute_height = 0;
   for (auto& [control, layout_style] : control_layout_styles_)
     if (control.get().visible() && layout_style.size_type() == size_type::absolute) absolute_height += static_cast<int32_t>(layout_style.height().value_or(control.get().default_size().height()));
   auto_size_height -= absolute_height;
-
+  
   float total_percent = 0;
   for (auto& [control, layout_style] : control_layout_styles_)
     if (control.get().visible() && layout_style.size_type() == size_type::percent) total_percent += layout_style.height().value_or(0);
   int32_t percent_height = static_cast<int32_t>(auto_size_height * total_percent);
   auto_size_height -= percent_height;
-
+  
   int32_t left = 0;
   int32_t top = padding().top();
   int32_t width = 0;

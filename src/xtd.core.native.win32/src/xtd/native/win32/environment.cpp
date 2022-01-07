@@ -54,7 +54,7 @@ std::map<std::string, std::string>& environment::get_environment_variables(int32
     return envs;
   }
   
-  if(target == ENVIRONMENT_VARIABLE_TARGET_USER || target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
+  if (target == ENVIRONMENT_VARIABLE_TARGET_USER || target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
     static std::map<std::string, std::string> envs;
     envs.clear();
     //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
@@ -168,5 +168,5 @@ void environment::set_environment_variable(const std::string& name, const std::s
 
 void environment::unset_environment_variable(const std::string& name) {
   /// @todo Use SetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setenvironmentvariable
-  _putenv((name+ "=").c_str());
+  _putenv((name + "=").c_str());
 }

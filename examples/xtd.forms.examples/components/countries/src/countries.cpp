@@ -12,7 +12,7 @@ namespace examples {
       //locale::global(locale("fr_FR.utf-8"));
       application::run(main_form());
     }
-
+    
     main_form() {
       text("Countries example");
       client_size({600, 500});
@@ -20,8 +20,8 @@ namespace examples {
       countries_list_box.parent(*this);
       countries_list_box.location({10, 10});
       countries_list_box.size({200, 480});
-      countries_list_box.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::bottom);
-      for(auto country : countries::get_countries())
+      countries_list_box.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);
+      for (auto country : countries::get_countries())
         countries_list_box.items().push_back({country.name(), country});
       countries_list_box.sorted(true);
       countries_list_box.selected_value_changed += [&] {
@@ -35,7 +35,7 @@ namespace examples {
       country_panel.parent(*this);
       country_panel.location({220, 10});
       country_panel.size({370, 480});
-      country_panel.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right|anchor_styles::bottom);
+      country_panel.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       country_panel.border_style(forms::border_style::fixed_3d);
       country_panel.back_color(system_colors::window());
       country_panel.auto_scroll(true);

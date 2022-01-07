@@ -11,7 +11,7 @@ namespace unit_tests {
   class test_class_(test_file) {
   public:
     static constexpr auto test_file_name = "file.txt";
-
+    
     void test_initialize_(test_initialize) {
       if (ifstream(test_file_name).good())
         ::remove(test_file_name);
@@ -21,7 +21,7 @@ namespace unit_tests {
       if (ifstream(test_file_name).good())
         ::remove(test_file_name);
     }
-
+    
     void test_method_(append_all_lines) {
       assert::does_not_throw([] {file::append_all_lines(test_file_name, {"Line 1"});}, csf_);
       assert::does_not_throw([] {file::append_all_lines(test_file_name, {"Line 2", "Line 3"});}, csf_);
@@ -30,7 +30,7 @@ namespace unit_tests {
       string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
       assert::are_equal("Line 1\nLine 2\nLine 3\n", contents, csf_);
     }
-
+    
     void test_method_(append_all_text) {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "This is a text ");}, csf_);
       assert::does_not_throw([] {file::append_all_text(test_file_name, "to append");}, csf_);
@@ -51,7 +51,7 @@ namespace unit_tests {
       assert::are_equal("Text", contents, csf_);
       ::remove("file2.txt");
     }
-
+    
     void test_method_(copy_with_override) {
       ofstream existing_file("file2.txt");
       existing_file << "Existing";
@@ -80,7 +80,7 @@ namespace unit_tests {
       file.close();
       ::remove("file2.txt");
     }
-
+    
     void test_method_(create) {
       auto file = file::create(test_file_name);
       
@@ -97,7 +97,7 @@ namespace unit_tests {
       file.seekp(0, ios::end);
       assert::are_equal(0, file.tellp(), csf_);
     }
-
+    
     void test_method_(create_text) {
       auto file = file::create_text(test_file_name);
       
@@ -114,7 +114,7 @@ namespace unit_tests {
       file.seekp(0, ios::end);
       assert::are_equal(0, file.tellp(), csf_);
     }
-
+    
     void test_method_(exists) {
       assert::is_false(file::exists(test_file_name), csf_);
       ofstream file(test_file_name);
@@ -392,7 +392,7 @@ namespace unit_tests {
       string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
       assert::are_equal("Line 2\nLine 3\n", contents, csf_);
     }
-
+    
     void test_method_(write_all_text) {
       assert::does_not_throw([] {file::write_all_text(test_file_name, "This is a text ");}, csf_);
       assert::does_not_throw([] {file::write_all_text(test_file_name, "to write");}, csf_);

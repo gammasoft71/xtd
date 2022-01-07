@@ -19,7 +19,7 @@ namespace unit_tests {
       date.tm_sec = second;
       return date;
     }
-
+    
   public:
     void test_method_(create_date_with_default_constructor) {
       date_time d;
@@ -62,7 +62,7 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1-01-01 00:24:00", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_ticks_and_date_time_kind_loacal) {
       date_time d(duration_cast<ticks>(minutes(24)), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind(), csf_);
@@ -90,7 +90,7 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1-01-01 12:00:00", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_year_month_day) {
       date_time d(1971, 1, 5);
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
@@ -103,7 +103,7 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1971-01-05 00:00:00", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_year_month_day_hour_minute_second) {
       date_time d(1971, 1, 5, 21, 10, 30);
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
@@ -116,7 +116,7 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_unspecified) {
       date_time d(1971, 1, 5, 21, 10, 30, date_time_kind::unspecified);
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
@@ -129,7 +129,7 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_local) {
       date_time d(1971, 1, 5, 21, 10, 30, date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind(), csf_);
@@ -141,7 +141,7 @@ namespace unit_tests {
       assert::are_equal(30U, d.second(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_utc) {
       date_time d(1971, 1, 5, 21, 10, 30, date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind(), csf_);
@@ -154,7 +154,7 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond) {
       date_time d(1971, 1, 5, 21, 10, 30, 242);
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
@@ -167,7 +167,7 @@ namespace unit_tests {
       assert::are_equal(242U, d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_unspecified) {
       date_time d(1971, 1, 5, 21, 10, 30, 242, date_time_kind::unspecified);
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
@@ -180,7 +180,7 @@ namespace unit_tests {
       assert::are_equal(242U, d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_local) {
       date_time d(1971, 1, 5, 21, 10, 30, 242, date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind(), csf_);
@@ -193,7 +193,7 @@ namespace unit_tests {
       assert::are_equal(242U, d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_utc) {
       date_time d(1971, 1, 5, 21, 10, 30, 242, date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind(), csf_);
@@ -206,7 +206,7 @@ namespace unit_tests {
       assert::are_equal(242U, d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_max_value) {
       date_time d = date_time::max_value;
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
@@ -234,13 +234,13 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1-01-01 00:00:00", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(create_date_now) {
       assert::are_equal(date_time_kind::local, date_time::now().kind(), csf_);
       assert::is_not_zero(date_time::now().ticks().count(), csf_);
       assert::are_equal(system_clock::to_time_t(system_clock::now()), date_time::now().to_time_t(), csf_);
     }
-
+    
     void test_method_(create_date_utc_now) {
       assert::are_equal(date_time_kind::utc, date_time::utc_now().kind(), csf_);
       assert::is_not_zero(date_time::utc_now().ticks().count(), csf_);
@@ -274,7 +274,7 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1-01-01 12:00:00", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(from_duration_utc) {
       date_time d = date_time::from_duration(hours(12), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind(), csf_);
@@ -288,28 +288,28 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1-01-01 12:00:00", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(from_time_t) {
       struct tm tms = make_tm(1971, 1, 5, 21, 10, 30);
       date_time d = date_time::from_time_t(std::mktime(&tms));
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
       assert::are_equal(std::mktime(&tms), d.to_local_time().to_time_t(), csf_);
     }
-
+    
     void test_method_(from_time_t_local) {
       struct tm tms = make_tm(1971, 1, 5, 21, 10, 30);
       date_time d = date_time::from_time_t(std::mktime(&tms), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind(), csf_);
       assert::are_equal(std::mktime(&tms), d.to_time_t(), csf_);
     }
-
+    
     void test_method_(from_time_t_utc) {
       struct tm tms = make_tm(1971, 1, 5, 21, 10, 30);
       date_time d = date_time::from_time_t(std::mktime(&tms), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind(), csf_);
       assert::are_equal(std::mktime(&tms), d.to_local_time().to_time_t(), csf_);
     }
-
+    
     void test_method_(from_tm) {
       date_time d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30));
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
@@ -322,7 +322,7 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(from_tm_local) {
       date_time d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind(), csf_);
@@ -335,7 +335,7 @@ namespace unit_tests {
       assert::is_zero(d.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d.to_string("u"), csf_);
     }
-
+    
     void test_method_(from_tm_utc) {
       date_time d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind(), csf_);
@@ -418,7 +418,7 @@ namespace unit_tests {
       assert::are_equal(6U, d2.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:10:30", d2.to_string("u"), csf_);
     }
-
+    
     void test_method_(add_minutes) {
       date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
       date_time d2 = d1.add_minutes(6.5);
@@ -432,7 +432,7 @@ namespace unit_tests {
       assert::is_zero(d2.millisecond(), csf_);
       assert::are_equal("1971-01-05 21:17:00", d2.to_string("u"), csf_);
     }
-
+    
     void test_method_(add_months) {
       date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
       date_time d2 = d1.add_months(6);

@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Starts the computer by using the basic files, drivers and the services and drivers necessary to start networking.
       fail_safe_with_network = 2,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, boot_mode value) {return os << to_string(value, {{boot_mode::normal, "normal"}, {boot_mode::fail_safe, "fail_safe"}, {boot_mode::fail_safe_with_network, "fail_safe_with_network"}});}
     inline std::wostream& operator<<(std::wostream& os, boot_mode value) {return os << to_string(value, {{boot_mode::normal, L"normal"}, {boot_mode::fail_safe, L"fail_safe"}, {boot_mode::fail_safe_with_network, L"fail_safe_with_network"}});}

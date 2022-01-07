@@ -33,10 +33,10 @@ namespace xtd {
     /// @include stack_frame.cpp
     class core_export_ stack_frame : public xtd::object {
     public:
-
+    
       /// @name Constructors
       
-      /// @{      
+      /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class.
       stack_frame();
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that corresponds to a frame above the current stack frame.
@@ -91,7 +91,7 @@ namespace xtd {
       /// @brief Return an empty stack frame.
       /// @return Empty stack frame.
       static stack_frame empty() noexcept;
-
+      
       /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
       /// @remarks The value of this constant is std::numeric_limit<uint32_t>::max().
       static constexpr const uint32_t OFFSET_UNKNOWN = std::numeric_limits<uint32_t>::max();
@@ -188,7 +188,7 @@ namespace xtd {
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
       xtd::ustring to_string() const noexcept override;
-
+      
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_frame& stack_frame) noexcept {return os << stack_frame.to_string();}
       /// @endcond
@@ -197,7 +197,7 @@ namespace xtd {
     private:
       friend class stack_trace;
       static std::vector<stack_frame> get_stack_frames(const xtd::ustring& str, size_t skip_frames, bool need_file_info);
-
+      
       xtd::ustring file_name_;
       uint32_t file_line_number_ = 0;
       xtd::ustring method_name_;
@@ -217,7 +217,7 @@ namespace xtd {
 /// @include current_stack_frame.cpp
 /// @remarks same as #csf_
 #define current_stack_frame_ \
-xtd::diagnostics::stack_frame {__FILE__, __LINE__, __func__}
+  xtd::diagnostics::stack_frame {__FILE__, __LINE__, __func__}
 
 /// @brief Provides information about the current stack frame.
 /// @par Library
@@ -231,4 +231,4 @@ xtd::diagnostics::stack_frame {__FILE__, __LINE__, __func__}
 #define csf_ current_stack_frame_
 
 #define add_current_stack_frame_(...) \
-__VA_ARGS__ __VA_ARGS_COMMA__(__VA_ARGS__) current_stack_frame_
+  __VA_ARGS__ __VA_ARGS_COMMA__(__VA_ARGS__) current_stack_frame_

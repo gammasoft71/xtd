@@ -17,13 +17,13 @@ namespace {
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
     return static_cast<xtd::console_color>((csbi.wAttributes & 0x00F0) >> 4);
   }
-
+  
   xtd::console_color __foreground_color() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
     return static_cast<xtd::console_color>(csbi.wAttributes & 0x000F);
   }
-
+  
   BOOL WINAPI __handler_routine(DWORD ctrl_type) {
     if (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT) {
       xtd::console_cancel_event_args console_cancel(false, ctrl_type == CTRL_C_EVENT ? xtd::console_special_key::control_c : xtd::console_special_key::control_break);
@@ -32,36 +32,36 @@ namespace {
     }
     return FALSE;
   }
-
+  
   xtd::console_color backColor = __background_color();
   xtd::console_color foreColor = __foreground_color();
   bool treat_control_c_as_input = [&]()-> bool {
     SetConsoleCtrlHandler(&__handler_routine, TRUE);
     return false;
   }();
-
+  
   class terminal final {
   public:
     static terminal terminal_;
-
+    
     void force_compiler_optimizer_to_create_object() {
     }
-
+    
   private:
     terminal() = default;
     ~terminal() {
       CONSOLE_SCREEN_BUFFER_INFO csbi;
       GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-
+      
       csbi.wAttributes &= 0xFF0F;
       csbi.wAttributes |= ((int32_t)backColor_ << 4) | (int32_t)foreColor_;
       SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
     }
-
+    
     xtd::console_color backColor_ = __background_color();
     xtd::console_color foreColor_ = __foreground_color();
   };
-
+  
   terminal terminal::terminal_;
 }
 
@@ -82,7 +82,7 @@ bool __opaque_console::background_color(xtd::console_color color) {
 bool __opaque_console::beep(uint32_t frequency, uint32_t duration) {
   if (frequency < 37 || frequency > 32767)
     return false;
-  
+    
   Beep(frequency, duration);
   return true;
 }
@@ -257,7 +257,7 @@ bool __opaque_console::title(const std::string& title) {
 bool __opaque_console::treat_control_c_as_input() {
   DWORD mode = 0;
   GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode);
-  return  (mode & ENABLE_PROCESSED_INPUT) != ENABLE_PROCESSED_INPUT;
+  return (mode & ENABLE_PROCESSED_INPUT) != ENABLE_PROCESSED_INPUT;
 }
 
 void __opaque_console::treat_control_c_as_input(bool treat_control_c_as_input) {

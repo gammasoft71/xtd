@@ -42,7 +42,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-new".
       static xtd::drawing::image file_new(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "document-new", size);}
-
+      
       /// @brief File open image object.
       /// @return A xtd::drawing::image that represent "document-open".
       static xtd::drawing::image file_open() {return file_open(xtd::forms::theme_images::current_theme(), size());}
@@ -64,7 +64,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-open".
       static xtd::drawing::image file_open(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "document-open", size);}
-
+      
       /// @brief File save image object.
       /// @return A xtd::drawing::image that represent "document-save".
       static xtd::drawing::image file_save() {return file_save(xtd::forms::theme_images::current_theme(), size());}
@@ -86,7 +86,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-save".
       static xtd::drawing::image file_save(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "document-save", size);}
-
+      
       /// @brief File print image object.
       /// @return A xtd::drawing::image that represent "document-print".
       static xtd::drawing::image file_print() {return file_print(xtd::forms::theme_images::current_theme(), size());}
@@ -108,7 +108,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-print".
       static xtd::drawing::image file_print(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "document-print", size);}
-
+      
       /// @brief File print preview image object.
       /// @return A xtd::drawing::image that represent "document-print-preview".
       static xtd::drawing::image file_print_preview() {return file_print_preview(xtd::forms::theme_images::current_theme(), size());}
@@ -130,7 +130,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-print-preview".
       static xtd::drawing::image file_print_preview(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "document-print-preview", size);}
-
+      
       /// @brief File exit image object.
       /// @return A xtd::drawing::image that represent  "application-exit".
       static xtd::drawing::image file_exit() {return file_exit(xtd::forms::theme_images::current_theme(), size());}
@@ -152,7 +152,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "application-exit".
       static xtd::drawing::image file_exit(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "application-exit", size);}
-
+      
       /// @brief Edit undo image object.
       /// @return A xtd::drawing::image that represent "edit-undo".
       static xtd::drawing::image edit_undo() {return edit_undo(xtd::forms::theme_images::current_theme(), size());}
@@ -174,7 +174,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-undo".
       static xtd::drawing::image edit_undo(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-undo", size);}
-
+      
       /// @brief Edit undo image object.
       /// @return A xtd::drawing::image that represent  "edit-redo".
       static xtd::drawing::image edit_redo() {return edit_redo(xtd::forms::theme_images::current_theme(), size());}
@@ -196,7 +196,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-redo".
       static xtd::drawing::image edit_redo(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-redo", size);}
-
+      
       /// @brief Edit cut image object.
       /// @return A xtd::drawing::image that represent "edit-cut".
       static xtd::drawing::image edit_cut() {return edit_cut(xtd::forms::theme_images::current_theme(), size());}
@@ -218,7 +218,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-cut".
       static xtd::drawing::image edit_cut(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-cut", size);}
-
+      
       /// @brief Edit copy image object.
       /// @return A xtd::drawing::image that represent "edit-copy".
       static xtd::drawing::image edit_copy() {return edit_copy(xtd::forms::theme_images::current_theme(), size());}
@@ -240,7 +240,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-copy".
       static xtd::drawing::image edit_copy(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-copy", size);}
-
+      
       /// @brief Edit paste image object.
       /// @return A xtd::drawing::image that represent "edit-paste".
       static xtd::drawing::image edit_paste() {return edit_paste(xtd::forms::theme_images::current_theme(), size());}
@@ -262,7 +262,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-paste".
       static xtd::drawing::image edit_paste(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-paste", size);}
-
+      
       /// @brief View back image object.
       /// @return A xtd::drawing::image that represent "go-previous".
       static xtd::drawing::image view_back() {return view_back(xtd::forms::theme_images::current_theme(), size());}
@@ -284,7 +284,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-previous".
       static xtd::drawing::image view_back(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "go-previous", size);}
-
+      
       /// @brief View forward image object.
       /// @return A xtd::drawing::image that represent  "go-next".
       static xtd::drawing::image view_forward() {return view_forward(xtd::forms::theme_images::current_theme(), size());}
@@ -306,7 +306,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "go-next".
       static xtd::drawing::image view_forward(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "go-next", size);}
-
+      
       /// @brief Help about image object.
       /// @return A xtd::drawing::image that represent "help-about".
       static xtd::drawing::image help_about() {return help_about(xtd::forms::theme_images::current_theme(), size());}

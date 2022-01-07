@@ -28,12 +28,12 @@ namespace xtd {
       /// @remarks The close_reason and cancel parameters are used to initialize the close_reason and cancel properties, respectively.
       explicit form_closing_event_args(xtd::forms::close_reason close_reason) : close_reason_(close_reason) {};
       /// @}
-
+      
       /// @cond
       form_closing_event_args(const form_closing_event_args& form_closing_event_args) = default;
       form_closing_event_args& operator=(const form_closing_event_args& form_closing_event_args) = default;
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -41,7 +41,7 @@ namespace xtd {
       /// @return One of the xtd::forms::close_reason enumerated values.
       forms::close_reason close_reason() const {return close_reason_;}
       /// @}
-
+      
     private:
       forms::close_reason close_reason_ = forms::close_reason::none;
     };

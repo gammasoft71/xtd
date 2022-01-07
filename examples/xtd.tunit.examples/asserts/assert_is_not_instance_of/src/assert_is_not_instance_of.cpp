@@ -12,7 +12,7 @@ namespace unit_tests {
       invalid_argument except("invalid argument");
       assert::is_not_instance_of<bad_cast>(except);
     }
-
+    
     void test_method_(test_case_failed) {
       invalid_argument except("invalid argument");
       assert::is_not_instance_of<logic_error>(except);

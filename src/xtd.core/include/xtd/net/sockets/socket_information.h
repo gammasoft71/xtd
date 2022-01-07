@@ -35,7 +35,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::net::sockets::socket_information class.
         socket_information() = default;
         /// @}
-
+        
         /// @cond
         socket_information(socket_information&& socket_information) = default;
         socket_information(const socket_information& socket_information) = default;
@@ -64,7 +64,7 @@ namespace xtd {
         /// @return This current instance.
         socket_information& protocol_information(const std::vector<byte_t>& value) noexcept;
         /// @}
-
+        
       private:
         xtd::net::sockets::socket_information_options options_ = xtd::net::sockets::socket_information_options::none;
         std::vector<byte_t> protocol_information_;

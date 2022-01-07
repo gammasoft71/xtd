@@ -42,13 +42,13 @@ namespace {
     wxPen pen_;
     wxFont font_;
   };
-
+  
   wxBrush to_brush(const wx_brush& brush) {
     if (brush.is_solid_brush()) return wxBrush(brush.get_solid_brush().color);
     if (brush.is_texture_brush()) return wxBrush(brush.get_texture_brush().texture);
     throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
   }
-
+  
   wxGraphicsBrush to_graphics_brush(wxGraphicsContext& graphics, const wx_brush& brush) {
     if (brush.is_solid_brush()) return graphics.CreateBrush(wxBrush(brush.get_solid_brush().color));
     if (brush.is_linear_gradiant_brush()) {
@@ -118,7 +118,7 @@ void graphics::draw_image(intptr_t hdc, intptr_t image, int32_t x, int32_t y) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image));
-  graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(),bitmap.GetHeight());
+  graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(), bitmap.GetHeight());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -126,7 +126,7 @@ void graphics::draw_image_disabled(intptr_t hdc, intptr_t image, int32_t x, int3
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<uint8_t>(255 * brightness));
-  graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(),bitmap.GetHeight());
+  graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(), bitmap.GetHeight());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -245,7 +245,7 @@ intptr_t graphics::from_image(intptr_t image) {
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
-void graphics::measure_string(intptr_t hdc, const ustring &text, intptr_t font, int32_t &width, int32_t &height) {
+void graphics::measure_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t& width, int32_t& height) {
   if (!hdc) return;
   width = 0;
   height = 0;
@@ -265,7 +265,7 @@ void graphics::measure_string(intptr_t hdc, const ustring &text, intptr_t font, 
     }
     width = std::max(width, static_cast<int32_t>(line_width));
     height += static_cast<int32_t>(line_height);
-
+    
     // Workaround : with wxWidgets version <= 3.1.4 width size text is too small on macOS and linux.
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetFontMetrics().averageWidth / 2.3f);
   }

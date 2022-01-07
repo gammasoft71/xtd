@@ -15,7 +15,7 @@ namespace examples {
       controls().push_back(fish_animation);
       fore_color(color::cyan);
       text("Animation example");
-
+      
       fish_animation.dock(dock_style::fill);
       fish_animation.frames_per_second(60);
       fish_animation.start();
@@ -43,7 +43,7 @@ namespace examples {
     void on_fish_animation_updated(object& sender, const animation_updated_event_args& e) {
       debug::write_line(ustring::format("frame_counter={}, elapsed_milliseconds={}", e.frame_counter(), e.elapsed_milliseconds()));
     }
-
+    
     animation fish_animation;
   };
 }

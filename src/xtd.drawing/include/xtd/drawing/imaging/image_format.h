@@ -27,7 +27,7 @@ namespace xtd {
         /// @cond
         image_format() = default;
         /// @endcond
-
+        
         /// @name Constructors
         
         /// @{
@@ -98,7 +98,7 @@ namespace xtd {
         /// @brief Gets the gif memory format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format memory_gif() {return image_format(xtd::guid("b96b3cb6-0728-11d3-9d7b-0000f81ef32e"));}
-
+        
         /// @brief Gets the ico memory format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format memory_ico() {return image_format(xtd::guid("b96b3cb7-0728-11d3-9d7b-0000f81ef32e"));}
@@ -106,7 +106,7 @@ namespace xtd {
         /// @brief Gets the jpeg memory format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format memory_jpeg() {return image_format(xtd::guid("b96b3cb8-0728-11d3-9d7b-0000f81ef32e"));}
-
+        
         /// @brief Gets the ipng memory format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format memory_png() {return image_format(xtd::guid("b96b3cb9-0728-11d3-9d7b-0000f81ef32e"));}
@@ -114,7 +114,7 @@ namespace xtd {
         /// @brief Gets the tiff memory.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format memory_tiff() {return image_format(xtd::guid("b96b3cba-0728-11d3-9d7b-0000f81ef32e"));}
-
+        
         /// @brief Gets the cursor (cur) image format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format cur() {return image_format(xtd::guid("b96b3cbb-0728-11d3-9d7b-0000f81ef32e"));}
@@ -182,16 +182,16 @@ namespace xtd {
         /// @brief Gets the animated file cursor (ani) image format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format ani() {return image_format(xtd::guid("b96b3ccb-0728-11d3-9d7b-0000f81ef32e"));}
-
+        
         /// @brief Gets the iif image format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format iif() {return image_format(xtd::guid("b96b3ccc-0728-11d3-9d7b-0000f81ef32e"));}
-
+        
         /// @brief Gets the truevision targa (tga) image format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format tga() {return image_format(xtd::guid("b96b3ccd-0728-11d3-9d7b-0000f81ef32e"));}
         /// @}
-
+        
         /// @name Methods
         
         /// @{
@@ -205,7 +205,7 @@ namespace xtd {
           return os << image_format.to_string();
         }
         /// @endcond
-
+        
       private:
         xtd::guid guid_;
       };

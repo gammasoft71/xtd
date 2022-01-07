@@ -28,12 +28,12 @@ namespace xtd {
         /// @{
         const xtd::ustring& name() const {return name_;}
         void name(const xtd::ustring& name) {name_ = name;}
-
+        
         const xtd::web::css::property_map& properties() const {return properties_;}
         void properties(const xtd::web::css::property_map& properties) {properties_ = properties;}
         xtd::web::css::property_map& properties() {return properties_;}
         /// @}
-
+        
       private:
         xtd::ustring name_;
         xtd::web::css::property_map properties_;

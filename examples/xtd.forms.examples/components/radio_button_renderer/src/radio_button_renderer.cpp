@@ -13,7 +13,7 @@ namespace examples {
       client_size({500, 300});
       set_color(color::blue);
       set_color(nullptr);
-
+      
       choice_theme.parent(*this);
       choice_theme.location({10, 10});
       choice_theme.items().push_back("default theme");
@@ -48,13 +48,13 @@ namespace examples {
         radio_button_system.fore_color(fcolor.value());
         radio_button_standard.fore_color(fcolor.value());
       };
-
+      
       radio_button_system.parent(*this);
       radio_button_system.checked(true);
       radio_button_system.flat_style(xtd::forms::flat_style::system);
       radio_button_system.location({10, 170});
       radio_button_system.text("System");
-
+      
       radio_button_standard.parent(*this);
       radio_button_standard.location({100, 170});
       radio_button_standard.text("Standard");
@@ -63,16 +63,16 @@ namespace examples {
   protected:
     void on_paint(paint_event_args& e) override {
       form::on_paint(e);
-      radio_button_renderer::draw_radio_button(e.graphics(), {10, 70, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::unchecked_normal, bcolor, fcolor);
-      radio_button_renderer::draw_radio_button(e.graphics(), {124, 70, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::unchecked_hot, bcolor, fcolor);
-      radio_button_renderer::draw_radio_button(e.graphics(), {238, 70, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::unchecked_pressed, bcolor, fcolor);
-      radio_button_renderer::draw_radio_button(e.graphics(), {352, 70, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::unchecked_disabled, bcolor, fcolor);
-      radio_button_renderer::draw_radio_button(e.graphics(), {10, 110, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::checked_normal, bcolor, fcolor);
-      radio_button_renderer::draw_radio_button(e.graphics(), {124,110, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::checked_hot, bcolor, fcolor);
-      radio_button_renderer::draw_radio_button(e.graphics(), {238, 110, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::checked_pressed, bcolor, fcolor);
-      radio_button_renderer::draw_radio_button(e.graphics(), {352, 110, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::checked_disabled, bcolor, fcolor);
+      radio_button_renderer::draw_radio_button(e.graphics(), {10, 70, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::unchecked_normal, bcolor, fcolor);
+      radio_button_renderer::draw_radio_button(e.graphics(), {124, 70, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::unchecked_hot, bcolor, fcolor);
+      radio_button_renderer::draw_radio_button(e.graphics(), {238, 70, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::unchecked_pressed, bcolor, fcolor);
+      radio_button_renderer::draw_radio_button(e.graphics(), {352, 70, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::unchecked_disabled, bcolor, fcolor);
+      radio_button_renderer::draw_radio_button(e.graphics(), {10, 110, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::checked_normal, bcolor, fcolor);
+      radio_button_renderer::draw_radio_button(e.graphics(), {124, 110, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::checked_hot, bcolor, fcolor);
+      radio_button_renderer::draw_radio_button(e.graphics(), {238, 110, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::checked_pressed, bcolor, fcolor);
+      radio_button_renderer::draw_radio_button(e.graphics(), {352, 110, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::radio_button_state::checked_disabled, bcolor, fcolor);
     }
-
+    
   private:
     void set_color(const color& color) {
       cdebug << ustring::format("color = {}", color.to_string()) << endl;

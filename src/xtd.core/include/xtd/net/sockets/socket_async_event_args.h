@@ -66,7 +66,7 @@ namespace xtd {
         /// @param suppress_execution_context_flow Whether to disable the capturing and flow of execution context. Execution context flow should only be disabled if it's handled by higher layers.
         explicit socket_async_event_args(bool suppress_execution_context_flow);
         /// @}
-
+        
         /// @name Properties
         
         /// @{
@@ -79,7 +79,7 @@ namespace xtd {
         /// @return This current instance.
         /// @remarks This property can be used to provide an already created Socket that will be used for an asynchronous socket accept operation. Upon completion of the accept operation, it is the socket representing the accepted connection. If not supplied (set to empty) before calling the xtd::net::sockets::socket::acceptA_async method, a new socket will be created automatically and be accessible in the completion callback with this property.
         socket_async_event_args& accept_socket(const xtd::net::sockets::socket& value) noexcept;
-
+        
         /// @brief Gets the data buffer to use with an asynchronous socket method.
         /// @return A Byte array that represents the data buffer to use with an asynchronous socket method.
         /// @remarks This property gets the data buffer currently associated with the xtd::net::sockets::socket_async_event_args instance. To set the buffer, the xtd::net::sockets::socket_async_event_args::set_buffer method must be used.
@@ -116,7 +116,7 @@ namespace xtd {
         /// @remarks This method sets the xtd::net::sockets::socket_async_event_args::buffer property to the buffer parameter, the xtd::net::sockets::socket_async_event_args::count property to the count parameter, and the xtd::net::sockets::socket_async_event_args::offset property to the offset parameter.
         void set_buffer(const std::vector<byte_t>& buffer, size_t offset, size_t count);
         /// @}
-
+        
         /// @name Events
         
         /// @{

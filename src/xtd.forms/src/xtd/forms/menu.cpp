@@ -118,15 +118,13 @@ void menu::merge_menu(const menu& menu_src) {
 }
 
 void menu::create_menu() {
-  if (!data_->handle_) {
+  if (!data_->handle_)
     data_->handle_ = create_menu_handle();
-  }
 }
 
 void menu::destroy_menu() {
-  if (data_->handle_) {
+  if (data_->handle_)
     destroy_menu_handle(data_->handle_);
-  }
 }
 
 void menu::recreate_menu() {

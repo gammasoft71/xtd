@@ -32,20 +32,20 @@ namespace {
       //form_border_style(forms::form_border_style::fixed_dialog);
       start_position(form_start_position::center_screen);
       this->text(text);
-      form_closed += [&, on_dialog_closed]{
+      form_closed += [&, on_dialog_closed] {
         on_dialog_closed->invoke(dialog_closed_event_args(dialog_result()));
         delete on_dialog_closed;
       };
-
+      
       panel_top_.location({0, 0});
       panel_top_.size({550, 150});
       panel_top_.controls().push_back_range({picture_box_error_, label_exception_, button_details_, button_continue_, button_quit_});
-
+      
       panel_bottom_.location({0, 150});
       panel_bottom_.size({550, 200});
       panel_bottom_.hide();
       panel_bottom_.controls().push_back(text_box_details_);
-
+      
       picture_box_error_.location({10, 10});
       picture_box_error_.size({64, 64});
       picture_box_error_.image(xtd::drawing::system_images::from_name("dialog-error", xtd::drawing::size(64, 64)));
@@ -55,14 +55,14 @@ namespace {
       label_exception_.text_align(content_alignment::top_left);
       auto text_m = ustring::format("Unhandled exception occurred in your application. If you click\nContinue, the application will ignore this error and attempt to\ncontinue. If you click Quit, the application will close immediately.\n\n{}"_t, exception_ ? exception_->what() : "(Unknown exception)"_t);
       label_exception_.text(text_m);
-
+      
       button_details_.location({10, 115});
       button_details_.width(100);
       button_details_.text("Details"_t);
       button_details_.click += [&] {
         panel_bottom_.visible(!panel_bottom_.visible());
       };
-
+      
       //button_continue_.enabled(false);
       button_continue_.location({environment::os_version().is_macos_platform() ? 440 : 330, 115});
       button_continue_.width(100);
@@ -101,7 +101,7 @@ namespace {
       exception_dialog_standard dialog(exception, text, on_dialog_closed);
       return dialog.form::show_sheet_dialog(owner);
     }
-
+    
   private:
     xtd::ustring generate_report() const {
       xtd::ustring report = ustring::format("Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"_t, environment::new_line());
@@ -112,7 +112,7 @@ namespace {
       report += generate_language_report();
       return report;
     }
-
+    
     xtd::ustring generate_exception_report() const {
       xtd::ustring report = ustring::format("{0} Exception text {0}{1}"_t, xtd::ustring(14, '*'), environment::new_line());
       if (exception_ && dynamic_cast<const xtd::system_exception*>(exception_))
@@ -173,7 +173,7 @@ namespace {
       report += environment::new_line();
       return report;
     }
-
+    
     const std::exception* exception_ = nullptr;
     panel panel_top_;
     panel panel_bottom_;

@@ -9,7 +9,7 @@ namespace examples {
   public:
     form1() {
       text("Control example");
-
+      
       control1.parent(*this);
       control1.cursor(cursors::hand());
       control1.back_color(colors::spring_green());

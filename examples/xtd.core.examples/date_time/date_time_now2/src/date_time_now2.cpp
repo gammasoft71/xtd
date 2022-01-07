@@ -13,7 +13,7 @@ public:
       try {
         locale::global(locale(locale_name + ".utf-8"));
         console::write_line("{}: {}", locale_name, local_date.sprintf("%x %T"));
-      } catch(const exception& e) {
+      } catch (const exception& e) {
         console::write_line(ustring::format("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e.what()), "Exception");
       }
     }

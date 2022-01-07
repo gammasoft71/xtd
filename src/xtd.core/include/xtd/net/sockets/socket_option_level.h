@@ -37,7 +37,7 @@ namespace xtd {
         /// @brief Socket options apply only to UDP sockets.
         udp = 17,
       };
-
+      
       /// @cond
       inline std::ostream& operator<<(std::ostream& os, socket_option_level value) {return os << to_string(value, {{socket_option_level::socket, "socket"}, {socket_option_level::ip, "ip"}, {socket_option_level::ip_v6, "ip_v6"}, {socket_option_level::tcp, "tcp"}, {socket_option_level::udp, "udp"}});}
       inline std::wostream& operator<<(std::wostream& os, socket_option_level value) {return os << to_string(value, {{socket_option_level::socket, L"socket"}, {socket_option_level::ip, L"ip"}, {socket_option_level::ip_v6, L"ip_v6"}, {socket_option_level::tcp, L"tcp"}, {socket_option_level::udp, L"udp"}});}

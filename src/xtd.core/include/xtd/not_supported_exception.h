@@ -73,7 +73,7 @@ namespace xtd {
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     explicit not_supported_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
     /// @}
-
+    
     /// @cond
     not_supported_exception(const not_supported_exception&) = default;
     not_supported_exception& operator=(const not_supported_exception&) = default;

@@ -31,14 +31,14 @@ namespace xtd {
       theme(const xtd::ustring& name, xtd::forms::theme_style theme_style, const xtd::forms::theme_colors& theme_colors, const xtd::forms::theme_images& theme_images) : theme_base(name, theme_style), theme_colors_(theme_colors), theme_images_(theme_images) {}
       theme(const xtd::ustring& name, xtd::forms::theme_style theme_style, const xtd::forms::theme_colors& theme_colors, const xtd::forms::theme_images& theme_images, const xtd::forms::theme_renderers& theme_renderers) : theme_base(name, theme_style), theme_colors_(theme_colors), theme_images_(theme_images), theme_renderers_(theme_renderers) {}
       /// @}
-
+      
       /// @cond
       theme(const theme&) = default;
       theme& operator=(const theme&) = default;
       bool operator==(const theme& value) const {return theme_base::operator==(value);}
       bool operator!=(const theme& value) const {return !operator==(value);}
       /// @endcond
-
+      
       /// @name properties
       
       /// @{
@@ -78,9 +78,9 @@ namespace xtd {
         theme_renderers::current_theme(current_theme_.theme_renderers_);
       }
       static void current_theme(const xtd::ustring& name) {current_theme(theme_from_name(name));}
-
+      
       static theme default_theme() {return theme_from_name(default_theme_name());}
-
+      
       static theme theme_from_name(const xtd::ustring& theme_name);
       /// @}
       

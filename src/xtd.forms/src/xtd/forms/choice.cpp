@@ -14,22 +14,22 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 choice::choice() {
-  items_.item_added += [&](size_t pos, const item& item) {
+  items_.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::choice::insert_item(handle(), pos, item.value());
     size_t selected_index = npos;
     if (this->selected_index() != npos && this->selected_index() < items_.size()) selected_index = this->selected_index();
     this->selected_index(selected_index);
   };
-
-  items_.item_removed += [&](size_t pos, const item& item) {
+  
+  items_.item_removed += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::choice::delete_item(handle(), pos);
-
+    
     size_t selected_index = npos;
     if (this->selected_index() != npos && this->selected_index() < items_.size()) selected_index = this->selected_index();
     this->selected_index(selected_index);
   };
   
-  items_.item_updated += [&](size_t pos, const item& item) {
+  items_.item_updated += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::choice::update_item(handle(), pos, item.value());
     size_t selected_index = npos;
     if (this->selected_index() != npos && this->selected_index() < items_.size()) selected_index = this->selected_index();
@@ -48,7 +48,7 @@ list_control& choice::selected_index(size_t selected_index) {
     //this->selected_item(selected_item);
     selected_item_ = selected_item;
     on_selected_value_changed(event_args::empty);
-
+    
     on_selected_index_changed(event_args::empty);
   }
   return *this;
@@ -87,12 +87,12 @@ void choice::end_update() {
 
 forms::create_params choice::create_params() const {
   forms::create_params create_params = list_control::create_params();
-
+  
   create_params.class_name("choice");
-
+  
   // Do not use native control sort
   //if (sorted_) create_params.style(create_params.style() | CBS_SORT);
-    
+  
   return create_params;
 }
 

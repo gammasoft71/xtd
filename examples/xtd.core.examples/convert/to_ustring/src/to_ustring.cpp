@@ -12,7 +12,7 @@ int main() {
   console::write_line("convert::to_ustring(value)   = {}", convert::to_ustring(value));
   console::write_line("ustring::format(\"{{}}\", value) = {}", ustring::format("{}", value));
   console::write_line();
-
+  
   console::write_line("Convert float to ustring :");
   console::write_line("--------------------------");
   auto float_value = 42.5f;
@@ -21,7 +21,7 @@ int main() {
   console::write_line("convert::to_ustring(float_value)   = {}", convert::to_ustring(float_value));
   console::write_line("ustring::format(\"{{}}\", float_value) = {}", ustring::format("{}", float_value));
   console::write_line();
-
+  
   console::write_line("Convert any to ustring :");
   console::write_line("------------------------");
   auto any_value = make_any<int>(42);
@@ -30,7 +30,7 @@ int main() {
   console::write_line("convert::to_ustring(any_value)   = {}", convert::to_ustring(any_value));
   console::write_line("ustring::format(\"{{}}\", any_value) = {}", ustring::format("{}", any_value));
   console::write_line();
-
+  
   console::write_line("Convert const char16_t to ustring :");
   console::write_line("-----------------------------------");
   auto const_char16_t_value = u"A string value";
@@ -40,7 +40,7 @@ int main() {
   console::write_line("convert_string::to_ustring(const_char16_t_value) = {}", convert_string::to_ustring(const_char16_t_value));
   console::write_line("ustring::format(\"{{}}\", const_char16_t_value)      = {}", ustring::format("{}", const_char16_t_value));
   console::write_line();
-
+  
   console::write_line("Convert wstring to ustring :");
   console::write_line("----------------------------");
   wstring wstring_value = L"A string value";

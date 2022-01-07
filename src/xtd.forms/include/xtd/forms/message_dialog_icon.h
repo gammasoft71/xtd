@@ -35,7 +35,7 @@ namespace xtd {
       /// @brief The message box contains a symbol consisting of a lowercase letter i in a circle.
       information = 0x00000040L,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, message_dialog_icon value) {return os << to_string(value, {{message_dialog_icon::none, "none"}, {message_dialog_icon::hand, "hand"}, {message_dialog_icon::stop, "stop"}, {message_dialog_icon::error, "error"}, {message_dialog_icon::question, "question"}, {message_dialog_icon::exclamation, "exclamation"}, {message_dialog_icon::warning, "warning"}, {message_dialog_icon::asterisk, "asterisk"}, {message_dialog_icon::information, "information"}});}
     inline std::wostream& operator<<(std::wostream& os, message_dialog_icon value) {return os << to_string(value, {{message_dialog_icon::none, L"none"}, {message_dialog_icon::hand, L"hand"}, {message_dialog_icon::stop, L"stop"}, {message_dialog_icon::error, L"error"}, {message_dialog_icon::question, L"question"}, {message_dialog_icon::exclamation, L"exclamation"}, {message_dialog_icon::warning, L"warning"}, {message_dialog_icon::asterisk, L"asterisk"}, {message_dialog_icon::information, L"information"}});}

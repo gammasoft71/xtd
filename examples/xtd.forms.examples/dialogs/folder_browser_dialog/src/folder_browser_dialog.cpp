@@ -9,7 +9,7 @@ public:
   form1() {
     text("Folder browser dialog example");
     controls().push_back(button1);
-
+    
     button1.location({10, 10});
     button1.text("Folder...");
     button1.click += [&] {
@@ -20,7 +20,7 @@ public:
         label1.text(ustring::format("Path = {}", selected_path));
       }
     };
-
+    
     label1.parent(*this);
     label1.text("Path = ");
     label1.auto_size(true);

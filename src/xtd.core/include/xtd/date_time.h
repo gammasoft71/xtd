@@ -195,9 +195,9 @@ namespace xtd {
     date_time& operator=(const date_time&) = default;
     /// @endcond
     
-
+    
     /// @name Properties
-
+    
     /// @{
     /// @brief Gets the date component of this instance.
     /// @return A new object with the same date as this instance, and the time value set to 12:00:00 midnight (00:00:00).
@@ -455,7 +455,7 @@ namespace xtd {
     static bool is_leap_year(uint32_t year);
     xtd::ustring parse() const;
     static date_time specify_kind(date_time value, date_time_kind kind);
-
+    
     /// @brief Returns a xtd::ustring that represents the current xtd::date_time.
     /// @param format Format-control String.
     /// @return A xtd::ustring that represents the current xtdd::date_time.
@@ -563,7 +563,7 @@ namespace xtd {
     xtd::ticks utc_offset() const;
     void get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year,  int32_t& day_of_week) const;
     void set_date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
-
+    
     xtd::ticks value_ {0};
     date_time_kind kind_ {date_time_kind::unspecified};
   };
@@ -571,7 +571,7 @@ namespace xtd {
   /// @cond
   std::ostream& operator <<(std::ostream& os, const date_time& value) noexcept;
   /// @endcond
-
+  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd

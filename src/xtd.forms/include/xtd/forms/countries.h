@@ -770,7 +770,7 @@ namespace xtd {
       /// @image html zw.png
       static const country zimbabwe();
       /// @}
-
+      
       /// @name Methods
       
       /// @{

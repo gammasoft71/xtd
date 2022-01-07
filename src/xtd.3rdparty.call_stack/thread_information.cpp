@@ -13,8 +13,8 @@
 #include "ThreadInformation.h"
 
 namespace stacktrace {
-  ThreadInformation ThreadInformation::GetThreadInformation() { 
-    return ThreadInformation(GetCurrentThreadId()); 
+  ThreadInformation ThreadInformation::GetThreadInformation() {
+    return ThreadInformation(GetCurrentThreadId());
   }
 }
 

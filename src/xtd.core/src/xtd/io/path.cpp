@@ -79,7 +79,7 @@ ustring path::get_full_path(const ustring& path) {
   vector<ustring> directories;
   for (sregex_token_iterator it(path_str.begin(), path_str.end(), r, -1), end; it != end; ++it)
     if (*it != "") directories.push_back(it->str());
-  
+    
   ustring full_path;
   
   if (path[0] != directory_separator_char() && path[0] != alt_directory_separator_char()) full_path = environment::current_directory();

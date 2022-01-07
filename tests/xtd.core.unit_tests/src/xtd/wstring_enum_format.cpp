@@ -19,13 +19,13 @@ enum day {
 
 std::wostream& operator<<(std::wostream& os, day d) {
   switch (d) {
-    case sunday: os << L"sunday"; break;
-    case monday: os << L"monday"; break;
-    case tuesday: os << L"tuesday"; break;
-    case wednesday: os << L"wednesday"; break;
-    case thursday: os << L"thursday"; break;
-    case friday: os << L"friday"; break;
-    case saturday: os << L"saturday"; break;
+  case sunday: os << L"sunday"; break;
+  case monday: os << L"monday"; break;
+  case tuesday: os << L"tuesday"; break;
+  case wednesday: os << L"wednesday"; break;
+  case thursday: os << L"thursday"; break;
+  case friday: os << L"friday"; break;
+  case saturday: os << L"saturday"; break;
   }
   return os;
 }
@@ -66,7 +66,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_tuesday_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([]{xtd::ustring::format(L"{0:e}", tuesday);}, csf_);
+      assert::throws<xtd::format_exception>([] {xtd::ustring::format(L"{0:e}", tuesday);}, csf_);
     }
   };
 }

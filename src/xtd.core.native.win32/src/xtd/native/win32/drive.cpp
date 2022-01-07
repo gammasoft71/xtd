@@ -35,14 +35,14 @@ std::vector<std::string> drive::get_drives() {
 
 bool drive::get_volume_information(const std::string& root_path_name, std::string& volume_name, std::string& file_system_name) {
   DWORD file_system_flags = 0;
-  wchar_t volume[MAX_PATH+1];
-  wchar_t file_system[MAX_PATH+1];
+  wchar_t volume[MAX_PATH + 1];
+  wchar_t file_system[MAX_PATH + 1];
   if (GetVolumeInformation(win32::strings::to_wstring(root_path_name).c_str(), volume, MAX_PATH, nullptr, nullptr, &file_system_flags, file_system, MAX_PATH) == FALSE)
     return false;
-
+    
   volume_name = win32::strings::to_string(volume);
   file_system_name = win32::strings::to_string(file_system);
-
+  
   return true;
 }
 

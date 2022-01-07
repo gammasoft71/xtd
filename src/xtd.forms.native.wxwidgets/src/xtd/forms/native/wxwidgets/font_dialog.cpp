@@ -17,8 +17,7 @@ namespace {
       allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
       refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
       UnhookWindowsHookEx(handle_hook);
-    }
-    else
+    } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
     return 0;
   }
@@ -31,9 +30,9 @@ bool font_dialog::run_dialog(intptr_t hwnd, drawing::font& font, drawing::color&
   font_data.SetInitialFont(*reinterpret_cast<wxFont*>(font.handle()));
   font_data.SetRange(static_cast<int32_t>(min_size), static_cast<int32_t>(max_size));
   font_data.SetShowHelp((options & CF_SHOWHELP) == CF_SHOWHELP);
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
-#endif
+  #endif
   wxFontDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), font_data);
   dialog.SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
   if (dialog.ShowModal() != wxID_OK) return false;

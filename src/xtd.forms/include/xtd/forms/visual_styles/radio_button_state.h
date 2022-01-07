@@ -35,7 +35,7 @@ namespace xtd {
         /// @brief The radio button is checked and disabled.
         checked_disabled,
       };
-
+      
       /// @cond
       inline std::ostream& operator<<(std::ostream& os, radio_button_state value) {return os << to_string(value, {{radio_button_state::unchecked_normal, "unchecked_normal"}, {radio_button_state::unchecked_hot, "unchecked_hot"}, {radio_button_state::unchecked_pressed, "unchecked_pressed"}, {radio_button_state::unchecked_disabled, "unchecked_disabled"}, {radio_button_state::checked_normal, "checked_normal"}, {radio_button_state::checked_hot, "checked_hot"}, {radio_button_state::checked_pressed, "checked_pressed"}, {radio_button_state::checked_disabled, "checked_disabled"}});}
       inline std::wostream& operator<<(std::wostream& os, radio_button_state value) {return os << to_string(value, {{radio_button_state::unchecked_normal, L"unchecked_normal"}, {radio_button_state::unchecked_hot, L"unchecked_hot"}, {radio_button_state::unchecked_pressed, L"unchecked_pressed"}, {radio_button_state::unchecked_disabled, L"unchecked_disabled"}, {radio_button_state::checked_normal, L"checked_normal"}, {radio_button_state::checked_hot, L"checked_hot"}, {radio_button_state::checked_pressed, L"checked_pressed"}, {radio_button_state::checked_disabled, L"checked_disabled"}});}

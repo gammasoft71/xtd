@@ -61,7 +61,7 @@ namespace xtd {
       /// @brief Represents a translator collection.
       using translator_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       /// @}
-
+      
       /// @name Constructors
       
       /// @{
@@ -85,7 +85,7 @@ namespace xtd {
         data_->artists = artists;
         return *this;
       }
-
+      
       /// @brief Gets the authors array.
       /// @return The author array.
       const author_collection& authors() const {return data_->authors;}
@@ -110,7 +110,7 @@ namespace xtd {
         data_->copyright = copyright;
         return *this;
       }
-
+      
       /// @brief Gets the product description.
       /// @return The product description.
       xtd::ustring description() const {return data_->description;}
@@ -121,7 +121,7 @@ namespace xtd {
         data_->description = description;
         return *this;
       }
-
+      
       /// @brief Gets the documentation writers array.
       /// @return The documentation writers array.
       const documenter_collection& documenters() const {return data_->documenters;}
@@ -135,7 +135,7 @@ namespace xtd {
         data_->documenters = documenters;
         return *this;
       }
-
+      
       /// @brief Gets the dialog style.
       /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
       xtd::forms::dialog_style dialog_style() const {return data_->dialog_style;}
@@ -146,7 +146,7 @@ namespace xtd {
         data_->dialog_style = dialog_style;
         return *this;
       }
-
+      
       /// @brief Gets the product icon.
       /// @return The product icon.
       xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon));}
@@ -171,7 +171,7 @@ namespace xtd {
         data_->icon = bitmap;
         return *this;
       }
-
+      
       /// @brief Gets the product license.
       /// @return The product license.
       xtd::ustring license() const {return data_->license;}
@@ -182,7 +182,7 @@ namespace xtd {
         data_->license = license;
         return *this;
       }
-
+      
       /// @brief Gets the product long version.
       /// @return The product long version.
       xtd::ustring long_version() const {return data_->long_version;}
@@ -193,7 +193,7 @@ namespace xtd {
         data_->long_version = long_version;
         return *this;
       }
-
+      
       /// @brief Gets the product name.
       /// @return The product name.
       xtd::ustring name() const {return data_->name;}
@@ -218,7 +218,7 @@ namespace xtd {
         data_->translators = translators;
         return *this;
       }
-
+      
       /// @brief Gets the product version.
       /// @return The product version.
       xtd::ustring version() const {return data_->version;}
@@ -252,7 +252,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -264,7 +264,7 @@ namespace xtd {
       /// @brief Runs about dialog box.
       void show(const iwin32_window& owner);
       /// @}
-
+      
     private:
       struct data {
         xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;

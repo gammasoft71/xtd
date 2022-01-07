@@ -15,7 +15,7 @@ namespace xtd {
     class directory;
     class file_info;
     /// @endcond
-
+    
     /// @brief Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
     /// @code
     /// class core_export_ directory_info final : public xtd::io::file_system_info
@@ -146,7 +146,7 @@ namespace xtd {
         struct data;
         std::shared_ptr<data> data_;
       };
-
+      
       /// @brief Represent file iterator used by xtd::io::directory_info.
       class file_iterator : public std::iterator<std::input_iterator_tag, xtd::io::file_info> {
         explicit file_iterator(const std::string& path, const std::string& pattern);
@@ -169,7 +169,7 @@ namespace xtd {
         struct data;
         std::shared_ptr<data> data_;
       };
-
+      
       /// @brief Represent file system iterator used by xtd::io::directory_info.
       class file_system_info_iterator : public std::iterator<std::input_iterator_tag, std::shared_ptr<xtd::io::file_system_info>> {
         explicit file_system_info_iterator(const std::string& path, const std::string& pattern);
@@ -192,10 +192,10 @@ namespace xtd {
         struct data;
         std::shared_ptr<data> data_;
       };
-
+      
       /// @name Fields
       
-      /// @{      
+      /// @{
       /// @brief Represents the uninitialized xtd::io::directory_info object. This field is constant.
       static const directory_info empty;
       /// @}
@@ -293,7 +293,7 @@ namespace xtd {
       /// @endcode
       /// @remarks The xtd::io::directory_info::exists property returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
       bool exists() const override;
-
+      
       /// @brief Gets the name of this xtd::io::directory_info instance.
       /// @return The directory name.
       /// @par Example
@@ -402,7 +402,7 @@ namespace xtd {
       /// @}
       
       /// @name Methods
-
+      
       /// @{
       /// @brief Creates a directory.
       /// @exception xtd::io::io_exception The directory cannot be created.
@@ -503,7 +503,7 @@ namespace xtd {
       /// The following example enumerates the subdirectories under the "My Documents" directory.
       /// @code
       /// #include <xtd/xtd>
-      /// 
+      ///
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -768,7 +768,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
       xtd::io::directory_info::file_system_info_iterator enumerate_file_system_infos(const xtd::ustring& search_pattern) const;
-
+      
       /// @brief Returns the subdirectories of the current directory.
       /// @return An array of xtd::io::directory_info objects.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.

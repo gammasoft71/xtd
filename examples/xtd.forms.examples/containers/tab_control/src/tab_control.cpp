@@ -20,7 +20,7 @@ public:
     label1.parent(tab_page1);
     label1.text("label1");
     label1.text_align(xtd::forms::content_alignment::top_left);
-
+    
     tab_page2.parent(tab_control1);
     tab_page2.text("Tab page 2");
     
@@ -28,7 +28,7 @@ public:
     label2.parent(tab_page2);
     label2.text_align(xtd::forms::content_alignment::middle_center);
     label2.text("label2");
-
+    
     tab_page3.parent(tab_control1);
     tab_page3.text("Tab page 3");
     

@@ -15,14 +15,14 @@ public:
     track_bar1.value_changed += [&] {
       if (muted && track_bar1.value()) muted = false;
       if (!muted || track_bar1.value()) volume = track_bar1.value();
-
+      
       if (track_bar1.value() == 0) button1.image(button_images::from_name("audio-volume-muted", xtd::drawing::size {64, 64}));
       else if (track_bar1.value() < 30) button1.image(button_images::from_name("audio-volume-low", xtd::drawing::size {64, 64}));
       else if (track_bar1.value() < 80) button1.image(button_images::from_name("audio-volume-medium", xtd::drawing::size {64, 64}));
       else button1.image(button_images::from_name("audio-volume-high", xtd::drawing::size {64, 64}));
-     };
+    };
     track_bar1.value(60);
-
+    
     button1.bounds({280, 10, 80, 80});
     button1.click += [&] {
       muted = !muted;
@@ -33,7 +33,7 @@ public:
   static void main() {
     application::run(form1());
   }
-
+  
 private:
   bool muted = false;
   int volume = 0;

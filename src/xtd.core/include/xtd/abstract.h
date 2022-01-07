@@ -25,7 +25,7 @@ namespace xtd {
     /// @cond
     ~abstract_object() override = 0;
     /// @endcond
-
+    
   protected:
     /// @name Protected Constructors
     
@@ -34,7 +34,7 @@ namespace xtd {
     abstract_object() = default;
     /// @}
   };
-
+  
   /// @brief This keyword is used to represents an abstract class.
   /// @par Namespace
   /// xtd
@@ -49,9 +49,9 @@ namespace xtd {
   ///   virtual std::string to_string() = 0;
   /// };
   /// @endcode
-  #define abstract_ \
-    : public abstract_object
-
+#define abstract_ \
+: public abstract_object
+  
   /// @brief This keyword is used to represents an abstract class.
   /// @par Namespace
   /// xtd
@@ -66,6 +66,6 @@ namespace xtd {
   ///   virtual std::string to_string() = 0;
   /// };
   /// @endcode
-  #define abstract_object_ \
-    : xtd::abstract_object
+#define abstract_object_ \
+: xtd::abstract_object
 }

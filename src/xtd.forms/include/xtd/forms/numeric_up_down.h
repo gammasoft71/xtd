@@ -29,7 +29,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the numeric_up_down class.
       numeric_up_down() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -42,7 +42,7 @@ namespace xtd {
       /// @return Current numeric_up_down.
       /// @remarks When the decimal_places property is set, the update_edit_text method is called to update the spin box's display to the new format.
       virtual numeric_up_down& decimal_place(int32_t value);
-
+      
       /// @brief Gets the value to increment or decrement the spin box (also known as an up-down control) when the up or down buttons are clicked.
       /// @return The value to increment or decrement the Value property when the up or down buttons are clicked on the spin box. The default value is 1.
       /// @remarks Clicking the up button causes the value property to increment by the amount specified by the increment property and approach the maximum property. Clicking the down button causes the value property to be decremented by the amount specified by the increment property and approach the minimum property.
@@ -72,7 +72,7 @@ namespace xtd {
       /// @return Current numeric_up_down.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
       virtual numeric_up_down& minimum(double value);
-
+      
       /// @brief Gets the value assigned to the spin box (also known as an up-down control).
       /// @return The numeric value of the numeric_up_down control.
       /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
@@ -109,7 +109,7 @@ namespace xtd {
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -130,18 +130,18 @@ namespace xtd {
       /// @brief Overrides control::on_handle_created(const event_args&)
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
-
+      
       /// @brief Raises the numeric_up_down::value_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
-
+      
       void wnd_proc(message& message) override;
       /// @}
-
+      
       /// @cond
       void wm_command(message& message);
       /// @endcond
-
+      
     private:
       int32_t decimal_place_ = 0;
       double increment_ = 1.0;

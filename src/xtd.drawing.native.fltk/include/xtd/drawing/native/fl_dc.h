@@ -30,13 +30,13 @@ namespace xtd::drawing::native {
     
   public:
     virtual ~fl_dc() {}
-
+    
     int32_t ascent(Fl_Font font, Fl_Fontsize font_size) {
       context c;
       fl_font(font, font_size);
       return font_size - fl_descent();
     }
-
+    
     void clear(Fl_Color color) {
       fl_draw_box(Fl_Boxtype::FL_FLAT_BOX, x_, y_, w_, h_, color);
     }
@@ -46,14 +46,14 @@ namespace xtd::drawing::native {
       fl_font(font, font_size);
       return fl_descent();
     }
-
+    
     void draw_arc(Fl_Color color, int thick, int style, int32_t x, int32_t y, int32_t w, int32_t h, int32_t start_angle, int32_t sweep_angle) {
       context c;
       fl_color(color);
       fl_line_style(style, thick);
       fl_arc(x_ + x, y_ + y, w, h, start_angle, start_angle + sweep_angle);
     }
-
+    
     void draw_bezier(Fl_Color color, int thick, int style, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4) {
       context c;
       fl_color(color);
@@ -81,7 +81,7 @@ namespace xtd::drawing::native {
       fl_line_style(style, thick);
       fl_rect(x_ + x, y_ + y, w, h);
     }
-
+    
     void draw_string(const std::string& text, int32_t x, int32_t y, Fl_Font font, Fl_Fontsize font_size, Fl_Color color) {
       context c;
       fl_color(color);
@@ -103,7 +103,7 @@ namespace xtd::drawing::native {
       fl_color(color);
       fl_pie(x_ + x, y_ + y, w, h, 0, 360);
     }
-
+    
     void fill_pie(Fl_Color color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t start_angle, int32_t sweep_angle) {
       context c;
       fl_color(color);
@@ -119,14 +119,14 @@ namespace xtd::drawing::native {
       fl_font(font, font_size);
       fl_measure(text.c_str(), width, height);
     }
-
+    
   protected:
     int32_t x_ = 0;
     int32_t y_ = 0;
     int32_t w_ = 0;
     int32_t h_ = 0;
   };
-
+  
   class fl_paint_dc : public fl_dc {
   public:
     explicit fl_paint_dc(Fl_Widget& control) : control_(&control) {
@@ -143,19 +143,19 @@ namespace xtd::drawing::native {
     ~fl_paint_dc() {
       fl_pop_clip();
     }
-
+    
   protected:
     Fl_Widget* control_ = nullptr;
     Fl_Window* top_window_ = nullptr;
   };
-
+  
   class fl_client_dc : public fl_paint_dc {
   public:
     explicit fl_client_dc(Fl_Widget& control) : fl_paint_dc(control) {
       top_window_->make_current();
     }
   };
-
+  
   class fl_screen_dc : public fl_dc {
   public:
     fl_screen_dc() {
@@ -168,6 +168,6 @@ namespace xtd::drawing::native {
     }
     
   protected:
-    Fl_Surface_Device* current_device_ =nullptr;
+    Fl_Surface_Device* current_device_ = nullptr;
   };
 }

@@ -11,7 +11,7 @@ namespace stacktrace {
     static ThreadInformation GetThreadInformation();
     int GetId() const { return id; }
     virtual bool Equals(const ThreadInformation& ti) const { return &ti != NULL && id == ti.id; }
-
+    
   private:
     explicit ThreadInformation(int id) : id(id) {}
     int id;

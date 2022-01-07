@@ -13,7 +13,7 @@ namespace unit_tests {
     
     bool operator==(const class_without_insert_stream_operator& c) const noexcept {return value_ == c.value_;}
     bool operator!=(const class_without_insert_stream_operator& c) const noexcept {return !operator==(c);}
-
+    
   private:
     int value_ = 0;
   };
@@ -24,9 +24,9 @@ namespace unit_tests {
       class_without_insert_stream_operator c1(42);
       class_without_insert_stream_operator c2(42);
       assert::are_equal(c1, c2);
-
+      
     }
-
+    
     void test_method_(test_case_failed) {
       class_without_insert_stream_operator c1(42);
       class_without_insert_stream_operator c2(24);

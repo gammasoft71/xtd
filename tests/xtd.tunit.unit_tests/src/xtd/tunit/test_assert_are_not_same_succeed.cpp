@@ -18,8 +18,8 @@ void test_(test_assert_are_not_same_succeed, test_output) {
   std::stringstream ss;
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
-                "  SUCCEED test_assert_are_not_same_succeed.test_case_succeed\n"
-                "End 1 test from 1 test case ran.\n", ss.str());
+    "  SUCCEED test_assert_are_not_same_succeed.test_case_succeed\n"
+    "End 1 test from 1 test case ran.\n", ss.str());
 }
 
 void test_(test_assert_are_not_same_succeed, test_result) {

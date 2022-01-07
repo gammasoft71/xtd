@@ -61,7 +61,7 @@ namespace xtd {
       /// @brief Initialises a new instance of tool_bar class.
       tool_bar();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -81,10 +81,10 @@ namespace xtd {
       /// @return Current panel instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual tool_bar& border_style(forms::border_style border_style);
-
+      
       dock_style dock() const override;
       control& dock(dock_style dock) override;
-
+      
       const xtd::forms::image_list& image_list() const;
       xtd::forms::image_list& image_list();
       tool_bar& image_list(const xtd::forms::image_list& value);
@@ -99,7 +99,7 @@ namespace xtd {
       
     protected:
       friend form;
-
+      
       /// @name Protetced properties
       
       /// @{
@@ -110,19 +110,19 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const override;
-      void on_handle_created(const event_args &e) override;
-      void on_handle_destroyed(const event_args &e) override;
+      void on_handle_created(const event_args& e) override;
+      void on_handle_destroyed(const event_args& e) override;
       void on_paint(xtd::forms::paint_event_args& e) override;
       void wnd_proc(message& message) override;
       /// @}
-
+      
     private:
       void fill();
       
       void on_item_added(size_t pos, tool_bar_item_ref item);
       void on_item_updated(size_t pos, tool_bar_item_ref item);
       void on_item_removed(size_t pos, tool_bar_item_ref item);
-
+      
       void wm_click(const message& message);
       
       struct data {

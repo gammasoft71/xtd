@@ -12,16 +12,16 @@ image_list image_list::empty;
 
 image_list::image_list() {
   data_->handle_ = native::image_list::create(data_->image_size_);
-  data_->images_.item_added += [&](size_t pos, drawing::image& item) {
+  data_->images_.item_added += [&](size_t pos, drawing::image & item) {
     if (data_->image_size_ != item.size()) item = drawing::bitmap(item, data_->image_size_);
     native::image_list::insert_item(data_->handle_, pos, item);
   };
   
-  data_->images_.item_removed += [&](size_t pos, const drawing::image& item) {
+  data_->images_.item_removed += [&](size_t pos, const drawing::image & item) {
     native::image_list::delete_item(data_->handle_, pos);
   };
   
-  data_->images_.item_updated += [&](size_t pos, drawing::image& item) {
+  data_->images_.item_updated += [&](size_t pos, drawing::image & item) {
     if (data_->image_size_ != item.size()) item = drawing::bitmap(item, data_->image_size_);
     native::image_list::update_item(data_->handle_, pos, item);
   };

@@ -15,7 +15,7 @@ namespace xtd {
     /// @cond
     class system_icons;
     /// @endcond
-
+    
     /// @brief Each property of the xtd::drawing::system_images class is an xtd::drawing::image object for Windows system-wide images. This class cannot be inherited.
     /// @par Namespace
     /// xtd::drawing
@@ -33,14 +33,14 @@ namespace xtd {
       static xtd::drawing::image image_loading(const xtd::drawing::size& size) {return system_images::from_name("image-loading", size);}
       static xtd::drawing::image image_missing() {return image_missing(default_size());}
       static xtd::drawing::image image_missing(const xtd::drawing::size& size) {return from_name("image-missing", size);}
-
+      
       static std::vector<xtd::ustring> contexts();
       static std::map<xtd::ustring, std::vector<xtd::ustring>> context_names();
       static std::vector<xtd::ustring> names();
       static std::vector<xtd::ustring> names(const xtd::ustring& context) {return context_names()[context];}
       static std::vector<xtd::drawing::size> sizes();
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -58,4 +58,4 @@ namespace xtd {
     };
   }
 }
-  
+

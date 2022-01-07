@@ -22,7 +22,7 @@ namespace unit_tests {
       assert::are_equal_("xtd::arithmetic_exception : Overflow or underflow in the arithmetic operation.", e.to_string());
       assert::are_equal_("Overflow or underflow in the arithmetic operation.", e.what());
     }
-
+    
     void test_method_(default_creator_with_current_stack_frame) {
       auto info = current_stack_frame_;
       arithmetic_exception e(info);
@@ -72,7 +72,7 @@ namespace unit_tests {
       assert::are_equal_("xtd::arithmetic_exception\n" + info.to_string(), e.to_string());
       assert::are_equal_("xtd::arithmetic_exception", e.what());
     }
-
+    
     void test_method_(creator_with_message) {
       arithmetic_exception e("Test excpetion message.");
       assert::are_equal_(0, e.error_code().value());
@@ -88,7 +88,7 @@ namespace unit_tests {
       assert::are_equal_("xtd::arithmetic_exception : Test excpetion message.", e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
-
+    
     void test_method_(creator_with_message_and_stack_frame) {
       auto info = current_stack_frame_;
       arithmetic_exception e("Test excpetion message.", info);
@@ -105,7 +105,7 @@ namespace unit_tests {
       assert::are_equal_("xtd::arithmetic_exception : Test excpetion message.\n" + info.to_string(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
-
+    
     void test_method_(creator_with_message_error_and_stack_frame) {
       auto info = current_stack_frame_;
       arithmetic_exception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), info);
@@ -122,7 +122,7 @@ namespace unit_tests {
       assert::are_equal_("xtd::arithmetic_exception : Test excpetion message.\n" + info.to_string(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
-
+    
     void test_method_(creator_with_message_help_link_and_stack_frame) {
       auto info = current_stack_frame_;
       arithmetic_exception e("Test excpetion message.", "https://codedocs.xyz/gammasoft71/xtd_core/", info);
@@ -139,7 +139,7 @@ namespace unit_tests {
       assert::are_equal_("xtd::arithmetic_exception : Test excpetion message.\n" + info.to_string(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
-
+    
     void test_method_(creator_with_message_error_help_link_and_stack_frame) {
       auto info = current_stack_frame_;
       arithmetic_exception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
@@ -156,7 +156,7 @@ namespace unit_tests {
       assert::are_equal_("xtd::arithmetic_exception : Test excpetion message.\n" + info.to_string(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
-
+    
     void test_method_(creator_with_message_and_inner_exception) {
       system_exception inner_exception;
       arithmetic_exception e("Test excpetion message.", inner_exception);
@@ -269,7 +269,7 @@ namespace unit_tests {
       assert::are_equal_("xtd::arithmetic_exception : Test excpetion message.\n" + info.to_string(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
-
+    
     void test_method_(copy_operator) {
       system_exception inner_exception;
       auto info = current_stack_frame_;

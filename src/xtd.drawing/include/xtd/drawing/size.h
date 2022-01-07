@@ -44,10 +44,10 @@ namespace xtd {
       /// @param height The height component of the new Size
       size(int32_t width, int32_t height) : width_(width), height_(height) {}
       /// @}
-
+      
       /// @cond
       size(const xtd::drawing::size&) = default;
-      bool operator==(const xtd::drawing::size& value) const {return width_ == value.width_ && height_ == value.height_;}      
+      bool operator==(const xtd::drawing::size& value) const {return width_ == value.width_ && height_ == value.height_;}
       bool operator!=(const xtd::drawing::size& value) const {return !operator==(value);}
       size& operator=(const xtd::drawing::size& size) = default;
       size operator+(const xtd::drawing::size& size) const;
@@ -82,7 +82,7 @@ namespace xtd {
       /// @remarks The unit for the Height and Width of the Size class depend on the PageUnit and PageScale settings for the Graphics object that is used to draw.
       void width(int32_t width) {width_ = width;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -96,29 +96,29 @@ namespace xtd {
       /// @param value The size_f to convert.
       /// @return The size this method converts to.
       static size ceiling(const size_f& value);
-
+      
       /// @brief Converts the specified size_f to a size object by rounding the size_f values to the nearest integer.
       /// @param value The size_f to convert.
       /// @return The size this method converts to.
       static size round(const size_f& value);
-
+      
       /// @brief Returns the result of subtracting specified size from the specified size.
       /// @param sz1 The Size to be subtracted from.
       /// @param sz2 The Size to subtract from the Size.
       /// @return The Size that is the result of the subtraction operation.
       /// @exception ArgumentNullException sz1 or sz2 are null.
       static xtd::drawing::size subtract(const xtd::drawing::size& sz1, const xtd::drawing::size& sz2);
-
+      
       /// @brief Creates a human-readable string that represents this size class.
       /// @return string A string that represents this size.
       xtd::ustring to_string() const noexcept override {return "{width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
- 
+      
       /// @brief Converts the specified size_f to a size by truncating the values of the size_f.
       /// @param value The size_f to convert.
       /// @return The size this method converts to.
       static size truncate(const size_f& value);
       /// @}
-
+      
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::size& size) noexcept {
         return os << size.to_string();
@@ -130,7 +130,7 @@ namespace xtd {
       int32_t height_ = 0;
     };
   }
-
+  
   template<>
   inline drawing::size parse<drawing::size>(const std::string& str) {
     auto values = xtd::ustring(str).replace("}", "").replace(" height=", "").replace("{width=", "").split({','});

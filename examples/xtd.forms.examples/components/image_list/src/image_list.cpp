@@ -11,7 +11,7 @@ namespace example {
       text("Image list example");
       client_size({300, 250});
       controls().push_back_range({picture, button_previous, button_next});
-
+      
       pictures.image_size({128, 128});
       
       picture.back_color(system_colors::window());
@@ -21,7 +21,7 @@ namespace example {
       picture.click += [&] {
         load_images();
       };
-
+      
       button_previous.auto_repeat(true);
       button_previous.image(button_images::previous());
       button_previous.location({75, 200});
@@ -61,7 +61,7 @@ namespace example {
         button_next.enabled(current_image_index < pictures.images().size() - 1);
       }
     }
-
+    
     size_t current_image_index = 0;
     image_list pictures;
     picture_box picture;

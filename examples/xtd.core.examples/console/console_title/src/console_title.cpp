@@ -8,7 +8,7 @@ int main() {
   console::read_key(true);
   console::title("The title has changed!");
   console::write_line("Note that the new console title is \"{0}\"\n"
-                      "  (Press any key to quit.)", console::title());
+    "  (Press any key to quit.)", console::title());
   console::read_key(true);
 }
 

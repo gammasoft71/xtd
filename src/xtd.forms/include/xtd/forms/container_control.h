@@ -33,7 +33,7 @@ namespace xtd {
       /// @param nullptr.
       void active_control(std::nullptr_t) {active_control_.reset();}
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       
@@ -45,9 +45,9 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-     drawing::size measure_control() const override;
+      drawing::size measure_control() const override;
       /// @}
-
+      
       /// @cond
       std::optional<control_ref> active_control_;
       /// @endcond

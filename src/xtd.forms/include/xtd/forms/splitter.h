@@ -36,7 +36,7 @@ namespace xtd {
       forms::cursor default_cursor() const override {return dock() == dock_style::left || dock() == dock_style::right ? xtd::forms::cursors::vsplit() : xtd::forms::cursors::hsplit();}
       
       drawing::size default_size() const override {return {3, 3};}
-
+      
       using xtd::forms::control::dock;
       /// @brief Sets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @param dock One of the dock_style values. The default is none.
@@ -87,10 +87,10 @@ namespace xtd {
         control::on_mouse_down(e);
         mouse_down_location = control::dock() == dock_style::left || control::dock() == dock_style::right ? cursor::position().x() : cursor::position().y();
         if (parent().has_value()) {
-          for(size_t index = 0; index < parent().value().get().controls().size(); index++) {
+          for (size_t index = 0; index < parent().value().get().controls().size(); index++) {
             if (parent().value().get().controls()[index].get() == *this) {
               if (index > 0) previous_control_cursor_ = (previous_control_ = &parent().value().get().controls()[index - 1].get())->cursor();
-              if (index < parent().value().get().controls().size() -1) next_control_cursor_ = (next_control_ = &parent().value().get().controls()[index + 1].get())->cursor();
+              if (index < parent().value().get().controls().size() - 1) next_control_cursor_ = (next_control_ = &parent().value().get().controls()[index + 1].get())->cursor();
               break;
             }
           }
@@ -105,7 +105,7 @@ namespace xtd {
         if (next_control_) next_control_->cursor(default_cursor());
         if (mouse_down_location != -1 && next_control_) {
           if (splitter_style_ == splitter_style::draw_line) {
-            
+          
           } else {
             int delta_size = control::dock() == dock_style::left || control::dock() == dock_style::right ? (next_control_->width() + cursor::position().x()) : (next_control_->height() + cursor::position().y());
             int new_size = delta_size - mouse_down_location;

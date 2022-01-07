@@ -267,7 +267,7 @@ namespace xtd {
       /// @remarks Use the xtd::io::file_info::is_read_only property to quickly determine or change whether the current file is read only.
       /// @remarks When first called, file_info calls xtd::io::file_info::refresh and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       void is_read_only(bool value);
-
+      
       /// @brief Gets the size, in bytes, of the current file.
       /// @return The size of the current file in bytes.
       /// @exception xtd::io::io_exception xtd::io::file_info::refresh cannot update the state of the file or directory.
@@ -323,7 +323,7 @@ namespace xtd {
       /// * xtd::io::file_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_info::refresh method.
       size_t length() const;
-
+      
       /// @brief Gets the name of the file.
       /// @return The name of the file.
       ///
@@ -359,7 +359,7 @@ namespace xtd {
       /// @remarks The name of the file includes the file extension.
       xtd::ustring name() const override;
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -404,7 +404,7 @@ namespace xtd {
       /// // Add another line to the output...
       /// @encoode
       xtd::io::stream_writer append_text() const;
-
+      
       /// @brief Copies an existing file to a new file, disallowing the overwriting of an existing file.
       /// @param desy_file_name The name of the new file to copy to.
       /// @return A new file with a fully qualified path.
@@ -441,7 +441,7 @@ namespace xtd {
       ///       if (file::exists(path2)) {
       ///         fi2.remove();
       ///       }
-      /// 
+      ///
       ///       //Copy the file.f
       ///    fi1.copy_to(path2);
       ///       console::write_line("{0} was copied to {1}.", path, path2);
@@ -730,7 +730,7 @@ namespace xtd {
       /// @include file_info_open_read.cpp
       /// @remarks This method returns a read-only std::ifstream object.
       std::ifstream open_read() const;
-
+      
       /// @brief Creates a xtd::io::stream_reader that reads from an existing text file.
       /// @return A new xtd::io::stream_reader.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
@@ -751,7 +751,7 @@ namespace xtd {
       /// @include file_info_open.cpp
       /// @return The xtd::io::file_info::open_write method opens a file if one already exists for the file path, or creates a new file if one does not exist. For an existing file, it does not append the new text to the existing text. Instead, it overwrites the existing characters with the new characters. If you overwrite a longer string (such as "This is a test of the open_write method") with a shorter string (like "Second run"), the file will contain a mix of the strings ("Second runtest of the open_write method").
       std::ofstream open_write() const;
-
+      
       /// @brief Permanently deletes a file.
       /// @exception xtd::io::io_exception The target file is open or memory-mapped on a computer running Microsoft Windows NT. -or- There is an open handle on the file, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see How to: Enumerate Directories and Files.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
@@ -841,7 +841,7 @@ namespace xtd {
       /// @remarks Pass an empty string ("") to the dest_backup_file_name parameter if you do not want to create a backup of the file being replaced.
       file_info replace(const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
       /// @}
-
+      
     private:
       file_info() = default;
     };

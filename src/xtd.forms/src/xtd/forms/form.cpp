@@ -50,9 +50,8 @@ form& form::accept_button(nullptr_t) {
 }
 
 form& form::cancel_button(const ibutton_control& cancel_button) {
-  if (!cancel_button_.has_value() || &cancel_button_.value().get() != &cancel_button) {
+  if (!cancel_button_.has_value() || &cancel_button_.value().get() != &cancel_button)
     cancel_button_ = const_cast<ibutton_control&>(cancel_button);
-  }
   return *this;
 }
 
@@ -160,7 +159,7 @@ form& form::show_icon(bool value) {
     show_icon_ = value;
     recreate_handle();
   }
-
+  
   return *this;
 }
 
@@ -170,9 +169,8 @@ form& form::start_position(form_start_position start_position) {
 }
 
 form& form::top_level(bool top_level) {
-  if (!get_state(state::top_level) != top_level) {
+  if (!get_state(state::top_level) != top_level)
     set_state(state::top_level, top_level);
-  }
   return *this;
 }
 
@@ -218,7 +216,7 @@ control& form::visible(bool visible) {
   container_control::visible(visible);
   if (active_form().has_value() && active_form().value().get().handle() == handle() && active_control_.has_value())
     active_control_.value().get().focus();
-
+    
   if (current_window_state.has_value())
     window_state(current_window_state.value());
   internal_set_window_state();
@@ -321,95 +319,94 @@ forms::create_params form::create_params() const {
     std::random_device rand;
     default_location = std::uniform_int_distribution<int32_t> {4, 20}(rand) * 10;
   }
-
+  
   create_params.class_name("form");
   
   create_params.style(create_params.style() | WS_CLIPCHILDREN);
   
   switch (form_border_style_) {
-    case forms::form_border_style::none: break;
-    case forms::form_border_style::fixed_single: create_params.style(create_params.style() | WS_BORDER); break;
-    case forms::form_border_style::sizable: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); break;
-    case forms::form_border_style::fixed_3d: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE); break;
-    case forms::form_border_style::fixed_dialog: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME); break;
-    case forms::form_border_style::fixed_tool_window: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
-    case forms::form_border_style::sizable_tool_window: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
-    default: break;
+  case forms::form_border_style::none: break;
+  case forms::form_border_style::fixed_single: create_params.style(create_params.style() | WS_BORDER); break;
+  case forms::form_border_style::sizable: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); break;
+  case forms::form_border_style::fixed_3d: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE); break;
+  case forms::form_border_style::fixed_dialog: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME); break;
+  case forms::form_border_style::fixed_tool_window: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
+  case forms::form_border_style::sizable_tool_window: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
+  default: break;
   }
-
+  
   switch (window_state_) {
-    case form_window_state::maximized: create_params.style(create_params.style() | WS_MAXIMIZE); break;
-    case form_window_state::minimized: create_params.style(create_params.style() | WS_MINIMIZE); break;
-    default: break;
+  case form_window_state::maximized: create_params.style(create_params.style() | WS_MAXIMIZE); break;
+  case form_window_state::minimized: create_params.style(create_params.style() | WS_MINIMIZE); break;
+  default: break;
   }
-
+  
   if (form_border_style_ != form_border_style::none) create_params.style(create_params.style() | WS_CAPTION);
-
+  
   if (control_box_) create_params.style(create_params.style() | WS_SYSMENU);
   if (maximize_box_) create_params.style(create_params.style() | WS_MAXIMIZEBOX);
   if (minimize_box_) create_params.style(create_params.style() | WS_MINIMIZEBOX);
   if (help_button_ && !maximize_box_ && !minimize_box_) create_params.ex_style(create_params.ex_style() | WS_EX_CONTEXTHELP);
-
+  
   if (!close_box_) create_params.class_style(create_params.class_style() | CS_NOCLOSE);
-
+  
   if (show_in_taskbar_) create_params.ex_style(create_params.ex_style() | WS_EX_APPWINDOW);
-
+  
   if (!show_icon_ && (form_border_style_ == forms::form_border_style::sizable || form_border_style_ == forms::form_border_style::fixed_3d || form_border_style_ == forms::form_border_style::fixed_single)) create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME);
   
   if (get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
-
+  
   if (owner_ != 0) create_params.parent(owner_);
-
+  
   if (top_most_) create_params.ex_style(create_params.ex_style() | WS_EX_TOPMOST);
   
   if (previous_screen_) {
     switch (start_position_) {
-      case form_start_position::manual:
-        create_params.location(location());
-        create_params.size(size());
-        if (application::open_forms().size() == 1) default_location = 40;
-        break;
-      case form_start_position::center_screen:
-        create_params.location({(previous_screen_->working_area().width() - width()) / 2, (previous_screen_->working_area().height() - height()) / 2});
-        create_params.size(size());
-        break;
-      case form_start_position::windows_default_location:
+    case form_start_position::manual:
+      create_params.location(location());
+      create_params.size(size());
+      if (application::open_forms().size() == 1) default_location = 40;
+      break;
+    case form_start_position::center_screen:
+      create_params.location({(previous_screen_->working_area().width() - width()) / 2, (previous_screen_->working_area().height() - height()) / 2});
+      create_params.size(size());
+      break;
+    case form_start_position::windows_default_location:
+      create_params.location({default_location, default_location});
+      create_params.size(size());
+      break;
+    case form_start_position::windows_default_bounds:
+      create_params.location({default_location, default_location});
+      create_params.size({previous_screen_->working_area().width() / 4 * 3, previous_screen_->working_area().height() / 4 * 3});
+      break;
+    case form_start_position::center_parent:
+      if (parent().has_value())
+        create_params.location({parent().value().get().left() + (parent().value().get().width() - width()) / 2, parent().value().get().top() + (parent().value().get().height() - height()) / 2});
+      else
         create_params.location({default_location, default_location});
-        create_params.size(size());
-        break;
-      case form_start_position::windows_default_bounds:
-        create_params.location({default_location, default_location});
-        create_params.size({previous_screen_->working_area().width() / 4 * 3, previous_screen_->working_area().height() / 4 * 3});
-        break;
-      case form_start_position::center_parent:
-        if (parent().has_value())
-          create_params.location({parent().value().get().left() + (parent().value().get().width() - width()) / 2, parent().value().get().top() + (parent().value().get().height() - height()) / 2});
-        else
-          create_params.location({default_location, default_location});
-        create_params.size(size());
-        break;
+      create_params.size(size());
+      break;
     }
     
-    if (start_position_ == form_start_position::windows_default_location || start_position_ == form_start_position::windows_default_bounds || (start_position_ == form_start_position::center_parent && parent().has_value())) {
+    if (start_position_ == form_start_position::windows_default_location || start_position_ == form_start_position::windows_default_bounds || (start_position_ == form_start_position::center_parent && parent().has_value()))
       default_location = default_location < 200 ? default_location + 20 : 40;
-    }
   }
   
   //diagnostics::debug::write_line("create_params = {}", create_params);
-
+  
   return create_params;
 }
 
-void form::wnd_proc(message &message) {
+void form::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_ACTIVATE: wm_activate(message); break;
-    case WM_CLOSE: wm_close(message); break;
-    case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().get().wm_click(message); break;
-    default: container_control::wnd_proc(message); break;
+  case WM_ACTIVATE: wm_activate(message); break;
+  case WM_CLOSE: wm_close(message); break;
+  case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().get().wm_click(message); break;
+  default: container_control::wnd_proc(message); break;
   }
 }
 
-void form::wm_activate(message &message) {
+void form::wm_activate(message& message) {
   if (message.lparam() == WA_INACTIVE && active_form_.has_value() && &active_form_.value().get() == this) {
     active_form_.reset();
     on_deactivate(event_args::empty);
@@ -419,7 +416,7 @@ void form::wm_activate(message &message) {
   }
 }
 
-void form::wm_close(message &message) {
+void form::wm_close(message& message) {
   form_closing_event_args event_args;
   on_form_closing(event_args);
   message.result(event_args.cancel() == true);
@@ -439,16 +436,16 @@ void form::wm_close(message &message) {
   }
 }
 
-void form::on_handle_created(const event_args &e) {
+void form::on_handle_created(const event_args& e) {
   container_control::on_handle_created(e);
   if (show_icon_ && icon_ != drawing::icon::empty) native::form::icon(handle(), icon_);
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
-
+  
   if (menu_.has_value()) create_system_menu();
 }
 
-void form::on_handle_destroyed(const event_args &e) {
+void form::on_handle_destroyed(const event_args& e) {
   container_control::on_handle_destroyed(e);
   destroy_system_menu();
 }
@@ -458,7 +455,7 @@ void form::on_layout(const event_args& e) {
   if (is_handle_created() && auto_scroll()) native::form::virtual_size(handle(), display_rectangle().size());
 }
 
-void form::on_location_changed(const event_args &e) {
+void form::on_location_changed(const event_args& e) {
   if (handle() && top() < screen::get_working_area(handle()).top()) top(screen::get_working_area(handle()).top());
   container_control::on_location_changed(e);
 }
@@ -482,11 +479,11 @@ void form::internal_set_window_state() {
     recreate_handle();
   else if (is_handle_created()) {
     switch (window_state_) {
-      case form_window_state::normal: native::form::restore(handle()); break;
-      case form_window_state::maximized: native::form::maximize(handle(), true); break;
-      case form_window_state::minimized: native::form::minimize(handle(), true); break;
-      case form_window_state::full_screen: native::form::full_screen(handle(), true); break;
-      default: break;
+    case form_window_state::normal: native::form::restore(handle()); break;
+    case form_window_state::maximized: native::form::maximize(handle(), true); break;
+    case form_window_state::minimized: native::form::minimize(handle(), true); break;
+    case form_window_state::full_screen: native::form::full_screen(handle(), true); break;
+    default: break;
     }
   }
 }
@@ -505,12 +502,12 @@ void form::create_system_menu() {
 
 void form::destroy_system_menu() {
   if (!menu_) return;
-
+  
   // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
   auto prev_client_size = client_size();
-
+  
   native::form::menu(handle(), 0);
-
+  
   // Workaround : Force the client size with the previously saved client size.
   client_size(prev_client_size);
 }

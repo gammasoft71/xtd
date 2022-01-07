@@ -29,7 +29,7 @@ namespace xtd {
       /// @{
       picture_box();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -49,7 +49,7 @@ namespace xtd {
       /// @return Current picture_box.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual picture_box& border_style(forms::border_style border_style);
-
+      
       drawing::size default_size() const override {return {100, 50};}
       
       /// @brief Gets the image that is displayed by picture_box.
@@ -77,21 +77,21 @@ namespace xtd {
       /// @remarks By default, in normal mode, the Image is positioned in the upper-left corner of the picture_box, and any part of the image that is too big for the picture_box is clipped. Using the stretch_image value causes the image to stretch or shrink to fit the picture_box. Using the zoom value causes the image to be stretched or shrunk to fit the picture_box; however, the aspect ratio in the original is maintained.
       picture_box& size_mode(picture_box_size_mode size_mode);
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
       /// @{
       forms::create_params create_params() const override;
-
+      
       /// @brief Overrides the on_handle_created(const event_args&) method.
       /// @param e An event_args that contains the event data.
       void on_handle_created(const event_args& e) override;
       void on_paint(paint_event_args& e) override;
-
+      
       drawing::size measure_control() const override;
       /// @}
-
+      
       /// @cond
       forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::none;

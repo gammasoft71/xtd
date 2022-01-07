@@ -26,7 +26,7 @@ namespace examples {
       panel_progress.size({300, 155});
       panel_progress.controls().push_back_range({progress, list_progress});
       panel_progress.visible(false);
-
+      
       button_run.location({10, 10});
       button_run.text("Run");
       button_run.click += [&] {
@@ -49,7 +49,7 @@ namespace examples {
       status.location({10, 50});
       status.auto_size(true);
       status.text("Status : not started");
-
+      
       progress.location({10, 10});
       progress.width(280);
       
@@ -58,7 +58,7 @@ namespace examples {
       list_progress.multiline(true);
       list_progress.read_only(true);
       list_progress.word_wrap(false);
-
+      
       worker.worker_supports_cancellation(true);
       worker.worker_reports_progress(true);
       worker.do_work += [&] {
@@ -69,12 +69,12 @@ namespace examples {
         }
       };
       
-      worker.progress_changed += [&](object& sender, const progress_changed_event_args& e) {
+      worker.progress_changed += [&](object & sender, const progress_changed_event_args & e) {
         progress.value(e.progress_percentage());
         list_progress.append_text(ustring::format("{}{}", std::any_cast<ustring>(e.user_state()), environment::new_line()));
       };
       
-      worker.run_worker_completed += [&](object& sender, const run_worker_completed_event_args& e){
+      worker.run_worker_completed += [&](object & sender, const run_worker_completed_event_args & e) {
         panel_progress.visible(false);
         button_run.enabled(true);
         button_cancel.enabled(false);

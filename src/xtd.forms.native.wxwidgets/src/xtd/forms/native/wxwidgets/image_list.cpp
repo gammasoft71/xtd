@@ -10,7 +10,7 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-intptr_t image_list::create(const drawing::size &image_size) {
+intptr_t image_list::create(const drawing::size& image_size) {
   return reinterpret_cast<intptr_t>(new wxImageList(image_size.width(), image_size.height()));
 }
 
@@ -34,10 +34,9 @@ void image_list::insert_item(intptr_t image_list, size_t pos, const drawing::ima
       bitmaps.push_front(reinterpret_cast<wxImageList*>(image_list)->GetBitmap(index));
       reinterpret_cast<wxImageList*>(image_list)->Remove(index);
     }
-
-    for (auto& bitmap : bitmaps) {
+    
+    for (auto& bitmap : bitmaps)
       reinterpret_cast<wxImageList*>(image_list)->Add(bitmap);
-    }
   }
 }
 

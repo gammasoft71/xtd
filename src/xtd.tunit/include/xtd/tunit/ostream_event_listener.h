@@ -49,8 +49,8 @@ namespace xtd {
           if (e.test().stack_frame().get_file_line_number() != 0) os_ << ":" << e.test().stack_frame().get_file_line_number();
         }
         os_ << std::endl;
-     }
-
+      }
+      
       /// @brief Occurs when test is failed.
       /// @param test_event_args Contains test event parameters.
       void on_test_failed(const xtd::tunit::test_event_args& e) const override {
@@ -89,7 +89,7 @@ namespace xtd {
         if (e.test().message() != "")
           os_ << "    " << e.test().message() << std::endl;
       }
-
+      
       /// @brief Occurs when test is succeed.
       /// @param test_event_args Contains test event parameters.
       void on_test_succeed(const xtd::tunit::test_event_args& e) const override {

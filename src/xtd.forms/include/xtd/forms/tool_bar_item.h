@@ -22,7 +22,7 @@ namespace xtd {
       /// @brief Initialises a new instance of xtd::forms::tool_bar_item class.
       tool_bar_item() = default;
       /// @}
-
+      
       /// @name Methods
       
       /// @{

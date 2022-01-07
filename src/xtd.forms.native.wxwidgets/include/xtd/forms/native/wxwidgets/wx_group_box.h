@@ -32,7 +32,7 @@ namespace xtd {
         wxGroupBox(wxWindow* parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxString& name = wxASCII_STR(wxStaticBoxNameStr)) : wxStaticBox(parent, id, label, pos, size, style, name) {
           //SetBackgroundColour({255, 0, 0});
           //inner_panel->SetBackgroundColour({0, 255, 0});
-          Bind(wxEVT_SIZE, [&](wxSizeEvent& event) {
+          Bind(wxEVT_SIZE, [&](wxSizeEvent & event) {
             inner_panel->SetPosition(get_inner_box_position());
             inner_panel->SetSize(get_inner_box_size());
           });
@@ -65,7 +65,7 @@ namespace xtd {
         
         static constexpr int32_t inner_margin = 3;
         static constexpr int32_t extra_inner_margin_up = 5;
-        wxPanel* inner_panel = new wxPanel(this, wxID_ANY,get_inner_box_position(), get_inner_box_size());
+        wxPanel* inner_panel = new wxPanel(this, wxID_ANY, get_inner_box_position(), get_inner_box_size());
       };
       
       class wxGroupBoxOwnerDraw : public wxPanel {
@@ -116,12 +116,12 @@ namespace xtd {
             control_handler::create<wxGroupBoxOwnerDraw>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
           else {
             control_handler::create<wxGroupBox>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
-#if defined(__WIN32__)
+            #if defined(__WIN32__)
             if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
               control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
               control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
             }
-#endif
+            #endif
           }
         }
         

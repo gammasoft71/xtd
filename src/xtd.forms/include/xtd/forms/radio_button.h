@@ -37,7 +37,7 @@ namespace xtd {
       /// @remarks The default view of the radio_button has its text aligned to the right of the button and the auto_check property is set to true.
       radio_button();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -50,7 +50,7 @@ namespace xtd {
       /// @return Current radio_button instance.
       /// @remarks If the appearance value is set to normal, then the radio_button control is drawn with a circular check box. If the value is set to button, then the radio_button is drawn as a control that can be toggled to an up or down state. Either type can display text, an image, or both.
       virtual radio_button& appearance(forms::appearance appearance);
-
+      
       /// @brief Gets a value indicating whether the checked value and the appearance of the control automatically change when the control is clicked.
       /// @return true if the checked value and the appearance of the control automatically change on the click event; otherwise, false. The default value is true.
       /// @remarks If the checked value is set to false, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
@@ -78,24 +78,24 @@ namespace xtd {
       /// @param check_align One of the content_alignment values. The default value is middle_left.
       /// @return Current radio_button instance.
       virtual radio_button& check_align(content_alignment check_align);
-
+      
       /// @brief Gets the default size of the control.
       /// @return Returns a size with a width of 104 and a height of 24.
       drawing::size default_size() const override {return {104, 25};}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       /// @brief Generates a click event for the control, simulating a click by a user.
       void perform_click();
-
+      
       /// @brief Returns a string that represents the progress_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       xtd::ustring to_string() const noexcept override {return ustring::format("{}, checked: {}", ustring::full_class_name(*this), checked_);}
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -103,13 +103,13 @@ namespace xtd {
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<radio_button, event_handler> appearance_changed;
-
+      
       /// @brief Occurs when the value of the checked property changes.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<radio_button, event_handler> checked_changed;
       /// @}
-
+      
     protected:
       /// @name Protected properties
       
@@ -130,7 +130,7 @@ namespace xtd {
       /// @return The drawing::size size of this control.
       /// @remarks This method is used when auto_size is true.
       drawing::size measure_control() const override;
-
+      
       /// @brief Raises the radio_button::appearance_changed event.
       /// @param e An EventArgs that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
@@ -156,7 +156,7 @@ namespace xtd {
         }
         checked_changed(*this, e);
       }
-
+      
       void on_enabled_changed(const event_args& e) override {
         if (flat_style() != xtd::forms::flat_style::system) {
           if (!checked_) state_ = enabled() ? xtd::forms::visual_styles::radio_button_state::unchecked_normal : xtd::forms::visual_styles::radio_button_state::unchecked_disabled;
@@ -172,11 +172,11 @@ namespace xtd {
           else state_ = enabled() ? xtd::forms::visual_styles::radio_button_state::checked_normal : xtd::forms::visual_styles::radio_button_state::checked_disabled;
         }
       }
-
+      
       /// @brief Overrides the on_handle_created(const event_args&) method.
       /// @param e An event_args that contains the event data.
       void on_handle_created(const event_args& e) override;
-
+      
       void on_lost_focus(const event_args& e) override {
         button_base::on_lost_focus(e);
         if (flat_style() != xtd::forms::flat_style::system) {
@@ -224,18 +224,18 @@ namespace xtd {
         }
         button_base::on_mouse_up(e);
       }
-
+      
       void on_paint(paint_event_args& e) override;
-
+      
       void wnd_proc(message& message) override;
       /// @}
-
+      
       /// @cond
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(const message& message);
       void wm_mouse_up(const message& message);
       /// @endcond
-
+      
     private:
       forms::appearance appearance_ = forms::appearance::normal;
       bool auto_check_ = true;

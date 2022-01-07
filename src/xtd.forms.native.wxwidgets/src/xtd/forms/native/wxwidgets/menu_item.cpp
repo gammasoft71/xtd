@@ -16,7 +16,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 namespace {
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   static bool is_about_item(const xtd::ustring& text) {
     wxString itemText = text;
     itemText.Replace("&", "");
@@ -40,15 +40,15 @@ namespace {
     itemText.LowerCase();
     return itemText == "preferences" || itemText == "options";
   }
-#endif
-
+  #endif
+  
   static xtd::ustring make_item_text(const xtd::ustring& text, size_t shortcut) {
     using namespace std::literals;
-  #if defined(__APPLE__)
+    #if defined(__APPLE__)
     if (is_about_item(text)) return "";
     if (is_quit_item(text)) return "";
     if (is_preferences_item(text)) return "";
-  #endif
+    #endif
     if (shortcut == VK_NONE) return text;
     auto key = ""s;
     if ((shortcut & VK_COMMAND_MODIFIER) == VK_COMMAND_MODIFIER) key += (key.empty() ? ""s : "+"s) + "Ctrl"s;
@@ -56,7 +56,7 @@ namespace {
     if ((shortcut & VK_ALT_MODIFIER) == VK_ALT_MODIFIER) key += (key.empty() ? ""s : "+"s) + "Alt"s;
     if ((shortcut & VK_SHIFT_MODIFIER) == VK_SHIFT_MODIFIER) key += (key.empty() ? ""s : "+"s) + "Shift"s;
     
-    shortcut &= ~(VK_COMMAND_MODIFIER|VK_CONTROL_MODIFIER|VK_ALT_MODIFIER|VK_SHIFT_MODIFIER);
+    shortcut &= ~(VK_COMMAND_MODIFIER | VK_CONTROL_MODIFIER | VK_ALT_MODIFIER | VK_SHIFT_MODIFIER);
     
     if (shortcut >= VK_A && shortcut <= VK_Z) key += (key.empty() ? ""s : "+"s) + static_cast<char>(shortcut);
     else if (shortcut >= VK_0 && shortcut <= VK_9) key += (key.empty() ? ""s : "+"s) + static_cast<char>(shortcut);
@@ -109,11 +109,11 @@ namespace {
   }
   
   static wxWindowID make_window_id(const xtd::ustring& text) {
-#if defined(__APPLE__)
+    #if defined(__APPLE__)
     if (is_about_item(text)) return wxID_ABOUT;
     if (is_quit_item(text)) return wxID_EXIT;
     if (is_preferences_item(text)) return wxID_PREFERENCES;
-#endif
+    #endif
     return wxID_ANY;
   }
 }

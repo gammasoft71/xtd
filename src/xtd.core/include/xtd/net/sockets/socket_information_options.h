@@ -37,7 +37,7 @@ namespace xtd {
         /// @brief The Socket uses overlapped I/O.
         use_only_overlapped_io = 0x08,
       };
-
+      
       /// @cond
       inline socket_information_options& operator^=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
       inline socket_information_options& operator&=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}

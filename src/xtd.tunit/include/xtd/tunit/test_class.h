@@ -30,7 +30,7 @@ namespace xtd {
       test_class& operator=(const test_class&) = default;
       virtual ~test_class() = default;
       /// @endcond
-
+      
       std::chrono::milliseconds elapsed_time() const noexcept {
         using namespace std::chrono_literals;
         if (start_time_point.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
@@ -60,7 +60,7 @@ namespace xtd {
           if (settings::default_settings().is_match_test_name(name(), method.name()) && method.failed()) count++;
         return count;
       }
-
+      
       size_t ignored_test_count() const noexcept {
         size_t count = 0;
         for (auto method : tests_)
@@ -74,9 +74,9 @@ namespace xtd {
           if (settings::default_settings().is_match_test_name(name(), method.name()) && method.succeed()) count++;
         return count;
       }
-
+      
       const std::vector<xtd::tunit::test>& tests() const noexcept {return tests_;}
-
+      
     protected:
       void add_class_cleanup(const xtd::tunit::test& class_cleanup) noexcept {class_cleanup_ = class_cleanup;}
       
@@ -103,7 +103,7 @@ namespace xtd {
       const xtd::tunit::test& test_cleanup() const noexcept {return test_cleanup_;}
       const xtd::tunit::test& test_initialize() const noexcept {return test_initialize_;}
       const std::vector<xtd::tunit::test>& test_methods() const noexcept {return tests_;}
-
+      
       void run(const xtd::tunit::unit_test& unit_test);
       
       xtd::tunit::test class_cleanup_;

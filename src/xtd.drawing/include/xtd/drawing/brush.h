@@ -16,7 +16,7 @@ namespace xtd {
     /// @cond
     class graphics;
     /// @endcond
-
+    
     /// @brief Defines objects used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
     /// @par Namespace
     /// xtd::drawing
@@ -52,7 +52,7 @@ namespace xtd {
       
     protected:
       friend class graphics;
-
+      
       /// @name Protected constructors
       
       /// @{
@@ -68,7 +68,7 @@ namespace xtd {
       void set_native_brush(intptr_t brush);
       /// @}
       
-    //private:
+      //private:
       /// @cond
       struct data {
         intptr_t handle_ = 0;

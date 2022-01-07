@@ -9,7 +9,7 @@ public:
   
   const ustring& name() const noexcept {return name_;}
   const ustring& rank() const noexcept {return rank_;}
-
+  
   ustring to_string() const noexcept {return to_string("F");}
   ustring to_string(const ustring& fmt) const {
     if (fmt == "F") return name_ + " (" + rank_ + ")";
@@ -17,7 +17,7 @@ public:
     if (fmt == "R") return rank_;
     throw format_exception(current_stack_frame_);
   }
-
+  
   // Only this operator is needed for character class to be recognized by ustring::format() without specified formating.
   friend ostream& operator<<(ostream& os, const character& value) noexcept {return os << value.to_string();}
   

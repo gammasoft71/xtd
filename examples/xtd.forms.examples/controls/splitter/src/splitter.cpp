@@ -11,7 +11,7 @@ namespace examples {
       text("Splitter example");
       client_size({300, 300});
       controls().push_back_range({panel_fill, splitter_top, panel_top, splitter_right, panel_right, splitter_left, panel_left});
-
+      
       panel_left.dock(dock_style::left);
       panel_left.back_color(drawing::color::light_blue);
       panel_left.width(70);
@@ -23,13 +23,13 @@ namespace examples {
       panel_right.width(70);
       
       splitter_right.dock(dock_style::right);
-
+      
       panel_top.dock(dock_style::top);
       panel_top.back_color(drawing::color::light_pink);
       panel_top.height(150);
       
       splitter_top.dock(dock_style::top);
-
+      
       panel_fill.dock(dock_style::fill);
       panel_fill.back_color(drawing::color::light_green);
     }

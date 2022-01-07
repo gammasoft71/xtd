@@ -18,21 +18,21 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 list_box::list_box() {
-  data_->items.item_added += [this](size_t index, const item& item) {
+  data_->items.item_added += [this](size_t index, const item & item) {
     if (is_handle_created()) native::list_box::insert_item(handle(), index, item.value());
     list_box::item selected_item;
     if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
-
-  data_->items.item_removed += [this](size_t index, const item& item) {
+  
+  data_->items.item_removed += [this](size_t index, const item & item) {
     if (is_handle_created()) native::list_box::delete_item(handle(), index);
     list_box::item selected_item;
     if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
   
-  data_->items.item_updated += [this](size_t index, const item& item) {
+  data_->items.item_updated += [this](size_t index, const item & item) {
     if (is_handle_created()) native::list_box::update_item(handle(), index, item.value());
     list_box::item selected_item;
     if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
@@ -129,10 +129,10 @@ void list_box::end_update() {
 
 forms::create_params list_box::create_params() const {
   forms::create_params create_params = list_control::create_params();
-
+  
   create_params.class_name("listbox");
   create_params.style(create_params.style() | LBS_HASSTRINGS);
-
+  
   switch (data_->selection_mode) {
   case selection_mode::none: create_params.style(create_params.style() | LBS_NOSEL); break;
   case selection_mode::one:  break;
@@ -140,13 +140,13 @@ forms::create_params list_box::create_params() const {
   case selection_mode::multi_extended: create_params.style(create_params.style() | LBS_MULTIPLESEL | LBS_EXTENDEDSEL); break;
   default: break;
   }
-
+  
   // Do not use native control sort
   //if (data_->sorted) create_params.style(create_params.style() | LBS_SORT);
-
+  
   if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (data_->border_style != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-
+  
   return create_params;
 }
 

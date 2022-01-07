@@ -18,10 +18,10 @@ namespace xtd {
   namespace drawing {
     namespace native {
       class wx_application : public wxApp {
-#ifndef WM_ACTIVATEAPP
+        #ifndef WM_ACTIVATEAPP
         static constexpr int32_t WM_ACTIVATEAPP = 0x001C;
         static constexpr int32_t WM_ENTERIDLE = 0x0121;
-#endif
+        #endif
       public:
         wx_application() = default;
         
@@ -41,7 +41,7 @@ namespace xtd {
           return result;
         }
         
-        bool ProcessEvent(wxEvent &event) override {
+        bool ProcessEvent(wxEvent& event) override {
           if (exceptionStored) return wxApp::ProcessEvent(event);
           if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
             wxActivateEvent& activate_event = static_cast<wxActivateEvent&>(event);

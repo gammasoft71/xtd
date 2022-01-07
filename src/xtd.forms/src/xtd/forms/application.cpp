@@ -46,17 +46,17 @@ namespace {
   
   static message_filter_collection message_filters;
   static bool restart_asked = false;
-
+  
   bool message_filter_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
     bool block = false;
-  
+    
     for (message_filter_ref message_filter : message_filters) {
       block = message_filter.get().pre_filter_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle));
       if (block == true) break;
     }
     
     if (!block) {
-      for(auto open_form :application::open_forms()) {
+      for (auto open_form : application::open_forms()) {
         auto message = xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
         block = open_form.get().pre_process_message(message);
         if (block == true) break;
@@ -119,7 +119,7 @@ const form_collection application::open_forms() {
   for (auto control : control::top_level_controls_)
     forms.push_back(static_cast<form&>(control.get()));
   return forms;
-
+  
   /*
   vector<reference_wrapper<form>> forms;
   
@@ -244,7 +244,7 @@ void application::exit_thread() {
   native::application::exit();
 }
 
-void application::raise_idle(const event_args &e) {
+void application::raise_idle(const event_args& e) {
   application::idle(e);
 }
 
@@ -252,7 +252,7 @@ void application::register_message_loop_callback(message_loop_callback callback)
 }
 
 void application::remove_message_filter(const imessage_filter& value) {
-  for(message_filter_collection::iterator iterator = message_filters.begin(); iterator != message_filters.end(); ++iterator) {
+  for (message_filter_collection::iterator iterator = message_filters.begin(); iterator != message_filters.end(); ++iterator) {
     if (&iterator->get() == &value) {
       message_filters.erase(iterator);
       break;
@@ -294,7 +294,7 @@ void application::run(const form& form) {
     std::vector<ustring> command_line_args = environment::get_command_line_args();
     char** argv = new char* [command_line_args.size() + 1];
     for (size_t index = 0; index < command_line_args.size(); index++)
-    argv[index] = command_line_args[index].data();
+      argv[index] = command_line_args[index].data();
     argv[command_line_args.size()] = 0;
     /// @todo Replace following lines by xtd::diagnostics::process...
     execv(argv[0], argv);
@@ -309,8 +309,8 @@ void application::theme(const xtd::ustring& theme_name) {
 
 void application::theme(const xtd::forms::theme& theme) {
   xtd::forms::theme::current_theme(theme);
-
-  std::function<void(xtd::forms::control&)> update_control = [&](xtd::forms::control& control) {
+  
+  std::function<void(xtd::forms::control&)> update_control = [&](xtd::forms::control & control) {
     //control.back_color(nullptr);
     //control.fore_color(nullptr);
     control.back_color(control.default_back_color());
@@ -318,7 +318,7 @@ void application::theme(const xtd::forms::theme& theme) {
     for (auto& child_control : control.controls())
       update_control(child_control.get());
   };
-
+  
   for (auto form : open_forms()) {
     //form.get().back_color(theme_colors::current_theme().control());
     //form.get().fore_color(theme_colors::current_theme().control_text());
@@ -353,11 +353,11 @@ bool application::on_app_thread_exception() {
   }
 }
 
-void application::raise_enter_thread_modal(const event_args &e) {
+void application::raise_enter_thread_modal(const event_args& e) {
   application::enter_thread_modal(e);
 }
 
-void application::raise_leave_thread_modal(const event_args &e) {
+void application::raise_leave_thread_modal(const event_args& e) {
   application::leave_thread_modal(e);
 }
 
@@ -369,10 +369,10 @@ intptr_t application::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, int
 
 void application::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_ACTIVATEAPP: wm_activate_app(message); break;
-    case WM_ENTERIDLE: wm_enter_idle(message); break;
-    case WM_QUIT: wm_quit(message); break;
-    default: break;
+  case WM_ACTIVATEAPP: wm_activate_app(message); break;
+  case WM_ENTERIDLE: wm_enter_idle(message); break;
+  case WM_QUIT: wm_quit(message); break;
+  default: break;
   }
 }
 

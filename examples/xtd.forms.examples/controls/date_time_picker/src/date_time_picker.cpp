@@ -8,7 +8,7 @@ class form1 : public form {
 public:
   form1() {
     text("Date time picker example");
-     controls().push_back_range({picker1, label1, picker2, label2});
+    controls().push_back_range({picker1, label1, picker2, label2});
     
     picker1.location({30, 30});
     picker1.format(date_time_picker_format::short_format);
@@ -18,7 +18,7 @@ public:
     picker1.value(date_time::now());
     picker1.max_date(picker1.value().add(months(3)));
     picker1.min_date(picker1.value().add(months(-3)));
-
+    
     label1.location({30, 70});
     label1.size({380, 340});
     
@@ -30,11 +30,11 @@ public:
     picker2.value(date_time::now());
     picker2.max_date(picker2.value().add(hours(3)));
     picker2.min_date(picker2.value().add(hours(-3)));
-
+    
     label2.location({30, 150});
     label2.size({380, 340});
   }
- 
+  
 private:
   date_time_picker picker1;
   label label1;

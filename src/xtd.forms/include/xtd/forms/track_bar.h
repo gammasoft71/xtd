@@ -31,7 +31,7 @@ namespace xtd {
       /// @remarks The track_bar is created with a default horizontal orientation and a range of 0 to 10, with a tick mark shown for every value.
       track_bar();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -75,7 +75,7 @@ namespace xtd {
       /// @return Current track_bar instance.
       /// @remarks When the orientation property is set to orientation::horizontal, the scroll box moves from left to right as the value increases. When the orientation property is set to orientation::vertical, the scroll box moves from bottom to top as the Value increases.
       virtual track_bar& orientation(forms::orientation orientation);
-
+      
       /// @brief Gets he value added to or subtracted from the Value property when the scroll box is moved a small distance.
       /// @return A numeric value. The default value is 1.
       /// @remarks When the user presses one of the arrow keys, the value property changes according to the value set in the small_change property.
@@ -107,7 +107,7 @@ namespace xtd {
       /// @return Current track_bar instance.
       /// @remarks You can use the tick_style property to modify the manner in which the tick marks are displayed on the track bar.
       virtual track_bar& tick_style(forms::tick_style tick_style);
-
+      
       /// @brief Gets a numeric value that represents the current position of the scroll box on the track bar.
       /// @return A numeric value that is within the minimum and maximum range. The default value is 0.
       /// @remarks The Value property contains the number that represents the current position of the scroll box on the track bar.
@@ -118,7 +118,7 @@ namespace xtd {
       /// @remarks The Value property contains the number that represents the current position of the scroll box on the track bar.
       virtual track_bar& value(int32_t value);
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -144,7 +144,7 @@ namespace xtd {
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<track_bar, event_handler> scroll;
-
+      
       /// @brief Occurs when the value property of a track bar changes, either by movement of the scroll box or by manipulation in code.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -164,7 +164,7 @@ namespace xtd {
       /// @brief Overrides control::on_handle_created(const event_args&)
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
-
+      
       /// @brief Raises the track_bar::scroll event.
       /// @param e An event_args that contains the event data.
       /// @remarks You can use the OnScroll event to update other controls as the position of the scroll box changes.
@@ -177,7 +177,7 @@ namespace xtd {
       /// @brief Raises the track_bar::value_changed event.
       /// @param e The event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
-  
+      
       /// @brief Performs the work of setting the specified bounds of this control.
       /// @param x The new left property value of the control.
       /// @param y The new top property value of the control.
@@ -197,16 +197,16 @@ namespace xtd {
         control::set_client_size_core(width, height);
         recreate_handle();
       }
-
+      
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
       /// @}
-
+      
     private:
       void wm_scroll(message& message);
-
+      
       int32_t large_change_ = 5;
       int32_t maximum_ = 10;
       int32_t minimum_ = 0;

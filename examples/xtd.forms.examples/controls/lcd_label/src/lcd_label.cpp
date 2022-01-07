@@ -18,7 +18,7 @@ public:
       lcd_label1.text(ustring::format("{,11:F2}", numeric_up_down1.value()));
     };
     numeric_up_down1.value(12345678.90);
-
+    
     lcd_label1.location({10, 50});
     lcd_label1.parent(*this);
     lcd_label1.segment_style(segment_style::modern);

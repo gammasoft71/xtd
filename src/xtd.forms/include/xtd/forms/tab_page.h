@@ -28,7 +28,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the tab_page class.
       tab_page() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -37,7 +37,7 @@ namespace xtd {
       /// @param value true if the container enables auto-scrolling; otherwise, false. The default value is false.
       /// @return Current scrollable_control instance.
       scrollable_control& auto_scroll(bool value) override;
-
+      
       /// @brief Gets the image list index value of the image displayed on the tab_page control.
       /// @return A zero-based index, which represents the image position in an image_list. The default is -1.
       /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
@@ -50,29 +50,29 @@ namespace xtd {
       /// @remarks image_key and image_index are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored. If you set the image_key property, the image_index property is automatically set to -1. Alternatively, if you set the image_index property, the image_key is automatically set to an empty string ("").
       /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a tab_page control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the tab_page, the image_index value changes to 1.
       virtual tab_page& image_index(int32_t value);
-
+      
       using panel::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
       /// @return Current control instance.
       control& text(const xtd::ustring& text) override;
       /// @}
-
+      
       /// @name Metthods
       
       /// @{
       void destroy_handle() override;
       /// @}
-
+      
     protected:
       /// @name Prottected methods
       
       /// @{
       forms::create_params create_params() const override;
-
+      
       void on_handle_created(const event_args& e) override;
       /// @}
-
+      
     private:
       int32_t image_index_ = -1;
     };

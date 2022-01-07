@@ -19,16 +19,16 @@ namespace xtd {
     /// @name Methods
     
     /// @{
-    /// @brief Synchronizes the buffers with the associated character sequence 
+    /// @brief Synchronizes the buffers with the associated character sequence
     int sync() override {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+      #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
       if (!str().empty()) {
         if (str() == "\n") xtd::diagnostics::debug::write_line();
         else if (xtd::ustring(str()).ends_with('\n')) xtd::diagnostics::debug::write_line(xtd::ustring(str()).trim_end('\n'));
         else xtd::diagnostics::debug::write(str());
         str("");
       }
-#endif
+      #endif
       return 0;
     }
     /// @}

@@ -48,7 +48,7 @@ namespace xtd {
         /// @brief A socket send_to operation.
         send_to = 9,
       };
-
+      
       /// @cond
       inline std::ostream& operator<<(std::ostream& os, socket_async_operation value) {return os << to_string(value, {{socket_async_operation::none, "none"}, {socket_async_operation::accept, "accept"}, {socket_async_operation::connect, "connect"}, {socket_async_operation::disconnect, "disconnect"}, {socket_async_operation::receive, "receive"}, {socket_async_operation::receive_from, "receive_from"}, {socket_async_operation::receive_message_from, "receive_message_from"}, {socket_async_operation::send, "send"}, {socket_async_operation::send_packets, "send_packets"}, {socket_async_operation::send_to, "send_to"}});}
       inline std::wostream& operator<<(std::wostream& os, socket_async_operation value) {return os << to_string(value, {{socket_async_operation::none, L"none"}, {socket_async_operation::accept, L"accept"}, {socket_async_operation::connect, L"connect"}, {socket_async_operation::disconnect, L"disconnect"}, {socket_async_operation::receive, L"receive"}, {socket_async_operation::receive_from, L"receive_from"}, {socket_async_operation::receive_message_from, L"receive_message_from"}, {socket_async_operation::send, L"send"}, {socket_async_operation::send_packets, L"send_packets"}, {socket_async_operation::send_to, L"send_to"}});}

@@ -12,10 +12,10 @@ namespace stacktrace {
    *  Enables catching of all stack-augmented exception classes. */
   class stack_exception_base : public call_stack {
   public:
-    stack_exception_base (const bool _show_stack) : call_stack(2), show_stack(_show_stack) {}
-    virtual ~stack_exception_base () throw() {}
+    stack_exception_base(const bool _show_stack) : call_stack(2), show_stack(_show_stack) {}
+    virtual ~stack_exception_base() throw() {}
     
-    virtual const char * what () const throw() = 0;
+    virtual const char* what() const throw() = 0;
     
     /// flag to indicate if stack-trace is included in what() messages
     bool show_stack;
@@ -25,18 +25,17 @@ namespace stacktrace {
   template<class T>
   class stack_exception : public T, public stack_exception_base  {
   public:
-    stack_exception (const std::string & msg) : T(msg), stack_exception_base(true)  { }
-    virtual ~stack_exception () throw() {}
+    stack_exception(const std::string& msg) : T(msg), stack_exception_base(true)  { }
+    virtual ~stack_exception() throw() {}
     
-    virtual const char * what () const throw() {
+    virtual const char* what() const throw() {
       if (show_stack) {
         // concatenate message with stack trace
         buffer = "[" + std::string(T::what()) + "]\n"
-        + stack_exception::to_string();
+          + stack_exception::to_string();
         return buffer.c_str();
-      } else {
+      } else
         return T::what();
-      }
     }
   private:
     mutable std::string buffer;

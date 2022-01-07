@@ -24,7 +24,7 @@ namespace xtd {
       directory_valid() = delete;
       /// @endcond
       
-#if defined(__cpp_lib_filesystem)
+      #if defined(__cpp_lib_filesystem)
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -78,7 +78,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -132,8 +132,8 @@ namespace xtd {
           base_assert::error();
         }
       }
-#endif
-
+      #endif
+      
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.

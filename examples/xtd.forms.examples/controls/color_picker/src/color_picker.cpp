@@ -14,7 +14,7 @@ namespace examples {
       test_zone.location({10, 50});
       test_zone.back_color(color::red);
       test_zone.border_style(border_style::fixed_3d);
-
+      
       color_picker.parent(*this);
       color_picker.color(test_zone.back_color());
       color_picker.location({10, 10});

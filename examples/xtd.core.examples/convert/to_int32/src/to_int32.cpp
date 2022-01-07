@@ -27,7 +27,7 @@ int main() {
   console::write_line("as<int32_t>(any_value)       = {}", as<int32_t>(any_value));
   console::write_line("convert::to_int32(any_value) = {}", convert::to_int32(any_value));
   console::write_line();
-
+  
   console::write_line("Convert string to int :");
   console::write_line("-----------------------");
   auto string_value = "42";
@@ -35,7 +35,7 @@ int main() {
   console::write_line("as<int32_t>(string_value)       = {}", as<int32_t>(string_value));
   console::write_line("convert::to_int32(string_value) = {}", convert::to_int32(string_value));
   console::write_line();
-
+  
   console::write_line("Convert hexa string to int :");
   console::write_line("----------------------------");
   auto string_hex_value = "0x2A";
@@ -50,12 +50,12 @@ int main() {
   console::write_line("static_cast<int32_t>(overflow_value) = {}", static_cast<int32_t>(overflow_value)); // Overflow not detected
   try {
     console::write_line("as<int32_t>(overflow_value)          = {}", as<int32_t>(overflow_value));
-  } catch(const overflow_exception& e) {
+  } catch (const overflow_exception& e) {
     console::write_line("(ERROR) as : Overflow exception");
   }
   try {
     console::write_line("convert::to_int32(overflow_value)   = {}", convert::to_int32(overflow_value));
-  } catch(const overflow_exception& e) {
+  } catch (const overflow_exception& e) {
     console::write_line("(ERROR) convert::to_int32 : Overflow exception");
   }
 }

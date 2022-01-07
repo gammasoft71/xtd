@@ -210,7 +210,7 @@ namespace xtd {
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
       static xtd::ustring get_random_file_name();
-            
+      
       /// @brief Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
       /// @return The full path of the temporary file.
       /// @remarks This method creates a temporary file with a .TMP file extension. The temporary file is created within the user’s temporary folder, which is the path returned by the GetTempPath method.
@@ -243,7 +243,7 @@ namespace xtd {
       
     private:
       static int __get_index_path_rooted(const xtd::ustring& path);
-      static bool __is_drive(const xtd::ustring& path) noexcept;      
+      static bool __is_drive(const xtd::ustring& path) noexcept;
     };
   }
 }

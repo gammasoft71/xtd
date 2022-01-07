@@ -17,8 +17,7 @@ namespace {
       allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
       refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
       UnhookWindowsHookEx(handle_hook);
-    }
-    else
+    } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
     return 0;
   }
@@ -30,12 +29,11 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<
   color_data.SetChooseAlpha((options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
   color_data.SetChooseFull((options & CC_FULLOPEN) == CC_FULLOPEN);
   color_data.SetColour(wxColour(color.r(), color.g(), color.b(), color.a()));
-  for(size_t index = 0; index < custom_colors.size(); ++index) {
+  for (size_t index = 0; index < custom_colors.size(); ++index)
     color_data.SetCustomColour(static_cast<int32_t>(index), wxColour(custom_colors[index].r(), custom_colors[index].g(), custom_colors[index].b(), custom_colors[index].a()));
-  }
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
-#endif
+  #endif
   wxColourDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), &color_data);
   dialog.SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
   bool result = dialog.ShowModal() == wxID_OK;
@@ -43,7 +41,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<
     wxColour colour = dialog.GetColourData().GetColour();
     color = drawing::color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
   }
-  for(size_t index = 0; index < custom_colors.size(); ++index) {
+  for (size_t index = 0; index < custom_colors.size(); ++index) {
     wxColour custom_colour = dialog.GetColourData().GetCustomColour(static_cast<int32_t>(index));
     custom_colors[index] = xtd::drawing::color::from_argb(custom_colour.Alpha(), custom_colour.Red(), custom_colour.Green(), custom_colour.Blue());
   }

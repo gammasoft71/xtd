@@ -63,7 +63,7 @@ namespace xtd {
       /// @brief Stops animation of the animation control.
       void stop();
       /// @}
-
+      
       /// @name Events
       
       /// @{

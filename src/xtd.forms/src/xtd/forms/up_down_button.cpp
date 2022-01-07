@@ -18,7 +18,7 @@ forms::create_params up_down_button::create_params() const {
   
   if (orientation_ == forms::orientation::horizontal) create_params.style(create_params.style() | UDS_HORZ);
   if (wrapped_) create_params.style(create_params.style() | UDS_WRAP);
-
+  
   return create_params;
 }
 
@@ -69,7 +69,7 @@ up_down_button& up_down_button::value(int32_t value) {
   return *this;
 }
 
-void up_down_button::on_handle_created(const event_args &e) {
+void up_down_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   native::up_down_button::maximum(handle(), maximum_);
   native::up_down_button::minimum(handle(), minimum_);
@@ -84,15 +84,15 @@ void up_down_button::on_value_changed(const event_args& e) {
   if (can_raise_events()) value_changed(*this, e);
 }
 
-void up_down_button::wnd_proc(message &message) {
+void up_down_button::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_REFLECT + WM_HSCROLL:
-    case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
-    default: control::wnd_proc(message);
+  case WM_REFLECT + WM_HSCROLL:
+  case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
+  default: control::wnd_proc(message);
   }
 }
 
-void up_down_button::wm_scroll(message &message) {
+void up_down_button::wm_scroll(message& message) {
   if (message.wparam() == SB_LINEDOWN) value_ = value_ > minimum_ ? value_ - 1 : maximum_;
   if (message.wparam() == SB_LINEUP) value_ = value_ < maximum_ ? value_ + 1 : minimum_;
   on_scroll(event_args::empty);

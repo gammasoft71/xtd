@@ -54,7 +54,7 @@ namespace xtd {
       /// @endcond
       
       /// @name Properties
-
+      
       /// @{
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
@@ -63,7 +63,7 @@ namespace xtd {
       /// @}
       
       /// @name Methods
-
+      
       /// @{
       /// @brief Closes the xtd::io::binary_writer object and the underlying stream, and releases any system resources associated with the reader.
       virtual void close();
@@ -79,7 +79,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception The file pointer was moved to an invalid location.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual size_t seek(size_t offset, std::ios::seekdir origin);
-
+      
       /// @brief Writes a one-byte boolean value to the current stream, with 0 representing false and 1 representing true.
       /// @param value The boolean value to write (0 or 1).
       /// @exception xtd::io::io_exception An I/O error occurs.
@@ -117,13 +117,13 @@ namespace xtd {
         for (auto c : buffer)
           write(c);
       }
-
+      
       /// @brief Writes a byte array to the underlying stream.
       /// @param buffer A byte array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual void write(const std::vector<byte_t>& buffer);
-
+      
       /// @brief Writes a region of a byte array to the current stream.
       /// @param buffer A byte array containing the data to write.
       /// @param index The index of the first byte to read from buffer and to write to the stream.
@@ -132,13 +132,13 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual void write(const std::vector<byte_t>& buffer, size_t index, size_t count);
-
+      
       /// @brief Writes a character array to the underlying stream.
       /// @param buffer A character array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual void write(const std::vector<char>& buffer);
-
+      
       /// @brief Writes a region of a character array to the current stream.
       /// @param buffer A character array containing the data to write.
       /// @param index The index of the first byte to read from buffer and to write to the stream.
@@ -147,13 +147,13 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual void write(const std::vector<char>& buffer, size_t index, size_t count);
-
+      
       /// @brief Writes an eight-byte floating-point value to the current stream and advances the stream position by eight bytes.
       /// @param value The eight-byte floating-point value to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       virtual void write(double value);
-
+      
       /// @brief Writes a two-byte signed integer to the current stream and advances the stream position by two bytes.
       /// @param value The two-byte signed integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
@@ -201,7 +201,7 @@ namespace xtd {
       virtual void write(const char32_t* value);
       virtual void write(const wchar_t* value);
       /// @endcond
-
+      
       /// @brief Writes a two-byte unsigned integer to the current stream and advances the stream position by two bytes.
       /// @param value The two-byte unsigned integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
@@ -252,7 +252,7 @@ namespace xtd {
       binary_writer& operator<<(uint32_t value) {write(value); return *this;}
       binary_writer& operator<<(uint64_t value) {write(value); return *this;}
       /// @endcond
-
+      
     private:
       std::ostream* stream_ = nullptr;
       bool delete_when_destroy_ = false;

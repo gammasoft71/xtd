@@ -29,7 +29,7 @@ namespace xtd {
     /// @brief Initialize a new instance of xtd::cpp_language class.
     explicit cpp_language(uint32_t cpp) : cpp_(cpp) {}
     /// @}
-  
+    
     /// @cond
     cpp_language() = default;
     cpp_language(const cpp_language&) = default;
@@ -43,7 +43,7 @@ namespace xtd {
     /// @brief Gets if is experimental language
     /// @return true if is experimental language; otherwise false.
     bool is_experimental_language() const noexcept {return language() != experimental_language();}
-
+    
     /// @brief Gets if is supported by xtd.
     /// @return true is supported by xtd; otherwise false.
     bool is_supported() const noexcept {return cpp_ >= 201703L;}
@@ -76,7 +76,7 @@ namespace xtd {
     /// @brief Gets the month when the cpp language was released.
     /// @return The month when the cpp version was released.
     int32_t month() const noexcept {return cpp_ % 100;}
-
+    
     /// @brief Gets the offical name of the cpp language.
     /// @return The offical name of the cpp version.
     xtd::ustring name() const noexcept {
@@ -88,7 +88,7 @@ namespace xtd {
     /// @brief Gets the value of cpp language.
     /// @return The value of cpp version.
     uint32_t value() const noexcept {return cpp_;}
-
+    
     /// @brief Get the version string of cpp language.
     /// @return The version string.
     xtd::ustring version_string() const noexcept {
@@ -98,7 +98,7 @@ namespace xtd {
     /// @brief Gets The version of cpp language.
     /// @return The version.
     const xtd::version& version() const noexcept {
-      static xtd::version ver(cpp_/100, cpp_%100);
+      static xtd::version ver(cpp_ / 100, cpp_ % 100);
       return ver;
     }
     
@@ -114,7 +114,7 @@ namespace xtd {
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
     xtd::ustring to_string() const noexcept override {return version_string();}
     /// @}
-
+    
   private:
     uint32_t cpp_ = __cplusplus;
   };

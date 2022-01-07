@@ -17,9 +17,9 @@ namespace {
 }
 
 void dns::cleanup() {
-#if !defined(__ANDROID__)
+  #if !defined(__ANDROID__)
   endhostent();
-#endif
+  #endif
 }
 
 void dns::destroy(intptr_t host) {
@@ -72,7 +72,7 @@ int32_t dns::get_host_name(string& host_name) {
 }
 
 void dns::startup() {
-#if !defined(__ANDROID__)
+  #if !defined(__ANDROID__)
   sethostent(true);
-#endif
+  #endif
 }

@@ -13,7 +13,7 @@ namespace xtd {
     /// @cond
     class tab_page;
     /// @endcond
-  
+    
     /// @brief Manages a related set of tab pages.
     /// @par Namespace
     /// xtd::forms
@@ -38,7 +38,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the tab_control class.
       tab_control() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -85,7 +85,7 @@ namespace xtd {
       /// @remarks The order of tab pages in this collection reflects the order the tabs appear in the control.
       virtual const control_collection& tab_pages() const {return controls();}
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -94,24 +94,24 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<tab_control, event_handler> selected_index_changed;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
       /// @{
       forms::create_params create_params() const override;
-
+      
       drawing::size measure_control() const override;
-
-      void on_control_added(const control_event_args &e) override;
-      void on_control_removed(const control_event_args &e) override;
-
+      
+      void on_control_added(const control_event_args& e) override;
+      void on_control_removed(const control_event_args& e) override;
+      
       void on_handle_created(const event_args& e) override;
-
+      
       /// @brief Raises the tab_control::selected_index_changed event.
       /// @param An xtd::event_args that contains the event data.
       virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}
-
+      
       void wnd_proc(message& message) override;
       /// @}
       
@@ -120,12 +120,12 @@ namespace xtd {
       
       friend class tab_page;
       size_t get_child_index(intptr_t page) {
-        for (size_t index = 0;index < controls().size(); ++index)
+        for (size_t index = 0; index < controls().size(); ++index)
           if (controls()[index].get().handle() == page) return index;
         return npos;
       }
       /// @endcond
-
+      
     private:
       tab_alignment alignment_ = tab_alignment::top;
       forms::image_list image_list_;

@@ -45,7 +45,7 @@ size_t file::get_size(const std::string& path) {
   void* handle = FindFirstFile(win32::strings::to_wstring(path).c_str(), &file);
   if (handle == INVALID_HANDLE_VALUE)
     return 0;
-  
+    
   ULARGE_INTEGER size;
   size.HighPart = file.nFileSizeHigh;
   size.LowPart = file.nFileSizeLow;

@@ -18,13 +18,13 @@ public:
     client_size({400, 350});
     back_color(colors::dark_cyan());
     fore_color(colors::black());
-
+    
     for (auto index = 0U; index < languages.size(); ++index) {
       items[index].first.location(point(10, 10 + index * 30)).parent(*this).text(languages[index].first).width(150);
       items[index].second.location(point(160, 10 + index * 30)).parent(*this).text(languages[index].second).width(220).font({items[index].second.font(), font_style::bold});
     }
   }
-
+  
 private:
   vector<pair<ustring, ustring>> languages {
     {"Arabic", u8"\u0627\u0644\u0643\u0644\u0645\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629"},

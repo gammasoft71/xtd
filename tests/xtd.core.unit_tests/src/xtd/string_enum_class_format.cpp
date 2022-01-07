@@ -17,16 +17,16 @@ namespace unit_tests {
     friday,
     saturday
   };
-
+  
   std::ostream& operator<<(std::ostream& os, unit_tests::day d) {
     switch (d) {
-      case unit_tests::day::sunday: os << "sunday"; break;
-      case unit_tests::day::monday: os << "monday"; break;
-      case unit_tests::day::tuesday: os << "tuesday"; break;
-      case unit_tests::day::wednesday: os << "wednesday"; break;
-      case unit_tests::day::thursday: os << "thursday"; break;
-      case unit_tests::day::friday: os << "friday"; break;
-      case unit_tests::day::saturday: os << "saturday"; break;
+    case unit_tests::day::sunday: os << "sunday"; break;
+    case unit_tests::day::monday: os << "monday"; break;
+    case unit_tests::day::tuesday: os << "tuesday"; break;
+    case unit_tests::day::wednesday: os << "wednesday"; break;
+    case unit_tests::day::thursday: os << "thursday"; break;
+    case unit_tests::day::friday: os << "friday"; break;
+    case unit_tests::day::saturday: os << "saturday"; break;
     }
     return os;
   }
@@ -68,7 +68,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_tuesday_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([]{xtd::ustring::format("{0:e}", day::tuesday);}, csf_);
+      assert::throws<xtd::format_exception>([] {xtd::ustring::format("{0:e}", day::tuesday);}, csf_);
     }
   };
 }

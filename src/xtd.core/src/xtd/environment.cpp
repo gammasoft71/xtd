@@ -15,7 +15,7 @@ struct __update__macos_path__ {
     /// @todo fix PATH with foreach...
     //for (auto path : {"/usr/local/bin", "/usr/bin", "/bin", "/usr/sbin", "/sbin", "/Library/Apple/usr/bin"})
     //  if (!xtd::environment::get_environment_variable("PATH"), path).contains() xtd::environment::set_environment_variable("PATH", path+xtd::environment::get_environment_variable("PATH"));
-    xtd::environment::set_environment_variable("PATH", "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"+xtd::environment::get_environment_variable("PATH"));
+    xtd::environment::set_environment_variable("PATH", "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin" + xtd::environment::get_environment_variable("PATH"));
   }
 } __updmacpath__;
 
@@ -60,8 +60,8 @@ ustring environment::get_environment_variable(const ustring& variable, environme
 
 map<string, string>& environment::get_environment_variables(environment_variable_target target) {
   if (target == environment_variable_target::process) return native::environment::get_environment_variables(ENVIRONMENT_VARIABLE_TARGET_PROCESS);
-  if(target == environment_variable_target::user) return native::environment::get_environment_variables(ENVIRONMENT_VARIABLE_TARGET_USER);
-  if(target == environment_variable_target::machine) return native::environment::get_environment_variables(ENVIRONMENT_VARIABLE_TARGET_MACHINE);
+  if (target == environment_variable_target::user) return native::environment::get_environment_variables(ENVIRONMENT_VARIABLE_TARGET_USER);
+  if (target == environment_variable_target::machine) return native::environment::get_environment_variables(ENVIRONMENT_VARIABLE_TARGET_MACHINE);
   throw argument_exception("Invalid environment variable target value"_t);
 }
 
@@ -70,10 +70,10 @@ ustring environment::get_folder_path(environment::special_folder folder, environ
   
   if (option == environment::special_folder_option::none)
     return !xtd::io::directory::exists(path) ? "" :  path;
-  
+    
   if (!xtd::io::directory::exists(path))
     xtd::io::directory::create_directory(path);
-  
+    
   return path;
 }
 
@@ -115,7 +115,7 @@ void environment::set_environment_variable(const ustring& variable, const ustrin
       get_environment_variables()[variable] = value;
       native::environment::set_environment_variable(variable, value);
     }
-  } else if(target == environment_variable_target::user || target == environment_variable_target::machine) {
+  } else if (target == environment_variable_target::user || target == environment_variable_target::machine) {
     //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
     //if (value.is_empty())
     //  key.delete_value(variable);

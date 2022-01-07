@@ -30,9 +30,9 @@ namespace xtd {
       /// @brief Initializes a new instance of the trace_form class.
       trace_form() : trace_form_base("Trace") {
         xtd::diagnostics::trace::listeners().push_back(listener_);
-#if defined(TRACE)
+        #if defined(TRACE)
         visible(true);
-#endif
+        #endif
       }
       /// @}
       
@@ -50,19 +50,19 @@ namespace xtd {
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
       xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       void write(const xtd::ustring& trace) override {
-#if defined(TRACE)
+        #if defined(TRACE)
         trace_form_base::write(trace);
-#endif
+        #endif
       }
       void write_line(const xtd::ustring& trace) override {
-#if defined(TRACE)
+        #if defined(TRACE)
         trace_form_base::write_line(trace);
-#endif
+        #endif
       }
       
       void flush() override {}

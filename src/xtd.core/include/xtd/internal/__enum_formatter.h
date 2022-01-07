@@ -16,17 +16,17 @@ inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t
   if (fmt.empty()) return __format_stringer<char_t>(value);
   
   switch (fmt[0]) {
-    case 'b':
-    case 'B':
-    case 'd':
-    case 'D':
-    case 'o':
-    case 'O':
-    case 'x':
-    case 'X': return __numeric_formatter(fmt, static_cast<long long int>(value), loc);
-    case 'g':
-    case 'G': return __format_stringer<char_t>(value);
-    default: __format_exception("Invalid format expression"); return {};
+  case 'b':
+  case 'B':
+  case 'd':
+  case 'D':
+  case 'o':
+  case 'O':
+  case 'x':
+  case 'X': return __numeric_formatter(fmt, static_cast<long long int>(value), loc);
+  case 'g':
+  case 'G': return __format_stringer<char_t>(value);
+  default: __format_exception("Invalid format expression"); return {};
   }
 }
 

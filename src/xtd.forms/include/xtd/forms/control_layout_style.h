@@ -48,7 +48,7 @@ namespace xtd {
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values..
       control_layout_style(bool expanded, xtd::forms::content_alignment align) : expanded_(expanded), align_(align) {}
-
+      
     public:
       /// @brief Gets a flag indicating how a control should be sized relative to its containing layout container.
       /// @return One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::absolute.
@@ -59,7 +59,7 @@ namespace xtd {
         size_type_ = size_type;
         return *this;
       }
-
+      
       /// @brief Gets a flag indicating if control is expanded to its containing layout container.
       /// @return true if control expanded; otherwise false. The default is false.
       bool expanded() const {return expanded_;}
@@ -69,7 +69,7 @@ namespace xtd {
         expanded_ = expanded;
         return *this;
       }
-
+      
       /// @brief Gets a flag indicating how a control should be align to its containing layout container.
       /// @return align One of the content_alignment values. The default is top_left.
       /// @remarks This property work only if expanded = false.
@@ -81,7 +81,7 @@ namespace xtd {
         align_ = align;
         return *this;
       }
-
+      
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
       xtd::ustring to_string() const noexcept override {return ustring::format("control_layout_style=[expanded={}, align={}, size_type={}]", expanded_, align_, size_type_);}
@@ -93,7 +93,7 @@ namespace xtd {
         return os << control_layout_style.to_string();
       }
       /// @endcond
-
+      
     private:
       xtd::forms::size_type size_type_ = xtd::forms::size_type::absolute;
       bool expanded_ = false;

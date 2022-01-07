@@ -82,7 +82,7 @@ namespace xtd {
       boolean_switch(const xtd::ustring& display_name, const xtd::ustring& description, const xtd::ustring& default_switch_value);
       
       /// @}
-
+      
       /// @name Properties
       /// @{
       
@@ -94,7 +94,7 @@ namespace xtd {
       /// @param enabled true if the switch is enabled; otherwise, false. The default is false.
       /// @remarks By default, this field is set to false (disabled). To enable the switch, assign this field the value of true. To disable the switch, assign the value to false. The value of this property is determined by the value of the base class property xtd::diagnostics::boolean_switch::switch_setting.
       void enabled(bool enabled);
-
+      
       /// @}
       
     protected:

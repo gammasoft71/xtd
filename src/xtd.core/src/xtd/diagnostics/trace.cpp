@@ -93,9 +93,8 @@ void trace::fail__(const ustring& message) {
     if (!listener->is_thread_safe() && use_global_lock_) {
       std::lock_guard<std::mutex> lock(global_lock_);
       listener->fail(message);
-    } else {
+    } else
       listener->fail(message);
-    }
   }
   if (auto_flush_) flush();
 }
@@ -107,9 +106,8 @@ void trace::fail__(const ustring& message, const ustring& detail_message) {
     if (!listener->is_thread_safe() && use_global_lock_) {
       std::lock_guard<std::mutex> lock(global_lock_);
       listener->fail(message, detail_message);
-    } else {
+    } else
       listener->fail(message, detail_message);
-    }
   }
   if (auto_flush_) flush();
 }
@@ -126,9 +124,8 @@ void trace::trace_event_(trace_event_type trace_event_type, const ustring& messa
     if (!listener->is_thread_safe() && use_global_lock_) {
       std::lock_guard<std::mutex> lock(global_lock_);
       listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
-    } else {
+    } else
       listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
-    }
   }
   if (auto_flush_) flush();
 }
@@ -140,9 +137,8 @@ void trace::write_(const ustring& message) {
     if (!listener->is_thread_safe() && use_global_lock_) {
       std::lock_guard<std::mutex> lock(global_lock_);
       listener->write(message);
-    } else {
+    } else
       listener->write(message);
-    }
   }
   if (auto_flush_) flush();
 }
@@ -154,9 +150,8 @@ void trace::write_(const ustring& message, const ustring& category) {
     if (!listener->is_thread_safe() && use_global_lock_) {
       std::lock_guard<std::mutex> lock(global_lock_);
       listener->write(message, category);
-    } else {
+    } else
       listener->write(message, category);
-    }
   }
   if (auto_flush_) flush();
 }
@@ -168,9 +163,8 @@ void trace::write_line_(const ustring& message) {
     if (!listener->is_thread_safe() && use_global_lock_) {
       std::lock_guard<std::mutex> lock(global_lock_);
       listener->write_line(message);
-    } else {
+    } else
       listener->write_line(message);
-    }
   }
   if (auto_flush_) flush();
 }
@@ -182,9 +176,8 @@ void trace::write_line_(const ustring& message, const ustring& category) {
     if (!listener->is_thread_safe() && use_global_lock_) {
       std::lock_guard<std::mutex> lock(global_lock_);
       listener->write_line(message, category);
-    } else {
+    } else
       listener->write_line(message, category);
-    }
   }
   if (auto_flush_) flush();
 }

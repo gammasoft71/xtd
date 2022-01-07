@@ -30,7 +30,7 @@ namespace xtd {
       /// @brief Encapsulates the collection of xtd::drawing::image objects in an image_list.
       using image_collection = layout::arranged_element_collection<drawing::image>;
       /// @}
-
+      
       /// @name Fields
       
       /// @{
@@ -44,7 +44,7 @@ namespace xtd {
       /// @brief Initialize a new instance ao image_list class.
       image_list();
       /// @}
-
+      
       /// @cond
       ~image_list();
       image_list(const image_list&) = default;
@@ -52,7 +52,7 @@ namespace xtd {
       bool operator==(const image_list& value) const {return data_->images_ == value.data_->images_;}
       bool operator!=(const image_list& value) const {return !operator==(value);}
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{

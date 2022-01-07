@@ -23,7 +23,7 @@ namespace xtd {
       /// @brief The control should be sized as a percentage of the parent container.
       percent = 2,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, size_type value) {return os << to_string(value, {{size_type::auto_size, "auto_size"}, {size_type::absolute, "absolute"}, {size_type::percent, "percent"}});}
     inline std::wostream& operator<<(std::wostream& os, size_type value) {return os << to_string(value, {{size_type::auto_size, L"auto_size"}, {size_type::absolute, L"absolute"}, {size_type::percent, L"percent"}});}

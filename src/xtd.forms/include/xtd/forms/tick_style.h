@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Tick marks are located on both sides of the control.
       both = 3,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, tick_style value) {return os << to_string(value, {{tick_style::none, "none"}, {tick_style::top_left, "top_left"}, {tick_style::bottom_right, "bottom_right"}, {tick_style::both, "both"}});}
     inline std::wostream& operator<<(std::wostream& os, tick_style value) {return os << to_string(value, {{tick_style::none, L"none"}, {tick_style::top_left, L"top_left"}, {tick_style::bottom_right, L"bottom_right"}, {tick_style::both, L"both"}});}

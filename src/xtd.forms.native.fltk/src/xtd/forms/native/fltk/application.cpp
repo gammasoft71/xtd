@@ -15,7 +15,7 @@ using namespace xtd::forms::native;
 namespace {
   bool restart_asked = false;
   bool initialized = false;
-
+  
   int fltk_handler(int event) {
     return event == FL_SHORTCUT && Fl::event_key() == FL_Escape;
   }
@@ -57,11 +57,11 @@ void application::initialize() {
     Fl_File_Icon::load_system_icons();
     Fl::add_handler(&fltk_handler);
     Fl::scheme(nullptr);
-
+    
     // This hack is used to to prevent run method to exit when last form is closed...
     //static Fl_Window form_hidden(1000, 10000, 0, 0, nullptr);
     //form_hidden.show();
-
+    
     initialized = true;
   }
 }
@@ -85,8 +85,8 @@ void application::run() {
   
   if (restart_asked) {
     std::vector<string> command_line_args = environment::get_command_line_args();
-    char** argv = new char*[command_line_args.size() + 1];
-    for(int index = 0; index <command_line_args.size(); index++)
+    char** argv = new char* [command_line_args.size() + 1];
+    for (int index = 0; index < command_line_args.size(); index++)
       argv[index] = command_line_args[index].data();
     argv[command_line_args.size()] = 0;
     execv(argv[0], argv);

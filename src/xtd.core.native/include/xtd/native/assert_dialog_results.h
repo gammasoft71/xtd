@@ -10,7 +10,7 @@
 /// @endcond
 
 #include <cstdint>
- 
+
 /// @internal
 /// @brief The assert dialog return value is Abort (usually sent from a button labeled Abort).
 /// @par Library

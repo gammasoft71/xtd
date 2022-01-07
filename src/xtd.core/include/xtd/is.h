@@ -132,7 +132,7 @@ namespace xtd {
   inline bool is<int8_t>(int8_t value) {
     return true;
   }
-
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
@@ -186,7 +186,7 @@ namespace xtd {
   inline bool is<int64_t>(int64_t value) {
     return true;
   }
-
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
@@ -204,7 +204,7 @@ namespace xtd {
   inline bool is<llong_t>(llong_t value) {
     return true;
   }
- 
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
@@ -240,7 +240,7 @@ namespace xtd {
   inline bool is<uint16_t>(uint16_t value) {
     return true;
   }
-    
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
@@ -294,7 +294,7 @@ namespace xtd {
   inline bool is<ullong_t>(ullong_t value) {
     return true;
   }
-
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
@@ -310,7 +310,7 @@ namespace xtd {
       return false;
     }
   }
-
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
@@ -321,7 +321,7 @@ namespace xtd {
   inline bool is<std::any>(std::any value) {
     return true;
   }
-
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd
@@ -375,7 +375,7 @@ namespace xtd {
   bool is(param_t& value) {
     return is<type_t>(&value);
   }
-
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Namespace
   /// xtd

@@ -12,4 +12,4 @@ int main() {
 
 // This code produces the following output:
 //
-// One Two Three Four 
+// One Two Three Four

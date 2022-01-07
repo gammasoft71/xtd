@@ -76,7 +76,7 @@ namespace {
     allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
     return control;
   }
-
+  
   intptr_t set_form_extra_options(intptr_t control) {
     allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
     refresh_title_bar_theme_color(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
@@ -172,7 +172,7 @@ intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, int
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return static_cast<intptr_t>(-1);
   }
-
+  
   return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
 }
 
@@ -268,14 +268,14 @@ void control::font(intptr_t control, const drawing::font& font) {
 }
 
 void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked, std::shared_ptr<bool> completed) {
-  if (!control || !wxTheApp || !wxTheApp->IsMainLoopRunning() || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled()) {
+  if (!control || !wxTheApp || !wxTheApp->IsMainLoopRunning() || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled())
     invoked->unlock();
-  } else {
+  else {
     if (!reinterpret_cast<control_handler*>(control)->control()) {
       wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
       return;
     }
-    reinterpret_cast<control_handler*>(control)->control()->CallAfter([=] {
+    reinterpret_cast<control_handler*>(control)->control()->CallAfter([ = ] {
       invoker(args);
       *completed = true;
       invoked->unlock();

@@ -51,5 +51,5 @@ void checked_list_box::selected_index(intptr_t control, size_t index) {
 vector<size_t> checked_list_box::selected_indices(intptr_t control) {
   if (control == 0) return {};
   return {};
-    
+  
 }

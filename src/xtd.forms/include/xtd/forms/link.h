@@ -49,7 +49,7 @@ namespace xtd {
       bool operator==(const link& other) const {return enabled_ == other.enabled_ && length_ == other.length_ && name_ == other.name_ && start_ == other.start_;}
       bool operator!=(const link& other) const {return !operator==(other);}
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -98,7 +98,7 @@ namespace xtd {
       /// @param value A xtd::ustring representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
       /// @return The current instance of xtd::forms::link_label::link.
       link& name(const xtd::ustring& value);
-
+      
       /// @brief Gets the starting location of the link within the text of the xtd::forms::link_label::link.
       /// @return The location within the text of the the xtd::forms::link_label control where the link starts.
       /// @remarks To specify text from the xtd::forms::link_label to display as a link, set the xtd::forms::link_label::start property to the location in the text to start creating the link. After the xtd::forms::link_label::start property is set, set the value of the xtd::forms::link_label::length property to the number of characters, including the character position specified in the xtd::forms::link_label::start property, that you want to make the link text. For example, if you want to make the first word of the text "The quick brown fox" a link, you set the xtd::forms::link_label::start property to zero (0) and the xtd::forms::link_label::length property to three (3).
@@ -129,7 +129,7 @@ namespace xtd {
       /// @note If you have only one link specified in a xtd::forms::link_label control, you can use the xtd::forms::link_label::link_visited property of the xtd::forms::link_label to specify the link as visited. You can also use the xtd::forms::link_label::link_visited property if you have multiple links defined, but the setting only applies to the first link defined in the control.
       link& visited(bool value);
       /// @}
-
+      
     private:
       friend link_label;
       xtd::ustring description_;

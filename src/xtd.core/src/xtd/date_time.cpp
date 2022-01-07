@@ -21,12 +21,12 @@ namespace {
   const int64_t ticks_per_minute = ticks_per_second * 60;
   const int64_t ticks_per_hour = ticks_per_minute * 60;
   const int64_t ticks_per_day = ticks_per_hour * 24;
-   
+  
   // Number of seconds per time unit
   const int64_t seconds_per_minute = 60;
   const int64_t seconds_per_our = seconds_per_minute * 60;
   const int64_t seconds_per_day = seconds_per_our * 24;
-
+  
   // Number of days in a non-leap year
   const int64_t days_per_year = 365;
   // Number of days in 4 years
@@ -42,14 +42,14 @@ namespace {
   const int64_t days_to_1970 = days_per_400_years * 4 + days_per_100_years * 3 + days_per_4_years * 17 + days_per_year; // 719,162
   // Number of days from 1/1/0001 to 12/31/9999
   const int64_t days_to_10000 = days_per_400_years * 25 - 366; // 3652059
- 
+  
   const ticks min_ticks = ticks(0);
   const ticks max_ticks = ticks(days_to_10000 * ticks_per_day - 1);
   
-  const ticks file_time_offset = ticks(days_to_1601 * ticks_per_day);
+  const ticks file_time_offset = ticks(days_to_1601* ticks_per_day);
   
-  constexpr seconds seconds_offset_1970 = seconds(seconds_per_day * days_to_1970);
- 
+  constexpr seconds seconds_offset_1970 = seconds(seconds_per_day* days_to_1970);
+  
   static uint32_t get_years(int64_t& days) {
     int64_t year = 1;
     
@@ -78,7 +78,7 @@ namespace {
       year += chunks;
       days -= chunks * days_per_year;
     }
-
+    
     return static_cast<uint32_t>(year);
   }
   
@@ -89,7 +89,7 @@ namespace {
       ++month;
       days -= days_in_month;
     }
-
+    
     return month;
   }
 }
@@ -251,13 +251,12 @@ date_time date_time::add_months(int32_t months) const {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
-
+  
   int32_t i = month - 1 + months;
   if (i >= 0) {
     month = static_cast<uint32_t>(i % 12 + 1);
     year = year + static_cast<uint32_t>(i / 12);
-  }
-  else {
+  } else {
     month = static_cast<uint32_t>(12 + (i + 1) % 12);
     year = year + static_cast<uint32_t>((i - 11) / 12);
   }
@@ -309,7 +308,7 @@ date_time date_time::from_binary(int64_t date_data) {
   return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32_t>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
 }
 
-date_time date_time::from_file_time(xtd::ticks file_time){
+date_time date_time::from_file_time(xtd::ticks file_time) {
   return from_file_time_utc(file_time).to_local_time();
 }
 
@@ -375,10 +374,10 @@ int64_t date_time::to_binary() const {
 
 date_time date_time::to_local_time() const {
   if (kind_ == date_time_kind::local) return *this;
-
+  
   auto utc_offset = this->utc_offset();
   if (value_ + utc_offset > max_value.value_) return date_time(value_, date_time_kind::local);
-
+  
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
@@ -410,53 +409,53 @@ ustring date_time::to_string(const ustring& format) const {
   auto fmt = format;
   if (fmt.empty()) fmt =  "G";
   if (fmt.size() > 1) format_exception("Invalid format", csf_);
-    
+  
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   
   switch (fmt[0]) {
-    case 'a': return ustring::format("{}", hour / 12 ? "PM" : "AM");
-    case 'b': return ustring::format("{:D3}", millisecond());
-    case 'B': return ustring::format("{}", millisecond());
-    case 'd': return ustring::format("{:D2}/{:D2}/{:D}", month, day, year);
-    case 'D': return ustring::format("{:D}/{:D2}/{:D}", month, day, year);
-    case 'f': return sprintf("%Ec");
-    case 'F': return sprintf("%c");
-    case 'g': return sprintf("%Ec");
-    case 'G': return sprintf("%c");
-    case 'h': return sprintf("%a");
-    case 'H': return sprintf("%A");
-    case 'i': return ustring::format("{:D2}", day);
-    case 'I': return ustring::format("{:D}", day);
-    case 'j': return sprintf("%b");
-    case 'J': return sprintf("%B");
-    case 'k': return ustring::format("{:D2}", month);
-    case 'K': return ustring::format("{:D}", month);
-    case 'l': return ustring::format("{:D2}", year % 100);
-    case 'L': return ustring::format("{:D4}", year);
-    case 'm': return ustring::format("{:D}", year);
-    case 'M': return ustring::format("{} {:D}", sprintf("%B"), day);
-    case 'n': return ustring::format("{}, {:D} {} {:D}", sprintf("%A"), day, sprintf("%B"), year);
-    case 'N': return ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second);
-    case 'o':
-    case 'O': return ustring::format("{:D} {} {:D}", day, sprintf("%B"), year);
-    case 's': return ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
-    case 't': return ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
-    case 'T': return ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second);
-    case 'u': return ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
-    case 'U': return ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second);
-    case 'v': return ustring::format("{:D2}:{:D2}", hour, minute);
-    case 'V': return ustring::format("{:D}:{:D2}", hour, minute);
-    case 'w': return ustring::format("{:D2}", hour);
-    case 'W': return ustring::format("{:D}", hour);
-    case 'x': return ustring::format("{:D2}", hour % 12);
-    case 'X': return ustring::format("{:D}", hour % 12);
-    case 'y': return ustring::format("{} {:D}", sprintf("%B"), year % 100);
-    case 'Y': return ustring::format("{} {:D}", sprintf("%B"), year);
-    case 'z':
-    case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
- }
+  case 'a': return ustring::format("{}", hour / 12 ? "PM" : "AM");
+  case 'b': return ustring::format("{:D3}", millisecond());
+  case 'B': return ustring::format("{}", millisecond());
+  case 'd': return ustring::format("{:D2}/{:D2}/{:D}", month, day, year);
+  case 'D': return ustring::format("{:D}/{:D2}/{:D}", month, day, year);
+  case 'f': return sprintf("%Ec");
+  case 'F': return sprintf("%c");
+  case 'g': return sprintf("%Ec");
+  case 'G': return sprintf("%c");
+  case 'h': return sprintf("%a");
+  case 'H': return sprintf("%A");
+  case 'i': return ustring::format("{:D2}", day);
+  case 'I': return ustring::format("{:D}", day);
+  case 'j': return sprintf("%b");
+  case 'J': return sprintf("%B");
+  case 'k': return ustring::format("{:D2}", month);
+  case 'K': return ustring::format("{:D}", month);
+  case 'l': return ustring::format("{:D2}", year % 100);
+  case 'L': return ustring::format("{:D4}", year);
+  case 'm': return ustring::format("{:D}", year);
+  case 'M': return ustring::format("{} {:D}", sprintf("%B"), day);
+  case 'n': return ustring::format("{}, {:D} {} {:D}", sprintf("%A"), day, sprintf("%B"), year);
+  case 'N': return ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second);
+  case 'o':
+  case 'O': return ustring::format("{:D} {} {:D}", day, sprintf("%B"), year);
+  case 's': return ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
+  case 't': return ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
+  case 'T': return ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second);
+  case 'u': return ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
+  case 'U': return ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second);
+  case 'v': return ustring::format("{:D2}:{:D2}", hour, minute);
+  case 'V': return ustring::format("{:D}:{:D2}", hour, minute);
+  case 'w': return ustring::format("{:D2}", hour);
+  case 'W': return ustring::format("{:D}", hour);
+  case 'x': return ustring::format("{:D2}", hour % 12);
+  case 'X': return ustring::format("{:D}", hour % 12);
+  case 'y': return ustring::format("{} {:D}", sprintf("%B"), year % 100);
+  case 'Y': return ustring::format("{} {:D}", sprintf("%B"), year);
+  case 'z':
+  case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
+  }
   throw format_exception("Invalid format");
 }
 
@@ -468,7 +467,7 @@ std::tm date_time::to_tm() const {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
-
+  
   std::tm result {};
   result.tm_sec = static_cast<int32_t>(second);
   result.tm_min = static_cast<int32_t>(minute);
@@ -555,7 +554,7 @@ void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, ui
   day = static_cast<uint32_t>(days + 1);
   hour = static_cast<uint32_t>(value_.count() / ticks_per_hour % 24);
   minute = static_cast<uint32_t>(value_.count() / ticks_per_minute % 60);
-  second = static_cast<uint32_t>(value_.count() / ticks_per_second% 60);
+  second = static_cast<uint32_t>(value_.count() / ticks_per_second % 60);
   day_of_week = (static_cast<int32_t>(value_.count() / ticks_per_day + 1) % 7);
 }
 
@@ -574,26 +573,26 @@ void date_time::set_date_time(uint32_t year, uint32_t month, uint32_t day, uint3
   min_value.get_date_time(min_year, min_month, min_day, min_hour, min_minute, min_second, day_of_year, day_of_week);
   
   if (year  < min_year ||
-      (year == min_year && month  < min_month) ||
-      (year == min_year && month == min_month && day  < min_day) ||
-      (year == min_year && month == min_month && day == min_day && hour  < min_hour) ||
-      (year == min_year && month == min_month && day == min_day && hour == min_hour && minute  < min_minute) ||
-      (year == min_year && month == min_month && day == min_day && hour == min_hour && minute == min_minute && second < min_second))
+    (year == min_year && month  < min_month) ||
+    (year == min_year && month == min_month && day  < min_day) ||
+    (year == min_year && month == min_month && day == min_day && hour  < min_hour) ||
+    (year == min_year && month == min_month && day == min_day && hour == min_hour && minute  < min_minute) ||
+    (year == min_year && month == min_month && day == min_day && hour == min_hour && minute == min_minute && second < min_second))
     throw argument_out_of_range_exception(csf_);
-  
+    
   if (year  > max_year ||
-      (year == max_year && month  > max_month) ||
-      (year == max_year && month == max_month && day  > max_day) ||
-      (year == max_year && month == max_month && day == max_day && hour > max_hour) ||
-      (year == max_year && month == max_month && day == max_day && hour == max_hour && minute > max_minute) ||
-      (year == max_year && month == max_month && day == max_day && hour == max_hour && minute == max_minute && second > max_second))
+    (year == max_year && month  > max_month) ||
+    (year == max_year && month == max_month && day  > max_day) ||
+    (year == max_year && month == max_month && day == max_day && hour > max_hour) ||
+    (year == max_year && month == max_month && day == max_day && hour == max_hour && minute > max_minute) ||
+    (year == max_year && month == max_month && day == max_day && hour == max_hour && minute == max_minute && second > max_second))
     throw argument_out_of_range_exception(csf_);
-  
+    
   int64_t days = day - 1;
   
   for (uint32_t index = 1; index < month; ++index)
     days += days_in_month(year, index);
-  
+    
   --year;
   days += (year * days_per_year) + (year / 4) - (year / 100) + (year / 400);
   value_ = xtd::ticks(days * ticks_per_day + hour * ticks_per_hour + minute * ticks_per_minute + second * ticks_per_second + millisecond * ticks_per_millisecond);

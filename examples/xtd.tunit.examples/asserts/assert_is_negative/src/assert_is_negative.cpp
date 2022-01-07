@@ -12,7 +12,7 @@ namespace unit_tests {
       int i = -1;
       assert::is_negative(i);
     }
-
+    
     void test_method_(test_case_failed) {
       int i = 1;
       assert::is_negative(i);

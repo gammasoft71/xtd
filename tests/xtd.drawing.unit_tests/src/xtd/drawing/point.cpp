@@ -31,7 +31,7 @@ namespace unit_tests {
       assert::are_equal(1, p.x(), csf_);
       assert::are_equal(2, p.y(), csf_);
     }
-
+    
     void test_method_(create_point_from_point) {
       point p = {1, 2};
       assert::are_equal(point(1, 2), p, csf_);
@@ -39,7 +39,7 @@ namespace unit_tests {
       assert::are_equal(1, p.x(), csf_);
       assert::are_equal(2, p.y(), csf_);
     }
-
+    
     void test_method_(create_point_from_size) {
       point p(size(1, 2));
       assert::are_equal(point(1, 2), p, csf_);
@@ -47,7 +47,7 @@ namespace unit_tests {
       assert::are_equal(1, p.x(), csf_);
       assert::are_equal(2, p.y(), csf_);
     }
-
+    
     void test_method_(create_point_and_assign_it) {
       point p;
       p = {1, 2};
@@ -106,7 +106,7 @@ namespace unit_tests {
       p += size(3, 4);
       assert::are_equal(point(4, 6), p, csf_);
     }
-
+    
     void test_method_(subtract_size) {
       assert::are_equal(point(2, 3), point::subtract({3, 5}, size {1, 2}), csf_);
     }
@@ -120,7 +120,7 @@ namespace unit_tests {
       p -= size(1, 2);
       assert::are_equal(point(2, 3), p, csf_);
     }
-
+    
     void test_method_(to_string) {
       point p(1, 2);
       assert::are_equal("{x=1, y=2}", p.to_string(), csf_);

@@ -15,7 +15,7 @@ public:
     button1.location({50, 50});
     button1.flat_style(xtd::forms::flat_style::flat);
     button1.text("button1");
-
+    
     button2.location({50, 80});
     button2.back_color(color::green);
     button2.flat_appearance().border_color(color::light_green);

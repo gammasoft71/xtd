@@ -121,7 +121,7 @@ namespace xtd {
       /// @param align One of the content_alignment values. The default is middle_center.
       vertical_control_layout_style(int32_t height, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), height_(static_cast<float>(height)) {}
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -132,7 +132,7 @@ namespace xtd {
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       void height(float height) {height_ = height;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -148,7 +148,7 @@ namespace xtd {
         return os << control_layout_style.to_string();
       }
       /// @endcond
-
+      
     private:
       std::optional<float> height_;
     };

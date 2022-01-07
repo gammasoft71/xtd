@@ -18,7 +18,7 @@ int main() {
       if (number_of_byte_received) console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
     }
   };
-
+  
   auto on_client_connect = [&](shared_ptr<iasync_result> ar) {
     xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state());
     socket.end_connect(ar);
@@ -30,7 +30,7 @@ int main() {
       this_thread::sleep_for(50ms);
     }
   };
-
+  
   const size_t client_count = 10;
   
   socket server_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
@@ -38,7 +38,7 @@ int main() {
   server_socket.listen();
   for (auto index = 0U; index < client_count; ++index)
     server_socket.begin_accept(async_callback(on_server_accept), server_socket);
-
+    
   for (auto index = 0U; index < client_count; ++index) {
     xtd::net::sockets::socket socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
     socket.begin_connect(ip_address::loopback, 9400, async_callback(on_client_connect), socket);

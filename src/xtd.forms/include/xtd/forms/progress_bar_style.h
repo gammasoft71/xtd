@@ -23,7 +23,7 @@ namespace xtd {
       /// @brief Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
       marquee = 2,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, progress_bar_style value) {return os << to_string(value, {{progress_bar_style::blocks, "blocks"}, {progress_bar_style::continuous, "continuous"}, {progress_bar_style::marquee, "marquee"}});}
     inline std::wostream& operator<<(std::wostream& os, progress_bar_style value) {return os << to_string(value, {{progress_bar_style::blocks, L"blocks"}, {progress_bar_style::continuous, L"continuous"}, {progress_bar_style::marquee, L"marquee"}});}

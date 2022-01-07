@@ -9,7 +9,7 @@ using namespace xtd::drawing;
 solid_brush::solid_brush() {
   color(drawing::color::black);
 }
-  
+
 solid_brush& solid_brush::color(const drawing::color& color) {
   if (data_->color_ != color) {
     data_->color_ = color;

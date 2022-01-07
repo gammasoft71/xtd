@@ -18,14 +18,14 @@ int main() {
   };
   form2.text("Form 2 (Click the client area to set form as the main form)");
   form2.show();
-
+  
   form form3;
   form3.click += [&] {
     context.main_form(form3);
   };
   form3.text("Form 3 (Click the client area to set form as the main form)");
   form3.show();
-
+  
   // if no client area form clicked, the application will not exit when you close the forms.
   application::run(context);
 }

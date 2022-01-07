@@ -8,7 +8,7 @@ using namespace xtd::drawing;
 
 texture_brush::texture_brush() {
 }
-  
+
 texture_brush& texture_brush::image(const drawing::image& image) {
   if (data_->image_ != image) {
     data_->image_ = image;

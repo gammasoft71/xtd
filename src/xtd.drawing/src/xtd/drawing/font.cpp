@@ -53,8 +53,7 @@ font::font(intptr_t handle) {
   native::font::get_information(data_->handle_, family_name, data_->size_, bold, italic, underline, strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
   try {
     data_->font_family_ = drawing::font_family(family_name);
-  }
-  catch (...) {
+  } catch (...) {
     data_->font_family_ = drawing::font_family::generic_sans_serif();
   }
   if (bold) data_->style_ |= font_style::bold;
@@ -84,14 +83,14 @@ font::~font() {
 
 float font::size_in_points() const {
   switch (data_->unit_) {
-    case graphics_unit::world:
-    case graphics_unit::display:
-    case graphics_unit::pixel: return data_->size_ / 96.0f * native::font::dpi();
-    case graphics_unit::point: return data_->size_;
-    case graphics_unit::inch: return data_->size_ * native::font::dpi();
-    case graphics_unit::document: return data_->size_ / 300.0f * native::font::dpi();
-    case graphics_unit::millimeter: return data_->size_ / 25.4f * native::font::dpi();
-    default: return data_->size_;
+  case graphics_unit::world:
+  case graphics_unit::display:
+  case graphics_unit::pixel: return data_->size_ / 96.0f * native::font::dpi();
+  case graphics_unit::point: return data_->size_;
+  case graphics_unit::inch: return data_->size_ * native::font::dpi();
+  case graphics_unit::document: return data_->size_ / 300.0f * native::font::dpi();
+  case graphics_unit::millimeter: return data_->size_ / 25.4f * native::font::dpi();
+  default: return data_->size_;
   }
 }
 

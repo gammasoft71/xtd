@@ -79,7 +79,7 @@ namespace xtd {
       
       /// @cond
       static void are_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try{
+        try {
           assert::are_equal(expected, actual, message, stack_frame);
         } catch (...) {
           base_assert::error();
@@ -101,7 +101,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void are_equal(const char32_t* expected, const char32_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::are_equal(expected, actual, message, stack_frame);
@@ -109,7 +109,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::are_equal(expected, actual, message, stack_frame);
@@ -117,7 +117,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void are_equal(float expected, float actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::are_equal(expected, actual, message, stack_frame);
@@ -370,7 +370,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       /// @cond
       static void are_not_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
@@ -412,7 +412,7 @@ namespace xtd {
         }
       }
       /// @endcond
-
+      
       /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -650,7 +650,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void contains(wchar_t item, const wchar_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::contains(item, values, message, stack_frame);
@@ -709,7 +709,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-     
+      
       /// @brief Validates that collection contains an item.
       /// @param value The value to check is empty.
       /// @par Examples
@@ -815,7 +815,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void is_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_empty(value, message, stack_frame);
@@ -957,7 +957,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void is_greater(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_greater(val1, val2, message, stack_frame);
@@ -965,7 +965,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void is_greater(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_greater(val1, val2, message, stack_frame);
@@ -974,7 +974,7 @@ namespace xtd {
         }
       }
       /// @endcond
-
+      
       /// @brief Validates that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -1065,7 +1065,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_greater_or_equal(val1, val2, message, stack_frame);
@@ -1074,7 +1074,7 @@ namespace xtd {
         }
       }
       /// @endcond
-
+      
       /// @brief Validates that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @par Examples
@@ -1215,7 +1215,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void is_less(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_less(val1, val2, message, stack_frame);
@@ -1224,7 +1224,7 @@ namespace xtd {
         }
       }
       /// @endcond
-
+      
       /// @brief Validates that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -1315,7 +1315,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_less_or_equal(val1, val2, message, stack_frame);
@@ -1324,7 +1324,7 @@ namespace xtd {
         }
       }
       /// @endcond
-
+      
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @par Examples
@@ -1650,7 +1650,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       static void is_not_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_not_empty(value, message, stack_frame);

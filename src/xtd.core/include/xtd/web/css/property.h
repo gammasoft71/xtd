@@ -10,7 +10,7 @@
 namespace xtd {
   namespace web {
     namespace css {
-      class property : public object{
+      class property : public object {
       public:
         /// @name Constructors
         
@@ -18,14 +18,14 @@ namespace xtd {
         property() = default;
         explicit property(const xtd::ustring& value) : value_(value) {}
         /// @}
-
+        
         /// @name Operators
         
         /// @{
         operator xtd::ustring() {return value_;}
         friend std::ostream& operator <<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
         /// @}
-
+        
         /// @name Properties
         
         /// @{

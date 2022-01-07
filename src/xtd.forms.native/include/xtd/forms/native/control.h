@@ -49,7 +49,7 @@ namespace xtd {
       /// @cond
       class form;
       /// @endcond
-
+      
       /// @brief Contains control native API.
       /// @par Namespace
       /// xtd::forms::native
@@ -223,7 +223,7 @@ namespace xtd {
         static drawing::point location(intptr_t control);
         /// @brief Sets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
         /// @param control Control window handle.
-        /// @param location 
+        /// @param location
         /// @warning Internal use only
         static void location(intptr_t control, const drawing::point& location);
         /// @brief Sets the maximum height and maximum width of the client area of the control.

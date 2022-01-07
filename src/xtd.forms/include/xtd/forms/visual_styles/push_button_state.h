@@ -31,7 +31,7 @@ namespace xtd {
         /// @brief The button has the default appearance.
         default_state,
       };
-
+      
       /// @cond
       inline std::ostream& operator<<(std::ostream& os, push_button_state value) {return os << to_string(value, {{push_button_state::normal, "normal"}, {push_button_state::hot, "hot"}, {push_button_state::pressed, "pressed"}, {push_button_state::disabled, "disabled"}, {push_button_state::default_state, "default_state"}});}
       inline std::wostream& operator<<(std::wostream& os, push_button_state value) {return os << to_string(value, {{push_button_state::normal, L"normal"}, {push_button_state::hot, L"hot"}, {push_button_state::pressed, L"pressed"}, {push_button_state::disabled, L"disabled"}, {push_button_state::default_state, L"default_state"}});}

@@ -20,11 +20,11 @@ template <typename char_t>
 inline std::basic_string<char_t> __parse_remove_decorations(const std::basic_string<char_t>& s, xtd::number_styles styles) {
   std::basic_string<char_t> str(s);
   if ((styles & xtd::number_styles::allow_leading_white) == xtd::number_styles::allow_leading_white) {
-    while(str.size() > 0 && (str[0] == 9 || str[0] == 10 || str[0] == 11 || str[0] == 12 || str[0] == 13 || str[0] == 32))
+    while (str.size() > 0 && (str[0] == 9 || str[0] == 10 || str[0] == 11 || str[0] == 12 || str[0] == 13 || str[0] == 32))
       str.erase(0, 1);
   }
   if ((styles & xtd::number_styles::allow_trailing_white) == xtd::number_styles::allow_trailing_white) {
-    while(str.size() > 0 && (str[str.size() - 1] == 9 || str[str.size() - 1] == 10 || str[str.size() - 1] == 11 || str[str.size() - 1] == 12 || str[str.size() - 1] == 13 || str[str.size() - 1] == 32))
+    while (str.size() > 0 && (str[str.size() - 1] == 9 || str[str.size() - 1] == 10 || str[str.size() - 1] == 11 || str[str.size() - 1] == 12 || str[str.size() - 1] == 13 || str[str.size() - 1] == 32))
       str.erase(str.size() - 1, 1);
   }
   if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && str.find(std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol()) == 0) str.erase(0, std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size());
@@ -41,30 +41,30 @@ inline int __parse_remove_signs(std::basic_string<char_t>& str, xtd::number_styl
   
   while ((styles & xtd::number_styles::allow_leading_sign) == xtd::number_styles::allow_leading_sign && str.find("+") == 0) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign");
-    str = str.substr(1, str.size()-1);
+    str = str.substr(1, str.size() - 1);
     sign += 1;
   }
   
   while ((styles & xtd::number_styles::allow_leading_sign) == xtd::number_styles::allow_leading_sign && str.find("-") == 0) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign");
-    str = str.substr(1, str.size()-1);
+    str = str.substr(1, str.size() - 1);
     sign -= 1;
   }
   
   while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && str.rfind("+") + 1 == str.size()) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign");
-    str = str.substr(0, str.size()-1);
+    str = str.substr(0, str.size() - 1);
     sign += 1;
   }
   
   while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && str.rfind("-") + 1 == str.size()) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign");
-    str = str.substr(0, str.size()-1);
+    str = str.substr(0, str.size() - 1);
     sign -= 1;
   }
   
   while ((styles & xtd::number_styles::allow_parentheses) == xtd::number_styles::allow_parentheses && str.find("(") == 0 && str.rfind(")") + 1 == str.size()) {
-    str = str.substr(1, str.size()-2);
+    str = str.substr(1, str.size() - 2);
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign");
     sign -= 1;
   }
@@ -94,7 +94,7 @@ inline void __parse_check_valid_characters(const std::basic_string<char_t>& str,
   
   if ((styles & xtd::number_styles::allow_thousands) == xtd::number_styles::allow_thousands) {
     size_t index = 1;
-    while((index = str.find(std::use_facet<std::numpunct<char_t>>(std::locale()).thousands_sep(), index)) != std::basic_string<char_t>::npos) {
+    while ((index = str.find(std::use_facet<std::numpunct<char_t>>(std::locale()).thousands_sep(), index)) != std::basic_string<char_t>::npos) {
       if (str[index - 1] == std::use_facet<std::numpunct<char_t>>(std::locale()).thousands_sep())
         __throw_parse_format_exception("invalid character found");
       ++index;
@@ -146,7 +146,7 @@ inline value_t __parse_unsigned(const std::basic_string<char_t>& str, int base, 
   unsigned long long result = 0;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
     result = std::stoull(str, nullptr, base);
-  else{
+  else {
     std::stringstream ss(str);
     ss.imbue(std::locale());
     ss >> result;

@@ -10,12 +10,12 @@ public:
   form1() {
     text("Progress box example");
     client_size({ 400, 200 });
-
+    
     download_button.parent(*this)
-      .text("Download")
-      .location({ 10, 10 })
-      .size({ 150, 35 })
-      .click += [this] {
+    .text("Download")
+    .location({ 10, 10 })
+    .size({ 150, 35 })
+    .click += [this] {
       progress_box::show(*this, "Downloading", "Please wait...", 0, 0, 100, progress_box_options::show_cancel_button | progress_box_options::show_skip_button);
       for (int32_t i = progress_box::minimum(); i <= progress_box::maximum(); ++i) {
         std::this_thread::sleep_for(100ms); // Do some work...

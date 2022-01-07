@@ -54,7 +54,7 @@ namespace {
         names_ = names;
         names_label_.text("");
         for (auto name : names_) {
-          names_label_.text(ustring::format("{}{}{}", names_label_.text(), first ? "" :"\n", name));
+          names_label_.text(ustring::format("{}{}{}", names_label_.text(), first ? "" : "\n", name));
           first = false;
         }
       }
@@ -85,7 +85,7 @@ namespace {
       minimum_size(size());
       //form_border_style(forms::form_border_style::fixed_dialog);
       start_position(form_start_position::center_screen);
-
+      
       picture_box_icon_.height(74);
       picture_box_icon_.size_mode(picture_box_size_mode::center_image);
       picture_box_icon_.padding(5);
@@ -95,18 +95,18 @@ namespace {
       label_name_.font({label_name_.font(), label_name_.font().size() + 4, xtd::drawing::font_style::bold});
       label_name_.padding(5);
       label_name_.dock(dock_style::top);
-
+      
       tab_page_about_.text("About"_t);
       
       tab_page_credits_.text("Credits"_t);
       tab_page_credits_.auto_scroll(true);
-
+      
       tab_page_license_.text("License"_t);
       tab_page_license_.controls().push_back(text_box_license_);
-
+      
       tab_control_about_.padding(5);
       tab_control_about_.dock(dock_style::fill);
-
+      
       panel_about_.padding(5);
       panel_about_.controls().push_back_range({label_copyright_, link_label_website_, label_description_, label_version_});
       panel_about_.dock(dock_style::fill);
@@ -119,15 +119,15 @@ namespace {
       label_description_.font({label_description_.font(), label_description_.font().size() + 2, xtd::drawing::font_style::bold});
       label_description_.padding(5);
       label_description_.dock(dock_style::top);
-
+      
       link_label_website_.text_align(content_alignment::middle_center);
       link_label_website_.padding(5);
       link_label_website_.dock(dock_style::top);
-
+      
       label_copyright_.text_align(content_alignment::middle_center);
       label_copyright_.padding(5);
       label_copyright_.dock(dock_style::top);
-
+      
       text_box_license_.multiline(true);
       text_box_license_.read_only(true);
       text_box_license_.word_wrap(false);
@@ -145,9 +145,8 @@ namespace {
       auto has_license = !license.empty();
       if (icon != xtd::drawing::bitmap::empty)
         about_dialog_standard->picture_box_icon_.image(xtd::drawing::bitmap(icon, {64, 64}));
-      else {
+      else
         about_dialog_standard->picture_box_icon_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
-      }
       about_dialog_standard->label_name_.height(static_cast<int32_t>(30 * name.split({'\n'}).size()));
       about_dialog_standard->label_name_.text(name);
       if (has_credit || has_license) {
@@ -162,31 +161,31 @@ namespace {
         about_dialog_standard->minimum_size(about_dialog_standard->size());
         about_dialog_standard->controls().push_back_range({about_dialog_standard->panel_about_, about_dialog_standard->label_name_, about_dialog_standard->picture_box_icon_});
       }
-
+      
       if (!version.empty() && !long_version.empty())
         about_dialog_standard->label_version_.text(xtd::ustring::format("{} ({})", long_version, version));
       else if (!long_version.empty())
         about_dialog_standard->label_version_.text(xtd::ustring::format("{}", long_version));
       else if (!version.empty())
         about_dialog_standard->label_version_.text(xtd::ustring::format("({})", version));
-
+        
       about_dialog_standard->label_description_.height(static_cast<int32_t>(23 * description.split({'\n'}).size()));
       about_dialog_standard->label_description_.text(xtd::ustring::format("{}", description));
-
+      
       about_dialog_standard->link_label_website_.height(static_cast<int32_t>(23 * (!website_label.empty() ? website_label : website).split({'\n'}).size()));
       about_dialog_standard->link_label_website_.text(!website_label.empty() ? website_label : website);
-      about_dialog_standard->link_label_website_.link_clicked += [&](object& sender, link_label_clicked_event_args& e) {
+      about_dialog_standard->link_label_website_.link_clicked += [&](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         diagnostics::process::start(website);
       };
-
+      
       about_dialog_standard->label_copyright_.height(static_cast<int32_t>(23 * copyright.split({'\n'}).size()));
       about_dialog_standard->label_copyright_.text(xtd::ustring::format("{}", ustring(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
       
       if (has_credit) {
         about_dialog_standard->tab_control_about_.tab_pages().push_back(about_dialog_standard->tab_page_credits_);
         about_dialog_standard->tab_page_credits_.auto_scroll(true);
-
+        
         if (!artists.empty()) {
           about_dialog_standard->artists_.parent(about_dialog_standard->tab_page_credits_);
           about_dialog_standard->artists_.dock(dock_style::top);

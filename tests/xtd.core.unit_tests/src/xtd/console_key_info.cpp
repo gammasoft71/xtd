@@ -18,7 +18,7 @@ namespace unit_tests {
     
     void test_method_(create_console_key_info_with_key_char_key) {
       console_key_info cki('a', console_key::a, false, false, false);
-
+      
       assert::are_equal(U'a', cki.key_char(), csf_);
       assert::are_equal(static_cast<int>(console_key::a), static_cast<int>(cki.key()), csf_);
       assert::are_equal(0, static_cast<int>(cki.modifiers()), csf_);
@@ -46,7 +46,7 @@ namespace unit_tests {
     
     void test_method_(create_console_key_info_with_key_char_key_and_control) {
       console_key_info cki('\t', console_key::tab, false, false, true);
-
+      
       assert::are_equal(U'\t', cki.key_char(), csf_);
       assert::are_equal(static_cast<int>(console_key::tab), static_cast<int>(cki.key()), csf_);
       assert::is_zero(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::alt), csf_);

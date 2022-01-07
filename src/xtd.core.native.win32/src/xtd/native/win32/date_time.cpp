@@ -24,7 +24,7 @@ namespace {
   static const int64_t ticks_per_second = 10000000;
   
   /* Generate by this c# code source :
-   
+  
   using System;
   using System.Collections.ObjectModel;
   
@@ -33,15 +33,15 @@ namespace {
       static string ToString(TimeZoneInfo.TransitionTime transitionTime) {
         return string.Format("{{{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}}}", transitionTime.Day, (int)transitionTime.DayOfWeek, transitionTime.IsFixedDateRule.ToString().ToLower(), transitionTime.Month, transitionTime.TimeOfDay.Hour, transitionTime.TimeOfDay.Minute, transitionTime.TimeOfDay.Second, transitionTime.Week);
       }
-      
+  
       static string ToString(DateTime dateTime) {
         return string.Format("{0}, {1}, {2}, {3}, {4}, {5}", dateTime.Year, dateTime.Month, dateTime.Day, dateTime.Hour, dateTime.Minute, dateTime.Second);
       }
-      
+  
       static string ToString(TimeZoneInfo.AdjustmentRule adjustmentRule) {
         return string.Format("{{{0}, {1}, {2}, {3}, {4}}}", ToString(adjustmentRule.DateStart), ToString(adjustmentRule.DateEnd), adjustmentRule.DaylightDelta.Ticks, ToString(adjustmentRule.DaylightTransitionStart), ToString(adjustmentRule.DaylightTransitionEnd));
       }
-      
+  
       static string ToString(TimeZoneInfo.AdjustmentRule[] adjustmentRules) {
         var result = "{";
         foreach (var adjustmentRule in adjustmentRules)
@@ -49,11 +49,11 @@ namespace {
         result += "}";
         return result;
       }
-      
+  
       static string ToString(TimeZoneInfo timeZoneInfo) {
         return string.Format("{{\"{0}\", {1}, \"{2}\", \"{3}\", \"{4}\", {5}, {6}}}", timeZoneInfo.Id, timeZoneInfo.BaseUtcOffset.Ticks, timeZoneInfo.DaylightName, timeZoneInfo.DisplayName, timeZoneInfo.StandardName, timeZoneInfo.SupportsDaylightSavingTime.ToString().ToLower(), ToString(timeZoneInfo.GetAdjustmentRules()));
       }
-      
+  
       static string ToString(ReadOnlyCollection<TimeZoneInfo> timeZoneInfos) {
         string result = "{\n";
         foreach (var timeZoneInfo in timeZoneInfos)
@@ -61,7 +61,7 @@ namespace {
         result += "}";
         return result;
       }
-      
+  
       [STAThread]
       static void Main() {
         string result = "vector<date_time::time_zone_info> system_time_zones = " + ToString(TimeZoneInfo.GetSystemTimeZones()) + ";";
@@ -216,7 +216,7 @@ namespace {
     {"Samoa Standard Time", 468000000000, "Samoa Daylight Time", "(UTC+13:00) Samoa", "Samoa Standard Time", true, {{1, 1, 1, 0, 0, 0, 2009, 12, 31, 0, 0, 0, 0, {1, 0, true, 1, 0, 0, 0, 1}, {1, 0, true, 1, 0, 0, 0, 1}}, {2010, 1, 1, 0, 0, 0, 2010, 12, 31, 0, 0, 0, 36000000000, {1, 0, false, 9, 0, 0, 0, 5}, {1, 5, false, 1, 0, 0, 0, 1}}, {2011, 1, 1, 0, 0, 0, 2011, 12, 31, 0, 0, 0, 36000000000, {1, 6, false, 9, 3, 0, 0, 4}, {1, 6, false, 4, 4, 0, 0, 1}}, {2012, 1, 1, 0, 0, 0, 9999, 12, 31, 0, 0, 0, 36000000000, {1, 0, false, 9, 3, 0, 0, 5}, {1, 0, false, 4, 4, 0, 0, 1}}, }},
     {"Line Islands Standard Time", 504000000000, "Line Islands Daylight Time", "(UTC+14:00) Kiritimati Island", "Line Islands Standard Time", false, {}},
   };
-
+  
   string string_printf(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
@@ -229,7 +229,7 @@ namespace {
     if (formatted_string == "NAN") formatted_string = "nan";
     return formatted_string;
   }
-
+  
   void TimetToFileTime(time_t t, LPFILETIME pft) {
     ULARGE_INTEGER time_value;
     time_value.QuadPart = (t * 10000000LL) + 116444736000000000LL;
@@ -275,18 +275,18 @@ bool date_time::is_daylight(time_t time) {
 time_t date_time::utc_offset(time_t time) {
   FILETIME file_time_local;
   TimetToFileTime(time, &file_time_local);
-
+  
   SYSTEMTIME system_time;
   if (FileTimeToSystemTime(&file_time_local, &system_time) == 0) return 0;
   
   SYSTEMTIME system_time_local;
   if (SystemTimeToTzSpecificLocalTime(nullptr, &system_time, &system_time_local) == 0) return 0;
-
+  
   FILETIME file_time_utc;
   if (SystemTimeToFileTime(&system_time_local, &file_time_utc) == 0) return 0;
-
+  
   ULARGE_INTEGER ticks_local = { file_time_local.dwLowDateTime, file_time_local.dwHighDateTime };
   ULARGE_INTEGER ticks_utc = { file_time_utc.dwLowDateTime, file_time_utc.dwHighDateTime };
-
+  
   return (ticks_utc.QuadPart - ticks_local.QuadPart) / 10000000;
 }

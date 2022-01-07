@@ -27,7 +27,7 @@ namespace xtd {
       directory_assert() = delete;
       /// @endcond
       
-#if defined(__cpp_lib_filesystem)
+      #if defined(__cpp_lib_filesystem)
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -84,7 +84,7 @@ namespace xtd {
         else
           assert::succeed(message, stack_frame);
       }
-
+      
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -141,7 +141,7 @@ namespace xtd {
         else
           assert::succeed(message, stack_frame);
       }
-#endif
+      #endif
       
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
@@ -203,7 +203,7 @@ namespace xtd {
       template<typename Char>
       static void exists(const std::basic_string<Char>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         struct stat info;
-        if(stat(directory.c_str(), &info ) != 0 || (info.st_mode & S_IFDIR) != S_IFDIR)
+        if (stat(directory.c_str(), &info) != 0 || (info.st_mode & S_IFDIR) != S_IFDIR)
           base_assert::fail("directory exists", base_assert::to_string(directory), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
@@ -280,7 +280,7 @@ namespace xtd {
       template<typename Char>
       static void does_not_exist(const std::basic_string<Char>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         struct stat info;
-        if(stat(directory.c_str(), &info ) == 0 && (info.st_mode & S_IFDIR) == S_IFDIR)
+        if (stat(directory.c_str(), &info) == 0 && (info.st_mode & S_IFDIR) == S_IFDIR)
           base_assert::fail("not directory exists", base_assert::to_string(directory), message, stack_frame);
         else
           assert::succeed(message, stack_frame);

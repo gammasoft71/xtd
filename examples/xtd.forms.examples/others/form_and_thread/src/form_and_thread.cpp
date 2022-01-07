@@ -12,7 +12,7 @@ public:
       for (auto index = 0U; index < threads.size(); index++)
         threads[index].join();
     };
-
+    
     messages.parent(*this);
     messages.dock(dock_style::fill);
     
@@ -32,7 +32,7 @@ public:
       }, index);
     }
   }
-
+  
 private:
   xtd::forms::list_box messages;
   bool closed = false;

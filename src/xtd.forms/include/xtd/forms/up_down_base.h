@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     class forms_export_ up_down_base : public container_control {
-    public:      
+    public:
       /// @name Properties
       
       /// @{
@@ -36,7 +36,7 @@ namespace xtd {
       /// @return Current up_down_base.
       virtual up_down_base& border_style(forms::border_style value);
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       
@@ -44,13 +44,13 @@ namespace xtd {
       /// @brief Initialize a new instance of up_down_base class.
       up_down_base() = default;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
       forms::create_params create_params() const override;
       /// @}
-
+      
     private:
       forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::fixed_single;

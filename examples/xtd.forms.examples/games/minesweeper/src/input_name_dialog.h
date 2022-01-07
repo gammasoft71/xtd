@@ -16,7 +16,7 @@ namespace minesweeper {
     /// @brief Sets the level for which the gammer name is entered.
     /// @param level One of minesweeper::level values.
     void level(minesweeper::level level) noexcept;
-
+    
     /// @brief Gets the gammer name.
     /// @return The gammer name.
     xtd::ustring gammer_name() const noexcept;

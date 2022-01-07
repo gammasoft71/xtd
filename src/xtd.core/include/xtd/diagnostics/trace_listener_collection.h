@@ -87,7 +87,7 @@ namespace xtd {
       /// @endcode
       reference operator[](const xtd::ustring& name);
       /// @}
-
+      
     private:
       inline static value_type empty_;
     };

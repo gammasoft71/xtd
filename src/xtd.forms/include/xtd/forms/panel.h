@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief Initialises a new instance of panel class.
       panel();
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -45,7 +45,7 @@ namespace xtd {
       /// @brief Set the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
       virtual panel& border_sides(forms::border_sides border_sides);
-
+      
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
@@ -55,7 +55,7 @@ namespace xtd {
       /// @return Current panel instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual panel& border_style(forms::border_style border_style);
-
+      
       drawing::size default_size() const override {return {200, 100};}
       /// @}
       
@@ -68,7 +68,7 @@ namespace xtd {
       void on_layout(const event_args& e) override;
       void on_paint(paint_event_args& e) override;
       /// @}
-
+      
       /// @cond
       forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::none;

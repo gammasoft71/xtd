@@ -22,7 +22,7 @@ namespace {
   void xtd_assert_handler(const wxString& file, int line, const wxString& func, const wxString& cond, const wxString& msg) {
     // Workaround: wxWidgets generates an unknown assertion when there is a double mouse click event on an empty area of wxCalendarCtrl.
     if (func == "wxCalendarCtrl::HitTest" && cond == "\"Assert failure\"" && msg == "unexpected") return;
-
+    
     debug::write_line_if(show_wx_assert.enabled(), "wxAssert");
     debug::write_line_if(show_wx_assert.enabled(), "--------");
     debug::write_line_if(show_wx_assert.enabled(), ustring::format("cond={}, msg={}", cond, msg));
@@ -33,10 +33,10 @@ namespace {
 
 intptr_t toolkit::initialize() {
   if (wxTheApp) return 0;
-#ifdef _MSC_VER
+  #ifdef _MSC_VER
   // Workaround : Dump memory leak : Remove temporary memory check...
   _CrtSetDbgFlag(_CRTDBG_CHECK_DEFAULT_DF);
-#endif
+  #endif
   wxDISABLE_DEBUG_SUPPORT();
   original_assert_handler = wxSetAssertHandler(&xtd_assert_handler);
   wxLog::SetLogLevel(wxLOG_Info);
@@ -53,7 +53,7 @@ intptr_t toolkit::initialize() {
 
 void toolkit::shutdown(intptr_t handle) {
   if (!wxTheApp) return;
-
+  
   wxImage::CleanUpHandlers();
   wxTheApp->OnExit();
   wxApp::SetInstance(nullptr);

@@ -50,13 +50,13 @@ namespace examples {
           }
         }
       };
-
+      
       label_zoom.parent(*this);
       label_zoom.auto_size(false);
       label_zoom.anchor(anchor_styles::top | anchor_styles::left);
       label_zoom.location({10, 60});
       label_zoom.text("Zoom");
-
+      
       track_bar_zoom.parent(*this);
       track_bar_zoom.auto_size(false);
       track_bar_zoom.anchor(anchor_styles::top | anchor_styles::left);
@@ -83,7 +83,7 @@ namespace examples {
         panel_painting.invalidate();
       };
       numeric_up_down_zoom.width(52);
-
+      
       panel_main.parent(*this);
       panel_main.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
       panel_main.auto_scroll(true);
@@ -94,26 +94,26 @@ namespace examples {
       panel_painting.parent(panel_main);
       panel_painting.back_color(color::white_smoke);
       panel_painting.size({picture.width() * zoom, picture.height() * zoom});
-
-      panel_painting.mouse_down += [&](object& sender, const mouse_event_args& e) {
-        if (e.x()/zoom >= 0 && e.x()/zoom < picture.width() && e.y()/zoom >= 0 && e.y()/zoom < picture.height()) {
-          picture.set_pixel(e.x()/zoom, e.y()/zoom, e.button() == mouse_buttons::left ? current_color : color::from_argb(0, 0, 0, 0));
+      
+      panel_painting.mouse_down += [&](object & sender, const mouse_event_args & e) {
+        if (e.x() / zoom >= 0 && e.x() / zoom < picture.width() && e.y() / zoom >= 0 && e.y() / zoom < picture.height()) {
+          picture.set_pixel(e.x() / zoom, e.y() / zoom, e.button() == mouse_buttons::left ? current_color : color::from_argb(0, 0, 0, 0));
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
       
-      panel_painting.mouse_move += [&](object& sender, const mouse_event_args& e) {
-        if (e.button() == mouse_buttons::left && e.x()/zoom >= 0 && e.x()/zoom < picture.width() && e.y()/zoom >= 0 && e.y()/zoom < picture.height()) {
-          picture.set_pixel(e.x()/zoom, e.y()/zoom, current_color);
+      panel_painting.mouse_move += [&](object & sender, const mouse_event_args & e) {
+        if (e.button() == mouse_buttons::left && e.x() / zoom >= 0 && e.x() / zoom < picture.width() && e.y() / zoom >= 0 && e.y() / zoom < picture.height()) {
+          picture.set_pixel(e.x() / zoom, e.y() / zoom, current_color);
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
-
-      panel_painting.paint += [&](object& sender, paint_event_args& e) {
+      
+      panel_painting.paint += [&](object & sender, paint_event_args & e) {
         for (auto y = 0; y < panel_painting.client_size().height(); y += zoom)
           for (auto x = 0; x < panel_painting.client_size().width(); x += zoom)
-            if (picture.get_pixel(x/zoom, y/zoom) != color::from_argb(0, 0, 0, 0))
-              e.graphics().fill_rectangle(solid_brush(picture.get_pixel(x/zoom, y/zoom)), x, y, zoom, zoom);
+            if (picture.get_pixel(x / zoom, y / zoom) != color::from_argb(0, 0, 0, 0))
+              e.graphics().fill_rectangle(solid_brush(picture.get_pixel(x / zoom, y / zoom)), x, y, zoom, zoom);
         if (zoom > 3) {
           for (auto index = 0; index < panel_painting.client_size().width(); index += zoom)
             e.graphics().draw_line(pens::light_blue(), index, 0, index, panel_painting.client_size().height());
@@ -122,18 +122,18 @@ namespace examples {
         }
       };
     }
-  
+    
   private:
     void choose_current_color(object& sender, const event_args& e) {
       for (auto panel : panel_colors)
         panel->border_style(panel->handle() != as<control>(sender).handle() ? forms::border_style::none : forms::border_style::fixed_single);
       current_color = as<control>(sender).back_color();
     }
-
+    
     int zoom = 20;
     drawing::color current_color;
     bitmap picture {32, 32};
-
+    
     panel panel_colors_container;
     vector<shared_ptr<panel>> panel_colors;
     button button_clear;

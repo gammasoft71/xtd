@@ -40,22 +40,22 @@ namespace {
     
     static void signal_handler(int signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
-#if _WIN32
+      #if _WIN32
       if (signal == SIGINT && xtd::console::treat_control_c_as_input()) return;
-#endif
+      #endif
       xtd::console_cancel_event_args console_cancel(false, signal_keys_[signal]);
       xtd::console::__internal_cancel_key_press__(console_cancel);
       if (console_cancel.cancel() == false)
         exit(EXIT_FAILURE);
     }
-
+    
     static std::map<int, xtd::console_special_key> signal_keys_;
     static console_intercept_signals console_intercept_signals_;
   };
-
+  
   std::map<int, xtd::console_special_key> console_intercept_signals::signal_keys_ {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
   console_intercept_signals console_intercept_signals::console_intercept_signals_;
-
+  
   class terminal final {
   private:
     terminal() = default;
@@ -75,7 +75,7 @@ namespace {
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
       termios backupedTermioAttributes = termioAttributes;
-      termioAttributes.c_lflag &= ~(ICANON|ECHO);
+      termioAttributes.c_lflag &= ~(ICANON | ECHO);
       termioAttributes.c_cc[VTIME] = 0;
       termioAttributes.c_cc[VMIN] = 1;
       tcsetattr(0, TCSANOW, &termioAttributes);
@@ -91,11 +91,11 @@ namespace {
     bool key_available() {
       if (peekCharacter != -1)
         return true;
-      
+        
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
       termios backupedTermioAttributes = termioAttributes;
-      termioAttributes.c_lflag &= ~(ICANON|ECHO);
+      termioAttributes.c_lflag &= ~(ICANON | ECHO);
       termioAttributes.c_cc[VTIME] = 0;
       termioAttributes.c_cc[VMIN] = 0;
       tcsetattr(0, TCSANOW, &termioAttributes);
@@ -121,7 +121,7 @@ namespace {
   };
   
   terminal terminal::terminal_;
-
+  
   class key_info {
   public:
     class input_list {
@@ -205,7 +205,7 @@ namespace {
     static key_info read() {
       if (!inputs.is_empty())
         return to_key_info(inputs.pop());
-      
+        
       do
         inputs.add(terminal::terminal_.getch());
       while (terminal::terminal_.key_available());
@@ -218,10 +218,10 @@ namespace {
       
       if (inputs.count() == 1)
         return to_key_info(inputs.pop());
-      
+        
       if (inputs.count() > 1 && *inputs.begin() != 27)
         return to_key_info(to_key(inputs));
-      
+        
       inputs.pop();
       return to_key_info(inputs.pop(), true);
     }
@@ -266,109 +266,109 @@ namespace {
       // Ctrl + Space
       if (key == 0)
         return key_info(' ', ' ', false, true, false);
-      
+        
       // Ctrl + [a; z]
       if ((key >= 1 && key <= 7) || (key >= 10 && key <= 11) || (key >= 14 && key <= 18) || (key >= 20 && key <= 26))
         return key_info(key + 'A' - 1, key, false, true, false);
-      
+        
       switch (key) {
-        case 50086 : return key_info(0, U'æ', alt, false, false);
-        case 50054 : return key_info(0, U'Æ', alt, false, false);
-        case 50079 : return key_info(0, U'ß', alt, false, false);
-        case -1426005368 : return key_info(0, U'∫', alt, false, false);
-        case 49833 : return key_info(0, U'©', alt, false, false);
-        case 49826 : return key_info(0, U'¢', alt, false, false);
-        case -2113871224 : return key_info(0, U'∂', alt, false, false);
-        case -2046762360 : return key_info(0, U'∆', alt, false, false);
-        case 50090 : return key_info(0, U'ê', alt, false, false);
-        case 50058 : return key_info(0, U'Ê', alt, false, false);
-        case 50834 : return key_info(0, U'ƒ', alt, false, false);
-        case 49847 : return key_info(0, U'·', alt, false, false);
-        case -2130645076 : return key_info(0, U'ﬁ', alt, false, false);
-        case -2113867860 : return key_info(0, U'ﬂ', alt, false, false);
-        case 50060 : return key_info(0, U'Ì', alt, false, false);
-        case 50062 : return key_info(0, U'Î', alt, false, false);
-        case 50094 : return key_info(0, U'î', alt, false, false);
-        case 50095 : return key_info(0, U'ï', alt, false, false);
-        case 50063 : return key_info(0, U'Ï', alt, false, false);
-        case 50061 : return key_info(0, U'Í', alt, false, false);
-        case 50056 : return key_info(0, U'È', alt, false, false);
-        case 50059 : return key_info(0, U'Ë', alt, false, false);
-        case 49836 : return key_info(0, U'¬', alt, false, false);
-        case 49845 : return key_info(0, U'µ', alt, false, false);
-        case 50067 : return key_info(0, U'Ó', alt, false, false);
-        case 50353 : return key_info(0, U'ı', alt, false, false);
-        case 50579 : return key_info(0, U'œ', alt, false, false);
-        case 50578 : return key_info(0, U'Œ', alt, false, false);
-        case 53120 : return key_info(0, U'π', alt, false, false);
-        case -1895767416 : return key_info(0, U'∏', alt, false, false);
-        case -1593777536 : return key_info(0, U'‡', alt, false, false);
-        case 52905 : return key_info(0, U'Ω', alt, false, false);
-        case 49838 : return key_info(0, U'®', alt, false, false);
-        case -1577000316 : return key_info(0, U'‚', alt, false, false);
-        case 50066 : return key_info(0, U'Ò', alt, false, false);
-        case -1862212984 : return key_info(0, U'∑', alt, false, false);
-        case -1610554752 : return key_info(0, U'†', alt, false, false);
-        case -1711218048 : return key_info(0, U'™', alt, false, false);
-        case 49850 : return key_info(0, U'º', alt, false, false);
-        case 49834 : return key_info(0, U'ª', alt, false, false);
-        case -1979653481 : return key_info(0, U'◊', alt, false, false);
-        case -1711218040 : return key_info(0, U'√', alt, false, false);
-        case -1191124352 : return key_info(0, U'‹', alt, false, false);
-        case -1174347136 : return key_info(0, U'›', alt, false, false);
-        case -2013207927 : return key_info(0, U'≈', alt, false, false);
-        case -2080316799 : return key_info(0, U'⁄', alt, false, false);
-        case 50074 : return key_info(0, U'Ú', alt, false, false);
-        case 50616 : return key_info(0, U'Ÿ', alt, false, false);
-        case 50050 : return key_info(0, U'Â', alt, false, false);
-        case 50053 : return key_info(0, U'Å', alt, false, false);
-        case 50089 : return key_info(0, U'é', alt, false, false);
-        case 49831 : return key_info(0, U'§', alt, false, false);
-        case 50088 : return key_info(0, U'è', alt, false, false);
-        case 50087 : return key_info(0, U'ç', alt, false, false);
-        case 50080 : return key_info(0, U'à', alt, false, false);
-        case 49840 : return key_info(0, U'°', alt, false, false);
-        case 50105 : return key_info(0, U'ù', alt, false, false);
-        case 49827 : return key_info(0, U'£', alt, false, false);
-        case -1577000320 : return key_info(0, U'•', alt, false, false);
-        case -1090457693 : return key_info(0, U'', alt, false, false);
-        case 49844 : return key_info(0, U'´', alt, false, false);
-        case 50091 : return key_info(0, U'ë', alt, false, false);
-        case -1644109184 : return key_info(0, U'„', alt, false, false);
-        case -1677663616 : return key_info(0, U'“', alt, false, false);
-        case -1660886400 : return key_info(0, U'”', alt, false, false);
-        case -1744772480 : return key_info(0, U'‘', alt, false, false);
-        case -1727995264 : return key_info(0, U'’', alt, false, false);
-        case 49846 : return key_info(0, U'¶', alt, false, false);
-        case 50085 : return key_info(0, U'å', alt, false, false);
-        case 49835 : return key_info(0, U'«', alt, false, false);
-        case 49851 : return key_info(0, U'»', alt, false, false);
-        case 49825 : return key_info(0, U'¡', alt, false, false);
-        case 50075 : return key_info(0, U'Û', alt, false, false);
-        case 50055 : return key_info(0, U'Ç', alt, false, false);
-        case 50049 : return key_info(0, U'Á', alt, false, false);
-        case 50104 : return key_info(0, U'ø', alt, false, false);
-        case 50072 : return key_info(0, U'Ø', alt, false, false);
-        case -1811881344 : return key_info(0, U'—', alt, false, false);
-        case -1828658560 : return key_info(0, U'–', alt, false, false);
-        case -1543445879 : return key_info(0, U'≤', alt, false, false);
-        case -1526668663 : return key_info(0, U'≥', alt, false, false);
-        case 50100 : return key_info(0, U'ô', alt, false, false);
-        case 50068 : return key_info(0, U'Ô', alt, false, false);
-        case -1409228158 : return key_info(0, U'€', alt, false, false);
-        case 50073 : return key_info(0, U'Ù', alt, false, false);
-        case -1342119296 : return key_info(0, U'‰', alt, false, false);
-        case -1644109176 : return key_info(0, U'∞', alt, false, false);
-        case 49855 : return key_info(0, U'¿', alt, false, false);
-        case -1509891456 : return key_info(0, U'…', alt, false, false);
-        case 50103 : return key_info(0, U'÷', alt, false, false);
-        case -1610554743 : return key_info(0, U'≠', alt, false, false);
-        case 49841 : return key_info(0, U'±', alt, false, false);
+      case 50086 : return key_info(0, U'æ', alt, false, false);
+      case 50054 : return key_info(0, U'Æ', alt, false, false);
+      case 50079 : return key_info(0, U'ß', alt, false, false);
+      case -1426005368 : return key_info(0, U'∫', alt, false, false);
+      case 49833 : return key_info(0, U'©', alt, false, false);
+      case 49826 : return key_info(0, U'¢', alt, false, false);
+      case -2113871224 : return key_info(0, U'∂', alt, false, false);
+      case -2046762360 : return key_info(0, U'∆', alt, false, false);
+      case 50090 : return key_info(0, U'ê', alt, false, false);
+      case 50058 : return key_info(0, U'Ê', alt, false, false);
+      case 50834 : return key_info(0, U'ƒ', alt, false, false);
+      case 49847 : return key_info(0, U'·', alt, false, false);
+      case -2130645076 : return key_info(0, U'ﬁ', alt, false, false);
+      case -2113867860 : return key_info(0, U'ﬂ', alt, false, false);
+      case 50060 : return key_info(0, U'Ì', alt, false, false);
+      case 50062 : return key_info(0, U'Î', alt, false, false);
+      case 50094 : return key_info(0, U'î', alt, false, false);
+      case 50095 : return key_info(0, U'ï', alt, false, false);
+      case 50063 : return key_info(0, U'Ï', alt, false, false);
+      case 50061 : return key_info(0, U'Í', alt, false, false);
+      case 50056 : return key_info(0, U'È', alt, false, false);
+      case 50059 : return key_info(0, U'Ë', alt, false, false);
+      case 49836 : return key_info(0, U'¬', alt, false, false);
+      case 49845 : return key_info(0, U'µ', alt, false, false);
+      case 50067 : return key_info(0, U'Ó', alt, false, false);
+      case 50353 : return key_info(0, U'ı', alt, false, false);
+      case 50579 : return key_info(0, U'œ', alt, false, false);
+      case 50578 : return key_info(0, U'Œ', alt, false, false);
+      case 53120 : return key_info(0, U'π', alt, false, false);
+      case -1895767416 : return key_info(0, U'∏', alt, false, false);
+      case -1593777536 : return key_info(0, U'‡', alt, false, false);
+      case 52905 : return key_info(0, U'Ω', alt, false, false);
+      case 49838 : return key_info(0, U'®', alt, false, false);
+      case -1577000316 : return key_info(0, U'‚', alt, false, false);
+      case 50066 : return key_info(0, U'Ò', alt, false, false);
+      case -1862212984 : return key_info(0, U'∑', alt, false, false);
+      case -1610554752 : return key_info(0, U'†', alt, false, false);
+      case -1711218048 : return key_info(0, U'™', alt, false, false);
+      case 49850 : return key_info(0, U'º', alt, false, false);
+      case 49834 : return key_info(0, U'ª', alt, false, false);
+      case -1979653481 : return key_info(0, U'◊', alt, false, false);
+      case -1711218040 : return key_info(0, U'√', alt, false, false);
+      case -1191124352 : return key_info(0, U'‹', alt, false, false);
+      case -1174347136 : return key_info(0, U'›', alt, false, false);
+      case -2013207927 : return key_info(0, U'≈', alt, false, false);
+      case -2080316799 : return key_info(0, U'⁄', alt, false, false);
+      case 50074 : return key_info(0, U'Ú', alt, false, false);
+      case 50616 : return key_info(0, U'Ÿ', alt, false, false);
+      case 50050 : return key_info(0, U'Â', alt, false, false);
+      case 50053 : return key_info(0, U'Å', alt, false, false);
+      case 50089 : return key_info(0, U'é', alt, false, false);
+      case 49831 : return key_info(0, U'§', alt, false, false);
+      case 50088 : return key_info(0, U'è', alt, false, false);
+      case 50087 : return key_info(0, U'ç', alt, false, false);
+      case 50080 : return key_info(0, U'à', alt, false, false);
+      case 49840 : return key_info(0, U'°', alt, false, false);
+      case 50105 : return key_info(0, U'ù', alt, false, false);
+      case 49827 : return key_info(0, U'£', alt, false, false);
+      case -1577000320 : return key_info(0, U'•', alt, false, false);
+      case -1090457693 : return key_info(0, U'', alt, false, false);
+      case 49844 : return key_info(0, U'´', alt, false, false);
+      case 50091 : return key_info(0, U'ë', alt, false, false);
+      case -1644109184 : return key_info(0, U'„', alt, false, false);
+      case -1677663616 : return key_info(0, U'“', alt, false, false);
+      case -1660886400 : return key_info(0, U'”', alt, false, false);
+      case -1744772480 : return key_info(0, U'‘', alt, false, false);
+      case -1727995264 : return key_info(0, U'’', alt, false, false);
+      case 49846 : return key_info(0, U'¶', alt, false, false);
+      case 50085 : return key_info(0, U'å', alt, false, false);
+      case 49835 : return key_info(0, U'«', alt, false, false);
+      case 49851 : return key_info(0, U'»', alt, false, false);
+      case 49825 : return key_info(0, U'¡', alt, false, false);
+      case 50075 : return key_info(0, U'Û', alt, false, false);
+      case 50055 : return key_info(0, U'Ç', alt, false, false);
+      case 50049 : return key_info(0, U'Á', alt, false, false);
+      case 50104 : return key_info(0, U'ø', alt, false, false);
+      case 50072 : return key_info(0, U'Ø', alt, false, false);
+      case -1811881344 : return key_info(0, U'—', alt, false, false);
+      case -1828658560 : return key_info(0, U'–', alt, false, false);
+      case -1543445879 : return key_info(0, U'≤', alt, false, false);
+      case -1526668663 : return key_info(0, U'≥', alt, false, false);
+      case 50100 : return key_info(0, U'ô', alt, false, false);
+      case 50068 : return key_info(0, U'Ô', alt, false, false);
+      case -1409228158 : return key_info(0, U'€', alt, false, false);
+      case 50073 : return key_info(0, U'Ù', alt, false, false);
+      case -1342119296 : return key_info(0, U'‰', alt, false, false);
+      case -1644109176 : return key_info(0, U'∞', alt, false, false);
+      case 49855 : return key_info(0, U'¿', alt, false, false);
+      case -1509891456 : return key_info(0, U'…', alt, false, false);
+      case 50103 : return key_info(0, U'÷', alt, false, false);
+      case -1610554743 : return key_info(0, U'≠', alt, false, false);
+      case 49841 : return key_info(0, U'±', alt, false, false);
       }
       
       if (key_info::keys.find(std::string(1, toupper((char)key))) != key_info::keys.end())
         return key_info(toupper(key), key, alt, false, key >= 'A' && key <= 'Z');
-      
+        
       return key_info(0, key, alt, false, key >= 'A' && key <= 'Z');
     }
     
@@ -560,7 +560,7 @@ bool __opaque_console::background_color(xtd::console_color color) {
 bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
   if (frequency < 37 || frequency > 32767)
     return false;
-  
+    
   int fd = open("/dev/console", O_WRONLY);
   if (fd == -1)
     std::cout << "\a" << std::flush;

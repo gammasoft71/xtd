@@ -18,93 +18,93 @@ int32_t system_information::active_window_tracking_delay() {
 }
 
 int32_t system_information::arrange_direction() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return GetSystemMetrics(SM_ARRANGE) & (ARW_DOWN | ARW_LEFT | ARW_RIGHT | ARW_UP);
-#else
+  #else
   return ARW_LEFT;
-#endif
+  #endif
 }
 
 int32_t system_information::arrange_starting_position() {
-#if defined(__WXMSW__)
-  return GetSystemMetrics(SM_ARRANGE) & (ARW_BOTTOMLEFT | ARW_BOTTOMRIGHT | ARW_HIDE |ARW_TOPLEFT | ARW_TOPRIGHT);
-#else
+  #if defined(__WXMSW__)
+  return GetSystemMetrics(SM_ARRANGE) & (ARW_BOTTOMLEFT | ARW_BOTTOMRIGHT | ARW_HIDE | ARW_TOPLEFT | ARW_TOPRIGHT);
+  #else
   return ARW_HIDE;
-#endif
+  #endif
 }
 
 int32_t system_information::boot_mode() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return GetSystemMetrics(SM_CLEANBOOT);
-#else
+  #else
   return 0; // mode : 0 = Normal, 1 = Fail Safe and 2 = Fail safe with network.
-#endif
+  #endif
 }
 
 xtd::drawing::size system_information::border_3d_size() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return {wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_EDGE_X), wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_EDGE_Y)};
-#else
+  #else
   return {0, 0};
-#endif
+  #endif
 }
 
 int32_t system_information::border_multiplier_factor() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   int32_t value;
   SystemParametersInfo(SPI_GETBORDER, 0, &value, 0);
   return value;
-#else
+  #else
   return 1;
-#endif
+  #endif
 }
 
 xtd::drawing::size system_information::border_size() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return {wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_BORDER_X), wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_BORDER_Y)};
-#else
+  #else
   return {0, 0};
-#endif
+  #endif
 }
 
 xtd::drawing::size system_information::caption_button_size() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return {GetSystemMetrics(SM_CXSIZE), GetSystemMetrics(SM_CYSIZE)};
-#else
+  #else
   return {16, 16};
-#endif
+  #endif
 }
 
 int32_t system_information::caption_height() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_CAPTION_Y);
-#elif defined(__APPLE__)
+  #elif defined(__APPLE__)
   // return 22;
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, wxEmptyString);
   int height = frame->GetSize().GetHeight() - frame->GetClientSize().GetHeight();
   frame->Destroy();
   return height;
-#else
+  #else
   return 1;
-#endif
+  #endif
 }
 
 int32_t system_information::caret_blink_time() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return GetCaretBlinkTime();
-#else
+  #else
   return 530;
-#endif
+  #endif
 }
 
 int32_t system_information::caret_width() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   int32_t value;
   SystemParametersInfo(SPI_GETCARETWIDTH, 0, &value, 0);
   return value;
-#else
+  #else
   return 1;
-#endif
+  #endif
 }
 
 ustring system_information::computer_name() {
@@ -112,35 +112,35 @@ ustring system_information::computer_name() {
 }
 
 xtd::drawing::size system_information::cursor_size() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return {wxSystemSettings::GetMetric(wxSYS_CURSOR_X), wxSystemSettings::GetMetric(wxSYS_CURSOR_Y)};
-#else
+  #else
   return {32, 32};
-#endif
+  #endif
 }
 
 bool system_information::dbcs_enabled() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return GetSystemMetrics(SM_DBCSENABLED);
-#else
+  #else
   return false;
-#endif
+  #endif
 }
 
 bool system_information::debug_os() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return GetSystemMetrics(SM_DEBUG);
-#else
+  #else
   return false;
-#endif
+  #endif
 }
 
 xtd::drawing::size system_information::double_click_size() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return {wxSystemSettings::GetMetric(wxSYS_DCLICK_X), wxSystemSettings::GetMetric(wxSYS_DCLICK_Y)};
-#else
+  #else
   return {4, 4};
-#endif
+  #endif
 }
 
 int32_t system_information::double_click_time() {
@@ -148,47 +148,47 @@ int32_t system_information::double_click_time() {
 }
 
 bool system_information::drag_full_windows() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   int32_t drag_full_windows;
   SystemParametersInfo(SPI_GETDRAGFULLWINDOWS, 0, &drag_full_windows, 0);
   return drag_full_windows;
-#else
+  #else
   return true;
-#endif
+  #endif
 }
 
 xtd::drawing::size system_information::drag_size() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return {wxSystemSettings::GetMetric(wxSYS_DRAG_X), wxSystemSettings::GetMetric(wxSYS_DRAG_Y)};
-#else
+  #else
   return {4, 4};
-#endif
+  #endif
 }
 
 xtd::drawing::size system_information::fixed_frame_border_size() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return {wxSystemSettings::GetMetric(wxSYS_FRAMESIZE_X), wxSystemSettings::GetMetric(wxSYS_FRAMESIZE_Y)};
-#else
+  #else
   return {0, 0};
-#endif
+  #endif
 }
 
 int32_t system_information::font_smoothing_contrast() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   int32_t font_smoothing_contrast;
   SystemParametersInfo(SPI_GETFONTSMOOTHINGCONTRAST, 0, &font_smoothing_contrast, 0);
   return font_smoothing_contrast;
-#else
+  #else
   return 1200;
-#endif
+  #endif
 }
 
 int32_t system_information::font_smoothing_type() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   int32_t font_smoothing_type;
   SystemParametersInfo(SPI_GETFONTSMOOTHINGTYPE, 0, &font_smoothing_type, 0);
   return font_smoothing_type;
-#else
+  #else
   return 2;
-#endif
+  #endif
 }

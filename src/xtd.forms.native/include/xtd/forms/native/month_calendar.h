@@ -20,7 +20,7 @@ namespace xtd {
     /// @cond
     class month_calendar;
     /// @endcond
-
+    
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
@@ -31,7 +31,7 @@ namespace xtd {
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
       /// @warning Internal use only
-      class forms_native_export_ month_calendar final static_{
+      class forms_native_export_ month_calendar final static_ {
         friend xtd::forms::month_calendar;
       protected:
         /// @name Protected methods

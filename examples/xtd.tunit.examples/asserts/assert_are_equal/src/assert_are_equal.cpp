@@ -9,7 +9,7 @@ namespace unit_tests {
       int i = 24;
       assert::are_equal(24, i);
     }
-
+    
     void test_method_(test_case_failed) {
       int i = 24;
       assert::are_equal(23, i);

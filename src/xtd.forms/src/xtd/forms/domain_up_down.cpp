@@ -14,22 +14,22 @@ using namespace xtd;
 using namespace xtd::forms;
 
 domain_up_down::domain_up_down() {
-  items_.item_added += [&](size_t pos, const item& item) {
+  items_.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::domain_up_down::insert_item(handle(), pos, item.value());
     domain_up_down::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
   };
-
-  items_.item_removed += [&](size_t pos, const item& item) {
+  
+  items_.item_removed += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::domain_up_down::delete_item(handle(), pos);
-
+    
     domain_up_down::item selected_item;
     if (selected_index_ != npos && selected_index_ < items_.size()) selected_item = items_[selected_index_];
     this->selected_item(selected_item);
   };
   
-  items_.item_updated += [&](size_t pos, const item& item) {
+  items_.item_updated += [&](size_t pos, const item & item) {
     static bool update_disabled = false;
     if (update_disabled) return;
     if (is_handle_created()) native::domain_up_down::update_item(handle(), pos, item.value());
@@ -49,7 +49,7 @@ domain_up_down& domain_up_down::selected_index(size_t selected_index) {
     if (selected_index_ != npos) selected_item = items_[selected_index_];
     //this->selected_item(selected_item);
     selected_item_ = selected_item;
-
+    
     on_text_changed(event_args::empty);
   }
   return *this;
@@ -64,7 +64,7 @@ domain_up_down& domain_up_down::selected_item(const item& selected_item) {
       size_t index = it - items_.begin();
       selected_index(index);
       selected_item_ = *it;
-
+      
     }
   }
   return *this;
@@ -84,11 +84,11 @@ forms::create_params domain_up_down::create_params() const {
   create_params.class_name("domainupdown");
   
   if (wrap_) create_params.style(create_params.style() | UDS_WRAP);
-
+  
   return create_params;
 }
 
-void domain_up_down::on_handle_created(const event_args &e) {
+void domain_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
   for (size_t index = 0; index < items_.size(); ++index)
     native::domain_up_down::insert_item(handle(), index, items_[index].value());

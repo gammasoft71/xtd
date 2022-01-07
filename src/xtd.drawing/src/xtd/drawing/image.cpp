@@ -32,7 +32,7 @@ image::image(intptr_t hbitmap) {
   }
 }
 
-image::image(const ustring &filename) {
+image::image(const ustring& filename) {
   data_->handle_ = native::image::create(filename);
   update_properties();
 }
@@ -75,9 +75,9 @@ void image::update_properties() {
   if ((frame_dimensions & FD_PAGE) == FD_PAGE) data_->frame_dimentions_list_.push_back(imaging::frame_dimension::page().guid());
   if ((frame_dimensions & FD_RESOLUTION) == FD_RESOLUTION) data_->frame_dimentions_list_.push_back(imaging::frame_dimension::resolution().guid());
   if ((frame_dimensions & FD_TIME) == FD_TIME) data_->frame_dimentions_list_.push_back(imaging::frame_dimension::time().guid());
-
+  
   data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
-
+  
   std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>> palette_entries;
   native::image::color_palette(data_->handle_, palette_entries, data_->palette_.flags_);
   for (auto [a, r, g, b] : palette_entries)
@@ -91,20 +91,20 @@ void image::update_properties() {
   
   data_->property_id_list_ = native::image::property_id_list(data_->handle_);
   
-  for(const native::image::property_item& i : native::image::property_items(data_->handle_)) {
+  for (const native::image::property_item& i : native::image::property_items(data_->handle_)) {
     imaging::property_item item;
     item.id(i.id);
     item.len(i.len);
     item.value(i.value);
     data_->property_ityems_.push_back(item);
   }
-
+  
   data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
   
   int32_t width, height;
   native::image::size(data_->handle_, width, height);
   data_->size_ = drawing::size(width, height);
-
+  
   data_->vertical_resolution_ = native::image::vertical_resolution(data_->handle_);
 }
 

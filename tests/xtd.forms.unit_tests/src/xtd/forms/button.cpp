@@ -20,7 +20,7 @@ namespace unit_tests {
       button.perform_click();
       assert::are_equal(1, click_control_check, csf_);
     }
-
+    
     /*
     void test_method_(send_message_button_click_form_panel_button) {
       form form;

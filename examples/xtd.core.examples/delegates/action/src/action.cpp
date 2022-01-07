@@ -7,7 +7,7 @@ using namespace xtd;
 int main() {
   vector<ustring> names {"Bruce", "Alfred", "Tim", "Richard"};
   
-  action<const ustring&> print([](const ustring& value) {
+  action<const ustring&> print([](const ustring & value) {
     console::write_line(value);
   });
   
@@ -15,7 +15,7 @@ int main() {
   for_each(names.begin(), names.end(), print);
   
   // The following demonstrates the lambda of c++ to display the contents of the list to the console.
-  for_each(names.begin(), names.end(), [](const ustring& value) {
+  for_each(names.begin(), names.end(), [](const ustring & value) {
     console::write_line(value);
   });
 }

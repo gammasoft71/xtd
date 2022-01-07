@@ -34,22 +34,22 @@ namespace xtd {
           } else if ((create_params.style() & BS_PUSHLIKE) == BS_PUSHLIKE)
             control_handler::create<wxToggleButton>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0);
           else
-            control_handler::create<wxRadioButton>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())),wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
-#if defined(__WIN32__)
+            control_handler::create<wxRadioButton>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+          #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
-#endif
+          #endif
           hidden_radio_button = new wxRadioButton(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0);
           hidden_radio_button->Show(false);
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = wxRB_GROUP;
-                    
+          
           if ((style & BS_RIGHTBUTTON) == BS_RIGHTBUTTON) wx_style |= wxALIGN_RIGHT;
-
+          
           return wx_style;
         }
         
@@ -60,7 +60,7 @@ namespace xtd {
         void SetClientSize(int32_t width, int32_t height) override {
           control()->SetSize(width, height);
         }
-
+        
         wxRadioButton* hidden_radio_button = nullptr;
         bool owner_draw_ = false;
       };

@@ -30,7 +30,7 @@ namespace xtd {
         double_buffered(true);
       }
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -49,7 +49,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets the background segment opacity.
       /// @return A double-precision value between 0.0 and 1.0 that represent the background segment opacity.
       virtual double back_segment_opacity() const {return back_segment_opacity_;}
@@ -109,7 +109,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets seven_segment_display value.
       /// @return A xtd::forms::segments combination that represent seven_segment_display.
       virtual forms::segments value() const {return value_;}
@@ -124,7 +124,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -136,7 +136,7 @@ namespace xtd {
       /// @param on true to set to on; otherwise false.
       virtual void set_segments(forms::segments segment, bool value) { value_ = value ? (value_ | segment) : (value_ & ~segment); }
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -176,11 +176,11 @@ namespace xtd {
         control::on_parent_enabled_changed(e);
         invalidate();
       }
-
+      
       drawing::size measure_control() const override {
         return drawing::size((height() - 3) / 2 + 2, height());
       }
-    
+      
       void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override {
         if ((specified & bounds_specified::width) == forms::bounds_specified::width && (specified & bounds_specified::height) != forms::bounds_specified::height) {
           height = (width - 2) * 2 + 3;
@@ -192,7 +192,7 @@ namespace xtd {
         }
         control::set_bounds_core(x, y, width, height, specified);
       }
-            
+      
       void set_client_size_core(int32_t width, int32_t height) override {
         if (client_size().height() != height)
           width = (height - 3) / 2 + 2;
@@ -200,7 +200,7 @@ namespace xtd {
           height = (width - 2) * 2 + 3;
         control::set_client_size_core(width, height);
       }
-
+      
       /// @brief Draw all background digit on specified graphics.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       virtual void draw_back_digit(drawing::graphics& graphics) {
@@ -213,7 +213,7 @@ namespace xtd {
         draw_segment_f(graphics, color);
         draw_segment_g(graphics, color);
       }
-
+      
       /// @brief Draw segment a on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
@@ -313,7 +313,7 @@ namespace xtd {
             graphics.draw_line(drawing::pen(color), 2 + thickness(), size().height() - 2 - offset, size().width() - 3 - thickness(), size().height() - 2 - offset);
         }
       }
-
+      
       /// @brief Draw segment e on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
@@ -338,7 +338,7 @@ namespace xtd {
             graphics.draw_line(drawing::pen(color), 1 + thickness() / 2 + offset, size().height() / 2 + 1, 1 + thickness() / 2 + offset, size().height() - 2);
         }
       }
-
+      
       /// @brief Draw segment f on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
@@ -363,7 +363,7 @@ namespace xtd {
             graphics.draw_line(drawing::pen(color), 1 + thickness() / 2 + offset, 1, 1 + thickness() / 2 + offset, size().height() / 2 - 1);
         }
       }
-
+      
       /// @brief Draw segment g on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
@@ -388,23 +388,23 @@ namespace xtd {
             graphics.draw_line(drawing::pen(color), 2 + thickness(), size().height() / 2 + offset, size().width() - 3 - thickness(), size().height() / 2 + offset);
         }
       }
-
+      
       /// @brief Draw segment dot point on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_dp(drawing::graphics& graphics, const drawing::color& color) {
-        if (segment_style_ == segment_style::standard) {
+        if (segment_style_ == segment_style::standard)
           graphics.fill_ellipse(drawing::solid_brush(color), size().width() / 2 - thickness() / 2, size().height() - 1 - thickness(), thickness(), thickness());
-        } else if (segment_style_ == segment_style::modern) {
+        else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = 0; offset < thickness(); offset++)
             graphics.draw_line(drawing::pen(color), size().width() / 2 - thickness() / 2, size().height() - 2 - offset, size().width() / 2 + thickness() / 2, size().height() - 2 - offset);
-        } else if (segment_style_ == segment_style::mixed) {
+        } else if (segment_style_ == segment_style::mixed)
           graphics.fill_ellipse(drawing::solid_brush(color), size().width() / 2 - thickness() / 2, size().height() - 1 - thickness(), thickness(), thickness());
-        } else if (segment_style_ == segment_style::expanded) {
+        else if (segment_style_ == segment_style::expanded)
           graphics.fill_ellipse(drawing::solid_brush(color), size().width() / 2 - thickness() / 2, size().height() - 1 - thickness(), thickness(), thickness());
-        } else if (segment_style_ == segment_style::design) {
+        else if (segment_style_ == segment_style::design)
           graphics.fill_ellipse(drawing::solid_brush(color), size().width() / 2 - thickness() / 2, size().height() - 1 - thickness(), thickness(), thickness());
-        } else if (segment_style_ == segment_style::stick) {
+        else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = 0; offset < thickness(); offset++)
             graphics.draw_line(drawing::pen(color), size().width() / 2 - thickness() / 2, size().height() - 2 - offset, size().width() / 2 + thickness() / 2, size().height() - 2 - offset);
         }
@@ -420,7 +420,7 @@ namespace xtd {
         } else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = 0; offset < thickness(); offset++) {
             graphics.draw_line(drawing::pen(color), size().width() / 2 - thickness() / 2, size().height() / 3 - thickness() / 2 + offset, size().width() / 2 + thickness() / 2, size().height() / 3 - thickness() / 2 + offset);
-            graphics.draw_line(drawing::pen(color), size().width() / 2 - thickness() / 2, size().height() /3 * 2 - thickness() / 2 + offset, size().width() / 2 + thickness() / 2, size().height() / 3 * 2 - thickness() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), size().width() / 2 - thickness() / 2, size().height() / 3 * 2 - thickness() / 2 + offset, size().width() / 2 + thickness() / 2, size().height() / 3 * 2 - thickness() / 2 + offset);
           }
         } else if (segment_style_ == segment_style::mixed) {
           graphics.fill_ellipse(drawing::solid_brush(color), size().width() / 2 - thickness() / 2, size().height() / 3 - thickness() / 2, thickness(), thickness());
@@ -434,12 +434,12 @@ namespace xtd {
         } else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = 0; offset < thickness(); offset++) {
             graphics.draw_line(drawing::pen(color), size().width() / 2 - thickness() / 2, size().height() / 3 - thickness() / 2 + offset, size().width() / 2 + thickness() / 2, size().height() / 3 - thickness() / 2 + offset);
-            graphics.draw_line(drawing::pen(color), size().width() / 2 - thickness() / 2, size().height() /3 * 2 - thickness() / 2 + offset, size().width() / 2 + thickness() / 2, size().height() / 3 * 2 - thickness() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), size().width() / 2 - thickness() / 2, size().height() / 3 * 2 - thickness() / 2 + offset, size().width() / 2 + thickness() / 2, size().height() / 3 * 2 - thickness() / 2 + offset);
           }
         }
       }
       /// @}
-
+      
     private:
       forms::segments value_ = forms::segments::none;
       bool show_back_segment_ = true;

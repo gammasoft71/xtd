@@ -41,7 +41,7 @@ namespace xtd {
       /// @param options The StringFormatFlags enumeration for the new StringFormat object.
       explicit string_format(xtd::drawing::string_format_flags options) : format_flags_(options) {}
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -93,7 +93,7 @@ namespace xtd {
       /// | line_alignment | near                                                 |
       /// | hotkey_prefix  | none                                                 |
       /// | trimming       | none                                                 |
-      static xtd::drawing::string_format generic_typographic() {return xtd::drawing::string_format(xtd::drawing::string_format_flags::no_clip|xtd::drawing::string_format_flags::fit_black_box|xtd::drawing::string_format_flags::line_limit);}
+      static xtd::drawing::string_format generic_typographic() {return xtd::drawing::string_format(xtd::drawing::string_format_flags::no_clip | xtd::drawing::string_format_flags::fit_black_box | xtd::drawing::string_format_flags::line_limit);}
       
       /// @brief Gets the HotkeyPrefix object for this string_format object.
       /// @return The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
@@ -106,7 +106,7 @@ namespace xtd {
         hotkey_prefix_ = hotkey_prefix;
         return *this;
       }
-
+      
       /// @brief Gets vertical alignment of the string.
       /// @return A string_alignment enumeration that specifies the vertical alignment of the string.
       /// @remarks Use alignment to specify the horizontal alignment of the string.
@@ -129,7 +129,7 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
     private:
       xtd::drawing::hotkey_prefix hotkey_prefix_ = xtd::drawing::hotkey_prefix::none;
       xtd::drawing::string_format_flags format_flags_ = static_cast<xtd::drawing::string_format_flags>(0);

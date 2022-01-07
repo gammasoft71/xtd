@@ -13,7 +13,7 @@ namespace examples {
       client_size({400, 300});
       set_color(color::blue);
       set_color(nullptr);
-
+      
       choice_theme.parent(*this);
       choice_theme.location({10, 10});
       choice_theme.items().push_back("default theme");
@@ -48,12 +48,12 @@ namespace examples {
         button_system.fore_color(fcolor.value());
         button_standard.fore_color(fcolor.value());
       };
-
+      
       button_system.parent(*this);
       button_system.flat_style(xtd::forms::flat_style::system);
       button_system.location({10, 170});
       button_system.text("System");
-
+      
       button_standard.parent(*this);
       button_standard.location({100, 170});
       button_standard.text("Standard");
@@ -62,13 +62,13 @@ namespace examples {
   protected:
     void on_paint(paint_event_args& e) override {
       form::on_paint(e);
-      button_renderer::draw_button(e.graphics(), {10, 70, 75, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::normal, bcolor, fcolor);
-      button_renderer::draw_button(e.graphics(), {100, 70, 75, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::hot, bcolor, fcolor);
-      button_renderer::draw_button(e.graphics(), {190, 70, 75, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::pressed, bcolor, fcolor);
-      button_renderer::draw_button(e.graphics(), {10, 110, 75, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::disabled, bcolor, fcolor);
-      button_renderer::draw_button(e.graphics(), {100, 110, 75, 25}, "Default", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::default_state, bcolor, fcolor);
+      button_renderer::draw_button(e.graphics(), {10, 70, 75, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::normal, bcolor, fcolor);
+      button_renderer::draw_button(e.graphics(), {100, 70, 75, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::hot, bcolor, fcolor);
+      button_renderer::draw_button(e.graphics(), {190, 70, 75, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::pressed, bcolor, fcolor);
+      button_renderer::draw_button(e.graphics(), {10, 110, 75, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::disabled, bcolor, fcolor);
+      button_renderer::draw_button(e.graphics(), {100, 110, 75, 25}, "Default", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::default_state, bcolor, fcolor);
     }
-
+    
   private:
     void set_color(const color& color) {
       cdebug << ustring::format("color = {}", color.to_string()) << endl;

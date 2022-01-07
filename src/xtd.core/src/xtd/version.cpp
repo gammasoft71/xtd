@@ -80,11 +80,11 @@ version version::parse(const xtd::ustring& input) {
   xtd::collections::specialized::string_vector versions;
   for (std::sregex_token_iterator it(input.begin(), input.end(), rgx, -1), end; it != end; ++it)
     versions.push_back(it->str());
-  
+    
   switch (versions.size()) {
-    case 2: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]));
-    case 3: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]));
-    case 4: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]), ustring::parse<int32_t>(versions[3]));
+  case 2: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]));
+  case 3: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]));
+  case 4: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]), ustring::parse<int32_t>(versions[3]));
   }
   
   throw xtd::argument_exception(csf_);
@@ -102,7 +102,7 @@ bool version::try_parse(const xtd::ustring& input, version& result) noexcept {
 xtd::ustring version::to_string() const noexcept {
   try {
     return to_string(2 + (build_ != -1 ? 1 : 0) + (revision_ != -1 ? 1 : 0));
-  } catch(...) {
+  } catch (...) {
     return "";
   }
 }

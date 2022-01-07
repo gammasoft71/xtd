@@ -38,7 +38,7 @@ bool file_system::is_path_too_long(const string& path) {
   return path.size() > MAX_PATH;
 }
 
-int32_t file_system::set_creation_time(const string &path, time_t creation_time) {
+int32_t file_system::set_creation_time(const string& path, time_t creation_time) {
   /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }
@@ -48,12 +48,12 @@ int32_t file_system::set_file_attributes(const string& path, int32_t attributes)
   return -1;
 }
 
-int32_t file_system::set_last_access_time(const string &path, time_t last_access_time) {
+int32_t file_system::set_last_access_time(const string& path, time_t last_access_time) {
   /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }
 
-int32_t file_system::set_last_write_time(const string &path, time_t last_write_time) {
+int32_t file_system::set_last_write_time(const string& path, time_t last_write_time) {
   /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }

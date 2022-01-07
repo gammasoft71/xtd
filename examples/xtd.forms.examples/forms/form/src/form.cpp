@@ -10,7 +10,7 @@ public:
     text("form1");
     location({300, 200});
     size({640, 480});
-
+    
     button_close.parent(*this);
     button_close.text("Close");
     button_close.auto_size(true);
@@ -29,12 +29,12 @@ public:
     button_exit_thread.location({190, 10});
     button_exit_thread.click += &application::exit_thread;
   }
-
+  
 protected:
   void on_form_closing(form_closing_event_args& e) override {
     e.cancel(message_box::show(*this, "Are you sure you want exit?", "Close Form", message_box_buttons::yes_no, message_box_icon::question) == dialog_result::no);
   };
-
+  
 private:
   forms::button button_close;
   forms::button button_exit;

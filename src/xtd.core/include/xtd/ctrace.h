@@ -11,7 +11,7 @@ inline xtd::tracestreambuf __ctracestreambuf__;
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-#if defined(TRACE)
+  #if defined(TRACE)
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
   /// @par Namespace
   /// xtd
@@ -19,7 +19,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   inline std::ostream ctrace(&__ctracestreambuf__);
-#else
+  #else
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
   /// @par Namespace
   /// xtd
@@ -27,5 +27,5 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   inline std::ostream ctrace(nullptr);
-#endif
+  #endif
 }

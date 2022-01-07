@@ -13,7 +13,7 @@
 namespace xtd {
   // ___________________________________________________________________________________________
   //                                                                                     generic
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -426,7 +426,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @cond
   template<typename new_type_t>
   new_type_t as(const xtd::ustring& value, byte_t from_base) {
@@ -473,7 +473,7 @@ namespace xtd {
     throw invalid_cast_exception(csf_);
   }
   /// @endcond
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -492,7 +492,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -511,7 +511,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -530,7 +530,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -549,7 +549,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -568,7 +568,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -587,7 +587,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -606,7 +606,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -625,7 +625,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -644,7 +644,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -663,7 +663,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -1901,7 +1901,7 @@ namespace xtd {
   inline byte_t as<byte_t>(const xtd::ustring& value) {
     return xtd::convert::to_byte(value);
   }
- 
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -1921,7 +1921,7 @@ namespace xtd {
   inline byte_t as<byte_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_byte(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new byte_t object converted from value.
@@ -4886,7 +4886,7 @@ namespace xtd {
   inline char32_t as<char32_t>(wchar_t* value) {
     return xtd::convert::to_char32(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar_t object converted from value.
@@ -5556,7 +5556,7 @@ namespace xtd {
   inline wchar_t as<wchar_t>(wchar_t* value) {
     return xtd::convert::to_wchar(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal_t object converted from value.
@@ -6226,7 +6226,7 @@ namespace xtd {
   inline decimal_t as<decimal_t>(wchar_t* value) {
     return xtd::convert::to_decimal(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
@@ -6896,7 +6896,7 @@ namespace xtd {
   inline double as<double>(wchar_t* value) {
     return xtd::convert::to_double(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
@@ -7566,7 +7566,7 @@ namespace xtd {
   inline float as<float>(wchar_t* value) {
     return xtd::convert::to_single(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16_t object converted from value.
@@ -7971,7 +7971,7 @@ namespace xtd {
   inline int16_t as<int16_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_int16(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16_t object converted from value.
@@ -8661,7 +8661,7 @@ namespace xtd {
   inline int32_t as<int32_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_int32(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32_t object converted from value.
@@ -8946,7 +8946,7 @@ namespace xtd {
   inline int32_t as<int32_t>(wchar_t* value) {
     return xtd::convert::to_int32(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64_t object converted from value.
@@ -9351,7 +9351,7 @@ namespace xtd {
   inline int64_t as<int64_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_int64(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64_t object converted from value.
@@ -9636,7 +9636,7 @@ namespace xtd {
   inline int64_t as<int64_t>(wchar_t* value) {
     return xtd::convert::to_int64(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new llong_t object converted from value.
@@ -10041,7 +10041,7 @@ namespace xtd {
   inline llong_t as<llong_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_llong(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new llong_t object converted from value.
@@ -10326,7 +10326,7 @@ namespace xtd {
   inline llong_t as<llong_t>(wchar_t* value) {
     return xtd::convert::to_llong(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte_t object converted from value.
@@ -10731,7 +10731,7 @@ namespace xtd {
   inline sbyte_t as<sbyte_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_sbyte(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte_t object converted from value.
@@ -11016,7 +11016,7 @@ namespace xtd {
   inline sbyte_t as<sbyte_t>(wchar_t* value) {
     return xtd::convert::to_sbyte(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16_t object converted from value.
@@ -11421,7 +11421,7 @@ namespace xtd {
   inline uint16_t as<uint16_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_uint16(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16_t object converted from value.
@@ -11706,7 +11706,7 @@ namespace xtd {
   inline uint16_t as<uint16_t>(wchar_t* value) {
     return xtd::convert::to_uint16(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32_t object converted from value.
@@ -12111,7 +12111,7 @@ namespace xtd {
   inline uint32_t as<uint32_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_uint32(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32_t object converted from value.
@@ -12396,7 +12396,7 @@ namespace xtd {
   inline uint32_t as<uint32_t>(wchar_t* value) {
     return xtd::convert::to_uint32(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64_t object converted from value.
@@ -12801,7 +12801,7 @@ namespace xtd {
   inline uint64_t as<uint64_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_uint64(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64_t object converted from value.
@@ -13086,7 +13086,7 @@ namespace xtd {
   inline uint64_t as<uint64_t>(wchar_t* value) {
     return xtd::convert::to_uint64(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -13491,7 +13491,7 @@ namespace xtd {
   inline ullong_t as<ullong_t>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_ullong(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -13776,7 +13776,7 @@ namespace xtd {
   inline ullong_t as<ullong_t>(wchar_t* value) {
     return xtd::convert::to_ullong(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -13851,7 +13851,7 @@ namespace xtd {
   inline ustring as<ustring>(byte_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -14038,7 +14038,7 @@ namespace xtd {
   inline ustring as<ustring>(int16_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -14076,7 +14076,7 @@ namespace xtd {
   inline ustring as<ustring>(int32_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -14114,7 +14114,7 @@ namespace xtd {
   inline ustring as<ustring>(int64_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -14152,7 +14152,7 @@ namespace xtd {
   inline ustring as<ustring>(llong_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -14190,7 +14190,7 @@ namespace xtd {
   inline ustring as<ustring>(sbyte_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -14228,7 +14228,7 @@ namespace xtd {
   inline ustring as<ustring>(uint16_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -14266,7 +14266,7 @@ namespace xtd {
   inline ustring as<ustring>(uint32_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -14304,7 +14304,7 @@ namespace xtd {
   inline ustring as<ustring>(uint64_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new ullong_t object converted from value.
@@ -14342,7 +14342,7 @@ namespace xtd {
   inline ustring as<ustring>(ullong_t value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
-
+  
   // ___________________________________________________________________________________________
   //                                                         xtd::convert_pointer specialization
   
@@ -14494,7 +14494,7 @@ namespace xtd {
   std::shared_ptr<new_type_t> as(std::shared_ptr<current_type_t>&& value) {
     return xtd::convert_pointer::to_shared_ptr<new_type_t>(value);
   }
-
+  
   // ___________________________________________________________________________________________
   //                                                          xtd::convert_string specialization
   
@@ -14521,7 +14521,7 @@ namespace xtd {
   inline std::string as<std::string>(std::string& value) {
     return xtd::convert_string::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14537,7 +14537,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(const std::string& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14553,7 +14553,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(std::string& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14569,7 +14569,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const std::string& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14585,7 +14585,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(std::string& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14601,7 +14601,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(const std::string& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14617,7 +14617,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(std::string& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14633,7 +14633,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(const std::string& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14649,7 +14649,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(std::string& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14665,7 +14665,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(const std::string& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14681,7 +14681,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(std::string& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14697,7 +14697,7 @@ namespace xtd {
   inline std::string as<std::string>(const char* value) {
     return xtd::convert_string::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14905,7 +14905,7 @@ namespace xtd {
   inline std::string as<std::string>(xtd::ustring& value) {
     return xtd::convert_string::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14921,7 +14921,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(const xtd::ustring& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14937,7 +14937,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(xtd::ustring& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14953,7 +14953,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const xtd::ustring& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14969,7 +14969,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(xtd::ustring& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -14985,7 +14985,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(const xtd::ustring& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15001,7 +15001,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(xtd::ustring& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15017,7 +15017,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(const xtd::ustring& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15033,7 +15033,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(xtd::ustring& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15049,7 +15049,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(const xtd::ustring& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15065,7 +15065,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(xtd::ustring& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15081,7 +15081,7 @@ namespace xtd {
   inline std::string as<std::string>(const std::u8string& value) {
     return xtd::convert_string::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15097,7 +15097,7 @@ namespace xtd {
   inline std::string as<std::string>(std::u8string& value) {
     return xtd::convert_string::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15113,7 +15113,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(const std::u8string& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15129,7 +15129,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(std::u8string& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15145,7 +15145,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const std::u8string& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15161,7 +15161,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(std::u8string& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15177,7 +15177,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(const std::u8string& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15193,7 +15193,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(std::u8string& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15209,7 +15209,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(const std::u8string& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15225,7 +15225,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(std::u8string& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15241,7 +15241,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(const std::u8string& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15257,7 +15257,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(std::u8string& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15481,7 +15481,7 @@ namespace xtd {
   inline std::string as<std::string>(std::u16string& value) {
     return xtd::convert_string::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15497,7 +15497,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(const std::u16string& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15513,7 +15513,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(std::u16string& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15529,7 +15529,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const std::u16string& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15545,7 +15545,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(std::u16string& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15561,7 +15561,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(const std::u16string& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15577,7 +15577,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(std::u16string& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15593,7 +15593,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(const std::u16string& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15609,7 +15609,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(std::u16string& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15625,7 +15625,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(const std::u16string& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15641,7 +15641,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(std::u16string& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15865,7 +15865,7 @@ namespace xtd {
   inline std::string as<std::string>(std::u32string& value) {
     return xtd::convert_string::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15881,7 +15881,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(const std::u32string& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15897,7 +15897,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(std::u32string& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15913,7 +15913,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const std::u32string& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15929,7 +15929,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(std::u32string& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15945,7 +15945,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(const std::u32string& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15961,7 +15961,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(std::u32string& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15977,7 +15977,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(const std::u32string& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -15993,7 +15993,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(std::u32string& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16009,7 +16009,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(const std::u32string& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16025,7 +16025,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(std::u32string& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16249,7 +16249,7 @@ namespace xtd {
   inline std::string as<std::string>(std::wstring& value) {
     return xtd::convert_string::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16265,7 +16265,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(const std::wstring& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16281,7 +16281,7 @@ namespace xtd {
   inline xtd::ustring as<xtd::ustring>(std::wstring& value) {
     return xtd::convert_string::to_ustring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16297,7 +16297,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const std::wstring& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16313,7 +16313,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(std::wstring& value) {
     return xtd::convert_string::to_u8string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16329,7 +16329,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(const std::wstring& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16345,7 +16345,7 @@ namespace xtd {
   inline std::u16string as<std::u16string>(std::wstring& value) {
     return xtd::convert_string::to_u16string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16361,7 +16361,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(const std::wstring& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16377,7 +16377,7 @@ namespace xtd {
   inline std::u32string as<std::u32string>(std::wstring& value) {
     return xtd::convert_string::to_u32string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16393,7 +16393,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(const std::wstring& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd
@@ -16409,7 +16409,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(std::wstring& value) {
     return xtd::convert_string::to_wstring(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd

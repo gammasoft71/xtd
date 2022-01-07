@@ -26,7 +26,7 @@ namespace xtd {
       /// @see see xtd::forms::icontrol_trace interface.
       control_trace_listener(xtd::forms::icontrol_trace& control_trace) : control_trace_(&control_trace) {}
       /// @}
-
+      
       /// @cond
       ~control_trace_listener() {flush();}
       /// @endcond
@@ -41,42 +41,42 @@ namespace xtd {
       /// @param control_trace The icontrol_trace object to use.
       virtual void control_trace(xtd::forms::icontrol_trace& control_trace) {control_trace_ = &control_trace;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       /// @brief Create new control_trace_listener.
       /// @return New created trace listener.
       static std::shared_ptr<xtd::diagnostics::trace_listener> create(xtd::forms::icontrol_trace& control_trace) {return std::make_shared<control_trace_listener>(control_trace);}
-
+      
       void close() override { }
-
+      
       void flush() override {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (control_trace_) control_trace_->flush();
-#endif
+        #endif
       }
       
       using trace_listener::write;
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
       void write(const xtd::ustring& message) override {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (need_indent()) write_indent();
         if (control_trace_) control_trace_->write(message);
-#endif
+        #endif
       }
       
       using trace_listener::write_line;
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
       void write_line(const xtd::ustring& message) override {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         //write(message + "\n");
         if (need_indent()) write_indent();
         if (control_trace_) control_trace_->write_line(message);
         need_indent(true);
-#endif
+        #endif
       }
       /// @}
       

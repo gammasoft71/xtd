@@ -32,7 +32,7 @@ namespace xtd {
       console() = delete;
     protected:
       /// @name Protected methods
-
+      
       /// @{
       /// @internal
       /// @brief Gets the background color of the console.

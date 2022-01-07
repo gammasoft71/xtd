@@ -34,7 +34,7 @@ namespace xtd {
       /// @brief Content is vertically aligned at the bottom, and horizontally aligned on the right.
       bottom_right = 0b10000000000,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, content_alignment value) {return os << to_string(value, {{content_alignment::top_left, "top_left"}, {content_alignment::top_center, "top_center"}, {content_alignment::top_right, "top_right"}, {content_alignment::middle_left, "middle_left"}, {content_alignment::middle_center, "middle_center"}, {content_alignment::middle_right, "middle_right"}, {content_alignment::bottom_left, "bottom_left"}, {content_alignment::bottom_center, "bottom_center"}, {content_alignment::bottom_right, "bottom_right"}});}
     inline std::wostream& operator<<(std::wostream& os, content_alignment value) {return os << to_string(value, {{content_alignment::top_left, L"top_left"}, {content_alignment::top_center, L"top_center"}, {content_alignment::top_right, L"top_right"}, {content_alignment::middle_left, L"middle_left"}, {content_alignment::middle_center, L"middle_center"}, {content_alignment::middle_right, L"middle_right"}, {content_alignment::bottom_left, L"bottom_left"}, {content_alignment::bottom_center, L"bottom_center"}, {content_alignment::bottom_right, L"bottom_right"}});}

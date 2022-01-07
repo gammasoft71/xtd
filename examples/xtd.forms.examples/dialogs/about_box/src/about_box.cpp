@@ -9,7 +9,7 @@ public:
   form1() {
     text("About box example");
     controls().push_back(button1);
-
+    
     button1.location({10, 10});
     button1.text("About...");
     button1.click += [&] {

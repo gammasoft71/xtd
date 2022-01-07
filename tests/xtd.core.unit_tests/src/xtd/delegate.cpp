@@ -13,17 +13,17 @@ namespace unit_tests {
       delegate<void()> d;
       assert::is_true(d.is_empty(), csf_);
     }
-
+    
     void test_method_(create_empty_delegate_and_invoke_it) {
       delegate<void()> d;
       assert::does_not_throw([&] {d.invoke();}, csf_);
     }
-
+    
     void test_method_(create_empty_delegate_and_invoke_it_with_functor) {
       delegate<void()> d;
       assert::does_not_throw([&] {d();}, csf_);
     }
-
+    
     static string static_method1() {
       return "static_method1";
     }

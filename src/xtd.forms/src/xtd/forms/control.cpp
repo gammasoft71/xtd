@@ -40,9 +40,9 @@ namespace {
     control* do_layout_ = nullptr;
     static set<control*> do_layouts;
   };
-
+  
   set<control*> reentrant_layout::do_layouts;
-
+  
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
     if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON)
       return mouse_buttons::left;
@@ -71,14 +71,14 @@ control::control_collection& control::control_collection::operator=(const contro
 }
 
 optional<control::control_collection::value_type> control::control_collection::operator[](const ustring& name) const {
-  for(auto item : *this)
-    if(item.get().name() == name) return item;
+  for (auto item : *this)
+    if (item.get().name() == name) return item;
   return {};
 }
 
 optional<control::control_collection::value_type> control::control_collection::operator[](const ustring& name) {
-  for(auto item : *this)
-    if(item.get().name() == name) return item;
+  for (auto item : *this)
+    if (item.get().name() == name) return item;
   return {};
 }
 
@@ -212,7 +212,7 @@ control& control::bounds(const drawing::rectangle& bounds) {
 
 bool control::can_focus() const {
   bool visible_and_enabled = handle() && get_state(state::visible) && get_state(state::enabled);
-
+  
   optional<reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
   while (visible_and_enabled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
     top_level_control = top_level_control.value().get().parent();
@@ -264,9 +264,8 @@ std::optional<std::reference_wrapper<xtd::forms::context_menu>> control::context
 }
 
 control& control::context_menu(xtd::forms::context_menu& value) {
-  if (!data_->context_menu.has_value() || &data_->context_menu.value().get() != &value) {
+  if (!data_->context_menu.has_value() || &data_->context_menu.value().get() != &value)
     data_->context_menu = const_cast<forms::context_menu&>(value);
-  }
   return *this;
 }
 
@@ -308,7 +307,7 @@ forms::cursor control::cursor() const {
   return default_cursor();
 }
 
-control& control::cursor(const forms::cursor &cursor) {
+control& control::cursor(const forms::cursor& cursor) {
   if (data_->cursor != cursor) {
     data_->cursor = cursor;
     if (is_handle_created()) native::control::cursor(handle(), data_->cursor.value().handle());
@@ -756,7 +755,7 @@ void control::create_handle() {
   data_->handle = native::control::create(params);
   handles_[handle()] = this;
   native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
-  for(auto child : data_->controls) {
+  for (auto child : data_->controls) {
     child.get().data_->parent = handle();
     child.get().create_handle();
   }
@@ -767,7 +766,7 @@ void control::create_handle() {
 void control::destroy_handle() {
   if (!is_handle_created()) return;
   native::control::unregister_wnd_proc(handle());
-  for(auto child : data_->controls)
+  for (auto child : data_->controls)
     child.get().destroy_handle();
   handles_.erase(handle());
   on_handle_destroyed(event_args::empty);
@@ -809,7 +808,7 @@ forms::auto_size_mode control::get_auto_size_mode() const {
 }
 
 size_t control::get_child_index(intptr_t child) const {
-  for (size_t index = 0;index < controls().size(); ++index)
+  for (size_t index = 0; index < controls().size(); ++index)
     if (controls()[index].get().handle() == child) return index;
   throw xtd::argument_exception(current_stack_frame_);
 }
@@ -818,7 +817,7 @@ size_t control::get_child_index(intptr_t child, bool& throw_exception) const {
   throw_exception = false;
   try {
     return get_child_index(child);
-  } catch(...) {
+  } catch (...) {
     throw_exception = true;
     return control_collection::npos;
   }
@@ -895,17 +894,17 @@ void control::on_auto_size_changed(const event_args& e) {
   if (can_raise_events()) auto_size_changed(*this, e);
 }
 
-void control::on_back_color_changed(const event_args &e) {
+void control::on_back_color_changed(const event_args& e) {
   refresh();
   if (can_raise_events()) back_color_changed(*this, e);
 }
 
-void control::on_background_image_changed(const event_args &e) {
+void control::on_background_image_changed(const event_args& e) {
   refresh();
   if (can_raise_events()) background_image_changed(*this, e);
 }
 
-void control::on_background_image_layout_changed(const event_args &e) {
+void control::on_background_image_layout_changed(const event_args& e) {
   refresh();
   if (can_raise_events()) background_image_layout_changed(*this, e);
 }
@@ -920,68 +919,67 @@ void control::on_create_control() {
   perform_layout();
 }
 
-void control::on_click(const event_args &e) {
+void control::on_click(const event_args& e) {
   if (can_raise_events()) click(*this, e);
 }
 
-void control::on_client_size_changed(const event_args &e) {
+void control::on_client_size_changed(const event_args& e) {
   if (can_raise_events()) client_size_changed(*this, e);
 }
 
-void control::on_control_added(const control_event_args &e) {
+void control::on_control_added(const control_event_args& e) {
   perform_layout();
   size_changed += {e.control(), &control::on_parent_size_changed};
   if (can_raise_events()) control_added(*this, e);
 }
 
-void control::on_control_removed(const control_event_args &e) {
+void control::on_control_removed(const control_event_args& e) {
   perform_layout();
   size_changed -= {e.control(), &control::on_parent_size_changed};
   if (can_raise_events()) control_removed(*this, e);
 }
 
-void control::on_cursor_changed(const event_args &e) {
+void control::on_cursor_changed(const event_args& e) {
   if (can_raise_events()) cursor_changed(*this, e);
 }
 
-void control::on_dock_changed(const event_args &e) {
+void control::on_dock_changed(const event_args& e) {
   if (parent().has_value()) parent().value().get().perform_layout();
   perform_layout();
   if (can_raise_events()) dock_changed(*this, e);
 }
 
-void control::on_double_click(const event_args &e) {
+void control::on_double_click(const event_args& e) {
   if (can_raise_events()) double_click(*this, e);
 }
 
-void control::on_enabled_changed(const event_args &e) {
+void control::on_enabled_changed(const event_args& e) {
   if (is_handle_created()) set_state(state::enabled, native::control::enabled(handle()));
   refresh();
   if (can_raise_events()) enabled_changed(*this, e);
 }
 
-void control::on_fore_color_changed(const event_args &e) {
+void control::on_fore_color_changed(const event_args& e) {
   refresh();
   if (can_raise_events()) fore_color_changed(*this, e);
 }
 
-void control::on_font_changed(const event_args &e) {
+void control::on_font_changed(const event_args& e) {
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
   if (can_raise_events()) font_changed(*this, e);
 }
 
-void control::on_got_focus(const event_args &e) {
+void control::on_got_focus(const event_args& e) {
   if (can_raise_events()) got_focus(*this, e);
 }
 
-void control::on_handle_created(const event_args &e) {
+void control::on_handle_created(const event_args& e) {
   if (get_state(state::client_size_setted)) {
     native::control::maximum_client_size(handle(), maximum_client_size());
     native::control::minimum_client_size(handle(), minimum_client_size());
     native::control::client_size(handle(), client_size());
-  }
-  else {
+  } else {
     native::control::maximum_size(handle(), maximum_size());
     native::control::minimum_size(handle(), minimum_size());
     native::control::size(handle(), this->size());
@@ -993,23 +991,23 @@ void control::on_handle_created(const event_args &e) {
   native::control::enabled(handle(), enabled());
   native::control::visible(handle(), visible());
   if (focused()) native::control::focus(handle());
-
+  
   data_->client_rectangle = native::control::client_rectangle(handle());
   data_->client_size = native::control::client_size(handle());
   data_->location = native::control::location(handle());
   data_->size = native::control::size(handle());
-
+  
   if (parent().has_value()) data_->anchoring = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
-
+  
   if (can_raise_events()) handle_created(*this, e);
-
+  
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("on handle created control={}, location={}, size={}, client_size={}", *this, location(), this->size(), client_size()));
-
+  
   if (!get_state(control::state::recreate) && parent().has_value()) parent().value().get().perform_layout();
   if (!get_state(control::state::recreate)) perform_layout();
 }
 
-void control::on_handle_destroyed(const event_args &e) {
+void control::on_handle_destroyed(const event_args& e) {
   if (can_raise_events()) handle_destroyed(*this, e);
 }
 
@@ -1025,19 +1023,19 @@ void control::on_key_up(key_event_args& e) {
   if (can_raise_events()) key_up(*this, e);
 }
 
-void control::on_layout(const event_args &e) {
+void control::on_layout(const event_args& e) {
   do_layout_with_anchor_styles();
   do_layout_with_auto_size_mode();
   do_layout_children_with_dock_style();
   if (can_raise_events()) layout(*this, e);
 }
 
-void control::on_location_changed(const event_args &e) {
+void control::on_location_changed(const event_args& e) {
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   if (can_raise_events()) location_changed(*this, e);
 }
 
-void control::on_lost_focus(const event_args &e) {
+void control::on_lost_focus(const event_args& e) {
   if (can_raise_events()) lost_focus(*this, e);
 }
 
@@ -1057,11 +1055,11 @@ void control::on_mouse_horizontal_wheel(const mouse_event_args& e) {
   if (can_raise_events()) mouse_horizontal_wheel(*this, e);
 }
 
-void control::on_mouse_enter(const event_args &e) {
+void control::on_mouse_enter(const event_args& e) {
   if (can_raise_events()) mouse_enter(*this, e);
 }
 
-void control::on_mouse_leave(const event_args &e) {
+void control::on_mouse_leave(const event_args& e) {
   if (can_raise_events()) mouse_leave(*this, e);
 }
 
@@ -1087,7 +1085,7 @@ void control::on_paint_background(paint_event_args& e) {
   def_wnd_proc(e.message_);
 }
 
-void control::on_parent_back_color_changed(const event_args &e) {
+void control::on_parent_back_color_changed(const event_args& e) {
   if (!data_->back_color.has_value() || (parent().has_value() && parent().value().get().back_color() != data_->back_color.value())) {
     if (!parent().value().get().data_->back_color.has_value()) recreate_handle();
     else if (is_handle_created()) native::control::back_color(handle(), parent().value().get().back_color());
@@ -1096,12 +1094,12 @@ void control::on_parent_back_color_changed(const event_args &e) {
   }
 }
 
-void control::on_parent_changed(const event_args &e) {
+void control::on_parent_changed(const event_args& e) {
   if (!get_state(state::destroying) && parent().has_value() && !parent().value().get().get_state(state::destroying)) perform_layout();
   if (can_raise_events()) parent_changed(*this, e);
 }
 
-void control::on_parent_cursor_changed(const event_args &e) {
+void control::on_parent_cursor_changed(const event_args& e) {
   if (!data_->cursor.has_value() || (parent().has_value() && parent().value().get().cursor() != data_->cursor.value())) {
     if (!parent().value().get().data_->cursor.has_value()) recreate_handle();
     else if (is_handle_created()) native::control::cursor(handle(), parent().value().get().cursor().handle());
@@ -1110,7 +1108,7 @@ void control::on_parent_cursor_changed(const event_args &e) {
   }
 }
 
-void control::on_parent_enabled_changed(const event_args &e) {
+void control::on_parent_enabled_changed(const event_args& e) {
   if (parent().has_value()) {
     set_state(state::enabled, parent().value().get().enabled());
     if (is_handle_created()) native::control::enabled(handle(), get_state(state::enabled));
@@ -1119,7 +1117,7 @@ void control::on_parent_enabled_changed(const event_args &e) {
   }
 }
 
-void control::on_parent_fore_color_changed(const event_args &e) {
+void control::on_parent_fore_color_changed(const event_args& e) {
   if (!data_->fore_color.has_value() || (parent().has_value() && parent().value().get().fore_color() != data_->fore_color.value())) {
     if (!parent().value().get().data_->fore_color.has_value()) recreate_handle();
     else if (is_handle_created()) native::control::fore_color(handle(), parent().value().get().fore_color());
@@ -1128,7 +1126,7 @@ void control::on_parent_fore_color_changed(const event_args &e) {
   }
 }
 
-void control::on_parent_font_changed(const event_args &e) {
+void control::on_parent_font_changed(const event_args& e) {
   if (!data_->font.has_value() || (parent().has_value() && parent().value().get().font() != font())) {
     if (!parent().value().get().data_->font.has_value()) recreate_handle();
     else if (is_handle_created()) native::control::font(handle(), parent().value().get().font());
@@ -1137,7 +1135,7 @@ void control::on_parent_font_changed(const event_args &e) {
   }
 }
 
-void control::on_resize(const event_args &e) {
+void control::on_resize(const event_args& e) {
   if (is_handle_created()) data_->client_rectangle = native::control::client_rectangle(handle());
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
@@ -1145,18 +1143,18 @@ void control::on_resize(const event_args &e) {
   if (can_raise_events()) resize(*this, e);
 }
 
-void control::on_size_changed(const event_args &e) {
+void control::on_size_changed(const event_args& e) {
   if (is_handle_created()) data_->client_rectangle = native::control::client_rectangle(handle());
   if (can_raise_events()) size_changed(*this, e);
 }
 
-void control::on_text_changed(const event_args &e) {
+void control::on_text_changed(const event_args& e) {
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
   if (can_raise_events()) text_changed(*this, e);
 }
 
-void control::on_visible_changed(const event_args &e) {
+void control::on_visible_changed(const event_args& e) {
   if (is_handle_created()) set_state(state::visible, native::control::visible(handle()));
   if (focused())
     focus();
@@ -1172,11 +1170,11 @@ void control::perform_layout() {
   on_layout(event_args::empty);
 }
 
-drawing::point control::point_to_client(const xtd::drawing::point &p) {
+drawing::point control::point_to_client(const xtd::drawing::point& p) {
   return is_handle_created() ? native::control::point_to_client(handle(), p) : drawing::point {};
 }
 
-drawing::point control::point_to_screen(const xtd::drawing::point &p) {
+drawing::point control::point_to_screen(const xtd::drawing::point& p) {
   return is_handle_created() ? native::control::point_to_screen(handle(), p) : drawing::point {};
 }
 
@@ -1265,9 +1263,9 @@ void control::update() const {
 
 intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
   //try {
-    message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
-    wnd_proc(message);
-    return message.result();
+  message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+  wnd_proc(message);
+  return message.result();
   /*
   } catch(const exception& e) {
     message_box::show(from_handle(hwnd).value(), xtd::ustring::format("message: {}", e.what()), xtd::ustring::format("Exception {}", xtd::ustring::class_name(e)), message_box_buttons::ok, message_box_icon::error);
@@ -1281,63 +1279,63 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 void control::wnd_proc(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), ustring::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
-      // keyboard:
-    case WM_CREATE: wm_create(message); break;
-    case WM_CHAR:
-    case WM_KEYDOWN:
-    case WM_KEYUP:
-    case WM_SYSCHAR:
-    case WM_SYSKEYDOWN:
-    case WM_SYSKEYUP: wm_key_char(message); break;
-      // mouse events
-    case WM_LBUTTONDOWN:
-    case WM_MBUTTONDOWN:
-    case WM_RBUTTONDOWN:
-    case WM_XBUTTONDOWN: wm_mouse_down(message); break;
-    case WM_LBUTTONUP:
-    case WM_MBUTTONUP:
-    case WM_RBUTTONUP:
-    case WM_XBUTTONUP: wm_mouse_up(message); break;
-    case WM_LBUTTONDBLCLK:
-    case WM_MBUTTONDBLCLK:
-    case WM_RBUTTONDBLCLK:
-    case WM_XBUTTONDBLCLK: wm_mouse_double_click(message); break;
-    case WM_MOUSEMOVE: wm_mouse_move(message); break;
-    case WM_MOUSEENTER: wm_mouse_enter(message); break;
-    case WM_MOUSELEAVE: wm_mouse_leave(message); break;
-    case WM_CHILDACTIVATE: wm_child_activate(message); break;
-    case WM_SETFOCUS: wm_set_focus(message); break;
-    case WM_KILLFOCUS: wm_kill_focus(message); break;
-    case WM_MOUSEHWHEEL:
-    case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
-      // System events
-    case WM_COMMAND: wm_command(message); break;
-    case WM_ERASEBKGND: wm_erase_background(message); break;
-    case WM_PAINT: wm_paint(message); break;
-    case WM_MENUCOMMAND: if (data_->context_menu.has_value()) data_->context_menu.value().get().wm_click(message); break;
-    case WM_MOVE: wm_move(message);  break;
-    case WM_NOTIFY: wm_notify(message);  break;
-    case WM_SETTEXT: wm_set_text(message); break;
-    case WM_SIZE: wm_size(message); break;
-    case WM_SIZING: wm_sizing(message); break;
-    case WM_HSCROLL:
-    case WM_VSCROLL: wm_scroll(message); break;
-    default: def_wnd_proc(message); break;
+  // keyboard:
+  case WM_CREATE: wm_create(message); break;
+  case WM_CHAR:
+  case WM_KEYDOWN:
+  case WM_KEYUP:
+  case WM_SYSCHAR:
+  case WM_SYSKEYDOWN:
+  case WM_SYSKEYUP: wm_key_char(message); break;
+  // mouse events
+  case WM_LBUTTONDOWN:
+  case WM_MBUTTONDOWN:
+  case WM_RBUTTONDOWN:
+  case WM_XBUTTONDOWN: wm_mouse_down(message); break;
+  case WM_LBUTTONUP:
+  case WM_MBUTTONUP:
+  case WM_RBUTTONUP:
+  case WM_XBUTTONUP: wm_mouse_up(message); break;
+  case WM_LBUTTONDBLCLK:
+  case WM_MBUTTONDBLCLK:
+  case WM_RBUTTONDBLCLK:
+  case WM_XBUTTONDBLCLK: wm_mouse_double_click(message); break;
+  case WM_MOUSEMOVE: wm_mouse_move(message); break;
+  case WM_MOUSEENTER: wm_mouse_enter(message); break;
+  case WM_MOUSELEAVE: wm_mouse_leave(message); break;
+  case WM_CHILDACTIVATE: wm_child_activate(message); break;
+  case WM_SETFOCUS: wm_set_focus(message); break;
+  case WM_KILLFOCUS: wm_kill_focus(message); break;
+  case WM_MOUSEHWHEEL:
+  case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
+  // System events
+  case WM_COMMAND: wm_command(message); break;
+  case WM_ERASEBKGND: wm_erase_background(message); break;
+  case WM_PAINT: wm_paint(message); break;
+  case WM_MENUCOMMAND: if (data_->context_menu.has_value()) data_->context_menu.value().get().wm_click(message); break;
+  case WM_MOVE: wm_move(message);  break;
+  case WM_NOTIFY: wm_notify(message);  break;
+  case WM_SETTEXT: wm_set_text(message); break;
+  case WM_SIZE: wm_size(message); break;
+  case WM_SIZING: wm_sizing(message); break;
+  case WM_HSCROLL:
+  case WM_VSCROLL: wm_scroll(message); break;
+  default: def_wnd_proc(message); break;
   }
 }
 
 void control::def_wnd_proc(message& message) {
-  if (is_handle_created() && message.handle()) message.result(native::control::def_wnd_proc(handle(), message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
+  if (is_handle_created() && message.handle()) message.result(native::control::def_wnd_proc(handle(), message.hwnd(), message.msg(), message.wparam(), message.lparam(), message.result(), message.handle()));
 }
 
 void control::recreate_handle() {
   if (is_handle_created()) {
     set_state(state::recreate, true);
     for (auto control : controls()) control.get().set_state(state::parent_recreating, true);
-
+    
     destroy_handle();
     create_handle();
-
+    
     for (auto control : controls()) control.get().set_state(state::parent_recreating, false);
     set_state(state::recreate, false);
     perform_layout();
@@ -1368,7 +1366,7 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
     if (size().height() < minimum_size().height()) data_->size.value().height(minimum_size().height());
     if (!maximum_size().is_empty() && size().width() > maximum_size().width()) data_->size.value().width(maximum_size().width());
     if (!maximum_size().is_empty() && size().height() > maximum_size().height()) data_->size.value().height(maximum_size().height());
-
+    
     if (is_handle_created()) native::control::size(handle(), size());
     on_client_size_changed(event_args::empty);
     on_size_changed(event_args::empty);
@@ -1387,18 +1385,17 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 }
 
 void control::on_parent_size_changed(object& sender, const event_args& e) {
-  if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this)) {
+  if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this))
     perform_layout();
-  }
 }
 
 void control::do_layout_children_with_dock_style() {
   bool docked = false;
-  for(control_ref control : data_->controls) {
+  for (control_ref control : data_->controls) {
     docked = control.get().get_state(state::docked);
     if (docked) break;
   }
-
+  
   if (docked) {
     drawing::rectangle docking_rect = {{0, 0}, client_size()};
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("({}) do_layout :", *this));
@@ -1409,7 +1406,7 @@ void control::do_layout_children_with_dock_style() {
     docking_rect.top(docking_rect.top() + data_->padding.top());
     docking_rect.width(docking_rect.width() - data_->padding.left() - data_->padding.right());
     docking_rect.height(docking_rect.height() - data_->padding.top() - data_->padding.bottom());
-    for(control_collection::reverse_iterator iterator = data_->controls.rbegin(); iterator != data_->controls.rend(); ++iterator) {
+    for (control_collection::reverse_iterator iterator = data_->controls.rbegin(); iterator != data_->controls.rend(); ++iterator) {
       if (!iterator->get().visible()) continue;
       if (iterator->get().dock() == dock_style::top) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
@@ -1454,7 +1451,7 @@ void control::do_layout_with_anchor_styles() {
       left(parent().value().get().client_size().width() - width() - data_->anchoring.right());
     else
       left(parent().value().get().client_size().width() / 2 -  width() / 2);
-
+      
     if ((data_->anchor & anchor_styles::top) == anchor_styles::top && (data_->anchor & anchor_styles::bottom) != anchor_styles::bottom)
       top(top());
     else if ((data_->anchor & anchor_styles::top) == anchor_styles::top && (data_->anchor & anchor_styles::bottom) == anchor_styles::bottom)
@@ -1493,7 +1490,7 @@ void control::wm_command(message& message) {
 
 void control::wm_key_char(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), ustring::format("({}) receive message [{}]", *this, message));
-  if (message.msg() == WM_KEYDOWN || message.msg ()== WM_SYSKEYDOWN) {
+  if (message.msg() == WM_KEYDOWN || message.msg() == WM_SYSKEYDOWN) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     modifier_keys_ = key_event_args.modifiers();
     on_key_down(key_event_args);
@@ -1559,8 +1556,8 @@ void control::wm_mouse_up(message& message) {
   mouse_buttons_ &= ~e.button();
   /// @todo Fix check ckient rect mouse up when client rect will updated when form is moved on other screen.
   //if (client_rectangle().contains(e.location()))
-    on_click(event_args::empty);
-    on_mouse_click(e);
+  on_click(event_args::empty);
+  on_mouse_click(e);
   //}
   on_mouse_up(e);
 }

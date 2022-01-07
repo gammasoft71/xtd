@@ -23,7 +23,7 @@ namespace xtd {
   }
   /// @endcond
   
-/// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
+  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @cond
     class graphics;
@@ -44,18 +44,18 @@ namespace xtd {
       /// @brief IInitializes a new Font that uses the specified existing xtd::drawing::font and size.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
-      font (const font& prototype, float em_size);
+      font(const font& prototype, float em_size);
       
       /// @brief IInitializes a new Font that uses the specified existing xtd::drawing::font, size and  font_style enumeration.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param style The font_style to apply to the new xtd::drawing::font. Multiple values of the font_style enumeration can be combined with the OR operator.
-      font (const font& prototype, float em_size, font_style style);
+      font(const font& prototype, float em_size, font_style style);
       
       /// @brief IInitializes a new Font that uses the specified existing xtd::drawing::font and font_style enumeration.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
       /// @param style The font_style to apply to the new xtd::drawing::font. Multiple values of the font_style enumeration can be combined with the OR operator.
-      font (const font& prototype, font_style style);
+      font(const font& prototype, font_style style);
       
       /// @brief IInitializes a new xtd::drawing::font using the specified size, style, unit, and character set.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
@@ -142,7 +142,7 @@ namespace xtd {
       /// @param unit The graphics_unit of the new xtd::drawing::font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       font(const drawing::font_family& font_family, float em_size, graphics_unit unit) : font(font_family, em_size, font_style::regular, unit, 0, false) {}
-
+      
       /// @brief Initializes a new xtd::drawing::font using the specified size and unit.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
@@ -155,7 +155,7 @@ namespace xtd {
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       font(const drawing::font_family& font_family, float em_size) : font(font_family, em_size, font_style::regular, graphics_unit::point, 0, false) {}
       /// @}
-
+      
       /// @cond
       font(const font& value);
       font& operator=(const font& value);
@@ -163,14 +163,14 @@ namespace xtd {
       bool operator!=(const font& value) const {return !operator==(value);}
       ~font();
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
       /// @brief Gets a value that indicates whether this xtd::drawing::font is bold.
       /// @return true if this xtd::drawing::font is bold; otherwise, false.
       bool bold() const {return (data_->style_ & font_style::bold) == font_style::bold;}
-
+      
       /// @brief Gets the xtd::drawing::font_family associated with this xtd::drawing::font.
       /// @return The font_family associated with this Font.
       /// @remarks A font_family represents a group of fonts that have a similar font face, but may have different sizes and styles (for example, Arial, Times New Roman, and Verdana).
@@ -229,11 +229,11 @@ namespace xtd {
       /// @brief Gets a value that indicates whether this xtd::drawing::font is italic.
       /// @return true if this xtd::drawing::font is italic; otherwise, false.
       bool italic() const {return (data_->style_ & font_style::italic) == font_style::italic;}
-
+      
       /// @brief Gets the face name of this xtd::drawing::font.
       /// @return A string representation of the face name of this xtd::drawing::font.
       const xtd::ustring& name() const {return data_->font_family_.name();}
-
+      
       /// @brief Gets the face name of this Font.
       /// @return A string representation of the face name of this Font.
       const xtd::ustring& original_font_name() const {return data_->original_font_name_;}
@@ -249,7 +249,7 @@ namespace xtd {
       /// @brief Gets a value that indicates whether this xtd::drawing::font is strikeout.
       /// @return true if this xtd::drawing::font is strikeout; otherwise, false.
       bool strikeout() const {return (data_->style_ & font_style::strikeout) == font_style::strikeout;}
-
+      
       /// @brief Gets style information for this xtd::drawing::font.
       /// @return A font_style enumeration that contains style information for this xtd::drawing::font.
       font_style style() const {return data_->style_;}
@@ -311,7 +311,7 @@ namespace xtd {
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font& font) noexcept {return os << font.to_string();}
       /// @endcond
-
+      
     private:
       friend class graphics;
       friend class system_fonts;

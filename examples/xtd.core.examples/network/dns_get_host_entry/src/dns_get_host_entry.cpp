@@ -9,10 +9,10 @@ int main() {
   console::write_line("ip host entry for : www.github.com");
   console::write_line("  - host_name : {}", host_entry.host_name());
   console::write_line("  - address list :");
-  for(auto address : host_entry.address_list())
+  for (auto address : host_entry.address_list())
     console::write_line("    * {}", address);
   console::write_line("  - aliases :");
-  for(auto alias : host_entry.aliases())
+  for (auto alias : host_entry.aliases())
     console::write_line("    * {}", alias);
 }
 

@@ -60,7 +60,7 @@ public:
     
     switch_button1.parent(tab_page_buttons);
     switch_button1.location({10, 90});
-
+    
     light_button1.parent(tab_page_buttons);
     light_button1.checked(true);
     light_button1.location({110, 90});
@@ -137,22 +137,22 @@ public:
     seven_segment_display1.parent(tab_page_lcds);
     seven_segment_display1.height(50);;
     seven_segment_display1.location({50, 50});
-    seven_segment_display1.value(segments::a|segments::b|segments::d|segments::e|segments::g);
+    seven_segment_display1.value(segments::a | segments::b | segments::d | segments::e | segments::g);
     
     nine_segment_display1.parent(tab_page_lcds);
     nine_segment_display1.height(50);;
     nine_segment_display1.location({90, 50});
-    nine_segment_display1.value(segments::a|segments::g|segments::h|segments::i);
+    nine_segment_display1.value(segments::a | segments::g | segments::h | segments::i);
     
     fourteen_segment_display1.parent(tab_page_lcds);
     fourteen_segment_display1.height(50);;
     fourteen_segment_display1.location({130, 50});
-    fourteen_segment_display1.value(segments::b|segments::c|segments::f|segments::g1|segments::g2);
+    fourteen_segment_display1.value(segments::b | segments::c | segments::f | segments::g1 | segments::g2);
     
     sixteen_segment_display1.parent(tab_page_lcds);
     sixteen_segment_display1.height(50);;
     sixteen_segment_display1.location({170, 50});
-    sixteen_segment_display1.value(segments::a1|segments::a2|segments::c|segments::d1|segments::d2|segments::f|segments::g1|segments::g2);
+    sixteen_segment_display1.value(segments::a1 | segments::a2 | segments::c | segments::d1 | segments::d2 | segments::f | segments::g1 | segments::g2);
     
     choice1.parent(tab_page_choices);
     choice1.location({10, 10});

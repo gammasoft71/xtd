@@ -42,9 +42,9 @@ namespace xtd {
           xtd::ustring current_selector_name;
           xtd::ustring current_key;
           for (size_t index = 0; index < text.size(); index++) {
-            if (text[index] == '/' && text[index+1] == '*') {
+            if (text[index] == '/' && text[index + 1] == '*') {
               // Skip comments...
-              index = text.index_of("*/", index+2);
+              index = text.index_of("*/", index + 2);
               if (index == text.npos) throw xtd::format_exception("expected end comment", current_stack_frame_);
               index++;
               start_index = index + 1;

@@ -83,15 +83,14 @@ xtd::date_time time_zone_info::convert_to_utc(const xtd::date_time& date_time, c
   if (date_time.kind() == date_time_kind::utc) return date_time;
   
   ticks daylight_saving_time_offset(0);
-  if (source_time_zone.supports_daylight_saving_time() && source_time_zone.is_daylight_saving_time(date_time)) {
+  if (source_time_zone.supports_daylight_saving_time() && source_time_zone.is_daylight_saving_time(date_time))
     daylight_saving_time_offset = duration_cast<ticks>(hours(1));
-  }
-  
+    
   ticks offset_local = -(source_time_zone.base_utc_offset() + daylight_saving_time_offset);
   
   if (date_time.ticks() < offset_local)
     return xtd::date_time(date_time.ticks(), date_time_kind::utc);
-  
+    
   return xtd::date_time(date_time.ticks() - offset_local, date_time_kind::utc);
 }
 
@@ -122,7 +121,7 @@ const time_zone_info& time_zone_info::time_find_system_time_zone_by_id(const ust
   
   for (const time_zone_info& item : get_system_time_zones())
     if (item.id_ == id) return item;
-  
+    
   throw time_zone_not_found_exception(csf_);
 }
 

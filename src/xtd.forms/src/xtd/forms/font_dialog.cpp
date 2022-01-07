@@ -17,7 +17,7 @@ void font_dialog::reset() {
   show_color_ = false;
 }
 
-void font_dialog::on_apply(const event_args &e) {
+void font_dialog::on_apply(const event_args& e) {
   apply(*this, e);
 }
 

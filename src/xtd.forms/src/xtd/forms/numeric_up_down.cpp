@@ -75,7 +75,7 @@ numeric_up_down& numeric_up_down::wrapped(bool value) {
   return *this;
 }
 
-void numeric_up_down::on_handle_created(const event_args &e) {
+void numeric_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
   native::numeric_up_down::decimal_place(handle(), decimal_place_);
   native::numeric_up_down::increment(handle(), increment_);
@@ -89,10 +89,10 @@ void numeric_up_down::on_value_changed(const event_args& e) {
 }
 
 
-void numeric_up_down::wnd_proc(message &message) {
+void numeric_up_down::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_COMMAND: wm_command(message); break;
-    default: up_down_base::wnd_proc(message);
+  case WM_COMMAND: wm_command(message); break;
+  default: up_down_base::wnd_proc(message);
   }
 }
 

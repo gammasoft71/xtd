@@ -46,7 +46,7 @@ namespace xtd {
       size_t image_index() const;
       tool_bar_button& image_index(size_t value);
       /// @}
-
+      
       /// @name Methods
       
       /// @{

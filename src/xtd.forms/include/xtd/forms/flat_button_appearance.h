@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::forms::flat_button_appearance class.
       flat_button_appearance() = default;
       /// @}
-
+      
       /// @cond
       flat_button_appearance(const flat_button_appearance&) = default;
       flat_button_appearance(flat_button_appearance&&) = default;
@@ -33,7 +33,7 @@ namespace xtd {
       bool operator==(const flat_button_appearance& other) const {return border_color_ == other.border_color_ && border_size_ == other.border_size_ && checked_back_color_ == other.checked_back_color_ && mouse_down_back_color_ == other.mouse_down_back_color_ && mouse_over_back_color_ == other.mouse_over_back_color_;}
       bool operator!=(const flat_button_appearance& other) const {return !operator==(other);}
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -48,7 +48,7 @@ namespace xtd {
       /// @param color nullptr.
       /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& border_color(nullptr_t color);
-
+      
       /// @brief Gets a value that specifies the size, in pixels, of the border around the button.
       /// @return An int32_t representing the size, in pixels, of the border around the button.
       int32_t border_size() const;
@@ -68,7 +68,7 @@ namespace xtd {
       /// @param color nullptr.
       /// @return Current flat_button_appearance.
       flat_button_appearance& checked_back_color(nullptr_t color);
-
+      
       /// @brief Gets the color of the client area of the button when the mouse is pressed within the bounds of the control.
       /// @return A xtd::drawing::color structure representing the color of the client area of the button.
       std::optional<xtd::drawing::color> mouse_down_back_color() const;
@@ -80,7 +80,7 @@ namespace xtd {
       /// @param color nullptr.
       /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& mouse_down_back_color(nullptr_t color);
-
+      
       /// @brief Gets the color of the client area of the button when the mouse pointer is within the bounds of the control.
       /// @return A xtd::drawing::color structure representing the color of the client area of the button.
       std::optional<xtd::drawing::color> mouse_over_back_color() const;
@@ -93,7 +93,7 @@ namespace xtd {
       /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& mouse_over_back_color(nullptr_t color);
       /// @}
-
+      
     private:
       std::optional<xtd::drawing::color> border_color_;
       int32_t border_size_ = 1;

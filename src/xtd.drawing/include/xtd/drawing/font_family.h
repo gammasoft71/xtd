@@ -22,7 +22,7 @@ namespace xtd {
       class font_collection;
     }
     /// @endcond
-
+    
     /// @brief Defines a group of type faces having a similar basic design and certain variations in styles. This class cannot be inherited.
     /// @par Namespace
     /// xtd::drawing
@@ -38,11 +38,11 @@ namespace xtd {
       /// @param name The name of the new xtd::drawing::font_family.
       /// @exception std::invalid_argument name is an empty string ("") - or - name specifies a font that is not installed on the computer running the application.
       explicit font_family(const xtd::ustring& name);
-
+      
       /// @brief Initializes a new xtd::drawing::font_family from the specified generic font family.
       /// @param generic_font_families The xtd::drawing::text::generic_font_families from which to create the new font_family.
       explicit font_family(text::generic_font_families generic_font_families);
-
+      
       /// @brief Initializes a new xtd::drawing::font_family in the specified font_collection with the specified name.
       /// @param name The name of the new xtd::drawing::font_family.
       /// @param font_collection The FontCollection that contains this FontFamily.
@@ -111,12 +111,12 @@ namespace xtd {
       /// @return A String that represents the name, in the specified language, of this font_family.
       /// @remarks To indicate language neutral, you should specify 0 for the language parameter. For a listing of the available languages and sublanguages, see the Winnt.h header file. If you have Visual Studio installed, this header file can typically be found relative to the Visual Studio installation directory at \\VC\PlatformSDK\Include.
       xtd::ustring get_name(int32_t language) const;
-
+      
       /// @brief Indicates whether the specified font_style enumeration is available.
       /// @param style The font_style to test.
       /// @return true if the specified font_style is available; otherwise, false.
       bool is_style_available(font_style style) const;
-
+      
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
       xtd::ustring to_string() const noexcept override {return ustring::format("[{}: name={}]", ustring::class_name(*this), data_->name_);}
@@ -127,7 +127,7 @@ namespace xtd {
         return os << font_family.to_string();
       }
       /// @endcond
-
+      
     private:
       struct data {
         intptr_t handle_ = 0;

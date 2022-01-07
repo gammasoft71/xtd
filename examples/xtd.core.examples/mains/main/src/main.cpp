@@ -13,7 +13,7 @@ namespace examples {
         cout << "Usage: factorial <integer>" << endl;
         return -1;
       }
-
+      
       cout << ustring::format("The factorial of {0} is {1}", number, [&] {
         int64_t result = 1;
         for (int i = 1; i <= number; ++i)

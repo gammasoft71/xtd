@@ -59,20 +59,20 @@ namespace assert_unit_tests {
       try {
         for (auto assert_unit_test : assert_unit_tests::register_assert_unit_test::assert_unit_tests)
           assert_unit_test.method(assert_unit_test.name);
-      }catch(...) {
+      } catch (...) {
         std::cout << "end unit tests" << std::endl;
         std::cout << std::endl << "FAILED TEST" << std::endl;
         std::cout << std::endl;
         return 1;
       }
-
+      
       std::cout << "end unit tests" << std::endl;
       std::cout << std::endl << "SUCCEED " << assert_unit_tests::register_assert_unit_test::assert_unit_tests.size() << " tests." << std::endl;
       if (ignore_test_count) std::cout << std::endl << "You have " << ignore_test_count << " ignored test" << (ignore_test_count < 2 ? "" : "s") << std::endl;
       std::cout << std::endl;
       return 0;
     }
-
+    
     std::function<void(const std::string&)> method;
     std::string name;
     
@@ -87,7 +87,7 @@ namespace assert_unit_tests {
   __##class_name##_##function_name##_unused() {} \
   void class_name##_##function_name(const std::string& name); \
   assert_unit_tests::register_assert_unit_test __##class_name##_##function_name##_name {std::string(#class_name) + "." + std::string(#function_name), &class_name##_##function_name}; \
- void class_name##_##function_name(const std::string& name)
+  void class_name##_##function_name(const std::string& name)
 
 #define ignore_test_(class_name, function_name) \
   __##class_name##_##function_name##_unused() {} \

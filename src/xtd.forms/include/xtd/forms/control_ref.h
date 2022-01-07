@@ -27,7 +27,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     using const_control_ref = std::reference_wrapper<const control>;
-
+    
     /// @brief Represents less comparator for control_ref.
     /// @par Namespace
     /// xtd::forms
@@ -38,7 +38,7 @@ namespace xtd {
       /// @name Operators
       
       /// @{
-     /// @brief Compare two specified control_ref.
+      /// @brief Compare two specified control_ref.
       /// @param value1 The first value to compare.
       /// @param value2 The second value to compare.
       /// @return true if value1 < value2; otherwise false.
@@ -47,7 +47,7 @@ namespace xtd {
       }
       /// @}
     };
-
+    
     /// @brief Represents less comparator for const const_control_ref.
     /// @par Namespace
     /// xtd::forms

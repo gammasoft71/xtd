@@ -39,7 +39,7 @@ tool_bar::tool_bar_separator_control::tool_bar_separator_control() {
 
 void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
   control::on_paint(e);
-  auto percent_of_color = 1.0/3;
+  auto percent_of_color = 1.0 / 3;
   auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
   if (dock() == dock_style::top || dock() == dock_style::bottom) {
     auto left = 4;
@@ -92,16 +92,16 @@ forms::create_params tool_bar::create_params() const {
   
   if (data_->is_system_tool_bar)
     create_params.class_name("toolbar");
-  
+    
   return create_params;
 }
 
-void tool_bar::on_handle_created(const event_args &e) {
+void tool_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   fill();
 }
 
-void tool_bar::on_handle_destroyed(const event_args &e) {
+void tool_bar::on_handle_destroyed(const event_args& e) {
   control::on_handle_destroyed(e);
   if (data_->is_system_tool_bar) data_->system_tool_bar_item_handles.clear();
 }
@@ -145,7 +145,7 @@ void tool_bar::fill() {
         button_control->image_align(content_alignment::middle_center);
         button_control->height(data_->image_list.image_size().height() + 6);
         button_control->width(data_->image_list.image_size().width() + 6);
-
+        
         if (button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
         //button_control->text(button_item.text());
         data_->tool_bar_items.push_back(button_control);

@@ -39,7 +39,7 @@ namespace xtd {
       /// @brief All flags except none.
       all = check_file_exists | dereference_link | validate_names | restore_directory | enable_auto_upgrade | show_hidden_files | show_help | show_preview | support_multi_dotted_extensions
     };
-
+    
     /// @cond
     inline save_file_box_options& operator +=(save_file_box_options& lhs, save_file_box_options rhs) noexcept { lhs = static_cast<save_file_box_options>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs; }
     inline save_file_box_options& operator -=(save_file_box_options& lhs, save_file_box_options rhs) noexcept { lhs = static_cast<save_file_box_options>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs; }
@@ -52,7 +52,7 @@ namespace xtd {
     inline bool operator &(save_file_box_options lhs, save_file_box_options rhs) noexcept { return static_cast<bool>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); }
     inline save_file_box_options operator |(save_file_box_options lhs, save_file_box_options rhs) noexcept { return static_cast<save_file_box_options>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); }
     inline save_file_box_options operator ^(save_file_box_options lhs, save_file_box_options rhs) noexcept { return static_cast<save_file_box_options>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); }
-
+    
     inline std::ostream& operator<<(std::ostream& os, save_file_box_options value) { return os << to_string(value, { {save_file_box_options::none, "none"}, {save_file_box_options::check_file_exists, "check_file_exists"}, {save_file_box_options::dereference_link, "dereference_link"}, {save_file_box_options::validate_names, "validate_names"}, {save_file_box_options::restore_directory, "restore_directory"}, {save_file_box_options::enable_auto_upgrade, "enable_auto_upgrade"}, {save_file_box_options::show_hidden_files, "show_hidden_files"}, {save_file_box_options::show_help, "show_help"}, {save_file_box_options::show_preview, "show_preview"}, {save_file_box_options::support_multi_dotted_extensions, "support_multi_dotted_extensions"}, {save_file_box_options::all, "all"} }); }
     inline std::wostream& operator<<(std::wostream& os, save_file_box_options value) { return os << to_string(value, { {save_file_box_options::none, L"none"}, {save_file_box_options::check_file_exists, L"check_file_exists"}, {save_file_box_options::dereference_link, L"dereference_link"}, {save_file_box_options::validate_names, L"validate_names"}, {save_file_box_options::restore_directory, L"restore_directory"}, {save_file_box_options::enable_auto_upgrade, L"enable_auto_upgrade"}, {save_file_box_options::show_hidden_files, L"show_hidden_files"}, {save_file_box_options::show_help, L"show_help"}, {save_file_box_options::show_preview, L"show_preview"}, {save_file_box_options::support_multi_dotted_extensions, L"support_multi_dotted_extensions"}, {save_file_box_options::all, L"all"} }); }
     /// @endcond

@@ -8,10 +8,10 @@ namespace examples {
     // The main entry point for the application.
     static void main() {
       ustring fmt_std = "Standard version:\n"
-      "  major.minor.build.revision = {0}.{1}.{2}.{3}";
+        "  major.minor.build.revision = {0}.{1}.{2}.{3}";
       ustring fmt_int = "Interim version:\n"
-      "  major.minor.build.maj_rev/min_rev = {0}.{1}.{2}.{3}/{4}";
-      
+        "  major.minor.build.maj_rev/min_rev = {0}.{1}.{2}.{3}/{4}";
+        
       version std(2, 4, 1128, 2);
       version interim(2, 4, 1128, (100 << 16) + 2);
       

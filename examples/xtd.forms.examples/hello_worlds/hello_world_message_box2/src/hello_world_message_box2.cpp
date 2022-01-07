@@ -9,10 +9,10 @@ int main() {
   button.click += [] {
     message_box::show("Hello, World!");
   };
-
+  
   form form;
   form.text("Hello world (message_box)");
   form.controls().push_back(button);
-
+  
   application::run(form);
 }

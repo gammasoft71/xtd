@@ -42,7 +42,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "list-add".
       static xtd::drawing::image add(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "list-add", size);}
-
+      
       /// @brief Apply image object.
       /// @return A xtd::drawing::image that represent "dialog-ok-apply".
       static xtd::drawing::image apply() {return apply(xtd::forms::theme_images::current_theme(), size());}
@@ -64,7 +64,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-ok-apply".
       static xtd::drawing::image apply(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "dialog-ok-apply", size);}
-
+      
       /// @brief Ok image object.
       /// @return A xtd::drawing::image that represent "dialog-ok".
       static xtd::drawing::image ok() {return ok(xtd::forms::theme_images::current_theme(), size());}
@@ -86,7 +86,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-ok".
       static xtd::drawing::image ok(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "dialog-ok", size);}
-
+      
       /// @brief Cancel image object.
       /// @return A xtd::drawing::image that represent "dialog-cancel".
       static xtd::drawing::image cancel() {return cancel(xtd::forms::theme_images::current_theme(), size());}
@@ -108,7 +108,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-cancel".
       static xtd::drawing::image cancel(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "dialog-cancel", size);}
-
+      
       /// @brief Next image object.
       /// @return A xtd::drawing::image that represent "go-next".
       static xtd::drawing::image next() {return next(xtd::forms::theme_images::current_theme(), size());}
@@ -130,7 +130,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-next".
       static xtd::drawing::image next(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "go-next", size);}
-
+      
       /// @brief No image object.
       /// @return A xtd::drawing::image that represent "dialog-cancel".
       static xtd::drawing::image no() {return no(xtd::forms::theme_images::current_theme(), size());}
@@ -152,7 +152,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-cancel".
       static xtd::drawing::image no(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "dialog-cancel", size);}
-
+      
       /// @brief Previous image object.
       /// @return A xtd::drawing::image that represent "go-previous".
       static xtd::drawing::image previous() {return previous(xtd::forms::theme_images::current_theme(), size());}
@@ -174,7 +174,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-previous".
       static xtd::drawing::image previous(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "go-previous", size);}
-
+      
       /// @brief Remove image object.
       /// @return A xtd::drawing::image that represent "list-remove".
       static xtd::drawing::image remove() {return remove(xtd::forms::theme_images::current_theme(), size());}
@@ -196,7 +196,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "list-remove".
       static xtd::drawing::image remove(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "list-remove", size);}
-
+      
       /// @brief Yes image object.
       /// @return A xtd::drawing::image that represent add.
       static xtd::drawing::image yes() {return yes(xtd::forms::theme_images::current_theme(), size());}
@@ -218,12 +218,12 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-ok".
       static xtd::drawing::image yes(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "dialog-ok", size);}
-
+      
       /// @brief Gets the height and width of the button images.
       /// @return The size that represents the height and width of the button images in pixels (16 x 16).
       static xtd::drawing::size size() {return {16, 16};}
       /// @}
-
+      
       /// @name Methods
       
       /// @{

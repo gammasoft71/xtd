@@ -46,7 +46,7 @@ namespace xtd {
           }
         }
         /// @}
-
+        
       private:
         xtd::web::css::selector_map selectors_;
         xtd::io::text_writer* text_writer_ = nullptr;

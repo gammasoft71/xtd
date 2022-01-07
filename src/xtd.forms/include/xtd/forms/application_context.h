@@ -35,7 +35,7 @@ namespace xtd {
       /// @remarks If on_main_form_closed is not overridden, the message loop of the thread terminates when main_form is closed.
       explicit application_context(const form& main_form) {this->main_form(main_form);}
       /// @}
-
+      
       /// @cond
       ~application_context() {
         if (main_form_ != nullptr) main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
@@ -61,7 +61,7 @@ namespace xtd {
         main_form_ = const_cast<form*>(&main_form);
         main_form_->visible_changed += {*this, &application_context::on_main_form_closed};
       }
-
+      
       /// @brief Gets an object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
@@ -82,7 +82,7 @@ namespace xtd {
       /// @note exit_thread and exit_thread_core do not actually cause the thread to terminate. These methods raise the thread_exit event to which the Application object listens. The Application object then terminates the thread.
       void exit_thread() {exit_thread_core();}
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -114,7 +114,7 @@ namespace xtd {
       
     private:
       friend class application;
-
+      
       form* main_form_ = nullptr;
       std::any tag_;
     };

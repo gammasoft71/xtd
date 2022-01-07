@@ -25,19 +25,19 @@ public:
     check_box2.location({20, 40});
     check_box2.parent(group_box1);
     check_box2.text("check 2");
-
+    
     check_box3.location({20, 70});
     check_box3.parent(group_box1);
     check_box3.text("check 3");
-
+    
     check_box4.location({20, 10});
     check_box4.parent(group_box2);
     check_box4.text("check 4");
-
+    
     check_box5.location({20, 40});
     check_box5.parent(group_box2);
     check_box5.text("check 5");
-
+    
     check_box6.checked(true);
     check_box6.location({20, 70});
     check_box6.parent(group_box2);

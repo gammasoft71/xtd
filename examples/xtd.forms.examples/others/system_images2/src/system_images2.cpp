@@ -15,49 +15,49 @@ namespace example {
       text("System images 2 example");
       client_size({880, 820});
       controls().push_back_range({label_picture_kde_theme, label_picture_gnome_theme, label_picture_macos_theme, label_picture_symbolic_theme, label_picture_windows_theme, label_picture_xtd_theme, picture_kde_theme, picture_gnome_theme, picture_macos_theme, picture_symbolic_theme, picture_windows_theme, picture_xtd_theme, panel_separator_line, label_picture_context, label_picture_name, label_picture_size, button_context_previous, button_context_next, button_name_previous, button_name_next, button_decrease, button_increase});
-
+      
       label_picture_kde_theme.text_align(content_alignment::middle_center);
       label_picture_kde_theme.bounds({10, 25, 280, label_picture_name.height()});
       label_picture_kde_theme.text("kde");
       label_picture_kde_theme.border_style(forms::border_style::fixed_3d);
       label_picture_kde_theme.back_color(label_picture_kde_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
       label_picture_kde_theme.fore_color(label_picture_kde_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
-
+      
       label_picture_gnome_theme.text_align(content_alignment::middle_center);
       label_picture_gnome_theme.bounds({300, 25, 280, label_picture_name.height()});
       label_picture_gnome_theme.text("gnome");
       label_picture_gnome_theme.border_style(forms::border_style::fixed_3d);
       label_picture_gnome_theme.back_color(label_picture_gnome_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
       label_picture_gnome_theme.fore_color(label_picture_gnome_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
-
+      
       label_picture_macos_theme.text_align(content_alignment::middle_center);
       label_picture_macos_theme.bounds({590, 25, 280, label_picture_name.height()});
       label_picture_macos_theme.text("macos");
       label_picture_macos_theme.border_style(forms::border_style::fixed_3d);
       label_picture_macos_theme.back_color(label_picture_macos_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
       label_picture_macos_theme.fore_color(label_picture_macos_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
-
+      
       label_picture_symbolic_theme.text_align(content_alignment::middle_center);
       label_picture_symbolic_theme.bounds({10, 360, 280, label_picture_name.height()});
       label_picture_symbolic_theme.text("symbolic");
       label_picture_symbolic_theme.border_style(forms::border_style::fixed_3d);
       label_picture_symbolic_theme.back_color(label_picture_symbolic_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
       label_picture_symbolic_theme.fore_color(label_picture_symbolic_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
-
+      
       label_picture_windows_theme.text_align(content_alignment::middle_center);
       label_picture_windows_theme.bounds({300, 360, 280, label_picture_name.height()});
       label_picture_windows_theme.text("windows");
       label_picture_windows_theme.border_style(forms::border_style::fixed_3d);
       label_picture_windows_theme.back_color(label_picture_windows_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
       label_picture_windows_theme.fore_color(label_picture_windows_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
-
+      
       label_picture_xtd_theme.text_align(content_alignment::middle_center);
       label_picture_xtd_theme.bounds({590, 360, 280, label_picture_name.height()});
       label_picture_xtd_theme.text("xtd");
       label_picture_xtd_theme.border_style(forms::border_style::fixed_3d);
       label_picture_xtd_theme.back_color(label_picture_xtd_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
       label_picture_xtd_theme.fore_color(label_picture_xtd_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
-
+      
       picture_kde_theme.back_color(system_colors::window());
       picture_kde_theme.border_style(forms::border_style::fixed_3d);
       picture_kde_theme.bounds({10, 65, 280, 280});
@@ -77,7 +77,7 @@ namespace example {
       picture_symbolic_theme.border_style(forms::border_style::fixed_3d);
       picture_symbolic_theme.bounds({10, 400, 280, 280});
       picture_symbolic_theme.size_mode(picture_box_size_mode::center_image);
-
+      
       picture_windows_theme.back_color(system_colors::window());
       picture_windows_theme.border_style(forms::border_style::fixed_3d);
       picture_windows_theme.bounds({300, 400, 280, 280});
@@ -90,12 +90,12 @@ namespace example {
       
       panel_separator_line.back_color(system_colors::control_text());
       panel_separator_line.bounds({10, 695, 860, 1});
-
+      
       label_picture_context.text_align(content_alignment::middle_center);
       label_picture_context.border_style(forms::border_style::fixed_3d);
       label_picture_context.back_color(system_colors::window());
       label_picture_context.bounds({10, 710, 280, label_picture_name.height()});
-
+      
       label_picture_name.text_align(content_alignment::middle_center);
       label_picture_name.border_style(forms::border_style::fixed_3d);
       label_picture_name.back_color(system_colors::window());
@@ -105,7 +105,7 @@ namespace example {
       label_picture_size.border_style(forms::border_style::fixed_3d);
       label_picture_size.back_color(system_colors::window());
       label_picture_size.bounds({590, 710, 280, label_picture_name.height()});
-
+      
       button_context_previous.auto_repeat(true);
       button_context_previous.enabled(false);
       button_context_previous.image(button_images::previous(drawing::size {32, 32}));
@@ -114,10 +114,10 @@ namespace example {
       button_context_previous.bounds({10, 750, 125, 40});
       button_context_previous.click += [&] {
         current_context_index--;
-        current_name_index= 0;
+        current_name_index = 0;
         update_form();
       };
-   
+      
       button_context_next.auto_repeat(true);
       button_context_next.image(button_images::next(drawing::size {32, 32}));
       button_context_next.image_align(content_alignment::middle_right);
@@ -125,10 +125,10 @@ namespace example {
       button_context_next.bounds({165, 750, 125, 40});
       button_context_next.click += [&] {
         current_context_index++;
-        current_name_index= 0;
+        current_name_index = 0;
         update_form();
       };
-
+      
       button_name_previous.auto_repeat(true);
       button_name_previous.enabled(false);
       button_name_previous.image(button_images::previous(drawing::size {32, 32}));
@@ -149,7 +149,7 @@ namespace example {
         current_name_index++;
         update_form();
       };
-
+      
       button_decrease.auto_repeat(true);
       button_decrease.enabled(false);
       button_decrease.image(button_images::remove(drawing::size {32, 32}));
@@ -170,7 +170,7 @@ namespace example {
         current_size_index++;
         update_form();
       };
-
+      
       update_form();
     }
     

@@ -12,24 +12,23 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 namespace {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   HHOOK handle_hook;
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
       allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
       refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
       UnhookWindowsHookEx(handle_hook);
-    }
-    else
+    } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
     return 0;
   }
-#endif
-
+  #endif
+  
   class wx_progress_dialog : public wxProgressDialog {
   public:
     wx_progress_dialog(const ustring& title, const ustring& message, int32_t maximum = 100, wxWindow* parent = nullptr, int32_t style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(convert_string::to_wstring(title), convert_string::to_wstring(message), maximum, parent, style) {
-      timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
+      timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent & event) {
         if (event.GetTimer().GetId() == timer_marquee.GetId())
           Pulse();
       });
@@ -37,19 +36,19 @@ namespace {
     
     void minimum(int32_t minimum) {
       minimum_ = minimum;
-      if (maximum_ - minimum_> 0) SetRange(maximum_ - minimum_);
+      if (maximum_ - minimum_ > 0) SetRange(maximum_ - minimum_);
     }
-
+    
     void maximum(int32_t maximum) {
       maximum_ = maximum;
       if (maximum_ - minimum_ > 0) SetRange(maximum_ - minimum_);
     }
-
+    
     void value(int32_t value) {
       value_ = value;
       if (value_ - minimum_ > 0) Update(value_ - minimum_);
     }
-
+    
     void marquee(bool marquee, size_t animation_speed) {
       animation_speed_ = animation_speed;
       if (marquee) timer_marquee.Start(static_cast<int32_t>(animation_speed));
@@ -72,10 +71,10 @@ namespace {
     wxTimer timer_marquee;
     int32_t value_ = 0;
   };
-
+  
   int32_t options_to_wx_style(size_t options) {
     int32_t wx_style = wxPD_AUTO_HIDE;
-
+    
     if ((options & PROGDLG_MODAL) == PROGDLG_MODAL) wx_style |= wxPD_APP_MODAL;
     if ((options & PROGDLG_AUTOTIME) == PROGDLG_AUTOTIME) wx_style |= wxPD_REMAINING_TIME;
     //if ((options & PROGDLG_NOTIME) == PROGDLG_NOTIME) wx_style |= wxPD__NOTIME; : doesn't exists on wxWidgets
@@ -88,7 +87,7 @@ namespace {
     //if ((options & PROGDLG_SMOOTH_REVERSE) == PROGDLG_SMOOTH_REVERSE) wx_style |= wxPD_SMOOTH_REVERSE; : doesn't exists on wxWidgets
     if ((options & PROGDLG_ELAPSEDTIME) == PROGDLG_ELAPSEDTIME) wx_style |= wxPD_ELAPSED_TIME;
     if ((options & PROGDLG_ESTIMATEDTIME) == PROGDLG_ESTIMATEDTIME) wx_style |= wxPD_ESTIMATED_TIME;
-
+    
     return wx_style;
   }
 }
@@ -99,9 +98,9 @@ bool progress_dialog::cancelled(intptr_t dialog) {
 }
 
 intptr_t progress_dialog::create(intptr_t hwnd, const ustring& text, const ustring& message, const std::vector<ustring>& informations, size_t animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options) {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
-#endif
+  #endif
   auto dialog = new wx_progress_dialog(text, message.empty() ? " " : message, 0, hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr, options_to_wx_style(options));
   dialog->Hide();
   dialog->marquee((options & PROGDLG_MARQUEEPROGRESS) == PROGDLG_MARQUEEPROGRESS, animation_speed);

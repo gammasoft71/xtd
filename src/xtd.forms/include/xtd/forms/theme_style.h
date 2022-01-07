@@ -19,7 +19,7 @@ namespace xtd {
       light,
       dark,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, theme_style value) {return os << to_string(value, {{theme_style::system_auto, "system_auto"}, {theme_style::light, "light"}, {theme_style::dark, "dark"}});}
     inline std::wostream& operator<<(std::wostream& os, theme_style value) {return os << to_string(value, {{theme_style::system_auto, L"system_auto"}, {theme_style::light, L"light"}, {theme_style::dark, L"dark"}});}

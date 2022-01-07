@@ -19,13 +19,13 @@ int main() {
   // Generate and display 5 random integers.
   console::write_line("Five random integer values:");
   for (int ctr = 0; ctr <= 4; ctr++)
-  console::write("{, 15}", rand.next());
+    console::write("{, 15}", rand.next());
   console::write_line();
   
   // Generate and display 5 random integers between 0 and 100.//
   console::write_line("Five random integers between 0 and 100:");
   for (int ctr = 0; ctr <= 4; ctr++)
-  console::write("{, 10}", rand.next(101));
+    console::write("{, 10}", rand.next(101));
   console::write_line();
   
   // Generate and display 5 random integers from 50 to 100.
@@ -43,7 +43,7 @@ int main() {
   // Generate and display 5 random floating point values from 0 to 5.
   console::write_line("Five Doubles between 0 and 5:");
   for (int ctr = 0; ctr <= 4; ctr++)
-  console::write("{, 10}", rand.next_double() * 5);
+    console::write("{, 10}", rand.next_double() * 5);
   console::write_line();
 }
 

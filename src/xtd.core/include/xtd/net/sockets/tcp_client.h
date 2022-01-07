@@ -18,7 +18,7 @@ namespace xtd {
       /// @cond
       class tcp_listener;
       /// @endcond
-
+      
       /// @brief Provides client connections for TCP network services.
       /// @code
       /// class core_export_ tcp_client : public xtd::object
@@ -68,7 +68,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         tcp_client(const xtd::ustring& hostname, uint16_t port);
         /// @}
-
+        
         /// @cond
         tcp_client(tcp_client&&) = default;
         tcp_client(const tcp_client&) = default;
@@ -78,7 +78,7 @@ namespace xtd {
         bool operator==(const tcp_client& s) const {return data_ == s.data_;};
         bool operator!=(const tcp_client& s) const {return !operator==(s);};
         /// @endcond
-
+        
         /// @name Properties
         
         /// @{
@@ -107,7 +107,7 @@ namespace xtd {
         /// @remarks You can also use xtd::net::sockets::tcp_client::client to set the underlying xtd::net::sockets::socket to an existing xtd::net::sockets::socket. This might be useful if you want to take advantage of the simplicity
         /// @remarks of xtd::net::sockets::tcp_client using a pre-existing xtd::net::sockets::socket.
         tcp_client& client(const xtd::net::sockets::socket& value) noexcept;
-
+        
         /// @brief Gets a value indicating whether the underlying xtd::net::sockets::socket for a xtd::net::sockets::tcp_client is connected to a remote host.
         /// @return bool true if the xtd::net::sockets::tcp_client::client was connected to a remote resource as of the most recent operation; otherwise, false.
         /// @remarks The xtd::net::sockets::tcp_client::client::connected property gets the connection state of the xtd::net::sockets::tcp_client::client socket as of the last I/O operation. When it returns false,
@@ -171,7 +171,7 @@ namespace xtd {
         /// @remarks This is the default behavior for a socket when the xtd::net::sockets::tcp_client::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::tcp_client::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
         tcp_client& linger_state(const xtd::net::sockets::linger_option& value);
-
+        
         /// @brief Gets a value that disables a delay when send or receive buffers are not full.
         /// @return true if the delay is disabled; otherwise, false. The default value is false.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
@@ -227,7 +227,7 @@ namespace xtd {
         /// @remarks Your network buffer should be at least as large as your application buffer to ensure that the desired data will be stored and sent in one operation. Use the xtd::net::sockets::tcp_client::send_buffer_size property to set this size. If your application will be sending bulk data, you should pass the std::iostream::write method a very large application buffer.
         /// @remarks If the network buffer is smaller than the amount of data you provide the std::iostream::write method, several network send operations will be performed for every call you make to the std::iostream::write method. You can achieve greater data throughput by ensuring that your network buffer is at least as large as your application buffer.
         tcp_client& send_buffer_size(size_t value);
-
+        
         /// @brief Gets the amount of time a xtd::net::sockets::tcp_client will wait for a send operation to complete successfully.
         /// @return The send time-out value, in milliseconds. The default value is 0.
         /// @remarks The xtd::net::sockets::tcp_client::send_timeout property determines the amount of time that the xtd::net::sockets::send method will block until it is able to return successfully. This time is measured in milliseconds..
@@ -240,7 +240,7 @@ namespace xtd {
         /// @remarks After you call the Write method, the underlying xtd::net::sockets::socket returns the number of bytes actually sent to the host. The xtd::net::sockets::tcp_client::send_timeout property determines the amount of time a xtd::net::sockets::tcp_client will wait before receiving the number of bytes returned. If the time-out expires before the Send method successfully completes, xtd::net::sockets::tcp_client will throw a xtd::net::sockets::socket_exception. There is no time-out by default.
         tcp_client& send_timeout(int32_t value);
         /// @}
-
+        
         /// @name Methods
         
         /// @{
@@ -280,14 +280,14 @@ namespace xtd {
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use one of the xtd::net::sockets::tcp_client::connect method overloads.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         std::shared_ptr<xtd::iasync_result> begin_connect(const xtd::ustring& host, uint16_t port, xtd::async_callback callback, const std::any& state);
-
+        
         /// @brief Disposes this xtd::net::sockets::tcp_client instance and requests that the underlying TCP connection be closed.
         /// @remarks The xtd::net::sockets::tcp_client::close method marks the instance as disposed and requests that the associated xtd::net::sockets::socket close the TCP connection. Based on the xtd::net::sockets::tcp_client::linger_state property,
         /// @remarks the TCP connection may stay open for some time after the xtd::net::sockets::tcp_client::close method is called when data remains to be sent. There is no notification provided when
         /// @remarks the underlying connection has completed closing.
         /// @remarks Calling this method will eventually result in the close of the associated xtd::net::sockets::socket and will also close the associated xtd::net::sockets::network_stream that is used to send and receive data if one was created.
         void close();
-
+        
         /// @brief Connects the client to a remote TCP host using the specified remote network endpoint.
         /// @param remote_end_point The xtd::net::ip_end_point to which you intend to connect.
         /// @exception xtd::net::sockets::socket_exception An error occurred when accessing the socket.
@@ -315,7 +315,7 @@ namespace xtd {
         /// @remarks If IPv6 is enabled and the xtd::net::sockets::tcp_client(xtd::ustring, uint16_t) method is called to connect to a host that resolves to both IPv6 and IPv4 addresses, the connection to the IPv6 address will be attempted first before the IPv4 address. This may have the effect of delaying the time to establish the connection if the host is not listening on the IPv6 address.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void connect(const xtd::ustring& hostname, uint16_t port);
-
+        
         /// @brief Ends a pending asynchronous connection attempt.
         /// @param result An xtd::iasync_result object returned by a call to xtd::net::sockets::tcp_client::client::begin_connect.
         /// @exception argument_exception async_result was not returned by a call to the xtd::net::sockets::socket::begin_connect method.
@@ -324,7 +324,7 @@ namespace xtd {
         /// @remarks This method blocks until the operation is complete. To perform this operation synchronously, use a xtd::net::sockets::tcp_client::connect method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void end_connect(std::shared_ptr<xtd::iasync_result> async_result);
-
+        
         /// @brief Returns the xtd::net::sockets::network_stream used to send and receive data.
         /// @return The underlying xtd::net::sockets::network_stream.
         /// @remarks xtd::net::sockets::tcp_client::get_stream returns a xtd::net::sockets::network_stream that you can use to send and receive data. The xtd::net::sockets::network_stream class inherits from the std::iostream class, which provides a rich collection of methods and properties used to facilitate network communications.You must call the xtd::net::sockets::tcp_client::connect method first, or the xtd::net::sockets::tcp_client::get_stream method will throw an xtd::invalid_operation_exception. After you have obtained the xtd::net::sockets::network_stream, call the std::iostream::write method to send data to the remote host. Call the std::iostream::read method to receive data arriving from the remote host. Both of these methods block until the specified operation is performed. You can avoid blocking on a read operation by checking the xtd::net::sockets::network_stream::data_available property. A true value means that data has arrived from the remote host and is available for reading. In this case, std::iostream::read is guaranteed to complete immediately. If the remote host has shutdown its connection, std::iostream::read will immediately return with zero bytes.
@@ -332,7 +332,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         xtd::net::sockets::network_stream get_stream() const;
         /// @}
-
+        
       protected:
         /// @name Protected properties
         

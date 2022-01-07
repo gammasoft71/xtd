@@ -23,7 +23,7 @@ namespace xtd {
       /// @brief The appearance of the control is determined by the user's operating system.
       system,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, loading_indicator_style value) {return os << to_string(value, {{loading_indicator_style::dots, "dots"}, {loading_indicator_style::standard, "standard"}, {loading_indicator_style::system, "system"}});}
     inline std::wostream& operator<<(std::wostream& os, loading_indicator_style value) {return os << to_string(value, {{loading_indicator_style::dots, L"dots"}, {loading_indicator_style::standard, L"standard"}, {loading_indicator_style::system, L"system"}});}

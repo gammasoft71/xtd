@@ -73,7 +73,7 @@ namespace xtd {
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     explicit divided_by_zero_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : arithmetic_exception(message, inner_exception, error, help_link, info) {}
     /// @}
-
+    
     /// @cond
     divided_by_zero_exception(const divided_by_zero_exception&) = default;
     divided_by_zero_exception& operator=(const divided_by_zero_exception&) = default;

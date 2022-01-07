@@ -83,7 +83,7 @@ namespace xtd {
         data_->fore_color = color;
         return *this;
       }
-
+      
       /// @brief Gets the product icon.
       /// @return The product icon.
       xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon));}
@@ -108,12 +108,14 @@ namespace xtd {
         data_->icon = bitmap;
         return *this;
       }
-
+      
       /// @brief Gets the dialog opacity.
       /// @return The dialog opacity.
       /// @remarks 0 full opacity; 1.0 full opacity.
-      double opacity() const {return data_->opacity
-        ;}
+      double opacity() const {
+        return data_->opacity
+          ;
+      }
       /// @brief Gets the dialog opacity.
       /// @param opacity The dialog opacity.
       /// @return Current busy_dialog instance.
@@ -134,13 +136,13 @@ namespace xtd {
         return *this;
       }
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       /// @brief Hides busy dialog box.
       void hide();
-
+      
       /// @brief Resets all properties to empty string.
       void reset();
       
@@ -149,7 +151,7 @@ namespace xtd {
       /// @brief Runs busy dialog box.
       void show(const iwin32_window& owner);
       /// @}
-
+      
     private:
       struct data {
         xtd::drawing::color back_color = xtd::forms::theme_colors::current_theme().control();

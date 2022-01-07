@@ -16,4 +16,4 @@ auto main()->int {
   form1 << button1 << button2 << label1 << label2;
   
   xtd::forms::application::run(form1);
-  }
+}

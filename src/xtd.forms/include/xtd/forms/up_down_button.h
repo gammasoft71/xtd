@@ -31,7 +31,7 @@ namespace xtd {
       /// @brief Initializes a new instance of up_down_button class.
       up_down_button() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -64,7 +64,7 @@ namespace xtd {
       /// @param orientation One of the orientation values.
       /// @param When the orientation property is set to orientation::horizontal, the scroll box moves from left to right as the value increases. When the orientation property is set to orientation::vertical, the scroll box moves from bottom to top as the Value increases.
       virtual up_down_button& orientation(forms::orientation orientation);
-
+      
       /// @brief Gets the value assigned to the up_down_button control.
       /// @return The numeric value of the up down button control.
       /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
@@ -74,7 +74,7 @@ namespace xtd {
       /// @return Current numeric_up_down.
       /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
       virtual up_down_button& value(int32_t value);
-
+      
       /// @brief Get a value indicate if value can be wrapped.
       /// @return true if value can be wrapped; otherwise false. The default is false.
       virtual bool wrapped() {return wrapped_;}
@@ -101,7 +101,7 @@ namespace xtd {
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -109,7 +109,7 @@ namespace xtd {
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<up_down_button, event_handler> scroll;
-
+      
       /// @brief Occurs when the value of the value property changes.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -117,7 +117,7 @@ namespace xtd {
       /// @}
       
     protected:
-      
+    
       /// @name Protected methods
       
       /// @{
@@ -126,7 +126,7 @@ namespace xtd {
       /// @brief Overrides control::on_handle_created(const event_args&)
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
-
+      
       /// @brief Raises the up_down_button::scroll event.
       /// @param e An event_args that contains the event data.
       /// @remarks You can use the OnScroll event to update other controls as the position of the scroll box changes.
@@ -135,7 +135,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// @remarks When overriding on_scroll(const event_args&) in a derived class, be sure to call the base class' on_scroll(const event_args&) method so that registered delegates receive the event.
       virtual void on_scroll(const event_args& e);
-
+      
       /// @brief Raises the up_down_button::value_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
@@ -145,10 +145,10 @@ namespace xtd {
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
       /// @}
-
+      
     private:
       void wm_scroll(message& message);
-
+      
       bool wrapped_ = false;
       int32_t maximum_ = 100;
       int32_t minimum_ = 0;

@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief The appearance of the control is determined by the user's operating system.
       system,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, flat_style value) {return os << to_string(value, {{flat_style::flat, "flat"}, {flat_style::popup, "popup"}, {flat_style::standard, "standard"}, {flat_style::system, "system"}});}
     inline std::wostream& operator<<(std::wostream& os, flat_style value) {return os << to_string(value, {{flat_style::flat, L"flat"}, {flat_style::popup, L"popup"}, {flat_style::standard, L"standard"}, {flat_style::system, L"system"}});}

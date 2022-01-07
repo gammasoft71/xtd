@@ -24,7 +24,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFD4D0C8. This field is constant.
       static xtd::drawing::color active_border();
-
+      
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF0054E3. This field is constant.
       static xtd::drawing::color active_caption();
       
@@ -120,10 +120,10 @@ namespace xtd {
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF316AC5. This field is constant.
       static xtd::drawing::color menu_highlight();
-
+      
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF316AC5. This field is constant.
       static xtd::drawing::color accent();
-
+      
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
       static xtd::drawing::color accent_text();
       

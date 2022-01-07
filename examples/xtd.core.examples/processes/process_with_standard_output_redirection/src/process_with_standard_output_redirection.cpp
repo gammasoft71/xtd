@@ -8,9 +8,9 @@ int main() {
   process_start_info start_info("xtdc", "--help");
   start_info.use_shell_execute(false);
   start_info.redirect_standard_output(true);
-
+  
   std::istream& standard_output = process::start(start_info).standard_output();
-
+  
   stream_reader reader(standard_output);
   console::write(reader.read_to_end());
 }

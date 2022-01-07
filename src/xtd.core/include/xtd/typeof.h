@@ -12,14 +12,14 @@ namespace xtd {
     std::string __typeof_() {
       return xtd::ustring::full_class_name<type_t>();
     }
-
+    
     template<typename type_t>
     std::string __typeof_(const type_t& value) {
       return xtd::ustring::full_class_name(value);
     }
   }
   /// @endcond
-
+  
   /// @brief Used to obtain the type string for a type. A typeof_ expression takes the following form:
   /// @par Namespace
   /// xtd
@@ -34,6 +34,6 @@ namespace xtd {
   /// std::string type2 = typeof_(i);
   /// @endcode
   /// @remarks The typeof_ operator cannot be overloaded.
-  #define typeof_ \
-    xtd::__s__::__typeof_
+#define typeof_ \
+  xtd::__s__::__typeof_
 }

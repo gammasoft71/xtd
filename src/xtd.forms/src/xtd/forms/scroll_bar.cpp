@@ -64,11 +64,11 @@ forms::create_params scroll_bar::create_params() const {
   forms::create_params create_params = control::create_params();
   
   create_params.class_name("scrollbar");
-
+  
   return create_params;
 }
 
-void scroll_bar::on_handle_created(const event_args &e) {
+void scroll_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::scroll_bar::large_change(handle(), large_change_);
   native::scroll_bar::maximum(handle(), maximum_);
@@ -77,24 +77,24 @@ void scroll_bar::on_handle_created(const event_args &e) {
   native::scroll_bar::value(handle(), value_);
 }
 
-void scroll_bar::on_scroll(const event_args &e) {
+void scroll_bar::on_scroll(const event_args& e) {
   if (is_handle_created()) value_ = native::scroll_bar::value(handle());
   scroll(*this, e);
 }
 
-void scroll_bar::on_value_changed(const event_args &e) {
+void scroll_bar::on_value_changed(const event_args& e) {
   value_changed(*this, e);
 }
 
-void scroll_bar::wnd_proc(message &message) {
+void scroll_bar::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_REFLECT + WM_HSCROLL:
-    case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
-    default: control::wnd_proc(message);
+  case WM_REFLECT + WM_HSCROLL:
+  case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
+  default: control::wnd_proc(message);
   }
 }
 
-void scroll_bar::wm_scroll(message &message) {
+void scroll_bar::wm_scroll(message& message) {
   on_scroll(event_args::empty);
   on_value_changed(event_args::empty);
 }

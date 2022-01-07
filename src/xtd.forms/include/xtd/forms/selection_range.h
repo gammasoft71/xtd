@@ -13,30 +13,30 @@ namespace xtd {
     class forms_export_ selection_range : public object {
     public:
       /// @Name Constructors
-
+      
       /// @{
       selection_range() = default;
       selection_range(date_time start, date_time end);
       /// @}
-
+      
       /// @cond
       selection_range(const selection_range&) = default;
       selection_range(selection_range&&) = default;
       selection_range& operator=(const selection_range&) = default;
       /// @endcond
-
-
+      
+      
       /// @Name Properties
-
+      
       /// @{
       virtual date_time end() const;
       virtual void end(date_time value);
-
-
+      
+      
       virtual date_time start() const;
       virtual void start(date_time value);
       /// @}
-
+      
     private:
       date_time start_;
       date_time end_;

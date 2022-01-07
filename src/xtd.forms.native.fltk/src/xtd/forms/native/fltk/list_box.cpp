@@ -46,5 +46,5 @@ vector<size_t> list_box::selected_indices(intptr_t control) {
     if (static_cast<Fl_Browser*>(reinterpret_cast<control_handler*>(control)->control())->selected(index))
       indices.push_back(index - 1);
   return indices;
-    
+  
 }

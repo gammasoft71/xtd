@@ -29,7 +29,7 @@ namespace xtd {
         aborted,
         failed
       };
-
+      
     public:
       test() = default;
       test(const std::string& name, const std::function<void()>& method, const xtd::diagnostics::stack_frame& caller) noexcept : test(name, method, false, caller) {}
@@ -65,7 +65,7 @@ namespace xtd {
         if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_point).ticks());
         return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_point).ticks());
       }
-
+      
       /// @cond
       static intptr_t __internal_tunit_unit_tests_mode__;
       /// @endcond
@@ -78,7 +78,7 @@ namespace xtd {
       static test& current_test() {return *current_test_;}
       static const test_class& current_test_class() {return *current_test_class_;}
       static const unit_test& current_unit_test() {return *current_unit_test_;}
-
+      
       void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
       
       xtd::date_time end_time_point;

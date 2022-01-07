@@ -27,12 +27,12 @@ namespace xtd {
       /// @param close_raison A close_reason value that represents the reason why the form was closed.A close_reason value that represents the reason why the form was closed.
       explicit form_closed_event_args(forms::close_reason close_reason) : close_reason_(close_reason) {};
       /// @}
-
+      
       /// @cond
       form_closed_event_args(const form_closed_event_args& form_closed_event_args) = default;
       form_closed_event_args& operator=(const form_closed_event_args& form_closed_event_args) = default;
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -41,7 +41,7 @@ namespace xtd {
       /// @remarks A Form can be closed because of a variety of reasons, both user-initiated and programmatic. The close_reason property indicates the reason for the closure.
       forms::close_reason close_reason() const {return close_reason_;}
       /// @}
-
+      
     private:
       forms::close_reason close_reason_ = forms::close_reason::none;
     };

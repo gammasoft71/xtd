@@ -23,15 +23,15 @@ namespace xtd {
     public:
       icon() = default;
       ~icon();
-
+      
       explicit icon(const xtd::ustring& filename);
-
+      
       explicit icon(std::istream& stream);
-
+      
       explicit icon(const char* const* bits);
       
       icon(const icon& icon, int32_t width, int32_t height);
-
+      
       /// @cond
       icon(const icon& icon) = default;
       icon& operator=(const icon& icon) = default;
@@ -42,16 +42,16 @@ namespace xtd {
       /// @brief Get the handle of this image.
       /// @return The handle of this image.
       intptr_t handle() const {return data_->handle_;}
-
+      
       static icon empty;
-
+      
       void save(const xtd::ustring& filename) const;
       void save(std::ostream& stream) const;
       
       static icon from_bitmap(const bitmap& bitmap);
       
       bitmap to_bitmap() const;
-
+      
     private:
       explicit icon(const bitmap& bitmap);
       struct data {

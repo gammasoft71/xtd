@@ -22,7 +22,7 @@ namespace unit_tests {
           write_indent();
         string_stream << message;
       }
-
+      
       using trace_listener::write_line;
       void write_line(const xtd::ustring& message) override {
         write(message);
@@ -31,7 +31,7 @@ namespace unit_tests {
       }
       
       using trace_listener::need_indent;
-
+      
     private:
       std::stringstream string_stream;
     };
@@ -77,13 +77,13 @@ namespace unit_tests {
       trace_listener.trace_output_options(trace_options::process_id | trace_options::callstack);
       assert::are_equal(trace_options::process_id | trace_options::callstack, trace_listener.trace_output_options(), csf_);
     }
-
+    
     void test_method_(fail_message) {
       unit_test_trace_listener trace_listener;
       trace_listener.fail("invalid_argument");
       assert::are_equal("Fail: invalid_argument\n", trace_listener.result(), csf_);
     }
-
+    
     void test_method_(fail_detail_message) {
       unit_test_trace_listener trace_listener;
       trace_listener.fail("invalid_argument", "Pointer is null");

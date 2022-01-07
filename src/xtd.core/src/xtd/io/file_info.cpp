@@ -32,7 +32,7 @@ bool file_info::exists() const {
   try {
     int32_t attributes = 0;
     return native::file_system::get_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) != file_attributes::directory;
-  } catch(...) {
+  } catch (...) {
     return false;
   }
 }

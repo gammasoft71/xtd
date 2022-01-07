@@ -12,7 +12,7 @@ namespace unit_tests {
       string s;
       assert::is_true(std::empty(s));
     }
-
+    
     void test_method_(test_case_failed) {
       string s = "string";
       assert::is_true(std::empty(s));

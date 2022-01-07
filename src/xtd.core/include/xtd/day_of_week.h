@@ -34,7 +34,7 @@ namespace xtd {
     /// @brief Indicates saturday.
     saturday
   };
-
+  
   /// @cond
   inline std::ostream& operator<<(std::ostream& os, const day_of_week value) {return os << to_string(value, { {day_of_week::sunday, "sunday"}, {day_of_week::monday, "monday"}, {day_of_week::tuesday, "tuesday"}, {day_of_week::wednesday, "wednesday"}, {day_of_week::thursday, "thursday"}, {day_of_week::friday, "friday"}, {day_of_week::saturday, "saturday"}});}
   inline std::wostream& operator<<(std::wostream& os, const day_of_week value) {return os << to_string(value, { {day_of_week::sunday, L"sunday"}, {day_of_week::monday, L"monday"}, {day_of_week::tuesday, L"tuesday"}, {day_of_week::wednesday, L"wednesday"}, {day_of_week::thursday, L"thursday"}, {day_of_week::friday, L"friday"}, {day_of_week::saturday, L"saturday"}});}

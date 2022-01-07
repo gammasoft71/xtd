@@ -11,7 +11,7 @@ public:
     start_position(form_start_position::manual);
     location({200, 200});
     client_size({360, 240});
-
+    
     list_box_cursors.parent(*this);
     list_box_cursors.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);
     list_box_cursors.bounds({20, 20, 150, 200});
@@ -20,7 +20,7 @@ public:
       test_zone.cursor(any_cast<forms::cursor>(list_box_cursors.selected_item().tag()));
     };
     list_box_cursors.selected_item("Default");
-
+    
     test_zone.parent(*this);
     test_zone.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
     test_zone.border_style(border_style::fixed_3d);

@@ -29,7 +29,7 @@ namespace xtd {
         /// @brief Specifies a linear gradient fill.
         linear_gradient = 4
       };
-
+      
       /// @cond
       inline std::ostream& operator<<(std::ostream& os, pen_type value) {return os << to_string(value, {{pen_type::solid_color, "solid_color"}, {pen_type::hatch_fill, "hatch_fill"}, {pen_type::texture_fill, "texture_fill"}, {pen_type::path_gradient, "path_gradient"}, {pen_type::linear_gradient, "linear_gradient"}});}
       inline std::wostream& operator<<(std::wostream& os, pen_type value) {return os << to_string(value, {{pen_type::solid_color, L"solid_color"}, {pen_type::hatch_fill, L"hatch_fill"}, {pen_type::texture_fill, L"texture_fill"}, {pen_type::path_gradient, L"path_gradient"}, {pen_type::linear_gradient, L"linear_gradient"}});}

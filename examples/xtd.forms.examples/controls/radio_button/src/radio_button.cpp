@@ -9,7 +9,7 @@ namespace examples {
     form1() {
       text("Radio button example");
       controls().push_back_range({radio_button1, radio_button2, radio_button3, radio_button4, radio_button5, label1});
-
+      
       radio_button1.auto_check(false);
       radio_button1.location({30, 30});
       radio_button1.font(drawing::font(font(), drawing::font_style::italic));
@@ -18,7 +18,7 @@ namespace examples {
         // Uncomments next line to check / uncheck radio button 1 (auto_check is false...)
         //radio_button1.checked(!radio_button1.checked());
       };
-    
+      
       radio_button2.location({30, 60});
       radio_button2.text("Radio 2");
       
@@ -42,7 +42,7 @@ namespace examples {
         // Uncomments next line to check / uncheck radio button 5 (auto_check is false...)
         //radio_button5.checked(!radio_button5.checked());
       };
-
+      
       label1.auto_size(true);
       label1.location({30, 180});
     }

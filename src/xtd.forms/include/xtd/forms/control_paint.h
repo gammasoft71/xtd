@@ -49,7 +49,7 @@ namespace xtd {
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
       static xtd::drawing::color average(const xtd::drawing::color& color1, const xtd::drawing::color& color2, double weight, bool average_alpha);
-
+      
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
       /// @param color2 The second color.
@@ -61,7 +61,7 @@ namespace xtd {
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the second color, while a value of 0.0 will return the first color.
       static xtd::drawing::color average(const xtd::drawing::color& color1, const xtd::drawing::color& color2, double weight);
-
+      
       /// @brief Creates a new dark color object for the control from the specified color.
       /// @param color The xtd::drawing::color to be darkened.
       /// @return A xtd::drawing::color that represents the dark color on the control.
@@ -72,23 +72,23 @@ namespace xtd {
       /// @param perc_of_dark The percentage to darken the specified xtd::drawing::color.
       /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_dark color; otherwise, the color's luminosity value is decreased.
       static xtd::drawing::color dark(const xtd::drawing::color& base_color, double perc_of_dark_dark);
-
+      
       /// @brief Creates a new dark color object for the control from the specified color.
       /// @param color The xtd::drawing::color to be darkened.
       /// @return A xtd::drawing::color that represents the dark color on the control.
       /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_dark_dark color; otherwise, the color's luminosity value is decreased.
       static xtd::drawing::color dark_dark(const xtd::drawing::color& base_color);
-
+      
       static void draw_button(const xtd::forms::control& control, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle, xtd::forms::button_state state);
       static void draw_button(const xtd::forms::control& control, xtd::drawing::graphics& graphics, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::button_state state);
-
+      
       
       static void draw_border(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, xtd::forms::border_sides sides, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect);
-
+      
       static void draw_border(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, xtd::forms::border_sides sides, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect, bool light);
       
       static void draw_border_from_back_color(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, xtd::forms::border_sides sides, const xtd::drawing::color& back_color, const xtd::drawing::rectangle& rect);
-
+      
       /// @brief Draws the specified image in a specified rectangle with specified layout.
       /// @param xtd::drawing::graphics The Graphics to draw on.
       /// @param image The xtd::drawing::image to draw.
@@ -104,7 +104,7 @@ namespace xtd {
       /// @param height The height of the drawn image.
       /// @param image_layout One of the values of xtd::forms::image_layout (center , none, stretch, tile, or zoom).
       static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::image_layout image_layout);
-
+      
       /// @brief Draws the specified image in a disabled state.
       /// @param xtd::drawing::graphics The Graphics to draw on.
       /// @param image The xtd::drawing::image to draw.
@@ -135,7 +135,7 @@ namespace xtd {
       /// @param background The xtd::drawing::color of the background behind the image.
       /// @remarks The background parameter is used to calculate the fill color of the disabled image so that it is always visible against the background
       static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const xtd::drawing::point& location, const xtd::drawing::color& background);
-
+      
       /// @brief Creates a new light color object for the control from the specified color.
       /// @param color The xtd::drawing::color to be lightened.
       /// @return A xtd::drawing::color that represents the light color on the control.

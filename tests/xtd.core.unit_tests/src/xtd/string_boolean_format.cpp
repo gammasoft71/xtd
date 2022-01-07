@@ -13,11 +13,11 @@ namespace unit_tests {
     void test_method_(format_false_with_default_argument) {
       assert::are_equal("false", xtd::ustring::format("{0}", false), csf_);
     }
-
+    
     void test_method_(format_true_with_default_argument) {
       assert::are_equal("true", xtd::ustring::format("{0}", true), csf_);
     }
-
+    
     void test_method_(format_false_with_left_alignment) {
       assert::are_equal("     false", ustring::format("{0,10}", false), csf_);
     }
@@ -65,7 +65,7 @@ namespace unit_tests {
     void test_method_(format_true_with_general_argument) {
       assert::are_equal("true", xtd::ustring::format("{0:G}", true), csf_);
     }
-
+    
     void test_method_(format_false_with_octal_argument) {
       assert::are_equal("0", xtd::ustring::format("{0:o}", false), csf_);
     }
@@ -83,11 +83,11 @@ namespace unit_tests {
     }
     
     void test_method_(format_false_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([]{xtd::ustring::format("{0:e}", true);}, csf_);
+      assert::throws<xtd::format_exception>([] {xtd::ustring::format("{0:e}", true);}, csf_);
     }
     
     void test_method_(format_true_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([]{xtd::ustring::format("{0:z1}", true);}, csf_);
+      assert::throws<xtd::format_exception>([] {xtd::ustring::format("{0:z1}", true);}, csf_);
     }
   };
 }

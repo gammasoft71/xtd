@@ -13,7 +13,7 @@ public:
     // Delete the file if it exists.
     if (fi.exists())
       fi.remove();
-
+      
     // Open the stream for writing.
     using_(ofstream fs = fi.open_write()) {
       stream_writer sw(fs);

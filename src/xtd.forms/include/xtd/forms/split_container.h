@@ -37,7 +37,7 @@ namespace xtd {
       
       /// @{
       drawing::size default_size() const override {return {150, 100};}
-
+      
       /// @brief Gets a value indicating the horizontal or vertical orientation of the split_container panels.
       /// @return One of the orientation values. The default is vertical.
       virtual xtd::forms::orientation orientation() const {return orientation_;}
@@ -58,14 +58,14 @@ namespace xtd {
       /// @brief Gets the left or top panel of the splitter_panel, depending on orientation.
       /// @return If orientation is vertical, the left panel of the split_container. If orientation is horizontal, the top panel of the split_container.
       virtual splitter_panel& panel1() {return panel1_;};
-
+      
       /// @brief Gets the right or bottom panel of the splitter_panel, depending on orientation.
       /// @return If orientation is vertical, the right panel of the split_container. If orientation is horizontal, the bottom panel of the split_container.
       virtual const splitter_panel& panel2() const {return panel2_;};
       /// @brief Gets the right or bottom panel of the splitter_panel, depending on orientation.
       /// @return If orientation is vertical, the right panel of the split_container. If orientation is horizontal, the bottom panel of the split_container.
       virtual splitter_panel& panel2() {return panel2_;};
-
+      
       /// @brief Gets the location of the splitter, in pixels, from the left or top edge of the split_container.
       /// @return An int32_t representing the location of the splitter, in pixels, from the left or top edge of the split_container. The default value is 50 pixels.
       virtual int splitter_distance() const {return splitter_distance_;}
@@ -80,7 +80,7 @@ namespace xtd {
         }
         return *this;
       }
-
+      
       /// @brief Gets the style of the splitter.
       /// @return One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
       virtual xtd::forms::splitter_style splitter_style() const {return splitter_.splitter_style();}
@@ -88,9 +88,8 @@ namespace xtd {
       /// @param splitter_style One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
       /// @return Current split_container instance.
       virtual split_container& splitter_style(xtd::forms::splitter_style splitter_style) {
-        if (splitter_.splitter_style() != splitter_style) {
+        if (splitter_.splitter_style() != splitter_style)
           splitter_.splitter_style(splitter_style);
-        }
         return *this;
       }
       

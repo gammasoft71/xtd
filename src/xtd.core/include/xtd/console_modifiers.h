@@ -21,7 +21,7 @@ namespace xtd {
     /// @brief The left or right CTRL modifier key.
     control = 0b100
   };
-
+  
   /// @cond
   inline xtd::console_modifiers& operator^=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
   inline xtd::console_modifiers& operator&=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
@@ -33,7 +33,7 @@ namespace xtd {
   inline xtd::console_modifiers operator|(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) | static_cast<int>(rhs));}
   inline xtd::console_modifiers operator+(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) + static_cast<int>(rhs));}
   inline xtd::console_modifiers operator-(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-  inline xtd::console_modifiers operator~(xtd::console_modifiers lhs) {return static_cast<xtd::console_modifiers>(~static_cast<int>(lhs));}  
+  inline xtd::console_modifiers operator~(xtd::console_modifiers lhs) {return static_cast<xtd::console_modifiers>(~static_cast<int>(lhs));}
   inline std::ostream& operator<<(std::ostream& os, console_modifiers value) {return os << to_string(value, {{console_modifiers::alt, "alt"}, {console_modifiers::shift, "shift"}, {console_modifiers::control, "control"}});}
   inline std::wostream& operator<<(std::wostream& os, console_modifiers value) {return os << to_string(value, {{console_modifiers::alt, L"alt"}, {console_modifiers::shift, L"shift"}, {console_modifiers::control, L"control"}});}
   /// @endcond

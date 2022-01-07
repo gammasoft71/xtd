@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief initializes a new instance of the text_box class.
       text_box() = default;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -57,13 +57,13 @@ namespace xtd {
       /// @return Current text_box instance.
       /// @remarks You can use the character_casing property to change the case of characters as required by your application. For example, you could change the case of all characters entered in a text_box control used for password entry to uppercase or lowercase to enforce a policy for passwords.
       virtual text_box& character_casing(xtd::forms::character_casing value);
-
+      
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().text_box();}
       
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().text_box_text();}
       
       drawing::size default_size() const override {return {100, 21};}
-
+      
       /// @brief Gets the character used to mask characters of a password in a single-line TextBox control.
       /// @return The character used to mask characters entered in a single-line text_box control. Set the value of this property to '0' (U+0000) if you do not want the control to mask characters as they are typed. The default value is '0' (U+0000).
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
@@ -81,7 +81,7 @@ namespace xtd {
       /// @return The number of characters selected in the text box.
       /// @remarks You can use this property to determine if any characters are currently selected in the text box control before performing operations on the selected text. When the value of the selection_length property is set to a value that is larger than the number of characters within the text of the control, the value of the selection_length property is set to the entire length of text within the control minus the value of the selection_start property (if any value is specified for the selection_start property).
       size_t selection_length() const override;
-
+      
       using text_box_base::selection_start;
       /// @brief Gets o the starting point of text selected in the text box.
       /// @return The starting position of text selected in the text box.
@@ -101,14 +101,14 @@ namespace xtd {
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
       virtual text_box& use_system_password_char(bool value);
       /// @}
-
+      
       /// @name Methods
       
       /// @{
       void append_text(const xtd::ustring& value) override;
       void select(size_t start, size_t length) override;
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -117,7 +117,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<text_box, event_handler> accepts_return_changed;
       /// @}
-
+      
     protected:
       /// @name Protected methods
       
@@ -128,7 +128,7 @@ namespace xtd {
       /// @brief Raises the text_box::accepts_return_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_accepts_return_changed(const event_args& e) {if (can_raise_events()) accepts_return_changed(*this, e);}
-
+      
       void on_handle_created(const event_args& e) override;
       void on_text_changed(const event_args& e) override;
       
@@ -137,12 +137,12 @@ namespace xtd {
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
       /// @}
-
+      
       /// @cond
       void wm_key_char(message& message);
       void wm_set_text(message& message);
       /// @endcond
-
+      
     private:
       bool accepts_return_ = false;
       xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;

@@ -36,23 +36,23 @@ namespace unit_tests {
     void test_method_(format_string_with_string) {
       assert::are_equal("string", ustring::format("{}", string("string")), csf_);
     }
-
+    
     void test_method_(format_string_with_ustring) {
       assert::are_equal("string", ustring::format("{}", ustring("string")), csf_);
     }
-
+    
     void test_method_(format_string_with_u8string) {
       assert::are_equal("string", ustring::format("{}", u8string(u8"string")), csf_);
     }
-
+    
     void test_method_(format_string_with_u16string) {
       assert::are_equal("string", ustring::format("{}", u16string(u"string")), csf_);
     }
-
+    
     void test_method_(format_string_with_u32string) {
       assert::are_equal("string", ustring::format("{}", u32string(U"string")), csf_);
     }
-
+    
     void test_method_(format_string_with_wstring) {
       assert::are_equal("string", ustring::format("{}", wstring(L"string")), csf_);
     }

@@ -48,7 +48,7 @@ namespace xtd {
       /// @brief Represent an empty xtd::drawing::image.
       static image empty;
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -100,7 +100,7 @@ namespace xtd {
       /// @brief Sets the color palette used for this image.
       /// @param palette A color_palette that represents the color palette used for this image.
       void palette(const imaging::color_palette& palette) {data_->palette_ = palette;}
-
+      
       /// @brief Gets the width and height of this image.
       /// @return A SizeF structure that represents the width and height of this image.
       /// @remarks If the image is a bitmap, the width and height are returned in pixels. If the image is a metafile, the width and height are returned in 0.01 millimeter units.
@@ -138,12 +138,12 @@ namespace xtd {
       /// @brief Gets the vertical resolution, in pixels per inch, of this image.
       /// @return The vertical resolution, in pixels per inch, of this image.
       float vertical_resolution() const {return data_->vertical_resolution_;}
-
+      
       /// @brief Gets the width, in pixels, of this image.
       /// @return The width, in pixels, of this image.
       int32_t width() const {return data_->size_.width();}
       /// @}
-  
+      
       /// @name Methods
       
       /// @{
@@ -151,16 +151,16 @@ namespace xtd {
       /// @return A xtd::drawing::graphics for the image.
       /// @ingroup drawing
       graphics create_graphics() {return graphics::from_image(*this);}
-
+      
       static image from_hbitmap(intptr_t hbitmap) {return image(hbitmap);}
-
+      
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The Image this method creates.
       static image from_file(const xtd::ustring& filename) {return image(filename);}
-
+      
       static image from_stream(std::istream& stream) {return image(stream);}
-
+      
       static image from_data(const char* const* bits) {return image(bits);}
       
       void save(const xtd::ustring& filename) const;
@@ -177,7 +177,7 @@ namespace xtd {
       image(const image& image, int32_t width, int32_t height);
       image(const image& image, const rectangle& rect);
       void update_properties();
-
+      
       struct data {
         imaging::image_flags flags_ = imaging::image_flags::none;
         std::vector<guid> frame_dimentions_list_;

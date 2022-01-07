@@ -26,23 +26,23 @@ namespace xtd {
           int style = wxCLRP_DEFAULT_STYLE;
           if ((create_params.style() & CC_ALPHACOLOR) == CC_ALPHACOLOR) style |= wxCLRP_SHOW_ALPHA;
           control_handler::create<wxColourPickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxColour(0, 0, 0), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style);
-#if defined(__WIN32__)
+          #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             static_cast<wxColourPickerCtrl*>(control())->GetPickerCtrl()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::button_face().r(), xtd::drawing::system_colors::button_face().g(), xtd::drawing::system_colors::button_face().b(), xtd::drawing::system_colors::button_face().a()));
             static_cast<wxColourPickerCtrl*>(control())->GetPickerCtrl()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
-#endif
+          #endif
         }
         
-        void SetBackgroundColour(const wxColour &colour) override {
+        void SetBackgroundColour(const wxColour& colour) override {
           control_handler::SetBackgroundColour(colour);
           static_cast<wxColourPickerCtrl*>(control())->GetPickerCtrl()->SetBackgroundColour(colour);
         }
-
+        
         void SetPosition(const wxPoint& pt) override {
           control_handler::SetPosition(pt);
         }
-
+        
         wxSize GetClientSize() const override {
           return control()->GetSize();
         }

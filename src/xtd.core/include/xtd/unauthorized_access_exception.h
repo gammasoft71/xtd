@@ -74,7 +74,7 @@ namespace xtd {
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     explicit unauthorized_access_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
     /// @}
-
+    
     /// @cond
     unauthorized_access_exception(const unauthorized_access_exception&) = default;
     unauthorized_access_exception& operator=(const unauthorized_access_exception&) = default;

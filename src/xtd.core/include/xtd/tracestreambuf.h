@@ -21,14 +21,14 @@ namespace xtd {
     /// @{
     /// @brief Synchronizes the buffers with the associated character sequence
     int sync() override {
-#if defined(TRACE)
+      #if defined(TRACE)
       if (!str().empty()) {
         if (str() == "\n") xtd::diagnostics::trace::write_line();
         else if (ustring(str()).ends_with('\n')) xtd::diagnostics::trace::write_line(ustring(str()).trim_end('\n'));
         else xtd::diagnostics::trace::write(str());
         str("");
       }
-#endif
+      #endif
       return 0;
     }
   };

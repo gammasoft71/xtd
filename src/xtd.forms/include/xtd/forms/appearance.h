@@ -23,7 +23,7 @@ namespace xtd {
       /// @brief The appearance of a switch button.
       switch_button = 2,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, appearance value) {return os << to_string(value, {{appearance::normal, "normal"}, {appearance::button, "button"}, {appearance::switch_button, "switch_button"}});}
     inline std::wostream& operator<<(std::wostream& os, appearance value) {return os << to_string(value, {{appearance::normal, L"normal"}, {appearance::button, L"button"}, {appearance::switch_button, L"switch_button"}});}

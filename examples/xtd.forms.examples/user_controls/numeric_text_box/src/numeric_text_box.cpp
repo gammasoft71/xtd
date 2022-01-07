@@ -9,7 +9,7 @@ namespace examples {
   class numeric_text_box : public text_box {
   public:
     numeric_text_box() = default;
-
+    
     double value() const {
       auto result = .0;
       try_parse(text(), result);
@@ -19,7 +19,7 @@ namespace examples {
     void value(double value) {text(xtd::to_string(value, "G"));}
     
     event<numeric_text_box, event_handler> value_changed;
-
+    
   protected:
     void on_key_press(key_press_event_args& e) override {
       text_box::on_key_press(e);

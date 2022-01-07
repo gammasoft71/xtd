@@ -40,7 +40,7 @@ namespace xtd {
       static xtd::drawing::icon shield(const xtd::drawing::size& size) {return from_name("dialog-password", size);}
       static xtd::drawing::icon win_logo() {return windows_logo(default_size());}
       static xtd::drawing::icon win_logo(const xtd::drawing::size& size) {return windows_logo(size);}
-
+      
       static xtd::drawing::size default_size() {return {32, 32};}
       static xtd::drawing::icon kde_logo() {return kde_logo(default_size());}
       static xtd::drawing::icon kde_logo(const xtd::drawing::size& size) {return from_name("kde", "start-here", size);}
@@ -59,7 +59,7 @@ namespace xtd {
       static xtd::drawing::icon xtd_forms_logo() {return xtd_forms_logo(default_size());}
       static xtd::drawing::icon xtd_forms_logo(const xtd::drawing::size& size) {return from_name("xtd-forms", size);}
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -71,4 +71,4 @@ namespace xtd {
     };
   }
 }
-  
+

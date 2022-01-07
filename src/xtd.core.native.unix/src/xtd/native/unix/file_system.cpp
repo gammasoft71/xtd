@@ -52,7 +52,7 @@ string file_system::get_full_path(const string& relative_path) {
   
   if (relative_path[0] != path::directory_separator_char())
     full_path = directory::get_current_directory();
-  
+    
   for (string& item : directories) {
     if (item == ".." && native::unix::strings::last_index_of(full_path, path::directory_separator_char()) != full_path.npos)
       full_path = native::unix::strings::remove(full_path, native::unix::strings::last_index_of(full_path, path::directory_separator_char()));
@@ -62,20 +62,20 @@ string file_system::get_full_path(const string& relative_path) {
   
   if (relative_path[relative_path.size() - 1] == path::directory_separator_char())
     full_path += path::directory_separator_char();
-  
+    
   return full_path;
 }
 
 bool file_system::is_path_too_long(const std::string& path) {
   if (path.size() > PATH_MAX) return true;
-
+  
   size_t index = path.rfind(native::path::directory_separator_char());
   if (index == static_cast<size_t>(-1)) index = path.rfind(native::path::alt_directory_separator_char());
-  auto file_name =  (index == static_cast<size_t>(-1)) ? path : &path[index + 1];
+  auto file_name = (index == static_cast<size_t>(-1)) ? path : &path[index + 1];
   return file_name.size() > NAME_MAX;
 }
 
-int32_t file_system::set_creation_time(const std::string &path, time_t creation_time) {
+int32_t file_system::set_creation_time(const std::string& path, time_t creation_time) {
   return -1;
 }
 
@@ -83,10 +83,10 @@ int32_t file_system::set_file_attributes(const std::string& path, int32_t attrib
   return -1;
 }
 
-int32_t file_system::set_last_access_time(const std::string &path, time_t last_access_time) {
+int32_t file_system::set_last_access_time(const std::string& path, time_t last_access_time) {
   return -1;
 }
 
-int32_t file_system::set_last_write_time(const std::string &path, time_t last_write_time) {
+int32_t file_system::set_last_write_time(const std::string& path, time_t last_write_time) {
   return -1;
 }

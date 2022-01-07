@@ -13,7 +13,7 @@ namespace examples {
       client_size({500, 300});
       set_color(color::blue);
       set_color(nullptr);
-
+      
       choice_theme.parent(*this);
       choice_theme.location({10, 10});
       choice_theme.items().push_back("default theme");
@@ -48,13 +48,13 @@ namespace examples {
         check_box_system.fore_color(fcolor.value());
         check_box_standard.fore_color(fcolor.value());
       };
-
+      
       check_box_system.parent(*this);
       check_box_system.flat_style(xtd::forms::flat_style::system);
       check_box_system.location({10, 210});
       check_box_system.text("System");
       check_box_system.three_state(true);
-
+      
       check_box_standard.parent(*this);
       check_box_standard.location({100, 210});
       check_box_standard.text("Standard");
@@ -64,20 +64,20 @@ namespace examples {
   protected:
     void on_paint(paint_event_args& e) override {
       form::on_paint(e);
-      check_box_renderer::draw_check_box(e.graphics(), {10, 70, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::unchecked_normal, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {124, 70, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::unchecked_hot, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {238, 70, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::unchecked_pressed, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {352, 70, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::unchecked_disabled, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {10, 110, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::checked_normal, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {124,110, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::checked_hot, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {238, 110, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::checked_pressed, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {352, 110, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::checked_disabled, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {10, 150, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::mixed_normal, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {124,150, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::mixed_hot, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {238, 150, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::mixed_pressed, bcolor, fcolor);
-      check_box_renderer::draw_check_box(e.graphics(), {352, 150, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::mixed_disabled, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {10, 70, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::unchecked_normal, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {124, 70, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::unchecked_hot, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {238, 70, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::unchecked_pressed, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {352, 70, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::unchecked_disabled, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {10, 110, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::checked_normal, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {124, 110, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::checked_hot, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {238, 110, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::checked_pressed, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {352, 110, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::checked_disabled, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {10, 150, 104, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::mixed_normal, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {124, 150, 104, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::mixed_hot, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {238, 150, 104, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::mixed_pressed, bcolor, fcolor);
+      check_box_renderer::draw_check_box(e.graphics(), {352, 150, 104, 25}, "Disabled", font(), xtd::forms::text_format_flags::vertical_center | xtd::forms::text_format_flags::left, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::check_box_state::mixed_disabled, bcolor, fcolor);
     }
-
+    
   private:
     void set_color(const color& color) {
       cdebug << ustring::format("color = {}", color.to_string()) << endl;

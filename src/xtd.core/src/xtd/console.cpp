@@ -16,12 +16,12 @@ namespace {
     static std::streambuf* rdbuf = std::cerr.rdbuf();
     return rdbuf;
   }
-
+  
   std::streambuf* __get_in_rdbuf() {
     static std::streambuf* rdbuf = std::cin.rdbuf();
     return rdbuf;
   }
-
+  
   std::streambuf* __get_out_rdbuf() {
     static std::streambuf* rdbuf = std::cout.rdbuf();
     return rdbuf;

@@ -51,7 +51,7 @@ directory::directory_iterator& directory::directory_iterator::operator++() {
   int32_t attributes;
   do {
     if ((item = readdir(data_->handle_)) != nullptr)
-      native::file_system::get_attributes(data_->path_+ '/' + item->d_name, attributes);
+      native::file_system::get_attributes(data_->path_ + '/' + item->d_name, attributes);
   } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY || string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
   
   if (item == nullptr) data_->current_ = "";
@@ -105,7 +105,7 @@ directory::file_iterator& directory::file_iterator::operator++() {
   int32_t attributes;
   do {
     if ((item = readdir(data_->handle_)) != nullptr)
-      native::file_system::get_attributes(data_->path_+ '/' + item->d_name, attributes);
+      native::file_system::get_attributes(data_->path_ + '/' + item->d_name, attributes);
   } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY || string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
   
   if (item == nullptr) data_->current_ = "";
@@ -159,7 +159,7 @@ directory::file_and_directory_iterator& directory::file_and_directory_iterator::
   int32_t attributes;
   do {
     if ((item = readdir(data_->handle_)) != nullptr)
-      native::file_system::get_attributes(data_->path_+ '/' + item->d_name, attributes);
+      native::file_system::get_attributes(data_->path_ + '/' + item->d_name, attributes);
   } while (item != nullptr && (string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
   
   if (item == nullptr) data_->current_ = "";

@@ -6,7 +6,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {  
+namespace unit_tests {
   class test_class_(test_is) {
   public:
     void test_method_(is_string_with_string) {
@@ -18,7 +18,7 @@ namespace unit_tests {
       exception v;
       assert::is_false(is<string>(v), csf_);
     }
-
+    
     void test_method_(is_string_with_const_string) {
       assert::is_true(is<ustring>(""_s), csf_);
     }
@@ -66,7 +66,7 @@ namespace unit_tests {
       bool v = true;
       assert::is_false(is<float>(v), csf_);
     }
-
+    
     void test_method_(is_int8_t_with_int8_t) {
       int8_t v = 42;
       assert::is_true(is<int8_t>(v), csf_);
@@ -76,7 +76,7 @@ namespace unit_tests {
       bool v = true;
       assert::is_false(is<int8_t>(v), csf_);
     }
-
+    
     void test_method_(is_int16_t_with_int16_t) {
       int16_t v = 42;
       assert::is_true(is<int16_t>(v), csf_);
@@ -86,7 +86,7 @@ namespace unit_tests {
       bool v = true;
       assert::is_false(is<int16_t>(v), csf_);
     }
-
+    
     void test_method_(is_int32_t_with_int32_t) {
       int32_t v = 42;
       assert::is_true(is<int32_t>(v), csf_);
@@ -96,7 +96,7 @@ namespace unit_tests {
       bool v = true;
       assert::is_false(is<int32_t>(v), csf_);
     }
-
+    
     void test_method_(is_int64_t_with_int64_t) {
       int64_t v = 42;
       assert::is_true(is<int64_t>(v), csf_);
@@ -106,7 +106,7 @@ namespace unit_tests {
       bool v = true;
       assert::is_false(is<int64_t>(v), csf_);
     }
-
+    
     void test_method_(is_short_with_short) {
       short v = 42;
       assert::is_true(is<short>(v), csf_);
@@ -136,7 +136,7 @@ namespace unit_tests {
       bool v = true;
       assert::is_false(is<long>(v), csf_);
     }
-
+    
     void test_method_(is_llong_t_with_llong_t) {
       llong_t v = 42;
       assert::is_true(is<llong_t>(v), csf_);
@@ -146,7 +146,7 @@ namespace unit_tests {
       bool v = true;
       assert::is_false(is<llong_t>(v), csf_);
     }
-
+    
     void test_method_(is_uint8_t_with_uint8_t) {
       uint8_t v = 42;
       assert::is_true(is<uint8_t>(v), csf_);
@@ -196,7 +196,7 @@ namespace unit_tests {
       bool v = true;
       assert::is_false(is<ushort>(v), csf_);
     }
-
+    
     void test_method_(is_uint_with_uint) {
       uint v = 42;
       assert::is_true(is<uint>(v), csf_);

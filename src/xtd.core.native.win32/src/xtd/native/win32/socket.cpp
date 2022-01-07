@@ -23,21 +23,21 @@ namespace {
     if (it == protocol_types.end()) return IPPROTO_IP;
     return it->second;
   }
-
+  
   static int32_t socket_option_name_to_native(int32_t socket_option_name) {
     static map<int32_t, int32_t> socket_option_names = {{SOCKET_OPTION_NAME_DEBUG, SO_DEBUG}, {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN}, {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR}, {SOCKET_OPTION_NAME_KEEP_ALIVE, SO_KEEPALIVE}, {SOCKET_OPTION_NAME_DONT_ROUTE, SO_DONTROUTE}, {SOCKET_OPTION_NAME_BROADCAST, SO_BROADCAST}, {SOCKET_OPTION_NAME_USE_LOOPBACK, SO_USELOOPBACK}, {SOCKET_OPTION_NAME_LINGER, SO_LINGER}, {SOCKET_OPTION_NAME_OUT_OF_BAND_INLINE, SO_OOBINLINE}, {SOCKET_OPTION_NAME_SEND_BUFFER, SO_SNDBUF}, {SOCKET_OPTION_NAME_RECEIVE_BUFFER, SO_RCVBUF}, {SOCKET_OPTION_NAME_SEND_LOW_WATER, SO_SNDLOWAT}, {SOCKET_OPTION_NAME_RECEIVE_LOW_WATER, SO_RCVLOWAT}, {SOCKET_OPTION_NAME_SEND_TIMEOUT, SO_SNDTIMEO}, {SOCKET_OPTION_NAME_RECEIVE_TIMEOUT, SO_RCVTIMEO}, {SOCKET_OPTION_NAME_ERROR, SO_ERROR}, {SOCKET_OPTION_NAME_TYPE, SO_TYPE}};
     auto it = socket_option_names.find(socket_option_name);
     if (it == socket_option_names.end()) return socket_option_name;
     return it->second;
   }
-
+  
   static int32_t socket_option_level_to_native(int32_t socket_option_level) {
     static map<int32_t, int32_t> socket_option_levels = {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP}, {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6}, {SOCKET_OPTION_LEVEL_TCP, IPPROTO_TCP}, {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}};
     auto it = socket_option_levels.find(socket_option_level);
     if (it == socket_option_levels.end()) return SOL_SOCKET;
     return it->second;
   }
-
+  
   static int32_t socket_type_to_native(int32_t socket_type) {
     static map<int32_t, int32_t> socket_types = {{SOCKET_TYPE_UNKNOWN, SOCK_STREAM}, {SOCKET_TYPE_STREAM, SOCK_STREAM}, {SOCKET_TYPE_DGRAM, SOCK_DGRAM}, {SOCKET_TYPE_RAW, SOCK_RAW}, {SOCKET_TYPE_RDM, SOCK_RDM}, {SOCKET_TYPE_SEQPACKET, SOCK_SEQPACKET}};
     auto it = socket_types.find(socket_type);
@@ -173,7 +173,7 @@ int32_t socket::listen(intptr_t handle, size_t backlog) {
 
 int32_t socket::poll(intptr_t handle, int32_t microseconds, int32_t mode) {
   if (handle == 0 || microseconds < 0) return -1;
-
+  
   timeval timeout = {microseconds / 1000000, microseconds % 1000000};
   fd_set fdset;
   FD_ZERO(&fdset);
@@ -199,47 +199,47 @@ int32_t socket::receive_from(intptr_t handle, vector<uint8_t>& buffer, size_t of
 
 int32_t socket::select(vector<intptr_t>& check_read, vector<intptr_t>& check_write, vector<intptr_t>& check_error, int32_t microseconds) {
   size_t nfds = 0;
-
+  
   fd_set read_fds;
   FD_ZERO(&read_fds);
   for (auto i = 0U; i < check_read.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<SOCKET>(check_read[i]), &read_fds);
   if (check_read.size() > nfds) nfds = check_read.size();
-
+  
   fd_set write_fds;
   FD_ZERO(&write_fds);
   for (auto i = 0U; i < check_write.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<SOCKET>(check_write[i]), &write_fds);
   if (check_write.size() > nfds) nfds = check_write.size();
-
+  
   fd_set error_fds;
   FD_ZERO(&error_fds);
   for (auto i = 0U; i < check_error.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<SOCKET>(check_error[i]), &error_fds);
   if (check_error.size() > nfds) nfds = check_error.size();
-
+  
   timeval tv;
   if (microseconds != -1) {
     tv.tv_sec = microseconds / 1000000;
     tv.tv_usec = microseconds % 1000000;
   }
   int32_t result = ::select(static_cast<int32_t>(nfds + 1), &read_fds, &write_fds, &error_fds, &tv);
-
+  
   for (auto i = 0U; i < check_read.size(); i++) {
     FD_CLR(static_cast<SOCKET>(check_read[i]), &read_fds);
     if (FD_ISSET(static_cast<SOCKET>(check_read[i]), &read_fds) == 0) check_read[i] = 0;
   }
-
+  
   for (auto i = 0U; i < check_write.size(); i++) {
     FD_CLR(static_cast<SOCKET>(check_write[i]), &write_fds);
     if (FD_ISSET(static_cast<SOCKET>(check_write[i]), &write_fds) == 0) check_write[i] = 0;
   }
-
+  
   for (auto i = 0U; i < check_error.size(); i++) {
     FD_CLR(static_cast<SOCKET>(check_error[i]), &error_fds);
     if (FD_ISSET(static_cast<SOCKET>(check_error[i]), &error_fds) == 0) check_error[i] = 0;
   }
-
+  
   return result;
 }
 

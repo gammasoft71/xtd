@@ -10,7 +10,7 @@ namespace examples {
       text("Hello world (emoticons)");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-
+      
       label.parent(*this);
       label.auto_size(true);
       label.font(drawing::font(label.font(), 72));

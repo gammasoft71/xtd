@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief The tabs are located along the right edge of the control.
       right = 3,
     };
-
+    
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, tab_alignment value) {return os << to_string(value, {{tab_alignment::top, "top"}, {tab_alignment::bottom, "bottom"}, {tab_alignment::left, "left"}, {tab_alignment::right, "right"}});}
     inline std::wostream& operator<<(std::wostream& os, tab_alignment value) {return os << to_string(value, {{tab_alignment::top, L"top"}, {tab_alignment::bottom, L"bottom"}, {tab_alignment::left, L"left"}, {tab_alignment::right, L"right"}});}

@@ -6,7 +6,7 @@ using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms;
 
-class something_ready_notifier : public object{
+class something_ready_notifier : public object {
 public:
   something_ready_notifier() = default;
   

@@ -31,7 +31,7 @@ namespace xtd {
       /// @brief Initializes a new instance of settings class.
       settings();
       /// @}
-
+      
       /// @cond
       ~settings();
       /// @endcond
@@ -53,10 +53,10 @@ namespace xtd {
       type_t read(const xtd::ustring& key, const type_t& default_value) {
         return xtd::parse<type_t>(read_string(key, xtd::ustring::format("{}", default_value)));
       }
-
+      
       /// @brief Reset application settings.
       void reset();
-
+      
       /// @brief Save application settings.
       void save();
       

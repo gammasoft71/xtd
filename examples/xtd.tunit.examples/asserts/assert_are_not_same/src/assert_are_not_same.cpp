@@ -10,7 +10,7 @@ namespace unit_tests {
       int b =  24;
       assert::are_not_same(b, a);
     }
-
+    
     void test_method_(test_case_failed) {
       int a = 24;
       int& b = a;

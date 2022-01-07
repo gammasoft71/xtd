@@ -62,7 +62,7 @@ namespace xtd {
       /// @return unsigned int The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
       unsigned int indent_level() const;
-
+      
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
@@ -72,22 +72,22 @@ namespace xtd {
       /// @return unsigned int The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
       unsigned int indent_size() const;
-
+      
       /// @brief Sets the number of spaces in an indent.
       /// @param int32 The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
       void indent_size(unsigned int indent_size);
-
+      
       /// @brief Gets a value indicating whether the trace listener is thread safe.
       /// @return bool true if the trace listener is thread safe; otherwise, false. The default is false.
       /// @remarks The value of IsThreadSafe is used to determine whether to use a global lock when writing to the listener. If the value of IsThreadSafe is false, the global lock is used regardless of the value of UseGlobalLock. The global lock is not used only if the value of IsThreadSafe is true and the value of UseGlobalLock is false. The default behavior is to use the global lock whenever writing to the listener.
       virtual bool is_thread_safe() const;
-
+      
       /// @brief Gets or sets a name for this TraceListener.
       /// @return string A name for this TraceListener. The default is an empty string ("").
       /// @remarks The name can be used to organize and access listeners in a TraceListenerCollection collection.
       const xtd::ustring& name() const;
-
+      
       /// @brief Sets a name for this TraceListener.
       /// @param name A name for this TraceListener. The default is an empty string ("").
       /// @remarks The name can be used to organize and access listeners in a TraceListenerCollection collection.
@@ -101,7 +101,7 @@ namespace xtd {
       /// * The Write and WriteLine methods of the ConsoleTraceListener, DefaultTraceListener, and TextWriterTraceListener classes.
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
       const trace_options& trace_output_options() const;
-
+      
       /// @brief Sets the trace output options.
       /// @param trace_output_options A bitwise combination of the enumeration values. The default is None.
       /// @remarks The TraceOutputOptions property determines the optional content of trace output. The property can be set in the configuration file or programmatically during execution to include additional data specifically for a section of code. For example, you can set the TraceOutputOptions property for the console trace listener to TraceOptions.Callstack to add call stack information to the trace output.
@@ -111,7 +111,7 @@ namespace xtd {
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
       void trace_output_options(const trace_options& trace_output_options);
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -123,9 +123,9 @@ namespace xtd {
       /// @param message A message to emit.
       /// @remarks The default behavior is to display the specified message in a message box when the application is running in a user-interface mode, and to the TraceListener instances in a TraceListenerCollection collection. By default, the TraceListenerCollection collection has an instance of a DefaultTraceListener. You can customize this behavior by adding a TraceListener to or removing one from the collection.
       virtual void fail(const xtd::ustring& message) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("Fail: {}", message));
-#endif
+        #endif
       }
       
       /// @brief Emits the specified error message.
@@ -133,9 +133,9 @@ namespace xtd {
       /// @param detailMessage A detailed message to emit.
       /// @remarks The default behavior is to display the message and detailed message in a message box when the application is running in a user-interface mode, and to the TraceListener instances in a TraceListenerCollection collection. By default, the TraceListenerCollection collection has an instance of a DefaultTraceListener. You can customize this behavior by adding a TraceListener to or removing one from the collection.
       virtual void fail(const xtd::ustring& message, const xtd::ustring& detail_message) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("Fail: {} {}", message, detail_message));
-#endif
+        #endif
       }
       
       /// @brief When overridden in a derived class, flushes the output buffer.
@@ -151,10 +151,10 @@ namespace xtd {
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
       template<typename object>
       void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int id, const object& data) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, data));
         write_event_cache(event_cache);
-#endif
+        #endif
       }
       
       /// @brief Writes trace information, a data object and event information to the listener specific output.
@@ -167,10 +167,10 @@ namespace xtd {
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
       template<typename object>
       void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int id, const std::vector<object>& data) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, xtd::ustring::join(", ", data)));
         write_event_cache(event_cache);
-#endif
+        #endif
       }
       
       /// @brief Writes trace information, an array of data objects and event information to the listener specific output.
@@ -183,10 +183,10 @@ namespace xtd {
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
       template<typename ...objects>
       void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int id, const objects& ... data) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, xtd::ustring::join(", ", {data...})));
         write_event_cache(event_cache);
-#endif
+        #endif
       }
       
       /// @brief Writes trace and event information to the listener specific output.
@@ -197,10 +197,10 @@ namespace xtd {
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
       virtual void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int id) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {}", source, event_type, id));
         write_event_cache(event_cache);
-#endif
+        #endif
       }
       
       /// @brief Writes trace information, a message, and event information to the listener specific output.
@@ -212,12 +212,12 @@ namespace xtd {
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
       virtual void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int id, const xtd::ustring& message) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, message));
         write_event_cache(event_cache);
-#endif
+        #endif
       }
-
+      
       /// @brief Writes trace information, a formatted array of objects and event information to the listener specific output.
       /// @param event_cache A trace_event_cache object that contains the current process ID, thread ID, and stack trace information.
       /// @param source A name used to identify the output, typically the name of the application that generated the trace event.
@@ -229,10 +229,10 @@ namespace xtd {
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The args object array is converted to a string using the Format method, passing the format string and args array to format the string as the message portion of the trace. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
       template<typename ...objects>
       void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int id, const xtd::ustring& format, const objects& ... args) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, xtd::ustring::format(format, args...)));
         write_event_cache(event_cache);
-#endif
+        #endif
       }
       
       /// @brief Writes trace information, a message, a related activity identity and event information to the listener specific output.
@@ -246,19 +246,19 @@ namespace xtd {
       /// @remarks activity_id_type is generally a guid.
       template<typename activity_id_type>
       void trace_transfer(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, int id, const xtd::ustring& message, const activity_id_type& related_activity_id) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} transfer: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
         write_event_cache(event_cache);
-#endif
+        #endif
       }
       
       /// @brief Writes the value of the object's ToString method to the listener you create when you implement the TraceListener class.
       /// @param o An Object whose fully qualified class name you want to write.
       template <typename object>
       void write(const object& o) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write(xtd::ustring::format("{}", o));
-#endif
+        #endif
       }
       
       /// @brief Writes a category name and the value of the object's ToString method to the listener you create when you implement the TraceListener class.
@@ -266,11 +266,11 @@ namespace xtd {
       /// @param category A category name used to organize the output.
       template <typename object>
       void write(const object& o, const xtd::ustring& category) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write(xtd::ustring::format("{} : {}", o, category));
-#endif
+        #endif
       }
-
+      
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
       virtual void write(const xtd::ustring& message) = 0;
@@ -279,9 +279,9 @@ namespace xtd {
       /// @param o An Object whose fully qualified class name you want to write.
       template <typename object>
       void write_line(const object& o) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{}", o));
-#endif
+        #endif
       }
       
       /// @brief Writes a category name and the value of the object's ToString method to the listener you create when you implement the TraceListener class.
@@ -289,11 +289,11 @@ namespace xtd {
       /// @param category A category name used to organize the output.
       template <typename object>
       void write_line(const object& o, const xtd::ustring& category) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} : {}", o, category));
-#endif
+        #endif
       }
-
+      
       /// @brief Writes the message to the listener you create when you implement the trace_listener class followed by a line terminator.followed by a line terminator.
       /// @param message A string you want to write.
       virtual void write_line(const xtd::ustring& message) = 0;
@@ -302,13 +302,13 @@ namespace xtd {
       /// @cond
       template<typename object>
       trace_listener& operator<<(object&& message) {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(message);
-#endif
+        #endif
         return *this;
       }
       /// @endcond
-
+      
     protected:
       /// @name Protected properties
       
@@ -324,21 +324,21 @@ namespace xtd {
       /// @param thread_safe true if the trace listener is thread safe; otherwise, false. The default is false.
       void thread_safe(bool thread_safe);
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
       /// @brief Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to false.
       /// @remarks This method writes the indent and resets the NeedIndent property to false. Call this method if NeedIndent is true when you are overriding the Write and WriteLine methods. By default, this method uses blank spaces for indentation. The size of the indent is determined by the values of the IndentSize and IndentLevel properties. The IndentLevel property represents the number of times the indent of the size specified by the IndentSize property is applied. This method is called by the DefaultTraceListener and TextWriterTraceListener classes.
       virtual void write_indent() {
-#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         need_indent_ = false;
         for (unsigned int i = 0; i < indent_level_; ++i)
           write(xtd::ustring(indent_size_, ' '));
-#endif
+        #endif
       }
       /// @}
-
+      
     private:
       void write_event_cache(const trace_event_cache& event_cache);
       

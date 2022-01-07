@@ -29,7 +29,7 @@ namespace xtd {
     public:
       /// @name Constructors
       
-      /// @{      
+      /// @{
       /// @brief Initializes a new instance of the default_trace_listener class with "default" as its xtd::diagnostics::default_trace_listener::name property value.
       /// @par Examples
       /// The following code example removes the xtd::diagnostics::default_trace_listener provided by the application from the xtd::diagnostics::trace::listeners collection and then creates a new xtd::diagnostics::default_trace_listener and adds it to the xtd::diagnostics::trace::listeners collection.
@@ -88,7 +88,7 @@ namespace xtd {
       /// }
       /// @endcode
       void assert_ui_enabled(bool assert_ui_enabled);
-
+      
       /// @brief Gets the name of a log file to write trace or debug messages to.
       /// @return The name of a log file to write trace or debug messages to.
       /// @par Examples
@@ -133,11 +133,11 @@ namespace xtd {
       /// @}
       
     private:
-#if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
+      #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
       bool assert_ui_enabled_ = true;
-#else
+      #else
       bool assert_ui_enabled_ = false;
-#endif
+      #endif
       xtd::ustring log_file_name_;
       xtd::ustring message_line_;
     };

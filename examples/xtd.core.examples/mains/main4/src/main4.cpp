@@ -10,7 +10,7 @@ namespace examples {
       // Write arguments to the console output
       for (ustring arg : args)
         console::write_line(arg);
-
+        
       return 42;
     }
   };

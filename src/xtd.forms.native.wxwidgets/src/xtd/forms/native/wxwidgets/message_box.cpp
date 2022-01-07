@@ -42,20 +42,20 @@ void message_box::show_sheet(xtd::delegate<void(int)> on_dialog_closed, intptr_t
 namespace {
   int32_t convert_to_dialog_result(int32_t wx_result, uint32_t style) {
     switch (wx_result) {
-      case wxID_OK: return (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDRETRY : IDOK;
-      case wxID_CANCEL: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDIGNORE : (style & MB_YESNO) == MB_YESNO ? IDNO : (style & MB_OK) == MB_OK ? IDOK : IDCANCEL;
-      case wxID_YES: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDABORT : IDYES;
-      case wxID_NO: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDRETRY : IDNO;
+    case wxID_OK: return (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDRETRY : IDOK;
+    case wxID_CANCEL: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDIGNORE : (style & MB_YESNO) == MB_YESNO ? IDNO : (style & MB_OK) == MB_OK ? IDOK : IDCANCEL;
+    case wxID_YES: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDABORT : IDYES;
+    case wxID_NO: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDRETRY : IDNO;
     }
     return IDOK;
   }
   
   int32_t convert_to_buttons(uint32_t style) {
-    if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) return wxOK|wxCANCEL;
-    if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) return wxYES_NO|wxCANCEL;
+    if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) return wxOK | wxCANCEL;
+    if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) return wxYES_NO | wxCANCEL;
     if ((style & MB_YESNO) == MB_YESNO) return wxYES_NO;
-    if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) return wxYES_NO|wxCANCEL;
-    if ((style & MB_OKCANCEL) == MB_OKCANCEL)return wxOK|wxCANCEL;
+    if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) return wxYES_NO | wxCANCEL;
+    if ((style & MB_OKCANCEL) == MB_OKCANCEL)return wxOK | wxCANCEL;
     return wxOK;
   }
   
