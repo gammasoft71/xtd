@@ -29,8 +29,7 @@ const ustring& tool_bar_button::text() const {
 }
 
 tool_bar_button& tool_bar_button::text(const xtd::ustring& value) {
-  if (text_ != value)
-    text_ = value;
+  text_ = value;
   return *this;
 }
 
@@ -39,8 +38,7 @@ size_t tool_bar_button::image_index() const {
 }
 
 tool_bar_button& tool_bar_button::image_index(size_t value) {
-  if (image_index_ != value)
-    image_index_ = value;
+  image_index_ = value;
   return *this;
 }
 

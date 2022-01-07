@@ -317,7 +317,7 @@ namespace xtd {
       friend class system_fonts;
       friend class xtd::forms::native::font_dialog;
       font() = default;
-      font(intptr_t hfont);
+      explicit font(intptr_t hfont);
       struct data {
         intptr_t handle_ = 0;
         drawing::font_family font_family_;

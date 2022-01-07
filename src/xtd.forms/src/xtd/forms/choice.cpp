@@ -58,7 +58,7 @@ choice& choice::selected_item(const item& selected_item) {
   if (selected_item_ != selected_item) {
     auto it = std::find(items_.begin(), items_.end(), selected_item);
     if (it == items_.end())
-      selected_item_ = selected_index() != npos ? items()[selected_index()] : "";
+      selected_item_ = selected_index() != npos ? items()[selected_index()] : item {""};
     else {
       size_t index = it - items_.begin();
       selected_index(index);

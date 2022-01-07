@@ -6,7 +6,6 @@ The following code example demonstrates how to create a text file and write text
 The file is then filed using the xtd::io::stream_writer::write and xtd::io::stream_writer::write_line functions.
  
 ```c++
-#include <chrono>
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -23,7 +22,7 @@ public:
     sw.write_line("...or just write");
     sw.write_line("and do {0} output too.", "formatted");
     sw.write_line("You can also send non-text objects:");
-    sw.write_line(std::chrono::system_clock::now());
+    sw.write_line(date_time::now());
     sw.close();
     console::write_line("a new file ('{0}') has been written", file_name);
   }

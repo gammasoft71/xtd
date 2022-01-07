@@ -18,8 +18,7 @@ solid_brush& solid_brush::color(const drawing::color& color) {
   return *this;
 }
 
-solid_brush::solid_brush(const solid_brush& value) : brush(value) {
-  data_ = value.data_;
+solid_brush::solid_brush(const solid_brush& value) : brush(value), data_(value.data_) {
 }
 
 solid_brush& solid_brush::operator=(const solid_brush& value) {

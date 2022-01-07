@@ -24,7 +24,7 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      texture_brush(const drawing::image& image) {this->image(image);}
+      explicit texture_brush(const drawing::image& image) {this->image(image);}
       /// @}
 
       /// @cond

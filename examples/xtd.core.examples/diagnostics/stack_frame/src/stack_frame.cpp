@@ -19,7 +19,7 @@ void method2(int count) {
 void method1() {
   try {
     method2(4);
-  } catch (system_exception e) {
+  } catch (const system_exception& e) {
     stack_trace st;
     stack_trace st1(stack_frame(true));
     console::write_line(" Stack trace for Method1: {0}", st1.to_string());
@@ -34,7 +34,7 @@ void method1() {
 int main() {
   try {
     method1();
-  } catch (system_exception e) {
+  } catch (const system_exception& e) {
     stack_trace st;
     stack_trace st1(stack_frame(true));
     console::write_line(" Stack trace for Main: {0}", st1.to_string());

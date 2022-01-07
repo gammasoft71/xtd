@@ -123,7 +123,7 @@ namespace xtd {
       void on_item_updated(size_t pos, tool_bar_item_ref item);
       void on_item_removed(size_t pos, tool_bar_item_ref item);
 
-      void wm_click(message& message);
+      void wm_click(const message& message);
       
       struct data {
         forms::border_sides border_sides = forms::border_sides::all;

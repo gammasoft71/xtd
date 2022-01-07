@@ -7,8 +7,7 @@ trace_listener::~trace_listener() {
   close();
 }
 
-trace_listener::trace_listener(const ustring& name) {
-  name_ = name;
+trace_listener::trace_listener(const ustring& name) : name_{name} {
 }
 
 unsigned int trace_listener::indent_level() const {

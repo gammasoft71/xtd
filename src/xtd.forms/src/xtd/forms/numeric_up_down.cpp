@@ -58,12 +58,9 @@ numeric_up_down& numeric_up_down::minimum(double value) {
 
 numeric_up_down& numeric_up_down::value(double value) {
   if (value_ != value) {
-    if (value > maximum_)
-      value_ = maximum_;
-    if (value < minimum_)
-      value_ = minimum_;
-    else
-      value_ = value;
+    if (value > maximum_) value_ = maximum_;
+    else if (value < minimum_) value_ = minimum_;
+    else value_ = value;
     if (is_handle_created()) native::numeric_up_down::value(handle(), value_);
     on_value_changed(event_args::empty);
   }

@@ -33,7 +33,7 @@ namespace xtd {
         friend xtd::forms::native::domain_up_down;
         friend xtd::forms::native::wx_domain_up_down;
       private:
-        wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long textBoxStyle = 0, long spinStyle = 0) : wxPanel(parent, winid, pos, size) {
+        explicit wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long textBoxStyle = 0, long spinStyle = 0) : wxPanel(parent, winid, pos, size) {
           textBox = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, textBoxStyle);
           upDown = new wxSpinButton(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, spinStyle);
           
@@ -104,7 +104,7 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::domain_up_down;
       private:
-        wx_domain_up_down(const forms::create_params& create_params) {
+        explicit wx_domain_up_down(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           int32_t height = create_params.height();
 #if defined(__WXGTK__)

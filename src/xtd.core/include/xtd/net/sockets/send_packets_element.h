@@ -53,7 +53,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified buffer.
         /// @param buffer A byte array of data to send using the xtd::net::sockets::socket::send_packets_async method.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
-        send_packets_element(const std::vector<byte_t>& buffer);
+        explicit send_packets_element(const std::vector<byte_t>& buffer);
 
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified range of the file with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
         /// @param file_path The filename of the file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
@@ -99,12 +99,12 @@ namespace xtd {
         /// @param file_path The filename of the file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
         /// @remarks Universal Naming Convention (UNC) paths are supported by the file_path parameter. If the file is in the current working directory, no path information needs to be specified.
-        send_packets_element(const xtd::ustring& file_path);
+        explicit send_packets_element(const xtd::ustring& file_path);
 
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified FileStream object.
         /// @param file_stream The file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
-        send_packets_element(std::ifstream& file_stream);
+        explicit send_packets_element(std::ifstream& file_stream);
         /// @}
 
         /// @cond

@@ -16,31 +16,27 @@ using namespace xtd::forms;
 
 map<int32_t, reference_wrapper<menu>> menu::handles_;
 
-menu::menu() {
-  data_ = make_shared<data>();
+menu::menu() : data_(make_shared<data>()) {
   //data_->mdi_list_item_ = make_unique<menu_item>();
   data_->menu_items_.item_added += {*this, &menu::on_item_added};
   data_->menu_items_.item_removed += {*this, &menu::on_item_removed};
 }
 
-menu::menu(const menu_item_collection& items) {
-  data_ = make_shared<data>();
-  //data_->mdi_list_item_ = make_unique<menu_item>();
-  data_->menu_items_.item_added += {*this, &menu::on_item_added};
-  data_->menu_items_.item_removed += {*this, &menu::on_item_removed};
-  data_->menu_items_.push_back_range(items);
-}
-
-menu::menu(const initializer_list<menu_item_ref>& items) {
-  data_ = make_shared<data>();
+menu::menu(const menu_item_collection& items) : data_(make_shared<data>()) {
   //data_->mdi_list_item_ = make_unique<menu_item>();
   data_->menu_items_.item_added += {*this, &menu::on_item_added};
   data_->menu_items_.item_removed += {*this, &menu::on_item_removed};
   data_->menu_items_.push_back_range(items);
 }
 
-menu::menu(const vector<menu_item_ref>& items) {
-  data_ = make_shared<data>();
+menu::menu(const initializer_list<menu_item_ref>& items) : data_(make_shared<data>()) {
+  //data_->mdi_list_item_ = make_unique<menu_item>();
+  data_->menu_items_.item_added += {*this, &menu::on_item_added};
+  data_->menu_items_.item_removed += {*this, &menu::on_item_removed};
+  data_->menu_items_.push_back_range(items);
+}
+
+menu::menu(const vector<menu_item_ref>& items) : data_(make_shared<data>()) {
   //data_->mdi_list_item_ = make_unique<menu_item>();
   data_->menu_items_.item_added += {*this, &menu::on_item_added};
   data_->menu_items_.item_removed += {*this, &menu::on_item_removed};

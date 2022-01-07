@@ -42,7 +42,7 @@ namespace xtd {
       trace_listener_collection(const std::initializer_list<value_type>& il);
       /// @}
       /// @cond
-      trace_listener_collection(const base& collection);
+      explicit trace_listener_collection(const base& collection);
       trace_listener_collection(const trace_listener_collection& collection);
       trace_listener_collection& operator=(const trace_listener_collection& collection);
       trace_listener_collection(trace_listener_collection&&) = default;

@@ -20,7 +20,7 @@ namespace xtd {
       
       class wxMonthCalendar : public wxPanel {
       public:
-        wxMonthCalendar(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize) : wxPanel(parent, winid, pos, size) {
+        explicit wxMonthCalendar(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize) : wxPanel(parent, winid, pos, size) {
         }
         
         wxCalendarCtrl* calendarCtrl = new wxCalendarCtrl(this, wxID_ANY, wxDefaultDateTime, {0, 0}, wxDefaultSize, wxCAL_SHOW_HOLIDAYS);
@@ -33,7 +33,7 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::month_calendar;
       private:
-        wx_month_calendar(const xtd::forms::create_params& create_params) {
+        explicit wx_month_calendar(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, csf_);
             control_handler::create<wxMonthCalendar>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.location().x(), create_params.location().y()), wxSize(create_params.size().width(), create_params.size().height()));
 #if defined(__WIN32__)

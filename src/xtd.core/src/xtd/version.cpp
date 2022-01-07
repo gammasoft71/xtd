@@ -100,7 +100,11 @@ bool version::try_parse(const xtd::ustring& input, version& result) noexcept {
 }
 
 xtd::ustring version::to_string() const noexcept {
-  return to_string(2 + (build_ != -1 ? 1 : 0) + (revision_ != -1 ? 1 : 0));
+  try {
+    return to_string(2 + (build_ != -1 ? 1 : 0) + (revision_ != -1 ? 1 : 0));
+  } catch(...) {
+    return "";
+  }
 }
 
 xtd::ustring version::to_string(size_t field_count) const {
@@ -119,5 +123,9 @@ xtd::ustring version::to_string(size_t field_count) const {
 }
 
 std::ostream& xtd::operator<<(std::ostream& os, const version& ver) noexcept {
-  return os << ver.to_string();
+  try {
+    return os << ver.to_string();
+  } catch (...) {
+    return os;
+  }
 }

@@ -540,8 +540,7 @@ void hatch_brush::recreate_handle() {
   native::brush::texture(brush::data_->handle_, (it != textures.end() ? it->second(data_->fore_color_, data_->back_color_) : create_empty_texture(data_->fore_color_, data_->back_color_)).handle());
 }
 
-hatch_brush::hatch_brush(const hatch_brush& value) : brush(value) {
-  data_ = value.data_;
+hatch_brush::hatch_brush(const hatch_brush& value) : brush(value), data_(value.data_) {
 }
 
 hatch_brush& hatch_brush::operator=(const hatch_brush& value) {

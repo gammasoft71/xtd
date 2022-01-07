@@ -409,24 +409,24 @@ namespace xtd {
 
     bool operator==(const ustring& other) const;
     bool operator!=(const ustring& other) const;
-    bool operator==(const std::string other) const;
-    bool operator!=(const std::string other) const;
+    bool operator==(const std::string& other) const;
+    bool operator!=(const std::string& other) const;
     bool operator==(const value_type* other) const;
     bool operator!=(const value_type* other) const;
-    bool operator==(const std::u8string other) const;
-    bool operator!=(const std::u8string other) const;
+    bool operator==(const std::u8string& other) const;
+    bool operator!=(const std::u8string& other) const;
     bool operator==(const char8_t* other) const;
     bool operator!=(const char8_t* other) const;
-    bool operator==(const std::u16string other) const;
-    bool operator!=(const std::u16string other) const;
+    bool operator==(const std::u16string& other) const;
+    bool operator!=(const std::u16string& other) const;
     bool operator==(const char16_t* other) const;
     bool operator!=(const char16_t* other) const;
-    bool operator==(const std::u32string other) const;
-    bool operator!=(const std::u32string other) const;
+    bool operator==(const std::u32string& other) const;
+    bool operator!=(const std::u32string& other) const;
     bool operator==(const char32_t* other) const;
     bool operator!=(const char32_t* other) const;
-    bool operator==(const std::wstring other) const;
-    bool operator!=(const std::wstring other) const;
+    bool operator==(const std::wstring& other) const;
+    bool operator!=(const std::wstring& other) const;
     bool operator==(const wchar_t* other) const;
     bool operator!=(const wchar_t* other) const;
     const value_type& operator[](size_t index);
@@ -709,47 +709,48 @@ namespace xtd {
       ustring result;
       size_t index = 0;
       std::vector<__format_information<char>> formats;
-      typename ustring::const_iterator begin_format_iterator =  fmt.cend();
-      typename ustring::const_iterator end_format_iterator =  fmt.cend();
-      for (typename ustring::const_iterator iterator = fmt.cbegin(); iterator != fmt.cend(); ++iterator) {
+      auto begin_format_iterator =  fmt.end();
+      auto end_format_iterator =  fmt.end();
+      for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
         if (*iterator == '{') {
-          ++iterator;
+          if (++iterator == fmt.end())
+            __throw_ustring_format_exception_open_bracket();
           if (*iterator == '{')
             result += *iterator;
           else {
             begin_format_iterator = iterator;
-            while (*iterator != '}' && iterator != fmt.end()) ++iterator;
+            while (iterator != fmt.end() && *iterator != '}') ++iterator;
             if (iterator == fmt.end())
               __throw_ustring_format_exception_open_bracket();
             end_format_iterator = iterator;
             __format_information<char> fi;
             fi.location = result.size();
-            std::string format {begin_format_iterator, end_format_iterator};
-            if (format.size() == 0)
+            std::string format_str {begin_format_iterator, end_format_iterator};
+            if (format_str.size() == 0)
               fi.index = index++;
             else {
-              size_t index_alignment_separator = ustring(format).index_of(',');
-              size_t index_format_separator = ustring(format).index_of(u8':');
+              size_t index_alignment_separator = ustring(format_str).index_of(',');
+              size_t index_format_separator = ustring(format_str).index_of(u8':');
               
               if (index_alignment_separator != std::string::npos && index_format_separator != std::string::npos && index_alignment_separator > index_format_separator)
                 index_alignment_separator = std::string::npos;
               
               if (index_alignment_separator != std::string::npos)
-                fi.alignment = format.substr(index_alignment_separator + 1, index_format_separator != std::string::npos ? index_format_separator - index_alignment_separator - 1 : std::string::npos);
+                fi.alignment = format_str.substr(index_alignment_separator + 1, index_format_separator != std::string::npos ? index_format_separator - index_alignment_separator - 1 : std::string::npos);
               
               if (index_format_separator != std::string::npos)
-                fi.format = format.substr(index_format_separator + 1);
+                fi.format = format_str.substr(index_format_separator + 1);
               
               if (index_alignment_separator == 0 || index_format_separator == 0)
                 fi.index = index++;
               else {
                 std::string index_str;
                 if (index_alignment_separator != std::string::npos)
-                  index_str = format.substr(0, index_alignment_separator);
+                  index_str = format_str.substr(0, index_alignment_separator);
                 else if (index_format_separator != std::string::npos)
-                  index_str = format.substr(0, index_format_separator);
+                  index_str = format_str.substr(0, index_format_separator);
                 else
-                  index_str = format;
+                  index_str = format_str;
                 try {
                   for (auto c : index_str)
                     if (!std::isdigit(c)) __throw_ustring_format_exception_start_colon();
@@ -762,7 +763,7 @@ namespace xtd {
             formats.push_back(fi);
           }
         } else if (*iterator == '}') {
-          if (++iterator == fmt.cend())
+          if (++iterator == fmt.end())
             __throw_ustring_format_exception_close_bracket();
           if (*iterator != '}')
             __throw_ustring_format_exception_close_bracket();

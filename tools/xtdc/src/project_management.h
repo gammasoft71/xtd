@@ -726,7 +726,7 @@ namespace xtdc_command {
         "# Options",
         "set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa\")",
         "set(MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION})",
-        xtd::ustring::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", std::chrono::system_clock::now()),
+        xtd::ustring::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", xtd::date_time::now()),
         xtd::ustring::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name),
         xtd::ustring::format("set(MACOSX_BUNDLE_GUI_IDENTIFIER \"org.Company.{}\")", name),
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",

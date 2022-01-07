@@ -64,8 +64,7 @@ namespace xtd {
       /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
       /// @return Current input instance.
       input_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
-        if (dialog_style_ != dialog_style)
-          dialog_style_ = dialog_style;
+        dialog_style_ = dialog_style;
         return *this;
       }
       
@@ -78,8 +77,7 @@ namespace xtd {
       /// @return Current input_dialog instance.
       /// @remarks The default value is false.
       input_dialog& multiline(bool multiline) {
-        if (multiline_ != multiline)
-          multiline_ = multiline;
+        multiline_ = multiline;
         return *this;
       }
 
@@ -90,8 +88,7 @@ namespace xtd {
       /// @param message The text message.
       /// @return Current input_dialog instance.
       input_dialog& message(const xtd::ustring& message) {
-        if (message_ != message)
-          message_ = message;
+        message_ = message;
         return *this;
       }
       
@@ -102,8 +99,7 @@ namespace xtd {
       /// @param text The new dialog caption text.
       /// @return Current input_dialog instance.
       input_dialog& text(const xtd::ustring& text) {
-        if (text_ != text)
-          text_ = text;
+        text_ = text;
         return *this;
       }
 
@@ -146,8 +142,7 @@ namespace xtd {
       /// @return Current input_dialog instance.
       /// @remarks The default value is true.
       input_dialog& word_wrap(bool word_wrap) {
-        if (word_wrap_ != word_wrap)
-          word_wrap_ = word_wrap;
+        word_wrap_ = word_wrap;
         return *this;
       }
       /// @}

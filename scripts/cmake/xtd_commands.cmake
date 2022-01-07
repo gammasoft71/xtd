@@ -1808,7 +1808,7 @@ macro(write_settings_file_header)
 
   file(APPEND ${SETTINGS_FILE_HEADER}
     "  private:\n"
-    "    settings(bool load) {if (load) reload();}\n"
+    "    explicit settings(bool load) {if (load) reload();}\n"
     "    xtd::forms::settings settings_;\n"
   )
 

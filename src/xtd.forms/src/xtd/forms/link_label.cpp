@@ -31,13 +31,7 @@ link_label::link_collection::reference link_label::link_collection::operator[](c
   return empty_;
 }
 
-link_label::link_label() {
-  active_link_color_ = application::dark_mode_enabled() ? color::from_argb(0xFFD03E3D) : xtd::drawing::color::red;
-  disabled_link_color_ = application::dark_mode_enabled() ? xtd::drawing::color::from_argb(0xFF858585) : xtd::drawing::color::from_argb(0xFF858585);
-  link_color_ = application::dark_mode_enabled() ? xtd::drawing::color::dodger_blue : xtd::drawing::color::blue;
-  visited_link_color_ = application::dark_mode_enabled() ? xtd::drawing::color::light_sky_blue : xtd::drawing::color::purple;
-  override_cursor_ = xtd::forms::cursors::hand();
-  
+link_label::link_label() : active_link_color_(application::dark_mode_enabled() ? color::from_argb(0xFFD03E3D) : xtd::drawing::color::red), disabled_link_color_(application::dark_mode_enabled() ? xtd::drawing::color::from_argb(0xFF858585) : xtd::drawing::color::from_argb(0xFF858585)), link_color_(application::dark_mode_enabled() ? xtd::drawing::color::dodger_blue : xtd::drawing::color::blue), override_cursor_(xtd::forms::cursors::hand()), visited_link_color_(application::dark_mode_enabled() ? xtd::drawing::color::light_sky_blue : xtd::drawing::color::purple) {
   links_.item_added += [&] {
     if (links_.size() == 2 && links_[0].start() == 0 && links_[0].length() == text().length())
       links_.erase_at(0);
@@ -240,7 +234,6 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
 xtd::drawing::point link_label::get_text_location(size_t line_number) const {
   size_t line_index = 0;
   for (auto line : text().split({'\n'})) {
-    std::vector<std::tuple<xtd::drawing::rectangle, bool>> text_rects;
     point text_location;
     drawing::size text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font()));
     switch (text_align()) {
@@ -260,9 +253,9 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const {
   }
   return {0, 0};
 }
+
 std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects() const {
   std::vector<std::tuple<xtd::drawing::rectangle, bool>> text_rects;
- 
   size_t line_number = 0;
   size_t index = 0;
   for (auto line : text().split({'\n'})) {

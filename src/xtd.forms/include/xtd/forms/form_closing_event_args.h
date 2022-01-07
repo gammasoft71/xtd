@@ -26,7 +26,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the form_closing_event_args class.
       /// @param close_reason A xtd::forms::close_reason value that represents the reason why the form is being closed.
       /// @remarks The close_reason and cancel parameters are used to initialize the close_reason and cancel properties, respectively.
-      form_closing_event_args(xtd::forms::close_reason close_reason) : close_reason_(close_reason) {};
+      explicit form_closing_event_args(xtd::forms::close_reason close_reason) : close_reason_(close_reason) {};
       /// @}
 
       /// @cond

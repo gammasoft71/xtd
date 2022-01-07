@@ -6,9 +6,9 @@
 #include "../tunit_export.h"
 #include "assert.h"
 #include "assert_error.h"
+#include <xtd/date_time.h>
 #include <xtd/diagnostics/stack_frame.h>
 #include <functional>
-#include <chrono>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -61,9 +61,9 @@ namespace xtd {
       
       std::chrono::milliseconds elapsed_time() const noexcept {
         using namespace std::chrono_literals;
-        if (start_time_point.time_since_epoch() == 0ms && end_time_point.time_since_epoch() == 0ms) return 0ms;
-        if (end_time_point.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start_time_point);
-        return std::chrono::duration_cast<std::chrono::milliseconds>(end_time_point - start_time_point);
+        if (start_time_point.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
+        if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_point).ticks());
+        return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_point).ticks());
       }
 
       /// @cond
@@ -81,7 +81,7 @@ namespace xtd {
 
       void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
       
-      std::chrono::high_resolution_clock::time_point end_time_point;
+      xtd::date_time end_time_point;
       static test* current_test_;
       static const test_class* current_test_class_;
       static const unit_test* current_unit_test_;
@@ -91,7 +91,7 @@ namespace xtd {
       std::string message_;
       std::function<void()> method_;
       std::string name_;
-      std::chrono::high_resolution_clock::time_point start_time_point;
+      xtd::date_time start_time_point;
       test_status status_ = test_status::not_started;
       std::string user_message_;
     };

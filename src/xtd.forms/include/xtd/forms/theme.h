@@ -45,24 +45,21 @@ namespace xtd {
       const xtd::forms::theme_colors& theme_colors() const {return theme_colors_;}
       xtd::forms::theme_colors& theme_colors() {return theme_colors_;}
       theme& theme_colors(const xtd::forms::theme_colors& theme_colors) {
-        if (theme_colors_ != theme_colors)
-          theme_colors_ = theme_colors;
+        theme_colors_ = theme_colors;
         return *this;
       }
       
       const xtd::forms::theme_images& theme_images() const {return theme_images_;}
       xtd::forms::theme_images& theme_images() {return theme_images_;}
       theme& theme_images(const xtd::forms::theme_images& theme_images) {
-        if (theme_images_ != theme_images)
-          theme_images_ = theme_images;
+        theme_images_ = theme_images;
         return *this;
       }
       
       const xtd::forms::theme_renderers& theme_renderers() const {return theme_renderers_;}
       xtd::forms::theme_renderers& theme_renderers() {return theme_renderers_;}
       theme& theme_renderers(const xtd::forms::theme_renderers& theme_renderers) {
-        if (theme_renderers_ != theme_renderers)
-          theme_renderers_ = theme_renderers;
+        theme_renderers_ = theme_renderers;
         return *this;
       }
       /// @}

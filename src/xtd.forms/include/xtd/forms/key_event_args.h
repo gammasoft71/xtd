@@ -28,7 +28,7 @@ namespace xtd {
       key_event_args() = default;
       /// @brief Initializes a new instance of the key_event_args class.
       /// @param key_data A xtd::forms::keys representing the key that was pressed, combined with any modifier flags that indicate which CMD, CTRL, SHIFT, and ALT keys were pressed at the same time. Possible values are obtained by applying the bitwise OR (|) operator to constants from the Keys enumeration.
-      key_event_args(xtd::forms::keys key_data) : key_data_(key_data) {}
+      explicit key_event_args(xtd::forms::keys key_data) : key_data_(key_data) {}
       /// @}
       
       /// @cond

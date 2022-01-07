@@ -24,9 +24,9 @@ namespace xtd {
       /// @{
       /// @brief Initialises a new instance of xtd::forms::tool_bar_button class.
       tool_bar_button() = default;
-      tool_bar_button(const xtd::ustring& text);
+      explicit tool_bar_button(const xtd::ustring& text);
       tool_bar_button(const xtd::ustring& text, const xtd::event_handler& on_click);
-      tool_bar_button(size_t image_index);
+      explicit tool_bar_button(size_t image_index);
       tool_bar_button(size_t image_index, const xtd::event_handler& on_click);
       tool_bar_button(const xtd::ustring& text, size_t image_index);
       tool_bar_button(const xtd::ustring& text, size_t image_index, const xtd::event_handler& on_click);
