@@ -1,3 +1,11 @@
+## @file
+## @brief Contains the update xtd version number scripts.
+## @remarks If you change the version of the xtd, the CMake script will detect the change automatically and update the files that need the xtd version.
+## @remarks see xtd_version.cmake
+
+################################################################################
+# xtd Version
+
 file(READ src/xtd.core/src/xtd/environment_version.cpp ENVIRONMENT_VERSION_API)
 string(FIND "${ENVIRONMENT_VERSION_API}" "${XTD_VERSION}" STRING_FOUND)
 if (${STRING_FOUND} EQUAL -1)
