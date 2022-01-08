@@ -1,20 +1,24 @@
 # Doxyfile 1.8.14
 
+#---------------------------------------------------------------------------
+# Common guide configuration options
+#---------------------------------------------------------------------------
+
 @INCLUDE = doxygen.txt
 
 #---------------------------------------------------------------------------
 # Specific developer guide configuration options
 #---------------------------------------------------------------------------
 
-PROJECT_NAME           = "xtd - Developer Guide - Internal use only"
-PROJECT_BRIEF          = "Modern c++17/20 framework to create console, GUI and unit test applications on Windows, macOS, Linux, iOS and android."
-INPUT                  = ../../src/xtd/include/doxygen_developer \
-                         ../../src/xtd/include \
-                         ../../src/xtd.core.native/include \
-                         ../../src/xtd.core/include \
-                         ../../src/xtd.drawing.native/include \
-                         ../../src/xtd.drawing/include \
-                         ../../src/xtd.forms.native/include \
-                         ../../src/xtd.forms/include \
-                         ../../src/xtd.tunit/include
-HTML_OUTPUT            = developer_html
+PROJECT_NAME  = "xtd - Developer Guide - Internal use only"
+PROJECT_BRIEF = "Modern c++17/20 framework to create console, GUI and unit test applications on Windows, macOS, Linux, iOS and android."
+INPUT         = ../../src/xtd/include/doxygen_developer \
+                ../../src/xtd/include \
+                ../../src/xtd.core.native/include \
+                ../../src/xtd.core/include \
+                ../../src/xtd.drawing.native/include \
+                ../../src/xtd.drawing/include \
+                ../../src/xtd.forms.native/include \
+                ../../src/xtd.forms/include \
+                ../../src/xtd.tunit/include
+HTML_OUTPUT   = developer_html
