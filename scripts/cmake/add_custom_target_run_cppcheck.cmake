@@ -1,3 +1,9 @@
+## @file
+## @brief Contains run cppcheck command.
+
+################################################################################
+# Run cppcheck
+
 option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" ON)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
   

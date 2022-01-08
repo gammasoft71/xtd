@@ -1,3 +1,21 @@
+## @file
+## @file
+## @brief Contains xtd_update_export_file macro.
+
+################################################################################
+# xtd_update_export_file
+
+## @brief Updates the specified export file with spesified keyword and export.
+## @param path The path of the file to update
+## @param keyword The keyword to know if is export (build and link the library or import (build and link other project with this project).
+## @param export The export name for export keyword.
+## @par Example
+## This example shows how to invoke xtd_update_export_file for a project maned graphics :
+## ```
+## xtd_update_export_file(src/graphics/include/graphics/graphics_export.h GRAPHICS_EXPORT graphics_export_)
+## ```
+## @remarks The GRAPHICS_EXPORT keyword will be generated automatically by xtd_commands.cmake.
+## @remarks If you use more than one library per solution, you have to define GRAPHICS_EXPORT yourself.
 macro(xtd_update_export_file path keyword export)
   if (XTD_BUILD_SHARED_LIBRARIES)
     file(WRITE ${path} 

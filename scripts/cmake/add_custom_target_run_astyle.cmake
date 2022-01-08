@@ -1,4 +1,9 @@
-# See http://astyle.sourceforge.net for more information
+## @file
+## @brief Contains run astyle command.
+## @remarks See http://astyle.sourceforge.net for more information
+
+################################################################################
+# Run astyle
 
 # Options
 option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" ON)
