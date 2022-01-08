@@ -1,10 +1,10 @@
 # See http://astyle.sourceforge.net for more information
 
 # Options
-option(XTD_ENABLE_ASTYLE "Enable run astylle (format) command" ON)
+option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" ON)
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 
-if (XTD_ENABLE_ASTYLE)
+if (XTD_ENABLE_RUN_ASTYLE)
   # astyle command line arguments
   list(APPEND ASTYLE_ARGS
     --style=java

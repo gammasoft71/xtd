@@ -1,7 +1,7 @@
-option(XTD_ENABLE_CPPCHECK "Enable run cppcheck command" ON)
+option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" ON)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
   
-if (XTD_ENABLE_CPPCHECK)
+if (XTD_ENABLE_RUN_CPPCHECK)
   # cppcheck command line arguments
   list(APPEND CPPCHECK_ARGS
     --enable=warning,style,performance,portability,unusedFunction,missingInclude

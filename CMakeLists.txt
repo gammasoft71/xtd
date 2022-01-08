@@ -31,10 +31,10 @@ add_definitions(-D__XTD_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/cmake)
 
 # incldue xtd_commands
-include(scripts/cmake/xtd_commands.cmake)
-include(scripts/cmake/xtd_version.cmake)
 include(scripts/cmake/add_custom_target_run_astyle.cmake)
 include(scripts/cmake/add_custom_target_run_cppcheck.cmake)
+include(scripts/cmake/xtd_commands.cmake)
+include(scripts/cmake/xtd_version.cmake)
 include(scripts/cmake/update_export.cmake)
 include(scripts/cmake/update_version_number.cmake)
 
