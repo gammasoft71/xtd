@@ -142,8 +142,8 @@ REFERENCES_LINK_SOURCE = YES
 SOURCE_TOOLTIPS        = YES
 USE_HTAGS              = NO
 VERBATIM_HEADERS       = YES
-CLANG_ASSISTED_PARSING = NO
-CLANG_OPTIONS          = 
+#CLANG_ASSISTED_PARSING = NO # Generate warning
+#CLANG_OPTIONS          =    # Generate warning
 
 
 #---------------------------------------------------------------------------
@@ -262,7 +262,7 @@ PDF_HYPERLINKS         = YES
 USE_PDFLATEX           = YES
 LATEX_BATCHMODE        = NO
 LATEX_HIDE_INDICES     = NO
-LATEX_SOURCE_CODE      = NO
+#LATEX_SOURCE_CODE      = NO # Obsolete
 LATEX_BIB_STYLE        = plain
 LATEX_TIMESTAMP        = NO
 
@@ -276,7 +276,7 @@ COMPACT_RTF            = NO
 RTF_HYPERLINKS         = NO
 RTF_STYLESHEET_FILE    = 
 RTF_EXTENSIONS_FILE    = 
-RTF_SOURCE_CODE        = NO
+#RTF_SOURCE_CODE        = NO  # Obsolete
 
 #---------------------------------------------------------------------------
 # Configuration options related to the man page output
@@ -302,7 +302,7 @@ XML_PROGRAMLISTING     = YES
 
 GENERATE_DOCBOOK       = NO
 DOCBOOK_OUTPUT         = docbook
-DOCBOOK_PROGRAMLISTING = NO
+#DOCBOOK_PROGRAMLISTING = NO # Obsolete
 
 #---------------------------------------------------------------------------
 # Configuration options for the AutoGen Definitions output

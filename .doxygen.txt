@@ -1,0 +1,25 @@
+# Doxyfile 1.8.14
+
+@INCLUDE = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/doxygen.txt
+
+#---------------------------------------------------------------------------
+# Specific guide configuration options (for root location)
+#---------------------------------------------------------------------------
+
+EXAMPLE_PATH          = @CMAKE_CURRENT_SOURCE_DIR@/examples
+HTML_EXTRA_FILES      = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/favicon.png
+HTML_EXTRA_STYLESHEET = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/custom.css @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/custom_dark_theme.css @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/custom_images.css
+HTML_FOOTER           = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/html_footer.html
+HTML_HEADER           = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/html_header.html
+IMAGE_PATH            = @CMAKE_CURRENT_SOURCE_DIR@/docs/pictures
+INPUT                 = @CMAKE_CURRENT_SOURCE_DIR@/src/xtd/include/doxygen \
+                        @CMAKE_CURRENT_SOURCE_DIR@/src/xtd/include/xtd \
+                        @CMAKE_CURRENT_SOURCE_DIR@/src/xtd.core/include \
+                        @CMAKE_CURRENT_SOURCE_DIR@/src/xtd.drawing/include \
+                        @CMAKE_CURRENT_SOURCE_DIR@/src/xtd.forms/include \
+                        @CMAKE_CURRENT_SOURCE_DIR@/src/xtd.tunit/include
+LAYOUT_FILE          = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/xtd_doxygen_layout.xml
+OUTPUT_DIRECTORY     = 
+PROJECT_LOGO         = @CMAKE_CURRENT_SOURCE_DIR@/docs/pictures/xtd_doxygen.png
+STRIP_FROM_PATH      = @CMAKE_CURRENT_SOURCE_DIR@/src
+WARN_LOGFILE         = @CMAKE_CURRENT_BINARY_DIR@/doxygen_warnings.txt
