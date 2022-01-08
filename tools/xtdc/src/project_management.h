@@ -2939,7 +2939,7 @@ namespace xtdc_command {
       std::vector<xtd::ustring> lines {
         "# Doxyfile 1.8.14",
         "",
-        "# Remarks This file is use for CMake script RUN_REFERECNE_GUIDE.",
+        "# Remarks This file is use for CMake script RUN_REFERENCE_GUIDE.",
         "#         This file contains meta settings for CMake like @CMAKE_CURRENT_SOURCE_DIR@.",
         "#         CMake will generate the clean ${CMAKE_CURRENT_DIR}/doxygen.txt file with the meta parameters replaced by the corresponding values.",
         "#         If you want to generate doxygen manually, use ${CMAKE_CURRENT_BINARY_DIR}/doxygen.txt.",
