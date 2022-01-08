@@ -1,5 +1,10 @@
 # Doxyfile 1.8.14
 
+# Remarks This file is use for CMake script RUN_REFERECNE_GUIDE.
+#         This file contains meta settings for CMake like @CMAKE_CURRENT_SOURCE_DIR@.
+#         CMake will generate the clean ${CMAKE_CURRENT_DIR}/doxygen.txt file with the meta parameters replaced by the corresponding values.
+#         If you want to generate doxygen manually, use ${CMAKE_CURRENT_BINARY_DIR}/doxygen.txt or {CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen/doxygen.txt.
+
 @INCLUDE = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/doxygen.txt
 
 #---------------------------------------------------------------------------
@@ -18,8 +23,8 @@ INPUT                 = @CMAKE_CURRENT_SOURCE_DIR@/src/xtd/include/doxygen \
                         @CMAKE_CURRENT_SOURCE_DIR@/src/xtd.drawing/include \
                         @CMAKE_CURRENT_SOURCE_DIR@/src/xtd.forms/include \
                         @CMAKE_CURRENT_SOURCE_DIR@/src/xtd.tunit/include
-LAYOUT_FILE          = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/xtd_doxygen_layout.xml
-OUTPUT_DIRECTORY     = 
-PROJECT_LOGO         = @CMAKE_CURRENT_SOURCE_DIR@/docs/pictures/xtd_doxygen.png
-STRIP_FROM_PATH      = @CMAKE_CURRENT_SOURCE_DIR@/src
-WARN_LOGFILE         = @CMAKE_CURRENT_BINARY_DIR@/doxygen_warnings.txt
+LAYOUT_FILE           = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/xtd_doxygen_layout.xml
+OUTPUT_DIRECTORY      = 
+PROJECT_LOGO          = @CMAKE_CURRENT_SOURCE_DIR@/docs/pictures/xtd_doxygen.png
+STRIP_FROM_PATH       = @CMAKE_CURRENT_SOURCE_DIR@/src
+WARN_LOGFILE          = @CMAKE_CURRENT_BINARY_DIR@/doxygen_warnings.txt
