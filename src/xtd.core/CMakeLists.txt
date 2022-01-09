@@ -237,6 +237,20 @@ add_sources(
   include/xtd/net/sockets/tcp_listener.h
   include/xtd/net/sockets/transmit_file_options.h
   include/xtd/net/sockets/udp_client.h
+  include/xtd/reflection/assembly_company_attribute.h
+  include/xtd/reflection/assembly_configuration_attribute.h
+  include/xtd/reflection/assembly_copyright_attribute.h
+  include/xtd/reflection/assembly_culture_attribute.h
+  include/xtd/reflection/assembly_description_attribute.h
+  include/xtd/reflection/assembly_file_version_attribute.h
+  include/xtd/reflection/assembly_guid_attribute.h
+  include/xtd/reflection/assembly_identifier_attribute.h
+  include/xtd/reflection/assembly_info.h
+  include/xtd/reflection/assembly_product_attribute.h
+  include/xtd/reflection/assembly_title_attribute.h
+  include/xtd/reflection/assembly_trademark_attribute.h
+  include/xtd/reflection/assembly_version_attribute.h
+  include/xtd/reflection/assembly.h
   include/xtd/security/secure_string.h
   include/xtd/security/security_exception.h
   include/xtd/web/css/css_reader.h
@@ -335,6 +349,18 @@ add_sources(
   src/xtd/net/sockets/tcp_client.cpp
   src/xtd/net/sockets/tcp_listener.cpp
   src/xtd/net/sockets/udp_client.cpp
+  src/xtd/reflection/assembly_company_attribute.cpp
+  src/xtd/reflection/assembly_configuration_attribute.cpp
+  src/xtd/reflection/assembly_copyright_attribute.cpp
+  src/xtd/reflection/assembly_culture_attribute.cpp
+  src/xtd/reflection/assembly_description_attribute.cpp
+  src/xtd/reflection/assembly_file_version_attribute.cpp
+  src/xtd/reflection/assembly_guid_attribute.cpp
+  src/xtd/reflection/assembly_identifier_attribute.cpp
+  src/xtd/reflection/assembly_product_attribute.cpp
+  src/xtd/reflection/assembly_title_attribute.cpp
+  src/xtd/reflection/assembly_trademark_attribute.cpp
+  src/xtd/reflection/assembly_version_attribute.cpp
   src/xtd/security/secure_string.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})

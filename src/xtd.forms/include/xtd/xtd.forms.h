@@ -20,7 +20,6 @@
 #include "xtd/forms/appearance.h"
 #include "xtd/forms/application.h"
 #include "xtd/forms/application_context.h"
-#include "xtd/forms/application_informations.h"
 #include "xtd/forms/arrange_direction.h"
 #include "xtd/forms/arrange_starting_position.h"
 #include "xtd/forms/auto_size_mode.h"
