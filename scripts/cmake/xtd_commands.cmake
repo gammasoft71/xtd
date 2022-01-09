@@ -1999,6 +1999,14 @@ endif()
 option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" ON)
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 
+if (NOT ASTYLE_SOURCE_FILES)
+  set(ASTYLE_SOURCE_FILES
+   ${CMAKE_SOURCE_DIR}/*.cpp 
+   ${CMAKE_SOURCE_DIR}/*.mm 
+   ${CMAKE_SOURCE_DIR}/*.h
+  )
+endif ()
+
 if (XTD_ENABLE_RUN_ASTYLE AND NOT RUN_ASTYLE_ONLY_ONCE)
   set(RUN_ASTYLE_ONLY_ONCE TRUE)
   # astyle command line arguments
@@ -2031,13 +2039,7 @@ if (XTD_ENABLE_RUN_ASTYLE AND NOT RUN_ASTYLE_ONLY_ONCE)
     --close-templates
     --suffix=none
     --recursive
-    ${CMAKE_SOURCE_DIR}/src/*.cpp
-    ${CMAKE_SOURCE_DIR}/src/*.mm
-    ${CMAKE_SOURCE_DIR}/src/*.h
-    ${CMAKE_SOURCE_DIR}/tests/*.cpp
-    ${CMAKE_SOURCE_DIR}/tests/*.h
-    ${CMAKE_SOURCE_DIR}/examples/*.cpp
-    ${CMAKE_SOURCE_DIR}/examples/*.h
+    ${ASTYLE_SOURCE_FILES}
   )
   
   if (XTD_DOWNLOAD_ASTYLE)
@@ -2058,6 +2060,10 @@ endif ()
 
 option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" ON)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
+
+if (NOT CPPCHECK_SOURCE_ROOTS)
+  set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR})
+endif ()
   
 if (XTD_ENABLE_RUN_CPPCHECK AND NOT RUN_CPPCHECK_ONLY_ONCE)
   set(RUN_CPPCHECK_ONLY_ONCE TRUE)
@@ -2082,7 +2088,7 @@ if (XTD_ENABLE_RUN_CPPCHECK AND NOT RUN_CPPCHECK_ONLY_ONCE)
   endif()
   
   # RUN_CPPCHECK
-  list(APPEND CPPCHECK_ARGS_ALL ${CPPCHECK_ARGS} ${CMAKE_SOURCE_DIR}/src)
+  list(APPEND CPPCHECK_ARGS_ALL ${CPPCHECK_ARGS} ${CPPCHECK_SOURCE_ROOTS})
   configure_file(${CMAKE_SOURCE_DIR}/.cppcheck ${CMAKE_BINARY_DIR}/cppcheck_false_positive @ONLY)
   add_custom_target(RUN_CPPCHECK COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_ALL} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
   set_target_properties(RUN_CPPCHECK PROPERTIES FOLDER commands)

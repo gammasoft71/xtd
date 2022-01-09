@@ -34,6 +34,20 @@ add_definitions(-D__XTD_INSTALL_PATH__="${CMAKE_INSTALL_PREFIX}")
 add_definitions(-D__XTD_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/cmake)
 
+set(ASTYLE_SOURCE_FILES 
+  ${CMAKE_SOURCE_DIR}/src/*.cpp
+  ${CMAKE_SOURCE_DIR}/src/*.h
+  ${CMAKE_SOURCE_DIR}/src/*.mm
+  ${CMAKE_SOURCE_DIR}/tests/*.cpp
+  ${CMAKE_SOURCE_DIR}/tests/*.h
+  ${CMAKE_SOURCE_DIR}/tests/*.mm
+  ${CMAKE_SOURCE_DIR}/tools/*.cpp
+  ${CMAKE_SOURCE_DIR}/tools/*.h
+  ${CMAKE_SOURCE_DIR}/tools/*.mm
+)
+
+set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR}/src)
+
 # incldue xtd_commands
 include(scripts/cmake/xtd_commands.cmake)
 include(scripts/cmake/xtd_version.cmake)
