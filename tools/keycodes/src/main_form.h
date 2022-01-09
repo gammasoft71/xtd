@@ -13,7 +13,7 @@ namespace keycodes {
     
     /// @brief Initializes a new instance of the form1 class.
     main_form();
-
+    
   private:
     bool pre_process_message(xtd::forms::message& message) override;
     void on_clear_button_click(xtd::object& sender, const xtd::event_args& e);
@@ -32,7 +32,7 @@ namespace keycodes {
     xtd::forms::check_box show_key_press_check_box_;
     xtd::forms::check_box show_key_down_check_box_;
     xtd::forms::button clear_button_;
-    xtd::forms::menu_item file_clear_menu_item_ {xtd::forms::system_texts::clear(), {*this, &main_form::on_clear_button_click}, xtd::forms::menu_images::from_name("edit-delete"), xtd::forms::shortcut::cmd_del}; 
+    xtd::forms::menu_item file_clear_menu_item_ {xtd::forms::system_texts::clear(), {*this, &main_form::on_clear_button_click}, xtd::forms::menu_images::from_name("edit-delete"), xtd::forms::shortcut::cmd_del};
     xtd::forms::menu_item file_separator1_menu_item_ {"-"};
     xtd::forms::menu_item file_exit_menu_item_ {xtd::forms::system_texts::exit(), {overload_<>(&xtd::forms::application::exit)}, xtd::forms::menu_images::file_exit(), xtd::forms::shortcut::alt_f4};
     xtd::forms::menu_item file_menu_item_ {xtd::forms::system_texts::file(), {file_clear_menu_item_, file_separator1_menu_item_, file_exit_menu_item_}};

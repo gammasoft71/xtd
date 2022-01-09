@@ -12,7 +12,7 @@ namespace xtdc_gui {
   public:
     /// @brief Initializes a new instance of the project_type_item_control class.
     project_type_item_control() : project_type_item_control(xtdc_gui::project_type_item {}) {}
-
+    
     project_type_item_control(const xtdc_gui::project_type_item& project_type_item) : project_type_item_(project_type_item) {
       icon_.parent(*this);
       icon_.location({5, 20});
@@ -21,7 +21,7 @@ namespace xtdc_gui {
       //icon_.back_color(xtd::drawing::color::light_gray);
       icon_.click += {*this, &project_type_item_control::perform_click};
       icon_.double_click += {*this, &project_type_item_control::perform_double_click};
-
+      
       name_.parent(*this);
       name_.location({50, 10});
       name_.auto_size(true);
@@ -29,7 +29,7 @@ namespace xtdc_gui {
       name_.font({name_.font(), xtd::drawing::font_style::bold});
       name_.click += {*this, &project_type_item_control::perform_click};
       name_.double_click += {*this, &project_type_item_control::perform_double_click};
-
+      
       description_.parent(*this);
       description_.location({50, 30});
       description_.size({420, 40});
@@ -37,10 +37,10 @@ namespace xtdc_gui {
       description_.text(project_type_item_.description());
       description_.click += {*this, &project_type_item_control::perform_click};
       description_.double_click += {*this, &project_type_item_control::perform_double_click};
-
+      
       height(80);
     }
-
+    
     xtdc_gui::project_type_item project_type_item() const {return project_type_item_;}
     
   protected:

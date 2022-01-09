@@ -10,7 +10,7 @@ using namespace xtd;
 namespace sleepfor {
   class program final static_ {
     enum class period_type {nanoseconds, microseconds, milliseconds, seconds, minutes};
-
+    
   public:
     static int main(const vector<ustring>& args) {
       int duration = 0;
@@ -25,7 +25,7 @@ namespace sleepfor {
       
       if (show_version) console::write_line(get_version());
       else if (show_help) console::write_line("{0}{1}{1}{2}", get_version(), environment::new_line(), get_usage());
-      else if (indefinitely) while(true) sleep_for(hours(numeric_limits<int32_t>::max()));
+      else if (indefinitely) while (true) sleep_for(hours(numeric_limits<int32_t>::max()));
       else if (type == period_type::nanoseconds) sleep_for(nanoseconds(duration));
       else if (type == period_type::seconds) sleep_for(seconds(duration));
       else if (type == period_type::minutes) sleep_for(minutes(duration));
@@ -36,26 +36,26 @@ namespace sleepfor {
   private:
     static string get_error() {
       return "sleepfor : invalid params\n"
-      "Try 'sleepfor --help' for more information.";
+        "Try 'sleepfor --help' for more information.";
     }
     
     static string get_usage() {
       return "Usage\n"
-      "  sleepfor [duration] [--nanoseconds|--milliseconds|--seconds|--minutes|]\n"
-      "\n"
-      "-ns, --nanoseconds  : The specified duration is in nanoseconds.\n"
-      "-ms, --milliseconds : The specified duration is in milliseconds. Is the default.\n"
-      "-s, --seconds       : The specified duration is in seconds.\n"
-      "-m, --minutes       : The specified duration is in minutes.\n"
-      "-i, --indefinitely  : sleep indefinitely.\n"
-      "-v, --version       : Shows version information.\n"
-      "-h, --help          : Shows this help page.";
+        "  sleepfor [duration] [--nanoseconds|--milliseconds|--seconds|--minutes|]\n"
+        "\n"
+        "-ns, --nanoseconds  : The specified duration is in nanoseconds.\n"
+        "-ms, --milliseconds : The specified duration is in milliseconds. Is the default.\n"
+        "-s, --seconds       : The specified duration is in seconds.\n"
+        "-m, --minutes       : The specified duration is in minutes.\n"
+        "-i, --indefinitely  : sleep indefinitely.\n"
+        "-v, --version       : Shows version information.\n"
+        "-h, --help          : Shows this help page.";
     }
     
     static string get_version() {
       return ustring::format("sleepfor version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
-
+    
     static bool process_arguments(const vector<ustring>& args, int32_t& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         if (args[index] == "-ns" || args[index] == "--nanoseconds") type = period_type::nanoseconds;

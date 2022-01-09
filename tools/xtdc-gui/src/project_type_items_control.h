@@ -33,7 +33,7 @@ namespace xtdc_gui {
     /// @brief Initializes a new instance of the project_type_item_control class.
     project_type_items_control() {
       std::vector<project_type_item> project_type_items {
-        {xtd::drawing::bitmap(solution_icon), "Solution File", "A project for creating an empty solution file.", project_language::all&~project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
+        {xtd::drawing::bitmap(solution_icon), "Solution File", "A project for creating an empty solution file.", project_language::all & ~project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
         {xtd::drawing::bitmap(xtd_solution_icon), "xtd Solution File", "A project for creating an empty xtd solution file.", project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
         {xtd::drawing::bitmap(catch2_icon), "catch2 Unit Test project (c++)", "A project for creating a catch2 unit tests application.", project_language::cpp, project_sdk::catch2, project_platform::all, project_type::unit_tests_project},
         {xtd::drawing::bitmap(gtest_icon), "gtest Unit Test project (c++)", "A project for creating a gtest unit tests application.", project_language::cpp, project_sdk::gtest, project_platform::all, project_type::unit_tests_project},
@@ -72,7 +72,7 @@ namespace xtdc_gui {
         item_control->dock(xtd::forms::dock_style::top);
         item_control->tag(project_type_item_controls_.size());
         project_type_item_controls_.push_back(item_control);
-        item_control->click += [&](object& sender, const xtd::event_args& e) {
+        item_control->click += [&](object & sender, const xtd::event_args & e) {
           selected_index(project_type_item_controls_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
         };
       }
@@ -82,7 +82,7 @@ namespace xtdc_gui {
       back_color(xtd::forms::theme_colors::current_theme().window());
       border_style(xtd::forms::border_style::fixed_single);
     }
-
+    
     size_t selected_index() const {return selected_index_;}
     void selected_index(size_t value) {
       if (selected_index_ != value) {
@@ -90,7 +90,7 @@ namespace xtdc_gui {
         on_selected_index_changed(xtd::event_args::empty);
       }
     }
-
+    
     const project_type_item& selected_project_type_item() const {return selected_project_type_item_;}
     void selected_project_type_item(const project_type_item& value) {
       if (selected_project_type_item_ != value) {
@@ -98,7 +98,7 @@ namespace xtdc_gui {
         on_selected_project_type_item_changed(xtd::event_args::empty);
       }
     }
-
+    
     void filter_items(project_language language, project_platform platform, project_type type) {
       for (auto item : project_type_item_controls_)
         item->visible((language == project_language::all || (item->project_type_item().project_language() & language) == language) && (platform == project_platform::all || (item->project_type_item().project_platform() & platform) == platform) && (type == project_type::all || (item->project_type_item().project_type() & type) == type));
@@ -120,7 +120,7 @@ namespace xtdc_gui {
     
     /// @brief This is a special value equal to the maximum value representable by the type size_t.
     static const size_t npos = std::numeric_limits<size_t>::max();
-
+    
   private:
     void on_selected_index_changed(const xtd::event_args& e) {
       if (previous_selected_index_ != npos) {
@@ -144,7 +144,7 @@ namespace xtdc_gui {
         }
       selected_project_type_item_changed(*this, e);
     }
-
+    
     std::vector<std::shared_ptr<project_type_item_control>> project_type_item_controls_;
     size_t previous_selected_index_ = npos;
     size_t selected_index_ = npos;
