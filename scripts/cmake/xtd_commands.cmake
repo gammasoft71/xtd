@@ -303,7 +303,7 @@ macro(target_type TYPE)
   if (NOT ${VERSION} STREQUAL "*")
     set(PROJECT_VERSION "${VERSION}")
   endif ()
-  remove_definitions(-DXTD_ASSEMBLY_VERSION)
+  remove_definitions(-D__XTD_ASSEMBLY_VERSION__)
   add_definitions(-D__XTD_ASSEMBLY_VERSION__="${PROJECT_VERSION}")
   
   write_target_informations_file()
@@ -1996,7 +1996,7 @@ endif()
 # Run astyle coommand
 
 # Options
-option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" OFF)
+option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" ON)
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 
 if (NOT ASTYLE_SOURCE_FILES)
@@ -2058,7 +2058,7 @@ endif ()
 ################################################################################
 # Run cppcheck command
 
-option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" OFF)
+option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" ON)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
 
 if (NOT CPPCHECK_SOURCE_ROOTS)
@@ -2100,7 +2100,7 @@ endif ()
 ################################################################################
 # Run Reference Guide generator command
 
-option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" OFF)
+option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" ON)
 option(XTD_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
 
 if (XTD_ENABLE_RUN_REFERENCE_GUIDE AND NOT RUN_REFERENCE_GUIDE_ONLY_ONCE)
@@ -2133,7 +2133,7 @@ if (XTD_ENABLE_RUN_REFERENCE_GUIDE AND NOT RUN_REFERENCE_GUIDE_ONLY_ONCE)
       add_custom_target(RUN_REFERENCE_GUIDE ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/doxygen.txt WORKING_DIRECTORY ${PROJECT_DOCUMENTATION_PATH} COMMAND open "${PROJECT_DOCUMENTATION_PATH}/html/index.html" COMMENT "Run Doxygen Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
     set_target_properties(RUN_REFERENCE_GUIDE PROPERTIES FOLDER commands)
     else ()
-      message(WARNING "Doxygen configuration options file : \".doxygen.txt\" not found!")
+      message(NOTICE "Doxygen configuration options file : \".doxygen.txt\" not found! (if you want run \"RUN_REFERENCE_GUIDE\" please add \".doxygen.txt\" file in \"${CMAKE_CURRENT_SOURCE_DIR}\" path.)")
     endif ()
   endif ()
 endif ()
