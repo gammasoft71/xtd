@@ -2,6 +2,11 @@
 ## @brief Contains xtd specific CMake commands.
 
 ################################################################################
+# Includes
+
+include(ExternalProject)
+
+################################################################################
 # Generic commands
 
 ## @brief Provides a choice options for the user to select an option from options list.
@@ -1988,9 +1993,104 @@ endif()
 #endif ()
 
 ################################################################################
+# Run astyle coommand
+
+# Options
+option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" ON)
+option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
+
+if (XTD_ENABLE_RUN_ASTYLE AND NOT RUN_ASTYLE_ONLY_ONCE)
+  set(RUN_ASTYLE_ONLY_ONCE TRUE)
+  # astyle command line arguments
+  list(APPEND ASTYLE_ARGS
+    --style=java
+    --lineend=linux
+    --indent=spaces=2
+    --attach-namespaces
+    --attach-classes
+    --attach-inlines
+    --attach-extern-c
+    --attach-closing-while
+    --fill-empty-lines
+    --indent-namespaces
+    --indent-after-parens
+    --indent-preproc-define
+    --indent-preproc-cond
+    --indent-col1-comments
+    --indent-switches
+    --pad-oper
+    --pad-comma
+    --pad-header
+    --unpad-paren
+    --align-pointer=type
+    --align-reference=type
+    --remove-braces
+    --keep-one-line-blocks
+    --keep-one-line-statements
+    --convert-tabs
+    --close-templates
+    --suffix=none
+    --recursive
+    ${CMAKE_SOURCE_DIR}/src/*.cpp
+    ${CMAKE_SOURCE_DIR}/src/*.mm
+    ${CMAKE_SOURCE_DIR}/src/*.h
+    ${CMAKE_SOURCE_DIR}/tests/*.cpp
+    ${CMAKE_SOURCE_DIR}/tests/*.h
+    ${CMAKE_SOURCE_DIR}/examples/*.cpp
+    ${CMAKE_SOURCE_DIR}/examples/*.h
+  )
+  
+  if (XTD_DOWNLOAD_ASTYLE)
+    ExternalProject_Add(astyle GIT_REPOSITORY https://github.com/Bareflank/astyle.git GIT_TAG v1.2 GIT_SHALLOW 1 CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR})
+    set(ASTYLE_EXECUTABLE ${CMAKE_BINARY_DIR}/bin/astyle)
+    set(ASTYLE_PROJECT astyle)
+  else()
+    set(ASTYLE_EXECUTABLE astyle)
+  endif()
+
+  # RUN_ASTYLE  
+  add_custom_target(RUN_ASTYLE COMMAND ${ASTYLE_EXECUTABLE} ${ASTYLE_ARGS} COMMENT "running astyle" DEPENDS ${ASTYLE_PROJECT})
+  set_target_properties(RUN_ASTYLE PROPERTIES FOLDER commands)
+endif ()
+
+################################################################################
+# Run cppcheck command
+
+option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" ON)
+option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
+  
+if (XTD_ENABLE_RUN_CPPCHECK AND NOT RUN_CPPCHECK_ONLY_ONCE)
+  set(RUN_CPPCHECK_ONLY_ONCE TRUE)
+  # cppcheck command line arguments
+  list(APPEND CPPCHECK_ARGS
+    --enable=warning,style,performance,portability,unusedFunction,missingInclude
+    --error-exitcode=1
+    -j 8
+    --language=c++
+    --report-progress
+    --std=c++17
+    --suppressions-list=${CMAKE_BINARY_DIR}/cppcheck_false_positive
+    --template='[{file}:{line}]: ({severity}) {{id}} {message}'
+  )
+  
+  if (XTD_DOWNLOAD_CPPCHECK)
+    ExternalProject_Add(cppcheck GIT_REPOSITORY https://github.com/danmar/cppcheck.git GIT_TAG 2.6.3 GIT_SHALLOW 1 CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR})
+    set(CPPCHECK_EXECUTABLE ${CMAKE_BINARY_DIR}/bin/cppcheck)
+    set(CPPCHECK_PROJECT cppcheck)
+  else()
+    set(CPPCHECK_EXECUTABLE cppcheck)
+  endif()
+  
+  # RUN_CPPCHECK
+  list(APPEND CPPCHECK_ARGS_ALL ${CPPCHECK_ARGS} ${CMAKE_SOURCE_DIR}/src)
+  configure_file(${CMAKE_SOURCE_DIR}/.cppcheck ${CMAKE_BINARY_DIR}/cppcheck_false_positive @ONLY)
+  add_custom_target(RUN_CPPCHECK COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_ALL} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
+  set_target_properties(RUN_CPPCHECK PROPERTIES FOLDER commands)
+endif ()
+
+################################################################################
 # Run Reference Guide generator command
 
-include(ExternalProject)
 option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" ON)
 option(XTD_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
 
