@@ -21,23 +21,23 @@ namespace xtdc_gui {
     const xtd::drawing::image& picture() const noexcept {return picture_;};
     
     static std::vector<xtd_example_item> get_cmake_examples() {
-      return xtd_example_item::get_examples(xtd_share_path_/"examples"/"xtd.cmake.examples");
+      return xtd_example_item::get_examples(xtd_share_path_ / "examples" / "xtd.cmake.examples");
     }
     
     static std::vector<xtd_example_item> get_core_examples() {
-      return xtd_example_item::get_examples(xtd_share_path_/"examples"/"xtd.core.examples");
+      return xtd_example_item::get_examples(xtd_share_path_ / "examples" / "xtd.core.examples");
     }
     
     static std::vector<xtd_example_item> get_drawing_examples() {
-      return xtd_example_item::get_examples(xtd_share_path_/"examples"/"xtd.drawing.examples");
+      return xtd_example_item::get_examples(xtd_share_path_ / "examples" / "xtd.drawing.examples");
     }
     
     static std::vector<xtd_example_item> get_forms_examples() {
-      return xtd_example_item::get_examples(xtd_share_path_/"examples"/"xtd.forms.examples");
+      return xtd_example_item::get_examples(xtd_share_path_ / "examples" / "xtd.forms.examples");
     }
     
     static std::vector<xtd_example_item> get_tunit_examples() {
-      return xtd_example_item::get_examples(xtd_share_path_/"examples"/"xtd.tunit.examples");
+      return xtd_example_item::get_examples(xtd_share_path_ / "examples" / "xtd.tunit.examples");
     }
     
   private:
@@ -64,14 +64,14 @@ namespace xtdc_gui {
     }
     
     static std::string get_image_path(const std::string& name) {
-      auto base_path = std::filesystem::path(xtd_share_path_/"resources"/"pictures"/"examples");
+      auto base_path = std::filesystem::path(xtd_share_path_ / "resources" / "pictures" / "examples");
       return "";
     }
     
     static xtd::drawing::image get_picture(const std::string& name) {
-      auto picture_file_name = xtd_share_path_/"resources"/"pictures/examples"/(name + "_" + get_os_postfix() + get_theme_postfix() +".png");
+      auto picture_file_name = xtd_share_path_ / "resources" / "pictures/examples" / (name + "_" + get_os_postfix() + get_theme_postfix() + ".png");
       if (std::filesystem::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name.string());
-      picture_file_name = xtd_share_path_/"resources"/"pictures/examples"/(name + "_" + get_os_postfix() +".png");
+      picture_file_name = xtd_share_path_ / "resources" / "pictures/examples" / (name + "_" + get_os_postfix() + ".png");
       if (std::filesystem::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name.string());
       //return xtd::drawing::bitmap(noimage_picture);
       return xtd::drawing::bitmap(400, 250);
@@ -80,7 +80,7 @@ namespace xtdc_gui {
     static std::string get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_linux_platform() ? "g" : "m";}
     static std::string get_theme_postfix() noexcept {return xtd::forms::application::dark_mode_enabled() ? "d" : "";}
     
-    inline static const std::filesystem::path xtd_share_path_ = std::filesystem::path(__XTD_RESOURCES_PATH__)/"share"/"xtd";
+    inline static const std::filesystem::path xtd_share_path_ = std::filesystem::path(__XTD_RESOURCES_PATH__) / "share" / "xtd";
     
     std::string name_;
     std::string description_;

@@ -35,28 +35,28 @@ namespace guidgen {
   private:
     static string get_error() {
       return "guidgen : invalid params\n"
-      "Try 'guidgen --help' for more information.";
+        "Try 'guidgen --help' for more information.";
     }
     
     static string get_usage() {
       return "Usage\n"
-      "  guidgen [--format Format] [--count Count]\n"
-      "\n"
-      "-f, --format  : Indicates how to format the value of this Guid. The format parameter can be :\n"
-      "                  N : 32 digits.\n"
-      "                  D : 32 digits separated by hyphens.\n"
-      "                  B : 32 digits separated by hyphens, enclosed in braces.\n"
-      "                  P : 32 digits separated by hyphens, enclosed in parentheses.\n"
-      "                  X : Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces.\n"
-      "-c, --count   : indicate the number of generation (form 1 to 2147483647)\n"
-      "-v, --version : Shows version information.\n"
-      "-h, --help    : Shows this help page.";
+        "  guidgen [--format Format] [--count Count]\n"
+        "\n"
+        "-f, --format  : Indicates how to format the value of this Guid. The format parameter can be :\n"
+        "                  N : 32 digits.\n"
+        "                  D : 32 digits separated by hyphens.\n"
+        "                  B : 32 digits separated by hyphens, enclosed in braces.\n"
+        "                  P : 32 digits separated by hyphens, enclosed in parentheses.\n"
+        "                  X : Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces.\n"
+        "-c, --count   : indicate the number of generation (form 1 to 2147483647)\n"
+        "-v, --version : Shows version information.\n"
+        "-h, --help    : Shows this help page.";
     }
     
     static string get_version() {
       return ustring::format("guidgen version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
-
+    
     static bool process_arguments(const vector<ustring>& args, string& format, int& count, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         vector<string> format_types {"N", "D", "B", "P", "X"};

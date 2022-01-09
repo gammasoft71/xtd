@@ -23,7 +23,7 @@ namespace guidgen_gui {
       text("Guid generator"_t);
       
       count_label_.auto_size(true);
-      count_label_.anchor(anchor_styles::top|anchor_styles::left);
+      count_label_.anchor(anchor_styles::top | anchor_styles::left);
       count_label_.location({10, 13});
       count_label_.text("Count"_t);
       
@@ -38,12 +38,12 @@ namespace guidgen_gui {
       
       format_choice_.location({260, 11});
       format_choice_.width(290);
-      format_choice_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::right);
+      format_choice_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       format_choice_.items().push_back_range({{"N : digits"_t, "N"_s}, {"D : with hyphens"_t, "D"_s}, {"B : with hyphens and braces"_t, "B"_s}, {"P : with hyphens and parentheses"_t, "P"_s}, {"X : hexadecimal with braces"_t, "X"_s}});
       format_choice_.selected_index(1);
       
       generate_button_.location({560, 10});
-      generate_button_.anchor(anchor_styles::top|anchor_styles::right);
+      generate_button_.anchor(anchor_styles::top | anchor_styles::right);
       generate_button_.text("Generate"_t);
       generate_button_.click += [&] {
         result_text_box_.text("");
@@ -80,7 +80,7 @@ namespace guidgen_gui {
       result_text_box_.location({10, 50});
       result_text_box_.read_only(true);
       result_text_box_.size({625, 290});
-      result_text_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+      result_text_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
       result_text_box_.multiline(true);
       result_text_box_.word_wrap(false);
     }

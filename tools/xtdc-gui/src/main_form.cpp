@@ -25,20 +25,20 @@ using namespace xtdc_gui;
 main_form::main_form() {
   if (properties::settings::default_settings().menu_visible())
     menu(main_menu_);
-  
+    
   client_size({1000, 710});
   minimum_client_size(client_size());
   accept_button(next_button_);
   icon(system_icons::from_name("xtd"));
   minimize_box(false);
   start_position(form_start_position::center_screen);
-
+  
   busy_box::show("Initializing...", "xtdc-gui");
-
+  
   startup_panel_.auto_scroll(true);
   startup_panel_.parent(*this);
   startup_panel_.size(client_size() - xtd::drawing::size {0, 100});
-  startup_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  startup_panel_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   
   startup_title_label_.parent(startup_panel_);
   startup_title_label_.location({50, 50});
@@ -55,12 +55,12 @@ main_form::main_form() {
   startup_open_recent_projects_list_box_.parent(startup_panel_);
   startup_open_recent_projects_list_box_.location({50, 175});
   startup_open_recent_projects_list_box_.size({500, startup_panel_.size().height() - 175});
-  startup_open_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  startup_open_recent_projects_list_box_.key_down += [&](object& sender, key_event_args& e) {
+  startup_open_recent_projects_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+  startup_open_recent_projects_list_box_.key_down += [&](object & sender, key_event_args & e) {
     if (e.key_code() == keys::del && startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos)
       delete_from_open_recent_projects(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()]);
   };
-
+  
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos) {
       if (!std::filesystem::exists(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()].c_str())) message_box::show(*this, xtd::ustring::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
@@ -73,8 +73,8 @@ main_form::main_form() {
   startup_get_started_title_label_.auto_size(true);
   startup_get_started_title_label_.text("Get started");
   startup_get_started_title_label_.font({startup_get_started_title_label_.font(), 16.0});
-  startup_get_started_title_label_.anchor(anchor_styles::top|anchor_styles::right);
-
+  startup_get_started_title_label_.anchor(anchor_styles::top | anchor_styles::right);
+  
   startup_open_project_button_.parent(startup_panel_);
   startup_open_project_button_.image(xtd::forms::theme_images::current_theme().from_name("document-open", drawing::size {48, 48}));
   startup_open_project_button_.image(xtd::drawing::bitmap(xtd_open_icon));
@@ -83,9 +83,9 @@ main_form::main_form() {
   startup_open_project_button_.location({startup_panel_.size().width() - 400, 175});
   startup_open_project_button_.size({350, 100});
   startup_open_project_button_.font({startup_open_project_button_.font(), 14.0});
-  startup_open_project_button_.anchor(anchor_styles::top|anchor_styles::right);
+  startup_open_project_button_.anchor(anchor_styles::top | anchor_styles::right);
   startup_open_project_button_.click += {*this, overload_<>(&main_form::open_project)};
-
+  
   startup_run_project_button_.parent(startup_panel_);
   startup_run_project_button_.image(xtd::forms::theme_images::current_theme().from_name("system-run", drawing::size {48, 48}));
   startup_run_project_button_.image(xtd::drawing::bitmap(xtd_run_icon));
@@ -94,9 +94,9 @@ main_form::main_form() {
   startup_run_project_button_.location({startup_panel_.size().width() - 400, 285});
   startup_run_project_button_.size({350, 100});
   startup_run_project_button_.font({startup_run_project_button_.font(), 14.0});
-  startup_run_project_button_.anchor(anchor_styles::top|anchor_styles::right);
+  startup_run_project_button_.anchor(anchor_styles::top | anchor_styles::right);
   startup_run_project_button_.click += {*this, overload_<>(&main_form::run_project)};
-
+  
   startup_new_project_button_.parent(startup_panel_);
   startup_new_project_button_.image(xtd::forms::theme_images::current_theme().from_name("document-new", drawing::size {48, 48}));
   startup_new_project_button_.image(xtd::drawing::bitmap(xtd_new_icon));
@@ -105,9 +105,9 @@ main_form::main_form() {
   startup_new_project_button_.location({startup_panel_.size().width() - 400, 395});
   startup_new_project_button_.size({350, 100});
   startup_new_project_button_.font({startup_new_project_button_.font(), 14.0});
-  startup_new_project_button_.anchor(anchor_styles::top|anchor_styles::right);
+  startup_new_project_button_.anchor(anchor_styles::top | anchor_styles::right);
   startup_new_project_button_.click += {*this, overload_<>(&main_form::new_project)};
-
+  
   startup_open_xtd_examples_button_.parent(startup_panel_);
   startup_open_xtd_examples_button_.image(xtd::forms::theme_images::current_theme().from_name("xtd", drawing::size {48, 48}));
   startup_open_xtd_examples_button_.image(xtd::drawing::bitmap(xtd_open_examples_icon));
@@ -116,24 +116,24 @@ main_form::main_form() {
   startup_open_xtd_examples_button_.location({startup_panel_.size().width() - 400, 505});
   startup_open_xtd_examples_button_.size({350, 100});
   startup_open_xtd_examples_button_.font({startup_new_project_button_.font(), 14.0});
-  startup_open_xtd_examples_button_.anchor(anchor_styles::top|anchor_styles::right);
+  startup_open_xtd_examples_button_.anchor(anchor_styles::top | anchor_styles::right);
   startup_open_xtd_examples_button_.click += {*this, &main_form::open_xtd_examples};
-
+  
   open_xtd_examples_panel_.parent(*this);
   open_xtd_examples_panel_.size(client_size() - xtd::drawing::size {0, 100});
-  open_xtd_examples_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  open_xtd_examples_panel_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   open_xtd_examples_panel_.visible(false);
-
+  
   open_xtd_examples_title_label_.parent(open_xtd_examples_panel_);
   open_xtd_examples_title_label_.location({50, 50});
   open_xtd_examples_title_label_.auto_size(true);
   open_xtd_examples_title_label_.text("Open xtd examples");
   open_xtd_examples_title_label_.font({open_xtd_examples_title_label_.font(), 24.0});
-
+  
   open_xtd_example_tab_control_.parent(open_xtd_examples_panel_);
   open_xtd_example_tab_control_.location({50, 115});
   open_xtd_example_tab_control_.size({450, open_xtd_examples_panel_.size().height() - 115});
-  open_xtd_example_tab_control_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  open_xtd_example_tab_control_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   open_xtd_example_tab_control_.selected_index_changed += [&] {
     if (open_xtd_example_tab_control_.selected_index() == 0) {
       open_xtd_example_core_list_box_.selected_index(current_open_xtd_example_core_list_box_index_);
@@ -157,33 +157,33 @@ main_form::main_form() {
       open_xtd_example_cmake_list_box_.selected_index(current_open_xtd_example_cmake_list_box_index_);
     }
   };
-
+  
   open_xtd_examples_information_text_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_text_box_.location({550, 50});
   open_xtd_examples_information_text_box_.size({400, open_xtd_examples_panel_.size().height() - 350});
-  open_xtd_examples_information_text_box_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
+  open_xtd_examples_information_text_box_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
   open_xtd_examples_information_text_box_.multiline(true);
   open_xtd_examples_information_text_box_.read_only(true);
   open_xtd_examples_information_text_box_.word_wrap(true);
-
+  
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height() - 260});
   open_xtd_examples_information_picture_box_.size({400, 250});
   open_xtd_examples_information_picture_box_.size_mode(picture_box_size_mode::zoom);
-  open_xtd_examples_information_picture_box_.anchor(anchor_styles::bottom|anchor_styles::right);
+  open_xtd_examples_information_picture_box_.anchor(anchor_styles::bottom | anchor_styles::right);
   
   open_xtd_example_core_tab_page_.text("xtd.core");
   open_xtd_example_core_tab_page_.parent(open_xtd_example_tab_control_);
   
   open_xtd_example_forms_tab_page_.text("xtd.forms");
   open_xtd_example_forms_tab_page_.parent(open_xtd_example_tab_control_);
-
+  
   open_xtd_example_tunit_tab_page_.text("xtd.tunit");
   open_xtd_example_tunit_tab_page_.parent(open_xtd_example_tab_control_);
-
+  
   open_xtd_example_cmake_tab_page_.text("xtd.cmake");
   open_xtd_example_cmake_tab_page_.parent(open_xtd_example_tab_control_);
-
+  
   open_xtd_example_core_picture_box_.parent(open_xtd_example_core_tab_page_);
   open_xtd_example_core_picture_box_.location({30, 30});
   open_xtd_example_core_picture_box_.size({40, 40});
@@ -198,40 +198,40 @@ main_form::main_form() {
   open_xtd_example_tunit_picture_box_.location({30, 30});
   open_xtd_example_tunit_picture_box_.size({40, 40});
   open_xtd_example_tunit_picture_box_.image(drawing::bitmap(xtd_tunit_icon));
-
+  
   open_xtd_example_cmake_picture_box_.parent(open_xtd_example_cmake_tab_page_);
   open_xtd_example_cmake_picture_box_.location({30, 30});
   open_xtd_example_cmake_picture_box_.size({40, 40});
   open_xtd_example_cmake_picture_box_.image(drawing::bitmap(xtd_cmake_icon));
-
+  
   open_xtd_example_core_title_label_.parent(open_xtd_example_core_tab_page_);
   open_xtd_example_core_title_label_.text("xtd Console Application (c++)");
   open_xtd_example_core_title_label_.font({open_xtd_example_core_title_label_.font(), 16.0});
   open_xtd_example_core_title_label_.location({80, 35});
   open_xtd_example_core_title_label_.auto_size(true);
-
+  
   open_xtd_example_forms_title_label_.parent(open_xtd_example_forms_tab_page_);
   open_xtd_example_forms_title_label_.text("xtd Gui Application (c++)");
   open_xtd_example_forms_title_label_.font({open_xtd_example_forms_title_label_.font(), 16.0});
   open_xtd_example_forms_title_label_.location({80, 35});
   open_xtd_example_forms_title_label_.auto_size(true);
-
+  
   open_xtd_example_tunit_title_label_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_title_label_.text("xtd Unit Test Project (c++)");
   open_xtd_example_tunit_title_label_.font({open_xtd_example_tunit_title_label_.font(), 16.0});
   open_xtd_example_tunit_title_label_.location({80, 35});
   open_xtd_example_tunit_title_label_.auto_size(true);
-
+  
   open_xtd_example_cmake_title_label_.parent(open_xtd_example_cmake_tab_page_);
   open_xtd_example_cmake_title_label_.text("xtd CMake Project (c++)");
   open_xtd_example_cmake_title_label_.font({open_xtd_example_core_title_label_.font(), 16.0});
   open_xtd_example_cmake_title_label_.location({80, 35});
   open_xtd_example_cmake_title_label_.auto_size(true);
-
+  
   open_xtd_example_core_list_box_.parent(open_xtd_example_core_tab_page_);
   open_xtd_example_core_list_box_.location({30, 110});
   open_xtd_example_core_list_box_.size(open_xtd_example_core_tab_page_.size() - xtd::drawing::size {60, 140});
-  open_xtd_example_core_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  open_xtd_example_core_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_core_examples())
     open_xtd_example_core_list_box_.items().push_back({item.name(), item});
   open_xtd_example_core_list_box_.selected_value_changed += [&] {
@@ -244,11 +244,11 @@ main_form::main_form() {
   open_xtd_example_core_list_box_.double_click += [&] {
     next_button_.perform_click();
   };
-
+  
   open_xtd_example_forms_list_box_.parent(open_xtd_example_forms_tab_page_);
   open_xtd_example_forms_list_box_.location({30, 110});
   open_xtd_example_forms_list_box_.size(open_xtd_example_forms_tab_page_.size() - xtd::drawing::size {60, 140});
-  open_xtd_example_forms_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  open_xtd_example_forms_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_forms_examples())
     open_xtd_example_forms_list_box_.items().push_back({item.name(), item});
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
@@ -261,11 +261,11 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.double_click += [&] {
     next_button_.perform_click();
   };
-
+  
   open_xtd_example_tunit_list_box_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_list_box_.location({30, 110});
   open_xtd_example_tunit_list_box_.size(open_xtd_example_tunit_tab_page_.size() - xtd::drawing::size {60, 140});
-  open_xtd_example_tunit_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  open_xtd_example_tunit_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_tunit_examples())
     open_xtd_example_tunit_list_box_.items().push_back({item.name(), item});
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
@@ -278,11 +278,11 @@ main_form::main_form() {
   open_xtd_example_tunit_list_box_.double_click += [&] {
     next_button_.perform_click();
   };
-
+  
   open_xtd_example_cmake_list_box_.parent(open_xtd_example_cmake_tab_page_);
   open_xtd_example_cmake_list_box_.location({30, 110});
   open_xtd_example_cmake_list_box_.size(open_xtd_example_core_tab_page_.size() - xtd::drawing::size {60, 140});
-  open_xtd_example_cmake_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  open_xtd_example_cmake_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_cmake_examples())
     open_xtd_example_cmake_list_box_.items().push_back({item.name(), item});
   open_xtd_example_cmake_list_box_.selected_value_changed += [&] {
@@ -295,12 +295,12 @@ main_form::main_form() {
   open_xtd_example_cmake_list_box_.double_click += [&] {
     next_button_.perform_click();
   };
-
+  
   create_panel_.parent(*this);
   create_panel_.size(client_size() - xtd::drawing::size {0, 100});
-  create_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  create_panel_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   create_panel_.visible(false);
-
+  
   create_title_label_.parent(create_panel_);
   create_title_label_.location({50, 50});
   create_title_label_.auto_size(true);
@@ -316,7 +316,7 @@ main_form::main_form() {
   create_create_recent_projects_list_box_.parent(create_panel_);
   create_create_recent_projects_list_box_.location({50, 175});
   create_create_recent_projects_list_box_.size({400, create_panel_.size().height() - 175});
-  create_create_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  create_create_recent_projects_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   create_create_recent_projects_list_box_.selected_index_changed += [&] {
     if (create_create_recent_projects_list_box_.selected_index() == create_create_recent_projects_list_box_.npos)
       next_button_.enabled(false);
@@ -329,15 +329,15 @@ main_form::main_form() {
   create_create_recent_projects_list_box_.double_click += [&] {
     if (create_panel_.visible()) next_button_.perform_click();
   };
-  create_create_recent_projects_list_box_.key_down += [&](object& sender, key_event_args& e) {
+  create_create_recent_projects_list_box_.key_down += [&](object & sender, key_event_args & e) {
     if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != create_create_recent_projects_list_box_.npos)
       delete_from_create_recent_projects(xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects().split({';'})[create_create_recent_projects_list_box_.selected_index()]));
   };
-
+  
   create_language_choice_.parent(create_panel_);
   create_language_choice_.width(140);
   create_language_choice_.location({create_panel_.size().width() - create_type_choice_.width() - 400, 50});
-  create_language_choice_.anchor(anchor_styles::top|anchor_styles::right);
+  create_language_choice_.anchor(anchor_styles::top | anchor_styles::right);
   create_language_choice_.items().push_back_range({{"All languages", project_language::all}, {"xtd (c++)", project_language::xtd}, {"c++", project_language::cpp}, {"c", project_language::c}, {"c#", project_language::csharp}, {"objective-c", project_language::objectivec}});
   create_language_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().language_index(create_language_choice_.selected_index());
@@ -345,11 +345,11 @@ main_form::main_form() {
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
   create_language_choice_.selected_index(properties::settings::default_settings().language_index());
-
+  
   create_platform_choice_.parent(create_panel_);
   create_platform_choice_.width(140);
   create_platform_choice_.location({create_panel_.size().width() - create_type_choice_.width() - 230, 50});
-  create_platform_choice_.anchor(anchor_styles::top|anchor_styles::right);
+  create_platform_choice_.anchor(anchor_styles::top | anchor_styles::right);
   create_platform_choice_.items().push_back_range({{"All platforms", project_platform::all}, {"Windows", project_platform::windows}, {"Linux", project_platform::linux}, {"macOS", project_platform::macos}});
   create_platform_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().platform_index(create_platform_choice_.selected_index());
@@ -361,7 +361,7 @@ main_form::main_form() {
   create_type_choice_.parent(create_panel_);
   create_type_choice_.width(140);
   create_type_choice_.location({create_panel_.size().width() - create_type_choice_.width() - 50, 50});
-  create_type_choice_.anchor(anchor_styles::top|anchor_styles::right);
+  create_type_choice_.anchor(anchor_styles::top | anchor_styles::right);
   create_type_choice_.items().push_back_range({{"All project types", project_type::all}, {"Gui", project_type::gui}, {"Console", project_type::console}, {"Shared library", project_type::shared_library}, {"Static library", project_type::static_library}, {"UnitTest Project", project_type::unit_tests_project}, {"Solution File", project_type::solution_file}});
   create_type_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().type_index(create_type_choice_.selected_index());
@@ -369,11 +369,11 @@ main_form::main_form() {
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
   create_type_choice_.selected_index(properties::settings::default_settings().type_index());
-
+  
   create_project_type_items_control_.parent(create_panel_);
   create_project_type_items_control_.location({create_panel_.size().width() - 475 - 50, 100});
   create_project_type_items_control_.size({475, create_panel_.size().height() - 100});
-  create_project_type_items_control_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
+  create_project_type_items_control_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
   create_project_type_items_control_.selected_index_changed += [&] {
     if (create_project_type_items_control_.selected_index() == create_project_type_items_control_.npos)
       next_button_.enabled(false);
@@ -386,13 +386,13 @@ main_form::main_form() {
   create_project_type_items_control_.double_click += [&] {
     next_button_.perform_click();
   };
-
+  
   configure_panel_.auto_scroll(true);
   configure_panel_.parent(*this);
   configure_panel_.size(client_size() - xtd::drawing::size {0, 100});
-  configure_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  configure_panel_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   configure_panel_.visible(false);
-
+  
   configure_title_label_.parent(configure_panel_);
   configure_title_label_.location({50, 50});
   configure_title_label_.auto_size(true);
@@ -404,7 +404,7 @@ main_form::main_form() {
   configure_project_type_title_label_.auto_size(true);
   configure_project_type_title_label_.text("Project type information");
   configure_project_type_title_label_.font({create_title_label_.font(), 16.0});
-
+  
   configure_project_name_label_.parent(configure_panel_);
   configure_project_name_label_.location({50, 180});
   configure_project_name_label_.auto_size(true);
@@ -413,13 +413,13 @@ main_form::main_form() {
   configure_project_name_text_box_.parent(configure_panel_);
   configure_project_name_text_box_.location({50, 210});
   configure_project_name_text_box_.width(550);
-  configure_project_name_text_box_.key_press += [&](object& sender, key_press_event_args& e) {
+  configure_project_name_text_box_.key_press += [&](object & sender, key_press_event_args & e) {
     e.handled(configure_project_name_text_box_.text().size() >= 128 || !(std::isalnum(e.key_char()) || e.key_char() == U'_' || e.key_char() == U'-'));
   };
-  configure_project_name_text_box_.key_up += [&](object& sender, key_event_args& e) {
+  configure_project_name_text_box_.key_up += [&](object & sender, key_event_args & e) {
     next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
   };
-
+  
   configure_project_location_label_.parent(configure_panel_);
   configure_project_location_label_.location({50, 270});
   configure_project_location_label_.auto_size(true);
@@ -429,10 +429,10 @@ main_form::main_form() {
   configure_project_location_text_box_.location({50, 300});
   configure_project_location_text_box_.width(550);
   configure_project_location_text_box_.text(properties::settings::default_settings().create_propject_folder());
-  configure_project_location_text_box_.key_up += [&](object& sender, key_event_args& e) {
+  configure_project_location_text_box_.key_up += [&](object & sender, key_event_args & e) {
     next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
   };
-
+  
   configure_project_location_button_.parent(configure_panel_);
   configure_project_location_button_.location({620, 300});
   configure_project_location_button_.width(37);
@@ -452,7 +452,7 @@ main_form::main_form() {
   previous_button_.text("&Back");
   previous_button_.visible(false);
   previous_button_.location(point(client_size() - xtd::drawing::size {215, 75}));
-  previous_button_.anchor(anchor_styles::bottom|anchor_styles::right);
+  previous_button_.anchor(anchor_styles::bottom | anchor_styles::right);
   previous_button_.click += [&] {
     if (open_xtd_examples_panel_.visible()) {
       if (menu().has_value()) {
@@ -485,26 +485,26 @@ main_form::main_form() {
       configure_panel_.visible(false);
     }
   };
-
+  
   next_button_.parent(*this);
   next_button_.text("&Next");
   next_button_.visible(false);
   next_button_.enabled(false);
   next_button_.location(point(client_size() - xtd::drawing::size {125, 75}));
-  next_button_.anchor(anchor_styles::bottom|anchor_styles::right);
+  next_button_.anchor(anchor_styles::bottom | anchor_styles::right);
   next_button_.click += [&] {
     if (create_panel_.visible()) {
       configure_project_type_title_label_.text(create_project_type_items_control_.project_type_items()[current_project_type_index_].name());
-      auto project_name = std::map<project_type, std::string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}}[create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
+      auto project_name = std::map<project_type, std::string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}} [create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
       auto index = 1;
-      while (std::filesystem::exists(std::filesystem::path {std::string(configure_project_location_text_box_.text())}/xtd::ustring::format("{}{}", project_name, index).c_str())) index++;
+      while (std::filesystem::exists(std::filesystem::path {std::string(configure_project_location_text_box_.text())} / xtd::ustring::format("{}{}", project_name, index).c_str())) index++;
       configure_project_name_text_box_.text(xtd::ustring::format("{}{}", project_name, index));
       previous_button_.text("&Back");
       next_button_.text("&Create");
       create_panel_.visible(false);
       configure_panel_.visible(true);
     } else if (configure_panel_.visible()) {
-      auto project_path = std::filesystem::path {std::filesystem::path {std::string(configure_project_location_text_box_.text())}/std::string(configure_project_name_text_box_.text())}.string();
+      auto project_path = std::filesystem::path {std::filesystem::path {std::string(configure_project_location_text_box_.text())} / std::string(configure_project_name_text_box_.text())}.string();
       if (std::filesystem::exists(project_path)) message_box::show(*this, xtd::ustring::format("Project \"{}\" already exists!", project_path), "Create project", message_box_buttons::ok, message_box_icon::error);
       else {
         new_project(project_path, current_project_type_index_);
@@ -531,14 +531,14 @@ main_form::main_form() {
         exemple_subproject_path = "xtd.cmake.examples";
       }
       
-      auto target_path = std::filesystem::temp_directory_path()/"xtd_examples"/exemple_subproject_path/xtd_example.path().stem();
+      auto target_path = std::filesystem::temp_directory_path() / "xtd_examples" / exemple_subproject_path / xtd_example.path().stem();
       if (std::filesystem::exists(target_path)) std::filesystem::remove_all(target_path);
       std::filesystem::create_directories(target_path);
       for (auto file : std::filesystem::directory_iterator(xtd_example.path()))
-        std::filesystem::copy(file, target_path/file.path().filename());
+        std::filesystem::copy(file, target_path / file.path().filename());
       //message_box::show(*this, ustring::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
       background_worker_ = std::make_unique<background_worker>();
-      background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
+      background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
         begin_invoke([&] {
           progress_dialog_ = std::make_unique<progress_dialog>();
           progress_dialog_->text(ustring::format("Opening {} example", std::any_cast<std::filesystem::path>(e.argument()).filename()));
@@ -561,7 +561,7 @@ main_form::main_form() {
   };
   
   init();
-
+  
   busy_box::hide();
 }
 
@@ -607,7 +607,7 @@ void main_form::add_to_create_recent_projects(size_t create_project_items_index)
   std::list<std::string> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
   if (std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)) != create_recent_projects.end())
     create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
-  
+    
   create_recent_projects.push_front(std::to_string(create_project_items_index));
   properties::settings::default_settings().create_recent_propjects(xtd::ustring::join(";", std::vector<std::string> {create_recent_projects.begin(), create_recent_projects.end()}));
   properties::settings::default_settings().save();
@@ -620,12 +620,12 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
   std::list<std::string> open_recent_projects {open_recent_projects_from_settings.begin(), open_recent_projects_from_settings.end()};
   if (std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path) != open_recent_projects.end())
     open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
-
+    
   open_recent_projects.push_front(project_path);
   properties::settings::default_settings().open_recent_propjects(xtd::ustring::join(";", std::vector<std::string> {open_recent_projects.begin(), open_recent_projects.end()}));
   properties::settings::default_settings().open_propject_folder(project_path);
   properties::settings::default_settings().save();
-
+  
   init_startup_open_recent_projects_list_box();
 }
 
@@ -651,7 +651,7 @@ void main_form::new_project(const std::string& project_path, size_t project_type
 void main_form::new_project(const std::string& project_path, project_type type, project_language language, project_sdk sdk) {
   add_to_open_recent_projects(project_path);
   background_worker_ = std::make_unique<background_worker>();
-  background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
+  background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     std::tuple<std::string, std::string, std::filesystem::path> new_project = std::any_cast<std::tuple<std::string, std::string, std::filesystem::path>>(e.argument());
     begin_invoke([&] {
       progress_dialog_ = std::make_unique<progress_dialog>();
@@ -671,7 +671,7 @@ void main_form::new_project(const std::string& project_path, project_type type, 
       if (properties::settings::default_settings().auto_close()) close();
     });
   };
-  background_worker_->run_worker_async(std::make_tuple(std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}}[type], (sdk == project_sdk::none ? std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}}[language] : std::map<project_sdk, std::string> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}}[sdk]), std::filesystem::path(project_path)));
+  background_worker_->run_worker_async(std::make_tuple(std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}} [type], (sdk == project_sdk::none ? std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}} [language] : std::map<project_sdk, std::string> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}} [sdk]), std::filesystem::path(project_path)));
 }
 
 void main_form::open_project() {
@@ -683,7 +683,7 @@ void main_form::open_project() {
 void main_form::open_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
   background_worker_ = std::make_unique<background_worker>();
-  background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
+  background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
       progress_dialog_ = std::make_unique<progress_dialog>();
       progress_dialog_->text(ustring::format("Opening {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
@@ -727,7 +727,7 @@ void main_form::run_project() {
 void main_form::run_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
   background_worker_ = std::make_unique<background_worker>();
-  background_worker_->do_work += [&](object& sender, do_work_event_args& e) {
+  background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
       progress_dialog_ = std::make_unique<progress_dialog>();
       progress_dialog_->text(ustring::format("Running {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
@@ -767,29 +767,29 @@ void main_form::show_about_dialog() {
   dialog.translators({"Gammasoft", "Contributors"});
   dialog.artists({"Gammasoft"});
   dialog.license("MIT License\n"
-                 "\n"
-                 "Copyright (c) 2022 Gammasoft.\n"
-                 "\n"
-                 "Permission is hereby granted, free of charge, to any person obtaining\n"
-                 "a copy of this software and associated documentation files (the\n"
-                 "\"Software\"), to deal in the Software without restriction, including\n"
-                 "without limitation the rights to use, copy, modify, merge, publish,\n"
-                 "distribute, sublicense, and/or sell copies of the Software, and to\n"
-                 "permit persons to whom the Software is furnished to do so, subject\n"
-                 "to the following conditions:\n"
-                 "\n"
-                 "The above copyright notice and this permission notice shall be\n"
-                 "included in all copies or substantial portions of the Software.\n"
-                 "\n"
-                 "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF\n"
-                 "ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO\n"
-                 "THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n"
-                 "PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT\n"
-                 "SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR\n"
-                 "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
-                 "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
-                 "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
-                 "OR OTHER DEALINGS IN THE SOFTWARE.\n");
+    "\n"
+    "Copyright (c) 2022 Gammasoft.\n"
+    "\n"
+    "Permission is hereby granted, free of charge, to any person obtaining\n"
+    "a copy of this software and associated documentation files (the\n"
+    "\"Software\"), to deal in the Software without restriction, including\n"
+    "without limitation the rights to use, copy, modify, merge, publish,\n"
+    "distribute, sublicense, and/or sell copies of the Software, and to\n"
+    "permit persons to whom the Software is furnished to do so, subject\n"
+    "to the following conditions:\n"
+    "\n"
+    "The above copyright notice and this permission notice shall be\n"
+    "included in all copies or substantial portions of the Software.\n"
+    "\n"
+    "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF\n"
+    "ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO\n"
+    "THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n"
+    "PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT\n"
+    "SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR\n"
+    "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
+    "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
+    "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
+    "OR OTHER DEALINGS IN THE SOFTWARE.\n");
   dialog.show();
 }
 

@@ -13,7 +13,7 @@ namespace keycodes {
     
     key_press_control& key_char(const xtd::ustring& value);
     key_press_control& key_data(const xtd::ustring& value);
-
+    
   private:
     xtd::forms::label key_event_label_;
     xtd::forms::label key_char_label_;

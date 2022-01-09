@@ -17,7 +17,7 @@ namespace keycodes {
     key_control& key_value(const xtd::ustring& value);
     key_control& key_modfiers(const xtd::ustring& value);
     key_control& line_visible(bool value);
-
+    
   private:
     xtd::forms::label key_event_;
     xtd::forms::label key_code_label_;

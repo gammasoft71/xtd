@@ -16,29 +16,28 @@ void main_form::main() {
 main_form::main_form() {
   size(properties::settings::default_settings().size());
   location(properties::settings::default_settings().location());
-  if (properties::settings::default_settings().menu_visible()) {
+  if (properties::settings::default_settings().menu_visible())
     menu(main_menu_);
-  }
   minimum_size({340, 340});
   start_position(form_start_position::manual);
   top_most(true);
   text("Key codes");
   location_changed += {*this, &main_form::on_form_location_changed};
   resize += {*this, &main_form::on_form_resize};
-
+  
   main_panel_.auto_scroll(true);
   main_panel_.dock(dock_style::fill);
   main_panel_.parent(*this);
-
+  
   line_panel_.back_color(application::theme().theme_colors().gray_text());
   line_panel_.dock(dock_style::top);
   line_panel_.height(2);
   line_panel_.parent(*this);
-
+  
   top_panel_.dock(dock_style::top);
   top_panel_.height(35);
   top_panel_.parent(*this);
-
+  
   show_key_down_check_box_.appearance(forms::appearance::button);
   show_key_down_check_box_.checked(properties::settings::default_settings().show_key_down());
   show_key_down_check_box_.location({10, 5});
@@ -46,7 +45,7 @@ main_form::main_form() {
   show_key_down_check_box_.text("Key down"_t);
   show_key_down_check_box_.text_align(content_alignment::middle_center);
   show_key_down_check_box_.click += {*this, &main_form::on_show_key_down_check_box_click};
-
+  
   show_key_press_check_box_.appearance(forms::appearance::button);
   show_key_press_check_box_.checked(properties::settings::default_settings().show_key_press());
   show_key_press_check_box_.location({120, 5});
@@ -54,7 +53,7 @@ main_form::main_form() {
   show_key_press_check_box_.text("Key press"_t);
   show_key_press_check_box_.text_align(content_alignment::middle_center);
   show_key_press_check_box_.click += {*this, &main_form::on_show_key_press_check_box_click};;
-
+  
   clear_button_.image(button_images::from_name("edit-delete"));
   clear_button_.location({230, 5});
   clear_button_.width(100);
@@ -74,7 +73,7 @@ bool main_form::pre_process_message(xtd::forms::message& message) {
   return false;
 }
 
-void main_form::on_clear_button_click(xtd::object& sender, const xtd::event_args& e){
+void main_form::on_clear_button_click(xtd::object& sender, const xtd::event_args& e) {
   main_panel_.controls().clear();
   key_controls_.clear();
 }
@@ -150,28 +149,28 @@ void main_form::show_about_dialog() {
   dialog.translators({"Gammasoft", "Contributors"});
   dialog.artists({"Gammasoft"});
   dialog.license("MIT License\n"
-                 "\n"
-                 "Copyright (c) 2022 Gammasoft.\n"
-                 "\n"
-                 "Permission is hereby granted, free of charge, to any person obtaining\n"
-                 "a copy of this software and associated documentation files (the\n"
-                 "\"Software\"), to deal in the Software without restriction, including\n"
-                 "without limitation the rights to use, copy, modify, merge, publish,\n"
-                 "distribute, sublicense, and/or sell copies of the Software, and to\n"
-                 "permit persons to whom the Software is furnished to do so, subject\n"
-                 "to the following conditions:\n"
-                 "\n"
-                 "The above copyright notice and this permission notice shall be\n"
-                 "included in all copies or substantial portions of the Software.\n"
-                 "\n"
-                 "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF\n"
-                 "ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO\n"
-                 "THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n"
-                 "PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT\n"
-                 "SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR\n"
-                 "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
-                 "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
-                 "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
-                 "OR OTHER DEALINGS IN THE SOFTWARE.\n");
+    "\n"
+    "Copyright (c) 2022 Gammasoft.\n"
+    "\n"
+    "Permission is hereby granted, free of charge, to any person obtaining\n"
+    "a copy of this software and associated documentation files (the\n"
+    "\"Software\"), to deal in the Software without restriction, including\n"
+    "without limitation the rights to use, copy, modify, merge, publish,\n"
+    "distribute, sublicense, and/or sell copies of the Software, and to\n"
+    "permit persons to whom the Software is furnished to do so, subject\n"
+    "to the following conditions:\n"
+    "\n"
+    "The above copyright notice and this permission notice shall be\n"
+    "included in all copies or substantial portions of the Software.\n"
+    "\n"
+    "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF\n"
+    "ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO\n"
+    "THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\n"
+    "PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT\n"
+    "SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR\n"
+    "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
+    "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
+    "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
+    "OR OTHER DEALINGS IN THE SOFTWARE.\n");
   dialog.show();
 }

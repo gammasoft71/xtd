@@ -41,12 +41,12 @@ namespace xtdc_command {
     }
     
   private:
-  #if defined(__XTD_RESOURCES_PATH__)
+    #if defined(__XTD_RESOURCES_PATH__)
     static string get_base_path() noexcept {return __XTD_RESOURCES_PATH__;}
-  #else
+    #else
     static string get_base_path() noexcept {return "";}
-  #endif
-
+    #endif
+    
     static vector<ustring> get_help() noexcept {
       return {
         "",
@@ -56,7 +56,7 @@ namespace xtdc_command {
         "  -i, --info       Display information.",
         "  -v, --version    Display version in use.",
         "  -h, --help       Display help.",
-
+        
         "",
         "command:",
         "  new              Initializes project.",
@@ -87,7 +87,7 @@ namespace xtdc_command {
         "Usage: add [options]",
       };
     }
-
+    
     static vector<ustring> get_build_help() noexcept {
       return {
         "Builds a project.",
@@ -198,7 +198,7 @@ namespace xtdc_command {
         "options:",
         "  -h, --help          Displays help for this command.",
         "  -n, --name          The name for the project. If no name is specified, the name of the specified path or of the current directory is used.",
-         "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".",
+        "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".",
         "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.",
         "  --force             Forces content to be generated even if it would change existing files.",
         "",
@@ -209,7 +209,7 @@ namespace xtdc_command {
         "    xtdc new --help",
       };
     }
-
+    
     static vector<ustring> get_update_help() noexcept {
       return {
         "Regenrates a project.",
@@ -230,7 +230,7 @@ namespace xtdc_command {
         "    xtdc update --help",
       };
     }
-
+    
     static vector<ustring> get_run_help() noexcept {
       return {
         "Compiles and immediately executes a project.",
@@ -253,7 +253,7 @@ namespace xtdc_command {
         "    xtdc run --help",
       };
     }
-
+    
     static vector<ustring> get_targets_help() noexcept {
       return {
         "List project targets.",
@@ -272,7 +272,7 @@ namespace xtdc_command {
         "    xtdc list --help",
       };
     }
-
+    
     static vector<ustring> get_test_help() noexcept {
       return {
         "Runs unit tests using the test runner specified in the project.",
@@ -341,7 +341,7 @@ namespace xtdc_command {
         "",
       };
     }
-
+    
     static string get_xtd_version() noexcept {
       ustring result = ustring::format("xtd Framework:{}", environment::new_line());
       for (auto library : system_report::xtd_libraries()) {
@@ -353,22 +353,22 @@ namespace xtdc_command {
       }
       return std::move(result);
     }
-
+    
     static string get_version() noexcept {
       return ustring::format("xtdc version {}, (c) {:L} by Gammasoft", get_version_number(), xtd::date_time::now());
     }
-
+    
     static string get_version_number() noexcept {
       return environment::version().to_string();
     }
-     
+    
     static bool is_ansi_supported() noexcept {
-#if defined(WIN32)
+      #if defined(WIN32)
       return true;
-#else
+      #else
       static string terminal = getenv("TERM") == nullptr ? "" : getenv("TERM");
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
-#endif
+      #endif
     }
     
     static int add(const vector<ustring>& args) {
@@ -390,13 +390,13 @@ namespace xtdc_command {
       if (sdk.empty()) sdk = "xtd";
       if (name.empty()) name = filesystem::path(path).stem().string();
       if (path.empty()) path = environment::current_directory();
-
+      
       if (show_help)
         cout << ustring::join("\n", get_add_help()) << endl;
       else {
-        xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}}[type];
-        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}}[sdk];
-        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
+        xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
+        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}} [sdk];
+        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
         cout << project_management(filesystem::absolute(filesystem::path(path))).add(name, project_type, project_sdk, project_language) << endl;
       }
       return 0;
@@ -474,7 +474,7 @@ namespace xtdc_command {
       }
       return 0;
     }
-
+    
     static int new_project(const vector<ustring>& args) {
       auto show_help = false;
       string invalid_option;
@@ -494,7 +494,7 @@ namespace xtdc_command {
       if (sdk.empty()) sdk = "xtd";
       if (name.empty()) name = filesystem::path(path).stem().string();
       if (path.empty()) path = environment::current_directory();
-
+      
       if (show_help)
         cout << ustring::join("\n", get_new_help()) << endl;
       else {
@@ -511,14 +511,14 @@ namespace xtdc_command {
           return -1;
         }
         
-        xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}}[type];
-        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}}[sdk];
-        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
+        xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
+        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}} [sdk];
+        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
         cout << project_management(filesystem::absolute(filesystem::path(path))).create(name, project_type, project_sdk, project_language) << endl;
       }
       return 0;
     }
-
+    
     static int open(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
@@ -562,7 +562,7 @@ namespace xtdc_command {
       }
       return 0;
     }
-
+    
     static int run(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
@@ -606,7 +606,7 @@ namespace xtdc_command {
       }
       return 0;
     }
-
+    
     static int test(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
@@ -693,27 +693,27 @@ namespace xtdc_command {
     
     static bool process_add_arguments(const vector<ustring>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
-        if (args[i] == "-h" || args[i] == "--help") {
+        if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
-        } else if (args[i] == "-n" || args[i] == "--name") {
-          if (i+1 >= args.size()) return false;
+        else if (args[i] == "-n" || args[i] == "--name") {
+          if (i + 1 >= args.size()) return false;
           name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
-          if (i+1 >= args.size()) return false;
+          if (i + 1 >= args.size()) return false;
           sdk = args[++i];
         } else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
           return false;
-        } else if (type.empty()) {
+        } else if (type.empty())
           type = args[i];
-        } else if (name.empty()) {
+        else if (name.empty())
           path = args[i];
-        } else
+        else
           return false;
       }
       return true;
     }
-
+    
     static bool process_build_arguments(const vector<ustring>& args, bool& show_help, bool& clean_first, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -771,7 +771,7 @@ namespace xtdc_command {
       }
       return true;
     }
-
+    
     static bool process_open_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -792,13 +792,13 @@ namespace xtdc_command {
     
     static bool process_new_arguments(const vector<ustring>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
-        if (args[i] == "-h" || args[i] == "--help") {
+        if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
-        } else if (args[i] == "-n" || args[i] == "--name") {
-          if (i+1 >= args.size()) return false;
+        else if (args[i] == "-n" || args[i] == "--name") {
+          if (i + 1 >= args.size()) return false;
           name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
-          if (i+1 >= args.size()) return false;
+          if (i + 1 >= args.size()) return false;
           sdk = args[++i];
         } else if (args[i].starts_with('-')) {
           invalid_option = args[i];;
@@ -812,7 +812,7 @@ namespace xtdc_command {
       }
       return true;
     }
-
+    
     static bool process_update_arguments(const vector<ustring>& args, bool& show_help, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -828,7 +828,7 @@ namespace xtdc_command {
       }
       return true;
     }
-
+    
     static bool process_run_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -848,7 +848,7 @@ namespace xtdc_command {
       }
       return true;
     }
-
+    
     static bool process_targets_arguments(const vector<ustring>& args, bool& show_help, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -862,7 +862,7 @@ namespace xtdc_command {
       }
       return true;
     }
-
+    
     static bool process_test_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -904,7 +904,7 @@ namespace xtdc_command {
       cout << ustring::join("\n", get_help()) << endl;
       return -1;
     }
-
+    
     static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const vector<ustring>& command_args) {
       if (show_version || show_info || show_help) {
         cout << get_version() << endl;

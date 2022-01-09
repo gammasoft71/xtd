@@ -35,7 +35,7 @@ namespace xtdc_gui {
   public:
     /// @brief Initializes a new instance of the main_form class.
     main_form();
-
+    
     /// @brief The main entry point for the application.
     static void main();
     
@@ -57,7 +57,7 @@ namespace xtdc_gui {
     void run_project(const std::string& project_path);
     void set_auto_close();
     void show_about_dialog();
-
+    
     std::unique_ptr<xtd::forms::background_worker> background_worker_;
     std::unique_ptr<xtd::forms::progress_dialog> progress_dialog_;
     xtd::forms::panel startup_panel_;
@@ -69,7 +69,7 @@ namespace xtdc_gui {
     xtd::forms::button startup_run_project_button_;
     xtd::forms::button startup_new_project_button_;
     xtd::forms::button startup_open_xtd_examples_button_;
-
+    
     xtd::forms::panel open_xtd_examples_panel_;
     xtd::forms::label open_xtd_examples_title_label_;
     xtd::forms::tab_control open_xtd_example_tab_control_;
@@ -91,7 +91,7 @@ namespace xtdc_gui {
     xtd::forms::list_box open_xtd_example_tunit_list_box_;
     xtd::forms::text_box open_xtd_examples_information_text_box_;
     xtd::forms::picture_box open_xtd_examples_information_picture_box_;
-
+    
     xtd::forms::panel create_panel_;
     xtd::forms::label create_title_label_;
     xtd::forms::label create_recent_project_title_label_;
@@ -100,7 +100,7 @@ namespace xtdc_gui {
     xtd::forms::choice create_platform_choice_;
     xtd::forms::choice create_type_choice_;
     project_type_items_control create_project_type_items_control_;
-
+    
     xtd::forms::panel configure_panel_;
     xtd::forms::label configure_title_label_;
     xtd::forms::label configure_project_type_title_label_;
@@ -109,7 +109,7 @@ namespace xtdc_gui {
     xtd::forms::label configure_project_location_label_;
     xtd::forms::text_box configure_project_location_text_box_;
     xtd::forms::button configure_project_location_button_;
-
+    
     xtd::forms::button previous_button_;
     xtd::forms::button next_button_;
     
