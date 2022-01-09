@@ -1161,7 +1161,7 @@ macro(write_assembly_informations)
     endif ()
 
     if (ASSEMBLY_GUID)
-      set(GUID "assembly_guid_(\"${ASSEMBLY_GUID}\");\n")
+      set(GUID "assembly_guid_(\"${ASSEMBLY_GUID}\");\n\n")
     else ()
       set(GUID "")
     endif ()
@@ -1189,8 +1189,8 @@ macro(write_assembly_informations)
       "assembly_culture_(\"${ASSEMBLY_CULTURE}\");\n"
       "\n"
       "// The following GUID is for the ID of the typelib if this project is exposed to COM\n"
-      "${GUID}"
       "\n"
+      "${GUID}"
       "// The assembly version has the format \"{Major}.{Minor}.{Build}.{Revision}\".\n"
       "// In not specify or empty or \"*\" the cmake project version is used.\n"
       "\n"
