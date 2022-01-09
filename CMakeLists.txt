@@ -40,10 +40,8 @@ set(ASTYLE_SOURCE_FILES
   ${CMAKE_SOURCE_DIR}/src/*.mm
   ${CMAKE_SOURCE_DIR}/tests/*.cpp
   ${CMAKE_SOURCE_DIR}/tests/*.h
-  ${CMAKE_SOURCE_DIR}/tests/*.mm
   ${CMAKE_SOURCE_DIR}/tools/*.cpp
   ${CMAKE_SOURCE_DIR}/tools/*.h
-  ${CMAKE_SOURCE_DIR}/tools/*.mm
 )
 
 set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR}/src)
