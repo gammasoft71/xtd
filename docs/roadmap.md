@@ -27,7 +27,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Library   | Enhancements                    | Developer | status                                          |
 |-----------|---------------------------------|-----------|-------------------------------------------------|
-| xtd.core  | date_time                       | Gammasoft | ![status](pictures/releases/status/started.png) | 
+| xtd.core  | assembly (with CMake)           | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.core  | date_time                       | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.core  | time_zone_info                  | Gammasoft | ![status](pictures/releases/status/started.png) | 
 | xtd.core  | io::binary_reader               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
 | xtd.core  | io::binary_writer               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
@@ -86,8 +87,6 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Library   | Enhancements                    | Developer | status                                          |
 |-----------|---------------------------------|-----------|-------------------------------------------------|
-| xtd.core  | assembly (with CMake)           |           |                                                 |
-| xtd.forms | application_informations        |           |                                                 |
 | xtd.forms | check_list_box_render           |           |                                                 |
 | xtd.forms | choice_render                   |           |                                                 |
 | xtd.forms | combo_box_render                |           |                                                 |

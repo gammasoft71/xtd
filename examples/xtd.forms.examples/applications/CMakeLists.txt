@@ -10,4 +10,6 @@ add_projects(
   application_context
   application_restart
   application_use_wait_cursor
+  application_with_cmake_assembly_info
+  application_with_manual_assembly_info
 )

@@ -8,7 +8,6 @@
 #include "../forms_export.h"
 #include "../forms_namespace_aliases.h"
 #include "application_context.h"
-#include "application_informations.h"
 #include "imessage_filter.h"
 #include "message.h"
 #include "message_loop_callback.h"
@@ -77,7 +76,6 @@ namespace xtd {
       
       /// @brief Gets the company name associated with the application.
       /// @return The company name.
-      /// @remarks company_name is taken from the application_informations containing the current application. You can set it by setting application_informations::company_name property. For more information, see application_informations.
       /// @par Examples
       /// The following code example gets this property and displays its value in a text box. The example requires that textBox1 has been placed on a form.
       /// @code
@@ -106,12 +104,10 @@ namespace xtd {
       
       /// @brief Gets the product name associated with this application.
       /// @return The product name.
-      /// @remarks product_name is taken from the application_informations containing the current application. You can set it by setting application_informations::product_name property. For more information, see application_informations.
       static xtd::ustring product_name();
       
       /// @brief Gets the product version associated with this application.
       /// @return The product version.
-      /// @remarks product_version is taken from the application_informations containing the current application. You can set it by setting application_informations::product_version property. For more information, see application_informations.
       static xtd::ustring product_version();
       
       /// @brief Gets the path for the executable file that started the application, not including the executable name.

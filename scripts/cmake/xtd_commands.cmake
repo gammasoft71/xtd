@@ -1174,19 +1174,19 @@ macro(write_assembly_informations)
       "// Remarks : If this file was manually created, you need re-run cmake generator after creating\n"
       "//           or modifying any parameter bellow.\n"
       "\n"
-      "//#include <xtd/assembly_info.h>\n"
+      "#include <xtd/reflection/assembly_info.h>\n"
       "\n"
       "// Information about this assembly is defined by the following attributes.\n"
       "// Change them to the values specific to your project.\n"
       "\n"
-      "//assembly_title_(\"${TITLE}\");\n"
-      "//assembly_description_(\"${ASSEMBLY_DESCRIPTION}\");\n"
-      "//assembly_configuration_(\"${CONFIGURATION}\");\n"
-      "//assembly_company_(\"${ASSEMBLY_COMPANY}\");\n"
-      "//assembly_product_(\"${PRODUCT}\");\n"
-      "//assembly_copyright_(\"${ASSEMBLY_COPYRIGHT}\");\n"
-      "//assembly_trademark_(\"${ASSEMBLY_TRADEMARK}\");\n"
-      "//assembly_culture_(\"${ASSEMBLY_CULTURE}\");\n"
+      "assembly_title_(\"${TITLE}\");\n"
+      "assembly_description_(\"${ASSEMBLY_DESCRIPTION}\");\n"
+      "assembly_configuration_(\"${CONFIGURATION}\");\n"
+      "assembly_company_(\"${ASSEMBLY_COMPANY}\");\n"
+      "assembly_product_(\"${PRODUCT}\");\n"
+      "assembly_copyright_(\"${ASSEMBLY_COPYRIGHT}\");\n"
+      "assembly_trademark_(\"${ASSEMBLY_TRADEMARK}\");\n"
+      "assembly_culture_(\"${ASSEMBLY_CULTURE}\");\n"
       "\n"
       "// The following GUID is for the ID of the typelib if this project is exposed to COM\n"
       "${GUID}"
@@ -1194,7 +1194,7 @@ macro(write_assembly_informations)
       "// The assembly version has the format \"{Major}.{Minor}.{Build}.{Revision}\".\n"
       "// In not specify or empty or \"*\" the cmake project version is used.\n"
       "\n"
-      "//assembly_version_(\"${PROJECT_VERSION}\");\n"
+      "assembly_version_(\"${PROJECT_VERSION}\");\n"
       "${FILE_VERSION}"
       "#pragma endregion"
     )
@@ -1996,7 +1996,7 @@ endif()
 # Run astyle coommand
 
 # Options
-option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" ON)
+option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" OFF)
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 
 if (NOT ASTYLE_SOURCE_FILES)
@@ -2058,7 +2058,7 @@ endif ()
 ################################################################################
 # Run cppcheck command
 
-option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" ON)
+option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" OFF)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
 
 if (NOT CPPCHECK_SOURCE_ROOTS)
@@ -2100,7 +2100,7 @@ endif ()
 ################################################################################
 # Run Reference Guide generator command
 
-option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" ON)
+option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" OFF)
 option(XTD_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
 
 if (XTD_ENABLE_RUN_REFERENCE_GUIDE AND NOT RUN_REFERENCE_GUIDE_ONLY_ONCE)

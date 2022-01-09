@@ -32,7 +32,6 @@
 | [appearance](../src/xtd.forms/include/xtd/forms/appearance.h)                                                                 | enumeration  | ![progress](pictures/progress100.png) |
 | [application](../src/xtd.forms/include/xtd/forms/application.h)                                                               | static class | ![progress](pictures/progress100.png) |
 | [application_context](../src/xtd.forms/include/xtd/forms/application_context.h)                                               | class        | ![progress](pictures/progress100.png) |
-| [application_informations](../src/xtd.forms/include/xtd/forms/application_informations.h)                                     | class        | ![progress](pictures/progress25.png)  |
 | [arrange_direction](../src/xtd.forms/include/xtd/forms/arrange_direction.h)                                                   | enumeration  | ![progress](pictures/progress100.png) |
 | [arrange_starting_position](../src/xtd.forms/include/xtd/forms/arrange_starting_position.h)                                   | enumeration  | ![progress](pictures/progress100.png) |
 | [auto_size_mode](../src/xtd.forms/include/xtd/forms/auto_size_mode.h)                                                         | enumeration  | ![progress](pictures/progress100.png) |

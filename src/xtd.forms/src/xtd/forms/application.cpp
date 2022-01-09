@@ -9,6 +9,9 @@
 #include <xtd/literals.h>
 #include <xtd/diagnostics/process.h>
 #include <xtd/io/directory.h>
+#include <xtd/reflection/assembly_company_attribute.h>
+#include <xtd/reflection/assembly_product_attribute.h>
+#include <xtd/reflection/assembly_version_attribute.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
@@ -97,8 +100,9 @@ microsoft::win32::registry_key application::common_app_data_registry() {
  */
 
 xtd::ustring application::company_name() {
-  if (!ustring::is_empty(application_informations::company_name())) return application_informations::company_name();
-  return product_name();
+  if (!__assembly_company_attribute__() || __assembly_company_attribute__()->company() == "")
+    return xtd::io::path::get_file_name_without_extension(executable_path());
+  return __assembly_company_attribute__()->company();
 }
 
 xtd::ustring application::executable_name() {
@@ -132,13 +136,15 @@ const form_collection application::open_forms() {
 }
 
 xtd::ustring application::product_name() {
-  if (!ustring::is_empty(application_informations::product_name())) return application_informations::product_name();
-  return io::path::get_file_name_without_extension(executable_path());
+  if (!__assembly_product_attribute__() || __assembly_product_attribute__()->product() == "")
+    return xtd::io::path::get_file_name_without_extension(executable_path());
+  return __assembly_product_attribute__()->product();
 }
 
 xtd::ustring application::product_version() {
-  if (!ustring::is_empty(application_informations::product_version())) return application_informations::product_version();
-  return "0.0.0.0";
+  if (!__assembly_version_attribute__() || __assembly_version_attribute__()->version() == "")
+    return ustring("0.0.0");
+  return __assembly_version_attribute__()->version();
 }
 
 xtd::ustring application::startup_path() {

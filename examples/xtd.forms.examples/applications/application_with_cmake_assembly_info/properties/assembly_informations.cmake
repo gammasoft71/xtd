@@ -1,0 +1,8 @@
+assembly_title("Forms with CMake assembly information")
+assembly_description("This example shows how to use xtd assembly informations")
+assembly_company("Gammasoft")
+assembly_product("form_with_cmake_assembly_info")
+assembly_copyright("Copyright © Gammasoft 2022")
+assembly_trademark("")
+assembly_version("1.2.3")
+assembly_guid("9b363484-3d19-40a5-b5ac-eeebd391163b")
