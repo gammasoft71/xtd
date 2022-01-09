@@ -6,8 +6,8 @@
 
 /// @cond
 /// Internal used only
-#if !defined(XTD_ASSEMBLY_VERSION)
-#  define XTD_ASSEMBLY_VERSION "1.0.0"
+#if !defined(__XTD_ASSEMBLY_VERSION__)
+#  define __XTD_ASSEMBLY_VERSION__ "1.0.0"
 #endif
 /// @endcond
 
@@ -43,5 +43,5 @@ std::shared_ptr<xtd::reflection::assembly_version_attribute>& __assembly_version
 /// @endcond
 
 #define assembly_version_(version) \
-  xtd::reflection::assembly_version_attribute __assembly_version_attribute {xtd::ustring(version) == "" || xtd::ustring(version) == "*" ? XTD_ASSEMBLY_VERSION : version, xtd::object()}
+  xtd::reflection::assembly_version_attribute __assembly_version_attribute {xtd::ustring(version) == "" || xtd::ustring(version) == "*" ? __XTD_ASSEMBLY_VERSION__ : version, xtd::object()}
 
