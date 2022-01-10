@@ -53,13 +53,13 @@ namespace game_of_life {
       };
       
       label_iterations_.parent(*this);
-      label_iterations_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
       label_iterations_.font(xtd::drawing::font(xtd::drawing::font_family::generic_monospace(), label_iterations_.font().size()));
       label_iterations_.text_align(xtd::forms::content_alignment::middle_right);
       label_iterations_.text(xtd::ustring::format("Iterations : {}", iterations_));
       label_iterations_.width(150);
       label_iterations_.location({555, 15});
-      
+      label_iterations_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
+
       label_zoom_.parent(*this);
       label_zoom_.location({10, 45});
       label_zoom_.text(xtd::ustring::format("Zoom : {}", zoom_));
@@ -83,12 +83,11 @@ namespace game_of_life {
       track_bar_zoom_.size({200, 25});
       
       label_speed_.parent(*this);
-      label_speed_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
       label_speed_.location({425, 45});
+      label_speed_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
       label_speed_.text(xtd::ustring::format("Speed : {}", speed_));
       
       track_bar_speed_.parent(*this);
-      track_bar_speed_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
       track_bar_speed_.auto_size(false);
       track_bar_speed_.location({505, 40});
       track_bar_speed_.minimum(1);
@@ -101,13 +100,14 @@ namespace game_of_life {
         label_speed_.text(xtd::ustring::format("Speed : {}", speed_));
       };
       track_bar_speed_.size({200, 25});
-      
+      track_bar_speed_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
+
       panel_grid_.parent(*this);
-      panel_grid_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
       panel_grid_.back_color(empty_color_);
       panel_grid_.border_style(xtd::forms::border_style::fixed_single);
       panel_grid_.location({10, 75});
       panel_grid_.size({695, 395});
+      panel_grid_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
       panel_grid_.double_buffered(true);
       
       panel_grid_.mouse_down += [&](object & sender, const xtd::forms::mouse_event_args & e) {
