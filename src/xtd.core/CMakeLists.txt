@@ -19,6 +19,7 @@ add_sources(
   include/xtd/arithmetic_exception.h
   include/xtd/as.h
   include/xtd/async_callback.h
+  include/xtd/attribute.h
   include/xtd/background_color.h
   include/xtd/beep.h
   include/xtd/bit_converter.h
