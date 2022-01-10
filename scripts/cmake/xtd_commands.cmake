@@ -2006,7 +2006,6 @@ option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 if (NOT ASTYLE_SOURCE_FILES)
   set(ASTYLE_SOURCE_FILES
    ${CMAKE_SOURCE_DIR}/*.cpp 
-   ${CMAKE_SOURCE_DIR}/*.mm 
    ${CMAKE_SOURCE_DIR}/*.h
   )
 endif ()
