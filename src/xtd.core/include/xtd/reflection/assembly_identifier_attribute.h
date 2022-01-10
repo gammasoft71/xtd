@@ -31,7 +31,7 @@ namespace xtd {
   }
 }
 
-  /// @cond
+/// @cond
 std::shared_ptr<xtd::reflection::assembly_identifier_attribute>& __assembly_identifier_attribute__();
 /// @endcond
 

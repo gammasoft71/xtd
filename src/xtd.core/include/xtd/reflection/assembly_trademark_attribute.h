@@ -24,7 +24,7 @@ namespace xtd {
       
     protected:
       std::shared_ptr<object> get_type_id() const override;
-
+      
     private:
       ustring trademark_;
     };

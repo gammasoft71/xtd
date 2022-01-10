@@ -21,7 +21,7 @@ namespace xtd {
       /// @endcond
       
       const ustring& company() const {return company_;}
-
+      
     protected:
       std::shared_ptr<object> get_type_id() const override;
       
