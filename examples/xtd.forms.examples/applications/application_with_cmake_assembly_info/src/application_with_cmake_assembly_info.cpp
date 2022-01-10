@@ -13,19 +13,19 @@ public:
     text("Form with CMake assembly info");
     controls().push_back_range({company, product, version, company_name, product_name, product_version});
     client_size({350, 105});
-
+    
     company.text("Company name");
     company.location({10, 10});
     company.text_align(content_alignment::middle_left);
-
+    
     product.text("Product name");
     product.location({10, 40});
     product.text_align(content_alignment::middle_left);
-
+    
     version.text("Product version");
     version.location({10, 70});
     version.text_align(content_alignment::middle_left);
-
+    
     company_name.text(application::company_name());
     company_name.border_style(forms::border_style::bevel_sunken);
     company_name.location({120, 10});
