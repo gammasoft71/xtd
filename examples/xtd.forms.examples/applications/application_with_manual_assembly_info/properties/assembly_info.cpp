@@ -24,5 +24,5 @@ assembly_culture_("");
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // In not specify or empty or "*" the cmake project version is used.
 
-assembly_version_("");
+assembly_version_("1.0.0");
 #pragma endregion
