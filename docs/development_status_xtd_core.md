@@ -335,7 +335,7 @@
 
 | Name                                                                                                          | Type         | Status                                |
 |---------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [assembly](../src/xtd.core/include/xtd/reflection/assembly.h)                                                 | class        | ![progress](pictures/progress25.png)  |
+| [assembly](../src/xtd.core/include/xtd/reflection/assembly.h)                                                 | class        | ![progress](pictures/progress100.png) |
 | [assembly_company_attribute](../src/xtd.core/include/xtd/reflection/assembly_company_attribute.h)             | class        | ![progress](pictures/progress100.png) |
 | [assembly_configuration_attribute](../src/xtd.core/include/xtd/reflection/assembly_configuration_attribute.h) | class        | ![progress](pictures/progress100.png) |
 | [assembly_copyright_attribute](../src/xtd.core/include/xtd/reflection/assembly_copyright_attribute.h)         | class        | ![progress](pictures/progress100.png) |
@@ -343,6 +343,7 @@
 | [assembly_file_version_attribute](../src/xtd.core/include/xtd/reflection/assembly_file_version_attribute.h)   | class        | ![progress](pictures/progress100.png) |
 | [assembly_guid_attribute](../src/xtd.core/include/xtd/reflection/assembly_guid_attribute.h)                   | class        | ![progress](pictures/progress100.png) |
 | [assembly_identifier_attribute](../src/xtd.core/include/xtd/reflection/assembly_identifier_attribute.h)       | class        | ![progress](pictures/progress100.png) |
+| [assembly_name_attribute](../src/xtd.core/include/xtd/reflection/assembly_name_attribute.h)                   | class        | ![progress](pictures/progress100.png) |
 | [assembly_product_attribute](../src/xtd.core/include/xtd/reflection/assembly_product_attribute.h)             | class        | ![progress](pictures/progress100.png) |
 | [assembly_title_attribute](../src/xtd.core/include/xtd/reflection/assembly_title_attribute.h)                 | class        | ![progress](pictures/progress100.png) |
 | [assembly_trademark_attribute](../src/xtd.core/include/xtd/reflection/assembly_trademark_attribute.h)         | class        | ![progress](pictures/progress100.png) |
