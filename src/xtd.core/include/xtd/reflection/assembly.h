@@ -97,7 +97,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly class.
-      /// This constructor is invoked by derived classes during the construction of xtd::reflection::assembly objects.
+      /// @remarks This constructor is invoked by derived classes during the construction of xtd::reflection::assembly objects.
       assembly() = default;
       /// @}
       
