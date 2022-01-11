@@ -22,7 +22,7 @@
 |-----------------------------------------------------------------------|-------|---------------------------------------|
 | [Generic commands](../scripts/cmake/xtd_commands.cmake)               | macro | ![progress](pictures/progress100.png) |
 | [Target properties commands](../scripts/cmake/xtd_commands.cmake)     | macro | ![progress](pictures/progress100.png) |
-| [Assembly Informations commands](../scripts/cmake/xtd_commands.cmake) | macro | ![progress](pictures/progress25.png)  |
+| [Assembly Informations commands](../scripts/cmake/xtd_commands.cmake) | macro | ![progress](pictures/progress100.png) |
 | [Build options commands](../scripts/cmake/xtd_commands.cmake)         | macro | ![progress](pictures/progress100.png) |
 | [Install commands](../scripts/cmake/xtd_commands.cmake)               | macro | ![progress](pictures/progress100.png) |
 | [Project commands](../scripts/cmake/xtd_commands.cmake)               | macro | ![progress](pictures/progress100.png) |
