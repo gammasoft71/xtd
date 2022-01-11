@@ -38,7 +38,7 @@
 
 | Name                                       | Status                                |
 |--------------------------------------------|---------------------------------------|
-| [cmake](development_status_cmake.md)       | ![progress](pictures/progress75.png)  |
+| [cmake](development_status_cmake.md)       | ![progress](pictures/progress100.png) |
 | [themes](development_status_themes.md)     | ![progress](pictures/progress25.png)  |
 | [toolkits](development_status_toolkits.md) | ![progress](pictures/progress75.png)  |
 | [tools](development_status_tools.md)       | ![progress](pictures/progress75.png)  |
