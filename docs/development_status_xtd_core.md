@@ -16,7 +16,7 @@
 * [xtd::net](#xtdnet)
 * [xtd::net::sockets](#xtdnetsockets)
 * [xtd::net::websockets](#xtdnetwebsockets)
-* [xtd::refection](#xtdreflection)
+* [xtd::reflection](#xtdreflection)
 * [xtd::security](#xtdsecurity)
 * [xtd::text](#xtdtext)
 * [xtd::threading](#xtdthreading)
@@ -285,23 +285,6 @@
 | [web_request_methods](../src/xtd.core/include/xtd/net/web_request_methods.h)                   | static class | ![progress](pictures/progress0.png)   |
 | [web_response](../src/xtd.core/include/xtd/net/web_response.h)                                 | class        | ![progress](pictures/progress0.png)   |
 
-## xtd::refection
-
-| Name                                                                                                         | Type         | Status                                |
-|--------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [assembly](../src/xtd.core/include/xtd/refection/assembly.h)                                                 | class        | ![progress](pictures/progress25.png)  |
-| [assembly_company_attribute](../src/xtd.core/include/xtd/refection/assembly_company_attribute.h)             | class        | ![progress](pictures/progress100.png) |
-| [assembly_configuration_attribute](../src/xtd.core/include/xtd/refection/assembly_configuration_attribute.h) | class        | ![progress](pictures/progress100.png) |
-| [assembly_copyright_attribute](../src/xtd.core/include/xtd/refection/assembly_compyright_attribute.h)        | class        | ![progress](pictures/progress100.png) |
-| [assembly_description_attribute](../src/xtd.core/include/xtd/refection/assembly_description_attribute.h)     | class        | ![progress](pictures/progress100.png) |
-| [assembly_file_version_attribute](../src/xtd.core/include/xtd/refection/assembly_file_vversion_attribute.h)  | class        | ![progress](pictures/progress100.png) |
-| [assembly_guid_attribute](../src/xtd.core/include/xtd/refection/assembly_guid_attribute.h)                   | class        | ![progress](pictures/progress100.png) |
-| [assembly_identifier_attribute](../src/xtd.core/include/xtd/refection/assembly_identifier_attribute.h)       | class        | ![progress](pictures/progress100.png) |
-| [assembly_product_attribute](../src/xtd.core/include/xtd/refection/assembly_product_attribute.h)             | class        | ![progress](pictures/progress100.png) |
-| [assembly_title_attribute](../src/xtd.core/include/xtd/refection/assembly_title_attribute.h)                 | class        | ![progress](pictures/progress100.png) |
-| [assembly_trademark_attribute](../src/xtd.core/include/xtd/refection/assembly_trademeark_attribute.h)        | class        | ![progress](pictures/progress100.png) |
-| [assembly_version_attribute](../src/xtd.core/include/xtd/refection/assembly_version_attribute.h)             | class        | ![progress](pictures/progress100.png) |
-
 ## xtd::net::sockets
 
 | Name                                                                                                               | Type         | Status                                |
@@ -347,6 +330,23 @@
 | [web_socket_close_status](../src/xtd.core/include/xtd/net/websockets/web_socket_close_status.h) | enumeration  | ![progress](pictures/progress0.png)   |
 | [web_socket_message_type](../src/xtd.core/include/xtd/net/websockets/web_socket_message_type.h) | enumeration  | ![progress](pictures/progress0.png)   |
 | [web_socket_state](../src/xtd.core/include/xtd/net/websockets/web_socket_state.h)               | enumeration  | ![progress](pictures/progress0.png)   |
+
+## xtd::reflection
+
+| Name                                                                                                         | Type         | Status                                |
+|--------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [assembly](../src/xtd.core/include/xtd/refection/assembly.h)                                                 | class        | ![progress](pictures/progress25.png)  |
+| [assembly_company_attribute](../src/xtd.core/include/xtd/refection/assembly_company_attribute.h)             | class        | ![progress](pictures/progress100.png) |
+| [assembly_configuration_attribute](../src/xtd.core/include/xtd/refection/assembly_configuration_attribute.h) | class        | ![progress](pictures/progress100.png) |
+| [assembly_copyright_attribute](../src/xtd.core/include/xtd/refection/assembly_compyright_attribute.h)        | class        | ![progress](pictures/progress100.png) |
+| [assembly_description_attribute](../src/xtd.core/include/xtd/refection/assembly_description_attribute.h)     | class        | ![progress](pictures/progress100.png) |
+| [assembly_file_version_attribute](../src/xtd.core/include/xtd/refection/assembly_file_vversion_attribute.h)  | class        | ![progress](pictures/progress100.png) |
+| [assembly_guid_attribute](../src/xtd.core/include/xtd/refection/assembly_guid_attribute.h)                   | class        | ![progress](pictures/progress100.png) |
+| [assembly_identifier_attribute](../src/xtd.core/include/xtd/refection/assembly_identifier_attribute.h)       | class        | ![progress](pictures/progress100.png) |
+| [assembly_product_attribute](../src/xtd.core/include/xtd/refection/assembly_product_attribute.h)             | class        | ![progress](pictures/progress100.png) |
+| [assembly_title_attribute](../src/xtd.core/include/xtd/refection/assembly_title_attribute.h)                 | class        | ![progress](pictures/progress100.png) |
+| [assembly_trademark_attribute](../src/xtd.core/include/xtd/refection/assembly_trademeark_attribute.h)        | class        | ![progress](pictures/progress100.png) |
+| [assembly_version_attribute](../src/xtd.core/include/xtd/refection/assembly_version_attribute.h)             | class        | ![progress](pictures/progress100.png) |
 
 ## xtd::security
 
