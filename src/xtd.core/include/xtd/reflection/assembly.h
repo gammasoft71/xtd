@@ -27,58 +27,58 @@ namespace xtd {
       assembly(assembly&&) = default;
       assembly& operator=(const assembly&) = default;
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
       /// @brief Gets company name information.
       /// @return A string containing the company name.
       const ustring& company() const;
-
+      
       /// @brief Gets assembly configuration information.
       /// @return A string containing the assembly configuration information.
       const ustring& configuration() const;
-
+      
       /// @brief Initializes a new instance of the xtd::reflection::assembly_copyright_attribute class.
       /// @param copyright The copyright information.
       const ustring& copyright() const;
-
+      
       /// @brief Gets culture information.
       /// @return A string containing the culture information.
       const ustring& culture() const;
-
+      
       /// @brief Gets decription information.
       /// @return A string containing the decription information.
       const ustring& description() const;
-
+      
       /// @brief Gets file version information.
       /// @return A string containing the file version information.
       const ustring& file_version() const;
-
+      
       /// @brief Gets guid information.
       /// @return A string containing the guid information.
       const ustring& guid() const;
-
+      
       /// @brief Gets identifier information.
       /// @return A string containing the identifier information.
       const ustring& identifier() const;
-
+      
       /// @brief Gets name information.
       /// @return A string containing the name information.
       const ustring& name() const;
-
+      
       /// @brief Gets product information.
       /// @return A string containing the product information.
       const ustring& product() const;
-
+      
       /// @brief Gets title information.
       /// @return A string containing the title information.
       const ustring& title() const;
-
+      
       /// @brief Gets trademark information.
       /// @return A string containing the trademark information.
       const ustring& trademarks() const;
-
+      
       /// @brief Gets version information.
       /// @return A string containing the version information.
       const ustring& version() const;

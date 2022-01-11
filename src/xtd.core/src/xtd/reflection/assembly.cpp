@@ -45,7 +45,7 @@ const ustring& assembly::product() const {
   return product_;
 }
 
-const ustring& assembly::title() const{
+const ustring& assembly::title() const {
   return title_;
 }
 

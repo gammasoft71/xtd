@@ -22,7 +22,7 @@ namespace xtd {
     class core_export_ assembly_configuration_attribute final : public xtd::attribute {
     public:
       /// @name Constructors
-
+      
       /// @{
       /// @brief Initializes a new instance of the xttd::reflection::assembly_configuration_attribute class.
       /// @param configuration The assembly configuration.
@@ -33,7 +33,7 @@ namespace xtd {
       /// Internal used only
       assembly_configuration_attribute(const ustring& value, const object& executing_assembly);
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
