@@ -188,10 +188,11 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 ### Enhancements
 
-| Library                  | Enhancements                        | Developer | status                                          |
-|--------------------------|-------------------------------------|-----------|-------------------------------------------------|
-| xtd.drawing.native.win32 | Implementation of the Win32 toolkit |           |                                                 |
-| xtd.forms.native.win32   | Implementation of the Win32 toolkit |           |                                                 |
+| Library                  | Enhancements                            | Developer | status                                          |
+|--------------------------|-----------------------------------------|-----------|-------------------------------------------------|
+| xtd.drawing              | Image and bitmap (toollkit independant) |           |                                                 |
+| xtd.drawing.native.win32 | Implementation of the Win32 toolkit     |           |                                                 |
+| xtd.forms.native.win32   | Implementation of the Win32 toolkit     |           |                                                 |
 
 ## Release 3.0.0 (release)
 
