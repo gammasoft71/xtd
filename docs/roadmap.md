@@ -8,8 +8,11 @@
 * [Release 0.2.0 (beta)](#release-020-beta)
 * [Release 0.3.0 (beta)](#release-030-beta)
 * [Release 0.4.0 (beta)](#release-040-beta)
-* [Release 0.5.0 (beta)](#release-050-beta)
 * [Release 1.0.0 (relase)](#release-100-release)
+* [Release 2.0.0 (relase)](#release-200-release)
+* [Release 3.0.0 (relase)](#release-300-release)
+* [Release 4.0.0 (relase)](#release-400-release)
+* [Release 5.0.0 (relase)](#release-500-release)
 
 ## Remarks
 
@@ -158,7 +161,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | tool_strip                      |           |                                                 |
 | xtd.forms | tool_strip_render               |           |                                                 |
 
-## Release 0.5.0 (beta)
+## Release 1.0.0 (release)
 
 ### Bugs
 
@@ -179,9 +182,49 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | web_view                        |           |                                                 |
 | xtd.forms | web_view_render                 |           |                                                 |
 
-## Release 1.0.0 (release)
+## Release 2.0.0 (release)
 
-* The first release will be planned on version 0.4.0.
+see [Issues](https://github.com/gammasoft71/xtd/issues)
+
+### Enhancements
+
+| Library                  | Enhancements                        | Developer | status                                          |
+|--------------------------|-------------------------------------|-----------|-------------------------------------------------|
+| xtd.drawing.native.win32 | Implementation of the Win32 toolkit |           |                                                 |
+| xtd.forms.native.win32   | Implementation of the Win32 toolkit |           |                                                 |
+
+## Release 3.0.0 (release)
+
+see [Issues](https://github.com/gammasoft71/xtd/issues)
+
+### Enhancements
+
+| Library                 | Enhancements                       | Developer | status                                          |
+|-------------------------|------------------------------------|-----------|-------------------------------------------------|
+| xtd.drawing.native.gtk4 | Implementation of the Gtk4 toolkit |           |                                                 |
+| xtd.forms.native.gtk4   | Implementation of the Gtk4 toolkit |           |                                                 |
+
+## Release 4.0.0 (release)
+
+see [Issues](https://github.com/gammasoft71/xtd/issues)
+
+### Enhancements
+
+| Library                  | Enhancements                        | Developer | status                                          |
+|--------------------------|-------------------------------------|-----------|-------------------------------------------------|
+| xtd.drawing.native.cocoa | Implementation of the Cocoa toolkit |           |                                                 |
+| xtd.forms.native.cocoa   | Implementation of the Cocoa toolkit |           |                                                 |
+
+## Release 5.0.0 (release)
+
+see [Issues](https://github.com/gammasoft71/xtd/issues)
+
+### Enhancements
+
+| Library                | Enhancements                      | Developer | status                                          |
+|------------------------|-----------------------------------|-----------|-------------------------------------------------|
+| xtd.drawing.native.qt6 | Implementation of the Qt6 toolkit |           |                                                 |
+| xtd.forms.native.qt6   | Implementation of the Qt6 toolkit |           |                                                 |
 
 ______________________________________________________________________________________________
 
