@@ -406,7 +406,40 @@ namespace xtd {
     /// @remarks The xtd::date_time::now property returns a xtd::date_time value that represents the current date and time on the local computer. Note that there is a difference between a xtd::date_time value, which represents the number of ticks that have elapsed since midnight of January 1, 0001, and the string representation of that xtd::date_time value, which expresses a date and time value in a culture-specific-specific format. For information on formatting date and time values, see the to_string method. The following example displays the short date and time string in a number of culture-specific formats.
     /// @include date_time_now2.cpp
     static date_time now() noexcept;
+    
+    /// @brief Gets the seconds component of the date represented by this instance.
+    /// @return The seconds component, expressed as a value between 0 and 59.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::second property.
+    /// @code
+    /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
+    /// // year gets 1999.
+    /// uint32_t year = moment.year();
+    ///
+    /// // month gets 1 (January).
+    /// uint23_t month = moment.month();
+    ///
+    /// // day gets 13.
+    /// uint23_t day = moment.day();
+    ///
+    /// // hour gets 3.
+    /// uint23_t hour = moment.hour();
+    ///
+    /// // minute gets 57.
+    /// uint23_t minute = moment.minute();
+    ///
+    /// // second gets 32.
+    /// uint23_t second = moment.second();
+    ///
+    /// // millisecond gets 11.
+    /// uint23_t millisecond = moment.millisecond();
+    /// @endcode
     uint32_t second() const noexcept;
+    /// @brief Gets the number of ticks that represent the date and time of this instance.
+    /// @return The number of ticks that represent the date and time of this instance. The value is between xtd::date_time::min_value.ticks and xtd::date_time::max_value.ticks.
+    /// @par Examples
+    /// The following example uses the xtd::date_time::ticks property to display the number of ticks that have elapsed since the beginning of the century.
+    /// @include date_time_ticks2.cpp
     xtd::ticks ticks() const noexcept;
     time_point time_of_day() const noexcept;
     static date_time to_day() noexcept;
