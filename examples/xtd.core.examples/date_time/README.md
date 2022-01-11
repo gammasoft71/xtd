@@ -10,4 +10,5 @@
 * [date_time_min_value](date_time_min_value/README.md) Shows how to use [xtd::date_time::min_value](../../../src/xtd.core/include/xtd/date_time.h) field.
 * [date_time_specify_kind](date_time_specify_kind/README.md) shows how to use [xtd::date_time::specify_kind](../../../src/xtd.core/include/xtd/date_time.h) method.
 * [date_time_ticks](date_time_ticks/README.md) shows how to use [xtd::date_time](../../../src/xtd.core/include/xtd/date_time.h) class with ticks constructors.
+* [date_time_ticks2](date_time_ticks2/README.md) shows how to use [xtd::date_time::ticks](../../../src/xtd.core/include/xtd/date_time.h) property.
 * [date_time_to_string_format](date_time_to_string_format/README.md) shows how to use [xtd::date_time::to_string](../../../src/xtd.core/include/xtd/date_time.h) with format method.
