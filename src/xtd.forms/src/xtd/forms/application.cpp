@@ -9,9 +9,7 @@
 #include <xtd/literals.h>
 #include <xtd/diagnostics/process.h>
 #include <xtd/io/directory.h>
-#include <xtd/reflection/assembly_company_attribute.h>
-#include <xtd/reflection/assembly_product_attribute.h>
-#include <xtd/reflection/assembly_version_attribute.h>
+#include <xtd/reflection/assembly.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
@@ -25,6 +23,7 @@ using namespace std;
 using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::reflection;
 
 // Initialize xtd::diagnostics::process::message_box_message_ delegate th show message_box dialog.
 // This operation can be done only if xtd.forms lib is present.
@@ -100,9 +99,8 @@ microsoft::win32::registry_key application::common_app_data_registry() {
  */
 
 xtd::ustring application::company_name() {
-  if (!__assembly_company_attribute__() || __assembly_company_attribute__()->company() == "")
-    return xtd::io::path::get_file_name_without_extension(executable_path());
-  return __assembly_company_attribute__()->company();
+  if (assembly::get_executing_assembly().company() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
+  return assembly::get_executing_assembly().company();
 }
 
 xtd::ustring application::executable_name() {
@@ -136,15 +134,13 @@ const form_collection application::open_forms() {
 }
 
 xtd::ustring application::product_name() {
-  if (!__assembly_product_attribute__() || __assembly_product_attribute__()->product() == "")
-    return xtd::io::path::get_file_name_without_extension(executable_path());
-  return __assembly_product_attribute__()->product();
+  if (assembly::get_executing_assembly().product() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
+  return assembly::get_executing_assembly().product();
 }
 
 xtd::ustring application::product_version() {
-  if (!__assembly_version_attribute__() || __assembly_version_attribute__()->version() == "")
-    return ustring("0.0.0");
-  return __assembly_version_attribute__()->version();
+  if (assembly::get_executing_assembly().version() == "") return ustring("0.0.0");
+  return assembly::get_executing_assembly().version();
 }
 
 xtd::ustring application::startup_path() {

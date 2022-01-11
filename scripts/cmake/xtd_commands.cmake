@@ -557,6 +557,29 @@ macro(assembly_guid GUID)
   set(ASSEMBLY_GUID "${GUID}")
 endmacro()
 
+## @brief Specifies a name for the assembly manifest. Corresponds to assembly_name_attribute.
+## @param NAME The name to set.
+## @remarks Call only once by project.
+## @remarks This method must be call before target_type().
+## @remarks This method is optional. 
+## @par Examples
+## @code
+##  cmake_minimum_required(VERSION 3.3)
+##
+##  project(my_project)
+##  find_package(xtd REQUIRED)
+##  add_sources(my_project.cpp)
+##
+##  assembly_name("My Project")
+##
+##  target_type(GUI_APPLICATION)
+## @endcode
+macro(assembly_name NAME)
+  message(VERBOSE "Add assembly name [${NAME}]...")
+  set(ASSEMBLY_NAME "${NAME}")
+  set(PROJECT_NAME "${NAME}")
+endmacro()
+
 ## @brief Specifies a product name for the assembly manifest. Corresponds to assembly_product_attribute.
 ## @param PRODUCT The product name to set.
 ## @remarks Call only once by project.
@@ -1162,6 +1185,12 @@ macro(write_assembly_informations)
       set(FILE_VERSION "")
     endif ()
 
+    if (ASSEMBLY_NAME)
+      set(NAME "assembly_name_(\"${ASSEMBLY_NAME}\");\n")
+    else ()
+      set(NAME "")
+    endif ()
+
     if (ASSEMBLY_GUID)
       set(GUID "assembly_guid_(\"${ASSEMBLY_GUID}\");\n\n")
     else ()
@@ -1189,6 +1218,7 @@ macro(write_assembly_informations)
       "assembly_copyright_(\"${ASSEMBLY_COPYRIGHT}\");\n"
       "assembly_trademark_(\"${ASSEMBLY_TRADEMARK}\");\n"
       "assembly_culture_(\"${ASSEMBLY_CULTURE}\");\n"
+      ${NAME}
       "\n"
       "// The following GUID is for the ID of the typelib if this project is exposed to COM\n"
       "\n"
@@ -1359,6 +1389,14 @@ macro(read_assembly_informations)
         string(REPLACE "(\"" "" ASSEMBLY_INFORMATION_LINE ${ASSEMBLY_INFORMATION_LINE})
         string(REPLACE "\")" "" ASSEMBLY_INFORMATION_LINE ${ASSEMBLY_INFORMATION_LINE})
         set(ASSEMBLY_GUID "${ASSEMBLY_INFORMATION_LINE}")
+      endif ()
+  
+      if (${ASSEMBLY_INFORMATION_LINE} MATCHES "(assembly_name_*)")
+        string(REGEX MATCH "\\(.*\\)" ASSEMBLY_INFORMATION_LINE ${ASSEMBLY_INFORMATION_LINE})
+        string(REPLACE "(\"" "" ASSEMBLY_INFORMATION_LINE ${ASSEMBLY_INFORMATION_LINE})
+        string(REPLACE "\")" "" ASSEMBLY_INFORMATION_LINE ${ASSEMBLY_INFORMATION_LINE})
+        set(ASSEMBLY_NAME "${ASSEMBLY_INFORMATION_LINE}")
+        set(PROJECT_NAME "${ASSEMBLY_INFORMATION_LINE}")
       endif ()
     endforeach()
     set(READING_ASSEMBLY_INFORMATIONS_FILE OFF)

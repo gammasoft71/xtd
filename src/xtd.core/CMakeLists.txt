@@ -247,6 +247,7 @@ add_sources(
   include/xtd/reflection/assembly_guid_attribute.h
   include/xtd/reflection/assembly_identifier_attribute.h
   include/xtd/reflection/assembly_info.h
+  include/xtd/reflection/assembly_name_attribute.h
   include/xtd/reflection/assembly_product_attribute.h
   include/xtd/reflection/assembly_title_attribute.h
   include/xtd/reflection/assembly_trademark_attribute.h
@@ -350,6 +351,7 @@ add_sources(
   src/xtd/net/sockets/tcp_client.cpp
   src/xtd/net/sockets/tcp_listener.cpp
   src/xtd/net/sockets/udp_client.cpp
+  src/xtd/reflection/assembly.cpp
   src/xtd/reflection/assembly_company_attribute.cpp
   src/xtd/reflection/assembly_configuration_attribute.cpp
   src/xtd/reflection/assembly_copyright_attribute.cpp
@@ -358,6 +360,7 @@ add_sources(
   src/xtd/reflection/assembly_file_version_attribute.cpp
   src/xtd/reflection/assembly_guid_attribute.cpp
   src/xtd/reflection/assembly_identifier_attribute.cpp
+  src/xtd/reflection/assembly_name_attribute.cpp
   src/xtd/reflection/assembly_product_attribute.cpp
   src/xtd/reflection/assembly_title_attribute.cpp
   src/xtd/reflection/assembly_trademark_attribute.cpp

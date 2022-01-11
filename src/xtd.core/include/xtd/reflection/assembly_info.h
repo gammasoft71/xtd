@@ -10,6 +10,7 @@
 #include "assembly_file_version_attribute.h"
 #include "assembly_guid_attribute.h"
 #include "assembly_identifier_attribute.h"
+#include "assembly_name_attribute.h"
 #include "assembly_product_attribute.h"
 #include "assembly_title_attribute.h"
 #include "assembly_trademark_attribute.h"
