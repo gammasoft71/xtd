@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The xtd::reflection namespace contains types that retrieve information about assemblies, modules, members, parameters, and other entities in managed code by examining their metadata. These types also can be used to manipulate instances of loaded types, for example to hook up events or to invoke methods. To dynamically create types, use the System.Reflection.Emit namespace.
   namespace reflection {
-    /// @brief Specifies a description for an assembly.
+    /// @brief Specifies a title for an assembly.
     /// @code
     /// class core_export_ assembly_title_attribute final : public xtd::attribute
     /// @endcode

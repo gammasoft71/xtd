@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::reflection::assembly_description_attribute attribute.
+/// @brief Contains xtd::reflection::assembly_name_attribute attribute.
 #pragma once
 
 #include "../attribute.h"
@@ -8,53 +8,51 @@
 namespace xtd {
   /// @brief The xtd::reflection namespace contains types that retrieve information about assemblies, modules, members, parameters, and other entities in managed code by examining their metadata. These types also can be used to manipulate instances of loaded types, for example to hook up events or to invoke methods. To dynamically create types, use the System.Reflection.Emit namespace.
   namespace reflection {
-    /// @brief Provides a text description for an assembly.
+    /// @brief Specifies a name for an assembly.
     /// @code
-    /// class core_export_ assembly_description_attribute final : public xtd::attribute
+    /// class core_export_ assembly_name_attribute final : public xtd::attribute
     /// @endcode
     /// @par Inheritance
-    /// xtd::object → xtd::attribute → xtd::reflection::assembly_description_attribute
+    /// xtd::object → xtd::attribute → xtd::reflection::assembly_name_attribute
     /// @par Namespace
     /// xtd::reflection
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class core_export_ assembly_description_attribute final : public xtd::attribute {
+    class core_export_ assembly_name_attribute final : public xtd::attribute {
     public:
       /// @name Constructors
       
       /// @{
-      /// @brief Initializes a new instance of the xtd::reflection::assembly_description_attribute class.
-      /// @param description The description information.
-      explicit core_export_ assembly_description_attribute(const ustring& description);
+      /// @brief Initializes a new instance of the xtd::reflection::assembly_name_attribute class.
+      /// @param name The name information.
+      explicit assembly_name_attribute(const ustring& name);
       
       /// @cond
       /// Internal used only
-      assembly_description_attribute(const ustring& description, const object& executing_assembly);
+      assembly_name_attribute(const ustring& name, const object& executing_assembly);
       /// @endcond
       
-      /// @name Properties
-      
       /// @{
-      /// @brief Gets decription information.
-      /// @return A string containing the decription information.
-      const ustring& description() const {return description_;}
+      /// @brief Gets name information.
+      /// @return A string containing the name information.
+      const ustring& name() const {return name_;}
       /// @}
       
     protected:
       std::shared_ptr<object> get_type_id() const override;
       
     private:
-      ustring description_;
+      ustring name_;
     };
   }
 }
 
 /// @cond
-std::shared_ptr<xtd::reflection::assembly_description_attribute>& __assembly_description_attribute__();
+std::shared_ptr<xtd::reflection::assembly_name_attribute>& __assembly_name_attribute__();
 /// @endcond
 
-/// @brief Sets the assembly description information. Must be called once in your application.
+/// @brief Sets the assembly name information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
 /// @param version The version information.
@@ -67,6 +65,6 @@ std::shared_ptr<xtd::reflection::assembly_description_attribute>& __assembly_des
 /// The following example shows how to use assembly information manually.
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
-#define assembly_description_(description) \
-  xtd::reflection::assembly_description_attribute __assembly_description_attribute {description, xtd::object()}
+#define assembly_name_(name) \
+  xtd::reflection::assembly_name_attribute __assembly_name_attribute {name, xtd::object()}
 
