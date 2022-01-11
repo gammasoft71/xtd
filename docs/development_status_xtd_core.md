@@ -16,7 +16,7 @@
 * [xtd::net](#xtdnet)
 * [xtd::net::sockets](#xtdnetsockets)
 * [xtd::net::websockets](#xtdnetwebsockets)
-* [xtd::rrefection](#xtdreflection)
+* [xtd::refection](#xtdreflection)
 * [xtd::security](#xtdsecurity)
 * [xtd::text](#xtdtext)
 * [xtd::threading](#xtdthreading)
@@ -285,7 +285,7 @@
 | [web_request_methods](../src/xtd.core/include/xtd/net/web_request_methods.h)                   | static class | ![progress](pictures/progress0.png)   |
 | [web_response](../src/xtd.core/include/xtd/net/web_response.h)                                 | class        | ![progress](pictures/progress0.png)   |
 
-## xtd::net::refection
+## xtd::refection
 
 | Name                                                                                                         | Type         | Status                                |
 |--------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
