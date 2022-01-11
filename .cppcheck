@@ -93,7 +93,7 @@ useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h:68
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h:74
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h:83
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h:89
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/application.cpp:120
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/application.cpp:122
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/checked_list_box.cpp:55
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/checked_list_box.cpp:98
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/country.cpp:28
