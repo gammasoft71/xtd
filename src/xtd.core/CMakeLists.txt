@@ -72,6 +72,7 @@ add_sources(
   include/xtd/length_exception.h
   include/xtd/literals.h
   include/xtd/math.h
+  include/xtd/month_of_year.h
   include/xtd/nameof.h
   include/xtd/not_finite_number_exception.h
   include/xtd/not_implemented_exception.h

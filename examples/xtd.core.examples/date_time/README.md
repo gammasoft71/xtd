@@ -9,6 +9,8 @@
 * [date_time_add_milliseconds](date_time_add_milliseconds/README.md) shows how to use [xtd::date_time::add_milliseconds](../../../src/xtd.core/include/xtd/date_time.h) method.
 * [date_time_add_minutes](date_time_add_minutes/README.md) shows how to use [xtd::date_time::add_minutes](../../../src/xtd.core/include/xtd/date_time.h) method.
 * [date_time_add_months](date_time_add_months/README.md) shows how to use [xtd::date_time::add_months](../../../src/xtd.core/include/xtd/date_time.h) method.
+* [date_time_add_seconds](date_time_add_seconds/README.md) shows how to use [xtd::date_time::add_seconds](../../../src/xtd.core/include/xtd/date_time.h) method.
+* [date_time_add_years](date_time_add_years/README.md) shows how to use [xtd::date_time::add_years](../../../src/xtd.core/include/xtd/date_time.h) method.
 * [date_time_date](date_time_date/README.md) shows how to use [xtd::date_time::date](../../../src/xtd.core/include/xtd/date_time.h) property.
 * [date_time_day_of_week](date_time_day_of_week/README.md) shows how to use [xtd::date_time::day_of_week](../../../src/xtd.core/include/xtd/date_time.h) property.
 * [date_time_day_of_year](date_time_day_of_year/README.md) shows how to use [xtd::date_time::day_of_year](../../../src/xtd.core/include/xtd/date_time.h) property.

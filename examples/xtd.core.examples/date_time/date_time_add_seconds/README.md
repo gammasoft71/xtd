@@ -19,11 +19,11 @@ xtdc run
 # Output
 
 ```
-Original date: 09/08/2010/16:00:00.0000000 (634195584000000000 ticks)
+Original date: 09/08/2014/16:00:00.0000000 (635457888000000000 ticks)
 
-Second date:   09/08/2010/16:00:00.0000000 (634195584000010000 ticks)
-Difference between dates: Mon Jan  1 00:00:00 0001 (10000 ticks)
+Second date:   09/08/2014/16:00:30.0000000 (635457888300000000 ticks)
+Difference between dates: Mon Jan  1 00:00:30 0001 (300000000 ticks)
 
-Third date:    09/08/2010/16:00:00.0005000 (634195584000015000 ticks)
-Difference between dates: Mon Jan  1 00:00:00 0001 (15000 ticks)
+Third date:    09/09/2014/16:00:00.0000000 (635458752000000000 ticks)
+Difference between dates: Tue Jan  2 00:00:00 0001 (864000000000 ticks)
 ```

@@ -8,6 +8,7 @@
 #include "day_of_week.h"
 #include "icomparable.h"
 #include "iequatable.h"
+#include "month_of_year.h"
 #include "object.h"
 #include "ticks.h"
 #include "ustring.h"
@@ -584,16 +585,83 @@ namespace xtd {
     /// @par Example
     /// The following example adds between zero and fifteen months to the last day of December, 2015. In this case, the xtd::date_time::add_months method returns the date of the last day of each month, and successfully handles leap years.
     /// @include date_time_add_months.cpp
+    /// @remarks This method does not change the value of this xtd::date_time object. Instead, it returns a new xtd::date_time object whose value is the result of this operation.
+    /// @remarks The xtd::date_time::add_months method calculates the resulting month and year, taking into account leap years and the number of days in a month, then adjusts the day part of the resulting xtd::date_time object. If the resulting day is not a valid day in the resulting month, the last valid day of the resulting month is used. For example, March 31st + 1 month = April 30th, and March 31st - 1 month = February 28 for a non-leap year and February 29 for a leap year.
     date_time add_months(int32_t months) const;
+    
+    /// @brief Returns a new xtd::date_time that adds the specified number of seconds to the value of this instance.
+    /// @param value A number of whole and fractional seconds. The value parameter can be negative or positive.
+    /// @return An object whose value is the sum of the date and time represented by this instance and the number of seconds represented by value.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @par Example
+    /// The following example uses the xtd::date_time::add_seconds method to add 30 seconds and the number of seconds in one day to a xtd::date_time value. It then displays each new value and displays the difference between it and the original value. The difference is displayed both as a time span and as a number of ticks.
+    /// @include date_time_seconds.cpp
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
+    /// @remarks The fractional part of value is the fractional part of a second. For example, 4.5 is equivalent to 4 seconds, 500 milliseconds, and 0 ticks.
     date_time add_seconds(double value) const;
+    
+    /// @brief Returns a new xtd::date_time that adds the specified number of ticks to the value of this instance.
+    /// @param value A number of 100-nanosecond ticks. The value parameter can be positive or negative.
+    /// @return An object whose value is the sum of the date and time represented by this instance and the time represented by value.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
     date_time add_ticks(int64 value) const;
+    
+    /// @brief Returns a new xtd::date_time that adds the specified number of years to the value of this instance.
+    /// @param value A number of years. The value parameter can be negative or positive.
+    /// @return An object whose value is the sum of the date and time represented by this instance and the number of years represented by value.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @remarks This method does not change the value of this xtd::date_time object. Instead, it returns a new xtd::date_time object whose value is the result of this operation.
+    /// @remarks The xtd::date_time::add_years method calculates the resulting year taking into account leap years. The month and time-of-day part of the resulting xtd::date_time object remains the same as this instance.
+    /// @remarks If the current instance represents the leap day in a leap year, the return value depends on the target date:
+    /// * If value + xtd::date_time::year() is also a leap year, the return value represents the leap day in that year. For example, if four years is added to February 29, 2012, the date returned is February 29, 2016.
+    /// * If value + xtd::date_time::year() is not a leap year, the return value represents the day before the leap day in that year. For example, if one year is added to February 29, 2012, the date returned is February 28, 2013.
+    /// @par Example
+    /// The following example illustrates using the xtd::date_time::add_years method with a xtd::date_time value that represents a leap year day. It displays the date for the fifteen years prior to and the fifteen years that follow February 29, 2000.
     date_time add_years(int32_t value) const;
+    
     int32_t compare_to(const object& obj) const noexcept override;
     int32_t compare_to(const date_time& value) const noexcept override;
+    
+    /// @brief Returns the number of days in the specified month and year.
+    /// @param year The year.
+    /// @param month The month (one of xtd::month_of_year values).
+    /// @return The number of days in month for the specified year.<br>
+    /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
+    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12. -or- year is less than 1 or greater than 9999.
+    /// @par Example
+    /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
+    /// @include date_time_days_in_month.cpp
+    /// @par Example
+    /// The following example displays the number of days in each month of a year specified in an integer array.
+    /// @include date_time_days_in_month2.cpp
+    /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
+    static int32_t days_in_month(uint32_t year, month_of_year month);
+    
+    /// @brief Returns the number of days in the specified month and year.
+    /// @param year The year.
+    /// @param month The month (a number ranging from 1 to 12).
+    /// @return The number of days in month for the specified year.<br>
+    /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
+    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12. -or- year is less than 1 or greater than 9999.
+    /// @par Example
+    /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
+    /// @include date_time_days_in_month.cpp
+    /// @par Example
+    /// The following example displays the number of days in each month of a year specified in an integer array.
+    /// @include date_time_days_in_month2.cpp
+    /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
     static int32_t days_in_month(uint32_t year, uint32_t month);
     
     bool equals(const date_time&) const noexcept override;
     bool equals(const object&) const noexcept override;
+
+    /// @brief Deserializes a 64-bit binary value and recreates an original serialized xtd::date_time object.
+    /// @param date_data A 64-bit signed integer that encodes the xtd::date_time::kind property in a 2-bit field and the xtd::date_time::ticks property in a 62-bit field.
+    /// @return An object that is equivalent to the xtd::date_time object that was serialized by the xtd::date_time::to_binary() method.
+    /// @exception xtd::argument_exception date_data is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @remarks Use the xtd::date_time::to_binary method to convert the value of the current xtd::date_time object to a binary value. Subsequently, use the binary value and the xtd::date_time::from_binary method to recreate the original xtd::date_time object.
+    /// @note In some cases, the xtd::date_time value returned by the xtd::date_time::from_binary method is not identical to the original xtd::date_time value supplied to the xtd::date_time::to_binary method.
     static date_time from_binary(int64_t date_data);
     static date_time from_file_time(xtd::ticks fileTime);
     static date_time from_file_time_utc(xtd::ticks fileTime);
@@ -677,7 +745,7 @@ namespace xtd {
     /// | \%n    | writes newline character.                                                                                                   |
     /// | \%t    | writes horizontal tab character.                                                                                            |
     /// @par Example
-    /// The foloowwing examplel shows hoow to use xtd::date_time::sprintf with differentt formats
+    /// The foloowwing examplel shows how to use xtd::date_time::sprintf with differentt formats
     /// @include date_time_sprintf.cpp
     /// @remarks See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.
     xtd::ustring sprintf(const ustring& format) const;
