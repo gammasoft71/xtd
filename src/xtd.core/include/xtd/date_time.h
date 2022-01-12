@@ -441,9 +441,63 @@ namespace xtd {
     /// The following example uses the xtd::date_time::ticks property to display the number of ticks that have elapsed since the beginning of the century.
     /// @include date_time_ticks2.cpp
     xtd::ticks ticks() const noexcept;
+    
+    /// @brief Gets the time of day for this instance.
+    /// @return A time interval that represents the fraction of the day that has elapsed since midnight.
+    /// @par Example
+    /// The following example displays the value of the xtd::date_time::time_of_day property for an array of xtd::date_time values. It also contrasts the return value with the string returned by the "t" standard format string in a composite formatting operation.
+    /// @include date_time_time_of_day.cpp
+    /// @remarks Unlike the xtd::date_time::date property. which returns a xtd::date_time value that represents a date without its time component, the xtd::date_time::time_of_day property returns a xtd::date_time::time_point value that represents a xtd::date_time value's time component.
+    /// @remarks If you want to display the time of day or retrieve the string representation of the time of day of a DateTime value, you can instead call an overload of the ToString method that has a format parameter or use the composite formatting feature with the "t" or "T" standard format string.
     time_point time_of_day() const noexcept;
-    static date_time to_day() noexcept;
+    
+    /// @brief Gets the current date.
+    /// @return An object that is set to today's date, with the time component set to 00:00:00.
+    /// @par Example
+    /// The following example uses the xtd::date_time::date property to retrieve the current date. It also illustrates how a xtd::date_time value can be formatted using some of the standard date and time format strings. Note that the output produced by the third call to the xtd::date_time::to_string(const xtd::ustring&) method uses the g format specifier to include the time component, which is zero.
+    /// @include date_time_today.cpp
+    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property returns xtd::date_time_kind::local.
+    /// @remarks Because it returns the current date without the current time, the xtd::date_time::today property is suitable for use in applications that work with dates only. In contrast, the xtd::date_time::time_of_day property returns the current time without the current date, and the xtd::date_timextd::date_timextd::date_time::now property returns both the current date and the current time.
+    static date_time today() noexcept;
+    
+    /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).
+    /// @return An object whose value is the current UTC date and time.
+    /// @par Example
+    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
+    /// @include date_time_specify_king.cpp
+    /// @remarks The resolution of this property depends on the system timer, which depends on the underlying operating system. It tends to be between 0.5 and 15 milliseconds.
+    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property returns xtd::date_time_kind::utc.
+    /// @remarks An alternative to using xtd::date_time::utc_now is xtd::date_time_offset::utc_now. While the former indicates that a date and time value is Coordinated Universal Time (UTC) by assigning xtd::date_time_kind::utc to its xtd::date_time::kind property, the latter assigns the date and time value the UTC time's offset (equal to xtd::ticks(0)).
     static date_time utc_now() noexcept;
+    
+    /// @brief Gets the year component of the date represented by this instance.
+    /// @return The year, between 1 and 9999.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::year property.
+    /// @code
+    /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
+    /// // year gets 1999.
+    /// uint32_t year = moment.year();
+    ///
+    /// // month gets 1 (January).
+    /// uint23_t month = moment.month();
+    ///
+    /// // day gets 13.
+    /// uint23_t day = moment.day();
+    ///
+    /// // hour gets 3.
+    /// uint23_t hour = moment.hour();
+    ///
+    /// // minute gets 57.
+    /// uint23_t minute = moment.minute();
+    ///
+    /// // second gets 32.
+    /// uint23_t second = moment.second();
+    ///
+    /// // millisecond gets 11.
+    /// uint23_t millisecond = moment.millisecond();
+    /// @endcode
+    /// @remarks The xtd::date_time::year property returns the year of the current instance in the Gregorian calendar.
     uint32_t year() const noexcept;
     /// @}
     

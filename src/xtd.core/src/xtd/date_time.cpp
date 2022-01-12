@@ -206,12 +206,12 @@ date_time::time_point date_time::time_of_day() const noexcept {
   return duration_cast<time_point>(chrono::hours(hour)) + duration_cast<time_point>(chrono::minutes(minute)) + duration_cast<time_point>(chrono::seconds(second));
 }
 
-date_time date_time::to_day() noexcept {
-  date_time to_day = now();
+date_time date_time::today() noexcept {
+  date_time today = now();
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
-  to_day.get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
-  return date_time(year, month, day, 0, 0, 0, 0, to_day.kind_);
+  today.get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
+  return date_time(year, month, day, 0, 0, 0, 0, today.kind_);
 }
 
 date_time date_time::utc_now() noexcept {
