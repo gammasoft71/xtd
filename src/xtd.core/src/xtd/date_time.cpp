@@ -289,6 +289,10 @@ int32_t date_time::compare_to(const date_time& value) const noexcept {
   return 0;
 }
 
+int32_t date_time::days_in_month(uint32_t year, month_of_year month) {
+  return days_in_month(year, static_cast<uint32_t>(month));
+}
+
 int32_t date_time::days_in_month(uint32_t year, uint32_t month) {
   if (month < 1 || month > 12) throw argument_out_of_range_exception(csf_);
   if (month == 2) return is_leap_year(year) ? 29 : 28;

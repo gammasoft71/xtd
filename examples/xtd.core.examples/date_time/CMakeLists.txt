@@ -11,9 +11,13 @@ add_projects(
   date_time_add_milliseconds
   date_time_add_minutes
   date_time_add_months
+  date_time_add_seconds
+  date_time_add_years
   date_time_date
   date_time_day_of_week
   date_time_day_of_year
+  date_time_days_in_month
+  date_time_days_in_month2
   date_time_max_value
   date_time_min_value
   date_time_now
