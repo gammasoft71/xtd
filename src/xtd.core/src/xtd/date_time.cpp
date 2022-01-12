@@ -418,6 +418,8 @@ ustring date_time::to_string(const ustring& format) const {
     case 'a': return ustring::format("{}", hour / 12 ? "PM" : "AM");
     case 'b': return ustring::format("{:D3}", millisecond());
     case 'B': return ustring::format("{}", millisecond());
+    case 'c': return ustring::format("{:D7}", ticks().count() % ticks_per_millisecond);
+    case 'C': return ustring::format("{}", ticks().count() % ticks_per_millisecond);
     case 'd': return ustring::format("{:D2}/{:D2}/{:D}", month, day, year);
     case 'D': return ustring::format("{:D}/{:D2}/{:D}", month, day, year);
     case 'f': return sprintf("%Ec");

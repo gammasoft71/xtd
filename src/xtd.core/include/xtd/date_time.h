@@ -504,16 +504,87 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    /// @brief Returns a new xtd::date_time that adds the value of the specified std::chrono::duration to the value of this instance.
+    /// @param value A positive or negative time interval.
+    /// @return An object whose value is the sum of the date and time represented by this instance and the time interval represented by value.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::add method. It calculates the day of the week that is 36 days (864 hours) from this moment.
+    /// @include date_time_add.cpp
+    /// @remarks You can use the xtd::date_time::add method to add more than one kind of time interval (days, hours, minutes, seconds, or milliseconds) in a single operation. This method's behavior is identical to that of the addition operator. The xtd::date_time::addxtd::date_time structure also supports specialized addition methods (such as xtd::date_time::add_days, xtd::date_time::add_hours, and xtd::date_time::add_minutes) for each time interval.
+    /// @remarks The xtd::date_time::add method takes into account leap years and the number of days in a month when performing date arithmetic.
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation. The xtd::date_time::kind property of the new xtd::date_time instance is the same as that of the current instance.
     template<typename rep_t, typename period_t>
     date_time add(std::chrono::duration<rep_t, period_t> value) const {
       return add(std::chrono::duration_cast<time_point>(value));
     }
+    /// @brief Returns a new xtd::date_time that adds the value of the specified xtd::date_time::time_point to the value of this instance.
+    /// @param value A positive or negative time interval.
+    /// @return An object whose value is the sum of the date and time represented by this instance and the time interval represented by value.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::add method. It calculates the day of the week that is 36 days (864 hours) from this moment.
+    /// @include date_time_add.cpp
+    /// @remarks You can use the xtd::date_time::add method to add more than one kind of time interval (days, hours, minutes, seconds, or milliseconds) in a single operation. This method's behavior is identical to that of the addition operator. The xtd::date_time::addxtd::date_time structure also supports specialized addition methods (such as xtd::date_time::add_days, xtd::date_time::add_hours, and xtd::date_time::add_minutes) for each time interval.
+    /// @remarks The xtd::date_time::add method takes into account leap years and the number of days in a month when performing date arithmetic.
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation. The xtd::date_time::kind property of the new xtd::date_time instance is the same as that of the current instance.
     date_time add(time_point value) const;
+    
+    /// @brief Returns a new xtd::date_time that adds the specified number of days to the value of this instance.
+    /// @param value A number of whole and fractional days. The value parameter can be negative or positive.
+    /// @return An object whose value is the sum of the date and time represented by this instance and the number of days represented by value.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @par Example
+    /// The following example uses the xtd::date_time::add_days method to determine the day of the week 36 days after the current date.
+    /// @include date_time_add_days.cpp
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
+    /// @remarks The fractional part of value is the fractional part of a day. For example, 4.5 is equivalent to 4 days, 12 hours, 0 minutes, 0 seconds, 0 milliseconds, and 0 ticks.
+    /// @remarks The xtd::date_time::add_days method takes into account leap years and the number of days in a month when performing date arithmetic.
     date_time add_days(double value) const;
+    
+    /// @brief Returns a new xtd::date_time that adds the specified number of hours to the value of this instance.
+    /// @param value A number of whole and fractional hours. The value parameter can be negative or positive.A number of whole and fractional hours. The value parameter can be negative or positive.
+    /// @return An object whose value is the sum of the date and time represented by this instance and the number of hours represented by value.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @par Example
+    /// The following example uses the xtd::date_time::add_hours method to add a number of whole and fractional values to a date and time. It also illustrates the loss of precision caused by passing the method a value that includes a fractional component.
+    /// @include date_time_add_hours.cpp
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation. The xtd::date_time::kind property of the returned xtd::date_time object is the same as that of value.
+    /// @remarks The fractional part of value is the fractional part of an hour. For example, 4.5 is equivalent to 4 hours, 30 minutes, 0 seconds, 0 milliseconds, and 0 ticks.
+    /// @remarks Converting time intervals of less than an hour to a fraction can involve a loss of precision if the result is a non-terminating repeating decimal. (For example, one minute is 0.016667 of an hour.) If this is problematic, you can use the xtd::date_time::add method, which enables you to specify more than one kind of time interval in a single method call and eliminates the need to convert time intervals to fractional parts of an hour.
     date_time add_hours(double value) const;
+    
+    /// @brief Returns a new xtd::date_time that adds the specified number of milliseconds to the value of this instance.
+    /// @param value A number of whole and fractional milliseconds. The value parameter can be negative or positive.
+    /// @return An object whose value is the sum of the date and time represented by this instance and the number of milliseconds represented by value.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @par Example
+    /// The following example uses the xtd::date_timeadd_milliseconds method to add one millisecond and 1.5 milliseconds to a xtd::date_time value. It then displays each new value and displays the difference between it and the original value. The difference is displayed both as a time span and as a number of ticks. The example makes it clear that one millisecond equals 10,000 ticks. It also shows that fractional milliseconds are rounded before performing the addition; the xtd::date_time value that results from adding 1.5 milliseconds to the original date is 2 milliseconds greater than the original date.
+    /// @include datte_time_add_milliseconds.cpp
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
+    /// @remarks The fractional part of value is the fractional part of a millisecond. For example, 4.5 is equivalent to 4 milliseconds and 5000 ticks, where one millisecond = 10000 ticks.
+    /// @remarks The value parameter is rounded to the nearest integer.
     date_time add_milliseconds(double value) const;
+    
+    /// @brief Returns a new xtd::date_time that adds the specified number of minutes to the value of this instance.
+    /// @param value A number of whole and fractional minutes. The value parameter can be negative or positive.
+    /// @return An object whose value is the sum of the date and time represented by this instance and the number of minutes represented by value.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @par Example
+    /// The following example uses the xtd::date_time::add_minutes method to add a number of whole and fractional values to a date and time.
+    /// @include date_tile_add_minutes.cpp
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
+    /// @remarks The fractional part of value is the fractional part of a minute. For example, 4.5 is equivalent to 4 minutes, 30 seconds, 0 milliseconds, and 0 ticks.
     date_time add_minutes(double value) const;
-    date_time add_months(int32_t value) const;
+    
+    /// @brief Returns a new xtd::date_time that adds the specified number of months to the value of this instance.
+    /// @param months A number of months. The months parameter can be negative or positive.
+    /// @return An object whose value is the sum of the date and time represented by this instance and months
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value. -or- months is less than -120,000 or greater than 120,000.
+    /// @par Example
+    /// The following example adds between zero and fifteen months to the last day of December, 2015. In this case, the xtd::date_time::add_months method returns the date of the last day of each month, and successfully handles leap years.
+    /// @include date_time_add_months.cpp
+    date_time add_months(int32_t months) const;
     date_time add_seconds(double value) const;
     date_time add_ticks(int64 value) const;
     date_time add_years(int32_t value) const;
