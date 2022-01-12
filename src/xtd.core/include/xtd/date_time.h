@@ -561,7 +561,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
     /// @par Example
     /// The following example uses the xtd::date_timeadd_milliseconds method to add one millisecond and 1.5 milliseconds to a xtd::date_time value. It then displays each new value and displays the difference between it and the original value. The difference is displayed both as a time span and as a number of ticks. The example makes it clear that one millisecond equals 10,000 ticks. It also shows that fractional milliseconds are rounded before performing the addition; the xtd::date_time value that results from adding 1.5 milliseconds to the original date is 2 milliseconds greater than the original date.
-    /// @include datte_time_add_milliseconds.cpp
+    /// @include date_time_add_milliseconds.cpp
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
     /// @remarks The fractional part of value is the fractional part of a millisecond. For example, 4.5 is equivalent to 4 milliseconds and 5000 ticks, where one millisecond = 10000 ticks.
     /// @remarks The value parameter is rounded to the nearest integer.
