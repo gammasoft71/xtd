@@ -5,6 +5,12 @@ find_package(xtd REQUIRED)
 
 add_projects(
   date_time
+  date_time_add
+  date_time_add_days
+  date_time_add_hours
+  date_time_add_milliseconds
+  date_time_add_minutes
+  date_time_add_months
   date_time_date
   date_time_day_of_week
   date_time_day_of_year
