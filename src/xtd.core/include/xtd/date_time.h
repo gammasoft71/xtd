@@ -145,7 +145,7 @@ namespace xtd {
     /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second);
-    /// @brief Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.
+    /// @brief Initializes a new instance of the xtdd::date_time structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.
     /// @param year The year (1 through 9999).
     /// @param month The month (1 through 12).
     /// @param day The day (1 through the number of days in month).
@@ -449,7 +449,7 @@ namespace xtd {
     /// The following example displays the value of the xtd::date_time::time_of_day property for an array of xtd::date_time values. It also contrasts the return value with the string returned by the "t" standard format string in a composite formatting operation.
     /// @include date_time_time_of_day.cpp
     /// @remarks Unlike the xtd::date_time::date property. which returns a xtd::date_time value that represents a date without its time component, the xtd::date_time::time_of_day property returns a xtd::date_time::time_point value that represents a xtd::date_time value's time component.
-    /// @remarks If you want to display the time of day or retrieve the string representation of the time of day of a DateTime value, you can instead call an overload of the ToString method that has a format parameter or use the composite formatting feature with the "t" or "T" standard format string.
+    /// @remarks If you want to display the time of day or retrieve the string representation of the time of day of a xtdd::date_time value, you can instead call an overload of the ToString method that has a format parameter or use the composite formatting feature with the "t" or "T" standard format string.
     time_point time_of_day() const noexcept;
     
     /// @brief Gets the current date.
@@ -765,7 +765,7 @@ namespace xtd {
     /// @param s A string that contains a date and time to convert. See The string to parse for more information.
     /// @return An object that is equivalent to the date and time contained in s.
     /// @exception xtd::format_exception s does not contain a valid string representation of a date and time.
-    /// @remarks If s contains time zone information, this method returns a xtd::date_time value whose xtd::date_time::kind property is xtd::date_time_kind::local and converts the date and time in s to local time. Otherwise, it performs no time zone conversion and returns a DateTime value whose Kind property is DateTimeKind.Unspecified.
+    /// @remarks If s contains time zone information, this method returns a xtd::date_time value whose xtd::date_time::kind property is xtd::date_time_kind::local and converts the date and time in s to local time. Otherwise, it performs no time zone conversion and returns a xtdd::date_time value whose Kind property is DateTimeKind.Unspecified.
     /// @remarks This overload attempts to parse s by using the formatting conventions of the current culture. The current culture is indicated by the CurrentCulture property. To parse a string using the formatting conventions of a specific culture, call the Parse(String, IFormatProvider) or the Parse(String, IFormatProvider, DateTimeStyles) overloads.
     /// @remarks This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style.
     static date_time parse(const xtd::ustring& s);
@@ -782,6 +782,9 @@ namespace xtd {
     /// @brief Returns a xtd::ustring that represents the current xtd::date_time.
     /// @param format Format-control String.
     /// @return A xtd::ustring that represents the current xtdd::date_time.
+    /// @par Examples
+    /// The foloowwing example shows how to use xtd::date_time::sprintf with differentt formats.
+    /// @include date_time_sprintf.cpp
     /// @remarks The formatting codes for sprintf are listed below:
     /// | Format | Print                                                                                                                       |
     /// |--------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -841,9 +844,6 @@ namespace xtd {
     /// | \%\%   | writes literal %. The full conversion specification must be %%.                                                             |
     /// | \%n    | writes newline character.                                                                                                   |
     /// | \%t    | writes horizontal tab character.                                                                                            |
-    /// @par Examples
-    /// The foloowwing examplel shows how to use xtd::date_time::sprintf with differentt formats
-    /// @include date_time_sprintf.cpp
     /// @remarks See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.
     xtd::ustring sprintf(const ustring& format) const;
     
@@ -908,25 +908,137 @@ namespace xtd {
     /// @remarks Use the xtd::date_time::to_binary method to convert the value of the current xtd::date_time object to a binary value. Subsequently, use the binary value and the xtd::date_time::from_binary method to recreate the original xtd::date_time object.
     int64_t to_binary() const;
 
+    /// @remarks Converts the value of the current xtd::date_time object to a Windows file time.
+    /// @return The value of the current xtdd::date_time object expressed as a Windows file time.
+    /// @exception xtd::argument_out_of_range_exception The resulting file time would represent a date and time before 12:00 midnight January 1, 1601 C.E. UTC.
+    /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
+    /// @remarks The xtd::date_time::to_file_time method uses the xtd::date_time::kind property to determine whether the current xtd::date_time object is a local time, a UTC time, or an unspecified kind of time which is treated as a local time.
     int64_t to_file_time() const;
+    /// @remarks Converts the value of the current xtd::date_time object to a Windows file time.
+    /// @return The value of the current xtd::date_time object expressed as a Windows file time.
+    /// @exception xtd::argument_out_of_range_exception The resulting file time would represent a date and time before 12:00 midnight January 1, 1601 C.E. UTC.
+    /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
+    /// @remarks The xtd::date_time::to_file_time_utc method uses the xtd::date_time::to_file_timextd::date_time::kind property to determine whether the current xtd::date_time object is a local time, a UTC time, or an unspecified kind of time which is treated as a UTC time. If it is a local time, it converts the time to UTC before performing the conversion to a Windows file time.
+    int64_t to_file_time_utc() const;
 
+    /// @brief Converts the value of the current xtd::date_time object to local time.
+    /// @return An object whose xtd::date_time::kind property is xtd::date_time_kind::local, and whose value is the local time equivalent to the value of the current xtd::date_time object, or xtd::date_time::max_value if the converted value is too large to be represented by a xtd::date_time object, or xtd::date_time::min_value if the converted value is too small to be represented as a xtd::date_time object.
+    /// @par Examples
+    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
+    /// @include date_time_specify_kind.cpp
+    /// @remarks The local time is equal to the Coordinated Universal Time (UTC) time plus the UTC offset. For more information about the UTC offset, see xtd::time_zone_info::get_utc_offset. The conversion also takes into account the daylight saving time rule that applies to the time represented by the current xtd::date_time object.
+    /// @remarks The value returned by the xtd::date_time::to_local_time method is determined by the xtd::date_time::kind property of the current xtd::date_time object. The following table describes the possible results.
+    /// | Kind                             | Results                                                                                                                                                |
+    /// |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+    /// | xtd::date_time_kind::utc         | This instance of xtd::date_timextd::date_time is converted to local time.                                                                              |
+    /// | xtd::date_time_kind::local       | No conversion is performed.                                                                                                                            |
+    /// | xtd::date_time_kind::unspecified | This instance of xtd::date_time is assumed to be a UTC time, and the conversion is performed as if xtd::date_time::kind were xtd::date_time_kind::utc. |
+    /// @note The xtd::date_time::to_local_time method converts a xtd::date_time:: value from UTC to local time. To convert the time in any designated time zone to local time, use the xtd::time_zone_info::convert_time method.
+    /// @remarks The value returned by the conversion is a xtd::date_time whose xtd::date_time::Kind property always returns xtd::date_time_kind::local. Consequently, a valid result is returned even if xtd::date_time::to_local_time is applied repeatedly to the same xtd::date_time.
     date_time to_local_time() const;
     
+    /// @brief Converts the value of the current xtd::date_time object to its equivalent long date string representation.
+    /// @return A string that contains the long date string representation of the current xtd::date_time object.
+    /// @remarks The return value is identical to the value returned by specifying the "n" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
     const xtd::ustring to_long_date_string() const;
     
+    /// @brief Converts the value of the current xtd::date_time object to its equivalent long time string representation.
+    /// @return A string that contains the long time string representation of the current xtd::date_time object.
+    /// @remarks The return value is identical to the value returned by specifying the "T" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
     const xtd::ustring to_long_time_string() const;
-    
+
+    /// @brief Converts the value of the current xtd::date_time object to its equivalent short date string representation.
+    /// @return A string that contains the short date string representation of the current xtd::date_time object.
+    /// @remarks The return value is identical to the value returned by specifying the "D" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
     const xtd::ustring to_short_date_string() const;
-    
+
+    /// @brief Converts the value of the current xtd::date_time object to its equivalent short time string representation.
+    /// @return A string that contains the short time string representation of the current xtd::date_time object.
+    /// @remarks The return value is identical to the value returned by specifying the "V" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
     const xtd::ustring to_short_time_string() const;
     
+    /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the formatting conventions of the current culture.
+    /// @return A string representation of the value of the current xtd::date_time object.
+    /// @remarks The return value is identical to the value returned by specifying the "G" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
     xtd::ustring to_string() const noexcept override;
+    /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the specified format and the formatting conventions of the current culture.
+    /// @param format A standard or custom date and time format string.
+    /// @return A string representation of value of the current xtdd::date_time object as specified by format.
+    /// @exception xtd::format_excpetion The length of format is 1, and it is not a valid format characters<br>-or-<br>The length si greater than 1.
+    /// @par Examples
+    /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::ustring&) with differentt formats.
+    /// @include date_time_to_string_format.cpp
+    /// @remarks The formatting codes for xtd::date_time::to_string(const xtd::ustring&) are listed below:
+    /// | Format | Print |
+    /// |--------| ------|
+    /// | 'a'    | ustring::format("{}", hour / 12 ? "PM" : "AM");
+    /// | 'b'    | ustring::format("{:D3}", millisecond());
+    /// | 'B'    | ustring::format("{}", millisecond());
+    /// | 'c'    | ustring::format("{:D7}", ticks().count() % ticks_per_millisecond);
+    /// | 'C'    | ustring::format("{}", ticks().count() % ticks_per_millisecond);
+    /// | 'd'    | ustring::format("{:D2}/{:D2}/{:D}", month, day, year);
+    /// | 'D'    | ustring::format("{:D}/{:D2}/{:D}", month, day, year);
+    /// | 'f'    | sprintf("%Ec");
+    /// | 'F'    | sprintf("%c");
+    /// | 'g'    | sprintf("%Ec");
+    /// | 'G'    | sprintf("%c");
+    /// | 'h'    | sprintf("%a");
+    /// | 'H'    | sprintf("%A");
+    /// | 'i'    | ustring::format("{:D2}", day);
+    /// | 'I'    | ustring::format("{:D}", day);
+    /// | 'j'    | sprintf("%b");
+    /// | 'J'    | sprintf("%B");
+    /// | 'k'    | ustring::format("{:D2}", month);
+    /// | 'K'    | ustring::format("{:D}", month);
+    /// | 'l'    | ustring::format("{:D2}", year % 100);
+    /// | 'L'    | ustring::format("{:D4}", year);
+    /// | 'm'    | ustring::format("{:D}", year);
+    /// | 'M'    | ustring::format("{} {:D}", sprintf("%B"), day);
+    /// | 'n'    | ustring::format("{}, {:D} {} {:D}", sprintf("%A"), day, sprintf("%B"), year);
+    /// | 'N'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second);
+    /// | 'o'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year);
+    /// | 'O'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year);
+    /// | 's'    | ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
+    /// | 't'    | ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
+    /// | 'T'    | ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second);
+    /// | 'u'    | ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
+    /// | 'U'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second);
+    /// | 'v'    | ustring::format("{:D2}:{:D2}", hour, minute);
+    /// | 'V'    | ustring::format("{:D}:{:D2}", hour, minute);
+    /// | 'w'    | ustring::format("{:D2}", hour);
+    /// | 'W'    | ustring::format("{:D}", hour);
+    /// | 'x'    | ustring::format("{:D2}", hour % 12);
+    /// | 'X'    | ustring::format("{:D}", hour % 12);
+    /// | 'y'    | ustring::format("{} {:D}", sprintf("%B"), year % 100);
+    /// | 'Y'    | ustring::format("{} {:D}", sprintf("%B"), year);
+    /// | 'z'    | kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
+    /// | 'Z'    | kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
     xtd::ustring to_string(const ustring& format) const;
     
+    /// @remarks Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.
+    /// @return The value of the current xtdd::date_time object expressed as <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.
+    /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     std::time_t to_time_t() const;
     
+    /// @remarks Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>.
+    /// @return The value of the current xtdd::date_time object expressed as <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>.
+    /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     std::tm to_tm() const;
-    
+   
+    /// @brief Converts the value of the current xtd::date_time object to Coordinated Universal Time (UTC).
+    /// @return An object whose xtd::date_time::kind property is xtd::date_time_kind::utc, and whose value is the UTC equivalent to the value of the current xtd::date_time object, or xtd::date_time::max_value if the converted value is too large to be represented by a xtd::date_time object, or xtd::date_time::min_value if the converted value is too small to be represented by a xtd::date_time object.
+    /// @par Examples
+    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
+    /// @include date_time_specify_kind.cpp
+    /// @remarks The Coordinated Universal Time (UTC) is equal to the local time minus the UTC offset. For more information about the UTC offset, see xtd::time_zone_info::get_utc_offset. The conversion also takes into account the daylight saving time rule that applies to the time represented by the current xtd::date_time object.
+    /// @remarks The value returned by the xtd::date_time::to_universal_time method is determined by the xtd::date_time::kind property of the current xtd::date_time object. The following table describes the possible results.
+    /// | Kind                             | Results                                                                                                                                 |
+    /// |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+    /// | xtd::date_time_kind::utc         | No conversion is performed.                                                                                                             |
+    /// | xtd::date_time_kind::local       | The current xtd::date_time object is converted to UTC.                                                                                  |
+    /// | xtd::date_time_kind::unspecified | The current xtd::date_time object is assumed to be a local time, and the conversion is performed as if xtd::date_time::kind were Local. |
     date_time to_universal_time() const;
     /// @}
     

@@ -379,7 +379,14 @@ int64_t date_time::to_binary() const {
 }
 
 int64_t date_time::to_file_time() const {
-  return (value_ - file_time_offset).count();
+  return to_universal_time().to_file_time_utc();
+}
+
+int64_t date_time::to_file_time_utc() const {
+  auto value = kind_ == date_time_kind::unspecified ? to_universal_time().value_ : value_;
+  int64_t result = (value - file_time_offset).count();
+  if (result < 0) throw argument_out_of_range_exception(csf_);
+  return result;
 }
 
 date_time date_time::to_local_time() const {
