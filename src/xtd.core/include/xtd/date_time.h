@@ -978,16 +978,16 @@ namespace xtd {
     /// | 'C'    | ustring::format("{}", ticks().count() % ticks_per_millisecond) |
     /// | 'd'    | ustring::format("{:D2}/{:D2}/{:D}", month, day, year) |
     /// | 'D'    | ustring::format("{:D}/{:D2}/{:D}", month, day, year) |
-    /// | 'f'    | sprintf("%Ec") |
-    /// | 'F'    | sprintf("%c") |
-    /// | 'g'    | sprintf("%Ec") |
-    /// | 'G'    | sprintf("%c") |
-    /// | 'h'    | sprintf("%a") |
-    /// | 'H'    | sprintf("%A") |
+    /// | 'f'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
+    /// | 'F'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
+    /// | 'g'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
+    /// | 'G'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
+    /// | 'h'    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
+    /// | 'H'    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
     /// | 'i'    | ustring::format("{:D2}", day) |
     /// | 'I'    | ustring::format("{:D}", day) |
-    /// | 'j'    | sprintf("%b") |
-    /// | 'J'    | sprintf("%B") |
+    /// | 'j'    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
+    /// | 'J'    | writes full month name, e.g. October (locale dependent).                                                                    |
     /// | 'k'    | ustring::format("{:D2}", month) |
     /// | 'K'    | ustring::format("{:D}", month) |
     /// | 'l'    | ustring::format("{:D2}", year % 100) |
