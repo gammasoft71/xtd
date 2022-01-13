@@ -971,48 +971,48 @@ namespace xtd {
     /// @remarks The formatting codes for xtd::date_time::to_string(const xtd::ustring&) are listed below:
     /// | Format | Print |
     /// |--------| ------|
-    /// | 'a'    | ustring::format("{}", hour / 12 ? "PM" : "AM");
-    /// | 'b'    | ustring::format("{:D3}", millisecond());
-    /// | 'B'    | ustring::format("{}", millisecond());
-    /// | 'c'    | ustring::format("{:D7}", ticks().count() % ticks_per_millisecond);
-    /// | 'C'    | ustring::format("{}", ticks().count() % ticks_per_millisecond);
-    /// | 'd'    | ustring::format("{:D2}/{:D2}/{:D}", month, day, year);
-    /// | 'D'    | ustring::format("{:D}/{:D2}/{:D}", month, day, year);
-    /// | 'f'    | sprintf("%Ec");
-    /// | 'F'    | sprintf("%c");
-    /// | 'g'    | sprintf("%Ec");
-    /// | 'G'    | sprintf("%c");
-    /// | 'h'    | sprintf("%a");
-    /// | 'H'    | sprintf("%A");
-    /// | 'i'    | ustring::format("{:D2}", day);
-    /// | 'I'    | ustring::format("{:D}", day);
-    /// | 'j'    | sprintf("%b");
-    /// | 'J'    | sprintf("%B");
-    /// | 'k'    | ustring::format("{:D2}", month);
-    /// | 'K'    | ustring::format("{:D}", month);
-    /// | 'l'    | ustring::format("{:D2}", year % 100);
-    /// | 'L'    | ustring::format("{:D4}", year);
-    /// | 'm'    | ustring::format("{:D}", year);
-    /// | 'M'    | ustring::format("{} {:D}", sprintf("%B"), day);
-    /// | 'n'    | ustring::format("{}, {:D} {} {:D}", sprintf("%A"), day, sprintf("%B"), year);
-    /// | 'N'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second);
-    /// | 'o'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year);
-    /// | 'O'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year);
-    /// | 's'    | ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
-    /// | 't'    | ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
-    /// | 'T'    | ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second);
-    /// | 'u'    | ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
-    /// | 'U'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second);
-    /// | 'v'    | ustring::format("{:D2}:{:D2}", hour, minute);
-    /// | 'V'    | ustring::format("{:D}:{:D2}", hour, minute);
-    /// | 'w'    | ustring::format("{:D2}", hour);
-    /// | 'W'    | ustring::format("{:D}", hour);
-    /// | 'x'    | ustring::format("{:D2}", hour % 12);
-    /// | 'X'    | ustring::format("{:D}", hour % 12);
-    /// | 'y'    | ustring::format("{} {:D}", sprintf("%B"), year % 100);
-    /// | 'Y'    | ustring::format("{} {:D}", sprintf("%B"), year);
-    /// | 'z'    | kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
-    /// | 'Z'    | kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
+    /// | 'a'    | ustring::format("{}", hour / 12 ? "PM" : "AM") |
+    /// | 'b'    | ustring::format("{:D3}", millisecond()) |
+    /// | 'B'    | ustring::format("{}", millisecond()) |
+    /// | 'c'    | ustring::format("{:D7}", ticks().count() % ticks_per_millisecond) |
+    /// | 'C'    | ustring::format("{}", ticks().count() % ticks_per_millisecond) |
+    /// | 'd'    | ustring::format("{:D2}/{:D2}/{:D}", month, day, year) |
+    /// | 'D'    | ustring::format("{:D}/{:D2}/{:D}", month, day, year) |
+    /// | 'f'    | sprintf("%Ec") |
+    /// | 'F'    | sprintf("%c") |
+    /// | 'g'    | sprintf("%Ec") |
+    /// | 'G'    | sprintf("%c") |
+    /// | 'h'    | sprintf("%a") |
+    /// | 'H'    | sprintf("%A") |
+    /// | 'i'    | ustring::format("{:D2}", day) |
+    /// | 'I'    | ustring::format("{:D}", day) |
+    /// | 'j'    | sprintf("%b") |
+    /// | 'J'    | sprintf("%B") |
+    /// | 'k'    | ustring::format("{:D2}", month) |
+    /// | 'K'    | ustring::format("{:D}", month) |
+    /// | 'l'    | ustring::format("{:D2}", year % 100) |
+    /// | 'L'    | ustring::format("{:D4}", year) |
+    /// | 'm'    | ustring::format("{:D}", year) |
+    /// | 'M'    | ustring::format("{} {:D}", sprintf("%B"), day) |
+    /// | 'n'    | ustring::format("{}, {:D} {} {:D}", sprintf("%A"), day, sprintf("%B"), year) |
+    /// | 'N'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second) |
+    /// | 'o'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year) |
+    /// | 'O'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year) |
+    /// | 's'    | ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second) |
+    /// | 't'    | ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second) |
+    /// | 'T'    | ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second) |
+    /// | 'u'    | ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second) |
+    /// | 'U'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second) |
+    /// | 'v'    | ustring::format("{:D2}:{:D2}", hour, minute) |
+    /// | 'V'    | ustring::format("{:D}:{:D2}", hour, minute) |
+    /// | 'w'    | ustring::format("{:D2}", hour) |
+    /// | 'W'    | ustring::format("{:D}", hour) |
+    /// | 'x'    | ustring::format("{:D2}", hour % 12) |
+    /// | 'X'    | ustring::format("{:D}", hour % 12) |
+    /// | 'y'    | ustring::format("{} {:D}", sprintf("%B"), year % 100) |
+    /// | 'Y'    | ustring::format("{} {:D}", sprintf("%B"), year) |
+    /// | 'z'    | kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str() |
+    /// | 'Z'    | kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str() |
     xtd::ustring to_string(const ustring& format) const;
     
     /// @remarks Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.
