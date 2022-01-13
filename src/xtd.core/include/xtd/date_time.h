@@ -1013,8 +1013,8 @@ namespace xtd {
     /// | 'W'    | writes hour (24H), e.g. 7                                                                                                   |
     /// | 'x'    | writes 2 digit hour (12H), e.g. 07                                                                                          |
     /// | 'X'    | writes hour (12H), e.g. 7                                                                                                   |
-    /// | 'y'    | ustring::format("{} {:D}", sprintf("%B"), year % 100) |
-    /// | 'Y'    | ustring::format("{} {:D}", sprintf("%B"), year) |
+    /// | 'y'    | writes full month name and year, e.g. October, 71 (locale dependent).                                                       |
+    /// | 'Y'    | writes full month name and year, e.g. October, 1971 (locale dependent).                                                     |
     /// | 'z'    | write time zone "local" or "UTC".                                                                                           |
     /// | 'Z'    | write time zone "local" or "UTC".                                                                                           |
     xtd::ustring to_string(const ustring& format) const;
