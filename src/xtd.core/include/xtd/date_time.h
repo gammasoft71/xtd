@@ -969,30 +969,30 @@ namespace xtd {
     /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::ustring&) with differentt formats.
     /// @include date_time_to_string_format.cpp
     /// @remarks The formatting codes for xtd::date_time::to_string(const xtd::ustring&) are listed below:
-    /// | Format | Print |
-    /// |--------| ------|
-    /// | 'a'    | ustring::format("{}", hour / 12 ? "PM" : "AM") |
-    /// | 'b'    | ustring::format("{:D3}", millisecond()) |
-    /// | 'B'    | ustring::format("{}", millisecond()) |
-    /// | 'c'    | ustring::format("{:D7}", ticks().count() % ticks_per_millisecond) |
-    /// | 'C'    | ustring::format("{}", ticks().count() % ticks_per_millisecond) |
-    /// | 'd'    | ustring::format("{:D2}/{:D2}/{:D}", month, day, year) |
-    /// | 'D'    | ustring::format("{:D}/{:D2}/{:D}", month, day, year) |
+    /// | Format | Print                                                                                                                       |
+    /// |--------| ----------------------------------------------------------------------------------------------------------------------------|
+    /// | 'a'    | writes if time grreather than 12 "PM" otherwise "AM"                                                                        |
+    /// | 'b'    | writes 3 digit millisecond, e.G. 012                                                                                        |
+    /// | 'B'    | wrties millisecond, eg 12                                                                                                   |
+    /// | 'c'    | writes 7 digit tick, e.G. 0000123                                                                                           |
+    /// | 'C'    | writes tick, e.G. 123                                                                                                       |
+    /// | 'd'    | write date MM/DD/Y, e.g. 01/05/42                                                                                           |
+    /// | 'D'    | write date M/DD/Y, e.g. 1/055/42                                                                                            |
     /// | 'f'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
     /// | 'F'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
     /// | 'g'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
     /// | 'G'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
     /// | 'h'    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
     /// | 'H'    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
-    /// | 'i'    | ustring::format("{:D2}", day) |
-    /// | 'I'    | ustring::format("{:D}", day) |
+    /// | 'i'    | writes 2 digit day, e.g. 05 |
+    /// | 'I'    | writes day, e.G. 5 |
     /// | 'j'    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
     /// | 'J'    | writes full month name, e.g. October (locale dependent).                                                                    |
-    /// | 'k'    | ustring::format("{:D2}", month) |
-    /// | 'K'    | ustring::format("{:D}", month) |
-    /// | 'l'    | ustring::format("{:D2}", year % 100) |
-    /// | 'L'    | ustring::format("{:D4}", year) |
-    /// | 'm'    | ustring::format("{:D}", year) |
+    /// | 'k'    | writes 2 digit month, e.g. 01 |
+    /// | 'K'    | writes month, e.g. 1 |
+    /// | 'l'    | writes 2 digit year, e.g. 71 |
+    /// | 'L'    | writes 4 digit year, e.g. 1971 |
+    /// | 'm'    | writes year, e.g. 42 |
     /// | 'M'    | ustring::format("{} {:D}", sprintf("%B"), day) |
     /// | 'n'    | ustring::format("{}, {:D} {} {:D}", sprintf("%A"), day, sprintf("%B"), year) |
     /// | 'N'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second) |
