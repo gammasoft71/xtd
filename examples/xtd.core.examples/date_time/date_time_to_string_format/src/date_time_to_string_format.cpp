@@ -10,8 +10,12 @@ public:
     console::write_line(date1.to_string("a")); // PM
     console::write_line(date1.to_string("b")); // 016
     console::write_line(date1.to_string("B")); // 16
+    console::write_line(date1.to_string("c")); // 0160000
+    console::write_line(date1.to_string("c")); // 160000
     console::write_line(date1.to_string("d")); // 04/01/2008
     console::write_line(date1.to_string("D")); // 4/01/2008
+    console::write_line(date1.to_string("e")); // 05
+    console::write_line(date1.to_string("E")); // 5
     console::write_line(date1.to_string("f")); // Tue Apr  1 18:07:05 2008
     console::write_line(date1.to_string("F")); // Tue Apr  1 18:07:05 2008
     console::write_line(date1.to_string("g")); // Tue Apr  1 18:07:05 2008
@@ -32,6 +36,8 @@ public:
     console::write_line(date1.to_string("N")); // Tuesday, 1 April 2008 18:07:05
     console::write_line(date1.to_string("o")); // 1 April 2008
     console::write_line(date1.to_string("O")); // 1 April 2008
+    console::write_line(date1.to_string("p")); // 07
+    console::write_line(date1.to_string("P")); // 7
     console::write_line(date1.to_string("s")); // 2008-04-01T18:07:05.0160000
     console::write_line(date1.to_string("t")); // 18:07:05
     console::write_line(date1.to_string("T")); // 18:07:05

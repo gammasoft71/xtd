@@ -976,8 +976,8 @@ namespace xtd {
     /// | 'B'    | wrties millisecond, eg 12                                                                                                   |
     /// | 'c'    | writes 7 digit tick, e.G. 0000123                                                                                           |
     /// | 'C'    | writes tick, e.G. 123                                                                                                       |
-    /// | 'd'    | write date MM/dd/y, e.g. 01/05/42                                                                                           |
-    /// | 'D'    | write date M/dd/y, e.g. 1/055/42                                                                                            |
+    /// | 'd'    | writes date MM/dd/y, e.g. 01/05/42                                                                                          |
+    /// | 'D'    | writes date M/dd/y, e.g. 1/055/42                                                                                           |
     /// | 'e'    | writes 2 digit second, e.G. 03                                                                                              |
     /// | 'B'    | writes second, e.G. 3                                                                                                       |
     /// | 'f'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
@@ -990,33 +990,33 @@ namespace xtd {
     /// | 'I'    | writes day, e.G. 5                                                                                                          |
     /// | 'j'    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
     /// | 'J'    | writes full month name, e.g. October (locale dependent).                                                                    |
-    /// | 'k'    | writes 2 digit month, e.g. 01 |
-    /// | 'K'    | writes month, e.g. 1 |
-    /// | 'l'    | writes 2 digit year, e.g. 71 |
-    /// | 'L'    | writes 4 digit year, e.g. 1971 |
-    /// | 'm'    | writes year, e.g. 42 |
+    /// | 'k'    | writes 2 digit month, e.g. 01                                                                                               |
+    /// | 'K'    | writes month, e.g. 1                                                                                                        |
+    /// | 'l'    | writes 2 digit year, e.g. 71                                                                                                |
+    /// | 'L'    | writes 4 digit year, e.g. 1971                                                                                              |
+    /// | 'm'    | writes year, e.g. 42                                                                                                        |
     /// | 'M'    | writes full month name and day, e.g. October, 5 (locale dependent).                                                         |
-    /// | 'n'    | ustring::format("{}, {:D} {} {:D}", sprintf("%A"), day, sprintf("%B"), year) |
-    /// | 'N'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second) |
-    /// | 'o'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year) |
-    /// | 'O'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year) |
+    /// | 'n'    | writes full weekday name, day, fulll month and year, e.g. Tuesday, 1 April 2008                                             |
+    /// | 'N'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
+    /// | 'o'    | writes day, full month and year, e.g. 5 January 42                                                                          |
+    /// | 'O'    | writes day, full month and year, e.g. 5 January 42                                                                          |
     /// | 'p'    | writes 2 digit minute, e.G. 06                                                                                              |
     /// | 'P'    | writes minute, e.G. 6                                                                                                       |
-    /// | 's'    | writes sortable date/time pattern yyyy-MM-ddThh:mm:ss:ttttttt. e.g. 1971-05-01T21:32:24:42.004567                           |
-    /// | 't'    | write time hh/mm/ss, e.g. 02:04:06                                                                                          |
-    /// | 'T'    | write time h/mm/ss, e.g. 2:04:06                                                                                            |
-    /// | 'u'    | ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second) |
-    /// | 'U'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second) |
-    /// | 'v'    | write time hh/mm, e.g. 02:04                                                                                                |
-    /// | 'V'    | write time h/mm, e.g. 2:04                                                                                                  |
+    /// | 's'    | writes sortable date/time pattern yyyy-MM-ddThh:mm:ss.ttttttt. e.g. 1971-05-01T21:32:24:42.004567                           |
+    /// | 't'    | writes time hh/mm/ss, e.g. 02:04:06                                                                                         |
+    /// | 'T'    | writes time h/mm/ss, e.g. 2:04:06                                                                                           |
+    /// | 'u'    | writes sortable short date/time pattern y-MM-dd hh:mm:ss. e.g. 1971-05-01 9:32:24:42                                        |
+    /// | 'U'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
+    /// | 'v'    | writes time hh/mm, e.g. 02:04                                                                                               |
+    /// | 'V'    | writes time h/mm, e.g. 2:04                                                                                                 |
     /// | 'w'    | writes 2 digit hour (24H), e.g. 07                                                                                          |
     /// | 'W'    | writes hour (24H), e.g. 7                                                                                                   |
     /// | 'x'    | writes 2 digit hour (12H), e.g. 07                                                                                          |
     /// | 'X'    | writes hour (12H), e.g. 7                                                                                                   |
     /// | 'y'    | writes full month name and year, e.g. October, 71 (locale dependent).                                                       |
     /// | 'Y'    | writes full month name and year, e.g. October, 1971 (locale dependent).                                                     |
-    /// | 'z'    | write time zone "local" or "UTC".                                                                                           |
-    /// | 'Z'    | write time zone "local" or "UTC".                                                                                           |
+    /// | 'z'    | writes time zone "local" or "UTC".                                                                                          |
+    /// | 'Z'    | writes time zone "local" or "UTC".                                                                                          |
     xtd::ustring to_string(const ustring& format) const;
     
     /// @remarks Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.
