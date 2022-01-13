@@ -976,8 +976,8 @@ namespace xtd {
     /// | 'B'    | wrties millisecond, eg 12                                                                                                   |
     /// | 'c'    | writes 7 digit tick, e.G. 0000123                                                                                           |
     /// | 'C'    | writes tick, e.G. 123                                                                                                       |
-    /// | 'd'    | write date MM/DD/Y, e.g. 01/05/42                                                                                           |
-    /// | 'D'    | write date M/DD/Y, e.g. 1/055/42                                                                                            |
+    /// | 'd'    | write date MM/dd/y, e.g. 01/05/42                                                                                           |
+    /// | 'D'    | write date M/dd/y, e.g. 1/055/42                                                                                            |
     /// | 'e'    | writes 2 digit second, e.G. 03                                                                                              |
     /// | 'B'    | writes second, e.G. 3                                                                                                       |
     /// | 'f'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
@@ -1002,13 +1002,13 @@ namespace xtd {
     /// | 'O'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year) |
     /// | 'p'    | writes 2 digit minute, e.G. 06                                                                                              |
     /// | 'P'    | writes minute, e.G. 6                                                                                                       |
-    /// | 's'    | ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second) |
-    /// | 't'    | write time HH/MM/SS, e.g. 02:04:06                                                                                          |
-    /// | 'T'    | write time H/MM/SS, e.g. 2:04:06                                                                                            |
+    /// | 's'    | writes sortable date/time pattern yyyy-MM-ddThh:mm:ss:ttttttt. e.g. 1971-05-01T21:32:24:42.004567                           |
+    /// | 't'    | write time hh/mm/ss, e.g. 02:04:06                                                                                          |
+    /// | 'T'    | write time h/mm/ss, e.g. 2:04:06                                                                                            |
     /// | 'u'    | ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second) |
     /// | 'U'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second) |
-    /// | 'v'    | write time HH/MM, e.g. 02:04                                                                                                |
-    /// | 'V'    | write time H/MM, e.g. 2:04                                                                                                  |
+    /// | 'v'    | write time hh/mm, e.g. 02:04                                                                                                |
+    /// | 'V'    | write time h/mm, e.g. 2:04                                                                                                  |
     /// | 'w'    | writes 2 digit hour (24H), e.g. 07                                                                                          |
     /// | 'W'    | writes hour (24H), e.g. 7                                                                                                   |
     /// | 'x'    | writes 2 digit hour (12H), e.g. 07                                                                                          |
