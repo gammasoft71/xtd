@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates some of the main members of the xtd::io::directory_info class.
     /// @code
     /// #include <xtd/xtd>
@@ -64,7 +64,7 @@ namespace xtd {
     ///
     /// startup_(program);
     /// @endcode
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates how to copy a directory and its contents.
     /// @code
     /// #include <xtd/xtd>
@@ -208,7 +208,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @exception xtd::argument_exception path contains invalid characters such as ", <, >, or |.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-      /// @par Example
+      /// @par Examples
       /// The following example uses this constructor to create the specified directory and subdirectory, and demonstrates that a directory that contains subdirectories cannot be deleted.
       /// @code
       /// #include <xtd/xtd>
@@ -250,7 +250,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the directory exists.
       /// @return true if the directory exists; otherwise, false.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates a use of the Exists property in the context of copying a source directory to a target directory.
       /// @code
       /// #include <xtd/xtd>
@@ -296,7 +296,7 @@ namespace xtd {
       
       /// @brief Gets the name of this xtd::io::directory_info instance.
       /// @return The directory name.
-      /// @par Example
+      /// @par Examples
       /// The following example displays the name of the current xtd::io::directory_info instance only.
       /// @code
       /// #include <xtd/xtd>
@@ -323,7 +323,7 @@ namespace xtd {
       /// @brief Gets the parent directory of a specified subdirectory.
       /// @return The parent directory, or null if the path is null or if the file path denotes a root (such as \, C:\, or \\server\share).
       /// @exception xtd::security::security_exception The caller does not have the required permission.
-      /// @par Example
+      /// @par Examples
       /// The following example refers to the parent directory of a specified directory.
       /// @code
       /// #include <xtd/xtd>
@@ -364,7 +364,7 @@ namespace xtd {
       /// @brief Gets the root portion of the directory.
       /// @return  An object that represents the root of the directory.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
-      /// @par Example
+      /// @par Examples
       /// The following example displays root locations for specified directories.
       /// @code
       /// #include <xtd/xtd>
@@ -406,7 +406,7 @@ namespace xtd {
       /// @{
       /// @brief Creates a directory.
       /// @exception xtd::io::io_exception The directory cannot be created.
-      /// @par Example
+      /// @par Examples
       /// The following example checks whether a specified directory exists, creates the directory if it does not exist, and deletes the directory.
       /// @code
       /// #include <xtd/xtd>
@@ -457,7 +457,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates creating a subdirectory. In this example, the created directories are removed once created. Therefore, to test this sample, comment out the delete lines in the code.
       /// @code
       /// #include <xtd/xtd>
@@ -499,7 +499,7 @@ namespace xtd {
       /// @return An xtd::io::directory_info::directory_iterator of directories in the current directory.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @par Example
+      /// @par Examples
       /// The following example enumerates the subdirectories under the "My Documents" directory.
       /// @code
       /// #include <xtd/xtd>
@@ -559,7 +559,7 @@ namespace xtd {
       /// @return An xtd::io::directory_info::file_iterator of the files in the current directory.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @par Example
+      /// @par Examples
       /// The following example enumerates the files under a specified directory.
       ///
       /// If you only need the names of the files, use the static xtd::io::directory class for better performance. For an example, see the xtd::io::directory::enumerate_files method.
@@ -587,7 +587,7 @@ namespace xtd {
       ///
       /// startup_(program);
       /// @endcode
-      /// @par Example
+      /// @par Examples
       /// The following example shows how to enumerate files in a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.txt.
       /// @code
       /// #include <xtd/xtd>
@@ -658,7 +658,7 @@ namespace xtd {
       /// @return An xtd::io::directory_info::file_iterator of files that matches search_pattern.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @par Example
+      /// @par Examples
       /// The following example shows how to enumerate files in a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.txt.
       /// @code
       /// #include <xtd/xtd>
@@ -773,7 +773,7 @@ namespace xtd {
       /// @return An array of xtd::io::directory_info objects.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @par Example
+      /// @par Examples
       /// The following example retrieves all the directories in the root directory and displays the directory names.
       /// @code
       /// #include <xtd/xtd>
@@ -812,7 +812,7 @@ namespace xtd {
       /// @return An array of type xtd::io::directory_info matching search_pattern.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @par Example
+      /// @par Examples
       /// TThe following example counts the directories in a path that contain the specified letter.
       /// @code
       /// #include <xtd/xtd>
@@ -860,7 +860,7 @@ namespace xtd {
       /// @return An array of type xtd::io::file_info.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @Par Example
+      /// @par Examples
       /// The following example shows how to get a list of files from a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.tx
       /// @code
       /// #include <xtd/xtd>
@@ -931,7 +931,7 @@ namespace xtd {
       /// @return An array of type xtd::io::file_info.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @Par Example
+      /// @par Examples
       /// The following example shows how to get a list of files from a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.tx
       /// @code
       /// #include <xtd/xtd>
@@ -1008,7 +1008,7 @@ namespace xtd {
       /// @return An array of strongly typed xtd::io::file_system_info entries.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @par Example
+      /// @par Examples
       /// The following example counts the files and directories under the specified directory.
       /// @code
       /// #include <xtd/xtd>
@@ -1093,7 +1093,7 @@ namespace xtd {
       /// @return An array of strongly typed xtd::io::file_system_info entries.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @par Example
+      /// @par Examples
       /// The following example counts the files and directories that match the specified search pattern.
       /// @code
       /// #include <xtd/xtd>
@@ -1189,7 +1189,7 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::io::io_exception The directory is not empty.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>There is an open handle on the directory.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
-      /// @Par Example
+      /// @par Examples
       /// The following example demonstrates moving a directory.
       /// @code
       /// #include <xtd/xtd>
@@ -1243,7 +1243,7 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
       /// @exception xtd::io::io_exception The directory is not empty.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>There is an open handle on the directory.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
-      /// @par Example
+      /// @par Examples
       /// The following example throws an exception if you attempt to delete a directory that is not empty.
       /// @code
       /// #include <xtd/xtd>
@@ -1283,7 +1283,7 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
       /// @exception xtd::io::io_exception The directory is not empty.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>There is an open handle on the directory.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates deleting a directory. Because the directory is removed, first comment out the Delete line to test that the directory exists. Then uncomment the same line of code to test that the directory was removed successfully.
       /// @code
       /// #include <xtd/xtd>

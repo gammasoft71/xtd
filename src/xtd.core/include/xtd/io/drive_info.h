@@ -23,7 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
     /// @include drive_info.cpp
     /// @remarks This class models a drive and provides methods and properties to query for drive information. Use xtd::io::drive_info to determine what drives are available, and what type of drives they are. You can also query to determine the capacity and available free space on the drive.
@@ -54,7 +54,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
       /// @exception xtd::io::drive_not_found The drive does not exist or is not mapped.
       /// @exception xtd::io::io_exception An I/O error occurred (for example, a disk error or a drive was not ready).
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property indicates the amount of free space available on the drive. Note that this number may be different from the xtd::io::drive_info::total_free_space number because this property takes into account disk quotas.
@@ -65,7 +65,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
       /// @exception xtd::io::drive_not_found The drive does not exist or is not mapped.
       /// @exception xtd::io::io_exception An I/O error occurred (for example, a disk error or a drive was not ready).
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks Use xtd::io::drive_info::drive_format to determine what formatting a drive uses.
@@ -73,7 +73,7 @@ namespace xtd {
       
       /// @brief Gets the drive type, such as CD-ROM, removable, network, or fixed.
       /// @return One of the enumeration values that specifies a drive type.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks The xtd::io::drive_info::drive_type property indicates whether a drive is one of the following: CDRom, Fixed, Network, NoRootDirectory, Ram, Removable, or Unknown. These values are described in the xtd::io::drive_type enumeration.
@@ -81,7 +81,7 @@ namespace xtd {
       
       /// @brief Gets a value that indicates whether a drive is ready.
       /// @return true if the drive is ready; false if the drive is not ready.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks xtd::io::drive_info::is_ready indicates whether a drive is ready. For example, it indicates whether a CD is in a CD drive or whether a removable storage device is ready for read/write operations. If you do not test whether a drive is ready, and it is not ready, querying the drive using xtd::io::drive_info will raise an xtd::io::io_exception.
@@ -90,7 +90,7 @@ namespace xtd {
       
       /// @brief Gets the name of a drive, such as C:\.
       /// @return The name of the drive.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property is the name assigned to the drive, such as C:\ or E:\.
@@ -105,7 +105,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
       /// @exception xtd::io::drive_not_found The drive does not exist or is not mapped.
       /// @exception xtd::io::io_exception An I/O error occurred (for example, a disk error or a drive was not ready).
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property indicates the total amount of free space available on the drive, not just what is available to the current user.
@@ -116,7 +116,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
       /// @exception xtd::io::drive_not_found The drive does not exist or is not mapped.
       /// @exception xtd::io::io_exception An I/O error occurred (for example, a disk error or a drive was not ready).
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property indicates the total size of the drive in bytes, not just what is available to the current user.
@@ -127,7 +127,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
       /// @exception xtd::io::drive_not_found The drive does not exist or is not mapped.
       /// @exception xtd::io::io_exception An I/O error occurred (for example, a disk error or a drive was not ready).
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks The label length is determined by the operating system. For example, NTFS allows a volume label to be up to 32 characters long.
@@ -141,7 +141,7 @@ namespace xtd {
       /// @return An array of type xtd::ioo::drive_info that represents the logical drives on a computer.
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
       /// @exception xtd::io::io_exception An I/O error occurred (for example, a disk error or a drive was not ready).
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This method retrieves all logical drive names on a computer. You can use this information to iterate through the array and obtain information on the drives using other xtd::io::drive_info methods and properties. Use the xtd::io::drive_info::is_ready property to test whether a drive is ready because using this method on a drive that is not ready will throw a xtd::io::io_exception.

@@ -24,10 +24,10 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrates how to store and retrieve application settings in a file.
     /// @include binary_reader.cpp
-    /// @par Example
+    /// @par Examples
     /// The same example with stream operators.
     /// @include binary_reader2.cpp
     /// @remarks The xtd:io::binary_reader class provides methods that simplify reading primitive data types from a stream. For example, you can use the xtd:io::binary_reader::read_boolean method to read the next byte as a bool value and advance the current position in the stream by one byte. The class includes read methods that support different data types.
@@ -44,7 +44,7 @@ namespace xtd {
       explicit binary_reader(const xtd::ustring& path);
       /// @brief Initializes a new instance of the xtd::io::binary_reader class for the specified stream.
       /// @param stream The stream to be read.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates how to store and retrieve application settings in a file.
       /// @include binary_reader.cpp
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.

@@ -193,7 +193,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::boolean_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -210,7 +210,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::single_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -226,7 +226,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::double_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -242,7 +242,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::double_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -259,7 +259,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::sbyte_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -275,7 +275,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::int16_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -291,7 +291,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::int32_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -307,7 +307,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::int64_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -323,7 +323,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::intptr_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -340,7 +340,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::byte_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -356,7 +356,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::uint16_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -372,7 +372,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::uint32_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -388,7 +388,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::uint64_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -404,7 +404,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::uintptr_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -421,7 +421,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::size_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -438,7 +438,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::char_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -454,7 +454,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::char8_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -470,7 +470,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::char16_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -486,7 +486,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::char32_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
@@ -502,7 +502,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// The following example shows how to create and use xtd::wchar_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};

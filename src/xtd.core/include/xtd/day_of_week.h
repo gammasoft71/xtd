@@ -12,7 +12,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @par Example
+  /// @par Examples
   /// The following example demonstrates the xtd::date_time::day_of_week property and the xtd::day_of_week enumeration.
   /// @include date_time_day_of_week.cpp
   /// @remarks The xtd::day_of_week enumeration represents the day of the week in calendars that have seven days per week. The value of the constants in this enumeration ranges from xtd::day_of_week::sunday to xtd::day_of_week::saturday. If cast to an integer, its value ranges from zero (which indicates xtd::day_of_week::sunday) to six (which indicates xtd::day_of_week::saturday).

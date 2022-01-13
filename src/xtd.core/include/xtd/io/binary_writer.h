@@ -25,10 +25,10 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    /// @par Example
+    /// @par Examples
     /// The following code example demonstrates how to store and retrieve application settings in a file.
     /// @include binary_reader.cpp
-    /// @par Example
+    /// @par Examples
     /// The same example with stream operators.
     /// @include binary_reader2.cpp
     /// @remarks The xtd::io::binary_writer class provides methods that simplify writing primitive data types to a stream. For example, you can use the Write method to write a Boolean value to the stream as a one-byte value. The class includes write methods that support different data types.

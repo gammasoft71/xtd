@@ -24,6 +24,7 @@ add_projects(
   date_time_now2
   date_time_specify_kind
   date_time_sprintf
+  date_time_subtract
   date_time_ticks
   date_time_ticks2
   date_time_time_of_day
