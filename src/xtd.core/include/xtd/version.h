@@ -266,7 +266,7 @@ namespace xtd {
     /// | 3           | major.minor.build          |
     /// | 4           | major.minor.build.revision |
     /// For example, if you create xtd::version object using the constructor xtd::version(1,3,5), xtd::version::to_string(2) returns "1.3" and xtd::version::to_string(4) throws an exception.
-    /// @exception xtd::argument_exception field_count is more than 4 -or- field_count is more than the number of components defined in the current xtd::version object.
+    /// @exception xtd::argument_exception field_count is more than 4<br>-or-<br>field_count is more than the number of components defined in the current xtd::version object.
     xtd::ustring to_string(size_t field_count) const;
     
     /// @brief Tries to convert the string representation of a version number to an equivalent xtd::version object, and returns a value that indicates whether the conversion succeeded.

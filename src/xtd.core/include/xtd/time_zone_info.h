@@ -137,8 +137,8 @@ namespace xtd {
       /// @param month The month in which the time change occurs. This parameter corresponds to the xtd::time_zone_info::transition_time::month property.
       /// @param day The day of the month on which the time change occurs. This parameter corresponds to the xtd::time_zone_info::transition_time::day property.
       /// @return Data about the time change.
-      /// @exception xtd::argument_exception The time_of_day parameter has a non-default date component. -or- The time_of_day parameter's Kind property is not unspecified. -or- The time_of_day parameter does not represent a whole number of milliseconds.
-      /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12. -or- The day parameter is less than 1 or greater than 31.
+      /// @exception xtd::argument_exception The time_of_day parameter has a non-default date component.<br>-or-<br>The time_of_day parameter's Kind property is not unspecified.<br>-or-<br>The time_of_day parameter does not represent a whole number of milliseconds.
+      /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12.<br>-or-<br>The day parameter is less than 1 or greater than 31.
       /// @remarks This method creates a fixed-date rule (that is, a time change that occurs on a specific day of a specific month). For example, a time change that always occurs on October 28 follows a fixed-date rule.
       /// @remarks For transitions from standard time to daylight saving time, the timeOfDay argument represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time. Note that this is a xtd::date_time value whose year, month, and date values must all equal 1.
       static transition_time create_fixed_date_rule(date_time time_of_day, uint32_t month, uint32_t day) {
@@ -158,8 +158,8 @@ namespace xtd {
       /// @param week The week of the month in which the time change occurs. Its value can range from 1 to 5, with 5 representing the last week of the month. This parameter corresponds to the xtd::time_zone_info::transition_time::week property
       /// @param day_of_week The day of the week on which the time change occurs. This parameter corresponds to the xtd::time_zone_info::transition_time::day_of_week property.
       /// @return Data about the time change.
-      /// @exception xtd::argument_exception The time_of_day parameter has a non-default date component. -or- The time_of_day parameter's Kind property is not unspecified. -or- The time_of_day parameter does not represent a whole number of milliseconds.
-      /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12. -or- The week parameter is less than 1 or greater than 5.
+      /// @exception xtd::argument_exception The time_of_day parameter has a non-default date component.<br>-or-<br>The time_of_day parameter's Kind property is not unspecified.<br>-or-<br>The time_of_day parameter does not represent a whole number of milliseconds.
+      /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12.<br>-or-<br>The week parameter is less than 1 or greater than 5.
       /// @remarks This method creates a floating-date rule (that is, a time change that occurs on a specific day of a specific week of a specific month). For example, a time change that occurs on the last Sunday of October follows a floating-date rule.
       /// @remarks For transitions from standard time to daylight saving time, the time_of_day argument represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time. Note that this is a xtd::date_time value whose year, month, and date values must all equal 1.
       static transition_time create_floating_date_rule(date_time time_of_day, uint32_t month, uint32_t week, xtd::day_of_week day_of_week) {

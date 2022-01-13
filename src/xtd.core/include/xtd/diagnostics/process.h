@@ -294,7 +294,7 @@ namespace xtd {
       
       /// @brief Gets the value that the associated process specified when it terminated.
       /// @return The code that the associated process specified when it terminated.
-      /// @exception xtd::invalid_operation_exception The process has not exited. -or- The process xtd::diagnostics::process::handle is not valid.
+      /// @exception xtd::invalid_operation_exception The process has not exited.<br>-or-<br>The process xtd::diagnostics::process::handle is not valid.
       /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::exit_code property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks Use xtd::diagnostics::process::exit_code to get the status that the system process returned when it exited. You can use the exit code much like an integer return value from a main() procedure.
       /// @remarks The xtd::diagnostics::process::exit_code value for a process reflects the specific convention implemented by the application developer for that process. If you use the exit code value to make decisions in your code, be sure that you know the exit code convention used by the application process.
@@ -313,7 +313,7 @@ namespace xtd {
       
       /// @brief Gets the native handle of the associated process.
       /// @return The handle that the operating system assigned to the associated process when the process was started. The system uses this handle to keep track of process attributes.
-      /// @exception xtd::invalid_operation_exception The process has not been started or has exited. The xtd::diagnostics::process::handle property cannot be read because there is no process associated with this xtd::diagnostics::process instance. -or- The xtd::diagnostics::process instance has been attached to a running process but you do not have the necessary permissions to get a handle with full access rights.
+      /// @exception xtd::invalid_operation_exception The process has not been started or has exited. The xtd::diagnostics::process::handle property cannot be read because there is no process associated with this xtd::diagnostics::process instance.<br>-or-<br>The xtd::diagnostics::process instance has been attached to a running process but you do not have the necessary permissions to get a handle with full access rights.
       /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::handle property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks An application can obtain a handle to a process that can be used as a parameter to many process-information and control functions. You can use this handle to initialize a xtd::diagnostics::wait_handle or to call native methods with platform invoke.
       /// @remarks This process handle is private to an application--in other words, process handles cannot be shared. A process also has a process Id which, unlike the xtd::diagnostics::process::handle, is unique and, therefore, valid throughout the system.

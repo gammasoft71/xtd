@@ -67,11 +67,11 @@ namespace xtd {
       
       /// @brief Gets or sets a numeric value that represents the current position of the scroll box on the scroll bar control.
       /// @return A numeric value that is within the Minimum and Maximum range. The default value is 0.
-      /// @exception xtd::argument_out_of_range_exception The assigned value is less than the xtd::forms::scroll_bar::minimum property value. -or- The assigned value is greater than the xtd::forms::scroll_bar::maximum property value.
+      /// @exception xtd::argument_out_of_range_exception The assigned value is less than the xtd::forms::scroll_bar::minimum property value.<br>-or-<br>The assigned value is greater than the xtd::forms::scroll_bar::maximum property value.
       virtual int32_t value() const;
       /// @brief Sets or sets a numeric value that represents the current position of the scroll box on the scroll bar control.
       /// @param value A numeric value that is within the Minimum and Maximum range. The default value is 0.
-      /// @exception xtd::argument_out_of_range_exception The assigned value is less than the xtd::forms::scroll_bar::minimum property value. -or- The assigned value is greater than the xtd::forms::scroll_bar::maximum property value.
+      /// @exception xtd::argument_out_of_range_exception The assigned value is less than the xtd::forms::scroll_bar::minimum property value.<br>-or-<br>The assigned value is greater than the xtd::forms::scroll_bar::maximum property value.
       virtual scroll_bar& value(int32_t value);
       /// @}
       

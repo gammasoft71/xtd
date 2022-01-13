@@ -184,7 +184,7 @@ namespace xtd {
       /// @brief Writes a formatted string followed by a line terminator to the trace listeners in the listeners collection.
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
       /// @param ...args An object array containing zero or more objects to format.
-      /// @exception xtd::format_exception format is invalid. -or- The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
+      /// @exception xtd::format_exception format is invalid.<br>-or-<br>The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
       template<typename ...args_t>
       static void print(const xtd::ustring& format, args_t&& ... args) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
@@ -388,7 +388,7 @@ namespace xtd {
       /// @brief Writes a formatted string followed by a line terminator to the trace listeners in the listeners collection.
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
       /// @param ...args An object array containing zero or more objects to format.
-      /// @exception xtd::format_exception format is invalid. -or- The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
+      /// @exception xtd::format_exception format is invalid.<br>-or-<br>The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
       template<typename ...args_t>
       static void write_line(const xtd::ustring& format, args_t&& ... args) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)

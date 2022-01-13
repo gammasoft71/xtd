@@ -133,7 +133,7 @@ namespace xtd {
       /// @return true if the current file is read only; otherwise, false.
       /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
-      /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform. -or- The caller does not have the required permission.
+      /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform.<br>-or-<br>The caller does not have the required permission.
       /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
       /// @par Example
       /// The following example uses the xtd::io::file_info::is_read_only property to mark a file as read only and then mark it as read-write.
@@ -202,7 +202,7 @@ namespace xtd {
       /// @param value true if the current file is read only; otherwise, false.
       /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
-      /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform. -or- The caller does not have the required permission.
+      /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform.<br>-or-<br>The caller does not have the required permission.
       /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
       /// @par Example
       /// The following example uses the xtd::io::file_info::is_read_only property to mark a file as read only and then mark it as read-write.
@@ -271,7 +271,7 @@ namespace xtd {
       /// @brief Gets the size, in bytes, of the current file.
       /// @return The size of the current file in bytes.
       /// @exception xtd::io::io_exception xtd::io::file_info::refresh cannot update the state of the file or directory.
-      /// @exception xtd::io::file_not_found_exception The file does not exist. -or- The xtd::io::file_info::size property is called for a directory.
+      /// @exception xtd::io::file_not_found_exception The file does not exist.<br>-or-<br>The xtd::io::file_info::size property is called for a directory.
       /// @par Example
       ///
       /// @code
@@ -753,7 +753,7 @@ namespace xtd {
       std::ofstream open_write() const;
       
       /// @brief Permanently deletes a file.
-      /// @exception xtd::io::io_exception The target file is open or memory-mapped on a computer running Microsoft Windows NT. -or- There is an open handle on the file, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see How to: Enumerate Directories and Files.
+      /// @exception xtd::io::io_exception The target file is open or memory-mapped on a computer running Microsoft Windows NT.<br>-or-<br>There is an open handle on the file, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see How to: Enumerate Directories and Files.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @exception xtd::unauthorized_access_exception The path is a directory.
       /// @par Example
@@ -831,8 +831,8 @@ namespace xtd {
       /// @param destination_file_name The name of a file to replace with the current file.
       /// @param destination_backup_file_name The name of a file with which to create a backup of the file described by the destFileName parameter.
       /// @return A xtd::io::file_info object that encapsulates information about the file described by the destFileName parameter.
-      /// @exception xtd::argument_exception The path described by the destFileName parameter was not of a legal form. -or- The path described by the destBackupFileName parameter was not of a legal form.
-      /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found. -or- The file described by the destinationFileName parameter could not be found.
+      /// @exception xtd::argument_exception The path described by the destFileName parameter was not of a legal form.<br>-or-<br>The path described by the destBackupFileName parameter was not of a legal form.
+      /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.<br>-or-<br>The file described by the destinationFileName parameter could not be found.
       /// @exception xtd::platform_not_supported_exception The current operating system is not Microsoft Windows NT or later.
       /// @par Example
       /// The following example uses the xtd::io::file_info::replace method to replace a file with another file and create a backup of the replaced file.

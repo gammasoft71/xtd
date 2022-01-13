@@ -76,7 +76,7 @@ namespace xtd {
       ///     console::write_line();
       ///     console::write_line("   ... throwing exception to next level ...");
       ///     console::write_line("-------------------------------------------------\n");
-      ///     throw e;
+      ///     throw;
       ///   }
       /// }
       /// @endcode
@@ -114,7 +114,7 @@ namespace xtd {
       ///     console::write_line();
       ///     console::write_line("   ... throwing exception to next level ...");
       ///     console::write_line("-------------------------------------------------\n");
-      ///     throw e;
+      ///     throw;
       ///   }
       /// }
       /// @endcode
@@ -180,7 +180,7 @@ namespace xtd {
       ///     console::write_line();
       ///     console::write_line("   ... throwing exception to next level ...");
       ///     console::write_line("-------------------------------------------------\n");
-      ///     throw e;
+      ///     throw;
       ///   }
       /// }
       /// @endcode
@@ -246,7 +246,7 @@ namespace xtd {
       ///     console::write_line();
       ///     console::write_line("   ... throwing exception to next level ...");
       ///     console::write_line("-------------------------------------------------\n");
-      ///     throw e;
+      ///     throw;
       ///   }
       /// }
       /// @endcode
@@ -288,7 +288,7 @@ namespace xtd {
       ///     console::write_line();
       ///     console::write_line("   ... throwing exception to next level ...");
       ///     console::write_line("-------------------------------------------------\n");
-      ///     throw e;
+      ///     throw;
       ///   }
       /// }
       /// @endcode

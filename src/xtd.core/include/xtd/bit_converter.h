@@ -365,7 +365,7 @@ namespace xtd {
     /// @param length The number of std::vector elements in value to convert.
     /// @return xtd::ustring A xtd::ustring of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
     /// @exception argument_null_exception value is null.
-    /// @exception argument_out_of_range_exception start_index or length is less than zero. -or- start_index is greater than zero and is greater than or equal to the length of value.
+    /// @exception argument_out_of_range_exception start_index or length is less than zero.<br>-or-<br>start_index is greater than zero and is greater than or equal to the length of value.
     /// @exception argument_exception The combination of start_index and length does not specify a position within value; that is, the start_index parameter is greater than the length of value minus the length parameter.
     /// @remarks AThe length elements from std::vector position start_index are converted. If length equals zero, the method returns xtd::ustring.Empty.
     /// @remarks The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.

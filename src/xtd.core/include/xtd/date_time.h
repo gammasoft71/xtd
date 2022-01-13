@@ -123,7 +123,7 @@ namespace xtd {
     /// @param year The year (1 through 9999).
     /// @param month The month (1 through 12).
     /// @param day The day (1 through the number of days in month).
-    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month.
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.
     /// @par Example
     /// The following example uses the date_time(uint32_t, uint32_t, uint32_t) constructor to instantiate a xtd::date_time value. The example also illustrates that this overload creates a xtd::date_time value whose time component equals midnight (or 0:00).
     /// @code
@@ -141,7 +141,7 @@ namespace xtd {
     /// @param hour The hours (0 through 23).
     /// @param minute The minutes (0 through 59).
     /// @param second The seconds (0 through 59).
-    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month. -or- hour is less than 0 or greater than 23. -or- minute is less than 0 or greater than 59. -or- second is less than 0 or greater than 59.
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59.<br>-or-<br>second is less than 0 or greater than 59.
     /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second);
@@ -153,7 +153,7 @@ namespace xtd {
     /// @param minute The minutes (0 through 59).
     /// @param second The seconds (0 through 59).
     /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
-    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month. -or- hour is less than 0 or greater than 23. -or- minute is less than 0 or greater than 59 -or- second is less than 0 or greater than 59.
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59.
     /// @par Example
     /// The following example uses the date_time(uint32_t, uint32_t, uint32_tt, uint32_tt, uint32_t, uint32_t, xtd::date_time_kind) constructor to instantiate a xtd::date_time value.
     /// @code
@@ -173,7 +173,7 @@ namespace xtd {
     /// @param minute The minutes (0 through 59).
     /// @param second The seconds (0 through 59).
     /// @param millisecond The milliseconds (0 through 999).
-    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month. -or- hour is less than 0 or greater than 23. -or- minute is less than 0 or greater than 59 -or- second is less than 0 or greater than 59 -or- millisecond is less than 0 or greater than 999.
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59<br>-or-<br>millisecond is less than 0 or greater than 999.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond);
     /// @brief Initializes a new instance of the xtd::date_time structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.
@@ -185,7 +185,7 @@ namespace xtd {
     /// @param second The seconds (0 through 59).
     /// @param millisecond The milliseconds (0 through 999).
     /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
-    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999. -or- month is less than 1 or greater than 12. -or- day is less than 1 or greater than the number of days in month. -or- hour is less than 0 or greater than 23. -or- minute is less than 0 or greater than 59 -or- second is less than 0 or greater than 59 -or- millisecond is less than 0 or greater than 999.
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59<br>-or-<br>millisecond is less than 0 or greater than 999.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
     /// @}
@@ -515,6 +515,7 @@ namespace xtd {
     /// @remarks You can use the xtd::date_time::add method to add more than one kind of time interval (days, hours, minutes, seconds, or milliseconds) in a single operation. This method's behavior is identical to that of the addition operator. The xtd::date_time::addxtd::date_time structure also supports specialized addition methods (such as xtd::date_time::add_days, xtd::date_time::add_hours, and xtd::date_time::add_minutes) for each time interval.
     /// @remarks The xtd::date_time::add method takes into account leap years and the number of days in a month when performing date arithmetic.
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation. The xtd::date_time::kind property of the new xtd::date_time instance is the same as that of the current instance.
+    /// @remarks See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> for more information.
     template<typename rep_t, typename period_t>
     date_time add(std::chrono::duration<rep_t, period_t> value) const {
       return add(std::chrono::duration_cast<time_point>(value));
@@ -581,7 +582,7 @@ namespace xtd {
     /// @brief Returns a new xtd::date_time that adds the specified number of months to the value of this instance.
     /// @param months A number of months. The months parameter can be negative or positive.
     /// @return An object whose value is the sum of the date and time represented by this instance and months
-    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value. -or- months is less than -120,000 or greater than 120,000.
+    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.<br>-or-<br>months is less than -120,000 or greater than 120,000.
     /// @par Example
     /// The following example adds between zero and fifteen months to the last day of December, 2015. In this case, the xtd::date_time::add_months method returns the date of the last day of each month, and successfully handles leap years.
     /// @include date_time_add_months.cpp
@@ -628,7 +629,7 @@ namespace xtd {
     /// @param month The month (one of xtd::month_of_year values).
     /// @return The number of days in month for the specified year.<br>
     /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
-    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12. -or- year is less than 1 or greater than 9999.
+    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12.<br>-or-<br>year is less than 1 or greater than 9999.
     /// @par Example
     /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
     /// @include date_time_days_in_month.cpp
@@ -643,7 +644,7 @@ namespace xtd {
     /// @param month The month (a number ranging from 1 to 12).
     /// @return The number of days in month for the specified year.<br>
     /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
-    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12. -or- year is less than 1 or greater than 9999.
+    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12.<br>-or-<br>year is less than 1 or greater than 9999.
     /// @par Example
     /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
     /// @include date_time_days_in_month.cpp
@@ -663,22 +664,104 @@ namespace xtd {
     /// @remarks Use the xtd::date_time::to_binary method to convert the value of the current xtd::date_time object to a binary value. Subsequently, use the binary value and the xtd::date_time::from_binary method to recreate the original xtd::date_time object.
     /// @note In some cases, the xtd::date_time value returned by the xtd::date_time::from_binary method is not identical to the original xtd::date_time value supplied to the xtd::date_time::to_binary method.
     static date_time from_binary(int64_t date_data);
-    static date_time from_file_time(xtd::ticks fileTime);
-    static date_time from_file_time_utc(xtd::ticks fileTime);
+    
+    /// @brief Converts the specified Windows file time to an equivalent local time.
+    /// @param file_time A Windows file time expressed in ticks.
+    /// @return An object that represents the local time equivalent of the date and time represented by the file_time parameter.
+    /// @exception xtd::argument_out_of_range_exception file_time is less than 0 or represents a time greater than xtd::date_time:::max_value.
+    /// @par Example
+    /// The following example demonstrates the xtd::date_time::from_file_time method.
+    /// @code
+    /// xtd::ticks file_age(int64_t file_creation_time) {
+    ///   xtd::date_time now = xtd::date_time::now();
+    ///   try {
+    ///     xtd::date_time fcreation_fime = xtd::date_time::from_file_time(file_creation_time);
+    ///     xtd::ticks file_age = now.subtract(fcreation_time);
+    ///     return file_age;
+    ///   } catch (const xtd::argument_out_of_range_exception&) {
+    ///     // file_creation_time is not valid, so re-throw the exception.
+    ///     throw;
+    ///   }
+    /// }
+    /// @endcode
+    /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
+    /// @remarks The file_time parameter specifies a file time expressed in 100-nanosecond ticks.
+    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property is xtd::date_time_kind::local.
+    static date_time from_file_time(int64_t file_time);
+    /// @brief Converts the specified Windows file time to an equivalent UTC time.
+    /// @param file_time A Windows file time expressed in ticks.
+    /// @return An object that represents the UTC time equivalent of the date and time represented by the file_time parameter.
+    /// @exception xtd::argument_out_of_range_exception file_time is less than 0 or represents a time greater than xtd::date_time:::max_value.
+    /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
+    /// @remarks The file_time parameter specifies a file time expressed in 100-nanosecond ticks.
+    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property is xtd::date_time:::utc.
+    static date_time from_file_time_utc(int64_t file_time);
+
+    /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> to an equivalent unspecified time.
+    /// @param value A time interval from the start of the Clock's epoch.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
+    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     template<typename rep_t, typename period_t>
     static date_time from_duration(std::chrono::duration<rep_t, period_t> value) {
       return from_duration(value, date_time_kind::unspecified);
     }
+    /// @brief Converts the specified<a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> to an equivalent to Coordinated Universal Time (UTC) or local time..
+    /// @param value A time interval from the start of the Clock's epoch.
+    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
+    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     template<typename rep_t, typename period_t>
     static date_time from_duration(std::chrono::duration<rep_t, period_t> value, date_time_kind kind) {
       return date_time(std::chrono::duration_cast<xtd::ticks>(value), kind);
     }
+
+    /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent unspecified time.
+    /// @param value A time interval from the start of the Clock's epoch.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the vvalue parameter.
+    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     static date_time from_time_t(std::time_t value);
+    /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent to Coordinated Universal Time (UTC) or local time.
+    /// @param value A time interval from the start of the Clock's epoch.
+    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the vvalue parameter.
+    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     static date_time from_time_t(std::time_t value, date_time_kind kind);
+
+    /// @brief Converts the specified <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> to an equivalent unspecified time.
+    /// @param value A <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> struct.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
+    /// @exception xtd::argument_out_of_range_exception value.ttm_year is less than 1 or greater than 9999.<br>-or-<br>tvalue.tm_mon is less than 1 or greater than 12.<br>-or-<br>value.tm_mday is less than 1 or greater than the number of days in month.<br>-or-<br>value.tm_hour is less than 0 or greater than 23.<br>-or-<br>value.tm_min is less than 0 or greater than 59<br>-or-<br>vale.tm_sec is less than 0 or greater than 59.
+    /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     static date_time from_tm(const std::tm& value);
+    /// @brief Converts the specified <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a><a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> to an equivalent to Coordinated Universal Time (UTC) or local time.
+    /// @param value A <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> struct.
+    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
+    /// @exception xtd::argument_out_of_range_exception value.ttm_year is less than 1 or greater than 9999.<br>-or-<br>tvalue.tm_mon is less than 1 or greater than 12.<br>-or-<br>value.tm_mday is less than 1 or greater than the number of days in month.<br>-or-<br>value.tm_hour is less than 0 or greater than 23.<br>-or-<br>value.tm_min is less than 0 or greater than 59<br>-or-<br>vale.tm_sec is less than 0 or greater than 59.
+    /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     static date_time from_tm(const std::tm& value, date_time_kind kind);
+
+    /// @brief Indicates whether this instance of xtd::date_time is within the daylight saving time range for the current time zone.
+    /// @return true if the value of the xtd::date_time::kind property is xtd::date_time_kind::local or xtd::date_time_kind::unspecified and the value of this instance ofxtd::date_time is within the daylight saving time range for the local time zone; false if xtd::date_time::kind is xtd::date_time_kind::utc.
+    /// @remarks This method determines whether the current xtd::date_time value falls within the daylight saving time range of the local time zone, which is returned by the xtd::time_zone_info::local property. You can determine whether a time zone supports daylight saving time by retrieving the value of its xtd::time_zone_info::supports_daylight_saving_time property. For time zones that observe daylight saving time, you can determine when the transition to and from daylight saving time occurs by retrieving the xtd::time_zone_info::adjustment_rule array returned by the time zone's xtd::time_zone_info::get_adjustmen_rules property.
+    /// @remarks If the current xtd::date_time value represents either an ambiguous or an invalid time in the local time zone, the method returns false.
     bool is_daylight_saving_time() const noexcept;
+    
+    /// @brief Returns an indication whether the specified year is a leap year.
+    /// @param year A 4-digit year.
+    /// @return true if year is a leap year; otherwise, false.
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.
     static bool is_leap_year(uint32_t year);
+    
+    
     xtd::ustring parse() const;
     static date_time specify_kind(date_time value, date_time_kind kind);
     

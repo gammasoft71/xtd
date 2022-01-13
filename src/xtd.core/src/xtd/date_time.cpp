@@ -312,12 +312,13 @@ date_time date_time::from_binary(int64_t date_data) {
   return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32_t>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
 }
 
-date_time date_time::from_file_time(xtd::ticks file_time) {
+date_time date_time::from_file_time(int64_t file_time) {
   return from_file_time_utc(file_time).to_local_time();
 }
 
-date_time date_time::from_file_time_utc(xtd::ticks file_time) {
-  return date_time(file_time + file_time_offset, date_time_kind::utc);
+date_time date_time::from_file_time_utc(int64_t file_time) {
+  if (file_time < 0) throw argument_out_of_range_exception(csf_);
+  return date_time(xtd::ticks(file_time) + file_time_offset, date_time_kind::utc);
 }
 
 date_time date_time::from_time_t(std::time_t value) {
@@ -333,7 +334,7 @@ date_time date_time::from_tm(const tm& value) {
 }
 
 date_time date_time::from_tm(const tm& value, date_time_kind kind) {
-  return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, math::min(value.tm_sec, 59), kind);
+  return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, value.tm_sec, kind);
 }
 
 bool date_time::is_daylight_saving_time() const noexcept {
@@ -342,6 +343,7 @@ bool date_time::is_daylight_saving_time() const noexcept {
 }
 
 bool date_time::is_leap_year(uint32_t year) {
+  if (year < 1 || year > 9999) throw argument_out_of_range_exception(csf_);
   return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 }
 
