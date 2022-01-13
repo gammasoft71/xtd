@@ -1041,10 +1041,8 @@ namespace xtd {
     /// | xtd::date_time_kind::unspecified | The current xtd::date_time object is assumed to be a local time, and the conversion is performed as if xtd::date_time::kind were Local. |
     date_time to_universal_time() const;
     /// @}
-    
-    /// @name Operators
-    
-    /// @{
+
+    /// @cond
     operator time_point() const;
     date_time& operator+=(const date_time& value);
     date_time& operator-=(const date_time& value);
@@ -1078,7 +1076,7 @@ namespace xtd {
     date_time operator++(int);
     date_time& operator--();
     date_time operator--(int);
-    /// @}
+    /// @endcond
     
   private:
     friend class time_zone_info;
