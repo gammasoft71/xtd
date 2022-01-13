@@ -453,7 +453,7 @@ namespace xtd {
       /// @return The last directory specified in path.
       /// @exception xtd::argument_exception path does not specify a valid file path or contains invalid xtd::io::directory_info characters.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
-      /// @exception xtd::io::io_exception The subdirectory cannot be created. -or- A file or directory already has the name specified by path.
+      /// @exception xtd::io::io_exception The subdirectory cannot be created.<br>-or-<br>A file or directory already has the name specified by path.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
@@ -1187,7 +1187,7 @@ namespace xtd {
       /// @brief Moves a DirectoryInfo instance and its contents to a new path.
       /// @param dest_dir_name The name and path to which to move this directory. The destination cannot be another disk volume or a directory with the identical name. It can be an existing directory to which you want to add this directory as a subdirectory.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
-      /// @exception xtd::io::io_exception The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
+      /// @exception xtd::io::io_exception The directory is not empty.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>There is an open handle on the directory.
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @Par Example
       /// The following example demonstrates moving a directory.
@@ -1241,7 +1241,7 @@ namespace xtd {
       /// @brief Deletes this xtd::io::directory_info if it is empty.
       /// @exception xtd::unauthorized_access_exception The directory contains a read-only file.
       /// @exception xtd::io::directory_not_found_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
-      /// @exception xtd::io::io_exception The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
+      /// @exception xtd::io::io_exception The directory is not empty.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>There is an open handle on the directory.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @par Example
       /// The following example throws an exception if you attempt to delete a directory that is not empty.
@@ -1281,7 +1281,7 @@ namespace xtd {
       /// @param recursive true to delete this directory, its subdirectories, and all files; otherwise, false.
       /// @exception xtd::unauthorized_access_exception The directory contains a read-only file.
       /// @exception xtd::io::directory_not_found_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
-      /// @exception xtd::io::io_exception The directory is not empty. -or- The directory is the application's current working directory. -or- There is an open handle on the directory.
+      /// @exception xtd::io::io_exception The directory is not empty.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>There is an open handle on the directory.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @par Example
       /// The following example demonstrates deleting a directory. Because the directory is removed, first comment out the Delete line to test that the directory exists. Then uncomment the same line of code to test that the directory was removed successfully.

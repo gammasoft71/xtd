@@ -12,7 +12,7 @@ void method2(int count) {
     stack_trace st1(stack_frame(2, true));
     console::write_line(" Stack trace for Method2: {0}", st1.to_string());
     console::write_line(st.to_string());
-    throw e;
+    throw;
   }
 }
 
@@ -27,7 +27,7 @@ void method1() {
     // Build a stack trace for the next frame.
     stack_trace st2(stack_frame(1, true));
     console::write_line(" Stack trace for next level frame: {0}", st2.to_string());
-    throw e;
+    throw;
   }
 }
 

@@ -342,7 +342,7 @@ namespace xtd {
     /// @brief Sets the height and width of the console window to the specified values.
     /// @param width The width of the console window measured in columns.
     /// @param height The height of the console window measured in rows.
-    /// @exception ArgumentOutOfRangeException width or height is less than or equal to zero.  -or-  width plus WindowLeft or height plus WindowTop is greater than or equal to Int16.MaxValue.  -or-  width or height is greater than the largest possible window width or height for the current screen resolution and console font.
+    /// @exception ArgumentOutOfRangeException width or height is less than or equal to zero. <br>-or-<br> width plus WindowLeft or height plus WindowTop is greater than or equal to Int16.MaxValue. <br>-or-<br> width or height is greater than the largest possible window width or height for the current screen resolution and console font.
     /// @par Example
     /// This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size.
     /// The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates.

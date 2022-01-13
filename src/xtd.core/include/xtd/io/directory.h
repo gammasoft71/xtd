@@ -1422,7 +1422,7 @@ namespace xtd {
       /// @brief Moves a file or a directory and its contents to a new location.
       /// @param source_dir_name The path of the file or directory to move.
       /// @param dest_dir_name The path to the new location for source_dir_name. If source_dir_name is a file, then dest_dir_name must also be a file name.
-      /// @exception xtd::io::io_exception An attempt was made to move a directory to a different volume. -or- dest_dir_name already exists. See the Note in the Remarks section. -or- The source_dir_name and dest_dir_name parameters refer to the same file or directory. -or- The directory or a file within it is being used by another process.
+      /// @exception xtd::io::io_exception An attempt was made to move a directory to a different volume.<br>-or-<br>dest_dir_name already exists. See the Note in the Remarks section.<br>-or-<br>The source_dir_name and dest_dir_name parameters refer to the same file or directory.<br>-or-<br>The directory or a file within it is being used by another process.
       /// @exception xtd::argument_exception source_dir_name or dest_dir_name is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters with the xtd::path::io::get_invalid_path_chars() method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The path specified by sourceDirName is invalid (for example, it is on an unmapped drive).
@@ -1458,7 +1458,7 @@ namespace xtd {
       
       /// @brief Deletes an empty directory from a specified path.
       /// @param path The name of the empty directory to remove. This directory must be writable and empty.
-      /// @exception xtd::io::io_exception A file with the same name and location specified by path exists. -or- The directory is the application's current working directory. -or- The directory specified by path is not empty. -or- The directory is read-only or contains a read-only file. -or- The directory is being used by another process.
+      /// @exception xtd::io::io_exception A file with the same name and location specified by path exists.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>The directory specified by path is not empty.<br>-or-<br>The directory is read-only or contains a read-only file.<br>-or-<br>The directory is being used by another process.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
@@ -1504,7 +1504,7 @@ namespace xtd {
       /// @brief Deletes the specified directory and, if indicated, any subdirectories and files in the directory.
       /// @param path The name of the directory to remove.
       /// @param recursive true to remove directories, subdirectories, and files in path; otherwise, false.
-      /// @exception xtd::io::io_exception A file with the same name and location specified by path exists. -or- The directory is the application's current working directory. -or- The directory specified by path is not empty. -or- The directory is read-only or contains a read-only file. -or- The directory is being used by another process.
+      /// @exception xtd::io::io_exception A file with the same name and location specified by path exists.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>The directory specified by path is not empty.<br>-or-<br>The directory is read-only or contains a read-only file.<br>-or-<br>The directory is being used by another process.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).

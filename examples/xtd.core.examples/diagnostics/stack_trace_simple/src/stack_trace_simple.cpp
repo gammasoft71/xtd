@@ -34,7 +34,7 @@ private:
           console::write_line(stack_indent + " Line Number: {0}", sf.get_file_line_number());
           stack_indent += "  ";
         }
-        throw e;
+        throw;
       }
     }
   };
