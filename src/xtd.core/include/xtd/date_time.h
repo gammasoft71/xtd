@@ -971,21 +971,23 @@ namespace xtd {
     /// @remarks The formatting codes for xtd::date_time::to_string(const xtd::ustring&) are listed below:
     /// | Format | Print                                                                                                                       |
     /// |--------| ----------------------------------------------------------------------------------------------------------------------------|
-    /// | 'a'    | writes if time grreather than 12 "PM" otherwise "AM"                                                                        |
+    /// | 'a'    | writes "PM" or "AM"                                                                                                         |
     /// | 'b'    | writes 3 digit millisecond, e.G. 012                                                                                        |
     /// | 'B'    | wrties millisecond, eg 12                                                                                                   |
     /// | 'c'    | writes 7 digit tick, e.G. 0000123                                                                                           |
     /// | 'C'    | writes tick, e.G. 123                                                                                                       |
     /// | 'd'    | write date MM/DD/Y, e.g. 01/05/42                                                                                           |
     /// | 'D'    | write date M/DD/Y, e.g. 1/055/42                                                                                            |
+    /// | 'e'    | writes 2 digit second, e.G. 03                                                                                              |
+    /// | 'B'    | writes second, e.G. 3                                                                                                       |
     /// | 'f'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
     /// | 'F'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
     /// | 'g'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
     /// | 'G'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
     /// | 'h'    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
     /// | 'H'    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
-    /// | 'i'    | writes 2 digit day, e.g. 05 |
-    /// | 'I'    | writes day, e.G. 5 |
+    /// | 'i'    | writes 2 digit day, e.g. 05                                                                                                 |
+    /// | 'I'    | writes day, e.G. 5                                                                                                          |
     /// | 'j'    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
     /// | 'J'    | writes full month name, e.g. October (locale dependent).                                                                    |
     /// | 'k'    | writes 2 digit month, e.g. 01 |
@@ -993,26 +995,28 @@ namespace xtd {
     /// | 'l'    | writes 2 digit year, e.g. 71 |
     /// | 'L'    | writes 4 digit year, e.g. 1971 |
     /// | 'm'    | writes year, e.g. 42 |
-    /// | 'M'    | ustring::format("{} {:D}", sprintf("%B"), day) |
+    /// | 'M'    | writes full month name and day, e.g. October, 5 (locale dependent).                                                         |
     /// | 'n'    | ustring::format("{}, {:D} {} {:D}", sprintf("%A"), day, sprintf("%B"), year) |
     /// | 'N'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second) |
     /// | 'o'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year) |
     /// | 'O'    | ustring::format("{:D} {} {:D}", day, sprintf("%B"), year) |
+    /// | 'p'    | writes 2 digit minute, e.G. 06                                                                                              |
+    /// | 'P'    | writes minute, e.G. 6                                                                                                       |
     /// | 's'    | ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second) |
-    /// | 't'    | ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second) |
-    /// | 'T'    | ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second) |
+    /// | 't'    | write time HH/MM/SS, e.g. 02:04:06                                                                                          |
+    /// | 'T'    | write time H/MM/SS, e.g. 2:04:06                                                                                            |
     /// | 'u'    | ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second) |
     /// | 'U'    | ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second) |
-    /// | 'v'    | ustring::format("{:D2}:{:D2}", hour, minute) |
-    /// | 'V'    | ustring::format("{:D}:{:D2}", hour, minute) |
-    /// | 'w'    | ustring::format("{:D2}", hour) |
-    /// | 'W'    | ustring::format("{:D}", hour) |
-    /// | 'x'    | ustring::format("{:D2}", hour % 12) |
-    /// | 'X'    | ustring::format("{:D}", hour % 12) |
+    /// | 'v'    | write time HH/MM, e.g. 02:04                                                                                                |
+    /// | 'V'    | write time H/MM, e.g. 2:04                                                                                                  |
+    /// | 'w'    | writes 2 digit hour (24H), e.g. 07                                                                                          |
+    /// | 'W'    | writes hour (24H), e.g. 7                                                                                                   |
+    /// | 'x'    | writes 2 digit hour (12H), e.g. 07                                                                                          |
+    /// | 'X'    | writes hour (12H), e.g. 7                                                                                                   |
     /// | 'y'    | ustring::format("{} {:D}", sprintf("%B"), year % 100) |
     /// | 'Y'    | ustring::format("{} {:D}", sprintf("%B"), year) |
-    /// | 'z'    | kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str() |
-    /// | 'Z'    | kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str() |
+    /// | 'z'    | write time zone "local" or "UTC".                                                                                           |
+    /// | 'Z'    | write time zone "local" or "UTC".                                                                                           |
     xtd::ustring to_string(const ustring& format) const;
     
     /// @remarks Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.

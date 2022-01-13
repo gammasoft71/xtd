@@ -439,6 +439,8 @@ ustring date_time::to_string(const ustring& format) const {
     case 'C': return ustring::format("{}", ticks().count() % ticks_per_millisecond);
     case 'd': return ustring::format("{:D2}/{:D2}/{:D}", month, day, year);
     case 'D': return ustring::format("{:D}/{:D2}/{:D}", month, day, year);
+    case 'e': return ustring::format("{:D2}", second);
+    case 'E': return ustring::format("{}", second);
     case 'f': return sprintf("%Ec");
     case 'F': return sprintf("%c");
     case 'g': return sprintf("%Ec");
@@ -459,6 +461,8 @@ ustring date_time::to_string(const ustring& format) const {
     case 'N': return ustring::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A"), day, sprintf("%B"), year, hour, minute, second);
     case 'o':
     case 'O': return ustring::format("{:D} {} {:D}", day, sprintf("%B"), year);
+    case 'p': return ustring::format("{:D2}", minute);
+    case 'P': return ustring::format("{}", minute);
     case 's': return ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
     case 't': return ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
     case 'T': return ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second);
