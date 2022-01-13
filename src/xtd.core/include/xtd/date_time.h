@@ -95,7 +95,7 @@ namespace xtd {
     /// If not, it throws an xtd::argument_out_of_range_exception.
     /// @include date_time_max_value.cpp
     /// @remarks The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 0001, in the Gregorian calendar.
-    /// @remarks xtd::date_time::min_vvalue defines the date and time that is assigned to an uninitialized xtd::date_time variable. The following example illustrates this.
+    /// @remarks xtd::date_time::min_value defines the date and time that is assigned to an uninitialized xtd::date_time variable. The following example illustrates this.
     /// @include date_time_min_value.cpp
     static const date_time min_value;
     /// @}
@@ -110,7 +110,7 @@ namespace xtd {
     /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
     /// @exception xtd::argument_out_of_range_exception ticks is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
     /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates one of the xtd::date_time constructors.
     /// @include date_time_ticks.cpp
     explicit date_time(xtd::ticks ticks);
@@ -124,7 +124,7 @@ namespace xtd {
     /// @param month The month (1 through 12).
     /// @param day The day (1 through the number of days in month).
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the date_time(uint32_t, uint32_t, uint32_t) constructor to instantiate a xtd::date_time value. The example also illustrates that this overload creates a xtd::date_time value whose time component equals midnight (or 0:00).
     /// @code
     /// date_time date1(2010, 8, 18);
@@ -154,7 +154,7 @@ namespace xtd {
     /// @param second The seconds (0 through 59).
     /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the date_time(uint32_t, uint32_t, uint32_tt, uint32_tt, uint32_t, uint32_t, xtd::date_time_kind) constructor to instantiate a xtd::date_time value.
     /// @code
     /// date_time date1(2010, 8, 18, 16, 32, 0, date_time_kind::local);
@@ -202,7 +202,7 @@ namespace xtd {
     /// @{
     /// @brief Gets the date component of this instance.
     /// @return A new object with the same date as this instance, and the time value set to 12:00:00 midnight (00:00:00).
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_time::date property to extract the date component of a xtd::date_time value with its time component set to zero (or 0:00:00, or midnight). It also illustrates that, depending on the format string used when displaying the xtd::date_time value, the time component can continue to appear in formatted output.
     /// @include date_time_date.cpp
     /// @remarks The value of the xtd::date_time::kind property of the returned xtd::date_time value is the same as that of the current instance.
@@ -211,7 +211,7 @@ namespace xtd {
     
     /// @brief Gets the day of the month represented by this instance.
     /// @return The day component, expressed as a value between 1 and 31.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::day property.
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
@@ -241,7 +241,7 @@ namespace xtd {
     
     /// @brief Gets the day of the week represented by this instance.
     /// @return An enumerated constant that indicates the day of the week of this xtd::date_time value.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::day_of_week property and the xtd::day_of_week enumeration.
     /// @include date_time_day_of_week.cpp
     /// @remarks The value of the constants in the xtd::day_of_week enumeration ranges from xtd::day_of_week::sunday to xtd::day_of_week::saturday. If cast to an integer, its value ranges from zero (which indicates xtd::day_of_week::sunday) to six (which indicates xtd::day_of_week::saturday).
@@ -250,7 +250,7 @@ namespace xtd {
     
     /// @brief Gets the day of the year represented by this instance.
     /// @return The day of the year, expressed as a value between 1 and 366.
-    /// @par Example
+    /// @par Examples
     /// The following example displays the day of the year of December 31 for the years 2010-2020 in the Gregorian calendar. Note that the example shows that December 31 is the 366th day of the year in leap years.
     /// @include date_time_day_of_year.cpp
     /// @remarks The xtd::date_time::day_of_year property takes leap years into account when it calculates the day of the year. The property value always reflects the day of the year in the Gregorian calendar, regardless of the current culture's current calendar.
@@ -258,7 +258,7 @@ namespace xtd {
     
     /// @brief Gets the hour component of the date represented by this instance.
     /// @return The hour component, expressed as a value between 0 and 23.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::hour property.
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
@@ -293,7 +293,7 @@ namespace xtd {
     
     /// @brief Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.
     /// @return One of the enumeration values that indicates what the current time represents. The default is xtd::date_time_kind::unspecified.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
     /// @include date_time_specify_kind.cpp
     /// @remarks You can explicitly set the xtd::date_time::xtd::date_time::kind property of a new xtd::date_time value to a particular xtd::date_time_kind value by calling the xtd::date_time::specify_kind method.
@@ -302,7 +302,7 @@ namespace xtd {
     
     /// @brief Gets the milliseconds component of the date represented by this instance.
     /// @return The milliseconds component, expressed as a value between 0 and 999.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::millisecond property.
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
@@ -343,7 +343,7 @@ namespace xtd {
     
     /// @brief Gets the minute component of the date represented by this instance.
     /// @return The minute component, expressed as a value between 0 and 59.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::minute property.
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
@@ -372,7 +372,7 @@ namespace xtd {
     
     /// @brief Gets the month component of the date represented by this instance.
     /// @return The month component, expressed as a value between 1 and 12.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::month property.
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
@@ -401,7 +401,7 @@ namespace xtd {
     
     /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the local time.
     /// @return An object whose value is the current local date and time.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_time::now and xtd::date_time::utc_now properties to retrieve the current local date and time and the current universal coordinated (UTC) date and time. It then uses the formatting conventions of a number of locale to display the strings, along with the values of the their xtd::datte_time::kind properties.
     /// @include date_time_now.cpp
     /// @remarks The xtd::date_time::now property returns a xtd::date_time value that represents the current date and time on the local computer. Note that there is a difference between a xtd::date_time value, which represents the number of ticks that have elapsed since midnight of January 1, 0001, and the string representation of that xtd::date_time value, which expresses a date and time value in a culture-specific-specific format. For information on formatting date and time values, see the to_string method. The following example displays the short date and time string in a number of culture-specific formats.
@@ -410,7 +410,7 @@ namespace xtd {
     
     /// @brief Gets the seconds component of the date represented by this instance.
     /// @return The seconds component, expressed as a value between 0 and 59.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::second property.
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
@@ -445,7 +445,7 @@ namespace xtd {
     
     /// @brief Gets the time of day for this instance.
     /// @return A time interval that represents the fraction of the day that has elapsed since midnight.
-    /// @par Example
+    /// @par Examples
     /// The following example displays the value of the xtd::date_time::time_of_day property for an array of xtd::date_time values. It also contrasts the return value with the string returned by the "t" standard format string in a composite formatting operation.
     /// @include date_time_time_of_day.cpp
     /// @remarks Unlike the xtd::date_time::date property. which returns a xtd::date_time value that represents a date without its time component, the xtd::date_time::time_of_day property returns a xtd::date_time::time_point value that represents a xtd::date_time value's time component.
@@ -454,7 +454,7 @@ namespace xtd {
     
     /// @brief Gets the current date.
     /// @return An object that is set to today's date, with the time component set to 00:00:00.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_time::date property to retrieve the current date. It also illustrates how a xtd::date_time value can be formatted using some of the standard date and time format strings. Note that the output produced by the third call to the xtd::date_time::to_string(const xtd::ustring&) method uses the g format specifier to include the time component, which is zero.
     /// @include date_time_today.cpp
     /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property returns xtd::date_time_kind::local.
@@ -463,7 +463,7 @@ namespace xtd {
     
     /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).
     /// @return An object whose value is the current UTC date and time.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
     /// @include date_time_specify_king.cpp
     /// @remarks The resolution of this property depends on the system timer, which depends on the underlying operating system. It tends to be between 0.5 and 15 milliseconds.
@@ -473,7 +473,7 @@ namespace xtd {
     
     /// @brief Gets the year component of the date represented by this instance.
     /// @return The year, between 1 and 9999.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::year property.
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
@@ -509,7 +509,7 @@ namespace xtd {
     /// @param value A positive or negative time interval.
     /// @return An object whose value is the sum of the date and time represented by this instance and the time interval represented by value.
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::add method. It calculates the day of the week that is 36 days (864 hours) from this moment.
     /// @include date_time_add.cpp
     /// @remarks You can use the xtd::date_time::add method to add more than one kind of time interval (days, hours, minutes, seconds, or milliseconds) in a single operation. This method's behavior is identical to that of the addition operator. The xtd::date_time::addxtd::date_time structure also supports specialized addition methods (such as xtd::date_time::add_days, xtd::date_time::add_hours, and xtd::date_time::add_minutes) for each time interval.
@@ -524,7 +524,7 @@ namespace xtd {
     /// @param value A positive or negative time interval.
     /// @return An object whose value is the sum of the date and time represented by this instance and the time interval represented by value.
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::add method. It calculates the day of the week that is 36 days (864 hours) from this moment.
     /// @include date_time_add.cpp
     /// @remarks You can use the xtd::date_time::add method to add more than one kind of time interval (days, hours, minutes, seconds, or milliseconds) in a single operation. This method's behavior is identical to that of the addition operator. The xtd::date_time::addxtd::date_time structure also supports specialized addition methods (such as xtd::date_time::add_days, xtd::date_time::add_hours, and xtd::date_time::add_minutes) for each time interval.
@@ -536,7 +536,7 @@ namespace xtd {
     /// @param value A number of whole and fractional days. The value parameter can be negative or positive.
     /// @return An object whose value is the sum of the date and time represented by this instance and the number of days represented by value.
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_time::add_days method to determine the day of the week 36 days after the current date.
     /// @include date_time_add_days.cpp
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
@@ -548,7 +548,7 @@ namespace xtd {
     /// @param value A number of whole and fractional hours. The value parameter can be negative or positive.A number of whole and fractional hours. The value parameter can be negative or positive.
     /// @return An object whose value is the sum of the date and time represented by this instance and the number of hours represented by value.
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_time::add_hours method to add a number of whole and fractional values to a date and time. It also illustrates the loss of precision caused by passing the method a value that includes a fractional component.
     /// @include date_time_add_hours.cpp
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation. The xtd::date_time::kind property of the returned xtd::date_time object is the same as that of value.
@@ -560,7 +560,7 @@ namespace xtd {
     /// @param value A number of whole and fractional milliseconds. The value parameter can be negative or positive.
     /// @return An object whose value is the sum of the date and time represented by this instance and the number of milliseconds represented by value.
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_timeadd_milliseconds method to add one millisecond and 1.5 milliseconds to a xtd::date_time value. It then displays each new value and displays the difference between it and the original value. The difference is displayed both as a time span and as a number of ticks. The example makes it clear that one millisecond equals 10,000 ticks. It also shows that fractional milliseconds are rounded before performing the addition; the xtd::date_time value that results from adding 1.5 milliseconds to the original date is 2 milliseconds greater than the original date.
     /// @include date_time_add_milliseconds.cpp
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
@@ -572,7 +572,7 @@ namespace xtd {
     /// @param value A number of whole and fractional minutes. The value parameter can be negative or positive.
     /// @return An object whose value is the sum of the date and time represented by this instance and the number of minutes represented by value.
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_time::add_minutes method to add a number of whole and fractional values to a date and time.
     /// @include date_tile_add_minutes.cpp
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
@@ -583,7 +583,7 @@ namespace xtd {
     /// @param months A number of months. The months parameter can be negative or positive.
     /// @return An object whose value is the sum of the date and time represented by this instance and months
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.<br>-or-<br>months is less than -120,000 or greater than 120,000.
-    /// @par Example
+    /// @par Examples
     /// The following example adds between zero and fifteen months to the last day of December, 2015. In this case, the xtd::date_time::add_months method returns the date of the last day of each month, and successfully handles leap years.
     /// @include date_time_add_months.cpp
     /// @remarks This method does not change the value of this xtd::date_time object. Instead, it returns a new xtd::date_time object whose value is the result of this operation.
@@ -594,7 +594,7 @@ namespace xtd {
     /// @param value A number of whole and fractional seconds. The value parameter can be negative or positive.
     /// @return An object whose value is the sum of the date and time represented by this instance and the number of seconds represented by value.
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
-    /// @par Example
+    /// @par Examples
     /// The following example uses the xtd::date_time::add_seconds method to add 30 seconds and the number of seconds in one day to a xtd::date_time value. It then displays each new value and displays the difference between it and the original value. The difference is displayed both as a time span and as a number of ticks.
     /// @include date_time_seconds.cpp
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
@@ -617,7 +617,7 @@ namespace xtd {
     /// @remarks If the current instance represents the leap day in a leap year, the return value depends on the target date:
     /// * If value + xtd::date_time::year() is also a leap year, the return value represents the leap day in that year. For example, if four years is added to February 29, 2012, the date returned is February 29, 2016.
     /// * If value + xtd::date_time::year() is not a leap year, the return value represents the day before the leap day in that year. For example, if one year is added to February 29, 2012, the date returned is February 28, 2013.
-    /// @par Example
+    /// @par Examples
     /// The following example illustrates using the xtd::date_time::add_years method with a xtd::date_time value that represents a leap year day. It displays the date for the fifteen years prior to and the fifteen years that follow February 29, 2000.
     date_time add_years(int32_t value) const;
     
@@ -630,10 +630,10 @@ namespace xtd {
     /// @return The number of days in month for the specified year.<br>
     /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
     /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12.<br>-or-<br>year is less than 1 or greater than 9999.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
     /// @include date_time_days_in_month.cpp
-    /// @par Example
+    /// @par Examples
     /// The following example displays the number of days in each month of a year specified in an integer array.
     /// @include date_time_days_in_month2.cpp
     /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
@@ -645,10 +645,10 @@ namespace xtd {
     /// @return The number of days in month for the specified year.<br>
     /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
     /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12.<br>-or-<br>year is less than 1 or greater than 9999.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
     /// @include date_time_days_in_month.cpp
-    /// @par Example
+    /// @par Examples
     /// The following example displays the number of days in each month of a year specified in an integer array.
     /// @include date_time_days_in_month2.cpp
     /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
@@ -669,7 +669,7 @@ namespace xtd {
     /// @param file_time A Windows file time expressed in ticks.
     /// @return An object that represents the local time equivalent of the date and time represented by the file_time parameter.
     /// @exception xtd::argument_out_of_range_exception file_time is less than 0 or represents a time greater than xtd::date_time:::max_value.
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates the xtd::date_time::from_file_time method.
     /// @code
     /// xtd::ticks file_age(int64_t file_creation_time) {
@@ -719,7 +719,7 @@ namespace xtd {
 
     /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent unspecified time.
     /// @param value A time interval from the start of the Clock's epoch.
-    /// @return An object that represents the unspecified time equivalent of the date and time represented by the vvalue parameter.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
     /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
     /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
     /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
@@ -727,7 +727,7 @@ namespace xtd {
     /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent to Coordinated Universal Time (UTC) or local time.
     /// @param value A time interval from the start of the Clock's epoch.
     /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
-    /// @return An object that represents the unspecified time equivalent of the date and time represented by the vvalue parameter.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
     /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
     /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
     /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
@@ -761,8 +761,22 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.
     static bool is_leap_year(uint32_t year);
     
+    /// @brief Converts the string representation of a date and time to its xtd::date_time equivalent by using the conventions of the current culture.
+    /// @param s A string that contains a date and time to convert. See The string to parse for more information.
+    /// @return An object that is equivalent to the date and time contained in s.
+    /// @exception xtd::format_exception s does not contain a valid string representation of a date and time.
+    /// @remarks If s contains time zone information, this method returns a xtd::date_time value whose xtd::date_time::kind property is xtd::date_time_kind::local and converts the date and time in s to local time. Otherwise, it performs no time zone conversion and returns a DateTime value whose Kind property is DateTimeKind.Unspecified.
+    /// @remarks This overload attempts to parse s by using the formatting conventions of the current culture. The current culture is indicated by the CurrentCulture property. To parse a string using the formatting conventions of a specific culture, call the Parse(String, IFormatProvider) or the Parse(String, IFormatProvider, DateTimeStyles) overloads.
+    /// @remarks This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style.
+    static date_time parse(const xtd::ustring& s);
     
-    xtd::ustring parse() const;
+    /// @brief Creates a new xtd::date_time object that has the same number of ticks as the specified xtd::date_time, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified xtd::date_time_kind value.
+    /// @param value A date and time.
+    /// @param kind One of the enumeration values that indicates whether the new object represents local time, UTC, or neither.
+    /// @return A new object that has the same number of ticks as the object represented by the value parameter and the xtd::date_time_kind value specified by the kind parameter.
+    /// @par Examples
+    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
+    /// @include date_time_specify_kind.cpp
     static date_time specify_kind(date_time value, date_time_kind kind);
     
     /// @brief Returns a xtd::ustring that represents the current xtd::date_time.
@@ -827,27 +841,92 @@ namespace xtd {
     /// | \%\%   | writes literal %. The full conversion specification must be %%.                                                             |
     /// | \%n    | writes newline character.                                                                                                   |
     /// | \%t    | writes horizontal tab character.                                                                                            |
-    /// @par Example
+    /// @par Examples
     /// The foloowwing examplel shows how to use xtd::date_time::sprintf with differentt formats
     /// @include date_time_sprintf.cpp
     /// @remarks See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.
     xtd::ustring sprintf(const ustring& format) const;
+    
+    /// @brief Returns a new xtd::date_time::time_point that subtracts the specified date and time from the value of this instance.
+    /// @param value The date and time value to subtract.
+    /// @return A time interval that is equal to the date and time represented by this instance minus the date and time represented by value.
+    /// @exception xtd::argument_out_of_range_exception The result is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    /// @par Examples
+    /// The following example demonstrates the xtd::date_time::subtract method and the subtraction operator.
+    /// @include date_time_subtract.cpp
+    /// @remarks The xtd::date_time::subtract(const xtd::date_time&) method determines the difference between two dates. To subtract a time interval from the current instance, call the xtd::date_time::subtract(xtd::date_time::time_point) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
+    /// @remarks If the date and time of the current instance is earlier than value, the method returns a xtd::date_time::time_point object that represents a negative time span. That is, the value of all of its non-zero properties (such as xtd::date_time::days or xtd::date_time::ticks) is negative.
+    /// @remarks The xtd::date_time::subtract(const xtd::date_time&) method does not consider the value of the xtd::date_time::kind property of the two xtd::date_time values when performing the subtraction. Before subtracting xtd::date_time::date_time objects, ensure that the objects represent times in the same time zone. Otherwise, the result will include the difference between time zones.
+    /// @note The xtd::date_time_offset::subtract(const xtd::date_time_offset&) method does consider the difference between time zones when performing the subtraction.
     time_point subtract(const date_time& value) const;
+    /// @brief Returns a new xtd::date_time that subtracts the specified duration from the value of this instance.
+    /// @param value The time interval to subtract.
+    /// @return An object that is equal to the date and time represented by this instance minus the time interval represented by value.
+    /// @exception xtd::argument_out_of_range_exception The result is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    /// @par Examples
+    /// The following example demonstrates the xtd::date_time::subtract method and the subtraction operator.
+    /// @include date_time_subtract.cpp
+    /// @remarks The xtd::date_time::subtract(xtd::date_time::time_point) method returns the date that is a specified time interval difference from the current instance. To determine the time interval between two dates, call the xtd::date_time::subtract(const xtd::date_time&) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
+    /// @remarks Ordinarily, the xtd::date_time::subtract(xtd::date_time::time_point) method subtracts a xtd::date_time::time_point object that represents a positive time span and returns a xtd::date_time value that is earlier than the date and time of the current instance. However, if the xtd::date_time::time_point object represents a negative time span, the xtd::date_time::subtract(xtd::date_time::time_point) method returns a xtd::date_time value that is later than the date and time of the current instance.
+    /// @remarks The xtd::date_time::subtract(xtd::date_time::time_point) method allows you to subtract a time interval that consists of more than one unit of time (such as a given number of hours and a given number of minutes). To subtract a single unit of time (such as years, months, or days) from the xtd::date_time instance, you can pass a negative numeric value as a parameter to any of the following methods:
+    /// * xtd::date_time::add_years, to subtract a specific number of years from the current date and time instance.
+    /// * xtd::date_time::add_months, to subtract a specific number of months from the current date and time instance.
+    /// * xtd::date_time::add_days, to subtract a specific number of days from the current date and time instance.
+    /// * xtd::date_time::add_hours, to subtract a specific number of hours from the current date and time instance.
+    /// * xtd::date_time::add_minutes, to subtract a specific number of minutes from the current date and time instance.
+    /// * xtd::date_time::add_seconds, to subtract a specific number of seconds from the current date and time instance.
+    /// * xtd::date_time::add_milliseconds, to subtract a specific number of milliseconds from the current date and time instance.
+    /// * xtd::date_time::add_ticks, to subtract a specific number of ticks from the current date and time instance.
     template<typename rep_t, typename period_t>
     date_time subtract(std::chrono::duration<rep_t, period_t> value) const {
       return subtract(std::chrono::duration_cast<time_point>(value));
     }
+    /// @brief Returns a new xtd::date_time that subtracts the specified duration from the value of this instance.
+    /// @param value The time interval to subtract.
+    /// @return An object that is equal to the date and time represented by this instance minus the time interval represented by value.
+    /// @exception xtd::argument_out_of_range_exception The result is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    /// @par Examples
+    /// The following example demonstrates the xtd::date_time::subtract method and the subtraction operator.
+    /// @include date_time_subtract.cpp
+    /// @remarks The xtd::date_time::subtract(xtd::date_time::time_point) method returns the date that is a specified time interval difference from the current instance. To determine the time interval between two dates, call the xtd::date_time::subtract(const xtd::date_time&) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
+    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
+    /// @remarks Ordinarily, the xtd::date_time::subtract(xtd::date_time::time_point) method subtracts a xtd::date_time::time_point object that represents a positive time span and returns a xtd::date_time value that is earlier than the date and time of the current instance. However, if the xtd::date_time::time_point object represents a negative time span, the xtd::date_time::subtract(xtd::date_time::time_point) method returns a xtd::date_time value that is later than the date and time of the current instance.
+    /// @remarks The xtd::date_time::subtract(xtd::date_time::time_point) method allows you to subtract a time interval that consists of more than one unit of time (such as a given number of hours and a given number of minutes). To subtract a single unit of time (such as years, months, or days) from the xtd::date_time instance, you can pass a negative numeric value as a parameter to any of the following methods:
+    /// * xtd::date_time::add_years, to subtract a specific number of years from the current date and time instance.
+    /// * xtd::date_time::add_months, to subtract a specific number of months from the current date and time instance.
+    /// * xtd::date_time::add_days, to subtract a specific number of days from the current date and time instance.
+    /// * xtd::date_time::add_hours, to subtract a specific number of hours from the current date and time instance.
+    /// * xtd::date_time::add_minutes, to subtract a specific number of minutes from the current date and time instance.
+    /// * xtd::date_time::add_seconds, to subtract a specific number of seconds from the current date and time instance.
+    /// * xtd::date_time::add_milliseconds, to subtract a specific number of milliseconds from the current date and time instance.
+    /// * xtd::date_time::add_ticks, to subtract a specific number of ticks from the current date and time instance.
     date_time subtract(time_point value) const;
+    
+    /// @brief Serializes the current xtd::date_time object to a 64-bit binary value that subsequently can be used to recreate the xtd::date_time object.
+    /// @return A 64-bit signed integer that encodes the xtd::date_time::kind and xtd::date_time::ticks properties.
+    /// @remarks Use the xtd::date_time::to_binary method to convert the value of the current xtd::date_time object to a binary value. Subsequently, use the binary value and the xtd::date_time::from_binary method to recreate the original xtd::date_time object.
     int64_t to_binary() const;
+
+    int64_t to_file_time() const;
+
     date_time to_local_time() const;
+    
     const xtd::ustring to_long_date_string() const;
+    
     const xtd::ustring to_long_time_string() const;
+    
     const xtd::ustring to_short_date_string() const;
+    
     const xtd::ustring to_short_time_string() const;
+    
     xtd::ustring to_string() const noexcept override;
     xtd::ustring to_string(const ustring& format) const;
+    
     std::time_t to_time_t() const;
+    
     std::tm to_tm() const;
+    
     date_time to_universal_time() const;
     /// @}
     
@@ -855,12 +934,34 @@ namespace xtd {
     
     /// @{
     operator time_point() const;
-    date_time& operator+=(date_time value);
-    date_time& operator-=(date_time value);
+    date_time& operator+=(const date_time& value);
+    date_time& operator-=(const date_time& value);
+    template<typename rep_t, typename period_t>
+    date_time& operator+=(std::chrono::duration<rep_t, period_t> value) {
+      value_ += std::chrono::duration_cast<xtd::ticks>(value);
+      return *this;
+    }
+    template<typename rep_t, typename period_t>
+    date_time& operator-=(std::chrono::duration<rep_t, period_t> value) {
+      value_ -= std::chrono::duration_cast<xtd::ticks>(value);
+      return *this;
+    }
     date_time operator+();
     date_time operator-();
     date_time operator+(const date_time& value) const;
     date_time operator-(const date_time& value) const;
+    template<typename rep_t, typename period_t>
+    date_time operator+(std::chrono::duration<rep_t, period_t> value) const {
+      date_time result = *this;
+      result += value;
+      return result;
+    }
+    template<typename rep_t, typename period_t>
+    date_time operator-(std::chrono::duration<rep_t, period_t> value) const {
+      date_time result = *this;
+      result -= value;
+      return result;
+    }
     date_time& operator++();
     date_time operator++(int);
     date_time& operator--();

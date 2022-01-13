@@ -34,7 +34,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @par Example
+  /// @par Examples
   /// Show how to register your own class.
   /// @include format_any.cpp
   template<class type_t, class function_t>

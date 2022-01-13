@@ -12,7 +12,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @par Example
+  /// @par Examples
   /// The following example demonstrates the xtd::date_time::days_in_month method and the xtd::month_of_year enumeration.
   /// @include date_time_days_in_month.cpp
   /// @remarks The xtd::month_of_year enumeration represents the month of the year in calendars that have twelve month per year. The value of the constants in this enumeration ranges from xtd::month_of_year::january to xtd::month_of_year::december. If cast to an integer, its value ranges from one (which indicates xtd::month_of_year::january) to twelve (which indicates xtd::month_of_year::december).

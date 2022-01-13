@@ -32,7 +32,7 @@ namespace xtd {
     /// * "MyDir\\MySubdir"
     /// * "\\\\MyServer\\MyShare"
     /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
-    /// @par Example
+    /// @par Examples
     /// The following example shows how to loop through all the files and directories, querying some information about each entry.
     /// @code
     /// #include <xtd/xtd>
@@ -109,7 +109,7 @@ namespace xtd {
       /// @remarks The value of this property is a combination of the archive, compressed, directory, hidden, offline, read-only, system, and temporary file attribute flags.
       /// @remarks When you set this value, use the bitwise OR operator (|) to apply more than one value. To retain any existing values in the xtd::io::file_system_info::attributes property, include the value of the xtd::io::file_system_info::attributes property in your assignment. For example:
       /// @verbatim example_file.attributes(example_file.attributes() | file_attributes::read_only; @endverbatim
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::attribute property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
       /// @code
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
@@ -145,7 +145,7 @@ namespace xtd {
       /// @remarks The value of this property is a combination of the archive, compressed, directory, hidden, offline, read-only, system, and temporary file attribute flags.
       /// @remarks When you set this value, use the bitwise OR operator (|) to apply more than one value. To retain any existing values in the xtd::io::file_system_info::attributes property, include the value of the xtd::io::file_system_info::attributes property in your assignment. For example:
       /// @verbatim example_file.attributes(example_file.attributes() | file_attributes::read_only; @endverbatim
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::attribute property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
       /// @code
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
@@ -167,7 +167,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception system error when retrieving the file information.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::creation_time property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
       /// @code
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
@@ -188,7 +188,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception system error when retrieving the file information.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::creation_time property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
       /// @code
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
@@ -264,7 +264,7 @@ namespace xtd {
       
       /// @brief Gets the full path of the directory or file.
       /// @return A string containing the full path.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::full_name property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
       /// @code
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
@@ -288,7 +288,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception system error when retrieving the file information.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the updating of the xtd::io::file_system_info::last_access_time property through a "touch" operation. In this example, the file is "touched", updating the xtd::io::file_system_info::creation_time, xtd::io::file_system_info::last_access_time and xtd::io::file_system_info::last_write_time properties to the current date and time.
       /// @code
       /// #include <xtd/xtd>
@@ -343,7 +343,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception system error when retrieving the file information.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the updating of the xtd::io::file_system_info::last_access_time property through a "touch" operation. In this example, the file is "touched", updating the xtd::io::file_system_info::creation_time, xtd::io::file_system_info::last_access_time and xtd::io::file_system_info::last_write_time properties to the current date and time.
       /// @code
       /// #include <xtd/xtd>
@@ -430,7 +430,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception system error when retrieving the file information.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the updating of the xtd::io::file_system_info::last_write_time property through a "touch" operation. In this example, the file is "touched", updating the xtd::io::file_system_info::creation_time, xtd::io::file_system_info::last_access_time and xtd::io::file_system_info::last_write_time properties to the current date and time.
       /// @code
       /// #include <xtd/xtd>
@@ -485,7 +485,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception system error when retrieving the file information.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates the updating of the xtd::io::file_system_info::last_write_time property through a "touch" operation. In this example, the file is "touched", updating the xtd::io::file_system_info::creation_time, xtd::io::file_system_info::last_access_time and xtd::io::file_system_info::last_write_time properties to the current date and time.
       /// @code
       /// #include <xtd/xtd>

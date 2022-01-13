@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates some of the main members of the xtd::io::file_info class.
     /// When the properties are first retrieved, xtd::io::file_info calls the xtd::io::file_info::refresh method and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
     /// @include file_info.cpp
@@ -54,7 +54,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception Access to fileName is denied.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_exception fileName contains a colon (:) in the middle of the string.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates some of the main members of the xtd::io::file_info class.
       /// When the properties are first retrieved, xtd::io::file_info calls the xtd::io::file_info::refresh method and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       /// @include file_info.cpp
@@ -96,7 +96,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether a file exists.
       /// @return true if the file exists; false if the file does not exist or if the file is a directory.
-      /// @par Example
+      /// @par Examples
       /// The following code example uses the xtd::io::file_info::exists property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found.
       /// @code
       /// std::vector<char> open_data_file(const ustring& file_name) {
@@ -135,7 +135,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
       /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform.<br>-or-<br>The caller does not have the required permission.
       /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
-      /// @par Example
+      /// @par Examples
       /// The following example uses the xtd::io::file_info::is_read_only property to mark a file as read only and then mark it as read-write.
       /// @code
       /// #include <xtd/xtd>
@@ -204,7 +204,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
       /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform.<br>-or-<br>The caller does not have the required permission.
       /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
-      /// @par Example
+      /// @par Examples
       /// The following example uses the xtd::io::file_info::is_read_only property to mark a file as read only and then mark it as read-write.
       /// @code
       /// #include <xtd/xtd>
@@ -272,7 +272,7 @@ namespace xtd {
       /// @return The size of the current file in bytes.
       /// @exception xtd::io::io_exception xtd::io::file_info::refresh cannot update the state of the file or directory.
       /// @exception xtd::io::file_not_found_exception The file does not exist.<br>-or-<br>The xtd::io::file_info::size property is called for a directory.
-      /// @par Example
+      /// @par Examples
       ///
       /// @code
       /// #include <xtd/xtd>
@@ -327,7 +327,7 @@ namespace xtd {
       /// @brief Gets the name of the file.
       /// @return The name of the file.
       ///
-      /// @par Example
+      /// @par Examples
       ///
       /// @code
       /// #include <xtd/xtd>
@@ -368,7 +368,7 @@ namespace xtd {
       /// @par Examplle
       /// The following example appends text to a file and reads from the file.
       /// @include file_info_append_text.cpp
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates appending text to the end of a file and also displays the result of the append operation to the console. The first time this routine is called, the file is created if it does not exist. After that, the specified text is appended to the file.
       /// @code
       /// #include <xtd/xtd>
@@ -415,7 +415,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exceptionA directory path is passed in, or the file is being moved to a different drive.
       /// @exception xtd::ioo::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates both overloads of the td::io::file_info::copy_to method.
       /// @code
       /// #include <xtd/xtd>
@@ -457,7 +457,7 @@ namespace xtd {
       /// // Add as many lines as you like...
       /// // Add another line to the output...
       /// @endcode
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists.
       /// @code
       /// #include <xtd/xtd>
@@ -527,7 +527,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exceptionA directory path is passed in, or the file is being moved to a different drive.
       /// @exception xtd::ioo::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates both overloads of the td::io::file_info::copy_to method.
       /// @code
       /// #include <xtd/xtd>
@@ -569,7 +569,7 @@ namespace xtd {
       /// // Add as many lines as you like...
       /// // Add another line to the output...
       /// @endcode
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists.
       /// @code
       /// #include <xtd/xtd>
@@ -631,7 +631,7 @@ namespace xtd {
       
       /// @brief Creates a file.
       /// @return A new file.
-      /// @par Example
+      /// @par Examples
       /// The following example creates a reference to a file, and then creates the file on disk using xtd::io::file_info.create().
       /// @code
       /// #include <xtd/xtd>
@@ -656,7 +656,7 @@ namespace xtd {
       ///
       /// startup_(program);
       /// @endcode
-      /// @par Example
+      /// @par Examples
       /// The following example creates a file, adds some text to it, and reads from the file.
       /// @include file_info_open.cpp
       /// @remarks By default, full read/write access to new files is granted to all users.
@@ -668,7 +668,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception The file name is a directory.
       /// @exception xtd::io::io_exception The disk is read-only.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates the xtd::io::file_info::create_text method.
       /// @include file_info_open_text.cpp
       /// @remarks By default, full read/write access to new files is granted to all users.
@@ -684,7 +684,7 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates moving a file to a different location and renaming the file.
       /// @include file_info_move_to.cpp
       /// @remarks This method works across disk volumes. For example, the file c:\MyFile.txt can be moved to d:\public and renamed NewFile.txt.
@@ -702,7 +702,7 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates moving a file to a different location and renaming the file.
       /// @include file_info_move_to.cpp
       /// @remarks This method works across disk volumes. For example, the file c:\MyFile.txt can be moved to d:\public and renamed NewFile.txt.
@@ -715,7 +715,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception The file is read-only or is a directory.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::io::io_exception The file is already open.
-      /// @par Example
+      /// @par Examples
       /// The following example opens a file, adds some information to the file, and reads the file.
       /// @include file_info_open.cpp
       std::fstream open(std::ios::openmode mode) const;
@@ -725,7 +725,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception name is read-only or is a directory.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
       /// @exception xtd::io::io_exception The file is already open.
-      /// @par Example
+      /// @par Examples
       /// The following example opens a file as read-only and reads from it.
       /// @include file_info_open_read.cpp
       /// @remarks This method returns a read-only std::ifstream object.
@@ -737,7 +737,7 @@ namespace xtd {
       /// @exception xtd::io::file_not_found_exception The file is not found.
       /// @exception xtd::unauthorized_access_exception name is read-only or is a directory.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid, such as being on an unmapped drive.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates the xtd::io::file_info::create_text method.
       /// @include file_info_open_text.cpp
       xtd::io::stream_reader open_text() const;
@@ -746,7 +746,7 @@ namespace xtd {
       /// @return A write-only unshared std::ofstream object for a new or existing file.
       /// @exception xtd::unauthorized_access_exception The path specified when creating an instance of the xtd::io::file_info object is read-only or is a directory.
       /// @exception xtd::io::directory_not_found_exception The path specified when creating an instance of the xtd::io::file_info object is invalid, such as being on an unmapped drive.
-      /// @par Example
+      /// @par Examples
       /// The following example opens a file for writing and then reads from the file.
       /// @include file_info_open.cpp
       /// @return The xtd::io::file_info::open_write method opens a file if one already exists for the file path, or creates a new file if one does not exist. For an existing file, it does not append the new text to the existing text. Instead, it overwrites the existing characters with the new characters. If you overwrite a longer string (such as "This is a test of the open_write method") with a shorter string (like "Second run"), the file will contain a mix of the strings ("Second runtest of the open_write method").
@@ -756,7 +756,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception The target file is open or memory-mapped on a computer running Microsoft Windows NT.<br>-or-<br>There is an open handle on the file, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see How to: Enumerate Directories and Files.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @exception xtd::unauthorized_access_exception The path is a directory.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates the xtd::io::file_info::remove method.
       /// @code
       /// #include <xtd/xtd>
@@ -800,7 +800,7 @@ namespace xtd {
       /// //c:\MyTest.txt was copied to c:\MyTest.txttemp.
       /// //c:\MyTest.txttemp was successfully deleted.
       /// @endcode
-      /// @par Example
+      /// @par Examples
       /// The following example creates, closes, and deletes a file.
       /// @code
       /// #include <xtd/xtd>
@@ -834,7 +834,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The path described by the destFileName parameter was not of a legal form.<br>-or-<br>The path described by the destBackupFileName parameter was not of a legal form.
       /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.<br>-or-<br>The file described by the destinationFileName parameter could not be found.
       /// @exception xtd::platform_not_supported_exception The current operating system is not Microsoft Windows NT or later.
-      /// @par Example
+      /// @par Examples
       /// The following example uses the xtd::io::file_info::replace method to replace a file with another file and create a backup of the replaced file.
       /// @include file_info_replace.cpp
       /// @remarks The Replace method replaces the contents of a specified file with the contents of the file described by the current xtd::io::file_info object. It also creates a backup of the file that was replaced. Finally, it returns a new xtd::io::file_info object that describes the overwritten file.

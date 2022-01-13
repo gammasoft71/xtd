@@ -67,7 +67,7 @@ std::shared_ptr<xtd::reflection::assembly_version_attribute>& __assembly_version
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords
-/// @par Example
+/// @par Examples
 /// The following example shows how to use assembly information manually.
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp

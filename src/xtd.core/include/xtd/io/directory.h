@@ -23,7 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    /// @par Example
+    /// @par Examples
     /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
     /// @code
     /// #include <xtd/xtd>
@@ -52,7 +52,7 @@ namespace xtd {
     ///
     /// startup_(program);
     /// @endcode
-    /// @par Example
+    /// @par Examples
     /// The following example demonstrates how to move a directory and all its files to a new directory. The original directory no longer exists after it has been moved.
     /// @code
     /// #include <xtd/xtd>
@@ -171,7 +171,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example creates and deletes the specified directory:
       /// @code
       /// #include <xtd/xtd>
@@ -208,7 +208,7 @@ namespace xtd {
       ///
       /// startup_(program);
       /// @endcode
-      /// @par Example
+      /// @par Examples
       /// To create the directory C:\Users\User1\Public\Html when the current directory is C:\Users\User1, use any of the following calls to ensure that the backslash is interpreted properly:
       /// @code
       /// directory::create_directory("Public\\Html");
@@ -327,7 +327,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
       /// @code
       /// #include <xtd/xtd>
@@ -368,7 +368,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
       /// @code
       /// #include <xtd/xtd>
@@ -504,7 +504,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       ///
       /// @code
       /// #include <chrono>
@@ -545,7 +545,7 @@ namespace xtd {
       /// @return A string that contains the absolute path of the current working directory, and does not end with a backslash (\).
       /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
       /// @exception xtd::not_supported_exception The operating system does not have current directory functionality.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates how to use the xtd::io::directory::get_current_directory method.
       /// @code
       /// #include <xtd/xtd>
@@ -592,7 +592,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example takes an array of file or directory names on the command line, determines what kind of name it is, and processes it appropriately.
       /// @code
       /// #include <xtd/xtd>
@@ -655,7 +655,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       ///
       /// @code
       /// #include <xtd/xtd>
@@ -703,7 +703,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example illustrates how to set the current directory and display the directory root.
       /// @code
       /// #include <xtd/xtd>
@@ -745,7 +745,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates how to use the GetFiles method to return file names from a user-specified location. The example is configured to catch all errors common to this method.
       /// @code
       /// #include <xtd/xtd>
@@ -809,7 +809,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example counts the number of files that begin with the specified letter.
       /// @code
       /// #include <xtd/xtd>
@@ -863,7 +863,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example uses the xtd::io::directory::get_file_system_entries method to fill an array of strings with the names of all files and subdirectories in a user-specified location and prints each string in the array to the console. The example is configured to catch all errors common to this method.
       /// @code
       /// #include <xtd/xtd>
@@ -977,7 +977,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example uses the xtd::io::directory::get_file_system_entries method to fill an array of strings with the names of all files matching a user-specified filter in a specific location and prints each string in the array to the console. The example is configured to catch all errors common to this method.
       /// @code
       /// #include <xtd/xtd>
@@ -1103,7 +1103,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates how to use GetLastAccessTime.
       /// @code
       /// #include <xtd/xtd>
@@ -1156,7 +1156,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates how to use xtd::io::directory::get_last_write_time.
       /// @code
       /// #include <xtd/xtd>
@@ -1204,7 +1204,7 @@ namespace xtd {
       /// @return The logical drives on this computer.
       /// @exception xtd::io::io_exception An I/O error occurred (for example, a disk error).
       /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
-      /// @par Example
+      /// @par Examples
       /// The following example uses the xtd::io::directory::get_logical_drives method to assign the name of each drive on the calling computer to an array of strings. Each member of this string array is then printed to the console. The example is configured to catch all errors common to this method.
       /// @code
       /// #include <xtd/xtd>
@@ -1314,7 +1314,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates how to use the xtd::io::directory::get_parent method to retrieve the parent directory of a user-specified location, "path". The value returned by the xtd::io::directory::get_parent method is then printed to the console. The example is configured to catch all errors common to this method.
       /// @code
       /// #include <xtd/xtd>
@@ -1426,7 +1426,7 @@ namespace xtd {
       /// @exception xtd::argument_exception source_dir_name or dest_dir_name is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters with the xtd::path::io::get_invalid_path_chars() method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The path specified by sourceDirName is invalid (for example, it is on an unmapped drive).
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates how to move a directory and all its files to a new directory. The original directory no longer exists after it has been moved.
       /// @code
       /// #include <xtd/xtd>
@@ -1509,7 +1509,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       /// The following example shows how to create a new directory, subdirectory, and file in the subdirectory, and then recursively delete all the new items.
       /// @code
       /// #include <xtd/xtd>
@@ -1559,7 +1559,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       ///
       /// @code
       /// #include <xtd/xtd>
@@ -1615,7 +1615,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
-      /// @par Example
+      /// @par Examples
       ///
       /// @code
       /// #include <xtd/xtd>
@@ -1670,7 +1670,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @exception xtd::io::directory_not_found_exception Attempted to set a local path that cannot be found.
       /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
-      /// @par Example
+      /// @par Examples
       /// The following example illustrates how to set the current directory and display the directory root.
       /// @code
       /// #include <xtd/xtd>
@@ -1716,7 +1716,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @exception xtd::io::directory_not_found_exception Attempted to set a local path that cannot be found.
       /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates how to use xtd::directory::set_last_access_time.
       /// @code
       /// #include <xtd/xtd>
@@ -1765,7 +1765,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @exception xtd::io::directory_not_found_exception Attempted to set a local path that cannot be found.
       /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
-      /// @par Example
+      /// @par Examples
       /// The following example demonstrates how to use xtd::io::set_last_write_time.
       /// @code
       /// #include <xtd/xtd>

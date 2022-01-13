@@ -347,7 +347,7 @@ bool date_time::is_leap_year(uint32_t year) {
   return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 }
 
-xtd::ustring date_time::parse() const {
+date_time date_time::parse(const xtd::ustring& s) {
   throw not_implemented_exception(csf_);
 }
 
@@ -376,6 +376,10 @@ date_time date_time::subtract(time_point value) const {
 
 int64_t date_time::to_binary() const {
   return (duration_cast<chrono::seconds>(value_).count() & 0x3FFFFFFFFFFFFFFFLL) + ((static_cast<int64>(kind_) << 62) & 0xC000000000000000LL);
+}
+
+int64_t date_time::to_file_time() const {
+  return (value_ - file_time_offset).count();
 }
 
 date_time date_time::to_local_time() const {
@@ -506,12 +510,12 @@ date_time date_time::to_universal_time() const {
   return date_time(ticks() - utc_offset, date_time_kind::utc);
 }
 
-date_time& date_time::operator+=(date_time value) {
+date_time& date_time::operator+=(const date_time& value) {
   value_ += value.value_;
   return *this;
 }
 
-date_time& date_time::operator-=(date_time value) {
+date_time& date_time::operator-=(const date_time& value) {
   value_ -= value.value_;
   return *this;
 }
