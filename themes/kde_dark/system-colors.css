@@ -2,10 +2,15 @@
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
 .system-colors {
+  accent: #FF3DAEE9;
+  accent-text: #FFEFF0F1;
   active-border: #FF31363B;
   active-caption: #FF31363B;
   active-caption-text: #FFEFF0F1;
   app-workspace: #FF232629;
+  button-face: #FF31363B;
+  button-highlight: #FF31363B;
+  button-shadow: #FF606468;
   control: #FF31363B;
   control-dark: #FF606468;
   control-dark-dark: black;
@@ -13,6 +18,8 @@
   control-light-light: #FF31363B;
   control-text: #FFEFF0F1;
   desktop: #FF31363B;
+  gradient-active-caption: #FF31363B;
+  gradient-inactive-caption: #FF31363B;
   gray-text: #FF6E7175;
   highlight: #FF3DAEE9;
   highlight-text: #FFEFF0F1;
@@ -23,22 +30,15 @@
   info: #FF31363B;
   info-text: #FFEFF0F1;
   menu: #FF31363B;
+  menu-bar: #FF31363B;
+  menu-highlight: #FF3DAEE9;
   menu-text: #FFEFF0F1;
   scroll-bar: #FF31363B;
+  text-box: #FF232629;
+  text-box-text: #FFEFF0F1;
   window: #FF232629;
   window-frame: #FF31363B;
   window-text: #FFEFF0F1;
-  button-face: #FF31363B;
-  button-highlight: #FF31363B;
-  button-shadow: #FF606468;
-  gradient-active-caption: #FF31363B;
-  gradient-inactive-caption: #FF31363B;
-  menu-bar: #FF31363B;
-  menu-highlight: #FF3DAEE9;
-  accent: #FF3DAEE9;
-  accent-text: #FFEFF0F1;
-  text-box: #FF232629;
-  text-box-text: #FFEFF0F1;
 }
 
 /*
