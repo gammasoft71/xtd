@@ -28,6 +28,8 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Gets system image from specified name.
+      /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() {return {32, 32};}
       static xtd::drawing::image image_loading() {return image_loading(default_size());}
       static xtd::drawing::image image_loading(const xtd::drawing::size& size) {return system_images::from_name("image-loading", size);}
@@ -44,9 +46,29 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Gets system image from specified name.
+      /// @param name The system image name.
+      /// @return The system image from specified name.
+      /// @remarks The theme is the default system theme.
+      /// @remarks The size is the default size (32 x 32).
       static xtd::drawing::image from_name(const xtd::ustring& name) {return from_name(default_theme(), name, default_size());}
+      /// @brief Gets system image from specified name and size.
+      /// @param name The system image name.
+      /// @param size The system image size in pixels.
+      /// @return The system image from specified name.
+      /// @remarks The theme is the default system theme.
       static xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size) {return from_name(default_theme(), name, size);}
+      /// @brief Gets system image from specified them and name.
+      /// @param theme The system image theme.
+      /// @param name The system image name.
+      /// @return The system image from specified name.
+      /// @remarks The size is the default size in pixels (32 x 32).
       static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name) {return from_name(theme, name, default_size());}
+      /// @brief Gets system image from specified theme, name and size.
+      /// @param theme The system image theme.
+      /// @param name The system image name.
+      /// @param size The system image size in pixels.
+      /// @return The system image from specified name.
       static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size);
       /// @}
       
