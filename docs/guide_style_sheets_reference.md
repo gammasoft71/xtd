@@ -2,6 +2,8 @@
 
 Style Sheets support various properties, states, and subcontrols that make it possible to customize the look of control.
 
+Follow the [css tutorial](https://www.w3schools.com/css/default.asp) to read or write CSS style sheets 
+
 ## Theme
 
 The following table lists the members to describe a theme:
@@ -11,7 +13,7 @@ The following table lists the members to describe a theme:
 | name        | [text](#list-of-property-type) | Gets the theme name.        |
 | description | [text](#list-of-property-type) | Gets the theme description. |
 | authors     | [text](#list-of-property-type) | Gets the theme authors.     |
-| website     | [uri](#list-of-property-type)  | Gets the website reference. |
+| website     | [url](#list-of-property-type)  | Gets the website reference. |
 
 
 ## List of System colors
@@ -95,7 +97,8 @@ The following table lists the xtd controls that can be customized using style sh
 
 ## List of properties
 
-The table below lists all the properties supported by xtd style sheets:
+The table below lists all the properties supported by xtd style sheets. 
+Properties marked with an asterisk * are specific to xtd and have no equivalent in [CSS2 or CSS3](https://www.w3schools.com/cssref/default.asp).
 
 | Property    | Type                           | Description                 |
 |-------------|--------------------------------|-----------------------------|
@@ -104,11 +107,11 @@ The table below lists all the properties supported by xtd style sheets:
 
 The following table summarizes the syntax and meaning of the different property types:
 
-| Type   | Syntax                                               | Description                                                                                                                                                              |
-|--------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| color  | #aarrggbb<br>\| color name<br>\| system-color(color) | Specifies a color as ARGB in hexadecimal (e.g. blue : #FF0000FF)<br>Specifie a color by name (e.g. darkblue)<br>Specifie a system color (e.g. system-color(button-face)) |
-| text   | ""                                                   | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                     |
-| uri    | uri(uri_string)                                      | Specifies a url (e.g. uri(https://gammasoft71.wixsite.com/gammasoft) or path  (e.g. uri(resources/image.png))                                                            |
+| Type   | Syntax                                               | Description                                                                                                                                                                                                                                                                                       |
+|--------|------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| color  | #aarrggbb<br>\| color name<br>\| system-color(color) | Specifies a color as ARGB in hexadecimal (e.g. blue : #FF0000FF)<br>Specifie a color by name (e.g. darkblue)<br>Specifie a system color (e.g. system-color(button-face))                                                                                                                          |
+| text   | ""                                                   | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                                                                                                                                              |
+| url    | url(urlname)<br>| url(fillename)<br>                 | Specifies a url (e.g. uri(https://gammasoft71.wixsite.com/gammasoft)<br> Speccifies a fillename with or without path (e.g. uri(resources/image.png))<br>Remarks if the file name does not have a path and does not have an extension, consider it to be an internal [xtd image](#List-of-images). |
 
 ## List of states
 
