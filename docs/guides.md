@@ -17,6 +17,9 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Overview](guide_handle_and_raise_events.md)
   * [Raise and consume events](guide_raise_and_consume_events.md)
   * [Observer Design Pattern](guide_observer_design_pattern.md)
+* Style sheets
+  * [Overview](guide_style_sheets_overview.md)
+  * [Reference](guide_style_sheets_reference.md)
 
 # See also
 ​

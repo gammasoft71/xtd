@@ -4,35 +4,41 @@
 .button {
   border: single;
   background-color: transparent;
-  foreground-color: control-text;
-}
-
-.button:hot {
-  border: single;
-  background-color: transparent;
-  foreground-color: control-text;
-}
-
-.button:pressed {
-  border: single;
-  background-color: transparent;
-  foreground-color: control-text;
+  foreground-color: system-color(control-text);
 }
 
 .button:checked {
   border: single;
   background-color: transparent;
-  foreground-color: control-text;
-}
-
-.button:disabled {
-  border: single;
-  background-color: transparent;
-  foreground-color: control-text;
+  foreground-color: system-color(control-text);
 }
 
 .button:default {
   border: single;
   background-color: transparent;
-  foreground-color: control-text;
+  foreground-color: system-color(accent-text);
+}
+
+.button:disabled {  
+  border: single;
+  background-color: transparent;
+  foreground-color: system-color(gray-text);
+}
+
+.button:hot {
+  border: single;
+  background-color: transparent;
+  foreground-color: system-color(accent-text);
+}
+
+.button:mixed {
+  border: single;
+  background-color: transparent;
+  foreground-color: system-color(control-text);
+}
+
+.button:pressed {
+  border: single;
+  background-color: transparent;
+  foreground-color: system-color(control-text);
 }

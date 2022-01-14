@@ -4,6 +4,6 @@
 .theme {
   name: "macOS (dark)";
   description: "Contains macOS (dark) theme.";
-  author: "Gammasoft";
-  website: "https://gammasoft71.wixsite.com/gammasoft";
+  authors: "Gammasoft";
+  website: uri(https://gammasoft71.wixsite.com/gammasoft);
 }
