@@ -8,10 +8,15 @@ The following table lists the system colors that can be customized using style s
 
 | Color                                                                                                                                          | Type                            | Description                                         |
 |------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|-----------------------------------------------------|
-| [active-border](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ad34e4d2271162cf60ed269cd68e40ed7)             | [color](#list-of-property-type) |                                                     |
-| [active-caption](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a2443f7bdc3d85a6d92ca5656492f1841)            | [color](#list-of-property-type) |                                                     |
+| [accent](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a77eb861710eace25ba504b40e5b88ac2)                    | [color](#list-of-property-type) | Gets the color used to accent a control.|
+| [accent-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ac8752bc4cd0b4cbea00bfa048d3dc213)               | [color](#list-of-property-type) | Gets the color of the text used to accent a control.|
+| [active-border](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ad34e4d2271162cf60ed269cd68e40ed7)             | [color](#list-of-property-type) | Gets the color of the active window's border. |
+| [active-caption](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a2443f7bdc3d85a6d92ca5656492f1841)            | [color](#list-of-property-type) | Gets the color of the background of the active window's title bar. |
 | [active-caption-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#aca50220aec7e7f797393fc92b07bc046)       | [color](#list-of-property-type) |                                                     |
 | [app-workspace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a6ba40a364207f7917cd13e2723738174)             | [color](#list-of-property-type) |                                                     |
+| [button-face](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a2445d28bec80b10c4650c83bce81f26c)               | [color](#list-of-property-type) |                                                     |
+| [button-highlight](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#aae09d313a5ca9bacb4df47bb2c9d467f)          | [color](#list-of-property-type) |                                                     |
+| [button-shadow](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ad1a13217f7961fd5fabfaa5a3c7d69b6)             | [color](#list-of-property-type) |                                                     |
 | [control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#aaee26ec4d36ad4a99550bec18c258d84)                   | [color](#list-of-property-type) |                                                     |
 | [control-dark](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ae4dc7250adfe9c039b2ae7359e56aa89)              | [color](#list-of-property-type) |                                                     |
 | [control-dark-dark](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ad5994da0d32f0b00ea00a7e3f7caa39b)         | [color](#list-of-property-type) |                                                     |
@@ -19,6 +24,8 @@ The following table lists the system colors that can be customized using style s
 | [control-light-light](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a0ad4c006921a5fe3ca3ee02b1f8c5ee2)       | [color](#list-of-property-type) |                                                     |
 | [control-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a14fdf665a24633df3bcfe9523b0ad08c)              | [color](#list-of-property-type) |                                                     |
 | [desktop](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#aaf42b49c300458e4fed3272071367415)                   | [color](#list-of-property-type) |                                                     |
+| [gradient-active-caption](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#abb5874b1bd537f3c71269a364ae761d5)   | [color](#list-of-property-type) |                                                     |
+| [gradient-inactive-caption](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a0480d205045d45fae2b03729fb6fb969) | [color](#list-of-property-type) |                                                     |
 | [gray-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#abee96e855513c498c5b19ac87d8c6363)                 | [color](#list-of-property-type) |                                                     |
 | [highlight](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ad392f5a9d5da08bd0a707cb56bff2274)                 | [color](#list-of-property-type) |                                                     |
 | [highlight-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a91fd1bd11db640a5ed33935bcc6db130)            | [color](#list-of-property-type) |                                                     |
@@ -29,22 +36,15 @@ The following table lists the system colors that can be customized using style s
 | [info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#aa5a390170a0429c49c8288d29a676bbe)                      | [color](#list-of-property-type) |                                                     |
 | [info-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a6750d40c23599b9de6362722c2320178)                 | [color](#list-of-property-type) |                                                     |
 | [menu](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a0b711825c7e16a3e1e555e0c948b4479)                      | [color](#list-of-property-type) |                                                     |
+| [menu-bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ac45113882befd17734e86ea43a3ad7de)                  | [color](#list-of-property-type) |                                                     |
+| [menu-highlight](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a0b30b0f26f0eac2fa5f2449b9018b6e0)            | [color](#list-of-property-type) |                                                     |
 | [menu-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ab7bcb5946102c20a39a269a82cda0257)                 | [color](#list-of-property-type) |                                                     |
 | [scroll-bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#aae3f874c37c40a5d2ffd9981a0501cce)                | [color](#list-of-property-type) |                                                     |
+| [text-box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a6b034212bc8b82c2ca5260ca0b1c24b8)                  | [color](#list-of-property-type) |                                                     |
+| [text-box-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a3d9e99b3359fc17c05f427f8b1b26b71)             | [color](#list-of-property-type) |                                                     |
 | [window](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a992da4fbd53fb2974dd5e0607392c1a5)                    | [color](#list-of-property-type) |                                                     |
 | [window-frame](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a90ff9cd9df6bb66872cb9f1e2ae36dff)              | [color](#list-of-property-type) |                                                     |
 | [window-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a0d078de37b3018a352b080d4866fef8e)               | [color](#list-of-property-type) |                                                     |
-| [button-face](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a2445d28bec80b10c4650c83bce81f26c)               | [color](#list-of-property-type) |                                                     |
-| [button-highlight](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#aae09d313a5ca9bacb4df47bb2c9d467f)          | [color](#list-of-property-type) |                                                     |
-| [button-shadow](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ad1a13217f7961fd5fabfaa5a3c7d69b6)             | [color](#list-of-property-type) |                                                     |
-| [gradient-active-caption](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#abb5874b1bd537f3c71269a364ae761d5)   | [color](#list-of-property-type) |                                                     |
-| [gradient-inactive-caption](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a0480d205045d45fae2b03729fb6fb969) | [color](#list-of-property-type) |                                                     |
-| [menu-bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ac45113882befd17734e86ea43a3ad7de)                  | [color](#list-of-property-type) |                                                     |
-| [menu-highlight](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a0b30b0f26f0eac2fa5f2449b9018b6e0)            | [color](#list-of-property-type) |                                                     |
-| [accent](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a77eb861710eace25ba504b40e5b88ac2)                    | [color](#list-of-property-type) |                                                     |
-| [accent-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#ac8752bc4cd0b4cbea00bfa048d3dc213)               | [color](#list-of-property-type) |                                                     |
-| [text-box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a6b034212bc8b82c2ca5260ca0b1c24b8)                  | [color](#list-of-property-type) |                                                     |
-| [text-box-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a3d9e99b3359fc17c05f427f8b1b26b71)             | [color](#list-of-property-type) |                                                     |
 
 
 ## List of stylable controls
@@ -89,7 +89,7 @@ The following table lists the xtd controls that can be customized using style sh
 
 | Type  | Syntax                  | Description     |
 |-------|-------------------------|-----------------|
-| color | #aarrggbb or color_name |
+| color | #aarrggbb<br>color_name |
 
 ## List of states
 
