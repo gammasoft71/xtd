@@ -23,7 +23,7 @@ The following table lists the xtd controls that can be customized using style sh
 
 ## List of properties
 
-## List oof images
+## List of images
 
 ## List of property type
 
