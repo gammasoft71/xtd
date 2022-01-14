@@ -87,9 +87,9 @@ The following table lists the xtd controls that can be customized using style sh
 
 ## List of property type
 
-| Type  | Syntax                  | Description     |
-|-------|-------------------------|-----------------|
-| color | \|#aarrggbb<br>\|color_name |
+| Type  | Syntax                        | Description                                                                                                    |
+|-------|-------------------------------|----------------------------------------------------------------------------------------------------------------|
+| color | \| #aarrggbb<br>\| color_name | Specifies a color as ARGB in hexadecimal (e.g. #FF0000FF for blue)<br>Specifie a color by name (e.g. darkblue) |
 
 ## List of states
 
