@@ -1,0 +1,8 @@
+/* Contains label definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+.label {
+  border: none;
+  background-color: transparent;
+  foreground-color: control-text;
+}

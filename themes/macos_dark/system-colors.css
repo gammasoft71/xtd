@@ -2,6 +2,10 @@
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
 .system-colors {
+  name: "System colors";
+  description: "Contains system colors.";
+  author: "Gammasoft71";
+  website: "https://gammasoft71.wixsite.com/gammasoft";
   active-border: #FFB4B4B4;
   active-caption: #FF9A9A9A;
   active-caption-text: #D8FFFFFF;
