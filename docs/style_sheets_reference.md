@@ -89,7 +89,7 @@ The following table lists the xtd controls that can be customized using style sh
 
 | Type  | Syntax                  | Description     |
 |-------|-------------------------|-----------------|
-| color | #aarrggbb<br>color_name |
+| color | \|#aarrggbb<br>\|color_name |
 
 ## List of states
 
