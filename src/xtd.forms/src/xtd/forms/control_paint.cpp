@@ -1,4 +1,5 @@
 #include <xtd/as.h>
+#include <xtd/math.h>
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/control.h"
 #include "../../../include/xtd/forms/screen.h"
@@ -126,7 +127,51 @@ namespace {
   }
   
   static void draw_rounded_single_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
-    graphics.draw_rounded_rectangle(pen(light ? light_color : dark_color, 1), rect, 4);
+    //graphics.draw_rounded_rectangle(pen(light ? light_color : dark_color, 1), rect, 4);
+    
+    int32_t radius = 6;
+    if (math::max(rect.width(), rect.height()) <= 12) radius = 5;
+    if (math::max(rect.width(), rect.height()) <= 10) radius = 4;
+    if (math::max(rect.width(), rect.height()) <= 8) radius = 3;
+    if (math::max(rect.width(), rect.height()) <= 6) radius = 2;
+    if (math::max(rect.width(), rect.height()) <= 4) radius = 1;
+    if (math::max(rect.width(), rect.height()) <= 2) radius = 0;
+    
+    if ((sides & border_sides::top) == border_sides::top) {
+      // top
+      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x() + radius, rect.y(), rect.right() - radius, rect.y());
+      // top-left
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x(), rect.y(), radius * 2, radius * 2, 225, 45);
+      // top-right
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.y(), radius * 2, radius * 2, 270, 45);
+    }
+
+    if ((sides & border_sides::left) == border_sides::left) {
+      // left
+      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x(), rect.y() + radius, rect.x(), rect.bottom() - radius);
+      // left-top
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x(), rect.y(), radius * 2, radius * 2, 180, 45);
+      // left-bottom
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x(), rect.bottom() - radius * 2, radius * 2, radius * 2, 135, 45);
+    }
+
+    if ((sides & border_sides::bottom) == border_sides::bottom) {
+      // botttom
+      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x() + radius, rect.bottom(), rect.right() - radius, rect.bottom());
+      // bottom-left
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x(), rect.bottom() - radius * 2, radius * 2, radius * 2, 90, 45);
+      // botttom-right
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.bottom() - radius * 2, radius * 2, radius * 2, 45, 45);
+    }
+
+    if ((sides & border_sides::right) == border_sides::right) {
+      // right
+      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.right(), rect.y() + radius, rect.right(), rect.bottom() - radius);
+      // right-top
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.y(), radius * 2, radius * 2, 315, 45);
+      // right-bottom
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.bottom() - radius * 2, radius * 2, radius * 2, 0, 45);
+    }
   }
   
   static void draw_dot_single_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
