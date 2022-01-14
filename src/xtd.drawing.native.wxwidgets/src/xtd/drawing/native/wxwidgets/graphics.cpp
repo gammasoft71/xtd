@@ -89,7 +89,7 @@ void graphics::draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
   dc.SetBrush(*wxTRANSPARENT_BRUSH);
   dc.SetPen(*reinterpret_cast<wxPen*>(pen));
-  dc.DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
+  dc.DrawEllipticArc(x, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -213,7 +213,7 @@ void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int3
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
   dc.SetBrush(to_brush(*reinterpret_cast<wx_brush*>(brush)));
   dc.SetPen(*wxTRANSPARENT_PEN);
-  dc.DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
+  dc.DrawEllipticArc(x, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
