@@ -97,6 +97,9 @@ The following table lists the xtd controls that can be customized using style sh
 
 The table below lists all the properties supported by xtd style sheets:
 
+| Property    | Type                           | Description                 |
+|-------------|--------------------------------|-----------------------------|
+
 ## List of property type
 
 The following table summarizes the syntax and meaning of the different property types:
@@ -124,7 +127,7 @@ The following states are supported:
 
 The following subcontrols are available:
 
-| Sub)control | Descripttion                                                                                                                       |
+| Sub-control | Descripttion                                                                                                                       |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------|
 
 ## List of images
