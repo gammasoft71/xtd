@@ -1,5 +1,19 @@
 # Style sheets reference
 
+## In This Section
+
+* [Overview](#overview)
+* [Theme](#theme)
+* [List of system colors](#list-of-system-colors)
+* [List of stylable controls](#list-of-stylable-controls)
+* [List of properties](#list-of-properties)
+* [List of property type](#list-of-property-type)
+* [List of states](#List-of-states)
+* [List of sub-controls](#list-of-sub-controls)
+* [List of images](#list-of-images)
+
+## Overview
+
 Style Sheets support various properties, states, and subcontrols that make it possible to customize the look of control.
 
 Follow the [css tutorial](https://www.w3schools.com/css/default.asp) to read or write CSS style sheets 
@@ -16,7 +30,7 @@ The following table lists the members to describe a theme:
 | website     | [url](#list-of-property-type)  | Gets the website reference. |
 
 
-## List of System colors
+## List of system colors
 
 The following table lists the system colors that can be customized using style sheets:
 
@@ -59,7 +73,6 @@ The following table lists the system colors that can be customized using style s
 | [window](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a992da4fbd53fb2974dd5e0607392c1a5)                    | [color](#list-of-property-type) | Gets the color of the background in the client area of a window.                  |
 | [window-frame](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a90ff9cd9df6bb66872cb9f1e2ae36dff)              | [color](#list-of-property-type) | Gets the color of a window frame.                                                 |
 | [window-text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__colors.html#a0d078de37b3018a352b080d4866fef8e)               | [color](#list-of-property-type) | Gets the color of the text in the client area of a window.                        |
-
 
 ## List of stylable controls
 
@@ -107,24 +120,28 @@ Properties marked with an asterisk * are specific to xtd and have no equivalent 
 
 The following table summarizes the syntax and meaning of the different property types:
 
-| Type   | Syntax                                                                                                                                                                                                  | Description                                                                                                                                                                                                                                                                                       |
-|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| color  | rgb(r, g, b)<br>\| argb(a, r, g, b)<br>\| hsv(h, s, vv)<br>\| ahsv(a, h, s, v)<br>\| hsl(h, s, l)<br>\| ahsl(a, h, s, l)<br>\| #rrggbb<br>\| #aarrggbb<br>\| color name<br>\| system-color(color) | Specifies a color as ARGB in hexadecimal (e.g. blue : #FF0000FF)<br>Specifie a color by name (e.g. darkblue)<br>Specifie a system color (e.g. system-color(button-face))                                                                                                                          |
-| text   | ""                                                                                                                                                                                                      | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                                                                                                                                              |
-| url    | url(urlname)<br>\| url(fillename)                                                                                                                                                                       | Specifies a url (e.g. url(https://gammasoft71.wixsite.com/gammasoft))<br>Speccifies a fillename with or without path (e.g. url(resources/image.png))<br>Remarks if the file name does not have a path and does not have an extension, consider it to be an internal [xtd image](#List-of-images). |
+| Type      | Syntax                                                                                                                                                                                            | Description                                                                                                                                                                                                                                                                                       |
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| alignment | {top<br>\| left<br>\| bottom<br>\| right<br>\| center}*                                                                                                                                           | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                                                                                                                                              |
+| color     | rgb(r, g, b)<br>\| argb(a, r, g, b)<br>\| hsv(h, s, vv)<br>\| ahsv(a, h, s, v)<br>\| hsl(h, s, l)<br>\| ahsl(a, h, s, l)<br>\| #rrggbb<br>\| #aarrggbb<br>\| color name<br>\| system-color(color) | Specifies a color as ARGB in hexadecimal (e.g. blue : #FF0000FF)<br>Specifie a color by name (e.g. darkblue)<br>Specifie a system color (e.g. system-color(button-face))                                                                                                                          |
+| text      | ""                                                                                                                                                                                                | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                                                                                                                                              |
+| url       | url(urlname)<br>\| url(fillename)                                                                                                                                                                 | Specifies a url (e.g. url(https://gammasoft71.wixsite.com/gammasoft))<br>Speccifies a fillename with or without path (e.g. url(resources/image.png))<br>Remarks if the file name does not have a path and does not have an extension, consider it to be an internal [xtd image](#List-of-images). |
 
 ## List of states
 
 The following states are supported:
 
-| State    | Descripttion                                                                                                                       |
-|----------|------------------------------------------------------------------------------------------------------------------------------------|
-| checcked | The item is checked.                                                                                                               |
-| default  | The item is the default (see [ibuttton_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1ibutton__control.html)). |
-| disabled | The irem is disabled, generally the item is grayed.                                                                                |
-| hot      | The item is hot (mouse is on the item).                                                                                            |
-| mixed    | The item is mixed. For the three-state ittem.                                                                                      |
-| pressed  | The irem is pressed, mouse is down on the item.                                                                                    |
+| State       | Descripttion                                                                                                                       |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------|
+| :checked    | The item is checked.                                                                                                               |
+| :default    | The item is the default (see [ibuttton_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1ibutton__control.html)). |
+| :disabled   | The irem is disabled, generally the item is grayed.                                                                                |
+| :flat       | The irem is flat style.                                                                                                            |
+| :flat-popup | The irem is popup flat style.                                                                                                      |
+| :hover      | The item is hot (mouse is on the item).                                                                                            |
+| :mixed      | The item is mixed. For the three-state ittem.                                                                                      |
+| :pressed    | The irem is pressed, mouse is down on the item.                                                                                    |
+| :unchecked  | The item is unchecked.                                                                                                             |
  
 ## List of sub-controls
 
