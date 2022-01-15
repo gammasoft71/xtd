@@ -253,6 +253,7 @@ namespace xtd {
       /// @remarks Use the anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
       /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose anchor property value is set to top and bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
       /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
+      /// @warning Set the xtd::forms::control::anchor property after setting the location and size.
       /// @par Notes to Inheritors
       /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
       virtual control& anchor(anchor_styles anchor);
