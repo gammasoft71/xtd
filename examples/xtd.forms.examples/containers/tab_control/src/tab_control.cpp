@@ -9,10 +9,10 @@ public:
     controls().push_back(tab_control1);
     client_size({390, 270});
     
-    tab_control1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
     tab_control1.location({10, 10});
     tab_control1.size({370, 250});
-    
+    tab_control1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
+
     tab_page1.parent(tab_control1);
     tab_page1.text("Tab page 1");
     

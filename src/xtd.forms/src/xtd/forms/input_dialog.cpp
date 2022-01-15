@@ -35,32 +35,32 @@ namespace {
         input_panel_.back_color(theme_colors::current_theme().window());
         input_text_box_.back_color(theme_colors::current_theme().text_box());
       }
-      input_panel_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       input_panel_.bounds({0, 0, 330, 115 - 42 + offset_multiline});
+      input_panel_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       input_panel_.controls().push_back_range({message_label_, input_text_box_});
       
-      message_label_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
       message_label_.bounds({10, 10, 310, 23});
+      message_label_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
       message_label_.text(message);
       
-      input_text_box_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       input_text_box_.bounds({10, 35, 310, 23 + offset_multiline});
+      input_text_box_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       input_text_box_.character_casing(character_casing);
       input_text_box_.multiline(multiline);
       input_text_box_.text(value);
       input_text_box_.use_system_password_char(use_system_password_char);
       input_text_box_.word_wrap(word_wrap);
       
-      cancel_button_.anchor(anchor_styles::right | anchor_styles::bottom);
       cancel_button_.dialog_result(forms::dialog_result::cancel);
       cancel_button_.text(system_texts::cancel());
       cancel_button_.location({xtd::environment::os_version().is_windows_platform() ? 245 : 160, 81 + offset_multiline});
-      
-      ok_button_.anchor(anchor_styles::right | anchor_styles::bottom);
+      cancel_button_.anchor(anchor_styles::right | anchor_styles::bottom);
+
       ok_button_.dialog_result(forms::dialog_result::ok);
       ok_button_.text(system_texts::ok());
       ok_button_.location({xtd::environment::os_version().is_windows_platform() ? 160 : 245, 81 + offset_multiline});
-      
+      ok_button_.anchor(anchor_styles::right | anchor_styles::bottom);
+
       //active_control(input_text_box_);
       input_text_box_.focus();
     }

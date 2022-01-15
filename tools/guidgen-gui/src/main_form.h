@@ -23,8 +23,8 @@ namespace guidgen_gui {
       text("Guid generator"_t);
       
       count_label_.auto_size(true);
-      count_label_.anchor(anchor_styles::top | anchor_styles::left);
       count_label_.location({10, 13});
+      count_label_.anchor(anchor_styles::top | anchor_styles::left);
       count_label_.text("Count"_t);
       
       count_numeric_up_down_.location({70, 10});
