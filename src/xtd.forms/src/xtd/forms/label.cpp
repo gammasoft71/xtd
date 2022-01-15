@@ -117,7 +117,7 @@ void label::on_paint(paint_event_args& e) {
       case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
       default: break;
     }
-    auto rect = xtd::drawing::rectangle(0, 0, client_size().width(), client_size().height());
+    auto rect = xtd::drawing::rectangle(2, 2, client_size().width() - 2, client_size().height() - 2);
     if (shadow()) {
       e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? control_paint::dark(back_color()) : control_paint::dark(application::theme().theme_colors().gray_text())), rectangle::offset(rect, {1, 1}), string_format);
       e.graphics().draw_string(text(), font(), xtd::drawing::solid_brush(enabled() ? fore_color() : application::theme().theme_colors().gray_text()), rectangle::offset(rect, {-1, -1}), string_format);
