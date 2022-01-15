@@ -53,14 +53,14 @@ namespace examples {
       
       label_zoom.parent(*this);
       label_zoom.auto_size(false);
-      label_zoom.anchor(anchor_styles::top | anchor_styles::left);
       label_zoom.location({10, 60});
+      label_zoom.anchor(anchor_styles::top | anchor_styles::left);
       label_zoom.text("Zoom");
       
       track_bar_zoom.parent(*this);
       track_bar_zoom.auto_size(false);
-      track_bar_zoom.anchor(anchor_styles::top | anchor_styles::left);
       track_bar_zoom.location({60, 55});
+      track_bar_zoom.anchor(anchor_styles::top | anchor_styles::left);
       track_bar_zoom.set_range(1, 50);
       track_bar_zoom.tick_style(forms::tick_style::none);
       track_bar_zoom.value(zoom);
@@ -85,12 +85,12 @@ namespace examples {
       numeric_up_down_zoom.width(52);
       
       panel_main.parent(*this);
-      panel_main.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
       panel_main.auto_scroll(true);
       panel_main.border_style(forms::border_style::fixed_single);
       panel_main.location({10, 90});
       panel_main.size({620, 380});
-      
+      panel_main.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+
       panel_painting.parent(panel_main);
       panel_painting.back_color(color::white_smoke);
       panel_painting.size({picture.width() * zoom, picture.height() * zoom});
