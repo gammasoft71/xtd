@@ -21,22 +21,31 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
+      /// @brief Provides button renderer methods.
+      /// @code
+      /// class forms_export_ button_renderer static_
+      /// @endcode
+      /// @par Inheritance
+      /// xtd::static → xtd::forms::style_sheets::button_renderer
+      /// @par Namespace
+      /// xtd::forms::style_sheets
+      /// @par Library
+      /// xtd.forms
+      /// @ingroup xtd_forms style_sheets
       class button_renderer static_ {
       public:
-        static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags text_format, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state button_state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
-          std::array<xtd::forms::style_sheets::border_data, 4> borders = {
-            xtd::forms::style_sheets::border_data {std::make_shared<xtd::drawing::solid_brush>(xtd::drawing::color::light_blue), xtd::forms::style_sheets::border_style::outset, 20, 10},
-            xtd::forms::style_sheets::border_data {std::make_shared<xtd::drawing::solid_brush>(xtd::drawing::color::light_blue), xtd::forms::style_sheets::border_style::outset, 20, 10},
-            xtd::forms::style_sheets::border_data {std::make_shared<xtd::drawing::solid_brush>(xtd::drawing::color::light_blue), xtd::forms::style_sheets::border_style::outset, 20, 10},
-            xtd::forms::style_sheets::border_data {std::make_shared<xtd::drawing::solid_brush>(xtd::drawing::color::light_blue), xtd::forms::style_sheets::border_style::outset, 20, 10},
-          };
-          box_data data(xtd::forms::padding(3, 5, 3, 0), borders, xtd::forms::padding(1), back_color.has_value() ? std::make_shared<xtd::drawing::solid_brush>(back_color.value()) : nullptr, std::nullopt, std::nullopt);
-          
-          box_renderer::draw_box(graphics, bounds, data);
-          //xtd::forms::style_sheets::text_renderer::draw_text(graphics, text, font, xtd::drawing::color::white, rect, text_format);
-        }
-        
-      private:
+        /// @brief Draws a box in the specified bounds, button style, text, font, text format, image and image bounds.
+        /// @param graphics The Graphics used to draw a button.
+        /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
+        static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags text_format, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds);
+        /// @brief Draws a box in the specified bounds, button style, text, font, text format, image, image bounds, fucsed and button state.
+        /// @param graphics The Graphics used to draw a button.
+        /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
+        static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags text_format, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state button_state);
+        /// @brief Draws a box in the specified bounds, button style, text, font, text format, image, image bounds, fucsed, button state, background color and text color.
+        /// @param graphics The Graphics used to draw a button.
+        /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
+        static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags text_format, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state button_state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       };
     }
   }
