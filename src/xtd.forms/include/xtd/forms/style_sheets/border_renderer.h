@@ -21,16 +21,16 @@ namespace xtd {
       class border_renderer static_ {
       public:
         /// @brief Draws a border in the specified bounds.
-        /// @param graphics The Graphics used to draw the button.
+        /// @param graphics The Graphics used to draw a border.
         /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the border.
         static void draw_border(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds);
-        /// Draws a border in the specified bounds and style.
-        /// @param graphics The Graphics used to draw the button.
+        /// @brief Draws a border in the specified bounds and style.
+        /// @param graphics The Graphics used to draw a border.
         /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the border.
         /// @param data The xtd::forms::style_sheets::border_data that specifies the style for the four borders.
         static void draw_border(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_data& data);
-        /// Draws a border in the specified bounds and styles.
-        /// @param graphics The Graphics used to draw the button.
+        /// @brief Draws a border in the specified bounds and styles.
+        /// @param graphics The Graphics used to draw a boder.
         /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the border.
         /// @param data The xtd::forms::style_sheets::border_data that specifies the style for each border.
         static void draw_border(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const std::array<xtd::forms::style_sheets::border_data, 4>& data);
