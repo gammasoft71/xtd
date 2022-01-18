@@ -11,6 +11,11 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The buttton data allow you to specify the box of a button control.
+      /// @par Namespace
+      /// xtd::forms::style_sheets
+      /// @par Library
+      /// xtd.forms
+      /// @ingroup xtd_forms style_sheets
       using button_data = xtd::forms::style_sheets::control_data;
     }
   }
