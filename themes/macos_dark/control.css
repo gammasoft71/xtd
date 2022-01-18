@@ -1,0 +1,7 @@
+/* Contains control definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+control {
+  background-color: system-color(control);
+  foreground-color: system-color(control-text);
+}
