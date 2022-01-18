@@ -95,6 +95,9 @@
 /// @defgroup gui forms
 /// @brief All needed for GUI application.
 
+/// @defgroup style_sheets style_sheets
+/// @brief Contains various properties, states, and subcontrols that make it possible to customize the look of control.
+
 /// @defgroup xtd_core xtd.core
 /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
 /// @ingroup libraries

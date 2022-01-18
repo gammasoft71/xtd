@@ -10,7 +10,7 @@
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/graphics.h>
 #include <xtd/drawing/rectangle.h>
-#include <xtd/forms/text_format_flags.h>
+#include "../text_format_flags.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

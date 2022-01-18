@@ -17,7 +17,7 @@ namespace xtd {
           auto border_rect = xtd::drawing::rectangle::offset(bounds, data.margin().left(), data.margin().top());
           border_rect = xtd::drawing::rectangle::inflate(border_rect, -data.margin().right() - data.margin().left(), -data.margin().bottom() - data.margin().top());
           xtd::forms::style_sheets::border_renderer::draw_border(graphics, border_rect, data.borders());
-          auto color = data.background_color() ? data.background_color() : std::make_shared<xtd::drawing::solid_brush>(xtd::drawing::colors::light_gray());
+          auto color = data.background_color() ? data.background_color() : std::make_shared<xtd::drawing::solid_brush>(xtd::drawing::color::light_gray);
           auto background_rect = xtd::drawing::rectangle::offset(border_rect, data.borders()[3].width(), data.borders()[0].width());
           background_rect = xtd::drawing::rectangle::inflate(background_rect, -data.borders()[3].width() - data.borders()[1].width(), -data.borders()[0].width() - data.borders()[2].width());
           graphics.fill_rectangle(*color, background_rect);

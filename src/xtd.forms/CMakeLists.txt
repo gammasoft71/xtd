@@ -251,6 +251,17 @@ add_sources(
   include/xtd/forms/layout/arranged_element_collection.h
   include/xtd/forms/layout/sorter_none.h
   include/xtd/forms/properties/resources.h
+  include/xtd/forms/style_sheets/border_data.h
+  include/xtd/forms/style_sheets/border_renderer.h
+  include/xtd/forms/style_sheets/border_style.h
+  include/xtd/forms/style_sheets/box_data.h
+  include/xtd/forms/style_sheets/box_renderer.h
+  include/xtd/forms/style_sheets/button_data.h
+  include/xtd/forms/style_sheets/text_data.h
+  include/xtd/forms/style_sheets/text_renderer.h
+  include/xtd/forms/style_sheets/button_renderer.h
+  include/xtd/forms/style_sheets/label_data.h
+  include/xtd/forms/style_sheets/pseudo_state.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/push_button_state.h
   include/xtd/forms/visual_styles/radio_button_state.h
@@ -359,6 +370,15 @@ add_sources(
   src/xtd/forms/v_scroll_bar.cpp
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
   src/xtd/forms/xtd_forms_message_dialog_closed_caller.h
+  src/xtd/forms/style_sheets/border_data.cpp
+  src/xtd/forms/style_sheets/border_renderer.cpp
+  src/xtd/forms/style_sheets/box_data.cpp
+  src/xtd/forms/style_sheets/box_renderer.cpp
+  src/xtd/forms/style_sheets/button_data.cpp
+  src/xtd/forms/style_sheets/button_renderer.cpp
+  src/xtd/forms/style_sheets/label_data.cpp
+  src/xtd/forms/style_sheets/text_data.cpp
+  src/xtd/forms/style_sheets/text_renderer.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 
