@@ -23,6 +23,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
+      /// @remarks This class is used by xtd::forms::style_sheets::box_renderer.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
       class box_data : public xtd::object {
       public:
@@ -35,7 +36,7 @@ namespace xtd {
         /// | xtd::forms::style_sheets::box_data::margin           | 0                                                                               |
         /// | xtd::forms::style_sheets::box_data::borders          | An array with four xtd::forms::style_sheets::border_data initialized by default |
         /// | xtd::forms::style_sheets::box_data::padding          | 0                                                                               |
-        /// | xtd::forms::style_sheets::box_data::background_color | xtd::draing::solid_brush(xtd::drawing::color::white)                            |
+        /// | xtd::forms::style_sheets::box_data::background_color | xtd::drawing::solid_brush(xtd::drawing::color::white)                            |
         /// | xtd::forms::style_sheets::box_data::width            | std::nullopt                                                                    |
         /// | xtd::forms::style_sheets::box_data::height           | std::nullopt                                                                    |
         box_data() = default;

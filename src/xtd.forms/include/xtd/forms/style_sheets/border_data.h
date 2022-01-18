@@ -25,13 +25,14 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
+      /// @remarks This class is used by xtd::forms::style_sheets::border_renderer.
       class forms_export_ border_data : public xtd::object {
       public:
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_data class.
         /// @remarks The following table shows the default values for the properties :
         /// | Property                                      | Default value                                        |
         /// |-----------------------------------------------|------------------------------------------------------|
-        /// | xtd::forms::style_sheets::border_data::color  | xtd::draing::solid_brush(xtd::drawing::color::black) |
+        /// | xtd::forms::style_sheets::border_data::color  | xtd::drawing::solid_brush(xtd::drawing::color::black) |
         /// | xtd::forms::style_sheets::border_data::style  | xtd::forms::style_sheets::border_style::none         |
         /// | xtd::forms::style_sheets::border_data::width  | 3                                                    |
         /// | xtd::forms::style_sheets::border_data::radius | 0                                                    |
