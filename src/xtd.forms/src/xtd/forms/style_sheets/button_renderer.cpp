@@ -7,14 +7,14 @@ using namespace xtd::forms;
 using namespace style_sheets;
 using namespace visual_styles;
 
-void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, const xtd::ustring& text, const font& font, text_format_flags text_format, const image& image, const rectangle& image_bounds) {
-  draw_button(graphics, bounds, button_style, text, font, text_format, image, image_bounds, false, push_button_state::normal, nullopt, nullopt);
+void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, const xtd::ustring& text, text_format_flags text_format, const image& image, const rectangle& image_bounds) {
+  draw_button(graphics, bounds, button_style, text, text_format, image, image_bounds, false, push_button_state::normal);
 }
-void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, const ustring& text, const font& font, text_format_flags text_format, const image& image, const rectangle& image_bounds, bool focused, push_button_state button_state) {
-  draw_button(graphics, bounds, button_style, text, font, text_format, image, image_bounds, focused, button_state, nullopt, nullopt);
+void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, const ustring& text, text_format_flags text_format, const image& image, const rectangle& image_bounds, bool focused, push_button_state button_state) {
+  draw_button(graphics, bounds, button_style, text, text_format, image, image_bounds, focused, button_state, nullopt, nullopt, nullopt);
 }
 
-void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, const xtd::ustring& text, const font& font, text_format_flags text_format, const image& image, const rectangle& image_bounds, bool focused, push_button_state button_state, const optional<color>& back_color, const optional<color>& fore_color) {
+void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, const xtd::ustring& text, text_format_flags text_format, const image& image, const rectangle& image_bounds, bool focused, push_button_state button_state, const optional<font>& font, const optional<color>& back_color, const optional<color>& fore_color) {
   std::array<style_sheets::border_data, 4> borders = {
     style_sheets::border_data {std::make_shared<solid_brush>(color::black), style_sheets::border_style::outset, 20, 10},
     style_sheets::border_data {std::make_shared<solid_brush>(color::black), style_sheets::border_style::outset, 20, 10},
