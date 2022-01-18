@@ -26,11 +26,6 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_data class.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        /// @remarks The following table shows the default values for the properties :
-        /// | Property                                  | Default value                                               |
-        /// |-------------------------------------------|-------------------------------------------------------------|
-        /// | xtd::forms::style_sheets::box_data::box   | A xtd::forms::style_sheets::box_data initialized by default |
-        /// | xtd::forms::style_sheets::box_data::color | xtd::drawing::solid_brush(xtd::drawing::color::white)       |
         control_data() = default;
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_data class with specified box and color.
         /// @param box The box of the control.

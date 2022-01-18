@@ -29,8 +29,8 @@ namespace xtd {
       };
       
       /// @cond
-      inline std::ostream& operator<<(std::ostream& os, label_state value) {return os << to_string(value, {{label_state::normal, "normal"}, {label_state::hot, "hot"}, {label_state::pressed, "pressed"}, {label_state::disabled, "disabled"}, {label_state::default_state, "default_state"}});}
-      inline std::wostream& operator<<(std::wostream& os, label_state value) {return os << to_string(value, {{label_state::normal, L"normal"}, {label_state::hot, L"hot"}, {label_state::pressed, L"pressed"}, {label_state::disabled, L"disabled"}, {label_state::default_state, L"default_state"}});}
+      inline std::ostream& operator<<(std::ostream& os, label_state value) {return os << to_string(value, {{label_state::normal, "normal"}, {label_state::hot, "hot"}, {label_state::pressed, "pressed"}, {label_state::disabled, "disabled"}});}
+      inline std::wostream& operator<<(std::wostream& os, label_state value) {return os << to_string(value, {{label_state::normal, L"normal"}, {label_state::hot, L"hot"}, {label_state::pressed, L"pressed"}, {label_state::disabled, L"disabled"}});}
       /// @endcond
     }
   }
