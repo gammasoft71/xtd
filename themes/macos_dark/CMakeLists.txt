@@ -6,7 +6,7 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 
 add_sources(
-  buttton.css
+  button.css
   control.css
   form.css
   label.css
