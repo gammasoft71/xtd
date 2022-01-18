@@ -3,7 +3,7 @@
 
 button {
   margin: 3px 3px 2px 3px;
-  border: single;
+  border-style: single;
   border-color: #FF212121;
   border-width: 1px;
   border-radius: 5px;
@@ -12,13 +12,13 @@ button {
 }
 
 button:flat {
-  border: single;
+  border-style: single;
   background-color: transparent;
   foreground-color: system-color(control-text);
 }
 
 button:flat-popup {
-  border: single;
+  border-style: single;
   background-color: transparent;
   foreground-color: system-color(control-text);
 }
