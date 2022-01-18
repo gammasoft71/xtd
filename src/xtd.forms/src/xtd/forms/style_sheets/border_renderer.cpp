@@ -43,7 +43,7 @@ void border_renderer::draw_line_top(graphics& graphics, const rectangle& bounds,
   if (is<solid_brush>(color1) && data[top_index].style() == border_style::outset && as<solid_brush>(color1)->color().is_dark())
     color1 = make_shared<solid_brush>(color::light(as<solid_brush>(color1)->color()));
   
-  auto pen1 = pen(*color1, pen_width1);
+  auto pen1 = pen(*color1, as<float>(pen_width1));
   pen1.dash_style(border_style_to_dash_style(data[top_index].style()));
   // top
   graphics.draw_line(pen1, border_rect1.left() + data[top_left_index].radius(), border_rect1.top(), border_rect1.right() - data[top_right_index].radius(), border_rect1.top());
@@ -63,7 +63,7 @@ void border_renderer::draw_line_right(graphics& graphics, const rectangle& bound
   if (is<solid_brush>(color1) && data[right_index].style() == border_style::outset && as<solid_brush>(color1)->color().is_light())
     color1 = make_shared<solid_brush>(color::dark(as<solid_brush>(color1)->color()));
   
-  auto pen1 = pen(*color1, pen_width1);
+  auto pen1 = pen(*color1, as<float>(pen_width1));
   pen1.dash_style(border_style_to_dash_style(data[right_index].style()));
   // right
   graphics.draw_line(pen1, border_rect1.right(), border_rect1.top() + data[top_right_index].radius(), border_rect1.right(), border_rect1.bottom() - data[bottom_right_index].radius());
@@ -83,7 +83,7 @@ void border_renderer::draw_line_bottom(graphics& graphics, const rectangle& boun
   if (is<solid_brush>(color1) && data[bottom_index].style() == border_style::outset && as<solid_brush>(color1)->color().is_light())
     color1 = make_shared<solid_brush>(color::dark(as<solid_brush>(color1)->color()));
   
-  auto pen1 = pen(*color1, pen_width1);
+  auto pen1 = pen(*color1, as<float>(pen_width1));
   pen1.dash_style(border_style_to_dash_style(data[bottom_index].style()));
   // bottom
   graphics.draw_line(pen1, border_rect1.left() + data[bottom_left_index].radius(), border_rect1.bottom(), border_rect1.right() - data[bottom_right_index].radius(), border_rect1.bottom());
@@ -103,7 +103,7 @@ void border_renderer::draw_line_left(graphics& graphics, const rectangle& bounds
   if (is<solid_brush>(color1) && data[left_index].style() == border_style::outset && as<solid_brush>(color1)->color().is_dark())
     color1 = make_shared<solid_brush>(color::light(as<solid_brush>(color1)->color()));
   
-  auto pen1 = pen(*color1, pen_width1);
+  auto pen1 = pen(*color1, as<float>(pen_width1));
   pen1.dash_style(border_style_to_dash_style(data[left_index].style()));
   // left
   graphics.draw_line(pen1, border_rect1.left(), border_rect1.top() + data[top_left_index].radius(), border_rect1.x(), border_rect1.bottom() - data[bottom_left_index].radius());
