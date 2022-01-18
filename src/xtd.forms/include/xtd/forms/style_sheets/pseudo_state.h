@@ -10,6 +10,12 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
+      /// @brief The pseudo_state enum class specifies the pseudo state of an element.
+      /// @par Namespace
+      /// xtd::forms::style_sheets
+      /// @par Library
+      /// xtd.forms
+      /// @ingroup xtd_forms style_sheets
       enum class pseudo_state {
         standard,
         flat,
