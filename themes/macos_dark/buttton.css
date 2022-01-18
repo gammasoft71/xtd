@@ -1,44 +1,50 @@
 /* Contains label definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-.button {
+button {
   border: single;
   background-color: transparent;
   foreground-color: system-color(control-text);
 }
 
-.button:checked {
+button:flat {
   border: single;
   background-color: transparent;
   foreground-color: system-color(control-text);
 }
 
-.button:default {
+button:flat-popup {
   border: single;
+  background-color: transparent;
+  foreground-color: system-color(control-text);
+}
+
+button:checked {
+  background-color: transparent;
+  foreground-color: system-color(control-text);
+}
+
+button:default {
   background-color: transparent;
   foreground-color: system-color(accent-text);
 }
 
-.button:disabled {  
-  border: single;
+button:disabled {  
   background-color: transparent;
   foreground-color: system-color(gray-text);
 }
 
-.button:hot {
-  border: single;
+button:hot {
   background-color: transparent;
   foreground-color: system-color(accent-text);
 }
 
-.button:mixed {
-  border: single;
+button:mixed {
   background-color: transparent;
   foreground-color: system-color(control-text);
 }
 
-.button:pressed {
-  border: single;
+button:pressed {
   background-color: transparent;
   foreground-color: system-color(control-text);
 }
