@@ -17,10 +17,10 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// Provides methods used to render a border with or without style sheets.
+      /// @brief Provides methods used to render a border with or without style sheets.
       class border_renderer static_ {
       public:
-        /// Draws a border in the specified bounds.
+        /// @brief Draws a border in the specified bounds.
         /// @param graphics The Graphics used to draw the button.
         /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the border.
         static void draw_border(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds);
