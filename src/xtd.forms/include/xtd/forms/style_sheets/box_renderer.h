@@ -12,7 +12,17 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief Provides methods used to render a box with or without style sheets.
-      class box_renderer static_ {
+      /// @code
+      /// class forms_export_ box_renderer static_
+      /// @endcode
+      /// @par Inheritance
+      /// xtd::static → xtd::forms::style_sheets::box_renderer
+      /// @par Namespace
+      /// xtd::forms::style_sheets
+      /// @par Library
+      /// xtd.forms
+      /// @ingroup xtd_forms style_sheets
+      class forms_export_ box_renderer static_ {
       public:
         /// @brief Draws a box in the specified bounds.
         /// @param graphics The Graphics used to draw a box.
