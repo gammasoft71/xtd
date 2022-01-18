@@ -4,7 +4,7 @@
 #pragma once
 #include <memory>
 #include <xtd/object.h>
-#include <xtd/drawing/brush.h>
+#include <xtd/drawing/solid_brush.h>
 #include "../../forms_export.h"
 #include "border_style.h"
 
@@ -28,6 +28,13 @@ namespace xtd {
       class forms_export_ border_data : public xtd::object {
       public:
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_data class.
+        /// @remarks The following table shows the default values for the properties :
+        /// | Property                                      | Default value                                        |
+        /// |-----------------------------------------------|------------------------------------------------------|
+        /// | xtd::forms::style_sheets::border_data::color  | xtd::draing::solid_brush(xtd::drawing::color::black) |
+        /// | xtd::forms::style_sheets::border_data::style  | xtd::forms::style_sheets::border_style::none         |
+        /// | xtd::forms::style_sheets::border_data::width  | 3                                                    |
+        /// | xtd::forms::style_sheets::border_data::radius | 0                                                    |
         border_data() = default;
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_data class with specified color, style, width and radius.
         /// @param color The color is used to set the color of the border.
@@ -59,7 +66,7 @@ namespace xtd {
         int32_t width() const noexcept;
 
       private:
-        std::shared_ptr<xtd::drawing::brush> color_;
+        std::shared_ptr<xtd::drawing::brush> color_ = std::make_shared<xtd::drawing::solid_brush>(xtd::drawing::color::black);
         xtd::forms::style_sheets::border_style style_ = xtd::forms::style_sheets::border_style::none;
         int32_t width_ = 3;
         int32_t radius_ = 0;

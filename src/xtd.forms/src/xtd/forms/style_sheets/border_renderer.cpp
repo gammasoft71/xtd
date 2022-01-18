@@ -18,6 +18,14 @@ namespace {
   static constexpr size_t bottom_left_index = 3;
 }
 
+void border_renderer::draw_border(graphics& graphics, const rectangle& bounds) {
+  draw_border(graphics,bounds, {border_data(), border_data(), border_data(), border_data()});
+}
+
+void border_renderer::draw_border(graphics& graphics, const rectangle& bounds, const border_data& data) {
+  draw_border(graphics,bounds, {data, data, data, data});
+}
+
 void border_renderer::draw_border(graphics& graphics, const rectangle& bounds, const array<border_data, 4>& data) {
   draw_line_top(graphics, bounds, data);
   draw_line_left(graphics, bounds, data);
