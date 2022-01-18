@@ -14,6 +14,14 @@ namespace xtd {
       /// @brief Provides methods used to render a box with or without style sheets.
       class box_renderer static_ {
       public:
+        /// @brief Draws a box in the specified bounds.
+        /// @param graphics The Graphics used to draw a box.
+        /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the box.
+        static void draw_box(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds);
+        /// @brief Draws a box in the specified bounds and style.
+        /// @param graphics The Graphics used to draw a box.
+        /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the box.
+        /// @param data The xtd::forms::style_sheets::box_data that specifies the style for the box.
         static void draw_box(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
       };
     }
