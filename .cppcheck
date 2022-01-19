@@ -44,7 +44,7 @@ noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/domain_
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/list_box.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/list_control.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/padding.h
-virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/control.h:848
+virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/control.h:849
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/context_menu.h:44
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/menu.h:208
 
