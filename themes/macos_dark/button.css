@@ -2,12 +2,12 @@
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
 button {
-  margin: 3px 3px 2px 3px;
+  margin: 0px 1px 0px 1px;
   border-style: solid;
   border-color: #FF212121;
   border-width: 1px;
   border-radius: 5px;
-  background-color: linear-gradient-brush(color1: #23FFFFFF , color2: #23AAAAAA, mode: vertical, start: 0%, stop: 100%);
+  background-color: linear-gradient(180deg, #23FFFFFF , #23AAAAAA);
   padding: 1px;
 }
 
