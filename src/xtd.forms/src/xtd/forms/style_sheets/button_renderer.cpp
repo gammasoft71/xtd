@@ -26,13 +26,11 @@ void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, x
   //border_data border(color_data(color::from_argb(0x23000000)), border_style::solid, 1, 5);
   //static box_data previous_state = box_data(padding(3, 5, 3, 0), {color_data(color::from_argb(0x23000000)), border_style::solid, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x40FFFFFF), color::from_argb(0x40FFFFFF)}, 180), std::nullopt, std::nullopt);
 
-  console::write_line("state = {}", button_state);
-
   //box_data data = previous_state;
 
-  box_data data = box_data(padding(3, 5, 3, 0), {color_data(color::from_argb(0x23000000)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x40FFFFFF), color::from_argb(0x40AAAAAA)}, 180), std::nullopt, std::nullopt);
-  if (button_state == push_button_state::pressed) data = box_data(padding(3, 5, 3, 0), {color_data(color::from_argb(0x32000000)), border_style::inset, 2, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x50FFFFFF), color::from_argb(0x50AAAAAA)}, 180), std::nullopt, std::nullopt);
-  if (button_state == push_button_state::hot) data = box_data(padding(3, 5, 3, 0), {color_data(color::from_argb(0x32000000)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x50FFFFFF), color::from_argb(0x50AAAAAA)}, 180), std::nullopt, std::nullopt);
+  box_data data = box_data(padding(0, 1, 0, 1), {color_data(color::from_argb(0x23000000)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x40FFFFFF), color::from_argb(0x40AAAAAA)}, 180), std::nullopt, std::nullopt);
+  if (button_state == push_button_state::pressed) data = box_data(padding(0, 1, 0, 1), {color_data(color::from_argb(0x32000000)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x50FFFFFF), color::from_argb(0x50AAAAAA)}, 180), std::nullopt, std::nullopt);
+  //if (button_state == push_button_state::hot) data = box_data(padding(0, 1, 0, 1), {color_data(color::from_argb(0x32000000)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x50FFFFFF), color::from_argb(0x50AAAAAA)}, 180), std::nullopt, std::nullopt);
 
   //previous_state = data;
   box_renderer::draw_box(graphics, bounds, data);
