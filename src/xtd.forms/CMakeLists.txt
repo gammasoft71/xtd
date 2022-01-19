@@ -258,6 +258,8 @@ add_sources(
   include/xtd/forms/style_sheets/box_renderer.h
   include/xtd/forms/style_sheets/button_data.h
   include/xtd/forms/style_sheets/button_renderer.h
+  include/xtd/forms/style_sheets/color_data.h
+  include/xtd/forms/style_sheets/color_style.h
   include/xtd/forms/style_sheets/control_data.h
   include/xtd/forms/style_sheets/control_renderer.h
   include/xtd/forms/style_sheets/form_data.h
@@ -384,6 +386,7 @@ add_sources(
   src/xtd/forms/style_sheets/box_data.cpp
   src/xtd/forms/style_sheets/box_renderer.cpp
   src/xtd/forms/style_sheets/button_renderer.cpp
+  src/xtd/forms/style_sheets/color_data.cpp
   src/xtd/forms/style_sheets/control_data.cpp
   src/xtd/forms/style_sheets/control_renderer.cpp
   src/xtd/forms/style_sheets/form_renderer.cpp
