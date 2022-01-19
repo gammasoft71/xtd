@@ -1,5 +1,6 @@
 #include "../../../../include/xtd/forms/style_sheets/button_renderer.h"
 #include <xtd/drawing/drawing2d/linear_gradient_brush.h>
+#include <xtd/console.h>
 
 using namespace std;
 using namespace xtd;
@@ -22,8 +23,16 @@ void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, f
 }
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, xtd::forms::flat_style button_style, push_button_state button_state, const optional<color>& back_color) {
-  border_data border(std::make_shared<solid_brush>(color::from_argb(0x35000000)), border_style::solid, 1, 5);
-  box_data data(padding(3, 5, 3, 0), border, padding(1), make_shared<linear_gradient_brush>(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, color::from_argb(0x40FFFFFF), color::from_argb(0x40FFFFFF)), std::nullopt, std::nullopt);
-  
+  //border_data border(color_data(color::from_argb(0x23000000)), border_style::solid, 1, 5);
+  //static box_data previous_state = box_data(padding(3, 5, 3, 0), {color_data(color::from_argb(0x23000000)), border_style::solid, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x40FFFFFF), color::from_argb(0x40FFFFFF)}, 180), std::nullopt, std::nullopt);
+
+  console::write_line("state = {}", button_state);
+
+  //box_data data = previous_state;
+  box_data data = box_data(padding(3, 5, 3, 0), {color_data(color::from_argb(0x23000000)), border_style::solid, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x40FFFFFF), color::from_argb(0x40AAAAAA)}, 180), std::nullopt, std::nullopt);
+  if (button_state == push_button_state::pressed) data = box_data(padding(3, 5, 3, 0), {color_data(color::from_argb(0x32000000)), border_style::solid, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x50FFFFFF), color::from_argb(0x50AAAAAA)}, 180), std::nullopt, std::nullopt);
+  if (button_state == push_button_state::hot) data = box_data(padding(3, 5, 3, 0), {color_data(color::from_argb(0x32000000)), border_style::solid, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x50FFFFFF), color::from_argb(0x50AAAAAA)}, 180), std::nullopt, std::nullopt);
+
+  //previous_state = data;
   box_renderer::draw_box(graphics, bounds, data);
 }

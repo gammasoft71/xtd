@@ -21,5 +21,5 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const b
   
   auto background_rect = rectangle::offset(border_rect, data.borders()[3].width(), data.borders()[0].width());
   background_rect = rectangle::inflate(background_rect, -data.borders()[3].width() - data.borders()[1].width(), -data.borders()[0].width() - data.borders()[2].width());
-  graphics.fill_rounded_rectangle(*data.background_color(), background_rect, data.borders()[0].radius());
+  graphics.fill_rounded_rectangle(*color_data::make_brush(data.background_color(), background_rect), background_rect, data.borders()[0].radius());
 }
