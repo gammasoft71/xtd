@@ -58,7 +58,25 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         box_data(const xtd::forms::padding& margin, const std::array<xtd::forms::style_sheets::border_data, 4>& borders, const xtd::forms::padding& padding, const std::shared_ptr<xtd::drawing::brush>& background_color, std::optional<int32_t> width, std::optional<int32_t> height);
-        
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::box_data class with specified margin, border, padding, background color, width and height.
+        /// @param margin The area outside the border.
+        /// @param border A border that goes around the padding and content (same data for the four borders.
+        /// @param padding The area around the content.
+        /// @param background_color The background color is used to add background effects to the box.
+        /// @remarks You need to know how the box model works.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_data& border, const xtd::forms::padding& padding, const std::shared_ptr<xtd::drawing::brush>& background_color);
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::box_data class with specified margin, border, padding, background color, width and height.
+        /// @param margin The area outside the border.
+        /// @param border The borders that goes around the padding and content (same data for the four borders).
+        /// @param padding The area around the content.
+        /// @param background_color The background color is used to add background effects to the box.
+        /// @param width The width of the box.
+        /// @param height The height of the box.
+        /// @remarks You need to know how the box model works.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_data& border, const xtd::forms::padding& padding, const std::shared_ptr<xtd::drawing::brush>& background_color, std::optional<int32_t> width, std::optional<int32_t> height);
+
         /// @cond
         box_data(const box_data&) = default;
         box_data(box_data&&) = default;

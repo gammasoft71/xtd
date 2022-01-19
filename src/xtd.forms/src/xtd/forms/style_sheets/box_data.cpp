@@ -15,6 +15,14 @@ box_data::box_data(const forms::padding& margin, const array<border_data, 4>& bo
   if (!background_color) throw argument_exception(csf_);
 }
 
+box_data::box_data(const forms::padding& margin, const border_data& border, const forms::padding& padding, const shared_ptr<brush>& background_color) : margin_(margin), borders_({border, border, border, border}), padding_(padding), background_color_(background_color) {
+  if (!background_color) throw argument_exception(csf_);
+}
+
+box_data::box_data(const forms::padding& margin, const border_data& border, const forms::padding& padding, const shared_ptr<brush>& background_color, optional<int32_t> width, optional<int32_t> height) : margin_(margin), borders_({border, border, border, border}), padding_(padding), background_color_(background_color), width_(width), height_(height) {
+  if (!background_color) throw argument_exception(csf_);
+}
+
 const shared_ptr<brush>& box_data::background_color() const noexcept {
   return background_color_;
 }
