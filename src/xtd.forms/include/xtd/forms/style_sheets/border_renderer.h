@@ -44,7 +44,7 @@ namespace xtd {
         /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the border.
         /// @param data The xtd::forms::style_sheets::border_data that specifies the style for each border.
         static void draw_border(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const std::array<xtd::forms::style_sheets::border_data, 4>& data);
-
+        
       private:
         static void draw_line_top(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const std::array<xtd::forms::style_sheets::border_data, 4>& data);
         static void draw_line_right(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const std::array<xtd::forms::style_sheets::border_data, 4>& data);

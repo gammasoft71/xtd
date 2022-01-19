@@ -58,18 +58,18 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         box_data(const xtd::forms::padding& margin, const std::array<xtd::forms::style_sheets::border_data, 4>& borders, const xtd::forms::padding& padding, const std::shared_ptr<xtd::drawing::brush>& background_color, std::optional<int32_t> width, std::optional<int32_t> height);
-
+        
         /// @cond
         box_data(const box_data&) = default;
         box_data(box_data&&) = default;
         box_data& operator=(const box_data&) = default;
         /// @endcond
-
+        
         /// @brief Gets the background color is used to add background effects to the box.
         /// @return The background color is used to add background effects to the box.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         const std::shared_ptr<xtd::drawing::brush>& background_color() const noexcept;
-
+        
         /// @brief Gets the borders that goes around the padding and content.
         /// @return The borders that goes around the padding and content.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
@@ -99,7 +99,7 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         std::optional<int32_t> width() const noexcept;
-
+        
       private:
         xtd::forms::padding margin_;
         std::array<xtd::forms::style_sheets::border_data, 4> borders_;

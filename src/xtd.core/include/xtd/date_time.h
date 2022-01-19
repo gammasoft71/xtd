@@ -656,7 +656,7 @@ namespace xtd {
     
     bool equals(const date_time&) const noexcept override;
     bool equals(const object&) const noexcept override;
-
+    
     /// @brief Deserializes a 64-bit binary value and recreates an original serialized xtd::date_time object.
     /// @param date_data A 64-bit signed integer that encodes the xtd::date_time::kind property in a 2-bit field and the xtd::date_time::ticks property in a 62-bit field.
     /// @return An object that is equivalent to the xtd::date_time object that was serialized by the xtd::date_time::to_binary() method.
@@ -696,7 +696,7 @@ namespace xtd {
     /// @remarks The file_time parameter specifies a file time expressed in 100-nanosecond ticks.
     /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property is xtd::date_time:::utc.
     static date_time from_file_time_utc(int64_t file_time);
-
+    
     /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> to an equivalent unspecified time.
     /// @param value A time interval from the start of the Clock's epoch.
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
@@ -716,7 +716,7 @@ namespace xtd {
     static date_time from_duration(std::chrono::duration<rep_t, period_t> value, date_time_kind kind) {
       return date_time(std::chrono::duration_cast<xtd::ticks>(value), kind);
     }
-
+    
     /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent unspecified time.
     /// @param value A time interval from the start of the Clock's epoch.
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
@@ -732,7 +732,7 @@ namespace xtd {
     /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
     /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     static date_time from_time_t(std::time_t value, date_time_kind kind);
-
+    
     /// @brief Converts the specified <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> to an equivalent unspecified time.
     /// @param value A <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> struct.
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
@@ -748,7 +748,7 @@ namespace xtd {
     /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
     /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     static date_time from_tm(const std::tm& value, date_time_kind kind);
-
+    
     /// @brief Indicates whether this instance of xtd::date_time is within the daylight saving time range for the current time zone.
     /// @return true if the value of the xtd::date_time::kind property is xtd::date_time_kind::local or xtd::date_time_kind::unspecified and the value of this instance ofxtd::date_time is within the daylight saving time range for the local time zone; false if xtd::date_time::kind is xtd::date_time_kind::utc.
     /// @remarks This method determines whether the current xtd::date_time value falls within the daylight saving time range of the local time zone, which is returned by the xtd::time_zone_info::local property. You can determine whether a time zone supports daylight saving time by retrieving the value of its xtd::time_zone_info::supports_daylight_saving_time property. For time zones that observe daylight saving time, you can determine when the transition to and from daylight saving time occurs by retrieving the xtd::time_zone_info::adjustment_rule array returned by the time zone's xtd::time_zone_info::get_adjustmen_rules property.
@@ -907,7 +907,7 @@ namespace xtd {
     /// @return A 64-bit signed integer that encodes the xtd::date_time::kind and xtd::date_time::ticks properties.
     /// @remarks Use the xtd::date_time::to_binary method to convert the value of the current xtd::date_time object to a binary value. Subsequently, use the binary value and the xtd::date_time::from_binary method to recreate the original xtd::date_time object.
     int64_t to_binary() const;
-
+    
     /// @remarks Converts the value of the current xtd::date_time object to a Windows file time.
     /// @return The value of the current xtdd::date_time object expressed as a Windows file time.
     /// @exception xtd::argument_out_of_range_exception The resulting file time would represent a date and time before 12:00 midnight January 1, 1601 C.E. UTC.
@@ -920,7 +920,7 @@ namespace xtd {
     /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
     /// @remarks The xtd::date_time::to_file_time_utc method uses the xtd::date_time::to_file_timextd::date_time::kind property to determine whether the current xtd::date_time object is a local time, a UTC time, or an unspecified kind of time which is treated as a UTC time. If it is a local time, it converts the time to UTC before performing the conversion to a Windows file time.
     int64_t to_file_time_utc() const;
-
+    
     /// @brief Converts the value of the current xtd::date_time object to local time.
     /// @return An object whose xtd::date_time::kind property is xtd::date_time_kind::local, and whose value is the local time equivalent to the value of the current xtd::date_time object, or xtd::date_time::max_value if the converted value is too large to be represented by a xtd::date_time object, or xtd::date_time::min_value if the converted value is too small to be represented as a xtd::date_time object.
     /// @par Examples
@@ -946,12 +946,12 @@ namespace xtd {
     /// @return A string that contains the long time string representation of the current xtd::date_time object.
     /// @remarks The return value is identical to the value returned by specifying the "T" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
     const xtd::ustring to_long_time_string() const;
-
+    
     /// @brief Converts the value of the current xtd::date_time object to its equivalent short date string representation.
     /// @return A string that contains the short date string representation of the current xtd::date_time object.
     /// @remarks The return value is identical to the value returned by specifying the "D" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
     const xtd::ustring to_short_date_string() const;
-
+    
     /// @brief Converts the value of the current xtd::date_time object to its equivalent short time string representation.
     /// @return A string that contains the short time string representation of the current xtd::date_time object.
     /// @remarks The return value is identical to the value returned by specifying the "V" standard xtd::date_time format string with the xtd::date_time::to_string(const xtd::ustring&) method.
@@ -1030,7 +1030,7 @@ namespace xtd {
     /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
     /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
     std::tm to_tm() const;
-   
+    
     /// @brief Converts the value of the current xtd::date_time object to Coordinated Universal Time (UTC).
     /// @return An object whose xtd::date_time::kind property is xtd::date_time_kind::utc, and whose value is the UTC equivalent to the value of the current xtd::date_time object, or xtd::date_time::max_value if the converted value is too large to be represented by a xtd::date_time object, or xtd::date_time::min_value if the converted value is too small to be represented by a xtd::date_time object.
     /// @par Examples
@@ -1045,7 +1045,7 @@ namespace xtd {
     /// | xtd::date_time_kind::unspecified | The current xtd::date_time object is assumed to be a local time, and the conversion is performed as if xtd::date_time::kind were Local. |
     date_time to_universal_time() const;
     /// @}
-
+    
     /// @cond
     operator time_point() const;
     date_time& operator+=(const date_time& value);

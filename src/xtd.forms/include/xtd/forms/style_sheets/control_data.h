@@ -38,11 +38,11 @@ namespace xtd {
         control_data(control_data&&) = default;
         control_data& operator=(const control_data&) = default;
         /// @endcond
-
+        
         /// @brief Gets the box of the control.
         /// @return The box of the control.
         virtual const xtd::forms::style_sheets::box_data& box() const noexcept;
-
+        
       private:
         xtd::forms::style_sheets::box_data box_;
       };

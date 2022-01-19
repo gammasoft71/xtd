@@ -28,7 +28,7 @@ namespace xtd {
         const xtd::ustring& text() const noexcept {return text_;}
         const std::shared_ptr<xtd::drawing::brush>& color() const noexcept {return color_;}
         const xtd::drawing::string_format& format() const noexcept {return format_;}
-
+        
       private:
         xtd::ustring text_;
         std::shared_ptr<xtd::drawing::brush> color_;

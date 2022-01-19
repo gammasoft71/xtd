@@ -43,7 +43,7 @@ namespace xtd {
         /// @param width The width specifies the width of the border.
         /// @param radius The radius is used to add rounded borders to an element.
         border_data(const std::shared_ptr<xtd::drawing::brush>& color, xtd::forms::style_sheets::border_style style, int32_t width, int32_t radius);
-
+        
         /// @cond
         border_data(const border_data&) = default;
         border_data(border_data&&) = default;
@@ -57,7 +57,7 @@ namespace xtd {
         /// @brief Gets the radius is used to add rounded borders to an element.
         /// @return The radius is used to add rounded borders to an element.
         int32_t radius() const noexcept;
-
+        
         /// @brief Gets the style specifies what kind of border to display.
         /// @return The style specifies what kind of border to display.
         xtd::forms::style_sheets::border_style style() const noexcept;
@@ -65,7 +65,7 @@ namespace xtd {
         /// @brief Gets the width specifies the width of the border.
         /// @return The width specifies the width of the border.
         int32_t width() const noexcept;
-
+        
       private:
         std::shared_ptr<xtd::drawing::brush> color_ = std::make_shared<xtd::drawing::solid_brush>(xtd::drawing::color::black);
         xtd::forms::style_sheets::border_style style_ = xtd::forms::style_sheets::border_style::none;
