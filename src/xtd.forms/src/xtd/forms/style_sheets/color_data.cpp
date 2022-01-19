@@ -37,7 +37,6 @@ int32_t color_data::angle() const noexcept {
 }
 
 std::unique_ptr<xtd::drawing::brush> color_data::make_brush(const xtd::forms::style_sheets::color_data& color, const xtd::drawing::rectangle& rect) {
-  if (color.style() == color_style::solid) return make_unique<solid_brush>(color.colors()[0]);
   if (color.style() == color_style::linear_gradient) {
     auto angle = color.angle() % 360;
     if (angle < 0) angle = 360 + angle;
@@ -47,5 +46,5 @@ std::unique_ptr<xtd::drawing::brush> color_data::make_brush(const xtd::forms::st
     if (color.angle() <= 315) return make_unique<linear_gradient_brush>(rect, color.colors()[1], color.colors()[0], linear_gradient_mode::horizontal);
     return make_unique<linear_gradient_brush>(rect, color.colors()[1], color.colors()[0], linear_gradient_mode::vertical);
   }
-  throw argument_exception(csf_);
+  return make_unique<solid_brush>(color.colors()[0]);
 }

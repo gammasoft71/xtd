@@ -53,6 +53,8 @@ namespace xtd {
         /// @param colors The colors specifies what colors to display.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         /// @remarks For xtd::forms::style_sheets::color_style::color, only the first color is used.
+        /// @exception xtd::argument_exception colors is empty.
+        /// @exception xtd::not_supported_exception xtd::forms::style_sheets::color_data::style is not of xtd::forms::style_sheets::color_style::solid and not xtd::forms::style_sheets::color_style::linear_gradient.
         color_data(xtd::forms::style_sheets::color_style style, const std::vector<xtd::drawing::color>& colors);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::color_data class with specified style, colors and angle.
         /// @param style The style specifies what kind of color to display.
@@ -60,6 +62,8 @@ namespace xtd {
         /// @param angle The angle specifies the gradient direction.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         /// @remarks For xtd::forms::style_sheets::color_style::color, only the first color is used.
+        /// @exception xtd::argument_exception colors is empty.
+        /// @exception xtd::not_supported_exception if xtd::forms::style_sheets::color_data::style is not of xtd::forms::style_sheets::color_style::solid and not xtd::forms::style_sheets::color_style::linear_gradient.
         color_data(xtd::forms::style_sheets::color_style style, const std::vector<xtd::drawing::color>& colors, int32_t angle);
 
         /// @cond
@@ -82,6 +86,10 @@ namespace xtd {
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         int32_t angle() const noexcept;
         
+        /// @brief Creates a xtd::drawing::brush from specified color data and rectangle.
+        /// @param color Contains color data.
+        /// @param rect The xtd::drawing::rectangle neeed for linear gradient brush
+        /// @return New instance of brush.
         static std::unique_ptr<xtd::drawing::brush> make_brush(const xtd::forms::style_sheets::color_data& color, const xtd::drawing::rectangle& rect);
 
       private:
