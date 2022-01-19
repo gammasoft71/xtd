@@ -3,17 +3,13 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
-#include <vector>
+#include <optional>
 #include <xtd/static.h>
 #include <xtd/ustring.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/font.h>
 #include <xtd/drawing/graphics.h>
-#include <xtd/drawing/rectangle.h>
 #include <xtd/forms/flat_style.h>
 #include <xtd/forms/visual_styles/push_button_state.h>
 #include "box_renderer.h"
-#include "text_renderer.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

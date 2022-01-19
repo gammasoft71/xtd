@@ -2,13 +2,8 @@
 /// @brief Contains xtd::forms::style_sheets::border_renderer static class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/as.h>
-#include <xtd/is.h>
 #include <xtd/static.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/font.h>
 #include <xtd/drawing/graphics.h>
-#include <xtd/drawing/rectangle.h>
 #include "border_data.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -1,4 +1,3 @@
-#include <xtd/argument_exception.h>
 #include "../../../../include/xtd/forms/style_sheets/border_data.h"
 
 using namespace std;
@@ -7,11 +6,10 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
-border_data::border_data(const shared_ptr<brush>& color, border_style style, int32_t width, int32_t radius) : color_(color), style_(style), width_(width), radius_(radius) {
-  if (!color) throw argument_exception(csf_);
+border_data::border_data(const color_data& color, border_style style, int32_t width, int32_t radius) : color_(color), style_(style), width_(width), radius_(radius) {
 }
 
-const shared_ptr<brush>& border_data::color() const noexcept {
+const color_data& border_data::color() const noexcept {
   return color_;
 }
 
