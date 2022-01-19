@@ -27,7 +27,7 @@ namespace xtd {
         mixed = 2,
         /// @brief The irem is pressed, mouse is down on the item.
         pressed = 3,
-
+        
         /// @brief The irem is flat style.
         flat = 0b1000000,
         /// @brief The irem is popup flat style.

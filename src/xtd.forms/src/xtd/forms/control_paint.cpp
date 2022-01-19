@@ -145,7 +145,7 @@ namespace {
       // top-right
       graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.y(), radius * 2, radius * 2, 270, 45);
     }
-
+    
     if ((sides & border_sides::left) == border_sides::left) {
       // left
       graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x(), rect.y() + radius, rect.x(), rect.bottom() - radius);
@@ -154,7 +154,7 @@ namespace {
       // left-bottom
       graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x(), rect.bottom() - radius * 2, radius * 2, radius * 2, 135, 45);
     }
-
+    
     if ((sides & border_sides::bottom) == border_sides::bottom) {
       // botttom
       graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x() + radius, rect.bottom(), rect.right() - radius, rect.bottom());
@@ -163,7 +163,7 @@ namespace {
       // botttom-right
       graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.bottom() - radius * 2, radius * 2, radius * 2, 45, 45);
     }
-
+    
     if ((sides & border_sides::right) == border_sides::right) {
       // right
       graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.right(), rect.y() + radius, rect.right(), rect.bottom() - radius);

@@ -60,7 +60,7 @@ namespace xtd {
       /// @return A xtd::drawing::color that is the shadow color of a 3-D element.
       /// @remarks This color is applied to parts of a 3-D element that face away from the light source.
       static xtd::drawing::color button_shadow();
-
+      
       /// @brief Gets a xtd::drawing::color structure that is the face color of a 3-D element.
       /// @return A xtd::drawing::color that is the face color of a 3-D element.
       static xtd::drawing::color control();
@@ -100,7 +100,7 @@ namespace xtd {
       /// @brief Gets a xtd::drawing::color structure that is the lightest color in the color gradient of an inactive window's title bar.
       /// @return A xtd::drawing::color that is the lightest color in the color gradient of an inactive window's title bar.
       static xtd::drawing::color gradient_inactive_caption();
-
+      
       /// @brief Gets a xtd::drawing::color structure that is the color of dimmed text.
       /// @return A xtd::drawing::color that is the color of dimmed text.
       /// @remarks Items in a list that are disabled are displayed in dimmed text.
@@ -152,7 +152,7 @@ namespace xtd {
       /// @brief Gets a xtd::drawing::color structure that is the color used to highlight menu items when the menu appears as a flat menu.
       /// @return A xtd::drawing::color that is the color used to highlight menu items when the menu appears as a flat menu.
       static xtd::drawing::color menu_highlight();
-
+      
       /// @brief Gets a xtd::drawing::color structure that is the color of a menu's text.
       /// @return A xtd::drawing::color that is the color of a menu's text.
       static xtd::drawing::color menu_text();
@@ -168,7 +168,7 @@ namespace xtd {
       /// @brief Gets a xtd::drawing::color structure that is the color of the text of a text box.
       /// @return A xtd::drawing::color that is the color of the text of a text tbox.
       static xtd::drawing::color text_box_text();
-
+      
       /// @brief Gets a xtd::drawing::color structure that is the color of the background in the client area of a window.
       /// @return A xtd::drawing::color that is the color of the background in the client area of a window.
       static xtd::drawing::color window();
