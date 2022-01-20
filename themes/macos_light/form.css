@@ -1,7 +1,7 @@
 /* Contains form definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-.form {
-  back-color: system-color(window);
-  fore-color: system-color(window-text);
+form {
+  background-color: system-color(control);
+  color: system-color(control-text);
 }
