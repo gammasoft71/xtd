@@ -7,7 +7,7 @@ button {
   border-color: rgba(0, 0, 0, 35);
   border-width: 1px;
   border-radius: 5px;
-  background-color: linear-gradient(180deg, rgba(255, 255, 255, 64), rgba(255, 255, 255, 64));
+  background-color: linear-gradient(180deg, system-color(button-face), system-color(button-face));
   padding: 1px;
   color: system-color(control-text);
   text-align: center;

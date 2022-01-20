@@ -4,10 +4,10 @@
 button {
   margin: 0px 1px 0px 1px;
   border-style: outset;
-  border-color: rgba(0, 0, 0, 35);
+  border-color: #C8C8C8;
   border-width: 1px;
   border-radius: 5px;
-  background-color: linear-gradient(180deg, rgba(255, 255, 255, 64), rgba(255, 255, 255, 64));
+  background-color: linear-gradient(180deg, system-color(button-face), system-color(button-face));
   padding: 1px;
   color: system-color(control-text);
   text-align: center;
@@ -69,7 +69,7 @@ button:flat:default {
 
 button:flat:disabled {  
   border-color: system-color(gray-text);
-  background-color: linear-gradient(180deg, rgba(255, 255, 255, 30), rgba(255, 255, 255, 30));
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 30), system-color(button-face));
   color: system-color(gray-text);
 }
 

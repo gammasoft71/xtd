@@ -40,7 +40,7 @@ intptr_t __xtd__macos_system_colors_button_face__() {
   uint32_t argb = to_argb(NSColor.controlColor);
   if (argb != 0xFFFFFFFF) {
     argb &= 0x00FFFFFF;
-    argb |= 0x23000000;
+    argb |= 0x40000000;
   }
   return argb;
   

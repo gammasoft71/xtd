@@ -8,7 +8,7 @@ system-colors {
   active-caption: #9A9A9A;
   active-caption-text: rgba(0, 0, 0, 216);
   app-workspace: #E7E7E7;
-  button-face: white;
+  button-face: rgba(255, 255, 255, 128);
   button-highlight: white;
   button-shadow: rgba(0, 0, 0, 68);
   control: #ECECEC;
