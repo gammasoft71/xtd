@@ -1,54 +1,109 @@
-/* Contains label definitions. */
+/* Contains button definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
 button {
   margin: 0px 1px 0px 1px;
-  border-style: solid;
-  border-color: #FF212121;
+  border-style: outset;
+  border-color: rgba(0, 0, 0, 35);
   border-width: 1px;
   border-radius: 5px;
-  background-color: linear-gradient(180deg, #23FFFFFF , #23AAAAAA);
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 64), rgba(255, 255, 255, 64));
   padding: 1px;
+  color: rgba(255, 255, 255, 216);
+}
+
+button:pressed {
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
+}
+
+button:checked {
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
+}
+
+button:mixed {
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 78), rgba(255, 255, 255, 78));
+}
+
+button:default {
+  background-color: linear-gradient(180deg, #076BD9 , #0067D8);
+}
+
+button:disabled {  
+  border-color: system-color(gray-text);
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 30), rgba(255, 255, 255, 30));
+  color: system-color(gray-text);
 }
 
 button:flat {
   border-style: solid;
+  border-color: system-color(control-text);
+  border-width: 1px;
+  border-radius: 5px;
   background-color: transparent;
-  foreground-color: system-color(control-text);
+  color: system-color(control-text);
 }
 
-button:flat-popup {
+button:flat:hot {
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
+}
+
+button:flat:pressed {
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
+}
+
+button:flat:checked {
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
+}
+
+button:flat:mixed {
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 78), rgba(255, 255, 255, 78));
+}
+
+button:flat:default {
+  background-color: linear-gradient(180deg, #076BD9 , #0067D8);
+}
+
+button:flat:disabled {  
+  border-color: system-color(gray-text);
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 30), rgba(255, 255, 255, 30));
+  color: system-color(gray-text);
+}
+
+button:popup {
   border-style: solid;
+  border-color: system-color(control-text);
+  border-width: 1px;
+  border-radius: 5px;
   background-color: transparent;
-  foreground-color: system-color(control-text);
+  color: system-color(control-text);
 }
 
-button:checked {
-  background-color: transparent;
-  foreground-color: system-color(control-text);
+button:popup:hot {
+  border-style: outset;
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
 }
 
-button:default {
-  background-color: transparent;
-  foreground-color: system-color(accent-text);
+button:popup:pressed {
+  border-style: inset;
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
 }
 
-button:disabled {  
-  background-color: transparent;
-  foreground-color: system-color(gray-text);
+button:popup:checked {
+  border-style: inset;
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
 }
 
-button:hot {
-  background-color: transparent;
-  foreground-color: system-color(accent-text);
+button:popup:mixed {
+  border-style: inset;
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 78), rgba(255, 255, 255, 78));
 }
 
-button:mixed {
-  background-color: transparent;
-  foreground-color: system-color(control-text);
+button:popup:default {
+  background-color: linear-gradient(180deg, #076BD9 , #0067D8);
 }
 
-button:pressed {
-  background-color: transparent;
-  foreground-color: system-color(control-text);
+button:popup:disabled {  
+  border-color: system-color(gray-text);
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 30), rgba(255, 255, 255, 30));
+  color: system-color(gray-text);
 }
