@@ -12,3 +12,7 @@ control_data::control_data(const box_data& box) : box_(box) {
 const box_data& control_data::box() const noexcept {
   return box_;
 }
+
+const color_data& control_data::color() const noexcept {
+  return color_;
+}
