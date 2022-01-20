@@ -4,5 +4,5 @@
 label {
   border: none;
   background-color: transparent;
-  foreground-color: system-color(control-text);
+  color: system-color(control-text);
 }
