@@ -16,11 +16,13 @@ color_data::color_data(const color& color) : colors_({color}) {
 
 color_data::color_data(color_style style, const vector<color>& colors) : style_(style), colors_(colors) {
   if (colors.empty()) throw argument_exception(csf_);
+  if (style != color_style::solid && colors.size() < 2U) throw argument_exception(csf_);
   if (style != color_style::solid && style != color_style::linear_gradient) throw not_supported_exception(csf_);
 }
 
-color_data::color_data(color_style style, const vector<color>& colors, int32_t angle) : style_(style), colors_(colors), angle_(angle) {
+color_data::color_data(color_style style, const vector<color>& colors, int32_t angle) : style_(style), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
   if (colors.empty()) throw argument_exception(csf_);
+  if (style != color_style::solid && colors.size() < 2U) throw argument_exception(csf_);
   if (style != color_style::solid && style != color_style::linear_gradient) throw not_supported_exception(csf_);
 }
 
