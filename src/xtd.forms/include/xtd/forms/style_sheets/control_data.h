@@ -42,9 +42,14 @@ namespace xtd {
         /// @brief Gets the box of the control.
         /// @return The box of the control.
         virtual const xtd::forms::style_sheets::box_data& box() const noexcept;
-        
+
+        /// @brief Gets the color is used to add text effects to the control.
+        /// @return The color is used to add text effects to the control.
+        const xtd::forms::style_sheets::color_data& color() const noexcept;
+
       private:
         xtd::forms::style_sheets::box_data box_;
+        xtd::forms::style_sheets::color_data color_ {xtd::drawing::color::black};
       };
     }
   }
