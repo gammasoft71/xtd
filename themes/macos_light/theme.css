@@ -1,9 +1,9 @@
 /* Contains theme definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-.theme {
+theme {
   name: "macOS (light)";
   description: "Contains macOS (light) theme.";
   author: "Gammasoft71";
-  website: "https://gammasoft71.wixsite.com/gammasoft";
+  website: url(https://gammasoft71.wixsite.com/gammasoft);
 }
