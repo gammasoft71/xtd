@@ -92,7 +92,12 @@ namespace xtd {
         /// @return New instance of brush.
         static std::unique_ptr<xtd::drawing::brush> make_brush(const xtd::forms::style_sheets::color_data& color, const xtd::drawing::rectangle& rect);
 
+        static color_data parse(const xtd::ustring& text);
+        
+        static bool try_parse(const xtd::ustring& text, color_data& result);
+
       private:
+        static bool try_parse_solid_color(const xtd::ustring& text, xtd::drawing::color& result);
         color_style style_ = color_style::solid;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black};
         int32_t angle_ = 90;

@@ -370,5 +370,32 @@ namespace xtd {
   inline bool try_parse(const char_t* str, value_t& value) {
     return try_parse(std::basic_string<char_t>(str), value);
   }
+  
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t, typename char_t>
+  inline bool try_parse(const std::basic_string<char_t>& str, value_t& value, number_styles style) {
+    try {
+      value = parse<value_t>(str, style);
+      return true;
+    } catch (...) {
+      return false;
+    }
+  }
+  
+  /// @brief Convert a string into a type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  template<typename value_t, typename char_t>
+  inline bool try_parse(const char_t* str, value_t& value, number_styles style) {
+    return try_parse(std::basic_string<char_t>(str), value, style);
+  }
 }
 
