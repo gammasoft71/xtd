@@ -8,6 +8,7 @@ namespace examples {
   public:
     form1() {
       text("Button example");
+      back_color(drawing::color::dark_blue);
       
       button1.parent(*this);
       button1.text("Button 1");

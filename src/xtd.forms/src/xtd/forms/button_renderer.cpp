@@ -232,7 +232,7 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
   auto background_color = back_color.has_value() ? back_color.value() : color::transparent;
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = color::from_argb(200, 200, 200);
-  auto button_color = back_color.has_value() ? color::from_argb(128, xtd::forms::theme_colors::current_theme().control()) : xtd::forms::theme_colors::current_theme().button_face();
+  auto button_color = color::from_argb(128, xtd::forms::theme_colors::current_theme().button_face());
   auto text_color = foreground_color;
   
   if (state == xtd::forms::visual_styles::push_button_state::pressed || state == xtd::forms::visual_styles::push_button_state::checked) {
