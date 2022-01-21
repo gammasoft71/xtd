@@ -123,7 +123,7 @@ namespace unit_tests {
 
     void test_method_(try_parse_with_hash_and_three_hex) {
       color_data c;
-      assert::is_true(color_data::try_parse("#123", c));
+      assert::is_true(color_data::try_parse("#123", c), csf_);
       assert::are_equal(color_style::solid, c.style(), csf_);
       assert::are_equal(1U, c.colors().size(), csf_);
       collection_assert::are_equal({color::from_argb(0xFF112233)}, c.colors(), csf_);
@@ -132,7 +132,7 @@ namespace unit_tests {
     
     void test_method_(try_parse_with_hash_and_four_hex) {
       color_data c;
-      assert::is_true(color_data::try_parse("#1234", c));
+      assert::is_true(color_data::try_parse("#1234", c), csf_);
       assert::are_equal(color_style::solid, c.style(), csf_);
       assert::are_equal(1U, c.colors().size(), csf_);
       collection_assert::are_equal({color::from_argb(0x11223344)}, c.colors(), csf_);
@@ -146,7 +146,7 @@ namespace unit_tests {
 
     void test_method_(try_parse_with_hash_and_six_hex) {
       color_data c;
-      assert::is_true(color_data::try_parse("#123456", c));
+      assert::is_true(color_data::try_parse("#123456", c), csf_);
       assert::are_equal(color_style::solid, c.style(), csf_);
       assert::are_equal(1U, c.colors().size(), csf_);
       collection_assert::are_equal({color::from_argb(0xFF123456)}, c.colors(), csf_);
@@ -160,7 +160,7 @@ namespace unit_tests {
 
     void test_method_(try_parse_with_hash_and_eight_hex) {
       color_data c;
-      assert::is_true(color_data::try_parse("#12345678", c));
+      assert::is_true(color_data::try_parse("#12345678", c), csf_);
       assert::are_equal(color_style::solid, c.style(), csf_);
       assert::are_equal(1U, c.colors().size(), csf_);
       collection_assert::are_equal({color::from_argb(0x12345678)}, c.colors(), csf_);
@@ -173,6 +173,77 @@ namespace unit_tests {
       assert::is_false(color_data::try_parse("#1234567890", c), csf_);
       assert::is_false(color_data::try_parse("#12345678901", c), csf_);
       assert::is_false(color_data::try_parse("#1234567890123456", c), csf_);
+    }
+    
+    void test_method_(try_parse_with_color_name_lightgreen) {
+      color_data c;
+      assert::is_true(color_data::try_parse("lightgreen", c), csf_);
+      assert::are_equal(color_style::solid, c.style(), csf_);
+      assert::are_equal(1U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::light_green}, c.colors(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+    }
+    
+    void test_method_(try_parse_with_color_name_light_green) {
+      color_data c;
+      assert::is_true(color_data::try_parse("light green", c), csf_);
+      assert::are_equal(color_style::solid, c.style(), csf_);
+      assert::are_equal(1U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::light_green}, c.colors(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+    }
+    
+    void test_method_(try_parse_with_unknown_color_name) {
+      color_data c;
+      assert::is_false(color_data::try_parse("graan", c), csf_);
+    }
+    
+    void test_method_(try_parse_with_rgb_color) {
+      color_data c;
+      assert::is_true(color_data::try_parse("rgb(42, 84, 24)", c), csf_);
+      assert::are_equal(color_style::solid, c.style(), csf_);
+      assert::are_equal(1U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::from_argb(42, 84, 24)}, c.colors(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+    }
+    
+    void test_method_(try_parse_with_bad_rgb_color) {
+      color_data c;
+      assert::is_false(color_data::try_parse("rgb(42, 84, 24", c), csf_);
+      assert::is_false(color_data::try_parse("rgb(42, 84)", c), csf_);
+      assert::is_false(color_data::try_parse("rgb(42, 84, 24, 12)", c), csf_);
+    }
+    
+    void test_method_(try_parse_with_rgba_color) {
+      color_data c;
+      assert::is_true(color_data::try_parse("rgba(42, 84, 24, 128)", c), csf_);
+      assert::are_equal(color_style::solid, c.style(), csf_);
+      assert::are_equal(1U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::from_argb(128, 42, 84, 24)}, c.colors(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+    }
+    
+    void test_method_(try_parse_with_bad_rgba_color) {
+      color_data c;
+      assert::is_false(color_data::try_parse("rgba(42, 84, 24, 128", c), csf_);
+      assert::is_false(color_data::try_parse("rgba(42, 84, 128)", c), csf_);
+      assert::is_false(color_data::try_parse("rgba(42, 84, 24, 12, 128)", c), csf_);
+    }
+    
+    void test_method_(try_parse_with_argb_color) {
+      color_data c;
+      assert::is_true(color_data::try_parse("argb(128, 42, 84, 24)", c), csf_);
+      assert::are_equal(color_style::solid, c.style(), csf_);
+      assert::are_equal(1U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::from_argb(128, 42, 84, 24)}, c.colors(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+    }
+    
+    void test_method_(try_parse_with_bad_argb_color) {
+      color_data c;
+      assert::is_false(color_data::try_parse("argb(128, 42, 84, 24", c), csf_);
+      assert::is_false(color_data::try_parse("argb(128, 42, 84)", c), csf_);
+      assert::is_false(color_data::try_parse("argb(128, 42, 84, 24, 12)", c), csf_);
     }
   };
 }
