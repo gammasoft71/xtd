@@ -12,6 +12,6 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds) {
 
 void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const box_data& data) {
   border_renderer::draw_border(graphics, data.get_border_rectangle(bounds), data.borders());
-  auto content_rect = data.get_content_rectangle(bounds);
-  graphics.fill_rounded_rectangle(*color_data::make_brush(data.background_color(), content_rect), content_rect, data.borders()[0].radius());
+  auto fill_rect = data.get_fill_rectangle(bounds);
+  graphics.fill_rounded_rectangle(*color_data::make_brush(data.background_color(), fill_rect), fill_rect, data.borders()[0].radius());
 }
