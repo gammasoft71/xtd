@@ -22,12 +22,12 @@ Follow the [css tutorial](https://www.w3schools.com/css/default.asp) to read or 
 
 The following table lists the members to describe a theme:
 
-| Member      | Type                           | Description                 |
-|-------------|--------------------------------|-----------------------------|
-| name        | [text](#list-of-property-type) | Gets the theme name.        |
-| description | [text](#list-of-property-type) | Gets the theme description. |
-| authors     | [text](#list-of-property-type) | Gets the theme authors.     |
-| website     | [url](#list-of-property-type)  | Gets the website reference. |
+| Member      | Type                             | Description                 |
+|-------------|----------------------------------|-----------------------------|
+| name        | [string](#list-of-property-type) | Gets the theme name.        |
+| description | [string](#list-of-property-type) | Gets the theme description. |
+| authors     | [string](#list-of-property-type) | Gets the theme authors.     |
+| website     | [url](#list-of-property-type)    | Gets the website reference. |
 
 
 ## List of system colors
@@ -124,7 +124,7 @@ The following table summarizes the syntax and meaning of the different property 
 |-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | alignment | {top<br>\| left<br>\| bottom<br>\| right<br>\| center}*                                                                                                                                                                                                                                        | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                                                                                                                                              |
 | color     | rgb(r, g, b)<br>\| rgba(r, g, b, a)<br>\| argb(a, r, g, b)<br>\| hsv(h, s, vv)<br>\| hsva(h, s, v, a)<br>\| ahsv(a, h, s, v)<br>\| hsl(h, s, l)<br>\| hsla(h, s, l, a)<br>\| ahsl(a, h, s, l)<br>\| #rgb<br>\| #argb<br>\| #rrggbb<br>\| #aarrggbb<br>\| color name<br>\| system-color(color) | Specifies a color as ARGB in hexadecimal (e.g. blue : #FF0000FF)<br>Specifie a color by name (e.g. darkblue)<br>Specifie a system color (e.g. system-color(button-face))                                                                                                                          |
-| text      | ""                                                                                                                                                                                                                                                                                             | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                                                                                                                                              |
+| string    | ""                                                                                                                                                                                                                                                                                             | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                                                                                                                                              |
 | url       | url(urlname)<br>\| url(fillename)                                                                                                                                                                                                                                                              | Specifies a url (e.g. url(https://gammasoft71.wixsite.com/gammasoft))<br>Speccifies a fillename with or without path (e.g. url(resources/image.png))<br>Remarks if the file name does not have a path and does not have an extension, consider it to be an internal [xtd image](#List-of-images). |
 
 ## List of states
