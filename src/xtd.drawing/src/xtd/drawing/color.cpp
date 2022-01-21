@@ -489,4 +489,3 @@ ustring color::to_string() const noexcept {
   if (name_ != ustring::format("{:X8}", argb_) && name_ != "0") return ustring::format("color [{0}]", name());
   return ustring::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
 }
-
