@@ -97,7 +97,12 @@ namespace xtd {
         static bool try_parse(const xtd::ustring& text, color_data& result);
 
       private:
-        static bool try_parse_solid_color(const xtd::ustring& text, xtd::drawing::color& result);
+        static ustring remove_key(const xtd::ustring& text);
+        static bool try_parse_hash_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_named_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_rgb_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_rgba_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_argb_color(const xtd::ustring& text, color_data& result);
         color_style style_ = color_style::solid;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black};
         int32_t angle_ = 90;

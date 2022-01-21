@@ -60,24 +60,23 @@ color_data color_data::parse(const xtd::ustring& text) {
 }
 
 bool color_data::try_parse(const xtd::ustring& text, color_data& result) {
-  auto value = text.trim();
-  if (text.starts_with("#")) {
-    color c;
-    if (try_parse_solid_color(value, c) == false) return false;
-    result = color_data(c);
-    return true;
-  }
-  
-  color c = color::from_name(text);
-  if (c != color::empty) {
-    result = color_data(c);
-    return true;
-  }
-  
-  return false;
+  auto value = remove_key(text);
+  if (text.starts_with("#")) return try_parse_hash_color(value, result);
+  if (text.starts_with("rgb(") && text.ends_with(")")) return try_parse_rgb_color(value, result);
+  if (text.starts_with("rgba(") && text.ends_with(")")) return try_parse_rgba_color(value, result);
+  if (text.starts_with("argb(") && text.ends_with(")")) return try_parse_argb_color(value, result);
+  return try_parse_named_color(value, result);
 }
 
-bool color_data::try_parse_solid_color(const xtd::ustring& text, color& result) {
+ustring color_data::remove_key(const xtd::ustring& text) {
+  auto result = text.trim();
+  if (result.starts_with("color:")) result = result.replace("color:", "");
+  if (result.starts_with("border-color:")) result = result.replace("border-color:", "");
+  if (result.starts_with("background-color:")) result = result.replace("background-color:", "");
+  return result.trim();
+}
+
+bool color_data::try_parse_hash_color(const xtd::ustring& text, color_data& result) {
   if (text.starts_with("#") && text.size() == 4U) {
     byte_t r = 0;
     if (xtd::try_parse<byte_t>(text.substring(1, 1), r, number_styles::hex_number) == false) return false;
@@ -88,7 +87,7 @@ bool color_data::try_parse_solid_color(const xtd::ustring& text, color& result) 
     byte_t b = 0;
     if (xtd::try_parse<byte_t>(text.substring(3, 1), b, number_styles::hex_number) == false) return false;
     b += b * 16;
-    result = color::from_argb(r, g, b);
+    result = color_data(color::from_argb(r, g, b));
     return true;
   }
   if (text.starts_with("#") && text.size() == 5U) {
@@ -104,20 +103,71 @@ bool color_data::try_parse_solid_color(const xtd::ustring& text, color& result) 
     byte_t b = 0;
     if (xtd::try_parse<byte_t>(text.substring(4, 1), b, number_styles::hex_number) == false) return false;
     b += b * 16;
-    result = color::from_argb(a, r, g, b);
+    result = color_data(color::from_argb(a, r, g, b));
     return true;
   }
   if (text.starts_with("#") &&text.size() == 7U) {
     int32_t rgb;
     if (xtd::try_parse<int>(text.substring(1), rgb, number_styles::hex_number) == false) return false;
-    result = color::from_argb(rgb + 0xFF000000);
+    result = color_data(color::from_argb(rgb + 0xFF000000));
     return true;
   }
   if (text.starts_with("#") &&text.size() == 9U) {
     int32_t argb;
     if (xtd::try_parse<int>(text.substring(1), argb, number_styles::hex_number) == false) return false;
-    result = color::from_argb(argb);
+    result = color_data(color::from_argb(argb));
     return true;
   }
   return false;
+}
+
+bool color_data::try_parse_rgb_color(const xtd::ustring& text, color_data& result) {
+  auto value = text.remove(text.size()-1).replace("rgb(", "");
+  auto color_parts = value.split({','});
+  if (color_parts.size() != 3) return false;
+  byte_t r = 0;
+  if (try_parse<byte_t>(color_parts[0], r) == false) return false;
+  byte_t g = 0;
+  if (try_parse<byte_t>(color_parts[1], g) == false) return false;
+  byte_t b = 0;
+  if (try_parse<byte_t>(color_parts[2], b) == false) return false;
+  result = color_data(color::from_argb(r, g, b));
+  return true;
+}
+
+bool color_data::try_parse_rgba_color(const xtd::ustring& text, color_data& result) {
+  auto value = text.remove(text.size()-1).replace("rgba(", "");
+  auto color_parts = value.split({','});
+  if (color_parts.size() != 4) return false;
+  byte_t r = 0;
+  if (try_parse<byte_t>(color_parts[0], r) == false) return false;
+  byte_t g = 0;
+  if (try_parse<byte_t>(color_parts[1], g) == false) return false;
+  byte_t b = 0;
+  if (try_parse<byte_t>(color_parts[2], b) == false) return false;
+  byte_t a = 0;
+  if (try_parse<byte_t>(color_parts[3], a) == false) return false;
+  result = color_data(color::from_argb(a, r, g, b));
+  return true;
+}
+
+bool color_data::try_parse_argb_color(const xtd::ustring& text, color_data& result) {
+  auto value = text.remove(text.size()-1).replace("argb(", "");
+  auto color_parts = value.split({','});
+  if (color_parts.size() != 4) return false;
+  byte_t a = 0;
+  if (try_parse<byte_t>(color_parts[0], a) == false) return false;
+  byte_t r = 0;
+  if (try_parse<byte_t>(color_parts[1], r) == false) return false;
+  byte_t g = 0;
+  if (try_parse<byte_t>(color_parts[2], g) == false) return false;
+  byte_t b = 0;
+  if (try_parse<byte_t>(color_parts[3], b) == false) return false;
+  result = color_data(color::from_argb(a, r, g, b));
+  return true;
+}
+
+bool color_data::try_parse_named_color(const xtd::ustring& text, color_data& result) {
+  result = color_data(color::from_name(text));
+  return result.colors()[0].is_known_color();
 }
