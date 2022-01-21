@@ -363,14 +363,97 @@ namespace unit_tests {
       color_data c;
       assert::is_true(color_data::try_parse("linear-gradient(blue, white)", c), csf_);
       assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
       assert::are_equal(2U, c.colors().size(), csf_);
       collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
     }
     
+    void test_method_(try_parse_with_linear_gradient_with_to_top_and_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(to top, blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(0, c.angle(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+    
+    void test_method_(try_parse_with_linear_gradient_with_to_bottom_right_and_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(to bottom right, blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(45, c.angle(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+    
+    void test_method_(try_parse_with_linear_gradient_with_to_right_and_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(to right, blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+    
+    void test_method_(try_parse_with_linear_gradient_with_to_bottom_left_and_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(to bottom left, blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(135, c.angle(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+    
+    void test_method_(try_parse_with_linear_gradient_with_to_bottom_and_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(to bottom, blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(180, c.angle(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+    
+    void test_method_(try_parse_with_linear_gradient_with_to_top_left_and_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(to top left, blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(225, c.angle(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+    
+    void test_method_(try_parse_with_linear_gradient_with_to_left_and_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(to left, blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(270, c.angle(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+    
+    void test_method_(try_parse_with_linear_gradient_with_to_top_right_and_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(to top right, blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(315, c.angle(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+
+    void test_method_(try_parse_with_linear_gradient_with_angle_and_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(126deg, blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(126, c.angle(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+
     void test_method_(try_parse_with_linear_gradient_with_rgb_color) {
       color_data c;
       assert::is_true(color_data::try_parse("linear-gradient(rgb(42, 24, 12), rgb(84, 128, 16))", c), csf_);
       assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
       assert::are_equal(2U, c.colors().size(), csf_);
       collection_assert::are_equal({color::from_argb(42, 24, 12), color::from_argb(84, 128, 16)}, c.colors(), csf_);
     }
