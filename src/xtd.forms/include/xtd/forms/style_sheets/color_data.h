@@ -103,6 +103,12 @@ namespace xtd {
         static bool try_parse_rgb_color(const xtd::ustring& text, color_data& result);
         static bool try_parse_rgba_color(const xtd::ustring& text, color_data& result);
         static bool try_parse_argb_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_hsv_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_hsva_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_ahsv_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_hsl_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_hsla_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_ahsl_color(const xtd::ustring& text, color_data& result);
         color_style style_ = color_style::solid;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black};
         int32_t angle_ = 90;
