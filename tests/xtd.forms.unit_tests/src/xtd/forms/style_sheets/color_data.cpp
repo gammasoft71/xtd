@@ -1,4 +1,5 @@
 #include <xtd/forms/style_sheets/color_data.h>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/xtd.tunit>
 
 using namespace xtd;
@@ -340,6 +341,38 @@ namespace unit_tests {
       assert::is_false(color_data::try_parse("ahsl(204, 62, 67", c), csf_);
       assert::is_false(color_data::try_parse("ahsl(204, 62, 67)", c), csf_);
       assert::is_false(color_data::try_parse("ahsl(128, 204, 62, 67, 12)", c), csf_);
+    }
+    
+    void test_method_(try_parse_with_system_color) {
+      color_data c;
+      assert::is_true(color_data::try_parse("system-color(control-text)", c), csf_);
+      assert::are_equal(color_style::solid, c.style(), csf_);
+      assert::are_equal(1U, c.colors().size(), csf_);
+      /// @todo Replace drawing::system_colors by theme::system_colors
+      collection_assert::are_equal({system_colors::control_text()}, c.colors(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+    }
+    
+    void test_method_(try_parse_with_bad_system_color) {
+      color_data c;
+      assert::is_false(color_data::try_parse("system-color(control-text", c), csf_);
+      assert::is_false(color_data::try_parse("system-color(checkbox)", c), csf_);
+    }
+    
+    void test_method_(try_parse_with_linear_gradient_with_named_colors) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(blue, white)", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::blue, color::white}, c.colors(), csf_);
+    }
+    
+    void test_method_(try_parse_with_linear_gradient_with_rgb_color) {
+      color_data c;
+      assert::is_true(color_data::try_parse("linear-gradient(rgb(42, 24, 12), rgb(84, 128, 16))", c), csf_);
+      assert::are_equal(color_style::linear_gradient, c.style(), csf_);
+      assert::are_equal(2U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::from_argb(42, 24, 12), color::from_argb(84, 128, 16)}, c.colors(), csf_);
     }
   };
 }

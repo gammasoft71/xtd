@@ -109,6 +109,8 @@ namespace xtd {
         static bool try_parse_hsl_color(const xtd::ustring& text, color_data& result);
         static bool try_parse_hsla_color(const xtd::ustring& text, color_data& result);
         static bool try_parse_ahsl_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_system_color(const xtd::ustring& text, color_data& result);
+        static bool try_parse_linear_gradient_color(const xtd::ustring& text, color_data& result);
         color_style style_ = color_style::solid;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black};
         int32_t angle_ = 90;

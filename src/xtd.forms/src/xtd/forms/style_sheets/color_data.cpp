@@ -1,6 +1,7 @@
 #include <xtd/argument_exception.h>
 #include <xtd/format_exception.h>
 #include <xtd/drawing/solid_brush.h>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/drawing2d/linear_gradient_brush.h>
 #include <xtd/not_supported_exception.h>
 #include "../../../../include/xtd/forms/style_sheets/color_data.h"
@@ -71,6 +72,8 @@ bool color_data::try_parse(const xtd::ustring& text, color_data& result) {
   if (text.starts_with("hsl(") && text.ends_with(")")) return try_parse_hsl_color(value, result);
   if (text.starts_with("hsla(") && text.ends_with(")")) return try_parse_hsla_color(value, result);
   if (text.starts_with("ahsl(") && text.ends_with(")")) return try_parse_ahsl_color(value, result);
+  if (text.starts_with("system-color(") && text.ends_with(")")) return try_parse_system_color(value, result);
+  if (text.starts_with("linear-gradient(") && text.ends_with(")")) return try_parse_linear_gradient_color(value, result);
   return try_parse_named_color(value, result);
 }
 
@@ -79,6 +82,7 @@ ustring color_data::remove_key(const xtd::ustring& text) {
   if (result.starts_with("color:")) result = result.replace("color:", "");
   if (result.starts_with("border-color:")) result = result.replace("border-color:", "");
   if (result.starts_with("background-color:")) result = result.replace("background-color:", "");
+  result = result.trim_end(';');
   return result.trim();
 }
 
@@ -268,4 +272,113 @@ bool color_data::try_parse_ahsl_color(const xtd::ustring& text, color_data& resu
 bool color_data::try_parse_named_color(const xtd::ustring& text, color_data& result) {
   result = color_data(color::from_name(text));
   return result.colors()[0].is_known_color();
+}
+
+bool color_data::try_parse_system_color(const xtd::ustring& text, color_data& result) {
+  auto value = text.remove(text.size()-1).replace("system-color(", "");
+  /// @todo Replace drawing::system_colors by theme::system_colors
+  static map<ustring, color> colors {{"accent", system_colors::accent()}, {"accent-text", system_colors::accent_text()}, {"active-border", system_colors::active_border()}, {"active-caption", system_colors::active_caption()}, {"active-caption-text", system_colors::active_caption_text()}, {"app-workspace", system_colors::app_workspace()}, {"button-face", system_colors::button_face()}, {"button-highlight", system_colors::button_highlight()}, {"button-shadow", system_colors::button_shadow()}, {"control", system_colors::control()}, {"control-dark", system_colors::control_dark()}, {"control-dark-dark", system_colors::control_dark_dark()}, {"control-light", system_colors::control_light()}, {"control-light-light", system_colors::control_light_light()}, {"control-text", system_colors::control_text()}, {"desktop", system_colors::desktop()}, {"gradient-active-caption", system_colors::gradient_active_caption()}, {"gradient-inactive-caption", system_colors::gradient_inactive_caption()}, {"gray-text", system_colors::gray_text()}, {"highlight", system_colors::highlight()}, {"highlight-text", system_colors::highlight_text()}, {"hot-track", system_colors::hot_track()}, {"inactive-border", system_colors::inactive_border()}, {"inactive-caption", system_colors::inactive_caption()}, {"inactive-caption-text", system_colors::inactive_caption_text()}, {"info", system_colors::info()}, {"info-text", system_colors::info_text()}, {"menu", system_colors::menu()}, {"menu-bar", system_colors::menu_bar()}, {"menu-highlight", system_colors::menu_highlight()}, {"menu-text", system_colors::menu_text()}, {"scroll-bar", system_colors::scroll_bar()}, {"text-box", system_colors::text_box()}, {"text-box-text", system_colors::text_box_text()}, {"window", system_colors::window()}, {"window-frame", system_colors::window_frame()}, {"window-text", system_colors::window_text()}};
+  auto it = colors.find(value);
+  if (it == colors.end()) return false;
+  result = color_data(it->second);
+  return true;
+}
+
+bool color_data::try_parse_linear_gradient_color(const xtd::ustring& text, color_data& result) {
+  auto value = text.remove(text.size()-1).replace("linear-gradient(", "");
+  vector<color> colors;
+  int32_t angle = -1;
+  while (!value.empty()) {
+    value = value.trim();
+    color_data color;
+    if (value.starts_with("rgb(") && value.find_first_of(")") != value.npos) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_rgb_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find_first_of(")"));
+      colors.push_back(color.colors()[0]);
+    } else if (value.starts_with("rgba(")) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_rgba_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find_first_of(")"));
+      colors.push_back(color.colors()[0]);
+    } else if (value.starts_with("argb(")) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_argb_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find_first_of(")"));
+      colors.push_back(color.colors()[0]);
+    } else if (value.starts_with("hsv(")) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_hsv_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find_first_of(")"));
+      colors.push_back(color.colors()[0]);
+    } else if (value.starts_with("hsva(")) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_hsva_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find_first_of(")"));
+      colors.push_back(color.colors()[0]);
+    } else if (value.starts_with("ahsv(")) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_ahsv_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find(")"));
+      colors.push_back(color.colors()[0]);
+    } else if (value.starts_with("hsl(")) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_hsl_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find_first_of(")"));
+      colors.push_back(color.colors()[0]);
+    } else if (value.starts_with("hsla(")) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_hsla_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find_first_of(")"));
+      colors.push_back(color.colors()[0]);
+    } else if (value.starts_with("ahsl(")) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_ahsl_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find_first_of(")"));
+      colors.push_back(color.colors()[0]);
+    } else if (value.starts_with("system-color(")) {
+      auto sub_value = value.find_first_of(",", value.find_first_of(")")) != value.npos ? value.substring(0, value.find_first_of(",", value.find_first_of(")"))) : value;
+      if (try_parse_system_color(sub_value, color) == false) return false;
+      value = value.remove(0, value.find_first_of(")"));
+      colors.push_back(color.colors()[0]);
+    } else {
+      auto sub_value = value.find(",") != value.npos ? value.substring(0, value.find(",")) : value;
+      value = value.find(",") != value.npos ? value.remove(0, value.find(",") + 1) : "";
+      sub_value.trim();
+      if (sub_value.starts_with("#") && try_parse_hash_color(sub_value, color))
+        colors.push_back(color.colors()[0]);
+      else if (sub_value == "to top") {
+        if (angle != -1) return false;
+        angle = 0;
+      } else if (sub_value == "to bottom right") {
+        if (angle != -1) return false;
+        angle = 45;
+      } else if (sub_value == "to right") {
+        if (angle != -1) return false;
+        angle = 90;
+      } else if (sub_value == "to bottom left") {
+        if (angle != -1) return false;
+        angle = 135;
+      } else if (sub_value == "to bottom") {
+        if (angle != -1) return false;
+        angle = 180;
+      } else if (sub_value == "to top left") {
+        if (angle != -1) return false;
+        angle = 225;
+      } else if (sub_value == "to left") {
+        if (angle != -1) return false;
+        angle = 270;
+      } else if (sub_value == "to top right") {
+        if (angle != -1) return false;
+        angle = 315;
+      } else if (sub_value.ends_with("deg")) {
+        if (angle != -1 || xtd::try_parse<int32_t>(sub_value, angle) == false) return false;
+      } else if (try_parse_named_color(sub_value, color))
+        colors.push_back(color.colors()[0]);
+    }
+    if (value.find(",") != value.npos) value = value.remove(0, value.find(",") + 1);
+  }
+  if (colors.size() < 2) return false;
+  result = color_data(color_style::linear_gradient, colors, angle == -1? 90 : angle);
+  return true;
 }
