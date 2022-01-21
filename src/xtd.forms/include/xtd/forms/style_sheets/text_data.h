@@ -5,8 +5,13 @@
 #include <memory>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
-#include <xtd/drawing/brush.h>
+#include <xtd/drawing/font.h>
 #include <xtd/drawing/string_format.h>
+#include <xtd/drawing/system_fonts.h>
+#include <xtd/forms/content_alignment.h>
+#include "color_data.h"
+#include "text_decoration.h"
+#include "text_transformation.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,22 +22,31 @@ namespace xtd {
       class text_data : public xtd::object {
       public:
         text_data() = default;
-        text_data(const xtd::ustring& text, const std::shared_ptr<xtd::drawing::brush>& color, const xtd::drawing::string_format& format) : text_(text), color_(color), format_(format) {}
-        
+        text_data(const xtd::forms::style_sheets::color_data& color);
+        text_data(const xtd::forms::style_sheets::color_data& color, xtd::forms::content_alignment alignment);
+        text_data(const xtd::forms::style_sheets::color_data& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
+        text_data(const xtd::forms::style_sheets::color_data& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font, xtd::forms::style_sheets::text_decoration decoration, xtd::forms::style_sheets::text_transformation transformation);
+
         /// @cond
         text_data(const text_data&) = default;
         text_data(text_data&&) = default;
         text_data& operator=(const text_data&) = default;
         /// @endcond
         
-        const xtd::ustring& text() const noexcept {return text_;}
-        const std::shared_ptr<xtd::drawing::brush>& color() const noexcept {return color_;}
-        const xtd::drawing::string_format& format() const noexcept {return format_;}
-        
+        xtd::forms::content_alignment alignment() const noexcept;
+        const xtd::forms::style_sheets::color_data& color() const noexcept;
+        xtd::forms::style_sheets::text_decoration decoration() const noexcept;
+        xtd::forms::style_sheets::text_transformation transformation() const noexcept;
+        const xtd::drawing::font& font() const noexcept;
+
+        static xtd::drawing::string_format make_string_format(const xtd::forms::style_sheets::text_data& data);
+
       private:
-        xtd::ustring text_;
-        std::shared_ptr<xtd::drawing::brush> color_;
-        xtd::drawing::string_format format_;
+        xtd::forms::style_sheets::color_data color_;
+        xtd::forms::content_alignment alignment_ = xtd::forms::content_alignment::middle_center;
+        xtd::drawing::font font_ = xtd::drawing::system_fonts::default_font();
+        xtd::forms::style_sheets::text_decoration decoration_ = xtd::forms::style_sheets::text_decoration::none;
+        xtd::forms::style_sheets::text_transformation transformation_ = xtd::forms::style_sheets::text_transformation::none;
       };
     }
   }

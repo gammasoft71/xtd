@@ -10,6 +10,7 @@
 #include <xtd/forms/flat_style.h>
 #include <xtd/forms/visual_styles/push_button_state.h>
 #include "box_renderer.h"
+#include "text_renderer.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -61,6 +62,7 @@ namespace xtd {
         /// @param back_color The background color for the button control.
         /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
         static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, const std::optional<xtd::drawing::color>& back_color);
+        static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font);
       };
     }
   }

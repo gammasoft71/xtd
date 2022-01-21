@@ -41,3 +41,19 @@ const xtd::forms::padding& box_data::padding() const noexcept {
 optional<int32_t> box_data::width() const noexcept {
   return width_;
 }
+
+rectangle box_data::get_border_rectangle(const rectangle& bounds) const noexcept {
+  auto bounds_rect = bounds;
+  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left() + borders()[3].width() + padding().left() + width().value() + padding().right() + borders()[1].width() + margin().right(), bounds_rect.height());
+  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top() + borders()[0].width() + padding().top() + height().value() + padding().bottom() + borders()[2].width() + margin().bottom());
+  
+  auto border_rect = rectangle::offset(bounds_rect, margin().left(), margin().top());
+  border_rect = rectangle::inflate(border_rect, -margin().right() - margin().left(), -margin().bottom() - margin().top());
+  return border_rect;
+}
+
+rectangle box_data::get_content_rectangle(const rectangle& bounds) const noexcept {
+  auto content_rect = rectangle::offset(get_border_rectangle(bounds), borders()[3].width(), borders()[0].width());
+  content_rect = rectangle::inflate(content_rect, -borders()[3].width() - borders()[1].width(), -borders()[0].width() - borders()[2].width());
+  return content_rect;
+}
