@@ -245,5 +245,53 @@ namespace unit_tests {
       assert::is_false(color_data::try_parse("argb(128, 42, 84)", c), csf_);
       assert::is_false(color_data::try_parse("argb(128, 42, 84, 24, 12)", c), csf_);
     }
+    
+    void test_method_(try_parse_with_hsv_color) {
+      color_data c;
+      assert::is_true(color_data::try_parse("hsv(204, 62, 67)", c), csf_);
+      assert::are_equal(color_style::solid, c.style(), csf_);
+      assert::are_equal(1U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::from_hsb(204, 62, 67)}, c.colors(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+    }
+    
+    void test_method_(try_parse_with_bad_hsv_color) {
+      color_data c;
+      assert::is_false(color_data::try_parse("hsv(204, 62, 67", c), csf_);
+      assert::is_false(color_data::try_parse("hsv(204, 62)", c), csf_);
+      assert::is_false(color_data::try_parse("hsv(204, 62, 67, 12)", c), csf_);
+    }
+    
+    void test_method_(try_parse_with_hsva_color) {
+      color_data c;
+      assert::is_true(color_data::try_parse("hsva(204, 62, 67, 128)", c), csf_);
+      assert::are_equal(color_style::solid, c.style(), csf_);
+      assert::are_equal(1U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::from_argb(128, color::from_hsb(204, 62, 67))}, c.colors(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+    }
+    
+    void test_method_(try_parse_with_bad_hsva_color) {
+      color_data c;
+      assert::is_false(color_data::try_parse("hsva(204, 62, 67, 128", c), csf_);
+      assert::is_false(color_data::try_parse("hsva(204, 62, 128)", c), csf_);
+      assert::is_false(color_data::try_parse("hsva(204, 62, 67, 12, 128)", c), csf_);
+    }
+    
+    void test_method_(try_parse_with_ahsv_color) {
+      color_data c;
+      assert::is_true(color_data::try_parse("ahsv(128, 204, 62, 67)", c), csf_);
+      assert::are_equal(color_style::solid, c.style(), csf_);
+      assert::are_equal(1U, c.colors().size(), csf_);
+      collection_assert::are_equal({color::from_argb(128, color::from_hsb(204, 62, 67))}, c.colors(), csf_);
+      assert::are_equal(90, c.angle(), csf_);
+    }
+    
+    void test_method_(try_parse_with_bad_ahsv_color) {
+      color_data c;
+      assert::is_false(color_data::try_parse("ahsv(204, 62, 67", c), csf_);
+      assert::is_false(color_data::try_parse("ahsv(204, 62, 67)", c), csf_);
+      assert::is_false(color_data::try_parse("ahsv(128, 204, 62, 67, 12)", c), csf_);
+    }
   };
 }
