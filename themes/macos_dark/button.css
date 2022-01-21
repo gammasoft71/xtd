@@ -8,7 +8,7 @@ button {
   border-width: 1px;
   border-radius: 5px;
   background-color: linear-gradient(to bottom, system-color(button-face), system-color(button-face));
-  padding: 1px;
+  padding: 1px 1px 1px 3px;
   color: system-color(control-text);
   text-align: center;
   text-decoration: none;

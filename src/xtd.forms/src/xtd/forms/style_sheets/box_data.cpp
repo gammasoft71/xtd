@@ -52,8 +52,14 @@ rectangle box_data::get_border_rectangle(const rectangle& bounds) const noexcept
   return border_rect;
 }
 
+rectangle box_data::get_fill_rectangle(const rectangle& bounds) const noexcept {
+  auto fill_rect = rectangle::offset(get_border_rectangle(bounds), borders()[3].width(), borders()[0].width());
+  fill_rect = rectangle::inflate(fill_rect, -borders()[3].width() - borders()[1].width(), -borders()[0].width() - borders()[2].width());
+  return fill_rect;
+}
+
 rectangle box_data::get_content_rectangle(const rectangle& bounds) const noexcept {
-  auto content_rect = rectangle::offset(get_border_rectangle(bounds), borders()[3].width(), borders()[0].width());
-  content_rect = rectangle::inflate(content_rect, -borders()[3].width() - borders()[1].width(), -borders()[0].width() - borders()[2].width());
+  auto content_rect = rectangle::offset(get_fill_rectangle(bounds), padding().left(), padding().top());
+  content_rect = rectangle::inflate(content_rect, -padding().left() - padding().right(), -padding().top() - padding().bottom());
   return content_rect;
 }

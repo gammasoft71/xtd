@@ -49,18 +49,18 @@ string_format text_data::text_data::make_string_format(const xtd::forms::style_s
   }
   
   if (data.alignment() == content_alignment::top_center) {
-    format.line_alignment(xtd::drawing::string_alignment::center);
-    format.alignment(xtd::drawing::string_alignment::near);
+    format.line_alignment(xtd::drawing::string_alignment::near);
+    format.alignment(xtd::drawing::string_alignment::center);
   }
   
   if (data.alignment() == content_alignment::top_right) {
-    format.line_alignment(xtd::drawing::string_alignment::far);
-    format.alignment(xtd::drawing::string_alignment::near);
+    format.line_alignment(xtd::drawing::string_alignment::near);
+    format.alignment(xtd::drawing::string_alignment::far);
   }
   
   if (data.alignment() == content_alignment::middle_left) {
-    format.line_alignment(xtd::drawing::string_alignment::near);
-    format.alignment(xtd::drawing::string_alignment::center);
+    format.line_alignment(xtd::drawing::string_alignment::center);
+    format.alignment(xtd::drawing::string_alignment::near);
   }
   
   if (data.alignment() == content_alignment::middle_center) {
@@ -69,23 +69,23 @@ string_format text_data::text_data::make_string_format(const xtd::forms::style_s
   }
   
   if (data.alignment() == content_alignment::middle_right) {
-    format.line_alignment(xtd::drawing::string_alignment::far);
-    format.alignment(xtd::drawing::string_alignment::center);
-  }
-  
-  if (data.alignment() == content_alignment::bottom_left) {
-    format.line_alignment(xtd::drawing::string_alignment::near);
-    format.alignment(xtd::drawing::string_alignment::far);
-  }
-  
-  if (data.alignment() == content_alignment::bottom_center) {
     format.line_alignment(xtd::drawing::string_alignment::center);
     format.alignment(xtd::drawing::string_alignment::far);
   }
   
-  if (data.alignment() == content_alignment::bottom_right) {
+  if (data.alignment() == content_alignment::bottom_left) {
     format.line_alignment(xtd::drawing::string_alignment::far);
+    format.alignment(xtd::drawing::string_alignment::near);
+  }
+  
+  if (data.alignment() == content_alignment::bottom_center) {
+    format.line_alignment(xtd::drawing::string_alignment::far);
+    format.alignment(xtd::drawing::string_alignment::center);
+  }
+  
+  if (data.alignment() == content_alignment::bottom_right) {
     format.alignment(xtd::drawing::string_alignment::far);
+    format.line_alignment(xtd::drawing::string_alignment::far);
   }
 
   return format;

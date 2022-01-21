@@ -119,6 +119,7 @@ namespace xtd {
         std::optional<int32_t> width() const noexcept;
         
         xtd::drawing::rectangle get_border_rectangle(const xtd::drawing::rectangle& bounds) const noexcept;
+        xtd::drawing::rectangle get_fill_rectangle(const xtd::drawing::rectangle& bounds) const noexcept;
         xtd::drawing::rectangle get_content_rectangle(const xtd::drawing::rectangle& bounds) const noexcept;
 
       private:
