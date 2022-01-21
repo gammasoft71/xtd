@@ -61,40 +61,47 @@ color_data color_data::parse(const xtd::ustring& text) {
 
 bool color_data::try_parse(const xtd::ustring& text, color_data& result) {
   auto value = text.trim();
-  if (text.starts_with("#") && (value.size() == 4U || value.size() == 5U || value.size() == 7U || value.size() == 9U)) {
+  if (text.starts_with("#")) {
     color c;
     if (try_parse_solid_color(value, c) == false) return false;
     result = color_data(c);
     return true;
   }
+  
+  color c = color::from_name(text);
+  if (c != color::empty) {
+    result = color_data(c);
+    return true;
+  }
+  
   return false;
 }
 
 bool color_data::try_parse_solid_color(const xtd::ustring& text, color& result) {
   if (text.starts_with("#") && text.size() == 4U) {
-    byte_t r;
+    byte_t r = 0;
     if (xtd::try_parse<byte_t>(text.substring(1, 1), r, number_styles::hex_number) == false) return false;
     r += r * 16;
-    byte_t g;
+    byte_t g = 0;
     if (xtd::try_parse<byte_t>(text.substring(2, 1), g, number_styles::hex_number) == false) return false;
     g += g * 16;
-    byte_t b;
+    byte_t b = 0;
     if (xtd::try_parse<byte_t>(text.substring(3, 1), b, number_styles::hex_number) == false) return false;
     b += b * 16;
     result = color::from_argb(r, g, b);
     return true;
   }
   if (text.starts_with("#") && text.size() == 5U) {
-    byte_t a;
+    byte_t a = 0;
     if (xtd::try_parse<byte_t>(text.substring(1, 1), a, number_styles::hex_number) == false) return false;
     a += a * 16;
-    byte_t r;
+    byte_t r = 0;
     if (xtd::try_parse<byte_t>(text.substring(2, 1), r, number_styles::hex_number) == false) return false;
     r += r * 16;
-    byte_t g;
+    byte_t g = 0;
     if (xtd::try_parse<byte_t>(text.substring(3, 1), g, number_styles::hex_number) == false) return false;
     g += g * 16;
-    byte_t b;
+    byte_t b = 0;
     if (xtd::try_parse<byte_t>(text.substring(4, 1), b, number_styles::hex_number) == false) return false;
     b += b * 16;
     result = color::from_argb(a, r, g, b);
