@@ -118,6 +118,9 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         std::optional<int32_t> width() const noexcept;
         
+        xtd::drawing::rectangle get_border_rectangle(const xtd::drawing::rectangle& bounds) const noexcept;
+        xtd::drawing::rectangle get_content_rectangle(const xtd::drawing::rectangle& bounds) const noexcept;
+
       private:
         xtd::forms::padding margin_;
         std::array<xtd::forms::style_sheets::border_data, 4> borders_;

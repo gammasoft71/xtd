@@ -270,7 +270,9 @@ add_sources(
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/label_state.h
   include/xtd/forms/style_sheets/text_data.h
+  include/xtd/forms/style_sheets/text_decoration.h
   include/xtd/forms/style_sheets/text_renderer.h
+  include/xtd/forms/style_sheets/text_transformation.h
   include/xtd/forms/visual_styles/control_state.h
   include/xtd/forms/visual_styles/form_state.h
   include/xtd/forms/visual_styles/label_state.h

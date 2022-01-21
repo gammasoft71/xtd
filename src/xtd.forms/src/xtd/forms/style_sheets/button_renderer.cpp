@@ -11,27 +11,27 @@ using namespace style_sheets;
 using namespace visual_styles;
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds) {
-  draw_button(graphics, bounds, flat_style::standard, push_button_state::normal, nullopt);
+  draw_button(graphics, bounds, flat_style::standard, push_button_state::normal, nullopt, "", nullopt, nullopt);
 }
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style) {
-  draw_button(graphics, bounds, button_style, push_button_state::normal, nullopt);
+  draw_button(graphics, bounds, button_style, push_button_state::normal, nullopt, "", nullopt, nullopt);
 }
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, push_button_state button_state) {
-  draw_button(graphics, bounds, button_style, button_state, nullopt);
+  draw_button(graphics, bounds, button_style, button_state, nullopt, "", nullopt, nullopt);
 }
 
-void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, xtd::forms::flat_style button_style, push_button_state button_state, const optional<color>& back_color) {
-  //border_data border(color_data(color::from_argb(0x23000000)), border_style::solid, 1, 5);
-  //static box_data previous_state = box_data(padding(3, 5, 3, 0), {color_data(color::from_argb(0x23000000)), border_style::solid, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x40FFFFFF), color::from_argb(0x40FFFFFF)}, 180), std::nullopt, std::nullopt);
+void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, push_button_state button_state, const optional<color>& back_color) {
+  draw_button(graphics, bounds, button_style, button_state, nullopt, "", nullopt, nullopt);
+}
 
-  //box_data data = previous_state;
-
-  box_data data = box_data(padding(0, 1, 0, 1), {color_data(color::from_argb(35, 0, 0, 0)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(64, 255, 255, 255), color::from_argb(64, 255, 255, 255)}, 180), std::nullopt, std::nullopt);
-  if (button_state == push_button_state::pressed) data = box_data(padding(0, 1, 0, 1), {color_data(color::from_argb(35, 0, 0, 0)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(93, 255, 255, 255), color::from_argb(93, 255, 255, 255)}, 180), std::nullopt, std::nullopt);
-  //if (button_state == push_button_state::hot) data = box_data(padding(0, 1, 0, 1), {color_data(color::from_argb(35, 0, 0, 0)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x50FFFFFF), color::from_argb(0x50AAAAAA)}, 180), std::nullopt, std::nullopt);
-
-  //previous_state = data;
-  box_renderer::draw_box(graphics, bounds, data);
+void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, push_button_state button_state, const optional<color>& back_color, const ustring& text, const optional<color>& fore_color, const optional<font>& font) {
+  auto box_data = style_sheets::box_data(padding(0, 1, 0, 1), {color_data(color::from_argb(35, 0, 0, 0)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(64, 255, 255, 255), color::from_argb(64, 255, 255, 255)}, 180), std::nullopt, std::nullopt);
+  if (button_state == push_button_state::pressed) box_data = style_sheets::box_data(padding(0, 1, 0, 1), {color_data(color::from_argb(35, 0, 0, 0)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(80, 255, 255, 255), color::from_argb(80, 255, 255, 255)}, 180), std::nullopt, std::nullopt);
+  //if (button_state == push_button_state::hot) box_data = style_sheets::box_data(padding(0, 1, 0, 1), {color_data(color::from_argb(35, 0, 0, 0)), border_style::outset, 1, 5}, padding(1), color_data(color_style::linear_gradient, {color::from_argb(0x50FFFFFF), color::from_argb(0x50AAAAAA)}, 180), std::nullopt, std::nullopt);
+  box_renderer::draw_box(graphics, bounds, box_data);
+  
+  auto text_data = style_sheets::text_data(color_data(color::from_argb(216, 255, 255, 255)), content_alignment::middle_center, system_fonts::default_font());
+  text_renderer::draw_text(graphics, box_data.get_content_rectangle(bounds), text, text_data);
 }

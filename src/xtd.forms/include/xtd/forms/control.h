@@ -884,9 +884,14 @@ namespace xtd {
       
       /// @cond
       /// @todo Remove when render is done.
-      std::optional<xtd::drawing::color> get_fore_color() const {return data_->fore_color;}
+      std::optional<xtd::drawing::font> get_font() const {return data_->font;}
       /// @endcond
       
+      /// @cond
+      /// @todo Remove when render is done.
+      std::optional<xtd::drawing::color> get_fore_color() const {return data_->fore_color;}
+      /// @endcond
+
       /// @brief Retrieves the index of a control within the control collection.
       /// @param child The control to search for in the control collection.
       /// @return A zero-based index value that represents the location of the specified child control within the control collection.
