@@ -372,11 +372,11 @@ bool color_data::try_parse_linear_gradient_color(const xtd::ustring& text, color
         if (angle != -1) return false;
         angle = 315;
       } else if (sub_value.ends_with("deg")) {
+        sub_value = sub_value.replace("deg", "");
         if (angle != -1 || xtd::try_parse<int32_t>(sub_value, angle) == false) return false;
       } else if (try_parse_named_color(sub_value, color))
         colors.push_back(color.colors()[0]);
     }
-    if (value.find(",") != value.npos) value = value.remove(0, value.find(",") + 1);
   }
   if (colors.size() < 2) return false;
   result = color_data(color_style::linear_gradient, colors, angle == -1? 90 : angle);
