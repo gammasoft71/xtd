@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "box_data.h"
+#include "text_data.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,11 +28,17 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         control_data() = default;
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_data class with specified box and color.
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_data class with specified box.
         /// @param box The box of the control.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         explicit control_data(const xtd::forms::style_sheets::box_data& box);
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_data class with specified box and text.
+        /// @param box The box of the control.
+        /// @param text The text of the control.
+        /// @remarks You need to know how the box model works.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        explicit control_data(const xtd::forms::style_sheets::box_data& box, const xtd::forms::style_sheets::text_data& text);
         
         /// @cond
         control_data(const control_data&) = default;
@@ -43,13 +50,13 @@ namespace xtd {
         /// @return The box of the control.
         virtual const xtd::forms::style_sheets::box_data& box() const noexcept;
 
-        /// @brief Gets the color is used to add text effects to the control.
-        /// @return The color is used to add text effects to the control.
-        const xtd::forms::style_sheets::color_data& color() const noexcept;
+        /// @brief Gets the box of the control.
+        /// @return The box of the control.
+        virtual const xtd::forms::style_sheets::text_data& text() const noexcept;
 
       private:
         xtd::forms::style_sheets::box_data box_;
-        xtd::forms::style_sheets::color_data color_ {xtd::drawing::color::black};
+        xtd::forms::style_sheets::text_data text_;
       };
     }
   }

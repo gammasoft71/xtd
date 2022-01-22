@@ -4,7 +4,7 @@
 button {
   margin: 0px 1px 0px 1px;
   border-style: outset;
-  border-color: rgba(0, 0, 0, 35);
+  border-color: system-color(control-dark);
   border-width: 1px;
   border-radius: 5px;
   background-color: linear-gradient(to bottom, system-color(button-face), system-color(button-face));
@@ -27,12 +27,12 @@ button:mixed {
 }
 
 button:default {
-  background-color: linear-gradient(to bottom, #076BD9 , #0067D8);
+  background-color: linear-gradient(to bottom, #177AE5 , #166ECD);
 }
 
 button:disabled {  
   border-color: system-color(gray-text);
-  background-color: linear-gradient(to bottom, rgba(255, 255, 255, 30), rgba(255, 255, 255, 30));
+  background-color: linear-gradient(to bottom, rgba(255, 255, 255, 35), rgba(255, 255, 255, 35));
   color: system-color(gray-text);
 }
 

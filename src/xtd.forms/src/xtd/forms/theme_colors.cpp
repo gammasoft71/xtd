@@ -249,7 +249,7 @@ namespace {
       case xtd::forms::known_themed_color::active_caption: return xtd::drawing::color::from_argb(0xFF9A9A9A);
       case xtd::forms::known_themed_color::active_caption_text: return xtd::drawing::color::from_argb(environment::os_version().is_windows_platform() ? 0xFFE3E3E3 : 0xD8FFFFFF);
       case xtd::forms::known_themed_color::app_workspace: return xtd::drawing::color::from_argb(0xFF262626);
-      case xtd::forms::known_themed_color::button_face: return xtd::drawing::color::from_argb(environment::os_version().is_windows_platform() ? 0xFF6B6B6B : 0x3FFFFFFF);
+      case xtd::forms::known_themed_color::button_face: return xtd::drawing::color::from_argb(environment::os_version().is_windows_platform() ? 0xFF6B6B6B : 0x23FFFFFF);
       case xtd::forms::known_themed_color::button_highlight: return xtd::drawing::color::from_argb(environment::os_version().is_windows_platform() ? 0xFF4A4A4A : 0x19FFFFFF);
       case xtd::forms::known_themed_color::button_shadow: return xtd::drawing::color::from_argb(environment::os_version().is_windows_platform() ? 0xFF232323 : 0x44000000);
       case xtd::forms::known_themed_color::control: return xtd::drawing::color::from_argb(0xFF323232);
