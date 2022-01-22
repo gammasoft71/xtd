@@ -198,20 +198,17 @@ void button_renderer::draw_button_macos(graphics g, const rectangle& bounds, con
 }
 
 void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
-  auto background_color = back_color.has_value() ? back_color.value() : color::transparent;
-  auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
-  auto border_color = control_paint::dark(back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control(), 0.05);
+  auto border_color = xtd::drawing::color::from_argb(35, 0, 0, 0);
   auto button_color = xtd::forms::theme_colors::current_theme().button_face();
-  auto text_color = control_paint::light(foreground_color, 0.1);
+  auto text_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();;
   
   if (state == xtd::forms::visual_styles::push_button_state::pressed || state == xtd::forms::visual_styles::push_button_state::checked)
-    //button_color = bounds.height() <= 25 ? xtd::forms::theme_colors::current_theme().accent() : color::from_argb(85, xtd::forms::theme_colors::current_theme().button_face());
-    button_color = color::from_argb(55, xtd::forms::theme_colors::current_theme().button_face());
+    button_color = color::from_argb(93, xtd::forms::theme_colors::current_theme().button_face());
   else if (state == xtd::forms::visual_styles::push_button_state::disabled) {
     button_color = color::from_argb(30, xtd::forms::theme_colors::current_theme().button_face());
     text_color = xtd::forms::theme_colors::current_theme().gray_text();
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state)
-    if (bounds.height() <= 25) button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent(), 0.15);
+    button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent(), 0.15);
     
   auto button_rect = bounds;
   if (bounds.height() > 25) {
@@ -219,8 +216,7 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
     button_rect.inflate({-2, -1});
   }
   
-  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect.x(), button_rect.y() + 2, button_rect.width(), button_rect.height() - 4, 5);
-  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {button_rect.x(), button_rect.top()}, point {button_rect.x(), button_rect.bottom()}, control_paint::light(button_color, .03), button_color), button_rect.x(), button_rect.y() + 2, button_rect.width() - 1, button_rect.height() - 4, 5);
+  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {button_rect.x(), button_rect.top()}, point {button_rect.x(), button_rect.bottom()}, button_color, button_color), button_rect.x(), button_rect.y() + 2, button_rect.width() - 1, button_rect.height() - 4, 5);
   g.draw_rounded_rectangle(pen(border_color, 1), button_rect.x(), button_rect.y() + 2, button_rect.width() - 1, button_rect.height() - 4, 5);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());

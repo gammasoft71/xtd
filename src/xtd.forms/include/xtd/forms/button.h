@@ -122,7 +122,11 @@ namespace xtd {
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is grow only.
       virtual button& auto_size_mode(forms::auto_size_mode value);
-      
+            
+      /// @brief Get is default button.
+      /// @return true is default button; otherwise false.
+      bool default_button() const {return data_->default_button;}
+
       forms::dialog_result dialog_result() const override {return data_->dialog_result;}
       control& dialog_result(forms::dialog_result dialog_result) override;
       /// @}
