@@ -4,6 +4,6 @@
 control {
   background-color: system-color(control);
   color: system-color(control-text);
-  text-align: center;
+  text-align: middle center;
   text-decoration: none;
 }
