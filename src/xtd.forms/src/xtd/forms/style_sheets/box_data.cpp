@@ -22,6 +22,10 @@ const color_data& box_data::background_color() const noexcept {
   return background_color_;
 }
 
+void box_data::background_color(const color_data& color) noexcept {
+  background_color_ = color;
+}
+
 const array<border_data, 4>& box_data::borders() const noexcept {
   return borders_;
 }

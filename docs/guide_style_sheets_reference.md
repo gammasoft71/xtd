@@ -138,7 +138,7 @@ The following states are supported:
 | :disabled   | The irem is disabled, generally the item is grayed.                                                                                |
 | :flat       | The irem is flat style.                                                                                                            |
 | :flat-popup | The irem is popup flat style.                                                                                                      |
-| :hot        | The item is hot (mouse is on the item).                                                                                            |
+| :hover      | The item is hover (mouse is on the item).                                                                                          |
 | :mixed      | The item is mixed. For the three-state ittem.                                                                                      |
 | :pressed    | The irem is pressed, mouse is down on the item.                                                                                    |
 | :unchecked  | The item is unchecked.                                                                                                             |

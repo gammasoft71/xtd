@@ -87,7 +87,11 @@ namespace xtd {
         /// @return The background color is used to add background effects to the box.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         const xtd::forms::style_sheets::color_data& background_color() const noexcept;
-        
+        /// @brief Sets the background color is used to add background effects to the box.
+        /// @param color The background color is used to add background effects to the box.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        void background_color(const xtd::forms::style_sheets::color_data& color) noexcept;
+
         /// @brief Gets the borders that goes around the padding and content.
         /// @return The borders that goes around the padding and content.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.

@@ -26,6 +26,10 @@ const color_data& text_data::color() const noexcept {
   return color_;
 }
 
+void text_data::color(const color_data& color) noexcept {
+  color_ = color;
+}
+
 text_decoration text_data::decoration() const noexcept {
   return decoration_;
 }
