@@ -163,10 +163,10 @@ namespace xtd {
         
       private:
         bool all_ = true;
-        int left_ = 0;
-        int top_ = 0;
-        int right_ = 0;
-        int bottom_ = 0;
+        int left_ = 3;
+        int top_ = 3;
+        int right_ = 3;
+        int bottom_ = 3;
       };
     }
   }

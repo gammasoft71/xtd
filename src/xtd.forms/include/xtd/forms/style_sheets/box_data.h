@@ -40,7 +40,10 @@ namespace xtd {
         /// | Property                                             | Default value                                                                   |
         /// |------------------------------------------------------|---------------------------------------------------------------------------------|
         /// | xtd::forms::style_sheets::box_data::margin           | 0                                                                               |
-        /// | xtd::forms::style_sheets::box_data::borders          | An array with four xtd::forms::style_sheets::border_data initialized by default |
+        /// | xtd::forms::style_sheets::box_data::border_style     | xtd::forms::style_sheets::border_type::none                                     |
+        /// | xtd::forms::style_sheets::box_data::border_color     | xtd::forms::style_sheets::color_datte(xtd::drawing::color::black)               |
+        /// | xtd::forms::style_sheets::box_data::border_width     | 1                                                                               |
+        /// | xtd::forms::style_sheets::box_data::border_radius    | 0                                                                               |
         /// | xtd::forms::style_sheets::box_data::padding          | 0                                                                               |
         /// | xtd::forms::style_sheets::box_data::background_color | xtd::forms::style_sheets::color_data(xtd::drawing::color::white)                |
         /// | xtd::forms::style_sheets::box_data::width            | std::nullopt                                                                    |
@@ -165,8 +168,8 @@ namespace xtd {
         xtd::drawing::rectangle get_fill_rectangle(const xtd::drawing::rectangle& bounds) const noexcept;
         xtd::drawing::rectangle get_content_rectangle(const xtd::drawing::rectangle& bounds) const noexcept;
 
-        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::border_data object.
-        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::border_data object.
+        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::box_data object.
+        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::box_data object.
         xtd::ustring to_css() const noexcept;
         /// @}
 

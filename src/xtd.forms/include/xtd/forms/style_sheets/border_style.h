@@ -137,10 +137,10 @@ namespace xtd {
         
       private:
         bool all_ = true;
-        border_type left_;
-        border_type top_;
-        border_type right_;
-        border_type bottom_;
+        border_type left_ = border_type::none;
+        border_type top_ = border_type::none;
+        border_type right_ = border_type::none;
+        border_type bottom_ = border_type::none;
       };
     }
   }
