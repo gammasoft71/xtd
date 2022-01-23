@@ -6,7 +6,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
-border_data::border_data(const color_data& color, border_style style, int32_t width, int32_t radius) : color_(color), style_(style), width_(width), radius_(radius) {
+border_data::border_data(const color_data& color, border_type style, int32_t width, int32_t radius) : color_(color), style_(style), width_(width), radius_(radius) {
 }
 
 const color_data& border_data::color() const noexcept {
@@ -17,11 +17,11 @@ void border_data::color(const color_data& value) noexcept {
   color_ = value;
 }
 
-border_style border_data::style() const noexcept {
+border_type border_data::style() const noexcept {
   return style_;
 }
 
-void border_data::style(border_style value) noexcept {
+void border_data::style(border_type value) noexcept {
   style_ = value;
 }
 
@@ -43,8 +43,4 @@ void border_data::width(int32_t value) noexcept {
 
 xtd::ustring border_data::to_string() const noexcept {
   return ustring::format("[style={}, color={}, width={}, radius={}]", style(), color(), width(), radius());
-}
-
-xtd::ustring border_data::to_css() const noexcept {
-  return ustring::format("   border-style: {};\n  border-color: {};\n  border-width:{};  border-radius: {};\n", style(), color(), width(), radius());
 }
