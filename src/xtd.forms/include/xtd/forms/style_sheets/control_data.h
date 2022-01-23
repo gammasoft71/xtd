@@ -49,10 +49,16 @@ namespace xtd {
         /// @brief Gets the box of the control.
         /// @return The box of the control.
         virtual const xtd::forms::style_sheets::box_data& box() const noexcept;
+        /// @brief Gets the box of the control.
+        /// @return The box of the control.
+        virtual xtd::forms::style_sheets::box_data& box() noexcept;
 
         /// @brief Gets the box of the control.
         /// @return The box of the control.
         virtual const xtd::forms::style_sheets::text_data& text() const noexcept;
+        /// @brief Gets the box of the control.
+        /// @return The box of the control.
+        virtual xtd::forms::style_sheets::text_data& text() noexcept;
 
       private:
         xtd::forms::style_sheets::box_data box_;
