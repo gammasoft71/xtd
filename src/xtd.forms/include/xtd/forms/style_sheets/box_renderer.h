@@ -33,6 +33,13 @@ namespace xtd {
         /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the box.
         /// @param data The xtd::forms::style_sheets::box_data that specifies the style for the box.
         static void draw_box(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
+        
+      private:
+        static void draw_line_top(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
+        static void draw_line_right(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
+        static void draw_line_bottom(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
+        static void draw_line_left(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
+        static xtd::drawing::dash_style border_type_to_dash_style(xtd::forms::style_sheets::border_type value);
       };
     }
   }

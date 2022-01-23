@@ -20,13 +20,6 @@ void form_renderer::draw_form(graphics& graphics, const rectangle& bounds, flat_
 }
 
 void form_renderer::draw_form(graphics& graphics, const rectangle& bounds, xtd::forms::flat_style form_style, form_state form_state, const optional<color>& back_color) {
-  array<border_data, 4> borders = {
-    border_data {color_data(color::black), border_style::none, 0, 0},
-    border_data {color_data(color::black), border_style::none, 0, 0},
-    border_data {color_data(color::black), border_style::none, 0, 0},
-    border_data {color_data(color::black), border_style::none, 0, 0},
-  };
-  box_data data(padding(0), borders, padding(0), color_data(back_color.value_or(color::light_gray)), std::nullopt, std::nullopt);
-  
+  box_data data(padding(0), border_style(border_type::none), border_color(color::black), border_width(0), border_radius(0), padding(0), color_data(back_color.value_or(color::light_gray)), std::nullopt, std::nullopt);
   box_renderer::draw_box(graphics, bounds, data);
 }

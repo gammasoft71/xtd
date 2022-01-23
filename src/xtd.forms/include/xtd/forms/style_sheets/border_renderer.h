@@ -45,7 +45,7 @@ namespace xtd {
         static void draw_line_right(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const std::array<xtd::forms::style_sheets::border_data, 4>& data);
         static void draw_line_bottom(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const std::array<xtd::forms::style_sheets::border_data, 4>& data);
         static void draw_line_left(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const std::array<xtd::forms::style_sheets::border_data, 4>& data);
-        static xtd::drawing::dash_style border_style_to_dash_style(xtd::forms::style_sheets::border_style value);
+        static xtd::drawing::dash_style border_type_to_dash_style(xtd::forms::style_sheets::border_type value);
       };
     }
   }

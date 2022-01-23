@@ -6,16 +6,10 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
-box_data::box_data(const forms::padding& margin, const array<border_data, 4>& borders, const forms::padding& padding, const color_data& background_color) : margin_(margin), borders_(borders), padding_(padding), background_color_(background_color) {
+box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const forms::padding& padding, const color_data& background_color) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color) {
 }
 
-box_data::box_data(const forms::padding& margin, const array<border_data, 4>& borders, const forms::padding& padding, const color_data& background_color, optional<int32_t> width, optional<int32_t> height) : margin_(margin), borders_(borders), padding_(padding), background_color_(background_color), width_(width), height_(height) {
-}
-
-box_data::box_data(const forms::padding& margin, const border_data& border, const forms::padding& padding, const color_data& background_color) : margin_(margin), borders_({border, border, border, border}), padding_(padding), background_color_(background_color) {
-}
-
-box_data::box_data(const forms::padding& margin, const border_data& border, const forms::padding& padding, const color_data& background_color, optional<int32_t> width, optional<int32_t> height) : margin_(margin), borders_({border, border, border, border}), padding_(padding), background_color_(background_color), width_(width), height_(height) {
+box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const forms::padding& padding, const color_data& background_color, optional<int32_t> width, optional<int32_t> height) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), width_(width), height_(height) {
 }
 
 const color_data& box_data::background_color() const noexcept {
@@ -26,8 +20,36 @@ void box_data::background_color(const color_data& color) noexcept {
   background_color_ = color;
 }
 
-const array<border_data, 4>& box_data::borders() const noexcept {
-  return borders_;
+const xtd::forms::style_sheets::border_color& box_data::border_color() const noexcept {
+  return border_color_;
+}
+
+void box_data::border_color(const xtd::forms::style_sheets::border_color& value) noexcept {
+  border_color_ = value;
+}
+
+xtd::forms::style_sheets::border_radius box_data::border_radius() const noexcept {
+  return border_radius_;
+}
+
+void box_data::border_radius(xtd::forms::style_sheets::border_radius value) noexcept {
+  border_radius_ = value;
+}
+
+xtd::forms::style_sheets::border_style box_data::border_style() const noexcept {
+  return border_style_;
+}
+
+void box_data::border_style(xtd::forms::style_sheets::border_style value) noexcept {
+  border_style_ = value;
+}
+
+xtd::forms::style_sheets::border_width box_data::border_width() const noexcept {
+  return border_width_;
+}
+
+void box_data::border_width(xtd::forms::style_sheets::border_width value) noexcept {
+  border_width_ = value;
 }
 
 optional<int32_t> box_data::height() const noexcept {
@@ -46,10 +68,35 @@ optional<int32_t> box_data::width() const noexcept {
   return width_;
 }
 
+bool box_data::from_css(const xtd::ustring& css_text, box_data& result) {
+  auto key_values = css_text.replace("\n", "").replace("\r", "").split({';'});
+  result = box_data();
+  for (auto item : key_values) {
+    auto key_value = item.split({':'});
+    if (key_values.size() != 2U) return false;
+    key_value[0] = key_value[0].trim();
+    key_value[1] = key_value[0].trim();
+    
+    if (key_value[0] == "border-style") {
+      if (try_parse_border_style(key_value[1], result.border_style_) == false) return false;
+    }
+    if (key_value[0] == "border-color") {
+      if (try_parse_border_color(key_value[1], result.border_color_) == false) return false;
+    }
+    if (key_value[0] == "border-width") {
+      if (try_parse_border_width(key_value[1], result.border_width_) == false) return false;
+    }
+    if (key_value[0] == "border-radius") {
+      if (try_parse_border_radius(key_value[1], result.border_radius_) == false) return false;
+    }
+  }
+  return true;
+}
+
 rectangle box_data::get_border_rectangle(const rectangle& bounds) const noexcept {
   auto bounds_rect = bounds;
-  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left() + borders()[3].width() + padding().left() + width().value() + padding().right() + borders()[1].width() + margin().right(), bounds_rect.height());
-  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top() + borders()[0].width() + padding().top() + height().value() + padding().bottom() + borders()[2].width() + margin().bottom());
+  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left() + border_width().left() + padding().left() + width().value() + padding().right() + border_width().right() + margin().right(), bounds_rect.height());
+  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top() + border_width().top() + padding().top() + height().value() + padding().bottom() + border_width().bottom() + margin().bottom());
   
   auto border_rect = rectangle::offset(bounds_rect, margin().left(), margin().top());
   border_rect = rectangle::inflate(border_rect, -margin().right() - margin().left(), -margin().bottom() - margin().top());
@@ -57,8 +104,8 @@ rectangle box_data::get_border_rectangle(const rectangle& bounds) const noexcept
 }
 
 rectangle box_data::get_fill_rectangle(const rectangle& bounds) const noexcept {
-  auto fill_rect = rectangle::offset(get_border_rectangle(bounds), borders()[3].width(), borders()[0].width());
-  fill_rect = rectangle::inflate(fill_rect, -borders()[3].width() - borders()[1].width(), -borders()[0].width() - borders()[2].width());
+  auto fill_rect = rectangle::offset(get_border_rectangle(bounds), border_width().left(), border_width().top());
+  fill_rect = rectangle::inflate(fill_rect, -border_width().left() - border_width().right(), -border_width().top() - border_width().bottom());
   return fill_rect;
 }
 
@@ -66,4 +113,59 @@ rectangle box_data::get_content_rectangle(const rectangle& bounds) const noexcep
   auto content_rect = rectangle::offset(get_fill_rectangle(bounds), padding().left(), padding().top());
   content_rect = rectangle::inflate(content_rect, -padding().left() - padding().right(), -padding().top() - padding().bottom());
   return content_rect;
+}
+
+xtd::ustring box_data::to_css() const noexcept {
+  //return ustring::format("   border-style: {};\n  border-color: {};\n  border-width:{};  border-radius: {};\n", style(), color(), width(), radius());
+  return "";
+}
+
+bool box_data::try_parse_border_color(const ustring& text, xtd::forms::style_sheets::border_color& border_color) {
+  return false;
+}
+
+bool box_data::try_parse_border_style(const ustring& text, xtd::forms::style_sheets::border_style& border_style) {
+  static map<ustring, xtd::forms::style_sheets::border_type> border_types = {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}};
+  auto values = text.split();
+  if (values.size() < 1 || values.size() > 4) return false;
+
+  if (values.size() == 1U) {
+    auto it = border_types.find(values[0]);
+    if (it == border_types.end()) return false;
+    border_style = xtd::forms::style_sheets::border_style(it->second);
+  } else {
+    auto it = border_types.find(values[0]);
+    if (it == border_types.end()) return false;
+    border_type top = it->second, right = it->second, bottom = it->second, left = it->second;
+    if (values.size() >= 2) {
+      it = border_types.find(values[1]);
+      if (it == border_types.end()) return false;
+      right = it->second;
+    }
+    if (values.size() >= 3) {
+      it = border_types.find(values[2]);
+      if (it == border_types.end()) return false;
+      bottom = it->second;
+    }
+    if (values.size() == 4) {
+      it = border_types.find(values[3]);
+      if (it == border_types.end()) return false;
+      left = it->second;
+    }
+    border_style = xtd::forms::style_sheets::border_style(left, top, right, bottom);
+  }
+  
+  return true;
+}
+
+bool box_data::try_parse_border_radius(const ustring &text, xtd::forms::style_sheets::border_radius& border_radius) {
+  return false;
+}
+
+bool box_data::try_parse_border_width(const ustring &text, xtd::forms::style_sheets::border_width& border_width) {
+  return false;
+}
+
+bool box_data::try_parse_padding(const ustring &text, xtd::forms::padding& padding) {
+  return false;
 }

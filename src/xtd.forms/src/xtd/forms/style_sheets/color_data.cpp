@@ -12,6 +12,8 @@ using namespace xtd::drawing::drawing2d;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
+const color_data color_data::empty {true};
+
 color_data::color_data(const color& color) : colors_({color}) {
 }
 
@@ -37,6 +39,10 @@ const std::vector<xtd::drawing::color>& color_data::colors() const noexcept {
 
 int32_t color_data::angle() const noexcept {
   return angle_;
+}
+
+bool color_data::from_css(const xtd::ustring& css_text, color_data& result) {
+  return try_parse(css_text, result);
 }
 
 std::unique_ptr<xtd::drawing::brush> color_data::make_brush(const xtd::forms::style_sheets::color_data& color, const xtd::drawing::rectangle& rect) {

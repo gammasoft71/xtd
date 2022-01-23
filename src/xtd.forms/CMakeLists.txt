@@ -251,9 +251,13 @@ add_sources(
   include/xtd/forms/layout/arranged_element_collection.h
   include/xtd/forms/layout/sorter_none.h
   include/xtd/forms/properties/resources.h
+  include/xtd/forms/style_sheets/border_color.h
   include/xtd/forms/style_sheets/border_data.h
-  include/xtd/forms/style_sheets/border_renderer.h
+  include/xtd/forms/style_sheets/border_radius.h
   include/xtd/forms/style_sheets/border_style.h
+  include/xtd/forms/style_sheets/border_renderer.h
+  include/xtd/forms/style_sheets/border_type.h
+  include/xtd/forms/style_sheets/border_width.h
   include/xtd/forms/style_sheets/box_data.h
   include/xtd/forms/style_sheets/box_renderer.h
   include/xtd/forms/style_sheets/button_data.h

@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/drawing/brush.h>
 #include <xtd/drawing/color.h>
@@ -28,8 +29,10 @@ namespace xtd {
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
       /// @remarks This class is used by xtd::forms::style_sheets::color_renderer.
-      class forms_export_ color_data : public xtd::object {
+      class forms_export_ color_data : public xtd::iequatable<color_data>, public xtd::object {
       public:
+        static const color_data empty;
+        
         /// @name Constructors
         
         /// @{
@@ -108,6 +111,15 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        bool equals (const object& other) const noexcept override {return is<color_data>(other) ? equals(static_cast<const color_data&>(other)) : false;}
+        bool equals (const color_data& other) const noexcept override {return style_ == other.style_ && colors_ == other.colors_ && angle_ == other.angle_ && empty_ == other.empty_;}
+
+        /// @brief Creates a xtd::forms::style_sheets::color_data object from the specified css text.
+        /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::color_data object.
+        /// @param result The xtd::forms::style_sheets::color_data class that this method creates.
+        /// @return true if succeed; otherwise false.
+        static bool from_css(const xtd::ustring& css_text, color_data& result);
+
         /// @brief Creates a xtd::drawing::brush from specified color data and rectangle.
         /// @param color Contains color data.
         /// @param rect The xtd::drawing::rectangle neeed for linear gradient brush
@@ -133,6 +145,7 @@ namespace xtd {
         /// @}
 
       private:
+        color_data(bool empty) : colors_({}), empty_(true) {}
         static xtd::ustring angle_to_string(int32_t angle);
         static xtd::ustring color_to_string(const xtd::drawing::color& color);
         static ustring remove_key(const xtd::ustring& text);
@@ -153,6 +166,7 @@ namespace xtd {
         color_style style_ = color_style::solid;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black};
         int32_t angle_ = 180;
+        bool empty_ = false;
       };
     }
   }
