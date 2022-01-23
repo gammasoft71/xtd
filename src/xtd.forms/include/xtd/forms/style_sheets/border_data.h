@@ -25,6 +25,9 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::border_renderer.
       class forms_export_ border_data : public xtd::object {
       public:
+        /// @name Constructors
+
+        /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_data class.
         /// @remarks The following table shows the default values for the properties :
         /// | Property                                      | Default value                                                      |
@@ -40,29 +43,55 @@ namespace xtd {
         /// @param width The width specifies the width of the border.
         /// @param radius The radius is used to add rounded borders to an element.
         border_data(const xtd::forms::style_sheets::color_data& color, xtd::forms::style_sheets::border_style style, int32_t width, int32_t radius);
+        /// @}
         
         /// @cond
         border_data(const border_data&) = default;
         border_data(border_data&&) = default;
         border_data& operator=(const border_data&) = default;
         /// @endcond
+
+        /// @name Proeprties
         
+        /// @{
         /// @brief Gets the color is used to set the color of the border.
         /// @return The color is used to set the color of the border.
         const xtd::forms::style_sheets::color_data& color() const noexcept;
-        
+        /// @brief Sets the color is used to set the color of the border.
+        /// @param value The color is used to set the color of the border.
+        void color(const xtd::forms::style_sheets::color_data& value) noexcept;
+
         /// @brief Gets the radius is used to add rounded borders to an element.
         /// @return The radius is used to add rounded borders to an element.
         int32_t radius() const noexcept;
-        
+        /// @brief Sets the radius is used to add rounded borders to an element.
+        /// @param value The radius is used to add rounded borders to an element.
+        void radius(int32_t value) noexcept;
+
         /// @brief Gets the style specifies what kind of border to display.
         /// @return The style specifies what kind of border to display.
         xtd::forms::style_sheets::border_style style() const noexcept;
-        
+        /// @brief Sets the style specifies what kind of border to display.
+        /// @param value The style specifies what kind of border to display.
+        void style(xtd::forms::style_sheets::border_style value) noexcept;
+
         /// @brief Gets the width specifies the width of the border.
         /// @return The width specifies the width of the border.
         int32_t width() const noexcept;
+        /// @brief Sets the width specifies the width of the border.
+        /// @param value The width specifies the width of the border.
+        void width(int32_t value) noexcept;
+        /// @}
         
+        /// @method
+        
+        /// @}
+        xtd::ustring to_string() const noexcept override;
+        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::border_data object.
+        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::border_data object.
+        xtd::ustring to_css() const noexcept;
+        /// @}
+
       private:
         xtd::forms::style_sheets::color_data color_;
         xtd::forms::style_sheets::border_style style_ = xtd::forms::style_sheets::border_style::none;

@@ -30,6 +30,9 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::color_renderer.
       class forms_export_ color_data : public xtd::object {
       public:
+        /// @name Constructors
+        
+        /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::color_data class.
         /// @remarks The following table shows the default values for the properties :
         /// | Property                                     | Default value                                         |
@@ -65,6 +68,7 @@ namespace xtd {
         /// @exception xtd::argument_exception colors is empty.
         /// @exception xtd::not_supported_exception if xtd::forms::style_sheets::color_data::style is not of xtd::forms::style_sheets::color_style::solid and not xtd::forms::style_sheets::color_style::linear_gradient.
         color_data(xtd::forms::style_sheets::color_style style, const std::vector<xtd::drawing::color>& colors, int32_t angle);
+        /// @}
 
         /// @cond
         color_data(const color_data&) = default;
@@ -72,31 +76,65 @@ namespace xtd {
         color_data& operator=(const color_data&) = default;
         /// @endcond
         
+        /// @name Properties
+        
+        /// @{
         /// @brief Gets the style specifies what kind of color to display.
         /// @return The style specifies what kind of color to display.
         xtd::forms::style_sheets::color_style style() const noexcept;
-        
+        /// @brief Sets the style specifies what kind of color to display.
+        /// @param value The style specifies what kind of color to display.
+        void style(xtd::forms::style_sheets::color_style value) noexcept;
+
         /// @brief Gets the colors specifies what colors to display.
         /// @return The colors specifies what colors to display.
         /// @remarks For xtd::forms::style_sheets::color_style::color, only the first color is used.
         const std::vector<xtd::drawing::color>& colors() const noexcept;
-        
+        /// @brief Sets the colors specifies what colors to display.
+        /// @param value The colors specifies what colors to display.
+        /// @remarks For xtd::forms::style_sheets::color_style::color, only the first color is used.
+        void colors(const std::vector<xtd::drawing::color>& value) noexcept;
+
         /// @brief Gets the angle specifies the gradient direction.
         /// @return The angle specifies the gradient direction.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         int32_t angle() const noexcept;
+        /// @brief Sets the angle specifies the gradient direction.
+        /// @param value The angle specifies the gradient direction.
+        /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
+        void angle(int32_t value) noexcept;
+        /// @}
+
+        /// @name Methods
         
+        /// @{
         /// @brief Creates a xtd::drawing::brush from specified color data and rectangle.
         /// @param color Contains color data.
         /// @param rect The xtd::drawing::rectangle neeed for linear gradient brush
         /// @return New instance of brush.
         static std::unique_ptr<xtd::drawing::brush> make_brush(const xtd::forms::style_sheets::color_data& color, const xtd::drawing::rectangle& rect);
 
+        /// @brief Creates a xtd::forms::style_sheets::color_data object from the specified text.
+        /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::color_data object.
+        /// @return The xtd::forms::style_sheets::color_data class that this method creates.
+        /// @exception xtd::argument_exception The text is not a xtd::forms::style_sheets::color_data object.
         static color_data parse(const xtd::ustring& text);
+
+        xtd::ustring to_string() const noexcept override;
+        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::border_data object.
+        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::border_data object.
+        xtd::ustring to_css() const noexcept;
         
+        /// @brief Creates a xtd::forms::style_sheets::color_data object from the specified text.
+        /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::color_data object.
+        /// @param result The xtd::forms::style_sheets::color_data class that this method creates.
+        /// @return true if succeed; otherwise false.
         static bool try_parse(const xtd::ustring& text, color_data& result);
+        /// @}
 
       private:
+        static xtd::ustring angle_to_string(int32_t angle);
+        static xtd::ustring color_to_string(const xtd::drawing::color& color);
         static ustring remove_key(const xtd::ustring& text);
         static bool try_parse_hash_color(const xtd::ustring& text, color_data& result);
         static bool try_parse_named_color(const xtd::ustring& text, color_data& result);
@@ -111,9 +149,10 @@ namespace xtd {
         static bool try_parse_ahsl_color(const xtd::ustring& text, color_data& result);
         static bool try_parse_system_color(const xtd::ustring& text, color_data& result);
         static bool try_parse_linear_gradient_color(const xtd::ustring& text, color_data& result);
+        
         color_style style_ = color_style::solid;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black};
-        int32_t angle_ = 90;
+        int32_t angle_ = 180;
       };
     }
   }
