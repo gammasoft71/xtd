@@ -31,17 +31,13 @@ namespace xtd {
         dotted,
         /// @brief Defines a double border.
         double_border,
-        /// @brief Defines a 3D grooved border.
-        /// @remarks The effect depends on the border color value.
+        /// @brief Defines a 3D grooved border. The effect depends on the border color value.
         groove,
-        /// @brief Defines a 3D inset border.
-        /// @remarks The effect depends on the border color value.
+        /// @brief Defines a 3D inset border. The effect depends on the border color value.
         inset,
-        /// @brief Defines a 3D outset border.
-        /// @remarks The effect depends on the border color value.
+        /// @brief Defines a 3D outset border. The effect depends on the border color value.
         outset,
-        /// @brief Defines a 3D ridged border.
-        /// @remarks The effect depends on the border color value.
+        /// @brief Defines a 3D ridged border. The effect depends on the border color value.
         ridge,
         /// @brief Defines a solid border
         solid,
