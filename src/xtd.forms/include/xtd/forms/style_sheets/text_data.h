@@ -34,15 +34,19 @@ namespace xtd {
         /// @endcond
         
         xtd::forms::content_alignment alignment() const noexcept;
-        
+        void alignment(xtd::forms::content_alignment value) noexcept;
+
         const xtd::forms::style_sheets::color_data& color() const noexcept;
-        void color(const xtd::forms::style_sheets::color_data& color) noexcept;
+        void color(const xtd::forms::style_sheets::color_data& value) noexcept;
         
         xtd::forms::style_sheets::text_decoration decoration() const noexcept;
-        
+        void decoration(xtd::forms::style_sheets::text_decoration value) noexcept;
+
         xtd::forms::style_sheets::text_transformation transformation() const noexcept;
-        
+        void transformation(xtd::forms::style_sheets::text_transformation value) noexcept;
+
         const xtd::drawing::font& font() const noexcept;
+        void font(const xtd::drawing::font& value) noexcept;
 
         static xtd::drawing::string_format make_string_format(const xtd::forms::style_sheets::text_data& data);
 

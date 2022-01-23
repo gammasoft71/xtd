@@ -22,24 +22,40 @@ content_alignment text_data::alignment() const noexcept {
   return alignment_;
 }
 
+void text_data::alignment(content_alignment value) noexcept {
+  alignment_ = value;
+}
+
 const color_data& text_data::color() const noexcept {
   return color_;
 }
 
-void text_data::color(const color_data& color) noexcept {
-  color_ = color;
+void text_data::color(const color_data& value) noexcept {
+  color_ = value;
 }
 
 text_decoration text_data::decoration() const noexcept {
   return decoration_;
 }
 
+void text_data::decoration(text_decoration value) noexcept {
+  decoration_ = value;
+}
+
 text_transformation text_data::transformation() const noexcept {
   return transformation_;
 }
 
+void text_data::transformation(text_transformation value) noexcept {
+  transformation_ = value;
+}
+
 const font& text_data::font() const noexcept {
   return font_;
+}
+
+void text_data::font(const drawing::font& value) noexcept {
+  font_ = value;
 }
 
 string_format text_data::text_data::make_string_format(const xtd::forms::style_sheets::text_data& data) {

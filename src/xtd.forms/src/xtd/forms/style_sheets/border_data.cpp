@@ -13,14 +13,38 @@ const color_data& border_data::color() const noexcept {
   return color_;
 }
 
+void border_data::color(const color_data& value) noexcept {
+  color_ = value;
+}
+
 border_style border_data::style() const noexcept {
   return style_;
+}
+
+void border_data::style(border_style value) noexcept {
+  style_ = value;
 }
 
 int32_t border_data::radius() const noexcept {
   return radius_;
 }
 
+void border_data::radius(int32_t value) noexcept {
+  radius_ = value;
+}
+
 int32_t border_data::width() const noexcept {
   return width_;
+}
+
+void border_data::width(int32_t value) noexcept {
+  width_ = value;
+}
+
+xtd::ustring border_data::to_string() const noexcept {
+  return ustring::format("[style={}, color={}, width={}, radius={}]", style(), color(), width(), radius());
+}
+
+xtd::ustring border_data::to_css() const noexcept {
+  return ustring::format("   border-style: {};\n  border-color: {};\n  border-width:{};  border-radius: {};\n", style(), color(), width(), radius());
 }

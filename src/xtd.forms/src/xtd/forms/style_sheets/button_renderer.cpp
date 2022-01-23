@@ -89,6 +89,7 @@ void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, f
   diagnostics::debug::write_line(ustring::format("{} - style = {}", text, button_style));
   diagnostics::debug::write_line(ustring::format("{} - back_color = {}", text, back_color));
   diagnostics::debug::write_line(ustring::format("{} - fore_color = {}", text, fore_color));
+  diagnostics::debug::write_line(ustring::format("{} - font = {}", text, font));
   auto pseudo_state_base = pseudo_state::standard;
   if (button_style == flat_style::flat) pseudo_state_base = pseudo_state::flat;
   if (button_style == flat_style::popup) pseudo_state_base = pseudo_state::popup;
@@ -106,11 +107,9 @@ void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, f
   if (button_data_iterator == control_styles::button_datas().end()) throw invalid_operation_exception(csf_);
 
   auto current_button_data = button_data_iterator->second;
-  if ((button_state == push_button_state::normal || button_state == push_button_state::default_state) && back_color.has_value() && button_data_iterator->second.box().background_color().style() == color_style::solid)
-    current_button_data.box().background_color(back_color.value());
-
-  if (fore_color.has_value())
-    current_button_data.text().color(fore_color.value());
+  if ((button_state == push_button_state::normal || button_state == push_button_state::default_state) && back_color.has_value() && button_data_iterator->second.box().background_color().style() == color_style::solid) current_button_data.box().background_color(back_color.value());
+  if (fore_color.has_value()) current_button_data.text().color(fore_color.value());
+  if (font.has_value()) current_button_data.text().font(font.value());
 
   box_renderer::draw_box(graphics, bounds, current_button_data.box());
   text_renderer::draw_text(graphics, current_button_data.box().get_content_rectangle(bounds), text, current_button_data.text());
