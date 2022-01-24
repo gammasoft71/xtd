@@ -7,7 +7,7 @@ button {
   border-color: system-color(control-dark);
   border-width: 1px;
   border-radius: 5px;
-  background-color: linear-gradient(system-color(button-face), system-color(button-face));
+  background-image: linear-gradient(system-color(button-face), system-color(button-face));
   padding: 1px 1px 1px 3px;
   color: system-color(control-text);
   text-align: middle center;
@@ -28,24 +28,24 @@ button:mixed {
 
 button:disabled {  
   border-color: system-color(gray-text);
-  background-color: gba(255, 255, 255, 35);
+  background-image: gba(255, 255, 255, 35);
   color: system-color(gray-text);
 }
 
 button:default {
-  background-color: linear-gradient(#177AE5 , #166ECD);
+  background-image: linear-gradient(#177AE5 , #166ECD);
 }
 
 button:default:pressed {
-  background-color: linear-gradient(#24A0F2 , #2194E5);
+  background-image: linear-gradient(#24A0F2 , #2194E5);
 }
 
 button:default:checked {
-  background-color: linear-gradient(#24A0F2 , #2194E5);
+  background-image: linear-gradient(#24A0F2 , #2194E5);
 }
 
 button:default:mixed {
-  background-color: linear-gradient(#24A0F2 , #2194E5);
+  background-image: linear-gradient(#24A0F2 , #2194E5);
 }
 
 button:default:disabled {  
