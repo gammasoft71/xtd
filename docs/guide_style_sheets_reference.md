@@ -759,7 +759,7 @@ Images used in xtd can be customized using the following properties:
 
 # See also
 ​
-* [Style sheets reference](guide_style_sheets_reference.md)
+* [Style sheets overview](guide_style_sheets_overview.md)
 * [Box model](guide_style_sheets_box_model.md)
 * [Guides](guides.md)
 * [Documentation](documentation.md)
