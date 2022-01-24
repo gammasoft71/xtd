@@ -756,3 +756,14 @@ Images used in xtd can be customized using the following properties:
 | xtd           | xtd-drawing                        | [xtd::drawing::system_image::from_name("xtd-drawing")](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__images.html#a0cdc35ee4c41a69247c94e85e0f495b5)                        |
 | xtd           | xtd-io                             | [xtd::drawing::system_image::from_name("xtd-io")](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__images.html#a0cdc35ee4c41a69247c94e85e0f495b5)                             |
 | xtd           | xtd-strings                        | [xtd::drawing::system_image::from_name("xtd-strings")](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__images.html#a0cdc35ee4c41a69247c94e85e0f495b5)                        |
+
+# See also
+​
+* [Style sheets reference](guide_style_sheets_reference.md)
+* [Box model](guide_style_sheets_box_model.md)
+* [Guides](guides.md)
+* [Documentation](documentation.md)
+
+______________________________________________________________________________________________
+
+© 2022 Gammasoft.

@@ -59,7 +59,6 @@ The total height of an element should be calculated like this:
 
 Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
 
-
 # See also
 ​
 * [Style sheets reference](guide_style_sheets_reference.md)
