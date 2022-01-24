@@ -120,7 +120,34 @@ xtd::ustring box_data::to_css() const noexcept {
   return "";
 }
 
+std::vector<xtd::ustring> box_data::split_border_colors(const xtd::ustring& text) {
+  static vector<ustring> start_color_keywords {"rgb", "rgba", "argb", "hsv", "hsva", "ahsv", "hsl", "hsla", "ahsl", "#", "linear-gradient", "radial-gradient", "conic-gradient"};
+  vector<ustring> result;
+  
+  return result;
+}
+
 bool box_data::try_parse_border_color(const ustring& text, xtd::forms::style_sheets::border_color& border_color) {
+  vector<ustring> values = split_border_colors(text);
+  if (values.size() < 1 || values.size() > 4) return false;
+
+  color_data color;
+  if (color_data::try_parse(values[0], color) == false) return false;
+  border_color.all(color);
+
+  if (values.size() >= 2U) {
+    if (color_data::try_parse(values[1], color) == false) return false;
+    border_color.right(color);
+  }
+  if (values.size() >= 3U) {
+    if (color_data::try_parse(values[2], color) == false) return false;
+    border_color.bottom(color);
+  }
+  if (values.size() >= 4U) {
+    if (color_data::try_parse(values[3], color) == false) return false;
+    border_color.left(color);
+  }
+  
   return false;
 }
 
@@ -129,30 +156,24 @@ bool box_data::try_parse_border_style(const ustring& text, xtd::forms::style_she
   auto values = text.split();
   if (values.size() < 1 || values.size() > 4) return false;
 
-  if (values.size() == 1U) {
-    auto it = border_types.find(values[0]);
+  auto it = border_types.find(values[0]);
+  if (it == border_types.end()) return false;
+  border_style.all(it->second);
+
+  if (values.size() >= 2) {
+    it = border_types.find(values[1]);
     if (it == border_types.end()) return false;
-    border_style = xtd::forms::style_sheets::border_style(it->second);
-  } else {
-    auto it = border_types.find(values[0]);
+    border_style.right(it->second);
+  }
+  if (values.size() >= 3) {
+    it = border_types.find(values[2]);
     if (it == border_types.end()) return false;
-    border_type top = it->second, right = it->second, bottom = it->second, left = it->second;
-    if (values.size() >= 2) {
-      it = border_types.find(values[1]);
-      if (it == border_types.end()) return false;
-      right = it->second;
-    }
-    if (values.size() >= 3) {
-      it = border_types.find(values[2]);
-      if (it == border_types.end()) return false;
-      bottom = it->second;
-    }
-    if (values.size() == 4) {
-      it = border_types.find(values[3]);
-      if (it == border_types.end()) return false;
-      left = it->second;
-    }
-    border_style = xtd::forms::style_sheets::border_style(left, top, right, bottom);
+    border_style.bottom(it->second);
+  }
+  if (values.size() == 4) {
+    it = border_types.find(values[3]);
+    if (it == border_types.end()) return false;
+    border_style.left(it->second);
   }
   
   return true;
