@@ -20,6 +20,7 @@ The xtd guides provide an explanation on how to use the important features of th
 * Style sheets
   * [Overview](guide_style_sheets_overview.md)
   * [Reference](guide_style_sheets_reference.md)
+  * [Box model](guide_style_sheets_box_model.md)
 
 # See also
 ​
