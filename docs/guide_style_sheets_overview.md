@@ -38,6 +38,27 @@ button:pressed {
 It can be noticed that only the properties that differ with the standard pseudo state are expressed.
 The other properties will be the same as those of the standard preudo state.
 
+### Remarks
+
+we can notice that the property is written like this :
+
+```css
+  background-color: linear-gradient(system-color(button-face), system-color(button-face));
+```
+
+when we could have simply written this:
+
+```css
+  background-color: system-color(button-face);
+```
+
+The difference between the two cases is that if you change the background color of the button by programming, in the first case, the button is not impacted while in the second case the button will take the color defined by programming.
+ So it's a design choice.
+
+A solid color can be replaced on the fly while a gradient color cannot.
+
+In the case of our example we don't want a change of color to change the appearance of the button because we can imagine that the color of the system button-face is semi-transparent.
+
 ## Style sheet usage
 
 Comming soon...
