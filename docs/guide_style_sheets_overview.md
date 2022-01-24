@@ -2,10 +2,41 @@
 
 We will now see a few examples to get started with using xtd style sheets.
 
-## CSS
+## CSS usage
 
 Follow the [css tutorial](https://www.w3schools.com/css/default.asp) to read or write CSS style sheets.
 
+CSS is used to define styles for xtd controls.
+
+### xtd css example
+
+The following example shows part of the style sheet of a button control for standard pseudo state :
+
+```css
+button {
+  margin: 0px 1px 0px 1px;
+  border-style: outset;
+  border-color: system-color(control-dark);
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: linear-gradient(system-color(button-face), system-color(button-face));
+  padding: 1px 1px 1px 3px;
+  color: system-color(control-text);
+  text-align: middle center;
+  text-decoration: none;
+}
+```
+
+The following example shows part of the style sheet of a button control for pressed pseudo state :
+
+```css
+button:pressed {
+  background-color: rgba(255, 255, 255, 93);
+}
+```
+
+It can be noticed that only the properties that differ with the standard pseudo state are expressed.
+The other properties will be the same as those of the standard preudo state.
 
 ## Style sheet usage
 
