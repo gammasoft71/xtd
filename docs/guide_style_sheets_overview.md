@@ -97,12 +97,18 @@ Feel free to browse these themes for inspiration.
 * [red](https://github.com/gammasoft71/xtd/tree/master/themes/red) contains red color theme.
 * [white](https://github.com/gammasoft71/xtd/tree/master/themes/white) contains white color theme.
 
+## Remarks
+
+The style sheet for each control has been split in several files for more clarity. But we could have put them in one file.
+xtd browses the whole folder and reads all files with the .css extension.
+
 # See also
 ​
 * [Style sheets reference](guide_style_sheets_reference.md)
 * [Box model](guide_style_sheets_box_model.md)
 * [Guides](guides.md)
 * [Documentation](documentation.md)
+
 
 ______________________________________________________________________________________________
 
