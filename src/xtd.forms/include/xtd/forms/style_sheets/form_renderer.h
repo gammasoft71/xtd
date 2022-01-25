@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::form_data class.
+/// @brief Contains xtd::forms::style_sheets::form_data static class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/static.h>

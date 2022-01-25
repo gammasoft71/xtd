@@ -17,7 +17,7 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The color data allow you to specify the style, colors and gradient mode.
+      /// @brief The color data allow you to specify the color of an item.
       /// @code
       /// class forms_export_ color_data : public xtd::object
       /// @endcode
@@ -28,7 +28,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      /// @remarks This class is used by xtd::forms::style_sheets::color_renderer.
+      /// @remarks This class is used by xtd::forms::style_sheets::box_data.
       class forms_export_ color_data : public xtd::iequatable<color_data>, public xtd::object {
       public:
         static const color_data empty;
@@ -38,21 +38,12 @@ namespace xtd {
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::color_data class.
         /// @remarks The following table shows the default values for the properties :
-        /// | Property                                     | Default value                                         |
-        /// |----------------------------------------------|-------------------------------------------------------|
-        /// | xtd::forms::style_sheets::color_data::style  | xtd::forms::style_sheets::color_type::solid          |
-        /// | xtd::forms::style_sheets::color_data::colors | An array with one color : xtd::drawing::color::black) |
-        /// | xtd::forms::style_sheets::color_data::angle  | 90                                                    |
-        /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
+        /// | Property                                    | Default value                      |
+        /// |---------------------------------------------|------------------------------------|
+        /// | xtd::forms::style_sheets::color_data::color |  xtd::drawing::color::transparent) |
         color_data() = default;
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::color_data class with specified color.
         /// @param color The colors specifies what colors to display.
-        /// | Property                                     | Default value                                         |
-        /// |----------------------------------------------|-------------------------------------------------------|
-        /// | xtd::forms::style_sheets::color_data::style  | xtd::forms::style_sheets::color_type::solid          |
-        /// | xtd::forms::style_sheets::color_data::angle  | 90                                                    |
-        /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
-        /// @remarks For xtd::forms::style_sheets::color_type::color, only the first color is used.
         color_data(const xtd::drawing::color& color);
         /// @}
 
@@ -65,13 +56,11 @@ namespace xtd {
         /// @name Properties
         
         /// @{
-        /// @brief Gets the colors specifies what colors to display.
-        /// @return The colors specifies what colors to display.
-        /// @remarks For xtd::forms::style_sheets::color_type::color, only the first color is used.
+        /// @brief Gets the colors specifies what color to display.
+        /// @return The colors specifies what color to display.
         const xtd::drawing::color& color() const noexcept;
-        /// @brief Sets the colors specifies what colors to display.
-        /// @param value The colors specifies what colors to display.
-        /// @remarks For xtd::forms::style_sheets::color_type::color, only the first color is used.
+        /// @brief Sets the colors specifies what color to display.
+        /// @param value The colors specifies what color to display.
         void color(const xtd::drawing::color& value) noexcept;
         /// @}
 
@@ -89,7 +78,6 @@ namespace xtd {
 
         /// @brief Creates a xtd::drawing::brush from specified color data and rectangle.
         /// @param color Contains color data.
-        /// @param rect The xtd::drawing::rectangle neeed for linear gradient brush
         /// @return New instance of brush.
         static xtd::drawing::solid_brush make_brush(const xtd::forms::style_sheets::color_data& color);
 
@@ -103,8 +91,10 @@ namespace xtd {
         /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::color_data object.
         /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::color_data object.
         xtd::ustring to_css() const noexcept;
-
         
+        /// @brief Splits a specified text into an array of string tht contains a representation for each xtd::forms::style_sheets::color_data.
+        /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::color_data object.
+        /// @return The xtd::ustrings that contains a representation of each xtd::forms::style_sheets::color_data.
         static std::vector<xtd::ustring> split_colors(const xtd::ustring& text);
         
         /// @brief Creates a xtd::forms::style_sheets::color_data object from the specified text.
