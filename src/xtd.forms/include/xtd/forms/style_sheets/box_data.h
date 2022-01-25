@@ -7,6 +7,7 @@
 #include "border_radius.h"
 #include "border_style.h"
 #include "border_width.h"
+#include "image_data.h"
 #include "../padding.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -59,6 +60,14 @@ namespace xtd {
         box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::color_data& background_color);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::box_data class with specified margin, borders, padding, background color, width and height.
         /// @param margin The area outside the border.
+        /// @param borders A border that goes around the padding and content.
+        /// @param padding The area around the content.
+        /// @param background_color The background color is used to add background effects to the box.
+        /// @remarks You need to know how the box model works.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::image_data& background_image);
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::box_data class with specified margin, borders, padding, background color, width and height.
+        /// @param margin The area outside the border.
         /// @param borders The borders that goes around the padding and content.
         /// @param padding The area around the content.
         /// @param background_color The background color is used to add background effects to the box.
@@ -67,6 +76,16 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::color_data& background_color, std::optional<int32_t> width, std::optional<int32_t> height);
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::box_data class with specified margin, borders, padding, background color, width and height.
+        /// @param margin The area outside the border.
+        /// @param borders The borders that goes around the padding and content.
+        /// @param padding The area around the content.
+        /// @param background_color The background color is used to add background effects to the box.
+        /// @param width The width of the box.
+        /// @param height The height of the box.
+        /// @remarks You need to know how the box model works.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::image_data& background_image, std::optional<int32_t> width, std::optional<int32_t> height);
         /// @}
 
         /// @cond
@@ -83,9 +102,18 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         const xtd::forms::style_sheets::color_data& background_color() const noexcept;
         /// @brief Sets the background color is used to add background effects to the box.
-        /// @param color The background color is used to add background effects to the box.
+        /// @param value The background color is used to add background effects to the box.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        void background_color(const xtd::forms::style_sheets::color_data& color) noexcept;
+        void background_color(const xtd::forms::style_sheets::color_data& value) noexcept;
+
+        /// @brief Gets the background color is used to add background effects to the box.
+        /// @return The background color is used to add background effects to the box.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        const xtd::forms::style_sheets::image_data& background_image() const noexcept;
+        /// @brief Sets the background color is used to add background effects to the box.
+        /// @param value The background color is used to add background effects to the box.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        void background_image(const xtd::forms::style_sheets::image_data& value) noexcept;
         
         /// @{
         /// @brief Gets the color is used to set the color of the borders.
@@ -187,7 +215,8 @@ namespace xtd {
         xtd::forms::style_sheets::border_width border_width_;
         xtd::forms::style_sheets::border_radius border_radius_;
         xtd::forms::padding padding_;
-        xtd::forms::style_sheets::color_data background_color_ {xtd::drawing::color::white};
+        xtd::forms::style_sheets::color_data background_color_ {xtd::drawing::color::transparent};
+        xtd::forms::style_sheets::image_data background_image_;
         std::optional<int32_t> width_;
         std::optional<int32_t> height_;
       };
