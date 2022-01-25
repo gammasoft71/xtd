@@ -21,6 +21,10 @@ const xtd::drawing::color& color_data::color() const noexcept {
   return color_;
 }
 
+void color_data::color(const xtd::drawing::color& value) noexcept {
+  color_ = value;
+}
+
 bool color_data::from_css(const xtd::ustring& css_text, color_data& result) {
   return try_parse(css_text, result);
 }
