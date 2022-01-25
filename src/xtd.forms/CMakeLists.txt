@@ -261,7 +261,6 @@ add_sources(
   include/xtd/forms/style_sheets/button_data.h
   include/xtd/forms/style_sheets/button_renderer.h
   include/xtd/forms/style_sheets/color_data.h
-  include/xtd/forms/style_sheets/color_type.h
   include/xtd/forms/style_sheets/control_data.h
   include/xtd/forms/style_sheets/control_renderer.h
   include/xtd/forms/style_sheets/form_data.h
