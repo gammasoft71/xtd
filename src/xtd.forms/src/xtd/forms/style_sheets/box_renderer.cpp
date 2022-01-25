@@ -22,20 +22,22 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const b
   draw_line_right(graphics, bounds, data);
 
   auto fill_rect = data.get_fill_rectangle(bounds);
-  graphics.fill_rounded_rectangle(*color_data::make_brush(data.background_color(), fill_rect), fill_rect, data.border_radius().top_left());
+  graphics.fill_rounded_rectangle(color_data::make_brush(data.background_color()), fill_rect, data.border_radius().top_left());
+  auto image_brush = image_data::make_brush(data.background_image(), fill_rect);
+  if (image_brush) graphics.fill_rounded_rectangle(*image_brush, fill_rect, data.border_radius().top_left());
 }
 
 void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, const box_data& data) {
   auto pen_width1 = data.border_width().top();
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
-  auto color1 = color_data::make_brush(data.border_color().top(), border_rect1);
+  auto color1 = color_data::make_brush(data.border_color().top());
   
-  if (is<solid_brush>(*color1) && data.border_style().top() == border_type::inset && as<solid_brush>(*color1).color().is_light())
-    color1 = make_unique<solid_brush>(color::dark(as<solid_brush>(*color1).color()));
-  if (is<solid_brush>(*color1) && data.border_style().top() == border_type::outset && as<solid_brush>(*color1).color().is_dark())
-    color1 = make_unique<solid_brush>(color::light(as<solid_brush>(*color1).color()));
+  if (data.border_style().top() == border_type::inset && color1.color().is_light())
+    color1 = solid_brush(color::dark(color1.color()));
+  if (data.border_style().top() == border_type::outset && color1.color().is_dark())
+    color1 = solid_brush(color::light(color1.color()));
   
-  auto pen1 = pen(*color1, as<float>(pen_width1));
+  auto pen1 = pen(color1, as<float>(pen_width1));
   pen1.dash_style(border_type_to_dash_style(data.border_style().top()));
   // top
   graphics.draw_line(pen1, border_rect1.left() + data.border_radius().top_left(), border_rect1.top(), border_rect1.right() - data.border_radius().top_right(), border_rect1.top());
@@ -48,14 +50,14 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
 void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, const box_data& data) {
   auto pen_width1 = data.border_width().right();
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
-  auto color1 = color_data::make_brush(data.border_color().right(), border_rect1);
+  auto color1 = color_data::make_brush(data.border_color().right());
   
-  if (is<solid_brush>(*color1) && data.border_style().right() == border_type::inset && as<solid_brush>(*color1).color().is_dark())
-    color1 = make_unique<solid_brush>(color::light(as<solid_brush>(*color1).color()));
-  if (is<solid_brush>(*color1) && data.border_style().right() == border_type::outset && as<solid_brush>(*color1).color().is_light())
-    color1 = make_unique<solid_brush>(color::dark(as<solid_brush>(*color1).color()));
+  if (data.border_style().right() == border_type::inset && color1.color().is_dark())
+    color1 = solid_brush(color::light(color1.color()));
+  if (data.border_style().right() == border_type::outset && color1.color().is_light())
+    color1 = solid_brush(color::dark(color1.color()));
   
-  auto pen1 = pen(*color1, as<float>(pen_width1));
+  auto pen1 = pen(color1, as<float>(pen_width1));
   pen1.dash_style(border_type_to_dash_style(data.border_style().right()));
   // right
   graphics.draw_line(pen1, border_rect1.right(), border_rect1.top() + data.border_radius().top_right(), border_rect1.right(), border_rect1.bottom() - data.border_radius().bottom_right());
@@ -68,14 +70,14 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
 void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds, const box_data& data) {
   auto pen_width1 = data.border_width().bottom();
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
-  auto color1 = color_data::make_brush(data.border_color().bottom(), border_rect1);
+  auto color1 = color_data::make_brush(data.border_color().bottom());
   
-  if (is<solid_brush>(*color1) && data.border_style().bottom() == border_type::inset && as<solid_brush>(*color1).color().is_dark())
-    color1 = make_unique<solid_brush>(color::light(as<solid_brush>(*color1).color()));
-  if (is<solid_brush>(*color1) && data.border_style().bottom() == border_type::outset && as<solid_brush>(*color1).color().is_light())
-    color1 = make_unique<solid_brush>(color::dark(as<solid_brush>(*color1).color()));
+  if (data.border_style().bottom() == border_type::inset && color1.color().is_dark())
+    color1 = solid_brush(color::light(color1.color()));
+  if (data.border_style().bottom() == border_type::outset && color1.color().is_light())
+    color1 = solid_brush(color::dark(color1.color()));
   
-  auto pen1 = pen(*color1, as<float>(pen_width1));
+  auto pen1 = pen(color1, as<float>(pen_width1));
   pen1.dash_style(border_type_to_dash_style(data.border_style().bottom()));
   // bottom
   graphics.draw_line(pen1, border_rect1.left() + data.border_radius().bottom_left(), border_rect1.bottom(), border_rect1.right() - data.border_radius().bottom_right(), border_rect1.bottom());
@@ -88,14 +90,14 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
 void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, const box_data& data) {
   auto pen_width1 = data.border_width().left();
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
-  auto color1 = color_data::make_brush(data.border_color().left(), border_rect1);
+  auto color1 = color_data::make_brush(data.border_color().left());
   
-  if (is<solid_brush>(*color1) && data.border_style().left() == border_type::inset && as<solid_brush>(*color1).color().is_light())
-    color1 = make_unique<solid_brush>(color::dark(as<solid_brush>(*color1).color()));
-  if (is<solid_brush>(*color1) && data.border_style().left() == border_type::outset && as<solid_brush>(*color1).color().is_dark())
-    color1 = make_unique<solid_brush>(color::light(as<solid_brush>(*color1).color()));
+  if (data.border_style().left() == border_type::inset && color1.color().is_light())
+    color1 = solid_brush(color::dark(color1.color()));
+  if (data.border_style().left() == border_type::outset && color1.color().is_dark())
+    color1 = solid_brush(color::light(color1.color()));
   
-  auto pen1 = pen(*color1, as<float>(pen_width1));
+  auto pen1 = pen(color1, as<float>(pen_width1));
   pen1.dash_style(border_type_to_dash_style(data.border_style().left()));
   // left
   graphics.draw_line(pen1, border_rect1.left(), border_rect1.top() + data.border_radius().top_left(), border_rect1.x(), border_rect1.bottom() - data.border_radius().bottom_left());

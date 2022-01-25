@@ -19,7 +19,7 @@ button {
   border-color: system-color(control-dark);
   border-width: 1px;
   border-radius: 5px;
-  background-color: linear-gradient(system-color(button-face), system-color(button-face));
+  background-image: linear-gradient(system-color(button-face), system-color(button-face));
   padding: 1px 1px 1px 3px;
   color: system-color(control-text);
   text-align: middle center;
@@ -31,7 +31,7 @@ The following example shows part of the style sheet of a button control for pres
 
 ```css
 button:pressed {
-  background-color: rgba(255, 255, 255, 93);
+  background-image: linear-gradient(rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
 }
 ```
 
@@ -43,7 +43,7 @@ The other properties will be the same as those of the standard preudo state.
 we can notice that the property is written like this :
 
 ```css
-  background-color: linear-gradient(system-color(button-face), system-color(button-face));
+  background-image: linear-gradient(system-color(button-face), system-color(button-face));
 ```
 
 when we could have simply written this:
@@ -55,7 +55,7 @@ when we could have simply written this:
 The difference between the two cases is that if you change the background color of the button by programming, in the first case, the button is not impacted while in the second case the button will take the color defined by programming.
  So it's a design choice.
 
-A solid color can be replaced on the fly while a gradient color cannot.
+A background color can be replaced on the fly while ab ackground image cannot.
 
 In the case of our example we don't want a change of color to change the appearance of the button because we can imagine that the color of the system button-face is semi-transparent.
 

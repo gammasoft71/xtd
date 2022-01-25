@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::color_style enum class.
+/// @brief Contains xtd::forms::style_sheets::color_type enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/ustring.h>
@@ -10,13 +10,13 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The color_style enum class specifies what kind of color to display.
+      /// @brief The color_type enum class specifies what kind of color to display.
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      enum class color_style {
+      enum class color_type {
         /// @brief Defines solid color.
         solid,
         /// @brief Defines a linear_gradient color.
@@ -28,8 +28,8 @@ namespace xtd {
       };
       
       /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const color_style value) {return os << to_string(value, {{color_style::solid, "solid,"}, {color_style::linear_gradient, "linear_gradient,"}, {color_style::radial_gradient, "radial_gradient,"}, {color_style::conic_gradient, "conic_gradient,"}});}
-      inline std::wostream& operator<<(std::wostream& os, const color_style value) {return os << to_string(value, {{color_style::solid, L"solid,"}, {color_style::linear_gradient, L"linear_gradient,"}, {color_style::radial_gradient, L"radial_gradient,"}, {color_style::conic_gradient, L"conic_gradient,"}});}
+      inline std::ostream& operator<<(std::ostream& os, const color_type value) {return os << to_string(value, {{color_type::solid, "solid,"}, {color_type::linear_gradient, "linear_gradient,"}, {color_type::radial_gradient, "radial_gradient,"}, {color_type::conic_gradient, "conic_gradient,"}});}
+      inline std::wostream& operator<<(std::wostream& os, const color_type value) {return os << to_string(value, {{color_type::solid, L"solid,"}, {color_type::linear_gradient, L"linear_gradient,"}, {color_type::radial_gradient, L"radial_gradient,"}, {color_type::conic_gradient, L"conic_gradient,"}});}
       /// @endcond
     }
   }
