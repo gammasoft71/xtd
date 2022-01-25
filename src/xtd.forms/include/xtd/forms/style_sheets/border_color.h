@@ -148,10 +148,10 @@ namespace xtd {
         
       private:
         bool all_ = true;
-        color_data left_;
-        color_data top_;
-        color_data right_;
-        color_data bottom_;
+        color_data left_ {xtd::drawing::color::black};
+        color_data top_ {xtd::drawing::color::black};
+        color_data right_ {xtd::drawing::color::black};
+        color_data bottom_ {xtd::drawing::color::black};
       };
     }
   }
