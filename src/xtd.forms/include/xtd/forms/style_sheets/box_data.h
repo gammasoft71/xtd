@@ -38,17 +38,18 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         /// @remarks The following table shows the default values for the properties :
-        /// | Property                                             | Default value                                                                   |
-        /// |------------------------------------------------------|---------------------------------------------------------------------------------|
-        /// | xtd::forms::style_sheets::box_data::margin           | 0                                                                               |
-        /// | xtd::forms::style_sheets::box_data::border_style     | xtd::forms::style_sheets::border_type::none                                     |
-        /// | xtd::forms::style_sheets::box_data::border_color     | xtd::forms::style_sheets::color_datte(xtd::drawing::color::black)               |
-        /// | xtd::forms::style_sheets::box_data::border_width     | 1                                                                               |
-        /// | xtd::forms::style_sheets::box_data::border_radius    | 0                                                                               |
-        /// | xtd::forms::style_sheets::box_data::padding          | 0                                                                               |
-        /// | xtd::forms::style_sheets::box_data::background_color | xtd::forms::style_sheets::color_data(xtd::drawing::color::white)                |
-        /// | xtd::forms::style_sheets::box_data::width            | std::nullopt                                                                    |
-        /// | xtd::forms::style_sheets::box_data::height           | std::nullopt                                                                    |
+        /// | Property                                              | Default value                                                         |
+        /// |-------------------------------------------------------|-----------------------------------------------------------------------|
+        /// | xtd::forms::style_sheets::box_data::margin            | 0                                                                     |
+        /// | xtd::forms::style_sheets::box_data::border_style      | xtd::forms::style_sheets::border_type::none                           |
+        /// | xtd::forms::style_sheets::box_data::border_color      | xtd::forms::style_sheets::color_datte(xtd::drawing::color::black)     |
+        /// | xtd::forms::style_sheets::box_data::border_width      | 3                                                                     |
+        /// | xtd::forms::style_sheets::box_data::border_radius     | 0                                                                     |
+        /// | xtd::forms::style_sheets::box_data::padding           | 0                                                                     |
+        /// | xtd::forms::style_sheets::box_data::background_color  | xtd::forms::style_sheets::color_data(xtd::drawing::color::trasparent) |
+        /// | xtd::forms::style_sheets::box_data::background_imzage | xtd::forms::style_sheets::image_data::empty                           |
+        /// | xtd::forms::style_sheets::box_data::width             | std::nullopt                                                          |
+        /// | xtd::forms::style_sheets::box_data::height            | std::nullopt                                                          |
         box_data() = default;
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::box_data class with specified margin, borders, padding, background color, width and height.
         /// @param margin The area outside the border.
