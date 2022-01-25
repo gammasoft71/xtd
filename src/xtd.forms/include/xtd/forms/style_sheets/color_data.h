@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
+#include <vector>
 #include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/drawing/solid_brush.h>
@@ -102,6 +103,9 @@ namespace xtd {
         /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::color_data object.
         /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::color_data object.
         xtd::ustring to_css() const noexcept;
+
+        
+        static std::vector<xtd::ustring> split_colors(const xtd::ustring& text);
         
         /// @brief Creates a xtd::forms::style_sheets::color_data object from the specified text.
         /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::color_data object.

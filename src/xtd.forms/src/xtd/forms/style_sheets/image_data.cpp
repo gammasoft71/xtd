@@ -14,27 +14,29 @@ using namespace xtd::drawing::drawing2d;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
-const image_data image_data::empty {true};
-
-image_data::image_data(const ustring& url) : style_(image_type::url), url_(url) {
+image_data::image_data(const ustring& url) : image_type_(style_sheets::image_type::url), url_(url) {
 }
 
-image_data::image_data(const vector<color>& colors) : style_(image_type::linear_gradient), colors_(colors) {
+image_data::image_data(const vector<color>& colors) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors) {
   if (colors.size() < 2U) throw argument_exception(csf_);
 }
 
-image_data::image_data(const vector<color>& colors, int32_t angle) : style_(image_type::linear_gradient), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
+image_data::image_data(const vector<color>& colors, int32_t angle) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
   if (colors.size() < 2U) throw argument_exception(csf_);
 }
 
-image_data::image_data(image_type style, const vector<color>& colors) : style_(style), colors_(colors) {
+image_data::image_data(style_sheets::image_type image_type, const vector<color>& colors) : image_type_(image_type), colors_(colors) {
   if (colors.size() < 2U) throw argument_exception(csf_);
-  if (style != image_type::linear_gradient) throw not_supported_exception(csf_);
+  if (image_type != style_sheets::image_type::linear_gradient) throw not_supported_exception(csf_);
 }
 
-image_data::image_data(image_type style, const vector<color>& colors, int32_t angle) : style_(style), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
+image_data::image_data(style_sheets::image_type image_type, const vector<color>& colors, int32_t angle) : image_type_(image_type), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
   if (colors.size() < 2U) throw argument_exception(csf_);
-  if (style != image_type::linear_gradient) throw not_supported_exception(csf_);
+  if (image_type != style_sheets::image_type::linear_gradient) throw not_supported_exception(csf_);
+}
+
+image_data::image_data(const std::initializer_list<xtd::drawing::color>& colors) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors) {
+  if (colors.size() < 2U) throw argument_exception(csf_);
 }
 
 int32_t image_data::angle() const noexcept {
@@ -62,12 +64,12 @@ void image_data::url(const xtd::ustring& value) noexcept {
   url_ = value;
 }
 
-image_type image_data::style() const noexcept {
-  return style_;
+style_sheets::image_type image_data::image_type() const noexcept {
+  return image_type_;
 }
 
-void image_data::style(image_type value) noexcept {
-  style_ = value;
+void image_data::image_type(style_sheets::image_type value) noexcept {
+  image_type_ = value;
 }
 
 bool image_data::from_css(const xtd::ustring& css_text, image_data& result) {
@@ -75,7 +77,7 @@ bool image_data::from_css(const xtd::ustring& css_text, image_data& result) {
 }
 
 std::unique_ptr<xtd::drawing::brush> image_data::make_brush(const xtd::forms::style_sheets::image_data& image, const xtd::drawing::rectangle& rect) {
-  if (image.style() == image_type::linear_gradient) {
+  if (image.image_type() == style_sheets::image_type::linear_gradient) {
     auto angle = image.angle() % 360;
     if (angle < 0) angle = 360 + angle;
     if (image.angle() <= 45) return make_unique<linear_gradient_brush>(rect, image.colors()[1], image.colors()[0], linear_gradient_mode::vertical);
@@ -84,7 +86,7 @@ std::unique_ptr<xtd::drawing::brush> image_data::make_brush(const xtd::forms::st
     if (image.angle() <= 315) return make_unique<linear_gradient_brush>(rect, image.colors()[1], image.colors()[0], linear_gradient_mode::horizontal);
     return make_unique<linear_gradient_brush>(rect, image.colors()[1], image.colors()[0], linear_gradient_mode::vertical);
   }
-  if (image.style() == image_type::url)
+  if (image.image_type() == style_sheets::image_type::url)
     return make_unique<texture_brush>(image::from_file(image.url()));
   return null;
 }
@@ -97,12 +99,12 @@ image_data image_data::parse(const xtd::ustring& text) {
 }
 
 xtd::ustring image_data::to_string() const noexcept {
-  return ustring::format("[style={}, url={}, colors=[{}], angle={}]", style(), url(), colors(), angle());
+  return ustring::format("[image_type={}, url={}, colors=[{}], angle={}]", image_type(), url(), colors(), angle());
 }
 
 xtd::ustring image_data::to_css() const noexcept {
-  if (style() == image_type::url) return ustring::format("url({})", url());
-  if (style() == image_type::linear_gradient) {
+  if (image_type() == style_sheets::image_type::url) return ustring::format("url({})", url());
+  if (image_type() == style_sheets::image_type::linear_gradient) {
     ustring result = "linear-gradient(";
     if (angle() != 180) result += angle_to_string(angle());
     for (auto i = 0U; i < colors().size(); ++i)
@@ -155,47 +157,47 @@ bool image_data::try_parse_url(const xtd::ustring& text, image_data& result) {
   return true;
 }
 
+vector<ustring> image_data::split_arguments(const xtd::ustring& text) {
+  return color_data::split_colors(text);
+}
+
 bool image_data::try_parse_linear_gradient_color(const xtd::ustring& text, image_data& result) {
-  auto value = text.remove(text.size()-1).replace("linear-gradient(", "");
+  vector<ustring> arguments = split_arguments(text.remove(text.size()-1).replace("linear-gradient(", ""));
   vector<color> colors;
   int32_t angle = -1;
-  while (!value.empty()) {
-    value = value.trim();
+  for (auto argument : arguments) {
     color_data color;
-    auto sub_value = value.find(",") != value.npos ? value.substring(0, value.find(",")) : value;
-    value = value.find(",") != value.npos ? value.remove(0, value.find(",") + 1) : "";
-    sub_value.trim();
-    if (sub_value == "to top") {
+    if (argument == "to top") {
       if (angle != -1) return false;
       angle = 0;
-    } else if (sub_value == "to top right") {
+    } else if (argument == "to top right") {
       if (angle != -1) return false;
       angle = 45;
-    } else if (sub_value == "to right") {
+    } else if (argument == "to right") {
       if (angle != -1) return false;
       angle = 90;
-    } else if (sub_value == "to bottom right") {
+    } else if (argument == "to bottom right") {
       if (angle != -1) return false;
       angle = 135;
-    } else if (sub_value == "to bottom") {
+    } else if (argument == "to bottom") {
       if (angle != -1) return false;
       angle = 180;
-    } else if (sub_value == "to bottom left") {
+    } else if (argument == "to bottom left") {
       if (angle != -1) return false;
       angle = 225;
-    } else if (sub_value == "to left") {
+    } else if (argument == "to left") {
       if (angle != -1) return false;
       angle = 270;
-    } else if (sub_value == "to top left") {
+    } else if (argument == "to top left") {
       if (angle != -1) return false;
       angle = 315;
-    } else if (sub_value.ends_with("deg")) {
-      sub_value = sub_value.replace("deg", "");
-      if (angle != -1 || xtd::try_parse<int32_t>(sub_value, angle) == false) return false;
-    } else if (color_data::try_parse(sub_value, color))
+    } else if (argument.ends_with("deg")) {
+      argument = argument.replace("deg", "");
+      if (angle != -1 || xtd::try_parse<int32_t>(argument, angle) == false) return false;
+    } else if (color_data::try_parse(argument, color))
       colors.push_back(color.color());
   }
   if (colors.size() < 2) return false;
-  result = image_data(image_type::linear_gradient, colors, angle == -1? 180 : angle);
+  result = image_data(style_sheets::image_type::linear_gradient, colors, angle == -1? 180 : angle);
   return true;
 }

@@ -17,6 +17,7 @@ add_sources(
   src/xtd/forms/system_information.cpp
   src/xtd/forms/layout/arranged_element_collection.cpp 
   src/xtd/forms/style_sheets/color_data.cpp 
+  src/xtd/forms/style_sheets/image_data.cpp 
 )
 if (APPLE)
 add_sources(

@@ -32,8 +32,6 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::color_renderer.
       class forms_export_ image_data : public xtd::iequatable<image_data>, public xtd::object {
       public:
-        static const image_data empty;
-        
         /// @name Constructors
         
         /// @{
@@ -74,25 +72,26 @@ namespace xtd {
         /// @exception xtd::not_supported_exception if xtd::forms::style_sheets::image_data::style is not of xtd::forms::style_sheets::image_type::solid and not xtd::forms::style_sheets::image_type::linear_gradient.
         image_data(const std::vector<xtd::drawing::color>& colors, int32_t angle);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::image_data class with specified style and colors.
-        /// @param style The style specifies what kind of color to display.
+        /// @param image_type The style specifies what kind of color to display.
         /// @param colors The colors specifies what colors to display.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         /// @remarks For xtd::forms::style_sheets::image_type::color, only the first color is used.
         /// @exception xtd::argument_exception colors is empty.
         /// @exception xtd::not_supported_exception xtd::forms::style_sheets::image_data::style is not of xtd::forms::style_sheets::image_type::solid and not xtd::forms::style_sheets::image_type::linear_gradient.
-        image_data(xtd::forms::style_sheets::image_type style, const std::vector<xtd::drawing::color>& colors);
+        image_data(xtd::forms::style_sheets::image_type image_type, const std::vector<xtd::drawing::color>& colors);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::image_data class with specified style, colors and angle.
-        /// @param style The style specifies what kind of color to display.
+        /// @param image_type The style specifies what kind of color to display.
         /// @param colors The colors specifies what colors to display.
         /// @param angle The angle specifies the gradient direction.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         /// @remarks For xtd::forms::style_sheets::image_type::color, only the first color is used.
         /// @exception xtd::argument_exception colors is empty.
         /// @exception xtd::not_supported_exception if xtd::forms::style_sheets::image_data::style is not of xtd::forms::style_sheets::image_type::solid and not xtd::forms::style_sheets::image_type::linear_gradient.
-        image_data(xtd::forms::style_sheets::image_type style, const std::vector<xtd::drawing::color>& colors, int32_t angle);
+        image_data(xtd::forms::style_sheets::image_type image_type, const std::vector<xtd::drawing::color>& colors, int32_t angle);
         /// @}
 
         /// @cond
+        image_data(const std::initializer_list<xtd::drawing::color>& colors);
         image_data(const image_data&) = default;
         image_data(image_data&&) = default;
         image_data& operator=(const image_data&) = default;
@@ -130,17 +129,17 @@ namespace xtd {
 
         /// @brief Gets the style specifies what kind of color to display.
         /// @return The style specifies what kind of color to display.
-        xtd::forms::style_sheets::image_type style() const noexcept;
+        xtd::forms::style_sheets::image_type image_type() const noexcept;
         /// @brief Sets the style specifies what kind of color to display.
         /// @param value The style specifies what kind of color to display.
-        void style(xtd::forms::style_sheets::image_type value) noexcept;
+        void image_type(xtd::forms::style_sheets::image_type value) noexcept;
         /// @}
 
         /// @name Methods
         
         /// @{
         bool equals (const object& other) const noexcept override {return is<image_data>(other) ? equals(static_cast<const image_data&>(other)) : false;}
-        bool equals (const image_data& other) const noexcept override {return style_ == other.style_ && colors_ == other.colors_ && angle_ == other.angle_ && empty_ == other.empty_;}
+        bool equals (const image_data& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
 
         /// @brief Creates a xtd::forms::style_sheets::image_data object from the specified css text.
         /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::image_data object.
@@ -173,18 +172,17 @@ namespace xtd {
         /// @}
 
       private:
-        image_data(bool empty) : colors_({}), empty_(true) {}
         static xtd::ustring angle_to_string(int32_t angle);
         static xtd::ustring color_to_string(const xtd::drawing::color& color);
         static ustring remove_key(const xtd::ustring& text);
         static bool try_parse_url(const xtd::ustring& text, image_data& result);
+        static std::vector<xtd::ustring> split_arguments(const xtd::ustring& text);
         static bool try_parse_linear_gradient_color(const xtd::ustring& text, image_data& result);
-        
-        image_type style_ = image_type::none;
+
+        xtd::forms::style_sheets::image_type image_type_ = style_sheets::image_type::none;
         xtd::ustring url_;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black, xtd::drawing::color::black};
         int32_t angle_ = 180;
-        bool empty_ = false;
       };
     }
   }
