@@ -88,6 +88,7 @@ namespace xtd {
         static color_data parse(const xtd::ustring& text);
 
         xtd::ustring to_string() const noexcept override;
+
         /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::color_data object.
         /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::color_data object.
         xtd::ustring to_css() const noexcept;
