@@ -17,7 +17,7 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The color data allow you to specify the color of an item.
+      /// @brief The color data allows you to specify the color of an item.
       /// @code
       /// class forms_export_ color_data : public xtd::object
       /// @endcode

@@ -40,6 +40,14 @@ void theme_data::name(const ustring& value) noexcept {
   name_ = value;
 }
 
+const ustring& theme_data::website() const noexcept {
+  return website_;
+}
+
+void theme_data::website(const ustring& value) noexcept {
+  website_ = value;
+}
+
 bool theme_data::from_css(const xtd::ustring& css_text, theme_data& result) {
   return try_parse(css_text, result);
 }

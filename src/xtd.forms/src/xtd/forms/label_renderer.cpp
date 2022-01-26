@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/forms/style_sheets/label_renderer.h"
+#include "../../../include/xtd/forms/label_renderer.h"
 
 using namespace std;
 using namespace xtd;

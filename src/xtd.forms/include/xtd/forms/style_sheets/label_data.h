@@ -10,7 +10,7 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The label data allow you to specify the box of a label control.
+      /// @brief The label data allows you to specify the box of a label control.
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

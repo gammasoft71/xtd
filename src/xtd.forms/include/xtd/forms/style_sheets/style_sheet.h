@@ -9,6 +9,7 @@
 #include "button_data.h"
 #include "form_data.h"
 #include "label_data.h"
+#include "system_colors_data.h"
 #include "theme_data.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,7 +18,7 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The style allow you to specify an xtd style sheet.
+      /// @brief The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.
       /// @code
       /// class forms_export_ style_sheet : public xtd::object
       /// @endcode
@@ -44,15 +45,13 @@ namespace xtd {
 
         const control_data& control() const noexcept;
 
-        static const style_sheet& current();
-
         const form_data& form() const noexcept;
 
         const label_data& label() const noexcept;
 
         static const std::map<xtd::ustring, style_sheet> style_sheets() noexcept;
 
-        static const style_sheet& system();
+        const system_colors_data& system_colors()const noexcept;
 
         const theme_data& theme() const noexcept;
         /// @}
@@ -73,10 +72,9 @@ namespace xtd {
         control_data control_;
         form_data form_;
         label_data label_;
-        theme_data theme_;
+        system_colors_data system_colors_;
         static std::map<ustring, style_sheet> style_sheets_;
-        static style_sheet* current_;
-        static style_sheet* system_;
+        theme_data theme_;
       };
     }
   }
