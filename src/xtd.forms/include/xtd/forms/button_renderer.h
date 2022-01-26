@@ -9,16 +9,18 @@
 #include <xtd/drawing/graphics.h>
 #include <xtd/drawing/image.h>
 #include <xtd/drawing/rectangle.h>
-#include <xtd/drawing/system_fonts.h>
 #include "../forms_export.h"
 #include "box_renderer.h"
 #include "flat_button_appearance.h"
 #include "flat_style.h"
-#include "text_format_flags.h"
 #include "text_renderer.h"
+#include "visual_styles/push_button_state.h"
+
+/// @todo to remove
+#include <xtd/drawing/system_fonts.h>
+#include "text_format_flags.h"
 #include "theme_renderers.h"
 #include "theme_colors.h"
-#include "visual_styles/push_button_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
