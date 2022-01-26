@@ -18,7 +18,7 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The image data allow you to specify the url or gradient mode.
+      /// @brief The image data allows you to specify the url or gradient mode.
       /// @code
       /// class forms_export_ image_data : public xtd::object
       /// @endcode

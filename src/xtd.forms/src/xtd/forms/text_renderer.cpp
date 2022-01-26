@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/forms/style_sheets/text_renderer.h"
+#include "../../../include/xtd/forms/text_renderer.h"
 #include <xtd/drawing/string_format.h>
 
 using namespace xtd;

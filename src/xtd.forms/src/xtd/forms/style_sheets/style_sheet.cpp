@@ -7,13 +7,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms::style_sheets;
 
-namespace {
-}
-
 std::map<ustring, style_sheet> style_sheet::style_sheets_;
-style_sheet* style_sheet::current_ = nullptr;
-style_sheet* style_sheet::system_ = nullptr;
-
 
 const button_data& style_sheet::button() const noexcept {
   return button_;
@@ -21,12 +15,6 @@ const button_data& style_sheet::button() const noexcept {
 
 const control_data& style_sheet::control() const noexcept {
   return control_;
-}
-
-const style_sheet& style_sheet::current() {
-  initilize();
-  if (!current_) throw null_pointer_exception("uninitialized style_sheets", csf_);
-  return *current_;
 }
 
 const form_data& style_sheet::form() const noexcept {
@@ -37,13 +25,12 @@ const label_data& style_sheet::label() const noexcept {
   return label_;
 }
 
-const style_sheet& style_sheet::system() {
-  initilize();
-  if (!system_) throw null_pointer_exception("uninitialized style_sheets", csf_);
-  return *system_;
+const system_colors_data& style_sheet::system_colors()const noexcept {
+  return system_colors_;
 }
 
 const map<ustring, style_sheet> style_sheet::style_sheets() noexcept {
+  initilize();
   return style_sheets_;
 }
 
@@ -60,5 +47,6 @@ bool style_sheet::equals(const style_sheet& other) const noexcept {
 }
 
 void style_sheet::initilize() {
-  /// Read themes folder...
+  if (!style_sheets_.empty()) return;
+  
 }
