@@ -118,7 +118,7 @@ bool image_data::try_parse(const xtd::ustring& text, image_data& result) {
   auto value = remove_key(text);
   if (text.starts_with("url(") && text.ends_with(")")) return try_parse_url(value, result);
   if (text.starts_with("linear-gradient(") && text.ends_with(")")) return try_parse_linear_gradient_color(value, result);
-  throw not_supported_exception(csf_);
+  return false;
 }
 
 xtd::ustring image_data::angle_to_string(int32_t angle) {
@@ -152,7 +152,7 @@ ustring image_data::remove_key(const xtd::ustring& text) {
 }
 
 bool image_data::try_parse_url(const xtd::ustring& text, image_data& result) {
-  auto value = text.remove(text.size()-1).replace("rgb(", "");
+  auto value = text.remove(text.size()-1).replace("url(", "");
   result = image_data(value);
   return true;
 }

@@ -74,7 +74,13 @@ namespace xtd {
         /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::color_data object.
         /// @param result The xtd::forms::style_sheets::color_data class that this method creates.
         /// @return true if succeed; otherwise false.
-        static bool from_css(const xtd::ustring& css_text, color_data& result);
+        static bool from_css(const xtd::ustring& css_text, color_data& result) noexcept;
+        /// @brief Creates a xtd::forms::style_sheets::color_data object from the specified css text.
+        /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::color_data object.
+        /// @param default_value The default_value is used if the specified text is invalid.
+        /// @return The xtd::forms::style_sheets::color_data class that this method creates.
+        /// @remarks If css_text is not a xtd::forms::sttyle_sheets::color_data, the default_value is returned.
+        static color_data from_css(const xtd::ustring& css_text, const color_data& default_value) noexcept;
 
         /// @brief Creates a xtd::drawing::brush from specified color data and rectangle.
         /// @param color Contains color data.
@@ -102,7 +108,7 @@ namespace xtd {
         /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::color_data object.
         /// @param result The xtd::forms::style_sheets::color_data class that this method creates.
         /// @return true if succeed; otherwise false.
-        static bool try_parse(const xtd::ustring& text, color_data& result);
+        static bool try_parse(const xtd::ustring& text, color_data& result) noexcept;
         /// @}
 
       private:

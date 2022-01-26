@@ -25,8 +25,14 @@ void color_data::color(const xtd::drawing::color& value) noexcept {
   color_ = value;
 }
 
-bool color_data::from_css(const xtd::ustring& css_text, color_data& result) {
+bool color_data::from_css(const xtd::ustring& css_text, color_data& result) noexcept {
   return try_parse(css_text, result);
+}
+
+color_data color_data::from_css(const xtd::ustring& css_text, const color_data& default_value) noexcept {
+  color_data result;
+  if (from_css(css_text, result)) return result;
+  return default_value;
 }
 
 solid_brush color_data::make_brush(const color_data& color) {
@@ -48,7 +54,7 @@ xtd::ustring color_data::to_css() const noexcept {
   return ustring::format("{}", color_to_string(color()));
 }
 
-bool color_data::try_parse(const xtd::ustring& text, color_data& result) {
+bool color_data::try_parse(const xtd::ustring& text, color_data& result) noexcept {
   auto value = remove_key(text);
   if (text.starts_with("#")) return try_parse_hash_color(value, result);
   if (text.starts_with("rgb(") && text.ends_with(")")) return try_parse_rgb_color(value, result);

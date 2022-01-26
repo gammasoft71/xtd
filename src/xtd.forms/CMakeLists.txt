@@ -270,14 +270,15 @@ add_sources(
   include/xtd/forms/style_sheets/image_type.h
   include/xtd/forms/style_sheets/label_data.h
   include/xtd/forms/style_sheets/pseudo_state.h
-  include/xtd/forms/visual_styles/check_box_state.h
-  include/xtd/forms/visual_styles/label_state.h
+  include/xtd/forms/style_sheets/string_data.h
   include/xtd/forms/style_sheets/style_sheet.h
   include/xtd/forms/style_sheets/system_colors_data.h
   include/xtd/forms/style_sheets/text_data.h
   include/xtd/forms/style_sheets/text_decoration.h
   include/xtd/forms/style_sheets/text_transformation.h
   include/xtd/forms/style_sheets/theme_data.h
+  include/xtd/forms/style_sheets/url_data.h
+  include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/control_state.h
   include/xtd/forms/visual_styles/form_state.h
   include/xtd/forms/visual_styles/label_state.h
@@ -397,10 +398,12 @@ add_sources(
   src/xtd/forms/style_sheets/color_data.cpp
   src/xtd/forms/style_sheets/control_data.cpp
   src/xtd/forms/style_sheets/image_data.cpp
+  src/xtd/forms/style_sheets/string_data.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
   src/xtd/forms/style_sheets/system_colors_data.cpp
   src/xtd/forms/style_sheets/text_data.cpp
   src/xtd/forms/style_sheets/theme_data.cpp
+  src/xtd/forms/style_sheets/url_data.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 
