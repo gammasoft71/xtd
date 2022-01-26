@@ -17,11 +17,7 @@ namespace {
   }
   
   static std::string forms_resource_path() {
-    #if defined(__XTD_RESOURCES_PATH__)
-    return xtd::io::path::combine(__XTD_RESOURCES_PATH__, "share", "xtd", "resources");
-    #else
-    return "";
-    #endif
+    return __XTD_RESOURCES_PATH__;
   }
   
   static intptr_t create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot) {

@@ -80,7 +80,7 @@ namespace xtdc_gui {
     static std::string get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_linux_platform() ? "g" : "m";}
     static std::string get_theme_postfix() noexcept {return xtd::forms::application::dark_mode_enabled() ? "d" : "";}
     
-    inline static const std::filesystem::path xtd_share_path_ = std::filesystem::path(__XTD_RESOURCES_PATH__) / "share" / "xtd";
+    inline static const std::filesystem::path xtd_share_path_ = std::filesystem::path(__XTD_INSTALL_PATH__) / "share" / "xtd";
     
     std::string name_;
     std::string description_;

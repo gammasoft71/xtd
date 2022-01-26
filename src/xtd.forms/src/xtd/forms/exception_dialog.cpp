@@ -135,7 +135,7 @@ namespace {
         report += ustring::format("    Version: {}{}"_t, environment::version(), environment::new_line());
         report += ustring::format("    include path: {}{}"_t, xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), environment::new_line());
         report += ustring::format("    library path: {}{}"_t, xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), environment::new_line());
-        report += ustring::format("    resources path: {}{}"_t, xtd::io::path::combine(__XTD_RESOURCES_PATH__, "resources", "xtd"), environment::new_line());
+        report += ustring::format("    resources path: {}{}"_t, __XTD_RESOURCES_PATH__, environment::new_line());
         first = false;
       }
       report += environment::new_line();
