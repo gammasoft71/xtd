@@ -1,7 +1,7 @@
 /* Contains system-colors definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-.system-colors {
+system-colors {
   accent: #FF3DAEE9;
   accent-text: #FFEFF0F1;
   active-border: #FF31363B;
