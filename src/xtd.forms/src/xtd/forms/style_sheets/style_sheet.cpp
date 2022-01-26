@@ -14,10 +14,17 @@ using namespace xtd::web::css;
 namespace {
   void theme_reader(selector_map::const_iterator& selectors_iterator, theme_data& theme) {
     property_map::const_iterator properties_iterator;
-    if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end()) theme.name(properties_iterator->second.to_string().trim('"'));
-    if ((properties_iterator = selectors_iterator->second.properties().find("description")) != selectors_iterator->second.properties().end()) theme.description(properties_iterator->second.to_string().trim('"'));
-    if ((properties_iterator = selectors_iterator->second.properties().find("authors")) != selectors_iterator->second.properties().end()) theme.authors(properties_iterator->second.to_string().trim('"'));
-    if ((properties_iterator = selectors_iterator->second.properties().find("website")) != selectors_iterator->second.properties().end()) theme.website(properties_iterator->second.to_string().trim('"'));
+    if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end()) theme.name(string_data::from_css(properties_iterator->second.to_string(), string_data()));
+    if ((properties_iterator = selectors_iterator->second.properties().find("description")) != selectors_iterator->second.properties().end()) theme.description(string_data::from_css(properties_iterator->second.to_string(), string_data()));
+    if ((properties_iterator = selectors_iterator->second.properties().find("authors")) != selectors_iterator->second.properties().end()) theme.authors(string_data::from_css(properties_iterator->second.to_string(), string_data()));
+    if ((properties_iterator = selectors_iterator->second.properties().find("website")) != selectors_iterator->second.properties().end()) theme.website(url_data::from_css(properties_iterator->second.to_string(), url_data()));
+  }
+
+  void system_color_reader(selector_map::const_iterator& selectors_iterator, system_colors_data& colors) {
+    property_map::const_iterator properties_iterator;
+    if ((properties_iterator = selectors_iterator->second.properties().find("accent")) != selectors_iterator->second.properties().end()) colors.accent(color_data::from_css(properties_iterator->second.to_string(), color_data()));
+    if ((properties_iterator = selectors_iterator->second.properties().find("accent-text")) != selectors_iterator->second.properties().end()) colors.accent_text(color_data::from_css(properties_iterator->second.to_string(), color_data()));
+    if ((properties_iterator = selectors_iterator->second.properties().find("active-border")) != selectors_iterator->second.properties().end()) colors.active_border(color_data::from_css(properties_iterator->second.to_string(), color_data()));
   }
 }
 
@@ -27,6 +34,7 @@ style_sheet::style_sheet(const xtd::ustring& text) {
   css_reader reader(text);
   selector_map::const_iterator selectors_iterator;
   if ((selectors_iterator = reader.selectors().find("theme")) != reader.selectors().end()) theme_reader(selectors_iterator, theme_);
+  if ((selectors_iterator = reader.selectors().find("system-colors")) != reader.selectors().end()) system_color_reader(selectors_iterator, system_colors_);
 }
 
 const button_data& style_sheet::button() const noexcept {
@@ -74,8 +82,8 @@ void style_sheet::initilize() {
     for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
       theme_css += file::read_all_text(theme_file);
     style_sheet style(theme_css);
-    if (!style.theme().name().empty())
-      style_sheets_[style.theme().name()] = style;
+    if (!style.theme().name().text().empty())
+      style_sheets_[style.theme().name().text()] = style;
   }
   
 }

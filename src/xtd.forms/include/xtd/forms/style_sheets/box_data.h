@@ -22,6 +22,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::box_data
+      /// @par Implement
+      /// xtd::object → xtd::forms::style_sheets::box_data
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

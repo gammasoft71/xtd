@@ -19,6 +19,7 @@ add_sources(
   src/xtd/forms/style_sheets/color_data.cpp 
   src/xtd/forms/style_sheets/image_data.cpp 
   src/xtd/forms/style_sheets/style_sheet.cpp 
+  src/xtd/forms/style_sheets/style_sheet_macos_dark.cpp 
 )
 if (APPLE)
 add_sources(

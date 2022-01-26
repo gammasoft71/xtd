@@ -4,47 +4,47 @@
 using namespace xtd;
 using namespace xtd::forms::style_sheets;
 
-theme_data::theme_data(const xtd::ustring& name) : name_(name) {
+theme_data::theme_data(const string_data& name) : name_(name) {
 }
 
-theme_data::theme_data(const xtd::ustring& name, const xtd::ustring& description) : name_(name), description_(description) {
+theme_data::theme_data(const string_data& name, const string_data& description) : name_(name), description_(description) {
 }
 
-theme_data::theme_data(const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& authors) : name_(name), description_(description), authors_(authors) {
+theme_data::theme_data(const string_data& name, const string_data& description, const string_data& authors) : name_(name), description_(description), authors_(authors) {
 }
 
-theme_data::theme_data(const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& authors, const xtd::ustring& website) : name_(name), description_(description), authors_(authors), website_(website) {
+theme_data::theme_data(const string_data& name, const string_data& description, const string_data& authors, const url_data& website) : name_(name), description_(description), authors_(authors), website_(website) {
 }
 
-const ustring& theme_data::authors() const noexcept {
+const string_data& theme_data::authors() const noexcept {
   return authors_;
 }
 
-void theme_data::authors(const ustring& value) noexcept {
+void theme_data::authors(const string_data& value) noexcept {
   authors_ = value;
 }
 
-const ustring& theme_data::description() const noexcept {
+const string_data& theme_data::description() const noexcept {
   return description_;
 }
 
-void theme_data::description(const ustring& value) noexcept {
+void theme_data::description(const string_data& value) noexcept {
   description_ = value;
 }
 
-const ustring& theme_data::name() const noexcept {
+const string_data& theme_data::name() const noexcept {
   return name_;
 }
 
-void theme_data::name(const ustring& value) noexcept {
+void theme_data::name(const string_data& value) noexcept {
   name_ = value;
 }
 
-const ustring& theme_data::website() const noexcept {
+const url_data& theme_data::website() const noexcept {
   return website_;
 }
 
-void theme_data::website(const ustring& value) noexcept {
+void theme_data::website(const url_data& value) noexcept {
   website_ = value;
 }
 
@@ -60,11 +60,11 @@ theme_data theme_data::parse(const xtd::ustring& text) {
 }
 
 xtd::ustring theme_data::to_string() const noexcept {
-  return ustring::format("[name={}, description={}, authors={}, website={}, ]", name(), description(), authors(), website());
+  return ustring::format("[name={}, description={}, authors={}, website={}, ]", name().text(), description().text(), authors().text(), website().url());
 }
 
 xtd::ustring theme_data::to_css() const noexcept {
-  return ustring::format("  name: \"{}\";\n  description: \"{}\";\n  authors:\"{}\";\n  website=url(\"{}\");\n", name(), description(), authors(), website());
+  return ustring::format("  name: \"{}\";\n  description: \"{}\";\n  authors:\"{}\";\n  website=url(\"{}\");\n", name().text(), description().text(), authors().text(), website().url());
 }
 
 bool theme_data::try_parse(const xtd::ustring& text, theme_data& result) {
