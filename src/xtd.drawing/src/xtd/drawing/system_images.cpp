@@ -35,7 +35,7 @@ using namespace xtd::io;
 
 namespace {
   static ustring system_images_resource_path() {
-    return path::combine({__XTD_RESOURCES_PATH__, "share", "xtd", "resources", "system_images"});
+    return path::combine({__XTD_RESOURCES_PATH__, "system_images"});
   }
   
   drawing::size get_closed_size(const drawing::size& size) {

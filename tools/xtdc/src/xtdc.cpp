@@ -41,11 +41,7 @@ namespace xtdc_command {
     }
     
   private:
-    #if defined(__XTD_RESOURCES_PATH__)
     static string get_base_path() noexcept {return __XTD_RESOURCES_PATH__;}
-    #else
-    static string get_base_path() noexcept {return "";}
-    #endif
     
     static vector<ustring> get_help() noexcept {
       return {

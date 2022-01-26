@@ -206,11 +206,7 @@ namespace xtdc_command {
     }
     
   private:
-    #if defined(__XTD_RESOURCES_PATH__)
     static std::filesystem::path get_base_path() noexcept {return std::filesystem::path(__XTD_RESOURCES_PATH__);}
-    #else
-    static xtd::ustring get_base_path() noexcept {return std::filesystem::path;}
-    #endif
     
     xtd::ustring& get_name() const {
       static xtd::ustring name;
@@ -1656,9 +1652,9 @@ namespace xtdc_command {
       std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "properties" : path_ / "properties");
       std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "resources" : path_ / "resources");
       std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
-      std::filesystem::copy(get_base_path() / "share" / "xtd" / "resources" / "icons" / "xtd_forms.icns", path_ / (create_solution ? name.c_str() : "") / "resources" / xtd::ustring::format("{}.icns", name).c_str());
-      std::filesystem::copy(get_base_path() / "share" / "xtd" / "resources" / "icons" / "xtd_forms.ico", path_ / (create_solution ? name.c_str() : "") / "resources" / xtd::ustring::format("{}.ico", name).c_str());
-      std::filesystem::copy(get_base_path() / "share" / "xtd" / "resources" / "icons" / "xtd_forms.png", path_ / (create_solution ? name .c_str() : "") / "resources" / xtd::ustring::format("{}.png", name).c_str());
+      std::filesystem::copy(get_base_path() / "icons" / "xtd_forms.icns", path_ / (create_solution ? name.c_str() : "") / "resources" / xtd::ustring::format("{}.icns", name).c_str());
+      std::filesystem::copy(get_base_path() / "icons" / "xtd_forms.ico", path_ / (create_solution ? name.c_str() : "") / "resources" / xtd::ustring::format("{}.ico", name).c_str());
+      std::filesystem::copy(get_base_path() / "icons" / "xtd_forms.png", path_ / (create_solution ? name .c_str() : "") / "resources" / xtd::ustring::format("{}.png", name).c_str());
       if (create_solution) create_xtd_gui_solution_cmakelists_txt(name);
       create_xtd_gui_application_properties(name, create_solution ? path_ / name.c_str() : path_);
       create_xtd_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);

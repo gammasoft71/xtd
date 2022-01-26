@@ -16,7 +16,7 @@ const country country::empty() {
 }
 
 const image country::flag() const {
-  return bitmap(path::combine({__XTD_RESOURCES_PATH__, "share", "xtd", "resources", "countries", alpha_2_code().to_lower() + ".png"}));
+  return bitmap(path::combine({__XTD_RESOURCES_PATH__, "countries", alpha_2_code().to_lower() + ".png"}));
 }
 
 const image country::flag_squared() const {
