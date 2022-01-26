@@ -32,6 +32,13 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::box_data.
       class forms_export_ style_sheet : public xtd::iequatable<style_sheet>, public xtd::object {
       public:
+        /// @name Constructors
+        
+        /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance.
+        style_sheet() = default;
+        /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance from specified css forrmated text.
+        style_sheet(const xtd::ustring& text);
+
         /// @cond
         style_sheet(const style_sheet&) = default;
         style_sheet(style_sheet&&) = default;
@@ -66,14 +73,12 @@ namespace xtd {
       private:
         static void initilize();
         
-        style_sheet() = default;
-
         button_data button_;
         control_data control_;
         form_data form_;
         label_data label_;
-        system_colors_data system_colors_;
         static std::map<ustring, style_sheet> style_sheets_;
+        system_colors_data system_colors_;
         theme_data theme_;
       };
     }
