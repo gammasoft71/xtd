@@ -26,9 +26,13 @@ namespace xtd {
     namespace native {
       /// @cond
       class brush;
+      class font;
+      class font_family;
       class icon;
       class image;
+      class pen;
       class system_colors;
+      class system_fonts;
       /// @endcond
       
       /// @brief Contains toolkit native API.
@@ -40,9 +44,13 @@ namespace xtd {
       /// @warning Internal use only
       class drawing_native_export_ toolkit final static_ {
         friend xtd::drawing::native::brush;
+        friend xtd::drawing::native::font;
+        friend xtd::drawing::native::font_family;
         friend xtd::drawing::native::icon;
         friend xtd::drawing::native::image;
+        friend xtd::drawing::native::pen;
         friend xtd::drawing::native::system_colors;
+        friend xtd::drawing::native::system_fonts;
         friend xtd::forms::native::application;
       protected:
         /// @name Protected methods
