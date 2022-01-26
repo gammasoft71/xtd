@@ -2,6 +2,7 @@
 #include <vector>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/pen.h>
+#include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/colour.h>
 #include <wx/pen.h>
@@ -15,6 +16,7 @@ public:
 using namespace xtd::drawing::native;
 
 intptr_t pen::create() {
+  toolkit::initialize(); // Must be first
   auto pen = new wx_pen();
   pen->SetQuality(wxPenQuality::wxPEN_QUALITY_HIGH);
   pen->SetCap(wxPenCap::wxCAP_ROUND);
@@ -23,10 +25,12 @@ intptr_t pen::create() {
 }
 
 void pen::color(intptr_t pen, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+  toolkit::initialize(); // Must be first
   reinterpret_cast<wxPen*>(pen)->SetColour(wxColour(r, g, b, a));
 }
 
 void pen::dash_pattern(intptr_t pen, std::vector<float> dash_pattern) {
+  toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->dashes.clear();
   for (auto dash : dash_pattern)
     reinterpret_cast<wx_pen*>(pen)->dashes.push_back(static_cast<wxDash>(dash));
@@ -34,6 +38,7 @@ void pen::dash_pattern(intptr_t pen, std::vector<float> dash_pattern) {
 }
 
 void pen::dash_style(intptr_t pen, uint32_t dash_style) {
+  toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->SetStyle(wxPENSTYLE_USER_DASH);
   switch (dash_style) {
     case 0: reinterpret_cast<wx_pen*>(pen)->dashes = {1}; break;
@@ -47,9 +52,11 @@ void pen::dash_style(intptr_t pen, uint32_t dash_style) {
 }
 
 void pen::width(intptr_t pen, float width) {
+  toolkit::initialize(); // Must be first
   reinterpret_cast<wxPen*>(pen)->SetWidth(static_cast<int>(width));
 }
 
 void pen::destroy(intptr_t pen) {
+  toolkit::initialize(); // Must be first
   delete reinterpret_cast<wx_pen*>(pen);
 }

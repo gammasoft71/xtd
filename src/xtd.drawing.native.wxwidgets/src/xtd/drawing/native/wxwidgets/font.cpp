@@ -1,6 +1,7 @@
 #include <xtd/convert_string.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font.h>
+#include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/app.h>
 #include <wx/dcscreen.h>
@@ -27,6 +28,7 @@ namespace {
 }
 
 intptr_t font::create(const ustring& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
+  toolkit::initialize(); // Must be first
   wxFont* font = new wxFont(points_to_native_font_graphics_untit(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name == ".AppleSystemUIFont" ? L"" : convert_string::to_wstring(name));
   font->SetPointSize(points_to_native_font_graphics_untit(em_size));
   font->SetStrikethrough(strikeout);
@@ -34,22 +36,27 @@ intptr_t font::create(const ustring& name, float em_size, bool bold, bool italic
 }
 
 intptr_t font::create_from_hdc(intptr_t hdc) {
+  toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxFont(reinterpret_cast<wxDC*>(hdc)->GetFont()));
 }
 
 intptr_t font::create_from_hfont(intptr_t hfont) {
+  toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxFont(*reinterpret_cast<wxFont*>(hfont)));
 }
 
 void font::destroy(intptr_t font) {
+  toolkit::initialize(); // Must be first
   delete reinterpret_cast<wxFont*>(font);
 }
 
 int32_t font::dpi() {
+  toolkit::initialize(); // Must be first
   return ::dpi();
 }
 
 void font::get_information(intptr_t font, ustring& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font) {
+  toolkit::initialize(); // Must be first
   wxFont* wx_font = reinterpret_cast<wxFont*>(font);
   name = wx_font->GetFaceName().c_str().AsWChar();
   em_size = native_font_graphics_untit_to_points(static_cast<float>(wx_font->GetPointSize()));
@@ -62,6 +69,7 @@ void font::get_information(intptr_t font, ustring& name, float& em_size, bool& b
 }
 
 float font::height(intptr_t font) {
+  toolkit::initialize(); // Must be first
   if (!wxTheApp) return reinterpret_cast<wxFont*>(font)->GetPixelSize().GetHeight();
   wxScreenDC hdc;
   wxFont current_font = hdc.GetFont();
@@ -72,6 +80,7 @@ float font::height(intptr_t font) {
 }
 
 float font::height(intptr_t font, intptr_t hdc) {
+  toolkit::initialize(); // Must be first
   if (!wxTheApp) return reinterpret_cast<wxFont*>(font)->GetPixelSize().GetHeight();
   wxFont current_font = reinterpret_cast<wxDC*>(hdc)->GetFont();
   reinterpret_cast<wxDC*>(hdc)->SetFont(*reinterpret_cast<wxFont*>(font));

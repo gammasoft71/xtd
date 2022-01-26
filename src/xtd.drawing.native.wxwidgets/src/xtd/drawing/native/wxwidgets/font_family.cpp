@@ -4,6 +4,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font.h>
 #include <xtd/drawing/native/font_family.h>
+#include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/app.h>
 #include <wx/colour.h>
@@ -31,15 +32,18 @@ namespace {
 }
 
 intptr_t font_family::create(const ustring& name) {
+  toolkit::initialize(); // Must be first
   if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr_t>(new ustring(name));
   return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr_t>(new ustring(name)) : 0;
 }
 
 void font_family::destroy(intptr_t font_family) {
+  toolkit::initialize(); // Must be first
   delete reinterpret_cast<ustring*>(font_family);
 }
 
 ustring font_family::generic_serif_name() {
+  toolkit::initialize(); // Must be first
   /*
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_ROMAN);
@@ -58,6 +62,7 @@ ustring font_family::generic_serif_name() {
 }
 
 ustring font_family::generic_sans_serif_name() {
+  toolkit::initialize(); // Must be first
   /*
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_SWISS);
@@ -76,6 +81,7 @@ ustring font_family::generic_sans_serif_name() {
 }
 
 ustring font_family::generic_monospace_name() {
+  toolkit::initialize(); // Must be first
   /*
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_TELETYPE);
@@ -94,6 +100,7 @@ ustring font_family::generic_monospace_name() {
 }
 
 std::vector<ustring> font_family::installed_font_families() {
+  toolkit::initialize(); // Must be first
   std::vector<ustring> families;
   for (const wxString& name : wxFontEnumerator::GetFacenames())
     if (name[0] != '@') families.push_back(name.c_str().AsWChar());
@@ -102,6 +109,7 @@ std::vector<ustring> font_family::installed_font_families() {
 }
 
 int32_t font_family::get_cell_ascent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+  toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
   wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<ustring*>(font_family)));
@@ -114,6 +122,7 @@ int32_t font_family::get_cell_ascent(intptr_t font_family, int32_t em_height, bo
 }
 
 int32_t font_family::get_cell_descent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+  toolkit::initialize(); // Must be first
   if (!wxTheApp) return 0;
   wxScreenDC hdc;
   wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<ustring*>(font_family)));
@@ -126,6 +135,7 @@ int32_t font_family::get_cell_descent(intptr_t font_family, int32_t em_height, b
 }
 
 int32_t font_family::get_line_spacing(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+  toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
   wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<ustring*>(font_family)));
@@ -138,9 +148,11 @@ int32_t font_family::get_line_spacing(intptr_t font_family, int32_t em_height, b
 }
 
 ustring font_family::get_name(intptr_t font_family, int32_t language) {
+  toolkit::initialize(); // Must be first
   return *reinterpret_cast<ustring*>(font_family);
 }
 
 bool font_family::is_style_available(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout) {
+  toolkit::initialize(); // Must be first
   return true;
 }
