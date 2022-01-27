@@ -35,6 +35,13 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       class string_value : public xtd::iequatable<string_value>, public xtd::object {
       public:
+        /// @name Fields
+        
+        /// @{
+        /// @brief Provides an empty xtd::forms::style_sheets::string_value object.
+        static const string_value empty;
+        /// @}
+
         /// @name Constructors
         
         /// @{

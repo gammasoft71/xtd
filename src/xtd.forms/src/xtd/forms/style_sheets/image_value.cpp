@@ -5,6 +5,7 @@
 #include <xtd/drawing/drawing2d/linear_gradient_brush.h>
 #include <xtd/not_supported_exception.h>
 #include "../../../../include/xtd/forms/style_sheets/image_value.h"
+#include "../../../../include/xtd/forms/style_sheets/border_color_property.h"
 #include "../../../../include/xtd/forms/style_sheets/color_property.h"
 
 using namespace std;
@@ -158,7 +159,7 @@ bool image_value::try_parse_url(const xtd::ustring& text, image_value& result) {
 }
 
 vector<ustring> image_value::split_arguments(const xtd::ustring& text) {
-  return color_property::split_colors(text);
+  return border_color_property::split_colors(text);
 }
 
 bool image_value::try_parse_linear_gradient_color(const xtd::ustring& text, image_value& result) {

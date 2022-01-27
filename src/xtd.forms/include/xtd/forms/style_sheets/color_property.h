@@ -99,11 +99,6 @@ namespace xtd {
         /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::color_property object.
         xtd::ustring to_css() const noexcept;
         
-        /// @brief Splits a specified text into an array of string tht contains a representation for each xtd::forms::style_sheets::color_property.
-        /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::color_property object.
-        /// @return The xtd::ustrings that contains a representation of each xtd::forms::style_sheets::color_property.
-        static std::vector<xtd::ustring> split_colors(const xtd::ustring& text);
-        
         /// @brief Creates a xtd::forms::style_sheets::color_property object from the specified text.
         /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::color_property object.
         /// @param result The xtd::forms::style_sheets::color_property class that this method creates.
@@ -113,7 +108,7 @@ namespace xtd {
 
       private:
         color_property(bool empty) : empty_(true) {}
-         static xtd::ustring color_to_string(const xtd::drawing::color& color);
+        static xtd::ustring color_to_string(const xtd::drawing::color& color);
         static ustring remove_key(const xtd::ustring& text);
         static bool try_parse_hash_color(const xtd::ustring& text, color_property& result);
         static bool try_parse_named_color(const xtd::ustring& text, color_property& result);
