@@ -61,7 +61,7 @@ namespace xtd {
         
         /// @{
         bool equals(const object& other) const noexcept override {return is<string_value>(other) ? equals(static_cast<const string_value&>(other)) : false;}
-          bool equals(const string_value& other) const noexcept override {return text_ == other.text_;}
+        bool equals(const string_value& other) const noexcept override {return text_ == other.text_;}
           
         /// @brief Creates a xtd::forms::style_sheets::url_data object from the specified css text.
         /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::string_value object.

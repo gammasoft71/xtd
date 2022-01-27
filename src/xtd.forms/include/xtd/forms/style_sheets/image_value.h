@@ -133,8 +133,8 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals (const object& other) const noexcept override {return is<image_value>(other) ? equals(static_cast<const image_value&>(other)) : false;}
-        bool equals (const image_value& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
+        bool equals(const object& other) const noexcept override {return is<image_value>(other) ? equals(static_cast<const image_value&>(other)) : false;}
+        bool equals(const image_value& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
 
         /// @brief Creates a xtd::forms::style_sheets::image_value object from the specified css text.
         /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::image_value object.

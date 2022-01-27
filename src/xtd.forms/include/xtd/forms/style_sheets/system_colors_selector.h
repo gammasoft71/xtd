@@ -308,8 +308,8 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals (const object& other) const noexcept override;
-        bool equals (const system_colors_selector& other) const noexcept override;
+        bool equals(const object& other) const noexcept override;
+        bool equals(const system_colors_selector& other) const noexcept override;
         /// @}
 
       private:

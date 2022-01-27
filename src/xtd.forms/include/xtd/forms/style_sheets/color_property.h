@@ -67,8 +67,8 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals (const object& other) const noexcept override {return is<color_property>(other) ? equals(static_cast<const color_property&>(other)) : false;}
-        bool equals (const color_property& other) const noexcept override {return color_ == other.color_ && empty_ == other.empty_;}
+        bool equals(const object& other) const noexcept override {return is<color_property>(other) ? equals(static_cast<const color_property&>(other)) : false;}
+        bool equals(const color_property& other) const noexcept override {return color_ == other.color_ && empty_ == other.empty_;}
 
         /// @brief Creates a xtd::forms::style_sheets::color_property object from the specified css text.
         /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::color_property object.
