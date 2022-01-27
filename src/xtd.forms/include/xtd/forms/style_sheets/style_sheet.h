@@ -6,11 +6,11 @@
 #include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include "../../forms_export.h"
-#include "button_data.h"
-#include "form_data.h"
-#include "label_data.h"
-#include "system_colors_data.h"
-#include "theme_data.h"
+#include "button_selector.h"
+#include "form_selector.h"
+#include "label_selector.h"
+#include "system_colors_selector.h"
+#include "theme_selector.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -48,19 +48,19 @@ namespace xtd {
         /// @name Properties
         
         /// @{
-        const button_data& button() const noexcept;
+        const button_selector& button() const noexcept;
 
-        const control_data& control() const noexcept;
+        const control_selector& control() const noexcept;
 
-        const form_data& form() const noexcept;
+        const form_selector& form() const noexcept;
 
-        const label_data& label() const noexcept;
+        const label_selector& label() const noexcept;
 
         static const std::map<xtd::ustring, style_sheet> style_sheets() noexcept;
 
-        const system_colors_data& system_colors()const noexcept;
+        const system_colors_selector& system_colors()const noexcept;
 
-        const theme_data& theme() const noexcept;
+        const theme_selector& theme() const noexcept;
         /// @}
 
         /// @name Methods
@@ -73,13 +73,13 @@ namespace xtd {
       private:
         static void initilize();
         
-        button_data button_;
-        control_data control_;
-        form_data form_;
-        label_data label_;
+        button_selector button_;
+        control_selector control_;
+        form_selector form_;
+        label_selector label_;
         static std::map<ustring, style_sheet> style_sheets_;
-        system_colors_data system_colors_;
-        theme_data theme_;
+        system_colors_selector system_colors_;
+        theme_selector theme_;
       };
     }
   }

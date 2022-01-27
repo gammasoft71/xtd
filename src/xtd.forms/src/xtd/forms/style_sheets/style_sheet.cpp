@@ -12,7 +12,7 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::web::css;
 
 namespace {
-  void theme_reader(selector_map::const_iterator& selectors_iterator, theme_data& theme) {
+  void theme_reader(selector_map::const_iterator& selectors_iterator, theme_selector& theme) {
     property_map::const_iterator properties_iterator;
     if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end()) theme.name(string_data::from_css(properties_iterator->second.to_string(), string_data()));
     if ((properties_iterator = selectors_iterator->second.properties().find("description")) != selectors_iterator->second.properties().end()) theme.description(string_data::from_css(properties_iterator->second.to_string(), string_data()));
@@ -20,7 +20,7 @@ namespace {
     if ((properties_iterator = selectors_iterator->second.properties().find("website")) != selectors_iterator->second.properties().end()) theme.website(url_data::from_css(properties_iterator->second.to_string(), url_data()));
   }
 
-  void system_color_reader(selector_map::const_iterator& selectors_iterator, system_colors_data& colors) {
+  void system_color_reader(selector_map::const_iterator& selectors_iterator, system_colors_selector& colors) {
     property_map::const_iterator properties_iterator;
     if ((properties_iterator = selectors_iterator->second.properties().find("accent")) != selectors_iterator->second.properties().end()) colors.accent(color_data::from_css(properties_iterator->second.to_string(), color_data()));
     if ((properties_iterator = selectors_iterator->second.properties().find("accent-text")) != selectors_iterator->second.properties().end()) colors.accent_text(color_data::from_css(properties_iterator->second.to_string(), color_data()));
@@ -37,19 +37,19 @@ style_sheet::style_sheet(const xtd::ustring& text) {
   if ((selectors_iterator = reader.selectors().find("system-colors")) != reader.selectors().end()) system_color_reader(selectors_iterator, system_colors_);
 }
 
-const button_data& style_sheet::button() const noexcept {
+const button_selector& style_sheet::button() const noexcept {
   return button_;
 }
 
-const control_data& style_sheet::control() const noexcept {
+const control_selector& style_sheet::control() const noexcept {
   return control_;
 }
 
-const form_data& style_sheet::form() const noexcept {
+const form_selector& style_sheet::form() const noexcept {
   return form_;
 }
 
-const label_data& style_sheet::label() const noexcept {
+const label_selector& style_sheet::label() const noexcept {
   return label_;
 }
 
@@ -58,11 +58,11 @@ const map<ustring, style_sheet> style_sheet::style_sheets() noexcept {
   return style_sheets_;
 }
 
-const system_colors_data& style_sheet::system_colors()const noexcept {
+const system_colors_selector& style_sheet::system_colors()const noexcept {
   return system_colors_;
 }
 
-const theme_data& style_sheet::theme() const noexcept {
+const theme_selector& style_sheet::theme() const noexcept {
   return theme_;
 }
 

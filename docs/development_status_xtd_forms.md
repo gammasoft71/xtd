@@ -347,26 +347,26 @@
 
 | Name                                                                                          | Type         | Status                                |
 |-----------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [border_color](../src/xtd.forms/include/xtd/forms/style_sheets/border_color.h)                | class        | ![progress](pictures/progress100.png) |
-| [border_radius](../src/xtd.forms/include/xtd/forms/style_sheets/border_radius.h)              | class        | ![progress](pictures/progress100.png) |
+| [border_color](../src/xtd.forms/include/xtd/forms/style_sheets/border_color_property.h)                | class        | ![progress](pictures/progress100.png) |
+| [border_radius](../src/xtd.forms/include/xtd/forms/style_sheets/border_radius_property.h)              | class        | ![progress](pictures/progress100.png) |
 | [border_style](../src/xtd.forms/include/xtd/forms/style_sheets/border_style.h)                | class        | ![progress](pictures/progress100.png) |
 | [border_type](../src/xtd.forms/include/xtd/forms/style_sheets/border_type.h)                  | enumeration  | ![progress](pictures/progress100.png) |
 | [border_width](../src/xtd.forms/include/xtd/forms/style_sheets/border_width.h)                | class        | ![progress](pictures/progress100.png) |
 | [box_data](../src/xtd.forms/include/xtd/forms/style_sheets/box_data.h)                        | class        | ![progress](pictures/progress75.png)  |
 | [buttton_data](../src/xtd.forms/include/xtd/forms/style_sheets/buttton_data.h)                | alias        | ![progress](pictures/progress100.png) |
-| [color_data](../src/xtd.forms/include/xtd/forms/style_sheets/color_data.h)                    | class        | ![progress](pictures/progress75.png)  |
-| [control_data](../src/xtd.forms/include/xtd/forms/style_sheets/control_data.h)                | class        | ![progress](pictures/progress75.png)  |
+| [color_data](../src/xtd.forms/include/xtd/forms/style_sheets/color_value.h)                    | class        | ![progress](pictures/progress75.png)  |
+| [control_selector](../src/xtd.forms/include/xtd/forms/style_sheets/control_selector.h)                | class        | ![progress](pictures/progress75.png)  |
 | [form_data](../src/xtd.forms/include/xtd/forms/style_sheets/form_data.h)                      | alias        | ![progress](pictures/progress100.png) |
 | [image_data](../src/xtd.forms/include/xtd/forms/style_sheets/image_data.h)                    | class        | ![progress](pictures/progress50.png)  |
 | [image_type](../src/xtd.forms/include/xtd/forms/style_sheets/image_type.h)                    | enumeration  | ![progress](pictures/progress100.png) |
-| [label_data](../src/xtd.forms/include/xtd/forms/style_sheets/label_data.h)                    | alias        | ![progress](pictures/progress100.png) |
+| [label_selector](../src/xtd.forms/include/xtd/forms/style_sheets/label_selector.h)                    | alias        | ![progress](pictures/progress100.png) |
 | [pseudo_state](../src/xtd.forms/include/xtd/forms/style_sheets/pseudo_state.h)                | enumeration  | ![progress](pictures/progress100.png) |
 | [style_sheet](../src/xtd.forms/include/xtd/forms/style_sheets/style_sheet.h)                  | class        | ![progress](pictures/progress50.png)  |
-| [system_colors_data](../src/xtd.forms/include/xtd/forms/style_sheets/system_colors_data.h)    | class        | ![progress](pictures/progress75.png)  |
+| [system_colors_selector](../src/xtd.forms/include/xtd/forms/style_sheets/system_colors_selector.h)    | class        | ![progress](pictures/progress75.png)  |
 | [text_data](../src/xtd.forms/include/xtd/forms/style_sheets/text_data.h)                      | class        | ![progress](pictures/progress75.png)  |
 | [text_decoration](../src/xtd.forms/include/xtd/forms/style_sheets/text_decoration.h)          | enumeration  | ![progress](pictures/progress100.png) |
 | [text_transformation](../src/xtd.forms/include/xtd/forms/style_sheets/text_transformation.h)  | enumeration  | ![progress](pictures/progress100.png) |
-| [theme_data](../src/xtd.forms/include/xtd/forms/style_sheets/theme_data.h)                    | class        | ![progress](pictures/progress75.png)  |
+| [theme_selector](../src/xtd.forms/include/xtd/forms/style_sheets/theme_selector.h)                    | class        | ![progress](pictures/progress75.png)  |
 
 ## xtd::forms::visual_styles
 

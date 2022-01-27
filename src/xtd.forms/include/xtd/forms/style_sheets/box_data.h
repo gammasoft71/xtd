@@ -3,11 +3,11 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <array>
-#include "border_color.h"
-#include "border_radius.h"
-#include "border_style.h"
-#include "border_width.h"
-#include "image_data.h"
+#include "border_color_property.h"
+#include "border_radius_property.h"
+#include "border_style_property.h"
+#include "border_width_property.h"
+#include "image_value.h"
 #include "../padding.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

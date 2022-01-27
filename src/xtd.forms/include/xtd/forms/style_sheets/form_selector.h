@@ -1,8 +1,8 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::form_data alias.
+/// @brief Contains xtd::forms::style_sheets::form_selector alias.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "control_data.h"
+#include "control_selector.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,7 +16,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      using form_data = xtd::forms::style_sheets::control_data;
+      using form_selector = xtd::forms::style_sheets::control_selector;
     }
   }
 }

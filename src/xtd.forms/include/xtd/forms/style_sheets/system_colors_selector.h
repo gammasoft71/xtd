@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::system_colors_data class.
+/// @brief Contains xtd::forms::style_sheets::system_colors_selector class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
@@ -8,7 +8,7 @@
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../../forms_export.h"
-#include "color_data.h"
+#include "color_value.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,28 +18,28 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The theme data allows you to specify the theme informations.
       /// @code
-      /// class forms_export_ system_colors_data : public xtd::object
+      /// class forms_export_ system_colors_selector : public xtd::object
       /// @endcode
       /// @par Inheritance
-      /// xtd::object → xtd::forms::style_sheets::system_colors_data
+      /// xtd::object → xtd::forms::style_sheets::system_colors_selector
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      class forms_export_ system_colors_data : public xtd::iequatable<system_colors_data>, public xtd::object {
+      class forms_export_ system_colors_selector : public xtd::iequatable<system_colors_selector>, public xtd::object {
       public:
         /// @name Constructors
         
         /// @{
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::system_colors_data class.
-        system_colors_data() = default;
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::system_colors_selector class.
+        system_colors_selector() = default;
         /// @}
 
         /// @cond
-        system_colors_data(const system_colors_data&) = default;
-        system_colors_data(system_colors_data&&) = default;
-        system_colors_data& operator=(const system_colors_data&) = default;
+        system_colors_selector(const system_colors_selector&) = default;
+        system_colors_selector(system_colors_selector&&) = default;
+        system_colors_selector& operator=(const system_colors_selector&) = default;
         /// @endcond
         
         /// @name Properties
@@ -309,7 +309,7 @@ namespace xtd {
         
         /// @{
         bool equals (const object& other) const noexcept override;
-        bool equals (const system_colors_data& other) const noexcept override;
+        bool equals (const system_colors_selector& other) const noexcept override;
         /// @}
 
       private:
