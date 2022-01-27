@@ -19,8 +19,18 @@ add_sources(
   src/xtd/forms/style_sheets/color_property.cpp 
   src/xtd/forms/style_sheets/image_value.cpp 
   src/xtd/forms/style_sheets/style_sheet.cpp 
+  src/xtd/forms/style_sheets/style_sheet_gnome_dark.cpp 
+  src/xtd/forms/style_sheets/style_sheet_gnome_light.cpp 
+  src/xtd/forms/style_sheets/style_sheet_kde_dark.cpp 
+  src/xtd/forms/style_sheets/style_sheet_kde_light.cpp 
   src/xtd/forms/style_sheets/style_sheet_macos_dark.cpp 
   src/xtd/forms/style_sheets/style_sheet_macos_light.cpp 
+  src/xtd/forms/style_sheets/style_sheet_symbolic_dark.cpp 
+  src/xtd/forms/style_sheets/style_sheet_symbolic_light.cpp 
+  src/xtd/forms/style_sheets/style_sheet_windows_dark.cpp 
+  src/xtd/forms/style_sheets/style_sheet_windows_light.cpp 
+  src/xtd/forms/style_sheets/style_sheet_xtd_dark.cpp 
+  src/xtd/forms/style_sheets/style_sheet_xtd_light.cpp 
 )
 if (APPLE)
 add_sources(

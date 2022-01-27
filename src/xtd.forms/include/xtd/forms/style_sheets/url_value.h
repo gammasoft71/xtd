@@ -33,8 +33,8 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::url_value class.
         url_value() = default;
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::url_value class with specified url.
-        /// @param text The url value.
-        url_value(const xtd::ustring& uurl);
+        /// @param url The url value.
+        url_value(const xtd::ustring& url);
         /// @}
 
         /// @cond
