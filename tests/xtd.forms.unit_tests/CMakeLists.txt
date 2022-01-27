@@ -16,10 +16,11 @@ add_sources(
   src/xtd/forms/main_menu.cpp
   src/xtd/forms/system_information.cpp
   src/xtd/forms/layout/arranged_element_collection.cpp 
-  src/xtd/forms/style_sheets/color_data.cpp 
-  src/xtd/forms/style_sheets/image_data.cpp 
+  src/xtd/forms/style_sheets/color_property.cpp 
+  src/xtd/forms/style_sheets/image_value.cpp 
   src/xtd/forms/style_sheets/style_sheet.cpp 
   src/xtd/forms/style_sheets/style_sheet_macos_dark.cpp 
+  src/xtd/forms/style_sheets/style_sheet_macos_light.cpp 
 )
 if (APPLE)
 add_sources(

@@ -7,8 +7,10 @@
 #include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include "../../forms_export.h"
-#include "string_value.h"
-#include "url_value.h"
+#include "authors_property.h"
+#include "description_property.h"
+#include "name_property.h"
+#include "website_property.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -68,31 +70,31 @@ namespace xtd {
         /// @{
         /// @brief Gets the theme authors.
         /// @return The theme authors.
-        const xtd::forms::style_sheets::string_value& authors() const noexcept;
+        const xtd::forms::style_sheets::authors_property& authors() const noexcept;
         /// @brief Sets the theme authors.
         /// @param value The theme authors.
-        void authors(const xtd::forms::style_sheets::string_value& value) noexcept;
+        void authors(const xtd::forms::style_sheets::authors_property& value) noexcept;
         
         /// @brief Gets the theme name.
         /// @return The theme name.
-        const xtd::forms::style_sheets::string_value& description() const noexcept;
+        const xtd::forms::style_sheets::description_property& description() const noexcept;
         /// @brief Sets the theme name.
         /// @param value The theme name.
-        void description(const xtd::forms::style_sheets::string_value& value) noexcept;
+        void description(const xtd::forms::style_sheets::description_property& value) noexcept;
 
         /// @brief Gets the theme name.
         /// @return The theme name.
-        const xtd::forms::style_sheets::string_value& name() const noexcept;
+        const xtd::forms::style_sheets::name_property& name() const noexcept;
         /// @brief Sets the theme name.
         /// @param value The theme name.
-        void name(const xtd::forms::style_sheets::string_value& value) noexcept;
+        void name(const xtd::forms::style_sheets::name_property& value) noexcept;
 
         /// @brief Gets the theme website.
         /// @return The theme website.
-        const xtd::forms::style_sheets::url_value& website() const noexcept;
+        const xtd::forms::style_sheets::website_property& website() const noexcept;
         /// @brief Sets the theme website.
         /// @param value The theme website.
-        void website(const xtd::forms::style_sheets::url_value& value) noexcept;
+        void website(const xtd::forms::style_sheets::website_property& value) noexcept;
         /// @}
 
         /// @name Methods
@@ -127,10 +129,10 @@ namespace xtd {
         /// @}
 
       private:
-        xtd::forms::style_sheets::string_value name_;
+        xtd::forms::style_sheets::name_property name_;
         xtd::forms::style_sheets::string_value description_;
         xtd::forms::style_sheets::string_value authors_;
-        xtd::forms::style_sheets::url_value website_;
+        xtd::forms::style_sheets::website_property website_;
       };
     }
   }

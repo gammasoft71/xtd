@@ -256,6 +256,7 @@ add_sources(
   include/xtd/forms/layout/arranged_element_collection.h
   include/xtd/forms/layout/sorter_none.h
   include/xtd/forms/properties/resources.h
+  include/xtd/forms/style_sheets/authors_property.h
   include/xtd/forms/style_sheets/border_color_property.h
   include/xtd/forms/style_sheets/border_radius_property.h
   include/xtd/forms/style_sheets/border_style_property.h
@@ -265,10 +266,12 @@ add_sources(
   include/xtd/forms/style_sheets/button_selector.h
   include/xtd/forms/style_sheets/color_property.h
   include/xtd/forms/style_sheets/control_selector.h
+  include/xtd/forms/style_sheets/description_property.h
   include/xtd/forms/style_sheets/form_selector.h
   include/xtd/forms/style_sheets/image_type.h
   include/xtd/forms/style_sheets/image_value.h
   include/xtd/forms/style_sheets/label_selector.h
+  include/xtd/forms/style_sheets/name_property.h
   include/xtd/forms/style_sheets/pseudo_state.h
   include/xtd/forms/style_sheets/string_value.h
   include/xtd/forms/style_sheets/style_sheet.h
@@ -278,6 +281,7 @@ add_sources(
   include/xtd/forms/style_sheets/text_transformation.h
   include/xtd/forms/style_sheets/theme_selector.h
   include/xtd/forms/style_sheets/url_value.h
+  include/xtd/forms/style_sheets/website_property.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/control_state.h
   include/xtd/forms/visual_styles/form_state.h

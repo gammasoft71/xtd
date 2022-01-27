@@ -16,35 +16,35 @@ theme_selector::theme_selector(const string_value& name, const string_value& des
 theme_selector::theme_selector(const string_value& name, const string_value& description, const string_value& authors, const url_value& website) : name_(name), description_(description), authors_(authors), website_(website) {
 }
 
-const string_value& theme_selector::authors() const noexcept {
+const authors_property& theme_selector::authors() const noexcept {
   return authors_;
 }
 
-void theme_selector::authors(const string_value& value) noexcept {
+void theme_selector::authors(const authors_property& value) noexcept {
   authors_ = value;
 }
 
-const string_value& theme_selector::description() const noexcept {
+const description_property& theme_selector::description() const noexcept {
   return description_;
 }
 
-void theme_selector::description(const string_value& value) noexcept {
+void theme_selector::description(const description_property& value) noexcept {
   description_ = value;
 }
 
-const string_value& theme_selector::name() const noexcept {
+const name_property& theme_selector::name() const noexcept {
   return name_;
 }
 
-void theme_selector::name(const string_value& value) noexcept {
+void theme_selector::name(const name_property& value) noexcept {
   name_ = value;
 }
 
-const url_value& theme_selector::website() const noexcept {
+const website_property& theme_selector::website() const noexcept {
   return website_;
 }
 
-void theme_selector::website(const url_value& value) noexcept {
+void theme_selector::website(const website_property& value) noexcept {
   website_ = value;
 }
 
