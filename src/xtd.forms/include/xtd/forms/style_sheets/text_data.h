@@ -9,7 +9,7 @@
 #include <xtd/drawing/string_format.h>
 #include <xtd/drawing/system_fonts.h>
 #include <xtd/forms/content_alignment.h>
-#include "color_value.h"
+#include "color_property.h"
 #include "text_decoration.h"
 #include "text_transformation.h"
 
@@ -22,10 +22,10 @@ namespace xtd {
       class text_data : public xtd::object {
       public:
         text_data() = default;
-        text_data(const xtd::forms::style_sheets::color_data& color);
-        text_data(const xtd::forms::style_sheets::color_data& color, xtd::forms::content_alignment alignment);
-        text_data(const xtd::forms::style_sheets::color_data& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
-        text_data(const xtd::forms::style_sheets::color_data& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font, xtd::forms::style_sheets::text_decoration decoration, xtd::forms::style_sheets::text_transformation transformation);
+        text_data(const xtd::forms::style_sheets::color_property& color);
+        text_data(const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment);
+        text_data(const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
+        text_data(const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font, xtd::forms::style_sheets::text_decoration decoration, xtd::forms::style_sheets::text_transformation transformation);
 
         /// @cond
         text_data(const text_data&) = default;
@@ -36,8 +36,8 @@ namespace xtd {
         xtd::forms::content_alignment alignment() const noexcept;
         void alignment(xtd::forms::content_alignment value) noexcept;
 
-        const xtd::forms::style_sheets::color_data& color() const noexcept;
-        void color(const xtd::forms::style_sheets::color_data& value) noexcept;
+        const xtd::forms::style_sheets::color_property& color() const noexcept;
+        void color(const xtd::forms::style_sheets::color_property& value) noexcept;
         
         xtd::forms::style_sheets::text_decoration decoration() const noexcept;
         void decoration(xtd::forms::style_sheets::text_decoration value) noexcept;
@@ -51,7 +51,7 @@ namespace xtd {
         static xtd::drawing::string_format make_string_format(const xtd::forms::style_sheets::text_data& data);
 
       private:
-        xtd::forms::style_sheets::color_data color_;
+        xtd::forms::style_sheets::color_property color_;
         xtd::forms::content_alignment alignment_ = xtd::forms::content_alignment::middle_center;
         xtd::drawing::font font_ = xtd::drawing::system_fonts::default_font();
         xtd::forms::style_sheets::text_decoration decoration_ = xtd::forms::style_sheets::text_decoration::none;

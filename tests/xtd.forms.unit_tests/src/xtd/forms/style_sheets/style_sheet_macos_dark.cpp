@@ -22,8 +22,22 @@ namespace unit_tests {
     void test_method_(style_sheets_system_colors_macos_dark) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
-      assert::are_equal(color_data(color::from_argb(0xFF007AFF)), style.system_colors().accent(), csf_);
-      assert::are_equal(color_data(color::white), style.system_colors().accent_text(), csf_);
+      assert::are_equal(color_property(color::from_argb(0xFF007AFF)), style.system_colors().accent(), csf_);
+      assert::are_equal(color_property(color::white), style.system_colors().accent_text(), csf_);
+      assert::are_equal(color_property(color::from_argb(0xFFB4B4B4)), style.system_colors().active_border(), csf_);
+      assert::are_equal(color_property(color::from_argb(0xFF9A9A9A)), style.system_colors().active_caption(), csf_);
+      assert::are_equal(color_property(color::from_argb(216, 255, 255, 255)), style.system_colors().active_caption_text(), csf_);
+      assert::are_equal(color_property(color::from_argb(0xFF262626)), style.system_colors().app_workspace(), csf_);
+      assert::are_equal(color_property(color::from_argb(64, 255, 255, 255)), style.system_colors().button_face(), csf_);
+      assert::are_equal(color_property(color::from_argb(25, 255, 255, 255)), style.system_colors().button_highlight(), csf_);
+      assert::are_equal(color_property(color::from_argb(68, 0, 0, 0)), style.system_colors().button_shadow(), csf_);
+      assert::are_equal(color_property(color::from_argb(0xFF323232)), style.system_colors().control(), csf_);
+      assert::are_equal(color_property(color::from_argb(68, 0, 0, 0)), style.system_colors().control_dark(), csf_);
+      assert::are_equal(color_property(color::from_argb(68, 0, 0, 0)), style.system_colors().control_dark_dark(), csf_);
+      assert::are_equal(color_property(color::from_argb(25, 255, 255, 255)), style.system_colors().control_light(), csf_);
+      assert::are_equal(color_property(color::from_argb(25, 255, 255, 255)), style.system_colors().control_light_light(), csf_);
+      assert::are_equal(color_property(color::from_argb(216, 255, 255, 255)), style.system_colors().control_text(), csf_);
+      assert::are_equal(color_property(color::from_argb(0xFF9A9A9A)), style.system_colors().desktop(), csf_);
     }
   };
 }

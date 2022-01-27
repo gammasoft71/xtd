@@ -6,299 +6,299 @@
 using namespace xtd;
 using namespace xtd::forms::style_sheets;
 
-const color_data& system_colors_selector::accent() const noexcept {
+const color_property& system_colors_selector::accent() const noexcept {
   return accent_;
 }
 
-void system_colors_selector::accent(const color_data& value) noexcept {
+void system_colors_selector::accent(const color_property& value) noexcept {
   accent_ = value;
 }
 
-const color_data& system_colors_selector::accent_text() const noexcept {
+const color_property& system_colors_selector::accent_text() const noexcept {
   return accent_text_;
 }
 
-void system_colors_selector::accent_text(const color_data& value) noexcept {
+void system_colors_selector::accent_text(const color_property& value) noexcept {
   accent_text_ = value;
 }
 
-const color_data& system_colors_selector::active_border() const noexcept {
+const color_property& system_colors_selector::active_border() const noexcept {
   return active_border_;
 }
 
-void system_colors_selector::active_border(const color_data& value) noexcept {
+void system_colors_selector::active_border(const color_property& value) noexcept {
   active_border_ = value;
 }
 
-const color_data& system_colors_selector::active_caption() const noexcept {
+const color_property& system_colors_selector::active_caption() const noexcept {
   return active_caption_;
 }
 
-void system_colors_selector::active_caption(const color_data& value) noexcept {
+void system_colors_selector::active_caption(const color_property& value) noexcept {
   active_caption_ = value;
 }
 
-const color_data& system_colors_selector::active_caption_text() const noexcept {
+const color_property& system_colors_selector::active_caption_text() const noexcept {
   return active_caption_text_;
 }
 
-void system_colors_selector::active_caption_text(const color_data& value) noexcept {
+void system_colors_selector::active_caption_text(const color_property& value) noexcept {
   active_caption_text_ = value;
 }
 
-const color_data& system_colors_selector::app_workspace() const noexcept {
+const color_property& system_colors_selector::app_workspace() const noexcept {
   return app_workspace_;
 }
 
-void system_colors_selector::app_workspace(const color_data& value) noexcept {
+void system_colors_selector::app_workspace(const color_property& value) noexcept {
   app_workspace_ = value;
 }
 
-const color_data& system_colors_selector::button_face() const noexcept {
+const color_property& system_colors_selector::button_face() const noexcept {
   return button_face_;
 }
 
-void system_colors_selector::button_face(const color_data& value) noexcept {
+void system_colors_selector::button_face(const color_property& value) noexcept {
   button_face_ = value;
 }
 
-const color_data& system_colors_selector::button_highlight() const noexcept {
+const color_property& system_colors_selector::button_highlight() const noexcept {
   return button_highlight_;
 }
 
-void system_colors_selector::button_highlight(const color_data& value) noexcept {
+void system_colors_selector::button_highlight(const color_property& value) noexcept {
   button_highlight_ = value;
 }
 
-const color_data& system_colors_selector::button_shadow() const noexcept {
+const color_property& system_colors_selector::button_shadow() const noexcept {
   return button_shadow_;
 }
 
-void system_colors_selector::button_shadow(const color_data& value) noexcept {
+void system_colors_selector::button_shadow(const color_property& value) noexcept {
   button_shadow_ = value;
 }
 
-const color_data& system_colors_selector::control() const noexcept {
+const color_property& system_colors_selector::control() const noexcept {
   return control_;
 }
 
-void system_colors_selector::control(const color_data& value) noexcept {
+void system_colors_selector::control(const color_property& value) noexcept {
   control_ = value;
 }
 
-const color_data& system_colors_selector::control_dark() const noexcept {
+const color_property& system_colors_selector::control_dark() const noexcept {
   return control_dark_;
 }
 
-void system_colors_selector::control_dark(const color_data& value) noexcept {
+void system_colors_selector::control_dark(const color_property& value) noexcept {
   control_dark_ = value;
 }
 
-const color_data& system_colors_selector::control_dark_dark() const noexcept {
+const color_property& system_colors_selector::control_dark_dark() const noexcept {
   return control_dark_dark_;
 }
 
-void system_colors_selector::control_dark_dark(const color_data& value) noexcept {
+void system_colors_selector::control_dark_dark(const color_property& value) noexcept {
   control_dark_dark_ = value;
 }
 
-const color_data& system_colors_selector::control_light() const noexcept {
+const color_property& system_colors_selector::control_light() const noexcept {
   return control_light_;
 }
 
-void system_colors_selector::control_light(const color_data& value) noexcept {
+void system_colors_selector::control_light(const color_property& value) noexcept {
   control_light_ = value;
 }
 
-const color_data& system_colors_selector::control_light_light() const noexcept {
+const color_property& system_colors_selector::control_light_light() const noexcept {
   return control_light_light_;
 }
 
-void system_colors_selector::control_light_light(const color_data& value) noexcept {
+void system_colors_selector::control_light_light(const color_property& value) noexcept {
   control_light_light_ = value;
 }
 
-const color_data& system_colors_selector::control_text() const noexcept {
+const color_property& system_colors_selector::control_text() const noexcept {
   return control_text_;
 }
 
-void system_colors_selector::control_text(const color_data& value) noexcept {
+void system_colors_selector::control_text(const color_property& value) noexcept {
   control_text_ = value;
 }
 
-const color_data& system_colors_selector::desktop() const noexcept {
+const color_property& system_colors_selector::desktop() const noexcept {
   return desktop_;
 }
 
-void system_colors_selector::desktop(const color_data& value) noexcept {
+void system_colors_selector::desktop(const color_property& value) noexcept {
   desktop_ = value;
 }
 
-const color_data& system_colors_selector::gradient_active_caption() const noexcept {
+const color_property& system_colors_selector::gradient_active_caption() const noexcept {
   return gradient_active_caption_;
 }
 
-void system_colors_selector::gradient_active_caption(const color_data& value) noexcept {
+void system_colors_selector::gradient_active_caption(const color_property& value) noexcept {
   gradient_active_caption_ = value;
 }
 
-const color_data& system_colors_selector::gradient_inactive_caption() const noexcept {
+const color_property& system_colors_selector::gradient_inactive_caption() const noexcept {
   return gradient_inactive_caption_;
 }
 
-void system_colors_selector::gradient_inactive_caption(const color_data& value) noexcept {
+void system_colors_selector::gradient_inactive_caption(const color_property& value) noexcept {
   gradient_inactive_caption_ = value;
 }
 
-const color_data& system_colors_selector::gray_text() const noexcept {
+const color_property& system_colors_selector::gray_text() const noexcept {
   return gray_text_;
 }
 
-void system_colors_selector::gray_text(const color_data& value) noexcept {
+void system_colors_selector::gray_text(const color_property& value) noexcept {
   gray_text_ = value;
 }
 
-const color_data& system_colors_selector::highlight() const noexcept {
+const color_property& system_colors_selector::highlight() const noexcept {
   return highlight_;
 }
 
-void system_colors_selector::highlight(const color_data& value) noexcept {
+void system_colors_selector::highlight(const color_property& value) noexcept {
   highlight_ = value;
 }
 
-const color_data& system_colors_selector::highlight_text() const noexcept {
+const color_property& system_colors_selector::highlight_text() const noexcept {
   return highlight_text_;
 }
 
-void system_colors_selector::highlight_text(const color_data& value) noexcept {
+void system_colors_selector::highlight_text(const color_property& value) noexcept {
   highlight_text_ = value;
 }
 
-const color_data& system_colors_selector::hot_track() const noexcept {
+const color_property& system_colors_selector::hot_track() const noexcept {
   return hot_track_;
 }
 
-void system_colors_selector::hot_track(const color_data& value) noexcept {
+void system_colors_selector::hot_track(const color_property& value) noexcept {
   hot_track_ = value;
 }
 
-const color_data& system_colors_selector::inactive_border() const noexcept {
+const color_property& system_colors_selector::inactive_border() const noexcept {
   return inactive_border_;
 }
 
-void system_colors_selector::inactive_border(const color_data& value) noexcept {
+void system_colors_selector::inactive_border(const color_property& value) noexcept {
   inactive_border_ = value;
 }
 
-const color_data& system_colors_selector::inactive_caption() const noexcept {
+const color_property& system_colors_selector::inactive_caption() const noexcept {
   return inactive_caption_;
 }
 
-void system_colors_selector::inactive_caption(const color_data& value) noexcept {
+void system_colors_selector::inactive_caption(const color_property& value) noexcept {
   inactive_caption_ = value;
 }
 
-const color_data& system_colors_selector::inactive_caption_text() const noexcept {
+const color_property& system_colors_selector::inactive_caption_text() const noexcept {
   return inactive_caption_text_;
 }
 
-void system_colors_selector::inactive_caption_text(const color_data& value) noexcept {
+void system_colors_selector::inactive_caption_text(const color_property& value) noexcept {
   inactive_caption_text_ = value;
 }
 
-const color_data& system_colors_selector::info() const noexcept {
+const color_property& system_colors_selector::info() const noexcept {
   return info_;
 }
 
-void system_colors_selector::info(const color_data& value) noexcept {
+void system_colors_selector::info(const color_property& value) noexcept {
   info_ = value;
 }
 
-const color_data& system_colors_selector::info_text() const noexcept {
+const color_property& system_colors_selector::info_text() const noexcept {
   return info_text_;
 }
 
-void system_colors_selector::info_text(const color_data& value) noexcept {
+void system_colors_selector::info_text(const color_property& value) noexcept {
   info_text_ = value;
 }
 
-const color_data& system_colors_selector::menu() const noexcept {
+const color_property& system_colors_selector::menu() const noexcept {
   return menu_;
 }
 
-void system_colors_selector::menu(const color_data& value) noexcept {
+void system_colors_selector::menu(const color_property& value) noexcept {
   menu_ = value;
 }
 
-const color_data& system_colors_selector::menu_bar() const noexcept {
+const color_property& system_colors_selector::menu_bar() const noexcept {
   return menu_bar_;
 }
 
-void system_colors_selector::menu_bar(const color_data& value) noexcept {
+void system_colors_selector::menu_bar(const color_property& value) noexcept {
   menu_bar_ = value;
 }
 
-const color_data& system_colors_selector::menu_highlight() const noexcept {
+const color_property& system_colors_selector::menu_highlight() const noexcept {
   return menu_highlight_;
 }
 
-void system_colors_selector::menu_highlight(const color_data& value) noexcept {
+void system_colors_selector::menu_highlight(const color_property& value) noexcept {
   menu_highlight_ = value;
 }
 
-const color_data& system_colors_selector::menu_text() const noexcept {
+const color_property& system_colors_selector::menu_text() const noexcept {
   return menu_text_;
 }
 
-void system_colors_selector::menu_text(const color_data& value) noexcept {
+void system_colors_selector::menu_text(const color_property& value) noexcept {
   menu_text_ = value;
 }
 
-const color_data& system_colors_selector::scroll_bar() const noexcept {
+const color_property& system_colors_selector::scroll_bar() const noexcept {
   return scroll_bar_;
 }
 
-void system_colors_selector::scroll_bar(const color_data& value) noexcept {
+void system_colors_selector::scroll_bar(const color_property& value) noexcept {
   scroll_bar_ = value;
 }
 
-const color_data& system_colors_selector::text_box() const noexcept {
+const color_property& system_colors_selector::text_box() const noexcept {
   return text_box_;
 }
 
-void system_colors_selector::text_box(const color_data& value) noexcept {
+void system_colors_selector::text_box(const color_property& value) noexcept {
   text_box_text_ = value;
 }
 
-const color_data& system_colors_selector::text_box_text() const noexcept {
+const color_property& system_colors_selector::text_box_text() const noexcept {
   return text_box_text_;
 }
 
-void system_colors_selector::text_box_text(const color_data& value) noexcept {
+void system_colors_selector::text_box_text(const color_property& value) noexcept {
   text_box_text_ = value;
 }
 
-const color_data& system_colors_selector::window() const noexcept {
+const color_property& system_colors_selector::window() const noexcept {
   return window_;
 }
 
-void system_colors_selector::window(const color_data& value) noexcept {
+void system_colors_selector::window(const color_property& value) noexcept {
   window_ = value;
 }
 
-const color_data& system_colors_selector::window_frame() const noexcept {
+const color_property& system_colors_selector::window_frame() const noexcept {
   return window_frame_;
 }
 
-void system_colors_selector::window_frame(const color_data& value) noexcept {
+void system_colors_selector::window_frame(const color_property& value) noexcept {
   window_frame_ = value;
 }
 
-const color_data& system_colors_selector::window_text() const noexcept {
+const color_property& system_colors_selector::window_text() const noexcept {
   return window_text_;
 }
 
-void system_colors_selector::window_text(const color_data& value) noexcept {
+void system_colors_selector::window_text(const color_property& value) noexcept {
   window_text_ = value;
 }
 

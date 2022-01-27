@@ -354,7 +354,7 @@
 | [border_width](../src/xtd.forms/include/xtd/forms/style_sheets/border_width.h)                | class        | ![progress](pictures/progress100.png) |
 | [box_data](../src/xtd.forms/include/xtd/forms/style_sheets/box_data.h)                        | class        | ![progress](pictures/progress75.png)  |
 | [buttton_data](../src/xtd.forms/include/xtd/forms/style_sheets/buttton_data.h)                | alias        | ![progress](pictures/progress100.png) |
-| [color_data](../src/xtd.forms/include/xtd/forms/style_sheets/color_value.h)                    | class        | ![progress](pictures/progress75.png)  |
+| [color_data](../src/xtd.forms/include/xtd/forms/style_sheets/color_property.h)                    | class        | ![progress](pictures/progress75.png)  |
 | [control_selector](../src/xtd.forms/include/xtd/forms/style_sheets/control_selector.h)                | class        | ![progress](pictures/progress75.png)  |
 | [form_data](../src/xtd.forms/include/xtd/forms/style_sheets/form_data.h)                      | alias        | ![progress](pictures/progress100.png) |
 | [image_data](../src/xtd.forms/include/xtd/forms/style_sheets/image_data.h)                    | class        | ![progress](pictures/progress50.png)  |
