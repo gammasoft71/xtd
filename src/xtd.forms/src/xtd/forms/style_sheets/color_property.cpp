@@ -88,33 +88,6 @@ ustring color_property::remove_key(const xtd::ustring& text) {
   return result.trim();
 }
 
-vector<ustring> color_property::split_colors(const ustring& text) {
-  static vector<ustring> color_keywords = {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
-  auto string_starts_with_any = [](const ustring& text, const vector<ustring>& values)->ustring {
-    for (auto value : values)
-      if (text.starts_with(value)) return value;
-    return "";
-  };
-  vector<ustring> result;
-  auto value = text.trim();
-  while (!value.empty()) {
-    auto color_keyword = string_starts_with_any(value, color_keywords);
-    if (color_keyword != "") {
-      result.push_back(value.substring(0, value.find(")") + 1).trim());
-      value = value.remove(0, value.find(")") + 1).trim();
-      if (value[0] == ',') value = value.remove(0, 1).trim();
-    } else if (value.find(",") == ustring::npos) {
-      result.push_back(value.trim());
-      value = "";
-    } else if (value.find(",") != ustring::npos) {
-      result.push_back(value.substring(0, value.find(",")).trim());
-      value = value.remove(0, value.find(",") + 1).trim();
-    }
-  }
-  return result;
-}
-
-
 bool color_property::try_parse_hash_color(const xtd::ustring& text, color_property& result) {
   if (text.starts_with("#") && text.size() == 4U) {
     byte_t r = 0;

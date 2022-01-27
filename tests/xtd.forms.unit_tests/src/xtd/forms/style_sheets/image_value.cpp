@@ -4,7 +4,6 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 using namespace xtd::tunit;
 

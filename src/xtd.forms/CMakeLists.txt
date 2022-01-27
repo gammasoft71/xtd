@@ -268,6 +268,7 @@ add_sources(
   include/xtd/forms/style_sheets/control_selector.h
   include/xtd/forms/style_sheets/description_property.h
   include/xtd/forms/style_sheets/form_selector.h
+  include/xtd/forms/style_sheets/height_property.h
   include/xtd/forms/style_sheets/image_type.h
   include/xtd/forms/style_sheets/image_value.h
   include/xtd/forms/style_sheets/label_selector.h
@@ -282,6 +283,7 @@ add_sources(
   include/xtd/forms/style_sheets/theme_selector.h
   include/xtd/forms/style_sheets/url_value.h
   include/xtd/forms/style_sheets/website_property.h
+  include/xtd/forms/style_sheets/width_property.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/control_state.h
   include/xtd/forms/visual_styles/form_state.h
@@ -398,9 +400,11 @@ add_sources(
   src/xtd/forms/v_scroll_bar.cpp
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
   src/xtd/forms/xtd_forms_message_dialog_closed_caller.h
+  src/xtd/forms/style_sheets/border_color_property.cpp
   src/xtd/forms/style_sheets/box_data.cpp
   src/xtd/forms/style_sheets/color_property.cpp
   src/xtd/forms/style_sheets/control_selector.cpp
+  src/xtd/forms/style_sheets/height_property.cpp
   src/xtd/forms/style_sheets/image_value.cpp
   src/xtd/forms/style_sheets/string_value.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
@@ -408,6 +412,7 @@ add_sources(
   src/xtd/forms/style_sheets/text_data.cpp
   src/xtd/forms/style_sheets/theme_selector.cpp
   src/xtd/forms/style_sheets/url_value.cpp
+  src/xtd/forms/style_sheets/width_property.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 

@@ -3,6 +3,8 @@
 using namespace xtd;
 using namespace xtd::forms::style_sheets;
 
+const string_value string_value::empty;
+
 string_value::string_value(const ustring& text) : text_(text) {
 }
 
