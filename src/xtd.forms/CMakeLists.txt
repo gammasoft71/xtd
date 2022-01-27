@@ -256,28 +256,28 @@ add_sources(
   include/xtd/forms/layout/arranged_element_collection.h
   include/xtd/forms/layout/sorter_none.h
   include/xtd/forms/properties/resources.h
-  include/xtd/forms/style_sheets/border_color.h
-  include/xtd/forms/style_sheets/border_radius.h
-  include/xtd/forms/style_sheets/border_style.h
+  include/xtd/forms/style_sheets/border_color_property.h
+  include/xtd/forms/style_sheets/border_radius_property.h
+  include/xtd/forms/style_sheets/border_style_property.h
   include/xtd/forms/style_sheets/border_type.h
-  include/xtd/forms/style_sheets/border_width.h
+  include/xtd/forms/style_sheets/border_width_property.h
   include/xtd/forms/style_sheets/box_data.h
-  include/xtd/forms/style_sheets/button_data.h
-  include/xtd/forms/style_sheets/color_data.h
-  include/xtd/forms/style_sheets/control_data.h
-  include/xtd/forms/style_sheets/form_data.h
-  include/xtd/forms/style_sheets/image_data.h
+  include/xtd/forms/style_sheets/button_selector.h
+  include/xtd/forms/style_sheets/color_value.h
+  include/xtd/forms/style_sheets/control_selector.h
+  include/xtd/forms/style_sheets/form_selector.h
   include/xtd/forms/style_sheets/image_type.h
-  include/xtd/forms/style_sheets/label_data.h
+  include/xtd/forms/style_sheets/image_value.h
+  include/xtd/forms/style_sheets/label_selector.h
   include/xtd/forms/style_sheets/pseudo_state.h
-  include/xtd/forms/style_sheets/string_data.h
+  include/xtd/forms/style_sheets/string_value.h
   include/xtd/forms/style_sheets/style_sheet.h
-  include/xtd/forms/style_sheets/system_colors_data.h
+  include/xtd/forms/style_sheets/system_colors_selector.h
   include/xtd/forms/style_sheets/text_data.h
   include/xtd/forms/style_sheets/text_decoration.h
   include/xtd/forms/style_sheets/text_transformation.h
-  include/xtd/forms/style_sheets/theme_data.h
-  include/xtd/forms/style_sheets/url_data.h
+  include/xtd/forms/style_sheets/theme_selector.h
+  include/xtd/forms/style_sheets/url_value.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/control_state.h
   include/xtd/forms/visual_styles/form_state.h
@@ -395,15 +395,15 @@ add_sources(
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
   src/xtd/forms/xtd_forms_message_dialog_closed_caller.h
   src/xtd/forms/style_sheets/box_data.cpp
-  src/xtd/forms/style_sheets/color_data.cpp
-  src/xtd/forms/style_sheets/control_data.cpp
-  src/xtd/forms/style_sheets/image_data.cpp
-  src/xtd/forms/style_sheets/string_data.cpp
+  src/xtd/forms/style_sheets/color_value.cpp
+  src/xtd/forms/style_sheets/control_selector.cpp
+  src/xtd/forms/style_sheets/image_value.cpp
+  src/xtd/forms/style_sheets/string_value.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
-  src/xtd/forms/style_sheets/system_colors_data.cpp
+  src/xtd/forms/style_sheets/system_colors_selector.cpp
   src/xtd/forms/style_sheets/text_data.cpp
-  src/xtd/forms/style_sheets/theme_data.cpp
-  src/xtd/forms/style_sheets/url_data.cpp
+  src/xtd/forms/style_sheets/theme_selector.cpp
+  src/xtd/forms/style_sheets/url_value.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 

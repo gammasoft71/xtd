@@ -1,8 +1,8 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::label_data class.
+/// @brief Contains xtd::forms::style_sheets::button_selector alias.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "control_data.h"
+#include "control_selector.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -10,13 +10,13 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The label data allows you to specify the box of a label control.
+      /// @brief The buttton data allows you to specify the box of a button control.
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      using label_data = xtd::forms::style_sheets::control_data;
+      using button_selector = xtd::forms::style_sheets::control_selector;
     }
   }
 }

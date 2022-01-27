@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::label_data static class.
+/// @brief Contains xtd::forms::label_renderer static class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/static.h>

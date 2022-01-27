@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::control_data class.
+/// @brief Contains xtd::forms::style_sheets::control_selector class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "box_data.h"
@@ -13,37 +13,37 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The control data allows you to specify the box and color of a control.
       /// @code
-      /// class forms_export_ control_data : public xtd::object
+      /// class forms_export_ control_selector : public xtd::object
       /// @endcode
       /// @par Inheritance
-      /// xtd::object → xtd::forms::style_sheets::control_data
+      /// xtd::object → xtd::forms::style_sheets::control_selector
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      class forms_export_ control_data : public xtd::object {
+      class forms_export_ control_selector : public xtd::object {
       public:
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_data class.
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_selector class.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        control_data() = default;
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_data class with specified box.
+        control_selector() = default;
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_selector class with specified box.
         /// @param box The box of the control.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        explicit control_data(const xtd::forms::style_sheets::box_data& box);
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_data class with specified box and text.
+        explicit control_selector(const xtd::forms::style_sheets::box_data& box);
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_selector class with specified box and text.
         /// @param box The box of the control.
         /// @param text The text of the control.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        explicit control_data(const xtd::forms::style_sheets::box_data& box, const xtd::forms::style_sheets::text_data& text);
+        explicit control_selector(const xtd::forms::style_sheets::box_data& box, const xtd::forms::style_sheets::text_data& text);
         
         /// @cond
-        control_data(const control_data&) = default;
-        control_data(control_data&&) = default;
-        control_data& operator=(const control_data&) = default;
+        control_selector(const control_selector&) = default;
+        control_selector(control_selector&&) = default;
+        control_selector& operator=(const control_selector&) = default;
         /// @endcond
         
         /// @brief Gets the box of the control.
