@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class test_class_(test_style_sheet_macos_dark) {
   public:
-    void test_method_(style_sheets_theme_macos_dark) {
+    void test_method_(theme) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
       assert::are_equal("macOS (dark)", style.theme().name().text(), csf_);
@@ -19,7 +19,7 @@ namespace unit_tests {
       assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", style.theme().website().url(), csf_);
     }
     
-    void test_method_(style_sheets_system_colors_macos_dark) {
+    void test_method_(system_colors) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
       assert::are_equal(color_property(color::from_argb(0xFF007AFF)), style.system_colors().accent(), csf_);

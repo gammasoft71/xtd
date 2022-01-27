@@ -1,4 +1,4 @@
-#include <xtd/forms/style_sheets/color_value.h>
+#include <xtd/forms/style_sheets/color_property.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/xtd.tunit>
 
@@ -9,7 +9,7 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::tunit;
 
 namespace unit_tests {
-  class test_class_(test_color_data) {
+  class test_class_(test_color_property) {
   public:
     void test_method_(create_with_default_constructor) {
       color_property c;
