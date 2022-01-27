@@ -3,30 +3,30 @@
 using namespace xtd;
 using namespace xtd::forms::style_sheets;
 
-string_data::string_data(const ustring& text) : text_(text) {
+string_value::string_value(const ustring& text) : text_(text) {
 }
 
-const ustring& string_data::text() const noexcept {
+const ustring& string_value::text() const noexcept {
   return text_;
 }
 
-void string_data::text(const ustring& value) noexcept {
+void string_value::text(const ustring& value) noexcept {
   text_ = value;
 }
 
-bool string_data::from_css(const xtd::ustring& css_text, string_data& result)  noexcept {
+bool string_value::from_css(const xtd::ustring& css_text, string_value& result)  noexcept {
   auto value = css_text.trim();
   if (!value.starts_with("\"") || !value.ends_with("\"")) return false;
-  result = string_data(value.remove(value.size() - 1, 1).replace("\"", ""));
+  result = string_value(value.remove(value.size() - 1, 1).replace("\"", ""));
   return true;
 }
 
-string_data string_data::from_css(const xtd::ustring& css_text, const string_data& default_value) noexcept {
-  string_data result;
+string_value string_value::from_css(const xtd::ustring& css_text, const string_value& default_value) noexcept {
+  string_value result;
   if (from_css(css_text, result)) return result;
   return default_value;
 }
 
-xtd::ustring string_data::to_css() const noexcept {
+xtd::ustring string_value::to_css() const noexcept {
   return ustring::format("\"{}\"", text());
 }
