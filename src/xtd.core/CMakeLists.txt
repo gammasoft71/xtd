@@ -110,6 +110,7 @@ add_sources(
   include/xtd/unauthorized_access_exception.h
   include/xtd/underflow_exception.h
   include/xtd/unused.h
+  include/xtd/uri.h
   include/xtd/using.h
   include/xtd/ustring.h
   include/xtd/va_args_comma.h
@@ -286,6 +287,7 @@ add_sources(
   src/xtd/translator.cpp
   src/xtd/types.cpp
   src/xtd/types.cpp
+  src/xtd/uri.cpp
   src/xtd/ustring.cpp
   src/xtd/version.cpp
   src/xtd/diagnostics/boolean_switch.cpp
