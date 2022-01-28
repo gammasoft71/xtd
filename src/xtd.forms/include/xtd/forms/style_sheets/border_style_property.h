@@ -40,7 +40,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_style_property class using the supplied xtd::forms::style_sheets::border_style_property size for all edges.
         /// @param all The number of pixels to be used for xtd::forms::style_sheets::border_style_property for all edges.
         /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-        border_style_property(border_type all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {}
+        explicit border_style_property(border_type all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {}
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_style_property class using a separate xtd::forms::style_sheets::border_style_property size for each edge.
         /// @param left The xtd::forms::style_sheets::border_style_property size for the left edge.

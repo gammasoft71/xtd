@@ -44,7 +44,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::height_property class using the supplied height_property for all edges.
         /// @param all The xtd::forms::style_sheets::color_data to be used for height_property for all edges.
         /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-        height_property(int32_t height) : height_(height) {}
+        explicit height_property(int32_t height) : height_(height) {}
         /// @}
         
         /// @cond

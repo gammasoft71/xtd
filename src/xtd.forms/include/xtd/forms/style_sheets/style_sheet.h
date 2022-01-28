@@ -37,7 +37,7 @@ namespace xtd {
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance.
         style_sheet() = default;
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance from specified css forrmated text.
-        style_sheet(const xtd::ustring& text);
+        explicit style_sheet(const xtd::ustring& text);
 
         /// @cond
         style_sheet(const style_sheet&) = default;

@@ -53,7 +53,7 @@ namespace xtd {
         /// | xtd::forms::style_sheets::image_value::colors      | An array with one color : xtd::drawing::color::black) |
         /// | xtd::forms::style_sheets::image_value::image_type  | xtd::forms::style_sheets::image_type::url             |
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
-        image_value(const xtd::ustring& url);
+        explicit image_value(const xtd::ustring& url);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::image_value class with specified colors array.
         /// @param color The colors that specifies the color for gradient image to display.
         /// | Property                                          | Default value                                         |
@@ -62,7 +62,7 @@ namespace xtd {
         /// | xtd::forms::style_sheets::image_value::image_type  | xtd::forms::style_sheets::image_type::linera_gradient |
         /// | xtd::forms::style_sheets::image_value::url         | An empty tring ("")                                   |
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
-        image_value(const std::vector<xtd::drawing::color>& colors);
+        explicit image_value(const std::vector<xtd::drawing::color>& colors);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::image_value class with specified colors and angle.
         /// @param color The colors that specifies the color for gradient image to display.
         /// @param angle The angle specifies the gradient direction.

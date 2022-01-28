@@ -40,7 +40,7 @@ namespace xtd {
         /// @param name The theme name.
         /// @param name The theme description.
         /// @param name The theme authors.
-        theme_selector(const xtd::forms::style_sheets::string_value& name);
+        explicit theme_selector(const xtd::forms::style_sheets::string_value& name);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::theme_selector class with specified name and description.
         /// @param name The theme name.
         /// @param name The theme description.
