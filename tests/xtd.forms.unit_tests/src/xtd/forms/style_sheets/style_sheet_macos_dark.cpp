@@ -38,6 +38,27 @@ namespace unit_tests {
       assert::are_equal(color::from_argb(25, 255, 255, 255), style.system_colors().control_light_light(), csf_);
       assert::are_equal(color::from_argb(216, 255, 255, 255), style.system_colors().control_text(), csf_);
       assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().desktop(), csf_);
+      assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().gradient_active_caption(), csf_);
+      assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().gradient_inactive_caption(), csf_);
+      assert::are_equal(color::from_argb(63, 255, 255, 255), style.system_colors().gray_text(), csf_);
+      assert::are_equal(color::from_argb(0xFF314F78), style.system_colors().highlight(), csf_);
+      assert::are_equal(color::white, style.system_colors().highlight_text(), csf_);
+      assert::are_equal(color::from_argb(0xFF3586FF), style.system_colors().hot_track(), csf_);
+      assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().inactive_border(), csf_);
+      assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().inactive_caption(), csf_);
+      assert::are_equal(color::from_argb(216, 255, 255, 255), style.system_colors().inactive_caption_text(), csf_);
+      assert::are_equal(color::from_argb(0xFF262626), style.system_colors().info(), csf_);
+      assert::are_equal(color::from_argb(216, 255, 255, 255), style.system_colors().info_text(), csf_);
+      assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().menu(), csf_);
+      assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().menu_bar(), csf_);
+      assert::are_equal(color::from_argb(0xFF345DF1), style.system_colors().menu_highlight(), csf_);
+      assert::are_equal(color::from_argb(216, 255, 255, 255), style.system_colors().menu_text(), csf_);
+      assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().scroll_bar(), csf_);
+      assert::are_equal(color::from_argb(16, 255, 255, 255), style.system_colors().text_box(), csf_);
+      assert::are_equal(color::white, style.system_colors().text_box_text(), csf_);
+      assert::are_equal(color::from_argb(0xFF171717), style.system_colors().window(), csf_);
+      assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().window_frame(), csf_);
+      assert::are_equal(color::from_argb(216, 255, 255, 255), style.system_colors().window_text(), csf_);
     }
   };
 }

@@ -69,14 +69,16 @@ namespace xtd {
 
         bool equals(const object& other) const noexcept override;
         bool equals(const style_sheet& other) const noexcept override;
+
+        xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
+        xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
+        xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
         /// @}
         
       private:
-        xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         static void initilize();
-        xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
-        void theme_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, theme_selector& theme) const noexcept;
         void system_color_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, system_colors_selector& colors) const noexcept;
+        void theme_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, theme_selector& theme) const noexcept;
         bool try_parse_hex_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_named_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_rgb_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
@@ -89,7 +91,6 @@ namespace xtd {
         bool try_parse_hsla_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_ahsl_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_system_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
 
         button_selector button_;
         control_selector control_;
