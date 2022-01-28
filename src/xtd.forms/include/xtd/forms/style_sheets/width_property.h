@@ -44,7 +44,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::width_property class using the supplied width_property for all edges.
         /// @param all The xtd::forms::style_sheets::color_data to be used for width_property for all edges.
         /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-        width_property(int32_t width) : width_(width) {}
+        explicit width_property(int32_t width) : width_(width) {}
         /// @}
         
         /// @cond

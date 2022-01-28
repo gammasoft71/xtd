@@ -49,7 +49,7 @@ namespace xtd {
         string_value() = default;
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::string_value class with specified text.
         /// @param text The text value.
-        string_value(const xtd::ustring& text);
+        explicit string_value(const xtd::ustring& text);
 
         /// @cond
         string_value(const string_value&) = default;

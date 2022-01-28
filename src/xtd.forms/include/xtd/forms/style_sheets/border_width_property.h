@@ -40,7 +40,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_width_property class using the supplied xtd::forms::style_sheets::border_width_property size for all edges.
         /// @param all The number of pixels to be used for xtd::forms::style_sheets::border_width_property for all edges.
         /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-        border_width_property(int all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {}
+        explicit border_width_property(int all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {}
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_width_property class using a separate xtd::forms::style_sheets::border_width_property size for each edge.
         /// @param left The xtd::forms::style_sheets::border_width_property size, in pixels, for the left edge.
@@ -89,10 +89,6 @@ namespace xtd {
           }
         }
         
-        /// @brief Gets the combined xtd::forms::style_sheets::border_width_property for the right and left edges.
-        /// @return Gets the sum, in pixels, of the left and right xtd::forms::style_sheets::border_width_property values.
-        int horizontal() const {return left_ + right_;}
-        
         /// @brief Gets the xtd::forms::style_sheets::border_width_property value for the left edge.
         /// @return The xtd::forms::style_sheets::border_width_property, in pixels, for the left edge.
         /// @remarks Setting this value can also alter the all property.
@@ -134,33 +130,11 @@ namespace xtd {
             top_ = top;
           }
         }
-        
-        /// @brief Gets the combined xtd::forms::style_sheets::border_width_property for the bottom and top edges.
-        /// @param p1 A xtd::forms::style_sheets::border_width_property.
-        /// @param p2 A xtd::forms::style_sheets::border_width_property.
-        /// @return Gets the sum, in pixels, of the top and bottom xtd::forms::style_sheets::border_width_property values.
-        int vertical() const {return top_ + bottom_;}
         /// @}
         
         /// @name Methods
         
         /// @{
-        /// @brief Computes the sum of the two specified xtd::forms::style_sheets::border_width_property values.
-        /// @return A xtd::forms::style_sheets::border_width_property that contains the sum of the two specified xtd::forms::style_sheets::border_width_property values.
-        static border_width_property add(const border_width_property& p1, const border_width_property& p2) {
-          if (p1.all_ && p2.all_) return {p1.left_ + p2.left_};
-          return {p1.left_ + p2.left_, p1.top_ + p2.top_, p1.right_ + p2.right_, p1.bottom_ + p2.bottom_};
-        }
-        
-        /// @brief Subtracts one specified xtd::forms::style_sheets::border_width_property value from another.
-        /// @param p1 A xtd::forms::style_sheets::border_width_property.
-        /// @param p2 A xtd::forms::style_sheets::border_width_property.
-        /// @return A xtd::forms::style_sheets::border_width_property that contains the result of the subtraction of one specified xtd::forms::style_sheets::border_width_property value from another.
-        static border_width_property subtract(const border_width_property& p1, const border_width_property& p2) {
-          if (p1.all_ && p2.all_) return {p1.left_ - p2.left_};
-          return {p1.left_ - p2.left_, p1.top_ - p2.top_, p1.right_ - p2.right_, p1.bottom_ - p2.bottom_};
-        }
-        
         /// @brief Returns a string that represents the current xtd::forms::style_sheets::border_width_property.
         /// @return A string that represents the current xtd::forms::style_sheets::border_width_property.
         /// @remarks This method returns a string containing the labeled values of the xtd::forms::style_sheets::border_width_property for all four edges.

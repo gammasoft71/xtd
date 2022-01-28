@@ -11,61 +11,61 @@ using namespace xtd::forms::style_sheets;
 
 const border_color_property border_color_property::empty {color_property()};
 
-border_color_property::border_color_property(color_property all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {
+border_color_property::border_color_property(const color_property& all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {
 }
 
-border_color_property::border_color_property(color_property left, color_property top, color_property right, color_property bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
+border_color_property::border_color_property(const color_property& left, const color_property& top, const color_property& right, const color_property& bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
 }
 
-color_property border_color_property::all() const noexcept {
+const color_property& border_color_property::all() const noexcept {
   return all_ ? top_ : color_property::empty;
 }
 
-void border_color_property::all(color_property all) noexcept {
+void border_color_property::all(const color_property& all) noexcept {
   if (!all_ || left_ != all) {
     all_ = true;
     left_ = top_ = right_ = bottom_ = all;
   }
 }
 
-color_property border_color_property::bottom() const noexcept {
+const color_property& border_color_property::bottom() const noexcept {
   return bottom_;
 }
 
-void border_color_property::bottom(color_property bottom) noexcept {
+void border_color_property::bottom(const color_property& bottom) noexcept {
   if (all_ || bottom_ != bottom) {
     all_ = false;
     bottom_ = bottom;
   }
 }
 
-color_property border_color_property::left() const noexcept {
+const color_property& border_color_property::left() const noexcept {
   return left_;
 }
 
-void border_color_property::left(color_property left) noexcept {
+void border_color_property::left(const color_property& left) noexcept {
   if (all_ || left_ != left) {
     all_ = false;
     left_ = left;
   }
 }
 
-color_property border_color_property::right() const noexcept {
+const color_property& border_color_property::right() const noexcept {
   return right_;
 }
 
-void border_color_property::right(color_property right) noexcept {
+void border_color_property::right(const color_property& right) noexcept {
   if (all_ || right_ != right) {
     all_ = false;
     right_ = right;
   }
 }
 
-color_property border_color_property::top() const noexcept {
+const color_property& border_color_property::top() const noexcept {
   return top_;
 }
 
-void border_color_property::top(color_property top) noexcept {
+void border_color_property::top(const color_property& top) noexcept {
   if (all_ || top_ != top) {
     all_ = false;
     top_ = top;

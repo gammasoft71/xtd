@@ -44,7 +44,7 @@ namespace xtd {
         color_property() = default;
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::color_property class with specified color.
         /// @param color The colors specifies what colors to display.
-        color_property(const xtd::drawing::color& color);
+        explicit color_property(const xtd::drawing::color& color);
         /// @}
 
         /// @cond

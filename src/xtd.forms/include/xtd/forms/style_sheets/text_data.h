@@ -22,7 +22,7 @@ namespace xtd {
       class text_data : public xtd::object {
       public:
         text_data() = default;
-        text_data(const xtd::forms::style_sheets::color_property& color);
+        explicit text_data(const xtd::forms::style_sheets::color_property& color);
         text_data(const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment);
         text_data(const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
         text_data(const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font, xtd::forms::style_sheets::text_decoration decoration, xtd::forms::style_sheets::text_transformation transformation);

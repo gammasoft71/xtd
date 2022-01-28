@@ -34,7 +34,7 @@ namespace xtd {
         url_value() = default;
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::url_value class with specified url.
         /// @param url The url value.
-        url_value(const xtd::ustring& url);
+        explicit url_value(const xtd::ustring& url);
         /// @}
 
         /// @cond
