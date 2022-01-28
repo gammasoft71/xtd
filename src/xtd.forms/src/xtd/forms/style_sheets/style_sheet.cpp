@@ -58,6 +58,17 @@ bool style_sheet::equals(const style_sheet& other) const noexcept {
   return theme_ == theme_;
 }
 
+border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept {
+  vector<ustring> colors = split_colors_from_css(css_text);
+  if (colors.size() < 1 || colors.size() > 4) return default_value;
+  border_color result;
+  result.all(color_from_css(colors[0], default_value.top()));
+  if (colors.size() >= 2) result.right(color_from_css(colors[0], default_value.right()));
+  if (colors.size() >= 3) result.bottom(color_from_css(colors[0], default_value.right()));
+  if (colors.size() == 4) result.left(color_from_css(colors[0], default_value.right()));
+  return result;
+}
+
 xtd::drawing::color style_sheet::color_from_css(const ustring& css_text, const color& default_value) const noexcept {
   color result;
   if (css_text.starts_with("#") && try_parse_hex_color(css_text, result)) return result;
@@ -86,6 +97,32 @@ void style_sheet::initilize() {
     if (!style.theme().name().empty())
       style_sheets_[style.theme().name()] = style;
   }
+}
+
+vector<ustring> style_sheet::split_colors_from_css(const ustring& text) const noexcept {
+  static vector<ustring> color_keywords = {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
+  auto string_starts_with_any = [](const ustring& text, const vector<ustring>& values)->ustring {
+    for (auto value : values)
+      if (text.starts_with(value)) return value;
+    return "";
+  };
+  vector<ustring> result;
+  auto value = text.trim();
+  while (!value.empty()) {
+    auto color_keyword = string_starts_with_any(value, color_keywords);
+    if (color_keyword != "") {
+      result.push_back(value.substring(0, value.find(")") + 1).trim());
+      value = value.remove(0, value.find(")") + 1).trim();
+      if (value[0] == ',') value = value.remove(0, 1).trim();
+    } else if (value.find(",") == ustring::npos) {
+      result.push_back(value.trim());
+      value = "";
+    } else if (value.find(",") != ustring::npos) {
+      result.push_back(value.substring(0, value.find(",")).trim());
+      value = value.remove(0, value.find(",") + 1).trim();
+    }
+  }
+  return result;
 }
 
 ustring style_sheet::string_from_css(const xtd::ustring& css_text, const ustring& default_value) const noexcept {

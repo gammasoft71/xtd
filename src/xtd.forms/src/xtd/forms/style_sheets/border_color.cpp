@@ -9,63 +9,63 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms::style_sheets;
 
-const border_color border_color::empty {color_property()};
+const border_color border_color::empty {xtd::drawing::color()};
 
-border_color::border_color(const color_property& all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {
+border_color::border_color(const xtd::drawing::color& all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {
 }
 
-border_color::border_color(const color_property& left, const color_property& top, const color_property& right, const color_property& bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
+border_color::border_color(const xtd::drawing::color& left, const xtd::drawing::color& top, const xtd::drawing::color& right, const xtd::drawing::color& bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
 }
 
-const color_property& border_color::all() const noexcept {
-  return all_ ? top_ : color_property::empty;
+const xtd::drawing::color& border_color::all() const noexcept {
+  return all_ ? top_ : xtd::drawing::color::empty;
 }
 
-void border_color::all(const color_property& all) noexcept {
+void border_color::all(const xtd::drawing::color& all) noexcept {
   if (!all_ || left_ != all) {
     all_ = true;
     left_ = top_ = right_ = bottom_ = all;
   }
 }
 
-const color_property& border_color::bottom() const noexcept {
+const xtd::drawing::color& border_color::bottom() const noexcept {
   return bottom_;
 }
 
-void border_color::bottom(const color_property& bottom) noexcept {
+void border_color::bottom(const xtd::drawing::color& bottom) noexcept {
   if (all_ || bottom_ != bottom) {
     all_ = false;
     bottom_ = bottom;
   }
 }
 
-const color_property& border_color::left() const noexcept {
+const xtd::drawing::color& border_color::left() const noexcept {
   return left_;
 }
 
-void border_color::left(const color_property& left) noexcept {
+void border_color::left(const xtd::drawing::color& left) noexcept {
   if (all_ || left_ != left) {
     all_ = false;
     left_ = left;
   }
 }
 
-const color_property& border_color::right() const noexcept {
+const xtd::drawing::color& border_color::right() const noexcept {
   return right_;
 }
 
-void border_color::right(const color_property& right) noexcept {
+void border_color::right(const xtd::drawing::color& right) noexcept {
   if (all_ || right_ != right) {
     all_ = false;
     right_ = right;
   }
 }
 
-const color_property& border_color::top() const noexcept {
+const xtd::drawing::color& border_color::top() const noexcept {
   return top_;
 }
 
-void border_color::top(const color_property& top) noexcept {
+void border_color::top(const xtd::drawing::color& top) noexcept {
   if (all_ || top_ != top) {
     all_ = false;
     top_ = top;
@@ -78,57 +78,4 @@ bool border_color::equals(const object& other) const noexcept {
 
 bool border_color::equals(const border_color& other) const noexcept {
   return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;;
-}
-
-bool border_color::from_css(const xtd::ustring& css_text, border_color& result) noexcept {
-  vector<ustring> colors = split_colors(css_text.trim());
-  if (colors.size() < 1 || colors.size() > 4) return false;
-  color_property color;
-  if (!color_property::from_css(colors[0], color)) return false;
-  result.all(color);
-  if (colors.size() >= 2) {
-    if (!color_property::from_css(colors[1], color)) return false;
-    result.right(color);
-  }
-  if (colors.size() >= 3) {
-    if (!color_property::from_css(colors[2], color)) return false;
-    result.bottom(color);
-  }
-  if (colors.size() == 4) {
-    if (!color_property::from_css(colors[3], color)) return false;
-    result.left(color);
-  }
-  return true;
-}
-
-border_color border_color::from_css(const xtd::ustring& css_text, const border_color& default_value) noexcept {
-  border_color result;
-  if (from_css(css_text, result)) return result;
-  return default_value;
-}
-
-vector<ustring> border_color::split_colors(const ustring& text) {
-  static vector<ustring> color_keywords = {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
-  auto string_starts_with_any = [](const ustring& text, const vector<ustring>& values)->ustring {
-    for (auto value : values)
-      if (text.starts_with(value)) return value;
-    return "";
-  };
-  vector<ustring> result;
-  auto value = text.trim();
-  while (!value.empty()) {
-    auto color_keyword = string_starts_with_any(value, color_keywords);
-    if (color_keyword != "") {
-      result.push_back(value.substring(0, value.find(")") + 1).trim());
-      value = value.remove(0, value.find(")") + 1).trim();
-      if (value[0] == ',') value = value.remove(0, 1).trim();
-    } else if (value.find(",") == ustring::npos) {
-      result.push_back(value.trim());
-      value = "";
-    } else if (value.find(",") != ustring::npos) {
-      result.push_back(value.substring(0, value.find(",")).trim());
-      value = value.remove(0, value.find(",") + 1).trim();
-    }
-  }
-  return result;
 }

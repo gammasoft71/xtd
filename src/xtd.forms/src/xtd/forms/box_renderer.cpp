@@ -22,7 +22,7 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const b
   draw_line_right(graphics, bounds, data);
 
   auto fill_rect = data.get_fill_rectangle(bounds);
-  graphics.fill_rounded_rectangle(color_property::make_brush(data.background_color()), fill_rect, data.border_radius().top_left());
+  graphics.fill_rounded_rectangle(solid_brush(data.background_color().color()), fill_rect, data.border_radius().top_left());
   auto image_brush = image_value::make_brush(data.background_image(), fill_rect);
   if (image_brush) graphics.fill_rounded_rectangle(*image_brush, fill_rect, data.border_radius().top_left());
 }
@@ -30,7 +30,7 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const b
 void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, const box_data& data) {
   auto pen_width1 = data.border_width().top();
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
-  auto color1 = color_property::make_brush(data.border_color().top());
+  auto color1 = solid_brush(data.border_color().top());
   
   if (data.border_style().top() == border_type::inset && color1.color().is_light())
     color1 = solid_brush(color::dark(color1.color()));
@@ -50,7 +50,7 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
 void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, const box_data& data) {
   auto pen_width1 = data.border_width().right();
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
-  auto color1 = color_property::make_brush(data.border_color().right());
+  auto color1 = solid_brush(data.border_color().right());
   
   if (data.border_style().right() == border_type::inset && color1.color().is_dark())
     color1 = solid_brush(color::light(color1.color()));
@@ -70,7 +70,7 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
 void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds, const box_data& data) {
   auto pen_width1 = data.border_width().bottom();
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
-  auto color1 = color_property::make_brush(data.border_color().bottom());
+  auto color1 = solid_brush(data.border_color().bottom());
   
   if (data.border_style().bottom() == border_type::inset && color1.color().is_dark())
     color1 = solid_brush(color::light(color1.color()));
@@ -90,7 +90,7 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
 void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, const box_data& data) {
   auto pen_width1 = data.border_width().left();
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
-  auto color1 = color_property::make_brush(data.border_color().left());
+  auto color1 = solid_brush(data.border_color().left());
   
   if (data.border_style().left() == border_type::inset && color1.color().is_light())
     color1 = solid_brush(color::dark(color1.color()));
