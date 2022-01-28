@@ -100,9 +100,6 @@ bool box_data::from_css(const xtd::ustring& css_text, box_data& result) {
     if (key_value[0] == "border-style") {
       if (try_parse_border_style(key_value[1], result.border_style_) == false) return false;
     }
-    if (key_value[0] == "border-color") {
-      if (try_parse_border_color(key_value[1], result.border_color_) == false) return false;
-    }
     if (key_value[0] == "border-width") {
       if (try_parse_border_width(key_value[1], result.border_width_) == false) return false;
     }
@@ -145,30 +142,6 @@ std::vector<xtd::ustring> box_data::split_border_colors(const xtd::ustring& text
   vector<ustring> result;
   
   return result;
-}
-
-bool box_data::try_parse_border_color(const ustring& text, xtd::forms::style_sheets::border_color& border_color) {
-  vector<ustring> values = split_border_colors(text);
-  if (values.size() < 1 || values.size() > 4) return false;
-
-  color_property color;
-  if (color_property::try_parse(values[0], color) == false) return false;
-  border_color.all(color);
-
-  if (values.size() >= 2U) {
-    if (color_property::try_parse(values[1], color) == false) return false;
-    border_color.right(color);
-  }
-  if (values.size() >= 3U) {
-    if (color_property::try_parse(values[2], color) == false) return false;
-    border_color.bottom(color);
-  }
-  if (values.size() >= 4U) {
-    if (color_property::try_parse(values[3], color) == false) return false;
-    border_color.left(color);
-  }
-  
-  return false;
 }
 
 bool box_data::try_parse_border_style(const ustring& text, xtd::forms::style_sheets::border_style& border_style) {

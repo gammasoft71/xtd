@@ -5,8 +5,7 @@
 #include <xtd/iequatable.h>
 #include <xtd/ustring.h>
 #include <xtd/drawing/color.h>
-
-#include "color_property.h"
+#include "../../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -45,7 +44,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_color class using the supplied border_color for all edges.
         /// @param all The xtd::forms::style_sheets::color_data to be used for border_color for all edges.
         /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-        explicit border_color(const color_property& all);
+        explicit border_color(const xtd::drawing::color& all);
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_color class using a separate border_color for each edge.
         /// @param left The border_color for the left edge.
@@ -53,7 +52,7 @@ namespace xtd {
         /// @param right The border_color for the right edge.
         /// @param bottom The border_color for the bottom edge.
         /// @remarks If all of the parameter values are equal, then the all property will reflect this common value.
-        border_color(const color_property& left, const color_property& top, const color_property& right, const color_property& bottom);
+        border_color(const xtd::drawing::color& left, const xtd::drawing::color& top, const xtd::drawing::color& right, const xtd::drawing::color& bottom);
         /// @}
         
         /// @cond
@@ -67,47 +66,47 @@ namespace xtd {
         /// @brief Gets the xtd::forms::style_sheets::border_color value for all the edges.
         /// @return The xtd::forms::style_sheets::border_color for all edges if the same; otherwise, xtd::forms::style_sheets::color_data::empty.
         /// @remarks When retrieving this property, if all the edges use the same border_color value, then this common value is returned. Otherwise, xtd::forms::style_sheets::color_data::empty is returned to indicate that all the xtd::forms::style_sheets::border_color values are not equal.
-        const color_property& all() const noexcept;
+        const xtd::drawing::color& all() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for all the edges.
         /// @param all The xtd::forms::style_sheets::border_color for all edges if the same; otherwise, xtd::forms::style_sheets::color_data::empty.
         /// @remarks When retrieving this property, if all the edges use the same border_color value, then this common value is returned. Otherwise, xtd::forms::style_sheets::color_data::empty is returned to indicate that all the xtd::forms::style_sheets::border_color values are not equal.
-        void all(const color_property& all) noexcept;
+        void all(const xtd::drawing::color& all) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_color value for the bottom edge.
         /// @return The xtd::forms::style_sheets::border_color for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        const color_property& bottom() const noexcept;
+        const xtd::drawing::color& bottom() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for the bottom edge.
         /// @param bottom The xtd::forms::style_sheets::border_color for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom(const color_property& bottom) noexcept;
+        void bottom(const xtd::drawing::color& bottom) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_color value for the left edge.
         /// @return The xtd::forms::style_sheets::border_color for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        const color_property& left() const noexcept;
+        const xtd::drawing::color& left() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for the left edge.
         /// @param left The xtd::forms::style_sheets::border_color for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        void left(const color_property& left) noexcept;
+        void left(const xtd::drawing::color& left) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_color value for the right edge.
         /// @return The xtd::forms::style_sheets::border_color for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        const color_property& right() const noexcept;
+        const xtd::drawing::color& right() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for the right edge.
         /// @param right The xtd::forms::style_sheets::border_color for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        void right(const color_property& right) noexcept;
+        void right(const xtd::drawing::color& right) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_color value for the top edge.
         /// @return The xtd::forms::style_sheets::border_color for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        const color_property& top() const noexcept;
+        const xtd::drawing::color& top() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_color value for the top edge.
         /// @param top The xtd::forms::style_sheets::border_color for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        void top(const color_property& top) noexcept;
+        void top(const xtd::drawing::color& top) noexcept;
         /// @}
         
         /// @name Methods
@@ -115,35 +114,14 @@ namespace xtd {
         /// @{        
         bool equals(const object& other) const noexcept override;
         bool equals(const border_color& other) const noexcept override;
-        
-        /// @brief Creates a xtd::forms::style_sheets::border_color object from the specified css text.
-        /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::border_color object.
-        /// @param result The xtd::forms::style_sheets::border_color class that this method creates.
-        /// @return true if succeed; otherwise false.
-        static bool from_css(const xtd::ustring& css_text, border_color& result) noexcept;
-        /// @brief Creates a xtd::forms::style_sheets::border_color object from the specified css text.
-        /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::border_color object.
-        /// @param default_value The default_value is used if the specified text is invalid.
-        /// @return The xtd::forms::style_sheets::border_color class that this method creates.
-        /// @remarks If css_text is not a xtd::forms::sttyle_sheets::color_property, the default_value is returned.
-        static border_color from_css(const xtd::ustring& css_text, const border_color& default_value) noexcept;
-        
-        /// @brief Splits a specified text into an array of string tht contains a representation for each xtd::forms::style_sheets::color_property.
-        /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::color_property object.
-        /// @return The xtd::ustrings that contains a representation of each xtd::forms::style_sheets::color_property.
-        static std::vector<xtd::ustring> split_colors(const xtd::ustring& text);
-
-        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::color_property object.
-        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::color_property object.
-        xtd::ustring to_css() const noexcept;
         /// @}
         
       private:
         bool all_ = true;
-        color_property left_ {xtd::drawing::color::black};
-        color_property top_ {xtd::drawing::color::black};
-        color_property right_ {xtd::drawing::color::black};
-        color_property bottom_ {xtd::drawing::color::black};
+        xtd::drawing::color left_ = xtd::drawing::color::black;
+        xtd::drawing::color top_ = xtd::drawing::color::black;
+        xtd::drawing::color right_ = xtd::drawing::color::black;
+        xtd::drawing::color bottom_ = xtd::drawing::color::black;
       };
     }
   }

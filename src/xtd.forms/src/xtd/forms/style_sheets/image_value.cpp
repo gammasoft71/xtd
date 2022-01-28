@@ -159,7 +159,32 @@ bool image_value::try_parse_url(const xtd::ustring& text, image_value& result) {
 }
 
 vector<ustring> image_value::split_arguments(const xtd::ustring& text) {
-  return border_color::split_colors(text);
+  //return border_color::split_colors(text);
+  
+  /// @todo remove when merge in style_sheet and use split_colors_form_css
+  static vector<ustring> color_keywords = {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
+  auto string_starts_with_any = [](const ustring& text, const vector<ustring>& values)->ustring {
+    for (auto value : values)
+      if (text.starts_with(value)) return value;
+    return "";
+  };
+  vector<ustring> result;
+  auto value = text.trim();
+  while (!value.empty()) {
+    auto color_keyword = string_starts_with_any(value, color_keywords);
+    if (color_keyword != "") {
+      result.push_back(value.substring(0, value.find(")") + 1).trim());
+      value = value.remove(0, value.find(")") + 1).trim();
+      if (value[0] == ',') value = value.remove(0, 1).trim();
+    } else if (value.find(",") == ustring::npos) {
+      result.push_back(value.trim());
+      value = "";
+    } else if (value.find(",") != ustring::npos) {
+      result.push_back(value.substring(0, value.find(",")).trim());
+      value = value.remove(0, value.find(",") + 1).trim();
+    }
+  }
+  return result;
 }
 
 bool image_value::try_parse_linear_gradient_color(const xtd::ustring& text, image_value& result) {

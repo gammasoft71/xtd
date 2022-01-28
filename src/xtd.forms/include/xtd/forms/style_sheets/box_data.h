@@ -267,7 +267,6 @@ namespace xtd {
 
       private:
         static std::vector<xtd::ustring> split_border_colors(const xtd::ustring& value);
-        static bool try_parse_border_color(const ustring& text, xtd::forms::style_sheets::border_color& boder_color);
         static bool try_parse_border_radius(const ustring& text, xtd::forms::style_sheets::border_radius& border_radius);
         static bool try_parse_border_style(const ustring& text, xtd::forms::style_sheets::border_style& border_style);
         static bool try_parse_border_width(const ustring& text, xtd::forms::style_sheets::border_width& border_width);
