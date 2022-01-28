@@ -13,10 +13,10 @@ namespace unit_tests {
     void test_method_(theme) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("Windows (dark)")->second;
-      assert::are_equal("Windows (dark)", style.theme().name().text(), csf_);
-      assert::are_equal("Contains Windows (dark) theme.", style.theme().description().text(), csf_);
-      assert::are_equal("Gammasoft", style.theme().authors().text(), csf_);
-      assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", style.theme().website().url(), csf_);
+      assert::are_equal("Windows (dark)", style.theme().name(), csf_);
+      assert::are_equal("Contains Windows (dark) theme.", style.theme().description(), csf_);
+      assert::are_equal("Gammasoft", style.theme().authors(), csf_);
+      assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", style.theme().website(), csf_);
     }
   };
 }

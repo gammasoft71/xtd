@@ -2,15 +2,11 @@
 /// @brief Contains xtd::forms::style_sheets::theme_selector class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <memory>
-#include <vector>
 #include <xtd/iequatable.h>
 #include <xtd/object.h>
+#include <xtd/uri.h>
+#include <xtd/ustring.h>
 #include "../../forms_export.h"
-#include "authors_property.h"
-#include "description_property.h"
-#include "name_property.h"
-#include "website_property.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -40,23 +36,23 @@ namespace xtd {
         /// @param name The theme name.
         /// @param name The theme description.
         /// @param name The theme authors.
-        explicit theme_selector(const xtd::forms::style_sheets::string_value& name);
+        explicit theme_selector(const xtd::ustring& name);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::theme_selector class with specified name and description.
         /// @param name The theme name.
         /// @param name The theme description.
         /// @param name The theme authors.
-        theme_selector(const xtd::forms::style_sheets::string_value& name, const xtd::forms::style_sheets::string_value& description);
+        theme_selector(const xtd::ustring& name, const xtd::ustring& description);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::theme_selector class with specified name, description and authors.
         /// @param name The theme name.
         /// @param name The theme description.
         /// @param name The theme authors.
-        theme_selector(const xtd::forms::style_sheets::string_value& name, const xtd::forms::style_sheets::string_value& description, const xtd::forms::style_sheets::string_value& authors);
+        theme_selector(const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& authors);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::theme_selector class with specified name, description, authors and website.
         /// @param name The theme name.
         /// @param name The theme description.
         /// @param name The theme authors.
         /// @param name The theme website.
-        theme_selector(const xtd::forms::style_sheets::string_value& name, const xtd::forms::style_sheets::string_value& description, const xtd::forms::style_sheets::string_value& authors, const xtd::forms::style_sheets::url_value& website);
+        theme_selector(const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& authors, const xtd::uri& website);
         /// @}
 
         /// @cond
@@ -70,31 +66,31 @@ namespace xtd {
         /// @{
         /// @brief Gets the theme authors.
         /// @return The theme authors.
-        const xtd::forms::style_sheets::authors_property& authors() const noexcept;
+        const xtd::ustring& authors() const noexcept;
         /// @brief Sets the theme authors.
         /// @param value The theme authors.
-        void authors(const xtd::forms::style_sheets::authors_property& value) noexcept;
+        void authors(const xtd::ustring& value) noexcept;
         
         /// @brief Gets the theme name.
         /// @return The theme name.
-        const xtd::forms::style_sheets::description_property& description() const noexcept;
+        const xtd::ustring& description() const noexcept;
         /// @brief Sets the theme name.
         /// @param value The theme name.
-        void description(const xtd::forms::style_sheets::description_property& value) noexcept;
+        void description(const xtd::ustring& value) noexcept;
 
         /// @brief Gets the theme name.
         /// @return The theme name.
-        const xtd::forms::style_sheets::name_property& name() const noexcept;
+        const xtd::ustring& name() const noexcept;
         /// @brief Sets the theme name.
         /// @param value The theme name.
-        void name(const xtd::forms::style_sheets::name_property& value) noexcept;
+        void name(const xtd::ustring& value) noexcept;
 
         /// @brief Gets the theme website.
         /// @return The theme website.
-        const xtd::forms::style_sheets::website_property& website() const noexcept;
+        const xtd::uri& website() const noexcept;
         /// @brief Sets the theme website.
         /// @param value The theme website.
-        void website(const xtd::forms::style_sheets::website_property& value) noexcept;
+        void website(const xtd::uri& value) noexcept;
         /// @}
 
         /// @name Methods
@@ -129,10 +125,10 @@ namespace xtd {
         /// @}
 
       private:
-        xtd::forms::style_sheets::name_property name_;
-        xtd::forms::style_sheets::string_value description_;
-        xtd::forms::style_sheets::string_value authors_;
-        xtd::forms::style_sheets::website_property website_;
+        xtd::ustring name_;
+        xtd::ustring description_;
+        xtd::ustring authors_;
+        xtd::uri website_;
       };
     }
   }
