@@ -267,7 +267,7 @@ const color& system_colors_selector::text_box() const noexcept {
 }
 
 void system_colors_selector::text_box(const color& value) noexcept {
-  text_box_text_ = value;
+  text_box_ = value;
 }
 
 const color& system_colors_selector::text_box_text() const noexcept {
