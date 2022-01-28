@@ -100,6 +100,7 @@
 #include "unauthorized_access_exception.h"
 #include "underflow_exception.h"
 #include "unused.h"
+#include "uri.h"
 #include "using.h"
 #include "ustring.h"
 #include "va_args_comma.h"
