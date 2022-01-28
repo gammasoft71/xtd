@@ -271,7 +271,6 @@ add_sources(
   include/xtd/forms/style_sheets/image_value.h
   include/xtd/forms/style_sheets/label_selector.h
   include/xtd/forms/style_sheets/pseudo_state.h
-  include/xtd/forms/style_sheets/string_value.h
   include/xtd/forms/style_sheets/style_sheet.h
   include/xtd/forms/style_sheets/system_colors_selector.h
   include/xtd/forms/style_sheets/text_data.h
@@ -401,7 +400,6 @@ add_sources(
   src/xtd/forms/style_sheets/control_selector.cpp
   src/xtd/forms/style_sheets/height_property.cpp
   src/xtd/forms/style_sheets/image_value.cpp
-  src/xtd/forms/style_sheets/string_value.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
   src/xtd/forms/style_sheets/system_colors_selector.cpp
   src/xtd/forms/style_sheets/text_data.cpp
