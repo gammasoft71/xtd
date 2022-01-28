@@ -20,6 +20,6 @@ void label_renderer::draw_label(graphics& graphics, const rectangle& bounds, fla
 }
 
 void label_renderer::draw_label(graphics& graphics, const rectangle& bounds, xtd::forms::flat_style label_style, label_state label_state, const optional<color>& back_color) {
-  box_data data(padding(0), border_style_property(border_type::none), border_color_property(color_property(color::black)), border_width_property(0), border_radius_property(0), padding(0), color_property(back_color.value_or(color::light_gray)), std::nullopt, std::nullopt);
+  box_data data(padding(0), border_style(border_type::none), border_color(color_property(color::black)), border_width(0), border_radius(0), padding(0), color_property(back_color.value_or(color::light_gray)), std::nullopt, std::nullopt);
   box_renderer::draw_box(graphics, bounds, data);
 }

@@ -347,8 +347,8 @@
 
 | Name                                                                                          | Type         | Status                                |
 |-----------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [border_color](../src/xtd.forms/include/xtd/forms/style_sheets/border_color_property.h)                | class        | ![progress](pictures/progress100.png) |
-| [border_radius](../src/xtd.forms/include/xtd/forms/style_sheets/border_radius_property.h)              | class        | ![progress](pictures/progress100.png) |
+| [border_color](../src/xtd.forms/include/xtd/forms/style_sheets/border_color.h)                | class        | ![progress](pictures/progress100.png) |
+| [border_radius](../src/xtd.forms/include/xtd/forms/style_sheets/border_radius.h)              | class        | ![progress](pictures/progress100.png) |
 | [border_style](../src/xtd.forms/include/xtd/forms/style_sheets/border_style.h)                | class        | ![progress](pictures/progress100.png) |
 | [border_type](../src/xtd.forms/include/xtd/forms/style_sheets/border_type.h)                  | enumeration  | ![progress](pictures/progress100.png) |
 | [border_width](../src/xtd.forms/include/xtd/forms/style_sheets/border_width.h)                | class        | ![progress](pictures/progress100.png) |

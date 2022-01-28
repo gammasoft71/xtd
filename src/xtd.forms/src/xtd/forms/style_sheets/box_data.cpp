@@ -6,22 +6,22 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
-box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style_property& border_style, const xtd::forms::style_sheets::border_color_property& border_color, const xtd::forms::style_sheets::border_width_property& border_width, const xtd::forms::style_sheets::border_radius_property& border_radius, const forms::padding& padding, const color_property& background_color) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color) {
+box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const forms::padding& padding, const color_property& background_color) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color) {
 }
 
-box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style_property& border_style, const xtd::forms::style_sheets::border_color_property& border_color, const xtd::forms::style_sheets::border_width_property& border_width, const xtd::forms::style_sheets::border_radius_property& border_radius, const forms::padding& padding, const image_value& background_image) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_image_(background_image) {
+box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const forms::padding& padding, const image_value& background_image) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_image_(background_image) {
 }
 
-box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style_property& border_style, const xtd::forms::style_sheets::border_color_property& border_color, const xtd::forms::style_sheets::border_width_property& border_width, const xtd::forms::style_sheets::border_radius_property& border_radius, const forms::padding& padding, const color_property& background_color, const image_value& background_image) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), background_image_(background_image) {
+box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const forms::padding& padding, const color_property& background_color, const image_value& background_image) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), background_image_(background_image) {
 }
 
-box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style_property& border_style, const xtd::forms::style_sheets::border_color_property& border_color, const xtd::forms::style_sheets::border_width_property& border_width, const xtd::forms::style_sheets::border_radius_property& border_radius, const forms::padding& padding, const color_property& background_color, optional<int32_t> width, optional<int32_t> height) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), width_(width), height_(height) {
+box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const forms::padding& padding, const color_property& background_color, optional<int32_t> width, optional<int32_t> height) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), width_(width), height_(height) {
 }
 
-box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style_property& border_style, const xtd::forms::style_sheets::border_color_property& border_color, const xtd::forms::style_sheets::border_width_property& border_width, const xtd::forms::style_sheets::border_radius_property& border_radius, const forms::padding& padding, const image_value& background_image, optional<int32_t> width, optional<int32_t> height) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_image_(background_image), width_(width), height_(height) {
+box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const forms::padding& padding, const image_value& background_image, optional<int32_t> width, optional<int32_t> height) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_image_(background_image), width_(width), height_(height) {
 }
 
-box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style_property& border_style, const xtd::forms::style_sheets::border_color_property& border_color, const xtd::forms::style_sheets::border_width_property& border_width, const xtd::forms::style_sheets::border_radius_property& border_radius, const forms::padding& padding, const color_property& background_color, const image_value& background_image, optional<int32_t> width, optional<int32_t> height) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), background_image_(background_image), width_(width), height_(height) {
+box_data::box_data(const forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const forms::padding& padding, const color_property& background_color, const image_value& background_image, optional<int32_t> width, optional<int32_t> height) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), background_image_(background_image), width_(width), height_(height) {
 }
 
 const color_property& box_data::background_color() const noexcept {
@@ -40,35 +40,35 @@ void box_data::background_image(const image_value& value) noexcept {
   background_image_ = value;
 }
 
-const xtd::forms::style_sheets::border_color_property& box_data::border_color() const noexcept {
+const xtd::forms::style_sheets::border_color& box_data::border_color() const noexcept {
   return border_color_;
 }
 
-void box_data::border_color(const xtd::forms::style_sheets::border_color_property& value) noexcept {
+void box_data::border_color(const xtd::forms::style_sheets::border_color& value) noexcept {
   border_color_ = value;
 }
 
-xtd::forms::style_sheets::border_radius_property box_data::border_radius() const noexcept {
+xtd::forms::style_sheets::border_radius box_data::border_radius() const noexcept {
   return border_radius_;
 }
 
-void box_data::border_radius(xtd::forms::style_sheets::border_radius_property value) noexcept {
+void box_data::border_radius(xtd::forms::style_sheets::border_radius value) noexcept {
   border_radius_ = value;
 }
 
-xtd::forms::style_sheets::border_style_property box_data::border_style() const noexcept {
+xtd::forms::style_sheets::border_style box_data::border_style() const noexcept {
   return border_style_;
 }
 
-void box_data::border_style(xtd::forms::style_sheets::border_style_property value) noexcept {
+void box_data::border_style(xtd::forms::style_sheets::border_style value) noexcept {
   border_style_ = value;
 }
 
-xtd::forms::style_sheets::border_width_property box_data::border_width() const noexcept {
+xtd::forms::style_sheets::border_width box_data::border_width() const noexcept {
   return border_width_;
 }
 
-void box_data::border_width(xtd::forms::style_sheets::border_width_property value) noexcept {
+void box_data::border_width(xtd::forms::style_sheets::border_width value) noexcept {
   border_width_ = value;
 }
 
@@ -147,7 +147,7 @@ std::vector<xtd::ustring> box_data::split_border_colors(const xtd::ustring& text
   return result;
 }
 
-bool box_data::try_parse_border_color(const ustring& text, xtd::forms::style_sheets::border_color_property& border_color) {
+bool box_data::try_parse_border_color(const ustring& text, xtd::forms::style_sheets::border_color& border_color) {
   vector<ustring> values = split_border_colors(text);
   if (values.size() < 1 || values.size() > 4) return false;
 
@@ -171,7 +171,7 @@ bool box_data::try_parse_border_color(const ustring& text, xtd::forms::style_she
   return false;
 }
 
-bool box_data::try_parse_border_style(const ustring& text, xtd::forms::style_sheets::border_style_property& border_style) {
+bool box_data::try_parse_border_style(const ustring& text, xtd::forms::style_sheets::border_style& border_style) {
   static map<ustring, xtd::forms::style_sheets::border_type> border_types = {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}};
   auto values = text.split();
   if (values.size() < 1 || values.size() > 4) return false;
@@ -199,11 +199,11 @@ bool box_data::try_parse_border_style(const ustring& text, xtd::forms::style_she
   return true;
 }
 
-bool box_data::try_parse_border_radius(const ustring &text, xtd::forms::style_sheets::border_radius_property& border_radius) {
+bool box_data::try_parse_border_radius(const ustring &text, xtd::forms::style_sheets::border_radius& border_radius) {
   return false;
 }
 
-bool box_data::try_parse_border_width(const ustring &text, xtd::forms::style_sheets::border_width_property& border_width) {
+bool box_data::try_parse_border_width(const ustring &text, xtd::forms::style_sheets::border_width& border_width) {
   return false;
 }
 
