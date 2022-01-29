@@ -1,6 +1,6 @@
 #include "../../../include/xtd/forms/button_renderer.h"
 #include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/style_sheets/button_selector.h"
+#include "../../../include/xtd/forms/style_sheets/button.h"
 #include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
 #include "../../../include/xtd/forms/style_sheets/style_sheet.h"
 #include <map>
@@ -41,7 +41,7 @@ void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, f
   if (button_style == flat_style::popup) pseudo_state_base = pseudo_state::popup;
   if (default_button) pseudo_state_base += pseudo_state::default_state;
   
-  button_selector current_button_selector;
+  button current_button_selector;
   switch (button_state) {
     case push_button_state::normal: current_button_selector = style_sheet::style_sheets().at("macOS (dark)").button(pseudo_state_base); break;
     case push_button_state::hot: current_button_selector = style_sheet::style_sheets().at("macOS (dark)").button(pseudo_state_base | pseudo_state::hover); break;

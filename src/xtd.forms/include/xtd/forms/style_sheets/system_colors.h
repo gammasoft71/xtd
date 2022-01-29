@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::system_colors_selector class.
+/// @brief Contains xtd::forms::style_sheets::system_colors class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
@@ -18,28 +18,28 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The theme data allows you to specify the theme informations.
       /// @code
-      /// class forms_export_ system_colors_selector : public xtd::object
+      /// class forms_export_ system_colors : public xtd::object
       /// @endcode
       /// @par Inheritance
-      /// xtd::object → xtd::forms::style_sheets::system_colors_selector
+      /// xtd::object → xtd::forms::style_sheets::system_colors
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      class forms_export_ system_colors_selector : public xtd::iequatable<system_colors_selector>, public xtd::object {
+      class forms_export_ system_colors : public xtd::iequatable<system_colors>, public xtd::object {
       public:
         /// @name Constructors
         
         /// @{
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::system_colors_selector class.
-        system_colors_selector() = default;
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::system_colors class.
+        system_colors() = default;
         /// @}
 
         /// @cond
-        system_colors_selector(const system_colors_selector&) = default;
-        system_colors_selector(system_colors_selector&&) = default;
-        system_colors_selector& operator=(const system_colors_selector&) = default;
+        system_colors(const system_colors&) = default;
+        system_colors(system_colors&&) = default;
+        system_colors& operator=(const system_colors&) = default;
         /// @endcond
         
         /// @name Properties
@@ -309,7 +309,7 @@ namespace xtd {
         
         /// @{
         bool equals(const object& other) const noexcept override;
-        bool equals(const system_colors_selector& other) const noexcept override;
+        bool equals(const system_colors& other) const noexcept override;
         /// @}
 
       private:

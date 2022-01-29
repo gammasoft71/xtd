@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::control_selector class.
+/// @brief Contains xtd::forms::style_sheets::control class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "ibox_model.h"
@@ -13,14 +13,14 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The control selector allows you to specify the box and color of a control.
       /// @code
-      /// class forms_export_ control_selector : public xtd::forms::style_sheets::ibox_model, public xtd::forms::style_sheets::itext_model, public xtd::iequatable<control_selector>, public xtd::object
+      /// class forms_export_ control : public xtd::forms::style_sheets::ibox_model, public xtd::forms::style_sheets::itext_model, public xtd::iequatable<control>, public xtd::object
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::ibox_model
       /// @par Implements
       /// xtd::forms::style_sheets::ibox_model, xtd::forms::style_sheets::itext_model, xtd::iequatable <>
       /// @endcode
       /// @par Inheritance
-      /// xtd::object → xtd::forms::style_sheets::ibox_model → xtd::forms::style_sheets::control_selector
+      /// xtd::object → xtd::forms::style_sheets::ibox_model → xtd::forms::style_sheets::control
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
@@ -28,24 +28,24 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       /// @remarks You need to know how the box model works.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-      class forms_export_ control_selector : public xtd::forms::style_sheets::ibox_model, public xtd::forms::style_sheets::itext_model, public xtd::iequatable<control_selector>, public xtd::object {
+      class forms_export_ control : public xtd::forms::style_sheets::ibox_model, public xtd::forms::style_sheets::itext_model, public xtd::iequatable<control>, public xtd::object {
       public:
         /// @name Constructors
         
         /// @{
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_selector class.
+        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control class.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        control_selector() = default;
+        control() = default;
 
-        control_selector(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::drawing::color& background_color, std::optional<int32_t> width, std::optional<int32_t> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
-        control_selector(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::background_image& background_image, std::optional<int32_t> width, std::optional<int32_t> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
+        control(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::drawing::color& background_color, std::optional<int32_t> width, std::optional<int32_t> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
+        control(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::background_image& background_image, std::optional<int32_t> width, std::optional<int32_t> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
         /// @}
 
         /// @cond
-        control_selector(const control_selector&) = default;
-        control_selector(control_selector&&) = default;
-        control_selector& operator=(const control_selector&) = default;
+        control(const control&) = default;
+        control(control&&) = default;
+        control& operator=(const control&) = default;
         /// @endcond
         
         /// @name Properties
@@ -101,7 +101,7 @@ namespace xtd {
         
         /// @{
         bool equals(const object& other) const noexcept override;
-        bool equals(const control_selector& other) const noexcept override;
+        bool equals(const control& other) const noexcept override;
         
         xtd::drawing::rectangle get_border_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
         xtd::drawing::rectangle get_fill_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;

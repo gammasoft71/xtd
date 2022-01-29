@@ -9,12 +9,12 @@
 #include <xtd/uri.h>
 #include <xtd/web/css/css_reader.h>
 #include "../../forms_export.h"
-#include "button_selector.h"
-#include "form_selector.h"
-#include "label_selector.h"
+#include "button.h"
+#include "form.h"
+#include "label.h"
 #include "pseudo_state.h"
-#include "system_colors_selector.h"
-#include "theme_selector.h"
+#include "system_colors.h"
+#include "theme.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -52,23 +52,23 @@ namespace xtd {
         /// @name Properties
         
         /// @{
-        const button_selector& button() const noexcept;
-        const button_selector& button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        const xtd::forms::style_sheets::button& button() const noexcept;
+        const xtd::forms::style_sheets::button& button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
-        const control_selector& control() const noexcept;
-        const control_selector& control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        const xtd::forms::style_sheets::control& control() const noexcept;
+        const xtd::forms::style_sheets::control& control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
-        const form_selector& form() const noexcept;
-        const form_selector& form(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        const xtd::forms::style_sheets::form& form() const noexcept;
+        const xtd::forms::style_sheets::form& form(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
-        const label_selector& label() const noexcept;
-        const label_selector& label(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        const xtd::forms::style_sheets::label& label() const noexcept;
+        const xtd::forms::style_sheets::label& label(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
         static const std::map<xtd::ustring, style_sheet> style_sheets() noexcept;
 
-        const system_colors_selector& system_colors()const noexcept;
+        const xtd::forms::style_sheets::system_colors& system_colors()const noexcept;
 
-        const theme_selector& theme() const noexcept;
+        const xtd::forms::style_sheets::theme& theme() const noexcept;
         /// @}
 
         /// @name Methods
@@ -88,8 +88,8 @@ namespace xtd {
       private:
         static void initilize();
         std::vector<xtd::ustring> split_colors_from_text(const xtd::ustring& text) const noexcept;
-        void system_color_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, system_colors_selector& colors) const noexcept;
-        void theme_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, theme_selector& theme) const noexcept;
+        void system_color_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::system_colors& colors) const noexcept;
+        void theme_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::theme& theme) const noexcept;
         bool try_parse_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_hex_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_linear_gradient(const xtd::ustring& text, background_image& result) const noexcept;
@@ -106,13 +106,13 @@ namespace xtd {
         bool try_parse_system_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept;
 
-        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::button_selector> buttons_;
-        std::map<xtd::forms::style_sheets::pseudo_state, control_selector> controls_;
-        std::map<xtd::forms::style_sheets::pseudo_state, form_selector> forms_;
-        std::map<xtd::forms::style_sheets::pseudo_state, label_selector> labels_;
-        static std::map<ustring, style_sheet> style_sheets_;
-        system_colors_selector system_colors_;
-        theme_selector theme_;
+        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::button> buttons_;
+        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::control> controls_;
+        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::form> forms_;
+        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::label> labels_;
+        static std::map<xtd::ustring, style_sheet> style_sheets_;
+        xtd::forms::style_sheets::system_colors system_colors_;
+        xtd::forms::style_sheets::theme theme_;
       };
     }
   }

@@ -1,8 +1,8 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::form_selector alias.
+/// @brief Contains xtd::forms::style_sheets::label class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "control_selector.h"
+#include "control.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -10,13 +10,15 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The form data allows you to specify the box of a form control.
+      /// @brief The label data allows you to specify the box of a label control.
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      using form_selector = xtd::forms::style_sheets::control_selector;
+      /// @remarks You need to know how the box model works.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+      using label = xtd::forms::style_sheets::control;
     }
   }
 }
