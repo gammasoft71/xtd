@@ -136,6 +136,10 @@ void application::exit() {
 }
 
 void application::initialize() {
+  static bool initialized = false;
+  if (initialized) return;
+  initialized = true;
+  
   drawing::native::toolkit::initialize();
   static_cast<wx_application*>(wxApp::GetInstance())->processIdle += process_idle;
   #if defined(__WXMSW__)
