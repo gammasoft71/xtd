@@ -38,7 +38,6 @@ intptr_t font_family::create(const ustring& name) {
 }
 
 void font_family::destroy(intptr_t font_family) {
-  toolkit::initialize(); // Must be first
   delete reinterpret_cast<ustring*>(font_family);
 }
 

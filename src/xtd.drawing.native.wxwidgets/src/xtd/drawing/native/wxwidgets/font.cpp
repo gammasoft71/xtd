@@ -46,7 +46,6 @@ intptr_t font::create_from_hfont(intptr_t hfont) {
 }
 
 void font::destroy(intptr_t font) {
-  toolkit::initialize(); // Must be first
   delete reinterpret_cast<wxFont*>(font);
 }
 
