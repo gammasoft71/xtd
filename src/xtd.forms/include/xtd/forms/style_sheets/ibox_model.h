@@ -18,14 +18,12 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The box data allows you to specify the margin, borders, padding, background color, width and height of a box.
+      /// @brief The box model allows you to specify the margin, borders, padding, background color, width and height of a box.
       /// @code
-      /// class ibox_model : public xtd::iequatable<ibox_model>, public xtd::object
+      /// class ibox_model interface_
       /// @endcode
       /// @par Inheritance
-      /// xtd::object → xtd::forms::style_sheets::ibox_model
-      /// @par Implements
-      /// xtd::iequatable <>
+      /// xtd::interface → xtd::forms::style_sheets::ibox_model
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
