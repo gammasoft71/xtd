@@ -6,16 +6,16 @@ using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
 
-text_data::text_data(const color_property& color) : color_(color) {
+text_data::text_data(const drawing::color& color) : color_(color) {
 }
 
-text_data::text_data(const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment) : color_(color), alignment_(alignment) {
+text_data::text_data(const drawing::color& color, xtd::forms::content_alignment alignment) : color_(color), alignment_(alignment) {
 }
 
-text_data::text_data(const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font) : color_(color), alignment_(alignment), font_(font) {
+text_data::text_data(const drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font) : color_(color), alignment_(alignment), font_(font) {
 }
 
-text_data::text_data(const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font, xtd::forms::style_sheets::text_decoration decoration, xtd::forms::style_sheets::text_transformation transformation) : color_(color), alignment_(alignment), font_(font), decoration_(decoration), transformation_(transformation) {
+text_data::text_data(const drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font, xtd::forms::style_sheets::text_decoration decoration, xtd::forms::style_sheets::text_transformation transformation) : color_(color), alignment_(alignment), font_(font), decoration_(decoration), transformation_(transformation) {
 }
 
 content_alignment text_data::alignment() const noexcept {
@@ -26,11 +26,11 @@ void text_data::alignment(content_alignment value) noexcept {
   alignment_ = value;
 }
 
-const color_property& text_data::color() const noexcept {
+const drawing::color& text_data::color() const noexcept {
   return color_;
 }
 
-void text_data::color(const color_property& value) noexcept {
+void text_data::color(const drawing::color& value) noexcept {
   color_ = value;
 }
 

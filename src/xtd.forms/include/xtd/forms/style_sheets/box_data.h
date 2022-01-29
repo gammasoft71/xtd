@@ -7,7 +7,6 @@
 #include "border_radius.h"
 #include "border_style.h"
 #include "border_width.h"
-#include "color_property.h"
 #include "image_value.h"
 #include "../padding.h"
 
@@ -67,7 +66,7 @@ namespace xtd {
         /// | xtd::forms::style_sheets::box_data::background_imzage | xtd::forms::style_sheets::image_data::empty                           |
         /// | xtd::forms::style_sheets::box_data::width             | std::nullopt                                                          |
         /// | xtd::forms::style_sheets::box_data::height            | std::nullopt                                                          |
-        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::color_property& background_color);
+        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::drawing::color& background_color);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::box_data class with specified margin, borders, padding, background color, width and height.
         /// @param margin The area outside the border.
         /// @param borders A border that goes around the padding and content.
@@ -95,7 +94,7 @@ namespace xtd {
         /// |-------------------------------------------------------|-----------------------------------------------------------------------|
         /// | xtd::forms::style_sheets::box_data::width             | std::nullopt                                                          |
         /// | xtd::forms::style_sheets::box_data::height            | std::nullopt                                                          |
-        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::color_property& background_color, const xtd::forms::style_sheets::image_value& background_image);
+        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::drawing::color& background_color, const xtd::forms::style_sheets::image_value& background_image);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::box_data class with specified margin, borders, padding, background color, width and height.
         /// @param margin The area outside the border.
         /// @param borders The borders that goes around the padding and content.
@@ -109,7 +108,7 @@ namespace xtd {
         /// | Property                                              | Default value                                                         |
         /// |-------------------------------------------------------|-----------------------------------------------------------------------|
         /// | xtd::forms::style_sheets::box_data::background_imzage | xtd::forms::style_sheets::image_data::empty                           |
-        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::color_property& background_color, std::optional<int32_t> width, std::optional<int32_t> height);
+        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::drawing::color& background_color, std::optional<int32_t> width, std::optional<int32_t> height);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::box_data class with specified margin, borders, padding, background color, width and height.
         /// @param margin The area outside the border.
         /// @param borders The borders that goes around the padding and content.
@@ -134,7 +133,7 @@ namespace xtd {
         /// @param height The height of the box.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::color_property& background_color, const xtd::forms::style_sheets::image_value& background_image, std::optional<int32_t> width, std::optional<int32_t> height);
+        box_data(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::drawing::color& background_color, const xtd::forms::style_sheets::image_value& background_image, std::optional<int32_t> width, std::optional<int32_t> height);
         /// @}
 
         /// @cond
@@ -149,11 +148,11 @@ namespace xtd {
         /// @brief Gets the background color is used to add background effects to the box.
         /// @return The background color is used to add background effects to the box.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        const xtd::forms::style_sheets::color_property& background_color() const noexcept;
+        const xtd::drawing::color& background_color() const noexcept;
         /// @brief Sets the background color is used to add background effects to the box.
         /// @param value The background color is used to add background effects to the box.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        void background_color(const xtd::forms::style_sheets::color_property& value) noexcept;
+        void background_color(const xtd::drawing::color& value) noexcept;
 
         /// @brief Gets the background image is used to add background effects to the box.
         /// @return The background image is used to add background effects to the box.
@@ -279,7 +278,7 @@ namespace xtd {
         xtd::forms::style_sheets::border_width border_width_;
         xtd::forms::style_sheets::border_radius border_radius_;
         xtd::forms::padding padding_;
-        xtd::forms::style_sheets::color_property background_color_ {xtd::drawing::color::transparent};
+        xtd::drawing::color background_color_ = xtd::drawing::color::transparent;
         xtd::forms::style_sheets::image_value background_image_;
         std::optional<int32_t> width_;
         std::optional<int32_t> height_;
