@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <array>
+#include <xtd/iequatable.h>
 #include "border_color.h"
 #include "border_radius.h"
 #include "border_style.h"
@@ -18,12 +19,12 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The box data allows you to specify the margin, borders, padding, background color, width and height of a box.
       /// @code
-      /// class forms_export_ box_data : public xtd::object
+      /// class box_data : public xtd::iequatable<box_data>, public xtd::object
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::box_data
-      /// @par Implement
-      /// xtd::object → xtd::forms::style_sheets::box_data
+      /// @par Implements
+      /// xtd::iequatable <>
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
@@ -31,7 +32,7 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       /// @remarks This class is used by xtd::forms::style_sheets::box_renderer.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-      class box_data : public xtd::object {
+      class box_data : public xtd::iequatable<box_data>, public xtd::object {
       public:
         /// @name Constructors
         
@@ -234,11 +235,8 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        /// @brief Creates a xtd::forms::style_sheets::box_data object from the specified css text.
-        /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::box_data object.
-        /// @param result The xtd::forms::style_sheets::box_data class that this method creates.
-        /// @return true if succeed; otherwise false.
-        static bool from_css(const xtd::ustring& css_text, box_data& result);
+        bool equals(const object& other) const noexcept override;
+        bool equals(const box_data& other) const noexcept override;
 
         /// @brief Gets the computed boder rectangle from specified bounds.
         /// @param bounds The bounds use to compute the borfder rectangle with this box instance.
@@ -259,19 +257,9 @@ namespace xtd {
         /// @remarks The content rectangle is euqual to fill rectangle minus padding.
         /// @remarks The content rectangle is euqual to border rectangle minux border width minus padding.
         xtd::drawing::rectangle get_content_rectangle(const xtd::drawing::rectangle& bounds) const noexcept;
-
-        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::box_data object.
-        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::box_data object.
-        xtd::ustring to_css() const noexcept;
         /// @}
 
       private:
-        static std::vector<xtd::ustring> split_border_colors(const xtd::ustring& value);
-        static bool try_parse_border_radius(const ustring& text, xtd::forms::style_sheets::border_radius& border_radius);
-        static bool try_parse_border_style(const ustring& text, xtd::forms::style_sheets::border_style& border_style);
-        static bool try_parse_border_width(const ustring& text, xtd::forms::style_sheets::border_width& border_width);
-        static bool try_parse_padding(const ustring& text, xtd::forms::padding& padding);
-
         xtd::forms::padding margin_;
         xtd::forms::style_sheets::border_style border_style_;
         xtd::forms::style_sheets::border_color border_color_;
