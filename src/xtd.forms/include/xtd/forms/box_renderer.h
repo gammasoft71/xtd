@@ -4,7 +4,7 @@
 #pragma once
 #include <xtd/static.h>
 #include <xtd/drawing/graphics.h>
-#include "style_sheets/box_data.h"
+#include "style_sheets/ibox_model.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,21 +23,17 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class forms_export_ box_renderer static_ {
     public:
-      /// @brief Draws a box in the specified bounds.
-      /// @param graphics The Graphics used to draw a box.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the box.
-      static void draw_box(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds);
       /// @brief Draws a box in the specified bounds and style.
       /// @param graphics The Graphics used to draw a box.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the box.
-      /// @param data The xtd::forms::style_sheets::box_data that specifies the style for the box.
-      static void draw_box(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
+      /// @param box_model The xtd::forms::style_sheets::ibox_model that specifies the style for the box.
+      static void draw_box(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
       
     private:
-      static void draw_line_top(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
-      static void draw_line_right(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
-      static void draw_line_bottom(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
-      static void draw_line_left(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::box_data& data);
+      static void draw_line_top(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
+      static void draw_line_right(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
+      static void draw_line_bottom(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
+      static void draw_line_left(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
       static xtd::drawing::dash_style border_type_to_dash_style(xtd::forms::style_sheets::border_type value);
     };
   }

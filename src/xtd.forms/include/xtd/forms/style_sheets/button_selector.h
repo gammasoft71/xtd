@@ -16,6 +16,8 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
+      /// @remarks You need to know how the box model works.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
       using button_selector = xtd::forms::style_sheets::control_selector;
     }
   }

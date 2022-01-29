@@ -33,7 +33,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      /// @remarks This class is used by xtd::forms::style_sheets::box_data.
+      /// @remarks This class is used by xtd::forms::style_sheets::ibox_model.
       class forms_export_ style_sheet : public xtd::iequatable<style_sheet>, public xtd::object {
       public:
         /// @name Constructors

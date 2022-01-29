@@ -261,7 +261,7 @@ add_sources(
   include/xtd/forms/style_sheets/border_style.h
   include/xtd/forms/style_sheets/border_type.h
   include/xtd/forms/style_sheets/border_width.h
-  include/xtd/forms/style_sheets/box_data.h
+  include/xtd/forms/style_sheets/ibox_model.h
   include/xtd/forms/style_sheets/button_selector.h
   include/xtd/forms/style_sheets/control_selector.h
   include/xtd/forms/style_sheets/form_selector.h
@@ -271,7 +271,7 @@ add_sources(
   include/xtd/forms/style_sheets/pseudo_state.h
   include/xtd/forms/style_sheets/style_sheet.h
   include/xtd/forms/style_sheets/system_colors_selector.h
-  include/xtd/forms/style_sheets/text_data.h
+  include/xtd/forms/style_sheets/itext_model.h
   include/xtd/forms/style_sheets/text_decoration.h
   include/xtd/forms/style_sheets/text_transformation.h
   include/xtd/forms/style_sheets/theme_selector.h
@@ -396,12 +396,11 @@ add_sources(
   src/xtd/forms/style_sheets/border_radius.cpp
   src/xtd/forms/style_sheets/border_style.cpp
   src/xtd/forms/style_sheets/border_width.cpp
-  src/xtd/forms/style_sheets/box_data.cpp
+  src/xtd/forms/style_sheets/ibox_model.cpp
   src/xtd/forms/style_sheets/control_selector.cpp
   src/xtd/forms/style_sheets/background_image.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
   src/xtd/forms/style_sheets/system_colors_selector.cpp
-  src/xtd/forms/style_sheets/text_data.cpp
   src/xtd/forms/style_sheets/theme_selector.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
