@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/control_renderer.h"
+#include "../../../include/xtd/forms/style_sheets/control_selector.h"
 
 using namespace std;
 using namespace xtd;
@@ -20,6 +21,6 @@ void control_renderer::draw_control(graphics& graphics, const rectangle& bounds,
 }
 
 void control_renderer::draw_control(graphics& graphics, const rectangle& bounds, xtd::forms::flat_style control_style, control_state control_state, const optional<color>& back_color) {
-  box_data data(padding(0), border_style(border_type::none), border_color(color::black), border_width(0), border_radius(0), padding(0), back_color.value_or(color::light_gray), std::nullopt, std::nullopt);
-  box_renderer::draw_box(graphics, bounds, data);
+  //control_selector current_control_selector(padding(0), border_style(border_type::none), border_color(color::black), border_width(0), border_radius(0), padding(0), back_color.value_or(color::light_gray), std::nullopt, std::nullopt, back_color, content_alignment::middle_center, system_fonts::default_font());
+  //box_renderer::draw_box(graphics, bounds, current_control_selector);
 }
