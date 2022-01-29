@@ -50,12 +50,12 @@ void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, f
     case push_button_state::disabled: current_button_selector = style_sheet::style_sheets().at("macOS (dark)").button(pseudo_state_base | pseudo_state::disabled); break;
     case push_button_state::default_state: current_button_selector = style_sheet::style_sheets().at("macOS (dark)").button(pseudo_state_base | pseudo_state::default_state); break;
   }
-  if ((button_state == push_button_state::normal || button_state == push_button_state::default_state) && back_color.has_value()) current_button_selector.box().background_color(back_color.value());
+  if ((button_state == push_button_state::normal || button_state == push_button_state::default_state) && back_color.has_value()) current_button_selector.background_color(back_color.value());
   if (fore_color.has_value()) current_button_selector.text().color(fore_color.value());
   if (font.has_value()) current_button_selector.text().font(font.value());
   
-  box_renderer::draw_box(graphics, bounds, current_button_selector.box());
-  text_renderer::draw_text(graphics, current_button_selector.box().get_content_rectangle(bounds), text, current_button_selector.text());
+  box_renderer::draw_box(graphics, bounds, current_button_selector);
+  text_renderer::draw_text(graphics, current_button_selector.get_content_rectangle(bounds), text, current_button_selector.text());
 }
 
 
