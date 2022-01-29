@@ -86,6 +86,24 @@ xtd::drawing::color style_sheet::color_from_css(const ustring& css_text, const c
   return default_value;
 }
 
+int32_t style_sheet::number_from_css(const xtd::ustring& css_text, const int32_t& default_value) const noexcept {
+  if (css_text == "auto" || css_text == "initial" || css_text == "inherit") return -1;
+  auto w = .0;
+  if (css_text.ends_with("cm") && ::try_parse<double>(css_text.replace("cm", ""), w)) return as<int32_t>(w / 2.54 * 96.0);
+  if (css_text.ends_with("mm") && ::try_parse<double>(css_text.replace("mm", ""), w)) return as<int32_t>(w / 2.54 * 96.0 * 1000.0);
+  if (css_text.ends_with("in") && ::try_parse<double>(css_text.replace("in", ""), w)) return as<int32_t>(w * 96.0);
+  if (css_text.ends_with("px") && ::try_parse<double>(css_text.replace("px", ""), w)) return as<int32_t>(w);
+  if (css_text.ends_with("pt") && ::try_parse<double>(css_text.replace("pt", ""), w)) return as<int32_t>(w / 96.0 * 72.0);
+  if (css_text.ends_with("pc") && ::try_parse<double>(css_text.replace("pc", ""), w)) return as<int32_t>(w * 12.0 / 96.0 * 72.0);
+  return default_value;
+}
+
+ustring style_sheet::string_from_css(const xtd::ustring& css_text, const ustring& default_value) const noexcept {
+  auto value = css_text.trim();
+  if (!value.starts_with("\"") || !value.ends_with("\"")) return default_value;
+  return value.remove(value.size() - 1, 1).replace("\"", "");
+}
+
 void style_sheet::initilize() {
   if (!style_sheets_.empty()) return;
   
@@ -123,12 +141,6 @@ vector<ustring> style_sheet::split_colors_from_css(const ustring& text) const no
     }
   }
   return result;
-}
-
-ustring style_sheet::string_from_css(const xtd::ustring& css_text, const ustring& default_value) const noexcept {
-  auto value = css_text.trim();
-  if (!value.starts_with("\"") || !value.ends_with("\"")) return default_value;
-  return value.remove(value.size() - 1, 1).replace("\"", "");
 }
 
 bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const noexcept {

@@ -2,8 +2,9 @@
 /// @brief Contains xtd::forms::style_sheets::border_radius class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/iequatable.h>
 #include <xtd/ustring.h>
-#include "color_property.h"
+#include "../../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,16 +14,18 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The radius is used to add rounded borders to an element.
       /// @code
-      /// class forms_export_ border_radius : public xtd::object
+      /// class forms_export_ border_radius : public xtd::iequatable<border_radius>, public xtd::object
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::border_radius
+      /// @par Implements
+      /// xtd::iequatable <>
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      class forms_export_ border_radius : public object {
+      class forms_export_ border_radius : public xtd::iequatable<border_radius>, public xtd::object {
       public:
         /// @name Fields
         
@@ -40,7 +43,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_radius class using the supplied xtd::forms::style_sheets::border_radius size for all edges.
         /// @param all The number of pixels to be used for xtd::forms::style_sheets::border_radius for all edges.
         /// @remarks This constructor sets the bottom_left, top_left, bottom_right, top_right and all properties to the value of the all parameter.
-        explicit border_radius(int all) : all_(true), top_left_(all), top_right_(all), bottom_left_(all), bottom_right_(all) {}
+        explicit border_radius(int32_t all);
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_radius class using a separate xtd::forms::style_sheets::border_radius size for each edge.
         /// @param top_left The xtd::forms::style_sheets::border_radius size, in pixels, for the top_left edge.
@@ -48,14 +51,12 @@ namespace xtd {
         /// @param bottom_left The xtd::forms::style_sheets::border_radius size, in pixels, for the bottom_left edge.
         /// @param bottom_right The xtd::forms::style_sheets::border_radius size, in pixels, for the bottom_right edge.
         /// @remarks If all of the parameter values are equal, then the all property will reflect this common value.
-        border_radius(int top_left, int top_right, int bottom_left, int bottom_right) : all_(top_left == top_right && top_left == bottom_left && top_left == bottom_right), top_left_(top_left), top_right_(top_right), bottom_left_(bottom_left), bottom_right_(bottom_right) {}
+        border_radius(int32_t top_left, int32_t top_right, int32_t bottom_left, int32_t bottom_right);
         /// @}
         
         /// @cond
         border_radius(const border_radius&) = default;
         border_radius& operator=(const border_radius&) = default;
-        bool operator==(const border_radius& value) {return all_ == value.all_ && top_left_ == value.top_left_ && top_right_ == value.top_right_ && bottom_left_ == value.bottom_left_ && bottom_right_ == value.bottom_right_;}
-        bool operator!=(const border_radius& value) {return !operator==(value);}
         /// @endcond
         
         /// @name Peorperties
@@ -64,95 +65,63 @@ namespace xtd {
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for all the edges.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_radius value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_radius values are not equal.
-        int all() const {return all_ ? top_right_ : -1;}
+        int32_t all() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for all the edges.
         /// @param all The xtd::forms::style_sheets::border_radius, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_radius value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_radius values are not equal.
-        void all(int all) {
-          if (!all_ || top_left_ != all) {
-            all_ = true;
-            top_left_ = top_right_ = bottom_left_ = bottom_right_ = all;
-          }
-        }
+        void all(int32_t all) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for the bottom_right edge.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for the bottom_right edge.
         /// @remarks Setting this value can also alter the all property.
-        int bottom_right() const {return bottom_right_;}
+        int32_t bottom_right() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for the bottom_right edge.
         /// @param bottom_right The xtd::forms::style_sheets::border_radius, in pixels, for the bottom_right edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom_right(int bottom_right) {
-          if (all_ || bottom_right_ != bottom_right) {
-            all_ = false;
-            bottom_right_ = bottom_right;
-          }
-        }
+        void bottom_right(int32_t bottom_right) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for the top_left edge.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for the top_left edge.
         /// @remarks Setting this value can also alter the all property.
-        int top_left() const {return top_left_;}
+        int32_t top_left() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for the top_left edge.
         /// @param top_left The xtd::forms::style_sheets::border_radius, in pixels, for the top_left edge.
         /// @remarks Setting this value can also alter the all property.
-        void top_left(int top_left) {
-          if (all_ || top_left_ != top_left) {
-            all_ = false;
-            top_left_ = top_left;
-          }
-        }
+        void top_left(int32_t top_left) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for the bottom_left edge.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for the bottom_left edge.
         /// @remarks Setting this value can also alter the all property.
-        int bottom_left() const {return bottom_left_;}
+        int32_t bottom_left() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for the bottom_left edge.
         /// @param bottom_left The xtd::forms::style_sheets::border_radius, in pixels, for the bottom_left edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom_left(int bottom_left) {
-          if (all_ || bottom_left_ != bottom_left) {
-            all_ = false;
-            bottom_left_ = bottom_left;
-          }
-        }
+        void bottom_left(int32_t bottom_left) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_radius value for the top_right edge.
         /// @return The xtd::forms::style_sheets::border_radius, in pixels, for the top_right edge.
         /// @remarks Setting this value can also alter the all property.
-        int top_right() const {return top_right_;}
+        int32_t top_right() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_radius value for the top_right edge.
         /// @param top_right The xtd::forms::style_sheets::border_radius, in pixels, for the top_right edge.
         /// @remarks Setting this value can also alter the all property.
-        void top_right(int top_right) {
-          if (all_ || top_right_ != top_right) {
-            all_ = false;
-            top_right_ = top_right;
-          }
-        }
+        void top_right(int32_t top_right) noexcept;
         
         /// @}
         
         /// @name Methods
         
         /// @{
-        /// @brief Returns a string that represents the current xtd::forms::style_sheets::border_radius.
-        /// @return A string that represents the current xtd::forms::style_sheets::border_radius.
-        /// @remarks This method returns a string containing the labeled values of the xtd::forms::style_sheets::border_radius for all four edges.
-        xtd::ustring to_string() const noexcept override {return xtd::ustring::format("border_radius [all={}, top_left={}, top_right={}, bottom_left={}, bottom_right={}]", all_, top_left_, top_right_, bottom_left_, bottom_right_);}
+        bool equals(const object& other) const noexcept override;
+        bool equals(const border_radius& other) const noexcept override;
         /// @}
-        
-        /// @cond
-        bool operator==(const border_radius& p) const {return all_ == p.all_ && top_left_ == p.top_left_ && top_right_ == p.top_right_ && bottom_left_ == p.bottom_left_ && bottom_right_ == p.bottom_right_;}
-        friend std::ostream& operator<<(std::ostream& os, const xtd::forms::style_sheets::border_radius& border_radius) noexcept {return os << border_radius.to_string();}
-        /// @endcond
         
       private:
         bool all_ = true;
-        int top_left_ = 0;
-        int top_right_ = 0;
-        int bottom_left_ = 0;
-        int bottom_right_ = 0;
+        int32_t top_left_ = 0;
+        int32_t top_right_ = 0;
+        int32_t bottom_left_ = 0;
+        int32_t bottom_right_ = 0;
       };
     }
   }

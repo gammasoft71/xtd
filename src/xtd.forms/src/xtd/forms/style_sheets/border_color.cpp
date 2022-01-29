@@ -1,8 +1,5 @@
-#include <xtd/argument_exception.h>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/drawing2d/linear_gradient_brush.h>
-#include <xtd/not_supported_exception.h>
 #include "../../../../include/xtd/forms/style_sheets/border_color.h"
 
 using namespace std;
@@ -77,5 +74,5 @@ bool border_color::equals(const object& other) const noexcept {
 }
 
 bool border_color::equals(const border_color& other) const noexcept {
-  return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;;
+  return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;
 }
