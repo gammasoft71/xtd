@@ -28,18 +28,10 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         control_selector() = default;
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_selector class with specified box.
-        /// @param box The box of the control.
-        /// @remarks You need to know how the box model works.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        explicit control_selector(const xtd::forms::style_sheets::box_data& box);
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_selector class with specified box and text.
-        /// @param box The box of the control.
-        /// @param text The text of the control.
-        /// @remarks You need to know how the box model works.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        explicit control_selector(const xtd::forms::style_sheets::box_data& box, const xtd::forms::style_sheets::text_data& text);
-        
+
+        control_selector(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::color_property& background_color, std::optional<int32_t> width, std::optional<int32_t> height, const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
+        control_selector(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::image_value& background_image, std::optional<int32_t> width, std::optional<int32_t> height, const xtd::forms::style_sheets::color_property& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
+
         /// @cond
         control_selector(const control_selector&) = default;
         control_selector(control_selector&&) = default;
