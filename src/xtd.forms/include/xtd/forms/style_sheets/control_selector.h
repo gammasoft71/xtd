@@ -13,16 +13,16 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The control data allows you to specify the box and color of a control.
       /// @code
-      /// class forms_export_ control_selector : public xtd::object
+      /// class forms_export_ control_selector : public xtd::forms::style_sheets::box_data
       /// @endcode
       /// @par Inheritance
-      /// xtd::object → xtd::forms::style_sheets::control_selector
+      /// xtd::object → xtd::forms::style_sheets::box_data → xtd::forms::style_sheets::control_selector
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      class forms_export_ control_selector : public xtd::object {
+      class forms_export_ control_selector : public xtd::forms::style_sheets::box_data {
       public:
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::control_selector class.
         /// @remarks You need to know how the box model works.
@@ -40,20 +40,12 @@ namespace xtd {
         
         /// @brief Gets the box of the control.
         /// @return The box of the control.
-        virtual const xtd::forms::style_sheets::box_data& box() const noexcept;
-        /// @brief Gets the box of the control.
-        /// @return The box of the control.
-        virtual xtd::forms::style_sheets::box_data& box() noexcept;
-
-        /// @brief Gets the box of the control.
-        /// @return The box of the control.
         virtual const xtd::forms::style_sheets::text_data& text() const noexcept;
         /// @brief Gets the box of the control.
         /// @return The box of the control.
         virtual xtd::forms::style_sheets::text_data& text() noexcept;
 
       private:
-        xtd::forms::style_sheets::box_data box_;
         xtd::forms::style_sheets::text_data text_;
       };
     }
