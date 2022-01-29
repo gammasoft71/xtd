@@ -11,9 +11,13 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The control data allows you to specify the box and color of a control.
+      /// @brief The control selector allows you to specify the box and color of a control.
       /// @code
-      /// class forms_export_ control_selector : public xtd::forms::style_sheets::ibox_model
+      /// class forms_export_ control_selector : public xtd::forms::style_sheets::ibox_model, public xtd::forms::style_sheets::itext_model, public xtd::iequatable<control_selector>, public xtd::object
+      /// @par Inheritance
+      /// xtd::object → xtd::forms::style_sheets::ibox_model
+      /// @par Implements
+      /// xtd::forms::style_sheets::ibox_model, xtd::forms::style_sheets::itext_model, xtd::iequatable <>
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::ibox_model → xtd::forms::style_sheets::control_selector
@@ -24,7 +28,7 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       /// @remarks You need to know how the box model works.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-      class forms_export_ control_selector : public xtd::forms::style_sheets::itext_model, public xtd::forms::style_sheets::ibox_model, public xtd::iequatable<control_selector>, public xtd::object {
+      class forms_export_ control_selector : public xtd::forms::style_sheets::ibox_model, public xtd::forms::style_sheets::itext_model, public xtd::iequatable<control_selector>, public xtd::object {
       public:
         /// @name Constructors
         
