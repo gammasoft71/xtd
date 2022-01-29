@@ -24,19 +24,47 @@ style_sheet::style_sheet(const ustring& text) {
 }
 
 const button_selector& style_sheet::button() const noexcept {
-  return button_;
+  return button(pseudo_state::standard);
+}
+
+const button_selector& style_sheet::button(pseudo_state state) const noexcept {
+  static button_selector fallback = buttons_.find(pseudo_state::standard) != buttons_.end() ? buttons_.find(state)->second : button_selector();
+  auto it = buttons_.find(state);
+  if (it == buttons_.end()) return fallback;
+  return it->second;
 }
 
 const control_selector& style_sheet::control() const noexcept {
-  return control_;
+  return control(pseudo_state::standard);
+}
+
+const control_selector& style_sheet::control(pseudo_state state) const noexcept {
+  static control_selector fallback = controls_.find(pseudo_state::standard) != controls_.end() ? controls_.find(state)->second : control_selector();
+  auto it = controls_.find(state);
+  if (it == controls_.end()) return fallback;
+  return it->second;
 }
 
 const form_selector& style_sheet::form() const noexcept {
-  return form_;
+  return form(pseudo_state::standard);
+}
+
+const form_selector& style_sheet::form(pseudo_state state) const noexcept {
+  static form_selector fallback = forms_.find(pseudo_state::standard) != forms_.end() ? forms_.find(state)->second : form_selector();
+  auto it = forms_.find(state);
+  if (it == forms_.end()) return fallback;
+  return it->second;
 }
 
 const label_selector& style_sheet::label() const noexcept {
-  return label_;
+  return label(pseudo_state::standard);
+}
+
+const label_selector& style_sheet::label(pseudo_state state) const noexcept {
+  static label_selector fallback = labels_.find(pseudo_state::standard) != labels_.end() ? labels_.find(state)->second : label_selector();
+  auto it = labels_.find(state);
+  if (it == labels_.end()) return fallback;
+  return it->second;
 }
 
 const map<ustring, style_sheet> style_sheet::style_sheets() noexcept {
@@ -119,6 +147,53 @@ void style_sheet::initilize() {
     if (!style.theme().name().empty())
       style_sheets_[style.theme().name()] = style;
   }
+  
+  /// @todo Just for test: To remove when button.css is read... 
+  style_sheets_["macOS (dark)"].buttons_ = {
+    // :standard
+    {xtd::forms::style_sheets::pseudo_state::standard, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), background_image(image_type::linear_gradient, {system_colors::button_face(), system_colors::button_face()}, 180), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::pressed, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::checked, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::mixed, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(78, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::hover, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), system_colors::button_face(), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::disabled, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(35, 255, 255, 255), std::nullopt, std::nullopt, system_colors::gray_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    // :standard:default
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), background_image(image_type::linear_gradient, {color::from_argb(0xFF177AE5), color::from_argb(0xFF166ECD)}, 180), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::pressed, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), background_image(image_type::linear_gradient, {color::from_argb(0xFF24A0F2), color::from_argb(0xFF2194E5)}, 180), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::checked, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), background_image(image_type::linear_gradient, {color::from_argb(0xFF24A0F2), color::from_argb(0xFF2194E5)}, 180), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::mixed, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), background_image(image_type::linear_gradient, {color::from_argb(0xFF24A0F2), color::from_argb(0xFF2194E5)}, 180), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::hover, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), background_image(image_type::linear_gradient, {color::from_argb(0xFF177AE5), color::from_argb(0xFF166ECD)}, 180), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, xtd::forms::style_sheets::button_selector {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(system_colors::control_dark()), border_width(1), border_radius(5), padding(1, 1, 1, 3), background_image(image_type::linear_gradient, {color::from_argb(35, 255, 255, 255), color::from_argb(35, 255, 255, 255)}, 180), std::nullopt, std::nullopt, system_colors::gray_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    // :flat
+    {xtd::forms::style_sheets::pseudo_state::flat, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), system_colors::control(), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::pressed, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::checked, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::mixed, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(78, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::hover, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::disabled, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(30, 255, 255, 255), std::nullopt, std::nullopt, system_colors::gray_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    // :flat:default
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), system_colors::control(), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::pressed, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::checked, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::mixed, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(78, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::hover, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(30, 255, 255, 255), std::nullopt, std::nullopt, system_colors::gray_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    // :popup
+    {xtd::forms::style_sheets::pseudo_state::popup, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), system_colors::control(), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::pressed, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::inset), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::checked, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::inset), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::mixed, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::inset), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(78, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::hover, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::outset), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::disabled, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(30, 255, 255, 255), std::nullopt, std::nullopt, system_colors::gray_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    // :popup:default
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), system_colors::control(), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::pressed, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::inset), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::checked, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::inset), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::mixed, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::inset), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(78, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::hover, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::outset), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
+    {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, xtd::forms::style_sheets::button_selector {padding(0), style_sheets::border_style(border_type::solid), border_color(system_colors::control_text()), border_width(1), border_radius(5), padding(1, 1, 1, 3), color::from_argb(30, 255, 255, 255), std::nullopt, std::nullopt, system_colors::gray_text(), content_alignment::middle_center, system_fonts::default_font()}},
+  };
+  
 }
 
 vector<ustring> style_sheet::split_colors_from_text(const ustring& text) const noexcept {
