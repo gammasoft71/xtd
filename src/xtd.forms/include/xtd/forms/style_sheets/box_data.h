@@ -7,6 +7,7 @@
 #include "border_radius.h"
 #include "border_style.h"
 #include "border_width.h"
+#include "color_property.h"
 #include "image_value.h"
 #include "../padding.h"
 

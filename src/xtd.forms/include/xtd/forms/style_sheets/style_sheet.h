@@ -73,6 +73,7 @@ namespace xtd {
 
         border_color border_color_from_css(const xtd::ustring& css_text, const border_color& result) const noexcept;
         xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
+        int32_t number_from_css(const xtd::ustring& css_text, const int32_t& default_value) const noexcept;
         xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
         /// @}
