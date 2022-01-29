@@ -18,6 +18,10 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
+      /// @cond
+      class style_sheet;
+      /// @endcond
+
       /// @brief The image data allows you to specify the url or gradient mode.
       /// @code
       /// class forms_export_ background_image : public xtd::object
@@ -32,6 +36,13 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::box_data.
       class forms_export_ background_image : public xtd::iequatable<background_image>, public xtd::object {
       public:
+        /// @name Fields
+        
+        /// @{
+        /// @brief Provides an empty xtd::forms::style_sheets::background_image object.
+        static const background_image empty;
+        /// @}
+
         /// @name Constructors
         
         /// @{
@@ -136,44 +147,17 @@ namespace xtd {
         bool equals(const object& other) const noexcept override {return is<background_image>(other) ? equals(static_cast<const background_image&>(other)) : false;}
         bool equals(const background_image& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
 
-        /// @brief Creates a xtd::forms::style_sheets::background_image object from the specified css text.
-        /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::background_image object.
-        /// @param result The xtd::forms::style_sheets::background_image class that this method creates.
-        /// @return true if succeed; otherwise false.
-        static bool from_css(const xtd::ustring& css_text, background_image& result);
-
         /// @brief Creates a xtd::drawing::brush from specified image data and rectangle.
         /// @param image Contains image data.
         /// @param rect The xtd::drawing::rectangle neeed for linear gradient brush
         /// @return New instance of brush.
         static std::unique_ptr<xtd::drawing::brush> make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect);
 
-        /// @brief Creates a xtd::forms::style_sheets::background_image object from the specified text.
-        /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::background_image object.
-        /// @return The xtd::forms::style_sheets::background_image class that this method creates.
-        /// @exception xtd::argument_exception The text is not a xtd::forms::style_sheets::background_image object.
-        static background_image parse(const xtd::ustring& text);
-
         xtd::ustring to_string() const noexcept override;
-        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::background_image object.
-        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::background_image object.
-        xtd::ustring to_css() const noexcept;
-        
-        /// @brief Creates a xtd::forms::style_sheets::background_image object from the specified text.
-        /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::background_image object.
-        /// @param result The xtd::forms::style_sheets::background_image class that this method creates.
-        /// @return true if succeed; otherwise false.
-        static bool try_parse(const xtd::ustring& text, background_image& result);
         /// @}
 
       private:
-        static xtd::ustring angle_to_string(int32_t angle);
-        static xtd::ustring color_to_string(const xtd::drawing::color& color);
-        static ustring remove_key(const xtd::ustring& text);
-        static bool try_parse_url(const xtd::ustring& text, background_image& result);
-        static std::vector<xtd::ustring> split_arguments(const xtd::ustring& text);
-        static bool try_parse_linear_gradient_color(const xtd::ustring& text, background_image& result);
-
+        friend class style_sheet;
         xtd::forms::style_sheets::image_type image_type_ = style_sheets::image_type::none;
         xtd::ustring url_;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black, xtd::drawing::color::black};

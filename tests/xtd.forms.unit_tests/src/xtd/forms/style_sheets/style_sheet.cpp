@@ -265,5 +265,83 @@ namespace unit_tests {
       auto style = styles.find("macOS (dark)")->second;
       assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", style.string_from_css("https://gammasoft71.wixsite.com/xtdpro", "https://gammasoft71.wixsite.com/gammasoft"), csf_);
     }
+
+    void test_method_(linear_gradient_from_css_with_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 180), style.background_image_from_css("linear-gradient(blue, white)", background_image::empty), csf_);
+    }
+
+    void test_method_(linear_gradient_from_css_with_to_top_and_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 0), style.background_image_from_css("linear-gradient(to top, blue, white)", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_to_top_right_and_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 45), style.background_image_from_css("linear-gradient(to top right, blue, white)", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_to_right_and_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 90), style.background_image_from_css("linear-gradient(to right, blue, white)", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_to_bottom_right_and_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 135), style.background_image_from_css("linear-gradient(to bottom right, blue, white)", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_to_bottom_and_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 180), style.background_image_from_css("linear-gradient(to bottom, blue, white)", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_to_bottom_left_and_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 225), style.background_image_from_css("linear-gradient(to bottom left, blue, white)", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_to_left_and_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 270), style.background_image_from_css("linear-gradient(to left, blue, white)", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_to_top_left_and_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 315), style.background_image_from_css("linear-gradient(to top left, blue, white)", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_angle_and_named_colors) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 126), style.background_image_from_css("linear-gradient(126deg, blue, white)", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_rgb_color) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::from_argb(42, 24, 12), color::from_argb(84, 128, 16)}, 180), style.background_image_from_css("linear-gradient(rgb(42, 24, 12), rgb(84, 128, 16))", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_angle_rgb_color) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::from_argb(42, 24, 12), color::from_argb(84, 128, 16)}, 24), style.background_image_from_css("linear-gradient(24deg, rgb(42, 24, 12), rgb(84, 128, 16))", background_image::empty), csf_);
+    }
+    
+    void test_method_(linear_gradient_from_css_with_to_left_rgb_color) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(background_image(image_type::linear_gradient, {color::from_argb(42, 24, 12), color::from_argb(84, 128, 16)}, 270), style.background_image_from_css("linear-gradient(to left, rgb(42, 24, 12), rgb(84, 128, 16))", background_image::empty), csf_);
+    }
   };
 }
