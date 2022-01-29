@@ -80,7 +80,7 @@ namespace xtd {
         
       private:
         static void initilize();
-        std::vector<xtd::ustring> split_colors_from_css(const xtd::ustring& text) const noexcept;
+        std::vector<xtd::ustring> split_colors_from_text(const xtd::ustring& text) const noexcept;
         void system_color_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, system_colors_selector& colors) const noexcept;
         void theme_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, theme_selector& theme) const noexcept;
         bool try_parse_hex_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;

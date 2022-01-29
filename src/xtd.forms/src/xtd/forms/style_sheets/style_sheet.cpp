@@ -2,12 +2,14 @@
 #include <xtd/as.h>
 #include <xtd/is.h>
 #include <xtd/drawing/system_colors.h>
+#include <xtd/drawing/drawing2d/linear_gradient_brush.h>
 #include <xtd/io/directory.h>
 #include <xtd/io/file.h>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::drawing::drawing2d;
 using namespace xtd::io;
 using namespace xtd::forms::style_sheets;
 using namespace xtd::web::css;
@@ -59,7 +61,7 @@ bool style_sheet::equals(const style_sheet& other) const noexcept {
 }
 
 border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept {
-  vector<ustring> colors = split_colors_from_css(css_text);
+  vector<ustring> colors = split_colors_from_text(css_text);
   if (colors.size() < 1 || colors.size() > 4) return default_value;
   border_color result;
   result.all(color_from_css(colors[0], default_value.top()));
@@ -117,7 +119,7 @@ void style_sheet::initilize() {
   }
 }
 
-vector<ustring> style_sheet::split_colors_from_css(const ustring& text) const noexcept {
+vector<ustring> style_sheet::split_colors_from_text(const ustring& text) const noexcept {
   static vector<ustring> color_keywords = {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
   auto string_starts_with_any = [](const ustring& text, const vector<ustring>& values)->ustring {
     for (auto value : values)
