@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::properties::resources class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/environment.h>
+#include <xtd/drawing/bitmap.h>
 #include "../control.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -21,51 +21,23 @@ namespace xtd {
       
       /// @{
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& cursor_arrow() {
-        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("arrow{}.png", get_os_postfix())))) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("arrow{}.png", get_os_postfix())));
-        return bitmap;
-      }
+      static const xtd::drawing::bitmap& cursor_arrow();
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& cursor_no_move_2d() {
-        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("cursor_no_move_2d{}.png", get_os_postfix())))) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "cursors", xtd::ustring::format("cursor_no_move_2d{}.png", get_os_postfix())));
-        return bitmap;
-      }
+      static const xtd::drawing::bitmap& cursor_no_move_2d();
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& gammasoft() {
-        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "pictures", "gammasoft.png"))) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "pictures", "gammasoft.png"));
-        return bitmap;
-      }
+      static const xtd::drawing::bitmap& gammasoft();
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& xtd() {
-        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd.png"))) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd.png"));
-        return bitmap;
-      }
+      static const xtd::drawing::bitmap& xtd();
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& xtd_console() {
-        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd_console.png"))) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd_console.png"));
-        return bitmap;
-      }
+      static const xtd::drawing::bitmap& xtd_console();
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-      static const xtd::drawing::bitmap& xtd_forms() {
-        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd_forms.png"))) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd_forms.png"));
-        return bitmap;
-      }
+      static const xtd::drawing::bitmap& xtd_forms();
       /// @}
-      
-    private:
-      static std::string get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";}
-      static constexpr const char* forms_resource_path_ = __XTD_RESOURCES_PATH__;
     };
   }
 }
