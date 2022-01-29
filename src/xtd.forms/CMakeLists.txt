@@ -262,19 +262,19 @@ add_sources(
   include/xtd/forms/style_sheets/border_type.h
   include/xtd/forms/style_sheets/border_width.h
   include/xtd/forms/style_sheets/ibox_model.h
-  include/xtd/forms/style_sheets/button_selector.h
-  include/xtd/forms/style_sheets/control_selector.h
-  include/xtd/forms/style_sheets/form_selector.h
+  include/xtd/forms/style_sheets/button.h
+  include/xtd/forms/style_sheets/control.h
+  include/xtd/forms/style_sheets/form.h
   include/xtd/forms/style_sheets/image_type.h
   include/xtd/forms/style_sheets/background_image.h
-  include/xtd/forms/style_sheets/label_selector.h
+  include/xtd/forms/style_sheets/label.h
   include/xtd/forms/style_sheets/pseudo_state.h
   include/xtd/forms/style_sheets/style_sheet.h
-  include/xtd/forms/style_sheets/system_colors_selector.h
+  include/xtd/forms/style_sheets/system_colors.h
   include/xtd/forms/style_sheets/itext_model.h
   include/xtd/forms/style_sheets/text_decoration.h
   include/xtd/forms/style_sheets/text_transformation.h
-  include/xtd/forms/style_sheets/theme_selector.h
+  include/xtd/forms/style_sheets/theme.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/control_state.h
   include/xtd/forms/visual_styles/form_state.h
@@ -397,11 +397,11 @@ add_sources(
   src/xtd/forms/style_sheets/border_style.cpp
   src/xtd/forms/style_sheets/border_width.cpp
   src/xtd/forms/style_sheets/ibox_model.cpp
-  src/xtd/forms/style_sheets/control_selector.cpp
+  src/xtd/forms/style_sheets/control.cpp
   src/xtd/forms/style_sheets/background_image.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
-  src/xtd/forms/style_sheets/system_colors_selector.cpp
-  src/xtd/forms/style_sheets/theme_selector.cpp
+  src/xtd/forms/style_sheets/system_colors.cpp
+  src/xtd/forms/style_sheets/theme.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 
