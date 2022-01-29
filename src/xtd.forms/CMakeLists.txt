@@ -263,7 +263,6 @@ add_sources(
   include/xtd/forms/style_sheets/border_width.h
   include/xtd/forms/style_sheets/box_data.h
   include/xtd/forms/style_sheets/button_selector.h
-  include/xtd/forms/style_sheets/color_property.h
   include/xtd/forms/style_sheets/control_selector.h
   include/xtd/forms/style_sheets/form_selector.h
   include/xtd/forms/style_sheets/image_type.h
@@ -398,7 +397,6 @@ add_sources(
   src/xtd/forms/style_sheets/border_style.cpp
   src/xtd/forms/style_sheets/border_width.cpp
   src/xtd/forms/style_sheets/box_data.cpp
-  src/xtd/forms/style_sheets/color_property.cpp
   src/xtd/forms/style_sheets/control_selector.cpp
   src/xtd/forms/style_sheets/background_image.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp

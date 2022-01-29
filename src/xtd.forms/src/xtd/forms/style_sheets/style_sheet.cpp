@@ -72,19 +72,15 @@ border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, co
 }
 
 xtd::drawing::color style_sheet::color_from_css(const ustring& css_text, const color& default_value) const noexcept {
-  color result;
-  if (css_text.starts_with("#") && try_parse_hex_color(css_text, result)) return result;
-  if (css_text.starts_with("rgb(") && css_text.ends_with(")") && try_parse_rgb_color(css_text, result)) return result;
-  if (css_text.starts_with("rgba(") && css_text.ends_with(")") && try_parse_rgba_color(css_text, result)) return result;
-  if (css_text.starts_with("argb(") && css_text.ends_with(")") && try_parse_argb_color(css_text, result)) return result;
-  if (css_text.starts_with("hsv(") && css_text.ends_with(")") && try_parse_hsv_color(css_text, result)) return result;
-  if (css_text.starts_with("hsva(") && css_text.ends_with(")") && try_parse_hsva_color(css_text, result)) return result;
-  if (css_text.starts_with("ahsv(") && css_text.ends_with(")") && try_parse_ahsv_color(css_text, result)) return result;
-  if (css_text.starts_with("hsl(") && css_text.ends_with(")") && try_parse_hsl_color(css_text, result)) return result;
-  if (css_text.starts_with("hsla(") && css_text.ends_with(")") && try_parse_hsla_color(css_text, result)) return result;
-  if (css_text.starts_with("ahsl(") && css_text.ends_with(")") && try_parse_ahsl_color(css_text, result)) return result;
-  if (css_text.starts_with("system-color(") && css_text.ends_with(")") && try_parse_system_color(css_text, result)) return result;
-  if (try_parse_named_color(css_text, result)) return result;
+  color result = default_value;
+  try_parse_color(css_text, result);
+  return result;
+}
+
+background_image style_sheet::background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept {
+  background_image result;;
+  if (css_text.starts_with("url(") && css_text.ends_with(")") && try_parse_uri(css_text, result.url_)) return result;
+  if (css_text.starts_with("linear-gradient(") && css_text.ends_with(")") && try_parse_linear_gradient(css_text, result)) return result;
   return default_value;
 }
 
@@ -104,6 +100,12 @@ ustring style_sheet::string_from_css(const xtd::ustring& css_text, const ustring
   auto value = css_text.trim();
   if (!value.starts_with("\"") || !value.ends_with("\"")) return default_value;
   return value.remove(value.size() - 1, 1).replace("\"", "");
+}
+
+uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value) const noexcept {
+  auto result = default_value;
+  try_parse_uri(css_text, result);
+  return result;;
 }
 
 void style_sheet::initilize() {
@@ -145,59 +147,6 @@ vector<ustring> style_sheet::split_colors_from_text(const ustring& text) const n
   return result;
 }
 
-bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const noexcept {
-  if (text.starts_with("#") && text.size() == 4U) {
-    byte_t r = 0;
-    if (xtd::try_parse<byte_t>(text.substring(1, 1), r, number_styles::hex_number) == false) return false;
-    r += r * 16;
-    byte_t g = 0;
-    if (xtd::try_parse<byte_t>(text.substring(2, 1), g, number_styles::hex_number) == false) return false;
-    g += g * 16;
-    byte_t b = 0;
-    if (xtd::try_parse<byte_t>(text.substring(3, 1), b, number_styles::hex_number) == false) return false;
-    b += b * 16;
-    result = color::from_argb(r, g, b);
-    return true;
-  }
-  if (text.starts_with("#") && text.size() == 5U) {
-    byte_t a = 0;
-    if (xtd::try_parse<byte_t>(text.substring(1, 1), a, number_styles::hex_number) == false) return false;
-    a += a * 16;
-    byte_t r = 0;
-    if (xtd::try_parse<byte_t>(text.substring(2, 1), r, number_styles::hex_number) == false) return false;
-    r += r * 16;
-    byte_t g = 0;
-    if (xtd::try_parse<byte_t>(text.substring(3, 1), g, number_styles::hex_number) == false) return false;
-    g += g * 16;
-    byte_t b = 0;
-    if (xtd::try_parse<byte_t>(text.substring(4, 1), b, number_styles::hex_number) == false) return false;
-    b += b * 16;
-    result = color::from_argb(a, r, g, b);
-    return true;
-  }
-  if (text.starts_with("#") &&text.size() == 7U) {
-    int32_t rgb;
-    if (xtd::try_parse<int>(text.substring(1), rgb, number_styles::hex_number) == false) return false;
-    result = color::from_argb(rgb + 0xFF000000);
-    return true;
-  }
-  if (text.starts_with("#") &&text.size() == 9U) {
-    int32_t argb;
-    if (xtd::try_parse<int>(text.substring(1), argb, number_styles::hex_number) == false) return false;
-    result = color::from_argb(argb);
-    return true;
-  }
-  return false;
-}
-
-void style_sheet::theme_reader(selector_map::const_iterator& selectors_iterator, theme_selector& theme) const noexcept {
-  property_map::const_iterator properties_iterator;
-  if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end()) theme.name(string_from_css(properties_iterator->second.to_string(), ustring()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("description")) != selectors_iterator->second.properties().end()) theme.description(string_from_css(properties_iterator->second.to_string(), ustring()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("authors")) != selectors_iterator->second.properties().end()) theme.authors(string_from_css(properties_iterator->second.to_string(), ustring()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("website")) != selectors_iterator->second.properties().end()) theme.website(uri_from_css(properties_iterator->second.to_string(), uri()));
-}
-                                                                                                                                                      
 void style_sheet::system_color_reader(selector_map::const_iterator& selectors_iterator, system_colors_selector& colors) const noexcept {
   property_map::const_iterator properties_iterator;
   if ((properties_iterator = selectors_iterator->second.properties().find("accent")) != selectors_iterator->second.properties().end()) colors.accent(color_from_css(properties_iterator->second.to_string(), system_colors::accent()));
@@ -237,6 +186,116 @@ void style_sheet::system_color_reader(selector_map::const_iterator& selectors_it
   if ((properties_iterator = selectors_iterator->second.properties().find("window")) != selectors_iterator->second.properties().end()) colors.window(color_from_css(properties_iterator->second.to_string(), system_colors::window()));
   if ((properties_iterator = selectors_iterator->second.properties().find("window-frame")) != selectors_iterator->second.properties().end()) colors.window_frame(color_from_css(properties_iterator->second.to_string(), system_colors::window_frame()));
   if ((properties_iterator = selectors_iterator->second.properties().find("window-text")) != selectors_iterator->second.properties().end()) colors.window_text(color_from_css(properties_iterator->second.to_string(), system_colors::window_text()));
+}
+
+void style_sheet::theme_reader(selector_map::const_iterator& selectors_iterator, theme_selector& theme) const noexcept {
+  property_map::const_iterator properties_iterator;
+  if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end()) theme.name(string_from_css(properties_iterator->second.to_string(), ustring()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("description")) != selectors_iterator->second.properties().end()) theme.description(string_from_css(properties_iterator->second.to_string(), ustring()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("authors")) != selectors_iterator->second.properties().end()) theme.authors(string_from_css(properties_iterator->second.to_string(), ustring()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("website")) != selectors_iterator->second.properties().end()) theme.website(uri_from_css(properties_iterator->second.to_string(), uri()));
+}
+
+bool style_sheet::try_parse_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept {
+  if (text.starts_with("#") && try_parse_hex_color(text, result)) return true;
+  if (text.starts_with("rgb(") && text.ends_with(")") && try_parse_rgb_color(text, result)) return true;
+  if (text.starts_with("rgba(") && text.ends_with(")") && try_parse_rgba_color(text, result)) return true;
+  if (text.starts_with("argb(") && text.ends_with(")") && try_parse_argb_color(text, result)) return true;
+  if (text.starts_with("hsv(") && text.ends_with(")") && try_parse_hsv_color(text, result)) return true;
+  if (text.starts_with("hsva(") && text.ends_with(")") && try_parse_hsva_color(text, result)) return true;
+  if (text.starts_with("ahsv(") && text.ends_with(")") && try_parse_ahsv_color(text, result)) return true;
+  if (text.starts_with("hsl(") && text.ends_with(")") && try_parse_hsl_color(text, result)) return true;
+  if (text.starts_with("hsla(") && text.ends_with(")") && try_parse_hsla_color(text, result)) return true;
+  if (text.starts_with("ahsl(") && text.ends_with(")") && try_parse_ahsl_color(text, result)) return true;
+  if (text.starts_with("system-color(") && text.ends_with(")") && try_parse_system_color(text, result)) return true;
+  if (try_parse_named_color(text, result)) return true;
+  return false;
+}
+
+bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const noexcept {
+  if (text.starts_with("#") && text.size() == 4U) {
+    byte_t r = 0;
+    if (xtd::try_parse<byte_t>(text.substring(1, 1), r, number_styles::hex_number) == false) return false;
+    r += r * 16;
+    byte_t g = 0;
+    if (xtd::try_parse<byte_t>(text.substring(2, 1), g, number_styles::hex_number) == false) return false;
+    g += g * 16;
+    byte_t b = 0;
+    if (xtd::try_parse<byte_t>(text.substring(3, 1), b, number_styles::hex_number) == false) return false;
+    b += b * 16;
+    result = color::from_argb(r, g, b);
+    return true;
+  }
+  if (text.starts_with("#") && text.size() == 5U) {
+    byte_t a = 0;
+    if (xtd::try_parse<byte_t>(text.substring(1, 1), a, number_styles::hex_number) == false) return false;
+    a += a * 16;
+    byte_t r = 0;
+    if (xtd::try_parse<byte_t>(text.substring(2, 1), r, number_styles::hex_number) == false) return false;
+    r += r * 16;
+    byte_t g = 0;
+    if (xtd::try_parse<byte_t>(text.substring(3, 1), g, number_styles::hex_number) == false) return false;
+    g += g * 16;
+    byte_t b = 0;
+    if (xtd::try_parse<byte_t>(text.substring(4, 1), b, number_styles::hex_number) == false) return false;
+    b += b * 16;
+    result = color::from_argb(a, r, g, b);
+    return true;
+  }
+  if (text.starts_with("#") && text.size() == 7U) {
+    int32_t rgb;
+    if (xtd::try_parse<int>(text.substring(1), rgb, number_styles::hex_number) == false) return false;
+    result = color::from_argb(rgb + 0xFF000000);
+    return true;
+  }
+  if (text.starts_with("#") && text.size() == 9U) {
+    int32_t argb;
+    if (xtd::try_parse<int>(text.substring(1), argb, number_styles::hex_number) == false) return false;
+    result = color::from_argb(argb);
+    return true;
+  }
+  return false;
+}
+
+bool style_sheet::try_parse_linear_gradient(const xtd::ustring& text, background_image& result) const noexcept {
+  vector<ustring> arguments = split_colors_from_text(text.remove(text.size()-1).replace("linear-gradient(", ""));
+  vector<color> colors;
+  int32_t angle = -1;
+  for (auto argument : arguments) {
+    drawing::color color;
+    if (argument == "to top") {
+      if (angle != -1) return false;
+      angle = 0;
+    } else if (argument == "to top right") {
+      if (angle != -1) return false;
+      angle = 45;
+    } else if (argument == "to right") {
+      if (angle != -1) return false;
+      angle = 90;
+    } else if (argument == "to bottom right") {
+      if (angle != -1) return false;
+      angle = 135;
+    } else if (argument == "to bottom") {
+      if (angle != -1) return false;
+      angle = 180;
+    } else if (argument == "to bottom left") {
+      if (angle != -1) return false;
+      angle = 225;
+    } else if (argument == "to left") {
+      if (angle != -1) return false;
+      angle = 270;
+    } else if (argument == "to top left") {
+      if (angle != -1) return false;
+      angle = 315;
+    } else if (argument.ends_with("deg")) {
+      argument = argument.replace("deg", "");
+      if (angle != -1 || xtd::try_parse<int32_t>(argument, angle) == false) return false;
+    } else if (try_parse_color(argument, color))
+      colors.push_back(color);
+  }
+  if (colors.size() < 2) return false;
+  result = background_image(style_sheets::image_type::linear_gradient, colors, angle == -1? 180 : angle);
+  return true;
 }
 
 bool style_sheet::try_parse_rgb_color(const ustring& text, color& result) const noexcept {
@@ -379,8 +438,10 @@ bool style_sheet::try_parse_ahsl_color(const ustring& text, color& result) const
 
 bool style_sheet::try_parse_named_color(const ustring& text, color& result) const noexcept {
   if (text.trim().find(" ") != ustring::npos) return false;
-  result = color::from_name(text);
-  return result.is_known_color();
+  auto named_color = color::from_name(text);
+  if (!named_color.is_known_color()) return false;
+  result = named_color;
+  return true;
 }
 
 bool style_sheet::try_parse_system_color(const ustring& text, color& result) const noexcept {
@@ -393,7 +454,8 @@ bool style_sheet::try_parse_system_color(const ustring& text, color& result) con
   return true;
 }
 
-uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value) const noexcept {
-  if (!css_text.starts_with("url") || !css_text.ends_with(")")) return default_value;
-  return uri(css_text.remove(css_text.size() - 1, 1).replace("url(", ""));
+bool style_sheet::try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept {
+  if (!text.starts_with("url") || !text.ends_with(")")) return false;
+  result = uri(text.remove(text.size() - 1, 1).replace("url(", ""));
+  return true;
 }
