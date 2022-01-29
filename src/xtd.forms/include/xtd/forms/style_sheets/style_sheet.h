@@ -77,6 +77,7 @@ namespace xtd {
         bool equals(const style_sheet& other) const noexcept override;
 
         border_color border_color_from_css(const xtd::ustring& css_text, const border_color& result) const noexcept;
+        border_style border_style_from_css(const ustring& text, const border_style& default_value) const noexcept;
         xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
         int32_t number_from_css(const xtd::ustring& css_text, const int32_t& default_value) const noexcept;

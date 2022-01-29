@@ -1,4 +1,6 @@
 #include "../../../../include/xtd/forms/style_sheets/box_data.h"
+#include <xtd/as.h>
+#include <xtd/is.h>
 
 using namespace std;
 using namespace xtd;
@@ -88,26 +90,12 @@ optional<int32_t> box_data::width() const noexcept {
   return width_;
 }
 
-bool box_data::from_css(const xtd::ustring& css_text, box_data& result) {
-  auto key_values = css_text.replace("\n", "").replace("\r", "").split({';'});
-  result = box_data();
-  for (auto item : key_values) {
-    auto key_value = item.split({':'});
-    if (key_values.size() != 2U) return false;
-    key_value[0] = key_value[0].trim();
-    key_value[1] = key_value[0].trim();
-    
-    if (key_value[0] == "border-style") {
-      if (try_parse_border_style(key_value[1], result.border_style_) == false) return false;
-    }
-    if (key_value[0] == "border-width") {
-      if (try_parse_border_width(key_value[1], result.border_width_) == false) return false;
-    }
-    if (key_value[0] == "border-radius") {
-      if (try_parse_border_radius(key_value[1], result.border_radius_) == false) return false;
-    }
-  }
-  return true;
+bool box_data::equals(const object& other) const noexcept {
+  return is<box_data>(other) ? equals(static_cast<const box_data&>(other)) : false;
+}
+
+bool box_data::equals(const box_data& other) const noexcept {
+  return margin_ == other.margin_ && border_style_ == other.border_style_ && border_color_ == other.border_color_ && border_width_ == other.border_width_ && border_radius_ == other.border_radius_ && padding_ == other.padding_ && background_color_ == other.background_color_ && background_image_ == other.background_image_ && width_ == other.width_ && height_ == other.height_;
 }
 
 rectangle box_data::get_border_rectangle(const rectangle& bounds) const noexcept {
@@ -130,56 +118,4 @@ rectangle box_data::get_content_rectangle(const rectangle& bounds) const noexcep
   auto content_rect = rectangle::offset(get_fill_rectangle(bounds), padding().left(), padding().top());
   content_rect = rectangle::inflate(content_rect, -padding().left() - padding().right(), -padding().top() - padding().bottom());
   return content_rect;
-}
-
-xtd::ustring box_data::to_css() const noexcept {
-  //return ustring::format("   border-style: {};\n  border-color: {};\n  border-width:{};  border-radius: {};\n", style(), color(), width(), radius());
-  return "";
-}
-
-std::vector<xtd::ustring> box_data::split_border_colors(const xtd::ustring& text) {
-  static vector<ustring> start_color_keywords {"rgb", "rgba", "argb", "hsv", "hsva", "ahsv", "hsl", "hsla", "ahsl", "#", "linear-gradient", "radial-gradient", "conic-gradient"};
-  vector<ustring> result;
-  
-  return result;
-}
-
-bool box_data::try_parse_border_style(const ustring& text, xtd::forms::style_sheets::border_style& border_style) {
-  static map<ustring, xtd::forms::style_sheets::border_type> border_types = {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}};
-  auto values = text.split();
-  if (values.size() < 1 || values.size() > 4) return false;
-
-  auto it = border_types.find(values[0]);
-  if (it == border_types.end()) return false;
-  border_style.all(it->second);
-
-  if (values.size() >= 2) {
-    it = border_types.find(values[1]);
-    if (it == border_types.end()) return false;
-    border_style.right(it->second);
-  }
-  if (values.size() >= 3) {
-    it = border_types.find(values[2]);
-    if (it == border_types.end()) return false;
-    border_style.bottom(it->second);
-  }
-  if (values.size() == 4) {
-    it = border_types.find(values[3]);
-    if (it == border_types.end()) return false;
-    border_style.left(it->second);
-  }
-  
-  return true;
-}
-
-bool box_data::try_parse_border_radius(const ustring &text, xtd::forms::style_sheets::border_radius& border_radius) {
-  return false;
-}
-
-bool box_data::try_parse_border_width(const ustring &text, xtd::forms::style_sheets::border_width& border_width) {
-  return false;
-}
-
-bool box_data::try_parse_padding(const ustring &text, xtd::forms::padding& padding) {
-  return false;
 }
