@@ -23,7 +23,7 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const b
 
   auto fill_rect = data.get_fill_rectangle(bounds);
   graphics.fill_rounded_rectangle(solid_brush(data.background_color()), fill_rect, data.border_radius().top_left());
-  auto image_brush = image_value::make_brush(data.background_image(), fill_rect);
+  auto image_brush = background_image::make_brush(data.background_image(), fill_rect);
   if (image_brush) graphics.fill_rounded_rectangle(*image_brush, fill_rect, data.border_radius().top_left());
 }
 

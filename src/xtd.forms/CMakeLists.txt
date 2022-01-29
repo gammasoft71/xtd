@@ -267,7 +267,7 @@ add_sources(
   include/xtd/forms/style_sheets/control_selector.h
   include/xtd/forms/style_sheets/form_selector.h
   include/xtd/forms/style_sheets/image_type.h
-  include/xtd/forms/style_sheets/image_value.h
+  include/xtd/forms/style_sheets/background_image.h
   include/xtd/forms/style_sheets/label_selector.h
   include/xtd/forms/style_sheets/pseudo_state.h
   include/xtd/forms/style_sheets/style_sheet.h
@@ -392,6 +392,7 @@ add_sources(
   src/xtd/forms/v_scroll_bar.cpp
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
   src/xtd/forms/xtd_forms_message_dialog_closed_caller.h
+  src/xtd/forms/properties/resources.cpp
   src/xtd/forms/style_sheets/border_color.cpp
   src/xtd/forms/style_sheets/border_radius.cpp
   src/xtd/forms/style_sheets/border_style.cpp
@@ -399,7 +400,7 @@ add_sources(
   src/xtd/forms/style_sheets/box_data.cpp
   src/xtd/forms/style_sheets/color_property.cpp
   src/xtd/forms/style_sheets/control_selector.cpp
-  src/xtd/forms/style_sheets/image_value.cpp
+  src/xtd/forms/style_sheets/background_image.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
   src/xtd/forms/style_sheets/system_colors_selector.cpp
   src/xtd/forms/style_sheets/text_data.cpp
