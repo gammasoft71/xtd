@@ -16,7 +16,7 @@ namespace unit_tests {
       assert::are_equal("xtd (light)", style.theme().name(), csf_);
       assert::are_equal("Contains xtd (light) theme.", style.theme().description(), csf_);
       assert::are_equal("Gammasoft", style.theme().authors(), csf_);
-      assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", style.theme().website(), csf_);
+      assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", style.theme().website().to_string(), csf_);
     }
   };
 }
