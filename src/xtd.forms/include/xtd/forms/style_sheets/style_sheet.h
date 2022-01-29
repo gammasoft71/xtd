@@ -12,6 +12,7 @@
 #include "button_selector.h"
 #include "form_selector.h"
 #include "label_selector.h"
+#include "pseudo_state.h"
 #include "system_colors_selector.h"
 #include "theme_selector.h"
 
@@ -52,12 +53,16 @@ namespace xtd {
         
         /// @{
         const button_selector& button() const noexcept;
+        const button_selector& button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
         const control_selector& control() const noexcept;
+        const control_selector& control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
         const form_selector& form() const noexcept;
+        const form_selector& form(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
         const label_selector& label() const noexcept;
+        const label_selector& label(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
         static const std::map<xtd::ustring, style_sheet> style_sheets() noexcept;
 
@@ -100,10 +105,10 @@ namespace xtd {
         bool try_parse_system_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept;
 
-        button_selector button_;
-        control_selector control_;
-        form_selector form_;
-        label_selector label_;
+        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::button_selector> buttons_;
+        std::map<xtd::forms::style_sheets::pseudo_state, control_selector> controls_;
+        std::map<xtd::forms::style_sheets::pseudo_state, form_selector> forms_;
+        std::map<xtd::forms::style_sheets::pseudo_state, label_selector> labels_;
         static std::map<ustring, style_sheet> style_sheets_;
         system_colors_selector system_colors_;
         theme_selector theme_;
