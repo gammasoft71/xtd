@@ -44,7 +44,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_width class using the supplied xtd::forms::style_sheets::border_width size for all edges.
         /// @param all The number of pixels to be used for xtd::forms::style_sheets::border_width for all edges.
         /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-        explicit border_width(length all);
+        explicit border_width(xtd::forms::style_sheets::length all);
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_width class using a separate xtd::forms::style_sheets::border_width size for each edge.
         /// @param left The xtd::forms::style_sheets::border_width size, in pixels, for the left edge.
@@ -52,7 +52,7 @@ namespace xtd {
         /// @param right The xtd::forms::style_sheets::border_width size, in pixels, for the right edge.
         /// @param bottom The xtd::forms::style_sheets::border_width size, in pixels, for the bottom edge.
         /// @remarks If all of the parameter values are equal, then the all property will reflect this common value.
-        border_width(length left, length top, length right, length bottom);
+        border_width(xtd::forms::style_sheets::length left, xtd::forms::style_sheets::length top, xtd::forms::style_sheets::length right, xtd::forms::style_sheets::length bottom);
         /// @}
         
         /// @cond
@@ -66,47 +66,47 @@ namespace xtd {
         /// @brief Gets the xtd::forms::style_sheets::border_width value for all the edges.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_width value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_width values are not equal.
-        length all() const noexcept;
+        xtd::forms::style_sheets::length all() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for all the edges.
         /// @param all The xtd::forms::style_sheets::border_width, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_width value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_width values are not equal.
-        void all(length all) noexcept;
+        void all(xtd::forms::style_sheets::length all) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_width value for the bottom edge.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        length bottom() const noexcept;
+        xtd::forms::style_sheets::length bottom() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for the bottom edge.
         /// @param bottom The xtd::forms::style_sheets::border_width, in pixels, for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom(length bottom) noexcept;
+        void bottom(xtd::forms::style_sheets::length bottom) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_width value for the left edge.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        length left() const noexcept;
+        xtd::forms::style_sheets::length left() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for the left edge.
         /// @param left The xtd::forms::style_sheets::border_width, in pixels, for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        void left(length left) noexcept;
+        void left(xtd::forms::style_sheets::length left) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_width value for the right edge.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        length right() const noexcept;
+        xtd::forms::style_sheets::length right() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for the right edge.
         /// @param right The xtd::forms::style_sheets::border_width, in pixels, for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        void right(length right) noexcept;
+        void right(xtd::forms::style_sheets::length right) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_width value for the top edge.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        length top() const noexcept;
+        xtd::forms::style_sheets::length top() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for the top edge.
         /// @param top The xtd::forms::style_sheets::border_width, in pixels, for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        void top(length top) noexcept;
+        void top(xtd::forms::style_sheets::length top) noexcept;
         /// @}
         
         /// @name Methods
@@ -118,10 +118,10 @@ namespace xtd {
         
       private:
         bool all_ = true;
-        length left_ {3};
-        length top_ {3};
-        length right_ {3};
-        length bottom_ {3};
+        xtd::forms::style_sheets::length left_ {3};
+        xtd::forms::style_sheets::length top_ {3};
+        xtd::forms::style_sheets::length right_ {3};
+        xtd::forms::style_sheets::length bottom_ {3};
       };
     }
   }
