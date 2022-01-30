@@ -134,6 +134,8 @@ namespace xtd {
         static style_sheet system_style_sheet_kde_light() noexcept;
         static style_sheet system_style_sheet_macos_dark() noexcept;
         static style_sheet system_style_sheet_macos_light() noexcept;
+        static style_sheet system_style_sheet_unknown_dark() noexcept;
+        static style_sheet system_style_sheet_unknown_light() noexcept;
         static style_sheet system_style_sheet_windows_dark() noexcept;
         static style_sheet system_style_sheet_windows_light() noexcept;
         void theme_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::theme& theme) const noexcept;

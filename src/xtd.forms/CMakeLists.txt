@@ -413,6 +413,8 @@ add_sources(
   src/xtd/forms/style_sheets/system_style_sheet_kde_light.cpp
   src/xtd/forms/style_sheets/system_style_sheet_macos_dark.cpp
   src/xtd/forms/style_sheets/system_style_sheet_macos_light.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_unknown_dark.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_unknown_light.cpp
   src/xtd/forms/style_sheets/system_style_sheet_windows_dark.cpp
   src/xtd/forms/style_sheets/system_style_sheet_windows_light.cpp
   src/xtd/forms/style_sheets/theme.cpp
