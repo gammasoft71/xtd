@@ -10,7 +10,7 @@ using namespace xtd::web::css;
 
 namespace {
   style_sheet::buttons_t get_buttons() {
-    style_sheet::buttons_t buttons = {
+    return style_sheet::buttons_t {
       // :standard
       {xtd::forms::style_sheets::pseudo_state::standard, xtd::forms::style_sheets::button {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(drawing::system_colors::control_dark()), border_width(length(1)), border_radius(length(5)), padding(1, 1, 1, 3), background_image(image_type::linear_gradient, {drawing::system_colors::button_face(), drawing::system_colors::button_face()}, 180), std::nullopt, std::nullopt, drawing::system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
       {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::pressed, xtd::forms::style_sheets::button {padding(0, 1, 0, 1), style_sheets::border_style(border_type::outset), border_color(drawing::system_colors::control_dark()), border_width(length(1)), border_radius(length(5)), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, drawing::system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
@@ -54,7 +54,6 @@ namespace {
       {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::hover, xtd::forms::style_sheets::button {padding(0), style_sheets::border_style(border_type::outset), border_color(drawing::system_colors::control_text()), border_width(length(1)), border_radius(length(5)), padding(1, 1, 1, 3), color::from_argb(93, 255, 255, 255), std::nullopt, std::nullopt, drawing::system_colors::control_text(), content_alignment::middle_center, system_fonts::default_font()}},
       {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, xtd::forms::style_sheets::button {padding(0), style_sheets::border_style(border_type::solid), border_color(drawing::system_colors::control_text()), border_width(length(1)), border_radius(length(5)), padding(1, 1, 1, 3), color::from_argb(30, 255, 255, 255), std::nullopt, std::nullopt, drawing::system_colors::gray_text(), content_alignment::middle_center, system_fonts::default_font()}},
     };
-    return buttons;
   }
 
   style_sheets::system_colors get_system_colors() {
