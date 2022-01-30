@@ -98,10 +98,8 @@ const xtd::forms::style_sheets::system_colors& style_sheet::system_colors()const
 
 
 style_sheet style_sheet::system_style_sheet() noexcept {
-  bool static init = false;
   static style_sheet system_style_sheet;
-  if (init) return system_style_sheet;
-  init = true;
+  if (system_style_sheet != style_sheet::empty) return system_style_sheet;
 
   if (environment::os_version().is_linux()) {
     if (environment::os_version().desktop_environment() == "kde" && application::dark_mode_enabled())
@@ -117,11 +115,16 @@ style_sheet style_sheet::system_style_sheet() noexcept {
       system_style_sheet = system_style_sheet_macos_dark();
     else
       system_style_sheet = system_style_sheet_macos_light();
-  } else {
+  } else if (environment::os_version().is_windows()) {
     if (application::dark_mode_enabled())
       system_style_sheet = system_style_sheet_windows_dark();
     else
       system_style_sheet = system_style_sheet_windows_light();
+  } else {
+    if (application::dark_mode_enabled())
+      system_style_sheet = system_style_sheet_unknown_dark();
+    else
+      system_style_sheet = system_style_sheet_unknown_light();
   }
   
   return system_style_sheet;
