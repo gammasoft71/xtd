@@ -268,6 +268,8 @@ add_sources(
   include/xtd/forms/style_sheets/image_type.h
   include/xtd/forms/style_sheets/background_image.h
   include/xtd/forms/style_sheets/label.h
+  include/xtd/forms/style_sheets/length.h
+  include/xtd/forms/style_sheets/length_unit.h
   include/xtd/forms/style_sheets/pseudo_state.h
   include/xtd/forms/style_sheets/style_sheet.h
   include/xtd/forms/style_sheets/system_colors.h
@@ -399,6 +401,7 @@ add_sources(
   src/xtd/forms/style_sheets/ibox_model.cpp
   src/xtd/forms/style_sheets/control.cpp
   src/xtd/forms/style_sheets/background_image.cpp
+  src/xtd/forms/style_sheets/length.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
   src/xtd/forms/style_sheets/system_colors.cpp
   src/xtd/forms/style_sheets/theme.cpp

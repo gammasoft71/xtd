@@ -141,7 +141,7 @@ background_image style_sheet::background_image_from_css(const xtd::ustring& css_
   return default_value;
 }
 
-int32_t style_sheet::number_from_css(const xtd::ustring& css_text, const int32_t& default_value) const noexcept {
+int32_t style_sheet::length_from_css(const xtd::ustring& css_text, const int32_t& default_value) const noexcept {
   if (css_text == "auto" || css_text == "initial" || css_text == "inherit") return -1;
   auto w = .0;
   if (css_text.ends_with("cm") && ::try_parse<double>(css_text.replace("cm", ""), w)) return as<int32_t>(w / 2.54 * 96.0);
@@ -150,6 +150,7 @@ int32_t style_sheet::number_from_css(const xtd::ustring& css_text, const int32_t
   if (css_text.ends_with("px") && ::try_parse<double>(css_text.replace("px", ""), w)) return as<int32_t>(w);
   if (css_text.ends_with("pt") && ::try_parse<double>(css_text.replace("pt", ""), w)) return as<int32_t>(w / 96.0 * 72.0);
   if (css_text.ends_with("pc") && ::try_parse<double>(css_text.replace("pc", ""), w)) return as<int32_t>(w * 12.0 / 96.0 * 72.0);
+  if (css_text == "0") return 0;
   return default_value;
 }
 
