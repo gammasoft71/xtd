@@ -20,7 +20,7 @@ using namespace xtd::web::css;
 const style_sheet style_sheet::empty;
 event<style_sheet, event_handler> style_sheet::current_style_sheet_changed;
 style_sheet style_sheet::current_style_sheets_;
-std::map<ustring, style_sheet> style_sheet::style_sheets_;
+style_sheet::style_sheets_t style_sheet::style_sheets_;
 
 style_sheet::style_sheet(const ustring& text) {
   *this = system_style_sheet();
@@ -52,7 +52,7 @@ const xtd::forms::style_sheets::control& style_sheet::control(pseudo_state state
   return it->second;
 }
 
-style_sheet style_sheet::current_style_sheet() noexcept {
+const style_sheet& style_sheet::current_style_sheet() noexcept {
   if (current_style_sheets_ == style_sheet::empty) current_style_sheets_ = system_style_sheet();
   return current_style_sheets_;
 }
@@ -87,7 +87,7 @@ const xtd::forms::style_sheets::label& style_sheet::label(pseudo_state state) co
   return it->second;
 }
 
-const map<ustring, style_sheet> style_sheet::style_sheets() noexcept {
+const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
   initilize();
   return style_sheets_;
 }
@@ -97,7 +97,7 @@ const xtd::forms::style_sheets::system_colors& style_sheet::system_colors()const
 }
 
 
-style_sheet style_sheet::system_style_sheet() noexcept {
+const style_sheet& style_sheet::system_style_sheet() noexcept {
   static style_sheet system_style_sheet;
   if (system_style_sheet != style_sheet::empty) return system_style_sheet;
 
@@ -240,6 +240,10 @@ void style_sheet::initilize() {
     if (!style.theme().name().empty())
       style_sheets_[style.theme().name()] = style;
   }
+}
+
+void style_sheet::on_current_style_sheet_changed(const xtd::event_args& e) {
+  current_style_sheet_changed(current_style_sheets_, e);
 }
 
 vector<ustring> style_sheet::split_colors_from_text(const ustring& text) const noexcept {

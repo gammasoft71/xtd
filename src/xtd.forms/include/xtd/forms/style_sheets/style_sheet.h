@@ -25,23 +25,33 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.
       /// @code
-      /// class forms_export_ style_sheet : public xtd::object
+      /// class forms_export_ style_sheet final : public xtd::iequatable<style_sheet>, public xtd::object
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::style_sheet
+      /// @par Implements
+      /// xtd::iequatable <>
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
       /// @remarks This class is used by xtd::forms::style_sheets::ibox_model.
-      class forms_export_ style_sheet : public xtd::iequatable<style_sheet>, public xtd::object {
+      class forms_export_ style_sheet final : public xtd::iequatable<style_sheet>, public xtd::object {
       public:
         /// @name Alias
  
         /// @{
-        /// @brief Represents a buttons map collection.
+        /// @brief Represents a buttons collection.
         using buttons_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::button>;
+        /// @brief Represents a controls collection.
+        using controls_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::control>;
+        /// @brief Represents a forms collection.
+        using forms_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::form>;
+        /// @brief Represents a labels collection.
+        using labels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::label>;
+        /// @brief Represents a style_sheets collection.
+        using style_sheets_t = std::map<xtd::ustring, style_sheet>;
         /// @}
         
         /// @name Fields
@@ -73,7 +83,7 @@ namespace xtd {
         const xtd::forms::style_sheets::control& control() const noexcept;
         const xtd::forms::style_sheets::control& control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
-        static style_sheet current_style_sheet() noexcept;
+        static const style_sheet& current_style_sheet() noexcept;
         static void current_style_sheet(const style_sheet& value);
 
         const xtd::forms::style_sheets::form& form() const noexcept;
@@ -82,11 +92,11 @@ namespace xtd {
         const xtd::forms::style_sheets::label& label() const noexcept;
         const xtd::forms::style_sheets::label& label(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
-        static const std::map<xtd::ustring, style_sheet> style_sheets() noexcept;
+        static const style_sheets_t& style_sheets() noexcept;
 
         const xtd::forms::style_sheets::system_colors& system_colors()const noexcept;
         
-        static style_sheet system_style_sheet() noexcept;
+        static const style_sheet& system_style_sheet() noexcept;
         
         const xtd::forms::style_sheets::theme& theme() const noexcept;
         /// @}
@@ -110,22 +120,14 @@ namespace xtd {
         /// @{
         /// @brief Occurs when the value of the xtd::forms::style_sheets::style_sheet::current_style_sheet property changes.
         /// @ingroup events
-        /// @remarks This event is raised if the auto_size property is changed by either a programmatic modification or user interaction.
+        /// @remarks This event is raised if the xtd::forms::style_sheets::style_sheet::current_style_sheet property is changed by either a programmatic modification or user interaction.
         /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
         static event<style_sheet, event_handler> current_style_sheet_changed;
         /// @}
-
-        
-      protected:
-        /// @brief Raises the xtd::forms::style_sheets::style_sheet::current_style_sheet_changed event.
-        /// @param e An xtd::event_args that contains the event data.
-        /// @ingroup events
-        static void on_current_style_sheet_changed(const xtd::event_args& e) {
-          current_style_sheet_changed(current_style_sheets_, e);
-        }
         
       private:
         static void initilize();
+        static void on_current_style_sheet_changed(const xtd::event_args& e);
         std::vector<xtd::ustring> split_colors_from_text(const xtd::ustring& text) const noexcept;
         void system_color_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::system_colors& colors) const noexcept;
         static style_sheet system_style_sheet_gnome_dark() noexcept;
@@ -156,11 +158,11 @@ namespace xtd {
         bool try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept;
 
         buttons_t buttons_;
-        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::control> controls_;
-        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::form> forms_;
-        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::label> labels_;
+        controls_t controls_;
+        forms_t forms_;
+        labels_t labels_;
         static style_sheet current_style_sheets_;
-        static std::map<xtd::ustring, style_sheet> style_sheets_;
+        static style_sheets_t style_sheets_;
         xtd::forms::style_sheets::system_colors system_colors_;
         xtd::forms::style_sheets::theme theme_;
       };
