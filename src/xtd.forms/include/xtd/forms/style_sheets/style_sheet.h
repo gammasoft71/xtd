@@ -67,6 +67,8 @@ namespace xtd {
         static const std::map<xtd::ustring, style_sheet> style_sheets() noexcept;
 
         const xtd::forms::style_sheets::system_colors& system_colors()const noexcept;
+        
+        static style_sheet system_style_sheet() noexcept;
 
         const xtd::forms::style_sheets::theme& theme() const noexcept;
         /// @}
@@ -89,6 +91,14 @@ namespace xtd {
         static void initilize();
         std::vector<xtd::ustring> split_colors_from_text(const xtd::ustring& text) const noexcept;
         void system_color_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::system_colors& colors) const noexcept;
+        static style_sheet system_style_sheet_gnome_dark() noexcept;
+        static style_sheet system_style_sheet_gnome_light() noexcept;
+        static style_sheet system_style_sheet_kde_dark() noexcept;
+        static style_sheet system_style_sheet_kde_light() noexcept;
+        static style_sheet system_style_sheet_macos_dark() noexcept;
+        static style_sheet system_style_sheet_macos_light() noexcept;
+        static style_sheet system_style_sheet_windows_dark() noexcept;
+        static style_sheet system_style_sheet_windows_light() noexcept;
         void theme_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::theme& theme) const noexcept;
         bool try_parse_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_hex_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;

@@ -407,6 +407,14 @@ add_sources(
   src/xtd/forms/style_sheets/lengths.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
   src/xtd/forms/style_sheets/system_colors.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_gnome_dark.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_gnome_light.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_kde_dark.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_kde_light.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_macos_dark.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_macos_light.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_windows_dark.cpp
+  src/xtd/forms/style_sheets/system_style_sheet_windows_light.cpp
   src/xtd/forms/style_sheets/theme.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})

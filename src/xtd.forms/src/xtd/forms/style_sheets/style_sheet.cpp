@@ -1,8 +1,10 @@
 #include "../../../../include/xtd/forms/style_sheets/style_sheet.h"
 #include <xtd/as.h>
 #include <xtd/is.h>
+#include <xtd/environment.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/drawing2d/linear_gradient_brush.h>
+#include <xtd/forms/application.h>
 #include <xtd/io/directory.h>
 #include <xtd/io/file.h>
 
@@ -11,6 +13,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 using namespace xtd::io;
+using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 using namespace xtd::web::css;
 
@@ -76,6 +79,37 @@ const xtd::forms::style_sheets::system_colors& style_sheet::system_colors()const
   return system_colors_;
 }
 
+
+style_sheet style_sheet::system_style_sheet() noexcept {
+  bool static init = false;
+  static style_sheet system_style_sheet;
+  if (init) return system_style_sheet;
+  init = true;
+
+  if (environment::os_version().is_linux()) {
+    if (environment::os_version().desktop_environment() == "kde" && application::dark_mode_enabled())
+      system_style_sheet = system_style_sheet_kde_dark();
+    else if (environment::os_version().desktop_environment() == "kde" && !application::dark_mode_enabled())
+      system_style_sheet = system_style_sheet_kde_light();
+    else if (application::dark_mode_enabled())
+      system_style_sheet = system_style_sheet_gnome_dark();
+    else
+      system_style_sheet = system_style_sheet_gnome_light();
+  } else if (environment::os_version().is_macos()) {
+    if (application::dark_mode_enabled())
+      system_style_sheet = system_style_sheet_macos_dark();
+    else
+      system_style_sheet = system_style_sheet_macos_light();
+  } else {
+    if (application::dark_mode_enabled())
+      system_style_sheet = system_style_sheet_windows_dark();
+    else
+      system_style_sheet = system_style_sheet_windows_light();
+  }
+  
+  return system_style_sheet;
+}
+
 const xtd::forms::style_sheets::theme& style_sheet::theme() const noexcept {
   return theme_;
 }
@@ -99,7 +133,7 @@ border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, co
   return result;
 }
 
-border_style style_sheet::border_style_from_css(const ustring& text, const border_style& default_value) const noexcept {
+style_sheets::border_style style_sheet::border_style_from_css(const ustring& text, const border_style& default_value) const noexcept {
   auto border_styles = text.split();
   static map<ustring, xtd::forms::style_sheets::border_type> border_types = {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}};
   if (border_styles.size() < 1 || border_styles.size() > 4) return default_value;
