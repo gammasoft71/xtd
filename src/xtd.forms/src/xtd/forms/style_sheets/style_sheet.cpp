@@ -18,10 +18,12 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::web::css;
 
 const style_sheet style_sheet::empty;
+event<style_sheet, event_handler> style_sheet::current_style_sheet_changed;
 style_sheet style_sheet::current_style_sheets_;
 std::map<ustring, style_sheet> style_sheet::style_sheets_;
 
 style_sheet::style_sheet(const ustring& text) {
+  *this = system_style_sheet();
   css_reader reader(text);
   selector_map::const_iterator selectors_iterator;
   if ((selectors_iterator = reader.selectors().find("theme")) != reader.selectors().end()) theme_reader(selectors_iterator, theme_);
@@ -57,7 +59,10 @@ style_sheet style_sheet::current_style_sheet() noexcept {
 
 void style_sheet::current_style_sheet(const style_sheet& value) {
   if (value == style_sheet::empty) throw argument_exception(csf_);
-  current_style_sheets_ = value;
+  if (current_style_sheets_ != value) {
+    current_style_sheets_ = value;
+    on_current_style_sheet_changed(event_args::empty);
+  }
 }
 
 const xtd::forms::style_sheets::form& style_sheet::form() const noexcept {
