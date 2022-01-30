@@ -36,44 +36,6 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         control() = default;
 
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control class with all specified arguments except background_image.
-        /// @param margin The area outside the border.
-        /// @param border_style The style specifies what kind of borders to display.
-        /// @param bordfer_color The color is used to set the color of the borders.
-        /// @param border_width The width specifies the width of the borders.
-        /// @param border_radius The radius is used to add rounded borders to an element.
-        /// @param padding The area around the content.
-        /// @param background_color The background color is used to add background effects to the box.
-        /// @param width The width of the box.
-        /// @param height The height of the box.
-        /// @param color The color is used to add foreground effects to the text.
-        /// @param alignment A combination of xtd::forms::content_alignment values.
-        /// @param font The font of the text.
-        /// @param decoration One of xtd::forms::style_sheets::text_decoration values.
-        /// @param transformation One of xtd::forms::style_sheets::text_transformation values.
-        /// @remarks This constructor is used only to crate a style by programming (not by css style sheet).
-        /// @remarks You need to know how the box model works.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        control(const xtd::forms::style_sheets::margin& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::padding& padding, const xtd::drawing::color& background_color, std::optional<xtd::forms::style_sheets::length> width, std::optional<xtd::forms::style_sheets::length> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control class with all specified arguments except background_color.
-        /// @param margin The area outside the border.
-        /// @param border_style The style specifies what kind of borders to display.
-        /// @param bordfer_color The color is used to set the color of the borders.
-        /// @param border_width The width specifies the width of the borders.
-        /// @param border_radius The radius is used to add rounded borders to an element.
-        /// @param padding The area around the content.
-        /// @param background_image The background image is used to add background effects to the box.
-        /// @param width The width of the box.
-        /// @param height The height of the box.
-        /// @param color The color is used to add foreground effects to the text.
-        /// @param alignment A combination of xtd::forms::content_alignment values.
-        /// @param font The font of the text.
-        /// @param decoration One of xtd::forms::style_sheets::text_decoration values.
-        /// @param transformation One of xtd::forms::style_sheets::text_transformation values.
-        /// @remarks This constructor is used only to crate a style by programming (not by css style sheet).
-        /// @remarks You need to know how the box model works.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        control(const xtd::forms::style_sheets::margin& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::padding& padding, const xtd::forms::style_sheets::background_image& background_image, std::optional<xtd::forms::style_sheets::length> width, std::optional<xtd::forms::style_sheets::length> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::control class with all specified arguments.
         /// @param margin The area outside the border.
         /// @param border_style The style specifies what kind of borders to display.
