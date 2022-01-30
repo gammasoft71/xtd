@@ -108,13 +108,13 @@ namespace xtd {
         /// @remarks The margin is transparent.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual const xtd::forms::padding& margin() const noexcept = 0;
+        virtual const xtd::forms::style_sheets::margin& margin() const noexcept = 0;
         /// @brief Sets the area outside the border.
         /// @param value The area outside the border.
         /// @remarks The margin is transparent.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void margin(const xtd::forms::padding& value) noexcept = 0;
+        virtual void margin(const xtd::forms::style_sheets::margin& value) noexcept = 0;
 
         /// @brief Gets the area area around the content.
         /// @return The area around the content.

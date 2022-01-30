@@ -6,10 +6,10 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
-control::control(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::drawing::color& background_color, std::optional<int32_t> width, std::optional<int32_t> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), width_(width), height_(height), color_(color), alignment_(alignment), font_(font) {
+control::control(const style_sheets::margin& margin, const style_sheets::border_style& border_style, const style_sheets::border_color& border_color, const style_sheets::border_width& border_width, const style_sheets::border_radius& border_radius, const forms::padding& padding, const drawing::color& background_color, std::optional<style_sheets::length> width, std::optional<style_sheets::length> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), width_(width), height_(height), color_(color), alignment_(alignment), font_(font) {
 }
 
-control::control(const xtd::forms::padding& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::padding& padding, const xtd::forms::style_sheets::background_image& background_image, std::optional<int32_t> width, std::optional<int32_t> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_image_(background_image), width_(width), height_(height), color_(color), alignment_(alignment), font_(font) {
+control::control(const style_sheets::margin& margin, const style_sheets::border_style& border_style, const style_sheets::border_color& border_color, const style_sheets::border_width& border_width, const style_sheets::border_radius& border_radius, const forms::padding& padding, const style_sheets::background_image& background_image, std::optional<style_sheets::length> width, std::optional<style_sheets::length> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_image_(background_image), width_(width), height_(height), color_(color), alignment_(alignment), font_(font) {
 }
 
 const drawing::color& control::background_color() const noexcept {
@@ -68,11 +68,11 @@ void control::height(const std::optional<length>& value) noexcept {
   height_ = value;
 }
 
-const xtd::forms::padding& control::margin() const noexcept {
+const style_sheets::margin& control::margin() const noexcept {
   return margin_;
 }
 
-void control::margin(const xtd::forms::padding& value) noexcept {
+void control::margin(const style_sheets::margin& value) noexcept {
   margin_ = value;
 }
 
@@ -142,11 +142,11 @@ bool control::equals(const control& other) const noexcept {
 
 rectangle control::get_border_rectangle(const rectangle& bounds) const noexcept {
   auto bounds_rect = bounds;
-  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left() + border_width().left().get_pixels(bounds) + padding().left() + width().value().get_pixels(bounds) + padding().right() + border_width().right().get_pixels(bounds) + margin().right(), bounds_rect.height());
-  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top() + border_width().top().get_pixels(bounds) + padding().top() + height().value().get_pixels(bounds) + padding().bottom() + border_width().bottom().get_pixels(bounds) + margin().bottom());
+  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left().get_pixels(bounds) + border_width().left().get_pixels(bounds) + padding().left() + width().value().get_pixels(bounds) + padding().right() + border_width().right().get_pixels(bounds) + margin().right().get_pixels(bounds), bounds_rect.height());
+  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top().get_pixels(bounds) + border_width().top().get_pixels(bounds) + padding().top() + height().value().get_pixels(bounds) + padding().bottom() + border_width().bottom().get_pixels(bounds) + margin().bottom().get_pixels(bounds));
   
-  auto border_rect = rectangle::offset(bounds_rect, margin().left(), margin().top());
-  border_rect = rectangle::inflate(border_rect, -margin().right() - margin().left(), -margin().bottom() - margin().top());
+  auto border_rect = rectangle::offset(bounds_rect, margin().left().get_pixels(bounds), margin().top().get_pixels(bounds));
+  border_rect = rectangle::inflate(border_rect, -margin().right().get_pixels(bounds) - margin().left().get_pixels(bounds), -margin().bottom().get_pixels(bounds) - margin().top().get_pixels(bounds));
   return border_rect;
 }
 
