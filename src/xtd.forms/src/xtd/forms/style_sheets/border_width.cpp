@@ -5,17 +5,17 @@
 using namespace xtd;
 using namespace xtd::forms::style_sheets;
 
-border_width::border_width(int all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {
+border_width::border_width(length all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {
 }
 
-border_width::border_width(int left, int top, int right, int bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
+border_width::border_width(length left, length top, length right, length bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
 }
 
-int border_width::all() const noexcept {
-  return all_ ? top_ : -1;
+length border_width::all() const noexcept {
+  return all_ ? top_ : length::empty;
 }
 
-void border_width::all(int all) noexcept {
+void border_width::all(length all) noexcept {
   if (!all_ || left_ != all) {
     all_ = true;
     left_ = top_ = right_ = bottom_ = all;
@@ -23,44 +23,44 @@ void border_width::all(int all) noexcept {
 }
 
 
-int border_width::bottom() const noexcept {
+length border_width::bottom() const noexcept {
   return bottom_;
 }
 
-void border_width::bottom(int bottom) noexcept {
+void border_width::bottom(length bottom) noexcept {
   if (all_ || bottom_ != bottom) {
     all_ = false;
     bottom_ = bottom;
   }
 }
 
-int border_width::left() const noexcept {
+length border_width::left() const noexcept {
   return left_;
 }
 
-void border_width::left(int left) noexcept {
+void border_width::left(length left) noexcept {
   if (all_ || left_ != left) {
     all_ = false;
     left_ = left;
   }
 }
 
-int border_width::right() const noexcept {
+length border_width::right() const noexcept {
   return right_;
 }
 
-void border_width::right(int right) noexcept {
+void border_width::right(length right) noexcept {
   if (all_ || right_ != right) {
     all_ = false;
     right_ = right;
   }
 }
 
-int border_width::top() const noexcept {
+length border_width::top() const noexcept {
   return top_;
 }
 
-void border_width::top(int top) noexcept {
+void border_width::top(length top) noexcept {
   if (all_ || top_ != top) {
     all_ = false;
     top_ = top;

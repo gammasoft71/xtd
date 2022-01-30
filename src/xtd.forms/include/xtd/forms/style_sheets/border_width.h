@@ -4,6 +4,7 @@
 #pragma once
 #include <xtd/iequatable.h>
 #include <xtd/ustring.h>
+#include "length.h"
 #include "../../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -43,7 +44,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_width class using the supplied xtd::forms::style_sheets::border_width size for all edges.
         /// @param all The number of pixels to be used for xtd::forms::style_sheets::border_width for all edges.
         /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-        explicit border_width(int all);
+        explicit border_width(length all);
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_width class using a separate xtd::forms::style_sheets::border_width size for each edge.
         /// @param left The xtd::forms::style_sheets::border_width size, in pixels, for the left edge.
@@ -51,7 +52,7 @@ namespace xtd {
         /// @param right The xtd::forms::style_sheets::border_width size, in pixels, for the right edge.
         /// @param bottom The xtd::forms::style_sheets::border_width size, in pixels, for the bottom edge.
         /// @remarks If all of the parameter values are equal, then the all property will reflect this common value.
-        border_width(int left, int top, int right, int bottom);
+        border_width(length left, length top, length right, length bottom);
         /// @}
         
         /// @cond
@@ -65,47 +66,47 @@ namespace xtd {
         /// @brief Gets the xtd::forms::style_sheets::border_width value for all the edges.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_width value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_width values are not equal.
-        int all() const noexcept;
+        length all() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for all the edges.
         /// @param all The xtd::forms::style_sheets::border_width, in pixels, for all edges if the same; otherwise, -1.
         /// @remarks When retrieving this property, if all the edges use the same xtd::forms::style_sheets::border_width value, then this common value is returned. Otherwise, -1 is returned to indicate that all the xtd::forms::style_sheets::border_width values are not equal.
-        void all(int all) noexcept;
+        void all(length all) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_width value for the bottom edge.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        int bottom() const noexcept;
+        length bottom() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for the bottom edge.
         /// @param bottom The xtd::forms::style_sheets::border_width, in pixels, for the bottom edge.
         /// @remarks Setting this value can also alter the all property.
-        void bottom(int bottom) noexcept;
+        void bottom(length bottom) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_width value for the left edge.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        int left() const noexcept;
+        length left() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for the left edge.
         /// @param left The xtd::forms::style_sheets::border_width, in pixels, for the left edge.
         /// @remarks Setting this value can also alter the all property.
-        void left(int left) noexcept;
+        void left(length left) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_width value for the right edge.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        int right() const noexcept;
+        length right() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for the right edge.
         /// @param right The xtd::forms::style_sheets::border_width, in pixels, for the right edge.
         /// @remarks Setting this value can also alter the all property.
-        void right(int right) noexcept;
+        void right(length right) noexcept;
         
         /// @brief Gets the xtd::forms::style_sheets::border_width value for the top edge.
         /// @return The xtd::forms::style_sheets::border_width, in pixels, for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        int top() const noexcept;
+        length top() const noexcept;
         /// @brief Sets the xtd::forms::style_sheets::border_width value for the top edge.
         /// @param top The xtd::forms::style_sheets::border_width, in pixels, for the top edge.
         /// @remarks Setting this value can also alter the all property.
-        void top(int top) noexcept;
+        void top(length top) noexcept;
         /// @}
         
         /// @name Methods
@@ -117,10 +118,10 @@ namespace xtd {
         
       private:
         bool all_ = true;
-        int left_ = 3;
-        int top_ = 3;
-        int right_ = 3;
-        int bottom_ = 3;
+        length left_ {3};
+        length top_ {3};
+        length right_ {3};
+        length bottom_ {3};
       };
     }
   }

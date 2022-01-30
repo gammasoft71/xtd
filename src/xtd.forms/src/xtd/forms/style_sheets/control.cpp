@@ -142,8 +142,8 @@ bool control::equals(const control& other) const noexcept {
 
 rectangle control::get_border_rectangle(const rectangle& bounds) const noexcept {
   auto bounds_rect = bounds;
-  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left() + border_width().left() + padding().left() + width().value() + padding().right() + border_width().right() + margin().right(), bounds_rect.height());
-  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top() + border_width().top() + padding().top() + height().value() + padding().bottom() + border_width().bottom() + margin().bottom());
+  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left() + border_width().left().get_pixels(bounds) + padding().left() + width().value() + padding().right() + border_width().right().get_pixels(bounds) + margin().right(), bounds_rect.height());
+  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top() + border_width().top().get_pixels(bounds) + padding().top() + height().value() + padding().bottom() + border_width().bottom().get_pixels(bounds) + margin().bottom());
   
   auto border_rect = rectangle::offset(bounds_rect, margin().left(), margin().top());
   border_rect = rectangle::inflate(border_rect, -margin().right() - margin().left(), -margin().bottom() - margin().top());
@@ -151,8 +151,8 @@ rectangle control::get_border_rectangle(const rectangle& bounds) const noexcept 
 }
 
 rectangle control::get_fill_rectangle(const rectangle& bounds) const noexcept {
-  auto fill_rect = rectangle::offset(get_border_rectangle(bounds), border_width().left(), border_width().top());
-  fill_rect = rectangle::inflate(fill_rect, -border_width().left() - border_width().right(), -border_width().top() - border_width().bottom());
+  auto fill_rect = rectangle::offset(get_border_rectangle(bounds), border_width().left().get_pixels(bounds), border_width().top().get_pixels(bounds));
+  fill_rect = rectangle::inflate(fill_rect, -border_width().left().get_pixels(bounds) - border_width().right().get_pixels(bounds), -border_width().top().get_pixels(bounds) - border_width().bottom().get_pixels(bounds));
   return fill_rect;
 }
 

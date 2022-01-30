@@ -24,7 +24,7 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const i
 }
 
 void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
-  auto pen_width1 = box_model.border_width().top();
+  auto pen_width1 = box_model.border_width().top().get_pixels(bounds);
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
   auto color1 = solid_brush(box_model.border_color().top());
   
@@ -44,7 +44,7 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
 }
 
 void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
-  auto pen_width1 = box_model.border_width().right();
+  auto pen_width1 = box_model.border_width().right().get_pixels(bounds);
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
   auto color1 = solid_brush(box_model.border_color().right());
   
@@ -64,7 +64,7 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
 }
 
 void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
-  auto pen_width1 = box_model.border_width().bottom();
+  auto pen_width1 = box_model.border_width().bottom().get_pixels(bounds);
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
   auto color1 = solid_brush(box_model.border_color().bottom());
   
@@ -84,7 +84,7 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
 }
 
 void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
-  auto pen_width1 = box_model.border_width().left();
+  auto pen_width1 = box_model.border_width().left().get_pixels(bounds);
   auto border_rect1 = rectangle::inflate(rectangle::offset(bounds, pen_width1 / 2, pen_width1 / 2), -pen_width1, -pen_width1);
   auto color1 = solid_brush(box_model.border_color().left());
   

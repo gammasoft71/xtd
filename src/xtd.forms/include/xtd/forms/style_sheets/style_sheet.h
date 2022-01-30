@@ -80,7 +80,7 @@ namespace xtd {
         border_style border_style_from_css(const ustring& text, const border_style& default_value) const noexcept;
         xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
-        int32_t length_from_css(const xtd::ustring& css_text, const int32_t& default_value) const noexcept;
+        length length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept;
         xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
         /// @}
