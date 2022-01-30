@@ -57,19 +57,19 @@ namespace xtd {
         /// @param value One of xtd::forms::style_sheets::text_decoration values.
         virtual void decoration(xtd::forms::style_sheets::text_decoration value) noexcept = 0;
 
-        /// @brief Gets the transformation of the text.
-        /// @return One of xtd::forms::style_sheets::text_transformation values.
-        virtual xtd::forms::style_sheets::text_transformation transformation() const noexcept = 0;
-        /// @brief Sets the transformation of the text.
-        /// @param value One of xtd::forms::style_sheets::text_transformation values.
-        virtual void transformation(xtd::forms::style_sheets::text_transformation value) noexcept = 0;
-
         /// @brief Gets the font of the text.
         /// @return The font of the text.
         virtual const xtd::drawing::font& font() const noexcept = 0;
         /// @brief Sets the font of the text.
         /// @param value The font of the text.
         virtual void font(const xtd::drawing::font& value) noexcept = 0;
+
+        /// @brief Gets the transformation of the text.
+        /// @return One of xtd::forms::style_sheets::text_transformation values.
+        virtual xtd::forms::style_sheets::text_transformation transformation() const noexcept = 0;
+        /// @brief Sets the transformation of the text.
+        /// @param value One of xtd::forms::style_sheets::text_transformation values.
+        virtual void transformation(xtd::forms::style_sheets::text_transformation value) noexcept = 0;
 
         /// @brief Gets the string format of the text.
         /// @return The string format used by xtd::drawing::graphics::draw_text method to draw a text.
