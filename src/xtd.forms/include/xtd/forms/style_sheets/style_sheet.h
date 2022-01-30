@@ -4,6 +4,7 @@
 #pragma once
 #include <map>
 #include <vector>
+#include <xtd/event_handler.h>
 #include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/uri.h>
@@ -103,6 +104,25 @@ namespace xtd {
         xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
         /// @}
+        
+        /// @name Events
+        
+        /// @{
+        /// @brief Occurs when the value of the xtd::forms::style_sheets::style_sheet::current_style_sheet property changes.
+        /// @ingroup events
+        /// @remarks This event is raised if the auto_size property is changed by either a programmatic modification or user interaction.
+        /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+        static event<style_sheet, event_handler> current_style_sheet_changed;
+        /// @}
+
+        
+      protected:
+        /// @brief Raises the xtd::forms::style_sheets::style_sheet::current_style_sheet_changed event.
+        /// @param e An xtd::event_args that contains the event data.
+        /// @ingroup events
+        static void on_current_style_sheet_changed(const xtd::event_args& e) {
+          current_style_sheet_changed(current_style_sheets_, e);
+        }
         
       private:
         static void initilize();
