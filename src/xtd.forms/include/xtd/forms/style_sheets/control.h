@@ -81,8 +81,8 @@ namespace xtd {
         const xtd::drawing::font& font() const noexcept override;
         void font(const xtd::drawing::font& value) noexcept override;
 
-        std::optional<int32_t> height() const noexcept override;
-        void height(const std::optional<int32_t>& value) noexcept override;
+        std::optional<xtd::forms::style_sheets::length> height() const noexcept override;
+        void height(const std::optional<xtd::forms::style_sheets::length>& value) noexcept override;
         
         const xtd::forms::padding& margin() const noexcept override;
         void margin(const xtd::forms::padding& value) noexcept override;
@@ -93,8 +93,8 @@ namespace xtd {
         xtd::forms::style_sheets::text_transformation transformation() const noexcept override;
         void transformation(xtd::forms::style_sheets::text_transformation value) noexcept override;
 
-        std::optional<int32_t> width() const noexcept override;
-        void width(std::optional<int32_t> value) noexcept override;
+        std::optional<xtd::forms::style_sheets::length> width() const noexcept override;
+        void width(std::optional<xtd::forms::style_sheets::length> value) noexcept override;
         /// @}
 
         /// @name Methods
@@ -118,8 +118,8 @@ namespace xtd {
         xtd::forms::padding padding_;
         xtd::drawing::color background_color_ = xtd::drawing::color::transparent;
         xtd::forms::style_sheets::background_image background_image_;
-        std::optional<int32_t> width_;
-        std::optional<int32_t> height_;
+        std::optional<xtd::forms::style_sheets::length> width_;
+        std::optional<xtd::forms::style_sheets::length> height_;
         xtd::drawing::color color_;
         xtd::forms::content_alignment alignment_ = xtd::forms::content_alignment::middle_center;
         xtd::drawing::font font_ = xtd::drawing::system_fonts::default_font();

@@ -131,7 +131,7 @@ namespace xtd {
         /// @}
         
       private:
-        double value_ = 0;
+        double value_ = -1;
         length_unit unit_ = length_unit::pixels;
       };
     }
