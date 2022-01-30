@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::style_sheets::border_width class.
+/// @brief Contains xtd::forms::style_sheets::margin alias.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "lengths.h"
@@ -10,16 +10,16 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
-      /// @brief The width specifies the width of the borders.
+      /// @brief Margins are used to create space around elements, outside of any defined borders.
       /// @code
-      /// using border_width = xtd::forms::style_sheets::lengths
+      /// using margin = xtd::forms::style_sheets::lengths
       /// @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
-      using border_width = xtd::forms::style_sheets::lengths;
+      using margin = xtd::forms::style_sheets::lengths;
     }
   }
 }

@@ -10,6 +10,8 @@
 #include "border_style.h"
 #include "border_width.h"
 #include "background_image.h"
+#include "margin.h"
+//#include "padding.h"
 #include "../padding.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
