@@ -14,13 +14,11 @@ namespace xtd {
       /// @brief The control selector allows you to specify the box and color of a control.
       /// @code
       /// class forms_export_ control : public xtd::forms::style_sheets::ibox_model, public xtd::forms::style_sheets::itext_model, public xtd::iequatable<control>, public xtd::object
-      /// @par Inheritance
-      /// xtd::object → xtd::forms::style_sheets::ibox_model
-      /// @par Implements
-      /// xtd::forms::style_sheets::ibox_model, xtd::forms::style_sheets::itext_model, xtd::iequatable <>
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::ibox_model → xtd::forms::style_sheets::control
+      /// @par Implements
+      /// xtd::forms::style_sheets::ibox_model, xtd::forms::style_sheets::itext_model, xtd::iequatable <>
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
