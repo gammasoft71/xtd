@@ -36,6 +36,20 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::ibox_model.
       class forms_export_ style_sheet : public xtd::iequatable<style_sheet>, public xtd::object {
       public:
+        /// @name Alias
+ 
+        /// @{
+        /// @brief Represents a buttons map collection.
+        using buttons_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::button>;
+        /// @}
+        
+        /// @name Fields
+        
+        /// @{
+        /// @brief Provides an empty xtd::forms::style_sheets::style_sheet object.
+        static const style_sheet empty;
+        /// @}
+
         /// @name Constructors
         
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance.
@@ -58,6 +72,9 @@ namespace xtd {
         const xtd::forms::style_sheets::control& control() const noexcept;
         const xtd::forms::style_sheets::control& control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
+        static style_sheet current_style_sheet() noexcept;
+        static void current_style_sheet(const style_sheet& value);
+
         const xtd::forms::style_sheets::form& form() const noexcept;
         const xtd::forms::style_sheets::form& form(xtd::forms::style_sheets::pseudo_state state) const noexcept;
 
@@ -69,7 +86,7 @@ namespace xtd {
         const xtd::forms::style_sheets::system_colors& system_colors()const noexcept;
         
         static style_sheet system_style_sheet() noexcept;
-
+        
         const xtd::forms::style_sheets::theme& theme() const noexcept;
         /// @}
 
@@ -116,10 +133,11 @@ namespace xtd {
         bool try_parse_system_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept;
 
-        std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::button> buttons_;
+        buttons_t buttons_;
         std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::control> controls_;
         std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::form> forms_;
         std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::label> labels_;
+        static style_sheet current_style_sheets_;
         static std::map<xtd::ustring, style_sheet> style_sheets_;
         xtd::forms::style_sheets::system_colors system_colors_;
         xtd::forms::style_sheets::theme theme_;
