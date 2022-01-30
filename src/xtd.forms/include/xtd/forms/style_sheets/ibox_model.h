@@ -11,7 +11,7 @@
 #include "border_width.h"
 #include "background_image.h"
 #include "margin.h"
-//#include "padding.h"
+#include "padding.h"
 #include "../padding.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -120,12 +120,12 @@ namespace xtd {
         /// @return The area around the content.
         /// @remarks The padding is transparent.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual const xtd::forms::padding& padding() const noexcept = 0;
+        virtual const xtd::forms::style_sheets::padding& padding() const noexcept = 0;
         /// @brief Sets the area area around the content.
         /// @param value The area around the content.
         /// @remarks The padding is transparent.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void padding(const xtd::forms::padding& value) noexcept = 0;
+        virtual void padding(const xtd::forms::style_sheets::padding& value) noexcept = 0;
 
         /// @brief Gets the width of the box.
         /// @return The width of the box.
