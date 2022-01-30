@@ -94,12 +94,12 @@ namespace xtd {
         /// @return The height of the box.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual std::optional<int32_t> height() const noexcept = 0;
+        virtual std::optional<xtd::forms::style_sheets::length> height() const noexcept = 0;
         /// @brief Sets the height of the box.
         /// @return The height of the box.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void height(const std::optional<int32_t>& value) noexcept = 0;
+        virtual void height(const std::optional<xtd::forms::style_sheets::length>& value) noexcept = 0;
 
         /// @brief Gets the area outside the border.
         /// @return The area outside the border.
@@ -129,12 +129,12 @@ namespace xtd {
         /// @return The width of the box.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual std::optional<int32_t> width() const noexcept = 0;
+        virtual std::optional<xtd::forms::style_sheets::length> width() const noexcept = 0;
         /// @brief Sets the width of the box.
         /// @param value The width of the box.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void width(std::optional<int32_t> value) noexcept = 0;
+        virtual void width(std::optional<xtd::forms::style_sheets::length> value) noexcept = 0;
         /// @}
         
         /// @name Methods

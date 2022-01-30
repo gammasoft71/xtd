@@ -60,11 +60,11 @@ void control::border_width(xtd::forms::style_sheets::border_width value) noexcep
   border_width_ = value;
 }
 
-optional<int32_t> control::height() const noexcept {
+optional<length> control::height() const noexcept {
   return height_;
 }
 
-void control::height(const std::optional<int32_t>& value) noexcept {
+void control::height(const std::optional<length>& value) noexcept {
   height_ = value;
 }
 
@@ -84,11 +84,11 @@ void control::padding(const xtd::forms::padding& value) noexcept {
   padding_ = value;
 }
 
-optional<int32_t> control::width() const noexcept {
+optional<length> control::width() const noexcept {
   return width_;
 }
 
-void control::width(optional<int32_t> value) noexcept {
+void control::width(optional<length> value) noexcept {
   width_ = value;
 }
 
@@ -142,8 +142,8 @@ bool control::equals(const control& other) const noexcept {
 
 rectangle control::get_border_rectangle(const rectangle& bounds) const noexcept {
   auto bounds_rect = bounds;
-  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left() + border_width().left().get_pixels(bounds) + padding().left() + width().value() + padding().right() + border_width().right().get_pixels(bounds) + margin().right(), bounds_rect.height());
-  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top() + border_width().top().get_pixels(bounds) + padding().top() + height().value() + padding().bottom() + border_width().bottom().get_pixels(bounds) + margin().bottom());
+  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left() + border_width().left().get_pixels(bounds) + padding().left() + width().value().get_pixels(bounds) + padding().right() + border_width().right().get_pixels(bounds) + margin().right(), bounds_rect.height());
+  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top() + border_width().top().get_pixels(bounds) + padding().top() + height().value().get_pixels(bounds) + padding().bottom() + border_width().bottom().get_pixels(bounds) + margin().bottom());
   
   auto border_rect = rectangle::offset(bounds_rect, margin().left(), margin().top());
   border_rect = rectangle::inflate(border_rect, -margin().right() - margin().left(), -margin().bottom() - margin().top());
