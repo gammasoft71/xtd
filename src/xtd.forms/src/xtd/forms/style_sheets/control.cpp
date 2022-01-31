@@ -6,127 +6,139 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
-control::control(const style_sheets::margin& margin, const style_sheets::border_style& border_style, const style_sheets::border_color& border_color, const style_sheets::border_width& border_width, const style_sheets::border_radius& border_radius, const style_sheets::padding& padding, const drawing::color& background_color, const style_sheets::background_image& background_image, std::optional<style_sheets::length> width, std::optional<style_sheets::length> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font) : margin_(margin), border_style_(border_style), border_color_(border_color), border_width_(border_width), border_radius_(border_radius), padding_(padding), background_color_(background_color), background_image_(background_image), width_(width), height_(height), color_(color), alignment_(alignment), font_(font) {
-}
-
 const drawing::color& control::background_color() const noexcept {
   return background_color_;
 }
 
-void control::background_color(const drawing::color& value) noexcept {
+control& control::background_color(const drawing::color& value) noexcept {
   background_color_ = value;
+  return *this;
 }
 
 const style_sheets::background_image& control::background_image() const noexcept {
   return background_image_;
 }
 
-void control::background_image(const style_sheets::background_image& value) noexcept {
+control& control::background_image(const style_sheets::background_image& value) noexcept {
   background_image_ = value;
+  return *this;
 }
 
 const xtd::forms::style_sheets::border_color& control::border_color() const noexcept {
   return border_color_;
 }
 
-void control::border_color(const xtd::forms::style_sheets::border_color& value) noexcept {
+control& control::border_color(const xtd::forms::style_sheets::border_color& value) noexcept {
   border_color_ = value;
+  return *this;
 }
 
 xtd::forms::style_sheets::border_radius control::border_radius() const noexcept {
   return border_radius_;
 }
 
-void control::border_radius(xtd::forms::style_sheets::border_radius value) noexcept {
+control& control::border_radius(xtd::forms::style_sheets::border_radius value) noexcept {
   border_radius_ = value;
+  return *this;
 }
 
 xtd::forms::style_sheets::border_style control::border_style() const noexcept {
   return border_style_;
 }
 
-void control::border_style(xtd::forms::style_sheets::border_style value) noexcept {
+control& control::border_style(xtd::forms::style_sheets::border_style value) noexcept {
   border_style_ = value;
+  return *this;
 }
 
 xtd::forms::style_sheets::border_width control::border_width() const noexcept {
   return border_width_;
 }
 
-void control::border_width(xtd::forms::style_sheets::border_width value) noexcept {
+control& control::border_width(xtd::forms::style_sheets::border_width value) noexcept {
   border_width_ = value;
+  return *this;
 }
 
 optional<length> control::height() const noexcept {
   return height_;
 }
 
-void control::height(const std::optional<length>& value) noexcept {
+control& control::height(const std::optional<length>& value) noexcept {
   height_ = value;
+  return *this;
 }
 
 const style_sheets::margin& control::margin() const noexcept {
   return margin_;
 }
 
-void control::margin(const style_sheets::margin& value) noexcept {
+control& control::margin(const style_sheets::margin& value) noexcept {
   margin_ = value;
+  return *this;
 }
 
 const style_sheets::padding& control::padding() const noexcept {
   return padding_;
 }
 
-void control::padding(const style_sheets::padding& value) noexcept {
+control& control::padding(const style_sheets::padding& value) noexcept {
   padding_ = value;
+  return *this;
 }
 
 optional<length> control::width() const noexcept {
   return width_;
 }
 
-void control::width(optional<length> value) noexcept {
+control& control::width(optional<length> value) noexcept {
   width_ = value;
+  return *this;
 }
 
 content_alignment control::alignment() const noexcept {
   return alignment_;
 }
 
-void control::alignment(content_alignment value) noexcept {
+control& control::alignment(content_alignment value) noexcept {
   alignment_ = value;
+  return *this;
 }
 
 const drawing::color& control::color() const noexcept {
   return color_;
 }
 
-void control::color(const drawing::color& value) noexcept {
+control& control::color(const drawing::color& value) noexcept {
   color_ = value;
+  return *this;
 }
 
 text_decoration control::decoration() const noexcept {
   return decoration_;
 }
 
-void control::decoration(text_decoration value) noexcept {
+control& control::decoration(text_decoration value) noexcept {
   decoration_ = value;
+  return *this;
 }
 
 text_transformation control::transformation() const noexcept {
   return transformation_;
 }
 
-void control::transformation(text_transformation value) noexcept {
+control& control::transformation(text_transformation value) noexcept {
   transformation_ = value;
+  return *this;
 }
 
 const font& control::font() const noexcept {
   return font_;
 }
 
-void control::font(const drawing::font& value) noexcept {
+control& control::font(const drawing::font& value) noexcept {
   font_ = value;
+  return *this;
 }
 
 bool control::equals(const object& other) const noexcept {

@@ -42,66 +42,37 @@ namespace xtd {
         /// @return The background color is used to add background effects to the box.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual const xtd::drawing::color& background_color() const noexcept = 0;
-        /// @brief Sets the background color is used to add background effects to the box.
-        /// @param value The background color is used to add background effects to the box.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void background_color(const xtd::drawing::color& value) noexcept = 0;
 
         /// @brief Gets the background image is used to add background effects to the box.
         /// @return The background image is used to add background effects to the box.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual const xtd::forms::style_sheets::background_image& background_image() const noexcept = 0;
-        /// @brief Sets the background image is used to add background effects to the box.
-        /// @param value The background image is used to add background effects to the box.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void background_image(const xtd::forms::style_sheets::background_image& value) noexcept = 0;
         
         /// @brief Gets the color is used to set the color of the borders.
         /// @return The color is used to set the color of the borders.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual const xtd::forms::style_sheets::border_color& border_color() const noexcept = 0;
-        /// @brief Sets the color is used to set the color of the borders.
-        /// @param value The color is used to set the color of the borders.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void border_color(const xtd::forms::style_sheets::border_color& value) noexcept = 0;
         
         /// @brief Gets the radius is used to add rounded borders to an element.
         /// @return The radius is used to add rounded borders to an element.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual xtd::forms::style_sheets::border_radius border_radius() const noexcept = 0;
-        /// @brief Sets the radius is used to add rounded borders to an element.
-        /// @param value The radius is used to add rounded borders to an element.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void border_radius(xtd::forms::style_sheets::border_radius value) noexcept = 0;
         
         /// @brief Gets the style specifies what kind of borders to display.
         /// @return The style specifies what kind of borders to display.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual xtd::forms::style_sheets::border_style border_style() const noexcept = 0;
-        /// @brief Sets the style specifies what kind of borders to display.
-        /// @param value The style specifies what kind of borders to display.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void border_style(xtd::forms::style_sheets::border_style value) noexcept = 0;
         
         /// @brief Gets the width specifies the width of the borders.
         /// @return The width specifies the width of the borders.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual xtd::forms::style_sheets::border_width border_width() const noexcept = 0;
-        /// @brief Sets the width specifies the width of the border.
-        /// @param value The width specifies the width of the border.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void border_width(xtd::forms::style_sheets::border_width value) noexcept = 0;
 
         /// @brief Gets the height of the box.
         /// @return The height of the box.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual std::optional<xtd::forms::style_sheets::length> height() const noexcept = 0;
-        /// @brief Sets the height of the box.
-        /// @return The height of the box.
-        /// @remarks You need to know how the box model works.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void height(const std::optional<xtd::forms::style_sheets::length>& value) noexcept = 0;
 
         /// @brief Gets the area outside the border.
         /// @return The area outside the border.
@@ -109,34 +80,18 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual const xtd::forms::style_sheets::margin& margin() const noexcept = 0;
-        /// @brief Sets the area outside the border.
-        /// @param value The area outside the border.
-        /// @remarks The margin is transparent.
-        /// @remarks You need to know how the box model works.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void margin(const xtd::forms::style_sheets::margin& value) noexcept = 0;
 
         /// @brief Gets the area area around the content.
         /// @return The area around the content.
         /// @remarks The padding is transparent.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual const xtd::forms::style_sheets::padding& padding() const noexcept = 0;
-        /// @brief Sets the area area around the content.
-        /// @param value The area around the content.
-        /// @remarks The padding is transparent.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void padding(const xtd::forms::style_sheets::padding& value) noexcept = 0;
 
         /// @brief Gets the width of the box.
         /// @return The width of the box.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual std::optional<xtd::forms::style_sheets::length> width() const noexcept = 0;
-        /// @brief Sets the width of the box.
-        /// @param value The width of the box.
-        /// @remarks You need to know how the box model works.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        virtual void width(std::optional<xtd::forms::style_sheets::length> value) noexcept = 0;
         /// @}
         
         /// @name Methods
