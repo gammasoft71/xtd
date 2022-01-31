@@ -206,6 +206,7 @@ namespace xtd {
         
       private:
         friend class ::__test_style_sheet__; // Necessary for the test unit to access the private member functions
+        xtd::drawing::color background_color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
         border_color border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept;
         border_style border_style_from_css(const ustring& text, const border_style& default_value) const noexcept;
@@ -214,7 +215,11 @@ namespace xtd {
         xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         length length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept;
         margin margin_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
-        xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
+        padding padding_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
+        ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
+        xtd::forms::content_alignment text_align_from_css(const xtd::ustring& css_text, const xtd::forms::content_alignment& default_value) const noexcept;
+        xtd::forms::style_sheets::text_decoration text_decoration_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_decoration& default_value) const noexcept;
+        xtd::forms::style_sheets::text_transformation text_transformation_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_transformation& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
 
         static void initilize();

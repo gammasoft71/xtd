@@ -184,15 +184,21 @@ xtd::forms::style_sheets::theme style_sheet::theme_from_css(const xtd::ustring& 
   return ss.theme();
 }
 
+color style_sheet::background_color_from_css(const ustring& css_text, const color& default_value) const noexcept {
+  color result = default_value;
+  try_parse_color(css_text.to_lower(), result);
+  return result;
+}
+
 background_image style_sheet::background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept {
   background_image result;;
-  if (css_text.starts_with("url(") && css_text.ends_with(")") && try_parse_uri(css_text, result.url_)) return result;
-  if (css_text.starts_with("linear-gradient(") && css_text.ends_with(")") && try_parse_linear_gradient(css_text, result)) return result;
+  if (css_text.starts_with("url(", true) && css_text.ends_with(")", true) && try_parse_uri(css_text, result.url_)) return result;
+  if (css_text.starts_with("linear-gradient(", true) && css_text.ends_with(")", true) && try_parse_linear_gradient(css_text.to_lower(), result)) return result;
   return default_value;
 }
 
 border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept {
-  vector<ustring> values = split_values_from_text(css_text);
+  vector<ustring> values = css_text.to_lower().split();
   if (values.size() < 1 || values.size() > 4) return default_value;
   border_color result;
   result.all(color_from_css(values[0], default_value.top()));
@@ -203,7 +209,7 @@ border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, co
 }
 
 style_sheets::border_style style_sheet::border_style_from_css(const ustring& css_text, const border_style& default_value) const noexcept {
-  auto values = split_values_from_text(css_text);
+  auto values = css_text.to_lower().split();
   static map<ustring, xtd::forms::style_sheets::border_type> border_types = {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}};
   if (values.size() < 1 || values.size() > 4) return default_value;
   
@@ -232,7 +238,7 @@ style_sheets::border_style style_sheet::border_style_from_css(const ustring& css
 }
 
 border_radius style_sheet::border_radius_from_css(const xtd::ustring& css_text, const border_radius& default_value) const noexcept {
-  auto values = split_values_from_text(css_text);
+  auto values = css_text.to_lower().split();
   if (values.size() < 1 || values.size() > 4) return default_value;
   
   border_radius result;
@@ -246,7 +252,7 @@ border_radius style_sheet::border_radius_from_css(const xtd::ustring& css_text, 
 }
 
 border_width style_sheet::border_width_from_css(const xtd::ustring& css_text, const border_width& default_value) const noexcept {
-  auto values = split_values_from_text(css_text);
+  auto values = css_text.to_lower().split();
   if (values.size() < 1 || values.size() > 4) return default_value;
   
   border_width result;
@@ -259,36 +265,36 @@ border_width style_sheet::border_width_from_css(const xtd::ustring& css_text, co
   return result;
 }
 
-xtd::drawing::color style_sheet::color_from_css(const ustring& css_text, const color& default_value) const noexcept {
+color style_sheet::color_from_css(const ustring& css_text, const color& default_value) const noexcept {
   color result = default_value;
-  try_parse_color(css_text, result);
+  try_parse_color(css_text.to_lower(), result);
   return result;
 }
 
 length style_sheet::length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept {
-  if (css_text == "auto" || css_text == "initial" || css_text == "inherit") return length(-1);
+  if (css_text.to_lower() == "auto" || css_text.to_lower() == "initial" || css_text.to_lower() == "inherit") return length(-1);
   auto l = .0;
-  if (css_text.ends_with("cm") && ::try_parse<double>(css_text.replace("cm", ""), l)) return length(l, length_unit::centimeters);
-  if (css_text.ends_with("mm") && ::try_parse<double>(css_text.replace("mm", ""), l)) return length(l, length_unit::millimeters);
-  if (css_text.ends_with("in") && ::try_parse<double>(css_text.replace("in", ""), l)) return length(l, length_unit::inches);
-  if (css_text.ends_with("px") && ::try_parse<double>(css_text.replace("px", ""), l)) return length(l, length_unit::pixels);
-  if (css_text.ends_with("pt") && ::try_parse<double>(css_text.replace("pt", ""), l)) return length(l, length_unit::points);
-  if (css_text.ends_with("pc") && ::try_parse<double>(css_text.replace("pc", ""), l)) return length(l, length_unit::picas);
-  if (css_text.ends_with("em") && ::try_parse<double>(css_text.replace("em", ""), l)) return length(l, length_unit::element);
-  if (css_text.ends_with("ex") && ::try_parse<double>(css_text.replace("ex", ""), l)) return length(l, length_unit::element_x_height);
-  if (css_text.ends_with("ch") && ::try_parse<double>(css_text.replace("ch", ""), l)) return length(l, length_unit::chase);
-  if (css_text.ends_with("rem") && ::try_parse<double>(css_text.replace("rem", ""), l)) return length(l, length_unit::root_element);
-  if (css_text.ends_with("vw") && ::try_parse<double>(css_text.replace("vw", ""), l)) return length(l, length_unit::viewport_width);
-  if (css_text.ends_with("vh") && ::try_parse<double>(css_text.replace("vh", ""), l)) return length(l, length_unit::viewport_height);
-  if (css_text.ends_with("vmin") && ::try_parse<double>(css_text.replace("vmin", ""), l)) return length(l, length_unit::viewport_min);
-  if (css_text.ends_with("vmax") && ::try_parse<double>(css_text.replace("vmax", ""), l)) return length(l, length_unit::viewport_max);
-  if (css_text.ends_with("%") && ::try_parse<double>(css_text.replace("%", ""), l)) return length(l, length_unit::percent);
+  if (css_text.to_lower().ends_with("cm") && ::try_parse<double>(css_text.to_lower().replace("cm", ""), l)) return length(l, length_unit::centimeters);
+  if (css_text.to_lower().ends_with("mm") && ::try_parse<double>(css_text.to_lower().replace("mm", ""), l)) return length(l, length_unit::millimeters);
+  if (css_text.to_lower().ends_with("in") && ::try_parse<double>(css_text.to_lower().replace("in", ""), l)) return length(l, length_unit::inches);
+  if (css_text.to_lower().ends_with("px") && ::try_parse<double>(css_text.to_lower().replace("px", ""), l)) return length(l, length_unit::pixels);
+  if (css_text.to_lower().ends_with("pt") && ::try_parse<double>(css_text.to_lower().replace("pt", ""), l)) return length(l, length_unit::points);
+  if (css_text.to_lower().ends_with("pc") && ::try_parse<double>(css_text.to_lower().replace("pc", ""), l)) return length(l, length_unit::picas);
+  if (css_text.to_lower().ends_with("em") && ::try_parse<double>(css_text.to_lower().replace("em", ""), l)) return length(l, length_unit::element);
+  if (css_text.to_lower().ends_with("ex") && ::try_parse<double>(css_text.to_lower().replace("ex", ""), l)) return length(l, length_unit::element_x_height);
+  if (css_text.to_lower().ends_with("ch") && ::try_parse<double>(css_text.to_lower().replace("ch", ""), l)) return length(l, length_unit::chase);
+  if (css_text.to_lower().ends_with("rem") && ::try_parse<double>(css_text.to_lower().replace("rem", ""), l)) return length(l, length_unit::root_element);
+  if (css_text.to_lower().ends_with("vw") && ::try_parse<double>(css_text.to_lower().replace("vw", ""), l)) return length(l, length_unit::viewport_width);
+  if (css_text.to_lower().ends_with("vh") && ::try_parse<double>(css_text.to_lower().replace("vh", ""), l)) return length(l, length_unit::viewport_height);
+  if (css_text.to_lower().ends_with("vmin") && ::try_parse<double>(css_text.to_lower().replace("vmin", ""), l)) return length(l, length_unit::viewport_min);
+  if (css_text.to_lower().ends_with("vmax") && ::try_parse<double>(css_text.to_lower().replace("vmax", ""), l)) return length(l, length_unit::viewport_max);
+  if (css_text.to_lower().ends_with("%") && ::try_parse<double>(css_text.replace("%", ""), l)) return length(l, length_unit::percent);
   if (css_text == "0") return length(0);
   return default_value;
 }
 
 margin style_sheet::margin_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
-  auto values = css_text.split();
+  auto values = css_text.to_lower().split();
   if (values.size() < 1 || values.size() > 4) return default_value;
   
   margin result;
@@ -297,7 +303,21 @@ margin style_sheet::margin_from_css(const xtd::ustring& css_text, const margin& 
   if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
   if (values.size() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
   if (values.size() == 4) result.left(length_from_css(values[3], default_value.right()));
+  
+  return result;
+}
 
+style_sheets::padding style_sheet::padding_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  if (values.size() < 1 || values.size() > 4) return default_value;
+  
+  style_sheets::padding result;
+  result.all(length_from_css(values[0], default_value.all()));
+  
+  if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
+  if (values.size() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
+  if (values.size() == 4) result.left(length_from_css(values[3], default_value.right()));
+  
   return result;
 }
 
@@ -305,6 +325,44 @@ ustring style_sheet::string_from_css(const xtd::ustring& css_text, const ustring
   auto value = css_text.trim();
   if (!value.starts_with("\"") || !value.ends_with("\"")) return default_value;
   return value.remove(value.size() - 1, 1).replace("\"", "");
+}
+
+content_alignment style_sheet::text_align_from_css(const xtd::ustring& css_text, const content_alignment& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  if (values.size() == 1) {
+    if (values[0] == "top") return content_alignment::top_center;
+    if (values[0] == "middle") return content_alignment::middle_center;
+    if (values[0] == "bottom") return content_alignment::bottom_center;
+    if (values[0] == "left") return content_alignment::middle_left;
+    if (values[0] == "center") return content_alignment::middle_center;
+    if (values[0] == "right") return content_alignment::middle_right;
+  } else if (values.size() == 2) {
+    if ((values[0] == "top" && values[1] == "left") || (values[1] == "top" && values[0] == "left")) return content_alignment::top_left;
+    if ((values[0] == "top" && values[1] == "center") || (values[1] == "top" && values[0] == "center")) return content_alignment::top_center;
+    if ((values[0] == "top" && values[1] == "right") || (values[1] == "top" && values[0] == "right")) return content_alignment::top_right;
+    if ((values[0] == "middle" && values[1] == "left") || (values[1] == "middle" && values[0] == "left")) return content_alignment::middle_left;
+    if ((values[0] == "middle" && values[1] == "center") || (values[1] == "middle" && values[0] == "center")) return content_alignment::middle_center;
+    if ((values[0] == "middle" && values[1] == "right") || (values[1] == "middle" && values[0] == "right")) return content_alignment::middle_right;
+    if ((values[0] == "bottom" && values[1] == "left") || (values[1] == "bottom" && values[0] == "left")) return content_alignment::bottom_left;
+    if ((values[0] == "bottom" && values[1] == "center") || (values[1] == "bottom" && values[0] == "center")) return content_alignment::bottom_center;
+    if ((values[0] == "bottom" && values[1] == "right") || (values[1] == "bottom" && values[0] == "right")) return content_alignment::bottom_right;
+  }
+
+  return default_value;
+}
+
+text_decoration style_sheet::text_decoration_from_css(const ustring& css_text, const text_decoration& default_value) const noexcept {
+  map<ustring, text_decoration> decorations {{"none", text_decoration::none}, {"line-through", text_decoration::line_through}, {"overline", text_decoration::overline}, {"underline", text_decoration::underline}};
+  auto it = decorations.find(css_text.to_lower());
+  if (it == decorations.end()) return default_value;
+  return it->second;
+}
+
+text_transformation style_sheet::text_transformation_from_css(const ustring& css_text, const text_transformation& default_value) const noexcept {
+  map<ustring, text_transformation> transformations {{"none", text_transformation::none}, {"capitalize", text_transformation::capitalize}, {"lowercase", text_transformation::lowercase}, {"uppercase", text_transformation::uppercase}};
+  auto it = transformations.find(css_text.to_lower());
+  if (it == transformations.end()) return default_value;
+  return it->second;
 }
 
 uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value) const noexcept {
@@ -673,7 +731,7 @@ bool style_sheet::try_parse_system_color(const ustring& text, color& result) con
 }
 
 bool style_sheet::try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept {
-  if (!text.starts_with("url") || !text.ends_with(")")) return false;
-  result = uri(text.remove(text.size() - 1, 1).replace("url(", ""));
+  if (!text.starts_with("url", true) || !text.ends_with(")", true)) return false;
+  result = uri(text.remove(text.size() - 1, 1).remove(0, 4));
   return true;
 }
