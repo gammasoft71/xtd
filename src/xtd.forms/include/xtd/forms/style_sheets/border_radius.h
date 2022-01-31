@@ -49,10 +49,10 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_radius class using a separate xtd::forms::style_sheets::border_radius size for each edge.
         /// @param top_left The xtd::forms::style_sheets::border_radius size, in pixels, for the top_left edge.
         /// @param top_right The xtd::forms::style_sheets::border_radius size, in pixels, for the top_right edge.
-        /// @param bottom_left The xtd::forms::style_sheets::border_radius size, in pixels, for the bottom_left edge.
         /// @param bottom_right The xtd::forms::style_sheets::border_radius size, in pixels, for the bottom_right edge.
+        /// @param bottom_left The xtd::forms::style_sheets::border_radius size, in pixels, for the bottom_left edge.
         /// @remarks If all of the parameter values are equal, then the all property will reflect this common value.
-        border_radius(xtd::forms::style_sheets::length top_left, xtd::forms::style_sheets::length top_right, xtd::forms::style_sheets::length bottom_left, xtd::forms::style_sheets::length bottom_right);
+        border_radius(xtd::forms::style_sheets::length top_left, xtd::forms::style_sheets::length top_right, xtd::forms::style_sheets::length bottom_right, xtd::forms::style_sheets::length bottom_left);
         /// @}
         
         /// @cond

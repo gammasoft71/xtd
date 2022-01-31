@@ -47,12 +47,12 @@ namespace xtd {
         lengths(xtd::forms::style_sheets::length all);
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::lengths class using a separate xtd::forms::style_sheets::lengths size for each edge.
-        /// @param left The xtd::forms::style_sheets::lengths size, in pixels, for the left edge.
         /// @param top The xtd::forms::style_sheets::lengths size, in pixels, for the top edge.
-        /// @param right The xtd::forms::style_sheets::lengths size, in pixels, for the right edge.
+        /// @param left The xtd::forms::style_sheets::lengths size, in pixels, for the left edge.
         /// @param bottom The xtd::forms::style_sheets::lengths size, in pixels, for the bottom edge.
+        /// @param right The xtd::forms::style_sheets::lengths size, in pixels, for the right edge.
         /// @remarks If all of the parameter values are equal, then the all property will reflect this common value.
-        lengths(xtd::forms::style_sheets::length left, xtd::forms::style_sheets::length top, xtd::forms::style_sheets::length right, xtd::forms::style_sheets::length bottom);
+        lengths(xtd::forms::style_sheets::length top, xtd::forms::style_sheets::length left, xtd::forms::style_sheets::length bottom, xtd::forms::style_sheets::length right);
         /// @}
         
         /// @cond
