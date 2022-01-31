@@ -27,7 +27,8 @@ style_sheet::style_sheet(const ustring& text) {
   css_reader reader(text);
   selector_map::const_iterator selectors_iterator;
   if ((selectors_iterator = reader.selectors().find("theme")) != reader.selectors().end()) theme_reader(selectors_iterator, theme_);
-  if ((selectors_iterator = reader.selectors().find("system-colors")) != reader.selectors().end()) system_color_reader(selectors_iterator, system_colors_);
+  if ((selectors_iterator = reader.selectors().find("system-colors")) != reader.selectors().end()) system_colors_reader(selectors_iterator);
+  if ((selectors_iterator = reader.selectors().find("button")) != reader.selectors().end()) button_reader(selectors_iterator, pseudo_state::standard);
 }
 
 const xtd::forms::style_sheets::button& style_sheet::button() const noexcept {
@@ -223,6 +224,20 @@ style_sheets::border_style style_sheet::border_style_from_css(const ustring& tex
   return result;
 }
 
+border_width style_sheet::border_width_from_css(const xtd::ustring& css_text, const border_width& default_value) const noexcept {
+  auto values = css_text.split();
+  if (values.size() < 1 || values.size() > 4) return default_value;
+  
+  border_width result;
+  result.all(length_from_css(values[0], default_value.all()));
+  
+  if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
+  if (values.size() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
+  if (values.size() == 4) result.left(length_from_css(values[3], default_value.right()));
+  
+  return result;
+}
+
 xtd::drawing::color style_sheet::color_from_css(const ustring& css_text, const color& default_value) const noexcept {
   color result = default_value;
   try_parse_color(css_text, result);
@@ -256,6 +271,20 @@ length style_sheet::length_from_css(const xtd::ustring& css_text, const length& 
   if (css_text.ends_with("%") && ::try_parse<double>(css_text.replace("%", ""), l)) return length(l, length_unit::percent);
   if (css_text == "0") return length(0);
   return default_value;
+}
+
+margin style_sheet::margin_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+  auto values = css_text.split();
+  if (values.size() < 1 || values.size() > 4) return default_value;
+  
+  margin result;
+  result.all(length_from_css(values[0], default_value.all()));
+  
+  if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
+  if (values.size() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
+  if (values.size() == 4) result.left(length_from_css(values[3], default_value.right()));
+
+  return result;
 }
 
 ustring style_sheet::string_from_css(const xtd::ustring& css_text, const ustring& default_value) const noexcept {
@@ -313,45 +342,54 @@ vector<ustring> style_sheet::split_colors_from_text(const ustring& text) const n
   return result;
 }
 
-void style_sheet::system_color_reader(selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::system_colors& colors) const noexcept {
+void style_sheet::button_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::pseudo_state state) noexcept {
+  if (state == pseudo_state::standard) buttons_.clear();
   property_map::const_iterator properties_iterator;
-  if ((properties_iterator = selectors_iterator->second.properties().find("accent")) != selectors_iterator->second.properties().end()) colors.accent(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::accent()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("accent-text")) != selectors_iterator->second.properties().end()) colors.accent_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::accent_text()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("active-border")) != selectors_iterator->second.properties().end()) colors.active_border(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::active_border()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("active-caption")) != selectors_iterator->second.properties().end()) colors.active_caption(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::active_caption()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("active-caption-text")) != selectors_iterator->second.properties().end()) colors.active_caption_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::active_caption_text()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("app-workspace")) != selectors_iterator->second.properties().end()) colors.app_workspace(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::app_workspace()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("button-face")) != selectors_iterator->second.properties().end()) colors.button_face(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::button_face()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("button-highlight")) != selectors_iterator->second.properties().end()) colors.button_highlight(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::button_highlight()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("button-shadow")) != selectors_iterator->second.properties().end()) colors.button_shadow(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::button_shadow()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("control")) != selectors_iterator->second.properties().end()) colors.control(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("control-dark")) != selectors_iterator->second.properties().end()) colors.control_dark(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_dark()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("control-dark-dark")) != selectors_iterator->second.properties().end()) colors.control_dark_dark(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_dark_dark()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("control-light")) != selectors_iterator->second.properties().end()) colors.control_light(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_light()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("control-light-light")) != selectors_iterator->second.properties().end()) colors.control_light_light(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_light_light()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("control-text")) != selectors_iterator->second.properties().end()) colors.control_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_text()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("desktop")) != selectors_iterator->second.properties().end()) colors.desktop(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::desktop()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("gradient-active-caption")) != selectors_iterator->second.properties().end()) colors.gradient_active_caption(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::gradient_active_caption()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("gradient-inactive-caption")) != selectors_iterator->second.properties().end()) colors.gradient_inactive_caption(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::gradient_inactive_caption()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("gray-text")) != selectors_iterator->second.properties().end()) colors.gray_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::gray_text()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("highlight")) != selectors_iterator->second.properties().end()) colors.highlight(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::highlight()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("highlight-text")) != selectors_iterator->second.properties().end()) colors.highlight_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::highlight_text()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("hot-track")) != selectors_iterator->second.properties().end()) colors.hot_track(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::hot_track()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("inactive-border")) != selectors_iterator->second.properties().end()) colors.inactive_border(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::inactive_border()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("inactive-caption")) != selectors_iterator->second.properties().end()) colors.inactive_caption(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::inactive_caption()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("inactive-caption-text")) != selectors_iterator->second.properties().end()) colors.inactive_caption_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::inactive_caption_text()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("info")) != selectors_iterator->second.properties().end()) colors.info(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::info()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("info-text")) != selectors_iterator->second.properties().end()) colors.info_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::info_text()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("menu")) != selectors_iterator->second.properties().end()) colors.menu(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::menu()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("menu-bar")) != selectors_iterator->second.properties().end()) colors.menu_bar(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::menu_bar()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("menu-highlight")) != selectors_iterator->second.properties().end()) colors.menu_highlight(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::menu_highlight()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("menu-text")) != selectors_iterator->second.properties().end()) colors.menu_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::menu_text()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("scroll-bar")) != selectors_iterator->second.properties().end()) colors.scroll_bar(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::scroll_bar()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("text-box")) != selectors_iterator->second.properties().end()) colors.text_box(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::text_box()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("text-box-text")) != selectors_iterator->second.properties().end()) colors.text_box_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::text_box_text()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("window")) != selectors_iterator->second.properties().end()) colors.window(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::window()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("window-frame")) != selectors_iterator->second.properties().end()) colors.window_frame(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::window_frame()));
-  if ((properties_iterator = selectors_iterator->second.properties().find("window-text")) != selectors_iterator->second.properties().end()) colors.window_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::window_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("margin")) != selectors_iterator->second.properties().end()) buttons_[state].margin(margin_from_css(properties_iterator->second.to_string(), margin(0)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("border-style")) != selectors_iterator->second.properties().end()) buttons_[state].border_style(border_style_from_css(properties_iterator->second.to_string(), border_style(border_type::none)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("border-color")) != selectors_iterator->second.properties().end()) buttons_[state].border_color(border_color_from_css(properties_iterator->second.to_string(), border_color(color::transparent)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("border-width")) != selectors_iterator->second.properties().end()) buttons_[state].border_width(border_width_from_css(properties_iterator->second.to_string(), border_width(2)));
+}
+
+void style_sheet::system_colors_reader(selector_map::const_iterator& selectors_iterator) noexcept {
+  property_map::const_iterator properties_iterator;
+  if ((properties_iterator = selectors_iterator->second.properties().find("accent")) != selectors_iterator->second.properties().end()) system_colors_.accent(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::accent()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("accent-text")) != selectors_iterator->second.properties().end()) system_colors_.accent_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::accent_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("active-border")) != selectors_iterator->second.properties().end()) system_colors_.active_border(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::active_border()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("active-caption")) != selectors_iterator->second.properties().end()) system_colors_.active_caption(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::active_caption()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("active-caption-text")) != selectors_iterator->second.properties().end()) system_colors_.active_caption_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::active_caption_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("app-workspace")) != selectors_iterator->second.properties().end()) system_colors_.app_workspace(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::app_workspace()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("button-face")) != selectors_iterator->second.properties().end()) system_colors_.button_face(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::button_face()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("button-highlight")) != selectors_iterator->second.properties().end()) system_colors_.button_highlight(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::button_highlight()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("button-shadow")) != selectors_iterator->second.properties().end()) system_colors_.button_shadow(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::button_shadow()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("control")) != selectors_iterator->second.properties().end()) system_colors_.control(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("control-dark")) != selectors_iterator->second.properties().end()) system_colors_.control_dark(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_dark()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("control-dark-dark")) != selectors_iterator->second.properties().end()) system_colors_.control_dark_dark(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_dark_dark()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("control-light")) != selectors_iterator->second.properties().end()) system_colors_.control_light(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_light()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("control-light-light")) != selectors_iterator->second.properties().end()) system_colors_.control_light_light(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_light_light()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("control-text")) != selectors_iterator->second.properties().end()) system_colors_.control_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::control_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("desktop")) != selectors_iterator->second.properties().end()) system_colors_.desktop(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::desktop()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("gradient-active-caption")) != selectors_iterator->second.properties().end()) system_colors_.gradient_active_caption(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::gradient_active_caption()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("gradient-inactive-caption")) != selectors_iterator->second.properties().end()) system_colors_.gradient_inactive_caption(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::gradient_inactive_caption()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("gray-text")) != selectors_iterator->second.properties().end()) system_colors_.gray_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::gray_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("highlight")) != selectors_iterator->second.properties().end()) system_colors_.highlight(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::highlight()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("highlight-text")) != selectors_iterator->second.properties().end()) system_colors_.highlight_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::highlight_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("hot-track")) != selectors_iterator->second.properties().end()) system_colors_.hot_track(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::hot_track()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("inactive-border")) != selectors_iterator->second.properties().end()) system_colors_.inactive_border(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::inactive_border()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("inactive-caption")) != selectors_iterator->second.properties().end()) system_colors_.inactive_caption(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::inactive_caption()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("inactive-caption-text")) != selectors_iterator->second.properties().end()) system_colors_.inactive_caption_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::inactive_caption_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("info")) != selectors_iterator->second.properties().end()) system_colors_.info(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::info()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("info-text")) != selectors_iterator->second.properties().end()) system_colors_.info_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::info_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("menu")) != selectors_iterator->second.properties().end()) system_colors_.menu(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::menu()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("menu-bar")) != selectors_iterator->second.properties().end()) system_colors_.menu_bar(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::menu_bar()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("menu-highlight")) != selectors_iterator->second.properties().end()) system_colors_.menu_highlight(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::menu_highlight()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("menu-text")) != selectors_iterator->second.properties().end()) system_colors_.menu_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::menu_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("scroll-bar")) != selectors_iterator->second.properties().end()) system_colors_.scroll_bar(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::scroll_bar()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("text-box")) != selectors_iterator->second.properties().end()) system_colors_.text_box(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::text_box()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("text-box-text")) != selectors_iterator->second.properties().end()) system_colors_.text_box_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::text_box_text()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("window")) != selectors_iterator->second.properties().end()) system_colors_.window(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::window()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("window-frame")) != selectors_iterator->second.properties().end()) system_colors_.window_frame(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::window_frame()));
+  if ((properties_iterator = selectors_iterator->second.properties().find("window-text")) != selectors_iterator->second.properties().end()) system_colors_.window_text(color_from_css(properties_iterator->second.to_string(), drawing::system_colors::window_text()));
 }
 
 void style_sheet::theme_reader(selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::theme& theme) const noexcept {

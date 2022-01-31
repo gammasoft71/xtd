@@ -60,5 +60,14 @@ namespace unit_tests {
       assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().window_frame(), csf_);
       assert::are_equal(color::from_argb(216, 255, 255, 255), style.system_colors().window_text(), csf_);
     }
+    
+    void test_method_(button_standard) {
+      auto styles = style_sheet::style_sheets();
+      auto style = styles.find("macOS (dark)")->second;
+      assert::are_equal(margin({2, 0, 1, 0}), style.button(pseudo_state::standard).margin(), csf_);
+      assert::are_equal(border_style(border_type::outset), style.button(pseudo_state::standard).border_style(), csf_);
+      assert::are_equal(border_color(style.system_colors().control_dark()), style.button(pseudo_state::standard).border_color(), csf_);
+      assert::are_equal(border_width(1), style.button(pseudo_state::standard).border_width(), csf_);
+    }
   };
 }
