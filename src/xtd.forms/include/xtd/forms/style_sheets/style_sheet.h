@@ -206,11 +206,12 @@ namespace xtd {
         
       private:
         friend class ::__test_style_sheet__; // Necessary for the test unit to access the private member functions
+        background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
         border_color border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept;
         border_style border_style_from_css(const ustring& text, const border_style& default_value) const noexcept;
+        border_radius border_radius_from_css(const xtd::ustring& css_text, const border_radius& default_value) const noexcept;
         border_width border_width_from_css(const xtd::ustring& css_text, const border_width& default_value) const noexcept;
         xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
-        background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
         length length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept;
         margin margin_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
         xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
@@ -218,20 +219,23 @@ namespace xtd {
 
         static void initilize();
         static void on_current_style_sheet_changed(const xtd::event_args& e);
-        std::vector<xtd::ustring> split_colors_from_text(const xtd::ustring& text) const noexcept;
+        std::vector<xtd::ustring> split_values_from_text(const xtd::ustring& text) const noexcept;
+
         void button_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::pseudo_state state) noexcept;
         void system_colors_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator) noexcept;
-        static style_sheet system_style_sheet_gnome_dark() noexcept;
-        static style_sheet system_style_sheet_gnome_light() noexcept;
-        static style_sheet system_style_sheet_kde_dark() noexcept;
-        static style_sheet system_style_sheet_kde_light() noexcept;
-        static style_sheet system_style_sheet_macos_dark() noexcept;
-        static style_sheet system_style_sheet_macos_light() noexcept;
-        static style_sheet system_style_sheet_unknown_dark() noexcept;
-        static style_sheet system_style_sheet_unknown_light() noexcept;
-        static style_sheet system_style_sheet_windows_dark() noexcept;
-        static style_sheet system_style_sheet_windows_light() noexcept;
         void theme_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::theme& theme) const noexcept;
+
+        static style_sheet system_style_sheet_gnome_dark() noexcept; // Declared in system_style_sheet_gnome_dark.cpp
+        static style_sheet system_style_sheet_gnome_light() noexcept; // Declared in system_style_sheet_gnome_light.cpp
+        static style_sheet system_style_sheet_kde_dark() noexcept; // Declared in system_style_sheet_kde_dark.cpp
+        static style_sheet system_style_sheet_kde_light() noexcept; // Declared in system_style_sheet_kde_light.cpp
+        static style_sheet system_style_sheet_macos_dark() noexcept; // Declared in system_style_sheet_macos_dark.cpp
+        static style_sheet system_style_sheet_macos_light() noexcept; // Declared in system_style_sheet_macos_light.cpp
+        static style_sheet system_style_sheet_unknown_dark() noexcept; // Declared in system_style_sheet_unknown_dark.cpp
+        static style_sheet system_style_sheet_unknown_light() noexcept; // Declared in system_style_sheet_unknown_light.cpp
+        static style_sheet system_style_sheet_windows_dark() noexcept; // Declared in system_style_sheet_windows_dark.cpp
+        static style_sheet system_style_sheet_windows_light() noexcept; // Declared in system_style_sheet_windows_light.cpp
+
         bool try_parse_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_hex_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_linear_gradient(const xtd::ustring& text, background_image& result) const noexcept;

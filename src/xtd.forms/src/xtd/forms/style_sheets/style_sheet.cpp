@@ -184,39 +184,46 @@ xtd::forms::style_sheets::theme style_sheet::theme_from_css(const xtd::ustring& 
   return ss.theme();
 }
 
+background_image style_sheet::background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept {
+  background_image result;;
+  if (css_text.starts_with("url(") && css_text.ends_with(")") && try_parse_uri(css_text, result.url_)) return result;
+  if (css_text.starts_with("linear-gradient(") && css_text.ends_with(")") && try_parse_linear_gradient(css_text, result)) return result;
+  return default_value;
+}
+
 border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept {
-  vector<ustring> colors = split_colors_from_text(css_text);
-  if (colors.size() < 1 || colors.size() > 4) return default_value;
+  vector<ustring> values = split_values_from_text(css_text);
+  if (values.size() < 1 || values.size() > 4) return default_value;
   border_color result;
-  result.all(color_from_css(colors[0], default_value.top()));
-  if (colors.size() >= 2) result.right(color_from_css(colors[0], default_value.right()));
-  if (colors.size() >= 3) result.bottom(color_from_css(colors[0], default_value.right()));
-  if (colors.size() == 4) result.left(color_from_css(colors[0], default_value.right()));
+  result.all(color_from_css(values[0], default_value.top()));
+  if (values.size() >= 2) result.right(color_from_css(values[0], default_value.right()));
+  if (values.size() >= 3) result.bottom(color_from_css(values[0], default_value.right()));
+  if (values.size() == 4) result.left(color_from_css(values[0], default_value.right()));
   return result;
 }
 
-style_sheets::border_style style_sheet::border_style_from_css(const ustring& text, const border_style& default_value) const noexcept {
-  auto border_styles = text.split();
+style_sheets::border_style style_sheet::border_style_from_css(const ustring& css_text, const border_style& default_value) const noexcept {
+  auto values = split_values_from_text(css_text);
   static map<ustring, xtd::forms::style_sheets::border_type> border_types = {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}};
-  if (border_styles.size() < 1 || border_styles.size() > 4) return default_value;
+  if (values.size() < 1 || values.size() > 4) return default_value;
   
   border_style result;
-  auto it = border_types.find(border_styles[0]);
+  auto it = border_types.find(values[0]);
   if (it == border_types.end()) return default_value;
   result.all(it->second);
   
-  if (border_styles.size() >= 2) {
-    it = border_types.find(border_styles[1]);
+  if (values.size() >= 2) {
+    it = border_types.find(values[1]);
     if (it == border_types.end()) return default_value;
     result.right(it->second);
   }
-  if (border_styles.size() >= 3) {
-    it = border_types.find(border_styles[2]);
+  if (values.size() >= 3) {
+    it = border_types.find(values[2]);
     if (it == border_types.end()) return default_value;
     result.bottom(it->second);
   }
-  if (border_styles.size() == 4) {
-    it = border_types.find(border_styles[3]);
+  if (values.size() == 4) {
+    it = border_types.find(values[3]);
     if (it == border_types.end()) return default_value;
     result.left(it->second);
   }
@@ -224,8 +231,22 @@ style_sheets::border_style style_sheet::border_style_from_css(const ustring& tex
   return result;
 }
 
+border_radius style_sheet::border_radius_from_css(const xtd::ustring& css_text, const border_radius& default_value) const noexcept {
+  auto values = split_values_from_text(css_text);
+  if (values.size() < 1 || values.size() > 4) return default_value;
+  
+  border_radius result;
+  result.all(length_from_css(values[0], default_value.all()));
+  
+  if (values.size() >= 2) result.top_right(length_from_css(values[1], default_value.top_right()));
+  if (values.size() >= 3) result.bottom_right(length_from_css(values[2], default_value.bottom_right()));
+  if (values.size() == 4) result.bottom_left(length_from_css(values[3], default_value.bottom_left()));
+  
+  return result;
+}
+
 border_width style_sheet::border_width_from_css(const xtd::ustring& css_text, const border_width& default_value) const noexcept {
-  auto values = css_text.split();
+  auto values = split_values_from_text(css_text);
   if (values.size() < 1 || values.size() > 4) return default_value;
   
   border_width result;
@@ -242,13 +263,6 @@ xtd::drawing::color style_sheet::color_from_css(const ustring& css_text, const c
   color result = default_value;
   try_parse_color(css_text, result);
   return result;
-}
-
-background_image style_sheet::background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept {
-  background_image result;;
-  if (css_text.starts_with("url(") && css_text.ends_with(")") && try_parse_uri(css_text, result.url_)) return result;
-  if (css_text.starts_with("linear-gradient(") && css_text.ends_with(")") && try_parse_linear_gradient(css_text, result)) return result;
-  return default_value;
 }
 
 length style_sheet::length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept {
@@ -316,7 +330,7 @@ void style_sheet::on_current_style_sheet_changed(const xtd::event_args& e) {
   current_style_sheet_changed(current_style_sheets_, e);
 }
 
-vector<ustring> style_sheet::split_colors_from_text(const ustring& text) const noexcept {
+vector<ustring> style_sheet::split_values_from_text(const ustring& text) const noexcept {
   static vector<ustring> color_keywords = {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
   auto string_starts_with_any = [](const ustring& text, const vector<ustring>& values)->ustring {
     for (auto value : values)
@@ -462,7 +476,7 @@ bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const 
 }
 
 bool style_sheet::try_parse_linear_gradient(const xtd::ustring& text, background_image& result) const noexcept {
-  vector<ustring> arguments = split_colors_from_text(text.remove(text.size()-1).replace("linear-gradient(", ""));
+  vector<ustring> arguments = split_values_from_text(text.remove(text.size()-1).replace("linear-gradient(", ""));
   vector<color> colors;
   int32_t angle = -1;
   for (auto argument : arguments) {
