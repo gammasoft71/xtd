@@ -2,13 +2,13 @@
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
 button {
-  margin: 0px 1px 0px 1px;
+  margin: 2px 0px 1px 0px;
   border-style: outset;
   border-color: system-color(control-dark);
   border-width: 1px;
   border-radius: 5px;
   background-image: linear-gradient(system-color(button-face), system-color(button-face));
-  padding: 1px 1px 1px 3px;
+  padding: 1px 1px 3px 1px;
   color: system-color(control-text);
   text-align: middle center;
   text-decoration: none;

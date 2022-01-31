@@ -35,27 +35,6 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         control() = default;
-
-        /// @brief Initializes a new instance of the xtd::forms::style_sheets::control class with all specified arguments.
-        /// @param margin The area outside the border.
-        /// @param border_style The style specifies what kind of borders to display.
-        /// @param bordfer_color The color is used to set the color of the borders.
-        /// @param border_width The width specifies the width of the borders.
-        /// @param border_radius The radius is used to add rounded borders to an element.
-        /// @param padding The area around the content.
-        /// @param background_color The background color is used to add background effects to the box.
-        /// @param background_image The background image is used to add background effects to the box.
-        /// @param width The width of the box.
-        /// @param height The height of the box.
-        /// @param color The color is used to add foreground effects to the text.
-        /// @param alignment A combination of xtd::forms::content_alignment values.
-        /// @param font The font of the text.
-        /// @param decoration One of xtd::forms::style_sheets::text_decoration values.
-        /// @param transformation One of xtd::forms::style_sheets::text_transformation values.
-        /// @remarks This constructor is used only to crate a style by programming (not by css style sheet).
-        /// @remarks You need to know how the box model works.
-        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
-        control(const xtd::forms::style_sheets::margin& margin, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_width& border_width, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::padding& padding, const xtd::drawing::color& background_color, const xtd::forms::style_sheets::background_image& background_image, std::optional<xtd::forms::style_sheets::length> width, std::optional<xtd::forms::style_sheets::length> height, const xtd::drawing::color& color, xtd::forms::content_alignment alignment, const xtd::drawing::font& font);
         /// @}
 
         /// @cond
@@ -68,49 +47,94 @@ namespace xtd {
         
         /// @{
         xtd::forms::content_alignment alignment() const noexcept override;
-        void alignment(xtd::forms::content_alignment value) noexcept override;
+        /// @brief Sets the alignment of the text.
+        /// @param value A combination of xtd::forms::content_alignment values.
+        control& alignment(xtd::forms::content_alignment value) noexcept;
         
         const xtd::drawing::color& background_color() const noexcept override;
-        void background_color(const xtd::drawing::color& value) noexcept override;
+        /// @brief Sets the background color is used to add background effects to the box.
+        /// @param value The background color is used to add background effects to the box.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& background_color(const xtd::drawing::color& value) noexcept;
 
         const xtd::forms::style_sheets::background_image& background_image() const noexcept override;
-        void background_image(const xtd::forms::style_sheets::background_image& value) noexcept override;
+        /// @brief Sets the background image is used to add background effects to the box.
+        /// @param value The background image is used to add background effects to the box.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& background_image(const xtd::forms::style_sheets::background_image& value) noexcept;
 
         const xtd::forms::style_sheets::border_color& border_color() const noexcept override;
-        void border_color(const xtd::forms::style_sheets::border_color& value) noexcept override;
+        /// @brief Sets the color is used to set the color of the borders.
+        /// @param value The color is used to set the color of the borders.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& border_color(const xtd::forms::style_sheets::border_color& value) noexcept;
         
         xtd::forms::style_sheets::border_radius border_radius() const noexcept override;
-        void border_radius(xtd::forms::style_sheets::border_radius value) noexcept override;
+        /// @brief Sets the radius is used to add rounded borders to an element.
+        /// @param value The radius is used to add rounded borders to an element.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& border_radius(xtd::forms::style_sheets::border_radius value) noexcept;
         
         xtd::forms::style_sheets::border_style border_style() const noexcept override;
-        void border_style(xtd::forms::style_sheets::border_style value) noexcept override;
+        /// @brief Sets the style specifies what kind of borders to display.
+        /// @param value The style specifies what kind of borders to display.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& border_style(xtd::forms::style_sheets::border_style value) noexcept;
         
         xtd::forms::style_sheets::border_width border_width() const noexcept override;
-        void border_width(xtd::forms::style_sheets::border_width value) noexcept override;
+        /// @brief Sets the width specifies the width of the border.
+        /// @param value The width specifies the width of the border.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& border_width(xtd::forms::style_sheets::border_width value) noexcept;
         
         const xtd::drawing::color& color() const noexcept override;
-        void color(const xtd::drawing::color& value) noexcept override;
+        /// @brief Sets the color is used to add foreground effects to the text.
+        /// @param value The color is used to add foreground effects to the text.
+        control& color(const xtd::drawing::color& value) noexcept;
         
         xtd::forms::style_sheets::text_decoration decoration() const noexcept override;
-        void decoration(xtd::forms::style_sheets::text_decoration value) noexcept override;
+        /// @brief Sets the decoration of the text.
+        /// @param value One of xtd::forms::style_sheets::text_decoration values.
+        control& decoration(xtd::forms::style_sheets::text_decoration value) noexcept;
         
         const xtd::drawing::font& font() const noexcept override;
-        void font(const xtd::drawing::font& value) noexcept override;
+        /// @brief Sets the font of the text.
+        /// @param value The font of the text.
+        control& font(const xtd::drawing::font& value) noexcept;
 
         std::optional<xtd::forms::style_sheets::length> height() const noexcept override;
-        void height(const std::optional<xtd::forms::style_sheets::length>& value) noexcept override;
+        /// @brief Sets the height of the box.
+        /// @return The height of the box.
+        /// @remarks You need to know how the box model works.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& height(const std::optional<xtd::forms::style_sheets::length>& value) noexcept;
         
         const xtd::forms::style_sheets::margin& margin() const noexcept override;
-        void margin(const xtd::forms::style_sheets::margin& value) noexcept override;
+        /// @brief Sets the area outside the border.
+        /// @param value The area outside the border.
+        /// @remarks The margin is transparent.
+        /// @remarks You need to know how the box model works.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& margin(const xtd::forms::style_sheets::margin& value) noexcept;
 
         const xtd::forms::style_sheets::padding& padding() const noexcept override;
-        void padding(const xtd::forms::style_sheets::padding& value) noexcept override;
+        /// @brief Sets the area area around the content.
+        /// @param value The area around the content.
+        /// @remarks The padding is transparent.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& padding(const xtd::forms::style_sheets::padding& value) noexcept;
 
         xtd::forms::style_sheets::text_transformation transformation() const noexcept override;
-        void transformation(xtd::forms::style_sheets::text_transformation value) noexcept override;
+        /// @brief Sets the transformation of the text.
+        /// @param value One of xtd::forms::style_sheets::text_transformation values.
+        control& transformation(xtd::forms::style_sheets::text_transformation value) noexcept;
 
         std::optional<xtd::forms::style_sheets::length> width() const noexcept override;
-        void width(std::optional<xtd::forms::style_sheets::length> value) noexcept override;
+        /// @brief Sets the width of the box.
+        /// @param value The width of the box.
+        /// @remarks You need to know how the box model works.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& width(std::optional<xtd::forms::style_sheets::length> value) noexcept;
         /// @}
 
         /// @name Methods
@@ -119,6 +143,8 @@ namespace xtd {
         bool equals(const object& other) const noexcept override;
         bool equals(const control& other) const noexcept override;
         
+        static control create_control() {return control();}
+        
         xtd::drawing::rectangle get_border_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
         xtd::drawing::rectangle get_fill_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
         xtd::drawing::rectangle get_content_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
@@ -126,17 +152,17 @@ namespace xtd {
         /// @}
 
       private:
-        xtd::forms::style_sheets::margin margin_;
-        xtd::forms::style_sheets::border_style border_style_;
-        xtd::forms::style_sheets::border_color border_color_;
-        xtd::forms::style_sheets::border_width border_width_;
-        xtd::forms::style_sheets::border_radius border_radius_;
-        xtd::forms::style_sheets::padding padding_;
+        xtd::forms::style_sheets::margin margin_ {length(0)};
+        xtd::forms::style_sheets::border_style border_style_ {border_type::none};
+        xtd::forms::style_sheets::border_color border_color_ {xtd::drawing::color::black};
+        xtd::forms::style_sheets::border_width border_width_ {length(3)};
+        xtd::forms::style_sheets::border_radius border_radius_ {length(0)};
+        xtd::forms::style_sheets::padding padding_ {length(0)};
         xtd::drawing::color background_color_ = xtd::drawing::color::transparent;
-        xtd::forms::style_sheets::background_image background_image_;
+        xtd::forms::style_sheets::background_image background_image_ ;
         std::optional<xtd::forms::style_sheets::length> width_;
         std::optional<xtd::forms::style_sheets::length> height_;
-        xtd::drawing::color color_;
+        xtd::drawing::color color_ = xtd::drawing::color::black;
         xtd::forms::content_alignment alignment_ = xtd::forms::content_alignment::middle_center;
         xtd::drawing::font font_ = xtd::drawing::system_fonts::default_font();
         xtd::forms::style_sheets::text_decoration decoration_ = xtd::forms::style_sheets::text_decoration::none;

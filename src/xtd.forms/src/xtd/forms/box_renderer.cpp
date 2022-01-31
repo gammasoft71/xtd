@@ -12,10 +12,11 @@ using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
 void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
-  draw_line_top(graphics, bounds, box_model);
-  draw_line_left(graphics, bounds, box_model);
-  draw_line_bottom(graphics, bounds, box_model);
-  draw_line_right(graphics, bounds, box_model);
+  auto border_rect = box_model.get_border_rectangle(bounds);
+  draw_line_top(graphics, border_rect, box_model);
+  draw_line_left(graphics, border_rect, box_model);
+  draw_line_bottom(graphics, border_rect, box_model);
+  draw_line_right(graphics, border_rect, box_model);
 
   auto fill_rect = box_model.get_fill_rectangle(bounds);
   graphics.fill_rounded_rectangle(solid_brush(box_model.background_color()), fill_rect, box_model.border_radius().top_left().get_pixels(bounds));
