@@ -208,16 +208,19 @@ namespace xtd {
         friend class ::__test_style_sheet__; // Necessary for the test unit to access the private member functions
         border_color border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept;
         border_style border_style_from_css(const ustring& text, const border_style& default_value) const noexcept;
+        border_width border_width_from_css(const xtd::ustring& css_text, const border_width& default_value) const noexcept;
         xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
         length length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept;
+        margin margin_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
         xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
 
         static void initilize();
         static void on_current_style_sheet_changed(const xtd::event_args& e);
         std::vector<xtd::ustring> split_colors_from_text(const xtd::ustring& text) const noexcept;
-        void system_color_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::system_colors& colors) const noexcept;
+        void button_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::pseudo_state state) noexcept;
+        void system_colors_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator) noexcept;
         static style_sheet system_style_sheet_gnome_dark() noexcept;
         static style_sheet system_style_sheet_gnome_light() noexcept;
         static style_sheet system_style_sheet_kde_dark() noexcept;

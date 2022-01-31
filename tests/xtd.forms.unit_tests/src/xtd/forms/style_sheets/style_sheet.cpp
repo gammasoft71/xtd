@@ -36,7 +36,6 @@ namespace unit_tests {
   class test_class_(test_style_sheet) {
   public:
     void test_method_(style_sheets) {
-      console::write_line("name= {}", ustring::full_class_name(*this));
       auto styles = style_sheet::style_sheets();
       assert::are_not_equal(styles.end(), styles.find("GNOME (dark)"), csf_);
       assert::are_not_equal(styles.end(), styles.find("GNOME (light)"), csf_);
