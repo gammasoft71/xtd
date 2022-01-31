@@ -10,7 +10,6 @@ button {
   background-image: linear-gradient(system-color(button-face), system-color(button-face));
   padding: 1px 1px 3px 1px;
   color: system-color(control-text);
-  text-align: middle center;
   text-decoration: none;
 }
 
@@ -62,7 +61,6 @@ button:flat {
   background-color: system-color(control);
   padding: 1px 1px 1px 3px;
   color: system-color(control-text);
-  text-align: center;
   text-decoration: none;
 }
 
@@ -95,7 +93,6 @@ button:popup {
   border-radius: 5px;
   background-color: system-color(control);
   color: system-color(control-text);
-  text-align: center;
   text-decoration: none;
 }
 

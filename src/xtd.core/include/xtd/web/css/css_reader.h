@@ -60,7 +60,7 @@ namespace xtd {
               start_index = index + 1;
               status = parse_status::selector;
             } else if (status == parse_status::key && text[index] == ':') {
-              current_key = text.substring(start_index, index - start_index).trim();
+              current_key = text.substring(start_index, index - start_index).trim().to_lower();
               if (current_key.empty()) throw xtd::format_exception("key cannot be empty", current_stack_frame_);
               start_index = index + 1;
               status = parse_status::value;
