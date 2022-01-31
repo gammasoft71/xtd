@@ -84,7 +84,7 @@ button:flat:hover {
 
 button:flat:disabled {  
   border-color: system-color(gray-text);
-  background-color: rgba(255, 255, 255, 30);
+  background-color: rgba(255, 255, 255, 35);
   color: system-color(gray-text);
 }
 
@@ -115,12 +115,12 @@ button:popup:mixed {
 }
 
 button:popup:hover {
-  border-style: inset;
+  border-style: outset;
   background-color: gba(255, 255, 255, 93);
 }
 
 button:popup:disabled {  
   border-color: system-color(gray-text);
-  background-color: rgba(255, 255, 255, 30);
+  background-color: rgba(255, 255, 255, 35);
   color: system-color(gray-text);
 }
