@@ -17,6 +17,10 @@
 #include "system_colors.h"
 #include "theme.h"
 
+/// @cond
+class __test_style_sheet__; // Necessary for the test unit to access the private member functions
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
@@ -37,18 +41,19 @@ namespace xtd {
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
       /// @remarks This class is used by xtd::forms::style_sheets::ibox_model.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
       class forms_export_ style_sheet final : public xtd::iequatable<style_sheet>, public xtd::object {
       public:
         /// @name Alias
  
         /// @{
-        /// @brief Represents a buttons collection.
+        /// @brief Represents a style sheet buttons collection.
         using buttons_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::button>;
-        /// @brief Represents a controls collection.
+        /// @brief Represents a style sheet controls collection.
         using controls_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::control>;
-        /// @brief Represents a forms collection.
+        /// @brief Represents a style sheet forms collection.
         using forms_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::form>;
-        /// @brief Represents a labels collection.
+        /// @brief Represents a style sheet labels collection.
         using labels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::label>;
         /// @brief Represents a style_sheets collection.
         using style_sheets_t = std::map<xtd::ustring, style_sheet>;
@@ -66,7 +71,9 @@ namespace xtd {
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance.
         style_sheet() = default;
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance from specified css forrmated text.
-        explicit style_sheet(const xtd::ustring& text);
+        /// @param css_text The css forrmated text that contains the style sheet definition.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        explicit style_sheet(const xtd::ustring& css_text);
 
         /// @cond
         style_sheet(const style_sheet&) = default;
@@ -77,42 +84,114 @@ namespace xtd {
         /// @name Properties
         
         /// @{
+        /// @brief Gets the style sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         const xtd::forms::style_sheets::button& button() const noexcept;
+        /// @brief Gets the style sheet button for specified pseudo state.
+        /// @return A style_sheet button.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
         const xtd::forms::style_sheets::button& button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet buttons collection of this instance.
+        /// @return The style sheet buttons collection.
+        const buttons_t& buttons() const noexcept;
 
+        /// @brief Gets the style sheet control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         const xtd::forms::style_sheets::control& control() const noexcept;
+        /// @brief Gets the style sheet control for specified pseudo state.
+        /// @return A style_sheet control.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
         const xtd::forms::style_sheets::control& control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet controls collection of this instance.
+        /// @return The style sheet controls collection.
+        const controls_t& controls() const noexcept;
 
+        /// @brief Gets current xtd::forms::style_sheets::style_sheet style sheet.
+        /// @return The current xtd::forms::style_sheets::style_sheet style sheet.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static const style_sheet& current_style_sheet() noexcept;
+        /// @brief Sets current xtd::forms::style_sheets::style_sheet style sheet.
+        /// @param value The current xtd::forms::style_sheets::style_sheet style sheet.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static void current_style_sheet(const style_sheet& value);
 
+        /// @brief Gets the style sheet form for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet form for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         const xtd::forms::style_sheets::form& form() const noexcept;
+        /// @brief Gets the style sheet form for specified pseudo state.
+        /// @return A style_sheet form.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
         const xtd::forms::style_sheets::form& form(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet forms collection of this instance.
+        /// @return The style sheet forms collection.
+        const forms_t& forms() const noexcept;
 
+        /// @brief Gets the style sheet label for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet label for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         const xtd::forms::style_sheets::label& label() const noexcept;
+        /// @brief Gets the style sheet label for specified pseudo state.
+        /// @return A style_sheet label.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
         const xtd::forms::style_sheets::label& label(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet labels collection of this instance.
+        /// @return The style sheet labels collection.
+        const labels_t& labels() const noexcept;
 
+        /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheets.
+        /// @return The installed xtd::forms::style_sheets::style_sheet style sheets.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static const style_sheets_t& style_sheets() noexcept;
 
-        const xtd::forms::style_sheets::system_colors& system_colors()const noexcept;
+        /// @brief Gets The style sheet system colors of this instance.
+        /// @return The style sheet systel colors collection.
+        const xtd::forms::style_sheets::system_colors& system_colors() const noexcept;
         
+        /// @brief Gets system xtd::forms::style_sheets::style_sheet style sheet.
+        /// @return The system xtd::forms::style_sheets::style_sheet style sheet.
+        /// @remarks The system style sheet is the style sheet corresponding to the current Operating System and the current Desktop Environment.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static const style_sheet& system_style_sheet() noexcept;
         
+        /// @brief Gets The style sheet theme of this instance.
+        /// @return The style sheet theme collection.
         const xtd::forms::style_sheets::theme& theme() const noexcept;
         /// @}
 
         /// @name Methods
 
+        /// @{
         bool equals(const object& other) const noexcept override;
         bool equals(const style_sheet& other) const noexcept override;
 
-        border_color border_color_from_css(const xtd::ustring& css_text, const border_color& result) const noexcept;
-        border_style border_style_from_css(const ustring& text, const border_style& default_value) const noexcept;
-        xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
-        background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
-        length length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept;
-        xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
-        xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
+        /// @brief Gets the style sheet buttons collection from specified css string.
+        /// @param css_text The css string that contains button definition.
+        /// @return The style sheet buttons collection.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        static buttons_t button_from_css(const  xtd::ustring& css_text);
+
+        /// @brief Gets the style sheet controls collection from specified css string.
+        /// @param css_text The css string that contains control definition.
+        /// @return The style sheet controls collection.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        static controls_t control_from_css(const  xtd::ustring& css_text);
+
+        /// @brief Gets the style sheet forms collection from specified css string.
+        /// @param css_text The css string that contains forms definition.
+        /// @return The style sheet forms collection.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        static forms_t form_from_css(const  xtd::ustring& css_text);
+
+        /// @brief Gets the style sheet system colors from specified css string.
+        /// @param css_text The css string that contains system colors definition.
+        /// @return The style sheet system colors.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        static xtd::forms::style_sheets::system_colors system_colors_from_css(const xtd::ustring& css_text);
+
+        /// @brief Gets the style sheet theme from specified css string.
+        /// @param css_text The css string that contains theme definition.
+        /// @return The style sheet theme.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        static xtd::forms::style_sheets::theme theme_from_css(const xtd::ustring& css_text);
         /// @}
         
         /// @name Events
@@ -126,6 +205,15 @@ namespace xtd {
         /// @}
         
       private:
+        friend class ::__test_style_sheet__; // Necessary for the test unit to access the private member functions
+        border_color border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept;
+        border_style border_style_from_css(const ustring& text, const border_style& default_value) const noexcept;
+        xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
+        background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
+        length length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept;
+        xtd::ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
+        xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
+
         static void initilize();
         static void on_current_style_sheet_changed(const xtd::event_args& e);
         std::vector<xtd::ustring> split_colors_from_text(const xtd::ustring& text) const noexcept;

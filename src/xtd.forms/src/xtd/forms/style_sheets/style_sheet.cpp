@@ -41,6 +41,10 @@ const xtd::forms::style_sheets::button& style_sheet::button(pseudo_state state) 
   return it->second;
 }
 
+const style_sheet::buttons_t& style_sheet::buttons() const noexcept {
+  return buttons_;
+}
+
 const xtd::forms::style_sheets::control& style_sheet::control() const noexcept {
   return control(pseudo_state::standard);
 }
@@ -50,6 +54,10 @@ const xtd::forms::style_sheets::control& style_sheet::control(pseudo_state state
   auto it = controls_.find(state);
   if (it == controls_.end()) return fallback;
   return it->second;
+}
+
+const style_sheet::controls_t& style_sheet::controls() const noexcept {
+  return controls_;
 }
 
 const style_sheet& style_sheet::current_style_sheet() noexcept {
@@ -76,6 +84,10 @@ const xtd::forms::style_sheets::form& style_sheet::form(pseudo_state state) cons
   return it->second;
 }
 
+const style_sheet::forms_t& style_sheet::forms() const noexcept {
+  return forms_;
+}
+
 const xtd::forms::style_sheets::label& style_sheet::label() const noexcept {
   return label(pseudo_state::standard);
 }
@@ -85,6 +97,10 @@ const xtd::forms::style_sheets::label& style_sheet::label(pseudo_state state) co
   auto it = labels_.find(state);
   if (it == labels_.end()) return fallback;
   return it->second;
+}
+
+const style_sheet::labels_t& style_sheet::labels() const noexcept {
+  return forms_;
 }
 
 const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
@@ -140,6 +156,31 @@ bool style_sheet::equals(const object& other) const noexcept {
 
 bool style_sheet::equals(const style_sheet& other) const noexcept {
   return theme_ == theme_;
+}
+
+style_sheet::buttons_t style_sheet::button_from_css(const  xtd::ustring& css_text) {
+  style_sheet ss(css_text);
+  return ss.buttons();
+}
+
+style_sheet::controls_t style_sheet::control_from_css(const  xtd::ustring& css_text) {
+  style_sheet ss(css_text);
+  return ss.controls();
+}
+
+style_sheet::forms_t style_sheet::form_from_css(const  xtd::ustring& css_text) {
+  style_sheet ss(css_text);
+  return ss.forms();
+}
+
+xtd::forms::style_sheets::system_colors style_sheet::system_colors_from_css(const xtd::ustring& css_text) {
+  style_sheet ss(css_text);
+  return ss.system_colors();
+}
+
+xtd::forms::style_sheets::theme style_sheet::theme_from_css(const xtd::ustring& css_text) {
+  style_sheet ss(css_text);
+  return ss.theme();
 }
 
 border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept {

@@ -400,7 +400,6 @@ add_sources(
   src/xtd/forms/style_sheets/border_color.cpp
   src/xtd/forms/style_sheets/border_radius.cpp
   src/xtd/forms/style_sheets/border_style.cpp
-  src/xtd/forms/style_sheets/ibox_model.cpp
   src/xtd/forms/style_sheets/control.cpp
   src/xtd/forms/style_sheets/background_image.cpp
   src/xtd/forms/style_sheets/length.cpp
