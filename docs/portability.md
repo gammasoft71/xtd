@@ -89,10 +89,10 @@ Actually xtd run on Windows, macOS, Linux, iOS and Android Operating System.
 
 | Library     | Windows | macOS | Linux | iOS   | Android |
 |-------------|---------|-------|-------|-------|---------|
-| xtd.core    | **√**   | **√** | **√** | **√** | **√**   |
-| xtd.drawing | **√**   | **√** | **√** | *X*   | *X*     |
-| xtd.forms   | **√**   | **√** | **√** | *X*   | *X*     |
-| xtd.tunit   | **√**   | **√** | **√** | **√** | **√**   |
+| xtd.core    | ✔️      | ✔️    | ✔️    | ✔️    | ✔️      |
+| xtd.drawing | ✔️      | ✔️    | ✔️    | ❌    | ❌      |
+| xtd.forms   | ✔️      | ✔️    | ✔️    | ❌    | ❌      |
+| xtd.tunit   | ✔️      | ✔️    | ✔️    | ✔️    | ✔️      |
 
 ## Tests and coverage
 
