@@ -8,7 +8,7 @@ using namespace xtd::forms::style_sheets;
 border_radius::border_radius(length all) : all_(true), top_left_(all), top_right_(all), bottom_left_(all), bottom_right_(all) {
 }
 
-border_radius::border_radius(length top_left, length top_right, length bottom_left, length bottom_right) : all_(top_left == top_right && top_left == bottom_left && top_left == bottom_right), top_left_(top_left), top_right_(top_right), bottom_left_(bottom_left), bottom_right_(bottom_right) {
+border_radius::border_radius(length top_left, length top_right, length bottom_right, length bottom_left) : all_(top_left == top_right && top_left == bottom_left && top_left == bottom_right), top_left_(top_left), top_right_(top_right), bottom_left_(bottom_left), bottom_right_(bottom_right) {
 }
 
 length border_radius::all() const noexcept {
