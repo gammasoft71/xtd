@@ -416,54 +416,37 @@ vector<ustring> style_sheet::split_values_from_text(const ustring& text) const n
 
 void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
   static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  static vector<pair<ustring, pseudo_state>> simple_controls {{"button", pseudo_state::standard}, {"button:default", pseudo_state::default_state}, {"button:flat", pseudo_state::flat}, {"button:flat:default", pseudo_state::flat | pseudo_state::default_state}, {"button:popup", pseudo_state::popup}, {"button:popup::default", pseudo_state::popup | pseudo_state::default_state}};
-  for (auto control : simple_controls) {
+  static vector<pair<ustring, pseudo_state>> buttons {{"button", pseudo_state::standard}, {"button:default", pseudo_state::default_state}, {"button:flat", pseudo_state::flat}, {"button:flat:default", pseudo_state::flat | pseudo_state::default_state}, {"button:popup", pseudo_state::popup}, {"button:popup::default", pseudo_state::popup | pseudo_state::default_state}};
+  for (auto button : buttons) {
     auto standard_control_defined = false;
     for (auto state : states) {
-      selector_map::const_iterator selectors_iterator = reader.selectors().find(control.first + state.first);
+      selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
       if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) standard_control_defined = true;
-      if (selectors_iterator != reader.selectors().end()) {
-        property_map::const_iterator properties_iterator;
-        if ((properties_iterator = selectors_iterator->second.properties().find("margin")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].margin(margin_from_css(properties_iterator->second.to_string(), margin(0)));
-        if ((properties_iterator = selectors_iterator->second.properties().find("border-style")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].border_style(border_style_from_css(properties_iterator->second.to_string(), border_style(border_type::none)));
-        if ((properties_iterator = selectors_iterator->second.properties().find("border-color")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].border_color(border_color_from_css(properties_iterator->second.to_string(), border_color(color::transparent)));
-        if ((properties_iterator = selectors_iterator->second.properties().find("border-width")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].border_width(border_width_from_css(properties_iterator->second.to_string(), border_width(1)));
-        if ((properties_iterator = selectors_iterator->second.properties().find("border-radius")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].border_radius(border_radius_from_css(properties_iterator->second.to_string(), border_radius(0)));
-        if ((properties_iterator = selectors_iterator->second.properties().find("padding")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].padding(margin_from_css(properties_iterator->second.to_string(), padding(0)));
-        if ((properties_iterator = selectors_iterator->second.properties().find("height")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].height(length_from_css(properties_iterator->second.to_string(), length(25)));
-        if ((properties_iterator = selectors_iterator->second.properties().find("width")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].width(length_from_css(properties_iterator->second.to_string(), length(75)));
-        if ((properties_iterator = selectors_iterator->second.properties().find("background-color")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].background_color(background_color_from_css(properties_iterator->second.to_string(), color::transparent));
-        if ((properties_iterator = selectors_iterator->second.properties().find("background-image")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].background_image(background_image_from_css(properties_iterator->second.to_string(), background_image::empty));
-        if ((properties_iterator = selectors_iterator->second.properties().find("color")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].color(color_from_css(properties_iterator->second.to_string(), color::transparent));
-        if ((properties_iterator = selectors_iterator->second.properties().find("text-align")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].alignment(text_align_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
-        //if ((properties_iterator = selectors_iterator->second.properties().find("font")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].font(font_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
-        if ((properties_iterator = selectors_iterator->second.properties().find("text-decoration")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].decoration(text_decoration_from_css(properties_iterator->second.to_string(), text_decoration::none));
-        if ((properties_iterator = selectors_iterator->second.properties().find("text-transformation")) != selectors_iterator->second.properties().end()) buttons_[control.second | state.second].transformation(text_transformation_from_css(properties_iterator->second.to_string(), text_transformation::none));
-      }
-      else if (standard_control_defined) buttons_[control.second | state.second] = buttons_[control.second];
+      if (selectors_iterator != reader.selectors().end()) control_reader(selectors_iterator,  buttons_[button.second | state.second]);
+      else if (standard_control_defined) buttons_[button.second | state.second] = buttons_[button.second];
     }
   }
 
   property_map::const_iterator properties_iterator;
 }
 
-void style_sheet::simple_control_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::pseudo_state state) noexcept {
+void style_sheet::control_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept {
   property_map::const_iterator properties_iterator;
-  if ((properties_iterator = selectors_iterator->second.properties().find("margin")) != selectors_iterator->second.properties().end()) buttons_[state].margin(margin_from_css(properties_iterator->second.to_string(), margin(0)));
-  if ((properties_iterator = selectors_iterator->second.properties().find("border-style")) != selectors_iterator->second.properties().end()) buttons_[state].border_style(border_style_from_css(properties_iterator->second.to_string(), border_style(border_type::none)));
-  if ((properties_iterator = selectors_iterator->second.properties().find("border-color")) != selectors_iterator->second.properties().end()) buttons_[state].border_color(border_color_from_css(properties_iterator->second.to_string(), border_color(color::transparent)));
-  if ((properties_iterator = selectors_iterator->second.properties().find("border-width")) != selectors_iterator->second.properties().end()) buttons_[state].border_width(border_width_from_css(properties_iterator->second.to_string(), border_width(1)));
-  if ((properties_iterator = selectors_iterator->second.properties().find("border-radius")) != selectors_iterator->second.properties().end()) buttons_[state].border_radius(border_radius_from_css(properties_iterator->second.to_string(), border_radius(0)));
-  if ((properties_iterator = selectors_iterator->second.properties().find("padding")) != selectors_iterator->second.properties().end()) buttons_[state].padding(margin_from_css(properties_iterator->second.to_string(), padding(0)));
-  if ((properties_iterator = selectors_iterator->second.properties().find("height")) != selectors_iterator->second.properties().end()) buttons_[state].height(length_from_css(properties_iterator->second.to_string(), length(25)));
-  if ((properties_iterator = selectors_iterator->second.properties().find("width")) != selectors_iterator->second.properties().end()) buttons_[state].width(length_from_css(properties_iterator->second.to_string(), length(75)));
-  if ((properties_iterator = selectors_iterator->second.properties().find("background-color")) != selectors_iterator->second.properties().end()) buttons_[state].background_color(background_color_from_css(properties_iterator->second.to_string(), color::transparent));
-  if ((properties_iterator = selectors_iterator->second.properties().find("background-image")) != selectors_iterator->second.properties().end()) buttons_[state].background_image(background_image_from_css(properties_iterator->second.to_string(), background_image::empty));
-  if ((properties_iterator = selectors_iterator->second.properties().find("color")) != selectors_iterator->second.properties().end()) buttons_[state].color(color_from_css(properties_iterator->second.to_string(), color::transparent));
-  if ((properties_iterator = selectors_iterator->second.properties().find("text-align")) != selectors_iterator->second.properties().end()) buttons_[state].alignment(text_align_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
-  //if ((properties_iterator = selectors_iterator->second.properties().find("font")) != selectors_iterator->second.properties().end()) buttons_[state].font(font_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
-  if ((properties_iterator = selectors_iterator->second.properties().find("text-decoration")) != selectors_iterator->second.properties().end()) buttons_[state].decoration(text_decoration_from_css(properties_iterator->second.to_string(), text_decoration::none));
-  if ((properties_iterator = selectors_iterator->second.properties().find("text-transformation")) != selectors_iterator->second.properties().end()) buttons_[state].transformation(text_transformation_from_css(properties_iterator->second.to_string(), text_transformation::none));
+  if ((properties_iterator = selectors_iterator->second.properties().find("margin")) != selectors_iterator->second.properties().end()) control.margin(margin_from_css(properties_iterator->second.to_string(), margin(0)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("border-style")) != selectors_iterator->second.properties().end()) control.border_style(border_style_from_css(properties_iterator->second.to_string(), border_style(border_type::none)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("border-color")) != selectors_iterator->second.properties().end()) control.border_color(border_color_from_css(properties_iterator->second.to_string(), border_color(color::transparent)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("border-width")) != selectors_iterator->second.properties().end()) control.border_width(border_width_from_css(properties_iterator->second.to_string(), border_width(1)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("border-radius")) != selectors_iterator->second.properties().end()) control.border_radius(border_radius_from_css(properties_iterator->second.to_string(), border_radius(0)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("padding")) != selectors_iterator->second.properties().end()) control.padding(margin_from_css(properties_iterator->second.to_string(), padding(0)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("height")) != selectors_iterator->second.properties().end()) control.height(length_from_css(properties_iterator->second.to_string(), length(25)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("width")) != selectors_iterator->second.properties().end()) control.width(length_from_css(properties_iterator->second.to_string(), length(75)));
+  if ((properties_iterator = selectors_iterator->second.properties().find("background-color")) != selectors_iterator->second.properties().end()) control.background_color(background_color_from_css(properties_iterator->second.to_string(), color::transparent));
+  if ((properties_iterator = selectors_iterator->second.properties().find("background-image")) != selectors_iterator->second.properties().end()) control.background_image(background_image_from_css(properties_iterator->second.to_string(), background_image::empty));
+  if ((properties_iterator = selectors_iterator->second.properties().find("color")) != selectors_iterator->second.properties().end()) control.color(color_from_css(properties_iterator->second.to_string(), color::transparent));
+  if ((properties_iterator = selectors_iterator->second.properties().find("text-align")) != selectors_iterator->second.properties().end()) control.alignment(text_align_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
+  //if ((properties_iterator = selectors_iterator->second.properties().find("font")) != selectors_iterator->second.properties().end()) control.font(font_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
+  if ((properties_iterator = selectors_iterator->second.properties().find("text-decoration")) != selectors_iterator->second.properties().end()) control.decoration(text_decoration_from_css(properties_iterator->second.to_string(), text_decoration::none));
+  if ((properties_iterator = selectors_iterator->second.properties().find("text-transformation")) != selectors_iterator->second.properties().end()) control.transformation(text_transformation_from_css(properties_iterator->second.to_string(), text_transformation::none));
 }
 
 void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexcept {
