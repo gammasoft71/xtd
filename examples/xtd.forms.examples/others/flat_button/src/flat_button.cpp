@@ -11,6 +11,7 @@ public:
   form1() {
     text("Flat button example");
     controls().push_back_range({button1, button2, button3, button4});
+    back_color(color::light_blue);
     
     button1.location({50, 50});
     button1.flat_style(xtd::forms::flat_style::flat);

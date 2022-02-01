@@ -58,7 +58,7 @@ button:flat {
   border-width: 1px;
   border-radius: 5px;
   background-color: system-color(control);
-  padding: 1px 1px 1px 3px;
+  padding: 1px 1px 3px 1px;
   color: system-color(control-text);
 }
 

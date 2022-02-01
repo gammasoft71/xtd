@@ -422,8 +422,8 @@ void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
     for (auto state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
       if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) standard_control_defined = true;
+      if (standard_control_defined) buttons_[button.second | state.second] = buttons_[button.second];
       if (selectors_iterator != reader.selectors().end()) control_reader(selectors_iterator,  buttons_[button.second | state.second]);
-      else if (standard_control_defined) buttons_[button.second | state.second] = buttons_[button.second];
     }
   }
 

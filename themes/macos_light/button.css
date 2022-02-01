@@ -2,37 +2,35 @@
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
 button {
-  margin: 0px 1px 0px 1px;
+  margin: 2px 0px 1px 0px;
   border-style: outset;
   border-color: #E8E8E8;
   border-width: 1px;
   border-radius: 5px;
-  background-color: linear-gradient(to bottom, system-color(button-face), system-color(button-face));
-  padding: 1px 1px 1px 3px;;
+  background-image: linear-gradient(system-color(button-face), system-color(button-face));
+  padding: 1px 1px 3px 1px;;
   color: system-color(control-text);
-  text-align: middle center;
-  text-decoration: none;
 }
 
 button:pressed {
-  background-color: linear-gradient(to bottom, rgba(230, 230, 230, 180), rgba(230, 230, 230, 180));
+  background-image: linear-gradient(rgba(230, 230, 230, 180), rgba(230, 230, 230, 180));
 }
 
 button:checked {
-  background-color: linear-gradient(to bottom, rgba(232, 232, 232, 180), rgba(232, 232, 232, 180));
+  background-image: linear-gradient(rgba(232, 232, 232, 180), rgba(232, 232, 232, 180));
 }
 
 button:mixed {
-  background-color: linear-gradient(to bottom, rgba(246, 246, 246, 180), rgba(246, 246, 246, 180));
+  background-image: linear-gradient(rgba(246, 246, 246, 180), rgba(246, 246, 246, 180));
 }
 
 button:default {
-  background-color: linear-gradient(to bottom, #076BD9 , #0067D8);
+  background-image: linear-gradient(#076BD9 , #0067D8);
 }
 
 button:disabled {  
   border-color: system-color(gray-text);
-  background-color: linear-gradient(to bottom, rgba(255, 255, 255, 30), rgba(255, 255, 255, 30));
+  background-image: linear-gradient(rgba(255, 255, 255, 30), rgba(255, 255, 255, 30));
   color: system-color(gray-text);
 }
 
@@ -42,35 +40,34 @@ button:flat {
   border-width: 1px;
   border-radius: 5px;
   background-color: system-color(control);
+  padding: 1px 1px 3px 1px;
   color: system-color(control-text);
-  text-align: center;
-  text-decoration: none;
 }
 
-button:flat:hot {
-  background-color: linear-gradient(to bottom, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
+button:flat:hover {
+  background-color: rgba(255, 255, 255, 10);
 }
 
 button:flat:pressed {
-  background-color: linear-gradient(to bottom, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
+  background-color: rgba(255, 255, 255, 93);
 }
 
 button:flat:checked {
-  background-color: linear-gradient(to bottom, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
+  background-color: rgba(255, 255, 255, 93);
 }
 
 button:flat:mixed {
-  background-color: linear-gradient(to bottom, rgba(255, 255, 255, 78), rgba(255, 255, 255, 78));
-}
-
-button:flat:default {
-  background-color: linear-gradient(to bottom, #076BD9 , #0067D8);
+  background-color: rgba(255, 255, 255, 78);
 }
 
 button:flat:disabled {  
   border-color: system-color(gray-text);
   background-color: linear-gradient(to bottom, rgba(255, 255, 255, 30), system-color(button-face));
   color: system-color(gray-text);
+}
+
+button:flat:default {
+  background-image: linear-gradient(to bottom, #076BD9 , #0067D8);
 }
 
 button:popup {
@@ -80,13 +77,10 @@ button:popup {
   border-radius: 5px;
   background-color: system-color(control);
   color: system-color(control-text);
-  text-align: center;
-  text-decoration: none;
 }
 
-button:popup:hot {
+button:popup:hover {
   border-style: outset;
-  background-color: linear-gradient(to bottom, rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
 }
 
 button:popup:pressed {
