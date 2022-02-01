@@ -226,9 +226,10 @@ namespace xtd {
         static void on_current_style_sheet_changed(const xtd::event_args& e);
         std::vector<xtd::ustring> split_values_from_text(const xtd::ustring& text) const noexcept;
 
-        void button_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::pseudo_state state) noexcept;
-        void system_colors_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator) noexcept;
-        void theme_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::theme& theme) const noexcept;
+        void button_reader(xtd::web::css::css_reader& reader) noexcept;
+        void simple_control_reader(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::pseudo_state state) noexcept;
+        void system_colors_reader(xtd::web::css::css_reader& reader) noexcept;
+        void theme_reader(xtd::web::css::css_reader& reader) noexcept;
 
         static style_sheet system_style_sheet_gnome_dark() noexcept; // Declared in system_style_sheet_gnome_dark.cpp
         static style_sheet system_style_sheet_gnome_light() noexcept; // Declared in system_style_sheet_gnome_light.cpp
