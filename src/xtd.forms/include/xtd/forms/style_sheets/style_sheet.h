@@ -57,6 +57,8 @@ namespace xtd {
         using labels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::label>;
         /// @brief Represents a style_sheets collection.
         using style_sheets_t = std::map<xtd::ustring, style_sheet>;
+        /// @brief Represents a style_sheet names collection.
+        using style_sheet_names_t = std::vector<xtd::ustring>;
         /// @}
         
         /// @name Fields
@@ -142,6 +144,11 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static const style_sheets_t& style_sheets() noexcept;
 
+        /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet names.
+        /// @return The installed xtd::forms::style_sheets::style_sheet names.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        static const style_sheet_names_t& style_sheet_names() noexcept;
+
         /// @brief Gets The style sheet system colors of this instance.
         /// @return The style sheet systel colors collection.
         const xtd::forms::style_sheets::system_colors& system_colors() const noexcept;
@@ -175,6 +182,13 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static controls_t control_from_css(const  xtd::ustring& css_text);
 
+        /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
+        /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
+        /// @exception xtd::argument_exception The style sheet name not tvalid.
+        /// @remarks Use xtd::forms::style_sheets::stylle_sheet::style_sheet_names to retreive valid style sheet names.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        static style_sheet get_style_sheet_from_name(const xtd::ustring& name);
+        
         /// @brief Gets the style sheet forms collection from specified css string.
         /// @param css_text The css string that contains forms definition.
         /// @return The style sheet forms collection.
@@ -222,7 +236,6 @@ namespace xtd {
         xtd::forms::style_sheets::text_transformation text_transformation_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_transformation& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
 
-        static void initilize();
         static void on_current_style_sheet_changed(const xtd::event_args& e);
         std::vector<xtd::ustring> split_values_from_text(const xtd::ustring& text) const noexcept;
 
@@ -264,6 +277,7 @@ namespace xtd {
         labels_t labels_;
         static style_sheet current_style_sheets_;
         static style_sheets_t style_sheets_;
+        static style_sheet_names_t style_sheet_names_;
         xtd::forms::style_sheets::system_colors system_colors_;
         xtd::forms::style_sheets::theme theme_;
       };
