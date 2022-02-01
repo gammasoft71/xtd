@@ -21,6 +21,7 @@ const style_sheet style_sheet::empty;
 event<style_sheet, event_handler> style_sheet::current_style_sheet_changed;
 style_sheet style_sheet::current_style_sheets_;
 style_sheet::style_sheets_t style_sheet::style_sheets_;
+style_sheet::style_sheet_names_t style_sheet::style_sheet_names_;
 
 style_sheet::style_sheet(const ustring& text) {
   *this = system_style_sheet();
@@ -105,14 +106,35 @@ const style_sheet::labels_t& style_sheet::labels() const noexcept {
 }
 
 const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
-  initilize();
+  if (!style_sheets_.empty()) return style_sheets_;
+  
+  for (auto theme_dir : directory::enumerate_directories(__XTD_THEMES_PATH__)) {
+    xtd::ustring theme_css;
+    for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
+      theme_css += file::read_all_text(theme_file);
+    style_sheet style(theme_css);
+    if (!style.theme().name().empty())
+      style_sheets_[style.theme().name()] = style;
+  }
   return style_sheets_;
+}
+
+const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcept {
+  if (!style_sheet_names_.empty()) return style_sheet_names_;
+
+  for (auto theme_dir : directory::enumerate_directories(__XTD_THEMES_PATH__)) {
+    css_reader reader(file::read_all_text(path::combine(__XTD_THEMES_PATH__, "theme.css")));
+    selector_map::const_iterator selectors_iterator =  reader.selectors().find("theme");
+    if (selectors_iterator == reader.selectors().end()) break;
+    property_map::const_iterator properties_iterator;
+    if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end()) style_sheet_names_.push_back(properties_iterator->second.to_string().trim().trim('\"'));
+  }
+  return style_sheet_names_;
 }
 
 const xtd::forms::style_sheets::system_colors& style_sheet::system_colors()const noexcept {
   return system_colors_;
 }
-
 
 const style_sheet& style_sheet::system_style_sheet() noexcept {
   static style_sheet system_style_sheet;
@@ -172,6 +194,22 @@ style_sheet::controls_t style_sheet::control_from_css(const  xtd::ustring& css_t
 style_sheet::forms_t style_sheet::form_from_css(const  xtd::ustring& css_text) {
   style_sheet ss(css_text);
   return ss.forms();
+}
+
+style_sheet style_sheet::get_style_sheet_from_name(const xtd::ustring& name) {
+  for (auto theme_dir : directory::enumerate_directories(__XTD_THEMES_PATH__)) {
+    css_reader reader(file::read_all_text(path::combine(theme_dir, "theme.css")));
+    selector_map::const_iterator selectors_iterator =  reader.selectors().find("theme");
+    if (selectors_iterator == reader.selectors().end()) break;
+    property_map::const_iterator properties_iterator;
+    if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end() && properties_iterator->second.to_string().trim().trim('\"') == name) {
+      xtd::ustring theme_css;
+      for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
+        theme_css += file::read_all_text(theme_file);
+      return style_sheet(theme_css);
+    }
+  }
+  throw argument_exception(csf_);
 }
 
 xtd::forms::style_sheets::system_colors style_sheet::system_colors_from_css(const xtd::ustring& css_text) {
@@ -369,19 +407,6 @@ uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value)
   auto result = default_value;
   try_parse_uri(css_text, result);
   return result;;
-}
-
-void style_sheet::initilize() {
-  if (!style_sheets_.empty()) return;
-  
-  for (auto theme_dir : directory::enumerate_directories(__XTD_THEMES_PATH__)) {
-    xtd::ustring theme_css;
-    for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
-      theme_css += file::read_all_text(theme_file);
-    style_sheet style(theme_css);
-    if (!style.theme().name().empty())
-      style_sheets_[style.theme().name()] = style;
-  }
 }
 
 void style_sheet::on_current_style_sheet_changed(const xtd::event_args& e) {
