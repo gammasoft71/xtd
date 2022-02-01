@@ -185,7 +185,7 @@ namespace xtd {
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
         /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
         /// @exception xtd::argument_exception The style sheet name not tvalid.
-        /// @remarks Use xtd::forms::style_sheets::stylle_sheet::style_sheet_names to retreive valid style sheet names.
+        /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static style_sheet get_style_sheet_from_name(const xtd::ustring& name);
         
