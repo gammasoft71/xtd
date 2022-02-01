@@ -1,7 +1,7 @@
-/* Contains control definitions. */
+/* Contains panel definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-control {
+panel {
   background-color: system-color(control);
-  color: system-color(control-text);
+  color: transparent;
 }
