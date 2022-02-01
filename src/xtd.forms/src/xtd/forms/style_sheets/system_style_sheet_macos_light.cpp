@@ -9,6 +9,59 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::web::css;
 
 namespace {
+  style_sheet::buttons_t get_buttons(const style_sheets::system_colors& system_color) {
+    const auto button_standard = style_sheets::button().margin({2, 0, 1, 0}).border_style(border_type::outset).border_color(system_color.control_dark()).border_width({1}).border_radius({5}).padding({1, 1, 3, 1}).background_image({image_type::linear_gradient, {system_color.button_face(), system_color.button_face()}}).color(system_color.control_text());
+    const auto button_default = style_sheets::button().margin({2, 0,1, 0}).border_style(border_type::outset).border_color(system_color.control_dark()).border_width({1}).border_radius({5}).padding({1, 1, 3, 1}).background_image({image_type::linear_gradient, {color::from_argb(0xFF177AE5), color::from_argb(0xFF166ECD)}}).color(system_color.control_text());
+    const auto button_flat = style_sheets::button().border_style(border_type::solid).border_color(system_color.control_text()).border_width({1}).border_radius({5}).padding({1, 1, 3, 1}).background_color(system_color.control()).color(system_color.control_text());
+    const auto button_flat_default = style_sheets::button().border_style(border_type::solid).border_color(system_color.control_text()).border_width({1}).border_radius({5}).padding({1, 1, 3, 1}).background_color(system_color.control()).color(system_color.control_text());
+    const auto button_popup = style_sheets::button().border_style(border_type::solid).border_color(system_color.control_text()).border_width({1}).border_radius({5}).padding({1, 1, 3, 1}).background_color(system_color.control()).color(system_color.control_text());
+    const auto button_popup_default = style_sheets::button().border_style(border_type::solid).border_color(system_color.control_text()).border_width({1}).border_radius({5}).padding({1, 1, 3, 1}).background_color(system_color.control()).color(system_color.control_text());
+    return style_sheet::buttons_t {
+      // :standard
+      {xtd::forms::style_sheets::pseudo_state::standard, button_standard},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::pressed, style_sheets::button(button_standard).background_image({image_type::linear_gradient, {color::from_argb(93, 255, 255, 255), color::from_argb(93, 255, 255, 255)}})},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::checked, style_sheets::button(button_standard).background_image({image_type::linear_gradient, {color::from_argb(93, 255, 255, 255), color::from_argb(93, 255, 255, 255)}})},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::mixed, style_sheets::button(button_standard).background_image({image_type::linear_gradient, {color::from_argb(78, 255, 255, 255), color::from_argb(93, 255, 255, 255)}})},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::hover, button_standard},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::disabled, style_sheets::button(button_standard).background_image({image_type::linear_gradient, {color::from_argb(35, 255, 255, 255), color::from_argb(35, 255, 255, 255)}}).color(system_color.gray_text())},
+      // :standard:default
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state, button_default},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::pressed, style_sheets::button(button_default).background_image({image_type::linear_gradient, {color::from_argb(0xFF24A0F2), color::from_argb(0xFF2194E5)}})},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::checked, style_sheets::button(button_default).background_image({image_type::linear_gradient, {color::from_argb(0xFF24A0F2), color::from_argb(0xFF2194E5)}})},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::mixed, style_sheets::button(button_default).background_image({image_type::linear_gradient, {color::from_argb(0xFF24A0F2), color::from_argb(0xFF2194E5)}})},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::hover, button_default},
+      {xtd::forms::style_sheets::pseudo_state::standard | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, style_sheets::button(button_default).background_image({image_type::linear_gradient, {color::from_argb(35, 255, 255, 255), color::from_argb(35, 255, 255, 255)}}).color(system_color.gray_text())},
+      // :flat
+      {xtd::forms::style_sheets::pseudo_state::flat, button_flat},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::pressed, style_sheets::button(button_flat).background_color(color::from_argb(93, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::checked, style_sheets::button(button_flat).background_color(color::from_argb(93, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::mixed, style_sheets::button(button_flat).background_color(color::from_argb(78, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::hover, style_sheets::button(button_flat).background_color(color::from_argb(78, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::disabled, style_sheets::button(button_flat).border_style(border_type::solid).border_color(system_color.gray_text()).background_color(color::from_argb(30, 255, 255, 255)).color(system_color.gray_text())},
+      // :flat:default
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state, button_flat_default},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::pressed, style_sheets::button(button_flat_default).background_color(color::from_argb(93, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::checked, style_sheets::button(button_flat_default).background_color(color::from_argb(93, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::mixed, style_sheets::button(button_flat_default).background_color(color::from_argb(78, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::hover, style_sheets::button(button_flat_default).background_color(color::from_argb(78, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::flat | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, style_sheets::button(button_flat_default).border_color(system_color.gray_text()).background_color(color::from_argb(35, 255, 255, 255)).color(system_color.gray_text())},
+      // :popup
+      {xtd::forms::style_sheets::pseudo_state::popup, button_popup},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::pressed, style_sheets::button(button_popup).border_style(border_type::inset).background_color(color::from_argb(93, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::checked, style_sheets::button(button_popup).border_style(border_type::inset).background_color(color::from_argb(93, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::mixed, style_sheets::button(button_popup).border_style(border_type::inset).background_color(color::from_argb(78, 255, 255, 255))},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::hover, style_sheets::button(button_popup).border_style(border_type::outset)},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::disabled, style_sheets::button(button_popup).border_color(system_color.gray_text()).background_color(color::from_argb(30, 255, 255, 255)).color(system_color.gray_text())},
+      // :popup:default
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state, button_popup_default},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::pressed, style_sheets::button(button_popup_default).border_style(border_type::inset).border_color(system_color.control_text()).border_width(length(1)).border_radius({5}).padding({1, 1, 3, 1}).background_color(color::from_argb(93, 255, 255, 255)).color(system_color.control_text())},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::checked, style_sheets::button(button_popup_default).border_style(border_type::inset).border_color(system_color.control_text()).border_width(length(1)).border_radius({5}).padding({1, 1, 3, 1}).background_color(color::from_argb(93, 255, 255, 255)).color(system_color.control_text())},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::mixed, style_sheets::button(button_popup_default).border_style(border_type::inset).border_color(system_color.control_text()).border_width(length(1)).border_radius({5}).padding({1, 1, 3, 1}).background_color(color::from_argb(78, 255, 255, 255)).color(system_color.control_text())},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::hover, style_sheets::button(button_popup_default).border_style(border_type::outset).border_color(system_color.control_text()).border_width(length(1)).border_radius({5}).padding({1, 1, 3, 1}).background_color(color::from_argb(78, 255, 255, 255)).color(system_color.control_text())},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, style_sheets::button(button_popup_default).border_style(border_type::solid).border_color(system_color.control_text()).border_width(length(1)).border_radius({5}).padding({1, 1, 3, 1}).background_color(color::from_argb(35, 255, 255, 255)).color(system_color.gray_text())},
+    };
+  }
+  
   style_sheets::system_colors get_system_colors() {
     style_sheets::system_colors colors;
     colors.accent(drawing::system_colors::accent());
@@ -56,5 +109,6 @@ style_sheet style_sheet::system_style_sheet_macos_light() noexcept {
   style_sheet ss;
   ss.theme_ = style_sheets::theme("macOS (light)", "Contains macOS (light) theme.", "Gammasoft", uri("https://gammasoft71.wixsite.com/gammasoft"));
   ss.system_colors_ = get_system_colors();
+  ss.buttons_ = get_buttons(ss.system_colors_);
   return ss;
 }
