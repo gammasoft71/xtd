@@ -5,6 +5,7 @@
 #include <xtd/is.h>
 #include <xtd/literals.h>
 #include <xtd/diagnostics/debug.h>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_icons.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/class_styles.h>
@@ -17,6 +18,7 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/form.h"
 #include "../../../include/xtd/forms/screen.h"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
 
 using namespace std;
 using namespace xtd;
@@ -402,6 +404,7 @@ void form::wnd_proc(message& message) {
     case WM_ACTIVATE: wm_activate(message); break;
     case WM_CLOSE: wm_close(message); break;
     case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().get().wm_click(message); break;
+    case WM_SYSCOLORCHANGE: wm_syscolor_change(message); break;
     default: container_control::wnd_proc(message); break;
   }
 }
@@ -434,6 +437,14 @@ void form::wm_close(message& message) {
     }
     on_form_closed(form_closed_event_args());
   }
+}
+
+void form::wm_syscolor_change(message& message) {
+  def_wnd_proc(message);
+  on_system_colors_changed(event_args::empty);
+  style_sheets::style_sheet::on_system_colors_changed(event_args::empty);
+  diagnostics::debug::write_line(ustring::format("drawing::system_colors::button_face() = 0x{:X8}", drawing::system_colors::button_face().to_argb()));
+  diagnostics::debug::write_line(ustring::format("drawing::system_colors::control_text() = 0x{:X8}", drawing::system_colors::control_text().to_argb()));
 }
 
 void form::on_handle_created(const event_args& e) {
@@ -472,6 +483,10 @@ void form::on_resize(const event_args& e) {
       window_state_ = forms::form_window_state::normal;
   }
   container_control::on_resize(e);
+}
+
+void form::on_system_colors_changed(const event_args& e) {
+  if (can_raise_events()) system_colors_changed(*this, e);
 }
 
 void form::internal_set_window_state() {

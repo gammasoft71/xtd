@@ -5,6 +5,7 @@
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/drawing2d/linear_gradient_brush.h>
 #include <xtd/forms/application.h>
+#include <xtd/diagnostics/debug.h>
 #include <xtd/io/directory.h>
 #include <xtd/io/file.h>
 
@@ -19,9 +20,10 @@ using namespace xtd::web::css;
 
 const style_sheet style_sheet::empty;
 event<style_sheet, event_handler> style_sheet::style_sheet_changed;
-style_sheet style_sheet::current_style_sheets_;
+style_sheet style_sheet::current_style_sheet_;
 style_sheet::style_sheets_t style_sheet::style_sheets_;
 style_sheet::style_sheet_names_t style_sheet::style_sheet_names_;
+style_sheet style_sheet::system_style_sheet_;
 
 style_sheet::style_sheet(const ustring& text) {
   *this = system_style_sheet();
@@ -63,14 +65,14 @@ const style_sheet::controls_t& style_sheet::controls() const noexcept {
 }
 
 const style_sheet& style_sheet::current_style_sheet() noexcept {
-  if (current_style_sheets_ == style_sheet::empty) current_style_sheets_ = system_style_sheet();
-  return current_style_sheets_;
+  if (current_style_sheet_ == style_sheet::empty) current_style_sheet(system_style_sheet());
+  return current_style_sheet_;
 }
 
 void style_sheet::current_style_sheet(const style_sheet& value) {
   if (value == style_sheet::empty) throw argument_exception(csf_);
-  if (current_style_sheets_ != value) {
-    current_style_sheets_ = value;
+  if (current_style_sheet_ != value) {
+    current_style_sheet_ = value;
     on_style_sheet_changed(event_args::empty);
   }
 }
@@ -137,36 +139,35 @@ const xtd::forms::style_sheets::system_colors& style_sheet::system_colors()const
 }
 
 const style_sheet& style_sheet::system_style_sheet() noexcept {
-  static style_sheet system_style_sheet;
-  if (system_style_sheet != style_sheet::empty) return system_style_sheet;
+  if (system_style_sheet_ != style_sheet::empty) return system_style_sheet_;
 
   if (environment::os_version().is_linux()) {
     if (environment::os_version().desktop_environment() == "kde" && application::dark_mode_enabled())
-      system_style_sheet = system_style_sheet_kde_dark();
+      system_style_sheet_ = system_style_sheet_kde_dark();
     else if (environment::os_version().desktop_environment() == "kde" && !application::dark_mode_enabled())
-      system_style_sheet = system_style_sheet_kde_light();
+      system_style_sheet_ = system_style_sheet_kde_light();
     else if (application::dark_mode_enabled())
-      system_style_sheet = system_style_sheet_gnome_dark();
+      system_style_sheet_ = system_style_sheet_gnome_dark();
     else
-      system_style_sheet = system_style_sheet_gnome_light();
+      system_style_sheet_ = system_style_sheet_gnome_light();
   } else if (environment::os_version().is_macos()) {
     if (application::dark_mode_enabled())
-      system_style_sheet = system_style_sheet_macos_dark();
+      system_style_sheet_ = system_style_sheet_macos_dark();
     else
-      system_style_sheet = system_style_sheet_macos_light();
+      system_style_sheet_ = system_style_sheet_macos_light();
   } else if (environment::os_version().is_windows()) {
     if (application::dark_mode_enabled())
-      system_style_sheet = system_style_sheet_windows_dark();
+      system_style_sheet_ = system_style_sheet_windows_dark();
     else
-      system_style_sheet = system_style_sheet_windows_light();
+      system_style_sheet_ = system_style_sheet_windows_light();
   } else {
     if (application::dark_mode_enabled())
-      system_style_sheet = system_style_sheet_unknown_dark();
+      system_style_sheet_ = system_style_sheet_unknown_dark();
     else
-      system_style_sheet = system_style_sheet_unknown_light();
+      system_style_sheet_ = system_style_sheet_unknown_light();
   }
   
-  return system_style_sheet;
+  return system_style_sheet_;
 }
 
 const xtd::forms::style_sheets::theme& style_sheet::theme() const noexcept {
@@ -410,7 +411,20 @@ uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value)
 }
 
 void style_sheet::on_style_sheet_changed(const xtd::event_args& e) {
-  style_sheet_changed(current_style_sheets_, e);
+  diagnostics::debug::write_line(ustring::format("system_style_sheet().theme().name() = {}", system_style_sheet().theme().name()));
+  for (auto form : application::open_forms()) {
+    form.get().invalidate(true);
+    form.get().refresh();
+  }
+  style_sheet_changed(current_style_sheet_, e);
+}
+
+void style_sheet::on_system_colors_changed(const event_args& e) {
+  if (current_style_sheet() == system_style_sheet() && current_style_sheet().system_colors().window() != xtd::drawing::system_colors::window()) {
+    system_style_sheet_ = style_sheet::empty;
+    current_style_sheet_ = style_sheet::empty;
+    current_style_sheet(system_style_sheet());
+  } else system_style_sheet_ = style_sheet::empty;
 }
 
 vector<ustring> style_sheet::split_values_from_text(const ustring& text) const noexcept {
