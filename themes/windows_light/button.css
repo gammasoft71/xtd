@@ -13,7 +13,8 @@ button {
 }
 
 button:pressed {
-  background-image: linear-gradient(rgba(255, 255, 255, 93), rgba(255, 255, 255, 93));
+  border-color: rgba(12, 9, 138, 255);
+  background-color: rgba(204, 228, 247, 255);
 }
 
 button:checked {
