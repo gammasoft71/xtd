@@ -18,7 +18,7 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::web::css;
 
 const style_sheet style_sheet::empty;
-event<style_sheet, event_handler> style_sheet::current_style_sheet_changed;
+event<style_sheet, event_handler> style_sheet::style_sheet_changed;
 style_sheet style_sheet::current_style_sheets_;
 style_sheet::style_sheets_t style_sheet::style_sheets_;
 style_sheet::style_sheet_names_t style_sheet::style_sheet_names_;
@@ -71,7 +71,7 @@ void style_sheet::current_style_sheet(const style_sheet& value) {
   if (value == style_sheet::empty) throw argument_exception(csf_);
   if (current_style_sheets_ != value) {
     current_style_sheets_ = value;
-    on_current_style_sheet_changed(event_args::empty);
+    on_style_sheet_changed(event_args::empty);
   }
 }
 
@@ -409,8 +409,8 @@ uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value)
   return result;;
 }
 
-void style_sheet::on_current_style_sheet_changed(const xtd::event_args& e) {
-  current_style_sheet_changed(current_style_sheets_, e);
+void style_sheet::on_style_sheet_changed(const xtd::event_args& e) {
+  style_sheet_changed(current_style_sheets_, e);
 }
 
 vector<ustring> style_sheet::split_values_from_text(const ustring& text) const noexcept {
