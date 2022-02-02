@@ -32,6 +32,11 @@ form::form() {
   font(default_font());
   set_state(state::visible, false);
   set_state(state::top_level, true);
+  
+  if (!application::style_sheet().is_system_style_sheet()) {
+    back_color(default_back_color());
+    fore_color(default_fore_color());
+  }
   create_control();
 }
 
