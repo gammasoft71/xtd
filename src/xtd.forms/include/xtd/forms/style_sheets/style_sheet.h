@@ -131,6 +131,11 @@ namespace xtd {
         /// @brief Gets the style sheet forms collection of this instance.
         /// @return The style sheet forms collection.
         const forms_t& forms() const noexcept;
+        
+        /// @brief Gets a value indicate if this instance is system style sheet.
+        /// @return true if the current instance is system style sheet; otherwise false.
+        /// @remarks This method return true only if the current instance is equal to xtd::forms::style_sheets::style_sheet::system_style_sheet.
+        bool is_system_style_sheet() const noexcept;
 
         /// @brief Gets the style sheet label for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet label for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.

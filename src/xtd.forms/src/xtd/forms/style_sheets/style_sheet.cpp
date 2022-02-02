@@ -91,6 +91,10 @@ const style_sheet::forms_t& style_sheet::forms() const noexcept {
   return forms_;
 }
 
+bool style_sheet::is_system_style_sheet() const noexcept {
+  return *this == system_style_sheet();
+}
+
 const xtd::forms::style_sheets::label& style_sheet::label() const noexcept {
   return label(pseudo_state::standard);
 }
@@ -236,7 +240,7 @@ background_image style_sheet::background_image_from_css(const xtd::ustring& css_
 }
 
 border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept {
-  vector<ustring> values = css_text.to_lower().split();
+  vector<ustring> values = split_values_from_text(css_text.to_lower());
   if (values.size() < 1 || values.size() > 4) return default_value;
   border_color result;
   result.all(color_from_css(values[0], default_value.top()));
@@ -410,7 +414,20 @@ uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value)
 }
 
 void style_sheet::on_style_sheet_changed(const xtd::event_args& e) {
+  std::function<void(xtd::forms::control&)> update_control = [&](xtd::forms::control & control) {
+    control.back_color(control.default_back_color());
+    control.fore_color(control.default_fore_color());
+    for (auto& child_control : control.controls())
+      update_control(child_control.get());
+  };
+  
   for (auto form : application::open_forms()) {
+    form.get().back_color(current_style_sheet().system_colors().window());
+    form.get().fore_color(current_style_sheet().system_colors().window_text());
+    form.get().back_color(form.get().default_back_color());
+    form.get().fore_color(form.get().default_fore_color());
+    for (auto& child_control : form.get().controls())
+      update_control(child_control.get());
     form.get().invalidate(true);
     form.get().refresh();
   }

@@ -148,6 +148,26 @@ xtd::ustring application::startup_path() {
   return io::path::get_directory_name(environment::get_command_line_args()[0]);
 }
 
+const xtd::forms::style_sheets::style_sheet& application::style_sheet() noexcept {
+  return style_sheets::style_sheet::current_style_sheet();
+}
+
+void application::style_sheet(const xtd::forms::style_sheets::style_sheet& value) {
+  style_sheets::style_sheet::current_style_sheet(value);
+}
+
+const xtd::forms::style_sheets::style_sheet::style_sheets_t& application::style_sheets() noexcept {
+  return xtd::forms::style_sheets::style_sheet::style_sheets();
+}
+
+const xtd::forms::style_sheets::style_sheet::style_sheet_names_t& application::style_sheet_names() noexcept {
+  return xtd::forms::style_sheets::style_sheet::style_sheet_names();
+}
+
+const xtd::forms::style_sheets::style_sheet& application::system_style_sheet() noexcept {
+  return xtd::forms::style_sheets::style_sheet::system_style_sheet();
+}
+
 xtd::ustring application::user_app_data_path() {
   xtd::ustring user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
   if (!io::directory::exists(user_app_data_path))
@@ -244,6 +264,10 @@ void application::exit(cancel_event_args& e) {
 
 void application::exit_thread() {
   native::application::exit();
+}
+
+xtd::forms::style_sheets::style_sheet application::get_style_sheet_from_name(const xtd::ustring& name) {
+  return xtd::forms::style_sheets::style_sheet::get_style_sheet_from_name(name);
 }
 
 void application::raise_idle(const event_args& e) {
