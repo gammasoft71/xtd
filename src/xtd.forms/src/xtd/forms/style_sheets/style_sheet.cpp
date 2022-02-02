@@ -5,7 +5,6 @@
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/drawing2d/linear_gradient_brush.h>
 #include <xtd/forms/application.h>
-#include <xtd/diagnostics/debug.h>
 #include <xtd/io/directory.h>
 #include <xtd/io/file.h>
 
@@ -411,7 +410,6 @@ uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value)
 }
 
 void style_sheet::on_style_sheet_changed(const xtd::event_args& e) {
-  diagnostics::debug::write_line(ustring::format("system_style_sheet().theme().name() = {}", system_style_sheet().theme().name()));
   for (auto form : application::open_forms()) {
     form.get().invalidate(true);
     form.get().refresh();
@@ -791,7 +789,6 @@ bool style_sheet::try_parse_named_color(const ustring& text, color& result) cons
 
 bool style_sheet::try_parse_system_color(const ustring& text, color& result) const noexcept {
   auto value = text.remove(text.size()-1).replace("system-color(", "");
-  /// @todo Replace drawing::system_colors by theme::system_colors
   map<ustring, drawing::color> colors {{"accent", system_colors().accent()}, {"accent-text", system_colors().accent_text()}, {"active-border", system_colors().active_border()}, {"active-caption", system_colors().active_caption()}, {"active-caption-text", system_colors().active_caption_text()}, {"app-workspace", system_colors().app_workspace()}, {"button-face", system_colors().button_face()}, {"button-highlight", system_colors().button_highlight()}, {"button-shadow", system_colors().button_shadow()}, {"control", system_colors().control()}, {"control-dark", system_colors().control_dark()}, {"control-dark-dark", system_colors().control_dark_dark()}, {"control-light", system_colors().control_light()}, {"control-light-light", system_colors().control_light_light()}, {"control-text", system_colors().control_text()}, {"desktop", system_colors().desktop()}, {"gradient-active-caption", system_colors().gradient_active_caption()}, {"gradient-inactive-caption", system_colors().gradient_inactive_caption()}, {"gray-text", system_colors().gray_text()}, {"highlight", system_colors().highlight()}, {"highlight-text", system_colors().highlight_text()}, {"hot-track", system_colors().hot_track()}, {"inactive-border", system_colors().inactive_border()}, {"inactive-caption", system_colors().inactive_caption()}, {"inactive-caption-text", system_colors().inactive_caption_text()}, {"info", system_colors().info()}, {"info-text", system_colors().info_text()}, {"menu", system_colors().menu()}, {"menu-bar", system_colors().menu_bar()}, {"menu-highlight", system_colors().menu_highlight()}, {"menu-text", system_colors().menu_text()}, {"scroll-bar", system_colors().scroll_bar()}, {"text-box", system_colors().text_box()}, {"text-box-text", system_colors().text_box_text()}, {"window", system_colors().window()}, {"window-frame", system_colors().window_frame()}, {"window-text", system_colors().window_text()}};
   auto it = colors.find(value);
   if (it == colors.end()) return false;
