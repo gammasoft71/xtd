@@ -94,11 +94,6 @@ control::control() {
   set_state(state::visible, true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
   
-  if (!application::style_sheet().is_system_style_sheet()) {
-    back_color(default_back_color());
-    fore_color(default_fore_color());
-  }
-  
   data_->controls.item_added += [&](size_t, reference_wrapper<control> item) {
     on_control_added(control_event_args(item.get()));
     item.get().data_->parent = data_->handle;
