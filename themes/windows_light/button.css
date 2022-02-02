@@ -3,9 +3,9 @@
 
 button {
   margin: 2px 1px 2px 1px;
-  border-style: solid;
+  border-style: solid; /* themed; */
   border-color: system-color(control-dark);
-  border-width: 1px;
+  border-width: 1px; /* 2px; */
   border-radius: 0px;
   background-color: system-color(button-face);
   padding: 1px;
@@ -67,7 +67,8 @@ button:default:mixed {
 }
 
 button:default:hover {
-  border-width: 1px;
+  border-style: solid; /* themed; */
+  border-width: 1px; /* 2px; */
   /*background-color: rgba(229, 241, 251, 255);*/
   background-color: rgba(219, 243, 255, 128);
 }
