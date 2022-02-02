@@ -1,7 +1,7 @@
-/* Contains form definitions. */
+/* Contains user-control definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-form {
+user-control {
   background-color: system-color(control);
   color: system-color(control-text);
 }
