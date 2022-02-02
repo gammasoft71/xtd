@@ -215,7 +215,7 @@ namespace xtd {
         /// @ingroup events
         /// @remarks This event is raised if the xtd::forms::style_sheets::style_sheet::current_style_sheet property is changed by either a programmatic modification or user interaction.
         /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
-        static event<style_sheet, event_handler> current_style_sheet_changed;
+        static event<style_sheet, event_handler> style_sheet_changed;
         /// @}
         
       private:
@@ -236,7 +236,7 @@ namespace xtd {
         xtd::forms::style_sheets::text_transformation text_transformation_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_transformation& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
 
-        static void on_current_style_sheet_changed(const xtd::event_args& e);
+        static void on_style_sheet_changed(const xtd::event_args& e);
         std::vector<xtd::ustring> split_values_from_text(const xtd::ustring& text) const noexcept;
 
         void button_reader(xtd::web::css::css_reader& reader) noexcept;
