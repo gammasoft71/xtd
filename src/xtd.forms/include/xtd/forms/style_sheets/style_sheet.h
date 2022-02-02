@@ -25,6 +25,10 @@ class __test_style_sheet__; // Necessary for the test unit to access the private
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class form;
+    /// @endcond
+    
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.
@@ -220,6 +224,7 @@ namespace xtd {
         
       private:
         friend class ::__test_style_sheet__; // Necessary for the test unit to access the private member functions
+        friend class xtd::forms::form;
         xtd::drawing::color background_color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
         border_color border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept;
@@ -237,6 +242,7 @@ namespace xtd {
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
 
         static void on_style_sheet_changed(const xtd::event_args& e);
+        static void on_system_colors_changed(const event_args& e);
         std::vector<xtd::ustring> split_values_from_text(const xtd::ustring& text) const noexcept;
 
         void button_reader(xtd::web::css::css_reader& reader) noexcept;
@@ -275,10 +281,11 @@ namespace xtd {
         controls_t controls_;
         forms_t forms_;
         labels_t labels_;
-        static style_sheet current_style_sheets_;
+        static style_sheet current_style_sheet_;
         static style_sheets_t style_sheets_;
         static style_sheet_names_t style_sheet_names_;
         xtd::forms::style_sheets::system_colors system_colors_;
+        static style_sheet system_style_sheet_;
         xtd::forms::style_sheets::theme theme_;
       };
     }

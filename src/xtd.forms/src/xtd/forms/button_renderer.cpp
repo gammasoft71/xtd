@@ -41,21 +41,21 @@ void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, f
   if (button_style == flat_style::popup) pseudo_state_base = pseudo_state::popup;
   if (default_button) pseudo_state_base += pseudo_state::default_state;
   
-  button current_button_selector;
+  button current_button_style_sheet;
   switch (button_state) {
-    case push_button_state::normal: current_button_selector = style_sheet::current_style_sheet().button(pseudo_state_base); break;
-    case push_button_state::hot: current_button_selector = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::hover); break;
-    case push_button_state::pressed: current_button_selector = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::pressed); break;
-    case push_button_state::checked: current_button_selector = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::checked); break;
-    case push_button_state::disabled: current_button_selector = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::disabled); break;
-    case push_button_state::default_state: current_button_selector = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::default_state); break;
+    case push_button_state::normal: current_button_style_sheet = style_sheet::current_style_sheet().button(pseudo_state_base); break;
+    case push_button_state::hot: current_button_style_sheet = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::hover); break;
+    case push_button_state::pressed: current_button_style_sheet = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::pressed); break;
+    case push_button_state::checked: current_button_style_sheet = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::checked); break;
+    case push_button_state::disabled: current_button_style_sheet = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::disabled); break;
+    case push_button_state::default_state: current_button_style_sheet = style_sheet::current_style_sheet().button(pseudo_state_base | pseudo_state::default_state); break;
   }
-  if ((button_state == push_button_state::normal || button_state == push_button_state::default_state) && back_color.has_value()) current_button_selector.background_color(back_color.value());
-  if (fore_color.has_value()) current_button_selector.color(fore_color.value());
-  if (font.has_value()) current_button_selector.font(font.value());
+  if ((button_state == push_button_state::normal || button_state == push_button_state::default_state) && back_color.has_value()) current_button_style_sheet.background_color(back_color.value());
+  if (fore_color.has_value()) current_button_style_sheet.color(fore_color.value());
+  if (font.has_value()) current_button_style_sheet.font(font.value());
   
-  box_renderer::draw_box(graphics, bounds, current_button_selector);
-  text_renderer::draw_text(graphics, current_button_selector.get_content_rectangle(bounds), text, current_button_selector);
+  box_renderer::draw_box(graphics, bounds, current_button_style_sheet);
+  text_renderer::draw_text(graphics, current_button_style_sheet.get_content_rectangle(bounds), text, current_button_style_sheet);
 }
 
 namespace {
