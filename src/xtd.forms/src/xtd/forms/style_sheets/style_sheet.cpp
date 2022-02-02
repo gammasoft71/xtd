@@ -472,12 +472,11 @@ void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
   static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   static vector<pair<ustring, pseudo_state>> buttons {{"button", pseudo_state::standard}, {"button:default", pseudo_state::default_state}, {"button:flat", pseudo_state::flat}, {"button:flat:default", pseudo_state::flat | pseudo_state::default_state}, {"button:popup", pseudo_state::popup}, {"button:popup::default", pseudo_state::popup | pseudo_state::default_state}};
   for (auto button : buttons) {
-    auto standard_control_defined = false;
     for (auto state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
-      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) standard_control_defined = true;
-      if (standard_control_defined) buttons_[button.second | state.second] = buttons_[button.second];
-      if (selectors_iterator != reader.selectors().end()) control_reader(selectors_iterator,  buttons_[button.second | state.second]);
+      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) buttons_[button.second] = xtd::forms::style_sheets::button();
+      if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) buttons_[button.second | state.second] = buttons_[button.second];
+      if (selectors_iterator != reader.selectors().end()) control_reader(selectors_iterator, buttons_[button.second | state.second]);
     }
   }
 
