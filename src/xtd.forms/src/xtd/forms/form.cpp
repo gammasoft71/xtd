@@ -4,7 +4,6 @@
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/is.h>
 #include <xtd/literals.h>
-#include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_icons.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -443,8 +442,6 @@ void form::wm_syscolor_change(message& message) {
   def_wnd_proc(message);
   on_system_colors_changed(event_args::empty);
   style_sheets::style_sheet::on_system_colors_changed(event_args::empty);
-  diagnostics::debug::write_line(ustring::format("drawing::system_colors::button_face() = 0x{:X8}", drawing::system_colors::button_face().to_argb()));
-  diagnostics::debug::write_line(ustring::format("drawing::system_colors::control_text() = 0x{:X8}", drawing::system_colors::control_text().to_argb()));
 }
 
 void form::on_handle_created(const event_args& e) {
