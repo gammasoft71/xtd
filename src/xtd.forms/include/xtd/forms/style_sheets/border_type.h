@@ -39,13 +39,15 @@ namespace xtd {
         outset,
         /// @brief Defines a 3D ridged border. The effect depends on the border color value.
         ridge,
+        /// @brief Defines a 3D themed border. The effect depends on the border color value.
+        themed,
         /// @brief Defines a solid border
         solid,
       };
       
       /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const border_type value) {return os << to_string(value, {{border_type::none, "none,"}, {border_type::dashed, "dashed,"}, {border_type::dot_dash, "dot_dash,"}, {border_type::dot_dot_dash, "dot_dot_dash,"}, {border_type::dotted, "dotted,"}, {border_type::double_border, "double_border,"}, {border_type::groove, "groove,"}, {border_type::inset, "inset,"}, {border_type::outset, "outset,"}, {border_type::ridge, "ridge,"}, {border_type::solid, "solid,"}});}
-      inline std::wostream& operator<<(std::wostream& os, const border_type value) {return os << to_string(value, {{border_type::none, L"none,"}, {border_type::dashed, L"dashed,"}, {border_type::dot_dash, L"dot_dash,"}, {border_type::dot_dot_dash, L"dot_dot_dash,"}, {border_type::dotted, L"dotted,"}, {border_type::double_border, L"double_border,"}, {border_type::groove, L"groove,"}, {border_type::inset, L"inset,"}, {border_type::outset, L"outset,"}, {border_type::ridge, L"ridge,"}, {border_type::solid, L"solid,"}});}
+      inline std::ostream& operator<<(std::ostream& os, const border_type value) {return os << to_string(value, {{border_type::none, "none,"}, {border_type::dashed, "dashed,"}, {border_type::dot_dash, "dot_dash,"}, {border_type::dot_dot_dash, "dot_dot_dash,"}, {border_type::dotted, "dotted,"}, {border_type::double_border, "double_border,"}, {border_type::groove, "groove,"}, {border_type::inset, "inset,"}, {border_type::outset, "outset,"}, {border_type::ridge, "ridge,"}, {border_type::themed, "themed,"}, {border_type::solid, "solid,"}});}
+      inline std::wostream& operator<<(std::wostream& os, const border_type value) {return os << to_string(value, {{border_type::none, L"none,"}, {border_type::dashed, L"dashed,"}, {border_type::dot_dash, L"dot_dash,"}, {border_type::dot_dot_dash, L"dot_dot_dash,"}, {border_type::dotted, L"dotted,"}, {border_type::double_border, L"double_border,"}, {border_type::groove, L"groove,"}, {border_type::inset, L"inset,"}, {border_type::outset, L"outset,"}, {border_type::ridge, L"ridge,"}, {border_type::themed, L"themed,"}, {border_type::solid, L"solid,"}});}
       /// @endcond
     }
   }
