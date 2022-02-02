@@ -43,6 +43,7 @@
 #include "message.h"
 #include "theme_colors.h"
 #include "timer.h"
+#include "style_sheets/style_sheet.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -440,7 +441,7 @@ namespace xtd {
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
-      virtual drawing::color default_back_color() const {return xtd::forms::theme_colors::current_theme().control();}
+      virtual drawing::color default_back_color() const {return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control();}
       
       /// @brief Gets the default cursor for the control.
       /// @return An object of type xtd::forms::cursor representing the current default cursor.
@@ -452,7 +453,7 @@ namespace xtd {
       
       /// @brief Gets the default foreground color of the control.
       /// @return The default foreground color of the control. The default is control_text.
-      virtual drawing::color default_fore_color() const {return xtd::forms::theme_colors::current_theme().control_text();}
+      virtual drawing::color default_fore_color() const {return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control_text();}
       
       /// @brief Gets the default size of the control.
       /// @return The default size of the control.

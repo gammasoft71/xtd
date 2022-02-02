@@ -7,6 +7,7 @@
 #include <vector>
 #include "../forms_export.h"
 #include "../forms_namespace_aliases.h"
+#include "style_sheets/style_sheet.h"
 #include "application_context.h"
 #include "imessage_filter.h"
 #include "message.h"
@@ -52,7 +53,7 @@ namespace xtd {
     /// @include application_and_exception.cpp
     class forms_export_ application final static_ {
     public:
-      /// @name Methods
+      /// @name Properties
       
       /// @{
       /// @brief Gets a value indicating whether the caller can quit this application.
@@ -114,6 +115,30 @@ namespace xtd {
       /// @return The path for the executable file that started the application.
       static xtd::ustring startup_path();
       
+      /// @brief Gets current xtd::forms::style_sheets::style_sheet style sheet.
+      /// @return The current xtd::forms::style_sheets::style_sheet style sheet.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      static const xtd::forms::style_sheets::style_sheet& style_sheet() noexcept;
+      /// @brief Sets current xtd::forms::style_sheets::style_sheet style sheet.
+      /// @param value The current xtd::forms::style_sheets::style_sheet style sheet.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      static void style_sheet(const xtd::forms::style_sheets::style_sheet& value);
+      /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheets.
+      /// @return The installed xtd::forms::style_sheets::style_sheet style sheets.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      static const xtd::forms::style_sheets::style_sheet::style_sheets_t& style_sheets() noexcept;
+      
+      /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet names.
+      /// @return The installed xtd::forms::style_sheets::style_sheet names.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      static const xtd::forms::style_sheets::style_sheet::style_sheet_names_t& style_sheet_names() noexcept;
+      
+      /// @brief Gets system xtd::forms::style_sheets::style_sheet style sheet.
+      /// @return The system xtd::forms::style_sheets::style_sheet style sheet.
+      /// @remarks The system style sheet is the style sheet corresponding to the current Operating System and the current Desktop Environment.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      static const xtd::forms::style_sheets::style_sheet& system_style_sheet() noexcept;
+
       /// @brief Gets the path for the application data of a user.
       /// @return The path for the application data of a user.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
@@ -141,7 +166,11 @@ namespace xtd {
       /// The following code example demonstrate the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
       static bool use_wait_cursor();
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Sets whether the wait cursor is used for all open forms of the application.
       /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
       /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
@@ -204,7 +233,14 @@ namespace xtd {
       /// @brief Exits the message loop on the current thread and closes all windows on the thread.
       /// @remarks Use this method to exit the message loop of the current thread. This method causes the call to run for the current thread to return. To exit the entire application, call exit.
       static void exit_thread();
-      
+
+      /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
+      /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
+      /// @exception xtd::argument_exception The style sheet name not tvalid.
+      /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      static xtd::forms::style_sheets::style_sheet get_style_sheet_from_name(const xtd::ustring& name);
+
       /// @brief Raises the Idle event
       /// @param e The event_args objects to pass to the idle event.
       static void raise_idle(const event_args& e);
