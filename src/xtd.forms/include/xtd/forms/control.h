@@ -678,6 +678,15 @@ namespace xtd {
       /// @return Current control.
       virtual control& size(const drawing::size& size);
       
+      /// @brief Gets the contol style sheet.
+      /// @return The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      virtual style_sheets::style_sheet style_sheet() const;
+      /// @brief Sets the contol style sheet.
+      /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      virtual control& style_sheet(const style_sheets::style_sheet& value);
+      
       /// @brief Gets the object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
@@ -1886,6 +1895,7 @@ namespace xtd {
         std::optional<drawing::size> size;
         control::state state = control::state::empty;
         control_styles style = control_styles::none;
+        style_sheets::style_sheet style_sheet;
         std::any tag;
         xtd::ustring text;
       };

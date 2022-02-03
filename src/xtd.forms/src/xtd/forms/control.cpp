@@ -623,6 +623,16 @@ control& control::size(const drawing::size& size) {
   return *this;
 }
 
+style_sheets::style_sheet control::style_sheet() const {
+  return data_->style_sheet;
+}
+
+control& control::style_sheet(const style_sheets::style_sheet& value) {
+  data_->style_sheet = value;
+  data_->style_sheet.theme_.name("-- user sttyle sheet --");
+  return *this;
+}
+
 std::any control::tag() const {
   return data_->tag;
 }
