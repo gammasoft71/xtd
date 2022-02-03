@@ -1,0 +1,31 @@
+/* Contains button-default definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+button:default {
+  margin: 2px 0px 1px 0px;
+  border-style: outset;
+  border-color: #E8E8E8;
+  border-width: 1px;
+  border-radius: 5px;
+  background-image: linear-gradient(#076BD9 , #0067D8);
+  padding: 1px 1px 3px 1px;
+  color: rgba(255, 255, 255, 216);
+}
+
+button:default:pressed {
+  background-image: linear-gradient(#2D5AEB , #2E6AEB);
+}
+
+button:default:checked {
+  background-image: linear-gradient(#2D5AEB , #2E6AEB);
+}
+
+button:default:mixed {
+  background-image: linear-gradient(#2D5AEB , #2E6AEB);
+}
+
+button:default:disabled {  
+  border-color: system-color(gray-text);
+  background-image: linear-gradient(rgba(255, 255, 255, 30), rgba(255, 255, 255, 30));
+  color: system-color(gray-text);
+}

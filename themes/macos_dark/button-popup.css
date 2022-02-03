@@ -1,0 +1,36 @@
+/* Contains button-popup definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+button:popup {
+  border-style: solid;
+  border-color: system-color(control-text);
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: system-color(control);
+  color: system-color(control-text);
+}
+
+button:popup:pressed {
+  border-style: inset;
+  background-color: rgba(255, 255, 255, 93);
+}
+
+button:popup:checked {
+  border-style: inset;
+  background-color: rgba(255, 255, 255, 93);
+}
+
+button:popup:mixed {
+  border-style: inset;
+  background-color: rgba(255, 255, 255, 78);
+}
+
+button:popup:hover {
+  border-style: outset;
+}
+
+button:popup:disabled {  
+  border-color: system-color(gray-text);
+  background-color: rgba(255, 255, 255, 35);
+  color: system-color(gray-text);
+}
