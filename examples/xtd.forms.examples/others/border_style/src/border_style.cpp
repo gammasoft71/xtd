@@ -30,7 +30,7 @@ namespace examples {
       }
       
       control_panel.border_sides(border_sides::top);
-      control_panel.border_style(border_style::etched);
+      control_panel.border_style(border_style::theme);
       control_panel.controls().push_back_range({choose_color_label, colors_chooser, select_sides_label, top_side, left_side, bottom_side, right_side});
       control_panel.dock(dock_style::bottom);
       
@@ -101,7 +101,7 @@ namespace examples {
     }
     
   private:
-    inline static const vector<border_style> border_styles {border_style::none, border_style::fixed_single, border_style::thin_sunken, border_style::thin_raised, border_style::bevel_sunken, border_style::bevel_raised, border_style::etched, border_style::bump, border_style::themed, border_style::rounded_single, border_style::dot_single, border_style::dash_single, border_style::dash_dot_single, border_style::dash_dot_dot_single, border_style::fixed_double};
+    inline static const vector<border_style> border_styles {border_style::none, border_style::solid, border_style::inset, border_style::outset, border_style::groove, border_style::ridge, border_style::theme, border_style::dashed, border_style::dot_dash, border_style::dot_dot_dash, border_style::dotted, border_style::double_border, border_style::bevel_inset, border_style::bevel_outset, border_style::rounded};
     panel colored_panel;
     vector<label> bordered_labels {border_styles.size()};
     forms::border_sides border_sides = forms::border_sides::all;
