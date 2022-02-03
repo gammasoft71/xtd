@@ -30,8 +30,8 @@ namespace xtd {
       };
       
       /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const image_type value) {return os << to_string(value, {{image_type::none, "none,"}, {image_type::url, "url,"}, {image_type::linear_gradient, "linear_gradient,"}, {image_type::radial_gradient, "radial_gradient,"}, {image_type::conic_gradient, "conic_gradient,"}});}
-      inline std::wostream& operator<<(std::wostream& os, const image_type value) {return os << to_string(value, {{image_type::none, L"none,"}, {image_type::url, L"url,"}, {image_type::linear_gradient, L"linear_gradient,"}, {image_type::radial_gradient, L"radial_gradient,"}, {image_type::conic_gradient, L"conic_gradient,"}});}
+      inline std::ostream& operator<<(std::ostream& os, const image_type value) {return os << to_string(value, {{image_type::none, "none"}, {image_type::url, "url"}, {image_type::linear_gradient, "linear_gradient"}, {image_type::radial_gradient, "radial_gradient"}, {image_type::conic_gradient, "conic_gradient"}});}
+      inline std::wostream& operator<<(std::wostream& os, const image_type value) {return os << to_string(value, {{image_type::none, L"none"}, {image_type::url, L"url"}, {image_type::linear_gradient, L"linear_gradient"}, {image_type::radial_gradient, L"radial_gradient"}, {image_type::conic_gradient, L"conic_gradient"}});}
       /// @endcond
     }
   }
