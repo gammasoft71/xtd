@@ -26,6 +26,7 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @cond
+    class control;
     class form;
     /// @endcond
     
@@ -229,6 +230,7 @@ namespace xtd {
         
       private:
         friend class ::__test_style_sheet__; // Necessary for the test unit to access the private member functions
+        friend class xtd::forms::control;
         friend class xtd::forms::form;
         xtd::drawing::color background_color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
