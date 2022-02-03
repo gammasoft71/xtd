@@ -29,8 +29,8 @@ namespace xtd {
       };
       
       /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const text_transformation value) {return os << to_string(value, {{text_transformation::none, "none,"}, {text_transformation::lowercase, "lowercase,"}, {text_transformation::uppercase, "uppercase,"}, {text_transformation::capitalize, "capitalize,"}});}
-      inline std::wostream& operator<<(std::wostream& os, const text_transformation value) {return os << to_string(value, {{text_transformation::none, L"none,"}, {text_transformation::lowercase, L"lowercase,"}, {text_transformation::uppercase, L"uppercase,"}, {text_transformation::capitalize, L"capitalize,"}});}
+      inline std::ostream& operator<<(std::ostream& os, const text_transformation value) {return os << to_string(value, {{text_transformation::none, "none"}, {text_transformation::lowercase, "lowercase"}, {text_transformation::uppercase, "uppercase"}, {text_transformation::capitalize, "capitalize"}});}
+      inline std::wostream& operator<<(std::wostream& os, const text_transformation value) {return os << to_string(value, {{text_transformation::none, L"none"}, {text_transformation::lowercase, L"lowercase"}, {text_transformation::uppercase, L"uppercase"}, {text_transformation::capitalize, L"capitalize"}});}
       /// @endcond
     }
   }

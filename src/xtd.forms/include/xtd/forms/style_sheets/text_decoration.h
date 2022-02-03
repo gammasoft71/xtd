@@ -30,8 +30,8 @@ namespace xtd {
       };
       
       /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const text_decoration value) {return os << to_string(value, {{text_decoration::none, "none,"}, {text_decoration::overline, "overline,"}, {text_decoration::line_through, "line_through,"}, {text_decoration::underline, "underline,"}});}
-      inline std::wostream& operator<<(std::wostream& os, const text_decoration value) {return os << to_string(value, {{text_decoration::none, L"none,"}, {text_decoration::overline, L"overline,"}, {text_decoration::line_through, L"line_through,"}, {text_decoration::underline, L"underline,"}});}
+      inline std::ostream& operator<<(std::ostream& os, const text_decoration value) {return os << to_string(value, {{text_decoration::none, "none"}, {text_decoration::overline, "overline"}, {text_decoration::line_through, "line_through"}, {text_decoration::underline, "underline"}});}
+      inline std::wostream& operator<<(std::wostream& os, const text_decoration value) {return os << to_string(value, {{text_decoration::none, L"none"}, {text_decoration::overline, L"overline"}, {text_decoration::line_through, L"line_through"}, {text_decoration::underline, L"underline"}});}
       /// @endcond
     }
   }
