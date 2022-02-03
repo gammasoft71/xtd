@@ -44,15 +44,15 @@ void button_renderer::draw_button(const style_sheets::style_sheet& style_sheet, 
 }
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, push_button_state button_state, bool default_button, const optional<color>& back_color) {
-  draw_button(style_sheet::current_style_sheet(), graphics, bounds, button_style, button_state, default_button, nullopt, "", nullopt, nullopt, nullopt);
+  draw_button(style_sheet::current_style_sheet(), graphics, bounds, button_style, button_state, default_button, back_color, "", nullopt, nullopt, nullopt);
 }
 
 void button_renderer::draw_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, flat_style button_style, push_button_state button_state, bool default_button, const optional<color>& back_color) {
-  draw_button(style_sheet, graphics, bounds, button_style, button_state, default_button, nullopt, "", nullopt, nullopt, nullopt);
+  draw_button(style_sheet, graphics, bounds, button_style, button_state, default_button, back_color, "", nullopt, nullopt, nullopt);
 }
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, flat_style button_style, push_button_state button_state, bool default_button, const optional<color>& back_color, const ustring& text, const optional<text_format_flags>& text_flags, const optional<color>& fore_color, const optional<font>& font) {
-  draw_button(style_sheet::current_style_sheet(), graphics, bounds, button_style, button_state, default_button, nullopt, "", nullopt, nullopt, nullopt);
+  draw_button(style_sheet::current_style_sheet(), graphics, bounds, button_style, button_state, default_button, back_color, text, text_flags, fore_color, font);
 }
 
 void button_renderer::draw_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, flat_style button_style, push_button_state button_state, bool default_button, const optional<color>& back_color, const ustring& text, const optional<text_format_flags>& text_flags, const optional<color>& fore_color, const optional<font>& font) {
