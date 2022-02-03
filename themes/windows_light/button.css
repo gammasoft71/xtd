@@ -3,7 +3,7 @@
 
 button {
   margin: 2px 1px 2px 1px;
-  border-style: solid; /* themed; */
+  border-style: solid; /* theme; */
   border-color: system-color(control-dark);
   border-width: 1px; /* 2px; */
   border-radius: 0px;
@@ -67,7 +67,7 @@ button:default:mixed {
 }
 
 button:default:hover {
-  border-style: solid; /* themed; */
+  border-style: solid; /* theme; */
   border-width: 1px; /* 2px; */
   /*background-color: rgba(229, 241, 251, 255);*/
   background-color: rgba(219, 243, 255, 128);
