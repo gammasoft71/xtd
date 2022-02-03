@@ -16,45 +16,47 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks Use the members of this enumeration to set the border style for controls that have a changeable border.
     enum class border_style {
-      /// @brief No border.
-      none = 0,
-      /// @brief A single-line border.
-      fixed_single = 1,
-      /// @brief A thin sunken border.
-      /// @remarks Same as xtd::forms::border_style::fixed_3d.
-      thin_sunken = 2,
-      /// @brief A three-dimensional border.
-      /// @remarks Same as xtd::forms::border_style::thin_sunken.
-      fixed_3d = thin_sunken,
-      /// @brief A thin raised border.
-      thin_raised = 3,
-      /// @brief A bevel sunken border.
-      bevel_sunken = 4,
-      /// @brief A bevel raised border.
-      bevel_raised = 5,
-      /// @brief A etched border.
-      etched = 6,
-      /// @brief A bump border.
-      bump = 7,
-      /// @brief A themed border.
-      themed = 8,
-      /// @brief A double-line border.
-      rounded_single = 9,
-      /// @brief A single dot line border.
-      dot_single = 10,
-      /// @brief A single dash line border.
-      dash_single = 11,
-      /// @brief A single dash dot line border.
-      dash_dot_single = 12,
-      /// @brief A single dash dot dot line border.
-      dash_dot_dot_single = 13,
-      /// @brief A double-line border.
-      fixed_double = 14,
+      /// @brief Defines no border.
+      none,
+      /// @brief Defines a hidden border.
+      hidden = none,
+      /// @brief Defines a solid border
+      solid,
+      /// @brief Defines a 3D inset border. The effect depends on the border color value.
+      inset,
+      /// @brief Defines a 3D outset border. The effect depends on the border color value.
+      outset,
+      /// @brief Defines a 3D grooved border. The effect depends on the border color value.
+      groove,
+      /// @brief Defines a 3D ridged border. The effect depends on the border color value.
+      ridge,
+      /// @brief Defines a 3D themed border. The effect depends on the border color value.
+      theme,
+      /// @brief Defines a dashed border.
+      dashed,
+      /// @brief Defines a dot dashed border.
+      dot_dash,
+      /// @brief Defines a dot dot dashed border.
+      dot_dot_dash,
+      /// @brief Defines a dotted border.
+      dotted,
+      /// @brief Defines a double border.
+      double_border,
+      /// @brief A bevel inset border.
+      bevel_inset,
+      /// @brief A bevel outset border.
+      bevel_outset,
+      /// @brief A rounded line border.
+      rounded,
+      /// @brief A single-line border. Same as xtd::forms::border_style::solid
+      fixed_single = solid,
+      /// @brief A three-dimensional border. Same as xtd::forms::border_style::inset.
+      fixed_3d = inset,
     };
     
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, border_style value) {return os << to_string(value, {{border_style::none, "none"}, {border_style::fixed_single, "fixed_single"}, {border_style::thin_sunken, "thin_sunken"}, {border_style::thin_raised, "thin_raised"}, {border_style::bevel_sunken, "bevel_sunken"}, {border_style::bevel_raised, "bevel_raised"}, {border_style::etched, "etched"}, {border_style::bump, "bump"}, {border_style::themed, "themed"}, {border_style::fixed_double, "fixed_double"}, {border_style::rounded_single, "rounded_single"}, {border_style::dot_single, "dot_single"}, {border_style::dash_single, "dash_single"}, {border_style::dash_dot_single, "dash_dot_single"}, {border_style::dash_dot_dot_single, "dash_dot_dot_single"}});}
-    inline std::wostream& operator<<(std::wostream& os, border_style value) {return os << to_string(value, {{border_style::none, L"none"}, {border_style::fixed_single, L"fixed_single"}, {border_style::thin_sunken, L"thin_sunken"}, {border_style::thin_raised, L"thin_raised"}, {border_style::bevel_sunken, L"bevel_sunken"}, {border_style::bevel_raised, L"bevel_raised"}, {border_style::etched, L"etched"}, {border_style::bump, L"bump"}, {border_style::themed, L"themed"}, {border_style::fixed_double, L"fixed_double"}, {border_style::rounded_single, L"rounded_single"}, {border_style::dot_single, L"dot_single"}, {border_style::dash_single, L"dash_single"}, {border_style::dash_dot_single, L"dash_dot_single"}, {border_style::dash_dot_dot_single, L"dash_dot_dot_single"}});}
+    inline std::ostream& operator<<(std::ostream& os, const border_style value) {return os << to_string(value, {{border_style::hidden, "hidden"}, {border_style::fixed_single, "fixed_single"}, {border_style::fixed_3d, "fixed_3d"}, {border_style::none, "none"}, {border_style::solid, "solid"}, {border_style::inset, "inset"}, {border_style::outset, "outset"}, {border_style::groove, "groove"}, {border_style::ridge, "ridge"}, {border_style::theme, "theme"}, {border_style::dashed, "dashed"}, {border_style::dot_dash, "dot_dash"}, {border_style::dot_dot_dash, "dot_dot_dash"}, {border_style::dotted, "dotted"}, {border_style::double_border, "double_border"}, {border_style::bevel_inset, "bevel_inset"}, {border_style::bevel_outset, "bevel_outset"}, {border_style::rounded, "rounded"}});}
+    inline std::wostream& operator<<(std::wostream& os, const border_style value) {return os << to_string(value, {{border_style::hidden, L"hidden"}, {border_style::fixed_single, L"fixed_single"}, {border_style::fixed_3d, L"fixed_3d"}, {border_style::none, L"none"}, {border_style::solid, L"solid"}, {border_style::inset, L"inset"}, {border_style::outset, L"outset"}, {border_style::groove, L"groove"}, {border_style::ridge, L"ridge"}, {border_style::theme, L"theme"}, {border_style::dashed, L"dashed"}, {border_style::dot_dash, L"dot_dash"}, {border_style::dot_dot_dash, L"dot_dot_dash"}, {border_style::dotted, L"dotted"}, {border_style::double_border, L"double_border"}, {border_style::bevel_inset, L"bevel_inset"}, {border_style::bevel_outset, L"bevel_outset"}, {border_style::rounded, L"rounded"}});}
     /// @endcond
   }
 }
