@@ -40,7 +40,7 @@ namespace examples {
   public:
     form1() {
       owner_button1.location({145, 25});
-      owner_button2.size({80, 25});
+      owner_button1.size({80, 25});
       owner_button1.text("Button 1");
       
       owner_button2.location({105, 70});
