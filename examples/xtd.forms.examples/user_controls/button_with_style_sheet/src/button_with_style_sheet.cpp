@@ -51,7 +51,7 @@ namespace examples {
       button3.size({320, 100});
       button3.style_sheet("button {"
                           "  margin: 0px 0px 0px 33vw;"
-                          "  border-style: outset;"
+                          "  border-style: solid;"
                           "  border-color: red;"
                           "  border-width: 1px;"
                           "  border-radius: 50vh;"
@@ -62,6 +62,7 @@ namespace examples {
                           "}"
                           ""
                           "button:hover {"
+                          "  border-style: outset;"
                           "  color: #FF5555;"
                           "}"
                           ""
@@ -69,7 +70,7 @@ namespace examples {
                           "  border-style: inset;"
                           "  background-image: linear-gradient(rgba(255, 0, 0, 64), rgba(255, 0, 0, 128));"
                           "  color: #FF5555;"
-                          "  }");
+                          "}");
       button3.text("Button 3");
       
       text("Button with style sheet example");
