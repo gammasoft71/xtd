@@ -629,7 +629,7 @@ style_sheets::style_sheet control::style_sheet() const {
 
 control& control::style_sheet(const style_sheets::style_sheet& value) {
   data_->style_sheet = value;
-  if (data_->style_sheet.theme_.name().empty()) data_->style_sheet.theme_.name("-- user sttyle sheet --");
+  if (data_->style_sheet.theme_.name().empty()) data_->style_sheet.theme_.name("-- user style sheet --");
   return *this;
 }
 
