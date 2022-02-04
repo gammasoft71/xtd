@@ -686,7 +686,11 @@ namespace xtd {
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
       virtual control& style_sheet(const style_sheets::style_sheet& value);
-      
+      /// @brief Sets the contol style sheet.
+      /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      virtual control& style_sheet(const xtd::ustring& value);
+
       /// @brief Gets the object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.

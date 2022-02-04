@@ -629,8 +629,12 @@ style_sheets::style_sheet control::style_sheet() const {
 
 control& control::style_sheet(const style_sheets::style_sheet& value) {
   data_->style_sheet = value;
-  data_->style_sheet.theme_.name("-- user sttyle sheet --");
+  if (data_->style_sheet.theme_.name().empty()) data_->style_sheet.theme_.name("-- user sttyle sheet --");
   return *this;
+}
+
+control& control::style_sheet(const ustring& value) {
+  return style_sheet(style_sheets::style_sheet(value));
 }
 
 std::any control::tag() const {
