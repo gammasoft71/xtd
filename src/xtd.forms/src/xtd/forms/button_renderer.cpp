@@ -71,7 +71,7 @@ void button_renderer::draw_button(const style_sheets::style_sheet& style_sheet, 
     case push_button_state::default_state: current_button_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::default_state); break;
   }
   if ((button_state == push_button_state::normal || button_state == push_button_state::default_state) && back_color.has_value()) current_button_style_sheet.background_color(back_color.value());
-  if (fore_color.has_value()) current_button_style_sheet.color(fore_color.value());
+  if (fore_color.has_value() && button_state != push_button_state::disabled) current_button_style_sheet.color(fore_color.value());
   if (font.has_value()) current_button_style_sheet.font(font.value());
   
   box_renderer::draw_box(graphics, bounds, current_button_style_sheet);
