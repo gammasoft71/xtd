@@ -3,29 +3,26 @@
 
 button:popup {
   border-style: solid;
-  border-color: system-color(control-text);
+  border-color: system-color(control-dark);
   border-width: 1px;
   border-radius: 5px;
   background-color: system-color(control);
-  color: system-color(control-dark);
+  color: system-color(control-text);
 }
 
 button:popup:pressed {
   border-style: inset;
   border-width: 2px;
-  background-color: rgba(255, 255, 255, 93);
 }
 
 button:popup:checked {
   border-style: inset;
   border-width: 2px;
-  background-color: rgba(255, 255, 255, 93);
 }
 
 button:popup:mixed {
   border-style: inset;
   border-width: 1px;
-  background-color: rgba(255, 255, 255, 78);
 }
 
 button:popup:hover {

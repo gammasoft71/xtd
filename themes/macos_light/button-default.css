@@ -4,28 +4,28 @@
 button:default {
   margin: 2px 0px 1px 0px;
   border-style: outset;
-  border-color: #E8E8E8;
+  border-color: system-color(control-dark);
   border-width: 1px;
   border-radius: 5px;
-  background-image: linear-gradient(#076BD9 , #0067D8);
+  background-image: linear-gradient(#3491FF , #337BFF);
   padding: 1px 1px 3px 1px;
-  color: rgba(255, 255, 255, 216);
+  color: rgba(255, 255, 255, 226);
 }
 
 button:default:pressed {
-  background-image: linear-gradient(#2D5AEB , #2E6AEB);
+  background-image: linear-gradient(#2F7CEB , #2E67EB);
 }
 
 button:default:checked {
-  background-image: linear-gradient(#2D5AEB , #2E6AEB);
+  background-image: linear-gradient(#2F7CEB , #2E67EB);
 }
 
 button:default:mixed {
-  background-image: linear-gradient(#2D5AEB , #2E6AEB);
+  background-image: linear-gradient(#4E8FEE , #4D7DEE);
 }
 
 button:default:disabled {  
   border-color: system-color(gray-text);
-  background-image: linear-gradient(rgba(255, 255, 255, 30), rgba(255, 255, 255, 30));
+  background-image: linear-gradient(rgba(255, 255, 255, 35), rgba(255, 255, 255, 35));
   color: system-color(gray-text);
 }
