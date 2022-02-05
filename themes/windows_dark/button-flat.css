@@ -19,15 +19,15 @@ button:flat:checked {
 }
 
 button:flat:mixed {
-  background-color: 255, 255, 255, 78);
+  background-color: 0, 0, 0, 78);
 }
 
 button:flat:hover {
-  background-color: rgba(0, 0, 0, 25);
+  background-color: system-color(control-light);
 }
 
 button:flat:disabled {  
   border-color: system-color(gray-text);
-  background-color: #CCCCCC;
+  background-color: #343434;
   color: system-color(gray-text);
 }
