@@ -1,7 +1,7 @@
 /* Contains button-flat-default definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-button:fla:defaultt {
+button:flat:default {
   border-style: solid;
   border-color: system-color(control-text);
   border-width: 2px;
