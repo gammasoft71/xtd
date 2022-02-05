@@ -31,9 +31,9 @@ namespace xtd {
     /// class forms_export_ button_renderer static_
     /// @endcode
     /// @par Inheritance
-    /// xtd::static → xtd::forms::style_sheets::button_renderer
+    /// xtd::static → xtd::forms::button_renderer
     /// @par Namespace
-    /// xtd::forms::style_sheets
+    /// xtd::forms:
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms renderers
@@ -42,73 +42,55 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Draws a box in the specified bounds.
+      /// @brief Draws a button in the specified bounds.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The Graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds);
-      /// @brief Draws a box in the specified bounds.
+      /// @brief Draws a button in the specified bounds.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The Graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       static void draw_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds);
-      /// @brief Draws a box in the specified bounds and button style.
+      /// @brief Draws a button in the specified bounds and button style.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The Graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style);
-      /// @brief Draws a box in the specified bounds and button style.
+      /// @brief Draws a button in the specified bounds and button style.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The Graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       static void draw_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style);
-      /// @brief Draws a box in the specified bounds, button style and button state.
+      /// @brief Draws a button in the specified bounds, button style and button state.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The Graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       /// @param button_state The visual state of a button that is drawn with visual styles.
       static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button);
-      /// @brief Draws a box in the specified bounds, button style and button state.
+      /// @brief Draws a button in the specified bounds, button style and button state.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The Graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       /// @param button_state The visual state of a button that is drawn with visual styles.
       static void draw_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button);
-      /// @brief Draws a box in the specified bounds, button style, button state and background color.
+      /// @brief Draws a button in the specified bounds, button style, button state and background color.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The Graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       /// @param button_state The visual state of a button that is drawn with visual styles.
       /// @param back_color The background color for the button control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color);
-      /// @brief Draws a box in the specified bounds, button style, button state and background color.
+      /// @brief Draws a button in the specified bounds, button style, button state and background color.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The Graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       /// @param button_state The visual state of a button that is drawn with visual styles.
       /// @param back_color The background color for the button control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color);
-      /// @brief Draws a box in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
+      /// @brief Draws a button in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The xtd::drawing::graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       /// @param button_state The visual state of a button that is drawn with visual styles.
       /// @param back_color The background color for the button control.
@@ -118,11 +100,9 @@ namespace xtd {
       /// @param font The font of the text for the button control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::text_format_flags>& text_flags, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font);
-      /// @brief Draws a box in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
+      /// @brief Draws a button in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The xtd::drawing::graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       /// @param button_state The visual state of a button that is drawn with visual styles.
       /// @param back_color The background color for the button control.
@@ -132,11 +112,9 @@ namespace xtd {
       /// @param font The font of the text for the button control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::text_format_flags>& text_flags, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font);
-      /// @brief Draws a box in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
+      /// @brief Draws a button in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The xtd::drawing::graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       /// @param button_state The visual state of a button that is drawn with visual styles.
       /// @param back_color The background color for the button control.
@@ -148,11 +126,9 @@ namespace xtd {
       /// @param image_align Contains the display and layout information for image .
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::text_format_flags>& text_flags, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align);
-      /// @brief Draws a box in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
+      /// @brief Draws a button in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
       /// @param graphics The Graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
-      /// @param graphics The xtd::drawing::graphics used to draw a button control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
       /// @param button_style the flat style appearance of the button control.
       /// @param button_state The visual state of a button that is drawn with visual styles.
       /// @param back_color The background color for the button control.
