@@ -368,5 +368,16 @@ namespace unit_tests {
       auto style = styles.find("macOS (dark)")->second;
       assert::are_equal(background_image(image_type::linear_gradient, {color::from_argb(42, 24, 12), color::from_argb(84, 128, 16)}, 270), __test_style_sheet__::background_image_from_css(style, "linear-gradient(to left, rgb(42, 24, 12), rgb(84, 128, 16))", background_image::empty), csf_);
     }
+    
+    void test_method_(rect_test) {
+      auto bounds = drawing::rectangle(100, 200, 300, 400);
+      style_sheets::control ctrl;
+      ctrl.margin({1, 2, 3, 4});
+      ctrl.border_width({5, 6, 7, 8});
+      ctrl.padding({9, 10, 11, 12});
+      assert::are_equal(drawing::rectangle(102, 201, 294, 396), ctrl.get_border_rectangle(bounds));
+      assert::are_equal(drawing::rectangle(108, 206, 280, 384), ctrl.get_fill_rectangle(bounds));
+      assert::are_equal(drawing::rectangle(118, 215, 258, 364), ctrl.get_content_rectangle(bounds));
+    }
   };
 }

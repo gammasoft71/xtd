@@ -69,6 +69,15 @@ control& control::height(const std::optional<length>& value) noexcept {
   return *this;
 }
 
+xtd::forms::content_alignment control::image_alignment() const noexcept {
+  return image_alignment_;
+}
+
+control& control::image_alignment(xtd::forms::content_alignment value) noexcept {
+  image_alignment_ = value;
+  return *this;
+}
+
 const style_sheets::margin& control::margin() const noexcept {
   return margin_;
 }
@@ -96,12 +105,12 @@ control& control::width(optional<length> value) noexcept {
   return *this;
 }
 
-content_alignment control::alignment() const noexcept {
-  return alignment_;
+content_alignment control::text_alignment() const noexcept {
+  return text_alignment_;
 }
 
-control& control::alignment(content_alignment value) noexcept {
-  alignment_ = value;
+control& control::text_alignment(content_alignment value) noexcept {
+  text_alignment_ = value;
   return *this;
 }
 
@@ -146,7 +155,7 @@ bool control::equals(const object& other) const noexcept {
 }
 
 bool control::equals(const control& other) const noexcept {
-  return margin_ == other.margin_ && border_style_ == other.border_style_ && border_color_ == other.border_color_ && border_width_ == other.border_width_ && border_radius_ == other.border_radius_ && padding_ == other.padding_ && background_color_ == other.background_color_ && background_image_ == other.background_image_ && width_ == other.width_ && height_ == other.height_ && color_ == other.color_ && alignment_ == other.alignment_ && font_ == other.font_ && decoration_ == other.decoration_ && transformation_ == other.transformation_;
+  return margin_ == other.margin_ && border_style_ == other.border_style_ && border_color_ == other.border_color_ && border_width_ == other.border_width_ && border_radius_ == other.border_radius_ && padding_ == other.padding_ && background_color_ == other.background_color_ && background_image_ == other.background_image_ && width_ == other.width_ && height_ == other.height_ && color_ == other.color_ && text_alignment_ == other.text_alignment_ && font_ == other.font_ && decoration_ == other.decoration_ && transformation_ == other.transformation_;
 }
 
 rectangle control::get_border_rectangle(const rectangle& bounds) const noexcept {
@@ -176,47 +185,47 @@ string_format control::control::make_string_format() const noexcept {
   format.line_alignment(xtd::drawing::string_alignment::center);
   format.alignment(xtd::drawing::string_alignment::center);
   
-  if (alignment() == content_alignment::top_left) {
+  if (text_alignment() == content_alignment::top_left) {
     format.line_alignment(xtd::drawing::string_alignment::near);
     format.alignment(xtd::drawing::string_alignment::near);
   }
   
-  if (alignment() == content_alignment::top_center) {
+  if (text_alignment() == content_alignment::top_center) {
     format.line_alignment(xtd::drawing::string_alignment::near);
     format.alignment(xtd::drawing::string_alignment::center);
   }
   
-  if (alignment() == content_alignment::top_right) {
+  if (text_alignment() == content_alignment::top_right) {
     format.line_alignment(xtd::drawing::string_alignment::near);
     format.alignment(xtd::drawing::string_alignment::far);
   }
   
-  if (alignment() == content_alignment::middle_left) {
+  if (text_alignment() == content_alignment::middle_left) {
     format.line_alignment(xtd::drawing::string_alignment::center);
     format.alignment(xtd::drawing::string_alignment::near);
   }
   
-  if (alignment() == content_alignment::middle_center) {
+  if (text_alignment() == content_alignment::middle_center) {
     format.line_alignment(xtd::drawing::string_alignment::center);
     format.alignment(xtd::drawing::string_alignment::center);
   }
   
-  if (alignment() == content_alignment::middle_right) {
+  if (text_alignment() == content_alignment::middle_right) {
     format.line_alignment(xtd::drawing::string_alignment::center);
     format.alignment(xtd::drawing::string_alignment::far);
   }
   
-  if (alignment() == content_alignment::bottom_left) {
+  if (text_alignment() == content_alignment::bottom_left) {
     format.line_alignment(xtd::drawing::string_alignment::far);
     format.alignment(xtd::drawing::string_alignment::near);
   }
   
-  if (alignment() == content_alignment::bottom_center) {
+  if (text_alignment() == content_alignment::bottom_center) {
     format.line_alignment(xtd::drawing::string_alignment::far);
     format.alignment(xtd::drawing::string_alignment::center);
   }
   
-  if (alignment() == content_alignment::bottom_right) {
+  if (text_alignment() == content_alignment::bottom_right) {
     format.alignment(xtd::drawing::string_alignment::far);
     format.line_alignment(xtd::drawing::string_alignment::far);
   }

@@ -38,7 +38,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the alignment of the text.
         /// @return A combination of xtd::forms::content_alignment values.
-        virtual xtd::forms::content_alignment alignment() const noexcept = 0;
+        virtual xtd::forms::content_alignment text_alignment() const noexcept = 0;
 
         /// @brief Gets the color is used to add foreground effects to the text.
         /// @return The color is used to add foreground effects to the text.

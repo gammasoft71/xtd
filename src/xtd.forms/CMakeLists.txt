@@ -123,6 +123,7 @@ add_sources(
   include/xtd/forms/icontrol_trace.h
   include/xtd/forms/image_layout.h
   include/xtd/forms/image_list.h
+  include/xtd/forms/image_renderer.h
   include/xtd/forms/imessage_filter.h
   include/xtd/forms/input_box.h
   include/xtd/forms/input_box_style.h
@@ -256,17 +257,19 @@ add_sources(
   include/xtd/forms/layout/arranged_element_collection.h
   include/xtd/forms/layout/sorter_none.h
   include/xtd/forms/properties/resources.h
+  include/xtd/forms/style_sheets/background_image.h
   include/xtd/forms/style_sheets/border_color.h
   include/xtd/forms/style_sheets/border_radius.h
   include/xtd/forms/style_sheets/border_style.h
   include/xtd/forms/style_sheets/border_type.h
   include/xtd/forms/style_sheets/border_width.h
-  include/xtd/forms/style_sheets/ibox_model.h
   include/xtd/forms/style_sheets/button.h
   include/xtd/forms/style_sheets/control.h
   include/xtd/forms/style_sheets/form.h
+  include/xtd/forms/style_sheets/ibox_model.h
+  include/xtd/forms/style_sheets/iimage_model.h
   include/xtd/forms/style_sheets/image_type.h
-  include/xtd/forms/style_sheets/background_image.h
+  include/xtd/forms/style_sheets/itext_model.h
   include/xtd/forms/style_sheets/label.h
   include/xtd/forms/style_sheets/length.h
   include/xtd/forms/style_sheets/lengths.h
@@ -276,7 +279,6 @@ add_sources(
   include/xtd/forms/style_sheets/pseudo_state.h
   include/xtd/forms/style_sheets/style_sheet.h
   include/xtd/forms/style_sheets/system_colors.h
-  include/xtd/forms/style_sheets/itext_model.h
   include/xtd/forms/style_sheets/text_decoration.h
   include/xtd/forms/style_sheets/text_transformation.h
   include/xtd/forms/style_sheets/theme.h
@@ -333,6 +335,7 @@ add_sources(
   src/xtd/forms/horizontal_layout_panel.cpp
   src/xtd/forms/h_scroll_bar.cpp
   src/xtd/forms/image_list.cpp
+  src/xtd/forms/image_renderer.cpp
   src/xtd/forms/input_dialog.cpp
   src/xtd/forms/label.cpp
   src/xtd/forms/label_renderer.cpp

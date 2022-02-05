@@ -132,7 +132,41 @@ namespace xtd {
       /// @param font The font of the text for the button control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::text_format_flags>& text_flags, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font);
+      /// @brief Draws a box in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
+      /// @param graphics The Graphics used to draw a button.
+      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
+      /// @param graphics The xtd::drawing::graphics used to draw a button control.
+      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
+      /// @param button_style the flat style appearance of the button control.
+      /// @param button_state The visual state of a button that is drawn with visual styles.
+      /// @param back_color The background color for the button control.
+      /// @param text The text of the button control.
+      /// @param text_flags Contains the display and layout information for text strings.
+      /// @param fore_color The foreground color for the button control.
+      /// @param font The font of the text for the button control.
+      /// @param image The image of the button control.
+      /// @param image_align Contains the display and layout information for image .
+      /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
+      static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::text_format_flags>& text_flags, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align);
+      /// @brief Draws a box in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.
+      /// @param graphics The Graphics used to draw a button.
+      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
+      /// @param graphics The xtd::drawing::graphics used to draw a button control.
+      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button control.
+      /// @param button_style the flat style appearance of the button control.
+      /// @param button_state The visual state of a button that is drawn with visual styles.
+      /// @param back_color The background color for the button control.
+      /// @param text The text of the button control.
+      /// @param text_flags Contains the display and layout information for text strings.
+      /// @param fore_color The foreground color for the button control.
+      /// @param font The font of the text for the button control.
+      /// @param image The image of the button control.
+      /// @param image_align Contains the display and layout information for image .
+      /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
+      static void draw_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style button_style, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::text_format_flags>& text_flags, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align);
+      /// @}
 
+      /// @cond
       static void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::push_button_state& state) {draw_button(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, xtd::drawing::image::empty, xtd::drawing::rectangle(0, 0, 0, 0), false, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}
       static void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, bool focused, xtd::forms::visual_styles::push_button_state& state) {draw_button(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, xtd::drawing::image::empty, xtd::drawing::rectangle(0, 0, 0, 0), true, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}
       static void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state) {draw_button(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, image, image_bounds, focused, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text());}
@@ -167,7 +201,7 @@ namespace xtd {
       static void draw_popup_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state) {draw_popup_button(g, bounds, text, font, xtd::forms::text_format_flags::default_format, image, image_bounds, focused, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text(), flat_button_appearance());}
       static void draw_popup_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state) {draw_popup_button(g, bounds, text, font, flags, image, image_bounds, focused, state, xtd::forms::theme_colors::current_theme().control(), xtd::forms::theme_colors::current_theme().control_text(), flat_button_appearance());}
       static void draw_popup_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color, const flat_button_appearance& flat_appearance);
-      /// @}
+      /// @endcond
       
     private:
       static xtd::ustring default_theme() {return theme_renderers::current_theme().name();}
