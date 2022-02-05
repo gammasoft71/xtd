@@ -496,10 +496,11 @@ void style_sheet::control_reader(xtd::web::css::selector_map::const_iterator& se
   if ((properties_iterator = selectors_iterator->second.properties().find("background-color")) != selectors_iterator->second.properties().end()) control.background_color(background_color_from_css(properties_iterator->second.to_string(), color::transparent));
   if ((properties_iterator = selectors_iterator->second.properties().find("background-image")) != selectors_iterator->second.properties().end()) control.background_image(background_image_from_css(properties_iterator->second.to_string(), background_image::empty));
   if ((properties_iterator = selectors_iterator->second.properties().find("color")) != selectors_iterator->second.properties().end()) control.color(color_from_css(properties_iterator->second.to_string(), color::transparent));
-  if ((properties_iterator = selectors_iterator->second.properties().find("text-align")) != selectors_iterator->second.properties().end()) control.alignment(text_align_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
+  if ((properties_iterator = selectors_iterator->second.properties().find("text-align")) != selectors_iterator->second.properties().end()) control.text_alignment(text_align_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
   //if ((properties_iterator = selectors_iterator->second.properties().find("font")) != selectors_iterator->second.properties().end()) control.font(font_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
   if ((properties_iterator = selectors_iterator->second.properties().find("text-decoration")) != selectors_iterator->second.properties().end()) control.decoration(text_decoration_from_css(properties_iterator->second.to_string(), text_decoration::none));
   if ((properties_iterator = selectors_iterator->second.properties().find("text-transformation")) != selectors_iterator->second.properties().end()) control.transformation(text_transformation_from_css(properties_iterator->second.to_string(), text_transformation::none));
+  if ((properties_iterator = selectors_iterator->second.properties().find("image-align")) != selectors_iterator->second.properties().end()) control.image_alignment(text_align_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
 }
 
 void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexcept {
