@@ -21,7 +21,7 @@ button:default:checked {
 }
 
 button:default:mixed {
-  background-image: linear-gradient(#24A0F2 , #2194E5);
+  background-image: linear-gradient(#1E88CD , #1C7DC2);
 }
 
 button:default:disabled {  
