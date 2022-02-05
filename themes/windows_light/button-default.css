@@ -1,39 +1,41 @@
-/* Contains button definitions. */
+/* Contains button-default definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-button {
+button:default {
   margin: 2px 1px 2px 1px;
-  border-style: solid; /* theme; */
-  border-color: system-color(control-dark);
-  border-width: 1px; /* 2px; */
+  border-style: solid;
+  border-color: rgba(43, 120, 215, 255);
+  border-width: 2px;
   border-radius: 0px;
   background-color: system-color(button-face);
   padding: 1px;
   color: system-color(control-text);
 }
 
-button:pressed {
+button:default:pressed {
+  border-color: rgba(12, 9, 138, 255);
+  border-width: 1px;
+  background-color: rgba(204, 228, 247, 255);
+}
+
+button:default:checked {
   border-color: rgba(12, 9, 138, 255);
   background-color: rgba(204, 228, 247, 255);
 }
 
-button:checked {
+button:default:mixed {
   border-color: rgba(12, 9, 138, 255);
   background-color: rgba(204, 228, 247, 255);
 }
 
-button:mixed {
-  border-color: rgba(12, 9, 138, 255);
-  background-color: rgba(204, 228, 247, 255);
-}
-
-button:hover {
-  border-color: rgba(43, 120, 215, 255);
+button:default:hover {
+  border-style: solid; /* theme; */
+  border-width: 1px; /* 2px; */
   /*background-color: rgba(229, 241, 251, 255);*/
   background-color: rgba(219, 243, 255, 128);
 }
 
-button:disabled {  
+button:default:disabled {  
   border-color: system-color(gray-text);
   background-color: #CCCCCC;
   color: system-color(gray-text);
