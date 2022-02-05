@@ -58,7 +58,7 @@ namespace {
       {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::checked, style_sheets::button(button_popup_default).border_style(border_type::inset).border_width({3})},
       {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::mixed, style_sheets::button(button_popup_default).border_style(border_type::inset).border_width({2})},
       {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::hover, style_sheets::button(button_popup_default).border_style(border_type::outset).border_width({3})},
-      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, style_sheets::button(button_popup_default).border_style(border_type::solid)},
+      {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, style_sheets::button(button_popup_default).border_color(system_color.gray_text()).background_color(color::from_argb(35, 255, 255, 255)).color(system_color.gray_text())},
     };
   }
 
