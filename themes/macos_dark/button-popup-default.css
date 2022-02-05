@@ -13,19 +13,16 @@ button:popup:default {
 button:popup:default:pressed {
   border-style: inset;
   border-width: 3px;
-  background-color: rgba(255, 255, 255, 93);
 }
 
 button:popup:default:checked {
   border-style: inset;
   border-width: 3px;
-  background-color: rgba(255, 255, 255, 93);
 }
 
 button:popup:default:mixed {
   border-style: inset;
   border-width: 2px;
-  background-color: rgba(255, 255, 255, 78);
 }
 
 button:popup:default:hover {

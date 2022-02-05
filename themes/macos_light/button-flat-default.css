@@ -1,33 +1,33 @@
-/* Contains button-flat definitions. */
+/* Contains button-flat-default definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-button:flat {
+button:fla:defaultt {
   border-style: solid;
   border-color: system-color(control-text);
-  border-width: 1px;
+  border-width: 2px;
   border-radius: 5px;
   background-color: system-color(control);
   padding: 1px 1px 3px 1px;
   color: system-color(control-text);
 }
 
-button:flat:pressed {
+button:flat:default:pressed {
   background-color: rgba(236, 236, 236, 180);
 }
 
-button:flat:checked {
+button:flat:default:checked {
   background-color: rgba(236, 236, 236, 180);
 }
 
-button:flat:mixed {
+button:flat:default:mixed {
   background-color: rgba(157, 157, 157, 180);
 }
 
-button:flat:hover {
+button:flat:default:hover {
   background-color: rgba(157, 157, 157, 180);
 }
 
-button:flat:disabled {  
+button:flat:default:disabled {  
   border-color: system-color(gray-text);
   background-color: rgba(255, 255, 255, 35);
   color: system-color(gray-text);
