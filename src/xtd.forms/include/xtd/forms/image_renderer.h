@@ -38,10 +38,19 @@ namespace xtd {
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the image.
       /// @param image The xtd::drawing::image that specifies the image to draw.
       /// @param enable If is true the image is drawing normaly; otherwise the image is drawing in disable style.
-      /// @param back_color THe back color is usedd to draw image disabled.
+      /// @param back_color The back color is usedd to draw image disabled.
       /// @param data Contains the informations needed to draw image.
       /// @remarks if image is .xtd::drawing::image::empty, nothing is drawing.
       static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, const xtd::drawing::color& back_color, const xtd::forms::style_sheets::iimage_model& data);
+      /// @brief Draws an image in the specified bounds.
+      /// @param graphics The Graphics used to draw an image.
+      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the image.
+      /// @param image The xtd::drawing::image that specifies the image to draw.
+      /// @param enable If is true the image is drawing normaly; otherwise the image is drawing in disable style.
+      /// @param brightness The brightness is usedd to draw image disabled.
+      /// @param data Contains the informations needed to draw image.
+      /// @remarks if image is .xtd::drawing::image::empty, nothing is drawing.
+      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, float brightness, const xtd::forms::style_sheets::iimage_model& data);
       /// @}
       
     private:

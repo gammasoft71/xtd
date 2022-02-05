@@ -7,10 +7,14 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 void image_renderer::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, const xtd::drawing::color& back_color, const xtd::forms::style_sheets::iimage_model& data) {
+  draw_image(graphics, bounds, image, enabled, back_color.get_brightness(), data);
+}
+
+void image_renderer::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::drawing::image& image, bool enabled, float brigthtness, const xtd::forms::style_sheets::iimage_model& data) {
   if (image == drawing::image::empty) return;
   auto image_bounds = compute_image_bounds(bounds, image.size(), data.image_alignment());
   if (enabled) graphics.draw_image(image, image_bounds.location());
-  else control_paint::draw_image_disabled(graphics, image, image_bounds.location(), back_color);
+  else control_paint::draw_image_disabled(graphics, image, image_bounds.location(), brigthtness);
 }
 
 rectangle image_renderer::compute_image_bounds(const xtd::drawing::rectangle& bounds, const xtd::drawing::size& image_size, content_alignment align) noexcept {

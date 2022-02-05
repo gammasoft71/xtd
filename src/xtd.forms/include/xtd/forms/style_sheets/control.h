@@ -166,6 +166,7 @@ namespace xtd {
         
         static control create_control() {return control();}
         
+        xtd::drawing::color get_solid_background_color() const noexcept;
         xtd::drawing::rectangle get_border_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
         xtd::drawing::rectangle get_fill_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
         xtd::drawing::rectangle get_content_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
