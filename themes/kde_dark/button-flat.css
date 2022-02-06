@@ -28,6 +28,7 @@ button:flat:hover {
 }
 
 button:flat:disabled {  
-  background-color: #323232
+  border-color: system-color(gray-text);
+  background-color: #454A4E;
   color: system-color(gray-text);
 }

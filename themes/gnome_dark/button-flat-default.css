@@ -28,6 +28,6 @@ button:flat:default:hover {
 }
 
 button:flat:default:disabled {  
-  background-image: linear-gradient(#323232, #323232);
+  background-color: #323232;
   color: system-color(gray-text);
 }

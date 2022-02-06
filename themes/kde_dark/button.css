@@ -1,0 +1,46 @@
+/* Contains button definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+button {
+  margin: 0px 1px 1px 0px;
+  border-style: outset;
+  border-color: system-color(control-dark);
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: system-color(control);
+  padding: 1px 1px 3px 1px;
+  color: system-color(control-text);
+}
+
+button:pressed {
+  margin: 1px 0px 0px 1px;
+  border-style: inset;
+  border-color: system-color(accent);
+  background-color: system-color(accent);
+  color: system-color(accent-text);
+}
+
+button:checked {
+  margin: 1px 0px 0px 1px;
+  border-style: inset;
+  border-color: system-color(accent);
+  background-color: system-color(accent);
+  color: system-color(accent-text);
+}
+
+button:mixed {
+  margin: 1px 0px 0px 1px;
+  border-style: inset;
+  border-color: #28749C;
+  background-color: #28749C;
+  color: system-color(accent-text);
+}
+
+button:hover {
+  border-color: system-color(accent);
+}
+
+button:disabled {  
+  background-color: #454A4E;
+  color: system-color(gray-text);
+}
