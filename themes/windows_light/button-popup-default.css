@@ -12,7 +12,7 @@ button:popup:default {
 
 button:popup:default:pressed {
   border-style: inset;
-  border-width: 3px;
+  border-width: 2px;
 }
 
 button:popup:default:checked {
@@ -27,7 +27,7 @@ button:popup:default:mixed {
 
 button:popup:default:hover {
   border-style: outset;
-  border-width: 3px;
+  border-width: 2px;
 }
 
 button:popup:default:disabled {  

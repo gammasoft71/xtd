@@ -3,10 +3,10 @@
 
 button:popup:default {
   border-style: solid;
-  border-color: system-color(control-light);
+  border-color: system-color(control-dark);
   border-width: 2px;
+  border-radius: 4px;
   background-color: system-color(control);
-  padding: 1px;
   color: system-color(control-text);
 }
 
@@ -32,6 +32,6 @@ button:popup:default:hover {
 
 button:popup:default:disabled {  
   border-color: system-color(gray-text);
-  background-color: #343434;
+  background-image: linear-gradient(#3E3E3E, #3E3E3E);
   color: system-color(gray-text);
 }
