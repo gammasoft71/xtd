@@ -29,6 +29,6 @@ button:flat:default:hover {
 
 button:flat:default:disabled {  
   border-color: system-color(gray-text);
-  background-image: #323232;
+  background-color: #F1F2F3;
   color: system-color(gray-text);
 }
