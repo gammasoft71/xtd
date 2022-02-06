@@ -1,6 +1,7 @@
-# KDE light theme
+# Default theme
 
-Contains KDE light theme.
+Contains default theme. The defaul theme is the fallback for unknown Operating System.
+The basic look looks like the old win32 style.
 
 * [button-default](button-default.css) contains default button style.
 * [button-flat-default](button-flat-default.css) contains default flat button style.

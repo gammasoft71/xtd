@@ -2,5 +2,8 @@
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
 system-images {
-  images: "macos (dark)";
+  image: "macos (dark)";
+  /* image-address-book-new: url($(my_pictures)/space_gray/address-book-new.png); */
+  /* image-address-book-new: url($(my_pictures)/space_gray/address-book-new-1024.png) 1024px 1024px; */
+  /* image-address-book-new: url($(my_pictures)/space_gray/address-book-new-16.png) 16px 16px; */
 }

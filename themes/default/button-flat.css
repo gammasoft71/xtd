@@ -1,0 +1,32 @@
+/* Contains button-flat definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+button:flat {
+  border-style: solid;
+  border-color: system-color(control-dark);
+  border-width: 1px;
+  background-color: system-color(control);
+  padding: 1px;
+  color: system-color(control-text);
+}
+
+button:flat:pressed {
+  background-color: system-color(control);
+}
+
+button:flat:checked {
+  background-color: system-color(control);
+}
+
+button:flat:mixed {
+  background-color: system-color(control-light);
+}
+
+button:flat:hover {
+  background-color: system-color(control-dark);
+}
+
+button:flat:disabled {  
+  border-color: system-color(gray-text);
+  color: system-color(gray-text);
+}

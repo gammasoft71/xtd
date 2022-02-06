@@ -4,6 +4,7 @@ Contains themes styles.
 
 ## Current Operating System / Desktop Environment
 
+* [default](default) contains default theme (fallback for unknown Operation System).
 * [gnome_dark](gnome_dark) contains GNOME dark theme.
 * [gnome_light](gnome_light) contains GNOME dark theme.
 * [kde_dark](kde_dark) contains KDE dark theme.

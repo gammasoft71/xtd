@@ -40,6 +40,45 @@ style_sheet::style_sheet(const ustring& css_text) : style_sheet(css_text, true) 
 
 style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   if (init_system) *this = system_style_sheet();
+  else {
+    system_colors_.accent(drawing::system_colors::accent());
+    system_colors_.accent_text(drawing::system_colors::accent_text());
+    system_colors_.active_border(drawing::system_colors::active_border());
+    system_colors_.active_caption(drawing::system_colors::active_caption());
+    system_colors_.active_caption_text(drawing::system_colors::active_caption_text());
+    system_colors_.app_workspace(drawing::system_colors::app_workspace());
+    system_colors_.button_face(drawing::system_colors::button_face());
+    system_colors_.button_highlight(drawing::system_colors::button_highlight());
+    system_colors_.button_shadow(drawing::system_colors::button_shadow());
+    system_colors_.control(drawing::system_colors::control());
+    system_colors_.control_dark(drawing::system_colors::control_dark());
+    system_colors_.control_dark_dark(drawing::system_colors::control_dark_dark());
+    system_colors_.control_light(drawing::system_colors::control_light());
+    system_colors_.control_light_light(drawing::system_colors::control_light_light());
+    system_colors_.control_text(drawing::system_colors::control_text());
+    system_colors_.desktop(drawing::system_colors::desktop());
+    system_colors_.gradient_active_caption(drawing::system_colors::gradient_active_caption());
+    system_colors_.gradient_inactive_caption(drawing::system_colors::gradient_inactive_caption());
+    system_colors_.gray_text(drawing::system_colors::gray_text());
+    system_colors_.highlight(drawing::system_colors::highlight());
+    system_colors_.highlight_text(drawing::system_colors::highlight_text());
+    system_colors_.hot_track(drawing::system_colors::hot_track());
+    system_colors_.inactive_border(drawing::system_colors::inactive_border());
+    system_colors_.inactive_caption(drawing::system_colors::inactive_caption());
+    system_colors_.inactive_caption_text(drawing::system_colors::inactive_caption_text());
+    system_colors_.info(drawing::system_colors::info());
+    system_colors_.info_text(drawing::system_colors::info_text());
+    system_colors_.menu(drawing::system_colors::menu());
+    system_colors_.menu_bar(drawing::system_colors::menu_bar());
+    system_colors_.menu_highlight(drawing::system_colors::menu_highlight());
+    system_colors_.menu_text(drawing::system_colors::menu_text());
+    system_colors_.scroll_bar(drawing::system_colors::scroll_bar());
+    system_colors_.text_box(drawing::system_colors::text_box());
+    system_colors_.text_box_text(drawing::system_colors::text_box_text());
+    system_colors_.window(drawing::system_colors::window());
+    system_colors_.window_frame(drawing::system_colors::window_frame());
+    system_colors_.window_text(drawing::system_colors::window_text());
+  }
   css_reader reader(css_text);
   theme_reader(reader);
   system_colors_reader(reader);
@@ -169,10 +208,7 @@ const style_sheet& style_sheet::system_style_sheet() noexcept {
   } else if (environment::os_version().is_windows()) {
     if (application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "windows_dark")), false);
     else system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "windows_light")), false);
-  } else {
-    if (application::dark_mode_enabled()) system_style_sheet_ = system_style_sheet_unknown_dark();
-    else system_style_sheet_ = system_style_sheet_unknown_light();
-  }
+  } else system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "default")), false);
   
   return system_style_sheet_;
 }
