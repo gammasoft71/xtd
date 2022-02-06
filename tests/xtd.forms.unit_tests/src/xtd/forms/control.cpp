@@ -1,5 +1,4 @@
 #include <xtd/forms/control.h>
-#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/form.h>
 #include <xtd/xtd.tunit>
 
@@ -15,15 +14,15 @@ namespace unit_tests {
     void test_method_(new_control) {
       control control;
       assert::is_false(control.auto_size(), csf_);
-      assert::are_equal(system_colors::control(), control.back_color(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), control.back_color(), csf_);
       assert::is_zero(control.bottom(), csf_);
       assert::are_equal(drawing::rectangle(0, 0, 0, 0), control.bounds(), csf_);
       assert::are_equal(drawing::size(0, 0), control.client_size(), csf_);
-      assert::are_equal(system_colors::control(), control.default_back_color(), csf_);
-      assert::are_equal(system_colors::control_text(), control.default_fore_color(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), control.default_back_color(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), control.default_fore_color(), csf_);
       assert::are_equal(drawing::size(0, 0), control.default_size(), csf_);
       assert::is_true(control.enabled(), csf_);
-      assert::are_equal(system_colors::control_text(), control.fore_color(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), control.fore_color(), csf_);
       assert::is_zero(control.handle(), csf_);
       assert::are_equal(point(0, 0), control.location(), csf_);
       assert::is_false(control.parent().has_value(), csf_);

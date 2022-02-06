@@ -1,5 +1,4 @@
 #include <xtd/forms/form.h>
-#include <xtd/drawing/system_colors.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;
@@ -28,12 +27,12 @@ namespace unit_tests {
     
     void test_method_(new_form_default_back_color) {
       form form;
-      assert::are_equal(system_colors::control(), form.default_back_color(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), form.default_back_color(), csf_);
     }
     
     void test_method_(new_form_default_fore_color) {
       form form;
-      assert::are_equal(system_colors::control_text(), form.default_fore_color(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), form.default_fore_color(), csf_);
     }
     
     void test_method_(new_form_parent_default_size) {
