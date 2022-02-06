@@ -1,37 +1,37 @@
-/* Contains button-popup-default definitions. */
+/* Contains button-popup definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-button:popup:default {
+button:popup {
   border-style: solid;
-  border-color: system-color(control-light);
-  border-width: 2px;
+  border-color: system-color(control-dark);
+  border-width: 1px;
+  border-radius: 4px;
   background-color: system-color(control);
-  padding: 1px;
   color: system-color(control-text);
 }
 
-button:popup:default:pressed {
+button:popup:pressed {
   border-style: inset;
   border-width: 2px;
 }
 
-button:popup:default:checked {
-  border-style: inset;
-  border-width: 3px;
-}
-
-button:popup:default:mixed {
+button:popup:checked {
   border-style: inset;
   border-width: 2px;
 }
 
-button:popup:default:hover {
+button:popup:mixed {
+  border-style: inset;
+  border-width: 1px;
+}
+
+button:popup:hover {
   border-style: outset;
   border-width: 2px;
 }
 
-button:popup:default:disabled {  
+button:popup:disabled {  
   border-color: system-color(gray-text);
-  background-color: #343434;
+  background-image: linear-gradient(#3E3E3E, #3E3E3E);
   color: system-color(gray-text);
 }
