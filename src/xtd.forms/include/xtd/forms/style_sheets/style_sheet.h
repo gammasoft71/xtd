@@ -198,7 +198,21 @@ namespace xtd {
         /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static style_sheet get_style_sheet_from_name(const xtd::ustring& name);
-        
+
+        /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
+        /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
+        /// @exception xtd::argument_exception The style sheet name not tvalid.
+        /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        static style_sheet get_style_sheet_from_file(const xtd::ustring& file_name);
+
+        /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
+        /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
+        /// @exception xtd::argument_exception The style sheet name not tvalid.
+        /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+        static style_sheet get_style_sheet_from_path(const xtd::ustring& path_name);
+
         /// @brief Gets the style sheet forms collection from specified css string.
         /// @param css_text The css string that contains forms definition.
         /// @return The style sheet forms collection.
@@ -232,6 +246,8 @@ namespace xtd {
         friend class ::__test_style_sheet__; // Necessary for the test unit to access the private member functions
         friend class xtd::forms::control;
         friend class xtd::forms::form;
+        style_sheet(const xtd::ustring& css_text, bool init_system);
+        
         xtd::drawing::color background_color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         background_image background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept;
         border_color border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept;
@@ -257,16 +273,16 @@ namespace xtd {
         void system_colors_reader(xtd::web::css::css_reader& reader) noexcept;
         void theme_reader(xtd::web::css::css_reader& reader) noexcept;
 
-        static style_sheet system_style_sheet_gnome_dark() noexcept; // Declared in system_style_sheet_gnome_dark.cpp
-        static style_sheet system_style_sheet_gnome_light() noexcept; // Declared in system_style_sheet_gnome_light.cpp
-        static style_sheet system_style_sheet_kde_dark() noexcept; // Declared in system_style_sheet_kde_dark.cpp
-        static style_sheet system_style_sheet_kde_light() noexcept; // Declared in system_style_sheet_kde_light.cpp
-        static style_sheet system_style_sheet_macos_dark() noexcept; // Declared in system_style_sheet_macos_dark.cpp
-        static style_sheet system_style_sheet_macos_light() noexcept; // Declared in system_style_sheet_macos_light.cpp
+        //static style_sheet system_style_sheet_gnome_dark() noexcept; // Declared in system_style_sheet_gnome_dark.cpp
+        //static style_sheet system_style_sheet_gnome_light() noexcept; // Declared in system_style_sheet_gnome_light.cpp
+        //static style_sheet system_style_sheet_kde_dark() noexcept; // Declared in system_style_sheet_kde_dark.cpp
+        //static style_sheet system_style_sheet_kde_light() noexcept; // Declared in system_style_sheet_kde_light.cpp
+        //static style_sheet system_style_sheet_macos_dark() noexcept; // Declared in system_style_sheet_macos_dark.cpp
+        //static style_sheet system_style_sheet_macos_light() noexcept; // Declared in system_style_sheet_macos_light.cpp
         static style_sheet system_style_sheet_unknown_dark() noexcept; // Declared in system_style_sheet_unknown_dark.cpp
         static style_sheet system_style_sheet_unknown_light() noexcept; // Declared in system_style_sheet_unknown_light.cpp
-        static style_sheet system_style_sheet_windows_dark() noexcept; // Declared in system_style_sheet_windows_dark.cpp
-        static style_sheet system_style_sheet_windows_light() noexcept; // Declared in system_style_sheet_windows_light.cpp
+        //static style_sheet system_style_sheet_windows_dark() noexcept; // Declared in system_style_sheet_windows_dark.cpp
+        //static style_sheet system_style_sheet_windows_light() noexcept; // Declared in system_style_sheet_windows_light.cpp
 
         bool try_parse_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_hex_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;

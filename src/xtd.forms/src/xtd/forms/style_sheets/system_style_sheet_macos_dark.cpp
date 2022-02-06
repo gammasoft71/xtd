@@ -1,6 +1,6 @@
 #include "../../../../include/xtd/forms/style_sheets/style_sheet.h"
 #include <xtd/drawing/system_colors.h>
-
+/*
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
@@ -112,3 +112,4 @@ style_sheet style_sheet::system_style_sheet_macos_dark() noexcept {
   ss.buttons_ = get_buttons(ss.system_colors_);
   return ss;
 }
+*/

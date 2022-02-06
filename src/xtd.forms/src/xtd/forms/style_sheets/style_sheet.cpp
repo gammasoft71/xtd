@@ -7,6 +7,7 @@
 #include <xtd/forms/application.h>
 #include <xtd/io/directory.h>
 #include <xtd/io/file.h>
+#include <xtd/io/directory_not_found_exception.h>
 
 using namespace std;
 using namespace xtd;
@@ -17,6 +18,16 @@ using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 using namespace xtd::web::css;
 
+namespace {
+  xtd::ustring get_css_string_from_path(const xtd::ustring& path_name) {
+    if (!xtd::io::directory::exists(path_name)) throw xtd::io::directory_not_found_exception(csf_);
+    xtd::ustring theme_css;
+    for (auto theme_file : directory::enumerate_files(path_name, "*.css"))
+      theme_css += file::read_all_text(theme_file);
+    return theme_css;
+  }
+}
+
 const style_sheet style_sheet::empty;
 event<style_sheet, event_handler> style_sheet::style_sheet_changed;
 style_sheet style_sheet::current_style_sheet_;
@@ -24,9 +35,12 @@ style_sheet::style_sheets_t style_sheet::style_sheets_;
 style_sheet::style_sheet_names_t style_sheet::style_sheet_names_;
 style_sheet style_sheet::system_style_sheet_;
 
-style_sheet::style_sheet(const ustring& text) {
-  *this = system_style_sheet();
-  css_reader reader(text);
+style_sheet::style_sheet(const ustring& css_text) : style_sheet(css_text, true) {
+}
+
+style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
+  if (init_system) *this = system_style_sheet();
+  css_reader reader(css_text);
   theme_reader(reader);
   system_colors_reader(reader);
   button_reader(reader);
@@ -145,29 +159,19 @@ const style_sheet& style_sheet::system_style_sheet() noexcept {
   if (system_style_sheet_ != style_sheet::empty) return system_style_sheet_;
 
   if (environment::os_version().is_linux()) {
-    if (environment::os_version().desktop_environment() == "kde" && application::dark_mode_enabled())
-      system_style_sheet_ = system_style_sheet_kde_dark();
-    else if (environment::os_version().desktop_environment() == "kde" && !application::dark_mode_enabled())
-      system_style_sheet_ = system_style_sheet_kde_light();
-    else if (application::dark_mode_enabled())
-      system_style_sheet_ = system_style_sheet_gnome_dark();
-    else
-      system_style_sheet_ = system_style_sheet_gnome_light();
+    if (environment::os_version().desktop_environment() == "kde" && application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "kde_dark")), false);
+    else if (environment::os_version().desktop_environment() == "kde" && !application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "kde_light")), false);
+    else if (application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "gnome_dark")), false);
+    else system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "macos_dark")), false);
   } else if (environment::os_version().is_macos()) {
-    if (application::dark_mode_enabled())
-      system_style_sheet_ = system_style_sheet_macos_dark();
-    else
-      system_style_sheet_ = system_style_sheet_macos_light();
+    if (application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "macos_dark")), false);
+    else system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "macos_light")), false);
   } else if (environment::os_version().is_windows()) {
-    if (application::dark_mode_enabled())
-      system_style_sheet_ = system_style_sheet_windows_dark();
-    else
-      system_style_sheet_ = system_style_sheet_windows_light();
+    if (application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "windows_dark")), false);
+    else system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "windows_light")), false);
   } else {
-    if (application::dark_mode_enabled())
-      system_style_sheet_ = system_style_sheet_unknown_dark();
-    else
-      system_style_sheet_ = system_style_sheet_unknown_light();
+    if (application::dark_mode_enabled()) system_style_sheet_ = system_style_sheet_unknown_dark();
+    else system_style_sheet_ = system_style_sheet_unknown_light();
   }
   
   return system_style_sheet_;
@@ -214,6 +218,16 @@ style_sheet style_sheet::get_style_sheet_from_name(const xtd::ustring& name) {
     }
   }
   throw argument_exception(csf_);
+}
+
+style_sheet style_sheet::get_style_sheet_from_file(const xtd::ustring& file_name) {
+  if (!xtd::io::file::exists(file_name)) throw xtd::io::directory_not_found_exception(csf_);
+  xtd::ustring theme_css = file::read_all_text(file_name);
+  return style_sheet(theme_css);
+}
+
+style_sheet style_sheet::get_style_sheet_from_path(const xtd::ustring& path_name) {
+  return style_sheet(get_css_string_from_path(path_name));
 }
 
 xtd::forms::style_sheets::system_colors style_sheet::system_colors_from_css(const xtd::ustring& css_text) {
