@@ -7,6 +7,7 @@ include(../scripts/cmake/xtd_version.cmake)
 
 # Projects
 add_projects(
+  default 
   gnome_dark 
   gnome_light
   kde_dark 
@@ -23,6 +24,7 @@ add_projects(
 
 # Install
 if (XTD_INSTALL_RESOURCES)
+  install(DIRECTORY default DESTINATION share/xtd/themes)
   install(DIRECTORY gnome_dark DESTINATION share/xtd/themes)
   install(DIRECTORY gnome_light DESTINATION share/xtd/themes)
   install(DIRECTORY kde_dark DESTINATION share/xtd/themes)

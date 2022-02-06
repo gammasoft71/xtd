@@ -1,0 +1,33 @@
+/* Contains button-default definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+button:default {
+  border-style: outset;
+  border-color: system-color(control-dark);
+  border-width: 2px;
+  background-color: system-color(accent);
+  padding: 1px;
+  color: system-color(accent-text);
+}
+
+button:default:pressed {
+  border-style: inset;
+}
+
+button:default:checked {
+  border-style: inset;
+}
+
+button:default:mixed {
+  border-width: 1px;
+  border-style: inset;
+}
+
+button:default:hover {
+  border-color: system-color(control-light);
+}
+
+button:default:disabled {  
+  border-color: system-color(gray-text);
+  color: system-color(gray-text);
+}
