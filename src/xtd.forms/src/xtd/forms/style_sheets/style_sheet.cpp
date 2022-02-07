@@ -181,9 +181,10 @@ const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcep
   if (!style_sheet_names_.empty()) return style_sheet_names_;
 
   for (auto theme_dir : directory::enumerate_directories(__XTD_THEMES_PATH__)) {
-    css_reader reader(file::read_all_text(path::combine(__XTD_THEMES_PATH__, "theme.css")));
+    if (!file::exists(path::combine(theme_dir, "theme.css"))) continue;
+    css_reader reader(file::read_all_text(path::combine(theme_dir, "theme.css")));
     selector_map::const_iterator selectors_iterator =  reader.selectors().find("theme");
-    if (selectors_iterator == reader.selectors().end()) break;
+    if (selectors_iterator == reader.selectors().end()) continue;
     property_map::const_iterator properties_iterator;
     if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end()) style_sheet_names_.push_back(properties_iterator->second.to_string().trim().trim('\"'));
   }

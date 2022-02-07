@@ -36,7 +36,7 @@ private:
 };
 
 form1::form1() {
-  text("form1");
+  text("form1 - system");
   client_size({800, 450});
   //back_color(color::dark_blue);
   //back_color(color::light_blue);
@@ -124,6 +124,15 @@ form1::form1() {
   button12.text("Button 12");
   button12.flat_style(flat_style::popup);
   button12.enabled(false);
+  
+  click += [&] {
+    //static auto names = application::style_sheet_names();
+    static std::vector names = {"GNOME (dark)", "GNOME (light)", "KDE (dark)", "KDE (light)", "macOS (dark)", "macOS (light)", "Windows (dark)", "Windows (light)", "default"};
+    static auto current = 0U;
+    application::style_sheet(application::get_style_sheet_from_name(names[current]));
+    text(ustring::format("form1 - {}", names[current]));
+    if (++current >= names.size()) current = 0;
+  };
 }
 
 int main() {
