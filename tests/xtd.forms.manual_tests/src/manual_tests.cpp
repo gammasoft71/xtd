@@ -127,7 +127,7 @@ form1::form1() {
 }
 
 int main() {
-  //application::style_sheet(application::get_style_sheet_from_name("default"));
+  //application::style_sheet(application::get_style_sheet_from_name("Windows (light)"));
   application::run(form1());
 }
 

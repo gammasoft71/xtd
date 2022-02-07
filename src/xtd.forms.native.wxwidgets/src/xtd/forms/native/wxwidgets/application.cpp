@@ -14,9 +14,25 @@
 #include <xtd/drawing/system_colors.h>
 #include <wx/aboutdlg.h>
 #include <wx/sysopt.h>
+#include <wx/msw/registry.h>
 
 #if defined(__WXMSW__)
 extern drawing_native_export_ int __xtd_win32_enable_dark_mode__;
+static wxTimer* __system_color_detection_timer__;
+static bool __is_dark_mode__ = false;
+static void __on_timer_system_color_detection__(wxTimerEvent& e) {
+  static wxRegKey key(wxRegKey::HKCU, "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize");
+  long value;
+  key.QueryValue("AppsUseLightTheme", &value);
+  if (__is_dark_mode__ != !value) {
+    __is_dark_mode__ = !value;
+    init_dark_mode(__is_dark_mode__);
+    auto top_level_windows = wxTopLevelWindows;
+    for (auto window : top_level_windows)
+      SendMessage(window->GetHWND(), WM_SYSCOLORCHANGE, 0, 0);
+  }
+}
+
 #elif defined(__WXGTK__)
 bool __xtd_gtk_enable_dark_mode__ = false;
 bool __xtd_gtk_enable_button_images__ = false;
@@ -143,6 +159,15 @@ void application::initialize() {
   drawing::native::toolkit::initialize();
   static_cast<wx_application*>(wxApp::GetInstance())->processIdle += process_idle;
   #if defined(__WXMSW__)
+  wxRegKey key(wxRegKey::HKCU, "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize");
+  long value;
+  key.QueryValue("AppsUseLightTheme", &value);
+  __is_dark_mode__ = !value;
+
+  __system_color_detection_timer__ = new wxTimer();
+  __system_color_detection_timer__->Bind(wxEVT_TIMER, __on_timer_system_color_detection__);
+  __system_color_detection_timer__->Start(1000);
+
   init_dark_mode(__xtd_win32_enable_dark_mode__);
   #elif defined(__WXGTK__)
   __gtk_button_images__(__xtd_gtk_enable_button_images__);
@@ -173,6 +198,12 @@ void application::run() {
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
     static_cast<wx_application*>(wxTheApp)->MainLoop();
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_QUIT, 0, 0, 0);
+
+#if defined(__WXMSW__)
+    __system_color_detection_timer__->Unbind(wxEVT_TIMER, __on_timer_system_color_detection__);
+    delete __system_color_detection_timer__;
+#endif
+
     wxApp::SetInstance(nullptr);
     delete wxTheApp;
   }
