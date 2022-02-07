@@ -77,20 +77,8 @@ void button::on_handle_created(const event_args& e) {
 }
 
 void button::on_paint(paint_event_args& e) {
-  if (flat_style() != xtd::forms::flat_style::system) {
-    style_sheets::style_sheet current_style_sheet = style_sheets::style_sheet::current_style_sheet();
-    if (style_sheet() != style_sheets::style_sheet::empty) {
-      current_style_sheet = current_style_sheet = style_sheet();
-      button_renderer::draw_button(current_style_sheet, e.graphics(), e.clip_rectangle(), flat_style(), state(), default_button(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
-    } else if (environment::os_version().is_macos()) {
-      button_renderer::draw_button(e.graphics(), e.clip_rectangle(), flat_style(), state(), default_button(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
-    } else {
-      text_format_flags flags = to_text_format_flags(text_align());
-      if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), data_->state, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-      else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), data_->state, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-      else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), xtd::environment::os_version().is_macos_platform() && data_->default_button && data_->state == xtd::forms::visual_styles::push_button_state::hot ? xtd::forms::visual_styles::push_button_state::default_state  : data_->state, !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
-    }
-  }
+  if (flat_style() != xtd::forms::flat_style::system)
+    button_renderer::draw_button(style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet(), e.graphics(), e.clip_rectangle(), flat_style(), state(), default_button(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
   button_base::on_paint(e);
 }
 
