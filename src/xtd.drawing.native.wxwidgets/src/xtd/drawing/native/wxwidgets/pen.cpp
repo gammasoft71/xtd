@@ -28,6 +28,12 @@ void pen::color(intptr_t pen, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   reinterpret_cast<wxPen*>(pen)->SetColour(wxColour(r, g, b, a));
 }
 
+void pen::image(intptr_t pen, intptr_t image) {
+  toolkit::initialize(); // Must be first
+  reinterpret_cast<wx_pen*>(pen)->SetStyle(wxPenStyle::wxPENSTYLE_STIPPLE);
+  reinterpret_cast<wx_pen*>(pen)->SetStipple(*reinterpret_cast<wxImage*>(image));
+}
+
 void pen::dash_pattern(intptr_t pen, std::vector<float> dash_pattern) {
   toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->dashes.clear();

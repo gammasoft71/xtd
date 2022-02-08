@@ -1,6 +1,8 @@
 #include <stdexcept>
 #include "../../../include/xtd/drawing/pen.h"
+#include "../../../include/xtd/drawing/bitmap.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
+#include "../../../include/xtd/drawing/drawing2d/hatch_brush.h"
 #include <xtd/argument_exception.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/pen.h>
@@ -71,8 +73,13 @@ pen& pen::brush(const drawing::brush& brush) {
   if (dynamic_cast<const drawing::solid_brush*>(&brush) != nullptr) {
     data_->type_ = drawing2d::pen_type::solid_color;
     color(static_cast<const drawing::solid_brush&>(brush).color());
-    //} else if (dynamic_cast<const drawing2d::hatch_brush*>(&brush) != nullptr) {
-    //  type_ = drawing2d::pen_type::hatch_fill;
+  } else if (dynamic_cast<const drawing2d::hatch_brush*>(&brush) != nullptr) {
+    data_->type_ = drawing2d::pen_type::hatch_fill;
+    auto bitmap = drawing::bitmap(1000, 1000);
+    auto graphics = drawing::graphics::from_image(bitmap);
+    graphics.fill_rectangle(brush, xtd::drawing::rectangle(0, 0, 1000, 1000));
+    //color(drawing::color::transparent);
+    native::pen::image(data_->handle_, bitmap.handle());
     //} else if (dynamic_cast<const texture_brush*>(&brush) != nullptr) {
     //  type_ = drawing2d::pen_type::texture_fill;
     //} else if (dynamic_cast<const drawing2d::path_gradient_brush*>(&brush) != nullptr) {
@@ -105,11 +112,6 @@ pen& pen::dash_style(drawing::dash_style dash_style) {
     data_->dash_style_ = dash_style;
     native::pen::dash_style(data_->handle_, static_cast<uint32_t>(dash_style));
   }
-  return *this;
-}
-
-pen& pen::type(drawing2d::pen_type type) {
-  data_->type_ = type;
   return *this;
 }
 
