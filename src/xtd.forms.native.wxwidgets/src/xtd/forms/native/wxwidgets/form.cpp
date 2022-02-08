@@ -195,10 +195,10 @@ int32_t form::show_sheet_dialog(intptr_t control) {
   #if defined(__APPLE__)
   if (!dialog->GetParent()) return dialog->ShowModal();
   int32_t result = wxID_ANY;
+  dialog->ShowWindowModal();
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&](wxWindowModalDialogEvent & event) {
     result = event.GetReturnCode();
   });
-  dialog->ShowWindowModal();
   while (result == wxID_ANY) {
     wxYield();
     sleep_for(100ms);
