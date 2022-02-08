@@ -74,15 +74,8 @@ void background_image::image_type(style_sheets::image_type value) noexcept {
 }
 
 std::unique_ptr<xtd::drawing::brush> background_image::make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect) {
-  if (image.image_type() == style_sheets::image_type::linear_gradient) {
-    auto angle = image.angle() % 360;
-    if (angle < 0) angle = 360 + angle;
-    if (image.angle() <= 45) return make_unique<linear_gradient_brush>(rect, image.colors()[1], image.colors()[0], linear_gradient_mode::vertical);
-    if (image.angle() <= 135) return make_unique<linear_gradient_brush>(rect, image.colors()[0], image.colors()[1], linear_gradient_mode::horizontal);
-    if (image.angle() <= 225) return make_unique<linear_gradient_brush>(rect, image.colors()[0], image.colors()[1], linear_gradient_mode::vertical);
-    if (image.angle() <= 315) return make_unique<linear_gradient_brush>(rect, image.colors()[1], image.colors()[0], linear_gradient_mode::horizontal);
-    return make_unique<linear_gradient_brush>(rect, image.colors()[1], image.colors()[0], linear_gradient_mode::vertical);
-  }
+  if (image.image_type() == style_sheets::image_type::linear_gradient)
+    return make_unique<linear_gradient_brush>(rect, image.colors()[1], image.colors()[0], image.angle());
   if (image.image_type() == style_sheets::image_type::url)
     return make_unique<texture_brush>(image::from_file(image.url()));
   return null;

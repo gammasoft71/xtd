@@ -91,7 +91,6 @@ namespace xtd {
       xtd::drawing::pen& dash_style(drawing::dash_style dash_style);
       
       xtd::drawing::drawing2d::pen_type type() const {return data_->type_;}
-      xtd::drawing::pen& type(xtd::drawing::drawing2d::pen_type type);
       
       float width() const {return data_->width_;}
       xtd::drawing::pen& width(float width);
