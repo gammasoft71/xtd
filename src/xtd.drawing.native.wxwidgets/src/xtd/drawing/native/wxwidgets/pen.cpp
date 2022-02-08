@@ -19,8 +19,7 @@ intptr_t pen::create() {
   toolkit::initialize(); // Must be first
   auto pen = new wx_pen();
   pen->SetQuality(wxPenQuality::wxPEN_QUALITY_HIGH);
-  pen->SetCap(wxPenCap::wxCAP_ROUND);
-  pen->SetJoin(wxPenJoin::wxJOIN_ROUND);
+  pen->SetCap(wxPenCap::wxCAP_BUTT);
   return reinterpret_cast<intptr_t>(pen);
 }
 
