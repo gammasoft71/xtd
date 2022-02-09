@@ -1,5 +1,6 @@
 #include "../../../../include/xtd/forms/style_sheets/background_image.h"
 #include <xtd/argument_exception.h>
+#include <xtd/as.h>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/texture_brush.h>
 #include <xtd/drawing/system_colors.h>
@@ -75,7 +76,7 @@ void background_image::image_type(style_sheets::image_type value) noexcept {
 
 std::unique_ptr<xtd::drawing::brush> background_image::make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect) {
   if (image.image_type() == style_sheets::image_type::linear_gradient)
-    return make_unique<linear_gradient_brush>(rect, image.colors(), image.angle());
+    return make_unique<linear_gradient_brush>(rect, image.colors(), as<float>(image.angle()));
   if (image.image_type() == style_sheets::image_type::url)
     return make_unique<texture_brush>(image::from_file(image.url()));
   return null;
