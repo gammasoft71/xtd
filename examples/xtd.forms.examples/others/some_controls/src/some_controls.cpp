@@ -134,27 +134,27 @@ public:
     lcd_label1.text("1234567890");
     
     dot_matrix_display1.parent(tab_page_lcds);
-    dot_matrix_display1.height(50);;
+    dot_matrix_display1.height(50);
     dot_matrix_display1.location({10, 50});
     dot_matrix_display1.set_dots({{3, 0}, {2, 1}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}});
     
     seven_segment_display1.parent(tab_page_lcds);
-    seven_segment_display1.height(50);;
+    seven_segment_display1.height(50);
     seven_segment_display1.location({50, 50});
     seven_segment_display1.value(segments::a | segments::b | segments::d | segments::e | segments::g);
     
     nine_segment_display1.parent(tab_page_lcds);
-    nine_segment_display1.height(50);;
+    nine_segment_display1.height(50);
     nine_segment_display1.location({90, 50});
     nine_segment_display1.value(segments::a | segments::g | segments::h | segments::i);
     
     fourteen_segment_display1.parent(tab_page_lcds);
-    fourteen_segment_display1.height(50);;
+    fourteen_segment_display1.height(50);
     fourteen_segment_display1.location({130, 50});
     fourteen_segment_display1.value(segments::b | segments::c | segments::f | segments::g1 | segments::g2);
     
     sixteen_segment_display1.parent(tab_page_lcds);
-    sixteen_segment_display1.height(50);;
+    sixteen_segment_display1.height(50);
     sixteen_segment_display1.location({170, 50});
     sixteen_segment_display1.value(segments::a1 | segments::a2 | segments::c | segments::d1 | segments::d2 | segments::f | segments::g1 | segments::g2);
     

@@ -33,7 +33,7 @@ namespace examples {
       button2.style_sheet("button {"
                           "  border-color: blue;"
                           "  border-radius: 5px 0px 5px 0px;"
-                          "  background-image: linear-gradient(to left, rgba(0, 0, 255, 32), rgba(0, 0, 255, 64), rgba(0, 0, 255, 32));"
+                          "  background-image: linear-gradient(to left, rgba(0, 0, 255, 64), rgba(0, 0, 255, 32), rgba(0, 0, 255, 64));"
                           "  padding: 1px 1px 3px 1px;"
                           "  color: dodgerblue;"
                           "}"
@@ -43,7 +43,7 @@ namespace examples {
                           "}"
                           ""
                           "button:pressed {"
-                          "  background-image: linear-gradient(to left, rgba(0, 0, 255, 64), rgba(0, 0, 255, 128), rgba(0, 0, 255, 64));;"
+                          "  background-image: linear-gradient(to left, rgba(0, 0, 255, 128), rgba(0, 0, 255, 64), rgba(0, 0, 255, 128));"
                           "  color: #69B5FF;"
                           "}");
       

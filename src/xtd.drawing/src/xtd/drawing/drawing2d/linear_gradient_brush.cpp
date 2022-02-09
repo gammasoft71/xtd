@@ -51,7 +51,7 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& re
 }
 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, float angle) {
-  if (linear_colors.size() > 2) throw argument_exception(csf_);
+  if (linear_colors.size() < 2) throw argument_exception(csf_);
   while (angle < 0)
     angle = 360 - angle;
   while (angle >= 360)
@@ -74,7 +74,7 @@ linear_gradient_brush::linear_gradient_brush() {
 
 linear_gradient_brush& linear_gradient_brush::linear_colors(const std::vector<xtd::drawing::color>& linear_colors) {
   if (data_->linear_colors != linear_colors) {
-    if (linear_colors.size() > 2) throw argument_exception(csf_);
+    if (linear_colors.size() < 2) throw argument_exception(csf_);
     data_->linear_colors = linear_colors;
     recreate_handle();
   }

@@ -89,8 +89,8 @@ void minesweeper_form::new_game() {
       
   std::random_device rand;
   for (auto count = 0; count < mine_count_; count++) {
-    auto x = std::uniform_int_distribution<int> {0, grid_size_.width() - 1}(rand);;
-    auto y = std::uniform_int_distribution<int> {0, grid_size_.height() - 1}(rand);;
+    auto x = std::uniform_int_distribution<int> {0, grid_size_.width() - 1}(rand);
+    auto y = std::uniform_int_distribution<int> {0, grid_size_.height() - 1}(rand);
     
     if (cells_[x][y].has_mine()) {
       count--;
