@@ -19,7 +19,8 @@ void brush::solid(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   reinterpret_cast<wx_brush*>(brush)->create_solid_brush({r, g, b, a});
 }
 
-void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, uint8_t a1, uint8_t r1, uint8_t g1, uint8_t b1, uint8_t a2, uint8_t r2, uint8_t g2, uint8_t b2, float angle) {
+//void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, uint8_t a1, uint8_t r1, uint8_t g1, uint8_t b1, uint8_t a2, uint8_t r2, uint8_t g2, uint8_t b2, float angle) {
+void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& colors, float angle) {
   if (angle <= 22) angle = 0;
   else if (angle <= 67) angle = 45;
   else if (angle <= 112) angle = 90;
@@ -32,16 +33,21 @@ void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, 
   
   auto p1 = wxPoint(x1, y1);
   auto p2 = wxPoint(x2, y2);
-  auto c1 = wxColour(r1, g1, b1, a1);
-  auto c2 = wxColour(r2, g2, b2, a2);
+  //auto c1 = wxColour(r1, g1, b1, a1);
+  //auto c2 = wxColour(r2, g2, b2, a2);
+  vector<wxColour> colours;
+  for (auto rgba : colors) {
+    auto [r, g, b, a] = rgba;
+    colours.push_back(wxColour(r, g, b, a));
+  }
   
   if (angle == 0 || angle == 180) p2.y = p1.y;
   if (angle == 90 || angle == 270) p2.x = p1.x;
   if (angle == 135 || angle == 315) swap(p1.x, p2.x);
-
-  if (angle == 180 || angle == 225 || angle == 270 || angle == 315) swap(c1, c2);
+  if (angle == 180 || angle == 225 || angle == 270 || angle == 315) swap(p1, p2);
   
-  reinterpret_cast<wx_brush*>(brush)->create_linear_gradiant_brush(p1, p2, c1, c2);
+  //reinterpret_cast<wx_brush*>(brush)->create_linear_gradiant_brush(p1, p2, c1, c2);
+  reinterpret_cast<wx_brush*>(brush)->create_linear_gradiant_brush(p1, p2, colours[0], colours[1]);
 }
 
 void brush::texture(intptr_t brush, intptr_t texture) {
