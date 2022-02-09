@@ -19,6 +19,7 @@ namespace xtd {
     namespace drawing2d {
       class hatch_brush;
       class linear_gradient_brush;
+      class radial_gradient_brush;
     }
     class brush;
     class solid_brush;
@@ -38,6 +39,7 @@ namespace xtd {
       class drawing_native_export_ brush final static_ {
         friend xtd::drawing::drawing2d::hatch_brush;
         friend xtd::drawing::drawing2d::linear_gradient_brush;
+        friend xtd::drawing::drawing2d::radial_gradient_brush;
         friend xtd::drawing::brush;
         friend xtd::drawing::solid_brush;
         friend xtd::drawing::texture_brush;
@@ -54,8 +56,8 @@ namespace xtd {
         /// @warning Internal use only
         static void destroy(intptr_t brush);
         static void solid(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
-        //static void linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, uint8_t a1, uint8_t r1, uint8_t g1, uint8_t b1, uint8_t a2, uint8_t r2, uint8_t g2, uint8_t b2, float angle);
         static void linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& colors, float angle);
+        static void radial_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& colors, float radius);
         static void texture(intptr_t brush, intptr_t texture);
         /// @}
       };

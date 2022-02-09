@@ -54,9 +54,16 @@ namespace {
     if (brush.is_linear_gradiant_brush()) {
       auto point1 = brush.get_linear_gradiant_brush().point1;
       auto point2 = brush.get_linear_gradiant_brush().point2;
-      auto color1 = brush.get_linear_gradiant_brush().color1;
-      auto color2 = brush.get_linear_gradiant_brush().color2;
-      wxGraphicsBrush b = graphics.CreateLinearGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(point2.x), static_cast<double>(point2.y), color1, color2);;
+      auto colors = brush.get_linear_gradiant_brush().colors;
+      wxGraphicsBrush b = graphics.CreateLinearGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(point2.x), static_cast<double>(point2.y), colors);
+      return b;
+    }
+    if (brush.is_radial_gradiant_brush()) {
+      auto point1 = brush.get_radial_gradiant_brush().point1;
+      auto point2 = brush.get_radial_gradiant_brush().point2;
+      auto radius = brush.get_radial_gradiant_brush().radius;
+      auto colors = brush.get_radial_gradiant_brush().colors;
+      wxGraphicsBrush b = graphics.CreateRadialGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(radius), static_cast<double>(point2.x), static_cast<double>(point2.y), colors);
       return b;
     }
     if (brush.is_texture_brush()) return graphics.CreateBrush(wxBrush(brush.get_texture_brush().texture));

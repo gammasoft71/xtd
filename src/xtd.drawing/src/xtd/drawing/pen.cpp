@@ -75,9 +75,9 @@ pen& pen::brush(const drawing::brush& brush) {
     color(static_cast<const drawing::solid_brush&>(brush).color());
   } else if (dynamic_cast<const drawing2d::hatch_brush*>(&brush) != nullptr) {
     data_->type_ = drawing2d::pen_type::hatch_fill;
-    auto bitmap = drawing::bitmap(1000, 1000);
+    auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
-    graphics.fill_rectangle(brush, xtd::drawing::rectangle(0, 0, 1000, 1000));
+    graphics.fill_rectangle(brush, xtd::drawing::rectangle(0, 0, 8, 8));
     //color(drawing::color::transparent);
     native::pen::image(data_->handle_, bitmap.handle());
     //} else if (dynamic_cast<const texture_brush*>(&brush) != nullptr) {
