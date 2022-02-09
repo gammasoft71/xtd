@@ -62,6 +62,5 @@ void pen::width(intptr_t pen, float width) {
 }
 
 void pen::destroy(intptr_t pen) {
-  toolkit::initialize(); // Must be first
   delete reinterpret_cast<wx_pen*>(pen);
 }
