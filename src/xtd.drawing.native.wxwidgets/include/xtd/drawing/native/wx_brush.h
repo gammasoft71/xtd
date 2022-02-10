@@ -33,8 +33,8 @@ namespace xtd {
           //const wxGraphicsMatrix* graphics_matrix;
         };
         struct radial_gradiant_brush {
-          wxPoint point1;
-          wxPoint point2;
+          wxPoint center_point;
+          wxPoint focal_point;
           float radius;
           wxGraphicsGradientStops colors;
           //const wxGraphicsMatrix* graphics_matrix;
@@ -57,10 +57,10 @@ namespace xtd {
           linear_gradiant_brush_.colors = colors;
         }
         
-        void create_radial_gradiant_brush(const wxPoint& point1, const wxPoint& point2, const wxGraphicsGradientStops& colors, float radius) {
+        void create_radial_gradiant_brush(const wxPoint& center_point, const wxPoint& focal_point, const wxGraphicsGradientStops& colors, float radius) {
           brush_type_ = brush_type::radial_gradient;
-          radial_gradiant_brush_.point1 = point1;
-          radial_gradiant_brush_.point2 = point2;
+          radial_gradiant_brush_.center_point = center_point;
+          radial_gradiant_brush_.focal_point = focal_point;
           radial_gradiant_brush_.radius = radius;
           radial_gradiant_brush_.colors = colors;
         }

@@ -6,9 +6,9 @@
 #include <utility>
 #include "../../drawing_export.h"
 #include "../brush.h"
-#include "../color.h"
 #include "../point.h"
 #include "../rectangle.h"
+#include "gradient_stop_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -30,74 +30,53 @@ namespace xtd {
         /// @name Constructors
         
         /// @{
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified points and colors.
-        /// @param point1 A xtd::drawing::point structure that represents the starting point of the radial gradient.
-        /// @param point2 A xtd::drawing::point structure that represents the endpoint of the radial gradient.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::radial_gradient_brush class with default values.
+        /// @remarks Center and focal points are set to {0, 0} and colors are set with two transparent colors.
+        radial_gradient_brush();
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::radial_gradient_brush class with the specified center point and colors.
+        /// @param center A xtd::drawing::point structure that represents the center point of the radial gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        radial_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified points and colors.
-        /// @param point1 A xtd::drawing::point_f structure that represents the starting point of the radial gradient.
-        /// @param point2 A xtd::drawing::point_f structure that represents the endpoint of the radial gradient.
+        radial_gradient_brush(const xtd::drawing::point& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2);
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::radial_gradient_brush class with the specified center point and colors.
+        /// @param center A xtd::drawing::point structure that represents the center point of the radial gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        radial_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified rectangle, colors, and orientation radius.
-        /// @param rect A xtd::drawing::rectangle structure that specifies the bounds of the radial gradient.
+        radial_gradient_brush(const xtd::drawing::point_f& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2);
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::radial_gradient_brush class with the specified center point ,colors and radius.
+        /// @param center A xtd::drawing::point structure that represents the center point of the radial gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        /// @param radius The radius, measured in degrees clockwise from the x-axis, of the gradient's orientation line.
-        radial_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float radius);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified rectangle, colors, and orientation radius.
-        /// @param rect A xtd::drawing::rectangle_f structure that specifies the bounds of the radial gradient.
+        /// @param radius A float hat represents the radius of the radial gradient.
+        radial_gradient_brush(const xtd::drawing::point& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float radius);
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::radial_gradient_brush class with the specified center point, colors and radiuus.
+        /// @param center A xtd::drawing::point structure that represents the center point of the radial gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        /// @param radius The radius, measured in degrees clockwise from the x-axis, of the gradient's orientation line.
-        radial_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float radius);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified rectangle and colors.
-        /// @param rect A xtd::drawing::rectangle_f structure that specifies the bounds of the radial gradient.
+        /// @param radius A float hat represents the radius of the radial gradient.
+        radial_gradient_brush(const xtd::drawing::point_f& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float radius);
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::radial_gradient_brush class with the specified center point and colors.
+        /// @param center A xtd::drawing::point structure that represents the center point of the radial gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        radial_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified rectangle and colors.
-        /// @param rect A xtd::drawing::rectangle_f structure that specifies the bounds of the radial gradient.
+        radial_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& radial_colors);
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::radial_gradient_brush class with the specified center point and colors.
+        /// @param center A xtd::drawing::point structure that represents the center point of the radial gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        radial_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified points and colors.
-        /// @param point1 A xtd::drawing::point structure that represents the starting point of the radial gradient.
-        /// @param point2 A xtd::drawing::point structure that represents the endpoint of the radial gradient.
+        radial_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& radial_colors);
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::radial_gradient_brush class with the specified center poin, colors and radius.
+        /// @param center A xtd::drawing::point structure that represents the center point of the radial gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        radial_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const std::vector<xtd::drawing::color>& radial_colors);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified points and colors.
-        /// @param point1 A xtd::drawing::point_f structure that represents the starting point of the radial gradient.
-        /// @param point2 A xtd::drawing::point_f structure that represents the endpoint of the radial gradient.
+        /// @param radius A float hat represents the radius of the radial gradient.
+        radial_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& radial_colors, float radius);
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::radial_gradient_brush class with the specified center point, colors and radius.
+        /// @param center A xtd::drawing::point structure that represents the center point of the radial gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        radial_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const std::vector<xtd::drawing::color>& radial_colors);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified rectangle, colors, and orientation radius.
-        /// @param rect A xtd::drawing::rectangle structure that specifies the bounds of the radial gradient.
-        /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
-        /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        /// @param radius The radius, measured in degrees clockwise from the x-axis, of the gradient's orientation line.
-        radial_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& radial_colors, float radius);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified rectangle, colors, and orientation radius.
-        /// @param rect A xtd::drawing::rectangle_f structure that specifies the bounds of the radial gradient.
-        /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
-        /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        /// @param radius The radius, measured in degrees clockwise from the x-axis, of the gradient's orientation line.
-        radial_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& radial_colors, float radius);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified rectangle and colors.
-        /// @param rect A xtd::drawing::rectangle_f structure that specifies the bounds of the radial gradient.
-        /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
-        /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        radial_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& radial_colors);
-        /// @brief Initializes a new instance of the radial_gradient_brush class with the specified rectangle and colors.
-        /// @param rect A xtd::drawing::rectangle_f structure that specifies the bounds of the radial gradient.
-        /// @param color1 A xtd::drawing::color structure that represents the starting color of the radial gradient.
-        /// @param color2 A xtd::drawing::color structure that represents the ending color of the radial gradient.
-        radial_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& radial_colors);
+        /// @param radius A float hat represents the radius of the radial gradient.
+        radial_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& radial_colors, float radius);
         /// @}
         
         /// @cond
@@ -112,24 +91,44 @@ namespace xtd {
         /// @{
         /// @brief Gets the starting and ending colors of the gradient.
         /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
-        const std::vector<xtd::drawing::color>& radial_colors() const noexcept;
+        const xtd::drawing::drawing2d::gradient_stop_collection& radial_colors() const noexcept;
         /// @brief sets the starting and ending colors of the gradient.
         /// @param radial_colors An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
         /// @return Current radial_gradient_brush instance.
-        xtd::drawing::drawing2d::radial_gradient_brush& radial_colors(const std::vector<xtd::drawing::color>& radial_colors);
+        xtd::drawing::drawing2d::radial_gradient_brush& radial_colors(const xtd::drawing::drawing2d::gradient_stop_collection& radial_colors);
         
-        /// @brief Gets a rectangular region that defines the starting and ending points of the gradient.
-        /// @return A xtd::drawing::rectangle_f structure that specifies the starting and ending points of the gradient.
-        xtd::drawing::rectangle_f rectangle() const noexcept;
+        /// @brief Gets the center point of the radial gradient.
+        /// @return A xtd::drawing::point_f structure that specifies the center point of the radius  gradient.
+        xtd::drawing::point_f center_point() const noexcept;
+        /// @brief Gets the center point of the radial gradient.
+        /// @param value A xtd::drawing::point_f structure that specifies the center point of the radius  gradient.
+        /// @return This current instance.
+        radial_gradient_brush& center_point(const xtd::drawing::point_f& value) noexcept;
+        /// @brief Sets the center point of the radial gradient.
+        /// @param value A xtd::drawing::point_f structure that specifies the center point of the radius  gradient.
+        /// @return This current instance.
+        radial_gradient_brush& center_point(const xtd::drawing::point& value) noexcept;
+        
+        /// @brief Gets the focal point of the radial gradient.
+        /// @return A xtd::drawing::point_f structure that specifies the focal point of the radius  gradient.
+        xtd::drawing::point_f focal_point() const noexcept;
+        /// @brief Sets the focal point of the radial gradient.
+        /// @param value A xtd::drawing::point_f structure that specifies the focal point of the radius  gradient.
+        /// @return This current instance.
+        radial_gradient_brush& focal_point(const xtd::drawing::point_f& value) noexcept;
+        /// @brief Sets the focal point of the radial gradient.
+        /// @param value A xtd::drawing::point_f structure that specifies the focal point of the radius  gradient.
+        /// @return This current instance.
+        radial_gradient_brush& focal_point(const xtd::drawing::point& value) noexcept;
         /// @}
         
       private:
-        radial_gradient_brush();
-        void recreate_handle();
+         void recreate_handle();
         struct data {
-          xtd::drawing::rectangle_f rect;
+          xtd::drawing::point_f center_point;
+          xtd::drawing::point_f focal_point;
           float radius = 0;
-          std::vector<xtd::drawing::color> radial_colors;
+          xtd::drawing::drawing2d::gradient_stop_collection radial_colors;
         };
         std::shared_ptr<data> data_ = std::make_shared<data>();
       };

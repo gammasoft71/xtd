@@ -11,6 +11,9 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
+linear_gradient_brush::linear_gradient_brush() : linear_gradient_brush(rectangle_f(.0f, .0f, .0f, .0f), {color::transparent, color::transparent}) {
+}
+
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : linear_gradient_brush(point_f(as<float>(point1.x()), as<float>(point1.y())), point_f(as<float>(point2.x()), as<float>(point2.y())), {color1, color2}) {
 }
 
@@ -59,7 +62,13 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& re
   
   data_->rect = rect;
   data_->angle = angle;
-  data_->linear_colors = linear_colors;
+
+  float pos = 0;
+  float increment = 1.0f / (linear_colors.size() - 1);
+  for (auto color : linear_colors) {
+    data_->linear_colors.push_back({color, pos});
+    pos += increment;
+  }
   recreate_handle();
 }
 
@@ -69,24 +78,41 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors)  : linear_gradient_brush(rect, linear_colors, .0) {
 }
 
-linear_gradient_brush::linear_gradient_brush() {
+float linear_gradient_brush::angle() const noexcept {
+  return data_->angle;
 }
 
-linear_gradient_brush& linear_gradient_brush::linear_colors(const std::vector<xtd::drawing::color>& linear_colors) {
-  if (data_->linear_colors != linear_colors) {
-    if (linear_colors.size() < 2) throw argument_exception(csf_);
-    data_->linear_colors = linear_colors;
+linear_gradient_brush& linear_gradient_brush::angle(float value) noexcept {
+  if (data_->angle != value) {
+    data_->angle = value;
     recreate_handle();
   }
   return *this;
 }
 
-const std::vector<xtd::drawing::color>& linear_gradient_brush::linear_colors() const noexcept {
+const gradient_stop_collection& linear_gradient_brush::linear_colors() const noexcept {
   return data_->linear_colors;
 }
 
-xtd::drawing::rectangle_f linear_gradient_brush::rectangle() const noexcept {
+linear_gradient_brush& linear_gradient_brush::linear_colors(const gradient_stop_collection& value) {
+  if (data_->linear_colors != value) {
+    if (value.size() < 2) throw argument_exception(csf_);
+    data_->linear_colors = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+const rectangle_f& linear_gradient_brush::rectangle() const noexcept {
   return data_->rect;
+}
+
+linear_gradient_brush& linear_gradient_brush::rectangle(const rectangle_f& value) noexcept {
+  if (data_->rect != value) {
+    data_->rect = value;
+    recreate_handle();
+  }
+  return *this;
 }
 
 float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode) {
@@ -100,10 +126,10 @@ float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing
 }
 
 void linear_gradient_brush::recreate_handle() {
-  vector<tuple<uint8_t, uint8_t, uint8_t, uint8_t>> colors;
+  vector<tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>> colors;
   
   for (auto color : data_->linear_colors)
-    colors.push_back(make_tuple(color.r(), color.g(), color.b(), color.a()));
+    colors.push_back(make_tuple(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second));
   
   native::brush::linear_gradient(brush::data_->handle_, as<int32_t>(data_->rect.left()), as<int32_t>(data_->rect.top()), as<int32_t>(data_->rect.right()), as<int32_t>(data_->rect.bottom()), colors, data_->angle);
 }
