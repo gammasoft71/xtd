@@ -13,7 +13,7 @@ if (XTD_BUILD_TESTS_XTD_DRAWING)
 endif()
 
 if (XTD_BUILD_TESTS_XTD_FORMS)
-  add_projects(xtd.forms.manual_tests xtd.forms.unit_tests)
+  add_projects(xtd.forms.manual_tests xtd.forms.unit_tests xtd.drawing.tests)
 endif()
 
 if (XTD_BUILD_TESTS_XTD_TUNIT)
