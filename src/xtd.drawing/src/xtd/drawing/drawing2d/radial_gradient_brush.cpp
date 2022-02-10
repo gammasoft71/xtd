@@ -11,75 +11,97 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : radial_gradient_brush(point_f(as<float>(point1.x()), as<float>(point1.y())), point_f(as<float>(point2.x()), as<float>(point2.y())), {color1, color2}) {
+radial_gradient_brush::radial_gradient_brush() : radial_gradient_brush(point_f(.0f, .0f), {color::transparent, color::transparent}, .0f) {
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : radial_gradient_brush(rectangle_f::from_ltrb(point1.x(), point1.y(), point2.x(), point2.y()), {color1, color2}, .0) {
+radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : radial_gradient_brush(point_f(as<float>(center.x()), as<float>(center.y())), {color1, color2}, .0f) {
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float radius): radial_gradient_brush(rectangle_f(rect), {color1, color2}, radius) {
+radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : radial_gradient_brush(center, {color1, color2}, .0f) {
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float radius) : radial_gradient_brush(rect, {color1, color2}, radius) {
+radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float radius) : radial_gradient_brush(point_f(as<float>(center.x()), as<float>(center.y())), {color1, color2}, radius) {
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : radial_gradient_brush(rect, {color1, color2}, .0) {
+radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float radius) : radial_gradient_brush(center, {color1, color2}, radius) {
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2)  : radial_gradient_brush(rect, {color1, color2}, .0) {
+radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& radial_colors) : radial_gradient_brush(point_f(as<float>(center.x()), as<float>(center.y())), radial_colors) {
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const std::vector<xtd::drawing::color>& radial_colors) : radial_gradient_brush(point_f(as<float>(point1.x()), as<float>(point1.y())), point_f(as<float>(point2.x()), as<float>(point2.y())), radial_colors) {
+radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& radial_colors) : radial_gradient_brush(center, radial_colors, .0f) {
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const std::vector<xtd::drawing::color>& radial_colors) : radial_gradient_brush(rectangle_f::from_ltrb(point1.x(), point1.y(), point2.x(), point2.y()), radial_colors, .0) {
+radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& radial_colors,  float radius) : radial_gradient_brush(point_f(as<float>(center.x()), as<float>(center.y())), radial_colors, radius) {
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& radial_colors, float radius): radial_gradient_brush(rectangle_f(rect), radial_colors, radius) {
-}
-
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& radial_colors, float radius) {
+radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& radial_colors, float radius) {
   if (radial_colors.size() < 2) throw argument_exception(csf_);
   
-  data_->rect = rect;
+  data_->center_point = center;
+  data_->focal_point = center;
   data_->radius = radius;
-  data_->radial_colors = radial_colors;
+  float pos = 0;
+  float increment = 1.0f / (radial_colors.size() - 1);
+  for (auto color : radial_colors) {
+    data_->radial_colors.push_back({color, pos});
+    pos += increment;
+  }
   recreate_handle();
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& radial_colors) : radial_gradient_brush(rect, radial_colors, .0) {
-}
-
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& radial_colors)  : radial_gradient_brush(rect, radial_colors, .0) {
-}
-
-radial_gradient_brush::radial_gradient_brush() {
-}
-
-radial_gradient_brush& radial_gradient_brush::radial_colors(const std::vector<xtd::drawing::color>& radial_colors) {
-  if (data_->radial_colors != radial_colors) {
-    if (radial_colors.size() < 2) throw argument_exception(csf_);
-    data_->radial_colors = radial_colors;
+radial_gradient_brush& radial_gradient_brush::radial_colors(const gradient_stop_collection& value) {
+  if (data_->radial_colors != value) {
+    if (value.size() < 2) throw argument_exception(csf_);
+    data_->radial_colors = value;
     recreate_handle();
   }
   return *this;
 }
 
-const std::vector<xtd::drawing::color>& radial_gradient_brush::radial_colors() const noexcept {
+const gradient_stop_collection& radial_gradient_brush::radial_colors() const noexcept {
   return data_->radial_colors;
 }
 
-xtd::drawing::rectangle_f radial_gradient_brush::rectangle() const noexcept {
-  return data_->rect;
+xtd::drawing::point_f radial_gradient_brush::center_point() const noexcept {
+  return data_->center_point;
+}
+
+radial_gradient_brush& radial_gradient_brush::center_point(const point_f& value) noexcept {
+  if (data_->center_point != value) {
+    data_->center_point = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+radial_gradient_brush& radial_gradient_brush::center_point(const point& value) noexcept {
+  return center_point(point_f(as<float>(value.x()), as<float>(value.y())));
+}
+
+xtd::drawing::point_f radial_gradient_brush::focal_point() const noexcept {
+  return data_->focal_point;
+}
+
+radial_gradient_brush& radial_gradient_brush::focal_point(const point_f& value) noexcept {
+  if (data_->focal_point != value) {
+    data_->focal_point = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+radial_gradient_brush& radial_gradient_brush::focal_point(const point& value) noexcept {
+  return focal_point(point_f(as<float>(value.x()), as<float>(value.y())));
 }
 
 void radial_gradient_brush::recreate_handle() {
-  vector<tuple<uint8_t, uint8_t, uint8_t, uint8_t>> colors;
+  vector<tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>> colors;
   
   for (auto color : data_->radial_colors)
-    colors.push_back(make_tuple(color.r(), color.g(), color.b(), color.a()));
+    colors.push_back(make_tuple(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second));
   
-  native::brush::radial_gradient(brush::data_->handle_, as<int32_t>(data_->rect.left()), as<int32_t>(data_->rect.top()), as<int32_t>(data_->rect.right()), as<int32_t>(data_->rect.bottom()), colors, data_->radius);
+  native::brush::radial_gradient(brush::data_->handle_, as<int32_t>(data_->center_point.x()), as<int32_t>(data_->center_point.y()), as<int32_t>(data_->focal_point.x()), as<int32_t>(data_->focal_point.y()), colors, data_->radius);
 }
 
 radial_gradient_brush::radial_gradient_brush(const radial_gradient_brush& value) : brush(value), data_(value.data_) {

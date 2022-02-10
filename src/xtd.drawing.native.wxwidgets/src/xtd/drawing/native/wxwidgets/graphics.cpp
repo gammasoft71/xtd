@@ -59,11 +59,11 @@ namespace {
       return b;
     }
     if (brush.is_radial_gradiant_brush()) {
-      auto point1 = brush.get_radial_gradiant_brush().point1;
-      auto point2 = brush.get_radial_gradiant_brush().point2;
+      auto centter_point = brush.get_radial_gradiant_brush().center_point;
+      auto focal_point = brush.get_radial_gradiant_brush().focal_point;
       auto radius = brush.get_radial_gradiant_brush().radius;
       auto colors = brush.get_radial_gradiant_brush().colors;
-      wxGraphicsBrush b = graphics.CreateRadialGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(radius), static_cast<double>(point2.x), static_cast<double>(point2.y), colors);
+      wxGraphicsBrush b = graphics.CreateRadialGradientBrush(static_cast<double>(focal_point.x), static_cast<double>(focal_point.y), static_cast<double>(centter_point.x), static_cast<double>(centter_point.y), static_cast<double>(radius), colors);
       return b;
     }
     if (brush.is_texture_brush()) return graphics.CreateBrush(wxBrush(brush.get_texture_brush().texture));
@@ -207,10 +207,8 @@ void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int
 void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  auto path = graphics.CreatePath();
-  path.AddEllipse(x, y, width, height);
   graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
-  graphics.FillPath(path);
+  graphics.DrawEllipse(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -227,20 +225,16 @@ void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int3
 void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  auto path = graphics.CreatePath();
-  path.AddRectangle(x, y, width, height);
   graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
-  graphics.FillPath(path);
+  graphics.DrawRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
 void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  auto path = graphics.CreatePath();
-  path.AddRoundedRectangle(x, y, width, height, radius);
   graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
-  graphics.FillPath(path);
+  graphics.DrawRoundedRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 

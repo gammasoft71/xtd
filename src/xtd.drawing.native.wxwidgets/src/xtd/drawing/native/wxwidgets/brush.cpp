@@ -21,7 +21,7 @@ void brush::solid(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   reinterpret_cast<wx_brush*>(brush)->create_solid_brush({r, g, b, a});
 }
 
-void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& colors, float angle) {
+void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle) {
   if (colors.size() < 2) throw argument_exception(csf_);
 
   if (angle <= 22) angle = 0;
@@ -36,13 +36,12 @@ void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, 
   
   auto p1 = wxPoint(x1, y1);
   auto p2 = wxPoint(x2, y2);
-  wxGraphicsGradientStops colours;
-  float pos = 0;
-  float increment = 1.0f / (colors.size() - 1);
-  for (auto rgba : colors) {
-    auto [r, g, b, a] = rgba;
+  auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
+  auto [end_r, end_g, end_b, end_a, end_pos] = colors[colors.size() - 1];
+  wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
+  for (auto color : colors) {
+    auto [r, g, b, a, pos] = color;
     colours.Add(wxColour(r, g, b, a), pos);
-    pos += increment;
   }
 
   if (angle == 0 || angle == 180) p2.y = p1.y;
@@ -53,21 +52,20 @@ void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, 
   reinterpret_cast<wx_brush*>(brush)->create_linear_gradiant_brush(p1, p2, colours);
 }
 
-void brush::radial_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& colors, float radius) {
+void brush::radial_gradient(intptr_t brush, int32_t center_x, int32_t center_y, int32_t focal_x, int32_t focal_y, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float radius) {
   if (colors.size() < 2) throw argument_exception(csf_);
   
-  auto p1 = wxPoint(x1, y1);
-  auto p2 = wxPoint(x2, y2);
-  wxGraphicsGradientStops colours;
-  float pos = 0;
-  float increment = 1.0f / (colors.size() - 1);
-  for (auto rgba : colors) {
-    auto [r, g, b, a] = rgba;
+  auto center_point = wxPoint(center_x, center_y);
+  auto focal_point = wxPoint(focal_x, focal_y);
+  auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
+  auto [end_r, end_g, end_b, end_a, end_pos] = colors[colors.size() - 1];
+  wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
+  for (auto color : colors) {
+    auto [r, g, b, a, pos] = color;
     colours.Add(wxColour(r, g, b, a), pos);
-    pos += increment;
   }
 
-  reinterpret_cast<wx_brush*>(brush)->create_radial_gradiant_brush(p1, p2, colours, radius);
+  reinterpret_cast<wx_brush*>(brush)->create_radial_gradiant_brush(center_point, focal_point, colours, radius);
 }
 
 void brush::texture(intptr_t brush, intptr_t texture) {
