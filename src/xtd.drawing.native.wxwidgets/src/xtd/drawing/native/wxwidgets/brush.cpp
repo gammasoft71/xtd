@@ -21,6 +21,21 @@ void brush::solid(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   reinterpret_cast<wx_brush*>(brush)->create_solid_brush({r, g, b, a});
 }
 
+void brush::conical_gradient(intptr_t brush, int32_t center_x, int32_t center_y, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle) {
+  if (colors.size() < 2) throw argument_exception(csf_);
+  
+  auto center_point = wxPoint(center_x, center_y);
+  auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
+  auto [end_r, end_g, end_b, end_a, end_pos] = colors[colors.size() - 1];
+  wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
+  for (auto color : colors) {
+    auto [r, g, b, a, pos] = color;
+    colours.Add(wxColour(r, g, b, a), pos);
+  }
+  
+  reinterpret_cast<wx_brush*>(brush)->create_conical_gradiant_brush(center_point, colours, angle);                                                                                
+}
+
 void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle) {
   if (colors.size() < 2) throw argument_exception(csf_);
 

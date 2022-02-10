@@ -55,16 +55,22 @@ namespace {
       auto point1 = brush.get_linear_gradiant_brush().point1;
       auto point2 = brush.get_linear_gradiant_brush().point2;
       auto colors = brush.get_linear_gradiant_brush().colors;
-      wxGraphicsBrush b = graphics.CreateLinearGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(point2.x), static_cast<double>(point2.y), colors);
-      return b;
+      return graphics.CreateLinearGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(point2.x), static_cast<double>(point2.y), colors);
     }
     if (brush.is_radial_gradiant_brush()) {
       auto centter_point = brush.get_radial_gradiant_brush().center_point;
       auto focal_point = brush.get_radial_gradiant_brush().focal_point;
       auto radius = brush.get_radial_gradiant_brush().radius;
       auto colors = brush.get_radial_gradiant_brush().colors;
-      wxGraphicsBrush b = graphics.CreateRadialGradientBrush(static_cast<double>(focal_point.x), static_cast<double>(focal_point.y), static_cast<double>(centter_point.x), static_cast<double>(centter_point.y), static_cast<double>(radius), colors);
-      return b;
+      return graphics.CreateRadialGradientBrush(static_cast<double>(focal_point.x), static_cast<double>(focal_point.y), static_cast<double>(centter_point.x), static_cast<double>(centter_point.y), static_cast<double>(radius), colors);
+    }
+    if (brush.is_conical_gradiant_brush()) {
+      // Does not exists yet... so return solid brush
+      //auto centter_point = brush.get_conical_gradiant_brush().center_point;
+      //auto angle = brush.get_conical_gradiant_brush().angle;
+      auto colors = brush.get_conical_gradiant_brush().colors;
+      //return graphics.CreateConicalGradientBrush(static_cast<double>(centter_point.x), static_cast<double>(centter_point.y), static_cast<double>(angle), colors);
+      return graphics.CreateBrush(wxBrush(brush.get_conical_gradiant_brush().colors.Item(0).GetColour()));
     }
     if (brush.is_texture_brush()) return graphics.CreateBrush(wxBrush(brush.get_texture_brush().texture));
     throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);

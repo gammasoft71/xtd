@@ -18,6 +18,7 @@ namespace xtd {
     /// @cond
     namespace drawing2d {
       class hatch_brush;
+      class conical_gradient_brush;
       class linear_gradient_brush;
       class radial_gradient_brush;
     }
@@ -38,6 +39,7 @@ namespace xtd {
       /// @warning Internal use only
       class drawing_native_export_ brush final static_ {
         friend xtd::drawing::drawing2d::hatch_brush;
+        friend xtd::drawing::drawing2d::conical_gradient_brush;
         friend xtd::drawing::drawing2d::linear_gradient_brush;
         friend xtd::drawing::drawing2d::radial_gradient_brush;
         friend xtd::drawing::brush;
@@ -56,6 +58,7 @@ namespace xtd {
         /// @warning Internal use only
         static void destroy(intptr_t brush);
         static void solid(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+        static void conical_gradient(intptr_t brush, int32_t center_x, int32_t center_y, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle);
         static void linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle);
         static void radial_gradient(intptr_t brush, int32_t center_x, int32_t center_y, int32_t focal_x, int32_t focal_y, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float radius);
         static void texture(intptr_t brush, intptr_t texture);

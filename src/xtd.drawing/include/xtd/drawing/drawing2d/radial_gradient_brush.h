@@ -98,28 +98,36 @@ namespace xtd {
         xtd::drawing::drawing2d::radial_gradient_brush& radial_colors(const xtd::drawing::drawing2d::gradient_stop_collection& radial_colors);
         
         /// @brief Gets the center point of the radial gradient.
-        /// @return A xtd::drawing::point_f structure that specifies the center point of the radius  gradient.
+        /// @return A xtd::drawing::point_f structure that specifies the center point of the radial  gradient.
         xtd::drawing::point_f center_point() const noexcept;
         /// @brief Gets the center point of the radial gradient.
-        /// @param value A xtd::drawing::point_f structure that specifies the center point of the radius  gradient.
+        /// @param value A xtd::drawing::point_f structure that specifies the center point of the radial  gradient.
         /// @return This current instance.
         radial_gradient_brush& center_point(const xtd::drawing::point_f& value) noexcept;
         /// @brief Sets the center point of the radial gradient.
-        /// @param value A xtd::drawing::point_f structure that specifies the center point of the radius  gradient.
+        /// @param value A xtd::drawing::point_f structure that specifies the center point of the radial  gradient.
         /// @return This current instance.
         radial_gradient_brush& center_point(const xtd::drawing::point& value) noexcept;
         
         /// @brief Gets the focal point of the radial gradient.
-        /// @return A xtd::drawing::point_f structure that specifies the focal point of the radius  gradient.
+        /// @return A xtd::drawing::point_f structure that specifies the focal point of the radial  gradient.
         xtd::drawing::point_f focal_point() const noexcept;
         /// @brief Sets the focal point of the radial gradient.
-        /// @param value A xtd::drawing::point_f structure that specifies the focal point of the radius  gradient.
+        /// @param value A xtd::drawing::point_f structure that specifies the focal point of the radial  gradient.
         /// @return This current instance.
         radial_gradient_brush& focal_point(const xtd::drawing::point_f& value) noexcept;
         /// @brief Sets the focal point of the radial gradient.
-        /// @param value A xtd::drawing::point_f structure that specifies the focal point of the radius  gradient.
+        /// @param value A xtd::drawing::point_f structure that specifies the focal point of the radial  gradient.
         /// @return This current instance.
         radial_gradient_brush& focal_point(const xtd::drawing::point& value) noexcept;
+        /// @brief Gets the angle of the gradient.
+        /// @return A float that specifies the angle of the linear gradient.
+        float radius() const noexcept;
+        /// @brief Sets the radius of the gradient.
+        /// @param value A float that specifies the radius of the radial gradient.
+        /// @return Current linear_gradient_brush instance.
+        radial_gradient_brush& radius(float value) noexcept;
+        
         /// @}
         
       private:

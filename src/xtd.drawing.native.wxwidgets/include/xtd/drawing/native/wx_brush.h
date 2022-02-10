@@ -20,6 +20,7 @@ namespace xtd {
           solid,
           linear_gradient,
           radial_gradient,
+          conical_gradient,
           texture
         };
         
@@ -36,6 +37,12 @@ namespace xtd {
           wxPoint center_point;
           wxPoint focal_point;
           float radius;
+          wxGraphicsGradientStops colors;
+          //const wxGraphicsMatrix* graphics_matrix;
+        };
+        struct conical_gradiant_brush {
+          wxPoint center_point;
+          float angle;
           wxGraphicsGradientStops colors;
           //const wxGraphicsMatrix* graphics_matrix;
         };
@@ -65,6 +72,13 @@ namespace xtd {
           radial_gradiant_brush_.colors = colors;
         }
         
+        void create_conical_gradiant_brush(const wxPoint& center_point, const wxGraphicsGradientStops& colors, float angle) {
+          brush_type_ = brush_type::conical_gradient;
+          conical_gradiant_brush_.center_point = center_point;
+          conical_gradiant_brush_.angle = angle;
+          conical_gradiant_brush_.colors = colors;
+        }
+
         void create_texture_brush(const wxImage& texture) {
           brush_type_ = brush_type::texture;
           texture_brush_.texture = texture;
@@ -73,6 +87,7 @@ namespace xtd {
         bool is_solid_brush() const {return brush_type_ == brush_type::solid;}
         bool is_linear_gradiant_brush() const {return brush_type_ == brush_type::linear_gradient;}
         bool is_radial_gradiant_brush() const {return brush_type_ == brush_type::radial_gradient;}
+        bool is_conical_gradiant_brush() const {return brush_type_ == brush_type::conical_gradient;}
         bool is_texture_brush() const {return brush_type_ == brush_type::texture;}
         
         const solid_brush& get_solid_brush() const {return solid_brush_;}
@@ -84,6 +99,9 @@ namespace xtd {
         const radial_gradiant_brush& get_radial_gradiant_brush() const {return radial_gradiant_brush_;}
         radial_gradiant_brush& get_radial_gradiant_brush() {return radial_gradiant_brush_;}
         
+        const conical_gradiant_brush& get_conical_gradiant_brush() const {return conical_gradiant_brush_;}
+        conical_gradiant_brush& get_conical_gradiant_brush() {return conical_gradiant_brush_;}
+
         const texture_brush& get_texture_brush() const {return texture_brush_;}
         texture_brush& get_texture_brush() {return texture_brush_;}
         
@@ -92,6 +110,7 @@ namespace xtd {
         solid_brush solid_brush_;
         linear_gradiant_brush linear_gradiant_brush_;
         radial_gradiant_brush radial_gradiant_brush_;
+        conical_gradiant_brush conical_gradiant_brush_;
         texture_brush texture_brush_;
       };
     }

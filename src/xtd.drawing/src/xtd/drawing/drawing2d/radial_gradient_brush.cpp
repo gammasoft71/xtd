@@ -50,6 +50,18 @@ radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center
   recreate_handle();
 }
 
+float radial_gradient_brush::radius() const noexcept {
+  return data_->radius;
+}
+
+radial_gradient_brush& radial_gradient_brush::radius(float value) noexcept {
+  if (data_->radius != value) {
+    data_->radius = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 radial_gradient_brush& radial_gradient_brush::radial_colors(const gradient_stop_collection& value) {
   if (data_->radial_colors != value) {
     if (value.size() < 2) throw argument_exception(csf_);
