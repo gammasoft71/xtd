@@ -11,6 +11,7 @@
 #include <wx/app.h>
 #include <wx/dcgraph.h>
 #include <wx/dcmemory.h>
+#include "wxConicalGradient.h"
 
 using namespace xtd;
 using namespace xtd::drawing::native;
@@ -213,8 +214,20 @@ void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int
 void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
-  graphics.DrawEllipse(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+    wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
+    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
+    wxBitmap conical_gradient_bitmap_mask(width, height);
+    auto conical_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap_mask));
+    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
+    conical_gradient_mask_graphics->DrawEllipse(0, 0, width, height);
+    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
+    conical_gradient_bitmap = conical_gradient_image;
+    graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
+  } else {
+    graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
+    graphics.DrawEllipse(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
+  }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -222,25 +235,53 @@ void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int3
   if (!hdc) return;
   graphics_context gc(hdc);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
-  dc.SetBrush(to_brush(*reinterpret_cast<wx_brush*>(brush)));
-  dc.SetPen(*wxTRANSPARENT_PEN);
-  dc.DrawEllipticArc(x, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+    wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
+    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
+    wxBitmap conical_gradient_bitmap_mask(width, height);
+    auto conical_gradient_bitmap_mask_dc = wxMemoryDC(conical_gradient_bitmap_mask);
+    conical_gradient_bitmap_mask_dc.SetBrush(wxBrush(wxColour(255, 255, 255)));
+    conical_gradient_bitmap_mask_dc.DrawEllipticArc(0, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
+    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
+    conical_gradient_bitmap = conical_gradient_image;
+    dc.DrawBitmap(conical_gradient_bitmap, x, y);
+  } else {
+    dc.SetBrush(to_brush(*reinterpret_cast<wx_brush*>(brush)));
+    dc.SetPen(*wxTRANSPARENT_PEN);
+    dc.DrawEllipticArc(x, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
+  }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
 void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
-  graphics.DrawRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+    graphics.DrawBitmap(wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle), x, y, width, height);
+  } else {
+    graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
+    graphics.DrawRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
+  }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
 void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
-  graphics.DrawRoundedRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+    wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
+    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
+    wxBitmap conical_gradient_bitmap_mask(width, height);
+    auto conical_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap_mask));
+    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
+    conical_gradient_mask_graphics->DrawRoundedRectangle(0, 0, width, height, radius);
+    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
+    conical_gradient_bitmap = conical_gradient_image;
+    graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
+  } else {
+    graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
+    graphics.DrawRoundedRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
+  }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 

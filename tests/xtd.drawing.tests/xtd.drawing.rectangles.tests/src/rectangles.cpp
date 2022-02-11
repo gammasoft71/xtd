@@ -32,6 +32,10 @@ public:
     tab_page_fill_color.text("Fill color");
     tab_page_fill_color.paint += {*this, &lines_form::fill_rectangle_with_color};
     
+    tab_page_fill_conical_gradient.parent(tab_control);
+    tab_page_fill_conical_gradient.text("Fill conical gradient");
+    tab_page_fill_conical_gradient.paint += {*this, &lines_form::fill_rectangle_with_conical_gradient};
+    
     tab_page_fill_linear_gradient.parent(tab_control);
     tab_page_fill_linear_gradient.text("Fill linear gradient");
     tab_page_fill_linear_gradient.paint += {*this, &lines_form::fill_rectangle_with_linear_gradient};
@@ -54,6 +58,7 @@ private:
   forms::tab_page tab_page_draw_color;
   forms::tab_page tab_page_draw_dash;
   forms::tab_page tab_page_fill_color;
+  forms::tab_page tab_page_fill_conical_gradient;
   forms::tab_page tab_page_fill_linear_gradient;
   forms::tab_page tab_page_fill_radial_gradient;
   forms::tab_page tab_page_fill_pattern;
@@ -130,6 +135,23 @@ private:
     e.graphics().fill_rectangle(solid_brush(color::from_argb(128, color::green)), rectangle(250, 350, 150, 100));
     e.graphics().fill_rectangle(solid_brush(color::from_argb(128, color::blue)), rectangle(450, 350, 150, 100));
     e.graphics().fill_rectangle(solid_brush(color::from_argb(128, color::yellow)), rectangle(650, 350, 150, 100));
+  }
+  
+  void fill_rectangle_with_conical_gradient(object& sender, paint_event_args& e) {
+    draw_grid(e.clip_rectangle(), e.graphics());
+    
+    static const auto color1 = color::red;
+    static const auto color2 = color::green;
+    static const auto color3 = color::blue;
+    static const auto color4 = color::yellow;
+    
+    e.graphics().fill_rectangle(conical_gradient_brush(point(150, 150), {color1, color2, color3, color4}, 0), rectangle(50, 50, 200, 200));
+    e.graphics().fill_rectangle(conical_gradient_brush(point(400, 150), {color1, color2, color3, color4}, 90), rectangle(300, 50, 200, 200));
+    e.graphics().fill_rectangle(conical_gradient_brush(point(600, 100), {color1, color2, color3, color4}, 0), rectangle(550, 50, 200, 200));
+    
+    e.graphics().fill_rectangle(conical_gradient_brush(point(150, 400), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, 0), rectangle(50, 300, 200, 200));
+    e.graphics().fill_rectangle(conical_gradient_brush(point(400, 400), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, 90), rectangle(300, 300, 200, 200));
+    e.graphics().fill_rectangle(conical_gradient_brush(point(600, 350), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, 0), rectangle(550, 300, 200, 200));
   }
   
   void fill_rectangle_with_linear_gradient(object& sender, paint_event_args& e) {
