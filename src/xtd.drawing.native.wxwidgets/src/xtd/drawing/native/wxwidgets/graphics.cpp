@@ -225,6 +225,7 @@ void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, 
     conical_gradient_bitmap = conical_gradient_image;
     graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
   } else {
+    graphics.SetPen(wxNullPen);
     graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
     graphics.DrawEllipse(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
   }
@@ -247,7 +248,7 @@ void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int3
     dc.DrawBitmap(conical_gradient_bitmap, x, y);
   } else {
     dc.SetBrush(to_brush(*reinterpret_cast<wx_brush*>(brush)));
-    dc.SetPen(*wxTRANSPARENT_PEN);
+    dc.SetPen(wxNullPen);
     dc.DrawEllipticArc(x, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
   }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
@@ -259,6 +260,7 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
     graphics.DrawBitmap(wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle), x, y, width, height);
   } else {
+    graphics.SetPen(wxNullPen);
     graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
     graphics.DrawRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
   }
@@ -279,6 +281,7 @@ void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, int32_t x, i
     conical_gradient_bitmap = conical_gradient_image;
     graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
   } else {
+    graphics.SetPen(wxNullPen);
     graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
     graphics.DrawRoundedRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
   }
