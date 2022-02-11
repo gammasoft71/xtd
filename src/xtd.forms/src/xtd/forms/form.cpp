@@ -409,6 +409,7 @@ void form::wnd_proc(message& message) {
     case WM_CLOSE: wm_close(message); break;
     case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().get().wm_click(message); break;
     case WM_SYSCOLORCHANGE: wm_syscolor_change(message); break;
+    case WM_RECREATE: wm_recreate(message); break;
     default: container_control::wnd_proc(message); break;
   }
 }
@@ -443,15 +444,16 @@ void form::wm_close(message& message) {
   }
 }
 
+void form::wm_recreate(message& message) {
+  auto current_location = location();
+  recreate_handle();
+  location(current_location);
+}
+
 void form::wm_syscolor_change(message& message) {
   def_wnd_proc(message);
   on_system_colors_changed(event_args::empty);
   if (&application::open_forms()[0].get() == this) style_sheets::style_sheet::on_system_colors_changed(event_args::empty);
-  if (environment::os_version().is_windows()) {
-    auto current_location = location();
-    recreate_handle();
-    location(current_location);
-  }
 }
 
 void form::on_handle_created(const event_args& e) {

@@ -28,8 +28,10 @@ static void __on_timer_system_color_detection__(wxTimerEvent& e) {
     __is_dark_mode__ = !value;
     init_dark_mode(__is_dark_mode__);
     auto top_level_windows = wxTopLevelWindows;
-    for (auto window : top_level_windows)
+    for (auto window : top_level_windows) {
+      SendMessage(window->GetHWND(), WM_RECREATE, 0, 0);
       SendMessage(window->GetHWND(), WM_SYSCOLORCHANGE, 0, 0);
+    }
   }
 }
 
