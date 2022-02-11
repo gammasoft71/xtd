@@ -1804,4 +1804,6 @@ constexpr int32_t WM_REFLECT = WM_USER + 0x1C00;
 
 constexpr int32_t WM_MOUSEENTER = WM_USER + 0x0001;
 
+constexpr int32_t WM_RECREATE = WM_USER + 0x0002;
+
 intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);

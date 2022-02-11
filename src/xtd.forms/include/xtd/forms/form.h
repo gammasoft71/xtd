@@ -366,6 +366,10 @@ namespace xtd {
       /// @param message The message sent to the top-level window.
       virtual void wm_close(message& message);
       
+      /// @brief Processes the recreate window message the form control receives as the top-level window.
+      /// @param message The message sent to the top-level window.
+      virtual void wm_recreate(message& message);
+
       /// @brief Processes the system color change message the form control receives as the top-level window.
       /// @param message The message sent to the top-level window.
       virtual void wm_syscolor_change(message& message);
