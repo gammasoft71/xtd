@@ -224,8 +224,8 @@ private:
     static const auto background_color = color::yellow;
     static const auto forground_color = color::blue;
     
-    e.graphics().fill_rectangle(texture_brush(create_circle_texture_image(forground_color, background_color)), rectangle(50, 50, 100, 50));
-    e.graphics().fill_rectangle(texture_brush(system_images::from_name("gammasoft", drawing::size(96, 96))), rectangle(50, 150, 400, 300));
+    e.graphics().fill_rectangle(texture_brush(create_circle_texture_image(forground_color, background_color)), rectangle(50, 50, 400, 200));
+    e.graphics().fill_rectangle(texture_brush(system_images::from_name("gammasoft", drawing::size(96, 96))), rectangle(50, 300, 400, 250));
   }
   
   static image create_circle_texture_image(const color& foreground_color, const color& background_color) {
