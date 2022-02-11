@@ -116,6 +116,11 @@ private:
     static auto pen_dash_dot_dot = pen(fereground_color, 5);
     pen_dash_dot_dot.dash_style(drawing::dash_style::dash_dot_dot);
     e.graphics().draw_rectangle(pen_dash_dot_dot, rectangle(650, 50, 150, 100));
+    
+    static auto pen_custom = pen(fereground_color, 5);
+    pen_custom.dash_style(drawing::dash_style::custom);
+    pen_custom.dash_pattern({6, 2, 4, 2, 4, 2});
+    e.graphics().draw_rectangle(pen_custom, rectangle(50, 200, 150, 100));
   }
   
   void fill_rectangle_with_color(object& sender, paint_event_args& e) {
