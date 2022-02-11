@@ -447,9 +447,11 @@ void form::wm_syscolor_change(message& message) {
   def_wnd_proc(message);
   on_system_colors_changed(event_args::empty);
   if (&application::open_forms()[0].get() == this) style_sheets::style_sheet::on_system_colors_changed(event_args::empty);
-  auto current_location = location();
-  recreate_handle();
-  location(current_location);
+  if (environment::os_version().is_windows()) {
+    auto current_location = location();
+    recreate_handle();
+    location(current_location);
+  }
 }
 
 void form::on_handle_created(const event_args& e) {
