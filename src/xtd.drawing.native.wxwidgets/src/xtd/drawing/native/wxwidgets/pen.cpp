@@ -3,18 +3,51 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/pen.h>
 #include <xtd/drawing/native/toolkit.h>
+#include "../../../../../include/xtd/drawing/native/wx_pen.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/colour.h>
 #include <wx/pen.h>
 
-class wx_pen : public wxPen {
-public:
-  wx_pen() = default;
-  std::vector<wxDash> dashes;
-};
-
+using namespace std;
 using namespace xtd::drawing::native;
 
+intptr_t pen::create() {
+  toolkit::initialize(); // Must be first
+  return reinterpret_cast<intptr_t>(new wx_pen());
+}
+
+void pen::solid_color(intptr_t pen, uint8_t a, uint8_t r, uint8_t g, uint8_t b, float width, float dash_offset, vector<float> dashes) {
+  vector<int8_t> wx_dashes;
+  for (auto dash : dashes)
+    wx_dashes.push_back(static_cast<int8_t>(dash));
+  reinterpret_cast<wx_pen*>(pen)->create_solid_color_pen({r, g, b, a}, width, dash_offset, wx_dashes);
+}
+
+void pen::hatch_fill(intptr_t pen, intptr_t brush, float width) {
+  reinterpret_cast<wx_pen*>(pen)->create_hatch_fill_pen(*reinterpret_cast<wx_brush*>(brush), width);
+}
+
+void pen::conical_gradient(intptr_t pen, intptr_t brush, float width) {
+  reinterpret_cast<wx_pen*>(pen)->create_conical_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
+}
+
+void pen::linear_gradient(intptr_t pen, intptr_t brush, float width) {
+  reinterpret_cast<wx_pen*>(pen)->create_linear_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
+}
+
+void pen::radial_gradient(intptr_t pen, intptr_t brush, float width) {
+  reinterpret_cast<wx_pen*>(pen)->create_radial_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
+}
+
+void pen::texture_fill(intptr_t pen, intptr_t brush, float width) {
+  reinterpret_cast<wx_pen*>(pen)->create_texture_fill_pen(*reinterpret_cast<wx_brush*>(brush), width);
+}
+
+void pen::destroy(intptr_t pen) {
+  delete reinterpret_cast<wx_pen*>(pen);
+}
+
+/*
 intptr_t pen::create() {
   toolkit::initialize(); // Must be first
   auto pen = new wx_pen();
@@ -64,3 +97,4 @@ void pen::width(intptr_t pen, float width) {
 void pen::destroy(intptr_t pen) {
   delete reinterpret_cast<wx_pen*>(pen);
 }
+*/

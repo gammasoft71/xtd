@@ -27,12 +27,16 @@ namespace xtd {
         /// @brief Specifies a path gradient fill.
         path_gradient = 3,
         /// @brief Specifies a linear gradient fill.
-        linear_gradient = 4
+        linear_gradient = 4,
+        /// @brief Specifies a conical gradient fill.
+        conical_gradient = 5,
+        /// @brief Specifies a radial gradient fill.
+        radial_gradient = 6,
       };
       
       /// @cond
-      inline std::ostream& operator<<(std::ostream& os, pen_type value) {return os << to_string(value, {{pen_type::solid_color, "solid_color"}, {pen_type::hatch_fill, "hatch_fill"}, {pen_type::texture_fill, "texture_fill"}, {pen_type::path_gradient, "path_gradient"}, {pen_type::linear_gradient, "linear_gradient"}});}
-      inline std::wostream& operator<<(std::wostream& os, pen_type value) {return os << to_string(value, {{pen_type::solid_color, L"solid_color"}, {pen_type::hatch_fill, L"hatch_fill"}, {pen_type::texture_fill, L"texture_fill"}, {pen_type::path_gradient, L"path_gradient"}, {pen_type::linear_gradient, L"linear_gradient"}});}
+      inline std::ostream& operator<<(std::ostream& os, pen_type value) {return os << to_string(value, {{pen_type::solid_color, "solid_color"}, {pen_type::hatch_fill, "hatch_fill"}, {pen_type::texture_fill, "texture_fill"}, {pen_type::path_gradient, "path_gradient"}, {pen_type::linear_gradient, "linear_gradient"}, {pen_type::conical_gradient, "conical_gradient"}, {pen_type::radial_gradient, "radial_gradient"}});}
+      inline std::wostream& operator<<(std::wostream& os, pen_type value) {return os << to_string(value, {{pen_type::solid_color, L"solid_color"}, {pen_type::hatch_fill, L"hatch_fill"}, {pen_type::texture_fill, L"texture_fill"}, {pen_type::path_gradient, L"path_gradient"}, {pen_type::linear_gradient, L"linear_gradient"}, {pen_type::conical_gradient, L"conical_gradient"}, {pen_type::radial_gradient, L"radial_gradient"}});}
       /// @endcond
     }
   }
