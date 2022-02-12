@@ -68,11 +68,6 @@ namespace {
       wxpen.SetDashes(pen.get_solid_color_pen().dashes.size(), pen.get_solid_color_pen().dashes.data());
       return wxpen;
     }
-    if (pen.is_texture_fill_pen()) {
-      wxPen wxpen(wxBitmap(pen.get_texture_fill_pen().brush.get_texture_brush().texture), static_cast<int32_t>(pen.get_texture_fill_pen().width));
-      wxpen.SetCap(wxPenCap::wxCAP_BUTT);
-      return wxpen;
-    }
     throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
   }
   
