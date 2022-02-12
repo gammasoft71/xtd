@@ -69,7 +69,7 @@ namespace {
       return wxpen;
     }
     if (pen.is_texture_fill_pen()) {
-      wxPen wxpen(wxBitmap(pen.get_texture_fill_pen().brush.get_texture_brush().texture), pen.get_texture_fill_pen().width);
+      wxPen wxpen(wxBitmap(pen.get_texture_fill_pen().brush.get_texture_brush().texture), static_cast<int32_t>(pen.get_texture_fill_pen().width));
       wxpen.SetCap(wxPenCap::wxCAP_BUTT);
       return wxpen;
     }
