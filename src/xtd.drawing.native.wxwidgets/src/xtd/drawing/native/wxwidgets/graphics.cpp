@@ -7,6 +7,7 @@
 #include <xtd/drawing/native/graphics.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
+#include "../../../../../include/xtd/drawing/native/wx_pen.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/app.h>
 #include <wx/dcgraph.h>
@@ -51,29 +52,72 @@ namespace {
   }
   
   wxGraphicsBrush to_graphics_brush(wxGraphicsContext& graphics, const wx_brush& brush) {
+    if (brush.is_conical_gradiant_brush()) return graphics.CreateBrush(wxBrush(brush.get_conical_gradiant_brush().colors.Item(0).GetColour()));
+    if (brush.is_linear_gradiant_brush()) return graphics.CreateLinearGradientBrush(static_cast<double>(brush.get_linear_gradiant_brush().point1.x), static_cast<double>(brush.get_linear_gradiant_brush().point1.y), static_cast<double>(brush.get_linear_gradiant_brush().point2.x), static_cast<double>(brush.get_linear_gradiant_brush().point2.y), brush.get_linear_gradiant_brush().colors);
+    if (brush.is_radial_gradiant_brush()) return graphics.CreateRadialGradientBrush(static_cast<double>(brush.get_radial_gradiant_brush().focal_point.x), static_cast<double>(brush.get_radial_gradiant_brush().focal_point.y), static_cast<double>(brush.get_radial_gradiant_brush().center_point.x), static_cast<double>(brush.get_radial_gradiant_brush().center_point.y), static_cast<double>(brush.get_radial_gradiant_brush().radius), brush.get_radial_gradiant_brush().colors);
     if (brush.is_solid_brush()) return graphics.CreateBrush(wxBrush(brush.get_solid_brush().color));
-    if (brush.is_linear_gradiant_brush()) {
-      auto point1 = brush.get_linear_gradiant_brush().point1;
-      auto point2 = brush.get_linear_gradiant_brush().point2;
-      auto colors = brush.get_linear_gradiant_brush().colors;
-      return graphics.CreateLinearGradientBrush(static_cast<double>(point1.x), static_cast<double>(point1.y), static_cast<double>(point2.x), static_cast<double>(point2.y), colors);
-    }
-    if (brush.is_radial_gradiant_brush()) {
-      auto centter_point = brush.get_radial_gradiant_brush().center_point;
-      auto focal_point = brush.get_radial_gradiant_brush().focal_point;
-      auto radius = brush.get_radial_gradiant_brush().radius;
-      auto colors = brush.get_radial_gradiant_brush().colors;
-      return graphics.CreateRadialGradientBrush(static_cast<double>(focal_point.x), static_cast<double>(focal_point.y), static_cast<double>(centter_point.x), static_cast<double>(centter_point.y), static_cast<double>(radius), colors);
-    }
-    if (brush.is_conical_gradiant_brush()) {
-      // Does not exists yet... so return solid brush
-      //auto centter_point = brush.get_conical_gradiant_brush().center_point;
-      //auto angle = brush.get_conical_gradiant_brush().angle;
-      auto colors = brush.get_conical_gradiant_brush().colors;
-      //return graphics.CreateConicalGradientBrush(static_cast<double>(centter_point.x), static_cast<double>(centter_point.y), static_cast<double>(angle), colors);
-      return graphics.CreateBrush(wxBrush(brush.get_conical_gradiant_brush().colors.Item(0).GetColour()));
-    }
     if (brush.is_texture_brush()) return graphics.CreateBrush(wxBrush(brush.get_texture_brush().texture));
+    throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
+  }
+  
+  wxPen to_pen(const wx_pen& pen) {
+    if (pen.is_solid_color_pen()) {
+      wxPen wxpen(pen.get_solid_color_pen().color, pen.get_solid_color_pen().width);
+      wxpen.SetStyle(wxPenStyle::wxPENSTYLE_USER_DASH);
+      wxpen.SetCap(wxPenCap::wxCAP_BUTT);
+      wxpen.SetDashes(pen.get_solid_color_pen().dashes.size(), pen.get_solid_color_pen().dashes.data());
+      return wxpen;
+    }
+    if (pen.is_texture_fill_pen()) {
+      wxPen wxpen(wxBitmap(pen.get_texture_fill_pen().brush.get_texture_brush().texture), pen.get_texture_fill_pen().width);
+      wxpen.SetCap(wxPenCap::wxCAP_BUTT);
+      return wxpen;
+    }
+    throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
+  }
+  
+  wxGraphicsPen to_graphics_pen(wxGraphicsContext& graphics, const wx_pen& pen) {
+    if (pen.is_solid_color_pen()) return graphics.CreatePen(to_pen(pen));
+    if (pen.is_hatch_fill_pen()) {
+      wxGraphicsPenInfo pen_info;
+      pen_info.Cap(wxPenCap::wxCAP_BUTT);
+      pen_info.Colour({0, 0, 0, 0});
+      pen_info.Stipple(wxBitmap(pen.get_hatch_fill_pen().brush.get_texture_brush().texture));
+      pen_info.Width(pen.get_hatch_fill_pen().width);
+      return graphics.CreatePen(pen_info);
+    }
+    if (pen.is_linear_gradiant_pen()) {
+      wxGraphicsPenInfo pen_info;
+      pen_info.Cap(wxPenCap::wxCAP_BUTT);
+      pen_info.Colour({0, 0, 0, 0});
+      pen_info.LinearGradient(pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().point1.x, pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().point1.y, pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().point2.x, pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().point2.y, pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().colors);
+      pen_info.Width(pen.get_linear_gradiant_pen().width);
+      return graphics.CreatePen(pen_info);
+    }
+    if (pen.is_radial_gradiant_pen()) {
+      wxGraphicsPenInfo pen_info;
+      pen_info.Cap(wxPenCap::wxCAP_BUTT);
+      pen_info.Colour({0, 0, 0, 0});
+      pen_info.RadialGradient(pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().focal_point.x, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().focal_point.y, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().center_point.x, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().center_point.y, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().radius, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().colors);
+      pen_info.Width(pen.get_radial_gradiant_pen().width);
+      return graphics.CreatePen(pen_info);
+    }
+    if (pen.is_texture_fill_pen()) {
+      wxGraphicsPenInfo pen_info;
+      pen_info.Cap(wxPenCap::wxCAP_BUTT);
+      pen_info.Colour({0, 0, 0, 0});
+      pen_info.Stipple(wxBitmap(pen.get_texture_fill_pen().brush.get_texture_brush().texture));
+      pen_info.Width(pen.get_texture_fill_pen().width);
+      return graphics.CreatePen(pen_info);
+    }
+    if (pen.is_conical_gradiant_pen()) {
+      wxGraphicsPenInfo pen_info;
+      pen_info.Cap(wxPenCap::wxCAP_BUTT);
+      pen_info.Colour(pen.get_conical_gradiant_pen().brush.get_conical_gradiant_brush().colors.Item(0).GetColour());
+      pen_info.Width(pen.get_conical_gradiant_pen().width);
+      return graphics.CreatePen(pen_info);
+    }
+
     throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
   }
 }
@@ -102,7 +146,7 @@ void graphics::draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_
   graphics_context gc(hdc);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
   dc.SetBrush(*wxTRANSPARENT_BRUSH);
-  dc.SetPen(*reinterpret_cast<wxPen*>(pen));
+  dc.SetPen(to_pen(*reinterpret_cast<wx_pen*>(pen)));
   dc.DrawEllipticArc(x, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
@@ -112,7 +156,7 @@ void graphics::draw_bezier(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, i
   graphics_context gc(hdc);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
   dc.SetBrush(*wxTRANSPARENT_BRUSH);
-  dc.SetPen(*reinterpret_cast<wxPen*>(pen));
+  dc.SetPen(to_pen(*reinterpret_cast<wx_pen*>(pen)));
   std::vector<wxPoint> points {wxPoint(x1, y1), wxPoint(x2, y2), wxPoint(x3, y3), wxPoint(x4, y4)};
   dc.DrawSpline(4, points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
@@ -123,7 +167,7 @@ void graphics::draw_ellipse(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, in
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
   path.AddEllipse(x, y, width, height);
-  graphics.SetPen(*reinterpret_cast<wxPen*>(pen));
+  graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
   graphics.DrawPath(path);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
@@ -147,31 +191,24 @@ void graphics::draw_image_disabled(intptr_t hdc, intptr_t image, int32_t x, int3
 void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  auto path = graphics.CreatePath();
-  path.MoveToPoint(x1, y1);
-  path.AddLineToPoint(x2, y2);
-  graphics.SetPen(*reinterpret_cast<wxPen*>(pen));
-  graphics.DrawPath(path);
+  graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
+  graphics.StrokeLine(x1, y1, x2, y2);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
 void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  auto path = graphics.CreatePath();
-  path.AddRectangle(x, y, width, height);
-  graphics.SetPen(*reinterpret_cast<wxPen*>(pen));
-  graphics.DrawPath(path);
+  graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
+  graphics.DrawRectangle(x, y, width, height);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
 void graphics::draw_rounded_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  auto path = graphics.CreatePath();
-  path.AddRoundedRectangle(x, y, width, height, radius);
-  graphics.SetPen(*reinterpret_cast<wxPen*>(pen));
-  graphics.DrawPath(path);
+  graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
+  graphics.DrawRoundedRectangle(x, y, width, height, radius);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 

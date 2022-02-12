@@ -3,7 +3,13 @@
 #include "../../../include/xtd/drawing/bitmap.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
 #include "../../../include/xtd/drawing/drawing2d/hatch_brush.h"
+#include "../../../include/xtd/drawing/drawing2d/conical_gradient_brush.h"
+#include "../../../include/xtd/drawing/drawing2d/linear_gradient_brush.h"
+#include "../../../include/xtd/drawing/drawing2d/radial_gradient_brush.h"
+#include "../../../include/xtd/drawing/texture_brush.h"
 #include <xtd/argument_exception.h>
+#include <xtd/as.h>
+#include <xtd/is.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/pen.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
@@ -11,31 +17,19 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-
-pen::pen(const drawing::brush& brush) {
-  data_->handle_ = native::pen::create();
-  this->brush(brush);
-}
-
-pen::pen(const drawing::brush& brush, float width) {
-  data_->handle_ = native::pen::create();
-  this->brush(brush);
-  this->width(width);
-}
+using namespace xtd::drawing::drawing2d;
 
 pen::pen(const drawing::color& color) {
-  data_->handle_ = native::pen::create();
   this->color(color);
 }
 
 pen::pen(const drawing::color& color, float width) {
-  data_->handle_ = native::pen::create();
   this->color(color);
   this->width(width);
 }
 
 pen::pen() {
-  data_->handle_ = native::pen::create();
+  recreate_handle();
 }
 
 pen::pen(const pen& value) {
@@ -53,72 +47,123 @@ pen::~pen() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
 }
 
-pen& pen::alignment(drawing2d::pen_alignment alignment) {
-  data_->alignment_ = alignment;
-  return *this;
+bool pen::operator==(const xtd::drawing::pen& value) const {
+  return data_ == value.data_;
 }
 
-std::unique_ptr<drawing::brush> pen::brush() const {
-  switch (data_->type_) {
-    case drawing2d::pen_type::solid_color: return make_unique<solid_brush>(data_->color_); break;
-    case drawing2d::pen_type::hatch_fill: //return make_unique<drawing2d::hatch_brush>(data_->color_); break;
-    case drawing2d::pen_type::texture_fill: //return make_unique<texture_brush>(data_->color_); break;
-    case drawing2d::pen_type::path_gradient: //return make_unique<drawing2d::path_gradient_brush>(data_->color_); break;
-    case drawing2d::pen_type::linear_gradient: //return make_unique<drawing2d::linear_gradient_brush>(data_->color_); break;
-    default: throw xtd::argument_exception("pen type invalid"_t, current_stack_frame_); break;
-  }
+bool pen::operator!=(const xtd::drawing::pen& value) const {
+  return !operator==(value);
 }
 
-pen& pen::brush(const drawing::brush& brush) {
-  if (dynamic_cast<const drawing::solid_brush*>(&brush) != nullptr) {
-    data_->type_ = drawing2d::pen_type::solid_color;
-    color(static_cast<const drawing::solid_brush&>(brush).color());
-  } else if (dynamic_cast<const drawing2d::hatch_brush*>(&brush) != nullptr) {
-    data_->type_ = drawing2d::pen_type::hatch_fill;
-    auto bitmap = drawing::bitmap(8, 8);
-    auto graphics = drawing::graphics::from_image(bitmap);
-    graphics.fill_rectangle(brush, xtd::drawing::rectangle(0, 0, 8, 8));
-    //color(drawing::color::transparent);
-    native::pen::image(data_->handle_, bitmap.handle());
-    //} else if (dynamic_cast<const texture_brush*>(&brush) != nullptr) {
-    //  type_ = drawing2d::pen_type::texture_fill;
-    //} else if (dynamic_cast<const drawing2d::path_gradient_brush*>(&brush) != nullptr) {
-    //  type_ = drawing2d::pen_type::path_gradient;
-    //} else if (dynamic_cast<const drawing2d::linear_gradient_brush*>(&brush) != nullptr) {
-    //  type_ = drawing2d::pen_type::linear_gradient;
-  } else
-    throw xtd::argument_exception("brush invalid"_t, current_stack_frame_);
-  return *this;
+pen_alignment pen::alignment() const {
+  return data_->alignment;
 }
 
-pen& pen::color(const drawing::color& color) {
-  if (data_->color_ != color) {
-    data_->color_ = color;
-    native::pen::color(data_->handle_, color.a(), color.r(), color.g(), color.b());
+pen& pen::alignment(drawing2d::pen_alignment value) {
+  if (data_->alignment != value) {
+    data_->alignment = value;
+    recreate_handle();
   }
   return *this;
 }
 
-pen& pen::dash_pattern(const vector<float>& dash_pattern) {
-  if (data_->dash_pattern_ != dash_pattern) {
-    data_->dash_pattern_ = dash_pattern;
-    native::pen::dash_pattern(data_->handle_, dash_pattern);
+const std::unique_ptr<drawing::brush>& pen::brush() const {
+  return data_->brush;
+}
+
+const xtd::drawing::color& pen::color() const {
+  return data_->color;
+}
+
+pen& pen::color(const drawing::color& value) {
+  if (data_->color != value) {
+    data_->color = value;
+    data_->brush.reset();
+    recreate_handle();
   }
   return *this;
 }
 
-pen& pen::dash_style(drawing::dash_style dash_style) {
-  if (data_->dash_style_ != dash_style) {
-    data_->dash_style_ = dash_style;
-    native::pen::dash_style(data_->handle_, static_cast<uint32_t>(dash_style));
+std::vector<float> pen::dash_pattern() const {
+  return data_->dash_pattern;
+}
+
+xtd::drawing::pen& pen::dash_pattern(const std::initializer_list<float>& value) {
+  return dash_pattern(std::vector<float>(value));
+}
+
+pen& pen::dash_pattern(const vector<float>& value) {
+  if (data_->dash_pattern != value) {
+    data_->dash_pattern = value;
+    if (!data_->dash_pattern.empty()) data_->dash_style = drawing::dash_style::custom;
+    recreate_handle();
   }
   return *this;
 }
 
-pen& pen::width(float width) {
-  if (data_->width_ != width) {
-    data_->width_ = width;
-    native::pen::width(data_->handle_, width);
+drawing::dash_style pen::dash_style() const {
+  return data_->dash_style;
+}
+
+pen& pen::dash_style(drawing::dash_style value) {
+  if (data_->dash_style != value) {
+    data_->dash_style = value;
+    recreate_handle();
   }
   return *this;
+}
+
+xtd::drawing::drawing2d::pen_type pen::type() const {
+  return data_->type;
+}
+
+pen& pen::width(float value) {
+  if (data_->width != value) {
+    data_->width = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+xtd::ustring pen::to_string() const noexcept {
+  return ustring::full_class_name(*this);
+}
+
+void pen::recreate_handle() {
+  if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
+  data_->handle_ = native::pen::create();
+  
+  vector<float> dashes;
+  switch (data_->dash_style) {
+    case drawing::dash_style::solid: break;
+    case drawing::dash_style::dash: dashes = {3, 2};  break;
+    case drawing::dash_style::dot: dashes = {1, 1};  break;
+    case drawing::dash_style::dash_dot: dashes = {3, 1, 1, 1};  break;
+    case drawing::dash_style::dash_dot_dot: dashes = {3, 1, 1, 1, 1, 1};  break;
+    case drawing::dash_style::custom: dashes = data_->dash_pattern; break;
+    default: break;
+  }
+
+  if (data_->brush == nullptr) {
+    data_->type = pen_type::solid_color;
+    native::pen::solid_color(data_->handle_, data_->color.a(), data_->color.r(), data_->color.g(), data_->color.b(), data_->width, data_->dash_offset, dashes);
+  } else if (is<hatch_brush>(data_->brush.get())) {
+    data_->type = pen_type::hatch_fill;
+    native::pen::hatch_fill(data_->handle_, as<hatch_brush>(data_->brush.get())->handle(), data_->width);
+  } else if (is<conical_gradient_brush>(data_->brush.get())) {
+    data_->type = pen_type::conical_gradient;
+    native::pen::conical_gradient(data_->handle_, as<conical_gradient_brush>(data_->brush.get())->handle(), data_->width);
+  } else if (is<linear_gradient_brush>(data_->brush.get())) {
+    data_->type = pen_type::linear_gradient;
+    native::pen::linear_gradient(data_->handle_, as<linear_gradient_brush>(data_->brush.get())->handle(), data_->width);
+  } else if (is<radial_gradient_brush>(data_->brush.get())) {
+    data_->type = pen_type::radial_gradient;
+    native::pen::radial_gradient(data_->handle_, as<radial_gradient_brush>(data_->brush.get())->handle(), data_->width);
+  } else if (is<solid_brush>(data_->brush.get())) {
+    data_->type = pen_type::solid_color;
+    native::pen::solid_color(data_->handle_, as<solid_brush>(data_->brush.get())->color().a(), as<solid_brush>(data_->brush.get())->color().r(), as<solid_brush>(data_->brush.get())->color().g(), as<solid_brush>(data_->brush.get())->color().b(), data_->width, data_->dash_offset, dashes);
+  } else if (is<texture_brush>(data_->brush.get())) {
+    data_->type = pen_type::texture_fill;
+    native::pen::texture_fill(data_->handle_, as<texture_brush>(data_->brush.get())->handle(), data_->width);
+  }
 }

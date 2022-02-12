@@ -14,7 +14,7 @@ public:
   lines_form() {
     text("Lines tests");
     padding(5);
-    client_size({800, 450});
+    client_size({800, 600});
 
     tab_control.parent(*this);
     tab_control.dock(dock_style::fill);
@@ -63,22 +63,26 @@ private:
   void draw_pens_with_color(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
 
-    e.graphics().draw_line(pen(color::red, 1), point(50, 25), point(250, 25));
-    e.graphics().draw_line(pen(color::green, 2), point(50, 50), point(250, 50));
-    e.graphics().draw_line(pen(color::blue, 5), point(50, 75), point(250, 75));
-    e.graphics().draw_line(pen(color::yellow, 10), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(color::red, 1), point(50, 50), point(250, 50));
+    e.graphics().draw_line(pen(color::green, 2), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(color::blue, 5), point(50, 150), point(250, 150));
+    e.graphics().draw_line(pen(color::yellow, 10), point(50, 200), point(250, 200));
 
-    e.graphics().draw_line(pen(color::red, 1), point(50, 150), point(50, 350));
-    e.graphics().draw_line(pen(color::green, 2), point(75, 150), point(75, 350));
-    e.graphics().draw_line(pen(color::blue, 5), point(100, 150), point(100, 350));
-    e.graphics().draw_line(pen(color::yellow, 10), point(125, 150), point(125, 350));
+    e.graphics().draw_line(pen(color::red, 1), point(350, 50), point(350, 250));
+    e.graphics().draw_line(pen(color::green, 2), point(400, 50), point(400, 250));
+    e.graphics().draw_line(pen(color::blue, 5), point(450, 50), point(450, 250));
+    e.graphics().draw_line(pen(color::yellow, 10), point(500, 50), point(500, 250));
   }
   
   void draw_pens_with_brush(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
-    e.graphics().draw_line(pen(solid_brush(color::red), 10), point(50, 25), point(250, 25));
-    e.graphics().draw_line(pen(hatch_brush(xtd::drawing::drawing2d::hatch_style::cross, color::red, color::blue), 10), point(50, 50), point(250, 50));
+    e.graphics().draw_line(pen(solid_brush(color::yellow), 20), point(50, 50), point(250, 50));
+    e.graphics().draw_line(pen(hatch_brush(xtd::drawing::drawing2d::hatch_style::solid_diamond, color::blue, color::yellow), 20), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(conical_gradient_brush(point(150, 150), {color::blue, color::yellow}, 0), 20), point(50, 150), point(250, 150));
+    e.graphics().draw_line(pen(linear_gradient_brush(rectangle(50, 200, 250, 10), {color::blue, color::yellow}, 0), 20), point(50, 200), point(250, 200));
+    e.graphics().draw_line(pen(radial_gradient_brush(point(150, 250), {color::blue, color::yellow}, 20), 20), point(50, 250), point(250, 250));
+    e.graphics().draw_line(pen(texture_brush(create_circle_texture_image(color::blue, color::yellow)), 20), point(50, 300), point(250, 300));
   }
   
   void draw_pens_with_dash(object& sender, paint_event_args& e) {
@@ -117,6 +121,15 @@ private:
     auto pen2 = pen(color::red, 10);
     pen1.alignment(xtd::drawing::drawing2d::pen_alignment::inset);
     e.graphics().draw_line(pen2, point(50, 100), point(250, 100));
+  }
+  
+  static image create_circle_texture_image(const color& foreground_color, const color& background_color) {
+    static auto texture = bitmap(16, 16);
+    auto graphics = texture.create_graphics();
+    graphics.fill_rectangle(solid_brush(background_color), 0, 0, texture.width(), texture.height());
+    graphics.draw_ellipse(pens::black(), 0, 0, texture.width() - 1, texture.height() - 1);
+    graphics.fill_ellipse(solid_brush(foreground_color), 1, 1, texture.width() - 2, texture.height() - 2);
+    return texture;
   }
 
 };
