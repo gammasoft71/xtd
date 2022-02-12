@@ -72,7 +72,15 @@ namespace {
   }
   
   wxGraphicsPen to_graphics_pen(wxGraphicsContext& graphics, const wx_pen& pen) {
-    if (pen.is_solid_color_pen()) return graphics.CreatePen(to_pen(pen));
+    if (pen.is_solid_color_pen()) {
+      wxGraphicsPenInfo pen_info;
+      pen_info.Cap(wxPenCap::wxCAP_BUTT);
+      pen_info.Colour(pen.get_solid_color_pen().color);
+      pen_info.Style(wxPenStyle::wxPENSTYLE_USER_DASH);
+      pen_info.Dashes(pen.get_solid_color_pen().dashes.size(), pen.get_solid_color_pen().dashes.data());
+      pen_info.Width(pen.get_solid_color_pen().width);
+      return graphics.CreatePen(pen_info);
+    }
     if (pen.is_hatch_fill_pen()) {
       wxGraphicsPenInfo pen_info;
       pen_info.Cap(wxPenCap::wxCAP_BUTT);
