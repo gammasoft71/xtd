@@ -1,5 +1,4 @@
 name: Ubuntu Debug
-uses: egor-tensin/setup-gcc@v1
 with:
   version: 11
 
