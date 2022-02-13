@@ -29,19 +29,15 @@ public:
     
     tab_page_system.parent(tab_control);
     tab_page_system.text("System");
-    tab_page_system.click += {*this, &buttons_form::change_style_sheet};
     
     tab_page_standard.parent(tab_control);
     tab_page_standard.text("Standard");
-    tab_page_standard.click += {*this, &buttons_form::change_style_sheet};
 
     tab_page_flat.parent(tab_control);
     tab_page_flat.text("Flat");
-    tab_page_flat.click += {*this, &buttons_form::change_style_sheet};
 
     tab_page_popup.parent(tab_control);
     tab_page_popup.text("Popup");
-    tab_page_popup.click += {*this, &buttons_form::change_style_sheet};
 
     create_buttons(tab_page_system, flat_style::system);
     create_buttons(tab_page_standard, flat_style::standard);
@@ -230,15 +226,6 @@ private:
     button_ptr->flat_style(style).image_align(content_alignment::bottom_right).image(button_images::from_name("xtd")).parent(parent_control).location({890, 155}).size({100, 50});
     ++button_number;
   }
-  
-  void change_style_sheet() {
-    //static auto names = application::style_sheet_names();
-    static std::vector names = {"GNOME (dark)", "GNOME (light)", "KDE (dark)", "KDE (light)", "macOS (dark)", "macOS (light)", "Windows (dark)", "Windows (light)", "default"};
-    static auto current = 0U;
-    application::style_sheet(application::get_style_sheet_from_name(names[current]));
-    text(ustring::format("Buttons tests - {}", names[current]));
-    if (++current >= names.size()) current = 0;
-  };
 
   forms::tab_control tab_control;
   forms::tab_page tab_page_system;
