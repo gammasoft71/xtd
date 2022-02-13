@@ -21,7 +21,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-   - name: Use gcc 11
+   - name: Setup gcc 11
+     uses: egor-tensin/setup-gcc@v1
      with:
        version: 11
       
