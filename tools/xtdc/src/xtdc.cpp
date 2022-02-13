@@ -347,7 +347,7 @@ namespace xtdc_command {
         result += ustring::format("    library path: {}{}", library.library_path(), environment::new_line());
         result += ustring::format("    resources path: {}{}", library.resources_path(), environment::new_line());
       }
-      return std::move(result);
+      return result.c_str();
     }
     
     static string get_version() noexcept {

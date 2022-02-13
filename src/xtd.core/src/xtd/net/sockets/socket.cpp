@@ -48,9 +48,11 @@ struct socket::data {
   xtd::net::sockets::socket_type socket_type = xtd::net::sockets::socket_type::unknown;
 };
 
-socket::socket() : data_{make_shared<data>()} {
+socket::socket() {
+  data_ = make_shared<socket::data>();
 }
-socket::socket(intptr_t handle) : data_{make_shared<data>()} {
+socket::socket(intptr_t handle)  {
+  data_ = make_shared<socket::data>();
   debug::write_if(show_debug_socket.enabled(), ustring::format("socket::socket(handle) : socket=[{}]", handle));
   if (handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[handle_invalid]");
@@ -60,7 +62,8 @@ socket::socket(intptr_t handle) : data_{make_shared<data>()} {
   debug::write_line_if(show_debug_socket.enabled(), " succeed");
 }
 
-socket::socket(const socket_information& socket_information) { /*: data_{make_shared<data>()}*/
+socket::socket(const socket_information& socket_information) {
+  /*data_ = make_shared<socket::data>();*/
   if (data_) throw not_implemented_exception(csf_);
 }
 
@@ -68,7 +71,8 @@ socket::socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::pr
   if (data_->address_family == address_family::inter_network_v6) dual_mode(true);
 }
 
-socket::socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) : data_{make_shared<data>()} {
+socket::socket(xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
+  data_ = make_shared<socket::data>();
   data_->address_family = address_family;
   data_->socket_type = socket_type;
   data_->protocol_type = protocol_type;
