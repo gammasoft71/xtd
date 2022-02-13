@@ -1,3 +1,3 @@
-# xtd.forms.manual_tests
+# xtd.drawing.rectangles.tests
 
-Contains manual tests for [xtd.forms](../../src/xtd.forms) library.
+Contains tests for [xtd::drawing::graphics::draw_rectangle](../../../src/xtd.drawing/include/xtd/drawing/graphics.h) and [xtd::drawing::graphics::fill_rectangle](../../../src/xtd.drawing/include/xtd/drawing/graphics.h) methods.

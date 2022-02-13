@@ -1,3 +1,3 @@
-# xtd.forms.manual_tests
+#xtd.drawing.lines.tests
 
-Contains manual tests for [xtd.forms](../../src/xtd.forms) library.
+Contains tests for [xtd::drawing::graphics::draw_line](../../../src/xtd.drawing/include/xtd/drawing/graphics.h) methods.
