@@ -1,6 +1,6 @@
-name: Ubuntu Debug
-with:
-  version: 11
+- name: Ubuntu Debug
+  with:
+    version: 11
 
 on:
   push:
