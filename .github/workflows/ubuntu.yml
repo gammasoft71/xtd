@@ -1,6 +1,4 @@
-- name: Ubuntu Debug
-  with:
-    version: 11
+name: Ubuntu Debug
 
 on:
   push:
@@ -19,6 +17,9 @@ jobs:
     # cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
+
+    with:
+      version: 11
         
     steps:
     - uses: actions/checkout@v2
