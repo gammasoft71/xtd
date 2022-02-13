@@ -3,7 +3,7 @@
 
 button:default {
   border-style: outset;
-  border-color: system-color(control-dark);
+  border-color: system-color(control-light);
   border-width: 2px;
   background-color: system-color(accent);
   padding: 1px;
@@ -24,7 +24,7 @@ button:default:mixed {
 }
 
 button:default:hover {
-  border-color: system-color(control-light);
+  border-color: system-color(control-dark);
 }
 
 button:default:disabled {  

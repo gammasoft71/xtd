@@ -3,7 +3,7 @@
 
 button:popup {
   border-style: solid;
-  border-color: system-color(control-dark);
+  border-color: system-color(control-light);
   border-width: 1px;
   background-color: system-color(control);
   color: system-color(control-text);

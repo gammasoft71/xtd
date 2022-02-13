@@ -25,7 +25,6 @@ button:default:mixed {
 }
 
 button:default:disabled {  
-  border-color: system-color(gray-text);
   background-image: linear-gradient(rgba(255, 255, 255, 35), rgba(255, 255, 255, 35));
   color: system-color(gray-text);
 }
