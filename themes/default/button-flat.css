@@ -3,7 +3,7 @@
 
 button:flat {
   border-style: solid;
-  border-color: system-color(control-dark);
+  border-color: system-color(control-light);
   border-width: 1px;
   background-color: system-color(control);
   padding: 1px;
@@ -19,11 +19,11 @@ button:flat:checked {
 }
 
 button:flat:mixed {
-  background-color: system-color(control-light);
+  background-color: system-color(control-dark);
 }
 
 button:flat:hover {
-  background-color: system-color(control-dark);
+  background-color: system-color(control-light);
 }
 
 button:flat:disabled {  
