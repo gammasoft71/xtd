@@ -617,7 +617,7 @@ These forms can be displayed in different ways:
 #### Remarks
 
 Sheet is a special dialog mode on macOS :
-* TThe dialog is shown centered on form (if form is specifed) without title.
+* The dialog is shown centered on form (if form is specifed) without title.
 * The method is not blocking and you must retrieve the result of the dialog at the closing event.
 * On other platforms than macOS, is a normal dialog, but you must also retrieve the result of the dialog on the close event but the method is blocking (this can be changed in the future). 
 
