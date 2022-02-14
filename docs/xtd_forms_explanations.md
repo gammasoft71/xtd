@@ -237,7 +237,7 @@ All controls must have a parent, except [xtd::forms::form](https://github.com/ga
 
 A control must always have one and only one parent (except for [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h) which can't have any). But a parent can have several child controls.
 
-Any control can be a parent or a child. There are no restrictions.
+Any control can be a parent and/or a child. There are no restrictions.
 
 It is easy to imagine that a complex control needs several simple controls.
 Like for example [xtd::forms::domain_up_down](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/domain_up_down.h) is composed of an [xtd::forms::text_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/text_box.h) and an [xtd::forms::up_down_button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/up_down_button.h).
