@@ -18,7 +18,7 @@ namespace xtd {
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
       /// @param color The color of the gradient stop.
-      /// @param offset the location of the gradient stop within the gradient vector.
+      /// @param offset The location of the gradient stop within the gradient vector.
       /// @remarks A value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
       using gradient_stop = std::pair<xtd::drawing::color, float>;
     }

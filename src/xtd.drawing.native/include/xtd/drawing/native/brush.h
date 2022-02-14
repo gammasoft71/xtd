@@ -57,10 +57,48 @@ namespace xtd {
         /// @param brush The brush handle to destroy.
         /// @warning Internal use only
         static void destroy(intptr_t brush);
+        /// @brief Sets solid color brush.
+        /// @param brush The brush handle.
+        /// @param a The alpha component of the color.
+        /// @param r The red component of the color.
+        /// @param g The green component of the color.
+        /// @param b The blue component of the color.
+        /// @warning Internal use only
         static void solid(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+        /// @brief Sets conical gradient brush.
+        /// @param brush The brush handle.
+        /// @param center_x The x coordinate  of the center point.
+        /// @param center_y The y coordinate  of the center point.
+        /// @param colors The gradient stop colors. Contains color and  offset.
+        /// @param angle The start angle of the conical gradient.
+        /// @remarks An offset value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
+        /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
+        /// @warning Internal use only
         static void conical_gradient(intptr_t brush, int32_t center_x, int32_t center_y, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle);
+        /// @brief Sets linear gradient brush.
+        /// @brief x1 Contains the left value of the bound rectangle of the linear brush.
+        /// @brief y1 Contains the top value of the bound rectangle of the linear brush.
+        /// @brief x2 Contains the right value of the bound rectangle of the linear brush.
+        /// @brief y1 Contains the bottom value of the bound rectangle of the linear brush.
+        /// @param angle The start angle of the linear gradient.
+        /// @remarks An offset value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
+        /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
+        /// @warning Internal use only
         static void linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle);
+        /// @brief Sets radial gradient brush.
+        /// @param brush The brush handle.
+        /// @param center_x The x coordinate  of the center point.
+        /// @param center_y The y coordinate  of the center point.
+        /// @param focal_x The x coordinate  of the focal point.
+        /// @param focal_y The y coordinate  of the focal point.
+        /// @param colors The gradient stop colors. Contains color and  offset.
+        /// @param radius The radius of the radial gradient.
+        /// @remarks An offset value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
+        /// @warning Internal use only
         static void radial_gradient(intptr_t brush, int32_t center_x, int32_t center_y, int32_t focal_x, int32_t focal_y, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float radius);
+        /// @brief Sets texturebrush.
+        /// @param brush The brush handle.
+        /// @param texture The image handle that represents the texture of the brush.
         static void texture(intptr_t brush, intptr_t texture);
         /// @}
       };
