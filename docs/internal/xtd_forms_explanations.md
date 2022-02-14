@@ -621,7 +621,7 @@ Sheet is a special dialog mode on macOS :
 * The method is not blocking and you must retrieve the result of the dialog at the closing event.
 * On other platforms than macOS, is a normal dialog, but you must also retrieve the result of the dialog on the close event but the method is blocking (this can be changed in the future). 
 
-The example [form_show](https://github.com/gammasoft71/xtd/blob/master/xtd.examples/xtd.forms.examples/others/form_show/README.md) demonstates the different ways to display a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
+The example [form_show](https://github.com/gammasoft71/xtd/tree/master/examples/xtd.forms.examples/others/form_show) demonstates the different ways to display a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
 
 ### Start position
 
