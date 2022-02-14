@@ -822,7 +822,7 @@ xtd::forms::control::paint event : Occurs when the control is redrawn.
 
 The paint_event_args is composed of :
 * clip_rectangle : the rectangle in which to paint.
-* graphics : the graphics used to paint. For more information see [Graphics](#grraphics)
+* graphics : the graphics used to paint. For more information see [Graphics](#graphics)
 
 ### Other Events
 
