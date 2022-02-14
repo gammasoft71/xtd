@@ -1,4 +1,4 @@
-# xtd.forms explanations (**Internal use only**)
+# xtd.forms explanations
 
 ## Table of contents
 * [Libraries and API](#libraries-and-api)
