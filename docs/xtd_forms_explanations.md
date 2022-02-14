@@ -75,7 +75,7 @@ Like the whole [xtd framework](xtd_explanations.md), **xtd.forms** provides a hi
 
 ### xtd.forms hierarchy diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/xtd_forms.png)
+![image](pictures/diagrams/uml/xtd_forms/xtd_forms.png)
 
 ### xtd.forms high level API
 
@@ -182,7 +182,7 @@ It is the root of the type hierarchy.
 
 ### Object class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/object.png)
+![image](pictures/diagrams/uml/xtd_forms/object.png)
 
 ## Components
 
@@ -198,7 +198,7 @@ It will be mainly used in the future with the xtd-code<sup>1</sup> designer
 
 ### Component class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/component.png)
+![image](pictures/diagrams/uml/xtd_forms/component.png)
 
 All controls inherit from [xtd::forms::componant](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/componant.h).
 
@@ -216,7 +216,7 @@ Unlike a component, a control always has a graphic interface.
 
 ### Control class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/control.png)
+![image](pictures/diagrams/uml/xtd_forms/control.png)
 
 The control class provides all properties, functions and [events](../tutorial_events.md) common to the different controls. It also provides some static functions to manipulate the controls.
 
@@ -338,11 +338,11 @@ The creation of a control is done in several steps and exchanges between the dif
 
 The following sequence diagram shows the creation of an [xtd::form::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
 
-![image](../pictures/diagrams/uml/xtd_forms/form_creation.png)
+![image](pictures/diagrams/uml/xtd_forms/form_creation.png)
 
 The following sequence diagram shows the creation of an [xtd::form::button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/button=;h).
 
-![image](../pictures/diagrams/uml/xtd_forms/control_creation.png)
+![image](pictures/diagrams/uml/xtd_forms/control_creation.png)
 
 If we use as parent a control that is not yet natively created (because it has no parent), the new child control will not be natively created. It is when the parent control is created that it will be created.
 
@@ -374,15 +374,15 @@ Of course this is completely invisible to the user.
 
 The following sequence diagram shows the update of a control that is not natively created.
 
-![image](../pictures/diagrams/uml/xtd_forms/control_update_without_parent.png)
+![image](pictures/diagrams/uml/xtd_forms/control_update_without_parent.png)
 
 The following sequence diagram shows the update of a control that is not natively created.
 
-![image](../pictures/diagrams/uml/xtd_forms/control_update_with_parent.png)
+![image](pictures/diagrams/uml/xtd_forms/control_update_with_parent.png)
 
 The following sequence diagram shows the update of a control that requires a recreation of the control.
 
-![image](../pictures/diagrams/uml/xtd_forms/control_update_with_recreate.png)
+![image](pictures/diagrams/uml/xtd_forms/control_update_with_recreate.png)
 
 If the control to be updated has no parent or its parent control has no parent and so on, which means that the control is not created natively, then in this case the update will just be stored until the native control is created.
 
@@ -400,11 +400,11 @@ When a control is destroyed, its children are destroyed too.
 
 The following sequence diagram shows the destruction of a control when the destructor is called.
 
-![image](../pictures/diagrams/uml/xtd_forms/control_destroy.png)
+![image](pictures/diagrams/uml/xtd_forms/control_destroy.png)
 
 The following sequence diagram shows the destruction of a control when the parent is deleted.
 
-![image](../pictures/diagrams/uml/xtd_forms/control_clear_parent.png)
+![image](pictures/diagrams/uml/xtd_forms/control_clear_parent.png)
 
 #### Example
 
@@ -527,7 +527,7 @@ If he doesn't know exactly how his control will evolve, the best is to use [xtd:
 
 ### Some controls class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/controls.png)
+![image](pictures/diagrams/uml/xtd_forms/controls.png)
 
 ## Containers
 
@@ -543,7 +543,7 @@ There are more complex containers like [xtd::forms::tab_control](https://github.
 
 ### Container control class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/container_control.png)
+![image](pictures/diagrams/uml/xtd_forms/container_control.png)
 
 The [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h) control is also a container.
 
@@ -565,7 +565,7 @@ The scroll bars can be managed :
 
 ### scrollable control class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/scrollable_control.png)
+![image](pictures/diagrams/uml/xtd_forms/scrollable_control.png)
 
 #### Manually
 
@@ -593,7 +593,7 @@ The are some kinds layout panel :
 
 ### Some container controls class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/containers.png)
+![image](pictures/diagrams/uml/xtd_forms/containers.png)
 
 ## Forms
 
@@ -648,7 +648,7 @@ The [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.fo
 
 ### Form class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/form.png)
+![image](pictures/diagrams/uml/xtd_forms/form.png)
 
 ### MDI and child
 
@@ -960,7 +960,7 @@ Control placement in xtd.forms is determined not only by the control, but also b
 
 The position a control appears on a parent is determined by the value of the xtd::forms::control::location property relative to the top-left of the parent surface. The top-left position coordinate in the parent is (x0,y0). The size of the control is determined by the xtd::forms::control::size property and represents the width and height of the control.
 
-![image](../pictures/location_container.png)
+![image](pictures/location_container.png)
 
 When a control is added to a parent that enforces automatic placement, the position and size of the control is changed. In this case, the position and size of the control may not be manually adjusted, depending on the type of parent.
 
@@ -976,7 +976,7 @@ The xtd::forms::control::padding property defines the space in the interior of a
 
 The following figure shows the xtd::forms::control::margin and xtd::forms::control::padding properties on a control.
 
-![image](../pictures/margin_padding.png)
+![image](pictures/margin_padding.png)
 
 ### Automatic placement and size
 
@@ -1372,7 +1372,7 @@ The following table shows the different types of resources supported:
 
 ## Some xtd.forms class diagram
 
-![image](../pictures/diagrams/uml/xtd_forms/forms.png)
+![image](pictures/diagrams/uml/xtd_forms/forms.png)
 
 # See also
 ​
