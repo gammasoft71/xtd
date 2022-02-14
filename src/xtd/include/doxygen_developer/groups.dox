@@ -96,6 +96,11 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup fd frame dimension
+/// @brief frame dimension definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup file_attributes file attributes
 /// @brief file attributes definitions.
 /// @warning Internal use only
