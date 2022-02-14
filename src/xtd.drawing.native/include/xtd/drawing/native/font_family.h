@@ -39,16 +39,87 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
+        /// @brief Creates fontt family from name.
+        /// @param name The name of the fontt family.
+        /// @return The created font family handle.
+        /// @warning Internal use only
         static intptr_t create(const xtd::ustring& name);
+
+        /// @brief Destroy the font family.
+        /// @param font_family The font family handle to destroy.
+        /// @warning Internal use only
         static void destroy(intptr_t font_family);
+
+        /// @brief Gets the generic serif name.
+        /// @return The generic serif name.
+        /// @warning Internal use only
         static xtd::ustring generic_serif_name();
+
+        /// @brief Gets the generic sans serif name.
+        /// @return The generic sans serif name.
+        /// @warning Internal use only
         static xtd::ustring generic_sans_serif_name();
+
+        /// @brief Gets the generic monospace name.
+        /// @return The generic monospace name.
+        /// @warning Internal use only
         static xtd::ustring generic_monospace_name();
+
+        /// @brief Gets the installed font families.
+        /// @return The installed font families.
+        /// @warning Internal use only
         static std::vector<xtd::ustring> installed_font_families();
+
+        /// @brief Gets the cell ascent.
+        /// @param font_family The fontt family handle.
+        /// @param em_height The em-height of the font family in pixels.
+        /// @param bold true if font family is bold; otherwise false.
+        /// @param italic true if font family is italic; otherwise false.
+        /// @param underline true if font family is underline; otherwise false.
+        /// @param strikeout true if font family is strikeout; otherwise false.
+        /// @return The cell ascent.
+        /// @warning Internal use only
         static int32_t get_cell_ascent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout);
+        
+        /// @brief Gets the cell descent.
+        /// @param font_family The fontt family handle.
+        /// @param em_height The em-height of the font family in pixels.
+        /// @param bold true if font family is bold; otherwise false.
+        /// @param italic true if font family is italic; otherwise false.
+        /// @param underline true if font family is underline; otherwise false.
+        /// @param strikeout true if font family is strikeout; otherwise false.
+        /// @return The cell descent.
+        /// @warning Internal use only
         static int32_t get_cell_descent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout);
+        
+        /// @brief Gets the line spacing.
+        /// @param font_family The fontt family handle.
+        /// @param em_height The em-height of the font family in pixels.
+        /// @param bold true if font family is bold; otherwise false.
+        /// @param italic true if font family is italic; otherwise false.
+        /// @param underline true if font family is underline; otherwise false.
+        /// @param strikeout true if font family is strikeout; otherwise false.
+        /// @return The line spacing.
+        /// @warning Internal use only
         static int32_t get_line_spacing(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout);
+        
+        /// @brief Gets the font name for specifiedd language.
+        /// @param font_family The fontt family handle.
+        /// @param language The language id for retreive the font family name.
+        /// @return The font tfamily name.
+        /// @remarks To indicate language neutral, you should specify 0 for the language parameter. For a listing of the available languages and sublanguages, see the Winnt.h header file. If you have Visual Studio installed, this header file can typically be found relative to the Visual Studio installation directory at \\VC\PlatformSDK\Include.
+        /// @warning Internal use only
         static xtd::ustring get_name(intptr_t font_family, int32_t language);
+        
+        /// @brief Gets the style availability.
+        /// @param font_family The fontt family handle.
+        /// @param em_height The em-height of the font family in pixels.
+        /// @param bold true if font family is bold; otherwise false.
+        /// @param italic true if font family is italic; otherwise false.
+        /// @param underline true if font family is underline; otherwise false.
+        /// @param strikeout true if font family is strikeout; otherwise false.
+        /// @return True if font family is availlable; otherwise false.
+        /// @warning Internal use only
         static bool is_style_available(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
         /// @}
       };

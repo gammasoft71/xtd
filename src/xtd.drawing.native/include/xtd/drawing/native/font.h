@@ -37,7 +37,7 @@ namespace xtd {
         /// @{
         /// @brief Creates font.
         /// @param family_name A string representation of the font family for the new font.
-        /// @param em_size The em-size of the new font in the units specified by the unit parameter.
+        /// @param em_size The em-size of the new font in pixels.
         /// @param bold true if font is bold; otherwise false.
         /// @param italic true if font is italic; otherwise false.
         /// @param underline true if font is underline; otherwise false.
@@ -47,24 +47,29 @@ namespace xtd {
         /// @return The created font handle.
         /// @warning Internal use only
         static intptr_t create(const xtd::ustring& family_name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font);
+
         /// @brief Creates font from hdc.
         /// @param hdc The handle of the device context font.
         /// @return The created font handle.
         /// @warning Internal use only
         static intptr_t create_from_hdc(intptr_t hdc);
+
         /// @brief Creates font from hfont.
         /// @param hfont The handle of the font.
         /// @return The created font handle.
         /// @warning Internal use only
         static intptr_t create_from_hfont(intptr_t hfont);
+
         /// @brief Destroy the font.
         /// @param font The font handle.
         /// @warning Internal use only
         static void destroy(intptr_t font);
+
         /// @brief Gets the screen dpi .
         /// @return The screen dpi.
         /// @warning Internal use only
         static int32_t dpi();
+
         /// @brief Gets the font information from font hanfle.
         /// @param font The font handle to retrieve informations.
         /// @param name The font name.
@@ -99,11 +104,13 @@ namespace xtd {
         /// | BALTIC        | 186   |
         /// @warning Internal use only
         static void get_information(intptr_t font, xtd::ustring& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font);
+
         /// @brief Gets the font height.
         /// @param font The font handle.
         /// @return The font height.
         /// @warning Internal use only
         static float height(intptr_t font);
+
         /// @brief Gets the font height for the specified hdc.
         /// @param font The font handle.
         /// @param hdc The device context handle.
