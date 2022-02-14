@@ -668,7 +668,7 @@ Xtd.forms is an event library. Indeed, for each action performed an event is ass
 
 There are local events and system events.
 
-For more information about delegates and events see [delegates](https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_delegates.md) and (events)[https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_events.md] tutorials.
+For more information about delegates and events see [delegates](https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_delegates.md) and [events](https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_events.md) tutorials.
 
 ### Local events
 
