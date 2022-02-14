@@ -91,10 +91,12 @@ namespace xtd {
         /// @{        
         /// @brief Gets the angle of the gradient.
         /// @return A float that specifies the angle of the conical gradient.
+        /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
         float angle() const noexcept;
         /// @brief Sets the angle of the gradient.
         /// @param value A float that specifies the angle of the conicalconical gradient.
         /// @return Current linear_gradient_brush instance.
+        /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
         conical_gradient_brush& angle(float value) noexcept;
         
         /// @brief Gets the center point of the conical gradient.
