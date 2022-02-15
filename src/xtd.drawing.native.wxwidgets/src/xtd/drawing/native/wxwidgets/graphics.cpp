@@ -5,6 +5,7 @@
 #include <xtd/ustring.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
+#include <xtd/drawing/native/path_fill_mode.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
 #include "../../../../../include/xtd/drawing/native/wx_pen.h"
@@ -279,7 +280,7 @@ void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, float x, float y, floa
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::fill_path(intptr_t hdc, intptr_t brush, intptr_t graphics_path) {
+void graphics::fill_path(intptr_t hdc, intptr_t brush, intptr_t graphics_path, int32_t mode) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
@@ -297,7 +298,7 @@ void graphics::fill_path(intptr_t hdc, intptr_t brush, intptr_t graphics_path) {
   } else {
     graphics.SetPen(wxNullPen);
     graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
-    graphics.FillPath(*reinterpret_cast<wxGraphicsPath*>(graphics_path));
+    graphics.FillPath(*reinterpret_cast<wxGraphicsPath*>(graphics_path), mode == PFM_ALTERNATE ? wxODDEVEN_RULE : wxWINDING_RULE);
   }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }

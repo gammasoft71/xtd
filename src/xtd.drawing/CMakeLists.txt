@@ -46,6 +46,7 @@ add_sources(
   include/xtd/drawing/system_pens.h
   include/xtd/drawing/texture_brush.h
   include/xtd/drawing/drawing2d/conical_gradient_brush.h
+  include/xtd/drawing/drawing2d/fill_mode.h
   include/xtd/drawing/drawing2d/gradient_stop_collection.h
   include/xtd/drawing/drawing2d/gradient_stop.h
   include/xtd/drawing/drawing2d/graphics_path.h

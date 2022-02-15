@@ -297,8 +297,8 @@ void graphics::fill_ellipse(const xtd::drawing::brush& brush, float x, float y, 
   native::graphics::fill_ellipse(data_->handle_, brush.handle(), x, y, width, height);
 }
 
-void graphics::fill_path(const brush& brush, const drawing2d::graphics_path& graphics_path) {
-  native::graphics::fill_path(data_->handle_, brush.handle(), graphics_path.handle());
+void graphics::fill_path(const brush& brush, const drawing2d::graphics_path& path) {
+  native::graphics::fill_path(data_->handle_, brush.handle(), path.handle(), static_cast<int32_t>(path.fill_mode()));
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {

@@ -9,6 +9,7 @@
 #include <xtd/static.h>
 #include <xtd/ustring.h>
 #include <xtd/drawing_native_export.h>
+#include "path_fill_mode.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -48,7 +49,7 @@ namespace xtd {
         static void draw_string(intptr_t hdc, const xtd::ustring& text, intptr_t font, float x, float y, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void draw_string(intptr_t hdc, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void fill_ellipse(intptr_t hdc, intptr_t brush, float x, float y, float width, float heigh);
-        static void fill_path(intptr_t hdc, intptr_t brush, intptr_t graphics_path);
+        static void fill_path(intptr_t hdc, intptr_t brush, intptr_t graphics_path, int32_t mode);
         static void fill_pie(intptr_t hdc, intptr_t brush, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void fill_region(intptr_t hdc, intptr_t brush, intptr_t region);
         static void fill_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height);

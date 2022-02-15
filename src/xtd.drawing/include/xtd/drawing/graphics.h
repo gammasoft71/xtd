@@ -230,7 +230,7 @@ namespace xtd {
       void fill_ellipse(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
       void fill_ellipse(const xtd::drawing::brush& brush, float x, float y, float width, float height);
       
-      void fill_path(const xtd::drawing::brush& brush, const xtd::drawing::drawing2d::graphics_path& graphics_path);
+      void fill_path(const xtd::drawing::brush& brush, const xtd::drawing::drawing2d::graphics_path& path);
       
       void fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle);
       void fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle);
