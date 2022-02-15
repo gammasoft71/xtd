@@ -33,12 +33,12 @@ namespace {
   }
 }
 
-intptr_t region::create(float x, float y, float width, float height) {
+intptr_t region::create_from_rect(float x, float y, float width, float height) {
   toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxRegion(as<int32_t>(x), as<int32_t>(y), as<int32_t>(width), as<int32_t>(height)));
 }
 
-intptr_t region::create(intptr_t path) {
+intptr_t region::create_from_graphics_path(intptr_t path) {
   auto wx_path = reinterpret_cast<wxGraphicsPath*>(path);
   wxBitmap bitmap = CreateBitmap(*wx_path);
   return reinterpret_cast<intptr_t>(new wxRegion(bitmap, wxColour(255, 0, 0)));
