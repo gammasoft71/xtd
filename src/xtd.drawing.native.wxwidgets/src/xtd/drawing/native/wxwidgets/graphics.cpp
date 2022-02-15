@@ -144,7 +144,7 @@ void graphics::destroy(intptr_t hdc) {
   delete hdc_wrapper;
 }
 
-void graphics::draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
+void graphics::draw_arc(intptr_t hdc, intptr_t pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {
   if (!hdc) return;
   graphics_context gc(hdc);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
@@ -154,7 +154,7 @@ void graphics::draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_bezier(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4) {
+void graphics::draw_bezier(intptr_t hdc, intptr_t pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
   if (!hdc) return;
   graphics_context gc(hdc);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
@@ -165,17 +165,15 @@ void graphics::draw_bezier(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, i
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_ellipse(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height) {
+void graphics::draw_ellipse(intptr_t hdc, intptr_t pen, float x, float y, float width, float height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  auto path = graphics.CreatePath();
-  path.AddEllipse(x, y, width, height);
   graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
-  graphics.DrawPath(path);
+  graphics.DrawEllipse(x, y, width, height);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_image(intptr_t hdc, intptr_t image, int32_t x, int32_t y) {
+void graphics::draw_image(intptr_t hdc, intptr_t image, float x, float y) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image));
@@ -183,7 +181,7 @@ void graphics::draw_image(intptr_t hdc, intptr_t image, int32_t x, int32_t y) {
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_image_disabled(intptr_t hdc, intptr_t image, int32_t x, int32_t y, float brightness) {
+void graphics::draw_image_disabled(intptr_t hdc, intptr_t image, float x, float y, float brightness) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<uint8_t>(255 * brightness));
@@ -191,7 +189,7 @@ void graphics::draw_image_disabled(intptr_t hdc, intptr_t image, int32_t x, int3
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+void graphics::draw_line(intptr_t hdc, intptr_t pen, float x1, float y1, float x2, float y2) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -199,7 +197,15 @@ void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height) {
+void graphics::draw_path(intptr_t hdc, intptr_t pen, intptr_t graphics_path) {
+  if (!hdc) return;
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
+  graphics.DrawPath(*reinterpret_cast<wxGraphicsPath*>(graphics_path));
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
+}
+
+void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, float x, float y, float width, float height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -207,7 +213,7 @@ void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_rounded_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
+void graphics::draw_rounded_rectangle(intptr_t hdc, intptr_t pen, float x, float y, float width, float height, float radius) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -215,7 +221,7 @@ void graphics::draw_rounded_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, float x, float y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
   // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work with unicode on Windows.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
@@ -231,12 +237,12 @@ void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, float x, float y, float w, float h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
   // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work with unicode on Windows.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
     wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
-    dc.SetClippingRegion({ x, y }, { w, h });
+    dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(w), static_cast<int32_t>(h)});
     dc.SetFont(*reinterpret_cast<wxFont*>(font));
     dc.SetTextForeground({ r, g, b, a });
     dc.DrawText(wxString(convert_string::to_wstring(text)), x, y);
@@ -251,7 +257,7 @@ void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
+void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, float x, float y, float width, float height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
@@ -272,7 +278,30 @@ void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
+void graphics::fill_path(intptr_t hdc, intptr_t brush, intptr_t graphics_path) {
+  if (!hdc) return;
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+    double x, y, width, height;
+    reinterpret_cast<wxGraphicsPath*>(graphics_path)->GetBox(&x, &y, &width, &height);
+    wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
+    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
+    wxBitmap conical_gradient_bitmap_mask(x + width, y + height);
+    auto conical_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap_mask));
+    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
+    conical_gradient_mask_graphics->FillPath(*reinterpret_cast<wxGraphicsPath*>(graphics_path));
+    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
+    conical_gradient_bitmap = conical_gradient_image;
+    graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
+  } else {
+    graphics.SetPen(wxNullPen);
+    graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
+    graphics.FillPath(*reinterpret_cast<wxGraphicsPath*>(graphics_path));
+  }
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
+}
+
+void graphics::fill_pie(intptr_t hdc, intptr_t brush, float x, float y, float width, float height, float start_angle, float sweep_angle) {
   if (!hdc) return;
   graphics_context gc(hdc);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
@@ -294,7 +323,7 @@ void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int3
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
+void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
@@ -307,7 +336,7 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
+void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height, float radius) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
@@ -336,7 +365,7 @@ intptr_t graphics::from_image(intptr_t image) {
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
-void graphics::measure_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t& width, int32_t& height) {
+void graphics::measure_string(intptr_t hdc, const ustring& text, intptr_t font, float& width, float& height) {
   if (!hdc) return;
   width = 0;
   height = 0;
@@ -354,8 +383,8 @@ void graphics::measure_string(intptr_t hdc, const ustring& text, intptr_t font, 
       graphics.SetFont(*reinterpret_cast<wxFont*>(font), { 0, 0, 0 });
       graphics.GetTextExtent(wxString(convert_string::to_wstring(string)), &line_width, &line_height);
     }
-    width = std::max(width, static_cast<int32_t>(line_width));
-    height += static_cast<int32_t>(line_height);
+    width = std::max(width, static_cast<float>(line_width));
+    height += static_cast<float>(line_height);
     
     // Workaround : with wxWidgets version <= 3.1.4 width size text is too small on macOS and linux.
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetFontMetrics().averageWidth / 2.3f);
@@ -367,7 +396,7 @@ void graphics::rotate_transform(intptr_t hdc, float angle) {
   graphics.Rotate(angle);
 }
 
-void graphics::translate_clip(intptr_t hdc, int32_t dx, int32_t dy) {
+void graphics::translate_clip(intptr_t hdc, float dx, float dy) {
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   graphics.Translate(dx, dy);
 }

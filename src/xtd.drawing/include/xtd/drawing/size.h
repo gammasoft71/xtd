@@ -54,7 +54,7 @@ namespace xtd {
       size operator-(const xtd::drawing::size& size) const;
       size& operator+=(const xtd::drawing::size& size);
       size& operator-=(const xtd::drawing::size& size);
-      operator size_f() {return size_f(static_cast<float>(width_), static_cast<float>(height_));}
+      operator size_f() const {return size_f(static_cast<float>(width_), static_cast<float>(height_));}
       /// @endcond
       
       /// @name Properties

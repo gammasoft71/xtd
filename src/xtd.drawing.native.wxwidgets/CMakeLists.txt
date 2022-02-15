@@ -30,6 +30,7 @@ add_sources(
   src/xtd/drawing/native/wxwidgets/font.cpp
   src/xtd/drawing/native/wxwidgets/font_family.cpp
   src/xtd/drawing/native/wxwidgets/graphics.cpp
+  src/xtd/drawing/native/wxwidgets/graphics_path.cpp
   src/xtd/drawing/native/wxwidgets/icon.cpp
   src/xtd/drawing/native/wxwidgets/image.cpp
   src/xtd/drawing/native/wxwidgets/pen.cpp
