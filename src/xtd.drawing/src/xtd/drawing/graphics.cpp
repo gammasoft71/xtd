@@ -117,7 +117,7 @@ void graphics::draw_image(const xtd::drawing::image& image, int32_t x, int32_t y
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {
   if (size_f(width, height) == size_f(image.size()))  native::graphics::draw_image(data_->handle_, image.handle(), x, y);
-  else native::graphics::draw_image(data_->handle_, bitmap(image, size(width, height)).handle(), x, y);
+  else native::graphics::draw_image(data_->handle_, bitmap(image, size(static_cast<int32_t>(width), static_cast<int32_t>(height))).handle(), x, y);
 }
 
 void graphics::draw_image(const image& image, int32_t x, int32_t y) {
@@ -230,7 +230,7 @@ void graphics::draw_string(const ustring& text, const font& font, const brush& b
         width -= (layout_rectangle.width() - line_size.width());
       }
       
-      if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(data_->handle_, drawable_line, font.data_->handle_, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+      if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(data_->handle_, drawable_line, font.data_->handle_, x, y, width, height, static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
       else {
         /*
          for (auto index  = 0; index <hotkey_prefix_locations.size(); ++index) {
