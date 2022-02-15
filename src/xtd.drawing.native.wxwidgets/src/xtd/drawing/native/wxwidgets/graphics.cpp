@@ -8,12 +8,12 @@
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
 #include "../../../../../include/xtd/drawing/native/wx_pen.h"
+#include "../../../../../include/xtd/drawing/native/wxConicalGradient.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/app.h>
 #include <wx/dcgraph.h>
 #include <wx/dcmemory.h>
 #include <wx/region.h>
-#include "wxConicalGradient.h"
 
 using namespace xtd;
 using namespace xtd::drawing::native;

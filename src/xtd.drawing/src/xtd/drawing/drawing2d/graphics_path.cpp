@@ -33,6 +33,30 @@ intptr_t graphics_path::handle() const noexcept {
   return data_->handle;
 }
 
+void graphics_path::add_ellipse(int32_t x, int32_t y, int32_t width, int32_t height) {
+  add_ellipse(rectangle(x, y, width, height));
+}
+
+void graphics_path::add_ellipse(float x, float y, float width, float height) {
+  add_ellipse(rectangle(x, y, width, height));
+}
+
+void graphics_path::add_ellipse(const xtd::drawing::rectangle& rect) {
+  add_ellipse(rectangle_f(rect));
+}
+
+void graphics_path::add_ellipse(const xtd::drawing::rectangle_f& rect) {
+  native::graphics_path::add_ellipse(data_->handle, rect.x(), rect.y(), rect.width(), rect.height());
+}
+
+void graphics_path::add_rectangle(int32_t x, int32_t y, int32_t width, int32_t height) {
+  add_rectangle(rectangle(x, y, width, height));
+}
+
+void graphics_path::add_rectangle(float x, float y, float width, float height) {
+  add_rectangle(rectangle(x, y, width, height));
+}
+
 void graphics_path::add_rectangle(const rectangle& rect) {
   add_rectangle(rectangle_f(rect));
 }
