@@ -17,6 +17,7 @@
 #include "point_f.h"
 #include "rectangle.h"
 #include "rectangle_f.h"
+#include "region.h"
 #include "size.h"
 #include "string_format.h"
 #include "size_f.h"
@@ -38,6 +39,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @cond
+    class icon;
     class image;
     /// @endcond
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
@@ -169,7 +171,22 @@ namespace xtd {
       /// @param height Height of the bounding rectangle that defines the ellipse.
       /// @remarks This method draws an ellipse that is defined by the bounding rectangle described by the x, y, width, and height parameters.
       void draw_ellipse(const xtd::drawing::pen& pen, float x, float y, float width, float height);
-      
+
+      /// @brief Draws the image represented by the specified xtd::drawing::icon at the specified coordinates.
+      /// @param icon xtd::drawing::icon to draw.
+      /// @param x The x-coordinate of the upper-left corner of the drawn image.
+      /// @param y The y-coordinate of the upper-left corner of the drawn image.
+      void draw_icon(const xtd::drawing::icon& icon, int32_t x, int32_t y);
+      /// @brief Draws the image represented by the specified xtd::drawing::icon within the area specified by a xtd::drawing::rectangle structure.
+      /// @param icon xtd::drawing::icon to draw.
+      /// @param rect xtd::drawing::rectangle structure that specifies the location and size of the resulting image on the display surface. The image contained in the icon parameter is scaled to the dimensions of this rectangular area.
+      void draw_icon(const xtd::drawing::icon& icon, const xtd::drawing::rectangle& rect);
+
+      /// @brief Draws the image represented by the specified Icon without scaling the image.
+      /// @param icon xtd::drawing::icon to draw.
+      /// @param rect xtd::drawing::rectangle structure that specifies the location and size of the resulting image. The image is not scaled to fit this rectangle, but retains its original size. If the image is larger than the rectangle, it is clipped to fit inside it.
+      void draw_icon_unstretched(const xtd::drawing::icon& icon, const xtd::drawing::rectangle& rect);
+
       void draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect);
       void draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& rect);
       void draw_image(const xtd::drawing::image& image, const xtd::drawing::point& point);
@@ -224,7 +241,9 @@ namespace xtd {
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect);
       void fill_rectangle(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
       void fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height);
-      
+
+      void fill_region(const xtd::drawing::brush& brush, const xtd::drawing::region& region);
+
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, int32_t radius);
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float radius);
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);

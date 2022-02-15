@@ -21,9 +21,15 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ icon : public object {
     public:
-      icon() = default;
-      ~icon();
+      /// @name Fileds
+
+      /// @{
+      static icon empty;
+      /// @}
       
+      /// @name Constructors
+      
+      /// @{
       explicit icon(const xtd::ustring& filename);
       
       explicit icon(std::istream& stream);
@@ -31,31 +37,35 @@ namespace xtd {
       explicit icon(const char* const* bits);
       
       icon(const icon& icon, int32_t width, int32_t height);
+      /// @}
       
       /// @cond
+      icon() = default;
       icon(const icon& icon) = default;
       icon& operator=(const icon& icon) = default;
-      bool operator==(const icon& icon) const {return data_->handle_ == icon.data_->handle_;}
-      bool operator!=(const icon& icon) const {return !operator==(icon);}
+      bool operator==(const icon& icon) const;
+      bool operator!=(const icon& icon) const;
+      ~icon();
       /// @endcond
+
+      /// @name Properties
       
       /// @brief Get the handle of this image.
       /// @return The handle of this image.
-      intptr_t handle() const {return data_->handle_;}
-      
-      static icon empty;
+      intptr_t handle() const;
+      /// @}
       
       void save(const xtd::ustring& filename) const;
       void save(std::ostream& stream) const;
       
-      static icon from_bitmap(const bitmap& bitmap);
+      static icon from_bitmap(const xtd::drawing::bitmap& bitmap);
       
       bitmap to_bitmap() const;
       
     private:
       explicit icon(const bitmap& bitmap);
       struct data {
-        intptr_t handle_ = 0;
+        intptr_t handle = 0;
       };
       
       std::shared_ptr<data> data_ = std::make_shared<data>();

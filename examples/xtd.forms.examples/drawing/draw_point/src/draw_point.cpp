@@ -17,7 +17,7 @@ namespace examples {
     form1() {
       text("Draw point example");
       
-      generate_colored_points_timer.interval_milliseconds(100);
+      generate_colored_points_timer.interval_milliseconds(200);
       generate_colored_points_timer.tick += event_handler(*this, &form1::generate_colored_points);
       generate_colored_points_timer.start();
     }
@@ -36,7 +36,7 @@ namespace examples {
       static vector colors = {color::red, color::green, color::blue, color::yellow, color::cyan, color::magenta, color::white};
       colored_points.resize(random.next(height() * width() / 600, height() * width() / 300));
       for (auto& colored_point : colored_points)
-        colored_point = {point(random.next(client_size().width()), random.next(client_size().height())), colors[random.next(colors.size())], random.next(1, 5)};
+        colored_point = {point(random.next(client_size().width()), random.next(client_size().height())), colors[random.next(colors.size())], random.next(1, 10)};
       invalidate();
     }
     

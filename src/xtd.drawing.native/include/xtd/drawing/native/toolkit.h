@@ -32,6 +32,7 @@ namespace xtd {
       class icon;
       class image;
       class pen;
+      class region;
       class system_colors;
       class system_fonts;
       /// @endcond
@@ -51,6 +52,7 @@ namespace xtd {
         friend xtd::drawing::native::icon;
         friend xtd::drawing::native::image;
         friend xtd::drawing::native::pen;
+        friend xtd::drawing::native::region;
         friend xtd::drawing::native::system_colors;
         friend xtd::drawing::native::system_fonts;
         friend xtd::forms::native::application;
