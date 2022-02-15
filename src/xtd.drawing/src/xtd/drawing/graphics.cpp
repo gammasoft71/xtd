@@ -116,7 +116,7 @@ void graphics::draw_image(const xtd::drawing::image& image, int32_t x, int32_t y
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {
-  if (size(width, height) == size_f(image.size()))  native::graphics::draw_image(data_->handle_, image.handle(), x, y);
+  if (size_f(width, height) == size_f(image.size()))  native::graphics::draw_image(data_->handle_, image.handle(), x, y);
   else native::graphics::draw_image(data_->handle_, bitmap(image, size(width, height)).handle(), x, y);
 }
 
