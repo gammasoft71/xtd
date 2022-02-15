@@ -13,13 +13,14 @@ using namespace std;
 using namespace xtd::drawing::native;
 
 namespace {
+  static const wxColour mask_color = wxColour(255, 0, 255);
   static wxBitmap create_graphics_path_bitmap(wxGraphicsPath& path) noexcept {
     double x = .0f, y = .0f, width = .0f, height = .0f;
     path.GetBox(&x, &y, &width, &height);
     wxBitmap bitmap(static_cast<int32_t>(x + width), static_cast<int32_t>(y + height));
     auto graphics = wxGraphicsContext::Create(wxMemoryDC(bitmap));
     graphics->SetPen(graphics->CreatePen(wxNullPen));
-    graphics->SetBrush(graphics->CreateBrush(wxBrush((wxColour(255, 0, 255)))));
+    graphics->SetBrush(graphics->CreateBrush(wxBrush((mask_color))));
     graphics->DrawRectangle(0, 0, x + width, y + height);
     graphics->SetBrush(graphics->CreateBrush(wxBrush((wxColour(0, 0, 0)))));
     graphics->FillPath(path);
@@ -35,7 +36,7 @@ intptr_t region::create_from_rect(float x, float y, float width, float height) {
 intptr_t region::create_from_graphics_path(intptr_t path) {
   auto wx_path = reinterpret_cast<wxGraphicsPath*>(path);
   wxBitmap bitmap = create_graphics_path_bitmap(*wx_path);
-  return reinterpret_cast<intptr_t>(new wxRegion(bitmap, wxColour(255, 0, 255)));
+  return reinterpret_cast<intptr_t>(new wxRegion(bitmap, mask_color));
 }
 
 void region::destroy(intptr_t handle) {
