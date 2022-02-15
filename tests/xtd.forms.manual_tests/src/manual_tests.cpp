@@ -33,8 +33,8 @@ form1::form1() {
     //e.graphics().fill_path(brushes::dodger_blue(), path);
     drawing::region region(path);
     rectangle rect2(50, 30, 60, 80);
-    region.exclude(rect2);
-    e.graphics().fill_region(brushes::dodger_blue(), region);
+    region.make_xor(rect2);
+    e.graphics().fill_region(linear_gradient_brush(rectangle(20, 20, 130, 130), {color::navy, color::white}, 45), region);
   };
 }
 
