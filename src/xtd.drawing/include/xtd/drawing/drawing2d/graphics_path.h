@@ -44,9 +44,16 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        void add_ellipse(int32_t x, int32_t y, int32_t width, int32_t height);
+        void add_ellipse(float x, float y, float width, float height);
+        void add_ellipse(const xtd::drawing::rectangle& rect);
+        void add_ellipse(const xtd::drawing::rectangle_f& rect);
+        
+        void add_rectangle(int32_t x, int32_t y, int32_t width, int32_t height);
+        void add_rectangle(float x, float y, float width, float height);
         void add_rectangle(const xtd::drawing::rectangle& rect);
         void add_rectangle(const xtd::drawing::rectangle_f& rect);
-        
+
         xtd::drawing::rectangle_f get_bounds() const;
         
         xtd::ustring to_string() const noexcept override;

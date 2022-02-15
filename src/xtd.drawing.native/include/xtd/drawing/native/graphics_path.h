@@ -37,6 +37,7 @@ namespace xtd {
         /// @{
         static intptr_t create();
         static void destroy(intptr_t handle);
+        static void add_ellipse(intptr_t handle, float x, float y, float width, float height);
         static void add_rectangle(intptr_t handle, float x, float y, float width, float height);
         static void get_bounds(intptr_t handle, float& x, float& y, float& width, float& height);
         /// @}

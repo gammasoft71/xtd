@@ -11,7 +11,9 @@ using namespace xtd::drawing::drawing2d;
 region::region() : region(rectangle_f(0.0f, 0.0f, single_object::max_value, single_object::max_value)) {
 }
 
-region::region(const graphics_path& path) : region(path.get_bounds()) {
+region::region(const graphics_path& path) {
+  data_->bounds = path.get_bounds();
+  data_->handle = native::region::create(path.handle());
 }
 
 region::region(const rectangle& rect) : region(rectangle_f(rect)) {

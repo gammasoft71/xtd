@@ -5,7 +5,6 @@
 #include <xtd/drawing/native/toolkit.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <wx/colour.h>
 #include <xtd/as.h>
 
 using namespace std;
@@ -20,6 +19,10 @@ intptr_t graphics_path::create() {
 
 void graphics_path::destroy(intptr_t handle) {
   delete reinterpret_cast<wxGraphicsPath*>(handle);
+}
+
+void graphics_path::add_ellipse(intptr_t handle, float x, float y, float width, float height) {
+  reinterpret_cast<wxGraphicsPath*>(handle)->AddEllipse(x, y, width, height);
 }
 
 void graphics_path::add_rectangle(intptr_t handle, float x, float y, float width, float height) {
