@@ -166,7 +166,7 @@ namespace xtd {
     
     /// @brief Represents the smallest positive type_t value greater than zero. This field is constant.
     /// @remarks The value of this field is 4.94066e-324.
-    static constexpr type_t epsilon = box_floating_point<type_t>::__get_epsilon(type_t{});
+    static constexpr type_t epsilon = __get_epsilon(type_t{});
     /// @brief Represents infinity. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<type_t>::infinity().
     static constexpr type_t infinity = std::numeric_limits<type_t>::infinity();
