@@ -6,6 +6,8 @@
 /// @endcond
 
 #include <cstdint>
+#include <vector>
+#include <utility>
 #include <xtd/static.h>
 #include <xtd/drawing_native_export.h>
 
@@ -37,7 +39,13 @@ namespace xtd {
         /// @{
         static intptr_t create();
         static void destroy(intptr_t handle);
+        static void add_arc(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle);
+        static void add_bezier(intptr_t handle, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
+        static void add_closed_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension);
+        static void add_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension);
         static void add_ellipse(intptr_t handle, float x, float y, float width, float height);
+        static void add_line(intptr_t handle, float x1, float y1, float x2, float y2);
+        static void add_path(intptr_t handle, intptr_t path);
         static void add_rectangle(intptr_t handle, float x, float y, float width, float height);
         static void get_bounds(intptr_t handle, float& x, float& y, float& width, float& height);
         /// @}

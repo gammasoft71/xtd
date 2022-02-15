@@ -8,6 +8,7 @@
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../../drawing_export.h"
+#include "fill_mode.h"
 #include "../rectangle.h"
 #include "../rectangle_f.h"
 
@@ -18,13 +19,25 @@ namespace xtd {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
       /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
+      /// @code
+      /// class drawing_export_ graphics_path final : public object
+      /// @endcode
+      /// @par Inheritance
+      /// xtd::object → xtd::drawing::drawing2d::graphics_path
+      /// @par Namespace
+      /// xtd::drawing::drawing2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
       class drawing_export_ graphics_path final : public object {
       public:
         /// @name Constructors
+        
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::graphics_path class with a xtd::drawing::drawing2d::graphics_path::fill_mode value of xtd::drawing::drawing2d::fill_mode::alternate.
         graphics_path();
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::graphics_path class with the specified xtd::drawing::drawing2d::fil_mode enumeration.
+        /// @param mode The xtd::drawing::drawing2d::fill_mode enumeration that determines how the interior of this xtd::drawing::drawing2d::graphics_path is filled.
+        explicit graphics_path(xtd::drawing::drawing2d::fill_mode mode);
         /// @}
         
         /// @cond
@@ -38,12 +51,27 @@ namespace xtd {
         /// @name Properties
         
         /// @{
+        /// @brief Gets the handle of the graphics path.
+        /// @return An intptr_t that contains the handle of the graphics path.
         intptr_t handle() const noexcept;
+        
+        
+        /// @brief Gets a xtd::drawing::drawing2d::fill_mode enumeration that determines how the interiors of shapes in this xtd::drawing::drawing2d::graphics_path are filled.
+        /// @return A xtd::drawing::drawing2d::fill_mode enumeration that specifies how the interiors of shapes in this xtd::drawing::drawing2d::graphics_path are filled.
+        xtd::drawing::drawing2d::fill_mode fill_mode() const noexcept;
+        /// @brief Sets a xtd::drawing::drawing2d::fill_mode enumeration that determines how the interiors of shapes in this xtd::drawing::drawing2d::graphics_path are filled.
+        /// @param value A xtd::drawing::drawing2d::fill_mode enumeration that specifies how the interiors of shapes in this xtd::drawing::drawing2d::graphics_path are filled.
+        graphics_path& fill_mode(xtd::drawing::drawing2d::fill_mode value) noexcept;
         /// @}
    
         /// @name Methods
         
         /// @{
+        void add_arc(const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle);
+        void add_arc(const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle);
+        void add_arc(int32_t x, int32_t y, int32_t width, int32_t height, float start_angle, float sweep_angle);
+        void add_arc(float x, float y, float width, float height, float start_angle, float sweep_angle);
+
         void add_ellipse(int32_t x, int32_t y, int32_t width, int32_t height);
         void add_ellipse(float x, float y, float width, float height);
         void add_ellipse(const xtd::drawing::rectangle& rect);
@@ -66,6 +94,7 @@ namespace xtd {
       private:
         struct data {
           intptr_t handle = 0;
+          xtd::drawing::drawing2d::fill_mode fill_mode = xtd::drawing::drawing2d::fill_mode::alternate;
         };
         std::shared_ptr<data> data_ = std::make_shared<data>();
       };

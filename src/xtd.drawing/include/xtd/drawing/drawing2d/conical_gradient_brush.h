@@ -17,6 +17,11 @@ namespace xtd {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
       /// @brief Encapsulates a xtd::drawing::brush with a conical gradient. This class cannot be inherited.
+      /// @code
+      /// class drawing_export_ conical_gradient_brush final : public brush
+      /// @endcode
+      /// @par Inheritance
+      /// xtd::object → xtd::drawing::brush → xtd::drawing::drawing2d::conical_gradient_brush
       /// @par Namespace
       /// xtd::drawing::drawing2d
       /// @par Library
