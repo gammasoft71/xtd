@@ -13,10 +13,6 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @cond
-    class graphics;
-    /// @endcond
-    
     /// @brief Defines objects used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
     /// @par Namespace
     /// xtd::drawing
@@ -55,8 +51,6 @@ namespace xtd {
       /// @endcond
       
     protected:
-      friend class graphics;
-      
       /// @name Protected constructors
       
       /// @{

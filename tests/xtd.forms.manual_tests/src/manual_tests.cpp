@@ -22,8 +22,11 @@ form1::form1() {
   paint += [&](object& sender, paint_event_args& e) {
     graphics_path path;
     
-    path.add_rectangle(rectangle(10, 10, 200, 100));
-    e.graphics().fill_path(brushes::dodger_blue(), path);
+    rectangle rect1(20, 20, 60, 80);
+    rectangle rect2(50, 30, 60, 80);
+    drawing::region region(rect1);
+    region.make_xor(rect2);
+    e.graphics().fill_region(brushes::dodger_blue(), region);
   };
 }
 

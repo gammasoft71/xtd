@@ -46,6 +46,9 @@ namespace xtd {
         /// @{
         void add_rectangle(const xtd::drawing::rectangle& rect);
         void add_rectangle(const xtd::drawing::rectangle_f& rect);
+        
+        xtd::drawing::rectangle_f get_bounds() const;
+        
         xtd::ustring to_string() const noexcept override;
         /// @}
         

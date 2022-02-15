@@ -50,6 +50,7 @@ namespace xtd {
         static void fill_ellipse(intptr_t hdc, intptr_t brush, float x, float y, float width, float heigh);
         static void fill_path(intptr_t hdc, intptr_t brush, intptr_t graphics_path);
         static void fill_pie(intptr_t hdc, intptr_t brush, float x, float y, float width, float height, float start_angle, float sweep_angle);
+        static void fill_region(intptr_t hdc, intptr_t brush, intptr_t region);
         static void fill_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height);
         static void fill_rounded_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height, float radius);
         static intptr_t from_image(intptr_t image);

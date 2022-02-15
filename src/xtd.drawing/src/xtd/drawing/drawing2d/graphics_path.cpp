@@ -40,6 +40,12 @@ void graphics_path::add_rectangle(const rectangle_f& rect) {
   native::graphics_path::add_rectangle(data_->handle, rect.x(), rect.y(), rect.width(), rect.height());
 }
 
+xtd::drawing::rectangle_f graphics_path::get_bounds() const {
+  float x, y, width, height;
+  native::graphics_path::get_bounds(data_->handle, x, y, width, height);
+  return {x, y, width, height};
+}
+
 xtd::ustring graphics_path::to_string() const noexcept {
   return ustring::full_class_name(*this);
 }

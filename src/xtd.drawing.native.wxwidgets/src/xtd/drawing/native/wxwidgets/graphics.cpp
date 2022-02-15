@@ -12,6 +12,7 @@
 #include <wx/app.h>
 #include <wx/dcgraph.h>
 #include <wx/dcmemory.h>
+#include <wx/region.h>
 #include "wxConicalGradient.h"
 
 using namespace xtd;
@@ -326,6 +327,23 @@ void graphics::fill_pie(intptr_t hdc, intptr_t brush, float x, float y, float wi
 void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height) {
   if (!hdc) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+    graphics.DrawBitmap(wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle), x, y, width, height);
+  } else {
+    graphics.SetPen(wxNullPen);
+    graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
+    graphics.DrawRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
+  }
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
+}
+
+void graphics::fill_region(intptr_t hdc, intptr_t brush, intptr_t region) {
+  if (!hdc) return;
+  int32_t x, y, width, height;
+  wxRegion* wx_region = reinterpret_cast<wxRegion*>(region);
+  wx_region->GetBox(x, y, width, height);
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  graphics.Clip(*wx_region);
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
     graphics.DrawBitmap(wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle), x, y, width, height);
   } else {
