@@ -13,6 +13,7 @@ add_sources(
   include/xtd/drawing/native/font_family.h
   include/xtd/drawing/native/frame_dimension.h
   include/xtd/drawing/native/graphics.h
+  include/xtd/drawing/native/graphics_path.h
   include/xtd/drawing/native/icon.h
   include/xtd/drawing/native/image.h
   include/xtd/drawing/native/image_flags.h

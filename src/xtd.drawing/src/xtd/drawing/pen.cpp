@@ -19,13 +19,11 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
-pen::pen(const drawing::color& color) {
-  this->color(color);
+pen::pen(const drawing::color& color) : pen(color, 1) {
 }
 
-pen::pen(const drawing::color& color, float width) {
-  this->color(color);
-  this->width(width);
+pen::pen(const drawing::color& color, float width) : pen(solid_brush(color), width) {
+  data_->color = color;
 }
 
 pen::pen() {
@@ -78,7 +76,7 @@ const xtd::drawing::color& pen::color() const {
 pen& pen::color(const drawing::color& value) {
   if (data_->color != value) {
     data_->color = value;
-    data_->brush.reset();
+    data_->brush = make_unique<solid_brush>(value);
     recreate_handle();
   }
   return *this;

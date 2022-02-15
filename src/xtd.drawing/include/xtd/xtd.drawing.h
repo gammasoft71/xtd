@@ -8,6 +8,7 @@
 #include "drawing/drawing2d/conical_gradient_brush.h"
 #include "drawing/drawing2d/gradient_stop.h"
 #include "drawing/drawing2d/gradient_stop_collection.h"
+#include "drawing/drawing2d/graphics_path.h"
 #include "drawing/drawing2d/hatch_brush.h"
 #include "drawing/drawing2d/hatch_style.h"
 #include "drawing/drawing2d/linear_gradient_brush.h"
