@@ -13,7 +13,7 @@ region::region() : region(rectangle_f(0.0f, 0.0f, single_object::max_value, sing
 
 region::region(const graphics_path& path) {
   data_->bounds = path.get_bounds();
-  data_->handle = native::region::create(path.handle());
+  data_->handle = native::region::create_from_graphics_path(path.handle());
 }
 
 region::region(const rectangle& rect) : region(rectangle_f(rect)) {
@@ -21,7 +21,7 @@ region::region(const rectangle& rect) : region(rectangle_f(rect)) {
 
 region::region(const rectangle_f& rect) {
   data_->bounds = rect;
-  data_->handle = native::region::create(data_->bounds.x(), data_->bounds.y(), data_->bounds.width(), data_->bounds.height());
+  data_->handle = native::region::create_from_rect(data_->bounds.x(), data_->bounds.y(), data_->bounds.width(), data_->bounds.height());
 }
 
 region::~region() {

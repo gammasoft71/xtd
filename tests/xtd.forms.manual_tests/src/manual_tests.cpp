@@ -32,6 +32,8 @@ form1::form1() {
     path.add_ellipse(20, 20, 60, 80);
     //e.graphics().fill_path(brushes::dodger_blue(), path);
     drawing::region region(path);
+    rectangle rect2(50, 30, 60, 80);
+    region.exclude(rect2);
     e.graphics().fill_region(brushes::dodger_blue(), region);
   };
 }

@@ -33,8 +33,8 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        static intptr_t create(float x, float y, float width, float height);
-        static intptr_t create(intptr_t graphics_path);
+        static intptr_t create_from_rect(float x, float y, float width, float height);
+        static intptr_t create_from_graphics_path(intptr_t path);
         static void destroy(intptr_t handle);
         static void complement(intptr_t handle, intptr_t region);
         static void exclude(intptr_t handle, intptr_t region);
