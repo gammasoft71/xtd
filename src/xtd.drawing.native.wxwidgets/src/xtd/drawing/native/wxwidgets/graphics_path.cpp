@@ -71,7 +71,11 @@ void graphics_path::add_rounded_rectangle(intptr_t handle, float x, float y, flo
   reinterpret_cast<wxGraphicsPath*>(handle)->AddRoundedRectangle(x, y, width, height, radius);
 }
 
-void graphics_path::close_markers(intptr_t handle) {
+void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y) {
+  
+}
+
+void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h) {
   
 }
 
@@ -91,10 +95,6 @@ void graphics_path::reverse(intptr_t handle) {
   
 }
 
-void graphics_path::set_markers(intptr_t handle) {
-  
-}
-
 void graphics_path::start_figure(intptr_t handle) {
   
 }
@@ -106,4 +106,10 @@ void graphics_path::get_bounds(intptr_t handle, float& x, float& y, float& width
   y = as<float>(wx_y);
   width = as<float>(wx_width);
   height = as<float>(wx_height);
+}
+
+void graphics_path::get_last_point(intptr_t handle, float& x, float& y) {
+  auto point = reinterpret_cast<wxGraphicsPath*>(handle)->GetCurrentPoint();
+  x = static_cast<float>(point.m_x);
+  y = static_cast<float>(point.m_y);
 }

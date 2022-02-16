@@ -9,8 +9,11 @@
 #include <xtd/ustring.h>
 #include "../../drawing_export.h"
 #include "fill_mode.h"
+#include "../font_family.h"
+#include "../font_style.h"
 #include "../rectangle.h"
 #include "../rectangle_f.h"
+#include "../string_format.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -307,32 +310,77 @@ namespace xtd {
         /// @remarks The points in the points array specify the vertices of a polygon. If the first point in the array is not the same as the last point, those two points are connected to close the polygon.
         void add_polygon(const std::vector<xtd::drawing::point_f>& points);
 
+        /// @brief Adds a rectangle to this path.
+        /// @param rect A xtd::drawing::rectangle that represents the rectangle to add.
         void add_rectangle(const xtd::drawing::rectangle& rect);
+        /// @brief Adds a rectangle to this path.
+        /// @param rect A xtd::drawing::rectangle_f that represents the rectangle to add.
         void add_rectangle(const xtd::drawing::rectangle_f& rect);
+        /// @brief Adds a rectangle to this path.
+        /// @param x The x-coordinate of the upper-left corner of the rectangle.
+        /// @param y The y-coordinate of the upper left corner of the rectangle.
+        /// @param width The width of the rectangle.
+        /// @param height The height of the rectangle.
         void add_rectangle(int32_t x, int32_t y, int32_t width, int32_t height);
+        /// @brief Adds a rectangle to this path.
+        /// @param x The x-coordinate of the upper-left corner of the rectangle.
+        /// @param y The y-coordinate of the upper left corner of the rectangle.
+        /// @param width The width of the rectangle.
+        /// @param height The height of the rectangle.
         void add_rectangle(float x, float y, float width, float height);
 
+        /// @brief Adds a series of rectangles to this path.
+        /// @param rects An array of xtd::drawing::rectangle structures that represents the rectangles to add.
         void add_rectangles(const std::vector<xtd::drawing::rectangle>& rects);
+        /// @brief Adds a series of rectangles to this path.
+        /// @param rects An array of xtd::drawing::rectangle_f structures that represents the rectangles to add.
         void add_rectangles(const std::vector<xtd::drawing::rectangle_f>& rects);
 
+        /// @brief Adds a rounded rectangle to this path.
+        /// @param rect A xtd::drawing::rectangle that represents the rounded rectangle to add.
+        /// @param radius The radius of the rounded rectange angles.
         void add_rounded_rectangle(const xtd::drawing::rectangle& rect, float radius);
+        /// @brief Adds a rounded rectangle to this path.
+        /// @param rect A xtd::drawing::rectangle that represents the rounded rectangle to add.
+        /// @param radius The radius of the rounded rectange angles.
         void add_rounded_rectangle(const xtd::drawing::rectangle_f& rect, float radius);
+        /// @brief Adds a rounded rectangle to this path.
+        /// @param x The x-coordinate of the upper-left corner of the rounded rectangle.
+        /// @param y The y-coordinate of the upper left corner of the rounded rectangle.
+        /// @param width The width of the rounded rectangle.
+        /// @param height The height of the rounded rectangle.
+        /// @param radius The radius of the rounded rectange angles.
         void add_rounded_rectangle(int32_t x, int32_t y, int32_t width, int32_t height, float radius);
+        /// @brief Adds a rounded rectangle to this path.
+        /// @param x The x-coordinate of the upper-left corner of the rounded rectangle.
+        /// @param y The y-coordinate of the upper left corner of the rounded rectangle.
+        /// @param width The width of the rounded rectangle.
+        /// @param height The height of the rounded rectangle.
+        /// @param radius The radius of the rounded rectange angles.
         void add_rounded_rectangle(float x, float y, float width, float height, float radius);
 
-        void close_markers();
+        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point& layout_rect, const xtd::drawing::string_format& format);
+        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point_f& layout_rect, const xtd::drawing::string_format& format);
+        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle& layout_rect, const xtd::drawing::string_format& format);
+        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle_f& layout_rect, const xtd::drawing::string_format& format);
 
+        /// @brief Closes all open figures in this path and starts a new figure. It closes each open figure by connecting a line from its endpoint to its starting point.
         void close_all_figures();
 
+        /// @brief Closes the current figure and starts a new figure. If the current figure contains a sequence of connected lines and curves, the method closes the loop by connecting a line from the endpoint to the starting point.
         void close_figure();
 
+        /// @brief Converts each curve in this path into a sequence of connected line segments.
         void flatten();
 
+        /// @brief Returns a rectangle that bounds this xtd::drawing::drawing2d::graphics_path.
+        /// @return A xtd::drawing::rectangle_f that represents a rectangle that bounds this xtd::drawing::drawing2d::graphics_path.
+        /// @remarks The size of the returned bounding rectangle is influenced by the type of end caps, pen width, and pen miter limit, and therefore produces a "loose fit" to the bounded path. The approximate formula is: the initial bounding rectangle is inflated by pen width, and this result is multiplied by the miter limit, plus some additional margin to allow for end caps.
         xtd::drawing::rectangle_f get_bounds() const;
+        
+        xtd::drawing::point_f get_lat_point() const;
 
         void reverse();
-        
-        void set_markers();
         
         void start_figure();
 
