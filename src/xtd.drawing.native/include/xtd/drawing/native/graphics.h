@@ -36,6 +36,7 @@ namespace xtd {
         
         /// @{
         static void clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+        static void clip(intptr_t hdc, intptr_t region);
         static void destroy(intptr_t hdc);
         static void draw_arc(intptr_t hdc, intptr_t pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void draw_bezier(intptr_t hdc, intptr_t pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
@@ -55,6 +56,8 @@ namespace xtd {
         static void fill_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height);
         static void fill_rounded_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height, float radius);
         static intptr_t from_image(intptr_t image);
+        static float get_dpi_x(intptr_t hdc);
+        static float get_dpi_y(intptr_t hdc);
         static void measure_string(intptr_t hdc, const xtd::ustring& text, intptr_t font, float& width, float& height);
         static void rotate_transform(intptr_t hdc, float angle);
         static void translate_clip(intptr_t hdc, float dx, float dy);

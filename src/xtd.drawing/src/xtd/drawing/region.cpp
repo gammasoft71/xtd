@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
-region::region() : region(rectangle_f(0.0f, 0.0f, single_object::max_value, single_object::max_value)) {
+region::region() : region(rectangle_f(single_object::min_value, single_object::min_value, single_object::max_value, single_object::max_value)) {
 }
 
 region::region(const graphics_path& path) {

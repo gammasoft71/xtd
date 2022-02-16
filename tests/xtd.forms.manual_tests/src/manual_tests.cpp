@@ -11,30 +11,18 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1();
-  
+    
 private:
 };
 
 form1::form1() {
   text("form1 - system");
   client_size({800, 450});
-  
+
   paint += [&](object& sender, paint_event_args& e) {
-    /*
-    rectangle rect1(20, 20, 60, 80);
-    rectangle rect2(50, 30, 60, 80);
-    drawing::region region(rect1);
-    region.make_xor(rect2);
-    e.graphics().fill_region(brushes::dodger_blue(), region);
-     */
-    
-    graphics_path path;
-    path.add_ellipse(20, 20, 60, 80);
-    //e.graphics().fill_path(brushes::dodger_blue(), path);
-    drawing::region region(path);
-    rectangle rect2(50, 30, 60, 80);
-    region.make_xor(rect2);
-    e.graphics().fill_region(linear_gradient_brush(rectangle(20, 20, 90, 90), {color::navy, color::transparent}, 45), region);
+    e.graphics().fill_rectangle(brushes::yellow(), rectangle(10, 10, 200, 100));
+    e.graphics().page_unit(xtd::drawing::graphics_unit::millimeter);
+    e.graphics().fill_rectangle(brushes::lime(), rectangle(2000, 2000, 10000, 5000));
   };
 }
 

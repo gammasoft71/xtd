@@ -18,10 +18,6 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @cond
-    class graphics;
-    /// @endcond
-    
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     /// @par Library
     /// xtd.drawing
@@ -128,6 +124,10 @@ namespace xtd {
       /// @remarks A value of xtd::drawing::dash_style::custom for this property specifies that a custom pattern of dashes and spaces, defined by the xtd::drawing::pendash_pattern property, makes up lines drawn with this xtd::drawing::pen. If the value of this property is xtd::drawing::dash_style::custom and the value of the xtd::drawing::pen::dash_pattern property is empty, the pen draws solid lines.
       xtd::drawing::pen& dash_style(drawing::dash_style value);
       
+      /// @brief Gets the handle of the pen.
+      /// @return An intptr_t that contains the handle of the pen.
+      intptr_t handle() const {return data_->handle_;}
+
       /// @brief Gets the style of lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::pen_type enumeration that specifies the style of lines drawn with this xtd::drawing::pen.
       /// @remarks A Pen can draw solid lines, filled lines, or textured lines, depending on the style specified by a member of the PenType enumeration.
@@ -160,7 +160,6 @@ namespace xtd {
     private:
       pen();
       void recreate_handle();
-      friend class graphics;
       struct data {
         intptr_t handle_ = 0;
         xtd::drawing::drawing2d::pen_alignment alignment = xtd::drawing::drawing2d::pen_alignment::center;
