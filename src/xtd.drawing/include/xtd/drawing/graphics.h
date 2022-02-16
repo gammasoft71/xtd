@@ -22,6 +22,7 @@
 #include "size.h"
 #include "string_format.h"
 #include "size_f.h"
+#include "drawing2d/interpolation_mode.h"
 #include "drawing2d/graphics_path.h"
 
 /// @cond
@@ -76,14 +77,21 @@ namespace xtd {
       /// @remarks If the clipping region is infinite, the xtd::drawing::graphics::clip_bounds property returns a meaningless large rectangle. To determine whether the clipping region is infinite, retrieve the xtd::drawing::graphics::clip property and call its xtd::drawing::region::is_infinite method.
       xtd::drawing::rectangle_f clip_bounds() const;
       
+      /// @brief Gets the horizontal resolution of this xtd::drawing::graphics.
+      /// @return The value, in dots per inch, for the horizontal resolution supported by this xtd::drawing::graphics.
       float dpi_x() const;
     
+      /// @brief Gets the vertical resolution of this xtd::drawing::graphics.
+      /// @return The value, in dots per inch, for the vertical resolution supported by this xtd::drawing::graphics.
       float dpi_y() const;
 
       /// @brief Gets the handle device context that the graphics is bound to.
       /// @return An intptr_t that contains the handle device context of the graphics.
       intptr_t handle() const;
       
+      xtd::drawing::drawing2d::interpolation_mode interpolation_mode() const;
+      graphics& interpolation_mode(xtd::drawing::drawing2d::interpolation_mode value);
+
       xtd::drawing::graphics_unit page_unit() const;
       graphics& page_unit(xtd::drawing::graphics_unit value);
       /// @}
@@ -307,6 +315,7 @@ namespace xtd {
       struct data {
         xtd::drawing::region clip;
         intptr_t handle = 0;
+        xtd::drawing::drawing2d::interpolation_mode interpolation_mode = xtd::drawing::drawing2d::interpolation_mode::default_value;
         xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();

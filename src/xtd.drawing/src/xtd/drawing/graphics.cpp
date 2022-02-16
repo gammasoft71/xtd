@@ -73,6 +73,18 @@ intptr_t graphics::handle() const {
   return data_->handle;
 }
 
+xtd::drawing::drawing2d::interpolation_mode graphics::interpolation_mode() const {
+  return data_->interpolation_mode;
+}
+
+graphics& graphics::interpolation_mode(xtd::drawing::drawing2d::interpolation_mode value) {
+  if (data_->interpolation_mode != value) {
+    data_->interpolation_mode = value;
+    native::graphics::interpolation_mode(handle(), static_cast<int32_t>(data_->interpolation_mode));
+  }
+  return *this;
+}
+
 xtd::drawing::graphics_unit graphics::page_unit() const {
   return data_->page_unit;
 }
