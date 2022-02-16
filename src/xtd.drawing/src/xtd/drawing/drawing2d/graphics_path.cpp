@@ -18,11 +18,14 @@ graphics_path::graphics_path() : graphics_path(drawing2d::fill_mode::alternate) 
 
 graphics_path::graphics_path(drawing2d::fill_mode mode) {
   data_->fill_mode = mode;
-  data_->handle = native::graphics_path::create();
+  recreate_handle();
 }
 
 graphics_path::~graphics_path() {
-  if (data_.use_count() == 1 && data_->handle != 0) native::graphics_path::destroy(data_->handle);
+  if (data_.use_count() == 1 && data_->handle != 0) {
+    native::graphics_path::destroy(data_->handle);
+    data_->handle = 0;
+  }
 }
 
 bool graphics_path::operator==(const graphics_path& value) const {
@@ -303,6 +306,28 @@ xtd::drawing::point_f graphics_path::get_lat_point() const {
   return point_f(x, y);
 }
 
+bool graphics_path::is_vsible(const xtd::drawing::point& point) const {
+  return is_vsible(point.x(), point.y());
+}
+
+bool graphics_path::is_vsible(const xtd::drawing::point_f& point) const {
+  return is_vsible(point.x(), point.y());
+  return is_vsible(point.x(), point.y());
+}
+
+bool graphics_path::is_vsible(int32_t x, int32_t y) const {
+  return is_vsible(as<float>(x), as<float>(y));
+}
+
+bool graphics_path::is_vsible(float x, float y) const {
+  return native::graphics_path::is_vsible(handle(), x, y);
+}
+
+void graphics_path::reset() {
+  data_->fill_mode = fill_mode::alternate;
+  recreate_handle();
+}
+
 void graphics_path::reverse() {
   native::graphics_path::reverse(handle());
 }
@@ -313,4 +338,9 @@ void graphics_path::start_figure() {
 
 xtd::ustring graphics_path::to_string() const noexcept {
   return ustring::full_class_name(*this);
+}
+
+void graphics_path::recreate_handle() {
+  if (data_->handle != 0) native::graphics_path::destroy(data_->handle);
+  data_->handle = native::graphics_path::create();
 }
