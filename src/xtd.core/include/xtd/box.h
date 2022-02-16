@@ -8,9 +8,11 @@
 #include "ustring.h"
 #include "types.h"
 
+/// @cond
 static constexpr xtd::decimal_t __get_epsilon(xtd::decimal_t) noexcept {return 0;}
 static constexpr double __get_epsilon(double) noexcept {return 4.94066e-324;}
 static constexpr float __get_epsilon(float) noexcept {return 1.401298E-45f;}
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
