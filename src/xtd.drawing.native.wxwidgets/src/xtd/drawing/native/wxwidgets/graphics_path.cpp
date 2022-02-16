@@ -113,3 +113,7 @@ void graphics_path::get_last_point(intptr_t handle, float& x, float& y) {
   x = static_cast<float>(point.m_x);
   y = static_cast<float>(point.m_y);
 }
+
+bool graphics_path::is_vsible(intptr_t handle, float x, float y) {
+  return reinterpret_cast<wxGraphicsPath*>(handle)->Contains(x, y);
+}

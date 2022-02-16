@@ -359,9 +359,33 @@ namespace xtd {
         /// @param radius The radius of the rounded rectange angles.
         void add_rounded_rectangle(float x, float y, float width, float height, float radius);
 
-        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point& layout_rect, const xtd::drawing::string_format& format);
-        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point_f& layout_rect, const xtd::drawing::string_format& format);
+        /// @brief Adds a text string to this path.
+        /// @param s The xtd::ustring to add.
+        /// @param family A xtd::drawing::font_family that represents the name of the font with which the test is drawn.
+        /// @param em_size The height of the em square box that bounds the character.
+        /// @param origin A xtd::drawing::point that represents the point where the text starts.
+        /// @param format A xtd::drawing::string_format that specifies text formatting information, such as line spacing and alignment.
+        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point& origin, const xtd::drawing::string_format& format);
+        /// @brief Adds a text string to this path.
+        /// @param s The xtd::ustring to add.
+        /// @param family A xtd::drawing::font_family that represents the name of the font with which the test is drawn.
+        /// @param em_size The height of the em square box that bounds the character.
+        /// @param origin A xtd::drawing::point_f that represents the point where the text starts.
+        /// @param format A xtd::drawing::string_format that specifies text formatting information, such as line spacing and alignment.
+        void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format);
+        /// @brief Adds a text string to this path.
+        /// @param s The xtd::ustring to add.
+        /// @param family A xtd::drawing::font_family that represents the name of the font with which the test is drawn.
+        /// @param em_size The height of the em square box that bounds the character.
+        /// @param layout_rect A xtd::drawing::rectangle that represents the rectangle that bounds the text.
+        /// @param format A xtd::drawing::string_format that specifies text formatting information, such as line spacing and alignment.
         void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle& layout_rect, const xtd::drawing::string_format& format);
+        /// @brief Adds a text string to this path.
+        /// @param s The xtd::ustring to add.
+        /// @param family A xtd::drawing::font_family that represents the name of the font with which the test is drawn.
+        /// @param em_size The height of the em square box that bounds the character.
+        /// @param layout_rect A xtd::drawing::rectangle_f that represents the rectangle that bounds the text.
+        /// @param format A xtd::drawing::string_format that specifies text formatting information, such as line spacing and alignment.
         void add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle_f& layout_rect, const xtd::drawing::string_format& format);
 
         /// @brief Closes all open figures in this path and starts a new figure. It closes each open figure by connecting a line from its endpoint to its starting point.
@@ -378,10 +402,38 @@ namespace xtd {
         /// @remarks The size of the returned bounding rectangle is influenced by the type of end caps, pen width, and pen miter limit, and therefore produces a "loose fit" to the bounded path. The approximate formula is: the initial bounding rectangle is inflated by pen width, and this result is multiplied by the miter limit, plus some additional margin to allow for end caps.
         xtd::drawing::rectangle_f get_bounds() const;
         
+        /// @brief Gets the last point of this xtd::drawing::drawing2d::graphics_path.
+        /// @return A xtd::drawing::point_f that represents the last point in this xtd::drawing::drawing2d::graphics_path.
         xtd::drawing::point_f get_lat_point() const;
 
+        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing2d::graphics_path.
+        /// @param point A xtd::drawing::point that represents the point to test.
+        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing2d::graphics_path; otherwise, false.
+        bool is_vsible(const xtd::drawing::point& point) const;
+        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing2d::graphics_path.
+        /// @param point A xtd::drawing::point_f that represents the point to test.
+        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing2d::graphics_path; otherwise, false.
+        bool is_vsible(const xtd::drawing::point_f& point) const;
+        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing2d::graphics_path.
+        /// @param x The x-coordinate of the point to test.
+        /// @param y The y-coordinate of the point to test.
+        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing2d::graphics_path; otherwise, false.
+        bool is_vsible(int32_t x, int32_t y) const;
+        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing2d::graphics_path.
+        /// @param x The x-coordinate of the point to test.
+        /// @param y The y-coordinate of the point to test.
+        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing2d::graphics_path; otherwise, false.
+        bool is_vsible(float x, float y) const;
+
+        /// @brief Empties the xtd::drawing::drawing2d::graphics_path::path_points and xtd::drawing::drawing2d::graphics_path::path_types arrays and sets the xtd::drawing::drawing2d::graphics_path::fill_mode to xtd::drawing::drawing2d::fill_mode::alternate.
+        void reset();
+
+        /// @brief Reverses the order of points in the xtd::drawing::drawing2d::graphics_path::path_points array of this xtd::drawing::drawing2d::graphics_path.
         void reverse();
-        
+
+        /// @brief Starts a new figure without closing the current figure. All subsequent points added to the path are added to this new figure.
+        /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
+        /// @remarks This method starts a new subpath in the path. Subpaths allow you to separate a path into sections and use the xtd::drawing::drawing2d::graphics_path_iterator class to iterate through the subpaths.
         void start_figure();
 
         xtd::ustring to_string() const noexcept override;
@@ -392,6 +444,7 @@ namespace xtd {
         /// @endcond
         
       private:
+        void recreate_handle();
         struct data {
           intptr_t handle = 0;
           xtd::drawing::drawing2d::fill_mode fill_mode = xtd::drawing::drawing2d::fill_mode::alternate;

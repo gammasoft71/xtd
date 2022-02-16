@@ -60,6 +60,7 @@ namespace xtd {
         static void start_figure(intptr_t handle);
         static void get_bounds(intptr_t handle, float& x, float& y, float& width, float& height);
         static void get_last_point(intptr_t handle, float& x, float& y);
+        static bool is_vsible(intptr_t handle, float x, float y);
         /// @}
       };
     }
