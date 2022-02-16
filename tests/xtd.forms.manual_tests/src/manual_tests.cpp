@@ -34,7 +34,7 @@ form1::form1() {
     drawing::region region(path);
     rectangle rect2(50, 30, 60, 80);
     region.make_xor(rect2);
-    e.graphics().fill_region(linear_gradient_brush(rectangle(20, 20, 130, 130), {color::navy, color::white}, 45), region);
+    e.graphics().fill_region(linear_gradient_brush(rectangle(20, 20, 90, 90), {color::navy, color::transparent}, 45), region);
   };
 }
 

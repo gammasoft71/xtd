@@ -34,7 +34,7 @@ namespace examples {
     void generate_colored_points() {
       static xtd::random random;
       static vector colors = {color::red, color::green, color::blue, color::yellow, color::cyan, color::magenta, color::white};
-      colored_points.resize(random.next(height() * width() / 600, height() * width() / 300));
+      colored_points.resize(random.next(height() * width() / 800, height() * width() / 400));
       for (auto& colored_point : colored_points)
         colored_point = {point(random.next(client_size().width()), random.next(client_size().height())), colors[random.next(colors.size())], random.next(1, 10)};
       invalidate();

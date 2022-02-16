@@ -41,12 +41,22 @@ namespace xtd {
         static void destroy(intptr_t handle);
         static void add_arc(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void add_bezier(intptr_t handle, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
+        static void add_beziers(intptr_t handle, std::vector<std::pair<float, float>> points);
         static void add_closed_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension);
-        static void add_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension);
+        static void add_curve(intptr_t handle, std::vector<std::pair<float, float>> points, size_t offset, size_t number_of_segments, float tension);
         static void add_ellipse(intptr_t handle, float x, float y, float width, float height);
         static void add_line(intptr_t handle, float x1, float y1, float x2, float y2);
-        static void add_path(intptr_t handle, intptr_t path);
+        static void add_path(intptr_t handle, intptr_t path, bool connect);
+        static void add_pie(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void add_rectangle(intptr_t handle, float x, float y, float width, float height);
+        static void add_rounded_rectangle(intptr_t handle, float x, float y, float width, float height, float radius);
+        static void close_markers(intptr_t handle);
+        static void close_all_figures(intptr_t handle);
+        static void close_figure(intptr_t handle);
+        static void flatten(intptr_t handle);
+        static void reverse(intptr_t handle);
+        static void set_markers(intptr_t handle);
+        static void start_figure(intptr_t handle);
         static void get_bounds(intptr_t handle, float& x, float& y, float& width, float& height);
         /// @}
       };

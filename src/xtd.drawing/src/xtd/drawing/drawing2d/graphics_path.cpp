@@ -59,7 +59,89 @@ void graphics_path::add_arc(int32_t x, int32_t y, int32_t width, int32_t height,
 }
 
 void graphics_path::add_arc(float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  native::graphics_path::add_arc(data_->handle, x, y, width, height, start_angle, sweep_angle);
+  native::graphics_path::add_arc(handle(), x, y, width, height, start_angle, sweep_angle);
+}
+
+void graphics_path::add_bezier(const xtd::drawing::point& pt1, const xtd::drawing::point& pt2, const xtd::drawing::point& pt3, const xtd::drawing::point& pt4) {
+  add_bezier(pt1.x(), pt1.y(), pt2.x(), pt2.y(), pt3.x(), pt3.y(), pt4.x(), pt4.y());
+}
+
+void graphics_path::add_bezier(const xtd::drawing::point_f& pt1, const xtd::drawing::point_f& pt2, const xtd::drawing::point_f& pt3, const xtd::drawing::point_f& pt4) {
+  add_bezier(pt1.x(), pt1.y(), pt2.x(), pt2.y(), pt3.x(), pt3.y(), pt4.x(), pt4.y());
+}
+
+void graphics_path::add_bezier(int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4) {
+  add_bezier(as<float>(x1), as<float>(y1), as<float>(x2), as<float>(y2), as<float>(x3), as<float>(y3), as<float>(x4), as<float>(y4));
+}
+
+void graphics_path::add_bezier(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
+  native::graphics_path::add_bezier(handle(), x1, y1, x2, y2, x3, y3, x4, y4);
+}
+
+void graphics_path::add_beziers(const std::vector<xtd::drawing::point>& points) {
+  vector<point_f> points_f;
+  for (auto point : points)
+    points_f.push_back(point_f(point));
+  add_beziers(points_f);
+}
+
+void graphics_path::add_beziers(const std::vector<xtd::drawing::point_f>& points) {
+  vector<pair<float, float>> pair_points;
+  for (auto point : points)
+    pair_points.push_back({point.x(), point.y()});
+  native::graphics_path::add_beziers(handle(), pair_points);
+}
+
+void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& points) {
+  add_closed_curve(points, 0.5f);
+}
+
+void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& points) {
+  add_closed_curve(points, 0.5f);
+}
+
+void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& points, float tension) {
+  vector<point_f> points_f;
+  for (auto point : points)
+    points_f.push_back(point_f(point));
+  add_closed_curve(points_f, tension);
+}
+
+void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& points, float tension) {
+  vector<pair<float, float>> pair_points;
+  for (auto point : points)
+    pair_points.push_back({point.x(), point.y()});
+  native::graphics_path::add_closed_curve(handle(), pair_points, tension);
+}
+
+void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points) {
+  add_curve(points, 0, points.size(), 0.5f);
+}
+
+void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points) {
+  add_curve(points, 0, points.size(), 0.5f);
+}
+
+void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points, float tension) {
+  add_curve(points, 0, points.size(), tension);
+}
+
+void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, float tension) {
+  add_curve(points, 0, points.size(), tension);
+}
+
+void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
+  vector<point_f> points_f;
+  for (auto point : points)
+    points_f.push_back(point_f(point));
+  add_curve(points_f, offset, number_of_segments, tension);
+}
+
+void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
+  vector<pair<float, float>> pair_points;
+  for (auto point : points)
+    pair_points.push_back({point.x(), point.y()});
+  native::graphics_path::add_curve(handle(), pair_points, offset, number_of_segments, tension);
 }
 
 void graphics_path::add_ellipse(const xtd::drawing::rectangle& rect) {
@@ -75,7 +157,69 @@ void graphics_path::add_ellipse(int32_t x, int32_t y, int32_t width, int32_t hei
 }
 
 void graphics_path::add_ellipse(float x, float y, float width, float height) {
-  native::graphics_path::add_ellipse(data_->handle, x, y, width, height);
+  native::graphics_path::add_ellipse(handle(), x, y, width, height);
+}
+
+void graphics_path::add_line(const xtd::drawing::point& pt1, const xtd::drawing::point& pt2) {
+  add_line(pt1.x(), pt1.y(), pt2.x(), pt2.y());
+}
+
+void graphics_path::add_line(const xtd::drawing::point_f& pt1, const xtd::drawing::point_f& pt2) {
+  add_line(pt1.x(), pt1.y(), pt2.x(), pt2.y());
+}
+
+void graphics_path::add_line(int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+  add_line(as<float>(x1), as<float>(y1), as<float>(x2), as<float>(y2));
+}
+
+void graphics_path::add_line(float x1, float y1, float x2, float y2) {
+  native::graphics_path::add_line(handle(), x1, y1, x2, y2);
+}
+
+void graphics_path::add_lines(const std::vector<xtd::drawing::point>& points) {
+  if (points.size() < 2) throw argument_exception(csf_);
+  for (auto index = 0U; index < points.size() - 1; ++index)
+    add_line(points[index], points[index+1]);
+}
+
+void graphics_path::add_lines(const std::vector<xtd::drawing::point_f>& points) {
+  if (points.size() < 2) throw argument_exception(csf_);
+  for (auto index = 0U; index < points.size() - 1; ++index)
+    add_line(points[index], points[index+1]);
+}
+
+void graphics_path::add_path(const graphics_path& adding_path, bool connect) {
+  native::graphics_path::add_path(handle(), adding_path.handle(), connect);
+}
+
+void graphics_path::add_pie(const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
+  add_pie(rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+}
+
+void graphics_path::add_pie(const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
+  add_pie(rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+}
+
+void graphics_path::add_pie(int32_t x, int32_t y, int32_t width, int32_t height, float start_angle, float sweep_angle) {
+  add_pie(as<float>(x), as<float>(y), as<float>(width), as<float>(height), start_angle, sweep_angle);
+}
+
+void graphics_path::add_pie(float x, float y, float width, float height, float start_angle, float sweep_angle) {
+  native::graphics_path::add_pie(handle(), x, y, width, height, start_angle, sweep_angle);
+}
+
+void graphics_path::add_polygon(const std::vector<xtd::drawing::point>& points) {
+  if (points.size() < 2) throw argument_exception(csf_);
+  for (auto index = 0U; index < points.size() - 1; ++index)
+    add_line(points[index], points[index+1]);
+  if (points[points.size() - 1] != points[0]) add_line(points[points.size() - 1], points[0]);
+}
+
+void graphics_path::add_polygon(const std::vector<xtd::drawing::point_f>& points) {
+  if (points.size() < 2) throw argument_exception(csf_);
+  for (auto index = 0U; index < points.size() - 1; ++index)
+    add_line(points[index], points[index + 1]);
+  if (points[points.size() - 1] != points[0]) add_line(points[points.size() - 1], points[0]);
 }
 
 void graphics_path::add_rectangle(const rectangle& rect) {
@@ -90,13 +234,65 @@ void graphics_path::add_rectangle(int32_t x, int32_t y, int32_t width, int32_t h
 }
 
 void graphics_path::add_rectangle(float x, float y, float width, float height) {
-  native::graphics_path::add_rectangle(data_->handle, x, y, width, height);
+  native::graphics_path::add_rectangle(handle(), x, y, width, height);
+}
+
+void graphics_path::add_rectangles(const std::vector<xtd::drawing::rectangle>& rects) {
+  for (auto rect : rects)
+    add_rectangle(rect);
+}
+void graphics_path::add_rectangles(const std::vector<xtd::drawing::rectangle_f>& rects) {
+  for (auto rect : rects)
+    add_rectangle(rect);
+}
+
+void graphics_path::add_rounded_rectangle(const rectangle& rect, float radius) {
+  add_rounded_rectangle(rectangle_f(rect), radius);
+}
+void graphics_path::add_rounded_rectangle(const rectangle_f& rect, float radius) {
+  add_rounded_rectangle(rect.x(), rect.y(), rect.width(), rect.height(), radius);
+}
+
+void graphics_path::add_rounded_rectangle(int32_t x, int32_t y, int32_t width, int32_t height, float radius) {
+  add_rounded_rectangle(as<float>(x), as<float>(y), as<float>(width), as<float>(height), radius);
+}
+
+void graphics_path::add_rounded_rectangle(float x, float y, float width, float height, float radius) {
+  native::graphics_path::add_rounded_rectangle(handle(), x, y, width, height, radius);
+}
+
+void graphics_path::close_markers() {
+  native::graphics_path::close_markers(handle());
+}
+
+void graphics_path::close_all_figures() {
+  native::graphics_path::close_all_figures(handle());
+}
+
+void graphics_path::close_figure() {
+  native::graphics_path::close_figure(handle());
+}
+
+void graphics_path::flatten() {
+  native::graphics_path::flatten(handle());
 }
 
 xtd::drawing::rectangle_f graphics_path::get_bounds() const {
   float x, y, width, height;
-  native::graphics_path::get_bounds(data_->handle, x, y, width, height);
+  native::graphics_path::get_bounds(handle(), x, y, width, height);
   return {x, y, width, height};
+}
+
+void graphics_path::reverse() {
+  native::graphics_path::reverse(handle());
+}
+
+void graphics_path::set_markers() {
+  native::graphics_path::set_markers(handle());
+}
+
+void graphics_path::start_figure() {
+  native::graphics_path::start_figure(handle());
 }
 
 xtd::ustring graphics_path::to_string() const noexcept {
