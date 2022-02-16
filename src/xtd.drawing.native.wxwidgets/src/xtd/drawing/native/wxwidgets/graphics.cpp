@@ -6,6 +6,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #include <xtd/drawing/native/path_fill_mode.h>
+#include <xtd/drawing/native/interpolation_modes.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
 #include "../../../../../include/xtd/drawing/native/wx_pen.h"
@@ -398,6 +399,21 @@ float graphics::get_dpi_y(intptr_t hdc) {
   double dpi_x = 0.0, dpi_y = 0.0;
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics()->GetDPI(&dpi_x, &dpi_y);
   return static_cast<float>(dpi_y);
+}
+
+void graphics::interpolation_mode(intptr_t hdc, int32_t interpolation_mode) {
+  auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  switch (interpolation_mode) {
+    case IM_INVALID: break;
+    case IM_DEFAULT: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_DEFAULT); break;
+    case IM_LOW: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_FAST); break;
+    case IM_HIGHT: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_GOOD); break;
+    case IM_BICUBIC: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_GOOD); break;
+    case IM_NEAREST_NEIGHBOOR: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_GOOD); break;
+    case IM_HIGH_QUALLITY_BILINEAR: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_BEST); break;
+    case IL_HIGN_QUALITY_BICUBIC: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_BEST); break;
+    default: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_DEFAULT); break;
+  }
 }
 
 void graphics::measure_string(intptr_t hdc, const ustring& text, intptr_t font, float& width, float& height) {

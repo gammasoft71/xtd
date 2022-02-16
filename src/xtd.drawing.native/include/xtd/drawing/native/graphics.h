@@ -56,6 +56,7 @@ namespace xtd {
         static void fill_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height);
         static void fill_rounded_rectangle(intptr_t hdc, intptr_t brush, float x, float y, float width, float height, float radius);
         static intptr_t from_image(intptr_t image);
+        static void interpolation_mode(intptr_t hdc, int32_t interpolation_mode);
         static float get_dpi_x(intptr_t hdc);
         static float get_dpi_y(intptr_t hdc);
         static void measure_string(intptr_t hdc, const xtd::ustring& text, intptr_t font, float& width, float& height);

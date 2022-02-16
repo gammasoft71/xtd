@@ -52,6 +52,7 @@ add_sources(
   include/xtd/drawing/drawing2d/graphics_path.h
   include/xtd/drawing/drawing2d/hatch_brush.h
   include/xtd/drawing/drawing2d/hatch_style.h
+  include/xtd/drawing/drawing2d/interpolation_mode.h
   include/xtd/drawing/drawing2d/linear_gradient_brush.h
   include/xtd/drawing/drawing2d/linear_gradient_mode.h
   include/xtd/drawing/drawing2d/pen_alignment.h
