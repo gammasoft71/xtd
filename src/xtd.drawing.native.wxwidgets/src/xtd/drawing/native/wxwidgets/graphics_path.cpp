@@ -5,6 +5,7 @@
 #include <xtd/drawing/native/toolkit.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <wx/graphics.h>
 #include <xtd/as.h>
 
 using namespace std;
@@ -29,11 +30,15 @@ void graphics_path::add_bezier(intptr_t handle, float x1, float y1, float x2, fl
   // Not supported by wxWidgets 3.1.5...
 }
 
+void graphics_path::add_beziers(intptr_t handle, std::vector<std::pair<float, float>> points) {
+  // Not supported by wxWidgets 3.1.5...
+}
+
 void graphics_path::add_closed_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension) {
   // Not supported by wxWidgets 3.1.5...
 }
 
-void graphics_path::add_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension) {
+void graphics_path::add_curve(intptr_t handle, std::vector<std::pair<float, float>> points, size_t offset, size_t number_of_segments, float tension) {
   // Not supported by wxWidgets 3.1.5...
 }
 
@@ -46,12 +51,52 @@ void graphics_path::add_ellipse(intptr_t handle, float x, float y, float width, 
   reinterpret_cast<wxGraphicsPath*>(handle)->AddEllipse(x, y, width, height);
 }
 
-void graphics_path::add_path(intptr_t handle, intptr_t path) {
+void graphics_path::add_path(intptr_t handle, intptr_t path, bool connect) {
+  if (connect) {
+    auto point = reinterpret_cast<wxGraphicsPath*>(handle)->GetCurrentPoint();
+    reinterpret_cast<wxGraphicsPath*>(path)->AddLineToPoint(point.m_x, point.m_x);
+  }
   reinterpret_cast<wxGraphicsPath*>(handle)->AddPath(*reinterpret_cast<wxGraphicsPath*>(path));
+}
+
+void graphics_path::add_pie(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle) {
+  //reinterpret_cast<wxGraphicsPath*>(handle)->AddArc(x, y, width, start_angle, start_angle + sweep_angle, true);
 }
 
 void graphics_path::add_rectangle(intptr_t handle, float x, float y, float width, float height) {
   reinterpret_cast<wxGraphicsPath*>(handle)->AddRectangle(x, y, width, height);
+}
+
+void graphics_path::add_rounded_rectangle(intptr_t handle, float x, float y, float width, float height, float radius) {
+  reinterpret_cast<wxGraphicsPath*>(handle)->AddRoundedRectangle(x, y, width, height, radius);
+}
+
+void graphics_path::close_markers(intptr_t handle) {
+  
+}
+
+void graphics_path::close_all_figures(intptr_t handle) {
+  
+}
+
+void graphics_path::close_figure(intptr_t handle) {
+  
+}
+
+void graphics_path::flatten(intptr_t handle) {
+  
+}
+
+void graphics_path::reverse(intptr_t handle) {
+  
+}
+
+void graphics_path::set_markers(intptr_t handle) {
+  
+}
+
+void graphics_path::start_figure(intptr_t handle) {
+  
 }
 
 void graphics_path::get_bounds(intptr_t handle, float& x, float& y, float& width, float& height) {
