@@ -8,6 +8,10 @@
 #include "ustring.h"
 #include "types.h"
 
+static constexpr xtd::decimal_t __get_epsilon(xtd::decimal_t) noexcept {return 0;}
+static constexpr double __get_epsilon(double) noexcept {return 4.94066e-324;}
+static constexpr float __get_epsilon(float) noexcept {return 1.401298E-45f;}
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents a boxed object.
@@ -182,9 +186,6 @@ namespace xtd {
     
     
   private:
-    static constexpr decimal_t __get_epsilon(decimal_t) noexcept {return 0;}
-    static constexpr double __get_epsilon(double) noexcept {return 4.94066e-324;}
-    static constexpr float __get_epsilon(float) noexcept {return 1.401298E-45f;}
   };
   
   /// @brief Represent a boxed bool.
