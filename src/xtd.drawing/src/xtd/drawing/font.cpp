@@ -128,7 +128,7 @@ float font::get_height() const {
 }
 
 float font::get_height(const graphics& graphics) const {
-  return native::font::height(data_->handle_, graphics.data_->handle_);
+  return native::font::height(data_->handle_, graphics.data_->handle);
 }
 
 float font::get_height(float dpi) const {

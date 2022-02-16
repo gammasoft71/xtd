@@ -12,6 +12,7 @@
 #include "solid_brush.h"
 #include "color.h"
 #include "font.h"
+#include "graphics_unit.h"
 #include "pen.h"
 #include "point.h"
 #include "point_f.h"
@@ -59,9 +60,32 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Gets a xtd::drawing::region that limits the drawing region of this xtd::drawing::graphics.
+      /// @return A xtd::drawing::region that limits the portion of this Graphics that is currently available for drawing.
+      /// @remarks Modifying the xtd::drawing::region object returned by the xtd::drawing::graphics::clip property does not affect subsequent drawing with the xtd::drawing::graphics object. To change the clip region, replace the xtd::drawing::graphics::clip property value with a new xtd::drawing::region object. To determine whether the clipping region is infinite, retrieve the xtd::drawing::graphics::clip property and call its xtd::drawing::region::is_infinite method.
+      xtd::drawing::region clip() const;
+      /// @brief Sets a xtd::drawing::region that limits the drawing region of this xtd::drawing::graphics.
+      /// @param value A xtd::drawing::region that limits the portion of this Graphics that is currently available for drawing.
+      /// @return This current instance.
+      /// @remarks Modifying the xtd::drawing::region object returned by the xtd::drawing::graphics::clip property does not affect subsequent drawing with the xtd::drawing::graphics object. To change the clip region, replace the xtd::drawing::graphics::clip property value with a new xtd::drawing::region object. To determine whether the clipping region is infinite, retrieve the xtd::drawing::graphics::clip property and call its xtd::drawing::region::is_infinite method.
+      graphics& clip(const xtd::drawing::region value);
+
+      /// @brief Gets a xtd::drawing::rectangle_f structure that bounds the clipping region of this xtd::drawing::graphics.
+      /// @return A xtd::drawing::rectangle_f structure that represents a bounding rectangle for the clipping region of this xtd::drawing::graphics.
+      /// @remarks The unit for resulting rectangle is designated by the xtd::drawing::graphics::page_unit property. The default unit is pixels. A xtd::drawing::graphics is typically associated with a control and the origin of the rectangle will be relative to the client area of that control.
+      /// @remarks If the clipping region is infinite, the xtd::drawing::graphics::clip_bounds property returns a meaningless large rectangle. To determine whether the clipping region is infinite, retrieve the xtd::drawing::graphics::clip property and call its xtd::drawing::region::is_infinite method.
+      xtd::drawing::rectangle_f clip_bounds() const;
+      
+      float dpi_x() const;
+    
+      float dpi_y() const;
+
       /// @brief Gets the handle device context that the graphics is bound to.
       /// @return An intptr_t that contains the handle device context of the graphics.
-      intptr_t handle() const {return data_->handle_;}
+      intptr_t handle() const;
+      
+      xtd::drawing::graphics_unit page_unit() const;
+      graphics& page_unit(xtd::drawing::graphics_unit value);
       /// @}
       
       /// @name Methods
@@ -269,17 +293,21 @@ namespace xtd {
       /// @endcond
       
     private:
+      float to_pixels(float value) const;
+      float to_page_unit(float value) const;
       friend xtd::drawing::font;
       friend xtd::forms::control;
       friend xtd::forms::control_paint;
       friend xtd::forms::paint_event_args;
       friend xtd::forms::screen;
       
-      explicit graphics(intptr_t handle) {data_->handle_ = handle;}
+      explicit graphics(intptr_t handle) {data_->handle = handle;}
       void draw_image_disabled(const xtd::drawing::image& image, float x, float y, float brightness);
       
       struct data {
-        intptr_t handle_ = 0;
+        xtd::drawing::region clip;
+        intptr_t handle = 0;
+        xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

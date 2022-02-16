@@ -140,6 +140,11 @@ void graphics::clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
+void graphics::clip(intptr_t hdc, intptr_t region) {
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetClippingRegion(reinterpret_cast<wxRegion*>(region)->GetBox());
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics()->Clip(*reinterpret_cast<wxRegion*>(region));
+}
+
 void graphics::destroy(intptr_t hdc) {
   if (!hdc) return;
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc);
@@ -376,12 +381,23 @@ void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, float x, flo
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
-
 intptr_t graphics::from_image(intptr_t image) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   if (image == 0) hdc_wrapper->create<wxScreenDC>();
   else hdc_wrapper->create_memory_hdc(new wxBitmap(*reinterpret_cast<wxImage*>(image)), reinterpret_cast<wxImage*>(image));
   return reinterpret_cast<intptr_t>(hdc_wrapper);
+}
+
+float graphics::get_dpi_x(intptr_t hdc) {
+  double dpi_x = 0.0, dpi_y = 0.0;
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics()->GetDPI(&dpi_x, &dpi_y);
+  return static_cast<float>(dpi_x);
+}
+
+float graphics::get_dpi_y(intptr_t hdc) {
+  double dpi_x = 0.0, dpi_y = 0.0;
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics()->GetDPI(&dpi_x, &dpi_y);
+  return static_cast<float>(dpi_y);
 }
 
 void graphics::measure_string(intptr_t hdc, const ustring& text, intptr_t font, float& width, float& height) {

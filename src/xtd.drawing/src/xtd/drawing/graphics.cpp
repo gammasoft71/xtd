@@ -30,22 +30,60 @@ namespace {
 }
 
 graphics::graphics(const graphics& value) {
-  if (data_.use_count() == 1 && data_->handle_ != 0) native::graphics::destroy(data_->handle_);
+  if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
   data_ = value.data_;
 }
 
 graphics& graphics::operator=(const graphics& value) {
-  if (data_.use_count() == 1 && data_->handle_ != 0) native::graphics::destroy(data_->handle_);
+  if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
   data_ = value.data_;
   return *this;
 }
 
 graphics::~graphics() {
-  if (data_.use_count() == 1 && data_->handle_ != 0) native::graphics::destroy(data_->handle_);
+  if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
 }
 
+region graphics::clip() const {
+  return data_->clip;
+}
+
+graphics& graphics::clip(const xtd::drawing::region value) {
+  if (data_->clip != value) {
+    data_->clip = value;
+    native::graphics::clip(handle(), data_->clip.handle());
+  }
+  return *this;
+}
+
+rectangle_f graphics::clip_bounds() const {
+  auto rect_pixels = data_->clip.get_bounds();
+  return rectangle_f(to_page_unit(rect_pixels.x()), to_page_unit(rect_pixels.y()), to_page_unit(rect_pixels.width()), to_page_unit(rect_pixels.height()));
+}
+
+float graphics::dpi_x() const {
+  return native::graphics::get_dpi_x(handle());
+}
+
+float graphics::dpi_y() const {
+  return native::graphics::get_dpi_y(handle());
+}
+
+intptr_t graphics::handle() const {
+  return data_->handle;
+}
+
+xtd::drawing::graphics_unit graphics::page_unit() const {
+  return data_->page_unit;
+}
+graphics& graphics::page_unit(xtd::drawing::graphics_unit value) {
+  data_->page_unit = value;
+  return *this;
+}
+
+
 void graphics::clear(const color& color) {
-  native::graphics::clear(data_->handle_, color.a(), color.r(), color.g(), color.b());
+  native::graphics::clear(handle(), color.a(), color.r(), color.g(), color.b());
 }
 
 void graphics::draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
@@ -61,7 +99,7 @@ void graphics::draw_arc(const pen& pen, int32_t x, int32_t y, int32_t width, int
 }
 
 void graphics::draw_arc(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  native::graphics::draw_arc(data_->handle_, pen.data_->handle_, x, y, width, height, start_angle, sweep_angle);
+  native::graphics::draw_arc(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), start_angle, sweep_angle);
 }
 
 void graphics::draw_bezier(const xtd::drawing::pen& pen, const xtd::drawing::point& pt1, const xtd::drawing::point& pt2, const xtd::drawing::point& pt3, const xtd::drawing::point& pt4) {
@@ -77,7 +115,7 @@ void graphics::draw_bezier(const pen& pen, int32_t x1, int32_t y1, int32_t x2, i
 }
 
 void graphics::draw_bezier(const pen& pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
-  native::graphics::draw_bezier(data_->handle_, pen.data_->handle_, x1, y1, x2, y2, x3, y3, x4, y4);
+  native::graphics::draw_bezier(handle(), pen.handle(), to_pixels(x1), to_pixels(y1), to_pixels(x2), to_pixels(y2), to_pixels(x3), to_pixels(y3), to_pixels(x4), to_pixels(y4));
 }
 
 void graphics::draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {
@@ -93,7 +131,7 @@ void graphics::draw_ellipse(const pen& pen, int32_t x, int32_t y, int32_t width,
 }
 
 void graphics::draw_ellipse(const xtd::drawing::pen& pen, float x, float y, float width, float height) {
-  native::graphics::draw_ellipse(data_->handle_, pen.data_->handle_, x, y, width, height);
+  native::graphics::draw_ellipse(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
 void graphics::draw_icon(const xtd::drawing::icon& icon, int32_t x, int32_t y) {
@@ -129,8 +167,8 @@ void graphics::draw_image(const xtd::drawing::image& image, int32_t x, int32_t y
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {
-  if (size_f(width, height) == size_f(image.size()))  native::graphics::draw_image(data_->handle_, image.handle(), x, y);
-  else native::graphics::draw_image(data_->handle_, bitmap(image, size(static_cast<int32_t>(width), static_cast<int32_t>(height))).handle(), x, y);
+  if (size_f(width, height) == size_f(image.size()))  native::graphics::draw_image(handle(), image.handle(), to_pixels(x), to_pixels(y));
+  else native::graphics::draw_image(handle(), bitmap(image, size(static_cast<int32_t>(to_pixels(width)), static_cast<int32_t>(to_pixels(height)))).handle(), to_pixels(x), to_pixels(y));
 }
 
 void graphics::draw_image(const image& image, int32_t x, int32_t y) {
@@ -142,7 +180,7 @@ void graphics::draw_image(const xtd::drawing::image& image, float x, float y) {
 }
 
 void graphics::draw_image_disabled(const image& image, float x, float y, float brightness) {
-  native::graphics::draw_image_disabled(data_->handle_, image.handle(), x, y, brightness);
+  native::graphics::draw_image_disabled(handle(), image.handle(), to_pixels(x), to_pixels(y), brightness);
 }
 
 void graphics::draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& p1, const point& p2) {
@@ -158,11 +196,11 @@ void graphics::draw_line(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int
 }
 
 void graphics::draw_line(const xtd::drawing::pen& pen, float x1, float y1, float x2, float y2) {
-  native::graphics::draw_line(data_->handle_, pen.data_->handle_, x1, y1, x2, y2);
+  native::graphics::draw_line(handle(), pen.handle(), to_pixels(x1), to_pixels(y1), to_pixels(x2), to_pixels(y2));
 }
 
 void graphics::draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& graphics_path) {
-  native::graphics::draw_path(data_->handle_, pen.data_->handle_, graphics_path.handle());
+  native::graphics::draw_path(handle(), pen.handle(), graphics_path.handle());
 }
 
 void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p) {
@@ -193,7 +231,7 @@ void graphics::draw_rectangle(const pen& pen, int32_t x, int32_t y, int32_t widt
 }
 
 void graphics::draw_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height) {
-  native::graphics::draw_rectangle(data_->handle_, pen.data_->handle_, x, y, width, height);
+  native::graphics::draw_rectangle(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
 void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, int32_t radius) {
@@ -209,7 +247,7 @@ void graphics::draw_rounded_rectangle(const pen& pen, int32_t x, int32_t y, int3
 }
 
 void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height, float radius) {
-  native::graphics::draw_rounded_rectangle(data_->handle_, pen.data_->handle_, x, y, width, height, radius);
+  native::graphics::draw_rounded_rectangle(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), to_pixels(radius));
 }
 
 void graphics::draw_string(const ustring& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
@@ -243,7 +281,7 @@ void graphics::draw_string(const ustring& text, const font& font, const brush& b
         width -= (layout_rectangle.width() - line_size.width());
       }
       
-      if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(data_->handle_, drawable_line, font.data_->handle_, x, y, width, height, static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+      if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(handle(), drawable_line, font.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
       else {
         /*
          for (auto index  = 0; index <hotkey_prefix_locations.size(); ++index) {
@@ -252,7 +290,7 @@ void graphics::draw_string(const ustring& text, const font& font, const brush& b
          g.draw_string(text_without_hotkey_prefi.substring(hotkey_prefix_locations[index], chunk_size), font, solid_brush(text_color), button_rect, to_string_format(flags));
          }
          */
-        native::graphics::draw_string(data_->handle_, drawable_line, font.data_->handle_, x, y, width, height, static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+        native::graphics::draw_string(handle(), drawable_line, font.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
       }
       
       y += line_size.height();
@@ -274,7 +312,7 @@ void graphics::draw_string(const xtd::ustring& text, const xtd::drawing::font& f
 
 void graphics::draw_string(const ustring& text, const font& font, const brush& brush, float x, float y, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
-    native::graphics::draw_string(data_->handle_, text, font.data_->handle_, x, y, static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+    native::graphics::draw_string(handle(), text, font.handle(), to_pixels(x), to_pixels(y), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
 }
 
 void graphics::draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {
@@ -294,11 +332,11 @@ void graphics::fill_ellipse(const brush& brush, int32_t x, int32_t y, int32_t wi
 }
 
 void graphics::fill_ellipse(const xtd::drawing::brush& brush, float x, float y, float width, float height) {
-  native::graphics::fill_ellipse(data_->handle_, brush.handle(), x, y, width, height);
+  native::graphics::fill_ellipse(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
 void graphics::fill_path(const brush& brush, const drawing2d::graphics_path& path) {
-  native::graphics::fill_path(data_->handle_, brush.handle(), path.handle(), static_cast<int32_t>(path.fill_mode()));
+  native::graphics::fill_path(handle(), brush.handle(), path.handle(), static_cast<int32_t>(path.fill_mode()));
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
@@ -314,7 +352,7 @@ void graphics::fill_pie(const brush& brush, int32_t x, int32_t y, int32_t width,
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  native::graphics::fill_pie(data_->handle_, brush.handle(), x, y, width, height, start_angle, sweep_angle);
+  native::graphics::fill_pie(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), start_angle, sweep_angle);
 }
 
 void graphics::fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {
@@ -330,11 +368,11 @@ void graphics::fill_rectangle(const brush& brush, int32_t x, int32_t y, int32_t 
 }
 
 void graphics::fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height) {
-  native::graphics::fill_rectangle(data_->handle_, brush.handle(), x, y, width, height);
+  native::graphics::fill_rectangle(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
 void graphics::fill_region(const xtd::drawing::brush& brush, const xtd::drawing::region& region) {
-  native::graphics::fill_region(data_->handle_, brush.handle(), region.handle());
+  native::graphics::fill_region(handle(), brush.handle(), region.handle());
 }
 
 void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, int32_t radius) {
@@ -350,7 +388,7 @@ void graphics::fill_rounded_rectangle(const brush& brush, int32_t x, int32_t y, 
 }
 
 void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height, float radius) {
-  native::graphics::fill_rounded_rectangle(data_->handle_, brush.handle(), x, y, width, height, radius);
+  native::graphics::fill_rounded_rectangle(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), to_pixels(radius));
 }
 
 graphics graphics::from_image(const image& image) {
@@ -360,12 +398,12 @@ graphics graphics::from_image(const image& image) {
 size_f graphics::measure_string(const ustring& text, const font& font) {
   float width = 0.0f;
   float height = 0.0f;
-  native::graphics::measure_string(data_->handle_, text, font.handle(), width, height);
-  return size_f(width, height);
+  native::graphics::measure_string(handle(), text, font.handle(), width, height);
+  return size_f(to_page_unit(width), to_page_unit(height));
 }
 
 void graphics::rotate_transform(float angle) {
-  native::graphics::rotate_transform(data_->handle_, angle);
+  native::graphics::rotate_transform(handle(), angle);
 }
 
 void graphics::translate_clip(int32_t dx, int32_t dy) {
@@ -373,5 +411,31 @@ void graphics::translate_clip(int32_t dx, int32_t dy) {
 }
 
 void graphics::translate_clip(float dx, float dy) {
-  native::graphics::translate_clip(data_->handle_, dx, dy);
+  native::graphics::translate_clip(handle(), to_pixels(dx), to_pixels(dy));
+}
+
+float graphics::to_pixels(float value) const {
+  switch (data_->page_unit) {
+    case graphics_unit::world:
+    case graphics_unit::display:
+    case graphics_unit::pixel: return value;
+    case graphics_unit::point: return value * 96.0f / dpi_x();
+    case graphics_unit::inch: return value * 96.0f / dpi_x();
+    case graphics_unit::document: return value * 96.0f / 300.0f / dpi_x();
+    case graphics_unit::millimeter: return value * 96.0f / 25.4f / dpi_x();
+    default: return value;
+  }
+}
+
+float graphics::to_page_unit(float value) const {
+  switch (data_->page_unit) {
+    case graphics_unit::world:
+    case graphics_unit::display:
+    case graphics_unit::pixel: return value;
+    case graphics_unit::point: return value / 96.0f * dpi_x();
+    case graphics_unit::inch: return value / 96.0f * dpi_x();
+    case graphics_unit::document: return value / 96.0f * 300.0f * dpi_x();
+    case graphics_unit::millimeter: return value / 96.0f * 25.4f * dpi_x();
+    default: return value;
+  }
 }
