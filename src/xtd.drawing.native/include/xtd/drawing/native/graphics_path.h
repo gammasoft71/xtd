@@ -9,6 +9,7 @@
 #include <vector>
 #include <utility>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
 #include <xtd/drawing_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -50,14 +51,15 @@ namespace xtd {
         static void add_pie(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void add_rectangle(intptr_t handle, float x, float y, float width, float height);
         static void add_rounded_rectangle(intptr_t handle, float x, float y, float width, float height, float radius);
-        static void close_markers(intptr_t handle);
+        static void add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y);
+        static void add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h);
         static void close_all_figures(intptr_t handle);
         static void close_figure(intptr_t handle);
         static void flatten(intptr_t handle);
         static void reverse(intptr_t handle);
-        static void set_markers(intptr_t handle);
         static void start_figure(intptr_t handle);
         static void get_bounds(intptr_t handle, float& x, float& y, float& width, float& height);
+        static void get_last_point(intptr_t handle, float& x, float& y);
         /// @}
       };
     }

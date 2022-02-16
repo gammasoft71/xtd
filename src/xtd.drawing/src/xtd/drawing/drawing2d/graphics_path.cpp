@@ -261,8 +261,22 @@ void graphics_path::add_rounded_rectangle(float x, float y, float width, float h
   native::graphics_path::add_rounded_rectangle(handle(), x, y, width, height, radius);
 }
 
-void graphics_path::close_markers() {
-  native::graphics_path::close_markers(handle());
+void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point& origin, const xtd::drawing::string_format& format) {
+  add_string(s, family, style, em_size, point_f(origin), format);
+}
+
+void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format) {
+  font f(family, em_size, style);
+  native::graphics_path::add_string(handle(), s, f.handle(), origin.x(), origin.y());
+}
+
+void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle& layout_rect, const xtd::drawing::string_format& format) {
+  add_string(s, family, style, em_size, rectangle_f(layout_rect), format);
+}
+
+void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle_f& layout_rect, const xtd::drawing::string_format& format) {
+  font f(family, em_size, style);
+  native::graphics_path::add_string(handle(), s, f.handle(), layout_rect.x(), layout_rect.y(), layout_rect.width(), layout_rect.height());
 }
 
 void graphics_path::close_all_figures() {
@@ -283,12 +297,14 @@ xtd::drawing::rectangle_f graphics_path::get_bounds() const {
   return {x, y, width, height};
 }
 
-void graphics_path::reverse() {
-  native::graphics_path::reverse(handle());
+xtd::drawing::point_f graphics_path::get_lat_point() const {
+  float x = 0.0f, y = 0.0f;
+  native::graphics_path::get_last_point(handle(), x, y);
+  return point_f(x, y);
 }
 
-void graphics_path::set_markers() {
-  native::graphics_path::set_markers(handle());
+void graphics_path::reverse() {
+  native::graphics_path::reverse(handle());
 }
 
 void graphics_path::start_figure() {
