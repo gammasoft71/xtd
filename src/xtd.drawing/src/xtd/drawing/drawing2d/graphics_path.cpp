@@ -312,7 +312,6 @@ bool graphics_path::is_vsible(const xtd::drawing::point& point) const {
 
 bool graphics_path::is_vsible(const xtd::drawing::point_f& point) const {
   return is_vsible(point.x(), point.y());
-  return is_vsible(point.x(), point.y());
 }
 
 bool graphics_path::is_vsible(int32_t x, int32_t y) const {
