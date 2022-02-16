@@ -78,19 +78,19 @@ void graphics_path::add_ellipse(float x, float y, float width, float height) {
   native::graphics_path::add_ellipse(data_->handle, x, y, width, height);
 }
 
-void graphics_path::add_rectangle(int32_t x, int32_t y, int32_t width, int32_t height) {
-  add_rectangle(rectangle(x, y, width, height));
-}
-
-void graphics_path::add_rectangle(float x, float y, float width, float height) {
-  add_rectangle(rectangle(x, y, width, height));
-}
-
 void graphics_path::add_rectangle(const rectangle& rect) {
   add_rectangle(rectangle_f(rect));
 }
 void graphics_path::add_rectangle(const rectangle_f& rect) {
-  native::graphics_path::add_rectangle(data_->handle, rect.x(), rect.y(), rect.width(), rect.height());
+  add_rectangle(rect.x(), rect.y(), rect.width(), rect.height());
+}
+
+void graphics_path::add_rectangle(int32_t x, int32_t y, int32_t width, int32_t height) {
+  add_rectangle(as<float>(x), as<float>(y), as<float>(width), as<float>(height));
+}
+
+void graphics_path::add_rectangle(float x, float y, float width, float height) {
+  native::graphics_path::add_rectangle(data_->handle, x, y, width, height);
 }
 
 xtd::drawing::rectangle_f graphics_path::get_bounds() const {
