@@ -62,6 +62,31 @@ rectangle_f graphics::clip_bounds() const {
   return rectangle_f(to_page_unit(rect_pixels.x()), to_page_unit(rect_pixels.y()), to_page_unit(rect_pixels.width()), to_page_unit(rect_pixels.height()));
 }
 
+xtd::drawing::drawing2d::compositing_mode graphics::compositing_mode() const {
+  return data_->compositing_mode;
+}
+
+graphics& graphics::compositing_mode(xtd::drawing::drawing2d::compositing_mode value) {
+  if (data_->compositing_mode != value) {
+    data_->compositing_mode = value;
+    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing2d::compositing_mode::source_copy) throw argument_exception(csf_);
+    native::graphics::compositing_mode(handle(), static_cast<int32_t>(data_->compositing_mode));
+  }
+  return *this;
+}
+
+xtd::drawing::drawing2d::compositing_quality graphics::compositing_quality() const {
+  return data_->compositing_quality;
+}
+
+graphics& graphics::compositing_quality(xtd::drawing::drawing2d::compositing_quality value) {
+  if (data_->compositing_quality != value) {
+    data_->compositing_quality = value;
+    native::graphics::compositing_quality(handle(), static_cast<int32_t>(data_->compositing_quality));
+  }
+  return *this;
+}
+
 float graphics::dpi_x() const {
   return native::graphics::get_dpi_x(handle());
 }
@@ -146,7 +171,7 @@ xtd::drawing::text::text_rendering_hint graphics::text_rendering_hint() const {
 graphics& graphics::text_rendering_hint(xtd::drawing::text::text_rendering_hint value) {
   if (data_->text_rendering_hint != value) {
     data_->text_rendering_hint = value;
-    //if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->)
+    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing2d::compositing_mode::source_copy) throw argument_exception(csf_);
     native::graphics::text_rendering_hint(handle(), static_cast<int32_t>(data_->text_rendering_hint));
   }
   return *this;

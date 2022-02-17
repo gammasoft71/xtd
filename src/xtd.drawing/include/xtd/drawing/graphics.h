@@ -22,6 +22,8 @@
 #include "size.h"
 #include "string_format.h"
 #include "size_f.h"
+#include "drawing2d/compositing_mode.h"
+#include "drawing2d/compositing_quality.h"
 #include "drawing2d/interpolation_mode.h"
 #include "drawing2d/graphics_path.h"
 #include "drawing2d/pixel_offset_mode.h"
@@ -80,6 +82,28 @@ namespace xtd {
       /// @remarks The unit for resulting rectangle is designated by the xtd::drawing::graphics::page_unit property. The default unit is pixels. A xtd::drawing::graphics is typically associated with a control and the origin of the rectangle will be relative to the client area of that control.
       /// @remarks If the clipping region is infinite, the xtd::drawing::graphics::clip_bounds property returns a meaningless large rectangle. To determine whether the clipping region is infinite, retrieve the xtd::drawing::graphics::clip property and call its xtd::drawing::region::is_infinite method.
       xtd::drawing::rectangle_f clip_bounds() const;
+      
+      /// @brief Gets a value that specifies how composited images are drawn to this xtd::drawing::graphics.
+      /// @return This property specifies a member of the xtd::drawing::drawing2d::compositing_mode enumeration. The default is xtd::drawing::drawing2d::compositing_mode::source_over.
+      /// @remarks The compositing mode determines whether pixels from a source image overwrite or are combined with background pixels.
+      /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
+      xtd::drawing::drawing2d::compositing_mode compositing_mode() const;
+      /// @brief Sets a value that specifies how composited images are drawn to this xtd::drawing::graphics.
+      /// @param value This property specifies a member of the CompositingMode enumeration. The default is SourceOver.
+      /// @return This current instance.
+      /// @remarks The compositing mode determines whether pixels from a source image overwrite or are combined with background pixels.
+      /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
+      graphics& compositing_mode(xtd::drawing::drawing2d::compositing_mode value);
+      
+      /// @brief Gets the rendering quality of composited images drawn to this xtd::drawing::graphics.
+      /// @return This property specifies a member of the xtd::drawing::drawing2d::compositing_quality enumeration. The xtd::drawing::drawing2d::compositing_quality::default_value is Default.
+      /// @remarks The compositing quality determines the rendering quality level of composited images.
+      xtd::drawing::drawing2d::compositing_quality compositing_quality() const;
+      /// @brief Sets the rendering quality of composited images drawn to this xtd::drawing::graphics.
+      /// @param value This property specifies a member of the xtd::drawing::drawing2d::compositing_quality enumeration. The xtd::drawing::drawing2d::compositing_quality::default_value is Default.
+      /// @return This current instance.
+      /// @remarks The compositing quality determines the rendering quality level of composited images.
+      graphics& compositing_quality(xtd::drawing::drawing2d::compositing_quality value);
       
       /// @brief Gets the horizontal resolution of this xtd::drawing::graphics.
       /// @return The value, in dots per inch, for the horizontal resolution supported by this xtd::drawing::graphics.
@@ -383,6 +407,8 @@ namespace xtd {
       
       struct data {
         xtd::drawing::region clip;
+        xtd::drawing::drawing2d::compositing_mode compositing_mode = xtd::drawing::drawing2d::compositing_mode::source_over;
+        xtd::drawing::drawing2d::compositing_quality compositing_quality = xtd::drawing::drawing2d::compositing_quality::default_value;
         intptr_t handle = 0;
         xtd::drawing::drawing2d::interpolation_mode interpolation_mode = xtd::drawing::drawing2d::interpolation_mode::default_value;
         float page_scale = 1.0f;

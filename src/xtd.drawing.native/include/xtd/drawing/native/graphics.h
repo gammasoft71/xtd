@@ -37,6 +37,8 @@ namespace xtd {
         /// @{
         static void clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void clip(intptr_t hdc, intptr_t region);
+        static void compositing_mode(intptr_t hdc, int32_t compositing_mode);
+        static void compositing_quality(intptr_t hdc, int32_t compositing_quality);
         static void destroy(intptr_t hdc);
         static void draw_arc(intptr_t hdc, intptr_t pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void draw_bezier(intptr_t hdc, intptr_t pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
