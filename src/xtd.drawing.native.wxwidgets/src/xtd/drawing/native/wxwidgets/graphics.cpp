@@ -8,6 +8,7 @@
 #include <xtd/drawing/native/path_fill_mode.h>
 #include <xtd/drawing/native/interpolation_modes.h>
 #include <xtd/drawing/native/pixel_offset_modes.h>
+#include <xtd/drawing/native/smoothing_modes.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
 #include "../../../../../include/xtd/drawing/native/wx_pen.h"
@@ -459,6 +460,19 @@ void graphics::pixel_offset_mode(intptr_t hdc, int32_t pixel_offset_mode) {
 void graphics::rotate_transform(intptr_t hdc, float angle) {
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   graphics.Rotate(angle);
+}
+
+void graphics::smoothing_mode(intptr_t hdc, int32_t smoothing_mode) {
+  auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  switch (smoothing_mode) {
+    case SM_INVALID: break;
+    case SM_DEFAULT: graphics->SetAntialiasMode(wxAntialiasMode::wxANTIALIAS_NONE); break;
+    case SM_HIGH_SPEED: graphics->SetAntialiasMode(wxAntialiasMode::wxANTIALIAS_NONE); break;
+    case SM_HIGHT_QUALITY: graphics->SetAntialiasMode(wxAntialiasMode::wxANTIALIAS_DEFAULT); break;
+    case SM_NONE: graphics->SetAntialiasMode(wxAntialiasMode::wxANTIALIAS_NONE); break;
+    case SM_ANTI_ALIAS: graphics->SetAntialiasMode(wxAntialiasMode::wxANTIALIAS_DEFAULT); break;
+    default: graphics->SetAntialiasMode(wxAntialiasMode::wxANTIALIAS_NONE); break;
+  }
 }
 
 void graphics::translate_clip(intptr_t hdc, float dx, float dy) {

@@ -59,6 +59,7 @@ add_sources(
   include/xtd/drawing/drawing2d/pen_type.h
   include/xtd/drawing/drawing2d/pixel_offset_mode.h
   include/xtd/drawing/drawing2d/radial_gradient_brush.h
+  include/xtd/drawing/drawing2d/smoothing_mode.h
   include/xtd/drawing/imaging/color_palette.h
   include/xtd/drawing/imaging/frame_dimension.h
   include/xtd/drawing/imaging/image_flags.h

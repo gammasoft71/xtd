@@ -22,6 +22,7 @@ add_sources(
   include/xtd/drawing/native/pen.h
   include/xtd/drawing/native/pixel_offset_modes.h
   include/xtd/drawing/native/region.h
+  include/xtd/drawing/native/smoothing_modes.h
   include/xtd/drawing/native/system_colors.h
   include/xtd/drawing/native/system_images.h
   include/xtd/drawing/native/system_fonts.h
