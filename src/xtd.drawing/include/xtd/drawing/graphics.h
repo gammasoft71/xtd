@@ -139,6 +139,9 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks The smoothing mode specifies whether lines, curves, and the edges of filled areas use smoothing (also called antialiasing). One exception is that path gradient brushes do not obey the smoothing mode. Areas filled using a xtd::drawing::drawing2d::path_gradient_brush are rendered the same way (aliased) regardless of the xtd::drawing::graphics::smoothing_mode property.
       graphics& smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value);
+      
+      int text_contrast() const;
+      graphics& text_contrast(int value);
       /// @}
       
       /// @name Methods
@@ -365,6 +368,7 @@ namespace xtd {
         xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;
         xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode = xtd::drawing::drawing2d::pixel_offset_mode::default_value;
         xtd::drawing::drawing2d::smoothing_mode smoothing_mode = xtd::drawing::drawing2d::smoothing_mode::default_value;
+        int text_contrast = 4;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
