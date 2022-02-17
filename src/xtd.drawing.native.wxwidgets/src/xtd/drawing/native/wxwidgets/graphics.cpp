@@ -9,6 +9,7 @@
 #include <xtd/drawing/native/interpolation_modes.h>
 #include <xtd/drawing/native/pixel_offset_modes.h>
 #include <xtd/drawing/native/smoothing_modes.h>
+#include <xtd/drawing/native/text_rendering.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
 #include "../../../../../include/xtd/drawing/native/wx_pen.h"
@@ -473,6 +474,14 @@ void graphics::smoothing_mode(intptr_t hdc, int32_t smoothing_mode) {
     case SM_ANTI_ALIAS: graphics->SetAntialiasMode(wxAntialiasMode::wxANTIALIAS_DEFAULT); break;
     default: graphics->SetAntialiasMode(wxAntialiasMode::wxANTIALIAS_NONE); break;
   }
+}
+
+void graphics::text_contrast(intptr_t hdc, int32_t text_contrast) {
+  // Not defined in wxWidgets
+}
+
+void graphics::text_rendering_hint(intptr_t hdc, int32_t text_rendering_hint) {
+  // Not defined in wxWidgets
 }
 
 void graphics::translate_clip(intptr_t hdc, float dx, float dy) {
