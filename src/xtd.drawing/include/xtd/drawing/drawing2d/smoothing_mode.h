@@ -21,7 +21,7 @@ namespace xtd {
       /// @note When the xtd::drawing::graphics::smoothing_mode property is specified by using the xtd::drawing::drawing2d::smoothing_mode enumeration, it does not affect text. To set the text rendering quality, use the xtd::drawing::graphics::text_rendering_hint property and the xtd::drawing::drawing2d::text_rendering_hint enumeration.
       /// @note When the xtd::drawing::graphics::smoothing_mode property is specified by using the xtd::drawing::drawing2d::smoothing_mode enumeration, it does not affect areas filled by a path gradient brush. Areas filled by using a xtd::drawing::drawing2d::path_gradient_brush object are rendered the same way (aliased) regardless of the setting for the xtd::drawing::graphics::smoothing_mode property.
       enum class smoothing_mode {
-        /// @brief Specifies the default mode.
+        /// @brief Specifies an invalid mode.
         invalid = -1,
         /// @brief Specifies default mode.
         default_value = 0,

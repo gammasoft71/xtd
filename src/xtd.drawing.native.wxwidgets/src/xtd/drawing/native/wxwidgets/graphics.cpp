@@ -5,6 +5,8 @@
 #include <xtd/ustring.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
+#include <xtd/drawing/native/compositing_modes.h>
+#include <xtd/drawing/native/compositing_qualities.h>
 #include <xtd/drawing/native/path_fill_mode.h>
 #include <xtd/drawing/native/interpolation_modes.h>
 #include <xtd/drawing/native/pixel_offset_modes.h>
@@ -147,6 +149,14 @@ void graphics::clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
 void graphics::clip(intptr_t hdc, intptr_t region) {
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetClippingRegion(reinterpret_cast<wxRegion*>(region)->GetBox());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics()->Clip(*reinterpret_cast<wxRegion*>(region));
+}
+
+void graphics::compositing_mode(intptr_t hdc, int32_t compositing_mode) {
+  // Not defined in wxWidgets
+}
+
+void graphics::compositing_quality(intptr_t hdc, int32_t compositing_quality) {
+  // Not defined in wxWidgets
 }
 
 void graphics::destroy(intptr_t hdc) {
