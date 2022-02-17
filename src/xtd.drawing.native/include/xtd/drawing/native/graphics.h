@@ -59,6 +59,7 @@ namespace xtd {
         static void interpolation_mode(intptr_t hdc, int32_t interpolation_mode);
         static float get_dpi_x(intptr_t hdc);
         static float get_dpi_y(intptr_t hdc);
+        static void pixel_offset_mode(intptr_t hdc, int32_t pixel_offst_mode);
         static void measure_string(intptr_t hdc, const xtd::ustring& text, intptr_t font, float& width, float& height);
         static void rotate_transform(intptr_t hdc, float angle);
         static void translate_clip(intptr_t hdc, float dx, float dy);

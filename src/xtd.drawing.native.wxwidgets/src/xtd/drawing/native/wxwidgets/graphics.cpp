@@ -7,6 +7,7 @@
 #include <xtd/drawing/native/graphics.h>
 #include <xtd/drawing/native/path_fill_mode.h>
 #include <xtd/drawing/native/interpolation_modes.h>
+#include <xtd/drawing/native/pixel_offset_modes.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
 #include "../../../../../include/xtd/drawing/native/wx_pen.h"
@@ -439,6 +440,19 @@ void graphics::measure_string(intptr_t hdc, const ustring& text, intptr_t font, 
     
     // Workaround : with wxWidgets version <= 3.1.4 width size text is too small on macOS and linux.
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetFontMetrics().averageWidth / 2.3f);
+  }
+}
+
+void graphics::pixel_offset_mode(intptr_t hdc, int32_t pixel_offset_mode) {
+  auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+  switch (pixel_offset_mode) {
+    case PO_INVALID: break;
+    case PO_DEFAULT: graphics->DisableOffset(); break;
+    case PO_HIGH_SPEED: graphics->DisableOffset(); break;
+    case PO_HIGHT_QUALITY: graphics->EnableOffset(); break;
+    case PO_NONE: graphics->DisableOffset(); break;
+    case PO_HALF: graphics->ShouldOffset(); break;
+    default: graphics->DisableOffset(); break;
   }
 }
 

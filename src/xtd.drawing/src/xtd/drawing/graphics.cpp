@@ -3,6 +3,7 @@
 #include "../../../include/xtd/drawing/icon.h"
 #include "../../../include/xtd/drawing/graphics.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
+#include <xtd/argument_exception.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
@@ -85,14 +86,35 @@ graphics& graphics::interpolation_mode(xtd::drawing::drawing2d::interpolation_mo
   return *this;
 }
 
+float graphics::page_scale() const {
+  return data_->page_scale;
+}
+
+graphics& graphics::page_scale(float value) {
+  data_->page_scale = value;
+  return *this;
+}
+
 xtd::drawing::graphics_unit graphics::page_unit() const {
   return data_->page_unit;
 }
 graphics& graphics::page_unit(xtd::drawing::graphics_unit value) {
+  if (value == graphics_unit::world) throw argument_exception(csf_);
   data_->page_unit = value;
   return *this;
 }
 
+xtd::drawing::drawing2d::pixel_offset_mode graphics::pixel_offset_mode() const {
+  return data_->pixel_offset_mode;
+}
+
+graphics& graphics::pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode value) {
+  if (data_->pixel_offset_mode != value) {
+    data_->pixel_offset_mode = value;
+    native::graphics::pixel_offset_mode(handle(), static_cast<int32_t>(data_->pixel_offset_mode));
+  }
+  return *this;
+}
 
 void graphics::clear(const color& color) {
   native::graphics::clear(handle(), color.a(), color.r(), color.g(), color.b());
@@ -430,11 +452,11 @@ float graphics::to_pixels(float value) const {
   switch (data_->page_unit) {
     case graphics_unit::world:
     case graphics_unit::display:
-    case graphics_unit::pixel: return value;
-    case graphics_unit::point: return value * 96.0f / dpi_x();
-    case graphics_unit::inch: return value * 96.0f / dpi_x();
-    case graphics_unit::document: return value * 96.0f / 300.0f / dpi_x();
-    case graphics_unit::millimeter: return value * 96.0f / 25.4f / dpi_x();
+    case graphics_unit::pixel: return value / data_->page_scale;
+    case graphics_unit::point: return value * 96.0f / dpi_x() / data_->page_scale;
+    case graphics_unit::inch: return value * 96.0f / dpi_x() / data_->page_scale;
+    case graphics_unit::document: return value * 96.0f / 300.0f / dpi_x() / data_->page_scale;
+    case graphics_unit::millimeter: return value * 96.0f / 25.4f / dpi_x() / data_->page_scale;
     default: return value;
   }
 }
@@ -443,11 +465,11 @@ float graphics::to_page_unit(float value) const {
   switch (data_->page_unit) {
     case graphics_unit::world:
     case graphics_unit::display:
-    case graphics_unit::pixel: return value;
-    case graphics_unit::point: return value / 96.0f * dpi_x();
-    case graphics_unit::inch: return value / 96.0f * dpi_x();
-    case graphics_unit::document: return value / 96.0f * 300.0f * dpi_x();
-    case graphics_unit::millimeter: return value / 96.0f * 25.4f * dpi_x();
+    case graphics_unit::pixel: return value * data_->page_scale;
+    case graphics_unit::point: return value / 96.0f * dpi_x() * data_->page_scale;
+    case graphics_unit::inch: return value / 96.0f * dpi_x() * data_->page_scale;
+    case graphics_unit::document: return value / 96.0f * 300.0f * dpi_x() * data_->page_scale;
+    case graphics_unit::millimeter: return value / 96.0f * 25.4f * dpi_x() * data_->page_scale;
     default: return value;
   }
 }
