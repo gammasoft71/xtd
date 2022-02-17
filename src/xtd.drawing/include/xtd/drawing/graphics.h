@@ -24,6 +24,7 @@
 #include "size_f.h"
 #include "drawing2d/interpolation_mode.h"
 #include "drawing2d/graphics_path.h"
+#include "drawing2d/pixel_offset_mode.h"
 
 /// @cond
 namespace xtd {
@@ -89,11 +90,44 @@ namespace xtd {
       /// @return An intptr_t that contains the handle device context of the graphics.
       intptr_t handle() const;
       
+      /// @brief Gets the interpolation mode associated with this xtd::drawing::graphics.
+      /// @return One of the xtd::drawing::drawing2d::interpolation_mode values.
+      /// @remarks The interpolation mode determines how intermediate values between two endpoints are calculated.
       xtd::drawing::drawing2d::interpolation_mode interpolation_mode() const;
+      /// @brief Sets the interpolation mode associated with this xtd::drawing::graphics.
+      /// @param value One of the xtd::drawing::drawing2d::interpolation_mode values.
+      /// @return This current instance.
+      /// @remarks The interpolation mode determines how intermediate values between two endpoints are calculated.
       graphics& interpolation_mode(xtd::drawing::drawing2d::interpolation_mode value);
 
+      /// @brief Gets the scaling between world units and page units for this xtd::drawing::graphics.
+      /// @return This property specifies a value for the scaling between world units and page units for this xtd::drawing::graphics.
+      float page_scale() const;
+      /// @brief Sets the scaling between world units and page units for this xtd::drawing::graphics.
+      /// @param value This property specifies a value for the scaling between world units and page units for this xtd::drawing::graphics.
+      /// @return This current instance.
+      graphics& page_scale(float value);
+
+      /// @brief Gets or sets the unit of measure used for page coordinates in this xtd::drawing::graphics.
+      /// @return One of the xtd::drawing::graphics_unit values other than xtd::drawing::graphics_unit::world.
+      /// @remarks The graphics unit is the unit of measure used for page coordinates in this xtd::drawing::graphics.
       xtd::drawing::graphics_unit page_unit() const;
+      /// @brief Sets or sets the unit of measure used for page coordinates in this xtd::drawing::graphics.
+      /// @param value One of the xtd::drawing::graphics_unit values other than xtd::drawing::graphics_unit::world.
+      /// @return This current instance.
+      /// @exception xtd::argument_exception xtd::drawing::graphics::page_unit is set to xtd::drawing::graphics_unit::world, which is not a physical unit.
+      /// @remarks The graphics unit is the unit of measure used for page coordinates in this xtd::drawing::graphics.
       graphics& page_unit(xtd::drawing::graphics_unit value);
+      
+      /// @brief Gets a value specifying how pixels are offset during rendering of this xtd::drawing::graphics.
+      /// @return This property specifies a member of the xtd::drawing::drawing2d::pixel_offset_mode enumeration.
+      /// @remarks Use this property to specify either higher quality, slower rendering, or lower quality, faster rendering of the contents of this xtd::drawing::graphics object.
+      xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode() const;
+      /// @brief Sets a value specifying how pixels are offset during rendering of this xtd::drawing::graphics.
+      /// @param value This property specifies a member of the xtd::drawing::drawing2d::pixel_offset_mode enumeration.
+      /// @return This current instance.
+      /// @remarks Use this property to specify either higher quality, slower rendering, or lower quality, faster rendering of the contents of this xtd::drawing::graphics object.
+      graphics& pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode value);
       /// @}
       
       /// @name Methods
@@ -316,7 +350,9 @@ namespace xtd {
         xtd::drawing::region clip;
         intptr_t handle = 0;
         xtd::drawing::drawing2d::interpolation_mode interpolation_mode = xtd::drawing::drawing2d::interpolation_mode::default_value;
+        float page_scale = 1.0f;
         xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;
+        xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode = xtd::drawing::drawing2d::pixel_offset_mode::default_value;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
