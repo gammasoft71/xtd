@@ -127,6 +127,16 @@ graphics& graphics::smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value
   return *this;
 }
 
+int graphics::text_contrast() const {
+  return data_->text_contrast;
+}
+
+graphics& graphics::text_contrast(int value) {
+  data_->text_contrast = value;
+  return *this;
+}
+
+
 void graphics::clear(const color& color) {
   native::graphics::clear(handle(), color.a(), color.r(), color.g(), color.b());
 }
