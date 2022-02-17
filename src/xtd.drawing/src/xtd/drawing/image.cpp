@@ -1,4 +1,5 @@
 #include "../../../include/xtd/drawing/image.h"
+#include "../../../include/xtd/drawing/bitmap.h"
 #include <fstream>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/image.h>
@@ -66,6 +67,85 @@ image::image(const image& image, const rectangle& rect) {
 image::~image() {
   if (data_.use_count() == 1 && data_->handle_)
     native::image::destroy(data_->handle_);
+}
+
+bool image::operator==(const image& image) const {
+  return data_->handle_ == image.data_->handle_;
+}
+
+bool image::operator!=(const image& image) const {
+  return !operator==(image);
+}
+int32_t image::flags() const {
+  return static_cast<int32_t>(data_->flags_);
+}
+
+const std::vector<guid>& image::frame_dimentions_list() const {
+  return data_->frame_dimentions_list_;
+}
+
+intptr_t image::handle() const {
+  return data_->handle_;
+}
+
+int32_t image::height() const {
+  return data_->size_.height();
+}
+
+float image::horizontal_resolution() const {
+  return data_->horizontal_resolution_;
+}
+
+imaging::color_palette image::palette() const {
+  return data_->palette_;
+}
+
+void image::palette(const imaging::color_palette& palette) {
+  data_->palette_ = palette;
+}
+
+const size_f& image::physical_dimension() const {
+  return data_->physical_dimension_;
+}
+
+imaging::pixel_format image::pixel_format() const {
+  return data_->pixel_format_;
+}
+
+const std::vector<int32_t>& image::property_id_list() const {
+  return data_->property_id_list_;
+}
+
+const std::vector<imaging::property_item>& image::property_items() const {
+  return data_->property_ityems_;
+}
+
+const imaging::image_format& image::raw_format() const {
+  return data_->raw_format_;
+}
+
+const drawing::size& image::size() const {
+  return data_->size_;
+}
+
+const std::any& image::tag() const {
+  return data_->tag_;
+}
+
+void image::tag(const std::any& tag) {
+  data_->tag_ = tag;
+}
+
+float image::vertical_resolution() const {
+  return data_->vertical_resolution_;
+}
+
+int32_t image::width() const {
+  return data_->size_.width();
+}
+
+bitmap image::from_hbitmap(intptr_t hbitmap) {
+  return bitmap(image(hbitmap));
 }
 
 void image::update_properties() {
