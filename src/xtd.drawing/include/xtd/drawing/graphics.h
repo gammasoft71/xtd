@@ -26,6 +26,8 @@
 #include "drawing2d/graphics_path.h"
 #include "drawing2d/pixel_offset_mode.h"
 #include "drawing2d/smoothing_mode.h"
+#include "text/text_rendering_hint.h"
+
 
 /// @cond
 namespace xtd {
@@ -140,8 +142,27 @@ namespace xtd {
       /// @remarks The smoothing mode specifies whether lines, curves, and the edges of filled areas use smoothing (also called antialiasing). One exception is that path gradient brushes do not obey the smoothing mode. Areas filled using a xtd::drawing::drawing2d::path_gradient_brush are rendered the same way (aliased) regardless of the xtd::drawing::graphics::smoothing_mode property.
       graphics& smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value);
       
+      /// @brief Gets the gamma correction value for rendering text.
+      /// @return The gamma correction value used for rendering antialiased and ClearType text.
+      /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
       int text_contrast() const;
+      /// @brief Sets the gamma correction value for rendering text.
+      /// @param value The gamma correction value used for rendering antialiased and ClearType text.
+      /// @return This current instance.
+      /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
       graphics& text_contrast(int value);
+      
+      /// @brief Gets the rendering mode for text associated with this xtd::drawing::graphics.
+      /// @return One of the xtd::drawing::graphics::text_rendering_hint values.
+      /// @remarks The text rendering hint specifies whether text renders with antialiasing.
+      /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
+      xtd::drawing::text::text_rendering_hint text_rendering_hint() const;
+      /// @brief Sets the rendering mode for text associated with this xtd::drawing::graphics.
+      /// @param value One of the xtd::drawing::graphics::text_rendering_hint values.
+      /// @return This current instance.
+      /// @remarks The text rendering hint specifies whether text renders with antialiasing.
+      /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
+      graphics& text_rendering_hint(xtd::drawing::text::text_rendering_hint value);
       /// @}
       
       /// @name Methods
@@ -368,6 +389,7 @@ namespace xtd {
         xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;
         xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode = xtd::drawing::drawing2d::pixel_offset_mode::default_value;
         xtd::drawing::drawing2d::smoothing_mode smoothing_mode = xtd::drawing::drawing2d::smoothing_mode::default_value;
+        xtd::drawing::text::text_rendering_hint text_rendering_hint = xtd::drawing::text::text_rendering_hint::system_default;
         int text_contrast = 4;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();

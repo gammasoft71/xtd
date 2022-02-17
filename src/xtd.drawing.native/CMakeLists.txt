@@ -27,6 +27,7 @@ add_sources(
   include/xtd/drawing/native/system_images.h
   include/xtd/drawing/native/system_fonts.h
   include/xtd/drawing/native/toolkit.h
+  include/xtd/drawing/native/text_rendering.h
 )
 target_type(INTERFACE_LIBRARY)
 

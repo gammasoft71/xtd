@@ -63,6 +63,9 @@ namespace xtd {
         static void measure_string(intptr_t hdc, const xtd::ustring& text, intptr_t font, float& width, float& height);
         static void rotate_transform(intptr_t hdc, float angle);
         static void smoothing_mode(intptr_t hdc, int32_t smoothing_mode);
+        /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
+        static void text_contrast(intptr_t hdc, int32_t text_contrast);
+        static void text_rendering_hint(intptr_t hdc, int32_t text_rendering_hint);
         static void translate_clip(intptr_t hdc, float dx, float dy);
         /// @}
       };

@@ -132,10 +132,25 @@ int graphics::text_contrast() const {
 }
 
 graphics& graphics::text_contrast(int value) {
-  data_->text_contrast = value;
+  if (data_->text_contrast != value) {
+    data_->text_contrast = value;
+    native::graphics::text_contrast(handle(), data_->text_contrast);
+  }
   return *this;
 }
 
+xtd::drawing::text::text_rendering_hint graphics::text_rendering_hint() const {
+  return data_->text_rendering_hint;
+}
+
+graphics& graphics::text_rendering_hint(xtd::drawing::text::text_rendering_hint value) {
+  if (data_->text_rendering_hint != value) {
+    data_->text_rendering_hint = value;
+    //if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->)
+    native::graphics::text_rendering_hint(handle(), static_cast<int32_t>(data_->text_rendering_hint));
+  }
+  return *this;
+}
 
 void graphics::clear(const color& color) {
   native::graphics::clear(handle(), color.a(), color.r(), color.g(), color.b());
