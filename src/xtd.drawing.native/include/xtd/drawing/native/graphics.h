@@ -62,6 +62,7 @@ namespace xtd {
         static void pixel_offset_mode(intptr_t hdc, int32_t pixel_offst_mode);
         static void measure_string(intptr_t hdc, const xtd::ustring& text, intptr_t font, float& width, float& height);
         static void rotate_transform(intptr_t hdc, float angle);
+        static void smoothing_mode(intptr_t hdc, int32_t smoothing_mode);
         static void translate_clip(intptr_t hdc, float dx, float dy);
         /// @}
       };

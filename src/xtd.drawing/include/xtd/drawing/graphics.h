@@ -25,6 +25,7 @@
 #include "drawing2d/interpolation_mode.h"
 #include "drawing2d/graphics_path.h"
 #include "drawing2d/pixel_offset_mode.h"
+#include "drawing2d/smoothing_mode.h"
 
 /// @cond
 namespace xtd {
@@ -128,6 +129,16 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks Use this property to specify either higher quality, slower rendering, or lower quality, faster rendering of the contents of this xtd::drawing::graphics object.
       graphics& pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode value);
+      
+      /// @brief Gets the rendering quality for this xtd::drawing::graphics.
+      /// @return One of the xtd::drawing::drawing2d::smoothing_mode values.
+      /// @remarks The smoothing mode specifies whether lines, curves, and the edges of filled areas use smoothing (also called antialiasing). One exception is that path gradient brushes do not obey the smoothing mode. Areas filled using a xtd::drawing::drawing2d::path_gradient_brush are rendered the same way (aliased) regardless of the xtd::drawing::graphics::smoothing_mode property.
+      xtd::drawing::drawing2d::smoothing_mode smoothing_mode() const;
+      /// @brief Sets the rendering quality for this xtd::drawing::graphics.
+      /// @param value One of the xtd::drawing::drawing2d::smoothing_mode values.
+      /// @return This current instance.
+      /// @remarks The smoothing mode specifies whether lines, curves, and the edges of filled areas use smoothing (also called antialiasing). One exception is that path gradient brushes do not obey the smoothing mode. Areas filled using a xtd::drawing::drawing2d::path_gradient_brush are rendered the same way (aliased) regardless of the xtd::drawing::graphics::smoothing_mode property.
+      graphics& smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value);
       /// @}
       
       /// @name Methods
@@ -353,6 +364,7 @@ namespace xtd {
         float page_scale = 1.0f;
         xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;
         xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode = xtd::drawing::drawing2d::pixel_offset_mode::default_value;
+        xtd::drawing::drawing2d::smoothing_mode smoothing_mode = xtd::drawing::drawing2d::smoothing_mode::default_value;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

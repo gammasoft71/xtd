@@ -116,6 +116,17 @@ graphics& graphics::pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode
   return *this;
 }
 
+xtd::drawing::drawing2d::smoothing_mode graphics::smoothing_mode() const {
+  return data_->smoothing_mode;
+}
+graphics& graphics::smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value) {
+  if (data_->smoothing_mode != value) {
+    data_->smoothing_mode = value;
+    native::graphics::smoothing_mode(handle(), static_cast<int32_t>(data_->smoothing_mode));
+  }
+  return *this;
+}
+
 void graphics::clear(const color& color) {
   native::graphics::clear(handle(), color.a(), color.r(), color.g(), color.b());
 }
