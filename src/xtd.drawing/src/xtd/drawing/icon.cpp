@@ -60,7 +60,7 @@ icon icon::from_bitmap(const bitmap& bitmap) {
 }
 
 bitmap icon::to_bitmap() const {
-  return bitmap(image::from_hbitmap(native::icon::to_image(data_->handle)));
+  return image::from_hbitmap(native::icon::to_image(data_->handle));
 }
 
 

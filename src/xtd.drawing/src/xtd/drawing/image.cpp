@@ -1,12 +1,15 @@
 #include "../../../include/xtd/drawing/image.h"
 #include "../../../include/xtd/drawing/bitmap.h"
+#include "../../../include/xtd/drawing/graphics.h"
 #include <fstream>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/argument_exception.h>
 #include <xtd/drawing/native/image.h>
 #include <xtd/drawing/native/image_format.h>
 #include <xtd/drawing/native/frame_dimension.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -34,12 +37,28 @@ image::image(intptr_t hbitmap) {
 }
 
 image::image(const ustring& filename) {
-  data_->handle_ = native::image::create(filename);
+  map<size_t, size_t> frame_resolutions;
+  data_->handle_ = native::image::create(filename, frame_resolutions);
+  data_->frame_dimensions.clear();
+  for (auto frame_resolution : frame_resolutions) {
+    if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] =  frame_resolution.second;
+    else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] =  frame_resolution.second;
+    else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] =  frame_resolution.second;
+    else throw argument_exception(csf_);
+  }
   update_properties();
 }
 
 image::image(std::istream& stream) {
-  data_->handle_ = native::image::create(stream);
+  map<size_t, size_t> frame_resolutions;
+  data_->handle_ = native::image::create(stream, frame_resolutions);
+  data_->frame_dimensions.clear();
+  for (auto frame_resolution : frame_resolutions) {
+    if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] =  frame_resolution.second;
+    else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] =  frame_resolution.second;
+    else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] =  frame_resolution.second;
+    else throw argument_exception(csf_);
+  }
   update_properties();
 }
 
@@ -80,8 +99,11 @@ int32_t image::flags() const {
   return static_cast<int32_t>(data_->flags_);
 }
 
-const std::vector<guid>& image::frame_dimentions_list() const {
-  return data_->frame_dimentions_list_;
+vector<guid> image::frame_dimentions_list() const {
+  vector<guid> result;
+  for (auto frame : data_->frame_dimensions)
+    result.push_back(frame.first);
+  return result;
 }
 
 intptr_t image::handle() const {
@@ -148,14 +170,36 @@ bitmap image::from_hbitmap(intptr_t hbitmap) {
   return bitmap(image(hbitmap));
 }
 
+image image::from_stream(std::istream& stream) {
+  return image(stream);
+}
+
+image image::from_data(const char* const* bits) {
+  return image(bits);
+}
+
+xtd::drawing::rectangle_f image::get_bounds(graphics_unit page_unit) const {
+  return rectangle_f(0.0f, 0.0f, graphics::to_page_unit(data_->size_.width(), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(data_->size_.height(), page_unit, 1.0f, native::image::screen_dpi()));
+}
+
+size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const {
+  for (auto frame : data_->frame_dimensions)
+    if (frame.first == dimension.guid()) return frame.second;
+  throw argument_exception(csf_);
+}
+
+xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) {
+  xtd::drawing::imaging::encoder_parameters result;
+  for (auto encoder_parameter : data_->encoder_parameter_list_.params()) {
+    if (encoder_parameter.encoder().guid() == encoder)
+      result.params().push_back(encoder_parameter);
+  }
+  return result;;
+}
+
 void image::update_properties() {
   data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
-  
-  size_t frame_dimensions = native::image::frame_resolutions(data_->handle_);
-  if ((frame_dimensions & FD_PAGE) == FD_PAGE) data_->frame_dimentions_list_.push_back(imaging::frame_dimension::page().guid());
-  if ((frame_dimensions & FD_RESOLUTION) == FD_RESOLUTION) data_->frame_dimentions_list_.push_back(imaging::frame_dimension::resolution().guid());
-  if ((frame_dimensions & FD_TIME) == FD_TIME) data_->frame_dimentions_list_.push_back(imaging::frame_dimension::time().guid());
-  
+
   data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
   
   std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>> palette_entries;

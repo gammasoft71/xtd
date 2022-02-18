@@ -4,18 +4,21 @@
 #pragma once
 #include <any>
 #include <cstdint>
+#include <map>
 #include <memory>
 #include <iostream>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "imaging/color_palette.h"
+#include "imaging/encoder_parameters.h"
 #include "imaging/frame_dimension.h"
 #include "imaging/image_flags.h"
 #include "imaging/image_format.h"
 #include "imaging/pixel_format.h"
 #include "imaging/property_item.h"
 #include "graphics.h"
+#include "graphics_unit.h"
 #include "rectangle.h"
 #include "size.h"
 #include "size_f.h"
@@ -83,7 +86,7 @@ namespace xtd {
       /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
       /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
-      const std::vector<guid>& frame_dimentions_list() const;
+      std::vector<guid> frame_dimentions_list() const;
       
       /// @brief Get the handle of this image.
       /// @return The handle of this image.
@@ -156,20 +159,46 @@ namespace xtd {
       /// @ingroup drawing
       graphics create_graphics() {return graphics::from_image(*this);}
       
-      /// @brief Creates a Bitmap from a handle to a GDI bitmap.
-      /// @param hbitmap The GDI bitmap handle from which to create the Bitmap.
-      /// @return The Bitmap this method creates.
-      /// @remarks The FromHbitmap method makes a copy of the GDI bitmap; so you can release the incoming GDI bitmap using the GDI DeleteObject method immediately after creating the new Image.
-      static bitmap from_hbitmap(intptr_t hbitmap);
-      
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The Image this method creates.
       static image from_file(const xtd::ustring& filename) {return image(filename);}
+
+      /// @brief Creates a xtd::drawing::bitmap from a handle to a GDI bitmap.
+      /// @param hbitmap The GDI bitmap handle from which to create the xtd::drawing::bitmap.
+      /// @return The xtd::drawing::bitmap this method creates.
+      /// @remarks The xtd::drawing::image::from_hbitmap method makes a copy of the GDI bitmap; so you can release the incoming GDI bitmap using the GDI DeleteObject method immediately after creating the new Image.
+      static bitmap from_hbitmap(intptr_t hbitmap);
       
-      static image from_stream(std::istream& stream) {return image(stream);}
+      /// @brief Creates an xtd::drawing::image from the specified data stream.
+      /// @param stream A std::istream that contains the data for this xtd::drawing::image.
+      /// @return The xtd::drawing::image this method creates.
+      /// @remarks You must keep the stream open for the lifetime of the Image.
+      /// @note The xtd::drawing::image class does not support alpha transparency in bitmaps. To enable alpha transparency, use PNG images with 32 bits per pixel.
+      static image from_stream(std::istream& stream);
       
-      static image from_data(const char* const* bits) {return image(bits);}
+      /// @brief Creates an xtd::drawing::image from the specified data pointer.
+      /// @param data A pointer that contains the data for this xtd::drawing::image.
+      /// @return The xtd::drawing::image this method creates.
+      /// @remarks This method is used for creating a xtd::drawing::image from an xpm (or xbm) image.
+      static image from_data(const char* const* bits);
+      
+      /// @brief Gets the bounds of the image in the specified unit.
+      /// @param page_unit One of the xtd::drawing::graphics_unit values indicating the unit of measure for the bounding rectangle.
+      /// @return The xtd::drawing::rectangle_f that represents the bounds of the image, in the specified unit.
+      xtd::drawing::rectangle_f get_bounds(xtd::drawing::graphics_unit page_unit) const;
+      
+      xtd::drawing::imaging::encoder_parameters get_encoder_paramerter_list(const xtd::guid& encoder) const;
+      
+      /// @brief Returns the number of frames of the specified dimension.
+      /// @param dimension A xtd::drawing::imaging::frame_dimension that specifies the identity of the dimension type.
+      /// @return The number of frames in the specified dimension.
+      /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
+      /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
+      /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the xtd::drawing::imaging::frame_dimension.
+      size_t get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const;
+      
+      xtd::drawing::imaging::encoder_parameters get_encoder_parameter_list(xtd::guid encoder);
       
       void save(const xtd::ustring& filename) const;
       void save(const xtd::ustring& filename, const imaging::image_format& format) const;
@@ -188,7 +217,7 @@ namespace xtd {
       
       struct data {
         imaging::image_flags flags_ = imaging::image_flags::none;
-        std::vector<guid> frame_dimentions_list_;
+        std::map<xtd::guid, size_t> frame_dimensions = {{xtd::drawing::imaging::frame_dimension::page().guid(), 1}};
         intptr_t handle_ = 0;
         float horizontal_resolution_ = .0f;
         imaging::color_palette palette_;
@@ -200,6 +229,7 @@ namespace xtd {
         drawing::size size_;
         std::any tag_;
         float vertical_resolution_ = .0f;
+        xtd::drawing::imaging::encoder_parameters encoder_parameter_list_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

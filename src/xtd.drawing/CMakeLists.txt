@@ -63,6 +63,10 @@ add_sources(
   include/xtd/drawing/drawing2d/radial_gradient_brush.h
   include/xtd/drawing/drawing2d/smoothing_mode.h
   include/xtd/drawing/imaging/color_palette.h
+  include/xtd/drawing/imaging/encoder.h
+  include/xtd/drawing/imaging/encoder_parameter.h
+  include/xtd/drawing/imaging/encoder_parameter_value_type.h
+  include/xtd/drawing/imaging/encoder_parameters.h
   include/xtd/drawing/imaging/frame_dimension.h
   include/xtd/drawing/imaging/image_flags.h
   include/xtd/drawing/imaging/image_format.h
@@ -106,6 +110,7 @@ add_sources(
   src/xtd/drawing/drawing2d/graphics_path.cpp
   src/xtd/drawing/drawing2d/linear_gradient_brush.cpp
   src/xtd/drawing/drawing2d/radial_gradient_brush.cpp
+  src/xtd/drawing/imaging/encoder_parameter.cpp
   src/xtd/drawing/text/installed_font_collection.cpp
   src/xtd/drawing/text/private_font_collection.cpp
 )
