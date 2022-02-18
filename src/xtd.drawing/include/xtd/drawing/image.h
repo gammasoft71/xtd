@@ -243,6 +243,7 @@ namespace xtd {
       /// @}
       
     protected:
+      /// @cond
       explicit image(intptr_t hbitmap);
       explicit image(const xtd::ustring& fileName);
       explicit image(std::istream& stream);
@@ -250,8 +251,11 @@ namespace xtd {
       image(int32_t width, int32_t height);
       image(const image& image, int32_t width, int32_t height);
       image(const image& image, const rectangle& rect);
-      void update_properties();
+      /// @endcond
       
+    private:
+      void update_properties();
+
       struct data {
         imaging::image_flags flags_ = imaging::image_flags::none;
         std::map<xtd::guid, size_t> frame_dimensions = {{xtd::drawing::imaging::frame_dimension::page().guid(), 1}};
