@@ -139,7 +139,7 @@ const std::vector<int32_t>& image::property_id_list() const {
 }
 
 const std::vector<imaging::property_item>& image::property_items() const {
-  return data_->property_ityems_;
+  return data_->property_items_;
 }
 
 const imaging::image_format& image::raw_format() const {
@@ -182,19 +182,19 @@ xtd::drawing::rectangle_f image::get_bounds(graphics_unit page_unit) const {
   return rectangle_f(0.0f, 0.0f, graphics::to_page_unit(data_->size_.width(), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(data_->size_.height(), page_unit, 1.0f, native::image::screen_dpi()));
 }
 
-size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const {
-  for (auto frame : data_->frame_dimensions)
-    if (frame.first == dimension.guid()) return frame.second;
-  throw argument_exception(csf_);
-}
-
-xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) {
+xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) const {
   xtd::drawing::imaging::encoder_parameters result;
   for (auto encoder_parameter : data_->encoder_parameter_list_.params()) {
     if (encoder_parameter.encoder().guid() == encoder)
       result.params().push_back(encoder_parameter);
   }
   return result;;
+}
+
+size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const {
+  for (auto frame : data_->frame_dimensions)
+    if (frame.first == dimension.guid()) return frame.second;
+  throw argument_exception(csf_);
 }
 
 void image::update_properties() {
@@ -220,7 +220,7 @@ void image::update_properties() {
     item.id(i.id);
     item.len(i.len);
     item.value(i.value);
-    data_->property_ityems_.push_back(item);
+    data_->property_items_.push_back(item);
   }
   
   data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
