@@ -188,8 +188,11 @@ namespace xtd {
       /// @return The xtd::drawing::rectangle_f that represents the bounds of the image, in the specified unit.
       xtd::drawing::rectangle_f get_bounds(xtd::drawing::graphics_unit page_unit) const;
       
-      xtd::drawing::imaging::encoder_parameters get_encoder_paramerter_list(const xtd::guid& encoder) const;
-      
+      /// @brief Returns information about the parameters supported by the specified image encoder.
+      /// @param guid A GUID that specifies the image encoder.
+      /// @return An xtd::drawing::imaging::encoder_parameters that contains an array of xtd::drawing::imaging::encoder_parameter objects. Each xtd::drawing::imaging::encoder_parameter contains information about one of the parameters supported by the specified image encoder.
+      xtd::drawing::imaging::encoder_parameters get_encoder_parameter_list(xtd::guid encoder) const;
+
       /// @brief Returns the number of frames of the specified dimension.
       /// @param dimension A xtd::drawing::imaging::frame_dimension that specifies the identity of the dimension type.
       /// @return The number of frames in the specified dimension.
@@ -197,8 +200,6 @@ namespace xtd {
       /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the xtd::drawing::imaging::frame_dimension.
       size_t get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const;
-      
-      xtd::drawing::imaging::encoder_parameters get_encoder_parameter_list(xtd::guid encoder);
       
       void save(const xtd::ustring& filename) const;
       void save(const xtd::ustring& filename, const imaging::image_format& format) const;
@@ -224,7 +225,7 @@ namespace xtd {
         imaging::pixel_format pixel_format_ = imaging::pixel_format::undefined;
         size_f physical_dimension_;
         std::vector<int32_t> property_id_list_;
-        std::vector<imaging::property_item> property_ityems_;
+        std::vector<imaging::property_item> property_items_;
         imaging::image_format raw_format_;
         drawing::size size_;
         std::any tag_;
