@@ -109,7 +109,6 @@ namespace {
       case wxBITMAP_TYPE_MACCURSOR_RESOURCE: return FD_TIME;
       default: return FD_PAGE;
     }
-    return FD_PAGE;
   }
 }
 
