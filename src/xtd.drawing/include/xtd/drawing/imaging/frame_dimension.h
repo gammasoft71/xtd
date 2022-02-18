@@ -26,7 +26,7 @@ namespace xtd {
         
         /// @{
         /// @brief Initializes a new instance of the FrameDimension class using the specified Guid structure.
-        /// @param guid A Guid structure that contains a GUID for this frame_dimension object.
+        /// @param guid A xtd::guid structure that contains a GUID for this frame_dimension object.
         explicit frame_dimension(const xtd::guid& guid) : guid_(guid) {}
         /// @}
         
@@ -41,7 +41,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a globally unique identifier (GUID) that represents this frame_dimension object.
-        /// @return A guid structure that contains a GUID that represents this frame_dimension object.
+        /// @return An xtd::guid structure that contains a GUID that represents this frame_dimension object.
         const xtd::guid& guid() const {return guid_;}
         
         /// @brief Gets the page dimension.

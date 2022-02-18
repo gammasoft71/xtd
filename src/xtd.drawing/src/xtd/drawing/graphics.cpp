@@ -509,28 +509,36 @@ void graphics::translate_clip(float dx, float dy) {
   native::graphics::translate_clip(handle(), to_pixels(dx), to_pixels(dy));
 }
 
-float graphics::to_pixels(float value) const {
-  switch (data_->page_unit) {
+float graphics::to_page_unit(float value) const {
+  return to_page_unit(value, data_->page_unit, data_->page_scale, dpi_x());
+}
+
+float graphics::to_page_unit(float value, graphics_unit page_unit, float page_scale, float dpi) {
+  switch (page_unit) {
     case graphics_unit::world:
     case graphics_unit::display:
-    case graphics_unit::pixel: return value / data_->page_scale;
-    case graphics_unit::point: return value * 96.0f / dpi_x() / data_->page_scale;
-    case graphics_unit::inch: return value * 96.0f / dpi_x() / data_->page_scale;
-    case graphics_unit::document: return value * 96.0f / 300.0f / dpi_x() / data_->page_scale;
-    case graphics_unit::millimeter: return value * 96.0f / 25.4f / dpi_x() / data_->page_scale;
+    case graphics_unit::pixel: return value * page_scale;
+    case graphics_unit::point: return value / 96.0f * dpi * page_scale;
+    case graphics_unit::inch: return value / 96.0f * dpi * page_scale;
+    case graphics_unit::document: return value / 96.0f * 300.0f * dpi * page_scale;
+    case graphics_unit::millimeter: return value / 96.0f * 25.4f * dpi * page_scale;
     default: return value;
   }
 }
 
-float graphics::to_page_unit(float value) const {
-  switch (data_->page_unit) {
+float graphics::to_pixels(float value) const {
+  return to_pixels(value, data_->page_unit, data_->page_scale, dpi_x());
+}
+
+float graphics::to_pixels(float value, graphics_unit page_unit, float page_scale, float dpi) {
+  switch (page_unit) {
     case graphics_unit::world:
     case graphics_unit::display:
-    case graphics_unit::pixel: return value * data_->page_scale;
-    case graphics_unit::point: return value / 96.0f * dpi_x() * data_->page_scale;
-    case graphics_unit::inch: return value / 96.0f * dpi_x() * data_->page_scale;
-    case graphics_unit::document: return value / 96.0f * 300.0f * dpi_x() * data_->page_scale;
-    case graphics_unit::millimeter: return value / 96.0f * 25.4f * dpi_x() * data_->page_scale;
+    case graphics_unit::pixel: return value / page_scale;
+    case graphics_unit::point: return value * 96.0f / dpi / page_scale;
+    case graphics_unit::inch: return value * 96.0f / dpi / page_scale;
+    case graphics_unit::document: return value * 96.0f / 300.0f / dpi / page_scale;
+    case graphics_unit::millimeter: return value * 96.0f / 25.4f / dpi / page_scale;
     default: return value;
   }
 }

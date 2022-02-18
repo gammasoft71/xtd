@@ -35,6 +35,10 @@ vector<byte_t> bit_converter::get_bytes(double value) {
   return bit_converter::get_bytes(double_to_int64_bits(value));
 }
 
+vector<byte_t> bit_converter::get_bytes(sbyte_t value) {
+  return bit_converter::get_bytes(byte_t(value));
+}
+
 vector<byte_t> bit_converter::get_bytes(int16_t value) {
   return bit_converter::get_bytes(uint16_t(value));
 }
@@ -49,6 +53,10 @@ vector<byte_t> bit_converter::get_bytes(int64_t value) {
 
 vector<byte_t> bit_converter::get_bytes(float value) {
   return bit_converter::get_bytes(single_to_int32_bits(value));
+}
+
+vector<byte_t> bit_converter::get_bytes(byte_t value) {
+  return {value};
 }
 
 vector<byte_t> bit_converter::get_bytes(uint16_t value) {

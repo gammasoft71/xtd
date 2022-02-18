@@ -7,6 +7,7 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/convert_string.h>
 #include <atomic>
+#include <wx/display.h>
 #include <wx/image.h>
 #include <wx/palette.h>
 #include <wx/stream.h>
@@ -72,6 +73,44 @@ namespace {
     auto it = bitmap_types.find(bitmap_type);
     return it == bitmap_types.end() ? IFM_UNKNOWN : it->second;
   }
+
+  size_t get_frame_resolution(const wxImage& image) {
+    switch (image.GetType()) {
+      case wxBITMAP_TYPE_BMP: return FD_PAGE;
+      case wxBITMAP_TYPE_BMP_RESOURCE: return FD_PAGE;
+      case wxBITMAP_TYPE_ICO: return FD_RESOLUTION;
+      case wxBITMAP_TYPE_ICO_RESOURCE: return FD_RESOLUTION;
+      case wxBITMAP_TYPE_CUR: return FD_TIME;
+      case wxBITMAP_TYPE_CUR_RESOURCE: return FD_TIME;
+      case wxBITMAP_TYPE_XBM: return FD_PAGE;
+      case wxBITMAP_TYPE_XBM_DATA: return FD_PAGE;
+      case wxBITMAP_TYPE_XPM: return FD_PAGE;
+      case wxBITMAP_TYPE_XPM_DATA: return FD_PAGE;
+      case wxBITMAP_TYPE_TIFF: return FD_PAGE;
+      case wxBITMAP_TYPE_TIFF_RESOURCE: return FD_PAGE;
+      case wxBITMAP_TYPE_GIF: return FD_TIME;
+      case wxBITMAP_TYPE_GIF_RESOURCE: return FD_TIME;
+      case wxBITMAP_TYPE_PNG: return FD_PAGE;
+      case wxBITMAP_TYPE_PNG_RESOURCE: return FD_PAGE;
+      case wxBITMAP_TYPE_JPEG: return FD_PAGE;
+      case wxBITMAP_TYPE_JPEG_RESOURCE: return FD_PAGE;
+      case wxBITMAP_TYPE_PNM: return FD_PAGE;
+      case wxBITMAP_TYPE_PNM_RESOURCE: return FD_PAGE;
+      case wxBITMAP_TYPE_PCX: return FD_PAGE;
+      case wxBITMAP_TYPE_PCX_RESOURCE: return FD_PAGE;
+      case wxBITMAP_TYPE_PICT: return FD_PAGE;
+      case wxBITMAP_TYPE_PICT_RESOURCE: return FD_PAGE;
+      case wxBITMAP_TYPE_ICON: return FD_RESOLUTION;
+      case wxBITMAP_TYPE_ICON_RESOURCE: return FD_RESOLUTION;
+      case wxBITMAP_TYPE_ANI: return FD_TIME;
+      case wxBITMAP_TYPE_IFF: return FD_PAGE;
+      case wxBITMAP_TYPE_TGA: return FD_PAGE;
+      case wxBITMAP_TYPE_MACCURSOR: return FD_TIME;
+      case wxBITMAP_TYPE_MACCURSOR_RESOURCE: return FD_TIME;
+      default: return FD_PAGE;
+    }
+    return FD_PAGE;
+  }
 }
 
 void image::color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags) {
@@ -85,15 +124,19 @@ void image::color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_
   flags = 0;
 }
 
-intptr_t image::create(const ustring& filename) {
+intptr_t image::create(const ustring& filename, std::map<size_t, size_t>& frame_resolutions) {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr_t>(new wxImage(wxString(convert_string::to_wstring(filename))));
+  auto img = new wxImage(wxString(convert_string::to_wstring(filename)));
+  frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(filename);
+  return reinterpret_cast<intptr_t>(img);
 }
 
-intptr_t image::create(std::istream& stream) {
+intptr_t image::create(std::istream& stream, std::map<size_t, size_t>& frame_resolutions) {
   toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
-  return reinterpret_cast<intptr_t>(new wxImage(std_stream));
+  auto img = new wxImage(std_stream);
+  frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(std_stream);
+  return reinterpret_cast<intptr_t>(img);
 }
 
 intptr_t image::create(const char* const* bits) {
@@ -136,9 +179,13 @@ size_t image::flags(intptr_t image) {
   return IFL_NONE;
 }
 
-size_t image::frame_resolutions(intptr_t image) {
-  /// @todo see how to get frame dimension with wxWidgets.
-  return FD_PAGE;
+size_t frame_count(std::istream& stream) {
+  StdInputStreamAdapter std_stream(stream);
+  return wxImage::GetImageCount(std_stream);
+}
+
+size_t frame_count(const xtd::ustring& filename) {
+  return wxImage::GetImageCount(wxString(convert_string::to_wstring(filename)));
 }
 
 float image::horizontal_resolution(intptr_t image) {
@@ -218,4 +265,8 @@ void image::save(intptr_t image, const ustring& filename, size_t raw_format) {
 void image::save(intptr_t image, std::ostream& stream, size_t raw_format) {
   StdOutputStreamAdapter output_stream(stream);
   reinterpret_cast<wxImage*>(image)->SaveFile(output_stream, to_bitmap_type(raw_format));
+}
+
+float image::screen_dpi() {
+  return wxDisplay::GetStdPPI().GetWidth();
 }
