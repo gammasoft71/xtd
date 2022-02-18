@@ -197,6 +197,32 @@ size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dime
   throw argument_exception(csf_);
 }
 
+int32_t image::get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) {
+  return (static_cast<int32_t>(pixfmt) >> 8) & 0xFF;
+}
+
+xtd::drawing::imaging::property_item image::get_property_item(int32_t propid) {
+  for (auto property_tiem : data_->property_items_)
+    if (property_tiem.id() == propid) return property_tiem;
+  throw argument_exception(csf_);
+}
+
+xtd::drawing::image image::get_thmbnail_image(int32_t thumb_width, int32_t thunb_height) {
+  return image(*this, thumb_width, thunb_height);
+}
+
+bool image::is_alpha_pixel_format (xtd::drawing::imaging::pixel_format pixfmt) {
+  return (pixfmt & xtd::drawing::imaging::pixel_format::alpha) == xtd::drawing::imaging::pixel_format::alpha;
+}
+
+bool image::is_canonical_pixel_format (xtd::drawing::imaging::pixel_format pixfmt) {
+  return (pixfmt & xtd::drawing::imaging::pixel_format::canonical) == xtd::drawing::imaging::pixel_format::canonical;
+}
+
+bool image::is_extended_pixel_format (xtd::drawing::imaging::pixel_format pixfmt) {
+  return (pixfmt & xtd::drawing::imaging::pixel_format::extended) == xtd::drawing::imaging::pixel_format::extended;
+}
+
 void image::update_properties() {
   data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
 

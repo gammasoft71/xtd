@@ -201,6 +201,42 @@ namespace xtd {
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the xtd::drawing::imaging::frame_dimension.
       size_t get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const;
       
+      /// @brief Returns the color depth, in number of bits per pixel, of the specified pixel format.
+      /// @param pixfmt The xtd::drawing::imaging::pixel_format member that specifies the format for which to find the size.
+      /// @return The color depth of the specified pixel format.
+      static int32_t get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt);
+
+      /// @brief Gets the specified property item from this Image.
+      /// @param propid The ID of the property item to get.
+      /// @return The xtd::drawing::imaging::property_item this method gets.
+      /// @exception xtd::argument_exception The image format of this image does not support property items.
+      /// @remarks For a list of property item IDs and links to more information, see Id.
+      /// @remarks It is difficult to set property items, because the xtd::drawing::imaging::property_item class has no public constructors. One way to work around this restriction is to obtain a xtd::drawing::imaging::property_item by retrieving the xtd::drawing::image::property_item property value or calling the xtd::drawing::image::get_property_item method of an xtd::drawing::image that already has property items. Then you can set the fields of the xtd::drawing::imaging::property_item and pass it to xtd::drawing::image::set_property_item.
+      xtd::drawing::imaging::property_item get_property_item(int32_t propid);
+      
+      /// @brief Returns a thumbnail for this xtd::drawing::image.
+      /// @param thbmb_width The width, in pixels, of the requested thumbnail image.
+      /// @param thum_height The height, in pixels, of the requested thumbnail image.
+      /// @return An xtd::drawing::image that represents the thumbnail.
+      /// @remarks If the xtd::drawing::image contains an embedded thumbnail image, this method retrieves the embedded thumbnail and scales it to the requested size. If the xtd::drawing::image does not contain an embedded thumbnail image, this method creates a thumbnail image by scaling the main image.
+      /// @remarks The xtd::drawing::image::get_thumbnail_image method works well when the requested thumbnail image has a size of about 120 x 120 pixels. If you request a large thumbnail image (for example, 300 x 300) from an xtd::drawing::image that has an embedded thumbnail, there could be a noticeable loss of quality in the thumbnail image. It might be better to scale the main image (instead of scaling the embedded thumbnail) by calling the xtd::drawing::graphics::draw_image method.
+      xtd::drawing::image get_thmbnail_image(int32_t thumb_width, int32_t thunb_height);
+      
+      /// @brief Returns a value that indicates whether the pixel format for this xtd::drawing::image contains alpha information.
+      /// @param pixfmt The PixelFormat to test.
+      /// @return true if pixfmt contains alpha information; otherwise, false.
+      static bool is_alpha_pixel_format (xtd::drawing::imaging::pixel_format pixfmt);
+
+      /// @brief Returns a value that indicates whether the pixel format is 32 bits per pixel.
+      /// @param pixfmt The PixelFormat to test.
+      /// @return true if pixfmt is canonical; otherwise, false.
+      static bool is_canonical_pixel_format (xtd::drawing::imaging::pixel_format pixfmt);
+      
+      /// @brief Returns a value that indicates whether the pixel format is 64 bits per pixel.
+      /// @param pixfmt The PixelFormat to test.
+      /// @return true if pixfmt is extended; otherwise, false.
+      static bool is_extended_pixel_format (xtd::drawing::imaging::pixel_format pixfmt);
+      
       void save(const xtd::ustring& filename) const;
       void save(const xtd::ustring& filename, const imaging::image_format& format) const;
       void save(std::ostream& stream, const imaging::image_format& format) const;
