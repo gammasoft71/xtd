@@ -2,6 +2,7 @@
 #include "../../../include/xtd/drawing/bitmap.h"
 #include "../../../include/xtd/drawing/graphics.h"
 #include <fstream>
+#include <xtd/as.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/argument_exception.h>
 #include <xtd/drawing/native/image.h>
@@ -179,7 +180,7 @@ image image::from_data(const char* const* bits) {
 }
 
 xtd::drawing::rectangle_f image::get_bounds(graphics_unit page_unit) const {
-  return rectangle_f(0.0f, 0.0f, graphics::to_page_unit(data_->size_.width(), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(data_->size_.height(), page_unit, 1.0f, native::image::screen_dpi()));
+  return rectangle_f(0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size_.width()), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size_.height()), page_unit, 1.0f, native::image::screen_dpi()));
 }
 
 xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) const {
