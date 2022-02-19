@@ -32,6 +32,10 @@ namespace xtd {
       /// @{
       explicit icon(const xtd::ustring& filename);
       
+      icon(const xtd::ustring& filename, const xtd::drawing::size& size);
+      
+      icon(const xtd::ustring& filename, int32_t width, int32_t height);
+      
       explicit icon(std::istream& stream);
       
       explicit icon(const char* const* bits);
@@ -50,22 +54,35 @@ namespace xtd {
 
       /// @name Properties
       
-      /// @brief Get the handle of this image.
-      /// @return The handle of this image.
+      /// @brief Get the handle of this icon. This is not a copy of the handle; do not free it.
+      /// @return The Windows handle for the icon.
       intptr_t handle() const;
+      
+      int32_t height() const;
+
+      const xtd::drawing::size& size() const;
+
+      int32_t width() const;
       /// @}
       
       void save(const xtd::ustring& filename) const;
       void save(std::ostream& stream) const;
       
+      static icon from_handle(intptr_t handle);
+
       static icon from_bitmap(const xtd::drawing::bitmap& bitmap);
-      
+
       bitmap to_bitmap() const;
       
+      /// @brief Gets a human-readable string that describes the xtd::drawing::icon.
+      /// @return A string that describes the xtd::drawing::icon.
+      xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
+
     private:
       explicit icon(const bitmap& bitmap);
       struct data {
         intptr_t handle = 0;
+        xtd::drawing::size size;
       };
       
       std::shared_ptr<data> data_ = std::make_shared<data>();

@@ -44,11 +44,15 @@ namespace xtd {
         
         /// @{
         static intptr_t create(const xtd::ustring& filename);
+        static intptr_t create(const xtd::ustring& filename, int32_t width, int32_t height);
         static intptr_t create(std::istream& stream);
         static intptr_t create(const char* const* bits);
         static intptr_t create(intptr_t image);
         static intptr_t create(intptr_t icon, int32_t width, int32_t height);
         static void destroy(intptr_t icon);
+        static intptr_t from_handle(intptr_t handle);
+        static int32_t get_height(intptr_t icon);
+        static int32_t get_width(intptr_t icon);
         static void save(intptr_t icon, const xtd::ustring& filename);
         static void save(intptr_t icon, std::ostream& stream, size_t raw_format);
         static intptr_t to_image(intptr_t icon);
