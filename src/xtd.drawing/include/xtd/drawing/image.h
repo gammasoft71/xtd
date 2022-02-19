@@ -20,6 +20,7 @@
 #include "graphics.h"
 #include "graphics_unit.h"
 #include "rectangle.h"
+#include "rotate_flip_type.h"
 #include "size.h"
 #include "size_f.h"
 
@@ -237,9 +238,25 @@ namespace xtd {
       /// @return true if pixfmt is extended; otherwise, false.
       static bool is_extended_pixel_format (xtd::drawing::imaging::pixel_format pixfmt);
       
+      /// @brief Rotates, flips, or rotates and flips the xtd::drawing::image.
+      /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
+      /// @remarks The xtd::drawing::image::rotate_flip method rotates the image clockwise.
+      /// @remarks If you wish to draw on an image once it has been rotated, you should always retrieve a new graphics object from the image, otherwise an exception could occur.
+      void rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type);
+      
+      /// @brief Saves this Image to the specified file or stream.
+      /// @param filename A string that contains the name of the file to which to save this xtd::drawing::image.
+      /// @remarks If no encoder exists for the file format of the image, the Portable Network Graphics (PNG) encoder is used. When you use the xtd::drawing::image::save method to save a graphic image as a Windows Metafile Format (WMF) or Enhanced Metafile Format (EMF) file, the resulting file is saved as a Portable Network Graphics (PNG) file. This behavior occurs because the GDI+ component of the .NET Framework does not have an encoder that you can use to save files as .wmf or .emf files.
+      /// @remarks Saving the image to the same file it was constructed from is not allowed and throws an exception.
       void save(const xtd::ustring& filename) const;
-      void save(const xtd::ustring& filename, const imaging::image_format& format) const;
-      void save(std::ostream& stream, const imaging::image_format& format) const;
+      /// @brief Saves this Image to the specified file in the specified format.
+      /// @param filename A string that contains the name of the file to which to save this xtd::drawing::image.
+      /// @param format The xtd::drawing::imaging::image_format for this xtd::drawing::image.
+      void save(const xtd::ustring& filename, const xtd::drawing::imaging::image_format& format) const;
+      /// @brief Saves this image to the specified stream in the specified format.
+      /// @param stream The std::otream where the image will be saved.
+      /// @param format The xtd::drawing::imaging::image_format for this xtd::drawing::image.
+      void save(std::ostream& stream, const xtd::drawing::imaging::image_format& format) const;
       /// @}
       
     protected:

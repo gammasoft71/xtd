@@ -1,8 +1,11 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/image.h>
+#include <xtd/drawing/native/compositing_modes.h>
+#include <xtd/drawing/native/compositing_qualities.h>
 #include <xtd/drawing/native/frame_dimension.h>
 #include <xtd/drawing/native/image_flags.h>
 #include <xtd/drawing/native/image_format.h>
+#include <xtd/drawing/native/rotate_flip_types.h>
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/convert_string.h>
@@ -245,6 +248,21 @@ void image::get_pixel(intptr_t image, int32_t x, int32_t y, uint8_t& a, uint8_t&
     r = reinterpret_cast<wxImage*>(image)->GetRed(x, y);
     g = reinterpret_cast<wxImage*>(image)->GetGreen(x, y);
     b = reinterpret_cast<wxImage*>(image)->GetBlue(x, y);
+  }
+}
+
+void image::rotate_flip(intptr_t image, int32_t rotate_flip_type) {
+  auto wx_image = reinterpret_cast<wxImage*>(image);
+  switch (rotate_flip_type) {
+    case RFT_ROTATE_NONE_FLIP_NONE: break;
+    case RFT_ROTATE_90_FLIP_NONE: *wx_image = wx_image->Rotate90(); break;
+    case RFT_ROTATE_180_FLIP_NONE: *wx_image = wx_image->Rotate180(); break;
+    case RFT_ROTATE_270_FLIP_NONE: *wx_image = wx_image->Rotate180(); *wx_image = wx_image->Rotate90(); break;
+    case RFT_ROTATE_NONE_FLIP_X: *wx_image = wx_image->Mirror(); break;
+    case RFT_ROTATE_90_FLIP_X: *wx_image = wx_image->Rotate90(); *wx_image = wx_image->Mirror(); break;
+    case RFT_ROTATE_180_FLIP_X: *wx_image = wx_image->Rotate180(); *wx_image = wx_image->Mirror(); break;
+    case RFT_ROTATE_270_FLIP_X: *wx_image = wx_image->Rotate180(); *wx_image = wx_image->Rotate90(); *wx_image = wx_image->Mirror(); break;
+    default: break;
   }
 }
 

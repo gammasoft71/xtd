@@ -31,6 +31,7 @@ add_sources(
   include/xtd/drawing/rectangle.h
   include/xtd/drawing/rectangle_f.h
   include/xtd/drawing/region.h
+  include/xtd/drawing/rotate_flip_type.h
   include/xtd/drawing/size.h
   include/xtd/drawing/size_f.h
   include/xtd/drawing/solid_brush.h
