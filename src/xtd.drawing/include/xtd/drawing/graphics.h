@@ -51,12 +51,17 @@ namespace xtd {
     class image;
     /// @endcond
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
+    /// @code
+    /// class drawing_export_ graphics : public xtd::object
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::object → xtd::drawing::graphics
     /// @par Namespace
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ graphics : public object {
+    class drawing_export_ graphics : public xtd::object {
     public:
       /// @cond
       graphics(const graphics& value);

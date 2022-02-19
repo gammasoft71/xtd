@@ -20,12 +20,17 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores a set of four floating-points that represent the location and size of a rectangle.
+    /// @code
+    /// class drawing_export_ rectangle_f : public xtd::object
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::object → xtd::drawing::rectangle_f
     /// @par Namespace
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ rectangle_f : public object {
+    class drawing_export_ rectangle_f : public xtd::object {
     public:
       /// @name Fields
       

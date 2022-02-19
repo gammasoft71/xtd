@@ -17,6 +17,11 @@ namespace xtd {
     /// @endcond
     
     /// @brief Each property of the xtd::drawing::system_images class is an xtd::drawing::image object for Windows system-wide images. This class cannot be inherited.
+    /// @code
+    /// class drawing_export_ system_images final static_
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::static_object → xtd::drawing::system_images
     /// @par Namespace
     /// xtd::drawing
     /// @par Library

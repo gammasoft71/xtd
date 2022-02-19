@@ -17,12 +17,17 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores an ordered pair of integers, which specify a height and width.
+    /// @code
+    /// class drawing_export_ size : public xtd::object
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::object → xtd::drawing::size
     /// @par Namespace
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ size : public object {
+    class drawing_export_ size : public xtd::object {
     public:
       /// @name Fields
       

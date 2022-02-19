@@ -39,7 +39,9 @@ namespace xtd {
         static intptr_t create(const xtd::ustring& filename);
         static intptr_t create(const xtd::ustring& filename, int32_t width, int32_t height);
         static intptr_t create(std::istream& stream);
+        static intptr_t create(std::istream& stream, int32_t width, int32_t height);
         static intptr_t create(const char* const* bits);
+        static intptr_t create(const char* const* bits, int32_t width, int32_t height);
         static intptr_t create(intptr_t image);
         static intptr_t create(intptr_t icon, int32_t width, int32_t height);
         static void destroy(intptr_t icon);
