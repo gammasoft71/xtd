@@ -224,16 +224,32 @@ bool image::is_extended_pixel_format (xtd::drawing::imaging::pixel_format pixfmt
   return (pixfmt & xtd::drawing::imaging::pixel_format::extended) == xtd::drawing::imaging::pixel_format::extended;
 }
 
+void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
+  native::image::rotate_flip(handle(), static_cast<int32_t>(rotate_flip_type));
+}
+
+void image::save(const ustring& filename) const {
+  native::image::save(data_->handle_, filename);
+}
+
+void image::save(const ustring& filename, const imaging::image_format& format) const {
+  native::image::save(data_->handle_, filename, to_raw_format(format));
+}
+
+void image::save(std::ostream& stream, const imaging::image_format& format) const {
+  native::image::save(data_->handle_, stream, to_raw_format(format));
+}
+
 void image::update_properties() {
   data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
-
+  
   data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
   
   std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>> palette_entries;
   native::image::color_palette(data_->handle_, palette_entries, data_->palette_.flags_);
   for (auto [a, r, g, b] : palette_entries)
     data_->palette_.entries_.push_back(color::from_argb(a, r, g, b));
-    
+  
   data_->pixel_format_ = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle_));
   
   int32_t physical_width, physical_height;
@@ -257,16 +273,4 @@ void image::update_properties() {
   data_->size_ = drawing::size(width, height);
   
   data_->vertical_resolution_ = native::image::vertical_resolution(data_->handle_);
-}
-
-void image::save(const ustring& filename) const {
-  native::image::save(data_->handle_, filename);
-}
-
-void image::save(const ustring& filename, const imaging::image_format& format) const {
-  native::image::save(data_->handle_, filename, to_raw_format(format));
-}
-
-void image::save(std::ostream& stream, const imaging::image_format& format) const {
-  native::image::save(data_->handle_, stream, to_raw_format(format));
 }

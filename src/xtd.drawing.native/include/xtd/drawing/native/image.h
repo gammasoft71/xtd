@@ -65,6 +65,7 @@ namespace xtd {
         static void size(intptr_t image, int32_t& width, int32_t& height);
         static float vertical_resolution(intptr_t image);
         static void get_pixel(intptr_t image, int32_t x, int32_t y, uint8_t& a, uint8_t& r, uint8_t& g, uint8_t& b);
+        static void rotate_flip(intptr_t image, int32_t rotate_flip_type);
         static void set_pixel(intptr_t image, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void save(intptr_t image, const xtd::ustring& filename);
         static void save(intptr_t image, const xtd::ustring& filename, size_t raw_format);
