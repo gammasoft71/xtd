@@ -18,6 +18,11 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimensional plane.
+    /// @code
+    /// class drawing_export_ point_f : public xtd::object
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::object → xtd::drawing::point_f
     /// @par Namespace
     /// xtd::drawing
     /// @par Library

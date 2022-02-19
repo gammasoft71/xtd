@@ -28,9 +28,28 @@ icon::icon(std::istream& stream) {
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
+icon::icon(std::istream& stream, const xtd::drawing::size& size) : icon(stream, size.width(), size.height()) {
+}
+
+icon::icon(std::istream& stream, int32_t width, int32_t height) {
+  data_->handle = native::icon::create(stream, width, height);
+  data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
+}
+
 icon::icon(const char* const* bits) {
   data_->handle = native::icon::create(bits);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
+}
+
+icon::icon(const char* const* bits, const xtd::drawing::size& size) : icon(bits, size.width(), size.height()) {
+}
+
+icon::icon(const char* const* bits, int32_t width, int32_t height) {
+  data_->handle = native::icon::create(bits, width, height);
+  data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
+}
+
+icon::icon(const icon& icn, const xtd::drawing::size& size) : icon(icn, size.width(), size.height()) {  
 }
 
 icon::icon(const icon& icon, int32_t width, int32_t height) {

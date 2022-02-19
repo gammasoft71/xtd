@@ -15,6 +15,11 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Represents an ARGB (alpha, red, green, blue) color.
+    /// @code
+    /// class drawing_export_ color : public xtd::object
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::object → xtd::drawing::color
     /// @par Namespace
     /// xtd::drawing
     /// @par Library
@@ -36,7 +41,7 @@ namespace xtd {
     ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
     /// }
     /// @endcode
-    class drawing_export_ color : public object {
+    class drawing_export_ color : public xtd::object {
     public:
       /// @name Fields
       
