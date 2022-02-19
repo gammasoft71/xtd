@@ -73,6 +73,11 @@ intptr_t icon::create(const ustring& filename) {
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxString(convert_string::to_wstring(filename))));
 }
 
+intptr_t icon::create(const xtd::ustring& filename, int32_t width, int32_t height) {
+  toolkit::initialize(); // Must be first
+  return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE, width, height)));
+}
+
 intptr_t icon::create(std::istream& stream) {
   toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
@@ -105,13 +110,25 @@ void icon::destroy(intptr_t icon) {
   delete reinterpret_cast<wxImage*>(icon);
 }
 
+intptr_t icon::from_handle(intptr_t handle) {
+  return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(*reinterpret_cast<wxIcon*>(handle))));
+}
+
+int32_t icon::get_height(intptr_t icon) {
+  return reinterpret_cast<wxIconBundle*>(icon)->GetIcon().GetHeight();
+}
+
+int32_t icon::get_width(intptr_t icon) {
+  return reinterpret_cast<wxIconBundle*>(icon)->GetIcon().GetWidth();
+}
+
 void icon::save(intptr_t icon, const ustring& filename) {
-  reinterpret_cast<wxImage*>(icon)->SaveFile(wxString(convert_string::to_wstring(filename)));
+  reinterpret_cast<wxIconBundle*>(icon)->GetIcon().SaveFile(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE);
 }
 
 void icon::save(intptr_t icon, std::ostream& stream, size_t raw_format) {
   StdOutputStreamAdapter output_stream(stream);
-  reinterpret_cast<wxImage*>(icon)->SaveFile(output_stream, to_bitmap_type(raw_format));
+  reinterpret_cast<wxImage*>(to_image(icon))->SaveFile(output_stream, to_bitmap_type(raw_format));
 }
 
 intptr_t icon::to_image(intptr_t icon) {

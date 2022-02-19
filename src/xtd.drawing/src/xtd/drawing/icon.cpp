@@ -12,22 +12,35 @@ icon icon::empty;
 
 icon::icon(const ustring& filename) {
   data_->handle = native::icon::create(filename);
+  data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
+}
+
+icon::icon(const xtd::ustring& filename, const xtd::drawing::size& size) : icon(filename, size.width(), size.height()) {
+}
+
+icon::icon(const xtd::ustring& filename, int32_t width, int32_t height) {
+  data_->handle = native::icon::create(filename, width, height);
+  data_->size = {width, height};
 }
 
 icon::icon(std::istream& stream) {
   data_->handle = native::icon::create(stream);
+  data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
 icon::icon(const char* const* bits) {
   data_->handle = native::icon::create(bits);
+  data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
 icon::icon(const icon& icon, int32_t width, int32_t height) {
   data_->handle = native::icon::create(icon.data_->handle, width, height);
+  data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
 icon::icon(const bitmap& bitmap) {
   data_->handle = native::icon::create(bitmap.handle());
+  data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
 icon::~icon() {
@@ -47,12 +60,31 @@ intptr_t icon::handle() const {
   return data_->handle;
 }
 
+int32_t icon::height() const {
+  return data_->size.width();
+}
+
+const xtd::drawing::size& icon::size() const {
+  return data_->size;
+}
+
+int32_t icon::width() const{
+  return data_->size.width();
+}
+
 void icon::save(const ustring& filename) const {
   native::icon::save(data_->handle, filename);
 }
 
 void icon::save(std::ostream& stream) const {
   native::icon::save(data_->handle, stream, IFM_ICO);
+}
+
+icon icon::from_handle(intptr_t handle) {
+  drawing::icon icon;
+  icon.data_->handle = native::icon::from_handle(handle);
+  icon.data_->size = {native::icon::get_width(icon.data_->handle), native::icon::get_height(icon.data_->handle)};
+  return icon;
 }
 
 icon icon::from_bitmap(const bitmap& bitmap) {
