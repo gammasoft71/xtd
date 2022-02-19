@@ -95,7 +95,7 @@ namespace xtd {
       icon(const char* const* bits, int32_t width, int32_t height);
       /// @brief Initializes a new instance of the xtd::drawing::icon class and attempts to find a version of the icon that matches the requested size.
       /// @param original The xtd::drawing::icon from which to load the newly sized icon.
-      /// @param size A Size structure that specifies the height and width of the new xtd::drawing::icon.
+      /// @param size A xtd::drawing::size structure that specifies the height and width of the new xtd::drawing::icon.
       /// @remarks If a version cannot be found that exactly matches the size, the closest match is used. If the original parameter is an xtd::drawing::icon that has a single size, this method only creates a duplicate icon. Use the stretching capabilities of the xtd::graphics::drawing::draw_image method to resize the icon.
       icon(const icon& original, const xtd::drawing::size& size);
       /// @brief Initializes a new instance of the xtd::drawing::icon class and attempts to find a version of the icon that matches the requested size.
