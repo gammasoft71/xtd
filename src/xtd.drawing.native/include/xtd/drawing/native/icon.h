@@ -33,13 +33,6 @@ namespace xtd {
       class drawing_native_export_ icon final static_ {
         friend xtd::drawing::icon;
       protected:
-        struct property_item {
-          int32_t id = 0;
-          int32_t len = 0;
-          int32_t type = 1;
-          std::vector<uint8_t> value;
-        };
-        
         /// @name Protected methods
         
         /// @{
