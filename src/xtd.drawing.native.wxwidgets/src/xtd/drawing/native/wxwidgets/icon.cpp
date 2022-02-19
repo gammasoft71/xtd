@@ -135,7 +135,8 @@ int32_t icon::get_width(intptr_t icon) {
 }
 
 void icon::save(intptr_t icon, const ustring& filename) {
-  reinterpret_cast<wxIconBundle*>(icon)->GetIcon().SaveFile(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE);
+  //reinterpret_cast<wxIconBundle*>(icon)->GetIcon().SaveFile(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE);
+  reinterpret_cast<wxImage*>(to_image(icon))->SaveFile(filename);
 }
 
 void icon::save(intptr_t icon, std::ostream& stream, size_t raw_format) {
