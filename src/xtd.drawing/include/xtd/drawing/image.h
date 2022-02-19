@@ -256,6 +256,8 @@ namespace xtd {
       /// @brief Saves this image to the specified stream in the specified format.
       /// @param stream The std::otream where the image will be saved.
       /// @param format The xtd::drawing::imaging::image_format for this xtd::drawing::image.
+      /// @remarks You should avoid saving an image to the same stream that was used to construct it. Doing so might damage the stream.
+      /// @remarks The image must be saved to the stream at an offset of zero. If any additional data has been written to the stream before saving the image, the image data in the stream will be corrupted.
       void save(std::ostream& stream, const xtd::drawing::imaging::image_format& format) const;
       /// @}
       
