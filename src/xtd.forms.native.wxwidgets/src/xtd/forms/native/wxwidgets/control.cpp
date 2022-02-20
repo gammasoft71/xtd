@@ -64,6 +64,8 @@
 #include <wx/font.h>
 #include <wx/frame.h>
 
+wxDEFINE_EVENT(wxEVT_RECREATE, wxCommandEvent);
+
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
