@@ -57,7 +57,8 @@ icon::icon(const icon& original, int32_t width, int32_t height) {
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
-icon::icon(const bitmap& bitmap) {
+icon::icon(const drawing::bitmap& bitmap) {
+  if (bitmap == drawing::bitmap::empty) return;
   data_->handle = native::icon::create(bitmap.handle());
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
