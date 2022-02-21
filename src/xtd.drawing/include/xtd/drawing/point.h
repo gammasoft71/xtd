@@ -251,7 +251,7 @@ namespace xtd {
       /// @param pt The xtd::drawing::point to add.
       /// @param sz The xtd::drawing::size to add.
       /// @return The xtd::drawing::point that is the result of the addition operation.
-      /// @remarks The add adds the width and height of the specified size to the y and y values of the specified point.
+      /// @remarks The xtd::drawing::point::add adds the xtd::drawing::size::width and xtd::drawing::size::height of the specified size to the xtd::drawing::point::x and xtd::drawing::point::y values of the specified xtd::drawing::point.
       /// @par Examples
       /// The following example shows how to use the add method. To run this example, paste it into a Windows Form (xtd::forms. Handle the form's paint event and call the add_point method from the paint event-handling method, passing e as paint_event_args.
       /// @code
@@ -278,9 +278,9 @@ namespace xtd {
       /// @param dy The amount to offset the y-coordinate.
       void offset(int32_t dx, int32_t dy) noexcept;
       
-      /// @brief Translates this xtd::drawing::point by the specified point.
+      /// @brief Translates this xtd::drawing::point by the specified xtd::drawing::point.
       /// @param p The xtd::drawing::point used offset this xtd::drawing::point.
-      /// @remarks This method adjusts the xtd::drawing::point::x and xtd::drawing::point::y values of this xtd::drawing::point to the sum of the xtd::drawing::point::x and xtd::drawing::point::y values of this xtd::drawing::pointpoint and p.
+      /// @remarks This method adjusts the xtd::drawing::point::x and xtd::drawing::point::y values of this xtd::drawing::point to the sum of the xtd::drawing::point::x and xtd::drawing::point::y values of this xtd::drawing::point and p.
       /// @par Examples
       /// The following example shows how to use the Offset method. To run this example, paste it into a Windows Form. Handle the form's Paint event and call the Offsetpoint method from the Paint event-handling method, passing e as PaintEventArgs.
       /// @code
@@ -302,7 +302,7 @@ namespace xtd {
       /// @param pt The xtd::drawing::point to be subtracted from.
       /// @param sz The xtd::drawing::size to subtract from the xtd::drawing::point.
       /// @return The xtd::drawing::point that is the result of the subtraction operation.
-      /// @remarks The xtd::drawing::point::subtract subtracts the xtd::drawing::size::width and xtd::drawing::size::height of the specified xtd::drawing::size from the xtd::drawing::point::x and xtd::drawing::point::y values of the specified point.
+      /// @remarks The xtd::drawing::point::subtract subtracts the xtd::drawing::size::width and xtd::drawing::size::height of the specified xtd::drawing::size from the xtd::drawing::point::x and xtd::drawing::point::y values of the specified xtd::drawing::point.
       static point subtract(const point& pt, const size& sz) noexcept;
       /// @brief Returns the result of subtracting specified xtd::drawing::point from the specified xtd::drawing::point.
       /// @param pt1 The xtd::drawing::point to be subtracted from.
@@ -335,7 +335,7 @@ namespace xtd {
       /// @return The translated xtd::drawing::point.
       point operator+(const size& sz) const noexcept;
       /// @brief Translates a xtd::drawing::point by a given xtd::drawing::point.
-      /// @param pt A xtd::drawing::size that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point.
+      /// @param pt A xtd::drawing::point that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point.
       /// @return The translated xtd::drawing::point.
       point operator+(const point& pt) const noexcept;
       /// @brief Translates a xtd::drawing::point by a given xtd::drawing::size.
