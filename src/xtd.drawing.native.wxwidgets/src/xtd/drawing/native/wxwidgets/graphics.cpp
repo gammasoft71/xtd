@@ -354,6 +354,35 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, float x, float y, fl
     graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
     graphics.DrawRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
   }
+
+  // Workaround : with wxWidgets version <= 3.1.5 Radial gradient does not fill rectangle with end color on Windows.
+#if defined(WIN32)
+  if (reinterpret_cast<wx_brush*>(brush)->is_radial_gradiant_brush()) {
+    auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
+    wxImage image(width, height);
+    image.InitAlpha();
+    for (int y_ia = 0; y_ia < height; y_ia++)
+      for (int x_ia = 0; x_ia < width; x_ia++)
+        image.SetAlpha(x_ia, y_ia, 0);
+    wxBitmap conical_gradient_bitmap(image);
+    auto conical_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap));
+    conical_gradient_graphics->SetPen(wxNullPen);
+    conical_gradient_graphics->SetBrush(wxBrush(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.Item(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.GetCount() - 1).GetColour()));
+    conical_gradient_graphics->DrawRectangle(0, 0, static_cast<double>(width), static_cast<double>(height));
+    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
+    wxBitmap conical_gradient_bitmap_mask(width, height);
+    auto conical_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap_mask));
+    conical_gradient_mask_graphics->SetPen(wxNullPen);
+    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
+    conical_gradient_mask_graphics->DrawRectangle(0, 0, width, height);
+    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateRadialGradientBrush(wx_radial_brush.focal_point.x - x, wx_radial_brush.focal_point.y - y, wx_radial_brush.center_point.x - x, wx_radial_brush.center_point.y - y, wx_radial_brush.radius, wxColour(0, 0, 0), wxColour(0, 0, 0)));
+    conical_gradient_mask_graphics->DrawRectangle(0, 0, static_cast<double>(width), static_cast<double>(height));
+    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
+    conical_gradient_bitmap = conical_gradient_image;
+    graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
+  }
+#endif
+
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -392,6 +421,35 @@ void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, float x, flo
     graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
     graphics.DrawRoundedRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
   }
+
+  // Workaround : with wxWidgets version <= 3.1.5 Radial gradient does not fill rounded rectangle with end color on Windows.
+#if defined(WIN32)
+  if (reinterpret_cast<wx_brush*>(brush)->is_radial_gradiant_brush()) {
+    auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
+    wxImage image(width, height);
+    image.InitAlpha();
+    for (int y_ia = 0; y_ia <height; y_ia++)
+      for (int x_ia = 0; x_ia < width; x_ia++)
+        image.SetAlpha(x_ia, y_ia, 0);
+    wxBitmap conical_gradient_bitmap(image);
+    auto conical_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap));
+    conical_gradient_graphics->SetPen(wxNullPen);
+    conical_gradient_graphics->SetBrush(wxBrush(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.Item(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.GetCount() - 1).GetColour()));
+    conical_gradient_graphics->DrawRoundedRectangle(0, 0, static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
+    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
+    wxBitmap conical_gradient_bitmap_mask(width, height);
+    auto conical_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap_mask));
+    conical_gradient_mask_graphics->SetPen(wxNullPen);
+    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
+    conical_gradient_mask_graphics->DrawRoundedRectangle(0, 0, width, height, radius);
+    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateRadialGradientBrush(wx_radial_brush.focal_point.x - x, wx_radial_brush.focal_point.y - y, wx_radial_brush.center_point.x - x, wx_radial_brush.center_point.y - y, wx_radial_brush.radius, wxColour(0, 0, 0), wxColour(0, 0, 0)));
+    conical_gradient_mask_graphics->DrawRoundedRectangle(0, 0, static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
+    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
+    conical_gradient_bitmap = conical_gradient_image;
+    graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
+  }
+#endif
+
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 
@@ -450,7 +508,7 @@ void graphics::measure_string(intptr_t hdc, const ustring& text, intptr_t font, 
     width = std::max(width, static_cast<float>(line_width));
     height += static_cast<float>(line_height);
     
-    // Workaround : with wxWidgets version <= 3.1.4 width size text is too small on macOS and linux.
+    // Workaround : with wxWidgets version <= 3.1.5 width size text is too small on macOS and linux.
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetFontMetrics().averageWidth / 2.3f);
   }
 }
