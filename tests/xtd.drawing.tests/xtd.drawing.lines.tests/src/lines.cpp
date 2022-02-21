@@ -49,7 +49,7 @@ private:
   forms::tab_page tab_page_alignment;
   void draw_grid(const rectangle& rect, drawing::graphics& graphics, const drawing::size& grid_size = drawing::size(5, 5)) {
     auto color1 = back_color().is_dark() ? color::light(back_color()) : color::dark(back_color());
-    auto color2 = color1.is_dark() ? color::light(color1) : color::dark(color1);
+    auto color2 = fore_color().is_dark() ? color::light(fore_color()) : color::dark(fore_color());
     for (auto x = rect.left(); x < rect.right(); x += grid_size.width())
       graphics.draw_line(pen(color1, 1), point(x, rect.top()), point(x, rect.bottom()));
     for (auto y = rect.top(); y < rect.bottom(); y += grid_size.height())
