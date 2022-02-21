@@ -168,6 +168,7 @@ namespace xtd {
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The Image this method creates.
+      /// @ingroup 
       static image from_file(const xtd::ustring& filename) {return image(filename);}
 
       /// @brief Creates a xtd::drawing::bitmap from a handle to a GDI bitmap.
