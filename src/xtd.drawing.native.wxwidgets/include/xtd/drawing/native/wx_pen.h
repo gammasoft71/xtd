@@ -118,6 +118,9 @@ namespace xtd {
         const texture_fill_pen& get_texture_fill_pen() const {return texture_fill_pen_;}
         texture_fill_pen& get_texture_fill_pen() {return texture_fill_pen_;}
         
+        wxPenJoin line_join() const {return line_join_;}
+        void line_join(wxPenJoin  line_join) {line_join_ = line_join;}
+
       private:
         pen_type pen_type_ = pen_type::none;
         conical_gradiant_pen conical_gradiant_pen_;
@@ -126,6 +129,7 @@ namespace xtd {
         radial_gradiant_pen radial_gradiant_pen_;
         solid_color_pen solid_color_pen_;
         texture_fill_pen texture_fill_pen_;
+        wxPenJoin line_join_ = wxJOIN_MITER;
       };
     }
   }
