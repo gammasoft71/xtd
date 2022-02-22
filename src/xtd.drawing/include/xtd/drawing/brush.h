@@ -24,7 +24,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing
-    /// @remarks This is an abstract base class and cannot be instantiated. To create a brush object, use classes derived from xtd::drawing::brush, such as xtd::drawing::solid_brush, xtd::drawing::texture_brush, and xtd::drawing::drawing2d::linear_gradient_brush.
+    /// @remarks This is an abstract base class and cannot be instantiated. To create a brush object, use classes derived from xtd::drawing::brush, such as xtd::drawing::solid_brush, xtd::drawing::texture_brush, xtd::drawing::drawing2d::hatch_brush, xtd::drawing::drawing2d::conical_gradient_brush, xtd::drawing::drawing2d::linear_gradien_brush, and xtd::drawing::drawing2d::radial_gradien_brush.
     class drawing_export_ brush : public xtd::object {
     public:
       //static const brush null;
