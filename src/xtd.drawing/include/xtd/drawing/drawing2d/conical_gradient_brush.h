@@ -27,6 +27,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
+      /// @image html conical_gradient_brush.png
       /// @par Examples
       /// The following code example demonstrate the use of conical_gradient_brush class.
       /// @include fill_rectangle.cpp
