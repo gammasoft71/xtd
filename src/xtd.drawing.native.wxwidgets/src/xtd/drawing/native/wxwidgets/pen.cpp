@@ -46,6 +46,10 @@ void pen::line_join(intptr_t pen, int32_t line_join) {
   }
 }
 
+void pen::miter_limit(intptr_t pen, float miter_limit) {
+  // WxWidgets has no mitter limit...
+}
+
 void pen::radial_gradient(intptr_t pen, intptr_t brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_radial_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }

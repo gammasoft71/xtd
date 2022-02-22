@@ -127,6 +127,18 @@ xtd::drawing::pen& pen::line_join(xtd::drawing::drawing2d::line_join value) {
   return *this;
 }
 
+float pen::miter_limit() const noexcept {
+  return data_->miter_limit;
+}
+
+xtd::drawing::pen& pen::miter_limit(float value) {
+  if (data_->miter_limit != value) {
+    data_->miter_limit = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 xtd::drawing::drawing2d::pen_type pen::type() const {
   return data_->type;
 }
@@ -147,6 +159,7 @@ void pen::recreate_handle() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
   data_->handle_ = native::pen::create();
   native::pen::line_join(data_->handle_, static_cast<int32_t>(data_->line_join));
+  native::pen::miter_limit(data_->handle_, data_->miter_limit);
 
   vector<float> dashes;
   switch (data_->dash_style) {
