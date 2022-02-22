@@ -21,8 +21,8 @@ namespace xtd {
       /// @par Namespace
       /// xtd::forms::layout
       /// @par Library
-      /// xtd.forms collections
-      /// @ingroup xtd_forms
+      /// xtd.forms
+      /// @ingroup xtd_forms collections
       /// @remarks The xtd::forms::layout::arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
       template<typename type_t, typename sorter_t = sorter_none>
       class arranged_element_collection {
