@@ -10,25 +10,44 @@ namespace examples {
   public:
     form1() {
       text("Fill ellipse example");
-      client_size({340, 230});
+      client_size({680, 340});
     }
     
   protected:
     void on_paint(paint_event_args& e) override {
-      e.graphics().fill_ellipse(brushes::transparent(), 10, 10, 100, 100);
-      e.graphics().fill_ellipse(solid_brush(color::red), 120, 10, 100, 100);
-      e.graphics().fill_ellipse(linear_gradient_brush(rectangle(230, 10, 100, 100), color::green, color::white, linear_gradient_mode::vertical), 230, 10, 100, 100);
-      e.graphics().fill_ellipse(hatch_brush(hatch_style::diagonal_cross, color::blue, color::white), 10, 120, 100, 100);
-      e.graphics().fill_ellipse(texture_brush(create_circle_texture(color::yellow)), 120, 120, 100, 100);
+      auto back_color = color::navy;
+      auto fore_color = color::white;
+      
+      e.graphics().fill_ellipse(solid_brush(color::transparent), rectangle(10, 10, 150, 150));
+      e.graphics().draw_ellipse(pen(fore_color, 4), rectangle(10, 10, 150, 150));
+
+      e.graphics().fill_ellipse(solid_brush(back_color), rectangle(180, 10, 150, 150));
+      e.graphics().draw_ellipse(pen(fore_color, 4), rectangle(180, 10, 150, 150));
+
+      e.graphics().fill_ellipse(texture_brush(create_circle_texture(fore_color, back_color)), rectangle(350, 10, 150, 150));
+      e.graphics().draw_ellipse(pen(fore_color, 4), rectangle(350, 10, 150, 150));
+
+      e.graphics().fill_ellipse(hatch_brush(xtd::drawing::drawing2d::hatch_style::diagonal_brick, color::white, back_color), rectangle(520, 10, 150, 150));
+      e.graphics().draw_ellipse(pen(color::white, 4), rectangle(520, 10, 150, 150));
+
+      e.graphics().fill_ellipse(conical_gradient_brush(point(85, 255), back_color, fore_color, 0), rectangle(10, 180, 150, 150));
+      e.graphics().draw_ellipse(pen(color::white, 4), rectangle(10, 180, 150, 150));
+
+      e.graphics().fill_ellipse(linear_gradient_brush(rectangle(180, 180, 150, 150), back_color, fore_color, 315), rectangle(180, 180, 150, 150));
+      e.graphics().draw_ellipse(pen(color::white, 4), rectangle(180, 180, 150, 150));
+
+      e.graphics().fill_ellipse(radial_gradient_brush(point(425, 255), fore_color, back_color, 73), rectangle(350, 180, 150, 150));
+      e.graphics().draw_ellipse(pen(color::white, 4), rectangle(350, 180, 150, 150));
+
       form::on_paint(e);
     }
     
   private:
-    image create_circle_texture(const color& color) {
+    image create_circle_texture(const color& fore_color, const color& back_color) {
       auto texture = bitmap(16, 16);
       auto graphics = texture.create_graphics();
-      graphics.fill_rectangle(solid_brush(color), 0, 0, texture.width() - 1, texture.height() - 1);
-      graphics.draw_rectangle(pens::black(), 0, 0, texture.width() - 1, texture.height() - 1);
+      graphics.fill_ellipse(solid_brush(back_color), 1, 1, texture.width() - 2, texture.height() - 2);
+      graphics.draw_ellipse(pen(fore_color, 2), 1, 1, texture.width() - 2, texture.height() - 2);
       return texture;
     }
   };
@@ -37,3 +56,4 @@ namespace examples {
 int main() {
   application::run(examples::form1());
 }
+
