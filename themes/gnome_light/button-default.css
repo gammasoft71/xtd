@@ -2,7 +2,6 @@
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
 button:default {
-  border-style: outset;
   border-color: #CDC7C2;
   border-width: 1px;
   border-radius: 4px;
@@ -12,17 +11,14 @@ button:default {
 }
 
 button:default:pressed {
-  border-style: inset;
   background-image: linear-gradient(#D6D1CC, #D6D1CC);
 }
 
 button:default:checked {
-  border-style: inset;
   background-image: linear-gradient(#D6D1CC, #D6D1CC);
 }
 
 button:default:mixed {
-  border-style: inset;
   background-image: linear-gradient(#3D3D3D, #3D3D3D);
 }
 
