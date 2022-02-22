@@ -21,7 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    /// @image html texture_brush.png
+    /// @image html texture_brush1.png
     /// @par Examples
     /// The following code example demonstrate the use of texture_brush class.
     /// @include fill_rectangle.cpp

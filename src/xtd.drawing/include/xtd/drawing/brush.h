@@ -29,7 +29,7 @@ namespace xtd {
     /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
     ///   <tr>
     ///     <th><b>xtd::drawing::solid_brush</b></th>
-    ///     <th><b>xtd::drawing::texture_brush</b></th>
+    ///     <th><b>xtd::drawing::texture_brush1</b></th>
     ///     <th><b>xtd::drawing::drawing2d::hatch_brush</b></th>
     ///   </tr>
     ///   <tr>
