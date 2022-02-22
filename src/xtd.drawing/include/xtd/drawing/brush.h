@@ -24,7 +24,28 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing
-    /// @remarks This is an abstract base class and cannot be instantiated. To create a brush object, use classes derived from xtd::drawing::brush, such as xtd::drawing::solid_brush, xtd::drawing::texture_brush, xtd::drawing::drawing2d::hatch_brush, xtd::drawing::drawing2d::conical_gradient_brush, xtd::drawing::drawing2d::linear_gradien_brush, and xtd::drawing::drawing2d::radial_gradien_brush.
+    /// @remarks This is an abstract base class and cannot be instantiated. To create a brush object, use classes derived from xtd::drawing::brush, such as xtd::drawing::solid_brush, xtd::drawing::texture_brush, xtd::drawing::drawing2d::hatch_brush, xtd::drawing::drawing2d::conical_gradient_brush, xtd::drawing::drawing2d::linear_gradien_brush, and xtd::drawing::drawing2d::radial_gradient_brush.
+    /// @par Brushes
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <td style="width:100px">xtd::forms::button</td>
+    ///     <th><b>xtd::drawing::solid_brush</b></th>
+    ///     <th><b>xtd::drawing::texture_brush</b></th>
+    ///     <th><b>xtd::drawing::drawing2d::hatch_brush</b></th>
+    ///     <th><b>xtd::drawing::drawing2d::conical_gradient_brush</b></th>
+    ///     <th><b>xtd::drawing::drawing2d::linear_gradient_brush</b></th>
+    ///     <th><b>xtd::drawing::drawing2d::radial_gradient_brush</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <td>Light</td>
+    ///     <td>@image html solid_brush.png</td>
+    ///     <td>@image html texture_brush.png</td>
+    ///     <td>@image html hatch_brush.png</td>
+    ///     <td>@image html conical_gradient_brush.png</td>
+    ///     <td>@image html linear_gradient_brush.png</td>
+    ///     <td>@image html radial_gradient_brush.png</td>
+    ///   </tr>
+    /// </table>
     class drawing_export_ brush : public xtd::object {
     public:
       //static const brush null;
