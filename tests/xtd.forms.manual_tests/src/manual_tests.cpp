@@ -37,7 +37,7 @@ public:
       e.graphics().draw_rectangle(pen(color::white, 4), rectangle(180, 180, 150, 150));
       
       e.graphics().fill_rectangle(radial_gradient_brush(point(425, 255), fore_color, back_color, 73), rectangle(350, 180, 150, 150));
-      e.graphics().draw_rectangle(pen(color::white, 4), rectangle(350, 180, 150, 150));
+      e.graphics().draw_rectangle(pen(color::white, 4).line_join(xtd::drawing::drawing2d::line_join::bevel), rectangle(350, 180, 150, 150));
     };
   }
     

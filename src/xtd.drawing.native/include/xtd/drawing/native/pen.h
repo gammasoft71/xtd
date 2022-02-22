@@ -39,6 +39,7 @@ namespace xtd {
         static void conical_gradient(intptr_t pen, intptr_t brush, float width);
         static void linear_gradient(intptr_t pen, intptr_t brush, float width);
         static void line_join(intptr_t pen, int32_t line_join);
+        static void miter_limit(intptr_t pen, float miter_limit);
         static void radial_gradient(intptr_t pen, intptr_t brush, float width);
         static void texture_fill(intptr_t pen, intptr_t brush, float width);
         static void destroy(intptr_t pen);

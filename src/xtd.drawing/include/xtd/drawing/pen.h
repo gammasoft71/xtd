@@ -150,6 +150,18 @@ namespace xtd {
       /// @image html line_join_bevel.png
       xtd::drawing::pen& line_join(xtd::drawing::drawing2d::line_join value);
 
+      /// @brief Gets the limit of the thickness of the join on a mitered corner.
+      /// @return The limit of the thickness of the join on a mitered corner.
+      /// @remarks The miter length is the distance from the intersection of the line walls on the inside of the join to the intersection of the line walls outside of the join. The miter length can be large when the angle between two lines is small. The miter limit is the maximum allowed ratio of miter length to stroke width. The default value is 10.0f.
+      /// @remarks If the miter length of the join of the intersection exceeds the limit of the join, then the join will be beveled to keep it within the limit of the join of the intersection.
+      float miter_limit() const noexcept;
+      /// @brief Sets the limit of the thickness of the join on a mitered corner.
+      /// @param value The limit of the thickness of the join on a mitered corner.
+      /// @return This current instance.
+      /// @remarks The miter length is the distance from the intersection of the line walls on the inside of the join to the intersection of the line walls outside of the join. The miter length can be large when the angle between two lines is small. The miter limit is the maximum allowed ratio of miter length to stroke width. The default value is 10.0f.
+      /// @remarks If the miter length of the join of the intersection exceeds the limit of the join, then the join will be beveled to keep it within the limit of the join of the intersection.
+      xtd::drawing::pen& miter_limit(float value);
+      
       /// @brief Gets the style of lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::pen_type enumeration that specifies the style of lines drawn with this xtd::drawing::pen.
       /// @remarks A Pen can draw solid lines, filled lines, or textured lines, depending on the style specified by a member of the PenType enumeration.
@@ -192,6 +204,7 @@ namespace xtd {
         std::vector<float> dash_pattern;
         xtd::drawing::dash_style dash_style = xtd::drawing::dash_style::solid;
         xtd::drawing::drawing2d::line_join line_join = xtd::drawing::drawing2d::line_join::miter;
+        float miter_limit = 10.0f;
         xtd::drawing::drawing2d::pen_type type = xtd::drawing::drawing2d::pen_type::solid_color;
         float width = 1.0f;
       };
