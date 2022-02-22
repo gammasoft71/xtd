@@ -65,7 +65,7 @@ popd
 pushd Debug
 sudo cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
 #cmake --build . -- -j8
-sudo cmake --build . --target install -- j8
+sudo cmake --build . --target install -- -j8
 popd
 popd
 
