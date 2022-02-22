@@ -28,19 +28,21 @@ namespace xtd {
     /// @par Brushes
     /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
     ///   <tr>
-    ///     <td style="width:100px">xtd::forms::button</td>
     ///     <th><b>xtd::drawing::solid_brush</b></th>
     ///     <th><b>xtd::drawing::texture_brush</b></th>
     ///     <th><b>xtd::drawing::drawing2d::hatch_brush</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <td>@image html solid_brush.png</td>
+    ///     <td>@image html texture_brush.png</td>
+    ///     <td>@image html hatch_brush.png</td>
+    ///   </tr>
+    ///   <tr>
     ///     <th><b>xtd::drawing::drawing2d::conical_gradient_brush</b></th>
     ///     <th><b>xtd::drawing::drawing2d::linear_gradient_brush</b></th>
     ///     <th><b>xtd::drawing::drawing2d::radial_gradient_brush</b></th>
     ///   </tr>
     ///   <tr>
-    ///     <td>Light</td>
-    ///     <td>@image html solid_brush.png</td>
-    ///     <td>@image html texture_brush.png</td>
-    ///     <td>@image html hatch_brush.png</td>
     ///     <td>@image html conical_gradient_brush.png</td>
     ///     <td>@image html linear_gradient_brush.png</td>
     ///     <td>@image html radial_gradient_brush.png</td>
