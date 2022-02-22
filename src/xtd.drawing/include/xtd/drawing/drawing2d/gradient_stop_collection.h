@@ -11,7 +11,7 @@ namespace xtd {
   namespace drawing {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
-      /// @brief Represents a collection of xtd::drawing::drawing2d::color_stop objects that can be individually accessed by index.
+      /// @brief Represents a collection of xtd::drawing::drawing2d::gradient_stop objects that can be individually accessed by index.
       /// @par Namespace
       /// xtd::drawing::drawing2d
       /// @par Library
