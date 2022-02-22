@@ -2,6 +2,7 @@
 #include <vector>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/pen.h>
+#include <xtd/drawing/native/line_joins.h>
 #include <xtd/drawing/native/toolkit.h>
 #include "../../../../../include/xtd/drawing/native/wx_pen.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
@@ -33,6 +34,16 @@ void pen::conical_gradient(intptr_t pen, intptr_t brush, float width) {
 
 void pen::linear_gradient(intptr_t pen, intptr_t brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_linear_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
+}
+
+void pen::line_join(intptr_t pen, int32_t line_join) {
+  switch (line_join) {
+    case LJ_MITER: reinterpret_cast<wx_pen*>(pen)->line_join(wxPenJoin::wxJOIN_MITER); break;
+    case LJ_BEVEL: reinterpret_cast<wx_pen*>(pen)->line_join(wxPenJoin::wxJOIN_BEVEL); break;
+    case LJ_ROUND: reinterpret_cast<wx_pen*>(pen)->line_join(wxPenJoin::wxJOIN_ROUND); break;
+    case LJ_MITER_CLIPPED: reinterpret_cast<wx_pen*>(pen)->line_join(wxPenJoin::wxJOIN_MITER); break;
+    default: reinterpret_cast<wx_pen*>(pen)->line_join(wxPenJoin::wxJOIN_MITER); break;
+  }
 }
 
 void pen::radial_gradient(intptr_t pen, intptr_t brush, float width) {

@@ -111,6 +111,22 @@ pen& pen::dash_style(drawing::dash_style value) {
   return *this;
 }
 
+intptr_t pen::handle() const {
+  return data_->handle_;
+}
+
+xtd::drawing::drawing2d::line_join pen::line_join() const noexcept {
+  return data_->line_join;
+}
+
+xtd::drawing::pen& pen::line_join(xtd::drawing::drawing2d::line_join value) {
+  if (data_->line_join != value) {
+    data_->line_join = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 xtd::drawing::drawing2d::pen_type pen::type() const {
   return data_->type;
 }
@@ -130,7 +146,8 @@ xtd::ustring pen::to_string() const noexcept {
 void pen::recreate_handle() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
   data_->handle_ = native::pen::create();
-  
+  native::pen::line_join(data_->handle_, static_cast<int32_t>(data_->line_join));
+
   vector<float> dashes;
   switch (data_->dash_style) {
     case drawing::dash_style::solid: break;

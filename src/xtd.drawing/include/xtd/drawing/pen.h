@@ -8,6 +8,7 @@
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../drawing_export.h"
+#include "drawing2d/line_join.h"
 #include "drawing2d/pen_alignment.h"
 #include "drawing2d/pen_type.h"
 #include "brush.h"
@@ -107,6 +108,7 @@ namespace xtd {
       const xtd::drawing::color& color() const;
       /// @brief Sets the color of this xtd::drawing::pen.
       /// @param value A xtd::drawing::color structure that represents the color of this xtd::drawing::pen.
+      /// @return This current instance.
       xtd::drawing::pen& color(const xtd::drawing::color& value);
       
       /// @brief Gets an array of custom dashes and spaces.
@@ -116,7 +118,7 @@ namespace xtd {
       /// @remarks The length of each dash and space in the dash pattern is the product of the element value in the array and the width of the xtd::drawing::pen.
       std::vector<float> dash_pattern() const;
       /// @brief Sets an array of custom dashes and spaces.
-      /// @return An array of real numbers that specifies the lengths of alternating dashes and spaces in dashed lines.
+      /// @param value An array of real numbers that specifies the lengths of alternating dashes and spaces in dashed lines.
       /// @remarks Assigning a value other than empty to this property will set the xtd::drawing::pen::dash_style property for this xtd::drawing::pen to xtd::drawing:dash_style::custom.
       /// @remarks The elements in the dash_pattern array set the length of each dash and space in the dash pattern. The first element sets the length of a dash, the second element sets the length of a space, the third element sets the length of a dash, and so on. Consequently, each element should be a non-zero positive number.
       /// @remarks The length of each dash and space in the dash pattern is the product of the element value in the array and the width of the xtd::drawing::pen.
@@ -128,12 +130,25 @@ namespace xtd {
       xtd::drawing::dash_style dash_style() const;
       /// @brief Sets the style used for dashed lines drawn with this xtd::drawing::pen.
       /// @param value A xtd::drawing::dash_style that represents the style used for dashed lines drawn with this xtd::drawing::pen.
+      /// @return This current instance.
       /// @remarks A value of xtd::drawing::dash_style::custom for this property specifies that a custom pattern of dashes and spaces, defined by the xtd::drawing::pendash_pattern property, makes up lines drawn with this xtd::drawing::pen. If the value of this property is xtd::drawing::dash_style::custom and the value of the xtd::drawing::pen::dash_pattern property is empty, the pen draws solid lines.
       xtd::drawing::pen& dash_style(drawing::dash_style value);
       
       /// @brief Gets the handle of the pen.
       /// @return An intptr_t that contains the handle of the pen.
-      intptr_t handle() const {return data_->handle_;}
+      intptr_t handle() const;
+      
+      /// @brief Gets the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
+      /// @return A xtd::drawing::drawing2d::line_join that represents the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
+      /// @remarks A line join is the common area that is formed by two lines whose ends meet or overlap. There are three line join styles: miter, bevel, and round. When you specify a line join style for a xtd::drawing::pen object, that join style will be applied to all the connected lines in any xtd::drawing::drawing2d::graphics_path object drawn using that pen. The following illustration shows the results of the beveled line join example.
+      /// @image html line_join_bevel.png
+      xtd::drawing::drawing2d::line_join line_join() const noexcept;
+      /// @brief Sets the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
+      /// @param value A xtd::drawing::drawing2d::line_join that represents the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
+      /// @return This current instance.
+      /// @remarks A line join is the common area that is formed by two lines whose ends meet or overlap. There are three line join styles: miter, bevel, and round. When you specify a line join style for a xtd::drawing::pen object, that join style will be applied to all the connected lines in any xtd::drawing::drawing2d::graphics_path object drawn using that pen. The following illustration shows the results of the beveled line join example.
+      /// @image html line_join_bevel.png
+      xtd::drawing::pen& line_join(xtd::drawing::drawing2d::line_join value);
 
       /// @brief Gets the style of lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::pen_type enumeration that specifies the style of lines drawn with this xtd::drawing::pen.
@@ -146,6 +161,7 @@ namespace xtd {
       float width() const {return data_->width;}
       /// @brief Sets the width of this xtd::drawing::pen, in units of the xtd::drawing::graphics object used for drawing.
       /// @param value The width of this xtd::drawing::pen.
+      /// @return This current instance.
       /// @remarks You can access the unit of measure of the xtd::drawing::graphics object using its xtd::drawing::graphics::page_unit property. The unit of measure is typically pixels. A Width of 0 will result in the xtd::drawing::pen drawing as if the xtd::drawing::pen::width were 1.
       xtd::drawing::pen& width(float value);
       /// @}
@@ -175,6 +191,7 @@ namespace xtd {
         float dash_offset = 0.0f;
         std::vector<float> dash_pattern;
         xtd::drawing::dash_style dash_style = xtd::drawing::dash_style::solid;
+        xtd::drawing::drawing2d::line_join line_join = xtd::drawing::drawing2d::line_join::miter;
         xtd::drawing::drawing2d::pen_type type = xtd::drawing::drawing2d::pen_type::solid_color;
         float width = 1.0f;
       };
