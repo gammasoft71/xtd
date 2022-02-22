@@ -36,7 +36,6 @@ namespace xtd {
     ///     <td>@image html texture_brush1.png</td>
     ///     <td>@image html hatch_brush.png</td>
     ///   </tr>
-    ///   <br>
     ///   <tr>
     ///     <th><b>xtd::drawing::drawing2d::conical_gradient_brush</b></th>
     ///     <th><b>xtd::drawing::drawing2d::linear_gradient_brush</b></th>
