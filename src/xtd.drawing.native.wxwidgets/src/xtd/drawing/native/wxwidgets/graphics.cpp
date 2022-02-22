@@ -169,7 +169,7 @@ void graphics::draw_arc(intptr_t hdc, intptr_t pen, float x, float y, float widt
   if (!hdc) return;
   graphics_context gc(hdc);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
-  dc.SetBrush(wxNullBrush);
+  dc.SetBrush(*wxTRANSPARENT_BRUSH);
   dc.SetPen(to_pen(*reinterpret_cast<wx_pen*>(pen)));
   dc.DrawEllipticArc(x, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
@@ -179,7 +179,7 @@ void graphics::draw_bezier(intptr_t hdc, intptr_t pen, float x1, float y1, float
   if (!hdc) return;
   graphics_context gc(hdc);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
-  dc.SetBrush(wxNullBrush);
+  dc.SetBrush(*wxTRANSPARENT_BRUSH);
   dc.SetPen(to_pen(*reinterpret_cast<wx_pen*>(pen)));
   std::vector<wxPoint> points {wxPoint(x1, y1), wxPoint(x2, y2), wxPoint(x3, y3), wxPoint(x4, y4)};
   dc.DrawSpline(4, points.data());
@@ -271,8 +271,6 @@ void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, flo
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
     wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
     dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(w), static_cast<int32_t>(h)});
-    dc.SetBrush(wxNullBrush);
-    dc.SetPen(wxNullPen);
     dc.SetFont(*reinterpret_cast<wxFont*>(font));
     dc.SetTextForeground({ r, g, b, a });
     dc.DrawText(wxString(convert_string::to_wstring(text)), x, y);
