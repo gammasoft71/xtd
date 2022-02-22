@@ -18,26 +18,26 @@ public:
       auto back_color = color::navy;
       auto fore_color = color::white;
       
+      e.graphics().fill_rectangle(solid_brush(color::transparent), rectangle(10, 10, 150, 150));
       e.graphics().draw_rectangle(pen(fore_color, 4), rectangle(10, 10, 150, 150));
-      e.graphics().fill_rectangle(solid_brush(color::transparent), rectangle(12, 12, 146, 146));
       
+      e.graphics().fill_rectangle(solid_brush(back_color), rectangle(180, 10, 150, 150));
       e.graphics().draw_rectangle(pen(fore_color, 4), rectangle(180, 10, 150, 150));
-      e.graphics().fill_rectangle(solid_brush(back_color), rectangle(182, 12, 146, 146));
       
+      e.graphics().fill_rectangle(texture_brush(create_circle_texture(fore_color, back_color)), rectangle(350, 10, 150, 150));
       e.graphics().draw_rectangle(pen(fore_color, 4), rectangle(350, 10, 150, 150));
-      e.graphics().fill_rectangle(texture_brush(create_circle_texture(fore_color, back_color)), rectangle(352, 12, 146, 146));
       
+      e.graphics().fill_rectangle(hatch_brush(xtd::drawing::drawing2d::hatch_style::diagonal_brick, color::white, back_color), rectangle(520, 10, 150, 150));
       e.graphics().draw_rectangle(pen(color::white, 4), rectangle(520, 10, 150, 150));
-      e.graphics().fill_rectangle(hatch_brush(xtd::drawing::drawing2d::hatch_style::diagonal_brick, color::white, back_color), rectangle(522, 12, 146, 146));
       
+      e.graphics().fill_rectangle(conical_gradient_brush(point(85, 255), back_color, fore_color, 0), rectangle(10, 180, 150, 150));
       e.graphics().draw_rectangle(pen(color::white, 4), rectangle(10, 180, 150, 150));
-      e.graphics().fill_rectangle(conical_gradient_brush(point(85, 255), back_color, fore_color, 0), rectangle(12, 182, 146, 146));
       
+      e.graphics().fill_rectangle(linear_gradient_brush(rectangle(180, 180, 150, 150), back_color, fore_color, 315), rectangle(180, 180, 150, 150));
       e.graphics().draw_rectangle(pen(color::white, 4), rectangle(180, 180, 150, 150));
-      e.graphics().fill_rectangle(linear_gradient_brush(rectangle(182, 182, 146, 146), back_color, fore_color, 315), rectangle(182, 182, 146, 146));
       
+      e.graphics().fill_rectangle(radial_gradient_brush(point(425, 255), fore_color, back_color, 73), rectangle(350, 180, 150, 150));
       e.graphics().draw_rectangle(pen(color::white, 4), rectangle(350, 180, 150, 150));
-      e.graphics().fill_rectangle(radial_gradient_brush(point(425, 255), fore_color, back_color, 73), rectangle(352, 182, 146, 146));
     };
   }
     
