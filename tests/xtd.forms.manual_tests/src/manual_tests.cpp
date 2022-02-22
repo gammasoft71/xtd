@@ -10,21 +10,46 @@ using namespace xtd::forms;
 
 class form1 : public form {
 public:
-  form1();
+  form1() {
+    text("form1");
+    client_size({800, 450});
+    
+    paint += [&](object& sender, paint_event_args& e) {
+      auto back_color = color::navy;
+      auto fore_color = color::white;
+      
+      e.graphics().draw_rectangle(pen(fore_color, 4), rectangle(10, 10, 150, 150));
+      e.graphics().fill_rectangle(solid_brush(color::transparent), rectangle(12, 12, 146, 146));
+      
+      e.graphics().draw_rectangle(pen(fore_color, 4), rectangle(180, 10, 150, 150));
+      e.graphics().fill_rectangle(solid_brush(back_color), rectangle(182, 12, 146, 146));
+      
+      e.graphics().draw_rectangle(pen(fore_color, 4), rectangle(350, 10, 150, 150));
+      e.graphics().fill_rectangle(texture_brush(create_circle_texture(fore_color, back_color)), rectangle(352, 12, 146, 146));
+      
+      e.graphics().draw_rectangle(pen(color::white, 4), rectangle(520, 10, 150, 150));
+      e.graphics().fill_rectangle(hatch_brush(xtd::drawing::drawing2d::hatch_style::diagonal_brick, color::white, back_color), rectangle(522, 12, 146, 146));
+      
+      e.graphics().draw_rectangle(pen(color::white, 4), rectangle(10, 180, 150, 150));
+      e.graphics().fill_rectangle(conical_gradient_brush(point(85, 255), back_color, fore_color, 0), rectangle(12, 182, 146, 146));
+      
+      e.graphics().draw_rectangle(pen(color::white, 4), rectangle(180, 180, 150, 150));
+      e.graphics().fill_rectangle(linear_gradient_brush(rectangle(182, 182, 146, 146), back_color, fore_color, 315), rectangle(182, 182, 146, 146));
+      
+      e.graphics().draw_rectangle(pen(color::white, 4), rectangle(350, 180, 150, 150));
+      e.graphics().fill_rectangle(radial_gradient_brush(point(425, 255), fore_color, back_color, 73), rectangle(352, 182, 146, 146));
+    };
+  }
     
 private:
+  image create_circle_texture(const color& fore_color, const color& back_color) {
+    auto texture = bitmap(16, 16);
+    auto graphics = texture.create_graphics();
+    graphics.fill_ellipse(solid_brush(back_color), 2, 2, texture.width() - 4, texture.height() - 4);
+    graphics.draw_ellipse(pen(fore_color, 4), 2, 2, texture.width() - 4, texture.height() - 4);
+    return texture;
+  }
 };
-
-form1::form1() {
-  text("form1 - system");
-  client_size({800, 450});
-
-  paint += [&](object& sender, paint_event_args& e) {
-    e.graphics().fill_rectangle(brushes::yellow(), rectangle(10, 10, 200, 100));
-    e.graphics().page_unit(xtd::drawing::graphics_unit::millimeter);
-    e.graphics().fill_rectangle(brushes::lime(), rectangle(2000, 2000, 10000, 5000));
-  };
-}
 
 int main() {
   application::run(form1());
