@@ -47,6 +47,7 @@ private:
   forms::tab_page tab_page_dash;
   forms::tab_page tab_page_cap;
   forms::tab_page tab_page_alignment;
+  
   void draw_grid(const rectangle& rect, drawing::graphics& graphics, const drawing::size& grid_size = drawing::size(5, 5)) {
     auto color1 = back_color().is_dark() ? color::light(back_color()) : color::dark(back_color());
     auto color2 = fore_color().is_dark() ? color::light(fore_color()) : color::dark(fore_color());
@@ -88,41 +89,25 @@ private:
   void draw_pens_with_dash(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
-    auto pen1 = pen(color::red, 4);
-    pen1.dash_style(drawing::dash_style::dot);
-    e.graphics().draw_line(pen1, point(50, 50), point(250, 50));
-    
-    auto pen2 = pen(color::red, 4);
-    pen2.dash_style(drawing::dash_style::dash);
-    e.graphics().draw_line(pen2, point(50, 100), point(250, 100));
-    
-    auto pen3 = pen(color::red, 4);
-    pen3.dash_style(drawing::dash_style::dash_dot);
-    e.graphics().draw_line(pen3, point(50, 150), point(250, 150));
-    
-    auto pen4 = pen(color::red, 4);
-    pen4.dash_style(drawing::dash_style::dash_dot_dot);
-    e.graphics().draw_line(pen4, point(50, 200), point(250, 200));
+    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::dash_style::dot), point(50, 50), point(250, 50));
+    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::dash_style::dash), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::dash_style::dash_dot), point(50, 150), point(250, 150));
+    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::dash_style::dash_dot_dot), point(50, 200), point(250, 200));
   }
   
   void draw_pens_with_cap(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
     e.graphics().draw_line(pen(solid_brush(color::red), 10), point(50, 50), point(250, 50));
-    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing2d::line_cap::round).end_cap(xtd::drawing::drawing2d::line_cap::round), point(50, 100), point(250, 100));
-    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing2d::line_cap::square).end_cap(xtd::drawing::drawing2d::line_cap::square), point(50, 150), point(250, 150));
+    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing2d::line_cap::square).end_cap(xtd::drawing::drawing2d::line_cap::square), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing2d::line_cap::round).end_cap(xtd::drawing::drawing2d::line_cap::round), point(50, 150), point(250, 150));
   }
   
   void draw_pens_with_alignment(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
-    auto pen1 = pen(color::red, 10);
-    pen1.alignment(xtd::drawing::drawing2d::pen_alignment::center);
-    e.graphics().draw_line(pen1, point(50, 50), point(250, 50));
-    
-    auto pen2 = pen(color::red, 10);
-    pen1.alignment(xtd::drawing::drawing2d::pen_alignment::inset);
-    e.graphics().draw_line(pen2, point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(color::red, 10).alignment(xtd::drawing::drawing2d::pen_alignment::center), point(50, 50), point(250, 50));
+    e.graphics().draw_line(pen(color::red, 10).alignment(xtd::drawing::drawing2d::pen_alignment::inset), point(50, 100), point(250, 100));
   }
   
   static image create_circle_texture_image(const color& foreground_color, const color& background_color) {
