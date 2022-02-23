@@ -16,7 +16,6 @@
 #include "project_language.h"
 #include "project_sdk.h"
 #include "project_type.h"
-#include "../properties/resources.h"
 
 namespace xtdc_command {
   class project_management {
@@ -2933,7 +2932,7 @@ namespace xtdc_command {
     }
     
     void create_doxygen_txt(const xtd::ustring& name) const {
-      xtd::io::file::write_all_text((path_ / ".doxygen.txt").string(), xtdc::properties::resources::doxygen_text());
+      xtd::io::file::write_all_text((path_ / ".doxygen.txt").string(), xtd::io::path::combine(__XTD_RESOURCES_PATH__, "texts", "doxygen.txt"));
     }
     
     void create_readme_md(const xtd::ustring& name) const {
