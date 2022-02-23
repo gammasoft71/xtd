@@ -12,7 +12,7 @@ texture_brush::texture_brush() {
 texture_brush& texture_brush::image(const drawing::image& image) {
   if (data_->image_ != image) {
     data_->image_ = image;
-    native::brush::texture(brush::data_->handle_, data_->image_.handle());
+    native::brush::texture(handle(), data_->image_.handle());
   }
   return *this;
 }

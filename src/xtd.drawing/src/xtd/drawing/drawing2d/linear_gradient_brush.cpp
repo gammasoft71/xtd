@@ -131,7 +131,7 @@ void linear_gradient_brush::recreate_handle() {
   for (auto color : data_->linear_colors)
     colors.push_back(make_tuple(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second));
   
-  native::brush::linear_gradient(brush::data_->handle_, as<int32_t>(data_->rect.left()), as<int32_t>(data_->rect.top()), as<int32_t>(data_->rect.right()), as<int32_t>(data_->rect.bottom()), colors, data_->angle);
+  native::brush::linear_gradient(handle(), as<int32_t>(data_->rect.left()), as<int32_t>(data_->rect.top()), as<int32_t>(data_->rect.right()), as<int32_t>(data_->rect.bottom()), colors, data_->angle);
 }
 
 linear_gradient_brush::linear_gradient_brush(const linear_gradient_brush& value) : brush(value), data_(value.data_) {
