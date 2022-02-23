@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 brush::brush() {
-  set_native_brush(native::brush::create());
+  data_->handle_ = native::brush::create();
 }
 
 brush::brush(const brush& value) {
@@ -23,8 +23,4 @@ brush& brush::operator=(const brush& value) {
 
 brush::~brush() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
-}
-
-void brush::set_native_brush(intptr_t brush) {
-  data_->handle_ = brush;
 }
