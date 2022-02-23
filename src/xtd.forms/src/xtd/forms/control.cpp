@@ -1417,8 +1417,8 @@ void control::do_layout_children_with_dock_style() {
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::indent();
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("docking_rect = {}", docking_rect));
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("padding = {}", data_->padding));
-    docking_rect.left(docking_rect.left() + data_->padding.left());
-    docking_rect.top(docking_rect.top() + data_->padding.top());
+    docking_rect.x(docking_rect.left() + data_->padding.left());
+    docking_rect.y(docking_rect.top() + data_->padding.top());
     docking_rect.width(docking_rect.width() - data_->padding.left() - data_->padding.right());
     docking_rect.height(docking_rect.height() - data_->padding.top() - data_->padding.bottom());
     for (control_collection::reverse_iterator iterator = data_->controls.rbegin(); iterator != data_->controls.rend(); ++iterator) {
@@ -1426,7 +1426,7 @@ void control::do_layout_children_with_dock_style() {
       if (iterator->get().dock() == dock_style::top) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().width(docking_rect.width());
-        docking_rect.top(docking_rect.top() + iterator->get().height());
+        docking_rect.y(docking_rect.top() + iterator->get().height());
         docking_rect.height(docking_rect.height() - iterator->get().height());
         if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("top ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::bottom) {
@@ -1437,7 +1437,7 @@ void control::do_layout_children_with_dock_style() {
       } else if (iterator->get().dock() == dock_style::left) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().height(docking_rect.height());
-        docking_rect.left(docking_rect.left() + iterator->get().width());
+        docking_rect.x(docking_rect.left() + iterator->get().width());
         docking_rect.width(docking_rect.width() - iterator->get().width());
         if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("left ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::right) {
