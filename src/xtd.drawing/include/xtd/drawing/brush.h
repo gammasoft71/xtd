@@ -70,9 +70,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::brush& brush) noexcept {
-        return os << brush.to_string();
-      }
+      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::brush& brush) noexcept {return os << brush.to_string();}
       /// @endcond
       
     protected:
@@ -81,14 +79,6 @@ namespace xtd {
       /// @{
       /// @brief Initialize a new instance of brush class.
       brush();
-      /// @}
-      
-      /// @name Protected methods
-      
-      /// @{
-      /// @brief In a derived class, sets a reference to a GDI+ brush object.
-      /// @param brush A pointer to the GDI+ brush object.
-      void set_native_brush(intptr_t brush);
       /// @}
       
     private:
