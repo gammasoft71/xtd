@@ -25,7 +25,8 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrate the use of solid_brush class.
     /// @include fill_rectangle.cpp
-    class drawing_export_ solid_brush final : public brush {
+    /// @remarks This class inherits from the xtd::drawing::brush class.
+    class drawing_export_ solid_brush final : public xtd::drawing::brush {
     public:
       /// @name Constructors
       
@@ -43,8 +44,13 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      const drawing::color& color() const {return data_->color_;}
-      solid_brush& color(const drawing::color& color);
+      /// @brief Gets the color of this xtd::drawing::solid_brush object.
+      /// @return A xtd::drawing::color structure that represents the color of this brush.
+      const xtd::drawing::color& color() const noexcept {return data_->color_;}
+      /// @brief Sets the color of this xtd::drawing::solid_brush object.
+      /// @param value A xtd::drawing::color structure that represents the color of this brush.
+      /// @return This current instance.
+      xtd::drawing::solid_brush& color(const xtd::drawing::color& value);
       /// @}
       
     private:
