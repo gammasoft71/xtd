@@ -90,25 +90,27 @@ private:
     
     auto pen1 = pen(color::red, 4);
     pen1.dash_style(drawing::dash_style::dot);
-    e.graphics().draw_line(pen1, point(50, 25), point(250, 25));
+    e.graphics().draw_line(pen1, point(50, 50), point(250, 50));
     
     auto pen2 = pen(color::red, 4);
     pen2.dash_style(drawing::dash_style::dash);
-    e.graphics().draw_line(pen2, point(50, 50), point(250, 50));
+    e.graphics().draw_line(pen2, point(50, 100), point(250, 100));
     
     auto pen3 = pen(color::red, 4);
     pen3.dash_style(drawing::dash_style::dash_dot);
-    e.graphics().draw_line(pen3, point(50, 75), point(250, 75));
+    e.graphics().draw_line(pen3, point(50, 150), point(250, 150));
     
     auto pen4 = pen(color::red, 4);
     pen4.dash_style(drawing::dash_style::dash_dot_dot);
-    e.graphics().draw_line(pen4, point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen4, point(50, 200), point(250, 200));
   }
   
   void draw_pens_with_cap(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
-    e.graphics().draw_line(pen(solid_brush(color::red), 10), point(50, 25), point(250, 25));
+    e.graphics().draw_line(pen(solid_brush(color::red), 10), point(50, 50), point(250, 50));
+    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing2d::line_cap::round).end_cap(xtd::drawing::drawing2d::line_cap::round), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing2d::line_cap::square).end_cap(xtd::drawing::drawing2d::line_cap::square), point(50, 150), point(250, 150));
   }
   
   void draw_pens_with_alignment(object& sender, paint_event_args& e) {
