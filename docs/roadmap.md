@@ -42,7 +42,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.core  | io::file_system_info            | Gammasoft | ![status](pictures/releases/status/done.png)    |
 |           | iOS platforms                   | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | box_render                      | Gammasoft | ![status](pictures/releases/status/started.png) |
-| xtd.forms | button_render                   | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.forms | button_render                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | check_box_render                | Gammasoft |                                                 |
 | xtd.forms | clipboard + drag & drop         | Gammasoft |                                                 |
 | xtd.forms | collapsible_panel               | Gammasoft |                                                 |
@@ -79,10 +79,10 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | status_bar                      | Bader     |                                                 |
 | xtd.forms | style_sheets                    | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | switch_button_render            | Gammasoft |                                                 |
-| xtd.forms | text_render                     | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.forms | text_render                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | themes                          | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | toggle_button_render            | Gammasoft |                                                 |
-| xtd.forms | toolbar_bar                     | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.forms | tool_bar                        | Gammasoft | ![status](pictures/releases/status/started.png) |
 
 ## Release 0.3.0 (beta)
 
