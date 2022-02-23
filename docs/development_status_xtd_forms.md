@@ -46,7 +46,7 @@
 | [button](../src/xtd.forms/include/xtd/forms/button.h)                                                                         | class        | ![progress](pictures/progress100.png) |
 | [button_base](../src/xtd.forms/include/xtd/forms/button_base.h)                                                               | class        | ![progress](pictures/progress75.png)  |
 | [button_images](../src/xtd.forms/include/xtd/forms/button_images.h)                                                           | class        | ![progress](pictures/progress100.png) |
-| [button_renderer](../src/xtd.forms/include/xtd/forms/button_renderer.h)                                                       | static class | ![progress](pictures/progress50.png)  |
+| [button_renderer](../src/xtd.forms/include/xtd/forms/button_renderer.h)                                                       | static class | ![progress](pictures/progress100.png) |
 | [button_state](../src/xtd.forms/include/xtd/forms/button_state.h)                                                             | enumeration  | ![progress](pictures/progress100.png) |
 | [buttons](../src/xtd.forms/include/xtd/forms/buttons.h)                                                                       | static class | ![progress](pictures/progress100.png) |
 | [cancel_event_args](../src/xtd.forms/include/xtd/forms/cancel_event_args.h)                                                   | class        | ![progress](pictures/progress100.png) |
@@ -168,7 +168,7 @@
 | [label_renderer](../src/xtd.forms/include/xtd/forms/label_renderer.h)                                                         | static class | ![progress](pictures/progress0.png)   |
 | [lcd_label](../src/xtd.forms/include/xtd/forms/lcd_label.h)                                                                   | class        | ![progress](pictures/progress100.png) |
 | [lcd_label_renderer](../src/xtd.forms/include/xtd/forms/lcd_label_renderer.h)                                                 | static class | ![progress](pictures/progress0.png)   |
-| [light_button](../src/xtd.forms/include/xtd/forms/light_button.h)                                                             | class        | ![progress](pictures/progress0.png)   |
+| [light_button](../src/xtd.forms/include/xtd/forms/light_button.h)                                                             | class        | ![progress](pictures/progress100.png) |
 | [light_button_renderer](../src/xtd.forms/include/xtd/forms/light_button_renderer.h)                                           | static class | ![progress](pictures/progress0.png)   |
 | [link](../src/xtd.forms/include/xtd/forms/link.h)                                                                             | class        | ![progress](pictures/progress100.png) |
 | [link_label](../src/xtd.forms/include/xtd/forms/link_label.h)                                                                 | class        | ![progress](pictures/progress100.png) |
@@ -204,7 +204,7 @@
 | [message_dialog_icon](../src/xtd.forms/include/xtd/forms/message_dialog_icon.h)                                               | enumeration  | ![progress](pictures/progress100.png) |
 | [message_dialog_options](../src/xtd.forms/include/xtd/forms/message_dialog_options.h)                                         | enumeration  | ![progress](pictures/progress100.png) |
 | [message_loop_callback](../src/xtd.forms/include/xtd/forms/message_loop_callback.h)                                           | delegate     | ![progress](pictures/progress100.png) |
-| [month_calendar](../src/xtd.forms/include/xtd/forms/month_calendar.h)                                                         | class        | ![progress](pictures/progress0.png)   |
+| [month_calendar](../src/xtd.forms/include/xtd/forms/month_calendar.h)                                                         | class        | ![progress](pictures/progress50.png)  |
 | [month_calendar_renderer](../src/xtd.forms/include/xtd/forms/month_calendar_renderer.h)                                       | static class | ![progress](pictures/progress0.png)   |
 | [mouse_buttons](../src/xtd.forms/include/xtd/forms/mouse_buttons.h)                                                           | enumeration  | ![progress](pictures/progress100.png) |
 | [mouse_event_args](../src/xtd.forms/include/xtd/forms/mouse_event_args.h)                                                     | class        | ![progress](pictures/progress100.png) |
@@ -236,10 +236,10 @@
 | [progress_bar](../src/xtd.forms/include/xtd/forms/progress_bar.h)                                                             | class        | ![progress](pictures/progress100.png) |
 | [progress_bar_renderer](../src/xtd.forms/include/xtd/forms/progress_bar_renderer.h)                                           | static class | ![progress](pictures/progress0.png)   |
 | [progress_bar_style](../src/xtd.forms/include/xtd/forms/progress_bar_style.h)                                                 | enumeration  | ![progress](pictures/progress100.png) |
-| [progress_box](../src/xtd.forms/include/xtd/forms/progress_box.h)                                                             | static class | ![progress](pictures/progress0.png)   |
+| [progress_box](../src/xtd.forms/include/xtd/forms/progress_box.h)                                                             | static class | ![progress](pictures/progress100.png) |
 | [progress_changed_event_args](../src/xtd.forms/include/xtd/forms/progress_changed_event_args.h)                               | class        | ![progress](pictures/progress100.png) |
 | [progress_changed_event_handler](../src/xtd.forms/include/xtd/forms/progress_changed_event_handler.h)                         | delegate     | ![progress](pictures/progress100.png) |
-| [progress_dialog](../src/xtd.forms/include/xtd/forms/progress_dialog.h)                                                       | class        | ![progress](pictures/progress75.png)  |
+| [progress_dialog](../src/xtd.forms/include/xtd/forms/progress_dialog.h)                                                       | class        | ![progress](pictures/progress100.png) |
 | [radio_button](../src/xtd.forms/include/xtd/forms/radio_button.h)                                                             | class        | ![progress](pictures/progress100.png) |
 | [radio_button_renderer](../src/xtd.forms/include/xtd/forms/radio_button_renderer.h)                                           | static class | ![progress](pictures/progress50.png)  |
 | [radio_buttons](../src/xtd.forms/include/xtd/forms/radio_buttons.h)                                                           | static class | ![progress](pictures/progress100.png) |
@@ -301,7 +301,7 @@
 | [toggle_button](../src/xtd.forms/include/xtd/forms/toggle_button.h)                                                           | class        | ![progress](pictures/progress100.png) |
 | [toggle_button_renderer](../src/xtd.forms/include/xtd/forms/toggle_button_renderer.h)                                         | static class | ![progress](pictures/progress0.png)   |
 | [toggle_buttons](../src/xtd.forms/include/xtd/forms/toggle_buttons.h)                                                         | static class | ![progress](pictures/progress100.png) |
-| [tool_bar](../src/xtd.forms/include/xtd/forms/tool_bar.h)                                                                     | class        | ![progress](pictures/progress0.png)   |
+| [tool_bar](../src/xtd.forms/include/xtd/forms/tool_bar.h)                                                                     | class        | ![progress](pictures/progress50.png)  |
 | [tool_bar_images](../src/xtd.forms/include/xtd/forms/tool_bar_images.h)                                                       | static class | ![progress](pictures/progress100.png) |
 | [tool_strip](../src/xtd.forms/include/xtd/forms/tool_strip.h)                                                                 | class        | ![progress](pictures/progress0.png)   |
 | [tool_strip_container](../src/xtd.forms/include/xtd/forms/tool_strip_container.h)                                             | class        | ![progress](pictures/progress0.png)   |
