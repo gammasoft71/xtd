@@ -32,7 +32,7 @@ namespace xtd {
     /// When the rectangle is drawn, the pen is centered on the rectangle's boundary. Because the pen width is 5, the sides of the rectangle are drawn 5 pixels wide, such that 1 pixel is drawn on the boundary itself, 2 pixels are drawn on the inside, and 2 pixels are drawn on the outside. For more details on pen alignment, see How to: Set Pen Width and Alignment.<br><br>
     /// The following illustration shows the resulting rectangle. The dotted lines show where the rectangle would have been drawn if the pen width had been one pixel. The enlarged view of the upper-left corner of the rectangle shows that the thick black lines are centered on those dotted lines.<br><br>
     /// @image html rectangle_pens.png
-    /// <br>The example is designed for use with xtd.forms, and it requires xtd::forms::paint_event_ergs e, which is a parameter of the xtd::control::paint event handler.
+    /// <br>The example is designed for use with xtd.forms, and it requires xtd::forms::paint_event_ergs e, which is a parameter of the xtd::control::paint event handler.<br>
     /// @code
     /// pen black_pen(color::from_argb(255, 0, 0, 0), 5);
     /// e.graphics().draw_rectangle(black_pen, 10, 10, 100, 50);
