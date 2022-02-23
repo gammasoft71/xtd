@@ -2,6 +2,7 @@
 #include <vector>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/pen.h>
+#include <xtd/drawing/native/line_caps.h>
 #include <xtd/drawing/native/line_joins.h>
 #include <xtd/drawing/native/toolkit.h>
 #include "../../../../../include/xtd/drawing/native/wx_pen.h"
@@ -32,6 +33,15 @@ void pen::conical_gradient(intptr_t pen, intptr_t brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_conical_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
 
+void pen::end_cap(intptr_t pen, int32_t line_cap) {
+  switch (line_cap) {
+    case LC_FLAT: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_BUTT); break;
+    case LC_SQUARE: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_PROJECTING); break;
+    case LC_ROUND: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_ROUND); break;
+    default: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_BUTT); break;
+  }
+}
+
 void pen::linear_gradient(intptr_t pen, intptr_t brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_linear_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
@@ -52,6 +62,15 @@ void pen::miter_limit(intptr_t pen, float miter_limit) {
 
 void pen::radial_gradient(intptr_t pen, intptr_t brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_radial_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
+}
+
+void pen::start_cap(intptr_t pen, int32_t line_cap) {
+  switch (line_cap) {
+    case LC_FLAT: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_BUTT); break;
+    case LC_SQUARE: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_PROJECTING); break;
+    case LC_ROUND: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_ROUND); break;
+    default: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_BUTT); break;
+  }
 }
 
 void pen::texture_fill(intptr_t pen, intptr_t brush, float width) {

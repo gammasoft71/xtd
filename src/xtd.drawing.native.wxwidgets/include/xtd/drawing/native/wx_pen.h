@@ -120,6 +120,9 @@ namespace xtd {
         
         wxPenJoin line_join() const {return line_join_;}
         void line_join(wxPenJoin  line_join) {line_join_ = line_join;}
+        
+        wxPenCap line_cap() const {return line_cap_;}
+        void line_cap(wxPenCap  line_cap) {line_cap_ = line_cap;}
 
       private:
         pen_type pen_type_ = pen_type::none;
@@ -129,6 +132,7 @@ namespace xtd {
         radial_gradiant_pen radial_gradiant_pen_;
         solid_color_pen solid_color_pen_;
         texture_fill_pen texture_fill_pen_;
+        wxPenCap line_cap_ = wxCAP_BUTT;
         wxPenJoin line_join_ = wxJOIN_MITER;
       };
     }
