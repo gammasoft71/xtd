@@ -59,12 +59,12 @@ pushd build
 mkdir Release && mkdir Debug
 pushd Release
 sudo cmake ../..  -DCMAKE_BUILD_TYPE=Release "$@"
-#cmake --build . -- -j8
+cmake --build . -- -j8
 sudo cmake --build . --target install -- -j8
 popd
 pushd Debug
 sudo cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
-#cmake --build . -- -j8
+cmake --build . -- -j8
 sudo cmake --build . --target install -- -j8
 popd
 popd

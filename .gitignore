@@ -3,6 +3,9 @@ build
 build*
 cmake-build*
 
+# build folders
+reference_guide
+
 # macOS files
 .DS_Store
 
