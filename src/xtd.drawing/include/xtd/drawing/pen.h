@@ -181,7 +181,7 @@ namespace xtd {
 
       /// @brief Gets the style of lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::pen_type enumeration that specifies the style of lines drawn with this xtd::drawing::pen.
-      /// @remarks A Pen can draw solid lines, filled lines, or textured lines, depending on the style specified by a member of the PenType enumeration.
+      /// @remarks A xtd::drawing::pen can draw solid lines, filled lines, or textured lines, depending on the style specified by a member of the PenType enumeration.
       xtd::drawing::drawing2d::pen_type type() const;
       
       /// @brief Gets the width of this xtd::drawing::pen, in units of the xtd::drawing::graphics object used for drawing.

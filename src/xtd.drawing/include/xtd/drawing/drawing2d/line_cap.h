@@ -10,7 +10,7 @@ namespace xtd {
   namespace drawing {
     /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
-      /// @brief Specifies the available cap styles with which a Pen object can end a line.
+      /// @brief Specifies the available cap styles with which a xtd::drawing::pen object can end a line.
       /// @par Namespace
       /// xtd::drawing::drawing2d
       /// @par Library
