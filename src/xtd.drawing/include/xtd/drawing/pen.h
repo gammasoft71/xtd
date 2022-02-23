@@ -8,6 +8,7 @@
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../drawing_export.h"
+#include "drawing2d/line_cap.h"
 #include "drawing2d/line_join.h"
 #include "drawing2d/pen_alignment.h"
 #include "drawing2d/pen_type.h"
@@ -134,6 +135,14 @@ namespace xtd {
       /// @remarks A value of xtd::drawing::dash_style::custom for this property specifies that a custom pattern of dashes and spaces, defined by the xtd::drawing::pendash_pattern property, makes up lines drawn with this xtd::drawing::pen. If the value of this property is xtd::drawing::dash_style::custom and the value of the xtd::drawing::pen::dash_pattern property is empty, the pen draws solid lines.
       xtd::drawing::pen& dash_style(drawing::dash_style value);
       
+      /// @brief Gets the cap style used at the end of lines drawn with this xtd::drawing::pen.
+      /// @return One of the xtd::drawing::drawing2d::line_cap values that represents the cap style used at the end of lines drawn with this xtd::drawing::pen.
+      xtd::drawing::drawing2d::line_cap end_cap() const noexcept;
+      /// @brief Sets the cap style used at the end of lines drawn with this xtd::drawing::pen.
+      /// @param value One of the xtd::drawing::drawing2d::line_cap values that represents the cap style used at the end of lines drawn with this xtd::drawing::pen.
+      /// @return This current instance.
+      xtd::drawing::pen& end_cap(xtd::drawing::drawing2d::line_cap value);
+      
       /// @brief Gets the handle of the pen.
       /// @return An intptr_t that contains the handle of the pen.
       intptr_t handle() const;
@@ -161,7 +170,15 @@ namespace xtd {
       /// @remarks The miter length is the distance from the intersection of the line walls on the inside of the join to the intersection of the line walls outside of the join. The miter length can be large when the angle between two lines is small. The miter limit is the maximum allowed ratio of miter length to stroke width. The default value is 10.0f.
       /// @remarks If the miter length of the join of the intersection exceeds the limit of the join, then the join will be beveled to keep it within the limit of the join of the intersection.
       xtd::drawing::pen& miter_limit(float value);
-      
+
+      /// @brief Gets the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
+      /// @return One of the xtd::drawing::drawing2d::line_cap values that represents the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
+      xtd::drawing::drawing2d::line_cap start_cap() const noexcept;
+      /// @brief Sets the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
+      /// @param value One of the xtd::drawing::drawing2d::line_cap values that represents the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
+      /// @return This current instance.
+      xtd::drawing::pen& start_cap(xtd::drawing::drawing2d::line_cap value);
+
       /// @brief Gets the style of lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::pen_type enumeration that specifies the style of lines drawn with this xtd::drawing::pen.
       /// @remarks A Pen can draw solid lines, filled lines, or textured lines, depending on the style specified by a member of the PenType enumeration.
@@ -203,8 +220,10 @@ namespace xtd {
         float dash_offset = 0.0f;
         std::vector<float> dash_pattern;
         xtd::drawing::dash_style dash_style = xtd::drawing::dash_style::solid;
+        xtd::drawing::drawing2d::line_cap end_cap = xtd::drawing::drawing2d::line_cap::flat;
         xtd::drawing::drawing2d::line_join line_join = xtd::drawing::drawing2d::line_join::miter;
         float miter_limit = 10.0f;
+        xtd::drawing::drawing2d::line_cap start_cap = xtd::drawing::drawing2d::line_cap::flat;
         xtd::drawing::drawing2d::pen_type type = xtd::drawing::drawing2d::pen_type::solid_color;
         float width = 1.0f;
       };

@@ -74,6 +74,7 @@ namespace {
       wxpen.SetStyle(wxPenStyle::wxPENSTYLE_USER_DASH);
       wxpen.SetCap(wxPenCap::wxCAP_BUTT);
       wxpen.SetDashes(pen.get_solid_color_pen().dashes.size(), pen.get_solid_color_pen().dashes.data());
+      wxpen.SetCap(pen.line_cap());
       wxpen.SetJoin(pen.line_join());
       return wxpen;
     }
@@ -88,6 +89,7 @@ namespace {
       pen_info.Style(wxPenStyle::wxPENSTYLE_USER_DASH);
       pen_info.Dashes(pen.get_solid_color_pen().dashes.size(), pen.get_solid_color_pen().dashes.data());
       pen_info.Width(pen.get_solid_color_pen().width);
+      pen_info.Cap(pen.line_cap());
       pen_info.Join(pen.line_join());
       return graphics.CreatePen(pen_info);
     }

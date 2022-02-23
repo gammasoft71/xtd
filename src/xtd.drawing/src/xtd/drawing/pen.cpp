@@ -111,6 +111,18 @@ pen& pen::dash_style(drawing::dash_style value) {
   return *this;
 }
 
+xtd::drawing::drawing2d::line_cap pen::end_cap() const noexcept {
+  return data_->end_cap;
+}
+
+xtd::drawing::pen& pen::end_cap(xtd::drawing::drawing2d::line_cap value) {
+  if (data_->end_cap != value) {
+    data_->end_cap = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 intptr_t pen::handle() const {
   return data_->handle_;
 }
@@ -139,6 +151,18 @@ xtd::drawing::pen& pen::miter_limit(float value) {
   return *this;
 }
 
+xtd::drawing::drawing2d::line_cap pen::start_cap() const noexcept {
+  return data_->start_cap;
+}
+
+xtd::drawing::pen& pen::start_cap(xtd::drawing::drawing2d::line_cap value) {
+  if (data_->start_cap != value) {
+    data_->start_cap = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 xtd::drawing::drawing2d::pen_type pen::type() const {
   return data_->type;
 }
@@ -158,7 +182,9 @@ xtd::ustring pen::to_string() const noexcept {
 void pen::recreate_handle() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
   data_->handle_ = native::pen::create();
+  native::pen::end_cap(data_->handle_, static_cast<int32_t>(data_->end_cap));
   native::pen::line_join(data_->handle_, static_cast<int32_t>(data_->line_join));
+  native::pen::start_cap(data_->handle_, static_cast<int32_t>(data_->start_cap));
   native::pen::miter_limit(data_->handle_, data_->miter_limit);
 
   vector<float> dashes;

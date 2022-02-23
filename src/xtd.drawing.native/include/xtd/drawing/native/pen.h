@@ -37,10 +37,12 @@ namespace xtd {
         static void solid_color(intptr_t pen, uint8_t a, uint8_t r, uint8_t g, uint8_t b, float width, float dash_offset, std::vector<float> dashes);
         static void hatch_fill(intptr_t pen, intptr_t brush, float width);
         static void conical_gradient(intptr_t pen, intptr_t brush, float width);
+        static void end_cap(intptr_t pen, int32_t line_cap);
         static void linear_gradient(intptr_t pen, intptr_t brush, float width);
         static void line_join(intptr_t pen, int32_t line_join);
         static void miter_limit(intptr_t pen, float miter_limit);
         static void radial_gradient(intptr_t pen, intptr_t brush, float width);
+        static void start_cap(intptr_t pen, int32_t line_cap);
         static void texture_fill(intptr_t pen, intptr_t brush, float width);
         static void destroy(intptr_t pen);
         /// @}
