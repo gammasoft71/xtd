@@ -81,6 +81,14 @@ namespace xtd {
       brush();
       /// @}
       
+      /// @name Protected methods
+      
+      /// @{
+      /// @brief In a derived class, sets a reference to a GDI+ brush object.
+      /// @param brush A pointer to the GDI+ brush object.
+      void set_native_brush(intptr_t brush);
+      /// @}
+      
     private:
       /// @cond
       struct data {
