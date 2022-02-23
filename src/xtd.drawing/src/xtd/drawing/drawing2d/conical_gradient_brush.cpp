@@ -96,7 +96,7 @@ void conical_gradient_brush::recreate_handle() {
   for (auto color : data_->conical_colors)
     colors.push_back(make_tuple(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second));
   
-  native::brush::conical_gradient(brush::data_->handle_, as<int32_t>(data_->center_point.x()), as<int32_t>(data_->center_point.y()), colors, data_->angle);
+  native::brush::conical_gradient(handle(), as<int32_t>(data_->center_point.x()), as<int32_t>(data_->center_point.y()), colors, data_->angle);
 }
 
 conical_gradient_brush::conical_gradient_brush(const conical_gradient_brush& value) : brush(value), data_(value.data_) {

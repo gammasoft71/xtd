@@ -49,8 +49,6 @@ namespace xtd {
     /// </table>
     class drawing_export_ brush : public xtd::object {
     public:
-      //static const brush null;
-      
       /// @cond
       brush(const brush& value);
       brush& operator=(const brush& value);
@@ -93,7 +91,7 @@ namespace xtd {
       void set_native_brush(intptr_t brush);
       /// @}
       
-      //private:
+    private:
       /// @cond
       struct data {
         intptr_t handle_ = 0;
