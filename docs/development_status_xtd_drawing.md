@@ -37,7 +37,7 @@
 | [graphics_unit](../src/xtd.drawing/include/xtd/drawing/graphics_unit.h)             | enumeration  | ![progress](pictures/progress100.png) |
 | [hotkey_prefix](../src/xtd.drawing/include/xtd/drawing/hotkey_prefix.h)             | enumeration  | ![progress](pictures/progress100.png) |
 | [icon](../src/xtd.drawing/include/xtd/drawing/icon.h)                               | class        | ![progress](pictures/progress100.png) |
-| [image](../src/xtd.drawing/include/xtd/drawing/image.h)                             | class        | ![progress](pictures/progress75.png)  |
+| [image](../src/xtd.drawing/include/xtd/drawing/image.h)                             | class        | ![progress](pictures/progress100.png) |
 | [known_color](../src/xtd.drawing/include/xtd/drawing/known_color.h)                 | enumeration  | ![progress](pictures/progress100.png) |
 | [pen](../src/xtd.drawing/include/xtd/drawing/pen.h)                                 | class        | ![progress](pictures/progress100.png) |
 | [pens](../src/xtd.drawing/include/xtd/drawing/pens.h)                               | static class | ![progress](pictures/progress100.png) |
@@ -45,6 +45,8 @@
 | [point_f](../src/xtd.drawing/include/xtd/drawing/point_f.h)                         | class        | ![progress](pictures/progress100.png) |
 | [rectangle](../src/xtd.drawing/include/xtd/drawing/rectangle.h)                     | class        | ![progress](pictures/progress100.png) |
 | [rectangle_f](../src/xtd.drawing/include/xtd/drawing/rectangle_f.h)                 | class        | ![progress](pictures/progress100.png) |
+| [region](../src/xtd.drawing/include/xtd/drawing/region.h)                           | class        | ![progress](pictures/progress75.png)  |
+| [rotate_flip_type](../src/xtd.drawing/include/xtd/drawing/rotate_flip_type.h)       | enumeration  | ![progress](pictures/progress100.png) |
 | [size](../src/xtd.drawing/include/xtd/drawing/size.h)                               | class        | ![progress](pictures/progress100.png) |
 | [size_f](../src/xtd.drawing/include/xtd/drawing/size_f.h)                           | class        | ![progress](pictures/progress100.png) |
 | [solid_brush](../src/xtd.drawing/include/xtd/drawing/solid_brush.h)                 | class        | ![progress](pictures/progress100.png) |
@@ -62,25 +64,42 @@
 
 ## xtd::drawing::drawing2d
 
-| Name                                                                                              | Type         | Status                                |
-|---------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [hatch_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_brush.h)                     | class        | ![progress](pictures/progress100.png) |
-| [hatch_style](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_style.h)                     | enumeration  | ![progress](pictures/progress100.png) |
-| [linear_gradient_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_brush.h) | class        | ![progress](pictures/progress100.png) |
-| [linear_gradient_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_mode.h)   | enumeration  | ![progress](pictures/progress100.png) |
-| [pen_alignment](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_alignment.h)                 | enumeration  | ![progress](pictures/progress100.png) |
-| [pen_type](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_type.h)                           | enumeration  | ![progress](pictures/progress100.png) |
+| Name                                                                                                    | Type         | Status                                |
+|---------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [compisiting_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/compisiting_mode.h)                 | enumeration  | ![progress](pictures/progress100.png) |
+| [compisiting_quality](../src/xtd.drawing/include/xtd/drawing/drawing2d/compisiting_quality.h)           | enumeration  | ![progress](pictures/progress100.png) |
+| [conical_gradient_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/conical_gradient_brush.h)     | class        | ![progress](pictures/progress100.png) |
+| [fill_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/fill_mode.h)                               | enumeration  | ![progress](pictures/progress100.png) |
+| [gradient_stop](../src/xtd.drawing/include/xtd/drawing/drawing2d/gradient_stop.h)                       | alias        | ![progress](pictures/progress100.png) |
+| [gradient_stop_collection](../src/xtd.drawing/include/xtd/drawing/drawing2d/gradient_stop_collection.h) | alias        | ![progress](pictures/progress100.png) |
+| [graphics_path](../src/xtd.drawing/include/xtd/drawing/drawing2d/graphics_path.h)                       | class        | ![progress](pictures/progress50.png)  |
+| [hatch_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_brush.h)                           | class        | ![progress](pictures/progress100.png) |
+| [hatch_style](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_style.h)                           | enumeration  | ![progress](pictures/progress100.png) |
+| [interpolation_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/interpolation_mode.h)             | enumeration  | ![progress](pictures/progress100.png) |
+| [line_cap](../src/xtd.drawing/include/xtd/drawing/drawing2d/line_cap.h)                                 | enumeration  | ![progress](pictures/progress100.png) |
+| [line_join](../src/xtd.drawing/include/xtd/drawing/drawing2d/line_join.h)                               | enumeration  | ![progress](pictures/progress100.png) |
+| [linear_gradient_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_brush.h)       | class        | ![progress](pictures/progress100.png) |
+| [linear_gradient_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_mode.h)         | enumeration  | ![progress](pictures/progress100.png) |
+| [pen_alignment](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_alignment.h)                       | enumeration  | ![progress](pictures/progress100.png) |
+| [pen_type](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_type.h)                                 | enumeration  | ![progress](pictures/progress100.png) |
+| [pixel_offset_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/pixel_offset_mode.h)               | enumeration  | ![progress](pictures/progress100.png) |
+| [radial_gradient_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/radial_gradient_brush.h)       | class        | ![progress](pictures/progress100.png) |
+| [smoothing_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/smoothing_mode.h)                     | enumeration  | ![progress](pictures/progress100.png) |
 
 ## xtd::drawing::imaging
 
-| Name                                                                                | Type         | Status                                |
-|-------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [color_palette](../src/xtd.drawing/include/xtd/drawing/imaging/color_palette.h)     | class        | ![progress](pictures/progress100.png) |
-| [frame_dimension](../src/xtd.drawing/include/xtd/drawing/imaging/frame_dimension.h) | class        | ![progress](pictures/progress100.png) |
-| [image_flags](../src/xtd.drawing/include/xtd/drawing/imaging/image_flags.h)         | enumeration | ![progress](pictures/progress100.png) |
-| [image_format](../src/xtd.drawing/include/xtd/drawing/imaging/image_format.h)       | class        | ![progress](pictures/progress100.png) |
-| [pixel_format](../src/xtd.drawing/include/xtd/drawing/imaging/pixel_format.h)       | enumeration | ![progress](pictures/progress100.png) |
-| [property_item](../src/xtd.drawing/include/xtd/drawing/imaging/property_item.h)     | class        | ![progress](pictures/progress100.png) |
+| Name                                                                                                          | Type         | Status                                |
+|---------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [color_palette](../src/xtd.drawing/include/xtd/drawing/imaging/color_palette.h)                               | class        | ![progress](pictures/progress100.png) |
+| [encoder](../src/xtd.drawing/include/xtd/drawing/imaging/encoder.h)                                           | class        | ![progress](pictures/progress100.png) |
+| [encoder_parameter](../src/xtd.drawing/include/xtd/drawing/imaging/encoder_parameter.h)                       | class        | ![progress](pictures/progress100.png) |
+| [encoder_parameter_value_type](../src/xtd.drawing/include/xtd/drawing/imaging/encoder_parameter_value_type.h) | enumeration  | ![progress](pictures/progress100.png) |
+| [encoder_parameters](../src/xtd.drawing/include/xtd/drawing/imaging/encoder_parameters.h)                     | class        | ![progress](pictures/progress100.png) |
+| [frame_dimension](../src/xtd.drawing/include/xtd/drawing/imaging/frame_dimension.h)                           | class        | ![progress](pictures/progress100.png) |
+| [image_flags](../src/xtd.drawing/include/xtd/drawing/imaging/image_flags.h)                                   | enumeration  | ![progress](pictures/progress100.png) |
+| [image_format](../src/xtd.drawing/include/xtd/drawing/imaging/image_format.h)                                 | class        | ![progress](pictures/progress100.png) |
+| [pixel_format](../src/xtd.drawing/include/xtd/drawing/imaging/pixel_format.h)                                 | enumeration  | ![progress](pictures/progress100.png) |
+| [property_item](../src/xtd.drawing/include/xtd/drawing/imaging/property_item.h)                               | class        | ![progress](pictures/progress100.png) |
 
 ## xtd::drawing::text
 
