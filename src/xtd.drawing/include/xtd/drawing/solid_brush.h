@@ -31,7 +31,9 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      explicit solid_brush(const drawing::color& color) {this->color(color);}
+      /// @brief Initializes a new xtd::drawing::solid_brush object of the specified color.
+      /// @param color A xtd::drawing::color structure that represents the color of this brush.
+      explicit solid_brush(const xtd::drawing::color& color) {this->color(color);}
       /// @}
       
       /// @cond
