@@ -174,19 +174,19 @@ rectangle style_sheets::control::get_border_rectangle(const rectangle& bounds) c
   if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top().get_pixels(bounds) + border_width().top().get_pixels(bounds) + padding().top().get_pixels(bounds) + height().value().get_pixels(bounds) + padding().bottom().get_pixels(bounds) + border_width().bottom().get_pixels(bounds) + margin().bottom().get_pixels(bounds));
   
   auto border_rect = rectangle::offset(bounds_rect, margin().left().get_pixels(bounds), margin().top().get_pixels(bounds));
-  border_rect = rectangle::inflate(border_rect, -margin().right().get_pixels(bounds) - margin().left().get_pixels(bounds), -margin().bottom().get_pixels(bounds) - margin().top().get_pixels(bounds));
+  border_rect = rectangle::add(border_rect, -margin().right().get_pixels(bounds) - margin().left().get_pixels(bounds), -margin().bottom().get_pixels(bounds) - margin().top().get_pixels(bounds));
   return border_rect;
 }
 
 rectangle style_sheets::control::get_fill_rectangle(const rectangle& bounds) const noexcept {
   auto fill_rect = rectangle::offset(get_border_rectangle(bounds), border_width().left().get_pixels(bounds), border_width().top().get_pixels(bounds));
-  fill_rect = rectangle::inflate(fill_rect, -border_width().left().get_pixels(bounds) - border_width().right().get_pixels(bounds), -border_width().top().get_pixels(bounds) - border_width().bottom().get_pixels(bounds));
+  fill_rect = rectangle::add(fill_rect, -border_width().left().get_pixels(bounds) - border_width().right().get_pixels(bounds), -border_width().top().get_pixels(bounds) - border_width().bottom().get_pixels(bounds));
   return fill_rect;
 }
 
 rectangle style_sheets::control::get_content_rectangle(const rectangle& bounds) const noexcept {
   auto content_rect = rectangle::offset(get_fill_rectangle(bounds), padding().left().get_pixels(bounds), padding().top().get_pixels(bounds));
-  content_rect = rectangle::inflate(content_rect, -padding().left().get_pixels(bounds) - padding().right().get_pixels(bounds), -padding().top().get_pixels(bounds) - padding().bottom().get_pixels(bounds));
+  content_rect = rectangle::add(content_rect, -padding().left().get_pixels(bounds) - padding().right().get_pixels(bounds), -padding().top().get_pixels(bounds) - padding().bottom().get_pixels(bounds));
   return content_rect;
 }
 

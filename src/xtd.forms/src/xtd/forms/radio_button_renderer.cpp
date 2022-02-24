@@ -83,10 +83,10 @@ void radio_button_renderer::draw_radio_button_gnome_dark(graphics g, const recta
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 17, 17};
   g.fill_ellipse(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.15), button_color), button_rectangle);
-  g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
+  g.draw_ellipse(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
   rectangle string_rectangle = {bounds.x() + 21, bounds.y(), bounds.width() - 21, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
-    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-9, -9}), {4, 4}));
+    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::add(button_rectangle, {-9, -9}), {4, 4}));
   if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
@@ -111,10 +111,10 @@ void radio_button_renderer::draw_radio_button_gnome_light(graphics g, const rect
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 17, 17};
   g.fill_ellipse(drawing2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.5), button_color), button_rectangle);
-  g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
+  g.draw_ellipse(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
   rectangle string_rectangle = {bounds.x() + 21, bounds.y(), bounds.width() - 21, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
-    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-9, -9}), {4, 4}));
+    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::add(button_rectangle, {-9, -9}), {4, 4}));
   if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
@@ -156,12 +156,12 @@ void radio_button_renderer::draw_radio_button_macos_dark(graphics g, const recta
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
   if (state == xtd::forms::visual_styles::radio_button_state::unchecked_normal || state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled) {
     g.fill_ellipse(drawing2d::linear_gradient_brush(point {button_rectangle.x(), button_rectangle.top()}, point {button_rectangle.x(), button_rectangle.bottom()}, control_paint::dark(button_color, .5), button_color), button_rectangle);
-    g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
+    g.draw_ellipse(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
   } else
     g.fill_ellipse(solid_brush(button_color), button_rectangle);
   rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
-    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-10, -10}), {5, 5}));
+    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::add(button_rectangle, {-10, -10}), {5, 5}));
   }
   if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
@@ -202,10 +202,10 @@ void radio_button_renderer::draw_radio_button_symbolic_dark(graphics g, const re
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 16, 16};
   g.fill_ellipse(solid_brush(button_color), button_rectangle);
-  g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
+  g.draw_ellipse(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
   rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
-    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-10, -10}), {5, 5}));
+    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::add(button_rectangle, {-10, -10}), {5, 5}));
   if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
@@ -236,10 +236,10 @@ void radio_button_renderer::draw_radio_button_symbolic_light(graphics g, const r
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
   g.fill_ellipse(solid_brush(button_color), button_rectangle);
-  g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
+  g.draw_ellipse(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
   rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
-    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::inflate(button_rectangle, {-10, -10}), {5, 5}));
+    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::add(button_rectangle, {-10, -10}), {5, 5}));
   if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, string_rectangle, flags);
@@ -269,7 +269,7 @@ void radio_button_renderer::draw_radio_button_windows_dark(graphics g, const rec
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 14, 14};
   g.fill_ellipse(solid_brush(button_color), button_rectangle);
-  g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
+  g.draw_ellipse(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
   rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height() };
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
     g.fill_ellipse(solid_brush(mark_color), rectangle(button_rectangle.x() + 3, button_rectangle.y() + 3, button_rectangle.width() - 6, button_rectangle.height() - 6));
@@ -297,7 +297,7 @@ void radio_button_renderer::draw_radio_button_windows_light(graphics g, const re
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 6, 12, 12};
   g.fill_ellipse(solid_brush(button_color), button_rectangle);
-  g.draw_ellipse(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}));
+  g.draw_ellipse(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
   rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 14, bounds.height() };
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)
     g.fill_ellipse(solid_brush(mark_color), rectangle(button_rectangle.x() + 3, button_rectangle.y() + 3, button_rectangle.width() - 6, button_rectangle.height() - 6));

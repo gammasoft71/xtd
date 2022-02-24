@@ -292,7 +292,7 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
   auto button_rect = bounds;
   if (bounds.height() > 25) {
     button_rect.offset({1, 0});
-    button_rect.inflate({-2, -1});
+    button_rect.add({-2, -1});
   }
   
   g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {button_rect.x(), button_rect.top()}, point {button_rect.x(), button_rect.bottom()}, button_color, button_color), button_rect.x(), button_rect.y() + 2, button_rect.width() - 1, button_rect.height() - 4, 5);
@@ -329,7 +329,7 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
   auto button_rect = bounds;
   if (bounds.height() > 25) {
     button_rect.offset({1, 0});
-    button_rect.inflate({-2, -1});
+    button_rect.add({-2, -1});
   }
   
   if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect.x(), button_rect.y() + 2, button_rect.width(), button_rect.height() - 4, 5);
@@ -510,8 +510,8 @@ void button_renderer::draw_flat_button_dark(graphics g, const rectangle& bounds,
   else if (state == xtd::forms::visual_styles::push_button_state::default_state) border_color = control_paint::light(xtd::forms::theme_colors::current_theme().control_text(), .2);
   
   g.fill_rounded_rectangle(solid_brush(button_color), bounds.x(), bounds.y(), bounds.width() - 1, bounds.height() - 1, environment::os_version().is_windows_platform() ? 0 : 4);
-  if (flat_appearance.border_size()) g.draw_rounded_rectangle(pen(border_color, static_cast<float>(flat_appearance.border_size())), rectangle::inflate(bounds, -1, -1), environment::os_version().is_windows_platform() ? 0 : 4);
-  if (focused) g.draw_rounded_rectangle(pen(active_border_color, 1), rectangle::offset(rectangle::inflate(bounds, drawing::size(flat_appearance.border_size() - 2, flat_appearance.border_size() - 2)), drawing::point(drawing::size(flat_appearance.border_size(), flat_appearance.border_size()))), environment::os_version().is_windows_platform() ? 0 : 4);
+  if (flat_appearance.border_size()) g.draw_rounded_rectangle(pen(border_color, static_cast<float>(flat_appearance.border_size())), rectangle::add(bounds, -1, -1), environment::os_version().is_windows_platform() ? 0 : 4);
+  if (focused) g.draw_rounded_rectangle(pen(active_border_color, 1), rectangle::offset(rectangle::add(bounds, drawing::size(flat_appearance.border_size() - 2, flat_appearance.border_size() - 2)), drawing::point(drawing::size(flat_appearance.border_size(), flat_appearance.border_size()))), environment::os_version().is_windows_platform() ? 0 : 4);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, bounds, flags);
@@ -546,8 +546,8 @@ void button_renderer::draw_popup_button_dark(graphics g, const rectangle& bounds
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = border_color = control_paint::light(xtd::forms::theme_colors::current_theme().control_text(), .2);
   
   g.fill_rounded_rectangle(solid_brush(button_color), bounds.x(), bounds.y(), bounds.width(), bounds.height(), environment::os_version().is_windows_platform() ? 0 : 4);
-  g.draw_rounded_rectangle(pen(active_border_color, 1), rectangle::inflate(bounds, {-2, 2}), environment::os_version().is_windows_platform() ? 0 : 4);
-  g.draw_rounded_rectangle(pen(border_color, 1), rectangle::offset(rectangle::inflate(bounds, {-3, -3}), {1, 1}), environment::os_version().is_windows_platform() ? 0 : 4);
+  g.draw_rounded_rectangle(pen(active_border_color, 1), rectangle::add(bounds, {-2, 2}), environment::os_version().is_windows_platform() ? 0 : 4);
+  g.draw_rounded_rectangle(pen(border_color, 1), rectangle::offset(rectangle::add(bounds, {-3, -3}), {1, 1}), environment::os_version().is_windows_platform() ? 0 : 4);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, bounds, flags);
@@ -573,8 +573,8 @@ void button_renderer::draw_popup_button_light(graphics g, const rectangle& bound
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().control_text(), .2);
   
   g.fill_rounded_rectangle(solid_brush(button_color), bounds.x(), bounds.y(), bounds.width() - 1, bounds.height() - 1, environment::os_version().is_windows_platform() ? 0 : 4);
-  g.draw_rounded_rectangle(pen(active_border_color, 1), rectangle::inflate(bounds, {-2, -2}), environment::os_version().is_windows_platform() ? 0 : 4);
-  g.draw_rounded_rectangle(pen(border_color, 1), rectangle::offset(rectangle::inflate(bounds, {-3, -3}), {1, 1}), environment::os_version().is_windows_platform() ? 0 : 4);
+  g.draw_rounded_rectangle(pen(active_border_color, 1), rectangle::add(bounds, {-2, -2}), environment::os_version().is_windows_platform() ? 0 : 4);
+  g.draw_rounded_rectangle(pen(border_color, 1), rectangle::offset(rectangle::add(bounds, {-3, -3}), {1, 1}), environment::os_version().is_windows_platform() ? 0 : 4);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, bounds, flags);

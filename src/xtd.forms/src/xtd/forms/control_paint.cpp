@@ -267,7 +267,7 @@ void control_paint::draw_border(const forms::control& control, drawing::graphics
   auto percent_of_color = 2.0 / 3;
   auto dark_color = dark(color, percent_of_color);
   auto light_color = color;
-  auto border_rect = screen::from_control(control).high_resolution() ? rect : rectangle::inflate(rect,  drawing::size {-1, -1});
+  auto border_rect = screen::from_control(control).high_resolution() ? rect : rectangle::add(rect,  drawing::size {-1, -1});
   
   switch (border) {
     case border_style::none: break;

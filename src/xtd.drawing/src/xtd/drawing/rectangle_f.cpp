@@ -4,6 +4,25 @@ using namespace xtd::drawing;
 
 const rectangle_f rectangle_f::empty;
 
+void rectangle_f::add(const drawing::size_f& sz) noexcept {
+  add(sz.width(), sz.height());
+}
+
+void rectangle_f::add(float width, float height) noexcept {
+  width_ += width;
+  height_ += height;
+}
+
+rectangle_f rectangle_f::add(const rectangle_f& rect, float x, float y) noexcept {
+  auto result = rect;
+  result.add(x, y);
+  return result;
+}
+
+rectangle_f rectangle_f::add(const rectangle_f& rect, const size_f& sz) noexcept {
+  return add(rect, sz.width(), sz.height());
+}
+
 void rectangle_f::make_intersect(const rectangle_f& rect) {
   auto x1 = std::max(x_, rect.x_);
   auto x2 = std::min(x_ + width_, rect.x_ + rect.width_);
