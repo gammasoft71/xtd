@@ -218,7 +218,7 @@ rectangle rectangle::truncate(const rectangle_f& rect) noexcept {
 }
 
 xtd::ustring rectangle::to_string() const noexcept {
-  return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";
+  return ustring::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
 }
 
 bool rectangle::operator==(const rectangle& value) const noexcept {
