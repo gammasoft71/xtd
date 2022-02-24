@@ -56,6 +56,14 @@ float rectangle_f::top() const noexcept {
   return y_;
 }
 
+float rectangle_f::width() const noexcept {
+  return width_;
+}
+
+void rectangle_f::width(float width) noexcept {
+  width_ = width;
+}
+
 float rectangle_f::x() const noexcept {
   return x_;
 }
@@ -70,14 +78,6 @@ float rectangle_f::y() const noexcept {
 
 void rectangle_f::y(float y) noexcept {
   y_ = y;
-}
-
-float rectangle_f::width() const noexcept {
-  return width_;
-}
-
-void rectangle_f::width(float width) noexcept {
-  width_ = width;
 }
 
 void rectangle_f::add(const drawing::size_f& sz) noexcept {

@@ -77,7 +77,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets the y-coordinate that is the sum of the Y and Height property values of this Rectangle structure.
+      /// @brief Gets the y-coordinate that is the sum of the xtd::drawing::rectangle::y and xtd::drawing::rectangle::height property values of this xtd::drawing::rectangle structure.
       /// @return The y-coordinate that is the sum of xtd::drawing::rectangle::y and xtd::drawing::rectangle::height of this xtd::drawing::rectangle.
       /// @remarks The value of the xtd::drawing::rectangle::bottom property represents the y-coordinate of the first point at the bottom edge of the xtd::drawing::rectangle that is not contained in the xtd::drawing::rectangle.
       int32_t bottom() const noexcept;
