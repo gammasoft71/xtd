@@ -199,7 +199,7 @@ rectangle_f rectangle_f::offset(const rectangle_f& rect, float x, float y) noexc
 }
 
 xtd::ustring rectangle_f::to_string() const noexcept {
-  return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";
+  return ustring::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
 }
 
 bool rectangle_f::operator==(const rectangle_f& value) const noexcept {
