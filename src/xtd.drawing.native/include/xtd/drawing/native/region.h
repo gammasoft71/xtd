@@ -42,8 +42,17 @@ namespace xtd {
         static void get_bounds(intptr_t handle, intptr_t grpahics, float& x, float& y, float& width, float& height);
         static intptr_t get_hrgn(intptr_t handle, intptr_t grpahics);
         static void intersect(intptr_t handle, intptr_t region);
+        static bool is_empty(intptr_t handle, intptr_t grpahics);
+        static bool is_infinite(intptr_t handle, intptr_t grpahics);
+        static bool is_visible(intptr_t handle, float x, float y);
+        static bool is_visible(intptr_t handle, float x, float y, intptr_t grpahics);
+        static bool is_visible(intptr_t handle, float x, float y, float width, float height);
+        static bool is_visible(intptr_t handle, float x, float y, float width, float height, intptr_t grpahics);
+        static void make_empty(intptr_t handle);
         static void make_union(intptr_t handle, intptr_t region);
         static void make_xor(intptr_t handle, intptr_t region);
+        static void release_hrgn(intptr_t region_handle);
+        static void translate(intptr_t handle, float dx, float dy);
         /// @}
       };
     }

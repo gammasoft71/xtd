@@ -4,6 +4,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/region.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/as.h>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -95,6 +96,86 @@ void region::intersect(const xtd::drawing::region& region) {
   native::region::intersect(data_->handle, region.data_->handle);
 }
 
+bool region::is_empty(const xtd::drawing::graphics& g) const noexcept {
+  return native::region::is_empty(handle(), g.handle());
+}
+
+bool region::is_infinite(const xtd::drawing::graphics& g) const noexcept {
+  return native::region::is_infinite(handle(), g.handle());
+}
+
+bool region::is_visible(xtd::drawing::rectangle_f rect, const xtd::drawing::graphics& g) const noexcept {
+  return is_visible(rect.x(), rect.y(), rect.width(), rect.height(), g);
+}
+
+bool region::is_visible(float x, float y, float width, float height, const xtd::drawing::graphics& g) const noexcept {
+  return native::region::is_visible(handle(), x, y, width, height, g.handle());
+}
+
+bool region::is_visible(xtd::drawing::rectangle rect, const xtd::drawing::graphics& g) const noexcept {
+  return is_visible(as<float>(rect.x()), as<float>(rect.y()), as<float>(rect.width()), as<float>(rect.height()), g);
+}
+
+bool region::is_visible(int32_t x, int32_t y, int32_t width, int32_t height, const xtd::drawing::graphics& g) const noexcept {
+  return is_visible(as<float>(x), as<float>(y), as<float>(width), as<float>(height), g);
+}
+
+bool region::is_visible(xtd::drawing::rectangle_f rect) const noexcept {
+  return is_visible(rect.x(), rect.y(), rect.width(), rect.height());
+}
+
+bool region::is_visible(float x, float y, float width, float height) const noexcept {
+  return native::region::is_visible(handle(), x, y, width, height);
+}
+
+bool region::is_visible(xtd::drawing::rectangle rect) const noexcept {
+  return is_visible(as<float>(rect.x()), as<float>(rect.y()), as<float>(rect.width()), as<float>(rect.height()));
+}
+
+bool region::is_visible(int32_t x, int32_t y, int32_t width, int32_t height) const noexcept {
+  return is_visible(as<float>(x), as<float>(y), as<float>(width), as<float>(height));
+}
+
+bool region::is_visible(xtd::drawing::point_f pt, const xtd::drawing::graphics& g) const noexcept {
+  return is_visible(pt.x(), pt.y(), g);
+}
+
+bool region::is_visible(float x, float y, const xtd::drawing::graphics& g) const noexcept {
+  return native::region::is_visible(handle(), x, y, g.handle());
+}
+
+bool region::is_visible(xtd::drawing::point pt, const xtd::drawing::graphics& g) const noexcept {
+  return is_visible(as<float>(pt.x()), as<float>(pt.y()), g);
+}
+
+bool region::is_visible(int32_t x, int32_t y, const xtd::drawing::graphics& g) const noexcept {
+  return is_visible(as<float>(x), as<float>(y), g);
+}
+
+bool region::is_visible(xtd::drawing::point_f pt) const noexcept {
+  return is_visible(pt.x(), pt.y());
+}
+
+bool region::is_visible(float x, float y) const noexcept {
+  return native::region::is_visible(handle(), x, y);
+}
+
+bool region::is_visible(xtd::drawing::point pt) const noexcept {
+  return is_visible(as<float>(pt.x()), as<float>(pt.y()));
+}
+
+bool region::is_visible(int32_t x, int32_t y) const noexcept {
+  return is_visible(as<float>(x), as<float>(y));
+}
+
+void region::make_empty() {
+  native::region::make_empty(handle());
+}
+
+void region::make_infinite() {
+  *this = region();
+}
+
 void region::make_union(const xtd::drawing::drawing2d::graphics_path& path) {
   make_union(region(path));
 }
@@ -125,6 +206,18 @@ void region::make_xor(const xtd::drawing::rectangle_f& rect) {
 
 void region::make_xor(const xtd::drawing::region& region) {
   native::region::make_xor(data_->handle, region.data_->handle);
+}
+
+void region::release_hrgn(intptr_t region_handle) {
+  native::region::release_hrgn(region_handle);
+}
+
+void region::translate(int32_t dx, int32_t dy) {
+  translate(as<float>(dx), as<float>(dy));
+}
+
+void region::translate(float dx, float dy) {
+  native::region::translate(handle(), dx, dy);
 }
 
 bool region::operator==(const region& value) const {
