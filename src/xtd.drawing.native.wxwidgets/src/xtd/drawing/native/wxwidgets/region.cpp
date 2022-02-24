@@ -14,10 +14,8 @@ using namespace xtd::drawing::native;
 
 #if defined(__APPLE__)
 #elif defined(WIN32)
-#elif defined(__WXGTK__)
-typedef GdkRegion* WXHRGN;
 #else
-typedef intptr_t WXHRGN;
+typedef wxRegion* WXHRGN;
 #endif
 
 namespace {
@@ -81,10 +79,8 @@ intptr_t region::get_hrgn(intptr_t handle, intptr_t grpahics) {
   return reinterpret_cast<intptr_t>(reinterpret_cast<wxRegion*>(handle)->GetWXHRGN());
 #elif defined(WIN32)
   return reinterpret_cast<intptr_t>(reinterpret_cast<wxRegion*>(handle)->GetHRGN());
-#elif defined(__WXGTK__)
-  return reinterpret_cast<intptr_t>(reinterpret_cast<wxRegion*>(handle)->GetRegion());
 #else
-  return 0;
+  return reinterpret_cast<intptr_t>(handle);
 #endif
 }
 
