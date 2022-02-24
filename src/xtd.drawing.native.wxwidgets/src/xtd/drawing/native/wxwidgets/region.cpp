@@ -56,6 +56,22 @@ void region::exclude(intptr_t handle, intptr_t region) {
   region1.Subtract(region2);
 }
 
+intptr_t region::from_hrgn(intptr_t hrgn) {
+  return reinterpret_cast<intptr_t>(new wxRegion(reinterpret_cast<WXHRGN>(hrgn)));
+}
+
+void region::get_bounds(intptr_t handle, intptr_t graphics, float& x, float& y, float& width, float& height) {
+  auto wx_region = reinterpret_cast<wxRegion*>(handle);
+  x = as<int32_t>(wx_region->GetBox().x);
+  y = as<int32_t>(wx_region->GetBox().y);
+  width = as<int32_t>(wx_region->GetBox().width);
+  height = as<int32_t>(wx_region->GetBox().height);
+}
+
+intptr_t region::get_hrgn(intptr_t handle, intptr_t grpahics) {
+  return reinterpret_cast<intptr_t>(reinterpret_cast<wxRegion*>(handle)->GetWXHRGN());
+}
+
 void region::intersect(intptr_t handle, intptr_t region) {
   auto& region1 = *reinterpret_cast<wxRegion*>(handle);
   auto& region2 = *reinterpret_cast<wxRegion*>(region);
