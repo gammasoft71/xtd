@@ -215,7 +215,7 @@ void switch_button_renderer::draw_button_macos_dark(graphics g, const rectangle&
   auto button_rect = bounds;
   if (bounds.height() > 25) {
     button_rect.offset({2, 0});
-    button_rect.inflate({-4, -1});
+    button_rect.add({-4, -1});
   }
   
   if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect.x(), button_rect.y() + 2, button_rect.width(), button_rect.height() - 4, 4);
@@ -252,7 +252,7 @@ void switch_button_renderer::draw_button_macos_light(graphics g, const rectangle
   auto button_rect = bounds;
   if (bounds.height() > 25) {
     button_rect.offset({2, 0});
-    button_rect.inflate({-4, -1});
+    button_rect.add({-4, -1});
   }
   
   if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect.x(), button_rect.y() + 2, button_rect.width(), button_rect.height() - 4, 4);
@@ -429,8 +429,8 @@ void switch_button_renderer::draw_flat_button_dark(graphics g, const rectangle& 
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = border_color = control_paint::light(xtd::forms::theme_colors::current_theme().control_text(), .2);
   
   g.fill_rectangle(solid_brush(button_color), bounds.x(), bounds.y(), bounds.width(), bounds.height());
-  g.draw_rectangle(pen(active_border_color, 1), rectangle::inflate(bounds, {-1, -1}));
-  g.draw_rectangle(pen(border_color, 1), rectangle::offset(rectangle::inflate(bounds, {-3, -3}), {1, 1}));
+  g.draw_rectangle(pen(active_border_color, 1), rectangle::add(bounds, {-1, -1}));
+  g.draw_rectangle(pen(border_color, 1), rectangle::offset(rectangle::add(bounds, {-3, -3}), {1, 1}));
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, bounds, flags);
@@ -456,8 +456,8 @@ void switch_button_renderer::draw_flat_button_light(graphics g, const rectangle&
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().control_text(), .2);
   
   g.fill_rectangle(solid_brush(button_color), bounds.x(), bounds.y(), bounds.width(), bounds.height());
-  g.draw_rectangle(pen(active_border_color, 1), rectangle::inflate(bounds, {-1, -1}));
-  g.draw_rectangle(pen(border_color, 1), rectangle::offset(rectangle::inflate(bounds, {-3, -3}), {1, 1}));
+  g.draw_rectangle(pen(active_border_color, 1), rectangle::add(bounds, {-1, -1}));
+  g.draw_rectangle(pen(border_color, 1), rectangle::offset(rectangle::add(bounds, {-3, -3}), {1, 1}));
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, bounds, flags);
@@ -488,8 +488,8 @@ void switch_button_renderer::draw_popup_button_dark(graphics g, const rectangle&
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = border_color = control_paint::light(xtd::forms::theme_colors::current_theme().control_text(), .2);
   
   g.fill_rectangle(solid_brush(button_color), bounds.x(), bounds.y(), bounds.width(), bounds.height());
-  g.draw_rectangle(pen(active_border_color, 1), rectangle::inflate(bounds, {-1, -1}));
-  g.draw_rectangle(pen(border_color, 1), rectangle::offset(rectangle::inflate(bounds, {-3, -3}), {1, 1}));
+  g.draw_rectangle(pen(active_border_color, 1), rectangle::add(bounds, {-1, -1}));
+  g.draw_rectangle(pen(border_color, 1), rectangle::offset(rectangle::add(bounds, {-3, -3}), {1, 1}));
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, bounds, flags);
@@ -515,8 +515,8 @@ void switch_button_renderer::draw_popup_button_light(graphics g, const rectangle
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = border_color = control_paint::dark(xtd::forms::theme_colors::current_theme().control_text(), .2);
   
   g.fill_rectangle(solid_brush(button_color), bounds.x(), bounds.y(), bounds.width(), bounds.height());
-  g.draw_rectangle(pen(active_border_color, 1), rectangle::inflate(bounds, {-1, -1}));
-  g.draw_rectangle(pen(border_color, 1), rectangle::offset(rectangle::inflate(bounds, {-3, -3}), {1, 1}));
+  g.draw_rectangle(pen(active_border_color, 1), rectangle::add(bounds, {-1, -1}));
+  g.draw_rectangle(pen(border_color, 1), rectangle::offset(rectangle::add(bounds, {-3, -3}), {1, 1}));
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, bounds, flags);

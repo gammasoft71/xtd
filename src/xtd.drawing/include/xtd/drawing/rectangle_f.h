@@ -49,8 +49,6 @@ namespace xtd {
       /// @cond
       rectangle_f(const rectangle_f&) = default;
       rectangle_f& operator=(const rectangle_f&) = default;
-      bool operator==(const rectangle_f& value) const {return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;}
-      bool operator!=(const rectangle_f& value) const {return !operator==(value);}
       /// @endcond
       
       /// @name Properties
@@ -96,6 +94,29 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Adds this xtd::drawing::rectangle_f by the specified amount.
+      /// @param sz The amount to add this rectangle.
+      /// @remarks This method adds this rectangle, not a copy of it.
+      void add(const drawing::size_f& sz) noexcept;
+      /// @brief Adds this xtd::drawing::rectangle_f by the specified amount.
+      /// @param width The amount to add this xtd::drawing::rectangle_f horizontally.
+      /// @param height The amount to add this xtd::drawing::rectangle_f verticaly.
+      /// @remarks This method adds this rectangle, not a copy of it.
+      void add(float width, float height) noexcept;
+      /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle_f structure. The copy is added by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.
+      /// @param rect The xtd::drawing::rectangle_f with which to start. This rectangle is not modified.
+      /// @param x The amount to add the specified rectangle horizontally.
+      /// @param y The amount to add the specified rectangle vertically.
+      /// @return The added xtd::drawing::rectangle_f.
+      /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
+      static rectangle_f add(const rectangle_f& rect, float x, float y) noexcept;
+      /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle_f structure. The copy is added by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.
+      /// @param rect The xtd::drawing::rectangle_f with which to start. This rectangle is not modified.
+      /// @param sz The amount to add the specified rectangle.
+      /// @return The added xtd::drawing::rectangle_f.
+      /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
+      static rectangle_f add(const rectangle_f& rect, const drawing::size_f& sz) noexcept;
+
       bool contains(float x, float y) const {return x_ <= x && x < x_ + width_ && y_ <= y && y < y_ + height_;}
       bool contains(const point_f& pt) const {return contains(pt.x(), pt.y());}
       bool contains(const rectangle_f& rect) const {return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ && (rect.y_ + rect.height_) <= (y_ + height_);}
@@ -104,8 +125,10 @@ namespace xtd {
       
       void inflate(const drawing::size_f& sz) {inflate(sz.width(), sz.height());}
       void inflate(float width, float height) {
-        width_ += width;
-        height_ += height;
+        x_ -= width;
+        y_ -= height;
+        width_ += 2 * width;
+        height_ +=  2 * height;
       }
       static rectangle_f inflate(const rectangle_f& rect, const drawing::size_f& sz) {return inflate(rect, sz.width(), sz.height());}
       static rectangle_f inflate(const rectangle_f& rect, float width, float height) {
@@ -143,6 +166,13 @@ namespace xtd {
       }
       
       xtd::ustring to_string() const noexcept override {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
+      /// @}
+
+      /// @name Operators
+      
+      /// @{
+      bool operator==(const rectangle_f& value) const {return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;}
+      bool operator!=(const rectangle_f& value) const {return !operator==(value);}
       /// @}
       
       /// @cond

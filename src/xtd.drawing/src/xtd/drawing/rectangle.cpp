@@ -17,14 +17,6 @@ rectangle::operator rectangle_f() const noexcept {
   return rectangle_f(as<float>(x_), as<float>(y_), as<float>(width_), as<float>(height_));
 }
 
-bool rectangle::operator==(const rectangle& value) const noexcept {
-  return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;
-}
-
-bool rectangle::operator!=(const rectangle& value) const noexcept {
-  return !operator==(value);
-}
-
 int32_t rectangle::bottom() const noexcept {
   return y_ + height_;
 }
@@ -95,6 +87,25 @@ void rectangle::y(int32_t value) noexcept {
   y_ = value;
 }
 
+void rectangle::add(const drawing::size& sz) noexcept {
+  add(sz.width(), sz.height());
+}
+
+void rectangle::add(int width, int height) noexcept {
+  width_ += width;
+  height_ += height;
+}
+
+rectangle rectangle::add(const rectangle& rect, int x, int y) noexcept {
+  auto result = rect;
+  result.add(x, y);
+  return result;
+}
+
+rectangle rectangle::add(const rectangle& rect, const drawing::size& sz) noexcept {
+  return add(rect, sz.width(), sz.height());
+}
+
 rectangle rectangle::ceiling(const rectangle_f& rect) noexcept {
   return rectangle(as<int32_t>(math::ceiling(rect.x())), as<int32_t>(math::ceiling(rect.y())), as<int32_t>(math::ceiling(rect.width())), as<int32_t>(math::ceiling(rect.height())));
 }
@@ -120,18 +131,20 @@ void rectangle::inflate(const drawing::size& sz) noexcept {
 }
 
 void rectangle::inflate(int width, int height) noexcept {
-  width_ += width;
-  height_ += height;
+  x_ -= width;
+  y_ -= height;
+  width_ += 2 * width;
+  height_ +=  2 * height;
+}
+
+rectangle rectangle::inflate(const rectangle& rect, int x, int y) noexcept {
+  auto result = rect;
+  result.inflate(x, y);
+  return result;
 }
 
 rectangle rectangle::inflate(const rectangle& rect, const drawing::size& sz) noexcept {
   return inflate(rect, sz.width(), sz.height());
-}
-
-rectangle rectangle::inflate(const rectangle& rect, int width, int height) noexcept {
-  auto result = rect;
-  result.inflate(width, height);
-  return result;
 }
 
 bool rectangle::intersects_with(const rectangle& rect) const noexcept {
@@ -177,17 +190,17 @@ void rectangle::make_union(const rectangle& rect) noexcept {
   height_ = y2 - y1;
 }
 
-void rectangle::offset(const point& pt) noexcept {
-  offset(pt.x(), pt.y());
+void rectangle::offset(const point& pos) noexcept {
+  offset(pos.x(), pos.y());
 }
 
-void rectangle::offset(int32_t dx, int32_t dy) noexcept {
-  x_ += dx;
-  y_ += dy;
+void rectangle::offset(int32_t x, int32_t y) noexcept {
+  x_ += x;
+  y_ += y;
 }
 
-rectangle rectangle::offset(const rectangle& rect, const point& pt) noexcept {
-  return offset(rect, pt.x(), pt.y());
+rectangle rectangle::offset(const rectangle& rect, const point& pos) noexcept {
+  return offset(rect, pos.x(), pos.y());
 }
 
 rectangle rectangle::offset(const rectangle& rect, int x, int y) noexcept {
@@ -200,10 +213,18 @@ rectangle rectangle::round(const rectangle_f& rect) noexcept {
   return rectangle(as<int32_t>(math::round(rect.x())), as<int32_t>(math::round(rect.y())), as<int32_t>(math::round(rect.width())), as<int32_t>(math::round(rect.height())));
 }
 
-rectangle rectangle::trunc(const rectangle_f& rect) noexcept {
+rectangle rectangle::truncate(const rectangle_f& rect) noexcept {
   return rectangle(as<int32_t>(math::truncate(rect.x())), as<int32_t>(math::truncate(rect.y())), as<int32_t>(math::truncate(rect.width())), as<int32_t>(math::truncate(rect.height())));
 }
 
 xtd::ustring rectangle::to_string() const noexcept {
   return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";
+}
+
+bool rectangle::operator==(const rectangle& value) const noexcept {
+  return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;
+}
+
+bool rectangle::operator!=(const rectangle& value) const noexcept {
+  return !operator==(value);
 }
