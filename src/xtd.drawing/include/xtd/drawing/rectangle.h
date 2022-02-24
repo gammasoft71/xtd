@@ -159,10 +159,30 @@ namespace xtd {
       /// @return Returns a xtd::drawing::rectangle.
       static rectangle ceiling(const xtd::drawing::rectangle_f& rect) noexcept;
       
+      /// @brief Determines if the specified point is contained within this xtd::drawing::rectangle structure.
+      /// @param pt The xtd::drawing::point to test.
+      /// @return This method returns true if the point represented by pt is contained within this xtd::drawing::rectangle structure; otherwise false.
+      /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(const xtd::drawing::point& pt) const noexcept;
+      /// @brief Determines if the rectangular region represented by rect is entirely contained within this xtd::drawing::rectangle structure.
+      /// @param rect The xtd::drawing::rectangle to test.
+      /// @return This method returns true if the rectangular region represented by rect is entirely contained within this xtd::drawing::rectangle structure; otherwise false.
+      /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(const xtd::drawing::rectangle& rect) const noexcept;
+      /// @brief Determines if the specified point is contained within this xtd::drawing::rectangle structure.
+      /// @param x The x-coordinate of the point to test.
+      /// @param y The y-coordinate of the point to test.
+      /// @return This method returns true if the point defined by x and y is contained within this xtd::drawing::rectangle structure; otherwise false.
+      /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(int32_t x, int32_t y) const noexcept;
       
+      /// @brief Creates a xtd::drawing::rectangle structure with the specified edge locations.
+      /// @param left The x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
+      /// @param top The y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
+      /// @param right The x-coordinate of the lower-right corner of this xtd::drawing::rectangle structure.
+      /// @param bottom The y-coordinate of the lower-right corner of this xtd::drawing::rectangle structure.
+      /// @return The new xtd::drawing::rectangle that this method creates.
+      /// @remarks This method creates a xtd::drawing::rectangle with the specified upper-left and lower-right corners.
       static rectangle from_ltrb(int32_t left, int32_t top, int32_t right, int32_t bottom) noexcept;
       
       void inflate(const drawing::size& sz) noexcept;
