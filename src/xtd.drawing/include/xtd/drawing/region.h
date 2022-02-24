@@ -109,23 +109,175 @@ namespace xtd {
       /// @brief Returns a Windows handle to this Region in the specified graphics context.
       /// @param The Graphics on which this Region is drawn.
       /// @return A Windows handle to this Region.
-      /// @remarks You are responsible for calling the ReleaseHrgn method to free the memory used by the GDI region object.
+      /// @remarks You are responsible for calling the xtd;;region::release_hrgn method to free the memory used by the GDI region object.
       intptr_t get_hrgn(const xtd::drawing::graphics& g) const;
 
+      /// @brief Updates this Region to the intersection of itself with the specified GraphicsPath.
+      /// @param path The GraphicsPath to intersect with this Region.
       void intersect(const xtd::drawing::drawing2d::graphics_path& path);
+      /// @brief Updates this Region to the intersection of itself with the specified Rectangle structure.
+      /// @param The Rectangle structure to intersect with this Region.
       void intersect(const xtd::drawing::rectangle& rect);
+      /// @brief Updates this Region to the intersection of itself with the specified RectangleF structure.
+      /// @param rect The RectangleF structure to intersect with this Region.
       void intersect(const xtd::drawing::rectangle_f& rect);
+      /// @brief Updates this Region to the intersection of itself with the specified Region.
+      /// @param region The Region to intersect with this Region.
       void intersect(const xtd::drawing::region& region);
 
+      /// @brief Tests whether this Region has an empty interior on the specified drawing surface.
+      /// @param g A Graphics that represents a drawing surface.
+      /// @return true if the interior of this Region is empty when the transformation associated with g is applied; otherwise, false.
+      /// @remarks The current transformation of the graphics context g is used to compute the region interior on the drawing surface.
+      bool is_empty(const xtd::drawing::graphics& g) const noexcept;
+
+      /// @brief Tests whether this Region has an infinite interior on the specified drawing surface.
+      /// @param g A Graphics that represents a drawing surface.
+      /// @return true if the interior of this Region is infinite when the transformation associated with g is applied; otherwise, false.
+      /// @remarks The current transformation of the graphics context g is used to compute the region interior on the drawing surface.
+      bool is_infinite(const xtd::drawing::graphics& g) const noexcept;
+      
+      /// @brief Tests whether any portion of the specified RectangleF structure is contained within this Region when drawn using the specified Graphics.
+      /// @param rect The RectangleF structure to test.
+      /// @param g A Graphics that represents a graphics context.
+      /// @return true when any portion of the rect is contained within this Region; otherwise, false.
+      /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
+      bool is_visible(xtd::drawing::rectangle_f rect, const xtd::drawing::graphics& g) const noexcept;
+      /// @brief Tests whether any portion of the specified rectangle is contained within this Region when drawn using the specified Graphics.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to test.
+      /// @param width The width of the rectangle to test.
+      /// @param height The height of the rectangle to test.
+      /// @param g A Graphics that represents a graphics context.
+      /// @return true when any portion of the specified rectangle is contained within this Region; otherwise, false.
+      /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
+      bool is_visible(float x, float y, float width, float height, const xtd::drawing::graphics& g) const noexcept;
+      /// @brief Tests whether any portion of the specified Rectangle structure is contained within this Region when drawn using the specified Graphics.
+      /// @param rect The Rectangle structure to test.
+      /// @param g A Graphics that represents a graphics context.
+      /// @return true when any portion of the rect is contained within this Region; otherwise, false.
+      /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
+      bool is_visible(xtd::drawing::rectangle rect, const xtd::drawing::graphics& g) const noexcept;
+      /// @brief Tests whether any portion of the specified rectangle is contained within this Region when drawn using the specified Graphics.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to test.
+      /// @param width The width of the rectangle to test.
+      /// @param height The height of the rectangle to test.
+      /// @param g A Graphics that represents a graphics context.
+      /// @return true when any portion of the specified rectangle is contained within this Region; otherwise, false.
+      /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
+      bool is_visible(int32_t x, int32_t y, int32_t width, int32_t height, const xtd::drawing::graphics& g) const noexcept;
+      /// @brief Tests whether any portion of the specified RectangleF structure is contained within this Region.
+      /// @param rect The RectangleF structure to test.
+      /// @return true when any portion of rect is contained within this Region; otherwise, false.
+      bool is_visible(xtd::drawing::rectangle_f rect) const noexcept;
+      /// @brief Tests whether any portion of the specified rectangle is contained within this Region.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to test.
+      /// @param width The width of the rectangle to test.
+      /// @param height The height of the rectangle to test.
+      /// @return true when any portion of the specified rectangle is contained within this Region; otherwise, false.
+      bool is_visible(float x, float y, float width, float height) const noexcept;
+      /// @brief Tests whether any portion of the specified Rectangle structure is contained within this Region.
+      /// @param rect The Rectangle structure to test.
+      /// @return true when any portion of rect is contained within this Region; otherwise, false.
+      bool is_visible(xtd::drawing::rectangle rect) const noexcept;
+      /// @brief Tests whether any portion of the specified rectangle is contained within this Region.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to test.
+      /// @param width The width of the rectangle to test.
+      /// @param height The height of the rectangle to test.
+      /// @return true when any portion of the specified rectangle is contained within this Region; otherwise, false.
+      bool is_visible(int32_t x, int32_t y, int32_t width, int32_t height) const noexcept;
+      /// @brief Tests whether the specified PointF structure is contained within this Region when drawn using the specified Graphics.
+      /// @param pt The PointF structure to test.
+      /// @param g A Graphics that represents a graphics context.
+      /// @return true when point is contained within this Region; otherwise, false.
+      /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
+      bool is_visible(xtd::drawing::point_f pt, const xtd::drawing::graphics& g) const noexcept;
+      /// @brief Tests whether the specified point is contained within this Region when drawn using the specified Graphics.
+      /// @param x The x-coordinate of the point to test.
+      /// @param y The y-coordinate of the point to test.
+      /// @param g A Graphics that represents a graphics context.
+      /// @return true when the specified point is contained within this Region; otherwise, false.
+      /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
+      bool is_visible(float x, float y, const xtd::drawing::graphics& g) const noexcept;
+      /// @brief Tests whether the specified Point structure is contained within this Region when drawn using the specified Graphics.
+      /// @param pt The Point structure to test.
+      /// @param g A Graphics that represents a graphics context.
+      /// @return true when point is contained within this Region; otherwise, false.
+      /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
+      bool is_visible(xtd::drawing::point pt, const xtd::drawing::graphics& g) const noexcept;
+      /// @brief Tests whether the specified point is contained within this Region when drawn using the specified Graphics.
+      /// @param x The x-coordinate of the point to test.
+      /// @param y The y-coordinate of the point to test.
+      /// @param g A Graphics that represents a graphics context.
+      /// @return true when the specified point is contained within this Region; otherwise, false.
+      /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
+      bool is_visible(int32_t x, int32_t y, const xtd::drawing::graphics& g) const noexcept;
+      /// @brief Tests whether the specified PointF structure is contained within this Region.
+      /// @param pt The PointF structure to test.
+      /// @return true when point is contained within this Region; otherwise, false.
+      bool is_visible(xtd::drawing::point_f pt) const noexcept;
+      /// @brief Tests whether the specified point is contained within this Region when drawn using the specified Graphics.
+      /// @param x The x-coordinate of the point to test.
+      /// @param y The y-coordinate of the point to test.
+      /// @return true when the specified point is contained within this Region; otherwise, false.
+      bool is_visible(float x, float y) const noexcept;
+      /// @brief Tests whether the specified Point structure is contained within this Region.
+      /// @param pt The Point structure to test.
+      /// @return true when point is contained within this Region; otherwise, false.
+      bool is_visible(xtd::drawing::point pt) const noexcept;
+      /// @brief Tests whether the specified point is contained within this Region when drawn using the specified Graphics.
+      /// @param x The x-coordinate of the point to test.
+      /// @param y The y-coordinate of the point to test.
+      /// @return true when the specified point is contained within this Region; otherwise, false.
+      bool is_visible(int32_t x, int32_t y) const noexcept;
+
+      /// @brief Initializes this Region to an empty interior.
+      void make_empty();
+      
+      /// @brief Initializes this Region object to an infinite interior.
+      void make_infinite();
+
+      /// @brief Updates this Region to the union of itself and the specified GraphicsPath.
+      /// @param path The GraphicsPath to unite with this Region.
       void make_union(const xtd::drawing::drawing2d::graphics_path& path);
+      /// @brief Updates this Region to the union of itself and the specified Rectangle structure.
+      /// @param rect The Rectangle structure to unite with this Region.
       void make_union(const xtd::drawing::rectangle& rect);
+      /// @brief Updates this Region to the union of itself and the specified RectangleF structure.
+      /// @param rect The RectangleF structure to unite with this Region.
       void make_union(const xtd::drawing::rectangle_f& rect);
+      /// @brief Updates this Region to the union of itself and the specified Region.
+      /// @param rect The Region to unite with this Region.
       void make_union(const xtd::drawing::region& region);
 
+      /// @brief Updates this Region to the union minus the intersection of itself with the specified GraphicsPath.
+      /// @param path The GraphicsPath to Xor with this Region.
       void make_xor(const xtd::drawing::drawing2d::graphics_path& path);
+      /// @brief Updates this Region to the union minus the intersection of itself with the specified Rectangle structure.
+      /// @param path The Rectangle structure to Xor with this Region.
       void make_xor(const xtd::drawing::rectangle& rect);
+      /// @brief Updates this Region to the union minus the intersection of itself with the specified RectangleF structure.
+      /// @param path The RectangleF structure to Xor with this Region.
       void make_xor(const xtd::drawing::rectangle_f& rect);
+      /// @brief Updates this Region to the union minus the intersection of itself with the specified Region.
+      /// @param path The Region to Xor with this Region.
       void make_xor(const xtd::drawing::region& region);
+      
+      /// @brief Releases the handle of the Region.
+      /// @param region_handle The handle to the Region.
+      void release_hrgn(intptr_t region_handle);
+      
+      /// @brief Offsets the coordinates of this Region by the specified amount.
+      /// @param dx The amount to offset this Region horizontally.
+      /// @param dy The amount to offset this Region vertically.
+      void translate(int32_t dx, int32_t dy);
+      /// @brief Offsets the coordinates of this Region by the specified amount.
+      /// @param dx The amount to offset this Region horizontally.
+      /// @param dy The amount to offset this Region vertically.
+      void translate(float dx, float dy);
       /// @}
       
     private:

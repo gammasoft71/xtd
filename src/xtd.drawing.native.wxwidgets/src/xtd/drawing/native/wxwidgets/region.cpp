@@ -8,6 +8,7 @@
 #include <wx/colour.h>
 #include <wx/region.h>
 #include <xtd/as.h>
+#include <xtd/box.h>
 
 using namespace std;
 using namespace xtd::drawing::native;
@@ -88,6 +89,35 @@ void region::intersect(intptr_t handle, intptr_t region) {
   region1.Intersect(region2);
 }
 
+bool region::is_empty(intptr_t handle, intptr_t grpahics) {
+  return reinterpret_cast<wxRegion*>(handle)->IsEmpty();
+}
+
+bool region::is_infinite(intptr_t handle, intptr_t grpahics) {
+  auto bounds = reinterpret_cast<wxRegion*>(handle)->GetBox();
+  return bounds.x == as<int32_t>(single_object::min_value) && bounds.y == as<int32_t>(single_object::min_value) && bounds.width == as<int32_t>(single_object::max_value) && bounds.height == as<int32_t>(single_object::max_value);
+}
+
+bool region::is_visible(intptr_t handle, float x, float y) {
+  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32_t>(x), as<int32_t>(y)) == wxInRegion;
+}
+
+bool region::is_visible(intptr_t handle, float x, float y, intptr_t grpahics) {
+  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32_t>(x), as<int32_t>(y)) == wxInRegion;
+}
+
+bool region::is_visible(intptr_t handle, float x, float y, float width, float height) {
+  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32_t>(x), as<int32_t>(y), as<int32_t>(width), as<int32_t>(height)) != wxOutRegion;
+}
+
+bool region::is_visible(intptr_t handle, float x, float y, float width, float height, intptr_t grpahics) {
+  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32_t>(x), as<int32_t>(y), as<int32_t>(width), as<int32_t>(height)) != wxOutRegion;
+}
+
+void region::make_empty(intptr_t handle) {
+  reinterpret_cast<wxRegion*>(handle)->Clear();
+}
+
 void region::make_union(intptr_t handle, intptr_t region) {
   auto& region1 = *reinterpret_cast<wxRegion*>(handle);
   auto& region2 = *reinterpret_cast<wxRegion*>(region);
@@ -98,4 +128,12 @@ void region::make_xor(intptr_t handle, intptr_t region) {
   auto& region1 = *reinterpret_cast<wxRegion*>(handle);
   auto& region2 = *reinterpret_cast<wxRegion*>(region);
   region1.Xor(region2);
+}
+
+void region::release_hrgn(intptr_t region_handle) {
+  // Does not exists in WxWidgets...
+}
+
+void region::translate(intptr_t handle, float dx, float dy) {
+  reinterpret_cast<wxRegion*>(handle)->Offset(as<int32_t>(dx), as<int32_t>(dy));
 }
