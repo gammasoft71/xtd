@@ -19,7 +19,7 @@ namespace xtd {
     class rectangle;
     /// @endcond
     
-    /// @brief Stores a set of four floating-points that represent the location and size of a rectangle.
+    /// @brief Stores a set of four floating-point numbers that represent the location and size of a rectangle. For more advanced region functions, use a xtd::drawing::region object.
     /// @code
     /// class drawing_export_ rectangle_f : public xtd::object
     /// @endcode
@@ -30,19 +30,31 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
+    /// @remarks A rectangle is defined by its width, height, and upper-left corner.
     class drawing_export_ rectangle_f : public xtd::object {
     public:
       /// @name Fields
       
       /// @{
+      /// @brief Represents a xtd::drawing::rectangle_F that has xtd::drawing::rectagle_f::x, xtd::drawing::rectangle_f::y, xtd::drawing::rectangle_f::width and xtd::drawing::rectangle_f::height values set to zero.
       static const rectangle_f empty;
       /// @}
       
       /// @name Constructors
       
       /// @{
+      /// @brief Initializes a new instance of the xtd::drawing::rectagle_f class
+      /// @remarks xtd::drawing::rectagle_f::x, xtd::drawing::rectagle_f::y, xtd::drawing::rectagle_f::width and xtd::drawing::rectagle_f::height values are set to zero.
       rectangle_f() noexcept = default;
+      /// @brief Initializes a new instance of the xtd::drawing::rectagle_f class with the specified location and size.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle.
+      /// @param width The width of the rectangle.
+      /// @param height The height of the rectangle.
       rectangle_f(float x, float y, float width, float height) noexcept;
+      /// @brief Initializes a new instance of the xtd::drawing::rectagle_f class with the specified location and size.
+      /// @param location A xtd::drawing::point_f that represents the upper-left corner of the rectangular region.
+      /// @param size A xtd::drawing::size_f that represents the width and height of the rectangular region.
       rectangle_f(const point_f& location, const size_f& size) noexcept;
       /// @}
       
