@@ -12,12 +12,6 @@
 using namespace std;
 using namespace xtd::drawing::native;
 
-#if defined(__APPLE__)
-#elif defined(WIN32)
-#else
-typedef wxRegion* WXHRGN;
-#endif
-
 namespace {
   static const wxColour mask_color = wxColour(255, 0, 255);
   static wxBitmap create_graphics_path_bitmap(wxGraphicsPath& path) noexcept {
@@ -63,7 +57,11 @@ void region::exclude(intptr_t handle, intptr_t region) {
 }
 
 intptr_t region::from_hrgn(intptr_t hrgn) {
+#if defined(__APPLE__) || defined(WIN32)
   return reinterpret_cast<intptr_t>(new wxRegion(reinterpret_cast<WXHRGN>(hrgn)));
+#else
+  return hrgn;
+#endif
 }
 
 void region::get_bounds(intptr_t handle, intptr_t graphics, float& x, float& y, float& width, float& height) {
