@@ -69,7 +69,11 @@ void region::get_bounds(intptr_t handle, intptr_t graphics, float& x, float& y, 
 }
 
 intptr_t region::get_hrgn(intptr_t handle, intptr_t grpahics) {
+#if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(reinterpret_cast<wxRegion*>(handle)->GetWXHRGN());
+#else
+  return reinterpret_cast<intptr_t>(reinterpret_cast<wxRegion*>(handle)->GetHRGN());
+#endif
 }
 
 void region::intersect(intptr_t handle, intptr_t region) {
