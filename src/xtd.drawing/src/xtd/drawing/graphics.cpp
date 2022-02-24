@@ -58,7 +58,7 @@ graphics& graphics::clip(const xtd::drawing::region value) {
 }
 
 rectangle_f graphics::clip_bounds() const {
-  auto rect_pixels = data_->clip.get_bounds();
+  auto rect_pixels = data_->clip.get_bounds(*this);
   return rectangle_f(to_page_unit(rect_pixels.x()), to_page_unit(rect_pixels.y()), to_page_unit(rect_pixels.width()), to_page_unit(rect_pixels.height()));
 }
 

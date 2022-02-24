@@ -38,6 +38,9 @@ namespace xtd {
         static void destroy(intptr_t handle);
         static void complement(intptr_t handle, intptr_t region);
         static void exclude(intptr_t handle, intptr_t region);
+        static intptr_t from_hrgn(intptr_t hrgn);
+        static void get_bounds(intptr_t handle, intptr_t grpahics, float& x, float& y, float& width, float& height);
+        static intptr_t get_hrgn(intptr_t handle, intptr_t grpahics);
         static void intersect(intptr_t handle, intptr_t region);
         static void make_union(intptr_t handle, intptr_t region);
         static void make_xor(intptr_t handle, intptr_t region);
