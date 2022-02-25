@@ -235,6 +235,20 @@ void graphics::draw_bezier(const pen& pen, float x1, float y1, float x2, float y
   native::graphics::draw_bezier(handle(), pen.handle(), to_pixels(x1), to_pixels(y1), to_pixels(x2), to_pixels(y2), to_pixels(x3), to_pixels(y3), to_pixels(x4), to_pixels(y4));
 }
 
+void graphics::draw_beziers(const pen& pen, std::vector<xtd::drawing::point>& points) {
+  vector<point_f> points_f;
+  for (auto pt : points)
+    points_f.push_back(point_f(pt));
+  draw_beziers(pen, points_f);
+}
+
+void graphics::draw_beziers(const pen& pen, std::vector<xtd::drawing::point_f>& points) {
+  vector<pair<float, float>> points_f;
+  for (auto pt: points)
+    points_f.push_back(make_pair(pt.x(), pt.y()));
+  native::graphics::draw_beziers(handle(), pen.handle(), points_f);
+}
+
 void graphics::draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {
   draw_ellipse(pen, rect.x(), rect.y(), rect.width(), rect.height());
 }
