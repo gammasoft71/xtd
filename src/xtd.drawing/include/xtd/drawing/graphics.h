@@ -313,6 +313,9 @@ namespace xtd {
       /// @remarks The Bézier curve is drawn from the first point to the fourth point. The second and third points are control points that determine the shape of the curve.
       void draw_bezier(const pen& pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
       
+      void draw_beziers(const pen& pen, std::vector<xtd::drawing::point>& points);
+      void draw_beziers(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+
       /// @brief Draws an ellipse specified by a bounding xtd::drawing::rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
       /// @param rect xtd::drawing::rectangle structure that defines the boundaries of the ellipse.

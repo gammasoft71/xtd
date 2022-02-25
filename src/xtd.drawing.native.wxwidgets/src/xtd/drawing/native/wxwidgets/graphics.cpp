@@ -216,8 +216,21 @@ void graphics::draw_bezier(intptr_t hdc, intptr_t pen, float x1, float y1, float
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
   dc.SetBrush(*wxTRANSPARENT_BRUSH);
   dc.SetPen(to_pen(*reinterpret_cast<wx_pen*>(pen)));
-  std::vector<wxPoint> points {wxPoint(x1, y1), wxPoint(x2, y2), wxPoint(x3, y3), wxPoint(x4, y4)};
-  dc.DrawSpline(4, points.data());
+  std::vector<wxPoint> wx_points {wxPoint(as<int32_t>(x1), as<int32_t>(y1)), wxPoint(as<int32_t>(x2), as<int32_t>(y2)), wxPoint(as<int32_t>(x3), as<int32_t>(y3)), wxPoint(as<int32_t>(x4), as<int32_t>(y4))};
+  dc.DrawSpline(wx_points.size(), wx_points.data());
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
+}
+
+void graphics::draw_beziers(intptr_t hdc, intptr_t pen, const std::vector<std::pair<float, float>>& points) {
+  if (!hdc) return;
+  graphics_context gc(hdc);
+  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc();
+  dc.SetBrush(*wxTRANSPARENT_BRUSH);
+  dc.SetPen(to_pen(*reinterpret_cast<wx_pen*>(pen)));
+  std::vector<wxPoint> wx_points;
+  for (auto [x, y] : points)
+    wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
+  dc.DrawSpline(wx_points.size(), wx_points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->apply_update();
 }
 

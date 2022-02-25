@@ -43,6 +43,7 @@ namespace xtd {
         static void destroy(intptr_t hdc);
         static void draw_arc(intptr_t hdc, intptr_t pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void draw_bezier(intptr_t hdc, intptr_t pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
+        static void draw_beziers(intptr_t hdc, intptr_t pen, const std::vector<std::pair<float, float>>& points);
         static void draw_ellipse(intptr_t hdc, intptr_t pen, float x, float y, float width, float heigh);
         static void draw_image(intptr_t hdc, intptr_t image, float x, float y);
         static void draw_image_disabled(intptr_t hdc, intptr_t image, float x, float y, float brightness);
