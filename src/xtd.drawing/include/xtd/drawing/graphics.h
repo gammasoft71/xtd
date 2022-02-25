@@ -313,8 +313,47 @@ namespace xtd {
       /// @remarks The Bézier curve is drawn from the first point to the fourth point. The second and third points are control points that determine the shape of the curve.
       void draw_bezier(const pen& pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
       
+      /// @brief Draws a series of Bézier splines from an array of xtd::drawing::point structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that represent the points that determine the curve. The number of points in the array should be a multiple of 3 plus 1, such as 4, 7, or 10.
+      /// @remarks The number of points in the array should be a multiple of 3 plus 1 because the first spline requires 4 points and any other splines require 3 points each. The first Bézier curve is drawn from the first point to the fourth point in the point array. The second and third points are control points that determine the shape of the curve. Each subsequent curve needs exactly three more points: two more control points and an ending point. The ending point of the previous curve is used as the starting point for each additional curve.
       void draw_beziers(const pen& pen, std::vector<xtd::drawing::point>& points);
+      /// @brief Draws a series of Bézier splines from an array of xtd::drawing::point_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that represent the points that determine the curve. The number of points in the array should be a multiple of 3 plus 1, such as 4, 7, or 10.
+      /// @remarks The number of points in the array should be a multiple of 3 plus 1 because the first spline requires 4 points and any other splines require 3 points each. The first Bézier curve is drawn from the first point to the fourth point in the point array. The second and third points are control points that determine the shape of the curve. Each subsequent curve needs exactly three more points: two more control points and an ending point. The ending point of the previous curve is used as the starting point for each additional curve.
       void draw_beziers(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+
+      /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks This method uses a default tension of 0.5.
+      void draw_close_curve(const pen& pen, std::vector<xtd::drawing::point>& points);
+      /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks This method uses a default tension of 0.5.
+      void draw_close_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+      /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point structures using a specified tension.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @param tension alue greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void draw_close_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension);
+      /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point_f structures using a specified tension.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @param tension alue greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void draw_close_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension);
 
       /// @brief Draws an ellipse specified by a bounding xtd::drawing::rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
