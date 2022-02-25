@@ -249,6 +249,28 @@ void graphics::draw_beziers(const pen& pen, std::vector<xtd::drawing::point_f>& 
   native::graphics::draw_beziers(handle(), pen.handle(), points_f);
 }
 
+void graphics::draw_close_curve(const pen& pen, std::vector<xtd::drawing::point>& points) {
+  draw_close_curve(pen, points, 0.5f);
+}
+
+void graphics::draw_close_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points) {
+  draw_close_curve(pen, points, 0.5f);
+}
+
+void graphics::draw_close_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension) {
+  vector<point_f> points_f;
+  for (auto pt : points)
+    points_f.push_back(point_f(pt));
+  draw_close_curve(pen, points_f, tension);
+}
+
+void graphics::draw_close_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension) {
+  vector<pair<float, float>> points_f;
+  for (auto pt: points)
+    points_f.push_back(make_pair(pt.x(), pt.y()));
+  native::graphics::draw_closed_curve(handle(), pen.handle(), points_f, tension);
+}
+
 void graphics::draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {
   draw_ellipse(pen, rect.x(), rect.y(), rect.width(), rect.height());
 }
