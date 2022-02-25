@@ -234,7 +234,7 @@ void graphics::draw_beziers(intptr_t handle, intptr_t pen, const std::vector<std
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_closed_curve(intptr_t handle, intptr_t pen, std::vector<std::pair<float, float>> points, float tension) {
+void graphics::draw_curve(intptr_t handle, intptr_t pen, std::vector<std::pair<float, float>> points, float tension) {
   if (!handle) return;
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
