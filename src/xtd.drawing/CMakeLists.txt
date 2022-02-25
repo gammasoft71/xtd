@@ -14,6 +14,7 @@ add_sources(
   include/xtd/drawing//brushes.h
   include/xtd/drawing/color.h
   include/xtd/drawing/colors.h
+  include/xtd/drawing/copy_pixel_operation.h
   include/xtd/drawing/dash_style.h
   include/xtd/drawing/font.h
   include/xtd/drawing/font_family.h

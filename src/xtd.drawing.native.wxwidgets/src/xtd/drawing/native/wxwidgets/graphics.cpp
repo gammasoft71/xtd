@@ -1,12 +1,14 @@
 #include <cmath>
 #include <vector>
 #include <xtd/argument_exception.h>
+#include <xtd/as.h>
 #include <xtd/convert_string.h>
 #include <xtd/ustring.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #include <xtd/drawing/native/compositing_modes.h>
 #include <xtd/drawing/native/compositing_qualities.h>
+#include <xtd/drawing/native/copy_pixel_operations.h>
 #include <xtd/drawing/native/path_fill_mode.h>
 #include <xtd/drawing/native/interpolation_modes.h>
 #include <xtd/drawing/native/pixel_offset_modes.h>
@@ -20,6 +22,7 @@
 #include <wx/app.h>
 #include <wx/dcgraph.h>
 #include <wx/dcmemory.h>
+#include <wx/dcscreen.h>
 #include <wx/region.h>
 
 using namespace xtd;
@@ -140,7 +143,6 @@ namespace {
   }
 }
 
-
 void graphics::clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (hdc == 0) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
@@ -164,6 +166,32 @@ void graphics::compositing_mode(intptr_t hdc, int32_t compositing_mode) {
 
 void graphics::compositing_quality(intptr_t hdc, int32_t compositing_quality) {
   // Not defined in wxWidgets
+}
+
+void graphics::copy_from_screen(intptr_t hdc, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_size_x, int32_t block_region_size_y, int32_t copy_pixel_operation) {
+  wxScreenDC screen_dc;
+  wxRasterOperationMode raster_operation_mode = wxRasterOperationMode::wxCOPY;
+  switch (copy_pixel_operation) {
+    case CPO_BLACKNESS: raster_operation_mode = wxRasterOperationMode::wxCLEAR; break;
+    case CPO_CAPTURE_BLT: raster_operation_mode = wxRasterOperationMode::wxCOPY; break;
+    case CPO_DESTINATION_INVERT: raster_operation_mode = wxRasterOperationMode::wxINVERT; break;
+    case CPO_MERGE_COPY: raster_operation_mode = wxRasterOperationMode::wxAND; break;
+    case CPO_MERGE_PAINT: raster_operation_mode = wxRasterOperationMode::wxOR_INVERT; break;
+    case CPO_NO_MIRROR_BITMAP: raster_operation_mode = wxRasterOperationMode::wxINVERT; break;
+    case CPO_NOT_SOURCE_COPY: raster_operation_mode = wxRasterOperationMode::wxSRC_INVERT; break;
+    case CPO_NOT_SOURCE_ERASE: raster_operation_mode = wxRasterOperationMode::wxOR_INVERT; break;
+    case CPO_PAT_COPY:  break;
+    case CPO_PAT_INVERT:  break;
+    case CPO_PAT_PAINT:  break;
+    case CPO_SOURCE_AND: raster_operation_mode = wxRasterOperationMode::wxAND; break;
+    case CPO_SOURCE_COPY: raster_operation_mode = wxRasterOperationMode::wxCOPY; break;
+    case CPO_SOURCE_ERASE: raster_operation_mode = wxRasterOperationMode::wxAND_INVERT; break;
+    case CPO_SOURCE_INVERT: raster_operation_mode = wxRasterOperationMode::wxXOR; break;
+    case CPO_SOURCE_PAINT: raster_operation_mode = wxRasterOperationMode::wxOR; break;
+    case CPO_WHITENESS: raster_operation_mode = wxRasterOperationMode::wxSET; break;
+    default: raster_operation_mode = wxRasterOperationMode::wxCOPY; break;
+  }
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().Blit(destination_x, destination_y, block_region_size_x, block_region_size_y, &screen_dc, source_x, source_y, raster_operation_mode);
 }
 
 void graphics::destroy(intptr_t hdc) {
@@ -571,4 +599,13 @@ void graphics::text_rendering_hint(intptr_t hdc, int32_t text_rendering_hint) {
 void graphics::translate_clip(intptr_t hdc, float dx, float dy) {
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   graphics.Translate(dx, dy);
+}
+
+void graphics::visible_clip_bounds(intptr_t hdc, float& x, float& y, float& width, float& height) {
+  double wx_x = 0.0, wx_y = 0.0, wx_width = 0.0, wx_height = 0.0;
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics()->GetClipBox(&wx_x, &wx_y, &wx_width, &wx_height);
+  x = as<float>(wx_x);
+  y = as<float>(wx_y);
+  width = as<float>(wx_width);
+  height = as<float>(wx_height);
 }

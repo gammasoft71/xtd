@@ -39,6 +39,7 @@ namespace xtd {
         static void clip(intptr_t hdc, intptr_t region);
         static void compositing_mode(intptr_t hdc, int32_t compositing_mode);
         static void compositing_quality(intptr_t hdc, int32_t compositing_quality);
+        static void copy_from_screen(intptr_t hdc, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_size_x, int32_t block_region_size_y, int32_t copy_pixel_operation);
         static void destroy(intptr_t hdc);
         static void draw_arc(intptr_t hdc, intptr_t pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void draw_bezier(intptr_t hdc, intptr_t pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
@@ -69,6 +70,7 @@ namespace xtd {
         static void text_contrast(intptr_t hdc, int32_t text_contrast);
         static void text_rendering_hint(intptr_t hdc, int32_t text_rendering_hint);
         static void translate_clip(intptr_t hdc, float dx, float dy);
+        static void visible_clip_bounds(intptr_t hdc, float& x, float& y, float& width, float& height);
         /// @}
       };
     }

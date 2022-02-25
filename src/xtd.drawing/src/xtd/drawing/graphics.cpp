@@ -177,8 +177,30 @@ graphics& graphics::text_rendering_hint(xtd::drawing::text::text_rendering_hint 
   return *this;
 }
 
+rectangle_f graphics::visible_clip_bounds() const noexcept {
+  float x = 0.0f, y = 0.0f, width = 0.0f, height = 0.0f;
+  native::graphics::visible_clip_bounds(handle(), x, y, width, height);
+  return {x, y, width, height};
+}
+
 void graphics::clear(const color& color) {
   native::graphics::clear(handle(), color.a(), color.r(), color.g(), color.b());
+}
+
+void graphics::copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size) {
+  copy_from_screen(upper_left_source.x(), upper_left_source.y(), upper_left_destination.x(), upper_left_destination.y(), block_region_size, xtd::drawing::copy_pixel_operation::source_copy);
+}
+
+void graphics::copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation) {
+  copy_from_screen(upper_left_source.x(), upper_left_source.y(), upper_left_destination.x(), upper_left_destination.y(), block_region_size, copy_pixel_operation);
+}
+
+void graphics::copy_from_screen(int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, const xtd::drawing::size& block_region_size) {
+  copy_from_screen(source_x, source_y, destination_x, destination_y, block_region_size, xtd::drawing::copy_pixel_operation::source_copy);
+}
+
+void graphics::copy_from_screen(int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation) {
+  
 }
 
 void graphics::draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {

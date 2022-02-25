@@ -9,6 +9,7 @@
 #include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "brush.h"
+#include "copy_pixel_operation.h"
 #include "solid_brush.h"
 #include "color.h"
 #include "font.h"
@@ -192,6 +193,12 @@ namespace xtd {
       /// @remarks The text rendering hint specifies whether text renders with antialiasing.
       /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
       graphics& text_rendering_hint(xtd::drawing::text::text_rendering_hint value);
+      
+      /// @brief Gets the bounding rectangle of the visible clipping region of this xtd::drawing::graphics.
+      /// @return A xtd::drawing::rectangle_f structure that represents a bounding rectangle for the visible clipping region of this xtd::drawing::graphics.
+      /// @remarks The unit for resulting rectangle is designated by the xtd::drawing::graphics::page_unit property. The default unit is pixels. A xtd::drawing::graphics is typically associated with a control and the origin of the rectangle will be relative to the client area of that control.
+      /// @remarks The visible clipping region is the intersection of the clipping region of this xtd::drawing::graphics::graphics and the clipping region of the window.
+      xtd::drawing::rectangle_f visible_clip_bounds() const noexcept;
       /// @}
       
       /// @name Methods
@@ -201,6 +208,37 @@ namespace xtd {
       /// @param color xtd::drawing::color structure that represents the background color of the drawing surface.
       void clear(const color& color);
       
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
+      /// @param upper_left_source The point at the upper-left corner of the source rectangle.
+      /// @param upper_left_destination The point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @remarks The xtd::drawing::graphics::copy_from_screen methods are useful for layering one image on top of another. To specify how the source and destination colors are blended, use one of the xtd::drawing::graphics::copy_from_screen methods that takes a xtd::drawing::graphics::copy_pixel_operation parameter.
+      void copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size);
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
+      /// @param upper_left_source The point at the upper-left corner of the source rectangle.
+      /// @param upper_left_destination The point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @param copy_pixel_operation One of the xtd::drawing::graphics::copy_pixel_operation values.
+      /// @remarks The xtd::drawing::graphics::copy_from_screen methods are useful for layering one image on top of another. The xtd::drawing::copy_pixel_operation parameter allows you to specify if and how the source colors should be blended with the colors in the destination area.
+      void copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation);
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
+      /// @param source_x The x-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param source_y The y-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param destination_x The x-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param destination_y The y-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @remarks The xtd::drawing::graphics::copy_from_screen methods are useful for layering one image on top of another. To specify how the source and destination colors are blended, use one of the xtd::drawing::graphics::copy_from_screen methods that takes a xtd::drawing::graphics::copy_pixel_operation parameter.
+      void copy_from_screen(int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, const xtd::drawing::size& block_region_size);
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
+      /// @param source_x The x-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param source_y The y-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param destination_x The x-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param destination_y The y-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @param copy_pixel_operation One of the xtd::drawing::graphics::copy_pixel_operation values.
+      /// @remarks The xtd::drawing::graphics::copy_from_screen methods are useful for layering one image on top of another. The xtd::drawing::copy_pixel_operation parameter allows you to specify if and how the source colors should be blended with the colors in the destination area.
+      void copy_from_screen(int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation);
+
       /// @brief Draws an arc representing a portion of an ellipse specified by a Rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the arc.
       /// @param rect xtd::drawing::rectangle structure that defines the boundaries of the ellipse.
