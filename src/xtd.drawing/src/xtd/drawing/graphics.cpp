@@ -387,7 +387,7 @@ void graphics::draw_image_unscaled(const xtd::drawing::image& image, int32_t x, 
   draw_image_unscaled(image, x, y);
 }
 
-void graphics::draw_image_unscaled_d_clipped(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect) {
+void graphics::draw_image_unscaled_and_clipped(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect) {
   auto backup_clip = clip();
   clip(region(rect));
   draw_image_unscaled(image, rect.x(), rect.y());
