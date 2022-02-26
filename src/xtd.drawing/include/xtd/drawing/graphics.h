@@ -676,9 +676,27 @@ namespace xtd {
       /// @param y1 The y-coordinate of the point.
       void draw_point(const xtd::drawing::pen& pen, float x, float y);
       
+      /// @brief Draws a rectangle specified by a xtd::drawing::rectangle structure.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rectangle.
+      /// @param rect A xtd::drawing::rectangle structure that represents the rectangle to draw.
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect);
+      /// @brief Draws a rectangle specified by a xtd::drawing::rectangle_f structure.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rectangle.
+      /// @param rect A xtd::drawing::rectangle_f structure that represents the rectangle to draw.
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect);
+      /// @brief Draws a rectangle specified by a coordinate pair, a width, and a height.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rectangle.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to draw.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to draw.
+      /// @param width The width of the rectangle to draw.
+      /// @param height The height of the rectangle to draw.
       void draw_rectangle(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height);
+      /// @brief Draws a rectangle specified by a coordinate pair, a width, and a height.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rectangle.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to draw.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to draw.
+      /// @param width The width of the rectangle to draw.
+      /// @param height The height of the rectangle to draw.
       void draw_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height);
       
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, int32_t radius);
