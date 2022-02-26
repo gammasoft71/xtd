@@ -215,7 +215,6 @@ void graphics::draw_bezier(intptr_t handle, intptr_t pen, float x1, float y1, fl
   wxGraphicsPath path;
   path.MoveToPoint(x1, y1);
   path.AddCurveToPoint(x2, y2, x3, y3, x4, y4);
-
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetBrush(wxNullBrush);
   graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -225,11 +224,17 @@ void graphics::draw_bezier(intptr_t handle, intptr_t pen, float x1, float y1, fl
 
 void graphics::draw_beziers(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points) {
   if (!handle) return;
-  auto start = points[0];
+  wxGraphicsPath path;
+  path.MoveToPoint(points[0].first, points[0].second);
   for (auto index  = 1U; index < points.size(); index += 3) {
-    draw_bezier(handle, pen, start.first, start.second, points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
-    start = points[index + 2];
+    path.AddCurveToPoint(points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
+    path.MoveToPoint(points[index + 2].first, points[index + 2].second);
   }
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+  graphics.SetBrush(wxNullBrush);
+  graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
+  graphics.DrawPath(path);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::draw_curve(intptr_t handle, intptr_t pen, std::vector<std::pair<float, float>> points, float tension) {
