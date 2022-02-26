@@ -64,8 +64,10 @@ namespace xtd {
         static void fill_ellipse(intptr_t handle, intptr_t brush, float x, float y, float width, float heigh);
         static void fill_path(intptr_t handle, intptr_t brush, intptr_t graphics_path, int32_t mode);
         static void fill_pie(intptr_t handle, intptr_t brush, float x, float y, float width, float height, float start_angle, float sweep_angle);
+        static void fill_polygon(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points, int32_t fill_mode);
         static void fill_region(intptr_t handle, intptr_t brush, intptr_t region);
         static void fill_rectangle(intptr_t handle, intptr_t brush, float x, float y, float width, float height);
+        static void fill_rectangles(intptr_t handle, intptr_t brush, std::vector<std::tuple<float, float, float, float>>& rects);
         static void fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, float y, float width, float height, float radius);
         static intptr_t from_image(intptr_t image);
         static void interpolation_mode(intptr_t handle, int32_t interpolation_mode);

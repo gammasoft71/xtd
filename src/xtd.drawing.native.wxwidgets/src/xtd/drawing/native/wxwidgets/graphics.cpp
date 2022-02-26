@@ -488,6 +488,19 @@ void graphics::fill_pie(intptr_t handle, intptr_t brush, float x, float y, float
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
+void graphics::fill_polygon(intptr_t handle, intptr_t brush, const std::vector<std::pair<float, float>>& points, int32_t fill_mode) {
+  /// @todo Using graphics_path when done...
+  std::vector<wxPoint2DDouble> wx_points;
+  for (auto [x, y] : points)
+    wx_points.push_back(wxPoint(as<double>(x), as<double>(y)));
+  wx_points.push_back(wx_points[0]);
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+  graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
+  graphics.SetPen(wxNullPen);
+  graphics.DrawLines(wx_points.size(), wx_points.data());
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+}
+
 void graphics::fill_rectangle(intptr_t handle, intptr_t brush, float x, float y, float width, float height) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
@@ -528,6 +541,12 @@ void graphics::fill_rectangle(intptr_t handle, intptr_t brush, float x, float y,
 #endif
 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+}
+
+void graphics::fill_rectangles(intptr_t handle, intptr_t brush, std::vector<std::tuple<float, float, float, float>>& rects) {
+  if (!handle) return;
+  for (auto [x, y, width, height] : rects)
+    fill_rectangle(handle, brush, x, y, width, height);
 }
 
 void graphics::fill_region(intptr_t handle, intptr_t brush, intptr_t region) {
