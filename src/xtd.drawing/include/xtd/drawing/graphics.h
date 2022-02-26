@@ -909,9 +909,27 @@ namespace xtd {
       /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void fill_pie(const xtd::drawing::brush& brush, float x, float y, float width, float height, float start_angle, float sweep_angle);
 
+      /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::drawing::point structures.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that represent the vertices of the polygon to fill.
+      /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
       void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points);
+      /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::drawing::point_f structures.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that represent the vertices of the polygon to fill.
+      /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
       void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points);
+      /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::drawing::point structures using the specified fill mode.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that represent the vertices of the polygon to fill.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines the style of the fill.
+      /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
       void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::drawing::point_f structures using the specified fill mode.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that represent the vertices of the polygon to fill.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines the style of the fill.
+      /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
       void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
 
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect);
