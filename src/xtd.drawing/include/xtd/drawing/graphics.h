@@ -25,6 +25,7 @@
 #include "size_f.h"
 #include "drawing2d/compositing_mode.h"
 #include "drawing2d/compositing_quality.h"
+#include "drawing2d/flush_intention.h"
 #include "drawing2d/interpolation_mode.h"
 #include "drawing2d/graphics_path.h"
 #include "drawing2d/pixel_offset_mode.h"
@@ -1005,6 +1006,28 @@ namespace xtd {
       /// @remarks This method fills the interior of the rounded rectangle defined by the x, y, width, height, and radius parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height, float radius);
       
+      /// @brief Forces execution of all pending graphics operations and returns immediately without waiting for the operations to finish.
+      /// @remarks This method starts a flush and returns immediately without waiting for any currently executing graphics operation to finish.
+      void flush();
+      /// @brief Forces execution of all pending graphics operations with the method waiting or not waiting, as specified, to return before the operations finish.
+      /// @param intention Member of the FlushIntention enumeration that specifies whether the method returns immediately or waits for any existing operations to finish.
+      /// @remarks A value of xtd::drawing::graphics::flush for the intention parameter specifies that the method return immediately after beginning the flush, while a value of xtd::drawing::drawing2d::flush_intention::sync specifies that the method wait before returning until any existing operations finish.
+      void flush(xtd::drawing::drawing2d::flush_intention intention);
+
+      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device context.
+      /// @param hdc Handle to a device context.
+      /// @return This method returns a new xtd::drawing::graphics for the specified device context.
+      /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
+      /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
+      static graphics from_hdc(intptr_t hdc);
+      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device contextand handle to a device.
+      /// @param hdc Handle to a device context.
+      /// @param hdevice Handle to a device.
+      /// @return This method returns a new xtd::drawing::graphics for the specified device context and device.
+      /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
+      /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
+      static graphics from_hdc(intptr_t hdc, intptr_t hdevice);
+
       static graphics from_image(const xtd::drawing::image& image);
       
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);

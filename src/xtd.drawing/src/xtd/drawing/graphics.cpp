@@ -740,6 +740,22 @@ void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, float x,
   native::graphics::fill_rounded_rectangle(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), to_pixels(radius));
 }
 
+void graphics::flush() {
+  flush(xtd::drawing::drawing2d::flush_intention::flush);
+}
+
+void graphics::flush(xtd::drawing::drawing2d::flush_intention intention) {
+  native::graphics::flush(handle(), static_cast<int32_t>(intention));
+}
+
+graphics graphics::from_hdc(intptr_t hdc) {
+  return graphics(native::graphics::from_hdc(hdc));
+}
+
+graphics graphics::from_hdc(intptr_t hdc, intptr_t hdevice) {
+  return graphics(native::graphics::from_hdc(hdc, hdevice));
+}
+
 graphics graphics::from_image(const image& image) {
   return graphics(native::graphics::from_image(image.handle()));
 }

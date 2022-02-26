@@ -9,6 +9,7 @@
 #include <xtd/drawing/native/compositing_modes.h>
 #include <xtd/drawing/native/compositing_qualities.h>
 #include <xtd/drawing/native/copy_pixel_operations.h>
+#include <xtd/drawing/native/flush_intentions.h>
 #include <xtd/drawing/native/path_fill_mode.h>
 #include <xtd/drawing/native/interpolation_modes.h>
 #include <xtd/drawing/native/pixel_offset_modes.h>
@@ -614,6 +615,18 @@ void graphics::fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, 
 #endif
 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+}
+
+void graphics::flush(intptr_t handle, int32_t intention) {
+  // Not defined in wxWidgets
+}
+
+intptr_t graphics::from_hdc(intptr_t hdc) {
+  return 0;
+}
+
+intptr_t graphics::from_hdc(intptr_t hdc, intptr_t hdevice) {
+  return 0;
 }
 
 intptr_t graphics::from_image(intptr_t image) {
