@@ -668,6 +668,28 @@ void graphics::fill_pie(const xtd::drawing::brush& brush, float x, float y, floa
   native::graphics::fill_pie(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), start_angle, sweep_angle);
 }
 
+void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points) {
+  fill_polygon(brush, points, drawing2d::fill_mode::alternate);
+}
+
+void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points) {
+  fill_polygon(brush, points, drawing2d::fill_mode::alternate);
+}
+
+void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode) {
+  vector<point_f> lines_points;
+  for (auto pt : points)
+    lines_points.push_back(point_f(pt));
+  fill_polygon(brush, lines_points);
+}
+
+void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode) {
+  vector<pair<float, float>> line_points;
+  for (auto pt: points)
+    line_points.push_back(make_pair(to_pixels(pt.x()), to_pixels(pt.y())));
+  native::graphics::fill_polygon(handle(), brush.handle(), line_points, static_cast<int32_t>(fill_mode));
+}
+
 void graphics::fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {
   fill_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height());
 }
@@ -682,6 +704,20 @@ void graphics::fill_rectangle(const brush& brush, int32_t x, int32_t y, int32_t 
 
 void graphics::fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height) {
   native::graphics::fill_rectangle(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
+}
+
+void graphics::fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle>& rects) {
+  vector<rectangle_f> rectangles;
+  for (auto rect : rects)
+    rectangles.push_back(rectangle_f(rect));
+  fill_rectangles(brush, rectangles);
+}
+
+void graphics::fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle_f>& rects) {
+  vector<tuple<float, float, float, float>> rectangles;
+  for (auto rect: rects)
+    rectangles.push_back(make_tuple(to_pixels(rect.x()), to_pixels(rect.y()), to_pixels(rect.width()), to_pixels(rect.height())));
+  native::graphics::fill_rectangles(handle(), brush.handle(), rectangles);
 }
 
 void graphics::fill_region(const xtd::drawing::brush& brush, const xtd::drawing::region& region) {
