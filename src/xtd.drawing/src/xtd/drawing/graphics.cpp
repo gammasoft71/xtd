@@ -448,6 +448,21 @@ void graphics::draw_pie(const xtd::drawing::pen& pen, float x, float y, float wi
   native::graphics::draw_pie(handle(), pen.handle(), x, y, width, height, start_angle, sweep_angle);
 }
 
+void graphics::draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point>& points) {
+  vector<point_f> lines_points;
+  for (auto pt : points)
+    lines_points.push_back(point_f(pt));
+  draw_polygon(pen, lines_points);
+}
+
+void graphics::draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points) {
+  vector<pair<float, float>> line_points;
+  for (auto pt: points)
+    line_points.push_back(make_pair(pt.x(), pt.y()));
+  line_points.push_back(line_points[0]);
+  native::graphics::draw_lines(handle(), pen.handle(), line_points);
+}
+
 void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p) {
   draw_point(pen, p.x(), p.y());
 }
