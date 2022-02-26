@@ -335,6 +335,16 @@ void graphics::draw_rectangle(intptr_t handle, intptr_t pen, float x, float y, f
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
+void graphics::draw_rectangles(intptr_t handle, intptr_t pen, std::vector<std::tuple<float, float, float, float>>& rects) {
+  if (!handle) return;
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+  graphics.SetBrush(wxNullBrush);
+  graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
+  for (auto [x, y, width, height] : rects)
+    graphics.DrawRectangle(x, y, width, height);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+}
+
 void graphics::draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float radius) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();

@@ -493,6 +493,20 @@ void graphics::draw_rectangle(const xtd::drawing::pen& pen, float x, float y, fl
   native::graphics::draw_rectangle(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
+void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle>& rects) {
+  vector<rectangle_f> rectangles;
+  for (auto rect : rects)
+    rectangles.push_back(rectangle_f(rect));
+  draw_rectangles(pen, rectangles);
+}
+
+void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle_f>& rects) {
+  vector<tuple<float, float, float, float>> rectangles;
+  for (auto rect: rects)
+    rectangles.push_back(make_tuple(rect.x(), rect.y(), rect.width(), rect.height()));
+  native::graphics::draw_rectangles(handle(), pen.handle(), rectangles);
+}
+
 void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, int32_t radius) {
   draw_rounded_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height(), radius);
 }

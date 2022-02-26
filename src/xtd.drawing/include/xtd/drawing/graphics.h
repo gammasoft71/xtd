@@ -698,7 +698,16 @@ namespace xtd {
       /// @param width The width of the rectangle to draw.
       /// @param height The height of the rectangle to draw.
       void draw_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height);
-      
+  
+      /// @brief Draws a series of rectangles specified by xtd::drawing::rectangle structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the outlines of the rectangles.
+      /// @param rects Array of xtd::drawing::rectangle structures that represent the rectangles to draw.
+      void draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle>& rects);
+      /// @brief Draws a series of rectangles specified by xtd::drawing::rectangle_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the outlines of the rectangles.
+      /// @param rects Array of xtd::drawing::rectangle_f structures that represent the rectangles to draw.
+      void draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle_f>& rects);
+
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, int32_t radius);
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float radius);
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
