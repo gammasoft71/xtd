@@ -168,7 +168,7 @@ void graphics::compositing_quality(intptr_t handle, int32_t compositing_quality)
   // Not defined in wxWidgets
 }
 
-void graphics::copy_from_screen(intptr_t handle, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_size_x, int32_t block_region_size_y, int32_t copy_pixel_operation) {
+void graphics::copy_from_screen(intptr_t handle, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_width, int32_t block_region_height, int32_t copy_pixel_operation) {
   wxScreenDC screen_dc;
   wxRasterOperationMode raster_operation_mode = wxRasterOperationMode::wxCOPY;
   switch (copy_pixel_operation) {
@@ -191,7 +191,7 @@ void graphics::copy_from_screen(intptr_t handle, int32_t source_x, int32_t sourc
     case CPO_WHITENESS: raster_operation_mode = wxRasterOperationMode::wxSET; break;
     default: raster_operation_mode = wxRasterOperationMode::wxCOPY; break;
   }
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().Blit(destination_x, destination_y, block_region_size_x, block_region_size_y, &screen_dc, source_x, source_y, raster_operation_mode);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().Blit(destination_x, destination_y, block_region_width, block_region_height, &screen_dc, source_x, source_y, raster_operation_mode);
 }
 
 void graphics::destroy(intptr_t handle) {
@@ -409,6 +409,7 @@ void graphics::draw_string(intptr_t handle, const ustring& text, intptr_t font, 
 }
 
 void graphics::fill_closed_curve(intptr_t handle, intptr_t brush, std::vector<std::pair<float, float>> points, uint32_t fill_mode, float tension) {
+  /// @todo Using graphics_path when done...
   if (!handle) return;
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();

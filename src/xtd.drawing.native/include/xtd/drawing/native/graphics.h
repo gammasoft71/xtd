@@ -40,7 +40,7 @@ namespace xtd {
         static void clip(intptr_t handle, intptr_t region);
         static void compositing_mode(intptr_t handle, int32_t compositing_mode);
         static void compositing_quality(intptr_t handle, int32_t compositing_quality);
-        static void copy_from_screen(intptr_t handle, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_size_x, int32_t block_region_size_y, int32_t copy_pixel_operation);
+        static void copy_from_screen(intptr_t handle, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_width, int32_t block_region_height, int32_t copy_pixel_operation);
         static void destroy(intptr_t handle);
         static void draw_arc(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void draw_bezier(intptr_t handle, intptr_t pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
