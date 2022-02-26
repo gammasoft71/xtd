@@ -968,6 +968,10 @@ namespace xtd {
       /// @param rects Array of xtd::drawing::rectangle_f structures that represent the rectangles to fill.
       void fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle_f>& rects);
 
+      /// @brief Fills the interior of a xtd::drawing::region.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param region xtd::drawing::region that represents the area to fill.
+      /// @remarks A xtd::drawing::region is composed of rectangles and paths. If the region is not closed, an additional segment is added from the last point to the first point to close it.
       void fill_region(const xtd::drawing::brush& brush, const xtd::drawing::region& region);
 
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, int32_t radius);
