@@ -52,6 +52,7 @@ namespace xtd {
         static void draw_lines(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points);
         static void draw_path(intptr_t handle, intptr_t pen, intptr_t graphics_path);
         static void draw_pie(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
+        static void draw_polygon(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points);
         static void draw_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height);
         static void draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float radius);
         static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, uint8_t a, uint8_t r, uint8_t g, uint8_t b);

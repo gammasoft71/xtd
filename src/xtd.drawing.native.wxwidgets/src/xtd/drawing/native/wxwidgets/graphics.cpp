@@ -314,6 +314,18 @@ void graphics::draw_pie(intptr_t handle, intptr_t pen, float x, float y, float w
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
+void graphics::draw_polygon(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points) {
+  std::vector<wxPoint2DDouble> wx_points;
+  for (auto [x, y] : points)
+    wx_points.push_back(wxPoint(as<double>(x), as<double>(y)));
+  wx_points.push_back(wx_points[0]);
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+  graphics.SetBrush(wxNullBrush);
+  graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
+  graphics.DrawLines(wx_points.size(), wx_points.data());
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+}
+
 void graphics::draw_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
