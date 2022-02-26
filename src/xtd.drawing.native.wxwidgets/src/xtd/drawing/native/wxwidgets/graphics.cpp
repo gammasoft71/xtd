@@ -212,7 +212,7 @@ void graphics::draw_arc(intptr_t handle, intptr_t pen, float x, float y, float w
 
 void graphics::draw_bezier(intptr_t handle, intptr_t pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
   if (!handle) return;
-  wxGraphicsPath path;
+  auto path = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->CreatePath();
   path.MoveToPoint(x1, y1);
   path.AddCurveToPoint(x2, y2, x3, y3, x4, y4);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
@@ -224,7 +224,7 @@ void graphics::draw_bezier(intptr_t handle, intptr_t pen, float x1, float y1, fl
 
 void graphics::draw_beziers(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points) {
   if (!handle) return;
-  wxGraphicsPath path;
+  auto path = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->CreatePath();
   path.MoveToPoint(points[0].first, points[0].second);
   for (auto index  = 1U; index < points.size(); index += 3) {
     path.AddCurveToPoint(points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
