@@ -523,9 +523,9 @@ void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, flo
   native::graphics::draw_rounded_rectangle(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), to_pixels(radius));
 }
 
-void graphics::draw_string(const ustring& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
+void graphics::draw_string(const ustring& s, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr) {
-    auto text_size = measure_string(text, font);
+    auto text_size = measure_string(s, font);
     auto y = layout_rectangle.y();
     auto height = layout_rectangle.height();
     
@@ -537,7 +537,7 @@ void graphics::draw_string(const ustring& text, const font& font, const brush& b
       height -= (layout_rectangle.height() - text_size.height());
     }
     
-    auto lines = text.split({'\n'});
+    auto lines = s.split({'\n'});
     for (auto line : lines) {
       if (line.empty()) line = " ";
       vector<size_t> hotkey_prefix_locations;
@@ -571,25 +571,25 @@ void graphics::draw_string(const ustring& text, const font& font, const brush& b
   }
 }
 
-void graphics::draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle) {
-  draw_string(text, font, brush, layout_rectangle, string_format());
+void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle) {
+  draw_string(s, font, brush, layout_rectangle, string_format());
 }
 
-void graphics::draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {
-  draw_string(text, font, brush, point.x(), point.y(), format);
+void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {
+  draw_string(s, font, brush, point.x(), point.y(), format);
 }
 
-void graphics::draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {
-  draw_string(text, font, brush, point.x(), point.y(), string_format());
+void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {
+  draw_string(s, font, brush, point.x(), point.y(), string_format());
 }
 
-void graphics::draw_string(const ustring& text, const font& font, const brush& brush, float x, float y, const string_format& format) {
+void graphics::draw_string(const ustring& s, const font& font, const brush& brush, float x, float y, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
-    native::graphics::draw_string(handle(), text, font.handle(), to_pixels(x), to_pixels(y), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+    native::graphics::draw_string(handle(), s, font.handle(), to_pixels(x), to_pixels(y), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
 }
 
-void graphics::draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {
-  draw_string(text, font, brush, x, y, string_format());
+void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {
+  draw_string(s, font, brush, x, y, string_format());
 }
 
 void graphics::fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {
