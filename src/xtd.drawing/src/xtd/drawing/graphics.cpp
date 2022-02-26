@@ -335,7 +335,7 @@ void graphics::draw_icon(const xtd::drawing::icon& icon, const xtd::drawing::rec
 }
 
 void graphics::draw_icon_unstretched(const xtd::drawing::icon& icon, const xtd::drawing::rectangle& rect) {
-  draw_icon(icon, rect.x(), rect.y());
+  draw_image_unscaled(icon.to_bitmap(), rect.x(), rect.y());
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect) {
@@ -369,6 +369,29 @@ void graphics::draw_image(const image& image, int32_t x, int32_t y) {
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y) {
   draw_image(image, static_cast<int32_t>(x), static_cast<int32_t>(y));
+}
+
+void graphics::draw_image_unscaled(const xtd::drawing::image& image, const xtd::drawing::point& point) {
+  draw_image_unscaled(image, point.x(), point.y());
+}
+
+void graphics::draw_image_unscaled(const xtd::drawing::image& image, int32_t x, int32_t y) {
+  draw_image(image, x, y);
+}
+
+void graphics::draw_image_unscaled(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect) {
+  draw_image_unscaled(image, rect.x(), rect.y());
+}
+
+void graphics::draw_image_unscaled(const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height) {
+  draw_image_unscaled(image, x, y);
+}
+
+void graphics::draw_image_unscaled_d_clipped(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect) {
+  auto backup_clip = clip();
+  clip(region(rect));
+  draw_image_unscaled(image, rect.x(), rect.y());
+  clip(backup_clip);
 }
 
 void graphics::draw_image_disabled(const image& image, float x, float y, float brightness) {
