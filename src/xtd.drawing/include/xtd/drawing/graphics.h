@@ -848,11 +848,19 @@ namespace xtd {
       void fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle);
       void fill_pie(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
       void fill_pie(const xtd::drawing::brush& brush, float x, float y, float width, float height, float start_angle, float sweep_angle);
-      
+
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points);
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points);
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect);
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect);
       void fill_rectangle(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
       void fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height);
+
+      void fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle>& rects);
+      void fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle_f>& rects);
 
       void fill_region(const xtd::drawing::brush& brush, const xtd::drawing::region& region);
 
