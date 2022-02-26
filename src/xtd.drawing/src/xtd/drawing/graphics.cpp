@@ -462,12 +462,12 @@ void graphics::draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd:
   native::graphics::draw_polygon(handle(), pen.handle(), line_points);
 }
 
-void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p) {
-  draw_point(pen, p.x(), p.y());
+void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& point) {
+  draw_point(pen, point.x(), point.y());
 }
 
-void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p) {
-  draw_point(pen, p.x(), p.y());
+void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& point) {
+  draw_point(pen, point.x(), point.y());
 }
 
 void graphics::draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y) {
