@@ -657,9 +657,23 @@ namespace xtd {
       /// @remarks Every pair of two consecutive points in the array specifies a side of the polygon. In addition, if the last point and the first of the array point do not coincide, they specify the last side of the polygon.
       void draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points);
 
-      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p);
-      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p);
+      /// @brief Draws a point specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the point.
+      /// @param point xtd::drawing::point structure that represents the point.
+      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& point);
+      /// @brief Draws a point specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the point.
+      /// @param point xtd::drawing::point_f structure that represents the point.
+      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& point);
+      /// @brief Draws a point specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the point.
+      /// @param x1 The x-coordinate of the point.
+      /// @param y1 The y-coordinate of the point.
       void draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y);
+      /// @brief Draws a point specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the point.
+      /// @param x1 The x-coordinate of the point.
+      /// @param y1 The y-coordinate of the point.
       void draw_point(const xtd::drawing::pen& pen, float x, float y);
       
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect);
