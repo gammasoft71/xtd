@@ -592,6 +592,14 @@ void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font
   draw_string(s, font, brush, x, y, string_format());
 }
 
+void graphics::exclude_clip(const xtd::drawing::region& region) {
+  data_->clip.exclude(region);
+}
+
+void graphics::exclude_clip(const xtd::drawing::rectangle& rect) {
+  data_->clip.exclude(rect);
+}
+
 void graphics::fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {
   fill_ellipse(brush, rect.x(), rect.y(), rect.width(), rect.height());
 }

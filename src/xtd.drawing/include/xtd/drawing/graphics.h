@@ -779,6 +779,15 @@ namespace xtd {
       /// @param y The y-coordinate of the upper-left corner of the drawn text.
       void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y);
       
+      /// @brief Updates the clip region of this xtd::drawing::graphics to exclude the area specified by a xtd::drawing::region.
+      /// @param region xtd::drawing::region that specifies the region to exclude from the clip region.
+      /// @remarks This method excludes the area specified by the region parameter from the current clip region and assigns the resulting area to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics.
+      void exclude_clip(const xtd::drawing::region& region);
+      /// @brief Updates the clip region of this xtd::drawing::graphics to exclude the area specified by a xtd::drawing::rectangle.
+      /// @param rect xtd::drawing::rectangle that specifies the rectangle to exclude from the clip region.
+      /// @remarks This method excludes the area specified by the rect parameter from the current clip region and assigns the resulting area to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics.
+      void exclude_clip(const xtd::drawing::rectangle& rect);
+
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect);
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect);
       void fill_ellipse(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
