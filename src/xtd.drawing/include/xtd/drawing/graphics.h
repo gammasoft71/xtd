@@ -974,9 +974,35 @@ namespace xtd {
       /// @remarks A xtd::drawing::region is composed of rectangles and paths. If the region is not closed, an additional segment is added from the last point to the first point to close it.
       void fill_region(const xtd::drawing::brush& brush, const xtd::drawing::region& region);
 
+      /// @brief Fills the interior of a rounded rectangle specified by a xtd::drawing::rectangle structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle structure that represents the rounded rectangle to fill.
+      /// @param radius The radius of the rounded rectange angles.
+      /// @remarks This method fills the interior of the rounded rectangle defined by the rect, and radius parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, int32_t radius);
+      /// @brief Fills the interior of a rounded rectangle specified by a xtd::drawing::rectangle_f structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the rounded rectangle to fill.
+      /// @param radius The radius of the rounded rectange angles.
+      /// @remarks This method fills the interior of the rounded rectangle defined by the rect, and radius parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float radius);
+      /// @brief Fills the interior of a rounded rectangle specified by a pair of coordinates, a width, a height, and a radius.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the rounded rectangle to fill.
+      /// @param y The y-coordinate of the upper-left corner of the rounded rectangle to fill.
+      /// @param width Width of the rounded rectangle to fill.
+      /// @param height Height of the rounded rectangle to fill.
+      /// @param radius The radius of the rounded rectange angles.
+      /// @remarks This method fills the interior of the rounded rectangle defined by the x, y, width, height, and radius parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
+      /// @brief Fills the interior of a rounded rectangle specified by a pair of coordinates, a width, a height, and a radius.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the rounded rectangle to fill.
+      /// @param y The y-coordinate of the upper-left corner of the rounded rectangle to fill.
+      /// @param width Width of the rounded rectangle to fill.
+      /// @param height Height of the rounded rectangle to fill.
+      /// @param radius The radius of the rounded rectange angles.
+      /// @remarks This method fills the interior of the rounded rectangle defined by the x, y, width, height, and radius parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height, float radius);
       
       static graphics from_image(const xtd::drawing::image& image);
