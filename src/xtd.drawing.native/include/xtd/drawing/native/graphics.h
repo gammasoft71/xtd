@@ -60,6 +60,7 @@ namespace xtd {
         static void draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float radius);
         static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+        static void fill_closed_curve(intptr_t handle, intptr_t brush, std::vector<std::pair<float, float>> points, uint32_t fill_mode, float tension);
         static void fill_ellipse(intptr_t handle, intptr_t brush, float x, float y, float width, float heigh);
         static void fill_path(intptr_t handle, intptr_t brush, intptr_t graphics_path, int32_t mode);
         static void fill_pie(intptr_t handle, intptr_t brush, float x, float y, float width, float height, float start_angle, float sweep_angle);

@@ -601,6 +601,36 @@ void graphics::exclude_clip(const xtd::drawing::rectangle& rect) {
   data_->clip.exclude(rect);
 }
 
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points) {
+  fill_closed_curve(brush, points, drawing2d::fill_mode::alternate, 0.0f);
+}
+
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points) {
+  fill_closed_curve(brush, points, drawing2d::fill_mode::alternate, 0.0f);
+}
+
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode) {
+  fill_closed_curve(brush, points, fill_mode, 0.0f);
+}
+
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode) {
+  fill_closed_curve(brush, points, fill_mode, 0.0f);
+}
+
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension) {
+  vector<point_f> close_curve_points;
+  for (auto pt : points)
+    close_curve_points.push_back(point_f(pt));
+  fill_closed_curve(brush, close_curve_points, fill_mode, tension);
+}
+
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension) {
+  vector<pair<float, float>> closed_curve_points;
+  for (auto pt : points)
+    closed_curve_points.push_back(make_pair(pt.x(), pt.y()));
+  native::graphics::fill_closed_curve(handle(), brush.handle(), closed_curve_points, static_cast<int32_t>(fill_mode), tension);
+}
+
 void graphics::fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {
   fill_ellipse(brush, rect.x(), rect.y(), rect.width(), rect.height());
 }
