@@ -250,25 +250,26 @@ void graphics::draw_beziers(const pen& pen, std::vector<xtd::drawing::point_f>& 
   native::graphics::draw_beziers(handle(), pen.handle(), beziers_points);
 }
 
-void graphics::draw_close_curve(const pen& pen, std::vector<xtd::drawing::point>& points) {
-  draw_close_curve(pen, points, 0.0f);
+void graphics::draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point>& points) {
+  draw_closed_curve(pen, points, 0.0f);
 }
 
-void graphics::draw_close_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points) {
-  draw_close_curve(pen, points, 0.0f);
+void graphics::draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points) {
+  draw_closed_curve(pen, points, 0.0f);
 }
 
-void graphics::draw_close_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension) {
+void graphics::draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension) {
   vector<point_f> close_curve_points;
   for (auto pt : points)
     close_curve_points.push_back(point_f(pt));
-  draw_close_curve(pen, close_curve_points, tension);
+  draw_closed_curve(pen, close_curve_points, tension);
 }
 
-void graphics::draw_close_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension) {
-  auto close_curve_points = points;
-  close_curve_points.push_back(points[0]);
-  draw_curve(pen, close_curve_points, 0, close_curve_points.size(), tension);
+void graphics::draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension) {
+  vector<pair<float, float>> closed_curve_points;
+  for (auto pt : points)
+    closed_curve_points.push_back(make_pair(pt.x(), pt.y()));
+  native::graphics::draw_closed_curve(handle(), pen.handle(), closed_curve_points, tension);
 }
 
 void graphics::draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points) {
@@ -296,10 +297,10 @@ void graphics::draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& po
 }
 
 void graphics::draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
-  vector<point_f> close_curve_points;
+  vector<point_f> curve_points;
   for (auto pt : points)
-    close_curve_points.push_back(point_f(pt));
-  draw_curve(pen, close_curve_points, offset, number_of_segments, tension);
+    curve_points.push_back(point_f(pt));
+  draw_curve(pen, curve_points, offset, number_of_segments, tension);
 }
 
 void graphics::draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {

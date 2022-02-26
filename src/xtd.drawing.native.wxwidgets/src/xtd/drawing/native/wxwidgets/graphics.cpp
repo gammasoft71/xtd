@@ -237,6 +237,20 @@ void graphics::draw_beziers(intptr_t handle, intptr_t pen, const std::vector<std
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
+void graphics::draw_closed_curve(intptr_t handle, intptr_t pen, std::vector<std::pair<float, float>> points, float tension) {
+  if (!handle) return;
+  graphics_context gc(handle);
+  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
+  dc.SetBrush(*wxTRANSPARENT_BRUSH);
+  dc.SetPen(to_pen(*reinterpret_cast<wx_pen*>(pen)));
+  std::vector<wxPoint> wx_points;
+  for (auto [x, y] : points)
+    wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
+  wx_points.push_back(wx_points[0]);
+  dc.DrawSpline(wx_points.size(), wx_points.data());
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+}
+
 void graphics::draw_curve(intptr_t handle, intptr_t pen, std::vector<std::pair<float, float>> points, float tension) {
   if (!handle) return;
   graphics_context gc(handle);

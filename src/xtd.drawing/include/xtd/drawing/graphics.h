@@ -330,14 +330,14 @@ namespace xtd {
       /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point structures.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_close_curve(const pen& pen, std::vector<xtd::drawing::point>& points);
+      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point>& points);
       /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point_f structures.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
       /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_close_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points);
       /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point structures using a specified tension.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point structures that define the spline.
@@ -345,7 +345,7 @@ namespace xtd {
       /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point structures.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_close_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension);
+      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension);
       /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point_f structures using a specified tension.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
@@ -353,7 +353,7 @@ namespace xtd {
       /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_close_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension);
+      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension);
 
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
