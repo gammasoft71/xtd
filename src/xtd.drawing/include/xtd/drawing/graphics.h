@@ -708,9 +708,31 @@ namespace xtd {
       /// @param rects Array of xtd::drawing::rectangle_f structures that represent the rectangles to draw.
       void draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle_f>& rects);
 
+      /// @brief Draws a rounded rectangle specified by a xtd::drawing::rectangle structure.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
+      /// @param rect A xtd::drawing::rectangle structure that represents the rounded rectangle to draw.
+      /// @param radius The radius of the rounded rectange angles.
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, int32_t radius);
+      /// @brief Draws a rounded rectangle specified by a xtd::drawing::rectangle_f structure.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
+      /// @param rect A xtd::drawing::rectangle_f structure that represents the rounded rectangle to draw.
+      /// @param radius The radius of the rounded rectange angles.
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float radius);
+      /// @brief Draws a rounded rectangle specified by a coordinate pair, a width, and a height.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
+      /// @param x The x-coordinate of the upper-left corner of the rounded rectangle to draw.
+      /// @param y The y-coordinate of the upper-left corner of the rounded rectangle to draw.
+      /// @param width The width of the rounded rectangle to draw.
+      /// @param height The height of the rounded rectangle to draw.
+      /// @param radius The radius of the rounded rectange angles.
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
+      /// @brief Draws a rounded rectangle specified by a coordinate pair, a width, and a height.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
+      /// @param x The x-coordinate of the upper-left corner of the rounded rectangle to draw.
+      /// @param y The y-coordinate of the upper-left corner of the rounded rectangle to draw.
+      /// @param width The width of the rounded rectangle to draw.
+      /// @param height The height of the rounded rectangle to draw.
+      /// @param radius The radius of the rounded rectange angles.
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height, float radius);
       
       void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const string_format& format);
