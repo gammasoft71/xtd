@@ -646,6 +646,17 @@ namespace xtd {
       /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void draw_pie(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
       
+      /// @brief Draws a polygon defined by an array of xtd::drawing::point structures.
+      /// @param pen Pen that determines the color, width, and style of the polygon.
+      /// @param points Array of xtd::drawing::point structures that represent the vertices of the polygon.
+      /// @remarks Every pair of two consecutive points in the array specifies a side of the polygon. In addition, if the last point and the first of the array point do not coincide, they specify the last side of the polygon.
+      void draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point>& points);
+      /// @brief Draws a polygon defined by an array of xtd::drawing::point_f structures.
+      /// @param pen Pen that determines the color, width, and style of the polygon.
+      /// @param points Array of xtd::drawing::point_f structures that represent the vertices of the polygon.
+      /// @remarks Every pair of two consecutive points in the array specifies a side of the polygon. In addition, if the last point and the first of the array point do not coincide, they specify the last side of the polygon.
+      void draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points);
+
       void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p);
       void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p);
       void draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y);
