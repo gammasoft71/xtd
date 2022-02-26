@@ -864,6 +864,10 @@ namespace xtd {
       /// @remarks This method fills the interior of an ellipse with a xtd::drawing::brush. The ellipse is defined by the bounding rectangle represented by the x, y, width, and height parameters.
       void fill_ellipse(const xtd::drawing::brush& brush, float x, float y, float width, float height);
       
+      /// @brief Fills the interior of a xtd::drawing::drawing2d::graphics_path.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param path xtd::drawing::drawing2d::graphics_path that represents the path to fill.
+      /// @remarks A xtd::drawing::drawing2d::graphics_path consists of a series of line and curve segments. If the path represented by the path parameter is not closed, an additional segment is added from the last point to the first point to close the path.
       void fill_path(const xtd::drawing::brush& brush, const xtd::drawing::drawing2d::graphics_path& path);
       
       void fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle);
