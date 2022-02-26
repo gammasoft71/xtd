@@ -837,9 +837,31 @@ namespace xtd {
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
       void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
 
+      /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a xtd::drawing::rectangle structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle structure that represents the bounding rectangle that defines the ellipse.
+      /// @remarks This method fills the interior of an ellipse with a xtd::drawing::brush. The ellipse is defined by the bounding rectangle represented by the rect parameter.
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect);
+      /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a xtd::drawing::rectangle_f structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the bounding rectangle that defines the ellipse.
+      /// @remarks This method fills the interior of an ellipse with a xtd::drawing::brush. The ellipse is defined by the bounding rectangle represented by the rect parameter.
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect);
+      /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a pair of coordinates, a width, and a height.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param width Width of the bounding rectangle that defines the ellipse.
+      /// @param height Height of the bounding rectangle that defines the ellipse.
+      /// @remarks This method fills the interior of an ellipse with a xtd::drawing::brush. The ellipse is defined by the bounding rectangle represented by the x, y, width, and height parameters.
       void fill_ellipse(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
+      /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a pair of coordinates, a width, and a height.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param width Width of the bounding rectangle that defines the ellipse.
+      /// @param height Height of the bounding rectangle that defines the ellipse.
+      /// @remarks This method fills the interior of an ellipse with a xtd::drawing::brush. The ellipse is defined by the bounding rectangle represented by the x, y, width, and height parameters.
       void fill_ellipse(const xtd::drawing::brush& brush, float x, float y, float width, float height);
       
       void fill_path(const xtd::drawing::brush& brush, const xtd::drawing::drawing2d::graphics_path& path);
