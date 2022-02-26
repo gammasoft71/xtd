@@ -932,9 +932,31 @@ namespace xtd {
       /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
       void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
 
+      /// @brief Fills the interior of a rectangle specified by a xtd::drawing::rectangle structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle structure that represents the rectangle to fill.
+      /// @remarks This method fills the interior of the rectangle defined by the rect parameter, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect);
+      /// @brief Fills the interior of a rectangle specified by a xtd::drawing::rectangle_f structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the rectangle to fill.
+      /// @remarks This method fills the interior of the rectangle defined by the rect parameter, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect);
+      /// @brief Fills the interior of a rectangle specified by a pair of coordinates, a width, and a height.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to fill.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to fill.
+      /// @param width Width of the rectangle to fill.
+      /// @param height Height of the rectangle to fill.
+      /// @remarks This method fills the interior of the rectangle defined by the x, y, width, and height parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rectangle(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
+      /// @brief Fills the interior of a rectangle specified by a pair of coordinates, a width, and a height.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to fill.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to fill.
+      /// @param width Width of the rectangle to fill.
+      /// @param height Height of the rectangle to fill.
+      /// @remarks This method fills the interior of the rectangle defined by the x, y, width, and height parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height);
 
       void fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle>& rects);
