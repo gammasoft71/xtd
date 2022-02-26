@@ -787,6 +787,55 @@ namespace xtd {
       /// @param rect xtd::drawing::rectangle that specifies the rectangle to exclude from the clip region.
       /// @remarks This method excludes the area specified by the rect parameter from the current clip region and assigns the resulting area to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics.
       void exclude_clip(const xtd::drawing::rectangle& rect);
+      
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures using the specified fill mode.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines how the curve is filled.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures using the specified fill mode.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines how the curve is filled.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures using the specified fill mode and tension.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines how the curve is filled.
+      /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures using the specified fill mode and tension.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines how the curve is filled.
+      /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
 
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect);
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect);

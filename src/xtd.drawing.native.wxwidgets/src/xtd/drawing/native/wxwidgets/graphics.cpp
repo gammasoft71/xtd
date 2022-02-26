@@ -408,6 +408,19 @@ void graphics::draw_string(intptr_t handle, const ustring& text, intptr_t font, 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
+void graphics::fill_closed_curve(intptr_t handle, intptr_t brush, std::vector<std::pair<float, float>> points, uint32_t fill_mode, float tension) {
+  if (!handle) return;
+  graphics_context gc(handle);
+  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
+  dc.SetBrush(to_brush(*reinterpret_cast<wx_brush*>(brush)));
+  dc.SetPen(*wxTRANSPARENT_PEN);
+  std::vector<wxPoint> wx_points;
+  for (auto [x, y] : points)
+    wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
+  dc.DrawSpline(wx_points.size(), wx_points.data());
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+}
+
 void graphics::fill_ellipse(intptr_t handle, intptr_t brush, float x, float y, float width, float height) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
