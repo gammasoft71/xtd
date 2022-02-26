@@ -6,6 +6,7 @@
 /// @endcond
 
 #include <cstdint>
+#include <tuple>
 #include <xtd/static.h>
 #include <xtd/ustring.h>
 #include <xtd/drawing_native_export.h>
@@ -54,6 +55,7 @@ namespace xtd {
         static void draw_pie(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
         static void draw_polygon(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points);
         static void draw_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height);
+        static void draw_rectangles(intptr_t handle, intptr_t pen, std::vector<std::tuple<float, float, float, float>>& rects);
         static void draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float radius);
         static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
