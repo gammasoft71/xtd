@@ -212,26 +212,24 @@ void graphics::draw_arc(intptr_t handle, intptr_t pen, float x, float y, float w
 
 void graphics::draw_bezier(intptr_t handle, intptr_t pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
   if (!handle) return;
-  graphics_context gc(handle);
-  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
-  dc.SetBrush(*wxTRANSPARENT_BRUSH);
-  dc.SetPen(to_pen(*reinterpret_cast<wx_pen*>(pen)));
-  std::vector<wxPoint> wx_points {wxPoint(as<int32_t>(x1), as<int32_t>(y1)), wxPoint(as<int32_t>(x2), as<int32_t>(y2)), wxPoint(as<int32_t>(x3), as<int32_t>(y3)), wxPoint(as<int32_t>(x4), as<int32_t>(y4))};
-  dc.DrawSpline(wx_points.size(), wx_points.data());
+  wxGraphicsPath path;
+  path.MoveToPoint(x1, y1);
+  path.AddCurveToPoint(x2, y2, x3, y3, x4, y4);
+
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+  graphics.SetBrush(wxNullBrush);
+  graphics.SetPen(to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
+  graphics.DrawPath(path);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::draw_beziers(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points) {
   if (!handle) return;
-  graphics_context gc(handle);
-  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
-  dc.SetBrush(*wxTRANSPARENT_BRUSH);
-  dc.SetPen(to_pen(*reinterpret_cast<wx_pen*>(pen)));
-  std::vector<wxPoint> wx_points;
-  for (auto [x, y] : points)
-    wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
-  dc.DrawSpline(wx_points.size(), wx_points.data());
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+  auto start = points[0];
+  for (auto index  = 1U; index < points.size(); index += 3) {
+    draw_bezier(handle, pen, start.first, start.second, points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
+    start = points[index + 2];
+  }
 }
 
 void graphics::draw_curve(intptr_t handle, intptr_t pen, std::vector<std::pair<float, float>> points, float tension) {
