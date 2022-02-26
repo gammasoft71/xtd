@@ -959,7 +959,13 @@ namespace xtd {
       /// @remarks This method fills the interior of the rectangle defined by the x, y, width, and height parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height);
 
+      /// @brief Fills the interiors of a series of rectangles specified by xtd::drawing::rectangle structures.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rects Array of xtd::drawing::rectangle structures that represent the rectangles to fill.
       void fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle>& rects);
+      /// @brief Fills the interiors of a series of rectangles specified by xtd::drawing::rectangle_f structures.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rects Array of xtd::drawing::rectangle_f structures that represent the rectangles to fill.
       void fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle_f>& rects);
 
       void fill_region(const xtd::drawing::brush& brush, const xtd::drawing::region& region);
