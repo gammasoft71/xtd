@@ -561,7 +561,7 @@ namespace xtd {
       /// @brief Draws the specified image without scaling and clips it, if necessary, to fit in the specified rectangle.
       /// @param image xtd::drawing::image to draw.
       /// @param rect The xtd::drawing::rectangle in which to draw the image.
-      void draw_image_unscaled_d_clipped(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect);
+      void draw_image_unscaled_and_clipped(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect);
 
       void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& p1, const point& p2);
       void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p1, const point_f& p2);
