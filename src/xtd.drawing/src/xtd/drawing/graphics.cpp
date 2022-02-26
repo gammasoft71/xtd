@@ -236,6 +236,7 @@ void graphics::draw_bezier(const pen& pen, float x1, float y1, float x2, float y
 }
 
 void graphics::draw_beziers(const pen& pen, std::vector<xtd::drawing::point>& points) {
+  if (points.size() < 4 || points.size() % 3 != 1) throw argument_exception(csf_);
   vector<point_f> points_f;
   for (auto pt : points)
     points_f.push_back(point_f(pt));
