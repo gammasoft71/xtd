@@ -1028,6 +1028,24 @@ namespace xtd {
       /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
       static graphics from_hdc(intptr_t hdc, intptr_t hdevice);
 
+      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a window.
+      /// @param hwnd Handle to a window.
+      /// @return This method returns a new xtd::drawing::graphics for the specified window handle.
+      static graphics from_hwnd(intptr_t hwnd);
+
+      /// @brief Creates a new xtd::drawing::graphics from the specified xtd::drawing::image.
+      /// @param image xtd::drawing::image from which to create the new Graphics.
+      /// @return This method returns a new xtd::drawing::graphics for the specified Image.
+      /// @remarks If the image has an indexed pixel format, this method throws an exception with the message, "A Graphics object cannot be created from an image that has an indexed pixel format." The indexed pixel formats are shown in the following list.
+      /// * xtd::drawing::imaging::pixel_format::format1bpp_indexed
+      /// * xtd::drawing::imaging::pixel_format::format4bpp_indexed
+      /// * xtd::drawing::imaging::pixel_format::format8bpp_indexed
+      /// @remarks You can save the indexed image as another format by using the xtd::drawing:image::save(xtd::ustring, xtd::drawing::imaging::image_format) method and then retrieve a xtd::drawing::graphics object for the new image.
+      /// @remarks This method also throws an exception if the image has any of the following pixel formats.
+      /// * xtd::drawing::imaging::pixel_format::undefined
+      /// * xtd::drawing::imaging::pixel_format::dont_care
+      /// * xtd::drawing::imaging::pixel_format::format16bpp_argb1555
+      /// * xtd::drawing::imaging::pixel_format::format16bpp_gray_scale
       static graphics from_image(const xtd::drawing::image& image);
       
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);

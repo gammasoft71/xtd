@@ -629,6 +629,11 @@ intptr_t graphics::from_hdc(intptr_t hdc, intptr_t hdevice) {
   return 0;
 }
 
+intptr_t graphics::from_hwnd(intptr_t hwnd) {
+  /// @todo Use this method instead hdc_wrapper::create...
+  return 0;
+}
+
 intptr_t graphics::from_image(intptr_t image) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   if (image == 0) hdc_wrapper->create<wxScreenDC>();
