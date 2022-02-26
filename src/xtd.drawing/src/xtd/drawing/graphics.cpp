@@ -756,6 +756,10 @@ graphics graphics::from_hdc(intptr_t hdc, intptr_t hdevice) {
   return graphics(native::graphics::from_hdc(hdc, hdevice));
 }
 
+graphics graphics::from_hwnd(intptr_t hwnd) {
+  return graphics(native::graphics::from_hwnd(hwnd));
+}
+
 graphics graphics::from_image(const image& image) {
   return graphics(native::graphics::from_image(image.handle()));
 }

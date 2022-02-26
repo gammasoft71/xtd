@@ -72,6 +72,7 @@ namespace xtd {
         static void flush(intptr_t handle, int32_t intention);
         static intptr_t from_hdc(intptr_t hdc);
         static intptr_t from_hdc(intptr_t hdc, intptr_t hdevice);
+        static intptr_t from_hwnd(intptr_t hwnd);
         static intptr_t from_image(intptr_t image);
         static void interpolation_mode(intptr_t handle, int32_t interpolation_mode);
         static float get_dpi_x(intptr_t handle);
