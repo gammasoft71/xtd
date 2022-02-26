@@ -237,17 +237,17 @@ void graphics::draw_bezier(const pen& pen, float x1, float y1, float x2, float y
 
 void graphics::draw_beziers(const pen& pen, std::vector<xtd::drawing::point>& points) {
   if (points.size() < 4 || points.size() % 3 != 1) throw argument_exception(csf_);
-  vector<point_f> points_f;
+  vector<point_f> beziers_points;
   for (auto pt : points)
-    points_f.push_back(point_f(pt));
-  draw_beziers(pen, points_f);
+    beziers_points.push_back(point_f(pt));
+  draw_beziers(pen, beziers_points);
 }
 
 void graphics::draw_beziers(const pen& pen, std::vector<xtd::drawing::point_f>& points) {
-  vector<pair<float, float>> points_f;
+  vector<pair<float, float>> beziers_points;
   for (auto pt: points)
-    points_f.push_back(make_pair(pt.x(), pt.y()));
-  native::graphics::draw_beziers(handle(), pen.handle(), points_f);
+    beziers_points.push_back(make_pair(pt.x(), pt.y()));
+  native::graphics::draw_beziers(handle(), pen.handle(), beziers_points);
 }
 
 void graphics::draw_close_curve(const pen& pen, std::vector<xtd::drawing::point>& points) {
@@ -398,12 +398,12 @@ void graphics::draw_image_disabled(const image& image, float x, float y, float b
   native::graphics::draw_image_disabled(handle(), image.handle(), to_pixels(x), to_pixels(y), brightness);
 }
 
-void graphics::draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& p1, const point& p2) {
-  draw_line(pen, p1.x(), p1.y(), p2.x(), p2.y());
+void graphics::draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& pt1, const point& pt2) {
+  draw_line(pen, pt1.x(), pt1.y(), pt2.x(), pt2.y());
 }
 
-void graphics::draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p1, const point_f& p2) {
-  draw_line(pen, p1.x(), p1.y(), p2.x(), p2.y());
+void graphics::draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& pt1, const point_f& pt2) {
+  draw_line(pen, pt1.x(), pt1.y(), pt2.x(), pt2.y());
 }
 
 void graphics::draw_line(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
@@ -414,8 +414,38 @@ void graphics::draw_line(const xtd::drawing::pen& pen, float x1, float y1, float
   native::graphics::draw_line(handle(), pen.handle(), to_pixels(x1), to_pixels(y1), to_pixels(x2), to_pixels(y2));
 }
 
-void graphics::draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& graphics_path) {
-  native::graphics::draw_path(handle(), pen.handle(), graphics_path.handle());
+void graphics::draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point>& points) {
+  vector<point_f> lines_points;
+  for (auto pt : points)
+    lines_points.push_back(point_f(pt));
+  draw_lines(pen, lines_points);
+}
+
+void graphics::draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points) {
+  vector<pair<float, float>> line_points;
+  for (auto pt: points)
+    line_points.push_back(make_pair(pt.x(), pt.y()));
+  native::graphics::draw_lines(handle(), pen.handle(), line_points);
+}
+
+void graphics::draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path&path) {
+  native::graphics::draw_path(handle(), pen.handle(), path.handle());
+}
+
+void graphics::draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
+  draw_pie(pen, rect.x(), rect.y(), rect.width(), rect.height(), static_cast<int32_t>(start_angle), static_cast<int32_t>(sweep_angle));
+}
+
+void graphics::draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
+  draw_pie(pen, rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+}
+
+void graphics::draw_pie(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
+  draw_pie(pen, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height), static_cast<float>(start_angle), static_cast<float>(sweep_angle));
+}
+
+void graphics::draw_pie(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {
+  native::graphics::draw_pie(handle(), pen.handle(), x, y, width, height, start_angle, sweep_angle);
 }
 
 void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p) {

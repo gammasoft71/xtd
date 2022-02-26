@@ -563,13 +563,89 @@ namespace xtd {
       /// @param rect The xtd::drawing::rectangle in which to draw the image.
       void draw_image_unscaled_and_clipped(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect);
 
-      void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& p1, const point& p2);
-      void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p1, const point_f& p2);
+      /// @brief Draws a line connecting two xtd::drawing::point structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line.
+      /// @param pt1 xtd::drawing::point structure that represents the first point to connect.
+      /// @param pt2 xtd::drawing::point structure that represents the second point to connect.
+      void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& pt1, const point& pt2);
+      /// @brief Draws a line connecting two xtd::drawing::point_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line.
+      /// @param pt1 xtd::drawing::point_f structure that represents the first point to connect.
+      /// @param pt2 xtd::drawing::point_f structure that represents the second point to connect.
+      void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& pt1, const point_f& pt2);
+      /// @brief Draws a line connecting the two points specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line.
+      /// @param x1 The x-coordinate of the first point.
+      /// @param y1 The y-coordinate of the first point.
+      /// @param x2 The x-coordinate of the second point.
+      /// @param y2 The y-coordinate of the second point.
+      /// @remarks This method draws a line connecting the two points specified by the x1, y1, x2, and y2 parameters.
       void draw_line(const xtd::drawing::pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
+      /// @brief Draws a line connecting the two points specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line.
+      /// @param x1 The x-coordinate of the first point.
+      /// @param y1 The y-coordinate of the first point.
+      /// @param x2 The x-coordinate of the second point.
+      /// @param y2 The y-coordinate of the second point.
+      /// @remarks This method draws a line connecting the two points specified by the x1, y1, x2, and y2 parameters.
       void draw_line(const xtd::drawing::pen& pen, float x1, float y1, float x2, float y2);
 
-      void draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& graphics_path);
+      /// @brief Draws a series of line segments that connect an array of xtd::drawing::point structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line segments.
+      /// @param points Array of xtd::drawing::point structures that represent the points to connect.
+      /// @remarks This method draws a series of lines connecting an array of ending points. The first two points in the array specify the first line. Each additional point specifies the end of a line segment whose starting point is the ending point of the previous line segment.
+      void draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point>& points);
+      /// @brief Draws a series of line segments that connect an array of xtd::drawing::point_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line segments.
+      /// @param points Array of xtd::drawing::point_f structures that represent the points to connect.
+      /// @remarks This method draws a series of lines connecting an array of ending points. The first two points in the array specify the first line. Each additional point specifies the end of a line segment whose starting point is the ending point of the previous line segment.
+      void draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points);
 
+      /// @brief Draws a xtd::drawing::drawing2d::graphics_path.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the path.
+      /// @param path xtd::drawing::drawing2d::graphics_path to draw.
+      /// @remarks The current transformation in the graphic context is applied to the xtd::drawing::drawing2d::graphics_path before it is drawn.
+      void draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& path);
+
+      /// @brief Draws a pie shape defined by an ellipse specified by a xtd::drawing::rectangle structure and two radial lines.
+      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param rect xtd::drawing::rectangle structure that represents the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
+      /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
+      /// @remarks This method draws a pie shape defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie shape consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
+      void draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle);
+      /// @brief Draws a pie shape defined by an ellipse specified by a xtd::drawing::rectangle_f structure and two radial lines.
+      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
+      /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
+      /// @remarks This method draws a pie shape defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie shape consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
+      void draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle);
+      /// @brief Draws a pie shape defined by an ellipse specified by a coordinate pair, a width, a height, and two radial lines.
+      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param width Width of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param heught Height of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
+      /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
+      /// @remarks This method draws a pie shape defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle described by the x, y, width, and height parameters. The pie shape consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
+      void draw_pie(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
+      /// @brief Draws a pie shape defined by an ellipse specified by a coordinate pair, a width, a height, and two radial lines.
+      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param width Width of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param heught Height of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
+      /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
+      /// @remarks This method draws a pie shape defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle described by the x, y, width, and height parameters. The pie shape consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
+      void draw_pie(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
+      
       void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p);
       void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p);
       void draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y);
