@@ -870,9 +870,43 @@ namespace xtd {
       /// @remarks A xtd::drawing::drawing2d::graphics_path consists of a series of line and curve segments. If the path represented by the path parameter is not closed, an additional segment is added from the last point to the first point to close the path.
       void fill_path(const xtd::drawing::brush& brush, const xtd::drawing::drawing2d::graphics_path& path);
       
+      /// @brief Fills the interior of a pie section defined by an ellipse specified by a xtd::drawing::rectangle structure and two radial lines.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle structure that represents the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param start_angle Angle in degrees measured clockwise from the x-axis to the first side of the pie section.
+      /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to the second side of the pie section.
+      /// @remarks This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle);
+      /// @brief Fills the interior of a pie section defined by an ellipse specified by a xtd::drawing::rectangle_f structure and two radial lines.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param start_angle Angle in degrees measured clockwise from the x-axis to the first side of the pie section.
+      /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to the second side of the pie section.
+      /// @remarks This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle);
+      /// @brief Fills the interior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param width Width of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param height Height of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param start_angle Angle in degrees measured clockwise from the x-axis to the first side of the pie section.
+      /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to the second side of the pie section.
+      /// @remarks This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void fill_pie(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
+      /// @brief Fills the interior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param width Width of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param height Height of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param start_angle Angle in degrees measured clockwise from the x-axis to the first side of the pie section.
+      /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to the second side of the pie section.
+      /// @remarks This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void fill_pie(const xtd::drawing::brush& brush, float x, float y, float width, float height, float start_angle, float sweep_angle);
 
       void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points);
