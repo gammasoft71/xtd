@@ -69,6 +69,9 @@ namespace xtd {
         static void fill_rectangle(intptr_t handle, intptr_t brush, float x, float y, float width, float height);
         static void fill_rectangles(intptr_t handle, intptr_t brush, std::vector<std::tuple<float, float, float, float>>& rects);
         static void fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, float y, float width, float height, float radius);
+        static void flush(intptr_t handle, int32_t intention);
+        static intptr_t from_hdc(intptr_t hdc);
+        static intptr_t from_hdc(intptr_t hdc, intptr_t hdevice);
         static intptr_t from_image(intptr_t image);
         static void interpolation_mode(intptr_t handle, int32_t interpolation_mode);
         static float get_dpi_x(intptr_t handle);
