@@ -4,6 +4,7 @@
 #include "../../../include/xtd/drawing/graphics.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
 #include <xtd/argument_exception.h>
+#include <xtd/as.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
@@ -200,7 +201,7 @@ void graphics::copy_from_screen(int32_t source_x, int32_t source_y, int32_t dest
 }
 
 void graphics::copy_from_screen(int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation) {
-  
+  native::graphics::copy_from_screen(handle(), source_x, source_y, destination_x, destination_y, block_region_size.width(), block_region_size.height(), static_cast<int32_t>(copy_pixel_operation));
 }
 
 void graphics::draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
@@ -212,7 +213,7 @@ void graphics::draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectan
 }
 
 void graphics::draw_arc(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
-  draw_arc(pen, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height), static_cast<float>(start_angle), static_cast<float>(sweep_angle));
+  draw_arc(pen, as<float>(x), as<float>(y), as<float>(width), as<float>(height), as<float>(start_angle), as<float>(sweep_angle));
 }
 
 void graphics::draw_arc(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {
@@ -228,7 +229,7 @@ void graphics::draw_bezier(const xtd::drawing::pen& pen, const xtd::drawing::poi
 }
 
 void graphics::draw_bezier(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4) {
-  draw_bezier(pen, static_cast<float>(x1), static_cast<float>(y1), static_cast<float>(x2), static_cast<float>(y2), static_cast<float>(x3), static_cast<float>(y3), static_cast<float>(x4), static_cast<float>(y4));
+  draw_bezier(pen, as<float>(x1), as<float>(y1), as<float>(x2), as<float>(y2), as<float>(x3), as<float>(y3), as<float>(x4), as<float>(y4));
 }
 
 void graphics::draw_bezier(const pen& pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
@@ -268,7 +269,7 @@ void graphics::draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point
 void graphics::draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension) {
   vector<pair<float, float>> closed_curve_points;
   for (auto pt : points)
-    closed_curve_points.push_back(make_pair(pt.x(), pt.y()));
+    closed_curve_points.push_back(make_pair(to_pixels(pt.x()), to_pixels(pt.y())));
   native::graphics::draw_closed_curve(handle(), pen.handle(), closed_curve_points, tension);
 }
 
@@ -307,7 +308,7 @@ void graphics::draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& po
   if (offset + number_of_segments > points.size() || number_of_segments == 0) throw argument_exception(csf_);
   vector<pair<float, float>> curve_points;
   for (auto index = 0U; index < number_of_segments; ++index)
-    curve_points.push_back(make_pair(points[offset + index].x(), points[offset + index].y()));
+    curve_points.push_back(make_pair(to_pixels(points[offset + index].x()), to_pixels(points[offset + index].y())));
   native::graphics::draw_curve(handle(), pen.handle(), curve_points, tension);
 }
 
@@ -320,7 +321,7 @@ void graphics::draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::re
 }
 
 void graphics::draw_ellipse(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height) {
-  draw_ellipse(pen, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height));
+  draw_ellipse(pen, as<float>(x), as<float>(y), as<float>(width), as<float>(height));
 }
 
 void graphics::draw_ellipse(const xtd::drawing::pen& pen, float x, float y, float width, float height) {
@@ -356,12 +357,12 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height) {
-  draw_image(image, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height));
+  draw_image(image, as<float>(x), as<float>(y), as<float>(width), as<float>(height));
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {
   if (size_f(width, height) == size_f(image.size()))  native::graphics::draw_image(handle(), image.handle(), to_pixels(x), to_pixels(y));
-  else native::graphics::draw_image(handle(), bitmap(image, size(static_cast<int32_t>(to_pixels(width)), static_cast<int32_t>(to_pixels(height)))).handle(), to_pixels(x), to_pixels(y));
+  else native::graphics::draw_image(handle(), bitmap(image, size(as<int32_t>(to_pixels(width)), as<int32_t>(to_pixels(height)))).handle(), to_pixels(x), to_pixels(y));
 }
 
 void graphics::draw_image(const image& image, int32_t x, int32_t y) {
@@ -369,7 +370,7 @@ void graphics::draw_image(const image& image, int32_t x, int32_t y) {
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y) {
-  draw_image(image, static_cast<int32_t>(x), static_cast<int32_t>(y));
+  draw_image(image, as<int32_t>(x), as<int32_t>(y));
 }
 
 void graphics::draw_image_unscaled(const xtd::drawing::image& image, const xtd::drawing::point& point) {
@@ -408,7 +409,7 @@ void graphics::draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point
 }
 
 void graphics::draw_line(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
-  draw_line(pen, static_cast<float>(x1), static_cast<float>(y1), static_cast<float>(x2), static_cast<float>(y2));
+  draw_line(pen, as<float>(x1), as<float>(y1), as<float>(x2), as<float>(y2));
 }
 
 void graphics::draw_line(const xtd::drawing::pen& pen, float x1, float y1, float x2, float y2) {
@@ -425,7 +426,7 @@ void graphics::draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::d
 void graphics::draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points) {
   vector<pair<float, float>> line_points;
   for (auto pt: points)
-    line_points.push_back(make_pair(pt.x(), pt.y()));
+    line_points.push_back(make_pair(to_pixels(pt.x()), to_pixels(pt.y())));
   native::graphics::draw_lines(handle(), pen.handle(), line_points);
 }
 
@@ -434,7 +435,7 @@ void graphics::draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawi
 }
 
 void graphics::draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
-  draw_pie(pen, rect.x(), rect.y(), rect.width(), rect.height(), static_cast<int32_t>(start_angle), static_cast<int32_t>(sweep_angle));
+  draw_pie(pen, as<float>(rect.x()), as<float>(rect.y()), as<float>(rect.width()), as<float>(rect.height()), start_angle, sweep_angle);
 }
 
 void graphics::draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
@@ -442,11 +443,11 @@ void graphics::draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectan
 }
 
 void graphics::draw_pie(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
-  draw_pie(pen, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height), static_cast<float>(start_angle), static_cast<float>(sweep_angle));
+  draw_pie(pen, as<float>(x), as<float>(y), as<float>(width), as<float>(height), as<float>(start_angle), as<float>(sweep_angle));
 }
 
 void graphics::draw_pie(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  native::graphics::draw_pie(handle(), pen.handle(), x, y, width, height, start_angle, sweep_angle);
+  native::graphics::draw_pie(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), start_angle, sweep_angle);
 }
 
 void graphics::draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point>& points) {
@@ -459,7 +460,7 @@ void graphics::draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd:
 void graphics::draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points) {
   vector<pair<float, float>> line_points;
   for (auto pt: points)
-    line_points.push_back(make_pair(pt.x(), pt.y()));
+    line_points.push_back(make_pair(to_pixels(pt.x()), to_pixels(pt.y())));
   native::graphics::draw_polygon(handle(), pen.handle(), line_points);
 }
 
@@ -472,7 +473,7 @@ void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::poin
 }
 
 void graphics::draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y) {
-  draw_point(pen, static_cast<float>(x), static_cast<float>(y));
+  draw_point(pen, as<float>(x), as<float>(y));
 }
 
 void graphics::draw_point(const xtd::drawing::pen& pen, float x, float y) {
@@ -487,7 +488,7 @@ void graphics::draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::
 }
 
 void graphics::draw_rectangle(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height) {
-  draw_rectangle(pen, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height));
+  draw_rectangle(pen, as<float>(x), as<float>(y), as<float>(width), as<float>(height));
 }
 
 void graphics::draw_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height) {
@@ -504,7 +505,7 @@ void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<x
 void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle_f>& rects) {
   vector<tuple<float, float, float, float>> rectangles;
   for (auto rect: rects)
-    rectangles.push_back(make_tuple(rect.x(), rect.y(), rect.width(), rect.height()));
+    rectangles.push_back(make_tuple(to_pixels(rect.x()), to_pixels(rect.y()), to_pixels(rect.width()), to_pixels(rect.height())));
   native::graphics::draw_rectangles(handle(), pen.handle(), rectangles);
 }
 
@@ -517,7 +518,7 @@ void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::d
 }
 
 void graphics::draw_rounded_rectangle(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
-  draw_rounded_rectangle(pen, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height), static_cast<float>(radius));
+  draw_rounded_rectangle(pen, as<float>(x), as<float>(y), as<float>(width), as<float>(height), as<float>(radius));
 }
 
 void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height, float radius) {
@@ -555,7 +556,7 @@ void graphics::draw_string(const ustring& s, const font& font, const brush& brus
         width -= (layout_rectangle.width() - line_size.width());
       }
       
-      if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(handle(), drawable_line, font.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+      if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(handle(), drawable_line, font.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), as<const solid_brush&>(brush).color().a(), as<const solid_brush&>(brush).color().r(), as<const solid_brush&>(brush).color().g(), as<const solid_brush&>(brush).color().b());
       else {
         /*
          for (auto index  = 0; index <hotkey_prefix_locations.size(); ++index) {
@@ -564,7 +565,7 @@ void graphics::draw_string(const ustring& s, const font& font, const brush& brus
          g.draw_string(text_without_hotkey_prefi.substring(hotkey_prefix_locations[index], chunk_size), font, solid_brush(text_color), button_rect, to_string_format(flags));
          }
          */
-        native::graphics::draw_string(handle(), drawable_line, font.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+        native::graphics::draw_string(handle(), drawable_line, font.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), as<const solid_brush&>(brush).color().a(), as<const solid_brush&>(brush).color().r(), as<const solid_brush&>(brush).color().g(), as<const solid_brush&>(brush).color().b());
       }
       
       y += line_size.height();
@@ -586,7 +587,7 @@ void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font
 
 void graphics::draw_string(const ustring& s, const font& font, const brush& brush, float x, float y, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
-    native::graphics::draw_string(handle(), s, font.handle(), to_pixels(x), to_pixels(y), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+    native::graphics::draw_string(handle(), s, font.handle(), to_pixels(x), to_pixels(y), as<const solid_brush&>(brush).color().a(), as<const solid_brush&>(brush).color().r(), as<const solid_brush&>(brush).color().g(), as<const solid_brush&>(brush).color().b());
 }
 
 void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {
@@ -627,7 +628,7 @@ void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<x
 void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension) {
   vector<pair<float, float>> closed_curve_points;
   for (auto pt : points)
-    closed_curve_points.push_back(make_pair(pt.x(), pt.y()));
+    closed_curve_points.push_back(make_pair(to_pixels(pt.x()), to_pixels(pt.y())));
   native::graphics::fill_closed_curve(handle(), brush.handle(), closed_curve_points, static_cast<int32_t>(fill_mode), tension);
 }
 
@@ -640,7 +641,7 @@ void graphics::fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing
 }
 
 void graphics::fill_ellipse(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height) {
-  fill_ellipse(brush, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height));
+  fill_ellipse(brush, as<float>(x), as<float>(y), as<float>(width), as<float>(height));
 }
 
 void graphics::fill_ellipse(const xtd::drawing::brush& brush, float x, float y, float width, float height) {
@@ -652,7 +653,7 @@ void graphics::fill_path(const brush& brush, const drawing2d::graphics_path& pat
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
-  fill_pie(brush, rect.x(), rect.y(), rect.width(), rect.height(), static_cast<int32_t>(start_angle), static_cast<int32_t>(sweep_angle));
+  fill_pie(brush, as<float>(rect.x()), as<float>(rect.y()), as<float>(rect.width()), as<float>(rect.height()), start_angle, sweep_angle);
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
@@ -660,7 +661,7 @@ void graphics::fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::re
 }
 
 void graphics::fill_pie(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
-  fill_pie(brush, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height), static_cast<float>(start_angle), static_cast<float>(sweep_angle));
+  fill_pie(brush, as<float>(x), as<float>(y), as<float>(width), as<float>(height), as<float>(start_angle), as<float>(sweep_angle));
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, float x, float y, float width, float height, float start_angle, float sweep_angle) {
@@ -676,7 +677,7 @@ void graphics::fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawi
 }
 
 void graphics::fill_rectangle(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height) {
-  fill_rectangle(brush, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height));
+  fill_rectangle(brush, as<float>(x), as<float>(y), as<float>(width), as<float>(height));
 }
 
 void graphics::fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height) {
@@ -696,7 +697,7 @@ void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, const xt
 }
 
 void graphics::fill_rounded_rectangle(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
-  fill_rounded_rectangle(brush, static_cast<float>(x), static_cast<float>(y), static_cast<float>(width), static_cast<float>(height), static_cast<float>(radius));
+  fill_rounded_rectangle(brush, as<float>(x), as<float>(y), as<float>(width), as<float>(height), as<float>(radius));
 }
 
 void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height, float radius) {
@@ -719,7 +720,7 @@ void graphics::rotate_transform(float angle) {
 }
 
 void graphics::translate_clip(int32_t dx, int32_t dy) {
-  translate_clip(static_cast<float>(dx), static_cast<float>(dy));
+  translate_clip(as<float>(dx), as<float>(dy));
 }
 
 void graphics::translate_clip(float dx, float dy) {
