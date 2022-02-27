@@ -792,6 +792,38 @@ void graphics::intersect_clip(const xtd::drawing::rectangle_f& rect) {
   intersect_clip(xtd::drawing::region(rect));
 }
 
+bool graphics::is_visible(const xtd::drawing::rectangle& rect) {
+  return clip().is_visible(rect, *this);
+}
+
+bool graphics::is_visible(const xtd::drawing::rectangle_f& rect) {
+  return clip().is_visible(rect, *this);
+}
+
+bool graphics::is_visible(int32_t x, int32_t y, int32_t width, int32_t height) {
+  return clip().is_visible(x, y, width, height, *this);
+}
+
+bool graphics::is_visible(float x, float y, float width, float height) {
+  return clip().is_visible(x, y, width, height, *this);
+}
+
+bool graphics::is_visible(const xtd::drawing::point& point) {
+  return clip().is_visible(point, *this);
+}
+
+bool graphics::is_visible(const xtd::drawing::point_f& point) {
+  return clip().is_visible(point, *this);
+}
+
+bool graphics::is_visible(int32_t x, int32_t y) {
+  return clip().is_visible(x, y, *this);
+}
+
+bool graphics::is_visible(float x, float y) {
+  return clip().is_visible(x, y, *this);
+}
+
 size_f graphics::measure_string(const ustring& text, const font& font) {
   float width = 0.0f;
   float height = 0.0f;
