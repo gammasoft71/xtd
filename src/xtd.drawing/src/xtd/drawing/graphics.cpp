@@ -600,8 +600,11 @@ void graphics::exclude_clip(const xtd::drawing::region& region) {
 }
 
 void graphics::exclude_clip(const xtd::drawing::rectangle& rect) {
-  data_->clip.exclude(rect);
-  native::graphics::clip(handle(), data_->clip.handle());
+  exclude_clip(xtd::drawing::region(rect));
+}
+
+void graphics::exclude_clip(const xtd::drawing::rectangle_f& rect) {
+  exclude_clip(xtd::drawing::region(rect));
 }
 
 void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points) {
@@ -774,6 +777,19 @@ xtd::drawing::color graphics::get_nearest_color(const xtd::drawing::color& color
   uint8_t a, r, g, b;
   native::graphics::get_nearest_color(handle(), color.a(), color.r(), color.g(), color.b(), a, r, g, b);
   return xtd::drawing::color::from_argb(a, r, g, b);
+}
+
+void graphics::intersect_clip(const xtd::drawing::region& region) {
+  data_->clip.intersect(region);
+  native::graphics::clip(handle(), data_->clip.handle());
+}
+
+void graphics::intersect_clip(const xtd::drawing::rectangle& rect) {
+  intersect_clip(xtd::drawing::region(rect));
+}
+
+void graphics::intersect_clip(const xtd::drawing::rectangle_f& rect) {
+  intersect_clip(xtd::drawing::region(rect));
 }
 
 size_f graphics::measure_string(const ustring& text, const font& font) {

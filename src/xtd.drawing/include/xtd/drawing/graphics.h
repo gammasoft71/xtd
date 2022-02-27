@@ -788,7 +788,11 @@ namespace xtd {
       /// @param rect xtd::drawing::rectangle that specifies the rectangle to exclude from the clip region.
       /// @remarks This method excludes the area specified by the rect parameter from the current clip region and assigns the resulting area to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics.
       void exclude_clip(const xtd::drawing::rectangle& rect);
-      
+      /// @brief Updates the clip region of this xtd::drawing::graphics to exclude the area specified by a xtd::drawing::rectangle_f.
+      /// @param rect xtd::drawing::rectangle_f that specifies the rectangle to exclude from the clip region.
+      /// @remarks This method excludes the area specified by the rect parameter from the current clip region and assigns the resulting area to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics.
+      void exclude_clip(const xtd::drawing::rectangle_f& rect);
+
       /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures.
       /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point structures that define the spline.
@@ -1059,6 +1063,19 @@ namespace xtd {
       /// @return A xtd::drawing::color structure that represents the nearest color to the one specified with the color parameter.
       xtd::drawing::color get_nearest_color(const xtd::drawing::color& color) const;
       
+      /// @brief Updates the clip region of this xtd::drawing::graphics to the intersection of the current clip region and the specified xtd::drawing::region.
+      /// @param region xtd::drawing::region to intersect with the current region.
+      /// @remarks This method assigns to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics the area represented by the intersection of the current clip region and the region specified by the region parameter.
+      void intersect_clip(const xtd::drawing::region& region);
+      /// @brief Updates the clip region of this xtd::drawing::graphics to the intersection of the current clip region and the specified xtd::drawing::rectangle structure.
+      /// @param rect xtd::drawing::rectangle structure to intersect with the current clip region.
+      /// @remarks This method assigns to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics the area represented by the intersection of the current clip region and the rectangle specified by the rect parameter.
+      void intersect_clip(const xtd::drawing::rectangle& rect);
+      /// @brief Updates the clip region of this xtd::drawing::graphics to the intersection of the current clip region and the specified xtd::drawing::rectangle_f structure.
+      /// @param rect xtd::drawing::rectangle_f structure to intersect with the current clip region.
+      /// @remarks This method assigns to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics the area represented by the intersection of the current clip region and the rectangle specified by the rect parameter.
+      void intersect_clip(const xtd::drawing::rectangle_f& rect);
+
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
       void rotate_transform(float angle);
