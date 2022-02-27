@@ -596,10 +596,12 @@ void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font
 
 void graphics::exclude_clip(const xtd::drawing::region& region) {
   data_->clip.exclude(region);
+  native::graphics::clip(handle(), data_->clip.handle());
 }
 
 void graphics::exclude_clip(const xtd::drawing::rectangle& rect) {
   data_->clip.exclude(rect);
+  native::graphics::clip(handle(), data_->clip.handle());
 }
 
 void graphics::fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points) {
@@ -762,6 +764,10 @@ graphics graphics::from_hwnd(intptr_t hwnd) {
 
 graphics graphics::from_image(const image& image) {
   return graphics(native::graphics::from_image(image.handle()));
+}
+
+intptr_t graphics::get_hdc() const {
+  return native::graphics::get_hdc(handle());
 }
 
 size_f graphics::measure_string(const ustring& text, const font& font) {
