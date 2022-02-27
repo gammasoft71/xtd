@@ -1117,6 +1117,10 @@ namespace xtd {
       /// @return true if the point defined by the x and y parameters is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
       bool is_visible(float x, float y);
 
+      /// @brief Measures the specified string when drawn with the specified Font.
+      /// @param text xtd::ustring to measure.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
       void rotate_transform(float angle);
