@@ -162,14 +162,17 @@ void graphics::clip(intptr_t handle, intptr_t region) {
 }
 
 void graphics::compositing_mode(intptr_t handle, int32_t compositing_mode) {
+  if (!handle) return;
   // Not defined in wxWidgets
 }
 
 void graphics::compositing_quality(intptr_t handle, int32_t compositing_quality) {
+  if (!handle) return;
   // Not defined in wxWidgets
 }
 
 void graphics::copy_from_screen(intptr_t handle, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_width, int32_t block_region_height, int32_t copy_pixel_operation) {
+  if (!handle) return;
   wxScreenDC screen_dc;
   wxRasterOperationMode raster_operation_mode = wxRasterOperationMode::wxCOPY;
   switch (copy_pixel_operation) {
@@ -300,6 +303,7 @@ void graphics::draw_line(intptr_t handle, intptr_t pen, float x1, float y1, floa
 }
 
 void graphics::draw_lines(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points) {
+  if (!handle) return;
   std::vector<wxPoint2DDouble> wx_points;
   for (auto [x, y] : points)
     wx_points.push_back(wxPoint(as<double>(x), as<double>(y)));
@@ -330,6 +334,7 @@ void graphics::draw_pie(intptr_t handle, intptr_t pen, float x, float y, float w
 }
 
 void graphics::draw_polygon(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points) {
+  if (!handle) return;
   std::vector<wxPoint2DDouble> wx_points;
   for (auto [x, y] : points)
     wx_points.push_back(wxPoint(as<double>(x), as<double>(y)));
@@ -490,6 +495,7 @@ void graphics::fill_pie(intptr_t handle, intptr_t brush, float x, float y, float
 }
 
 void graphics::fill_polygon(intptr_t handle, intptr_t brush, const std::vector<std::pair<float, float>>& points, int32_t fill_mode) {
+  if (!handle) return;
   /// @todo Using graphics_path when done...
   std::vector<wxPoint2DDouble> wx_points;
   for (auto [x, y] : points)
@@ -618,6 +624,7 @@ void graphics::fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, 
 }
 
 void graphics::flush(intptr_t handle, int32_t intention) {
+  if (!handle) return;
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->Flush();
 }
 
@@ -642,18 +649,26 @@ intptr_t graphics::from_image(intptr_t image) {
 }
 
 float graphics::get_dpi_x(intptr_t handle) {
+  if (!handle) return 0.0f;
   double dpi_x = 0.0, dpi_y = 0.0;
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->GetDPI(&dpi_x, &dpi_y);
   return static_cast<float>(dpi_x);
 }
 
 float graphics::get_dpi_y(intptr_t handle) {
+  if (!handle) return 0.0f;
   double dpi_x = 0.0, dpi_y = 0.0;
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->GetDPI(&dpi_x, &dpi_y);
   return static_cast<float>(dpi_y);
 }
 
+intptr_t graphics::get_hdc(intptr_t handle) {
+  if (!handle) return 0;
+  return reinterpret_cast<intptr_t>(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().GetHandle());
+}
+
 void graphics::interpolation_mode(intptr_t handle, int32_t interpolation_mode) {
+  if (!handle) return;
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   switch (interpolation_mode) {
     case IM_INVALID: break;
@@ -695,6 +710,7 @@ void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t fon
 }
 
 void graphics::pixel_offset_mode(intptr_t handle, int32_t pixel_offset_mode) {
+  if (!handle) return;
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   switch (pixel_offset_mode) {
     case PO_INVALID: break;
@@ -708,11 +724,13 @@ void graphics::pixel_offset_mode(intptr_t handle, int32_t pixel_offset_mode) {
 }
 
 void graphics::rotate_transform(intptr_t handle, float angle) {
+  if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Rotate(angle);
 }
 
 void graphics::smoothing_mode(intptr_t handle, int32_t smoothing_mode) {
+  if (!handle) return;
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   switch (smoothing_mode) {
     case SM_INVALID: break;
@@ -726,21 +744,24 @@ void graphics::smoothing_mode(intptr_t handle, int32_t smoothing_mode) {
 }
 
 void graphics::text_contrast(intptr_t handle, int32_t text_contrast) {
+  if (!handle) return;
   // Not defined in wxWidgets
 }
 
 void graphics::text_rendering_hint(intptr_t handle, int32_t text_rendering_hint) {
+  if (!handle) return;
   // Not defined in wxWidgets
 }
 
 void graphics::translate_clip(intptr_t handle, float dx, float dy) {
+  if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Translate(dx, dy);
 }
 
 void graphics::visible_clip_bounds(intptr_t handle, float& x, float& y, float& width, float& height) {
   double wx_x = 0.0, wx_y = 0.0, wx_width = 0.0, wx_height = 0.0;
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->GetClipBox(&wx_x, &wx_y, &wx_width, &wx_height);
+  if (handle) reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->GetClipBox(&wx_x, &wx_y, &wx_width, &wx_height);
   x = as<float>(wx_x);
   y = as<float>(wx_y);
   width = as<float>(wx_width);

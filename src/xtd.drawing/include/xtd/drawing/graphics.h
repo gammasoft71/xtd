@@ -1048,6 +1048,12 @@ namespace xtd {
       /// * xtd::drawing::imaging::pixel_format::format16bpp_gray_scale
       static graphics from_image(const xtd::drawing::image& image);
       
+      /// @brief Gets the handle to the device context associated with this xtd::drawing::graphics.
+      /// @return Handle to the device context associated with this xtd::drawing::graphics.
+      /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
+      /// @remarks Calls to the xtd::drawing::graphics::get_hdc and ReleaseHdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the Graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the Graphics of the hdc parameter in subsequent operations.
+      intptr_t get_hdc() const;
+      
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
       void rotate_transform(float angle);
