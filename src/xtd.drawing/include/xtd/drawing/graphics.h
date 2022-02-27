@@ -1054,6 +1054,11 @@ namespace xtd {
       /// @remarks Calls to the xtd::drawing::graphics::get_hdc and ReleaseHdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the Graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the Graphics of the hdc parameter in subsequent operations.
       intptr_t get_hdc() const;
       
+      /// @brief Gets the nearest color to the specified xtd::drawing::color structure.
+      /// @param color xtd::drawing::color structure for which to find a match.
+      /// @return A xtd::drawing::color structure that represents the nearest color to the one specified with the color parameter.
+      xtd::drawing::color get_nearest_color(const xtd::drawing::color& color) const;
+      
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
       void rotate_transform(float angle);

@@ -667,6 +667,14 @@ intptr_t graphics::get_hdc(intptr_t handle) {
   return reinterpret_cast<intptr_t>(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().GetHandle());
 }
 
+void graphics::get_nearest_color(intptr_t handle, uint8_t original_a, uint8_t original_r, uint8_t original_g, uint8_t original_b, uint8_t& nearest_a, uint8_t& nearest_r, uint8_t& nearest_g, uint8_t& nearest_b) {
+  // Not defined in wxWidgets
+  nearest_a = original_a;
+  nearest_r = original_r;
+  nearest_g = original_g;
+  nearest_b = original_b;
+}
+
 void graphics::interpolation_mode(intptr_t handle, int32_t interpolation_mode) {
   if (!handle) return;
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
