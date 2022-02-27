@@ -831,6 +831,10 @@ size_f graphics::measure_string(const ustring& text, const font& font) {
   return size_f(to_page_unit(width), to_page_unit(height));
 }
 
+void graphics::release_hdc(intptr_t hdc) {
+  native::graphics::release_hdc(handle(), hdc);
+}
+
 void graphics::rotate_transform(float angle) {
   native::graphics::rotate_transform(handle(), angle);
 }
