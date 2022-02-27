@@ -731,6 +731,10 @@ void graphics::pixel_offset_mode(intptr_t handle, int32_t pixel_offset_mode) {
   }
 }
 
+void graphics::release_hdc(intptr_t handle, intptr_t hdc) {
+  // Not defined in wxWidgets
+}
+
 void graphics::rotate_transform(intptr_t handle, float angle) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
