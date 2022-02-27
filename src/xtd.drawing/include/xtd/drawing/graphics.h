@@ -1076,6 +1076,47 @@ namespace xtd {
       /// @remarks This method assigns to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics the area represented by the intersection of the current clip region and the rectangle specified by the rect parameter.
       void intersect_clip(const xtd::drawing::rectangle_f& rect);
 
+      /// @brief Indicates whether the rectangle specified by a xtd::drawing::rectangle structure is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param rect xtd::drawing::rectangle structure to test for visibility.
+      /// @return true if the rectangle specified by the rect parameter is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(const xtd::drawing::rectangle& rect);
+      /// @brief Indicates whether the rectangle specified by a xtd::drawing::rectangle_f structure is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param rect xtd::drawing::rectangle_f structure to test for visibility.
+      /// @return true if the rectangle specified by the rect parameter is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(const xtd::drawing::rectangle_f& rect);
+      /// @brief Indicates whether the rectangle specified by a pair of coordinates, a width, and a height is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to test for visibility.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to test for visibility.
+      /// @param width Width of the rectangle to test for visibility.
+      /// @param height Height of the rectangle to test for visibility.
+      /// @return true if the rectangle defined by the x, y, width, and height parameters is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(int32_t x, int32_t y, int32_t width, int32_t height);
+      /// @brief Indicates whether the rectangle specified by a pair of coordinates, a width, and a height is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to test for visibility.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to test for visibility.
+      /// @param width Width of the rectangle to test for visibility.
+      /// @param height Height of the rectangle to test for visibility.
+      /// @return true if the rectangle defined by the x, y, width, and height parameters is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(float x, float y, float width, float height);
+      /// @brief ndicates whether the specified xtd::drawing::point structure is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param point xtd::drawing::point structure to test for visibility.
+      /// @return true if the point specified by the point parameter is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(const xtd::drawing::point& point);
+      /// @brief ndicates whether the specified xtd::drawing::point_f structure is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param point xtd::drawing::point_f structure to test for visibility.
+      /// @return true if the point specified by the point parameter is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(const xtd::drawing::point_f& point);
+      /// @brief Indicates whether the point specified by a pair of coordinates is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param x The x-coordinate of the point to test for visibility.
+      /// @param y The y-coordinate of the point to test for visibility.
+      /// @return true if the point defined by the x and y parameters is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(int32_t x, int32_t y);
+      /// @brief Indicates whether the point specified by a pair of coordinates is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param x The x-coordinate of the point to test for visibility.
+      /// @param y The y-coordinate of the point to test for visibility.
+      /// @return true if the point defined by the x and y parameters is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(float x, float y);
+
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
       void rotate_transform(float angle);
