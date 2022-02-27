@@ -618,7 +618,7 @@ void graphics::fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, 
 }
 
 void graphics::flush(intptr_t handle, int32_t intention) {
-  // Not defined in wxWidgets
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->Flush();
 }
 
 intptr_t graphics::from_hdc(intptr_t hdc) {
