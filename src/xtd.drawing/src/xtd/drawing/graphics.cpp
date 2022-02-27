@@ -770,6 +770,12 @@ intptr_t graphics::get_hdc() const {
   return native::graphics::get_hdc(handle());
 }
 
+xtd::drawing::color graphics::get_nearest_color(const xtd::drawing::color& color) const {
+  uint8_t a, r, g, b;
+  native::graphics::get_nearest_color(handle(), color.a(), color.r(), color.g(), color.b(), a, r, g, b);
+  return xtd::drawing::color::from_argb(a, r, g, b);
+}
+
 size_f graphics::measure_string(const ustring& text, const font& font) {
   float width = 0.0f;
   float height = 0.0f;
