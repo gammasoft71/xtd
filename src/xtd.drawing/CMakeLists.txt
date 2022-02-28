@@ -107,6 +107,7 @@ add_sources(
   src/xtd/drawing/system_brushes.cpp
   src/xtd/drawing/system_colors.cpp
   src/xtd/drawing/system_fonts.cpp
+  src/xtd/drawing/system_icons.cpp
   src/xtd/drawing/system_images.cpp
   src/xtd/drawing/system_pens.cpp
   src/xtd/drawing/texture_brush.cpp
