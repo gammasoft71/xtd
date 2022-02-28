@@ -14,6 +14,7 @@ add_sources(
   include/xtd/drawing//brushes.h
   include/xtd/drawing/color.h
   include/xtd/drawing/colors.h
+  include/xtd/drawing/copy_pixel_operation.h
   include/xtd/drawing/dash_style.h
   include/xtd/drawing/font.h
   include/xtd/drawing/font_family.h
@@ -50,6 +51,7 @@ add_sources(
   include/xtd/drawing/drawing2d/compositing_mode.h
   include/xtd/drawing/drawing2d/compositing_quality.h
   include/xtd/drawing/drawing2d/fill_mode.h
+  include/xtd/drawing/drawing2d/flush_intention.h
   include/xtd/drawing/drawing2d/gradient_stop_collection.h
   include/xtd/drawing/drawing2d/gradient_stop.h
   include/xtd/drawing/drawing2d/graphics_path.h
@@ -105,6 +107,7 @@ add_sources(
   src/xtd/drawing/system_brushes.cpp
   src/xtd/drawing/system_colors.cpp
   src/xtd/drawing/system_fonts.cpp
+  src/xtd/drawing/system_icons.cpp
   src/xtd/drawing/system_images.cpp
   src/xtd/drawing/system_pens.cpp
   src/xtd/drawing/texture_brush.cpp

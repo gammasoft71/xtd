@@ -9,8 +9,10 @@ add_sources(
   include/xtd/xtd.drawing.native
   include/xtd/xtd.drawing.native.h
   include/xtd/drawing/native/brush.h
+  include/xtd/drawing/native/copy_pixel_operations.h
   include/xtd/drawing/native/compositing_modes.h
   include/xtd/drawing/native/compositing_qualities.h
+  include/xtd/drawing/native/flush_intentions.h
   include/xtd/drawing/native/font.h
   include/xtd/drawing/native/font_family.h
   include/xtd/drawing/native/frame_dimension.h
