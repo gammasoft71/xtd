@@ -35,25 +35,25 @@ namespace xtd {
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
-      static xtd::drawing::size default_size() {return {32, 32};}
+      static xtd::drawing::size default_size() noexcept;
       /// @brief Get the image loading.
       /// @return The image loading.
       /// @remarks This is mage can be used when an image is loading.
-      static xtd::drawing::image image_loading() {return image_loading(default_size());}
+      static xtd::drawing::image image_loading() noexcept;
       /// @brief Get the image loading with specified size.
       /// @param size The system image size in pixels.
       /// @return The image loading.
       /// @remarks This is mage can be used when an image is loading.
-      static xtd::drawing::image image_loading(const xtd::drawing::size& size) {return system_images::from_name("image-loading", size);}
+      static xtd::drawing::image image_loading(const xtd::drawing::size& size) noexcept ;
       /// @brief Get the image missing.
       /// @return The image missing.
       /// @remarks This is mage can be used when an image is missing.
-      static xtd::drawing::image image_missing() {return image_missing(default_size());}
+      static xtd::drawing::image image_missing() noexcept;
       /// @brief Get the image missing with specified size.
       /// @param size The system image size in pixels.
       /// @return The image missing.
       /// @remarks This is mage can be used when an image is missing.
-      static xtd::drawing::image image_missing(const xtd::drawing::size& size) {return from_name("image-missing", size);}
+      static xtd::drawing::image image_missing(const xtd::drawing::size& size) noexcept;
       
       /// @brief Get the image context.
       /// @return The image context.
@@ -74,11 +74,11 @@ namespace xtd {
       /// | Status        | Icons for presenting status to the user. This context contains icons for warning and error dialogs, as well as for the current weather, appointment alarms, and battery status.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
       /// | xtd           | Icons for representinf xtd libraries and products.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
       /// @remarks See <a href="https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html">Icon Naming Specification</a> for more information.
-      static std::vector<xtd::ustring> contexts();
-      static std::map<xtd::ustring, std::vector<xtd::ustring>> context_names();
-      static std::vector<xtd::ustring> names();
-      static std::vector<xtd::ustring> names(const xtd::ustring& context) {return context_names()[context];}
-      static std::vector<xtd::drawing::size> sizes();
+      static std::vector<xtd::ustring> contexts() noexcept;
+      static std::map<xtd::ustring, std::vector<xtd::ustring>> context_names() noexcept;
+      static std::vector<xtd::ustring> names() noexcept;
+      static std::vector<xtd::ustring> names(const xtd::ustring& context) noexcept;
+      static std::vector<xtd::drawing::size> sizes() noexcept;
       /// @}
       
       /// @name Methods
@@ -89,19 +89,19 @@ namespace xtd {
       /// @return An xtd::drawing::image object that contains the system image from specified name.
       /// @remarks The theme is the default system theme.
       /// @remarks The size is the default size (32 x 32).
-      static xtd::drawing::image from_name(const xtd::ustring& name) {return from_name(default_theme(), name, default_size());}
+      static xtd::drawing::image from_name(const xtd::ustring& name);
       /// @brief Gets system image from specified name and size.
       /// @param name The system image name.
       /// @param size The system image size in pixels.
       /// @return An xtd::drawing::image object that contains the system image from specified name.
       /// @remarks The theme is the default system theme.
-      static xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size) {return from_name(default_theme(), name, size);}
+      static xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size);
       /// @brief Gets system image from specified them and name.
       /// @param theme The system image theme.
       /// @param name The system image name.
       /// @return An xtd::drawing::image object that contains the system image from specified name.
       /// @remarks The size is the default size in pixels (32 x 32).
-      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name) {return from_name(theme, name, default_size());}
+      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name);
       /// @brief Gets system image from specified theme, name and size.
       /// @param theme The system image theme.
       /// @param name The system image name.
@@ -112,9 +112,9 @@ namespace xtd {
       
     private:
       friend class system_icons;
-      static xtd::ustring default_theme();
-      static xtd::ustring fallback_theme();
-      static std::vector<xtd::ustring> themes();
+      static xtd::ustring default_theme() noexcept;
+      static xtd::ustring fallback_theme() noexcept;
+      static std::vector<xtd::ustring> themes() noexcept;
     };
   }
 }
