@@ -14,12 +14,6 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace {
-  static float degrees_to_radians(float degrees) {
-    return static_cast<float>(M_PI / 180 * degrees);
-  }
-}
-
 loading_indicator::loading_indicator() {
   set_can_focus(false);
   timer_.interval_milliseconds(interval_);
@@ -52,8 +46,8 @@ void loading_indicator::on_handle_created(const event_args& e) {
 
 void loading_indicator::on_paint(paint_event_args& e) {
   if (loading_indicator_style_ != xtd::forms::loading_indicator_style::system) {
-    e.graphics().translate_clip(e.clip_rectangle().width() / 2, e.clip_rectangle().height() / 2);
-    const float angle = degrees_to_radians(360.f / intervals_);
+    e.graphics().translate_transform(e.clip_rectangle().width() / 2, e.clip_rectangle().height() / 2);
+    const float angle = -360.f / intervals_;
     e.graphics().rotate_transform(frame_ * angle);
     const float height = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / radius_factor_;
     const float width = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / radius_factor_;
@@ -71,7 +65,6 @@ void loading_indicator::on_timer_tick(object& timer, const xtd::event_args& e) {
   if (++frame_ == intervals_) frame_ = 0;
   if (control_appearance() == forms::control_appearance::standard) invalidate();
 }
-
 
 void loading_indicator::start() {
   is_running_ = true;

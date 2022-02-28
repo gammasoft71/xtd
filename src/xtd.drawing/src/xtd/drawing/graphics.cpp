@@ -835,16 +835,35 @@ void graphics::release_hdc(intptr_t hdc) {
   native::graphics::release_hdc(handle(), hdc);
 }
 
+void graphics::reset_clip() {
+  data_->clip.make_infinite();
+  native::graphics::clip(handle(), data_->clip.handle());
+}
+
+void graphics::reset_transform() {
+  native::graphics::reset_transform(handle());
+}
+
 void graphics::rotate_transform(float angle) {
   native::graphics::rotate_transform(handle(), angle);
 }
 
+void graphics::scale_transform(float sx, float sy) {
+  native::graphics::scale_transform(handle(), sx, sy);
+}
+
 void graphics::translate_clip(int32_t dx, int32_t dy) {
-  translate_clip(as<float>(dx), as<float>(dy));
+  data_->clip.translate(dx, dy);
+  native::graphics::clip(handle(), clip().handle());
 }
 
 void graphics::translate_clip(float dx, float dy) {
-  native::graphics::translate_clip(handle(), to_pixels(dx), to_pixels(dy));
+  data_->clip.translate(dx, dy);
+  native::graphics::clip(handle(), clip().handle());
+}
+
+void graphics::translate_transform(float dx, float dy) {
+  native::graphics::translate_transform(handle(), to_pixels(dx), to_pixels(dy));
 }
 
 float graphics::to_page_unit(float value) const {

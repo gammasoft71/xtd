@@ -1123,18 +1123,46 @@ namespace xtd {
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
-      /// @brief Releases a device context handle obtained by a previous call to the GetHdc() method of this Graphics.
-      /// @param hdc Handle to a device context obtained by a previous call to the GetHdc() method of this Graphics.
+      /// @brief Releases a device context handle obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
+      /// @param hdc Handle to a device context obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
       /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
       /// @remarks Calls to the xtd::drawing::graphics::get_hdc and ReleaseHdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the Graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the Graphics of the hdc parameter in subsequent operations.
       void release_hdc(intptr_t hdc);
       
+      /// @brief Resets the clip region of this xtd::drawing::graphics to an infinite region.
+      /// @remarks When the clipping region of a xtd::drawing::graphics is infinite, items that this xtd::drawing::graphics draws are not clipped.
+      void reset_clip();
+
+      /// @brief Resets the world transformation matrix of this xtd::drawing::graphics to the identity matrix.
+      /// @remarks The identity matrix represents a transformation with no scaling, rotation, or translation. Resetting the world transformation of this xtd::drawing::graphics to the identity matrix means that its world transformation does not change the geometry of transformed items.
+      void reset_transform();
+      
+      /// @brief Applies the specified rotation to the transformation matrix of this xtd::drawing::graphics.
+      /// @param angle Angle of rotation in degrees.
+      /// @remarks The rotation operation consists of multiplying the transformation matrix by a matrix whose elements are derived from the angle parameter. This method applies the rotation by prepending it to the transformation matrix.
       void rotate_transform(float angle);
-      
+
+      /// @brief Applies the specified scaling operation to the transformation matrix of this xtd::drawing::graphics by prepending it to the object's transformation matrix.
+      /// @param sx Scale factor in the x direction.
+      /// @param sy Scale factor in the y direction.
+      /// @remarks The scaling operation consists of multiplying the transformation matrix by a diagonal matrix whose elements are (sx, sy, 1). This method prepends the transformation matrix of the xtd::drawing::graphics by the scaling matrix.
+      void scale_transform(float sx, float sy);
+
+      /// @brief Translates the clipping region of this xtd::drawing::graphics by specified amounts in the horizontal and vertical directions.
+      /// @param dx The x-coordinate of the translation.
+      /// @param dy The y-coordinate of the translation.
       void translate_clip(int32_t dx, int32_t dy);
-      
+      /// @brief Translates the clipping region of this xtd::drawing::graphics by specified amounts in the horizontal and vertical directions.
+      /// @param dx The x-coordinate of the translation.
+      /// @param dy The y-coordinate of the translation.
       void translate_clip(float dx, float dy);
-      
+
+      /// @brief Changes the origin of the coordinate system by prepending the specified translation to the transformation matrix of this xtd::drawing::graphics.
+      /// @param dx The x-coordinate of the translation.
+      /// @param dy The y-coordinate of the translation.
+      /// @remarks The translation operation consists of multiplying the transformation matrix by a matrix whose translation part is the dx and dy parameters. This method prepends or appends the transformation matrix of the xtd::drawing::graphics by the translation matrix according to the order parameter.
+      void translate_transform(float dx, float dy);
+
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       /// @}
       
