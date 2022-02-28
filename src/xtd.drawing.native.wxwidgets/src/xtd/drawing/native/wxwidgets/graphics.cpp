@@ -3,6 +3,7 @@
 #include <xtd/argument_exception.h>
 #include <xtd/as.h>
 #include <xtd/convert_string.h>
+#include <xtd/math.h>
 #include <xtd/ustring.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
@@ -735,10 +736,22 @@ void graphics::release_hdc(intptr_t handle, intptr_t hdc) {
   // Not defined in wxWidgets
 }
 
+void graphics::reset_transform(intptr_t handle) {
+  if (!handle) return;
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+  graphics.SetTransform(graphics.CreateMatrix());
+}
+
 void graphics::rotate_transform(intptr_t handle, float angle) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-  graphics.Rotate(angle);
+  graphics.Rotate(math::degrees_to_radians(-angle));
+}
+
+void graphics::scale_transform(intptr_t handle, float sx, float sy) {
+  if (!handle) return;
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+  graphics.Scale(sx, sy);
 }
 
 void graphics::smoothing_mode(intptr_t handle, int32_t smoothing_mode) {
@@ -765,7 +778,7 @@ void graphics::text_rendering_hint(intptr_t handle, int32_t text_rendering_hint)
   // Not defined in wxWidgets
 }
 
-void graphics::translate_clip(intptr_t handle, float dx, float dy) {
+void graphics::translate_transform(intptr_t handle, float dx, float dy) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Translate(dx, dy);
