@@ -46,7 +46,7 @@ void loading_indicator::on_handle_created(const event_args& e) {
 
 void loading_indicator::on_paint(paint_event_args& e) {
   if (loading_indicator_style_ != xtd::forms::loading_indicator_style::system) {
-    e.graphics().translate_transform(e.clip_rectangle().width() / 2, e.clip_rectangle().height() / 2);
+    e.graphics().translate_transform(e.clip_rectangle().width() / 2.0f, e.clip_rectangle().height() / 2.0f);
     const float angle = -360.f / intervals_;
     e.graphics().rotate_transform(frame_ * angle);
     const float height = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / radius_factor_;
