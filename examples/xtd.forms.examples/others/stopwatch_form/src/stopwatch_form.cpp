@@ -17,7 +17,7 @@ public:
     maximize_box(false);
     
     watch_panel.parent(*this);
-    watch_panel.border_style(forms::border_style::bevel_sunken);
+    watch_panel.border_style(forms::border_style::bevel_inset);
     watch_panel.bounds({20, 10, 235, 50});
     watch_panel.back_color(drawing::color::average(drawing::color::black, drawing::color::lime, 0.25));
     watch_panel.fore_color(drawing::color::lime);
