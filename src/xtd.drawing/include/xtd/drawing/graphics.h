@@ -9,6 +9,7 @@
 #include <xtd/ustring.h>
 #include "../drawing_export.h"
 #include "brush.h"
+#include "copy_pixel_operation.h"
 #include "solid_brush.h"
 #include "color.h"
 #include "font.h"
@@ -24,6 +25,7 @@
 #include "size_f.h"
 #include "drawing2d/compositing_mode.h"
 #include "drawing2d/compositing_quality.h"
+#include "drawing2d/flush_intention.h"
 #include "drawing2d/interpolation_mode.h"
 #include "drawing2d/graphics_path.h"
 #include "drawing2d/pixel_offset_mode.h"
@@ -192,6 +194,12 @@ namespace xtd {
       /// @remarks The text rendering hint specifies whether text renders with antialiasing.
       /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
       graphics& text_rendering_hint(xtd::drawing::text::text_rendering_hint value);
+      
+      /// @brief Gets the bounding rectangle of the visible clipping region of this xtd::drawing::graphics.
+      /// @return A xtd::drawing::rectangle_f structure that represents a bounding rectangle for the visible clipping region of this xtd::drawing::graphics.
+      /// @remarks The unit for resulting rectangle is designated by the xtd::drawing::graphics::page_unit property. The default unit is pixels. A xtd::drawing::graphics is typically associated with a control and the origin of the rectangle will be relative to the client area of that control.
+      /// @remarks The visible clipping region is the intersection of the clipping region of this xtd::drawing::graphics::graphics and the clipping region of the window.
+      xtd::drawing::rectangle_f visible_clip_bounds() const noexcept;
       /// @}
       
       /// @name Methods
@@ -201,6 +209,37 @@ namespace xtd {
       /// @param color xtd::drawing::color structure that represents the background color of the drawing surface.
       void clear(const color& color);
       
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
+      /// @param upper_left_source The point at the upper-left corner of the source rectangle.
+      /// @param upper_left_destination The point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @remarks The xtd::drawing::graphics::copy_from_screen methods are useful for layering one image on top of another. To specify how the source and destination colors are blended, use one of the xtd::drawing::graphics::copy_from_screen methods that takes a xtd::drawing::graphics::copy_pixel_operation parameter.
+      void copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size);
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
+      /// @param upper_left_source The point at the upper-left corner of the source rectangle.
+      /// @param upper_left_destination The point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @param copy_pixel_operation One of the xtd::drawing::graphics::copy_pixel_operation values.
+      /// @remarks The xtd::drawing::graphics::copy_from_screen methods are useful for layering one image on top of another. The xtd::drawing::copy_pixel_operation parameter allows you to specify if and how the source colors should be blended with the colors in the destination area.
+      void copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation);
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
+      /// @param source_x The x-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param source_y The y-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param destination_x The x-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param destination_y The y-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @remarks The xtd::drawing::graphics::copy_from_screen methods are useful for layering one image on top of another. To specify how the source and destination colors are blended, use one of the xtd::drawing::graphics::copy_from_screen methods that takes a xtd::drawing::graphics::copy_pixel_operation parameter.
+      void copy_from_screen(int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, const xtd::drawing::size& block_region_size);
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
+      /// @param source_x The x-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param source_y The y-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param destination_x The x-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param destination_y The y-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @param copy_pixel_operation One of the xtd::drawing::graphics::copy_pixel_operation values.
+      /// @remarks The xtd::drawing::graphics::copy_from_screen methods are useful for layering one image on top of another. The xtd::drawing::copy_pixel_operation parameter allows you to specify if and how the source colors should be blended with the colors in the destination area.
+      void copy_from_screen(int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation);
+
       /// @brief Draws an arc representing a portion of an ellipse specified by a Rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the arc.
       /// @param rect xtd::drawing::rectangle structure that defines the boundaries of the ellipse.
@@ -275,6 +314,127 @@ namespace xtd {
       /// @remarks The Bézier curve is drawn from the first point to the fourth point. The second and third points are control points that determine the shape of the curve.
       void draw_bezier(const pen& pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
       
+      /// @brief Draws a series of Bézier splines from an array of xtd::drawing::point structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that represent the points that determine the curve. The number of points in the array should be a multiple of 3 plus 1, such as 4, 7, or 10.
+      /// @remarks The number of points in the array should be a multiple of 3 plus 1 because the first spline requires 4 points and any other splines require 3 points each. The first Bézier curve is drawn from the first point to the fourth point in the point array. The second and third points are control points that determine the shape of the curve. Each subsequent curve needs exactly three more points: two more control points and an ending point. The ending point of the previous curve is used as the starting point for each additional curve.
+      void draw_beziers(const pen& pen, std::vector<xtd::drawing::point>& points);
+      /// @brief Draws a series of Bézier splines from an array of xtd::drawing::point_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that represent the points that determine the curve. The number of points in the array should be a multiple of 3 plus 1, such as 4, 7, or 10.
+      /// @remarks The number of points in the array should be a multiple of 3 plus 1 because the first spline requires 4 points and any other splines require 3 points each. The first Bézier curve is drawn from the first point to the fourth point in the point array. The second and third points are control points that determine the shape of the curve. Each subsequent curve needs exactly three more points: two more control points and an ending point. The ending point of the previous curve is used as the starting point for each additional curve.
+      void draw_beziers(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+
+      /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point>& points);
+      /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+      /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point structures using a specified tension.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @param tension alue greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension);
+      /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point_f structures using a specified tension.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @param tension alue greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension);
+
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @remarks This method draws a cardinal spline that passes through each point in the array.
+      /// @remarks The array of points must contain at least three PointF structures for a curve to be drawn.
+      /// @remarks This method uses a default tension of 0.0.
+      void draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points);
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @remarks This method draws a cardinal spline that passes through each point in the array.
+      /// @remarks The array of points must contain at least three PointF structures for a curve to be drawn.
+      /// @remarks This method uses a default tension of 0.0.
+      void draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method draws a cardinal spline that passes through each point in the array.
+      /// @remarks The array of points must contain at least three xtd::drawing::point structures for a curve to be drawn.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension);
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures using a specified tension.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method draws a cardinal spline that passes through each point in the array.
+      /// @remarks The array of points must contain at least three xtd::drawing::point_f structures for a curve to be drawn.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension);
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures. The drawing begins offset from the beginning of the array.
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension. The drawing begins offset from the beginning of the array.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @param offset Offset from the first element in the array of the points parameter to the starting point in the curve.
+      /// @param number_of_segments Number of segments after the starting point to include in the curve.
+      /// @remarks This method draws a cardinal spline that passes through each point in the array.
+      /// @remarks The array of points must contain at least three xtd::drawing::point structures for curve to be drawn.
+      /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
+      /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
+      /// @remarks This method uses a default tension of 0.0.
+      void draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments);
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures. The drawing begins offset from the beginning of the array.
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension. The drawing begins offset from the beginning of the array.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @param offset Offset from the first element in the array of the points parameter to the starting point in the curve.
+      /// @param number_of_segments Number of segments after the starting point to include in the curve.
+      /// @remarks This method draws a cardinal spline that passes through each point in the array.
+      /// @remarks The array of points must contain at least three xtd::drawing::point_f structures for curve to be drawn.
+      /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
+      /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
+      /// @remarks This method uses a default tension of 0.0.
+      void draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments);
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension. The drawing begins offset from the beginning of the array.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @param offset Offset from the first element in the array of the points parameter to the starting point in the curve.
+      /// @param number_of_segments Number of segments after the starting point to include in the curve.
+      /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method draws a cardinal spline that passes through each point in the array.
+      /// @remarks The array of points must contain at least three xtd::drawing::point structures for curve to be drawn.
+      /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
+      /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension);
+      /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures using a specified tension. The drawing begins offset from the beginning of the array.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @param offset Offset from the first element in the array of the points parameter to the starting point in the curve.
+      /// @param number_of_segments Number of segments after the starting point to include in the curve.
+      /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method draws a cardinal spline that passes through each point in the array.
+      /// @remarks The array of points must contain at least three xtd::drawing::point_f structures for curve to be drawn.
+      /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
+      /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension);
+
       /// @brief Draws an ellipse specified by a bounding xtd::drawing::rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
       /// @param rect xtd::drawing::rectangle structure that defines the boundaries of the ellipse.
@@ -370,69 +530,639 @@ namespace xtd {
       /// @remarks This method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call this method to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
       void draw_image(const xtd::drawing::image& image, float x, float y);
       
-      void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& p1, const point& p2);
-      void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p1, const point_f& p2);
+      /// @brief Draws a specified image using its original physical size at a specified location.
+      /// @param image xtd::drawing::image to draw.
+      /// @param point xtd::drawing::point structure that specifies the upper-left corner of the drawn image.
+      /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
+      /// @remarks The xtd::drawing::graphics::draw_image_unscaled method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call xtd::drawing::graphics::draw_image_unscaled to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
+      void draw_image_unscaled(const xtd::drawing::image& image, const xtd::drawing::point& point);
+      /// @brief Draws a specified image using its original physical size at a specified location.
+      /// @param x The x-coordinate of the upper-left corner of the drawn image.
+      /// @param y The y-coordinate of the upper-left corner of the drawn image.
+      /// @param image xtd::drawing::image to draw.
+      /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
+      /// @remarks The xtd::drawing::graphics::draw_image_unscaled method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call xtd::drawing::graphics::draw_image_unscaled to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
+      void draw_image_unscaled(const xtd::drawing::image& image, int32_t x, int32_t y);
+      /// @brief Draws a specified image using its original physical size at a specified location.
+      /// @param image xtd::drawing::image to draw.
+      /// @param rect Rectangle that specifies the upper-left corner of the drawn image. The xtd::drawing::rectangle::x and xtd::drawing::rectangle::y properties of the rectangle specify the upper-left corner. The xtd::drawing::rectangle::width and xtd::drawing::rectangle::height properties are ignored.
+      /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
+      /// @remarks The xtd::drawing::graphics::draw_image_unscaled method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call xtd::drawing::graphics::draw_image_unscaled to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
+      void draw_image_unscaled(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect);
+      /// @brief Draws a specified image using its original physical size at a specified location.
+      /// @param image xtd::drawing::image to draw.
+      /// @param x The x-coordinate of the upper-left corner of the drawn image.
+      /// @param y The y-coordinate of the upper-left corner of the drawn image.
+      /// @param width not used.
+      /// @param height not used
+      /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
+      /// @remarks The xtd::drawing::graphics::draw_image_unscaled method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call xtd::drawing::graphics::draw_image_unscaled to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
+      void draw_image_unscaled(const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height);
+
+      /// @brief Draws the specified image without scaling and clips it, if necessary, to fit in the specified rectangle.
+      /// @param image xtd::drawing::image to draw.
+      /// @param rect The xtd::drawing::rectangle in which to draw the image.
+      void draw_image_unscaled_and_clipped(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect);
+
+      /// @brief Draws a line connecting two xtd::drawing::point structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line.
+      /// @param pt1 xtd::drawing::point structure that represents the first point to connect.
+      /// @param pt2 xtd::drawing::point structure that represents the second point to connect.
+      void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& pt1, const point& pt2);
+      /// @brief Draws a line connecting two xtd::drawing::point_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line.
+      /// @param pt1 xtd::drawing::point_f structure that represents the first point to connect.
+      /// @param pt2 xtd::drawing::point_f structure that represents the second point to connect.
+      void draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& pt1, const point_f& pt2);
+      /// @brief Draws a line connecting the two points specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line.
+      /// @param x1 The x-coordinate of the first point.
+      /// @param y1 The y-coordinate of the first point.
+      /// @param x2 The x-coordinate of the second point.
+      /// @param y2 The y-coordinate of the second point.
+      /// @remarks This method draws a line connecting the two points specified by the x1, y1, x2, and y2 parameters.
       void draw_line(const xtd::drawing::pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
+      /// @brief Draws a line connecting the two points specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line.
+      /// @param x1 The x-coordinate of the first point.
+      /// @param y1 The y-coordinate of the first point.
+      /// @param x2 The x-coordinate of the second point.
+      /// @param y2 The y-coordinate of the second point.
+      /// @remarks This method draws a line connecting the two points specified by the x1, y1, x2, and y2 parameters.
       void draw_line(const xtd::drawing::pen& pen, float x1, float y1, float x2, float y2);
 
-      void draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& graphics_path);
+      /// @brief Draws a series of line segments that connect an array of xtd::drawing::point structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line segments.
+      /// @param points Array of xtd::drawing::point structures that represent the points to connect.
+      /// @remarks This method draws a series of lines connecting an array of ending points. The first two points in the array specify the first line. Each additional point specifies the end of a line segment whose starting point is the ending point of the previous line segment.
+      void draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point>& points);
+      /// @brief Draws a series of line segments that connect an array of xtd::drawing::point_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the line segments.
+      /// @param points Array of xtd::drawing::point_f structures that represent the points to connect.
+      /// @remarks This method draws a series of lines connecting an array of ending points. The first two points in the array specify the first line. Each additional point specifies the end of a line segment whose starting point is the ending point of the previous line segment.
+      void draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points);
 
-      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& p);
-      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& p);
+      /// @brief Draws a xtd::drawing::drawing2d::graphics_path.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the path.
+      /// @param path xtd::drawing::drawing2d::graphics_path to draw.
+      /// @remarks The current transformation in the graphic context is applied to the xtd::drawing::drawing2d::graphics_path before it is drawn.
+      void draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& path);
+
+      /// @brief Draws a pie shape defined by an ellipse specified by a xtd::drawing::rectangle structure and two radial lines.
+      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param rect xtd::drawing::rectangle structure that represents the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
+      /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
+      /// @remarks This method draws a pie shape defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie shape consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
+      void draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle);
+      /// @brief Draws a pie shape defined by an ellipse specified by a xtd::drawing::rectangle_f structure and two radial lines.
+      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
+      /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
+      /// @remarks This method draws a pie shape defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie shape consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
+      void draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle);
+      /// @brief Draws a pie shape defined by an ellipse specified by a coordinate pair, a width, a height, and two radial lines.
+      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param width Width of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param heught Height of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
+      /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
+      /// @remarks This method draws a pie shape defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle described by the x, y, width, and height parameters. The pie shape consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
+      void draw_pie(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
+      /// @brief Draws a pie shape defined by an ellipse specified by a coordinate pair, a width, a height, and two radial lines.
+      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param width Width of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param heught Height of the bounding rectangle that defines the ellipse from which the pie shape comes.
+      /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
+      /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
+      /// @remarks This method draws a pie shape defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle described by the x, y, width, and height parameters. The pie shape consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
+      void draw_pie(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
+      
+      /// @brief Draws a polygon defined by an array of xtd::drawing::point structures.
+      /// @param pen Pen that determines the color, width, and style of the polygon.
+      /// @param points Array of xtd::drawing::point structures that represent the vertices of the polygon.
+      /// @remarks Every pair of two consecutive points in the array specifies a side of the polygon. In addition, if the last point and the first of the array point do not coincide, they specify the last side of the polygon.
+      void draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point>& points);
+      /// @brief Draws a polygon defined by an array of xtd::drawing::point_f structures.
+      /// @param pen Pen that determines the color, width, and style of the polygon.
+      /// @param points Array of xtd::drawing::point_f structures that represent the vertices of the polygon.
+      /// @remarks Every pair of two consecutive points in the array specifies a side of the polygon. In addition, if the last point and the first of the array point do not coincide, they specify the last side of the polygon.
+      void draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points);
+
+      /// @brief Draws a point specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the point.
+      /// @param point xtd::drawing::point structure that represents the point.
+      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& point);
+      /// @brief Draws a point specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the point.
+      /// @param point xtd::drawing::point_f structure that represents the point.
+      void draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& point);
+      /// @brief Draws a point specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the point.
+      /// @param x1 The x-coordinate of the point.
+      /// @param y1 The y-coordinate of the point.
       void draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y);
+      /// @brief Draws a point specified by the coordinate pairs.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the point.
+      /// @param x1 The x-coordinate of the point.
+      /// @param y1 The y-coordinate of the point.
       void draw_point(const xtd::drawing::pen& pen, float x, float y);
       
+      /// @brief Draws a rectangle specified by a xtd::drawing::rectangle structure.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rectangle.
+      /// @param rect A xtd::drawing::rectangle structure that represents the rectangle to draw.
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect);
+      /// @brief Draws a rectangle specified by a xtd::drawing::rectangle_f structure.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rectangle.
+      /// @param rect A xtd::drawing::rectangle_f structure that represents the rectangle to draw.
       void draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect);
+      /// @brief Draws a rectangle specified by a coordinate pair, a width, and a height.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rectangle.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to draw.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to draw.
+      /// @param width The width of the rectangle to draw.
+      /// @param height The height of the rectangle to draw.
       void draw_rectangle(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height);
+      /// @brief Draws a rectangle specified by a coordinate pair, a width, and a height.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rectangle.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to draw.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to draw.
+      /// @param width The width of the rectangle to draw.
+      /// @param height The height of the rectangle to draw.
       void draw_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height);
-      
+  
+      /// @brief Draws a series of rectangles specified by xtd::drawing::rectangle structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the outlines of the rectangles.
+      /// @param rects Array of xtd::drawing::rectangle structures that represent the rectangles to draw.
+      void draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle>& rects);
+      /// @brief Draws a series of rectangles specified by xtd::drawing::rectangle_f structures.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the outlines of the rectangles.
+      /// @param rects Array of xtd::drawing::rectangle_f structures that represent the rectangles to draw.
+      void draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle_f>& rects);
+
+      /// @brief Draws a rounded rectangle specified by a xtd::drawing::rectangle structure, and radius.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
+      /// @param rect A xtd::drawing::rectangle structure that represents the rounded rectangle to draw.
+      /// @param radius The radius of the rounded rectange angles.
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, int32_t radius);
+      /// @brief Draws a rounded rectangle specified by a xtd::drawing::rectangle_f structure, and radius.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
+      /// @param rect A xtd::drawing::rectangle_f structure that represents the rounded rectangle to draw.
+      /// @param radius The radius of the rounded rectange angles.
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float radius);
+      /// @brief Draws a rounded rectangle specified by a coordinate pair, a width, and a height, and radius.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
+      /// @param x The x-coordinate of the upper-left corner of the rounded rectangle to draw.
+      /// @param y The y-coordinate of the upper-left corner of the rounded rectangle to draw.
+      /// @param width The width of the rounded rectangle to draw.
+      /// @param height The height of the rounded rectangle to draw.
+      /// @param radius The radius of the rounded rectange angles.
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
+      /// @brief Draws a rounded rectangle specified by a coordinate pair, a width, a height, and radius.
+      /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
+      /// @param x The x-coordinate of the upper-left corner of the rounded rectangle to draw.
+      /// @param y The y-coordinate of the upper-left corner of the rounded rectangle to draw.
+      /// @param width The width of the rounded rectangle to draw.
+      /// @param height The height of the rounded rectangle to draw.
+      /// @param radius The radius of the rounded rectange angles.
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height, float radius);
       
-      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const string_format& format);
-      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle);
-      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format);
-      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point);
-      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, const string_format& format);
-      void draw_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y);
+      /// @brief Draws the specified text string at the specified rectangle with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param layout_rectangle xtd::drawing::rectangle_f structure that specifies the location of the drawn text.
+      /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
+      /// @remarks The text represented by the s parameter is drawn inside the rectangle represented by the layout_rectangle parameter. If the text does not fit inside the rectangle, it is truncated at the nearest word, unless otherwise specified with the format parameter.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const xtd::drawing::string_format& format);
+      /// @brief Draws the specified text string at the specified rectangle with the specified xtd::drawing::brush and xtd::drawing::font objects.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param layout_rectangle xtd::drawing::rectangle_f structure that specifies the location of the drawn text.
+      /// @remarks The text represented by the s parameter is drawn inside the rectangle represented by the layout_rectangle parameter. If the text does not fit inside the rectangle, it is truncated at the nearest word. To further manipulate how the string is drawn inside the rectangle use the xtd::drawing::graphics::draw_string overload that takes a xtd::drawing::string_format.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle);
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
+      /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const xtd::drawing::string_format& format);
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point);
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param x The x-coordinate of the upper-left corner of the drawn text.
+      /// @param y The y-coordinate of the upper-left corner of the drawn text.
+      /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, const xtd::drawing::string_format& format);
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param x The x-coordinate of the upper-left corner of the drawn text.
+      /// @param y The y-coordinate of the upper-left corner of the drawn text.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y);
       
+      /// @brief Updates the clip region of this xtd::drawing::graphics to exclude the area specified by a xtd::drawing::region.
+      /// @param region xtd::drawing::region that specifies the region to exclude from the clip region.
+      /// @remarks This method excludes the area specified by the region parameter from the current clip region and assigns the resulting area to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics.
+      void exclude_clip(const xtd::drawing::region& region);
+      /// @brief Updates the clip region of this xtd::drawing::graphics to exclude the area specified by a xtd::drawing::rectangle.
+      /// @param rect xtd::drawing::rectangle that specifies the rectangle to exclude from the clip region.
+      /// @remarks This method excludes the area specified by the rect parameter from the current clip region and assigns the resulting area to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics.
+      void exclude_clip(const xtd::drawing::rectangle& rect);
+      /// @brief Updates the clip region of this xtd::drawing::graphics to exclude the area specified by a xtd::drawing::rectangle_f.
+      /// @param rect xtd::drawing::rectangle_f that specifies the rectangle to exclude from the clip region.
+      /// @remarks This method excludes the area specified by the rect parameter from the current clip region and assigns the resulting area to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics.
+      void exclude_clip(const xtd::drawing::rectangle_f& rect);
+
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures using the specified fill mode.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines how the curve is filled.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures using the specified fill mode.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines how the curve is filled.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks This method uses a default tension of 0.0.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures using the specified fill mode and tension.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that define the spline.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines how the curve is filled.
+      /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point structures.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
+      /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures using the specified fill mode and tension.
+      /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that define the spline.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines how the curve is filled.
+      /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
+      /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
+      /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
+      /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
+      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
+
+      /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a xtd::drawing::rectangle structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle structure that represents the bounding rectangle that defines the ellipse.
+      /// @remarks This method fills the interior of an ellipse with a xtd::drawing::brush. The ellipse is defined by the bounding rectangle represented by the rect parameter.
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect);
+      /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a xtd::drawing::rectangle_f structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the bounding rectangle that defines the ellipse.
+      /// @remarks This method fills the interior of an ellipse with a xtd::drawing::brush. The ellipse is defined by the bounding rectangle represented by the rect parameter.
       void fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect);
+      /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a pair of coordinates, a width, and a height.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param width Width of the bounding rectangle that defines the ellipse.
+      /// @param height Height of the bounding rectangle that defines the ellipse.
+      /// @remarks This method fills the interior of an ellipse with a xtd::drawing::brush. The ellipse is defined by the bounding rectangle represented by the x, y, width, and height parameters.
       void fill_ellipse(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
+      /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a pair of coordinates, a width, and a height.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
+      /// @param width Width of the bounding rectangle that defines the ellipse.
+      /// @param height Height of the bounding rectangle that defines the ellipse.
+      /// @remarks This method fills the interior of an ellipse with a xtd::drawing::brush. The ellipse is defined by the bounding rectangle represented by the x, y, width, and height parameters.
       void fill_ellipse(const xtd::drawing::brush& brush, float x, float y, float width, float height);
       
+      /// @brief Fills the interior of a xtd::drawing::drawing2d::graphics_path.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param path xtd::drawing::drawing2d::graphics_path that represents the path to fill.
+      /// @remarks A xtd::drawing::drawing2d::graphics_path consists of a series of line and curve segments. If the path represented by the path parameter is not closed, an additional segment is added from the last point to the first point to close the path.
       void fill_path(const xtd::drawing::brush& brush, const xtd::drawing::drawing2d::graphics_path& path);
       
+      /// @brief Fills the interior of a pie section defined by an ellipse specified by a xtd::drawing::rectangle structure and two radial lines.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle structure that represents the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param start_angle Angle in degrees measured clockwise from the x-axis to the first side of the pie section.
+      /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to the second side of the pie section.
+      /// @remarks This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle);
+      /// @brief Fills the interior of a pie section defined by an ellipse specified by a xtd::drawing::rectangle_f structure and two radial lines.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param start_angle Angle in degrees measured clockwise from the x-axis to the first side of the pie section.
+      /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to the second side of the pie section.
+      /// @remarks This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle);
+      /// @brief Fills the interior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param width Width of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param height Height of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param start_angle Angle in degrees measured clockwise from the x-axis to the first side of the pie section.
+      /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to the second side of the pie section.
+      /// @remarks This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void fill_pie(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
+      /// @brief Fills the interior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param width Width of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param height Height of the bounding rectangle that defines the ellipse from which the pie section comes.
+      /// @param start_angle Angle in degrees measured clockwise from the x-axis to the first side of the pie section.
+      /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to the second side of the pie section.
+      /// @remarks This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines defined by the start_angle and sweep_angle parameters, and the arc between the intersections of those radial lines with the ellipse.
+      /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void fill_pie(const xtd::drawing::brush& brush, float x, float y, float width, float height, float start_angle, float sweep_angle);
-      
+
+      /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::drawing::point structures.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that represent the vertices of the polygon to fill.
+      /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points);
+      /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::drawing::point_f structures.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that represent the vertices of the polygon to fill.
+      /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points);
+      /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::drawing::point structures using the specified fill mode.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point structures that represent the vertices of the polygon to fill.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines the style of the fill.
+      /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::drawing::point_f structures using the specified fill mode.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param points Array of xtd::drawing::point_f structures that represent the vertices of the polygon to fill.
+      /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines the style of the fill.
+      /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+
+      /// @brief Fills the interior of a rectangle specified by a xtd::drawing::rectangle structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle structure that represents the rectangle to fill.
+      /// @remarks This method fills the interior of the rectangle defined by the rect parameter, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect);
+      /// @brief Fills the interior of a rectangle specified by a xtd::drawing::rectangle_f structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the rectangle to fill.
+      /// @remarks This method fills the interior of the rectangle defined by the rect parameter, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect);
+      /// @brief Fills the interior of a rectangle specified by a pair of coordinates, a width, and a height.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to fill.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to fill.
+      /// @param width Width of the rectangle to fill.
+      /// @param height Height of the rectangle to fill.
+      /// @remarks This method fills the interior of the rectangle defined by the x, y, width, and height parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rectangle(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
+      /// @brief Fills the interior of a rectangle specified by a pair of coordinates, a width, and a height.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to fill.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to fill.
+      /// @param width Width of the rectangle to fill.
+      /// @param height Height of the rectangle to fill.
+      /// @remarks This method fills the interior of the rectangle defined by the x, y, width, and height parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height);
 
+      /// @brief Fills the interiors of a series of rectangles specified by xtd::drawing::rectangle structures.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rects Array of xtd::drawing::rectangle structures that represent the rectangles to fill.
+      void fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle>& rects);
+      /// @brief Fills the interiors of a series of rectangles specified by xtd::drawing::rectangle_f structures.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rects Array of xtd::drawing::rectangle_f structures that represent the rectangles to fill.
+      void fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle_f>& rects);
+
+      /// @brief Fills the interior of a xtd::drawing::region.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param region xtd::drawing::region that represents the area to fill.
+      /// @remarks A xtd::drawing::region is composed of rectangles and paths. If the region is not closed, an additional segment is added from the last point to the first point to close it.
       void fill_region(const xtd::drawing::brush& brush, const xtd::drawing::region& region);
 
+      /// @brief Fills the interior of a rounded rectangle specified by a xtd::drawing::rectangle structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle structure that represents the rounded rectangle to fill.
+      /// @param radius The radius of the rounded rectange angles.
+      /// @remarks This method fills the interior of the rounded rectangle defined by the rect, and radius parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, int32_t radius);
+      /// @brief Fills the interior of a rounded rectangle specified by a xtd::drawing::rectangle_f structure.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param rect xtd::drawing::rectangle_f structure that represents the rounded rectangle to fill.
+      /// @param radius The radius of the rounded rectange angles.
+      /// @remarks This method fills the interior of the rounded rectangle defined by the rect, and radius parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float radius);
+      /// @brief Fills the interior of a rounded rectangle specified by a pair of coordinates, a width, a height, and a radius.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the rounded rectangle to fill.
+      /// @param y The y-coordinate of the upper-left corner of the rounded rectangle to fill.
+      /// @param width Width of the rounded rectangle to fill.
+      /// @param height Height of the rounded rectangle to fill.
+      /// @param radius The radius of the rounded rectange angles.
+      /// @remarks This method fills the interior of the rounded rectangle defined by the x, y, width, height, and radius parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
+      /// @brief Fills the interior of a rounded rectangle specified by a pair of coordinates, a width, a height, and a radius.
+      /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
+      /// @param x The x-coordinate of the upper-left corner of the rounded rectangle to fill.
+      /// @param y The y-coordinate of the upper-left corner of the rounded rectangle to fill.
+      /// @param width Width of the rounded rectangle to fill.
+      /// @param height Height of the rounded rectangle to fill.
+      /// @param radius The radius of the rounded rectange angles.
+      /// @remarks This method fills the interior of the rounded rectangle defined by the x, y, width, height, and radius parameters, including the specified upper-left corner and up to the calculated lower and bottom edges.
       void fill_rounded_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height, float radius);
       
+      /// @brief Forces execution of all pending graphics operations and returns immediately without waiting for the operations to finish.
+      /// @remarks This method starts a flush and returns immediately without waiting for any currently executing graphics operation to finish.
+      void flush();
+      /// @brief Forces execution of all pending graphics operations with the method waiting or not waiting, as specified, to return before the operations finish.
+      /// @param intention Member of the FlushIntention enumeration that specifies whether the method returns immediately or waits for any existing operations to finish.
+      /// @remarks A value of xtd::drawing::graphics::flush for the intention parameter specifies that the method return immediately after beginning the flush, while a value of xtd::drawing::drawing2d::flush_intention::sync specifies that the method wait before returning until any existing operations finish.
+      void flush(xtd::drawing::drawing2d::flush_intention intention);
+
+      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device context.
+      /// @param hdc Handle to a device context.
+      /// @return This method returns a new xtd::drawing::graphics for the specified device context.
+      /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
+      /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
+      static graphics from_hdc(intptr_t hdc);
+      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device contextand handle to a device.
+      /// @param hdc Handle to a device context.
+      /// @param hdevice Handle to a device.
+      /// @return This method returns a new xtd::drawing::graphics for the specified device context and device.
+      /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
+      /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
+      static graphics from_hdc(intptr_t hdc, intptr_t hdevice);
+
+      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a window.
+      /// @param hwnd Handle to a window.
+      /// @return This method returns a new xtd::drawing::graphics for the specified window handle.
+      static graphics from_hwnd(intptr_t hwnd);
+
+      /// @brief Creates a new xtd::drawing::graphics from the specified xtd::drawing::image.
+      /// @param image xtd::drawing::image from which to create the new Graphics.
+      /// @return This method returns a new xtd::drawing::graphics for the specified Image.
+      /// @remarks If the image has an indexed pixel format, this method throws an exception with the message, "A Graphics object cannot be created from an image that has an indexed pixel format." The indexed pixel formats are shown in the following list.
+      /// * xtd::drawing::imaging::pixel_format::format1bpp_indexed
+      /// * xtd::drawing::imaging::pixel_format::format4bpp_indexed
+      /// * xtd::drawing::imaging::pixel_format::format8bpp_indexed
+      /// @remarks You can save the indexed image as another format by using the xtd::drawing:image::save(xtd::ustring, xtd::drawing::imaging::image_format) method and then retrieve a xtd::drawing::graphics object for the new image.
+      /// @remarks This method also throws an exception if the image has any of the following pixel formats.
+      /// * xtd::drawing::imaging::pixel_format::undefined
+      /// * xtd::drawing::imaging::pixel_format::dont_care
+      /// * xtd::drawing::imaging::pixel_format::format16bpp_argb1555
+      /// * xtd::drawing::imaging::pixel_format::format16bpp_gray_scale
       static graphics from_image(const xtd::drawing::image& image);
       
+      /// @brief Gets the handle to the device context associated with this xtd::drawing::graphics.
+      /// @return Handle to the device context associated with this xtd::drawing::graphics.
+      /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
+      /// @remarks Calls to the xtd::drawing::graphics::get_hdc and ReleaseHdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the Graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the Graphics of the hdc parameter in subsequent operations.
+      intptr_t get_hdc() const;
+      
+      /// @brief Gets the nearest color to the specified xtd::drawing::color structure.
+      /// @param color xtd::drawing::color structure for which to find a match.
+      /// @return A xtd::drawing::color structure that represents the nearest color to the one specified with the color parameter.
+      xtd::drawing::color get_nearest_color(const xtd::drawing::color& color) const;
+      
+      /// @brief Updates the clip region of this xtd::drawing::graphics to the intersection of the current clip region and the specified xtd::drawing::region.
+      /// @param region xtd::drawing::region to intersect with the current region.
+      /// @remarks This method assigns to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics the area represented by the intersection of the current clip region and the region specified by the region parameter.
+      void intersect_clip(const xtd::drawing::region& region);
+      /// @brief Updates the clip region of this xtd::drawing::graphics to the intersection of the current clip region and the specified xtd::drawing::rectangle structure.
+      /// @param rect xtd::drawing::rectangle structure to intersect with the current clip region.
+      /// @remarks This method assigns to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics the area represented by the intersection of the current clip region and the rectangle specified by the rect parameter.
+      void intersect_clip(const xtd::drawing::rectangle& rect);
+      /// @brief Updates the clip region of this xtd::drawing::graphics to the intersection of the current clip region and the specified xtd::drawing::rectangle_f structure.
+      /// @param rect xtd::drawing::rectangle_f structure to intersect with the current clip region.
+      /// @remarks This method assigns to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics the area represented by the intersection of the current clip region and the rectangle specified by the rect parameter.
+      void intersect_clip(const xtd::drawing::rectangle_f& rect);
+
+      /// @brief Indicates whether the rectangle specified by a xtd::drawing::rectangle structure is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param rect xtd::drawing::rectangle structure to test for visibility.
+      /// @return true if the rectangle specified by the rect parameter is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(const xtd::drawing::rectangle& rect);
+      /// @brief Indicates whether the rectangle specified by a xtd::drawing::rectangle_f structure is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param rect xtd::drawing::rectangle_f structure to test for visibility.
+      /// @return true if the rectangle specified by the rect parameter is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(const xtd::drawing::rectangle_f& rect);
+      /// @brief Indicates whether the rectangle specified by a pair of coordinates, a width, and a height is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to test for visibility.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to test for visibility.
+      /// @param width Width of the rectangle to test for visibility.
+      /// @param height Height of the rectangle to test for visibility.
+      /// @return true if the rectangle defined by the x, y, width, and height parameters is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(int32_t x, int32_t y, int32_t width, int32_t height);
+      /// @brief Indicates whether the rectangle specified by a pair of coordinates, a width, and a height is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param x The x-coordinate of the upper-left corner of the rectangle to test for visibility.
+      /// @param y The y-coordinate of the upper-left corner of the rectangle to test for visibility.
+      /// @param width Width of the rectangle to test for visibility.
+      /// @param height Height of the rectangle to test for visibility.
+      /// @return true if the rectangle defined by the x, y, width, and height parameters is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(float x, float y, float width, float height);
+      /// @brief ndicates whether the specified xtd::drawing::point structure is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param point xtd::drawing::point structure to test for visibility.
+      /// @return true if the point specified by the point parameter is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(const xtd::drawing::point& point);
+      /// @brief ndicates whether the specified xtd::drawing::point_f structure is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param point xtd::drawing::point_f structure to test for visibility.
+      /// @return true if the point specified by the point parameter is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(const xtd::drawing::point_f& point);
+      /// @brief Indicates whether the point specified by a pair of coordinates is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param x The x-coordinate of the point to test for visibility.
+      /// @param y The y-coordinate of the point to test for visibility.
+      /// @return true if the point defined by the x and y parameters is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(int32_t x, int32_t y);
+      /// @brief Indicates whether the point specified by a pair of coordinates is contained within the visible clip region of this xtd::drawing::graphics.
+      /// @param x The x-coordinate of the point to test for visibility.
+      /// @param y The y-coordinate of the point to test for visibility.
+      /// @return true if the point defined by the x and y parameters is contained within the visible clip region of this xtd::drawing::graphics; otherwise, false.
+      bool is_visible(float x, float y);
+
+      /// @brief Measures the specified string when drawn with the specified xtd::drawing::font.
+      /// @param text xtd::ustring to measure.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
+      /// @brief Releases a device context handle obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
+      /// @param hdc Handle to a device context obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
+      /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
+      /// @remarks Calls to the xtd::drawing::graphics::get_hdc and ReleaseHdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the Graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the Graphics of the hdc parameter in subsequent operations.
+      void release_hdc(intptr_t hdc);
+      
+      /// @brief Resets the clip region of this xtd::drawing::graphics to an infinite region.
+      /// @remarks When the clipping region of a xtd::drawing::graphics is infinite, items that this xtd::drawing::graphics draws are not clipped.
+      void reset_clip();
+
+      /// @brief Resets the world transformation matrix of this xtd::drawing::graphics to the identity matrix.
+      /// @remarks The identity matrix represents a transformation with no scaling, rotation, or translation. Resetting the world transformation of this xtd::drawing::graphics to the identity matrix means that its world transformation does not change the geometry of transformed items.
+      void reset_transform();
+      
+      /// @brief Applies the specified rotation to the transformation matrix of this xtd::drawing::graphics.
+      /// @param angle Angle of rotation in degrees.
+      /// @remarks The rotation operation consists of multiplying the transformation matrix by a matrix whose elements are derived from the angle parameter. This method applies the rotation by prepending it to the transformation matrix.
       void rotate_transform(float angle);
-      
+
+      /// @brief Applies the specified scaling operation to the transformation matrix of this xtd::drawing::graphics by prepending it to the object's transformation matrix.
+      /// @param sx Scale factor in the x direction.
+      /// @param sy Scale factor in the y direction.
+      /// @remarks The scaling operation consists of multiplying the transformation matrix by a diagonal matrix whose elements are (sx, sy, 1). This method prepends the transformation matrix of the xtd::drawing::graphics by the scaling matrix.
+      void scale_transform(float sx, float sy);
+
+      /// @brief Translates the clipping region of this xtd::drawing::graphics by specified amounts in the horizontal and vertical directions.
+      /// @param dx The x-coordinate of the translation.
+      /// @param dy The y-coordinate of the translation.
       void translate_clip(int32_t dx, int32_t dy);
-      
+      /// @brief Translates the clipping region of this xtd::drawing::graphics by specified amounts in the horizontal and vertical directions.
+      /// @param dx The x-coordinate of the translation.
+      /// @param dy The y-coordinate of the translation.
       void translate_clip(float dx, float dy);
-      
+
+      /// @brief Changes the origin of the coordinate system by prepending the specified translation to the transformation matrix of this xtd::drawing::graphics.
+      /// @param dx The x-coordinate of the translation.
+      /// @param dy The y-coordinate of the translation.
+      /// @remarks The translation operation consists of multiplying the transformation matrix by a matrix whose translation part is the dx and dy parameters. This method prepends or appends the transformation matrix of the xtd::drawing::graphics by the translation matrix according to the order parameter.
+      void translate_transform(float dx, float dy);
+
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       /// @}
       

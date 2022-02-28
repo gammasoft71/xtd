@@ -96,11 +96,11 @@ void graphics_path::add_beziers(const std::vector<xtd::drawing::point_f>& points
 }
 
 void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& points) {
-  add_closed_curve(points, 0.5f);
+  add_closed_curve(points, 0.0f);
 }
 
 void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& points) {
-  add_closed_curve(points, 0.5f);
+  add_closed_curve(points, 0.0f);
 }
 
 void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& points, float tension) {
