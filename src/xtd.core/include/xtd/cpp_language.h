@@ -89,7 +89,7 @@ namespace xtd {
     /// @return The value of cpp version.
     uint32_t value() const noexcept {return cpp_;}
     
-    /// @brief Get the version string of cpp language.
+    /// @brief Gets the version string of cpp language.
     /// @return The version string.
     xtd::ustring version_string() const noexcept {
       return ustring::format("{} {}", name(), version());

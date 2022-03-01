@@ -63,7 +63,7 @@ namespace xtd {
       /// @warning Internal use only
       static int32_t get_attributes(const std::string& path, int32_t& attributes);
       /// @internal
-      /// @brief Get file creeation time, last access time and lastt write time of specified path.
+      /// @brief Gets file creeation time, last access time and lastt write time of specified path.
       /// @param path The relative or absolute path to the directory to get times.
       /// @param creation_time That contains the creation time.
       /// @param last_access_time That contains the last access time.
@@ -72,7 +72,7 @@ namespace xtd {
       /// @warning Internal use only
       static int32_t get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time);
       /// @internal
-      /// @brief Get full path of specified path.
+      /// @brief Gets full path of specified path.
       /// @param relative_path The relative path to the directory to search.
       /// @return The fulll path.
       /// @warning Internal use only

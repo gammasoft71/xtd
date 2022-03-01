@@ -25,7 +25,7 @@ namespace xtd {
     /// @name Fields
     
     /// @{
-    /// @brief Get A read-only instance of the xtd::guid structure whose value is all zeros.
+    /// @brief Gets A read-only instance of the xtd::guid structure whose value is all zeros.
     /// @return xtd::guid A read-only instance of the xtd::guid structure whose value is all zeros.
     /// @remarks You can compare a GUID with the value of the xtd::guid.Empty field to determine whether a GUID is non-zero. The following example uses the Equality operator to compare two GUID values with xtd::guid.Empty to determine whether they consist exclusively of zeros.
     static const guid empty;

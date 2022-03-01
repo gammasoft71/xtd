@@ -75,10 +75,10 @@ namespace xtd {
       /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
       virtual up_down_button& value(int32_t value);
       
-      /// @brief Get a value indicate if value can be wrapped.
+      /// @brief Gets a value indicate if value can be wrapped.
       /// @return true if value can be wrapped; otherwise false. The default is false.
       virtual bool wrapped() {return wrapped_;}
-      /// @brief Set a value indicate if value can be wrapped.
+      /// @brief Sets a value indicate if value can be wrapped.
       /// @param value true if value can be wrapped; otherwise false. The default is false.
       /// @return Current numeric_up_down.
       virtual up_down_button& wrapped(bool value);

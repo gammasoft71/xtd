@@ -56,7 +56,7 @@ namespace xtd {
       /// @warning Internal use only
       static bool exists(const std::string& path);
       /// @internal
-      /// @brief Get file size of specified path.
+      /// @brief Gets file size of specified path.
       /// @param path The relative or absolute path to the directory to get size.
       /// @return The file size.
       /// @warning Internal use only

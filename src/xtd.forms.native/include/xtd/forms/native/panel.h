@@ -36,7 +36,7 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        /// @brief Set virtual size
+        /// @brief Sets virtual size
         /// @param control Panel window handle.
         /// @param size A virtual xtd::drawing::size.
         /// @warning Internal use only

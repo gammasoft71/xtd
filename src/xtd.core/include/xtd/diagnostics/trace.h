@@ -45,7 +45,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Get whether Flush should be called on the Listeners after every write.
+      /// @brief Gets whether Flush should be called on the Listeners after every write.
       /// @return true if Flush is called on the Listeners after every write; otherwise, false.
       /// @remarks The default is false.
       /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call Flush or Close. Setting AutoFlush to true means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.

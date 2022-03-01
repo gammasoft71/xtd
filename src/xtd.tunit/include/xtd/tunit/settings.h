@@ -27,7 +27,7 @@ namespace xtd {
       settings& operator=(const settings&) = default;
       /// @endcond
       
-      /// @brief Get default settings instance.
+      /// @brief Gets default settings instance.
       /// @return Default settings instance.
       static xtd::tunit::settings& default_settings() noexcept;
       

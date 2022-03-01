@@ -37,13 +37,13 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        /// @brief Get the name of the toolkit
+        /// @brief Gets the name of the toolkit
         /// @return The name of the toolkit
         static xtd::ustring name();
-        /// @brief Get the description of the toolkit
+        /// @brief Gets the description of the toolkit
         /// @return The description of the toolkit
         static xtd::ustring description();
-        /// @brief Get the version of the toolkit
+        /// @brief Gets the version of the toolkit
         /// @return The version of the toolkit
         static xtd::version version();
         /// @}

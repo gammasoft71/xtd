@@ -50,12 +50,12 @@ namespace xtd {
         /// @param result A dialog box id.
         /// @warning Internal use only
         static void end_dialog(intptr_t control, int32_t result);
-        /// @brief Get a value indicates whether full screen window.
+        /// @brief Gets a value indicates whether full screen window.
         /// @param control Control window handle.
         /// @return true if form is full screen; otherwise false.
         /// @warning Internal use only
         static bool full_screen(intptr_t control);
-        /// @brief Set a value indicates whether full screen window.
+        /// @brief Sets a value indicates whether full screen window.
         /// @param control Control window handle.
         /// @param full_screen true if form is full screen; otherwise false.
         /// @warning Internal use only
@@ -111,7 +111,7 @@ namespace xtd {
         /// @param control Control window handle.
         /// @warning Internal use only
         static int32_t show_sheet_dialog(intptr_t control);
-        /// @brief Set virtual size
+        /// @brief Sets virtual size
         /// @param control Control window handle.
         /// @param size A virtual xtd::drawing::size.
         /// @warning Internal use only

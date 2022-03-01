@@ -114,7 +114,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      /// @brief Get state.
+      /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::radio_button_state values.
       xtd::forms::visual_styles::radio_button_state state() const noexcept {return state_;}
       /// @}
