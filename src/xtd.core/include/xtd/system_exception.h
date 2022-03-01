@@ -96,7 +96,7 @@ namespace xtd {
     /// @name Properties
     
     /// @{
-    /// @brief Get file path where exception occurred
+    /// @brief Gets file path where exception occurred
     /// @return A string represent file path where exception occurred
     virtual const xtd::ustring& file_path() const noexcept {return information_.get_file_name();}
     
@@ -108,7 +108,7 @@ namespace xtd {
     static bool enable_stack_trace() {return enable_stack_trace_;}
     static void enable_stack_trace(bool enable) {enable_stack_trace_ = enable;}
     
-    /// @brief Get error associate to the exception
+    /// @brief Gets error associate to the exception
     /// @return An error_code represent a Error associate to the exception
     virtual std::error_code error_code() const noexcept {return error_;}
     
@@ -116,19 +116,19 @@ namespace xtd {
     /// @return An instance of exception that describes the error that caused the current exception. The inner_exception property returns the same value as was passed into the constructor, or a null reference if the inner exception value was not supplied to the constructor.
     virtual exception_ref inner_exception() const noexcept {return inner_exception_;}
     
-    /// @brief Get Line number where the exception occurred
+    /// @brief Gets Line number where the exception occurred
     /// @return the line number where exception occurred
     virtual uint32_t line_number() const noexcept {return information_.get_file_line_number();}
     
-    /// @brief Get file member where exception occurred
+    /// @brief Gets file member where exception occurred
     /// @return A string represent member name where exception occurred
     virtual const xtd::ustring& member_name() const noexcept {return information_.get_method();}
     
-    /// @brief Get message associate to the exception
+    /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
     virtual const xtd::ustring& message() const noexcept {return message_;}
     
-    /// @brief Get full class name the exception
+    /// @brief Gets full class name the exception
     /// @return A string represent a full class name of the exception
     virtual const xtd::ustring& name() const noexcept {return (name_ = xtd::ustring::full_class_name(*this));}
     
@@ -150,7 +150,7 @@ namespace xtd {
     }
     /// @endcond
     
-    /// @brief Get message associate to the exception
+    /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
     const char* what() const noexcept override {return message().empty() ? name().c_str() : message().c_str();}
     /// @}

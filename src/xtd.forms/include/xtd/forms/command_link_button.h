@@ -47,7 +47,7 @@ namespace xtd {
       
       drawing::size default_size() const override {return {200, 60};}
       
-      /// @brief Set text and supplementary text.
+      /// @brief Sets text and supplementary text.
       /// @param text A string that represent control text
       /// @param supplementary_text A string that represent supplementary text.
       /// @remarks Is equivalent to call text property with text and supplementary_text separated by "\n".

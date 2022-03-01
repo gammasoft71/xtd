@@ -37,7 +37,7 @@ namespace xtd {
       /// @name Fields
       
       /// @{
-      /// @brief Get an empty country.
+      /// @brief Gets an empty country.
       /// @return An empty country
       static const country empty();
       

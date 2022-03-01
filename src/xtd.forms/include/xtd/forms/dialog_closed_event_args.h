@@ -29,7 +29,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Get the dialog_result contains the result when closing dialog.
+      /// @brief Gets the dialog_result contains the result when closing dialog.
       /// One of dialog_result enumerated values.
       virtual forms::dialog_result dialog_result() const {return dialog_result_;}
       /// @}

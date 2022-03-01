@@ -67,7 +67,7 @@ namespace xtd {
         /// @param pos Position to insert menu item.
         /// @warning Internal use only
         static void remove_item(intptr_t context_menu, size_t pos);
-        /// @brief Set text menu.
+        /// @brief Sets text menu.
         /// @param context_menu Context menu handle.
         /// @param text The text associated with this menu.
         /// @warning Internal use only

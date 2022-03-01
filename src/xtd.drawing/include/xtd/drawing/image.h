@@ -94,7 +94,7 @@ namespace xtd {
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
       std::vector<guid> frame_dimentions_list() const;
       
-      /// @brief Get the handle of this image.
+      /// @brief Gets the handle of this image.
       /// @return The handle of this image.
       intptr_t handle() const;
       

@@ -51,9 +51,9 @@ namespace xtd {
         multipoint_loopback = 2281701385UL,
         /// @brief Control the number of times a multicast packet can be forwarded by a router, also known as the Time to Live (TTL), or hop count. This value is equal to the Winsock†2 SIO_MULTICAST_SCOPE constant.
         multicast_scope = 2281701386UL,
-        /// @brief Set the Quality of Service (QOS) attributes for the socket. QOS defines the bandwidth requirements for the socket. This control code is supported on Windows Me, Windows 2000, and later operating systems. This value is equal to the Winsock†2 SIO_SET_QOS constant.
+        /// @brief Sets the Quality of Service (QOS) attributes for the socket. QOS defines the bandwidth requirements for the socket. This control code is supported on Windows Me, Windows 2000, and later operating systems. This value is equal to the Winsock†2 SIO_SET_QOS constant.
         set_qos = 2281701387UL,
-        /// @brief Set the Quality of Service (QOS) attributes for the socket group. This value is reserved for future use and is equal to the Winsock†2 SIO_SET_GROUP_QOS constant.
+        /// @brief Sets the Quality of Service (QOS) attributes for the socket group. This value is reserved for future use and is equal to the Winsock†2 SIO_SET_GROUP_QOS constant.
         set_group_qos = 2281701388UL,
         /// @brief Enable receiving notification when the local interface used to access a remote endpoint changes. This value is equal to the Winsock†2 SIO_ROUTING_INTERFACE_CHANGE constant.
         routing_interface_change = 2281701397UL,
@@ -69,13 +69,13 @@ namespace xtd {
         keep_alive_values = 2550136836UL,
         /// @brief This value is equal to the Winsock†2 SIO_ABSORB_RTRALERT constant.
         absorb_router_alert = 2550136837UL,
-        /// @brief Set the interface used for outgoing unicast packets. This value is equal to the Winsock†2 SIO_UCAST_IF constant.
+        /// @brief Sets the interface used for outgoing unicast packets. This value is equal to the Winsock†2 SIO_UCAST_IF constant.
         unicast_interface = 2550136838UL,
         /// @brief This value is equal to the Winsock†2 SIO_LIMIT_BROADCASTS constant.
         limit_broadcasts = 2550136839UL,
         /// @brief Bind the socket to a specified interface index. This control code is supported on Windows 2000 and later operating systems. This value is equal to the Winsock†2 SIO_INDEX_BIND constant.
         bind_to_interface = 2550136840UL,
-        /// @brief Set the interface used for outgoing multicast packets. The interface is identified by its index. This control code is supported on Windows 2000 and later operating systems. This value is equal to the Winsock†2 SIO_INDEX_MCASTIF constant.
+        /// @brief Sets the interface used for outgoing multicast packets. The interface is identified by its index. This control code is supported on Windows 2000 and later operating systems. This value is equal to the Winsock†2 SIO_INDEX_MCASTIF constant.
         multicast_interface = 2550136841UL,
         /// @brief Join a multicast group using an interface identified by its index. This control code is supported on Windows 2000 and later operating systems. This value is equal to the Winsock†2 SIO_INDEX_ADD_MCAST constant.
         add_multicast_group_on_interface = 2550136842UL,

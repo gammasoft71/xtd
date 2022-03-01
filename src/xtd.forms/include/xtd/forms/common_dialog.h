@@ -40,7 +40,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Get async dialog_result result after dialog box is closing.
+      /// @brief Gets async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
       
@@ -153,7 +153,7 @@ namespace xtd {
       /// @remarks The result will done in async. Check result_dialog property after dialog box closed to obtain the result.
       virtual void run_sheet(intptr_t hwnd_owner) = 0;
       
-      /// @brief Set async dialog_result result after dialog box is closing.
+      /// @brief Sets async dialog_result result after dialog box is closing.
       /// @param value ok if the user clicks OK in the dialog box; otherwise, cancel.
       void set_dialog_result(xtd::forms::dialog_result value) {dialog_result_ = value;}
       /// @}

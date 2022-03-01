@@ -1926,7 +1926,7 @@ if (NOT INSTALL_NAME)
   set(INSTALL_NAME ${TARGET_NAME})
 endif ()
 
-## @brief Set project path. This path is used by add_prejects macro.
+## @brief Sets project path. This path is used by add_prejects macro.
 set(PROJECT_PATH "${PROJECT_PATH}/${PROJECT_NAME}")
 
 ################################################################################

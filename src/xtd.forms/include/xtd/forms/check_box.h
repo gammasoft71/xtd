@@ -179,7 +179,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      /// @brief Get state.
+      /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::check_box_state values.
       xtd::forms::visual_styles::check_box_state state() const noexcept {return data_->state;}
       /// @}

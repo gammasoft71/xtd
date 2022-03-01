@@ -167,7 +167,7 @@ namespace xtd {
       /// @warning Internal use only
       static bool exists(const std::string& path);
       /// @internal
-      /// @brief Get the current directory.
+      /// @brief Gets the current directory.
       /// @return The currrent directory.
       /// @remarks On error the return value is an empty string ("").
       /// @warning Internal use only
@@ -179,7 +179,7 @@ namespace xtd {
       /// @warning Internal use only
       static int32_t remove(const std::string& directory_name);
       /// @internal
-      /// @brief Set the current directory.
+      /// @brief Sets the current directory.
       /// @param dirrectory_name The currrent directory.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only

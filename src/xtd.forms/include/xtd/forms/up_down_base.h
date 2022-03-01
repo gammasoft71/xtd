@@ -21,10 +21,10 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Get the border sides for the control.
+      /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
       virtual forms::border_sides border_sides() const {return border_sides_;}
-      /// @brief Set the border sides for the control.
+      /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
       virtual up_down_base& border_sides(forms::border_sides border_sides);
       

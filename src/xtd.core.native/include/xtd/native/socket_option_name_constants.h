@@ -165,7 +165,7 @@ constexpr int32_t SOCKET_OPTION_NAME_SEND_TIMEOUT = 4101;
 constexpr int32_t SOCKET_OPTION_NAME_RECEIVE_TIMEOUT = 4102;
 
 /// @internal
-/// @brief Get the error status and clear.
+/// @brief Gets the error status and clear.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native socket_option_name
@@ -174,7 +174,7 @@ constexpr int32_t SOCKET_OPTION_NAME_RECEIVE_TIMEOUT = 4102;
 constexpr int32_t SOCKET_OPTION_NAME_ERROR = 4103;
 
 /// @internal
-/// @brief Get the socket type.
+/// @brief Gets the socket type.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native socket_option_name
@@ -219,7 +219,7 @@ constexpr int32_t SOCKET_OPTION_NAME_HEADER_INCLUDED = 2;
 constexpr int32_t SOCKET_OPTION_NAME_TYPE_OF_SERVICE = 3;
 
 /// @internal
-/// @brief Set the IP header Time-to-Live field.
+/// @brief Sets the IP header Time-to-Live field.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native socket_option_name
@@ -228,7 +228,7 @@ constexpr int32_t SOCKET_OPTION_NAME_TYPE_OF_SERVICE = 3;
 constexpr int32_t SOCKET_OPTION_NAME_IP_TIME_TO_LIVE = 4;
 
 /// @internal
-/// @brief Set the interface for outgoing multicast packets.
+/// @brief Sets the interface for outgoing multicast packets.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native socket_option_name
@@ -390,7 +390,7 @@ constexpr int32_t SOCKET_OPTION_NAME_EXPEDITED = 2;
 constexpr int32_t SOCKET_OPTION_NAME_NO_CHECKSUM = 1;
 
 /// @internal
-/// @brief Set or get the UDP checksum coverage.
+/// @brief Sets or get the UDP checksum coverage.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native socket_option_name

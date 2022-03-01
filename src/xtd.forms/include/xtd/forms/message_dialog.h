@@ -76,7 +76,7 @@ namespace xtd {
         return *this;
       }
       
-      /// @brief Get async dialog_result result after dialog box is closing.
+      /// @brief Gets async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
       

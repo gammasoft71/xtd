@@ -33,18 +33,18 @@ namespace xtd {
       /// @{
       virtual bool auto_size() const override {return true;}
       
-      /// @brief Get the border sides for the control.
+      /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
       virtual forms::border_sides border_sides() const {return border_sides_;}
-      /// @brief Set the border sides for the control.
+      /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
       virtual collapsible_panel& border_sides(forms::border_sides border_sides);
       
-      /// @brief Get the border style for the control.
+      /// @brief Gets the border style for the control.
       /// @return One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
       virtual forms::border_style border_style() const {return border_style_;}
-      /// @brief Set the border style for the control.
+      /// @brief Sets the border style for the control.
       /// @param border_style One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
       virtual collapsible_panel& border_style(forms::border_style border_style);

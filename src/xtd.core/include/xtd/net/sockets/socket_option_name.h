@@ -60,9 +60,9 @@ namespace xtd {
         send_timeout = 4101,
         /// @brief Receive a time-out. This option applies only to synchronous methods; it has no effect on asynchronous methods such as the xtd::net::sockets::socket::begin_send method.
         receive_timeout = 4102,
-        /// @brief Get the error status and clear.
+        /// @brief Gets the error status and clear.
         error = 4103,
-        /// @brief Get the socket type.
+        /// @brief Gets the socket type.
         type = 4104,
         /// @brief Not supported; will throw a xtd::net::sockets::socket_exception exception if used.
         max_connections = 2147483647,
@@ -72,9 +72,9 @@ namespace xtd {
         header_included = 2,
         /// @brief Change the IP header type of the service field.
         type_of_service = 3,
-        /// @brief Set the IP header Time-to-Live field.
+        /// @brief Sets the IP header Time-to-Live field.
         ip_time_to_live = 4,
-        /// @brief Set the interface for outgoing multicast packets.
+        /// @brief Sets the interface for outgoing multicast packets.
         multicast_interface = 9,
         /// @brief An IP multicast Time to Live.
         multicast_time_to_live = 10,
@@ -110,7 +110,7 @@ namespace xtd {
         expedited = 2,
         /// @brief Send UDP datagrams with checksum set to zero.
         no_checksum = 1,
-        /// @brief Set or get the UDP checksum coverage.
+        /// @brief Sets or get the UDP checksum coverage.
         checksum_coverage = 20,
         /// @brief Updates an accepted socket's properties by using those of an existing socket. This is equivalent to using the Winsock2 SO_UPDATE_ACCEPT_CONTEXT socket option and is supported only on connection-oriented sockets.
         update_accept_context = 28683,

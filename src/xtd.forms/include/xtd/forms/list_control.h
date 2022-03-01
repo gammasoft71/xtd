@@ -157,7 +157,7 @@ namespace xtd {
       /// @brief Raises the list_control::selected_value_changed event.
       virtual void on_selected_value_changed(const event_args& e) {selected_value_changed(*this, e);}
       
-      /// @brief Set the currently selected item.
+      /// @brief Sets the currently selected item.
       /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       void set_selected_index(size_t value) {data_->selected_index = value;}
       /// @}

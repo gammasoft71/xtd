@@ -210,7 +210,7 @@ namespace xtd {
       
       void on_paint(paint_event_args& e) override;
       
-      /// @brief Get state.
+      /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::toggle_button_state values.
       xtd::forms::visual_styles::toggle_button_state state() const noexcept {return state_;}
       /// @}

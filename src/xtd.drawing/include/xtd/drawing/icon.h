@@ -118,7 +118,7 @@ namespace xtd {
       /// @name Properties
         
       /// @{
-      /// @brief Get the handle of this icon. This is not a copy of the handle; do not free it.
+      /// @brief Gets the handle of this icon. This is not a copy of the handle; do not free it.
       /// @return The Windows handle for the icon.
       intptr_t handle() const;
       

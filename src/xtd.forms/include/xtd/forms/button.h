@@ -123,7 +123,7 @@ namespace xtd {
       /// @param value One of the AutoSizeMode values. The default value is grow only.
       virtual button& auto_size_mode(forms::auto_size_mode value);
             
-      /// @brief Get is default button.
+      /// @brief Gets is default button.
       /// @return true is default button; otherwise false.
       bool default_button() const {return data_->default_button;}
 
@@ -143,7 +143,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      /// @brief Get state.
+      /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::push_button_state values.
       xtd::forms::visual_styles::push_button_state state() const noexcept {return data_->state;}
       /// @}
