@@ -308,29 +308,29 @@ namespace xtd {
       /// | emblem-unlocked      | The icon used as an emblem for files and directories that the user marks as unlocked.                                |
       /// | emblem-unreadable    | The icon used as an emblem for files and directories that are inaccessible.                                          |
       /// @par The following table represents Standard Emoticon Icons :
-      /// | Name             | Description                        |
-      /// | -----------------|------------------------------------|
-      /// | face-angel       | The icon used for the 0:-) emote.  |
-      /// | face-angry       | The icon used for the X-( emote.   |
-      /// | face-cool        | The icon used for the B-) emote.   |
-      /// | face-crying      | The icon used for the :'( emote.   |
-      /// | face-devilish    | The icon used for the >:-) emote.  |
-      /// | face-embarrassed | The icon used for the :-[ emote.   |
-      /// | face-kiss        | The icon used for the :-* emote.   |
-      /// | face-laugh       | The icon used for the :-)) emote.  |
+      /// | Name             | Description                         |
+      /// | -----------------|-------------------------------------|
+      /// | face-angel       | The icon used for the 0:-) emote.   |
+      /// | face-angry       | The icon used for the X-( emote.    |
+      /// | face-cool        | The icon used for the B-) emote.    |
+      /// | face-crying      | The icon used for the :'( emote.    |
+      /// | face-devilish    | The icon used for the >:-) emote.   |
+      /// | face-embarrassed | The icon used for the :-[ emote.    |
+      /// | face-kiss        | The icon used for the :-* emote.    |
+      /// | face-laugh       | The icon used for the :-)) emote.   |
       /// | face-monkey      | The icon used for the :-(\|) emote. |
       /// | face-plain       | The icon used for the :-\| emote.   |
-      /// | face-raspberry   | The icon used for the :-P emote.   |
-      /// | face-sad         | The icon used for the :-( emote.   |
-      /// | face-sick        | The icon used for the :-& emote.   |
-      /// | face-smile       | The icon used for the :-) emote.   |
-      /// | face-smile-big   | The icon used for the :-D emote.   |
-      /// | face-smirk       | The icon used for the :-! emote.   |
-      /// | face-surprise    | The icon used for the :-0 emote.   |
+      /// | face-raspberry   | The icon used for the :-P emote.    |
+      /// | face-sad         | The icon used for the :-( emote.    |
+      /// | face-sick        | The icon used for the :-& emote.    |
+      /// | face-smile       | The icon used for the :-) emote.    |
+      /// | face-smile-big   | The icon used for the :-D emote.    |
+      /// | face-smirk       | The icon used for the :-! emote.    |
+      /// | face-surprise    | The icon used for the :-0 emote.    |
       /// | face-tired       | The icon used for the \|-) emote.   |
-      /// | face-uncertain   | The icon used for the :-/ emote.   |
-      /// | face-wink        | The icon used for the ;-) emote.   |
-      /// | face-worried     | The icon used for the :-S emote.   |
+      /// | face-uncertain   | The icon used for the :-/ emote.    |
+      /// | face-wink        | The icon used for the ;-) emote.    |
+      /// | face-worried     | The icon used for the :-S emote.    |
       /// @par The following table represents Standard MIME Type Icons :
       /// | Name    | Description                                                                                                                                                              |
       /// | --------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -350,21 +350,48 @@ namespace xtd {
       /// | video-x-generic          | The icon used for generic video file types.                 |
       /// | x-office-address-book    | The icon used for generic address book file types.          |
       /// | x-office-calendar        | The icon used for generic calendar file types.              |
+      /// | x-office-contact         | The icon used for generic contact file types.               |
       /// | x-office-document        | The icon used for generic document and letter file types.   |
       /// | x-office-presentation    | The icon used for generic presentation file types.          |
       /// | x-office-spreadsheet     | The icon used for generic spreadsheet file types.           |
       /// @par The following table represents Standard Place Icons :
-      /// | Name              | Description                                                                                                               |
-      /// | ------------------|---------------------------------------------------------------------------------------------------------------------------|
-      /// | folder            | The standard folder icon used to represent directories on local filesystems, mail folders, and other hierarchical groups. |
-      /// | folder-remote     | The icon used for normal directories on a remote filesystem.                                                              |
-      /// | network-server    | The icon used for individual host machines under the “Network Servers” place in the file manager.                         |
-      /// | network-workgroup | The icon for the “Network Servers” place in the desktop's file manager, and workgroups within the network.                |
-      /// | start-here        | The icon used by the desktop's main menu for accessing places, applications, and other features.                          |
-      /// | user-bookmarks    | The icon for the user's special “Bookmarks” place.                                                                        |
-      /// | user-desktop      | The icon for the special “Desktop” directory of the user.                                                                 |
-      /// | user-home         | The icon for the special “Home” directory of the user.                                                                    |
-      /// | user-trash        | The icon for the user's “Trash” place in the desktop's file manager.                                                      |
+      /// | Name                | Description                                                                                                               |
+      /// | --------------------|---------------------------------------------------------------------------------------------------------------------------|
+      /// | folder              | The standard folder icon used to represent directories on local filesystems, mail folders, and other hierarchical groups. |
+      /// | folder-activities   | The icon used for activities directory.                                                                                   |
+      /// | folder-applications | The icon used for applications directory.                                                                                 |
+      /// | folder-bookmark     | The icon used for bookmark directory.                                                                                     |
+      /// | folder-cloud        | The icon used for cloud directory.                                                                                        |
+      /// | folder-desktop      | The icon used for desktop directory.                                                                                      |
+      /// | folder-development  | The icon used for develoment directory.                                                                                   |
+      /// | folder-documents    | The icon used for documents directory.                                                                                    |
+      /// | folder-download     | The icon used for download directory.                                                                                     |
+      /// | folder-favoties     | The icon used for favorites directory.                                                                                    |
+      /// | folder-games        | The icon used for games directory.                                                                                        |
+      /// | folder-github       | The icon used for github directory.                                                                                       |
+      /// | folder-home         | The icon used for home directory.                                                                                         |
+      /// | folder-html         | The icon used for html directory.                                                                                         |
+      /// | folder-images       | The icon used for images directory.                                                                                       |
+      /// | folder-important    | The icon used for important directory.                                                                                    |
+      /// | folder-locked       | The icon used for locked directory.                                                                                       |
+      /// | folder-music        | The icon used for music directory.                                                                                        |
+      /// | folder-network      | The icon used for network directory.                                                                                      |
+      /// | folder-print        | The icon used for print directory.                                                                                        |
+      /// | folder-public       | The icon used for public directory.                                                                                       |
+      /// | folder-remote       | The icon used for normal directories on a remote filesystem.                                                              |
+      /// | folder-system       | The icon used for system directory.                                                                                       |
+      /// | folder-tar          | The icon used for tar directory.                                                                                          |
+      /// | folder-temp         | The icon used for temp directory.                                                                                         |
+      /// | folder-templates    | The icon used for templates directory.                                                                                    |
+      /// | folder-text         | The icon used for text directory.                                                                                         |
+      /// | folder-videos       | The icon used for videos directory.                                                                                       |
+      /// | network-server      | The icon used for individual host machines under the “Network Servers” place in the file manager.                         |
+      /// | network-workgroup   | The icon for the “Network Servers” place in the desktop's file manager, and workgroups within the network.                |
+      /// | start-here          | The icon used by the desktop's main menu for accessing places, applications, and other features.                          |
+      /// | user-bookmarks      | The icon for the user's special “Bookmarks” place.                                                                        |
+      /// | user-desktop        | The icon for the special “Desktop” directory of the user.                                                                 |
+      /// | user-home           | The icon for the special “Home” directory of the user.                                                                    |
+      /// | user-trash          | The icon for the user's “Trash” place in the desktop's file manager.                                                      |
       /// @par The following table represents Standard Status Icons :
       /// | Name                      | Description                                                                                                                                                                                                                                                                                      |
       /// | --------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
