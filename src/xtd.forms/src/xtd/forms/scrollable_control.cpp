@@ -7,6 +7,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+scrollable_control::scrollable_control() {
+  set_state(state::tab_stop, false);
+}
+
 forms::create_params scrollable_control::create_params() const {
   forms::create_params create_params = control::create_params();
   
