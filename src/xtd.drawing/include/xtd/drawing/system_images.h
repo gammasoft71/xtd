@@ -434,8 +434,6 @@ namespace xtd {
       /// | security-low              | The icon used to indicate that the security level of a connection is presumed to be insecure, either by using weak encryption, or by using a certificate that the could not be automatically verified, and which the user has not chosent to trust.                                              |
       /// | software-update-available | The icon used when an update is available for software installed on the computing device, through the system software update program.                                                                                                                                                            |
       /// | software-update-urgent    | The icon used when an urgent update is available through the system software update program.                                                                                                                                                                                                     |
-      /// | sync-error                | The icon used when an error occurs while attempting to synchronize data from the computing device, to another device.                                                                                                                                                                            |
-      /// | sync-synchronizing        | The icon used while data is successfully synchronizing to another device.                                                                                                                                                                                                                        |
       /// | task-due                  | The icon used when a task is due soon.                                                                                                                                                                                                                                                           |
       /// | task-past-due             | The icon used when a task that was due, has been left incomplete.                                                                                                                                                                                                                                |
       /// | user-available            | The icon used when a user on a chat network is available to initiate a conversation with.                                                                                                                                                                                                        |
@@ -454,6 +452,21 @@ namespace xtd {
       /// | weather-showers-scattered | The icon used while scattered rain showers are occurring in a region.                                                                                                                                                                                                                            |
       /// | weather-snow              | The icon used while snow showers are occurring in a region.                                                                                                                                                                                                                                      |
       /// | weather-storm             | The icon used while storms are occurring in a region.                                                                                                                                                                                                                                            |
+      /// @par The following table represents Standard xtd Icons :
+      /// | Name                      | Description                        |
+      /// | --------------------------|------------------------------------|
+      /// | gammasoft                 | The icon for Gammasoft logo.       |
+      /// | xtd                       | The icon for xtd logo.             |
+      /// | xtd-console               | The icon for xtd console logo.     |
+      /// | xtd-forms                 | The icon for xtd forms logo.       |
+      /// | xtd-console               | The icon for xtd console logo.     |
+      /// | xtd-tunit                 | The icon for xtd tunit logo.       |
+      /// | xtd-core                  | The icon for xtd core logo.        |
+      /// | xtd-delegates             | The icon for xtd delegates logo.   |
+      /// | xtd-diagnostics           | The icon for xtd diagnostics logo. |
+      /// | xtd-drawing               | The icon for xtd drawing logo.     |
+      /// | xtd-io                    | The icon for xtd io logo.          |
+      /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See <a href="https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html">Icon Naming Specification</a> for more information.
       static std::map<xtd::ustring, std::vector<xtd::ustring>> context_names() noexcept;
       static std::vector<xtd::ustring> names() noexcept;
