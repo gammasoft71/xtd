@@ -45,7 +45,7 @@
 | [point_f](../src/xtd.drawing/include/xtd/drawing/point_f.h)                         | class        | ![progress](pictures/progress100.png) |
 | [rectangle](../src/xtd.drawing/include/xtd/drawing/rectangle.h)                     | class        | ![progress](pictures/progress100.png) |
 | [rectangle_f](../src/xtd.drawing/include/xtd/drawing/rectangle_f.h)                 | class        | ![progress](pictures/progress100.png) |
-| [region](../src/xtd.drawing/include/xtd/drawing/region.h)                           | class        | ![progress](pictures/progress75.png)  |
+| [region](../src/xtd.drawing/include/xtd/drawing/region.h)                           | class        | ![progress](pictures/progress100.png) |
 | [rotate_flip_type](../src/xtd.drawing/include/xtd/drawing/rotate_flip_type.h)       | enumeration  | ![progress](pictures/progress100.png) |
 | [size](../src/xtd.drawing/include/xtd/drawing/size.h)                               | class        | ![progress](pictures/progress100.png) |
 | [size_f](../src/xtd.drawing/include/xtd/drawing/size_f.h)                           | class        | ![progress](pictures/progress100.png) |
