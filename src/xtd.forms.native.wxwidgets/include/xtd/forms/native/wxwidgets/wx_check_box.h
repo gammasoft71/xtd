@@ -46,6 +46,7 @@ namespace xtd {
         static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = wxCHK_3STATE;
           
+          if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
           if ((style & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
           else if ((style & BS_3STATE) == BS_3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
           

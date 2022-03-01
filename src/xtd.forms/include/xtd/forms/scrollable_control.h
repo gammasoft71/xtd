@@ -86,7 +86,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initialize a new instance of scrollable_control class.
-      scrollable_control() = default;
+      scrollable_control();
       /// @}
       
       /// @name Protected methods

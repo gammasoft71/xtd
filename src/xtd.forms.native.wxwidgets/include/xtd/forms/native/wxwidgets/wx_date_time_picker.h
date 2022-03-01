@@ -40,6 +40,7 @@ namespace xtd {
         static long style_to_wx_style_date_picker(size_t style, size_t ex_style) {
           long wx_style = 0;
           
+          if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
           if ((style & DTS_UPDOWN) == DTS_UPDOWN) wx_style |= wxDP_SPIN;
           else wx_style |= wxDP_DROPDOWN;
           if ((style & DTS_SHOWNONE) == DTS_SHOWNONE) wx_style |= wxDP_ALLOWNONE;
