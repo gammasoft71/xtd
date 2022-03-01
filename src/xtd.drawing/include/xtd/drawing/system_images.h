@@ -78,7 +78,7 @@ namespace xtd {
       /// @brief Gets the image context names.
       /// @return An xtd::ustring, xtd::ustring hash table that contains the image context names.
       /// @remarks The system images are grouped by contaxt.
-      /// @remarks The following table represents Standard Action Icons :
+      /// @par The following table represents Standard Action Icons :
       /// | Name                      | Description                                                                                                                                                             |
       /// | --------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
       /// | address-book-new          | The icon used for the action to create a new address book.                                                                                                              |
@@ -183,11 +183,11 @@ namespace xtd {
       /// | zoom-in                   | The icon used for the “Zoom in” item in the application's “View” menu.                                                                                                  |
       /// | zoom-original             | The icon used for the “Original Size” item in the application's “View” menu.                                                                                            |
       /// | zoom-out                  | The icon used for the “Zoom Out” item in the application's “View” menu.                                                                                                 |
-      /// @remarks The following table represents Standard Animation Icons :
+      /// @par The following table represents Standard Animation Icons :
       /// | Name               | Description                                                                                                     |
       /// |--------------------|-----------------------------------------------------------------------------------------------------------------|
       /// | process-working    | This is the standard spinner animation for web browsers and file managers to show that the location is loading. |
-      /// @remarks The following table represents Standard Application Icons :
+      /// @par The following table represents Standard Application Icons :
       /// | Name                              | Description                                                                                  |
       /// | ----------------------------------|----------------------------------------------------------------------------------------------|
       /// | accessories-calculator            | The icon used for the desktop's calculator accessory program.                                |
@@ -209,7 +209,7 @@ namespace xtd {
       /// | system-software-update            | The icon used for the desktop's software updating application.                               |
       /// | utilities-system-monitor          | The icon used for the desktop's system resource monitor application.                         |
       /// | utilities-terminal                | The icon used for the desktop's terminal emulation application.                              |
-      /// @remarks The following table represents Standard Category Icons :
+      /// @par The following table represents Standard Category Icons :
       /// | Name                            | Description                                                                        |
       /// |---------------------------------|------------------------------------------------------------------------------------|
       /// | applications-accessories        | The icon for the “Accessories” sub-menu of the Programs menu.                      |
@@ -231,7 +231,7 @@ namespace xtd {
       /// | preferences-system              | The icon for the “System Preferences” category.                                    |
       /// | preferences-system-network      | The icon for the “Network” sub-category of the “System Preferences” category.      |
       /// | system-help                     | The icon for the “Help” system category.                                           |
-      /// @remarks The following table represents Standard Device Icons :
+      /// @par The following table represents Standard Device Icons :
       /// | Name | Description                                                                                                                                                                                                                                                                  |
       /// | -----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
       /// | audio-card | The icon used for the audio rendering device.                                                                                                                                                                                                                          |
@@ -261,7 +261,7 @@ namespace xtd {
       /// | printer | The icon used for a printer device.                                                                                                                                                                                                                                       |
       /// | scanner | The icon used for a scanner device.                                                                                                                                                                                                                                       |
       /// | video-display | The icon used for the monitor that video gets displayed to.                                                                                                                                                                                                         |
-      /// @remarks The following table represents Standard Emblem Icons :
+      /// @par The following table represents Standard Emblem Icons :
       /// | Name                 | Description                                                                                                          |
       /// | ---------------------|----------------------------------------------------------------------------------------------------------------------|
       /// | emblem-default       | The icon used as an emblem to specify the default selection of a printer for example.                                |
@@ -277,7 +277,7 @@ namespace xtd {
       /// | emblem-synchronized  | The icon used as an emblem for files or directories that are configured to be synchronized to another device.        |
       /// | emblem-system        | The icon used as an emblem for directories that contain system libraries, settings, and data.                        |
       /// | emblem-unreadable    | The icon used as an emblem for files and directories that are inaccessible.                                          |
-      /// @remarks The following table represents Standard Emoticon Icons :
+      /// @par The following table represents Standard Emoticon Icons :
       /// | Name             | Description                        |
       /// | -----------------|------------------------------------|
       /// | face-angel       | The icon used for the 0:-) emote.  |
@@ -301,11 +301,11 @@ namespace xtd {
       /// | face-uncertain   | The icon used for the :-/ emote.   |
       /// | face-wink        | The icon used for the ;-) emote.   |
       /// | face-worried     | The icon used for the :-S emote.   |
-      /// @remarks The following table represents Standard MIME Type Icons :
+      /// @par The following table represents Standard MIME Type Icons :
       /// | Name    | Description                                                                                                                                                              |
       /// | --------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
       /// | flag-aa | The flag for the country with the ISO 3166 country code AA. All flags should use ISO 3166 two-letter country codes, in lowercase form, as the specifier for the country. |
-      /// @remarks The following table represents Standard International Icons :
+      /// @par The following table represents Standard International Icons :
       /// | Name                     | Description                                                 |
       /// | -------------------------|-------------------------------------------------------------|
       /// | application-x-executable | The icon used for executable file types.                    |
@@ -323,7 +323,7 @@ namespace xtd {
       /// | x-office-document        | The icon used for generic document and letter file types.   |
       /// | x-office-presentation    | The icon used for generic presentation file types.          |
       /// | x-office-spreadsheet     | The icon used for generic spreadsheet file types.           |
-      /// @remarks The following table represents Standard Place Icons :
+      /// @par The following table represents Standard Place Icons :
       /// | Name              | Description                                                                                                               |
       /// | ------------------|---------------------------------------------------------------------------------------------------------------------------|
       /// | folder            | The standard folder icon used to represent directories on local filesystems, mail folders, and other hierarchical groups. |
@@ -335,7 +335,7 @@ namespace xtd {
       /// | user-desktop      | The icon for the special “Desktop” directory of the user.                                                                 |
       /// | user-home         | The icon for the special “Home” directory of the user.                                                                    |
       /// | user-trash        | The icon for the user's “Trash” place in the desktop's file manager.                                                      |
-      /// @remarks The following table represents Standard Status Icons :
+      /// @par The following table represents Standard Status Icons :
       /// | Name                      | Description                                                                                                                                                                                                                                                                                      |
       /// | --------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
       /// | appointment-missed        | The icon used when an appointment was missed.                                                                                                                                                                                                                                                    |
