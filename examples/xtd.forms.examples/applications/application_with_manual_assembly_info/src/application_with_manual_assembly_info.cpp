@@ -27,19 +27,19 @@ public:
     version.text_align(content_alignment::middle_left);
     
     company_name.text(application::company_name());
-    company_name.border_style(forms::border_style::bevel_sunken);
+    company_name.border_style(forms::border_style::bevel_inset);
     company_name.location({120, 10});
     company_name.text_align(content_alignment::middle_left);
     company_name.width(220);
     
     product_name.text(application::product_name());
-    product_name.border_style(forms::border_style::bevel_sunken);
+    product_name.border_style(forms::border_style::bevel_inset);
     product_name.location({120, 40});
     product_name.text_align(content_alignment::middle_left);
     product_name.width(220);
     
     product_version.text(application::product_version());
-    product_version.border_style(forms::border_style::bevel_sunken);
+    product_version.border_style(forms::border_style::bevel_inset);
     product_version.location({120, 70});
     product_version.text_align(content_alignment::middle_left);
     product_version.width(220);
