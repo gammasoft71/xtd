@@ -92,6 +92,7 @@ control::control() {
   if (!application::message_loop() && cursor::current() == cursor::none) cursor::current(cursors::wait_cursor());
   set_state(state::enabled, true);
   set_state(state::visible, true);
+  set_state(state::tab_stop, true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
   
   data_->controls.item_added += [&](size_t, reference_wrapper<control> item) {
@@ -637,6 +638,18 @@ control& control::style_sheet(const ustring& value) {
   return style_sheet(style_sheets::style_sheet(value));
 }
 
+bool control::tab_stop() const {
+  return get_state(control::state::tab_stop);
+}
+
+control& control::tab_stop(bool value) {
+  if (get_state(control::state::tab_stop) != value) {
+    set_state(control::state::tab_stop, value);
+    on_tab_stop_changed(event_args::empty);
+  }
+  return *this;
+}
+
 std::any control::tag() const {
   return data_->tag;
 }
@@ -882,6 +895,7 @@ forms::create_params control::create_params() const {
   
   create_params.caption(data_->text);
   create_params.style(WS_VISIBLE | WS_CHILD);
+  if (get_state(control::state::tab_stop)) create_params.style(WS_TABSTOP);
   if (parent().has_value()) create_params.parent(parent().value().get().handle());
   create_params.location(data_->location);
   create_params.size(size());
@@ -1161,6 +1175,11 @@ void control::on_resize(const event_args& e) {
 void control::on_size_changed(const event_args& e) {
   if (is_handle_created()) data_->client_rectangle = native::control::client_rectangle(handle());
   if (can_raise_events()) size_changed(*this, e);
+}
+
+void control::on_tab_stop_changed(const event_args& e) {
+  recreate_handle();
+  if (can_raise_events()) tab_stop_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args& e) {

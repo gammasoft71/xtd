@@ -60,7 +60,8 @@ namespace xtd {
           else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;
           else wx_style |= wxBORDER_NONE;
           
-          if ((style & ES_MULTILINE) == ES_MULTILINE) wx_style |= wxTE_MULTILINE;
+          if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
+         if ((style & ES_MULTILINE) == ES_MULTILINE) wx_style |= wxTE_MULTILINE;
           if ((style & ES_PASSWORD) == ES_PASSWORD) wx_style |= wxTE_PASSWORD;
           if ((style & ES_READONLY) == ES_READONLY) wx_style |= wxTE_READONLY;
           if ((style & ES_MULTILINE) == ES_MULTILINE && (style & ES_AUTOHSCROLL) == ES_AUTOHSCROLL) wx_style |= wxTE_DONTWRAP;
