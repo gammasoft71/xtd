@@ -33,13 +33,13 @@ public:
     company_name.width(220);
     
     product_name.text(application::product_name());
-    product_name.border_style(forms::border_style::bevel_i);
+    product_name.border_style(forms::border_style::bevel_inset);
     product_name.location({120, 40});
     product_name.text_align(content_alignment::middle_left);
     product_name.width(220);
     
     product_version.text(application::product_version());
-    product_version.border_style(forms::border_style::bevel_sunken);
+    product_version.border_style(forms::border_style::bevel_inset);
     product_version.location({120, 70});
     product_version.text_align(content_alignment::middle_left);
     product_version.width(220);
