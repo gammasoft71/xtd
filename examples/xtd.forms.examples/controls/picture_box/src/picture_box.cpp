@@ -22,7 +22,7 @@ namespace picture_box {
       };
       
       picture_box1.parent(*this);
-      picture_box1.border_style(border_style::etched);
+      picture_box1.border_style(border_style::groove);
       picture_box1.location({20, 65});
       picture_box1.size({260, 260});
       picture_box1.image(properties::resources::logo());
