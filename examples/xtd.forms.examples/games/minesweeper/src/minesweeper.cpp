@@ -376,6 +376,17 @@ void minesweeper_form::on_game_panel_paint(object& sender, paint_event_args& e) 
       draw_cell(e, {15 + x * cell::width(), 15 + y * cell::height(), cell::width(), cell::height()}, cells_[x][y]);
 }
 
+void minesweeper_form::on_marks_menu_click(object& sender, const xtd::event_args& e) {
+  properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
+  properties::settings::default_settings().save();
+}
+
+void minesweeper_form::on_original_color_menu_click(object& sender, const xtd::event_args& e) {
+  properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());
+  properties::settings::default_settings().save();
+  update_colors();
+}
+
 void minesweeper_form::on_status_panel_paint(object& sender, paint_event_args& e) {
   e.graphics().clear(back_color());
   e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), 0, 0, e.clip_rectangle().width(), 0);
