@@ -11,6 +11,9 @@ const point_f point_f::empty;
 point_f::point_f(float x, float y) noexcept : x_(x), y_(y) {
 }
 
+point_f::point_f(const size_f& size) noexcept : x_(size.width()), y_(size.height()) {
+}
+
 bool point_f::is_empty() const noexcept {
   return *this == point_f::empty;
 }

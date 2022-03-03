@@ -6,6 +6,8 @@
 /// @endcond
 
 #include "wx_brush.h"
+#include "wxConicalGradient.h"
+#include "hdc_wrapper.h"
 #include <cmath>
 #include <wx/dcclient.h>
 #include <wx/dcmemory.h>
@@ -17,23 +19,54 @@ namespace xtd {
     namespace native {
       class wxDrawString {
       public:
-        static void DrawString(wxGraphicsContext& graphics, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align) {
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align) {
+          wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
+          dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
+          DrawString(handle, text, font, brush, x, y, angle, align);
+          dc.DestroyClippingRegion();
+        }
+        
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align) {
           float width = 0.0f, height = 0.0f;
-          measure_string(graphics, text, font, width, height);
-          DrawString(graphics, text, font, brush, x, y, width, height, angle, align);
-        }
-        
-        static void DrawString(wxGraphicsContext& graphics, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align) {
+          measure_string(handle, text, font, width, height);
+          float max_size = math::max(width, height);
           if (brush.is_solid_brush()) {
+            wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
+            dc.SetFont(font);
+            dc.SetTextForeground(brush.get_solid_brush().color);
+            dc.DrawRotatedText(text, x, y, -angle);
+          } else {
+            wxImage image(x + max_size, y + max_size);
+            if (brush.is_conical_gradiant_brush()) {
+              image = wxConicalGradient::CreateBitmap(wxSize(max_size, max_size), brush.get_conical_gradiant_brush().colors, brush.get_conical_gradiant_brush().center_point, brush.get_conical_gradiant_brush().angle).ConvertToImage();
+            } else {
+              image.InitAlpha();
+              for (int y1 = 0; y1 < static_cast<int32_t>(max_size + y); y1++)
+                for (int x1 = 0; x1 < static_cast<int32_t>(max_size + x); x1++)
+                  image.SetAlpha(x1, y1, 0);
+              wxBitmap bitmap(image);
+              auto bitmap_graphics = wxGraphicsContext::Create(wxMemoryDC(bitmap));
+              bitmap_graphics->SetBrush(wx_brush::to_graphics_brush(*reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics(), brush));
+              bitmap_graphics->DrawRectangle(0, 0, max_size + x, max_size + y);
+              image = bitmap.ConvertToImage();
+            }
             
+            wxBitmap bitmap_mask(x + max_size, y + max_size);
+            wxMemoryDC bitmap_mask_dc(bitmap_mask);
+            bitmap_mask_dc.SetFont(font);
+            bitmap_mask_dc.SetTextForeground(wxColour(255, 255, 255));
+            bitmap_mask_dc.DrawRotatedText(text, x, y, -angle);
+            
+            image.SetMaskFromImage(bitmap_mask.ConvertToImage(), 0, 0, 0);
+            wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+            graphics.DrawBitmap(wxBitmap(image), 0, 0, max_size + x, max_size + y);
           }
-          wxBitmap bitmap;
         }
         
-        static void measure_string(wxGraphicsContext& graphics, const wxString& text, const wxFont& font, float& width, float& height) {
+        static void measure_string(intptr_t handle, const wxString& text, const wxFont& font, float& width, float& height) {
           width = 0;
           height = 0;
-          wxGCDC dc(&graphics);
+          wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
           dc.SetFont(font);
           auto strings = wxSplit(text, '\n');
           for (auto string : strings) {
@@ -44,6 +77,7 @@ namespace xtd {
               line_width = line_size.GetWidth();
               line_height = line_size.GetHeight();
             } else {
+              wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
               graphics.SetFont(font, { 0, 0, 0 });
               graphics.GetTextExtent(string, &line_width, &line_height);
             }

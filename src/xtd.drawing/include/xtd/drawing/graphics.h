@@ -736,6 +736,13 @@ namespace xtd {
       /// @param radius The radius of the rounded rectange angles.
       void draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height, float radius);
       
+      /// @brief Draws the specified text string at the specified rectangle with the specified xtd::drawing::brush and xtd::drawing::font objects.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param layout_rectangle xtd::drawing::rectangle_f structure that specifies the location of the drawn text.
+      /// @remarks The text represented by the s parameter is drawn inside the rectangle represented by the layout_rectangle parameter. If the text does not fit inside the rectangle, it is truncated at the nearest word. To further manipulate how the string is drawn inside the rectangle use the xtd::drawing::graphics::draw_string overload that takes a xtd::drawing::string_format.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle);
       /// @brief Draws the specified text string at the specified rectangle with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
@@ -744,13 +751,20 @@ namespace xtd {
       /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
       /// @remarks The text represented by the s parameter is drawn inside the rectangle represented by the layout_rectangle parameter. If the text does not fit inside the rectangle, it is truncated at the nearest word, unless otherwise specified with the format parameter.
       void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const xtd::drawing::string_format& format);
-      /// @brief Draws the specified text string at the specified rectangle with the specified xtd::drawing::brush and xtd::drawing::font objects.
+
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
-      /// @param layout_rectangle xtd::drawing::rectangle_f structure that specifies the location of the drawn text.
-      /// @remarks The text represented by the s parameter is drawn inside the rectangle represented by the layout_rectangle parameter. If the text does not fit inside the rectangle, it is truncated at the nearest word. To further manipulate how the string is drawn inside the rectangle use the xtd::drawing::graphics::draw_string overload that takes a xtd::drawing::string_format.
-      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle);
+      /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point);
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
+      /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle);
       /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
@@ -758,12 +772,29 @@ namespace xtd {
       /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
       /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
       void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const xtd::drawing::string_format& format);
-      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
       /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
-      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point);
+      /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
+      /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle, const xtd::drawing::string_format& format);
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param x The x-coordinate of the upper-left corner of the drawn text.
+      /// @param y The y-coordinate of the upper-left corner of the drawn text.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y);
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param x The x-coordinate of the upper-left corner of the drawn text.
+      /// @param y The y-coordinate of the upper-left corner of the drawn text.
+      /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle);
       /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
@@ -772,14 +803,16 @@ namespace xtd {
       /// @param y The y-coordinate of the upper-left corner of the drawn text.
       /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
       void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, const xtd::drawing::string_format& format);
-      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects using the formatting attributes of the specified xtd::drawing::string_format.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
       /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
       /// @param x The x-coordinate of the upper-left corner of the drawn text.
       /// @param y The y-coordinate of the upper-left corner of the drawn text.
-      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y);
-      
+      /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
+      /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
+      void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle, const xtd::drawing::string_format& format);
+
       /// @brief Updates the clip region of this xtd::drawing::graphics to exclude the area specified by a xtd::drawing::region.
       /// @param region xtd::drawing::region that specifies the region to exclude from the clip region.
       /// @remarks This method excludes the area specified by the region parameter from the current clip region and assigns the resulting area to the xtd::drawing::graphics::clip property of this xtd::drawing::graphics.

@@ -525,73 +525,86 @@ void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, flo
   native::graphics::draw_rounded_rectangle(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), to_pixels(radius));
 }
 
-void graphics::draw_string(const ustring& s, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
-  if (dynamic_cast<const solid_brush*>(&brush) != nullptr) {
-    auto text_size = measure_string(s, font);
-    auto y = layout_rectangle.y();
-    auto height = layout_rectangle.height();
-    
-    if (format.line_alignment() == string_alignment::center) {
-      y += (layout_rectangle.height() - text_size.height()) / 2;
-      height -= (layout_rectangle.height() - text_size.height()) / 2;
-    } else  if (format.line_alignment() == string_alignment::far) {
-      y += (layout_rectangle.height() - text_size.height());
-      height -= (layout_rectangle.height() - text_size.height());
-    }
-    
-    auto lines = s.split({'\n'});
-    for (auto line : lines) {
-      if (line.empty()) line = " ";
-      vector<size_t> hotkey_prefix_locations;
-      string line_without_hotkey_prefix = get_hotkey_prefix_locations(line, hotkey_prefix_locations);
-      auto drawable_line = format.hotkey_prefix() == hotkey_prefix::none ? line : line_without_hotkey_prefix;
-      auto x = layout_rectangle.x();
-      auto width = layout_rectangle.width();
-      auto line_size = measure_string(drawable_line, font);
-      if (format.alignment() == string_alignment::center) {
-        x += (layout_rectangle.width() - line_size.width()) / 2;
-        width -= (layout_rectangle.width() - line_size.width()) / 2;
-      } else  if (format.alignment() == string_alignment::far) {
-        x += (layout_rectangle.width() - line_size.width());
-        width -= (layout_rectangle.width() - line_size.width());
-      }
-      
-      if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(handle(), drawable_line, font.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), as<const solid_brush&>(brush).color().a(), as<const solid_brush&>(brush).color().r(), as<const solid_brush&>(brush).color().g(), as<const solid_brush&>(brush).color().b());
-      else {
-        /*
-         for (auto index  = 0; index <hotkey_prefix_locations.size(); ++index) {
-         g.draw_string(text_without_hotkey_prefix.substring(hotkey_prefix_locations[index], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, to_string_format(flags));
-         auto chunk_size = (index+1 < hotkey_prefix_locations.size() ? hotkey_prefix_locations[index+1] : text_without_hotkey_prefix.size()) - hotkey_prefix_locations[index] - 1;
-         g.draw_string(text_without_hotkey_prefi.substring(hotkey_prefix_locations[index], chunk_size), font, solid_brush(text_color), button_rect, to_string_format(flags));
-         }
-         */
-        native::graphics::draw_string(handle(), drawable_line, font.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), as<const solid_brush&>(brush).color().a(), as<const solid_brush&>(brush).color().r(), as<const solid_brush&>(brush).color().g(), as<const solid_brush&>(brush).color().b());
-      }
-      
-      y += line_size.height();
-    }
-  }
-}
-
 void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle) {
   draw_string(s, font, brush, layout_rectangle, string_format());
 }
 
-void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {
-  draw_string(s, font, brush, point.x(), point.y(), format);
+void graphics::draw_string(const ustring& s, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
+  auto text_size = measure_string(s, font);
+  auto y = layout_rectangle.y();
+  auto height = layout_rectangle.height();
+  
+  if (format.line_alignment() == string_alignment::center) {
+    y += (layout_rectangle.height() - text_size.height()) / 2;
+    height -= (layout_rectangle.height() - text_size.height()) / 2;
+  } else  if (format.line_alignment() == string_alignment::far) {
+    y += (layout_rectangle.height() - text_size.height());
+    height -= (layout_rectangle.height() - text_size.height());
+  }
+  
+  auto lines = s.split({'\n'});
+  for (auto line : lines) {
+    if (line.empty()) line = " ";
+    vector<size_t> hotkey_prefix_locations;
+    string line_without_hotkey_prefix = get_hotkey_prefix_locations(line, hotkey_prefix_locations);
+    auto drawable_line = format.hotkey_prefix() == hotkey_prefix::none ? line : line_without_hotkey_prefix;
+    auto x = layout_rectangle.x();
+    auto width = layout_rectangle.width();
+    auto line_size = measure_string(drawable_line, font);
+    if (format.alignment() == string_alignment::center) {
+      x += (layout_rectangle.width() - line_size.width()) / 2;
+      width -= (layout_rectangle.width() - line_size.width()) / 2;
+    } else  if (format.alignment() == string_alignment::far) {
+      x += (layout_rectangle.width() - line_size.width());
+      width -= (layout_rectangle.width() - line_size.width());
+    }
+    
+    if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(handle(), drawable_line, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), 0, static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
+    else {
+      /*
+       for (auto index  = 0; index <hotkey_prefix_locations.size(); ++index) {
+       g.draw_string(text_without_hotkey_prefix.substring(hotkey_prefix_locations[index], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, to_string_format(flags));
+       auto chunk_size = (index+1 < hotkey_prefix_locations.size() ? hotkey_prefix_locations[index+1] : text_without_hotkey_prefix.size()) - hotkey_prefix_locations[index] - 1;
+       g.draw_string(text_without_hotkey_prefi.substring(hotkey_prefix_locations[index], chunk_size), font, solid_brush(text_color), button_rect, to_string_format(flags));
+       }
+       */
+      native::graphics::draw_string(handle(), drawable_line, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), 0, static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
+    }
+    
+    y += line_size.height();
+  }
 }
 
 void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {
-  draw_string(s, font, brush, point.x(), point.y(), string_format());
+  draw_string(s, font, brush, point.x(), point.y(), 0.0f, string_format());
 }
 
-void graphics::draw_string(const ustring& s, const font& font, const brush& brush, float x, float y, const string_format& format) {
-  if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
-    native::graphics::draw_string(handle(), s, font.handle(), to_pixels(x), to_pixels(y), as<const solid_brush&>(brush).color().a(), as<const solid_brush&>(brush).color().r(), as<const solid_brush&>(brush).color().g(), as<const solid_brush&>(brush).color().b());
+void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle) {
+  draw_string(s, font, brush, point.x(), point.y(), angle, string_format());
+}
+
+void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {
+  draw_string(s, font, brush, point.x(), point.y(), 0.0f, format);
+}
+
+void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle, const string_format& format) {
+  draw_string(s, font, brush, point.x(), point.y(), angle, format);
+}
+
+void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle) {
+  draw_string(s, font, brush, x, y, angle, string_format());
 }
 
 void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {
-  draw_string(s, font, brush, x, y, string_format());
+  draw_string(s, font, brush, x, y, 0.0f, string_format());
+}
+
+void graphics::draw_string(const ustring& s, const font& font, const brush& brush, float x, float y, const string_format& format) {
+  draw_string(s, font, brush, x, y, 0.0f, format);
+}
+
+void graphics::draw_string(const ustring& s, const font& font, const brush& brush, float x, float y, float angle, const string_format& format) {
+  native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), angle, static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
 }
 
 void graphics::exclude_clip(const xtd::drawing::region& region) {

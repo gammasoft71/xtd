@@ -6,6 +6,7 @@
 /// @endcond
 
 #include <cstdint>
+#include <xtd/argument_exception.h>
 #include <wx/pen.h>
 #include <wx/image.h>
 #include <wx/graphics.h>
@@ -123,6 +124,77 @@ namespace xtd {
         
         wxPenCap line_cap() const {return line_cap_;}
         void line_cap(wxPenCap  line_cap) {line_cap_ = line_cap;}
+        
+        static wxPen to_pen(const wx_pen& pen) {
+          if (pen.is_solid_color_pen()) {
+            wxPen wxpen(pen.get_solid_color_pen().color, pen.get_solid_color_pen().width);
+            wxpen.SetStyle(wxPenStyle::wxPENSTYLE_USER_DASH);
+            wxpen.SetDashes(pen.get_solid_color_pen().dashes.size(), pen.get_solid_color_pen().dashes.data());
+            wxpen.SetCap(pen.line_cap());
+            wxpen.SetJoin(pen.line_join());
+            return wxpen;
+          }
+          throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
+        }
+        
+        static wxGraphicsPen to_graphics_pen(wxGraphicsContext& graphics, const wx_pen& pen) {
+          if (pen.is_solid_color_pen()) {
+            wxGraphicsPenInfo pen_info;
+            pen_info.Colour(pen.get_solid_color_pen().color);
+            pen_info.Style(wxPenStyle::wxPENSTYLE_USER_DASH);
+            pen_info.Dashes(pen.get_solid_color_pen().dashes.size(), pen.get_solid_color_pen().dashes.data());
+            pen_info.Width(pen.get_solid_color_pen().width);
+            pen_info.Cap(pen.line_cap());
+            pen_info.Join(pen.line_join());
+            return graphics.CreatePen(pen_info);
+          }
+          if (pen.is_hatch_fill_pen()) {
+            wxGraphicsPenInfo pen_info;
+            pen_info.Colour({0, 0, 0, 0});
+            pen_info.Stipple(wxBitmap(pen.get_hatch_fill_pen().brush.get_texture_brush().texture));
+            pen_info.Width(pen.get_hatch_fill_pen().width);
+            pen_info.Cap(pen.line_cap());
+            pen_info.Join(pen.line_join());
+            return graphics.CreatePen(pen_info);
+          }
+          if (pen.is_linear_gradiant_pen()) {
+            wxGraphicsPenInfo pen_info;
+            pen_info.Colour({0, 0, 0, 0});
+            pen_info.LinearGradient(pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().point1.x, pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().point1.y, pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().point2.x, pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().point2.y, pen.get_linear_gradiant_pen().brush.get_linear_gradiant_brush().colors);
+            pen_info.Width(pen.get_linear_gradiant_pen().width);
+            pen_info.Cap(pen.line_cap());
+            pen_info.Join(pen.line_join());
+            return graphics.CreatePen(pen_info);
+          }
+          if (pen.is_radial_gradiant_pen()) {
+            wxGraphicsPenInfo pen_info;
+            pen_info.Colour({0, 0, 0, 0});
+            pen_info.RadialGradient(pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().focal_point.x, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().focal_point.y, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().center_point.x, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().center_point.y, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().radius, pen.get_radial_gradiant_pen().brush.get_radial_gradiant_brush().colors);
+            pen_info.Width(pen.get_radial_gradiant_pen().width);
+            pen_info.Cap(pen.line_cap());
+            pen_info.Join(pen.line_join());
+            return graphics.CreatePen(pen_info);
+          }
+          if (pen.is_texture_fill_pen()) {
+            wxGraphicsPenInfo pen_info;
+            pen_info.Colour({0, 0, 0, 0});
+            pen_info.Stipple(wxBitmap(pen.get_texture_fill_pen().brush.get_texture_brush().texture));
+            pen_info.Width(pen.get_texture_fill_pen().width);
+            pen_info.Cap(pen.line_cap());
+            pen_info.Join(pen.line_join());
+            return graphics.CreatePen(pen_info);
+          }
+          if (pen.is_conical_gradiant_pen()) {
+            wxGraphicsPenInfo pen_info;
+            pen_info.Colour(pen.get_conical_gradiant_pen().brush.get_conical_gradiant_brush().colors.Item(0).GetColour());
+            pen_info.Width(pen.get_conical_gradiant_pen().width);
+            pen_info.Cap(pen.line_cap());
+            pen_info.Join(pen.line_join());
+            return graphics.CreatePen(pen_info);
+          }
+          
+          throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
+        }
 
       private:
         pen_type pen_type_ = pen_type::none;

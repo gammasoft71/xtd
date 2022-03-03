@@ -6,6 +6,7 @@
 /// @endcond
 
 #include <cstdint>
+#include <xtd/argument_exception.h>
 #include <wx/brush.h>
 #include <wx/image.h>
 #include <wx/graphics.h>
@@ -104,6 +105,22 @@ namespace xtd {
 
         const texture_brush& get_texture_brush() const {return texture_brush_;}
         texture_brush& get_texture_brush() {return texture_brush_;}
+        
+        
+        static wxBrush to_brush(const wx_brush& brush) {
+          if (brush.is_solid_brush()) return wxBrush(brush.get_solid_brush().color);
+          if (brush.is_texture_brush()) return wxBrush(brush.get_texture_brush().texture);
+          throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
+        }
+        
+        static wxGraphicsBrush to_graphics_brush(wxGraphicsContext& graphics, const wx_brush& brush) {
+          if (brush.is_conical_gradiant_brush()) return graphics.CreateBrush(wxBrush(brush.get_conical_gradiant_brush().colors.Item(0).GetColour()));
+          if (brush.is_linear_gradiant_brush()) return graphics.CreateLinearGradientBrush(static_cast<double>(brush.get_linear_gradiant_brush().point1.x), static_cast<double>(brush.get_linear_gradiant_brush().point1.y), static_cast<double>(brush.get_linear_gradiant_brush().point2.x), static_cast<double>(brush.get_linear_gradiant_brush().point2.y), brush.get_linear_gradiant_brush().colors);
+          if (brush.is_radial_gradiant_brush()) return graphics.CreateRadialGradientBrush(static_cast<double>(brush.get_radial_gradiant_brush().focal_point.x), static_cast<double>(brush.get_radial_gradiant_brush().focal_point.y), static_cast<double>(brush.get_radial_gradiant_brush().center_point.x), static_cast<double>(brush.get_radial_gradiant_brush().center_point.y), static_cast<double>(brush.get_radial_gradiant_brush().radius), brush.get_radial_gradiant_brush().colors);
+          if (brush.is_solid_brush()) return graphics.CreateBrush(wxBrush(brush.get_solid_brush().color));
+          if (brush.is_texture_brush()) return graphics.CreateBrush(wxBrush(brush.get_texture_brush().texture));
+          throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
+        }
         
       private:
         brush_type brush_type_ = brush_type::none;
