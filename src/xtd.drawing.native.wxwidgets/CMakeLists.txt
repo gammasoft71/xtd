@@ -27,6 +27,7 @@ add_sources(
   include/xtd/drawing/native/wx_brush.h
   include/xtd/drawing/native/wx_pen.h
   include/xtd/drawing/native/wxConicalGradient.h
+  include/xtd/drawing/native/wxDrawString.h
   src/xtd/drawing/native/wxwidgets/brush.cpp
   src/xtd/drawing/native/wxwidgets/font.cpp
   src/xtd/drawing/native/wxwidgets/font_family.cpp
