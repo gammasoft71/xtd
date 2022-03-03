@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of radio_button control factory.
+    /// The following code example demonstrates the use of radio_button control factory.
     /// @include radio_buttons.cpp
     class forms_export_ radio_buttons final static_ {
     public:

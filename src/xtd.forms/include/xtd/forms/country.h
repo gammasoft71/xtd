@@ -24,7 +24,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms components
     /// @par Examples
-    /// The following code example demonstrate the use of country component.
+    /// The following code example demonstrates the use of country component.
     /// @include countries.cpp
     class forms_export_ country : public object {
     public:

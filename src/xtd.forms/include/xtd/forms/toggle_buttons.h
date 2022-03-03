@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of toggle_buttons factory.
+    /// The following code example demonstrates the use of toggle_buttons factory.
     /// @include toggle_buttons.cpp
     class forms_export_ toggle_buttons final static_ {
     public:

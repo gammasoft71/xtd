@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of fourteen segment display control.
+    /// The following code example demonstrates the use of fourteen segment display control.
     /// @include fourteen_segment_display.cpp
     class fourteen_segment_display : public seven_segment_display {
     public:

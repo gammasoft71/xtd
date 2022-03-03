@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of color_box dialog.
+    /// The following code example demonstrates the use of color_box dialog.
     /// @include color_box.cpp
     class color_box final static_ {
     public:

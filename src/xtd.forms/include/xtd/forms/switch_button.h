@@ -19,7 +19,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of switch button control.
+    /// The following code example demonstrates the use of switch button control.
     /// @include switch_button.cpp
     class switch_button : public xtd::forms::button_base {
     public:

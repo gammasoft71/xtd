@@ -27,7 +27,7 @@ namespace xtd {
     /// @remarks The xtd::forms::link_label::tab_stop property is true by default, as long as there is at least one link of greater than zero length in the Links collection. The xtd::forms::link_label control has a single xtd::forms::link_label::tab_index value. However, each link of greater than zero length gets its own tab stop, in left-to-right order. To prevent tab navigation to the xtd::forms::link_label control, set the xtd::forms::link_label::tab_stop property to false. However, be aware that adding new links to the xtd::forms::link_label::links collection will automatically set the xtd::forms::link_label::tab_stop property to true again.
     /// @remarks The xtd::forms::link_label provides a number of properties that enable you to define the display appearance of hyperlinks in the control. The xtd::forms::link_label::active_link_color, xtd::forms::link_label::disabled_link_color, xtd::forms::link_label::link_color, and xtd::forms::link_label::visited_link_color properties define the colors used when displaying a hyperlink in various states. The xtd::forms::link_label::link_behavior property defines the display of the underline that is associated with a hyperlink.
     /// @par Examples
-    /// The following code example demonstrate the use of link_label control.
+    /// The following code example demonstrates the use of link_label control.
     /// @include link_label.cpp
     class link_label : public label {
     public:

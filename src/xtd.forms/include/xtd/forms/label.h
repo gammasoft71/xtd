@@ -19,10 +19,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of label control.
+    /// The following code example demonstrates the use of label control.
     /// @include label.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of label control.
+    /// The following code example demonstrates the use of label control.
     /// @include hello_world_label.cpp
     class forms_export_ label : public control {
     public:

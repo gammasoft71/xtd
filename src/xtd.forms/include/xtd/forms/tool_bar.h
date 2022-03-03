@@ -26,7 +26,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms  menus_and_toolbars
     /// @par Examples
-    /// The following code example demonstrate the use of tool_bar control.
+    /// The following code example demonstrates the use of tool_bar control.
     /// @include tool_bar.cpp
     class forms_export_ tool_bar : public control {
       class tool_bar_button_control : public xtd::forms::button {

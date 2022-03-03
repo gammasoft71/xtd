@@ -26,7 +26,7 @@ namespace xtd {
     /// @remarks radio_button and check_box controls have a similar function: they offer choices a user can select or clear. The difference is that multiple check_box controls can be selected at the same time, but option buttons are mutually exclusive.
     /// @remarks Use the checked property to get or set the state of a radio_button. The option button's appearance can be altered to appear as a toggle-style button or as a standard option button by setting the appearance property.
     /// @par Examples
-    /// The following code example demonstrate the use of radio_button control.
+    /// The following code example demonstrates the use of radio_button control.
     /// @include radio_button.cpp
     class forms_export_ radio_button : public xtd::forms::button_base {
     public:

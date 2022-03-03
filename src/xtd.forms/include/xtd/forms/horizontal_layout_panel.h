@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
-    /// The following code example demonstrate the use of horizontal_layout_panel container.
+    /// The following code example demonstrates the use of horizontal_layout_panel container.
     /// @include horizontal_layout_panel.cpp
     class horizontal_layout_panel : public panel {
     public:

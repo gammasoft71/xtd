@@ -18,7 +18,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
-    /// The following code example demonstrate the use of split_container container.
+    /// The following code example demonstrates the use of split_container container.
     /// @include split_container.cpp
     class forms_export_ split_container : public  xtd::forms::scrollable_control {
     public:

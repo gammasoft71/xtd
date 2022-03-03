@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms components
     /// @par Examples
-    /// The following code example demonstrate the use of emoticons class.
+    /// The following code example demonstrates the use of emoticons class.
     /// @include emoticons.cpp
     class forms_export_ emoticons final static_ {
     public:

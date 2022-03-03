@@ -21,7 +21,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of exception_box dialog.
+    /// The following code example demonstrates the use of exception_box dialog.
     /// @include exception_box.cpp
     class exception_box final static_ {
     public:

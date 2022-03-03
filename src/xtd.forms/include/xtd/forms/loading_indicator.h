@@ -17,10 +17,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of loading indicator control.
+    /// The following code example demonstrates the use of loading indicator control.
     /// @include loading_indicator.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of loading_indicator control.
+    /// The following code example demonstrates the use of loading_indicator control.
     /// @include hello_world_loading_indicator.cpp
     class forms_export_ loading_indicator : public control {
     public:

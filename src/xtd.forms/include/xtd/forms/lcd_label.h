@@ -24,10 +24,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of lcd_label control.
+    /// The following code example demonstrates the use of lcd_label control.
     /// @include lcd_label.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of lcd_label control.
+    /// The following code example demonstrates the use of lcd_label control.
     /// @include lcd_label2.cpp
     class lcd_label : public control {
       class idigit interface_ {

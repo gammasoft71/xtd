@@ -26,7 +26,7 @@ namespace xtd {
     /// @remarks There are a number of ways to modify the value displayed by the progress_bar other than changing the value property directly. You can use the step property to specify a specific value to increment the Value property by, and then call the perform_step method to increment the value. To vary the increment value, you can use the increment method and specify a value with which to increment the value property.
     /// @note fore_color and back_color changes for the progress_bar will not be honored.
     /// @par Examples
-    /// The following code example demonstrate the use of progress_bar control.
+    /// The following code example demonstrates the use of progress_bar control.
     /// @include progress_bar.cpp
     class forms_export_ progress_bar : public control {
     public:

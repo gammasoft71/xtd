@@ -42,7 +42,7 @@ namespace xtd {
     ///   </tr>
     /// </table>
     /// @par Examples
-    /// The following code example demonstrate the use of about_dialog dialog.
+    /// The following code example demonstrates the use of about_dialog dialog.
     /// @include about_dialog.cpp
     /// @par Examples
     /// The following code example demonstrates the use of about_dialog dialog with dialog_styledialog_style to system.

@@ -29,7 +29,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of message_dialog dialog.
+    /// The following code example demonstrates the use of message_dialog dialog.
     /// @include message_dialog.cpp
     class forms_export_ message_dialog final : public component {
     public:

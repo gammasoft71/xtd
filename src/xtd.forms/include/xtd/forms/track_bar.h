@@ -20,7 +20,7 @@ namespace xtd {
     /// @remarks The large_change property defines the increment to add or subtract from the value property when clicks occur on either side of the scroll box. The track bar can be displayed horizontally or vertically.
     /// @remarks You can use this control to input numeric data obtained through the value property. You can display this numeric data in a control or use it in code.
     /// @par Examples
-    /// The following code example demonstrate the use of track_bar control.
+    /// The following code example demonstrates the use of track_bar control.
     /// @include track_bar.cpp
     class forms_export_ track_bar : public control {
     public:

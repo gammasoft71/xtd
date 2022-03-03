@@ -21,7 +21,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of up down button control.
+    /// The following code example demonstrates the use of up down button control.
     /// @include up_down_button.cpp
     class forms_export_ up_down_button : public button_base {
     public:

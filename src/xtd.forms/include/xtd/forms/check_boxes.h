@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of check_boxes control factory.
+    /// The following code example demonstrates the use of check_boxes control factory.
     /// @include check_boxes.cpp
     class check_boxes final static_ {
     public:

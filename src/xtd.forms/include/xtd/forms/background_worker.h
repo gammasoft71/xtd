@@ -26,7 +26,7 @@ namespace xtd {
     /// @note You must be careful not to manipulate any user-interface objects in your do_work event handler. Instead, communicate to the user interface through the progress_changed and run_worker_completed events.
     /// @remarks If your background operation requires a parameter, call run_worker_async with your parameter. Inside the do_work event handler, you can extract the parameter from the do_work_event_args.argument property.
     /// @par Examples
-    /// The following code example demonstrate the use of background_worker component.
+    /// The following code example demonstrates the use of background_worker component.
     /// @include background_worker.cpp
     class forms_export_ background_worker : public component {
     public:

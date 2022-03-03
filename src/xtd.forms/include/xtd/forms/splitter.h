@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of splitter control.
+    /// The following code example demonstrates the use of splitter control.
     /// @include splitter.cpp
     class forms_export_ splitter : public xtd::forms::control {
     public:

@@ -19,13 +19,13 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of input_dialog dialog.
+    /// The following code example demonstrates the use of input_dialog dialog.
     /// @include input_dialog.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of input_dialog dialog with multiline.
+    /// The following code example demonstrates the use of input_dialog dialog with multiline.
     /// @include input_dialog_multiline.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of input_dialog dialog with password.
+    /// The following code example demonstrates the use of input_dialog dialog with password.
     /// @include input_dialog_password.cpp
     class forms_export_ input_dialog : public common_dialog {
     public:

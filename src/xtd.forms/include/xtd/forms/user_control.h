@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of user control.
+    /// The following code example demonstrates the use of user control.
     /// @include user_control.cpp
     class forms_export_ user_control : public container_control {
     public:

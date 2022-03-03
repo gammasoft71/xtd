@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of xtd::forms::open_file_box dialog.
+    /// The following code example demonstrates the use of xtd::forms::open_file_box dialog.
     /// @include open_file_box.cpp
     class open_file_box final static_ {
     public:

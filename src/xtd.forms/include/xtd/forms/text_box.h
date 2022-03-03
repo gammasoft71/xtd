@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of text box control.
+    /// The following code example demonstrates the use of text box control.
     /// @include text_box.cpp
     class forms_export_ text_box : public text_box_base {
     public:

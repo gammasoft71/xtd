@@ -21,7 +21,7 @@ namespace xtd {
     /// @remarks On macos settings are stored in "~/Library/Preferences/product_name Preferences" file.
     /// @remarks On linux settings are stored in "~/.product_name" file.
     /// @par Examples
-    /// The following code example demonstrate the use of settings class.
+    /// The following code example demonstrates the use of settings class.
     /// @include settings_example.cpp
     class forms_export_ settings : public object {
     public:

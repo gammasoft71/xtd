@@ -18,7 +18,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of animation control.
+    /// The following code example demonstrates the use of animation control.
     /// @include animation.cpp
     class animation : public xtd::forms::control {
     public:

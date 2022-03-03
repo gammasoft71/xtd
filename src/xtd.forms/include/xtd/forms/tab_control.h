@@ -21,7 +21,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
-    /// The following code example demonstrate the use of tab_control container.
+    /// The following code example demonstrates the use of tab_control container.
     /// @include tab_control.cpp
     class forms_export_ tab_control : public control {
     public:

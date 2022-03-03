@@ -23,7 +23,7 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     /// @image html solid_brush.png
     /// @par Examples
-    /// The following code example demonstrate the use of solid_brush class.
+    /// The following code example demonstrates the use of solid_brush class.
     /// @include fill_rectangle.cpp
     /// @remarks This class inherits from the xtd::drawing::brush class.
     class drawing_export_ solid_brush final : public xtd::drawing::brush {

@@ -25,7 +25,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of message_box dialog.
+    /// The following code example demonstrates the use of message_box dialog.
     /// @include message_box.cpp
     class message_box final static_ {
     public:

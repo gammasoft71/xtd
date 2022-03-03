@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
-    /// The following code example demonstrate the use of vertical_layout_panel container.
+    /// The following code example demonstrates the use of vertical_layout_panel container.
     /// @include vertical_layout_panel.cpp
     class vertical_layout_panel : public panel {
     public:

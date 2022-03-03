@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of h_scroll_bar control.
+    /// The following code example demonstrates the use of h_scroll_bar control.
     /// @include h_scroll_bar.cpp
     class forms_export_ h_scroll_bar : public scroll_bar {
     public:

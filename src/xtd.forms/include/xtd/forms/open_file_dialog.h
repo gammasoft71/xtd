@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of open_file_dialog dialog.
+    /// The following code example demonstrates the use of open_file_dialog dialog.
     /// @include open_file_dialog.cpp
     class forms_export_ open_file_dialog final : public file_dialog {
     public:
