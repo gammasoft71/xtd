@@ -34,7 +34,10 @@ namespace xtd {
             wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
             dc.SetFont(font);
             dc.SetTextForeground(brush.get_solid_brush().color);
-            dc.DrawRotatedText(text, x, y, -angle);
+            if (angle == 0)
+              dc.DrawLabel(text, wxRect(x, y, width, height), align);
+            else
+              dc.DrawRotatedText(text, x, y, -angle);
           } else {
             wxImage image(x + max_size, y + max_size);
             if (brush.is_conical_gradiant_brush()) {
@@ -55,7 +58,10 @@ namespace xtd {
             wxMemoryDC bitmap_mask_dc(bitmap_mask);
             bitmap_mask_dc.SetFont(font);
             bitmap_mask_dc.SetTextForeground(wxColour(255, 255, 255));
-            bitmap_mask_dc.DrawRotatedText(text, x, y, -angle);
+            if (angle == 0)
+              bitmap_mask_dc.DrawLabel(text, wxRect(x, y, width, height), align);
+            else
+              bitmap_mask_dc.DrawRotatedText(text, x, y, -angle);
             
             image.SetMaskFromImage(bitmap_mask.ConvertToImage(), 0, 0, 0);
             wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
