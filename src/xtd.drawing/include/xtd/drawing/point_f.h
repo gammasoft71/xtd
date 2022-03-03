@@ -50,6 +50,9 @@ namespace xtd {
       /// @param x The horizontal position of the point.
       /// @param y The vertical position of the point.
       point_f(float x, float y) noexcept;
+      /// @brief Initializes a new instance of the xtd::drawing::point_t class from a xtd::drawing::size_f.
+      /// @param sz A size that specifies the coordinates for the new point.
+      explicit point_f(const size_f& sz) noexcept;
       /// @}
       
       /// @cond
