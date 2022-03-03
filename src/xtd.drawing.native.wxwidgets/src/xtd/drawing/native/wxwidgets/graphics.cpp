@@ -20,6 +20,7 @@
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
 #include "../../../../../include/xtd/drawing/native/wx_pen.h"
 #include "../../../../../include/xtd/drawing/native/wxConicalGradient.h"
+#include "../../../../../include/xtd/drawing/native/wxDrawString.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/app.h>
 #include <wx/dcgraph.h>
