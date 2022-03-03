@@ -22,7 +22,7 @@ namespace xtd {
     /// @remarks In addition to display and selection functionality, the combo_box also provides features that enable you to efficiently add items to the combo_box and to find text within the items of the list. With the begin_update and end_update methods, you can add a large number of items to the combo_box without the control being repainted each time an item is added to the list. The find_string and find_string_exact methods enable you to search for an item in the list that contains a specific search string.
     /// @remarks You can use these properties to manage the currently selected item in the list, the text property to specify the string displayed in the editing field, the selected_index property to get or set the current item, and the selected_item property to get or set a reference to the object.
     /// @par Examples
-    /// The following code example demonstrate the use of combo box control.
+    /// The following code example demonstrates the use of combo box control.
     /// @include combo_box.cpp
     class forms_export_ combo_box : public list_control {
     public:

@@ -16,7 +16,7 @@ namespace xtd {
     /// @ingroup xtd_forms containers
     /// @remarks Exactly the same as xtd::forms::panel container.
     /// @par Examples
-    /// The following code example demonstrate the use of table_layout_panel container.
+    /// The following code example demonstrates the use of table_layout_panel container.
     /// @include table_layout_panel.cpp
     class table_layout_panel : public panel {
     public:

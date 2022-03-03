@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms components
     /// @par Examples
-    /// The following code example demonstrate the use of texts class.
+    /// The following code example demonstrates the use of texts class.
     /// @include texts.cpp
     class forms_export_ system_texts final static_ {
     public:

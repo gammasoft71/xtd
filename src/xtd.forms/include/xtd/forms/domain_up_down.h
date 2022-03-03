@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of domain up down control.
+    /// The following code example demonstrates the use of domain up down control.
     /// @include domain_up_down.cpp
     class forms_export_ domain_up_down : public up_down_base {
     public:

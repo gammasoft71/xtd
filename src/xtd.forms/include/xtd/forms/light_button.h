@@ -31,7 +31,7 @@ namespace xtd {
     /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
     /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
     /// @par Examples
-    /// The following code example demonstrate the use of light_button control with bitmap.
+    /// The following code example demonstrates the use of light_button control with bitmap.
     /// @include light_button.cpp
     class forms_export_ light_button : public xtd::forms::button_base {
     public:
@@ -50,7 +50,7 @@ namespace xtd {
       /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
       /// @par Examples
-      /// The following code example demonstrate the use of light_button auto_check.
+      /// The following code example demonstrates the use of light_button auto_check.
       /// @include light_button.cpp
       virtual bool auto_check() const {return data_->auto_check;}
       /// @brief Sets a value indicating whether the checked or check_state values and the light_button's appearance are automatically changed when the light_button is clicked.
@@ -62,7 +62,7 @@ namespace xtd {
       /// @return true if the light_button is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
       /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
       /// @par Examples
-      /// The following code example demonstrate the use of light_button checked.
+      /// The following code example demonstrates the use of light_button checked.
       /// @include light_button.cpp
       virtual bool checked() const {return data_->checked;}
       /// @brief Sets a value indicating whether the light_button is in the checked state.
@@ -80,7 +80,7 @@ namespace xtd {
       /// | unchecked     | The light_button displays a light off.              | The control appears raised. |
       /// | indeterminate | The light_button displays a light on and is shaded. | The control appears flat.   |
       /// @par Examples
-      /// The following code example demonstrate the use of light_button check_state.
+      /// The following code example demonstrates the use of light_button check_state.
       /// @include light_button.cpp
       virtual forms::check_state check_state() const {return data_->check_state;}
       /// @brief Sets the state of the light_button.
@@ -92,7 +92,7 @@ namespace xtd {
       /// | unchecked     | The light_button displays a light off.              | The control appears raised. |
       /// | indeterminate | The light_button displays a light on and is shaded. | The control appears flat.   |
       /// @par Examples
-      /// The following code example demonstrate the use of light_button check_state.
+      /// The following code example demonstrates the use of light_button check_state.
       /// @include light_button.cpp
       virtual light_button& check_state(forms::check_state check_state);
       
@@ -139,7 +139,7 @@ namespace xtd {
       /// @return true if the light_button is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
       /// @par Examples
-      /// The following code example demonstrate the use of light_button three_state.
+      /// The following code example demonstrates the use of light_button three_state.
       /// @include light_button.cpp
       virtual bool three_state() const {return data_->three_state;}
       /// @brief Gets a value indicating whether the light_button will allow three check states rather than two.

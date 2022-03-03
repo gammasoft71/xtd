@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_forms debug
     /// @remarks You can activate or deactivate one, some or all debug trace categories.
     /// @par Examples
-    /// The following code example demonstrate the use of enable_debug class.
+    /// The following code example demonstrates the use of enable_debug class.
     /// @include enable_debug.cpp
     class forms_export_ enable_debug : public object {
     public:

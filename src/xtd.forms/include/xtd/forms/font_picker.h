@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of font_picker picker.
+    /// The following code example demonstrates the use of font_picker picker.
     /// @include font_picker.cpp
     class forms_export_ font_picker : public control {
     public:

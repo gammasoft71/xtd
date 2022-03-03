@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms components
     /// @par Examples
-    /// The following code example demonstrate the use of cursors component.
+    /// The following code example demonstrates the use of cursors component.
     /// @include cursors.cpp
     class forms_export_ cursors final static_ {
     public:

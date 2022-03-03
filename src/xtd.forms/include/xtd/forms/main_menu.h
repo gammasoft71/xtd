@@ -24,10 +24,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms menus_and_toolbars
     /// @par Examples
-    /// The following code example demonstrate the use of main_menu control.
+    /// The following code example demonstrates the use of main_menu control.
     /// @include main_menu.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of main_menu::create_standard_items factory.
+    /// The following code example demonstrates the use of main_menu::create_standard_items factory.
     /// @include main_menu_create_standard_items.cpp
     class forms_export_ main_menu : public menu {
     public:

@@ -17,13 +17,13 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
-    /// The following code example demonstrate the use of group_box container.
+    /// The following code example demonstrates the use of group_box container.
     /// @include group_box.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of group_box container and check_box controls.
+    /// The following code example demonstrates the use of group_box container and check_box controls.
     /// @include group_box_and_check_box.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of group_box container and radio_button controls.
+    /// The following code example demonstrates the use of group_box container and radio_button controls.
     /// @include group_box_and_radio_button.cpp
     class forms_export_ group_box : public control {
     public:

@@ -17,7 +17,7 @@ namespace xtd {
     /// @ingroup xtd_forms components
     /// @remarks Displays a wai cursor as long as the object instance is not destroyed.
     /// @par Examples
-    /// The following code example demonstrate the use of use_wait_cursor class.
+    /// The following code example demonstrates the use of use_wait_cursor class.
     /// @include use_wait_cursor.cpp
     class use_wait_cursor : public object {
     public:

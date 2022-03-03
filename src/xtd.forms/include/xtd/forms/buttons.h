@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of buttons control factory.
+    /// The following code example demonstrates the use of buttons control factory.
     /// @include buttons.cpp
     class buttons final static_ {
     public:

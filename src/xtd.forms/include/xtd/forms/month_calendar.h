@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of month_calendar control.
+    /// The following code example demonstrates the use of month_calendar control.
     /// @include month_calendar.cpp
     class forms_export_ month_calendar : public control {
     public:

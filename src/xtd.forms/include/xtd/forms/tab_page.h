@@ -15,10 +15,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
-    /// The following code example demonstrate the use of tab_page container.
+    /// The following code example demonstrates the use of tab_page container.
     /// @include tab_control.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of tab_control and colored tab_page containers.
+    /// The following code example demonstrates the use of tab_control and colored tab_page containers.
     /// @include colored_tab_pages.cpp
     class forms_export_ tab_page : public panel {
     public:

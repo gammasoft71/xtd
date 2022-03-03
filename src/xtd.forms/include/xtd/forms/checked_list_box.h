@@ -21,7 +21,7 @@ namespace xtd {
     /// @remarks If use_tab_stops is true, the checked_list_box will recognize and expand tab characters in an item's text, creating columns. These tab stops are preset and cannot be changed. To use custom tab stops, set use_tab_stops to false, set use_custom_tab_offsets to true, and add the custom values to the custom_tab_offsets collection.
     /// @note If the use_compatible_text_rendering property is false, the custom_tab_offsets property will be ignored and replaced with standard tab offsets.
     /// @par Examples
-    /// The following code example demonstrate the use of checked_list_box control.
+    /// The following code example demonstrates the use of checked_list_box control.
     /// @include checked_list_box.cpp
     class forms_export_ checked_list_box : public list_box {
     public:

@@ -25,7 +25,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of exception_dialog dialog.
+    /// The following code example demonstrates the use of exception_dialog dialog.
     /// @include exception_dialog.cpp
     class forms_export_ exception_dialog final : public component {
     public:

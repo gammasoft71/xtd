@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
-    /// The following code example demonstrate the use of panel container.
+    /// The following code example demonstrates the use of panel container.
     /// @include panel.cpp
     class forms_export_ panel : public scrollable_control {
     public:

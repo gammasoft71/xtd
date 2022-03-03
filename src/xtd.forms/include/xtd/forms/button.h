@@ -53,10 +53,10 @@ namespace xtd {
     ///   </tr>
     /// </table>
     /// @par Examples
-    /// The following code example demonstrate the use of button control.
+    /// The following code example demonstrates the use of button control.
     /// @include button.cpp
     /// @par Examples
-    /// The following code example demonstrate the use of button control with bitmap.
+    /// The following code example demonstrates the use of button control with bitmap.
     /// @include bitmap_button.cpp
     class forms_export_ button : public ibutton_control, public button_base {
     public:

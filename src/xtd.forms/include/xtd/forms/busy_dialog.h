@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of busy_dialog dialog.
+    /// The following code example demonstrates the use of busy_dialog dialog.
     /// @include busy_dialog.cpp
     class forms_export_ busy_dialog  final : public component {
     public:

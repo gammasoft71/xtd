@@ -18,7 +18,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of date_time_picker picker.
+    /// The following code example demonstrates the use of date_time_picker picker.
     /// @include date_time_picker.cpp
     class forms_export_ date_time_picker : public control {
     public:

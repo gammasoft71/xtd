@@ -18,7 +18,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @par Examples
-  /// The following code example demonstrate the use of xtd::guid struct.
+  /// The following code example demonstrates the use of xtd::guid struct.
   /// @include guid.cpp
   struct core_export_ guid final : public object, public icomparable<guid>, public iequatable<guid> {
   public:

@@ -26,7 +26,7 @@ namespace xtd {
       /// @ingroup xtd_drawing drawing
       /// @image html linear_gradient_brush.png
       /// @par Examples
-      /// The following code example demonstrate the use of linear_gradient_brush class.
+      /// The following code example demonstrates the use of linear_gradient_brush class.
       /// @include fill_rectangle.cpp
       class drawing_export_ linear_gradient_brush final : public brush {
       public:

@@ -30,7 +30,7 @@ namespace xtd {
     /// @remarks All controls that derive from the Control class have a Cursor property. To change the cursor displayed by the mouse pointer when it is within the bounds of the control, assign a Cursor to the Cursor property of the control. Alternatively, you can display cursors at the application level by assigning a Cursor to the Current property. For example, if the purpose of your application is to edit a text file, you might set the Current property to Cursors.WaitCursor to display a wait cursor over the application while the file loads or saves to prevent any mouse events from being processed. When the process is complete, set the Current property to Cursors.Default for the application to display the appropriate cursor over each control type.
     /// @see xtd::forms::cursors
     /// @par Examples
-    /// The following code example demonstrate the use of cursor component.
+    /// The following code example demonstrates the use of cursor component.
     /// @include cursors.cpp
     class forms_export_ cursor : public object {
     public:

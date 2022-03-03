@@ -18,7 +18,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of xtd::forms::progress_box dialog.
+    /// The following code example demonstrates the use of xtd::forms::progress_box dialog.
     /// @include progress_box.cpp
     class progress_box final static_ {
     public:

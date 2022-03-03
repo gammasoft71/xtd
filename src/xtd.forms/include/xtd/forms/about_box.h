@@ -39,7 +39,7 @@ namespace xtd {
     ///   </tr>
     /// </table>
     /// @par Examples
-    /// The following code example demonstrate the use of about_box dialog.
+    /// The following code example demonstrates the use of about_box dialog.
     /// @include about_box.cpp
     class forms_export_ about_box final static_ {
     public:

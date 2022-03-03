@@ -24,7 +24,7 @@ namespace xtd {
     /// @remarks This class provides methods to set the interval, and to start and stop the timer.
     /// @remarks The Windows Forms Timer component is single-threaded, and is limited to an accuracy of 55 milliseconds.
     /// @par Examples
-    /// The following code example demonstrate the use of timer component.
+    /// The following code example demonstrates the use of timer component.
     /// @include timer.cpp
     class forms_export_ timer final : public component {
     public:

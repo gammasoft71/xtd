@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of command link button control.
+    /// The following code example demonstrates the use of command link button control.
     /// @include command_link_button.cpp
     class forms_export_ command_link_button : public button_base {
     public:

@@ -2,7 +2,7 @@
 /// @brief Contains xtd.forms examples.
 ///
 /// @example about_box.cpp
-/// The following code example demonstrate the use of about_box dialog.
+/// The following code example demonstrates the use of about_box dialog.
 /// @par Windows
 /// @image html about_box_w.png
 /// <br>
@@ -17,7 +17,7 @@
 /// @image html about_box_gd.png
 ///
 /// @example about_dialog.cpp
-/// The following code example demonstrate the use of xtd::forms::about_dialog dialog.
+/// The following code example demonstrates the use of xtd::forms::about_dialog dialog.
 /// @par Windows
 /// @image html about_dialog_w.png
 /// <br>
@@ -32,7 +32,7 @@
 /// @image html about_dialog_gd.png
 ///
 /// @example about_dialog_system.cpp
-/// The following code example demonstrate the use of xtd::forms::about_dialog dialog with dialog_style to system.
+/// The following code example demonstrates the use of xtd::forms::about_dialog dialog with dialog_style to system.
 /// @par Windows
 /// @image html about_dialog_system_w.png
 /// <br>
@@ -47,7 +47,7 @@
 /// @image html about_dialog_system_gd.png
 ///
 /// @example application.cpp
-/// The following code example demonstrate the use of xtd::forms::application class.
+/// The following code example demonstrates the use of xtd::forms::application class.
 /// @par Windows
 /// @image html application_w.png
 /// <br>
@@ -77,7 +77,7 @@
 /// @image html application_and_exception_gd.png
 ///
 /// @example application_context.cpp
-/// The following code example demonstrate the use of xtd::forms::application and xtd::forms::application_context classes.
+/// The following code example demonstrates the use of xtd::forms::application and xtd::forms::application_context classes.
 /// @par Windows
 /// @image html application_context_w.png
 /// <br>
@@ -92,7 +92,7 @@
 /// @image html application_context_gd.png
 ///
 /// @example busy_box.cpp
-/// The following code example demonstrate the use of xtd::forms::busy_box dialog.
+/// The following code example demonstrates the use of xtd::forms::busy_box dialog.
 /// @par Windows
 /// @image html busy_box_w.png
 /// <br>
@@ -107,7 +107,7 @@
 /// @image html busy_box_gd.png
 ///
 /// @example busy_dialog.cpp
-/// The following code example demonstrate the use of busy_dialog dialog.
+/// The following code example demonstrates the use of busy_dialog dialog.
 /// @par Windows
 /// @image html busy_dialog_w.png
 /// <br>
@@ -122,7 +122,7 @@
 /// @image html busy_dialog_gd.png
 ///
 /// @example button.cpp
-/// The following code example demonstrate the use of button control.
+/// The following code example demonstrates the use of button control.
 /// @par Windows
 /// @image html button_w.png
 /// <br>
@@ -137,7 +137,7 @@
 /// @image html button_gd.png
 ///
 /// @example bitmap_button.cpp
-/// The following code example demonstrate the use of button control with bitmap.
+/// The following code example demonstrates the use of button control with bitmap.
 /// @par Windows
 /// @image html bitmap_button_w.png
 /// <br>
@@ -152,7 +152,7 @@
 /// @image html bitmap_button_gd.png
 ///
 /// @example buttons.cpp
-/// The following code example demonstrate the use of buttons control factory.
+/// The following code example demonstrates the use of buttons control factory.
 /// @par Windows
 /// @image html buttons_w.png
 /// <br>
@@ -167,7 +167,7 @@
 /// @image html buttons_gd.png
 ///
 /// @example check_box.cpp
-/// The following code example demonstrate the use of check_box control.
+/// The following code example demonstrates the use of check_box control.
 /// @par Windows
 /// @image html check_box_w.png
 /// <br>
@@ -182,7 +182,7 @@
 /// @image html check_box_gd.png
 ///
 /// @example check_boxes.cpp
-/// The following code example demonstrate the use of check_boxes control factory.
+/// The following code example demonstrates the use of check_boxes control factory.
 /// @par Windows
 /// @image html check_boxescheck_boxes_w.png
 /// <br>
@@ -197,7 +197,7 @@
 /// @image html check_boxes_gd.png
 ///
 /// @example checked_list_box.cpp
-/// The following code example demonstrate the use of checked_list_box control.
+/// The following code example demonstrates the use of checked_list_box control.
 /// @par Windows
 /// @image html checked_list_box_w.png
 /// <br>
@@ -212,7 +212,7 @@
 /// @image html checked_list_box_gd.png
 ///
 /// @example choice.cpp
-/// The following code example demonstrate the use of choice control.
+/// The following code example demonstrates the use of choice control.
 /// @par Windows
 /// @image html choice_w.png
 /// <br>
@@ -227,7 +227,7 @@
 /// @image html choice_gd.png
 ///
 /// @example collapsible_panel.cpp
-/// The following code example demonstrate the use of collapsible_panel container.
+/// The following code example demonstrates the use of collapsible_panel container.
 /// @par Windows
 /// @image html collapsible_panel_w.png
 /// <br>
@@ -242,7 +242,7 @@
 /// @image html collapsible_panel_gd.png
 ///
 /// @example color_box.cpp
-/// The following code example demonstrate the use of color_box dialog.
+/// The following code example demonstrates the use of color_box dialog.
 /// @par Windows
 /// @image html color_box_w.png
 /// <br>
@@ -257,7 +257,7 @@
 /// @image html color_box_gd.png
 ///
 /// @example color_dialog.cpp
-/// The following code example demonstrate the use of color_dialog dialog.
+/// The following code example demonstrates the use of color_dialog dialog.
 /// @par Windows
 /// @image html color_dialog_w.png
 /// <br>
@@ -272,7 +272,7 @@
 /// @image html color_dialog_gd.png
 ///
 /// @example color_picker.cpp
-/// The following code example demonstrate the use of color_picker picker.
+/// The following code example demonstrates the use of color_picker picker.
 /// @par Windows
 /// @image html color_picker_w.png
 /// <br>
@@ -287,7 +287,7 @@
 /// @image html color_picker_gd.png
 ///
 /// @example colored_tab_pages.cpp
-/// The following code example demonstrate the use of tab_control and colored tab_page containers.
+/// The following code example demonstrates the use of tab_control and colored tab_page containers.
 /// @par Windows
 /// @image html colored_tab_pages_w.png
 /// <br>
@@ -302,7 +302,7 @@
 /// @image html colored_tab_pages_gd.png
 ///
 /// @example combo_box.cpp
-/// The following code example demonstrate the use of combo box control.
+/// The following code example demonstrates the use of combo box control.
 /// @par Windows
 /// @image html combo_box_w.png
 /// <br>
@@ -317,7 +317,7 @@
 /// @image html combo_box_gd.png
 ///
 /// @example command_link_button.cpp
-/// The following code example demonstrate the use of command link button control.
+/// The following code example demonstrates the use of command link button control.
 /// @par Windows
 /// @image html command_link_button_w.png
 /// <br>
@@ -332,7 +332,7 @@
 /// @image html command_link_button_gd.png
 ///
 /// @example control.cpp
-/// The following code example demonstrate the use of control control.
+/// The following code example demonstrates the use of control control.
 /// @par Windows
 /// @image html control_w.png
 /// <br>
@@ -347,7 +347,7 @@
 /// @image html control_gd.png
 ///
 /// @example countries.cpp
-/// The following code example demonstrate the use of countries and country components.
+/// The following code example demonstrates the use of countries and country components.
 /// @par Windows
 /// @image html countries_w.png
 /// <br>
@@ -362,7 +362,7 @@
 /// @image html countries_gd.png
 ///
 /// @example cursors.cpp
-/// The following code example demonstrate the use of cursors component.
+/// The following code example demonstrates the use of cursors component.
 /// @par Windows
 /// @image html cursors_w.png
 /// <br>
@@ -377,7 +377,7 @@
 /// @image html cursors_gd.png
 ///
 /// @example date_time_picker.cpp
-/// The following code example demonstrate the use of date_time_picker picker.
+/// The following code example demonstrates the use of date_time_picker picker.
 /// @par Windows
 /// @image html date_time_picker_w.png
 /// <br>
@@ -392,7 +392,7 @@
 /// @image html date_time_picker_gd.png
 ///
 /// @example debug_form.cpp
-/// The following code example demonstrate the use of debug_form form.
+/// The following code example demonstrates the use of debug_form form.
 /// @par Windows
 /// @image html debug_form_w.png
 /// <br>
@@ -407,7 +407,7 @@
 /// @image html debug_form_gd.png
 ///
 /// @example dot_matrix_display.cpp
-/// The following code example demonstrate the use of dot matrix display control.
+/// The following code example demonstrates the use of dot matrix display control.
 /// @par Windows
 /// @image html dot_matrix_display_w.png
 /// <br>
@@ -422,7 +422,7 @@
 /// @image html dot_matrix_display_gd.png
 ///
 /// @example fill_rectangle.cpp
-/// The following code example demonstrate the use of brush classes.
+/// The following code example demonstrates the use of brush classes.
 /// @par Windows
 /// @image html fill_rectangle_w.png
 /// <br>
@@ -437,7 +437,7 @@
 /// @image html fill_rectangle_gd.png
 ///
 /// @example emoticons.cpp
-/// The following code example demonstrate the use of emoticon and emoticons classes.
+/// The following code example demonstrates the use of emoticon and emoticons classes.
 /// @par Windows
 /// @image html emoticons_w.png
 /// <br>
@@ -452,7 +452,7 @@
 /// @image html emoticons_gd.png
 ///
 /// @example enable_debug.cpp
-/// The following code example demonstrate the use of enable_debug class.
+/// The following code example demonstrates the use of enable_debug class.
 /// @par Windows
 /// @image html enable_debug_w.png
 /// <br>
@@ -467,7 +467,7 @@
 /// @image html enable_debug_gd.png
 ///
 /// @example exception_box.cpp
-/// The following code example demonstrate the use of exception_dialog dialog.
+/// The following code example demonstrates the use of exception_dialog dialog.
 /// @par Windows
 /// @image html exception_box_w.png
 /// <br>
@@ -482,7 +482,7 @@
 /// @image html exception_box_gd.png
 ///
 /// @example exception_dialog.cpp
-/// The following code example demonstrate the use of exception_dialog dialog.
+/// The following code example demonstrates the use of exception_dialog dialog.
 /// @par Windows
 /// @image html exception_dialog_w.png
 /// <br>
@@ -497,7 +497,7 @@
 /// @image html exception_dialog_gd.png
 ///
 /// @example folder_browser_dialog.cpp
-/// The following code example demonstrate the use of folder_browser_dialog dialog.
+/// The following code example demonstrates the use of folder_browser_dialog dialog.
 /// @par Windows
 /// @image html folder_browser_dialog_w.png
 /// <br>
@@ -512,7 +512,7 @@
 /// @image html folder_browser_dialog_gd.png
 ///
 /// @example font_dialog.cpp
-/// The following code example demonstrate the use of font_dialog dialog.
+/// The following code example demonstrates the use of font_dialog dialog.
 /// @par Windows
 /// @image html font_dialog_w.png
 /// <br>
@@ -527,7 +527,7 @@
 /// @image html font_dialog_gd.png
 ///
 /// @example font_picker.cpp
-/// The following code example demonstrate the use of font_picker picker.
+/// The following code example demonstrates the use of font_picker picker.
 /// @par Windows
 /// @image html font_picker_w.png
 /// <br>
@@ -542,7 +542,7 @@
 /// @image html font_picker_gd.png
 ///
 /// @example form.cpp
-/// The following code example demonstrate the use of form control.
+/// The following code example demonstrates the use of form control.
 /// @par Windows
 /// @image html form_w.png
 /// <br>
@@ -557,7 +557,7 @@
 /// @image html form_gd.png
 ///
 /// @example fourteen_segment_display.cpp
-/// The following code example demonstrate the use of fourteen segment display control.
+/// The following code example demonstrates the use of fourteen segment display control.
 /// @par Windows
 /// @image html fourteen_segment_display_w.png
 /// <br>
@@ -572,7 +572,7 @@
 /// @image html fourteen_segment_display_gd.png
 ///
 /// @example group_box.cpp
-/// The following code example demonstrate the use of group_box control.
+/// The following code example demonstrates the use of group_box control.
 /// @par Windows
 /// @image html group_box_w.png
 /// <br>
@@ -587,7 +587,7 @@
 /// @image html group_box_gd.png
 ///
 /// @example group_box_and_check_box.cpp
-/// The following code example demonstrate the use of group_box container and check_box controls.
+/// The following code example demonstrates the use of group_box container and check_box controls.
 /// @par Windows
 /// @image html group_box_and_check_box_w.png
 /// <br>
@@ -602,7 +602,7 @@
 /// @image html group_box_and_check_box_gd.png
 ///
 /// @example group_box_and_radio_button.cpp
-/// The following code example demonstrate the use of group_box container and radio_button controls.
+/// The following code example demonstrates the use of group_box container and radio_button controls.
 /// @par Windows
 /// @image html group_box_and_radio_button_w.png
 /// <br>
@@ -617,7 +617,7 @@
 /// @image html group_box_and_radio_button_gd.png
 ///
 /// @example hello_world_label.cpp
-/// The following code example demonstrate the use of label control.
+/// The following code example demonstrates the use of label control.
 /// @par Windows
 /// @image html hello_world_label_w.png
 /// <br>
@@ -632,7 +632,7 @@
 /// @image html hello_world_label_gd.png
 ///
 /// @example image_list.cpp
-/// The following code example demonstrate the use of image_list class.
+/// The following code example demonstrates the use of image_list class.
 /// @par Windows
 /// @image html image_list_w.png
 /// <br>
@@ -647,7 +647,7 @@
 /// @image html image_list_gd.png
 ///
 /// @example input_box.cpp
-/// The following code example demonstrate the use of input_box dialog.
+/// The following code example demonstrates the use of input_box dialog.
 /// @par Windows
 /// @image html input_box_w.png
 /// <br>
@@ -662,7 +662,7 @@
 /// @image html input_box_gd.png
 ///
 /// @example input_dialog.cpp
-/// The following code example demonstrate the use of input_dialog dialog.
+/// The following code example demonstrates the use of input_dialog dialog.
 /// @par Windows
 /// @image html input_dialog_w.png
 /// <br>
@@ -677,7 +677,7 @@
 /// @image html input_dialog_gd.png
 ///
 /// @example input_dialog_multiline.cpp
-/// The following code example demonstrate the use of input_dialog dialog with multiline.
+/// The following code example demonstrates the use of input_dialog dialog with multiline.
 /// @par Windows
 /// @image html input_dialog_multiline_w.png
 /// <br>
@@ -692,7 +692,7 @@
 /// @image html input_dialog_multiline_gd.png
 ///
 /// @example input_dialog_password.cpp
-/// The following code example demonstrate the use of input_dialog dialog with password.
+/// The following code example demonstrates the use of input_dialog dialog with password.
 /// @par Windows
 /// @image html input_dialog_password_w.png
 /// <br>
@@ -707,7 +707,7 @@
 /// @image html input_dialog_multiline_gd.png
 ///
 /// @example label.cpp
-/// The following code example demonstrate the use of label control.
+/// The following code example demonstrates the use of label control.
 /// @par Windows
 /// @image html label_w.png
 /// <br>
@@ -722,7 +722,7 @@
 /// @image html label_gd.png
 ///
 /// @example lcd_label.cpp
-/// The following code example demonstrate the use of lcd_label control.
+/// The following code example demonstrates the use of lcd_label control.
 /// @par Windows
 /// @image html lcd_label_w.png
 /// <br>
@@ -737,7 +737,7 @@
 /// @image html lcd_label_gd.png
 ///
 /// @example lcd_label2.cpp
-/// The following code example demonstrate the use of lcd_label control.
+/// The following code example demonstrates the use of lcd_label control.
 /// @par Windows
 /// @image html lcd_label2_w.png
 /// <br>
@@ -752,7 +752,7 @@
 /// @image html lcd_label2_gd.png
 ///
 /// @example list_box.cpp
-/// The following code example demonstrate the use of list_box control.
+/// The following code example demonstrates the use of list_box control.
 /// @par Windows
 /// @image html list_box_w.png
 /// <br>
@@ -767,7 +767,7 @@
 /// @image html list_box_gd.png
 ///
 /// @example main_menu.cpp
-/// The following code example demonstrate the use of main_menu control.
+/// The following code example demonstrates the use of main_menu control.
 /// @par Windows
 /// @image html main_menu_w.png
 /// <br>
@@ -782,7 +782,7 @@
 /// @image html main_menu_gd.png
 ///
 /// @example main_menu_create_standard_items.cpp
-/// The following code example demonstrate the use of main_menu::create_standard_items factory.
+/// The following code example demonstrates the use of main_menu::create_standard_items factory.
 /// @par Windows
 /// @image html main_menu_create_standard_items_w.png
 /// <br>
@@ -797,7 +797,7 @@
 /// @image html main_menu_create_standard_items_gd.png
 ///
 /// @example message_box.cpp
-/// The following code example demonstrate the use of message_box dialog.
+/// The following code example demonstrates the use of message_box dialog.
 /// @par Windows
 /// @image html message_box_w.png
 /// <br>
@@ -812,7 +812,7 @@
 /// @image html message_box_gd.png
 ///
 /// @example message_dialog.cpp
-/// The following code example demonstrate the use of message_dialog dialog.
+/// The following code example demonstrates the use of message_dialog dialog.
 /// @par Windows
 /// @image html message_dialog_w.png
 /// <br>
@@ -827,7 +827,7 @@
 /// @image html message_dialog_gd.png
 ///
 /// @example nine_segment_display.cpp
-/// The following code example demonstrate the use of nine segment display control.
+/// The following code example demonstrates the use of nine segment display control.
 /// @par Windows
 /// @image html nine_segment_display_w.png
 /// <br>
@@ -842,7 +842,7 @@
 /// @image html nine_segment_display_gd.png
 ///
 /// @example numeric_up_down.cpp
-/// The following code example demonstrate the use of numeric up down control.
+/// The following code example demonstrates the use of numeric up down control.
 /// @par Windows
 /// @image html numeric_up_down_w.png
 /// <br>
@@ -857,7 +857,7 @@
 /// @image html numeric_up_down_gd.png
 ///
 /// @example open_file_dialog.cpp
-/// The following code example demonstrate the use of open_file_dialog dialog.
+/// The following code example demonstrates the use of open_file_dialog dialog.
 /// @par Windows
 /// @image html open_file_dialog_w.png
 /// <br>
@@ -872,7 +872,7 @@
 /// @image html open_file_dialog_gd.png
 ///
 /// @example panel.cpp
-/// The following code example demonstrate the use of panel container.
+/// The following code example demonstrates the use of panel container.
 /// @par Windows
 /// @image html panel_w.png
 /// <br>
@@ -887,7 +887,7 @@
 /// @image html panel_gd.png
 ///
 /// @example picture_box.cpp
-/// The following code example demonstrate the use of picture box control.
+/// The following code example demonstrates the use of picture box control.
 /// @par Windows
 /// @image html picture_box_w.png
 /// <br>
@@ -902,7 +902,7 @@
 /// @image html picture_box_gd.png
 ///
 /// @example progress_bar.cpp
-/// The following code example demonstrate the use of progress_bar control.
+/// The following code example demonstrates the use of progress_bar control.
 /// @par Windows
 /// @image html progress_bar_w.png
 /// <br>
@@ -917,7 +917,7 @@
 /// @image html progress_bar_gd.png
 ///
 /// @example progress_dialog.cpp
-/// The following code example demonstrate the use of progress_dialog dialog.
+/// The following code example demonstrates the use of progress_dialog dialog.
 /// @par Windows
 /// @image html progress_dialog_w.png
 /// <br>
@@ -932,7 +932,7 @@
 /// @image html progress_dialog_gd.png
 ///
 /// @example radio_button.cpp
-/// The following code example demonstrate the use of radio_button control.
+/// The following code example demonstrates the use of radio_button control.
 /// @par Windows
 /// @image html radio_button_w.png
 /// <br>
@@ -947,7 +947,7 @@
 /// @image html radio_button_gd.png
 ///
 /// @example radio_buttons.cpp
-/// The following code example demonstrate the use of radio_button control factory.
+/// The following code example demonstrates the use of radio_button control factory.
 /// @par Windows
 /// @image html radio_buttons_w.png
 /// <br>
@@ -962,7 +962,7 @@
 /// @image html radio_buttons_gd.png
 ///
 /// @example save_file_dialog.cpp
-/// The following code example demonstrate the use of save_file_dialog dialog.
+/// The following code example demonstrates the use of save_file_dialog dialog.
 /// @par Windows
 /// @image html save_file_dialog_w.png
 /// <br>
@@ -977,7 +977,7 @@
 /// @image html save_file_dialog_gd.png
 ///
 /// @example screen.cpp
-/// The following code example demonstrate the use of screen class.
+/// The following code example demonstrates the use of screen class.
 /// @par Windows
 /// @image html screen_w.png
 /// <br>
@@ -992,7 +992,7 @@
 /// @image html screen_gd.png
 ///
 /// @example settings_example.cpp
-/// The following code example demonstrate the use of settings class.
+/// The following code example demonstrates the use of settings class.
 /// @par Windows
 /// @image html settings_example_w.png
 /// <br>
@@ -1007,7 +1007,7 @@
 /// @image html settings_example_gd.png
 ///
 /// @example seven_segment_display.cpp
-/// The following code example demonstrate the use of seven segment display control.
+/// The following code example demonstrates the use of seven segment display control.
 /// @par Windows
 /// @image html seven_segment_display_w.png
 /// <br>
@@ -1022,7 +1022,7 @@
 /// @image html seven_segment_display_gd.png
 ///
 /// @example sixteen_segment_display.cpp
-/// The following code example demonstrate the use of sixteen segment display control.
+/// The following code example demonstrates the use of sixteen segment display control.
 /// @par Windows
 /// @image html sixteen_segment_display_w.png
 /// <br>
@@ -1037,7 +1037,7 @@
 /// @image html sixteen_segment_display_gd.png
 ///
 /// @example split_container.cpp
-/// The following code example demonstrate the use of split_container container.
+/// The following code example demonstrates the use of split_container container.
 /// @par Windows
 /// @image html split_container_w.png
 /// <br>
@@ -1052,7 +1052,7 @@
 /// @image html split_container_gd.png
 ///
 /// @example splitter.cpp
-/// The following code example demonstrate the use of splitter control.
+/// The following code example demonstrates the use of splitter control.
 /// @par Windows
 /// @image html splitter_w.png
 /// <br>
@@ -1067,7 +1067,7 @@
 /// @image html splitter_gd.png
 ///
 /// @example switch_button.cpp
-/// The following code example demonstrate the use of switch button control.
+/// The following code example demonstrates the use of switch button control.
 /// @par Windows
 /// @image html switch_button_w.png
 /// <br>
@@ -1082,7 +1082,7 @@
 /// @image html switch_button_gd.png
 ///
 /// @example tab_control.cpp
-/// The following code example demonstrate the use of tab_control container.
+/// The following code example demonstrates the use of tab_control container.
 /// @par Windows
 /// @image html tab_control_w.png
 /// <br>
@@ -1097,7 +1097,7 @@
 /// @image html tab_control_gd.png
 ///
 /// @example text_box.cpp
-/// The following code example demonstrate the use of text box control.
+/// The following code example demonstrates the use of text box control.
 /// @par Windows
 /// @image html text_box_w.png
 /// <br>
@@ -1112,7 +1112,7 @@
 /// @image html text_box_gd.png
 ///
 /// @example texts.cpp
-/// The following code example demonstrate the use of texts class.
+/// The following code example demonstrates the use of texts class.
 /// @par Windows
 /// @image html texts_w.png
 /// <br>
@@ -1127,7 +1127,7 @@
 /// @image html texts_gd.png
 ///
 /// @example timer.cpp
-/// The following code example demonstrate the use of timer component.
+/// The following code example demonstrates the use of timer component.
 /// @par Windows
 /// @image html timer_w.png
 /// <br>
@@ -1142,7 +1142,7 @@
 /// @image html timer_gd.png
 ///
 /// @example toggle_button.cpp
-/// The following code example demonstrate the use of toggle_button control.
+/// The following code example demonstrates the use of toggle_button control.
 /// @par Windows
 /// @image html toggle_button_w.png
 /// <br>
@@ -1157,7 +1157,7 @@
 /// @image html toggle_button_gd.png
 ///
 /// @example toggle_buttons.cpp
-/// The following code example demonstrate the use of toggle_buttons factory.
+/// The following code example demonstrates the use of toggle_buttons factory.
 /// @par Windows
 /// @image html toggle_buttons_w.png
 /// <br>
@@ -1172,7 +1172,7 @@
 /// @image html toggle_buttons_gd.png
 ///
 /// @example trace_form.cpp
-/// The following code example demonstrate the use of trace_form form.
+/// The following code example demonstrates the use of trace_form form.
 /// @par Windows
 /// @image html trace_form_w.png
 /// <br>
@@ -1187,7 +1187,7 @@
 /// @image html trace_form_gd.png
 ///
 /// @example track_bar.cpp
-/// The following code example demonstrate the use of track_bar control.
+/// The following code example demonstrates the use of track_bar control.
 /// @par Windows
 /// @image html track_bar_w.png
 /// <br>
@@ -1202,7 +1202,7 @@
 /// @image html track_bar_gd.png
 ///
 /// @example up_down_button.cpp
-/// The following code example demonstrate the use of up down button control.
+/// The following code example demonstrates the use of up down button control.
 /// @par Windows
 /// @image html up_down_button_w.png
 /// <br>
@@ -1217,7 +1217,7 @@
 /// @image html up_down_button_gd.png
 ///
 /// @example use_wait_cursor.cpp
-/// The following code example demonstrate the use of use_wait_cursor class.
+/// The following code example demonstrates the use of use_wait_cursor class.
 /// @par Windows
 /// @image html use_wait_cursor_w.png
 /// <br>
@@ -1232,7 +1232,7 @@
 /// @image html use_wait_cursor_gd.png
 ///
 /// @example user_control.cpp
-/// The following code example demonstrate the use of user control.
+/// The following code example demonstrates the use of user control.
 /// @par Windows
 /// @image html user_control_w.png
 /// <br>

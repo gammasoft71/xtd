@@ -20,7 +20,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Examples
-    /// The following code example demonstrate the use of picture box control.
+    /// The following code example demonstrates the use of picture box control.
     /// @include picture_box.cpp
     class forms_export_ picture_box : public control {
     public:

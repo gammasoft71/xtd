@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of input_box dialog.
+    /// The following code example demonstrates the use of input_box dialog.
     /// @include input_box.cpp
     class input_box final static_ {
     public:

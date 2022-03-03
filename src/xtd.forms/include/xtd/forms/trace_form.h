@@ -20,7 +20,7 @@ namespace xtd {
     ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file.
     /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file.
     /// @par Examples
-    /// The following code example demonstrate the use of trace_form form.
+    /// The following code example demonstrates the use of trace_form form.
     /// @include trace_form.cpp
     class trace_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:

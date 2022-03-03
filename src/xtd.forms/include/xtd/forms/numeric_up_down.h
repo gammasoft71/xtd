@@ -19,7 +19,7 @@ namespace xtd {
     /// @remarks To specify the allowable range of values for the control, set the minimum and maximum properties. Set the increment value to specify the value to be incremented or decremented to the value property when the user clicks the up or down arrow buttons. You can increase the speed that the control moves through numbers when the user continuously presses the up or down arrow by setting the accelerations property.
     /// @remarks When the up_button or down_button methods are called, either in code or by the click of the up or down buttons, the new value is validated and the control is updated with the new value in the appropriate format. Specifically, if the user_edit property is set to true, the parse_edit_text method is called prior to validating or updating the value. The value is then verified to be between the minimum and maximum values, and the update_edit_text method is called.
     /// @par Examples
-    /// The following code example demonstrate the use of numeric up down control.
+    /// The following code example demonstrates the use of numeric up down control.
     /// @include numeric_up_down.cpp
     class forms_export_ numeric_up_down : public up_down_base {
     public:

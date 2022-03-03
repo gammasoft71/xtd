@@ -19,7 +19,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Examples
-    /// The following code example demonstrate the use of progress_dialog dialog.
+    /// The following code example demonstrates the use of progress_dialog dialog.
     /// @include progress_dialog.cpp
     class forms_export_ progress_dialog  final : public component {
     public:

@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Examples
-    /// The following code example demonstrate the use of collapsible_panel container.
+    /// The following code example demonstrates the use of collapsible_panel container.
     /// @include collapsible_panel.cpp
     class forms_export_ collapsible_panel : public control {
     public:
