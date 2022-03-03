@@ -59,6 +59,17 @@ namespace {
     wxPen pen_;
     wxFont font_;
   };
+  
+  wxAlignment to_wx_align(int32_t alignment, int32_t line_alignment) {
+    int32_t result = wxAlignment::wxALIGN_NOT;
+    if (alignment == SA_NEAR) result += wxAlignment::wxALIGN_LEFT;
+    else if (alignment == SA_CENTER) result += wxAlignment::wxALIGN_CENTER_HORIZONTAL;
+    else if (alignment == SA_FAR) result += wxAlignment::wxALIGN_RIGHT;
+    if (line_alignment == SA_NEAR) result += wxAlignment::wxALIGN_TOP;
+    else if (line_alignment == SA_CENTER) result += wxAlignment::wxALIGN_CENTER_VERTICAL;
+    else if (line_alignment == SA_FAR) result += wxAlignment::wxALIGN_BOTTOM;
+    return static_cast<wxAlignment>(result);
+  }
 }
 
 void graphics::clear(intptr_t handle, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
@@ -292,20 +303,10 @@ void graphics::draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, fl
 }
 
 void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float angle, int32_t alignment, int32_t line_alignment) {
-  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_LEFT);
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, to_wx_align(alignment, line_alignment));
 }
 
 void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, float angle, int32_t alignment, int32_t line_alignment) {
-  auto to_wx_align = [](int32_t alignment, int32_t line_alignment)->wxAlignment {
-    int32_t result = wxAlignment::wxALIGN_NOT;
-    if (alignment == SA_NEAR) result += wxAlignment::wxALIGN_LEFT;
-    else if (alignment == SA_CENTER) result += wxAlignment::wxALIGN_CENTER_VERTICAL;
-    else if (alignment == SA_FAR) result += wxAlignment::wxALIGN_RIGHT;
-    if (line_alignment == SA_NEAR) result += wxAlignment::wxALIGN_TOP;
-    else if (line_alignment == SA_CENTER) result += wxAlignment::wxALIGN_CENTER_VERTICAL;
-    else if (line_alignment == SA_FAR) result += wxAlignment::wxALIGN_BOTTOM;
-    return static_cast<wxAlignment>(result);
-  };
   wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, angle, to_wx_align(alignment, line_alignment));
 }
 

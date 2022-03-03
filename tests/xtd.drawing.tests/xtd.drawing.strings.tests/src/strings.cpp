@@ -26,13 +26,18 @@ public:
     tab_page_linear_gradient.parent(tab_control);
     tab_page_linear_gradient.text("Linear gradient");
     tab_page_linear_gradient.paint += {*this, &strings_form::draw_strings_with_linear_gradient};
+    
+    tab_page_multilines.parent(tab_control);
+    tab_page_multilines.text("Multiline");
+    tab_page_multilines.paint += {*this, &strings_form::draw_strings_multilines};
   }
   
 private:
   forms::tab_control tab_control;
   forms::tab_page tab_page_color;
   forms::tab_page tab_page_linear_gradient;
-  
+  forms::tab_page tab_page_multilines;
+
   const ustring regular_str = u8"Regular text - 普通文本";
   const ustring italic_str = u8"Italic text - 斜体文字";
   const ustring bold_str = u8"Bold text - 黑体字";
@@ -90,6 +95,15 @@ private:
     e.graphics().draw_string(italic_str, italic_font, linear_gradient_brush(rectangle_f(point_f(350, 250), size_f(text_size.width(), text_size.height())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(350, 250), 45);
     text_size = size_f(240.0f, 240.0f);
     e.graphics().draw_string(bold_str, bold_font, linear_gradient_brush(rectangle_f(point_f(400, 250), size_f(text_size.width(), text_size.height())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(400, 250), 45);
+  }
+  
+  void draw_strings_multilines(object& sender, paint_event_args& e) {
+    draw_grid(e.clip_rectangle(), e.graphics());
+    
+    const xtd::drawing::font font = xtd::drawing::font(system_fonts::default_font(), 16, font_style::regular);
+    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::highlight_text()), point(50, 50));
+    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::highlight_text()), point(50, 250), string_format().alignment(xtd::drawing::string_alignment::center));
+    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::highlight_text()), point(50, 450), string_format().alignment(xtd::drawing::string_alignment::far));
   }
 };
 
