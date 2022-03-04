@@ -13,6 +13,7 @@
 #include <xtd/drawing/native/flush_intentions.h>
 #include <xtd/drawing/native/path_fill_mode.h>
 #include <xtd/drawing/native/interpolation_modes.h>
+#include <xtd/drawing/native/hot_key_prefixes.h>
 #include <xtd/drawing/native/pixel_offset_modes.h>
 #include <xtd/drawing/native/smoothing_modes.h>
 #include <xtd/drawing/native/string_alignments.h>
@@ -293,6 +294,10 @@ void graphics::draw_rectangles(intptr_t handle, intptr_t pen, std::vector<std::t
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
+void graphics::draw_rotated_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float angle) {
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT, HKP_NONE);
+}
+
 void graphics::draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float radius) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
@@ -302,16 +307,12 @@ void graphics::draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, fl
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32_t alignment, int32_t line_alignment) {
-  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment));
+void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix) {
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix);
 }
 
-void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment) {
-  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment));
-}
-
-void graphics::draw_rotated_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float angle) {
-  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT);
+void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix) {
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix);
 }
 
 void graphics::fill_closed_curve(intptr_t handle, intptr_t brush, std::vector<std::pair<float, float>> points, uint32_t fill_mode, float tension) {

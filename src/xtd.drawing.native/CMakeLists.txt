@@ -18,6 +18,7 @@ add_sources(
   include/xtd/drawing/native/frame_dimension.h
   include/xtd/drawing/native/graphics.h
   include/xtd/drawing/native/graphics_path.h
+  include/xtd/drawing/native/hot_key_prefixes.h
   include/xtd/drawing/native/icon.h
   include/xtd/drawing/native/image.h
   include/xtd/drawing/native/image_flags.h
@@ -30,6 +31,7 @@ add_sources(
   include/xtd/drawing/native/region.h
   include/xtd/drawing/native/rotate_flip_types.h
   include/xtd/drawing/native/smoothing_modes.h
+  include/xtd/drawing/native/string_alignments.h
   include/xtd/drawing/native/system_colors.h
   include/xtd/drawing/native/system_images.h
   include/xtd/drawing/native/system_fonts.h
