@@ -302,12 +302,16 @@ void graphics::draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, fl
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float angle, int32_t alignment, int32_t line_alignment) {
-  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, to_wx_align(alignment, line_alignment));
+void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32_t alignment, int32_t line_alignment) {
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment));
 }
 
-void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, float angle, int32_t alignment, int32_t line_alignment) {
-  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, angle, to_wx_align(alignment, line_alignment));
+void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment) {
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment));
+}
+
+void graphics::draw_rotated_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float angle) {
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT);
 }
 
 void graphics::fill_closed_curve(intptr_t handle, intptr_t brush, std::vector<std::pair<float, float>> points, uint32_t fill_mode, float tension) {
