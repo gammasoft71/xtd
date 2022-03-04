@@ -30,6 +30,10 @@ public:
     tab_page_multilines.parent(tab_control);
     tab_page_multilines.text("Multiline");
     tab_page_multilines.paint += {*this, &strings_form::draw_strings_multilines};
+    
+    tab_page_hot_key_prefix.parent(tab_control);
+    tab_page_hot_key_prefix.text("Prefix");
+    tab_page_hot_key_prefix.paint += {*this, &strings_form::draw_strings_hot_key_prefix};
   }
   
 private:
@@ -37,6 +41,7 @@ private:
   forms::tab_page tab_page_color;
   forms::tab_page tab_page_linear_gradient;
   forms::tab_page tab_page_multilines;
+  forms::tab_page tab_page_hot_key_prefix;
 
   const ustring regular_str = u8"Regular text - 普通文本";
   const ustring italic_str = u8"Italic text - 斜体文字";
@@ -95,6 +100,14 @@ private:
     e.graphics().draw_rotated_string(italic_str, italic_font, linear_gradient_brush(rectangle_f(point_f(350, 250), size_f(text_size.width(), text_size.height())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(350, 250), 45);
     text_size = size_f(240.0f, 240.0f);
     e.graphics().draw_rotated_string(bold_str, bold_font, linear_gradient_brush(rectangle_f(point_f(400, 250), size_f(text_size.width(), text_size.height())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(400, 250), 45);
+  }
+  
+  void draw_strings_hot_key_prefix(object& sender, paint_event_args& e) {
+    draw_grid(e.clip_rectangle(), e.graphics());
+    
+    e.graphics().draw_string("&No hotkey prefix", regular_font, solid_brush(color::red), point(50, 50), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::none));
+    e.graphics().draw_string("&Show hotkey prefix", regular_font, solid_brush(color::red), point(50, 100), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::show));
+    e.graphics().draw_string("&Hide hotkey prefix", regular_font, solid_brush(color::red), point(50, 150), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::hide));
   }
   
   void draw_strings_multilines(object& sender, paint_event_args& e) {

@@ -10,6 +10,7 @@
 #include <xtd/static.h>
 #include <xtd/ustring.h>
 #include <xtd/drawing_native_export.h>
+#include "hot_key_prefixes.h"
 #include "path_fill_mode.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -57,10 +58,10 @@ namespace xtd {
         static void draw_polygon(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points);
         static void draw_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height);
         static void draw_rectangles(intptr_t handle, intptr_t pen, std::vector<std::tuple<float, float, float, float>>& rects);
-        static void draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float radius);
-        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32_t alignment, int32_t line_alignment);
-        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment);
         static void draw_rotated_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float angle);
+        static void draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float radius);
+        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix);
+        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix);
         static void fill_closed_curve(intptr_t handle, intptr_t brush, std::vector<std::pair<float, float>> points, uint32_t fill_mode, float tension);
         static void fill_ellipse(intptr_t handle, intptr_t brush, float x, float y, float width, float heigh);
         static void fill_path(intptr_t handle, intptr_t brush, intptr_t graphics_path, int32_t mode);

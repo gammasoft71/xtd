@@ -13,24 +13,6 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
-namespace {
-  ustring get_hotkey_prefix_locations(const ustring& str, std::vector<size_t>& locations) {
-    size_t offset = 0;
-    for (auto index = 0U; index < str.size(); index++) {
-      if (str[index] == '&' && str[index + 1] != '&')
-        locations.push_back(index + offset);
-      else if (str[index] == '&' && str[index + 1] == '&') {
-        offset -= 2;
-        ++index;
-      }
-    }
-    auto new_str = str.replace("&&", "&");
-    for (auto index = 0U; index < locations.size(); ++index)
-      new_str = new_str.remove(locations[index], 1);
-    return new_str;
-  }
-}
-
 graphics::graphics(const graphics& value) {
   if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
   data_ = value.data_;
@@ -509,6 +491,14 @@ void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<x
   native::graphics::draw_rectangles(handle(), pen.handle(), rectangles);
 }
 
+void graphics::draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle) {
+  draw_rotated_string(s, font, brush, point.x(), point.y(), angle);
+}
+
+void graphics::draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle) {
+  native::graphics::draw_rotated_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), angle);
+}
+
 void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, int32_t radius) {
   draw_rounded_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height(), radius);
 }
@@ -530,49 +520,7 @@ void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font
 }
 
 void graphics::draw_string(const ustring& s, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
-  auto text_size = measure_string(s, font);
-  auto y = layout_rectangle.y();
-  auto height = layout_rectangle.height();
-  
-  if (format.line_alignment() == string_alignment::center) {
-    y += (layout_rectangle.height() - text_size.height()) / 2;
-    height -= (layout_rectangle.height() - text_size.height()) / 2;
-  } else  if (format.line_alignment() == string_alignment::far) {
-    y += (layout_rectangle.height() - text_size.height());
-    height -= (layout_rectangle.height() - text_size.height());
-  }
-  
-  auto lines = s.split({'\n'});
-  for (auto line : lines) {
-    if (line.empty()) line = " ";
-    vector<size_t> hotkey_prefix_locations;
-    string line_without_hotkey_prefix = get_hotkey_prefix_locations(line, hotkey_prefix_locations);
-    auto drawable_line = format.hotkey_prefix() == hotkey_prefix::none ? line : line_without_hotkey_prefix;
-    auto x = layout_rectangle.x();
-    auto width = layout_rectangle.width();
-    auto line_size = measure_string(drawable_line, font);
-    if (format.alignment() == string_alignment::center) {
-      x += (layout_rectangle.width() - line_size.width()) / 2;
-      width -= (layout_rectangle.width() - line_size.width()) / 2;
-    } else  if (format.alignment() == string_alignment::far) {
-      x += (layout_rectangle.width() - line_size.width());
-      width -= (layout_rectangle.width() - line_size.width());
-    }
-    
-    if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(handle(), drawable_line, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
-    else {
-      /*
-       for (auto index  = 0; index <hotkey_prefix_locations.size(); ++index) {
-       g.draw_string(text_without_hotkey_prefix.substring(hotkey_prefix_locations[index], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, to_string_format(flags));
-       auto chunk_size = (index+1 < hotkey_prefix_locations.size() ? hotkey_prefix_locations[index+1] : text_without_hotkey_prefix.size()) - hotkey_prefix_locations[index] - 1;
-       g.draw_string(text_without_hotkey_prefi.substring(hotkey_prefix_locations[index], chunk_size), font, solid_brush(text_color), button_rect, to_string_format(flags));
-       }
-       */
-      native::graphics::draw_string(handle(), drawable_line, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
-    }
-    
-    y += line_size.height();
-  }
+  native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(layout_rectangle.x()), to_pixels(layout_rectangle.y()), to_pixels(layout_rectangle.width()), to_pixels(layout_rectangle.height()), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()), static_cast<int32_t>(format.hotkey_prefix()));
 }
 
 void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {
@@ -588,15 +536,7 @@ void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font
 }
 
 void graphics::draw_string(const ustring& s, const font& font, const brush& brush, float x, float y, const string_format& format) {
-  native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
-}
-
-void graphics::draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle) {
-  draw_rotated_string(s, font, brush, point.x(), point.y(), angle);
-}
-
-void graphics::draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle) {
-  native::graphics::draw_rotated_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), angle);
+  native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()), static_cast<int32_t>(format.hotkey_prefix()));
 }
 
 void graphics::exclude_clip(const xtd::drawing::region& region) {

@@ -9,24 +9,26 @@
 #include "wxConicalGradient.h"
 #include "hdc_wrapper.h"
 #include <cmath>
+#include <xtd/drawing/native/hot_key_prefixes.h>
 #include <wx/dcclient.h>
 #include <wx/dcmemory.h>
 #include <wx/dcgraph.h>
 #include <wx/graphics.h>
+#include <wx/string.h>
 
 namespace xtd {
   namespace drawing {
     namespace native {
       class wxDrawString {
       public:
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align) {
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix) {
           wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
           dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
-          DrawString(handle, text, font, brush, x, y, angle, align);
+          DrawString(handle, text, font, brush, x, y, angle, align, hot_key_prefix);
           dc.DestroyClippingRegion();
         }
         
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align) {
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32_t hot_key_prefix) {
           float width = 0.0f, height = 0.0f;
           measure_string(handle, text, font, width, height);
           float max_size = math::max(width, height);
@@ -34,8 +36,13 @@ namespace xtd {
             wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
             dc.SetFont(font);
             dc.SetTextForeground(brush.get_solid_brush().color);
-            if (angle == 0)
-              dc.DrawLabel(text, wxRect(x, y, width, height), align);
+            if (angle == 0) {
+              auto text_to_show = text;
+              auto hot_key_prefix_location = GetHotKeyPrefixLocations(text_to_show);
+              if (hot_key_prefix != HKP_NONE && hot_key_prefix != -1)
+                text_to_show = text_to_show.Remove(hot_key_prefix_location, 1);
+              dc.DrawLabel(text_to_show, wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
+            }
             else
               dc.DrawRotatedText(text, x, y, -angle);
           } else {
@@ -96,7 +103,11 @@ namespace xtd {
         }
 
       private:
-        
+        static int32_t GetHotKeyPrefixLocations(const wxString& str) {
+          for (auto index = 0U; index < str.size() - 1; index++)
+            if (str[index] == '&' && str[index + 1] != '&') return static_cast<int32_t>(index);
+          return -1;
+        }
       };
     }
   }

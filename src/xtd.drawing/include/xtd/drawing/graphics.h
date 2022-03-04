@@ -709,6 +709,22 @@ namespace xtd {
       /// @param rects Array of xtd::drawing::rectangle_f structures that represent the rectangles to draw.
       void draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle_f>& rects);
 
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush, xtd::drawing::font objects and angle.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
+      /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
+      void draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle);
+      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush, xtd::drawing::font objects and angle.
+      /// @param s String to draw.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
+      /// @param x The x-coordinate of the upper-left corner of the drawn text.
+      /// @param y The y-coordinate of the upper-left corner of the drawn text.
+      /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
+      void draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle);
+
       /// @brief Draws a rounded rectangle specified by a xtd::drawing::rectangle structure, and radius.
       /// @param pen A xtd::drawing::pen that determines the color, width, and style of the rounded rectangle.
       /// @param rect A xtd::drawing::rectangle structure that represents the rounded rectangle to draw.
@@ -780,22 +796,6 @@ namespace xtd {
       /// @param y The y-coordinate of the upper-left corner of the drawn text.
       /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
       void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, const xtd::drawing::string_format& format);
-
-      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush, xtd::drawing::font objects and angle.
-      /// @param s String to draw.
-      /// @param font xtd::drawing::font that defines the text format of the string.
-      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
-      /// @param point xtd::drawing::point_f structure that specifies the upper-left corner of the drawn text.
-      /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
-      void draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle);
-      /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush, xtd::drawing::font objects and angle.
-      /// @param s String to draw.
-      /// @param font xtd::drawing::font that defines the text format of the string.
-      /// @param brush xtd::drawing::brush that determines the color and texture of the drawn text.
-      /// @param x The x-coordinate of the upper-left corner of the drawn text.
-      /// @param y The y-coordinate of the upper-left corner of the drawn text.
-      /// @param angle The angle, measured in degrees clockwise from the x-axis, of the text's orientation line.
-      void draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle);
 
       /// @brief Updates the clip region of this xtd::drawing::graphics to exclude the area specified by a xtd::drawing::region.
       /// @param region xtd::drawing::region that specifies the region to exclude from the clip region.
