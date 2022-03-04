@@ -559,7 +559,7 @@ void graphics::draw_string(const ustring& s, const font& font, const brush& brus
       width -= (layout_rectangle.width() - line_size.width());
     }
     
-    if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(handle(), drawable_line, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), 0, static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
+    if (format.hotkey_prefix() != hotkey_prefix::show) native::graphics::draw_string(handle(), drawable_line, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
     else {
       /*
        for (auto index  = 0; index <hotkey_prefix_locations.size(); ++index) {
@@ -568,7 +568,7 @@ void graphics::draw_string(const ustring& s, const font& font, const brush& brus
        g.draw_string(text_without_hotkey_prefi.substring(hotkey_prefix_locations[index], chunk_size), font, solid_brush(text_color), button_rect, to_string_format(flags));
        }
        */
-      native::graphics::draw_string(handle(), drawable_line, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), 0, static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
+      native::graphics::draw_string(handle(), drawable_line, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
     }
     
     y += line_size.height();
@@ -576,35 +576,27 @@ void graphics::draw_string(const ustring& s, const font& font, const brush& brus
 }
 
 void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {
-  draw_string(s, font, brush, point.x(), point.y(), 0.0f, string_format());
-}
-
-void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle) {
-  draw_string(s, font, brush, point.x(), point.y(), angle, string_format());
+  draw_string(s, font, brush, point.x(), point.y(), string_format());
 }
 
 void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, const string_format& format) {
-  draw_string(s, font, brush, point.x(), point.y(), 0.0f, format);
-}
-
-void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle, const string_format& format) {
-  draw_string(s, font, brush, point.x(), point.y(), angle, format);
-}
-
-void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle) {
-  draw_string(s, font, brush, x, y, angle, string_format());
+  draw_string(s, font, brush, point.x(), point.y(), format);
 }
 
 void graphics::draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y) {
-  draw_string(s, font, brush, x, y, 0.0f, string_format());
+  draw_string(s, font, brush, x, y, string_format());
 }
 
 void graphics::draw_string(const ustring& s, const font& font, const brush& brush, float x, float y, const string_format& format) {
-  draw_string(s, font, brush, x, y, 0.0f, format);
+  native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
 }
 
-void graphics::draw_string(const ustring& s, const font& font, const brush& brush, float x, float y, float angle, const string_format& format) {
-  native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), angle, static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()));
+void graphics::draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point, float angle) {
+  draw_rotated_string(s, font, brush, point.x(), point.y(), angle);
+}
+
+void graphics::draw_rotated_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, float x, float y, float angle) {
+  native::graphics::draw_rotated_string(handle(), s, font.handle(), brush.handle(), to_pixels(x), to_pixels(y), angle);
 }
 
 void graphics::exclude_clip(const xtd::drawing::region& region) {
