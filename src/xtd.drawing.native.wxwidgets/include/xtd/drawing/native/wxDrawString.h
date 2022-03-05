@@ -39,7 +39,7 @@ namespace xtd {
             if (angle == 0) {
               auto text_to_show = text;
               auto hot_key_prefix_location = GetHotKeyPrefixLocations(text_to_show);
-              if (hot_key_prefix != HKP_NONE && hot_key_prefix != -1)
+              if (hot_key_prefix != HKP_NONE && hot_key_prefix_location != -1)
                 text_to_show = text_to_show.Remove(hot_key_prefix_location, 1);
               dc.DrawLabel(text_to_show, wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             }
@@ -104,6 +104,7 @@ namespace xtd {
 
       private:
         static int32_t GetHotKeyPrefixLocations(const wxString& str) {
+          if (str.IsEmpty()) return -1;
           for (auto index = 0U; index < str.size() - 1; index++)
             if (str[index] == '&' && str[index + 1] != '&') return static_cast<int32_t>(index);
           return -1;
