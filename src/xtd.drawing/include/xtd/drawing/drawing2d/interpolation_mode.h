@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
-      /// @brief The xtd::.drawing::drawing2d::interpolation_mode enumeration specifies the algorithm that is used when images are scaled or rotated.
+      /// @brief The xtd::drawing::drawing2d::interpolation_mode enumeration specifies the algorithm that is used when images are scaled or rotated.
       /// @par Namespace
       /// xtd::drawing::drawing2d
       /// @par Library
