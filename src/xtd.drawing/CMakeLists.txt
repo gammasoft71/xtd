@@ -55,6 +55,7 @@ add_sources(
   include/xtd/drawing/drawing2d/gradient_stop_collection.h
   include/xtd/drawing/drawing2d/gradient_stop.h
   include/xtd/drawing/drawing2d/graphics_path.h
+  include/xtd/drawing/drawing2d/graphics_state.h
   include/xtd/drawing/drawing2d/hatch_brush.h
   include/xtd/drawing/drawing2d/hatch_style.h
   include/xtd/drawing/drawing2d/interpolation_mode.h
