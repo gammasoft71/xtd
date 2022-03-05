@@ -57,13 +57,17 @@ namespace xtd {
       bool operator!=(const brush& value) const {return !operator==(value);}
       /// @endcond
       
-      /// @name Methods
+      /// @name Properties
       
       /// @{
       /// @brief Gets the handle of the brush.
       /// @return An intptr_t that contains the handle of the brush.
       intptr_t handle() const {return data_->handle_;}
+      /// @}
+
+      /// @name Methods
       
+      /// @{
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
