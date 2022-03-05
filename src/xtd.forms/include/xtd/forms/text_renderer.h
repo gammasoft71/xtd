@@ -17,9 +17,6 @@ namespace xtd {
     class text_renderer static_ {
     public:
       static void draw_text(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::forms::style_sheets::itext_model& data);
-      
-    private:
-      static xtd::ustring get_hotkey_prefix_locations(const xtd::ustring& str, std::vector<size_t>& locations);
     };
   }
 }
