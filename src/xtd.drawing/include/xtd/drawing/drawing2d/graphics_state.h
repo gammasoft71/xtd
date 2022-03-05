@@ -12,7 +12,7 @@ namespace xtd {
     class graphics;
     /// @endcond
 
-    /// @brief The xtd::.drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing2d {
       /// @brief Represents the state of a xtd::drawing::graphics object. This object is returned by a call to the xtd::drawing::graphics::save() methods. This class cannot be inherited.
       /// @code
