@@ -34,6 +34,7 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
+  std::map<intptr_t, int32_t> graphics_state;
   class graphics_context {
   public:
     explicit graphics_context(intptr_t handle) : hdc_(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc()) {
@@ -129,6 +130,7 @@ void graphics::copy_from_screen(intptr_t handle, int32_t source_x, int32_t sourc
 
 void graphics::destroy(intptr_t handle) {
   if (!handle) return;
+  if (graphics_state.find(handle) != graphics_state.end()) graphics_state.erase(handle);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle);
   delete hdc_wrapper;
 }
@@ -643,10 +645,24 @@ void graphics::reset_transform(intptr_t handle) {
   graphics.SetTransform(graphics.CreateMatrix());
 }
 
+void graphics::restore(intptr_t handle, intptr_t& gstate) {
+  if (!handle) return;
+  if (gstate == 0 || gstate != graphics_state[handle]) throw argument_exception(csf_);
+  --graphics_state[handle];
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->PopState();
+  gstate = 0;
+}
+
 void graphics::rotate_transform(intptr_t handle, float angle) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Rotate(math::degrees_to_radians(-angle));
+}
+
+intptr_t graphics::save(intptr_t handle) {
+  if (!handle) return 0;
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->PushState();
+  return as<intptr_t>(++graphics_state[handle]);
 }
 
 void graphics::scale_transform(intptr_t handle, float sx, float sy) {

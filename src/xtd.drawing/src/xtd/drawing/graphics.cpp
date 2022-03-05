@@ -12,6 +12,7 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::drawing::drawing2d;
 
 graphics::graphics(const graphics& value) {
   if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
@@ -789,8 +790,16 @@ void graphics::reset_transform() {
   native::graphics::reset_transform(handle());
 }
 
+void graphics::restore(const xtd::drawing::drawing2d::graphics_state &gstate) {
+  native::graphics::restore(handle(), gstate.handle_);
+}
+
 void graphics::rotate_transform(float angle) {
   native::graphics::rotate_transform(handle(), angle);
+}
+
+graphics_state graphics::save() {
+  return graphics_state(native::graphics::save(handle()));
 }
 
 void graphics::scale_transform(float sx, float sy) {

@@ -28,6 +28,7 @@
 #include "drawing2d/flush_intention.h"
 #include "drawing2d/interpolation_mode.h"
 #include "drawing2d/graphics_path.h"
+#include "drawing2d/graphics_state.h"
 #include "drawing2d/pixel_offset_mode.h"
 #include "drawing2d/smoothing_mode.h"
 #include "text/text_rendering_hint.h"
@@ -1153,11 +1154,23 @@ namespace xtd {
       /// @brief Resets the world transformation matrix of this xtd::drawing::graphics to the identity matrix.
       /// @remarks The identity matrix represents a transformation with no scaling, rotation, or translation. Resetting the world transformation of this xtd::drawing::graphics to the identity matrix means that its world transformation does not change the geometry of transformed items.
       void reset_transform();
-      
+
+      /// @brief Restores the state of this Graphics to the state represented by a xtd::drawing::drawing2d::graphics_state.
+      /// @param gstate xtd::drawing::drawing2d::graphics_state that represents the state to which to restore this xtd::drawing::graphics.
+      /// @remarks When you call the xtd::drawing::graphics::save method of a xtd::drawing::graphics, an information block that holds the state of the xtd::drawing::graphics is put on a stack. The xtd::drawing::graphics::save method returns a xtd::drawing::drawing2d::graphics_state that identifies that information block. When you pass the identifying xtd::drawing::drawing2d::graphics_state to the xtd::drawing::graphics::restore method, the information block is removed from the stack and is used to restore the xtd::drawing::graphics to the state it was in at the time of the xtd::drawing::graphics::save method call. Note that the xtd::drawing::drawing2d::graphics_state returned by a given call to the Save method can be passed only once to the xtd::drawing::graphics::restore method.
+      /// @remarks Calls to the xtd::drawing::graphics::save method can be nested; that is, you can call the xtd::drawing::graphics::save method several times before you call the xtd::drawing::graphics::restore method. Each time you call the xtd::drawing::graphics::save method, an information block is put on the stack, and you receive a xtd::drawing::drawing2d::graphics_state for the information block. When you pass one of those objects to the xtd::drawing::graphics::restore method, the xtd::drawing::graphics is returned to the state it was in at the time of the xtd::drawing::graphics::save method call that returned that particular xtd::drawing::drawing2d::graphics_state. The information block placed on the stack by thatxtd::drawing::graphics::sSave method call is removed from the stack, and all information blocks placed on that stack after that xtd::drawing::graphics::save method call are also removed.
+      void restore(const xtd::drawing::drawing2d::graphics_state& gstate);
+
       /// @brief Applies the specified rotation to the transformation matrix of this xtd::drawing::graphics.
       /// @param angle Angle of rotation in degrees.
       /// @remarks The rotation operation consists of multiplying the transformation matrix by a matrix whose elements are derived from the angle parameter. This method applies the rotation by prepending it to the transformation matrix.
       void rotate_transform(float angle);
+      
+      /// @brief Saves the current state of this xtd::drawing::graphics and identifies the saved state with a xtd::drawing::drawing2d::graphics_state.
+      /// @return This method returns a xtd::drawing::drawing2d::graphics_state that represents the saved state of this xtd::drawing::graphics.
+      /// @remarks When you call the xtd::drawing::graphics::save method of a xtd::drawing::graphics, an information block that holds the state of the xtd::drawing::graphics is put on a stack. The xtd::drawing::graphics::save method returns a xtd::drawing::drawing2d::graphics_state that identifies that information block. When you pass the identifying xtd::drawing::drawing2d::graphics_state to the xtd::drawing::graphics::restore method, the information block is removed from the stack and is used to restore the xtd::drawing::graphics to the state it was in at the time of the xtd::drawing::graphics::save method call. Note that the xtd::drawing::drawing2d::graphics_state returned by a given call to the Save method can be passed only once to the xtd::drawing::graphics::restore method.
+      /// @remarks Calls to the xtd::drawing::graphics::save method can be nested; that is, you can call the xtd::drawing::graphics::save method several times before you call the xtd::drawing::graphics::restore method. Each time you call the xtd::drawing::graphics::save method, an information block is put on the stack, and you receive a xtd::drawing::drawing2d::graphics_state for the information block. When you pass one of those objects to the xtd::drawing::graphics::restore method, the xtd::drawing::graphics is returned to the state it was in at the time of the xtd::drawing::graphics::save method call that returned that particular xtd::drawing::drawing2d::graphics_state. The information block placed on the stack by thatxtd::drawing::graphics::sSave method call is removed from the stack, and all information blocks placed on that stack after that xtd::drawing::graphics::save method call are also removed.
+      xtd::drawing::drawing2d::graphics_state save();
 
       /// @brief Applies the specified scaling operation to the transformation matrix of this xtd::drawing::graphics by prepending it to the object's transformation matrix.
       /// @param sx Scale factor in the x direction.
