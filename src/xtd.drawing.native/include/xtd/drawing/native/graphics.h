@@ -85,7 +85,9 @@ namespace xtd {
         static void measure_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float& width, float& height);
         static void release_hdc(intptr_t handle, intptr_t hdc);
         static void reset_transform(intptr_t handle);
+        static void restore(intptr_t handle, intptr_t& gstate);
         static void rotate_transform(intptr_t handle, float angle);
+        static intptr_t save(intptr_t handle);
         static void scale_transform(intptr_t handle, float sx, float sy);
         static void smoothing_mode(intptr_t handle, int32_t smoothing_mode);
         /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
