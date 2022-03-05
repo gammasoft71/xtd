@@ -21,19 +21,17 @@ namespace xtd {
     namespace native {
       class wxDrawString {
       public:
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix) {
-          wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
-          dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
-          DrawString(handle, text, font, brush, x, y, angle, align, hot_key_prefix);
-          dc.DestroyClippingRegion();
-        }
-        
         static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32_t hot_key_prefix) {
           float width = 0.0f, height = 0.0f;
           measure_string(handle, text, font, width, height);
+          DrawString(handle, text, font, brush, x, y, width, height, angle, align, hot_key_prefix);
+        }
+        
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix) {
           float max_size = math::max(width, height);
           if (brush.is_solid_brush()) {
             wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
+            dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
             dc.SetFont(font);
             dc.SetTextForeground(brush.get_solid_brush().color);
             if (angle == 0) {
@@ -45,6 +43,7 @@ namespace xtd {
             }
             else
               dc.DrawRotatedText(text, x, y, -angle);
+            dc.DestroyClippingRegion();
           } else {
             wxImage image(x + max_size, y + max_size);
             if (brush.is_conical_gradiant_brush()) {
@@ -72,7 +71,9 @@ namespace xtd {
             
             image.SetMaskFromImage(bitmap_mask.ConvertToImage(), 0, 0, 0);
             wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+            graphics.Clip(x, y, width, height);
             graphics.DrawBitmap(wxBitmap(image), 0, 0, max_size + x, max_size + y);
+            graphics.ResetClip();
           }
         }
         
