@@ -76,11 +76,11 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a xtd::drawing::region that limits the drawing region of this xtd::drawing::graphics.
-      /// @return A xtd::drawing::region that limits the portion of this Graphics that is currently available for drawing.
+      /// @return A xtd::drawing::region that limits the portion of this xtd::drawing::graphics that is currently available for drawing.
       /// @remarks Modifying the xtd::drawing::region object returned by the xtd::drawing::graphics::clip property does not affect subsequent drawing with the xtd::drawing::graphics object. To change the clip region, replace the xtd::drawing::graphics::clip property value with a new xtd::drawing::region object. To determine whether the clipping region is infinite, retrieve the xtd::drawing::graphics::clip property and call its xtd::drawing::region::is_infinite method.
       xtd::drawing::region clip() const;
       /// @brief Sets a xtd::drawing::region that limits the drawing region of this xtd::drawing::graphics.
-      /// @param value A xtd::drawing::region that limits the portion of this Graphics that is currently available for drawing.
+      /// @param value A xtd::drawing::region that limits the portion of this xtd::drawing::graphics that is currently available for drawing.
       /// @return This current instance.
       /// @remarks Modifying the xtd::drawing::region object returned by the xtd::drawing::graphics::clip property does not affect subsequent drawing with the xtd::drawing::graphics object. To change the clip region, replace the xtd::drawing::graphics::clip property value with a new xtd::drawing::region object. To determine whether the clipping region is infinite, retrieve the xtd::drawing::graphics::clip property and call its xtd::drawing::region::is_infinite method.
       graphics& clip(const xtd::drawing::region value);
@@ -1056,9 +1056,9 @@ namespace xtd {
       static graphics from_hwnd(intptr_t hwnd);
 
       /// @brief Creates a new xtd::drawing::graphics from the specified xtd::drawing::image.
-      /// @param image xtd::drawing::image from which to create the new Graphics.
+      /// @param image xtd::drawing::image from which to create the new xtd::drawing::graphics.
       /// @return This method returns a new xtd::drawing::graphics for the specified Image.
-      /// @remarks If the image has an indexed pixel format, this method throws an exception with the message, "A Graphics object cannot be created from an image that has an indexed pixel format." The indexed pixel formats are shown in the following list.
+      /// @remarks If the image has an indexed pixel format, this method throws an exception with the message, "A xtd::drawing::graphics object cannot be created from an image that has an indexed pixel format." The indexed pixel formats are shown in the following list.
       /// * xtd::drawing::imaging::pixel_format::format1bpp_indexed
       /// * xtd::drawing::imaging::pixel_format::format4bpp_indexed
       /// * xtd::drawing::imaging::pixel_format::format8bpp_indexed
@@ -1073,7 +1073,7 @@ namespace xtd {
       /// @brief Gets the handle to the device context associated with this xtd::drawing::graphics.
       /// @return Handle to the device context associated with this xtd::drawing::graphics.
       /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
-      /// @remarks Calls to the xtd::drawing::graphics::get_hdc and ReleaseHdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the Graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the Graphics of the hdc parameter in subsequent operations.
+      /// @remarks Calls to the xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the xtd::drawing::graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the xtd::drawing::graphics of the hdc parameter in subsequent operations.
       intptr_t get_hdc() const;
       
       /// @brief Gets the nearest color to the specified xtd::drawing::color structure.
@@ -1144,7 +1144,7 @@ namespace xtd {
       /// @brief Releases a device context handle obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
       /// @param hdc Handle to a device context obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
       /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
-      /// @remarks Calls to the xtd::drawing::graphics::get_hdc and ReleaseHdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the Graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the Graphics of the hdc parameter in subsequent operations.
+      /// @remarks Calls to the xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the xtd::drawing::graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the xtd::drawing::graphics of the hdc parameter in subsequent operations.
       void release_hdc(intptr_t hdc);
       
       /// @brief Resets the clip region of this xtd::drawing::graphics to an infinite region.
@@ -1155,7 +1155,7 @@ namespace xtd {
       /// @remarks The identity matrix represents a transformation with no scaling, rotation, or translation. Resetting the world transformation of this xtd::drawing::graphics to the identity matrix means that its world transformation does not change the geometry of transformed items.
       void reset_transform();
 
-      /// @brief Restores the state of this Graphics to the state represented by a xtd::drawing::drawing2d::graphics_state.
+      /// @brief Restores the state of this xtd::drawing::graphics to the state represented by a xtd::drawing::drawing2d::graphics_state.
       /// @param gstate xtd::drawing::drawing2d::graphics_state that represents the state to which to restore this xtd::drawing::graphics.
       /// @remarks When you call the xtd::drawing::graphics::save method of a xtd::drawing::graphics, an information block that holds the state of the xtd::drawing::graphics is put on a stack. The xtd::drawing::graphics::save method returns a xtd::drawing::drawing2d::graphics_state that identifies that information block. When you pass the identifying xtd::drawing::drawing2d::graphics_state to the xtd::drawing::graphics::restore method, the information block is removed from the stack and is used to restore the xtd::drawing::graphics to the state it was in at the time of the xtd::drawing::graphics::save method call. Note that the xtd::drawing::drawing2d::graphics_state returned by a given call to the Save method can be passed only once to the xtd::drawing::graphics::restore method.
       /// @remarks Calls to the xtd::drawing::graphics::save method can be nested; that is, you can call the xtd::drawing::graphics::save method several times before you call the xtd::drawing::graphics::restore method. Each time you call the xtd::drawing::graphics::save method, an information block is put on the stack, and you receive a xtd::drawing::drawing2d::graphics_state for the information block. When you pass one of those objects to the xtd::drawing::graphics::restore method, the xtd::drawing::graphics is returned to the state it was in at the time of the xtd::drawing::graphics::save method call that returned that particular xtd::drawing::drawing2d::graphics_state. The information block placed on the stack by thatxtd::drawing::graphics::sSave method call is removed from the stack, and all information blocks placed on that stack after that xtd::drawing::graphics::save method call are also removed.
