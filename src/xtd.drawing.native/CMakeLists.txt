@@ -26,6 +26,7 @@ add_sources(
   include/xtd/drawing/native/interpolation_modes.h
   include/xtd/drawing/native/line_caps.h
   include/xtd/drawing/native/line_joins.h
+  include/xtd/drawing/native/matrix.h
   include/xtd/drawing/native/matrix_orders.h
   include/xtd/drawing/native/pen.h
   include/xtd/drawing/native/pixel_offset_modes.h

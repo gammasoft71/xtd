@@ -31,6 +31,7 @@ namespace xtd {
       class graphics_path;
       class icon;
       class image;
+      class matrix;
       class pen;
       class region;
       class system_colors;
@@ -51,6 +52,7 @@ namespace xtd {
         friend xtd::drawing::native::graphics_path;
         friend xtd::drawing::native::icon;
         friend xtd::drawing::native::image;
+        friend xtd::drawing::native::matrix;
         friend xtd::drawing::native::pen;
         friend xtd::drawing::native::region;
         friend xtd::drawing::native::system_colors;
