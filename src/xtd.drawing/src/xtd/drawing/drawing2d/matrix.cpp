@@ -16,6 +16,10 @@ matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) {
   data_->handle = native::matrix::create(m11, m12, m21, m22, dx, dy);
 }
 
+matrix::matrix(intptr_t handle) {
+  data_->handle = handle;
+}
+
 matrix::~matrix() {
   if (data_.use_count() == 1 && data_->handle != 0) {
     native::matrix::destroy(data_->handle);
@@ -48,11 +52,117 @@ bool matrix::is_invertible() const {
 }
 
 float matrix::offset_x() const {
-  return elements()[4];
+  return native::matrix::offset_x(handle());
 }
 
 float matrix::offset_y() const {
-  return elements()[5];
+  return native::matrix::offset_y(handle());
+}
+
+void matrix::invert() {
+  native::matrix::invert(handle());
+}
+
+void matrix::multiply(const xtd::drawing::drawing2d::matrix& matrix) {
+  multiply(matrix, xtd::drawing::drawing2d::matrix_order::prepend);
+}
+
+void matrix::multiply(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order) {
+  native::matrix::multiply(handle(), matrix.handle(), static_cast<int32_t>(order));
+}
+
+void matrix::reset() {
+  native::matrix::reset(handle());
+}
+
+void matrix::rotate(float angle) {
+  rotate(angle, xtd::drawing::drawing2d::matrix_order::prepend);
+}
+
+void matrix::rotate(float angle, xtd::drawing::drawing2d::matrix_order order) {
+  native::matrix::rotate(handle(), angle, static_cast<int32_t>(order));
+}
+
+void matrix::rotate_at(float angle, const point_f& point) {
+  rotate_at(angle, point, xtd::drawing::drawing2d::matrix_order::prepend);
+}
+
+void matrix::rotate_at(float angle, const point_f& point, xtd::drawing::drawing2d::matrix_order order) {
+  native::matrix::rotate_at(handle(), angle, point.x(), point.y(), static_cast<int32_t>(order));
+}
+
+void matrix::scale(float scale_x, float scale_y) {
+  scale(scale_x, scale_y, matrix_order::prepend);
+}
+
+void matrix::scale(float scale_x, float scale_y, xtd::drawing::drawing2d::matrix_order order) {
+  native::matrix::scale(handle(), scale_x, scale_y, static_cast<int32_t>(order));
+}
+
+void matrix::shear(float scale_x, float scale_y) {
+  shear(scale_x, scale_y, xtd::drawing::drawing2d::matrix_order::prepend);
+}
+
+void matrix::shear(float scale_x, float scale_y, xtd::drawing::drawing2d::matrix_order order) {
+  native::matrix::shear(handle(), scale_x, scale_y, static_cast<int32_t>(order));
+}
+
+void matrix::transform_points(std::vector<xtd::drawing::point>& points) {
+  vector<pair<float, float>> tr_points;
+  for (auto& point : points) {
+    int32_t tx = point.x(), ty = point.y();
+    native::matrix::transform_point(handle(), tx, ty);
+    point.x(tx);
+    point.y(ty);
+  }
+}
+
+void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
+  vector<pair<float, float>> tr_points;
+  for (auto& point : points) {
+    float tx = point.x(), ty = point.y();
+    native::matrix::transform_point(handle(), tx, ty);
+    point.x(tx);
+    point.y(ty);
+  }
+}
+
+void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
+  vector<pair<int32_t, int32_t>> tr_points;
+  for (auto point : points)
+    tr_points.push_back(make_pair(point.x(), point.y()));
+  native::matrix::transform_vectors(handle(), tr_points);
+  points.clear();
+  for (auto point : tr_points)
+    points.push_back(xtd::drawing::point(point.first, point.second));
+}
+
+void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
+  vector<pair<float, float>> tr_points;
+  for (auto point : points)
+    tr_points.push_back(make_pair(point.x(), point.y()));
+  native::matrix::transform_vectors(handle(), tr_points);
+  points.clear();
+  for (auto point : tr_points)
+    points.push_back(xtd::drawing::point_f(point.first, point.second));
+}
+
+void matrix::translate(float offset_x, float offset_y) {
+  translate(offset_x, offset_y, xtd::drawing::drawing2d::matrix_order::prepend);
+}
+
+void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing2d::matrix_order order) {
+  native::matrix::translate(handle(), offset_x, offset_y, static_cast<int32_t>(order));
+}
+
+void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
+  vector<pair<float, float>> tr_points;
+  for (auto point : points)
+    tr_points.push_back(make_pair(point.x(), point.y()));
+  native::matrix::vector_transform_points(handle(), tr_points);
+  points.clear();
+  for (auto point : tr_points)
+    points.push_back(xtd::drawing::point(point.first, point.second));
 }
 
 xtd::ustring matrix::to_string() const noexcept {
