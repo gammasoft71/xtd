@@ -92,7 +92,7 @@ namespace xtd {
     /// @include object_reference_equals.cpp
     static bool reference_equals(const object& object_a, const object& object_b) noexcept;
     
-    /// @brief Returns a std::string that represents the current object.
+    /// @brief Returns a sxd::ustring that represents the current object.
     /// @return A string that represents the current object.
     /// @par Examples
     /// The following code example demonstrates what to_string returns.
