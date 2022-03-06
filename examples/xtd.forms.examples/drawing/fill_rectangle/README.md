@@ -4,7 +4,7 @@ shows how to fill rectangle in paint event.
 
 # Sources
 
-* [src/filll_rectangle.cpp](src/filll_rectangle.cpp)
+* [src/fill_rectangle.cpp](src/fill_rectangle.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
