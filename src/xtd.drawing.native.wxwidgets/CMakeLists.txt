@@ -35,6 +35,7 @@ add_sources(
   src/xtd/drawing/native/wxwidgets/graphics_path.cpp
   src/xtd/drawing/native/wxwidgets/icon.cpp
   src/xtd/drawing/native/wxwidgets/image.cpp
+  src/xtd/drawing/native/wxwidgets/matrix.cpp
   src/xtd/drawing/native/wxwidgets/pen.cpp
   src/xtd/drawing/native/wxwidgets/region.cpp
   src/xtd/drawing/native/wxwidgets/system_colors.cpp

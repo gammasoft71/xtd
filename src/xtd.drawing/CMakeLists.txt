@@ -63,6 +63,7 @@ add_sources(
   include/xtd/drawing/drawing2d/line_join.h
   include/xtd/drawing/drawing2d/linear_gradient_brush.h
   include/xtd/drawing/drawing2d/linear_gradient_mode.h
+  include/xtd/drawing/drawing2d/matrix.h
   include/xtd/drawing/drawing2d/matrix_order.h
   include/xtd/drawing/drawing2d/pen_alignment.h
   include/xtd/drawing/drawing2d/pen_type.h
@@ -117,6 +118,7 @@ add_sources(
   src/xtd/drawing/drawing2d/conical_gradient_brush.cpp
   src/xtd/drawing/drawing2d/graphics_path.cpp
   src/xtd/drawing/drawing2d/linear_gradient_brush.cpp
+  src/xtd/drawing/drawing2d/matrix.cpp
   src/xtd/drawing/drawing2d/radial_gradient_brush.cpp
   src/xtd/drawing/imaging/encoder_parameter.cpp
   src/xtd/drawing/text/installed_font_collection.cpp
