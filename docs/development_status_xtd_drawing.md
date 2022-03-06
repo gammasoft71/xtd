@@ -33,7 +33,7 @@
 | [font](../src/xtd.drawing/include/xtd/drawing/font.h)                               | class        | ![progress](pictures/progress100.png) |
 | [font_family](../src/xtd.drawing/include/xtd/drawing/font_family.h)                 | class        | ![progress](pictures/progress100.png) |
 | [font_style](../src/xtd.drawing/include/xtd/drawing/font_style.h)                   | enumeration  | ![progress](pictures/progress100.png) |
-| [graphics](../src/xtd.drawing/include/xtd/drawing/graphics.h)                       | class        | ![progress](pictures/progress75.png)  |
+| [graphics](../src/xtd.drawing/include/xtd/drawing/graphics.h)                       | class        | ![progress](pictures/progress100.png) |
 | [graphics_unit](../src/xtd.drawing/include/xtd/drawing/graphics_unit.h)             | enumeration  | ![progress](pictures/progress100.png) |
 | [hotkey_prefix](../src/xtd.drawing/include/xtd/drawing/hotkey_prefix.h)             | enumeration  | ![progress](pictures/progress100.png) |
 | [icon](../src/xtd.drawing/include/xtd/drawing/icon.h)                               | class        | ![progress](pictures/progress100.png) |
@@ -82,7 +82,7 @@
 | [line_join](../src/xtd.drawing/include/xtd/drawing/drawing2d/line_join.h)                               | enumeration  | ![progress](pictures/progress100.png) |
 | [linear_gradient_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_brush.h)       | class        | ![progress](pictures/progress100.png) |
 | [linear_gradient_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_mode.h)         | enumeration  | ![progress](pictures/progress100.png) |
-| [matrix](../src/xtd.drawing/include/xtd/drawing/drawing2d/matrix.h)                                     | class        | ![progress](pictures/progress50.png)  |
+| [matrix](../src/xtd.drawing/include/xtd/drawing/drawing2d/matrix.h)                                     | class        | ![progress](pictures/progress100.png) |
 | [matrix_order](../src/xtd.drawing/include/xtd/drawing/drawing2d/matrix_order.h)                         | enumeration  | ![progress](pictures/progress100.png) |
 | [pen_alignment](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_alignment.h)                       | enumeration  | ![progress](pictures/progress100.png) |
 | [pen_type](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_type.h)                                 | enumeration  | ![progress](pictures/progress100.png) |
