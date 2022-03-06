@@ -795,7 +795,11 @@ void graphics::restore(const xtd::drawing::drawing2d::graphics_state &gstate) {
 }
 
 void graphics::rotate_transform(float angle) {
-  native::graphics::rotate_transform(handle(), angle);
+  rotate_transform(angle, matrix_order::prepend);
+}
+
+void graphics::rotate_transform(float angle, matrix_order order) {
+  native::graphics::rotate_transform(handle(), angle, static_cast<int32_t>(order));
 }
 
 graphics_state graphics::save() {
@@ -803,7 +807,11 @@ graphics_state graphics::save() {
 }
 
 void graphics::scale_transform(float sx, float sy) {
-  native::graphics::scale_transform(handle(), sx, sy);
+  scale_transform(sx, sy, matrix_order::prepend);
+}
+
+void graphics::scale_transform(float sx, float sy, matrix_order order) {
+  native::graphics::scale_transform(handle(), sx, sy, static_cast<int32_t>(order));
 }
 
 void graphics::translate_clip(int32_t dx, int32_t dy) {
@@ -817,7 +825,11 @@ void graphics::translate_clip(float dx, float dy) {
 }
 
 void graphics::translate_transform(float dx, float dy) {
-  native::graphics::translate_transform(handle(), to_pixels(dx), to_pixels(dy));
+  translate_transform(dx, dy, matrix_order::prepend);
+}
+
+void graphics::translate_transform(float dx, float dy, matrix_order order) {
+  native::graphics::translate_transform(handle(), to_pixels(dx), to_pixels(dy), static_cast<int32_t>(order));
 }
 
 float graphics::to_page_unit(float value) const {
