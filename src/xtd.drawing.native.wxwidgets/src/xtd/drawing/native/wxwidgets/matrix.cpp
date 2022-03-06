@@ -116,6 +116,6 @@ void matrix::translate(intptr_t handle, float ofset_x, float offset_y, int32_t o
   reinterpret_cast<wxGraphicsMatrix*>(handle)->Translate(offset_y, offset_y);
 }
 
-void matrix::vector_transform_points(intptr_t handle, std::vector<std::pair<float, float>>& points) {
+void matrix::vector_transform_points(intptr_t handle, std::vector<std::pair<int32_t, int32_t>>& points) {
   if (!handle) return;
 }

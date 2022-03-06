@@ -57,7 +57,7 @@ namespace xtd {
         static void transform_vectors(intptr_t handle, std::vector<std::pair<int32_t, int32_t>>& points);
         static void transform_vectors(intptr_t handle, std::vector<std::pair<float, float>>& points);
         static void translate(intptr_t handle, float offset_x, float offset_y, int32_t order);
-        static void vector_transform_points(intptr_t handle, std::vector<std::pair<float, float>>& points);
+        static void vector_transform_points(intptr_t handle, std::vector<std::pair<int32_t, int32_t>>& points);
         /// @}
       };
     }
