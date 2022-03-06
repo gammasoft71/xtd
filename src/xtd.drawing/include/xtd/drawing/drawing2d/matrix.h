@@ -52,8 +52,7 @@ namespace xtd {
       /// <br><br>The following illustration shows the matrices A, B, C, and D.
       /// @image html matrix2.png
       /// The fact that the matrix of a composite transformation can be formed by multiplying the individual transformation matrices means that any sequence of affine transformations can be stored in a single xtd::drawing::drawing2d::matrix object.
-      /// @warning The order of a composite transformation is important. In general, rotate, then scale, then translate is not the same as scale, then rotate, then translate. Similarly, the order of matrix multiplication is important. In general, ABC is not the same as BAC.
-      /// @par Composite Transformations
+      /// <b>Caution: The order of a composite transformation is important. In general, rotate, then scale, then translate is not the same as scale, then rotate, then translate. Similarly, the order of matrix multiplication is important. In general, ABC is not the same as BAC.</b>
       /// <br><br>The xtd::drawing::drawing2d::matrix class provides several methods for building a composite transformation: xtd::drawing::drawing2d::matrix::multiply, xtd::drawing::drawing2d::matrix::rotate, xtd::drawing::drawing2d::matrix::rotate_at, xtd::drawing::drawing2d::matrix::scale, xtd::drawing::drawing2d::matrix::shear, and xtd::drawing::drawing2d::matrix::translate. The following example creates the matrix of a composite transformation that first rotates 30 degrees, then scales by a factor of 2 in the y direction, and then translates 5 units in the x direction:
       /// @code
       /// matrix my_matrix;
