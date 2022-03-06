@@ -653,7 +653,7 @@ void graphics::restore(intptr_t handle, intptr_t& gstate) {
   gstate = 0;
 }
 
-void graphics::rotate_transform(intptr_t handle, float angle) {
+void graphics::rotate_transform(intptr_t handle, float angle, int32_t order) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Rotate(math::degrees_to_radians(-angle));
@@ -665,7 +665,7 @@ intptr_t graphics::save(intptr_t handle) {
   return as<intptr_t>(++graphics_state[handle]);
 }
 
-void graphics::scale_transform(intptr_t handle, float sx, float sy) {
+void graphics::scale_transform(intptr_t handle, float sx, float sy, int32_t order) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Scale(sx, sy);
@@ -695,7 +695,7 @@ void graphics::text_rendering_hint(intptr_t handle, int32_t text_rendering_hint)
   // Not defined in wxWidgets
 }
 
-void graphics::translate_transform(intptr_t handle, float dx, float dy) {
+void graphics::translate_transform(intptr_t handle, float dx, float dy, int32_t order) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Translate(dx, dy);

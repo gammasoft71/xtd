@@ -29,6 +29,7 @@
 #include "drawing2d/interpolation_mode.h"
 #include "drawing2d/graphics_path.h"
 #include "drawing2d/graphics_state.h"
+#include "drawing2d/matrix_order.h"
 #include "drawing2d/pixel_offset_mode.h"
 #include "drawing2d/smoothing_mode.h"
 #include "text/text_rendering_hint.h"
@@ -1165,7 +1166,12 @@ namespace xtd {
       /// @param angle Angle of rotation in degrees.
       /// @remarks The rotation operation consists of multiplying the transformation matrix by a matrix whose elements are derived from the angle parameter. This method applies the rotation by prepending it to the transformation matrix.
       void rotate_transform(float angle);
-      
+      /// @brief Applies the specified rotation to the transformation matrix of this xtd::drawing::graphics in the specified order.
+      /// @param angle Angle of rotation in degrees.
+      /// @param order Member of the xtd::drawing::drawing2d::matrix_order enumeration that specifies whether the rotation is prepended or appended to the transformation matrix.
+      /// @remarks The rotation operation consists of multiplying the transformation matrix by a matrix whose elements are derived from the angle parameter. This method applies the rotation by prepending it to the transformation matrix.
+      void rotate_transform(float angle, xtd::drawing::drawing2d::matrix_order order);
+
       /// @brief Saves the current state of this xtd::drawing::graphics and identifies the saved state with a xtd::drawing::drawing2d::graphics_state.
       /// @return This method returns a xtd::drawing::drawing2d::graphics_state that represents the saved state of this xtd::drawing::graphics.
       /// @remarks When you call the xtd::drawing::graphics::save method of a xtd::drawing::graphics, an information block that holds the state of the xtd::drawing::graphics is put on a stack. The xtd::drawing::graphics::save method returns a xtd::drawing::drawing2d::graphics_state that identifies that information block. When you pass the identifying xtd::drawing::drawing2d::graphics_state to the xtd::drawing::graphics::restore method, the information block is removed from the stack and is used to restore the xtd::drawing::graphics to the state it was in at the time of the xtd::drawing::graphics::save method call. Note that the xtd::drawing::drawing2d::graphics_state returned by a given call to the Save method can be passed only once to the xtd::drawing::graphics::restore method.
@@ -1177,6 +1183,12 @@ namespace xtd {
       /// @param sy Scale factor in the y direction.
       /// @remarks The scaling operation consists of multiplying the transformation matrix by a diagonal matrix whose elements are (sx, sy, 1). This method prepends the transformation matrix of the xtd::drawing::graphics by the scaling matrix.
       void scale_transform(float sx, float sy);
+      /// @brief Applies the specified scaling operation to the transformation matrix of this xtd::drawing::graphics in the specified order.
+      /// @param sx Scale factor in the x direction.
+      /// @param sy Scale factor in the y direction.
+      /// @param order Member of the xtd::drawing::drawing2d::matrix_order enumeration that specifies whether the scaling operation is prepended or appended to the transformation matrix.
+      /// @remarks The scaling operation consists of multiplying the transformation matrix by a diagonal matrix whose elements are (sx, sy, 1). This method prepends the transformation matrix of the xtd::drawing::graphics by the scaling matrix.
+      void scale_transform(float sx, float sy, xtd::drawing::drawing2d::matrix_order order);
 
       /// @brief Translates the clipping region of this xtd::drawing::graphics by specified amounts in the horizontal and vertical directions.
       /// @param dx The x-coordinate of the translation.
@@ -1187,11 +1199,17 @@ namespace xtd {
       /// @param dy The y-coordinate of the translation.
       void translate_clip(float dx, float dy);
 
-      /// @brief Changes the origin of the coordinate system by prepending the specified translation to the transformation matrix of this xtd::drawing::graphics.
+      /// @brief Changes the origin of the coordinate system by prepending the specified translation to the transformation matrix of this xtd::drawing::graphics
       /// @param dx The x-coordinate of the translation.
       /// @param dy The y-coordinate of the translation.
       /// @remarks The translation operation consists of multiplying the transformation matrix by a matrix whose translation part is the dx and dy parameters. This method prepends or appends the transformation matrix of the xtd::drawing::graphics by the translation matrix according to the order parameter.
       void translate_transform(float dx, float dy);
+      /// @brief Changes the origin of the coordinate system by prepending the specified translation to the transformation matrix of this xtd::drawing::graphics in the specified order.
+      /// @param dx The x-coordinate of the translation.
+      /// @param dy The y-coordinate of the translation.
+      /// @param order Member of the xtd::drawing::drawing2d::matrix_order enumeration that specifies whether the translation is prepended or appended to the transformation matrix.
+      /// @remarks The translation operation consists of multiplying the transformation matrix by a matrix whose translation part is the dx and dy parameters. This method prepends or appends the transformation matrix of the xtd::drawing::graphics by the translation matrix according to the order parameter.
+      void translate_transform(float dx, float dy, xtd::drawing::drawing2d::matrix_order order);
 
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       /// @}

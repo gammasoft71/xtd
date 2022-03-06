@@ -86,14 +86,14 @@ namespace xtd {
         static void release_hdc(intptr_t handle, intptr_t hdc);
         static void reset_transform(intptr_t handle);
         static void restore(intptr_t handle, intptr_t& gstate);
-        static void rotate_transform(intptr_t handle, float angle);
+        static void rotate_transform(intptr_t handle, float angle, int32_t order);
         static intptr_t save(intptr_t handle);
-        static void scale_transform(intptr_t handle, float sx, float sy);
+        static void scale_transform(intptr_t handle, float sx, float sy, int32_t order);
         static void smoothing_mode(intptr_t handle, int32_t smoothing_mode);
         /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
         static void text_contrast(intptr_t handle, int32_t text_contrast);
         static void text_rendering_hint(intptr_t handle, int32_t text_rendering_hint);
-        static void translate_transform(intptr_t handle, float dx, float dy);
+        static void translate_transform(intptr_t handle, float dx, float dy, int32_t order);
         static void visible_clip_bounds(intptr_t handle, float& x, float& y, float& width, float& height);
         /// @}
       };

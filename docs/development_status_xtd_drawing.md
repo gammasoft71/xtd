@@ -70,9 +70,11 @@
 | [compisiting_quality](../src/xtd.drawing/include/xtd/drawing/drawing2d/compisiting_quality.h)           | enumeration  | ![progress](pictures/progress100.png) |
 | [conical_gradient_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/conical_gradient_brush.h)     | class        | ![progress](pictures/progress100.png) |
 | [fill_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/fill_mode.h)                               | enumeration  | ![progress](pictures/progress100.png) |
+| [flush_intention](../src/xtd.drawing/include/xtd/drawing/drawing2d/flush_intention.h)                   | enumeration  | ![progress](pictures/progress100.png) |
 | [gradient_stop](../src/xtd.drawing/include/xtd/drawing/drawing2d/gradient_stop.h)                       | alias        | ![progress](pictures/progress100.png) |
 | [gradient_stop_collection](../src/xtd.drawing/include/xtd/drawing/drawing2d/gradient_stop_collection.h) | alias        | ![progress](pictures/progress100.png) |
 | [graphics_path](../src/xtd.drawing/include/xtd/drawing/drawing2d/graphics_path.h)                       | class        | ![progress](pictures/progress50.png)  |
+| [graphics_state](../src/xtd.drawing/include/xtd/drawing/drawing2d/graphics_state.h)                     | class        | ![progress](pictures/progress50.png)  |
 | [hatch_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_brush.h)                           | class        | ![progress](pictures/progress100.png) |
 | [hatch_style](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_style.h)                           | enumeration  | ![progress](pictures/progress100.png) |
 | [interpolation_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/interpolation_mode.h)             | enumeration  | ![progress](pictures/progress100.png) |
@@ -80,6 +82,7 @@
 | [line_join](../src/xtd.drawing/include/xtd/drawing/drawing2d/line_join.h)                               | enumeration  | ![progress](pictures/progress100.png) |
 | [linear_gradient_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_brush.h)       | class        | ![progress](pictures/progress100.png) |
 | [linear_gradient_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/linear_gradient_mode.h)         | enumeration  | ![progress](pictures/progress100.png) |
+| [matrix_order](../src/xtd.drawing/include/xtd/drawing/drawing2d/matrix_order.h)                         | enumeration  | ![progress](pictures/progress100.png) |
 | [pen_alignment](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_alignment.h)                       | enumeration  | ![progress](pictures/progress100.png) |
 | [pen_type](../src/xtd.drawing/include/xtd/drawing/drawing2d/pen_type.h)                                 | enumeration  | ![progress](pictures/progress100.png) |
 | [pixel_offset_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/pixel_offset_mode.h)               | enumeration  | ![progress](pictures/progress100.png) |
