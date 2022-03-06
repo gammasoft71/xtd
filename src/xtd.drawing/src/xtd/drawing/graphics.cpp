@@ -161,6 +161,15 @@ graphics& graphics::text_rendering_hint(xtd::drawing::text::text_rendering_hint 
   return *this;
 }
 
+xtd::drawing::drawing2d::matrix graphics::transform() const {
+  return matrix(native::graphics::transform(handle()));
+}
+
+graphics& graphics::transform(const xtd::drawing::drawing2d::matrix& value) {
+  native::graphics::transform(handle(), value.handle());
+  return *this;
+}
+
 rectangle_f graphics::visible_clip_bounds() const noexcept {
   float x = 0.0f, y = 0.0f, width = 0.0f, height = 0.0f;
   native::graphics::visible_clip_bounds(handle(), x, y, width, height);
@@ -775,6 +784,18 @@ size_f graphics::measure_string(const ustring& text, const font& font) {
   float height = 0.0f;
   native::graphics::measure_string(handle(), text, font.handle(), width, height);
   return size_f(to_page_unit(width), to_page_unit(height));
+}
+
+void graphics::multiply_transform(const xtd::drawing::drawing2d::matrix& matrix) {
+  auto new_matrix = transform();
+  new_matrix.multiply(matrix);
+  transform(new_matrix);
+}
+
+void graphics::multiply_transform(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order) {
+  auto new_matrix = transform();
+  new_matrix.multiply(matrix, order);
+  transform(new_matrix);
 }
 
 void graphics::release_hdc(intptr_t hdc) {

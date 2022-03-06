@@ -29,6 +29,7 @@
 #include "drawing2d/interpolation_mode.h"
 #include "drawing2d/graphics_path.h"
 #include "drawing2d/graphics_state.h"
+#include "drawing2d/matrix.h"
 #include "drawing2d/matrix_order.h"
 #include "drawing2d/pixel_offset_mode.h"
 #include "drawing2d/smoothing_mode.h"
@@ -196,6 +197,18 @@ namespace xtd {
       /// @remarks The text rendering hint specifies whether text renders with antialiasing.
       /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
       graphics& text_rendering_hint(xtd::drawing::text::text_rendering_hint value);
+      
+      /// @brief Gets a copy of the geometric world transformation for this xtd::drawing::graphics.
+      /// @return A copy of the xtd::drawing::drawing2d::matrix that represents the geometric world transformation for this xtd::drawing::graphics.
+      /// @remarks GDI+ uses three coordinate spaces: world, page, and device. World coordinates are the coordinates used to model a particular graphic world and are the coordinates you pass to methods in the .NET Framework. Page coordinates refer to the coordinate system used by a drawing surface, such as a form or a control. Device coordinates are the coordinates used by the physical device being drawn on, such as a screen or a printer. The xtd::drawing::graphics::transform property represents the world transformation, which maps world coordinates to page coordinates.
+      /// @remarks Because the matrix returned and by the xtd::drawing::graphics::transform property is a copy of the geometric transform, you should dispose of the matrix when you no longer need it.
+      xtd::drawing::drawing2d::matrix transform() const;
+      /// @brief Sets a copy of the geometric world transformation for this xtd::drawing::graphics.
+      /// @param value A copy of the xtd::drawing::drawing2d::matrix that represents the geometric world transformation for this xtd::drawing::graphics.
+      /// @return This current instance.
+      /// @remarks GDI+ uses three coordinate spaces: world, page, and device. World coordinates are the coordinates used to model a particular graphic world and are the coordinates you pass to methods in the .NET Framework. Page coordinates refer to the coordinate system used by a drawing surface, such as a form or a control. Device coordinates are the coordinates used by the physical device being drawn on, such as a screen or a printer. The xtd::drawing::graphics::transform property represents the world transformation, which maps world coordinates to page coordinates.
+      /// @remarks Because the matrix returned and by the xtd::drawing::graphics::transform property is a copy of the geometric transform, you should dispose of the matrix when you no longer need it.
+      graphics& transform(const xtd::drawing::drawing2d::matrix& value);
       
       /// @brief Gets the bounding rectangle of the visible clipping region of this xtd::drawing::graphics.
       /// @return A xtd::drawing::rectangle_f structure that represents a bounding rectangle for the visible clipping region of this xtd::drawing::graphics.
@@ -1142,6 +1155,16 @@ namespace xtd {
       /// @remarks The xtd::drawing::graphics::measure_string method is designed for use with individual strings and includes a small amount of extra space before and after the string to allow for overhanging glyphs. Also, the xtd::drawing::graphics::draw_string method adjusts glyph points to optimize display quality and might display a string narrower than reported byxtd::drawing::graphics::measure_string. To obtain metrics suitable for adjacent strings in layout (for example, when implementing formatted text), use the xtd::drawing::graphics::measure_character_ranges method or one of the xtd::drawing::graphics::measure_string methods that takes a xtd::drawing::string_format, and pass xtd::drawing::string_format::generic_typographic. Also, ensure the xtd::drawing::text::text_rendering_hint for the xtd::drawing::graphics is xtd::drawing::text::text_rendering_hint::anti_alias.
       size_f measure_string(const xtd::ustring& text, const xtd::drawing::font& font);
       
+      /// @brief Multiplies the world transformation of this xtd::drawing::graphics and specified the xtd::drawing::drawing2d::matrix.
+      /// @param matrix 4x4 xtd::drawing::drawing2d::matrix that multiplies the world transformation.
+      /// @remarks This method prepends the matrix specified by the matrix parameter, so that the result is matrix x world transformation.
+      void multiply_transform(const xtd::drawing::drawing2d::matrix& matrix);
+      /// @brief Multiplies the world transformation of this xtd::drawing::graphics and specified the xtd::drawing::drawing2d::matrix with specified order.
+      /// @param matrix 4x4 xtd::drawing::drawing2d::matrix that multiplies the world transformation.
+      /// @param order Member of the xtd::drawing::drawing2d::matrix_order enumeration that determines the order of the multiplication.
+      /// @remarks This method prepends the matrix specified by the matrix parameter, so that the result is matrix x world transformation.
+      void multiply_transform(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order);
+
       /// @brief Releases a device context handle obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
       /// @param hdc Handle to a device context obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
       /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.

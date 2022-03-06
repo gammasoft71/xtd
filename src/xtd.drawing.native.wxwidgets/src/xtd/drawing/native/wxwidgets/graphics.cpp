@@ -695,6 +695,14 @@ void graphics::text_rendering_hint(intptr_t handle, int32_t text_rendering_hint)
   // Not defined in wxWidgets
 }
 
+intptr_t graphics::transform(intptr_t handle) {
+  return reinterpret_cast<intptr_t>(new wxGraphicsMatrix(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->GetTransform()));
+}
+
+void graphics::transform(intptr_t handle, intptr_t matrix) {
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->SetTransform(*reinterpret_cast<wxGraphicsMatrix*>(matrix));
+}
+
 void graphics::translate_transform(intptr_t handle, float dx, float dy, int32_t order) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
