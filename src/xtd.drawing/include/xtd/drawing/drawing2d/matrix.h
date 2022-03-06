@@ -79,7 +79,7 @@ namespace xtd {
         /// @name Properties
         
         /// @{
-        /// @brief Gets the handle of the latrix.
+        /// @brief Gets the handle of the matrix.
         /// @return An intptr_t that contains the handle of the matrix.
         intptr_t handle() const noexcept;
         /// @}
