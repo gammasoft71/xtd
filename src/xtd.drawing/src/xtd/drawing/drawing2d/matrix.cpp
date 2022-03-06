@@ -3,6 +3,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/matrix.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/as.h>
 
 using namespace std;
 using namespace xtd;
@@ -156,7 +157,7 @@ void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing2d::
 }
 
 void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
-  vector<pair<float, float>> tr_points;
+  vector<pair<int32_t, int32_t>> tr_points;
   for (auto point : points)
     tr_points.push_back(make_pair(point.x(), point.y()));
   native::matrix::vector_transform_points(handle(), tr_points);
