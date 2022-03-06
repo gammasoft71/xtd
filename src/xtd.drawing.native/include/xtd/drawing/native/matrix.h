@@ -39,10 +39,25 @@ namespace xtd {
         
         /// @{
         static intptr_t create(float m11, float m12, float m21, float m22, float dx, float dy);
+        static void destroy(intptr_t handle);
         static std::vector<float> elenents(intptr_t handle);
         static bool is_identity(intptr_t handle);
         static bool is_invertible(intptr_t handle);
-        static void destroy(intptr_t handle);
+        static void invert(intptr_t handle);
+        static float offset_x(intptr_t handle);
+        static float offset_y(intptr_t handle);
+        static void multiply(intptr_t handle, intptr_t matrix, int32_t order);
+        static void reset(intptr_t handle);
+        static void rotate(intptr_t handle, float angle, int32_t order);
+        static void rotate_at(intptr_t handle, float angle, float x, float y, int32_t order);
+        static void scale(intptr_t handle, float scale_x, float scale_y, int32_t order);
+        static void shear(intptr_t handle, float scale_x, float scale_y, int32_t order);
+        static void transform_point(intptr_t handle, int32_t& x, int32_t& y);
+        static void transform_point(intptr_t handle, float& x, float& y);
+        static void transform_vectors(intptr_t handle, std::vector<std::pair<int32_t, int32_t>>& points);
+        static void transform_vectors(intptr_t handle, std::vector<std::pair<float, float>>& points);
+        static void translate(intptr_t handle, float offset_x, float offset_y, int32_t order);
+        static void vector_transform_points(intptr_t handle, std::vector<std::pair<float, float>>& points);
         /// @}
       };
     }
