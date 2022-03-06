@@ -25,8 +25,8 @@ namespace xtd {
       };
       
       /// @cond
-      inline std::ostream& operator<<(std::ostream& os, matrix_order value) {return os << to_string(value, {{matrix_order::prepend, "prepend"}, {matrix_order::append, "append"}, {matrix_order::round, "round"}});}
-      inline std::wostream& operator<<(std::wostream& os, matrix_order value) {return os << to_string(value, {{matrix_order::prepend, L"prepend"}, {matrix_order::append, L"append"}, {matrix_order::round, L"round"}});}
+      inline std::ostream& operator<<(std::ostream& os, matrix_order value) {return os << to_string(value, {{matrix_order::prepend, "prepend"}, {matrix_order::append, "append"}});}
+      inline std::wostream& operator<<(std::wostream& os, matrix_order value) {return os << to_string(value, {{matrix_order::prepend, L"prepend"}, {matrix_order::append, L"append"}});}
       /// @endcond
     }
   }
