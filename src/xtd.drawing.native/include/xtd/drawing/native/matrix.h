@@ -38,7 +38,10 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        static intptr_t create();
+        static intptr_t create(float m11, float m12, float m21, float m22, float dx, float dy);
+        static std::vector<float> elenents(intptr_t handle);
+        static bool is_identity(intptr_t handle);
+        static bool is_invertible(intptr_t handle);
         static void destroy(intptr_t handle);
         /// @}
       };
