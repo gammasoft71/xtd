@@ -3,6 +3,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/matrix.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/argument_exception.h>
 #include <xtd/as.h>
 
 using namespace std;
@@ -15,6 +16,38 @@ matrix::matrix() : matrix(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f) {
 
 matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) {
   data_->handle = native::matrix::create(m11, m12, m21, m22, dx, dy);
+}
+
+matrix::matrix(const rectangle& rect, const vector<point>& plgpts) {
+  if (plgpts.size() != 3) throw argument_exception(csf_);
+  auto r = rectangle_f(rect);
+  auto p0 = point_f(plgpts[0].x(), plgpts[0].y());
+  auto p1 = point_f(plgpts[1].x(), plgpts[1].y());
+  auto p2 = point_f(plgpts[2].x(), plgpts[2].y());
+  
+  auto m11 = (p1.x() - p0.x()) / r.width();
+  auto m12 = (p1.y() - p0.y()) / r.width();
+  auto m21 = (p2.x() - p0.x()) / r.height();
+  auto m22 = (p2.y() - p0.y()) / r.height();
+  
+  data_->handle = native::matrix::create(m11, m12, m21, m22, p0.x(), p0.y());
+  native::matrix::translate(handle(), -r.x(), -r.y(), static_cast<int32_t>(matrix_order::prepend));
+}
+
+matrix::matrix(const rectangle_f& rect, const vector<point_f>& plgpts) {
+  if (plgpts.size() != 3) throw argument_exception(csf_);
+  auto r = rect;
+  auto p0 = plgpts[0];
+  auto p1 = plgpts[1];
+  auto p2 = plgpts[2];
+  
+  auto m11 = (p1.x() - p0.x()) / r.width();
+  auto m12 = (p1.y() - p0.y()) / r.width();
+  auto m21 = (p2.x() - p0.x()) / r.height();
+  auto m22 = (p2.y() - p0.y()) / r.height();
+
+  data_->handle = native::matrix::create(m11, m12, m21, m22, p0.x(), p0.y());
+  native::matrix::translate(handle(), -r.x(), -r.y(), static_cast<int32_t>(matrix_order::prepend));
 }
 
 matrix::matrix(intptr_t handle) {
