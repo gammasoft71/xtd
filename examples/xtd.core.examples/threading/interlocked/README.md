@@ -19,6 +19,68 @@ xtdc run
 # Output
 
 ```
-www.google.com addresses:
-  * 216.58.208.100
+Thread1 acquired the lock
+Thread1 exiting lock
+Thread2 acquired the lock
+   Thread3 was denied the lock
+Thread2 exiting lock
+Thread1 acquired the lock
+   Thread4 was denied the lock
+   Thread5 was denied the lock
+Thread1 exiting lock
+Thread6 acquired the lock
+   Thread3 was denied the lock
+   Thread2 was denied the lock
+   Thread7 was denied the lock
+Thread6 exiting lock
+Thread4 acquired the lock
+   Thread5 was denied the lock
+   Thread1 was denied the lock
+Thread4 exiting lock
+Thread8 acquired the lock
+   Thread3 was denied the lock
+   Thread2 was denied the lock
+   Thread7 was denied the lock
+   Thread6 was denied the lock
+   Thread9 was denied the lock
+Thread8 exiting lock
+Thread5 acquired the lock
+   Thread1 was denied the lock
+   Thread4 was denied the lock
+   Thread3 was denied the lock
+   Thread10 was denied the lock
+   Thread2 was denied the lock
+   Thread7 was denied the lock
+Thread5 exiting lock
+Thread6 acquired the lock
+   Thread9 was denied the lock
+   Thread8 was denied the lock
+   Thread1 was denied the lock
+Thread6 exiting lock
+Thread4 acquired the lock
+   Thread3 was denied the lock
+   Thread10 was denied the lock
+   Thread2 was denied the lock
+   Thread7 was denied the lock
+   Thread5 was denied the lock
+Thread4 exiting lock
+Thread9 acquired the lock
+   Thread8 was denied the lock
+   Thread6 was denied the lock
+Thread9 exiting lock
+Thread10 acquired the lock
+   Thread7 was denied the lock
+   Thread5 was denied the lock
+   Thread4 was denied the lock
+   Thread8 was denied the lock
+Thread10 exiting lock
+Thread6 acquired the lock
+   Thread9 was denied the lock
+Thread6 exiting lock
+Thread8 acquired the lock
+   Thread10 was denied the lock
+   Thread9 was denied the lock
+Thread8 exiting lock
+Thread10 acquired the lock
+Thread10 exiting lock
 ```

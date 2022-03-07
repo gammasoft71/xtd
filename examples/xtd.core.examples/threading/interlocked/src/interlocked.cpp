@@ -15,7 +15,7 @@ namespace examples {
   class my_interlocked_exchange_class : public object {
   private:
     //0 for False, 1 for True.
-    inline static int using_resource;
+    inline static int using_resource = 0;
     
     static const int num_thread_iterations = 5;
     static const int num_threads = 10;
