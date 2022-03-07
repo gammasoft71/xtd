@@ -220,7 +220,8 @@
 
 ## [Threading](threading/README.md)
 
-* [interlocked](network/interlocked/README.md) shows hows how to use [xtd::threading::interlocked](../../src/xtd.core/include/xtd/threading/interlocked.h) class.
+* [interlocked](threading/interlocked/README.md) shows hows how to use [xtd::threading::interlocked](../../src/xtd.core/include/xtd/threading/interlocked.h) class.
+* [interlocked_decrement](threading/interlocked_decrement/README.md) shows hows how to use [xtd::network::interlocked::decrement](../../src/xtd.core/include/xtd/threading/interlocked.h) and [xtd::network::interlocked::increment](../../src/xtd.core/include/xtd/threading/interlocked.h) methods.
 
 ## [Version](version/README.md)
 
