@@ -26,6 +26,7 @@ add_projects(
   random
   sprintf
   strings
+  threading
   version
   web
   others
