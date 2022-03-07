@@ -218,6 +218,10 @@
 * [split](strings/split/README.md) shows how to use [xtd::strings::split](../../src/xtd.core/include/xtd/strings.h) method.
 * [string_unicode](strings/string_unicode/README.md) shows how to use [xtd::strings](../../src/xtd.core/include/xtd/strings.h) class with unicode.
 
+## [Threading](threading/README.md)
+
+* [interlocked](network/interlocked/README.md) shows hows how to use [xtd::threading::interlocked](../../src/xtd.core/include/xtd/threading/interlocked.h) class.
+
 ## [Version](version/README.md)
 
 * [version](version/version/version/README.md) demonstrates the [xtd::version](../../src/xtd.core/include/xtd/version.h) constructor, and major, minor, build, revision, major_revision, and minor_revision properties.
