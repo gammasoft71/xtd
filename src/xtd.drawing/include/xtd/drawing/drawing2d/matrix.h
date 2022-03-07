@@ -10,6 +10,8 @@
 #include "matrix_order.h"
 #include "../point.h"
 #include "../point_f.h"
+#include "../rectangle.h"
+#include "../rectangle_f.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -81,6 +83,16 @@ namespace xtd {
         /// @param dx The value in the third row and first column of the new xtd::drawing::drawing2d::matrix.
         /// @param dy The value in the third row and second column of the new xtd::drawing::drawing2d::matrix.
         matrix(float m11, float m12, float m21, float m22, float dx, float dy);
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::matrix class to the geometric transform defined by the specified rectangle and array of points.
+        /// @param rect A xtd::drawing::rectangle structure that represents the rectangle to be transformed.
+        /// @param plgpts An array of three xtd::drawing::point structures that represents the points of a parallelogram to which the upper-left, upper-right, and lower-left corners of the rectangle is to be transformed. The lower-right corner of the parallelogram is implied by the first three corners.
+        /// @remarks This method initializes the new xtd::drawing::drawing2d::matrix such that it represents the geometric transform that maps the rectangle specified by the rect parameter to the parallelogram defined by the three points in the plgpts parameter. The upper-left corner of the rectangle is mapped to the first point in the plgpts array, the upper-right corner is mapped to the second point, and the lower-left corner is mapped to the third point. The lower-right point of the parallelogram is implied by the first three.
+        matrix(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::point>& plgpts);
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::matrix class to the geometric transform defined by the specified rectangle and array of points.
+        /// @param rect A xtd::drawing::rectangle_f structure that represents the rectangle to be transformed.
+        /// @param plgpts An array of three xtd::drawing::point_f structures that represents the points of a parallelogram to which the upper-left, upper-right, and lower-left corners of the rectangle is to be transformed. The lower-right corner of the parallelogram is implied by the first three corners.
+        /// @remarks This method initializes the new xtd::drawing::drawing2d::matrix such that it represents the geometric transform that maps the rectangle specified by the rect parameter to the parallelogram defined by the three points in the plgpts parameter. The upper-left corner of the rectangle is mapped to the first point in the plgpts array, the upper-right corner is mapped to the second point, and the lower-left corner is mapped to the third point. The lower-right point of the parallelogram is implied by the first three.
+        matrix(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::point_f>& plgpts);
         /// @}
         
         /// @cond
