@@ -40,6 +40,7 @@ add_sources(
   src/xtd/native/unix/file.cpp
   src/xtd/native/unix/file_system.cpp
   src/xtd/native/unix/guid.cpp
+  src/xtd/native/unix/interlocked.cpp
   src/xtd/native/unix/path.cpp
   src/xtd/native/unix/process.cpp
   src/xtd/native/unix/socket.cpp

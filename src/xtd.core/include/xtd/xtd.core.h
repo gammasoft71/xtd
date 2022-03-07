@@ -219,6 +219,7 @@
 #include "reflection/assembly_version_attribute.h"
 #include "security/secure_string.h"
 #include "security/security_exception.h"
+#include "threading/interlocked.h"
 #include "web/css/css_reader.h"
 #include "web/css/css_writer.h"
 #include "web/css/property.h"
