@@ -67,7 +67,7 @@
 | [convert_string](../src/xtd.core/include/xtd/convert_string.h)                                         | static class  | ![progress](pictures/progress100.png) |
 | [cpp_language](../src/xtd.core/include/xtd/cpp_language.h)                                             | class         | ![progress](pictures/progress100.png) |
 | [ctrace](../src/xtd.core/include/xtd/ctrace.h)                                                         | object        | ![progress](pictures/progress100.png) |
-| [date_time](../src/xtd.core/include/xtd/date_time.h)                                                   | struct        | ![progress](pictures/progress75.png)  |
+| [date_time](../src/xtd.core/include/xtd/date_time.h)                                                   | struct        | ![progress](pictures/progress100.png) |
 | [date_time_kind](../src/xtd.core/include/xtd/date_time_kind.h)                                         | enumeration   | ![progress](pictures/progress100.png) |
 | [day_of_week](../src/xtd.core/include/xtd/day_of_week.h)                                               | enumeration   | ![progress](pictures/progress100.png) |
 | [debugstreambuf](../src/xtd.core/include/xtd/debugstreambuf.h)                                         | class         | ![progress](pictures/progress100.png) |
