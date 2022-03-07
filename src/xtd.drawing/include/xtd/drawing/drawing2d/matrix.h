@@ -224,6 +224,7 @@ namespace xtd {
         /// @endcond
         
       private:
+        void init_from_rect_3points(const xtd::drawing::rectangle_f& rect, const xtd::drawing::point_f pt1, const xtd::drawing::point_f pt2, const xtd::drawing::point_f pt3);
         friend class xtd::drawing::graphics;
         matrix(intptr_t handle);
         struct data {

@@ -20,34 +20,12 @@ matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) {
 
 matrix::matrix(const rectangle& rect, const vector<point>& plgpts) {
   if (plgpts.size() != 3) throw argument_exception(csf_);
-  auto r = rectangle_f(rect);
-  auto p0 = point_f(plgpts[0]);
-  auto p1 = point_f(plgpts[1]);
-  auto p2 = point_f(plgpts[2]);
-  
-  auto m11 = (p1.x() - p0.x()) / r.width();
-  auto m12 = (p1.y() - p0.y()) / r.width();
-  auto m21 = (p2.x() - p0.x()) / r.height();
-  auto m22 = (p2.y() - p0.y()) / r.height();
-  
-  data_->handle = native::matrix::create(m11, m12, m21, m22, p0.x(), p0.y());
-  native::matrix::translate(handle(), -r.x(), -r.y(), static_cast<int32_t>(matrix_order::prepend));
+  init_from_rect_3points(rectangle_f(rect), point_f(plgpts[0]), point_f(plgpts[1]), point_f(plgpts[2]));
 }
 
 matrix::matrix(const rectangle_f& rect, const vector<point_f>& plgpts) {
   if (plgpts.size() != 3) throw argument_exception(csf_);
-  auto r = rect;
-  auto p0 = plgpts[0];
-  auto p1 = plgpts[1];
-  auto p2 = plgpts[2];
-  
-  auto m11 = (p1.x() - p0.x()) / r.width();
-  auto m12 = (p1.y() - p0.y()) / r.width();
-  auto m21 = (p2.x() - p0.x()) / r.height();
-  auto m22 = (p2.y() - p0.y()) / r.height();
-
-  data_->handle = native::matrix::create(m11, m12, m21, m22, p0.x(), p0.y());
-  native::matrix::translate(handle(), -r.x(), -r.y(), static_cast<int32_t>(matrix_order::prepend));
+  init_from_rect_3points(rect, plgpts[0], plgpts[1], plgpts[2]);
 }
 
 matrix::matrix(intptr_t handle) {
@@ -201,4 +179,14 @@ void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
 
 xtd::ustring matrix::to_string() const noexcept {
   return ustring::full_class_name(*this);
+}
+
+void matrix::init_from_rect_3points(const rectangle_f& rect, const point_f pt1, const point_f pt2, const point_f pt3) {
+  auto m11 = (pt2.x() - pt1.x()) / rect.width();
+  auto m12 = (pt2.y() - pt1.y()) / rect.width();
+  auto m21 = (pt3.x() - pt1.x()) / rect.height();
+  auto m22 = (pt3.y() - pt1.y()) / rect.height();
+  
+  data_->handle = native::matrix::create(m11, m12, m21, m22, pt1.x(), pt1.y());
+  native::matrix::translate(handle(), -rect.x(), -rect.y(), static_cast<int32_t>(matrix_order::prepend));
 }
