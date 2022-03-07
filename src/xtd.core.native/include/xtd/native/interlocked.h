@@ -50,14 +50,14 @@ namespace xtd {
 
       static int32_t compare_exchange(int32_t& location, int32_t value, int32_t comparand);
       static int64_t compare_exchange(int64_t& location, int64_t value, int64_t comparand);
-      static intptr_t compare_exchange(intptr_t& location, intptr_t value, intptr_t comparand);
+      static void* compare_exchange(void*& location, void* value, void* comparand);
 
       static int32_t decrement(int32_t& location);
       static int64_t decrement(int64_t& location);
 
       static int32_t exchange(int32_t& location, int32_t value);
       static int64_t exchange(int64_t& location, int64_t value);
-      static intptr_t exchange(intptr_t& location, intptr_t value);
+      static void* exchange(void*& location, void* value);
 
       static int32_t increment(int32_t& location);
       static int64_t increment(int64_t& location);

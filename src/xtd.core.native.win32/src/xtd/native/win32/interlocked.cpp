@@ -29,10 +29,10 @@ int64_t interlocked::compare_exchange(int64_t& location, int64_t value, int64_t 
 #pragma warning(disable:4302)
 #pragma warning(disable:4311)
 #pragma warning(disable:4312)
-intptr_t interlocked::compare_exchange(intptr_t& location, intptr_t value, intptr_t comparand) {
-  if (sizeof(intptr_t) == 4)
-    return (intptr_t)InterlockedCompareExchange((long*)&location, (long)value, (long)comparand);
-  return (intptr_t)InterlockedCompareExchange64((long long*)&location, (long long)value, (long long)comparand);
+void* interlocked::compare_exchange(void*& location, void* value, void* comparand) {
+  if (sizeof(void*) == 4)
+    return (void*)InterlockedCompareExchange((long*)&location, (long)value, (long)comparand);
+  return (void*)InterlockedCompareExchange64((long long*)&location, (long long)value, (long long)comparand);
 }
 #pragma warning(pop)
 
@@ -56,10 +56,10 @@ int64_t interlocked::exchange(int64_t& location, int64_t value) {
 #pragma warning(disable:4302)
 #pragma warning(disable:4311)
 #pragma warning(disable:4312)
-intptr_t interlocked::exchange(intptr_t& location, intptr_t value) {
-  if (sizeof(intptr_t) == 4)
-    return (intptr_t)InterlockedExchange((long*)&location, (long)value);
-  return (intptr_t)InterlockedExchange64((long long*)&location, (long long)value);
+void* interlocked::exchange(void*& location, void* value) {
+  if (sizeof(void*) == 4)
+    return (void*)InterlockedExchange((long*)&location, (long)value);
+  return (void*)InterlockedExchange64((long long*)&location, (long long)value);
 }
 #pragma warning(pop)
 
