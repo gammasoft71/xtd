@@ -21,9 +21,9 @@ matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) {
 matrix::matrix(const rectangle& rect, const vector<point>& plgpts) {
   if (plgpts.size() != 3) throw argument_exception(csf_);
   auto r = rectangle_f(rect);
-  auto p0 = point_f(plgpts[0].x(), plgpts[0].y());
-  auto p1 = point_f(plgpts[1].x(), plgpts[1].y());
-  auto p2 = point_f(plgpts[2].x(), plgpts[2].y());
+  auto p0 = point_f(plgpts[0]);
+  auto p1 = point_f(plgpts[1]);
+  auto p2 = point_f(plgpts[2]);
   
   auto m11 = (p1.x() - p0.x()) / r.width();
   auto m12 = (p1.y() - p0.y()) / r.width();
