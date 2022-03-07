@@ -89,6 +89,10 @@
 /// @defgroup system_information system information
 /// @brief System information contains classes that provides informations about the current system environment.
 
+/// @defgroup threading threading
+/// @brief threading definitions.
+/// @ingroup system
+
 /// @defgroup types types
 /// @brief Types definitions
 

@@ -369,7 +369,7 @@
 | [auto_reset_event](../src/xtd.core/include/xtd/threading/auto_reset_event.h)                                             | class        | ![progress](pictures/progress0.png)   |
 | [event_reset_mode](../src/xtd.core/include/xtd/threading/event_reset_mode.h)                                             | enumeration  | ![progress](pictures/progress0.png)   |
 | [event_wait_handle](../src/xtd.core/include/xtd/threading/event_wait_handle.h)                                           | class        | ![progress](pictures/progress0.png)   |
-| [interlocked](../src/xtd.core/include/xtd/threading/interlocked.h)                                                       | class        | ![progress](pictures/progress0.png)   |
+| [interlocked](../src/xtd.core/include/xtd/threading/interlocked.h)                                                       | class        | ![progress](pictures/progress100.png) |
 | [lock_recursion_exception](../src/xtd.core/include/xtd/threading/lock_recursion_exception.h)                             | exception    | ![progress](pictures/progress0.png)   |
 | [ManualResetEvent](../src/xtd.core/include/xtd/threading/ManualResetEvent.h)                                             | class        | ![progress](pictures/progress0.png)   |
 | [monitor](../src/xtd.core/include/xtd/threading/monitor.h)                                                               | class        | ![progress](pictures/progress0.png)   |
