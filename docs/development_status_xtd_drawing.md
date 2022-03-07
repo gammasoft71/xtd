@@ -73,7 +73,7 @@
 | [flush_intention](../src/xtd.drawing/include/xtd/drawing/drawing2d/flush_intention.h)                   | enumeration  | ![progress](pictures/progress100.png) |
 | [gradient_stop](../src/xtd.drawing/include/xtd/drawing/drawing2d/gradient_stop.h)                       | alias        | ![progress](pictures/progress100.png) |
 | [gradient_stop_collection](../src/xtd.drawing/include/xtd/drawing/drawing2d/gradient_stop_collection.h) | alias        | ![progress](pictures/progress100.png) |
-| [graphics_path](../src/xtd.drawing/include/xtd/drawing/drawing2d/graphics_path.h)                       | class        | ![progress](pictures/progress50.png)  |
+| [graphics_path](../src/xtd.drawing/include/xtd/drawing/drawing2d/graphics_path.h)                       | class        | ![progress](pictures/progress100.png) |
 | [graphics_state](../src/xtd.drawing/include/xtd/drawing/drawing2d/graphics_state.h)                     | class        | ![progress](pictures/progress100.png) |
 | [hatch_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_brush.h)                           | class        | ![progress](pictures/progress100.png) |
 | [hatch_style](../src/xtd.drawing/include/xtd/drawing/drawing2d/hatch_style.h)                           | enumeration  | ![progress](pictures/progress100.png) |
