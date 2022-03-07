@@ -30,7 +30,7 @@ int64_t interlocked::compare_exchange(int64_t& location, int64_t value, int64_t 
   return __sync_val_compare_and_swap(&location, comparand, value);
 }
 
-intptr_t interlocked::compare_exchange(intptr_t& location, intptr_t value, intptr_t comparand) {
+void* interlocked::compare_exchange(void*& location, void* value, void* comparand) {
   return __sync_val_compare_and_swap(&location, comparand, value);
 }
 
@@ -52,7 +52,7 @@ int64_t interlocked::exchange(int64_t& location, int64_t value) {
   return __sync_val_compare_and_swap(&location, location, value);
 }
 
-intptr_t interlocked::exchange(intptr_t& location, intptr_t value) {
+void* interlocked::exchange(void*& location, void* value) {
   return __sync_val_compare_and_swap(&location, location, value);
 }
 

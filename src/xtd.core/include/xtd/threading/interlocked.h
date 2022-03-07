@@ -77,7 +77,7 @@ namespace xtd {
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      static intptr_t compare_exchange(intptr_t& location, intptr_t value, intptr_t comparand) noexcept;
+      static void* compare_exchange(void*& location, void* value, void* comparand) noexcept;
       
       /// @brief Compares two objects for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
@@ -161,7 +161,7 @@ namespace xtd {
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
-      static intptr_t exchange(intptr_t& location, intptr_t value) noexcept;
+      static void* exchange(void*& location, void* value) noexcept;
       
       /// @brief Sets an object to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
