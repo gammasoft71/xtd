@@ -7,6 +7,7 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/graphics.h>
 #include <xtd/as.h>
+#include <xtd/math.h>
 
 using namespace std;
 using namespace xtd::drawing::native;
@@ -23,15 +24,20 @@ void graphics_path::destroy(intptr_t handle) {
 }
 
 void graphics_path::add_arc(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  reinterpret_cast<wxGraphicsPath*>(handle)->AddArc(x, y, width, start_angle, start_angle + sweep_angle, true);
+  reinterpret_cast<wxGraphicsPath*>(handle)->AddArc(x, y, math::max(width, height), math::radians_to_degrees(start_angle), math::radians_to_degrees(start_angle + sweep_angle), true);
 }
 
 void graphics_path::add_bezier(intptr_t handle, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
-  // Not supported by wxWidgets 3.1.5...
+  reinterpret_cast<wxGraphicsPath*>(handle)->MoveToPoint(x1, y1);
+  reinterpret_cast<wxGraphicsPath*>(handle)->AddCurveToPoint(x2, y2, x3, y3, x4, y4);
 }
 
 void graphics_path::add_beziers(intptr_t handle, std::vector<std::pair<float, float>> points) {
-  // Not supported by wxWidgets 3.1.5...
+  reinterpret_cast<wxGraphicsPath*>(handle)->MoveToPoint(points[0].first, points[0].second);
+  for (auto index = 1U; points.size(); index += 3) {
+    reinterpret_cast<wxGraphicsPath*>(handle)->AddCurveToPoint(points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
+    reinterpret_cast<wxGraphicsPath*>(handle)->MoveToPoint(points[index + 2].first, points[index + 2].second);
+  }
 }
 
 void graphics_path::add_closed_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension) {
@@ -60,7 +66,9 @@ void graphics_path::add_path(intptr_t handle, intptr_t path, bool connect) {
 }
 
 void graphics_path::add_pie(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  //reinterpret_cast<wxGraphicsPath*>(handle)->AddArc(x, y, width, start_angle, start_angle + sweep_angle, true);
+  reinterpret_cast<wxGraphicsPath*>(handle)->MoveToPoint(x + (width / 2), y + (height / 2));
+  reinterpret_cast<wxGraphicsPath*>(handle)->AddArc(x + (width / 2), y + (height / 2), math::max(width, height) / 2, math::degrees_to_radians(start_angle), math::degrees_to_radians(start_angle + sweep_angle), true);
+  reinterpret_cast<wxGraphicsPath*>(handle)->AddLineToPoint(x + (width / 2), y + (height / 2));
 }
 
 void graphics_path::add_rectangle(intptr_t handle, float x, float y, float width, float height) {
@@ -72,31 +80,31 @@ void graphics_path::add_rounded_rectangle(intptr_t handle, float x, float y, flo
 }
 
 void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y) {
-  
+  // Not supported by wxWidgets 3.1.5...
 }
 
 void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h) {
-  
+  // Not supported by wxWidgets 3.1.5...
 }
 
 void graphics_path::close_all_figures(intptr_t handle) {
-  
+  reinterpret_cast<wxGraphicsPath*>(handle)->CloseSubpath();
 }
 
 void graphics_path::close_figure(intptr_t handle) {
-  
+  reinterpret_cast<wxGraphicsPath*>(handle)->CloseSubpath();
 }
 
 void graphics_path::flatten(intptr_t handle) {
-  
+  // Not supported by wxWidgets 3.1.5...
 }
 
 void graphics_path::reverse(intptr_t handle) {
-  
+  // Not supported by wxWidgets 3.1.5...
 }
 
 void graphics_path::start_figure(intptr_t handle) {
-  
+  reinterpret_cast<wxGraphicsPath*>(handle)->MoveToPoint(0, 0);
 }
 
 void graphics_path::get_bounds(intptr_t handle, float& x, float& y, float& width, float& height) {
