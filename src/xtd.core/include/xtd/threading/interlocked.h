@@ -21,7 +21,7 @@ namespace xtd {
     /// class core_export_ interlocked static_
     /// @endcode
     /// @par Inheritance
-    /// xtd::static_object → xtd::static_
+    /// xtd::static_object → xtd::threading::interlocked
     /// @par Namespace
     /// xtd
     /// @par Library
