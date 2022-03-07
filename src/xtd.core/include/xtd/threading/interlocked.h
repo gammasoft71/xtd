@@ -149,6 +149,9 @@ namespace xtd {
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
+      /// @par Examples
+      /// The following code example shows a thread-safe resource locking mechanism.
+      /// @include interlocked.cpp
       static int32_t exchange(int32_t& location, int32_t value) noexcept;
       
       /// @brief Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.
