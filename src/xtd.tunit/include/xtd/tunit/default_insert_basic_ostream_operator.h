@@ -660,6 +660,18 @@ inline std::string __tunit_to_string(const std::wstring& value) {
   return result;
 }
 
+inline std::string __tunit_to_string(const void* value) {
+  std::stringstream ss;
+  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
+  return ss.str();
+}
+
+inline std::string __tunit_to_string(void* value) {
+  std::stringstream ss;
+  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
+  return ss.str();
+}
+
 inline std::string __tunit_to_string(const char* value) {
   std::stringstream ss;
   ss << "\"" << value << "\"";
