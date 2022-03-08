@@ -116,5 +116,6 @@ add_sources(
   src/xtd/net/sockets/socket_exception.cpp
   src/xtd/net/sockets/socket_information.cpp
   src/xtd/security/secure_string.cpp
+  src/xtd/threading/interlocked.cpp
 )
 target_type(TEST_APPLICATION)
