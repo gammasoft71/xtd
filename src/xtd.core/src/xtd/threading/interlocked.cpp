@@ -33,6 +33,10 @@ int64_t interlocked::compare_exchange(int64_t& location, int64_t value, int64_t 
   return native::interlocked::compare_exchange(location, value, comparand);
 }
 
+llong_t interlocked::compare_exchange(llong_t& location, llong_t value, llong_t comparand) noexcept {
+  return native::interlocked::compare_exchange(location, value, comparand);
+}
+
 void* interlocked::compare_exchange(void*& location, void* value, void* comparand) noexcept {
   return native::interlocked::compare_exchange(location, value, comparand);
 }
@@ -65,6 +69,10 @@ int32_t interlocked::exchange(int32_t& location, int32_t value) noexcept {
 }
 
 int64_t interlocked::exchange(int64_t& location, int64_t value) noexcept {
+  return native::interlocked::exchange(location, value);
+}
+
+llong_t interlocked::exchange(llong_t& location, llong_t value) noexcept {
   return native::interlocked::exchange(location, value);
 }
 

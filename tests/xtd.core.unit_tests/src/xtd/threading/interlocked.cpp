@@ -57,6 +57,18 @@ namespace unit_tests {
       assert::are_equal(42, location, csf_);
     }
     
+    void test_method_(compare_exchange_intptr_if_comparand_equal) {
+      intptr_t location = 42;
+      assert::are_equal(42, interlocked::compare_exchange(location, 24, 42), csf_);
+      assert::are_equal(24, location, csf_);
+    }
+    
+    void test_method_(compare_exchange_intptr_if_comparand_different) {
+      intptr_t location = 42;
+      assert::are_equal(42, interlocked::compare_exchange(location, 24, 33), csf_);
+      assert::are_equal(42, location, csf_);
+    }
+
     void test_method_(compare_exchange_void_pointer_if_comparand_equal) {
       int a = 1;
       int b = 2;
@@ -127,6 +139,12 @@ namespace unit_tests {
       assert::are_equal(24, location, csf_);
     }
     
+    void test_method_(exchange_intptr) {
+      intptr_t location = 42;
+      assert::are_equal(42, interlocked::exchange(location, 24), csf_);
+      assert::are_equal(24, location, csf_);
+    }
+
     void test_method_(exchange_void_pointer) {
       int a = 1;
       int b = 2;
