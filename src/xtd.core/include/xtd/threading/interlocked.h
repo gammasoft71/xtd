@@ -198,7 +198,7 @@ namespace xtd {
       static int64_t increment(int64_t& location) noexcept;
       
       /// @brief Synchronizes memory access as follows: The processor that executes the current thread cannot reorder instructions in such a way that memory accesses before the call to xtd::threading::interlocked::memory_barrier execute after memory accesses that follow the call to xtd::threading::interlocked::memory_barrier.
-      /// @remarks This method was added to the xtd::threading::interlocked class in the .NET Framework 4.5 as a convenience; it's a wrapper for the xtd::threading::thread::memory_barrier method.
+      /// @remarks This method was added to the xtd::threading::interlocked class as a convenience; it's a wrapper for the xtd::threading::thread::memory_barrier method.
       /// @remarks xtd::threading::interlocked::memory_barrier is required only on multiprocessor systems that have weak memory ordering (for example, a system that employs multiple Intel Itanium processors).
       /// @remarks For most purposes, the lock_ statement, or the Monitor class provide easier ways to synchronize data.
       static void memory_barrier() noexcept;
