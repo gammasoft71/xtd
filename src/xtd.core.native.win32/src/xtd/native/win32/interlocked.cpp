@@ -25,6 +25,10 @@ int64_t interlocked::compare_exchange(int64_t& location, int64_t value, int64_t 
   return InterlockedCompareExchange64((long long*)&location, value, comparand);
 }
 
+interlocked::llong_t interlocked::compare_exchange(llong_t& location, llong_t value, llong_t comparand) {
+  return InterlockedCompareExchange64((llong_t*)&location, value, comparand);
+}
+
 #pragma warning(push)
 #pragma warning(disable:4302)
 #pragma warning(disable:4311)
@@ -50,6 +54,10 @@ int32_t interlocked::exchange(int32_t& location, int32_t value) {
 
 int64_t interlocked::exchange(int64_t& location, int64_t value) {
   return InterlockedExchange64((long long*)&location, value);
+}
+
+interlocked::llong_t interlocked::exchange(llong_t& location, llong_t value) {
+  return InterlockedExchange64((llong_t*)&location, value);
 }
 
 #pragma warning(push)

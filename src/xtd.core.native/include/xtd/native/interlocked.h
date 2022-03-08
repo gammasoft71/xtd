@@ -38,7 +38,12 @@ namespace xtd {
     public:
     private:
       interlocked() = delete;
-      
+#if defined(__linux__) && defined(_LP64)
+      using llong_t = long long int;
+#else
+      using llong_t = long;
+#endif
+
     protected:
       friend xtd::threading::interlocked;
       /// @name Protected methods
@@ -50,6 +55,7 @@ namespace xtd {
 
       static int32_t compare_exchange(int32_t& location, int32_t value, int32_t comparand);
       static int64_t compare_exchange(int64_t& location, int64_t value, int64_t comparand);
+      static llong_t compare_exchange(llong_t& location, llong_t value, llong_t comparand);
       static void* compare_exchange(void*& location, void* value, void* comparand);
 
       static int32_t decrement(int32_t& location);
@@ -57,6 +63,7 @@ namespace xtd {
 
       static int32_t exchange(int32_t& location, int32_t value);
       static int64_t exchange(int64_t& location, int64_t value);
+      static llong_t exchange(llong_t& location, llong_t value);
       static void* exchange(void*& location, void* value);
 
       static int32_t increment(int32_t& location);
