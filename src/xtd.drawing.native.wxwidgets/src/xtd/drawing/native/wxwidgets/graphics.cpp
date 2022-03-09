@@ -11,12 +11,13 @@
 #include <xtd/drawing/native/compositing_qualities.h>
 #include <xtd/drawing/native/copy_pixel_operations.h>
 #include <xtd/drawing/native/flush_intentions.h>
-#include <xtd/drawing/native/path_fill_mode.h>
+#include <xtd/drawing/native/path_fill_modes.h>
 #include <xtd/drawing/native/interpolation_modes.h>
 #include <xtd/drawing/native/hot_key_prefixes.h>
 #include <xtd/drawing/native/pixel_offset_modes.h>
 #include <xtd/drawing/native/smoothing_modes.h>
 #include <xtd/drawing/native/string_alignments.h>
+#include <xtd/drawing/native/string_trimmings.h>
 #include <xtd/drawing/native/text_rendering.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
@@ -297,7 +298,7 @@ void graphics::draw_rectangles(intptr_t handle, intptr_t pen, std::vector<std::t
 }
 
 void graphics::draw_rotated_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float angle) {
-  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT, HKP_NONE);
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT, HKP_NONE, ST_NONE);
 }
 
 void graphics::draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, float y, float width, float height, float radius) {
@@ -309,12 +310,12 @@ void graphics::draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, fl
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix) {
-  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix);
+void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming) {
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
 }
 
-void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix) {
-  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix);
+void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming) {
+  wxDrawString::DrawString(handle, text, *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
 }
 
 void graphics::fill_closed_curve(intptr_t handle, intptr_t brush, std::vector<std::pair<float, float>> points, uint32_t fill_mode, float tension) {
