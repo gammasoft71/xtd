@@ -82,7 +82,7 @@ namespace xtd {
         static intptr_t get_hdc(intptr_t handle);
         static void get_nearest_color(intptr_t handle, uint8_t original_a, uint8_t original_r, uint8_t original_g, uint8_t original_b, uint8_t& nearest_a, uint8_t& nearest_r, uint8_t& nearest_g, uint8_t& nearest_b);
         static void pixel_offset_mode(intptr_t handle, int32_t pixel_offst_mode);
-        static void measure_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float& width, float& height);
+        static void measure_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, size_t characters_fitted, size_t lines_filled);
         static void release_hdc(intptr_t handle, intptr_t hdc);
         static void reset_transform(intptr_t handle);
         static void restore(intptr_t handle, intptr_t& gstate);
