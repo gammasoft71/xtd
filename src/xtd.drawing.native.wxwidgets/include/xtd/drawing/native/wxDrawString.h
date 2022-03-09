@@ -10,6 +10,8 @@
 #include "hdc_wrapper.h"
 #include <cmath>
 #include <xtd/drawing/native/hot_key_prefixes.h>
+#include <xtd/drawing/native/string_trimmings.h>
+#include <wx/control.h>
 #include <wx/dcclient.h>
 #include <wx/dcmemory.h>
 #include <wx/dcgraph.h>
@@ -21,13 +23,13 @@ namespace xtd {
     namespace native {
       class wxDrawString {
       public:
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32_t hot_key_prefix) {
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming) {
           float width = 0.0f, height = 0.0f;
           measure_string(handle, text, font, width, height);
-          DrawString(handle, text, font, brush, x, y, width, height, angle, align, hot_key_prefix);
+          DrawString(handle, text, font, brush, x, y, width, height, angle, align, hot_key_prefix, trimming);
         }
         
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix) {
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming) {
           float max_size = math::max(width, height);
           if (brush.is_solid_brush()) {
             wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
@@ -35,11 +37,20 @@ namespace xtd {
             dc.SetFont(font);
             dc.SetTextForeground(brush.get_solid_brush().color);
             if (angle == 0) {
-              auto text_to_show = text;
-              auto hot_key_prefix_location = GetHotKeyPrefixLocations(text_to_show);
+              auto text_to_draw = text;
+              auto hot_key_prefix_location = GetHotKeyPrefixLocations(text_to_draw);
               if (hot_key_prefix != HKP_NONE && hot_key_prefix_location != -1)
-                text_to_show = text_to_show.Remove(hot_key_prefix_location, 1);
-              dc.DrawLabel(text_to_show, wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
+                text_to_draw = text_to_draw.Remove(hot_key_prefix_location, 1);
+              switch (trimming) {
+                case ST_NONE: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_NONE); break;
+                case ST_CHARACTER: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+                case ST_WORD: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+                case ST_ELLIPSIS_CHARACTER: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_END, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+                case ST_ELLIPSIS_WORD: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_END, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+                case ST_ELLIPSIS_PATH: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_MIDDLE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+                default: break;
+              }
+              dc.DrawLabel(text_to_draw, wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             }
             else
               dc.DrawRotatedText(text, x, y, -angle);

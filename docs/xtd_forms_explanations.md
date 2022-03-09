@@ -346,7 +346,7 @@ The following sequence diagram shows the creation of an [xtd::form::button](http
 
 If we use as parent a control that is not yet natively created (because it has no parent), the new child control will not be natively created. It is when the parent control is created that it will be created.
 
-The role of the [xtd::forms::control::create_params](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h) function is to give the [xtd::forms::native::control::create](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native/control.h) function the necessary set of parameters to create a native coontrol. 
+The role of the [xtd::forms::control::create_params](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h) function is to give the [xtd::forms::native::control::create](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native/control.h) function the necessary set of parameters to create a native control. 
 This function provides among other things a name which is the unique key to identify the control to create.
 
 For example to create an [xtd::forms::button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/button.h), the name must contain *"button"*, to create an [xtd::forms::choice](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/choice.h), the name must contain *"choice"* and so on for all controls.
@@ -725,7 +725,7 @@ void track_bar::wnd_proc(xtd::forms::message& message) {
 
 Note if [xtd::forms::control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h) does not handle the event it will call the **def_wnd_proc(message)** method which will execute the default operation for the event.
 
-A [control toolkit](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native/control.h) will have to have methods to register and unregister the wnd_event method, a methode to call in fallback and a mothod to send events:
+A [control toolkit](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native/control.h) will have to have methods to register and unregister the wnd_event method, a methode to call in fallback and a method to send events:
 
 * register_wnd_proc : Register a specified wnd proc from the message pump of the control.
 * unregister_wnd_proc : Unregister the wnd proc previously registered.
