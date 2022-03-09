@@ -33,10 +33,10 @@ public:
     // Set a variable to the Documents path.
     ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
-    // Write the string array to a new file named "WriteLines.txt".
+    // Write the string array to a new file named "write_lines.txt".
     using_ (stream_writer output_file(path::combine(doc_path, "write_lines.txt"))) {
       for (const ustring& line : lines)
-      output_file.write_line(line);
+        output_file.write_line(line);
     }
   }
 };
