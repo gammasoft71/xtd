@@ -596,24 +596,20 @@ void graphics::interpolation_mode(intptr_t handle, int32_t interpolation_mode) {
   }
 }
 
-void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height) {
+void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, size_t characters_fitted, size_t lines_filled) {
   if (!handle) return;
   width = 0;
   height = 0;
+  size_t line_index = 0U;
   auto strings = text.split({ '\n' });
   for (auto string : strings) {
+    wxString text_to_draw = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
+    if (++line_index > lines_filled) break;
     double line_width = 0, line_height = 0;
-    // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work with unicode on Windows.
-    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
-      reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
-      wxSize line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().GetTextExtent(wxString(convert_string::to_wstring(string)));
-      line_width = line_size.GetWidth();
-      line_height = line_size.GetHeight();
-    } else {
-      wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-      graphics.SetFont(*reinterpret_cast<wxFont*>(font), { 0, 0, 0 });
-      graphics.GetTextExtent(wxString(convert_string::to_wstring(string)), &line_width, &line_height);
-    }
+    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
+    wxSize line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().GetTextExtent(text_to_draw);
+    line_width = line_size.GetWidth();
+    line_height = line_size.GetHeight();
     width = std::max(width, static_cast<float>(line_width));
     height += static_cast<float>(line_height);
     

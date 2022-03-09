@@ -5,6 +5,7 @@
 #include "../../../include/xtd/drawing/solid_brush.h"
 #include <xtd/argument_exception.h>
 #include <xtd/as.h>
+#include <xtd/box.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
@@ -780,10 +781,34 @@ bool graphics::is_visible(float x, float y) {
 }
 
 size_f graphics::measure_string(const ustring& text, const font& font) {
-  float width = 0.0f;
-  float height = 0.0f;
-  native::graphics::measure_string(handle(), text, font.handle(), width, height);
-  return size_f(to_page_unit(width), to_page_unit(height));
+  return measure_string(text, font, size_f(single_object::max_value, single_object::max_value), string_format());
+}
+
+size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area) {
+  return measure_string(text, font, layout_area, string_format());
+}
+
+size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, int32_t width) {
+  return measure_string(text, font, size_f(width, single_object::max_value), string_format());
+}
+
+size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format) {
+  return measure_string(text, font, size_f(single_object::max_value, single_object::max_value), format);
+}
+
+size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format) {
+  return measure_string(text, font, layout_area, format, int32_object::max_value, int32_object::max_value);
+}
+
+size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, int32_t width, const xtd::drawing::string_format& format) {
+  return measure_string(text, font, size_f(width, single_object::max_value), format);
+}
+
+size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled) {
+  float string_width = 0.0f;
+  float string_height = 0.0f;
+  native::graphics::measure_string(handle(), text, font.handle(), string_height, string_height, layout_area.width(), layout_area.height(), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()), static_cast<int32_t>(format.hotkey_prefix()), static_cast<int32_t>(format.trimming()), characters_fitted, lines_filled);
+  return size_f(to_page_unit(string_width), to_page_unit(string_height));
 }
 
 void graphics::multiply_transform(const xtd::drawing::drawing2d::matrix& matrix) {

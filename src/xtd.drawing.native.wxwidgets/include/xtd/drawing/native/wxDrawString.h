@@ -37,19 +37,8 @@ namespace xtd {
             dc.SetFont(font);
             dc.SetTextForeground(brush.get_solid_brush().color);
             if (angle == 0) {
-              auto text_to_draw = text;
+              auto text_to_draw = FormatString(dc, text, width, align, hot_key_prefix, trimming);
               auto hot_key_prefix_location = GetHotKeyPrefixLocations(text_to_draw);
-              if (hot_key_prefix != HKP_NONE && hot_key_prefix_location != -1)
-                text_to_draw = text_to_draw.Remove(hot_key_prefix_location, 1);
-              switch (trimming) {
-                case ST_NONE: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_NONE); break;
-                case ST_CHARACTER: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-                case ST_WORD: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-                case ST_ELLIPSIS_CHARACTER: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_END, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-                case ST_ELLIPSIS_WORD: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_END, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-                case ST_ELLIPSIS_PATH: text_to_draw = wxControl::Ellipsize(text_to_draw, dc, wxEllipsizeMode::wxELLIPSIZE_MIDDLE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-                default: break;
-              }
               dc.DrawLabel(text_to_draw, wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             }
             else
@@ -114,7 +103,23 @@ namespace xtd {
           }
         }
 
-      private:
+        static wxString FormatString(wxDC& dc, const wxString& string, float width, wxAlignment align, int32_t hot_key_prefix, int32_t trimming) {
+          auto result = string;
+          auto hot_key_prefix_location = GetHotKeyPrefixLocations(result);
+          if (hot_key_prefix != HKP_NONE && hot_key_prefix_location != -1)
+            result = result.Remove(hot_key_prefix_location, 1);
+          switch (trimming) {
+            case ST_NONE: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_NONE); break;
+            case ST_CHARACTER: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+            case ST_WORD: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+            case ST_ELLIPSIS_CHARACTER: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_END, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+            case ST_ELLIPSIS_WORD: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_END, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+            case ST_ELLIPSIS_PATH: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_MIDDLE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
+            default: break;
+          }
+          return result;
+        }
+        
         static int32_t GetHotKeyPrefixLocations(const wxString& str) {
           if (str.IsEmpty()) return -1;
           for (auto index = 0U; index < str.size() - 1; index++)
