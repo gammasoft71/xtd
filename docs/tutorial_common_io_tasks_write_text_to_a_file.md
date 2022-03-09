@@ -49,7 +49,6 @@ startup_(program);
 // Third line
 ```
 
- 
 ## Example: Append text with stream_writer
  
 The following example shows how to use the xtd::io::stream_writer class to append text to the text file created in the first example.
