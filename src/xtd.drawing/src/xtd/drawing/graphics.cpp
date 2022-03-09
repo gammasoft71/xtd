@@ -789,7 +789,7 @@ size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::fo
 }
 
 size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, int32_t width) {
-  return measure_string(text, font, size_f(width, single_object::max_value), string_format());
+  return measure_string(text, font, size_f(as<float>(width), single_object::max_value), string_format());
 }
 
 size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format) {
@@ -801,7 +801,7 @@ size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::fo
 }
 
 size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, int32_t width, const xtd::drawing::string_format& format) {
-  return measure_string(text, font, size_f(width, single_object::max_value), format);
+  return measure_string(text, font, size_f(as<float>(width), single_object::max_value), format);
 }
 
 size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled) {
