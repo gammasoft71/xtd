@@ -270,7 +270,7 @@ void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_f
 
 void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format) {
   font f(family, em_size, style);
-  native::graphics_path::add_string(handle(), s, f.handle(), origin.x(), origin.y());
+  native::graphics_path::add_string(handle(), s, f.handle(), origin.x(), origin.y(), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()), static_cast<int32_t>(format.hotkey_prefix()), static_cast<int32_t>(format.trimming()));
 }
 
 void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle& layout_rect, const xtd::drawing::string_format& format) {
@@ -279,7 +279,7 @@ void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_f
 
 void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle_f& layout_rect, const xtd::drawing::string_format& format) {
   font f(family, em_size, style);
-  native::graphics_path::add_string(handle(), s, f.handle(), layout_rect.x(), layout_rect.y(), layout_rect.width(), layout_rect.height());
+  native::graphics_path::add_string(handle(), s, f.handle(), layout_rect.x(), layout_rect.y(), layout_rect.width(), layout_rect.height(), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()), static_cast<int32_t>(format.hotkey_prefix()), static_cast<int32_t>(format.trimming()));
 }
 
 void graphics_path::close_all_figures() {
