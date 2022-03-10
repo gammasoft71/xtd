@@ -4,7 +4,7 @@ Shows how to use [xtd::as](../../../../src/xtd.core/include/xtd/convert.h) opera
 
 # Sources
 
-[src/to_byte.cpp](src/to_byte.cpp)
+[src/as.cpp](src/as.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
