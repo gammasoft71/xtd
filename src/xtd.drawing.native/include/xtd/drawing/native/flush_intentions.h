@@ -11,6 +11,16 @@
 #include <cstdint>
 
 /// @brief Specifies that the stack of all graphics operations is flushed immediately.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_drawing_native fi
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
 static const int32_t FI_FLUSH = 0;
 /// @brief Specifies that all graphics operations on the stack are executed as soon as possible. This synchronizes the graphics state.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_drawing_native fi
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
 static const int32_t FI_SYNC = 1;
