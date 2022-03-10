@@ -178,25 +178,25 @@ namespace xtd {
         
         /// @brief Adds a spline curve to the current figure.
         /// @brief Adds a spline curve to the current figure.
-        /// @param points An array of PointF structures that represents the points that define the curve.
+        /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
         void add_curve(const std::vector<xtd::drawing::point>& points);
         /// @brief Adds a spline curve to the current figure.
-        /// @param points An array of PointF structures that represents the points that define the curve.
+        /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
         void add_curve(const std::vector<xtd::drawing::point_f>& points);
         /// @brief Adds a spline curve to the current figure.
-        /// @param points An array of PointF structures that represents the points that define the curve.
+        /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
         void add_curve(const std::vector<xtd::drawing::point>& points, float tension);
         /// @brief Adds a spline curve to the current figure.
-        /// @param points An array of PointF structures that represents the points that define the curve.
+        /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
         void add_curve(const std::vector<xtd::drawing::point_f>& points, float tension);
         /// @brief Adds a spline curve to the current figure.
-        /// @param points An array of PointF structures that represents the points that define the curve.
+        /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param offset he index of the element in the points array that is used as the first point in the curve.
         /// @param number_of_segments The number of segments used to draw the curve. A segment can be thought of as a line connecting two points.
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
@@ -204,7 +204,7 @@ namespace xtd {
         /// @remarks The curve begins at the point in the array specified by offset, and includes the number of points (segments) specified by number_of_segments.
         void add_curve(const std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension);
         /// @brief Adds a spline curve to the current figure.
-        /// @param points An array of PointF structures that represents the points that define the curve.
+        /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param offset he index of the element in the points array that is used as the first point in the curve.
         /// @param number_of_segments The number of segments used to draw the curve. A segment can be thought of as a line connecting two points.
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
