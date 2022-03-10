@@ -18,14 +18,15 @@ int main() {
   using example_function = delegate<void(const ustring&)>;
   ::object instance;
   ustring str("World");
-  //example_function f = {instance, &::object::hello};
-  example_function f = {std::bind(&::object::hello, &instance, std::placeholders::_1)};
+
+  //equivanet to : example_function f = {std::bind(&::object::hello, &instance, std::placeholders::_1)};
+  example_function f = {instance, &::object::hello};
   
-  // equivalent to instance.hello(str)
+  // equivalent to : instance.hello(str)
   f(str);
   f = goodbye;
   
-  // equivalent to goodbye(str)
+  // equivalent to : goodbye(str)
   f(str);
   return 0;
 }
