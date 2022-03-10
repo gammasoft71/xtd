@@ -255,14 +255,14 @@ namespace xtd {
       /// @remarks The xtd::drawing::graphics::copy_from_screen methods are useful for layering one image on top of another. The xtd::drawing::copy_pixel_operation parameter allows you to specify if and how the source colors should be blended with the colors in the destination area.
       void copy_from_screen(int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation);
 
-      /// @brief Draws an arc representing a portion of an ellipse specified by a Rectangle structure.
+      /// @brief Draws an arc representing a portion of an ellipse specified by a xtd::drawing::rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the arc.
       /// @param rect xtd::drawing::rectangle structure that defines the boundaries of the ellipse.
       /// @param start_angle Angle in degrees measured clockwise from the x-axis to the starting point of the arc.
       /// @param sweep_angle Angle in degrees measured clockwise from the start_angle parameter to ending point of the arc.
       /// @remarks This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries of a rectangle. The arc is the portion of the perimeter of the ellipse between the start_angle parameter and the start_angle + sweep_angle parameters.
       void draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle);
-      /// @brief Draws an arc representing a portion of an ellipse specified by a Rectangle structure.
+      /// @brief Draws an arc representing a portion of an ellipse specified by a xtd::drawing::rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the arc.
       /// @param rect xtd::drawing::rectangle_f structure that defines the boundaries of the ellipse.
       /// @param start_angle Angle in degrees measured clockwise from the x-axis to the starting point of the arc.
@@ -270,6 +270,7 @@ namespace xtd {
       /// @remarks This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries of a rectangle. The arc is the portion of the perimeter of the ellipse between the start_angle parameter and the start_angle + sweep_angle parameters.
       void draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle);
       /// @brief Draws an arc representing a portion of an ellipse specified by a pair of coordinates, a width, and a height.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the arc.
       /// @param x The x-coordinate of the upper-left corner of the rectangle that defines the ellipse.
       /// @param y The y-coordinate of the upper-left corner of the rectangle that defines the ellipse.
       /// @param width Width of the rectangle that defines the ellipse.
@@ -279,6 +280,7 @@ namespace xtd {
       /// @remarks This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries of a rectangle. The arc is the portion of the perimeter of the ellipse between the start_angle parameter and the start_angle + sweep_angle parameters.
       void draw_arc(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
       /// @brief Draws an arc representing a portion of an ellipse specified by a pair of coordinates, a width, and a height.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the arc.
       /// @param x The x-coordinate of the upper-left corner of the rectangle that defines the ellipse.
       /// @param y The y-coordinate of the upper-left corner of the rectangle that defines the ellipse.
       /// @param width Width of the rectangle that defines the ellipse.
@@ -560,7 +562,7 @@ namespace xtd {
       void draw_image_unscaled(const xtd::drawing::image& image, int32_t x, int32_t y);
       /// @brief Draws a specified image using its original physical size at a specified location.
       /// @param image xtd::drawing::image to draw.
-      /// @param rect Rectangle that specifies the upper-left corner of the drawn image. The xtd::drawing::rectangle::x and xtd::drawing::rectangle::y properties of the rectangle specify the upper-left corner. The xtd::drawing::rectangle::width and xtd::drawing::rectangle::height properties are ignored.
+      /// @param rect xtd::drawing::rectangle that specifies the upper-left corner of the drawn image. The xtd::drawing::rectangle::x and xtd::drawing::rectangle::y properties of the rectangle specify the upper-left corner. The xtd::drawing::rectangle::width and xtd::drawing::rectangle::height properties are ignored.
       /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
       /// @remarks The xtd::drawing::graphics::draw_image_unscaled method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call xtd::drawing::graphics::draw_image_unscaled to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
       void draw_image_unscaled(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect);
@@ -624,7 +626,7 @@ namespace xtd {
       void draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& path);
 
       /// @brief Draws a pie shape defined by an ellipse specified by a xtd::drawing::rectangle structure and two radial lines.
-      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the pie shape.
       /// @param rect xtd::drawing::rectangle structure that represents the bounding rectangle that defines the ellipse from which the pie shape comes.
       /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
       /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
@@ -632,7 +634,7 @@ namespace xtd {
       /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle);
       /// @brief Draws a pie shape defined by an ellipse specified by a xtd::drawing::rectangle_f structure and two radial lines.
-      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the pie shape.
       /// @param rect xtd::drawing::rectangle_f structure that represents the bounding rectangle that defines the ellipse from which the pie shape comes.
       /// @param start_angle Angle measured in degrees clockwise from the x-axis to the first side of the pie shape.
       /// @param sweep_angle Angle measured in degrees clockwise from the startAngle parameter to the second side of the pie shape.
@@ -640,7 +642,7 @@ namespace xtd {
       /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle);
       /// @brief Draws a pie shape defined by an ellipse specified by a coordinate pair, a width, a height, and two radial lines.
-      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the pie shape.
       /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
       /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
       /// @param width Width of the bounding rectangle that defines the ellipse from which the pie shape comes.
@@ -651,7 +653,7 @@ namespace xtd {
       /// @remarks If the sweep_angle parameter is greater than 360 degrees or less than -360 degrees, it is treated as if it were 360 degrees or -360 degrees, respectively.
       void draw_pie(const xtd::drawing::pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
       /// @brief Draws a pie shape defined by an ellipse specified by a coordinate pair, a width, a height, and two radial lines.
-      /// @param pen Pen that determines the color, width, and style of the pie shape.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the pie shape.
       /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
       /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie shape comes.
       /// @param width Width of the bounding rectangle that defines the ellipse from which the pie shape comes.
@@ -663,12 +665,12 @@ namespace xtd {
       void draw_pie(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle);
       
       /// @brief Draws a polygon defined by an array of xtd::drawing::point structures.
-      /// @param pen Pen that determines the color, width, and style of the polygon.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the polygon.
       /// @param points Array of xtd::drawing::point structures that represent the vertices of the polygon.
       /// @remarks Every pair of two consecutive points in the array specifies a side of the polygon. In addition, if the last point and the first of the array point do not coincide, they specify the last side of the polygon.
       void draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point>& points);
       /// @brief Draws a polygon defined by an array of xtd::drawing::point_f structures.
-      /// @param pen Pen that determines the color, width, and style of the polygon.
+      /// @param pen xtd::drawing::pen that determines the color, width, and style of the polygon.
       /// @param points Array of xtd::drawing::point_f structures that represent the vertices of the polygon.
       /// @remarks Every pair of two consecutive points in the array specifies a side of the polygon. In addition, if the last point and the first of the array point do not coincide, they specify the last side of the polygon.
       void draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points);
@@ -782,7 +784,6 @@ namespace xtd {
       /// @param format xtd::drawing::string_format that specifies formatting attributes, such as line spacing and alignment, that are applied to the drawn text.
       /// @remarks The text represented by the s parameter is drawn inside the rectangle represented by the layout_rectangle parameter. If the text does not fit inside the rectangle, it is truncated at the nearest word, unless otherwise specified with the format parameter.
       void draw_string(const xtd::ustring& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& layout_rectangle, const xtd::drawing::string_format& format);
-
       /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush and xtd::drawing::font objects.
       /// @param s String to draw.
       /// @param font xtd::drawing::font that defines the text format of the string.
@@ -1046,7 +1047,7 @@ namespace xtd {
       /// @remarks This method starts a flush and returns immediately without waiting for any currently executing graphics operation to finish.
       void flush();
       /// @brief Forces execution of all pending graphics operations with the method waiting or not waiting, as specified, to return before the operations finish.
-      /// @param intention Member of the FlushIntention enumeration that specifies whether the method returns immediately or waits for any existing operations to finish.
+      /// @param intention Member of the xtd::drawing::drawing2d::flush_intention enumeration that specifies whether the method returns immediately or waits for any existing operations to finish.
       /// @remarks A value of xtd::drawing::graphics::flush for the intention parameter specifies that the method return immediately after beginning the flush, while a value of xtd::drawing::drawing2d::flush_intention::sync specifies that the method wait before returning until any existing operations finish.
       void flush(xtd::drawing::drawing2d::flush_intention intention);
 
@@ -1207,8 +1208,8 @@ namespace xtd {
       /// @remarks This method prepends the matrix specified by the matrix parameter, so that the result is matrix x world transformation.
       void multiply_transform(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order);
 
-      /// @brief Releases a device context handle obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
-      /// @param hdc Handle to a device context obtained by a previous call to the GetHdc() method of this xtd::drawing::graphics.
+      /// @brief Releases a device context handle obtained by a previous call to the xtd::drawing::graphics::get_hdc() method of this xtd::drawing::graphics.
+      /// @param hdc Handle to a device context obtained by a previous call to the xtd::drawing::graphics::get_hdc() method of this xtd::drawing::graphics.
       /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
       /// @remarks Calls to the xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the xtd::drawing::graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the xtd::drawing::graphics of the hdc parameter in subsequent operations.
       void release_hdc(intptr_t hdc);
