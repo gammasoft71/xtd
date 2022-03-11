@@ -34,7 +34,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
-      /// @remarks In GDI+ you can store an affine transformation in a Matrix object. Because the third column of a matrix that represents an affine transformation is always (0, 0, 1), you specify only the six numbers in the first two columns when you construct a Matrix object. The statement Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4) constructs the matrix shown in the following figure.
+      /// @remarks In GDI+ you can store an affine transformation in a xtd::drawing::drawing2d::matrix object. Because the third column of a matrix that represents an affine transformation is always (0, 0, 1), you specify only the six numbers in the first two columns when you construct a xtd::drawing::drawing2d::matrix object. The statement xtd::drawing::drawing2d::matrix myMatrix = new xtd::drawing::drawing2d::matrix(0, 1, -1, 0, 3, 4) constructs the matrix shown in the following figure.
       /// @image html matrix.png
       /// @par Composite Transformations
       /// A composite transformation is a sequence of transformations, one followed by the other. Consider the matrices and transformations in the following list:
@@ -75,7 +75,7 @@ namespace xtd {
         
         /// @brief Initializes a new instance of the xtd::drawing::drawing2d::matrix class as the identity matrix.
         matrix();
-        /// @brief Initializes a new instance of the Matrix class with the specified elements.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::matrix class with the specified elements.
         /// @param m11 The value in the first row and first column of the new xtd::drawing::drawing2d::matrix.
         /// @param m12 The value in the first row and second column of the new xtd::drawing::drawing2d::matrix.
         /// @param m21 The value in the second row and first column of the new xtd::drawing::drawing2d::matrix.
@@ -138,7 +138,7 @@ namespace xtd {
         /// @brief Inverts this xtd::drawing::drawing2d::matrix, if it is invertible.
         void invert();
 
-        /// @brief Multiplies this Matrix by the matrix specified in the matrix parameter, by prepending the specified Matrix.
+        /// @brief Multiplies this xtd::drawing::drawing2d::matrix by the matrix specified in the matrix parameter, by prepending the specified xtd::drawing::drawing2d::matrix.
         /// @param matrix The xtd::drawing::drawing2d::matrix by which this xtd::drawing::drawing2d::matrix is to be multiplied.
         void multiply(const xtd::drawing::drawing2d::matrix& matrix);
         /// @brief Multiplies this xtd::drawing::drawing2d::matrix by the matrix specified in the matrix parameter, and in the order specified in the order parameter.
@@ -146,7 +146,7 @@ namespace xtd {
         /// @param order The xtd::drawing::drawing2d::matrix_order that represents the order of the multiplication.
         void multiply(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order);
 
-        /// @brief Resets this Matrix to have the elements of the identity matrix.
+        /// @brief Resets this xtd::drawing::drawing2d::matrix to have the elements of the identity matrix.
         /// @remarks The elements on the main diagonal of the identity matrix are 1. All other elements of the identity matrix are 0.
         void reset();
         
@@ -214,6 +214,8 @@ namespace xtd {
         /// @param order A xtd::drawing::drawing2d::matrix_order that specifies the order (append or prepend) in which the translation is applied to this xtd::drawing::drawing2d::matrix.
         void translate(float offset_x, float offset_y, xtd::drawing::drawing2d::matrix_order order);
         
+        /// @brief Multiplies each vector in an array by the matrix. The translation elements of this matrix (third row) are ignored.
+        /// @param points An array of xtd::drawing::point structures that represents the points to transform.
         void vector_transform_points(std::vector<xtd::drawing::point>& points);
         
         xtd::ustring to_string() const noexcept override;
