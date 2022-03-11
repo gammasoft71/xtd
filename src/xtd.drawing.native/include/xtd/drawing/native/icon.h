@@ -64,12 +64,14 @@ namespace xtd {
         /// @param bits The bits containing the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
+        /// @remarks This method is used for creating an icon from an XPM (or XBM) image.
         static intptr_t create(const char* const* bits);
         /// @brief Creates an icon from specified bits, and size.
         /// @param stream The bits containing the icon.
         /// @param width The desired width of the icon.
         /// @param height The desired height of the icon.
         /// @return A new icon handle.
+        /// @remarks This method is used for creating an icons from an XPM (or XBM) image.
         /// @warning Internal use only
         static intptr_t create(const char* const* bits, int32_t width, int32_t height);
         /// @brief Creates an icon from image.
@@ -87,7 +89,6 @@ namespace xtd {
 
         /// @brief Destroys the icon.
         /// @param icon The icon handle to destroy.
-        /// @return A new icon handle.
         /// @warning Internal use only
         static void destroy(intptr_t icon);
 

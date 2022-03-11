@@ -65,8 +65,8 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets attribute flags for the pixel data of this Image.
-      /// @return The integer representing a bitwise combination of image_flags for this Image.
+      /// @brief Gets attribute flags for the pixel data of this xtd::drawing::image.
+      /// @return The integer representing a bitwise combination of xtd::drawing::imaging::image_flags for this xtd::drawing::image.
       /// @remarks The integer value returned from this method will correspond to a sum of image_flags, as described in the following table.
       /// | image_flag value                 | Integer representation |
       /// |----------------------------------|------------------------|
@@ -88,7 +88,7 @@ namespace xtd {
       int32_t flags() const;
       
       /// @brief Gets an array of GUIDs that represent the dimensions of frames within this image.
-      /// @return An array of GUIDs that specify the dimensions of frames within this Image from most significant to least significant.
+      /// @return An array of GUIDs that specify the dimensions of frames within this xtd::drawing::image from most significant to least significant.
       /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
       /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
@@ -107,15 +107,15 @@ namespace xtd {
       float horizontal_resolution() const;
       
       /// @brief Gets the color palette used for this image.
-      /// @return A color_palette that represents the color palette used for this image.
-      /// @remarks This property returns a copy of the color_palette object used by this Image.
+      /// @return An xtd::drawing::imaging::color_palette that represents the color palette used for this image.
+      /// @remarks This property returns a copy of the xtd::drawing::imaging::color_palette object used by this xtd::drawing::image.
       imaging::color_palette palette() const;
       /// @brief Sets the color palette used for this image.
       /// @param palette A color_palette that represents the color palette used for this image.
       void palette(const imaging::color_palette& palette);
       
       /// @brief Gets the width and height of this image.
-      /// @return A SizeF structure that represents the width and height of this image.
+      /// @return A xtd::drawing::size_f structure that represents the width and height of this image.
       /// @remarks If the image is a bitmap, the width and height are returned in pixels. If the image is a metafile, the width and height are returned in 0.01 millimeter units.
       const size_f& physical_dimension() const;
       
@@ -129,7 +129,7 @@ namespace xtd {
       const std::vector<int32_t>& property_id_list() const;
       
       /// @brief Gets all the property items (pieces of metadata) stored in this image.
-      /// @return An array of PropertyItem objects, one for each property item stored in the image.
+      /// @return An array of xtd::drawing::imaging::property_item objects, one for each property item stored in the image.
       /// @remarks IIf the image has no property items or if the image format does not support property items, property_items returns an empty array (that is, an array of length zero).
       const std::vector<imaging::property_item>& property_items() const;
       
@@ -168,26 +168,26 @@ namespace xtd {
       
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
-      /// @return The Image this method creates.
+      /// @return The xtd::drawing::image this method creates.
       static image from_file(const xtd::ustring& filename) {return image(filename);}
 
       /// @brief Creates a xtd::drawing::bitmap from a handle to a GDI bitmap.
       /// @param hbitmap The GDI bitmap handle from which to create the xtd::drawing::bitmap.
       /// @return The xtd::drawing::bitmap this method creates.
-      /// @remarks The xtd::drawing::image::from_hbitmap method makes a copy of the GDI bitmap; so you can release the incoming GDI bitmap using the GDI DeleteObject method immediately after creating the new Image.
+      /// @remarks The xtd::drawing::image::from_hbitmap method makes a copy of the GDI bitmap; so you can release the incoming GDI bitmap using the GDI DeleteObject method immediately after creating the new xtd::drawing::image.
       static bitmap from_hbitmap(intptr_t hbitmap);
       
       /// @brief Creates an xtd::drawing::image from the specified data stream.
       /// @param stream A std::istream that contains the data for this xtd::drawing::image.
       /// @return The xtd::drawing::image this method creates.
-      /// @remarks You must keep the stream open for the lifetime of the Image.
+      /// @remarks You must keep the stream open for the lifetime of the xtd::drawing::image.
       /// @note The xtd::drawing::image class does not support alpha transparency in bitmaps. To enable alpha transparency, use PNG images with 32 bits per pixel.
       static image from_stream(std::istream& stream);
       
       /// @brief Creates an xtd::drawing::image from the specified data pointer.
       /// @param data A pointer that contains the data for this xtd::drawing::image.
       /// @return The xtd::drawing::image this method creates.
-      /// @remarks This method is used for creating a xtd::drawing::image from an xpm (or xbm) image.
+      /// @remarks This method is used for creating a xtd::drawing::image from an XPM (or XBM) image.
       static image from_data(const char* const* bits);
       
       /// @brief Gets the bounds of the image in the specified unit.
@@ -213,7 +213,7 @@ namespace xtd {
       /// @return The color depth of the specified pixel format.
       static int32_t get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt);
 
-      /// @brief Gets the specified property item from this Image.
+      /// @brief Gets the specified property item from this xtd::drawing::image.
       /// @param propid The ID of the property item to get.
       /// @return The xtd::drawing::imaging::property_item this method gets.
       /// @exception xtd::argument_exception The image format of this image does not support property items.
@@ -250,12 +250,12 @@ namespace xtd {
       /// @remarks If you wish to draw on an image once it has been rotated, you should always retrieve a new graphics object from the image, otherwise an exception could occur.
       void rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type);
       
-      /// @brief Saves this Image to the specified file or stream.
+      /// @brief Saves this xtd::drawing::image to the specified file or stream.
       /// @param filename A string that contains the name of the file to which to save this xtd::drawing::image.
       /// @remarks If no encoder exists for the file format of the image, the Portable Network Graphics (PNG) encoder is used. When you use the xtd::drawing::image::save method to save a graphic image as a Windows Metafile Format (WMF) or Enhanced Metafile Format (EMF) file, the resulting file is saved as a Portable Network Graphics (PNG) file. This behavior occurs because the GDI+ component of the .NET Framework does not have an encoder that you can use to save files as .wmf or .emf files.
       /// @remarks Saving the image to the same file it was constructed from is not allowed and throws an exception.
       void save(const xtd::ustring& filename) const;
-      /// @brief Saves this Image to the specified file in the specified format.
+      /// @brief Saves this xtd::drawing::image to the specified file in the specified format.
       /// @param filename A string that contains the name of the file to which to save this xtd::drawing::image.
       /// @param format The xtd::drawing::imaging::image_format for this xtd::drawing::image.
       void save(const xtd::ustring& filename, const xtd::drawing::imaging::image_format& format) const;
