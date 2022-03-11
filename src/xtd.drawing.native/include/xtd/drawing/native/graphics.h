@@ -76,7 +76,7 @@ namespace xtd {
         /// @warning Internal use only
         static void copy_from_screen(intptr_t handle, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_width, int32_t block_region_height, int32_t copy_pixel_operation);
 
-        /// @brief Destroy graphics_path.
+        /// @brief Destroys graphics_path.
         /// @param handle The graphics handle.
         /// @warning Internal use only
         static void destroy(intptr_t handle);

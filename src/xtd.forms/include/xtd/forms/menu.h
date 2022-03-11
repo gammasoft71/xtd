@@ -195,7 +195,7 @@ namespace xtd {
       /// @return A handle to the menu if the method succeeds; otherwise, 0.
       virtual intptr_t create_menu_handle() = 0;
       
-      /// @brief Destroy the handle to the Menu.
+      /// @brief Destroys the handle to the Menu.
       /// @param handle A handle to the menu.
       virtual void destroy_menu_handle(intptr_t handle) {}
       

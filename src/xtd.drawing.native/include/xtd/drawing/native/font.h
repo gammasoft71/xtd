@@ -60,7 +60,7 @@ namespace xtd {
         /// @warning Internal use only
         static intptr_t create_from_hfont(intptr_t hfont);
 
-        /// @brief Destroy the font.
+        /// @brief Destroys the font.
         /// @param font The font handle.
         /// @warning Internal use only
         static void destroy(intptr_t font);

@@ -43,7 +43,7 @@ namespace xtd {
         /// @warning Internal use only
         static intptr_t create();
 
-        /// @brief Destroy graphics_path.
+        /// @brief Destroys graphics_path.
         /// @param handle The graphics_path handle.
         /// @warning Internal use only
         static void destroy(intptr_t handle);

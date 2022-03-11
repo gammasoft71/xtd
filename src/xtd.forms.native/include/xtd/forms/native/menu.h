@@ -43,7 +43,7 @@ namespace xtd {
         /// @return The created menu handle.
         /// @warning Internal use only
         static intptr_t create();
-        /// @brief Destroy menu.
+        /// @brief Destroys menu.
         /// @param menu Menu handle.
         /// @warning Internal use only
         static void destroy(intptr_t menu);
