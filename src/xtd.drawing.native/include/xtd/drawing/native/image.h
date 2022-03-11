@@ -48,28 +48,44 @@ namespace xtd {
         
         /// @{
         static void color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags);
+
         static intptr_t create(const xtd::ustring& filename, std::map<size_t, size_t>& frame_resolutions);
         static intptr_t create(std::istream& stream, std::map<size_t, size_t>& frame_resolutions);
         static intptr_t create(const char* const* bits);
         static intptr_t create(int32_t width, int32_t height);
         static intptr_t create(intptr_t image, int32_t width, int32_t height);
         static intptr_t create(intptr_t image, int32_t left, int32_t top, int32_t width, int32_t height);
+
         static void destroy(intptr_t image);
+
         static size_t flags(intptr_t image);
+
         static float horizontal_resolution(intptr_t image);
+
         static void physical_dimension(intptr_t image, int32_t& width, int32_t& height);
+
         static std::vector<int32_t> property_id_list(intptr_t image);
+
         static std::vector<property_item> property_items(intptr_t image);
+
         static size_t pixel_format(intptr_t image);
+
         static size_t raw_format(intptr_t image);
+
         static void size(intptr_t image, int32_t& width, int32_t& height);
+
         static float vertical_resolution(intptr_t image);
+
         static void get_pixel(intptr_t image, int32_t x, int32_t y, uint8_t& a, uint8_t& r, uint8_t& g, uint8_t& b);
+
         static void rotate_flip(intptr_t image, int32_t rotate_flip_type);
+
         static void set_pixel(intptr_t image, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+
         static void save(intptr_t image, const xtd::ustring& filename);
         static void save(intptr_t image, const xtd::ustring& filename, size_t raw_format);
         static void save(intptr_t image, std::ostream& stream, size_t raw_format);
+
         static float screen_dpi();
         /// @}
       };

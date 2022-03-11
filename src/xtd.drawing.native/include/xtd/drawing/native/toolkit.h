@@ -62,7 +62,14 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
+        /// @brief Initiazes toolkit
+        /// @return The toolkit handle.
+        /// @warning Internal use only
         static intptr_t initialize();
+
+        /// @brief Shutdowns toolkit
+        /// @param handle The toolkit handle.
+        /// @warning Internal use only
         static void shutdown(intptr_t handle);
         /// @}
       };

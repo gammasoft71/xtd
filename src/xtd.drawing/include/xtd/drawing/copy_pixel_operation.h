@@ -28,7 +28,7 @@ namespace xtd {
       merge_paint = 12255782,
       /// @brief The bitmap is not mirrored.
       no_mirror_bitmap = -2147483648,
-      /// @biref The inverted source area is copied to the destination.
+      /// @brief The inverted source area is copied to the destination.
       not_source_copy = 3342344,
       /// @brief The source and destination colors are combined using the Boolean OR operator, and then resultant color is then inverted.
       not_source_erase = 1114278,
