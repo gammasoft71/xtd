@@ -58,7 +58,7 @@ namespace xtd {
         /// @param cursor Cursor handle.
         /// @warning Internal use only
         static void current(intptr_t cursor);
-        /// @brief Destroy cursor.
+        /// @brief Destroys cursor.
         /// @param cursor Cursor handle.
         /// @warning Internal use only
         static void destroy(intptr_t cursor);

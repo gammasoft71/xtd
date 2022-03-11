@@ -44,7 +44,7 @@ namespace xtd {
         /// @return The settings handle created.
         /// @warning Internal use only
         static intptr_t create(const xtd::ustring& product_name, const xtd::ustring& company_name);
-        /// @brief Destroy settings.
+        /// @brief Destroys settings.
         /// @param settings Settings handle.
         /// @warning Internal use only
         static void destroy(intptr_t settings);

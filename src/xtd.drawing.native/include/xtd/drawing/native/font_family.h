@@ -45,7 +45,7 @@ namespace xtd {
         /// @warning Internal use only
         static intptr_t create(const xtd::ustring& name);
 
-        /// @brief Destroy the font family.
+        /// @brief Destroys the font family.
         /// @param font_family The font family handle to destroy.
         /// @warning Internal use only
         static void destroy(intptr_t font_family);

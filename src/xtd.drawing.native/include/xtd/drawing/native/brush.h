@@ -54,7 +54,7 @@ namespace xtd {
         /// @warning Internal use only
         static intptr_t create();
 
-        /// @brief Destroy brush.
+        /// @brief Destroys brush.
         /// @param brush The brush handle to destroy.
         /// @warning Internal use only
         static void destroy(intptr_t brush);

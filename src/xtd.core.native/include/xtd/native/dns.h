@@ -50,7 +50,7 @@ namespace xtd {
       /// @warning Internal use only
       static void cleanup();
       /// @internal
-      /// @brief Destroy host handle.
+      /// @brief Destroys host handle.
       /// @param host The host handle to destroy.
       /// @warning Internal use only
       static void destroy(intptr_t host);

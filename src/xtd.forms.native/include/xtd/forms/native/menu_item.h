@@ -54,7 +54,7 @@ namespace xtd {
         /// @return The created menu handle.
         /// @warning Internal use only
         static intptr_t create(intptr_t menu, const xtd::ustring& text, const xtd::drawing::image& image, int32_t kind, size_t shortcut);
-        /// @brief Destroy menu_item.
+        /// @brief Destroys menu_item.
         /// @param menu_item Menu item handle.
         /// @warning Internal use only
         static void destroy(intptr_t menu_item);
