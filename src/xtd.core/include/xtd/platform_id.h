@@ -42,7 +42,7 @@ namespace xtd {
     tvos,
     /// @brief The operating system is watchOS Apple.
     watchos,
-    /// @biref The operating system is other.
+    /// @brief The operating system is other.
     other,
   };
   
