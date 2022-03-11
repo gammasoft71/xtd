@@ -294,7 +294,7 @@ namespace xtd {
         /// @warning Internal use only
         static void color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags);
 
-        /// @brief Creates n image from specified filename and get the frame_solution collection.
+        /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
@@ -302,7 +302,7 @@ namespace xtd {
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
         static intptr_t create(const xtd::ustring& filename, std::map<size_t, size_t>& frame_resolutions);
-        /// @brief Creates n image from specified std::istream and get the frame_solution collection.
+        /// @brief Creates an image from specified std::istream and get the frame_solution collection.
         /// @param stream The std::istream containing the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
