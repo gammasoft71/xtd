@@ -21,7 +21,7 @@ add_sources(
   include/xtd/drawing/native/hot_key_prefixes.h
   include/xtd/drawing/native/icon.h
   include/xtd/drawing/native/image_flags.h
-  include/xtd/drawing/native/image_format.h
+  include/xtd/drawing/native/image_formats.h
   include/xtd/drawing/native/image.h
   include/xtd/drawing/native/interpolation_modes.h
   include/xtd/drawing/native/line_caps.h

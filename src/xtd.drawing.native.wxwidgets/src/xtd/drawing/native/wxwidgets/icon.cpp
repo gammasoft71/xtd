@@ -1,6 +1,6 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/icon.h>
-#include <xtd/drawing/native/image_format.h>
+#include <xtd/drawing/native/image_formats.h>
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/convert_string.h>

@@ -4,7 +4,7 @@
 #include <xtd/drawing/native/compositing_qualities.h>
 #include <xtd/drawing/native/frame_dimension.h>
 #include <xtd/drawing/native/image_flags.h>
-#include <xtd/drawing/native/image_format.h>
+#include <xtd/drawing/native/image_formats.h>
 #include <xtd/drawing/native/rotate_flip_types.h>
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

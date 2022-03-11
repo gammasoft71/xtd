@@ -2,7 +2,7 @@
 #include <fstream>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/icon.h>
-#include <xtd/drawing/native/image_format.h>
+#include <xtd/drawing/native/image_formats.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace xtd;

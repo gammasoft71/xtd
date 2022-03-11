@@ -6,7 +6,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/argument_exception.h>
 #include <xtd/drawing/native/image.h>
-#include <xtd/drawing/native/image_format.h>
+#include <xtd/drawing/native/image_formats.h>
 #include <xtd/drawing/native/frame_dimension.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 
