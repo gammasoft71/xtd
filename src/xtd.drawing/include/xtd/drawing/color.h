@@ -1114,7 +1114,7 @@ namespace xtd {
       static xtd::drawing::color parse(const xtd::ustring& color);
       
       /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
-      /// @return int The 32-bit ARGB value of this xtd::drawing::color.
+      /// @return The 32-bit ARGB value of this xtd::drawing::color.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       /// @par Examples
       /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs, which is a parameter of the Paint event handler. The code performs the following actions:
