@@ -107,7 +107,7 @@ namespace xtd {
       xtd::drawing::rectangle_f get_bounds(const xtd::drawing::graphics& g) const;
       
       /// @brief Returns a Windows handle to this xtd::drawing::region in the specified graphics context.
-      /// @param The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
+      /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
       /// @return A Windows handle to this xtd::drawing::region.
       /// @remarks You are responsible for calling the xtd;;region::release_hrgn method to free the memory used by the GDI region object.
       intptr_t get_hrgn(const xtd::drawing::graphics& g) const;
@@ -250,7 +250,7 @@ namespace xtd {
       /// @param rect The xtd::drawing::rectangle_f structure to unite with this xtd::drawing::region.
       void make_union(const xtd::drawing::rectangle_f& rect);
       /// @brief Updates this xtd::drawing::region to the union of itself and the specified xtd::drawing::region.
-      /// @param rect The xtd::drawing::region to unite with this xtd::drawing::region.
+      /// @param region The xtd::drawing::region to unite with this xtd::drawing::region.
       void make_union(const xtd::drawing::region& region);
 
       /// @brief Updates this xtd::drawing::region to the union minus the intersection of itself with the specified xtd::drawing::graphics_path.
