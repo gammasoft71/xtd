@@ -40,15 +40,14 @@ namespace xtd {
               auto text_to_draw = FormatString(dc, text, width, align, hot_key_prefix, trimming);
               auto hot_key_prefix_location = GetHotKeyPrefixLocations(text_to_draw);
               dc.DrawLabel(text_to_draw, wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
-            }
-            else
+            } else
               dc.DrawRotatedText(text, x, y, -angle);
             dc.DestroyClippingRegion();
           } else {
             wxImage image(x + max_size, y + max_size);
-            if (brush.is_conical_gradiant_brush()) {
+            if (brush.is_conical_gradiant_brush())
               image = wxConicalGradient::CreateBitmap(wxSize(max_size, max_size), brush.get_conical_gradiant_brush().colors, brush.get_conical_gradiant_brush().center_point, brush.get_conical_gradiant_brush().angle).ConvertToImage();
-            } else {
+            else {
               image.InitAlpha();
               for (int y1 = 0; y1 < static_cast<int32_t>(max_size + y); y1++)
                 for (int x1 = 0; x1 < static_cast<int32_t>(max_size + x); x1++)
@@ -68,7 +67,7 @@ namespace xtd {
               bitmap_mask_dc.DrawLabel(text, wxRect(x, y, width, height), align);
             else
               bitmap_mask_dc.DrawRotatedText(text, x, y, -angle);
-            
+              
             image.SetMaskFromImage(bitmap_mask.ConvertToImage(), 0, 0, 0);
             wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
             graphics.Clip(x, y, width, height);
@@ -102,7 +101,7 @@ namespace xtd {
             if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && font.GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(dc.GetFontMetrics().averageWidth / 2.3f);
           }
         }
-
+        
         static wxString FormatString(wxDC& dc, const wxString& string, float width, wxAlignment align, int32_t hot_key_prefix, int32_t trimming) {
           auto result = string;
           auto hot_key_prefix_location = GetHotKeyPrefixLocations(result);

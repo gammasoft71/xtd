@@ -52,7 +52,7 @@ namespace unit_tests {
       auto style = styles.find("macOS (dark)")->second;
       assert::are_equal(color::empty, __test_style_sheet__::color_from_css(style, "#", color::empty), csf_);
     }
-
+    
     void test_method_(color_from_css_with_hash_and_one_hex) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
@@ -290,13 +290,13 @@ namespace unit_tests {
       auto style = styles.find("macOS (dark)")->second;
       assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", __test_style_sheet__::string_from_css(style, "https://gammasoft71.wixsite.com/xtdpro", "https://gammasoft71.wixsite.com/gammasoft"), csf_);
     }
-
+    
     void test_method_(linear_gradient_from_css_with_named_colors) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
       assert::are_equal(background_image(image_type::linear_gradient, {color::blue, color::white}, 180), __test_style_sheet__::background_image_from_css(style, "linear-gradient(blue, white)", background_image::empty), csf_);
     }
-
+    
     void test_method_(linear_gradient_from_css_with_to_top_and_named_colors) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;

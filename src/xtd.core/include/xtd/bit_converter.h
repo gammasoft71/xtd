@@ -169,7 +169,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of int16_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesint16_t.cpp
     static std::vector<byte_t> get_bytes(int16_t value);
-
+    
     /// @brief Returns the specified int32_t value as an std::vector of bytes.
     /// @param value A int32_t value.
     /// @return An std::vector of bytes with length 4.
@@ -199,7 +199,7 @@ namespace xtd {
     /// @return An std::vector of bytes with length 1.
     static std::vector<byte_t> get_bytes(byte_t value);
     
-   /// @brief Returns the specified uint16_t value as an std::vector of bytes.
+    /// @brief Returns the specified uint16_t value as an std::vector of bytes.
     /// @param value A uint16_t value.
     /// @return An std::vector of bytes with length 2.
     /// @par Examples

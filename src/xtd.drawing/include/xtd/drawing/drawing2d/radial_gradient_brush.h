@@ -132,7 +132,7 @@ namespace xtd {
         /// @}
         
       private:
-         void recreate_handle();
+        void recreate_handle();
         struct data {
           xtd::drawing::point_f center_point;
           xtd::drawing::point_f focal_point;

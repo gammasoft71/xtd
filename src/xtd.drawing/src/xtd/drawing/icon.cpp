@@ -88,7 +88,7 @@ const xtd::drawing::size& icon::size() const {
   return data_->size;
 }
 
-int32_t icon::width() const{
+int32_t icon::width() const {
   return data_->size.width();
 }
 

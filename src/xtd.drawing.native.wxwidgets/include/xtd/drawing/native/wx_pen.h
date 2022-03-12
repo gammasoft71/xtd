@@ -67,19 +67,19 @@ namespace xtd {
           hatch_fill_pen_.brush = brush;
           hatch_fill_pen_.width = width;
         }
-
+        
         void create_linear_gradient_pen(const wx_brush& brush, float width) {
           pen_type_ = pen_type::linear_gradient;
           linear_gradiant_pen_.brush = brush;
           linear_gradiant_pen_.width = width;
         }
-
+        
         void create_radial_gradient_pen(const wx_brush& brush, float width) {
           pen_type_ = pen_type::radial_gradient;
           radial_gradiant_pen_.brush = brush;
           radial_gradiant_pen_.width = width;
         }
-
+        
         void create_solid_color_pen(const wxColour& color, float width, float dash_offset, const std::vector<int8_t>& dashes) {
           pen_type_ = pen_type::solid_color;
           solid_color_pen_.color = color;
@@ -93,7 +93,7 @@ namespace xtd {
           texture_fill_pen_.brush = brush;
           texture_fill_pen_.width = width;
         }
-
+        
         bool is_conical_gradiant_pen() const {return pen_type_ == pen_type::conical_gradient;}
         bool is_hatch_fill_pen() const {return pen_type_ == pen_type::hatch_fill;}
         bool is_linear_gradiant_pen() const {return pen_type_ == pen_type::linear_gradient;}
@@ -106,7 +106,7 @@ namespace xtd {
         
         const hatch_fill_pen& get_hatch_fill_pen() const {return hatch_fill_pen_;}
         hatch_fill_pen& get_hatch_fill_pen() {return hatch_fill_pen_;}
-
+        
         const linear_gradiant_pen& get_linear_gradiant_pen() const {return linear_gradiant_pen_;}
         linear_gradiant_pen& get_linear_gradiant_pen() {return linear_gradiant_pen_;}
         
@@ -195,7 +195,7 @@ namespace xtd {
           
           throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
         }
-
+        
       private:
         pen_type pen_type_ = pen_type::none;
         conical_gradiant_pen conical_gradiant_pen_;

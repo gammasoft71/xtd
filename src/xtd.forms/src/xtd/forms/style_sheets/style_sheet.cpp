@@ -179,7 +179,7 @@ const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
 
 const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcept {
   if (!style_sheet_names_.empty()) return style_sheet_names_;
-
+  
   for (auto theme_dir : directory::enumerate_directories(__XTD_THEMES_PATH__)) {
     if (!file::exists(path::combine(theme_dir, "theme.css"))) continue;
     css_reader reader(file::read_all_text(path::combine(theme_dir, "theme.css")));
@@ -197,7 +197,7 @@ const xtd::forms::style_sheets::system_colors& style_sheet::system_colors()const
 
 const style_sheet& style_sheet::system_style_sheet() noexcept {
   if (system_style_sheet_ != style_sheet::empty) return system_style_sheet_;
-
+  
   if (environment::os_version().is_linux()) {
     if (environment::os_version().desktop_environment() == "kde" && application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "kde_dark")), false);
     else if (environment::os_version().desktop_environment() == "kde" && !application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "kde_light")), false);
@@ -440,7 +440,7 @@ content_alignment style_sheet::text_align_from_css(const xtd::ustring& css_text,
     if ((values[0] == "bottom" && values[1] == "center") || (values[1] == "bottom" && values[0] == "center")) return content_alignment::bottom_center;
     if ((values[0] == "bottom" && values[1] == "right") || (values[1] == "bottom" && values[0] == "right")) return content_alignment::bottom_right;
   }
-
+  
   return default_value;
 }
 
@@ -495,7 +495,7 @@ void style_sheet::on_system_colors_changed(const event_args& e) {
 
 vector<ustring> style_sheet::split_values_from_text(const ustring& text) const noexcept {
   static vector<ustring> color_keywords = {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
-  auto string_starts_with_any = [](const ustring& text, const vector<ustring>& values)->ustring {
+  auto string_starts_with_any = [](const ustring & text, const vector<ustring>& values)->ustring {
     for (auto value : values)
       if (text.starts_with(value)) return value;
     return "";
@@ -530,7 +530,7 @@ void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
       if (selectors_iterator != reader.selectors().end()) control_reader(selectors_iterator, buttons_[button.second | state.second]);
     }
   }
-
+  
   property_map::const_iterator properties_iterator;
 }
 
@@ -669,7 +669,7 @@ bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const 
 }
 
 bool style_sheet::try_parse_linear_gradient(const xtd::ustring& text, background_image& result) const noexcept {
-  vector<ustring> arguments = split_values_from_text(text.remove(text.size()-1).replace("linear-gradient(", ""));
+  vector<ustring> arguments = split_values_from_text(text.remove(text.size() - 1).replace("linear-gradient(", ""));
   vector<color> colors;
   int32_t angle = -1;
   for (auto argument : arguments) {
@@ -705,12 +705,12 @@ bool style_sheet::try_parse_linear_gradient(const xtd::ustring& text, background
       colors.push_back(color);
   }
   if (colors.size() < 2) return false;
-  result = background_image(style_sheets::image_type::linear_gradient, colors, angle == -1? 180 : angle);
+  result = background_image(style_sheets::image_type::linear_gradient, colors, angle == -1 ? 180 : angle);
   return true;
 }
 
 bool style_sheet::try_parse_rgb_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("rgb(", "");
+  auto value = text.remove(text.size() - 1).replace("rgb(", "");
   auto color_parts = value.split({','});
   if (color_parts.size() != 3) return false;
   byte_t r = 0;
@@ -724,7 +724,7 @@ bool style_sheet::try_parse_rgb_color(const ustring& text, color& result) const 
 }
 
 bool style_sheet::try_parse_rgba_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("rgba(", "");
+  auto value = text.remove(text.size() - 1).replace("rgba(", "");
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   byte_t r = 0;
@@ -740,7 +740,7 @@ bool style_sheet::try_parse_rgba_color(const ustring& text, color& result) const
 }
 
 bool style_sheet::try_parse_argb_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("argb(", "");
+  auto value = text.remove(text.size() - 1).replace("argb(", "");
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   byte_t a = 0;
@@ -756,7 +756,7 @@ bool style_sheet::try_parse_argb_color(const ustring& text, color& result) const
 }
 
 bool style_sheet::try_parse_hsv_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("hsv(", "");
+  auto value = text.remove(text.size() - 1).replace("hsv(", "");
   auto color_parts = value.split({','});
   if (color_parts.size() != 3) return false;
   float h = 0;
@@ -770,7 +770,7 @@ bool style_sheet::try_parse_hsv_color(const ustring& text, color& result) const 
 }
 
 bool style_sheet::try_parse_hsva_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("hsva(", "");
+  auto value = text.remove(text.size() - 1).replace("hsva(", "");
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   float h = 0;
@@ -786,7 +786,7 @@ bool style_sheet::try_parse_hsva_color(const ustring& text, color& result) const
 }
 
 bool style_sheet::try_parse_ahsv_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("ahsv(", "");
+  auto value = text.remove(text.size() - 1).replace("ahsv(", "");
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   byte_t a = 0;
@@ -802,7 +802,7 @@ bool style_sheet::try_parse_ahsv_color(const ustring& text, color& result) const
 }
 
 bool style_sheet::try_parse_hsl_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("hsl(", "");
+  auto value = text.remove(text.size() - 1).replace("hsl(", "");
   auto color_parts = value.split({','});
   if (color_parts.size() != 3) return false;
   float h = 0;
@@ -816,7 +816,7 @@ bool style_sheet::try_parse_hsl_color(const ustring& text, color& result) const 
 }
 
 bool style_sheet::try_parse_hsla_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("hsla(", "");
+  auto value = text.remove(text.size() - 1).replace("hsla(", "");
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   float h = 0;
@@ -832,7 +832,7 @@ bool style_sheet::try_parse_hsla_color(const ustring& text, color& result) const
 }
 
 bool style_sheet::try_parse_ahsl_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("ahsl(", "");
+  auto value = text.remove(text.size() - 1).replace("ahsl(", "");
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   byte_t a = 0;
@@ -856,7 +856,7 @@ bool style_sheet::try_parse_named_color(const ustring& text, color& result) cons
 }
 
 bool style_sheet::try_parse_system_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size()-1).replace("system-color(", "");
+  auto value = text.remove(text.size() - 1).replace("system-color(", "");
   map<ustring, drawing::color> colors {{"accent", system_colors().accent()}, {"accent-text", system_colors().accent_text()}, {"active-border", system_colors().active_border()}, {"active-caption", system_colors().active_caption()}, {"active-caption-text", system_colors().active_caption_text()}, {"app-workspace", system_colors().app_workspace()}, {"button-face", system_colors().button_face()}, {"button-highlight", system_colors().button_highlight()}, {"button-shadow", system_colors().button_shadow()}, {"control", system_colors().control()}, {"control-dark", system_colors().control_dark()}, {"control-dark-dark", system_colors().control_dark_dark()}, {"control-light", system_colors().control_light()}, {"control-light-light", system_colors().control_light_light()}, {"control-text", system_colors().control_text()}, {"desktop", system_colors().desktop()}, {"gradient-active-caption", system_colors().gradient_active_caption()}, {"gradient-inactive-caption", system_colors().gradient_inactive_caption()}, {"gray-text", system_colors().gray_text()}, {"highlight", system_colors().highlight()}, {"highlight-text", system_colors().highlight_text()}, {"hot-track", system_colors().hot_track()}, {"inactive-border", system_colors().inactive_border()}, {"inactive-caption", system_colors().inactive_caption()}, {"inactive-caption-text", system_colors().inactive_caption_text()}, {"info", system_colors().info()}, {"info-text", system_colors().info_text()}, {"menu", system_colors().menu()}, {"menu-bar", system_colors().menu_bar()}, {"menu-highlight", system_colors().menu_highlight()}, {"menu-text", system_colors().menu_text()}, {"scroll-bar", system_colors().scroll_bar()}, {"text-box", system_colors().text_box()}, {"text-box-text", system_colors().text_box_text()}, {"window", system_colors().window()}, {"window-frame", system_colors().window_frame()}, {"window-text", system_colors().window_text()}};
   auto it = colors.find(value);
   if (it == colors.end()) return false;

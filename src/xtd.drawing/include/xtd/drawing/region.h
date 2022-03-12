@@ -111,7 +111,7 @@ namespace xtd {
       /// @return A Windows handle to this xtd::drawing::region.
       /// @remarks You are responsible for calling the xtd;;region::release_hrgn method to free the memory used by the GDI region object.
       intptr_t get_hrgn(const xtd::drawing::graphics& g) const;
-
+      
       /// @brief Updates this xtd::drawing::region to the intersection of itself with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to intersect with this xtd::drawing::region.
       void intersect(const xtd::drawing::drawing2d::graphics_path& path);
@@ -124,13 +124,13 @@ namespace xtd {
       /// @brief Updates this xtd::drawing::region to the intersection of itself with the specified xtd::drawing::region.
       /// @param region The xtd::drawing::region to intersect with this xtd::drawing::region.
       void intersect(const xtd::drawing::region& region);
-
+      
       /// @brief Tests whether this xtd::drawing::region has an empty interior on the specified drawing surface.
       /// @param g A xtd::drawing::graphics that represents a drawing surface.
       /// @return true if the interior of this xtd::drawing::region is empty when the transformation associated with g is applied; otherwise, false.
       /// @remarks The current transformation of the graphics context g is used to compute the region interior on the drawing surface.
       bool is_empty(const xtd::drawing::graphics& g) const noexcept;
-
+      
       /// @brief Tests whether this xtd::drawing::region has an infinite interior on the specified drawing surface.
       /// @param g A xtd::drawing::graphics that represents a drawing surface.
       /// @return true if the interior of this xtd::drawing::region is infinite when the transformation associated with g is applied; otherwise, false.
@@ -233,13 +233,13 @@ namespace xtd {
       /// @param y The y-coordinate of the point to test.
       /// @return true when the specified point is contained within this xtd::drawing::region; otherwise, false.
       bool is_visible(int32_t x, int32_t y) const noexcept;
-
+      
       /// @brief Initializes this xtd::drawing::region to an empty interior.
       void make_empty();
       
       /// @brief Initializes this xtd::drawing::region object to an infinite interior.
       void make_infinite();
-
+      
       /// @brief Updates this xtd::drawing::region to the union of itself and the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to unite with this xtd::drawing::region.
       void make_union(const xtd::drawing::drawing2d::graphics_path& path);
@@ -252,7 +252,7 @@ namespace xtd {
       /// @brief Updates this xtd::drawing::region to the union of itself and the specified xtd::drawing::region.
       /// @param region The xtd::drawing::region to unite with this xtd::drawing::region.
       void make_union(const xtd::drawing::region& region);
-
+      
       /// @brief Updates this xtd::drawing::region to the union minus the intersection of itself with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to Xor with this xtd::drawing::region.
       void make_xor(const xtd::drawing::drawing2d::graphics_path& path);

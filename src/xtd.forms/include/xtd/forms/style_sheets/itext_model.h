@@ -39,7 +39,7 @@ namespace xtd {
         /// @brief Gets the alignment of the text.
         /// @return A combination of xtd::forms::content_alignment values.
         virtual xtd::forms::content_alignment text_alignment() const noexcept = 0;
-
+        
         /// @brief Gets the color is used to add foreground effects to the text.
         /// @return The color is used to add foreground effects to the text.
         virtual const xtd::drawing::color& color() const noexcept = 0;
@@ -47,15 +47,15 @@ namespace xtd {
         /// @brief Gets the decoration of the text.
         /// @return One of xtd::forms::style_sheets::text_decoration values.
         virtual xtd::forms::style_sheets::text_decoration decoration() const noexcept = 0;
-
+        
         /// @brief Gets the font of the text.
         /// @return The font of the text.
         virtual const xtd::drawing::font& font() const noexcept = 0;
-
+        
         /// @brief Gets the transformation of the text.
         /// @return One of xtd::forms::style_sheets::text_transformation values.
         virtual xtd::forms::style_sheets::text_transformation transformation() const noexcept = 0;
-
+        
         /// @brief Gets the string format of the text.
         /// @return The string format used by xtd::drawing::graphics::draw_text method to draw a text.
         virtual xtd::drawing::string_format make_string_format() const noexcept = 0;

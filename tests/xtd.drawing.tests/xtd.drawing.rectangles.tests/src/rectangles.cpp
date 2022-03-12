@@ -16,7 +16,7 @@ public:
     text("Rectangle tests");
     padding(5);
     client_size({900, 650});
-
+    
     tab_control.parent(*this);
     tab_control.dock(dock_style::fill);
     
@@ -27,7 +27,7 @@ public:
     tab_page_draw_dash.parent(tab_control);
     tab_page_draw_dash.text("Draw dash");
     tab_page_draw_dash.paint += {*this, &lines_form::draw_rectangle_with_dash};
-
+    
     tab_page_fill_color.parent(tab_control);
     tab_page_fill_color.text("Fill color");
     tab_page_fill_color.paint += {*this, &lines_form::fill_rectangle_with_color};
@@ -43,7 +43,7 @@ public:
     tab_page_fill_radial_gradient.parent(tab_control);
     tab_page_fill_radial_gradient.text("Fill radial gradient");
     tab_page_fill_radial_gradient.paint += {*this, &lines_form::fill_rectangle_with_radial_gradient};
-
+    
     tab_page_fill_pattern.parent(tab_control);
     tab_page_fill_pattern.text("Fill pattern");
     tab_page_fill_pattern.paint += {*this, &lines_form::fill_rectangle_with_pattern};
@@ -63,7 +63,7 @@ private:
   forms::tab_page tab_page_fill_radial_gradient;
   forms::tab_page tab_page_fill_pattern;
   forms::tab_page tab_page_fill_texture;
-
+  
   void draw_grid(const rectangle& rect, drawing::graphics& graphics, const drawing::size& grid_size = drawing::size(5, 5)) {
     auto color1 = back_color().is_dark() ? color::light(back_color()) : color::dark(back_color());
     auto color2 = fore_color().is_dark() ? color::light(fore_color()) : color::dark(fore_color());
@@ -79,17 +79,17 @@ private:
   
   void draw_rectangle_with_color(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
-
+    
     e.graphics().draw_rectangle(pen(color::transparent, 1), rectangle(50, 50, 150, 100));
     e.graphics().draw_rectangle(pen(color::black, 1), rectangle(250, 50, 150, 100));
     e.graphics().draw_rectangle(pen(color::white, 1), rectangle(450, 50, 150, 100));
     e.graphics().draw_rectangle(pen(application::style_sheet().system_colors().control_text(), 1), rectangle(650, 50, 150, 100));
-
+    
     e.graphics().draw_rectangle(pen(color::red, 4), rectangle(50, 200, 150, 100));
     e.graphics().draw_rectangle(pen(color::green, 4), rectangle(250, 200, 150, 100));
     e.graphics().draw_rectangle(pen(color::blue, 4), rectangle(450, 200, 150, 100));
     e.graphics().draw_rectangle(pen(color::yellow, 4), rectangle(650, 200, 150, 100));
-
+    
     e.graphics().draw_rectangle(pen(color::from_argb(128, color::red), 10), rectangle(50, 350, 150, 100));
     e.graphics().draw_rectangle(pen(color::from_argb(128, color::green), 10), rectangle(250, 350, 150, 100));
     e.graphics().draw_rectangle(pen(color::from_argb(128, color::blue), 10), rectangle(450, 350, 150, 100));
@@ -98,7 +98,7 @@ private:
   
   void draw_rectangle_with_dash(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
-
+    
     static const auto fereground_color = color::red;
     
     static auto pen_dot = pen(fereground_color, 5);
@@ -166,7 +166,7 @@ private:
     static const auto color2 = color::green;
     static const auto color3 = color::blue;
     static const auto color4 = color::yellow;
-
+    
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(50, 50, 150, 100), {color1, color2, color3, color4}, 0), rectangle(50, 50, 150, 100));
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(250, 50, 150, 100), {color1, color2, color3, color4}, 45), rectangle(250, 50, 150, 100));
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(450, 50, 150, 100), {color1, color2, color3, color4}, 90), rectangle(450, 50, 150, 100));
@@ -176,7 +176,7 @@ private:
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(250, 200, 150, 100), {color1, color2, color3, color4}, 225), rectangle(250, 200, 150, 100));
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(450, 200, 150, 100), {color1, color2, color3, color4}, 270), rectangle(450, 200, 150, 100));
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(650, 200, 150, 100), {color1, color2, color3, color4}, 315), rectangle(650, 200, 150, 100));
-
+    
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(50, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing2d::linear_gradient_mode::horizontal), rectangle(50, 400, 150, 100));
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(250, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing2d::linear_gradient_mode::vertical), rectangle(250, 400, 150, 100));
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(450, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal), rectangle(450, 400, 150, 100));
@@ -190,20 +190,20 @@ private:
     static const auto color2 = color::green;
     static const auto color3 = color::blue;
     static const auto color4 = color::yellow;
-
+    
     e.graphics().fill_rectangle(radial_gradient_brush(point(150, 150), {color1, color2, color3, color4}, 100), rectangle(50, 50, 200, 200));
-
+    
     radial_gradient_brush brush1(point(400, 150), {color1, color2, color3, color4}, 100);
     brush1.focal_point(point(350, 100));
     e.graphics().fill_rectangle(brush1, rectangle(300, 50, 200, 200));
-
+    
     e.graphics().fill_rectangle(radial_gradient_brush(point(150, 400), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, 100), rectangle(50, 300, 200, 200));
-
+    
     radial_gradient_brush brush2(point(400, 400), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, 100);
     brush2.focal_point(point(350, 350));
     e.graphics().fill_rectangle(brush2, rectangle(300, 300, 200, 200));
   }
-
+  
   void fill_rectangle_with_pattern(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
@@ -241,7 +241,7 @@ private:
     graphics.fill_ellipse(solid_brush(foreground_color), 1, 1, texture.width() - 2, texture.height() - 2);
     return texture;
   }
-
+  
 };
 
 startup_(lines_form);

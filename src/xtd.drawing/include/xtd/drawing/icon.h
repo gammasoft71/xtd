@@ -27,7 +27,7 @@ namespace xtd {
     class drawing_export_ icon : public xtd::object {
     public:
       /// @name Fileds
-
+      
       /// @{
       static icon empty;
       /// @}
@@ -114,9 +114,9 @@ namespace xtd {
       bool operator!=(const icon& icon) const;
       ~icon();
       /// @endcond
-
+      
       /// @name Properties
-        
+      
       /// @{
       /// @brief Gets the handle of this icon. This is not a copy of the handle; do not free it.
       /// @return The Windows handle for the icon.
@@ -125,11 +125,11 @@ namespace xtd {
       /// @brief Gets the height of this xtd::drawing::icon.
       /// @return The height of this xtd::drawing::icon.
       int32_t height() const;
-
+      
       /// @brief Gets the size of this xtd::drawing::icon.
       /// @return The size of this xtd::drawing::icon.
       const xtd::drawing::size& size() const;
-
+      
       /// @brief Gets the width of this xtd::drawing::icon.
       /// @return The width of this xtd::drawing::icon.
       int32_t width() const;
@@ -150,12 +150,12 @@ namespace xtd {
       /// @return The xtd::drawing::icon this method creates.
       /// @remarks When using this method, you must dispose of the original icon by using the DestroyIcon method in the Windows API to ensure that the resources are released.
       static icon from_handle(intptr_t handle);
-
+      
       /// @brief Creates a GDI+ xtd::drawing::icon from the specified bitmap.
       /// @param bitmap A xtd::drawing::bitmap use to create xtd::drawing::icon.
       /// @return The xtd::drawing::icon this method creates.
       static icon from_bitmap(const xtd::drawing::bitmap& bitmap);
-
+      
       /// @brief Converts this xtd::drawing::icon to a GDI+ xtd::drawing::bitmap.
       /// @return A Bitmap that represents the converted xtd::drawing::icon.
       /// @remarks The transparent areas of the icon are lost when it is converted to a bitmap, and the transparent color of the resulting bitmap is set to RGB(13,11,12). The returned bitmap has the same height and width as the original icon.
@@ -165,7 +165,7 @@ namespace xtd {
       /// @return A string that describes the xtd::drawing::icon.
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       /// @}
-
+      
     private:
       explicit icon(const bitmap& bitmap);
       struct data {

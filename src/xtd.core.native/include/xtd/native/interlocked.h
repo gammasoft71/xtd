@@ -36,12 +36,12 @@ namespace xtd {
     public:
     private:
       interlocked() = delete;
-#if defined(__linux__) && defined(_LP64)
+      #if defined(__linux__) && defined(_LP64)
       using llong_t = long long int;
-#else
+      #else
       using llong_t = long;
-#endif
-
+      #endif
+      
     protected:
       friend xtd::threading::interlocked;
       /// @name Protected methods
@@ -59,7 +59,7 @@ namespace xtd {
       /// @return int64_t The new value stored at location.
       /// @warning Internal use only
       static int64_t add(int64_t& location, int64_t value);
-
+      
       /// @brief Compares two 32-bit signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with Comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
@@ -88,7 +88,7 @@ namespace xtd {
       /// @return The original value in location.
       /// @warning Internal use only
       static void* compare_exchange(void*& location, void* value, void* comparand);
-
+      
       /// @brief Decrements a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be decremented.
       /// @return The decremented value.
@@ -99,7 +99,7 @@ namespace xtd {
       /// @return The decremented value.
       /// @warning Internal use only
       static int64_t decrement(int64_t& location);
-
+      
       /// @brief Sets a 32-bit signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
@@ -124,7 +124,7 @@ namespace xtd {
       /// @return The original value of location.
       /// @warning Internal use only
       static void* exchange(void*& location, void* value);
-
+      
       /// @brief Increments a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be incremented.
       /// @return The incremented value.

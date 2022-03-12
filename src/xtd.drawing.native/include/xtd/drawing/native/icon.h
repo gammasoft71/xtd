@@ -86,30 +86,30 @@ namespace xtd {
         /// @return A new icon handle.
         /// @warning Internal use only
         static intptr_t create(intptr_t icon, int32_t width, int32_t height);
-
+        
         /// @brief Destroys the icon.
         /// @param icon The icon handle to destroy.
         /// @warning Internal use only
         static void destroy(intptr_t icon);
-
+        
         /// @brief Creates an icon from handle.
         /// @param handle The icon handle .
         /// @return A new icon handle.
         /// @warning Internal use only
         static intptr_t from_handle(intptr_t handle);
-
+        
         /// @brief Gets the height of icon.
         /// @param icon The icon handle .
         /// @return The height of icon.
         /// @warning Internal use only
         static int32_t get_height(intptr_t icon);
-
+        
         /// @brief Gets the width of icon.
         /// @param icon The icon handle .
         /// @return The width of icon.
         /// @warning Internal use only
         static int32_t get_width(intptr_t icon);
-
+        
         /// @brief Saves icon to the specified output filename.
         /// @param icon The icon handle .
         /// @param filename The file to save to.
@@ -120,7 +120,7 @@ namespace xtd {
         /// @param stream The std::ostream to save to.
         /// @warning Internal use only
         static void save(intptr_t icon, std::ostream& stream, size_t raw_format);
-
+        
         /// @brief Converts icon to an image.
         /// @param icon The icon handle .
         /// @return A image handle that represents the converted icon.

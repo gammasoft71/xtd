@@ -64,7 +64,7 @@ namespace xtd {
       /// @return An intptr_t that contains the handle of the brush.
       intptr_t handle() const {return data_->handle_;}
       /// @}
-
+      
       /// @name Methods
       
       /// @{

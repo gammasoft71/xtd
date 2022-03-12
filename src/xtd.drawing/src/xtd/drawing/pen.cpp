@@ -186,7 +186,7 @@ void pen::recreate_handle() {
   native::pen::line_join(data_->handle_, static_cast<int32_t>(data_->line_join));
   native::pen::start_cap(data_->handle_, static_cast<int32_t>(data_->start_cap));
   native::pen::miter_limit(data_->handle_, data_->miter_limit);
-
+  
   vector<float> dashes;
   switch (data_->dash_style) {
     case drawing::dash_style::solid: break;
@@ -197,7 +197,7 @@ void pen::recreate_handle() {
     case drawing::dash_style::custom: dashes = data_->dash_pattern; break;
     default: break;
   }
-
+  
   if (data_->brush == nullptr) {
     data_->type = pen_type::solid_color;
     native::pen::solid_color(data_->handle_, data_->color.a(), data_->color.r(), data_->color.g(), data_->color.b(), data_->width, data_->dash_offset, dashes);

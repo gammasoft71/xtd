@@ -38,7 +38,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the default size of icon.
       /// @return An xtd::drawing::icon object that contains the default application the icon.
       static xtd::drawing::icon application(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the system asterisk icon (WIN32: IDI_ASTERISK).
       /// @return An xtd::drawing::icon object that contains the system asterisk icon.
       static xtd::drawing::icon asterisk() noexcept;
@@ -46,7 +46,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the system asterisk icon.
       static xtd::drawing::icon asterisk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the system error icon (WIN32: IDI_ERROR).
       /// @return An xtd::drawing::icon object that contains the system error icon.
       static xtd::drawing::icon error() noexcept;
@@ -54,7 +54,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the system error icon.
       static xtd::drawing::icon error(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the system exclamation icon (WIN32: IDI_EXCLAMATION).
       /// @return An xtd::drawing::icon object that contains the system exclamation icon.
       static xtd::drawing::icon exclamation() noexcept;
@@ -62,7 +62,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the system exclamation icon.
       static xtd::drawing::icon exclamation(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the system hand icon (WIN32: IDI_HAND).
       /// @return An xtd::drawing::icon object that contains the system hand icon.
       static xtd::drawing::icon hand() noexcept;
@@ -70,7 +70,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the system hand icon.
       static xtd::drawing::icon hand(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the system information icon (WIN32: IDI_INFORMATION).
       /// @return An xtd::drawing::icon object that contains the system information icon.
       static xtd::drawing::icon information() noexcept;
@@ -78,7 +78,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the system information icon.
       static xtd::drawing::icon information(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the system question icon (WIN32: IDI_QUESTION).
       /// @return An xtd::drawing::icon object that contains the system question icon.
       static xtd::drawing::icon question() noexcept;
@@ -86,7 +86,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the system question icon.
       static xtd::drawing::icon question(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the shield icon.
       /// @return An xtd::drawing::icon object that contains the shield icon.
       static xtd::drawing::icon shield() noexcept;
@@ -94,7 +94,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the shield icon.
       static xtd::drawing::icon shield(const xtd::drawing::size& size) noexcept;
- 
+      
       /// @brief Gets an xtd::drawing::icon object that contains the system warning icon (WIN32: IDI_WARNING).
       /// @return An xtd::drawing::icon object that contains the system warning icon.
       static xtd::drawing::icon warning() noexcept;
@@ -102,7 +102,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the system warning icon.
       static xtd::drawing::icon warning(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the Windows logo icon (WIN32: IDI_WINLOGO).
       /// @return An xtd::drawing::icon object that contains the Windows logo icon.
       static xtd::drawing::icon win_logo() noexcept;
@@ -115,7 +115,7 @@ namespace xtd {
       /// @return An xtd::drawing::size structure that define the default size of the icon in pixels.
       /// @remarks The default size is 32 x 32 pixels.
       static xtd::drawing::size default_size() noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the KDE logo icon.
       /// @return An xtd::drawing::icon object that contains the KDE logo icon.
       static xtd::drawing::icon kde_logo() noexcept;
@@ -123,7 +123,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the KDE logo icon.
       static xtd::drawing::icon kde_logo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the macOS logo icon.
       /// @return An xtd::drawing::icon object that contains the macOS logo icon.
       static xtd::drawing::icon macos_logo() noexcept;
@@ -131,7 +131,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the macOS logo icon.
       static xtd::drawing::icon macos_logo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the GNOME logo icon.
       /// @return An xtd::drawing::icon object that contains the GNOME logo icon.
       static xtd::drawing::icon gnome_logo() noexcept;
@@ -139,7 +139,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the GNOME logo icon.
       static xtd::drawing::icon gnome_logo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the Symbolic logo icon.
       /// @return An xtd::drawing::icon object that contains the Symbolic logo icon.
       static xtd::drawing::icon symbolic_logo() noexcept;
@@ -147,7 +147,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the Symbolic logo icon.
       static xtd::drawing::icon symbolic_logo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the Windows logo icon (WIN32: IDI_WINLOGO).
       /// @return An xtd::drawing::icon object that contains the Windows logo icon.
       static xtd::drawing::icon windows_logo() noexcept;
@@ -155,7 +155,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the Windows logo icon.
       static xtd::drawing::icon windows_logo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the Gammasoft logo icon.
       /// @return An xtd::drawing::icon object that contains the Gammasoft logo icon.
       static xtd::drawing::icon gammasoft() noexcept;
@@ -163,7 +163,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the Gammasoft logo icon.
       static xtd::drawing::icon gammasoft(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the xtd logo icon.
       /// @return An xtd::drawing::icon object that contains the xtd logo icon.
       static xtd::drawing::icon xtd_logo() noexcept;
@@ -171,7 +171,7 @@ namespace xtd {
       /// @param size An xtd::drawing::size structure that define the size of the icon in pixels.
       /// @return An xtd::drawing::icon object that contains the xtd logo icon.
       static xtd::drawing::icon xtd_logo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an xtd::drawing::icon object that contains the xtd.forms logo icon.
       /// @return An xtd::drawing::icon object that contains the xtd.forms logo icon.
       static xtd::drawing::icon xtd_forms_logo() noexcept;

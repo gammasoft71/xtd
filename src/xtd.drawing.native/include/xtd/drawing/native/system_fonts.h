@@ -38,37 +38,37 @@ namespace xtd {
         /// @return A font handle that is used to display text in the title bars of windows.
         /// @warning Internal use only
         static intptr_t caption_font();
-
+        
         /// @brief Gets the default font that applications can use for dialog boxes and forms.
         /// @return The default font handle of the system. The value returned will vary depending on the user's operating system and the local culture setting of their system.
         /// @warning Internal use only
         static intptr_t default_font();
-
+        
         /// @brief Gets a font that applications can use for dialog boxes and forms.
         /// @return A font handle that can be used for dialog boxes and forms, depending on the operating system and local culture setting of the system.
         /// @warning Internal use only
         static intptr_t dialog_font();
-
+        
         /// @brief Gets a font that is used for icon titles.
         /// @return A font handle that is used for icon titles.
         /// @warning Internal use only
         static intptr_t icon_title_font();
-
+        
         /// @brief Gets a font that is used for menus.
         /// @return A font handle that is used for menus.
         /// @warning Internal use only
         static intptr_t menu_font();
-
+        
         /// @brief Gets a font that is used for message boxes.
         /// @return A font handle that is used for message boxes.
         /// @warning Internal use only
         static intptr_t message_box_font();
-
+        
         /// @brief Gets a font that is used to display text in the title bars of small windows, such as tool windows.
         /// @return A font handle that is used to display text in the title bars of small windows, such as tool windows.
         /// @warning Internal use only
         static intptr_t small_caption_font();
-
+        
         /// @brief Gets a font that is used to display text in the status bar.
         /// @return A font handle that is used to display text in the status bar.
         /// @warning Internal use only

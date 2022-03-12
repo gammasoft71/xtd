@@ -690,7 +690,7 @@ namespace xtd {
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
       virtual control& style_sheet(const xtd::ustring& value);
-
+      
       /// @brief Gets a value indicating whether the user can give the focus to this control using the TAB key.
       /// @return true if the user can give the focus to the control using the TAB key; otherwise, false. The default is true.
       /// @note Note: This property will always return true for an instance of the xtd::forms::form class.
@@ -702,7 +702,7 @@ namespace xtd {
       /// @note Note: This property will always return true for an instance of the xtd::forms::form class.
       /// @remarks When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the xtd::forms::control::tab_stop property value of false are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value.
       virtual control& tab_stop(bool value);
-
+      
       /// @brief Gets the object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
@@ -917,7 +917,7 @@ namespace xtd {
       /// @todo Remove when render is done.
       std::optional<xtd::drawing::color> get_fore_color() const {return data_->fore_color;}
       /// @endcond
-
+      
       /// @brief Retrieves the index of a control within the control collection.
       /// @param child The control to search for in the control collection.
       /// @return A zero-based index value that represents the location of the specified child control within the control collection.
@@ -1511,13 +1511,13 @@ namespace xtd {
       /// @remarks This event is raised if the size property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> size_changed;
-
+      
       /// @brief Occurs when the xtd::forms::control::tab_stop property value changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::tab_stop property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> tab_stop_changed;
-
+      
       /// @brief Occurs when the value of the text property changes.
       /// @ingroup events
       /// @remarks This event is raised if the text property is changed by either a programmatic modification or user interaction.
@@ -1779,12 +1779,12 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_size_changed(const event_args& e);
-
+      
       /// @brief Raises the control::tab_stop_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_tab_stop_changed(const event_args& e);
-
+      
       /// @brief Raises the control::text_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events

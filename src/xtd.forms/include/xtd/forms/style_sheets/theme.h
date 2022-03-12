@@ -54,7 +54,7 @@ namespace xtd {
         /// @param name The theme website.
         theme(const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& authors, const xtd::uri& website);
         /// @}
-
+        
         /// @cond
         theme(const theme&) = default;
         theme(theme&&) = default;
@@ -77,14 +77,14 @@ namespace xtd {
         /// @brief Sets the theme name.
         /// @param value The theme name.
         void description(const xtd::ustring& value) noexcept;
-
+        
         /// @brief Gets the theme name.
         /// @return The theme name.
         const xtd::ustring& name() const noexcept;
         /// @brief Sets the theme name.
         /// @param value The theme name.
         void name(const xtd::ustring& value) noexcept;
-
+        
         /// @brief Gets the theme website.
         /// @return The theme website.
         const xtd::uri& website() const noexcept;
@@ -92,27 +92,27 @@ namespace xtd {
         /// @param value The theme website.
         void website(const xtd::uri& value) noexcept;
         /// @}
-
+        
         /// @name Methods
         
         /// @{
         bool equals(const object& other) const noexcept override {return is<theme>(other) ? equals(static_cast<const theme&>(other)) : false;}
         bool equals(const theme& other) const noexcept override {return name_ == other.name_ && description_ == other.description_ && authors_ == other.authors_ && website_ == other.website_;}
-
+        
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified css text.
         /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::theme object.
         /// @param result The xtd::forms::style_sheets::theme class that this method creates.
         /// @return true if succeed; otherwise false.
         static bool from_css(const xtd::ustring& css_text, theme& result);
-
+        
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified text.
         /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::theme object.
         /// @return The xtd::forms::style_sheets::theme class that this method creates.
         /// @exception xtd::argument_exception The text is not a xtd::forms::style_sheets::theme object.
         static theme parse(const xtd::ustring& text);
-
+        
         xtd::ustring to_string() const noexcept override;
-
+        
         /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
         /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
         xtd::ustring to_css() const noexcept;
@@ -123,7 +123,7 @@ namespace xtd {
         /// @return true if succeed; otherwise false.
         static bool try_parse(const xtd::ustring& text, theme& result);
         /// @}
-
+        
       private:
         xtd::ustring name_;
         xtd::ustring description_;

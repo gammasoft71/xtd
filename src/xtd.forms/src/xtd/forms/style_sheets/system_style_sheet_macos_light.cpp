@@ -61,7 +61,7 @@ namespace {
       {xtd::forms::style_sheets::pseudo_state::popup | xtd::forms::style_sheets::pseudo_state::default_state | xtd::forms::style_sheets::pseudo_state::disabled, style_sheets::button(button_popup_default).background_color(color::from_argb(35, 255, 255, 255)).color(system_color.gray_text())},
     };
   }
-  
+
   style_sheets::system_colors get_system_colors() {
     style_sheets::system_colors colors;
     colors.accent(drawing::system_colors::accent());

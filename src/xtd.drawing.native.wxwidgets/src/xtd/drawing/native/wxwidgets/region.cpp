@@ -58,11 +58,11 @@ void region::exclude(intptr_t handle, intptr_t region) {
 }
 
 intptr_t region::from_hrgn(intptr_t hrgn) {
-#if defined(__APPLE__) || defined(WIN32)
+  #if defined(__APPLE__) || defined(WIN32)
   return reinterpret_cast<intptr_t>(new wxRegion(reinterpret_cast<WXHRGN>(hrgn)));
-#else
+  #else
   return hrgn;
-#endif
+  #endif
 }
 
 void region::get_bounds(intptr_t handle, intptr_t graphics, float& x, float& y, float& width, float& height) {
@@ -74,13 +74,13 @@ void region::get_bounds(intptr_t handle, intptr_t graphics, float& x, float& y, 
 }
 
 intptr_t region::get_hrgn(intptr_t handle, intptr_t grpahics) {
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(reinterpret_cast<wxRegion*>(handle)->GetWXHRGN());
-#elif defined(WIN32)
+  #elif defined(WIN32)
   return reinterpret_cast<intptr_t>(reinterpret_cast<wxRegion*>(handle)->GetHRGN());
-#else
+  #else
   return reinterpret_cast<intptr_t>(handle);
-#endif
+  #endif
 }
 
 void region::intersect(intptr_t handle, intptr_t region) {

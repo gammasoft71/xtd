@@ -44,32 +44,32 @@ namespace xtd {
         /// @return The created font family handle.
         /// @warning Internal use only
         static intptr_t create(const xtd::ustring& name);
-
+        
         /// @brief Destroys the font family.
         /// @param font_family The font family handle to destroy.
         /// @warning Internal use only
         static void destroy(intptr_t font_family);
-
+        
         /// @brief Gets the generic serif name.
         /// @return The generic serif name.
         /// @warning Internal use only
         static xtd::ustring generic_serif_name();
-
+        
         /// @brief Gets the generic sans serif name.
         /// @return The generic sans serif name.
         /// @warning Internal use only
         static xtd::ustring generic_sans_serif_name();
-
+        
         /// @brief Gets the generic monospace name.
         /// @return The generic monospace name.
         /// @warning Internal use only
         static xtd::ustring generic_monospace_name();
-
+        
         /// @brief Gets the installed font families.
         /// @return The installed font families.
         /// @warning Internal use only
         static std::vector<xtd::ustring> installed_font_families();
-
+        
         /// @brief Gets the cell ascent.
         /// @param font_family The fontt family handle.
         /// @param em_height The em-height of the font family in pixels.

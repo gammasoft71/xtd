@@ -25,11 +25,11 @@ namespace xtd {
     public:
       /// @name Properties
       
-      /// @{      
+      /// @{
       /// @brief Gets a pen that is the color of the accent
       /// @return A xtd::drawing::pen that is the color of the accent.
       static xtd::drawing::pen accent();
-
+      
       /// @brief Gets a pen that is the color of the active border.
       /// @return A xtd::drawing::pen that is the color of the active window's border.
       static xtd::drawing::pen active_border();

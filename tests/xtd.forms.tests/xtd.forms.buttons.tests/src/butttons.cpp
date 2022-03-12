@@ -9,7 +9,7 @@ using namespace xtd::forms;
 class buttons_form : public form {
   using button_ptr_t = shared_ptr<button>;
   using buttons_t = vector<button_ptr_t>;
-
+  
 public:
   static void main() {
     application::run(buttons_form());
@@ -19,7 +19,7 @@ public:
     text("Buttons tests - system");
     padding(10);
     client_size({1100, 600});
-   
+    
     tab_control.parent(*this);
     tab_control.dock(dock_style::fill);
     tab_control.selected_index_changed += [&] {
@@ -32,13 +32,13 @@ public:
     
     tab_page_standard.parent(tab_control);
     tab_page_standard.text("Standard");
-
+    
     tab_page_flat.parent(tab_control);
     tab_page_flat.text("Flat");
-
+    
     tab_page_popup.parent(tab_control);
     tab_page_popup.text("Popup");
-
+    
     create_buttons(tab_page_system, flat_style::system);
     create_buttons(tab_page_standard, flat_style::standard);
     create_buttons(tab_page_flat, flat_style::flat);
@@ -65,9 +65,9 @@ private:
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({10, 10});
-    button_ptr->click += [&](object& sender, const event_args& e) {accept_button(as<button>(sender));};
+    button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
     default_buttons.push_back(button_ptr);
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({90, 10});
@@ -75,15 +75,15 @@ private:
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({170, 10}).enabled(false);
-
+    
     // Image only buttons
     
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image(button_images::from_name("xtd")).parent(parent_control).location({250, 10});
     ++button_number;
-    button_ptr->click += [&](object& sender, const event_args& e) {accept_button(as<button>(sender));};
-
+    button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image(button_images::from_name("xtd")).parent(parent_control).location({330, 10});
@@ -93,14 +93,14 @@ private:
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image(button_images::from_name("xtd")).parent(parent_control).location({410, 10}).enabled(false);
     ++button_number;
-
+    
     // Image and text buttons
     
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image(button_images::from_name("xtd")).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({490, 10});
-    button_ptr->click += [&](object& sender, const event_args& e) {accept_button(as<button>(sender));};
-
+    button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image(button_images::from_name("xtd")).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({570, 10});
@@ -114,7 +114,7 @@ private:
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({10, 50}).fore_color(color::dodger_blue);
-    button_ptr->click += [&](object& sender, const event_args& e) {accept_button(as<button>(sender));};
+    button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
     
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
@@ -129,7 +129,7 @@ private:
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({250, 50}).back_color(color::dodger_blue);
-    button_ptr->click += [&](object& sender, const event_args& e) {accept_button(as<button>(sender));};
+    button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
     
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
@@ -144,8 +144,8 @@ private:
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text_align(content_alignment::top_left).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({10, 90}).size({100, 50});
-    button_ptr->click += [&](object& sender, const event_args& e) {accept_button(as<button>(sender));};
-
+    button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text_align(content_alignment::top_center).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({120, 90}).size({100, 50});
@@ -153,7 +153,7 @@ private:
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text_align(content_alignment::top_right).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({230, 90}).size({100, 50});
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text_align(content_alignment::middle_left).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({340, 90}).size({100, 50});
@@ -165,7 +165,7 @@ private:
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text_align(content_alignment::middle_right).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({560, 90}).size({100, 50});
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text_align(content_alignment::bottom_left).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({670, 90}).size({100, 50});
@@ -183,58 +183,58 @@ private:
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image_align(content_alignment::top_left).image(button_images::from_name("xtd")).parent(parent_control).location({10, 155}).size({100, 50});
-    button_ptr->click += [&](object& sender, const event_args& e) {accept_button(as<button>(sender));};
+    button_ptr->click += [&](object & sender, const event_args & e) {accept_button(as<button>(sender));};
     ++button_number;
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image_align(content_alignment::top_center).image(button_images::from_name("xtd")).parent(parent_control).location({120, 155}).size({100, 50});
     ++button_number;
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image_align(content_alignment::top_right).image(button_images::from_name("xtd")).parent(parent_control).location({230, 155}).size({100, 50});
     ++button_number;
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image_align(content_alignment::middle_left).image(button_images::from_name("xtd")).parent(parent_control).location({340, 155}).size({100, 50});
     ++button_number;
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image_align(content_alignment::middle_center).image(button_images::from_name("xtd")).parent(parent_control).location({450, 155}).size({100, 50});
     ++button_number;
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image_align(content_alignment::middle_right).image(button_images::from_name("xtd")).parent(parent_control).location({560, 155}).size({100, 50});
     ++button_number;
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image_align(content_alignment::bottom_left).image(button_images::from_name("xtd")).parent(parent_control).location({670, 155}).size({100, 50});
     ++button_number;
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image_align(content_alignment::bottom_center).image(button_images::from_name("xtd")).parent(parent_control).location({780, 155}).size({100, 50});
     ++button_number;
-
+    
     button_ptr = make_shared<button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).image_align(content_alignment::bottom_right).image(button_images::from_name("xtd")).parent(parent_control).location({890, 155}).size({100, 50});
     ++button_number;
   }
-
+  
   forms::tab_control tab_control;
   forms::tab_page tab_page_system;
   forms::tab_page tab_page_standard;
   forms::tab_page tab_page_flat;
   forms::tab_page tab_page_popup;
-
+  
   choice style_sheet_choice;
-
+  
   buttons_t buttons;
   buttons_t default_buttons;
 };

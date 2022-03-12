@@ -4,7 +4,7 @@ using namespace xtd::drawing;
 
 const rectangle_f rectangle_f::empty;
 
-rectangle_f::rectangle_f(float x, float y, float width, float height) noexcept  : x_(x), y_(y), width_(width), height_(height){
+rectangle_f::rectangle_f(float x, float y, float width, float height) noexcept  : x_(x), y_(y), width_(width), height_(height) {
 }
 
 rectangle_f::rectangle_f(const point_f& location, const size_f& size) noexcept  : rectangle_f(location.x(), location.y(), size.width(), size.height()) {

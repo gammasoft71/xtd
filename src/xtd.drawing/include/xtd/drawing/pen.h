@@ -55,7 +55,7 @@ namespace xtd {
         this->width(width);
         this->brush(brush);
       }
-    
+      
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::color.
       /// @param color A xtd::drawing::color structure that indicates the color of this xtd::drawing::pen.
       /// @remarks The color property is set to the color specified by the color parameter. The width property is set to 1 (the default).
@@ -158,7 +158,7 @@ namespace xtd {
       /// @remarks A line join is the common area that is formed by two lines whose ends meet or overlap. There are three line join styles: miter, bevel, and round. When you specify a line join style for a xtd::drawing::pen object, that join style will be applied to all the connected lines in any xtd::drawing::drawing2d::graphics_path object drawn using that pen. The following illustration shows the results of the beveled line join example.
       /// @image html line_join_bevel.png
       xtd::drawing::pen& line_join(xtd::drawing::drawing2d::line_join value);
-
+      
       /// @brief Gets the limit of the thickness of the join on a mitered corner.
       /// @return The limit of the thickness of the join on a mitered corner.
       /// @remarks The miter length is the distance from the intersection of the line walls on the inside of the join to the intersection of the line walls outside of the join. The miter length can be large when the angle between two lines is small. The miter limit is the maximum allowed ratio of miter length to stroke width. The default value is 10.0f.
@@ -170,7 +170,7 @@ namespace xtd {
       /// @remarks The miter length is the distance from the intersection of the line walls on the inside of the join to the intersection of the line walls outside of the join. The miter length can be large when the angle between two lines is small. The miter limit is the maximum allowed ratio of miter length to stroke width. The default value is 10.0f.
       /// @remarks If the miter length of the join of the intersection exceeds the limit of the join, then the join will be beveled to keep it within the limit of the join of the intersection.
       xtd::drawing::pen& miter_limit(float value);
-
+      
       /// @brief Gets the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
       /// @return One of the xtd::drawing::drawing2d::line_cap values that represents the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
       xtd::drawing::drawing2d::line_cap start_cap() const noexcept;
@@ -178,7 +178,7 @@ namespace xtd {
       /// @param value One of the xtd::drawing::drawing2d::line_cap values that represents the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
       /// @return This current instance.
       xtd::drawing::pen& start_cap(xtd::drawing::drawing2d::line_cap value);
-
+      
       /// @brief Gets the style of lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::pen_type enumeration that specifies the style of lines drawn with this xtd::drawing::pen.
       /// @remarks A xtd::drawing::pen can draw solid lines, filled lines, or textured lines, depending on the style specified by a member of the PenType enumeration.
@@ -194,11 +194,11 @@ namespace xtd {
       /// @remarks You can access the unit of measure of the xtd::drawing::graphics object using its xtd::drawing::graphics::page_unit property. The unit of measure is typically pixels. A Width of 0 will result in the xtd::drawing::pen drawing as if the xtd::drawing::pen::width were 1.
       xtd::drawing::pen& width(float value);
       /// @}
- 
+      
       /// @cond
       xtd::drawing::pen& dash_pattern(const std::initializer_list<float>& value);
       /// @endcond
-
+      
       /// @name Methods
       
       /// @{

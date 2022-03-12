@@ -32,11 +32,11 @@ static void __on_timer_system_color_detection__(wxTimerEvent& e) {
       wxCommandEvent eventRecreate(wxEVT_RECREATE, window->GetId());
       eventRecreate.SetEventObject(window);
       window->ProcessWindowEvent(eventRecreate);
-
+      
       wxCommandEvent eventSysColourChanged(wxEVT_SYS_COLOUR_CHANGED, window->GetId());
       eventSysColourChanged.SetEventObject(window);
       window->ProcessWindowEvent(eventSysColourChanged);
-
+      
       //SendMessage(window->GetHWND(), WM_RECREATE, 0, 0);
       //SendMessage(window->GetHWND(), WM_SYSCOLORCHANGE, 0, 0);
     }
@@ -173,11 +173,11 @@ void application::initialize() {
   long value;
   key.QueryValue("AppsUseLightTheme", &value);
   __is_dark_mode__ = !value;
-
+  
   __system_color_detection_timer__ = new wxTimer();
   __system_color_detection_timer__->Bind(wxEVT_TIMER, __on_timer_system_color_detection__);
   __system_color_detection_timer__->Start(1000);
-
+  
   init_dark_mode(__xtd_win32_enable_dark_mode__);
   #elif defined(__WXGTK__)
   __gtk_button_images__(__xtd_gtk_enable_button_images__);
@@ -208,12 +208,12 @@ void application::run() {
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
     static_cast<wx_application*>(wxTheApp)->MainLoop();
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_QUIT, 0, 0, 0);
-
-#if defined(__WXMSW__)
+    
+    #if defined(__WXMSW__)
     __system_color_detection_timer__->Unbind(wxEVT_TIMER, __on_timer_system_color_detection__);
     delete __system_color_detection_timer__;
-#endif
-
+    #endif
+    
     wxApp::SetInstance(nullptr);
     delete wxTheApp;
   }
