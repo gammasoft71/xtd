@@ -189,6 +189,7 @@ add_projects(docs locale scripts src tests tools themes)
 
 # Run Developper Reference Guide generator command
 add_custom_target(RUN_DEVELOPPER_REFERENCE_GUIDE ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen/doxygen_developer.txt WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen COMMAND open "${CMAKE_CURRENT_BINARY_DIR}/developer_html/index.html" COMMENT "Run Doxygen Developper Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
+set_target_properties(RUN_DEVELOPPER_REFERENCE_GUIDE PROPERTIES FOLDER commands)
 
 # Updates export file
 xtd_update_export_file(src/xtd.3rdparty.call_stack/call_stack_export.h XTD_3RDPARTY_CALL_STACK_EXPORT call_stack_export_)
