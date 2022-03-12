@@ -11,7 +11,6 @@
 
 #include <cstdint>
 
-/// @internal
 /// @brief The control modifier key plus the BREAK console key.
 /// @par Library
 /// xtd.core.native
@@ -20,7 +19,6 @@
 /// @warning Internal use only
 constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_BREAK = 0;
 
-/// @internal
 /// @brief The control modifier key plus the C console key.
 /// @par Library
 /// xtd.core.native
@@ -29,7 +27,6 @@ constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_BREAK = 0;
 /// @warning Internal use only
 constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_C = 1;
 
-/// @internal
 /// @brief The control modifier key plus the \\ console key.
 /// @par Library
 /// xtd.core.native
@@ -38,7 +35,6 @@ constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_C = 1;
 /// @warning Internal use only
 constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_BS = 2;
 
-/// @internal
 /// @brief The control modifier key plus the Z console key.
 /// @par Library
 /// xtd.core.native

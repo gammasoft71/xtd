@@ -10,7 +10,6 @@
 
 #include <cstdint>
 
-/// @internal
 /// @brief Read status mode.
 /// @par Library
 /// xtd.core.native
@@ -19,7 +18,6 @@
 /// @warning Internal use only
 constexpr int32_t SELECT_MODE_READ = 0;
 
-/// @internal
 /// @brief Write status mode.
 /// @par Library
 /// xtd.core.native
@@ -28,7 +26,6 @@ constexpr int32_t SELECT_MODE_READ = 0;
 /// @warning Internal use only
 constexpr int32_t SELECT_MODE_WRITE = 1;
 
-/// @internal
 /// @brief Error status mode.
 /// @par Library
 /// xtd.core.native

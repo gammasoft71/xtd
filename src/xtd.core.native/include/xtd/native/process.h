@@ -22,11 +22,9 @@ namespace xtd {
   }
   /// @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @internal
     /// @brief Contains process native API.
     /// @par Namespace
     /// xtd::native
@@ -41,7 +39,6 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @internal
       /// @brief Contains the created process handle and created standard streams :
       /// * [0] : The created process handle.
       /// * [1] : The created process id.
@@ -49,7 +46,6 @@ namespace xtd {
       /// * [3] : The created istream for the standard output.
       /// * [4] : The created istream for the standard error.
       using started_process = std::tuple<intptr_t, int32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>>;
-      /// @internal
       /// @brief Gets the base priority xof the associated process.
       /// @param priority The process handle.
       /// @return The base priority, which is computed from the process priority class of the associated process. (see priority_class.h file).
@@ -63,20 +59,17 @@ namespace xtd {
       /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | HIGH_PRIORITY_CLASS         |
       /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | REALTIME_PRIORITY_CLASS     |
       static int32_t base_priority(int32_t priority);
-      /// @internal
       /// @brief Kill process.
       /// @param process The process handle to kill.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool kill(intptr_t process);
-      /// @internal
       /// @brief Sets the overall priority category for the associated process.
       /// @param process The process handle to set priority class.
       /// @param priority The priority category for the associated process, from which the base_priority of the process is calculated. (see priority_class.h file).
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool priority_class(intptr_t process, int32_t priority);
-      /// @internal
       /// @brief Creates a process with specified file name, specified arguments, specified working directory, specified process creation flags, and specified process window style.
       /// @param file_name the name of the application file to run in process launched by the shell execute.
       /// @param arguments Command-line arguments to pass when starting the process.
@@ -85,7 +78,6 @@ namespace xtd {
       /// @return The created process handle.
       /// @warning Internal use only
       static intptr_t shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style);
-      /// @internal
       /// @brief Starts a process with specified file name, specified arguments, specified working directory, specified process window style, specified process creation flags, and specified boolean tuples that represent redirect standard streams.
       /// @param file_name the name of the application file to run in the process.
       /// @param arguments Command-line arguments to pass when starting the process.
@@ -99,7 +91,6 @@ namespace xtd {
       /// @return A process::started_process that contains the created process handle, id and created standard streams.
       /// @warning Internal use only
       static started_process start(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style, int32_t process_creation_flags, std::tuple<bool, bool, bool> redirect_standard_streams);
-      /// @internal
       /// @brief Wait process and close handles.
       /// @param process The process handle to wait.
       /// @param exit Receives the process exit code.

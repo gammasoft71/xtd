@@ -11,7 +11,6 @@
 
 #include <cstdint>
 
-/// @internal
 /// @brief Socket options apply to all sockets.
 /// @par Library
 /// xtd.core.native
@@ -20,7 +19,6 @@
 /// @warning Internal use only
 constexpr int32_t SOCKET_OPTION_LEVEL_SOCKET = 65535;
 
-/// @internal
 /// @brief Socket options apply only to IP sockets.
 /// @par Library
 /// xtd.core.native
@@ -29,7 +27,6 @@ constexpr int32_t SOCKET_OPTION_LEVEL_SOCKET = 65535;
 /// @warning Internal use only
 constexpr int32_t SOCKET_OPTION_LEVEL_IP = 0;
 
-/// @internal
 /// @brief Socket options apply only to IPv6 sockets.
 /// @par Library
 /// xtd.core.native
@@ -38,7 +35,6 @@ constexpr int32_t SOCKET_OPTION_LEVEL_IP = 0;
 /// @warning Internal use only
 constexpr int32_t SOCKET_OPTION_LEVEL_IP_V6 = 41;
 
-/// @internal
 /// @brief Socket options apply only to TCP sockets.
 /// @par Library
 /// xtd.core.native
@@ -47,7 +43,6 @@ constexpr int32_t SOCKET_OPTION_LEVEL_IP_V6 = 41;
 /// @warning Internal use only
 constexpr int32_t SOCKET_OPTION_LEVEL_TCP = 6;
 
-/// @internal
 /// @brief Socket options apply only to UDP sockets.
 /// @par Library
 /// xtd.core.native

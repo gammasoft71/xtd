@@ -21,11 +21,9 @@ namespace xtd {
   class time_zone_info;
   /// @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @internal
     /// @brief Contains date time native API.
     /// @par Namespace
     /// xtd::native
@@ -83,25 +81,21 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @internal
       /// @brief Gets a time_zone_info object that represents the local time zone.
       /// @return An object that represents the local time zone.
       /// @warning Internal use only
       static time_zone_info get_local_time_zone();
       
-      /// @internal
       /// @brief Returns a sorted collection of all the time zones about which information is available on the local system.
       /// @return An array of time_zone_info objects.
       /// @warning Internal use only
       static std::vector<time_zone_info> get_system_time_zones();
       
-      /// @internal
       /// @brief Gets the utc offset for the specified local time.
       /// @return the utc offset for the specified local time in seconds.
       /// @warning Internal use only
       static time_t utc_offset(std::time_t time);
       
-      /// @internal
       /// @brief Indicates whether the ttime_t is within the daylight saving time range for the current time zone.
       /// @return true if the time is within the daylight saving time range for the local time zone; otherwise false.
       /// @warning Internal use only

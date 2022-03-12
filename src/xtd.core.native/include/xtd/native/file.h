@@ -22,11 +22,9 @@ namespace xtd {
   }
   /// @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @internal
     /// @brief Contains file native API.
     /// @par Namespace
     /// xtd::native
@@ -42,33 +40,28 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @internal
       /// @brief Copy a specified source file to a target file.
       /// @param source_file The source file to copy.
       /// @param target_file The target file where copy.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int32_t copy(const std::string& source_file, const std::string& target_file);
-      /// @internal
       /// @brief Check if specified file exist.
       /// @param path The file path to check.
       /// @return true is file exist; otherwise false.
       /// @warning Internal use only
       static bool exists(const std::string& path);
-      /// @internal
       /// @brief Gets file size of specified path.
       /// @param path The relative or absolute path to the directory to get size.
       /// @return The file size.
       /// @warning Internal use only
       static size_t get_size(const std::string& path);
-      /// @internal
       /// @brief Moves a file or a directory and its contents to a new location.
       /// @param old_path The path of the file or directory to move.
       /// @param new_path The path to the new location for old_path. If old_path is a file, then new_path must also be a file name.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int32_t move(const std::string& old_path, const std::string& new_path);
-      /// @internal
       /// @brief Permanently deletes a speccified file.
       /// @param file The file name to delete.
       /// @return 0 if success; otherwise failed.

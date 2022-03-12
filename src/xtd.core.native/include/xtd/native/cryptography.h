@@ -21,11 +21,9 @@ namespace xtd {
   }
   /// @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @internal
     /// @brief Contains cryptography native API.
     /// @par Namespace
     /// xtd::native
@@ -40,7 +38,6 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @internal
       /// @brief Gets the machine's GUID.
       /// @return A byte array that contains the machine GUID.
       /// @warning Internal use only

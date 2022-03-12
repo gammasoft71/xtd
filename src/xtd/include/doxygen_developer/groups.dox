@@ -51,6 +51,21 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup cq composing quality
+/// @brief composing quality definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup cm composing mode
+/// @brief composing mode definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup cpo copy pixel operation
+/// @brief copy pixel operation definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup console_color console color
 /// @brief console color definitions.
 /// @warning Internal use only
@@ -101,8 +116,23 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup fdi frame dimension
+/// @brief frame dimension definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup fi flush intention
+/// @brief flush intention definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup file_attributes file attributes
 /// @brief file attributes definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup hkp hot key prefix
+/// @brief hot key prefix definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -111,13 +141,38 @@
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup li loading indicator styles
-/// @brief loading indicator styles definitions.
+/// @defgroup ifl image flag
+/// @brief image flag definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup ifm image format
+/// @brief image format definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup im interpolation mode
+/// @brief interpolation mode definitions.
 /// @warning Internal use only
 /// @ingroup native
 
 /// @defgroup lbs list box styles
 /// @brief list box styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup lc line cap
+/// @brief line cap definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup li loading indicator styles
+/// @brief loading indicator styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup lj line join
+/// @brief line join definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -133,6 +188,11 @@
 
 /// @defgroup mk mouse and key
 /// @brief mouse and key definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup mo matrix order
+/// @brief matrix order definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -159,6 +219,16 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup pfm path fill mode
+/// @brief path fill mode definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup po pixel offset mode
+/// @brief pixel offset mode definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup ppc process pricority class
 /// @brief process priority class definitions.
 /// @warning Internal use only
@@ -181,6 +251,16 @@
 
 /// @defgroup pws process window style
 /// @brief process window style definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup rft rotate flip type
+/// @brief rotate flip type definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup sa string alignment
+/// @brief string alignment definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -224,8 +304,18 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup sm smooth mode
+/// @brief smooth mode definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup ss static styles
 /// @brief static styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup st string trimming
+/// @brief string trimming definitions.
 /// @warning Internal use only
 /// @ingroup native
 
@@ -236,6 +326,11 @@
 
 /// @defgroup tcs tab control styles
 /// @brief tab control styles definitions.
+/// @warning Internal use only
+/// @ingroup native
+
+/// @defgroup tr text rendering
+/// @brief text rendering definitions.
 /// @warning Internal use only
 /// @ingroup native
 

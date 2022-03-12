@@ -25,11 +25,9 @@ namespace xtd {
   }
   // @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @internal
     /// @brief Contains dns native API.
     /// @par Namespace
     /// xtd::native
@@ -45,53 +43,44 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @internal
       /// @brief Closes the file /etc/hosts.
       /// @warning Internal use only
       static void cleanup();
-      /// @internal
       /// @brief Destroys host handle.
       /// @param host The host handle to destroy.
       /// @warning Internal use only
       static void destroy(intptr_t host);
-      /// @internal
       /// @brief Gets host by host IP address.
       /// @param host_address The host IP address to resolve.
       /// @param host_address_type The  address family (see address_family_constants.h) to resolve.
       /// @return The host handle.
       /// @warning Internal use only
       static intptr_t get_host_by_address(const std::string& host_address, int32_t host_address_type);
-      /// @internal
       /// @brief Gets host by host name.
       /// @param host_name The name to resolve.
       /// @return The host handle.
       /// @warning Internal use only
       static intptr_t get_host_by_name(const std::string& host_name);
-      /// @internal
       /// @brief Gets aliases for a host.
       /// @param host The host handle to retrieve aliases.
       /// @return An alias array for yhe host.
       /// @warning Internal use only
       static std::vector<std::string> get_aliases(intptr_t host);
-      /// @internal
       /// @brief Gets IP addresses for a host.
       /// @param host The host handle to retrieve IP addresses.
       /// @return An IP address array for yhe host.
       /// @warning Internal use only
       static std::vector<std::vector<uint8_t>> get_addresses(intptr_t host);
-      /// @internal
       /// @brief Gets name for a host.
       /// @param host The host handle to retrieve name.
       /// @return A string that represent the host.
       /// @warning Internal use only
       static std::string get_host_name(intptr_t host);
-      /// @internal
       /// @brief Gets host name for the current computer.
       /// @param host_name The string that will contain the host name.
       /// @return 0 if succeed; otherwise error.
       /// @warning Internal use only
       static int32_t get_host_name(std::string& host_name);
-      /// @internal
       /// @brief Opens the file /etc/hosts.
       /// @warning Internal use only
       static void startup();

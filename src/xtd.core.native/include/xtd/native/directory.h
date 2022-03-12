@@ -26,7 +26,6 @@ namespace xtd {
   }
   /// @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
@@ -35,7 +34,6 @@ namespace xtd {
     class file_system;
     /// @endcond
     
-    /// @internal
     /// @brief Contains directory native API.
     /// @par Namespace
     /// xtd::native
@@ -51,7 +49,6 @@ namespace xtd {
       friend xtd::io::directory_info;
       
     public:
-      /// @internal
       /// @brief Represent directory iterator used by xtd::native::directtory::enumerate_directories.
       /// @warning Internal use only
       class directory_iterator : public std::iterator<std::input_iterator_tag, std::string> {
@@ -77,7 +74,6 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
       
-      /// @internal
       /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
       /// @warning Internal use only
       class file_iterator : public std::iterator<std::input_iterator_tag, std::string> {
@@ -103,7 +99,6 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
       
-      /// @internal
       /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
       /// @warning Internal use only
       class file_and_directory_iterator : public std::iterator<std::input_iterator_tag, std::string> {
@@ -133,52 +128,44 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @internal
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.
       /// @param directory_name The directory to create.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int32_t create(const std::string& directory_name);
-      /// @internal
       /// @brief Returns an enumerable collection of directory full names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search.
       /// @param pattern The search string to match against the names of directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An iterator of the full names (including paths) for the directories in the directory specified by path and that match the specified search pattern.
       /// @warning Internal use only
       static directory_iterator enumerate_directories(const std::string& path, const std::string& pattern);
-      /// @internal
       /// @brief Returns an iterator of full file names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search.
       /// @param pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
       /// @warning Internal use only
       static file_iterator enumerate_files(const std::string& path, const std::string& pattern);
-      /// @internal
       /// @brief Returns an iterator of full file names and full direcctory names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search.
       /// @param pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
       /// @warning Internal use only
       static file_and_directory_iterator enumerate_files_and_directories(const std::string& path, const std::string& pattern);
-      /// @internal
       /// @brief Check if specified directory exist.
       /// @param path The diretory path to check.
       /// @return true is file exist; otherwise false.
       /// @warning Internal use only
       static bool exists(const std::string& path);
-      /// @internal
       /// @brief Gets the current directory.
       /// @return The currrent directory.
       /// @remarks On error the return value is an empty string ("").
       /// @warning Internal use only
       static std::string get_current_directory();
-      /// @internal
       /// @brief Deletes an empty directory from a specified path.
       /// @param directory_name The name of the empty directory to remove. This directory must be writable and empty.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int32_t remove(const std::string& directory_name);
-      /// @internal
       /// @brief Sets the current directory.
       /// @param dirrectory_name The currrent directory.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
