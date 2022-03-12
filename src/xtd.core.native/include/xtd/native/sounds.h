@@ -21,7 +21,7 @@ constexpr uint32_t ST_OK = 0x00000000;
 /// @brief The sound specified as the Windows Critical Stop sound.
 /// @par Library
 /// xtd.core.native
-/// @ingroup xtd_core_native sound_typesound_type
+/// @ingroup xtd_core_native sound_type
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr uint32_t ST_ICONERROR = 0x00000010;
