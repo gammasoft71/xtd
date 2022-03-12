@@ -23,11 +23,9 @@ namespace xtd {
   struct guid;
   /// @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @internal
     /// @brief Contains guid native API.
     /// @par Namespace
     /// xtd::native
@@ -42,7 +40,6 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @internal
       /// @brief Generates a globally unique identifier (GUID).
       /// @return A 16-element byte array containing GUID.
       /// @remarks A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.

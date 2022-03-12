@@ -22,11 +22,9 @@ namespace xtd {
   }
   /// @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @internal
     /// @brief Contains interlocked native API.
     /// @par Namespace
     /// xtd::native
@@ -49,7 +47,6 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @internal
       /// @brief Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
       /// @param value The value to be added to the integer at location.

@@ -26,7 +26,6 @@ namespace xtd {
   }
   /// @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
@@ -36,7 +35,6 @@ namespace xtd {
     class file;
     /// @endcond
     
-    /// @internal
     /// @brief Contains file_system native API.
     /// @par Namespace
     /// xtd::native
@@ -55,14 +53,12 @@ namespace xtd {
       friend xtd::native::drive;
       friend xtd::native::file;
     protected:
-      /// @internal
       /// @brief Gets the attributes for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path attribute. (see file_attribute.h)
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int32_t get_attributes(const std::string& path, int32_t& attributes);
-      /// @internal
       /// @brief Gets file creeation time, last access time and lastt write time of specified path.
       /// @param path The relative or absolute path to the directory to get times.
       /// @param creation_time That contains the creation time.
@@ -71,40 +67,34 @@ namespace xtd {
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int32_t get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time);
-      /// @internal
       /// @brief Gets full path of specified path.
       /// @param relative_path The relative path to the directory to search.
       /// @return The fulll path.
       /// @warning Internal use only
       static std::string get_full_path(const std::string& relative_path);
-      /// @internal
       /// @brief Check if specified path is too long for the OS.
       /// @param path The path to cjheck the size.
       /// @return true if path too long; otherwiser false.
       /// @warning Internal use only
       static bool is_path_too_long(const std::string& path);
-      /// @internal
       /// @brief Sets the creation time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param creation_time The file or path creation time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
       static int32_t set_creation_time(const std::string& path, time_t creation_time);
-      /// @internal
       /// @brief Sets the attributes for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path attribute. (see file_attribute.h)
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
       static int32_t set_file_attributes(const std::string& path, int32_t attributes);
-      /// @internal
       /// @brief Sets the last access time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param last_access_time The file or path last access time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
       static int32_t set_last_access_time(const std::string& path, time_t last_access_time);
-      /// @internal
       /// @brief Sets the last write time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param last_write_time The file or path last write time.

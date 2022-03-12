@@ -21,7 +21,6 @@ namespace xtd {
   }
   /// @endcond
   
-  /// @internal
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
@@ -29,7 +28,6 @@ namespace xtd {
     class file_system;
     /// @endcond
     
-    /// @internal
     /// @brief Contains path native API.
     /// @par Namespace
     /// xtd::native
@@ -45,32 +43,26 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @internal
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return A platform-specific alternate character used to separate directory levels in a path string.
       /// @warning Internal use only
       static char alt_directory_separator_char();
-      /// @internal
       /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return A platform-specific character used to separate directory levels in a path string.
       /// @warning Internal use only
       static char directory_separator_char();
-      /// @internal
       /// @brief Gets temp path.
       /// @return The temp path.
       /// @warning Internal use only
       static std::string get_temp_path();
-      /// @internal
       /// @brief Provides a platform-specific array of characters that cannot be specified in path string arguments passed to members of the Path class.
       /// @return A platform-specific array of characters that cannot be specified in path string.
       /// @warning Internal use only
       static std::vector<char> invalid_path_chars();
-      /// @internal
       /// @brief Provides a platform-specific separator character used to separate path strings in environment variables.A platform-specific separator character used to separate path strings in environment variables.
       /// @return A platform-specific separator character used to separate path strings.
       /// @warning Internal use only
       static char path_separator();
-      /// @internal
       /// @brief Provides a platform-specific volume separator character.
       /// @return A platform-specific volume separator character.
       /// @warning Internal use only

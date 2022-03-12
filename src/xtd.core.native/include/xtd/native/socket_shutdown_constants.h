@@ -11,7 +11,6 @@
 
 #include <cstdint>
 
-/// @internal
 /// @brief Disables a xtd::net::sockets::socket for receiving.
 /// @par Library
 /// xtd.core.native
@@ -20,7 +19,6 @@
 /// @warning Internal use only
 constexpr int32_t SOCKET_SHUTDOWN_RECEIVE = 0;
 
-/// @internal
 /// @brief Disables a xtd::net::sockets::socket for sending.
 /// @par Library
 /// xtd.core.native
@@ -29,7 +27,6 @@ constexpr int32_t SOCKET_SHUTDOWN_RECEIVE = 0;
 /// @warning Internal use only
 constexpr int32_t SOCKET_SHUTDOWN_SEND = 1;
 
-/// @internal
 /// @brief Disables a xtd::net::sockets::socket for both sending and receiving.
 /// @par Library
 /// xtd.core.native
