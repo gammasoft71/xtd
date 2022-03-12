@@ -112,8 +112,8 @@ namespace xtd {
         /// @brief Sets the Encoder object associated with this xtd::drawing::imaging::encoder_parameter object. The Encoder object encapsulates the globally unique identifier (GUID) that specifies the category (for example Quality, ColorDepth, or Compression) of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @param value An Encoder object that encapsulates the GUID that specifies the category of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return This current instance.
-         encoder_parameter& encoder(const xtd::drawing::imaging::encoder& value);
-
+        encoder_parameter& encoder(const xtd::drawing::imaging::encoder& value);
+        
         /// @brief Gets the number of elements in the array of values stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return An integer that indicates the number of elements in the array of values stored in this xtd::drawing::imaging::encoder_parameter object.
         size_t number_of_values() const;
@@ -126,14 +126,14 @@ namespace xtd {
         /// @return The data value.
         const std::vector<byte_t>& value() const;
         /// @}
-
+        
       private:
         xtd::drawing::imaging::encoder encoder_;
-
+        
         size_t number_of_values_ = 0;
-
+        
         xtd::drawing::imaging::encoder_parameter_value_type type_;
-
+        
         std::vector<byte_t> value_;
       };
     }

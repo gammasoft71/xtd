@@ -147,7 +147,7 @@ namespace xtd {
         /// @param value A float that specifies the angle of the linear gradient.
         /// @return Current linear_gradient_brush instance.
         linear_gradient_brush& angle(float value) noexcept;
-
+        
         /// @brief Gets the starting and ending colors of the gradient.
         /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the linear gradient.
         const xtd::drawing::drawing2d::gradient_stop_collection& linear_colors() const noexcept;

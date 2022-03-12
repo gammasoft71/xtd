@@ -76,7 +76,7 @@ namespace {
     auto it = bitmap_types.find(bitmap_type);
     return it == bitmap_types.end() ? IFM_UNKNOWN : it->second;
   }
-
+  
   size_t get_frame_resolution(const wxImage& image) {
     switch (image.GetType()) {
       case wxBITMAP_TYPE_BMP: return FD_PAGE;

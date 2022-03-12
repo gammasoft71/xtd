@@ -31,7 +31,7 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int64_t va
 }
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, const xtd::ustring& value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_ascii) {
-  for (auto v :value)
+  for (auto v : value)
     add_bytes(value_, v);
 }
 
@@ -40,33 +40,33 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, byte_t val
 }
 
 encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<byte_t> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
-  for (auto v :value)
+  for (auto v : value)
     add_bytes(value_, v);
 }
 
 encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int16_t> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_short) {
-  for (auto v :value) {
+  for (auto v : value) {
     if (v < 0) throw argument_out_of_range_exception(csf_);
     add_bytes(value_, v);
   }
 }
 
 encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int32_t> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_long) {
-  for (auto v :value) {
+  for (auto v : value) {
     if (v < 0) throw argument_out_of_range_exception(csf_);
     add_bytes(value_, v);
   }
 }
 
 encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int64_t> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_long) {
-  for (auto v :value) {
+  for (auto v : value) {
     if (v < 0) throw argument_out_of_range_exception(csf_);
     add_bytes(value_, as<int32>(v));
   }
 }
 
 encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<byte_t> value, bool undefined) : encoder_(encoder), number_of_values_(value.size()), type_(undefined ? xtd::drawing::imaging::encoder_parameter_value_type::value_type_undefined :  xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
-  for (auto v :value)
+  for (auto v : value)
     add_bytes(value_, v);
 }
 

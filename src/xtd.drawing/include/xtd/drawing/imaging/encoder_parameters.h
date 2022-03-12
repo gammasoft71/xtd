@@ -53,7 +53,7 @@ namespace xtd {
         /// @param value The array of xtd::drawing::imaging::encoder_parameter objects.
         void params(const std::vector<xtd::drawing::imaging::encoder_parameter>& value) {params_ = value;}
         /// @}
-
+        
       private:
         std::vector<xtd::drawing::imaging::encoder_parameter> params_;
       };

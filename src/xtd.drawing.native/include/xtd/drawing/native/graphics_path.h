@@ -42,12 +42,12 @@ namespace xtd {
         /// @return The created graphics_path handle.
         /// @warning Internal use only
         static intptr_t create();
-
+        
         /// @brief Destroys graphics_path.
         /// @param handle The graphics_path handle.
         /// @warning Internal use only
         static void destroy(intptr_t handle);
- 
+        
         /// @brief Appends an elliptical arc to the current figure.
         /// @param handle The graphics_path handle.
         /// @param x The x-coordinate of the upper-left corner of the rectangular region that defines the ellipse from which the arc is drawn.
@@ -58,7 +58,7 @@ namespace xtd {
         /// @param sweep_angle The angle between start_angle and the end of the arc.
         /// @warning Internal use only
         static void add_arc(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle);
-
+        
         /// @brief Adds a cubic Bézier curve to the current figure.
         /// @param handle The graphics_path handle.
         /// @param x1 The x-coordinate of the starting point of the curve.
@@ -71,20 +71,20 @@ namespace xtd {
         /// @param y4 The y-coordinate of the endpoint of the curve.
         /// @warning Internal use only
         static void add_bezier(intptr_t handle, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
-
+        
         /// @brief Adds a sequence of connected cubic Bézier curves to the current figure.
         /// @param handle The graphics_path handle.
         /// @param points An array of std::pair<float, float> structures that represents the points that define the curves.
         /// @warning Internal use only
         static void add_beziers(intptr_t handle, std::vector<std::pair<float, float>> points);
-
+        
         /// @brief Adds a closed curve to the path. A cardinal spline curve is used because the curve travels through each of the points in the array.
         /// @param handle The graphics_path handle.
         /// @param points An array of std::pair<float, float> structures that represents the points that define the curve.
         /// @param tension A value between from 0 through 1 that specifies the amount that the curve bends between points, with 0 being the smallest curve (sharpest corner) and 1 being the smoothest curve.
         /// @warning Internal use only
         static void add_closed_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension);
-
+        
         /// @brief Adds a spline curve to the current figure.
         /// @param handle The graphics_path handle.
         /// @param points An array of std::pair<float, float> structures that represents the points that define the curve.
@@ -93,7 +93,7 @@ namespace xtd {
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @warning Internal use only
         static void add_curve(intptr_t handle, std::vector<std::pair<float, float>> points, size_t offset, size_t number_of_segments, float tension);
-
+        
         /// @brief Adds an ellipse to the current path.
         /// @param handle The graphics_path handle.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
@@ -102,7 +102,7 @@ namespace xtd {
         /// @param height The height of the bounding rectangle that defines the ellipse.
         /// @warning Internal use only
         static void add_ellipse(intptr_t handle, float x, float y, float width, float height);
-
+        
         /// @brief Appends a line segment to the graphics_path.
         /// @param handle The graphics_path handle.
         /// @param x1 The x-coordinate of the starting point of the line.
@@ -111,14 +111,14 @@ namespace xtd {
         /// @param y2 The y-coordinate of the endpoint of the line.
         /// @warning Internal use only
         static void add_line(intptr_t handle, float x1, float y1, float x2, float y2);
-
+        
         /// @brief Appends the specified graphics_path to the path.
         /// @param handle The graphics_path handle.
         /// @param adding_path The graphics path handle to add.
         /// @param connect A bool value that specifies whether the first figure in the added path is part of the last figure in the path. A value of true specifies that (if possible) the first figure in the added path is part of the last figure in the path. A value of false specifies that the first figure in the added path is separate from the last figure in the path.
         /// @warning Internal use only
         static void add_path(intptr_t handle, intptr_t path, bool connect);
-
+        
         /// @brief Adds the outline of a pie shape to the path.
         /// @param handle The graphics_path handle.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie is drawn.
@@ -129,7 +129,7 @@ namespace xtd {
         /// @param sweep_angle The angle between start_angle and the end of the pie section, measured in degrees clockwise from start_angle.
         /// @warning Internal use only
         static void add_pie(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle);
-
+        
         /// @brief Adds a rectangle to the path.
         /// @param handle The graphics_path handle.
         /// @param x The x-coordinate of the upper-left corner of the rectangle.
@@ -138,7 +138,7 @@ namespace xtd {
         /// @param height The height of the rectangle.
         /// @warning Internal use only
         static void add_rectangle(intptr_t handle, float x, float y, float width, float height);
-
+        
         /// @brief Adds a rounded rectangle to the path.
         /// @param handle The graphics_path handle.
         /// @param x The x-coordinate of the upper-left corner of the rounded rectangle.
@@ -148,7 +148,7 @@ namespace xtd {
         /// @param radius The radius of the rounded rectange angles.
         /// @warning Internal use only
         static void add_rounded_rectangle(intptr_t handle, float x, float y, float width, float height, float radius);
-
+        
         /// @brief Adds a text string to the path.
         /// @param handle The graphics_path handle.
         /// @param s The xtd::ustring to add.
@@ -175,22 +175,22 @@ namespace xtd {
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
         static void add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming);
-
+        
         /// @brief Closes all open figures in the path and starts a new figure. It closes each open figure by connecting a line from its endpoint to its starting point.
         /// @param handle The graphics_path handle.
         /// @warning Internal use only
         static void close_all_figures(intptr_t handle);
-
+        
         /// @brief Closes the current figure and starts a new figure. If the current figure contains a sequence of connected lines and curves, the method closes the loop by connecting a line from the endpoint to the starting point.
         /// @param handle The graphics_path handle.
         /// @warning Internal use only
         static void close_figure(intptr_t handle);
-
+        
         /// @brief Converts each curve in the path into a sequence of connected line segments.
         /// @param handle The graphics_path handle.
         /// @warning Internal use only
         static void flatten(intptr_t handle);
-
+        
         /// @brief Returns a rectangle that bounds the graphics_path.
         /// @param handle The graphics_path handle.
         /// @param x The x-coordinate of the upper-left corner that represents a rectangle that bounds the graphics_path.
@@ -213,12 +213,12 @@ namespace xtd {
         /// @param y The y-coordinate of the point to test.
         /// @warning Internal use only
         static bool is_vsible(intptr_t handle, float x, float y);
-
+        
         /// @brief Reverses the order of points of the graphics_path.
         /// @param handle The graphics_path handle.
         /// @warning Internal use only
         static void reverse(intptr_t handle);
-
+        
         /// @brief Starts a new figure without closing the current figure. All subsequent points added to the path are added to this new figure.
         /// @param handle The graphics_path handle.
         /// @warning Internal use only

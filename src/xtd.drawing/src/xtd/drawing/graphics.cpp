@@ -239,7 +239,7 @@ void graphics::draw_beziers(const pen& pen, std::vector<xtd::drawing::point>& po
 
 void graphics::draw_beziers(const pen& pen, std::vector<xtd::drawing::point_f>& points) {
   vector<pair<float, float>> beziers_points;
-  for (auto pt: points)
+  for (auto pt : points)
     beziers_points.push_back(make_pair(pt.x(), pt.y()));
   native::graphics::draw_beziers(handle(), pen.handle(), beziers_points);
 }
@@ -418,12 +418,12 @@ void graphics::draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::d
 
 void graphics::draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points) {
   vector<pair<float, float>> line_points;
-  for (auto pt: points)
+  for (auto pt : points)
     line_points.push_back(make_pair(to_pixels(pt.x()), to_pixels(pt.y())));
   native::graphics::draw_lines(handle(), pen.handle(), line_points);
 }
 
-void graphics::draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path&path) {
+void graphics::draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& path) {
   native::graphics::draw_path(handle(), pen.handle(), path.handle());
 }
 
@@ -452,7 +452,7 @@ void graphics::draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd:
 
 void graphics::draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::point_f>& points) {
   vector<pair<float, float>> line_points;
-  for (auto pt: points)
+  for (auto pt : points)
     line_points.push_back(make_pair(to_pixels(pt.x()), to_pixels(pt.y())));
   native::graphics::draw_polygon(handle(), pen.handle(), line_points);
 }
@@ -497,7 +497,7 @@ void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<x
 
 void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle_f>& rects) {
   vector<tuple<float, float, float, float>> rectangles;
-  for (auto rect: rects)
+  for (auto rect : rects)
     rectangles.push_back(make_tuple(to_pixels(rect.x()), to_pixels(rect.y()), to_pixels(rect.width()), to_pixels(rect.height())));
   native::graphics::draw_rectangles(handle(), pen.handle(), rectangles);
 }
@@ -646,7 +646,7 @@ void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<
 
 void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode) {
   vector<pair<float, float>> line_points;
-  for (auto pt: points)
+  for (auto pt : points)
     line_points.push_back(make_pair(to_pixels(pt.x()), to_pixels(pt.y())));
   native::graphics::fill_polygon(handle(), brush.handle(), line_points, static_cast<int32_t>(fill_mode));
 }
@@ -676,7 +676,7 @@ void graphics::fill_rectangles(const xtd::drawing::brush& brush, const std::vect
 
 void graphics::fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle_f>& rects) {
   vector<tuple<float, float, float, float>> rectangles;
-  for (auto rect: rects)
+  for (auto rect : rects)
     rectangles.push_back(make_tuple(to_pixels(rect.x()), to_pixels(rect.y()), to_pixels(rect.width()), to_pixels(rect.height())));
   native::graphics::fill_rectangles(handle(), brush.handle(), rectangles);
 }
@@ -836,7 +836,7 @@ void graphics::reset_transform() {
   native::graphics::reset_transform(handle());
 }
 
-void graphics::restore(const xtd::drawing::drawing2d::graphics_state &gstate) {
+void graphics::restore(const xtd::drawing::drawing2d::graphics_state& gstate) {
   native::graphics::restore(handle(), gstate.handle_);
 }
 

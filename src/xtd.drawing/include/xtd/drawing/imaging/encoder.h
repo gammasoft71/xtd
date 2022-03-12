@@ -71,7 +71,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
         static encoder chrominance_table() {return encoder(xtd::guid("f2e455dc-09b3-4316-8260-676ada32481c"));}
-
+        
         /// @brief An Encoder object that is initialized with the globally unique identifier for the color depth parameter category.
         /// @return The encoder.
         /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an xtd::drawing::image::encoder_parameter object. One of the fields of the xtd::drawing::image::encoder_parameter object is a GUID that specifies the category of the parameter. Use the static fields of the xtd::drawing::imaging:encoder class to retrieve an xtd::drawing::imaging:encoder that contains parameters of the desired category.
@@ -87,7 +87,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
         static encoder color_depth() {return encoder(xtd::guid("66087055-ad66-4c7c-9a18-38a2310b8337"));}
-
+        
         /// @brief An Encoder object that is initialized with the globally unique identifier for the compression parameter category.
         /// @return The encoder.
         /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an xtd::drawing::image::encoder_parameter object. One of the fields of the xtd::drawing::image::encoder_parameter object is a GUID that specifies the category of the parameter. Use the static fields of the xtd::drawing::imaging:encoder class to retrieve an xtd::drawing::imaging:encoder that contains parameters of the desired category.
@@ -103,7 +103,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
         static encoder compression() {return encoder(xtd::guid("e09d739d-ccd4-44ee-8eba-3fbf8be4fc58"));}
-
+        
         /// @brief An Encoder object that is initialized with the globally unique identifier for the luminance table parameter category.
         /// @return The encoder.
         /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an xtd::drawing::image::encoder_parameter object. One of the fields of the xtd::drawing::image::encoder_parameter object is a GUID that specifies the category of the parameter. Use the static fields of the xtd::drawing::imaging:encoder class to retrieve an xtd::drawing::imaging:encoder that contains parameters of the desired category.
@@ -119,7 +119,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
         static encoder luminance_table() {return encoder(xtd::guid("edb33bce-0266-4a77-b904-27216099e717"));}
-
+        
         /// @brief An Encoder object that is initialized with the globally unique identifier for the quality parameter category.
         /// @return The encoder.
         /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an xtd::drawing::image::encoder_parameter object. One of the fields of the xtd::drawing::image::encoder_parameter object is a GUID that specifies the category of the parameter. Use the static fields of the xtd::drawing::imaging:encoder class to retrieve an xtd::drawing::imaging:encoder that contains parameters of the desired category.
@@ -135,7 +135,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
         static encoder quality() {return encoder(xtd::guid("1d5be4b5-fa4a-452d-9cdd-5db35105e7eb"));}
-
+        
         /// @brief An Encoder object that is initialized with the globally unique identifier for the renderer method category.
         /// @return The encoder.
         /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an xtd::drawing::image::encoder_parameter object. One of the fields of the xtd::drawing::image::encoder_parameter object is a GUID that specifies the category of the parameter. Use the static fields of the xtd::drawing::imaging:encoder class to retrieve an xtd::drawing::imaging:encoder that contains parameters of the desired category.
@@ -151,7 +151,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
         static encoder render_method() {return encoder(xtd::guid("6d42c53a-229a-4825-8bb7-5c99e2b9a8b8"));}
-
+        
         /// @brief An Encoder object that is initialized with the globally unique identifier for the save flag category.
         /// @return The encoder.
         /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an xtd::drawing::image::encoder_parameter object. One of the fields of the xtd::drawing::image::encoder_parameter object is a GUID that specifies the category of the parameter. Use the static fields of the xtd::drawing::imaging:encoder class to retrieve an xtd::drawing::imaging:encoder that contains parameters of the desired category.
@@ -167,7 +167,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
         static encoder save_flag() {return encoder(xtd::guid("292266fc-ac40-47bf-8cfc-a85b89a655de"));}
-
+        
         /// @brief An Encoder object that is initialized with the globally unique identifier for the scan method category.
         /// @return The encoder.
         /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an xtd::drawing::image::encoder_parameter object. One of the fields of the xtd::drawing::image::encoder_parameter object is a GUID that specifies the category of the parameter. Use the static fields of the xtd::drawing::imaging:encoder class to retrieve an xtd::drawing::imaging:encoder that contains parameters of the desired category.
@@ -183,7 +183,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
         static encoder scan_method() {return encoder(xtd::guid("3a4e2661-3109-4e56-8536-42c156e7dcfa"));}
-
+        
         /// @brief An Encoder object that is initialized with the globally unique identifier for the transformation category.
         /// @return The encoder.
         /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an xtd::drawing::image::encoder_parameter object. One of the fields of the xtd::drawing::image::encoder_parameter object is a GUID that specifies the category of the parameter. Use the static fields of the xtd::drawing::imaging:encoder class to retrieve an xtd::drawing::imaging:encoder that contains parameters of the desired category.
@@ -199,7 +199,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
         static encoder transformation() {return encoder(xtd::guid("8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9"));}
-
+        
         /// @brief An Encoder object that is initialized with the globally unique identifier for the version category.
         /// @return The encoder.
         /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an xtd::drawing::image::encoder_parameter object. One of the fields of the xtd::drawing::image::encoder_parameter object is a GUID that specifies the category of the parameter. Use the static fields of the xtd::drawing::imaging:encoder class to retrieve an xtd::drawing::imaging:encoder that contains parameters of the desired category.
@@ -224,7 +224,7 @@ namespace xtd {
         /// @return The GUID that identifies an image encoder parameter category.
         const xtd::guid& guid() const {return guid_;}
         /// @}
-
+        
       private:
         xtd::guid guid_;
       };

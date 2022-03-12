@@ -212,15 +212,15 @@ xtd::drawing::image image::get_thmbnail_image(int32_t thumb_width, int32_t thunb
   return image(*this, thumb_width, thunb_height);
 }
 
-bool image::is_alpha_pixel_format (xtd::drawing::imaging::pixel_format pixfmt) {
+bool image::is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) {
   return (pixfmt & xtd::drawing::imaging::pixel_format::alpha) == xtd::drawing::imaging::pixel_format::alpha;
 }
 
-bool image::is_canonical_pixel_format (xtd::drawing::imaging::pixel_format pixfmt) {
+bool image::is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) {
   return (pixfmt & xtd::drawing::imaging::pixel_format::canonical) == xtd::drawing::imaging::pixel_format::canonical;
 }
 
-bool image::is_extended_pixel_format (xtd::drawing::imaging::pixel_format pixfmt) {
+bool image::is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) {
   return (pixfmt & xtd::drawing::imaging::pixel_format::extended) == xtd::drawing::imaging::pixel_format::extended;
 }
 
@@ -249,7 +249,7 @@ void image::update_properties() {
   native::image::color_palette(data_->handle_, palette_entries, data_->palette_.flags_);
   for (auto [a, r, g, b] : palette_entries)
     data_->palette_.entries_.push_back(color::from_argb(a, r, g, b));
-  
+    
   data_->pixel_format_ = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle_));
   
   int32_t physical_width, physical_height;

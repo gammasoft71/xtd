@@ -118,7 +118,7 @@ namespace xtd {
       /// @param value The width of this xtd::drawing::rectangle_f structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle_f::width property will also cause a change in the xtd::drawing::rectangle_f::bottom property of the xtd::drawing::rectangle_f. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
       void width(float width) noexcept;
-
+      
       /// @brief Gets the x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
       /// @return The x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle_f::x property will also cause a change in the xtd::drawing::rectangle_f::right property of the xtd::drawing::rectangle_f.
@@ -163,7 +163,7 @@ namespace xtd {
       /// @return The added xtd::drawing::rectangle_f.
       /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
       static rectangle_f add(const rectangle_f& rect, const drawing::size_f& sz) noexcept;
-
+      
       /// @brief Determines if the specified point is contained within this xtd::drawing::rectangle_f structure.
       /// @param pt The xtd::drawing::point_f to test.
       /// @return This method returns true if the point represented by pt is contained within this xtd::drawing::rectangle_f structure; otherwise false.
@@ -263,7 +263,7 @@ namespace xtd {
       /// @return A string that contains the position, width, and height of this Rectangle structure ¾ for example, {x=20, y=20, width=100, height=50}.
       xtd::ustring to_string() const noexcept override;
       /// @}
-
+      
       /// @name Operators
       
       /// @{

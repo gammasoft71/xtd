@@ -52,7 +52,7 @@ namespace xtd {
         };
         
         wx_brush() = default;
-       
+        
         void create_conical_gradiant_brush(const wxPoint& center_point, const wxGraphicsGradientStops& colors, float angle) {
           brush_type_ = brush_type::conical_gradient;
           conical_gradiant_brush_.center_point = center_point;
@@ -102,7 +102,7 @@ namespace xtd {
         
         const solid_brush& get_solid_brush() const {return solid_brush_;}
         solid_brush& get_solid_brush() {return solid_brush_;}
-
+        
         const texture_brush& get_texture_brush() const {return texture_brush_;}
         texture_brush& get_texture_brush() {return texture_brush_;}
         

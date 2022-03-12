@@ -94,7 +94,7 @@ namespace xtd {
         
         /// @name Properties
         
-        /// @{        
+        /// @{
         /// @brief Gets the angle of the gradient.
         /// @return A float that specifies the angle of the conical gradient.
         /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
@@ -116,7 +116,7 @@ namespace xtd {
         /// @param value A xtd::drawing::point_f structure that specifies the center point of the angle  gradient.
         /// @return This current instance.
         conical_gradient_brush& center_point(const xtd::drawing::point& value) noexcept;
-
+        
         /// @brief Gets the starting and ending colors of the gradient.
         /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
         const xtd::drawing::drawing2d::gradient_stop_collection& conical_colors() const noexcept;
@@ -127,7 +127,7 @@ namespace xtd {
         /// @}
         
       private:
-         void recreate_handle();
+        void recreate_handle();
         struct data {
           xtd::drawing::point_f center_point;
           float angle = 0;

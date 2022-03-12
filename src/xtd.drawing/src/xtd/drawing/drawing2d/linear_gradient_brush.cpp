@@ -59,10 +59,10 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& re
     angle = 360 - angle;
   while (angle >= 360)
     angle = angle - 360;
-  
+    
   data_->rect = rect;
   data_->angle = angle;
-
+  
   float pos = 0;
   float increment = 1.0f / (linear_colors.size() - 1);
   for (auto color : linear_colors) {
@@ -130,7 +130,7 @@ void linear_gradient_brush::recreate_handle() {
   
   for (auto color : data_->linear_colors)
     colors.push_back(make_tuple(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second));
-  
+    
   native::brush::linear_gradient(handle(), as<int32_t>(data_->rect.left()), as<int32_t>(data_->rect.top()), as<int32_t>(data_->rect.right()), as<int32_t>(data_->rect.bottom()), colors, data_->angle);
 }
 

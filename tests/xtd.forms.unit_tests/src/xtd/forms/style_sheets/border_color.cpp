@@ -13,12 +13,12 @@ namespace unit_tests {
       border_color b;
       assert::are_equal(color::black, b.all(), csf_);
     }
-
+    
     void test_method_(create_with_specified_all_color) {
       border_color b(color::red);
       assert::are_equal(color::red, b.all(), csf_);
     }
-
+    
     void test_method_(create_with_specified_left_top_right_bottom_color) {
       border_color b(color::red, color::green, color::blue, color::yellow);
       assert::are_equal(color::empty, b.all(), csf_);

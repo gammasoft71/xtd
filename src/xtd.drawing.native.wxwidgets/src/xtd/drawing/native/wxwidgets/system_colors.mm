@@ -10,14 +10,14 @@ namespace {
   /// @todo Find a way to replace deprecated properties...
   class effective_appearance_setter {
   public:
-    effective_appearance_setter(){
+    effective_appearance_setter() {
       previous_appearance = NSAppearance.currentAppearance;
       NSAppearance.currentAppearance = NSApp.effectiveAppearance;
     }
     ~effective_appearance_setter() {
       NSAppearance.currentAppearance = previous_appearance;
     }
-
+    
   private:
     NSAppearance* previous_appearance;
   };

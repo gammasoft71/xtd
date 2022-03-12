@@ -25,7 +25,7 @@ namespace xtd {
       rotate_180_flip_none = 2,
       /// @brief Specifies a 270-degree clockwise rotation without flipping.
       rotate_270_flip_none = 3,
-
+      
       /// @brief Specifies no clockwise rotation followed by a horizontal flip.
       rotate_none_flip_x = 4,
       /// @brief Specifies a 90-degree clockwise rotation followed by a horizontal flip.
@@ -34,7 +34,7 @@ namespace xtd {
       rotate_180_flip_x = 6,
       /// @brief Specifies a 270-degree clockwise rotation followed by a horizontal flip.
       rotate_270_flip_x = 7,
-
+      
       /// @brief Specifies no clockwise rotation followed by a vertical flip.
       rotate_none_flip_y = rotate_180_flip_x,
       /// @brief Specifies a 90-degree clockwise rotation followed by a vertical flip.
@@ -43,7 +43,7 @@ namespace xtd {
       rotate_180_flip_y = rotate_none_flip_x,
       /// @brief Specifies a 270-degree clockwise rotation followed by a vertical flip.
       rotate_270_flip_y = rotate_90_flip_x,
-
+      
       /// @brief Specifies no clockwise rotation followed by a horizontal and vertical flip.
       rotate_none_flip_xy = rotate_180_flip_none,
       /// @brief Specifies a 90-degree clockwise rotation followed by a horizontal and vertical flip.

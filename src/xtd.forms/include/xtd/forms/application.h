@@ -138,7 +138,7 @@ namespace xtd {
       /// @remarks The system style sheet is the style sheet corresponding to the current Operating System and the current Desktop Environment.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
       static const xtd::forms::style_sheets::style_sheet& system_style_sheet() noexcept;
-
+      
       /// @brief Gets the path for the application data of a user.
       /// @return The path for the application data of a user.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
@@ -233,14 +233,14 @@ namespace xtd {
       /// @brief Exits the message loop on the current thread and closes all windows on the thread.
       /// @remarks Use this method to exit the message loop of the current thread. This method causes the call to run for the current thread to return. To exit the entire application, call exit.
       static void exit_thread();
-
+      
       /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
       /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
       /// @exception xtd::argument_exception The style sheet name not tvalid.
       /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
       static xtd::forms::style_sheets::style_sheet get_style_sheet_from_name(const xtd::ustring& name);
-
+      
       /// @brief Raises the Idle event
       /// @param e The event_args objects to pass to the idle event.
       static void raise_idle(const event_args& e);

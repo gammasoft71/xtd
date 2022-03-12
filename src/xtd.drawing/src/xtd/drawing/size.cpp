@@ -75,7 +75,7 @@ size size::round(const size_f& value) noexcept {
   return {int32_t(std::round(value.width())), int32_t(std::round(value.height()))};
 }
 
-size size::truncate(const size_f& value)  noexcept{
+size size::truncate(const size_f& value)  noexcept {
   return {int32_t(std::trunc(value.width())), int32_t(std::trunc(value.height()))};
 }
 

@@ -66,7 +66,7 @@ namespace xtd {
         /// @return The toolkit handle.
         /// @warning Internal use only
         static intptr_t initialize();
-
+        
         /// @brief Shutdowns toolkit
         /// @param handle The toolkit handle.
         /// @warning Internal use only

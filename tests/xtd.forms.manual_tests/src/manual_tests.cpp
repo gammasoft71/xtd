@@ -14,7 +14,7 @@ public:
     text("form1");
     client_size({800, 450});
     
-    paint += [&](object& sender, paint_event_args& e) {
+    paint += [&](object & sender, paint_event_args & e) {
       auto back_color = color::navy;
       auto fore_color = color::white;
       
@@ -40,7 +40,7 @@ public:
       e.graphics().draw_rectangle(pen(color::white, 4).line_join(xtd::drawing::drawing2d::line_join::bevel), rectangle(350, 180, 150, 150));
     };
   }
-    
+  
 private:
   image create_circle_texture(const color& fore_color, const color& back_color) {
     auto texture = bitmap(16, 16);

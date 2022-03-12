@@ -129,7 +129,7 @@ namespace xtd {
       /// @param value The width of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::width property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
       void width(int32_t value) noexcept;
-
+      
       /// @brief Gets the x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
       /// @return The x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::x property will also cause a change in the xtd::drawing::rectangle::right property of the xtd::drawing::rectangle.
@@ -174,7 +174,7 @@ namespace xtd {
       /// @return The added xtd::drawing::rectangle.
       /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
       static rectangle add(const rectangle& rect, const drawing::size& sz) noexcept;
-
+      
       /// @brief Converts the specified xtd::drawing::rectangle_f structure to a xtd::drawing::rectangle structure by rounding the xtd::drawing::rectangle_f values to the next higher integer values.
       /// @param rect The xtd::drawing::rectangle_f structure to be converted.
       /// @return Returns a xtd::drawing::rectangle.
@@ -274,16 +274,16 @@ namespace xtd {
       /// @return The offsetted xtd::drawing::rectangle.
       /// @remarks This method makes a copy of rect, offsets the copy, and then returns the offsetted copy.
       static rectangle offset(const rectangle& rect, int x, int y) noexcept;
-
+      
       /// @brief Converts the specified xtd::drawing::rectangle_f to a xtd::drawing::rectangle by rounding the xtd::drawing::rectangle_f values to the nearest integer values.
       /// @param rect The xtd::drawing::rectangle_f to be converted.
       /// @return The rounded integer value of the xtd::drawing::rectangle.
       static rectangle round(const rectangle_f& rect) noexcept;
-
+      
       /// @brief Converts the attributes of this xtd::drawing::rectangle to a human-readable string.
       /// @return A string that contains the position, width, and height of this Rectangle structure ¾ for example, {x=20, y=20, width=100, height=50}.
       xtd::ustring to_string() const noexcept override;
-
+      
       /// @brief Converts the specified xtd::drawing::rectangle_f to a xtd::drawing::rectangle by truncating the xtd::drawing::rectangle_f values.
       /// @param rect The xtd::drawing::rectangle_f to be converted.
       /// @return The truncated value of the xtd::drawing::rectangle.
@@ -302,7 +302,7 @@ namespace xtd {
       /// @return This operator returns true if any of the xtd::drawing::rectangle::x, xtd::drawing::rectangle::y, xtd::drawing::rectangle::width or xtd::drawing::rectangle::height properties of the two xtd::drawing::rectangle structures are unequal; otherwise false.
       bool operator!=(const rectangle& value) const noexcept;
       /// @}
-
+      
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::rectangle& rectangle) noexcept {return os << rectangle.to_string();}
       /// @endcond

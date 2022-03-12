@@ -21,7 +21,7 @@ namespace xtd {
       /// @cond
       class style_sheet;
       /// @endcond
-
+      
       /// @brief The image data allows you to specify the url or gradient mode.
       /// @code
       /// class forms_export_ background_image : public xtd::object
@@ -42,7 +42,7 @@ namespace xtd {
         /// @brief Provides an empty xtd::forms::style_sheets::background_image object.
         static const background_image empty;
         /// @}
-
+        
         /// @name Constructors
         
         /// @{
@@ -96,7 +96,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception if xtd::forms::style_sheets::background_image::image_type is not of xtd::forms::style_sheets::image_type::url and not xtd::forms::style_sheets::image_type::linear_gradient.
         background_image(xtd::forms::style_sheets::image_type image_type, const std::vector<xtd::drawing::color>& colors, int32_t angle);
         /// @}
-
+        
         /// @cond
         background_image(const std::initializer_list<xtd::drawing::color>& colors);
         background_image(const background_image&) = default;
@@ -115,7 +115,7 @@ namespace xtd {
         /// @param value The angle specifies the gradient direction.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         void angle(int32_t value) noexcept;
-
+        
         /// @brief Gets the colors specifies what colors to display.
         /// @return The colors specifies what colors to display.
         /// @remarks For xtd::forms::style_sheets::image_type::color, only the first color is used.
@@ -125,14 +125,14 @@ namespace xtd {
         /// @remarks For xtd::forms::style_sheets::image_type::color, only the first color is used.
         /// @exception xtd::argument_exception colors is less than 2.
         void colors(const std::vector<xtd::drawing::color>& value);
-
+        
         /// @brief Gets the url of image to display.
         /// @return The url of image to display.
         const xtd::ustring& url() const noexcept;
         /// @brief Sets the url of image to display.
         /// @param value The url of image to display.
         void url(const xtd::ustring& value) noexcept;
-
+        
         /// @brief Gets the image type that specifies what kind of image to display.
         /// @return The image type tht specifies what kind of image to display.
         xtd::forms::style_sheets::image_type image_type() const noexcept;
@@ -140,22 +140,22 @@ namespace xtd {
         /// @param value The style specifies what kind of image to display.
         void image_type(xtd::forms::style_sheets::image_type value) noexcept;
         /// @}
-
+        
         /// @name Methods
         
         /// @{
         bool equals(const object& other) const noexcept override {return is<background_image>(other) ? equals(static_cast<const background_image&>(other)) : false;}
         bool equals(const background_image& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
-
+        
         /// @brief Creates a xtd::drawing::brush from specified image data and rectangle.
         /// @param image Contains image data.
         /// @param rect The xtd::drawing::rectangle neeed for linear gradient brush
         /// @return New instance of brush.
         static std::unique_ptr<xtd::drawing::brush> make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect);
-
+        
         xtd::ustring to_string() const noexcept override;
         /// @}
-
+        
       private:
         friend class style_sheet;
         xtd::forms::style_sheets::image_type image_type_ = style_sheets::image_type::none;

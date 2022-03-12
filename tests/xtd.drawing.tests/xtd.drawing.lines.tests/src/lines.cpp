@@ -15,7 +15,7 @@ public:
     text("Lines tests");
     padding(5);
     client_size({800, 600});
-
+    
     tab_control.parent(*this);
     tab_control.dock(dock_style::fill);
     
@@ -30,11 +30,11 @@ public:
     tab_page_dash.parent(tab_control);
     tab_page_dash.text("Dash");
     tab_page_dash.paint += {*this, &lines_form::draw_pens_with_dash};
-
+    
     tab_page_cap.parent(tab_control);
     tab_page_cap.text("Cap");
     tab_page_cap.paint += {*this, &lines_form::draw_pens_with_cap};
-
+    
     tab_page_alignment.parent(tab_control);
     tab_page_alignment.text("Alignment");
     tab_page_alignment.paint += {*this, &lines_form::draw_pens_with_alignment};
@@ -63,12 +63,12 @@ private:
   
   void draw_pens_with_color(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
-
+    
     e.graphics().draw_line(pen(color::red, 1), point(50, 50), point(250, 50));
     e.graphics().draw_line(pen(color::green, 2), point(50, 100), point(250, 100));
     e.graphics().draw_line(pen(color::blue, 5), point(50, 150), point(250, 150));
     e.graphics().draw_line(pen(color::yellow, 10), point(50, 200), point(250, 200));
-
+    
     e.graphics().draw_line(pen(color::red, 1), point(350, 50), point(350, 250));
     e.graphics().draw_line(pen(color::green, 2), point(400, 50), point(400, 250));
     e.graphics().draw_line(pen(color::blue, 5), point(450, 50), point(450, 250));
@@ -118,7 +118,7 @@ private:
     graphics.fill_ellipse(solid_brush(foreground_color), 1, 1, texture.width() - 2, texture.height() - 2);
     return texture;
   }
-
+  
 };
 
 startup_(lines_form);

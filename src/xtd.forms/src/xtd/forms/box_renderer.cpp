@@ -17,7 +17,7 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const i
   draw_line_left(graphics, border_rect, box_model);
   draw_line_bottom(graphics, border_rect, box_model);
   draw_line_right(graphics, border_rect, box_model);
-
+  
   auto fill_rect = box_model.get_fill_rectangle(bounds);
   graphics.fill_rounded_rectangle(solid_brush(box_model.background_color()), fill_rect, box_model.border_radius().top_left().get_pixels(bounds));
   auto image_brush = background_image::make_brush(box_model.background_image(), fill_rect);
@@ -34,7 +34,7 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
     color1 = solid_brush(color::dark(color1.color()));
   if (box_model.border_style().top() == border_type::outset && color1.color().is_dark())
     color1 = solid_brush(color::light(color1.color()));
-  
+    
   auto pen1 = pen(color1, as<float>(pen_width1));
   pen1.dash_style(border_type_to_dash_style(box_model.border_style().top()));
   // top
@@ -55,7 +55,7 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
     color1 = solid_brush(color::light(color1.color()));
   if (box_model.border_style().right() == border_type::outset && color1.color().is_light())
     color1 = solid_brush(color::dark(color1.color()));
-  
+    
   auto pen1 = pen(color1, as<float>(pen_width1));
   pen1.dash_style(border_type_to_dash_style(box_model.border_style().right()));
   // right
@@ -76,7 +76,7 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
     color1 = solid_brush(color::light(color1.color()));
   if (box_model.border_style().bottom() == border_type::outset && color1.color().is_light())
     color1 = solid_brush(color::dark(color1.color()));
-  
+    
   auto pen1 = pen(color1, as<float>(pen_width1));
   pen1.dash_style(border_type_to_dash_style(box_model.border_style().bottom()));
   // bottom
@@ -97,7 +97,7 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
     color1 = solid_brush(color::dark(color1.color()));
   if (box_model.border_style().left() == border_type::outset && color1.color().is_dark())
     color1 = solid_brush(color::light(color1.color()));
-  
+    
   auto pen1 = pen(color1, as<float>(pen_width1));
   pen1.dash_style(border_type_to_dash_style(box_model.border_style().left()));
   // left

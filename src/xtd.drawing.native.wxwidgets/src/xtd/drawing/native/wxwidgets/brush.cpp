@@ -33,12 +33,12 @@ void brush::conical_gradient(intptr_t brush, int32_t center_x, int32_t center_y,
     colours.Add(wxColour(r, g, b, a), pos);
   }
   
-  reinterpret_cast<wx_brush*>(brush)->create_conical_gradiant_brush(center_point, colours, angle);                                                                                
+  reinterpret_cast<wx_brush*>(brush)->create_conical_gradiant_brush(center_point, colours, angle);
 }
 
 void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle) {
   if (colors.size() < 2) throw argument_exception(csf_);
-
+  
   if (angle <= 22) angle = 0;
   else if (angle <= 67) angle = 45;
   else if (angle <= 112) angle = 90;
@@ -58,7 +58,7 @@ void brush::linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, 
     auto [r, g, b, a, pos] = color;
     colours.Add(wxColour(r, g, b, a), pos);
   }
-
+  
   if (angle == 0 || angle == 180) p2.y = p1.y;
   if (angle == 90 || angle == 270) p2.x = p1.x;
   if (angle == 135 || angle == 315) swap(p1.x, p2.x);
@@ -79,7 +79,7 @@ void brush::radial_gradient(intptr_t brush, int32_t center_x, int32_t center_y, 
     auto [r, g, b, a, pos] = color;
     colours.Add(wxColour(r, g, b, a), pos);
   }
-
+  
   reinterpret_cast<wx_brush*>(brush)->create_radial_gradiant_brush(center_point, focal_point, colours, radius);
 }
 

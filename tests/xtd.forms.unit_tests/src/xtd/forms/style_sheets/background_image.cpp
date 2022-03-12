@@ -18,7 +18,7 @@ namespace unit_tests {
       collection_assert::are_equal({color::black, color::black}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
     }
-
+    
     void test_method_(create_with_specified_url) {
       background_image i("arrow.png");
       assert::are_equal(image_type::url, i.image_type(), csf_);
@@ -45,17 +45,17 @@ namespace unit_tests {
       collection_assert::are_equal({color::blue, color::white}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
     }
-
+    
     void test_method_(create_with_specified_image_type_linear_gradient_and_one_color) {
-      assert::throws<argument_exception>([]{background_image i(image_type::linear_gradient, {color::blue});}, csf_);
+      assert::throws<argument_exception>([] {background_image i(image_type::linear_gradient, {color::blue});}, csf_);
     }
     
     void test_method_(create_with_specified_image_type_radial_gradient_and_colors) {
-      assert::throws<not_supported_exception>([]{background_image i(image_type::radial_gradient, {color::blue, color::white});}, csf_);
+      assert::throws<not_supported_exception>([] {background_image i(image_type::radial_gradient, {color::blue, color::white});}, csf_);
     }
     
     void test_method_(create_with_specified_image_type_conic_gradient_and_colors) {
-      assert::throws<not_supported_exception>([]{background_image i(image_type::conic_gradient, {color::blue, color::white});}, csf_);
+      assert::throws<not_supported_exception>([] {background_image i(image_type::conic_gradient, {color::blue, color::white});}, csf_);
     }
     
     void test_method_(create_with_specified_image_type_linear_gradient_colors_and_angle) {
@@ -68,15 +68,15 @@ namespace unit_tests {
     }
     
     void test_method_(create_with_specified_image_type_linear_gradient_one_color_and_angle) {
-      assert::throws<argument_exception>([]{background_image i(image_type::linear_gradient, {color::blue}, 270);}, csf_);
+      assert::throws<argument_exception>([] {background_image i(image_type::linear_gradient, {color::blue}, 270);}, csf_);
     }
     
     void test_method_(create_with_specified_image_type_radial_gradient_colors_and_angle) {
-      assert::throws<not_supported_exception>([]{background_image i(image_type::radial_gradient, {color::blue, color::white}, 270);}, csf_);
+      assert::throws<not_supported_exception>([] {background_image i(image_type::radial_gradient, {color::blue, color::white}, 270);}, csf_);
     }
     
     void test_method_(create_with_specified_image_type_conic_gradient_colors_and_angle) {
-      assert::throws<not_supported_exception>([]{background_image i(image_type::conic_gradient, {color::blue, color::white}, 270);}, csf_);
+      assert::throws<not_supported_exception>([] {background_image i(image_type::conic_gradient, {color::blue, color::white}, 270);}, csf_);
     }
   };
 }

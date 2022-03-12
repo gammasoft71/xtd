@@ -100,7 +100,7 @@ std::vector<ustring> system_images::names() noexcept {
 }
 
 std::vector<xtd::ustring> system_images::names(const xtd::ustring& context) noexcept {
-  return context_names()[context];  
+  return context_names()[context];
 }
 
 std::vector<xtd::drawing::size> system_images::sizes() noexcept {
@@ -142,7 +142,7 @@ image system_images::from_name(const ustring& theme, const ustring& name, const 
   if (file::exists(path::combine(theme_path, default_size_names[it_sizes - default_sizes.begin()], name + ".png"))) return bitmap(path::combine(theme_path, default_size_names[it_sizes - default_sizes.begin()], name + ".png"));
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
     if (file::exists(path::combine(theme_path, default_size_names[it - default_sizes.begin()], name + ".png"))) return bitmap(bitmap(path::combine(theme_path, default_size_names[it - default_sizes.begin()], name + ".png")), *it_sizes);
-  
+    
   if (dark_mode) {
     if (file::exists(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it_sizes - default_sizes.begin()], name + "-dark.png"))) return bitmap(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it_sizes - default_sizes.begin()], name + "-dark.png"));
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
@@ -152,7 +152,7 @@ image system_images::from_name(const ustring& theme, const ustring& name, const 
   if (file::exists(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it_sizes - default_sizes.begin()], name + ".png"))) return bitmap(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it_sizes - default_sizes.begin()], name + ".png"));
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
     if (file::exists(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it - default_sizes.begin()], name + ".png"))) return bitmap(bitmap(path::combine(system_images_resource_path(), fallback_theme(), default_size_names[it - default_sizes.begin()], name + ".png")), *it_sizes);
-  
+    
   return image::empty;
 }
 

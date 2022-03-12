@@ -109,17 +109,17 @@ namespace xtd {
       /// @param pt2 The xtd::drawing::point_f to add.
       /// @return The xtd::drawing::point_f that is the result of the addition operation.
       static point_f add(const point_f& pt1, const point_f& pt2) noexcept;
-
+      
       /// @brief Translates this xtd::drawing::point_f by the specified amount.
       /// @param dx The amount to offset the x-coordinate.
       /// @param dy The amount to offset the y-coordinate.
       void offset(float dx, float dy) noexcept;
-
+      
       /// @brief Translates this xtd::drawing::point_f by the specified xtd::drawing::point_f.
       /// @param p The xtd::drawing::point used offset this xtd::drawing::point_f.
       /// @remarks This method adjusts the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of this xtd::drawing::point_f to the sum of the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of this xtd::drawing::point_f and p.
       void offset(const point_f& pt) noexcept;
-
+      
       /// @brief Returns the result of subtracting specified xtd::drawing::size from the specified xtd::drawing::point_f.
       /// @param pt The xtd::drawing::point_f to be subtracted from.
       /// @param sz The xtd::drawing::size to subtract from the xtd::drawing::point.
@@ -151,7 +151,7 @@ namespace xtd {
       /// @cond
       bool operator==(const point_f& value) const noexcept {return x_ == value.x_ && y_ == value.y_;}
       bool operator!=(const point_f& value) const noexcept {return !operator==(value);}
-
+      
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point_f& point) noexcept {
         return os << point.to_string();
       }

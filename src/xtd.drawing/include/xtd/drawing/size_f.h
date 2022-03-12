@@ -78,7 +78,7 @@ namespace xtd {
       /// @brief Tests whether this Size class has xtd::drawing::size_f::width and xtd::drawing::size_f::height of 0.
       /// @return Returns true  when this xtd::drawing::size_f class has both a xtd::drawing::size_fwidth and xtd::drawing::size_fheight of 0; otherwise, false.
       bool is_empty() const noexcept;
-
+      
       /// @brief Gets the horizontal component of this xtd::drawing::size_f class.
       /// @return The horizontal component of this xtd::drawing::size_f class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size_f::height and xtd::drawing::size_f::width of the xtd::drawing::size_f class depend on the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::graphics object that is used to draw.

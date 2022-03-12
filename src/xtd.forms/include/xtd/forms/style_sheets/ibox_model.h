@@ -42,7 +42,7 @@ namespace xtd {
         /// @return The background color is used to add background effects to the box.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual const xtd::drawing::color& background_color() const noexcept = 0;
-
+        
         /// @brief Gets the background image is used to add background effects to the box.
         /// @return The background image is used to add background effects to the box.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
@@ -67,26 +67,26 @@ namespace xtd {
         /// @return The width specifies the width of the borders.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual xtd::forms::style_sheets::border_width border_width() const noexcept = 0;
-
+        
         /// @brief Gets the height of the box.
         /// @return The height of the box.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual std::optional<xtd::forms::style_sheets::length> height() const noexcept = 0;
-
+        
         /// @brief Gets the area outside the border.
         /// @return The area outside the border.
         /// @remarks The margin is transparent.
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual const xtd::forms::style_sheets::margin& margin() const noexcept = 0;
-
+        
         /// @brief Gets the area area around the content.
         /// @return The area around the content.
         /// @remarks The padding is transparent.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual const xtd::forms::style_sheets::padding& padding() const noexcept = 0;
-
+        
         /// @brief Gets the width of the box.
         /// @return The width of the box.
         /// @remarks You need to know how the box model works.
@@ -102,14 +102,14 @@ namespace xtd {
         /// @return The computed boder rectangle from specified bounds.
         /// @remarks The border rectangle is euqual to bounds rectangle minus margin.
         virtual xtd::drawing::rectangle get_border_rectangle(const xtd::drawing::rectangle& bounds) const noexcept = 0;
-
+        
         /// @brief Gets the computed fill rectangle from specified bounds.
         /// @param bounds The bounds use to compute the fill rectangle with this box instance.
         /// @return The computed boder rectangle from specified bounds.
         /// @remarks The fill rectangle is euqual to border rectangle minus border width.
         /// @remarks The fill rectangle is euqual to content rectangle plus padding.
         virtual xtd::drawing::rectangle get_fill_rectangle(const xtd::drawing::rectangle& bounds) const noexcept = 0;
-
+        
         /// @brief Gets the computed content rectangle from specified bounds.
         /// @param bounds The bounds use to compute the content rectangle with this box instance.
         /// @return The content boder rectangle from specified bounds.

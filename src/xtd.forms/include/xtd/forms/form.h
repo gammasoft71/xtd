@@ -354,7 +354,7 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_system_colors_changed(const event_args& e);
-
+      
       void on_resize(const event_args& e) override;
       void wnd_proc(message& message) override;
       
@@ -369,7 +369,7 @@ namespace xtd {
       /// @brief Processes the recreate window message the form control receives as the top-level window.
       /// @param message The message sent to the top-level window.
       virtual void wm_recreate(message& message);
-
+      
       /// @brief Processes the system color change message the form control receives as the top-level window.
       /// @param message The message sent to the top-level window.
       virtual void wm_syscolor_change(message& message);

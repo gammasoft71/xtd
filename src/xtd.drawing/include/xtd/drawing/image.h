@@ -31,7 +31,7 @@ namespace xtd {
     /// @cond
     class bitmap;
     /// @endcond
-
+    
     /// @brief An abstract base class that provides functionality for the bitmap and metafile descended classes.
     /// @code
     /// class drawing_export_ image : public xtd::object
@@ -160,7 +160,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-
+      
       /// @brief Creates the xtd::drawing::graphics for the image.
       /// @return A xtd::drawing::graphics for the image.
       /// @ingroup drawing
@@ -170,7 +170,7 @@ namespace xtd {
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The xtd::drawing::image this method creates.
       static image from_file(const xtd::ustring& filename) {return image(filename);}
-
+      
       /// @brief Creates a xtd::drawing::bitmap from a handle to a GDI bitmap.
       /// @param hbitmap The GDI bitmap handle from which to create the xtd::drawing::bitmap.
       /// @return The xtd::drawing::bitmap this method creates.
@@ -199,7 +199,7 @@ namespace xtd {
       /// @param guid A GUID that specifies the image encoder.
       /// @return An xtd::drawing::imaging::encoder_parameters that contains an array of xtd::drawing::imaging::encoder_parameter objects. Each xtd::drawing::imaging::encoder_parameter contains information about one of the parameters supported by the specified image encoder.
       xtd::drawing::imaging::encoder_parameters get_encoder_parameter_list(xtd::guid encoder) const;
-
+      
       /// @brief Returns the number of frames of the specified dimension.
       /// @param dimension A xtd::drawing::imaging::frame_dimension that specifies the identity of the dimension type.
       /// @return The number of frames in the specified dimension.
@@ -212,7 +212,7 @@ namespace xtd {
       /// @param pixfmt The xtd::drawing::imaging::pixel_format member that specifies the format for which to find the size.
       /// @return The color depth of the specified pixel format.
       static int32_t get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt);
-
+      
       /// @brief Gets the specified property item from this xtd::drawing::image.
       /// @param propid The ID of the property item to get.
       /// @return The xtd::drawing::imaging::property_item this method gets.
@@ -232,17 +232,17 @@ namespace xtd {
       /// @brief Returns a value that indicates whether the pixel format for this xtd::drawing::image contains alpha information.
       /// @param pixfmt The PixelFormat to test.
       /// @return true if pixfmt contains alpha information; otherwise, false.
-      static bool is_alpha_pixel_format (xtd::drawing::imaging::pixel_format pixfmt);
-
+      static bool is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt);
+      
       /// @brief Returns a value that indicates whether the pixel format is 32 bits per pixel.
       /// @param pixfmt The PixelFormat to test.
       /// @return true if pixfmt is canonical; otherwise, false.
-      static bool is_canonical_pixel_format (xtd::drawing::imaging::pixel_format pixfmt);
+      static bool is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt);
       
       /// @brief Returns a value that indicates whether the pixel format is 64 bits per pixel.
       /// @param pixfmt The PixelFormat to test.
       /// @return true if pixfmt is extended; otherwise, false.
-      static bool is_extended_pixel_format (xtd::drawing::imaging::pixel_format pixfmt);
+      static bool is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt);
       
       /// @brief Rotates, flips, or rotates and flips the xtd::drawing::image.
       /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
@@ -280,7 +280,7 @@ namespace xtd {
       
     private:
       void update_properties();
-
+      
       struct data {
         imaging::image_flags flags_ = imaging::image_flags::none;
         std::map<xtd::guid, size_t> frame_dimensions = {{xtd::drawing::imaging::frame_dimension::page().guid(), 1}};

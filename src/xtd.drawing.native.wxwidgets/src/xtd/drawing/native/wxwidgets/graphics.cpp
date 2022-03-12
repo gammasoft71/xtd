@@ -415,16 +415,16 @@ void graphics::fill_polygon(intptr_t handle, intptr_t brush, const std::vector<s
 void graphics::fill_rectangle(intptr_t handle, intptr_t brush, float x, float y, float width, float height) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush())
     graphics.DrawBitmap(wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle), x, y, width, height);
-  } else {
+  else {
     graphics.SetPen(wxNullPen);
     graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
     graphics.DrawRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
   }
-
+  
   // Workaround : with wxWidgets version <= 3.1.5 Radial gradient does not fill rectangle with end color on Windows.
-#if defined(WIN32)
+  #if defined(WIN32)
   if (reinterpret_cast<wx_brush*>(brush)->is_radial_gradiant_brush()) {
     auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
     wxImage image(width, height);
@@ -450,8 +450,8 @@ void graphics::fill_rectangle(intptr_t handle, intptr_t brush, float x, float y,
     conical_gradient_bitmap = conical_gradient_image;
     graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
   }
-#endif
-
+  #endif
+  
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -468,9 +468,9 @@ void graphics::fill_region(intptr_t handle, intptr_t brush, intptr_t region) {
   wx_region->GetBox(x, y, width, height);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Clip(*wx_region);
-  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush())
     graphics.DrawBitmap(wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle), x, y, width, height);
-  } else {
+  else {
     graphics.SetPen(wxNullPen);
     graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
     graphics.DrawRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
@@ -496,14 +496,14 @@ void graphics::fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, 
     graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
     graphics.DrawRoundedRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
   }
-
+  
   // Workaround : with wxWidgets version <= 3.1.5 Radial gradient does not fill rounded rectangle with end color on Windows.
-#if defined(WIN32)
+  #if defined(WIN32)
   if (reinterpret_cast<wx_brush*>(brush)->is_radial_gradiant_brush()) {
     auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
     wxImage image(width, height);
     image.InitAlpha();
-    for (int y_ia = 0; y_ia <height; y_ia++)
+    for (int y_ia = 0; y_ia < height; y_ia++)
       for (int x_ia = 0; x_ia < width; x_ia++)
         image.SetAlpha(x_ia, y_ia, 0);
     wxBitmap conical_gradient_bitmap(image);
@@ -523,8 +523,8 @@ void graphics::fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, 
     conical_gradient_bitmap = conical_gradient_image;
     graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
   }
-#endif
-
+  #endif
+  
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
