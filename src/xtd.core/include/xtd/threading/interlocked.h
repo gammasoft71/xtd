@@ -44,7 +44,6 @@ namespace xtd {
       /// @param value The value to be added to the integer at location.
       /// @return int32_t The new value stored at location.
       static int32_t add(int32_t& location, int32_t value) noexcept;
-      
       /// @brief Adds two 64-bit integers and replaces the first integer with the sum, as an atomic operation.
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
       /// @param value The value to be added to the integer at location.
@@ -56,33 +55,28 @@ namespace xtd {
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      static double compare_exchange(double& location, double value, double comparand) noexcept;
-      
+      static double compare_exchange(double& location, double value, double comparand) noexcept;      
       /// @brief Compares two 32-bit signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with Comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param Comparand The value that is compared to the value at location.
       /// @return The original value in location.
       static int32_t compare_exchange(int32_t& location, int32_t value, int32_t comparand) noexcept;
-      
       /// @brief Compares two 64-bit signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       static int64_t compare_exchange(int64_t& location, int64_t value, int64_t comparand) noexcept;
-      
       /// @cond
       static llong_t compare_exchange(llong_t& location, llong_t value, llong_t comparand) noexcept;
       /// @endcond
-
       /// @brief Compares two platform-specific handles or pointers for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       static void* compare_exchange(void*& location, void* value, void* comparand) noexcept;
-      
       /// @brief Compares two objects for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
@@ -96,7 +90,6 @@ namespace xtd {
           location = value;
         return retValue;
       }
-      
       /// @brief Compares two instances of the specified reference type type_t for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
@@ -110,7 +103,6 @@ namespace xtd {
           location = value;
         return retValue;
       }
-      
       /// @brief Compares two Single for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
@@ -124,8 +116,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example shows a thread-safe way to increment and decrement an integer value. SafeInstanceCount will always be zero. However, UnsafeInstanceCount will not necessarily be zero because a race condition occurs between incrementing and decrementing the count. This effect is especially marked on a multiprocessor computer.
       /// @include interlocked_decrement.cpp
-      static int32_t decrement(int32_t& location) noexcept;
-      
+      static int32_t decrement(int32_t& location) noexcept;      
       /// @brief Decrements a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be decremented.
       /// @return The decremented value.
@@ -142,13 +133,11 @@ namespace xtd {
         location = value;
         return original;
       }
-      
       /// @brief Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location_d parameter is set.
       /// @return The original value of location_d.
       static double exchange(double& location, double value) noexcept;
-      
       /// @brief Sets a 32-bit signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
@@ -157,23 +146,19 @@ namespace xtd {
       /// The following code example shows a thread-safe resource locking mechanism.
       /// @include interlocked.cpp
       static int32_t exchange(int32_t& location, int32_t value) noexcept;
-      
       /// @brief Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       static int64_t exchange(int64_t& location, int64_t value) noexcept;
-      
       /// @cond
       static llong_t exchange(llong_t& location, llong_t value) noexcept;
       /// @endcond
-      
       /// @brief Sets a platform-specific handles or pointers to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       static void* exchange(void*& location, void* value) noexcept;
-      
       /// @brief Sets an object to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
@@ -185,7 +170,6 @@ namespace xtd {
         location = value;
         return original;
       }
-      
       /// @brief Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location_f parameter is set.
@@ -199,7 +183,6 @@ namespace xtd {
       /// The following code example shows a thread-safe way to increment and decrement an integer value. SafeInstanceCount will always be zero. However, UnsafeInstanceCount will not necessarily be zero because a race condition occurs between incrementing and decrementing the count. This effect is especially marked on a multiprocessor computer.
       /// @include interlocked_decrement.cpp
       static int32_t increment(int32_t& location) noexcept;
-      
       /// @brief Increments a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be incremented.
       /// @return The incremented value.
