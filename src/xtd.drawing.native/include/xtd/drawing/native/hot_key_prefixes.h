@@ -1,6 +1,3 @@
-/// @file
-/// @brief Contains xtd::drawing::drawing2d::line_joins constant.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #ifndef __XTD_DRAWING_NATIVE_LIBRARY__

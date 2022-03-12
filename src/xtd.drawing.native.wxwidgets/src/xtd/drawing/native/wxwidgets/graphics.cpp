@@ -591,7 +591,7 @@ void graphics::interpolation_mode(intptr_t handle, int32_t interpolation_mode) {
     case IM_BICUBIC: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_GOOD); break;
     case IM_NEAREST_NEIGHBOOR: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_GOOD); break;
     case IM_HIGH_QUALLITY_BILINEAR: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_BEST); break;
-    case IL_HIGN_QUALITY_BICUBIC: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_BEST); break;
+    case IM_HIGN_QUALITY_BICUBIC: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_BEST); break;
     default: graphics->SetInterpolationQuality(wxInterpolationQuality::wxINTERPOLATION_DEFAULT); break;
   }
 }

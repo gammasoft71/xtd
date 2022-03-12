@@ -1,6 +1,3 @@
-/// @file
-/// @brief Contains xtd::drawing::drawing2d::copy_pixel_operations constant.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #ifndef __XTD_DRAWING_NATIVE_LIBRARY__
