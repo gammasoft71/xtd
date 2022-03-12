@@ -77,4 +77,4 @@ constexpr int32_t IM_HIGH_QUALLITY_BILINEAR = 6;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IL_HIGN_QUALITY_BICUBIC = 7;
+constexpr int32_t IM_HIGN_QUALITY_BICUBIC = 7;
