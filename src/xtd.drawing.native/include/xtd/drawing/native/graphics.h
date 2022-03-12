@@ -64,7 +64,7 @@ namespace xtd {
         /// @warning Internal use only
         static void compositing_quality(intptr_t handle, int32_t compositing_quality);
 
-        /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
+        /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the graphics.
         /// @param handle The graphics handle.
         /// @param source_x The x-coordinate of the upper-left corner of the source rectangle.
         /// @param source_y The y-coordinate of the upper-left corner of the source rectangle.
@@ -221,7 +221,7 @@ namespace xtd {
         /// @warning Internal use only
         static void draw_rectangles(intptr_t handle, intptr_t pen, std::vector<std::tuple<float, float, float, float>>& rects);
 
-        /// @brief Draws the specified text string at the specified location with the specified xtd::drawing::brush, xtd::drawing::font objects and angle.
+        /// @brief Draws the specified text string at the specified location with the specified brush, font and angle.
         /// @param handle The graphics handle.
         /// @param s String to draw.
         /// @param font A font handle that defines the text format of the string.
@@ -431,7 +431,6 @@ namespace xtd {
         /// @param handle The graphics handle.
         /// @param text xtd::ustring to measure.
         /// @param font A font handle that defines the text format of the string.
-        /// @param layout_area xtd::drawing::size_f structure that specifies the maximum layout area for the text.
         /// @param width The width of the text.
         /// @param height The height of the text.
         /// @param max_width The maximum width of the text.
