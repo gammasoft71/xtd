@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native lc
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-static const int32_t LC_FLAT = 0;
+constexpr int32_t LC_FLAT = 0;
 
 /// @brief Specifies a square line cap.
 /// @par Library
@@ -21,7 +21,7 @@ static const int32_t LC_FLAT = 0;
 /// @ingroup xtd_drawing_native lc
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-static const int32_t LC_SQUARE = 1;
+constexpr int32_t LC_SQUARE = 1;
 
 /// @brief Specifies a round line cap.
 /// @par Library
@@ -29,4 +29,4 @@ static const int32_t LC_SQUARE = 1;
 /// @ingroup xtd_drawing_native lc
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-static const int32_t LC_ROUND = 2;
+constexpr int32_t LC_ROUND = 2;
