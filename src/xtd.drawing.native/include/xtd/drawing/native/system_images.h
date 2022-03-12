@@ -34,6 +34,13 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
+        /// @brief Gets system image from specified name and size.
+        /// @param name The system image name.
+        /// @param width The system image width in pixels.
+        /// @param height The system image height in pixels.
+        /// @return An image handle that contains the system image from specified name.
+        /// @remarks Returns 0 if no system image.
+        /// @warning Internal use only
         static intptr_t from_name(const xtd::ustring& name, int32_t width, int32_t height);
         /// @}
       };
