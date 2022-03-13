@@ -6,7 +6,7 @@ One important aspect of designing a framework is making sure the extensibility o
 
 There are many ways to allow extensibility in frameworks. They range from less powerful but less costly to very powerful but expensive. For any given extensibility requirement, you should choose the least costly extensibility mechanism that meets the requirements. Keep in mind that it’s usually possible to add more extensibility later, but you can never take it away without introducing breaking changes.
 
-# In This Section
+## In This Section
 
 * [Non-final Classes](non-final_classes.md)
 * [Protected Members](protected_members.md)
@@ -16,7 +16,7 @@ There are many ways to allow extensibility in frameworks. They range from less p
 * [Base Classes for Implementing Abstractions](base_classes_for_implementing_abstractions.md)
 * [Final](final.md)
 
-# See also
+## See also
 
 * [Design Guidelines](design_guidelines.md)
 * [Documentation](documentation.md)

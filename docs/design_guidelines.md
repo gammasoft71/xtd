@@ -1,5 +1,7 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md)  | [Contact](contact.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
+# Design Guidelines
+
 This section provides guidelines for designing libraries that extend and interact with the xtd framework. 
 The goal is to help library designers ensure API consistency and ease of use by providing a unified programming model for development.
 We recommend that you follow these design guidelines when developing classes and components that extend the xtd Framework. 
@@ -11,13 +13,13 @@ Such cases should be rare, and it is important that you have a clear and compell
 These guidelines are excerpted from the book Framework Design Guidelines:
 Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition, by Krzysztof Cwalina and Brad Abrams.
 
-# Notes
+## Notes
 
 The guidelines are adapted to modern C++ and follow the std standard.
 
 You can see the original source : [Framework Design Guidelines](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines).
 
-# In this section
+## In this section
 
 * [Coding Conventions Guidelines](coding_conventions_guidelines.md) provides guidelines for comments, documentation, indentations, new lines and spacing coding conventions.
 * [Naming Guidelines](naming_guidelines.md) Provides guidelines for naming libraries, namespaces, types, and members in class libraries.
