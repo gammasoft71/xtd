@@ -12,23 +12,23 @@ button:flat:default {
 }
 
 button:flat:default:pressed {
-  background-color: rgba(236, 236, 236, 180);
+  background-color: rgba(236, 236, 236, 0.706);
 }
 
 button:flat:default:checked {
-  background-color: rgba(236, 236, 236, 180);
+  background-color: rgba(236, 236, 236, 0.706);
 }
 
 button:flat:default:mixed {
-  background-color: rgba(157, 157, 157, 180);
+  background-color: rgba(157, 157, 157, 0.706);
 }
 
 button:flat:default:hover {
-  background-color: rgba(157, 157, 157, 180);
+  background-color: rgba(157, 157, 157, 0.706);
 }
 
 button:flat:default:disabled {  
   border-color: system-color(gray-text);
-  background-color: rgba(255, 255, 255, 35);
+  background-color: rgba(255, 255, 255, 0.137);
   color: system-color(gray-text);
 }

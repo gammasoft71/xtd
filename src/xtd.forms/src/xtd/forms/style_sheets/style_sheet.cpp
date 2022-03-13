@@ -611,13 +611,10 @@ bool style_sheet::try_parse_color(const xtd::ustring& text, xtd::drawing::color&
   if (text.starts_with("#") && try_parse_hex_color(text, result)) return true;
   if (text.starts_with("rgb(") && text.ends_with(")") && try_parse_rgb_color(text, result)) return true;
   if (text.starts_with("rgba(") && text.ends_with(")") && try_parse_rgba_color(text, result)) return true;
-  if (text.starts_with("argb(") && text.ends_with(")") && try_parse_argb_color(text, result)) return true;
   if (text.starts_with("hsv(") && text.ends_with(")") && try_parse_hsv_color(text, result)) return true;
   if (text.starts_with("hsva(") && text.ends_with(")") && try_parse_hsva_color(text, result)) return true;
-  if (text.starts_with("ahsv(") && text.ends_with(")") && try_parse_ahsv_color(text, result)) return true;
   if (text.starts_with("hsl(") && text.ends_with(")") && try_parse_hsl_color(text, result)) return true;
   if (text.starts_with("hsla(") && text.ends_with(")") && try_parse_hsla_color(text, result)) return true;
-  if (text.starts_with("ahsl(") && text.ends_with(")") && try_parse_ahsl_color(text, result)) return true;
   if (text.starts_with("system-color(") && text.ends_with(")") && try_parse_system_color(text, result)) return true;
   if (try_parse_named_color(text, result)) return true;
   return false;
@@ -733,25 +730,9 @@ bool style_sheet::try_parse_rgba_color(const ustring& text, color& result) const
   if (xtd::try_parse<byte_t>(color_parts[1], g) == false) return false;
   byte_t b = 0;
   if (xtd::try_parse<byte_t>(color_parts[2], b) == false) return false;
-  byte_t a = 0;
-  if (xtd::try_parse<byte_t>(color_parts[3], a) == false) return false;
-  result = color::from_argb(a, r, g, b);
-  return true;
-}
-
-bool style_sheet::try_parse_argb_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("argb(", "");
-  auto color_parts = value.split({','});
-  if (color_parts.size() != 4) return false;
-  byte_t a = 0;
-  if (xtd::try_parse<byte_t>(color_parts[0], a) == false) return false;
-  byte_t r = 0;
-  if (xtd::try_parse<byte_t>(color_parts[1], r) == false) return false;
-  byte_t g = 0;
-  if (xtd::try_parse<byte_t>(color_parts[2], g) == false) return false;
-  byte_t b = 0;
-  if (xtd::try_parse<byte_t>(color_parts[3], b) == false) return false;
-  result = color::from_argb(a, r, g, b);
+  float a = 0;
+  if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
+  result = color::from_argb(a * 255, r, g, b);
   return true;
 }
 
@@ -779,25 +760,9 @@ bool style_sheet::try_parse_hsva_color(const ustring& text, color& result) const
   if (xtd::try_parse<float>(color_parts[1], s) == false) return false;
   float v = 0;
   if (xtd::try_parse<float>(color_parts[2], v) == false) return false;
-  byte_t a = 0;
-  if (xtd::try_parse<byte_t>(color_parts[3], a) == false) return false;
-  result = color::from_argb(a, color::from_hsb(h, s, v));
-  return true;
-}
-
-bool style_sheet::try_parse_ahsv_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("ahsv(", "");
-  auto color_parts = value.split({','});
-  if (color_parts.size() != 4) return false;
-  byte_t a = 0;
-  if (xtd::try_parse<byte_t>(color_parts[0], a) == false) return false;
-  float h = 0;
-  if (xtd::try_parse<float>(color_parts[1], h) == false) return false;
-  float s = 0;
-  if (xtd::try_parse<float>(color_parts[2], s) == false) return false;
-  float v = 0;
-  if (xtd::try_parse<float>(color_parts[3], v) == false) return false;
-  result = color::from_argb(a, color::from_hsb(h, s, v));
+  float a = 0;
+  if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
+  result = color::from_argb(a * 255, color::from_hsb(h, s, v));
   return true;
 }
 
@@ -825,25 +790,9 @@ bool style_sheet::try_parse_hsla_color(const ustring& text, color& result) const
   if (xtd::try_parse<float>(color_parts[1], s) == false) return false;
   float l = 0;
   if (xtd::try_parse<float>(color_parts[2], l) == false) return false;
-  byte_t a = 0;
-  if (xtd::try_parse<byte_t>(color_parts[3], a) == false) return false;
-  result = color::from_argb(a, color::from_hsl(h, s, l));
-  return true;
-}
-
-bool style_sheet::try_parse_ahsl_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("ahsl(", "");
-  auto color_parts = value.split({','});
-  if (color_parts.size() != 4) return false;
-  byte_t a = 0;
-  if (xtd::try_parse<byte_t>(color_parts[0], a) == false) return false;
-  float h = 0;
-  if (xtd::try_parse<float>(color_parts[1], h) == false) return false;
-  float s = 0;
-  if (xtd::try_parse<float>(color_parts[2], s) == false) return false;
-  float l = 0;
-  if (xtd::try_parse<float>(color_parts[3], l) == false) return false;
-  result = color::from_argb(a, color::from_hsl(h, s, l));
+  float a = 0;
+  if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
+  result = color::from_argb(a * 255, color::from_hsl(h, s, l));
   return true;
 }
 

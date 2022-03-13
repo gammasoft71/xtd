@@ -290,13 +290,10 @@ namespace xtd {
         bool try_parse_named_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_rgb_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_rgba_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_argb_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_hsv_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_hsva_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_ahsv_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_hsl_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_hsla_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
-        bool try_parse_ahsl_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_system_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept;
         
