@@ -13,18 +13,18 @@ button {
 }
 
 button:pressed {
-  background-image: linear-gradient(rgba(236, 236, 236, 180), rgba(236, 236, 236, 180));
+  background-image: linear-gradient(rgba(236, 236, 236, 180), rgba(236, 236, 236, 0.706));
 }
 
 button:checked {
-  background-image: linear-gradient(rgba(236, 236, 236, 180), rgba(236, 236, 236, 180));
+  background-image: linear-gradient(rgba(236, 236, 236, 180), rgba(236, 236, 236, 0.706));
 }
 
 button:mixed {
-  background-image: linear-gradient(rgba(157, 157, 157, 180), rgba(157, 157, 157, 180));
+  background-image: linear-gradient(rgba(157, 157, 157, 180), rgba(157, 157, 157, 0.706));
 }
 
 button:disabled {  
-  background-image: linear-gradient(rgba(255, 255, 255, 35), rgba(255, 255, 255, 35));
+  background-image: linear-gradient(rgba(255, 255, 255, 35), rgba(255, 255, 255, 0.137));
   color: system-color(gray-text);
 }
