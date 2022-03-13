@@ -807,7 +807,7 @@ size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::fo
 size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled) {
   float string_width = 0.0f;
   float string_height = 0.0f;
-  native::graphics::measure_string(handle(), text, font.handle(), string_height, string_height, layout_area.width(), layout_area.height(), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()), static_cast<int32_t>(format.hotkey_prefix()), static_cast<int32_t>(format.trimming()), characters_fitted, lines_filled);
+  native::graphics::measure_string(handle(), text, font.handle(), string_width, string_height, layout_area.width(), layout_area.height(), static_cast<int32_t>(format.alignment()), static_cast<int32_t>(format.line_alignment()), static_cast<int32_t>(format.hotkey_prefix()), static_cast<int32_t>(format.trimming()), characters_fitted, lines_filled);
   return size_f(to_page_unit(string_width), to_page_unit(string_height));
 }
 
