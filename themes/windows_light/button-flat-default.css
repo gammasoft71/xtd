@@ -19,11 +19,11 @@ button:flat:default:checked {
 }
 
 button:flat:default:mixed {
-  background-color: 255, 255, 255, 78);
+  background-color: rgba(255, 255, 255, 0.306);
 }
 
 button:flat:default:hover {
-  background-color: rgba(0, 0, 0, 25);
+  background-color: rgba(0, 0, 0, 0.98);
 }
 
 button:flat:default:disabled {  
