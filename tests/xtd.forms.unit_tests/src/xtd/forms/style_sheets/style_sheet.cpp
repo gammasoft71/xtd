@@ -145,7 +145,7 @@ namespace unit_tests {
     void test_method_(color_from_css_with_rgba_color) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
-      assert::are_equal(color::from_argb(127, 42, 84, 24), __test_style_sheet__::color_from_css(style, "rgba(42, 84, 24, 0.5)", color::empty), csf_);
+      assert::are_equal(color::from_argb(128, 42, 84, 24), __test_style_sheet__::color_from_css(style, "rgba(42, 84, 24, 0.5)", color::empty), csf_);
     }
     
     void test_method_(color_from_css_with_bad_rgba_color) {
@@ -173,7 +173,7 @@ namespace unit_tests {
     void test_method_(color_from_css_with_hsva_color) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
-      assert::are_equal(color::from_argb(127, color::from_hsb(204, 62, 67)), __test_style_sheet__::color_from_css(style, "hsva(204, 62, 67, 0.5)", color::empty), csf_);
+      assert::are_equal(color::from_argb(128, color::from_hsb(204, 62, 67)), __test_style_sheet__::color_from_css(style, "hsva(204, 62, 67, 0.5)", color::empty), csf_);
     }
     
     void test_method_(color_from_css_with_bad_hsva_color) {
@@ -201,7 +201,7 @@ namespace unit_tests {
     void test_method_(color_from_css_with_hsla_color) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
-      assert::are_equal(color::from_argb(127, color::from_hsl(204, 62, 67)), __test_style_sheet__::color_from_css(style, "hsla(204, 62, 67, 0.5)", color::empty), csf_);
+      assert::are_equal(color::from_argb(128, color::from_hsl(204, 62, 67)), __test_style_sheet__::color_from_css(style, "hsla(204, 62, 67, 0.5)", color::empty), csf_);
     }
     
     void test_method_(color_from_css_with_bad_hsla_color) {

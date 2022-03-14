@@ -27,7 +27,7 @@ system-colors {
   inactive-border: #F1F0EE;
   inactive-caption: #F6F5F4;
   inactive-caption-text: #2E3436;
-  info: rgba(0, 0, 0, 204);
+  info: rgba(0, 0, 0, 0.8);
   info-text: white;
   menu: white;
   menu-bar: #F6F5F4;

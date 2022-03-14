@@ -19,12 +19,12 @@ button:default:pressed {
 }
 
 button:default:checked {
-  border-color: rgba(12, 9, 138, 255);
+  border-color: rgba(12, 9, 138, 1.0);
   background-color: rgba(204, 228, 247, 1.0);
 }
 
 button:default:mixed {
-  border-color: rgba(12, 9, 138, 255);
+  border-color: rgba(12, 9, 138, 1.0);
   background-color: rgba(204, 228, 247, 1.0);
 }
 

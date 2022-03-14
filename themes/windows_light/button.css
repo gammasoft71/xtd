@@ -13,24 +13,24 @@ button {
 }
 
 button:pressed {
-  border-color: rgba(12, 9, 138, 255);
-  background-color: rgba(204, 228, 247, 255);
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: rgba(204, 228, 247, 1.0);
 }
 
 button:checked {
-  border-color: rgba(12, 9, 138, 255);
-  background-color: rgba(204, 228, 247, 255);
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: rgba(204, 228, 247, 1.0);
 }
 
 button:mixed {
-  border-color: rgba(12, 9, 138, 255);
-  background-color: rgba(204, 228, 247, 255);
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: rgba(204, 228, 247, 1.0);
 }
 
 button:hover {
-  border-color: rgba(43, 120, 215, 255);
-  /*background-color: rgba(229, 241, 251, 255);*/
-  background-color: rgba(219, 243, 255, 128);
+  border-color: rgba(43, 120, 215, 1.0);
+  /*background-color: rgba(229, 241, 251, 1.0);*/
+  background-color: rgba(219, 243, 255, 0.5);
 }
 
 button:disabled {  
