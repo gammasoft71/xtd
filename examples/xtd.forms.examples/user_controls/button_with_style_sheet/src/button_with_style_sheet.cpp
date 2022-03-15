@@ -32,8 +32,8 @@ namespace examples {
       button2.text("Button 2");
       button2.style_sheet("button {"
                           "  border-color: blue;"
-                          "  border-radius: 5px 0px 5px 0px;"
-                          "  background-image: linear-gradient(to left, rgba(0, 0, 255, 64), rgba(0, 0, 255, 32), rgba(0, 0, 255, 64));"
+                          "  border-radius: 20px 0px 20px 0px;"
+                          "  background-image: linear-gradient(to left, rgba(0, 128, 255, 0.251), rgba(0, 128, 255, 0.008), rgba(0, 128, 255, 0.251));"
                           "  padding: 1px 1px 3px 1px;"
                           "  color: dodgerblue;"
                           "}"
@@ -43,7 +43,7 @@ namespace examples {
                           "}"
                           ""
                           "button:pressed {"
-                          "  background-image: linear-gradient(to left, rgba(0, 0, 255, 128), rgba(0, 0, 255, 64), rgba(0, 0, 255, 128));"
+                          "  background-image: linear-gradient(to left, rgba(0, 128, 255, 0.5), rgba(0, 128, 255, 0.251), rgba(0, 128, 255, 0.5));"
                           "  color: #69B5FF;"
                           "}");
       
@@ -55,7 +55,7 @@ namespace examples {
                           "  border-color: red;"
                           "  border-width: 1px;"
                           "  border-radius: 50vh;"
-                          "  background-image: linear-gradient(rgba(255, 0, 0, 48), rgba(255, 0, 0, 96));"
+                          "  background-image: linear-gradient(rgba(255, 0, 0, 0.188), rgba(255, 0, 0, 0.376));"
                           "  padding: 1px 1px 3px 1px;"
                           "  color: red;"
                           "  width: 100vh;"
@@ -68,7 +68,7 @@ namespace examples {
                           ""
                           "button:pressed {"
                           "  border-style: inset;"
-                          "  background-image: linear-gradient(rgba(255, 0, 0, 64), rgba(255, 0, 0, 128));"
+                          "  background-image: linear-gradient(rgba(255, 0, 0, 0.251), rgba(255, 0, 0, 0.5));"
                           "  color: #FF5555;"
                           "}");
       button3.text("Button 3");
