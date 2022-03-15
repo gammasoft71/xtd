@@ -28,40 +28,41 @@ namespace {
      graphics.fill_path(brush, path);
      */
     
+    xtd::drawing::region region;
+    region.make_empty();
+    
     radius_top_left *= 2;
     radius_top_right *= 2;
     radius_bottom_right *= 2;
     radius_bottom_left *= 2;
     
-    xtd::drawing::region region;
-    region.make_empty();
-    
     if (radius_top_left != 0) {
       xtd::drawing::drawing2d::graphics_path path;
-      path.add_ellipse(fill_rect.left(), fill_rect.top(), radius_top_left, radius_top_left);
+      path.add_pie(fill_rect.left(), fill_rect.top(), radius_top_left, radius_top_left, 180, 90);
       if (path.get_bounds().width() > 0 && path.get_bounds().height() > 0) region.make_union(path);
     }
     if (radius_top_right != 0) {
       xtd::drawing::drawing2d::graphics_path path;
-      path.add_ellipse(fill_rect.right() - radius_top_right, fill_rect.top(), radius_top_right, radius_top_right);
+      path.add_pie(fill_rect.right() - radius_top_right, fill_rect.top(), radius_top_right, radius_top_right, 270, 90);
       if (path.get_bounds().width() > 0 && path.get_bounds().height() > 0) region.make_union(path);
     }
     if (radius_bottom_right != 0) {
       xtd::drawing::drawing2d::graphics_path path;
-      path.add_ellipse(fill_rect.right() - radius_bottom_right, fill_rect.bottom() - radius_bottom_right, radius_bottom_right, radius_bottom_right);
+      path.add_pie(fill_rect.right() - radius_bottom_right, fill_rect.bottom() - radius_bottom_right, radius_bottom_right, radius_bottom_right, 0, 90);
       if (path.get_bounds().width() > 0 && path.get_bounds().height() > 0) region.make_union(path);
     }
     if (radius_bottom_left != 0) {
       xtd::drawing::drawing2d::graphics_path path;
-      path.add_ellipse(fill_rect.left(), fill_rect.bottom() - radius_bottom_left, radius_bottom_left, radius_bottom_left);
+      path.add_pie(fill_rect.left(), fill_rect.bottom() - radius_bottom_left, radius_bottom_left, radius_bottom_left, 90, 90);
       if (path.get_bounds().width() > 0 && path.get_bounds().height() > 0) region.make_union(path);
     }
-
-    region.make_union(rectangle(fill_rect.left() + radius_top_left / 2, fill_rect.top() + xtd::math::max(radius_top_left, radius_top_right) / 2, fill_rect.width() - radius_top_left / 2 - radius_top_right / 2 + 1, fill_rect.height() - xtd::math::max(radius_top_left, radius_top_right) / 2 - xtd::math::max(radius_top_left, radius_top_right) / 2 + 1));
+    region.make_union(rectangle(fill_rect.left() + radius_top_left / 2, fill_rect.top() + xtd::math::max(radius_top_left, radius_top_right) / 2, fill_rect.width() - radius_top_left / 2 - radius_top_right / 2, fill_rect.height() - xtd::math::max(radius_top_left, radius_top_right) / 2 - xtd::math::max(radius_bottom_left, radius_bottom_right) / 2));
+    
     region.make_union(rectangle(fill_rect.left() + radius_top_left / 2, fill_rect.top(), fill_rect.width() - radius_top_left / 2 - radius_top_right / 2, xtd::math::max(radius_top_left, radius_top_right) / 2));
-    region.make_union(rectangle(fill_rect.left() + radius_bottom_left / 2, fill_rect.bottom(), fill_rect.width() - radius_bottom_left / 2 - radius_bottom_right / 2, -math::max(radius_bottom_left, radius_bottom_right) / 2));
+    region.make_union(rectangle(fill_rect.left() + radius_bottom_left / 2, fill_rect.bottom() - 1, fill_rect.width() - radius_bottom_left / 2 - radius_bottom_right / 2, -math::max(radius_bottom_left, radius_bottom_right) / 2 - 1));
+    
     region.make_union(rectangle(fill_rect.left(), fill_rect.top() + radius_top_left / 2, xtd::math::max(radius_top_left, radius_bottom_left) / 2, fill_rect.height() - radius_top_left / 2 - radius_bottom_left / 2));
-    region.make_union(rectangle(fill_rect.right() - xtd::math::max(radius_top_right, radius_bottom_right) / 2, fill_rect.top() + radius_top_right / 2, xtd::math::max(radius_top_right, radius_bottom_right) / 2, fill_rect.height() - radius_top_right / 2 - radius_bottom_right / 2));
+    region.make_union(rectangle(fill_rect.right() - 1 - xtd::math::max(radius_top_right, radius_bottom_right) / 2, fill_rect.top() + radius_top_right / 2, xtd::math::max(radius_top_right - 1, radius_bottom_right) / 2, fill_rect.height() - radius_top_right / 2 - radius_bottom_right / 2));
     graphics.fill_region(brush, region);
   }
 }
