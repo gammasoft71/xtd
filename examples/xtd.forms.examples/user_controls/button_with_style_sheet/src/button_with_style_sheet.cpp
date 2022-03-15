@@ -43,7 +43,7 @@ namespace examples {
                           "}"
                           ""
                           "button:pressed {"
-                          "  background-image: linear-gradient(to left, rgba(0, 128, 255, 0.5), rgba(0, 128, 255, 0.251), rgba(0, 128, 255, 0.5));"
+                          "  background-image: linear-gradient(to left, rgba(0, 128, 255, 0.5), rgba(0, 128, 255, 0.128), rgba(0, 128, 255, 0.5));"
                           "  color: #69B5FF;"
                           "}");
       
