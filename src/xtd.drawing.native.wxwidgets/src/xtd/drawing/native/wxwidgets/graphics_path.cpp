@@ -24,7 +24,6 @@ void graphics_path::destroy(intptr_t handle) {
 }
 
 void graphics_path::add_arc(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  reinterpret_cast<wxGraphicsPath*>(handle)->MoveToPoint(x + width / 2, y + height / 2);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddArc(x + width / 2, y + height / 2, math::max(width, height) / 2, math::degrees_to_radians(start_angle), math::degrees_to_radians(start_angle + sweep_angle), true);
 }
 
