@@ -14,6 +14,11 @@ using namespace xtd::forms::style_sheets;
 
 namespace {
   static void fill_box(xtd::drawing::graphics& graphics, const xtd::drawing::brush& brush, const xtd::drawing::rectangle& fill_rect, int radius_top_left, int radius_top_right, int radius_bottom_right, int radius_bottom_left) {
+    radius_top_left *= 2;
+    radius_top_right *= 2;
+    radius_bottom_right *= 2;
+    radius_bottom_left *= 2;
+    
     /*
      graphics_path path;
      if (radius_top_left != 0) path.add_arc(fill_rect.left(), fill_rect.top(), radius_top_left, radius_top_left, 180, 90);
@@ -30,11 +35,6 @@ namespace {
     
     xtd::drawing::region region;
     region.make_empty();
-    
-    radius_top_left *= 2;
-    radius_top_right *= 2;
-    radius_bottom_right *= 2;
-    radius_bottom_left *= 2;
     
     if (radius_top_left != 0) {
       xtd::drawing::drawing2d::graphics_path path;
@@ -62,7 +62,8 @@ namespace {
     region.make_union(rectangle(fill_rect.left() + radius_bottom_left / 2, fill_rect.bottom() - 1, fill_rect.width() - radius_bottom_left / 2 - radius_bottom_right / 2, -math::max(radius_bottom_left, radius_bottom_right) / 2 - 1));
     
     region.make_union(rectangle(fill_rect.left(), fill_rect.top() + radius_top_left / 2, xtd::math::max(radius_top_left, radius_bottom_left) / 2, fill_rect.height() - radius_top_left / 2 - radius_bottom_left / 2));
-    region.make_union(rectangle(fill_rect.right() - 1 - xtd::math::max(radius_top_right, radius_bottom_right) / 2, fill_rect.top() + radius_top_right / 2, xtd::math::max(radius_top_right - 1, radius_bottom_right) / 2, fill_rect.height() - radius_top_right / 2 - radius_bottom_right / 2));
+    region.make_union(rectangle(fill_rect.right() - 1 - xtd::math::max(radius_top_right, radius_bottom_right) / 2, fill_rect.top() + radius_top_right / 2, xtd::math::max(radius_top_right, radius_bottom_right) / 2 + 1, fill_rect.height() - radius_top_right / 2 - radius_bottom_right / 2));
+
     graphics.fill_region(brush, region);
   }
 }
