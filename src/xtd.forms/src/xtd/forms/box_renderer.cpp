@@ -2,6 +2,7 @@
 #include <xtd/argument_exception.h>
 #include <xtd/as.h>
 #include <xtd/is.h>
+#include <xtd/math.h>
 #include <xtd/drawing/drawing2d/linear_gradient_brush.h>
 
 using namespace std;
@@ -10,6 +11,60 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
+
+namespace {
+  static void fill_box(xtd::drawing::graphics& graphics, const xtd::drawing::brush& brush, const xtd::drawing::rectangle& fill_rect, int radius_top_left, int radius_top_right, int radius_bottom_right, int radius_bottom_left) {
+    /*
+     graphics_path path;
+     if (radius_top_left != 0) path.add_arc(fill_rect.left(), fill_rect.top(), radius_top_left, radius_top_left, 180, 90);
+     path.add_line(fill_rect.left() + radius_top_left / 2, fill_rect.top(), fill_rect.right() - radius_top_right / 2, fill_rect.top());
+     if (radius_top_right != 0) path.add_arc(fill_rect.right() - radius_top_right, fill_rect.top(), radius_top_right, radius_top_right, 270, 90);
+     path.add_line(fill_rect.right(), fill_rect.top() + radius_top_right / 2, fill_rect.right(), fill_rect.bottom() - radius_bottom_right / 2);
+     if (radius_bottom_right != 0) path.add_arc(fill_rect.right() - radius_bottom_right, fill_rect.bottom() - radius_bottom_right, radius_bottom_right, radius_bottom_right, 0, 90);
+     path.add_line(fill_rect.right() - radius_bottom_right  /2, fill_rect.bottom(), fill_rect.left() + radius_bottom_left / 2, fill_rect.bottom());
+     if (radius_bottom_left != 0) path.add_arc(fill_rect.left(), fill_rect.bottom() - radius_bottom_left, radius_bottom_left, radius_bottom_left, 90, 90);
+     path.add_line(fill_rect.left(), fill_rect.bottom() - radius_bottom_left  /2, fill_rect.left(), fill_rect.top() + radius_top_left / 2);
+     path.close_all_figures();
+     graphics.fill_path(brush, path);
+     */
+    
+    radius_top_left *= 2;
+    radius_top_right *= 2;
+    radius_bottom_right *= 2;
+    radius_bottom_left *= 2;
+    
+    xtd::drawing::region region;
+    region.make_empty();
+    
+    if (radius_top_left != 0) {
+      xtd::drawing::drawing2d::graphics_path path;
+      path.add_ellipse(fill_rect.left(), fill_rect.top(), radius_top_left, radius_top_left);
+      if (path.get_bounds().width() > 0 && path.get_bounds().height() > 0) region.make_union(path);
+    }
+    if (radius_top_right != 0) {
+      xtd::drawing::drawing2d::graphics_path path;
+      path.add_ellipse(fill_rect.right() - radius_top_right, fill_rect.top(), radius_top_right, radius_top_right);
+      if (path.get_bounds().width() > 0 && path.get_bounds().height() > 0) region.make_union(path);
+    }
+    if (radius_bottom_right != 0) {
+      xtd::drawing::drawing2d::graphics_path path;
+      path.add_ellipse(fill_rect.right() - radius_bottom_right, fill_rect.bottom() - radius_bottom_right, radius_bottom_right, radius_bottom_right);
+      if (path.get_bounds().width() > 0 && path.get_bounds().height() > 0) region.make_union(path);
+    }
+    if (radius_bottom_left != 0) {
+      xtd::drawing::drawing2d::graphics_path path;
+      path.add_ellipse(fill_rect.left(), fill_rect.bottom() - radius_bottom_left, radius_bottom_left, radius_bottom_left);
+      if (path.get_bounds().width() > 0 && path.get_bounds().height() > 0) region.make_union(path);
+    }
+
+    region.make_union(rectangle(fill_rect.left() + radius_top_left / 2, fill_rect.top() + xtd::math::max(radius_top_left, radius_top_right) / 2, fill_rect.width() - radius_top_left / 2 - radius_top_right / 2 + 1, fill_rect.height() - xtd::math::max(radius_top_left, radius_top_right) / 2 - xtd::math::max(radius_top_left, radius_top_right) / 2 + 1));
+    region.make_union(rectangle(fill_rect.left() + radius_top_left / 2, fill_rect.top(), fill_rect.width() - radius_top_left / 2 - radius_top_right / 2, xtd::math::max(radius_top_left, radius_top_right) / 2));
+    region.make_union(rectangle(fill_rect.left() + radius_bottom_left / 2, fill_rect.bottom(), fill_rect.width() - radius_bottom_left / 2 - radius_bottom_right / 2, -math::max(radius_bottom_left, radius_bottom_right) / 2));
+    region.make_union(rectangle(fill_rect.left(), fill_rect.top() + radius_top_left / 2, xtd::math::max(radius_top_left, radius_bottom_left) / 2, fill_rect.height() - radius_top_left / 2 - radius_bottom_left / 2));
+    region.make_union(rectangle(fill_rect.right() - xtd::math::max(radius_top_right, radius_bottom_right) / 2, fill_rect.top() + radius_top_right / 2, xtd::math::max(radius_top_right, radius_bottom_right) / 2, fill_rect.height() - radius_top_right / 2 - radius_bottom_right / 2));
+    graphics.fill_region(brush, region);
+  }
+}
 
 void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
   auto border_rect = box_model.get_border_rectangle(bounds);
@@ -21,7 +76,8 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const i
   auto fill_rect = box_model.get_fill_rectangle(bounds);
   graphics.fill_rounded_rectangle(solid_brush(box_model.background_color()), fill_rect, box_model.border_radius().top_left().get_pixels(bounds));
   auto image_brush = background_image::make_brush(box_model.background_image(), fill_rect);
-  if (image_brush) graphics.fill_rounded_rectangle(*image_brush, fill_rect, box_model.border_radius().top_left().get_pixels(bounds));
+  if (image_brush) //graphics.fill_rounded_rectangle(*image_brush, fill_rect, box_model.border_radius().top_left().get_pixels(bounds));
+  if (image_brush) fill_box(graphics, *image_brush, fill_rect, box_model.border_radius().top_left().get_pixels(bounds), box_model.border_radius().top_right().get_pixels(bounds), box_model.border_radius().bottom_right().get_pixels(bounds), box_model.border_radius().bottom_left().get_pixels(bounds));
 }
 
 void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
