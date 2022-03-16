@@ -56,6 +56,14 @@ directory::directory_iterator::value_type directory::directory_iterator::operato
   return (*data_->iterator_).full_name();
 }
 
+directory::directory_iterator directory::directory_iterator::begin() const {
+  return directory::directory_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+}
+
+directory::directory_iterator directory::directory_iterator::end() const {
+  return directory::directory_iterator();
+}
+
 struct directory::file_iterator::data {
   data() = default;
   data(const std::string& path, const std::string& pattern) : iterator_(path, pattern) {}
@@ -90,6 +98,14 @@ directory::file_iterator::value_type directory::file_iterator::operator*() const
   return (*data_->iterator_).full_name();
 }
 
+directory::file_iterator directory::file_iterator::begin() const {
+  return directory::file_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+}
+
+directory::file_iterator directory::file_iterator::end() const {
+  return directory::file_iterator();
+}
+
 struct directory::file_system_entry_iterator::data {
   data() = default;
   data(const std::string& path, const std::string& pattern) : iterator_(path, pattern) {}
@@ -122,6 +138,14 @@ bool directory::file_system_entry_iterator::operator==(directory::file_system_en
 directory::file_system_entry_iterator::value_type directory::file_system_entry_iterator::operator*() const {
   if (data_ == nullptr) return "";
   return (*data_->iterator_)->full_name();
+}
+
+directory::file_system_entry_iterator directory::file_system_entry_iterator::begin() const {
+  return directory::file_system_entry_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+}
+
+directory::file_system_entry_iterator directory::file_system_entry_iterator::end() const {
+  return directory::file_system_entry_iterator();
 }
 
 directory_info directory::create_directory(const ustring& path) {
