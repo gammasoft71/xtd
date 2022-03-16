@@ -52,6 +52,22 @@ directory_info::directory_iterator::value_type directory_info::directory_iterato
   return directory_info(*data_->iterator_);
 }
 
+directory_info::directory_iterator directory_info::directory_iterator::begin() const {
+  return directory_info::directory_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+}
+
+directory_info::directory_iterator directory_info::directory_iterator::end() const {
+  return directory_info::directory_iterator();
+}
+
+ustring directory_info::directory_iterator::path() const {
+  return data_->iterator_.path();
+}
+
+ustring directory_info::directory_iterator::pattern() const {
+  return data_->iterator_.pattern();
+}
+
 struct directory_info::file_iterator::data {
   data() = default;
   data(const std::string& path, const std::string& pattern) : iterator_(path, pattern) {}
@@ -86,6 +102,21 @@ directory_info::file_iterator::value_type directory_info::file_iterator::operato
   return file_info(*data_->iterator_);
 }
 
+directory_info::file_iterator directory_info::file_iterator::begin() const {
+  return directory_info::file_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+}
+directory_info::file_iterator directory_info::file_iterator::end() const {
+  return xtd::io::directory_info::file_iterator();
+}
+
+ustring directory_info::file_iterator::path() const {
+  return data_->iterator_.path();
+}
+
+ustring directory_info::file_iterator::pattern() const {
+  return data_->iterator_.pattern();
+}
+
 struct directory_info::file_system_info_iterator::data {
   data() = default;
   data(const std::string& path, const std::string& pattern) : iterator_(path, pattern) {}
@@ -109,6 +140,22 @@ directory_info::file_system_info_iterator directory_info::file_system_info_itera
   file_system_info_iterator result = *this;
   ++(*this);
   return result;
+}
+
+directory_info::file_system_info_iterator directory_info::file_system_info_iterator::begin() const {
+  return directory_info::file_system_info_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+}
+
+directory_info::file_system_info_iterator directory_info::file_system_info_iterator::end() const {
+  return xtd::io::directory_info::file_system_info_iterator();
+}
+
+ustring directory_info::file_system_info_iterator::path() const {
+  return data_->iterator_.path();
+}
+
+ustring directory_info::file_system_info_iterator::pattern() const {
+  return data_->iterator_.pattern();
 }
 
 bool directory_info::file_system_info_iterator::operator==(directory_info::file_system_info_iterator other) const {

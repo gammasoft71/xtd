@@ -51,10 +51,16 @@ namespace xtd {
     public:
       /// @brief Represent directory iterator used by xtd::native::directtory::enumerate_directories.
       /// @warning Internal use only
-      class directory_iterator : public std::iterator<std::input_iterator_tag, std::string> {
+      class directory_iterator {
         explicit directory_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
+        using iterator_category = std::input_iterator_tag;
+        using value_type = std::string;
+        using difference_type = std::string;
+        using pointer = std::string*;
+        using reference = std::string&;
+        
         directory_iterator();
         directory_iterator(const directory_iterator&) = default;
         directory_iterator(directory_iterator&&) = default;
@@ -65,6 +71,12 @@ namespace xtd {
         bool operator==(directory_iterator other) const;
         bool operator!=(directory_iterator other) const {return !operator==(other);}
         value_type operator*() const;
+
+        xtd::native::directory::directory_iterator begin() const;
+        xtd::native::directory::directory_iterator end() const;
+
+        const std::string& path() const;
+        const std::string& pattern() const;
         /// @endcond
         
       private:
@@ -76,10 +88,16 @@ namespace xtd {
       
       /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
       /// @warning Internal use only
-      class file_iterator : public std::iterator<std::input_iterator_tag, std::string> {
+      class file_iterator {
         explicit file_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
+        using iterator_category = std::input_iterator_tag;
+        using value_type = std::string;
+        using difference_type = std::string;
+        using pointer = std::string*;
+        using reference = std::string&;
+        
         file_iterator();
         file_iterator(const file_iterator&) = default;
         file_iterator(file_iterator&&) = default;
@@ -90,6 +108,11 @@ namespace xtd {
         bool operator==(file_iterator other) const;
         bool operator!=(file_iterator other) const {return !operator==(other);}
         value_type operator*() const;
+        xtd::native::directory::file_iterator begin() const;
+        xtd::native::directory::file_iterator end() const;
+
+        const std::string& path() const;
+        const std::string& pattern() const;
         /// @endcond
         
       private:
@@ -101,10 +124,16 @@ namespace xtd {
       
       /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
       /// @warning Internal use only
-      class file_and_directory_iterator : public std::iterator<std::input_iterator_tag, std::string> {
+      class file_and_directory_iterator {
         explicit file_and_directory_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
+        using iterator_category = std::input_iterator_tag;
+        using value_type = std::string;
+        using difference_type = std::string;
+        using pointer = std::string*;
+        using reference = std::string&;
+        
         file_and_directory_iterator();
         file_and_directory_iterator(const file_and_directory_iterator&) = default;
         file_and_directory_iterator(file_and_directory_iterator&&) = default;
@@ -115,6 +144,11 @@ namespace xtd {
         bool operator==(file_and_directory_iterator other) const;
         bool operator!=(file_and_directory_iterator other) const {return !operator==(other);}
         value_type operator*() const;
+        xtd::native::directory::file_and_directory_iterator begin() const;
+        xtd::native::directory::file_and_directory_iterator end() const;
+
+        const std::string& path() const;
+        const std::string& pattern() const;
         /// @endcond
         
       private:
@@ -174,13 +208,4 @@ namespace xtd {
       /// @}
     };
   }
-}
-
-namespace std {
-  inline xtd::native::directory::directory_iterator begin(xtd::native::directory::directory_iterator it) {return it;}
-  inline xtd::native::directory::directory_iterator end(xtd::native::directory::directory_iterator it) {return xtd::native::directory::directory_iterator();}
-  inline xtd::native::directory::file_iterator begin(xtd::native::directory::file_iterator it) {return it;}
-  inline xtd::native::directory::file_iterator end(xtd::native::directory::file_iterator it) {return xtd::native::directory::file_iterator();}
-  inline xtd::native::directory::file_and_directory_iterator begin(xtd::native::directory::file_and_directory_iterator it) {return it;}
-  inline xtd::native::directory::file_and_directory_iterator end(xtd::native::directory::file_and_directory_iterator it) {return xtd::native::directory::file_and_directory_iterator();}
 }

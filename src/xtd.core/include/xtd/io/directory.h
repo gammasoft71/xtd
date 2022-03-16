@@ -96,10 +96,16 @@ namespace xtd {
     class core_export_ directory static_ {
     public:
       /// @brief Represent directory iterator used by xtd::io::directory.
-      class directory_iterator : public std::iterator<std::input_iterator_tag, xtd::ustring> {
+      class directory_iterator {
         explicit directory_iterator(const xtd::ustring& path, const xtd::ustring& pattern);
       public:
         /// @cond
+        using iterator_category = std::input_iterator_tag;
+        using value_type = xtd::ustring;
+        using difference_type = xtd::ustring;
+        using pointer = xtd::ustring*;
+        using reference = xtd::ustring&;
+        
         directory_iterator();
         directory_iterator(const directory_iterator&) = default;
         directory_iterator(directory_iterator&&) = default;
@@ -109,6 +115,8 @@ namespace xtd {
         bool operator==(directory_iterator other) const;
         bool operator!=(directory_iterator other) const {return !operator==(other);}
         value_type operator*() const;
+        xtd::io::directory::directory_iterator begin() const;
+        xtd::io::directory::directory_iterator end() const;
         /// @endcond
         
       private:
@@ -118,10 +126,16 @@ namespace xtd {
       };
       
       /// @brief Represent file iterator used by xtd::io::directory.
-      class file_iterator : public std::iterator<std::input_iterator_tag, xtd::ustring> {
+      class file_iterator {
         explicit file_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
+        using iterator_category = std::input_iterator_tag;
+        using value_type = xtd::ustring;
+        using difference_type = xtd::ustring;
+        using pointer = xtd::ustring*;
+        using reference = xtd::ustring&;
+        
         file_iterator();
         file_iterator(const file_iterator&) = default;
         file_iterator(file_iterator&&) = default;
@@ -131,6 +145,8 @@ namespace xtd {
         bool operator==(file_iterator other) const;
         bool operator!=(file_iterator other) const {return !operator==(other);}
         value_type operator*() const;
+        xtd::io::directory::file_iterator begin() const;
+        xtd::io::directory::file_iterator end() const;
         /// @endcond
         
       private:
@@ -140,10 +156,16 @@ namespace xtd {
       };
       
       /// @brief Represent file system iterator used by xtd::io::directory.
-      class file_system_entry_iterator : public std::iterator<std::input_iterator_tag, xtd::ustring> {
+      class file_system_entry_iterator {
         explicit file_system_entry_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
+        using iterator_category = std::input_iterator_tag;
+        using value_type = xtd::ustring;
+        using difference_type = xtd::ustring;
+        using pointer = xtd::ustring*;
+        using reference = xtd::ustring&;
+        
         file_system_entry_iterator();
         file_system_entry_iterator(const file_system_entry_iterator&) = default;
         file_system_entry_iterator(file_system_entry_iterator&&) = default;
@@ -153,6 +175,8 @@ namespace xtd {
         bool operator==(file_system_entry_iterator other) const;
         bool operator!=(file_system_entry_iterator other) const {return !operator==(other);}
         value_type operator*() const;
+        xtd::io::directory::file_system_entry_iterator begin() const;
+        xtd::io::directory::file_system_entry_iterator end() const;
         /// @endcond
         
       private:
@@ -1811,14 +1835,3 @@ namespace xtd {
     };
   }
 }
-
-/// @cond
-namespace std {
-  inline xtd::io::directory::directory_iterator begin(xtd::io::directory::directory_iterator it) {return it;}
-  inline xtd::io::directory::directory_iterator end(xtd::io::directory::directory_iterator it) {return xtd::io::directory::directory_iterator();}
-  inline xtd::io::directory::file_iterator begin(xtd::io::directory::file_iterator it) {return it;}
-  inline xtd::io::directory::file_iterator end(xtd::io::directory::file_iterator it) {return xtd::io::directory::file_iterator();}
-  inline xtd::io::directory::file_system_entry_iterator begin(xtd::io::directory::file_system_entry_iterator it) {return it;}
-  inline xtd::io::directory::file_system_entry_iterator end(xtd::io::directory::file_system_entry_iterator it) {return xtd::io::directory::file_system_entry_iterator();}
-}
-/// @endcond
