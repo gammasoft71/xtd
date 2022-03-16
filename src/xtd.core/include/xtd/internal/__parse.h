@@ -157,7 +157,7 @@ inline value_t __parse_unsigned(const std::basic_string<char_t>& str, int base, 
 }
 
 template <typename value_t, typename char_t>
-inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s, xtd::number_styles styles) {
+inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s, xtd::number_styles styles, const std::locale& locale) {
   if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) __throw_parse_format_exception("xtd::number_styles::binary_number not supported by floating point");
   if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) __throw_parse_format_exception("xtd::number_styles::octal_number not supported by floating point");
   if ((styles & xtd::number_styles::hex_number) == xtd::number_styles::hex_number) __throw_parse_format_exception("xtd::number_styles::hex_number not supported by floating point");
@@ -172,7 +172,7 @@ inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s,
     result = std::stold(str, nullptr);
   else {
     std::stringstream ss(str);
-    ss.imbue(std::locale());
+    ss.imbue(locale);
     ss >> result;
   }
   
