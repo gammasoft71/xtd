@@ -74,6 +74,22 @@ directory::directory_iterator::value_type directory::directory_iterator::operato
   return data_->current_;
 }
 
+directory::directory_iterator directory::directory_iterator::begin() const {
+  return directory::directory_iterator(data_->path_, data_->pattern_);
+}
+
+directory::directory_iterator directory::directory_iterator::end() const {
+  return directory::directory_iterator();
+}
+
+const std::string& directory::directory_iterator::path() const {
+  return data_->path_;
+}
+
+const std::string& directory::directory_iterator::pattern() const {
+  return data_->pattern_;
+}
+
 struct directory::file_iterator::data {
   data() = default;
   data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern) {}
@@ -132,6 +148,22 @@ directory::file_iterator::value_type directory::file_iterator::operator*() const
   return data_->current_;
 }
 
+directory::file_iterator directory::file_iterator::begin() const {
+  return directory::file_iterator(data_->path_, data_->pattern_);
+}
+
+directory::file_iterator directory::file_iterator::end() const {
+  return directory::file_iterator();
+}
+
+const std::string& directory::file_iterator::path() const {
+  return data_->path_;
+}
+
+const std::string& directory::file_iterator::pattern() const {
+  return data_->pattern_;
+}
+
 struct directory::file_and_directory_iterator::data {
   data() = default;
   data(const std::string& path, const std::string& pattern) : path_(path), pattern_(pattern) {}
@@ -188,6 +220,22 @@ bool directory::file_and_directory_iterator::operator==(directory::file_and_dire
 directory::file_and_directory_iterator::value_type directory::file_and_directory_iterator::operator*() const {
   if (data_ == nullptr) return "";
   return data_->current_;
+}
+
+directory::file_and_directory_iterator directory::file_and_directory_iterator::begin() const {
+  return directory::file_and_directory_iterator(data_->path_, data_->pattern_);
+}
+
+directory::file_and_directory_iterator directory::file_and_directory_iterator::end() const {
+  return directory::file_and_directory_iterator();
+}
+
+const std::string& directory::file_and_directory_iterator::path() const {
+  return data_->path_;
+}
+
+const std::string& directory::file_and_directory_iterator::pattern() const {
+  return data_->pattern_;
 }
 
 int32_t directory::create(const std::string& directory_name) {
