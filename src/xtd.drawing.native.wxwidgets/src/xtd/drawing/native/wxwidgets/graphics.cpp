@@ -183,7 +183,7 @@ void graphics::draw_closed_curve(intptr_t handle, intptr_t pen, std::vector<std:
   for (auto [x, y] : points)
     wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
   wx_points.push_back(wx_points[0]);
-  dc.DrawSpline(wx_points.size(), wx_points.data());
+  dc.DrawSpline(as<int32_t>(wx_points.size()), wx_points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -196,7 +196,7 @@ void graphics::draw_curve(intptr_t handle, intptr_t pen, std::vector<std::pair<f
   std::vector<wxPoint> wx_points;
   for (auto [x, y] : points)
     wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
-  dc.DrawSpline(wx_points.size(), wx_points.data());
+  dc.DrawSpline(as<int32_t>(wx_points.size()), wx_points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -328,7 +328,7 @@ void graphics::fill_closed_curve(intptr_t handle, intptr_t brush, std::vector<st
   std::vector<wxPoint> wx_points;
   for (auto [x, y] : points)
     wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
-  dc.DrawSpline(wx_points.size(), wx_points.data());
+  dc.DrawSpline(as<int32_t>(wx_points.size()), wx_points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 

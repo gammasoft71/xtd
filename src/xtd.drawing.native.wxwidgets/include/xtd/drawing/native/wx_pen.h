@@ -7,6 +7,7 @@
 
 #include <cstdint>
 #include <xtd/argument_exception.h>
+#include <xtd/as.h>
 #include <wx/pen.h>
 #include <wx/image.h>
 #include <wx/graphics.h>
@@ -129,7 +130,7 @@ namespace xtd {
           if (pen.is_solid_color_pen()) {
             wxPen wxpen(pen.get_solid_color_pen().color, pen.get_solid_color_pen().width);
             wxpen.SetStyle(wxPenStyle::wxPENSTYLE_USER_DASH);
-            wxpen.SetDashes(pen.get_solid_color_pen().dashes.size(), pen.get_solid_color_pen().dashes.data());
+            wxpen.SetDashes(as<int32_t>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
             wxpen.SetCap(pen.line_cap());
             wxpen.SetJoin(pen.line_join());
             return wxpen;
@@ -142,7 +143,7 @@ namespace xtd {
             wxGraphicsPenInfo pen_info;
             pen_info.Colour(pen.get_solid_color_pen().color);
             pen_info.Style(wxPenStyle::wxPENSTYLE_USER_DASH);
-            pen_info.Dashes(pen.get_solid_color_pen().dashes.size(), pen.get_solid_color_pen().dashes.data());
+            pen_info.Dashes(as<int32_t>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
             pen_info.Width(pen.get_solid_color_pen().width);
             pen_info.Cap(pen.line_cap());
             pen_info.Join(pen.line_join());

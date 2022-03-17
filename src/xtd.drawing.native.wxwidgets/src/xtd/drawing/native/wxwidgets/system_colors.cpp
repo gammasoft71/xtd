@@ -2,6 +2,7 @@
 #include <xtd/drawing/native/system_colors.h>
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/as.h>
 #include <wx/settings.h>
 
 #include <cstdint>
@@ -48,7 +49,7 @@ namespace {
 }
 
 uint32_t system_colors::to_argb(intptr_t color) {
-  return color;
+  return as<uint32_t>(color);
 }
 
 intptr_t system_colors::accent() {
