@@ -60,7 +60,8 @@ namespace {
 
 intptr_t graphics_path::create() {
   toolkit::initialize(); // Must be first
-  wxMemoryDC mdc;
+  static wxBitmap bmp(1, 1);
+  wxMemoryDC mdc(bmp);
   wxGraphicsContext* mgc = wxGraphicsContext::Create(mdc);
   auto path = new wxGraphicsPath(mgc->CreatePath());
   figures::new_figure(path);
