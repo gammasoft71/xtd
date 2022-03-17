@@ -452,13 +452,13 @@ namespace unit_tests {
     
     void test_method_(max_byte) {
       assert::are_equal(52u, math::max(as<byte_t>(2), as<byte_t>(52)), csf_);
-      assert::are_equal(22u, math::max(as<byte_t>(22), as<byte_t>(5))), csf_;
+      assert::are_equal(22u, math::max(as<byte_t>(22), as<byte_t>(5)), csf_);
       assert::are_equal(16u, math::max(as<byte_t>(16), as<byte_t>(16)), csf_);
     }
     
     void test_method_(max_decimal) {
       assert::are_equal(52.0l, math::max(2.0l, 52.0l), csf_);
-      assert::are_equal(22.0l, math::max(22.0l, 5.0l)), csf_;
+      assert::are_equal(22.0l, math::max(22.0l, 5.0l), csf_);
       assert::are_equal(16.0l, math::max(16.0l, 16.0l), csf_);
     }
     
@@ -470,7 +470,7 @@ namespace unit_tests {
     
     void test_method_(max_int16) {
       assert::are_equal(52, math::max(as<int16_t>(2), as<int16_t>(52)), csf_);
-      assert::are_equal(22, math::max(as<int16_t>(22), as<int16_t>(5))), csf_;
+      assert::are_equal(22, math::max(as<int16_t>(22), as<int16_t>(5)), csf_);
       assert::are_equal(16, math::max(as<int16_t>(16), as<int16_t>(16)), csf_);
     }
     
