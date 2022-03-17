@@ -49,7 +49,7 @@ namespace unit_tests {
     }
     
     void test_method_(literal_char16_t_as_int) {
-      assert::is_true(is<int>(as<int>(u'a'))), csf_;
+      assert::is_true(is<int>(as<int>(u'a')), csf_);
     }
     
     void test_method_(literal_char32_t_as_int) {
@@ -105,7 +105,7 @@ namespace unit_tests {
     }
     
     void test_method_(literal_long_as_double) {
-      assert::is_true(is<double>(as<double>(42l))), csf_;
+      assert::is_true(is<double>(as<double>(42l)), csf_);
     }
     
     void test_method_(literal_long_llong_as_double) {
