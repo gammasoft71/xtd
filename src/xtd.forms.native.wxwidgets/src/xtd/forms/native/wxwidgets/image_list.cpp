@@ -1,5 +1,6 @@
 #include <list>
 #include <xtd/argument_exception.h>
+#include <xtd/as.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/image_list.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
@@ -31,8 +32,8 @@ void image_list::insert_item(intptr_t image_list, size_t pos, const drawing::ima
   else {
     std::list<wxBitmap> bitmaps;
     for (size_t index = static_cast<size_t>(reinterpret_cast<wxImageList*>(image_list)->GetImageCount()) - 1; index > pos; index--) {
-      bitmaps.push_front(reinterpret_cast<wxImageList*>(image_list)->GetBitmap(index));
-      reinterpret_cast<wxImageList*>(image_list)->Remove(index);
+      bitmaps.push_front(reinterpret_cast<wxImageList*>(image_list)->GetBitmap(as<int32_t>(index)));
+      reinterpret_cast<wxImageList*>(image_list)->Remove(as<int32_t>(index));
     }
     
     for (auto& bitmap : bitmaps)

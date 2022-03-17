@@ -1,3 +1,4 @@
+#include <xtd/as.h>
 #include <xtd/convert_string.h>
 #include <xtd/forms/progress_dialog_flags.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -60,7 +61,7 @@ namespace {
       else {
         timer_marquee.Stop();
         Pulse(convert_string::to_wstring(message));
-        timer_marquee.Start(animation_speed_);
+        timer_marquee.Start(as<int32_t>(animation_speed_));
       }
     }
     
