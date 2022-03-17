@@ -731,7 +731,7 @@ bool style_sheet::try_parse_rgba_color(const ustring& text, color& result) const
   byte_t b = 0;
   if (xtd::try_parse<byte_t>(color_parts[2], b) == false) return false;
   float a = 0;
-  if (xtd::try_parse<float>(color_parts[3], a, locale("en_US.utf-8")) == false) return false;
+  if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
   result = color::from_argb(as<byte_t>(as<int32_t>(a * 255) % 256), r, g, b);
   return true;
 }
@@ -761,7 +761,7 @@ bool style_sheet::try_parse_hsva_color(const ustring& text, color& result) const
   float v = 0;
   if (xtd::try_parse<float>(color_parts[2], v) == false) return false;
   float a = 0;
-  if (xtd::try_parse<float>(color_parts[3], a, locale("en_US.utf-8")) == false) return false;
+  if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
   result = color::from_argb(as<byte_t>(as<int32_t>(a * 255) % 256), color::from_hsb(h, s, v));
   return true;
 }
@@ -791,7 +791,7 @@ bool style_sheet::try_parse_hsla_color(const ustring& text, color& result) const
   float l = 0;
   if (xtd::try_parse<float>(color_parts[2], l) == false) return false;
   float a = 0;
-  if (xtd::try_parse<float>(color_parts[3], a, locale("en_US.utf-8")) == false) return false;
+  if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
   result = color::from_argb(as<byte_t>(as<int32_t>(a * 255) % 256), color::from_hsl(h, s, l));
   return true;
 }
