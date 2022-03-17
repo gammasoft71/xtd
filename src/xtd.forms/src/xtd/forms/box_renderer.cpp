@@ -28,16 +28,16 @@ namespace {
 }
 
 void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
+  auto fill_rect = box_model.get_fill_rectangle(bounds);
+  auto image_brush = background_image::make_brush(box_model.background_image(), fill_rect);
+  if (image_brush) fill_box(graphics, *image_brush, fill_rect, box_model.border_radius().top_left().get_pixels(bounds), box_model.border_radius().top_right().get_pixels(bounds), box_model.border_radius().bottom_right().get_pixels(bounds), box_model.border_radius().bottom_left().get_pixels(bounds));
+  else fill_box(graphics, solid_brush(box_model.background_color()), fill_rect, box_model.border_radius().top_left().get_pixels(bounds), box_model.border_radius().top_right().get_pixels(bounds), box_model.border_radius().bottom_right().get_pixels(bounds), box_model.border_radius().bottom_left().get_pixels(bounds));
+
   auto border_rect = box_model.get_border_rectangle(bounds);
   draw_line_top(graphics, border_rect, box_model);
   draw_line_left(graphics, border_rect, box_model);
   draw_line_bottom(graphics, border_rect, box_model);
   draw_line_right(graphics, border_rect, box_model);
-  
-  auto fill_rect = box_model.get_fill_rectangle(bounds);
-  graphics.fill_rounded_rectangle(solid_brush(box_model.background_color()), fill_rect, box_model.border_radius().top_left().get_pixels(bounds));
-  auto image_brush = background_image::make_brush(box_model.background_image(), fill_rect);
-  if (image_brush) fill_box(graphics, *image_brush, fill_rect, box_model.border_radius().top_left().get_pixels(bounds), box_model.border_radius().top_right().get_pixels(bounds), box_model.border_radius().bottom_right().get_pixels(bounds), box_model.border_radius().bottom_left().get_pixels(bounds));
 }
 
 void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
