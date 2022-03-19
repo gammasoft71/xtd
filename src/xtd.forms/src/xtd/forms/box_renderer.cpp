@@ -43,14 +43,14 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const i
 void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
   if (box_model.border_width().top().get_pixels(bounds) == 0 || box_model.border_style().top() == border_type::none || box_model.border_style().top() == border_type::hidden) return;
 
-  auto color1 = solid_brush(box_model.border_color().top());
-  auto color2 = solid_brush(box_model.border_color().top());
+  auto color1 = box_model.border_color().top();
+  auto color2 = box_model.border_color().top();
   if (box_model.border_style().top() == border_type::inset || box_model.border_style().top() == border_type::groove) {
-    color1 = solid_brush(color::dark(color1.color()));
-    color2 = solid_brush(color::light(color2.color()));
+    color1 = color::dark(color1);
+    color2 = color::light(color2);
   } else if (box_model.border_style().top() == border_type::outset || box_model.border_style().top() == border_type::ridge || box_model.border_style().top() == border_type::theme) {
-    color1 = solid_brush(color::light(color1.color()));
-    color2 = solid_brush(color::dark(color2.color()));
+    color1 = color::light(color1);
+    color2 = color::dark(color2);
   }
 
   auto pen_width1 = as<float>(box_model.border_width().top().get_pixels(bounds));
@@ -92,14 +92,14 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
 void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
   if (box_model.border_width().right().get_pixels(bounds) == 0 || box_model.border_style().right() == border_type::none || box_model.border_style().right() == border_type::hidden) return;
 
-  auto color1 = solid_brush(box_model.border_color().right());
-  auto color2 = solid_brush(box_model.border_color().right());
+  auto color1 = box_model.border_color().right();
+  auto color2 = box_model.border_color().right();
   if (box_model.border_style().right() == border_type::inset || box_model.border_style().right() == border_type::groove || box_model.border_style().right() == border_type::theme) {
-    color1 = solid_brush(color::light(color1.color()));
-    color2 = solid_brush(color::dark(color2.color()));
+    color1 = color::light(color1);
+    color2 = color::dark(color2);
   } else if (box_model.border_style().right() == border_type::outset || box_model.border_style().right() == border_type::ridge) {
-    color1 = solid_brush(color::dark(color1.color()));
-    color2 = solid_brush(color::light(color2.color()));
+    color1 = color::dark(color1);
+    color2 = color::light(color2);
   }
 
   auto pen_width1 = as<float>(box_model.border_width().right().get_pixels(bounds));
@@ -141,14 +141,14 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
 void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
   if (box_model.border_width().bottom().get_pixels(bounds) == 0 || box_model.border_style().bottom() == border_type::none || box_model.border_style().bottom() == border_type::hidden) return;
     
-  auto color1 = solid_brush(box_model.border_color().bottom());
-  auto color2 = solid_brush(box_model.border_color().bottom());
+  auto color1 = box_model.border_color().bottom();
+  auto color2 = box_model.border_color().bottom();
   if (box_model.border_style().bottom() == border_type::inset || box_model.border_style().bottom() == border_type::groove || box_model.border_style().top() == border_type::theme) {
-    color1 = solid_brush(color::light(color1.color()));
-    color2 = solid_brush(color::dark(color2.color()));
+    color1 = color::light(color1);
+    color2 = color::dark(color2);
   } else if (box_model.border_style().bottom() == border_type::outset || box_model.border_style().bottom() == border_type::ridge) {
-    color1 = solid_brush(color::dark(color1.color()));
-    color2 = solid_brush(color::light(color2.color()));
+    color1 = color::dark(color1);
+    color2 = color::light(color2);
   }
 
   auto pen_width1 = as<float>(box_model.border_width().bottom().get_pixels(bounds));
@@ -190,14 +190,14 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
 void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
   if (box_model.border_width().left().get_pixels(bounds) == 0 || box_model.border_style().left() == border_type::none || box_model.border_style().left() == border_type::hidden) return;
 
-  auto color1 = solid_brush(box_model.border_color().left());
-  auto color2 = solid_brush(box_model.border_color().left());
+  auto color1 = box_model.border_color().left();
+  auto color2 = box_model.border_color().left();
   if (box_model.border_style().left() == border_type::inset || box_model.border_style().left() == border_type::groove) {
-    color1 = solid_brush(color::dark(color1.color()));
-    color2 = solid_brush(color::light(color2.color()));
+    color1 = color::dark(color1);
+    color2 = color::light(color2);
   } else if (box_model.border_style().left() == border_type::outset || box_model.border_style().left() == border_type::ridge || box_model.border_style().left() == border_type::theme) {
-    color1 = solid_brush(color::light(color1.color()));
-    color2 = solid_brush(color::dark(color2.color()));
+    color1 = color::light(color1);
+    color2 = color::dark(color2);
   }
 
   auto pen_width1 = as<float>(box_model.border_width().left().get_pixels(bounds));
