@@ -69,7 +69,7 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
   auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().top()));
 
   auto border_rect1 = rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1);
-  auto border_rect2 = rectangle_f(border_rect1.left() + pen_width2 / 2.0f, border_rect1.top() + pen_width2 / 2.0f, border_rect1.width() - pen_width2, border_rect1.height() - pen_width2);
+  auto border_rect2 = rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2);
 
   // top
   graphics.draw_line(pen1, border_rect1.left() + box_model.border_radius().top_left().get_pixels(bounds), border_rect1.top(), border_rect1.right() - box_model.border_radius().top_right().get_pixels(bounds), border_rect1.top());
@@ -117,7 +117,7 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
   auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().right()));
 
   auto border_rect1 = rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1);
-  auto border_rect2 = rectangle_f(border_rect1.left() + pen_width2 / 2.0f, border_rect1.top() + pen_width2 / 2.0f, border_rect1.width() - pen_width2, border_rect1.height() - pen_width2);
+  auto border_rect2 = rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2);
 
   // right
   graphics.draw_line(pen1, border_rect1.right(), border_rect1.top() + box_model.border_radius().top_right().get_pixels(bounds), border_rect1.right(), border_rect1.bottom() - box_model.border_radius().bottom_right().get_pixels(bounds));
@@ -165,7 +165,7 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
   auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().bottom()));
 
   auto border_rect1 = rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1);
-  auto border_rect2 = rectangle_f(border_rect1.left() + pen_width2 / 2.0f, border_rect1.top() + pen_width2 / 2.0f, border_rect1.width() - pen_width2, border_rect1.height() - pen_width2);
+  auto border_rect2 = rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2);
 
   // bottom
   graphics.draw_line(pen1, border_rect1.left() + box_model.border_radius().bottom_left().get_pixels(bounds), border_rect1.bottom(), border_rect1.right() - box_model.border_radius().bottom_right().get_pixels(bounds), border_rect1.bottom());
@@ -213,7 +213,7 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
   auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().left()));
 
   auto border_rect1 = rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1);
-  auto border_rect2 = rectangle_f(border_rect1.left() + pen_width2 / 2.0f, border_rect1.top() + pen_width2 / 2.0f, border_rect1.width() - pen_width2, border_rect1.height() - pen_width2);
+  auto border_rect2 = rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2);
 
   // left
   graphics.draw_line(pen1, border_rect1.left(), border_rect1.top() + box_model.border_radius().top_left().get_pixels(bounds), border_rect1.x(), border_rect1.bottom() - box_model.border_radius().bottom_left().get_pixels(bounds));
