@@ -232,13 +232,13 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
 
 void box_renderer::fill_box(xtd::drawing::graphics& graphics, const xtd::drawing::brush& brush, const xtd::drawing::rectangle& fill_rect, int radius_top_left, int radius_top_right, int radius_bottom_right, int radius_bottom_left) {
   graphics_path path;
-  path.add_line(fill_rect.left() + radius_top_left, fill_rect.top(), fill_rect.right() - radius_top_right, fill_rect.top());
-  if (radius_top_right != 0) path.add_arc(fill_rect.right() - radius_top_right * 2, fill_rect.top(), radius_top_right * 2, radius_top_right * 2, 270, 90);
-  path.add_line(fill_rect.right(), fill_rect.top() + radius_top_right, fill_rect.right(), fill_rect.bottom() - radius_bottom_right);
-  if (radius_bottom_right != 0) path.add_arc(fill_rect.right() - radius_bottom_right * 2, fill_rect.bottom() - radius_bottom_right * 2, radius_bottom_right * 2, radius_bottom_right * 2, 0, 90);
-  path.add_line(fill_rect.right() - radius_bottom_right, fill_rect.bottom(), fill_rect.left() + radius_bottom_left, fill_rect.bottom());
-  if (radius_bottom_left != 0) path.add_arc(fill_rect.left(), fill_rect.bottom() - radius_bottom_left * 2, radius_bottom_left * 2, radius_bottom_left * 2, 90, 90);
-  path.add_line(fill_rect.left(), fill_rect.bottom() - radius_bottom_left, fill_rect.left(), fill_rect.top() + radius_top_left);
-  if (radius_top_left != 0) path.add_arc(fill_rect.left(), fill_rect.top(), radius_top_left * 2, radius_top_left * 2, 180, 90);
+  path.add_line(fill_rect.left() + radius_top_left / 2, fill_rect.top(), fill_rect.right() - radius_top_right / 2, fill_rect.top());
+  if (radius_top_right != 0) path.add_arc(fill_rect.right() - radius_top_right, fill_rect.top(), radius_top_right, radius_top_right, 270, 90);
+  path.add_line(fill_rect.right(), fill_rect.top() + radius_top_right / 2, fill_rect.right(), fill_rect.bottom() - radius_bottom_right  /2);
+  if (radius_bottom_right != 0) path.add_arc(fill_rect.right() - radius_bottom_right, fill_rect.bottom() - radius_bottom_right, radius_bottom_right, radius_bottom_right, 0, 90);
+  path.add_line(fill_rect.right() - radius_bottom_right  / 2, fill_rect.bottom(), fill_rect.left() + radius_bottom_left / 2, fill_rect.bottom());
+  if (radius_bottom_left != 0) path.add_arc(fill_rect.left(), fill_rect.bottom() - radius_bottom_left, radius_bottom_left, radius_bottom_left, 90, 90);
+  path.add_line(fill_rect.left(), fill_rect.bottom() - radius_bottom_left / 2, fill_rect.left(), fill_rect.top() + radius_top_left / 2);
+  if (radius_top_left != 0) path.add_arc(fill_rect.left(), fill_rect.top(), radius_top_left, radius_top_left, 180, 90);
   graphics.fill_path(brush, path);
 }
