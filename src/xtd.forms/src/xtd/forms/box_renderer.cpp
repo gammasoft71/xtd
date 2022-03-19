@@ -55,7 +55,19 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
   }
 
   auto pen_width1 = as<float>(box_model.border_width().top().get_pixels(bounds));
+  float pen_width2 = 0.0f;
+  if (box_model.border_style().top() == border_type::double_border) {
+    pen_width1 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 3;
+    pen_width2 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 3;
+  }
+  if (box_model.border_style().top() == border_type::theme || box_model.border_style().top() == border_type::groove || box_model.border_style().top() == border_type::ridge) {
+    pen_width1 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 2;
+    pen_width2 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 2;
+  }
+
   auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(box_model.border_style().top()));
+  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().top()));
+
   auto border_rect1 = rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1);
 
   // top
@@ -81,7 +93,19 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
   }
 
   auto pen_width1 = as<float>(box_model.border_width().right().get_pixels(bounds));
+  float pen_width2 = 0.0f;
+  if (box_model.border_style().right() == border_type::double_border) {
+    pen_width1 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 3;
+    pen_width2 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 3;
+  }
+  if (box_model.border_style().right() == border_type::theme || box_model.border_style().right() == border_type::groove || box_model.border_style().right() == border_type::ridge) {
+    pen_width1 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 2;
+    pen_width2 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 2;
+  }
+
   auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(box_model.border_style().right()));
+  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().right()));
+
   auto border_rect1 = rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1);
 
   // right
@@ -107,7 +131,19 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
   }
 
   auto pen_width1 = as<float>(box_model.border_width().bottom().get_pixels(bounds));
+  float pen_width2 = 0.0f;
+  if (box_model.border_style().bottom() == border_type::double_border) {
+    pen_width1 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 3;
+    pen_width2 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 3;
+  }
+  if (box_model.border_style().top() == border_type::theme || box_model.border_style().bottom() == border_type::groove || box_model.border_style().bottom() == border_type::ridge) {
+    pen_width1 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 2;
+    pen_width2 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 2;
+  }
+
   auto pen1 = pen(color1, as<float>(pen_width1)).dash_style(border_type_to_dash_style(box_model.border_style().bottom()));
+  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().bottom()));
+
   auto border_rect1 = rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1);
 
   // bottom
@@ -133,7 +169,19 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
   }
 
   auto pen_width1 = as<float>(box_model.border_width().left().get_pixels(bounds));
+  float pen_width2 = 0.0f;
+  if (box_model.border_style().left() == border_type::double_border) {
+    pen_width1 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 3;
+    pen_width2 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 3;
+  }
+  if (box_model.border_style().left() == border_type::theme || box_model.border_style().left() == border_type::groove || box_model.border_style().left() == border_type::ridge) {
+    pen_width1 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 2;
+    pen_width2 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 2;
+  }
+
   auto pen1 = pen(color1, as<float>(pen_width1)).dash_style(border_type_to_dash_style(box_model.border_style().left()));
+  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().left()));
+
   auto border_rect1 = rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1);
 
   // left
