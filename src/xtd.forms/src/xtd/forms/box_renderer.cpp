@@ -54,7 +54,7 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
   }
 
   auto pen_width1 = as<float>(box_model.border_width().top().get_pixels(bounds));
-  float pen_width2 = 0.0f;
+  auto pen_width2 = 0.0f;
   if (box_model.border_style().top() == border_type::double_border) {
     pen_width1 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 3;
     pen_width2 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 3;
@@ -103,7 +103,7 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
   }
 
   auto pen_width1 = as<float>(box_model.border_width().right().get_pixels(bounds));
-  float pen_width2 = 0.0f;
+  auto pen_width2 = 0.0f;
   if (box_model.border_style().right() == border_type::double_border) {
     pen_width1 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 3;
     pen_width2 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 3;
@@ -152,7 +152,7 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
   }
 
   auto pen_width1 = as<float>(box_model.border_width().bottom().get_pixels(bounds));
-  float pen_width2 = 0.0f;
+  auto pen_width2 = 0.0f;
   if (box_model.border_style().bottom() == border_type::double_border) {
     pen_width1 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 3;
     pen_width2 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 3;
@@ -201,7 +201,7 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
   }
 
   auto pen_width1 = as<float>(box_model.border_width().left().get_pixels(bounds));
-  float pen_width2 = 0.0f;
+  auto pen_width2 = 0.0f;
   if (box_model.border_style().left() == border_type::double_border) {
     pen_width1 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 3;
     pen_width2 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 3;
