@@ -75,11 +75,11 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
 
   if (pen_width2 != 0) {
     // top
-    graphics.draw_line(pen2, border_rect2.left() + box_model.border_radius().top_left().get_pixels(bounds), border_rect2.top(), border_rect2.right() - box_model.border_radius().top_right().get_pixels(bounds), border_rect2.top());
+    graphics.draw_line(pen2, border_rect2.left() + box_model.border_radius().top_left().get_pixels(bounds) / 2, border_rect2.top(), border_rect2.right() - box_model.border_radius().top_right().get_pixels(bounds)  /2, border_rect2.top());
     // top-left
-    if (box_model.border_radius().top_left().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.left(), border_rect2.top(), box_model.border_radius().top_left().get_pixels(bounds) * 2, box_model.border_radius().top_left().get_pixels(bounds) * 2, 225, 45);
+    if (box_model.border_radius().top_left().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.left(), border_rect2.top(), box_model.border_radius().top_left().get_pixels(bounds), box_model.border_radius().top_left().get_pixels(bounds), 225, 45);
     // top-right
-    if (box_model.border_radius().top_right().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.right() - box_model.border_radius().top_right().get_pixels(bounds) * 2, border_rect2.top(), box_model.border_radius().top_right().get_pixels(bounds) * 2, box_model.border_radius().top_right().get_pixels(bounds) * 2, 270, 45);
+    if (box_model.border_radius().top_right().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.right() - box_model.border_radius().top_right().get_pixels(bounds), border_rect2.top(), box_model.border_radius().top_right().get_pixels(bounds), box_model.border_radius().top_right().get_pixels(bounds), 270, 45);
   }
 }
 
@@ -124,11 +124,11 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
 
   if (pen_width2 != 0) {
     // right
-    graphics.draw_line(pen2, border_rect2.right(), border_rect2.top() + box_model.border_radius().top_right().get_pixels(bounds), border_rect2.right(), border_rect2.bottom() - box_model.border_radius().bottom_right().get_pixels(bounds));
+    graphics.draw_line(pen2, border_rect2.right(), border_rect2.top() + box_model.border_radius().top_right().get_pixels(bounds) / 2, border_rect2.right(), border_rect2.bottom() - box_model.border_radius().bottom_right().get_pixels(bounds) / 2);
     // top-right
-    if (box_model.border_radius().top_right().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.right() - box_model.border_radius().top_right().get_pixels(bounds) * 2, border_rect2.top(), box_model.border_radius().top_right().get_pixels(bounds) * 2, box_model.border_radius().top_right().get_pixels(bounds) * 2, 315, 45);
+    if (box_model.border_radius().top_right().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.right() - box_model.border_radius().top_right().get_pixels(bounds), border_rect2.top(), box_model.border_radius().top_right().get_pixels(bounds), box_model.border_radius().top_right().get_pixels(bounds), 315, 45);
     // bottom-right
-    if (box_model.border_radius().bottom_right().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.right() - box_model.border_radius().bottom_right().get_pixels(bounds) * 2, border_rect2.bottom() - box_model.border_radius().bottom_right().get_pixels(bounds) * 2, box_model.border_radius().bottom_right().get_pixels(bounds) * 2, box_model.border_radius().bottom_right().get_pixels(bounds) * 2, 0, 45);
+    if (box_model.border_radius().bottom_right().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.right() - box_model.border_radius().bottom_right().get_pixels(bounds), border_rect2.bottom() - box_model.border_radius().bottom_right().get_pixels(bounds), box_model.border_radius().bottom_right().get_pixels(bounds), box_model.border_radius().bottom_right().get_pixels(bounds), 0, 45);
   }
 }
 
@@ -173,11 +173,11 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
   
   if (pen_width2 != 0) {
     // bottom
-    graphics.draw_line(pen2, border_rect2.left() + box_model.border_radius().bottom_left().get_pixels(bounds), border_rect2.bottom(), border_rect2.right() - box_model.border_radius().bottom_right().get_pixels(bounds), border_rect2.bottom());
+    graphics.draw_line(pen2, border_rect2.left() + box_model.border_radius().bottom_left().get_pixels(bounds) / 2, border_rect2.bottom(), border_rect2.right() - box_model.border_radius().bottom_right().get_pixels(bounds) / 2, border_rect2.bottom());
     // bottom-left
-    if (box_model.border_radius().bottom_left().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.left(), border_rect2.bottom() - box_model.border_radius().bottom_left().get_pixels(bounds) * 2, box_model.border_radius().bottom_left().get_pixels(bounds) * 2, box_model.border_radius().bottom_left().get_pixels(bounds) * 2, 90, 45);
+    if (box_model.border_radius().bottom_left().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.left(), border_rect2.bottom() - box_model.border_radius().bottom_left().get_pixels(bounds), box_model.border_radius().bottom_left().get_pixels(bounds), box_model.border_radius().bottom_left().get_pixels(bounds), 90, 45);
     // bottom-right
-    if (box_model.border_radius().bottom_right().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.right() - box_model.border_radius().bottom_right().get_pixels(bounds) * 2, border_rect2.bottom() - box_model.border_radius().bottom_right().get_pixels(bounds) * 2, box_model.border_radius().bottom_right().get_pixels(bounds) * 2, box_model.border_radius().bottom_right().get_pixels(bounds) * 2, 45, 45);
+    if (box_model.border_radius().bottom_right().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.right() - box_model.border_radius().bottom_right().get_pixels(bounds), border_rect2.bottom() - box_model.border_radius().bottom_right().get_pixels(bounds), box_model.border_radius().bottom_right().get_pixels(bounds), box_model.border_radius().bottom_right().get_pixels(bounds), 45, 45);
   }
 }
 
@@ -222,11 +222,11 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
   
   if (pen_width2 != 0) {
     // left
-    graphics.draw_line(pen2, border_rect2.left(), border_rect2.top() + box_model.border_radius().top_left().get_pixels(bounds), border_rect2.x(), border_rect2.bottom() - box_model.border_radius().bottom_left().get_pixels(bounds));
+    graphics.draw_line(pen2, border_rect2.left(), border_rect2.top() + box_model.border_radius().top_left().get_pixels(bounds) / 2, border_rect2.x(), border_rect2.bottom() - box_model.border_radius().bottom_left().get_pixels(bounds) / 2);
     // top-left
-    if (box_model.border_radius().top_left().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.left(), border_rect2.top(), box_model.border_radius().top_left().get_pixels(bounds) * 2, box_model.border_radius().top_left().get_pixels(bounds) * 2, 180, 45);
+    if (box_model.border_radius().top_left().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.left(), border_rect2.top(), box_model.border_radius().top_left().get_pixels(bounds), box_model.border_radius().top_left().get_pixels(bounds), 180, 45);
     // bottom-left
-    if (box_model.border_radius().bottom_left().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.left(), border_rect2.bottom() - box_model.border_radius().bottom_left().get_pixels(bounds) * 2, box_model.border_radius().bottom_left().get_pixels(bounds) * 2, box_model.border_radius().bottom_left().get_pixels(bounds) * 2, 135, 45);
+    if (box_model.border_radius().bottom_left().get_pixels(bounds)) graphics.draw_arc(pen2, border_rect2.left(), border_rect2.bottom() - box_model.border_radius().bottom_left().get_pixels(bounds), box_model.border_radius().bottom_left().get_pixels(bounds), box_model.border_radius().bottom_left().get_pixels(bounds), 135, 45);
   }
 }
 
