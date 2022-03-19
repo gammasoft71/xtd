@@ -35,7 +35,7 @@ namespace xtd {
       static void draw_line_right(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
       static void draw_line_bottom(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
       static void draw_line_left(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
-      static void fill_box(xtd::drawing::graphics& graphics, const xtd::drawing::brush& brush, const xtd::drawing::rectangle& fill_rect, int radius_top_left, int radius_top_right, int radius_bottom_right, int radius_bottom_left);
+      static void fill_box(xtd::drawing::graphics& graphics, const xtd::drawing::brush& brush, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
     };
   }
 }
