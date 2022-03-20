@@ -1573,13 +1573,13 @@ void control::wm_mouse_down(message& message) {
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   mouse_buttons_ |= e.button();
   if (mouse_buttons_ == forms::mouse_buttons::right && data_->context_menu.has_value()) native::control::context_menu(handle(), data_->context_menu.value().get().handle());
-  else def_wnd_proc(message);
+  //else def_wnd_proc(message);
   on_mouse_down(e);
 }
 
 void control::wm_mouse_double_click(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
-  def_wnd_proc(message);
+  //def_wnd_proc(message);
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   on_double_click(event_args::empty);
   on_mouse_double_click(mouse_event_args::create(message, get_state(state::double_click_fired)));
@@ -1601,7 +1601,7 @@ void control::wm_mouse_leave(message& message) {
 
 void control::wm_mouse_up(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
-  def_wnd_proc(message);
+  //def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
   /// @todo Fix check ckient rect mouse up when client rect will updated when form is moved on other screen.
