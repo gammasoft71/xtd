@@ -461,6 +461,7 @@ void form::on_handle_created(const event_args& e) {
   if (show_icon_ && icon_ != drawing::icon::empty) native::form::icon(handle(), icon_);
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
+  if (!region().is_infinite(xtd::drawing::graphics(get_state(control::state::double_buffered) ? native::control::create_double_buffered_paint_graphics(handle()) : native::control::create_paint_graphics(handle()), region()))) native::form::set_region(handle(), region().handle());
   
   if (menu_.has_value()) create_system_menu();
 }

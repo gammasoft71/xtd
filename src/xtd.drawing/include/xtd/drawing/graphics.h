@@ -41,6 +41,7 @@ namespace xtd {
   namespace forms {
     class control;
     class control_paint;
+    class form;
     class paint_event_args;
     class screen;
   }
@@ -1295,6 +1296,7 @@ namespace xtd {
       friend xtd::drawing::font;
       friend xtd::forms::control;
       friend xtd::forms::control_paint;
+      friend xtd::forms::form;
       friend xtd::forms::paint_event_args;
       friend xtd::forms::screen;
       
