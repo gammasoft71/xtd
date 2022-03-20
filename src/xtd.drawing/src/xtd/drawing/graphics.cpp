@@ -15,6 +15,16 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
+graphics::graphics(intptr_t handle) {
+  data_->handle = handle;
+}
+
+graphics::graphics(intptr_t handle, const drawing::region& region) {
+  data_->handle = handle;
+  if (!region.is_empty() && !region.is_infinite())
+    clip(region);
+}
+
 graphics::graphics(const graphics& value) {
   if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
   data_ = value.data_;
