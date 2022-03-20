@@ -94,13 +94,23 @@ namespace xtd {
         /// @warning Internal use only
         static void intersect(intptr_t handle, intptr_t region);
         
+        /// @brief Tests whether the region has an empty interior.
+        /// @param handle The region handle.
+        /// @return true if the interior of the region is empty; otherwise, false.
+        /// @warning Internal use only
+        static bool is_empty(intptr_t handle);
         /// @brief Tests whether the region has an empty interior on the specified drawing surface.
         /// @param handle The region handle.
         /// @param graphics A graphics handle that represents a drawing surface.
         /// @return true if the interior of the region is empty when the transformation associated with graphics is applied; otherwise, false.
         /// @warning Internal use only
         static bool is_empty(intptr_t handle, intptr_t grpahics);
-        
+
+        /// @brief Tests whether the region has an infinite interior.
+        /// @param handle The region handle.
+        /// @return true if the interior of the region is infinite; otherwise, false.
+        /// @warning Internal use only
+        static bool is_infinite(intptr_t handle);
         /// @brief Tests whether the region has an infinite interior on the specified drawing surface.
         /// @param handle The region handle.
         /// @param graphics A graphics handle that represents a drawing surface.

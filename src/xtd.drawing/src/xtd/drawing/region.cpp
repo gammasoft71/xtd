@@ -96,8 +96,16 @@ void region::intersect(const xtd::drawing::region& region) {
   native::region::intersect(data_->handle, region.data_->handle);
 }
 
+bool region::is_empty() const noexcept {
+  return native::region::is_empty(handle());
+}
+
 bool region::is_empty(const xtd::drawing::graphics& g) const noexcept {
   return native::region::is_empty(handle(), g.handle());
+}
+
+bool region::is_infinite() const noexcept {
+  return native::region::is_infinite(handle());
 }
 
 bool region::is_infinite(const xtd::drawing::graphics& g) const noexcept {

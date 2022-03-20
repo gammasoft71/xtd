@@ -89,8 +89,17 @@ void region::intersect(intptr_t handle, intptr_t region) {
   region1.Intersect(region2);
 }
 
+bool region::is_empty(intptr_t handle) {
+  return reinterpret_cast<wxRegion*>(handle)->IsEmpty();
+}
+
 bool region::is_empty(intptr_t handle, intptr_t grpahics) {
   return reinterpret_cast<wxRegion*>(handle)->IsEmpty();
+}
+
+bool region::is_infinite(intptr_t handle) {
+  auto bounds = reinterpret_cast<wxRegion*>(handle)->GetBox();
+  return bounds.x == as<int32_t>(single_object::min_value) && bounds.y == as<int32_t>(single_object::min_value) && bounds.width == as<int32_t>(single_object::max_value) && bounds.height == as<int32_t>(single_object::max_value);
 }
 
 bool region::is_infinite(intptr_t handle, intptr_t grpahics) {
