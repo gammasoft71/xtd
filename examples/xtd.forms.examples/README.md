@@ -55,6 +55,7 @@
 
 ## [forms](forms/README.md)
 
+* [circular_form](forms/circular_form/README.md) demonstrates the use of [xtd::control::region](../../src/xtd_forms/include/xtd/forms/control.h) property for create a circular form.
 * [debug_form](forms/debug_form/README.md) represents a form that trace all written debug with xtd::diagnosticts::debug class.
 * [dialog](forms/dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.hpp) container as dialog.
 * [form](forms/form/README.md) represents a window or dialog box that makes up an application's user interface.

@@ -4,6 +4,7 @@ project(forms)
 find_package(xtd REQUIRED)
 
 add_projects(
+  circular_form
   debug_form
   dialog
   form
