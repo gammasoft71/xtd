@@ -1299,6 +1299,10 @@ namespace xtd {
       friend xtd::forms::screen;
       
       explicit graphics(intptr_t handle) {data_->handle = handle;}
+      explicit graphics(intptr_t handle, const drawing::region& region) {
+        data_->handle = handle;
+        data_->clip = region;
+      }
       void draw_image_disabled(const xtd::drawing::image& image, float x, float y, float brightness);
       
       struct data {

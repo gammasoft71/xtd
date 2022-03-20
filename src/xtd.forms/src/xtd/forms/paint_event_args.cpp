@@ -12,6 +12,6 @@ paint_event_args::~paint_event_args() {
 }
 
 drawing::graphics& paint_event_args::graphics() {
-  if (control_ && !graphics_) graphics_ = new drawing::graphics(control_->get_state(control::state::double_buffered) ? native::control::create_double_buffered_paint_graphics(control_->handle()) : native::control::create_paint_graphics(control_->handle()));
+  if (control_ && !graphics_) graphics_ = new drawing::graphics(control_->get_state(control::state::double_buffered) ? native::control::create_double_buffered_paint_graphics(control_->handle()) : native::control::create_paint_graphics(control_->handle()), control_->region());
   return *graphics_;
 }

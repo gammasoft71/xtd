@@ -96,7 +96,7 @@ namespace xtd {
         }
         
         static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style, intptr_t parent) {
-          long wx_style = 0;
+          long wx_style = wxFRAME_SHAPED;
           
           if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
           if ((style & WS_MAXIMIZEBOX) == WS_MAXIMIZEBOX) wx_style |= wxMAXIMIZE_BOX;

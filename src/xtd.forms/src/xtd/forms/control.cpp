@@ -608,6 +608,17 @@ bool control::recreating_handle() const {
   return get_state(state::recreate);
 }
 
+const xtd::drawing::region& control::region() const {
+  return data_->region;
+}
+
+control& control::region(const xtd::drawing::region& value) {
+  if (value != data_->region) {
+    data_->region = value;
+  }
+  return *this;
+}
+
 int32_t control::right() const {
   return left() + width();
 }
@@ -1162,6 +1173,10 @@ void control::on_parent_font_changed(const event_args& e) {
     for (auto control : controls())
       control.get().on_parent_font_changed(event_args::empty);
   }
+}
+
+void control::on_region_changed(const event_args& e) {
+  if (can_raise_events()) region_changed(*this, e);
 }
 
 void control::on_resize(const event_args& e) {

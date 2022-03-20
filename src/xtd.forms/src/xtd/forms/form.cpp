@@ -480,6 +480,11 @@ void form::on_location_changed(const event_args& e) {
   container_control::on_location_changed(e);
 }
 
+void form::on_region_changed(const event_args& e) {
+  native::form::set_region(handle(), region().handle());
+  container_control::on_region_changed(e);
+}
+
 void form::on_resize(const event_args& e) {
   if (is_handle_created()) {
     if (native::form::minimize(handle()))
