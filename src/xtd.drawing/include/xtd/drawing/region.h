@@ -125,18 +125,26 @@ namespace xtd {
       /// @param region The xtd::drawing::region to intersect with this xtd::drawing::region.
       void intersect(const xtd::drawing::region& region);
       
+      /// @brief Tests whether this xtd::drawing::region has an empty interior.
+      /// @return true if the interior of this xtd::drawing::region is empty; otherwise, false.
+      /// @remarks The current transformation of the graphics context g is used to compute the region interior on the drawing surface.
+      bool is_empty() const noexcept;
       /// @brief Tests whether this xtd::drawing::region has an empty interior on the specified drawing surface.
       /// @param g A xtd::drawing::graphics that represents a drawing surface.
       /// @return true if the interior of this xtd::drawing::region is empty when the transformation associated with g is applied; otherwise, false.
       /// @remarks The current transformation of the graphics context g is used to compute the region interior on the drawing surface.
       bool is_empty(const xtd::drawing::graphics& g) const noexcept;
-      
+
+      /// @brief Tests whether this xtd::drawing::region has an infinite interior.
+      /// @return true if the interior of this xtd::drawing::region is infinite; otherwise, false.
+      /// @remarks The current transformation of the graphics context g is used to compute the region interior on the drawing surface.
+      bool is_infinite() const noexcept;
       /// @brief Tests whether this xtd::drawing::region has an infinite interior on the specified drawing surface.
       /// @param g A xtd::drawing::graphics that represents a drawing surface.
       /// @return true if the interior of this xtd::drawing::region is infinite when the transformation associated with g is applied; otherwise, false.
       /// @remarks The current transformation of the graphics context g is used to compute the region interior on the drawing surface.
       bool is_infinite(const xtd::drawing::graphics& g) const noexcept;
-      
+
       /// @brief Tests whether any portion of the specified xtd::drawing::rectangle_f structure is contained within this xtd::drawing::region when drawn using the specified xtd::drawing::graphics.
       /// @param rect The xtd::drawing::rectangle_f structure to test.
       /// @param g A xtd::drawing::graphics that represents a graphics context.
