@@ -615,6 +615,7 @@ const xtd::drawing::region& control::region() const {
 control& control::region(const xtd::drawing::region& value) {
   if (value != data_->region) {
     data_->region = value;
+    on_region_changed(event_args::empty);
   }
   return *this;
 }
