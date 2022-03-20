@@ -349,6 +349,7 @@ namespace xtd {
       
       void on_layout(const event_args& e) override;
       void on_location_changed(const event_args& e) override;
+      void on_region_changed(const event_args& e) override;
       
       /// @brief Raises the control::system_colors_changed event.
       /// @param e An xtd::event_args that contains the event data.
