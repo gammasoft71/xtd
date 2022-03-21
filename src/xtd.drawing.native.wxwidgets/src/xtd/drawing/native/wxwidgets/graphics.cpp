@@ -432,23 +432,23 @@ void graphics::fill_rectangle(intptr_t handle, intptr_t brush, float x, float y,
     for (int y_ia = 0; y_ia < height; y_ia++)
       for (int x_ia = 0; x_ia < width; x_ia++)
         image.SetAlpha(x_ia, y_ia, 0);
-    wxBitmap conical_gradient_bitmap(image);
-    auto conical_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap));
-    conical_gradient_graphics->SetPen(wxNullPen);
-    conical_gradient_graphics->SetBrush(wxBrush(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.Item(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.GetCount() - 1).GetColour()));
-    conical_gradient_graphics->DrawRectangle(0, 0, static_cast<double>(width), static_cast<double>(height));
-    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
-    wxBitmap conical_gradient_bitmap_mask(width, height);
-    auto conical_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap_mask));
-    conical_gradient_mask_graphics->SetPen(wxNullPen);
-    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
-    conical_gradient_mask_graphics->DrawRectangle(0, 0, width, height);
-    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateRadialGradientBrush(wx_radial_brush.focal_point.x - x, wx_radial_brush.focal_point.y - y, wx_radial_brush.center_point.x - x, wx_radial_brush.center_point.y - y, wx_radial_brush.radius, wxColour(0, 0, 0), wxColour(0, 0, 0)));
-    conical_gradient_mask_graphics->DrawRectangle(0, 0, static_cast<double>(width), static_cast<double>(height));
-    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
+    wxBitmap radial_gradient_bitmap(image);
+    auto radial_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(radial_gradient_bitmap));
+    radial_gradient_graphics->SetPen(wxNullPen);
+    radial_gradient_graphics->SetBrush(wxBrush(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.Item(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.GetCount() - 1).GetColour()));
+    radial_gradient_graphics->DrawRectangle(0, 0, static_cast<double>(width), static_cast<double>(height));
+    wxImage radial_gradient_image = radial_gradient_bitmap.ConvertToImage();
+    wxBitmap radial_gradient_bitmap_mask(width, height);
+    auto radial_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(radial_gradient_bitmap_mask));
+    radial_gradient_mask_graphics->SetPen(wxNullPen);
+    radial_gradient_mask_graphics->SetBrush(radial_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
+    radial_gradient_mask_graphics->DrawRectangle(0, 0, width, height);
+    radial_gradient_mask_graphics->SetBrush(radial_gradient_mask_graphics->CreateRadialGradientBrush(wx_radial_brush.focal_point.x - x, wx_radial_brush.focal_point.y - y, wx_radial_brush.center_point.x - x, wx_radial_brush.center_point.y - y, wx_radial_brush.radius, wxColour(0, 0, 0), wxColour(0, 0, 0)));
+    radial_gradient_mask_graphics->DrawRectangle(0, 0, static_cast<double>(width), static_cast<double>(height));
+    radial_gradient_image.SetMaskFromImage(radial_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
     
-    conical_gradient_bitmap = conical_gradient_image;
-    graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
+    radial_gradient_bitmap = radial_gradient_image;
+    graphics.DrawBitmap(radial_gradient_bitmap, x, y, width, height);
   }
   #endif
   
@@ -506,22 +506,22 @@ void graphics::fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, 
     for (int y_ia = 0; y_ia < height; y_ia++)
       for (int x_ia = 0; x_ia < width; x_ia++)
         image.SetAlpha(x_ia, y_ia, 0);
-    wxBitmap conical_gradient_bitmap(image);
-    auto conical_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap));
-    conical_gradient_graphics->SetPen(wxNullPen);
-    conical_gradient_graphics->SetBrush(wxBrush(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.Item(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.GetCount() - 1).GetColour()));
-    conical_gradient_graphics->DrawRoundedRectangle(0, 0, static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
-    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
-    wxBitmap conical_gradient_bitmap_mask(width, height);
-    auto conical_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap_mask));
-    conical_gradient_mask_graphics->SetPen(wxNullPen);
-    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
-    conical_gradient_mask_graphics->DrawRoundedRectangle(0, 0, width, height, radius);
-    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateRadialGradientBrush(wx_radial_brush.focal_point.x - x, wx_radial_brush.focal_point.y - y, wx_radial_brush.center_point.x - x, wx_radial_brush.center_point.y - y, wx_radial_brush.radius, wxColour(0, 0, 0), wxColour(0, 0, 0)));
-    conical_gradient_mask_graphics->DrawRoundedRectangle(0, 0, static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
-    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
-    conical_gradient_bitmap = conical_gradient_image;
-    graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
+    wxBitmap radial_gradient_bitmap(image);
+    auto radial_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(radial_gradient_bitmap));
+    radial_gradient_graphics->SetPen(wxNullPen);
+    radial_gradient_graphics->SetBrush(wxBrush(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.Item(reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush().colors.GetCount() - 1).GetColour()));
+    radial_gradient_graphics->DrawRoundedRectangle(0, 0, static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
+    wxImage radial_gradient_image = radial_gradient_bitmap.ConvertToImage();
+    wxBitmap radial_gradient_bitmap_mask(width, height);
+    auto radial_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(radial_gradient_bitmap_mask));
+    radial_gradient_mask_graphics->SetPen(wxNullPen);
+    radial_gradient_mask_graphics->SetBrush(radial_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
+    radial_gradient_mask_graphics->DrawRoundedRectangle(0, 0, width, height, radius);
+    radial_gradient_mask_graphics->SetBrush(radial_gradient_mask_graphics->CreateRadialGradientBrush(wx_radial_brush.focal_point.x - x, wx_radial_brush.focal_point.y - y, wx_radial_brush.center_point.x - x, wx_radial_brush.center_point.y - y, wx_radial_brush.radius, wxColour(0, 0, 0), wxColour(0, 0, 0)));
+    radial_gradient_mask_graphics->DrawRoundedRectangle(0, 0, static_cast<double>(width), static_cast<double>(height), static_cast<double>(radius));
+    radial_gradient_image.SetMaskFromImage(radial_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
+    radial_gradient_bitmap = radial_gradient_image;
+    graphics.DrawBitmap(radial_gradient_bitmap, x, y, width, height);
   }
   #endif
   
