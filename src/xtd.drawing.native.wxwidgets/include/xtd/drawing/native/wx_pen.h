@@ -128,9 +128,14 @@ namespace xtd {
         
         static wxPen to_pen(const wx_pen& pen) {
           if (pen.is_solid_color_pen()) {
-            wxPen wxpen(pen.get_solid_color_pen().color, pen.get_solid_color_pen().width);
-            wxpen.SetStyle(wxPenStyle::wxPENSTYLE_USER_DASH);
-            wxpen.SetDashes(as<int32_t>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
+            wxPen wxpen(pen.get_solid_color_pen().color);
+            if (pen.get_solid_color_pen().dashes.size() == 0)
+              wxpen.SetStyle(wxPenStyle::wxPENSTYLE_SOLID);
+            else {
+              wxpen.SetStyle(wxPenStyle::wxPENSTYLE_USER_DASH);
+              wxpen.SetDashes(as<int32_t>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
+            }
+            wxpen.SetWidth(pen.get_solid_color_pen().width);
             wxpen.SetCap(pen.line_cap());
             wxpen.SetJoin(pen.line_join());
             return wxpen;
@@ -142,8 +147,12 @@ namespace xtd {
           if (pen.is_solid_color_pen()) {
             wxGraphicsPenInfo pen_info;
             pen_info.Colour(pen.get_solid_color_pen().color);
-            pen_info.Style(wxPenStyle::wxPENSTYLE_USER_DASH);
-            pen_info.Dashes(as<int32_t>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
+            if (pen.get_solid_color_pen().dashes.size() == 0)
+              pen_info.Style(wxPenStyle::wxPENSTYLE_SOLID);
+            else {
+              pen_info.Style(wxPenStyle::wxPENSTYLE_USER_DASH);
+              pen_info.Dashes(as<int32_t>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
+            }
             pen_info.Width(pen.get_solid_color_pen().width);
             pen_info.Cap(pen.line_cap());
             pen_info.Join(pen.line_join());
