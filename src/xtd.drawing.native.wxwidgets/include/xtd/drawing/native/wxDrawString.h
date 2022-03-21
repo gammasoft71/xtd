@@ -37,8 +37,8 @@ namespace xtd {
             dc.SetFont(font);
             dc.SetTextForeground(brush.get_solid_brush().color);
             if (angle == 0) {
+              auto hot_key_prefix_location = GetHotKeyPrefixLocations(text);
               auto text_to_draw = FormatString(dc, text, width, align, hot_key_prefix, trimming);
-              auto hot_key_prefix_location = GetHotKeyPrefixLocations(text_to_draw);
               dc.DrawLabel(text_to_draw, wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             } else
               dc.DrawRotatedText(text, x, y, -angle);
