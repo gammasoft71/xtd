@@ -12,6 +12,7 @@ namespace examples {
       button1.size({80, 25});
       button1.text("Button 1");
       button1.style_sheet("button {"
+                          "  border-style: solid;"
                           "  border-color: #00AA00;"
                           "  color: #00AA00;"
                           "}"
@@ -31,6 +32,7 @@ namespace examples {
       button2.size({160, 50});
       button2.text("Button 2");
       button2.style_sheet("button {"
+                          "  border-style: solid;"
                           "  border-color: blue;"
                           "  border-radius: 20px 0px 20px 0px;"
                           "  background-image: linear-gradient(to left, rgba(0, 128, 255, 0.251), rgba(0, 128, 255, 0.008), rgba(0, 128, 255, 0.251));"
