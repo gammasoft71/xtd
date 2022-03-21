@@ -254,38 +254,24 @@ void box_renderer::fill_box(xtd::drawing::graphics& graphics, const xtd::drawing
   graphics_path path;
 
   auto fill_rect = box_model.get_fill_rectangle(bounds);
-  int radius_top_left = box_model.border_radius().top_left().get_pixels(bounds);
-  int radius_top_right = box_model.border_radius().top_right().get_pixels(bounds);
-  int radius_bottom_right = box_model.border_radius().bottom_right().get_pixels(bounds);
-  int radius_bottom_left = box_model.border_radius().bottom_left().get_pixels(bounds);
-  
-  if (box_model.border_style().top() == border_type::groove || box_model.border_style().top() == border_type::ridge || box_model.border_style().top() == border_type::theme ||box_model.border_style().top() == border_type::double_border)
-    radius_top_left /= 3;
-  else
-    radius_top_left /= 2;
-  
-  if (box_model.border_style().right() == border_type::groove || box_model.border_style().right() == border_type::ridge || box_model.border_style().right() == border_type::theme ||box_model.border_style().right() == border_type::double_border)
-    radius_top_right /= 3;
-  else
-    radius_top_right /= 2;
-  
-  if (box_model.border_style().bottom() == border_type::groove || box_model.border_style().bottom() == border_type::ridge || box_model.border_style().bottom() == border_type::theme ||box_model.border_style().bottom() == border_type::double_border)
-    radius_bottom_right /= 3;
-  else
-    radius_bottom_right /= 2;
-  
-  if (box_model.border_style().left() == border_type::groove || box_model.border_style().left() == border_type::ridge || box_model.border_style().left() == border_type::theme ||box_model.border_style().left() == border_type::double_border)
-    radius_bottom_left /= 3;
-  else
-    radius_bottom_left /= 2;
+
+  int radius_top_left = box_model.border_radius().top_left().get_pixels(bounds) - box_model.border_width().top().get_pixels(bounds);
+  int radius_top_right = box_model.border_radius().top_right().get_pixels(bounds) - box_model.border_width().right().get_pixels(bounds);
   
   path.add_line(fill_rect.left() + radius_top_left, fill_rect.top(), fill_rect.right() - radius_top_right, fill_rect.top());
-  if (radius_top_right != 0) path.add_arc(fill_rect.right() - radius_top_right * 2, fill_rect.top(), radius_top_right * 2, radius_top_right * 2, 270, 90);
+  if (radius_top_right) path.add_arc(fill_rect.right() - radius_top_right * 2, fill_rect.top(), radius_top_right * 2, radius_top_right * 2, 270, 90);
+
+  int radius_bottom_right = box_model.border_radius().bottom_right().get_pixels(bounds) - box_model.border_width().bottom().get_pixels(bounds);
+  int radius_bottom_left = box_model.border_radius().bottom_left().get_pixels(bounds) - box_model.border_width().left().get_pixels(bounds);
+
   path.add_line(fill_rect.right(), fill_rect.top() + radius_top_right, fill_rect.right(), fill_rect.bottom() - radius_bottom_right);
-  if (radius_bottom_right != 0) path.add_arc(fill_rect.right() - radius_bottom_right * 2, fill_rect.bottom() - radius_bottom_right * 2, radius_bottom_right * 2, radius_bottom_right * 2, 0, 90);
+  if (radius_bottom_right) path.add_arc(fill_rect.right() - radius_bottom_right * 2, fill_rect.bottom() - radius_bottom_right * 2, radius_bottom_right * 2, radius_bottom_right * 2, 0, 90);
+
   path.add_line(fill_rect.right() - radius_bottom_right, fill_rect.bottom(), fill_rect.left() + radius_bottom_left, fill_rect.bottom());
-  if (radius_bottom_left != 0) path.add_arc(fill_rect.left(), fill_rect.bottom() - radius_bottom_left * 2, radius_bottom_left * 2, radius_bottom_left * 2, 90, 90);
+  if (radius_bottom_left) path.add_arc(fill_rect.left(), fill_rect.bottom() - radius_bottom_left * 2, radius_bottom_left * 2, radius_bottom_left * 2, 90, 90);
+
   path.add_line(fill_rect.left(), fill_rect.bottom() - radius_bottom_left, fill_rect.left(), fill_rect.top() + radius_top_left);
-  if (radius_top_left != 0) path.add_arc(fill_rect.left(), fill_rect.top(), radius_top_left * 2, radius_top_left * 2, 180, 90);
+  if (radius_top_left) path.add_arc(fill_rect.left(), fill_rect.top(), radius_top_left * 2, radius_top_left * 2, 180, 90);
+  
   graphics.fill_path(brush, path);
 }
