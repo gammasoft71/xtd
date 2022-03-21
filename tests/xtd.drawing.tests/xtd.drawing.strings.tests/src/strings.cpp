@@ -106,8 +106,8 @@ private:
     draw_grid(e.clip_rectangle(), e.graphics());
     
     e.graphics().draw_string("&No hotkey prefix", regular_font, solid_brush(color::red), point(50, 50), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::none));
-    e.graphics().draw_string("&Show hotkey prefix", regular_font, solid_brush(color::red), point(50, 100), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::show));
-    e.graphics().draw_string("&Hide hotkey prefix", regular_font, solid_brush(color::red), point(50, 150), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::hide));
+    e.graphics().draw_string("&Show hotkey prefix", regular_font, solid_brush(color::red), point(50, 150), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::show));
+    e.graphics().draw_string("&Hide hotkey prefix", regular_font, solid_brush(color::red), point(50, 250), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::hide));
   }
   
   void draw_strings_multilines(object& sender, paint_event_args& e) {
