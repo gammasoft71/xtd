@@ -105,18 +105,18 @@ private:
   void draw_strings_hot_key_prefix(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
-    e.graphics().draw_string("&No hotkey prefix", regular_font, solid_brush(color::red), point(50, 50), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::none));
-    e.graphics().draw_string("&Show hotkey prefix", regular_font, solid_brush(color::red), point(50, 150), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::show));
-    e.graphics().draw_string("&Hide hotkey prefix", regular_font, solid_brush(color::red), point(50, 250), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::hide));
+    e.graphics().draw_string("&No hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 50), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::none));
+    e.graphics().draw_string("&Show hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 150), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::show));
+    e.graphics().draw_string("&Hide hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 250), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::hide));
   }
   
   void draw_strings_multilines(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
     const xtd::drawing::font font = xtd::drawing::font(system_fonts::default_font(), 16, font_style::regular);
-    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::highlight_text()), point(50, 50));
-    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::highlight_text()), point(50, 250), string_format().alignment(xtd::drawing::string_alignment::center));
-    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::highlight_text()), point(50, 450), string_format().alignment(xtd::drawing::string_alignment::far));
+    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::control_text()), point(50, 50));
+    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::control_text()), point(50, 250), string_format().alignment(xtd::drawing::string_alignment::center));
+    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::control_text()), point(50, 450), string_format().alignment(xtd::drawing::string_alignment::far));
   }
 };
 
