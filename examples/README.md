@@ -6,7 +6,7 @@
 
 ## [xtd.core](xtd.core.examples/README.md)
 
-[xtd.core.examples](xtd.core.examples/README.md) contains xtd.core examples library examples.
+[xtd.core.examples](xtd.core.examples/README.md) contains xtd.core (CLI) examples library examples.
 
 * [Hello Worlds](xtd.core.examples/hello_worlds/README.md) contains xtd.core "Hello, World!" examples.
 * [bit_converter](xtd.core.examples/bit_converter/README.md) contains bit converter examples.
@@ -42,7 +42,7 @@
 
 ## [xtd.forms](xtd.forms.examples/README.md)
 
-[xtd.forms](xtd.forms.examples/README.md) contains xtd.forms library examples.
+[xtd.forms](xtd.forms.examples/README.md) contains xtd.forms (GUI) library examples.
 
 * [Hello Worlds](xtd.forms.examples/hello_worlds/README.md) contains xtd.forms "Hello, World!" examples.
 * [Applications](xtd.forms.examples/applications/README.md) contains applications examples.
