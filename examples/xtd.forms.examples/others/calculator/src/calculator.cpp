@@ -28,6 +28,8 @@ namespace calculator {
       font(xtd::drawing::font(xtd::drawing::font_family::generic_sans_serif(), 15));
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
+      maximize_box(false);
+      form_border_style(forms::form_border_style::fixed_3d);
       key_press += key_press_event_handler(*this, &form_main::form_main_key_press);
       
       result.bounds({0, 0, 240, 60});
