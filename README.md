@@ -31,9 +31,9 @@ At each commit, a build and unit tests are performed for the following configura
 * written in efficient, modern C++17 / C++20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
 * and [highly portable](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#operating-system-supported);
 
-[![architecture_logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/block_diagram_onion.png)](https://github.com/gammasoft71/xtd/blob/master/docs/hierarchy.md)
+## xtd is composed of several libraries
 
-# xtd is composed of several libraries
+[![architecture_logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/block_diagram_onion.png)](https://github.com/gammasoft71/xtd/blob/master/docs/hierarchy.md)
 
 These libraries are grouped by theme :
 
