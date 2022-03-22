@@ -6,7 +6,7 @@
 
 ## [xtd.core](xtd.core.examples/README.md)
 
-[xtd.core.examples](xtd.core.examples/README.md) contains xtd.core (CLI) examples library examples.
+[xtd.core.examples](xtd.core.examples/README.md) contains xtd.core examples library examples (CLI).
 
 * [Hello Worlds](xtd.core.examples/hello_worlds/README.md) contains xtd.core "Hello, World!" examples.
 * [bit_converter](xtd.core.examples/bit_converter/README.md) contains bit converter examples.
@@ -42,7 +42,7 @@
 
 ## [xtd.forms](xtd.forms.examples/README.md)
 
-[xtd.forms](xtd.forms.examples/README.md) contains xtd.forms (GUI) library examples.
+[xtd.forms](xtd.forms.examples/README.md) contains xtd.forms library examples (GUI).
 
 * [Hello Worlds](xtd.forms.examples/hello_worlds/README.md) contains xtd.forms "Hello, World!" examples.
 * [Applications](xtd.forms.examples/applications/README.md) contains applications examples.
@@ -64,7 +64,7 @@
 
 ## [xtd.tunit](xtd.tunit.examples/README.md)
 
-[xtd.tunit](xtd.tunit.examples/README.md) contains xtd.tunit (unit tests) library examples.
+[xtd.tunit](xtd.tunit.examples/README.md) contains xtd.tunit library examples (unit tests).
 
 * [Hello Worlds](xtd.tunit.examples/hello_worlds/README.md) contains xtd.tunit "Hello, World!" examples.
 * [Asserts](xtd.tunit.examples/asserts/README.md) contains asserts examples.
