@@ -1,5 +1,7 @@
 #include "../../../include/xtd/forms/control_renderer.h"
-#include "../../../include/xtd/forms/style_sheets/control.h"
+#include "../../../include/xtd/forms/style_sheets/button.h"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
 
 using namespace std;
 using namespace xtd;
@@ -7,20 +9,28 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace style_sheets;
 using namespace visual_styles;
+using namespace xtd::forms::style_sheets;
 
 void control_renderer::draw_control(graphics& graphics, const rectangle& bounds) {
-  draw_control(graphics, bounds, flat_style::standard, control_state::normal, nullopt);
+  draw_control(graphics, bounds, control_state::normal, nullopt);
 }
 
-void control_renderer::draw_control(graphics& graphics, const rectangle& bounds, flat_style control_style) {
-  draw_control(graphics, bounds, control_style, control_state::normal, nullopt);
+void control_renderer::draw_control(graphics& graphics, const rectangle& bounds, control_state control_state) {
+  draw_control(graphics, bounds, control_state, nullopt);
 }
 
-void control_renderer::draw_control(graphics& graphics, const rectangle& bounds, flat_style control_style, control_state control_state) {
-  draw_control(graphics, bounds, control_style, control_state, nullopt);
+void control_renderer::draw_control(graphics& graphics, const rectangle& bounds, control_state control_state, const optional<color>& back_color) {
+  draw_control(style_sheet::current_style_sheet(), graphics, bounds, control_state, back_color);
 }
 
-void control_renderer::draw_control(graphics& graphics, const rectangle& bounds, xtd::forms::flat_style control_style, control_state control_state, const optional<color>& back_color) {
-  //control current_control_selector(padding(0), border_style(border_type::none), border_color(color::black), border_width(0), border_radius(0), padding(0), back_color.value_or(color::light_gray), std::nullopt, std::nullopt, back_color, content_alignment::middle_center, system_fonts::default_font());
-  //box_renderer::draw_box(graphics, bounds, current_control_selector);
+void control_renderer::draw_control(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, control_state state, const optional<color>& back_color) {
+  style_sheets::control current_control_style_sheet;
+  switch (state) {
+    case control_state::normal: current_control_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard); break;
+    case control_state::hot: current_control_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
+    case control_state::pressed: current_control_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::pressed); break;
+    case control_state::disabled: current_control_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::disabled); break;
+  }
+  
+  box_renderer::draw_box(graphics, bounds, current_control_style_sheet);
 }
