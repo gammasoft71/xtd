@@ -18,7 +18,16 @@ flat_button_appearance& flat_button_appearance::border_color(nullptr_t) {
   return *this;
 }
 
-int32_t flat_button_appearance::border_size() const {
+std::optional<int32_t> flat_button_appearance::border_radius() const {
+  return border_radius_;
+}
+
+flat_button_appearance& flat_button_appearance::border_radius(int32_t radius) {
+  border_radius_ = radius;
+  return *this;
+}
+
+std::optional<int32_t> flat_button_appearance::border_size() const {
   return border_size_;
 }
 

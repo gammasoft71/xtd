@@ -49,9 +49,17 @@ namespace xtd {
       /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& border_color(nullptr_t color);
       
+      /// @brief Gets a value that specifies the radius, in pixels, of the border around the button.
+      /// @return An int32_t representing the radius, in pixels, of the border around the button.
+      std::optional<int32_t> border_radius() const;
+      /// @brief Sets a value that specifies the radius, in pixels, of the border around the button.
+      /// @param size An int32_t representing the radius, in pixels, of the border around the button.
+      /// @return Current xtd::forms::flat_button_appearance.
+      flat_button_appearance& border_radius(int32_t radius);
+      
       /// @brief Gets a value that specifies the size, in pixels, of the border around the button.
       /// @return An int32_t representing the size, in pixels, of the border around the button.
-      int32_t border_size() const;
+      std::optional<int32_t> border_size() const;
       /// @brief Sets a value that specifies the size, in pixels, of the border around the button.
       /// @param size An int32_t representing the size, in pixels, of the border around the button.
       /// @return Current xtd::forms::flat_button_appearance.
@@ -96,7 +104,8 @@ namespace xtd {
       
     private:
       std::optional<xtd::drawing::color> border_color_;
-      int32_t border_size_ = 1;
+      std::optional<int32_t> border_radius_;
+      std::optional<int32_t> border_size_;
       std::optional<xtd::drawing::color> checked_back_color_;
       std::optional<xtd::drawing::color> mouse_down_back_color_;
       std::optional<xtd::drawing::color> mouse_over_back_color_;
