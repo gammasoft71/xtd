@@ -27,12 +27,22 @@ flat_button_appearance& flat_button_appearance::border_radius(int32_t radius) {
   return *this;
 }
 
+flat_button_appearance& flat_button_appearance::border_radius(nullptr_t) {
+  border_radius_.reset();
+  return *this;
+}
+
 std::optional<int32_t> flat_button_appearance::border_size() const {
   return border_size_;
 }
 
 flat_button_appearance& flat_button_appearance::border_size(int32_t size) {
   border_size_ = size;
+  return *this;
+}
+
+flat_button_appearance& flat_button_appearance::border_size(nullptr_t) {
+  border_size_.reset();
   return *this;
 }
 
