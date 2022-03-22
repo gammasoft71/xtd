@@ -64,7 +64,7 @@
 
 ## [xtd.tunit](xtd.tunit.examples/README.md)
 
-[xtd.tunit](xtd.tunit.examples/README.md) contains xtd.tunit library examples.
+[xtd.tunit](xtd.tunit.examples/README.md) contains xtd.tunit (unit tests) library examples.
 
 * [Hello Worlds](xtd.tunit.examples/hello_worlds/README.md) contains xtd.tunit "Hello, World!" examples.
 * [Asserts](xtd.tunit.examples/asserts/README.md) contains asserts examples.
