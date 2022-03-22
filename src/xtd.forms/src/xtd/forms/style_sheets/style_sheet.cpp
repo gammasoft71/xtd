@@ -106,7 +106,8 @@ const xtd::forms::style_sheets::control& style_sheet::control() const noexcept {
 }
 
 const xtd::forms::style_sheets::control& style_sheet::control(pseudo_state state) const noexcept {
-  static xtd::forms::style_sheets::control fallback = controls_.find(pseudo_state::standard) != controls_.end() ? controls_.find(state)->second : control();
+  static xtd::forms::style_sheets::control fallback;
+  fallback = controls_.find(pseudo_state::standard) != controls_.end() ? controls_.find(state)->second : xtd::forms::style_sheets::control();
   auto it = controls_.find(state);
   if (it == controls_.end()) return fallback;
   return it->second;

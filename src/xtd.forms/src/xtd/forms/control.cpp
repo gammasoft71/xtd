@@ -20,10 +20,12 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/control.h"
 #include "../../../include/xtd/forms/control_paint.h"
+#include "../../../include/xtd/forms/control_renderer.h"
 #include "../../../include/xtd/forms/enable_debug.h"
 #include "../../../include/xtd/forms/form.h"
 #include "../../../include/xtd/forms/message_box.h"
 #include "../../../include/xtd/forms/screen.h"
+#include "../../../include/xtd/forms/visual_styles/control_state.h"
 
 using namespace std;
 using namespace xtd;
@@ -1118,6 +1120,8 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
 
 void control::on_paint(paint_event_args& e) {
   def_wnd_proc(e.message_);
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  if (control_appearance() == forms::control_appearance::standard) control_renderer::draw_control(style, e.graphics(), e.clip_rectangle(), visual_styles::control_state::normal, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
   if (data_->background_image != xtd::drawing::image::empty) control_paint::draw_image(e.graphics(), data_->background_image, e.clip_rectangle(), data_->background_image_layout);
   if (can_raise_events()) paint(*this, e);
 }
