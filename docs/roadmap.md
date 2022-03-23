@@ -68,8 +68,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | month_calender                  | Bader     | ![status](pictures/releases/status/started.png) |
 | xtd.forms | notify_icon                     | Bader     |                                                 |
 | xtd.forms | nine_segment_display_render     | Gammasoft |                                                 |
-| xtd.forms | panel_render                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | open_file_box                   | Bader     | ![status](pictures/releases/status/done.png)    |
+| xtd.forms | panel_render                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | progress_box                    | Bader     | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | radio_button_render             | Gammasoft |                                                 |
 | xtd.forms | replace_box                     | Bader     |                                                 |
