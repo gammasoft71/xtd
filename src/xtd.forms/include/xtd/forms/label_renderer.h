@@ -6,6 +6,8 @@
 #include <xtd/ustring.h>
 #include <xtd/drawing/graphics.h>
 #include "content_alignment.h"
+#include "border_sides.h"
+#include "border_style.h"
 #include "visual_styles/label_state.h"
 #include "box_renderer.h"
 
@@ -39,7 +41,7 @@ namespace xtd {
       /// @param image The image of the label control.
       /// @param image_align Contains the display and layout information for image .
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
-      static void draw_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::label_state label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align);
+      static void draw_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::label_state label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides);
     };
   }
 }

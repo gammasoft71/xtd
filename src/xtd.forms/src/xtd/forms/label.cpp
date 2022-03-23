@@ -40,6 +40,15 @@ label& label::border_style(xtd::forms::border_style border_style) {
   return *this;
 }
 
+label& label::border_style(nullptr_t) {
+  if (data_->border_style) {
+    data_->border_style.reset();
+    if (flat_style() == forms::flat_style::system) recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
 label& label::flat_style(xtd::forms::flat_style flat_style) {
   if (data_->flat_style != flat_style) {
     data_->flat_style = flat_style;
@@ -143,7 +152,7 @@ void label::on_paint(paint_event_args& e) {
   control::on_paint(e);
   if (data_->flat_style != xtd::forms::flat_style::system) {
     auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-    label_renderer::draw_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
+    label_renderer::draw_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align(), data_->border_style, data_->border_sides);
   }
 }
 

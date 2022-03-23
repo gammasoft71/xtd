@@ -23,15 +23,15 @@ void control_renderer::draw_control(graphics& graphics, const rectangle& bounds,
 }
 
 void control_renderer::draw_control(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, control_state state, const optional<color>& back_color) {
-  style_sheets::control current_control_style_sheet;
+  style_sheets::control current_style_sheet;
   switch (state) {
-    case control_state::normal: current_control_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard); break;
-    case control_state::hot: current_control_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
-    case control_state::pressed: current_control_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::pressed); break;
-    case control_state::disabled: current_control_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::disabled); break;
+    case control_state::normal: current_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard); break;
+    case control_state::hot: current_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
+    case control_state::pressed: current_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::pressed); break;
+    case control_state::disabled: current_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::disabled); break;
   }
   
-  if (back_color) current_control_style_sheet.background_color(back_color.value());
+  if (back_color) current_style_sheet.background_color(back_color.value());
 
-  box_renderer::draw_box(graphics, bounds, current_control_style_sheet);
+  box_renderer::draw_box(graphics, bounds, current_style_sheet);
 }
