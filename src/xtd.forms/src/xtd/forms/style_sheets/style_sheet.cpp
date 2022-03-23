@@ -86,6 +86,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   control_reader(reader);
   form_reader(reader);
   label_reader(reader);
+  panel_reader(reader);
 }
 
 const xtd::forms::style_sheets::button& style_sheet::button() const noexcept {
@@ -166,7 +167,23 @@ const xtd::forms::style_sheets::label& style_sheet::label(pseudo_state state) co
 }
 
 const style_sheet::labels_t& style_sheet::labels() const noexcept {
-  return forms_;
+  return labels_;
+}
+
+const xtd::forms::style_sheets::panel& style_sheet::panel() const noexcept {
+  return panel(pseudo_state::standard);
+}
+
+const xtd::forms::style_sheets::label& style_sheet::panel(pseudo_state state) const noexcept {
+  static xtd::forms::style_sheets::panel fallback;
+  fallback = panels_.find(pseudo_state::standard) != panels_.end() ? panels_.find(state)->second : xtd::forms::style_sheets::panel();
+  auto it = panels_.find(state);
+  if (it == panels_.end()) return fallback;
+  return it->second;
+}
+
+const style_sheet::panels_t& style_sheet::panels() const noexcept {
+  return panels_;
 }
 
 const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
@@ -281,6 +298,28 @@ xtd::forms::style_sheets::system_colors style_sheet::system_colors_from_css(cons
 xtd::forms::style_sheets::theme style_sheet::theme_from_css(const xtd::ustring& css_text) {
   style_sheet ss(css_text);
   return ss.theme();
+}
+
+std::tuple<border_type, int32_t, int32_t> style_sheet::to_border_type(xtd::forms::border_style border) {
+  switch (border) {
+    case xtd::forms::border_style::none: return make_tuple(border_type::none, 0, 0); break;
+    case xtd::forms::border_style::solid: return make_tuple(border_type::solid, 1, 0); break;
+    case xtd::forms::border_style::inset: return make_tuple(border_type::inset, 1, 0); break;
+    case xtd::forms::border_style::outset: return make_tuple(border_type::outset, 1, 0); break;
+    case xtd::forms::border_style::groove: return make_tuple(border_type::groove, 2, 0); break;
+    case xtd::forms::border_style::ridge: return make_tuple(border_type::ridge, 2, 0); break;
+    case xtd::forms::border_style::theme: return make_tuple(border_type::theme, 2, 0); break;
+    case xtd::forms::border_style::dashed: return make_tuple(border_type::dashed, 1, 0); break;
+    case xtd::forms::border_style::dot_dash: return make_tuple(border_type::dot_dash, 1, 0); break;
+    case xtd::forms::border_style::dot_dot_dash: return make_tuple(border_type::dot_dot_dash, 1, 0); break;
+    case xtd::forms::border_style::dotted: return make_tuple(border_type::dotted, 1, 0); break;
+    case xtd::forms::border_style::double_border: return make_tuple(border_type::double_border, 3, 0); break;
+    case xtd::forms::border_style::bevel_inset: return make_tuple(border_type::inset, 4, 0); break;
+    case xtd::forms::border_style::bevel_outset: return make_tuple(border_type::outset, 4, 0); break;
+    case xtd::forms::border_style::rounded: return make_tuple(border_type::solid, 1, 6); break;
+    default:  break;
+  }
+  return make_tuple(border_type::none, 0, 0);
 }
 
 color style_sheet::background_color_from_css(const ustring& css_text, const color& default_value) const noexcept {
@@ -585,6 +624,16 @@ void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) labels_[pseudo_state::standard] = xtd::forms::style_sheets::label();
     if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) labels_[pseudo_state::standard | state.second] = labels_[pseudo_state::standard];
     if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, labels_[pseudo_state::standard | state.second]);
+  }
+}
+
+void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  for (auto state : states) {
+    selector_map::const_iterator selectors_iterator = reader.selectors().find("panel" + state.first);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) panels_[pseudo_state::standard] = xtd::forms::style_sheets::panel();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) panels_[pseudo_state::standard | state.second] = panels_[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, panels_[pseudo_state::standard | state.second]);
   }
 }
 

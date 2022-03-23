@@ -5,8 +5,8 @@
 #include <xtd/static.h>
 #include <xtd/ustring.h>
 #include <xtd/drawing/graphics.h>
-#include <xtd/forms/content_alignment.h>
-#include <xtd/forms/visual_styles/label_state.h>
+#include "content_alignment.h"
+#include "visual_styles/label_state.h"
 #include "box_renderer.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

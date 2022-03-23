@@ -181,6 +181,7 @@ add_sources(
   include/xtd/forms/paint_event_args.h
   include/xtd/forms/paint_event_handler.h
   include/xtd/forms/panel.h
+  include/xtd/forms/panel_renderer.h
   include/xtd/forms/picture_box.h
   include/xtd/forms/picture_box_size_mode.h
   include/xtd/forms/progress_bar.h
@@ -276,6 +277,7 @@ add_sources(
   include/xtd/forms/style_sheets/length_unit.h
   include/xtd/forms/style_sheets/margin.h
   include/xtd/forms/style_sheets/padding.h
+  include/xtd/forms/style_sheets/panel.h
   include/xtd/forms/style_sheets/pseudo_state.h
   include/xtd/forms/style_sheets/style_sheet.h
   include/xtd/forms/style_sheets/system_colors.h
@@ -358,6 +360,7 @@ add_sources(
   src/xtd/forms/open_file_dialog.cpp
   src/xtd/forms/padding.cpp
   src/xtd/forms/panel.cpp
+  src/xtd/forms/panel_renderer.cpp
   src/xtd/forms/paint_event_args.cpp
   src/xtd/forms/picture_box.cpp
   src/xtd/forms/progress_bar.cpp

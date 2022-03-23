@@ -31,5 +31,7 @@ void control_renderer::draw_control(const style_sheets::style_sheet& style_sheet
     case control_state::disabled: current_control_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::disabled); break;
   }
   
+  if (back_color) current_control_style_sheet.background_color(back_color.value());
+
   box_renderer::draw_box(graphics, bounds, current_control_style_sheet);
 }
