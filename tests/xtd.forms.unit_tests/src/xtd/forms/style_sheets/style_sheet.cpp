@@ -12,7 +12,7 @@ public:
   static border_color border_color_from_css(style_sheets::style_sheet& style_sheet, const xtd::ustring& css_text, const border_color& result) noexcept {
     return style_sheet.border_color_from_css(css_text, result);
   }
-  static border_style border_style_from_css(style_sheets::style_sheet& style_sheet, const ustring& css_text, const border_style& default_value) noexcept {
+  static style_sheets::border_style border_style_from_css(style_sheets::style_sheet& style_sheet, const ustring& css_text, const style_sheets::border_style& default_value) noexcept {
     return style_sheet.border_style_from_css(css_text, default_value);
   }
   static xtd::drawing::color color_from_css(style_sheets::style_sheet& style_sheet, const xtd::ustring& css_text, const xtd::drawing::color& default_value) noexcept {

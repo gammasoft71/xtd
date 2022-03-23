@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::panel container.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <optional>
 #include "scrollable_control.h"
 #include "border_sides.h"
 #include "border_style.h"
@@ -49,13 +50,18 @@ namespace xtd {
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual forms::border_style border_style() const {return border_style_;}
+      virtual forms::border_style border_style() const {return border_style_.value_or(forms::border_style::none);}
       /// @brief Sets the border style for the control.
       /// @param border_style One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @return Current panel instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual panel& border_style(forms::border_style border_style);
-      
+      /// @brief Resets the border style for the control.
+      /// @param border_style nullptr.
+      /// @return Current panel instance.
+      /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
+      virtual panel& border_style(nullptr_t border_style);
+
       drawing::size default_size() const override {return {200, 100};}
       /// @}
       
@@ -71,7 +77,7 @@ namespace xtd {
       
       /// @cond
       forms::border_sides border_sides_ = forms::border_sides::all;
-      forms::border_style border_style_ = forms::border_style::none;
+      std::optional<forms::border_style> border_style_;
       /// @endcond
     };
   }

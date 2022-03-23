@@ -10,9 +10,11 @@
 #include <xtd/uri.h>
 #include <xtd/web/css/css_reader.h>
 #include "../../forms_export.h"
+#include "../border_style.h"
 #include "button.h"
 #include "form.h"
 #include "label.h"
+#include "panel.h"
 #include "pseudo_state.h"
 #include "system_colors.h"
 #include "theme.h"
@@ -60,6 +62,8 @@ namespace xtd {
         using forms_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::form>;
         /// @brief Represents a style sheet labels collection.
         using labels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::label>;
+        /// @brief Represents a style sheet labels collection.
+        using panels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::panel>;
         /// @brief Represents a style_sheets collection.
         using style_sheets_t = std::map<xtd::ustring, style_sheet>;
         /// @brief Represents a style_sheet names collection.
@@ -149,6 +153,17 @@ namespace xtd {
         /// @return The style sheet labels collection.
         const labels_t& labels() const noexcept;
         
+        /// @brief Gets the style sheet panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        const xtd::forms::style_sheets::panel& panel() const noexcept;
+        /// @brief Gets the style sheet panel for specified pseudo state.
+        /// @return A style_sheet panel.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
+        const xtd::forms::style_sheets::panel& panel(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet panels collection of this instance.
+        /// @return The style sheet panels collection.
+        const panels_t& panels() const noexcept;
+
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheets.
         /// @return The installed xtd::forms::style_sheets::style_sheet style sheets.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
@@ -230,6 +245,11 @@ namespace xtd {
         /// @return The style sheet theme.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static xtd::forms::style_sheets::theme theme_from_css(const xtd::ustring& css_text);
+        
+        /// @brief Converts xtd::forms::border_style in std::tuple<xtd::forms::style_sheets::border_type, int32_t, int32_t>.
+        /// @param border The ::forms::border_style to convert.
+        /// @return A std::tuple<xtd::forms::style_sheets::border_type, int32_t, int32_t> class that containe, border type, border width and border radius.
+        static std::tuple<xtd::forms::style_sheets::border_type, int32_t, int32_t> to_border_type(xtd::forms::border_style border);
         /// @}
         
         /// @name Events
@@ -273,6 +293,7 @@ namespace xtd {
         void fill_control(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept;
         void form_reader(xtd::web::css::css_reader& reader) noexcept;
         void label_reader(xtd::web::css::css_reader& reader) noexcept;
+        void panel_reader(xtd::web::css::css_reader& reader) noexcept;
         void system_colors_reader(xtd::web::css::css_reader& reader) noexcept;
         void theme_reader(xtd::web::css::css_reader& reader) noexcept;
         
@@ -304,6 +325,7 @@ namespace xtd {
         controls_t controls_;
         forms_t forms_;
         labels_t labels_;
+        panels_t panels_;
         static style_sheet current_style_sheet_;
         static style_sheets_t style_sheets_;
         static style_sheet_names_t style_sheet_names_;

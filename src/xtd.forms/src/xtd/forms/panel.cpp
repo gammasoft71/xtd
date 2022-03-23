@@ -9,6 +9,7 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/panel.h"
+#include "../../../include/xtd/forms/panel_renderer.h"
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -37,6 +38,13 @@ panel& panel::border_style(forms::border_style border_style) {
     if (control_appearance() == forms::control_appearance::system) recreate_handle();
     else invalidate();
   }
+  return *this;
+}
+
+panel& panel::border_style(nullptr_t) {
+  border_style_.reset();
+  if (control_appearance() == forms::control_appearance::system) recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -69,7 +77,9 @@ void panel::on_layout(const event_args& e) {
 }
 
 void panel::on_paint(paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  if (control_appearance() == forms::control_appearance::standard) panel_renderer::draw_panel(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, border_style_, border_sides_);
+  //if (control_appearance() == forms::control_appearance::standard)
+  //  control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
   scrollable_control::on_paint(e);
-  if (control_appearance() == forms::control_appearance::standard)
-    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
 }

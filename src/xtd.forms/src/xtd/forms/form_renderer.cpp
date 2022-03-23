@@ -19,5 +19,7 @@ void form_renderer::draw_form(const xtd::forms::style_sheets::style_sheet& style
     case control_state::disabled: current_form_style_sheet = style_sheet.form(style_sheets::pseudo_state::standard | pseudo_state::disabled); break;
   }
   
+  if (back_color) current_form_style_sheet.background_color(back_color.value());
+  
   box_renderer::draw_box(graphics, bounds, current_form_style_sheet);
 }
