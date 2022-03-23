@@ -998,6 +998,7 @@ void control::on_double_click(const event_args& e) {
 
 void control::on_enabled_changed(const event_args& e) {
   if (is_handle_created()) set_state(state::enabled, native::control::enabled(handle()));
+  if (control_appearance() == xtd::forms::control_appearance::standard) data_->control_state = enabled() ? xtd::forms::visual_styles::control_state::normal : xtd::forms::visual_styles::control_state::disabled;
   refresh();
   if (can_raise_events()) enabled_changed(*this, e);
 }
@@ -1091,6 +1092,10 @@ void control::on_mouse_double_click(const mouse_event_args& e) {
 }
 
 void control::on_mouse_down(const mouse_event_args& e) {
+  if (control_appearance() == xtd::forms::control_appearance::standard && enabled()) {
+    data_->control_state = xtd::forms::visual_styles::control_state::pressed;
+    invalidate();
+  }
   if (can_raise_events()) mouse_down(*this, e);
 }
 
@@ -1099,10 +1104,18 @@ void control::on_mouse_horizontal_wheel(const mouse_event_args& e) {
 }
 
 void control::on_mouse_enter(const event_args& e) {
+  if (control_appearance() == xtd::forms::control_appearance::standard && enabled()) {
+    data_->control_state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::control_state::pressed : xtd::forms::visual_styles::control_state::hot;
+    invalidate();
+  }
   if (can_raise_events()) mouse_enter(*this, e);
 }
 
 void control::on_mouse_leave(const event_args& e) {
+  if (control_appearance() == xtd::forms::control_appearance::standard && enabled()) {
+    data_->control_state = xtd::forms::visual_styles::control_state::normal;
+    invalidate();
+  }
   if (can_raise_events()) mouse_leave(*this, e);
 }
 
@@ -1111,6 +1124,10 @@ void control::on_mouse_move(const mouse_event_args& e) {
 }
 
 void control::on_mouse_up(const mouse_event_args& e) {
+  if (control_appearance() == xtd::forms::control_appearance::standard && enabled() && data_->control_state == xtd::forms::visual_styles::control_state::pressed) {
+    data_->control_state = xtd::forms::visual_styles::control_state::hot;
+    invalidate();
+  }
   if (can_raise_events()) mouse_up(*this, e);
 }
 
@@ -1120,8 +1137,6 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
 
 void control::on_paint(paint_event_args& e) {
   def_wnd_proc(e.message_);
-  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  if (control_appearance() == forms::control_appearance::standard) control_renderer::draw_control(style, e.graphics(), e.clip_rectangle(), visual_styles::control_state::normal, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
   if (data_->background_image != xtd::drawing::image::empty) control_paint::draw_image(e.graphics(), data_->background_image, e.clip_rectangle(), data_->background_image_layout);
   if (can_raise_events()) paint(*this, e);
 }
@@ -1662,6 +1677,8 @@ void control::wm_notify(message& message) {
 void control::wm_paint(const message& message) {
   paint_event_args e(*this, data_->client_rectangle);
   e.message_ = message;
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  if (control_appearance() == forms::control_appearance::standard) control_renderer::draw_control(style, e.graphics(), e.clip_rectangle(), data_->control_state, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
   on_paint(e);
 }
 
