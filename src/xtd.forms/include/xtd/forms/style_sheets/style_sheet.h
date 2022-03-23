@@ -270,6 +270,7 @@ namespace xtd {
         
         void button_reader(xtd::web::css::css_reader& reader) noexcept;
         void control_reader(xtd::web::css::css_reader& reader) noexcept;
+        void label_reader(xtd::web::css::css_reader& reader) noexcept;
         void fill_control(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept;
         void system_colors_reader(xtd::web::css::css_reader& reader) noexcept;
         void theme_reader(xtd::web::css::css_reader& reader) noexcept;

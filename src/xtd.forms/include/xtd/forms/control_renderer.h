@@ -31,14 +31,14 @@ namespace xtd {
       /// @param graphics The Graphics used to draw a control.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the control.
       static void draw_control(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds);
-      /// @brief Draws a box in the specified bounds, control style and control state.
+      /// @brief Draws a box in the specified bounds and control state.
       /// @param graphics The Graphics used to draw a control.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the control.
       /// @param graphics The Graphics used to draw a control.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the control.
       /// @param control_state The visual state of a control that is drawn with visual styles.
       static void draw_control(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::control_state control_state);
-      /// @brief Draws a box in the specified bounds, control style, control state and background color.
+      /// @brief Draws a box in the specified bounds, control state and background color.
       /// @param graphics The Graphics used to draw a control.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the control.
       /// @param graphics The Graphics used to draw a control.
@@ -47,6 +47,14 @@ namespace xtd {
       /// @param back_color The background color for the control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_control(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::control_state control_state, const std::optional<xtd::drawing::color>& back_color);
+      /// @brief Draws a box in the specified style_sheet, bounds, control state and background color.
+      /// @param graphics The Graphics used to draw a control.
+      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the control.
+      /// @param graphics The Graphics used to draw a control.
+      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the control.
+      /// @param control_state The visual state of a control that is drawn with visual styles.
+      /// @param back_color The background color for the control.
+      /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_control(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::control_state control_state, const std::optional<xtd::drawing::color>& back_color);
     };
   }

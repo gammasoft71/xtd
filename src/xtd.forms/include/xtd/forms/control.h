@@ -1556,6 +1556,11 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      
+      /// @brief Gets state.
+      /// @return One of xtd::forms::visual_styles::control_state values.
+      xtd::forms::visual_styles::control_state control_state() const noexcept {return data_->control_state;}
+      
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       /// @remarks The create_params property should not be overridden and used to adjust the properties of your derived control. Properties such as the create_params::caption, create_params::width, and create_params::height should be set by the corresponding properties in your control such as control::text, control::width and control::height. The create_params should only be extended when you are wrapping a standard Windows control class or to set styles not provided by the forms namespace.
