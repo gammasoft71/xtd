@@ -41,7 +41,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.core  | io::file_info                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.core  | io::file_system_info            | Gammasoft | ![status](pictures/releases/status/done.png)    |
 |           | iOS platforms                   | Gammasoft | ![status](pictures/releases/status/started.png) |
-| xtd.forms | box_render                      | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.forms | box_render                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | button_render                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | check_box_render                | Gammasoft |                                                 |
 | xtd.forms | clipboard + drag & drop         | Gammasoft |                                                 |
@@ -51,7 +51,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | command_link_button_render      | Gammasoft |                                                 |
 | xtd.forms | command_link_buttons            | Bader     |                                                 |
 | xtd.forms | context_menu                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| xtd.forms | control_render                  | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.forms | control_render                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | dot_matrix_display_render       | Gammasoft |                                                 |
 | xtd.forms | find_box                        | Bader     |                                                 |
 | xtd.forms | find_dialog                     | Bader     |                                                 |
