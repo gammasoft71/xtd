@@ -7,9 +7,8 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
-using namespace style_sheets;
-using namespace visual_styles;
 using namespace xtd::forms::style_sheets;
+using namespace xtd::forms::visual_styles;
 
 void control_renderer::draw_control(graphics& graphics, const rectangle& bounds) {
   draw_control(graphics, bounds, control_state::normal, nullopt);

@@ -44,6 +44,7 @@
 #include "theme_colors.h"
 #include "timer.h"
 #include "style_sheets/style_sheet.h"
+#include "visual_styles/control_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -1921,6 +1922,7 @@ namespace xtd {
         drawing::rectangle client_rectangle;
         drawing::size client_size;
         forms::control_appearance control_appearance = forms::control_appearance::standard;
+        xtd::forms::visual_styles::control_state control_state = xtd::forms::visual_styles::control_state::normal;
         control_collection controls;
         std::optional<std::reference_wrapper<xtd::forms::context_menu>> context_menu;
         std::optional<forms::cursor> cursor;
