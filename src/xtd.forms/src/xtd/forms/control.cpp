@@ -1678,7 +1678,7 @@ void control::wm_paint(const message& message) {
   paint_event_args e(*this, data_->client_rectangle);
   e.message_ = message;
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  if (control_appearance() == forms::control_appearance::standard) control_renderer::draw_control(style, e.graphics(), e.clip_rectangle(), data_->control_state, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
+  if (control_appearance() == forms::control_appearance::standard) control_renderer::draw_control(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
   on_paint(e);
 }
 
