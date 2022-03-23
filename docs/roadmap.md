@@ -59,7 +59,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | font_picker_render              | Gammasoft |                                                 |
 | xtd.forms | form_render                     | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | fourteen_segment_display_render | Gammasoft |                                                 |
-| xtd.forms | label_render                    | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.forms | label_render                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | lcd_label_render                | Gammasoft |                                                 |
 | xtd.forms | light_button                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | light_button_render             | Gammasoft |                                                 |
