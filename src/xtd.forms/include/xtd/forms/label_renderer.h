@@ -6,7 +6,6 @@
 #include <xtd/ustring.h>
 #include <xtd/drawing/graphics.h>
 #include <xtd/forms/content_alignment.h>
-#include <xtd/forms/flat_style.h>
 #include <xtd/forms/visual_styles/label_state.h>
 #include "box_renderer.h"
 

@@ -57,7 +57,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | find_dialog                     | Bader     |                                                 |
 | xtd.forms | font_box                        | Bader     | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | font_picker_render              | Gammasoft |                                                 |
-| xtd.forms | form_render                     | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.forms | form_render                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | fourteen_segment_display_render | Gammasoft |                                                 |
 | xtd.forms | image_render                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | label_render                    | Gammasoft | ![status](pictures/releases/status/done.png)    |

@@ -26,37 +26,15 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class form_renderer static_ {
     public:
-      /// @brief Draws a box in the specified bounds.
+      /// @brief Draws a box in the specified bounds, form state and background color.
       /// @param graphics The Graphics used to draw a form.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form.
       /// @param graphics The Graphics used to draw a form control.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form control.
-      static void draw_form(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds);
-      /// @brief Draws a box in the specified bounds and form style.
-      /// @param graphics The Graphics used to draw a form.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form.
-      /// @param graphics The Graphics used to draw a form control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form control.
-      /// @param form_style the flat style appearance of the form control.
-      static void draw_form(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style form_style);
-      /// @brief Draws a box in the specified bounds, form style and form state.
-      /// @param graphics The Graphics used to draw a form.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form.
-      /// @param graphics The Graphics used to draw a form control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form control.
-      /// @param form_style the flat style appearance of the form control.
-      /// @param form_state The visual state of a form that is drawn with visual styles.
-      static void draw_form(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style form_style, xtd::forms::visual_styles::form_state form_state);
-      /// @brief Draws a box in the specified bounds, form style, form state and background color.
-      /// @param graphics The Graphics used to draw a form.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form.
-      /// @param graphics The Graphics used to draw a form control.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form control.
-      /// @param form_style the flat style appearance of the form control.
       /// @param form_state The visual state of a form that is drawn with visual styles.
       /// @param back_color The background color for the form control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
-      static void draw_form(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::flat_style form_style, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color);
+      static void draw_form(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color);
     };
   }
 }

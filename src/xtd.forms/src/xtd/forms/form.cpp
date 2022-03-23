@@ -16,6 +16,7 @@
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/form.h"
+#include "../../../include/xtd/forms/form_renderer.h"
 #include "../../../include/xtd/forms/screen.h"
 #include "../../../include/xtd/forms/style_sheets/style_sheet.h"
 
@@ -479,6 +480,12 @@ void form::on_layout(const event_args& e) {
 void form::on_location_changed(const event_args& e) {
   if (handle() && top() < screen::get_working_area(handle()).top()) top(screen::get_working_area(handle()).top());
   container_control::on_location_changed(e);
+}
+
+void form::on_paint(paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  if (control_appearance() == forms::control_appearance::standard) form_renderer::draw_form(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
+  container_control::on_paint(e);
 }
 
 void form::on_region_changed(const event_args& e) {

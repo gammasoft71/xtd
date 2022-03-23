@@ -84,6 +84,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   system_colors_reader(reader);
   button_reader(reader);
   control_reader(reader);
+  form_reader(reader);
   label_reader(reader);
 }
 
@@ -547,16 +548,6 @@ void style_sheet::control_reader(xtd::web::css::css_reader& reader) noexcept {
   }
 }
 
-void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
-    selector_map::const_iterator selectors_iterator = reader.selectors().find("label" + state.first);
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) labels_[pseudo_state::standard] = xtd::forms::style_sheets::control();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) labels_[pseudo_state::standard | state.second] = labels_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, labels_[pseudo_state::standard | state.second]);
-  }
-}
-
 void style_sheet::fill_control(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept {
   property_map::const_iterator properties_iterator;
   if ((properties_iterator = selectors_iterator->second.properties().find("margin")) != selectors_iterator->second.properties().end()) control.margin(margin_from_css(properties_iterator->second.to_string(), margin(0)));
@@ -575,6 +566,26 @@ void style_sheet::fill_control(xtd::web::css::selector_map::const_iterator& sele
   if ((properties_iterator = selectors_iterator->second.properties().find("text-decoration")) != selectors_iterator->second.properties().end()) control.decoration(text_decoration_from_css(properties_iterator->second.to_string(), text_decoration::none));
   if ((properties_iterator = selectors_iterator->second.properties().find("text-transformation")) != selectors_iterator->second.properties().end()) control.transformation(text_transformation_from_css(properties_iterator->second.to_string(), text_transformation::none));
   if ((properties_iterator = selectors_iterator->second.properties().find("image-align")) != selectors_iterator->second.properties().end()) control.image_alignment(text_align_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
+}
+
+void style_sheet::form_reader(xtd::web::css::css_reader& reader) noexcept {
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  for (auto state : states) {
+    selector_map::const_iterator selectors_iterator = reader.selectors().find("form" + state.first);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) forms_[pseudo_state::standard] = xtd::forms::style_sheets::form();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) forms_[pseudo_state::standard | state.second] = forms_[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, forms_[pseudo_state::standard | state.second]);
+  }
+}
+
+void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  for (auto state : states) {
+    selector_map::const_iterator selectors_iterator = reader.selectors().find("label" + state.first);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) labels_[pseudo_state::standard] = xtd::forms::style_sheets::label();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) labels_[pseudo_state::standard | state.second] = labels_[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, labels_[pseudo_state::standard | state.second]);
+  }
 }
 
 void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexcept {
