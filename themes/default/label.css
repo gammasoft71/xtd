@@ -6,3 +6,7 @@ label {
   color: system-color(control-text);
   text-align: top left;
 }
+
+label:disabled {  
+  color: system-color(gray-text);
+}
