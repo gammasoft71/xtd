@@ -251,6 +251,7 @@ add_sources(
   include/xtd/forms/up_down_button.h
   include/xtd/forms/use_wait_cursor.h
   include/xtd/forms/user_control.h
+  include/xtd/forms/user_control_renderer.h
   include/xtd/forms/vertical_control_layout_style.h
   include/xtd/forms/vertical_control_layout_style_collection.h
   include/xtd/forms/vertical_layout_panel.h
@@ -284,6 +285,7 @@ add_sources(
   include/xtd/forms/style_sheets/text_decoration.h
   include/xtd/forms/style_sheets/text_transformation.h
   include/xtd/forms/style_sheets/theme.h
+  include/xtd/forms/style_sheets/user_control.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/control_state.h
   include/xtd/forms/visual_styles/form_state.h
@@ -291,6 +293,7 @@ add_sources(
   include/xtd/forms/visual_styles/push_button_state.h
   include/xtd/forms/visual_styles/radio_button_state.h
   include/xtd/forms/visual_styles/toggle_button_state.h
+  include/xtd/forms/visual_styles/user_control_state.h
   src/xtd/forms/about_dialog.cpp
   src/xtd/forms/animation.cpp
   src/xtd/forms/application.cpp
@@ -398,6 +401,7 @@ add_sources(
   src/xtd/forms/up_down_base.cpp
   src/xtd/forms/up_down_button.cpp
   src/xtd/forms/user_control.cpp
+  src/xtd/forms/user_control_renderer.cpp
   src/xtd/forms/vertical_layout_panel.cpp
   src/xtd/forms/v_scroll_bar.cpp
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h

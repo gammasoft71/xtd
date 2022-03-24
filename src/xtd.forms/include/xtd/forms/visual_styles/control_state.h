@@ -16,7 +16,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms
-      /// @remarks The control_state values correspond to the states of the visual_style_element objects exposed by the visual_style_element:control::control class. The control_state values are also used as an argument in the control_renderer.draw_control method.
+      /// @remarks The xtd::forms::visual_styles::control_state values correspond to the states of the visual style element objects exposed by the xtd::forms::control class. The xtd::forms::visual_styles::control_state values are also used as an argument in the xtd::forms::control_renderer::draw_control method.
       enum class control_state {
         /// @brief The control has the normal appearance.
         normal = 1,

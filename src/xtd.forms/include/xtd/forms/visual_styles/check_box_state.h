@@ -16,7 +16,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms
-      /// @remarks The check_box_state values correspond to the states of the visual_style_element objects exposed by the visual_style_element::check_box::check_box class. The check_box_state values are also used as an argument in the check_box_renderer.draw_check_box method.
+      /// @remarks The xtd::forms::visual_elements::check_box_state values correspond to the states of the visual style element objects exposed by the xtd::forms::check_box class. The xtd::forms::visual_styles::check_box_state values are also used as an argument in the xtd::forms::check_box_renderer::draw_check_box method.
       enum class check_box_state {
         /// @brief The check box is unchecked.
         unchecked_normal = 1,

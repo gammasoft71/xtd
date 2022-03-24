@@ -7,8 +7,8 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/pens.h>
 #include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/user_control.h"
+#include "../../../include/xtd/forms/user_control_renderer.h"
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -39,6 +39,15 @@ user_control& user_control::border_style(forms::border_style border_style) {
   return *this;
 }
 
+user_control& user_control::border_style(nullptr_t) {
+  if (border_style_.has_value()) {
+    border_style_.reset();
+    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
 forms::create_params user_control::create_params() const {
   forms::create_params create_params = scrollable_control::create_params();
   
@@ -61,6 +70,6 @@ void user_control::on_layout(const event_args& e) {
 
 void user_control::on_paint(paint_event_args& e) {
   container_control::on_paint(e);
-  if (control_appearance() == forms::control_appearance::standard)
-    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  if (control_appearance() == forms::control_appearance::standard) user_control_renderer::draw_user_control(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, border_style_, border_sides_);
 }
