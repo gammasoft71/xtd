@@ -1,0 +1,33 @@
+/* Contains toggle-button definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+toggle-button {
+  border-style: outset;
+  border-color: system-color(control-light);
+  border-width: 2px;
+  background-color: system-color(control);
+  padding: 1px;
+  color: system-color(control-text);
+}
+
+toggle-button:pressed {
+  border-style: inset;
+}
+
+toggle-button:checked {
+  border-style: inset;
+}
+
+toggle-button:mixed {
+  border-width: 1px;
+  border-style: inset;
+}
+
+toggle-button:hover {
+  border-color: system-color(control-dark);
+}
+
+toggle-button:disabled {  
+  border-color: system-color(gray-text);
+  color: system-color(gray-text);
+}
