@@ -25,7 +25,7 @@ namespace xtd {
     /// @brief Create a new instance of console_key_info class.
     /// @remarks This type is not intended to be created by users. Instead, it is returned to the user in response to calling the Console::ReadKey method.
     /// @remarks The console_key_info type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
-    console_key_info() = default;
+    console_key_info() noexcept = default;
     
     /// @brief Initializes a new instance of the console_key_info class using the specified character, console key, and modifier keys.
     /// @param keyChar The Unicode character that corresponds to the key parameter.
@@ -35,13 +35,10 @@ namespace xtd {
     /// @param control true to indicate that a CTRL key was pressed; otherwise, false.
     /// @remarks This type is not intended to be created by users. Instead, it is returned to the user in response to calling the Console::ReadKey method.
     /// @remarks The console_key_info type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
-    console_key_info(char32_t key_char, console_key key, bool shift, bool alt, bool control) : key_char_(key_char), key_(key) {
-      if (shift == true)
-        modifiers_ = (console_modifiers)((int)modifiers_ | (int)console_modifiers::shift);
-      if (alt == true)
-        modifiers_ = (console_modifiers)((int)modifiers_ | (int)console_modifiers::alt);
-      if (control == true)
-        modifiers_ = (console_modifiers)((int)modifiers_ | (int)console_modifiers::control);
+    console_key_info(char32_t key_char, console_key key, bool shift, bool alt, bool control) noexcept : key_char_(key_char), key_(key) {
+      if (shift == true) modifiers_ = (console_modifiers)((int)modifiers_ | (int)console_modifiers::shift);
+      if (alt == true) modifiers_ = (console_modifiers)((int)modifiers_ | (int)console_modifiers::alt);
+      if (control == true) modifiers_ = (console_modifiers)((int)modifiers_ | (int)console_modifiers::control);
     }
     /// @}
     
@@ -57,15 +54,15 @@ namespace xtd {
     /// @{
     /// @brief Gets the console key represented by the current console_key_info object.
     /// @param A console_key value that identifies the console key that was pressed
-    console_key key() {return key_;}
+    console_key key() const noexcept {return key_;}
     
     /// @brief Gets the Unicode character represented by the current console_key_info object.
     /// @param An char32 object that corresponds to the console key represented by the current console_key_info object.
-    char32_t key_char() {return key_char_;}
+    char32_t key_char() const noexcept {return key_char_;}
     
     /// @brief Gets a bitwise combination of console_modifiers values that specifies one or more modifier keys pressed simultaneously with the console key.
     /// @param A bitwise combination of console_modifiers values. There is no default value.
-    console_modifiers modifiers() {return modifiers_;}
+    console_modifiers modifiers() const noexcept {return modifiers_;}
     /// @}
     
   private:
