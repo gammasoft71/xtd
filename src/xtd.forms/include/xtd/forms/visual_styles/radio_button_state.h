@@ -16,7 +16,7 @@ namespace xtd {
       /// @par Library
       /// xtd.forms
       /// @ingroup xtd_forms
-      /// @remarks The radio_button_state values correspond to the states of the visual_style_element objects exposed by the visual_style_element::radio_button::radio_button class. The radio_button_state values are also used as an argument in the radio_button_renderer.draw_radio_button method.
+      /// @remarks The xtd::forms::visual_styles::radio_button_state values correspond to the states of the visual style element objects exposed by the xtd::forms::radio_button class. The xtd::forms::visual_styles::radio_button_state values are also used as an argument in the xtd::forms::radio_button_renderer::draw_radio_button method.
       enum class radio_button_state {
         /// @brief The radio button is unchecked.
         unchecked_normal = 1,

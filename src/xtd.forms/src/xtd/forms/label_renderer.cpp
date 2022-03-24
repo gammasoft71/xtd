@@ -22,7 +22,7 @@ void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& sty
     case label_state::pressed: current_style_sheet = style_sheet.label(pseudo_state_base | pseudo_state::pressed); break;
     case label_state::disabled: current_style_sheet = style_sheet.label(pseudo_state_base | pseudo_state::disabled); break;
   }
-  if (back_color.has_value() && label_state == label_state::normal) current_style_sheet.background_color(back_color.value());
+  if (back_color.has_value()) current_style_sheet.background_color(back_color.value());
   if (text_align.has_value()) current_style_sheet.text_alignment(text_align.value());
   if (fore_color.has_value() && label_state != label_state::disabled) current_style_sheet.color(fore_color.value());
   if (font.has_value()) current_style_sheet.font(font.value());
