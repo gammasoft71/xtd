@@ -27,13 +27,13 @@ namespace xtd {
     
     /// @{
     /// @brief Initialize a new instance of xtd::cpp_language class.
-    explicit cpp_language(uint32_t cpp) : cpp_(cpp) {}
+    explicit cpp_language(uint32_t cpp) noexcept : cpp_(cpp) {}
     /// @}
     
     /// @cond
-    cpp_language() = default;
-    cpp_language(const cpp_language&) = default;
-    cpp_language& operator=(const cpp_language&) = default;
+    cpp_language() noexcept = default;
+    cpp_language(const cpp_language&) noexcept = default;
+    cpp_language& operator=(const cpp_language&) noexcept = default;
     friend std::ostream& operator <<(std::ostream& os, const cpp_language& cpp_language) noexcept {return os << cpp_language.to_string();}
     /// @endcond
     
