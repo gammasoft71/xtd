@@ -85,6 +85,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | themes                          | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | toggle_button_render            | Gammasoft |                                                 |
 | xtd.forms | tool_bar                        | Gammasoft | ![status](pictures/releases/status/started.png) |
+| xtd.forms | user_control_render             | Gammasoft | ![status](pictures/releases/status/done.png)    |
 
 ## Release 0.3.0 (beta)
 
