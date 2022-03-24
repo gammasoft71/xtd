@@ -17,7 +17,7 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static → xtd::forms::box_renderer
     /// @par Namespace
-    /// xtd::forms::style_sheets
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms renderers

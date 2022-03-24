@@ -27,9 +27,7 @@ namespace xtd {
     class form_renderer static_ {
     public:
       /// @brief Draws a box in the specified bounds, form state and background color.
-      /// @param graphics The Graphics used to draw a form.
-      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form.
-      /// @param graphics The Graphics used to draw a form control.
+      /// @param graphics The xtd::drawing::graphics used to draw a form control.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form control.
       /// @param form_state The visual state of a form that is drawn with visual styles.
       /// @param back_color The background color for the form control.
