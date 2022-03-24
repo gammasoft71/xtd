@@ -1,0 +1,40 @@
+/* Contains toggle-button definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+toggle-button {
+  margin: 2px 1px 2px 1px;
+  border-style: theme;
+  border-color: system-color(control-dark);
+  border-width: 2px;
+  border-radius: 0px;
+  background-color: system-color(toggle-button-face);
+  padding: 1px;
+  color: system-color(control-text);
+}
+
+toggle-button:pressed {
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: rgba(204, 228, 247, 1.0);
+}
+
+toggle-button:checked {
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: rgba(204, 228, 247, 1.0);
+}
+
+toggle-button:mixed {
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: rgba(204, 228, 247, 1.0);
+}
+
+toggle-button:hover {
+  border-color: rgba(43, 120, 215, 1.0);
+  /*background-color: rgba(229, 241, 251, 1.0);*/
+  background-color: rgba(219, 243, 255, 0.5);
+}
+
+toggle-button:disabled {  
+  border-color: system-color(gray-text);
+  background-color: #CCCCCC;
+  color: system-color(gray-text);
+}
