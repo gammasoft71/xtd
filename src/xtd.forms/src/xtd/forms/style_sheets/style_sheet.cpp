@@ -87,6 +87,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   form_reader(reader);
   label_reader(reader);
   panel_reader(reader);
+  toggle_button_reader(reader);
   user_control_reader(reader);
 }
 
@@ -240,6 +241,22 @@ const style_sheet& style_sheet::system_style_sheet() noexcept {
 
 const xtd::forms::style_sheets::theme& style_sheet::theme() const noexcept {
   return theme_;
+}
+
+const xtd::forms::style_sheets::toggle_button& style_sheet::toggle_button() const noexcept {
+  return toggle_button(pseudo_state::standard);
+}
+
+const xtd::forms::style_sheets::toggle_button& style_sheet::toggle_button(pseudo_state state) const noexcept {
+  static xtd::forms::style_sheets::toggle_button fallback;
+  fallback = toggle_buttons_.find(pseudo_state::standard) != toggle_buttons_.end() ? toggle_buttons_.find(state)->second : xtd::forms::style_sheets::toggle_button();
+  auto it = toggle_buttons_.find(state);
+  if (it == toggle_buttons_.end()) return fallback;
+  return it->second;
+}
+
+const style_sheet::toggle_buttons_t& style_sheet::toggle_buttons() const noexcept {
+  return toggle_buttons_;
 }
 
 const xtd::forms::style_sheets::user_control& style_sheet::user_control() const noexcept {
@@ -656,6 +673,17 @@ void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) panels_[pseudo_state::standard] = xtd::forms::style_sheets::panel();
     if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) panels_[pseudo_state::standard | state.second] = panels_[pseudo_state::standard];
     if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, panels_[pseudo_state::standard | state.second]);
+  }
+}
+
+void style_sheet::toggle_button_reader(xtd::web::css::css_reader& reader) noexcept {
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  for (auto state : states) {
+    selector_map::const_iterator selectors_iterator = reader.selectors().find("toggle-button" + state.first);
+    if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) toggle_buttons_[pseudo_state::standard] = xtd::forms::style_sheets::button();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) toggle_buttons_[pseudo_state::standard | state.second] = toggle_buttons_[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, toggle_buttons_[pseudo_state::standard | state.second]);
   }
 }
 
