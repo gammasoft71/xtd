@@ -204,6 +204,11 @@ namespace xtd {
         /// @param font The xtd::drawing::font to apply to the text displayed by the control.
         /// @warning Internal use only
         static void font(intptr_t control, const drawing::font& font);
+        /// @brief Gets the native handle of the control.
+        /// @param control Control window handle.
+        /// @return The native handle.
+        /// @warning Internal use only
+        static intptr_t native_handle(intptr_t control);
         /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
         /// @param control Control window handle.
         /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
