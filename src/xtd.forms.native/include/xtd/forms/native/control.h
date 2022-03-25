@@ -303,6 +303,11 @@ namespace xtd {
         /// @param text The text associated with this control.
         /// @warning Internal use only
         static void text(intptr_t control, const xtd::ustring& text);
+        /// @brief Gets the toolkit handle of the control.
+        /// @param control Control window handle.
+        /// @return The toolkit handle.
+        /// @warning Internal use only
+        static intptr_t toolkit_handle(intptr_t control);
         /// @brief Unregister the wnd proc previously registered.
         /// @param control Control window handle.
         /// @warning Internal use only

@@ -406,6 +406,15 @@ void control::text(intptr_t control, const ustring& text) {
   reinterpret_cast<control_handler*>(control)->control()->SetLabel(convert_string::to_wstring(text));
 }
 
+intptr_t control::toolkit_handle(intptr_t control) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return 0;
+  }
+  return reinterpret_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control());
+}
+
 bool control::visible(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
