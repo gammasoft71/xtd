@@ -6,7 +6,7 @@ button:default {
   border-style: solid;
   border-color: system-color(accent);
   border-width: 2px;
-  border-radius: 0px;
+  border-radius: 3px;
   background-color: system-color(button-face);
   padding: 1px;
   color: system-color(control-text);
