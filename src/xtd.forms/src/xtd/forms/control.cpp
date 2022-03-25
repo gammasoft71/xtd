@@ -562,6 +562,12 @@ control& control::name(const xtd::ustring& name) {
   return*this;
 }
 
+intptr_t control::native_handle() const {
+  if (check_for_illegal_cross_thread_calls() && invoke_required())
+    throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
+  return native::control::native_handle(data_->handle);
+}
+
 forms::padding control::padding() const {
   return data_->padding;
 }

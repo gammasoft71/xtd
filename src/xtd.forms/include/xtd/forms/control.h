@@ -528,6 +528,7 @@ namespace xtd {
       
       /// @brief Gets the window handle that the control is bound to.
       /// @return An intptr_t that contains the window handle (HWND) of the control.
+      /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the true native handle.
       intptr_t handle() const override;
       
       /// @brief Gets the height of the control.
@@ -630,6 +631,11 @@ namespace xtd {
       /// @brief Gets a value indicating which of the mouse buttons is in a pressed state.
       /// @return A bitwise combination of the mouse_buttons enumeration values. The default is none.
       static forms::mouse_buttons mouse_buttons();
+      
+      /// @brief Gets the native handle that the control is bound to.
+      /// @return An intptr_t that contains the native handle (HWND) of the control.
+      /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the true native handle.
+      intptr_t native_handle() const;
       
       /// @brief Gets the name of the control.
       /// @return The name of the control. The default is an empty string ("").
