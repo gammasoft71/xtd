@@ -6,7 +6,7 @@ button:default {
   border-style: solid;
   border-color: rgba(43, 120, 215, 1.0);
   border-width: 1px;
-  border-radius: 3px;
+  border-radius: 2px;
   background-color: #FAF9F9;
   padding: 1px;
   color: system-color(control-text);
