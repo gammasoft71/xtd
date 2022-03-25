@@ -99,8 +99,8 @@ control::control() {
   
   data_->controls.item_added += [&](size_t, reference_wrapper<control> item) {
     on_control_added(control_event_args(item.get()));
-    item.get().data_->parent = data_->handle;
-    if (data_->handle)
+    item.get().data_->parent = handle();
+    if (handle())
       item.get().create_control();
   };
   
@@ -461,7 +461,7 @@ bool control::invoke_required() const {
 }
 
 bool control::is_handle_created() const {
-  return data_->handle != 0;
+  return handle() != 0;
 }
 
 int32_t control::left() const {
@@ -563,9 +563,7 @@ control& control::name(const xtd::ustring& name) {
 }
 
 intptr_t control::native_handle() const {
-  if (check_for_illegal_cross_thread_calls() && invoke_required())
-    throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
-  return native::control::native_handle(data_->handle);
+  return native::control::native_handle(handle());
 }
 
 forms::padding control::padding() const {
@@ -582,13 +580,13 @@ std::optional<control_ref> control::parent() const {
 }
 
 control& control::parent(const control& parent) {
-  if (parent.data_->handle != data_->parent) {
+  if (parent.handle() != data_->parent) {
     if (this->parent().has_value())
       this->parent(nullptr);
     else
       on_parent_changed(event_args::empty);
-    if (parent.data_->handle) const_cast<control&>(parent).data_->controls.push_back(*this);
-  } else if (parent.data_->handle == 0)
+    if (parent.handle()) const_cast<control&>(parent).data_->controls.push_back(*this);
+  } else if (parent.handle() == 0)
     const_cast<control&>(parent).data_->controls.push_back(*this);
   return *this;
 }
@@ -597,7 +595,7 @@ control& control::parent(nullptr_t) {
   if (parent().has_value()) {
     on_parent_changed(event_args::empty);
     for (size_t index = 0; index < parent().value().get().data_->controls.size(); index++) {
-      if (parent().value().get().data_->controls[index].get().data_->handle == data_->handle) {
+      if (parent().value().get().data_->controls[index].get().handle() == handle()) {
         auto prev_parent = parent();
         parent().value().get().data_->controls.erase_at(index);
         if (!get_state(state::destroying) && !prev_parent.value().get().get_state(state::destroying)) prev_parent.value().get().refresh();
@@ -776,7 +774,7 @@ void control::destroy_control() {
         parent_prev.value().get().resume_layout(false);
       } else {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
-          if (top_level_controls_[index].get().data_->handle == data_->handle) {
+          if (top_level_controls_[index].get().handle() == handle()) {
             top_level_controls_.erase_at(index);
             break;
           }
