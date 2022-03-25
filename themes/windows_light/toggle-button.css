@@ -3,11 +3,11 @@
 
 toggle-button {
   margin: 2px 1px 2px 1px;
-  border-style: theme;
+  border-style: solid;
   border-color: system-color(control-dark);
-  border-width: 2px;
-  border-radius: 0px;
-  background-color: system-color(toggle-button-face);
+  border-width: 1px;
+  border-radius: 3px;
+  background-color: #FAF9F9;
   padding: 1px;
   color: system-color(control-text);
 }
@@ -29,7 +29,6 @@ toggle-button:mixed {
 
 toggle-button:hover {
   border-color: rgba(43, 120, 215, 1.0);
-  /*background-color: rgba(229, 241, 251, 1.0);*/
   background-color: rgba(219, 243, 255, 0.5);
 }
 
