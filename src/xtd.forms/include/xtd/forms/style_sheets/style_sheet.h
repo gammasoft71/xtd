@@ -20,6 +20,7 @@
 #include "system_colors.h"
 #include "theme.h"
 #include "user_control.h"
+#include "toggle_button.h"
 
 /// @cond
 class __test_style_sheet__; // Necessary for the test unit to access the private member functions
@@ -66,12 +67,14 @@ namespace xtd {
         using labels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::label>;
         /// @brief Represents a style sheet labels collection.
         using panels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::panel>;
-        /// @brief Represents a style sheet user_controls collection.
-        using user_controls_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::user_control>;
         /// @brief Represents a style_sheets collection.
         using style_sheets_t = std::map<xtd::ustring, style_sheet>;
         /// @brief Represents a style_sheet names collection.
         using style_sheet_names_t = std::vector<xtd::ustring>;
+        /// @brief Represents a style sheet buttons collection.
+        using toggle_buttons_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::toggle_button>;
+        /// @brief Represents a style sheet user_controls collection.
+        using user_controls_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::user_control>;
         /// @}
         
         /// @name Fields
@@ -202,6 +205,17 @@ namespace xtd {
         /// @brief Gets the style sheet user_control collection of this instance.
         /// @return The style sheet controls collection.
         const user_controls_t& user_controls() const noexcept;
+
+        /// @brief Gets the style sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        const xtd::forms::style_sheets::toggle_button& toggle_button() const noexcept;
+        /// @brief Gets the style sheet button for specified pseudo state.
+        /// @return A style_sheet button.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
+        const xtd::forms::style_sheets::toggle_button& toggle_button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet buttons collection of this instance.
+        /// @return The style sheet buttons collection.
+        const toggle_buttons_t& toggle_buttons() const noexcept;
         /// @}
         
         /// @name Methods
@@ -311,6 +325,7 @@ namespace xtd {
         void panel_reader(xtd::web::css::css_reader& reader) noexcept;
         void system_colors_reader(xtd::web::css::css_reader& reader) noexcept;
         void theme_reader(xtd::web::css::css_reader& reader) noexcept;
+        void toggle_button_reader(xtd::web::css::css_reader& reader) noexcept;
         void user_control_reader(xtd::web::css::css_reader& reader) noexcept;
 
         //static style_sheet system_style_sheet_gnome_dark() noexcept; // Declared in system_style_sheet_gnome_dark.cpp
@@ -343,6 +358,7 @@ namespace xtd {
         labels_t labels_;
         panels_t panels_;
         user_controls_t user_controls_;
+        toggle_buttons_t toggle_buttons_;
         static style_sheet current_style_sheet_;
         static style_sheets_t style_sheets_;
         static style_sheet_names_t style_sheet_names_;

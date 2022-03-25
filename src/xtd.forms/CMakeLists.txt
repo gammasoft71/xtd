@@ -285,6 +285,7 @@ add_sources(
   include/xtd/forms/style_sheets/text_decoration.h
   include/xtd/forms/style_sheets/text_transformation.h
   include/xtd/forms/style_sheets/theme.h
+  include/xtd/forms/style_sheets/toggle_button.h
   include/xtd/forms/style_sheets/user_control.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/control_state.h
