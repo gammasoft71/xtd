@@ -743,6 +743,11 @@ namespace xtd {
       /// @return Current control.
       virtual control& text(const xtd::ustring& text);
       
+      /// @brief Gets the native handle that the control is bound to.
+      /// @return An intptr_t that contains the native handle (HWND) of the control.
+      /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the true native handle.
+      intptr_t toolkit_handle() const;
+
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @return An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       virtual int32_t top() const;

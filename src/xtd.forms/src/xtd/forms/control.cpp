@@ -690,6 +690,10 @@ control& control::text(const ustring& text) {
   return *this;
 }
 
+intptr_t control::toolkit_handle() const {
+  return native::control::toolkit_handle(handle());
+}
+
 int32_t control::top() const {
   return data_->location.y();
 }
