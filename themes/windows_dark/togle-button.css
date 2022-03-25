@@ -6,7 +6,7 @@ toggle-button {
   border-style: solid;
   border-color: system-color(control-light);
   border-width: 2px;
-  border-radius: 0px;
+  border-radius: 3px;
   background-color: system-color(toggle-button-face);
   padding: 1px;
   color: system-color(control-text);
