@@ -1098,7 +1098,7 @@ void control::on_mouse_double_click(const mouse_event_args& e) {
 void control::on_mouse_down(const mouse_event_args& e) {
   if (control_appearance() == xtd::forms::control_appearance::standard && enabled()) {
     data_->control_state = xtd::forms::visual_styles::control_state::pressed;
-    invalidate();
+    //invalidate();
   }
   if (can_raise_events()) mouse_down(*this, e);
 }
@@ -1110,7 +1110,7 @@ void control::on_mouse_horizontal_wheel(const mouse_event_args& e) {
 void control::on_mouse_enter(const event_args& e) {
   if (control_appearance() == xtd::forms::control_appearance::standard && enabled()) {
     data_->control_state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::control_state::pressed : xtd::forms::visual_styles::control_state::hot;
-    invalidate();
+    //invalidate();
   }
   if (can_raise_events()) mouse_enter(*this, e);
 }
@@ -1118,7 +1118,7 @@ void control::on_mouse_enter(const event_args& e) {
 void control::on_mouse_leave(const event_args& e) {
   if (control_appearance() == xtd::forms::control_appearance::standard && enabled()) {
     data_->control_state = xtd::forms::visual_styles::control_state::normal;
-    invalidate();
+    //invalidate();
   }
   if (can_raise_events()) mouse_leave(*this, e);
 }
@@ -1130,7 +1130,7 @@ void control::on_mouse_move(const mouse_event_args& e) {
 void control::on_mouse_up(const mouse_event_args& e) {
   if (control_appearance() == xtd::forms::control_appearance::standard && enabled() && data_->control_state == xtd::forms::visual_styles::control_state::pressed) {
     data_->control_state = xtd::forms::visual_styles::control_state::hot;
-    invalidate();
+    //invalidate();
   }
   if (can_raise_events()) mouse_up(*this, e);
 }
