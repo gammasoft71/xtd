@@ -23,7 +23,7 @@ button:flat:mixed {
 }
 
 button:flat:hover {
-  background-color: rgba(0, 0, 0, 0.98);
+  background-color: system-color(control-light);
 }
 
 button:flat:disabled {  
