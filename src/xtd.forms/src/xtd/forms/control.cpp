@@ -461,7 +461,7 @@ bool control::invoke_required() const {
 }
 
 bool control::is_handle_created() const {
-  return handle() != 0;
+  return data_->handle != 0;
 }
 
 int32_t control::left() const {
