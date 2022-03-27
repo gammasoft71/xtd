@@ -12,6 +12,10 @@ button {
   color: system-color(control-text);
 }
 
+button:hover {
+  background-image: linear-gradient(system-color(button-face), system-color(button-face));
+}
+
 button:pressed {
   background-image: linear-gradient(rgba(255, 255, 255, 0.365), rgba(255, 255, 255, 0.365));
 }
@@ -20,11 +24,35 @@ button:checked {
   background-image: linear-gradient(rgba(255, 255, 255, 0.365), rgba(255, 255, 255, 0.365));
 }
 
-button:mixed {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.306), rgba(255, 255, 255, 0.306));
+button:disabled {  
+  background-image: linear-gradient(rgba(255, 255, 255, 0.137), rgba(255, 255, 255, 0.137));
+  color: system-color(gray-text);
 }
 
-button:disabled {  
+button:default {
+  margin: 2px 0px 1px 0px;
+  border-style: outset;
+  border-color: system-color(control-dark);
+  border-width: 1px;
+  border-radius: 5px;
+  background-image: linear-gradient(#177AE5 , #166ECD);
+  padding: 1px 1px 3px 1px;
+  color: system-color(control-text);
+}
+
+button:default:hover {
+  background-image: linear-gradient(#177AE5 , #166ECD);
+}
+
+button:default:pressed {
+  background-image: linear-gradient(#24A0F2 , #2194E5);
+}
+
+button:default:checked {
+  background-image: linear-gradient(#24A0F2 , #2194E5);
+}
+
+button:default:disabled {  
   background-image: linear-gradient(rgba(255, 255, 255, 0.137), rgba(255, 255, 255, 0.137));
   color: system-color(gray-text);
 }

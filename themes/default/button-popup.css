@@ -9,6 +9,11 @@ button:popup {
   color: system-color(control-text);
 }
 
+button:popup:hover {
+  border-style: outset;
+  border-width: 2px;
+}
+
 button:popup:pressed {
   border-style: inset;
   border-width: 2px;
@@ -19,17 +24,35 @@ button:popup:checked {
   border-width: 2px;
 }
 
-button:popup:mixed {
-  border-style: inset;
-  border-width: 1px;
+button:popup:disabled {  
+  border-color: system-color(gray-text);
+  color: system-color(gray-text);
 }
 
-button:popup:hover {
+button:popup:default {
+  border-style: solid;
+  border-color: system-color(control-light);
+  border-width: 2px;
+  background-color: system-color(control);
+  color: system-color(control-text);
+}
+
+button:popup:default:hover {
   border-style: outset;
   border-width: 2px;
 }
 
-button:popup:disabled {  
+button:popup:default:pressed {
+  border-style: inset;
+  border-width: 2px;
+}
+
+button:popup:default:checked {
+  border-style: inset;
+  border-width: 3px;
+}
+
+button:popup:default:disabled {  
   border-color: system-color(gray-text);
   color: system-color(gray-text);
 }
