@@ -9,7 +9,7 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 ## Incompatibility list
 
 * xtd::forms::menu and xtd::forms::menu_item are reimplemented as of version 0.2.0 and are not compatible with the previous version. See [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html) and [example](https://github.com/gammasoft71/xtd/tree/master/examples/xtd.forms.examples/menus_and_toolbars/main_menu) for more information.
-* Linux and macOS users : if you have cloned and instlled a version 0.2.0 from git before the commit [6bfede0](https://github.com/gammasoft71/xtd/commit/6bfede0465a7571b3f41483d360fae17325c88df). Delete the "/usr/local/shar/xtd/themes" directory before the new installation.
+* Linux and macOS users : if you have cloned and instlled a version 0.2.0 from git before the commit [6bfede0](https://github.com/gammasoft71/xtd/commit/6bfede0465a7571b3f41483d360fae17325c88df). Delete the "/usr/local/share/xtd/themes" directory before the new installation.
 * Windows users : if you have cloned and instlled a version 0.2.0 from git before the commit [6bfede0](https://github.com/gammasoft71/xtd/commit/6bfede0465a7571b3f41483d360fae17325c88df). Delete the "C:\Program Files (x86)\xtd\share\xtd\themes" directory before the new installation.
 
 ## Issues
