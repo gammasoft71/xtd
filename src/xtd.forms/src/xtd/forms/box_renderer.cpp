@@ -138,7 +138,7 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
   // top-right
   if (radius_top_right1) graphics.draw_arc(pen1, border_rect1.right() - radius_top_right1 * 2, border_rect1.top(), radius_top_right1 * 2, radius_top_right1 * 2, 315, 45);
   // bottom-right
-  if (radius_bottom_right1) graphics.draw_arc(pen1, border_rect1.right() - radius_bottom_right1 * 2 + 1, border_rect1.bottom() - radius_bottom_right1 * 2, radius_bottom_right1 * 2, radius_bottom_right1 * 2, 0, 45);
+  if (radius_bottom_right1) graphics.draw_arc(pen1, border_rect1.right() - radius_bottom_right1 * 2, border_rect1.bottom() - radius_bottom_right1 * 2, radius_bottom_right1 * 2, radius_bottom_right1 * 2, 0, 45);
 
   if (pen_width2 != 0) {
     // right
@@ -146,7 +146,7 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
     // top-right
     if (radius_top_right2) graphics.draw_arc(pen2, border_rect2.right() - radius_top_right2 * 2, border_rect2.top(), radius_top_right2 * 2, radius_top_right2 * 2, 315, 45);
     // bottom-right
-    if (radius_bottom_right2) graphics.draw_arc(pen2, border_rect2.right() - radius_bottom_right2 * 2 + 1, border_rect2.bottom() - radius_bottom_right2 * 2, radius_bottom_right2 * 2, radius_bottom_right2 * 2, 0, 45);
+    if (radius_bottom_right2) graphics.draw_arc(pen2, border_rect2.right() - radius_bottom_right2 * 2, border_rect2.bottom() - radius_bottom_right2 * 2, radius_bottom_right2 * 2, radius_bottom_right2 * 2, 0, 45);
   }
 }
 
@@ -192,11 +192,11 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
   if (radius_bottom_left2 < 0) radius_bottom_left2 = 0;
 
   // bottom
-  graphics.draw_line(pen1, border_rect1.left() + radius_bottom_left1, border_rect1.bottom(), border_rect1.right() - radius_bottom_right1 + 1, border_rect1.bottom());
+  graphics.draw_line(pen1, border_rect1.left() + radius_bottom_left1, border_rect1.bottom(), border_rect1.right() - radius_bottom_right1, border_rect1.bottom());
   // bottom-left
   if (radius_bottom_left1) graphics.draw_arc(pen1, border_rect1.left(), border_rect1.bottom() - radius_bottom_left1 * 2, radius_bottom_left1 * 2, radius_bottom_left1 * 2, 90, 45);
   // bottom-right
-  if (radius_bottom_right1) graphics.draw_arc(pen1, border_rect1.right() - radius_bottom_right1 * 2 + 1, border_rect1.bottom() - radius_bottom_right1 * 2, radius_bottom_right1 * 2, radius_bottom_right1 * 2, 45, 45);
+  if (radius_bottom_right1) graphics.draw_arc(pen1, border_rect1.right() - radius_bottom_right1 * 2, border_rect1.bottom() - radius_bottom_right1 * 2, radius_bottom_right1 * 2, radius_bottom_right1 * 2, 45, 45);
   
   if (pen_width2 != 0) {
     // bottom
@@ -204,7 +204,7 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
     // bottom-left
     if (radius_bottom_left2) graphics.draw_arc(pen2, border_rect2.left(), border_rect2.bottom() - radius_bottom_left2 * 2, radius_bottom_left2 * 2, radius_bottom_left2 * 2, 90, 45);
     // bottom-right
-    if (radius_bottom_right2) graphics.draw_arc(pen2, border_rect2.right() - radius_bottom_right2 * 2 + 1, border_rect2.bottom() - radius_bottom_right2 * 2, radius_bottom_right2 * 2, radius_bottom_right2 * 2, 45, 45);
+    if (radius_bottom_right2) graphics.draw_arc(pen2, border_rect2.right() - radius_bottom_right2 * 2, border_rect2.bottom() - radius_bottom_right2 * 2, radius_bottom_right2 * 2, radius_bottom_right2 * 2, 45, 45);
   }
 }
 
