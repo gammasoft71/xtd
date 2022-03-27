@@ -12,6 +12,10 @@ button {
   color: system-color(control-text);
 }
 
+button:hover {
+  border-color: #0088D4;
+}
+
 button:pressed {
   border-color: system-color(accent);
   background-color: system-color(accent);
@@ -22,16 +26,38 @@ button:checked {
   background-color: system-color(accent);
 }
 
-button:mixed {
-  border-color: #0088D4;
-  background-color: #0088D4;
-}
-
-button:hover {
-  border-color: #0088D4;
-}
-
 button:disabled {  
+  border-color: system-color(gray-text);
+  background-color: #343434;
+  color: system-color(gray-text);
+}
+
+button:default {
+  margin: 2px 1px 2px 1px;
+  border-style: solid;
+  border-color: system-color(accent);
+  border-width: 2px;
+  border-radius: 3px;
+  background-color: system-color(button-face);
+  padding: 1px;
+  color: system-color(control-text);
+}
+
+button:default:hover {
+  border-color: #0088D4;
+}
+
+button:default:pressed {
+  border-color: system-color(accent);
+  background-color: system-color(accent);
+}
+
+button:default:checked {
+  border-color: system-color(accent);
+  background-color: system-color(accent);
+}
+
+button:default:disabled {  
   border-color: system-color(gray-text);
   background-color: #343434;
   color: system-color(gray-text);

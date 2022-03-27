@@ -11,6 +11,10 @@ button:flat {
   color: system-color(control-text);
 }
 
+button:flat:hover {
+  background-color: rgba(157, 157, 157, 0.706);
+}
+
 button:flat:pressed {
   background-color: rgba(236, 236, 236, 0.706);
 }
@@ -19,15 +23,35 @@ button:flat:checked {
   background-color: rgba(236, 236, 236, 0.706);
 }
 
-button:flat:mixed {
-  background-color: rgba(157, 157, 157, 0.706);
-}
-
-button:flat:hover {
-  background-color: rgba(157, 157, 157, 0.706);
-}
-
 button:flat:disabled {  
+  border-color: system-color(gray-text);
+  background-color: rgba(255, 255, 255, 0.137);
+  color: system-color(gray-text);
+}
+
+button:flat:default {
+  border-style: solid;
+  border-color: system-color(control-text);
+  border-width: 2px;
+  border-radius: 5px;
+  background-color: system-color(control);
+  padding: 1px 1px 3px 1px;
+  color: system-color(control-text);
+}
+
+button:flat:default:hover {
+  background-color: rgba(157, 157, 157, 0.706);
+}
+
+button:flat:default:pressed {
+  background-color: rgba(236, 236, 236, 0.706);
+}
+
+button:flat:default:checked {
+  background-color: rgba(236, 236, 236, 0.706);
+}
+
+button:flat:default:disabled {  
   border-color: system-color(gray-text);
   background-color: rgba(255, 255, 255, 0.137);
   color: system-color(gray-text);
