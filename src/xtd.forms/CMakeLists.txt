@@ -237,6 +237,7 @@ add_sources(
   include/xtd/forms/tick_style.h
   include/xtd/forms/timer.h
   include/xtd/forms/toggle_button.h
+  include/xtd/forms/toggle_button_renderer.h
   include/xtd/forms/toggle_buttons.h
   include/xtd/forms/tool_bar.h
   include/xtd/forms/tool_bar_images.h
@@ -395,6 +396,7 @@ add_sources(
   src/xtd/forms/theme_renderers.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/toggle_button.cpp
+  src/xtd/forms/toggle_button_renderer.cpp
   src/xtd/forms/tool_bar.cpp
   src/xtd/forms/tool_bar_button.cpp
   src/xtd/forms/tool_bar_separator.cpp

@@ -12,9 +12,18 @@ toggle-button {
   color: system-color(control-text);
 }
 
+toggle-button:hover {
+  background-color: system-color(toggle-button-face);
+}
+
 toggle-button:pressed {
-  border-color: system-color(accent);
-  background-color: system-color(accent);
+  background-color: system-color(toggle-button-face);
+}
+
+toggle-button:disabled {  
+  border-color: system-color(gray-text);
+  background-color: #343434;
+  color: system-color(gray-text);
 }
 
 toggle-button:checked {
@@ -22,16 +31,38 @@ toggle-button:checked {
   background-color: system-color(accent);
 }
 
+toggle-button:checked:hover {
+  border-color: system-color(accent);
+  background-color: system-color(accent);
+}
+
+toggle-button:checked:pressed {
+  border-color: system-color(accent);
+  background-color: system-color(accent);
+}
+
+toggle-button:checked:disabled {  
+  border-color: system-color(gray-text);
+  background-color: #343434;
+  color: system-color(gray-text);
+}
+
 toggle-button:mixed {
   border-color: #0088D4;
   background-color: #0088D4;
 }
 
-toggle-button:hover {
+toggle-button:mixed:hover {
   border-color: #0088D4;
+  background-color: #0088D4;
 }
 
-toggle-button:disabled {  
+toggle-button:mixed:pressed {
+  border-color: #0088D4;
+  background-color: #0088D4;
+}
+
+toggle-button:mixed:disabled {  
   border-color: system-color(gray-text);
   background-color: #343434;
   color: system-color(gray-text);

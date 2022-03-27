@@ -104,22 +104,22 @@ namespace xtd {
         /// @{
         /// @brief Gets the style sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
-        const xtd::forms::style_sheets::button& button() const noexcept;
+        xtd::forms::style_sheets::button button() const noexcept;
         /// @brief Gets the style sheet button for specified pseudo state.
         /// @return A style_sheet button.
         /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
-        const xtd::forms::style_sheets::button& button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        xtd::forms::style_sheets::button button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
         /// @brief Gets the style sheet buttons collection of this instance.
         /// @return The style sheet buttons collection.
         const buttons_t& buttons() const noexcept;
         
         /// @brief Gets the style sheet control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
-        const xtd::forms::style_sheets::control& control() const noexcept;
+        xtd::forms::style_sheets::control control() const noexcept;
         /// @brief Gets the style sheet control for specified pseudo state.
         /// @return A style_sheet control.
         /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
-        const xtd::forms::style_sheets::control& control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        xtd::forms::style_sheets::control control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
         /// @brief Gets the style sheet controls collection of this instance.
         /// @return The style sheet controls collection.
         const controls_t& controls() const noexcept;
@@ -135,11 +135,11 @@ namespace xtd {
         
         /// @brief Gets the style sheet form for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet form for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
-        const xtd::forms::style_sheets::form& form() const noexcept;
+        xtd::forms::style_sheets::form form() const noexcept;
         /// @brief Gets the style sheet form for specified pseudo state.
         /// @return A style_sheet form.
         /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
-        const xtd::forms::style_sheets::form& form(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        xtd::forms::style_sheets::form form(xtd::forms::style_sheets::pseudo_state state) const noexcept;
         /// @brief Gets the style sheet forms collection of this instance.
         /// @return The style sheet forms collection.
         const forms_t& forms() const noexcept;
@@ -151,22 +151,22 @@ namespace xtd {
         
         /// @brief Gets the style sheet label for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet label for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
-        const xtd::forms::style_sheets::label& label() const noexcept;
+        xtd::forms::style_sheets::label label() const noexcept;
         /// @brief Gets the style sheet label for specified pseudo state.
         /// @return A style_sheet label.
         /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
-        const xtd::forms::style_sheets::label& label(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        xtd::forms::style_sheets::label label(xtd::forms::style_sheets::pseudo_state state) const noexcept;
         /// @brief Gets the style sheet labels collection of this instance.
         /// @return The style sheet labels collection.
         const labels_t& labels() const noexcept;
         
         /// @brief Gets the style sheet panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
-        const xtd::forms::style_sheets::panel& panel() const noexcept;
+        xtd::forms::style_sheets::panel panel() const noexcept;
         /// @brief Gets the style sheet panel for specified pseudo state.
         /// @return A style_sheet panel.
         /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
-        const xtd::forms::style_sheets::panel& panel(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        xtd::forms::style_sheets::panel panel(xtd::forms::style_sheets::pseudo_state state) const noexcept;
         /// @brief Gets the style sheet panels collection of this instance.
         /// @return The style sheet panels collection.
         const panels_t& panels() const noexcept;
@@ -194,28 +194,28 @@ namespace xtd {
         /// @brief Gets The style sheet theme of this instance.
         /// @return The style sheet theme collection.
         const xtd::forms::style_sheets::theme& theme() const noexcept;
-        
-        /// @brief Gets the style sheet user_control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
-        /// @return A style_sheet control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
-        const xtd::forms::style_sheets::user_control& user_control() const noexcept;
-        /// @brief Gets the style sheet user_control for specified pseudo state.
-        /// @return A style_sheet user_control.
-        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
-        const xtd::forms::style_sheets::user_control& user_control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
-        /// @brief Gets the style sheet user_control collection of this instance.
-        /// @return The style sheet controls collection.
-        const user_controls_t& user_controls() const noexcept;
 
         /// @brief Gets the style sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
-        const xtd::forms::style_sheets::toggle_button& toggle_button() const noexcept;
+        xtd::forms::style_sheets::toggle_button toggle_button() const noexcept;
         /// @brief Gets the style sheet button for specified pseudo state.
         /// @return A style_sheet button.
         /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
-        const xtd::forms::style_sheets::toggle_button& toggle_button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        xtd::forms::style_sheets::toggle_button toggle_button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
         /// @brief Gets the style sheet buttons collection of this instance.
         /// @return The style sheet buttons collection.
         const toggle_buttons_t& toggle_buttons() const noexcept;
+        
+        /// @brief Gets the style sheet user_control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        xtd::forms::style_sheets::user_control user_control() const noexcept;
+        /// @brief Gets the style sheet user_control for specified pseudo state.
+        /// @return A style_sheet user_control.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
+        xtd::forms::style_sheets::user_control user_control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet user_control collection of this instance.
+        /// @return The style sheet controls collection.
+        const user_controls_t& user_controls() const noexcept;
         /// @}
         
         /// @name Methods
@@ -312,7 +312,17 @@ namespace xtd {
         xtd::forms::style_sheets::text_decoration text_decoration_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_decoration& default_value) const noexcept;
         xtd::forms::style_sheets::text_transformation text_transformation_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_transformation& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
-        
+     
+        template<typename type_t, typename collection_t>
+        type_t get_state_control(const collection_t& collection, pseudo_state state) const noexcept {
+          auto result = type_t();
+          auto it = collection.find(pseudo_state::standard);
+          if (it != collection.end()) result = it->second;
+          it = collection.find(state);
+          if (it != collection.end()) result = it->second;
+          return result;
+        }
+
         static void on_style_sheet_changed(const xtd::event_args& e);
         static void on_system_colors_changed(const event_args& e);
         std::vector<xtd::ustring> split_values_from_text(const xtd::ustring& text) const noexcept;
@@ -357,8 +367,8 @@ namespace xtd {
         forms_t forms_;
         labels_t labels_;
         panels_t panels_;
-        user_controls_t user_controls_;
         toggle_buttons_t toggle_buttons_;
+        user_controls_t user_controls_;
         static style_sheet current_style_sheet_;
         static style_sheets_t style_sheets_;
         static style_sheet_names_t style_sheet_names_;

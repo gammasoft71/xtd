@@ -10,23 +10,51 @@ toggle-button {
   color: system-color(control-text);
 }
 
+toggle-button:hover {
+  background-image: linear-gradient(#F8F8F8, #F8F8F8);
+}
+
 toggle-button:pressed {
   background-image: linear-gradient(#D6D1CC, #D6D1CC);
+}
+
+toggle-button:disabled {  
+  border-color: system-color(gray-text);
+  background-image: linear-gradient(#FAF9F8, #FAF9F8);
+  color: system-color(gray-text);
 }
 
 toggle-button:checked {
   background-image: linear-gradient(#D6D1CC, #D6D1CC);
 }
 
+toggle-button:checked:hover {
+  background-image: linear-gradient(#D6D1CC, #D6D1CC);
+}
+
+toggle-button:checked:pressed {
+  background-image: linear-gradient(#D6D1CC, #D6D1CC);
+}
+
+toggle-button:checked:disabled {  
+  border-color: system-color(gray-text);
+  background-image: linear-gradient(#FAF9F8, #FAF9F8);
+  color: system-color(gray-text);
+}
+
 toggle-button:mixed {
-  background-image: linear-gradient(#3D3D3D, #3D3D3D);
+  background-image: linear-gradient(#B3AFAB, #B3AFAB);
 }
 
-toggle-button:hover {
-  background-image: linear-gradient(#F8F8F8, #F8F8F8);
+toggle-button:mixed:hover {
+  background-image: linear-gradient(#B3AFAB, #B3AFAB);
 }
 
-toggle-button:disabled {  
+toggle-button:mixed:pressed {
+  background-image: linear-gradient(#B3AFAB, #B3AFAB);
+}
+
+toggle-button:mixed:disabled {  
   border-color: system-color(gray-text);
   background-image: linear-gradient(#FAF9F8, #FAF9F8);
   color: system-color(gray-text);

@@ -12,9 +12,20 @@ toggle-button {
   color: system-color(control-text);
 }
 
+toggle-button:hover {
+  border-color: rgba(43, 120, 215, 1.0);
+  background-color: rgba(219, 243, 255, 0.5);
+}
+
 toggle-button:pressed {
   border-color: rgba(12, 9, 138, 1.0);
   background-color: rgba(204, 228, 247, 1.0);
+}
+
+toggle-button:disabled {  
+  border-color: system-color(gray-text);
+  background-color: #CCCCCC;
+  color: system-color(gray-text);
 }
 
 toggle-button:checked {
@@ -22,17 +33,38 @@ toggle-button:checked {
   background-color: rgba(204, 228, 247, 1.0);
 }
 
-toggle-button:mixed {
+toggle-button:checked:hover {
   border-color: rgba(12, 9, 138, 1.0);
   background-color: rgba(204, 228, 247, 1.0);
 }
 
-toggle-button:hover {
-  border-color: rgba(43, 120, 215, 1.0);
-  background-color: rgba(219, 243, 255, 0.5);
+toggle-button:checked:pressed {
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: rgba(204, 228, 247, 1.0);
 }
 
-toggle-button:disabled {  
+toggle-button:checked:disabled {  
+  border-color: system-color(gray-text);
+  background-color: #CCCCCC;
+  color: system-color(gray-text);
+}
+
+toggle-button:mixed {
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: #ABBFCF;
+}
+
+toggle-button:mixed:hover {
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: #ABBFCF;
+}
+
+toggle-button:mixed:pressed {
+  border-color: rgba(12, 9, 138, 1.0);
+  background-color: #ABBFCF;
+}
+
+toggle-button:mixed:disabled {  
   border-color: system-color(gray-text);
   background-color: #CCCCCC;
   color: system-color(gray-text);
