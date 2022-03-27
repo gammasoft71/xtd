@@ -99,7 +99,7 @@ namespace xtd {
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
       /// @remarks You can use this method to set the entire range for the track_bar at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
-      void set_range(int min_value, int max_value) {
+      void set_range(double min_value, double max_value) {
         minimum(min_value);
         maximum(min_value > max_value ? min_value : max_value);
       }
