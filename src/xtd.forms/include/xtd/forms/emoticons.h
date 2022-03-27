@@ -2115,7 +2115,7 @@ namespace xtd {
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x0001F6F9. This field is constant.
       static const xtd::forms::emoticon skateboard;
       /// @brief Gets a system-defined xtd::forms::emoticon that has a string value of 0x0001F6FA. This field is constant.
-      static const xtd::forms::emoticon auto_rrickshaw;
+      static const xtd::forms::emoticon auto_rickshaw;
       
       // 1F780-1F7FF Geometric Shapes Extended
       
