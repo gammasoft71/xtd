@@ -16,6 +16,7 @@ add_sources(
   system-colors.css
   system-images.css
   theme.css
+  toggle-button.css
   user-control.css
 )
 target_type(INTERFACE_LIBRARY)
