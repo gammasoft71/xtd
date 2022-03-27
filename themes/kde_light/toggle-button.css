@@ -13,7 +13,7 @@ toggle-button {
 }
 
 toggle-button:hover {
-  border-color: system-color(accent);
+  background-color: system-color(control);
 }
 
 toggle-button:pressed {
@@ -25,7 +25,7 @@ toggle-button:pressed {
 }
 
 toggle-button:disabled {  
-  background-color: #454A4E;
+  background-color: #F1F2F3;
   color: system-color(gray-text);
 }
 
@@ -54,7 +54,7 @@ toggle-button:checked:pressed {
 }
 
 toggle-button:checked:disabled {  
-  background-color: #454A4E;
+  background-color: #F1F2F3;
   color: system-color(gray-text);
 }
 
@@ -83,6 +83,6 @@ toggle-button:mixed:pressed {
 }
 
 toggle-button:mixed:disabled {  
-  background-color: #454A4E;
+  background-color: #F1F2F3;
   color: system-color(gray-text);
 }

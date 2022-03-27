@@ -10,12 +10,34 @@ toggle-button {
   color: system-color(control-text);
 }
 
+toggle-button:hover {
+  border-color: system-color(control-dark);
+}
+
 toggle-button:pressed {
   border-style: inset;
 }
 
+toggle-button:disabled {  
+  border-color: system-color(gray-text);
+  color: system-color(gray-text);
+}
+
 toggle-button:checked {
   border-style: inset;
+}
+
+toggle-button:checked:hover {
+  border-style: inset;
+}
+
+toggle-button:checked:pressed {
+  border-style: inset;
+}
+
+toggle-button:checked:disabled {  
+  border-color: system-color(gray-text);
+  color: system-color(gray-text);
 }
 
 toggle-button:mixed {
@@ -23,11 +45,17 @@ toggle-button:mixed {
   border-style: inset;
 }
 
-toggle-button:hover {
-  border-color: system-color(control-dark);
+toggle-button:mixed:hover {
+  border-width: 1px;
+  border-style: inset;
 }
 
-toggle-button:disabled {  
+toggle-button:mixed:pressed {
+  border-width: 1px;
+  border-style: inset;
+}
+
+toggle-button:mixed:disabled {  
   border-color: system-color(gray-text);
   color: system-color(gray-text);
 }

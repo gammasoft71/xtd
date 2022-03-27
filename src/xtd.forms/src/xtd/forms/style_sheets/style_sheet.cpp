@@ -91,32 +91,24 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   user_control_reader(reader);
 }
 
-const xtd::forms::style_sheets::button& style_sheet::button() const noexcept {
+xtd::forms::style_sheets::button style_sheet::button() const noexcept {
   return button(pseudo_state::standard);
 }
 
-const xtd::forms::style_sheets::button& style_sheet::button(pseudo_state state) const noexcept {
-  static xtd::forms::style_sheets::button fallback;
-  fallback = buttons_.find(pseudo_state::standard) != buttons_.end() ? buttons_.find(state)->second : xtd::forms::style_sheets::button();
-  auto it = buttons_.find(state);
-  if (it == buttons_.end()) return fallback;
-  return it->second;
+xtd::forms::style_sheets::button style_sheet::button(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::button>(buttons_, state);
 }
 
 const style_sheet::buttons_t& style_sheet::buttons() const noexcept {
   return buttons_;
 }
 
-const xtd::forms::style_sheets::control& style_sheet::control() const noexcept {
+xtd::forms::style_sheets::control style_sheet::control() const noexcept {
   return control(pseudo_state::standard);
 }
 
-const xtd::forms::style_sheets::control& style_sheet::control(pseudo_state state) const noexcept {
-  static xtd::forms::style_sheets::control fallback;
-  fallback = controls_.find(pseudo_state::standard) != controls_.end() ? controls_.find(state)->second : xtd::forms::style_sheets::control();
-  auto it = controls_.find(state);
-  if (it == controls_.end()) return fallback;
-  return it->second;
+xtd::forms::style_sheets::control style_sheet::control(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::control>(controls_, state);
 }
 
 const style_sheet::controls_t& style_sheet::controls() const noexcept {
@@ -136,16 +128,12 @@ void style_sheet::current_style_sheet(const style_sheet& value) {
   }
 }
 
-const xtd::forms::style_sheets::form& style_sheet::form() const noexcept {
+xtd::forms::style_sheets::form style_sheet::form() const noexcept {
   return form(pseudo_state::standard);
 }
 
-const xtd::forms::style_sheets::form& style_sheet::form(pseudo_state state) const noexcept {
-  static xtd::forms::style_sheets::form fallback;
-  fallback = forms_.find(pseudo_state::standard) != forms_.end() ? forms_.find(state)->second : xtd::forms::style_sheets::form();
-  auto it = forms_.find(state);
-  if (it == forms_.end()) return fallback;
-  return it->second;
+xtd::forms::style_sheets::form style_sheet::form(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::form>(forms_, state);
 }
 
 const style_sheet::forms_t& style_sheet::forms() const noexcept {
@@ -156,32 +144,24 @@ bool style_sheet::is_system_style_sheet() const noexcept {
   return *this == system_style_sheet();
 }
 
-const xtd::forms::style_sheets::label& style_sheet::label() const noexcept {
+xtd::forms::style_sheets::label style_sheet::label() const noexcept {
   return label(pseudo_state::standard);
 }
 
-const xtd::forms::style_sheets::label& style_sheet::label(pseudo_state state) const noexcept {
-  static xtd::forms::style_sheets::label fallback;
-  fallback = labels_.find(pseudo_state::standard) != labels_.end() ? labels_.find(state)->second : xtd::forms::style_sheets::label();
-  auto it = labels_.find(state);
-  if (it == labels_.end()) return fallback;
-  return it->second;
+xtd::forms::style_sheets::label style_sheet::label(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::label>(labels_, state);
 }
 
 const style_sheet::labels_t& style_sheet::labels() const noexcept {
   return labels_;
 }
 
-const xtd::forms::style_sheets::panel& style_sheet::panel() const noexcept {
+xtd::forms::style_sheets::panel style_sheet::panel() const noexcept {
   return panel(pseudo_state::standard);
 }
 
-const xtd::forms::style_sheets::label& style_sheet::panel(pseudo_state state) const noexcept {
-  static xtd::forms::style_sheets::panel fallback;
-  fallback = panels_.find(pseudo_state::standard) != panels_.end() ? panels_.find(state)->second : xtd::forms::style_sheets::panel();
-  auto it = panels_.find(state);
-  if (it == panels_.end()) return fallback;
-  return it->second;
+xtd::forms::style_sheets::panel style_sheet::panel(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::panel>(panels_, state);
 }
 
 const style_sheet::panels_t& style_sheet::panels() const noexcept {
@@ -243,32 +223,24 @@ const xtd::forms::style_sheets::theme& style_sheet::theme() const noexcept {
   return theme_;
 }
 
-const xtd::forms::style_sheets::toggle_button& style_sheet::toggle_button() const noexcept {
+xtd::forms::style_sheets::toggle_button style_sheet::toggle_button() const noexcept {
   return toggle_button(pseudo_state::standard);
 }
 
-const xtd::forms::style_sheets::toggle_button& style_sheet::toggle_button(pseudo_state state) const noexcept {
-  static xtd::forms::style_sheets::toggle_button fallback;
-  fallback = toggle_buttons_.find(pseudo_state::standard) != toggle_buttons_.end() ? toggle_buttons_.find(state)->second : xtd::forms::style_sheets::toggle_button();
-  auto it = toggle_buttons_.find(state);
-  if (it == toggle_buttons_.end()) return fallback;
-  return it->second;
+xtd::forms::style_sheets::toggle_button style_sheet::toggle_button(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::toggle_button>(toggle_buttons_, state);
 }
 
 const style_sheet::toggle_buttons_t& style_sheet::toggle_buttons() const noexcept {
   return toggle_buttons_;
 }
 
-const xtd::forms::style_sheets::user_control& style_sheet::user_control() const noexcept {
-  return control(pseudo_state::standard);
+xtd::forms::style_sheets::user_control style_sheet::user_control() const noexcept {
+  return user_control(pseudo_state::standard);
 }
 
-const xtd::forms::style_sheets::user_control& style_sheet::user_control(pseudo_state state) const noexcept {
-  static xtd::forms::style_sheets::user_control fallback;
-  fallback = user_controls_.find(pseudo_state::standard) != user_controls_.end() ? user_controls_.find(state)->second : xtd::forms::style_sheets::user_control();
-  auto it = user_controls_.find(state);
-  if (it == user_controls_.end()) return fallback;
-  return it->second;
+xtd::forms::style_sheets::user_control style_sheet::user_control(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::user_control>(user_controls_, state);
 }
 
 const style_sheet::user_controls_t& style_sheet::user_controls() const noexcept {
@@ -677,7 +649,7 @@ void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::toggle_button_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
