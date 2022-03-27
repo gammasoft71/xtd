@@ -6,13 +6,13 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 
 add_sources(
-  button-flat.css
-  button-popup.css
   button.css
   control.css
+  flat-button.css
   form.css
   label.css
   panel.css
+  popup-button.css
   system-colors.css
   system-images.css
   theme.css

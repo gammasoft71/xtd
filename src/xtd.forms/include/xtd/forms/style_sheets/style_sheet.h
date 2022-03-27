@@ -133,6 +133,17 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
         static void current_style_sheet(const style_sheet& value);
         
+        /// @brief Gets the style sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        xtd::forms::style_sheets::button flat_button() const noexcept;
+        /// @brief Gets the style sheet button for specified pseudo state.
+        /// @return A style_sheet button.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
+        xtd::forms::style_sheets::button flat_button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet buttons collection of this instance.
+        /// @return The style sheet buttons collection.
+        const buttons_t& flat_buttons() const noexcept;
+        
         /// @brief Gets the style sheet form for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet form for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         xtd::forms::style_sheets::form form() const noexcept;
@@ -171,6 +182,17 @@ namespace xtd {
         /// @return The style sheet panels collection.
         const panels_t& panels() const noexcept;
 
+        /// @brief Gets the style sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        xtd::forms::style_sheets::button popup_button() const noexcept;
+        /// @brief Gets the style sheet button for specified pseudo state.
+        /// @return A style_sheet button.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
+        xtd::forms::style_sheets::button popup_button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet buttons collection of this instance.
+        /// @return The style sheet buttons collection.
+        const buttons_t& popup_buttons() const noexcept;
+        
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheets.
         /// @return The installed xtd::forms::style_sheets::style_sheet style sheets.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
@@ -330,9 +352,11 @@ namespace xtd {
         void button_reader(xtd::web::css::css_reader& reader) noexcept;
         void control_reader(xtd::web::css::css_reader& reader) noexcept;
         void fill_control(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept;
+        void flat_button_reader(xtd::web::css::css_reader& reader) noexcept;
         void form_reader(xtd::web::css::css_reader& reader) noexcept;
         void label_reader(xtd::web::css::css_reader& reader) noexcept;
         void panel_reader(xtd::web::css::css_reader& reader) noexcept;
+        void popup_button_reader(xtd::web::css::css_reader& reader) noexcept;
         void system_colors_reader(xtd::web::css::css_reader& reader) noexcept;
         void theme_reader(xtd::web::css::css_reader& reader) noexcept;
         void toggle_button_reader(xtd::web::css::css_reader& reader) noexcept;
@@ -364,9 +388,11 @@ namespace xtd {
         
         buttons_t buttons_;
         controls_t controls_;
+        buttons_t flat_buttons_;
         forms_t forms_;
         labels_t labels_;
         panels_t panels_;
+        buttons_t popup_buttons_;
         toggle_buttons_t toggle_buttons_;
         user_controls_t user_controls_;
         static style_sheet current_style_sheet_;

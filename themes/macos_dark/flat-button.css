@@ -1,7 +1,7 @@
-/* Contains button-flat definitions. */
+/* Contains flat-button definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-button:flat {
+flat-button {
   border-style: solid;
   border-color: system-color(control-text);
   border-width: 1px;
@@ -11,25 +11,25 @@ button:flat {
   color: system-color(control-text);
 }
 
-button:flat:hover {
+flat-button:hover {
   background-color: rgba(255, 255, 255, 0.306);
 }
 
-button:flat:pressed {
+flat-button:pressed {
   background-color: rgba(255, 255, 255, 0.365);
 }
 
-button:flat:checked {
+flat-button:checked {
   background-color: rgba(255, 255, 255, 0.365);
 }
 
-button:flat:disabled {  
+flat-button:disabled {  
   border-color: system-color(gray-text);
   background-color: rgba(255, 255, 255, 0.137);
   color: system-color(gray-text);
 }
 
-button:flat:default {
+flat-button:default {
   border-style: solid;
   border-color: system-color(control-text);
   border-width: 2px;
@@ -39,19 +39,19 @@ button:flat:default {
   color: system-color(control-text);
 }
 
-button:flat:default:hover {
+flat-button:default:hover {
   background-color: rgba(255, 255, 255, 0.306);
 }
 
-button:flat:default:pressed {
+flat-button:default:pressed {
   background-color: rgba(255, 255, 255, 0.365);
 }
 
-button:flat:default:checked {
+flat-button:default:checked {
   background-color: rgba(255, 255, 255, 0.365);
 }
 
-button:flat:default:disabled {  
+flat-button:default:disabled {  
   border-color: system-color(gray-text);
   background-color: rgba(255, 255, 255, 0.137);
   color: system-color(gray-text);

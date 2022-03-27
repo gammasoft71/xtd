@@ -84,9 +84,11 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   system_colors_reader(reader);
   button_reader(reader);
   control_reader(reader);
+  flat_button_reader(reader);
   form_reader(reader);
   label_reader(reader);
   panel_reader(reader);
+  popup_button_reader(reader);
   toggle_button_reader(reader);
   user_control_reader(reader);
 }
@@ -128,6 +130,18 @@ void style_sheet::current_style_sheet(const style_sheet& value) {
   }
 }
 
+xtd::forms::style_sheets::button style_sheet::flat_button() const noexcept {
+  return flat_button(pseudo_state::standard);
+}
+
+xtd::forms::style_sheets::button style_sheet::flat_button(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::button>(flat_buttons_, state);
+}
+
+const style_sheet::buttons_t& style_sheet::flat_buttons() const noexcept {
+  return flat_buttons_;
+}
+
 xtd::forms::style_sheets::form style_sheet::form() const noexcept {
   return form(pseudo_state::standard);
 }
@@ -166,6 +180,18 @@ xtd::forms::style_sheets::panel style_sheet::panel(pseudo_state state) const noe
 
 const style_sheet::panels_t& style_sheet::panels() const noexcept {
   return panels_;
+}
+
+xtd::forms::style_sheets::button style_sheet::popup_button() const noexcept {
+  return popup_button(pseudo_state::standard);
+}
+
+xtd::forms::style_sheets::button style_sheet::popup_button(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::button>(popup_buttons_, state);
+}
+
+const style_sheet::buttons_t& style_sheet::popup_buttons() const noexcept {
+  return popup_buttons_;
 }
 
 const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
@@ -572,7 +598,7 @@ vector<ustring> style_sheet::split_values_from_text(const ustring& text) const n
 
 void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
   static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  static vector<pair<ustring, pseudo_state>> buttons {{"button", pseudo_state::standard}, {"button:default", pseudo_state::default_state}, {"button:flat", pseudo_state::flat}, {"button:flat:default", pseudo_state::flat | pseudo_state::default_state}, {"button:popup", pseudo_state::popup}, {"button:popup:default", pseudo_state::popup | pseudo_state::default_state}};
+  static vector<pair<ustring, pseudo_state>> buttons {{"button", pseudo_state::standard}, {"button:default", pseudo_state::default_state}};
   for (auto button : buttons) {
     for (auto state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
@@ -615,6 +641,20 @@ void style_sheet::fill_control(xtd::web::css::selector_map::const_iterator& sele
   if ((properties_iterator = selectors_iterator->second.properties().find("image-align")) != selectors_iterator->second.properties().end()) control.image_alignment(text_align_from_css(properties_iterator->second.to_string(), content_alignment::middle_center));
 }
 
+void style_sheet::flat_button_reader(xtd::web::css::css_reader& reader) noexcept {
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":disabled", pseudo_state::disabled}};
+  static vector<pair<ustring, pseudo_state>> buttons {{"flat-button", pseudo_state::standard}, {"flat-button:default", pseudo_state::standard | pseudo_state::default_state}};
+  for (auto button : buttons) {
+    for (auto state : states) {
+      selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
+      if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
+      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) flat_buttons_[button.second] = xtd::forms::style_sheets::button();
+      if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) flat_buttons_[button.second | state.second] = flat_buttons_[button.second];
+      if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, flat_buttons_[button.second | state.second]);
+    }
+  }
+}
+
 void style_sheet::form_reader(xtd::web::css::css_reader& reader) noexcept {
   static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
@@ -645,6 +685,20 @@ void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) panels_[pseudo_state::standard] = xtd::forms::style_sheets::panel();
     if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) panels_[pseudo_state::standard | state.second] = panels_[pseudo_state::standard];
     if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, panels_[pseudo_state::standard | state.second]);
+  }
+}
+
+void style_sheet::popup_button_reader(xtd::web::css::css_reader& reader) noexcept {
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":disabled", pseudo_state::disabled}};
+  static vector<pair<ustring, pseudo_state>> buttons {{"popup-button", pseudo_state::standard}, {"popup-button:default", pseudo_state::standard | pseudo_state::default_state}};
+  for (auto button : buttons) {
+    for (auto state : states) {
+      selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
+      if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
+      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) popup_buttons_[button.second] = xtd::forms::style_sheets::button();
+      if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) popup_buttons_[button.second | state.second] = popup_buttons_[button.second];
+      if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, popup_buttons_[button.second | state.second]);
+    }
   }
 }
 

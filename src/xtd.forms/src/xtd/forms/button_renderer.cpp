@@ -83,17 +83,17 @@ void button_renderer::draw_button(const style_sheets::style_sheet& style_sheet, 
 }
 
 void button_renderer::draw_flat_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, push_button_state button_state, bool default_button, const optional<color>& back_color, const flat_button_appearance& appearance, const ustring& text, const optional<content_alignment>& text_align, const optional<color>& fore_color, const optional<font>& font, const xtd::drawing::image& image, const optional<content_alignment>& image_align) {
-  auto pseudo_state_base = pseudo_state::flat;
+  auto pseudo_state_base = pseudo_state::standard;
   if (default_button) pseudo_state_base += pseudo_state::default_state;
   
   button current_style_sheet;
   switch (button_state) {
-    case push_button_state::normal: current_style_sheet = style_sheet.button(pseudo_state_base); break;
-    case push_button_state::hot: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::hover); break;
-    case push_button_state::pressed: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::pressed); break;
-    case push_button_state::checked: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::checked); break;
-    case push_button_state::disabled: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::disabled); break;
-    case push_button_state::default_state: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::default_state); break;
+    case push_button_state::normal: current_style_sheet = style_sheet.flat_button(pseudo_state_base); break;
+    case push_button_state::hot: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::hover); break;
+    case push_button_state::pressed: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::pressed); break;
+    case push_button_state::checked: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::checked); break;
+    case push_button_state::disabled: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::disabled); break;
+    case push_button_state::default_state: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::default_state); break;
   }
   if (back_color.has_value() && (button_state == push_button_state::normal || button_state == push_button_state::default_state)) current_style_sheet.background_color(back_color.value());
   if (text_align.has_value()) current_style_sheet.text_alignment(text_align.value());
@@ -115,17 +115,17 @@ void button_renderer::draw_flat_button(const style_sheets::style_sheet& style_sh
 }
 
 void button_renderer::draw_popup_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, push_button_state button_state, bool default_button, const optional<color>& back_color, const flat_button_appearance& appearance, const ustring& text, const optional<content_alignment>& text_align, const optional<color>& fore_color, const optional<font>& font, const xtd::drawing::image& image, const optional<content_alignment>& image_align) {
-  auto pseudo_state_base = pseudo_state::popup;
+  auto pseudo_state_base = pseudo_state::standard;
   if (default_button) pseudo_state_base += pseudo_state::default_state;
   
   button current_style_sheet;
   switch (button_state) {
-    case push_button_state::normal: current_style_sheet = style_sheet.button(pseudo_state_base); break;
-    case push_button_state::hot: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::hover); break;
-    case push_button_state::pressed: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::pressed); break;
-    case push_button_state::checked: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::checked); break;
-    case push_button_state::disabled: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::disabled); break;
-    case push_button_state::default_state: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::default_state); break;
+    case push_button_state::normal: current_style_sheet = style_sheet.popup_button(pseudo_state_base); break;
+    case push_button_state::hot: current_style_sheet = style_sheet.popup_button(pseudo_state_base | pseudo_state::hover); break;
+    case push_button_state::pressed: current_style_sheet = style_sheet.popup_button(pseudo_state_base | pseudo_state::pressed); break;
+    case push_button_state::checked: current_style_sheet = style_sheet.popup_button(pseudo_state_base | pseudo_state::checked); break;
+    case push_button_state::disabled: current_style_sheet = style_sheet.popup_button(pseudo_state_base | pseudo_state::disabled); break;
+    case push_button_state::default_state: current_style_sheet = style_sheet.popup_button(pseudo_state_base | pseudo_state::default_state); break;
   }
   if (back_color.has_value() && (button_state == push_button_state::normal || button_state == push_button_state::default_state)) current_style_sheet.background_color(back_color.value());
   if (text_align.has_value()) current_style_sheet.text_alignment(text_align.value());
