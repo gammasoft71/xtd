@@ -92,9 +92,7 @@ xtdc run
 
 #### Output
 
-```
-Hello, World!
-```
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_console.png)
 
 ### Forms (GUI like WinForms)
 
@@ -221,16 +219,7 @@ xtdc run
 
 #### Output
 
-```
-Start 2 tests from 1 test case
-Run tests:
-  SUCCEED hello_world_test.create_string_from_literal (0 ms total)
-  SUCCEED hello_world_test.create_string_from_chars (0 ms total)
-
-Test results:
-  SUCCEED 2 tests.
-End 2 tests from 1 test case ran. (0 ms total)
-```
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_tunit.png)
 
 ## Getting Started
 
