@@ -1,58 +1,56 @@
 /* Contains button-flat definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-button:flat {
+flat-button {
   border-style: solid;
   border-color: system-color(control-text);
   border-width: 1px;
-  border-radius: 4px;
   background-color: system-color(control);
-  padding: 1px 1px 3px 1px;
+  padding: 1px;
   color: system-color(control-text);
 }
 
-button:flat:hover {
-  background-color: #CCCCCA;
+flat-button:hover {
+  background-color: system-color(control-light);
 }
 
-button:flat:pressed {
+flat-button:pressed {
   background-color: system-color(control);
 }
 
-button:flat:checked {
+flat-button:checked {
   background-color: system-color(control);
 }
 
-button:flat:disabled {  
+flat-button:disabled {  
   border-color: system-color(gray-text);
-  background-color: #FAF9F8;
+  background-color: #CCCCCC;
   color: system-color(gray-text);
 }
 
-button:flat:default {
+flat-button:default {
   border-style: solid;
   border-color: system-color(control-text);
   border-width: 2px;
-  border-radius: 4px;
   background-color: system-color(control);
-  padding: 1px 1px 3px 1px;
+  padding: 1px;
   color: system-color(control-text);
 }
 
-button:flat:default:hover {
-  background-color: #CCCCCA;
+flat-button:default:hover {
+  background-color: rgba(0, 0, 0, 0.98);
 }
 
-button:flat:default:pressed {
+flat-button:default:pressed {
   background-color: system-color(control);
 }
 
-button:flat:default:checked {
-  background-color: system-color(control);
+flat-button:default:checked {
+  background-color: rsystem-color(control);
 }
 
-button:flat:default:disabled {  
+flat-button:default:disabled {  
   border-color: system-color(gray-text);
-  background-color: #FAF9F8;
+  background-color: #CCCCCC;
   color: system-color(gray-text);
 }

@@ -1,7 +1,7 @@
-/* Contains button-popup definitions. */
+/* Contains popup-button definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-button:popup {
+popup-button {
   border-style: solid;
   border-color: system-color(control-light);
   border-width: 1px;
@@ -9,27 +9,27 @@ button:popup {
   color: system-color(control-text);
 }
 
-button:popup:hover {
+popup-button:hover {
   border-style: outset;
   border-width: 2px;
 }
 
-button:popup:pressed {
+popup-button:pressed {
   border-style: inset;
   border-width: 2px;
 }
 
-button:popup:checked {
+popup-button:checked {
   border-style: inset;
   border-width: 2px;
 }
 
-button:popup:disabled {  
+popup-button:disabled {  
   border-color: system-color(gray-text);
   color: system-color(gray-text);
 }
 
-button:popup:default {
+popup-button:default {
   border-style: solid;
   border-color: system-color(control-light);
   border-width: 2px;
@@ -37,22 +37,22 @@ button:popup:default {
   color: system-color(control-text);
 }
 
-button:popup:default:hover {
+popup-button:default:hover {
   border-style: outset;
   border-width: 2px;
 }
 
-button:popup:default:pressed {
+popup-button:default:pressed {
   border-style: inset;
   border-width: 2px;
 }
 
-button:popup:default:checked {
+popup-button:default:checked {
   border-style: inset;
   border-width: 3px;
 }
 
-button:popup:default:disabled {  
+popup-button:default:disabled {  
   border-color: system-color(gray-text);
   color: system-color(gray-text);
 }
