@@ -142,7 +142,7 @@ void graphics::draw_arc(intptr_t handle, intptr_t pen, float x, float y, float w
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
   dc.SetBrush(*wxTRANSPARENT_BRUSH);
   dc.SetPen(wx_pen::to_pen(*reinterpret_cast<wx_pen*>(pen)));
-  dc.DrawEllipticArc(x, y, width + 1, height + 1, 360 - start_angle - sweep_angle, 360 - start_angle);
+  dc.DrawEllipticArc(x, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
