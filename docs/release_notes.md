@@ -257,12 +257,15 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 
 ## Themes
 
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) default - Default theme css files.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) gnome dark - Gnome dark theme css files.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) gnome light - Gnome light theme css files.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) kde dark - kde dark theme css files.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) kde light - kde light theme css files.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) macos dark - macOS dark theme css files.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) macos light - macOS light theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) symbolic dark - symbolic dark theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) symbolic light - symbolic light theme css files.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) windows dark - Windows dark theme css files.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) windows light - Windows light theme css files.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd dark - xtd dark theme css files.
