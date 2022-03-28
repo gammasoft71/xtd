@@ -46,10 +46,53 @@ call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFil
 call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\guidgen-gui.exe"
 
 :: add xtdc-gui path
-#set path=%ProgramFiles(x86)%\xtd\bin;%ProgramFiles(x86)%\wxWidgets\lib\vc_x64_dll;%path%
 set path=%ProgramFiles(x86)%\xtd\bin;%path%
-setx path "%path%"
+call :strlen path_length path
+if  %path_length% LSS 1024 (
+  setx path "%path%"
+) else (
+  echo.
+  echo ---------------------------------------------------------------
+  echo.
+  color 47
+  echo WARNING
+  echo -------
+  color
+  echo.
+  echo The path is greater than 1024. setx will not work correctly with a path greater than 1024.
+  echo Manually add "%ProgramFiles(x86)%\xtd\bin" in your path.
+  echo.
+  echo ---------------------------------------------------------------
+  pause
+)
 
 :: launch xtdc-gui
 echo launch xtdc-gui...
 start "xtdc-gui" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
+
+goto :eof
+
+:: -----------------------------------------------------------------------
+:: Gets the length of specified string.
+:: param result_var That will cantains the length of the specified string.
+:: param string_var The string to compute length.
+:strlen <result_var> <string_var> (   
+  setlocal EnableDelayedExpansion
+  (set^ tmp=!%~2!)
+  if defined tmp (
+    set "len=1"
+    for %%P in (4096 2048 1024 512 256 128 64 32 16 8 4 2 1) do (
+      if "!tmp:~%%P,1!" NEQ "" ( 
+        set /a "len+=%%P"
+        set "tmp=!tmp:~%%P!"
+      )
+    )
+  ) else (
+    set len=0
+  )
+)
+( 
+  endlocal
+  set "%~1=%len%"
+  exit /b
+)
