@@ -49,25 +49,30 @@ public:
     button1.location({10, 10});
     button1.text("Button");
     
-    toggle_button1.parent(tab_page_buttons);
-    toggle_button1.location({110, 10});
-    toggle_button1.text("Toggle");
+    image_button1.parent(tab_page_buttons);
+    image_button1.location({130, 10});
+    image_button1.image(button_images::from_name("xtd"));
     
     flat_button1.parent(tab_page_buttons);
     flat_button1.flat_style(xtd::forms::flat_style::flat);
     flat_button1.location({10, 50});
     flat_button1.text("Flat");
     
-    image_button1.parent(tab_page_buttons);
-    image_button1.location({110, 50});
-    image_button1.image(button_images::from_name("xtd"));
+    popup_button1.parent(tab_page_buttons);
+    popup_button1.flat_style(xtd::forms::flat_style::popup);
+    popup_button1.location({130, 50});
+    popup_button1.text("Popup");
     
-    switch_button1.parent(tab_page_buttons);
-    switch_button1.location({10, 90});
+    toggle_button1.parent(tab_page_buttons);
+    toggle_button1.checked(true);
+    toggle_button1.location({10, 90});
+    toggle_button1.three_state(true);
+    toggle_button1.text("Toggle");
     
     light_button1.parent(tab_page_buttons);
     light_button1.checked(true);
-    light_button1.location({110, 90});
+    light_button1.location({130, 90});
+    light_button1.three_state(true);
     light_button1.text("Light");
     
     radio_button1.parent(tab_page_buttons);
@@ -78,7 +83,7 @@ public:
     
     radio_button2.parent(tab_page_buttons);
     radio_button2.auto_size(true);
-    radio_button2.location({110, 130});
+    radio_button2.location({130, 130});
     radio_button2.text("Radio 2");
     
     check_box1.parent(tab_page_buttons);
@@ -90,11 +95,15 @@ public:
     check_box2.parent(tab_page_buttons);
     check_box2.auto_size(true);
     check_box2.three_state(true);
-    check_box2.location({110, 170});
+    check_box2.location({130, 170});
     check_box2.text("Check 2");
     
+    switch_button1.parent(tab_page_buttons);
+    switch_button1.checked(true);
+    switch_button1.location({10, 210});
+
     up_down_button1.parent(tab_page_buttons);
-    up_down_button1.location({10, 210});
+    up_down_button1.location({130, 210});
     
     color_picker1.parent(tab_page_pickers);
     color_picker1.location({10, 10});
@@ -229,10 +238,11 @@ private:
   tab_page tab_page_animations;
   
   button button1;
-  toggle_button toggle_button1;
   button flat_button1;
+  button popup_button1;
   button image_button1;
   switch_button switch_button1;
+  toggle_button toggle_button1;
   light_button light_button1;
   radio_button radio_button1;
   radio_button radio_button2;
