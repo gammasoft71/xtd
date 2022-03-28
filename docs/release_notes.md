@@ -313,6 +313,11 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sdl2 - Sdl2 toolkit.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) win32 - Win32 API toolkit.
 
+## CMake
+
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) Assembly commands - CMake commands to generate assembly information from the CMakeLists.txt file.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) iOS platforms - Toolchain for iOS devices.
+
 ______________________________________________________________________________________________
 
 ![0.1.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_1_0.png) (beta) October 10, 2021
