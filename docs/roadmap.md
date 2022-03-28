@@ -46,7 +46,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.forms | check_box_render                | Gammasoft |                                                 |
 | xtd.forms | clipboard + drag & drop         | Gammasoft |                                                 |
 | xtd.forms | collapsible_panel               | Gammasoft |                                                 |
-| xtd.forms | collapsible_panel               | Gammasoft |                                                 |
+| xtd.forms | collapsible_panel_render        | Gammasoft |                                                 |
 | xtd.forms | color_picker_render             | Gammasoft |                                                 |
 | xtd.forms | command_link_button_render      | Gammasoft |                                                 |
 | xtd.forms | command_link_buttons            | Bader     |                                                 |

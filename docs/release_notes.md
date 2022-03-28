@@ -138,14 +138,14 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 
 ### Dialog
 
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) find_dialog - Represents a dialog box that displays find dialog.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) replace_dialog - Represents a dialog box that displays replace dialog.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) find_box - Represents a dialog box that displays find box.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) find_dialog - Represents a dialog box that displays find dialog.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) font_box - Represents a common dialog box that displays a dialog to the user to choose a font from among those installed on the local computer.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) folder_browser_box - Prompts the user to select a folder.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) open_file_box - Displays a standard dialog box that prompts the user to open a file.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) progress_box - Represents a common dialog box that displays progress box.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) replace_box - Represents a dialog box that displays replace box.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) replace_dialog - Represents a dialog box that displays replace dialog.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) save_file_box - Prompts the user to select a location for saving a file.
 
 ### Menus and toolbars
@@ -163,6 +163,7 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) collapsible_panel - Used to group collections of controls in a collapsible panel.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) flow_layout_panel - Used to group collections of fixed aligned controls.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) split_container - Represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) table_layout_panel - Used to group collections of fixed aligned controls.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_strip_container - Provides panels on each side of the form and a central panel that can hold one or more controls.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_strip_panel - Creates a container within which other controls can share horizontal or vertical space.
@@ -224,8 +225,10 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 ### Renderers
 
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) box_renderer - Provides methods used to render a box with or without style sheets.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) check_box_renderer - Provides check box renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) checked_list_box_renderer - Provides checked list box renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) choice_renderer - Provides choice renderer methods.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) collapsible_panel_renderer - Provides collapsible panel renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) color_picker_renderer - Provides color picker renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) combo_box_renderer - Provides combo box renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) command_link_button_renderer - Provides link button renderer methods.
@@ -241,7 +244,7 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) image_renderer - Provides image renderer methods.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) label_renderer - Provides label renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) lcd_label_renderer - Provides lcd label renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) light_button - Provides light button renderer methods.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) light_button_renderer - Provides light button renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) link_label_renderer - Provides link label renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) list_box_renderer - Provides list box renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) list_view_renderer - Provides list view renderer methods.
@@ -255,11 +258,13 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) picture_box_renderer - Provides picture box renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) progress_bar_renderer - Provides progress bar renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) property_grid_renderer - Provides property grid renderer methods.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) radio_button_renderer - Provides radio button renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) rich_text_box_renderer - Provides text box renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) roller_renderer - Provides roller renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sevent_segment_display_renderer - Provides seven segment display renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sixteen_segment_display_renderer - Provides sixteen segment display renderer methods.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) splitter_renderer - Provides splitter renderer methods.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) switch_button_renderer - Provides switch button renderer methods.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) text_renderer - Provides methods used to render a text with style sheets.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) text_box_renderer - Provides text box renderer methods.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) toggle_button_renderer - Provides toggle_button renderer methods.
