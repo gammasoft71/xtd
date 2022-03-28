@@ -107,8 +107,14 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 ## xtd.drawing
 
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) buffered_graphics - Provides a graphics buffer for double buffering.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) region - Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inherited.
 
 ### Drawing 2d
+
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) conical_gradient_brush - Encapsulates a xtd::drawing::brush with a conical gradient. This class cannot be inherited.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) graphics_path - Defines an object used to draw lines and curves. This class cannot be inherited.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) matrix - Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inherited.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) radial_gradient_brush - Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited.
 
 ## xtd.forms
 
