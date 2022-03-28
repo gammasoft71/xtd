@@ -321,6 +321,7 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 ## CMake
 
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) Assembly commands - CMake commands to generate assembly information from the CMakeLists.txt file.
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) android platforms - Toolchain for Android devices.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) iOS platforms - Toolchain for iOS devices.
 
 ______________________________________________________________________________________________
