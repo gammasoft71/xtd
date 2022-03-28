@@ -22,6 +22,9 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #26 - When resizing xtdc-gui, the graphics get messed up
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #27 - cannot delete recent projects in xtdc-gui
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #31 - xtdc-gui panels redraw over each other
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #38 - install.cmd removed items from my windows path
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #40 - Problems of installing xtd in Arch linux and distributions that are based on it
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #42 - how to redraw Caption bar, or create Caption menu?
 ______________________________________________________________________________________________
 
 ![0.1.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_1_0.png) (beta) October 10, 2021
