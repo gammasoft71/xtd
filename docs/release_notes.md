@@ -35,9 +35,10 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 
 ### System
 
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly - Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) box - Represents a boxed object.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) date_time - Represents an instant in time, typically expressed as a date and time of day.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) lock - The lock keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) math - Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) type - Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) uri - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
 
@@ -75,6 +76,23 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) client_web_socket - Provides a client for connecting to WebSocket services.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) web_socket - The xtd::net::sockets::web_sockets::web_socket class allows applications to send and receive data after the WebSocket upgrade has completed.
+
+### Reflection
+
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly - Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_company_attribute - Defines a company name custom attribute for an assembly manifest.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_configuration_attribute - Specifies the build configuration, such as retail or debug, for an assembly.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_copyright_attribute - Defines a copyright copyright attribute for an assembly manifest.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_culture_attribute - Specifies which culture the assembly supports.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_description_attribute - Provides a text description for an assembly.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_file_version_attribute - Instructs a compiler to use a specific version number for the Win32 file version resource. The Win32 file version is not required to be the same as the assembly's version number.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_guid_attribute - Specifies the guid of the assembly being attributed.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_identifier_attribute - Specifies the identifier of the assembly being attributed.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_name_attribute - Specifies a name for an assembly.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_product_attribute - Defines a product name custom attribute for an assembly manifest.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_title_attribute - Specifies a title for an assembly.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_trademark_attribute - Defines a trademark custom attribute for an assembly manifest.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_version_attribute - Specifies the version of the assembly being attributed.
 
 ### Text
 
@@ -194,6 +212,14 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) clipboard - Provides methods to place data on and retrieve data from the system Clipboard. This class cannot be inherited.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) data_format - Provides static, predefined xtd::forms::clipboard format names. Use them to identify the format of data that you store in an xtd::forms::idata_object.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) data_object - Implements a basic data transfer mechanism.
+
+### Style sheets
+
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) ibox_model - The box model allows you to specify the margin, borders, padding, background color, width and height of a box.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) iimage_model - The image model allows you to specify the alignment  of an image
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) itext_model - The text model allows you to specify the alignment, color, decoration, transformation, and font of a text.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) control - The control selector allows you to specify the box and color of a control.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) style_shet - The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.
 
 ### Renderers
 
