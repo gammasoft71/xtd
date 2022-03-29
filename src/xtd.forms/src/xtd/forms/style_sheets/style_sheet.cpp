@@ -597,7 +597,7 @@ vector<ustring> style_sheet::split_values_from_text(const ustring& text) const n
 }
 
 void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   static vector<pair<ustring, pseudo_state>> buttons {{"button", pseudo_state::standard}, {"button:default", pseudo_state::default_state}};
   for (auto button : buttons) {
     for (auto state : states) {
@@ -611,7 +611,7 @@ void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::control_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("control" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -662,7 +662,7 @@ void style_sheet::flat_button_reader(xtd::web::css::css_reader& reader) noexcept
 }
 
 void style_sheet::form_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("form" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -673,7 +673,7 @@ void style_sheet::form_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("label" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -684,7 +684,7 @@ void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("panel" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -720,7 +720,7 @@ void style_sheet::toggle_button_reader(xtd::web::css::css_reader& reader) noexce
 }
 
 void style_sheet::user_control_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":mixed", pseudo_state::mixed}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("user-control" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
