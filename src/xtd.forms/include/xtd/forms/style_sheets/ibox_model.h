@@ -11,6 +11,11 @@
 #include "border_width.h"
 #include "background_image.h"
 #include "margin.h"
+#include "outline_color.h"
+#include "outline_offset.h"
+#include "outline_radius.h"
+#include "outline_style.h"
+#include "outline_width.h"
 #include "padding.h"
 #include "../padding.h"
 
@@ -81,6 +86,31 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual const xtd::forms::style_sheets::margin& margin() const noexcept = 0;
         
+        /// @brief Gets the color is used to set the color of the outlines.
+        /// @return The color is used to set the color of the outlines.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        virtual const xtd::forms::style_sheets::outline_color& outline_color() const noexcept = 0;
+        
+        /// @brief Gets the ofset specifies the width of the outlines.
+        /// @return The offset specifies the width of the outlines.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        virtual xtd::forms::style_sheets::outline_offset outline_offset() const noexcept = 0;
+
+        /// @brief Gets the radius is used to add rounded outline to an element.
+        /// @return The radius is used to add rounded outline to an element.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        virtual xtd::forms::style_sheets::outline_radius outline_radius() const noexcept = 0;
+        
+        /// @brief Gets the style specifies what kind of outlines to display.
+        /// @return The style specifies what kind of outlines to display.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        virtual xtd::forms::style_sheets::outline_style outline_style() const noexcept = 0;
+        
+        /// @brief Gets the width specifies the width of the outlines.
+        /// @return The width specifies the width of the outlines.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        virtual xtd::forms::style_sheets::outline_width outline_width() const noexcept = 0;
+        
         /// @brief Gets the area area around the content.
         /// @return The area around the content.
         /// @remarks The padding is transparent.
@@ -109,6 +139,12 @@ namespace xtd {
         /// @remarks The fill rectangle is euqual to border rectangle minus border width.
         /// @remarks The fill rectangle is euqual to content rectangle plus padding.
         virtual xtd::drawing::rectangle get_fill_rectangle(const xtd::drawing::rectangle& bounds) const noexcept = 0;
+        
+        /// @brief Gets the computed outline rectangle from specified bounds.
+        /// @param bounds The bounds use to compute the outline rectangle with this box instance.
+        /// @return The computed boder rectangle from specified bounds.
+        /// @remarks The outline rectangle is euqual to bounds rectangle minus margin + 1 + outline offset.
+        virtual xtd::drawing::rectangle get_outline_rectangle(const xtd::drawing::rectangle& bounds) const noexcept = 0;
         
         /// @brief Gets the computed content rectangle from specified bounds.
         /// @param bounds The bounds use to compute the content rectangle with this box instance.

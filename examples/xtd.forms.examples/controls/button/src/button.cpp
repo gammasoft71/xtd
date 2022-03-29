@@ -16,6 +16,9 @@ namespace examples {
       button1.click += [&] {
         label1.text(ustring::format("Button 1 clicked {} times", ++button1_clicked));
       };
+      button1.got_focus += [&] {
+        diagnostics::debug::write_line("Got focus!!");
+      };
       
       button2.parent(*this);
       button2.text("Button 2");
