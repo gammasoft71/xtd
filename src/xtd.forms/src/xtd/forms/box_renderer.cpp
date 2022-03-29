@@ -32,6 +32,7 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const i
   draw_line_left(graphics, border_rect, box_model.border_color(), box_model.border_radius(), box_model.border_style(), box_model.border_width());
   draw_line_bottom(graphics, border_rect, box_model.border_color(), box_model.border_radius(), box_model.border_style(), box_model.border_width());
   draw_line_right(graphics, border_rect, box_model.border_color(), box_model.border_radius(), box_model.border_style(), box_model.border_width());
+  
   auto outline_rect = box_model.get_outline_rectangle(bounds);
   draw_line_top(graphics, outline_rect, box_model.outline_color(), box_model.outline_radius(), box_model.outline_style(), box_model.outline_width());
   draw_line_left(graphics, outline_rect, box_model.outline_color(), box_model.outline_radius(), box_model.outline_style(), box_model.outline_width());
