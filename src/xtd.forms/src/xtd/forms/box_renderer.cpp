@@ -28,48 +28,53 @@ void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const i
   else fill_box(graphics, solid_brush(box_model.background_color()), bounds, box_model);
 
   auto border_rect = box_model.get_border_rectangle(bounds);
-  draw_line_top(graphics, border_rect, box_model);
-  draw_line_left(graphics, border_rect, box_model);
-  draw_line_bottom(graphics, border_rect, box_model);
-  draw_line_right(graphics, border_rect, box_model);
+  draw_line_top(graphics, border_rect, box_model.border_color(), box_model.border_radius(), box_model.border_style(), box_model.border_width());
+  draw_line_left(graphics, border_rect, box_model.border_color(), box_model.border_radius(), box_model.border_style(), box_model.border_width());
+  draw_line_bottom(graphics, border_rect, box_model.border_color(), box_model.border_radius(), box_model.border_style(), box_model.border_width());
+  draw_line_right(graphics, border_rect, box_model.border_color(), box_model.border_radius(), box_model.border_style(), box_model.border_width());
+  auto outline_rect = box_model.get_outline_rectangle(bounds);
+  draw_line_top(graphics, outline_rect, box_model.outline_color(), box_model.outline_radius(), box_model.outline_style(), box_model.outline_width());
+  draw_line_left(graphics, outline_rect, box_model.outline_color(), box_model.outline_radius(), box_model.outline_style(), box_model.outline_width());
+  draw_line_bottom(graphics, outline_rect, box_model.outline_color(), box_model.outline_radius(), box_model.outline_style(), box_model.outline_width());
+  draw_line_right(graphics, outline_rect, box_model.outline_color(), box_model.outline_radius(), box_model.outline_style(), box_model.outline_width());
 }
 
-void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
-  if (box_model.border_width().top().get_pixels(bounds) == 0 || box_model.border_style().top() == border_type::none || box_model.border_style().top() == border_type::hidden) return;
+void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width) {
+  if (border_width.top().get_pixels(bounds) == 0 || border_style.top() == border_type::none || border_style.top() == border_type::hidden) return;
 
-  auto color1 = box_model.border_color().top();
-  auto color2 = box_model.border_color().top();
-  if (box_model.border_style().top() == border_type::inset || box_model.border_style().top() == border_type::groove) {
+  auto color1 = border_color.top();
+  auto color2 = border_color.top();
+  if (border_style.top() == border_type::inset || border_style.top() == border_type::groove) {
     color1 = color::dark(color1);
     color2 = color::light(color2);
-  } else if (box_model.border_style().top() == border_type::outset || box_model.border_style().top() == border_type::ridge || box_model.border_style().top() == border_type::theme) {
+  } else if (border_style.top() == border_type::outset || border_style.top() == border_type::ridge || border_style.top() == border_type::theme) {
     color1 = color::light(color1);
     color2 = color::dark(color2);
   }
 
-  auto pen_width1 = as<float>(box_model.border_width().top().get_pixels(bounds));
+  auto pen_width1 = as<float>(border_width.top().get_pixels(bounds));
   auto pen_width2 = 0.0f;
-  if (box_model.border_style().top() == border_type::double_border) {
-    pen_width1 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 3;
-    pen_width2 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 3;
-  } else if (box_model.border_style().top() == border_type::theme || box_model.border_style().top() == border_type::groove || box_model.border_style().top() == border_type::ridge) {
-    pen_width1 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 2;
-    pen_width2 = as<float>(box_model.border_width().top().get_pixels(bounds)) / 2;
+  if (border_style.top() == border_type::double_border) {
+    pen_width1 = as<float>(border_width.top().get_pixels(bounds)) / 3;
+    pen_width2 = as<float>(border_width.top().get_pixels(bounds)) / 3;
+  } else if (border_style.top() == border_type::theme || border_style.top() == border_type::groove || border_style.top() == border_type::ridge) {
+    pen_width1 = as<float>(border_width.top().get_pixels(bounds)) / 2;
+    pen_width2 = as<float>(border_width.top().get_pixels(bounds)) / 2;
   }
 
-  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(box_model.border_style().top()));
-  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().top()));
+  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(border_style.top()));
+  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(border_style.top()));
 
   auto border_rect1 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1));
   auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
 
-  if (box_model.border_style().top() == border_type::double_border)
+  if (border_style.top() == border_type::double_border)
     border_rect2 = rectangle::inflate(border_rect2, {-as<int32_t>(pen_width1), -as<int32_t>(pen_width1)});
 
-  auto radius_top_left1 = box_model.border_radius().top_left().get_pixels(bounds);
-  auto radius_top_left2 = box_model.border_radius().top_left().get_pixels(bounds) - as<int32_t>(pen_width1);
-  auto radius_top_right1 = box_model.border_radius().top_right().get_pixels(bounds);
-  auto radius_top_right2 = box_model.border_radius().top_right().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_top_left1 = border_radius.top_left().get_pixels(bounds);
+  auto radius_top_left2 = border_radius.top_left().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_top_right1 = border_radius.top_right().get_pixels(bounds);
+  auto radius_top_right2 = border_radius.top_right().get_pixels(bounds) - as<int32_t>(pen_width1);
   if (radius_top_left1 < 0) radius_top_left1 = 0;
   if (radius_top_left2 < 0) radius_top_left2 = 0;
   if (radius_top_right1 < 0) radius_top_right1 = 0;
@@ -92,42 +97,42 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
   }
 }
 
-void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
-  if (box_model.border_width().right().get_pixels(bounds) == 0 || box_model.border_style().right() == border_type::none || box_model.border_style().right() == border_type::hidden) return;
+void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width) {
+  if (border_width.right().get_pixels(bounds) == 0 || border_style.right() == border_type::none || border_style.right() == border_type::hidden) return;
 
-  auto color1 = box_model.border_color().right();
-  auto color2 = box_model.border_color().right();
-  if (box_model.border_style().right() == border_type::inset || box_model.border_style().right() == border_type::groove || box_model.border_style().right() == border_type::theme) {
+  auto color1 = border_color.right();
+  auto color2 = border_color.right();
+  if (border_style.right() == border_type::inset || border_style.right() == border_type::groove || border_style.right() == border_type::theme) {
     color1 = color::light(color1);
     color2 = color::dark(color2);
-  } else if (box_model.border_style().right() == border_type::outset || box_model.border_style().right() == border_type::ridge) {
+  } else if (border_style.right() == border_type::outset || border_style.right() == border_type::ridge) {
     color1 = color::dark(color1);
     color2 = color::light(color2);
   }
 
-  auto pen_width1 = as<float>(box_model.border_width().right().get_pixels(bounds));
+  auto pen_width1 = as<float>(border_width.right().get_pixels(bounds));
   auto pen_width2 = 0.0f;
-  if (box_model.border_style().right() == border_type::double_border) {
-    pen_width1 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 3;
-    pen_width2 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 3;
-  } else if (box_model.border_style().right() == border_type::theme || box_model.border_style().right() == border_type::groove || box_model.border_style().right() == border_type::ridge) {
-    pen_width1 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 2;
-    pen_width2 = as<float>(box_model.border_width().right().get_pixels(bounds)) / 2;
+  if (border_style.right() == border_type::double_border) {
+    pen_width1 = as<float>(border_width.right().get_pixels(bounds)) / 3;
+    pen_width2 = as<float>(border_width.right().get_pixels(bounds)) / 3;
+  } else if (border_style.right() == border_type::theme || border_style.right() == border_type::groove || border_style.right() == border_type::ridge) {
+    pen_width1 = as<float>(border_width.right().get_pixels(bounds)) / 2;
+    pen_width2 = as<float>(border_width.right().get_pixels(bounds)) / 2;
   }
 
-  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(box_model.border_style().right()));
-  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().right()));
+  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(border_style.right()));
+  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(border_style.right()));
 
   auto border_rect1 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1));
   auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
   
-  if (box_model.border_style().top() == border_type::double_border)
+  if (border_style.top() == border_type::double_border)
     border_rect2 = rectangle::inflate(border_rect2, {-as<int32_t>(pen_width1), -as<int32_t>(pen_width1)});
 
-  auto radius_top_right1 = box_model.border_radius().top_right().get_pixels(bounds);
-  auto radius_top_right2 = box_model.border_radius().top_right().get_pixels(bounds) - as<int32_t>(pen_width1);
-  auto radius_bottom_right1 = box_model.border_radius().bottom_right().get_pixels(bounds);
-  auto radius_bottom_right2 = box_model.border_radius().bottom_right().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_top_right1 = border_radius.top_right().get_pixels(bounds);
+  auto radius_top_right2 = border_radius.top_right().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_bottom_right1 = border_radius.bottom_right().get_pixels(bounds);
+  auto radius_bottom_right2 = border_radius.bottom_right().get_pixels(bounds) - as<int32_t>(pen_width1);
   if (radius_top_right1 < 0) radius_top_right1 = 0;
   if (radius_top_right2 < 0) radius_top_right2 = 0;
   if (radius_bottom_right1 < 0) radius_bottom_right1 = 0;
@@ -150,42 +155,42 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
   }
 }
 
-void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
-  if (box_model.border_width().bottom().get_pixels(bounds) == 0 || box_model.border_style().bottom() == border_type::none || box_model.border_style().bottom() == border_type::hidden) return;
+void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width) {
+  if (border_width.bottom().get_pixels(bounds) == 0 || border_style.bottom() == border_type::none || border_style.bottom() == border_type::hidden) return;
     
-  auto color1 = box_model.border_color().bottom();
-  auto color2 = box_model.border_color().bottom();
-  if (box_model.border_style().bottom() == border_type::inset || box_model.border_style().bottom() == border_type::groove || box_model.border_style().top() == border_type::theme) {
+  auto color1 = border_color.bottom();
+  auto color2 = border_color.bottom();
+  if (border_style.bottom() == border_type::inset || border_style.bottom() == border_type::groove || border_style.top() == border_type::theme) {
     color1 = color::light(color1);
     color2 = color::dark(color2);
-  } else if (box_model.border_style().bottom() == border_type::outset || box_model.border_style().bottom() == border_type::ridge) {
+  } else if (border_style.bottom() == border_type::outset || border_style.bottom() == border_type::ridge) {
     color1 = color::dark(color1);
     color2 = color::light(color2);
   }
 
-  auto pen_width1 = as<float>(box_model.border_width().bottom().get_pixels(bounds));
+  auto pen_width1 = as<float>(border_width.bottom().get_pixels(bounds));
   auto pen_width2 = 0.0f;
-  if (box_model.border_style().bottom() == border_type::double_border) {
-    pen_width1 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 3;
-    pen_width2 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 3;
-  } else if (box_model.border_style().top() == border_type::theme || box_model.border_style().bottom() == border_type::groove || box_model.border_style().bottom() == border_type::ridge) {
-    pen_width1 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 2;
-    pen_width2 = as<float>(box_model.border_width().bottom().get_pixels(bounds)) / 2;
+  if (border_style.bottom() == border_type::double_border) {
+    pen_width1 = as<float>(border_width.bottom().get_pixels(bounds)) / 3;
+    pen_width2 = as<float>(border_width.bottom().get_pixels(bounds)) / 3;
+  } else if (border_style.top() == border_type::theme || border_style.bottom() == border_type::groove || border_style.bottom() == border_type::ridge) {
+    pen_width1 = as<float>(border_width.bottom().get_pixels(bounds)) / 2;
+    pen_width2 = as<float>(border_width.bottom().get_pixels(bounds)) / 2;
   }
 
-  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(box_model.border_style().bottom()));
-  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().bottom()));
+  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(border_style.bottom()));
+  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(border_style.bottom()));
 
   auto border_rect1 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1));
   auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
   
-  if (box_model.border_style().top() == border_type::double_border)
+  if (border_style.top() == border_type::double_border)
     border_rect2 = rectangle::inflate(border_rect2, {-as<int32_t>(pen_width1), -as<int32_t>(pen_width1)});
 
-  auto radius_bottom_right1 = box_model.border_radius().bottom_right().get_pixels(bounds);
-  auto radius_bottom_right2 = box_model.border_radius().bottom_right().get_pixels(bounds) - as<int32_t>(pen_width1);
-  auto radius_bottom_left1 = box_model.border_radius().bottom_left().get_pixels(bounds);
-  auto radius_bottom_left2 = box_model.border_radius().bottom_left().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_bottom_right1 = border_radius.bottom_right().get_pixels(bounds);
+  auto radius_bottom_right2 = border_radius.bottom_right().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_bottom_left1 = border_radius.bottom_left().get_pixels(bounds);
+  auto radius_bottom_left2 = border_radius.bottom_left().get_pixels(bounds) - as<int32_t>(pen_width1);
   if (radius_bottom_right1 < 0) radius_bottom_right1 = 0;
   if (radius_bottom_right2 < 0) radius_bottom_right2 = 0;
   if (radius_bottom_left1 < 0) radius_bottom_left1 = 0;
@@ -208,42 +213,42 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
   }
 }
 
-void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
-  if (box_model.border_width().left().get_pixels(bounds) == 0 || box_model.border_style().left() == border_type::none || box_model.border_style().left() == border_type::hidden) return;
+void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width) {
+  if (border_width.left().get_pixels(bounds) == 0 || border_style.left() == border_type::none || border_style.left() == border_type::hidden) return;
 
-  auto color1 = box_model.border_color().left();
-  auto color2 = box_model.border_color().left();
-  if (box_model.border_style().left() == border_type::inset || box_model.border_style().left() == border_type::groove) {
+  auto color1 = border_color.left();
+  auto color2 = border_color.left();
+  if (border_style.left() == border_type::inset || border_style.left() == border_type::groove) {
     color1 = color::dark(color1);
     color2 = color::light(color2);
-  } else if (box_model.border_style().left() == border_type::outset || box_model.border_style().left() == border_type::ridge || box_model.border_style().left() == border_type::theme) {
+  } else if (border_style.left() == border_type::outset || border_style.left() == border_type::ridge || border_style.left() == border_type::theme) {
     color1 = color::light(color1);
     color2 = color::dark(color2);
   }
 
-  auto pen_width1 = as<float>(box_model.border_width().left().get_pixels(bounds));
+  auto pen_width1 = as<float>(border_width.left().get_pixels(bounds));
   auto pen_width2 = 0.0f;
-  if (box_model.border_style().left() == border_type::double_border) {
-    pen_width1 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 3;
-    pen_width2 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 3;
-  } else if (box_model.border_style().left() == border_type::theme || box_model.border_style().left() == border_type::groove || box_model.border_style().left() == border_type::ridge) {
-    pen_width1 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 2;
-    pen_width2 = as<float>(box_model.border_width().left().get_pixels(bounds)) / 2;
+  if (border_style.left() == border_type::double_border) {
+    pen_width1 = as<float>(border_width.left().get_pixels(bounds)) / 3;
+    pen_width2 = as<float>(border_width.left().get_pixels(bounds)) / 3;
+  } else if (border_style.left() == border_type::theme || border_style.left() == border_type::groove || border_style.left() == border_type::ridge) {
+    pen_width1 = as<float>(border_width.left().get_pixels(bounds)) / 2;
+    pen_width2 = as<float>(border_width.left().get_pixels(bounds)) / 2;
   }
 
-  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(box_model.border_style().left()));
-  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(box_model.border_style().left()));
+  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(border_style.left()));
+  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(border_style.left()));
 
   auto border_rect1 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1));
   auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
   
-  if (box_model.border_style().top() == border_type::double_border)
+  if (border_style.top() == border_type::double_border)
     border_rect2 = rectangle::inflate(border_rect2, {-as<int32_t>(pen_width1), -as<int32_t>(pen_width1)});
 
-  auto radius_bottom_left1 = box_model.border_radius().bottom_left().get_pixels(bounds);
-  auto radius_bottom_left2 = box_model.border_radius().bottom_left().get_pixels(bounds) - as<int32_t>(pen_width1);
-  auto radius_top_left1 = box_model.border_radius().top_left().get_pixels(bounds);
-  auto radius_top_left2 = box_model.border_radius().top_left().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_bottom_left1 = border_radius.bottom_left().get_pixels(bounds);
+  auto radius_bottom_left2 = border_radius.bottom_left().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_top_left1 = border_radius.top_left().get_pixels(bounds);
+  auto radius_top_left2 = border_radius.top_left().get_pixels(bounds) - as<int32_t>(pen_width1);
   if (radius_bottom_left1 < 0) radius_bottom_left1 = 0;
   if (radius_bottom_left2 < 0) radius_bottom_left2 = 0;
   if (radius_top_left1 < 0) radius_top_left1 = 0;

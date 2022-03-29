@@ -88,6 +88,51 @@ style_sheets::control& style_sheets::control::margin(const style_sheets::margin&
   return *this;
 }
 
+const xtd::forms::style_sheets::outline_color& style_sheets::control::outline_color() const noexcept {
+  return outline_color_;
+}
+
+style_sheets::control& style_sheets::control::outline_color(const xtd::forms::style_sheets::outline_color& value) noexcept {
+  outline_color_ = value;
+  return *this;
+}
+
+xtd::forms::style_sheets::outline_offset style_sheets::control::outline_offset() const noexcept {
+  return outline_offset_;
+}
+
+style_sheets::control& style_sheets::control::outline_offset(xtd::forms::style_sheets::outline_offset value) noexcept {
+  outline_offset_ = value;
+  return *this;
+}
+
+xtd::forms::style_sheets::outline_radius style_sheets::control::outline_radius() const noexcept {
+  return outline_radius_;
+}
+
+style_sheets::control& style_sheets::control::outline_radius(xtd::forms::style_sheets::outline_radius value) noexcept {
+  outline_radius_ = value;
+  return *this;
+}
+
+xtd::forms::style_sheets::outline_style style_sheets::control::outline_style() const noexcept {
+  return outline_style_;
+}
+
+style_sheets::control& style_sheets::control::outline_style(xtd::forms::style_sheets::outline_style value) noexcept {
+  outline_style_ = value;
+  return *this;
+}
+
+xtd::forms::style_sheets::outline_width style_sheets::control::outline_width() const noexcept {
+  return outline_width_;
+}
+
+style_sheets::control& style_sheets::control::outline_width(xtd::forms::style_sheets::outline_width value) noexcept {
+  outline_width_ = value;
+  return *this;
+}
+
 const style_sheets::padding& style_sheets::control::padding() const noexcept {
   return padding_;
 }
@@ -176,6 +221,13 @@ rectangle style_sheets::control::get_border_rectangle(const rectangle& bounds) c
   auto border_rect = rectangle::offset(bounds_rect, margin().left().get_pixels(bounds), margin().top().get_pixels(bounds));
   border_rect = rectangle::add(border_rect, -margin().right().get_pixels(bounds) - margin().left().get_pixels(bounds), -margin().bottom().get_pixels(bounds) - margin().top().get_pixels(bounds));
   return border_rect;
+}
+
+rectangle style_sheets::control::get_outline_rectangle(const rectangle& bounds) const noexcept {
+  auto border_rect = get_border_rectangle(bounds);
+  auto outline_rect = rectangle::from_ltrb(border_rect.left() - outline_offset().left().get_pixels(bounds), border_rect.top() - outline_offset().top().get_pixels(bounds), border_rect.right() + outline_offset().right().get_pixels(bounds),  border_rect.bottom() + outline_offset().bottom().get_pixels(bounds));
+  outline_rect.inflate({1, 1});
+  return outline_rect;
 }
 
 rectangle style_sheets::control::get_fill_rectangle(const rectangle& bounds) const noexcept {

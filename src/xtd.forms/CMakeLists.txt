@@ -278,6 +278,11 @@ add_sources(
   include/xtd/forms/style_sheets/lengths.h
   include/xtd/forms/style_sheets/length_unit.h
   include/xtd/forms/style_sheets/margin.h
+  include/xtd/forms/style_sheets/outline_color.h
+  include/xtd/forms/style_sheets/outline_offset.h
+  include/xtd/forms/style_sheets/outline_radius.h
+  include/xtd/forms/style_sheets/outline_style.h
+  include/xtd/forms/style_sheets/outline_width.h
   include/xtd/forms/style_sheets/padding.h
   include/xtd/forms/style_sheets/panel.h
   include/xtd/forms/style_sheets/pseudo_state.h

@@ -84,7 +84,7 @@ namespace xtd {
         
         xtd::forms::style_sheets::border_width border_width() const noexcept override;
         /// @brief Sets the width specifies the width of the border.
-        /// @param value The width specifies the width of the border.
+        /// @param value The width specifies the width of the borders.
         /// @return This current instance.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         control& border_width(xtd::forms::style_sheets::border_width value) noexcept;
@@ -129,6 +129,41 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         control& margin(const xtd::forms::style_sheets::margin& value) noexcept;
         
+        const xtd::forms::style_sheets::outline_color& outline_color() const noexcept override;
+        /// @brief Sets the color is used to set the color of the outlines.
+        /// @param value The color is used to set the color of the outlines.
+        /// @return This current instance.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& outline_color(const xtd::forms::style_sheets::outline_color& value) noexcept;
+        
+        xtd::forms::style_sheets::outline_offset outline_offset() const noexcept override;
+        /// @brief Sets the width specifies the offset of the outlines.
+        /// @param value The width specifies the offset of the outlines.
+        /// @return This current instance.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& outline_offset(xtd::forms::style_sheets::outline_offset value) noexcept;
+
+        xtd::forms::style_sheets::outline_radius outline_radius() const noexcept override;
+        /// @brief Sets the radius is used to add rounded outlines to an element.
+        /// @param value The radius is used to add rounded outlines to an element.
+        /// @return This current instance.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& outline_radius(xtd::forms::style_sheets::outline_radius value) noexcept;
+        
+        xtd::forms::style_sheets::outline_style outline_style() const noexcept override;
+        /// @brief Sets the style specifies what kind of outlines to display.
+        /// @param value The style specifies what kind of outlines to display.
+        /// @return This current instance.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& outline_style(xtd::forms::style_sheets::outline_style value) noexcept;
+        
+        xtd::forms::style_sheets::outline_width outline_width() const noexcept override;
+        /// @brief Sets the width specifies the width of the outlines.
+        /// @param value The width specifies the width of the outlines.
+        /// @return This current instance.
+        /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
+        control& outline_width(xtd::forms::style_sheets::outline_width value) noexcept;
+
         const xtd::forms::style_sheets::padding& padding() const noexcept override;
         /// @brief Sets the area area around the content.
         /// @param value The area around the content.
@@ -169,16 +204,22 @@ namespace xtd {
         xtd::drawing::color get_solid_background_color() const noexcept;
         xtd::drawing::rectangle get_border_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
         xtd::drawing::rectangle get_fill_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
+        xtd::drawing::rectangle get_outline_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
         xtd::drawing::rectangle get_content_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
         xtd::drawing::string_format make_string_format() const noexcept override;
         /// @}
         
       private:
         xtd::forms::style_sheets::margin margin_ {length(0)};
-        xtd::forms::style_sheets::border_style border_style_ {border_type::none};
         xtd::forms::style_sheets::border_color border_color_ {xtd::drawing::color::black};
-        xtd::forms::style_sheets::border_width border_width_ {length(3)};
         xtd::forms::style_sheets::border_radius border_radius_ {length(0)};
+        xtd::forms::style_sheets::border_style border_style_ {border_type::none};
+        xtd::forms::style_sheets::border_width border_width_ {length(3)};
+        xtd::forms::style_sheets::outline_color outline_color_ {xtd::drawing::color::black};
+        xtd::forms::style_sheets::outline_offset outline_offset_ {length(0)};
+        xtd::forms::style_sheets::outline_radius outline_radius_ {length(0)};
+        xtd::forms::style_sheets::outline_style outline_style_ {border_type::none};
+        xtd::forms::style_sheets::outline_width outline_width_ {length(1)};
         xtd::forms::style_sheets::padding padding_ {length(0)};
         xtd::drawing::color background_color_ = xtd::drawing::color::transparent;
         xtd::forms::style_sheets::background_image background_image_ ;
