@@ -46,24 +46,29 @@ call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFil
 call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\guidgen-gui.exe"
 
 :: add xtdc-gui path
-set path=%ProgramFiles(x86)%\xtd\bin;%path%
-call :strlen path_length path
-if  %path_length% LSS 1024 (
-  setx path "%path%"
+echo.%path%|findstr /C:"xtd\bin" >nul 2>&1
+if not errorlevel 1 (
+  echo The environment variable path already contains xtd.
 ) else (
-  echo.
-  echo ---------------------------------------------------------------
-  echo.
-  color 47
-  echo WARNING
-  echo -------
-  color
-  echo.
-  echo The path is greater than 1024. setx will not work correctly with a path greater than 1024.
-  echo Manually add "%ProgramFiles(x86)%\xtd\bin" in your path.
-  echo.
-  echo ---------------------------------------------------------------
-  pause
+  set path=%ProgramFiles(x86)%\xtd\bin;%path%
+  call :strlen path_length path
+  if  %path_length% LSS 1024 (
+    setx path "%path%"
+  ) else (
+    echo.
+    echo ---------------------------------------------------------------
+    echo.
+    color 47
+    echo WARNING
+    echo -------
+    color
+    echo.
+    echo The path is greater than 1024. setx will not work correctly with a path greater than 1024.
+    echo Manually add "%ProgramFiles(x86)%\xtd\bin" in your path.
+    echo.
+    echo ---------------------------------------------------------------
+    pause
+  )
 )
 
 :: launch xtdc-gui
