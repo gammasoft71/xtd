@@ -243,7 +243,7 @@
 * [colors](others/colors/README.md) demonstrates the use of [xtd::forms::user_control](../../src/xtd.forms/include/xtd/forms/user_control.h) control with xtd::drawing::color.
 * [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms::dock_style](../../src/xtd.forms/include/xtd/forms/dock_style.h).
 * [flat_button](others/flat_button/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control with flat style.
-* [font_family](others/font_family/README.md) demonstrates the use of xtd::drawing::font_family class.
+* [font_families](others/font_families/README.md) demonstrates the use of xtd::drawing::font_family class.
 * [form_and_main](others/form_and_main/README.md) demonstrates how to use startup_ keyword.
 * [form_and_thread](others/form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../src/xtd.forms/include/xtd/forms/form.h) method.
 * [form_background_image](others/form_background_image/README.md) demonstrates how to use [xtd::forms::forms](../../src/xtd.forms/include/xtd/forms/form.h) class with image_background property.
