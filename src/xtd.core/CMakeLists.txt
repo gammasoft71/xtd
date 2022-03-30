@@ -111,6 +111,13 @@ add_sources(
   include/xtd/underflow_exception.h
   include/xtd/unused.h
   include/xtd/uri.h
+  include/xtd/uri_components.h
+  include/xtd/uri_format.h
+  include/xtd/uri_format_exception.h
+  include/xtd/uri_host_name_type.h
+  include/xtd/uri_kind.h
+  include/xtd/uri_partial.h
+  include/xtd/uri_template_match_exception.h
   include/xtd/using.h
   include/xtd/ustring.h
   include/xtd/va_args_comma.h
