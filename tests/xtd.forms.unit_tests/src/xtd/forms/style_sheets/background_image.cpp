@@ -13,7 +13,7 @@ namespace unit_tests {
     void test_method_(create_with_default_constructor) {
       background_image i;
       assert::are_equal(image_type::none, i.image_type(), csf_);
-      assert::is_empty(i.url(), csf_);
+      assert::is_empty(i.url().to_string(), csf_);
       assert::are_equal(2U, i.colors().size(), csf_);
       collection_assert::are_equal({color::black, color::black}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
@@ -22,7 +22,7 @@ namespace unit_tests {
     void test_method_(create_with_specified_url) {
       background_image i("arrow.png");
       assert::are_equal(image_type::url, i.image_type(), csf_);
-      assert::are_equal("arrow.png", i.url(), csf_);
+      assert::are_equal("arrow.png", i.url().to_string(), csf_);
       assert::are_equal(2U, i.colors().size(), csf_);
       collection_assert::are_equal({color::black, color::black}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
@@ -31,7 +31,7 @@ namespace unit_tests {
     void test_method_(create_with_specified_colors) {
       background_image i({color::blue, color::white});
       assert::are_equal(image_type::linear_gradient, i.image_type(), csf_);
-      assert::is_empty(i.url(), csf_);
+      assert::is_empty(i.url().to_string(), csf_);
       assert::are_equal(2U, i.colors().size(), csf_);
       collection_assert::are_equal({color::blue, color::white}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
@@ -40,7 +40,7 @@ namespace unit_tests {
     void test_method_(create_with_specified_image_type_linear_gradient_and_colors) {
       background_image i(image_type::linear_gradient, {color::blue, color::white});
       assert::are_equal(image_type::linear_gradient, i.image_type(), csf_);
-      assert::is_empty(i.url(), csf_);
+      assert::is_empty(i.url().to_string(), csf_);
       assert::are_equal(2U, i.colors().size(), csf_);
       collection_assert::are_equal({color::blue, color::white}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
@@ -61,7 +61,7 @@ namespace unit_tests {
     void test_method_(create_with_specified_image_type_linear_gradient_colors_and_angle) {
       background_image i(image_type::linear_gradient, {color::blue, color::white}, 270);
       assert::are_equal(image_type::linear_gradient, i.image_type(), csf_);
-      assert::is_empty(i.url(), csf_);
+      assert::is_empty(i.url().to_string(), csf_);
       assert::are_equal(2U, i.colors().size(), csf_);
       collection_assert::are_equal({color::blue, color::white}, i.colors(), csf_);
       assert::are_equal(270, i.angle(), csf_);

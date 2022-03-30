@@ -58,11 +58,11 @@ void background_image::colors(const std::vector<xtd::drawing::color>& value) {
   if (colors_.size() < 2U) throw argument_exception(csf_);
 }
 
-const xtd::ustring& background_image::url() const noexcept {
+const xtd::uri& background_image::url() const noexcept {
   return url_;
 }
 
-void background_image::url(const xtd::ustring& value) noexcept {
+void background_image::url(const xtd::uri& value) noexcept {
   url_ = value;
 }
 
@@ -78,7 +78,7 @@ std::unique_ptr<xtd::drawing::brush> background_image::make_brush(const xtd::for
   if (image.image_type() == style_sheets::image_type::linear_gradient)
     return make_unique<linear_gradient_brush>(rect, image.colors(), as<float>(image.angle() - 90.0f));
   if (image.image_type() == style_sheets::image_type::url)
-    return make_unique<texture_brush>(image::from_file(image.url()));
+    return make_unique<texture_brush>(image::from_file(image.url().to_string()));
   return null;
 }
 

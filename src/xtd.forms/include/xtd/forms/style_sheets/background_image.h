@@ -5,6 +5,7 @@
 #include <memory>
 #include <xtd/iequatable.h>
 #include <xtd/object.h>
+#include <xtd/uri.h>
 #include <xtd/ustring.h>
 #include <xtd/drawing/brush.h>
 #include <xtd/drawing/color.h>
@@ -128,10 +129,10 @@ namespace xtd {
         
         /// @brief Gets the url of image to display.
         /// @return The url of image to display.
-        const xtd::ustring& url() const noexcept;
+        const xtd::uri& url() const noexcept;
         /// @brief Sets the url of image to display.
         /// @param value The url of image to display.
-        void url(const xtd::ustring& value) noexcept;
+        void url(const xtd::uri& value) noexcept;
         
         /// @brief Gets the image type that specifies what kind of image to display.
         /// @return The image type tht specifies what kind of image to display.
@@ -159,7 +160,7 @@ namespace xtd {
       private:
         friend class style_sheet;
         xtd::forms::style_sheets::image_type image_type_ = style_sheets::image_type::none;
-        xtd::ustring url_;
+        xtd::uri url_;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black, xtd::drawing::color::black};
         int32_t angle_ = 180;
       };
