@@ -21,6 +21,7 @@ public:
     button2.flat_appearance().border_color(color::light_green);
     button2.flat_appearance().border_size(2);
     button2.flat_appearance().mouse_over_back_color(color::light_green);
+    button2.flat_appearance().mouse_down_back_color(color::dark_green);
     button2.flat_style(xtd::forms::flat_style::flat);
     button2.text("button2");
     
