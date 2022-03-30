@@ -46,6 +46,8 @@ namespace xtd {
     other,
   };
   
+  /// @cond
   inline std::ostream& operator<<(std::ostream& os, platform_id value) {return os << to_string(value, {{platform_id::unknown, "unknown"}, {platform_id::win32s, "win32s"}, {platform_id::win32_windows, "win32_windows"}, {platform_id::win32_nt, "win32_nt"}, {platform_id::win_ce, "win_ce"}, {platform_id::unix, "unix"}, {platform_id::xbox, "xbox"}, {platform_id::macos, "macos"}, {platform_id::ios, "ios"}, {platform_id::android, "android"}, {platform_id::linux, "linux"}, {platform_id::tvos, "tvos"}, {platform_id::watchos, "watchos"}, {platform_id::other, "other"}});}
   inline std::wostream& operator<<(std::wostream& os, platform_id value) {return os << to_string(value, {{platform_id::unknown, L"unknown"}, {platform_id::win32s, L"win32s"}, {platform_id::win32_windows, L"win32_windows"}, {platform_id::win32_nt, L"win32_nt"}, {platform_id::win_ce, L"win_ce"}, {platform_id::unix, L"unix"}, {platform_id::xbox, L"xbox"}, {platform_id::macos, L"macos"}, {platform_id::ios, L"ios"}, {platform_id::android, L"android"}, {platform_id::linux, L"linux"}, {platform_id::tvos, L"tvos"}, {platform_id::watchos, L"watchos"}, {platform_id::other, L"other"}});}
+  /// @endcond
 }
