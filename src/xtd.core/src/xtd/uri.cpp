@@ -271,7 +271,7 @@ bool uri::is_hex_digit(char32_t character) {
 }
 
 bool uri::is_hex_encoding(const ustring& pattern, size_t index) {
-  if (index < 0 || pattern.size() < index + 3)  return false;
+  if (pattern.size() < index + 3)  return false;
   
   auto it = pattern.begin() + index;
   if (*it != '%') return false;
