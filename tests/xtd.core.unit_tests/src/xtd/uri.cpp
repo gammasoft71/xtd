@@ -303,7 +303,7 @@ namespace unit_tests {
     }
     
     void test_method_(hex_unescape) {
-      auto index = 0UL;
+      size_t index = 0;
       assert::are_equal('<', uri::hex_unescape("%3c", index), csf_);
       assert::are_equal(3UL, index, csf_);
     }
