@@ -240,7 +240,7 @@ namespace unit_tests {
     void test_method_(uri_from_css) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
-      assert::are_equal("https://gammasoft71.wixsite.com/xtdpro", __test_style_sheet__::uri_from_css(style, "url(https://gammasoft71.wixsite.com/xtdpro)", "https://gammasoft71.wixsite.com/gammasoft"), csf_);
+      assert::are_equal("https://gammasoft71.wixsite.com/xtdpro", __test_style_sheet__::uri_from_css(style, "url(https://gammasoft71.wixsite.com/xtdpro)", uri("https://gammasoft71.wixsite.com/gammasoft")).to_string(), csf_);
     }
     
     void test_method_(uri_from_css_with_bad_format) {

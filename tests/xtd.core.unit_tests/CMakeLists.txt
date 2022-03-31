@@ -67,6 +67,7 @@ add_sources(
   src/xtd/time_out_exception.cpp
   src/xtd/unauthorized_access_exception.cpp
   src/xtd/underflow_exception.cpp
+  src/xtd/uri.cpp
   src/xtd/ustring.cpp
   src/xtd/version.cpp
   src/xtd/wstring_boolean_format.cpp

@@ -13,6 +13,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core exceptions
     class uri_format_exception : public format_exception {
+    public:
     /// @name Constructors
     
     /// @{

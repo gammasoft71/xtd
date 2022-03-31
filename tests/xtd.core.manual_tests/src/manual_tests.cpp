@@ -17,14 +17,7 @@ class xtd_core_manual_test : public object {
 public:
   static void main() {
     console::write_line("Hello, World!");
-    vector<byte_t> bytes;
-    add_bytes(bytes, 123);
-    add_bytes(bytes, 123);
-    add_bytes(bytes, sbyte(123));
-    console::write("bytes = [");
-    for (auto b : bytes)
-      console::write("{}, ", b);
-    console::write_line("]");
+    console::write_line("lb = {}", net::ip_address::ip_v6_loopback.to_string());
   }
 };
 
