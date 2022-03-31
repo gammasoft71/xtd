@@ -25,7 +25,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core system
   /// @remarks A URI is a compact representation of a resource available to your application on the intranet or Internet. The xtd::uri class defines the properties and methods for handling URIs, including parsing, comparing, and combining. The xtd::uri class properties are read-only; to create a modifiable object, use the xtd::uri_builder class.
   /// @remarks Relative URIs (for example, "/new/index.htm") must be expanded with respect to a base URI so that they are absolute. The xtd::uri::make_relative_uri method is provided to convert absolute URIs to relative URIs when necessary.
   /// @remarks The xtd::uri constructors do ! escape URI strings if the string is a well-formed URI including a scheme identifier.
