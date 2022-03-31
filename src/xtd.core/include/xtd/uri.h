@@ -368,7 +368,7 @@ namespace xtd {
     /// @return int32_t An int32_t value that contains a number from 0 to 15 that corresponds to the specified hexadecimal digit.
     /// @exception ArgumentException digit is ! a valid hexadecimal digit (0-9, a-f, A-F).
     /// @remarks The from_hex method converts a character representing a hexadecimal digit (0-9, a-f, A-F) to its decimal value (0 to 15). If digit is ! a valid hexadecimal digit, an ArgumentException exception is thrown.
-    static int32_t from_hex(char32_t digit);
+    static int32_t from_hex(char digit);
     
     /// @brief Gets the specified components of the current instance using the specified escaping for special characters.
     /// @param components A bitwise combination of the xtd::uri_components values that specifies which parts of the current instance to return to the caller.
@@ -407,14 +407,14 @@ namespace xtd {
     /// @param character The character to convert to hexadecimal representation.
     /// @return string The hexadecimal representation of the specified character.
     /// @exception ArgumentOutOfRangeException character is greater than 255.
-    static xtd::ustring hex_escape(char32_t character);
+    static xtd::ustring hex_escape(char character);
     
     /// @brief Converts a specified hexadecimal representation of a character to the character.
     /// @param pattern The hexadecimal representation of a character.
     /// @param index The location in pattern where the hexadecimal representation of a character begins.
     /// @return Char The character represented by the hexadecimal encoding at position index. If the character at index is ! hexadecimal encoded, the character at index is returned. The value of index is incremented to point to the character following the one returned.
     /// @exception ArgumentOutOfRangeException index is less than 0 or greater than or equal to the number of characters in pattern.
-    static char32_t hex_unescape(const xtd::ustring& pattern, size_t& index);
+    static char hex_unescape(const xtd::ustring& pattern, size_t& index);
     
     /// @brief Determines whether the current xtd::uri instance is a base of the specified xtd::uri instance.
     /// @param uri The specified xtd::uri instance to test.
@@ -441,7 +441,7 @@ namespace xtd {
     /// @param character The character to validate.
     /// @return bool A bool value that is true if the character is a valid hexadecimal digit; otherwise false.
     /// @remarks Hexadecimal digits are the digits 0 to 9 and the letters A-F or a-f.
-    static bool is_hex_digit(char32_t character);
+    static bool is_hex_digit(char character);
     
     /// @brief Determines whether a character in a string is hexadecimal encoded.
     /// @param pattern The string to check.
@@ -505,8 +505,8 @@ namespace xtd {
   private:
     static ustring format_componant(const ustring& str, uri_format format);
     static ustring format_host_componant(const ustring& str, uri_format format);
-    static bool need_to_escape_data_char(char32_t character);
-    static bool need_to_escape_uri_char(char32_t character);
+    static bool need_to_escape_data_char(char character);
+    static bool need_to_escape_uri_char(char character);
     void set_fragment(xtd::ustring& escapeUri);
     void set_host(xtd::ustring& escapeUri);
     void set_path(xtd::ustring& escapeUri);
