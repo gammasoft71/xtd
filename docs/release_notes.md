@@ -40,7 +40,7 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) lock - The lock keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) math - Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) type - Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) uri - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) uri - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
 
 ### IO
 
