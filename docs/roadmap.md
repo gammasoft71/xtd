@@ -33,6 +33,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | xtd.core  | assembly (with CMake)           | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.core  | date_time                       | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.core  | time_zone_info                  | Gammasoft | ![status](pictures/releases/status/started.png) | 
+| xtd.core  | uri                             | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.core  | io::binary_reader               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
 | xtd.core  | io::binary_writer               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
 | xtd.core  | io::directory                   | Gammasoft | ![status](pictures/releases/status/done.png)    | 
