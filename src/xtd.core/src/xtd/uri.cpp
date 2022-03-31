@@ -209,7 +209,7 @@ ustring uri::escape_uri_string(const ustring& value) {
   return value;
 }
 
-int32_t uri::from_hex(char32_t digit) {
+int32_t uri::from_hex(char digit) {
   if ('0' <= digit && digit <= '9') return digit - '0';
   if ('a' <= digit && digit <= 'f') return 10 + digit - 'a';
   if ('A' <= digit && digit <= 'F') return 10 + digit - 'A';
@@ -249,14 +249,13 @@ ustring uri::get_left_part(uri_partial part) const {
   throw argument_exception(csf_);
 }
 
-ustring uri::hex_escape(char32_t character) {
-  if (character > 255) throw argument_out_of_range_exception(csf_);
+ustring uri::hex_escape(char character) {
   return ustring::format("%{:X2}", convert::to_int32(character));
 }
 
-char32_t uri::hex_unescape(const ustring& pattern, size_t& index) {
+char uri::hex_unescape(const ustring& pattern, size_t& index) {
   index += 3;
-  return parse<int32_t>(pattern.substring(index - 2, 2), number_styles::hex_number);
+  return as<char>(parse<int32_t>(pattern.substring(index - 2, 2), number_styles::hex_number));
 }
 
 bool uri::is_base_of(const uri& uri) const {
@@ -266,7 +265,7 @@ bool uri::is_base_of(const uri& uri) const {
   return scheme_ == uri.scheme_ && scheme_delimiter_ == uri.scheme_delimiter_ && host_ == uri.host_ && port_ == uri.port_ && path == uri_path;
 }
 
-bool uri::is_hex_digit(char32_t character) {
+bool uri::is_hex_digit(char character) {
   return (character >= '0' && character <= '9') || (character >= 'A' && character <= 'F') || (character >= 'a' && character <= 'f');
 }
 
@@ -357,11 +356,11 @@ ustring uri::format_host_componant(const ustring& str, uri_format format) {
   return format_componant(str, format);
 }
 
-bool uri::need_to_escape_data_char(char32_t character) {
+bool uri::need_to_escape_data_char(char character) {
   return !(isalnum(character) || "!-_.~"_s.index_of(character) != ustring::npos);
 }
 
-bool uri::need_to_escape_uri_char(char32_t character) {
+bool uri::need_to_escape_uri_char(char character) {
   return !(isalnum(character) || "!@#=?/:-_.~"_s.index_of(character) != ustring::npos);
 }
 
