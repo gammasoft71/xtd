@@ -99,8 +99,8 @@ control::control() {
   
   data_->controls.item_added += [&](size_t, reference_wrapper<control> item) {
     on_control_added(control_event_args(item.get()));
-    item.get().data_->parent = handle();
-    if (handle())
+    item.get().data_->parent = data_->handle;
+    if (data_->handle)
       item.get().create_control();
   };
   
@@ -580,13 +580,13 @@ std::optional<control_ref> control::parent() const {
 }
 
 control& control::parent(const control& parent) {
-  if (parent.handle() != data_->parent) {
+  if (parent.data_->handle != data_->parent) {
     if (this->parent().has_value())
       this->parent(nullptr);
     else
       on_parent_changed(event_args::empty);
     if (parent.handle()) const_cast<control&>(parent).data_->controls.push_back(*this);
-  } else if (parent.handle() == 0)
+  } else if (parent.data_->handle == 0)
     const_cast<control&>(parent).data_->controls.push_back(*this);
   return *this;
 }
