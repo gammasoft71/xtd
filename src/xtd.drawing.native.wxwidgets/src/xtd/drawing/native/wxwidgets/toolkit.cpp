@@ -22,7 +22,9 @@ namespace {
   void xtd_assert_handler(const wxString& file, int line, const wxString& func, const wxString& cond, const wxString& msg) {
     // Workaround: wxWidgets generates an unknown assertion when there is a double mouse click event on an empty area of wxCalendarCtrl.
     if (func == "wxCalendarCtrl::HitTest" && cond == "\"Assert failure\"" && msg == "unexpected") return;
-    
+    // Workaround: wxWidgets generates an assert if wxApp is not running when call exit.
+    if (func == "wxEventLoopBase::Exit" && cond == "\"IsRunning()\"" && msg == "Use ScheduleExit() on not running loop") return;
+
     debug::write_line_if(show_wx_assert.enabled(), "wxAssert");
     debug::write_line_if(show_wx_assert.enabled(), "--------");
     debug::write_line_if(show_wx_assert.enabled(), ustring::format("cond={}, msg={}", cond, msg));
