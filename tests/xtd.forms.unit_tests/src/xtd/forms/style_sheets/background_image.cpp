@@ -20,9 +20,9 @@ namespace unit_tests {
     }
     
     void test_method_(create_with_specified_url) {
-      background_image i("arrow.png");
+      background_image i("file://arrow.png");
       assert::are_equal(image_type::url, i.image_type(), csf_);
-      assert::are_equal("arrow.png", i.url().to_string(), csf_);
+      assert::are_equal("arrow.png", i.url().host(), csf_);
       assert::are_equal(2U, i.colors().size(), csf_);
       collection_assert::are_equal({color::black, color::black}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
