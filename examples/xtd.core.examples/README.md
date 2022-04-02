@@ -223,6 +223,10 @@
 * [interlocked](threading/interlocked/README.md) shows hows how to use [xtd::threading::interlocked](../../src/xtd.core/include/xtd/threading/interlocked.h) class.
 * [interlocked_decrement](threading/interlocked_decrement/README.md) shows hows how to use [xtd::network::interlocked::decrement](../../src/xtd.core/include/xtd/threading/interlocked.h) and [xtd::network::interlocked::increment](../../src/xtd.core/include/xtd/threading/interlocked.h) methods.
 
+## [Uri](uri/README.md)
+
+* [uri](uri/uri/uri/README.md) demonstrates the [xtd::uri](../../src/xtd.core/include/xtd/uri.h) various properties.
+
 ## [Version](version/README.md)
 
 * [version](version/version/version/README.md) demonstrates the [xtd::version](../../src/xtd.core/include/xtd/version.h) constructor, and major, minor, build, revision, major_revision, and minor_revision properties.

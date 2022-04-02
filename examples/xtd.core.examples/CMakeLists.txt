@@ -27,6 +27,7 @@ add_projects(
   sprintf
   strings
   threading
+  uri
   version
   web
   others

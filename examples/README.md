@@ -30,6 +30,7 @@
 * [Random](xtd.core.examples/random/README.md) contains random examples.
 * [Strings](xtd.core.examples/strings/README.md) contains strings examples.
 * [Threading](xtd.core.examples/threading/README.md) contains threading examples.
+* [Uri](xtd.core.examples/uri/README.md) contains uri examples.
 * [Version](xtd.core.examples/version/README.md) contains version examples.
 * [Web](xtd.core.examples/web/README.md) contains web examples.
 * [Others](xtd.core.examples/others/README.md) contains others examples.

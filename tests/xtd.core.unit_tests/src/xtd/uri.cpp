@@ -329,9 +329,9 @@ namespace unit_tests {
     void test_method_(is_default_port) {
       assert::is_false(uri("  Http://yfi:MyPass@www.Contoso.com:8080/C:a ta%20log/ShowNew.htm?Date=ToDay#bOdy  ").is_default_port(), csf_);
       assert::is_true(uri("http://www.contoso.com/index.htm?date=today").is_default_port(), csf_);
-      assert::is_true(uri("http://www.contoso.com:80/index.htm#main").is_default_port(), csf_);
+      assert::is_false(uri("http://www.contoso.com:80/index.htm#main").is_default_port(), csf_);
       assert::is_true(uri("mailto:user@contoso.com?subject=uri").is_default_port(), csf_);
-      assert::is_true(uri("nntp://news.contoso.com:119/123456@contoso.com").is_default_port(), csf_);
+      assert::is_false(uri("nntp://news.contoso.com:119/123456@contoso.com").is_default_port(), csf_);
       assert::is_true(uri("news:123456@contoso.com").is_default_port(), csf_);
       assert::is_true(uri("file://server/filename.ext").is_default_port(), csf_);
     }
