@@ -28,14 +28,14 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @remarks A URI is a compact representation of a resource available to your application on the intranet or Internet. The xtd::uri class defines the properties and methods for handling URIs, including parsing, comparing, and combining. The xtd::uri class properties are read-only; to create a modifiable object, use the xtd::uri_builder class.
   /// @remarks Relative URIs (for example, "/new/index.htm") must be expanded with respect to a base URI so that they are absolute. The xtd::uri::make_relative_uri method is provided to convert absolute URIs to relative URIs when necessary.
-  /// @remarks The xtd::uri constructors do ! escape URI strings if the string is a well-formed URI including a scheme identifier.
+  /// @remarks The xtd::uri constructors do not escape URI strings if the string is a well-formed URI including a scheme identifier.
   /// @remarks The xtd::uri properties return a canonical data representation in escaped encoding, with all characters with Unicode values greater than 127 replaced with their hexadecimal equivalents. To put the URI in canonical form, the xtd::uri constructor performs the following steps:
   /// * Converts the URI scheme to lowercase.
   /// * Converts the host name to lowercase.
   /// * If the host name is an IPv6 address, the canonical IPv6 address is used. ScopeId and other optional IPv6 data are removed.
   /// * Removes default and empty port numbers.
-  /// * Canonicalizes the path for hierarchical URIs by compacting sequences such as /./, /../, //, including escaped representations. Note that there are some schemes for which escaped representations are ! compacted.
-  /// * For hierarchical URIs, if the host is ! terminated with a forward slash (/), one is added.
+  /// * Canonicalizes the path for hierarchical URIs by compacting sequences such as /./, /../, //, including escaped representations. Note that there are some schemes for which escaped representations are noy compacted.
+  /// * For hierarchical URIs, if the host is not terminated with a forward slash (/), one is added.
   /// * By default, any reserved characters in the URI are escaped in accordance with RFC 2396. This behavior changes if International Resource Identifiers or International Domain Name parsing is enabled in which case reserved characters in the URI are escaped in accordance with RFC 3986 and RFC 3987.
   /// @remarks As part of canonicalization in the constructor for some schemes, escaped representations are compacted. The schemes for which URI will compact escaped sequences include the following: file, http, https, net.pipe, and net.tcp. For some other schemes, these sequences are not compacted. The following code snippet shows how compacting looks in practice. The escaped sequences are unescaped, if necessary, and then compacted.
   /// @code
@@ -172,7 +172,7 @@ namespace xtd {
     /// @return string A string containing the absolute path to the resource.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
     /// @remarks The absolute_path property contains the path information that the server uses to resolve requests for information. Typically this is the path to the desired information on the server's file system, although it also can indicate the application or script the server must run to provide the information.
-    /// @remarks The path information does ! include the scheme, host name, or query portion of the URI.
+    /// @remarks The path information does not include the scheme, host name, or query portion of the URI.
     xtd::ustring absolute_path() const;
     
     /// @brief Gets the absolute URI.
@@ -197,13 +197,13 @@ namespace xtd {
     /// @return string A string that contains any URI fragment information.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
     /// @remarks The fragment property gets any text following a fragment marker (#) in the URI, including the fragment marker itself. Given the URI http://www.contoso.com/index.htm#main, the fragment property would return #main.
-    /// @remarks The fragment property is ! considered in any equals comparison.
+    /// @remarks The fragment property is not considered in any equals comparison.
     xtd::ustring fragment() const;
     
     /// @brief Gets the host component of this instance.
     /// @return string A string that contains the host name. This is usually the DNS host name or IP address of the server.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks Unlike the authority property, this property value does ! include the port number.
+    /// @remarks Unlike the authority property, this property value does not include the port number.
     xtd::ustring host() const;
     
     /// @brief Gets the type of the host name specified in the URI.
@@ -230,7 +230,7 @@ namespace xtd {
     /// @brief Gets whether the specified xtd::uri references the local host.
     /// @return bool A bool value that is true if this xtd::uri references the local host; otherwise, false.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks is_loopback returns true if the URI specified when this instance was created was 127.0.0.1, loopback, or localhost, or if the URI did ! specify host information (for example, file:///c:Dir/file.txt). All other URIs return false.
+    /// @remarks is_loopback returns true if the URI specified when this instance was created was 127.0.0.1, loopback, or localhost, or if the URI did not specify host information (for example, file:///c:Dir/file.txt). All other URIs return false.
     bool is_loopback() const;
     
     /// @brief Gets whether the specified xtd::uri is a universal naming convention (UNC) path.
@@ -246,7 +246,7 @@ namespace xtd {
     /// @remarks The value returned by this property differs from to_string and absolute_uri. to_string returns the canonically unescaped form of the URI. absolute_uri returns the canonically escaped form of the URI.
     /// @remarks When International Resource Identifier (URI) and Internationalized Domain Name (IDN) support are enabled, original_string returns the original non normalized string with Punycode host name if one was used to initialize the xtd::uri instance. Punycode names contain only ASCII characters and always start with the xn-- prefix.
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
-    /// @remarks When a xtd::uri object is serialized, the original_string is ! preserved. The serialization process uses the fully escaped and canonicalized absolute_uri property when serializing. For a xtd::uri that contains an IPv6 address, the IPv6 address and the scope ID are included in the serialized xtd::uri object.
+    /// @remarks When a xtd::uri object is serialized, the original_string is not preserved. The serialization process uses the fully escaped and canonicalized absolute_uri property when serializing. For a xtd::uri that contains an IPv6 address, the IPv6 address and the scope ID are included in the serialized xtd::uri object.
     xtd::ustring local_path() const;
     
     /// @brief Gets the original URI string that was passed to the xtd::uri constructor.
@@ -256,7 +256,7 @@ namespace xtd {
     /// @remarks The value returned by this property differs from to_string and absolute_uri. to_string returns the canonically unescaped form of the URI. absolute_uri returns the canonically escaped form of the URI.
     /// @remarks When International Resource Identifier (URI) and Internationalized Domain Name (IDN) support are enabled, original_string returns the original non normalized string with Punycode host name if one was used to initialize the xtd::uri instance. Punycode names contain only ASCII characters and always start with the xn-- prefix.
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
-    /// @remarks When a xtd::uri object is serialized, the original_string is ! preserved. The serialization process uses the fully escaped and canonicalized absolute_uri property when serializing. For a xtd::uri that contains an IPv6 address, the IPv6 address and the scope ID are included in the serialized xtd::uri object.
+    /// @remarks When a xtd::uri object is serialized, the original_string is not preserved. The serialization process uses the fully escaped and canonicalized absolute_uri property when serializing. For a xtd::uri that contains an IPv6 address, the IPv6 address and the scope ID are included in the serialized xtd::uri object.
     const xtd::ustring& original_string() const;
     
     /// @brief Gets the absolute_path and query properties separated by a question mark (?).
@@ -270,7 +270,7 @@ namespace xtd {
     /// @brief Gets the port number of this URI.
     /// @return int32_t An int32_t value that contains the port number for this URI.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks The port number defines the protocol port used for contacting the server referenced in the URI. If a port is ! specified as part of the URI, the port property returns the default value for the protocol. If there is no default port number, this property returns -1.
+    /// @remarks The port number defines the protocol port used for contacting the server referenced in the URI. If a port is not specified as part of the URI, the port property returns the default value for the protocol. If there is no default port number, this property returns -1.
     int32_t port() const;
     
     /// @brief Gets any query information included in the specified URI.
@@ -284,7 +284,7 @@ namespace xtd {
     /// @brief Gets the scheme name for this URI.
     /// @return string A string that contains the scheme for this URI, converted to lowercase.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks The scheme property returns the scheme used to initialize the xtd::uri instance. This property does ! indicate that the scheme used to initialize the xtd::uri instance was recognized.
+    /// @remarks The scheme property returns the scheme used to initialize the xtd::uri instance. This property does not indicate that the scheme used to initialize the xtd::uri instance was recognized.
     /// @remarks The following table shows examples of some possible values returned by the scheme property.
     /// | Scheme   | Description                                                                                    |
     /// |----------| -----------------------------------------------------------------------------------------------|
@@ -307,7 +307,7 @@ namespace xtd {
     /// @return Array<Srtring> A string array that contains the path segments that make up the specified URI.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
     /// @remarks The segments property returns an array of strings containing the "segments" (substrings) that form the URI's absolute path. The first segment is obtained by parsing the absolute path from its first character until you reach a slash (/) or the end of the path. Each additional segment begins at the first character after the preceding segment, and terminates with the next slash or the end of the path. (A URI's absolute path contains everything after the host and port and before the query and fragment.)
-    /// @remarks The following example shows the absolute path and segments for two URIs. The second example illustrates that the fragment and query are ! part of the absolute path and therefore are ! segments.
+    /// @remarks The following example shows the absolute path and segments for two URIs. The second example illustrates that the fragment and query are not part of the absolute path and therefore are not segments.
     /// @remarks Absolute URI
     /// @remarks     http://www.contoso.com/Chapters/Chapter1/Sections/Section1.htm
     /// @remarks Absolute path
@@ -324,7 +324,7 @@ namespace xtd {
     std::vector<xtd::ustring> segments() const;
     
     /// @brief Gets the user name, password, or other user-specific information associated with the specified URI.
-    /// @return string A string that contains the user information associated with the URI. The returned value does ! include the '@' character reserved for delimiting the user information part of the URI.
+    /// @return string A string that contains the user information associated with the URI. The returned value does not include the '@' character reserved for delimiting the user information part of the URI.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
     /// @remarks The value returned by this property is usually in the format "userName:password".
     xtd::ustring user_info() const;
@@ -366,8 +366,8 @@ namespace xtd {
     /// @brief Gets the decimal value of a hexadecimal digit.
     /// @param digit The hexadecimal digit (0-9, a-f, A-F) to convert.
     /// @return int32_t An int32_t value that contains a number from 0 to 15 that corresponds to the specified hexadecimal digit.
-    /// @exception ArgumentException digit is ! a valid hexadecimal digit (0-9, a-f, A-F).
-    /// @remarks The from_hex method converts a character representing a hexadecimal digit (0-9, a-f, A-F) to its decimal value (0 to 15). If digit is ! a valid hexadecimal digit, an ArgumentException exception is thrown.
+    /// @exception ArgumentException digit is not a valid hexadecimal digit (0-9, a-f, A-F).
+    /// @remarks The from_hex method converts a character representing a hexadecimal digit (0-9, a-f, A-F) to its decimal value (0 to 15). If digit is not a valid hexadecimal digit, an ArgumentException exception is thrown.
     static int32_t from_hex(char digit);
     
     /// @brief Gets the specified components of the current instance using the specified escaping for special characters.
@@ -375,7 +375,7 @@ namespace xtd {
     /// @param format One of the xtd::uri_format values that controls how special characters are escaped.
     /// @return string A string that contains the components.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks When query or fragment is specified alone, the return value includes the delimiter. The scheme, user_info, host, port, and Path components do ! include the delimiter. For all other xtd::uri_components values, and combinations of values, the delimiters are included in the returned value.
+    /// @remarks When query or fragment is specified alone, the return value includes the delimiter. The scheme, user_info, host, port, and Path components do not include the delimiter. For all other xtd::uri_components values, and combinations of values, the delimiters are included in the returned value.
     /// @remarks The components are returned in the order that they appear in the URI. For example, if scheme is specified, it appears first.
     /// @remarks When International Resource Identifier (URI) and Internationalized Domain Name (IDN) support are enabled, the number of characters returned in the string increases. Punycode names used to support URI contain only ASCII characters and always start with the xn-- prefix. When URI and IDN are enabled, Unicode surrogate characters are handled correctly by the get_components method.
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
@@ -385,11 +385,11 @@ namespace xtd {
     /// @param part = One of the xtd::uri_partial values that specifies the end of the URI portion to return.
     /// @return string A string that contains the specified portion of the xtd::uri instance.
     /// @exception InvalidOperationException This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @exception ArgumentException The specified part is ! valid.
+    /// @exception ArgumentException The specified part is not valid.
     /// @remarks The get_left_part method returns a string containing the leftmost portion of the URI string, ending with the portion specified by part.
     /// @remarks get_left_part includes delimiters in the following cases:
     /// @remarks   * scheme includes the scheme delimiter.
-    /// @remarks   * authority does ! include the path delimiter.
+    /// @remarks   * authority does not include the path delimiter.
     /// @remarks   * Path includes any delimiters in the original URI up to the query or fragment delimiter.
     /// @remarks   * query includes the Path, plus the query and its delimiter.
     /// @remarks The following examples show a URI and the results of calling get_left_part with scheme, authority, Path, or query.
@@ -412,7 +412,7 @@ namespace xtd {
     /// @brief Converts a specified hexadecimal representation of a character to the character.
     /// @param pattern The hexadecimal representation of a character.
     /// @param index The location in pattern where the hexadecimal representation of a character begins.
-    /// @return Char The character represented by the hexadecimal encoding at position index. If the character at index is ! hexadecimal encoded, the character at index is returned. The value of index is incremented to point to the character following the one returned.
+    /// @return Char The character represented by the hexadecimal encoding at position index. If the character at index is not hexadecimal encoded, the character at index is returned. The value of index is incremented to point to the character following the one returned.
     /// @exception ArgumentOutOfRangeException index is less than 0 or greater than or equal to the number of characters in pattern.
     static char hex_unescape(const xtd::ustring& pattern, size_t& index);
     
@@ -420,7 +420,7 @@ namespace xtd {
     /// @param uri The specified xtd::uri instance to test.
     /// @return bool true if the current xtd::uri instance is a base of uri; otherwise, false.
     /// @exception ArgumentNullException uri is null.
-    /// @remarks IsBaseOf is used to compare the current xtd::uri instance to a specified xtd::uri to determine whether this URI is a base for the specified xtd::uri. When comparing two xtd::uri objects to determine a base relationship, the user information (user_info) is ! evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using http://host/path/path/file?query as the base URI, the following table shows whether it is a base for other URIs.
+    /// @remarks IsBaseOf is used to compare the current xtd::uri instance to a specified xtd::uri to determine whether this URI is a base for the specified xtd::uri. When comparing two xtd::uri objects to determine a base relationship, the user information (user_info) is not evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using http://host/path/path/file?query as the base URI, the following table shows whether it is a base for other URIs.
     /// | URI                                   | http://host/path/path/file?query is base of |
     /// |---------------------------------------|---------------------------------------------|
     /// | http://host/path/path/file/           | yes                                         |
@@ -450,37 +450,37 @@ namespace xtd {
     /// @remarks The is_hex_encoding method checks for hexadecimal encoding that follows the pattern "%hexhex" in a string, where "hex" is a digit from 0 to 9 or a letter from A-F (case-insensitive).
     static bool is_hex_encoding(const xtd::ustring& pattern, size_t index);
     
-    /// @brief Indicates whether the string used to construct this xtd::uri was well-formed and is ! required to be further escaped.
+    /// @brief Indicates whether the string used to construct this xtd::uri was well-formed and is not required to be further escaped.
     /// @return bool A bool value that is true if the string was well-formed; else false.
     /// @remarks The string is considered to be well-formed in accordance with RFC 2396 and RFC 2732 by default. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered to be well-formed in accordance with RFC 3986 and RFC 3987
     /// @remarks The string is considered poorly formed, causing the method to return false, if any of the following conditions occur.
-    /// | Error                                                                                    | Example                                       |
-    /// |------------------------------------------------------------------------------------------|-----------------------------------------------|
-    /// | The string is ! correctly escaped.                                                       | http://www.contoso.com/path???/file name      |
-    /// | The string is an absolute xtd::uri that represents an implicit file xtd::uri.            | c:\\directory\filename                        |
-    /// | The string is an absolute URI that is missing a slash before the path.                   | file://c:/directory/filename                  |
-    /// | The string contains unescaped backslashes even if they are treated as forward slashes.   | http:\\host/path/file                         |
-    /// | The string represents a hierarchical absolute xtd::uri and does ! contain "://".         | www.contoso.com/path/file                     |
-    /// | The parser for the xtd::uri.scheme indicates that the original string was ! well-formed. | The example depends on the scheme of the URI. |
+    /// | Error                                                                                      | Example                                       |
+    /// |--------------------------------------------------------------------------------------------|-----------------------------------------------|
+    /// | The string is not correctly escaped.                                                       | http://www.contoso.com/path???/file name      |
+    /// | The string is an absolute xtd::uri that represents an implicit file xtd::uri.              | c:\\directory\filename                        |
+    /// | The string is an absolute URI that is missing a slash before the path.                     | file://c:/directory/filename                  |
+    /// | The string contains unescaped backslashes even if they are treated as forward slashes.     | http:\\host/path/file                         |
+    /// | The string represents a hierarchical absolute xtd::uri and does not contain "://".         | www.contoso.com/path/file                     |
+    /// | The parser for the xtd::uri.scheme indicates that the original string was not well-formed. | The example depends on the scheme of the URI. |
     /// @remarks By default, the string used to construct this xtd::uri are considered well-formed in accordance with RFC 2396 and RFC 2732.
     /// @remarks When International Resource Identifier (URI) and Internationalized Domain Name (IDN) support are enabled, the string used to construct this xtd::uri are considered well-formed in accordance with RFC 3986 and RFC 3987. Punycode names used to support URI contain only ASCII characters and always start with the xn-- prefix.
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
     bool is_well_formed_original_string();
     
-    /// @brief Indicates whether the string is well-formed by attempting to construct a URI with the string and ensures that the string does ! require further escaping.
+    /// @brief Indicates whether the string is well-formed by attempting to construct a URI with the string and ensures that the string does not require further escaping.
     /// @param uriString The string used to attempt to construct a xtd::uri.
     /// @param uriKind The type of the xtd::uri in uriString.
     /// @return bool A bool value that is true if the string was well-formed; else false.
     /// @remarks By default, the string is considered well-formed in accordance with RFC 2396 and RFC 2732. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered well-formed in accordance with RFC 3986 and RFC 3987.
     /// @remarks The string is considered poorly formed, causing the method to return false, if any of the following conditions occur
-    /// | Error                                                                                    | Example                                       |
-    /// |------------------------------------------------------------------------------------------|-----------------------------------------------|
-    /// | The string is ! correctly escaped.                                                       | http://www.contoso.com/path???/file name      |
-    /// | The string is an absolute xtd::uri that represents an implicit file xtd::uri.            | c:\\directory\filename                        |
-    /// | The string is an absolute URI that is missing a slash before the path.                   | file://c:/directory/filename                  |
-    /// | The string contains unescaped backslashes even if they are treated as forward slashes.   | http:\\host/path/file                         |
-    /// | The string represents a hierarchical absolute xtd::uri and does ! contain "://".         | www.contoso.com/path/file                     |
-    /// | The parser for the xtd::uri.scheme indicates that the original string was ! well-formed. | The example depends on the scheme of the URI. |
+    /// | Error                                                                                      | Example                                       |
+    /// |--------------------------------------------------------------------------------------------|-----------------------------------------------|
+    /// | The string is not correctly escaped.                                                       | http://www.contoso.com/path???/file name      |
+    /// | The string is an absolute xtd::uri that represents an implicit file xtd::uri.              | c:\\directory\filename                        |
+    /// | The string is an absolute URI that is missing a slash before the path.                     | file://c:/directory/filename                  |
+    /// | The string contains unescaped backslashes even if they are treated as forward slashes.     | http:\\host/path/file                         |
+    /// | The string represents a hierarchical absolute xtd::uri and does not contain "://".         | www.contoso.com/path/file                     |
+    /// | The parser for the xtd::uri.scheme indicates that the original string was not well-formed. | The example depends on the scheme of the URI. |
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
     static bool is_well_formed_uri_string(const xtd::ustring& uriString, xtd::uri_kind uriKind);
     
@@ -489,7 +489,7 @@ namespace xtd {
     /// @return string A string that contains the unescaped representation of stringToUnescape.
     /// @exception ArgumentNullException value is null.
     /// @remarks You should use this method with care. Unescaping a string that has been previously unescaped can lead to ambiguities and errors.
-    /// @remarks Many Web browsers escape spaces inside of URIs into plus ("+") characters; however, the unescape_data_string method does ! convert plus characters into spaces because this behavior is ! standard across all URI schemes.
+    /// @remarks Many Web browsers escape spaces inside of URIs into plus ("+") characters; however, the unescape_data_string method does not convert plus characters into spaces because this behavior is not standard across all URI schemes.
     static xtd::ustring unescape_data_string(const xtd::ustring& value);
     
     bool equals(const xtd::uri& uri) const noexcept override;
@@ -498,7 +498,7 @@ namespace xtd {
     
     /// @brief Gets a canonical string representation for the specified xtd::uri instance.
     /// @return string A string instance that contains the unescaped canonical representation of the xtd::uri instance. All characters are unescaped except #, ?, and %.
-    /// @remarks The string returned by this method does ! contain port information when the port is the default port for the scheme.
+    /// @remarks The string returned by this method does not contain port information when the port is the default port for the scheme.
     xtd::ustring to_string() const noexcept override;
     /// @}
     
