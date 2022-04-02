@@ -68,13 +68,24 @@ uri_host_name_type uri::host_name_type() const {
   return uri_host_name_type::unknown;
 }
 
+ustring uri::idn_host() const {
+  return get_components(uri_components::host, uri_format::uri_escaped);
+}
+
 bool uri::is_absolute_uri() const {
   return kind_ == uri_kind::absolute;
 }
 
 bool uri::is_default_port() const {
   if (kind_ != uri_kind::absolute) throw invalid_operation_exception(csf_);
-  return port() == -1 || port() == 21 || port() == 70 || port() == 80 || port() == 443 || port() == 389 || port() == 25 || port() == 119;
+  
+  auto port = -1;
+  if (try_parse<int32_t>(get_components(uri_components::port, uri_format::uri_escaped), port) == true) return false;
+  return true;
+  /*
+  if (scheme() == uri::uri_scheme_http) return this->port() == 80;
+  return this->port() == -1 || this->port() == 21 || this->port() == 70 || this->port() == 80 || this->port() == 443 || this->port() == 389 || this->port() == 25 || this->port() == 119;
+   */
 }
 
 bool uri::is_file() const {
