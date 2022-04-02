@@ -23,15 +23,15 @@ namespace unit_tests {
     }
     
     void test_method_(ip_v6_any) {
-      assert::are_equal("0:0:0:0:0:0:0:0", ip_address::ip_v6_any.to_string(), csf_);
+      assert::are_equal("::", ip_address::ip_v6_any.to_string(), csf_);
     }
     
     void test_method_(ip_v6_loopback) {
-      assert::are_equal("0:0:0:0:0:0:0:1", ip_address::ip_v6_loopback.to_string(), csf_);
+      assert::are_equal("::1", ip_address::ip_v6_loopback.to_string(), csf_);
     }
     
     void test_method_(ip_v6_none) {
-      assert::are_equal("0:0:0:0:0:0:0:0", ip_address::ip_v6_none.to_string(), csf_);
+      assert::are_equal("::", ip_address::ip_v6_none.to_string(), csf_);
     }
     
     void test_method_(loopback) {
@@ -55,9 +55,9 @@ namespace unit_tests {
     void test_method_(copy_constructor) {
       assert::are_equal("0.0.0.0", ip_address(ip_address::any).to_string(), csf_);
       assert::are_equal("255.255.255.255", ip_address(ip_address::broadcast).to_string(), csf_);
-      assert::are_equal("0:0:0:0:0:0:0:0", ip_address(ip_address::ip_v6_any).to_string(), csf_);
-      assert::are_equal("0:0:0:0:0:0:0:1", ip_address(ip_address::ip_v6_loopback).to_string(), csf_);
-      assert::are_equal("0:0:0:0:0:0:0:0", ip_address(ip_address::ip_v6_none).to_string(), csf_);
+      assert::are_equal("::", ip_address(ip_address::ip_v6_any).to_string(), csf_);
+      assert::are_equal("::1", ip_address(ip_address::ip_v6_loopback).to_string(), csf_);
+      assert::are_equal("::", ip_address(ip_address::ip_v6_none).to_string(), csf_);
       assert::are_equal("127.0.0.1", ip_address(ip_address::loopback).to_string(), csf_);
       assert::are_equal("255.255.255.255", ip_address(ip_address::none).to_string(), csf_);
     }

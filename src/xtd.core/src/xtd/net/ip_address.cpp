@@ -227,6 +227,15 @@ ip_address ip_address::parse(const ustring& str) {
   };
   
   using_(vector<ustring> address_parts = work_ip_string.split({':'})) {
+    for (auto it = address_parts.begin(); it != address_parts.end(); ++it) {
+      if (it->empty()) {
+        *it = "0";
+        auto fill_count = 8 - address_parts.size();
+        for  (size_t fc = 0; fc < fill_count; ++fc)
+          address_parts.insert(it, "0");
+      }
+    }
+    
     if (address_parts.size() == 8) {
       for (auto index = 0U; index < address_parts.size(); index++)
         value.numbers_[index] = xtd::parse<uint16_t>(ustring::is_empty(address_parts[index]) ? "0" : address_parts[index], number_styles::hex_number);
@@ -242,9 +251,16 @@ ustring ip_address::to_string() const noexcept {
     return ustring::join(".", get_address_bytes());
     
   ustring str;
-  for (auto number : numbers_)
-    str += ustring::format("{:x}:", number);
-  str = str.remove(str.size() - 1, 1);
+  for (size_t index = 0; index < 8; ++index) {
+    if (index < 7 && numbers_[index] == 0 && numbers_[index + 1] == 0) {
+      if (index == 0) str = ":";
+      while  (index < 7 && numbers_[index + 1] == 0) ++index;
+      if (index < 8) str += ":";
+    } else {
+      str += ustring::format("{:x}", numbers_[index]);
+      if (index < 7) str += ":";
+    }
+  }
   if (scope_id_ != 0) str += ustring::format("%{}", scope_id_);
   return str;
 }
