@@ -88,7 +88,7 @@ namespace xtd {
   ///   // Fail: the uri base has been modified - the created uri is not rooted in the original directory.
   /// }
   /// @endcode
-  /// This validation can be used in other cases, like when dealing with UNC paths, by simply changing the baseUri:
+  /// This validation can be used in other cases, like when dealing with UNC paths, by simply changing the base_uri:
   /// @code
   /// aauto base_uri = uri(@"\\host\share\some\directory\name\");
   /// @endcode
@@ -143,25 +143,65 @@ namespace xtd {
     /// @endcond
     
     /// @brief Initializes a new instance of the xtd::uri class with the specified URI.
-    /// @param uri_string : A string that identifies the resource to be represented by the Uri instance. Note that an IPv6 address in string form must be enclosed within brackets. For example, "http://[2607:f8b0:400d:c06::69]".
-    /// @exception uri_format_exception uri_string is empty.
-    explicit uri(const xtd::ustring& uri);
+    /// @param uri_string : A string that identifies the resource to be represented by the xtd::uri instance. Note that an IPv6 address in string form must be enclosed within brackets. For example, "http://[2607:f8b0:400d:c06::69]".
+    /// @exception xtd::uri_format_exception uri_string is empty.<br>-or-<br>The scheme specified in uri_string is not correctly formed. See xtd::uricheck_scheme_name.<br>-or-<br>The password specified in uri_string is not valid.<br>-or-<br>The host name specified in uri_string is not valid.<br>-or-<br>The file name specified in uri_string is not valid.<br>-or-<br>The user name specified in uri_string is not valid.<br>-or-<or>The host or authority name specified in uri_string cannot be terminated by backslashes.<br>-or-<br>The port number specified in uri_string is not valid or cannot be parsed.<br>-or-<br>The length of uri_string exceeds 65519 characters.<br>-or-<br>The length of the scheme specified in uri_string exceeds 1023 characters.<br>-or-<br>There is an invalid character sequence in uri_string.<br>-or-<br>The MS-DOS path specified in uri_string must start with c:\\.
+    /// @par Examples
+    /// The following example creates a xtd::uri instance with the URI http://www.contoso.com/.
+    /// @code
+    /// auto my_uri = uri("http://www.contoso.com/");
+    /// @endcode
+    /// @remarks This constructor creates a xtd::uri instance from a URI string. It parses the URI, puts it in canonical format, and makes any required escape encodings.
+    /// @remarks This constructor does not ensure that the xtd::uri refers to an accessible resource.
+    /// @remarks This constructor assumes that the string parameter references an absolute URI and is equivalent to calling the xtd::uri constructor with xtd::uri_kind set to xtd::uri_kind::absolute. If the string parameter passed to the constructor is a relative URI, this constructor will throw a xtd::uri_format_exception.
+    explicit uri(const xtd::ustring& uri_string);
     
-    /// @brief Initializes a new instance of the xtd::uri class with the specified URI.
-    /// @param uri : A URI.
-    /// @exception xtd::uri_format_exception uri is null.
-    uri(const xtd::ustring& uri, xtd::uri_kind kind);
+    /// @brief Initializes a new instance of the xtd::uri class with the specified URI. This constructor allows you to specify if the URI string is a relative URI, absolute URI, or is indeterminate.
+    /// @param uri_string : A string that identifies the resource to be represented by the xtd::uri instance. Note that an IPv6 address in string form must be enclosed within brackets. For example, "http://[2607:f8b0:400d:c06::69]".
+    /// @param uri_kind : Specifies whether the URI string is a relative URI, absolute URI, or is indeterminate.
+    /// @exception xtd::uri_format_exception uri_string contains a relative URI and uri_kind is xtd::uri_kind::absolute.<br>-or-<br>uri_string contains an absolute URI and uri_kind is xtd::uri_kind::relative.<br>-or-<br>uri_string is empty.<br>-or-<br>The scheme specified in uri_string is not correctly formed. See CheckSchemeName(String).<br>-or-<br>uri_string contains too many slashes.<br>-or-<br>The password specified in uri_string is not valid.<br>-or-<br>The host name specified in uri_string is not valid.<br>-or-<br>The file name specified in uri_string is not valid.<br>-or-<br>The user name specified in uri_string is not valid.<br>-or-<br>The host or authority name specified in uri_string cannot be terminated by backslashes.<br>-or-<br>The port number specified in uri_string is not valid or cannot be parsed.<br>-or-<br>The length of uri_string exceeds 65519 characters.<br>-or-<br>The length of the scheme specified in uri_string exceeds 1023 characters.<br>-or-<br>There is an invalid character sequence in uri_string.<br>-or-<br>The MS-DOS path specified in uri_string must start with c:\\.
+    /// @remarks Relative and absolute URIs have different restrictions on their format. For example, a relative URI does not require a scheme or an authority. The value you specify in uri_kind must match the type of URI passed in uri_string. However, if xtd::uri::relative_orA_asolute is specified, the URI string can be relative or absolute.
+    uri(const xtd::ustring& uri, xtd::uri_kind uri_kind);
     
     /// @brief Initializes a new instance of the xtd::uri class based on the specified base URI and relative URI string.
     /// @param base_uri : The base URI.
     /// @param relative_uri : The relative URI to add to the base URI.
-    /// @exception ArgumentNullException uri is null.
+    /// @exception xtd::uri_format_exception The URI formed by combining base_uri and relative_uri is empty or contains only spaces.<br>-or-<br>The scheme specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The URI formed by combining base_uri and relative_uri contains too many slashes.<br>-or-<br>The password specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The host name specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The file name specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The user name specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The host or authority name specified in the URI formed by combining base_uri and relative_uri cannot be terminated by backslashes.<br>-or-<br>The port number specified in the URI formed by combining base_uri and relative_uri is not valid or cannot be parsed.<br>-or-<br>The length of the URI formed by combining base_uri and relative_uri exceeds 65519 characters.<br>-or-<br>The length of the scheme specified in the URI formed by combining base_uri and relative_uri exceeds 1023 characters.<br>-or-<br>There is an invalid character sequence in the URI formed by combining base_uri and relative_uri.<br>-or-<br>The MS-DOS path specified in uriString must start with c:\\.
+    /// @par Examples
+    /// The following example creates a new instance of the xtd::uri class by combining the relative URIs http://www.contoso.com and catalog/shownew.htm to form the absolute URI http://www.contoso.com/catalog/shownew.htm.
+    /// @code
+    /// auto base_uri = uri("http://www.contoso.com");
+    /// auto my_uri = uri(base_uri, "catalog/shownew.htm");
+    ///
+    /// console::write_line(my_uri.to_string());
+    /// @endcode
+    /// @remarks This constructor creates a xtd::uri instance by combining the base_uri and the relative_uri. If relative_uri is an absolute URI (containing a scheme, host name, and optionally a port number), the xtd::uri instance is created using only relative_uri.
+    /// @remarks If the base_uri has relative parts (like /api), then the relative part must be terminated with a slash, (like /api/), if the relative part of base_uri is to be preserved in the constructed xtd::uri.
+    /// @remarks Additionally, if the relative_uri begins with a slash, then it will replace any relative part of the base_uri
+    /// @remarks This constructor does not ensure that the xtd::uri refers to an accessible resource.
     uri(const uri& base_uri, const xtd::ustring& relative_uri);
     
     /// @brief Initializes a new instance of the xtd::uri class based on the combination of a specified base xtd::uri instance and a relative xtd::uri instance.
     /// @param base_uri : An absolute xtd::uri that is the base for the new xtd::uri instance.
     /// @param relative_uri : A relative xtd::uri instance that is combined with base_uri.
-    /// @exception ArgumentNullException uri is null.
+    /// @exception xtd::uri_format_exception The URI formed by combining base_uri and relative_uri is empty or contains only spaces.<br>-or-<br>The scheme specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The URI formed by combining base_uri and relative_uri contains too many slashes.<br>-or-<br>The password specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The host name specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The file name specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The user name specified in the URI formed by combining base_uri and relative_uri is not valid.<br>-or-<br>The host or authority name specified in the URI formed by combining base_uri and relative_uri cannot be terminated by backslashes.<br>-or-<br>The port number specified in the URI formed by combining base_uri and relative_uri is not valid or cannot be parsed.<br>-or-<br>The length of the URI formed by combining base_uri and relative_uri exceeds 65519 characters.<br>-or-<br>The length of the scheme specified in the URI formed by combining base_uri and relative_uri exceeds 1023 characters.<br>-or-<br>There is an invalid character sequence in the URI formed by combining base_uri and relative_uri.<br>-or-<br>The MS-DOS path specified in uriString must start with c:\\.
+    /// @par Examples
+    /// This example creates an absolute xtd::uri instance, absolute_uri, and a relative xtd::uri instance, relative_uri. A new xtd::uri instance, combined_uri, is then created from these two instances.
+    /// @code
+    /// // Create an absolute xtd::ri from a string.
+    /// auti absolute_uri = uri("http://www.contoso.com/");
+    ///
+    /// // Create a relative xtd::uri from a string and uri_kind::relative for
+    /// // creating a relative xtd::uri.
+    /// auto relative_uri = uri("/catalog/shownew.htm?date=today", uri_kind::relative);
+    ///
+    /// // Check whether the new xtd::uri is absolute or relative.
+    /// if (!relative_uri.is_absolute_uri())
+    ///   console::write_line("{0} is a relative xtd::uri.", relative_uri);
+    ///
+    /// // Create a new xtd::uri from an absolute xtd::uri and a relative xtd::uri.
+    /// auto combined_uri = uri(absolute_uri, relative_uri);
+    /// console::write_line(combined_uri.absolute_uri());
+    /// @endcode
     uri(const uri& base_uri, const uri& relative_uri);
     /// @}
     
@@ -468,8 +508,8 @@ namespace xtd {
     bool is_well_formed_original_string();
     
     /// @brief Indicates whether the string is well-formed by attempting to construct a URI with the string and ensures that the string does not require further escaping.
-    /// @param uriString The string used to attempt to construct a xtd::uri.
-    /// @param uriKind The type of the xtd::uri in uriString.
+    /// @param uri_string The string used to attempt to construct a xtd::uri.
+    /// @param uri_kind The type of the xtd::uri in uri_string.
     /// @return bool A bool value that is true if the string was well-formed; else false.
     /// @remarks By default, the string is considered well-formed in accordance with RFC 2396 and RFC 2732. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered well-formed in accordance with RFC 3986 and RFC 3987.
     /// @remarks The string is considered poorly formed, causing the method to return false, if any of the following conditions occur
@@ -482,7 +522,7 @@ namespace xtd {
     /// | The string represents a hierarchical absolute xtd::uri and does not contain "://".         | www.contoso.com/path/file                     |
     /// | The parser for the xtd::uri.scheme indicates that the original string was not well-formed. | The example depends on the scheme of the URI. |
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
-    static bool is_well_formed_uri_string(const xtd::ustring& uriString, xtd::uri_kind uriKind);
+    static bool is_well_formed_uri_string(const xtd::ustring& uri_string, xtd::uri_kind uri_kind);
     
     /// @brief Converts a string to its unescaped representation.
     /// @param value The string to unescape.
