@@ -294,28 +294,66 @@ namespace xtd {
     
     /// @{
     /// @brief Gets the absolute path of the URI.
-    /// @return string A string containing the absolute path to the resource.
+    /// @return The absolute path to the resource.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks The absolute_path property contains the path information that the server uses to resolve requests for information. Typically this is the path to the desired information on the server's file system, although it also can indicate the application or script the server must run to provide the information.
+    /// @par Examples
+    /// The following example writes the path /catalog/shownew.htm to the console.
+    /// @code
+    /// auto base_uri = uri("http://www.contoso.com/");
+    /// auto my_uri = uri(base_uri, "catalog/shownew.htm?date=today");
+    ///
+    /// console::write_line(my_uri.absolute_path());
+    /// @endcode
+    /// @remarks The xtd::uri::absolute_path property contains the path information that the server uses to resolve requests for information. Typically this is the path to the desired information on the server's file system, although it also can indicate the application or script the server must run to provide the information.
     /// @remarks The path information does not include the scheme, host name, or query portion of the URI.
     xtd::ustring absolute_path() const;
     
     /// @brief Gets the absolute URI.
-    /// @return string A string containing the entire URI.
+    /// @return The entire URI.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks The absolute_uri property includes the entire URI stored in the xtd::uri instance, including all fragments and query strings.
+    /// @par Examples
+    /// The following example writes the complete contents of the xtd::uri instance to the console. In the example shown, http://www.contoso.com/catalog/shownew.htm?date=today is written to the console.
+    /// @code
+    /// auto base_uri = uri("http://www.contoso.com");
+    /// auto my_uri = uri(base_uri,"catalog/shownew.htm?date=today");
+    /// console::write_line(my_uri.absolute_uri());
+    /// @endcode
+    /// @remarks The xtd::uri::absolute_uri property includes the entire URI stored in the xtd::uri instance, including all fragments and query strings.
     xtd::ustring absolute_uri();
     
     /// @brief Gets the Domain Name System (DNS) host name or IP address and the port number for a server.
-    /// @return string A string containing the authority component of the URI represented by this instance.
+    /// @return The authority component of the URI represented by this instance.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks The authority property is typically a server DNS host name or IP address. This property might include the service port number if it differs from the default port for the URI. If the authority component contains reserved characters, these are escaped in the string value returned by this property.
+    /// @par Examples
+    /// The following example writes the host name (www.contoso.com) and port number (8080) of the server to the console.
+    /// @code
+    /// auto base_uri = uri("http://www.contoso.com:8080/");
+    /// auto my_uri = uri(base_uri,"shownew.htm?date=today");
+    ///
+    /// console::write_line(my_uri.authority());
+    /// @endcode
+    /// @remarks The xtd::uri::authority property is typically a server DNS host name or IP address. This property might include the service port number if it differs from the default port for the URI. If the xtd::uri::authority component contains reserved characters, these are escaped in the string value returned by this property.
     xtd::ustring authority() const;
     
     /// @brief Gets an unescaped host name that is safe to use for DNS resolution.
-    /// @return string A string that contains the unescaped host part of the URI that is suitable for DNS resolution; or the original unescaped host string, if it is already suitable for resolution.
+    /// @return The host part of the URI in a format suitable for DNS resolution; or the original host string, if it is already suitable for resolution.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks For IPv6 addresses, the brackets ([]) are removed and the ScopeId property is set, if one was specified when this instance was constructed.
+    /// @par Examples
+    /// The following example creates a xtd::uri instance from a string. It illustrates the difference between the value returned from xtd::uri::host, which returns the host name or address specified in the URI, and the value returned from xtd::uri::dns_safe_host, which returns an address that is safe to use in DNS resolution.
+    /// @code
+    /// // Create new Uri using a string address.
+    /// auto address = uri("http://[fe80::200:39ff:fe36:1a2d%254]/temp/example.htm");
+    ///
+    /// // Make the address DNS safe.
+    ///
+    /// // The following outputs "[fe80::200:39ff:fe36:1a2d]".
+    /// console::write_line(address.host());
+    ///
+    /// // The following outputs "fe80::200:39ff:fe36:1a2d%254".
+    /// console::write_line(address.dns_safe_host());
+    /// @endcode
+    /// As explained in Remarks, unescape the host name before resolving it. You can use the xtd::uri::unescape_data_string method to unescape the host name, and you can resolve it by calling the xtd::uri::get_host_entry method.
+    /// @remarks For IPv6 addresses, the brackets ([]) are removed and the xtd::uri::scope_id property is set, if one was specified when this instance was constructed.
     xtd::ustring dns_safe_host() const;
     
     /// @brief Gets the escaped URI fragment.
