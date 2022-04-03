@@ -28,20 +28,20 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 ### Enhancements
 
-| Library   | Enhancements                    | Developer | status                                          |
-|-----------|---------------------------------|-----------|-------------------------------------------------|
-| xtd.core  | assembly (with CMake)           | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| xtd.core  | date_time                       | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| xtd.core  | time_zone_info                  | Gammasoft | ![status](pictures/releases/status/started.png) | 
-| xtd.core  | uri                             | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| xtd.core  | io::binary_reader               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
-| xtd.core  | io::binary_writer               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
-| xtd.core  | io::directory                   | Gammasoft | ![status](pictures/releases/status/done.png)    | 
-| xtd.core  | io::directory_info              | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| xtd.core  | io::drive_info                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| xtd.core  | io::file_info                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| xtd.core  | io::file_system_info            | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| xtd       | iOS platforms                   | Gammasoft | ![status](pictures/releases/status/started.png) |
+| Library   | Enhancements                                                                                               | Developer | status                                          |
+|-----------|------------------------------------------------------------------------------------------------|-----------|-------------------------------------------------|
+| xtd.core  | [assembly (with CMake)](https://github.com/gammasoft71/xtd/projects/1#card-80082721)           | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| xtd.core  | [date_time](https://github.com/gammasoft71/xtd/projects/1#card-80082731)                       | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| xtd.core  | [time_zone_info](https://github.com/gammasoft71/xtd/projects/1#card-80082737)                  | Gammasoft | ![status](pictures/releases/status/started.png) | 
+| xtd.core  | [uri](https://github.com/gammasoft71/xtd/projects/1#card-80082748)                             | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| xtd.core  | [io::binary_reader](https://github.com/gammasoft71/xtd/projects/1#card-80082753)               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
+| xtd.core  | [io::binary_writer](https://github.com/gammasoft71/xtd/projects/1#card-80082757)               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
+| xtd.core  | [io::directory](https://github.com/gammasoft71/xtd/projects/1#card-80082766)                   | Gammasoft | ![status](pictures/releases/status/done.png)    | 
+| xtd.core  | [io::directory_info](https://github.com/gammasoft71/xtd/projects/1#card-80082778)              | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| xtd.core  | [io::drive_info](https://github.com/gammasoft71/xtd/projects/1#card-80082787)                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| xtd.core  | [io::file_info](https://github.com/gammasoft71/xtd/projects/1#card-80082793)                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| xtd.core  | [io::file_system_info](https://github.com/gammasoft71/xtd/projects/1#card-80082805)            | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| xtd       | [iOS platforms](https://github.com/gammasoft71/xtd/projects/1#card-80082813)                   | Gammasoft | ![status](pictures/releases/status/started.png) |
 | xtd.forms | box_render                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | button_render                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | xtd.forms | check_box_render                | Gammasoft |                                                 |
