@@ -42,6 +42,12 @@ ustring uri::authority() const {
 }
 
 ustring uri::dns_safe_host() const {
+  auto str = host();
+  if (!str.empty()) {
+    auto address = ip_address();
+    if (ip_address::try_parse(str, address) == true && address.address_family() == sockets::address_family::inter_network_v6 && str[0] == '[' && str[str.size() - 1] == ']')
+      return str.substring(1, str.size()-2);
+  }
   return get_components(uri_components::host, uri_format::safe_unescaped);
 }
 
@@ -50,7 +56,7 @@ ustring uri::fragment() const {
 }
 
 ustring uri::host() const {
-  return get_components(uri_components::host, uri_format::uri_escaped);
+  return get_components(uri_components::host, uri_format::unescaped);
 }
 
 uri_host_name_type uri::host_name_type() const {
@@ -69,7 +75,13 @@ uri_host_name_type uri::host_name_type() const {
 }
 
 ustring uri::idn_host() const {
-  return get_components(uri_components::host, uri_format::uri_escaped);
+  auto str = host();
+  if (!str.empty()) {
+    auto address = ip_address();
+    if (ip_address::try_parse(str, address) == true && address.address_family() == sockets::address_family::inter_network_v6 && str[0] == '[' && str[str.size() - 1] == ']')
+      return str.substring(1, str.size()-2);
+  }
+  return get_components(uri_components::host, uri_format::safe_unescaped);
 }
 
 bool uri::is_absolute_uri() const {
@@ -82,10 +94,6 @@ bool uri::is_default_port() const {
   auto port = -1;
   if (try_parse<int32_t>(get_components(uri_components::port, uri_format::uri_escaped), port) == true) return false;
   return true;
-  /*
-  if (scheme() == uri::uri_scheme_http) return this->port() == 80;
-  return this->port() == -1 || this->port() == 21 || this->port() == 70 || this->port() == 80 || this->port() == 443 || this->port() == 389 || this->port() == 25 || this->port() == 119;
-   */
 }
 
 bool uri::is_file() const {
