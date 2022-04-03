@@ -250,6 +250,14 @@ The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) li
 
 **Your feedback is important for the evolution of the project.**
 
+### Beginners
+
+The following project aims to simplify and guide the way beginners make their first contribution. If you are looking to make your first contribution, check out the project below.
+
+[First Contributions](https://github.com/firstcontributions/first-contributions)
+
+Now you are ready to make your first contribution to xtd.
+
 ## Gallery
 
 [![minesweeper](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/minesweeper.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/README.md)
