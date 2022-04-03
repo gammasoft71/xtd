@@ -28,65 +28,66 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 ### Enhancements
 
-| Issue   | Library   | Enhancements                    | Developer | status                                          |
-|---------|-----------|---------------------------------|-----------|-------------------------------------------------|
-| #45     | xtd.core  | assembly (with CMake)           | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #46     | xtd.core  | date_time                       | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #50     | xtd.core  | time_zone_info                  | Gammasoft | ![status](pictures/releases/status/started.png) | 
-| #47     | xtd.core  | uri                             | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #48     | xtd.core  | io::binary_reader               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
-| #49     | xtd.core  | io::binary_writer               | Gammasoft | ![status](pictures/releases/status/done.png)    | 
-| #52     | xtd.core  | io::directory                   | Gammasoft | ![status](pictures/releases/status/done.png)    | 
-| #59     | xtd.core  | io::directory_info              | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #58     | xtd.core  | io::drive_info                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #57     | xtd.core  | io::file_info                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #57     | xtd.core  | io::file_system_info            | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #56     | xtd       | iOS platforms                   | Gammasoft | ![status](pictures/releases/status/started.png) |
-| #54     | xtd.forms | box_render                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #55     | xtd.forms | button_render                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #53     | xtd.forms | check_box_render                | Gammasoft |                                                 |
-|         | xtd.forms | clipboard + drag & drop         | Gammasoft |                                                 |
-|         | xtd.forms | collapsible_panel               | Gammasoft |                                                 |
-|         | xtd.forms | collapsible_panel_render        | Gammasoft |                                                 |
-|         | xtd.forms | color_picker_render             | Gammasoft |                                                 |
-|         | xtd.forms | command_link_button_render      | Gammasoft |                                                 |
-|         | xtd.forms | command_link_buttons            | Bader     |                                                 |
-|         | xtd.forms | context_menu                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | control_render                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | dot_matrix_display_render       | Gammasoft |                                                 |
-|         | xtd.forms | find_box                        | Bader     |                                                 |
-|         | xtd.forms | find_dialog                     | Bader     |                                                 |
-|         | xtd.forms | font_box                        | Bader     | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | font_picker_render              | Gammasoft |                                                 |
-|         | xtd.forms | form_render                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | fourteen_segment_display_render | Gammasoft |                                                 |
-|         | xtd.forms | image_render                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | label_render                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | lcd_label_render                | Gammasoft |                                                 |
-|         | xtd.forms | light_button                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | light_button_render             | Gammasoft |                                                 |
-|         | xtd.forms | light_buttons                   | Bader     |                                                 |
-|         | xtd.forms | month_calender                  | Bader     | ![status](pictures/releases/status/started.png) |
-|         | xtd.forms | notify_icon                     | Bader     |                                                 |
-|         | xtd.forms | nine_segment_display_render     | Gammasoft |                                                 |
-|         | xtd.forms | open_file_box                   | Bader     | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | panel_render                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | progress_box                    | Bader     | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | radio_button_render             | Gammasoft |                                                 |
-|         | xtd.forms | replace_box                     | Bader     |                                                 |
-|         | xtd.forms | replace_dialog                  | Bader     |                                                 |
-|         | xtd.forms | save_file_box                   | Bader     | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | seven_segment_display_render    | Gammasoft |                                                 |
-|         | xtd.forms | sixteen_segment_display_render  | Gammasoft |                                                 |
-|         | xtd.forms | split_container                 | Gammasoft |                                                 |
-|         | xtd.forms | status_bar                      | Bader     |                                                 |
-|         | xtd.forms | style_sheets                    | Gammasoft | ![status](pictures/releases/status/started.png) |
-|         | xtd.forms | switch_button_render            | Gammasoft |                                                 |
-|         | xtd.forms | text_render                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
-|         | xtd.forms | themes                          | Gammasoft | ![status](pictures/releases/status/started.png) |
-|         | xtd.forms | toggle_button_render            | Gammasoft | ![status](pictures/releases/status/started.png) |
-|         | xtd.forms | tool_bar                        | Gammasoft | ![status](pictures/releases/status/started.png) |
-|         | xtd.forms | user_control_render             | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| Issue   | Library   | Enhancements                      | Developer | status                                          |
+|---------|-----------|-----------------------------------|-----------|-------------------------------------------------|
+| #45     | xtd.core  | assembly (with CMake)             | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #46     | xtd.core  | date_time                         | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #50     | xtd.core  | time_zone_info                    | Gammasoft | ![status](pictures/releases/status/started.png) | 
+| #47     | xtd.core  | uri                               | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #48     | xtd.core  | io::binary_reader                 | Gammasoft | ![status](pictures/releases/status/done.png)    | 
+| #49     | xtd.core  | io::binary_writer                 | Gammasoft | ![status](pictures/releases/status/done.png)    | 
+| #52     | xtd.core  | io::directory                     | Gammasoft | ![status](pictures/releases/status/done.png)    | 
+| #59     | xtd.core  | io::directory_info                | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #58     | xtd.core  | io::drive_info                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #57     | xtd.core  | io::file_info                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #57     | xtd.core  | io::file_system_info              | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #56     | xtd       | iOS platforms                     | Gammasoft | ![status](pictures/releases/status/started.png) |
+| #37     | xtd       | uninstaller                       | Gammasoft |                                                 |
+| #54     | xtd.forms | box_renderer                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #55     | xtd.forms | button_renderer                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #53     | xtd.forms | check_box_renderer                | Gammasoft |                                                 |
+| #5      | xtd.forms | clipboard + drag & drop           | Gammasoft |                                                 |
+| #60     | xtd.forms | collapsible_panel                 | Gammasoft |                                                 |
+| #61     | xtd.forms | collapsible_panel_renderer        | Gammasoft |                                                 |
+| #62     | xtd.forms | color_picker_renderer             | Gammasoft |                                                 |
+| #63     | xtd.forms | command_link_button_renderer      | Gammasoft |                                                 |
+| #64     | xtd.forms | command_link_buttons              | Bader     |                                                 |
+| #65     | xtd.forms | context_menu                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #66     | xtd.forms | control_renderer                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #67     | xtd.forms | dot_matrix_display_renderer       | Gammasoft |                                                 |
+| #68     | xtd.forms | find_box                          | Bader     |                                                 |
+| #69     | xtd.forms | find_dialog                       | Bader     |                                                 |
+| #70     | xtd.forms | font_box                          | Bader     | ![status](pictures/releases/status/done.png)    |
+| #71     | xtd.forms | font_picker_renderer              | Gammasoft |                                                 |
+| #72     | xtd.forms | form_renderer                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #73     | xtd.forms | fourteen_segment_display_renderer | Gammasoft |                                                 |
+| #74     | xtd.forms | image_renderer                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #75     | xtd.forms | label_renderer                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #76     | xtd.forms | lcd_label_renderer                | Gammasoft |                                                 |
+| #77     | xtd.forms | light_button                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #78     | xtd.forms | light_button_renderer             | Gammasoft |                                                 |
+| #79     | xtd.forms | light_buttons                     | Bader     |                                                 |
+| #80     | xtd.forms | month_calender                    | Bader     | ![status](pictures/releases/status/started.png) |
+| #81     | xtd.forms | notify_icon                       | Bader     |                                                 |
+| #82     | xtd.forms | nine_segment_display_renderer     | Gammasoft |                                                 |
+|         | xtd.forms | open_file_box                     | Bader     | ![status](pictures/releases/status/done.png)    |
+|         | xtd.forms | panel_renderer                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
+|         | xtd.forms | progress_box                      | Bader     | ![status](pictures/releases/status/done.png)    |
+|         | xtd.forms | radio_button_renderer             | Gammasoft |                                                 |
+|         | xtd.forms | replace_box                       | Bader     |                                                 |
+|         | xtd.forms | replace_dialog                    | Bader     |                                                 |
+|         | xtd.forms | save_file_box                     | Bader     | ![status](pictures/releases/status/done.png)    |
+|         | xtd.forms | seven_segment_display_renderer    | Gammasoft |                                                 |
+|         | xtd.forms | sixteen_segment_display_renderer  | Gammasoft |                                                 |
+|         | xtd.forms | split_container                   | Gammasoft |                                                 |
+|         | xtd.forms | status_bar                        | Bader     |                                                 |
+|         | xtd.forms | style_sheets                      | Gammasoft | ![status](pictures/releases/status/started.png) |
+|         | xtd.forms | switch_button_renderer            | Gammasoft |                                                 |
+|         | xtd.forms | text_renderer                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
+|         | xtd.forms | themes                            | Gammasoft | ![status](pictures/releases/status/started.png) |
+|         | xtd.forms | toggle_button_renderer            | Gammasoft | ![status](pictures/releases/status/started.png) |
+|         | xtd.forms | tool_bar                          | Gammasoft | ![status](pictures/releases/status/started.png) |
+|         | xtd.forms | user_control_renderer             | Gammasoft | ![status](pictures/releases/status/done.png)    |
 
 ## Release 0.3.0 (beta)
 
