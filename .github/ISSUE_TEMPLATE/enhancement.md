@@ -1,6 +1,6 @@
 ---
 name: Enhancement
-about: Create Enhancement
+about: Create enhancement (internal use)
 title: "[Enhancement] "
 labels: enhancement
 assignees: ''
