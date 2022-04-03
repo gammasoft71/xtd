@@ -19,3 +19,11 @@ The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) li
 * If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
 
 **Your feedback is important for the evolution of the project.**
+
+## Beginners
+
+The following project aims to simplify and guide the way beginners make their first contribution. If you are looking to make your first contribution, check out the project below.
+
+[First Contributions](https://github.com/firstcontributions/first-contributions)
+
+Now you are ready to make your first contribution to xtd.
