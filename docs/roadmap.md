@@ -40,8 +40,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | #59     | xtd.core  | io::directory_info                | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #58     | xtd.core  | io::drive_info                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #57     | xtd.core  | io::file_info                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #57     | xtd.core  | io::file_system_info              | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #56     | xtd       | iOS platforms                     | Gammasoft | ![status](pictures/releases/status/started.png) |
+| #56     | xtd.core  | io::file_system_info              | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #51     | xtd       | iOS platforms                     | Gammasoft | ![status](pictures/releases/status/started.png) |
 | #37     | xtd       | uninstaller                       | Gammasoft |                                                 |
 | #54     | xtd.forms | box_renderer                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #55     | xtd.forms | button_renderer                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
