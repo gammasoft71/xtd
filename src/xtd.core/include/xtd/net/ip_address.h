@@ -27,6 +27,10 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core net
+    /// @par Examples
+    /// The following code example shows how to query a server to obtain the family addresses and the IP addresses it supports.
+    /// @include ip_address.cpp
+    /// @remarks The xtd::ip_address class contains the address of a computer on an IP network.
     class core_export_ ip_address : public xtd::object, public xtd::iequatable<ip_address> {
     public:
       /// @name Fields
@@ -62,7 +66,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::net::ip_address.
       /// @remarks ip_address is initialized by default value xtd::net::ip_address::none.
       ip_address() = default;
-      /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as an int64_t.
+      /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as an uint32_t.
       /// @param address The value of the IP address. For example, the value 0x2414188F in big-endian format would be the IP address "143.24.20.36".
       explicit ip_address(uint32_t address);
       /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as a byte array.
