@@ -1,13 +1,13 @@
 ---
 name: Enhancement
 about: Create enhancement
-title: "[Enhancement] "
+title: "[Enhancement] xtd.forms - feature"
 labels: enhancement
 assignees: ''
 
 ---
 
-# Feature title
+# xtd.forms - feature
 
 ## Library
 
@@ -15,11 +15,7 @@ xtd.forms
 
 ## Enhancement
 
-Feature
-
-## Development
-
-* class
+feature
 
 ## Description
 
