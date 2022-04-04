@@ -1,6 +1,6 @@
 ---
 name: Enhancement
-about: Create enhancement (**Internal use only**)
+about: Create enhancement
 title: "[Enhancement] "
 labels: enhancement
 assignees: ''
@@ -17,7 +17,7 @@ xtd.forms
 
 Feature
 
-## Developpement
+## Development
 
 * class
 
