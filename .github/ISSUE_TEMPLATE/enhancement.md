@@ -1,7 +1,7 @@
 ---
 name: Enhancement
 about: Create enhancement
-title: "[Enhancement] xtd.forms - feature"
+title: "[ENHANCEMENT] xtd.forms - feature"
 labels: enhancement
 assignees: ''
 
