@@ -13,6 +13,8 @@ namespace examples {
     
   protected:
     void on_paint(paint_event_args& e) override {
+      form::on_paint(e);
+
       auto solid_pen = pen(color::red, 5);
       e.graphics().draw_line(solid_pen, 10, e.clip_rectangle().height() / 7, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7);
       
@@ -36,8 +38,6 @@ namespace examples {
       custom_pen.dash_style(xtd::drawing::dash_style::custom);
       custom_pen.dash_pattern({4, 1, 3, 2});
       e.graphics().draw_line(custom_pen, 10, e.clip_rectangle().height() / 7 * 6, e.clip_rectangle().width() - 20, e.clip_rectangle().height() / 7 * 6);
-      
-      form::on_paint(e);
     }
   };
 }

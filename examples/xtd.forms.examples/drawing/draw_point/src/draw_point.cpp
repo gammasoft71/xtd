@@ -24,10 +24,10 @@ namespace examples {
     
   protected:
     void on_paint(paint_event_args& e) override {
+      form::on_paint(e);
       e.graphics().clear(color::black);
       for (auto colored_point : colored_points)
         e.graphics().draw_point(pen(colored_point.color, colored_point.width), colored_point.location);
-      form::on_paint(e);
     }
     
   private:

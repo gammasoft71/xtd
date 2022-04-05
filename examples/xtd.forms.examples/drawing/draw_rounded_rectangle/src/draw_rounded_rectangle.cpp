@@ -14,6 +14,8 @@ namespace examples {
     
   protected:
     void on_paint(paint_event_args& e) override {
+      form::on_paint(e);
+
       e.graphics().draw_rounded_rectangle(pen(color::red, 5), 10, 10, 100, 100, 10);
       
       auto dot_pen = pen(color::green, 5);
@@ -36,8 +38,6 @@ namespace examples {
       custom_pen.dash_style(xtd::drawing::dash_style::custom);
       custom_pen.dash_pattern({4, 1, 3, 2});
       e.graphics().draw_rounded_rectangle(custom_pen, 230, 120, 100, 100, 10);
-      
-      form::on_paint(e);
     }
   };
 }
