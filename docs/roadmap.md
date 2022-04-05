@@ -51,7 +51,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | #61     | xtd.forms | collapsible_panel_renderer        | Gammasoft |                                                 |
 | #62     | xtd.forms | color_picker_renderer             | Gammasoft |                                                 |
 | #63     | xtd.forms | command_link_button_renderer      | Gammasoft |                                                 |
-| #64     | xtd.forms | command_link_buttons              | Bader     |                                                 |
+| #64     | xtd.forms | command_link_buttons              | Bader     | ![status](pictures/releases/status/done.png)    |
 | #65     | xtd.forms | context_menu                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #66     | xtd.forms | control_renderer                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #67     | xtd.forms | dot_matrix_display_renderer       | Gammasoft |                                                 |
@@ -65,7 +65,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | #75     | xtd.forms | label_renderer                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #76     | xtd.forms | lcd_label_renderer                | Gammasoft |                                                 |
 | #77     | xtd.forms | light_button                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #78     | xtd.forms | light_button_renderer             | Gammasoft |                                                 |
+| #78     | xtd.forms | light_button_renderer             | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #79     | xtd.forms | light_buttons                     | Bader     |                                                 |
 | #80     | xtd.forms | month_calender                    | Bader     | ![status](pictures/releases/status/started.png) |
 | #81     | xtd.forms | notify_icon                       | Bader     |                                                 |
@@ -85,7 +85,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | #95     | xtd.forms | switch_button_renderer            | Gammasoft |                                                 |
 | #96     | xtd.forms | text_renderer                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #97     | xtd.forms | themes                            | Gammasoft | ![status](pictures/releases/status/started.png) |
-| #98     | xtd.forms | toggle_button_renderer            | Gammasoft | ![status](pictures/releases/status/started.png) |
+| #98     | xtd.forms | toggle_button_renderer            | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #99     | xtd.forms | tool_bar                          | Gammasoft | ![status](pictures/releases/status/started.png) |
 | #100    | xtd.forms | user_control_renderer             | Gammasoft | ![status](pictures/releases/status/done.png)    |
 
