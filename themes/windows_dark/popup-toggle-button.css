@@ -1,7 +1,7 @@
-/* Contains popup-button definitions. */
+/* Contains popup-toggle-button definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
-popup-button {
+popup-toggle-button {
   border-style: solid;
   border-color: system-color(control-light);
   border-width: 1px;
@@ -10,52 +10,50 @@ popup-button {
   color: system-color(control-text);
 }
 
-popup-button:hover {
+popup-toggle-button:hover {
   border-style: outset;
   border-width: 2px;
 }
 
-popup-button:pressed {
+popup-toggle-button:pressed {
   border-style: inset;
   border-width: 2px;
 }
 
-popup-button:checked {
-  border-style: inset;
-  border-width: 2px;
-}
-
-popup-button:disabled {  
+popup-toggle-button:disabled {  
   border-color: system-color(gray-text);
   background-color: #343434;
   color: system-color(gray-text);
 }
 
-popup-button:default {
-  border-style: solid;
-  border-color: system-color(control-light);
-  border-width: 2px;
-  background-color: system-color(control);
-  padding: 1px;
-  color: system-color(control-text);
-}
-
-popup-button:default:hover {
-  border-style: outset;
-  border-width: 2px;
-}
-
-popup-button:default:pressed {
+popup-toggle-button:checked {
   border-style: inset;
   border-width: 2px;
 }
 
-popup-button:default:checked {
+popup-toggle-button:checked:pressed {
   border-style: inset;
-  border-width: 3px;
+  border-width: 2px;
 }
 
-popup-button:default:disabled {  
+popup-toggle-button:checked:disabled {  
+  border-color: system-color(gray-text);
+  background-color: #343434;
+  color: system-color(gray-text);
+}
+
+popup-toggle-button:mixed {
+  border-style: inset;
+  border-width: 2px;
+  background-color: system-color(control-light-light);
+}
+
+popup-toggle-button:mixed:pressed {
+  border-style: inset;
+  border-width: 2px;
+}
+
+popup-toggle-button:mixed:disabled {  
   border-color: system-color(gray-text);
   background-color: #343434;
   color: system-color(gray-text);

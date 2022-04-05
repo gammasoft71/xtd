@@ -9,10 +9,12 @@ add_sources(
   button.css
   control.css
   flat-button.css
+  flat-toggle-button.css
   form.css
   label.css
   panel.css
   popup-button.css
+  popup-toggle-button.css
   system-colors.css
   system-images.css
   theme.css

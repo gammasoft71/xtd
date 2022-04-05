@@ -1,18 +1,18 @@
-/* Contains toggle-flat-button definitions. */
+/* Contains flat-toggle-button definitions. */
 /* Copyright (c) 2022 Gammasoft. All rights reserved. */
 
 flat-toggle-button {
   border-style: solid;
   border-color: system-color(control-text);
   border-width: 1px;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: system-color(control);
   padding: 1px 1px 3px 1px;
   color: system-color(control-text);
 }
 
 flat-toggle-button:hover {
-  background-color: system-color(control);
+  background-color: #CBCCCC;
 }
 
 flat-toggle-button:pressed {
@@ -21,42 +21,42 @@ flat-toggle-button:pressed {
 
 flat-toggle-button:disabled {  
   border-color: system-color(gray-text);
-  background-color: rgba(255, 255, 255, 0.137);
+  background-color: #F1F2F3;
   color: system-color(gray-text);
 }
 
 flat-toggle-button:checked {
-  background-color: rgba(128, 128, 128, 0.666);
+  background-color: #CBCCCC;
 }
 
 flat-toggle-button:checked:hover {
-  background-color: rgba(128, 128, 128, 0.666);
+  background-color: #CBCCCC;
 }
 
 flat-toggle-button:checked:pressed {
-  background-color: rgba(128, 128, 128, 0.666);
+  background-color: system-color(control);
 }
 
 flat-toggle-button:checked:disabled {  
   border-color: system-color(gray-text);
-  background-color: rgba(255, 255, 255, 0.137);
+  background-color: #F1F2F3;
   color: system-color(gray-text);
 }
 
 flat-toggle-button:mixed {
-  background-color: rgba(128, 128, 128, 0.333);
+  background-color: #878888;
 }
 
 flat-toggle-button:mixed:hover {
-  background-color: rgba(128, 128, 128, 0.333);
+  background-color: #CBCCCC;
 }
 
 flat-toggle-button:mixed:pressed {
-  background-color: rgba(128, 128, 128, 0.333);
+  background-color: system-color(control);
 }
 
 flat-toggle-button:mixed:disabled {  
   border-color: system-color(gray-text);
-  background-color: rgba(255, 255, 255, 0.137);
+  background-color: #F1F2F3;
   color: system-color(gray-text);
 }
