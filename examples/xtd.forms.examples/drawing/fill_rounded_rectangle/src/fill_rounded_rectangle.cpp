@@ -15,6 +15,8 @@ namespace examples {
     
   protected:
     void on_paint(paint_event_args& e) override {
+      form::on_paint(e);
+
       auto back_color = color::navy;
       auto fore_color = color::white;
       
@@ -38,8 +40,6 @@ namespace examples {
 
       e.graphics().fill_rounded_rectangle(radial_gradient_brush(point(425, 255), fore_color, back_color, 73), rectangle(350, 180, 150, 150), 20);
       e.graphics().draw_rounded_rectangle(pen(color::white, 4), rectangle(350, 180, 150, 150), 20);
-
-      form::on_paint(e);
     }
     
   private:
