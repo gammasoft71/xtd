@@ -20,7 +20,7 @@ public:
       // If no server name is passed as an argument to this program, use the current
       // server name as default.
       server = dns::get_host_name();
-      console::write_line("Using current host: {}&", server);
+      console::write_line("Using current host: {}", server);
     } else {
       server = args[0];
       if (!regex_match(server, rex)) {
