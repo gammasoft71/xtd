@@ -53,6 +53,7 @@ add_sources(
   include/xtd/forms/combo_box.h
   include/xtd/forms/combo_box_style.h
   include/xtd/forms/command_link_button.h
+  include/xtd/forms/command_link_buttons.h
   include/xtd/forms/common_dialog.h
   include/xtd/forms/component.h
   include/xtd/forms/container_control.h
