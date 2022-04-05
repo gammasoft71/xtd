@@ -8,6 +8,7 @@
 #include "border_sides.h"
 #include "border_style.h"
 #include "box_renderer.h"
+#include "flat_button_appearance.h"
 #include "content_alignment.h"
 #include "visual_styles/toggle_button_state.h"
 
@@ -37,6 +38,8 @@ namespace xtd {
       /// @param back_color The background color for the control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_toggle_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::toggle_button_state toggle_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align);
+      static void draw_flat_toggle_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::toggle_button_state toggle_state, const std::optional<xtd::drawing::color>& back_color, const flat_button_appearance& flat_appearance, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align);
+      static void draw_popup_toggle_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::toggle_button_state toggle_state, const std::optional<xtd::drawing::color>& back_color, const flat_button_appearance& flat_appearance, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align);
     };
   }
 }
