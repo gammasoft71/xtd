@@ -5,7 +5,9 @@
 #endif
 /// @endcond
 
+#include <vector>
 #include <xtd/argument_exception.h>
+#include <xtd/date_time.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include "control_handler.h"
@@ -43,6 +45,9 @@ namespace xtd {
           }
           #endif
         }
+
+        std::vector<xtd::date_time> annually_bolded_dates;
+        std::vector<xtd::date_time> bolded_dates;
       };
     }
   }

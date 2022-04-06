@@ -9,6 +9,58 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+namespace {
+  void change_attribute_dates(wxCalendarCtrl* wx_calendar_ctrl, const std::vector<xtd::date_time>& annually_dates, const std::vector<xtd::date_time>& dates) {
+    for (size_t day = 1; day <= 31; ++day)
+      wx_calendar_ctrl->wxCalendarCtrlBase::ResetAttr(day);
+    for (auto date : annually_dates) {
+      if (static_cast<uint32_t>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month()) {
+        wxCalendarDateAttr* attr = new wxCalendarDateAttr();
+        if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != null)
+          *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
+        wxFont font = attr->GetFont();
+        font = font.MakeBold();
+        attr->SetFont(font);
+        wx_calendar_ctrl->SetAttr(static_cast<size_t>(date.day()), attr);
+      }
+    }
+   
+    for (auto date : dates) {
+      if (static_cast<uint32_t>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month() && static_cast<uint32_t>(wx_calendar_ctrl->GetDate().GetYear()) == date.year()) {
+        wxCalendarDateAttr* attr = new wxCalendarDateAttr();
+        if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != null)
+          *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
+        wxFont font = attr->GetFont();
+        font = font.MakeBold();
+        attr->SetFont(font);
+        wx_calendar_ctrl->SetAttr(static_cast<size_t>(date.day()), attr);
+      }
+    }
+  }
+}
+
+void month_calendar::annually_bolded_dates(const intptr_t control, const std::vector<xtd::date_time>& dates) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  
+  reinterpret_cast<wx_month_calendar*>(control)->annually_bolded_dates = dates;
+  change_attribute_dates(static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl, reinterpret_cast<wx_month_calendar*>(control)->annually_bolded_dates, reinterpret_cast<wx_month_calendar*>(control)->bolded_dates);
+}
+
+void month_calendar::bolded_dates(const intptr_t control, const std::vector<xtd::date_time>& dates) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  
+  reinterpret_cast<wx_month_calendar*>(control)->bolded_dates = dates;
+  change_attribute_dates(static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl, reinterpret_cast<wx_month_calendar*>(control)->annually_bolded_dates, reinterpret_cast<wx_month_calendar*>(control)->bolded_dates);
+}
+
 void month_calendar::allowable_dates(const intptr_t control, date_time min_date, date_time max_date) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {

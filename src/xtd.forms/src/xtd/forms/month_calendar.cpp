@@ -13,6 +13,30 @@ month_calendar::month_calendar() {
   control_appearance(forms::control_appearance::system);
 }
 
+std::vector<xtd::date_time> month_calendar::annually_bolded_dates() const {
+  return data_->annually_bolded_dates;
+}
+
+month_calendar& month_calendar::annually_bolded_dates(const std::vector<xtd::date_time>& value) {
+  if (data_->annually_bolded_dates != value) {
+    data_->annually_bolded_dates = value;
+    native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
+  }
+  return *this;
+}
+
+std::vector<xtd::date_time> month_calendar::bolded_dates() const {
+  return data_->bolded_dates;
+}
+
+month_calendar& month_calendar::bolded_dates(const std::vector<xtd::date_time>& value) {
+  if (data_->bolded_dates != value) {
+    data_->bolded_dates = value;
+    native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
+  }
+  return *this;
+}
+
 date_time month_calendar::max_date() const {
   return data_->max_date;
 }
@@ -99,7 +123,9 @@ void month_calendar::on_date_selected(const event_args& e) {
 
 void month_calendar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
+  native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
   native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
+  native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
   native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
 }
 

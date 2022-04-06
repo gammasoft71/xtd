@@ -36,14 +36,24 @@ namespace xtd {
       protected:
         /// @name Protected methods
         /// @{
+        /// @brief Sets the array of xtd::date_time objects that determines which annual days are displayed in bold.
+        /// @param control: month calendar handle.
+        /// @param value An array of xtd::date_time objects.
+        /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
+        /// @warning Internal use only
+        static void annually_bolded_dates(const intptr_t control, const std::vector<xtd::date_time>& dates);
+        /// @brief Sets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
+        /// @param control: month calendar handle.
+        /// @param value An array of xtd::date_time objects.
+        /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
+        /// @warning Internal use only
+        static void bolded_dates(const intptr_t control, const std::vector<xtd::date_time>& dates);
         /// @brief Sets allowable date range to the calendar.
         /// @param control: month calendar handle.
         /// @param min_date: The minimum date allowable to the calendar.
         /// @param max_date: The maximum date allowable to the calendar.
         /// @warning Internal use only
         static void allowable_dates(const intptr_t control, date_time min_date, date_time max_date);
-        /// @name Protected methods
-        /// @{
         /// @brief Sets selection range to the calendar.
         /// @param control: month_calendar handle.
         /// @param date_start: The range date start.
