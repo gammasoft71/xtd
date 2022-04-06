@@ -51,7 +51,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | #61     | xtd.forms | collapsible_panel_renderer        | Gammasoft |                                                 |
 | #62     | xtd.forms | color_picker_renderer             | Gammasoft |                                                 |
 | #63     | xtd.forms | command_link_button_renderer      | Gammasoft |                                                 |
-| #64     | xtd.forms | command_link_buttons              | Bader     | ![status](pictures/releases/status/done.png)    |
+| #64     | xtd.forms | command_link_buttons              | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #65     | xtd.forms | context_menu                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #66     | xtd.forms | control_renderer                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #67     | xtd.forms | dot_matrix_display_renderer       | Gammasoft |                                                 |
@@ -66,8 +66,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | #76     | xtd.forms | lcd_label_renderer                | Gammasoft |                                                 |
 | #77     | xtd.forms | light_button                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #78     | xtd.forms | light_button_renderer             | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #79     | xtd.forms | light_buttons                     | Bader     |                                                 |
-| #80     | xtd.forms | month_calender                    | Bader     | ![status](pictures/releases/status/started.png) |
+| #79     | xtd.forms | light_buttons                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| #80     | xtd.forms | month_calender                    | Gammasoft | ![status](pictures/releases/status/started.png) |
 | #81     | xtd.forms | notify_icon                       | Bader     |                                                 |
 | #82     | xtd.forms | nine_segment_display_renderer     | Gammasoft |                                                 |
 | #83     | xtd.forms | open_file_box                     | Bader     | ![status](pictures/releases/status/done.png)    |
