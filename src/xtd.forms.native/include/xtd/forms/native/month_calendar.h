@@ -41,30 +41,38 @@ namespace xtd {
         /// @param value An array of xtd::date_time objects.
         /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
         /// @warning Internal use only
-        static void annually_bolded_dates(const intptr_t control, const std::vector<xtd::date_time>& dates);
+        static void annually_bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates);
         /// @brief Sets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
         /// @param control: month calendar handle.
         /// @param value An array of xtd::date_time objects.
         /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
         /// @warning Internal use only
-        static void bolded_dates(const intptr_t control, const std::vector<xtd::date_time>& dates);
+        static void bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates);
         /// @brief Sets allowable date range to the calendar.
         /// @param control: month calendar handle.
         /// @param min_date: The minimum date allowable to the calendar.
         /// @param max_date: The maximum date allowable to the calendar.
         /// @warning Internal use only
-        static void allowable_dates(const intptr_t control, date_time min_date, date_time max_date);
+        static void allowable_dates(intptr_t control, date_time min_date, date_time max_date);
+        /// @brief Sets the array of xtd::date_time objects that determine which monthly days to bold.
+        /// @param control: month calendar handle.
+        /// @param value An array of xtd::date_time objects.
+        /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
+        /// @warning Internal use only
+        static void monthly_bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates);
         /// @brief Sets selection range to the calendar.
         /// @param control: month_calendar handle.
         /// @param date_start: The range date start.
         /// @param date_end: The range date end.
         /// @warning Internal use only
-        static void selection_range(const intptr_t control, date_time date_start, date_time date_end);
+        static void selection_range(intptr_t control, date_time date_start, date_time date_end);
         /// @brief Gets selection range from the calendar.
         /// @param control: month_calendar handle.
         /// @return selection range.
         /// @warning Internal use only
-        static std::pair<date_time, date_time> selection_range(const intptr_t control);
+        static std::pair<date_time, date_time> selection_range(intptr_t control);
+        
+        static void today_date(intptr_t control, const xtd::date_time& value);
         /// @}
       };
     }
