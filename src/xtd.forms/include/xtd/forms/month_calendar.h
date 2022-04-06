@@ -19,17 +19,46 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of month_calendar control.
     /// @include month_calendar.cpp
+    /// @remarks The xtd::forms::month_calendar control allows the user to select a date using a visual display. You can limit the date and times that can be selected by setting the xtd::forms::month_calendar::min_date and xtd::forms::month_calendar::max_date properties.
+    /// @remarks You can change the look of the calendar portion of the control by setting the xtd::forms::month_calendar::fore_color, xtd::forms::month_calendar::font, xtd::forms::month_calendar::title_back_color, xtd::forms::month_calendar::title_fore_color, xtd::forms::month_calendar::trailing_fore_color, and xtd::forms::month_calendar::back_color properties.
+    /// @note The xtd::forms::month_calendar control only supports Gregorian calendars.
+    /// @remarks The xtd::forms::month_calendar control is drawn by the operating system, so the xtd::forms::month_calendar::paint event is never raised. If you need to provide a customized look to the xtd::forms::month_calendar control, you should override the xtd::forms::month_calendar::on_print method, call the base implementation of xtd::forms::control::on_print, and then perform custom painting.
+    /// @remarks If you need custom date formatting and a selection limited to just one date, you might consider using a xtd::forms::month_calendar::date_time_picker control instead of a xtd::forms::month_calendar. Using the xtd::forms::month_calendar::date_time_picker eliminates much of the need for validating date/time values.
     class forms_export_ month_calendar : public control {
     public:
       /// @name Constructors
       /// @{
       /// @brief Initializes a new instance of the month_calendar class.
+      /// @par Examples
+      /// The following code example demonstrates the use of month_calendar control.
+      /// @include month_calendar.cpp
+      /// @remarks The xtd::forms::month_calendar constructor creates a new xtd::forms::month_calendar.
       month_calendar();
       /// @}
       
       /// @name Properties
       /// @{
-      drawing::size default_size() const override {return {227, 162};}
+      /// @brief Gets the array of xtd::date_time objects that determines which annual days are displayed in bold.
+      /// @return An array of xtd::date_time objects.
+      /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
+      virtual std::vector<xtd::date_time> annually_bolded_dates() const;
+      /// @brief Sets the array of xtd::date_time objects that determines which annual days are displayed in bold.
+      /// @param value An array of xtd::date_time objects.
+      /// @return Current month_calendar.
+      /// @remarksUsing this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
+      virtual month_calendar& annually_bolded_dates(const std::vector<xtd::date_time>& value);
+
+      /// @brief Gets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
+      /// @return An array of xtd::date_time objects.
+      /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
+      virtual std::vector<xtd::date_time> bolded_dates() const;
+      /// @brief Sets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
+      /// @param value An array of xtd::date_time objects.
+      /// @return Current month_calendar.
+      /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
+      virtual month_calendar& bolded_dates(const std::vector<xtd::date_time>& value);
+
+      drawing::size default_size() const override {return {240, 162};}
       
       /// @brief Gets the maximum date that can be selected in the control.
       /// @return The maximum date that can be selected in the control.
@@ -86,6 +115,8 @@ namespace xtd {
       void wm_view_changed(message& message);
       
       struct data {
+        std::vector<xtd::date_time> annually_bolded_dates;
+        std::vector<xtd::date_time> bolded_dates;
         date_time min_date = date_time::min_value;
         date_time max_date = date_time::max_value;
         date_time selection_start = date_time::now();

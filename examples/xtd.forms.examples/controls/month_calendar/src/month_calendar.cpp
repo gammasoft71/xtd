@@ -16,6 +16,7 @@ public:
     month_calendar1.selection_range({date_time::now(), date_time::now()});
     month_calendar1.min_date(date_time::now().subtract(months(3)));
     month_calendar1.max_date(date_time::now().add(months(3)));
+    month_calendar1.annualy_bolded_dates({date_time(2022, 4, 1)});
     
     label1.parent(*this);
     label1.auto_size(true);
