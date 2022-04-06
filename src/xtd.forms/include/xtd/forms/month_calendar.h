@@ -41,49 +41,126 @@ namespace xtd {
       /// @brief Gets the array of xtd::date_time objects that determines which annual days are displayed in bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
-      virtual std::vector<xtd::date_time> annually_bolded_dates() const;
+      std::vector<xtd::date_time> annually_bolded_dates() const;
       /// @brief Sets the array of xtd::date_time objects that determines which annual days are displayed in bold.
       /// @param value An array of xtd::date_time objects.
       /// @return Current month_calendar.
-      /// @remarksUsing this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
-      virtual month_calendar& annually_bolded_dates(const std::vector<xtd::date_time>& value);
+      /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
+      month_calendar& annually_bolded_dates(const std::vector<xtd::date_time>& value);
 
       /// @brief Gets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
-      virtual std::vector<xtd::date_time> bolded_dates() const;
+      std::vector<xtd::date_time> bolded_dates() const;
       /// @brief Sets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
       /// @param value An array of xtd::date_time objects.
       /// @return Current month_calendar.
       /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
-      virtual month_calendar& bolded_dates(const std::vector<xtd::date_time>& value);
+      month_calendar& bolded_dates(const std::vector<xtd::date_time>& value);
 
       drawing::size default_size() const override {return {240, 162};}
       
       /// @brief Gets the maximum date that can be selected in the control.
       /// @return The maximum date that can be selected in the control.
-      virtual date_time max_date() const;
+      date_time max_date() const;
       /// @brief Sets the maximum date that can be selected in the control.
       /// @param value The maximum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual month_calendar& max_date(date_time value);
+      month_calendar& max_date(date_time value);
       
       /// @brief Gets the minimum date that can be selected in the control.
       /// @return The minimum date that can be selected in the control.
-      virtual date_time min_date() const;
+      date_time min_date() const;
       /// @brief Sets the minimum date that can be selected in the control.
       /// @param value The minimum date that can be selected in the control.
       /// @return Current month_calendar.
-      virtual month_calendar& min_date(date_time value);
+      month_calendar& min_date(date_time value);
       
-      virtual date_time selection_end() const;
-      virtual month_calendar& selection_end(date_time value);
+      /// @brief Gets the array of xtd::date_time objects that determine which monthly days to bold.
+      /// @return An array of xtd::date_time objects.
+      /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
+      std::vector<xtd::date_time> monthly_bolded_dates() const;
+      /// @brief Sets the array of xtd::date_time objects that determine which monthly days to bold.
+      /// @param value An array of xtd::date_time objects.
+      /// @return Current month_calendar.
+      /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
+      month_calendar& monthly_bolded_dates(const std::vector<xtd::date_time>& value);
       
-      virtual date_time selection_start() const;
-      virtual month_calendar& selection_start(date_time value);
+      /// @brief Gets the end date of the selected range of dates.
+      /// @return A xtd::date_time indicating the last date in the selection range.
+      /// @remarks If you set the value of the xtd::forms::month_calendar::selection_end property to a date that is earlier than the current value of the xtd::forms::month_calendar::selection_start property, xtd::forms::month_calendar::selection_start is automatically set equal to xtd::forms::month_calendar::selection_end.
+      /// @remarks If you set a date in xtd::forms::month_calendar::selection_end that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_start is adjusted; xtd::forms::month_calendar::selection_start is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
+      /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
+      /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
+      date_time selection_end() const;
+      /// @brief Sets the end date of the selected range of dates.
+      /// @param value A xtd::date_time indicating the last date in the selection range.
+      /// @return Current month_calendar.
+      /// @remarks If you set the value of the xtd::forms::month_calendar::selection_end property to a date that is earlier than the current value of the xtd::forms::month_calendar::selection_start property, xtd::forms::month_calendar::selection_start is automatically set equal to xtd::forms::month_calendar::selection_end.
+      /// @remarks If you set a date in xtd::forms::month_calendar::selection_end that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_start is adjusted; xtd::forms::month_calendar::selection_start is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
+      /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
+      /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
+      month_calendar& selection_end(date_time value);
+
+      /// @brief Gets the selected range of dates for a month calendar control.
+      /// @return A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @remarks Setting this property is functionally equivalent to using the xtd::forms::month_calendar::set_selection_range method. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end properties. You cannot change the start and end dates by setting the xtd::forms::selection_range::start or xtd::forms::selection_range::end property values of the xtd::forms::month_calendar::selection_range property. You should use xtd::forms::month_calendar::selection_start, xtd::forms::month_calendar::selection_end, or xtd::forms::month_calendar::set_selection_range.
+      /// @remarks If the Start property value of the xtd::forms::month_calendar::selection_range is greater than its xtd::forms::selection_rande::end property value, the dates are swapped; the xtd::forms::selection_range::end property value becomes the starting date, and xtd::forms::selection_range::start property value becomes the end date.
+      forms::selection_range selection_range() const;
+      /// @brief Sets the selected range of dates for a month calendar control.
+      /// @param value A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @return Current month_calendar.
+      /// @remarks Setting this property is functionally equivalent to using the xtd::forms::month_calendar::set_selection_range method. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end properties. You cannot change the start and end dates by setting the xtd::forms::selection_range::start or xtd::forms::selection_range::end property values of the xtd::forms::month_calendar::selection_range property. You should use xtd::forms::month_calendar::selection_start, xtd::forms::month_calendar::selection_end, or xtd::forms::month_calendar::set_selection_range.
+      /// @remarks If the Start property value of the xtd::forms::month_calendar::selection_range is greater than its xtd::forms::selection_rande::end property value, the dates are swapped; the xtd::forms::selection_range::end property value becomes the starting date, and xtd::forms::selection_range::start property value becomes the end date.
+      month_calendar& selection_range(const forms::selection_range& value);
       
-      virtual forms::selection_range selection_range() const;
-      virtual month_calendar& selection_range(const forms::selection_range& value);
+      /// @brief Gets the start date of the selected range of dates.
+      /// @return A xtd::date_time indicating the first date in the selection range.
+      /// @remarks If you set the value of the xtd::forms::month_calendar::selection_start property to a date that is later than the current value of the xtd::forms::month_calendar::selection_end property, xtd::forms::month_calendar::selection_end is automatically set equal to xtd::forms::month_calendar::selection_start.
+      /// @remarks If you set a date in xtd::forms::month_calendar::selection_start that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_end is adjusted; xtd::forms::month_calendar::selection_end is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
+      /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
+      /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
+      date_time selection_start() const;
+      /// @brief Sets the start date of the selected range of dates.
+      /// @param value A xtd::date_time indicating the first date in the selection range.
+      /// @return Current month_calendar.
+      /// @remarks If you set the value of the xtd::forms::month_calendar::selection_start property to a date that is later than the current value of the xtd::forms::month_calendar::selection_end property, xtd::forms::month_calendar::selection_end is automatically set equal to xtd::forms::month_calendar::selection_start.
+      /// @remarks If you set a date in xtd::forms::month_calendar::selection_start that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_end is adjusted; xtd::forms::month_calendar::selection_end is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
+      /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
+      /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
+      month_calendar& selection_start(date_time value);
+      
+      /// @brief Gets a value indicating whether the date represented by the xtd::today_date property is displayed at the bottom of the control.
+      /// @return true if today's date is displayed; otherwise, false. The default is true.
+      /// @remarks The date is displayed in the format specified by the system settings for the short date format.
+      bool show_today() const;
+      /// @brief Sets a value indicating whether the date represented by the xtd::today_date property is displayed at the bottom of the control.
+      /// @param value true if today's date is displayed; otherwise, false. The default is true.
+      /// @return Current month_calendar.
+      /// @remarks The date is displayed in the format specified by the system settings for the short date format.
+      month_calendar& show_today(bool value);
+
+      /// @brief Gets a value indicating whether the month calendar control displays week numbers (1-52) to the left of each row of days.
+      /// @return true if the week numbers are displayed; otherwise, false. The default is false.
+      bool show_week_numbers() const;
+      /// @brief Sets a value indicating whether the month calendar control displays week numbers (1-52) to the left of each row of days.
+      /// @param value true if the week numbers are displayed; otherwise, false. The default is false.
+      /// @return Current month_calendar.
+      month_calendar& show_week_numbers(bool value);
+      
+      /// @brief Gets the value that is used by MonthCalendar as today's date.
+      /// @return A xtd::date_time representing today's date. The default value is the current system date.
+      /// @remarks By default, the xtd::forms::month_calendar::today_date property returns the current system date, and the xtd::forms::month_calendar::today_date_set property is false. Setting the TodayDate property sets the xtd::forms::month_calendar::today_date_set property to true and, from that point, the value returned by the xtd::forms::month_calendar::roday_date property is the one the user sets.
+      const xtd::date_time& today_date() const;
+      /// @brief Sets the value that is used by MonthCalendar as today's date.
+      /// @param value A xtd::date_time representing today's date. The default value is the current system date.
+      /// @return Current month_calendar.
+      /// @remarks By default, the xtd::forms::month_calendar::today_date property returns the current system date, and the xtd::forms::month_calendar::today_date_set property is false. Setting the TodayDate property sets the xtd::forms::month_calendar::today_date_set property to true and, from that point, the value returned by the xtd::forms::month_calendar::roday_date property is the one the user sets.
+      month_calendar& today_date(const xtd::date_time& value);
+
+      /// @brief Gets a value indicating whether the xtd::forms::month_calendar::today_date property has been explicitly set.
+      /// @return true if the value for the xtd::forms::month_calendar::today_date property has been explicitly set; otherwise, false. The default is false.
+      bool today_date_set() const;
       /// @}
       
       /// @name Events
@@ -119,8 +196,13 @@ namespace xtd {
         std::vector<xtd::date_time> bolded_dates;
         date_time min_date = date_time::min_value;
         date_time max_date = date_time::max_value;
+        std::vector<xtd::date_time> monthly_bolded_dates;
         date_time selection_start = date_time::now();
         date_time selection_end = date_time::now();
+        bool show_today = true;
+        bool show_week_numbers = false;
+        xtd::date_time today_date = xtd::date_time::now();
+        bool today_date_set = false;
       };
       
       std::shared_ptr<data> data_ = std::make_shared<data>();

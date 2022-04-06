@@ -1,6 +1,7 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/month_calendar.h>
+#include <xtd/forms/native/month_calendar_styles.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
@@ -67,6 +68,18 @@ month_calendar& month_calendar::month_calendar::min_date(date_time value) {
   return *this;
 }
 
+std::vector<xtd::date_time> month_calendar::monthly_bolded_dates() const {
+  return data_->monthly_bolded_dates;
+}
+
+month_calendar& month_calendar::monthly_bolded_dates(const std::vector<xtd::date_time>& value) {
+  if (data_->monthly_bolded_dates != value) {
+    data_->monthly_bolded_dates = value;
+    native::month_calendar::monthly_bolded_dates(handle(), data_->monthly_bolded_dates);
+  }
+  return *this;
+}
+
 date_time month_calendar::selection_end() const {
   return data_->selection_end;
 }
@@ -107,9 +120,53 @@ month_calendar& month_calendar::selection_range(const forms::selection_range& va
   return *this;
 }
 
+bool month_calendar::show_today() const {
+  return data_->show_today;
+}
+
+month_calendar& month_calendar::show_today(bool value) {
+  if (data_->show_today != value) {
+    data_->show_today = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+bool month_calendar::show_week_numbers() const {
+  return data_->show_week_numbers;
+}
+
+month_calendar& month_calendar::show_week_numbers(bool value) {
+  if (data_->show_week_numbers != value) {
+    data_->show_week_numbers = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+const xtd::date_time& month_calendar::today_date() const {
+  return data_->today_date;
+}
+
+month_calendar& month_calendar::today_date(const xtd::date_time& value) {
+  if (data_->today_date != value) {
+    data_->today_date = value;
+    data_->today_date_set = true;
+  }
+  return *this;
+}
+
+bool month_calendar::today_date_set() const {
+  return data_->today_date_set;
+}
+
 forms::create_params month_calendar::create_params() const {
   forms::create_params create_params = control::create_params();
   create_params.class_name("monthcalendar");
+ 
+  if (!data_->show_today) create_params.style(create_params.style() | MCS_NOTODAY);
+  if (data_->show_week_numbers) create_params.style(create_params.style() | MCS_WEEKNUMBERS);
+
   return create_params;
 }
 
@@ -127,6 +184,7 @@ void month_calendar::on_handle_created(const event_args& e) {
   native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
   native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
   native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
+  native::month_calendar::today_date(handle(), data_->today_date);
 }
 
 void month_calendar::wnd_proc(message& message) {
