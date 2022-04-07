@@ -12,6 +12,7 @@
 #include <xtd/static.h>
 #include <xtd/date_time.h>
 #include <xtd/forms_native_export.h>
+#include <xtd/drawing/color.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -37,42 +38,101 @@ namespace xtd {
         /// @name Protected methods
         /// @{
         /// @brief Sets the array of xtd::date_time objects that determines which annual days are displayed in bold.
-        /// @param control: month calendar handle.
-        /// @param value An array of xtd::date_time objects.
+        /// @param control month calendar handle.
+        /// @param dates An array of xtd::date_time objects.
         /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
         /// @warning Internal use only
         static void annually_bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates);
+
         /// @brief Sets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
-        /// @param control: month calendar handle.
-        /// @param value An array of xtd::date_time objects.
+        /// @param control month calendar handle.
+        /// @param dates An array of xtd::date_time objects.
         /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
         /// @warning Internal use only
         static void bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates);
+
+        /// @brief Sets the number of columns and rows of months displayed.
+        /// @param control month calendar handle.
+        /// @param calendar_dimensions A xtd::drawing::size with the number of columns and rows to use to display the calendar.
+        /// @warning Internal use only
+        static void calendar_dimensions(intptr_t control, const xtd::drawing::size& calendar_dimensions);
+
         /// @brief Sets allowable date range to the calendar.
-        /// @param control: month calendar handle.
-        /// @param min_date: The minimum date allowable to the calendar.
-        /// @param max_date: The maximum date allowable to the calendar.
+        /// @param control month calendar handle.
+        /// @param min_date The minimum date allowable to the calendar.
+        /// @param max_date The maximum date allowable to the calendar.
         /// @warning Internal use only
         static void allowable_dates(intptr_t control, date_time min_date, date_time max_date);
+
+        /// @brief Sets the first day of the week as displayed in the month calendar.
+        /// @param day One of following day values :
+        /// | value | day         |
+        /// |-------|-------------|
+        /// | 0     | monday      |
+        /// | 1     | tuesday     |
+        /// | 2     | wednesday   |
+        /// | 3     | thursday    |
+        /// | 4     | friday      |
+        /// | 5     | saturday    |
+        /// | 6     | sunday      |
+        /// | 7     | default_day |
+        /// @warning Internal use only
+        static void first_day_of_week(intptr_t control, uint32_t day);
+
+        /// @brief Sets the maximum number of days that can be selected in a month calendar control.
+        /// @param control month calendar handle.
+        /// @param value The maximum number of days that you can select. The default is 7.
+        static void max_selection_count(intptr_t control, uint32_t value);
+
         /// @brief Sets the array of xtd::date_time objects that determine which monthly days to bold.
-        /// @param control: month calendar handle.
-        /// @param value An array of xtd::date_time objects.
+        /// @param control month calendar handle.
+        /// @param dates An array of xtd::date_time objects.
         /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
         /// @warning Internal use only
         static void monthly_bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates);
+
         /// @brief Sets selection range to the calendar.
-        /// @param control: month_calendar handle.
-        /// @param date_start: The range date start.
+        /// @param control month_calendar handle.
+        /// @param date_start The range date start.
         /// @param date_end: The range date end.
         /// @warning Internal use only
         static void selection_range(intptr_t control, date_time date_start, date_time date_end);
+
         /// @brief Gets selection range from the calendar.
-        /// @param control: month_calendar handle.
+        /// @param control month_calendar handle.
         /// @return selection range.
         /// @warning Internal use only
         static std::pair<date_time, date_time> selection_range(intptr_t control);
         
+        /// @brief Gets the minimum size to display one month of the calendar.
+        /// @param control month_calendar handle.
+        /// @return The size, in pixels, necessary to fully display one month in the calendar.
+        /// @warning Internal use only
+        static xtd::drawing::size single_month_size(intptr_t control);
+        
+        /// @brief Sets a value indicating the background color of the title area of the calendar.
+        /// @param control month_calendar handle.
+        /// @param color A xtd::drawing::color.
+        /// @warning Internal use only
+        static void title_back_color(intptr_t control, const xtd::drawing::color& color);
+ 
+        /// @brief Sets a value indicating the foreground color of the title area of the calendar.
+        /// @param control month_calendar handle.
+        /// @param color A xtd::drawing::color.
+        /// @warning Internal use only
+        static void title_fore_color(intptr_t control, const xtd::drawing::color& color);
+
+        /// @brief Sets the value that is used by month_calendar as today's date.
+        /// @param control month_calendar handle.
+        /// @param value A xtd::date_time representing today's date.
+        /// @warning Internal use only
         static void today_date(intptr_t control, const xtd::date_time& value);
+        
+        /// @brief Sets a value indicating the color of days in months that are not fully displayed in the control.
+        /// @param control month_calendar handle.
+        /// @param color A xtd::drawing::color.
+        /// @warning Internal use only
+        static void trailing_fore_color(intptr_t control, const xtd::drawing::color& color);
         /// @}
       };
     }
