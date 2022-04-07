@@ -255,7 +255,35 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<month_calendar, xtd::forms::date_range_event_handler> date_selected;
       /// @}
+
+      /// @name Protected methods
       
+      /// @{
+      /// @brief Adds a day that is displayed in bold on an annual basis in the month calendar.
+      /// @param date The date to be displayed in bold.
+      /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method afterward to update the display.
+      /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::annually_bolded_dates property.
+      void add_annually_bolded_date(const xtd::date_time& date);
+
+      /// @brief Adds a day to be displayed in bold in the month calendar.
+      /// @param date The date to be displayed in bold.
+      /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method afterward to update the display.
+      /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::bolded_dates property.
+      void add_bolded_date(const xtd::date_time& date);
+
+      /// @brief Adds a day that is displayed in bold on a monthly basis in the month calendar.
+      /// @param date The date to be displayed in bold.
+      /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method afterward to update the display.
+      /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::monthly_bolded_dates property.
+      void add_monthly_bolded_date(const xtd::date_time& date);
+      
+      
+
+      /// @brief Repaints the bold dates to reflect the dates set in the lists of bold dates.
+      /// @remarks Use the xtd::forms::month_calendar::update_bolded_dates method to reflect changes made to xtd::forms::month_calendar::annually_bolded_dates, xtd::forms::month_calendar::monthly_bolded_dates, or xtd::forms::month_calendar::bolded_dates properties, either directly by modifying elements of the array or by using the add or remove methods provided to modify the date lists.
+      void update_bolded_dates();
+      /// @}
+
     protected:
       /// @name Protected methods
       
@@ -264,9 +292,20 @@ namespace xtd {
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
-      /// @brief Raises the DateChanged event.
+      /// @brief Raises the xtd::forms::month_calendar::date_changed event.
       /// @param e A xtd::forms::date_range_event_args that contains the event data.
+      /// @remarks Raising an event invokes the event handler through a delegate. For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks The xtd::forms::month_calendar::on_date_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      /// @par Notes to Inherotors
+      /// When overriding xtd::forms::month_calendar::on_date_changed in a derived class, be sure to call the base class' xtd::forms::month_calendar::on_date_changed method so that registered delegates receive the event.
       virtual void on_date_changed(const xtd::forms::date_range_event_args& e);
+      
+      /// @brief Raises the xtd::forms::month_calendar::date_selected event.
+      /// @param e A xtd::forms::date_range_event_args that contains the event data.
+      /// @remarks Raising an event invokes the event handler through a delegate. For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks The xtd::forms::month_calendar::on_date_selected method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      /// @par Notes to Inherotors
+      /// When overriding xtd::forms::month_calendar::on_date_selected in a derived class, be sure to call the base class' xtd::forms::month_calendar::on_date_selected method so that registered delegates receive the event.
       virtual void on_date_selected(const xtd::forms::date_range_event_args& e);
       
       void on_handle_created(const event_args& e) override;

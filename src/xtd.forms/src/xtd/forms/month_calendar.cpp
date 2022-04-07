@@ -249,6 +249,24 @@ month_calendar& month_calendar::trailing_fore_color(const xtd::drawing::color& v
   return *this;
 }
 
+void month_calendar::add_annually_bolded_date(const xtd::date_time& date) {
+  data_->annually_bolded_dates.push_back(date);
+}
+
+void month_calendar::add_bolded_date(const xtd::date_time& date) {
+  data_->bolded_dates.push_back(date);
+}
+
+void month_calendar::add_monthly_bolded_date(const xtd::date_time& date) {
+  data_->monthly_bolded_dates.push_back(date);
+}
+
+void month_calendar::update_bolded_dates() {
+  native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
+  native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
+  native::month_calendar::monthly_bolded_dates(handle(), data_->bolded_dates);
+}
+
 forms::create_params month_calendar::create_params() const {
   forms::create_params create_params = control::create_params();
   create_params.class_name("monthcalendar");
@@ -270,9 +288,7 @@ void month_calendar::on_date_selected(const date_range_event_args& e) {
 
 void month_calendar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
   native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
-  native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
   native::month_calendar::first_day_of_week(handle(), static_cast<uint32_t>(data_->first_day_of_week));
   native::month_calendar::max_selection_count(handle(), data_->max_selection_count);
   native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
@@ -280,6 +296,7 @@ void month_calendar::on_handle_created(const event_args& e) {
   native::month_calendar::title_back_color(handle(), title_back_color());
   native::month_calendar::title_fore_color(handle(), title_fore_color());
   native::month_calendar::trailing_fore_color(handle(), trailing_fore_color());
+  update_bolded_dates();
   single_month_size();
 }
 
