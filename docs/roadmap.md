@@ -67,7 +67,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | #77     | xtd.forms | light_button                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #78     | xtd.forms | light_button_renderer             | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #79     | xtd.forms | light_buttons                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| #80     | xtd.forms | month_calender                    | Gammasoft | ![status](pictures/releases/status/started.png) |
+| #80     | xtd.forms | month_calender                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | #81     | xtd.forms | notify_icon                       | Bader     |                                                 |
 | #82     | xtd.forms | nine_segment_display_renderer     | Gammasoft |                                                 |
 | #83     | xtd.forms | open_file_box                     | Bader     | ![status](pictures/releases/status/done.png)    |
