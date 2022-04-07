@@ -41,6 +41,7 @@ namespace xtd {
         explicit wx_month_calendar(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, csf_);
           control_handler::create<wxMonthCalendar>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.location().x(), create_params.location().y()), wxSize(create_params.size().width(), create_params.size().height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+          if ((create_params.style() & MCS_NOTODAY) == MCS_NOTODAY) show_today = false;
           if ((create_params.style() & MCS_NOTODAYCIRCLE) == MCS_NOTODAYCIRCLE) show_today_circle = false;
           static_cast<wxMonthCalendar*>(control())->calendarCtrl->Bind(wxEVT_CALENDAR_PAGE_CHANGED, &wx_month_calendar::on_page_changed, this);
           static_cast<wxMonthCalendar*>(control())->calendarCtrl->Bind(wxEVT_CALENDAR_YEAR_CHANGED, &wx_month_calendar::on_year_changed, this);
@@ -55,8 +56,6 @@ namespace xtd {
         static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           
-          //wx_style |= wxCAL_SEQUENTIAL_MONTH_SELECTION;
-          //if ((style & MCS_NOTODAY) == MCS_NOTODAY) wx_style &= ~wxCAL_SHOW_TODAY; // Does not exsits in wxWidgets...
           if ((style & MCS_WEEKNUMBERS) == MCS_WEEKNUMBERS) wx_style |= wxCAL_SHOW_WEEK_NUMBERS;
 
           return wx_style;
@@ -122,6 +121,7 @@ namespace xtd {
         xtd::date_time today_date = xtd::date_time::now();
         uint32_t current_month = xtd::date_time::now().month();
         uint32_t current_year = xtd::date_time::now().year();
+        bool show_today = true;
         bool show_today_circle = true;
       };
     }

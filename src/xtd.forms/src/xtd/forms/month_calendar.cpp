@@ -6,6 +6,7 @@
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/month_calendar.h"
+#include "../../../include/xtd/forms/application.h"
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -38,6 +39,29 @@ month_calendar& month_calendar::bolded_dates(const std::vector<xtd::date_time>& 
   return *this;
 }
 
+const xtd::drawing::size& month_calendar::calendar_dimensions() const {
+  return data_->calendar_dimensions;
+}
+
+month_calendar& month_calendar::calendar_dimensions(const xtd::drawing::size& value) {
+  if (data_->calendar_dimensions != value) {
+    data_->calendar_dimensions = value;
+    native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
+  }
+  return *this;
+}
+
+xtd::forms::day month_calendar::first_day_of_week() const {
+  return data_->first_day_of_week;
+}
+month_calendar& month_calendar::first_day_of_week(xtd::forms::day value) {
+  if (data_->first_day_of_week != value) {
+    data_->first_day_of_week = value;
+    native::month_calendar::first_day_of_week(handle(), static_cast<uint32_t>(data_->first_day_of_week));
+  }
+  return *this;
+}
+
 date_time month_calendar::max_date() const {
   return data_->max_date;
 }
@@ -49,6 +73,18 @@ month_calendar& month_calendar::max_date(date_time value) {
     if (is_handle_created()) native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
     selection_start(data_->selection_start);
     selection_end(data_->selection_end);
+  }
+  return *this;
+}
+
+uint32_t month_calendar::max_selection_count() const {
+  return data_->max_selection_count;
+}
+
+month_calendar& month_calendar::max_selection_count(uint32_t value) {
+  if (data_->max_selection_count != value) {
+    data_->max_selection_count = value;
+    native::month_calendar::max_selection_count(handle(), data_->max_selection_count);
   }
   return *this;
 }
@@ -90,7 +126,7 @@ month_calendar& month_calendar::selection_end(date_time value) {
   if (data_->selection_end != value) {
     data_->selection_end = value;
     if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
-    on_date_selected(event_args::empty);
+    on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
   }
   return *this;
 }
@@ -105,7 +141,7 @@ month_calendar& month_calendar::selection_start(date_time value) {
   if (data_->selection_start != value) {
     data_->selection_start = value;
     if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
-    on_date_selected(event_args::empty);
+    on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
   }
   return *this;
 }
@@ -132,6 +168,18 @@ month_calendar& month_calendar::show_today(bool value) {
   return *this;
 }
 
+bool month_calendar::show_today_circle() const {
+  return data_->show_today_circle;
+}
+
+month_calendar& month_calendar::show_today_circle(bool value) {
+  if (data_->show_today_circle != value) {
+    data_->show_today_circle = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 bool month_calendar::show_week_numbers() const {
   return data_->show_week_numbers;
 }
@@ -140,6 +188,35 @@ month_calendar& month_calendar::show_week_numbers(bool value) {
   if (data_->show_week_numbers != value) {
     data_->show_week_numbers = value;
     recreate_handle();
+  }
+  return *this;
+}
+
+drawing::size month_calendar::single_month_size() const {
+  data_->single_month_size = native::month_calendar::single_month_size(handle());
+  return data_->single_month_size;
+}
+
+xtd::drawing::color month_calendar::title_back_color() const {
+  return data_->title_back_color.value_or(application::style_sheet().system_colors().active_caption());
+}
+
+month_calendar& month_calendar::title_back_color(const xtd::drawing::color& value) {
+  if (data_->title_back_color != value) {
+    data_->title_back_color = value;
+    native::month_calendar::title_back_color(handle(), title_back_color());
+  }
+  return *this;
+}
+
+xtd::drawing::color month_calendar::title_fore_color() const {
+  return data_->title_fore_color.value_or(application::style_sheet().system_colors().active_caption_text());
+}
+
+month_calendar& month_calendar::title_fore_color(const xtd::drawing::color& value) {
+  if (data_->title_fore_color != value) {
+    data_->title_fore_color = value;
+    native::month_calendar::title_fore_color(handle(), title_fore_color());
   }
   return *this;
 }
@@ -160,21 +237,34 @@ bool month_calendar::today_date_set() const {
   return data_->today_date_set;
 }
 
+xtd::drawing::color month_calendar::trailing_fore_color() const {
+  return data_->trailing_fore_color.value_or(application::style_sheet().system_colors().gray_text());
+}
+
+month_calendar& month_calendar::trailing_fore_color(const xtd::drawing::color& value) {
+  if (data_->trailing_fore_color != value) {
+    data_->trailing_fore_color = value;
+    native::month_calendar::trailing_fore_color(handle(), trailing_fore_color());
+  }
+  return *this;
+}
+
 forms::create_params month_calendar::create_params() const {
   forms::create_params create_params = control::create_params();
   create_params.class_name("monthcalendar");
  
   if (!data_->show_today) create_params.style(create_params.style() | MCS_NOTODAY);
+  if (!data_->show_today_circle) create_params.style(create_params.style() | MCS_NOTODAYCIRCLE);
   if (data_->show_week_numbers) create_params.style(create_params.style() | MCS_WEEKNUMBERS);
 
   return create_params;
 }
 
-void month_calendar::on_date_changed(const event_args& e) {
+void month_calendar::on_date_changed(const date_range_event_args& e) {
   if (can_raise_events()) date_changed(*this, e);
 }
 
-void month_calendar::on_date_selected(const event_args& e) {
+void month_calendar::on_date_selected(const date_range_event_args& e) {
   if (can_raise_events()) date_selected(*this, e);
 }
 
@@ -183,8 +273,14 @@ void month_calendar::on_handle_created(const event_args& e) {
   native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
   native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
   native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
+  native::month_calendar::first_day_of_week(handle(), static_cast<uint32_t>(data_->first_day_of_week));
+  native::month_calendar::max_selection_count(handle(), data_->max_selection_count);
   native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
   native::month_calendar::today_date(handle(), data_->today_date);
+  native::month_calendar::title_back_color(handle(), title_back_color());
+  native::month_calendar::title_fore_color(handle(), title_fore_color());
+  native::month_calendar::trailing_fore_color(handle(), trailing_fore_color());
+  single_month_size();
 }
 
 void month_calendar::wnd_proc(message& message) {
@@ -220,14 +316,14 @@ void month_calendar::wm_date_selected(message& message) {
   auto selection_range = native::month_calendar::selection_range(handle());
   data_->selection_start = selection_range.first;
   data_->selection_end = selection_range.second;
-  on_date_selected(event_args::empty);
+  on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
 }
 
 void month_calendar::wm_date_changed(message& message) {
   auto selection_range = native::month_calendar::selection_range(handle());
   data_->selection_start = selection_range.first;
   data_->selection_end = selection_range.second;
-  on_date_changed(event_args::empty);
+  on_date_changed(date_range_event_args(data_->selection_start, data_->selection_end));
 }
 
 void month_calendar::wm_view_changed(message& message) {

@@ -31,6 +31,40 @@ void month_calendar::bolded_dates(intptr_t control, const std::vector<xtd::date_
   reinterpret_cast<wx_month_calendar*>(control)->change_attribute_dates(reinterpret_cast<wx_month_calendar*>(control));
 }
 
+void month_calendar::calendar_dimensions(intptr_t control, const xtd::drawing::size& value) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  
+  // Does not exists in wxWidgets...
+}
+
+void month_calendar::first_day_of_week(intptr_t control, uint32_t day) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+
+  wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl;
+  auto style = wx_calendar_ctrl->GetWindowStyle();
+  style &= ~(wxCAL_MONDAY_FIRST|wxCAL_SUNDAY_FIRST);
+  switch (day) {
+    case 0: style |= wxCAL_MONDAY_FIRST; break;
+    case 1: break;
+    case 2: break;
+    case 3: break;
+    case 4: break;
+    case 5: break;
+    case 6: style |= wxCAL_SUNDAY_FIRST; break;
+    case 7: break;
+    default: break;
+  }
+  wx_calendar_ctrl->SetWindowStyle(style);
+}
+
 void month_calendar::allowable_dates(intptr_t control, date_time min_date, date_time max_date) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
@@ -42,6 +76,16 @@ void month_calendar::allowable_dates(intptr_t control, date_time min_date, date_
   wxDateTime wx_min_date_time(min_date.day(), static_cast<wxDateTime::Month>(min_date.month() - 1), min_date.year());
   wxDateTime wx_max_date_time(max_date.day(), static_cast<wxDateTime::Month>(max_date.month() - 1), max_date.year());
   wx_calendar_ctrl->SetDateRange(wx_min_date_time, wx_max_date_time);
+}
+
+void month_calendar::max_selection_count(intptr_t control, uint32_t value) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  
+  // Does not exists in wxWidgets...
 }
 
 void month_calendar::monthly_bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates) {
@@ -81,6 +125,30 @@ pair<date_time, date_time> month_calendar::selection_range(intptr_t control) {
   return {date, date};
 }
 
+xtd::drawing::size month_calendar::single_month_size(intptr_t control) {
+  return {240, 162};
+}
+
+void month_calendar::title_back_color(intptr_t control, const xtd::drawing::color& color) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl;
+  wx_calendar_ctrl->SetHeaderColours(wx_calendar_ctrl->GetHeaderColourFg(), {color.r(), color.g(), color.b(), color.a()});
+}
+
+void month_calendar::title_fore_color(intptr_t control, const xtd::drawing::color& color) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl;
+  wx_calendar_ctrl->SetHeaderColours({color.r(), color.g(), color.b(), color.a()}, wx_calendar_ctrl->GetHeaderColourBg());
+}
+
 void month_calendar::today_date(intptr_t control, const xtd::date_time& value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
@@ -90,4 +158,13 @@ void month_calendar::today_date(intptr_t control, const xtd::date_time& value) {
 
   reinterpret_cast<wx_month_calendar*>(control)->today_date = value;
   reinterpret_cast<wx_month_calendar*>(control)->change_attribute_dates(reinterpret_cast<wx_month_calendar*>(control));
+}
+
+void month_calendar::trailing_fore_color(intptr_t control, const xtd::drawing::color& color) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  // Does not exists in wxWidgets...
 }
