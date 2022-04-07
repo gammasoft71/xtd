@@ -261,6 +261,60 @@ void month_calendar::add_monthly_bolded_date(const xtd::date_time& date) {
   data_->monthly_bolded_dates.push_back(date);
 }
 
+month_calendar::hit_test_info month_calendar::hit_test(int32_t x, int32_t y) const {
+  return hit_test({x, y});
+}
+
+month_calendar::hit_test_info month_calendar::hit_test(const xtd::drawing::point& point) const {
+  auto [hit_area, time] = native::month_calendar::hit_test(handle(), point);
+  return month_calendar::hit_test_info(static_cast<month_calendar::hit_area>(hit_area), point, time);
+}
+
+void month_calendar::remove_all_annually_bolded_dates() {
+  data_->annually_bolded_dates.clear();
+}
+
+void month_calendar::remove_all_bolded_dates() {
+  data_->bolded_dates.clear();
+}
+
+void month_calendar::remove_all_monthly_bolded_dates() {
+  data_->monthly_bolded_dates.clear();
+}
+
+void month_calendar::remove_annually_bolded_dates(const xtd::date_time& date) {
+  auto it = find(data_->annually_bolded_dates.begin(), data_->annually_bolded_dates.end(), date);
+  if (it != data_->annually_bolded_dates.end()) data_->annually_bolded_dates.erase(it);
+}
+
+void month_calendar::remove_bolded_dates(const xtd::date_time& date) {
+  auto it = find(data_->bolded_dates.begin(), data_->bolded_dates.end(), date);
+  if (it != data_->bolded_dates.end()) data_->bolded_dates.erase(it);
+}
+
+void month_calendar::remove_monthly_bolded_dates(const xtd::date_time& date) {
+  auto it = find(data_->monthly_bolded_dates.begin(), data_->monthly_bolded_dates.end(), date);
+  if (it != data_->monthly_bolded_dates.end()) data_->monthly_bolded_dates.erase(it);
+}
+
+void month_calendar::set_calendar_dimensions(int32_t x, int32_t y) {
+  calendar_dimensions({x, y});
+}
+
+void month_calendar::set_date(const xtd::date_time& date) {
+  selection_start(date);
+  selection_end(date);
+}
+
+void month_calendar::set_selection_range(const xtd::date_time& date1, const xtd::date_time& date2) {
+  selection_start(date1);
+  selection_end(date2);
+}
+
+xtd::ustring month_calendar::to_string() const noexcept {
+  return ustring::format("{}, SelectionRange: Start: {:d}, End: {:d}", control::to_string(), data_->selection_start, data_->selection_end);
+}
+
 void month_calendar::update_bolded_dates() {
   native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
   native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
