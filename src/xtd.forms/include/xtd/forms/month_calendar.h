@@ -30,6 +30,7 @@ namespace xtd {
     public:
       /// @name Constructors
       /// @{
+
       /// @brief Initializes a new instance of the month_calendar class.
       /// @par Examples
       /// The following code example demonstrates the use of month_calendar control.
@@ -40,6 +41,7 @@ namespace xtd {
       
       /// @name Properties
       /// @{
+
       /// @brief Gets the array of xtd::date_time objects that determines which annual days are displayed in bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
