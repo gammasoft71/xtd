@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <chrono>
+#include "application.h"
 #include "control.h"
 #include "day.h"
 #include "selection_range.h"
@@ -136,7 +137,7 @@ namespace xtd {
       /// @remarks Only one calendar year is displayed at a time, and the maximum number of months that can be displayed is 12. Valid combinations of columns and rows make a maximum product of 12; for values greater than 12, the display is modified on a best-fit basis.
       month_calendar& calendar_dimensions(const xtd::drawing::size& value);
 
-      drawing::size default_size() const override {return {240, 162};}
+      xtd::drawing::size default_size() const override {return {240, 162};}
       
       /// @brief Gets the first day of the week as displayed in the month calendar.
       /// @return One of the xtd::forms::day values. The default is td::forms::day::default_day.
@@ -148,11 +149,11 @@ namespace xtd {
       
       /// @brief Gets the maximum date that can be selected in the control.
       /// @return The maximum date that can be selected in the control.
-      date_time max_date() const;
+      xtd::date_time max_date() const;
       /// @brief Sets the maximum date that can be selected in the control.
       /// @param value The maximum date that can be selected in the control.
       /// @return Current month_calendar.
-      month_calendar& max_date(date_time value);
+      month_calendar& max_date(xtd::date_time value);
       
       /// @brief Gets the maximum number of days that can be selected in a month calendar control.
       /// @return The maximum number of days that you can select. The default is 7.
@@ -170,11 +171,11 @@ namespace xtd {
       
       /// @brief Gets the minimum date that can be selected in the control.
       /// @return The minimum date that can be selected in the control.
-      date_time min_date() const;
+      xtd::date_time min_date() const;
       /// @brief Sets the minimum date that can be selected in the control.
       /// @param value The minimum date that can be selected in the control.
       /// @return Current month_calendar.
-      month_calendar& min_date(date_time value);
+      month_calendar& min_date(xtd::date_time value);
       
       /// @brief Gets the array of xtd::date_time objects that determine which monthly days to bold.
       /// @return An array of xtd::date_time objects.
@@ -192,7 +193,7 @@ namespace xtd {
       /// @remarks If you set a date in xtd::forms::month_calendar::selection_end that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_start is adjusted; xtd::forms::month_calendar::selection_start is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
       /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
       /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
-      date_time selection_end() const;
+      xtd::date_time selection_end() const;
       /// @brief Sets the end date of the selected range of dates.
       /// @param value A xtd::date_time indicating the last date in the selection range.
       /// @return Current month_calendar.
@@ -200,19 +201,19 @@ namespace xtd {
       /// @remarks If you set a date in xtd::forms::month_calendar::selection_end that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_start is adjusted; xtd::forms::month_calendar::selection_start is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
       /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
       /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
-      month_calendar& selection_end(date_time value);
+      month_calendar& selection_end(xtd::date_time value);
 
       /// @brief Gets the selected range of dates for a month calendar control.
       /// @return A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @remarks Setting this property is functionally equivalent to using the xtd::forms::month_calendar::set_selection_range method. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end properties. You cannot change the start and end dates by setting the xtd::forms::selection_range::start or xtd::forms::selection_range::end property values of the xtd::forms::month_calendar::selection_range property. You should use xtd::forms::month_calendar::selection_start, xtd::forms::month_calendar::selection_end, or xtd::forms::month_calendar::set_selection_range.
       /// @remarks If the Start property value of the xtd::forms::month_calendar::selection_range is greater than its xtd::forms::selection_rande::end property value, the dates are swapped; the xtd::forms::selection_range::end property value becomes the starting date, and xtd::forms::selection_range::start property value becomes the end date.
-      forms::selection_range selection_range() const;
+      xtd::forms::selection_range selection_range() const;
       /// @brief Sets the selected range of dates for a month calendar control.
       /// @param value A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @return Current month_calendar.
       /// @remarks Setting this property is functionally equivalent to using the xtd::forms::month_calendar::set_selection_range method. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end properties. You cannot change the start and end dates by setting the xtd::forms::selection_range::start or xtd::forms::selection_range::end property values of the xtd::forms::month_calendar::selection_range property. You should use xtd::forms::month_calendar::selection_start, xtd::forms::month_calendar::selection_end, or xtd::forms::month_calendar::set_selection_range.
       /// @remarks If the Start property value of the xtd::forms::month_calendar::selection_range is greater than its xtd::forms::selection_rande::end property value, the dates are swapped; the xtd::forms::selection_range::end property value becomes the starting date, and xtd::forms::selection_range::start property value becomes the end date.
-      month_calendar& selection_range(const forms::selection_range& value);
+      month_calendar& selection_range(const xtd::forms::selection_range& value);
       
       /// @brief Gets the start date of the selected range of dates.
       /// @return A xtd::date_time indicating the first date in the selection range.
@@ -220,7 +221,7 @@ namespace xtd {
       /// @remarks If you set a date in xtd::forms::month_calendar::selection_start that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_end is adjusted; xtd::forms::month_calendar::selection_end is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
       /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
       /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
-      date_time selection_start() const;
+      xtd::date_time selection_start() const;
       /// @brief Sets the start date of the selected range of dates.
       /// @param value A xtd::date_time indicating the first date in the selection range.
       /// @return Current month_calendar.
@@ -228,7 +229,7 @@ namespace xtd {
       /// @remarks If you set a date in xtd::forms::month_calendar::selection_start that causes the selection to exceed the number of days specified by the xtd::forms::month_calendar::max_selection_count property, the value of xtd::forms::month_calendar::selection_end is adjusted; xtd::forms::month_calendar::selection_end is automatically set so that the number of days selected is equal to xtd::forms::month_calendar::max_selection_count.
       /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
       /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
-      month_calendar& selection_start(date_time value);
+      month_calendar& selection_start(xtd::date_time value);
       
       /// @brief Gets a value indicating whether the date represented by the xtd::today_date property is displayed at the bottom of the control.
       /// @return true if today's date is displayed; otherwise, false. The default is true.
@@ -412,9 +413,9 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      forms::create_params create_params() const override;
-      drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
-      drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
+      xtd::forms::create_params create_params() const override;
+      xtd::drawing::color default_back_color() const override {return xtd::forms::application::style_sheet().system_colors().window();}
+      xtd::drawing::color default_fore_color() const override {return xtd::forms::application::style_sheet().system_colors().window_text();}
       
       /// @brief Raises the xtd::forms::month_calendar::date_changed event.
       /// @param e A xtd::forms::date_range_event_args that contains the event data.
@@ -432,27 +433,27 @@ namespace xtd {
       /// When overriding xtd::forms::month_calendar::on_date_selected in a derived class, be sure to call the base class' xtd::forms::month_calendar::on_date_selected method so that registered delegates receive the event.
       virtual void on_date_selected(const xtd::forms::date_range_event_args& e);
       
-      void on_handle_created(const event_args& e) override;
-      void wnd_proc(message& message) override;
+      void on_handle_created(const xtd::event_args& e) override;
+      void wnd_proc(xtd::forms::message& message) override;
       /// @}
       
     private:
-      void wm_notify(message& message);
-      void wm_date_selected(message& message);
-      void wm_date_changed(message& message);
-      void wm_view_changed(message& message);
+      void wm_notify(xtd::forms::message& message);
+      void wm_date_selected(xtd::forms::message& message);
+      void wm_date_changed(xtd::forms::message& message);
+      void wm_view_changed(xtd::forms::message& message);
       
       struct data {
         std::vector<xtd::date_time> annually_bolded_dates;
         std::vector<xtd::date_time> bolded_dates;
         xtd::drawing::size calendar_dimensions = {1, 1};
         xtd::forms::day first_day_of_week = xtd::forms::day::default_day;
-        date_time min_date = date_time::min_value;
+        xtd::date_time min_date = date_time::min_value;
         date_time max_date = date_time::max_value;
         uint32_t max_selection_count = 7;
         std::vector<xtd::date_time> monthly_bolded_dates;
-        date_time selection_start = date_time::now();
-        date_time selection_end = date_time::now();
+        xtd::date_time selection_start = date_time::now();
+        xtd::date_time selection_end = date_time::now();
         mutable xtd::drawing::size single_month_size = {225, 143};
         bool show_today = true;
         bool show_today_circle = true;
