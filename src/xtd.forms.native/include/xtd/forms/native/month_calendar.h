@@ -78,6 +78,27 @@ namespace xtd {
         /// | 7     | default_day |
         /// @warning Internal use only
         static void first_day_of_week(intptr_t control, uint32_t day);
+        
+        /// @brief Returns informations on which portion of a month calendar control is at a location specified by a xtd::drawing::point.
+        /// @param point A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y coordinates of the point to be hit tested.
+        /// @return A std:tuple<uint32_t, xtd::date_time> that contains information about the specified point on the month calendar.
+        /// @remarks The value uint32_t represents the strike zone, see the following table for the correspondence:
+        /// | Value | hit area            |
+        /// |-------|---------------------|
+        /// | 0     | nowhere             |
+        /// | 1     | title_background    |
+        /// | 2     | title_month         |
+        /// | 3     | title_year          |
+        /// | 4     | next_month_button   |
+        /// | 5     | prev_month_button   |
+        /// | 6     | calendar_background |
+        /// | 7     | date                |
+        /// | 8     | next_month_date     |
+        /// | 9     | prev_month_date     |
+        /// | 10    | day_of_week         |
+        /// | 11    | week_numbers        |
+        /// | 12    | today_link          |
+        static std::tuple<uint32_t, xtd::date_time> hit_test(intptr_t control, const xtd::drawing::point& point);
 
         /// @brief Sets the maximum number of days that can be selected in a month calendar control.
         /// @param control month calendar handle.

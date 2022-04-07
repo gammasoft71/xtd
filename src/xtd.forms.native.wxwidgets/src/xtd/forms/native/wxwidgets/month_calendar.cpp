@@ -65,6 +65,32 @@ void month_calendar::first_day_of_week(intptr_t control, uint32_t day) {
   wx_calendar_ctrl->SetWindowStyle(style);
 }
 
+std::tuple<uint32_t, xtd::date_time> month_calendar::hit_test(intptr_t control, const xtd::drawing::point& point) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return make_tuple(0, xtd::date_time());
+  }
+  
+  wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl;
+  uint32_t hit_area = 0;
+  wxDateTime time;
+  
+  wxCalendarHitTestResult result = wx_calendar_ctrl->HitTest({point.x(), point.y()}, &time);
+  switch (result) {
+    case wxCalendarHitTestResult::wxCAL_HITTEST_NOWHERE: hit_area = 0; break;
+    case wxCalendarHitTestResult::wxCAL_HITTEST_HEADER: hit_area = 1; break;
+    case wxCalendarHitTestResult::wxCAL_HITTEST_DAY: hit_area = 7; break;
+    case wxCalendarHitTestResult::wxCAL_HITTEST_INCMONTH: hit_area = 4; break;
+    case wxCalendarHitTestResult::wxCAL_HITTEST_DECMONTH: hit_area = 5; break;
+    case wxCalendarHitTestResult::wxCAL_HITTEST_SURROUNDING_WEEK: hit_area = 11; break;
+    case wxCalendarHitTestResult::wxCAL_HITTEST_WEEK: hit_area = 11; break;
+    default: hit_area = 0; break;
+  }
+  
+  return make_tuple(hit_area, date_time(time.GetYear(), static_cast<uint32_t>(time.GetMonth()) + 1, time.GetDay(), 0, 0, 0, date_time_kind::unspecified));
+}
+
 void month_calendar::allowable_dates(intptr_t control, date_time min_date, date_time max_date) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
