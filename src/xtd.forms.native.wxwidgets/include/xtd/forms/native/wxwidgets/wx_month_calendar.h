@@ -28,7 +28,7 @@ namespace xtd {
           calendarCtrl = new wxCalendarCtrl(this, wxID_ANY, /*wxDefaultDateTime*/ wxDateTime(), {0, 0}, {240, 162}, wx_styles);
         }
         
-        wxCalendarCtrl* calendarCtrl = null;
+        wxCalendarCtrl* calendarCtrl = nullptr;
       };
       
       class control;
@@ -79,7 +79,7 @@ namespace xtd {
           for (auto date : wx_month_calendar->annually_bolded_dates) {
             if (static_cast<uint32_t>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month()) {
               wxCalendarDateAttr* attr = new wxCalendarDateAttr();
-              if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != null)
+              if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
                 *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
               wxFont font = attr->GetFont();
               font = font.MakeBold();
@@ -90,7 +90,7 @@ namespace xtd {
           
           for (auto date : wx_month_calendar->monthly_bolded_dates) {
             wxCalendarDateAttr* attr = new wxCalendarDateAttr();
-            if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != null)
+            if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
               *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
             wxFont font = attr->GetFont();
             font = font.MakeBold();
@@ -101,7 +101,7 @@ namespace xtd {
           for (auto date : wx_month_calendar->bolded_dates) {
             if (static_cast<uint32_t>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month() && static_cast<uint32_t>(wx_calendar_ctrl->GetDate().GetYear()) == date.year()) {
               wxCalendarDateAttr* attr = new wxCalendarDateAttr();
-              if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != null)
+              if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
                 *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
               wxFont font = attr->GetFont();
               font = font.MakeBold();
