@@ -79,7 +79,7 @@ std::unique_ptr<xtd::drawing::brush> background_image::make_brush(const xtd::for
     return make_unique<linear_gradient_brush>(rect, image.colors(), as<float>(image.angle() - 90.0f));
   if (image.image_type() == style_sheets::image_type::url)
     return make_unique<texture_brush>(image::from_file(image.url().to_string()));
-  return null;
+  return nullptr;
 }
 
 xtd::ustring background_image::to_string() const noexcept {
