@@ -39,10 +39,6 @@ bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
     return false;
   }
   
-  //#if !defined(__APPLE__)
-  //  return false;
-  //#endif
-  
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control()) : nullptr);
   if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->Realize();
   return true;
