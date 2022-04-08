@@ -133,7 +133,8 @@ void tool_bar::fill() {
   for (size_t index = 0; index < reversed_items.size(); ++index) {
     if (is<tool_bar_button>(reversed_items[index].get())) {
       auto& button_item = as<tool_bar_button>(reversed_items[index].get());
-      if (data_->is_system_tool_bar) data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle()));
+      if (data_->is_system_tool_bar)
+        data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle()));
       else {
         auto button_control = std::make_shared<tool_bar_button_control>();
         button_control->parent(*this);
@@ -151,7 +152,8 @@ void tool_bar::fill() {
         data_->tool_bar_items.push_back(button_control);
       }
     } else if (is<tool_bar_separator>(reversed_items[index].get()) && index + 1 < reversed_items.size()) {
-      if (data_->is_system_tool_bar) data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_separator(handle()));
+      if (data_->is_system_tool_bar)
+        data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_separator(handle()));
       else {
         auto separator_control = std::make_shared<tool_bar_separator_control>();
         separator_control->parent(*this);
