@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "tool_bar_item.h"
+#include "../forms_export.h"
 #include <xtd/event.h>
 #include <xtd/ustring.h>
 
@@ -16,7 +17,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms  menus_and_toolbars
-    class tool_bar_separator : public tool_bar_item {
+    class forms_export_ tool_bar_separator : public tool_bar_item {
     public:
       /// @name Constructors
       
