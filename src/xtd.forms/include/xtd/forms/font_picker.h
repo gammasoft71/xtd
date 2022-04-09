@@ -23,7 +23,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the font_picker class.
-      font_picker() = default;
+      font_picker();
       /// @}
       
       /// @name Properties

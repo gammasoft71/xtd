@@ -27,7 +27,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the numeric_up_down class.
-      numeric_up_down() = default;
+      numeric_up_down();
       /// @}
       
       /// @name Properties

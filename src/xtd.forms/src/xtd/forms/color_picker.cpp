@@ -12,6 +12,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 color_picker::color_picker() {
+  control_appearance(forms::control_appearance::system);
   set_can_focus(false);
 }
 
