@@ -158,7 +158,7 @@ color control::back_color() const {
 control& control::back_color(const color& color) {
   if (data_->back_color != color) {
     data_->back_color = color;
-    if (is_handle_created()) native::control::back_color(handle(), data_->back_color.value());
+    if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::control::back_color(handle(), data_->back_color.value());
     for (auto& control : controls())
       if (control.get().data_->parent) control.get().on_parent_back_color_changed(event_args::empty);
     on_back_color_changed(event_args::empty);
@@ -1036,7 +1036,7 @@ void control::on_handle_created(const event_args& e) {
     native::control::minimum_size(handle(), minimum_size());
     native::control::size(handle(), this->size());
   }
-  if (!xtd::forms::theme_colors::current_theme().is_default() || data_->back_color.has_value() || back_color() != default_back_color()) native::control::back_color(handle(), back_color());
+  if ((!xtd::forms::theme_colors::current_theme().is_default() || data_->back_color.has_value() || back_color() != default_back_color()) && is_handle_created() && control_appearance() == forms::control_appearance::system) native::control::back_color(handle(), back_color());
   if (data_->cursor.has_value() || cursor() != default_cursor()) native::control::cursor(handle(), cursor().handle());
   if (!xtd::forms::theme_colors::current_theme().is_default() || data_->fore_color.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle(), fore_color());
   if (data_->font.has_value() || font() != default_font()) native::control::font(handle(), font());
