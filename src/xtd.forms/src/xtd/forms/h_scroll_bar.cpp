@@ -9,6 +9,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 h_scroll_bar::h_scroll_bar() {
+  control_appearance(forms::control_appearance::system);
   v_scroll_ = false;
   set_can_focus(false);
 }

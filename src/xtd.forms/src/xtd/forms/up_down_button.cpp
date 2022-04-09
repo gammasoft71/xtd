@@ -11,6 +11,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+up_down_button::up_down_button() {
+  flat_style(xtd::forms::flat_style::system);
+}
+
 forms::create_params up_down_button::create_params() const {
   forms::create_params create_params = button_base::create_params();
   

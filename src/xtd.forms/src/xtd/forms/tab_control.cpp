@@ -14,6 +14,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+tab_control::tab_control() {
+  control_appearance(forms::control_appearance::system);
+}
+
 tab_control& tab_control::alignment(tab_alignment alignment) {
   if (alignment_ != alignment) {
     alignment_ = alignment;

@@ -17,6 +17,10 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+text_box::text_box() {
+  control_appearance(forms::control_appearance::system);
+}
+
 text_box& text_box::character_casing(xtd::forms::character_casing value) {
   if (character_casing_ != value) {
     character_casing_ = value;

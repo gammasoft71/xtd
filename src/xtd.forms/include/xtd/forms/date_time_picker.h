@@ -26,7 +26,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the date_time_picker class.
-      date_time_picker() = default;
+      date_time_picker();
       /// @}
       
       /// @name Properties
