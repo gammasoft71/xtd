@@ -17,7 +17,8 @@ public:
     panel1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);
     
     panel2.parent(*this);
-    panel2.border_style(forms::border_style::fixed_3d);
+    panel2.back_color(drawing::color::white);
+    panel2.border_style(forms::border_style::rounded);
     panel2.location({325, 10});
     panel2.size({305, 460});
     panel2.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
