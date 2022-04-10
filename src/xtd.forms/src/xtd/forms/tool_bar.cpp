@@ -7,6 +7,7 @@
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/tool_bar.h"
+#include "../../../include/xtd/forms/tool_bar_renderer.h"
 
 using namespace std;
 using namespace xtd;
@@ -62,7 +63,7 @@ tool_bar::tool_bar() {
   data_->items.item_removed += {*this, &tool_bar::on_item_removed};
   
   data_->image_list.image_size(environment::os_version().is_windows_platform() ? drawing::size {16, 16} : drawing::size {24, 24});
-  data_->border_style = forms::border_style::outset; // forms::border_style::fixed_single;
+  //data_->border_style = forms::border_style::outset; // forms::border_style::fixed_single;
   dock(xtd::forms::dock_style::top);
   padding(forms::padding {2});
   height(data_->image_list.image_size().height() + 10);
@@ -108,8 +109,10 @@ void tool_bar::on_handle_destroyed(const event_args& e) {
 
 void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
   control::on_paint(e);
-  if (control_appearance() == forms::control_appearance::standard && !data_->is_system_tool_bar)
-    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  if (control_appearance() == forms::control_appearance::standard) tool_bar_renderer::draw_tool_bar(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, data_->border_style, data_->border_sides);
+  //if (control_appearance() == forms::control_appearance::standard && !data_->is_system_tool_bar)
+  //  control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
 }
 
 tool_bar& tool_bar::is_system_tool_bar(bool value) {

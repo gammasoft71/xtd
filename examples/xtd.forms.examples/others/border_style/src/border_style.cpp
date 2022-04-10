@@ -30,7 +30,7 @@ namespace examples {
       }
       
       control_panel.border_sides(border_sides::top);
-      control_panel.border_style(border_style::theme);
+      control_panel.border_style(border_style::solid);
       control_panel.controls().push_back_range({choose_color_label, colors_chooser, select_sides_label, top_side, left_side, bottom_side, right_side});
       control_panel.dock(dock_style::bottom);
       
@@ -47,7 +47,7 @@ namespace examples {
       colors_chooser.selected_index_changed += [&] {
         auto color = as<drawing::color>(colors_chooser.selected_item().tag());
         colored_panel.back_color(color);
-        colored_panel.fore_color(color.is_dark() ? control_paint::light(color, 2.0 / 3) : control_paint::dark(color, 2.0 / 3));
+        colored_panel.fore_color(color.is_dark() ? color::light(color, 2.0 / 3) : color::dark(color, 2.0 / 3));
       };
       
       select_sides_label.auto_size(true);
