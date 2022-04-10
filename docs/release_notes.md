@@ -14,17 +14,17 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 
 ## Issues
 
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #16 - WriteFile never sets number_of_bytes_written to -1
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #18 - Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #19 - operator + and operator - does not build with xtd::delegate
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #20 - cannot build unit test project created with xtdc-gui
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #25 - xtdc-gui crashes with projects with space in name
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #26 - When resizing xtdc-gui, the graphics get messed up
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #27 - cannot delete recent projects in xtdc-gui
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #31 - xtdc-gui panels redraw over each other
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #38 - install.cmd removed items from my windows path
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #40 - Problems of installing xtd in Arch linux and distributions that are based on it
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) #42 - how to redraw Caption bar, or create Caption menu?
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/16 - WriteFile never sets number_of_bytes_written to -1
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/18 - Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/19 - operator + and operator - does not build with xtd::delegate
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/20 - cannot build unit test project created with xtdc-gui
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/25 - xtdc-gui crashes with projects with space in name
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/26 - When resizing xtdc-gui, the graphics get messed up
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/27 - cannot delete recent projects in xtdc-gui
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/31 - xtdc-gui panels redraw over each other
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/38 - install.cmd removed items from my windows path
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/40 - Problems of installing xtd in Arch linux and distributions that are based on it
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/42 - how to redraw Caption bar, or create Caption menu?
 
 ## xtd
 
