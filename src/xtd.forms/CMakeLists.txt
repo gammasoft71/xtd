@@ -245,6 +245,7 @@ add_sources(
   include/xtd/forms/toggle_button_renderer.h
   include/xtd/forms/toggle_buttons.h
   include/xtd/forms/tool_bar.h
+  include/xtd/forms/tool_bar_renderer.h
   include/xtd/forms/tool_bar_images.h
   include/xtd/forms/tool_bar_button.h
   include/xtd/forms/tool_bar_item.h
@@ -297,6 +298,7 @@ add_sources(
   include/xtd/forms/style_sheets/text_transformation.h
   include/xtd/forms/style_sheets/theme.h
   include/xtd/forms/style_sheets/toggle_button.h
+  include/xtd/forms/style_sheets/tool_bar.h
   include/xtd/forms/style_sheets/user_control.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/control_state.h
@@ -408,6 +410,7 @@ add_sources(
   src/xtd/forms/toggle_button.cpp
   src/xtd/forms/toggle_button_renderer.cpp
   src/xtd/forms/tool_bar.cpp
+  src/xtd/forms/tool_bar_renderer.cpp
   src/xtd/forms/tool_bar_button.cpp
   src/xtd/forms/tool_bar_separator.cpp
   src/xtd/forms/track_bar.cpp

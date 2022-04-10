@@ -92,6 +92,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   popup_button_reader(reader);
   popup_toggle_button_reader(reader);
   toggle_button_reader(reader);
+  tool_bar_reader(reader);
   user_control_reader(reader);
 }
 
@@ -285,6 +286,18 @@ xtd::forms::style_sheets::toggle_button style_sheet::toggle_button(pseudo_state 
 
 const style_sheet::toggle_buttons_t& style_sheet::toggle_buttons() const noexcept {
   return toggle_buttons_;
+}
+
+xtd::forms::style_sheets::tool_bar style_sheet::tool_bar() const noexcept {
+  return tool_bar(pseudo_state::standard);
+}
+
+xtd::forms::style_sheets::tool_bar style_sheet::tool_bar(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::tool_bar>(tool_bars_, state);
+}
+
+const style_sheet::tool_bars_t& style_sheet::tool_bars() const noexcept {
+  return tool_bars_;
 }
 
 xtd::forms::style_sheets::user_control style_sheet::user_control() const noexcept {
@@ -753,6 +766,17 @@ void style_sheet::popup_toggle_button_reader(xtd::web::css::css_reader& reader) 
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) popup_toggle_buttons_[pseudo_state::standard] = xtd::forms::style_sheets::button();
     if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) popup_toggle_buttons_[pseudo_state::standard | state.second] = popup_toggle_buttons_[pseudo_state::standard];
     if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, popup_toggle_buttons_[pseudo_state::standard | state.second]);
+  }
+}
+
+void style_sheet::tool_bar_reader(xtd::web::css::css_reader& reader) noexcept {
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  for (auto state : states) {
+    selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar" + state.first);
+    if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) tool_bars_[pseudo_state::standard] = xtd::forms::style_sheets::tool_bar();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) tool_bars_[pseudo_state::standard | state.second] = panels_[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, tool_bars_[pseudo_state::standard | state.second]);
   }
 }
 
