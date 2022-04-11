@@ -189,9 +189,7 @@ namespace xtd {
           drawing::size_f string_size = e.graphics().measure_string(text, font());
           drawing::point_f string_location(checked_ ? drawing::point_f(slider_location.x() - string_size.width() - 2, (height - string_size.height()) / 2) : drawing::point_f(slider_location.x() + static_cast<float>(height - 4) + 2, (height - string_size.height()) / 2));
           
-          e.graphics().fill_pie(drawing::solid_brush(button_back_color), offset / 2.0f, .0f, static_cast<float>(height), static_cast<float>(height), 90.0f, 180.0f);
-          e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - height - offset / 2.0f - 0.5f, .0f, static_cast<float>(height), static_cast<float>(height), 270.0f, 180.0f);
-          e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), height / 2.0f + offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().width() - height) - offset, static_cast<float>(height));
+          e.graphics().fill_rounded_rectangle(drawing::solid_brush(button_back_color), offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().width()) - offset, static_cast<float>(height), static_cast<float>(height) / 2);
           e.graphics().fill_ellipse(drawing::solid_brush(slider_color), slider_location.x(), slider_location.y(), static_cast<float>(height - 4), static_cast<float>(height - 4));
           if (show_text_) e.graphics().draw_string(text, font(), drawing::solid_brush(text_color), string_location);
         } else {
