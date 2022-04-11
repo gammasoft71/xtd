@@ -98,9 +98,14 @@ public:
     switch_button1.checked(true);
     switch_button1.location({10, 210});
     
-    up_down_button1.parent(tab_page_buttons);
-    up_down_button1.location({130, 210});
+    switch_button2.parent(tab_page_buttons);
+    switch_button2.checked(true);
+    switch_button2.rounded(false);
+    switch_button2.location({130, 210});
     
+    up_down_button1.parent(tab_page_buttons);
+    up_down_button1.location({10, 250});
+
     color_picker1.parent(tab_page_pickers);
     color_picker1.location({10, 10});
     color_picker1.text("Colors...");
@@ -238,6 +243,7 @@ private:
   button popup_button1;
   button image_button1;
   switch_button switch_button1;
+  switch_button switch_button2;
   light_button light_button1;
   radio_button radio_button1;
   radio_button radio_button2;
