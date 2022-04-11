@@ -149,25 +149,25 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Issue                                            | Library   | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-----------|---------------------------------|-----------|-------------------------------------------------|
-|                                                  | xtd.forms | chart                           | Gammasoft |                                                 |
-|                                                  | xtd.forms | chart_renderer                  | Gammasoft |                                                 |
-|                                                  | xtd.forms | error_provider                  | Gammasoft |                                                 |
-|                                                  | xtd.forms | help_provider                   | Gammasoft |                                                 |
-|                                                  | xtd.forms | masked_text_box                 | Gammasoft |                                                 |
-|                                                  | xtd.forms | masked_text_box_renderer        | Gammasoft |                                                 |
-|                                                  | xtd.forms | page_setup_box                  | Gammasoft |                                                 |
-|                                                  | xtd.forms | page_setup_dialog               | Gammasoft |                                                 |
-|                                                  | xtd.forms | print_box                       | Gammasoft |                                                 |
-|                                                  | xtd.forms | print_dialog                    | Gammasoft |                                                 |
-|                                                  | xtd.forms | print_document                  | Gammasoft |                                                 |
-|                                                  | xtd.forms | print_preview_control           | Gammasoft |                                                 |
-|                                                  | xtd.forms | print_preview_control_renderer  | Gammasoft |                                                 |
-|                                                  | xtd.forms | print_preview_box               | Gammasoft |                                                 |
-|                                                  | xtd.forms | print_preview_dialog            | Gammasoft |                                                 |
-|                                                  | xtd.forms | property_grid                   | Gammasoft |                                                 |
-|                                                  | xtd.forms | property_grid_renderer          | Gammasoft |                                                 |
-|                                                  | xtd.forms | tool_strip                      | Gammasoft |                                                 |
-|                                                  | xtd.forms | tool_strip_renderer             | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/140    | xtd.forms | chart                           | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/141    | xtd.forms | chart_renderer                  | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/142    | xtd.forms | error_provider                  | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/143    | xtd.forms | help_provider                   | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/144    | xtd.forms | masked_text_box                 | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/145    | xtd.forms | masked_text_box_renderer        | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/146    | xtd.forms | page_setup_box                  | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/147    | xtd.forms | page_setup_dialog               | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/148    | xtd.forms | print_box                       | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/149    | xtd.forms | print_dialog                    | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/150    | xtd.forms | print_document                  | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/151    | xtd.forms | print_preview_control           | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/152    | xtd.forms | print_preview_control_renderer  | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/153    | xtd.forms | print_preview_box               | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/154    | xtd.forms | print_preview_dialog            | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/155    | xtd.forms | property_grid                   | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/156    | xtd.forms | property_grid_renderer          | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/157    | xtd.forms | tool_strip                      | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/158    | xtd.forms | tool_strip_renderer             | Gammasoft |                                                 |
 
 ## Release 1.0.0 (release)
 
