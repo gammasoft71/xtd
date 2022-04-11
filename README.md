@@ -232,6 +232,7 @@ xtdc run
 * [Development status](https://github.com/gammasoft71/xtd/blob/master/docs/development_status.md) provides information about classes and libraries development status.
 * [Translation status](https://github.com/gammasoft71/xtd/blob/master/docs/translations_status.md) provides information about translations status.
 * [xtd - kanban board](https://github.com/users/gammasoft71/projects/3) and [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) provide a view of the xtd roadmap.
+* [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) provide a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
 * [Release notes](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md) provides release notes information.
 
 This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
