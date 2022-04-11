@@ -55,8 +55,9 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | https://github.com/gammasoft71/xtd/issues/65     | xtd.forms | context_menu                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/66     | xtd.forms | control_renderer                  | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/67     | xtd.forms | dot_matrix_display_renderer       | Gammasoft |                                                 |
-| https://github.com/gammasoft71/xtd/issues/68     | xtd.forms | find_box                          | Bader     |                                                 |
-| https://github.com/gammasoft71/xtd/issues/69     | xtd.forms | find_dialog                       | Bader     |                                                 |
+| https://github.com/gammasoft71/xtd/issues/68     | xtd.forms | find_box                          | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/69     | xtd.forms | find_dialog                       | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/139    | xtd.forms | folder_browser_box                | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/70     | xtd.forms | font_box                          | Bader     | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/71     | xtd.forms | font_picker_renderer              | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/72     | xtd.forms | form_renderer                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
@@ -68,27 +69,27 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | https://github.com/gammasoft71/xtd/issues/78     | xtd.forms | light_button_renderer             | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/79     | xtd.forms | light_buttons                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/80     | xtd.forms | month_calender                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
-| https://github.com/gammasoft71/xtd/issues/81     | xtd.forms | notify_icon                       | Bader     |                                                 |
+| https://github.com/gammasoft71/xtd/issues/81     | xtd.forms | notify_icon                       | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/82     | xtd.forms | nine_segment_display_renderer     | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/83     | xtd.forms | open_file_box                     | Bader     | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/84     | xtd.forms | panel_renderer                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/85     | xtd.forms | progress_box                      | Bader     | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/86     | xtd.forms | radio_button_renderer             | Gammasoft |                                                 |
-| https://github.com/gammasoft71/xtd/issues/87     | xtd.forms | replace_box                       | Bader     |                                                 |
-| https://github.com/gammasoft71/xtd/issues/88     | xtd.forms | replace_dialog                    | Bader     |                                                 |
+| https://github.com/gammasoft71/xtd/issues/87     | xtd.forms | replace_box                       | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/88     | xtd.forms | replace_dialog                    | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/89     | xtd.forms | save_file_box                     | Bader     | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/90     | xtd.forms | seven_segment_display_renderer    | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/91     | xtd.forms | sixteen_segment_display_renderer  | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/92     | xtd.forms | split_container                   | Gammasoft |                                                 |
-| https://github.com/gammasoft71/xtd/issues/93     | xtd.forms | status_bar                        | Bader     |                                                 |
-| https://github.com/gammasoft71/xtd/issues/129    | xtd.forms | status_bar_renderer               |           |                                                 |
+| https://github.com/gammasoft71/xtd/issues/93     | xtd.forms | status_bar                        | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/129    | xtd.forms | status_bar_renderer               | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/94     | xtd.forms | style_sheets                      | Gammasoft | ![status](pictures/releases/status/started.png) |
 | https://github.com/gammasoft71/xtd/issues/95     | xtd.forms | switch_button_renderer            | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/96     | xtd.forms | text_renderer                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/97     | xtd.forms | themes                            | Gammasoft | ![status](pictures/releases/status/started.png) |
 | https://github.com/gammasoft71/xtd/issues/98     | xtd.forms | toggle_button_renderer            | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/99     | xtd.forms | tool_bar                          | Gammasoft | ![status](pictures/releases/status/started.png) |
-| https://github.com/gammasoft71/xtd/issues/130    | xtd.forms | tool_bar_renderer                 |           | ![status](pictures/releases/status/done.png)    |
+| https://github.com/gammasoft71/xtd/issues/130    | xtd.forms | tool_bar_renderer                 | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/100    | xtd.forms | user_control_renderer             | Gammasoft | ![status](pictures/releases/status/done.png)    |
 
 ## Release 0.3.0 (beta)
@@ -101,42 +102,42 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Issue                                            | Library   | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-----------|---------------------------------|-----------|-------------------------------------------------|
-| https://github.com/gammasoft71/xtd/issues/101    | xtd.forms | check_list_box_renderer         |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/102    | xtd.forms | choice_renderer                 |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/103    | xtd.forms | combo_box_renderer              |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/104    | xtd.forms | data_grid_view                  |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/105    | xtd.forms | data_grid_view_renderer         |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/106    | xtd.forms | date_time_picker_renderer       |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/107    | xtd.forms | dial                            |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/108    | xtd.forms | dial_renderer                   |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/109    | xtd.forms | domain_up_down_renderer         |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/110    | xtd.forms | flow_layout_panel               |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/111    | xtd.forms | group_box_renderer              |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/112    | xtd.forms | h_scroll_bar_renderer           |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/113    | xtd.forms | list_box_renderer               |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/114    | xtd.forms | list_view                       |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/115    | xtd.forms | list_view_renderer              |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/116    | xtd.forms | loading_indicator_renderer      |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/117    | xtd.media | media_player                    |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/118    | xtd.forms | month_calendar_renderer         |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/119    | xtd.forms | numeric_up_down_renderer        |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/120    | xtd.forms | picture_box_renderer            |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/121    | xtd.forms | progress_bar_renderer           |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/122    | xtd.forms | rich_text_box                   |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/123    | xtd.forms | rich_text_box_renderer          |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/124    | xtd.forms | roller                          |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/125    | xtd.forms | roller_renderer                 |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/126    | xtd.forms | split_container_renderer        |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/127    | xtd.forms | splitter_panel_renderer         |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/128    | xtd.forms | splitter_renderer               |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/131    | xtd.forms | tab_control_renderer            |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/132    | xtd.forms | tab_page_renderer               |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/133    | xtd.forms | table_layout_panel              |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/134    | xtd.forms | text_box_renderer               |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/135    | xtd.forms | tree_view                       |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/136    | xtd.forms | tree_view_renderer              |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/137    | xtd.forms | up_down_button_renderer         |           |                                                 |
-| https://github.com/gammasoft71/xtd/issues/138    | xtd.forms | v_scroll_bar_renderer           |           |                                                 |
+| https://github.com/gammasoft71/xtd/issues/101    | xtd.forms | check_list_box_renderer         | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/102    | xtd.forms | choice_renderer                 | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/103    | xtd.forms | combo_box_renderer              | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/104    | xtd.forms | data_grid_view                  | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/105    | xtd.forms | data_grid_view_renderer         | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/106    | xtd.forms | date_time_picker_renderer       | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/107    | xtd.forms | dial                            | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/108    | xtd.forms | dial_renderer                   | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/109    | xtd.forms | domain_up_down_renderer         | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/110    | xtd.forms | flow_layout_panel               | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/111    | xtd.forms | group_box_renderer              | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/112    | xtd.forms | h_scroll_bar_renderer           | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/113    | xtd.forms | list_box_renderer               | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/114    | xtd.forms | list_view                       | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/115    | xtd.forms | list_view_renderer              | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/116    | xtd.forms | loading_indicator_renderer      | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/117    | xtd.media | media_player                    | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/118    | xtd.forms | month_calendar_renderer         | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/119    | xtd.forms | numeric_up_down_renderer        | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/120    | xtd.forms | picture_box_renderer            | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/121    | xtd.forms | progress_bar_renderer           | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/122    | xtd.forms | rich_text_box                   | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/123    | xtd.forms | rich_text_box_renderer          | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/124    | xtd.forms | roller                          | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/125    | xtd.forms | roller_renderer                 | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/126    | xtd.forms | split_container_renderer        | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/127    | xtd.forms | splitter_panel_renderer         | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/128    | xtd.forms | splitter_renderer               | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/131    | xtd.forms | tab_control_renderer            | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/132    | xtd.forms | tab_page_renderer               | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/133    | xtd.forms | table_layout_panel              | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/134    | xtd.forms | text_box_renderer               | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/135    | xtd.forms | tree_view                       | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/136    | xtd.forms | tree_view_renderer              | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/137    | xtd.forms | up_down_button_renderer         | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/138    | xtd.forms | v_scroll_bar_renderer           | Gammasoft |                                                 |
 
 ## Release 0.4.0 (beta)
 
@@ -148,25 +149,25 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Issue                                            | Library   | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-----------|---------------------------------|-----------|-------------------------------------------------|
-|                                                  | xtd.forms | chart                           |           |                                                 |
-|                                                  | xtd.forms | chart_renderer                  |           |                                                 |
-|                                                  | xtd.forms | error_provider                  |           |                                                 |
-|                                                  | xtd.forms | help_provider                   |           |                                                 |
-|                                                  | xtd.forms | masked_text_box                 |           |                                                 |
-|                                                  | xtd.forms | masked_text_box_renderer        |           |                                                 |
-|                                                  | xtd.forms | page_setup_box                  |           |                                                 |
-|                                                  | xtd.forms | page_setup_dialog               |           |                                                 |
-|                                                  | xtd.forms | print_box                       |           |                                                 |
-|                                                  | xtd.forms | print_dialog                    |           |                                                 |
-|                                                  | xtd.forms | print_document                  |           |                                                 |
-|                                                  | xtd.forms | print_preview_control           |           |                                                 |
-|                                                  | xtd.forms | print_preview_control_renderer  |           |                                                 |
-|                                                  | xtd.forms | print_preview_box               |           |                                                 |
-|                                                  | xtd.forms | print_preview_dialog            |           |                                                 |
-|                                                  | xtd.forms | property_grid                   |           |                                                 |
-|                                                  | xtd.forms | property_grid_renderer          |           |                                                 |
-|                                                  | xtd.forms | tool_strip                      |           |                                                 |
-|                                                  | xtd.forms | tool_strip_renderer             |           |                                                 |
+|                                                  | xtd.forms | chart                           | Gammasoft |                                                 |
+|                                                  | xtd.forms | chart_renderer                  | Gammasoft |                                                 |
+|                                                  | xtd.forms | error_provider                  | Gammasoft |                                                 |
+|                                                  | xtd.forms | help_provider                   | Gammasoft |                                                 |
+|                                                  | xtd.forms | masked_text_box                 | Gammasoft |                                                 |
+|                                                  | xtd.forms | masked_text_box_renderer        | Gammasoft |                                                 |
+|                                                  | xtd.forms | page_setup_box                  | Gammasoft |                                                 |
+|                                                  | xtd.forms | page_setup_dialog               | Gammasoft |                                                 |
+|                                                  | xtd.forms | print_box                       | Gammasoft |                                                 |
+|                                                  | xtd.forms | print_dialog                    | Gammasoft |                                                 |
+|                                                  | xtd.forms | print_document                  | Gammasoft |                                                 |
+|                                                  | xtd.forms | print_preview_control           | Gammasoft |                                                 |
+|                                                  | xtd.forms | print_preview_control_renderer  | Gammasoft |                                                 |
+|                                                  | xtd.forms | print_preview_box               | Gammasoft |                                                 |
+|                                                  | xtd.forms | print_preview_dialog            | Gammasoft |                                                 |
+|                                                  | xtd.forms | property_grid                   | Gammasoft |                                                 |
+|                                                  | xtd.forms | property_grid_renderer          | Gammasoft |                                                 |
+|                                                  | xtd.forms | tool_strip                      | Gammasoft |                                                 |
+|                                                  | xtd.forms | tool_strip_renderer             | Gammasoft |                                                 |
 
 ## Release 1.0.0 (release)
 
@@ -178,16 +179,16 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Issue                                            | Library   | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-----------|---------------------------------|-----------|-------------------------------------------------|
-|                                                  | xtd.forms | binding_navigator               |           |                                                 |
-|                                                  | xtd.forms | binding_source                  |           |                                                 |
-|                                                  | xtd.forms | context_menu_strip              |           |                                                 |
-|                                                  | xtd.forms | context_menu_strip_renderer     |           |                                                 |
-|                                                  | xtd.forms | menu_strip                      |           |                                                 |
-|                                                  | xtd.forms | menu_strip_renderer             |           |                                                 |
-|                                                  | xtd.forms | status_strip                    |           |                                                 |
-|                                                  | xtd.forms | status_strip_renderer           |           |                                                 |
-|                                                  | xtd.forms | web_view                        |           |                                                 |
-|                                                  | xtd.forms | web_view_renderer               |           |                                                 |
+|                                                  | xtd.forms | binding_navigator               | Gammasoft |                                                 |
+|                                                  | xtd.forms | binding_source                  | Gammasoft |                                                 |
+|                                                  | xtd.forms | context_menu_strip              | Gammasoft |                                                 |
+|                                                  | xtd.forms | context_menu_strip_renderer     | Gammasoft |                                                 |
+|                                                  | xtd.forms | menu_strip                      | Gammasoft |                                                 |
+|                                                  | xtd.forms | menu_strip_renderer             | Gammasoft |                                                 |
+|                                                  | xtd.forms | status_strip                    | Gammasoft |                                                 |
+|                                                  | xtd.forms | status_strip_renderer           | Gammasoft |                                                 |
+|                                                  | xtd.forms | web_view                        | Gammasoft |                                                 |
+|                                                  | xtd.forms | web_view_renderer               | Gammasoft |                                                 |
 
 ## Release 2.0.0 (release)
 
@@ -197,9 +198,9 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Issue                                            | Library                  | Enhancements                            | Developer | status                                          |
 |--------------------------------------------------|--------------------------|-----------------------------------------|-----------|-------------------------------------------------|
-|                                                  | xtd.drawing              | Image and bitmap (toollkit independant) |           |                                                 |
-|                                                  | xtd.drawing.native.win32 | Implementation of the Win32 toolkit     |           |                                                 |
-|                                                  | xtd.forms.native.win32   | Implementation of the Win32 toolkit     |           |                                                 |
+|                                                  | xtd.drawing              | Image and bitmap (toollkit independant) | Gammasoft |                                                 |
+|                                                  | xtd.drawing.native.win32 | Implementation of the Win32 toolkit     | Gammasoft |                                                 |
+|                                                  | xtd.forms.native.win32   | Implementation of the Win32 toolkit     | Gammasoft |                                                 |
 
 ## Release 3.0.0 (release)
 
@@ -209,8 +210,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Issue                                            | Library                 | Enhancements                       | Developer | status                                          |
 |--------------------------------------------------|-------------------------|------------------------------------|-----------|-------------------------------------------------|
-|                                                  | xtd.drawing.native.gtk4 | Implementation of the Gtk4 toolkit |           |                                                 |
-|                                                  | xtd.forms.native.gtk4   | Implementation of the Gtk4 toolkit |           |                                                 |
+|                                                  | xtd.drawing.native.gtk4 | Implementation of the Gtk4 toolkit | Gammasoft |                                                 |
+|                                                  | xtd.forms.native.gtk4   | Implementation of the Gtk4 toolkit | Gammasoft |                                                 |
 
 ## Release 4.0.0 (release)
 
@@ -220,8 +221,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Issue                                            | Library                  | Enhancements                        | Developer | status                                          |
 |--------------------------------------------------|--------------------------|-------------------------------------|-----------|-------------------------------------------------|
-|                                                  | xtd.drawing.native.cocoa | Implementation of the Cocoa toolkit |           |                                                 |
-|                                                  | xtd.forms.native.cocoa   | Implementation of the Cocoa toolkit |           |                                                 |
+|                                                  | xtd.drawing.native.cocoa | Implementation of the Cocoa toolkit | Gammasoft |                                                 |
+|                                                  | xtd.forms.native.cocoa   | Implementation of the Cocoa toolkit | Gammasoft |                                                 |
 
 ## Release 5.0.0 (release)
 
@@ -231,8 +232,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 
 | Issue                                            | Library                | Enhancements                      | Developer | status                                          |
 |--------------------------------------------------|------------------------|-----------------------------------|-----------|-------------------------------------------------|
-|                                                  | xtd.drawing.native.qt6 | Implementation of the Qt6 toolkit |           |                                                 |
-|                                                  | xtd.forms.native.qt6   | Implementation of the Qt6 toolkit |           |                                                 |
+|                                                  | xtd.drawing.native.qt6 | Implementation of the Qt6 toolkit | Gammasoft |                                                 |
+|                                                  | xtd.forms.native.qt6   | Implementation of the Qt6 toolkit | Gammasoft |                                                 |
 
 ______________________________________________________________________________________________
 
