@@ -68,6 +68,10 @@ namespace xtd {
         return *this;
       }
       /// @endcond
+
+      /// @brief Gets the default size of the control.
+      /// @return The default size.
+      drawing::size default_size() const override {return {50, 25};}
       
       /// @brief Gets the slider color for the control.
       /// @return A xtd::drawing::color that represents the slider color of the control. The default is the value of the xtd::switch_button::back_color property.
@@ -183,13 +187,12 @@ namespace xtd {
         
         if (rounded_) {
           float height = static_cast<float>(e.clip_rectangle().height() - e.clip_rectangle().height() % 2);
-          float offset = (e.clip_rectangle().width() - height) / 2.0f - 0.5f;
-          drawing::point_f slider_location(checked_ ? drawing::point_f(e.clip_rectangle().width() - height - offset / 2.0f + 2.0f, 2.0f) : drawing::point_f(offset / 2.0f + 2.0f, 2.0f));
+          drawing::point_f slider_location(checked_ ? drawing::point_f(e.clip_rectangle().width() - height + 2.0f, 2.0f) : drawing::point_f(2.0f, 2.0f));
           
           drawing::size_f string_size = e.graphics().measure_string(text, font());
           drawing::point_f string_location(checked_ ? drawing::point_f(slider_location.x() - string_size.width() - 2, (height - string_size.height()) / 2) : drawing::point_f(slider_location.x() + static_cast<float>(height - 4) + 2, (height - string_size.height()) / 2));
           
-          e.graphics().fill_rounded_rectangle(drawing::solid_brush(button_back_color), offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().width()) - offset, static_cast<float>(height), static_cast<float>(height) / 2);
+          e.graphics().fill_rounded_rectangle(drawing::solid_brush(button_back_color), .0f, .0f, static_cast<float>(e.clip_rectangle().width()), static_cast<float>(height), static_cast<float>(height) / 2);
           e.graphics().fill_ellipse(drawing::solid_brush(slider_color), slider_location.x(), slider_location.y(), static_cast<float>(height - 4), static_cast<float>(height - 4));
           if (show_text_) e.graphics().draw_string(text, font(), drawing::solid_brush(text_color), string_location);
         } else {

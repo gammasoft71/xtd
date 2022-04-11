@@ -104,10 +104,6 @@ namespace xtd {
       /// @return The default light on color of the light_button.
       virtual drawing::color default_light_on_color() const {return drawing::system_colors::accent();}
       
-      /// @brief Gets the default size of the control.
-      /// @return The default size.
-      drawing::size default_size() const override {return {104, 25};}
-      
       /// @brief Gets the horizontal and vertical alignment of the check mark on a light_button control.
       /// @return One of the content_alignment values. The default value is middle_left.
       virtual content_alignment light_align() const {return data_->light_align;}
