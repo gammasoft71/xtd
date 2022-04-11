@@ -179,16 +179,16 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 | Issue                                            | Library   | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-----------|---------------------------------|-----------|-------------------------------------------------|
-|                                                  | xtd.forms | binding_navigator               | Gammasoft |                                                 |
-|                                                  | xtd.forms | binding_source                  | Gammasoft |                                                 |
-|                                                  | xtd.forms | context_menu_strip              | Gammasoft |                                                 |
-|                                                  | xtd.forms | context_menu_strip_renderer     | Gammasoft |                                                 |
-|                                                  | xtd.forms | menu_strip                      | Gammasoft |                                                 |
-|                                                  | xtd.forms | menu_strip_renderer             | Gammasoft |                                                 |
-|                                                  | xtd.forms | status_strip                    | Gammasoft |                                                 |
-|                                                  | xtd.forms | status_strip_renderer           | Gammasoft |                                                 |
-|                                                  | xtd.forms | web_view                        | Gammasoft |                                                 |
-|                                                  | xtd.forms | web_view_renderer               | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/159    | xtd.forms | binding_navigator               | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/160    | xtd.forms | binding_source                  | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/161    | xtd.forms | context_menu_strip              | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/162    | xtd.forms | context_menu_strip_renderer     | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/163    | xtd.forms | menu_strip                      | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/164    | xtd.forms | menu_strip_renderer             | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/165    | xtd.forms | status_strip                    | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/166    | xtd.forms | status_strip_renderer           | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/167    | xtd.forms | web_browser                     | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/168    | xtd.forms | web_browser_renderer            | Gammasoft |                                                 |
 
 ## Release 2.0.0 (release)
 
