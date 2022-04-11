@@ -66,21 +66,18 @@ namespace xtd {
       static xtd::forms::dialog_result show(xtd::ustring& selected_path, const xtd::forms::iwin32_window& owner, const xtd::ustring& description, xtd::environment::special_folder root_folder, bool show_new_folder_button, bool auto_upgrade_enable) {return show_folder_browser_box(selected_path, description, root_folder, show_new_folder_button, auto_upgrade_enable, &owner);}
       /// @brief Displays a folder browser dialog box.
       /// @param selected_path A xtd::ustring that represents the path selected by the user.
-      /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
       /// @param description An xtd::ustring that specifies the descriptive text displayed above the tree view control in the dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is ok, the selected_path parameter will contain the selected path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& selected_path) {return show_folder_browser_box(selected_path);}
       /// @brief Displays a folder browser dialog box.
       /// @param selected_path A xtd::ustring that represents the path selected by the user.
-      /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
       /// @param description An xtd::ustring that specifies the descriptive text displayed above the tree view control in the dialog box.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
       /// @remarks If xtd::forms::dialog_result is ok, the selected_path parameter will contain the selected path, otherwise it will be ignored.
       static xtd::forms::dialog_result show(xtd::ustring& selected_path, const xtd::ustring& description) {return show_folder_browser_box(selected_path, description);}
       /// @brief Displays a folder browser dialog box.
       /// @param selected_path A xtd::ustring that represents the path selected by the user.
-      /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
       /// @param description An xtd::ustring that specifies the descriptive text displayed above the tree view control in the dialog box.
       /// @param root_folder One of xtd::environment::special_folder values that specifies the root folder where the browsing starts from.
       /// @return xtd::forms::dialog_result::ok if the user clicks OK in the dialog box; otherwise, xtd::forms::dialog_result::cancel.
@@ -88,7 +85,6 @@ namespace xtd {
       static xtd::forms::dialog_result show(xtd::ustring& selected_path, const xtd::ustring& description, xtd::environment::special_folder root_folder) {return show_folder_browser_box(selected_path, description, root_folder);}
       /// @brief Displays a folder browser dialog box.
       /// @param selected_path A xtd::ustring that represents the path selected by the user.
-      /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
       /// @param description An xtd::ustring that specifies the descriptive text displayed above the tree view control in the dialog box.
       /// @param root_folder One of xtd::environment::special_folder values that specifies the root folder where the browsing starts from.
       /// @param show_new_folder_button A value indicating whether the New Folder button appears in the folder browser dialog box.
@@ -97,7 +93,6 @@ namespace xtd {
       static xtd::forms::dialog_result show(xtd::ustring& selected_path, const xtd::ustring& description, xtd::environment::special_folder root_folder, bool show_new_folder_button) {return show_folder_browser_box(selected_path, description, root_folder, show_new_folder_button);}
       /// @brief Displays a folder browser dialog box.
       /// @param selected_path A xtd::ustring that represents the path selected by the user.
-      /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
       /// @param description An xtd::ustring that specifies the descriptive text displayed above the tree view control in the dialog box.
       /// @param root_folder One of xtd::environment::special_folder values that specifies the root folder where the browsing starts from.
       /// @param show_new_folder_button A value indicating whether the New Folder button appears in the folder browser dialog box.
