@@ -88,7 +88,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | https://github.com/gammasoft71/xtd/issues/97     | xtd.forms | themes                            | Gammasoft | ![status](pictures/releases/status/started.png) |
 | https://github.com/gammasoft71/xtd/issues/98     | xtd.forms | toggle_button_renderer            | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/99     | xtd.forms | tool_bar                          | Gammasoft | ![status](pictures/releases/status/started.png) |
-| https://github.com/gammasoft71/xtd/issues/130    | xtd.forms | tool_bar_renderer                 |           |                                                 |
+| https://github.com/gammasoft71/xtd/issues/130    | xtd.forms | tool_bar_renderer                 |           | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/100    | xtd.forms | user_control_renderer             | Gammasoft | ![status](pictures/releases/status/done.png)    |
 
 ## Release 0.3.0 (beta)
