@@ -51,6 +51,44 @@ For more information about xtd see :
 * [project](https://sourceforge.net/projects/xtdpro/) 
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)
 
+## Getting Started
+
+* [Installation](https://github.com/gammasoft71/xtd/blob/master/docs/downloads.md) provides download and install documentation.
+* [Guides](https://github.com/gammasoft71/xtd/blob/master/docs/guides.md) provides xtd guides and tutorials.
+* [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides some examples.
+
+## Development status
+
+* [xtd - kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
+* [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) provides a view of the xtd roadmap.
+* [Release notes](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md) provides release notes information.
+* [Development status](https://github.com/gammasoft71/xtd/blob/master/docs/development_status.md) provides information about classes and libraries development status.
+* [Translation status](https://github.com/gammasoft71/xtd/blob/master/docs/translations_status.md) provides information about translations status.
+
+This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
+
+But you can follow the evolution of the development. We keep the status up to date.
+
+## Contributing
+
+The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) lists contributors together with contact information. If you make a contribution, please add yourself to the list.
+
+**Your contributions are welcome.**
+
+* First read [Code of conduct](https://github.com/gammasoft71/xtd/blob/master/CODE_OF_CONDUCT.md) and the [design guidelines](https://github.com/gammasoft71/xtd/blob/master/docs/design_guidelines.md) to make sure your contribution follows the rules.
+* [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
+* If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
+
+**Your feedback is important for the evolution of the project.**
+
+### Beginners
+
+The following project aims to simplify and guide the way beginners make their first contribution. If you are looking to make your first contribution, check out the project below.
+
+[First Contributions](https://github.com/firstcontributions/first-contributions)
+
+Now you are ready to make your first contribution to xtd.
+
 ## Examples
 
 The classic first application 'Hello World'.
@@ -220,44 +258,6 @@ xtdc run
 #### Output
 
 ![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_tunit.png)
-
-## Getting Started
-
-* [Installation](https://github.com/gammasoft71/xtd/blob/master/docs/downloads.md) provides download and install documentation.
-* [Guides](https://github.com/gammasoft71/xtd/blob/master/docs/guides.md) provides xtd guides and tutorials.
-* [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides some examples.
-
-## Development status
-
-* [xtd - kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
-* [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) provides a view of the xtd roadmap.
-* [Release notes](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md) provides release notes information.
-* [Development status](https://github.com/gammasoft71/xtd/blob/master/docs/development_status.md) provides information about classes and libraries development status.
-* [Translation status](https://github.com/gammasoft71/xtd/blob/master/docs/translations_status.md) provides information about translations status.
-
-This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
-
-But you can follow the evolution of the development. We keep the status up to date.
-
-## Contributing
-
-The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) lists contributors together with contact information. If you make a contribution, please add yourself to the list.
-
-**Your contributions are welcome.**
-
-* First read [Code of conduct](https://github.com/gammasoft71/xtd/blob/master/CODE_OF_CONDUCT.md) and the [design guidelines](https://github.com/gammasoft71/xtd/blob/master/docs/design_guidelines.md) to make sure your contribution follows the rules.
-* [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
-* If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
-
-**Your feedback is important for the evolution of the project.**
-
-### Beginners
-
-The following project aims to simplify and guide the way beginners make their first contribution. If you are looking to make your first contribution, check out the project below.
-
-[First Contributions](https://github.com/firstcontributions/first-contributions)
-
-Now you are ready to make your first contribution to xtd.
 
 ## Gallery
 
