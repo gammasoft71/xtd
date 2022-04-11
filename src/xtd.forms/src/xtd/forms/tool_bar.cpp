@@ -111,8 +111,6 @@ void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
   control::on_paint(e);
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   if (control_appearance() == forms::control_appearance::standard) tool_bar_renderer::draw_tool_bar(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, data_->border_style, data_->border_sides);
-  //if (control_appearance() == forms::control_appearance::standard && !data_->is_system_tool_bar)
-  //  control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
 }
 
 tool_bar& tool_bar::is_system_tool_bar(bool value) {
