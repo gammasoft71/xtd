@@ -24,7 +24,7 @@ But you can follow the evolution of the development. We keep the status up to da
 
 ### Bugs
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.2.0)
+see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.2.0+is%3Aopen)
 
 ### Enhancements
 
@@ -96,7 +96,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ### Bugs
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.3.0)
+see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.3.0+is%3Aopen)
 
 ### Enhancements
 
@@ -143,7 +143,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ### Bugs
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.4.0)
+see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.4.0+is%3Aopen)
 
 ### Enhancements
 
@@ -173,7 +173,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ### Bugs
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A1.0.0)
+see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A1.0.0+is%3Aopen)
 
 ### Enhancements
 
@@ -192,7 +192,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ## Release 2.0.0 (release)
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A2.0.0)
+see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A2.0.0+is%3Aopen)
 
 ### Enhancements
 
@@ -204,7 +204,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ## Release 3.0.0 (release)
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A3.0.0)
+see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A3.0.0+is%3Aopen)
 
 ### Enhancements
 
@@ -215,7 +215,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ## Release 4.0.0 (release)
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A4.0.0)
+see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A4.0.0+is%3Aopen)
 
 ### Enhancements
 
@@ -226,7 +226,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ## Release 5.0.0 (release)
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A5.0.0)
+see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A5.0.0+is%3Aopen)
 
 ### Enhancements
 
