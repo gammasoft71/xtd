@@ -74,26 +74,22 @@ namespace xtd {
       /// @return One of the check_state enumeration values. The default value is unchecked.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::Indeterminate in code and not by u ser interaction.
       /// @remarks The following table describes the xtd::forms::appearance of the toggle_button control in its different states for the normal and button style control toggle_button::appearance.
-      /// | Check_state   |  appearance::normal                                                    | appearance::button                |
-      /// |--------------------|------------------------------------------------------------------------|----------------------------------------|
-      /// | checked         | The toggle_button displays a check mark.                        | The control appears sunken. |
-      /// | unchecked     | The CheckBox is empty.                                               | The control appears raised.   |
-      /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.        |
+      /// | Check_state   |  appearance::normal                               | appearance::button          |
+      /// |---------------|---------------------------------------------------|-----------------------------|
+      /// | checked       | The toggle_button displays a check mark.          | The control appears sunken. |
+      /// | unchecked     | The CheckBox is empty.                            | The control appears raised. |
+      /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.   |
       virtual forms::check_state check_state() const {return check_state_;}
       /// @brief Sets the state of the toggle_button.
       /// @param chexk_state One of the check_state enumeration values. The default value is unchecked.
       /// @remarks The following table describes the xtd::forms::appearance of the toggle_button control in its different states for the normal and button style control toggle_button::appearance.
-      /// | Check_state   |  appearance::normal                                                    | appearance::button                |
-      /// |--------------------|------------------------------------------------------------------------|----------------------------------------|
-      /// | checked         | The toggle_button displays a check mark.                        | The control appears sunken. |
-      /// | unchecked     | The CheckBox is empty.                                               | The control appears raised.   |
-      /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.        |
+      /// | Check_state   |  appearance::normal                               | appearance::button          |
+      /// |---------------|---------------------------------------------------|-----------------------------|
+      /// | checked       | The toggle_button displays a check mark.          | The control appears sunken. |
+      /// | unchecked     | The CheckBox is empty.                            | The control appears raised. |
+      /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.   |
       virtual toggle_button& check_state(forms::check_state check_state);
-      
-      /// @brief Gets the default size of the control.
-      /// @return The default size.
-      drawing::size default_size() const override {return {104, 25};}
-      
+
       /// @brief Gets a value indicating whether the toggle_button will allow three check states rather than two.
       /// @return true if the toggle_button is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
