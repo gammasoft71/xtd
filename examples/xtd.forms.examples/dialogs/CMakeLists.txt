@@ -13,6 +13,7 @@ add_projects(
   debug_message_box
   exception_box
   exception_dialog
+  folder_browser_box
   folder_browser_dialog
   font_box
   font_dialog

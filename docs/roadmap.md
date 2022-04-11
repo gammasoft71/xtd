@@ -57,7 +57,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues)
 | https://github.com/gammasoft71/xtd/issues/67     | xtd.forms | dot_matrix_display_renderer       | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/68     | xtd.forms | find_box                          | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/69     | xtd.forms | find_dialog                       | Gammasoft |                                                 |
-| https://github.com/gammasoft71/xtd/issues/139    | xtd.forms | folder_browser_box                | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/139    | xtd.forms | folder_browser_box                | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/70     | xtd.forms | font_box                          | Bader     | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/71     | xtd.forms | font_picker_renderer              | Gammasoft |                                                 |
 | https://github.com/gammasoft71/xtd/issues/72     | xtd.forms | form_renderer                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
