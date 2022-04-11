@@ -69,26 +69,6 @@ This project is an open source project. The developers who participate do so on 
 
 But you can follow the evolution of the development. We keep the status up to date.
 
-## Contributing
-
-The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) lists contributors together with contact information. If you make a contribution, please add yourself to the list.
-
-**Your contributions are welcome.**
-
-* First read [Code of conduct](https://github.com/gammasoft71/xtd/blob/master/CODE_OF_CONDUCT.md) and the [design guidelines](https://github.com/gammasoft71/xtd/blob/master/docs/design_guidelines.md) to make sure your contribution follows the rules.
-* [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
-* If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
-
-**Your feedback is important for the evolution of the project.**
-
-### Beginners
-
-The following project aims to simplify and guide the way beginners make their first contribution. If you are looking to make your first contribution, check out the project below.
-
-[First Contributions](https://github.com/firstcontributions/first-contributions)
-
-Now you are ready to make your first contribution to xtd.
-
 ## Examples
 
 The classic first application 'Hello World'.
@@ -258,6 +238,26 @@ xtdc run
 #### Output
 
 ![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_tunit.png)
+
+## Contributing
+
+The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) lists contributors together with contact information. If you make a contribution, please add yourself to the list.
+
+**Your contributions are welcome.**
+
+* First read [Code of conduct](https://github.com/gammasoft71/xtd/blob/master/CODE_OF_CONDUCT.md) and the [design guidelines](https://github.com/gammasoft71/xtd/blob/master/docs/design_guidelines.md) to make sure your contribution follows the rules.
+* [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
+* If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
+
+**Your feedback is important for the evolution of the project.**
+
+### Beginners
+
+The following project aims to simplify and guide the way beginners make their first contribution. If you are looking to make your first contribution, check out the project below.
+
+[First Contributions](https://github.com/firstcontributions/first-contributions)
+
+Now you are ready to make your first contribution to xtd.
 
 ## Gallery
 
