@@ -169,7 +169,7 @@ namespace xtd {
       
       /// @brief Displays a multiple file select dialog box in front of a specified window.
       /// @param file_names An output std::vector <xtd::ustring> that will store the selected file names.
-      /// @param owner An iwin32_window that represents the owner window of the file dialog box.
+      /// @param owner An xtd::forms::iwin32_window that represents the owner window of the file dialog box.
       /// @param title An xtd::ustring that specifies the caption title of the file dialog box.
       /// @param initial_directory An xtd::ustring that specifies the initial directory displayed by the file dialog box
       /// @param filter An xtd::ustring that specifies the file name filter string, which determines the choices that appear in the "Save as file type" or "Files of type" box in the dialog box, separated by vertical bar | for example: @verbatim (*.txt)|*.txt|All files (*.*)|*.* @endverbatim
@@ -242,7 +242,7 @@ namespace xtd {
       
     private:
       template<const bool multiselect, typename output_t>
-      static xtd::forms::dialog_result show_open_file_box(output_t& output, const xtd::ustring& title, const xtd::ustring& initial_directory = "", const xtd::ustring& filter = "", const open_file_box_options options = open_file_box_options::none, const iwin32_window* owner = nullptr) {
+      static xtd::forms::dialog_result show_open_file_box(output_t& output, const xtd::ustring& title, const xtd::ustring& initial_directory = "", const xtd::ustring& filter = "", const open_file_box_options options = open_file_box_options::none, const xtd::forms::iwin32_window* owner = nullptr) {
         xtd::forms::open_file_dialog dialog;
         dialog.multiselect(multiselect)
         .title(title)
