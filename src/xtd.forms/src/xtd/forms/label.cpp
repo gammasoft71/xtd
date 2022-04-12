@@ -52,6 +52,7 @@ label& label::border_style(nullptr_t) {
 label& label::flat_style(xtd::forms::flat_style flat_style) {
   if (data_->flat_style != flat_style) {
     data_->flat_style = flat_style;
+    control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
     recreate_handle();
   }
   return *this;
@@ -119,7 +120,7 @@ forms::create_params label::create_params() const {
   create_params.style(create_params.style() | SS_LEFT);
   
   if (data_->flat_style == xtd::forms::flat_style::system) {
-    if (data_->border_style == xtd::forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+    if (data_->border_style == xtd::forms::border_style::solid) create_params.style(create_params.style() | WS_BORDER);
     else if (data_->border_style != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   } else create_params.style(create_params.style() | SS_OWNERDRAW);
   
