@@ -332,6 +332,7 @@ namespace unit_tests {
       style_sheets::control ctrl;
       ctrl.margin({1, 2, 3, 4});
       ctrl.border_width({5, 6, 7, 8});
+      ctrl.border_style(border_type::solid);
       ctrl.padding({9, 10, 11, 12});
       assert::are_equal(drawing::rectangle(102, 201, 294, 396), ctrl.get_border_rectangle(bounds));
       assert::are_equal(drawing::rectangle(108, 206, 280, 384), ctrl.get_fill_rectangle(bounds));
