@@ -565,6 +565,18 @@ main_form::main_form() {
   busy_box::hide();
 }
 
+void main_form::on_system_colors_changed(const xtd::event_args& e) {
+  form::on_system_colors_changed(e);
+  create_project_type_items_control_.on_system_colors_changed(e);
+  
+  auto selected_index = open_xtd_example_forms_list_box_.selected_index();
+  open_xtd_example_forms_list_box_.selected_index(-1);
+  open_xtd_example_forms_list_box_.items().clear();
+  for (auto item : xtd_example_item::get_forms_examples())
+    open_xtd_example_forms_list_box_.items().push_back({item.name(), item});
+  open_xtd_example_forms_list_box_.selected_index(selected_index);
+}
+
 void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
   auto create_recent_projects = properties::settings::default_settings().create_recent_propjects().split({';'});
   create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
