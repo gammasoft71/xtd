@@ -171,7 +171,6 @@ namespace xtd {
       /// @}
       
     private:
-      using control::control_appearance;
       struct data {
         xtd::forms::border_sides border_sides = xtd::forms::border_sides::all;
         std::optional<xtd::forms::border_style> border_style;
