@@ -570,7 +570,7 @@ void main_form::on_system_colors_changed(const xtd::event_args& e) {
   create_project_type_items_control_.on_system_colors_changed(e);
   
   auto selected_index = open_xtd_example_forms_list_box_.selected_index();
-  open_xtd_example_forms_list_box_.selected_index(-1);
+  open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
   open_xtd_example_forms_list_box_.items().clear();
   for (auto item : xtd_example_item::get_forms_examples())
     open_xtd_example_forms_list_box_.items().push_back({item.name(), item});
