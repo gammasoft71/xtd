@@ -5,6 +5,9 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 
 if (XTD_BUILD_TESTS_XTD_FORMS)
-  add_projects(xtd.forms.buttons.tests)
-  add_projects(xtd.forms.toggle_buttons.tests)
+  add_projects(
+    xtd.forms.buttons.tests
+    xtd.forms.labels.tests
+    xtd.forms.toggle_buttons.tests
+  )
 endif()
