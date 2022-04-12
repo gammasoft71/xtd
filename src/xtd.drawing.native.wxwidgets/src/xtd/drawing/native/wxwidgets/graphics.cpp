@@ -657,6 +657,7 @@ void graphics::rotate_transform(intptr_t handle, float angle, int32_t order) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Rotate(math::degrees_to_radians(-angle));
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 intptr_t graphics::save(intptr_t handle) {
@@ -669,6 +670,7 @@ void graphics::scale_transform(intptr_t handle, float sx, float sy, int32_t orde
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Scale(sx, sy);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::smoothing_mode(intptr_t handle, int32_t smoothing_mode) {
@@ -707,6 +709,7 @@ void graphics::translate_transform(intptr_t handle, float dx, float dy, int32_t 
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Translate(dx, dy);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::visible_clip_bounds(intptr_t handle, float& x, float& y, float& width, float& height) {
