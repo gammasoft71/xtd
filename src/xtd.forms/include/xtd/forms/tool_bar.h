@@ -75,13 +75,18 @@ namespace xtd {
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual forms::border_style border_style() const {return data_->border_style;}
+      virtual forms::border_style border_style() const {return data_->border_style.value_or(xtd::forms::border_style::none);}
       /// @brief Sets the border style for the control.
       /// @param border_style One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
-      /// @return Current panel instance.
+      /// @return Current tool_bar instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual tool_bar& border_style(forms::border_style border_style);
-      
+      /// @brief Reets the border style for the control.
+      /// @param border_style nullptr.
+      /// @return Current tool_bar instance.
+      /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
+      virtual xtd::forms::tool_bar& border_style(nullptr_t border_style);
+
       dock_style dock() const override;
       control& dock(dock_style dock) override;
       
@@ -127,7 +132,7 @@ namespace xtd {
       
       struct data {
         forms::border_sides border_sides = forms::border_sides::all;
-        forms::border_style border_style;
+        std::optional<xtd::forms::border_style> border_style;
         xtd::forms::image_list image_list;
         tool_bar_item_collection items;
         bool is_system_tool_bar = false;

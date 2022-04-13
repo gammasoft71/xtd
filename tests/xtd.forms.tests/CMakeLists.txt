@@ -9,5 +9,6 @@ if (XTD_BUILD_TESTS_XTD_FORMS)
     xtd.forms.buttons.tests
     xtd.forms.labels.tests
     xtd.forms.toggle_buttons.tests
+    xtd.forms.tool_bars.tests
   )
 endif()

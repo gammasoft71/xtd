@@ -63,7 +63,6 @@ tool_bar::tool_bar() {
   data_->items.item_removed += {*this, &tool_bar::on_item_removed};
   
   data_->image_list.image_size(environment::os_version().is_windows_platform() ? drawing::size {16, 16} : drawing::size {24, 24});
-  //data_->border_style = forms::border_style::outset; // forms::border_style::fixed_single;
   dock(xtd::forms::dock_style::top);
   padding(forms::padding {2});
   height(data_->image_list.image_size().height() + 10);
@@ -82,6 +81,15 @@ tool_bar& tool_bar::border_sides(forms::border_sides border_sides) {
 tool_bar& tool_bar::border_style(forms::border_style border_style) {
   if (data_->border_style != border_style) {
     data_->border_style = border_style;
+    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
+tool_bar& tool_bar::border_style(nullptr_t) {
+  if (data_->border_style) {
+    data_->border_style.reset();
     if (control_appearance() == forms::control_appearance::system) recreate_handle();
     else invalidate();
   }

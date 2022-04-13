@@ -775,7 +775,7 @@ void style_sheet::tool_bar_reader(xtd::web::css::css_reader& reader) noexcept {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) tool_bars_[pseudo_state::standard] = xtd::forms::style_sheets::tool_bar();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) tool_bars_[pseudo_state::standard | state.second] = panels_[pseudo_state::standard];
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) tool_bars_[pseudo_state::standard | state.second] = tool_bars_[pseudo_state::standard];
     if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, tool_bars_[pseudo_state::standard | state.second]);
   }
 }
