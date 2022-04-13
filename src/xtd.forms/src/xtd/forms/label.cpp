@@ -120,8 +120,8 @@ forms::create_params label::create_params() const {
   create_params.style(create_params.style() | SS_LEFT);
   
   if (data_->flat_style == xtd::forms::flat_style::system) {
-    if (data_->border_style == xtd::forms::border_style::solid) create_params.style(create_params.style() | WS_BORDER);
-    else if (data_->border_style != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+    if (data_->border_style.value_or(xtd::forms::border_style::none) == xtd::forms::border_style::solid) create_params.style(create_params.style() | WS_BORDER);
+    else if (data_->border_style.value_or(xtd::forms::border_style::none) != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   } else create_params.style(create_params.style() | SS_OWNERDRAW);
   
   switch (data_->text_align) {
