@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/tool_bar_button.h"
+#include "../../../include/xtd/forms/tool_bar.h"
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -24,12 +25,27 @@ tool_bar_button::tool_bar_button(const ustring& text, size_t image_index, const 
   click += on_click;
 }
 
+bool tool_bar_button::enabled() const {
+  return enabled_;
+}
+
+tool_bar_button& tool_bar_button::enabled(bool value) {
+  if (enabled_ != value) {
+    enabled_ = value;
+    if (parent) parent->recreate_handle();
+  }
+  return *this;
+}
+
 const ustring& tool_bar_button::text() const {
   return text_;
 }
 
 tool_bar_button& tool_bar_button::text(const xtd::ustring& value) {
-  text_ = value;
+  if (text_ != value) {
+    text_ = value;
+    if (parent) parent->recreate_handle();
+  }
   return *this;
 }
 
@@ -38,7 +54,10 @@ size_t tool_bar_button::image_index() const {
 }
 
 tool_bar_button& tool_bar_button::image_index(size_t value) {
-  image_index_ = value;
+  if (image_index_ != value) {
+    image_index_ = value;
+    if (parent) parent->recreate_handle();
+  }
   return *this;
 }
 

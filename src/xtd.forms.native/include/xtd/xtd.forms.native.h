@@ -79,6 +79,8 @@
 #include "forms/native/text_box.h"
 #include "forms/native/timer.h"
 #include "forms/native/toggle_button.h"
+#include "forms/native/tool_bar.h"
+#include "forms/native/tool_bar_styles.h"
 #include "forms/native/track_bar.h"
 #include "forms/native/track_bar_styles.h"
 #include "forms/native/up_down_button.h"

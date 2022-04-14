@@ -98,11 +98,18 @@ namespace xtd {
       
       xtd::drawing::size default_size() const override;
       
+      virtual bool show_icon() const;
+      virtual tool_bar& show_icon(bool value);
+      
+      virtual bool show_text() const;
+      virtual tool_bar& show_text(bool value);
+      
       const tool_bar_item_collection& items() const;
       tool_bar_item_collection& items();
       /// @}
       
     protected:
+      friend tool_bar_button;
       friend form;
       
       /// @name Protetced properties
@@ -137,6 +144,8 @@ namespace xtd {
         tool_bar_item_collection items;
         bool is_system_tool_bar = false;
         dock_style non_system_dock = dock_style::none;
+        bool show_icon = true;
+        bool show_text = false;
         std::vector<std::shared_ptr<xtd::forms::control>> tool_bar_items;
         std::vector<intptr_t> system_tool_bar_item_handles;
       };
