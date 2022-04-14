@@ -12,317 +12,87 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * Linux and macOS users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "/usr/local/share/xtd/themes" directory before the new installation.
 * Windows users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "C:\Program Files (x86)\xtd\share\xtd\themes" directory before the new installation.
 
-## Issues
+## List
 
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/16 - [BUG] WriteFile never sets number_of_bytes_written to -1
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/18 - [BUG] Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/19 - [BUG] operator + and operator - does not build with xtd::delegate
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/20 - [BUG] cannot build unit test project created with xtdc-gui
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/25 - [BUG] xtdc-gui crashes with projects with space in name
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/26 - [BUG] When resizing xtdc-gui, the graphics get messed up
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/27 - [BUG] cannot delete recent projects in xtdc-gui
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/31 - [BUG] xtdc-gui panels redraw over each other
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/38 - [BUG] install.cmd removed items from my windows path
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/40 - [BUG] Problems of installing xtd in Arch linux and distributions that are based on it
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) https://github.com/gammasoft71/xtd/issues/42 - [BUG] how to redraw Caption bar, or create Caption menu?
-
-## xtd
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) packages (vcpkg, brew, apt) - xtd packages.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) register xtd domain nameProvides the default output methods and behavior for tracing.
-
-## xtd.core
-
-### System
-
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) box - Represents a boxed object.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) date_time - Represents an instant in time, typically expressed as a date and time of day.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) lock - The lock keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) math - Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) type - Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) uri - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
-
-### IO
-
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) binary_reader - Reads primitive data types as binary values in a specific encoding.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) binary_writer - Writes primitive types in binary to a stream and supports writing strings in a specific encoding.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) directory - Provides static methods for the creation, copying, deletion, moving, and opening of directories, and aids in the creation of xtd::io::directory_dtream objects.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) directory_info - Exposes instance methods for creating, moving, and enumerating through directories and subdirectories.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) drive_info - Provides access to information on a drive.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) file_info - Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::fstream objects.
-
-#### Memory mapped files
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) memory_mapped_file - Represents a memory-mapped file.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) memory_mapped_view_accessor - Represents a randomly accessed view of a memory-mapped file.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) memory_mapped_view_stream - Represents a view of a memory-mapped file as a sequentially accessed stream.
-
-### Media
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sound_player - Controls playback of a sound from a .wav file.
-
-### Microsoft
-
-#### Win32
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) registry - Provides xtd::microsoft::win32::registry_key objects that represent the root keys in the Windows registry, and static methods to access key/value pairs.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) registry_key - Represents a key-level node in the Windows registry. This class is a registry encapsulation.
-
-### Net
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) web_request - Makes a request to a Uniform Resource Identifier (URI).
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) web_response - Provides a response from a Uniform Resource Identifier (URI).
-
-##### web sockets
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) client_web_socket - Provides a client for connecting to WebSocket services.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) web_socket - The xtd::net::sockets::web_sockets::web_socket class allows applications to send and receive data after the WebSocket upgrade has completed.
-
-### Reflection
-
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly - Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_company_attribute - Defines a company name custom attribute for an assembly manifest.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_configuration_attribute - Specifies the build configuration, such as retail or debug, for an assembly.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_copyright_attribute - Defines a copyright copyright attribute for an assembly manifest.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_culture_attribute - Specifies which culture the assembly supports.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_description_attribute - Provides a text description for an assembly.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_file_version_attribute - Instructs a compiler to use a specific version number for the Win32 file version resource. The Win32 file version is not required to be the same as the assembly's version number.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_guid_attribute - Specifies the guid of the assembly being attributed.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_identifier_attribute - Specifies the identifier of the assembly being attributed.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_name_attribute - Specifies a name for an assembly.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_product_attribute - Defines a product name custom attribute for an assembly manifest.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_title_attribute - Specifies a title for an assembly.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_trademark_attribute - Defines a trademark custom attribute for an assembly manifest.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) assembly_version_attribute - Specifies the version of the assembly being attributed.
-
-### Text
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) string_builder - Represents a mutable string of characters.
-
-### Threading
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) auto_reset_event - Notifies a waiting thread that an event has occurred.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) barrier - Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) event_wait_handle - Represents a thread synchronization event.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) interlocked - Provides atomic operations for variables that are shared by multiple threads.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) manual_reset_event - Notifies a waiting thread that an event has occurred.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) monitor - Provides a mechanism that synchronizes access to objects.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) mutex - A synchronization primitive that can also be used for interprocess synchronization.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) registered_wait_handle - Represents a handle that has been registered when calling xtd::threading::register_wait_for_single_object.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) semaphore - Limits the number of threads that can access a resource or pool of resources concurrently.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) spin_lock - Provides a mechanism for executing a method at specified intervals.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) thread_local - Provides thread-local storage of data.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) thread_pool - Provides a pool of threads that can be used to post work items, process asynchronous I/O, wait on behalf of other threads, and process timers.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) timer - Provides a mechanism for executing a method at specified intervals.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) timer_callback - Represents the method that handles calls from a xtd::threading::timer.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) wait_callback - Represents a method to be called when a xtd::threading::wait_handle is signaled or times out.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) wait_handle - Encapsulates operating system specific objects that wait for exclusive access to shared resources.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) wait_or_timer_callback - Represents a method to be called when a xtd::threading::wait_handle is signaled or times out.
-
-### Timers
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) timer - Generates an event after a set interval, with an option to generate recurring events.
-
-## xtd.drawing
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) buffered_graphics - Provides a graphics buffer for double buffering.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) region - Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inherited.
-
-### Drawing 2d
-
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) conical_gradient_brush - Encapsulates a xtd::drawing::brush with a conical gradient. This class cannot be inherited.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) graphics_path - Defines an object used to draw lines and curves. This class cannot be inherited.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) matrix - Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inherited.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) radial_gradient_brush - Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited.
-
-## xtd.forms
-
-### Dialog
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) find_box - Represents a dialog box that displays find box.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) find_dialog - Represents a dialog box that displays find dialog.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) font_box - Represents a common dialog box that displays a dialog to the user to choose a font from among those installed on the local computer.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) folder_browser_box - Prompts the user to select a folder.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) open_file_box - Displays a standard dialog box that prompts the user to open a file.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) progress_box - Represents a common dialog box that displays progress box.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) replace_box - Represents a dialog box that displays replace box.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) replace_dialog - Represents a dialog box that displays replace dialog.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) save_file_box - Prompts the user to select a location for saving a file.
-
-### Menus and toolbars
-
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) context_menu - Represents a shortcut menu.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) context_menu_strip - Represents a shortcut menu.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) menu_strip - Provides a menu system for a form.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) ribbon_bar - Represents a Windows ribbon bar control.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) status_bar - Represents a Windows status bar control.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) status_strip - Represents a Windows status bar control.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) tool_bar - Represents a Windows tool bar control.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_strip - Provides a container for Windows toolbar objects.
-
-### Containers
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) collapsible_panel - Used to group collections of controls in a collapsible panel.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) flow_layout_panel - Used to group collections of fixed aligned controls.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) split_container - Represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) table_layout_panel - Used to group collections of fixed aligned controls.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_strip_container - Provides panels on each side of the form and a central panel that can hold one or more controls.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_strip_panel - Creates a container within which other controls can share horizontal or vertical space.
-
-### Controls
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) dial - Represents a dial control.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) light_button - Represents a light button control.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) list_view - Represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) masked_text_box - Uses a mask to distinguish between proper and improper user input.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) media_player - Represents a media player control.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) month_calender - Represents a Windows control that enables the user to select a date using a visual monthly calendar display.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) notify_icon - Specifies a component that creates an icon in the notification area.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) property_grid - Provides a user interface for browsing the properties of an object.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) rich_text_box - Represents a Windows rich text box control.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) roller - Represents a roller control.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_tip - Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_strip_progress_bar - Represents a tool strip progress bar class.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tree_view - Displays a hierarchical collection of labeled items, each represented by a xtd::forms::tree_node.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) web_browser - Enables the user to navigate Web pages inside your form.
-
-### Components
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) error_provider - Provides a user interface for indicating that a control on a form has an error associated with it
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) file_system_watcher - Listens to the file system change notifications and raises events when a directory, or file in a directory, changes.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) help_provider - Provides pop-up or online Help for controls.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) performance_counter - Represents a Windows NT performance counter component.
-
-### Data
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) binding_navigator - Represents the navigation and manipulation user interface (UI) for controls on a form that are bound to data.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) binding_source - Encapsulates the data source for a form.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) chart - Displays data in a customizable chart.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) data_grid_view - Displays data in a customizable grid.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) data_set - Represents an in-memory cache of data.
-
-### Printing
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) page_setup_dialog - Enables users to change page-related print settings, including margins and paper orientation.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) print_dialog - Lets users select a printer and choose which sections of the document to print from a Windows Forms application.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) print_document - Defines a reusable object that sends output to a printer, when printing from a Windows Forms application.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) print_preview_control - Represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most xtd::forms::print_preview_control objects are found on xtd::forms::print_preview_dialog objects, but they do not have to be.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) print_preview_dialog - Represents a dialog box form that contains a xtd::forms::print_preview_control for printing from a Windows Forms application.
-
-### Clipboard and Drag & Drop
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) clipboard - Provides methods to place data on and retrieve data from the system Clipboard. This class cannot be inherited.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) data_format - Provides static, predefined xtd::forms::clipboard format names. Use them to identify the format of data that you store in an xtd::forms::idata_object.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) data_object - Implements a basic data transfer mechanism.
-
-### Style sheets
-
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) ibox_model - The box model allows you to specify the margin, borders, padding, background color, width and height of a box.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) iimage_model - The image model allows you to specify the alignment  of an image
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) itext_model - The text model allows you to specify the alignment, color, decoration, transformation, and font of a text.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) control - The control selector allows you to specify the box and color of a control.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) style_shet - The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.
-
-### Renderers
-
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) box_renderer - Provides methods used to render a box with or without style sheets.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) check_box_renderer - Provides check box renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) checked_list_box_renderer - Provides checked list box renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) choice_renderer - Provides choice renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) collapsible_panel_renderer - Provides collapsible panel renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) color_picker_renderer - Provides color picker renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) combo_box_renderer - Provides combo box renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) command_link_button_renderer - Provides link button renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) control_renderer - Provides control renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) date_time_picker_renderer - Provides data time picker renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) dial_renderer - Provides dial renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) domain_up_down_renderer - Provides up down renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) dot_matrix_display_renderer - Provides dot matrix display renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) font_picker_renderer - Provides font picker renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) form_renderer - Provides form control renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) fourteen_segment_display_renderer - Provides fourteen segment display renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) h_scroll_bar_renderer - Provides horizont scroll bar renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) image_renderer - Provides image renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) label_renderer - Provides label renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) lcd_label_renderer - Provides lcd label renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) light_button_renderer - Provides light button renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) link_label_renderer - Provides link label renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) list_box_renderer - Provides list box renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) list_view_renderer - Provides list view renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) loading_indicator_renderer - Provides loading indicator renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) masked_text_box_renderer - Provides masked text box renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) media_player_renderer - Provides media player renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) month_calendar_renderer - Provides month calendar renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) nine_segment_display_renderer - Provides nine segment display renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) numeric_up_down_renderer - Provides numeric up down renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) panel_renderer - Provides panel control renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) picture_box_renderer - Provides picture box renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) progress_bar_renderer - Provides progress bar renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) property_grid_renderer - Provides property grid renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) radio_button_renderer - Provides radio button renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) rich_text_box_renderer - Provides text box renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) roller_renderer - Provides roller renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sevent_segment_display_renderer - Provides seven segment display renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sixteen_segment_display_renderer - Provides sixteen segment display renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) splitter_renderer - Provides splitter renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) switch_button_renderer - Provides switch button renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) text_renderer - Provides methods used to render a text with style sheets.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) text_box_renderer - Provides text box renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) toggle_button_renderer - Provides toggle_button renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_tip_renderer - Provides tool tip renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tool_strip_progress_bar_renderer - Provides strip progress bar renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) toggle_button_renderer - Provides toggle button renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) track_bar_renderer - Provides track bar renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) tree_view_renderer - Provides tree view renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) up_down_button_renderer - Provides up down button renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) user_control_renderer - Provides user_Control renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) v_scroll_bar_renderer - Provides vertical scroll bar renderer methods.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) web_browser_renderer - Provides web browser renderer methods.
-
-## Tools
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) xtd-code - Forms builder and c++ code generator.
-
-## Translations
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) Add new translation languages.
-
-## Themes
-
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) default - Default theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) gnome dark - Gnome dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) gnome light - Gnome light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) kde dark - kde dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) kde light - kde light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) macos dark - macOS dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) macos light - macOS light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) symbolic dark - symbolic dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) symbolic light - symbolic light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) windows dark - Windows dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) windows light - Windows light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd dark - xtd dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd light - xtd light theme css files.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) light - Light color theme css files.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) dark - Dark color theme css files.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) white - White color theme css files.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) black - Black color theme css files.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) blue - Blue color theme css files.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) green - Green color theme css files.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) red - Red color theme css files.
-
-## Toolkits
-
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) cocoa - Apple AppKit toolkit.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) fltk - FLTK toolkit.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) gtk4 - Gtk4 toolkit.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) qt6 - Qt6 toolkit.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) sdl2 - Sdl2 toolkit.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) win32 - Win32 API toolkit.
-
-## CMake
-
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) Assembly commands - CMake commands to generate assembly information from the CMakeLists.txt file.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) android platforms - Toolchain for Android devices.
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) iOS platforms - Toolchain for iOS devices.
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] WriteFile never sets number_of_bytes_written to -1. -https://github.com/gammasoft71/xtd/issues/16
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump - https://github.com/gammasoft71/xtd/issues/18
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] operator + and operator - does not build with xtd::delegate - https://github.com/gammasoft71/xtd/issues/19
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] cannot build unit test project created with xtdc-gui - https://github.com/gammasoft71/xtd/issues/20
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] xtdc-gui crashes with projects with space in name - https://github.com/gammasoft71/xtd/issues/25
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] When resizing xtdc-gui, the graphics get messed up - https://github.com/gammasoft71/xtd/issues/26
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] cannot delete recent projects in xtdc-gui - https://github.com/gammasoft71/xtd/issues/27
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] xtdc-gui panels redraw over each other - https://github.com/gammasoft71/xtd/issues/31
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] install.cmd removed items from my windows path - https://github.com/gammasoft71/xtd/issues/38
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] Problems of installing xtd in Arch linux and distributions that are based on it - https://github.com/gammasoft71/xtd/issues/40
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] how to redraw Caption bar, or create Caption menu? - https://github.com/gammasoft71/xtd/issues/42
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - box - Represents a boxed object.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - date_time - Represents an instant in time, typically expressed as a date and time of day.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - math - Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - uri - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - binary_reader - Reads primitive data types as binary values in a specific encoding.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - binary_writer - Writes primitive types in binary to a stream and supports writing strings in a specific encoding.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - directory - Provides static methods for the creation, copying, deletion, moving, and opening of directories, and aids in the creation of xtd::io::directory_dtream objects.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - directory_info - Exposes instance methods for creating, moving, and enumerating through directories and subdirectories.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - drive_info - Provides access to information on a drive.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - file_info - Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::fstream objects.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly - Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_company_attribute - Defines a company name custom attribute for an assembly manifest.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_configuration_attribute - Specifies the build configuration, such as retail or debug, for an assembly.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_copyright_attribute - Defines a copyright copyright attribute for an assembly manifest.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_culture_attribute - Specifies which culture the assembly supports.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_description_attribute - Provides a text description for an assembly.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_file_version_attribute - Instructs a compiler to use a specific version number for the Win32 file version resource. The Win32 file version is not required to be the same as the assembly's version number.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_guid_attribute - Specifies the guid of the assembly being attributed.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_identifier_attribute - Specifies the identifier of the assembly being attributed.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_name_attribute - Specifies a name for an assembly.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_product_attribute - Defines a product name custom attribute for an assembly manifest.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_title_attribute - Specifies a title for an assembly.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_trademark_attribute - Defines a trademark custom attribute for an assembly manifest.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - assembly_version_attribute - Specifies the version of the assembly being attributed.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - region - Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inherited.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - conical_gradient_brush - Encapsulates a xtd::drawing::brush with a conical gradient. This class cannot be inherited.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - graphics_path - Defines an object used to draw lines and curves. This class cannot be inherited.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - matrix - Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inherited.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - radial_gradient_brush - Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - font_box - Represents a common dialog box that displays a dialog to the user to choose a font from among those installed on the local computer.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - folder_browser_box - Prompts the user to select a folder.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - open_file_box - Displays a standard dialog box that prompts the user to open a file.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - progress_box - Represents a common dialog box that displays progress box.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - save_file_box - Prompts the user to select a location for saving a file.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - context_menu - Represents a shortcut menu.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - tool_bar - Represents a Windows tool bar control.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - light_button - Represents a light button control.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - month_calender - Represents a Windows control that enables the user to select a date using a visual monthly calendar display.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - ibox_model - The box model allows you to specify the margin, borders, padding, background color, width and height of a box.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - iimage_model - The image model allows you to specify the alignment  of an image
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - itext_model - The text model allows you to specify the alignment, color, decoration, transformation, and font of a text.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - control - The control selector allows you to specify the box and color of a control.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - style_shet - The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - box_renderer - Provides methods used to render a box with or without style sheets.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - control_renderer - Provides control renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - form_renderer - Provides form control renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - image_renderer - Provides image renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - label_renderer - Provides label renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - panel_renderer - Provides panel control renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - text_renderer - Provides methods used to render a text with style sheets.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - toggle_button_renderer - Provides toggle_button renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - tool_bar_renderer - Provides tool bar renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - toggle_button_renderer - Provides toggle button renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - user_control_renderer - Provides user_Control renderer methods.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - default - Default theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - gnome dark - Gnome dark theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - gnome light - Gnome light theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - kde dark - kde dark theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - kde light - kde light theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - macos dark - macOS dark theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - macos light - macOS light theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - symbolic dark - symbolic dark theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - symbolic light - symbolic light theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - windows dark - Windows dark theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - windows light - Windows light theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - xtd dark - xtd dark theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - xtd light - xtd light theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.cmake - Assembly commands - CMake commands to generate assembly information from the CMakeLists.txt file.
 
 ______________________________________________________________________________________________
 
