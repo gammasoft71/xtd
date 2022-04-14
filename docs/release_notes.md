@@ -14,17 +14,17 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 
 ## List
 
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] WriteFile never sets number_of_bytes_written to -1. - [#16](https://github.com/gammasoft71/xtd/issues/16)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump - [#18](https://github.com/gammasoft71/xtd/issues/18)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] operator + and operator - does not build with xtd::delegate - [#19](https://github.com/gammasoft71/xtd/issues/19)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] cannot build unit test project created with xtdc-gui - [20](https://github.com/gammasoft71/xtd/issues/20)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] xtdc-gui crashes with projects with space in name - [#25](https://github.com/gammasoft71/xtd/issues/25)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] When resizing xtdc-gui, the graphics get messed up - [#26](https://github.com/gammasoft71/xtd/issues/26)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] cannot delete recent projects in xtdc-gui - [#27](https://github.com/gammasoft71/xtd/issues/27)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] xtdc-gui panels redraw over each other - [#31](https://github.com/gammasoft71/xtd/issues/31)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] install.cmd removed items from my windows path - [#38](https://github.com/gammasoft71/xtd/issues/38)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] Problems of installing xtd in Arch linux and distributions that are based on it - [#40](https://github.com/gammasoft71/xtd/issues/40)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) Issue - [BUG] how to redraw Caption bar, or create Caption menu? - [#42](https://github.com/gammasoft71/xtd/issues/42)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - WriteFile never sets number_of_bytes_written to -1. - [#16](https://github.com/gammasoft71/xtd/issues/16)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump - [#18](https://github.com/gammasoft71/xtd/issues/18)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - operator + and operator - does not build with xtd::delegate - [#19](https://github.com/gammasoft71/xtd/issues/19)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - cannot build unit test project created with xtdc-gui - [20](https://github.com/gammasoft71/xtd/issues/20)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - xtdc-gui crashes with projects with space in name - [#25](https://github.com/gammasoft71/xtd/issues/25)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - When resizing xtdc-gui, the graphics get messed up - [#26](https://github.com/gammasoft71/xtd/issues/26)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - cannot delete recent projects in xtdc-gui - [#27](https://github.com/gammasoft71/xtd/issues/27)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - xtdc-gui panels redraw over each other - [#31](https://github.com/gammasoft71/xtd/issues/31)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - install.cmd removed items from my windows path - [#38](https://github.com/gammasoft71/xtd/issues/38)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - Problems of installing xtd in Arch linux and distributions that are based on it - [#40](https://github.com/gammasoft71/xtd/issues/40)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - how to redraw Caption bar, or create Caption menu? - [#42](https://github.com/gammasoft71/xtd/issues/42)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - box - Represents a boxed object.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - date_time - Represents an instant in time, typically expressed as a date and time of day. - [#46](https://github.com/gammasoft71/xtd/issues/46)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - math - Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
