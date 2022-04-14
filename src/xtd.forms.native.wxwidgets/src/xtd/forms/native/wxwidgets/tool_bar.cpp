@@ -1,4 +1,5 @@
 #include <xtd/argument_exception.h>
+#include <xtd/diagnostics/stopwatch.h>
 #include <xtd/cdebug.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/tool_bar.h>
@@ -9,7 +10,7 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-intptr_t tool_bar::add_tool_bar_button(intptr_t control, const xtd::ustring& text, intptr_t image) {
+intptr_t tool_bar::add_tool_bar_button(intptr_t control, const xtd::ustring& text, intptr_t image, bool enabled) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -17,6 +18,7 @@ intptr_t tool_bar::add_tool_bar_button(intptr_t control, const xtd::ustring& tex
   }
   
   auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(control)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image));
+  tool_bar_item->Enable(enabled);
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }
 
@@ -38,6 +40,16 @@ bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return false;
   }
+
+#if __APPLE__
+  // Workaround : Without these following lines, there is often a crash on macOS with an invalid number of elements ???
+  /// @todo try to debug why crash without theses following lines...
+  auto sw = diagnostics::stopwatch::start_new();
+  while (sw.elapsed_milliseconds() < 10) {
+    wxTheApp->Yield();
+    wxTheApp->ProcessIdle();
+  }
+#endif
   
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control()) : nullptr);
   if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->Realize();

@@ -37,7 +37,7 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        static intptr_t add_tool_bar_button(intptr_t control, const xtd::ustring& text, intptr_t image);
+        static intptr_t add_tool_bar_button(intptr_t control, const xtd::ustring& text, intptr_t image, bool enabled);
         static intptr_t add_tool_bar_separator(intptr_t control);
         /// @brief Sets the tool_bar that is displayed in the form.
         /// @param control Control window handle.

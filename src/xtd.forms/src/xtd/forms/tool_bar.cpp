@@ -3,6 +3,7 @@
 #include <xtd/drawing/system_pens.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/tool_bar.h>
+#include <xtd/forms/native/tool_bar_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/control_paint.h"
@@ -96,12 +97,44 @@ tool_bar& tool_bar::border_style(nullptr_t) {
   return *this;
 }
 
+bool tool_bar::show_icon() const {
+  return data_->show_icon;
+}
+
+tool_bar& tool_bar::show_icon(bool value) {
+  if (data_->show_icon != value) {
+    data_->show_icon = value;
+    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
+bool tool_bar::show_text() const {
+  return data_->show_text;
+}
+
+tool_bar& tool_bar::show_text(bool value) {
+  if (data_->show_text != value) {
+    data_->show_text = value;
+    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
 forms::create_params tool_bar::create_params() const {
   forms::create_params create_params = control::create_params();
   
   if (data_->is_system_tool_bar)
     create_params.class_name("toolbar");
-    
+  
+  if (data_->non_system_dock == dock_style::left) create_params.style(create_params.style() | TBSTYLE_LEFT);
+  else if (data_->non_system_dock == dock_style::right) create_params.style(create_params.style() | TBSTYLE_RIGHT);
+  else if (data_->non_system_dock == dock_style::bottom) create_params.style(create_params.style() | TBSTYLE_BOTTOM);
+  if (data_->show_text) create_params.style(create_params.style() | TBSTYLE_SHOWTEXT);
+  if (!data_->show_icon) create_params.style(create_params.style() | TBSTYLE_NOSHOWICON);
+
   return create_params;
 }
 
@@ -143,7 +176,7 @@ void tool_bar::fill() {
     if (is<tool_bar_button>(reversed_items[index].get())) {
       auto& button_item = as<tool_bar_button>(reversed_items[index].get());
       if (data_->is_system_tool_bar)
-        data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle()));
+        data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle(), button_item.enabled()));
       else {
         auto button_control = std::make_shared<tool_bar_button_control>();
         button_control->parent(*this);
@@ -160,7 +193,7 @@ void tool_bar::fill() {
         //button_control->text(button_item.text());
         data_->tool_bar_items.push_back(button_control);
       }
-    } else if (is<tool_bar_separator>(reversed_items[index].get()) && index + 1 < reversed_items.size()) {
+    } else if (is<tool_bar_separator>(reversed_items[index].get())) {
       if (data_->is_system_tool_bar)
         data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_separator(handle()));
       else {
@@ -183,6 +216,7 @@ void tool_bar::fill() {
 
 void tool_bar::on_item_added(size_t pos, tool_bar_item_ref item) {
   parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+  item.get().parent = this;
   recreate_handle();
 }
 
@@ -193,6 +227,7 @@ void tool_bar::on_item_updated(size_t pos, tool_bar_item_ref item) {
 
 void tool_bar::on_item_removed(size_t pos, tool_bar_item_ref item) {
   parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+  item.get().parent = nullptr;
   recreate_handle();
 }
 
@@ -202,8 +237,10 @@ dock_style tool_bar::dock() const {
 }
 
 control& tool_bar::dock(dock_style dock) {
-  if (data_->is_system_tool_bar) data_->non_system_dock = dock;
-  else {
+  if (data_->is_system_tool_bar) {
+    data_->non_system_dock = dock;
+    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+  } else {
     int32_t current_size = this->dock() == dock_style::top || this->dock() == dock_style::bottom ? height() : width();
     control::dock(dock);
     if (this->dock() == dock_style::top || this->dock() ==  dock_style::bottom) height(current_size);

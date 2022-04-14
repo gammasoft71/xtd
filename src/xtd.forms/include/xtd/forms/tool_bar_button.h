@@ -40,6 +40,9 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      bool enabled() const;
+      tool_bar_button& enabled(bool value);
+
       const xtd::ustring& text() const;
       tool_bar_button& text(const xtd::ustring& value);
       
@@ -70,6 +73,7 @@ namespace xtd {
     private:
       xtd::ustring text_;
       size_t image_index_ = xtd::forms::image_list::image_collection::npos;
+      bool enabled_ = true;
     };
   }
 }

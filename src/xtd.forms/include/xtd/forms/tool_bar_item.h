@@ -8,6 +8,10 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class tool_bar;
+    /// @endcond
+    
     /// @brief Represents a toolbar item.
     /// @par Namespace
     /// xtd::forms
@@ -29,6 +33,10 @@ namespace xtd {
       /// @brief Generates a click event for the xtd::forms::tool_bar_item.
       virtual void perform_click() = 0;
       /// @}
+
+    protected:
+      friend xtd::forms::tool_bar;
+      xtd::forms::tool_bar* parent = nullptr;
     };
     
     /// @brief Represents a xtd::forms::tool_bar_item reference.
