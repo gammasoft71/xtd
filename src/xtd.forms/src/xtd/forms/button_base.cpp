@@ -15,7 +15,7 @@ button_base& button_base::flat_style(xtd::forms::flat_style flat_style) {
   if (data_->flat_style != flat_style) {
     data_->flat_style = flat_style;
     control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -53,7 +53,7 @@ button_base& button_base::image_list(const forms::image_list& value) {
   if (data_->image_list != value) {
     data_->image_list = value;
     data_->image = drawing::image::empty;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -61,7 +61,7 @@ button_base& button_base::image_list(const forms::image_list& value) {
 button_base& button_base::text_align(content_alignment text_align) {
   if (data_->text_align != text_align) {
     data_->text_align = text_align;
-    if (data_->flat_style == xtd::forms::flat_style::system) recreate_handle();
+    if (data_->flat_style == xtd::forms::flat_style::system) post_recreate_handle();
     else invalidate();
   }
   return *this;

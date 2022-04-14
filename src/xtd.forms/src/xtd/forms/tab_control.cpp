@@ -21,7 +21,7 @@ tab_control::tab_control() {
 tab_control& tab_control::alignment(tab_alignment alignment) {
   if (alignment_ != alignment) {
     alignment_ = alignment;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -38,7 +38,7 @@ tab_control& tab_control::selected_index(size_t selected_index) {
 tab_control& tab_control::image_list(const forms::image_list& value) {
   if (image_list_ != value) {
     image_list_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

@@ -26,7 +26,7 @@ collapsible_panel& collapsible_panel::border_sides(forms::border_sides border_si
 collapsible_panel& collapsible_panel::border_style(forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

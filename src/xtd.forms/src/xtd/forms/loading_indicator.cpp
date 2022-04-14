@@ -23,7 +23,7 @@ loading_indicator::loading_indicator() {
 loading_indicator& loading_indicator::loading_indicator_style(xtd::forms::loading_indicator_style loading_indicator_style) {
   if (loading_indicator_style_ != loading_indicator_style) {
     loading_indicator_style_ = loading_indicator_style;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

@@ -163,7 +163,7 @@ bool month_calendar::show_today() const {
 month_calendar& month_calendar::show_today(bool value) {
   if (data_->show_today != value) {
     data_->show_today = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -175,7 +175,7 @@ bool month_calendar::show_today_circle() const {
 month_calendar& month_calendar::show_today_circle(bool value) {
   if (data_->show_today_circle != value) {
     data_->show_today_circle = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -187,7 +187,7 @@ bool month_calendar::show_week_numbers() const {
 month_calendar& month_calendar::show_week_numbers(bool value) {
   if (data_->show_week_numbers != value) {
     data_->show_week_numbers = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

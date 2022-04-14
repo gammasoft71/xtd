@@ -1833,6 +1833,8 @@ namespace xtd {
       /// @ingroup events
       virtual void on_visible_changed(const event_args& e);
       
+      void post_recreate_handle();
+      
       /// @brief Forces the re-creation of the handle for the control.
       /// @remarks The recreate_handle method is called whenever parameters are needed for a new control, but using a call from update_styles to create_params is insufficient. This method also calls destroy_handle and create_handle and sets recreating_handle to true.
       virtual void recreate_handle();
@@ -1906,6 +1908,7 @@ namespace xtd {
       void wm_child_activate(message& message);
       void wm_create(message& message);
       void wm_command(message& message);
+      void wm_enter_idle(message& message);
       void wm_key_char(message& message);
       void wm_kill_focus(message& message);
       void wm_mouse_down(message& message);
@@ -1959,6 +1962,7 @@ namespace xtd {
         bool mouse_in = false;
         xtd::ustring name;
         intptr_t parent = 0;
+        bool recreate_handle_posted = false;
         std::optional<drawing::size> size;
         control::state state = control::state::empty;
         control_styles style = control_styles::none;

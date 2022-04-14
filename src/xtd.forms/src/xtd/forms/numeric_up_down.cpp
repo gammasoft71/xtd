@@ -74,7 +74,7 @@ numeric_up_down& numeric_up_down::value(double value) {
 numeric_up_down& numeric_up_down::wrapped(bool value) {
   if (wrapped_ != value) {
     wrapped_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

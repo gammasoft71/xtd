@@ -43,7 +43,7 @@ progress_bar& progress_bar::minimum(int32_t minimum) {
 progress_bar& progress_bar::orientation(forms::orientation orientation) {
   if (orientation_ != orientation) {
     orientation_ = orientation;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -58,7 +58,7 @@ progress_bar& progress_bar::style(progress_bar_style style) {
     style_ = style;
     if (is_handle_created()) native::progress_bar::marquee(handle(), style_ == progress_bar_style::marquee, marquee_animation_speed_);
     if (style_ != progress_bar_style::marquee)
-      recreate_handle();
+      post_recreate_handle();
   }
   return *this;
 }

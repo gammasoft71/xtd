@@ -115,14 +115,14 @@ void choice::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height
   drawing::size current_size = size();
   list_control::set_bounds_core(x, y, width, height, specified);
   if (size() != current_size)
-    recreate_handle();
+    post_recreate_handle();
 }
 
 void choice::set_client_size_core(int32_t width, int32_t height) {
   drawing::size current_size = size();
   list_control::set_client_size_core(width, height);
   if (size() != current_size)
-    recreate_handle();
+    post_recreate_handle();
 }
 
 void choice::wnd_proc(message& message) {

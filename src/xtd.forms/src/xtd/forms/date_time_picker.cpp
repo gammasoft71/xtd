@@ -17,7 +17,7 @@ date_time_picker::date_time_picker() {
 control& date_time_picker::format(date_time_picker_format format) {
   if (format_ != format) {
     format_ = format;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

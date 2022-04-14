@@ -35,7 +35,7 @@ label& label::border_sides(forms::border_sides border_sides) {
 label& label::border_style(xtd::forms::border_style border_style) {
   if (data_->border_style != border_style) {
     data_->border_style = border_style;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -43,7 +43,7 @@ label& label::border_style(xtd::forms::border_style border_style) {
 label& label::border_style(nullptr_t) {
   if (data_->border_style) {
     data_->border_style.reset();
-    if (flat_style() == forms::flat_style::system) recreate_handle();
+    if (flat_style() == forms::flat_style::system) post_recreate_handle();
     else invalidate();
   }
   return *this;
@@ -53,7 +53,7 @@ label& label::flat_style(xtd::forms::flat_style flat_style) {
   if (data_->flat_style != flat_style) {
     data_->flat_style = flat_style;
     control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -91,7 +91,7 @@ label& label::image_list(const forms::image_list& value) {
   if (data_->image_list != value) {
     data_->image_list = value;
     data_->image = drawing::image::empty;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -107,7 +107,7 @@ label& label::shadow(bool value) {
 label& label::text_align(content_alignment text_align) {
   if (data_->text_align != text_align) {
     data_->text_align = text_align;
-    recreate_handle();
+    post_recreate_handle();
     on_text_align_changed(event_args::empty);
   }
   return *this;

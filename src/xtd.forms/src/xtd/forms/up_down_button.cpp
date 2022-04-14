@@ -49,7 +49,7 @@ up_down_button& up_down_button::minimum(int32_t value) {
 up_down_button& up_down_button::orientation(forms::orientation orientation) {
   if (orientation_ != orientation) {
     orientation_ = orientation;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -57,7 +57,7 @@ up_down_button& up_down_button::orientation(forms::orientation orientation) {
 up_down_button& up_down_button::wrapped(bool value) {
   if (wrapped_ != value) {
     wrapped_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

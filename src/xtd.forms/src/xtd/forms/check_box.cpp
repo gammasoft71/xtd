@@ -40,7 +40,7 @@ check_box::check_box() {
 check_box& check_box::appearance(forms::appearance appearance) {
   if (data_->appearance != appearance) {
     data_->appearance = appearance;
-    recreate_handle();
+    post_recreate_handle();
     on_appearance_changed(event_args::empty);
   }
   return *this;
@@ -59,7 +59,7 @@ check_box& check_box::checked(bool checked) {
 check_box& check_box::check_align(content_alignment check_align) {
   if (data_->check_align != check_align) {
     data_->check_align = check_align;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -80,7 +80,7 @@ check_box& check_box::check_state(forms::check_state check_state) {
 check_box& check_box::three_state(bool three_state) {
   if (data_->three_state != three_state) {
     data_->three_state = three_state;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

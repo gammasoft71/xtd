@@ -44,7 +44,7 @@ track_bar& track_bar::minimum(int32_t minimum) {
 track_bar& track_bar::orientation(forms::orientation orientation) {
   if (orientation_ != orientation) {
     orientation_ = orientation;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -68,7 +68,7 @@ track_bar& track_bar::tick_frequency(int32_t tick_frequency) {
 track_bar& track_bar::tick_style(forms::tick_style tick_style) {
   if (tick_style_ != tick_style) {
     tick_style_ = tick_style;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

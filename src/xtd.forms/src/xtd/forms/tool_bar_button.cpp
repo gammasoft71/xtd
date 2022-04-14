@@ -32,7 +32,7 @@ bool tool_bar_button::enabled() const {
 tool_bar_button& tool_bar_button::enabled(bool value) {
   if (enabled_ != value) {
     enabled_ = value;
-    if (parent) parent->recreate_handle();
+    if (parent) parent->post_recreate_handle();
   }
   return *this;
 }
@@ -44,7 +44,7 @@ const ustring& tool_bar_button::text() const {
 tool_bar_button& tool_bar_button::text(const xtd::ustring& value) {
   if (text_ != value) {
     text_ = value;
-    if (parent) parent->recreate_handle();
+    if (parent) parent->post_recreate_handle();
   }
   return *this;
 }
@@ -56,7 +56,7 @@ size_t tool_bar_button::image_index() const {
 tool_bar_button& tool_bar_button::image_index(size_t value) {
   if (image_index_ != value) {
     image_index_ = value;
-    if (parent) parent->recreate_handle();
+    if (parent) parent->post_recreate_handle();
   }
   return *this;
 }

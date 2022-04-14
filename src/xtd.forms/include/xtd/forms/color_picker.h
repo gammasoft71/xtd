@@ -51,7 +51,7 @@ namespace xtd {
       color_picker& alpha_color(bool alpha_color) {
         if (alpha_color_ != alpha_color) {
           alpha_color_ = alpha_color;
-          recreate_handle();
+          post_recreate_handle();
         }
         return *this;
       }

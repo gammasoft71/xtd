@@ -36,7 +36,7 @@ radio_button::radio_button() {
 radio_button& radio_button::appearance(forms::appearance appearance) {
   if (appearance_ != appearance) {
     appearance_ = appearance;
-    recreate_handle();
+    post_recreate_handle();
     on_appearance_changed(event_args::empty);
   }
   return *this;
@@ -66,7 +66,7 @@ radio_button& radio_button::checked(bool checked) {
 radio_button& radio_button::check_align(content_alignment check_align) {
   if (check_align_ != check_align) {
     check_align_ = check_align;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
