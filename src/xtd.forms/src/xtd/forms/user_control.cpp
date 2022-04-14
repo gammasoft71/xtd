@@ -33,7 +33,7 @@ user_control& user_control::border_sides(forms::border_sides border_sides) {
 user_control& user_control::border_style(forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;
-    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
     else invalidate();
   }
   return *this;
@@ -42,7 +42,7 @@ user_control& user_control::border_style(forms::border_style border_style) {
 user_control& user_control::border_style(nullptr_t) {
   if (border_style_.has_value()) {
     border_style_.reset();
-    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
     else invalidate();
   }
   return *this;

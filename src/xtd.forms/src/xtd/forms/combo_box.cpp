@@ -45,7 +45,7 @@ combo_box::combo_box() {
 combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
   if (drop_down_style_ != drop_down_style) {
     drop_down_style_ = drop_down_style;
-    recreate_handle();
+    post_recreate_handle();
     on_drop_down_style_changed(event_args::empty);
   }
   return *this;
@@ -141,14 +141,14 @@ void combo_box::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t hei
   drawing::size current_size = size();
   list_control::set_bounds_core(x, y, width, height, specified);
   if (size() != current_size)
-    recreate_handle();
+    post_recreate_handle();
 }
 
 void combo_box::set_client_size_core(int32_t width, int32_t height) {
   drawing::size current_size = size();
   list_control::set_client_size_core(width, height);
   if (size() != current_size)
-    recreate_handle();
+    post_recreate_handle();
 }
 
 void combo_box::wnd_proc(message& message) {

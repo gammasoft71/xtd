@@ -22,7 +22,7 @@ forms::create_params tab_page::create_params() const {
 scrollable_control& tab_page::auto_scroll(bool value) {
   if (auto_scroll() != value) {
     panel::auto_scroll(value);
-    if (parent().has_value()) static_cast<tab_control&>(parent().value().get()).recreate_handle();
+    if (parent().has_value()) static_cast<tab_control&>(parent().value().get()).post_recreate_handle();
   }
   return *this;
 }

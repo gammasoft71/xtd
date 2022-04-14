@@ -169,7 +169,7 @@ control& control::back_color(const color& color) {
 control& control::back_color(nullptr_t) {
   if (data_->back_color.has_value()) {
     data_->back_color.reset();
-    recreate_handle();
+    post_recreate_handle();
     for (auto& control : controls())
       if (control.get().data_->parent) control.get().on_parent_back_color_changed(event_args::empty);
     on_back_color_changed(event_args::empty);
@@ -288,7 +288,7 @@ forms::control_appearance control::control_appearance() const {
 control& control::control_appearance(forms::control_appearance value) {
   if (data_->control_appearance != value) {
     data_->control_appearance = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -325,7 +325,7 @@ control& control::cursor(const forms::cursor& cursor) {
 control& control::cursor(nullptr_t) {
   if (data_->cursor.has_value()) {
     data_->cursor.reset();
-    recreate_handle();
+    post_recreate_handle();
     for (auto& control : controls())
       if (control.get().data_->parent) control.get().on_parent_cursor_changed(event_args::empty);
     on_cursor_changed(event_args::empty);
@@ -406,7 +406,7 @@ control& control::font(const drawing::font& font) {
 control& control::font(nullptr_t) {
   if (data_->font.has_value()) {
     data_->font.reset();
-    recreate_handle();
+    post_recreate_handle();
     for (auto& control : controls())
       if (control.get().data_->parent) control.get().on_parent_font_changed(event_args::empty);
     on_font_changed(event_args::empty);
@@ -434,7 +434,7 @@ control& control::fore_color(const color& color) {
 control& control::fore_color(nullptr_t) {
   if (data_->fore_color.has_value()) {
     data_->fore_color.reset();
-    recreate_handle();
+    post_recreate_handle();
     for (auto& control : controls())
       if (control.get().data_->parent) control.get().on_parent_fore_color_changed(event_args::empty);
     on_fore_color_changed(event_args::empty);
@@ -1155,7 +1155,7 @@ void control::on_paint_background(paint_event_args& e) {
 
 void control::on_parent_back_color_changed(const event_args& e) {
   if (!data_->back_color.has_value() || (parent().has_value() && parent().value().get().back_color() != data_->back_color.value())) {
-    if (!parent().value().get().data_->back_color.has_value()) recreate_handle();
+    if (!parent().value().get().data_->back_color.has_value()) post_recreate_handle();
     else if (is_handle_created()) native::control::back_color(handle(), parent().value().get().back_color());
     for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
@@ -1169,7 +1169,7 @@ void control::on_parent_changed(const event_args& e) {
 
 void control::on_parent_cursor_changed(const event_args& e) {
   if (!data_->cursor.has_value() || (parent().has_value() && parent().value().get().cursor() != data_->cursor.value())) {
-    if (!parent().value().get().data_->cursor.has_value()) recreate_handle();
+    if (!parent().value().get().data_->cursor.has_value()) post_recreate_handle();
     else if (is_handle_created()) native::control::cursor(handle(), parent().value().get().cursor().handle());
     for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
@@ -1187,7 +1187,7 @@ void control::on_parent_enabled_changed(const event_args& e) {
 
 void control::on_parent_fore_color_changed(const event_args& e) {
   if (!data_->fore_color.has_value() || (parent().has_value() && parent().value().get().fore_color() != data_->fore_color.value())) {
-    if (!parent().value().get().data_->fore_color.has_value()) recreate_handle();
+    if (!parent().value().get().data_->fore_color.has_value()) post_recreate_handle();
     else if (is_handle_created()) native::control::fore_color(handle(), parent().value().get().fore_color());
     for (auto control : controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
@@ -1196,7 +1196,7 @@ void control::on_parent_fore_color_changed(const event_args& e) {
 
 void control::on_parent_font_changed(const event_args& e) {
   if (!data_->font.has_value() || (parent().has_value() && parent().value().get().font() != font())) {
-    if (!parent().value().get().data_->font.has_value()) recreate_handle();
+    if (!parent().value().get().data_->font.has_value()) post_recreate_handle();
     else if (is_handle_created()) native::control::font(handle(), parent().value().get().font());
     for (auto control : controls())
       control.get().on_parent_font_changed(event_args::empty);
@@ -1221,7 +1221,7 @@ void control::on_size_changed(const event_args& e) {
 }
 
 void control::on_tab_stop_changed(const event_args& e) {
-  recreate_handle();
+  post_recreate_handle();
   if (can_raise_events()) tab_stop_changed(*this, e);
 }
 
@@ -1397,6 +1397,7 @@ void control::wnd_proc(message& message) {
     case WM_SIZING: wm_sizing(message); break;
     case WM_HSCROLL:
     case WM_VSCROLL: wm_scroll(message); break;
+    case WM_ENTERIDLE: wm_enter_idle(message); break;
     default: def_wnd_proc(message); break;
   }
 }
@@ -1464,6 +1465,10 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 void control::on_parent_size_changed(object& sender, const event_args& e) {
   if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this))
     perform_layout();
+}
+
+void control::post_recreate_handle() {
+  data_->recreate_handle_posted = true;
 }
 
 void control::do_layout_children_with_dock_style() {
@@ -1563,6 +1568,16 @@ void control::wm_command(message& message) {
   def_wnd_proc(message);
   if (message.lparam() != 0 && from_handle(message.lparam()).has_value())
     from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
+}
+
+void control::wm_enter_idle(message& message) {
+  def_wnd_proc(message);
+  for (auto control : controls())
+    control.get().wnd_proc(message);
+  if (data_->recreate_handle_posted) {
+    recreate_handle();
+    data_->recreate_handle_posted = false;
+  }
 }
 
 void control::wm_key_char(message& message) {

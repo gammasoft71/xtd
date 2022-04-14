@@ -18,7 +18,7 @@ up_down_base& up_down_base::border_sides(forms::border_sides border_sides) {
 up_down_base& up_down_base::border_style(forms::border_style value) {
   if (border_style_ != value) {
     border_style_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

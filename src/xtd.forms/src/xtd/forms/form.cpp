@@ -75,7 +75,7 @@ form& form::auto_size_mode(forms::auto_size_mode value) {
 form& form::close_box(bool value) {
   if (close_box_ != value) {
     close_box_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -83,7 +83,7 @@ form& form::close_box(bool value) {
 form& form::control_box(bool value) {
   if (control_box_ != value) {
     control_box_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -96,7 +96,7 @@ form& form::dialog_result(forms::dialog_result value) {
 form& form::form_border_style(forms::form_border_style value) {
   if (form_border_style_ != value) {
     form_border_style_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -104,7 +104,7 @@ form& form::form_border_style(forms::form_border_style value) {
 form& form::help_button(bool value) {
   if (help_button_ != value) {
     help_button_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -120,7 +120,7 @@ form& form::icon(const xtd::drawing::icon& value) {
 form& form::maximize_box(bool value) {
   if (maximize_box_ != value) {
     maximize_box_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -144,7 +144,7 @@ form& form::menu(nullptr_t) {
 form& form::minimize_box(bool value) {
   if (minimize_box_ != value) {
     minimize_box_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -152,7 +152,7 @@ form& form::minimize_box(bool value) {
 form& form::owner(const control& value) {
   if (owner_ != value.handle()) {
     owner_ = value.handle();
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -164,7 +164,7 @@ control& form::parent(const control& parent) {
 form& form::show_icon(bool value) {
   if (show_icon_ != value) {
     show_icon_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   
   return *this;
@@ -200,7 +200,7 @@ form& form::tool_bar(nullptr_t) {
 form& form::top_most(bool value) {
   if (top_most_ != value) {
     top_most_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -513,7 +513,7 @@ void form::on_system_colors_changed(const event_args& e) {
 
 void form::internal_set_window_state() {
   if (!previous_screen_)
-    recreate_handle();
+    post_recreate_handle();
   else if (is_handle_created()) {
     switch (window_state_) {
       case form_window_state::normal: native::form::restore(handle()); break;

@@ -34,7 +34,7 @@ void button::notify_default(bool value) {
   if (flat_style() != xtd::forms::flat_style::system) invalidate();
   else {
     if (is_handle_created() && value && flat_style() == xtd::forms::flat_style::system) native::button::set_default_button(handle());
-    else recreate_handle();
+    else post_recreate_handle();
   }
 }
 

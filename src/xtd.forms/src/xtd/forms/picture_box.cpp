@@ -40,7 +40,7 @@ picture_box& picture_box::border_sides(forms::border_sides border_sides) {
 picture_box& picture_box::border_style(forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;
-    if (is_handle_created() && control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
     else invalidate();
   }
   return *this;
@@ -71,7 +71,7 @@ picture_box& picture_box::image(nullptr_t) {
 picture_box& picture_box::size_mode(picture_box_size_mode size_mode) {
   if (size_mode_ != size_mode) {
     size_mode_ = size_mode;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

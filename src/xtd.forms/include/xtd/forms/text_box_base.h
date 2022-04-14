@@ -33,7 +33,7 @@ namespace xtd {
       virtual text_box_base& accepts_tab(bool value) {
         if (accepts_tab_ != value) {
           accepts_tab_ = value;
-          recreate_handle();
+          post_recreate_handle();
           on_accepts_tab_changed(event_args::empty);
         }
         return *this;
@@ -61,7 +61,7 @@ namespace xtd {
       virtual text_box_base& border_style(forms::border_style border_style) {
         if (border_style_ != border_style) {
           border_style_ = border_style;
-          recreate_handle();
+          post_recreate_handle();
           on_border_style_changed(event_args::empty);
         }
         return *this;
@@ -95,7 +95,7 @@ namespace xtd {
       virtual text_box_base& multiline(bool value) {
         if (multiline_ != value) {
           multiline_ = value;
-          recreate_handle();
+          post_recreate_handle();
           on_multiline_changed(event_args::empty);
         }
         return *this;
@@ -112,7 +112,7 @@ namespace xtd {
       virtual text_box_base& read_only(bool value) {
         if (read_only_ != value) {
           read_only_ = value;
-          recreate_handle();
+          post_recreate_handle();
           on_read_only_changed(event_args::empty);
         }
         return *this;
@@ -153,7 +153,7 @@ namespace xtd {
       virtual text_box_base& word_wrap(bool value) {
         if (word_wrap_ != value) {
           word_wrap_ = value;
-          recreate_handle();
+          post_recreate_handle();
         }
         return *this;
       }

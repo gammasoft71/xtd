@@ -35,7 +35,7 @@ panel& panel::border_sides(forms::border_sides border_sides) {
 panel& panel::border_style(forms::border_style border_style) {
   if (border_style_ != border_style) {
     border_style_ = border_style;
-    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
     else invalidate();
   }
   return *this;
@@ -44,7 +44,7 @@ panel& panel::border_style(forms::border_style border_style) {
 panel& panel::border_style(nullptr_t) {
   if (border_style_) {
     border_style_.reset();
-    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
     else invalidate();
   }
   return *this;

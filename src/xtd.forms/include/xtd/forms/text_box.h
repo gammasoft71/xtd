@@ -42,7 +42,7 @@ namespace xtd {
       virtual text_box& accepts_return(bool value) {
         if (accepts_return_ != value) {
           accepts_return_ = value;
-          recreate_handle();
+          post_recreate_handle();
           on_accepts_return_changed(event_args::empty);
         }
         return *this;

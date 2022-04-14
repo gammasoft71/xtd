@@ -29,7 +29,7 @@ namespace xtd {
       virtual scrollable_control& auto_scroll(bool auto_scroll) {
         if (auto_scroll_ != auto_scroll) {
           auto_scroll_ = auto_scroll;
-          recreate_handle();
+          post_recreate_handle();
         }
         return *this;
       }
@@ -61,7 +61,7 @@ namespace xtd {
       virtual scrollable_control& h_scroll(bool h_scroll) {
         if (h_scroll_ != h_scroll) {
           h_scroll_ = h_scroll;
-          recreate_handle();
+          post_recreate_handle();
         }
         return *this;
       }
@@ -75,7 +75,7 @@ namespace xtd {
       virtual scrollable_control& v_scroll(bool v_scroll) {
         if (v_scroll_ != v_scroll) {
           v_scroll_ = v_scroll;
-          recreate_handle();
+          post_recreate_handle();
         }
         return *this;
       }

@@ -52,7 +52,7 @@ list_box& list_box::border_sides(forms::border_sides border_sides) {
 list_box& list_box::border_style(forms::border_style border_style) {
   if (data_->border_style != border_style) {
     data_->border_style = border_style;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -107,7 +107,7 @@ vector<list_box::item> list_box::selected_items() const {
 list_box& list_box::selection_mode(forms::selection_mode selection_mode) {
   if (data_->selection_mode != selection_mode) {
     data_->selection_mode = selection_mode;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

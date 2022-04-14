@@ -403,7 +403,7 @@ void application::wnd_proc(message& message) {
 }
 
 void application::wm_activate_app(message& message) {
-  for (const reference_wrapper<form>& form : open_forms())
+  for (auto form : open_forms())
     form.get().send_message(form.get().handle(), message.msg(), message.wparam(), message.lparam());
 }
 
@@ -414,6 +414,9 @@ void application::wm_enter_idle(message& message) {
     application::idle(event_args::empty);
   }
   if (!application::idle.is_empty()) native::application::do_idle();
+  
+  for (auto form : open_forms())
+    form.get().wnd_proc(message);
 }
 
 void application::wm_quit(message& message) {

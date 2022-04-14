@@ -41,16 +41,6 @@ bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
     return false;
   }
 
-#if __APPLE__
-  // Workaround : Without these following lines, there is often a crash on macOS with an invalid number of elements ???
-  /// @todo try to debug why crash without theses following lines...
-  auto sw = diagnostics::stopwatch::start_new();
-  while (sw.elapsed_milliseconds() < 10) {
-    wxTheApp->Yield();
-    wxTheApp->ProcessIdle();
-  }
-#endif
-  
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control()) : nullptr);
   if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->Realize();
   return true;

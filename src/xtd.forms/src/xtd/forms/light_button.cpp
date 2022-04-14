@@ -51,7 +51,7 @@ light_button& light_button::checked(bool checked) {
 light_button& light_button::light_align(content_alignment light_align) {
   if (data_->light_align != light_align) {
     data_->light_align = light_align;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -72,7 +72,7 @@ light_button& light_button::check_state(forms::check_state check_state) {
 light_button& light_button::three_state(bool three_state) {
   if (data_->three_state != three_state) {
     data_->three_state = three_state;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

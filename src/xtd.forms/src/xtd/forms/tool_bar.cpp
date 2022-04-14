@@ -82,7 +82,7 @@ tool_bar& tool_bar::border_sides(forms::border_sides border_sides) {
 tool_bar& tool_bar::border_style(forms::border_style border_style) {
   if (data_->border_style != border_style) {
     data_->border_style = border_style;
-    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
     else invalidate();
   }
   return *this;
@@ -91,7 +91,7 @@ tool_bar& tool_bar::border_style(forms::border_style border_style) {
 tool_bar& tool_bar::border_style(nullptr_t) {
   if (data_->border_style) {
     data_->border_style.reset();
-    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
     else invalidate();
   }
   return *this;
@@ -104,7 +104,7 @@ bool tool_bar::show_icon() const {
 tool_bar& tool_bar::show_icon(bool value) {
   if (data_->show_icon != value) {
     data_->show_icon = value;
-    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
     else invalidate();
   }
   return *this;
@@ -117,7 +117,7 @@ bool tool_bar::show_text() const {
 tool_bar& tool_bar::show_text(bool value) {
   if (data_->show_text != value) {
     data_->show_text = value;
-    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
     else invalidate();
   }
   return *this;
@@ -162,7 +162,7 @@ tool_bar& tool_bar::is_system_tool_bar(bool value) {
       control::dock(dock_style::none);
     }
     data_->is_system_tool_bar = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -217,18 +217,18 @@ void tool_bar::fill() {
 void tool_bar::on_item_added(size_t pos, tool_bar_item_ref item) {
   parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().parent = this;
-  recreate_handle();
+  post_recreate_handle();
 }
 
 void tool_bar::on_item_updated(size_t pos, tool_bar_item_ref item) {
   parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-  recreate_handle();
+  post_recreate_handle();
 }
 
 void tool_bar::on_item_removed(size_t pos, tool_bar_item_ref item) {
   parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().parent = nullptr;
-  recreate_handle();
+  post_recreate_handle();
 }
 
 dock_style tool_bar::dock() const {
@@ -239,7 +239,7 @@ dock_style tool_bar::dock() const {
 control& tool_bar::dock(dock_style dock) {
   if (data_->is_system_tool_bar) {
     data_->non_system_dock = dock;
-    if (control_appearance() == forms::control_appearance::system) recreate_handle();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   } else {
     int32_t current_size = this->dock() == dock_style::top || this->dock() == dock_style::bottom ? height() : width();
     control::dock(dock);

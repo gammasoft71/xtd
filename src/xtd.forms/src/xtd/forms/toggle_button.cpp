@@ -26,7 +26,7 @@ toggle_button& toggle_button::checked(bool checked) {
 toggle_button& toggle_button::check_align(content_alignment check_align) {
   if (check_align_ != check_align) {
     check_align_ = check_align;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -47,7 +47,7 @@ toggle_button& toggle_button::check_state(forms::check_state check_state) {
 toggle_button& toggle_button::three_state(bool three_state) {
   if (three_state_ != three_state) {
     three_state_ = three_state;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

@@ -24,7 +24,7 @@ text_box::text_box() {
 text_box& text_box::character_casing(xtd::forms::character_casing value) {
   if (character_casing_ != value) {
     character_casing_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -32,7 +32,7 @@ text_box& text_box::character_casing(xtd::forms::character_casing value) {
 text_box& text_box::password_char(char32_t value) {
   if (password_char_ != value) {
     password_char_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }
@@ -76,7 +76,7 @@ control& text_box::text(const ustring& text) {
 text_box& text_box::use_system_password_char(bool value) {
   if (use_system_password_char_ != value) {
     use_system_password_char_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

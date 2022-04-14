@@ -75,7 +75,7 @@ domain_up_down& domain_up_down::selected_item(const item& selected_item) {
 domain_up_down& domain_up_down::wrap(bool value) {
   if (wrap_ != value) {
     wrap_ = value;
-    recreate_handle();
+    post_recreate_handle();
   }
   return *this;
 }

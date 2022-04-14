@@ -187,7 +187,7 @@ namespace xtd {
       void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override {
         control::set_bounds_core(x, y, width, height, specified);
         if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height)
-          recreate_handle();
+          post_recreate_handle();
       }
       
       /// @brief Sets the size of the client area of the control.
@@ -195,7 +195,7 @@ namespace xtd {
       /// @param height The client area height, in pixels.
       void set_client_size_core(int32_t width, int32_t height) override {
         control::set_client_size_core(width, height);
-        recreate_handle();
+        post_recreate_handle();
       }
       
       /// @brief Processes Windows messages.
