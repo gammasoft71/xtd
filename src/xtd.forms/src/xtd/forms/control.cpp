@@ -761,7 +761,7 @@ void control::create_control() {
     send_message(handle(), WM_CREATE, 0, handle());
     set_state(state::creating, false);
     set_state(state::created, true);
-    resume_layout();
+    resume_layout(false);
   }
 }
 
