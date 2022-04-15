@@ -757,11 +757,9 @@ void control::create_control() {
     set_state(state::destroyed, false);
     set_state(state::creating, true);
     create_handle();
-    suspend_layout();
     send_message(handle(), WM_CREATE, 0, handle());
     set_state(state::creating, false);
     set_state(state::created, true);
-    resume_layout(false);
   }
 }
 
@@ -770,7 +768,6 @@ void control::destroy_control() {
     set_state(state::created, false);
     set_state(state::destroying, true);
     if (is_handle_created()) {
-      suspend_layout();
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
         auto parent_prev = parent();
         parent_prev.value().get().suspend_layout();
@@ -805,10 +802,12 @@ void control::create_handle() {
   data_->handle = native::control::create(params);
   handles_[handle()] = this;
   native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
+  suspend_layout();
   for (auto child : data_->controls) {
     child.get().data_->parent = handle();
     child.get().create_handle();
   }
+  resume_layout(false);
   on_handle_created(event_args::empty);
   set_state(state::creating_handle, false);
 }
@@ -816,6 +815,7 @@ void control::create_handle() {
 void control::destroy_handle() {
   if (!is_handle_created()) return;
   native::control::unregister_wnd_proc(handle());
+  suspend_layout();
   for (auto child : data_->controls)
     child.get().destroy_handle();
   handles_.erase(handle());
@@ -1470,7 +1470,8 @@ void control::on_parent_size_changed(object& sender, const event_args& e) {
 }
 
 void control::post_recreate_handle() {
-  data_->recreate_handle_posted = true;
+  if(data_->handle)
+    data_->recreate_handle_posted = true;
 }
 
 void control::do_layout_children_with_dock_style() {
