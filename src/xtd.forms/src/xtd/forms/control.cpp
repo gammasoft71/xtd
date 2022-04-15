@@ -769,8 +769,8 @@ void control::destroy_control() {
   if (get_state(state::created)) {
     set_state(state::created, false);
     set_state(state::destroying, true);
-    //suspend_layout();
     if (is_handle_created()) {
+      suspend_layout();
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
         auto parent_prev = parent();
         parent_prev.value().get().suspend_layout();
