@@ -181,6 +181,8 @@ intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, int
 void control::destroy(intptr_t control) {
   if (!control) throw argument_exception(csf_);
   if (reinterpret_cast<control_handler*>(control)->control() == 0 || !wxTheApp) return;
+  reinterpret_cast<control_handler*>(control)->control()->Unlink();
+  reinterpret_cast<control_handler*>(control)->control()->DeletePendingEvents();
   reinterpret_cast<control_handler*>(control)->control()->Destroy();
   // Do not delete control_handler here because wxwidgets defers the deletion of wxWindow in the idle event so the deletion of handler_control will also be done in the idle event.
   __control_handler_to_delete_items__.push_back(reinterpret_cast<class control_handler*>(control));
