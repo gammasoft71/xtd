@@ -757,11 +757,11 @@ void control::create_control() {
     set_state(state::destroyed, false);
     set_state(state::creating, true);
     create_handle();
-    //suspend_layout();
+    suspend_layout();
     send_message(handle(), WM_CREATE, 0, handle());
     set_state(state::creating, false);
     set_state(state::created, true);
-    //resume_layout();
+    resume_layout();
   }
 }
 
@@ -772,10 +772,10 @@ void control::destroy_control() {
     //suspend_layout();
     if (is_handle_created()) {
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
-        //auto parent_prev = parent();
-        //parent_prev.value().get().suspend_layout();
+        auto parent_prev = parent();
+        parent_prev.value().get().suspend_layout();
         parent(nullptr);
-        //parent_prev.value().get().resume_layout(false);
+        parent_prev.value().get().resume_layout(false);
       } else {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
           if (top_level_controls_[index].get().handle() == handle()) {
