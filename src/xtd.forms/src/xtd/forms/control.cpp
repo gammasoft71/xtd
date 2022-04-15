@@ -754,14 +754,14 @@ void control::bring_to_front() {
 
 void control::create_control() {
   if (!get_state(state::destroying) && !get_state(state::creating) && !get_state(state::created)) {
-    suspend_layout();
     set_state(state::destroyed, false);
     set_state(state::creating, true);
     create_handle();
+    //suspend_layout();
     send_message(handle(), WM_CREATE, 0, handle());
     set_state(state::creating, false);
     set_state(state::created, true);
-    resume_layout();
+    //resume_layout();
   }
 }
 
@@ -769,13 +769,13 @@ void control::destroy_control() {
   if (get_state(state::created)) {
     set_state(state::created, false);
     set_state(state::destroying, true);
-    suspend_layout();
+    //suspend_layout();
     if (is_handle_created()) {
       if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
-        auto parent_prev = parent();
-        parent_prev.value().get().suspend_layout();
+        //auto parent_prev = parent();
+        //parent_prev.value().get().suspend_layout();
         parent(nullptr);
-        parent_prev.value().get().resume_layout(false);
+        //parent_prev.value().get().resume_layout(false);
       } else {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
           if (top_level_controls_[index].get().handle() == handle()) {
@@ -1270,6 +1270,7 @@ void control::resume_layout() {
 
 void control::resume_layout(bool perform_layout) {
   set_state(state::layout_deferred, false);
+  native::control::resume_layout(handle());
   if (perform_layout) this->perform_layout();
 }
 
@@ -1326,6 +1327,7 @@ void control::show() {
 
 void control::suspend_layout() {
   set_state(state::layout_deferred, true);
+  native::control::suspend_layout(handle());
 }
 
 ustring control::to_string() const noexcept {

@@ -452,15 +452,6 @@ void control::refresh(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->main_control()->Refresh();
 }
 
-void control::update(intptr_t control) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return;
-  }
-  reinterpret_cast<control_handler*>(control)->main_control()->Update();
-}
-
 void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   if (!control) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
@@ -468,6 +459,16 @@ void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr
     return;
   }
   reinterpret_cast<control_handler*>(control)->wnd_proc = wnd_proc;
+}
+
+void control::resume_layout(intptr_t control) {
+  if (!control) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  
+  reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
 void control::unregister_wnd_proc(intptr_t control) {
@@ -479,6 +480,15 @@ void control::unregister_wnd_proc(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->wnd_proc = nullptr;
 }
 
+void control::update(intptr_t control) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  reinterpret_cast<control_handler*>(control)->main_control()->Update();
+}
+
 intptr_t control::send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
   if (!control) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
@@ -486,4 +496,14 @@ intptr_t control::send_message(intptr_t control, intptr_t hwnd, int32_t msg, int
     return static_cast<intptr_t>(-1);
   }
   return reinterpret_cast<control_handler*>(control)->send_message(hwnd, msg, wparam, lparam, 0);
+}
+
+void control::suspend_layout(intptr_t control) {
+  if (!control) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+
+  reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }

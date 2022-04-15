@@ -33,7 +33,7 @@ private:
   void on_tool_bar_item_click(object& sender, const event_args& e) {
     list_box1.items().push_back(ustring::format("{} clicked", as<tool_bar_button>(sender).text()));
     list_box1.selected_index(list_box1.items().size() - 1);
-    skip_forward_tool_bar_button.image_index(0);
+    skip_forward_tool_bar_button.image_index(skip_forward_tool_bar_button.image_index() == 3 ? 0 : 3);
   }
   
   list_box list_box1;

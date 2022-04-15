@@ -79,11 +79,13 @@ namespace xtd {
         /// @param color A xtd::drawing::color that represents the background color of the control.
         /// @warning Internal use only
         static void back_color(intptr_t control, const drawing::color& color);
+
         /// @brief Gets the rectangle that represents the client area of the control.
         /// @param control Control window handle.
         /// @return A rectangle that represents the client area of the control.
         /// @warning Internal use only
         static drawing::rectangle client_rectangle(intptr_t control);
+
         /// @brief Gets the height and width of the client area of the control.
         /// @param control Control window handle.
         /// @return A size that represents the dimensions of the client area of the control.
@@ -95,11 +97,13 @@ namespace xtd {
         /// @param size A size that represents the dimensions of the client area of the control.
         /// @warning Internal use only
         static void client_size(intptr_t control, const drawing::size& size);
+
         /// @brief Sets the context that is displayed in the control.
         /// @param control Control handle.
         /// @param menu A menu handle that represents the menu to display in the form.
         /// @warning Internal use only
         static void context_menu(intptr_t control, intptr_t context_menu);
+
         /// @brief Creates control.
         /// @param create_param A xtd::forms::create_param object that contains needed parameters to create control.
         /// @return The created control window handle.
@@ -140,26 +144,31 @@ namespace xtd {
         /// @note For more portability and compatibility with underlying toolkits, xtd::forms::create_params::class_name does not contains real Windows names like WC_DIALOG, WC_BUTTON,...
         /// @warning Internal use only
         static intptr_t create(const create_params& create_params);
+
         /// @brief Creates a graphics for the control.
         /// @param control Control window handle.
         /// @return A graphics handle for the control.
         /// @warning Internal use only
         static intptr_t create_graphics(intptr_t control);
+
         /// @brief Creates a graphics for the paint event control.
         /// @param control Control window handle.
         /// @return A graphics handle for the paint event control.
         /// @warning Internal use only
         static intptr_t create_paint_graphics(intptr_t control);
+
         /// @brief Creates a graphics for the double buffer paint event control.
         /// @param control Control window handle.
         /// @return A graphics handle for the double buffered paint event control.
         /// @warning Internal use only
         static intptr_t create_double_buffered_paint_graphics(intptr_t control);
+
         /// @brief Sets the cursor that is displayed when the mouse pointer is over the control.
         /// @param control Control window handle.
         /// @param cursor A cursor handle that represents the cursor to display when the mouse pointer is over the control.
         /// @warning Internal use only
         static void cursor(intptr_t control, intptr_t cursor);
+
         /// @brief Sends the specified message to the default window procedure.
         /// @param control Control window handle.
         /// @param hwnd The window handle of the message.
@@ -171,50 +180,60 @@ namespace xtd {
         /// @return The result of def_wnd_proc message.
         /// @warning Internal use only
         static intptr_t def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
+
         /// @brief Destroys context menu.
         /// @param control Control window handle to destroy.
         /// @warning Internal use only
         static void destroy(intptr_t control);
+
         /// @brief Gets a value indicating whether the control can respond to user interaction.
         /// @param control Control window handle.
         /// @return true if the control can respond to user interaction; otherwise, false.
         /// @warning Internal use only
         static bool enabled(intptr_t control);
+
         /// @brief Sets a value indicating whether the control can respond to user interaction.
         /// @param control Control window handle.
         /// @param enabled true if the control can respond to user interaction; otherwise, false.
         /// @warning Internal use only
         static void enabled(intptr_t control, bool enabled);
+
         /// @brief Sets input focus to the control.
         /// @param control Control window handle.
         /// @warning Internal use only
         static void focus(intptr_t control);
+
         /// @brief Gets a value indicating whether the control has input focus.
         /// @param control Control window handle.
         /// @return true if the control has focus; otherwise, false.
         /// @warning Internal use only
         static bool focused(intptr_t control);
+
         /// @brief Sets the foreground color of the control.
         /// @param control Control window handle.
         /// @param color The foreground color of the control.
         /// @warning Internal use only
         static void fore_color(intptr_t control, const drawing::color& color);
+
         /// @brief Sets the font of the text displayed by the control.
         /// @param control Control window handle.
         /// @param font The xtd::drawing::font to apply to the text displayed by the control.
         /// @warning Internal use only
         static void font(intptr_t control, const drawing::font& font);
+
         /// @brief Gets the native handle of the control.
         /// @param control Control window handle.
         /// @return The native handle.
         /// @warning Internal use only
         static intptr_t native_handle(intptr_t control);
+
         /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
         /// @param control Control window handle.
         /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
         /// @param erase_background true to erase background control; otherwise, false.
         /// @warning Internal use only
         static void invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background);
+
         /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments and mutex.
         /// @param control Control window handle.
         /// @param invoker A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
@@ -223,6 +242,7 @@ namespace xtd {
         /// @remarks Signal mutex when invoke is done.
         /// @warning Internal use only
         static void invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked, std::shared_ptr<bool> completed);
+
         /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
         /// @param control Control window handle.
         /// @return The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
@@ -233,47 +253,61 @@ namespace xtd {
         /// @param location
         /// @warning Internal use only
         static void location(intptr_t control, const drawing::point& location);
+
         /// @brief Sets the maximum height and maximum width of the client area of the control.
         /// @param control Control window handle.
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
         static void maximum_client_size(intptr_t control, const drawing::size& size);
+
         /// @brief Sets the maximum height and maximum width of the control.
         /// @param control Control window handle.
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
         static void maximum_size(intptr_t control, const drawing::size& size);
+
         /// @brief Sets the minimum height and minimum width of the client area of the control.
         /// @param control Control window handle.
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
         static void minimum_client_size(intptr_t control, const drawing::size& size);
+
         /// @brief Sets the minimum height and minimum width of the control.
         /// @param control Control window handle.
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
         static void minimum_size(intptr_t control, const drawing::size& size);
+
         /// @brief Computes the location of the specified screen point into client coordinates.
         /// @param control Control window handle.
         /// @param p The screen coordinate xtd::drawing::point to convert.
         /// @return A xtd::drawing::point that represents the converted xtd::drawing::point, p, in client coordinates.
         /// @warning Internal use only
         static drawing::point point_to_client(intptr_t control, const drawing::point& p);
+
         /// @brief Computes the location of the specified client point into screen coordinates.
         /// @param control Control window handle.
         /// @param p The client coordinate  xtd::drawing::point to convert.
         /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
         /// @warning Internal use only
         static drawing::point point_to_screen(intptr_t control, const drawing::point& p);
+
         /// @brief Forces the control to invalidate its client area and immediately redraw itself and any child controls.
         /// @param control Control window handle.
         /// @warning Internal use only
         static void refresh(intptr_t control);
+
         /// @brief Register a specified wnd proc from the message pump of the control.
         /// @param control Control window handle.
         /// @param wnd_proc A wnd proc delegate to register.
         /// @warning Internal use only
         static void register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
+
+        /// @brief Resumes usual layout logic.
+        /// @param control Control window handle.
+        /// @warning Internal use only
+        static void resume_layout(intptr_t control);
+
         /// @brief Send a message with specified hwnd, message, wparam and lparam.
         /// @param control Control window handle.
         /// @param hwnd The window handle of the message.
@@ -283,6 +317,7 @@ namespace xtd {
         /// @return The return value of the message.
         /// @warning Internal use only
         static intptr_t send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wParam, intptr_t lParam);
+
         /// @brief Gets the height and width of the control.
         /// @param control Control window handle.
         /// @return The size that represents the height and width of the control in pixels.
@@ -293,6 +328,12 @@ namespace xtd {
         /// @param size The size that represents the height and width of the control in pixels.
         /// @warning Internal use only
         static void size(intptr_t control, const drawing::size& size);
+        
+        /// @brief Temporarily suspends the layout logic for the control.
+        /// @param control Control window handle.
+        /// @warning Internal use only
+        static void suspend_layout(intptr_t control);
+
         /// @brief Gets the text associated with this control.
         /// @param control Control window handle.
         /// @return The text associated with this control.
@@ -303,19 +344,23 @@ namespace xtd {
         /// @param text The text associated with this control.
         /// @warning Internal use only
         static void text(intptr_t control, const xtd::ustring& text);
+
         /// @brief Gets the toolkit handle of the control.
         /// @param control Control window handle.
         /// @return The toolkit handle.
         /// @warning Internal use only
         static intptr_t toolkit_handle(intptr_t control);
+
         /// @brief Unregister the wnd proc previously registered.
         /// @param control Control window handle.
         /// @warning Internal use only
         static void unregister_wnd_proc(intptr_t control);
+
         /// @brief Causes the control to redraw the invalidated regions within its client area.
         /// @param control Control window handle.
         /// @warning Internal use only
         static void update(intptr_t control);
+
         /// @brief Gets a value indicating whether the control and all its child controls are displayed.
         /// @param control Control window handle.
         /// @return true if the control and all its child controls are displayed; otherwise, false.

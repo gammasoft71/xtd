@@ -168,6 +168,7 @@ tool_bar& tool_bar::is_system_tool_bar(bool value) {
 }
 
 void tool_bar::fill() {
+  suspend_layout();
   controls().clear();
   data_->tool_bar_items.clear();
   auto reversed_items = data_->items;
@@ -206,12 +207,13 @@ void tool_bar::fill() {
         data_->tool_bar_items.push_back(separator_control);
       }
     }
-    perform_layout();
   }
   if (data_->is_system_tool_bar) {
     parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
     native::tool_bar::set_system_tool_bar(parent().value().get().handle(), handle());
   }
+  
+  resume_layout(true);
 }
 
 void tool_bar::on_item_added(size_t pos, tool_bar_item_ref item) {
