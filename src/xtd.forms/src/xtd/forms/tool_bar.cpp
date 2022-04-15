@@ -213,7 +213,7 @@ void tool_bar::fill() {
     native::tool_bar::set_system_tool_bar(parent().value().get().handle(), handle());
   }
   
-  resume_layout(true);
+  resume_layout();
 }
 
 void tool_bar::on_item_added(size_t pos, tool_bar_item_ref item) {
