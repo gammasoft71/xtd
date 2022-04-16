@@ -94,6 +94,11 @@ void control::back_color(intptr_t control, const color& color) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
+
+#if defined(__APPLE__)
+  if (dynamic_cast<wx_user_window*>(reinterpret_cast<control_handler*>(control)->control())) return;
+#endif
+
   reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
 
