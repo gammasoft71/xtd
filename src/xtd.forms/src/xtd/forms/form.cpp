@@ -220,6 +220,10 @@ control& form::visible(bool visible) {
     previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
     recreate_handle();
   }
+
+  auto m = message::create(handle(), WM_ENTERIDLE, 0, 0);
+  wnd_proc(m);
+
   container_control::visible(visible);
   if (active_form().has_value() && active_form().value().get().handle() == handle() && active_control_.has_value())
     active_control_.value().get().focus();
