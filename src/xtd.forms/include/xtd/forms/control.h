@@ -1950,7 +1950,6 @@ namespace xtd {
         std::optional<drawing::color> fore_color;
         std::optional<drawing::font> font;
         intptr_t handle = 0;
-        std::thread::id handle_created_on_thread_id;
         drawing::point location;
         drawing::region region;
         forms::padding margin {3};
@@ -1972,11 +1971,12 @@ namespace xtd {
       };
       
       static bool check_for_illegal_cross_thread_calls_;
+      static std::thread::id handle_created_on_thread_id_;
       static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
-      
+
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }

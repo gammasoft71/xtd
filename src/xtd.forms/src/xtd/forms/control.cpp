@@ -61,6 +61,11 @@ namespace {
 }
 
 bool control::check_for_illegal_cross_thread_calls_ = diagnostics::debugger::is_attached();
+std::thread::id control::handle_created_on_thread_id_ = std::this_thread::get_id();
+forms::keys control::modifier_keys_ = forms::keys::none;
+forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
+map<intptr_t, control*> control::handles_;
+control::control_collection control::top_level_controls_;
 
 control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
 }
@@ -83,11 +88,6 @@ optional<control::control_collection::value_type> control::control_collection::o
     if (item.get().name() == name) return item;
   return {};
 }
-
-forms::keys control::modifier_keys_ = forms::keys::none;
-forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
-map<intptr_t, control*> control::handles_;
-control::control_collection control::top_level_controls_;
 
 control::control() {
   native::application::initialize();
@@ -457,7 +457,7 @@ intptr_t control::handle() const {
 }
 
 bool control::invoke_required() const {
-  return data_->handle_created_on_thread_id != this_thread::get_id();
+  return handle_created_on_thread_id_ != this_thread::get_id();
 }
 
 bool control::is_handle_created() const {
@@ -795,7 +795,6 @@ graphics control::create_graphics() const {
 }
 
 void control::create_handle() {
-  data_->handle_created_on_thread_id = this_thread::get_id();
   set_state(state::creating_handle, true);
   auto params = create_params();
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
