@@ -1411,13 +1411,17 @@ void control::def_wnd_proc(message& message) {
 void control::recreate_handle() {
   if (is_handle_created()) {
     set_state(state::recreate, true);
-    for (auto control : controls()) control.get().set_state(state::parent_recreating, true);
+    for (auto control : controls()) 
+      control.get().set_state(state::parent_recreating, true);
     
     destroy_handle();
     create_handle();
     
-    for (auto control : controls()) control.get().set_state(state::parent_recreating, false);
+    for (auto control : controls()) 
+      control.get().set_state(state::parent_recreating, false);
     set_state(state::recreate, false);
+    data_->recreate_handle_posted = false;
+
     perform_layout();
   }
 }
@@ -1577,11 +1581,9 @@ void control::wm_enter_idle(message& message) {
   def_wnd_proc(message);
   for (auto control : controls())
     control.get().wnd_proc(message);
-  if (data_->recreate_handle_posted) {
+  if (data_->recreate_handle_posted)
     recreate_handle();
-    data_->recreate_handle_posted = false;
-  }
-}
+ }
 
 void control::wm_key_char(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), ustring::format("({}) receive message [{}]", *this, message));
