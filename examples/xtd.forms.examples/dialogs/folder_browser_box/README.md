@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::folder_browser_box](../../../../src/xtd.for
 
 # Sources
 
-* [src/folder_browser_dialog.cpp](src/folder_browser_box.cpp)
+* [src/folder_browser_box.cpp](src/folder_browser_box.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
