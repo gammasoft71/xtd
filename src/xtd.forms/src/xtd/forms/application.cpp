@@ -73,6 +73,7 @@ namespace {
 bool application::use_visual_styles_ = false;
 bool application::use_wait_cursor_ = false;
 bool application::message_loop_ = false;
+bool application::raise_idle_ = false;
 
 event<application, delegate<void(const event_args&)>> application::application_exit;
 event<application, delegate<void(const event_args&)>> application::enter_thread_modal;
@@ -271,7 +272,9 @@ xtd::forms::style_sheets::style_sheet application::get_style_sheet_from_name(con
 }
 
 void application::raise_idle(const event_args& e) {
-  application::idle(e);
+  raise_idle_ = true;
+  auto message = forms::message::create(0, WM_ENTERIDLE, 0, 0);
+  wm_enter_idle(message);
 }
 
 void application::register_message_loop_callback(message_loop_callback callback) {
@@ -409,17 +412,18 @@ void application::wm_activate_app(message& message) {
 
 void application::wm_enter_idle(message& message) {
   static date_time last_idle_time;
-  if (duration_cast<milliseconds>((date_time::now() - last_idle_time).ticks()) >= chrono::milliseconds(100)) {
+  if (raise_idle_ || duration_cast<milliseconds>((date_time::now() - last_idle_time).ticks()) >= chrono::milliseconds(100)) {
     last_idle_time = date_time::now();
-    application::idle(event_args::empty);
+    idle(event_args::empty);
+    raise_idle_ = false;
   }
-  if (!application::idle.is_empty()) native::application::do_idle();
+  if (!idle.is_empty()) native::application::do_idle();
   
   for (auto form : open_forms())
     form.get().wnd_proc(message);
 }
 
 void application::wm_quit(message& message) {
-  application::thread_exit(event_args::empty);
-  application::application_exit(event_args::empty);
+  thread_exit(event_args::empty);
+  application_exit(event_args::empty);
 }
