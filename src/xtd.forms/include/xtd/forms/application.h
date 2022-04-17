@@ -380,6 +380,7 @@ namespace xtd {
       static bool use_visual_styles_;
       static bool use_wait_cursor_;
       static bool message_loop_;
+      static bool raise_idle_;
     };
   }
 }

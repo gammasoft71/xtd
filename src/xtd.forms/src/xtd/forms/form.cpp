@@ -221,8 +221,7 @@ control& form::visible(bool visible) {
     recreate_handle();
   }
 
-  auto m = message::create(handle(), WM_ENTERIDLE, 0, 0);
-  wnd_proc(m);
+  application::raise_idle(event_args::empty);
 
   container_control::visible(visible);
   if (active_form().has_value() && active_form().value().get().handle() == handle() && active_control_.has_value())
