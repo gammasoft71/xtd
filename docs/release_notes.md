@@ -25,6 +25,7 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - install.cmd removed items from my windows path - [#38](https://github.com/gammasoft71/xtd/issues/38)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - Problems of installing xtd in Arch linux and distributions that are based on it - [#40](https://github.com/gammasoft71/xtd/issues/40)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - how to redraw Caption bar, or create Caption menu? - [#42](https://github.com/gammasoft71/xtd/issues/42)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd - Add xtd untinstaller - [#37](https://github.com/gammasoft71/xtd/issues/37)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - box - Represents a boxed object.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - date_time - Represents an instant in time, typically expressed as a date and time of day. - [#46](https://github.com/gammasoft71/xtd/issues/46)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - math - Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
