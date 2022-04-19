@@ -42,7 +42,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 | https://github.com/gammasoft71/xtd/issues/57     | xtd.core  | io::file_info                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/56     | xtd.core  | io::file_system_info              | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/51     | xtd       | iOS platforms                     | Gammasoft | ![status](pictures/releases/status/started.png) |
-| https://github.com/gammasoft71/xtd/issues/37     | xtd       | uninstaller                       | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/37     | xtd       | uninstaller                       | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/54     | xtd.forms | box_renderer                      | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/55     | xtd.forms | button_renderer                   | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/53     | xtd.forms | check_box_renderer                | Gammasoft |                                                 |
