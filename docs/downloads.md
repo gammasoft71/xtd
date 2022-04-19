@@ -157,6 +157,8 @@ See [xtdc](../tools/xtdc/README.md) for more info.
 
 # Uninstall
 
+You can easily uninstall xtd with one command.
+
 ## Windows 10 or later
 
 * Do the following in "Command Prompt" to uninstall xtd :
