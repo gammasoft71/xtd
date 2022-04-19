@@ -90,17 +90,30 @@ int32_t environment::get_os_platform_id() {
 }
 
 void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+  NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
+  OSVERSIONINFOEXW os_info;
+
+  *(FARPROC*)&RtlGetVersion = GetProcAddress(GetModuleHandleA("ntdll"), "RtlGetVersion");
+  if (RtlGetVersion != nullptr) {
+    os_info.dwOSVersionInfoSize = sizeof(os_info);
+    RtlGetVersion(&os_info);
+    major = os_info.dwMajorVersion;
+    minor = os_info.dwMinorVersion;
+    build = os_info.dwBuildNumber;
+    revision = (os_info.wServicePackMajor << 10) | os_info.wServicePackMinor;
+  } else {
 #pragma warning(push)
 #pragma warning(disable : 4996)
-  OSVERSIONINFOEX version_info {};
-  version_info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
-  if (GetVersionEx((LPOSVERSIONINFO)&version_info)) {
-    major = version_info.dwMajorVersion;
-    minor = version_info.dwMinorVersion;
-    build = version_info.dwBuildNumber;
-    revision = (version_info.wServicePackMajor << 16) | version_info.wServicePackMinor;
-  }
+    OSVERSIONINFOEX version_info{};
+    version_info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
+    if (GetVersionEx((LPOSVERSIONINFO)&version_info)) {
+      major = version_info.dwMajorVersion;
+      minor = version_info.dwMinorVersion;
+      build = version_info.dwBuildNumber;
+      revision = (version_info.wServicePackMajor << 16) | version_info.wServicePackMinor;
+    }
 #pragma warning(pop)
+  }
 }
 
 std::string environment::get_service_pack() {
