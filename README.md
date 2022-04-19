@@ -53,7 +53,7 @@ For more information about xtd see :
 
 ## Getting Started
 
-* [Installation](https://github.com/gammasoft71/xtd/blob/master/docs/downloads.md) provides download and install documentation.
+* [Installation](https://github.com/gammasoft71/xtd/blob/master/docs/downloads.md) provides download, install and uninstall documentation.
 * [Guides](https://github.com/gammasoft71/xtd/blob/master/docs/guides.md) provides xtd guides and tutorials.
 * [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides some examples.
 
