@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
+if [ -z ${xtd_version+x} ]; then
+  echo "ERROR : Use ./install from root folder"
+  exit 1
+fi
+
 WXWIDGETS_VERSION=v3.1.6
 
-echo "Install xtd libraries version $xtd_version, copyright Gammasoft, 2020"
+echo "Install xtd libraries version $xtd_version, copyright Gammasoft, 2022"
 echo ""
 
 # detecting linux distribution
@@ -39,13 +44,13 @@ popd
 mkdir -p wxwidgets/build_cmake
 pushd wxwidgets/build_cmake
 mkdir Debug && mkdir Release
-pushd Debug
-cmake ../.. -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
+pushd Release
+cmake ../.. -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF
 cmake --build . -- -j8
 sudo cmake --build . --target install
 popd
-pushd Release
-cmake ../.. -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF
+pushd Debug
+cmake ../.. -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
 cmake --build . -- -j8
 sudo cmake --build . --target install
 popd
@@ -60,12 +65,12 @@ mkdir Release && mkdir Debug
 pushd Release
 cmake ../..  -DCMAKE_BUILD_TYPE=Release "$@"
 cmake --build . -- -j8
-sudo cmake --build . --target install -- -j8
+sudo cmake --build . --target install
 popd
 pushd Debug
 cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
 cmake --build . -- -j8
-sudo cmake --build . --target install -- -j8
+sudo cmake --build . --target install
 popd
 popd
 
@@ -84,6 +89,12 @@ elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   if [ -d "/Applications/guidgen-gui" ]; then rm "/Applications/guidgen-gui"; fi
   ln -s "/usr/local/bin/guidgen-gui.app" "/Applications/guidgen-gui"
 fi
+
+# copy install manifest files to xtd share directory
+sudo cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt /usr/local/share/xtd/wxwidgets_release_install_manifest.txt
+sudo cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt /usr/local/share/xtd/wxwidgets_debug_install_manifest.txt
+sudo cp build/Release/install_manifest.txt /usr/local/share/xtd/xtd_release_install_manifest.txt
+sudo cp build/Debug/install_manifest.txt /usr/local/share/xtd/xtd_debug_install_manifest.txt
 
 # launch xtd-gui
 echo "launch xtdc-gui..."

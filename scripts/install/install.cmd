@@ -1,15 +1,20 @@
 @echo off
 
+if "%xtd_version%"== "" (
+  echo "ERROR : Use install.cmd from root folder"
+  exit /B 1
+)
+
 set WXWIDGETS_VERSION=v3.1.6
 
-echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2020
+echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2022
 echo.
 
 echo   Operating System is Windows
 
 :: check if administrator mode
-WHOAMI /Groups | FIND "12288" > nul 2>&1
-IF %ERRORLEVEL% neq 0 (
+whoami /Groups | find "12288" > nul 2>&1
+if %ERRORLEVEL% neq 0 (
   echo You are not in administrator mode!
   echo Run cmd as administrator before execute install.
   exit /B 1
