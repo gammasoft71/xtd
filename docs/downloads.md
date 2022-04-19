@@ -66,7 +66,7 @@ install
 /usr/bin/ruby -e "$(curl -fsSL ttps://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-3. After installing Xcode and Homebrew, do the following in "Terminal" to Build and install :
+3. After installing Xcode and Homebrew, do the following in "Terminal" to Build and install xtd :
 
 ```shell
 cd xtd_path_name
@@ -77,7 +77,7 @@ cd xtd_path_name
 
 ## CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 (or later)
 
-1. Do the following in "Terminal" to Build and install :
+1. Do the following in "Terminal" to Build and install xtd :
 
 ```shell
 cd xtd_path_name
@@ -111,7 +111,7 @@ cd xtd_path_name
 
    *Remarks: Verify if you can execute 'cmake --version' in "Terminal", if it's no, add cmake install directory to your path.*
 
-5. After installing g++, gsound, gtk3 and CMake, do the following in "Terminal" to Build and install :
+5. After installing g++, gsound, gtk3 and CMake, do the following in "Terminal" to Build and install xtd :
 
 ```shell
 cd xtd_path_name
@@ -154,6 +154,26 @@ xtdc open
 See [xtdc-gui](../tools/xtdc-gui/README.md) for more info.
 
 See [xtdc](../tools/xtdc/README.md) for more info.
+
+# Uninstall
+
+## Windows 10 or later
+
+* Do the following in "Command Prompt" to uninstall xtd :
+
+```shell
+cd xtd_path_name
+uninstall
+```
+
+## macOS or linux
+
+* Do the following in "Terminal" to uninstall xtd :
+
+```shell
+cd xtd_path_name
+./uninstall
+```
 
 ______________________________________________________________________________________________
 
