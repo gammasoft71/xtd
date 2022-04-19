@@ -90,6 +90,8 @@ int32_t environment::get_os_platform_id() {
 }
 
 void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+  // GetVersionEx (https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversionexa) allows you to get the version for a Windows 8 at most. For Windows 10 and more see :
+  // https://stackoverflow.com/questions/32115255/c-how-to-detect-windows-10
   NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
   OSVERSIONINFOEXW os_info;
 
