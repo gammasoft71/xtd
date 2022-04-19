@@ -9,7 +9,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Get strated tutorials](tutorials.md)
   * [Follow by looking at examples of xtd](../examples/README.md)
 * How to install
-  * [Read download and install](downloads.md)
+  * [Read download, install and uninstall](downloads.md)
   * [How to check xtd version](guide_check_version.md)
 * Delegates and lambdas
   * [Overview](guide_delegates_and_lambdas.md)
