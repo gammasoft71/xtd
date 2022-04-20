@@ -43,9 +43,9 @@ namespace {
   int32_t convert_to_dialog_result(int32_t wx_result, uint32_t style) {
     switch (wx_result) {
       case wxID_OK: return (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDRETRY : IDOK;
-      case wxID_CANCEL: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDIGNORE : (style & MB_YESNO) == MB_YESNO ? IDNO : (style & MB_OK) == MB_OK ? IDOK : IDCANCEL;
-      case wxID_YES: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDABORT : IDYES;
-      case wxID_NO: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDRETRY : IDNO;
+      case wxID_CANCEL: return (style & MB_YESNOCANCEL) == MB_YESNOCANCEL ? IDCANCEL : (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDIGNORE : (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDCANCEL : (style & MB_YESNO) == MB_YESNO ? IDNO : IDCANCEL;
+      case wxID_YES: return (style & MB_YESNOCANCEL) == MB_YESNOCANCEL ? IDYES : (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDABORT : IDYES;
+      case wxID_NO: return (style & MB_YESNOCANCEL) == MB_YESNOCANCEL ? IDNO : (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDRETRY : IDNO;
     }
     return IDOK;
   }
@@ -75,8 +75,8 @@ namespace {
   
   void set_button_labels(wxMessageDialog& dialog, uint32_t style) {
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) dialog.SetOKCancelLabels("Retry", wxID_CANCEL);
-    if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) dialog.SetYesNoCancelLabels("Yes", "No", wxID_CANCEL);
     if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) dialog.SetYesNoCancelLabels("Abort", "Retry", "Ignore");
+    if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) dialog.SetYesNoCancelLabels("Yes", "No", wxID_CANCEL);
   }
 }
 
