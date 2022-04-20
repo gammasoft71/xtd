@@ -32,7 +32,7 @@ public:
     write_mail_button.image_align(content_alignment::middle_left);
     write_mail_button.text("Write mail...");
     write_mail_button.click += [] {
-      process::start("mailto:gammasoft71@gmail.com");
+      process::start("mailto:gammasoft71@gmail.com?subject=Hi%20Gammasoft71&body=xtd%20is%20a%20great%20project.%0D%0A%20");
     };
     
     open_home_folder_button.image(button_images::from_name("folder-home", drawing::size(64, 64)));
