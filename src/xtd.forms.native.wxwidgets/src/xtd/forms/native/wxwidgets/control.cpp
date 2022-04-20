@@ -95,7 +95,7 @@ void control::back_color(intptr_t control, const color& color) {
     return;
   }
 
-#if defined(__APPLE__)
+#if !defined(WIN32)
   if (dynamic_cast<wx_user_window*>(reinterpret_cast<control_handler*>(control)->control())) return;
 #endif
 
