@@ -118,7 +118,7 @@ int32_t environment::get_os_platform_id() {
   #if defined(__ANDROID__)
   return PLATFORM_ANDROID;
   #else
-  return PLATFORM_UNIX;
+  return create_process("uname -a").find("Linux") != std::string::npos ? PLATFORM_LINUX : PLATFORM_UNIX;
   #endif
   #endif
 }
