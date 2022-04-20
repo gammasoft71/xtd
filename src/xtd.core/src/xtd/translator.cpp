@@ -105,7 +105,7 @@ void translator::initialize() {
   else parse_locale(io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "locale"));
   /*
   if (xtd::environment::os_version().is_macos_platform()) parse_locale(io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources"));
-  else if (xtd::environment::os_version().is_linux_platform()) parse_locale(io::path::combine("usr", "share", "locale"));
+  else if (xtd::environment::os_version().is_unix_platform()) parse_locale(io::path::combine("usr", "share", "locale"));
   else parse_locale(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]));
    */
   language_initialized = language_;

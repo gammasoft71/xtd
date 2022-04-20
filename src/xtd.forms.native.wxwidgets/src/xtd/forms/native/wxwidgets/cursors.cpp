@@ -13,7 +13,7 @@ using namespace xtd::forms::native;
 
 namespace {
   static std::string get_os_postfix() noexcept {
-    return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";
+    return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_unix_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";
   }
   
   static std::string forms_resource_path() {
@@ -118,35 +118,35 @@ intptr_t cursors::open_hand() {
 }
 
 intptr_t cursors::pan_east() {
-  return create_cursor_from_resources("pan_east", environment::os_version().is_linux_platform() ? drawing::point {17, 9} : drawing::point {10, 14});
+  return create_cursor_from_resources("pan_east", environment::os_version().is_unix_platform() ? drawing::point {17, 9} : drawing::point {10, 14});
 }
 
 intptr_t cursors::pan_ne() {
-  return create_cursor_from_resources("pan_ne", environment::os_version().is_linux_platform() ? drawing::point {18, 5} : drawing::point {12, 18});
+  return create_cursor_from_resources("pan_ne", environment::os_version().is_unix_platform() ? drawing::point {18, 5} : drawing::point {12, 18});
 }
 
 intptr_t cursors::pan_north() {
-  return create_cursor_from_resources("pan_north", environment::os_version().is_linux_platform() ? drawing::point {12, 6} : drawing::point {15, 20});
+  return create_cursor_from_resources("pan_north", environment::os_version().is_unix_platform() ? drawing::point {12, 6} : drawing::point {15, 20});
 }
 
 intptr_t cursors::pan_nw() {
-  return create_cursor_from_resources("pan_nw", environment::os_version().is_linux_platform() ? drawing::point {5, 5} : drawing::point {19, 18});
+  return create_cursor_from_resources("pan_nw", environment::os_version().is_unix_platform() ? drawing::point {5, 5} : drawing::point {19, 18});
 }
 
 intptr_t cursors::pan_se() {
-  return create_cursor_from_resources("pan_se", environment::os_version().is_linux_platform() ? drawing::point {19, 19} : drawing::point {12, 11});
+  return create_cursor_from_resources("pan_se", environment::os_version().is_unix_platform() ? drawing::point {19, 19} : drawing::point {12, 11});
 }
 
 intptr_t cursors::pan_south() {
-  return create_cursor_from_resources("pan_south", environment::os_version().is_linux_platform() ? drawing::point {12, 18} : drawing::point {16, 8});
+  return create_cursor_from_resources("pan_south", environment::os_version().is_unix_platform() ? drawing::point {12, 18} : drawing::point {16, 8});
 }
 
 intptr_t cursors::pan_sw() {
-  return create_cursor_from_resources("pan_sw", environment::os_version().is_linux_platform() ? drawing::point {6, 19} : drawing::point {19, 10});
+  return create_cursor_from_resources("pan_sw", environment::os_version().is_unix_platform() ? drawing::point {6, 19} : drawing::point {19, 10});
 }
 
 intptr_t cursors::pan_west() {
-  return create_cursor_from_resources("pan_west", environment::os_version().is_linux_platform() ? drawing::point {3, 9} : drawing::point {21, 14});
+  return create_cursor_from_resources("pan_west", environment::os_version().is_unix_platform() ? drawing::point {3, 9} : drawing::point {21, 14});
 }
 
 intptr_t cursors::size_all() {
@@ -160,7 +160,7 @@ intptr_t cursors::size_nesw() {
 }
 
 intptr_t cursors::size_ns() {
-  return create_cursor_from_resources("size_ns", environment::os_version().is_linux_platform() ? drawing::point {7, 11} : drawing::point {4, 11});
+  return create_cursor_from_resources("size_ns", environment::os_version().is_unix_platform() ? drawing::point {7, 11} : drawing::point {4, 11});
   //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENS));
 }
 
@@ -170,7 +170,7 @@ intptr_t cursors::size_nwse() {
 }
 
 intptr_t cursors::size_we() {
-  return create_cursor_from_resources("size_we", environment::os_version().is_linux_platform() ? drawing::point {11, 8} : drawing::point {11, 4});
+  return create_cursor_from_resources("size_we", environment::os_version().is_unix_platform() ? drawing::point {11, 8} : drawing::point {11, 4});
   //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZEWE));
 }
 
