@@ -256,15 +256,15 @@ const xtd::forms::style_sheets::system_colors& style_sheet::system_colors()const
 const style_sheet& style_sheet::system_style_sheet() noexcept {
   if (system_style_sheet_ != style_sheet::empty) return system_style_sheet_;
   
-  if (environment::os_version().is_linux()) {
+  if (environment::os_version().is_unix_platform()) {
     if (environment::os_version().desktop_environment() == "kde" && application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "kde_dark")), false);
     else if (environment::os_version().desktop_environment() == "kde" && !application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "kde_light")), false);
     else if (application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "gnome_dark")), false);
     else system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "gnome_light")), false);
-  } else if (environment::os_version().is_macos()) {
+  } else if (environment::os_version().is_macos_platform()) {
     if (application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "macos_dark")), false);
     else system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "macos_light")), false);
-  } else if (environment::os_version().is_windows()) {
+  } else if (environment::os_version().is_windows_platform()) {
     if (application::dark_mode_enabled()) system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "windows_dark")), false);
     else system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "windows_light")), false);
   } else system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "default")), false);
