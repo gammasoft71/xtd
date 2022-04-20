@@ -81,3 +81,31 @@ constexpr int32_t PLATFORM_IOS = 7;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr int32_t PLATFORM_ANDROID = 8;
+/// @brief The operating system is linux.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native platform_id
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr int32_t PLATFORM_LINUX = 9;
+/// @brief The operating system is tvOS Apple.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native platform_id
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr int32_t PLATFORM_TVOS = 10;
+/// @brief The operating system is watchOS Apple.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native platform_id
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr int32_t PLATFORM_WATCHOS = 11;
+/// @brief The operating system is other.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native platform_id
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr int32_t PLATFORM_OTHER = 12;
