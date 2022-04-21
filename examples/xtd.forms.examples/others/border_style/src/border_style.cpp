@@ -42,16 +42,15 @@ namespace examples {
         colors_chooser.items().push_back({color.name(), color});
       colors_chooser.items()[0] = {back_color().name(), back_color()}; // Replace transparent color by control color.
       colors_chooser.bounds({120, 37, 220, colors_chooser.default_size().height()});
-      colors_chooser.selected_index(0);
-      
       colors_chooser.selected_index_changed += [&] {
         auto color = as<drawing::color>(colors_chooser.selected_item().tag());
-        colored_panel.back_color(color.is_dark() ? color::light(color, .1) :  color::dark(color, .1));
+        colored_panel.back_color(colors_chooser.selected_index() == 0 ? color : color.is_dark() ? color::light(color, .1) :  color::dark(color, .1));
         colored_panel.fore_color(color.is_dark() ? color::light(color, 2.0 / 3) : color::dark(color, 2.0 / 3));
         for (auto& bordered_label : bordered_labels)
           bordered_label.back_color(color);
       };
-      
+      colors_chooser.selected_index(0);
+
       select_sides_label.auto_size(true);
       select_sides_label.location({380, 39});
       select_sides_label.text("Select sides");
