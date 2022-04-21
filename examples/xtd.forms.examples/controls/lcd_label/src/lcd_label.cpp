@@ -19,6 +19,7 @@ public:
     numeric_up_down1.set_range(0, 15000000);
     numeric_up_down1.increment(0.01);
     numeric_up_down1.decimal_place(2);
+    numeric_up_down1.width(180);
     numeric_up_down1.value_changed += [&] {
       lcd_label1.text(ustring::format("{,11:F2}", numeric_up_down1.value()));
     };
