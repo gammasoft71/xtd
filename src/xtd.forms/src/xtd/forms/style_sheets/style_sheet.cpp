@@ -81,7 +81,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   }
   css_reader reader(css_text);
   theme_reader(reader);
-  system_colors_reader(reader);
+  if (init_system) system_colors_reader(reader);
   button_reader(reader);
   control_reader(reader);
   flat_button_reader(reader);
