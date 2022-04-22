@@ -17,7 +17,7 @@ class xtd_core_manual_test : public object {
 public:
   static void main() {
     console::write_line("Hello, World!");
-    console::write_line("lb = {}", net::ip_address::ip_v6_loopback.to_string());
+    console::write_line("processor_count = {}", environment::processor_count());
   }
 };
 

@@ -96,6 +96,10 @@ add_sources(
   include/xtd/forms/exception_box.h
   include/xtd/forms/exception_dialog.h
   include/xtd/forms/file_dialog.h
+  include/xtd/forms/find_dialog.h
+  include/xtd/forms/find_event_args.h
+  include/xtd/forms/find_event_handler.h
+  include/xtd/forms/search_direction.h
   include/xtd/forms/fixed_layout_panel.h
   include/xtd/forms/flat_button_appearance.h
   include/xtd/forms/flat_style.h
@@ -344,6 +348,7 @@ add_sources(
   src/xtd/forms/exception_dialog.cpp
   src/xtd/forms/flat_button_appearance.cpp
   src/xtd/forms/file_dialog.cpp
+  src/xtd/forms/find_dialog.cpp
   src/xtd/forms/fixed_layout_panel.cpp
   src/xtd/forms/flow_layout_panel.cpp
   src/xtd/forms/folder_browser_dialog.cpp

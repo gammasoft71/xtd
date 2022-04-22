@@ -86,6 +86,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/font_dialog.cpp
   src/xtd/forms/native/wxwidgets/font_picker.cpp
   src/xtd/forms/native/wxwidgets/form.cpp
+  src/xtd/forms/native/wxwidgets/find_dialog.cpp
   src/xtd/forms/native/wxwidgets/group_box.cpp
   src/xtd/forms/native/wxwidgets/gtk_settings.cpp
   src/xtd/forms/native/wxwidgets/image_list.cpp
