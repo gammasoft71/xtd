@@ -95,6 +95,7 @@
 #include "xtd/forms/exception_box.h"
 #include "xtd/forms/exception_dialog.h"
 #include "xtd/forms/file_dialog.h"
+#include "xtd/forms/find_dialog.h"
 #include "xtd/forms/fixed_layout_panel.h"
 #include "xtd/forms/flat_button_appearance.h"
 #include "xtd/forms/flat_style.h"

@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/event_args.h>
+#include "dialog_result.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
