@@ -130,8 +130,8 @@ void find_dialog::close() {
 }
 
 void find_dialog::reset() {
-  auto reopen = false;
-  if ((reopen = data_->handle)) close();
+  auto reopen = data_->handle != 0;
+  if (reopen) close();
   data_->dialog_style = xtd::forms::dialog_style::standard;
   data_->location.reset();
   data_->title = "";
