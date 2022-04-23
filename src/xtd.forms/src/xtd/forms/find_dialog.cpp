@@ -15,6 +15,10 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+find_dialog::~find_dialog() {
+  destroy_handle();
+}
+
 const xtd::ustring& find_dialog::find_string() const {
   return data_->find_string;
 }
@@ -124,14 +128,12 @@ find_dialog& find_dialog::whole_word(bool value) {
 }
 
 void find_dialog::close() {
-  if (data_->handle)
-    native::find_dialog::close(data_->handle);
-  data_->handle = 0;
+  if (!data_->visible) return;
+  native::find_dialog::close(data_->handle);
+  data_->visible = false;
 }
 
 void find_dialog::reset() {
-  auto reopen = data_->handle != 0;
-  if (reopen) close();
   data_->dialog_style = xtd::forms::dialog_style::standard;
   data_->location.reset();
   data_->title = "";
@@ -142,18 +144,22 @@ void find_dialog::reset() {
   data_->search_direction = xtd::forms::search_direction::down;
   data_->match_case = false;
   data_->whole_word = false;
-  if (reopen) show(*data_->owner);
+  recreate_handle();
 }
 
 void find_dialog::show(const iwin32_window& owner) {
-  if (data_->handle) return;
-  data_->owner = &owner;
-  //if (data_->dialog_style == xtd::forms::dialog_style::system)
-    data_->handle = native::find_dialog::show(owner.handle(), data_->location, data_->title, data_->find_string, data_->show_up_down, data_->show_whole_word, data_->show_match_case, data_->search_direction == xtd::forms::search_direction::down, data_->whole_word, data_->match_case, {*this, &find_dialog::on_native_dialog_find}, {*this, &find_dialog::on_native_dialog_closed});
+  if (data_->visible) return;
+  if (data_->owner != &owner) {
+    data_->owner = &owner;
+    destroy_handle();
+  }
+  create_handle();
+  native::find_dialog::show(data_->handle);
+  data_->visible = true;
 }
 
-void find_dialog::on_native_dialog_closed(const xtd::drawing::point& location, const ustring& find_string, bool downwards, bool whole_word, bool match_case) {
-  data_->handle = 0;
+void find_dialog::on_dialog_closed(const xtd::drawing::point& location, const ustring& find_string, bool downwards, bool whole_word, bool match_case) {
+  data_->visible = false;
   data_->location = location;
   data_->find_string = find_string;
   data_->search_direction = downwards ? xtd::forms::search_direction::down : xtd::forms::search_direction::up;
@@ -162,7 +168,7 @@ void find_dialog::on_native_dialog_closed(const xtd::drawing::point& location, c
   dialog_closed(*this, dialog_closed_event_args(forms::dialog_result::cancel));
 }
 
-void find_dialog::on_native_dialog_find(const xtd::drawing::point& location, const ustring& find_string, bool downwards, bool whole_word, bool match_case) {
+void find_dialog::on_dialog_find(const xtd::drawing::point& location, const ustring& find_string, bool downwards, bool whole_word, bool match_case) {
   data_->location = location;
   data_->find_string = find_string;
   data_->search_direction = downwards ? xtd::forms::search_direction::down : xtd::forms::search_direction::up;
@@ -171,9 +177,21 @@ void find_dialog::on_native_dialog_find(const xtd::drawing::point& location, con
   find_next(*this, find_event_args(data_->find_string, data_->match_case, data_->search_direction, data_->whole_word));
 }
 
+void find_dialog::create_handle() {
+  if (data_->handle) return;
+  data_->handle = native::find_dialog::create(data_->owner->handle(), data_->location, data_->title, data_->find_string, data_->show_up_down, data_->show_whole_word, data_->show_match_case, data_->search_direction == xtd::forms::search_direction::down, data_->whole_word, data_->match_case, {*this, &find_dialog::on_dialog_find}, {*this, &find_dialog::on_dialog_closed});
+}
+
+void find_dialog::destroy_handle() {
+  if (!data_->handle) return;
+  native::find_dialog::destroy(data_->handle);
+  data_->handle = 0;
+}
+
 void find_dialog::recreate_handle() {
   if (data_->handle) {
-    close();
-    show(*data_->owner);
+    destroy_handle();
+    create_handle();
+    if (data_->visible) native::find_dialog::show(data_->handle);
   }
 }

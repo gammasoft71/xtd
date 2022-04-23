@@ -26,7 +26,9 @@ namespace {
 }
 #endif
 
-intptr_t find_dialog::show(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, callback_t find_next, callback_t dialog_closed) {
+intptr_t find_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, callback_t find_next, callback_t dialog_closed) {
+  if (!wxTheApp) return 0;
+
   int32_t find_replace_flags = 0;
   if (downwards) find_replace_flags |= wxFindReplaceFlags::wxFR_DOWN;
   if (whole_word) find_replace_flags |= wxFindReplaceFlags::wxFR_WHOLEWORD;
@@ -45,7 +47,6 @@ intptr_t find_dialog::show(intptr_t hwnd, const std::optional<xtd::drawing::poin
   if (!show_match_case) dialog_style |= wxFR_NOMATCHCASE;
   wxFindReplaceDialog* find_replace_dialog = new wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), find_replace_data, convert_string::to_wstring(title), dialog_style);
 #if !defined(__WXMSW__)
-  //find_replace_dialog->SetWindowStyle(wxDEFAULT_DIALOG_STYLE);
   find_replace_dialog->SetMinSize(find_replace_dialog->GetSize());
   find_replace_dialog->SetMaxSize(find_replace_dialog->GetSize());
 #endif
@@ -55,7 +56,7 @@ intptr_t find_dialog::show(intptr_t hwnd, const std::optional<xtd::drawing::poin
     auto whole_word = (event.GetFlags() & wxFindReplaceFlags::wxFR_WHOLEWORD) == wxFindReplaceFlags::wxFR_WHOLEWORD;
     auto match_case = (event.GetFlags() & wxFindReplaceFlags::wxFR_MATCHCASE) == wxFindReplaceFlags::wxFR_MATCHCASE;
     auto find_string = event.GetFindString();
-    find_replace_dialog->Destroy();
+    find_replace_dialog->Hide();
     dialog_closed(xtd::drawing::point(find_replace_dialog->GetPosition().x, find_replace_dialog->GetPosition().y), xtd::convert_string::to_string(find_string.c_str().AsWChar()), downwards, whole_word, match_case);
   });
   find_replace_dialog->Bind(wxEVT_FIND, [find_replace_dialog, find_next](wxFindDialogEvent& event) {
@@ -75,16 +76,26 @@ intptr_t find_dialog::show(intptr_t hwnd, const std::optional<xtd::drawing::poin
   
   if (location.has_value())
     find_replace_dialog->SetPosition({location.value().x(), location.value().y()});
-  
-  find_replace_dialog->Show();
 
   return reinterpret_cast<intptr_t>(find_replace_dialog);
 }
 
 void find_dialog::close(intptr_t dialog) {
-  if (!dialog) return;
+  if (!dialog || !wxTheApp) return;
+  
+  reinterpret_cast<wxFindReplaceDialog*>(dialog)->Hide();
+}
+
+void find_dialog::destroy(intptr_t dialog) {
+  if (!dialog || !wxTheApp) return;
   
   auto data = reinterpret_cast<wxFindReplaceDialog*>(dialog)->GetData();
-  reinterpret_cast<wxFindReplaceDialog*>(dialog)->Close();
+  reinterpret_cast<wxFindReplaceDialog*>(dialog)->Destroy();
   delete data;
+}
+
+void find_dialog::show(intptr_t dialog) {
+  if (!dialog || !wxTheApp) return;
+
+  reinterpret_cast<wxFindReplaceDialog*>(dialog)->Show();
 }
