@@ -26,6 +26,7 @@ add_projects(
   open_file_dialog
   progress_box
   progress_dialog
+  replace_dialog
   save_file_box
   save_file_dialog
   trace_message_box

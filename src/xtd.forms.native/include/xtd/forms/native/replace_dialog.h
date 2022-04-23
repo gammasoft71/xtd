@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::native::find_dialog API.
+/// @brief Contains xtd::forms::native::replace_dialog API.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
@@ -21,50 +21,50 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @cond
-    class find_dialog;
+    class replace_dialog;
     /// @endcond
     
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
-      /// @brief Contains find dialog native API.
+      /// @brief Contains replace dialog native API.
       /// @par Namespace
       /// xtd::forms::native
       /// @par Library
       /// xtd.forms.native
       /// @ingroup xtd_forms_native native
       /// @warning Internal use only
-      class forms_native_export_ find_dialog final static_ {
-        friend xtd::forms::find_dialog;
+      class forms_native_export_ replace_dialog final static_ {
+        friend xtd::forms::replace_dialog;
       protected:
         /// @name Protected methods
         
         /// @{
-        /// @brief Creates find dialog.
+        /// @brief Creates replace dialog.
         /// @param hwnd Window handle.
-        /// @param location The xtd::drawing::point class that define the location of the find dialog. If no value, the default system location is used.
+        /// @param location The xtd::drawing::point class that define the location of the replace dialog. If no value, the default system location is used.
         /// @param title A string that specifies the title bar caption to display.
         /// @param find_string A string that specifies the text to find.
-        /// @param show_up_down A boolean that specifies the visibility of up down box option.
+        /// @param replace_string A string that specifies the replaced text.
         /// @param show_whole_word A boolean that specifies the visibility of whole word option.
         /// @param show_match_case A boolean that specifies the visibility of watch case option.
-        /// @param downwards A boolean that specifies the down option is checked. Otherwise is up.
         /// @param whole_word A boolean that specifies the whole word option is checked.
         /// @param show_match_case A boolean that specifies the match case option is checked.
         /// @param find_next A delegate that will be invoked when find button is clicked.
+        /// @param replace A delegate that will be invoked when replace and replace all buttons are clicked.
         /// @param dialog_closed A delegate that will be invoked when the dialog is closed.
-        /// @param return The find dialog handle.
+        /// @param return The replace dialog handle.
         /// @warning Internal use only
-        static intptr_t create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed);
-        /// @brief Hides find dialog.
+        static intptr_t create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, const xtd::ustring& replace_string, bool show_whole_word, bool show_match_case, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed);
+        /// @brief Hides replace dialog.
         /// @param dialog Find dialog handle.
         /// @warning Internal use only
         static void close(intptr_t dialog);
-        /// @brief Destroy find dialog.
+        /// @brief Destroy replace dialog.
         /// @param dialog Find dialog handle.
         /// @warning Internal use only
         static void destroy(intptr_t dialog);
-        /// @brief Shows find dialog.
+        /// @brief Shows replace dialog.
         /// @param dialog Find dialog handle.
         /// @warning Internal use only
         static void show(intptr_t& dialog);

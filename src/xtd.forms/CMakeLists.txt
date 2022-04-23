@@ -205,6 +205,9 @@ add_sources(
   include/xtd/forms/radio_button_renderer.h
   include/xtd/forms/radio_buttons.h
   include/xtd/forms/renderer.h
+  include/xtd/forms/replace_dialog.h
+  include/xtd/forms/replace_event_args.h
+  include/xtd/forms/replace_event_handler.h
   include/xtd/forms/run_worker_completed_event_args.h
   include/xtd/forms/run_worker_completed_event_handler.h
   include/xtd/forms/save_file_dialog.h
@@ -391,6 +394,7 @@ add_sources(
   src/xtd/forms/radio_button.cpp
   src/xtd/forms/radio_button_renderer.cpp
   src/xtd/forms/renderer.cpp
+  src/xtd/forms/replace_dialog.cpp
   src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
   src/xtd/forms/scroll_bar.cpp
