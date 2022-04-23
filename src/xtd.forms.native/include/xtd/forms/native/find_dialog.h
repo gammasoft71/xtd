@@ -74,7 +74,7 @@ namespace xtd {
         /// @brief Creates and shows find dialog.
         /// @param dialog Find dialog handle.
         /// @warning Internal use only
-        static void show(intptr_t dialog);
+        static void show(intptr_t& dialog);
         /// @}
       };
     }
