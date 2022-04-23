@@ -92,7 +92,7 @@ intptr_t find_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing::po
   });
   
   if (location.has_value())
-    find_dialog->Move(location.value().x(), location.value().y());
+    find_dialog->SetPosition({location.value().x(), location.value().y()});
 
   return reinterpret_cast<intptr_t>(find_dialog);
 }
