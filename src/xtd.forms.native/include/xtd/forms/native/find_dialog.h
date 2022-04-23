@@ -37,13 +37,6 @@ namespace xtd {
       class forms_native_export_ find_dialog final static_ {
         friend xtd::forms::find_dialog;
       protected:
-        /// @name Protected Alias
-        
-        /// @{
-        /// @brief Represents the callback delegate for find_next and dialog_closed events.
-        using callback_t = xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)>;
-        /// @}
-
         /// @name Protected methods
         
         /// @{
@@ -62,7 +55,7 @@ namespace xtd {
         /// @param return The find dialog handle.
         /// @param dialog_closed A delegate that will be invoked when the dialog is closed.
         /// @warning Internal use only
-        static intptr_t create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, callback_t find_next, callback_t dialog_closed);
+        static intptr_t create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed);
         /// @brief Hides find dialog.
         /// @param dialog Find dialog handle.
         /// @warning Internal use only
