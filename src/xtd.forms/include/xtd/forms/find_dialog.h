@@ -67,10 +67,10 @@ namespace xtd {
       find_dialog& match_case(bool value);
 
       /// @brief Gets the search direction value.
-      /// @return One of xtd::forms::search_direction values; The default is xtd::forms::search_direction::down.
+      /// @return One of xtd::forms::search_direction values. The default is xtd::forms::search_direction::down.
       xtd::forms::search_direction search_direction() const;
       /// @brief Gets the search direction value.
-      /// @param value One of xtd::forms::search_direction values; The default is xtd::forms::search_direction::down.
+      /// @param value One of xtd::forms::search_direction values. The default is xtd::forms::search_direction::down.
       /// @return Current find_dialog instance.
       find_dialog& search_direction(xtd::forms::search_direction value);
 

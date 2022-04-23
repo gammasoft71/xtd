@@ -96,6 +96,7 @@ add_sources(
   include/xtd/forms/exception_box.h
   include/xtd/forms/exception_dialog.h
   include/xtd/forms/file_dialog.h
+  include/xtd/forms/find_box.h
   include/xtd/forms/find_dialog.h
   include/xtd/forms/find_event_args.h
   include/xtd/forms/find_event_handler.h
