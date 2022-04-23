@@ -125,7 +125,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       xtd::event<replace_dialog, xtd::forms::replace_event_handler> replace_all;
       
-      /// @brief Occurs when the user close the find dialog box with dialog close button or cancel button.
+      /// @brief Occurs when the user close the replace dialog box with dialog close button or cancel button.
       /// @ingroup events
       /// @remarks The xtd::forms::dialog_closed_event_args::dialog_result is always set to xtd::forms::dialog_result::cancel
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -140,14 +140,14 @@ namespace xtd {
       void close();
       
       /// @brief Resets all properties to default values.
+      /// @remarks When you reset the xtd::forms::replace::dialog, the following read/write properties are set to initial values.
       /// | Property         | Value                              |
       /// |------------------|------------------------------------|
       /// | title            | ""                                 |
       /// | find_string      | ""                                 |
-      /// | show_up_down     | true                               |
+      /// | replace_string   | ""                                 |
       /// | show_whole_word  | true                               |
       /// | show_match_case  | true                               |
-      /// | search_direction | xtd::forms::search_direction::down |
       /// | whole_word       | false                              |
       /// | match_case       | false                              |
       void reset();
