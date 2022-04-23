@@ -75,7 +75,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 | https://github.com/gammasoft71/xtd/issues/84     | xtd.forms | panel_renderer                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/85     | xtd.forms | progress_box                      | Bader     | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/86     | xtd.forms | radio_button_renderer             | Gammasoft |                                                 |
-| https://github.com/gammasoft71/xtd/issues/87     | xtd.forms | replace_box                       | Gammasoft |                                                 |
+| https://github.com/gammasoft71/xtd/issues/87     | xtd.forms | replace_box                       | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/88     | xtd.forms | replace_dialog                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/89     | xtd.forms | save_file_box                     | Bader     | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/90     | xtd.forms | seven_segment_display_renderer    | Gammasoft |                                                 |
