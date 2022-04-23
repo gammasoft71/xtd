@@ -34,7 +34,11 @@ namespace xtd {
       /// @brief Initializes a new instance of the find_dialog class.
       find_dialog() = default;
       /// @}
-      
+
+      /// @cond
+      ~find_dialog();
+      /// @endcond
+
       /// @name Properties
       
       /// @{
@@ -164,12 +168,15 @@ namespace xtd {
         bool show_whole_word = true;
         xtd::forms::search_direction search_direction = xtd::forms::search_direction::down;
         xtd::ustring title;
+        bool visible = false;
         bool whole_word = false;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
+      void create_handle();
+      void destroy_handle();
       void recreate_handle();
-      void on_native_dialog_closed(const xtd::drawing::point& location, const ustring& find_string, bool downwards, bool whole_word, bool match_case);
-      void on_native_dialog_find(const xtd::drawing::point& location, const ustring& find_string, bool upwards, bool whole_word, bool match_case);
+      void on_dialog_closed(const xtd::drawing::point& location, const ustring& find_string, bool downwards, bool whole_word, bool match_case);
+      void on_dialog_find(const xtd::drawing::point& location, const ustring& find_string, bool upwards, bool whole_word, bool match_case);
     };
   }
 }
