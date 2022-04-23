@@ -138,6 +138,7 @@ namespace xtd {
       void close();
       
       /// @brief Resets all properties to default values.
+      /// @remarks When you reset the xtd::forms::find::dialog, the following read/write properties are set to initial values.
       /// | Property         | Value                              |
       /// |------------------|------------------------------------|
       /// | title            | ""                                 |
