@@ -158,13 +158,8 @@ void find_dialog::show(const iwin32_window& owner) {
   data_->visible = true;
 }
 
-void find_dialog::on_dialog_closed(const xtd::drawing::point& location, const ustring& find_string, bool downwards, bool whole_word, bool match_case) {
+void find_dialog::on_dialog_closed() {
   data_->visible = false;
-  data_->location = location;
-  data_->find_string = find_string;
-  data_->search_direction = downwards ? xtd::forms::search_direction::down : xtd::forms::search_direction::up;
-  data_->whole_word = whole_word;
-  data_->match_case = match_case;
   dialog_closed(*this, dialog_closed_event_args(forms::dialog_result::cancel));
 }
 
