@@ -49,6 +49,7 @@
 * [open_file_dialog](dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
 * [progress_box](dialogs/progress_box/README.md) displays a progress dialog window, which shows to user a progress animation, with more details like the remaining time, estimated time and other options which can be customized with xtd::forms::progress_box_options. It is a modal window, blocking other actions in the application until the user cancels or hides it.
 * [progress_dialog](dialogs/progress_dialog/README.md) represents a progress box that displays progress box.
+* [replace_box](dialogs/replace_box/README.md) represents a replace dialog box.
 * [replace_dialog](dialogs/replace_dialog/README.md) represents a replace dialog box.
 * [save_file_box](dialogs/save_file_box/README.md) displays a file save window, also known as a file dialog, which asks the user to select a path to save a single file to. It is a modal window, blocking other actions in the application until the user closes it.
 * [save_file_dialog](dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.

@@ -204,6 +204,7 @@
 #include "xtd/forms/radio_button.h"
 #include "xtd/forms/radio_buttons.h"
 #include "xtd/forms/renderer.h"
+#include "xtd/forms/replace_box.h"
 #include "xtd/forms/replace_dialog.h"
 #include "xtd/forms/replace_event_args.h"
 #include "xtd/forms/replace_event_handler.h"
