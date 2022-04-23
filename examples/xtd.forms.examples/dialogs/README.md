@@ -11,6 +11,7 @@
 * [debug_message_box](debug_message_box/README.md) represents a debug message box that displays debug message box and write debug message.
 * [exception_box](exception_box/README.md) represents a exception box that displays exception box.
 * [exception_dialog](exception_dialog/README.md) represents a exception box that displays exception box.
+* [find_box](find_box/README.md) represents a dialog box that displays find box.
 * [find_dialog](find_dialog/README.md) represents a dialog box that displays find box.
 * [folder_browser_box](folder_browser_box/README.md) prompts the user to select a folder.
 * [folder_browser_dialog](folder_browser_dialog/README.md) prompts the user to select a folder.
