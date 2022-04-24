@@ -79,7 +79,7 @@ namespace {
   string get_full_file_name_with_extension(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& file_name, const string& working_directory = "") {
     string path_directories = getenv("PATH") == nullptr ? "" : getenv("PATH");
     #if defined(__APPLE__)
-    path_directories += ":/Applications:/Applications/Utilities:/System/Applications:/System/Applications/Utilities";
+    path_directories += ":/Applications:/Applications/Utilities:/System/Applications:/System/Applications/Utilities:/opt/homebrew/bin";
     string user = getenv("USER") != nullptr ? getenv("USER") : "";
     if (user != "") path_directories += ":/Users/" + user + "/Applications";
     #endif
