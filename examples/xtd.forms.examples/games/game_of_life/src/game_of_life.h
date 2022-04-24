@@ -48,7 +48,9 @@ namespace game_of_life {
       choice_figures_.selected_index(0);
       choice_figures_.width(220);
       choice_figures_.selected_index_changed += [&] {
+        suspend_layout();
         std::any_cast<figure_delegate>(choice_figures_.items()[choice_figures_.selected_index()].tag())();
+        resume_layout();
         choice_figures_.selected_index(0);
       };
       
@@ -153,6 +155,7 @@ namespace game_of_life {
         panel_grid_.begin_invoke([&] {
           panel_grid_.invalidate();
           label_iterations_.text(xtd::ustring::format("Iterations : {}", iterations_));
+          xtd::forms::application::do_events();
         });
       };
       
