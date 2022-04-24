@@ -39,7 +39,7 @@ public:
     };
     
     close_button.parent(*this);
-    close_button.location({width() / 2 - close_button.width() / 2, height() / 2 - close_button.height() / 2});
+    close_button.location({client_size().width() / 2 - close_button.width() / 2, client_size().height() / 2 - close_button.height() / 2});
     close_button.fore_color(color::red);
     close_button.text("close");
     close_button.click += [&] {
