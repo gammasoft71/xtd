@@ -83,7 +83,7 @@ namespace xtd {
     private:
       void wm_click(message& message);
       drawing::color color_;
-      bool alpha_color_ = false;
+      bool alpha_color_ = true;
     };
   }
 }
