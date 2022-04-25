@@ -374,6 +374,9 @@ ________________________________________________________________________________
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.translation - english - English language.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.translation - french - French language.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.toolkits - wxwidgets - wxWidgets toolkit.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] Set default location of .xtdc-gui to ~/.config/xtdc-gui - [#15](https://github.com/gammasoft71/xtd/issues/15)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] Error when building src/xtd/forms/loading_indicator.cpp: reference to `’link’` is abmiguous - [#14](https://github.com/gammasoft71/xtd/issues/14)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] You are not in administrator mode! - [#1](https://github.com/gammasoft71/xtd/issues/1)
 
 ## Remarks
 
