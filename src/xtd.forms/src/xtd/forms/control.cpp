@@ -877,11 +877,11 @@ void control::hide() {
 }
 
 void control::invalidate() const {
-  invalidate({{0, 0}, client_size()}, false);
+  invalidate(drawing::rectangle({ 0, 0 }, client_size()), false);
 }
 
 void control::invalidate(bool invalidate_children) const {
-  invalidate({{0, 0}, client_size()}, invalidate_children);
+  invalidate(drawing::rectangle({ 0, 0 }, client_size()), invalidate_children);
 }
 
 void control::invalidate(const drawing::rectangle& rect) const {
@@ -1210,6 +1210,7 @@ void control::on_resize(const event_args& e) {
   if (is_handle_created()) data_->client_rectangle = native::control::client_rectangle(handle());
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
+  invalidate();
   if (can_raise_events()) resize(*this, e);
 }
 
