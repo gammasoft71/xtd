@@ -1210,7 +1210,6 @@ void control::on_resize(const event_args& e) {
   if (is_handle_created()) data_->client_rectangle = native::control::client_rectangle(handle());
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
-  if (control_appearance() == forms::control_appearance::standard) refresh();
   if (can_raise_events()) resize(*this, e);
 }
 
