@@ -119,8 +119,3 @@ void picture_box::on_paint(paint_event_args& e) {
       control_paint::draw_image(e.graphics(), image().value(), e.clip_rectangle(), to_image_layout(size_mode()));
   }
 }
-
-void picture_box::on_resize(const event_args& e) {
-  control::on_resize(e);
-  invalidate();
-}
