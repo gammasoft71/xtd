@@ -16,9 +16,9 @@
 
 ## Remarks
 
-This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
-
-But you can follow the evolution of the development. We keep the status up to date.
+* This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates.
+* The current plan is not set in stone. Some tasks can be moved from one release to another. New tasks can also be added. But this has at least the merit to have a global view on the tasks to be done.
+* You can follow the evolution of the development. We keep the status up to date.
 
 ## Release 0.2.0 (beta)
 
