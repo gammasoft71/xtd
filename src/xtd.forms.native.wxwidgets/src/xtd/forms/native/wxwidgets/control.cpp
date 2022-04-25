@@ -447,16 +447,6 @@ void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool 
     return;
   }
   reinterpret_cast<control_handler*>(control)->main_control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), erase_background);
-  reinterpret_cast<control_handler*>(control)->main_control()->Update();
-}
-
-void control::refresh(intptr_t control) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return;
-  }
-  reinterpret_cast<control_handler*>(control)->main_control()->Refresh();
 }
 
 void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {

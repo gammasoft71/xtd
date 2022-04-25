@@ -122,5 +122,5 @@ void picture_box::on_paint(paint_event_args& e) {
 
 void picture_box::on_resize(const event_args& e) {
   control::on_resize(e);
-  refresh();
+  invalidate();
 }

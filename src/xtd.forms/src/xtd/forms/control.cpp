@@ -1273,7 +1273,8 @@ void control::resume_layout(bool perform_layout) {
 }
 
 void control::refresh() const {
-  if (is_handle_created()) native::control::refresh(handle());
+  invalidate(true);
+  update();
 }
 
 intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const {
