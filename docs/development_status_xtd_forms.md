@@ -116,8 +116,8 @@
 | [exception_box](../src/xtd.forms/include/xtd/forms/exception_box.h)                                                           | static class | ![progress](pictures/progress100.png) |
 | [exception_dialog](../src/xtd.forms/include/xtd/forms/exception_dialog.h)                                                     | class        | ![progress](pictures/progress100.png) |
 | [file_dialog](../src/xtd.forms/include/xtd/forms/file_dialog.h)                                                               | class        | ![progress](pictures/progress100.png) |
-| [find_box](../src/xtd.forms/include/xtd/forms/find_box.h)                                                                     | static class | ![progress](pictures/progress0.png)   |
-| [find_dialog](../src/xtd.forms/include/xtd/forms/find_dialog.h)                                                               | class        | ![progress](pictures/progress0.png)   |
+| [find_box](../src/xtd.forms/include/xtd/forms/find_box.h)                                                                     | static class | ![progress](pictures/progress100.png) |
+| [find_dialog](../src/xtd.forms/include/xtd/forms/find_dialog.h)                                                               | class        | ![progress](pictures/progress100.png) |
 | [flat_button_appearance](../src/xtd.forms/include/xtd/forms/flat_button_appearance.h)                                         | enumeration  | ![progress](pictures/progress100.png) |
 | [flat_style](../src/xtd.forms/include/xtd/forms/flat_style.h)                                                                 | enumeration  | ![progress](pictures/progress100.png) |
 | [flow_layout_panel](../src/xtd.forms/include/xtd/forms/flow_layout_panel.h)                                                   | class        | ![progress](pictures/progress25.png)  |
@@ -244,8 +244,8 @@
 | [radio_button_renderer](../src/xtd.forms/include/xtd/forms/radio_button_renderer.h)                                           | static class | ![progress](pictures/progress50.png)  |
 | [radio_buttons](../src/xtd.forms/include/xtd/forms/radio_buttons.h)                                                           | static class | ![progress](pictures/progress100.png) |
 | [renderer](../src/xtd.forms/include/xtd/forms/renderer.h)                                                                     | class        | ![progress](pictures/progress25.png)  |
-| [replace_box](../src/xtd.forms/include/xtd/forms/replace_box.h)                                                               | static class | ![progress](pictures/progress0.png)   |
-| [replace_dialog](../src/xtd.forms/include/xtd/forms/replace_dialog.h)                                                         | class        | ![progress](pictures/progress0.png)   |
+| [replace_box](../src/xtd.forms/include/xtd/forms/replace_box.h)                                                               | static class | ![progress](pictures/progress100.png) |
+| [replace_dialog](../src/xtd.forms/include/xtd/forms/replace_dialog.h)                                                         | class        | ![progress](pictures/progress100.png) |
 | [rich_text_box](../src/xtd.forms/include/xtd/forms/rich_text_box.h)                                                           | class        | ![progress](pictures/progress0.png)   |
 | [rich_text_box_renderer](../src/xtd.forms/include/xtd/forms/rich_text_box_renderer.h)                                         | static class | ![progress](pictures/progress0.png)   |
 | [roller](../src/xtd.forms/include/xtd/forms/roller.h)                                                                         | class        | ![progress](pictures/progress0.png)   |

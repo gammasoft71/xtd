@@ -281,7 +281,7 @@
 | [protocol_violation_exception](../src/xtd.core/include/xtd/net/protocol_violation_exception.h) | exception    | ![progress](pictures/progress100.png) |
 | [socket_address](../src/xtd.core/include/xtd/net/socket_address.h)                             | class        | ![progress](pictures/progress100.png) |
 | [web_exception](../src/xtd.core/include/xtd/net/web_exception.h)                               | exception    | ![progress](pictures/progress100.png) |
-| [web_request](../src/xtd.core/include/xtd/net/end_point.h)                                     | class        | ![progress](pictures/progress0.png)   |
+| [web_request](../src/xtd.core/include/xtd/net/web_end_point.h)                                 | class        | ![progress](pictures/progress0.png)   |
 | [web_request_methods](../src/xtd.core/include/xtd/net/web_request_methods.h)                   | static class | ![progress](pictures/progress0.png)   |
 | [web_response](../src/xtd.core/include/xtd/net/web_response.h)                                 | class        | ![progress](pictures/progress0.png)   |
 
