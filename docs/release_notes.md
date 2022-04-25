@@ -4,16 +4,6 @@
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
-This version is currently in development. See [roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) to know the list of features and their progress
-
-## Incompatibility list
-
-* xtd::forms::menu and xtd::forms::menu_item are reimplemented as of version 0.2.0 and are not compatible with the previous version. See [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html) and [example](https://github.com/gammasoft71/xtd/tree/master/examples/xtd.forms.examples/menus_and_toolbars/main_menu) for more information.
-* Linux and macOS users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "/usr/local/share/xtd/themes" directory before the new installation.
-* Windows users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "C:\Program Files (x86)\xtd\share\xtd\themes" directory before the new installation.
-
-## List
-
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - folder_browser_box - [#139](https://github.com/gammasoft71/xtd/issues/139)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - tool_bar_renderer - [#130](https://github.com/gammasoft71/xtd/issues/130)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - user_control_renderer - [#100](https://github.com/gammasoft71/xtd/issues/100)
@@ -62,6 +52,16 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] operator + and operator - does not build with xtd::delegate - [#19](https://github.com/gammasoft71/xtd/issues/19)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump - [#18](https://github.com/gammasoft71/xtd/issues/18)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] WriteFile never sets number_of_bytes_written to -1 - [#16](https://github.com/gammasoft71/xtd/issues/16)
+
+## Note
+
+* This version is currently in development. See [roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) to know the list of features and their progress
+
+## Incompatibility list
+
+* xtd::forms::menu and xtd::forms::menu_item are reimplemented as of version 0.2.0 and are not compatible with the previous version. See [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html) and [example](https://github.com/gammasoft71/xtd/tree/master/examples/xtd.forms.examples/menus_and_toolbars/main_menu) for more information.
+* Linux and macOS users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "/usr/local/share/xtd/themes" directory before the new installation.
+* Windows users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "C:\Program Files (x86)\xtd\share\xtd\themes" directory before the new installation.
 
 ______________________________________________________________________________________________
 
