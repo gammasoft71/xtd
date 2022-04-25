@@ -44,6 +44,7 @@
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] How to use CSS? - [#39](https://github.com/gammasoft71/xtd/issues/39)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] install.cmd removed items from my windows path - [#38](https://github.com/gammasoft71/xtd/issues/38)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] Is there a provided uninstaller? - [#37](https://github.com/gammasoft71/xtd/issues/37)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] Are there any plans to add new components for GridView(DataGridView)? - [#36](https://github.com/gammasoft71/xtd/issues/36)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtdc-gui panels redraw over each other - [#31](https://github.com/gammasoft71/xtd/issues/31)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] cannot delete recent projects in xtdc-gui - [#27](https://github.com/gammasoft71/xtd/issues/27)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] When resizing xtdc-gui, the graphics get messed up - [#26](https://github.com/gammasoft71/xtd/issues/26)
