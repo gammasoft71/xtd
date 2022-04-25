@@ -69,7 +69,7 @@ namespace xtd {
           wxSize size = wxSize(create_params.width(), create_params.height());
           if (size.GetWidth() > -1 && size.GetWidth() < 75) size.SetWidth(75);
           if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
-          bool dialog = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || ((create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST && create_params.parent() && (create_params.style() & WS_CHILD) != WS_CHILD);
+          bool dialog = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || (create_params.ex_style() & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME || ((create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST && create_params.parent() && (create_params.style() & WS_CHILD) != WS_CHILD);
           if (dialog) control_handler::create<wxDialog>(create_params.parent() ? (reinterpret_cast<control_handler*>(create_params.parent())->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
           else control_handler::create<wxFrame>(create_params.parent() && (create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST ? (reinterpret_cast<control_handler*>(create_params.parent())->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
           #if defined(__WIN32__)

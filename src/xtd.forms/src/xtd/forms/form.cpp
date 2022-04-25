@@ -362,8 +362,8 @@ forms::create_params form::create_params() const {
   
   if (show_in_taskbar_) create_params.ex_style(create_params.ex_style() | WS_EX_APPWINDOW);
   
-  if (!show_icon_ && (form_border_style_ == forms::form_border_style::sizable || form_border_style_ == forms::form_border_style::fixed_3d || form_border_style_ == forms::form_border_style::fixed_single)) create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME);
-  
+  if ((!show_icon_ && (form_border_style_ == forms::form_border_style::sizable || form_border_style_ == forms::form_border_style::fixed_3d || form_border_style_ == forms::form_border_style::fixed_single)) || form_border_style_ == forms::form_border_style::fixed_dialog) create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME);
+
   if (get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
   
   if (owner_ != 0) create_params.parent(owner_);
