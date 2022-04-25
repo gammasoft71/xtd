@@ -4,6 +4,13 @@
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - graphics - [#175](https://github.com/gammasoft71/xtd/issues/175)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - gradient_stop_collection - [#174](https://github.com/gammasoft71/xtd/issues/174)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - graphics_path - [#173](https://github.com/gammasoft71/xtd/issues/173)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - region - [#172](https://github.com/gammasoft71/xtd/issues/172)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - radial_gradient_brush - [#171](https://github.com/gammasoft71/xtd/issues/171)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - matrix - [#170](https://github.com/gammasoft71/xtd/issues/170)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - conical_gradient_brush - [#169](https://github.com/gammasoft71/xtd/issues/169)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - folder_browser_box - [#139](https://github.com/gammasoft71/xtd/issues/139)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - tool_bar_renderer - [#130](https://github.com/gammasoft71/xtd/issues/130)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - user_control_renderer - [#100](https://github.com/gammasoft71/xtd/issues/100)
@@ -34,6 +41,7 @@
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - button_renderer - [#55](https://github.com/gammasoft71/xtd/issues/55)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] td.forms - box_renderer - [#54](https://github.com/gammasoft71/xtd/issues/54)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - io::directory - [#52](https://github.com/gammasoft71/xtd/issues/52)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - io::binary_writer - [#49](https://github.com/gammasoft71/xtd/issues/49)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - io::binary_reader - [#48](https://github.com/gammasoft71/xtd/issues/48)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - uri - [#47](https://github.com/gammasoft71/xtd/issues/47)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - date_time - [#46](https://github.com/gammasoft71/xtd/issues/46)
@@ -41,6 +49,8 @@
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] Cmake Error install(error installing..) - [#44](https://github.com/gammasoft71/xtd/issues/44)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] How to implement tray icon? - [#43](https://github.com/gammasoft71/xtd/issues/43)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] how to redraw Caption bar, or create Caption menu? - [#42](https://github.com/gammasoft71/xtd/issues/42)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] Why does the hello world example not running ? - [#41](https://github.com/gammasoft71/xtd/issues/41)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] Problems of installing xtd in Arch linux and distributions that are based on it - [#40](https://github.com/gammasoft71/xtd/issues/40)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] How to use CSS? - [#39](https://github.com/gammasoft71/xtd/issues/39)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] install.cmd removed items from my windows path - [#38](https://github.com/gammasoft71/xtd/issues/38)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] Is there a provided uninstaller? - [#37](https://github.com/gammasoft71/xtd/issues/37)
