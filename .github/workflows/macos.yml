@@ -22,8 +22,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Installing doxygen
-      run: brew install doxygen
+    #- name: Installing doxygen
+    #  run: brew install doxygen
 
     - name: Build
       # Build your program with the given configuration
