@@ -53,7 +53,7 @@
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump - [#18](https://github.com/gammasoft71/xtd/issues/18)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] WriteFile never sets number_of_bytes_written to -1 - [#16](https://github.com/gammasoft71/xtd/issues/16)
 
-## Notes
+## Remarks
 
 * This version is currently in development. See [roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) to know the list of features and their progress
 
@@ -375,7 +375,7 @@ ________________________________________________________________________________
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.translation - french - French language.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.toolkits - wxwidgets - wxWidgets toolkit.
 
-## Notes
+## Remarks
 
 * After 3 years of development, we are happy to release the first beta version of xtd. This version contains a lot of functionalities. It is the first of a long serie.
 * The essentials are listed below. For more information about all functionalities read the [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html).
