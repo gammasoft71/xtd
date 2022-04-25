@@ -49,7 +49,6 @@ public:
   
 private:
   button close_button;
-  panel custom_panel;
   point mouse_location = point::empty;
 };
 
