@@ -14,72 +14,54 @@ This version is currently in development. See [roadmap](https://github.com/gamma
 
 ## List
 
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - WriteFile never sets number_of_bytes_written to -1. - [#16](https://github.com/gammasoft71/xtd/issues/16)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump - [#18](https://github.com/gammasoft71/xtd/issues/18)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - operator + and operator - does not build with xtd::delegate - [#19](https://github.com/gammasoft71/xtd/issues/19)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - cannot build unit test project created with xtdc-gui - [20](https://github.com/gammasoft71/xtd/issues/20)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - xtdc-gui crashes with projects with space in name - [#25](https://github.com/gammasoft71/xtd/issues/25)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - When resizing xtdc-gui, the graphics get messed up - [#26](https://github.com/gammasoft71/xtd/issues/26)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - cannot delete recent projects in xtdc-gui - [#27](https://github.com/gammasoft71/xtd/issues/27)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - xtdc-gui panels redraw over each other - [#31](https://github.com/gammasoft71/xtd/issues/31)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - install.cmd removed items from my windows path - [#38](https://github.com/gammasoft71/xtd/issues/38)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - Problems of installing xtd in Arch linux and distributions that are based on it - [#40](https://github.com/gammasoft71/xtd/issues/40)
-* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) bug - how to redraw Caption bar, or create Caption menu? - [#42](https://github.com/gammasoft71/xtd/issues/42)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd - Add xtd untinstaller - [#37](https://github.com/gammasoft71/xtd/issues/37)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - box - Represents a boxed object.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - date_time - Represents an instant in time, typically expressed as a date and time of day. - [#46](https://github.com/gammasoft71/xtd/issues/46)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - math - Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - uri - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI. - [#47](https://github.com/gammasoft71/xtd/issues/47)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - binary_reader - Reads primitive data types as binary values in a specific encoding. - [#48](https://github.com/gammasoft71/xtd/issues/48)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - binary_writer - Writes primitive types in binary to a stream and supports writing strings in a specific encoding. - [49](https://github.com/gammasoft71/xtd/issues/49)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - directory - Exposes static methods for creating, moving, and enumerating through directories and subdirectories. - [#52](https://github.com/gammasoft71/xtd/issues/52)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - directory_info - Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. - [#59](https://github.com/gammasoft71/xtd/issues/59)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - drive_info - Provides access to information on a drive. - [#58](https://github.com/gammasoft71/xtd/issues/58)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core - file_info - Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::fstream objects. - [#57](https://github.com/gammasoft71/xtd/issues/57)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.core & xtd.cmake - Assembly commands - CMake commands to generate assembly information from the CMakeLists.txt file. - [#45](https://github.com/gammasoft71/xtd/issues/45)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - region - Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inherited.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - conical_gradient_brush - Encapsulates a xtd::drawing::brush with a conical gradient. This class cannot be inherited.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - graphics_path - Defines an object used to draw lines and curves. This class cannot be inherited.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - matrix - Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inherited.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.drawing - radial_gradient_brush - Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - font_box - Represents a common dialog box that displays a dialog to the user to choose a font from among those installed on the local computer. - [#70](https://github.com/gammasoft71/xtd/issues/70)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - folder_browser_box - Prompts the user to select a folder. - [#139](https://github.com/gammasoft71/xtd/issues/139)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - open_file_box - Displays a standard dialog box that prompts the user to open a file. - [#83](https://github.com/gammasoft71/xtd/issues/83)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - progress_box - Represents a common dialog box that displays progress box. - [#85](https://github.com/gammasoft71/xtd/issues/85)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - save_file_box - Prompts the user to select a location for saving a file. - [#89](https://github.com/gammasoft71/xtd/issues/89)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - context_menu - Represents a shortcut menu. - [#65](https://github.com/gammasoft71/xtd/issues/65)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - tool_bar - Represents a Windows tool bar control. - [#99](https://github.com/gammasoft71/xtd/issues/99)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - light_button - Represents a light button control. - [#77](https://github.com/gammasoft71/xtd/issues/77)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - month_calender - Represents a Windows control that enables the user to select a date using a visual monthly calendar display. - [#80](https://github.com/gammasoft71/xtd/issues/80)
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - ibox_model - The box model allows you to specify the margin, borders, padding, background color, width and height of a box.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - iimage_model - The image model allows you to specify the alignment  of an image
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - itext_model - The text model allows you to specify the alignment, color, decoration, transformation, and font of a text.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - control - The control selector allows you to specify the box and color of a control.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - style_shet - The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - box_renderer - Provides methods used to render a box with or without style sheets.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - control_renderer - Provides control renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - form_renderer - Provides form control renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - image_renderer - Provides image renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - label_renderer - Provides label renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - panel_renderer - Provides panel control renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - text_renderer - Provides methods used to render a text with style sheets.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - toggle_button_renderer - Provides toggle_button renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - tool_bar_renderer - Provides tool bar renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - toggle_button_renderer - Provides toggle button renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - user_control_renderer - Provides user_Control renderer methods.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - default - Default theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - gnome dark - Gnome dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - gnome light - Gnome light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - kde dark - kde dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - kde light - kde light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - macos dark - macOS dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - macos light - macOS light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - symbolic dark - symbolic dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - symbolic light - symbolic light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - windows dark - Windows dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - windows light - Windows light theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - xtd dark - xtd dark theme css files.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) xtd.forms - xtd light - xtd light theme css files.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - folder_browser_box - [#139](https://github.com/gammasoft71/xtd/issues/139)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - tool_bar_renderer - [#130](https://github.com/gammasoft71/xtd/issues/130)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - user_control_renderer - [#100](https://github.com/gammasoft71/xtd/issues/100)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - toggle_button_renderer - [#98](https://github.com/gammasoft71/xtd/issues/98)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - text_renderer - [#96](https://github.com/gammasoft71/xtd/issues/96)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - save_file_box - [#89](https://github.com/gammasoft71/xtd/issues/89)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - replace_dialog - [#88](https://github.com/gammasoft71/xtd/issues/88)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - replace_box - [#87](https://github.com/gammasoft71/xtd/issues/87)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - progress_box - [#85](https://github.com/gammasoft71/xtd/issues/85)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - panel_renderer - [#84](https://github.com/gammasoft71/xtd/issues/84)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - open_file_box - [#83](https://github.com/gammasoft71/xtd/issues/83)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - month_calender - [#80](https://github.com/gammasoft71/xtd/issues/80)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - light_buttons - [#79](https://github.com/gammasoft71/xtd/issues/79)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - light_button - [#77](https://github.com/gammasoft71/xtd/issues/77)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - label_renderer - [#75](https://github.com/gammasoft71/xtd/issues/75)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - image_renderer - [#74](https://github.com/gammasoft71/xtd/issues/74)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - form_renderer - [#72](https://github.com/gammasoft71/xtd/issues/72)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - font_box - [#70](https://github.com/gammasoft71/xtd/issues/70)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms- find_dialog - [#69](https://github.com/gammasoft71/xtd/issues/69)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - find_box - [#68](https://github.com/gammasoft71/xtd/issues/68)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - control_renderer - [#66](https://github.com/gammasoft71/xtd/issues/66)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - context_menu - [#65](https://github.com/gammasoft71/xtd/issues/65)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - command_link_buttons - [#64](https://github.com/gammasoft71/xtd/issues/64)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - io::directory_info - [#59](https://github.com/gammasoft71/xtd/issues/59)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - io::drive_info - [#58](https://github.com/gammasoft71/xtd/issues/58)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - io::file_info - [#57](https://github.com/gammasoft71/xtd/issues/57)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - io::file_system_info - [#56](https://github.com/gammasoft71/xtd/issues/56)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - button_renderer - [#55](https://github.com/gammasoft71/xtd/issues/55)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] td.forms - box_renderer - [#54](https://github.com/gammasoft71/xtd/issues/54)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - io::directory - [#52](https://github.com/gammasoft71/xtd/issues/52)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - io::binary_reader - [#48](https://github.com/gammasoft71/xtd/issues/48)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - uri - [#47](https://github.com/gammasoft71/xtd/issues/47)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - date_time - [#46](https://github.com/gammasoft71/xtd/issues/46)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - assembly (with CMake) - [#45](https://github.com/gammasoft71/xtd/issues/45)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] Cmake Error install(error installing..) - [#44](https://github.com/gammasoft71/xtd/issues/44)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] How to implement tray icon? - [#43](https://github.com/gammasoft71/xtd/issues/43)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] how to redraw Caption bar, or create Caption menu? - [#42](https://github.com/gammasoft71/xtd/issues/42)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] How to use CSS? - [#39](https://github.com/gammasoft71/xtd/issues/39)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] install.cmd removed items from my windows path - [#38](https://github.com/gammasoft71/xtd/issues/38)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] Is there a provided uninstaller? - [#37](https://github.com/gammasoft71/xtd/issues/37)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtdc-gui panels redraw over each other - [#31](https://github.com/gammasoft71/xtd/issues/31)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] cannot delete recent projects in xtdc-gui - [#27](https://github.com/gammasoft71/xtd/issues/27)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] When resizing xtdc-gui, the graphics get messed up - [#26](https://github.com/gammasoft71/xtd/issues/26)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtdc-gui crashes with projects with space in name - [#25](https://github.com/gammasoft71/xtd/issues/25)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] cannot build unit test project created with xtdc-gui - [#20](https://github.com/gammasoft71/xtd/issues/20)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] operator + and operator - does not build with xtd::delegate - [#19](https://github.com/gammasoft71/xtd/issues/19)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] Set xtd::forms::tab_page auto_size(true) after set parent(form) : dump - [#18](https://github.com/gammasoft71/xtd/issues/18)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] WriteFile never sets number_of_bytes_written to -1 - [#16](https://github.com/gammasoft71/xtd/issues/16)
 
 ______________________________________________________________________________________________
 
