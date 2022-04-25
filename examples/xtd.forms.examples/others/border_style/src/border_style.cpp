@@ -16,8 +16,8 @@ namespace examples {
       text("Border style example");
       client_size({700, 170 + as<int>(20 + bordered_labels.size() / 4 * 70)});
       controls().push_back_range({colored_panel, control_panel});
-      maximum_client_size(client_size());
-      minimum_client_size(client_size());
+      form_border_style(forms::form_border_style::fixed_dialog);
+      maximize_box(false);
       
       colored_panel.controls().push_back_range(bordered_labels);
       colored_panel.dock(dock_style::fill);
