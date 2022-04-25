@@ -292,11 +292,6 @@ namespace xtd {
         /// @warning Internal use only
         static drawing::point point_to_screen(intptr_t control, const drawing::point& p);
 
-        /// @brief Forces the control to invalidate its client area and immediately redraw itself and any child controls.
-        /// @param control Control window handle.
-        /// @warning Internal use only
-        static void refresh(intptr_t control);
-
         /// @brief Register a specified wnd proc from the message pump of the control.
         /// @param control Control window handle.
         /// @param wnd_proc A wnd proc delegate to register.
