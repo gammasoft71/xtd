@@ -80,10 +80,10 @@ namespace {
     about_dialog_standard() {
       maximize_box(false);
       minimize_box(false);
+      control_box(false);
+      show_icon(false);
       client_size({476, 300});
-      maximum_size(size());
-      minimum_size(size());
-      //form_border_style(forms::form_border_style::fixed_dialog);
+      form_border_style(forms::form_border_style::fixed_dialog);
       start_position(form_start_position::center_screen);
       
       picture_box_icon_.height(74);
