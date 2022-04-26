@@ -2,6 +2,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::drawing::drawing2d;
 using namespace xtd::forms;
 
 namespace examples {
@@ -214,6 +215,10 @@ namespace examples {
       panel_color_box.back_color(color_);
       panel_color_box.border_style(forms::border_style::fixed_3d);
       panel_color_box.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
+      panel_color_box.paint += [&](object& sender, paint_event_args& e) {
+        e.graphics().fill_rectangle(hatch_brush(hatch_style::large_checker_board, color::white, color::gray), e.clip_rectangle());
+        e.graphics().fill_rectangle(solid_brush(color_), e.clip_rectangle());
+      };
     }
     
     void color(const drawing::color& value) {
@@ -227,7 +232,7 @@ namespace examples {
     
   protected:
     void on_color_changed(const event_args& e) {
-      panel_color_box.back_color(color_);
+      panel_color_box.invalidate();
       track_bar_alpha.value(color_.a());
       numeric_up_down_alpha.value(color_.a());
       track_bar_red.value(color_.r());
@@ -258,7 +263,7 @@ namespace examples {
     numeric_up_down numeric_up_down_green;
     numeric_up_down numeric_up_down_blue;
     panel panel_color_box;
-    drawing::color color_ = drawing::color::empty;
+    drawing::color color_ = color::transparent;
   };
   
   class main_form : public form {
