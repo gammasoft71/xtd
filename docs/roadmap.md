@@ -46,6 +46,7 @@ see [Issues 0.2.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | https://github.com/gammasoft71/xtd/issues/58     | xtd.core    | io::drive_info                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/57     | xtd.core    | io::file_info                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/56     | xtd.core    | io::file_system_info              | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| https://github.com/gammasoft71/xtd/issues/176    | xtd.core    | threading::interlocked            | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/169    | xtd.drawing | conical_gradient_brush            | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/170    | xtd.drawing | matrix                            | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | https://github.com/gammasoft71/xtd/issues/171    | xtd.drawing | radial_gradient_brush             | Gammasoft | ![status](pictures/releases/status/done.png)    |
