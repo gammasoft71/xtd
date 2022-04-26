@@ -14,8 +14,9 @@ namespace examples {
       label1.font(drawing::font("Arial", 48, font_style::italic));
       label1.location({10, 10});
       label1.auto_size(true);
+      label1.flat_style(flat_style::system);
       label1.fore_color(color::dodger_blue);
-      
+
       button1.parent(*this);
       button1.text("Start");
       button1.location({10, 90});
