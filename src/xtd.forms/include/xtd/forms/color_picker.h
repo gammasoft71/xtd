@@ -40,9 +40,6 @@ namespace xtd {
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
       void color(const drawing::color& color);
       
-      drawing::size default_size() const override {return {100, 25};}
-      
-      
       /// @brief Gets a value indicating whether the dialog box  shows alpha values and an opacity selector (slider).
       /// @return true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
       bool alpha_color() const {return alpha_color_;}

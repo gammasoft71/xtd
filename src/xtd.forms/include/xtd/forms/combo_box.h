@@ -36,8 +36,6 @@ namespace xtd {
       /// @name Porperties
       
       /// @{
-      virtual drawing::size default_size() const override {return {121, 23};}
-      
       /// @brief Gets a value specifying the style of the combo box.
       /// @return One of the combo_box_style values. The default is drop_down.
       /// @remarks The drop_down_style property specifies whether the list is always displayed or whether the list is displayed in a drop-down. The drop_down_style property also specifies whether the text portion can be edited. See combo_box_style for the available settings and their effects. There is no setting to always display the list and disallow entering a new value. To display a list to which no new values can be added, use a list_box control.

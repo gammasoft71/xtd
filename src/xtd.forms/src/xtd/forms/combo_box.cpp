@@ -16,9 +16,6 @@ using namespace xtd::forms;
 
 combo_box::combo_box() {
   control_appearance(forms::control_appearance::system);
-  drop_down_width_ = default_size().width();
-  drop_down_height_ = static_cast<int32_t>(font().get_height()) * 9;
-  
   items_.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
     combo_box::item selected_item;
@@ -112,10 +109,9 @@ forms::create_params combo_box::create_params() const {
     case combo_box_style::drop_down: create_params.style(create_params.style() | CBS_DROPDOWN); break;
     case combo_box_style::simple: create_params.style(create_params.style() | CBS_SIMPLE); break;
   }
-  
-  if (drop_down_style_ == combo_box_style::simple && size().height() == default_size().height())
-    create_params.height(create_params.height() + drop_down_height_);
-    
+
+  create_params.size(native::control::default_size(create_params.class_name()));
+
   return create_params;
 }
 
@@ -125,6 +121,12 @@ void combo_box::on_drop_down_style_changed(const event_args& e) {
 
 void combo_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
+  
+  drop_down_width_ = default_size().width();
+  drop_down_height_ = static_cast<int32_t>(font().get_height()) * 9;
+  if (drop_down_style_ == combo_box_style::simple && size().height() == default_size().height() && size().height() < drop_down_height_)
+    size({size().width(), drop_down_height_});
+  
   items_.sorted(sorted_);
   for (size_t index = 0; index < items_.size(); ++index)
     native::combo_box::insert_item(handle(), index, items_[index].value());

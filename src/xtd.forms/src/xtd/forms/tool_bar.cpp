@@ -267,10 +267,6 @@ xtd::forms::tool_bar& tool_bar::image_list(const xtd::forms::image_list& value) 
   return *this;
 }
 
-xtd::drawing::size tool_bar::default_size() const {
-  return {200, 40};
-}
-
 const tool_bar::tool_bar_item_collection& tool_bar::items() const {
   return data_->items;
 }

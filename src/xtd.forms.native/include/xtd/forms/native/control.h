@@ -37,6 +37,7 @@ namespace xtd {
     class control;
     class collapsible_panel;
     class command_link_button;
+    class combo_box;
     class domain_up_down;
     class form;
     class light_button;
@@ -63,6 +64,7 @@ namespace xtd {
         friend xtd::forms::button;
         friend xtd::forms::collapsible_panel;
         friend xtd::forms::command_link_button;
+        friend xtd::forms::combo_box;
         friend xtd::forms::control;
         friend xtd::forms::domain_up_down;
         friend xtd::forms::form;

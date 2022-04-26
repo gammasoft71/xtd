@@ -69,8 +69,6 @@ namespace xtd {
       /// @remarks When the flat_style property is set to xtd::forms::flat_style::system, any values assigned to the image_list, image, image_index, and image_align properties are ignored. In addition, the text_align property ignores any property values that are not vertical property settings. Horizontally aligned settings of the text_align property are aligned to the top of the control. For example, if you set the text_align property to content_alignment::top_center, content_alignment::middle_center, or content_alignment::bottom_center, when the flat_style property is set to xtd::forms::flat_style::system, the text in the label control will be aligned to the top and center locations within the bounds of the control.
       virtual xtd::forms::label& flat_style(xtd::forms::flat_style flat_style);
       
-      xtd::drawing::size default_size() const override {return {100, 23};}
-      
       /// @brief Gets the image that is displayed on a label control.
       /// @return The Image displayed on the label control. The default value is xtd::drawing::image::empty.
       /// @remarks When the image property is set, the image_list property will be set to xtd::forms::image_list::empty, and the image_index property will be set to its default, -1.

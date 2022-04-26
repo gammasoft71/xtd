@@ -162,8 +162,6 @@ namespace xtd {
       
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
-      drawing::size default_size() const override {return {150, 21};}
-      
       void on_handle_created(const event_args& e) override;
       
       /// @brief Raises the domain_up_down::selected_item_changed event.

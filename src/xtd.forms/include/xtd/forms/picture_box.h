@@ -50,8 +50,6 @@ namespace xtd {
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual picture_box& border_style(forms::border_style border_style);
       
-      drawing::size default_size() const override {return {100, 50};}
-      
       /// @brief Gets the image that is displayed by picture_box.
       /// @return The xtd::drawing::image to display.
       /// @remarks The image property is set to the xtd::drawing::image to display. You can do this either at design time or at run time.

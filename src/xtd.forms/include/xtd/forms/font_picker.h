@@ -39,8 +39,6 @@ namespace xtd {
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
       control& color(const drawing::color& color);
       
-      drawing::size default_size() const override {return {100, 25};}
-      
       /// @brief Gets the selected font.
       /// @return The selected font.
       drawing::font font() const override {return font_;}

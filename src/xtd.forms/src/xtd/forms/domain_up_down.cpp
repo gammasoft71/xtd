@@ -86,6 +86,7 @@ forms::create_params domain_up_down::create_params() const {
   create_params.class_name("domainupdown");
   
   if (wrap_) create_params.style(create_params.style() | UDS_WRAP);
+  create_params.size(native::control::default_size(create_params.class_name()));
   
   return create_params;
 }

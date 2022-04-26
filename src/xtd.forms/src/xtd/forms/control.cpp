@@ -919,7 +919,8 @@ forms::create_params control::create_params() const {
   if (get_state(control::state::tab_stop)) create_params.style(WS_TABSTOP);
   if (parent().has_value()) create_params.parent(parent().value().get().handle());
   create_params.location(data_->location);
-  create_params.size(size());
+  //create_params.size(size());
+  create_params.size({0, 0});
   
   return create_params;
 }

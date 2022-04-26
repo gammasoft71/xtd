@@ -49,8 +49,6 @@ namespace xtd {
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
       virtual collapsible_panel& border_style(forms::border_style border_style);
       
-      drawing::size default_size() const override {return {0, 0};}
-      
       /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
       /// @return true if collapsible_panel is expanded; otherwise false.
       bool expanded() const {return expanded_;}

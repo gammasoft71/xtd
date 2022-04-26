@@ -50,8 +50,6 @@ namespace xtd {
       /// @return Current tab_control instance.
       virtual tab_control& alignment(tab_alignment alignment);
       
-      drawing::size default_size() const override {return {200, 100};}
-      
       /// @brief Gets the images to display on the control's tabs.
       /// @return An xtd::forms::image_list that specifies the images to display on the tabs.
       /// @remarks To display an image on a tab, set the image_index property of that xtd::forms::tab_page. The image_index acts as the index into the image_list.
