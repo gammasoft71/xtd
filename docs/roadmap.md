@@ -28,6 +28,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ### Enhancements
 
+[Milestone](https://github.com/gammasoft71/xtd/milestone/1)
+
 | Issue                                            | Library     | Enhancements                      | Developer | status                                          |
 |--------------------------------------------------|-------------|-----------------------------------|-----------|-------------------------------------------------|
 | https://github.com/gammasoft71/xtd/issues/51     | xtd         | iOS platforms                     | Gammasoft | ![status](pictures/releases/status/started.png) |
@@ -107,6 +109,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ### Enhancements
 
+[Milestone](https://github.com/gammasoft71/xtd/milestone/2)
+
 | Issue                                            | Library     | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-------------|---------------------------------|-----------|-------------------------------------------------|
 | https://github.com/gammasoft71/xtd/issues/101    | xtd.forms   | check_list_box_renderer         | Gammasoft |                                                 |
@@ -154,6 +158,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ### Enhancements
 
+[Milestone](https://github.com/gammasoft71/xtd/milestone/4)
+
 | Issue                                            | Library     | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-------------|---------------------------------|-----------|-------------------------------------------------|
 | https://github.com/gammasoft71/xtd/issues/140    | xtd.forms   | chart                           | Gammasoft |                                                 |
@@ -183,6 +189,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A1.0.0+is%3Aopen)
 
 ### Enhancements
+
+[Milestone](https://github.com/gammasoft71/xtd/milestone/5)
 
 | Issue                                            | Library     | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-------------|---------------------------------|-----------|-------------------------------------------------|
