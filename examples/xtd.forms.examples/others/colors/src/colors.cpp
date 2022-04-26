@@ -212,7 +212,7 @@ namespace examples {
       panel_color_box.parent(*this);
       panel_color_box.location({55, 195});
       panel_color_box.size({190, 190});
-      panel_color_box.back_color(color_);
+      panel_color_box.double_buffered(true);
       panel_color_box.border_style(forms::border_style::fixed_3d);
       panel_color_box.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       panel_color_box.paint += [&](object& sender, paint_event_args& e) {
