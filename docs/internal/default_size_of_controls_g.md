@@ -15,7 +15,7 @@
 | time_picker                 |    147 |     34 |
 | dial(*)                     |    100 |    100 |
 | domain_up_down              |    116 |     34 |
-| dot_matrix_display(*)      |     25 |     25 |
+| dot_matrix_display(*)      |     25 |      25 |
 | font_picker                 |    160 |     34 |
 | fourteen_segment_display(*) |     13 |     25 |
 | h_scroll_bar                |     46 |     12 |
