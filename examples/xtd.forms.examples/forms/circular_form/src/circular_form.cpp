@@ -18,6 +18,7 @@ public:
     control_box(false);
     form_border_style(forms::form_border_style::none);
     client_size({300, 300});
+    
     graphics_path path;
     path.add_ellipse(client_rectangle());
     region(drawing::region(path));
@@ -49,7 +50,6 @@ public:
   
 private:
   button close_button;
-  panel custom_panel;
   point mouse_location = point::empty;
 };
 
