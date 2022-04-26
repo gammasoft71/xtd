@@ -187,13 +187,13 @@
 
 |OS           | width  | height |
 |-------------|--------|--------|
-| Windows     |        |        |
-| macOS       |        |        |
-| Linux Gnome |        |        |
-| xtd         |    100 |     25 |
+| Windows     |     75 |     23 |
+| macOS       |     84 |     21 |
+| Linux Gnome |     85 |     34 |
+| xtd         |     75 |     25 |
 
-### Notes
- Like a standard button
+## Notes
+* If flat_style == xtd::forms::flat_style::system, height must be 34 on Gtk.
 
 ## xtd::forms::link_label
 
@@ -262,7 +262,7 @@
 | Windows     |    231 |    149 |
 | macOS       |    225 |    100 |
 | Linux Gnome |    218 |    156 |
-| xtd         |    227 |    162 |
+| xtd         |    240 |    162 |
 
 ## xtd::forms::notify_icon
 
@@ -339,15 +339,6 @@
 | Linux Gnome |     10 |     10 |
 | xtd         |    100 |     96 |
 
-## xtd::forms::dial
-
-|OS           | width  | height |
-|-------------|--------|--------|
-| Windows     |        |        |
-| macOS       |        |        |
-| Linux Gnome |        |        |
-| xtd         |    100 |    100 |
-
 ## xtd::forms::seven_segment_display
 
 |OS           | width  | height |
@@ -382,7 +373,7 @@
 | Windows     |        |        |
 | macOS       |        |        |
 | Linux Gnome |        |        |
-| xtd         |     75 |     25 |
+| xtd         |     50 |     25 |
 
 ## xtd::forms::text_box
 
@@ -404,6 +395,9 @@
 | macOS       |     84 |     12 |
 | Linux Gnome |     80 |     34 |
 | xtd         |    104 |     25 |
+
+## Notes
+* If flat_style == xtd::forms::flat_style::system, height must be 34 on Gtk.
 
 ## xtd::forms::notify_icon
 

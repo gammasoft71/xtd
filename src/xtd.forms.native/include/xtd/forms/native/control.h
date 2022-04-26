@@ -181,6 +181,53 @@ namespace xtd {
         /// @warning Internal use only
         static intptr_t def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
 
+        /// @brief Gets the default height and default width for the specified class name.
+        /// @param class_name The name of the Windows class to derive the control from.
+        /// @return The default size that represents the default height and default width of the control in pixels.
+        /// @remarks The class name is the same as the one used to create the control with the xtd::forms::create_params class.
+        /// @remarks The following table contains the default width and height in pixels for class name :
+        /// | class name          | Width | Height |
+        /// |---------------------|-------|--------|
+        /// | "button"            | 75    | 25 *   |
+        /// | "checkbox"          | 104   | 25     |
+        /// | "checkedlistbox"    | 120   | 90     |
+        /// | "choice"            | 121   | 23 *   |
+        /// | "collapsiblepanel"  | 0     | 0      |
+        /// | "colorpicker"       | 100   | 25 *   |
+        /// | "combobox"          | 121   | 23 *   |
+        /// | "commandlinkbutton" | 200   | 60     |
+        /// | "datetimepicker"    | 100   | 25 *   |
+        /// | "domainupdown"      | 150   | 21 *   |
+        /// | "fontpicker"        | 100   | 25 *   |
+        /// | "form"              | 300   | 300    |
+        /// | "groupbox"          | 200   | 100    |
+        /// | "label"             | 100   | 23     |
+        /// | "lightbutton"       | 75    | 25 *   |
+        /// | "listbox"           | 120   | 96     |
+        /// | "loadingindicator"  | 32    | 32     |
+        /// | "monthcalendar"     | 240   | 162    |
+        /// | "numericupdown"     | 120   | 21 *   |
+        /// | "panel"             | 200   | 100    |
+        /// | "picturebox"        | 100   | 50     |
+        /// | "progressbar"       | 100   | 23     |
+        /// | "radiobutton"       | 104   | 23     |
+        /// | "scrollbar"         | 17    | 17     |
+        /// | "switchbutton"      | 50    | 25     |
+        /// | "tabcontrol"        | 200   | 100    |
+        /// | "tabpage"           | 200   | 100    |
+        /// | "textbox"           | 100   | 21 *   |
+        /// | "togglebutton"      | 104   | 25 *   |
+        /// | "toolbar"           | 300   | 300    |
+        /// | "trackbar"          | 104   | 25 *   |
+        /// | "updownbutton"      | 18 ** | 34     |
+        /// | "usercontrol"       | 150   | 150    |
+        /// | other               | 0     | 0      |
+        ///
+        /// ** is 34 on "gnome" environment
+        /// ** is 71 on "gnome" environment
+        /// @warning Internal use only
+        static xtd::drawing::size default_size(const xtd::ustring& class_name);
+
         /// @brief Destroys context menu.
         /// @param control Control window handle to destroy.
         /// @warning Internal use only

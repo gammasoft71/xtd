@@ -338,7 +338,7 @@ drawing::font control::default_font() const {
 }
 
 drawing::size control::default_size() const {
-  return {0, 0};
+  return native::control::default_size(create_params().class_name());
 }
 
 drawing::rectangle control::display_rectangle() const {
