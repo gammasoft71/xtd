@@ -62,8 +62,6 @@ namespace xtd {
       
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
-      drawing::size default_size() const override {return {120, 96};}
-      
       /// @brief Gets the items of the list_box.
       /// @return An list_box::object_collection representing the items in the list_box.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the list_box. With this reference, you can add items, remove items, and obtain a count of the items in the collection.

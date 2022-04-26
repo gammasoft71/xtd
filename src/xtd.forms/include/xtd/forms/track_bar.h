@@ -35,10 +35,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets the default size of the control.
-      /// @return A size that represents the default size of the control.
-      drawing::size default_size() const override {return {104, 45};}
-      
       /// @brief Gets a value to be added to or subtracted from the value property when the scroll box is moved a large distance.
       /// @return A numeric value. The default is 5.
       /// @remarks When the user presses the PAGE UP or PAGE DOWN key or clicks the track bar on either side of the scroll box, the value property changes according to the value set in the large_change property. You might consider setting the large_change value to a percentage of the height (for a vertically oriented track bar) or width (for a horizontally oriented track bar) value. This keeps the distance your track bar moves proportionate to its size.

@@ -20,3 +20,7 @@ forms::create_params v_scroll_bar::create_params() const {
   
   return create_params;
 }
+
+xtd::drawing::size v_scroll_bar::default_size() const {
+  return {control::default_size().width(), 80};
+}

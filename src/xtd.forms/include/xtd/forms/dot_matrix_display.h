@@ -79,8 +79,6 @@ namespace xtd {
         return *this;
       }
       
-      drawing::size default_size() const override {return {25, 25};}
-      
       /// @brief Gets dot matrix style.
       /// @return One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
       virtual forms::dot_matrix_style dot_matrix_style() const {return dot_matrix_style_;}

@@ -21,3 +21,7 @@ forms::create_params h_scroll_bar::create_params() const {
   
   return create_params;
 }
+
+xtd::drawing::size h_scroll_bar::default_size() const {
+  return {80, control::default_size().height()};
+}

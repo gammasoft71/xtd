@@ -61,8 +61,6 @@ namespace xtd {
       /// @return Current panel instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual panel& border_style(nullptr_t border_style);
-
-      drawing::size default_size() const override {return {200, 100};}
       /// @}
       
     protected:

@@ -96,8 +96,6 @@ namespace xtd {
       
       virtual bool is_system_tool_bar() const {return data_->is_system_tool_bar;}
       
-      xtd::drawing::size default_size() const override;
-      
       virtual bool show_icon() const;
       virtual tool_bar& show_icon(bool value);
       

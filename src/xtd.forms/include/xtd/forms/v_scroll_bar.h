@@ -29,7 +29,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      xtd::drawing::size default_size() const override {return {17, 80};}
+      xtd::drawing::size default_size() const override;
       /// @}
       
     protected:

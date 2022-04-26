@@ -62,8 +62,6 @@ namespace xtd {
       
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().text_box_text();}
       
-      drawing::size default_size() const override {return {100, 21};}
-      
       /// @brief Gets the character used to mask characters of a password in a single-line TextBox control.
       /// @return The character used to mask characters entered in a single-line text_box control. Set the value of this property to '0' (U+0000) if you do not want the control to mask characters as they are typed. The default value is '0' (U+0000).
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.

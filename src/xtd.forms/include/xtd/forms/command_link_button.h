@@ -45,8 +45,6 @@ namespace xtd {
       /// @param value One of the AutoSizeMode values. The default value is grow_only.
       virtual command_link_button& auto_size_mode(forms::auto_size_mode value);
       
-      drawing::size default_size() const override {return {200, 60};}
-      
       /// @brief Sets text and supplementary text.
       /// @param text A string that represent control text
       /// @param supplementary_text A string that represent supplementary text.

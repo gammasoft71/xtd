@@ -32,8 +32,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      drawing::size default_size() const override {return {100, 25};}
-      
       /// @brief Gets the format of the date and time displayed in the control.
       /// @return One of the date_time_picker_format values. The default is long_format.
       /// @remarks This property determines the date/time format the date is displayed in. The date/time format is based on the user's regional settings in their operating system.

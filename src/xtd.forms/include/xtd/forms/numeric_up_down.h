@@ -124,7 +124,6 @@ namespace xtd {
       /// @{
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
-      drawing::size default_size() const override {return {120, 21};}
       forms::create_params create_params() const override;
       
       /// @brief Overrides control::on_handle_created(const event_args&)

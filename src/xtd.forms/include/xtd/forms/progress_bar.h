@@ -41,10 +41,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets the default size of the control.
-      /// @return A size that represents the default size of the control.
-      drawing::size default_size() const override {return {100, 23};}
-      
       /// @brief Gets he time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @return The time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @remarks A marquee-style progress indicator does not display progress; instead it indicates that an operation is occurring by moving the progress block across the progress bar.

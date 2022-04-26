@@ -137,10 +137,6 @@ namespace xtd {
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
       
-      /// @brief Gets the default size of the control.
-      /// @return The default Size of the control.
-      drawing::size default_size() const override {return {75, 25};}
-      
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This method is used when auto_size is true.

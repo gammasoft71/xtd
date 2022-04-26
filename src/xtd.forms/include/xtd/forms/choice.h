@@ -34,8 +34,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      virtual drawing::size default_size() const override {return {121, 23};}
-      
       /// @brief Gets an object representing the collection of the items contained in this choice.
       /// @return A choice::object_collection representing the items in the choice.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the choice. With this reference, you can add items, remove items, and obtain a count of the items in the collection.

@@ -78,10 +78,6 @@ namespace xtd {
       /// @param check_align One of the content_alignment values. The default value is middle_left.
       /// @return Current radio_button instance.
       virtual radio_button& check_align(content_alignment check_align);
-      
-      /// @brief Gets the default size of the control.
-      /// @return Returns a size with a width of 104 and a height of 24.
-      drawing::size default_size() const override {return {104, 25};}
       /// @}
       
       /// @name Methods

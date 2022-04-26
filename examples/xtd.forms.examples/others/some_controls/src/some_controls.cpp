@@ -107,8 +107,12 @@ public:
     switch_button2.rounded(false);
     switch_button2.location({130, 210});
     
+    command_link_button1.parent(tab_page_buttons);
+    command_link_button1.texts("Command link buton", "Information");
+    command_link_button1.location({10, 250});
+
     up_down_button1.parent(tab_page_buttons);
-    up_down_button1.location({10, 250});
+    up_down_button1.location({10, 320});
     
     color_picker1.parent(tab_page_pickers);
     color_picker1.location({10, 10});
@@ -254,6 +258,7 @@ private:
   radio_button radio_button2;
   check_box check_box1;
   check_box check_box2;
+  command_link_button command_link_button1;
   up_down_button up_down_button1;
   
   color_picker color_picker1;

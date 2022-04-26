@@ -137,8 +137,6 @@ namespace xtd {
       /// @remarks Only one calendar year is displayed at a time, and the maximum number of months that can be displayed is 12. Valid combinations of columns and rows make a maximum product of 12; for values greater than 12, the display is modified on a best-fit basis.
       month_calendar& calendar_dimensions(const xtd::drawing::size& value);
 
-      xtd::drawing::size default_size() const override {return {240, 162};}
-      
       /// @brief Gets the first day of the week as displayed in the month calendar.
       /// @return One of the xtd::forms::day values. The default is td::forms::day::default_day.
       xtd::forms::day first_day_of_week() const;

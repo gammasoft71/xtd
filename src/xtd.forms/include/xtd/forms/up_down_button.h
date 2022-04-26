@@ -35,8 +35,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      drawing::size default_size() const override {return {18, 34};}
-      
       /// @brief Gets the maximum value for the up_down_button control.
       /// @return The maximum value for the up down button. The default value is 100.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
