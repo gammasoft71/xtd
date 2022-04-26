@@ -156,7 +156,7 @@ color control::back_color() const {
 }
 
 control& control::back_color(const color& color) {
-  if (data_->back_color != color) {
+  if (!data_->back_color.has_value() || data_->back_color != color) {
     data_->back_color = color;
     if (is_handle_created()) native::control::back_color(handle(), data_->back_color.value());
     for (auto& control : controls())
@@ -421,7 +421,7 @@ color control::fore_color() const {
 }
 
 control& control::fore_color(const color& color) {
-  if (data_->fore_color != color) {
+  if (!data_->fore_color.has_value() || data_->fore_color != color) {
     data_->fore_color = color;
     if (is_handle_created()) native::control::fore_color(handle(), data_->fore_color.value());
     for (auto& control : controls())
