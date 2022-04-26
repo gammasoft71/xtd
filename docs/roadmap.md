@@ -19,16 +19,17 @@
 * This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates.
 * The current plan is not set in stone. Some tasks can be moved from one release to another. New tasks can also be added. But this has at least the merit to have a global view on the tasks to be done.
 * You can follow the evolution of the development. We keep the status up to date.
+* [xtd kan-ban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
 
 ## Release 0.2.0 (beta)
 
 ### Bugs
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.2.0+is%3Aopen)
+see [Issues 0.2.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.2.0+is%3Aopen)
 
 ### Enhancements
 
-[Milestone](https://github.com/gammasoft71/xtd/milestone/1)
+[Milestone 0.2.0](https://github.com/gammasoft71/xtd/milestone/1)
 
 | Issue                                            | Library     | Enhancements                      | Developer | status                                          |
 |--------------------------------------------------|-------------|-----------------------------------|-----------|-------------------------------------------------|
@@ -105,11 +106,11 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ### Bugs
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.3.0+is%3Aopen)
+see [Issues 0.3.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.3.0+is%3Aopen)
 
 ### Enhancements
 
-[Milestone](https://github.com/gammasoft71/xtd/milestone/2)
+[Milestone 0.3.0](https://github.com/gammasoft71/xtd/milestone/2)
 
 | Issue                                            | Library     | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-------------|---------------------------------|-----------|-------------------------------------------------|
@@ -154,11 +155,11 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ### Bugs
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.4.0+is%3Aopen)
+see [Issues 0.4.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.4.0+is%3Aopen)
 
 ### Enhancements
 
-[Milestone](https://github.com/gammasoft71/xtd/milestone/4)
+[Milestone 0.4.0](https://github.com/gammasoft71/xtd/milestone/4)
 
 | Issue                                            | Library     | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-------------|---------------------------------|-----------|-------------------------------------------------|
@@ -186,11 +187,11 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ### Bugs
 
-see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A1.0.0+is%3Aopen)
+see [Issues 1.0.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A1.0.0+is%3Aopen)
 
 ### Enhancements
 
-[Milestone](https://github.com/gammasoft71/xtd/milestone/5)
+[Milestone 1.0.0](https://github.com/gammasoft71/xtd/milestone/5)
 
 | Issue                                            | Library     | Enhancements                    | Developer | status                                          |
 |--------------------------------------------------|-------------|---------------------------------|-----------|-------------------------------------------------|
