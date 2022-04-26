@@ -4,6 +4,7 @@
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - interlocked - [#176](https://github.com/gammasoft71/xtd/issues/176)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - graphics - [#175](https://github.com/gammasoft71/xtd/issues/175)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - gradient_stop_collection - [#174](https://github.com/gammasoft71/xtd/issues/174)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - graphics_path - [#173](https://github.com/gammasoft71/xtd/issues/173)
