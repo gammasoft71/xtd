@@ -183,6 +183,45 @@ intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, int
   return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
 }
 
+xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
+  static auto is_gnome = environment::os_version().desktop_environment() == "gnome";
+  
+  if (class_name == "button") return {75, is_gnome ? 34 : 25};
+  if (class_name == "checkbox") return {104, 25};
+  if (class_name == "checkedlistbox") return {120, 90};
+  if (class_name == "choice") return {121, is_gnome ? 34 : 23};
+  if (class_name == "collapsiblepanel") return {0, 0};
+  if (class_name == "colorpicker") return {100, is_gnome ? 34 : 25};
+  if (class_name == "combobox") return {121, is_gnome ? 34 : 23};
+  if (class_name == "commandlinkbutton") return {200, 60};
+  if (class_name == "datetimepicker") return {100, is_gnome ? 34 : 25};
+  if (class_name == "domainupdown") return {150, is_gnome ? 34 : 21};
+  if (class_name == "fontpicker") return {100, is_gnome ? 34 : 25};
+  if (class_name == "form") return {300, 300};
+  if (class_name == "groupbox") return {200, 100};
+  if (class_name == "label") return {100, 23};
+  if (class_name == "lightbutton") return {75, is_gnome ? 34 : 25};
+  if (class_name == "listbox") return {120, 96};
+  if (class_name == "loadingindicator") return {32, 32};
+  if (class_name == "monthcalendar") return {240, 162};
+  if (class_name == "numericupdown") return {120, is_gnome ? 34 : 21};
+  if (class_name == "panel") return {200, 100};
+  if (class_name == "picturebox") return {100, 50};
+  if (class_name == "progressbar") return {100, 23};
+  if (class_name == "radiobutton") return {104, 23};
+  if (class_name == "scrollbar") return {17, 17};
+  if (class_name == "switchbutton") return {50, 25};
+  if (class_name == "tabcontrol") return {200, 100};
+  if (class_name == "tabpage") return {200, 100};
+  if (class_name == "textbox") return {100, is_gnome ? 34 : 21};
+  if (class_name == "togglebutton") return {104, is_gnome ? 34 : 25};
+  if (class_name == "toolbar") return {300, 300};
+  if (class_name == "trackbar") return {104, is_gnome ? 34 : 25};
+  if (class_name == "updownbutton") return {is_gnome ? 71 : 18, 34};
+  if (class_name == "usercontrol") return {150, 150};
+  return {0, 0};
+}
+
 void control::destroy(intptr_t control) {
   if (!control) throw argument_exception(csf_);
   if (reinterpret_cast<control_handler*>(control)->control() == 0 || !wxTheApp) return;
