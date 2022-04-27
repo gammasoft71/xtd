@@ -50,6 +50,9 @@ void track_bar::tick_frequency(intptr_t control, int32_t tick_frequency) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
+  
+  if ((static_cast<wxSlider*>(reinterpret_cast<control_handler*>(control)->control())->GetWindowStyle() & wxSL_AUTOTICKS) != wxSL_AUTOTICKS) return;
+  
   static_cast<wxSlider*>(reinterpret_cast<control_handler*>(control)->control())->SetTickFreq(tick_frequency);
 }
 
