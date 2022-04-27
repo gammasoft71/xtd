@@ -123,6 +123,8 @@ namespace xtd {
         outlined_diamond = 51,
         /// @brief Specifies a hatch that has the appearance of a checkerboard placed diagonally.
         solid_diamond = 52,
+        /// @brief Specifies a hatch that has the appearance of a checkerboard with squares that are twice the size of large_checker_board and Four times the size of small_checker_board.
+        wide_checker_board = 53,
       };
       
       /// @cond
