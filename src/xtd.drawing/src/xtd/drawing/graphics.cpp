@@ -250,7 +250,7 @@ void graphics::draw_beziers(const pen& pen, const std::vector<xtd::drawing::poin
 void graphics::draw_beziers(const pen& pen, const std::vector<xtd::drawing::point_f>& points) {
   vector<pair<float, float>> beziers_points;
   for (auto pt : points)
-    beziers_points.push_back(make_pair(pt.x(), pt.y()));
+    beziers_points.push_back(make_pair(to_pixels(pt.x()), to_pixels(pt.y())));
   native::graphics::draw_beziers(handle(), pen.handle(), beziers_points);
 }
 
