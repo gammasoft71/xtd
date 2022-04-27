@@ -216,7 +216,7 @@ namespace examples {
       panel_color_box.border_style(forms::border_style::fixed_3d);
       panel_color_box.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       panel_color_box.paint += [&](object& sender, paint_event_args& e) {
-        e.graphics().fill_rectangle(hatch_brush(hatch_style::large_checker_board, color::white, color::gray), e.clip_rectangle());
+        e.graphics().fill_rectangle(hatch_brush(hatch_style::wide_checker_board, color::from_argb(0x99, 0x99, 0x99), color::from_argb(0x66, 0x66, 0x66)), e.clip_rectangle());
         e.graphics().fill_rectangle(solid_brush(color_), e.clip_rectangle());
       };
     }
