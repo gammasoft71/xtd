@@ -480,7 +480,7 @@ void graphics::draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y) {
 }
 
 void graphics::draw_point(const xtd::drawing::pen& pen, float x, float y) {
-  if (pen.width() == 1) fill_rectangle(*pen.brush(), x, y, pen.width(), pen.width());
+  if (pen.width() == 1.0f) fill_rectangle(*pen.brush(), x, y, pen.width(), pen.width());
   else fill_ellipse(*pen.brush(), x, y, pen.width(), pen.width());
 }
 
