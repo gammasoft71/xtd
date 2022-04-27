@@ -335,12 +335,12 @@ namespace xtd {
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point structures that represent the points that determine the curve. The number of points in the array should be a multiple of 3 plus 1, such as 4, 7, or 10.
       /// @remarks The number of points in the array should be a multiple of 3 plus 1 because the first spline requires 4 points and any other splines require 3 points each. The first Bézier curve is drawn from the first point to the fourth point in the point array. The second and third points are control points that determine the shape of the curve. Each subsequent curve needs exactly three more points: two more control points and an ending point. The ending point of the previous curve is used as the starting point for each additional curve.
-      void draw_beziers(const pen& pen, std::vector<xtd::drawing::point>& points);
+      void draw_beziers(const pen& pen, const std::vector<xtd::drawing::point>& points);
       /// @brief Draws a series of Bézier splines from an array of xtd::drawing::point_f structures.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point_f structures that represent the points that determine the curve. The number of points in the array should be a multiple of 3 plus 1, such as 4, 7, or 10.
       /// @remarks The number of points in the array should be a multiple of 3 plus 1 because the first spline requires 4 points and any other splines require 3 points each. The first Bézier curve is drawn from the first point to the fourth point in the point array. The second and third points are control points that determine the shape of the curve. Each subsequent curve needs exactly three more points: two more control points and an ending point. The ending point of the previous curve is used as the starting point for each additional curve.
-      void draw_beziers(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+      void draw_beziers(const pen& pen, const std::vector<xtd::drawing::point_f>& points);
       
       /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point structures.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
@@ -348,14 +348,14 @@ namespace xtd {
       /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point structures.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point>& points);
+      void draw_closed_curve(const pen& pen, const std::vector<xtd::drawing::point>& points);
       /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point_f structures.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
       /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+      void draw_closed_curve(const pen& pen, const std::vector<xtd::drawing::point_f>& points);
       /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point structures using a specified tension.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point structures that define the spline.
@@ -363,7 +363,7 @@ namespace xtd {
       /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point structures.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension);
+      void draw_closed_curve(const pen& pen, const std::vector<xtd::drawing::point>& points, float tension);
       /// @brief Draws a closed cardinal spline defined by an array of xtd::drawing::point_f structures using a specified tension.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
@@ -371,7 +371,7 @@ namespace xtd {
       /// @remarks This method draws a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_closed_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension);
+      void draw_closed_curve(const pen& pen, const std::vector<xtd::drawing::point_f>& points, float tension);
       
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
@@ -379,14 +379,14 @@ namespace xtd {
       /// @remarks This method draws a cardinal spline that passes through each point in the array.
       /// @remarks The array of points must contain at least three PointF structures for a curve to be drawn.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points);
+      void draw_curve(const pen& pen, const std::vector<xtd::drawing::point>& points);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
       /// @remarks This method draws a cardinal spline that passes through each point in the array.
       /// @remarks The array of points must contain at least three PointF structures for a curve to be drawn.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points);
+      void draw_curve(const pen& pen, const std::vector<xtd::drawing::point_f>& points);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point structures that define the spline.
@@ -394,7 +394,7 @@ namespace xtd {
       /// @remarks This method draws a cardinal spline that passes through each point in the array.
       /// @remarks The array of points must contain at least three xtd::drawing::point structures for a curve to be drawn.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points, float tension);
+      void draw_curve(const pen& pen, const std::vector<xtd::drawing::point>& points, float tension);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures using a specified tension.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
@@ -402,7 +402,7 @@ namespace xtd {
       /// @remarks This method draws a cardinal spline that passes through each point in the array.
       /// @remarks The array of points must contain at least three xtd::drawing::point_f structures for a curve to be drawn.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, float tension);
+      void draw_curve(const pen& pen, const std::vector<xtd::drawing::point_f>& points, float tension);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures. The drawing begins offset from the beginning of the array.
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension. The drawing begins offset from the beginning of the array.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
@@ -414,7 +414,7 @@ namespace xtd {
       /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
       /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments);
+      void draw_curve(const pen& pen, const std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures. The drawing begins offset from the beginning of the array.
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension. The drawing begins offset from the beginning of the array.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
@@ -426,7 +426,7 @@ namespace xtd {
       /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
       /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
       /// @remarks This method uses a default tension of 0.0.
-      void draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments);
+      void draw_curve(const pen& pen, const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point structures using a specified tension. The drawing begins offset from the beginning of the array.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point structures that define the spline.
@@ -438,7 +438,7 @@ namespace xtd {
       /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
       /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_curve(const pen& pen, std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension);
+      void draw_curve(const pen& pen, const std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension);
       /// @brief Draws a cardinal spline through a specified array of xtd::drawing::point_f structures using a specified tension. The drawing begins offset from the beginning of the array.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the curve.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
@@ -450,7 +450,7 @@ namespace xtd {
       /// @remarks The value of the offset parameter specifies the number of elements to skip in the array. The first element after the skipped elements represents the starting point of the curve.
       /// @remarks The value of the number_of_segments parameter specifies the number of segments, after the starting point, to draw in the curve. The value of the number_of_segments parameter must be at least 1. The value of the offset parameter plus the value of the number_of_segments parameter must be less than the number of elements in the array of the points parameter.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void draw_curve(const pen& pen, std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension);
+      void draw_curve(const pen& pen, const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension);
       
       /// @brief Draws an ellipse specified by a bounding xtd::drawing::rectangle structure.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the ellipse.
@@ -832,14 +832,14 @@ namespace xtd {
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point structures.
       /// @remarks This method uses a default tension of 0.0.
-      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points);
       /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures.
       /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
       /// @remarks This method uses a default tension of 0.0.
-      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points);
       /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures using the specified fill mode.
       /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point structures that define the spline.
@@ -847,7 +847,7 @@ namespace xtd {
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point structures.
       /// @remarks This method uses a default tension of 0.0.
-      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
       /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures using the specified fill mode.
       /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
@@ -855,7 +855,7 @@ namespace xtd {
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
       /// @remarks This method uses a default tension of 0.0.
-      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
       /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures using the specified fill mode and tension.
       /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point structures that define the spline.
@@ -864,7 +864,7 @@ namespace xtd {
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point structures.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
       /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures using the specified fill mode and tension.
       /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
@@ -873,7 +873,7 @@ namespace xtd {
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void fill_closed_curve(const xtd::drawing::brush& brush, std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
       
       /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a xtd::drawing::rectangle structure.
       /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
