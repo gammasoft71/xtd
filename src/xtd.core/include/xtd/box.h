@@ -184,7 +184,7 @@ namespace xtd {
     static constexpr type_t negative_infinity = -infinity;
     /// @brief Represents positive infinity. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<type_t>::infinity().
-    static constexpr double positive_infinity = +infinity;
+    static constexpr type_t positive_infinity = +infinity;
     
     
   private:
