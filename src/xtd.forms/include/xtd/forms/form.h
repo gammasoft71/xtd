@@ -171,12 +171,16 @@ namespace xtd {
       
       /// @brief Gets the form that owns this form.
       /// @return A form that represents the form that is the owner of this form.
-      virtual std::optional<control_ref> owner() const {return from_handle(owner_);}
+      virtual std::optional<control_ref> owner() const;
       /// @brief Sets the form that owns this form.
       /// @param value A form that represents the form that is the owner of this form.
       /// @return Current form.
       virtual form& owner(const control& value);
-      
+      /// @brief Resets the form that owns this form.
+      /// @param nullptr
+      /// @return Current form.
+      virtual form& owner(nullptr_t);
+
       using container_control::parent;
       /// @brief Sets the parent container of the control.
       /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
@@ -398,7 +402,7 @@ namespace xtd {
       std::optional<std::reference_wrapper<forms::main_menu>> menu_;
       bool minimize_box_ = true;
       double opacity_ = 1.0;
-      intptr_t owner_ = 0;
+      const control* owner_ = nullptr;
       intptr_t parent_before_show_dialog_ = 0;
       std::shared_ptr<screen> previous_screen_;
       bool show_icon_ = true;

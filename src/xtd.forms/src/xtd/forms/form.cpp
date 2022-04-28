@@ -149,9 +149,21 @@ form& form::minimize_box(bool value) {
   return *this;
 }
 
+std::optional<control_ref> form::owner() const {
+  return owner_ ? std::optional<control_ref>(control_ref(const_cast<control&>(*owner_))) : std::optional<control_ref>();
+}
+
 form& form::owner(const control& value) {
-  if (owner_ != value.handle()) {
-    owner_ = value.handle();
+  if (!owner_ || owner_->handle() != value.handle()) {
+    owner_ = &value;
+    post_recreate_handle();
+  }
+  return *this;
+}
+
+form& form::owner(nullptr_t) {
+  if (owner_) {
+    owner_ = nullptr;
     post_recreate_handle();
   }
   return *this;
@@ -368,7 +380,7 @@ forms::create_params form::create_params() const {
 
   if (get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
   
-  if (owner_ != 0) create_params.parent(owner_);
+  if (owner_ != nullptr) create_params.parent(owner_->handle());
   
   if (top_most_) create_params.ex_style(create_params.ex_style() | WS_EX_TOPMOST);
   
