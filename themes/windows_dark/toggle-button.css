@@ -48,18 +48,18 @@ toggle-button:checked:disabled {
 }
 
 toggle-button:mixed {
-  border-color: #0088D4;
-  background-color: #0088D4;
+  border-color: #006AA6;
+  background-color: #006AA6;
 }
 
 toggle-button:mixed:hover {
-  border-color: #0088D4;
-  background-color: #0088D4;
+  border-color: #006AA6;
+  background-color: #006AA6;
 }
 
 toggle-button:mixed:pressed {
-  border-color: #0088D4;
-  background-color: #0088D4;
+  border-color: #006AA6;
+  background-color: #006AA6;
 }
 
 toggle-button:mixed:disabled {  

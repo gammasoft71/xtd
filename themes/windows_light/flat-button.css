@@ -38,7 +38,7 @@ flat-button:default {
 }
 
 flat-button:default:hover {
-  background-color: rgba(0, 0, 0, 0.98);
+  background-color: system-color(control-light);
 }
 
 flat-button:default:pressed {

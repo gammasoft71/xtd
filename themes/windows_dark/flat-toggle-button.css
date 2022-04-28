@@ -43,7 +43,7 @@ flat-toggle-button:checked:disabled {
 }
 
 flat-toggle-button:mixed {
-  background-color: system-color(control-light-light);
+  background-color: #656565;
 }
 
 flat-toggle-button:mixed:hover {
