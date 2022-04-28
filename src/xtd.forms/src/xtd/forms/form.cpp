@@ -229,9 +229,11 @@ control& form::visible(bool visible) {
     
   if (current_window_state.has_value())
     window_state(current_window_state.value());
-  internal_set_window_state();
-  if (visible) can_close_ = false;
-  if (visible && accept_button_.has_value()) accept_button_.value().get().notify_default(true);
+  if (visible) {
+    internal_set_window_state();
+    can_close_ = false;
+    if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
+  }
   return *this;
 }
 
@@ -435,9 +437,7 @@ void form::wm_close(message& message) {
   if (event_args.cancel() != true) {
     can_close_ = true;
     hide();
-    if (!get_state(state::modal))
-      destroy_control();
-    else {
+    if (get_state(state::modal)) {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
       application::raise_leave_thread_modal(event_args::empty);
