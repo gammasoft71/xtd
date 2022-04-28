@@ -14,12 +14,11 @@ button {
 
 button:hover {
   border-color: rgba(43, 120, 215, 1.0);
-  background-color: rgba(204, 228, 247, 1.0);
+  background-color: rgba(219, 243, 255, 0.5);
 }
 
 button:pressed {
-  border-color: rgba(12, 9, 138, 1.0);
-  background-color: rgba(219, 243, 255, 0.5);
+  border-color: #E7E7E7;
 }
 
 button:checked {
@@ -49,9 +48,7 @@ button:default:hover {
 }
 
 button:default:pressed {
-  border-color: rgba(12, 9, 138, 1.0);
-  border-width: 1px;
-  background-color: rgba(204, 228, 247, 1.0);
+  border-color: #E7E7E7;
 }
 
 button:default:checked {
