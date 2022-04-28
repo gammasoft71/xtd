@@ -44,7 +44,7 @@ public:
     close_button.fore_color(color::red);
     close_button.text("close");
     close_button.click += [&] {
-      application::exit();
+      close();
     };
   }
   
