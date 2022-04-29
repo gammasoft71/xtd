@@ -94,7 +94,7 @@ namespace xtd {
         static long popup_panel_style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = wxPU_CONTAINS_CONTROLS;
           
-          if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
+          //if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
           
           if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
           else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;
@@ -104,7 +104,7 @@ namespace xtd {
         }
         
         static long panel_style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
-          long wx_style = wxTAB_TRAVERSAL | wxNO_BORDER;
+          long wx_style = wxNO_BORDER;
           
           if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
           if ((style & WS_VSCROLL) == WS_VSCROLL) wx_style |= wxVSCROLL;
