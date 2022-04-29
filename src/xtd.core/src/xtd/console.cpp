@@ -292,5 +292,5 @@ void console::write_(const ustring& value) {
 
 void console::write_line_(const ustring& value) {
   lock_guard<mutex> lock(console_mutex);
-  out << value << std::endl << std::flush;
+  out << value << std::endl;
 }
