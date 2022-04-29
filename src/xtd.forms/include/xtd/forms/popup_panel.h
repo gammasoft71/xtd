@@ -16,7 +16,7 @@ namespace xtd {
     /// @ingroup xtd_forms containers
     /// @par Examples
     /// The following code example demonstrates the use of popup_panel container.
-    /// @include tab_control.cpp
+    /// @include popup_panel.cpp
     class forms_export_ popup_panel : public panel {
     public:
       /// @name Constructors
