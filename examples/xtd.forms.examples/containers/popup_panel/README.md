@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::popup_panel](../../../../src/xtd.forms/incl
 
 # Sources
 
-* [src/panel.cpp](src/popup_panel.cpp)
+* [src/popup_panel.cpp](src/popup_panel.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
