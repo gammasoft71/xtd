@@ -1,0 +1,36 @@
+# panel
+
+demonstrates the use of [xtd::forms::popup_panel](../../../../src/xtd.forms/include/xtd/forms/popup_panel.h) container.
+
+# Sources
+
+* [src/panel.cpp](src/popup_panel.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
+
+# Build and run
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run
+```
+
+# Output
+
+## Windows :
+
+![Screenshot](../../../../docs/pictures/examples/popup_panel_w.png)
+
+![Screenshot](../../../../docs/pictures/examples/popup_panel_wd.png)
+
+## macOS :
+
+![Screenshot](../../../../docs/pictures/examples/popup_panel_m.png)
+
+![Screenshot](../../../../docs/pictures/examples/popup_panel_md.png)
+
+## Gnome :
+
+![Screenshot](../../../../docs/pictures/examples/popup_panel_g.png)
+
+![Screenshot](../../../../docs/pictures/examples/popup_panel_gd.png)

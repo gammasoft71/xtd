@@ -8,6 +8,7 @@ add_projects(
   group_box
   horizontal_layout_panel
   panel
+  popup_panel
   split_container
   tab_control
   vertical_layout_panel
