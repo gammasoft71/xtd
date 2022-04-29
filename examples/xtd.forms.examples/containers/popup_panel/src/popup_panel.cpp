@@ -31,7 +31,6 @@ public:
       popup_panel1.location(point_to_screen(button1.location()));
       popup_panel1.width(button1.width());
       popup_panel1.show();
-      application::do_events();
     };
   }
   
