@@ -70,6 +70,7 @@ add_sources(
   include/xtd/forms/native/numeric_up_down.h
   include/xtd/forms/native/panel.h
   include/xtd/forms/native/picture_box.h
+  include/xtd/forms/native/popup_panel.h
   include/xtd/forms/native/progress_bar.h
   include/xtd/forms/native/progress_bar_styles.h
   include/xtd/forms/native/progress_dialog.h

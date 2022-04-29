@@ -44,6 +44,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_numeric_up_down.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_panel.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_picture_box.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_popup_panel.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_progress_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_radio_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_scroll_bar.h"
@@ -134,6 +135,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "numericupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_numeric_up_down(create_params)));
   if (create_params.class_name() == "panel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_panel(create_params)));
   if (create_params.class_name() == "picturebox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));
+  if (create_params.class_name() == "popuppanel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_popup_panel(create_params)));
   if (create_params.class_name() == "progressbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_progress_bar(create_params)));
   if (create_params.class_name() == "radiobutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_radio_button(create_params)));
   if (create_params.class_name() == "scrollbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_scroll_bar(create_params)));
@@ -207,6 +209,7 @@ xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   if (class_name == "numericupdown") return {120, is_gnome ? 34 : 21};
   if (class_name == "panel") return {200, 100};
   if (class_name == "picturebox") return {100, 50};
+  if (class_name == "popuppanel") return {100, 150};
   if (class_name == "progressbar") return {100, 23};
   if (class_name == "radiobutton") return {104, 23};
   if (class_name == "scrollbar") return {17, 17};

@@ -48,6 +48,7 @@ add_sources(
   include/xtd/forms/native/wxwidgets/wx_numeric_up_down.h
   include/xtd/forms/native/wxwidgets/wx_panel.h
   include/xtd/forms/native/wxwidgets/wx_picture_box.h
+  include/xtd/forms/native/wxwidgets/wx_popup_panel.h
   include/xtd/forms/native/wxwidgets/wx_progress_bar.h
   include/xtd/forms/native/wxwidgets/wx_radio_button.h
   include/xtd/forms/native/wxwidgets/wx_scroll_bar.h
@@ -103,6 +104,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/numeric_up_down.cpp
   src/xtd/forms/native/wxwidgets/panel.cpp
   src/xtd/forms/native/wxwidgets/picture_box.cpp
+  src/xtd/forms/native/wxwidgets/popup_panel.cpp
   src/xtd/forms/native/wxwidgets/progress_bar.cpp
   src/xtd/forms/native/wxwidgets/progress_dialog.cpp
   src/xtd/forms/native/wxwidgets/radio_button.cpp

@@ -195,6 +195,7 @@ add_sources(
   include/xtd/forms/panel_renderer.h
   include/xtd/forms/picture_box.h
   include/xtd/forms/picture_box_size_mode.h
+  include/xtd/forms/popup_panel.h
   include/xtd/forms/progress_bar.h
   include/xtd/forms/progress_bar_style.h
   include/xtd/forms/progress_box.h
@@ -391,6 +392,7 @@ add_sources(
   src/xtd/forms/panel_renderer.cpp
   src/xtd/forms/paint_event_args.cpp
   src/xtd/forms/picture_box.cpp
+  src/xtd/forms/popup_panel.cpp
   src/xtd/forms/progress_bar.cpp
   src/xtd/forms/progress_dialog.cpp
   src/xtd/forms/radio_button.cpp

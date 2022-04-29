@@ -65,7 +65,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Prottected methods
+      /// @name Protected methods
       
       /// @{
       forms::create_params create_params() const override;

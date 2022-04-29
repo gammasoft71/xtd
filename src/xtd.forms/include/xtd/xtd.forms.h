@@ -193,6 +193,7 @@
 #include "xtd/forms/panel.h"
 #include "xtd/forms/picture_box_size_mode.h"
 #include "xtd/forms/picture_box.h"
+#include "xtd/forms/popup_panel.h"
 #include "xtd/forms/progress_bar_style.h"
 #include "xtd/forms/progress_bar.h"
 #include "xtd/forms/progress_box_options.h"

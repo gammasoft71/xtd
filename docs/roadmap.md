@@ -84,6 +84,7 @@ see [Issues 0.2.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#82](https://github.com/gammasoft71/xtd/issues/82)      | xtd.forms   | nine_segment_display_renderer     | Gammasoft |                                                 |
 | [#83](https://github.com/gammasoft71/xtd/issues/83)      | xtd.forms   | open_file_box                     | Bader     | ![status](pictures/releases/status/done.png)    |
 | [#84](https://github.com/gammasoft71/xtd/issues/84)      | xtd.forms   | panel_renderer                    | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| [#84](https://github.com/gammasoft71/xtd/issues/177)     | xtd.forms   | popup_panel                       | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | [#85](https://github.com/gammasoft71/xtd/issues/85)      | xtd.forms   | progress_box                      | Bader     | ![status](pictures/releases/status/done.png)    |
 | [#86](https://github.com/gammasoft71/xtd/issues/86)      | xtd.forms   | radio_button_renderer             | Gammasoft |                                                 |
 | [#87](https://github.com/gammasoft71/xtd/issues/87)      | xtd.forms   | replace_box                       | Gammasoft | ![status](pictures/releases/status/done.png)    |
