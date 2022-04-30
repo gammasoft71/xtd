@@ -64,7 +64,7 @@ namespace unit_tests {
     void test_method_(button_standard) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
-      assert::are_equal(margin({2, 0, 1, 0}), style.button(pseudo_state::standard).margin(), csf_);
+      assert::are_equal(margin({0, 2, 0, 1}), style.button(pseudo_state::standard).margin(), csf_);
       assert::are_equal(style_sheets::border_style(border_type::outset), style.button(pseudo_state::standard).border_style(), csf_);
       assert::are_equal(border_color(style.system_colors().control_dark()), style.button(pseudo_state::standard).border_color(), csf_);
       assert::are_equal(border_width(1), style.button(pseudo_state::standard).border_width(), csf_);
