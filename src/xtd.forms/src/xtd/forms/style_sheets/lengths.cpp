@@ -8,7 +8,7 @@ using namespace xtd::forms::style_sheets;
 lengths::lengths(length all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {
 }
 
-lengths::lengths(length top, length left, length bottom, length right) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
+lengths::lengths(length left, length top, length right, length bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
 }
 
 length lengths::all() const noexcept {
@@ -73,4 +73,9 @@ bool lengths::equals(const object& other) const noexcept {
 
 bool lengths::equals(const lengths& other) const noexcept {
   return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;
+}
+
+xtd::ustring lengths::to_string() const noexcept {
+  if (all_) return ustring::format("[all = {}]", top());
+  return ustring::format("[top = {}, left = {}, bottom = {}, right = {}]", top(), left(), bottom(), right());
 }
