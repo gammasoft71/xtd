@@ -193,10 +193,10 @@ namespace xtd {
         /// | "button"            | 75    | 25 *   |
         /// | "checkbox"          | 104   | 25     |
         /// | "checkedlistbox"    | 120   | 90     |
-        /// | "choice"            | 121   | 23 *   |
+        /// | "choice"            | 130   | 23 *   |
         /// | "collapsiblepanel"  | 0     | 0      |
         /// | "colorpicker"       | 100   | 25 *   |
-        /// | "combobox"          | 121   | 23 *   |
+        /// | "combobox"          | 130   | 23 *   |
         /// | "commandlinkbutton" | 200   | 60     |
         /// | "datetimepicker"    | 100   | 25 *   |
         /// | "domainupdown"      | 150   | 21 *   |
