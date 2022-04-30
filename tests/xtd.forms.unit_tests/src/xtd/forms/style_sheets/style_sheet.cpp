@@ -334,9 +334,9 @@ namespace unit_tests {
       ctrl.border_width({5, 6, 7, 8});
       ctrl.border_style(border_type::solid);
       ctrl.padding({9, 10, 11, 12});
-      assert::are_equal(drawing::rectangle(102, 201, 294, 396), ctrl.get_border_rectangle(bounds));
-      assert::are_equal(drawing::rectangle(108, 206, 280, 384), ctrl.get_fill_rectangle(bounds));
-      assert::are_equal(drawing::rectangle(118, 215, 258, 364), ctrl.get_content_rectangle(bounds));
+      assert::are_equal(drawing::rectangle(101, 202, 296, 394), ctrl.get_border_rectangle(bounds));
+      assert::are_equal(drawing::rectangle(106, 208, 284, 380), ctrl.get_fill_rectangle(bounds));
+      assert::are_equal(drawing::rectangle(115, 218, 264, 358), ctrl.get_content_rectangle(bounds));
     }
   };
 }
