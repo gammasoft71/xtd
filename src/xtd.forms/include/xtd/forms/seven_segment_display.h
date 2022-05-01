@@ -27,6 +27,7 @@ namespace xtd {
       /// @{
       /// @brief Initialize a new instance of seven_segment_display class.
       seven_segment_display() {
+        back_color(application::style_sheet().system_colors().control());
         double_buffered(true);
       }
       /// @}
@@ -158,7 +159,7 @@ namespace xtd {
       
       void on_paint(paint_event_args& e) override {
         control::on_paint(e);
-        if (back_color() != default_back_color()) e.graphics().clear(back_color());
+        e.graphics().clear(back_color());
         if (show_back_segment_) draw_back_digit(e.graphics());
         auto color = enabled() ? fore_color() : application::theme().theme_colors().gray_text();
         if ((value_ & forms::segments::dp) == forms::segments::dp) draw_dp(e.graphics(), color);
