@@ -68,13 +68,16 @@ For more information about xtd see :
 
 ## Development status
 
-* Current version [![GitHub milestone](https://img.shields.io/github/milestones/progress/gammasoft71/xtd/1?color=004080)](https://github.com/gammasoft71/xtd/milestone/1)
 * [xtd - kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
 * [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) provides a view of the xtd roadmap.
 * [Release notes](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md) provides release notes information.
 * [Development status](https://github.com/gammasoft71/xtd/blob/master/docs/development_status.md) provides information about classes and libraries development status.
 * [Translation status](https://github.com/gammasoft71/xtd/blob/master/docs/translations_status.md) provides information about translations status.
 
+## Status of the current version
+
+![GitHub milestone](https://img.shields.io/github/milestones/progress/gammasoft71/xtd/1?color=004080&style=for-the-badge)
+  
 This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
 
 But you can follow the evolution of the development. We keep the status up to date.
