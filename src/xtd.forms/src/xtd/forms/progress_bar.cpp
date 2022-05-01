@@ -84,6 +84,11 @@ forms::create_params progress_bar::create_params() const {
   return create_params;
 }
 
+drawing::size progress_bar::default_size() const {
+  static auto size = control::default_size();
+  return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height(), size.width());
+}
+
 void progress_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::progress_bar::maximum(handle(), maximum_);

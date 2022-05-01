@@ -156,6 +156,8 @@ namespace xtd {
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
       
+      drawing::size default_size() const override;
+      
       /// @brief Overrides control::on_handle_created(const event_args&)
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
