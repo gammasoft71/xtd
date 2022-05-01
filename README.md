@@ -6,7 +6,7 @@
 
 (*) See [portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) for more information.
 
-[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://github.com/gammasoft71/xtd/blob/master/docs/license.md) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#c++17) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html) [![wiki](https://img.shields.io/badge/wiki-documentation-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/home.md) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.wixsite.com/xtdpro) [![GitHub milestone](https://img.shields.io/github/milestones/progress/gammasoft71/xtd/1?color=004080)](https://github.com/gammasoft71/xtd/milestone/1) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
+[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://github.com/gammasoft71/xtd/blob/master/docs/license.md) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#c++17) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html) [![wiki](https://img.shields.io/badge/wiki-documentation-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/home.md) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.wixsite.com/xtdpro) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
 
 ## Continuous Integration build status
 
@@ -68,6 +68,7 @@ For more information about xtd see :
 
 ## Development status
 
+* Current version [![GitHub milestone](https://img.shields.io/github/milestones/progress/gammasoft71/xtd/1?color=004080)](https://github.com/gammasoft71/xtd/milestone/1)
 * [xtd - kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
 * [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) provides a view of the xtd roadmap.
 * [Release notes](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md) provides release notes information.
