@@ -10,7 +10,6 @@ using namespace xtd::forms;
 
 track_bar::track_bar() {
   control_appearance(forms::control_appearance::system);
-  set_state(state::auto_size, true);
 }
 
 track_bar& track_bar::large_change(int32_t large_change) {
@@ -101,22 +100,17 @@ forms::create_params track_bar::create_params() const {
 
 drawing::size track_bar::default_size() const {
   static auto size = control::default_size();
-  return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height(), size.width());
+  return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height(), size.width());;
 }
 
 void track_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::track_bar::large_change(handle(), large_change_);
-  native::track_bar::maximum(handle(), maximum_);
-  native::track_bar::minimum(handle(), minimum_);
-  native::track_bar::small_change(handle(), small_change_);
-  native::track_bar::tick_frequency(handle(), tick_frequency_);
-  native::track_bar::value(handle(), value_);
-}
-
-drawing::size track_bar::measure_control() const {
-  if (orientation_ == forms::orientation::vertical) return {default_size().height(), size().height()};
-  return {size().width(), default_size().height()};
+  native::track_bar::large_change(handle(), large_change());
+  native::track_bar::maximum(handle(), maximum());
+  native::track_bar::minimum(handle(), minimum());
+  native::track_bar::small_change(handle(), small_change());
+  native::track_bar::tick_frequency(handle(), tick_frequency());
+  native::track_bar::value(handle(), value());
 }
 
 void track_bar::on_scroll(const event_args& e) {
