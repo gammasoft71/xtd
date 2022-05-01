@@ -22,6 +22,13 @@ At each commit, a build and unit tests are performed for the following configura
 | Android (**)     | Coming soon...                                                                                                                                                                              | Coming soon...                                                                                                                                                                                          |
 
  (**) [xtd.core and xtd.tunit only](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list).
+
+# Issues status :
+
+| Issues       | Open                                                                                                                                                             | Closed                                                                                                                                                               |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Bugs         | ![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=red&query=is%3Aopen%20is%3Aissue%20-label%3Aenhancement) | ![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=green&query=is%3Aclosed%20is%3Aissue%20-label%3Aenhancement) |
+| Enhancements | ![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=blue&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement) | ![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=green&query=is%3Aclosed%20is%3Aissue%20label%3Aenhancement)  |
  
 ## Features
 
