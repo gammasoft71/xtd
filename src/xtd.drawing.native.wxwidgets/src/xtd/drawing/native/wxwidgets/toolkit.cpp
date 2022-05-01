@@ -24,6 +24,10 @@ namespace {
     if (func == "wxCalendarCtrl::HitTest" && cond == "\"Assert failure\"" && msg == "unexpected") return;
     // Workaround: wxWidgets generates an assert if wxApp is not running when call exit.
     if (func == "wxEventLoopBase::Exit" && cond == "\"IsRunning()\"" && msg == "Use ScheduleExit() on not running loop") return;
+    // Workaround: wxWidgets generates an assert if bitmap is empty.
+    if (func == "wxBitmap::GetHeight" && cond == "\"IsOk()\"" && msg == "invalid bitmap") return;
+    // Workaround: wxWidgets generates an assert if bitmap is empty.
+    if (func == "wxBitmap::GetWidth" && cond == "\"IsOk()\"" && msg == "invalid bitmap") return;
 
     debug::write_line_if(show_wx_assert.enabled(), "wxAssert");
     debug::write_line_if(show_wx_assert.enabled(), "--------");
