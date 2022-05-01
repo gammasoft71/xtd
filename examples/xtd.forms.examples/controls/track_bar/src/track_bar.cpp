@@ -9,11 +9,11 @@ public:
     client_size({300, 300});
     text("Track bar example");
     
-    progress_bar1.location({80, 50});
+    progress_bar1.location({120, 50});
     progress_bar1.maximum(200);
     progress_bar1.orientation(forms::orientation::vertical);
     progress_bar1.parent(*this);
-    progress_bar1.size({23, 200});
+    progress_bar1.height(200);
     
     label1.location({150, 50});
     label1.parent(*this);
@@ -29,7 +29,7 @@ public:
     };
     track_bar1.value(100);
     track_bar1.tick_style(forms::tick_style::none);
-    track_bar1.size({25, 200});
+    track_bar1.height(200);
   }
   
 private:

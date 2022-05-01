@@ -220,7 +220,7 @@ namespace xtd {
         /// | "textbox"           | 100   | 21 *   |
         /// | "togglebutton"      | 104   | 25 *   |
         /// | "toolbar"           | 300   | 300    |
-        /// | "trackbar"          | 104   | 25 *   |
+        /// | "trackbar"          | 104   | 45     |
         /// | "updownbutton"      | 18 ** | 34     |
         /// | "usercontrol"       | 150   | 150    |
         /// | other               | 0     | 0      |

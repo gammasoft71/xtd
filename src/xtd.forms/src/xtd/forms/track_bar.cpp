@@ -99,6 +99,11 @@ forms::create_params track_bar::create_params() const {
   return create_params;
 }
 
+drawing::size track_bar::default_size() const {
+  static auto size = control::default_size();
+  return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height(), size.width());
+}
+
 void track_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::track_bar::large_change(handle(), large_change_);

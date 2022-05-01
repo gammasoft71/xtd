@@ -210,6 +210,7 @@ public:
     track_bar1.parent(tab_page_progress_and_track_bars);
     track_bar1.location({10, 10});
     track_bar1.maximum(100);
+    track_bar1.tick_frequency(10);
     track_bar1.width(350);
     track_bar1.value_changed += [&] {
       progress_bar1.value(track_bar1.value());
