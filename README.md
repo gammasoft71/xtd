@@ -22,6 +22,15 @@ At each commit, a build and unit tests are performed for the following configura
 | Android (**)     | Coming soon...                                                                                                                                                                              | Coming soon...                                                                                                                                                                                          |
 
  (**) [xtd.core and xtd.tunit only](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list).
+
+## Issues status
+
+As xtd is managed by a [Kanban project](https://github.com/users/gammasoft71/projects/3), the number of open issues can be quite large. The table below gives a clearer view on the number of open bugs/questions and enhancements.
+
+| Issues           | Open                                                                                                                                                                                                                                                                   | Closed                                                                                                                                                                                                                                                                          |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Bugs / Questions | [![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=red&label=query&query=is%3Aopen%20is%3Aissue%20-label%3Aenhancement)](https://github.com/gammasoft71/xtd/issues?q=is%3Aopen+is%3Aissue+-label%3Aenhancement)  | [![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=lighgreen&label=query&query=is%3Aclosed%20is%3Aissue%20-label%3Aenhancement)](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+is%3Aclosed) |
+| Enhancements     | [![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=004080&label=query&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement)](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+label%3Aenhancement+is%3Aopen) | [![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=lighgreen&label=query&query=is%3Aclosed%20is%3Aissue%20label%3Aenhancement)](https://github.com/gammasoft71/xtd/issues?q=is%3Aclosed+is%3Aissue+label%3Aenhancement)   |
  
 ## Features
 
@@ -65,6 +74,10 @@ For more information about xtd see :
 * [Development status](https://github.com/gammasoft71/xtd/blob/master/docs/development_status.md) provides information about classes and libraries development status.
 * [Translation status](https://github.com/gammasoft71/xtd/blob/master/docs/translations_status.md) provides information about translations status.
 
+## Current release status
+
+[![GitHub milestone](https://img.shields.io/github/milestones/progress/gammasoft71/xtd/1?color=004080&style=for-the-badge)](https://github.com/gammasoft71/xtd/milestone/1) [![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/gammasoft71/xtd/1?color=004080&label=complete%20&style=for-the-badge)](https://github.com/gammasoft71/xtd/milestone/1)
+  
 This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
 
 But you can follow the evolution of the development. We keep the status up to date.
