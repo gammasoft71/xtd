@@ -25,7 +25,7 @@ At each commit, a build and unit tests are performed for the following configura
 
 ## Issues status :
 
-As xtd is managed by a Kandan project, the number of open issues can be quite large. The table below gives a clearer view on the number of open issues and enhancements.
+As xtd is managed by a Kanban project, the number of open issues can be quite large. The table below gives a clearer view on the number of open issues and enhancements.
 
 | Issues           | Closed                                                                                                                                                                                                                                                                      | Open                                                                                                                                                                                                                                                                   |
 |------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
