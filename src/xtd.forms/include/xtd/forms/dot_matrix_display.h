@@ -223,7 +223,7 @@ namespace xtd {
       }
       
       void on_paint(paint_event_args& e) override {
-        if (back_color() != default_back_color()) e.graphics().clear(back_color());
+        e.graphics().clear(back_color());
         for (int32_t y = 0; y < static_cast<int32_t>(dots_.size()); y++) {
           for (int32_t x = 0; x < static_cast<int32_t>(dots_[y].size()); x++) {
             if (dots_[y][x]) draw_dot(e.graphics(), fore_color(), {x, y});
