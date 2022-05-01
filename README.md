@@ -76,7 +76,7 @@ For more information about xtd see :
 
 ## Status of the current version
 
-[![GitHub milestone](https://img.shields.io/github/milestones/progress/gammasoft71/xtd/1?color=004080&style=for-the-badge)](https://github.com/gammasoft71/xtd/milestone/1)
+[![GitHub milestone](https://img.shields.io/github/milestones/progress/gammasoft71/xtd/1?color=004080&style=for-the-badge)](https://github.com/gammasoft71/xtd/milestone/1) [![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/gammasoft71/xtd/1?color=004080&label=complete%20&style=for-the-badge)](https://github.com/gammasoft71/xtd/milestone/1)
   
 This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
 
