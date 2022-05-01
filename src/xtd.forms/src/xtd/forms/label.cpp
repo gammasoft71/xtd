@@ -21,6 +21,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 label::label() {
+  double_buffered(true);
   set_can_focus(false);
 }
 
