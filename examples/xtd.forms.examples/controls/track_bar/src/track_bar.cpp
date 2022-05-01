@@ -15,7 +15,7 @@ public:
     progress_bar1.parent(*this);
     progress_bar1.height(200);
     
-    label1.location({150, 50});
+    label1.location({160, 50});
     label1.parent(*this);
     
     track_bar1.location({50, 50});
