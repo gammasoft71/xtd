@@ -16,8 +16,11 @@ void popup_panel::visible(intptr_t control, bool visible) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  if (visible) static_cast<wxPopupTransientWindow*>(reinterpret_cast<control_handler*>(control)->control())->Popup();
-  else static_cast<wxPopupTransientWindow*>(reinterpret_cast<control_handler*>(control)->control())->Dismiss();
+  if (!visible) static_cast<wxPopupTransientWindow*>(reinterpret_cast<control_handler*>(control)->control())->Dismiss();
+  else {
+    static_cast<wxPopupTransientWindow*>(reinterpret_cast<control_handler*>(control)->control())->Raise();
+    static_cast<wxPopupTransientWindow*>(reinterpret_cast<control_handler*>(control)->control())->Popup();
+  }
 }
 
 void popup_panel::virtual_size(intptr_t control, const drawing::size& size) {
