@@ -481,8 +481,8 @@ void graphics::draw_point(const xtd::drawing::pen& pen, int32_t x, int32_t y) {
 }
 
 void graphics::draw_point(const xtd::drawing::pen& pen, float x, float y) {
-  if (pen.width() <= 2.0f) fill_rectangle(*pen.brush(), x + math::ceiling(pen.width() / 2.0f), y + math::ceiling(pen.width() / 2.0f), pen.width(), pen.width());
-  else fill_ellipse(*pen.brush(), x + math::ceiling(pen.width() / 2.0f), y + math::ceiling(pen.width() / 2.0f), pen.width(), pen.width());
+  if (pen.width() <= 2.0f) fill_rectangle(*pen.brush(), x + as<float>(math::ceiling(pen.width() / 2.0f)), y + as<float>(math::ceiling(pen.width() / 2.0f)), pen.width(), pen.width());
+  else fill_ellipse(*pen.brush(), x + as<float>(math::ceiling(pen.width() / 2.0f)), y + as<float>(math::ceiling(pen.width() / 2.0f)), pen.width(), pen.width());
 }
 
 void graphics::draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {
