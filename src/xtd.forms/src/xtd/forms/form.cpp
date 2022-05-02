@@ -182,6 +182,15 @@ form& form::show_icon(bool value) {
   return *this;
 }
 
+form& form::show_in_taskbar(bool value) {
+  if (show_in_taskbar_ != value) {
+    show_in_taskbar_ = value;
+    post_recreate_handle();
+  }
+  
+  return *this;
+}
+
 form& form::start_position(form_start_position start_position) {
   start_position_ = start_position;
   return *this;
@@ -377,6 +386,8 @@ forms::create_params form::create_params() const {
   if (show_in_taskbar_) create_params.ex_style(create_params.ex_style() | WS_EX_APPWINDOW);
   
   if ((!show_icon_ && (form_border_style_ == forms::form_border_style::sizable || form_border_style_ == forms::form_border_style::fixed_3d || form_border_style_ == forms::form_border_style::fixed_single)) || form_border_style_ == forms::form_border_style::fixed_dialog) create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME);
+
+  if (!show_in_taskbar_) create_params.ex_style(create_params.ex_style() | WS_EX_APPWINDOW);
 
   if (get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
   
