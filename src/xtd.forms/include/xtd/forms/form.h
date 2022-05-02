@@ -194,6 +194,20 @@ namespace xtd {
       /// @return Current form.
       virtual form& show_icon(bool value);
       
+      /// @brief Gets a value indicating whether the form is displayed in the Windows taskbar.
+      /// @return true to display the form in the Windows taskbar at run time; otherwise, false. The default is true.
+      /// @remarks If a form is parented within another form, the parented form is not displayed in the Windows taskbar.
+      /// @remarks You can use this property to prevent users from selecting your form through the Windows taskbar. For example, if you display a Find and Replace tool window in your application, you might want to prevent that window from being selected through the Windows taskbar because you would need both the application's main window and the Find and Replace tool window displayed in order to process searches appropriately.
+      /// @remarks You will often wish to use this property when creating a form with the xtd::forms::form_border_style::fixed_tool_window style. Setting the xtd::forms::form_border_style::fixed_tool_window style does not alone guarantee that a window will not appear in the taskbar.
+      virtual bool show_in_taskbar() const {return show_in_taskbar_;}
+      /// @brief Sets a value indicating whether the form is displayed in the Windows taskbar.
+      /// @param value true to display the form in the Windows taskbar at run time; otherwise, false. The default is true.
+      /// @return Current form.
+      /// @remarks If a form is parented within another form, the parented form is not displayed in the Windows taskbar.
+      /// @remarks You can use this property to prevent users from selecting your form through the Windows taskbar. For example, if you display a Find and Replace tool window in your application, you might want to prevent that window from being selected through the Windows taskbar because you would need both the application's main window and the Find and Replace tool window displayed in order to process searches appropriately.
+      /// @remarks You will often wish to use this property when creating a form with the xtd::forms::form_border_style::fixed_tool_window style. Setting the xtd::forms::form_border_style::fixed_tool_window style does not alone guarantee that a window will not appear in the taskbar.
+      virtual form& show_in_taskbar(bool value);
+
       /// @brief Gets the starting position of the form at run time.
       /// @return A form_start_position that represents the starting position of the form.
       virtual form_start_position start_position() const {return start_position_;}
