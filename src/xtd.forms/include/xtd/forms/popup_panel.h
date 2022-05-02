@@ -29,7 +29,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      
       /// @brief Gets a value indicating whether the control and all its child controls are displayed.
       /// @return true if the control and all its child controls are displayed; otherwise, false. The default is true.
       bool visible() const override;
