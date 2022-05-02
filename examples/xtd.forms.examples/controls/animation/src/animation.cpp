@@ -1,6 +1,7 @@
 #include <filesystem>
 #include <xtd/xtd>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::diagnostics;
@@ -33,11 +34,14 @@ namespace examples {
     void on_fish_animation_paint(object& sender, paint_event_args& e) {
       e.graphics().clear(fish_animation.back_color());
       static const auto fish_length = 16;
+      vector<point_f> points;
       for (auto i = 0; i < fish_length; ++i) {
         auto radius = 100 + 10 * sin(as<float>(fish_animation.frame_counter()) * 0.1f + as<float>(i) * 0.5f);
         auto point = point_f(as<float>(e.clip_rectangle().width()) / 2.0f + 1.5f * radius * sin(as<float>(fish_animation.frame_counter()) * 0.02f + as<float>(i) * 0.12f), as<float>(e.clip_rectangle().height()) / 2.0f + 1.0f * radius * cos(as<float>(fish_animation.frame_counter()) * 0.04f + as<float>(i) * 0.12f));
         e.graphics().fill_ellipse(solid_brush(fish_animation.fore_color()), point.x() - as<float>(i), point.y() - as<float>(i), 2.0f + 2.0f * as<float>(i), 2.0f + 2.0f * as<float>(i));
+        points.push_back(point);
       }
+      e.graphics().draw_lines(pen(fish_animation.fore_color(), 4), points);
     }
     
     void on_fish_animation_updated(object& sender, const animation_updated_event_args& e) {
