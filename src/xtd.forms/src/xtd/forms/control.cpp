@@ -1247,11 +1247,11 @@ void control::perform_layout() {
   on_layout(event_args::empty);
 }
 
-drawing::point control::point_to_client(const xtd::drawing::point& p) {
+drawing::point control::point_to_client(const xtd::drawing::point& p) const {
   return is_handle_created() ? native::control::point_to_client(handle(), p) : drawing::point {};
 }
 
-drawing::point control::point_to_screen(const xtd::drawing::point& p) {
+drawing::point control::point_to_screen(const xtd::drawing::point& p) const {
   return is_handle_created() ? native::control::point_to_screen(handle(), p) : drawing::point {};
 }
 

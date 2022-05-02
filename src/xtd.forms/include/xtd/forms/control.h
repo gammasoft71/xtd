@@ -1009,12 +1009,12 @@ namespace xtd {
       /// @brief Computes the location of the specified screen point into client coordinates.
       /// @param p The screen coordinate xtd::drawing::point to convert.
       /// @return A xtd::drawing::point that represents the converted xtd::drawing::point, p, in client coordinates.
-      xtd::drawing::point point_to_client(const xtd::drawing::point& p);
+      xtd::drawing::point point_to_client(const xtd::drawing::point& p) const;
       
       /// @brief Computes the location of the specified client point into screen coordinates.
       /// @param p The client coordinate  xtd::drawing::point to convert.
       /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
-      xtd::drawing::point point_to_screen(const xtd::drawing::point& p);
+      xtd::drawing::point point_to_screen(const xtd::drawing::point& p) const;
       
       /// @brief Preprocesses keyboard or input messages within the message loop before they are dispatched.
       /// @param message A xtd::forms::message, passed by reference, that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
