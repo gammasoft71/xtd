@@ -150,7 +150,9 @@ control& control::auto_size(bool auto_size) {
 }
 
 color control::back_color() const {
-  return data_->back_color.value_or(default_back_color());
+  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
+    if (control->data_->back_color.has_value()) return control->data_->back_color.value();
+  return default_back_color();
 }
 
 control& control::back_color(const color& color) {
@@ -413,7 +415,9 @@ control& control::font(nullptr_t) {
 }
 
 color control::fore_color() const {
-  return data_->fore_color.value_or(default_fore_color());
+  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
+    if (control->data_->fore_color.has_value()) return control->data_->fore_color.value();
+  return default_fore_color();
 }
 
 control& control::fore_color(const color& color) {
