@@ -8,5 +8,6 @@ add_projects(
   debug_form
   dialog
   form
+  popup_form
   trace_form
 )
