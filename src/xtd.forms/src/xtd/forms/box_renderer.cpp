@@ -24,8 +24,8 @@ dash_style box_renderer::border_type_to_dash_style(border_type value) {
 void box_renderer::draw_box(graphics& graphics, const rectangle& bounds, const ibox_model& box_model) {
   auto fill_rect = box_model.get_fill_rectangle(bounds);
   auto image_brush = background_image::make_brush(box_model.background_image(), fill_rect);
+  fill_box(graphics, solid_brush(box_model.background_color()), bounds, box_model);
   if (image_brush) fill_box(graphics, *image_brush, bounds, box_model);
-  else fill_box(graphics, solid_brush(box_model.background_color()), bounds, box_model);
 
   auto border_rect = box_model.get_border_rectangle(bounds);
   draw_line_top(graphics, border_rect, box_model.border_color(), box_model.border_radius(), box_model.border_style(), box_model.border_width());
