@@ -540,9 +540,7 @@ void form::destroy_system_menu() {
 }
 
 void form::fill_in_create_params_border_styles(xtd::forms::create_params& cp) const {
-  auto fbs = form_border_style_;
-  if (popup_) fbs = xtd::forms::form_border_style::none;
-  switch (fbs) {
+  switch (form_border_style_) {
     case xtd::forms::form_border_style::none: break;
     case xtd::forms::form_border_style::fixed_single: cp.style(cp.style() | WS_BORDER); break;
     case xtd::forms::form_border_style::sizable: cp.style(cp.style() | WS_BORDER | WS_THICKFRAME); break;
@@ -566,7 +564,7 @@ void form::fill_in_create_params_border_styles(xtd::forms::create_params& cp) co
 }
 
 void form::fill_in_create_params_border_icons(xtd::forms::create_params& cp) const {
-  if (form_border_style_ == xtd::forms::form_border_style::none || popup_)
+  if (form_border_style_ == xtd::forms::form_border_style::none)
     cp.class_style(cp.class_style() | CS_NOCLOSE);
   else {
     if (!text().empty())
@@ -606,11 +604,8 @@ void form::fill_in_create_params_start_position(xtd::forms::create_params& cp) c
     default_location = std::uniform_int_distribution<int32_t> {4, 20}(rand) * 10;
   }
   
-  auto sp = start_position_;
-  if (popup_) sp = form_start_position::manual;
-  
   if (previous_screen_) {
-    switch (sp) {
+    switch (start_position_) {
       case form_start_position::manual:
         cp.location(location());
         cp.size(size());
@@ -637,7 +632,7 @@ void form::fill_in_create_params_start_position(xtd::forms::create_params& cp) c
         break;
     }
     
-    if (sp == form_start_position::windows_default_location || sp == form_start_position::windows_default_bounds || (sp == form_start_position::center_parent && parent().has_value()))
+    if (start_position_ == form_start_position::windows_default_location || start_position_ == form_start_position::windows_default_bounds || (start_position_ == form_start_position::center_parent && parent().has_value()))
       default_location = default_location < 200 ? default_location + 20 : 40;
   }
 }
