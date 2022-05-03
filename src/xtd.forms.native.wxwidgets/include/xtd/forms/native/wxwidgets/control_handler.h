@@ -62,9 +62,9 @@ namespace xtd {
           control_->SetForegroundColour(colour);
         }
         
-        virtual void SetPosition(const wxPoint& pt) {
+        virtual void SetPosition(const wxPoint& location) {
           if (!control_) return;
-          control_->SetPosition(pt);
+          control_->SetPosition(location);
         }
         
         virtual void SetClientSize(int32_t width, int32_t height) {
