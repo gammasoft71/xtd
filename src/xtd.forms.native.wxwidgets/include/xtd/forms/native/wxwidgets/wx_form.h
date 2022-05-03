@@ -146,21 +146,29 @@ namespace xtd {
           return panel_;
         }
         
-        wxPoint GetPosition() const override {
-          #if defined(__WXGTK__)
-          return location_;
-          #else
-          return control_handler::GetPosition();
-          #endif
+        #if defined(__WXGTK__)
+        wxRect GetClientRect() const override {
+          auto rect = control()->GetClientRect();
+          rect.x = location_.x;
+          rect.y = location_.y;
+          return rect;
         }
+        #endif
         
+        #if defined(__WXGTK__)
+        wxPoint GetPosition() const override {
+          return location_;
+          return control_handler::GetPosition();
+        }
+        #endif
+
         void SetBackgroundColour(const wxColour& colour) override {
           control_handler::SetBackgroundColour(colour);
           #if !defined(__APPLE__)
           panel_->SetBackgroundColour(colour);
           #endif
         }
-        
+
         void SetCursor(const wxCursor& cursor) override {
           control_handler::SetCursor(cursor);
           panel_->SetCursor(cursor);
@@ -179,13 +187,13 @@ namespace xtd {
           control()->SetClientSize(wxSize(width, height));
         }
         
+        #if defined(__WXGTK__)
         void SetPosition(const wxPoint& location) override {
-          #if defined(__WXGTK__)
           location_ = location;
-          #endif
           control_handler::SetPosition(location);
         }
-        
+        #endif
+
         void SetSize(int32_t width, int32_t height) override {
           #if defined(__APPLE__)
           if (width < 75) width = 75;
@@ -194,18 +202,17 @@ namespace xtd {
           control_handler::SetSize(width, height);
         }
         
+        #if defined(__WXGTK__)
         void Show(bool visible) override {
-          #if defined(__WXGTK__)
           /// Workaround : With wxWidgets on Gtk, sometimes the location of the form is not valid. So you have to force the location to the right value...
           control_handler::SetPosition(invalid_location);
           control_handler::Show(visible);
           if (visible)
             control_handler::SetPosition(location_);
-        #else
           control_handler::Show(visible);
-        #endif
         }
-        
+        #endif
+
       private:
         wxBoxSizer* boxSizer_;
         wxMainPanel* panel_;
