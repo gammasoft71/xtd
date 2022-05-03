@@ -282,7 +282,7 @@ void form::center_to_screen() {
 }
 
 void form::close() {
-  if (is_handle_created()) native::form::close(handle());
+  if (is_handle_created() && previous_screen_) native::form::close(handle());
 }
 
 bool form::pre_process_message(xtd::forms::message& message) {
