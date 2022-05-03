@@ -479,7 +479,7 @@ void control::visible(intptr_t control, bool visible) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  reinterpret_cast<control_handler*>(control)->control()->Show(visible);
+  reinterpret_cast<control_handler*>(control)->Show(visible);
 }
 
 void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background) {

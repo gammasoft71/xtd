@@ -62,6 +62,11 @@ namespace xtd {
           control_->SetSize(width, height);
         }
         
+        virtual void Show(bool visible) {
+          if (!control_) return;
+          control_->Show(visible);
+        }
+        
         static long common_window_style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           

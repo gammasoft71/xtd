@@ -1925,6 +1925,7 @@ namespace xtd {
       void wm_scroll(message& message);
       void wm_set_focus(message& message);
       void wm_set_text(message& message);
+      void wm_show(message& message);
       void wm_size(message& message);
       void wm_sizing(message& message);
       

@@ -1396,6 +1396,7 @@ void control::wnd_proc(message& message) {
     case WM_MOVE: wm_move(message);  break;
     case WM_NOTIFY: wm_notify(message);  break;
     case WM_SETTEXT: wm_set_text(message); break;
+    case WM_SHOWWINDOW: wm_show(message); break;
     case WM_SIZE: wm_size(message); break;
     case WM_SIZING: wm_sizing(message); break;
     case WM_HSCROLL:
@@ -1734,6 +1735,11 @@ void control::wm_set_text(message& message) {
     data_->text = reinterpret_cast<const wchar_t*>(message.lparam());
     on_text_changed(event_args::empty);
   }
+}
+
+void control::wm_show(message& message) {
+  def_wnd_proc(message);
+  set_state(state::visible, message.wparam() != 0);
 }
 
 void control::wm_size(message& message) {
