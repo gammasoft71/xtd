@@ -352,8 +352,6 @@ forms::create_params form::create_params() const {
   
   cp.style(cp.style() | WS_CLIPCHILDREN);
 
-  if (popup_) cp.style(cp.style() | WS_POPUP);
-  
   if ((!show_icon_ && (form_border_style_ == forms::form_border_style::sizable || form_border_style_ == forms::form_border_style::fixed_3d || form_border_style_ == forms::form_border_style::fixed_single)) || form_border_style_ == forms::form_border_style::fixed_dialog) cp.ex_style(cp.ex_style() | WS_EX_DLGMODALFRAME);
 
   if (get_state(state::modal)) cp.ex_style(cp.ex_style() | WS_EX_MODALWINDOW);
