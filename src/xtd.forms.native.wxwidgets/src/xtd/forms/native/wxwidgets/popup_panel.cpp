@@ -10,17 +10,22 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void popup_panel::visible(intptr_t control, bool visible) {
+void popup_panel::ignore_mouse_messages(intptr_t control, bool value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  if (!visible) static_cast<wxPopupTransientWindow*>(reinterpret_cast<control_handler*>(control)->control())->Dismiss();
-  else {
-    static_cast<wxPopupTransientWindow*>(reinterpret_cast<control_handler*>(control)->control())->Raise();
-    static_cast<wxPopupTransientWindow*>(reinterpret_cast<control_handler*>(control)->control())->Popup();
+  static_cast<wxPopup*>(reinterpret_cast<control_handler*>(control)->control())->IgnoreMouseMessages(value);
+}
+
+void popup_panel::set_region(intptr_t control, intptr_t region) {
+  if (!control || !region || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
   }
+  static_cast<wxNonOwnedWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetShape(*reinterpret_cast<wxRegion*>(region));
 }
 
 void popup_panel::virtual_size(intptr_t control, const drawing::size& size) {

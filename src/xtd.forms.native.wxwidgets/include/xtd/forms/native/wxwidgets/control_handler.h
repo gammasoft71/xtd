@@ -27,6 +27,16 @@ namespace xtd {
           return wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
         
+        virtual wxRect GetClientRect() const {
+          if (!control_) return {};
+          return control_->GetClientRect();
+        }
+        
+        virtual wxPoint GetPosition() const {
+          if (!control_) return {};
+          return control_->GetPosition();
+        }
+        
         virtual void SetBackgroundColour(const wxColour& colour) {
           if (!control_) return;
           control_->SetBackgroundColour(colour);

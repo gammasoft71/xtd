@@ -28,16 +28,17 @@ public:
     button1.text(list_box1.selected_item().value());
     button1.image(as<image>(list_box1.selected_item().tag()));
     button1.click += [&] {
-      popup_panel1.location(point_to_screen(button1.location()));
-      popup_panel1.width(button1.width());
       popup_panel1.show();
     };
+
+    popup_panel1.location(button1.location());
+    popup_panel1.width(button1.width());
   }
   
 private:
   button button1;
-  popup_panel popup_panel1;
   list_box list_box1;
+  popup_panel popup_panel1;
 };
 
 int main() {

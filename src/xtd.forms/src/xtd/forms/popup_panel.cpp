@@ -15,15 +15,14 @@ popup_panel::popup_panel() {
   visible(false);
 }
 
-bool popup_panel::visible() const {
-  return get_state(state::visible);
+bool popup_panel::ignore_mouse_messages() const {
+  return ignore_mouse_messages_;
 }
 
-control& popup_panel::visible(bool visible) {
-  if (get_state(state::visible) != visible) {
-    set_state(state::visible, visible);
-    if (is_handle_created()) native::popup_panel::visible(handle(), get_state(state::visible));
-    on_visible_changed(event_args::empty);
+popup_panel& popup_panel::ignore_mouse_messages(bool value) {
+  if (ignore_mouse_messages_ != value) {
+    ignore_mouse_messages_ = value;
+    native::popup_panel::ignore_mouse_messages(handle(), ignore_mouse_messages_);
   }
   return *this;
 }
@@ -36,9 +35,19 @@ forms::create_params popup_panel::create_params() const {
   return create_params;
 }
 
+void popup_panel::on_handle_created(const event_args& e) {
+  control::on_handle_created(e);
+  native::popup_panel::ignore_mouse_messages(handle(), ignore_mouse_messages_);
+}
+
 void popup_panel::on_layout(const event_args& e) {
   scrollable_control::on_layout(e);
   if (is_handle_created() && auto_scroll()) native::popup_panel::virtual_size(handle(), display_rectangle().size());
+}
+
+void popup_panel::on_region_changed(const event_args& e) {
+  native::popup_panel::set_region(handle(), region().handle());
+  control::on_region_changed(e);
 }
 
 void popup_panel::wnd_proc(message& message) {

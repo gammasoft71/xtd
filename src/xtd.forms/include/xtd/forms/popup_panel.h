@@ -29,13 +29,13 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets a value indicating whether the control and all its child controls are displayed.
-      /// @return true if the control and all its child controls are displayed; otherwise, false. The default is true.
-      bool visible() const override;
-      /// @brief Sets a value indicating whether the control and all its child controls are displayed.
-      /// @param visible true if the control and all its child controls are displayed; otherwise, false. The default is true.
-      /// @return Current control.
-      control& visible(bool visible) override;
+      /// @brief Gets ignore mouse messages
+      /// @return value If true, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically. The default value is false.
+      bool ignore_mouse_messages() const;
+      /// @brief Sets ignore mouse messages
+      /// @param value If true, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically. The default value is false.
+      /// @return The current popup panel instance.
+      popup_panel& ignore_mouse_messages(bool value);
       /// @}
       
       /// @name Metthods
@@ -45,7 +45,9 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const override;
+      void on_handle_created(const event_args& e) override;
       void on_layout(const event_args& e) override;
+      void on_region_changed(const event_args& e) override;
       void wnd_proc(message& message) override;
 
       /// @brief Processes the show window message for the control.
@@ -54,6 +56,7 @@ namespace xtd {
       /// @}
       
     private:
+      bool ignore_mouse_messages_ = false;
     };
   }
 }
