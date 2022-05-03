@@ -22,6 +22,44 @@ namespace xtd {
       class control;
       class popup_panel;
       class wx_popup_panel;
+      
+      class wxPopup : public wxPopupTransientWindow {
+        friend xtd::forms::native::wx_popup_panel;
+      public:
+        wxPopup(wxWindow *parent, int styles) {
+          Create(parent, styles);
+        }
+        
+        void Popup(wxWindow *focus = nullptr) override {
+          /// Workaround : with wxWidgets version <= 3.1.5 when first using the wxPopupTransientWindow, it does not respond on macOS....
+          #if defined(__APPLE__)
+          if (first_used) {
+            first_used = false;
+            Raise();
+          }
+          #endif
+          wxPopupTransientWindow::Popup(focus);
+        }
+        
+        bool IgnoreMouseMessages() const {return ignoreMouseMessages;}
+        void IgnoreMouseMessages(bool value) {ignoreMouseMessages = value;}
+ 
+        void Dismiss() override {
+          wxPopupTransientWindow::Dismiss();
+        }
+        
+      protected:
+        bool ProcessLeftDown(wxMouseEvent &event) override {
+          return ignoreMouseMessages;
+        }
+        
+      private:
+        #if defined(__APPLE__)
+        bool first_used = true;
+        #endif
+        bool ignoreMouseMessages = false;
+      };
+      
       class wxPopupPanel : public wxScrolled<wxPanel> {
         friend xtd::forms::native::wx_popup_panel;
       private:
@@ -65,8 +103,8 @@ namespace xtd {
       private:
         explicit wx_popup_panel(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
-          control_handler::create<wxPopupTransientWindow>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), popup_panel_style_to_wx_style(create_params.style(), create_params.ex_style()));
-          control()->SetPosition({create_params.x(), create_params.y()});
+          control_handler::create<wxPopup>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), popup_panel_style_to_wx_style(create_params.style(), create_params.ex_style()));
+          SetPosition({create_params.x(), create_params.y()});
           control()->SetSize(create_params.width(), create_params.height());
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
@@ -92,7 +130,7 @@ namespace xtd {
        }
         
         static long popup_panel_style_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = wxPU_CONTAINS_CONTROLS;
+          long wx_style = wxFRAME_SHAPED | wxPU_CONTAINS_CONTROLS;
           
           //if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
           
@@ -117,6 +155,17 @@ namespace xtd {
           return panel_;
         }
         
+        wxRect GetClientRect() const override {
+          auto rect = control()->GetClientRect();
+          rect.x = location_.x;
+          rect.y = location_.y;
+          return rect;
+        }
+        
+        wxPoint GetPosition() const override {
+          return location_;
+        }
+        
         void SetCursor(const wxCursor& cursor) override {
           control_handler::SetCursor(cursor);
           panel_->SetCursor(cursor);
@@ -134,10 +183,29 @@ namespace xtd {
         void SetClientSize(int32_t width, int32_t height) override {
           SetSize(width, height);
         }
+ 
+        void SetPosition(const wxPoint& pt) override {
+          location_ = pt;
+          if (control()->GetParent())
+            control()->SetPosition(control()->GetParent()->ClientToScreen(location_));
+          else if (wxTheApp->GetTopWindow())
+            control()->SetPosition(wxTheApp->GetTopWindow()->ClientToScreen(location_));
+          else
+            control_handler::SetPosition(location_);
+        }
+        
+        void Show(bool visible) override {
+          if (!visible) static_cast<wxPopup*>(control())->Dismiss();
+          else {
+            SetPosition(location_);
+            static_cast<wxPopup*>(control())->Popup();
+          }
+        }
         
       private:
         wxBoxSizer* boxSizer_;
         wxPopupPanel* panel_;
+        wxPoint location_;
       };
     }
   }

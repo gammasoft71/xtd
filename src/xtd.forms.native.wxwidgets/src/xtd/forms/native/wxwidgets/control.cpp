@@ -241,7 +241,7 @@ drawing::rectangle control::client_rectangle(intptr_t control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return {};
   }
-  wxRect rect = reinterpret_cast<control_handler*>(control)->control()->GetClientRect();
+  wxRect rect = reinterpret_cast<control_handler*>(control)->GetClientRect();
   return {{rect.GetX(), rect.GetY()}, client_size(control)};
 }
 
@@ -349,7 +349,7 @@ point control::location(intptr_t control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return {};
   }
-  wxPoint location = reinterpret_cast<control_handler*>(control)->control()->GetPosition();
+  wxPoint location = reinterpret_cast<control_handler*>(control)->GetPosition();
   return {location.x, location.y};
 }
 

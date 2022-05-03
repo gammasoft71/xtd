@@ -37,13 +37,20 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        /// @brief Sets a value indicating whether the control and all its child controls are displayed.
-        /// @param control Control window handle.
-        /// @param visible true if the control and all its child controls are displayed; otherwise, false.
+        /// @brief Sets ignore mouse messages
+        /// @param control Control popup panel handle.
+        /// @param value If true, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically.
         /// @warning Internal use only
-        static void visible(intptr_t control, bool visible);
+        static void ignore_mouse_messages(intptr_t control, bool value);
+
+        /// @brief Sets the shape of the popup panel to that depicted by region.
+        /// @param control Control popup panel handle.
+        /// @param region The region to set shape;
+        /// @warning Internal use only
+        static void set_region(intptr_t control, intptr_t region);
+
         /// @brief Sets virtual size
-        /// @param control Control window handle.
+        /// @param control Control popup panel handle.
         /// @param size A virtual xtd::drawing::size.
         /// @warning Internal use only
         static void virtual_size(intptr_t control, const drawing::size& size);
