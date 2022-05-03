@@ -402,6 +402,11 @@ namespace xtd {
       void create_system_menu();
       void destroy_system_menu();
       
+      void fill_in_create_params_border_icons(xtd::forms::create_params& cp) const;
+      void fill_in_create_params_border_styles(xtd::forms::create_params& cp) const;
+      void fill_in_create_params_start_position(xtd::forms::create_params& cp) const;
+      void fill_in_create_params_window_state(xtd::forms::create_params& cp) const;
+
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;
       static std::optional<std::reference_wrapper<form>> active_form_;
