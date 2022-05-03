@@ -32,11 +32,21 @@ namespace xtd {
           return control_->GetClientRect();
         }
         
+        virtual wxSize GetClientSize() const {
+          if (!control_) return {};
+          return control_->GetClientSize();
+        }
+
         virtual wxPoint GetPosition() const {
           if (!control_) return {};
           return control_->GetPosition();
         }
         
+        virtual wxSize GetSize() const {
+          if (!control_) return {};
+          return control_->GetSize();
+        }
+
         virtual void SetBackgroundColour(const wxColour& colour) {
           if (!control_) return;
           control_->SetBackgroundColour(colour);
@@ -55,11 +65,6 @@ namespace xtd {
         virtual void SetPosition(const wxPoint& pt) {
           if (!control_) return;
           control_->SetPosition(pt);
-        }
-        
-        virtual wxSize GetClientSize() const {
-          if (!control_) return {};
-          return control_->GetClientSize();
         }
         
         virtual void SetClientSize(int32_t width, int32_t height) {
