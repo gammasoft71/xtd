@@ -150,13 +150,11 @@ control& control::auto_size(bool auto_size) {
 }
 
 color control::back_color() const {
-  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
-    if (control->data_->back_color.has_value()) return control->data_->back_color.value();
-  return default_back_color();
+  return data_->back_color.value_or(default_back_color());
 }
 
 control& control::back_color(const color& color) {
-  if (!data_->back_color.has_value() || data_->back_color != color) {
+  if (back_color() != color) {
     data_->back_color = color;
     if (is_handle_created()) native::control::back_color(handle(), data_->back_color.value());
     for (auto& control : controls())
@@ -415,9 +413,7 @@ control& control::font(nullptr_t) {
 }
 
 color control::fore_color() const {
-  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
-    if (control->data_->fore_color.has_value()) return control->data_->fore_color.value();
-  return default_fore_color();
+  return data_->fore_color.value_or(default_fore_color());
 }
 
 control& control::fore_color(const color& color) {
@@ -1036,10 +1032,10 @@ void control::on_handle_created(const event_args& e) {
     native::control::minimum_size(handle(), minimum_size());
     native::control::size(handle(), this->size());
   }
-  if (data_->back_color.has_value() || back_color() != default_back_color()) native::control::back_color(handle(), back_color());
-  if (data_->cursor.has_value() || cursor() != default_cursor()) native::control::cursor(handle(), cursor().handle());
-  if (data_->fore_color.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle(), fore_color());
-  if (data_->font.has_value() || font() != default_font()) native::control::font(handle(), font());
+  if (data_->back_color.has_value()) native::control::back_color(handle(), back_color());
+  if (data_->cursor.has_value()) native::control::cursor(handle(), cursor().handle());
+  if (data_->fore_color.has_value()) native::control::fore_color(handle(), fore_color());
+  if (data_->font.has_value()) native::control::font(handle(), font());
   native::control::enabled(handle(), enabled());
   native::control::visible(handle(), visible());
   if (focused()) native::control::focus(handle());
