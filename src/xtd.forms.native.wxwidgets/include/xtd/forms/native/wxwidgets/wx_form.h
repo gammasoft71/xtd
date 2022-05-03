@@ -83,6 +83,15 @@ namespace xtd {
             control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
           }
           #endif
+          
+          #if defined(__WXGTK__)
+          control()->Bind(wxEVT_MOVE, [&](wxMoveEvent& event) {
+            if (event.GetPosition() == invalid_location) return;
+            location_ = event.GetPosition();
+          });
+          #endif
+          
+          SetPosition(location);
           boxSizer_ = new wxBoxSizer(wxVERTICAL);
           panel_ = new wxMainPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
           boxSizer_->Add(panel_, wxSizerFlags().Proportion(-1).Expand());
@@ -137,6 +146,14 @@ namespace xtd {
           return panel_;
         }
         
+        wxPoint GetPosition() const override {
+          #if defined(__WXGTK__)
+          return location_;
+          #else
+          return control_handler::GetPosition();
+          #endif
+        }
+        
         void SetBackgroundColour(const wxColour& colour) override {
           control_handler::SetBackgroundColour(colour);
           #if !defined(__APPLE__)
@@ -162,6 +179,13 @@ namespace xtd {
           control()->SetClientSize(wxSize(width, height));
         }
         
+        void SetPosition(const wxPoint& location) override {
+          #if defined(__WXGTK__)
+          location_ = location;
+          #endif
+          control_handler::SetPosition(location);
+        }
+        
         void SetSize(int32_t width, int32_t height) override {
           #if defined(__APPLE__)
           if (width < 75) width = 75;
@@ -170,9 +194,25 @@ namespace xtd {
           control_handler::SetSize(width, height);
         }
         
+        void Show(bool visible) override {
+          #if defined(__WXGTK__)
+          /// Workaround : With wxWidgets on Gtk, sometimes the location of the form is not valid. So you have to force the location to the right value...
+          control_handler::SetPosition(invalid_location);
+          control_handler::Show(visible);
+          if (visible)
+            control_handler::SetPosition(location_);
+        #else
+          control_handler::Show(visible);
+        #endif
+        }
+        
       private:
         wxBoxSizer* boxSizer_;
         wxMainPanel* panel_;
+        #if defined(__WXGTK__)
+        wxPoint location_;
+        inline static const wxPoint invalid_location {-100000, -100000};
+        #endif
       };
     }
   }
