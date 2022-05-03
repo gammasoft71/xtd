@@ -424,7 +424,7 @@ drawing::size control::size(intptr_t control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return {};
   }
-  wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
+  wxSize size = reinterpret_cast<control_handler*>(control)->GetSize();
   return {size.GetWidth(), size.GetHeight()};
 }
 
