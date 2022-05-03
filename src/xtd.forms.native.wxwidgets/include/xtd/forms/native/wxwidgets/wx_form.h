@@ -205,11 +205,13 @@ namespace xtd {
         #if defined(__WXGTK__)
         void Show(bool visible) override {
           /// Workaround : With wxWidgets on Gtk, sometimes the location of the form is not valid. So you have to force the location to the right value...
-          control_handler::SetPosition(invalid_location);
-          control_handler::Show(visible);
-          if (visible)
+          if (!visible) control_handler::Show(visible);
+          else {
+            control_handler::SetPosition(invalid_location);
+            control_handler::Show(visible);
             control_handler::SetPosition(location_);
-          control_handler::Show(visible);
+            control_handler::Show(visible);
+          }
         }
         #endif
 
