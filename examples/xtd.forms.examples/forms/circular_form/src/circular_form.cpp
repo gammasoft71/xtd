@@ -12,10 +12,6 @@ public:
   }
   
   form_main() {
-    close_box(false);
-    maximize_box(false);
-    minimize_box(false);
-    control_box(false);
     form_border_style(forms::form_border_style::none);
     client_size({300, 300});
     
@@ -24,7 +20,7 @@ public:
     region(drawing::region(path));
     
     paint += [&](object& sender, paint_event_args& e) {
-      e.graphics().fill_rectangle(linear_gradient_brush(e.clip_rectangle(), {color::blue, color::black, color::blue}, 45), e.clip_rectangle());
+      e.graphics().fill_rectangle(linear_gradient_brush(e.clip_rectangle(), {color::black, color::blue, color::black}, 90), e.clip_rectangle());
     };
     
     mouse_down += [&](object & sender, const mouse_event_args & e) {
@@ -41,7 +37,7 @@ public:
     
     close_button.parent(*this);
     close_button.location({client_size().width() / 2 - close_button.width() / 2, client_size().height() / 2 - close_button.height() / 2});
-    close_button.fore_color(color::red);
+    close_button.fore_color(color::dark_blue);
     close_button.text("close");
     close_button.click += [&] {
       close();
