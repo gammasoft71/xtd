@@ -37,7 +37,7 @@ public:
     
     close_button.parent(*this);
     close_button.location({client_size().width() / 2 - close_button.width() / 2, client_size().height() / 2 - close_button.height() / 2});
-    close_button.back_color(color::white);
+    close_button.back_color(color::from_argb(32, color::white));
     close_button.fore_color(color::dark_blue);
     close_button.text("close");
     close_button.click += [&] {
