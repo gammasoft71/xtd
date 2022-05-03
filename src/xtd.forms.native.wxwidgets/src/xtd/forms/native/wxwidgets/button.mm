@@ -12,14 +12,11 @@ using namespace xtd::forms::native;
 
 void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t width, int32_t height) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (height <= 25) return;
   NSButton* button = reinterpret_cast<NSButton*>(control->GetHandle());
   [button setWantsLayer:YES];
-  if (height >= 20 && height <= 25)
-    [button setBezelStyle: NSBezelStyleRounded];
-  else {
-    [button setBezelStyle: NSBezelStyleRegularSquare];
-    [button setFrameOrigin:NSMakePoint(x, y)];
-    [button setFrameSize:NSMakeSize(width, height)];
-  }
+  [button setBezelStyle: NSBezelStyleRegularSquare];
+  [button setFrameOrigin:NSMakePoint(x, y)];
+  [button setFrameSize:NSMakeSize(width, height)];
 }
 #endif
