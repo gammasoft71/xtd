@@ -17,4 +17,4 @@ xtdc run
 
 # Output
 
-![Screenshot](../../../../docs/pictures/examples/circular_form.png)
+![Screenshot](../../../../docs/pictures/examples/circular_form_w.png)
