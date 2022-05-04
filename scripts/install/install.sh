@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-build_cores=$(naproc)
-if [[ $build_cores -ne 1 ]]
-then
-    build_cores=$((build_cores - 1))
-fi
-echo  "Using up to ${build_cores} build cores"
-
 if [ -z ${xtd_version+x} ]; then
   echo "ERROR : Use ./install from root folder"
   exit 1
@@ -31,6 +24,17 @@ elif [[ "$OSTYPE" == *"Darwin"* ]]; then
 else
   echo "  Operating System is linux"
 fi
+
+# check the number of cores
+if [[ "$OSTYPE" == *"Linux"* ]]; then
+  build_cores=$(nproc)
+  if [[ $build_cores -ne 1 ]]; then
+    build_cores=$((build_cores - 1))
+  fi
+else
+  build_cores=8
+fi
+echo  "Using up to ${build_cores} build cores"
 
 # install needed packages and libraries for known distribution
 echo "install needed packages and libraries..."
