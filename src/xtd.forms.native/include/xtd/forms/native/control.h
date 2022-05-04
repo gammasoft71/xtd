@@ -195,12 +195,12 @@ namespace xtd {
         /// | "checkedlistbox"    | 120   | 90     |
         /// | "choice"            | 130   | 23 *   |
         /// | "collapsiblepanel"  | 0     | 0      |
-        /// | "colorpicker"       | 100   | 25 *   |
+        /// | "colorpicker"       | 100   | 34     |
         /// | "combobox"          | 130   | 23 *   |
         /// | "commandlinkbutton" | 200   | 60     |
         /// | "datetimepicker"    | 100   | 25 *   |
         /// | "domainupdown"      | 150   | 21 *   |
-        /// | "fontpicker"        | 100   | 25 *   |
+        /// | "fontpicker"        | 100   | 34     |
         /// | "form"              | 300   | 300    |
         /// | "groupbox"          | 200   | 100    |
         /// | "label"             | 100   | 23     |
