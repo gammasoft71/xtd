@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+build_cores=$(naproc)
+if [[ $build_cores -ne 1 ]]
+then
+    build_cores=$((build_cores - 1))
+fi
+echo  "Using up to ${build_cores} build cores"
+
 if [ -z ${xtd_version+x} ]; then
   echo "ERROR : Use ./install from root folder"
   exit 1
@@ -46,12 +53,12 @@ pushd wxwidgets/build_cmake
 mkdir Debug && mkdir Release
 pushd Release
 cmake ../.. -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF
-cmake --build . -- -j8
+cmake --build . -- -j$(build_cores)
 sudo cmake --build . --target install
 popd
 pushd Debug
 cmake ../.. -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
-cmake --build . -- -j8
+cmake --build . -- -j(build_cores)
 sudo cmake --build . --target install
 popd
 popd
@@ -64,12 +71,12 @@ pushd build
 mkdir Release && mkdir Debug
 pushd Release
 cmake ../..  -DCMAKE_BUILD_TYPE=Release "$@"
-cmake --build . -- -j8
+cmake --build . -- -j(build_cores)
 sudo cmake --build . --target install
 popd
 pushd Debug
 cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
-cmake --build . -- -j8
+cmake --build . -- -j(build_cores)
 sudo cmake --build . --target install
 popd
 popd
