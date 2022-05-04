@@ -26,18 +26,16 @@ else
 fi
 
 # check the number of cores
-if [[ `uname -a` == *"Linux"* ]]; then
-  build_cores=$(nproc)
-  if [[ $build_cores -ne 1 ]]; then
-    build_cores=$((build_cores - 1))
-  fi
-elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+if [[ "$OSTYPE" == *"Darwin"* ]]; then
   build_cores=$(sysctl -n hw.ncpu)
   if [[ $build_cores -ne 1 ]]; then
     build_cores=$((build_cores - 1))
   fi
 else
-  build_cores=8
+  build_cores=$(nproc)
+  if [[ $build_cores -ne 1 ]]; then
+    build_cores=$((build_cores - 1))
+  fi
 fi
 echo  "Using up to ${build_cores} build cores"
 
