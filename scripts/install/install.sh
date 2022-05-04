@@ -31,6 +31,11 @@ if [[ "$OSTYPE" == *"Linux"* ]]; then
   if [[ $build_cores -ne 1 ]]; then
     build_cores=$((build_cores - 1))
   fi
+elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+  build_cores=$(sysctl -n hw.ncpu)
+  if [[ $build_cores -ne 1 ]]; then
+    build_cores=$((build_cores - 1))
+  fi
 else
   build_cores=8
 fi
