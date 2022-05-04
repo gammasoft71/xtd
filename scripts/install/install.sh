@@ -26,7 +26,7 @@ else
 fi
 
 # check the number of cores
-if [[ "$OSTYPE" == *"Linux"* ]]; then
+if [[ `uname -a` == *"Linux"* ]]; then
   build_cores=$(nproc)
   if [[ $build_cores -ne 1 ]]; then
     build_cores=$((build_cores - 1))
