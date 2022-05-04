@@ -28,14 +28,11 @@ fi
 # check the number of cores
 if [[ "$OSTYPE" == *"Darwin"* ]]; then
   build_cores=$(sysctl -n hw.ncpu)
-  if [[ $build_cores -ne 1 ]]; then
-    build_cores=$((build_cores - 1))
-  fi
 else
   build_cores=$(nproc)
-  if [[ $build_cores -ne 1 ]]; then
-    build_cores=$((build_cores - 1))
-  fi
+fi
+if [[ $build_cores -ne 1 ]]; then
+  build_cores=$((build_cores - 1))
 fi
 echo  "Using up to ${build_cores} build cores"
 
