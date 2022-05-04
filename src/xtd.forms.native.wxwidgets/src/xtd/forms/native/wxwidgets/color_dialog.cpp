@@ -24,7 +24,7 @@ namespace {
 }
 #endif
 
-bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options) {
+bool color_dialog::run_dialog(intptr_t hwnd, const xtd::ustring& title, drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options) {
   wxColourData color_data;
   color_data.SetChooseAlpha((options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
   color_data.SetChooseFull((options & CC_FULLOPEN) == CC_FULLOPEN);
@@ -36,6 +36,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<
   #endif
   wxColourDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), &color_data);
   dialog.SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
+  dialog.SetTitle(title == "" ? "Color" : title);
   bool result = dialog.ShowModal() == wxID_OK;
   if (result) {
     wxColour colour = dialog.GetColourData().GetColour();
@@ -48,6 +49,6 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::vector<
   return result;
 }
 
-void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options) {
-  on_dialog_closed(run_dialog(hwnd, color, custom_colors, options));
+void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& title, drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options) {
+  on_dialog_closed(run_dialog(hwnd, title, color, custom_colors, options));
 }

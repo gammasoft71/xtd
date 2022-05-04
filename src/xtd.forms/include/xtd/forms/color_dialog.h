@@ -145,6 +145,19 @@ namespace xtd {
         set_option(CC_SOLIDCOLOR, solid_color_only);
         return *this;
       }
+      
+      /// @brief Gets the color dialog box title.
+      /// @return The color dialog box title. The default value is an empty string ("").
+      /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is "Color".
+      virtual const xtd::ustring& title() const {return title_;}
+      /// @brief Sets the color dialog box title.
+      /// @param value The file dialog box title. The default value is an empty string ("").
+      /// @return Current file_dialog.
+      /// @remarks The string is placed in the title bar of the dialog box. If the title is an empty string, the system uses a default title, which is "Color".
+      virtual color_dialog& title(const xtd::ustring& value) {
+        title_ = value;
+        return *this;
+      }
       /// @}
       
       /// @name Methods
@@ -175,6 +188,7 @@ namespace xtd {
       drawing::color color_ = drawing::color::black;
       std::vector<xtd::drawing::color> custom_colors_ {16, xtd::drawing::color::white};
       size_t options_ = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
+      xtd::ustring title_;
     };
   }
 }
