@@ -15,10 +15,10 @@ void color_dialog::reset() {
 }
 
 bool color_dialog::run_dialog(intptr_t owner) {
-  return native::color_dialog::run_dialog(owner, color_, custom_colors_, options_);
+  return native::color_dialog::run_dialog(owner, title_, color_, custom_colors_, options_);
 }
 
 void color_dialog::run_sheet(intptr_t owner) {
   if (!owner) run_dialog(owner);
-  else native::color_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, color_, custom_colors_, options_);
+  else native::color_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, title_, color_, custom_colors_, options_);
 }
