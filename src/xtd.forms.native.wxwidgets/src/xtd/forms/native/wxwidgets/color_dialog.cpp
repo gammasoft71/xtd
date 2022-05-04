@@ -5,6 +5,10 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#if defined(__WXGTK__)
+#undef interface_
+#include <gtk/gtk.h>
+#endif
 
 using namespace xtd;
 using namespace xtd::forms::native;
@@ -24,6 +28,21 @@ namespace {
 }
 #endif
 
+#if defined(__WXGTK__)
+bool color_dialog::run_dialog(intptr_t hwnd, const xtd::ustring& title, drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options) {
+  auto dialog = gtk_color_chooser_dialog_new(title == "" ? "Color" : title.c_str(), hwnd == 0 ? nullptr : GTK_WINDOW(reinterpret_cast<control_handler*>(hwnd)->control()->GetHandle()));
+  gtk_color_chooser_set_use_alpha(GTK_COLOR_CHOOSER(dialog), (options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
+  GdkRGBA gdk_rgba {static_cast<double>(color.r()) / 255, static_cast<double>(color.g()) / 255, static_cast<double>(color.b()) / 255, static_cast<double>(color.a()) / 255};
+  gtk_color_chooser_set_rgba(GTK_COLOR_CHOOSER(dialog), &gdk_rgba);
+  bool result = gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_OK;
+  if (result) {
+    gtk_color_chooser_get_rgba(GTK_COLOR_CHOOSER(dialog), &gdk_rgba);
+    color = drawing::color::from_argb(gdk_rgba.alpha * 255, gdk_rgba.red * 255, gdk_rgba.green * 255, gdk_rgba.blue * 255);
+  }
+  gtk_widget_destroy (dialog);
+  return result;
+}
+#else
 bool color_dialog::run_dialog(intptr_t hwnd, const xtd::ustring& title, drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options) {
   wxColourData color_data;
   color_data.SetChooseAlpha((options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
@@ -48,6 +67,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, const xtd::ustring& title, drawing:
   }
   return result;
 }
+#endif
 
 void color_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& title, drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options) {
   on_dialog_closed(run_dialog(hwnd, title, color, custom_colors, options));
