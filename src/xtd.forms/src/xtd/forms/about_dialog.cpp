@@ -78,6 +78,7 @@ namespace {
   class about_dialog_standard : public form {
   public:
     about_dialog_standard() {
+      text(" ");
       maximize_box(false);
       minimize_box(false);
       control_box(false);
