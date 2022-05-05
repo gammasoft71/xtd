@@ -28,7 +28,7 @@ public:
     };
 
     child_form.text(ustring::format("child form instance {}", instance));
-    child_form.size({250, 100});
+    child_form.size({300, 150});
     child_form.form_closed += [&] {
       child_form.text(ustring::format("child form instance {}", ++instance));
     };
