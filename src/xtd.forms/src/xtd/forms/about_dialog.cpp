@@ -140,7 +140,7 @@ namespace {
         about_dialog->activate();
         return;
       }
-      about_dialog = std::make_unique<::about_dialog_standard>();
+      about_dialog = new about_dialog_standard();
       auto has_credit = !(authors.empty() && documenters.empty() && translators.empty() && artists.empty());
       auto has_license = !license.empty();
       if (icon != xtd::drawing::bitmap::empty)
@@ -226,9 +226,10 @@ namespace {
   private:
     void on_form_closed(const form_closed_event_args& e) override {
       form::on_form_closed(e);
-      about_dialog.reset();
+      delete about_dialog;
+      about_dialog = nullptr;
     }
-    inline static std::unique_ptr<about_dialog_standard> about_dialog;
+    inline static about_dialog_standard* about_dialog = nullptr;
     picture_box picture_box_icon_;
     label label_name_;
     tab_control tab_control_about_;
