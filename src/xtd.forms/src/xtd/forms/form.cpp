@@ -299,6 +299,7 @@ bool form::pre_process_message(xtd::forms::message& message) {
   
   return container_control::pre_process_message(message);
 }
+
 forms::dialog_result form::show_dialog() {
   set_state(state::modal, true);
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
@@ -307,7 +308,6 @@ forms::dialog_result form::show_dialog() {
   application::raise_enter_thread_modal(event_args::empty);
   forms::dialog_result result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_dialog(handle())) : dialog_result::cancel;
   application::raise_leave_thread_modal(event_args::empty);
-  set_state(state::modal, false);
   return result;
 }
 
@@ -351,8 +351,6 @@ forms::create_params form::create_params() const {
   cp.class_name("form");
   
   cp.style(cp.style() | WS_CLIPCHILDREN);
-
-  if ((!show_icon_ && (form_border_style_ == forms::form_border_style::sizable || form_border_style_ == forms::form_border_style::fixed_3d || form_border_style_ == forms::form_border_style::fixed_single)) || form_border_style_ == forms::form_border_style::fixed_dialog) cp.ex_style(cp.ex_style() | WS_EX_DLGMODALFRAME);
 
   if (get_state(state::modal)) cp.ex_style(cp.ex_style() | WS_EX_MODALWINDOW);
   
@@ -431,6 +429,7 @@ void form::wm_close(message& message) {
       application::raise_leave_thread_modal(event_args::empty);
       set_parent(parent_before_show_dialog_);
       set_state(state::modal, false);
+      post_recreate_handle();
     }
     on_form_closed(form_closed_event_args());
   }
