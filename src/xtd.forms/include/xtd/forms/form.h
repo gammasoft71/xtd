@@ -415,7 +415,7 @@ namespace xtd {
       bool control_box_ = true;
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
       forms::form_border_style form_border_style_ = form_border_style::sizable;
-      bool help_button_ = true;
+      bool help_button_ = false;
       xtd::drawing::icon icon_ = xtd::drawing::icon::empty;
       bool maximize_box_ = true;
       std::optional<std::reference_wrapper<forms::main_menu>> menu_;
