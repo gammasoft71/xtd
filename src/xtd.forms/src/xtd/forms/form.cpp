@@ -430,7 +430,6 @@ void form::wm_close(message& message) {
     }
     can_close_ = true;
     hide();
-    previous_screen_ = nullptr;
     on_form_closed(form_closed_event_args());
   }
 }
