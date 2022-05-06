@@ -33,6 +33,7 @@
 #include "control_styles.h"
 #include "cursors.h"
 #include "dock_style.h"
+#include "help_event_handler.h"
 #include "image_layout.h"
 #include "iwin32_window.h"
 #include "key_event_handler.h"
@@ -1282,6 +1283,12 @@ namespace xtd {
       /// @remarks This event is raised if the font property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> font_changed;
+
+      /// @brief Occurs when the user requests help for a control.
+      /// @ingroup events
+      /// @remarks The xtd::forms::control::help_requested event is commonly raised when the user presses the F1 key or an associated context-sensitive help button is clicked.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      event<control, help_event_handler> help_requested;
       
       /// @brief Occurs when a key is pressed while the control has focus.
       /// @ingroup events
@@ -1686,7 +1693,12 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_handle_destroyed(const event_args& e);
-      
+
+      /// @brief Raises the control::help_requested event.
+      /// @param e A xtd::forms::help_event_args that contains the event data.
+      /// @ingroup events
+      virtual void on_help_requested(help_event_args& e);
+
       /// @brief Raises the control::key_down event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1922,6 +1934,7 @@ namespace xtd {
       void wm_notify(message& message);
       void wm_paint(const message& message);
       void wm_erase_background(const message& message);
+      void wm_help(message& message);
       void wm_scroll(message& message);
       void wm_set_focus(message& message);
       void wm_set_text(message& message);
