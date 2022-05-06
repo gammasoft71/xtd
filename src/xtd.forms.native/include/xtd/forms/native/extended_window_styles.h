@@ -9,6 +9,7 @@
 /// @endcond
 
 #include <cstddef>
+#include <xtd/ustring.h>
 
 // https://docs.microsoft.com/en-us/cpp/mfc/reference/styles-used-by-mfc
 
@@ -226,3 +227,36 @@ constexpr size_t WS_EX_AUTOSCROLL = 0x40000000;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t WS_EX_MODALWINDOW = 0x80000000;
+
+inline static xtd::ustring __windows_extended_style_to_string__(int32_t style) {
+  xtd::ustring result = "";
+  
+  if ((style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) result += " | WS_EX_DLGMODALFRAME";
+  if ((style & WS_EX_NOPARENTNOTIFY) == WS_EX_NOPARENTNOTIFY) result += " | WS_EX_NOPARENTNOTIFY";
+  if ((style & WS_EX_TOPMOST) == WS_EX_TOPMOST) result += " | WS_EX_TOPMOST";
+  if ((style & WS_EX_ACCEPTFILES) == WS_EX_ACCEPTFILES) result += " | WS_EX_ACCEPTFILES";
+  if ((style & WS_EX_TRANSPARENT) == WS_EX_TRANSPARENT) result += " | WS_EX_TRANSPARENT";
+  if ((style & WS_EX_MDICHILD) == WS_EX_MDICHILD) result += " | WS_EX_MDICHILD";
+  if ((style & WS_EX_TOOLWINDOW) == WS_EX_TOOLWINDOW) result += " | WS_EX_TOOLWINDOW";
+  if ((style & WS_EX_WINDOWEDGE) == WS_EX_WINDOWEDGE) result += " | WS_EX_WINDOWEDGE";
+  if ((style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) result += " | WS_EX_CLIENTEDGE";
+  if ((style & WS_EX_CONTEXTHELP) == WS_EX_CONTEXTHELP) result += " | WS_EX_CONTEXTHELP";
+  if ((style & WS_EX_RIGHT) == WS_EX_RIGHT) result += " | WS_EX_RIGHT";
+  if ((style & WS_EX_LEFT) == WS_EX_LEFT) result += " | WS_EX_LEFT";
+  if ((style & WS_EX_RTLREADING) == WS_EX_RTLREADING) result += " | WS_EX_RTLREADING";
+  if ((style & WS_EX_LTRREADING) == WS_EX_LTRREADING) result += " | WS_EX_LTRREADING";
+  if ((style & WS_EX_LEFTSCROLLBAR) == WS_EX_LEFTSCROLLBAR) result += " | WS_EX_LEFTSCROLLBAR";
+  if ((style & WS_EX_RIGHTSCROLLBAR) == WS_EX_RIGHTSCROLLBAR) result += " | WS_EX_RIGHTSCROLLBAR";
+  if ((style & WS_EX_CONTROLPARENT) == WS_EX_CONTROLPARENT) result += " | WS_EX_CONTROLPARENT";
+  if ((style & WS_EX_STATICEDGE) == WS_EX_STATICEDGE) result += " | WS_EX_STATICEDGE";
+  if ((style & WS_EX_APPWINDOW) == WS_EX_APPWINDOW) result += " | WS_EX_APPWINDOW";
+  if ((style & WS_EX_LAYERED) == WS_EX_LAYERED) result += " | WS_EX_LAYERED";
+  if ((style & WS_EX_NOINHERITLAYOUT) == WS_EX_NOINHERITLAYOUT) result += " | WS_EX_NOINHERITLAYOUT";
+  if ((style & WS_EX_NOREDIRECTIONBITMAP) == WS_EX_NOREDIRECTIONBITMAP) result += " | WS_EX_NOREDIRECTIONBITMAP";
+  if ((style & WS_EX_LAYOUTRTL) == WS_EX_LAYOUTRTL) result += " | WS_EX_LAYOUTRTL";
+  if ((style & WS_EX_COMPOSITED) == WS_EX_COMPOSITED) result += " | WS_EX_COMPOSITED";
+  if ((style & WS_EX_NOACTIVATE) == WS_EX_NOACTIVATE) result += " | WS_EX_NOACTIVATE";
+  if ((style & WS_EX_AUTOSCROLL) == WS_EX_AUTOSCROLL) result += " | WS_EX_AUTOSCROLL";
+  if ((style & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW) result += " | WS_EX_MODALWINDOW";
+  return result.substring(3);
+}

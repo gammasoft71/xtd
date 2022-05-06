@@ -9,6 +9,7 @@
 /// @endcond
 
 #include <cstddef>
+#include <xtd/ustring.h>
 
 // https://docs.microsoft.com/en-us/cpp/mfc/reference/styles-used-by-mfc
 
@@ -215,3 +216,28 @@ constexpr size_t WS_SIZEBOX = WS_THICKFRAME;
 /// @warning Internal use only
 constexpr size_t WS_TILEDWINDOW = WS_OVERLAPPEDWINDOW;
 #endif
+
+inline static xtd::ustring __windows_style_to_string__(int32_t style) {
+  xtd::ustring result = "WS_OVERLAPPED";
+  
+  if ((style & WS_MAXIMIZEBOX) == WS_MAXIMIZEBOX) result += " | WS_MAXIMIZEBOX";
+  if ((style & WS_MINIMIZEBOX) == WS_MINIMIZEBOX) result += " | WS_MINIMIZEBOX";
+  if ((style & WS_THICKFRAME) == WS_THICKFRAME) result += " | WS_THICKFRAME";
+  if ((style & WS_SYSMENU) == WS_SYSMENU) result += " | WS_SYSMENU";
+  if ((style & WS_HSCROLL) == WS_HSCROLL) result += " | WS_HSCROLL";
+  if ((style & WS_VSCROLL) == WS_VSCROLL) result += " | WS_VSCROLL";
+  if ((style & WS_DLGFRAME) == WS_DLGFRAME) result += " | WS_DLGFRAME";
+  if ((style & WS_BORDER) == WS_BORDER) result += " | WS_BORDER";
+  if ((style & WS_CAPTION) == WS_CAPTION) result += " | WS_CAPTION";
+  if ((style & WS_MAXIMIZE) == WS_MAXIMIZE) result += " | WS_MAXIMIZE";
+  if ((style & WS_CLIPCHILDREN) == WS_CLIPCHILDREN) result += " | WS_CLIPCHILDREN";
+  if ((style & WS_CLIPSIBLINGS) == WS_CLIPSIBLINGS) result += " | WS_CLIPSIBLINGS";
+  if ((style & WS_DISABLED) == WS_DISABLED) result += " | WS_DISABLED";
+  if ((style & WS_VISIBLE) == WS_VISIBLE) result += " | WS_VISIBLE";
+  if ((style & WS_MINIMIZE) == WS_MINIMIZE) result += " | WS_MINIMIZE";
+  if ((style & WS_CHILD) == WS_CHILD) result += " | WS_CHILD";
+  if ((style & WS_POPUP) == WS_POPUP) result += " | WS_POPUP";
+  if ((style & WS_GROUP) == WS_GROUP) result += " | WS_GROUP";
+  if ((style & WS_TABSTOP) == WS_TABSTOP) result += " | WS_TABSTOP";
+  return result;
+}
