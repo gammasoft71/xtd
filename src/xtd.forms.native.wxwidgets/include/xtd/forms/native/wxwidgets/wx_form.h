@@ -126,7 +126,7 @@ namespace xtd {
             if ((ex_style & WS_EX_DLGMODALFRAME) != WS_EX_DLGMODALFRAME) wx_style |= wxSYSTEM_MENU;
           }
 
-          cdebug << ustring::format("style = 0x{:X}, ex_style = 0x{:X}, wx_style = 0x{:X}", style, ex_style, wx_style) << std::endl;
+          //cdebug << ustring::format("style = 0x{:X}, ex_style = 0x{:X}, wx_style = 0x{:X}", style, ex_style, wx_style) << std::endl;
           
           return wx_style;
         }

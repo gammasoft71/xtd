@@ -390,7 +390,7 @@ forms::create_params form::create_params() const {
     cp.ex_style(cp.ex_style() & ~(WS_EX_RTLREADING | WS_EX_RIGHT | WS_EX_LEFTSCROLLBAR));
   }*/
 
-  diagnostics::debug::write_line("create_params = {}, style = {}, ex_style = {}", cp, __windows_style_to_string__(cp.style()), __windows_extended_style_to_string__(cp.ex_style()));
+  //diagnostics::debug::write_line("create_params = {}, style = {}, ex_style = {}", cp, __windows_style_to_string__(cp.style()), __windows_extended_style_to_string__(cp.ex_style()));
   
   return cp;
 }
