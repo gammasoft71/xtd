@@ -84,8 +84,9 @@ namespace xtd {
       /// @param text A string that represent the caption text oof the debug form.
       trace_form_base(const xtd::ustring& text) {
         close_box(false);
-        show_in_taskbar(false);
+        minimize_box(false);
         name("9f5767d6-7a21-4ebe-adfe-2427b2024a55");
+        show_in_taskbar(false);
         text_.name("d014d407-851c-49c1-a343-3380496a639a");
         
         dock(xtd::forms::dock_style::bottom);

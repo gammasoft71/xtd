@@ -7,7 +7,6 @@ using namespace xtd::forms;
 class forms_form : public form {
 public:
   static void main() {
-    debug_form df;
     application::run(forms_form());
   }
   
