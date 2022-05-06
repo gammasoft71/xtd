@@ -207,10 +207,10 @@ namespace xtd {
           HELPINFO help_info;
           help_info.cbSize = sizeof(HELPINFO);
           help_info.iContextType = static_cast<wxHelpEvent&>(event).GetOrigin() == wxHelpEvent::Origin_HelpButton ? HELPINFO_WINDOW : HELPINFO_MENUITEM;
-          int32_t iCtrlId = event.GetId();
-          HWND hItemHandle = reinterpret_cast<intptr_t>(event_handler_);
-          uintptr_t dwContextId = event.GetId(); /// @todo : To be update with the correct context id...
-          POINT MousePos = POINT{static_cast<wxHelpEvent&>(event).GetPosition().x, static_cast<wxHelpEvent&>(event).GetPosition().y};
+          help_info.iCtrlId = event.GetId();
+          help_info.hItemHandle = reinterpret_cast<HWND>(event_handler_);
+          help_info.dwContextId = event.GetId(); /// @todo : To be update with the correct context id...
+          help_info.MousePos = POINT{static_cast<wxHelpEvent&>(event).GetPosition().x, static_cast<wxHelpEvent&>(event).GetPosition().y};
           event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_HELP, 0, reinterpret_cast<intptr_t>(&help_info), reinterpret_cast<intptr_t>(&event));
         } else if (event.GetEventType() == wxEVT_MOVE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_NULL) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));
