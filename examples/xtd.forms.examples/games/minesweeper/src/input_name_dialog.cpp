@@ -8,10 +8,6 @@ using namespace xtd::forms;
 
 input_name_dialog::input_name_dialog() {
   start_position(form_start_position::center_parent);
-  minimize_box(false);
-  maximize_box(false);
-  close_box(false);
-  control_box(false);
   form_border_style(xtd::forms::form_border_style::none);
   client_size({200, 160});
   

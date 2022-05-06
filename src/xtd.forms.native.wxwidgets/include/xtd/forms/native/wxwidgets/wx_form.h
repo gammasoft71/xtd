@@ -183,6 +183,10 @@ namespace xtd {
           #if defined(__APPLE__)
           if (width < 75) width = 75;
           if (height < 23) height = 23;
+          if (fixed) {
+            control()->SetMinClientSize(wxDefaultSize);
+            control()->SetMaxClientSize(wxDefaultSize);
+          }
           #endif
           control()->SetClientSize(wxSize(width, height));
           #if defined(__APPLE__)
@@ -204,6 +208,10 @@ namespace xtd {
           #if defined(__APPLE__)
           if (width < 75) width = 75;
           if (height < 23) height = 23;
+          if (fixed) {
+            control()->SetMinSize(wxDefaultSize);
+            control()->SetMaxSize(wxDefaultSize);
+          }
           #endif
           control_handler::SetSize(width, height);
           #if defined(__APPLE__)

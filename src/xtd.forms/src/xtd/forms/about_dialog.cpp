@@ -78,11 +78,10 @@ namespace {
   class about_dialog_standard : public form {
   public:
     about_dialog_standard() {
-      text(" ");
       maximize_box(false);
       minimize_box(false);
-      control_box(false);
       show_icon(false);
+      show_in_taskbar(false);
       client_size({476, 300});
       form_border_style(forms::form_border_style::fixed_dialog);
       start_position(form_start_position::center_screen);

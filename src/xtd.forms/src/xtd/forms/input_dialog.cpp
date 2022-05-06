@@ -25,7 +25,6 @@ namespace {
       cancel_button(cancel_button_);
       client_size({330, 115 + offset_multiline});
       controls().push_back_range({input_panel_, cancel_button_, ok_button_});
-      control_box(false);
       maximize_box(false);
       minimize_box(false);
       show_icon(false);

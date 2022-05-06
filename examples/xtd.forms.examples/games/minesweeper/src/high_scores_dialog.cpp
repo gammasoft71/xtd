@@ -9,10 +9,6 @@ using namespace xtd::forms;
 
 high_scores_dialog::high_scores_dialog() {
   start_position(form_start_position::center_parent);
-  minimize_box(false);
-  maximize_box(false);
-  close_box(false);
-  control_box(false);
   form_border_style(forms::form_border_style::none);
   client_size({360, 200});
   accept_button(ok_button_);
