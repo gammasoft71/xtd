@@ -29,7 +29,8 @@ namespace {
       controls().push_back_range({panel_top_, panel_bottom_});
       maximize_box(false);
       minimize_box(false);
-      //form_border_style(forms::form_border_style::fixed_dialog);
+      show_icon(false);
+      form_border_style(forms::form_border_style::fixed_dialog);
       start_position(form_start_position::center_screen);
       this->text(text);
       form_closed += [&, on_dialog_closed] {

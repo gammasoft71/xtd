@@ -11,11 +11,7 @@ using namespace xtd::forms;
 custom_field_dialog::custom_field_dialog() {
   accept_button(ok_button_);
   client_size({250, 170});
-  close_box(false);
-  control_box(false);
   form_border_style(xtd::forms::form_border_style::none);
-  maximize_box(false);
-  minimize_box(false);
   start_position(form_start_position::center_parent);
   
   if (properties::settings::default_settings().original_color()) {
