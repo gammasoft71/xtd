@@ -380,6 +380,9 @@ forms::create_params form::create_params() const {
   if (!show_icon_ && (border_style == xtd::forms::form_border_style::sizable || border_style == xtd::forms::form_border_style::fixed_3d || border_style == xtd::forms::form_border_style::fixed_single))
     cp.ex_style(cp.ex_style() | WS_EX_DLGMODALFRAME);
   
+  if (!show_icon_ && (border_style == form_border_style::sizable || border_style == form_border_style::fixed_3d || border_style == form_border_style::fixed_single))
+    cp.ex_style(cp.ex_style() | WS_EX_DLGMODALFRAME);
+  
   if (top_level())
     fill_in_create_params_start_position(cp);
 
@@ -448,7 +451,6 @@ void form::wm_syscolor_change(message& message) {
 
 void form::on_handle_created(const event_args& e) {
   container_control::on_handle_created(e);
-  if (show_icon_ && icon_ != drawing::icon::empty) native::form::icon(handle(), icon_);
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
   if (!region().is_empty() && !region().is_infinite()) native::form::set_region(handle(), region().handle());
