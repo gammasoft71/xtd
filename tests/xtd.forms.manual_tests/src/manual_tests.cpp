@@ -6,6 +6,8 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
+    text("Form1");
+
     close_button.parent(*this);
     close_button.location({10, 10});
     close_button.text("Close");

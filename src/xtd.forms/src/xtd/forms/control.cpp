@@ -1063,6 +1063,10 @@ void control::on_handle_destroyed(const event_args& e) {
   if (can_raise_events()) handle_destroyed(*this, e);
 }
 
+void control::on_help_requested(help_event_args &e) {
+  if (can_raise_events()) help_requested(*this, e);
+}
+
 void control::on_key_down(key_event_args& e) {
   if (can_raise_events()) key_down(*this, e);
 }
@@ -1391,6 +1395,7 @@ void control::wnd_proc(message& message) {
     // System events
     case WM_COMMAND: wm_command(message); break;
     case WM_ERASEBKGND: wm_erase_background(message); break;
+    case WM_HELP: wm_help(message); break;
     case WM_PAINT: wm_paint(message); break;
     case WM_MENUCOMMAND: if (data_->context_menu.has_value()) data_->context_menu.value().get().wm_click(message); break;
     case WM_MOVE: wm_move(message);  break;
@@ -1715,6 +1720,15 @@ void control::wm_erase_background(const message& message) {
   paint_event_args e(*this, data_->client_rectangle);
   e.message_ = message;
   on_paint_background(e);
+}
+
+void control::wm_help(message& message) {
+  def_wnd_proc(message);
+  HELPINFO* help_info = reinterpret_cast<HELPINFO*>(message.lparam());
+  help_event_args e(point(help_info->MousePos.x, help_info->MousePos.y));
+  on_help_requested(e);
+  if (!e.handled())
+    def_wnd_proc(message);
 }
 
 void control::wm_scroll(message& message) {
