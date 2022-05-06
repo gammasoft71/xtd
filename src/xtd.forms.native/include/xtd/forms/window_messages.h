@@ -1761,10 +1761,26 @@ constexpr uint32_t MCN_SELCHANGE = uint32_t((0 - 750) + 1);
 constexpr uint32_t MCN_GETDAYSTATE = uint32_t((0 - 750) + 3);
 constexpr uint32_t MCN_SELECT = uint32_t((0 - 750) + 4);
 
+constexpr int32_t HELPINFO_MENUITEM = 0;
+constexpr int32_t HELPINFO_WINDOW = 1;
 struct NMHDR {
   HWND hwndFrom;
   uintptr_t idFrom;
   uint32_t code;
+};
+
+struct POINT {
+  int32_t x;
+  int32_t y;
+};
+
+struct HELPINFO {
+  uint32_t cbSize;
+  int32_t iContextType;
+  int32_t iCtrlId;
+  HWND hItemHandle;
+  uintptr_t dwContextId;
+  POINT MousePos;
 };
 
 template<typename type1_t, typename type2_t>
