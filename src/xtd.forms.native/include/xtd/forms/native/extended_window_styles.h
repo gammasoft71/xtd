@@ -228,7 +228,7 @@ constexpr size_t WS_EX_AUTOSCROLL = 0x40000000;
 /// @warning Internal use only
 constexpr size_t WS_EX_MODALWINDOW = 0x80000000;
 
-inline static xtd::ustring __windows_extended_style_to_string__(int32_t style) {
+inline static xtd::ustring __windows_extended_style_to_string__(size_t style) {
   xtd::ustring result = "";
   
   if ((style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) result += " | WS_EX_DLGMODALFRAME";
