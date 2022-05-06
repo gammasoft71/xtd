@@ -203,7 +203,16 @@ namespace xtd {
         } else if (event.GetEventType() == wxEVT_ACTIVATE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_ACTIVATE, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()), static_cast<wxActivateEvent&>(event).GetActive() ? (static_cast<wxActivateEvent&>(event).GetActivationReason() == wxActivateEvent::Reason::Reason_Mouse ? WA_CLICKACTIVE : WA_ACTIVE) : WA_INACTIVE, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_DESTROY) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_ERASE_BACKGROUND) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_ERASEBKGND, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()), 0, reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_MOVE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_HELP) {
+          HELPINFO help_info;
+          help_info.cbSize = sizeof(HELPINFO);
+          help_info.iContextType = static_cast<wxHelpEvent&>(event).GetOrigin() == wxHelpEvent::Origin_HelpButton ? HELPINFO_WINDOW : HELPINFO_MENUITEM;
+          int32_t iCtrlId = event.GetId();
+          HWND hItemHandle = reinterpret_cast<intptr_t>(event_handler_);
+          uintptr_t dwContextId = event.GetId(); /// @todo : To be update with the correct context id...
+          POINT MousePos = POINT{static_cast<wxHelpEvent&>(event).GetPosition().x, static_cast<wxHelpEvent&>(event).GetPosition().y};
+          event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_HELP, 0, reinterpret_cast<intptr_t>(&help_info), reinterpret_cast<intptr_t>(&event));
+        } else if (event.GetEventType() == wxEVT_MOVE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_NULL) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_PAINT && event_handler_->enable_send_paint_event()) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_PAINT, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_SHOW) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_SHOWWINDOW, static_cast<wxShowEvent&>(event).IsShown(), 0, reinterpret_cast<intptr_t>(&event));

@@ -90,6 +90,7 @@ namespace xtd {
           });
           #endif
           
+          if ((create_params.ex_style() & WS_EX_CONTEXTHELP) == WS_EX_CONTEXTHELP) control()->SetExtraStyle(control()->GetExtraStyle() | wxDIALOG_EX_CONTEXTHELP);
           SetPosition(location);
           boxSizer_ = new wxBoxSizer(wxVERTICAL);
           panel_ = new wxMainPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
