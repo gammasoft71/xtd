@@ -4,6 +4,7 @@
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/is.h>
 #include <xtd/literals.h>
+#include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_icons.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -380,9 +381,6 @@ forms::create_params form::create_params() const {
   if (!show_icon_ && (border_style == xtd::forms::form_border_style::sizable || border_style == xtd::forms::form_border_style::fixed_3d || border_style == xtd::forms::form_border_style::fixed_single))
     cp.ex_style(cp.ex_style() | WS_EX_DLGMODALFRAME);
   
-  if (!show_icon_ && (border_style == form_border_style::sizable || border_style == form_border_style::fixed_3d || border_style == form_border_style::fixed_single))
-    cp.ex_style(cp.ex_style() | WS_EX_DLGMODALFRAME);
-  
   if (top_level())
     fill_in_create_params_start_position(cp);
 
@@ -392,7 +390,7 @@ forms::create_params form::create_params() const {
     cp.ex_style(cp.ex_style() & ~(WS_EX_RTLREADING | WS_EX_RIGHT | WS_EX_LEFTSCROLLBAR));
   }*/
 
-  //diagnostics::debug::write_line("create_params = {}", cp);
+  diagnostics::debug::write_line("create_params = {}, style = {}, ex_style = {}", cp, __windows_style_to_string__(cp.style()), __windows_extended_style_to_string__(cp.ex_style()));
   
   return cp;
 }
