@@ -77,6 +77,7 @@ namespace xtd {
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
           #elif defined(__APPLE__)
+          fixed = (create_params.style() & WS_THICKFRAME) != WS_THICKFRAME;
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
             control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
@@ -184,6 +185,12 @@ namespace xtd {
           if (height < 23) height = 23;
           #endif
           control()->SetClientSize(wxSize(width, height));
+          #if defined(__APPLE__)
+          if (fixed) {
+            control()->SetMinClientSize(wxSize(width, height));
+            control()->SetMaxClientSize(wxSize(width, height));
+          }
+          #endif
         }
         
         #if defined(__WXGTK__)
@@ -199,6 +206,12 @@ namespace xtd {
           if (height < 23) height = 23;
           #endif
           control_handler::SetSize(width, height);
+          #if defined(__APPLE__)
+          if (fixed) {
+            control()->SetMinSize(wxSize(width, height));
+            control()->SetMaxSize(wxSize(width, height));
+          }
+          #endif
         }
         
         #if defined(__WXGTK__)
@@ -220,6 +233,8 @@ namespace xtd {
         #if defined(__WXGTK__)
         wxPoint location_;
         inline static const wxPoint invalid_location {-100000, -100000};
+        #elif defined(__APPLE__)
+        bool fixed = false;
         #endif
       };
     }
