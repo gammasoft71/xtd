@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::control::button](../../../../src/xtd.forms/
 
 # Sources
 
-* [src/docked_panels.cpp](src/anchors.cpp)
+* [src/anchors.cpp](src/anchors.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
