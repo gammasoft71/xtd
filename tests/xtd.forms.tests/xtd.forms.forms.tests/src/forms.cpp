@@ -32,88 +32,80 @@ public:
 
     form_border_style_choice.location({10, 10});
     form_border_style_choice.width(200);
-    form_border_style_choice.items().push_back_range({
-      {"none", forms::form_border_style::none},
-      {"fixed_single", forms::form_border_style::fixed_single},
-      {"fixed_3d", forms::form_border_style::fixed_3d},
-      {"fixed_dialog", forms::form_border_style::fixed_dialog},
-      {"sizable", forms::form_border_style::sizable},
-      {"fixed_tool_window", forms::form_border_style::fixed_tool_window},
-      {"sizable_tool_window", forms::form_border_style::sizable_tool_window},
-    });
+    form_border_style_choice.items().push_back_range({{"none", forms::form_border_style::none}, {"fixed_single", forms::form_border_style::fixed_single}, {"fixed_3d", forms::form_border_style::fixed_3d}, {"fixed_dialog", forms::form_border_style::fixed_dialog}, {"sizable", forms::form_border_style::sizable}, {"fixed_tool_window", forms::form_border_style::fixed_tool_window}, {"sizable_tool_window", forms::form_border_style::sizable_tool_window}});
     form_border_style_choice.selected_index(static_cast<size_t>(form_border_style()));
     form_border_style_choice.selected_index_changed += [&] {
       form_border_style(static_cast<forms::form_border_style>(form_border_style_choice.selected_index()));
     };
     
-    caption_label.location({10, 42});
+    caption_label.location({10, 62});
     caption_label.text("caption");
     
-    caption_text_box.location({110, 40});
+    caption_text_box.location({110, 60});
     caption_text_box.width(100);
     caption_text_box.text(text());
     caption_text_box.text_changed += [&] {
       text(caption_text_box.text());
     };
     
-    minimize_box_label.location({10, 72});
+    minimize_box_label.location({10, 112});
     minimize_box_label.text("Minimize box");
     
-    minimize_box_switch_button.location({160, 70});
+    minimize_box_switch_button.location({160, 110});
     minimize_box_switch_button.checked(minimize_box());
     minimize_box_switch_button.checked_changed += [&] {
       minimize_box(minimize_box_switch_button.checked());
     };
     
-    maximize_box_label.location({10, 102});
+    maximize_box_label.location({10, 142});
     maximize_box_label.text("Maximize box");
     
-    maximize_box_switch_button.location({160, 100});
+    maximize_box_switch_button.location({160, 140});
     maximize_box_switch_button.checked(maximize_box());
     maximize_box_switch_button.checked_changed += [&] {
       maximize_box(maximize_box_switch_button.checked());
     };
     
-    close_box_label.location({10, 132});
+    close_box_label.location({10, 172});
     close_box_label.text("Close box");
     
-    close_box_switch_button.location({160, 130});
+    close_box_switch_button.location({160, 170});
     close_box_switch_button.checked(close_box());
     close_box_switch_button.checked_changed += [&] {
       close_box(close_box_switch_button.checked());
     };
     
-    control_box_label.location({10, 162});
+    control_box_label.location({10, 202});
     control_box_label.text("Control box");
     
-    control_box_switch_button.location({160, 160});
+    control_box_switch_button.location({160, 200});
     control_box_switch_button.checked(control_box());
     control_box_switch_button.checked_changed += [&] {
       control_box(control_box_switch_button.checked());
     };
     
-    help_button_label.location({10, 192});
+    help_button_label.location({10, 232});
     help_button_label.text("Help button");
     
-    help_button_switch_button.location({160, 190});
+    help_button_switch_button.location({160, 230});
     help_button_switch_button.checked(help_button());
     help_button_switch_button.checked_changed += [&] {
       help_button(help_button_switch_button.checked());
     };
     
-    show_icon_label.location({10, 222});
+    show_icon_label.location({10, 262});
     show_icon_label.text("Show icon");
     
-    show_icon_switch_button.location({160, 220});
+    show_icon_switch_button.location({160, 260});
     show_icon_switch_button.checked(show_icon());
     show_icon_switch_button.checked_changed += [&] {
       show_icon(show_icon_switch_button.checked());
     };
     
-    show_in_taskbar_label.location({10, 252});
+    show_in_taskbar_label.location({10, 292});
     show_in_taskbar_label.text("Show in taskbar");
     
-    show_in_taskbar_switch_button.location({160, 250});
+    show_in_taskbar_switch_button.location({160, 290});
     show_in_taskbar_switch_button.checked(show_in_taskbar());
     show_in_taskbar_switch_button.checked_changed += [&] {
       show_in_taskbar(show_in_taskbar_switch_button.checked());
@@ -121,34 +113,34 @@ public:
 
     state_full_screen_button.location({10, 10});
     state_full_screen_button.text("Full screen");
-    state_full_screen_button.width(90);
+    state_full_screen_button.size({90, 30});
     state_full_screen_button.click += [&] {
       window_state(form_window_state::full_screen);
     };
     
-    state_maximize_button.location({10, 40});
+    state_maximize_button.location({10, 50});
     state_maximize_button.text("Maximize");
-    state_maximize_button.width(90);
+    state_maximize_button.size({90, 30});
     state_maximize_button.click += [&] {
       window_state(form_window_state::maximized);
     };
     
-    state_normal_button.location({10, 70});
+    state_normal_button.location({10, 90});
     state_normal_button.text("Normal");
-    state_normal_button.width(90);
+    state_normal_button.size({90, 30});
     state_normal_button.click += [&] {
       window_state(form_window_state::normal);
     };
     
-    state_minimize_button.location({10, 100});
+    state_minimize_button.location({10, 130});
     state_minimize_button.text("Minimize");
-    state_minimize_button.width(90);
+    state_minimize_button.size({90, 30});
     state_minimize_button.click += [&] {
       window_state(form_window_state::minimized);
     };
 
     show_normal_button.location({10, 10});
-    show_normal_button.width(140);
+    show_normal_button.size({140, 30});
     show_normal_button.text("Show normal");
     show_normal_button.click += [&] {
       auto dialog = control::create<form>("dialog show normal", {}, {250, 100});
@@ -156,8 +148,8 @@ public:
       dialogs.push_back(move(dialog));
     };
     
-    show_modeless_button.location({10, 40});
-    show_modeless_button.width(140);
+    show_modeless_button.location({10, 50});
+    show_modeless_button.size({140, 30});
     show_modeless_button.text("Show modeless");
     show_modeless_button.click += [&] {
       auto dialog = control::create<form>("dialog show modeless", {}, {250, 100});
@@ -165,8 +157,8 @@ public:
       dialogs.push_back(move(dialog));
     };
     
-    show_top_most_button.location({10, 70});
-    show_top_most_button.width(140);
+    show_top_most_button.location({10, 90});
+    show_top_most_button.size({140, 30});
     show_top_most_button.text("Show top most");
     show_top_most_button.click += [&] {
       auto dialog = control::create<form>("dialog top most", {}, {250, 100});
@@ -174,16 +166,16 @@ public:
       dialogs.push_back(move(dialog));
     };
     
-    show_modal_button.location({10, 100});
-    show_modal_button.width(140);
+    show_modal_button.location({10, 130});
+    show_modal_button.size({140, 30});
     show_modal_button.text("Show modal");
     show_modal_button.click += [&] {
       auto dialog = control::create<form>("dialog show modal", {}, {250, 100});
       dialog->show_dialog(*this);
     };
     
-    show_sheet_button.location({10, 130});
-    show_sheet_button.width(140);
+    show_sheet_button.location({10, 170});
+    show_sheet_button.size({140, 30});
     show_sheet_button.text("Show sheet");
     show_sheet_button.click += [&] {
       auto dialog = control::create<form>("dialog show sheet", {}, {250, 100});
@@ -194,8 +186,8 @@ public:
       dialogs.push_back(move(dialog));
     };
     
-    show_sheet_modal_button.location({10, 160});
-    show_sheet_modal_button.width(140);
+    show_sheet_modal_button.location({10, 210});
+    show_sheet_modal_button.size({140, 30});
     show_sheet_modal_button.text("Show sheet modal");
     show_sheet_modal_button.click += [&] {
       auto dialog = control::create<form>("dialog show sheet modal", {}, {250, 100});
