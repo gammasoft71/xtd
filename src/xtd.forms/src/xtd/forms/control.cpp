@@ -1036,10 +1036,10 @@ void control::on_handle_created(const event_args& e) {
     native::control::minimum_size(handle(), minimum_size());
     native::control::size(handle(), this->size());
   }
-  if (data_->back_color.has_value()) native::control::back_color(handle(), back_color());
-  if (data_->cursor.has_value()) native::control::cursor(handle(), cursor().handle());
-  if (data_->fore_color.has_value()) native::control::fore_color(handle(), fore_color());
-  if (data_->font.has_value()) native::control::font(handle(), font());
+  if (data_->back_color.has_value() || back_color() != default_back_color()) native::control::back_color(handle(), back_color());
+  if (data_->cursor.has_value() || cursor() != default_cursor()) native::control::cursor(handle(), cursor().handle());
+  if (data_->fore_color.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle(), fore_color());
+  if (data_->font.has_value() || font() != default_font()) native::control::font(handle(), font());
   native::control::enabled(handle(), enabled());
   native::control::visible(handle(), visible());
   if (focused()) native::control::focus(handle());
