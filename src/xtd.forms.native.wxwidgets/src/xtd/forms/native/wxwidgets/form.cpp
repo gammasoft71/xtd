@@ -24,7 +24,6 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-bool __toggle_full_screen_frame__(wxTopLevelWindow* control);
 void __toggle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
 
 static void __on_command_menu__(wxCommandEvent& event) {
