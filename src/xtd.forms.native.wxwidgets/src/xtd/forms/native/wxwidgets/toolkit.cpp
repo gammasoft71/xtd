@@ -1,6 +1,7 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/toolkit.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/environment.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;
@@ -15,4 +16,8 @@ ustring toolkit::description() {
 
 xtd::version toolkit::version() {
   return {0, 1, 0};
+}
+
+bool toolkit::is_operating_system_double_buffered() {
+  return !xtd::environment::os_version().is_windows_platform();
 }
