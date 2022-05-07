@@ -3,6 +3,9 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/screen.h"
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/toolkit.h>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace xtd;
@@ -160,7 +163,8 @@ void link_label::on_mouse_move(const mouse_event_args& e) {
 void link_label::on_paint(paint_event_args& e) {
   control::on_paint(e);
   
-  e.graphics().clear(back_color());
+  if (double_buffered() && !native::toolkit::is_operating_system_double_buffered())
+    e.graphics().clear(back_color());
   size_t line_number = 0;
   size_t index = 0;
   for (auto line : text().split({'\n'})) {
