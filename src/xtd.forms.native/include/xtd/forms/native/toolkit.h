@@ -37,15 +37,25 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        /// @brief Gets the name of the toolkit
-        /// @return The name of the toolkit
+        /// @brief Gets the name of the toolkit.
+        /// @return The name of the toolkit.
+        /// @warning Internal use only
         static xtd::ustring name();
-        /// @brief Gets the description of the toolkit
-        /// @return The description of the toolkit
+
+        /// @brief Gets the description of the toolkit.
+        /// @return The description of the toolkit.
+        /// @warning Internal use only
         static xtd::ustring description();
-        /// @brief Gets the version of the toolkit
-        /// @return The version of the toolkit
+
+        /// @brief Gets the version of the toolkit.
+        /// @return The version of the toolkit.
+        /// @warning Internal use only
         static xtd::version version();
+        
+        /// @brief Gets the operating system is natively double buffered.
+        /// @return true is operating system is natively double buffered; otherwise false.
+        /// @warning Internal use only
+        static bool is_operating_system_double_buffered();
         /// @}
       };
     }
