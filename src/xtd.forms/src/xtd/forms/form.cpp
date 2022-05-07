@@ -449,7 +449,7 @@ void form::wm_syscolor_change(message& message) {
 
 void form::on_handle_created(const event_args& e) {
   container_control::on_handle_created(e);
-  if (icon_ != drawing::icon::empty) native::form::icon(handle(), icon_);
+  if (show_icon_ && icon_ != drawing::icon::empty) native::form::icon(handle(), icon_);
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   if (opacity_ != 1.0) native::form::opacity(handle(), opacity_);
   if (!region().is_empty() && !region().is_infinite()) native::form::set_region(handle(), region().handle());
