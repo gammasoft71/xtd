@@ -32,7 +32,7 @@ public:
       cursor(cursors::default_cursor());
     };
     mouse_move += [&](object & sender, const mouse_event_args & e) {
-      if (mouse_location != point::empty) this->location(this->location() + e.location() - mouse_location);
+      if (mouse_location != point::empty) location(location() + e.location() - mouse_location);
     };
     
     close_button.parent(*this);
