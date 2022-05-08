@@ -158,7 +158,7 @@ menu_item& menu_item::text(const xtd::ustring& value) {
 }
 
 intptr_t menu_item::create_menu_handle() {
-  if (is_parent() || data_->main_menu_.has_value() || data_->context_menu_.has_value()) return native::menu::create();
+  if (is_parent() || data_->main_menu_.has_value()) return native::menu::create();
   
   if (text_ == "-") kind_ = xtd::forms::menu_item_kind::separator;
   auto handle = native::menu_item::create(data_->parent_.value().get().handle(), text_, image_, static_cast<int>(kind_), static_cast<size_t>(shortcut_));
