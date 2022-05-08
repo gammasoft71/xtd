@@ -32,7 +32,7 @@ public:
       label1.cursor(cursors::default_cursor());
     };
     label1.mouse_move += [&](object & sender, const mouse_event_args & e) {
-      if (mouse_location != point::empty) this->location(this->location() + e.location() - mouse_location);
+      if (mouse_location != point::empty) location(location() + e.location() - mouse_location);
     };
   }
   
