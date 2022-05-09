@@ -71,6 +71,18 @@ tool_bar::tool_bar() {
   set_can_focus(false);
 }
 
+xtd::forms::tool_bar_appearance tool_bar::appearnce() const {
+  return data_->appearnce;
+}
+
+tool_bar& tool_bar::appearnce(xtd::forms::tool_bar_appearance value) {
+  if (data_->appearnce != value) {
+    data_->appearnce = value;
+    if (control_appearance() == forms::control_appearance::standard) invalidate();
+  }
+  return *this;
+}
+
 tool_bar& tool_bar::border_sides(forms::border_sides border_sides) {
   if (data_->border_sides != border_sides) {
     data_->border_sides = border_sides;
@@ -123,18 +135,32 @@ tool_bar& tool_bar::show_text(bool value) {
   return *this;
 }
 
+xtd::forms::tool_bar_text_align tool_bar::text_align() const {
+  return data_->text_align;
+}
+
+tool_bar& tool_bar::text_align(xtd::forms::tool_bar_text_align value) {
+  if (data_->text_align != value) {
+    data_->text_align = value;
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
 forms::create_params tool_bar::create_params() const {
   forms::create_params create_params = control::create_params();
   
   if (data_->is_system_tool_bar)
     create_params.class_name("toolbar");
   
+  if (data_->appearnce == tool_bar_appearance::flat) create_params.style(create_params.style() | TBSTYLE_FLAT);
   if (data_->non_system_dock == dock_style::left) create_params.style(create_params.style() | TBSTYLE_LEFT);
   else if (data_->non_system_dock == dock_style::right) create_params.style(create_params.style() | TBSTYLE_RIGHT);
   else if (data_->non_system_dock == dock_style::bottom) create_params.style(create_params.style() | TBSTYLE_BOTTOM);
   if (data_->show_text) create_params.style(create_params.style() | TBSTYLE_SHOWTEXT);
   if (!data_->show_icon) create_params.style(create_params.style() | TBSTYLE_NOSHOWICON);
-
+  if (data_->text_align == tool_bar_text_align::right) create_params.style(create_params.style() | TBSTYLE_TEXTRIGHTALIGN);
   return create_params;
 }
 
@@ -186,12 +212,43 @@ void tool_bar::fill() {
         else button_control->dock(dock_style::left);
         button_control->flat_style(xtd::forms::flat_style::flat);
         button_control->flat_appearance().border_size(0);
-        button_control->image_align(content_alignment::middle_center);
+        
         button_control->height(data_->image_list.image_size().height() + 6);
         button_control->width(data_->image_list.image_size().width() + 6);
         
-        if (button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
-        //button_control->text(button_item.text());
+        if (data_->show_text == false)
+          button_control->image_align(content_alignment::middle_center);
+        else {
+          button_control->text(button_item.text());
+          if (data_->show_icon == false) {
+            button_control->text_align(content_alignment::middle_center);
+            button_control->width(button_control->measure_text().width() + 6);
+          } else {
+            if (data_->text_align == tool_bar_text_align::underneath) {
+              button_control->image_align(content_alignment::top_center);
+              button_control->text_align(content_alignment::bottom_center);
+              button_control->height(button_control->height() + button_control->measure_text().height());
+              if (button_control->width() < (button_control->measure_text().width() ))
+                button_control->width(button_control->measure_text().width());
+            } else {
+              button_control->image_align(content_alignment::middle_left);
+              button_control->text_align(content_alignment::middle_right);
+              button_control->width(button_control->width() + button_control->measure_text().width() - 10);
+            }
+          }
+        }
+        if (data_->show_icon) {
+          if (button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
+        }
+  
+        if (this->dock() == dock_style::top || this->dock() ==  dock_style::bottom) {
+          if (height() < button_control->height()) height(button_control->height() + 4);
+        } else {
+          if (width() < button_control->width()) width(button_control->width() + 4);
+        }
+
+        width(data_->image_list.image_size().width() + 10);
+
         data_->tool_bar_items.push_back(button_control);
       }
     } else if (is<tool_bar_separator>(reversed_items[index].get())) {

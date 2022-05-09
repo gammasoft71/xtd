@@ -6,6 +6,8 @@
 #include <xtd/event.h>
 #include <xtd/event_handler.h>
 #include <xtd/forms/image_list.h>
+#include <xtd/forms/menu.h>
+#include <xtd/forms/tool_bar_button_style.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -71,9 +73,21 @@ namespace xtd {
       /// @}
       
     private:
-      xtd::ustring text_;
-      size_t image_index_ = xtd::forms::image_list::image_collection::npos;
-      bool enabled_ = true;
+      struct data {
+        std::optional<std::reference_wrapper<xtd::forms::menu>> drop_down_menu_;
+        bool enabled = true;
+        size_t image_index = xtd::forms::image_list::image_collection::npos;
+        xtd::drawing::image image_key;
+        bool partial_push = false;
+        bool pushed_ = false;
+        xtd::drawing::rectangle rectangle;
+        xtd::forms::tool_bar_button_style style = xtd::forms::tool_bar_button_style::push_button;
+        std::any tag;
+        xtd::ustring text;
+        xtd::ustring tool_tip_text;
+        bool visible = true;
+      };      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
