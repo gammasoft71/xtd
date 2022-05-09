@@ -2,6 +2,7 @@
 #include <thread>
 #include <xtd/xtd>
 
+using namespace std;
 using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms;
@@ -17,32 +18,32 @@ namespace examples {
         worker.cancel_async();
       };
       
-      panel_command.parent(*this);
-      panel_command.size({300, 80});
-      panel_command.controls().push_back_range({button_run, button_cancel, status});
+      command_panel.parent(*this);
+      command_panel.size({300, 80});
+      command_panel.controls().push_back_range({run_button, cancel_button, status});
       
-      panel_progress.parent(*this);
-      panel_progress.top(80);
-      panel_progress.size({300, 155});
-      panel_progress.controls().push_back_range({progress, list_progress});
-      panel_progress.visible(false);
+      progress_panel.parent(*this);
+      progress_panel.top(80);
+      progress_panel.size({300, 155});
+      progress_panel.controls().push_back_range({progress, progress_text});
+      progress_panel.visible(false);
       
-      button_run.location({10, 10});
-      button_run.text("Run");
-      button_run.click += [&] {
-        panel_progress.visible(true);
-        button_cancel.enabled(true);
-        button_run.enabled(false);
+      run_button.location({10, 10});
+      run_button.text("Run");
+      run_button.click += [&] {
+        progress_panel.visible(true);
+        cancel_button.enabled(true);
+        run_button.enabled(false);
         worker.run_worker_async();
         if (worker.is_busy())
           status.text("Status : running");
       };
       
-      button_cancel.location({215, 10});
-      button_cancel.text("Cancel");
-      button_cancel.enabled(false);
-      button_cancel.click += [&] {
-        button_cancel.enabled(false);
+      cancel_button.location({215, 10});
+      cancel_button.text("Cancel");
+      cancel_button.enabled(false);
+      cancel_button.click += [&] {
+        cancel_button.enabled(false);
         worker.cancel_async();
       };
       
@@ -53,45 +54,45 @@ namespace examples {
       progress.location({10, 10});
       progress.width(280);
       
-      list_progress.location({10, 45});
-      list_progress.size({280, 100});
-      list_progress.multiline(true);
-      list_progress.read_only(true);
-      list_progress.word_wrap(false);
+      progress_text.location({10, 45});
+      progress_text.size({280, 100});
+      progress_text.multiline(true);
+      progress_text.read_only(true);
+      progress_text.word_wrap(false);
       
       worker.worker_supports_cancellation(true);
       worker.worker_reports_progress(true);
       worker.do_work += [&] {
-        for (auto step = 1; step <= progress.maximum(); step++) {
+        for (auto step = 1; step <= progress.maximum(); ++step) {
           if (worker.cancellation_pending()) break; // stop work...
-          std::this_thread::sleep_for(100ms); // simulate work...
+          this_thread::sleep_for(50ms); // simulate work...
           worker.report_progress(step, ustring::format("step {} / {}", step, progress.maximum()));
         }
       };
       
       worker.progress_changed += [&](object & sender, const progress_changed_event_args & e) {
         progress.value(e.progress_percentage());
-        list_progress.append_text(ustring::format("{}{}", std::any_cast<ustring>(e.user_state()), environment::new_line()));
+        progress_text.append_text(ustring::format("{}{}", any_cast<ustring>(e.user_state()), environment::new_line()));
       };
       
       worker.run_worker_completed += [&](object & sender, const run_worker_completed_event_args & e) {
-        panel_progress.visible(false);
-        button_run.enabled(true);
-        button_cancel.enabled(false);
+        progress_panel.visible(false);
+        run_button.enabled(true);
+        cancel_button.enabled(false);
         progress.value(0);
-        list_progress.text("");
+        progress_text.text("");
         status.text(ustring::format("Status : {}", e.cancel() ? "canceled" : "completed"));
       };
     }
     
   private:
-    panel panel_command;
-    panel panel_progress;
-    button button_run;
-    button button_cancel;
+    panel command_panel;
+    panel progress_panel;
+    button run_button;
+    button cancel_button;
     label status;
     progress_bar progress;
-    text_box list_progress;
+    text_box progress_text;
     background_worker worker;
   };
 }
