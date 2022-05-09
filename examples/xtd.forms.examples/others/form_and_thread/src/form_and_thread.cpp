@@ -1,6 +1,8 @@
 #include <xtd/xtd>
 
+using namespace std;
 using namespace std::literals;
+using namespace xtd;
 using namespace xtd::forms;
 
 class form_thread : public form {
@@ -18,11 +20,11 @@ public:
     
     for (auto index = 0U; index < threads.size(); index++) {
       threads[index] = std::thread([&](auto user_thread_id) {
-        auto counter = 0;
+        auto counter = 0U;
         while (!closed) {
           /// simulate work...
           std::this_thread::sleep_for(50ms);
-          counter++;
+          ++counter;
           /// call invoke method to update ui in the main thread.
           messages.begin_invoke([&, counter, user_thread_id] {
             messages.items().push_back(xtd::ustring::format("thread: {}, counter: {}", user_thread_id, counter));
@@ -34,9 +36,9 @@ public:
   }
   
 private:
-  xtd::forms::list_box messages;
+  list_box messages;
   bool closed = false;
-  std::vector<std::thread> threads {std::thread::hardware_concurrency()};
+  vector<thread> threads {environment::processor_count()};
 };
 
 int main() {
