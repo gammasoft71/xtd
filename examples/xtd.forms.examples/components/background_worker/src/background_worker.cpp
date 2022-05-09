@@ -15,7 +15,7 @@ namespace examples {
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
       form_closed += [&] {
-        worker.cancel_async();
+        cancel_button.perform_click();
       };
       
       command_panel.parent(*this);
@@ -65,7 +65,7 @@ namespace examples {
       worker.do_work += [&] {
         for (auto step = 1; step <= progress.maximum(); ++step) {
           if (worker.cancellation_pending()) break; // stop work...
-          this_thread::sleep_for(50ms); // simulate work...
+          this_thread::sleep_for(100ms); // simulate work...
           worker.report_progress(step, ustring::format("step {} / {}", step, progress.maximum()));
         }
       };
