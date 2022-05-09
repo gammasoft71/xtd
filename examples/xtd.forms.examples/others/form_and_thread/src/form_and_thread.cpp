@@ -19,15 +19,15 @@ public:
     messages.dock(dock_style::fill);
     
     for (auto index = 0U; index < threads.size(); index++) {
-      threads[index] = std::thread([&](auto user_thread_id) {
+      threads[index] = thread([&](auto user_thread_id) {
         auto counter = 0U;
         while (!closed) {
           /// simulate work...
-          std::this_thread::sleep_for(50ms);
+          this_thread::sleep_for(50ms);
           ++counter;
-          /// call invoke method to update ui in the main thread.
+          /// call invoke method to update UI in the main thread.
           messages.begin_invoke([&, counter, user_thread_id] {
-            messages.items().push_back(xtd::ustring::format("thread: {}, counter: {}", user_thread_id, counter));
+            messages.items().push_back(ustring::format("thread: {}, counter: {}", user_thread_id, counter));
             messages.selected_index(messages.items().size() - 1);
           });
         }
