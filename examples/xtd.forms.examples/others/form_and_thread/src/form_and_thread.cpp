@@ -11,14 +11,14 @@ public:
     text("Form and thread example");
     form_closed += [&] {
       closed = true;
-      for (auto index = 0U; index < threads.size(); index++)
+      for (auto index = 0U; index < threads.size(); ++index)
         threads[index].join();
     };
     
     messages.parent(*this);
     messages.dock(dock_style::fill);
     
-    for (auto index = 0U; index < threads.size(); index++) {
+    for (auto index = 0U; index < threads.size(); ++index) {
       threads[index] = thread([&](auto user_thread_id) {
         auto counter = 0U;
         while (!closed) {
@@ -38,7 +38,7 @@ public:
 private:
   list_box messages;
   bool closed = false;
-  vector<thread> threads {environment::processor_count()};
+  vector<thread> threads {environment::processor_count() - 1};
 };
 
 int main() {
