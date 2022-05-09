@@ -17,7 +17,7 @@ public:
     messages.dock(dock_style::fill);
     
     for (auto index = 0U; index < threads.size(); index++) {
-      threads[index] = std::thread([&](int user_thread_id) {
+      threads[index] = std::thread([&](auto user_thread_id) {
         auto counter = 0;
         while (!closed) {
           /// simulate work...
