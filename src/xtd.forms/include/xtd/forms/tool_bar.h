@@ -8,8 +8,10 @@
 #include "border_style.h"
 #include "image_list.h"
 #include "panel.h"
+#include "tool_bar_appearance.h"
 #include "tool_bar_button.h"
 #include "tool_bar_separator.h"
+#include "tool_bar_text_align.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -42,6 +44,7 @@ namespace xtd {
         }
         
       private:
+        friend tool_bar;
         std::optional<tool_bar_item_ref> tool_bar_item_;
       };
       
@@ -65,6 +68,9 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      virtual xtd::forms::tool_bar_appearance appearnce() const;
+      virtual tool_bar& appearnce(xtd::forms::tool_bar_appearance value);
+
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
       virtual forms::border_sides border_sides() const {return data_->border_sides;}
@@ -104,6 +110,9 @@ namespace xtd {
       
       const tool_bar_item_collection& items() const;
       tool_bar_item_collection& items();
+      
+      virtual xtd::forms::tool_bar_text_align text_align() const;
+      virtual tool_bar& text_align(xtd::forms::tool_bar_text_align value);
       /// @}
       
     protected:
@@ -136,6 +145,7 @@ namespace xtd {
       void wm_click(const message& message);
       
       struct data {
+        xtd::forms::tool_bar_appearance appearnce = xtd::forms::tool_bar_appearance::normal;
         forms::border_sides border_sides = forms::border_sides::all;
         std::optional<xtd::forms::border_style> border_style;
         xtd::forms::image_list image_list;
@@ -146,6 +156,7 @@ namespace xtd {
         bool show_text = false;
         std::vector<std::shared_ptr<xtd::forms::control>> tool_bar_items;
         std::vector<intptr_t> system_tool_bar_item_handles;
+        xtd::forms::tool_bar_text_align text_align = xtd::forms::tool_bar_text_align::underneath;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

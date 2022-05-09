@@ -4,58 +4,66 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-tool_bar_button::tool_bar_button(const ustring& text) : text_(text) {
+tool_bar_button::tool_bar_button(const ustring& text) {
+  data_->text = text;
 }
 
-tool_bar_button::tool_bar_button(const ustring& text, const event_handler& on_click) : text_(text) {
+tool_bar_button::tool_bar_button(const ustring& text, const event_handler& on_click) {
+  data_->text = text;
   click += on_click;
 }
 
-tool_bar_button::tool_bar_button(size_t image_index) : image_index_(image_index) {
+tool_bar_button::tool_bar_button(size_t image_index) {
+  data_->image_index = image_index;
 }
 
-tool_bar_button::tool_bar_button(size_t image_index, const event_handler& on_click) : image_index_(image_index) {
+tool_bar_button::tool_bar_button(size_t image_index, const event_handler& on_click) {
+  data_->image_index = image_index;
   click += on_click;
 }
 
-tool_bar_button::tool_bar_button(const ustring& text, size_t image_index) : text_(text), image_index_(image_index) {
+tool_bar_button::tool_bar_button(const ustring& text, size_t image_index) {
+  data_->text = text;
+  data_->image_index = image_index;
 }
 
-tool_bar_button::tool_bar_button(const ustring& text, size_t image_index, const event_handler& on_click) : text_(text), image_index_(image_index) {
+tool_bar_button::tool_bar_button(const ustring& text, size_t image_index, const event_handler& on_click) {
+  data_->text = text;
+  data_->image_index = image_index;
   click += on_click;
 }
 
 bool tool_bar_button::enabled() const {
-  return enabled_;
+  return data_->enabled;
 }
 
 tool_bar_button& tool_bar_button::enabled(bool value) {
-  if (enabled_ != value) {
-    enabled_ = value;
+  if (data_->enabled != value) {
+    data_->enabled = value;
     if (parent) parent->post_recreate_handle();
   }
   return *this;
 }
 
 const ustring& tool_bar_button::text() const {
-  return text_;
+  return data_->text;
 }
 
 tool_bar_button& tool_bar_button::text(const xtd::ustring& value) {
-  if (text_ != value) {
-    text_ = value;
+  if (data_->text != value) {
+    data_->text = value;
     if (parent) parent->post_recreate_handle();
   }
   return *this;
 }
 
 size_t tool_bar_button::image_index() const {
-  return image_index_;
+  return data_->image_index;
 }
 
 tool_bar_button& tool_bar_button::image_index(size_t value) {
-  if (image_index_ != value) {
-    image_index_ = value;
+  if (data_->image_index != value) {
+    data_->image_index = value;
     if (parent) parent->post_recreate_handle();
   }
   return *this;

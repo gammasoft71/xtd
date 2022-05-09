@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     /// @remarks Use the members of this enumeration to set the value of the theme_style property of the theme class.
-    enum theme_style {
+    enum class theme_style {
       system_auto = 0,
       undefined = 0,
       light,
