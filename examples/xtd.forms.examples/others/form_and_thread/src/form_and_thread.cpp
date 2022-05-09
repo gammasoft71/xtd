@@ -24,7 +24,7 @@ public:
           std::this_thread::sleep_for(50ms);
           counter++;
           /// call invoke method to update ui in the main thread.
-          messages.begin_invoke([&] {
+          messages.begin_invoke([&, counter, user_thread_id] {
             messages.items().push_back(xtd::ustring::format("thread: {}, counter: {}", user_thread_id, counter));
             messages.selected_index(messages.items().size() - 1);
           });
