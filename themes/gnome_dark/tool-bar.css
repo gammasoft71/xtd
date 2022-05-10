@@ -1,0 +1,10 @@
+/* Contains tool-bar definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+tool-bar {
+  background-color: transparent;
+  border-color: #727272;
+  border-style: outset;
+  border-width: 1px;
+  color: system-color(control-text);
+}
