@@ -80,6 +80,7 @@ tool_bar& tool_bar::appearnce(xtd::forms::tool_bar_appearance value) {
   if (data_->appearnce != value) {
     data_->appearnce = value;
     if (control_appearance() == forms::control_appearance::standard) invalidate();
+    else post_recreate_handle();
   }
   return *this;
 }
@@ -152,7 +153,7 @@ tool_bar& tool_bar::text_align(xtd::forms::tool_bar_text_align value) {
 forms::create_params tool_bar::create_params() const {
   forms::create_params create_params = control::create_params();
   
-  if (data_->is_system_tool_bar)
+  if (is_system_tool_bar())
     create_params.class_name("toolbar");
   
   if (data_->appearnce == tool_bar_appearance::flat) create_params.style(create_params.style() | TBSTYLE_FLAT);
@@ -172,13 +173,18 @@ void tool_bar::on_handle_created(const event_args& e) {
 
 void tool_bar::on_handle_destroyed(const event_args& e) {
   control::on_handle_destroyed(e);
-  if (data_->is_system_tool_bar) data_->system_tool_bar_item_handles.clear();
+  if (is_system_tool_bar()) data_->system_tool_bar_item_handles.clear();
 }
 
 void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
   control::on_paint(e);
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   if (control_appearance() == forms::control_appearance::standard) tool_bar_renderer::draw_tool_bar(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, data_->border_style, data_->border_sides);
+}
+
+bool tool_bar::is_system_tool_bar() const {
+  auto result = data_->is_system_tool_bar || data_->appearnce == tool_bar_appearance::system;
+  return result;
 }
 
 tool_bar& tool_bar::is_system_tool_bar(bool value) {
@@ -199,11 +205,11 @@ void tool_bar::fill() {
   controls().clear();
   data_->tool_bar_items.clear();
   auto reversed_items = data_->items;
-  if (!data_->is_system_tool_bar) std::reverse(reversed_items.begin(), reversed_items.end());
+  if (!is_system_tool_bar()) std::reverse(reversed_items.begin(), reversed_items.end());
   for (size_t index = 0; index < reversed_items.size(); ++index) {
     if (is<tool_bar_button>(reversed_items[index].get())) {
       auto& button_item = as<tool_bar_button>(reversed_items[index].get());
-      if (data_->is_system_tool_bar)
+      if (is_system_tool_bar())
         data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle(), button_item.enabled()));
       else {
         auto button_control = std::make_shared<tool_bar_button_control>();
@@ -251,7 +257,7 @@ void tool_bar::fill() {
         data_->tool_bar_items.push_back(button_control);
       }
     } else if (is<tool_bar_separator>(reversed_items[index].get())) {
-      if (data_->is_system_tool_bar)
+      if (is_system_tool_bar())
         data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_separator(handle()));
       else {
         auto separator_control = std::make_shared<tool_bar_separator_control>();
@@ -264,7 +270,7 @@ void tool_bar::fill() {
       }
     }
   }
-  if (data_->is_system_tool_bar) {
+  if (is_system_tool_bar()) {
     parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
     native::tool_bar::set_system_tool_bar(parent().value().get().handle(), handle());
   }
@@ -290,12 +296,12 @@ void tool_bar::on_item_removed(size_t pos, tool_bar_item_ref item) {
 }
 
 dock_style tool_bar::dock() const {
-  //if (data_->is_system_tool_bar) return data_->non_system_dock;
+  //if (is_system_tool_bar()) return data_->non_system_dock;
   return control::dock();
 }
 
 control& tool_bar::dock(dock_style dock) {
-  if (data_->is_system_tool_bar) {
+  if (is_system_tool_bar()) {
     data_->non_system_dock = dock;
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   } else {
@@ -332,7 +338,7 @@ tool_bar::tool_bar_item_collection& tool_bar::items() {
 }
 
 void tool_bar::wnd_proc(message& message) {
-  if (data_->is_system_tool_bar && message.msg() == WM_MENUCOMMAND && handle() == message.hwnd()) wm_click(message);
+  if (is_system_tool_bar() && message.msg() == WM_MENUCOMMAND && handle() == message.hwnd()) wm_click(message);
   else control::wnd_proc(message);
 }
 
