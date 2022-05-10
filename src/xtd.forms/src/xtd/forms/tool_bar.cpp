@@ -33,6 +33,9 @@ namespace {
 
 tool_bar::tool_bar_button_control::tool_bar_button_control() {
   set_can_focus(false);
+  auto current_font = font();
+  current_font = drawing::font(current_font, 8.5);
+  font(current_font);
 }
 
 tool_bar::tool_bar_separator_control::tool_bar_separator_control() {
@@ -66,8 +69,6 @@ tool_bar::tool_bar() {
   data_->image_list.image_size(environment::os_version().is_windows_platform() ? drawing::size {16, 16} : drawing::size {24, 24});
   dock(xtd::forms::dock_style::top);
   padding(forms::padding {2});
-  height(data_->image_list.image_size().height() + 10);
-  width(data_->image_list.image_size().width() + 10);
   set_can_focus(false);
 }
 
@@ -247,8 +248,6 @@ void tool_bar::fill() {
           if (width() < button_control->width()) width(button_control->width() + 4);
         }
 
-        width(data_->image_list.image_size().width() + 10);
-
         data_->tool_bar_items.push_back(button_control);
       }
     } else if (is<tool_bar_separator>(reversed_items[index].get())) {
@@ -259,8 +258,8 @@ void tool_bar::fill() {
         separator_control->parent(*this);
         if (dock() == dock_style::left || dock() == dock_style::right) separator_control->dock(dock_style::top);
         else separator_control->dock(dock_style::left);
-        separator_control->height(data_->image_list.image_size().height() / 2);
-        separator_control->width(data_->image_list.image_size().width() / 2);
+        separator_control->height(data_->image_list.image_size().height() / 2 + 4);
+        separator_control->width(data_->image_list.image_size().width() / 2 + 4);
         data_->tool_bar_items.push_back(separator_control);
       }
     }
