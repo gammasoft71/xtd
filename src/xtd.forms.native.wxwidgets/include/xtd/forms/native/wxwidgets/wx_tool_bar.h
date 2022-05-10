@@ -47,9 +47,19 @@ namespace xtd {
           
           if ((style & TBSTYLE_NOSHOWICON) == TBSTYLE_NOSHOWICON) wx_style |= wxTB_NOICONS;
           if ((style & TBSTYLE_SHOWTEXT) == TBSTYLE_SHOWTEXT) wx_style |= wxTB_TEXT;
+          if ((style & TBSTYLE_TEXTRIGHTALIGN) == TBSTYLE_TEXTRIGHTALIGN) wx_style |= wxTB_HORZ_LAYOUT;
           if ((style & TBSTYLE_FLAT) == TBSTYLE_FLAT) wx_style |= wxTB_FLAT;
 
           return wx_style;
+        }
+
+        void SetClientSize(int32_t width, int32_t height) override {
+        }
+
+        void SetPosition(const wxPoint& location) override {
+        }
+
+        void SetSize(int32_t width, int32_t height) override {
         }
       };
     }
