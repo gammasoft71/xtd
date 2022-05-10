@@ -135,6 +135,7 @@ namespace xtd {
       /// @}
       
     private:
+      using control::text;
       void fill();
       
       void on_item_added(size_t pos, tool_bar_item_ref item);

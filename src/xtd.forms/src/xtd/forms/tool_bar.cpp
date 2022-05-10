@@ -79,8 +79,14 @@ xtd::forms::tool_bar_appearance tool_bar::appearnce() const {
 tool_bar& tool_bar::appearnce(xtd::forms::tool_bar_appearance value) {
   if (data_->appearnce != value) {
     data_->appearnce = value;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-    else post_recreate_handle();
+    if (value != tool_bar_appearance::system) {
+      control::dock(data_->non_system_dock);
+      invalidate();
+    } else {
+      data_->non_system_dock = control::dock();
+      control::dock(dock_style::none);
+      post_recreate_handle();
+    }
   }
   return *this;
 }
@@ -173,7 +179,10 @@ void tool_bar::on_handle_created(const event_args& e) {
 
 void tool_bar::on_handle_destroyed(const event_args& e) {
   control::on_handle_destroyed(e);
-  if (is_system_tool_bar()) data_->system_tool_bar_item_handles.clear();
+  if (is_system_tool_bar()) {
+    native::tool_bar::set_system_tool_bar(parent().value().get().handle(), 0);
+    data_->system_tool_bar_item_handles.clear();
+  }
 }
 
 void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
