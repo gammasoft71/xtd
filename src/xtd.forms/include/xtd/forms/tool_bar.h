@@ -100,8 +100,6 @@ namespace xtd {
       xtd::forms::image_list& image_list();
       tool_bar& image_list(const xtd::forms::image_list& value);
       
-      virtual bool is_system_tool_bar() const {return data_->is_system_tool_bar;}
-      
       virtual bool show_icon() const;
       virtual tool_bar& show_icon(bool value);
       
@@ -122,6 +120,7 @@ namespace xtd {
       /// @name Protetced properties
       
       /// @{
+      virtual bool is_system_tool_bar() const;
       virtual tool_bar& is_system_tool_bar(bool value);
       /// @}
       
@@ -141,7 +140,7 @@ namespace xtd {
       void on_item_added(size_t pos, tool_bar_item_ref item);
       void on_item_updated(size_t pos, tool_bar_item_ref item);
       void on_item_removed(size_t pos, tool_bar_item_ref item);
-      
+            
       void wm_click(const message& message);
       
       struct data {

@@ -19,13 +19,15 @@ namespace xtd {
       normal = 0,
       /// @brief The toolbar and buttons appear as standard three-dimensional controls.
       flat = 1,
+      /// @brief The toolbar and buttons appear as system controls.
+      system = 2,
     };
     
     /// @cond
     
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, tool_bar_appearance value) {return os << to_string(value, {{tool_bar_appearance::normal, "normal"}, {tool_bar_appearance::flat, "flat"}});}
-    inline std::wostream& operator<<(std::wostream& os, tool_bar_appearance value) {return os << to_string(value, {{tool_bar_appearance::normal, L"normal"},{tool_bar_appearance::flat, L"flat"}});}
+    inline std::ostream& operator<<(std::ostream& os, tool_bar_appearance value) {return os << to_string(value, {{tool_bar_appearance::normal, "normal"}, {tool_bar_appearance::flat, "flat"}, {tool_bar_appearance::system, "system"}});}
+    inline std::wostream& operator<<(std::wostream& os, tool_bar_appearance value) {return os << to_string(value, {{tool_bar_appearance::normal, L"normal"},{tool_bar_appearance::flat, L"flat"},{tool_bar_appearance::system, L"system"}});}
     /// @endcond
   }
 }
