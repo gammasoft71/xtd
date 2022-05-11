@@ -22,13 +22,18 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a Windows toolbar.
+    /// @code
+    /// class forms_export_ tool_bar : public xtd::forms::control
+    /// @endcode
+    /// @par Inheritance
+    /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::tool_bar
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms  menus_and_toolbars
     /// @par Examples
-    /// The following code example demonstrates the use of tool_bar control.
+    /// The following code example demonstrates the use of xtd::forms::tool_bar control.
     /// @include tool_bar.cpp
     class forms_export_ tool_bar : public control {
       class tool_bar_button_control : public xtd::forms::button {
@@ -61,14 +66,22 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      /// @brief Initialises a new instance of tool_bar class.
+      /// @brief Initializes a new instance of the xtd::forms::tool_bar class.
+      /// @remarks A newly created toolbar control is empty; add xtd::forms::tool_bar_item controls by setting the xtd::forms::tool_bar::items property.
       tool_bar();
       /// @}
       
       /// @name Properties
       
       /// @{
+      /// @brief Gets the value that determines the appearance of a toolbar control and its buttons.
+      /// @return One of the xtd::forms::tool_bar_appearance values. The default is xtd::forms::tool_bar::appearance::normal.
+      /// @remarks The xtd::forms::tool_bar::appearance property affects the appearance of the buttons assigned to the toolbar. When the appearance is set to xtd::forms::tool_bar_appearance::normal, the toolbar's buttons appear three-dimensional and raised. Set the xtd::forms::tool_bar::appearance property of the toolbar to xtd::forms::tool_bar_ppearance::flat to give the toolbar's buttons a flat appearance. As the mouse pointer moves over the flat buttons, they appear raised and three-dimensional. Separators on a xtd::forms::tool_bar with the xtd::forms::tool_bar::appearance property set to xtd::forms::tool_bar_appearance::flat appear as etched lines rather than spaces between the raised buttons. The flat style buttons give your application a more Web-like look.
       virtual xtd::forms::tool_bar_appearance appearnce() const;
+      /// @brief Sets the value that determines the appearance of a toolbar control and its buttons.
+      /// @param value One of the xtd::forms::tool_bar_appearance values. The default is xtd::forms::tool_bar::appearance::normal.
+      /// @return Current tool_bar instance.
+      /// @remarks The xtd::forms::tool_bar::appearance property affects the appearance of the buttons assigned to the toolbar. When the appearance is set to xtd::forms::tool_bar_appearance::normal, the toolbar's buttons appear three-dimensional and raised. Set the xtd::forms::tool_bar::appearance property of the toolbar to xtd::forms::tool_bar_ppearance::flat to give the toolbar's buttons a flat appearance. As the mouse pointer moves over the flat buttons, they appear raised and three-dimensional. Separators on a xtd::forms::tool_bar with the xtd::forms::tool_bar::appearance property set to xtd::forms::tool_bar_appearance::flat appear as etched lines rather than spaces between the raised buttons. The flat style buttons give your application a more Web-like look.
       virtual tool_bar& appearnce(xtd::forms::tool_bar_appearance value);
 
       /// @brief Gets the border sides for the control.
@@ -76,6 +89,7 @@ namespace xtd {
       virtual forms::border_sides border_sides() const {return data_->border_sides;}
       /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      /// @return Current tool_bar instance.
       virtual tool_bar& border_sides(forms::border_sides border_sides);
       
       /// @brief Gets the border style for the control.
