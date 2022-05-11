@@ -13,7 +13,7 @@
 * Free and open-source ([MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md));
 * a collection of native C++ classes libraries, to complete std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
-* xtd is designed to manage GUI controls and dialog boxes in pure native mode or with [CSS styles](https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md).
+* xtd is designed to manage GUI controls and dialogs in pure native mode or with [CSS styles](https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md).
 * written in efficient, modern C++17 / C++20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
 * and [highly portable](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#operating-system-supported);
 
