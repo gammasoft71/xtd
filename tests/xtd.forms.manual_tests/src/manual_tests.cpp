@@ -10,12 +10,11 @@ namespace examples {
       text("Toolbar example");
       client_size({820, 500});
       controls().push_back_range({list_box1, tool_bar2, tool_bar1});
-      //tool_bar(tool_bar1);
+      tool_bar(tool_bar1);
       
       list_box1.dock(dock_style::fill);
       
-      tool_bar1.appearnce(xtd::forms::tool_bar_appearance::system);
-      tool_bar1.dock(dock_style::bottom);
+      tool_bar1.dock(dock_style::top);
       tool_bar1.show_text(true);
       //tool_bar1.show_icon(false);
       //tool_bar1.text_align(xtd::forms::tool_bar_text_align::right);
@@ -23,7 +22,6 @@ namespace examples {
       tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
       tool_bar1.items().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, about_tool_bar_button});
 
-      //tool_bar2.appearnce(xtd::forms::tool_bar_appearance::system);
       tool_bar2.dock(dock_style::bottom);
       tool_bar2.show_text(true);
       //tool_bar2.show_icon(false);
