@@ -61,7 +61,12 @@ namespace xtd {
       };
       
     public:
+      /// @name Alias
+      
+      /// @{
+      /// @brief Represents the base type of the xtd::forms::tool_bar::items collection.
       using tool_bar_item_collection = xtd::forms::layout::arranged_element_collection<tool_bar_item_ref>;
+      /// @}
       
       /// @name Constructors
       
@@ -107,6 +112,9 @@ namespace xtd {
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual xtd::forms::tool_bar& border_style(nullptr_t border_style);
 
+      virtual xtd::drawing::size button_size() const;
+      virtual tool_bar& button_size(const xtd::drawing::size& value);
+      
       dock_style dock() const override;
       control& dock(dock_style dock) override;
       
@@ -114,14 +122,22 @@ namespace xtd {
       xtd::forms::image_list& image_list();
       tool_bar& image_list(const xtd::forms::image_list& value);
       
+      virtual xtd::drawing::size image_size() const;
+      
+      /// @brief Gets the collection of xtd::forms::tool_bar_items controls assigned to the toolbar control.
+      /// @return A xtd::forms::tool_bar::tool_bar_item_collection that contains a collection of xtd::forms::tool_bar_item controls.
+      /// @remarks The xtd::forms::tool_bar::item property is a zero-based indexed collection used to hold all the xtd::forms::tool_bar_item controls assigned to the toolbar. Because the property is read-only, it can not be assigned a collection of toolbar buttons directly. Toolbar item can be added or removed by using the methods inherited from the xtd::forms::tool_bar::tool_bar_item_collection class. Use the xtd::forms::tool_bar::tool_bar_item_collection::push_back method to add individual items and the xtd::forms::tool_bar::tool_bar_item_collection::erase method to delete a item. Call the xtd::forms::tool_bar::tool_bar_item_collection::clear method to remove all the items from the collection.
+      const tool_bar_item_collection& items() const;
+      /// @brief Gets the collection of xtd::forms::tool_bar_items controls assigned to the toolbar control.
+      /// @return A xtd::forms::tool_bar::tool_bar_item_collection that contains a collection of xtd::forms::tool_bar_item controls.
+      /// @remarks The xtd::forms::tool_bar::item property is a zero-based indexed collection used to hold all the xtd::forms::tool_bar_item controls assigned to the toolbar. Because the property is read-only, it can not be assigned a collection of toolbar buttons directly. Toolbar item can be added or removed by using the methods inherited from the xtd::forms::tool_bar::tool_bar_item_collection class. Use the xtd::forms::tool_bar::tool_bar_item_collection::push_back method to add individual items and the xtd::forms::tool_bar::tool_bar_item_collection::erase method to delete a item. Call the xtd::forms::tool_bar::tool_bar_item_collection::clear method to remove all the items from the collection.
+      tool_bar_item_collection& items();
+
       virtual bool show_icon() const;
       virtual tool_bar& show_icon(bool value);
       
       virtual bool show_text() const;
       virtual tool_bar& show_text(bool value);
-      
-      const tool_bar_item_collection& items() const;
-      tool_bar_item_collection& items();
       
       virtual xtd::forms::tool_bar_text_align text_align() const;
       virtual tool_bar& text_align(xtd::forms::tool_bar_text_align value);
@@ -149,7 +165,6 @@ namespace xtd {
       /// @}
       
     private:
-      using control::text;
       void fill();
       
       void on_item_added(size_t pos, tool_bar_item_ref item);
@@ -162,6 +177,7 @@ namespace xtd {
         xtd::forms::tool_bar_appearance appearnce = xtd::forms::tool_bar_appearance::normal;
         forms::border_sides border_sides = forms::border_sides::all;
         std::optional<xtd::forms::border_style> border_style;
+        std::optional<xtd::drawing::size> button_size;
         xtd::forms::image_list image_list;
         tool_bar_item_collection items;
         bool is_system_tool_bar = false;
