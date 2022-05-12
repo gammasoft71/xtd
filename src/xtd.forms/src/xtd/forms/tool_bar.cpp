@@ -66,7 +66,10 @@ tool_bar::tool_bar() {
   data_->items.item_updated += {*this, &tool_bar::on_item_updated};
   data_->items.item_removed += {*this, &tool_bar::on_item_removed};
   
-  data_->image_list.image_size(environment::os_version().is_windows_platform() ? drawing::size {16, 16} : drawing::size {24, 24});
+  if (environment::os_version().is_windows_platform()) data_->image_list.image_size(drawing::size {16, 16});
+  else if (environment::os_version().is_macos_platform()) data_->image_list.image_size(drawing::size {32, 32});
+  else data_->image_list.image_size(drawing::size {24, 24});
+
   dock(xtd::forms::dock_style::top);
   padding(forms::padding {2});
   set_can_focus(false);
