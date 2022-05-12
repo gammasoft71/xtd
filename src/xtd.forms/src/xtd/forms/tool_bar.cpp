@@ -117,6 +117,23 @@ tool_bar& tool_bar::border_style(nullptr_t) {
   return *this;
 }
 
+xtd::drawing::size tool_bar::button_size() const {
+  return data_->button_size.value_or(image_size() + drawing::size(12, 12));
+}
+
+tool_bar& tool_bar::button_size(const xtd::drawing::size& value) {
+  if (!data_->button_size.has_value() || data_->button_size != value) {
+    data_->button_size = value;
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
+xtd::drawing::size tool_bar::image_size() const {
+  return data_->image_list.image_size();
+}
+
 bool tool_bar::show_icon() const {
   return data_->show_icon;
 }
@@ -229,34 +246,32 @@ void tool_bar::fill() {
         button_control->flat_style(xtd::forms::flat_style::flat);
         button_control->flat_appearance().border_size(0);
         
-        button_control->height(data_->image_list.image_size().height() + 6);
-        button_control->width(data_->image_list.image_size().width() + 6);
-        
-        if (data_->show_text == false)
+        button_control->size(button_size());
+
+        if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
+        if (data_->show_text) button_control->text(button_item.text());
+        auto text_size = button_control->measure_text();
+
+        if (data_->show_text == false) {
           button_control->image_align(content_alignment::middle_center);
-        else {
-          button_control->text(button_item.text());
-          if (data_->show_icon == false) {
-            button_control->text_align(content_alignment::middle_center);
-            button_control->width(button_control->measure_text().width() + 6);
-          } else {
-            if (data_->text_align == tool_bar_text_align::underneath) {
-              button_control->image_align(content_alignment::top_center);
-              button_control->text_align(content_alignment::bottom_center);
-              button_control->height(button_control->height() + button_control->measure_text().height());
-              if (button_control->width() < (button_control->measure_text().width() ))
-                button_control->width(button_control->measure_text().width());
-            } else {
-              button_control->image_align(content_alignment::middle_left);
-              button_control->text_align(content_alignment::middle_right);
-              button_control->width(button_control->width() + button_control->measure_text().width() - 10);
-            }
-          }
+          if (button_control->width() < image_size().width()) button_control->width(image_size().width() + 12);
+          if (button_control->height() < image_size().height()) button_control->height(image_size().height() + 12);
+        } else if (data_->show_text == true && data_->show_icon == false) {
+          button_control->text_align(content_alignment::middle_center);
+          if (button_control->width() < text_size.width()) button_control->width(text_size.width());
+          if (button_control->height() < text_size.height()) button_control->height(text_size.height());
+        } else if (data_->show_text == true && data_->show_icon == true && data_->text_align == tool_bar_text_align::right) {
+          button_control->image_align(content_alignment::middle_left);
+          button_control->text_align(content_alignment::middle_right);
+          if (button_control->width() < (image_size().width() + text_size.width())) button_control->width(image_size().width() + text_size.width());
+          if (button_control->height() < text_size.height()) button_control->height(text_size.height());
+        }  else {
+          button_control->image_align(content_alignment::top_center);
+          button_control->text_align(content_alignment::bottom_center);
+          if (button_control->width() < text_size.width()) button_control->width(text_size.width());
+          if (button_control->height() < (image_size().height() + text_size.height())) button_control->height(image_size().height() + text_size.height());
         }
-        if (data_->show_icon) {
-          if (button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
-        }
-  
+
         if (this->dock() == dock_style::top || this->dock() ==  dock_style::bottom) {
           if (height() < button_control->height()) height(button_control->height() + 4);
         } else {
@@ -271,10 +286,10 @@ void tool_bar::fill() {
       else {
         auto separator_control = std::make_shared<tool_bar_separator_control>();
         separator_control->parent(*this);
+        separator_control->height(image_size().height() / 2);
+        separator_control->width(image_size().width() / 2);
         if (dock() == dock_style::left || dock() == dock_style::right) separator_control->dock(dock_style::top);
         else separator_control->dock(dock_style::left);
-        separator_control->height(data_->image_list.image_size().height() / 2 + 4);
-        separator_control->width(data_->image_list.image_size().width() / 2 + 4);
         data_->tool_bar_items.push_back(separator_control);
       }
     }

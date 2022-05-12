@@ -376,7 +376,7 @@ namespace xtd {
       
       /// @brief Gets the height and width of the menu images.
       /// @return The size that represents the height and width of the menu images in pixels (16 x 16).
-      static xtd::drawing::size size() {return xtd::environment::os_version().is_windows_platform() ? xtd::drawing::size {16, 16} : xtd::drawing::size {32, 32};}
+      static xtd::drawing::size size() {return xtd::environment::os_version().is_windows_platform() ? xtd::drawing::size {16, 16} : xtd::drawing::size {64, 64};}
       
       /// @brief Gets image object with specified name.
       /// @param name the image name to get.
