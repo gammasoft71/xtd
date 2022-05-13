@@ -12,6 +12,7 @@ public:
     track_bar1.auto_size(false);
     track_bar1.bounds({40, 10, 200, 80});
     track_bar1.set_range(0, 100);
+    track_bar1.tick_frequency(10);
     track_bar1.value_changed += [&] {
       if (muted && track_bar1.value()) muted = false;
       if (!muted || track_bar1.value()) volume = track_bar1.value();
