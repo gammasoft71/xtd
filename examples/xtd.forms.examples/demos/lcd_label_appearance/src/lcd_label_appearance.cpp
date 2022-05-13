@@ -64,6 +64,7 @@ namespace examples {
       text("LCD label example");
       controls().push_back_range({choice_lcd_style, choice_segment_style, numeric_up_down_height, color_picker_up_down_fore_color, check_box_show_digit_background, lcd_label_label});
     }
+    
   private:
     choice choice_lcd_style;
     choice choice_segment_style;
