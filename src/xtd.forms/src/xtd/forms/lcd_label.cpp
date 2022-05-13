@@ -713,7 +713,7 @@ lcd_label& lcd_label::thickness(int32_t value) {
 
 control& lcd_label::text(const xtd::ustring& value) {
   if (text() != value) {
-    suspend_layout();
+    if (is_handle_created()) suspend_layout();
     std::wstring str = convert_string::to_wstring(value);
     if (str.size() < digits_.size()) {
       for (size_t index = digits_.size(); index < str.size(); index++) {
@@ -743,7 +743,7 @@ control& lcd_label::text(const xtd::ustring& value) {
       digits_[index]->set_character(str[index]);
     set_digits_params();
     set_text(value);
-    resume_layout();
+    if (is_handle_created()) resume_layout();
   }
   return *this;
 }
