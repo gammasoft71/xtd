@@ -181,15 +181,6 @@ namespace xtd {
         }
         
         #if defined(__WXGTK__)
-        wxRect GetClientRect() const override {
-          auto rect = control()->GetClientRect();
-          rect.x = location_.x;
-          rect.y = location_.y;
-          return rect;
-        }
-        #endif
-        
-        #if defined(__WXGTK__)
         wxPoint GetPosition() const override {
           return location_;
           return control_handler::GetPosition();
