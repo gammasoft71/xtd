@@ -103,7 +103,7 @@ control& tool_bar::tool_bar_button_control::text(const xtd::ustring& value) {
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
- button_renderer::draw_toolbar_button(style, e.graphics(), e.clip_rectangle(), state(), false, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
+  button_renderer::draw_toolbar_button(style, e.graphics(), e.clip_rectangle(), state(), false, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
   control::on_paint(e);
 }
 
