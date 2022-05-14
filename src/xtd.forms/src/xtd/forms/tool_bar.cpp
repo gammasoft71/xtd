@@ -132,7 +132,7 @@ void tool_bar::tool_bar_button_control::update_size() {
     if (size.width() < text_size.width()) size.width(text_size.width());
     if (size.height() < text_size.height()) size.height(text_size.height());
   } else if (data_->show_text == true && data_->show_icon == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
-    if (size.width() < (image_size().width() + text_size.width() + 2)) size.width(image_size().width() + text_size.width() + 2);
+    if (size.width() < (image_size().width() + text_size.width() + 4)) size.width(image_size().width() + text_size.width() + 4);
     if (size.height() < text_size.height()) size.height(text_size.height());
   }  else {
     if (size.width() < text_size.width()) size.width(text_size.width());
