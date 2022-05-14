@@ -40,8 +40,9 @@ namespace xtd {
       public:
         tool_bar_button_control();
         
+        xtd::drawing::color default_fore_color() const override;
         xtd::drawing::font default_font() const override;
-        
+
         xtd::drawing::size image_size() const;
         
         xtd::drawing::size size() const override;
