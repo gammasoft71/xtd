@@ -72,9 +72,20 @@ intptr_t system_fonts::small_caption_font() {
 
 intptr_t system_fonts::status_font() {
   toolkit::initialize(); // Must be first
-  #if defined(__APPLE__)
+#if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
-  #else
+#else
   return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
-  #endif
+#endif
+}
+
+intptr_t system_fonts::toolbar_font() {
+  toolkit::initialize(); // Must be first
+#if defined(__APPLE__)
+  auto font = new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL);
+  font->SetPointSize(20);
+  return reinterpret_cast<intptr_t>(font);
+#else
+  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+#endif
 }

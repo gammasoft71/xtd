@@ -73,6 +73,11 @@ namespace xtd {
         /// @return A font handle that is used to display text in the status bar.
         /// @warning Internal use only
         static intptr_t status_font();
+        
+        /// @brief Gets a font that is used to display text in the tool bar.
+        /// @return A font handle that is used to display text in the tool bar.
+        /// @warning Internal use only
+        static intptr_t toolbar_font();
         /// @}
       };
     }

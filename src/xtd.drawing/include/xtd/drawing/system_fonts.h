@@ -68,6 +68,10 @@ namespace xtd {
       /// @brief Gets a xtd::drawing::font that is used to display text in the status bar.
       /// @return A xtd::drawing::font that is used to display text in the status bar.
       static xtd::drawing::font status_font();
+      
+      /// @brief Gets a xtd::drawing::font that is used to display text in the tool bar.
+      /// @return A xtd::drawing::font that is used to display text in the tool bar.
+      static xtd::drawing::font toolbar_font();
       /// @}
     };
   }

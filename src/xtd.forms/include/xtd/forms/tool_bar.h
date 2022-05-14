@@ -40,17 +40,45 @@ namespace xtd {
       public:
         tool_bar_button_control();
         
-        void tool_bar_item(tool_bar_item_ref value) {tool_bar_item_ = value;}
+        xtd::drawing::font default_font() const override;
         
+        xtd::drawing::size image_size() const;
+        
+        xtd::drawing::size size() const override;
+        control& size(const xtd::drawing::size& value) override;
+        
+        using xtd::forms::button_base::image;
+        button_base& image(const xtd::drawing::image& value) override;
+        void show_icon(bool value);
+        void show_text(bool value);
+        using xtd::forms::button_base::text_align;
+        using xtd::forms::control::text;
+        control& text(const xtd::ustring& value) override;
+        void tool_bar_text_align(xtd::forms::tool_bar_text_align value);
+        void tool_bar_item(tool_bar_item_ref value) {data_->tool_bar_item = value;}
+
       protected:
+        
         void on_click(const xtd::event_args& e) override {
           xtd::forms::button::on_click(e);
-          if (tool_bar_item_.has_value()) tool_bar_item_.value().get().perform_click();
+          if (data_->tool_bar_item.has_value()) data_->tool_bar_item.value().get().perform_click();
         }
-        
+        void on_paint(paint_event_args& e) override;
+
       private:
         friend tool_bar;
-        std::optional<tool_bar_item_ref> tool_bar_item_;
+        
+        void update_layout();
+        void update_size();
+
+        struct data {
+          std::optional<tool_bar_item_ref> tool_bar_item;
+          bool show_icon = true;
+          bool show_text = false;
+          xtd::forms::tool_bar_text_align tool_bar_text_align = xtd::forms::tool_bar_text_align::underneath;
+        };
+        
+        std::shared_ptr<data> data_ = std::make_shared<data>();
       };
       
       class tool_bar_separator_control : public xtd::forms::control {

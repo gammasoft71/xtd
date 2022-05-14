@@ -37,3 +37,7 @@ font system_fonts::small_caption_font() {
 font system_fonts::status_font() {
   return font(native::system_fonts::status_font());
 }
+
+font system_fonts::toolbar_font() {
+  return font(native::system_fonts::toolbar_font());
+}
