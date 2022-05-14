@@ -6,6 +6,7 @@
 #include <xtd/forms/native/tool_bar_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
+#include "../../../include/xtd/forms/button_renderer.h"
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/tool_bar.h"
 #include "../../../include/xtd/forms/tool_bar_renderer.h"
@@ -33,9 +34,111 @@ namespace {
 
 tool_bar::tool_bar_button_control::tool_bar_button_control() {
   set_can_focus(false);
-  auto current_font = font();
-  current_font = drawing::font(current_font, 8.5);
-  font(current_font);
+  flat_style(xtd::forms::flat_style::flat);
+  flat_appearance().border_size(0);
+}
+
+xtd::drawing::font tool_bar::tool_bar_button_control::default_font() const {
+  return xtd::drawing::system_fonts::toolbar_font();
+}
+
+button_base& tool_bar::tool_bar_button_control::image(const xtd::drawing::image& value) {
+  if (image() != value) {
+    button_base::image(value);
+    update_size();
+    update_layout();
+  }
+  return *this;
+}
+
+xtd::drawing::size tool_bar::tool_bar_button_control::image_size() const {
+  if (image() == drawing::image::empty) return {};
+  return image().size();
+}
+
+xtd::drawing::size tool_bar::tool_bar_button_control::size() const {
+  return control::size();
+}
+
+control& tool_bar::tool_bar_button_control::size(const xtd::drawing::size& value) {
+  if (size() != value) {
+    control::size(value);
+    update_size();
+    update_layout();
+  }
+  return *this;
+}
+
+void tool_bar::tool_bar_button_control::show_icon(bool value) {
+  if (data_->show_icon != value) {
+    data_->show_icon = value;
+    update_size();
+    update_layout();
+  }
+}
+void tool_bar::tool_bar_button_control::show_text(bool value) {
+  if (data_->show_text != value) {
+    data_->show_text = value;
+    update_size();
+    update_layout();
+  }
+}
+
+void tool_bar::tool_bar_button_control::tool_bar_text_align(xtd::forms::tool_bar_text_align value) {
+  if (data_->tool_bar_text_align != value) {
+    data_->tool_bar_text_align = value;
+    update_size();
+    update_layout();
+  }
+}
+
+control& tool_bar::tool_bar_button_control::text(const xtd::ustring& value) {
+  if (text() != value) {
+    button_base::text(value);
+    update_size();
+    update_layout();
+  }
+  return *this;
+}
+
+void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+ button_renderer::draw_toolbar_button(style, e.graphics(), e.clip_rectangle(), state(), false, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
+  control::on_paint(e);
+}
+
+void tool_bar::tool_bar_button_control::update_layout() {
+  if (data_->show_text == false) {
+    image_align(content_alignment::middle_center);
+  } else if (data_->show_text == true && data_->show_icon == false) {
+    text_align(content_alignment::middle_center);
+  } else if (data_->show_text == true && data_->show_icon == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
+    image_align(content_alignment::middle_left);
+    text_align(content_alignment::middle_left);
+  }  else {
+    image_align(content_alignment::top_center);
+    text_align(content_alignment::bottom_center);
+  }
+}
+
+void tool_bar::tool_bar_button_control::update_size() {
+  auto size = this->size();
+  auto text_size = measure_text();
+  
+  if (data_->show_text == false) {
+    if (size.width() < image_size().width()) size.width(image_size().width() + 12);
+    if (size.height() < image_size().height()) size.height(image_size().height() + 12);
+  } else if (data_->show_text == true && data_->show_icon == false) {
+    if (size.width() < text_size.width()) size.width(text_size.width());
+    if (size.height() < text_size.height()) size.height(text_size.height());
+  } else if (data_->show_text == true && data_->show_icon == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
+    if (size.width() < (image_size().width() + text_size.width() + 2)) size.width(image_size().width() + text_size.width() + 2);
+    if (size.height() < text_size.height()) size.height(text_size.height());
+  }  else {
+    if (size.width() < text_size.width()) size.width(text_size.width());
+    if (size.height() < (image_size().height() + text_size.height() + 6)) size.height(image_size().height() + text_size.height() + 6);
+  }
+  this->size(size);
 }
 
 tool_bar::tool_bar_separator_control::tool_bar_separator_control() {
@@ -246,34 +349,13 @@ void tool_bar::fill() {
         button_control->tool_bar_item(button_item);
         if (dock() == dock_style::left || dock() == dock_style::right) button_control->dock(dock_style::top);
         else button_control->dock(dock_style::left);
-        button_control->flat_style(xtd::forms::flat_style::flat);
-        button_control->flat_appearance().border_size(0);
-        
+        button_control->show_icon(data_->show_icon);
+        button_control->show_text(data_->show_text);
         button_control->size(button_size());
+        button_control->tool_bar_text_align(data_->text_align);
 
         if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
         if (data_->show_text) button_control->text(button_item.text());
-        auto text_size = button_control->measure_text();
-
-        if (data_->show_text == false) {
-          button_control->image_align(content_alignment::middle_center);
-          if (button_control->width() < image_size().width()) button_control->width(image_size().width() + 12);
-          if (button_control->height() < image_size().height()) button_control->height(image_size().height() + 12);
-        } else if (data_->show_text == true && data_->show_icon == false) {
-          button_control->text_align(content_alignment::middle_center);
-          if (button_control->width() < text_size.width()) button_control->width(text_size.width());
-          if (button_control->height() < text_size.height()) button_control->height(text_size.height());
-        } else if (data_->show_text == true && data_->show_icon == true && data_->text_align == tool_bar_text_align::right) {
-          button_control->image_align(content_alignment::middle_left);
-          button_control->text_align(content_alignment::middle_right);
-          if (button_control->width() < (image_size().width() + text_size.width())) button_control->width(image_size().width() + text_size.width());
-          if (button_control->height() < text_size.height()) button_control->height(text_size.height());
-        }  else {
-          button_control->image_align(content_alignment::top_center);
-          button_control->text_align(content_alignment::bottom_center);
-          if (button_control->width() < text_size.width()) button_control->width(text_size.width());
-          if (button_control->height() < (image_size().height() + text_size.height())) button_control->height(image_size().height() + text_size.height());
-        }
 
         if (this->dock() == dock_style::top || this->dock() ==  dock_style::bottom) {
           if (height() < button_control->height()) height(button_control->height() + 4);
