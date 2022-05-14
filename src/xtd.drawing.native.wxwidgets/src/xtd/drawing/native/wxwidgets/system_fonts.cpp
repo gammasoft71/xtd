@@ -83,7 +83,6 @@ intptr_t system_fonts::toolbar_font() {
   toolkit::initialize(); // Must be first
 #if defined(__APPLE__)
   auto font = new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL);
-  font->SetPointSize(20);
   return reinterpret_cast<intptr_t>(font);
 #else
   return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));

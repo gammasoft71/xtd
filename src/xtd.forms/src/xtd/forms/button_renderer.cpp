@@ -176,7 +176,7 @@ void button_renderer::draw_toolbar_button(const style_sheets::style_sheet& style
   auto content_rectangle = current_style_sheet.get_content_rectangle(bounds);
   image_renderer::draw_image(graphics, content_rectangle, image, button_state != push_button_state::disabled, current_style_sheet.get_solid_background_color(), current_style_sheet);
   if (current_style_sheet.text_alignment() == content_alignment::middle_left && image != drawing::image::empty)
-    content_rectangle = rectangle::offset(content_rectangle, drawing::point(image.size().width() + 2, 0));
+    content_rectangle = rectangle::offset(content_rectangle, drawing::point(image.size().width() + 4, 0));
   text_renderer::draw_text(graphics, content_rectangle, text, current_style_sheet);
 }
 
