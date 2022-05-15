@@ -55,6 +55,12 @@ namespace xtd {
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
       static std::string get_desktop_environment();
+      /// @brief Gets the desktop theme name.
+      /// @return std::string A string containing desktop theme name.
+      /// @remarks Returns a string, such as "Adwaita", "Breeze", "windows dark", "macos dark", ...
+      /// @remarks Return "" if not found or defined.
+      /// @warning Internal use only
+      static std::string get_desktop_theme();
       /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
       /// @param target The environment variable target (see environment_variable_target.h file).
       /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
