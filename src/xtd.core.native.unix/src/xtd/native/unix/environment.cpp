@@ -66,7 +66,7 @@ std::string environment::get_desktop_theme() {
   return unix::strings::contains(create_process("defaults read -g AppleInterfaceStyle"), "Dark" ) ? "macos dark" : "macos";
 #else
   auto current_theme = create_process("gsettings get org.gnome.desktop.interface gtk-theme");
-  if (!current_theme.emepty())
+  if (!current_theme.empty())
     current_theme = unix::strings::substring(current_theme, 1, current_theme.size() - 2);
   return current_theme;
 #endif
