@@ -34,6 +34,12 @@ std::string environment::get_desktop_environment() {
   return "windows";
 }
 
+std::string environment::get_desktop_theme() {
+  auto light_theme = true;
+  // @todo read registry key "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\\AppsUseLightTheme"
+  return light_theme ? "windows" : "windows dark";
+}
+
 std::string environment::get_environment_variable(const std::string& variable) {
   /// @todo Use GetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getenvironmentvariable
   auto value = getenv(variable.c_str());

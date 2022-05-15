@@ -54,9 +54,21 @@ namespace xtd {
     /// @param version A Version object that indicates the version of the operating system.
     /// @param service_pack A string, such as "Service Pack 3", that represent the service pack. If no Service Pack has been installed, the string must be empty.
     /// @param desktop_environment A string, such as "gnome", "kde", "windows", "macos".
+    /// @param desktop_theme A string, such as "Adwaita", "Breeze", "windows dark", "macos dark", ...
     /// @exception ArgumentNullException version is null.
     /// @exception ArgumentException platform is not a xtd::platform_id enumeration value.
-    operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::ustring& service_pack, const xtd::ustring& desktop_environment, bool is_64_bit) : platform_(platform), version_(version), service_pack_(service_pack), desktop_environment_(desktop_environment), is_64_bit_(is_64_bit) {}
+    operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::ustring& service_pack, const xtd::ustring& desktop_environment, const xtd::ustring& desktop_theme) : platform_(platform), version_(version), service_pack_(service_pack), desktop_environment_(desktop_environment), desktop_theme_(desktop_theme) {}
+    
+    /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
+    /// @param platform One of the xtd::platform_id values that indicates the operating system platform.
+    /// @param version A Version object that indicates the version of the operating system.
+    /// @param service_pack A string, such as "Service Pack 3", that represent the service pack. If no Service Pack has been installed, the string must be empty.
+    /// @param desktop_environment A string, such as "gnome", "kde", "windows", "macos".
+    /// @param desktop_theme A string, such as "Adwaita", "Breeze", "windows dark", "macos dark", ...
+    /// @param is_64_bit True if Operating System is 64 bits; otherwise false.
+    /// @exception ArgumentNullException version is null.
+    /// @exception ArgumentException platform is not a xtd::platform_id enumeration value.
+    operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::ustring& service_pack, const xtd::ustring& desktop_environment, const xtd::ustring& desktop_theme, bool is_64_bit) : platform_(platform), version_(version), service_pack_(service_pack), desktop_environment_(desktop_environment), desktop_theme_(desktop_theme), is_64_bit_(is_64_bit) {}
     /// @}
     
     /// @cond
@@ -69,12 +81,19 @@ namespace xtd {
     /// @name Properties
     
     /// @{
-    /// @brief Gets the desktop environment .
+    /// @brief Gets the desktop environment.
     /// @return string The desktop environment for the operating system, if not found empty string ("").
     /// @remarks On Windows is always "windows".
     /// @remarks On macOS is always "macos".
     /// @remarks On linux it can be "budgie", "cinnamon",  "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor-qt", "unity", "xfce".
     xtd::ustring desktop_environment() const {return desktop_environment_;}
+    
+    /// @brief Gets the desktop theme.
+    /// @return string The desktop theme for the operating system, if not found empty string ("").
+    /// @remarks On Windows is "windows" or "windows dark".
+    /// @remarks On macOS is "macos" or 'macos dark'.
+    /// @remarks On linux it can be "Adwaita", "Adwaita-dark",  "Breeze", "Breeze-Dark", "Yaru", "Yaru-dark", "Yaru-light", ...
+    xtd::ustring desktop_theme() const {return desktop_theme_;}
     
     /// @brief Gets the concatenated string representation of the platform identifier.
     /// @return The string representation of the values returned by the platform.
@@ -175,6 +194,7 @@ namespace xtd {
     xtd::version version_;
     xtd::ustring service_pack_;
     xtd::ustring desktop_environment_;
+    xtd::ustring desktop_theme_;
     bool is_64_bit_ = false;
     mutable xtd::ustring version_string_;
   };

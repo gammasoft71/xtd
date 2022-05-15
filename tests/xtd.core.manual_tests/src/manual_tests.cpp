@@ -18,6 +18,9 @@ public:
   static void main() {
     console::write_line("Hello, World!");
     console::write_line("processor_count = {}", environment::processor_count());
+    console::write_line("os = {}", environment::os_version().name());
+    console::write_line("desktop = {}", environment::os_version().desktop_environment());
+    console::write_line("theme = {}", environment::os_version().desktop_theme());
   }
 };
 

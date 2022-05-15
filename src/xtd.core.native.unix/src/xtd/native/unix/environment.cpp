@@ -61,6 +61,17 @@ std::string environment::get_desktop_environment() {
   #endif
 }
 
+std::string environment::get_desktop_theme() {
+#if defined(__APPLE__)
+  return unix::strings::contains(create_process("defaults read -g AppleInterfaceStyle"), "Dark" ) ? "macos dark" : "macos";
+#else
+  auto current_theme = create_process("gsettings get org.gnome.desktop.interface gtk-theme");
+  if (!current_theme.emepty())
+    current_theme = unix::strings::substring(current_theme, 1, current_theme.size() - 2);
+  return current_theme;
+#endif
+}
+
 std::string environment::get_environment_variable(const std::string& variable) {
   auto value = getenv(variable.c_str());
   return value ? value : "";

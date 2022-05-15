@@ -92,7 +92,7 @@ xtd::operating_system environment::os_version() {
     native::environment::get_os_version(major, minor, build, revision);
     xtd::version version;
     version = xtd::version(major, minor, build, revision);
-    os = operating_system(static_cast<platform_id>(native::environment::get_os_platform_id()), version, native::environment::get_service_pack(), native::environment::get_desktop_environment(), native::environment::is_os_64_bit());
+    os = operating_system(static_cast<platform_id>(native::environment::get_os_platform_id()), version, native::environment::get_service_pack(), native::environment::get_desktop_environment(), native::environment::get_desktop_theme(), native::environment::is_os_64_bit());
   }
   return os;
 }
