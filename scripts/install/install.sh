@@ -57,12 +57,12 @@ pushd wxwidgets/build_cmake
 mkdir Debug && mkdir Release
 pushd Release
 cmake ../.. -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF
-cmake --build . -- -j$(build_cores)
+cmake --build . -- -j$build_cores
 sudo cmake --build . --target install
 popd
 pushd Debug
 cmake ../.. -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
-cmake --build . -- -j(build_cores)
+cmake --build . -- -j$build_cores
 sudo cmake --build . --target install
 popd
 popd
@@ -75,12 +75,12 @@ pushd build
 mkdir Release && mkdir Debug
 pushd Release
 cmake ../..  -DCMAKE_BUILD_TYPE=Release "$@"
-cmake --build . -- -j(build_cores)
+cmake --build . -- -j$build_cores
 sudo cmake --build . --target install
 popd
 pushd Debug
 cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
-cmake --build . -- -j(build_cores)
+cmake --build . -- -j$build_cores
 sudo cmake --build . --target install
 popd
 popd
