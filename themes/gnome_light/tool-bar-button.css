@@ -3,7 +3,7 @@
 
 tool-bar-button {
   border-style: solid;
-  border-color: system-color(control-text);
+  border-color: system-color(control);
   border-width: 1px;
   border-radius: 4px;
   background-color: system-color(control);
@@ -12,19 +12,21 @@ tool-bar-button {
 }
 
 tool-bar-button:hover {
-  background-color: #CCCCCA;
+  border-color: #CCCCCA;
 }
 
 tool-bar-button:pressed {
-  background-color: system-color(control);
+  border-color: #CCCCCA;
+  background-color: #CCCCCA;
 }
 
 tool-bar-button:checked {
-  background-color: system-color(control);
+  border-color: #CCCCCA;
+  background-color: #CCCCCA;
 }
 
 tool-bar-button:disabled {  
-  border-color: system-color(gray-text);
+  border-color: #FAF9F8;
   background-color: #FAF9F8;
   color: system-color(gray-text);
 }
