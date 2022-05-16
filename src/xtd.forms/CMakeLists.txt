@@ -262,9 +262,9 @@ add_sources(
   include/xtd/forms/tool_bar_images.h
   include/xtd/forms/tool_bar_button.h
   include/xtd/forms/tool_bar_button_style.h
-  include/xtd/forms/tool_bar_item.h
   include/xtd/forms/tool_bar_separator.h
   include/xtd/forms/tool_bar_text_align.h
+  include/xtd/forms/tool_bar_toggle_button.h
   include/xtd/forms/trace_form.h
   include/xtd/forms/trace_form_base.h
   include/xtd/forms/trace_message_box.h
@@ -432,7 +432,6 @@ add_sources(
   src/xtd/forms/tool_bar_renderer.cpp
   src/xtd/forms/tool_bar_button.cpp
   src/xtd/forms/tool_bar_button_renderer.cpp
-  src/xtd/forms/tool_bar_separator.cpp
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp
   src/xtd/forms/up_down_button.cpp

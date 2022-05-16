@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::tool_bar_separator container.
+/// @brief Contains xtd::forms::tool_bar_toggle_button container.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "tool_bar_button.h"
@@ -11,20 +11,20 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a toolbar separator button.
+    /// @brief Represents a toolbar toggle button.
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms  menus_and_toolbars
-    class forms_export_ tool_bar_separator : public tool_bar_button {
+    class forms_export_ tool_bar_toggle_button : public tool_bar_button {
     public:
       /// @name Constructors
       
       /// @{
-      /// @brief Initialises a new instance of xtd::forms::tool_bar_separator class.
-      tool_bar_separator() {
-        style(xtd::forms::tool_bar_button_style::separator);
+      /// @brief Initialises a new instance of xtd::forms::tool_bar_toggle_button class.
+      tool_bar_toggle_button() {
+        style(xtd::forms::tool_bar_button_style::toggle_button);
       }
       /// @}
 
