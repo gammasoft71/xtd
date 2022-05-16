@@ -257,6 +257,7 @@ add_sources(
   include/xtd/forms/toggle_buttons.h
   include/xtd/forms/tool_bar.h
   include/xtd/forms/tool_bar_appearance.h
+  include/xtd/forms/tool_bar_button_renderer.h
   include/xtd/forms/tool_bar_renderer.h
   include/xtd/forms/tool_bar_images.h
   include/xtd/forms/tool_bar_button.h
@@ -429,6 +430,7 @@ add_sources(
   src/xtd/forms/tool_bar.cpp
   src/xtd/forms/tool_bar_renderer.cpp
   src/xtd/forms/tool_bar_button.cpp
+  src/xtd/forms/tool_bar_button_renderer.cpp
   src/xtd/forms/tool_bar_separator.cpp
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp
