@@ -41,43 +41,43 @@ style_sheet::style_sheet(const ustring& css_text) : style_sheet(css_text, true) 
 style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   if (init_system) *this = system_style_sheet();
   else {
-    system_colors_.accent(drawing::system_colors::accent());
-    system_colors_.accent_text(drawing::system_colors::accent_text());
-    system_colors_.active_border(drawing::system_colors::active_border());
-    system_colors_.active_caption(drawing::system_colors::active_caption());
-    system_colors_.active_caption_text(drawing::system_colors::active_caption_text());
-    system_colors_.app_workspace(drawing::system_colors::app_workspace());
-    system_colors_.button_face(drawing::system_colors::button_face());
-    system_colors_.button_highlight(drawing::system_colors::button_highlight());
-    system_colors_.button_shadow(drawing::system_colors::button_shadow());
-    system_colors_.control(drawing::system_colors::control());
-    system_colors_.control_dark(drawing::system_colors::control_dark());
-    system_colors_.control_dark_dark(drawing::system_colors::control_dark_dark());
-    system_colors_.control_light(drawing::system_colors::control_light());
-    system_colors_.control_light_light(drawing::system_colors::control_light_light());
-    system_colors_.control_text(drawing::system_colors::control_text());
-    system_colors_.desktop(drawing::system_colors::desktop());
-    system_colors_.gradient_active_caption(drawing::system_colors::gradient_active_caption());
-    system_colors_.gradient_inactive_caption(drawing::system_colors::gradient_inactive_caption());
-    system_colors_.gray_text(drawing::system_colors::gray_text());
-    system_colors_.highlight(drawing::system_colors::highlight());
-    system_colors_.highlight_text(drawing::system_colors::highlight_text());
-    system_colors_.hot_track(drawing::system_colors::hot_track());
-    system_colors_.inactive_border(drawing::system_colors::inactive_border());
-    system_colors_.inactive_caption(drawing::system_colors::inactive_caption());
-    system_colors_.inactive_caption_text(drawing::system_colors::inactive_caption_text());
-    system_colors_.info(drawing::system_colors::info());
-    system_colors_.info_text(drawing::system_colors::info_text());
-    system_colors_.menu(drawing::system_colors::menu());
-    system_colors_.menu_bar(drawing::system_colors::menu_bar());
-    system_colors_.menu_highlight(drawing::system_colors::menu_highlight());
-    system_colors_.menu_text(drawing::system_colors::menu_text());
-    system_colors_.scroll_bar(drawing::system_colors::scroll_bar());
-    system_colors_.text_box(drawing::system_colors::text_box());
-    system_colors_.text_box_text(drawing::system_colors::text_box_text());
-    system_colors_.window(drawing::system_colors::window());
-    system_colors_.window_frame(drawing::system_colors::window_frame());
-    system_colors_.window_text(drawing::system_colors::window_text());
+    data_->system_colors.accent(drawing::system_colors::accent());
+    data_->system_colors.accent_text(drawing::system_colors::accent_text());
+    data_->system_colors.active_border(drawing::system_colors::active_border());
+    data_->system_colors.active_caption(drawing::system_colors::active_caption());
+    data_->system_colors.active_caption_text(drawing::system_colors::active_caption_text());
+    data_->system_colors.app_workspace(drawing::system_colors::app_workspace());
+    data_->system_colors.button_face(drawing::system_colors::button_face());
+    data_->system_colors.button_highlight(drawing::system_colors::button_highlight());
+    data_->system_colors.button_shadow(drawing::system_colors::button_shadow());
+    data_->system_colors.control(drawing::system_colors::control());
+    data_->system_colors.control_dark(drawing::system_colors::control_dark());
+    data_->system_colors.control_dark_dark(drawing::system_colors::control_dark_dark());
+    data_->system_colors.control_light(drawing::system_colors::control_light());
+    data_->system_colors.control_light_light(drawing::system_colors::control_light_light());
+    data_->system_colors.control_text(drawing::system_colors::control_text());
+    data_->system_colors.desktop(drawing::system_colors::desktop());
+    data_->system_colors.gradient_active_caption(drawing::system_colors::gradient_active_caption());
+    data_->system_colors.gradient_inactive_caption(drawing::system_colors::gradient_inactive_caption());
+    data_->system_colors.gray_text(drawing::system_colors::gray_text());
+    data_->system_colors.highlight(drawing::system_colors::highlight());
+    data_->system_colors.highlight_text(drawing::system_colors::highlight_text());
+    data_->system_colors.hot_track(drawing::system_colors::hot_track());
+    data_->system_colors.inactive_border(drawing::system_colors::inactive_border());
+    data_->system_colors.inactive_caption(drawing::system_colors::inactive_caption());
+    data_->system_colors.inactive_caption_text(drawing::system_colors::inactive_caption_text());
+    data_->system_colors.info(drawing::system_colors::info());
+    data_->system_colors.info_text(drawing::system_colors::info_text());
+    data_->system_colors.menu(drawing::system_colors::menu());
+    data_->system_colors.menu_bar(drawing::system_colors::menu_bar());
+    data_->system_colors.menu_highlight(drawing::system_colors::menu_highlight());
+    data_->system_colors.menu_text(drawing::system_colors::menu_text());
+    data_->system_colors.scroll_bar(drawing::system_colors::scroll_bar());
+    data_->system_colors.text_box(drawing::system_colors::text_box());
+    data_->system_colors.text_box_text(drawing::system_colors::text_box_text());
+    data_->system_colors.window(drawing::system_colors::window());
+    data_->system_colors.window_frame(drawing::system_colors::window_frame());
+    data_->system_colors.window_text(drawing::system_colors::window_text());
   }
   css_reader reader(css_text);
   theme_reader(reader);
@@ -101,11 +101,11 @@ xtd::forms::style_sheets::button style_sheet::button() const noexcept {
 }
 
 xtd::forms::style_sheets::button style_sheet::button(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::button>(buttons_, state);
+  return get_state_control<xtd::forms::style_sheets::button>(data_->buttons, state);
 }
 
 const style_sheet::buttons_t& style_sheet::buttons() const noexcept {
-  return buttons_;
+  return data_->buttons;
 }
 
 xtd::forms::style_sheets::control style_sheet::control() const noexcept {
@@ -113,11 +113,11 @@ xtd::forms::style_sheets::control style_sheet::control() const noexcept {
 }
 
 xtd::forms::style_sheets::control style_sheet::control(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::control>(controls_, state);
+  return get_state_control<xtd::forms::style_sheets::control>(data_->controls, state);
 }
 
 const style_sheet::controls_t& style_sheet::controls() const noexcept {
-  return controls_;
+  return data_->controls;
 }
 
 const style_sheet& style_sheet::current_style_sheet() noexcept {
@@ -138,11 +138,11 @@ xtd::forms::style_sheets::button style_sheet::flat_button() const noexcept {
 }
 
 xtd::forms::style_sheets::button style_sheet::flat_button(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::button>(flat_buttons_, state);
+  return get_state_control<xtd::forms::style_sheets::button>(data_->flat_buttons, state);
 }
 
 const style_sheet::buttons_t& style_sheet::flat_buttons() const noexcept {
-  return flat_buttons_;
+  return data_->flat_buttons;
 }
 
 xtd::forms::style_sheets::toggle_button style_sheet::flat_toggle_button() const noexcept {
@@ -150,11 +150,11 @@ xtd::forms::style_sheets::toggle_button style_sheet::flat_toggle_button() const 
 }
 
 xtd::forms::style_sheets::toggle_button style_sheet::flat_toggle_button(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::toggle_button>(flat_toggle_buttons_, state);
+  return get_state_control<xtd::forms::style_sheets::toggle_button>(data_->flat_toggle_buttons, state);
 }
 
 const style_sheet::buttons_t& style_sheet::flat_toggle_buttons() const noexcept {
-  return flat_toggle_buttons_;
+  return data_->flat_toggle_buttons;
 }
 
 xtd::forms::style_sheets::form style_sheet::form() const noexcept {
@@ -162,11 +162,11 @@ xtd::forms::style_sheets::form style_sheet::form() const noexcept {
 }
 
 xtd::forms::style_sheets::form style_sheet::form(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::form>(forms_, state);
+  return get_state_control<xtd::forms::style_sheets::form>(data_->forms, state);
 }
 
 const style_sheet::forms_t& style_sheet::forms() const noexcept {
-  return forms_;
+  return data_->forms;
 }
 
 bool style_sheet::is_system_style_sheet() const noexcept {
@@ -178,11 +178,11 @@ xtd::forms::style_sheets::label style_sheet::label() const noexcept {
 }
 
 xtd::forms::style_sheets::label style_sheet::label(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::label>(labels_, state);
+  return get_state_control<xtd::forms::style_sheets::label>(data_->labels, state);
 }
 
 const style_sheet::labels_t& style_sheet::labels() const noexcept {
-  return labels_;
+  return data_->labels;
 }
 
 xtd::forms::style_sheets::panel style_sheet::panel() const noexcept {
@@ -190,11 +190,11 @@ xtd::forms::style_sheets::panel style_sheet::panel() const noexcept {
 }
 
 xtd::forms::style_sheets::panel style_sheet::panel(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::panel>(panels_, state);
+  return get_state_control<xtd::forms::style_sheets::panel>(data_->panels, state);
 }
 
 const style_sheet::panels_t& style_sheet::panels() const noexcept {
-  return panels_;
+  return data_->panels;
 }
 
 xtd::forms::style_sheets::button style_sheet::popup_button() const noexcept {
@@ -202,11 +202,11 @@ xtd::forms::style_sheets::button style_sheet::popup_button() const noexcept {
 }
 
 xtd::forms::style_sheets::button style_sheet::popup_button(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::button>(popup_buttons_, state);
+  return get_state_control<xtd::forms::style_sheets::button>(data_->popup_buttons, state);
 }
 
 const style_sheet::buttons_t& style_sheet::popup_buttons() const noexcept {
-  return popup_buttons_;
+  return data_->popup_buttons;
 }
 
 xtd::forms::style_sheets::toggle_button style_sheet::popup_toggle_button() const noexcept {
@@ -214,11 +214,11 @@ xtd::forms::style_sheets::toggle_button style_sheet::popup_toggle_button() const
 }
 
 xtd::forms::style_sheets::toggle_button style_sheet::popup_toggle_button(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::button>(popup_toggle_buttons_, state);
+  return get_state_control<xtd::forms::style_sheets::button>(data_->popup_toggle_buttons, state);
 }
 
 const style_sheet::buttons_t& style_sheet::popup_toggle_buttons() const noexcept {
-  return popup_toggle_buttons_;
+  return data_->popup_toggle_buttons;
 }
 
 const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
@@ -250,7 +250,7 @@ const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcep
 }
 
 const xtd::forms::style_sheets::system_colors& style_sheet::system_colors()const noexcept {
-  return system_colors_;
+  return data_->system_colors;
 }
 
 const style_sheet& style_sheet::system_style_sheet() noexcept {
@@ -268,7 +268,7 @@ const style_sheet& style_sheet::system_style_sheet() noexcept {
 }
 
 const xtd::forms::style_sheets::theme& style_sheet::theme() const noexcept {
-  return theme_;
+  return data_->theme;
 }
 
 xtd::forms::style_sheets::toggle_button style_sheet::toggle_button() const noexcept {
@@ -276,11 +276,11 @@ xtd::forms::style_sheets::toggle_button style_sheet::toggle_button() const noexc
 }
 
 xtd::forms::style_sheets::toggle_button style_sheet::toggle_button(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::toggle_button>(toggle_buttons_, state);
+  return get_state_control<xtd::forms::style_sheets::toggle_button>(data_->toggle_buttons, state);
 }
 
 const style_sheet::toggle_buttons_t& style_sheet::toggle_buttons() const noexcept {
-  return toggle_buttons_;
+  return data_->toggle_buttons;
 }
 
 xtd::forms::style_sheets::tool_bar style_sheet::tool_bar() const noexcept {
@@ -288,11 +288,11 @@ xtd::forms::style_sheets::tool_bar style_sheet::tool_bar() const noexcept {
 }
 
 xtd::forms::style_sheets::tool_bar style_sheet::tool_bar(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::tool_bar>(tool_bars_, state);
+  return get_state_control<xtd::forms::style_sheets::tool_bar>(data_->tool_bars, state);
 }
 
 const style_sheet::tool_bars_t& style_sheet::tool_bars() const noexcept {
-  return tool_bars_;
+  return data_->tool_bars;
 }
 
 xtd::forms::style_sheets::user_control style_sheet::user_control() const noexcept {
@@ -300,11 +300,11 @@ xtd::forms::style_sheets::user_control style_sheet::user_control() const noexcep
 }
 
 xtd::forms::style_sheets::user_control style_sheet::user_control(pseudo_state state) const noexcept {
-  return get_state_control<xtd::forms::style_sheets::user_control>(user_controls_, state);
+  return get_state_control<xtd::forms::style_sheets::user_control>(data_->user_controls, state);
 }
 
 const style_sheet::user_controls_t& style_sheet::user_controls() const noexcept {
-  return user_controls_;
+  return data_->user_controls;
 }
 
 bool style_sheet::equals(const object& other) const noexcept {
@@ -312,7 +312,7 @@ bool style_sheet::equals(const object& other) const noexcept {
 }
 
 bool style_sheet::equals(const style_sheet& other) const noexcept {
-  return theme_ == other.theme_;
+  return data_->theme == other.data_->theme;
 }
 
 style_sheet::buttons_t style_sheet::button_from_css(const  xtd::ustring& css_text) {
@@ -637,9 +637,9 @@ void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
     for (auto state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
       if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) buttons_[button.second] = xtd::forms::style_sheets::button();
-      if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) buttons_[button.second | state.second] = buttons_[button.second];
-      if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, buttons_[button.second | state.second]);
+      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->buttons[button.second] = xtd::forms::style_sheets::button();
+      if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->buttons[button.second | state.second] = data_->buttons[button.second];
+      if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->buttons[button.second | state.second]);
     }
   }
 }
@@ -649,9 +649,9 @@ void style_sheet::control_reader(xtd::web::css::css_reader& reader) noexcept {
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("control" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) controls_[pseudo_state::standard] = xtd::forms::style_sheets::control();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) controls_[pseudo_state::standard | state.second] = controls_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, controls_[pseudo_state::standard | state.second]);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->controls[pseudo_state::standard] = xtd::forms::style_sheets::control();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->controls[pseudo_state::standard | state.second] = data_->controls[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->controls[pseudo_state::standard | state.second]);
   }
 }
 
@@ -688,9 +688,9 @@ void style_sheet::flat_button_reader(xtd::web::css::css_reader& reader) noexcept
     for (auto state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
       if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) flat_buttons_[button.second] = xtd::forms::style_sheets::button();
-      if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) flat_buttons_[button.second | state.second] = flat_buttons_[button.second];
-      if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, flat_buttons_[button.second | state.second]);
+      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->flat_buttons[button.second] = xtd::forms::style_sheets::button();
+      if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->flat_buttons[button.second | state.second] = data_->flat_buttons[button.second];
+      if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->flat_buttons[button.second | state.second]);
     }
   }
 }
@@ -700,9 +700,9 @@ void style_sheet::flat_toggle_button_reader(xtd::web::css::css_reader& reader) n
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("flat-toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) flat_toggle_buttons_[pseudo_state::standard] = xtd::forms::style_sheets::button();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) flat_toggle_buttons_[pseudo_state::standard | state.second] = flat_toggle_buttons_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, flat_toggle_buttons_[pseudo_state::standard | state.second]);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->flat_toggle_buttons[pseudo_state::standard] = xtd::forms::style_sheets::button();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->flat_toggle_buttons[pseudo_state::standard | state.second] = data_->flat_toggle_buttons[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->flat_toggle_buttons[pseudo_state::standard | state.second]);
   }
 }
 
@@ -711,9 +711,9 @@ void style_sheet::form_reader(xtd::web::css::css_reader& reader) noexcept {
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("form" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) forms_[pseudo_state::standard] = xtd::forms::style_sheets::form();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) forms_[pseudo_state::standard | state.second] = forms_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, forms_[pseudo_state::standard | state.second]);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->forms[pseudo_state::standard] = xtd::forms::style_sheets::form();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->forms[pseudo_state::standard | state.second] = data_->forms[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->forms[pseudo_state::standard | state.second]);
   }
 }
 
@@ -722,9 +722,9 @@ void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("label" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) labels_[pseudo_state::standard] = xtd::forms::style_sheets::label();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) labels_[pseudo_state::standard | state.second] = labels_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, labels_[pseudo_state::standard | state.second]);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->labels[pseudo_state::standard] = xtd::forms::style_sheets::label();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->labels[pseudo_state::standard | state.second] = data_->labels[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->labels[pseudo_state::standard | state.second]);
   }
 }
 
@@ -733,9 +733,9 @@ void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("panel" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) panels_[pseudo_state::standard] = xtd::forms::style_sheets::panel();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) panels_[pseudo_state::standard | state.second] = panels_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, panels_[pseudo_state::standard | state.second]);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->panels[pseudo_state::standard] = xtd::forms::style_sheets::panel();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->panels[pseudo_state::standard | state.second] = data_->panels[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->panels[pseudo_state::standard | state.second]);
   }
 }
 
@@ -746,9 +746,9 @@ void style_sheet::popup_button_reader(xtd::web::css::css_reader& reader) noexcep
     for (auto state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
       if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) popup_buttons_[button.second] = xtd::forms::style_sheets::button();
-      if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) popup_buttons_[button.second | state.second] = popup_buttons_[button.second];
-      if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, popup_buttons_[button.second | state.second]);
+      if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->popup_buttons[button.second] = xtd::forms::style_sheets::button();
+      if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->popup_buttons[button.second | state.second] = data_->popup_buttons[button.second];
+      if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->popup_buttons[button.second | state.second]);
     }
   }
 }
@@ -758,9 +758,9 @@ void style_sheet::popup_toggle_button_reader(xtd::web::css::css_reader& reader) 
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("popup-toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) popup_toggle_buttons_[pseudo_state::standard] = xtd::forms::style_sheets::button();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) popup_toggle_buttons_[pseudo_state::standard | state.second] = popup_toggle_buttons_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, popup_toggle_buttons_[pseudo_state::standard | state.second]);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->popup_toggle_buttons[pseudo_state::standard] = xtd::forms::style_sheets::button();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->popup_toggle_buttons[pseudo_state::standard | state.second] = data_->popup_toggle_buttons[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->popup_toggle_buttons[pseudo_state::standard | state.second]);
   }
 }
 
@@ -769,9 +769,9 @@ void style_sheet::tool_bar_reader(xtd::web::css::css_reader& reader) noexcept {
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) tool_bars_[pseudo_state::standard] = xtd::forms::style_sheets::tool_bar();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) tool_bars_[pseudo_state::standard | state.second] = tool_bars_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, tool_bars_[pseudo_state::standard | state.second]);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->tool_bars[pseudo_state::standard] = xtd::forms::style_sheets::tool_bar();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->tool_bars[pseudo_state::standard | state.second] = data_->tool_bars[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->tool_bars[pseudo_state::standard | state.second]);
   }
 }
 
@@ -780,9 +780,9 @@ void style_sheet::toggle_button_reader(xtd::web::css::css_reader& reader) noexce
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) toggle_buttons_[pseudo_state::standard] = xtd::forms::style_sheets::button();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) toggle_buttons_[pseudo_state::standard | state.second] = toggle_buttons_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, toggle_buttons_[pseudo_state::standard | state.second]);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->toggle_buttons[pseudo_state::standard] = xtd::forms::style_sheets::button();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->toggle_buttons[pseudo_state::standard | state.second] = data_->toggle_buttons[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->toggle_buttons[pseudo_state::standard | state.second]);
   }
 }
 
@@ -791,9 +791,9 @@ void style_sheet::user_control_reader(xtd::web::css::css_reader& reader) noexcep
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("user-control" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
-    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) user_controls_[pseudo_state::standard] = xtd::forms::style_sheets::user_control();
-    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) user_controls_[pseudo_state::standard | state.second] = user_controls_[pseudo_state::standard];
-    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, user_controls_[pseudo_state::standard | state.second]);
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->user_controls[pseudo_state::standard] = xtd::forms::style_sheets::user_control();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->user_controls[pseudo_state::standard | state.second] = data_->user_controls[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->user_controls[pseudo_state::standard | state.second]);
   }
 }
 
@@ -801,43 +801,43 @@ void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexce
   selector_map::const_iterator selectors_iterator =  reader.selectors().find("system-colors");
   if (selectors_iterator == reader.selectors().end()) return;
   for (auto property : selectors_iterator->second.properties()) {
-    if (property.first == "accent") system_colors_.accent(color_from_css(property.second.to_string(), drawing::system_colors::accent()));
-    if (property.first == "accent-text") system_colors_.accent_text(color_from_css(property.second.to_string(), drawing::system_colors::accent_text()));
-    if (property.first == "active-border") system_colors_.active_border(color_from_css(property.second.to_string(), drawing::system_colors::active_border()));
-    if (property.first == "active-caption") system_colors_.active_caption(color_from_css(property.second.to_string(), drawing::system_colors::active_caption()));
-    if (property.first == "active-caption-text") system_colors_.active_caption_text(color_from_css(property.second.to_string(), drawing::system_colors::active_caption_text()));
-    if (property.first == "app-workspace") system_colors_.app_workspace(color_from_css(property.second.to_string(), drawing::system_colors::app_workspace()));
-    if (property.first == "button-face") system_colors_.button_face(color_from_css(property.second.to_string(), drawing::system_colors::button_face()));
-    if (property.first == "button-highlight") system_colors_.button_highlight(color_from_css(property.second.to_string(), drawing::system_colors::button_highlight()));
-    if (property.first == "button-shadow") system_colors_.button_shadow(color_from_css(property.second.to_string(), drawing::system_colors::button_shadow()));
-    if (property.first == "control") system_colors_.control(color_from_css(property.second.to_string(), drawing::system_colors::control()));
-    if (property.first == "control-dark") system_colors_.control_dark(color_from_css(property.second.to_string(), drawing::system_colors::control_dark()));
-    if (property.first == "control-dark-dark") system_colors_.control_dark_dark(color_from_css(property.second.to_string(), drawing::system_colors::control_dark_dark()));
-    if (property.first == "control-light") system_colors_.control_light(color_from_css(property.second.to_string(), drawing::system_colors::control_light()));
-    if (property.first == "control-light-light") system_colors_.control_light_light(color_from_css(property.second.to_string(), drawing::system_colors::control_light_light()));
-    if (property.first == "control-text") system_colors_.control_text(color_from_css(property.second.to_string(), drawing::system_colors::control_text()));
-    if (property.first == "desktop") system_colors_.desktop(color_from_css(property.second.to_string(), drawing::system_colors::desktop()));
-    if (property.first == "gradient-active-caption") system_colors_.gradient_active_caption(color_from_css(property.second.to_string(), drawing::system_colors::gradient_active_caption()));
-    if (property.first == "gradient-inactive-caption") system_colors_.gradient_inactive_caption(color_from_css(property.second.to_string(), drawing::system_colors::gradient_inactive_caption()));
-    if (property.first == "gray-text") system_colors_.gray_text(color_from_css(property.second.to_string(), drawing::system_colors::gray_text()));
-    if (property.first == "highlight") system_colors_.highlight(color_from_css(property.second.to_string(), drawing::system_colors::highlight()));
-    if (property.first == "highlight-text") system_colors_.highlight_text(color_from_css(property.second.to_string(), drawing::system_colors::highlight_text()));
-    if (property.first == "hot-track") system_colors_.hot_track(color_from_css(property.second.to_string(), drawing::system_colors::hot_track()));
-    if (property.first == "inactive-border") system_colors_.inactive_border(color_from_css(property.second.to_string(), drawing::system_colors::inactive_border()));
-    if (property.first == "inactive-caption") system_colors_.inactive_caption(color_from_css(property.second.to_string(), drawing::system_colors::inactive_caption()));
-    if (property.first == "inactive-caption-text") system_colors_.inactive_caption_text(color_from_css(property.second.to_string(), drawing::system_colors::inactive_caption_text()));
-    if (property.first == "info") system_colors_.info(color_from_css(property.second.to_string(), drawing::system_colors::info()));
-    if (property.first == "info-text") system_colors_.info_text(color_from_css(property.second.to_string(), drawing::system_colors::info_text()));
-    if (property.first == "menu") system_colors_.menu(color_from_css(property.second.to_string(), drawing::system_colors::menu()));
-    if (property.first == "menu-bar") system_colors_.menu_bar(color_from_css(property.second.to_string(), drawing::system_colors::menu_bar()));
-    if (property.first == "menu-highlight") system_colors_.menu_highlight(color_from_css(property.second.to_string(), drawing::system_colors::menu_highlight()));
-    if (property.first == "menu-text") system_colors_.menu_text(color_from_css(property.second.to_string(), drawing::system_colors::menu_text()));
-    if (property.first == "scroll-bar") system_colors_.scroll_bar(color_from_css(property.second.to_string(), drawing::system_colors::scroll_bar()));
-    if (property.first == "text-box") system_colors_.text_box(color_from_css(property.second.to_string(), drawing::system_colors::text_box()));
-    if (property.first == "text-box-text") system_colors_.text_box_text(color_from_css(property.second.to_string(), drawing::system_colors::text_box_text()));
-    if (property.first == "window") system_colors_.window(color_from_css(property.second.to_string(), drawing::system_colors::window()));
-    if (property.first == "window-frame") system_colors_.window_frame(color_from_css(property.second.to_string(), drawing::system_colors::window_frame()));
-    if (property.first == "window-text") system_colors_.window_text(color_from_css(property.second.to_string(), drawing::system_colors::window_text()));
+    if (property.first == "accent") data_->system_colors.accent(color_from_css(property.second.to_string(), drawing::system_colors::accent()));
+    if (property.first == "accent-text") data_->system_colors.accent_text(color_from_css(property.second.to_string(), drawing::system_colors::accent_text()));
+    if (property.first == "active-border") data_->system_colors.active_border(color_from_css(property.second.to_string(), drawing::system_colors::active_border()));
+    if (property.first == "active-caption") data_->system_colors.active_caption(color_from_css(property.second.to_string(), drawing::system_colors::active_caption()));
+    if (property.first == "active-caption-text") data_->system_colors.active_caption_text(color_from_css(property.second.to_string(), drawing::system_colors::active_caption_text()));
+    if (property.first == "app-workspace") data_->system_colors.app_workspace(color_from_css(property.second.to_string(), drawing::system_colors::app_workspace()));
+    if (property.first == "button-face") data_->system_colors.button_face(color_from_css(property.second.to_string(), drawing::system_colors::button_face()));
+    if (property.first == "button-highlight") data_->system_colors.button_highlight(color_from_css(property.second.to_string(), drawing::system_colors::button_highlight()));
+    if (property.first == "button-shadow") data_->system_colors.button_shadow(color_from_css(property.second.to_string(), drawing::system_colors::button_shadow()));
+    if (property.first == "control") data_->system_colors.control(color_from_css(property.second.to_string(), drawing::system_colors::control()));
+    if (property.first == "control-dark") data_->system_colors.control_dark(color_from_css(property.second.to_string(), drawing::system_colors::control_dark()));
+    if (property.first == "control-dark-dark") data_->system_colors.control_dark_dark(color_from_css(property.second.to_string(), drawing::system_colors::control_dark_dark()));
+    if (property.first == "control-light") data_->system_colors.control_light(color_from_css(property.second.to_string(), drawing::system_colors::control_light()));
+    if (property.first == "control-light-light") data_->system_colors.control_light_light(color_from_css(property.second.to_string(), drawing::system_colors::control_light_light()));
+    if (property.first == "control-text") data_->system_colors.control_text(color_from_css(property.second.to_string(), drawing::system_colors::control_text()));
+    if (property.first == "desktop") data_->system_colors.desktop(color_from_css(property.second.to_string(), drawing::system_colors::desktop()));
+    if (property.first == "gradient-active-caption") data_->system_colors.gradient_active_caption(color_from_css(property.second.to_string(), drawing::system_colors::gradient_active_caption()));
+    if (property.first == "gradient-inactive-caption") data_->system_colors.gradient_inactive_caption(color_from_css(property.second.to_string(), drawing::system_colors::gradient_inactive_caption()));
+    if (property.first == "gray-text") data_->system_colors.gray_text(color_from_css(property.second.to_string(), drawing::system_colors::gray_text()));
+    if (property.first == "highlight") data_->system_colors.highlight(color_from_css(property.second.to_string(), drawing::system_colors::highlight()));
+    if (property.first == "highlight-text") data_->system_colors.highlight_text(color_from_css(property.second.to_string(), drawing::system_colors::highlight_text()));
+    if (property.first == "hot-track") data_->system_colors.hot_track(color_from_css(property.second.to_string(), drawing::system_colors::hot_track()));
+    if (property.first == "inactive-border") data_->system_colors.inactive_border(color_from_css(property.second.to_string(), drawing::system_colors::inactive_border()));
+    if (property.first == "inactive-caption") data_->system_colors.inactive_caption(color_from_css(property.second.to_string(), drawing::system_colors::inactive_caption()));
+    if (property.first == "inactive-caption-text") data_->system_colors.inactive_caption_text(color_from_css(property.second.to_string(), drawing::system_colors::inactive_caption_text()));
+    if (property.first == "info") data_->system_colors.info(color_from_css(property.second.to_string(), drawing::system_colors::info()));
+    if (property.first == "info-text") data_->system_colors.info_text(color_from_css(property.second.to_string(), drawing::system_colors::info_text()));
+    if (property.first == "menu") data_->system_colors.menu(color_from_css(property.second.to_string(), drawing::system_colors::menu()));
+    if (property.first == "menu-bar") data_->system_colors.menu_bar(color_from_css(property.second.to_string(), drawing::system_colors::menu_bar()));
+    if (property.first == "menu-highlight") data_->system_colors.menu_highlight(color_from_css(property.second.to_string(), drawing::system_colors::menu_highlight()));
+    if (property.first == "menu-text") data_->system_colors.menu_text(color_from_css(property.second.to_string(), drawing::system_colors::menu_text()));
+    if (property.first == "scroll-bar") data_->system_colors.scroll_bar(color_from_css(property.second.to_string(), drawing::system_colors::scroll_bar()));
+    if (property.first == "text-box") data_->system_colors.text_box(color_from_css(property.second.to_string(), drawing::system_colors::text_box()));
+    if (property.first == "text-box-text") data_->system_colors.text_box_text(color_from_css(property.second.to_string(), drawing::system_colors::text_box_text()));
+    if (property.first == "window") data_->system_colors.window(color_from_css(property.second.to_string(), drawing::system_colors::window()));
+    if (property.first == "window-frame") data_->system_colors.window_frame(color_from_css(property.second.to_string(), drawing::system_colors::window_frame()));
+    if (property.first == "window-text") data_->system_colors.window_text(color_from_css(property.second.to_string(), drawing::system_colors::window_text()));
   }
 }
 
@@ -845,10 +845,10 @@ void style_sheet::theme_reader(xtd::web::css::css_reader& reader) noexcept {
   selector_map::const_iterator selectors_iterator =  reader.selectors().find("theme");
   if (selectors_iterator == reader.selectors().end()) return;
   for (auto property : selectors_iterator->second.properties()) {
-    if (property.first == "name") theme_.name(string_from_css(property.second.to_string(), ustring()));
-    if (property.first == "description") theme_.description(string_from_css(property.second.to_string(), ustring()));
-    if (property.first == "authors") theme_.authors(string_from_css(property.second.to_string(), ustring()));
-    if (property.first == "website") theme_.website(uri_from_css(property.second.to_string(), uri()));
+    if (property.first == "name") data_->theme.name(string_from_css(property.second.to_string(), ustring()));
+    if (property.first == "description") data_->theme.description(string_from_css(property.second.to_string(), ustring()));
+    if (property.first == "authors") data_->theme.authors(string_from_css(property.second.to_string(), ustring()));
+    if (property.first == "website") data_->theme.website(uri_from_css(property.second.to_string(), uri()));
   }
 }
 
