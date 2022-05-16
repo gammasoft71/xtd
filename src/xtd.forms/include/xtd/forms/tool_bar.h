@@ -40,7 +40,6 @@ namespace xtd {
       public:
         tool_bar_button_control();
         
-        xtd::drawing::color default_fore_color() const override;
         xtd::drawing::font default_font() const override;
 
         xtd::drawing::size image_size() const;
@@ -149,6 +148,8 @@ namespace xtd {
 
       virtual xtd::drawing::size button_size() const;
       virtual tool_bar& button_size(const xtd::drawing::size& value);
+      
+      xtd::drawing::font default_font() const override;
       
       dock_style dock() const override;
       control& dock(dock_style dock) override;

@@ -8,7 +8,7 @@ tool-bar-button {
   border-radius: 5px;
   background-color: system-color(control);
   padding: 1px 1px 3px 1px;
-  color: system-color(control-text);
+  color: rgba(191, 191, 191, 0.847);
 }
 
 tool-bar-button:hover {

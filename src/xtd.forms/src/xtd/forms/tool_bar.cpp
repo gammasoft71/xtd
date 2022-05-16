@@ -37,11 +37,6 @@ tool_bar::tool_bar_button_control::tool_bar_button_control() {
   flat_style(xtd::forms::flat_style::flat);
 }
 
-xtd::drawing::color tool_bar::tool_bar_button_control::default_fore_color() const {
-  if (control::default_fore_color().is_dark()) return color::light(control::default_fore_color(), 1.0 / 4);
-  return color::dark(control::default_fore_color(), 1.0 / 4);
-}
-
 xtd::drawing::font tool_bar::tool_bar_button_control::default_font() const {
   return xtd::drawing::system_fonts::toolbar_font();
 }
@@ -107,7 +102,7 @@ control& tool_bar::tool_bar_button_control::text(const xtd::ustring& value) {
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color(), font(), image(), image_align());
+  tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
   control::on_paint(e);
 }
 
@@ -235,8 +230,54 @@ tool_bar& tool_bar::button_size(const xtd::drawing::size& value) {
   return *this;
 }
 
+dock_style tool_bar::dock() const {
+  //if (is_system_tool_bar()) return data_->non_system_dock;
+  return control::dock();
+}
+
+control& tool_bar::dock(dock_style dock) {
+  if (is_system_tool_bar()) {
+    data_->non_system_dock = dock;
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  } else {
+    int32_t current_size = this->dock() == dock_style::top || this->dock() == dock_style::bottom ? height() : width();
+    control::dock(dock);
+    if (this->dock() == dock_style::top || this->dock() ==  dock_style::bottom) height(current_size);
+    else width(current_size);
+  }
+  return *this;
+}
+
+xtd::drawing::font tool_bar::default_font() const {
+  return xtd::drawing::system_fonts::toolbar_font();
+}
+
+const xtd::forms::image_list& tool_bar::image_list() const {
+  return data_->image_list;
+}
+
+xtd::forms::image_list& tool_bar::image_list() {
+  return data_->image_list;
+}
+
+xtd::forms::tool_bar& tool_bar::image_list(const xtd::forms::image_list& value) {
+  if (data_->image_list != value) {
+    data_->image_list = value;
+    height(data_->image_list.image_size().height() + 8);
+  }
+  return *this;
+}
+
 xtd::drawing::size tool_bar::image_size() const {
   return data_->image_list.image_size();
+}
+
+const tool_bar::tool_bar_item_collection& tool_bar::items() const {
+  return data_->items;
+}
+
+tool_bar::tool_bar_item_collection& tool_bar::items() {
+  return data_->items;
 }
 
 bool tool_bar::show_icon() const {
@@ -402,48 +443,6 @@ void tool_bar::on_item_removed(size_t pos, tool_bar_item_ref item) {
   parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().parent = nullptr;
   post_recreate_handle();
-}
-
-dock_style tool_bar::dock() const {
-  //if (is_system_tool_bar()) return data_->non_system_dock;
-  return control::dock();
-}
-
-control& tool_bar::dock(dock_style dock) {
-  if (is_system_tool_bar()) {
-    data_->non_system_dock = dock;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-  } else {
-    int32_t current_size = this->dock() == dock_style::top || this->dock() == dock_style::bottom ? height() : width();
-    control::dock(dock);
-    if (this->dock() == dock_style::top || this->dock() ==  dock_style::bottom) height(current_size);
-    else width(current_size);
-  }
-  return *this;
-}
-
-const xtd::forms::image_list& tool_bar::image_list() const {
-  return data_->image_list;
-}
-
-xtd::forms::image_list& tool_bar::image_list() {
-  return data_->image_list;
-}
-
-xtd::forms::tool_bar& tool_bar::image_list(const xtd::forms::image_list& value) {
-  if (data_->image_list != value) {
-    data_->image_list = value;
-    height(data_->image_list.image_size().height() + 8);
-  }
-  return *this;
-}
-
-const tool_bar::tool_bar_item_collection& tool_bar::items() const {
-  return data_->items;
-}
-
-tool_bar::tool_bar_item_collection& tool_bar::items() {
-  return data_->items;
 }
 
 void tool_bar::wnd_proc(message& message) {
