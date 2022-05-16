@@ -44,12 +44,18 @@ namespace xtd {
       /// @{
       bool enabled() const;
       tool_bar_button& enabled(bool value);
-
+      
+      bool pushed() const;
+      tool_bar_button& pushed(bool value);
+      
       const xtd::ustring& text() const;
       tool_bar_button& text(const xtd::ustring& value);
       
       size_t image_index() const;
       tool_bar_button& image_index(size_t value);
+
+      xtd::forms::tool_bar_button_style style() const;
+      tool_bar_button& style(xtd::forms::tool_bar_button_style value);
       /// @}
       
       /// @name Methods
@@ -79,7 +85,7 @@ namespace xtd {
         size_t image_index = xtd::forms::image_list::image_collection::npos;
         xtd::drawing::image image_key;
         bool partial_push = false;
-        bool pushed_ = false;
+        bool pushed = false;
         xtd::drawing::rectangle rectangle;
         xtd::forms::tool_bar_button_style style = xtd::forms::tool_bar_button_style::push_button;
         std::any tag;

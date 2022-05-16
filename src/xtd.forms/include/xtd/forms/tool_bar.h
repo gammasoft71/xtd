@@ -49,20 +49,19 @@ namespace xtd {
         
         using xtd::forms::button_base::image;
         button_base& image(const xtd::drawing::image& value) override;
+        void pushed(bool value);
         void show_icon(bool value);
         void show_text(bool value);
         using xtd::forms::button_base::text_align;
         using xtd::forms::control::text;
         control& text(const xtd::ustring& value) override;
+        void toggle_button(bool value);
         void tool_bar_text_align(xtd::forms::tool_bar_text_align value);
         void tool_bar_item(tool_bar_item_ref value) {data_->tool_bar_item = value;}
 
       protected:
         
-        void on_click(const xtd::event_args& e) override {
-          xtd::forms::button::on_click(e);
-          if (data_->tool_bar_item.has_value()) data_->tool_bar_item.value().get().perform_click();
-        }
+        void on_click(const xtd::event_args& e) override;
         void on_paint(paint_event_args& e) override;
 
       private:
@@ -75,6 +74,8 @@ namespace xtd {
           std::optional<tool_bar_item_ref> tool_bar_item;
           bool show_icon = true;
           bool show_text = false;
+          bool toggle_button = false;
+          bool pushed = false;
           xtd::forms::tool_bar_text_align tool_bar_text_align = xtd::forms::tool_bar_text_align::underneath;
         };
         
