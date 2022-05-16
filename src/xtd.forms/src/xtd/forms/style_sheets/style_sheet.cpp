@@ -97,6 +97,17 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   user_control_reader(reader);
 }
 
+style_sheet::style_sheet(const style_sheet& value) {
+  // memberwise clone...
+  *data_ = *value.data_;
+}
+
+style_sheet& style_sheet::operator=(const style_sheet& value) {
+  // memberwise clone...
+  *data_ = *value.data_;
+  return *this;
+}
+
 xtd::forms::style_sheets::button style_sheet::button() const noexcept {
   return button(pseudo_state::standard);
 }
