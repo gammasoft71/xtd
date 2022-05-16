@@ -93,6 +93,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   popup_toggle_button_reader(reader);
   toggle_button_reader(reader);
   tool_bar_reader(reader);
+  tool_bar_button_reader(reader);
   user_control_reader(reader);
 }
 
@@ -293,6 +294,18 @@ xtd::forms::style_sheets::tool_bar style_sheet::tool_bar(pseudo_state state) con
 
 const style_sheet::tool_bars_t& style_sheet::tool_bars() const noexcept {
   return data_->tool_bars;
+}
+
+xtd::forms::style_sheets::tool_bar_button style_sheet::tool_bar_button() const noexcept {
+  return tool_bar_button(pseudo_state::standard);
+}
+
+xtd::forms::style_sheets::tool_bar_button style_sheet::tool_bar_button(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::button>(data_->tool_bar_buttons, state);
+}
+
+const style_sheet::tool_bar_buttons_t& style_sheet::tool_bar_buttons() const noexcept {
+  return data_->tool_bar_buttons;
 }
 
 xtd::forms::style_sheets::user_control style_sheet::user_control() const noexcept {
@@ -772,6 +785,17 @@ void style_sheet::tool_bar_reader(xtd::web::css::css_reader& reader) noexcept {
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->tool_bars[pseudo_state::standard] = xtd::forms::style_sheets::tool_bar();
     if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->tool_bars[pseudo_state::standard | state.second] = data_->tool_bars[pseudo_state::standard];
     if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->tool_bars[pseudo_state::standard | state.second]);
+  }
+}
+
+void style_sheet::tool_bar_button_reader(xtd::web::css::css_reader& reader) noexcept {
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  for (auto state : states) {
+    selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar-button" + state.first);
+    if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->tool_bar_buttons[pseudo_state::standard] = xtd::forms::style_sheets::tool_bar_button();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->tool_bar_buttons[pseudo_state::standard | state.second] = data_->tool_bar_buttons[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->tool_bar_buttons[pseudo_state::standard | state.second]);
   }
 }
 

@@ -1,0 +1,30 @@
+/* Contains tool-bar-button definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+tool-bar-button {
+  border-style: solid;
+  border-color: system-color(control-text);
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: system-color(control);
+  padding: 1px 1px 3px 1px;
+  color: system-color(control-text);
+}
+
+tool-bar-button:hover {
+  background-color: #CCCCCA;
+}
+
+tool-bar-button:pressed {
+  background-color: system-color(control);
+}
+
+tool-bar-button:checked {
+  background-color: system-color(control);
+}
+
+tool-bar-button:disabled {  
+  border-color: system-color(gray-text);
+  background-color: #FAF9F8;
+  color: system-color(gray-text);
+}

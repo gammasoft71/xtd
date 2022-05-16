@@ -22,6 +22,7 @@
 #include "user_control.h"
 #include "toggle_button.h"
 #include "tool_bar.h"
+#include "tool_bar_button.h"
 
 /// @cond
 class __test_style_sheet__; // Necessary for the test unit to access the private member functions
@@ -76,6 +77,8 @@ namespace xtd {
         using toggle_buttons_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::toggle_button>;
         /// @brief Represents a style sheet tool_bars collection.
         using tool_bars_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::tool_bar>;
+        /// @brief Represents a style sheet buttons collection.
+        using tool_bar_buttons_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::tool_bar_button>;
         /// @brief Represents a style sheet user_controls collection.
         using user_controls_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::user_control>;
         /// @}
@@ -264,7 +267,18 @@ namespace xtd {
         /// @return The style sheet tool_bars collection.
         const tool_bars_t& tool_bars() const noexcept;
         
-        /// @brief Gets the style sheet user_control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @brief Gets the style sheet tool bar button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet tool bar button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        xtd::forms::style_sheets::tool_bar_button tool_bar_button() const noexcept;
+        /// @brief Gets the style sheet tool bar button for specified pseudo state.
+        /// @return A style_sheet tool bar button.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
+        xtd::forms::style_sheets::tool_bar_button tool_bar_button(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet tool bar buttons collection of this instance.
+        /// @return The style sheet tool bar buttons collection.
+        const tool_bar_buttons_t& tool_bar_buttons() const noexcept;
+        
+       /// @brief Gets the style sheet user_control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         xtd::forms::style_sheets::user_control user_control() const noexcept;
         /// @brief Gets the style sheet user_control for specified pseudo state.
@@ -399,6 +413,7 @@ namespace xtd {
         void theme_reader(xtd::web::css::css_reader& reader) noexcept;
         void toggle_button_reader(xtd::web::css::css_reader& reader) noexcept;
         void tool_bar_reader(xtd::web::css::css_reader& reader) noexcept;
+        void tool_bar_button_reader(xtd::web::css::css_reader& reader) noexcept;
         void user_control_reader(xtd::web::css::css_reader& reader) noexcept;
 
         //static style_sheet system_style_sheet_gnome_dark() noexcept; // Declared in system_style_sheet_gnome_dark.cpp
@@ -437,6 +452,7 @@ namespace xtd {
           toggle_buttons_t popup_toggle_buttons;
           toggle_buttons_t toggle_buttons;
           tool_bars_t tool_bars;
+          tool_bar_buttons_t tool_bar_buttons;
           user_controls_t user_controls;
           xtd::forms::style_sheets::system_colors system_colors;
           xtd::forms::style_sheets::theme theme;
