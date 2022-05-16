@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::tool_bar_button container.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "tool_bar_item.h"
+#include "component.h"
 #include <xtd/event.h>
 #include <xtd/event_handler.h>
 #include <xtd/forms/image_list.h>
@@ -13,13 +13,17 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class tool_bar;
+    /// @endcond
+    
     /// @brief Represents a toolbar button.
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms  menus_and_toolbars
-    class tool_bar_button : public tool_bar_item {
+    class tool_bar_button : public xtd::forms::component {
     public:
       /// @name Constructors
       
@@ -62,7 +66,7 @@ namespace xtd {
       
       /// @{
       /// @brief Generates a click event for the xtd::forms::tool_bar_item.
-      void perform_click() override;
+      virtual void perform_click();
       /// @}
       
       /// @name Events
@@ -79,6 +83,7 @@ namespace xtd {
       /// @}
       
     private:
+      friend xtd::forms::tool_bar;
       struct data {
         std::optional<std::reference_wrapper<xtd::forms::menu>> drop_down_menu_;
         bool enabled = true;
@@ -92,8 +97,17 @@ namespace xtd {
         xtd::ustring text;
         xtd::ustring tool_tip_text;
         bool visible = true;
-      };      
+        xtd::forms::tool_bar* parent = nullptr;
+      };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
+    
+    /// @brief Represents a xtd::forms::tool_bar_item reference.
+    /// @par Namespace
+    /// xtd::forms
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
+    using tool_bar_button_ref = std::reference_wrapper<tool_bar_button>;
   }
 }

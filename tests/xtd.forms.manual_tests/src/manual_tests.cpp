@@ -25,7 +25,7 @@ namespace examples {
       
       tool_bar1.image_list().image_size({24, 24});
       tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
-      tool_bar1.items().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, about_tool_bar_button});
+      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, about_tool_bar_button});
 
       about_tool_bar_button2.style(xtd::forms::tool_bar_button_style::toggle_button);
       
@@ -37,7 +37,7 @@ namespace examples {
 
       tool_bar2.image_list().image_size({24, 24});
       tool_bar2.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
-      tool_bar2.items().push_back_range({new_tool_bar_button2, open_tool_bar_button2, save_tool_bar_button2, print_tool_bar_button2, tool_bar1_separator12, cut_tool_bar_button2, copy_tool_bar_button2, paste_tool_bar_button2, tool_bar1_separator22, about_tool_bar_button2});
+      tool_bar2.buttons().push_back_range({new_tool_bar_button2, open_tool_bar_button2, save_tool_bar_button2, print_tool_bar_button2, tool_bar1_separator12, cut_tool_bar_button2, copy_tool_bar_button2, paste_tool_bar_button2, tool_bar1_separator22, about_tool_bar_button2});
     }
     
   private:

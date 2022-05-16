@@ -9,10 +9,8 @@ using namespace xtd::forms;
 class tool_bars_form : public form {
   using tool_bar_ptr_t = shared_ptr<forms::tool_bar>;
   using tool_bars_t = vector<tool_bar_ptr_t>;
-  using tool_bar_item_ptr_t = shared_ptr<tool_bar_item>;
   using tool_bar_button_ptr_t = shared_ptr<tool_bar_button>;
-  using tool_bar_separator_ptr_t = shared_ptr<tool_bar_separator>;
-  using tool_bar_items_t = vector<tool_bar_item_ptr_t>;
+  using tool_bar_items_t = vector<tool_bar_button_ptr_t>;
 
 public:
   static void main() {
@@ -46,7 +44,6 @@ private:
   void create_tool_bars(const control& parent_control, forms::dock_style style) {
     tool_bar_ptr_t tool_bar_ptr;
     tool_bar_button_ptr_t tool_bar_button_ptr;
-    tool_bar_separator_ptr_t tool_bar_separator_ptr;
 
     tool_bar_ptr = make_shared<forms::tool_bar>();
     tool_bars.push_back(tool_bar_ptr);
@@ -58,11 +55,11 @@ private:
     tool_bar_ptr->image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
 
     tool_bar_button_ptr = make_shared<tool_bar_button>(system_texts::new_(), 0);
-    tool_bar_ptr->items().push_back(*tool_bar_button_ptr);
+    tool_bar_ptr->buttons().push_back(*tool_bar_button_ptr);
     tool_bar_items.push_back(tool_bar_button_ptr);
 
     tool_bar_button_ptr = make_shared<tool_bar_button>(system_texts::open(), 1);
-    tool_bar_ptr->items().push_back(*tool_bar_button_ptr);
+    tool_bar_ptr->buttons().push_back(*tool_bar_button_ptr);
     tool_bar_items.push_back(tool_bar_button_ptr);
 
   }
