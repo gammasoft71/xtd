@@ -1,7 +1,7 @@
 #include "../../../include/xtd/forms/tool_bar_button_renderer.h"
 #include "../../../include/xtd/forms/image_renderer.h"
 #include "../../../include/xtd/forms/text_renderer.h"
-#include "../../../include/xtd/forms/style_sheets/button.h"
+#include "../../../include/xtd/forms/style_sheets/tool_bar_button.h"
 #include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
 #include "../../../include/xtd/forms/style_sheets/style_sheet.h"
 
@@ -16,14 +16,14 @@ using namespace xtd::forms::style_sheets;
 void tool_bar_button_renderer::draw_tool_bar_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, push_button_state button_state, const optional<color>& back_color, const flat_button_appearance& appearance, const ustring& text, const optional<content_alignment>& text_align, const optional<color>& fore_color, const optional<font>& font, const xtd::drawing::image& image, const optional<content_alignment>& image_align) {
   auto pseudo_state_base = pseudo_state::standard;
   
-  button current_style_sheet;
+  tool_bar_button current_style_sheet;
   switch (button_state) {
-    case push_button_state::normal: current_style_sheet = style_sheet.flat_button(pseudo_state_base); break;
-    case push_button_state::hot: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::hover); break;
-    case push_button_state::pressed: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::pressed); break;
-    case push_button_state::checked: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::checked); break;
-    case push_button_state::disabled: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::disabled); break;
-    case push_button_state::default_state: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::default_state); break;
+    case push_button_state::normal: current_style_sheet = style_sheet.tool_bar_button(pseudo_state_base); break;
+    case push_button_state::hot: current_style_sheet = style_sheet.tool_bar_button(pseudo_state_base | pseudo_state::hover); break;
+    case push_button_state::pressed: current_style_sheet = style_sheet.tool_bar_button(pseudo_state_base | pseudo_state::pressed); break;
+    case push_button_state::checked: current_style_sheet = style_sheet.tool_bar_button(pseudo_state_base | pseudo_state::checked); break;
+    case push_button_state::disabled: current_style_sheet = style_sheet.tool_bar_button(pseudo_state_base | pseudo_state::disabled); break;
+    case push_button_state::default_state: current_style_sheet = style_sheet.tool_bar_button(pseudo_state_base | pseudo_state::default_state); break;
   }
   if (back_color.has_value() && (button_state == push_button_state::normal || button_state == push_button_state::default_state)) current_style_sheet.background_color(back_color.value());
   if (text_align.has_value()) current_style_sheet.text_alignment(text_align.value());
