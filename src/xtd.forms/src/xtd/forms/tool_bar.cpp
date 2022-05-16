@@ -6,10 +6,10 @@
 #include <xtd/forms/native/tool_bar_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
-#include "../../../include/xtd/forms/button_renderer.h"
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/tool_bar.h"
 #include "../../../include/xtd/forms/tool_bar_renderer.h"
+#include "../../../include/xtd/forms/tool_bar_button_renderer.h"
 
 using namespace std;
 using namespace xtd;
@@ -108,7 +108,7 @@ control& tool_bar::tool_bar_button_control::text(const xtd::ustring& value) {
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  button_renderer::draw_toolbar_button(style, e.graphics(), e.clip_rectangle(), state(), false, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color(), font(), image(), image_align());
+  tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color(), font(), image(), image_align());
   control::on_paint(e);
 }
 
