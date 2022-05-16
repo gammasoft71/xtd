@@ -4,7 +4,7 @@ Show how to use [xtd::io::file_info::open](../../../../src/xtd.core/include/xtd/
 
 ## Sources
 
-[src/file_info.cpp](src/file_info_open.cpp)
+[src/file_info_append_text.cpp](src/file_info_append_text.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
