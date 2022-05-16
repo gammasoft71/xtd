@@ -68,6 +68,14 @@ control& tool_bar::tool_bar_button_control::size(const xtd::drawing::size& value
   return *this;
 }
 
+void tool_bar::tool_bar_button_control::pushed(bool value) {
+  if (data_->pushed != value) {
+    data_->pushed = value;
+    update_size();
+    update_layout();
+  }
+}
+
 void tool_bar::tool_bar_button_control::show_icon(bool value) {
   if (data_->show_icon != value) {
     data_->show_icon = value;
@@ -75,9 +83,18 @@ void tool_bar::tool_bar_button_control::show_icon(bool value) {
     update_layout();
   }
 }
+
 void tool_bar::tool_bar_button_control::show_text(bool value) {
   if (data_->show_text != value) {
     data_->show_text = value;
+    update_size();
+    update_layout();
+  }
+}
+
+void tool_bar::tool_bar_button_control::toggle_button(bool value) {
+  if (data_->toggle_button != value) {
+    data_->toggle_button = value;
     update_size();
     update_layout();
   }
@@ -100,9 +117,20 @@ control& tool_bar::tool_bar_button_control::text(const xtd::ustring& value) {
   return *this;
 }
 
+void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
+  xtd::forms::button::on_click(e);
+  if (data_->tool_bar_item.has_value()) {
+    if (data_->toggle_button) {
+      data_->pushed = !data_->pushed;
+      as<tool_bar_button>(data_->tool_bar_item.value().get()).pushed(data_->pushed);
+    }
+    data_->tool_bar_item.value().get().perform_click();
+  }
+}
+
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
+  tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), data_->pushed ? visual_styles::push_button_state::checked : state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
   control::on_paint(e);
 }
 
@@ -381,9 +409,12 @@ void tool_bar::fill() {
   for (size_t index = 0; index < reversed_items.size(); ++index) {
     if (is<tool_bar_button>(reversed_items[index].get())) {
       auto& button_item = as<tool_bar_button>(reversed_items[index].get());
-      if (is_system_tool_bar())
-        data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle(), button_item.enabled()));
-      else {
+      if (is_system_tool_bar()) {
+        if (as<tool_bar_button>(reversed_items[index].get()).style() == tool_bar_button_style::toggle_button)
+          data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle(), as<tool_bar_button>(reversed_items[index].get()).pushed(), button_item.enabled()));
+        else
+          data_->system_tool_bar_item_handles.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle(), button_item.enabled()));
+      } else {
         auto button_control = std::make_shared<tool_bar_button_control>();
         button_control->parent(*this);
         button_control->tool_bar_item(button_item);
@@ -393,6 +424,9 @@ void tool_bar::fill() {
         button_control->show_text(data_->show_text);
         button_control->size(button_size());
         button_control->tool_bar_text_align(data_->text_align);
+        button_control->toggle_button(as<tool_bar_button>(reversed_items[index].get()).style() == tool_bar_button_style::toggle_button);
+        if (as<tool_bar_button>(reversed_items[index].get()).style() == tool_bar_button_style::toggle_button)
+          button_control->pushed(as<tool_bar_button>(reversed_items[index].get()).pushed());
 
         if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
         if (data_->show_text) button_control->text(button_item.text());
@@ -453,6 +487,9 @@ void tool_bar::wnd_proc(message& message) {
 void tool_bar::wm_click(const message& message) {
   for (size_t index = 0; index < data_->system_tool_bar_item_handles.size(); ++index) {
     if (index < data_->system_tool_bar_item_handles.size() && message.wparam() == data_->system_tool_bar_item_handles[index]) {
+      if (is<tool_bar_button>(data_->items[index].get()) && as<tool_bar_button>(data_->items[index].get()).style() == tool_bar_button_style::toggle_button) {
+        as<tool_bar_button>(data_->items[index].get()).pushed(!as<tool_bar_button>(data_->items[index].get()).pushed());
+      }
       data_->items[index].get().perform_click();
       break;
     }

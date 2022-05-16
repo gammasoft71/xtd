@@ -45,6 +45,30 @@ tool_bar_button& tool_bar_button::enabled(bool value) {
   return *this;
 }
 
+bool tool_bar_button::pushed() const {
+  return data_->pushed;
+}
+
+tool_bar_button& tool_bar_button::pushed(bool value) {
+  if (data_->pushed != value) {
+    data_->pushed = value;
+    if (parent) parent->post_recreate_handle();
+  }
+  return *this;
+}
+
+xtd::forms::tool_bar_button_style tool_bar_button::style() const {
+  return data_->style;
+}
+
+tool_bar_button& tool_bar_button::style(xtd::forms::tool_bar_button_style value) {
+  if (data_->style != value) {
+    data_->style = value;
+    if (parent) parent->post_recreate_handle();
+  }
+  return *this;
+}
+
 const ustring& tool_bar_button::text() const {
   return data_->text;
 }
