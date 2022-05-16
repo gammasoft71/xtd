@@ -35,7 +35,6 @@ namespace {
 tool_bar::tool_bar_button_control::tool_bar_button_control() {
   set_can_focus(false);
   flat_style(xtd::forms::flat_style::flat);
-  flat_appearance().border_size(0);
 }
 
 xtd::drawing::color tool_bar::tool_bar_button_control::default_fore_color() const {
