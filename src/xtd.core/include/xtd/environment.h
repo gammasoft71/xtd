@@ -275,8 +275,8 @@ namespace xtd {
     /// @brief Inserts a new-line character and flushes the stream.
     /// @param os Output stream object affected. Because this function is a manipulator, it is designed to be used alone with no arguments in conjunction with the insertion (<<) operations on output streams (see example below).
     /// @return Argument os.
-    template <class Char, class Traits>
-    static std::basic_ostream<Char, Traits>& new_line(std::basic_ostream<Char, Traits>& os) {
+    template <class char_t, class traits_t>
+    static std::basic_ostream<char_t, traits_t>& new_line(std::basic_ostream<char_t, traits_t>& os) {
       os.put(os.widen('\n'));
       os.flush();
       return os;
