@@ -151,6 +151,7 @@ tool_bar::tool_bar_separator_control::tool_bar_separator_control() {
 
 void tool_bar::tool_bar_separator_control::on_paint(paint_event_args& e) {
   control::on_paint(e);
+  if (!flat_) return;
   auto percent_of_color = 1.0 / 3;
   auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
   if (dock() == dock_style::top || dock() == dock_style::bottom) {
@@ -189,14 +190,8 @@ xtd::forms::tool_bar_appearance tool_bar::appearnce() const {
 tool_bar& tool_bar::appearnce(xtd::forms::tool_bar_appearance value) {
   if (data_->appearnce != value) {
     data_->appearnce = value;
-    if (value != tool_bar_appearance::system) {
-      control::dock(data_->non_system_dock);
-      invalidate();
-    } else {
-      data_->non_system_dock = control::dock();
-      control::dock(dock_style::none);
-      post_recreate_handle();
-    }
+    if (value != tool_bar_appearance::system) invalidate();
+    else  post_recreate_handle();
   }
   return *this;
 }
@@ -375,6 +370,7 @@ void tool_bar::fill() {
       else {
         auto separator_control = std::make_shared<tool_bar_separator_control>();
         separator_control->parent(*this);
+        separator_control->flat(appearnce() == tool_bar_appearance::flat);
         separator_control->height(image_size().height() / 2);
         separator_control->width(image_size().width() / 2);
         if (dock() == dock_style::left || dock() == dock_style::right) separator_control->dock(dock_style::top);
