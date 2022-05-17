@@ -103,6 +103,7 @@ see [Issues 0.2.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#99](https://github.com/gammasoft71/xtd/issues/99)      | xtd.forms   | tool_bar                          | Gammasoft | ![status](pictures/releases/status/started.png) |
 | [#130](https://github.com/gammasoft71/xtd/issues/130)    | xtd.forms   | tool_bar_renderer                 | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | [#100](https://github.com/gammasoft71/xtd/issues/100)    | xtd.forms   | user_control_renderer             | Gammasoft | ![status](pictures/releases/status/done.png)    |
+| [#180](https://github.com/gammasoft71/xtd/issues/180)    | xtd.forms   | message_notifier                  | Bader     | ![status](pictures/releases/status/started.png) |
 
 ## Release 0.3.0 (beta)
 
