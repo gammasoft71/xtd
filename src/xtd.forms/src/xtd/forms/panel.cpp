@@ -41,7 +41,7 @@ panel& panel::border_style(forms::border_style border_style) {
   return *this;
 }
 
-panel& panel::border_style(nullptr_t) {
+panel& panel::border_style(std::nullptr_t) {
   if (border_style_) {
     border_style_.reset();
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();

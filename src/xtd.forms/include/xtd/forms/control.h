@@ -289,7 +289,7 @@ namespace xtd {
       /// When overriding the back_color property in a derived class, use the base class's back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the back_color property; you can override only one if needed.
       virtual control& back_color(const drawing::color& color);
       /// @cond
-      virtual control& back_color(nullptr_t);
+      virtual control& back_color(std::nullptr_t);
       /// @endcond
       
       /// @brief Gets the background image displayed in the control.
@@ -394,7 +394,7 @@ namespace xtd {
       /// @brief Sets the xtd::forms::context_menu that is displayed in the control.
       /// @param value A xtd::forms::context_menu that represents the context menu to display in the control.
       /// @return Current control.
-      virtual control& context_menu(nullptr_t);
+      virtual control& context_menu(std::nullptr_t);
       
       /// @brief Gets control appearance.
       /// @return One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
@@ -437,7 +437,7 @@ namespace xtd {
       /// @return Current control.
       virtual control& cursor(const forms::cursor& cursor);
       /// @cond
-      virtual control& cursor(nullptr_t);
+      virtual control& cursor(std::nullptr_t);
       /// @endcond
       
       /// @brief Gets the default background color of the control.
@@ -513,7 +513,7 @@ namespace xtd {
       /// @return Current control.
       virtual control& font(const drawing::font& font);
       /// @cond
-      virtual control& font(nullptr_t);
+      virtual control& font(std::nullptr_t);
       /// @endcond
       
       /// @brief Gets the foreground color of the control.
@@ -524,7 +524,7 @@ namespace xtd {
       /// @return Current control.
       virtual control& fore_color(const drawing::color& color);
       /// @cond
-      virtual control& fore_color(nullptr_t);
+      virtual control& fore_color(std::nullptr_t);
       /// @endcond
       
       /// @brief Gets the window handle that the control is bound to.

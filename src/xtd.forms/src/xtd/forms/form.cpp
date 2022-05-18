@@ -51,7 +51,7 @@ form& form::accept_button(const ibutton_control& accept_button) {
   return *this;
 }
 
-form& form::accept_button(nullptr_t) {
+form& form::accept_button(std::nullptr_t) {
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(false);
   accept_button_.reset();
   return *this;
@@ -63,7 +63,7 @@ form& form::cancel_button(const ibutton_control& cancel_button) {
   return *this;
 }
 
-form& form::cancel_button(nullptr_t) {
+form& form::cancel_button(std::nullptr_t) {
   cancel_button_.reset();
   return *this;
 }
@@ -134,7 +134,7 @@ form& form::menu(const forms::main_menu& value) {
   return *this;
 }
 
-form& form::menu(nullptr_t) {
+form& form::menu(std::nullptr_t) {
   if (menu_.has_value()) {
     if (is_handle_created()) destroy_system_menu();
     menu_.reset();
@@ -162,7 +162,7 @@ form& form::owner(const control& value) {
   return *this;
 }
 
-form& form::owner(nullptr_t) {
+form& form::owner(std::nullptr_t) {
   if (owner_) {
     owner_ = nullptr;
     post_recreate_handle();
@@ -211,7 +211,7 @@ form& form::tool_bar(const forms::tool_bar& value) {
   return *this;
 }
 
-form& form::tool_bar(nullptr_t) {
+form& form::tool_bar(std::nullptr_t) {
   if (tool_bar_.has_value()) {
     tool_bar_.value().get().is_system_tool_bar(false);
     tool_bar_.reset();

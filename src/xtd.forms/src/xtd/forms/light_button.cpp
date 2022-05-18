@@ -90,7 +90,7 @@ light_button& light_button::light_off_color(const drawing::color& value) {
   return *this;
 }
 
-light_button& light_button::light_off_color(nullptr_t) {
+light_button& light_button::light_off_color(std::nullptr_t) {
   if (data_->light_off_color.has_value()) {
     data_->light_off_color.reset();
     invalidate();
@@ -112,7 +112,7 @@ light_button& light_button::light_on_color(const drawing::color& value) {
   return *this;
 }
 
-light_button& light_button::light_on_color(nullptr_t) {
+light_button& light_button::light_on_color(std::nullptr_t) {
   if (data_->light_on_color.has_value()) {
     data_->light_on_color.reset();
     invalidate();

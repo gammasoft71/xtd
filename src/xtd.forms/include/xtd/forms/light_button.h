@@ -118,7 +118,7 @@ namespace xtd {
       /// @param value A xtd::drawing::color that represents the light off color of the light_button. The default is the value of the default_light_off_color property.
       virtual light_button& light_off_color(const drawing::color& value);
       /// @cond
-      virtual light_button& light_off_color(nullptr_t);
+      virtual light_button& light_off_color(std::nullptr_t);
       /// @endcond
       
       /// @brief Gets the light on color for the light_button.
@@ -128,7 +128,7 @@ namespace xtd {
       /// @param value A xtd::drawing::color that represents the light on color of the light_button. The default is the value of the default_light_on_color property.
       virtual light_button& light_on_color(const drawing::color& value);
       /// @cond
-      virtual light_button& light_on_color(nullptr_t);
+      virtual light_button& light_on_color(std::nullptr_t);
       /// @endcond
       
       /// @brief Gets a value indicating whether the light_button will allow three check states rather than two.

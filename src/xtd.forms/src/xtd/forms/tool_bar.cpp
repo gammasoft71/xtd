@@ -248,7 +248,7 @@ tool_bar& tool_bar::border_style(forms::border_style border_style) {
   return *this;
 }
 
-tool_bar& tool_bar::border_style(nullptr_t) {
+tool_bar& tool_bar::border_style(std::nullptr_t) {
   if (data_->border_style) {
     data_->border_style.reset();
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();

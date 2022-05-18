@@ -59,7 +59,7 @@ picture_box& picture_box::image(const drawing::image& image) {
   return *this;
 }
 
-picture_box& picture_box::image(nullptr_t) {
+picture_box& picture_box::image(std::nullptr_t) {
   if (image_.has_value()) {
     image_.reset();
     if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::reset(handle());
