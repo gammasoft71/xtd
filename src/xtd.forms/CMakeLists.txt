@@ -263,6 +263,7 @@ add_sources(
   include/xtd/forms/tool_bar_button.h
   include/xtd/forms/tool_bar_button_style.h
   include/xtd/forms/tool_bar_separator.h
+  include/xtd/forms/tool_bar_stretchable_separator.h
   include/xtd/forms/tool_bar_text_align.h
   include/xtd/forms/tool_bar_toggle_button.h
   include/xtd/forms/trace_form.h

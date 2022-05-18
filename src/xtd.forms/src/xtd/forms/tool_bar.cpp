@@ -59,21 +59,12 @@ button_base& tool_bar::tool_bar_button_control::image(const xtd::drawing::image&
 }
 
 xtd::drawing::size tool_bar::tool_bar_button_control::image_size() const {
-  if (image() == drawing::image::empty) return {};
+  if (image() == drawing::image::empty) return parent().has_value() ? as<tool_bar>(parent().value().get()).image_size() : xtd::drawing::size::empty;
   return image().size();
 }
 
-xtd::drawing::size tool_bar::tool_bar_button_control::size() const {
-  return control::size();
-}
-
-control& tool_bar::tool_bar_button_control::size(const xtd::drawing::size& value) {
-  if (size() != value) {
-    control::size(value);
-    update_size();
-    update_layout();
-  }
-  return *this;
+bool tool_bar::tool_bar_button_control::is_horizontal() const {
+  return dock() == dock_style::left || dock() == dock_style::right;
 }
 
 void tool_bar::tool_bar_button_control::pushed(bool value) {
@@ -106,6 +97,31 @@ void tool_bar::tool_bar_button_control::separator(bool value) {
     update_size();
     update_layout();
   }
+}
+
+bool tool_bar::tool_bar_button_control::stretchable_separator() const {
+  return data_->stretchable_separator;
+}
+
+void tool_bar::tool_bar_button_control::stretchable_separator(bool value) {
+  if (data_->stretchable_separator != value) {
+    data_->stretchable_separator = value;
+    update_size();
+    update_layout();
+  }
+}
+
+xtd::drawing::size tool_bar::tool_bar_button_control::size() const {
+  return control::size();
+}
+
+control& tool_bar::tool_bar_button_control::size(const xtd::drawing::size& value) {
+  if (size() != value) {
+    control::size(value);
+    update_size();
+    update_layout();
+  }
+  return *this;
 }
 
 void tool_bar::tool_bar_button_control::toggle_button(bool value) {
@@ -146,22 +162,23 @@ void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
 }
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
-  if (data_->separator) {
-    if (!data_->flat) return;
-    auto percent_of_color = 1.0 / 6;
-    auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
-    if (dock() == dock_style::top || dock() == dock_style::bottom) {
-      auto left = 4;
-      auto top = e.clip_rectangle().height() / 2;
-      auto right = e.clip_rectangle().width() - 4;
-      auto bottom = top;
-      e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
-    } else {
-      auto left = e.clip_rectangle().width() / 2;
-      auto top = 4;
-      auto right = left;
-      auto bottom = e.clip_rectangle().height() - 4;
-      e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
+  if (data_->separator || data_->stretchable_separator) {
+    if (data_->flat) {
+      auto percent_of_color = 1.0 / 6;
+      auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
+      if (is_horizontal()) {
+        auto left = image_size().width() / 4;
+        auto top = 4;
+        auto right = left;
+        auto bottom = e.clip_rectangle().height() - 4;
+        e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
+      } else {
+        auto left = 4;
+        auto top = image_size().height() / 4;
+        auto right = e.clip_rectangle().width() - 4;
+        auto bottom = top;
+        e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
+      }
     }
   } else {
     auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
@@ -280,9 +297,9 @@ control& tool_bar::dock(dock_style dock) {
     data_->non_system_dock = dock;
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   } else {
-    int32_t current_size = this->dock() == dock_style::top || this->dock() == dock_style::bottom ? height() : width();
+    int32_t current_size = is_horizontal() ? height() : width();
     control::dock(dock);
-    if (this->dock() == dock_style::top || this->dock() ==  dock_style::bottom) height(current_size);
+    if (is_horizontal()) height(current_size);
     else width(current_size);
   }
   return *this;
@@ -378,6 +395,7 @@ forms::create_params tool_bar::create_params() const {
 void tool_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   fill();
+  resize_stretchable_separtors();
 }
 
 void tool_bar::on_handle_destroyed(const event_args& e) {
@@ -392,6 +410,15 @@ void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
   control::on_paint(e);
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   if (control_appearance() == forms::control_appearance::standard) tool_bar_renderer::draw_tool_bar(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, data_->border_style, data_->border_sides);
+}
+
+void tool_bar::on_resize(const event_args& e) {
+  control::on_resize(e);
+  resize_stretchable_separtors();
+}
+
+bool tool_bar::is_horizontal() const {
+  return dock() == dock_style::top || dock() == dock_style::bottom;
 }
 
 bool tool_bar::is_system_tool_bar() const {
@@ -415,6 +442,7 @@ tool_bar& tool_bar::is_system_tool_bar(bool value) {
 void tool_bar::fill() {
   suspend_layout();
   controls().clear();
+  data_->stretchable_separators.clear();
   data_->tool_bar_buttons.clear();
   auto reversed_buttons = data_->buttons;
   if (!is_system_tool_bar()) std::reverse(reversed_buttons.begin(), reversed_buttons.end());
@@ -425,14 +453,16 @@ void tool_bar::fill() {
         data_->system_tool_bar_button_handles.push_back(native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle(), reversed_buttons[index].get().pushed(), button_item.enabled()));
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::separator)
         data_->system_tool_bar_button_handles.push_back(native::tool_bar::add_tool_bar_separator(handle()));
+      else if (reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
+        data_->system_tool_bar_button_handles.push_back(native::tool_bar::add_tool_bar_stretchable_separator(handle()));
       else
         data_->system_tool_bar_button_handles.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle(), button_item.enabled()));
     } else {
       auto button_control = std::make_shared<tool_bar_button_control>();
       button_control->parent(*this);
       button_control->tool_bar_button(button_item);
-      if (dock() == dock_style::left || dock() == dock_style::right) button_control->dock(dock_style::top);
-      else button_control->dock(dock_style::left);
+      if (is_horizontal()) button_control->dock(dock_style::left);
+      else button_control->dock(dock_style::top);
       button_control->flat(appearnce() == tool_bar_appearance::flat);
       button_control->show_icon(data_->show_icon);
       button_control->show_text(data_->show_text);
@@ -446,11 +476,14 @@ void tool_bar::fill() {
         button_control->height(image_size().height() / 2);
         button_control->width(image_size().width() / 2);
       }
+      button_control->stretchable_separator(reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator);
+      if (reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
+        data_->stretchable_separators.push_back(button_control);
 
       if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
       if (data_->show_text) button_control->text(button_item.text());
 
-      if (this->dock() == dock_style::top || this->dock() ==  dock_style::bottom) {
+      if (is_horizontal()) {
         if (height() < button_control->height()) height(button_control->height() + 4);
       } else {
         if (width() < button_control->width()) width(button_control->width() + 4);
@@ -487,6 +520,28 @@ void tool_bar::on_item_removed(size_t pos, tool_bar_button_ref item) {
 void tool_bar::wnd_proc(message& message) {
   if (is_system_tool_bar() && message.msg() == WM_MENUCOMMAND && handle() == message.hwnd()) wm_click(message);
   else control::wnd_proc(message);
+}
+
+void tool_bar::resize_stretchable_separtors() {
+  if (data_->stretchable_separators.size()) {
+    auto remaining_size = is_horizontal() ? size().width() - padding().left() - padding().right() : size().height() - padding().top() - padding().bottom();
+    for (auto tool_bar_button : data_->tool_bar_buttons) {
+      if (!tool_bar_button->stretchable_separator())
+        remaining_size -= is_horizontal() ? tool_bar_button->size().width() : tool_bar_button->size().height();
+    }
+    
+    auto stretchable_size = remaining_size / as<int32_t>(data_->stretchable_separators.size());
+    for (auto stretchable_separator : data_->stretchable_separators) {
+      auto default_stretchable_size = (is_horizontal() ? image_size().width() : image_size().height()) / 2;
+      if (stretchable_size > default_stretchable_size) {
+        if (is_horizontal()) stretchable_separator->width(stretchable_size);
+        else stretchable_separator->height(stretchable_size);
+      } else {
+        if (is_horizontal()) stretchable_separator->width(default_stretchable_size);
+        else stretchable_separator->height(default_stretchable_size);
+      }
+    }
+  }
 }
 
 void tool_bar::wm_click(const message& message) {

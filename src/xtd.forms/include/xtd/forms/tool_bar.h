@@ -40,19 +40,20 @@ namespace xtd {
         tool_bar_button_control();
         
         xtd::drawing::font default_font() const override;
-
-        xtd::drawing::size image_size() const;
-        
-        xtd::drawing::size size() const override;
-        control& size(const xtd::drawing::size& value) override;
         
         void flat(bool value);
         using xtd::forms::button_base::image;
         button_base& image(const xtd::drawing::image& value) override;
+        xtd::drawing::size image_size() const;
+        bool is_horizontal() const;
         void pushed(bool value);
         void show_icon(bool value);
         void show_text(bool value);
+        bool stretchable_separator() const;
+        void stretchable_separator(bool value);
         void separator(bool value);
+        xtd::drawing::size size() const override;
+        control& size(const xtd::drawing::size& value) override;
         using xtd::forms::button_base::text_align;
         using xtd::forms::control::text;
         control& text(const xtd::ustring& value) override;
@@ -77,6 +78,7 @@ namespace xtd {
           bool show_icon = true;
           bool show_text = false;
           bool toggle_button = false;
+          bool stretchable_separator = false;
           bool separator = false;
           bool pushed = false;
           xtd::forms::tool_bar_text_align tool_bar_text_align = xtd::forms::tool_bar_text_align::underneath;
@@ -177,6 +179,7 @@ namespace xtd {
       /// @name Protetced properties
       
       /// @{
+      virtual bool is_horizontal() const;      
       virtual bool is_system_tool_bar() const;
       virtual tool_bar& is_system_tool_bar(bool value);
       /// @}
@@ -188,16 +191,19 @@ namespace xtd {
       void on_handle_created(const event_args& e) override;
       void on_handle_destroyed(const event_args& e) override;
       void on_paint(xtd::forms::paint_event_args& e) override;
+      void on_resize(const event_args& e) override;
       void wnd_proc(message& message) override;
       /// @}
       
     private:
       void fill();
-      
+
       void on_item_added(size_t pos, tool_bar_button_ref item);
       void on_item_updated(size_t pos, tool_bar_button_ref item);
       void on_item_removed(size_t pos, tool_bar_button_ref item);
-            
+
+      void resize_stretchable_separtors();
+
       void wm_click(const message& message);
       
       struct data {
@@ -211,6 +217,7 @@ namespace xtd {
         dock_style non_system_dock = dock_style::none;
         bool show_icon = true;
         bool show_text = false;
+        std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> stretchable_separators;
         std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> tool_bar_buttons;
         std::vector<intptr_t> system_tool_bar_button_handles;
         xtd::forms::tool_bar_text_align text_align = xtd::forms::tool_bar_text_align::underneath;

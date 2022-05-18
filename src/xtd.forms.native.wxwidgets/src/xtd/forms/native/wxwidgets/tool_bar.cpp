@@ -46,6 +46,17 @@ intptr_t tool_bar::add_tool_bar_separator(intptr_t control) {
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }
 
+intptr_t tool_bar::add_tool_bar_stretchable_separator(intptr_t control) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return 0;
+  }
+  
+  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(control)->control())->AddStretchableSpace();
+  return static_cast<intptr_t>(tool_bar_item->GetId());
+}
+
 bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (tool_bar != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have tool bar"_t, current_stack_frame_);
