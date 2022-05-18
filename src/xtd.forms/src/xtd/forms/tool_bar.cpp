@@ -533,6 +533,7 @@ void tool_bar::resize_stretchable_separtors() {
 }
 
 void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
+  if (!handle) return;
   if (is_system_tool_bar())
     native::tool_bar::update_tool_bar_toggle_button(this->handle(), handle, text, image, pushed, enabled, visible);
   else {
