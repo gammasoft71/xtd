@@ -56,7 +56,7 @@ namespace examples {
     tool_bar_button cut_tool_bar_button {system_texts::cut(), 4, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button copy_tool_bar_button {system_texts::copy(), 5, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button paste_tool_bar_button {system_texts::paste(), 6, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_separator tool_bar1_separator2;
+    tool_bar_stretchable_separator tool_bar1_separator2;
     tool_bar_button about_tool_bar_button {system_texts::about(), 7, {*this, &form1::on_tool_bar_item_click}};
 
     forms::tool_bar tool_bar2;
@@ -64,11 +64,11 @@ namespace examples {
     tool_bar_button open_tool_bar_button2 {system_texts::open(), 1, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button save_tool_bar_button2 {system_texts::save(), 2, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button print_tool_bar_button2 {system_texts::print(), 3, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_separator tool_bar1_separator12;
+    tool_bar_stretchable_separator tool_bar1_separator12;
     tool_bar_button cut_tool_bar_button2 {system_texts::cut(), 4, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button copy_tool_bar_button2 {system_texts::copy(), 5, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button paste_tool_bar_button2 {system_texts::paste(), 6, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_separator tool_bar1_separator22;
+    tool_bar_stretchable_separator tool_bar1_separator22;
     tool_bar_button about_tool_bar_button2 {system_texts::about(), 7, {*this, &form1::on_tool_bar_item_click}};
   };
 }
