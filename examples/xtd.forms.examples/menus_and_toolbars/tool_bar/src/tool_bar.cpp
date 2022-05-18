@@ -43,7 +43,7 @@ namespace examples {
     tool_bar_button cut_tool_bar_button {system_texts::cut(), 4, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button copy_tool_bar_button {system_texts::copy(), 5, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button paste_tool_bar_button {system_texts::paste(), 6, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_separator tool_bar1_separator2;
+    tool_bar_stretchable_separator tool_bar1_separator2;
     tool_bar_button about_tool_bar_button {system_texts::about(), 7, {*this, &form1::on_tool_bar_item_click}};
     
     forms::tool_bar tool_bar2;
@@ -54,7 +54,7 @@ namespace examples {
     tool_bar_button skip_forward_tool_bar_button {"Skip &Forward", 3, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_separator tool_bar2_separator2;
     tool_bar_button record_tool_bar_button {"&Record", 4, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_separator tool_bar2_separator3;
+    tool_bar_stretchable_separator tool_bar2_separator3;
     tool_bar_button eject_tool_bar_button {"&Eject", 5, {*this, &form1::on_tool_bar_item_click}};
   };
 }
