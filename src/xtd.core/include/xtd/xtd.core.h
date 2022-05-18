@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
+#include "xtd_namespace_aliases.h"
 #include "abstract.h"
 #include "action.h"
 #include "any.h"
