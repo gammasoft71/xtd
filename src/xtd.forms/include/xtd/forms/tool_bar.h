@@ -199,7 +199,7 @@ namespace xtd {
       void on_item_removed(size_t pos, tool_bar_button_ref item);
 
       void resize_stretchable_separtors();
-      void update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled);
+      void update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
 
       void wm_click(const message& message);
       
