@@ -135,7 +135,7 @@ namespace xtd {
       /// @param border_style nullptr.
       /// @return Current tool_bar instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual xtd::forms::tool_bar& border_style(nullptr_t border_style);
+      virtual xtd::forms::tool_bar& border_style(std::nullptr_t border_style);
 
       virtual xtd::drawing::size button_size() const;
       virtual tool_bar& button_size(const xtd::drawing::size& value);

@@ -13,7 +13,7 @@ flat_button_appearance& flat_button_appearance::border_color(const xtd::drawing:
   return *this;
 }
 
-flat_button_appearance& flat_button_appearance::border_color(nullptr_t) {
+flat_button_appearance& flat_button_appearance::border_color(std::nullptr_t) {
   border_color_.reset();
   return *this;
 }
@@ -27,7 +27,7 @@ flat_button_appearance& flat_button_appearance::border_radius(int32_t radius) {
   return *this;
 }
 
-flat_button_appearance& flat_button_appearance::border_radius(nullptr_t) {
+flat_button_appearance& flat_button_appearance::border_radius(std::nullptr_t) {
   border_radius_.reset();
   return *this;
 }
@@ -41,7 +41,7 @@ flat_button_appearance& flat_button_appearance::border_size(int32_t size) {
   return *this;
 }
 
-flat_button_appearance& flat_button_appearance::border_size(nullptr_t) {
+flat_button_appearance& flat_button_appearance::border_size(std::nullptr_t) {
   border_size_.reset();
   return *this;
 }
@@ -55,7 +55,7 @@ flat_button_appearance& flat_button_appearance::checked_back_color(const xtd::dr
   return *this;
 }
 
-flat_button_appearance& flat_button_appearance::checked_back_color(nullptr_t) {
+flat_button_appearance& flat_button_appearance::checked_back_color(std::nullptr_t) {
   checked_back_color_.reset();
   return *this;
 }
@@ -69,7 +69,7 @@ flat_button_appearance& flat_button_appearance::mouse_down_back_color(const xtd:
   return *this;
 }
 
-flat_button_appearance& flat_button_appearance::mouse_down_back_color(nullptr_t) {
+flat_button_appearance& flat_button_appearance::mouse_down_back_color(std::nullptr_t) {
   mouse_down_back_color_.reset();
   return *this;
 }
@@ -83,7 +83,7 @@ flat_button_appearance& flat_button_appearance::mouse_over_back_color(const xtd:
   return *this;
 }
 
-flat_button_appearance& flat_button_appearance::mouse_over_back_color(nullptr_t) {
+flat_button_appearance& flat_button_appearance::mouse_over_back_color(std::nullptr_t) {
   mouse_over_back_color_.reset();
   return *this;
 }

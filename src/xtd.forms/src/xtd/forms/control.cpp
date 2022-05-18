@@ -166,7 +166,7 @@ control& control::back_color(const color& color) {
   return *this;
 }
 
-control& control::back_color(nullptr_t) {
+control& control::back_color(std::nullptr_t) {
   if (data_->back_color.has_value()) {
     data_->back_color.reset();
     post_recreate_handle();
@@ -273,7 +273,7 @@ control& control::context_menu(xtd::forms::context_menu& value) {
   return *this;
 }
 
-control& control::context_menu(nullptr_t) {
+control& control::context_menu(std::nullptr_t) {
   if (data_->context_menu.has_value()) {
     data_->context_menu.reset();
     if (is_handle_created()) native::control::context_menu(handle(), 0);
@@ -322,7 +322,7 @@ control& control::cursor(const forms::cursor& cursor) {
   return *this;
 }
 
-control& control::cursor(nullptr_t) {
+control& control::cursor(std::nullptr_t) {
   if (data_->cursor.has_value()) {
     data_->cursor.reset();
     post_recreate_handle();
@@ -403,7 +403,7 @@ control& control::font(const drawing::font& font) {
   return *this;
 }
 
-control& control::font(nullptr_t) {
+control& control::font(std::nullptr_t) {
   if (data_->font.has_value()) {
     data_->font.reset();
     post_recreate_handle();
@@ -431,7 +431,7 @@ control& control::fore_color(const color& color) {
   return *this;
 }
 
-control& control::fore_color(nullptr_t) {
+control& control::fore_color(std::nullptr_t) {
   if (data_->fore_color.has_value()) {
     data_->fore_color.reset();
     post_recreate_handle();
@@ -591,7 +591,7 @@ control& control::parent(const control& parent) {
   return *this;
 }
 
-control& control::parent(nullptr_t) {
+control& control::parent(std::nullptr_t) {
   if (parent().has_value()) {
     on_parent_changed(event_args::empty);
     for (size_t index = 0; index < parent().value().get().data_->controls.size(); index++) {

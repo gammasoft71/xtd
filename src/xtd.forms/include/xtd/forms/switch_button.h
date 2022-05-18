@@ -60,7 +60,7 @@ namespace xtd {
         return *this;
       }
       /// @cond
-      virtual switch_button& checked_back_color(nullptr_t) {
+      virtual switch_button& checked_back_color(std::nullptr_t) {
         if (checked_back_color_.has_value()) {
           checked_back_color_.reset();
           invalidate();
@@ -86,7 +86,7 @@ namespace xtd {
         return *this;
       }
       /// @cond
-      virtual switch_button& slider_color(nullptr_t) {
+      virtual switch_button& slider_color(std::nullptr_t) {
         if (slider_color_.has_value()) {
           slider_color_.reset();
           invalidate();

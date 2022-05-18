@@ -57,7 +57,7 @@ namespace xtd {
       /// @param border_style nullptr.
       /// @return Current label instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual xtd::forms::label& border_style(nullptr_t border_style);
+      virtual xtd::forms::label& border_style(std::nullptr_t border_style);
 
       /// @brief Gets the flat style appearance of the label control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.

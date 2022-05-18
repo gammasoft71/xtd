@@ -39,7 +39,7 @@ user_control& user_control::border_style(forms::border_style border_style) {
   return *this;
 }
 
-user_control& user_control::border_style(nullptr_t) {
+user_control& user_control::border_style(std::nullptr_t) {
   if (border_style_.has_value()) {
     border_style_.reset();
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();

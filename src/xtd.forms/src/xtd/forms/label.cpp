@@ -41,7 +41,7 @@ label& label::border_style(xtd::forms::border_style border_style) {
   return *this;
 }
 
-label& label::border_style(nullptr_t) {
+label& label::border_style(std::nullptr_t) {
   if (data_->border_style) {
     data_->border_style.reset();
     if (flat_style() == forms::flat_style::system) post_recreate_handle();

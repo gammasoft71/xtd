@@ -61,7 +61,7 @@ namespace xtd {
       /// @brief Sets the button on the form that is clicked when the user presses the ENTER key.
       /// @param value An ibutton_control that represents the button to use as the accept button for the form.
       /// @return Current form.
-      form& accept_button(nullptr_t);
+      form& accept_button(std::nullptr_t);
       
       /// @brief Gets the currently active form for this application.
       /// @return A form that represents the currently active form, or std::optional with no value if there is no active form.
@@ -85,7 +85,7 @@ namespace xtd {
       /// @brief Gets the button control that is clicked when the user presses the ESC key.
       /// @param value  An ibutton_control that represents the cancel button for the form.
       /// @return Current form.
-      form& cancel_button(nullptr_t);
+      form& cancel_button(std::nullptr_t);
       
       /// @brief Gets a value indicating whether a close box is displayed in the caption bar of the form.
       /// @return true if the form displays a close box in the upper-left corner of the form; otherwise, false. The default is true.
@@ -155,7 +155,7 @@ namespace xtd {
       /// @brief Sets the main_menu that is displayed in the form.
       /// @param value A main_menu that represents the menu to display in the form.
       /// @return Current form.
-      virtual form& menu(nullptr_t);
+      virtual form& menu(std::nullptr_t);
       
       /// @brief Gets a value indicating whether the Minimize button is displayed in the caption bar of the form.
       /// @return true to display a Minimize button for the form; otherwise, false. The default is true.
@@ -179,7 +179,7 @@ namespace xtd {
       /// @brief Resets the form that owns this form.
       /// @param nullptr
       /// @return Current form.
-      virtual form& owner(nullptr_t);
+      virtual form& owner(std::nullptr_t);
 
       using container_control::parent;
       /// @brief Sets the parent container of the control.
@@ -226,7 +226,7 @@ namespace xtd {
       /// @brief Sets the tool_bar that is displayed in the form.
       /// @param value A tool_bar that represents the tool bar to display in the form.
       /// @return Current form.
-      virtual form& tool_bar(nullptr_t);
+      virtual form& tool_bar(std::nullptr_t);
       
       /// @brief Gets a value indicating whether to display the form as a top-level window.
       /// @return true to display the form as a top-level window; otherwise, false. The default is true.
