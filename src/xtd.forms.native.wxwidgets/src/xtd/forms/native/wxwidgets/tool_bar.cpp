@@ -76,7 +76,7 @@ bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
   return true;
 }
 
-void tool_bar::update_tool_bar_toggle_button(intptr_t control, intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled) {
+void tool_bar::update_tool_bar_toggle_button(intptr_t control, intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!control || !handle || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -89,5 +89,5 @@ void tool_bar::update_tool_bar_toggle_button(intptr_t control, intptr_t handle, 
   tool_bar_item->SetLabel(convert_string::to_wstring(text));
   tool_bar_item->SetNormalBitmap(*reinterpret_cast<wxImage*>(image.handle()));
   tool_bar_item->SetToggle(pushed);
-  tool_bar_item->Enable(enabled);
+  tool_bar_item->Enable(enabled && visible);
 }

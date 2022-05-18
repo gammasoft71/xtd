@@ -513,7 +513,7 @@ void tool_bar::resize_stretchable_separtors() {
   if (data_->stretchable_separators.size()) {
     auto remaining_size = is_horizontal() ? size().width() - padding().left() - padding().right() : size().height() - padding().top() - padding().bottom();
     for (auto tool_bar_button : data_->tool_bar_buttons) {
-      if (tool_bar_button->style() != tool_bar_button_style::stretchable_separator)
+      if (tool_bar_button->style() != tool_bar_button_style::stretchable_separator && tool_bar_button->visible())
         remaining_size -= is_horizontal() ? tool_bar_button->size().width() : tool_bar_button->size().height();
     }
     
@@ -528,18 +528,20 @@ void tool_bar::resize_stretchable_separtors() {
         else stretchable_separator->height(default_stretchable_size);
       }
     }
+    perform_layout();
   }
 }
 
-void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled) {
-  post_recreate_handle();
+void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (is_system_tool_bar())
-    native::tool_bar::update_tool_bar_toggle_button(this->handle(), handle, text, image, pushed, enabled);
+    native::tool_bar::update_tool_bar_toggle_button(this->handle(), handle, text, image, pushed, enabled, visible);
   else {
     reinterpret_cast<tool_bar_button_control*>(handle)->text(text);
     reinterpret_cast<tool_bar_button_control*>(handle)->image(image);
     reinterpret_cast<tool_bar_button_control*>(handle)->pushed(pushed);
     reinterpret_cast<tool_bar_button_control*>(handle)->enabled(enabled);
+    reinterpret_cast<tool_bar_button_control*>(handle)->visible(visible);
+    resize_stretchable_separtors();
   }
 }
 
