@@ -14,6 +14,7 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @cond
+    class control;
     class tool_bar;
     /// @endcond
     
@@ -41,6 +42,8 @@ namespace xtd {
       /// @cond
       template<typename delegate_type>
       tool_bar_button(const xtd::ustring& text, size_t image_index, delegate_type on_click) : tool_bar_button(text, image_index, xtd::event_handler(on_click)) {}
+      bool operator==(const tool_bar_button& other) const noexcept {return data_ == other.data_;}
+      bool operator!=(const tool_bar_button& other) const noexcept {return !operator==(other);}
       /// @endcond
       
       /// @name Properties
@@ -101,6 +104,7 @@ namespace xtd {
         xtd::ustring tool_tip_text;
         bool visible = true;
         xtd::forms::tool_bar* parent = nullptr;
+        intptr_t handle = 0;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

@@ -37,8 +37,8 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        static intptr_t add_tool_bar_button(intptr_t control, const xtd::ustring& text, intptr_t image, bool enabled);
-        static intptr_t add_tool_bar_toggle_button(intptr_t control, const xtd::ustring& text, intptr_t image, bool pushed, bool enabled);
+        static intptr_t add_tool_bar_button(intptr_t control, const xtd::ustring& text, const xtd::drawing::image& image, bool enabled);
+        static intptr_t add_tool_bar_toggle_button(intptr_t control, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled);
         static intptr_t add_tool_bar_separator(intptr_t control);
         static intptr_t add_tool_bar_stretchable_separator(intptr_t control);
         /// @brief Sets the tool_bar that is displayed in the form.
@@ -46,6 +46,7 @@ namespace xtd {
         /// @param tool_bar A tool bar handle that represents the tool bar to display in the form.
         /// @warning Internal use only
         static bool set_system_tool_bar(intptr_t control, intptr_t tool_bar);
+        static void update_tool_bar_toggle_button(intptr_t control, intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled);
         /// @}
       };
     }

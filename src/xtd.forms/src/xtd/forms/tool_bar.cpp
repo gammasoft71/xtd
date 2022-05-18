@@ -432,17 +432,21 @@ void tool_bar::fill() {
   if (!is_system_tool_bar()) std::reverse(reversed_buttons.begin(), reversed_buttons.end());
   for (size_t index = 0; index < reversed_buttons.size(); ++index) {
     auto& button_item = reversed_buttons[index].get();
+    intptr_t control_handle = 0;
     if (is_system_tool_bar()) {
       if (reversed_buttons[index].get().style() == tool_bar_button_style::toggle_button)
-        data_->system_tool_bar_button_handles.push_back(native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle(), reversed_buttons[index].get().pushed(), button_item.enabled()));
+        control_handle = native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_buttons[index].get().pushed(), button_item.enabled());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::separator)
-        data_->system_tool_bar_button_handles.push_back(native::tool_bar::add_tool_bar_separator(handle()));
+        control_handle = native::tool_bar::add_tool_bar_separator(handle());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
-        data_->system_tool_bar_button_handles.push_back(native::tool_bar::add_tool_bar_stretchable_separator(handle()));
+        control_handle = native::tool_bar::add_tool_bar_stretchable_separator(handle());
       else
-        data_->system_tool_bar_button_handles.push_back(native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()].handle() : image::empty.handle(), button_item.enabled()));
+        control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled());
+      reversed_buttons[index].get().data_->handle = control_handle;
+      data_->system_tool_bar_button_handles.push_back(control_handle);
     } else {
       auto button_control = std::make_shared<tool_bar_button_control>();
+      reversed_buttons[index].get().data_->handle = reinterpret_cast<intptr_t>(button_control.get());
       button_control->parent(*this);
       button_control->tool_bar_button(button_item);
       if (is_horizontal()) button_control->dock(dock_style::left);
@@ -526,6 +530,19 @@ void tool_bar::resize_stretchable_separtors() {
     }
   }
 }
+
+void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled) {
+  post_recreate_handle();
+  if (is_system_tool_bar())
+    native::tool_bar::update_tool_bar_toggle_button(this->handle(), handle, text, image, pushed, enabled);
+  else {
+    reinterpret_cast<tool_bar_button_control*>(handle)->text(text);
+    reinterpret_cast<tool_bar_button_control*>(handle)->image(image);
+    reinterpret_cast<tool_bar_button_control*>(handle)->pushed(pushed);
+    reinterpret_cast<tool_bar_button_control*>(handle)->enabled(enabled);
+  }
+}
+
 
 void tool_bar::wm_click(const message& message) {
   for (size_t index = 0; index < data_->system_tool_bar_button_handles.size(); ++index) {
