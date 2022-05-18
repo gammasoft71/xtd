@@ -49,15 +49,13 @@ namespace xtd {
         void pushed(bool value);
         void show_icon(bool value);
         void show_text(bool value);
-        bool stretchable_separator() const;
-        void stretchable_separator(bool value);
-        void separator(bool value);
         xtd::drawing::size size() const override;
         control& size(const xtd::drawing::size& value) override;
-        using xtd::forms::button_base::text_align;
+        xtd::forms::tool_bar_button_style style() const;
+        void style(xtd::forms::tool_bar_button_style value);
         using xtd::forms::control::text;
         control& text(const xtd::ustring& value) override;
-        void toggle_button(bool value);
+        using xtd::forms::button_base::text_align;
         void tool_bar_text_align(xtd::forms::tool_bar_text_align value);
         void tool_bar_button(tool_bar_button_ref value) {data_->tool_bar_button = value;}
 
@@ -77,10 +75,8 @@ namespace xtd {
           bool flat = false;
           bool show_icon = true;
           bool show_text = false;
-          bool toggle_button = false;
-          bool stretchable_separator = false;
-          bool separator = false;
           bool pushed = false;
+          xtd::forms::tool_bar_button_style style = xtd::forms::tool_bar_button_style::push_button;
           xtd::forms::tool_bar_text_align tool_bar_text_align = xtd::forms::tool_bar_text_align::underneath;
         };
         
