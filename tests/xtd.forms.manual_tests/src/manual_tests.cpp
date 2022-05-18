@@ -44,6 +44,10 @@ namespace examples {
     void on_tool_bar_item_click(object& sender, const event_args& e) {
       list_box1.items().push_back(ustring::format("{} clicked, pushed = {}", as<tool_bar_button>(sender).text(), as<tool_bar_button>(sender).pushed()));
       list_box1.selected_index(list_box1.items().size() - 1);
+      if (as<tool_bar_button>(sender) == new_tool_bar_button)
+        open_tool_bar_button.enabled(!open_tool_bar_button.enabled());
+      if (as<tool_bar_button>(sender) == new_tool_bar_button2)
+        open_tool_bar_button2.enabled(!open_tool_bar_button2.enabled());
     }
     
     list_box list_box1;

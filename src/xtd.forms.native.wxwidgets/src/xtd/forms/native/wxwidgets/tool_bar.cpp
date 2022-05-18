@@ -10,26 +10,26 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-intptr_t tool_bar::add_tool_bar_button(intptr_t control, const xtd::ustring& text, intptr_t image, bool enabled) {
+intptr_t tool_bar::add_tool_bar_button(intptr_t control, const xtd::ustring& text, const xtd::drawing::image& image, bool enabled) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return 0;
   }
   
-  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(control)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image));
+  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(control)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image.handle()));
   tool_bar_item->Enable(enabled);
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }
 
-intptr_t tool_bar::add_tool_bar_toggle_button(intptr_t control, const xtd::ustring& text, intptr_t image, bool pushed, bool enabled) {
+intptr_t tool_bar::add_tool_bar_toggle_button(intptr_t control, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return 0;
   }
   
-  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(control)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image), wxEmptyString, wxITEM_CHECK);
+  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(control)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image.handle()), wxEmptyString, wxITEM_CHECK);
   tool_bar_item->Toggle(pushed);
   tool_bar_item->Enable(enabled);
   return static_cast<intptr_t>(tool_bar_item->GetId());
@@ -74,4 +74,20 @@ bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
     static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(tool_bar != 0 ? static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control()) : nullptr);
   if (tool_bar) dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->Realize();
   return true;
+}
+
+void tool_bar::update_tool_bar_toggle_button(intptr_t control, intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled) {
+  if (!control || !handle || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+
+  auto tool_bar_item = dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(control)->control())->FindById(static_cast<int>(handle));
+  if (!tool_bar_item) throw argument_exception(csf_);
+
+  tool_bar_item->SetLabel(convert_string::to_wstring(text));
+  tool_bar_item->SetNormalBitmap(*reinterpret_cast<wxImage*>(image.handle()));
+  tool_bar_item->SetToggle(pushed);
+  tool_bar_item->Enable(enabled);
 }
