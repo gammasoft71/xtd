@@ -28,7 +28,7 @@ namespace examples {
       tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, about_tool_bar_button});
 
       about_tool_bar_button2.style(xtd::forms::tool_bar_button_style::toggle_button);
-      
+     
       tool_bar2.dock(dock_style::right);
       tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
       tool_bar2.show_text(true);

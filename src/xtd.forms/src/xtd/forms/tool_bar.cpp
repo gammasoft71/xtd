@@ -447,6 +447,7 @@ void tool_bar::fill() {
       button_control->tool_bar_button(button_item);
       if (is_horizontal()) button_control->dock(dock_style::left);
       else button_control->dock(dock_style::top);
+      button_control->enabled(reversed_buttons[index].get().enabled());
       button_control->flat(appearnce() == tool_bar_appearance::flat);
       button_control->show_icon(data_->show_icon);
       button_control->show_text(data_->show_text);
@@ -454,7 +455,8 @@ void tool_bar::fill() {
       button_control->style(reversed_buttons[index].get().style());
       button_control->tool_bar_text_align(data_->text_align);
       button_control->pushed(reversed_buttons[index].get().pushed());
-      if (reversed_buttons[index].get().style() == tool_bar_button_style::separator) {
+      button_control->visible(reversed_buttons[index].get().visible());
+    if (reversed_buttons[index].get().style() == tool_bar_button_style::separator) {
         button_control->height(image_size().height() / 2);
         button_control->width(image_size().width() / 2);
       }
