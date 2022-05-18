@@ -91,26 +91,6 @@ void tool_bar::tool_bar_button_control::show_text(bool value) {
   }
 }
 
-void tool_bar::tool_bar_button_control::separator(bool value) {
-  if (data_->separator != value) {
-    data_->separator = value;
-    update_size();
-    update_layout();
-  }
-}
-
-bool tool_bar::tool_bar_button_control::stretchable_separator() const {
-  return data_->stretchable_separator;
-}
-
-void tool_bar::tool_bar_button_control::stretchable_separator(bool value) {
-  if (data_->stretchable_separator != value) {
-    data_->stretchable_separator = value;
-    update_size();
-    update_layout();
-  }
-}
-
 xtd::drawing::size tool_bar::tool_bar_button_control::size() const {
   return control::size();
 }
@@ -124,9 +104,13 @@ control& tool_bar::tool_bar_button_control::size(const xtd::drawing::size& value
   return *this;
 }
 
-void tool_bar::tool_bar_button_control::toggle_button(bool value) {
-  if (data_->toggle_button != value) {
-    data_->toggle_button = value;
+xtd::forms::tool_bar_button_style tool_bar::tool_bar_button_control::style() const {
+  return data_->style;
+}
+
+void tool_bar::tool_bar_button_control::style(xtd::forms::tool_bar_button_style value) {
+  if (data_->style != value) {
+    data_->style = value;
     update_size();
     update_layout();
   }
@@ -152,17 +136,17 @@ control& tool_bar::tool_bar_button_control::text(const xtd::ustring& value) {
 void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
   xtd::forms::button::on_click(e);
   if (data_->tool_bar_button.has_value()) {
-    if (data_->toggle_button) {
+    if (data_->style == tool_bar_button_style::toggle_button) {
       data_->pushed = !data_->pushed;
       data_->tool_bar_button.value().get().pushed(data_->pushed);
     }
-    if (!data_->separator)
+    if (data_->style != tool_bar_button_style::separator && data_->style != tool_bar_button_style::stretchable_separator)
       data_->tool_bar_button.value().get().perform_click();
   }
 }
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
-  if (data_->separator || data_->stretchable_separator) {
+  if (data_->style == tool_bar_button_style::separator || data_->style == tool_bar_button_style::stretchable_separator) {
     if (data_->flat) {
       auto percent_of_color = 1.0 / 6;
       auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
@@ -467,16 +451,13 @@ void tool_bar::fill() {
       button_control->show_icon(data_->show_icon);
       button_control->show_text(data_->show_text);
       button_control->size(button_size());
+      button_control->style(reversed_buttons[index].get().style());
       button_control->tool_bar_text_align(data_->text_align);
-      button_control->toggle_button(reversed_buttons[index].get().style() == tool_bar_button_style::toggle_button);
-      if (reversed_buttons[index].get().style() == tool_bar_button_style::toggle_button)
-        button_control->pushed(reversed_buttons[index].get().pushed());
-      button_control->separator(reversed_buttons[index].get().style() == tool_bar_button_style::separator);
+      button_control->pushed(reversed_buttons[index].get().pushed());
       if (reversed_buttons[index].get().style() == tool_bar_button_style::separator) {
         button_control->height(image_size().height() / 2);
         button_control->width(image_size().width() / 2);
       }
-      button_control->stretchable_separator(reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator);
       if (reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
         data_->stretchable_separators.push_back(button_control);
 
@@ -526,7 +507,7 @@ void tool_bar::resize_stretchable_separtors() {
   if (data_->stretchable_separators.size()) {
     auto remaining_size = is_horizontal() ? size().width() - padding().left() - padding().right() : size().height() - padding().top() - padding().bottom();
     for (auto tool_bar_button : data_->tool_bar_buttons) {
-      if (!tool_bar_button->stretchable_separator())
+      if (tool_bar_button->style() != tool_bar_button_style::stretchable_separator)
         remaining_size -= is_horizontal() ? tool_bar_button->size().width() : tool_bar_button->size().height();
     }
     

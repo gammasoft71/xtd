@@ -17,7 +17,7 @@ namespace examples {
       about_tool_bar_button.style(xtd::forms::tool_bar_button_style::toggle_button);
 
       //tool_bar1.appearnce(xtd::forms::tool_bar_appearance::system);
-      tool_bar1.dock(dock_style::bottom);
+      tool_bar1.dock(dock_style::left);
       tool_bar1.appearnce(xtd::forms::tool_bar_appearance::flat);
       tool_bar1.show_text(true);
       //tool_bar1.show_icon(false);
@@ -29,7 +29,7 @@ namespace examples {
 
       about_tool_bar_button2.style(xtd::forms::tool_bar_button_style::toggle_button);
       
-      tool_bar2.dock(dock_style::bottom);
+      tool_bar2.dock(dock_style::right);
       tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
       tool_bar2.show_text(true);
       //tool_bar2.show_icon(false);
@@ -52,7 +52,7 @@ namespace examples {
     tool_bar_button open_tool_bar_button {system_texts::open(), 1, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button save_tool_bar_button {system_texts::save(), 2, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button print_tool_bar_button {system_texts::print(), 3, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_separator tool_bar1_separator1;
+    tool_bar_stretchable_separator tool_bar1_separator1;
     tool_bar_button cut_tool_bar_button {system_texts::cut(), 4, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button copy_tool_bar_button {system_texts::copy(), 5, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button paste_tool_bar_button {system_texts::paste(), 6, {*this, &form1::on_tool_bar_item_click}};
