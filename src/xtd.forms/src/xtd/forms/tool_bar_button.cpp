@@ -45,6 +45,18 @@ tool_bar_button& tool_bar_button::enabled(bool value) {
   return *this;
 }
 
+size_t tool_bar_button::image_index() const {
+  return data_->image_index;
+}
+
+tool_bar_button& tool_bar_button::image_index(size_t value) {
+  if (data_->image_index != value) {
+    data_->image_index = value;
+    if (data_->parent) data_->parent->post_recreate_handle();
+  }
+  return *this;
+}
+
 bool tool_bar_button::pushed() const {
   return data_->pushed;
 }
@@ -81,13 +93,13 @@ tool_bar_button& tool_bar_button::text(const xtd::ustring& value) {
   return *this;
 }
 
-size_t tool_bar_button::image_index() const {
-  return data_->image_index;
+bool tool_bar_button::visible() const {
+  return data_->enabled;
 }
 
-tool_bar_button& tool_bar_button::image_index(size_t value) {
-  if (data_->image_index != value) {
-    data_->image_index = value;
+tool_bar_button& tool_bar_button::visible(bool value) {
+  if (data_->visible != value) {
+    data_->visible = value;
     if (data_->parent) data_->parent->post_recreate_handle();
   }
   return *this;

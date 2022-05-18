@@ -49,17 +49,20 @@ namespace xtd {
       bool enabled() const;
       tool_bar_button& enabled(bool value);
       
+      size_t image_index() const;
+      tool_bar_button& image_index(size_t value);
+
       bool pushed() const;
       tool_bar_button& pushed(bool value);
       
       const xtd::ustring& text() const;
       tool_bar_button& text(const xtd::ustring& value);
-      
-      size_t image_index() const;
-      tool_bar_button& image_index(size_t value);
 
       xtd::forms::tool_bar_button_style style() const;
       tool_bar_button& style(xtd::forms::tool_bar_button_style value);
+
+      bool visible() const;
+      tool_bar_button& visible(bool value);
       /// @}
       
       /// @name Methods
