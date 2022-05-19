@@ -19,6 +19,15 @@ namespace examples {
       choice1.selected_index(0);
       choice1.selected_value_changed += [&] {
         list_box1.items().push_back(ustring::format("{} selected", choice1.selected_item()));
+        list_box1.selected_index(list_box1.items().size() - 1);
+      };
+      
+      progress_bar1.width(150);
+      
+      progress_timer1.interval_milliseconds(50);
+      progress_timer1.start();
+      progress_timer1.tick += [&] {
+        progress_bar1.value(progress_bar1.value() < progress_bar1.maximum() ? progress_bar1.value() + 1 : progress_bar1.minimum());
       };
       
       tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
@@ -30,7 +39,7 @@ namespace examples {
       tool_bar2.text_align(xtd::forms::tool_bar_text_align::right);
       tool_bar2.image_list().image_size({24, 24});
       tool_bar2.image_list().images().push_back_range({tool_bar_images::from_name("media-playback-start"), tool_bar_images::from_name("media-skip-backward"), tool_bar_images::from_name("media-playback-stop"), tool_bar_images::from_name("media-skip-forward"), tool_bar_images::from_name("media-record"), tool_bar_images::from_name("media-eject")});
-      tool_bar2.buttons().push_back_range({play_tool_bar_button, tool_bar2_separator1, skip_backward_tool_bar_button, stop_tool_bar_button, skip_forward_tool_bar_button, tool_bar2_separator2, record_tool_bar_button, tool_bar2_separator3, eject_tool_bar_button});
+      tool_bar2.buttons().push_back_range({play_tool_bar_button, tool_bar2_separator1, skip_backward_tool_bar_button, stop_tool_bar_button, skip_forward_tool_bar_button, tool_bar2_separator2, record_tool_bar_button, tool_bar2_separator3, progress_tool_bar_button, tool_bar2_separator4, eject_tool_bar_button});
       
       record_tool_bar_button.enabled(false);
     }
@@ -58,6 +67,8 @@ namespace examples {
     tool_bar_button about_tool_bar_button {system_texts::about(), 7, {*this, &form1::on_tool_bar_item_click}};
     
     forms::tool_bar tool_bar2;
+    progress_bar progress_bar1;
+    timer progress_timer1;
     tool_bar_button play_tool_bar_button {"&Play", 0, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_separator tool_bar2_separator1;
     tool_bar_button skip_backward_tool_bar_button {"Skip &Backward", 1, {*this, &form1::on_tool_bar_item_click}};
@@ -65,7 +76,9 @@ namespace examples {
     tool_bar_button skip_forward_tool_bar_button {"Skip &Forward", 3, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_separator tool_bar2_separator2;
     tool_bar_button record_tool_bar_button {"&Record", 4, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_stretchable_separator tool_bar2_separator3;
+    tool_bar_separator tool_bar2_separator3;
+    tool_bar_button progress_tool_bar_button {progress_bar1};
+    tool_bar_stretchable_separator tool_bar2_separator4;
     tool_bar_button eject_tool_bar_button {"&Eject", 5, {*this, &form1::on_tool_bar_item_click}};
   };
 }
