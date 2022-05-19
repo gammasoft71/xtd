@@ -154,8 +154,8 @@ void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
 }
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   if (data_->style == tool_bar_button_style::push_button || data_->style == tool_bar_button_style::toggle_button) {
-    auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
     tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), data_->pushed ? visual_styles::push_button_state::checked : state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
   } else if (data_->style == tool_bar_button_style::separator || data_->style == tool_bar_button_style::stretchable_separator) {
     if (data_->flat) {
@@ -176,16 +176,16 @@ void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
       }
     }
   } else if (data_->style == tool_bar_button_style::control) {
-    auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-    xtd::drawing::rectangle text_rect = client_rectangle();
+    xtd::forms::style_sheets::tool_bar_button current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
+    current_style_sheet.font(font());
+    xtd::drawing::rectangle text_rect = current_style_sheet.get_content_rectangle(e.clip_rectangle());
     if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
       text_rect.width(text_rect.width() - data_->control->width() - 4);
       text_rect.x(text_rect.x() + data_->control->width() + 4);
     } else {
-      text_rect.height(text_rect.height() - data_->control->height());
-      text_rect.y(text_rect.y() + data_->control->height());
+      text_rect.height(text_rect.height() - data_->control->height() - 2);
+      text_rect.y(text_rect.y() + data_->control->height() + 2);
     }
-    xtd::forms::style_sheets::tool_bar_button current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
     text_renderer::draw_text(e.graphics(), text_rect, text(), current_style_sheet);
   }
   control::on_paint(e);
@@ -214,7 +214,7 @@ void tool_bar::tool_bar_button_control::update_size() {
     if (size.width() < data_->control->width()) size.width(data_->control->width());
 
     if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
-      if (size.width() < (data_->control->size().width() + text_size.width() + 4)) size.width(data_->control->size().width() + text_size.width() + 4);
+      if (size.width() < (data_->control->size().width() + text_size.width() + 6)) size.width(data_->control->size().width() + text_size.width() + 6);
       if (size.height() < text_size.height()) size.height(text_size.height());
       const_cast<xtd::forms::control*>(data_->control)->location({(size.width() - data_->control->width() - text_size.width()) / 2, (size.height() - data_->control->height()) / 2});
     } else if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::underneath) {
