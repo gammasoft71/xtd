@@ -37,6 +37,14 @@ tool_bar::tool_bar_button_control::tool_bar_button_control() {
   flat_style(xtd::forms::flat_style::flat);
 }
 
+void tool_bar::tool_bar_button_control::control(const xtd::forms::control* value) {
+  if (data_->control != value) {
+    data_->control = value;
+    update_size();
+    update_layout();
+  }
+}
+
 xtd::drawing::font tool_bar::tool_bar_button_control::default_font() const {
   return xtd::drawing::system_fonts::toolbar_font();
 }
@@ -146,7 +154,10 @@ void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
 }
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
-  if (data_->style == tool_bar_button_style::separator || data_->style == tool_bar_button_style::stretchable_separator) {
+  if (data_->style == tool_bar_button_style::push_button || data_->style == tool_bar_button_style::toggle_button) {
+    auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+    tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), data_->pushed ? visual_styles::push_button_state::checked : state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
+  } else if (data_->style == tool_bar_button_style::separator || data_->style == tool_bar_button_style::stretchable_separator) {
     if (data_->flat) {
       auto percent_of_color = 1.0 / 6;
       auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
@@ -164,9 +175,18 @@ void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
         e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
       }
     }
-  } else {
+  } else if (data_->style == tool_bar_button_style::control) {
     auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-    tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), data_->pushed ? visual_styles::push_button_state::checked : state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
+    xtd::drawing::rectangle text_rect = client_rectangle();
+    if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
+      text_rect.width(text_rect.width() - data_->control->width() - 4);
+      text_rect.x(text_rect.x() + data_->control->width() + 4);
+    } else {
+      text_rect.height(text_rect.height() - data_->control->height());
+      text_rect.y(text_rect.y() + data_->control->height());
+    }
+    xtd::forms::style_sheets::tool_bar_button current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
+    text_renderer::draw_text(e.graphics(), text_rect, text(), current_style_sheet);
   }
   control::on_paint(e);
 }
@@ -188,19 +208,35 @@ void tool_bar::tool_bar_button_control::update_layout() {
 void tool_bar::tool_bar_button_control::update_size() {
   auto size = this->size();
   auto text_size = measure_text();
-  
-  if (data_->show_text == false) {
-    if (size.width() < image_size().width()) size.width(image_size().width() + 12);
-    if (size.height() < image_size().height()) size.height(image_size().height() + 12);
-  } else if (data_->show_text == true && data_->show_icon == false) {
-    if (size.width() < text_size.width()) size.width(text_size.width());
-    if (size.height() < text_size.height()) size.height(text_size.height());
-  } else if (data_->show_text == true && data_->show_icon == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
-    if (size.width() < (image_size().width() + text_size.width() + 4)) size.width(image_size().width() + text_size.width() + 4);
-    if (size.height() < text_size.height()) size.height(text_size.height());
-  }  else {
-    if (size.width() < text_size.width()) size.width(text_size.width());
-    if (size.height() < (image_size().height() + text_size.height() + 6)) size.height(image_size().height() + text_size.height() + 6);
+
+  if (data_->control) {
+    if (size.height() < data_->control->height()) size.height(data_->control->height());
+    if (size.width() < data_->control->width()) size.width(data_->control->width());
+
+    if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
+      if (size.width() < (data_->control->size().width() + text_size.width() + 4)) size.width(data_->control->size().width() + text_size.width() + 4);
+      if (size.height() < text_size.height()) size.height(text_size.height());
+      const_cast<xtd::forms::control*>(data_->control)->location({(size.width() - data_->control->width() - text_size.width()) / 2, (size.height() - data_->control->height()) / 2});
+    } else if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::underneath) {
+      if (size.width() < text_size.width()) size.width(text_size.width());
+      if (size.height() < (data_->control->size().height() + text_size.height() + 6)) size.height(data_->control->size().height() + text_size.height() + 6);
+      const_cast<xtd::forms::control*>(data_->control)->location({(size.width() - data_->control->width()) / 2, (size.height() - data_->control->height() - text_size.height()) / 2});
+    } else
+      const_cast<xtd::forms::control*>(data_->control)->location({(size.width() - data_->control->width()) / 2, (size.height() - data_->control->height()) / 2});
+  } else {
+    if (data_->show_text == false) {
+      if (size.width() < image_size().width()) size.width(image_size().width() + 12);
+      if (size.height() < image_size().height()) size.height(image_size().height() + 12);
+    } else if (data_->show_text == true && data_->show_icon == false) {
+      if (size.width() < text_size.width()) size.width(text_size.width());
+      if (size.height() < text_size.height()) size.height(text_size.height());
+    } else if (data_->show_text == true && data_->show_icon == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
+      if (size.width() < (image_size().width() + text_size.width() + 4)) size.width(image_size().width() + text_size.width() + 4);
+      if (size.height() < text_size.height()) size.height(text_size.height());
+    }  else {
+      if (size.width() < text_size.width()) size.width(text_size.width());
+      if (size.height() < (image_size().height() + text_size.height() + 6)) size.height(image_size().height() + text_size.height() + 6);
+    }
   }
   this->size(size);
 }
@@ -383,11 +419,11 @@ void tool_bar::on_handle_created(const event_args& e) {
 }
 
 void tool_bar::on_handle_destroyed(const event_args& e) {
-  control::on_handle_destroyed(e);
   if (is_system_tool_bar()) {
     native::tool_bar::set_system_tool_bar(parent().value().get().handle(), 0);
     data_->system_tool_bar_button_handles.clear();
   }
+  control::on_handle_destroyed(e);
 }
 
 void tool_bar::on_paint(xtd::forms::paint_event_args& e) {
@@ -434,38 +470,46 @@ void tool_bar::fill() {
     auto& button_item = reversed_buttons[index].get();
     intptr_t control_handle = 0;
     if (is_system_tool_bar()) {
-      if (reversed_buttons[index].get().style() == tool_bar_button_style::toggle_button)
-        control_handle = native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_buttons[index].get().pushed(), button_item.enabled());
+      if (reversed_buttons[index].get().style() == tool_bar_button_style::push_button)
+        control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
+      else if (reversed_buttons[index].get().style() == tool_bar_button_style::toggle_button)
+        control_handle = native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_buttons[index].get().pushed(), button_item.enabled(), button_item.visible());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::separator)
         control_handle = native::tool_bar::add_tool_bar_separator(handle());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
         control_handle = native::tool_bar::add_tool_bar_stretchable_separator(handle());
-      else
-        control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled());
+      else if (reversed_buttons[index].get().style() == tool_bar_button_style::control) {
+        if (button_item.control().has_value()) button_item.control().value().get().parent(*this);
+        control_handle = native::tool_bar::add_tool_bar_control(handle(), button_item.control().has_value() ? button_item.control().value().get().handle() : 0, button_item.text());
+      }
       reversed_buttons[index].get().data_->handle = control_handle;
       data_->system_tool_bar_button_handles.push_back(control_handle);
     } else {
       auto button_control = std::make_shared<tool_bar_button_control>();
-      reversed_buttons[index].get().data_->handle = reinterpret_cast<intptr_t>(button_control.get());
+      button_item.data_->handle = reinterpret_cast<intptr_t>(button_control.get());
       button_control->parent(*this);
       button_control->tool_bar_button(button_item);
       if (is_horizontal()) button_control->dock(dock_style::left);
       else button_control->dock(dock_style::top);
-      button_control->enabled(reversed_buttons[index].get().enabled());
+      button_control->enabled(button_item.enabled());
       button_control->flat(appearnce() == tool_bar_appearance::flat);
       button_control->show_icon(data_->show_icon);
       button_control->show_text(data_->show_text);
       button_control->size(button_size());
-      button_control->style(reversed_buttons[index].get().style());
+      button_control->style(button_item.style());
       button_control->tool_bar_text_align(data_->text_align);
-      button_control->pushed(reversed_buttons[index].get().pushed());
-      button_control->visible(reversed_buttons[index].get().visible());
-    if (reversed_buttons[index].get().style() == tool_bar_button_style::separator) {
+      button_control->pushed(button_item.pushed());
+      button_control->visible(button_item.visible());
+      if (button_item.style() == tool_bar_button_style::separator) {
         button_control->height(image_size().height() / 2);
         button_control->width(image_size().width() / 2);
       }
-      if (reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
+      if (button_item.style() == tool_bar_button_style::stretchable_separator)
         data_->stretchable_separators.push_back(button_control);
+      if (button_item.style() == tool_bar_button_style::control && button_item.control().has_value()) {
+        button_control->control(&button_item.control().value().get());
+        button_item.control().value().get().parent(*button_control);
+      }
 
       if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
       if (data_->show_text) button_control->text(button_item.text());
@@ -535,8 +579,9 @@ void tool_bar::resize_stretchable_separtors() {
 void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!handle) return;
   if (is_system_tool_bar())
-    native::tool_bar::update_tool_bar_toggle_button(this->handle(), handle, text, image, pushed, enabled, visible);
+    native::tool_bar::update_tool_bar_item(this->handle(), handle, text, image, pushed, enabled, visible);
   else {
+    reinterpret_cast<tool_bar_button_control*>(handle)->text(text);
     reinterpret_cast<tool_bar_button_control*>(handle)->text(text);
     reinterpret_cast<tool_bar_button_control*>(handle)->image(image);
     reinterpret_cast<tool_bar_button_control*>(handle)->pushed(pushed);
@@ -545,7 +590,6 @@ void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring
     resize_stretchable_separtors();
   }
 }
-
 
 void tool_bar::wm_click(const message& message) {
   for (size_t index = 0; index < data_->system_tool_bar_button_handles.size(); ++index) {

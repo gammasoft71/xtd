@@ -41,6 +41,7 @@ namespace xtd {
         
         xtd::drawing::font default_font() const override;
         
+        void control(const xtd::forms::control* value);
         void flat(bool value);
         using xtd::forms::button_base::image;
         button_base& image(const xtd::drawing::image& value) override;
@@ -50,11 +51,11 @@ namespace xtd {
         void show_icon(bool value);
         void show_text(bool value);
         xtd::drawing::size size() const override;
-        control& size(const xtd::drawing::size& value) override;
+        xtd::forms::control& size(const xtd::drawing::size& value) override;
         xtd::forms::tool_bar_button_style style() const;
         void style(xtd::forms::tool_bar_button_style value);
         using xtd::forms::control::text;
-        control& text(const xtd::ustring& value) override;
+        xtd::forms::control& text(const xtd::ustring& value) override;
         using xtd::forms::button_base::text_align;
         void tool_bar_text_align(xtd::forms::tool_bar_text_align value);
         void tool_bar_button(tool_bar_button_ref value) {data_->tool_bar_button = value;}
@@ -71,6 +72,7 @@ namespace xtd {
         void update_size();
 
         struct data {
+          const xtd::forms::control* control;
           std::optional<tool_bar_button_ref> tool_bar_button;
           bool flat = false;
           bool show_icon = true;
