@@ -33,6 +33,37 @@ tool_bar_button::tool_bar_button(const ustring& text, size_t image_index, const 
   click += on_click;
 }
 
+tool_bar_button::tool_bar_button(const xtd::ustring& text, const xtd::forms::control& control) {
+  data_->text = text;
+  data_->control = const_cast<xtd::forms::control*>(&control);
+  data_->style = tool_bar_button_style::control;
+}
+
+tool_bar_button::tool_bar_button(const xtd::forms::control& control) {
+  data_->control = const_cast<xtd::forms::control*>(&control);
+  data_->style = tool_bar_button_style::control;
+}
+
+std::optional<std::reference_wrapper<xtd::forms::control>> tool_bar_button::control() const {
+  return data_->control ? std::optional<std::reference_wrapper<xtd::forms::control>>(*data_->control) : std::optional<std::reference_wrapper<xtd::forms::control>>();
+}
+
+tool_bar_button& tool_bar_button::control(const xtd::forms::control& value) {
+  if (!data_->control || data_->control != &value) {
+    data_->control = const_cast<xtd::forms::control*>(&value);
+    if (data_->parent) data_->parent->post_recreate_handle();
+  }
+  return *this;
+}
+
+tool_bar_button& tool_bar_button::control(std::nullptr_t value) {
+  if (data_->control) {
+    data_->control = nullptr;
+    if (data_->parent) data_->parent->post_recreate_handle();
+  }
+  return *this;
+}
+
 bool tool_bar_button::enabled() const {
   return data_->enabled;
 }

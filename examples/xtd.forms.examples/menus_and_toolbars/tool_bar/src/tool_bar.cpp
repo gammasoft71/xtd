@@ -15,8 +15,14 @@ namespace examples {
       
       list_box1.dock(dock_style::fill);
       
+      choice1.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
+      choice1.selected_index(0);
+      choice1.selected_value_changed += [&] {
+        list_box1.items().push_back(ustring::format("{} selected", choice1.selected_item()));
+      };
+      
       tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
-      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, about_tool_bar_button});
+      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, about_tool_bar_button});
       
       tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
       tool_bar2.dock(dock_style::bottom);
@@ -36,6 +42,7 @@ namespace examples {
     }
     
     list_box list_box1;
+    choice choice1;
     forms::tool_bar tool_bar1;
     tool_bar_button new_tool_bar_button {system_texts::new_(), 0, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button open_tool_bar_button {system_texts::open(), 1, {*this, &form1::on_tool_bar_item_click}};
@@ -45,7 +52,9 @@ namespace examples {
     tool_bar_button cut_tool_bar_button {system_texts::cut(), 4, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button copy_tool_bar_button {system_texts::copy(), 5, {*this, &form1::on_tool_bar_item_click}};
     tool_bar_button paste_tool_bar_button {system_texts::paste(), 6, {*this, &form1::on_tool_bar_item_click}};
-    tool_bar_stretchable_separator tool_bar1_separator2;
+    tool_bar_separator tool_bar1_separator2;
+    tool_bar_button choice_tool_bar_button {"Items", choice1};
+    tool_bar_stretchable_separator tool_bar1_separator3;
     tool_bar_button about_tool_bar_button {system_texts::about(), 7, {*this, &form1::on_tool_bar_item_click}};
     
     forms::tool_bar tool_bar2;

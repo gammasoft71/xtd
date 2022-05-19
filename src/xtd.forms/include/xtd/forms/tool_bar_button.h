@@ -37,6 +37,8 @@ namespace xtd {
       tool_bar_button(size_t image_index, const xtd::event_handler& on_click);
       tool_bar_button(const xtd::ustring& text, size_t image_index);
       tool_bar_button(const xtd::ustring& text, size_t image_index, const xtd::event_handler& on_click);
+      tool_bar_button(const xtd::ustring& text, const xtd::forms::control& control);
+      tool_bar_button(const xtd::forms::control& control);
       /// @}
       
       /// @cond
@@ -49,6 +51,10 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      std::optional<std::reference_wrapper<xtd::forms::control>> control() const;
+      tool_bar_button& control(const xtd::forms::control& value);
+      tool_bar_button& control(std::nullptr_t value);
+
       bool enabled() const;
       tool_bar_button& enabled(bool value);
       
@@ -91,7 +97,8 @@ namespace xtd {
     private:
       friend xtd::forms::tool_bar;
       struct data {
-        std::optional<std::reference_wrapper<xtd::forms::menu>> drop_down_menu_;
+        xtd::forms::control* control = nullptr;
+        std::optional<std::reference_wrapper<xtd::forms::menu>> drop_down_menu;
         bool enabled = true;
         size_t image_index = xtd::forms::image_list::image_collection::npos;
         xtd::drawing::image image_key;
