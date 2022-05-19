@@ -583,8 +583,10 @@ control& control::parent(const control& parent) {
   if (parent.data_->handle != data_->parent) {
     if (this->parent().has_value())
       this->parent(nullptr);
-    else
+    else {
+      set_state(control::state::created, false);
       on_parent_changed(event_args::empty);
+    }
     if (parent.handle()) const_cast<control&>(parent).data_->controls.push_back(*this);
   } else if (parent.data_->handle == 0)
     const_cast<control&>(parent).data_->controls.push_back(*this);
