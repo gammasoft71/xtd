@@ -12,15 +12,15 @@ flat-button {
 }
 
 flat-button:hover {
-  background-color: rgba(255, 255, 255, 0.306);
+  background-color: rgba(255, 255, 255, 0.063);
 }
 
 flat-button:pressed {
-  background-color: rgba(255, 255, 255, 0.365);
+  background-color: rgba(255, 255, 255, 0.126);
 }
 
 flat-button:checked {
-  background-color: rgba(255, 255, 255, 0.365);
+  background-color: rgba(255, 255, 255, 0.126);
 }
 
 flat-button:disabled {  
@@ -40,15 +40,15 @@ flat-button:default {
 }
 
 flat-button:default:hover {
-  background-color: rgba(255, 255, 255, 0.306);
+  background-color: rgba(255, 255, 255, 0.063);
 }
 
 flat-button:default:pressed {
-  background-color: rgba(255, 255, 255, 0.365);
+  background-color: rgba(255, 255, 255, 0.126);
 }
 
 flat-button:default:checked {
-  background-color: rgba(255, 255, 255, 0.365);
+  background-color: rgba(255, 255, 255, 0.126);
 }
 
 flat-button:default:disabled {  
