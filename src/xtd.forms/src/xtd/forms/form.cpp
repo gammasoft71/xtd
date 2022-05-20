@@ -31,7 +31,6 @@ std::optional<std::reference_wrapper<form>> form::active_form_;
 form::form() {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   icon_ = system_icons::xtd_forms_logo();
-  font(default_font());
   set_state(state::visible, false);
   set_state(state::top_level, true);
   
