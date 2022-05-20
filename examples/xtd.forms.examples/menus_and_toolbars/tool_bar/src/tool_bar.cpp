@@ -42,6 +42,7 @@ namespace examples {
       tool_bar2.buttons().push_back_range({play_tool_bar_button, tool_bar2_separator1, skip_backward_tool_bar_button, stop_tool_bar_button, skip_forward_tool_bar_button, tool_bar2_separator2, record_tool_bar_button, tool_bar2_separator3, progress_tool_bar_button, tool_bar2_separator4, eject_tool_bar_button});
       
       record_tool_bar_button.enabled(false);
+      eject_tool_bar_button.style(xtd::forms::tool_bar_button_style::toggle_button);
     }
     
   private:
