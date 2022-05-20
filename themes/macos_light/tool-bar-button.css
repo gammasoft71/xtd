@@ -12,18 +12,18 @@ tool-bar-button {
 }
 
 tool-bar-button:hover {
-  border-color: rgba(157, 157, 157, 0.706);
-  background-color: rgba(157, 157, 157, 0.706);
+  border-color: rgba(0, 0, 0, 0.063);
+  background-color: rgba(0, 0, 0, 0.063);
 }
 
 tool-bar-button:pressed {
-  border-color: rgba(157, 157, 157, 0.706);
-  background-color: rgba(236, 236, 236, 0.706);
+  border-color: rgba(0, 0, 0, 0.126);
+  background-color: rgba(0, 0, 0, 0.126);
 }
 
 tool-bar-button:checked {
-  border-color: rgba(157, 157, 157, 0.706);
-  background-color: rgba(236, 236, 236, 0.706);
+  border-color: rgba(0, 0, 0, 0.126);
+  background-color: rgba(0, 0, 0, 0.126);
 }
 
 tool-bar-button:disabled {  

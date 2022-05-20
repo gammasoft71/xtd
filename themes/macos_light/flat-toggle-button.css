@@ -26,15 +26,15 @@ flat-toggle-button:disabled {
 }
 
 flat-toggle-button:checked {
-  background-color: rgba(128, 128, 128, 0.666);
+  background-color: rgba(0, 0, 0, 0.126);
 }
 
 flat-toggle-button:checked:hover {
-  background-color: rgba(128, 128, 128, 0.666);
+  background-color: rgba(0, 0, 0, 0.126);
 }
 
 flat-toggle-button:checked:pressed {
-  background-color: rgba(128, 128, 128, 0.666);
+  background-color: rgba(0, 0, 0, 0.126);
 }
 
 flat-toggle-button:checked:disabled {  
@@ -44,15 +44,15 @@ flat-toggle-button:checked:disabled {
 }
 
 flat-toggle-button:mixed {
-  background-color: rgba(128, 128, 128, 0.333);
+  background-color: rgba(0, 0, 0, 0.063);
 }
 
 flat-toggle-button:mixed:hover {
-  background-color: rgba(128, 128, 128, 0.333);
+  background-color: rgba(0, 0, 0, 0.063);
 }
 
 flat-toggle-button:mixed:pressed {
-  background-color: rgba(128, 128, 128, 0.333);
+  background-color: rgba(0, 0, 0, 0.063);
 }
 
 flat-toggle-button:mixed:disabled {  
