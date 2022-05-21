@@ -1,6 +1,7 @@
 #include "../../../include/xtd/io/path.h"
 #include "../../../include/xtd/io/drive_info.h"
 #include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/random.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/path.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -114,11 +115,11 @@ ustring path::get_path_root(const ustring& path) {
 
 ustring path::get_random_file_name() {
   static ustring valid_chars = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-  random_device rand;
+  xtd::random rand;
   ustring random_file_name;
   
   for (size_t i = 0; i < 11; i++) {
-    random_file_name += valid_chars[uniform_int_distribution<size_t> {0, valid_chars.size() - 1}(rand)];
+    random_file_name += valid_chars[rand.next(0, valid_chars.size() - 1)];
     if (i == 7)
       random_file_name += '.';
   }
@@ -130,14 +131,14 @@ ustring path::get_temp_file_name() {
   static ustring valid_chars = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f'};
   ustring temp_file_name;
   do {
-    static random_device rand;
+    static xtd::random rand;
     temp_file_name = "tmp";
     
     for (size_t i = 0; i < 8; i++) {
       if (i == 0)
-        temp_file_name += valid_chars[uniform_int_distribution<size_t> {0, 9}(rand)];
+        temp_file_name += valid_chars[rand.next(0, 9)];
       else
-        temp_file_name += valid_chars[uniform_int_distribution<size_t> {0, valid_chars.size() - 1}(rand)];
+        temp_file_name += valid_chars[rand.next(0, valid_chars.size() - 1)];
     }
     temp_file_name += ".tmp";
   } while (file::exists(combine(get_temp_path(), temp_file_name)));
