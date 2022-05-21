@@ -148,8 +148,8 @@ void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
       data_->pushed = !data_->pushed;
       data_->tool_bar_button.value().get().pushed(data_->pushed);
     }
-    if (data_->style != tool_bar_button_style::separator && data_->style != tool_bar_button_style::stretchable_separator)
-      data_->tool_bar_button.value().get().perform_click();
+    if (data_->style != tool_bar_button_style::separator && data_->style != tool_bar_button_style::stretchable_separator && data_->style != tool_bar_button_style::control && parent().has_value())
+      as<tool_bar>(parent().value().get()).on_button_click(xtd::forms::tool_bar_button_click_event_args(data_->tool_bar_button.value().get()));
   }
 }
 
@@ -412,6 +412,10 @@ forms::create_params tool_bar::create_params() const {
   return create_params;
 }
 
+void tool_bar::on_button_click(const xtd::forms::tool_bar_button_click_event_args &e) {
+  button_click(*this, e);
+}
+
 void tool_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   fill();
@@ -594,11 +598,17 @@ void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring
 void tool_bar::wm_click(const message& message) {
   for (size_t index = 0; index < data_->system_tool_bar_button_handles.size(); ++index) {
     if (index < data_->system_tool_bar_button_handles.size() && message.wparam() == data_->system_tool_bar_button_handles[index]) {
+      /*
       if (data_->buttons[index].get().style() == tool_bar_button_style::toggle_button)
         data_->buttons[index].get().pushed(!data_->buttons[index].get().pushed());
       if (data_->buttons[index].get().style() != tool_bar_button_style::separator)
         data_->buttons[index].get().perform_click();
+       */
+      if (data_->buttons[index].get().style() == tool_bar_button_style::toggle_button)
+        data_->buttons[index].get().pushed(!data_->buttons[index].get().pushed());
+      on_button_click(xtd::forms::tool_bar_button_click_event_args(data_->buttons[index].get()));
       break;
-    }
+    } else
+      on_click(event_args::empty);
   }
 }

@@ -73,36 +73,13 @@ namespace xtd {
       static tool_bar_button create_control(const xtd::ustring& text, const xtd::forms::control& control);
       static tool_bar_button create_control(const xtd::forms::control& control);
       static tool_bar_button create_push_button(const xtd::ustring& text);
-      static tool_bar_button create_push_button(const xtd::ustring& text, const xtd::event_handler& on_click);
       static tool_bar_button create_push_button(size_t image_index);
-      static tool_bar_button create_push_button(size_t image_index, const xtd::event_handler& on_click);
       static tool_bar_button create_push_button(const xtd::ustring& text, size_t image_index);
-      static tool_bar_button create_push_button(const xtd::ustring& text, size_t image_index, const xtd::event_handler& on_click);
       static tool_bar_button create_separator();
       static tool_bar_button create_stretchable_separator();
       static tool_bar_button create_toggle_button(const xtd::ustring& text);
-      static tool_bar_button create_toggle_button(const xtd::ustring& text, const xtd::event_handler& on_click);
       static tool_bar_button create_toggle_button(size_t image_index);
-      static tool_bar_button create_toggle_button(size_t image_index, const xtd::event_handler& on_click);
       static tool_bar_button create_toggle_button(const xtd::ustring& text, size_t image_index);
-      static tool_bar_button create_toggle_button(const xtd::ustring& text, size_t image_index, const xtd::event_handler& on_click);
-
-      /// @brief Generates a click event for the xtd::forms::tool_bar_item.
-      virtual void perform_click();
-      /// @}
-      
-      /// @name Events
-      
-      /// @{
-      xtd::event<tool_bar_button, xtd::event_handler> click;
-      /// @}
-      
-    protected:
-      /// @name protected methods
-      
-      /// @{
-      void on_click(const xtd::event_args& e);
-      /// @}
       
     private:
       friend xtd::forms::tool_bar;
