@@ -87,10 +87,10 @@ void minesweeper_form::new_game() {
     for (auto x = 0; x < grid_size_.width(); x++)
       cells_[x][y].clear();
       
-  std::random_device rand;
+  xtd::random rand;
   for (auto count = 0; count < mine_count_; count++) {
-    auto x = std::uniform_int_distribution<int> {0, grid_size_.width() - 1}(rand);
-    auto y = std::uniform_int_distribution<int> {0, grid_size_.height() - 1}(rand);
+    auto x = rand.next(0, grid_size_.width() - 1);
+    auto y = rand.next(0, grid_size_.height() - 1);
     
     if (cells_[x][y].has_mine()) {
       count--;

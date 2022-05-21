@@ -191,13 +191,13 @@ namespace game_of_life {
     }
     
     void random() {
-      std::random_device rand;
-      auto max = std::uniform_int_distribution<int> { 50, 200 }(rand);
+      xtd::random rand;
+      auto max = rand.next(100, 300);
       auto max_x = panel_grid_.client_size().width() / zoom_;
       auto max_y = panel_grid_.client_size().height() / zoom_;
       for (auto counter = 0; counter < max; counter++) {
-        auto x = std::uniform_int_distribution<int>(0, max_x)(rand);
-        auto y = std::uniform_int_distribution<int>(0, max_y)(rand);
+        auto x = rand.next(0, max_x);
+        auto y = rand.next(0, max_y);
         grid_.cells()[offset_y_ + y][offset_x_ + x] = cell::populated;
         panel_grid_.invalidate(xtd::drawing::rectangle(x * zoom_, y * zoom_, zoom_, zoom_), false);
       }
