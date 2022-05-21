@@ -257,15 +257,12 @@ add_sources(
   include/xtd/forms/toggle_buttons.h
   include/xtd/forms/tool_bar.h
   include/xtd/forms/tool_bar_appearance.h
-  include/xtd/forms/tool_bar_button_renderer.h
-  include/xtd/forms/tool_bar_renderer.h
-  include/xtd/forms/tool_bar_images.h
   include/xtd/forms/tool_bar_button.h
   include/xtd/forms/tool_bar_button_style.h
-  include/xtd/forms/tool_bar_separator.h
-  include/xtd/forms/tool_bar_stretchable_separator.h
+  include/xtd/forms/tool_bar_button_renderer.h
+  include/xtd/forms/tool_bar_images.h
+  include/xtd/forms/tool_bar_renderer.h
   include/xtd/forms/tool_bar_text_align.h
-  include/xtd/forms/tool_bar_toggle_button.h
   include/xtd/forms/trace_form.h
   include/xtd/forms/trace_form_base.h
   include/xtd/forms/trace_message_box.h

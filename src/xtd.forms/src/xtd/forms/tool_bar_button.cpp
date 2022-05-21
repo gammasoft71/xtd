@@ -33,17 +33,6 @@ tool_bar_button::tool_bar_button(const ustring& text, size_t image_index, const 
   click += on_click;
 }
 
-tool_bar_button::tool_bar_button(const xtd::ustring& text, const xtd::forms::control& control) {
-  data_->text = text;
-  data_->control = const_cast<xtd::forms::control*>(&control);
-  data_->style = tool_bar_button_style::control;
-}
-
-tool_bar_button::tool_bar_button(const xtd::forms::control& control) {
-  data_->control = const_cast<xtd::forms::control*>(&control);
-  data_->style = tool_bar_button_style::control;
-}
-
 std::optional<std::reference_wrapper<xtd::forms::control>> tool_bar_button::control() const {
   return data_->control ? std::optional<std::reference_wrapper<xtd::forms::control>>(*data_->control) : std::optional<std::reference_wrapper<xtd::forms::control>>();
 }
@@ -134,6 +123,33 @@ tool_bar_button& tool_bar_button::visible(bool value) {
     if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   }
   return *this;
+}
+
+tool_bar_button tool_bar_button::create_separator() {
+  tool_bar_button result;
+  result.style(xtd::forms::tool_bar_button_style::separator);
+  return result;
+}
+
+tool_bar_button tool_bar_button::create_stretchable_separator() {
+  tool_bar_button result;
+  result.style(xtd::forms::tool_bar_button_style::stretchable_separator);
+  return result;
+}
+
+tool_bar_button tool_bar_button::create_control(const xtd::ustring& text, const xtd::forms::control& control) {
+  tool_bar_button result;
+  result.control(control);
+  result.style(xtd::forms::tool_bar_button_style::control);
+  result.text(text);
+  return result;
+}
+
+tool_bar_button tool_bar_button::create_control(const xtd::forms::control& control) {
+  tool_bar_button result;
+  result.control(control);
+  result.style(xtd::forms::tool_bar_button_style::control);
+  return result;
 }
 
 void tool_bar_button::perform_click() {
