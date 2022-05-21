@@ -36,6 +36,7 @@ namespace examples {
       tool_bar1.image_list().image_size({24, 24});
       tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
       tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, about_tool_bar_button});
+      tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
 
       tool_bar2.dock(dock_style::bottom);
       tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
@@ -46,43 +47,48 @@ namespace examples {
       tool_bar2.image_list().image_size({24, 24});
       tool_bar2.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
       tool_bar2.buttons().push_back_range({new_tool_bar_button2, open_tool_bar_button2, save_tool_bar_button2, print_tool_bar_button2, tool_bar2_separator1, cut_tool_bar_button2, copy_tool_bar_button2, paste_tool_bar_button2, tool_bar2_separator2, choice_tool_bar_button2, tool_bar2_separator3, about_tool_bar_button2});
+      tool_bar2.button_click += {*this, &form1::on_tool_bar_button_click};
     }
     
   private:
-    void on_tool_bar_item_click(object& sender, const event_args& e) {
-      list_box1.items().push_back(ustring::format("{} clicked", as<tool_bar_button>(sender).text()));
+    void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
+      if (e.button().style() == tool_bar_button_style::toggle_button)
+        list_box1.items().push_back(ustring::format("Button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
+      else
+        list_box1.items().push_back(ustring::format("Button {} clicked", e.button().text()));
+      list_box1.selected_index(list_box1.items().size() - 1);
     }
     
     list_box list_box1;
     forms::tool_bar tool_bar1;
     choice choice1;
-    tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(system_texts::open(), 1, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(system_texts::save(), 2, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button print_tool_bar_button = tool_bar_button::create_push_button(system_texts::print(), 3, {*this, &form1::on_tool_bar_item_click});
+    tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);
+    tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(system_texts::open(), 1);
+    tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(system_texts::save(), 2);
+    tool_bar_button print_tool_bar_button = tool_bar_button::create_push_button(system_texts::print(), 3);
     tool_bar_button tool_bar1_separator1 = tool_bar_button::create_separator();
-    tool_bar_button cut_tool_bar_button = tool_bar_button::create_push_button(system_texts::cut(), 4, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button copy_tool_bar_button = tool_bar_button::create_push_button(system_texts::copy(), 5, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button paste_tool_bar_button = tool_bar_button::create_push_button(system_texts::paste(), 6, {*this, &form1::on_tool_bar_item_click});
+    tool_bar_button cut_tool_bar_button = tool_bar_button::create_push_button(system_texts::cut(), 4);
+    tool_bar_button copy_tool_bar_button = tool_bar_button::create_push_button(system_texts::copy(), 5);
+    tool_bar_button paste_tool_bar_button = tool_bar_button::create_push_button(system_texts::paste(), 6);
     tool_bar_button tool_bar1_separator2 = tool_bar_button::create_separator();
     tool_bar_button choice_tool_bar_button = tool_bar_button::create_control("Items", choice1);
     tool_bar_button tool_bar1_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button about_tool_bar_button = tool_bar_button::create_toggle_button(system_texts::about(), 7, {*this, &form1::on_tool_bar_item_click});
+    tool_bar_button about_tool_bar_button = tool_bar_button::create_toggle_button(system_texts::about(), 7);
 
     forms::tool_bar tool_bar2;
     choice choice2;
-    tool_bar_button new_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::new_(), 0, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button open_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::open(), 1, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button save_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::save(), 2, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button print_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::print(), 3, {*this, &form1::on_tool_bar_item_click});
+    tool_bar_button new_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::new_(), 0);
+    tool_bar_button open_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::open(), 1);
+    tool_bar_button save_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::save(), 2);
+    tool_bar_button print_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::print(), 3);
     tool_bar_button tool_bar2_separator1 = tool_bar_button::create_separator();
-    tool_bar_button cut_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::cut(), 4, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button copy_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::copy(), 5, {*this, &form1::on_tool_bar_item_click});
-    tool_bar_button paste_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::paste(), 6, {*this, &form1::on_tool_bar_item_click});
+    tool_bar_button cut_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::cut(), 4);
+    tool_bar_button copy_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::copy(), 5);
+    tool_bar_button paste_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::paste(), 6);
     tool_bar_button tool_bar2_separator2 = tool_bar_button::create_separator();
     tool_bar_button choice_tool_bar_button2 = tool_bar_button::create_control("Items", choice2);
     tool_bar_button tool_bar2_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button about_tool_bar_button2 = tool_bar_button::create_toggle_button(system_texts::about(), 7, {*this, &form1::on_tool_bar_item_click});
+    tool_bar_button about_tool_bar_button2 = tool_bar_button::create_toggle_button(system_texts::about(), 7);
   };
 }
 

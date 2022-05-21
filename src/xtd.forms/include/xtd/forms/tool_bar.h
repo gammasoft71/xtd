@@ -10,6 +10,7 @@
 #include "panel.h"
 #include "tool_bar_appearance.h"
 #include "tool_bar_button.h"
+#include "tool_bar_button_click_event_handler.h"
 #include "tool_bar_text_align.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -170,6 +171,19 @@ namespace xtd {
       virtual tool_bar& text_align(xtd::forms::tool_bar_text_align value);
       /// @}
       
+      /// @name Events
+      
+      /// @{
+      xtd::event<tool_bar, xtd::forms::tool_bar_button_click_event_handler> button_click;
+      /// @}
+      
+    protected:
+      /// @name protected methods
+      
+      /// @{
+      void on_button_click(const xtd::forms::tool_bar_button_click_event_args& e);
+      /// @}
+
     protected:
       friend tool_bar_button;
       friend form;
