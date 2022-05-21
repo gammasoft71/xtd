@@ -30,8 +30,8 @@ namespace xtd {
       
       /// @{
       /// @brief Initialises a new instance of xtd::forms::tool_bar_button class.
-      tool_bar_button() noexcept = default;
-      explicit tool_bar_button(const xtd::ustring& text) noexcept;
+      tool_bar_button() = default;
+      explicit tool_bar_button(const xtd::ustring& text);
       /// @}
       
       /// @cond
