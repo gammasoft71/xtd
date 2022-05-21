@@ -4,6 +4,7 @@
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/is.h>
 #include <xtd/literals.h>
+#include <xtd/random.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_icons.h>
@@ -598,17 +599,14 @@ void form::fill_in_create_params_border_icons(xtd::forms::create_params& cp) con
 
 void form::fill_in_create_params_start_position(xtd::forms::create_params& cp) const {
   static int32_t default_location = 0;
-  if (default_location == 0) {
-    std::random_device rand;
-    default_location = std::uniform_int_distribution<int32_t> {4, 20}(rand) * 10;
-  }
+  if (default_location == 0)
+    default_location = xtd::random().next(4, 20) * 10;
   
   if (previous_screen_) {
     switch (start_position_) {
       case form_start_position::manual:
         cp.location(location());
         cp.size(size());
-        if (application::open_forms().size() == 1) default_location = 40;
         break;
       case form_start_position::center_screen:
         cp.location({(previous_screen_->working_area().width() - width()) / 2, (previous_screen_->working_area().height() - height()) / 2});
