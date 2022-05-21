@@ -37,8 +37,6 @@ namespace xtd {
       tool_bar_button(size_t image_index, const xtd::event_handler& on_click);
       tool_bar_button(const xtd::ustring& text, size_t image_index);
       tool_bar_button(const xtd::ustring& text, size_t image_index, const xtd::event_handler& on_click);
-      tool_bar_button(const xtd::ustring& text, const xtd::forms::control& control);
-      tool_bar_button(const xtd::forms::control& control);
       /// @}
       
       /// @cond
@@ -77,6 +75,11 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      static tool_bar_button create_separator();
+      static tool_bar_button create_stretchable_separator();
+      static tool_bar_button create_control(const xtd::ustring& text, const xtd::forms::control& control);
+      static tool_bar_button create_control(const xtd::forms::control& control);
+
       /// @brief Generates a click event for the xtd::forms::tool_bar_item.
       virtual void perform_click();
       /// @}

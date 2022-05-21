@@ -63,28 +63,28 @@ namespace examples {
     tool_bar_button open_tool_bar_button {system_texts::open(), 1, {*this, &form1::on_tool_bar_button_click}};
     tool_bar_button save_tool_bar_button {system_texts::save(), 2, {*this, &form1::on_tool_bar_button_click}};
     tool_bar_button print_tool_bar_button {system_texts::print(), 3, {*this, &form1::on_tool_bar_button_click}};
-    tool_bar_separator tool_bar1_separator1;
+    tool_bar_button tool_bar1_separator1 = tool_bar_button::create_separator();
     tool_bar_button cut_tool_bar_button {system_texts::cut(), 4, {*this, &form1::on_tool_bar_button_click}};
     tool_bar_button copy_tool_bar_button {system_texts::copy(), 5, {*this, &form1::on_tool_bar_button_click}};
     tool_bar_button paste_tool_bar_button {system_texts::paste(), 6, {*this, &form1::on_tool_bar_button_click}};
-    tool_bar_separator tool_bar1_separator2;
-    tool_bar_button choice_tool_bar_button {"Items", choice1};
-    tool_bar_stretchable_separator tool_bar1_separator3;
+    tool_bar_button tool_bar1_separator2 = tool_bar_button::create_separator();
+    tool_bar_button choice_tool_bar_button = tool_bar_button::create_control("Items", choice1);
+    tool_bar_button tool_bar1_separator3 = tool_bar_button::create_stretchable_separator();
     tool_bar_button about_tool_bar_button {system_texts::about(), 7, {*this, &form1::on_tool_bar_button_click}};
     
     forms::tool_bar tool_bar2;
     progress_bar progress_bar1;
     timer progress_timer1;
     tool_bar_button play_tool_bar_button {"&Play", 0, {*this, &form1::on_tool_bar_button_click}};
-    tool_bar_separator tool_bar2_separator1;
+    tool_bar_button tool_bar2_separator1 = tool_bar_button::create_separator();
     tool_bar_button skip_backward_tool_bar_button {"Skip &Backward", 1, {*this, &form1::on_tool_bar_button_click}};
     tool_bar_button stop_tool_bar_button {"S&top", 2, {*this, &form1::on_tool_bar_button_click}};
     tool_bar_button skip_forward_tool_bar_button {"Skip &Forward", 3, {*this, &form1::on_tool_bar_button_click}};
-    tool_bar_separator tool_bar2_separator2;
+    tool_bar_button tool_bar2_separator2 = tool_bar_button::create_separator();
     tool_bar_button record_tool_bar_button {"&Record", 4, {*this, &form1::on_tool_bar_button_click}};
-    tool_bar_separator tool_bar2_separator3;
-    tool_bar_button progress_tool_bar_button {progress_bar1};
-    tool_bar_stretchable_separator tool_bar2_separator4;
+    tool_bar_button tool_bar2_separator3 = tool_bar_button::create_separator();
+    tool_bar_button progress_tool_bar_button = tool_bar_button::create_control(progress_bar1);
+    tool_bar_button tool_bar2_separator4 = tool_bar_button::create_stretchable_separator();
     tool_bar_button eject_tool_bar_button {"&Eject", 5, {*this, &form1::on_tool_bar_toggle_button_click}};
   };
 }
