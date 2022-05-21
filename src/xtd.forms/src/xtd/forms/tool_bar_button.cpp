@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-tool_bar_button::tool_bar_button(const ustring& text) noexcept {
+tool_bar_button::tool_bar_button(const ustring& text) {
   data_->text = text;
 }
 
