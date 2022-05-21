@@ -35,8 +35,9 @@ namespace xtd {
       /// @}
       
       /// @cond
-      template<typename delegate_type>
-      tool_bar_button(const xtd::ustring& text, size_t image_index, delegate_type on_click) : tool_bar_button(text, image_index, xtd::event_handler(on_click)) {}
+      tool_bar_button(const tool_bar_button&) noexcept = default;
+      tool_bar_button(tool_bar_button&&) noexcept = default;
+      tool_bar_button& operator=(const tool_bar_button&) noexcept = default;
       bool operator==(const tool_bar_button& other) const noexcept {return data_ == other.data_;}
       bool operator!=(const tool_bar_button& other) const noexcept {return !operator==(other);}
       /// @endcond

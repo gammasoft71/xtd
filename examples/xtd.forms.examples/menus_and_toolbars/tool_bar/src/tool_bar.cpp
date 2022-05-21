@@ -56,8 +56,9 @@ namespace examples {
     }
     
     list_box list_box1;
-    choice choice1;
+ 
     forms::tool_bar tool_bar1;
+    choice choice1;
     tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);
     tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(system_texts::open(), 1);
     tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(system_texts::save(), 2);
