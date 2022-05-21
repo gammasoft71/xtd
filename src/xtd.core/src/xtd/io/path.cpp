@@ -1,5 +1,6 @@
 #include "../../../include/xtd/io/path.h"
 #include "../../../include/xtd/io/drive_info.h"
+#include "../../../include/xtd/as.h"
 #include "../../../include/xtd/environment.h"
 #include "../../../include/xtd/random.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -119,7 +120,7 @@ ustring path::get_random_file_name() {
   ustring random_file_name;
   
   for (size_t i = 0; i < 11; i++) {
-    random_file_name += valid_chars[rand.next(0, valid_chars.size() - 1)];
+    random_file_name += valid_chars[rand.next(0, as<int32_t>(valid_chars.size() - 1))];
     if (i == 7)
       random_file_name += '.';
   }
@@ -138,7 +139,7 @@ ustring path::get_temp_file_name() {
       if (i == 0)
         temp_file_name += valid_chars[rand.next(0, 9)];
       else
-        temp_file_name += valid_chars[rand.next(0, valid_chars.size() - 1)];
+        temp_file_name += valid_chars[rand.next(0, as<int32_t>(valid_chars.size() - 1))];
     }
     temp_file_name += ".tmp";
   } while (file::exists(combine(get_temp_path(), temp_file_name)));
