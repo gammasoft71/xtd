@@ -36,6 +36,19 @@ intptr_t tool_bar::add_tool_bar_button(intptr_t tool_bar, const xtd::ustring& te
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }
 
+intptr_t tool_bar::add_tool_bar_drop_down_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::drawing::image& image, bool enabled, bool visible, intptr_t drop_down_menu) {
+  if (!tool_bar || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return 0;
+  }
+  
+  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image.handle()), wxEmptyString, wxITEM_DROPDOWN);
+  tool_bar_item->Enable(enabled && visible);
+  tool_bar_item->SetDropdownMenu(reinterpret_cast<wxMenu*>(drop_down_menu));
+  return static_cast<intptr_t>(tool_bar_item->GetId());
+}
+
 intptr_t tool_bar::add_tool_bar_toggle_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!tool_bar || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
@@ -96,11 +109,13 @@ bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
   }
 
   if (tool_bar == 0) {
-    // Workaround : When wxWidgets destroy the tool bar tool with a control, it destroy the control. But with xtd, the control is managed by xtd and it can be destroyed.
-    // To prevent destroy control change the tool bar tool style to wxTOOL_STYLE_BUTTON...
+    // Workaround : When wxWidgets destroy the tool bar tool with a control or drop down menu, it destroy the control and the drop down menu. But with xtd, the control and the drop down menu are managed by xtd and they can be destroyed.
+    // To prevent destroy control and drop down menu change the tool bar tool style to wxTOOL_STYLE_BUTTON et set drop down menu to null...
     if (static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar() != nullptr)
-      for (size_t index = 0; index < static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar()->GetToolsCount(); ++index)
+      for (size_t index = 0; index < static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar()->GetToolsCount(); ++index) {
+        static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar()->GetToolByPos(index)->m_dropdownMenu = nullptr;
         static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar()->GetToolByPos(index)->m_toolStyle = wxTOOL_STYLE_BUTTON;
+      }
     /// end Workaround
     static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(nullptr);
     return true;

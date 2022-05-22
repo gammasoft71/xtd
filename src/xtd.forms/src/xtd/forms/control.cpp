@@ -1362,8 +1362,12 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
    */
 }
 
+bool control::on_context_menu_item_click(xtd::forms::context_menu& menu, int32_t menu_id) const {
+  return menu.on_item_click(menu_id);
+}
+
 void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const {
-  menu.on_item_click(native::control::user_context_menu(handle(), menu.handle(), pos));
+  on_context_menu_item_click(menu, native::control::user_context_menu(handle(), menu.handle(), pos));
 }
 
 void control::wnd_proc(message& message) {
@@ -1691,7 +1695,7 @@ void control::wm_mouse_move(message& message) {
 void control::wm_menu_command(message &message) {
   def_wnd_proc(message);
   if (data_->context_menu.has_value())
-    data_->context_menu.value().get().on_item_click(static_cast<int32_t>(message.wparam()));
+    on_context_menu_item_click(data_->context_menu.value().get(), static_cast<int32_t>(message.wparam()));
 }
 
 void control::wm_move(message& message) {

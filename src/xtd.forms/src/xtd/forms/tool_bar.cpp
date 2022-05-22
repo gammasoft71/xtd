@@ -480,6 +480,8 @@ void tool_bar::fill() {
         control_handle = native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_buttons[index].get().pushed(), button_item.enabled(), button_item.visible());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::separator)
         control_handle = native::tool_bar::add_tool_bar_separator(handle());
+      else if (reversed_buttons[index].get().style() == tool_bar_button_style::drop_down_button)
+        control_handle = native::tool_bar::add_tool_bar_drop_down_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible(), button_item.drop_down_menu().has_value() ? button_item.drop_down_menu().value().get().handle() : 0);
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
         control_handle = native::tool_bar::add_tool_bar_stretchable_separator(handle());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::control) {
@@ -596,19 +598,21 @@ void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring
 }
 
 void tool_bar::wm_click(const message& message) {
-  for (size_t index = 0; index < data_->system_tool_bar_button_handles.size(); ++index) {
+  bool found_button_or_menu = false;
+  for (size_t index = 0; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
     if (index < data_->system_tool_bar_button_handles.size() && message.wparam() == data_->system_tool_bar_button_handles[index]) {
-      /*
-      if (data_->buttons[index].get().style() == tool_bar_button_style::toggle_button)
-        data_->buttons[index].get().pushed(!data_->buttons[index].get().pushed());
-      if (data_->buttons[index].get().style() != tool_bar_button_style::separator)
-        data_->buttons[index].get().perform_click();
-       */
       if (data_->buttons[index].get().style() == tool_bar_button_style::toggle_button)
         data_->buttons[index].get().pushed(!data_->buttons[index].get().pushed());
       on_button_click(xtd::forms::tool_bar_button_click_event_args(data_->buttons[index].get()));
-      break;
-    } else
-      on_click(event_args::empty);
+      found_button_or_menu = true;
+    }
   }
+
+  for (size_t index = 0; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
+    if (data_->buttons[index].get().style() == tool_bar_button_style::drop_down_button && data_->buttons[index].get().drop_down_menu().has_value())
+      found_button_or_menu = on_context_menu_item_click(data_->buttons[index].get().drop_down_menu().value(), static_cast<int32_t>(message.wparam()));
+  }
+        
+  if (!found_button_or_menu)
+    on_click(event_args::empty);
 }

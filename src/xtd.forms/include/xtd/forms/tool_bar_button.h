@@ -6,7 +6,7 @@
 #include <xtd/event.h>
 #include <xtd/event_handler.h>
 #include <xtd/forms/image_list.h>
-#include <xtd/forms/menu.h>
+#include <xtd/forms/context_menu.h>
 #include <xtd/forms/tool_bar_button_style.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -49,6 +49,10 @@ namespace xtd {
       tool_bar_button& control(const xtd::forms::control& value);
       tool_bar_button& control(std::nullptr_t value);
 
+      std::optional<std::reference_wrapper<xtd::forms::context_menu>> drop_down_menu() const;
+      tool_bar_button& drop_down_menu(const xtd::forms::context_menu& value);
+      tool_bar_button& drop_down_menu(std::nullptr_t value);
+
       bool enabled() const;
       tool_bar_button& enabled(bool value);
       
@@ -73,6 +77,9 @@ namespace xtd {
       /// @{
       static tool_bar_button create_control(const xtd::ustring& text, const xtd::forms::control& control);
       static tool_bar_button create_control(const xtd::forms::control& control);
+      static tool_bar_button create_drop_down_button(const xtd::ustring& text, const xtd::forms::context_menu& drop_down_menu);
+      static tool_bar_button create_drop_down_button(size_t image_index, const xtd::forms::context_menu& drop_down_menu);
+      static tool_bar_button create_drop_down_button(const xtd::ustring& text, size_t image_index, const xtd::forms::context_menu& drop_down_menu);
       static tool_bar_button create_push_button(const xtd::ustring& text);
       static tool_bar_button create_push_button(size_t image_index);
       static tool_bar_button create_push_button(const xtd::ustring& text, size_t image_index);
@@ -86,7 +93,7 @@ namespace xtd {
       friend xtd::forms::tool_bar;
       struct data {
         xtd::forms::control* control = nullptr;
-        std::optional<std::reference_wrapper<xtd::forms::menu>> drop_down_menu;
+        std::optional<std::reference_wrapper<xtd::forms::context_menu>> drop_down_menu;
         bool enabled = true;
         size_t image_index = xtd::forms::image_list::image_collection::npos;
         xtd::drawing::image image_key;

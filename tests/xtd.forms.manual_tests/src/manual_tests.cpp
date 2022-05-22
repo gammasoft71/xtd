@@ -9,6 +9,7 @@ namespace examples {
     form1() {
       text("Toolbar example");
       client_size({820, 500});
+      
       controls().push_back_range({list_box1, tool_bar2, tool_bar1});
       tool_bar(tool_bar1);
       
@@ -17,13 +18,13 @@ namespace examples {
       choice1.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       choice1.selected_index(0);
       choice1.selected_value_changed += [&] {
-        list_box1.items().push_back(ustring::format("{} selected", choice1.selected_item()));
+        list_box1.items().push_back(ustring::format("Choice item {} selected", choice1.selected_item()));
       };
       
       choice2.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       choice2.selected_index(0);
       choice2.selected_value_changed += [&] {
-        list_box1.items().push_back(ustring::format("{} selected", choice2.selected_item()));
+        list_box1.items().push_back(ustring::format("Choice item {} clicked", choice2.selected_item()));
       };
       
       //tool_bar1.appearnce(xtd::forms::tool_bar_appearance::system);
@@ -53,13 +54,26 @@ namespace examples {
   private:
     void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
       if (e.button().style() == tool_bar_button_style::toggle_button)
-        list_box1.items().push_back(ustring::format("Button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
+        list_box1.items().push_back(ustring::format("Tool bar button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
       else
-        list_box1.items().push_back(ustring::format("Button {} clicked", e.button().text()));
+        list_box1.items().push_back(ustring::format("Tool bar button {} clicked", e.button().text()));
+      list_box1.selected_index(list_box1.items().size() - 1);
+    }
+    
+    void on_menu_click(object& sender, const event_args& e) {
+      list_box1.items().push_back(ustring::format("Menu item {} clicked", as<menu_item>(sender).text()));
       list_box1.selected_index(list_box1.items().size() - 1);
     }
     
     list_box list_box1;
+
+    menu_item context_help_context_menu_item {"Help context", {*this, &form1::on_menu_click}};
+    menu_item context_help_index_menu_item {"Help index", {*this, &form1::on_menu_click}};
+    menu_item context_help_search_menu_item {"Help search", {*this, &form1::on_menu_click}};
+    menu_item context_separator_menu_item {"-"};
+    menu_item context_about_menu_item {system_texts::about(), {*this, &form1::on_menu_click}};
+    forms::context_menu context_menu1 {context_help_context_menu_item, context_help_index_menu_item, context_help_search_menu_item, context_separator_menu_item, context_about_menu_item};
+
     forms::tool_bar tool_bar1;
     choice choice1;
     tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);
@@ -73,8 +87,15 @@ namespace examples {
     tool_bar_button tool_bar1_separator2 = tool_bar_button::create_separator();
     tool_bar_button choice_tool_bar_button = tool_bar_button::create_control("Items", choice1);
     tool_bar_button tool_bar1_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button about_tool_bar_button = tool_bar_button::create_toggle_button(system_texts::about(), 7);
+    tool_bar_button about_tool_bar_button = tool_bar_button::create_drop_down_button(system_texts::about(), 7, context_menu1);
 
+    menu_item context_help_context_menu_item2 {"Help context", {*this, &form1::on_menu_click}};
+    menu_item context_help_index_menu_item2 {"Help index", {*this, &form1::on_menu_click}};
+    menu_item context_help_search_menu_item2 {"Help search", {*this, &form1::on_menu_click}};
+    menu_item context_separator_menu_item2 {"-"};
+    menu_item context_about_menu_item2 {system_texts::about(), {*this, &form1::on_menu_click}};
+    forms::context_menu context_menu2 {context_help_context_menu_item2, context_help_index_menu_item2, context_help_search_menu_item2, context_separator_menu_item2, context_about_menu_item2};
+    
     forms::tool_bar tool_bar2;
     choice choice2;
     tool_bar_button new_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::new_(), 0);
@@ -88,7 +109,7 @@ namespace examples {
     tool_bar_button tool_bar2_separator2 = tool_bar_button::create_separator();
     tool_bar_button choice_tool_bar_button2 = tool_bar_button::create_control("Items", choice2);
     tool_bar_button tool_bar2_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button about_tool_bar_button2 = tool_bar_button::create_toggle_button(system_texts::about(), 7);
+    tool_bar_button about_tool_bar_button2 = tool_bar_button::create_drop_down_button(system_texts::about(), 7, context_menu2);
   };
 }
 
