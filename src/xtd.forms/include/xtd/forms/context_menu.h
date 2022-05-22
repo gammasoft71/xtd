@@ -58,7 +58,7 @@ namespace xtd {
       
     private:
       friend class control;
-      bool on_item_click(int32_t menu_id);
+      bool on_item_click(intptr_t menu_id);
     };
   }
 }

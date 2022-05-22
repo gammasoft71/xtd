@@ -67,7 +67,7 @@ namespace xtd {
         /// @param menu_item Menu item handle.
         /// @return Id corresponding to menu_item handle.
         /// @warning Internal use only
-        static int32_t menu_id(intptr_t menu_item);
+        static intptr_t menu_id(intptr_t menu_item);
         /// @brief Sets text menu item.
         /// @param menu_item Menu item handle.
         /// @param text The text associated with this menu_item.

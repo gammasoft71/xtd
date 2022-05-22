@@ -219,7 +219,7 @@ namespace xtd {
         std::any tag_;
       };
       std::shared_ptr<data> data_;
-      static std::map<int32_t, std::reference_wrapper<menu>> handles_;
+      static std::map<intptr_t, std::reference_wrapper<menu>> handles_;
       /// @endcond
     };
   }

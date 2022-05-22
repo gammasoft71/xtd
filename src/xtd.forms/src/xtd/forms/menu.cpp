@@ -14,7 +14,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-map<int32_t, reference_wrapper<menu>> menu::handles_;
+map<intptr_t, reference_wrapper<menu>> menu::handles_;
 
 menu::menu() : data_(make_shared<data>()) {
   //data_->mdi_list_item_ = make_unique<menu_item>();

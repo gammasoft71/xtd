@@ -1910,7 +1910,7 @@ namespace xtd {
       /// @cond
       bool get_state(control::state flag) const;
       void set_state(control::state flag, bool value);
-      bool on_context_menu_item_click(xtd::forms::context_menu& menu, int32_t menu_id) const;
+      bool on_context_menu_item_click(xtd::forms::context_menu& menu, intptr_t menu_id) const;
       /// @endcond
       
     private:
