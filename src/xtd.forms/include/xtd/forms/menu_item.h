@@ -255,7 +255,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating the Windows identifier for this menu item.
       /// @return The Windows identifier for this menu item.
-      int32_t menu_id() const;
+      intptr_t menu_id() const;
       
       /// @brief Gets a value indicating whether a check mark appears next to the text of the menu item.
       /// @return true if there is a check mark next to the menu item; otherwise, false. The default is false.
