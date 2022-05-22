@@ -72,6 +72,18 @@ namespace xtd {
           return process_result_;
         }
         
+        bool AcceptsFocus() const override {
+          return acceptsFocus.value_or(control_t::AcceptsFocus());
+        }
+        
+        void SetAcceptsFocus(bool value) {
+          acceptsFocus = value;
+        }
+        
+        void SetAcceptsFocus(std::nullptr_t) {
+          acceptsFocus.reset();
+        }
+        
       private:
         static std::string to_string(const wxEventType& eventType) {
           static std::map<wxEventType, std::string> eventTypes{
@@ -372,6 +384,7 @@ namespace xtd {
         static constexpr size_t functionRawKeyCode = 0x0000003F;
         #endif
         bool functionKeyModifierIsDown = false;
+        std::optional<bool> acceptsFocus;
       };
     }
   }
