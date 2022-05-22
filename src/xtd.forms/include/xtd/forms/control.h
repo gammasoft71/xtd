@@ -53,6 +53,7 @@ namespace xtd {
   namespace forms {
     /// @cond
     class application;
+    class context_menu;
     class screen;
     /// @endcond
     
@@ -1568,6 +1569,7 @@ namespace xtd {
       
     protected:
       friend class application;
+      friend class context_menu;
       friend class paint_event_args;
       friend class screen;
       
@@ -1916,6 +1918,7 @@ namespace xtd {
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
       control(const xtd::ustring& name, bool);
+      void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
       void wm_create(message& message);
@@ -1923,6 +1926,7 @@ namespace xtd {
       void wm_enter_idle(message& message);
       void wm_key_char(message& message);
       void wm_kill_focus(message& message);
+      void wm_menu_command(message& message);
       void wm_mouse_down(message& message);
       void wm_mouse_double_click(message& message);
       void wm_mouse_enter(message& message);

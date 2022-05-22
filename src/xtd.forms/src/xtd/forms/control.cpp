@@ -276,7 +276,7 @@ control& control::context_menu(xtd::forms::context_menu& value) {
 control& control::context_menu(std::nullptr_t) {
   if (data_->context_menu.has_value()) {
     data_->context_menu.reset();
-    if (is_handle_created()) native::control::context_menu(handle(), 0);
+    if (is_handle_created()) native::control::context_menu(handle(), 0, xtd::drawing::point::empty);
   }
   return *this;
 }
@@ -1362,6 +1362,10 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
    */
 }
 
+void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const {
+  menu.on_item_click(native::control::user_context_menu(handle(), menu.handle(), pos));
+}
+
 void control::wnd_proc(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), ustring::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
@@ -1399,7 +1403,7 @@ void control::wnd_proc(message& message) {
     case WM_ERASEBKGND: wm_erase_background(message); break;
     case WM_HELP: wm_help(message); break;
     case WM_PAINT: wm_paint(message); break;
-    case WM_MENUCOMMAND: if (data_->context_menu.has_value()) data_->context_menu.value().get().wm_click(message); break;
+    case WM_MENUCOMMAND: wm_menu_command(message); break;
     case WM_MOVE: wm_move(message);  break;
     case WM_NOTIFY: wm_notify(message);  break;
     case WM_SETTEXT: wm_set_text(message); break;
@@ -1628,7 +1632,7 @@ void control::wm_mouse_down(message& message) {
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   mouse_buttons_ |= e.button();
-  if (mouse_buttons_ == forms::mouse_buttons::right && data_->context_menu.has_value()) native::control::context_menu(handle(), data_->context_menu.value().get().handle());
+  if (mouse_buttons_ == forms::mouse_buttons::right && data_->context_menu.has_value()) native::control::context_menu(handle(), data_->context_menu.value().get().handle(), e.location());
   else def_wnd_proc(message);
   on_mouse_down(e);
 }
@@ -1682,6 +1686,12 @@ void control::wm_mouse_move(message& message) {
     wm_mouse_leave(message);
   }
   on_mouse_move(e);
+}
+
+void control::wm_menu_command(message &message) {
+  def_wnd_proc(message);
+  if (data_->context_menu.has_value())
+    data_->context_menu.value().get().on_item_click(static_cast<int32_t>(message.wparam()));
 }
 
 void control::wm_move(message& message) {

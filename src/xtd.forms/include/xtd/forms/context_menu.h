@@ -35,7 +35,17 @@ namespace xtd {
       context_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
       ~context_menu();
       /// @endcond
+
+      /// @name Ppublic methods
       
+      /// @{
+      /// @brief Displays the shortcut menu at the specified position.
+      /// @param control A xtd::forms::control that specifies the control with which this shortcut menu is associated.
+      /// @param pos A xtd::drawing::point that specifies the coordinates at which to display the menu. These coordinates are specified relative to the client coordinates of the control specified in the control parameter.
+      /// @remarks Typically, a xtd::forms::context_menu is displayed when the user clicks the right mouse button on a control or area of the form that the xtd::forms::context_menu is bound to. You can use this method to manually display the shortcut menu at a specific location and bind it with a specific control. This method does not return until the menu is dismissed.
+      void show(const xtd::forms::control& control, const xtd::drawing::point& pos);
+      /// @}
+      ///
     protected:
       /// @name Protected methods
       
@@ -48,7 +58,7 @@ namespace xtd {
       
     private:
       friend class control;
-      void wm_click(message& message);
+      void on_item_click(int32_t menu_id);
     };
   }
 }
