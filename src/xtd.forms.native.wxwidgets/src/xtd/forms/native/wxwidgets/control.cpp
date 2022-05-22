@@ -103,13 +103,22 @@ void control::back_color(intptr_t control, const color& color) {
   reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
 
-void control::context_menu(intptr_t control, intptr_t context_menu) {
+void control::context_menu(intptr_t control, intptr_t context_menu, const xtd::drawing::point& pos) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  reinterpret_cast<control_handler*>(control)->control()->PopupMenu(context_menu ? reinterpret_cast<wxMenu*>(context_menu) : nullptr);
+  reinterpret_cast<control_handler*>(control)->control()->PopupMenu(context_menu ? reinterpret_cast<wxMenu*>(context_menu) : nullptr, wxPoint(pos.x(), pos.y()));
+}
+
+intptr_t control::user_context_menu(intptr_t control, intptr_t context_menu, const xtd::drawing::point& pos) {
+  if (!control || !context_menu || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return static_cast<intptr_t>(-1);
+  }
+  return static_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control()->GetPopupMenuSelectionFromUser(*reinterpret_cast<wxMenu*>(context_menu), pos.x(), pos.y()));
 }
 
 intptr_t control::create(const forms::create_params& create_params) {

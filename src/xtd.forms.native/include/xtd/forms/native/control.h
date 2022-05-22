@@ -34,9 +34,9 @@ namespace xtd {
   namespace forms {
     /// @cond
     class button;
-    class control;
     class collapsible_panel;
     class command_link_button;
+    class control;
     class combo_box;
     class domain_up_down;
     class form;
@@ -104,7 +104,15 @@ namespace xtd {
         /// @param control Control handle.
         /// @param menu A menu handle that represents the menu to display in the form.
         /// @warning Internal use only
-        static void context_menu(intptr_t control, intptr_t context_menu);
+        static void context_menu(intptr_t control, intptr_t context_menu, const xtd::drawing::point& pos);
+
+        /// @brief Displays the shortcut menu at the specified position.
+        /// @param control A control handle that specifies the control with which this shortcut menu is associated.
+        /// @param context_menu A context menu handle that specifies the menu is associated.
+        /// @param pos A xtd::drawing::point that specifies the coordinates at which to display the menu. These coordinates are specified relative to the client coordinates of the control specified in the control parameter.
+        /// @return Id corresponding to menu_item handle selected.
+        /// @warning Internal use only
+        static intptr_t user_context_menu(intptr_t control, intptr_t context_menu, const xtd::drawing::point& pos);
 
         /// @brief Creates control.
         /// @param create_param A xtd::forms::create_param object that contains needed parameters to create control.
