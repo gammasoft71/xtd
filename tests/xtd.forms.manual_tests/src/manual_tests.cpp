@@ -35,19 +35,19 @@ namespace examples {
       tool_bar1.text_align(xtd::forms::tool_bar_text_align::underneath);
       
       tool_bar1.image_list().image_size({24, 24});
-      tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
-      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, about_tool_bar_button});
+      tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
+      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, help_tool_bar_button});
       tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
 
       tool_bar2.dock(dock_style::bottom);
       tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
-      tool_bar2.show_text(true);
+      //tool_bar2.show_text(true);
       //tool_bar2.show_icon(false);
       tool_bar2.text_align(xtd::forms::tool_bar_text_align::underneath);
 
       tool_bar2.image_list().image_size({24, 24});
-      tool_bar2.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
-      tool_bar2.buttons().push_back_range({new_tool_bar_button2, open_tool_bar_button2, save_tool_bar_button2, print_tool_bar_button2, tool_bar2_separator1, cut_tool_bar_button2, copy_tool_bar_button2, paste_tool_bar_button2, tool_bar2_separator2, choice_tool_bar_button2, tool_bar2_separator3, about_tool_bar_button2});
+      tool_bar2.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
+      tool_bar2.buttons().push_back_range({new_tool_bar_button2, open_tool_bar_button2, save_tool_bar_button2, print_tool_bar_button2, tool_bar2_separator1, cut_tool_bar_button2, copy_tool_bar_button2, paste_tool_bar_button2, tool_bar2_separator2, choice_tool_bar_button2, tool_bar2_separator3, help_tool_bar_button2});
       tool_bar2.button_click += {*this, &form1::on_tool_bar_button_click};
     }
     
@@ -87,7 +87,7 @@ namespace examples {
     tool_bar_button tool_bar1_separator2 = tool_bar_button::create_separator();
     tool_bar_button choice_tool_bar_button = tool_bar_button::create_control("Items", choice1);
     tool_bar_button tool_bar1_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button about_tool_bar_button = tool_bar_button::create_drop_down_button(system_texts::about(), 7, context_menu1);
+    tool_bar_button help_tool_bar_button = tool_bar_button::create_drop_down_button(system_texts::help(), 7, context_menu1);
 
     menu_item context_help_context_menu_item2 {"Help context", {*this, &form1::on_menu_click}};
     menu_item context_help_index_menu_item2 {"Help index", {*this, &form1::on_menu_click}};
@@ -109,7 +109,7 @@ namespace examples {
     tool_bar_button tool_bar2_separator2 = tool_bar_button::create_separator();
     tool_bar_button choice_tool_bar_button2 = tool_bar_button::create_control("Items", choice2);
     tool_bar_button tool_bar2_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button about_tool_bar_button2 = tool_bar_button::create_drop_down_button(system_texts::about(), 7, context_menu2);
+    tool_bar_button help_tool_bar_button2 = tool_bar_button::create_drop_down_button(system_texts::help(), 7, context_menu2);
   };
 }
 
