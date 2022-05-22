@@ -139,9 +139,9 @@ void menu_item::enabled(intptr_t menu_item, bool enabled) {
   reinterpret_cast<wxMenuItem*>(menu_item)->Enable(enabled);
 }
 
-int32_t menu_item::menu_id(intptr_t menu_item) {
+intptr_t menu_item::menu_id(intptr_t menu_item) {
   if (menu_item == 0) throw argument_exception(csf_);
-  return reinterpret_cast<wxMenuItem*>(menu_item)->GetId();
+  return static_cast<intptr_t>(reinterpret_cast<wxMenuItem*>(menu_item)->GetId());
 }
 
 void menu_item::text(intptr_t menu_item, const xtd::ustring& text, size_t shortcut) {

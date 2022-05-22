@@ -62,6 +62,8 @@ namespace xtd {
       bool pushed() const;
       tool_bar_button& pushed(bool value);
       
+      const xtd::drawing::rectangle& rectangle() const;
+      
       const xtd::ustring& text() const;
       tool_bar_button& text(const xtd::ustring& value);
 

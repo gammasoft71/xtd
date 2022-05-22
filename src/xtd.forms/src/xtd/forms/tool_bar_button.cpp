@@ -97,6 +97,10 @@ tool_bar_button& tool_bar_button::style(xtd::forms::tool_bar_button_style value)
   return *this;
 }
 
+const xtd::drawing::rectangle& tool_bar_button::rectangle() const {
+  return data_->rectangle;
+}
+
 const ustring& tool_bar_button::text() const {
   return data_->text;
 }

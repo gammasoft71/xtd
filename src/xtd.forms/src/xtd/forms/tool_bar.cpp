@@ -610,7 +610,7 @@ void tool_bar::wm_click(const message& message) {
 
   for (size_t index = 0; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
     if (data_->buttons[index].get().style() == tool_bar_button_style::drop_down_button && data_->buttons[index].get().drop_down_menu().has_value())
-      found_button_or_menu = on_context_menu_item_click(data_->buttons[index].get().drop_down_menu().value(), static_cast<int32_t>(message.wparam()));
+      found_button_or_menu = on_context_menu_item_click(data_->buttons[index].get().drop_down_menu().value(), message.wparam());
   }
         
   if (!found_button_or_menu)
