@@ -354,6 +354,28 @@ namespace xtd {
       
       /// @brief Help about image object.
       /// @return A xtd::drawing::image that represent "help-about".
+      static xtd::drawing::image help() {return help(xtd::forms::theme_images::current_theme(), size());}
+      /// @brief Help about image object with specified theme.
+      /// @param theme A string that represent a theme
+      /// @return A xtd::drawing::image that represent "help-about".
+      static xtd::drawing::image help(const xtd::ustring& theme) {return help(theme, size());}
+      /// @brief Help about image object with specified size.
+      /// @param size A xtd::drawing::size size for the image
+      /// @return A xtd::drawing::image that represent "help-about".
+      static xtd::drawing::image help(const xtd::drawing::size& size) {return help(xtd::forms::theme_images::current_theme(), size);}
+      /// @brief Help about image object with specified theme and size.
+      /// @param theme A string that represent a theme
+      /// @param size A xtd::drawing::size size for the image
+      /// @return A xtd::drawing::image that represent "help-about".
+      static xtd::drawing::image help(const xtd::ustring& theme, const xtd::drawing::size& size) {return help(xtd::forms::theme_images::theme_from_name(theme), size);}
+      /// @brief Help about image object with specified theme and size.
+      /// @param theme A xtd::forms::theme_images that represent a theme
+      /// @param size A xtd::drawing::size size for the image
+      /// @return A xtd::drawing::image that represent "help-about".
+      static xtd::drawing::image help(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "help", size);}
+      
+      /// @brief Help about image object.
+      /// @return A xtd::drawing::image that represent "help-about".
       static xtd::drawing::image help_about() {return help_about(xtd::forms::theme_images::current_theme(), size());}
       /// @brief Help about image object with specified theme.
       /// @param theme A string that represent a theme
@@ -373,7 +395,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "help-about".
       static xtd::drawing::image help_about(const xtd::forms::theme_images& theme, const xtd::drawing::size& size) {return from_name(theme, "help-about", size);}
-      
+
       /// @brief Gets the height and width of the menu images.
       /// @return The size that represents the height and width of the menu images in pixels (16 x 16).
       static xtd::drawing::size size() {return xtd::environment::os_version().is_windows_platform() ? xtd::drawing::size {16, 16} : xtd::drawing::size {64, 64};}

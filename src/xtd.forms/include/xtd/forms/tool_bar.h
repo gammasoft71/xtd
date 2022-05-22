@@ -6,6 +6,7 @@
 #include <vector>
 #include "button.h"
 #include "border_style.h"
+#include "context_menu.h"
 #include "image_list.h"
 #include "panel.h"
 #include "tool_bar_appearance.h"
@@ -43,6 +44,7 @@ namespace xtd {
         xtd::drawing::font default_font() const override;
         
         void control(const xtd::forms::control* value);
+        void drop_down_menu(xtd::forms::context_menu* value);
         void flat(bool value);
         using xtd::forms::button_base::image;
         button_base& image(const xtd::drawing::image& value) override;
@@ -64,6 +66,7 @@ namespace xtd {
       protected:
         
         void on_click(const xtd::event_args& e) override;
+        void on_mouse_down(const mouse_event_args& e) override;
         void on_paint(paint_event_args& e) override;
 
       private:
@@ -73,7 +76,8 @@ namespace xtd {
         void update_size();
 
         struct data {
-          const xtd::forms::control* control;
+          const xtd::forms::control* control = nullptr;
+          xtd::forms::context_menu* drop_down_menu = nullptr;
           std::optional<tool_bar_button_ref> tool_bar_button;
           bool flat = false;
           bool show_icon = true;
