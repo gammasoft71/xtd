@@ -63,10 +63,12 @@ void context_menu::on_item_removed(size_t pos, menu_item_ref item) {
   native::context_menu::remove_item(handle(), pos);
 }
 
-void context_menu::on_item_click(int32_t menu_id) {
+bool context_menu::on_item_click(int32_t menu_id) {
   auto it = handles_.find(menu_id);
   if (it != handles_.end()) {
     auto& menu = static_cast<menu_item&>(it->second.get());
     menu.perform_click();
+    return true;
   }
+  return false;
 }

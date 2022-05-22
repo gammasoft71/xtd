@@ -28,6 +28,27 @@ tool_bar_button& tool_bar_button::control(std::nullptr_t value) {
   return *this;
 }
 
+std::optional<std::reference_wrapper<xtd::forms::context_menu>> tool_bar_button::drop_down_menu() const {
+  return data_->drop_down_menu ? std::optional<std::reference_wrapper<xtd::forms::context_menu>>(*data_->drop_down_menu) : std::optional<std::reference_wrapper<xtd::forms::context_menu>>();
+}
+
+tool_bar_button& tool_bar_button::drop_down_menu(const xtd::forms::context_menu& value) {
+  if (!data_->drop_down_menu.has_value() || data_->drop_down_menu.value() != value) {
+    data_->drop_down_menu = const_cast<xtd::forms::context_menu&>(value);
+    if (data_->parent) data_->parent->post_recreate_handle();
+  }
+  return *this;
+}
+
+tool_bar_button& tool_bar_button::drop_down_menu(std::nullptr_t value) {
+  if (data_->drop_down_menu.has_value()) {
+    data_->drop_down_menu.reset();
+    if (data_->parent) data_->parent->post_recreate_handle();
+  }
+  return *this;
+}
+
+
 bool tool_bar_button::enabled() const {
   return data_->enabled;
 }
@@ -112,6 +133,31 @@ tool_bar_button tool_bar_button::create_control(const xtd::forms::control& contr
   tool_bar_button result;
   result.control(control);
   result.style(xtd::forms::tool_bar_button_style::control);
+  return result;
+}
+
+tool_bar_button tool_bar_button::create_drop_down_button(const xtd::ustring& text, const xtd::forms::context_menu& drop_down_menu) {
+  tool_bar_button result;
+  result.drop_down_menu(drop_down_menu);
+  result.style(xtd::forms::tool_bar_button_style::drop_down_button);
+  result.text(text);
+  return result;
+}
+
+tool_bar_button tool_bar_button::create_drop_down_button(size_t image_index, const xtd::forms::context_menu& drop_down_menu) {
+  tool_bar_button result;
+  result.drop_down_menu(drop_down_menu);
+  result.image_index(image_index);
+  result.style(xtd::forms::tool_bar_button_style::drop_down_button);
+  return result;
+}
+
+tool_bar_button tool_bar_button::create_drop_down_button(const xtd::ustring& text, size_t image_index, const xtd::forms::context_menu& drop_down_menu) {
+  tool_bar_button result;
+  result.drop_down_menu(drop_down_menu);
+  result.image_index(image_index);
+  result.style(xtd::forms::tool_bar_button_style::drop_down_button);
+  result.text(text);
   return result;
 }
 
