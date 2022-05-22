@@ -30,8 +30,8 @@ namespace examples {
         progress_bar1.value(progress_bar1.value() < progress_bar1.maximum() ? progress_bar1.value() + 1 : progress_bar1.minimum());
       };
       
-      tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
-      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, about_tool_bar_button});
+      tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
+      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, help_tool_bar_button});
       tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
 
       tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
@@ -82,7 +82,7 @@ namespace examples {
     tool_bar_button tool_bar1_separator2 = tool_bar_button::create_separator();
     tool_bar_button choice_tool_bar_button = tool_bar_button::create_control("Items", choice1);
     tool_bar_button tool_bar1_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button about_tool_bar_button = tool_bar_button::create_drop_down_button(system_texts::about(), 7, context_menu1);
+    tool_bar_button help_tool_bar_button = tool_bar_button::create_drop_down_button(system_texts::help(), 7, context_menu1);
     
     forms::tool_bar tool_bar2;
     progress_bar progress_bar1;
