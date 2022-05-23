@@ -21,10 +21,10 @@ namespace xtd {
     namespace native {
       class wx_month_calendar;
       
-      class wxMonthCalendar : public wxPanel {
+      class wxMonthCalendar : public wxControl {
       public:
 
-        explicit wxMonthCalendar(wxWindow* parent, wxWindowID winid, const wxPoint& pos, const wxSize& size, long wx_styles) : wxPanel(parent, winid, pos, size) {
+        explicit wxMonthCalendar(wxWindow* parent, wxWindowID winid, const wxPoint& pos, const wxSize& size, long wx_styles) : wxControl(parent, winid, pos, size) {
           calendarCtrl = new wxCalendarCtrl(this, wxID_ANY, /*wxDefaultDateTime*/ wxDateTime(), {0, 0}, {240, 162}, wx_styles);
         }
         
