@@ -42,8 +42,8 @@ namespace examples {
       tool_bar2.dock(dock_style::bottom);
       tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
       tool_bar2.show_text(true);
-      tool_bar2.show_icon(false);
-      tool_bar2.text_align(xtd::forms::tool_bar_text_align::underneath);
+      //tool_bar2.show_icon(false);
+      tool_bar2.text_align(xtd::forms::tool_bar_text_align::right);
 
       tool_bar2.image_list().image_size({24, 24});
       tool_bar2.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
