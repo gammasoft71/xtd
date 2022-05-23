@@ -158,8 +158,8 @@ control& tool_bar::tool_bar_button_control::text(const xtd::ustring& value) {
 
 void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
   button::on_click(e);
-  if (data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position())) && data_->drop_down_menu) {
-    data_->drop_down_menu->show(parent().value().get(), point(left(), bottom() + 2));
+  if (data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position()))) {
+    if (data_->drop_down_menu) data_->drop_down_menu->show(parent().value().get(), point(left(), bottom() + 2));
     data_->mouse_on_drop_down_menu = false;
     data_->mouse_down_on_drop_down_menu = false;
     invalidate();
@@ -176,7 +176,7 @@ void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
 }
 
 void tool_bar::tool_bar_button_control::on_mouse_down(const mouse_event_args& e) {
-  if (e.button() == mouse_buttons::left && data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(e.location()) && data_->drop_down_menu) {
+  if (e.button() == mouse_buttons::left && data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(e.location())) {
     data_->mouse_down_on_drop_down_menu = true;
     invalidate();
   } else
@@ -184,12 +184,12 @@ void tool_bar::tool_bar_button_control::on_mouse_down(const mouse_event_args& e)
 }
 
 void tool_bar::tool_bar_button_control::on_mouse_enter(const event_args& e) {
-  data_->mouse_on_drop_down_menu = data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position())) && data_->drop_down_menu;
+  data_->mouse_on_drop_down_menu = data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position()));
   button::on_mouse_enter(e);
 }
 
 void tool_bar::tool_bar_button_control::on_mouse_move(const mouse_event_args& e) {
-  auto mouse_on_drop_down_menu = data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(e.location()) && data_->drop_down_menu;
+  auto mouse_on_drop_down_menu = data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(e.location());
   if (data_->mouse_on_drop_down_menu != mouse_on_drop_down_menu) {
     data_->mouse_on_drop_down_menu = mouse_on_drop_down_menu;
     invalidate();
@@ -277,8 +277,8 @@ void tool_bar::tool_bar_button_control::draw_control(xtd::forms::paint_event_arg
   current_style_sheet.font(font());
   xtd::drawing::rectangle text_rect = current_style_sheet.get_content_rectangle(e.clip_rectangle());
   if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
-    text_rect.width(text_rect.width() - data_->control->width() - 4);
-    text_rect.x(text_rect.x() + data_->control->width() + 4);
+    if (data_->control) text_rect.width(text_rect.width() - data_->control->width() - 4);
+    if (data_->control) text_rect.x(text_rect.x() + data_->control->width() + 4);
   } else {
     text_rect.height(measure_text().height());
     text_rect.y(height() - measure_text().height() - 3);
