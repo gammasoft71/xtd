@@ -280,8 +280,8 @@ void tool_bar::tool_bar_button_control::draw_control(xtd::forms::paint_event_arg
     text_rect.width(text_rect.width() - data_->control->width() - 4);
     text_rect.x(text_rect.x() + data_->control->width() + 4);
   } else {
-    text_rect.height(text_rect.height() - data_->control->height() - 2);
-    text_rect.y(text_rect.y() + data_->control->height() + 2);
+    text_rect.height(measure_text().height());
+    text_rect.y(height() - measure_text().height() - 3);
   }
   text_renderer::draw_text(e.graphics(), text_rect, text(), current_style_sheet);
 }
