@@ -205,7 +205,7 @@ void tool_bar::tool_bar_button_control::on_mouse_up(const mouse_event_args& e) {
     data_->mouse_down_on_drop_down_menu = false;
     invalidate();
   }
-  button::on_mouse_down(e);
+  button::on_mouse_up(e);
 }
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
