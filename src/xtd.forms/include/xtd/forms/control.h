@@ -634,6 +634,12 @@ namespace xtd {
       /// @return A bitwise combination of the mouse_buttons enumeration values. The default is none.
       static forms::mouse_buttons mouse_buttons();
       
+      /// @brief Gets the position of the mouse cursor in screen coordinates.
+      /// @return A xtd::drawing::point that contains the coordinates of the mouse cursor relative to the upper-left corner of the screen.
+      /// @remarks The xtd::form::control::mouse_position property returns a xtd::drawing::point that represents the mouse cursor position at the time the property was referenced. The coordinates indicate the position on the screen, not relative to the control, and are returned regardless of whether the cursor is positioned over the control. The coordinates of the upper-left corner of the screen are 0,0.
+      /// @remarks The xtd::form::control::mouse_position property is identical to the xtd::forms::cursor::position property.
+      static xtd::drawing::point mouse_position();
+      
       /// @brief Gets the native handle that the control is bound to.
       /// @return An intptr_t that contains the native handle (HWND) of the control.
       /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the true native handle.

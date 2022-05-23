@@ -553,6 +553,10 @@ forms::mouse_buttons control::mouse_buttons() {
   return mouse_buttons_;
 }
 
+xtd::drawing::point control::mouse_position() {
+  return xtd::forms::cursor::position();
+}
+
 const xtd::ustring& control::name() const {
   return data_->name;
 }
