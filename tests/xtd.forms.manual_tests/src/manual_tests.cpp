@@ -19,12 +19,14 @@ namespace examples {
       choice1.selected_index(0);
       choice1.selected_value_changed += [&] {
         list_box1.items().push_back(ustring::format("Choice item {} selected", choice1.selected_item()));
+        list_box1.selected_index(list_box1.items().size() - 1);
       };
       
       choice2.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       choice2.selected_index(0);
       choice2.selected_value_changed += [&] {
         list_box1.items().push_back(ustring::format("Choice item {} clicked", choice2.selected_item()));
+        list_box1.selected_index(list_box1.items().size() - 1);
       };
       
       //tool_bar1.appearnce(xtd::forms::tool_bar_appearance::system);
@@ -43,7 +45,7 @@ namespace examples {
       tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
       tool_bar2.show_text(true);
       //tool_bar2.show_icon(false);
-      tool_bar2.text_align(xtd::forms::tool_bar_text_align::right);
+      //tool_bar2.text_align(xtd::forms::tool_bar_text_align::right);
 
       tool_bar2.image_list().image_size({24, 24});
       tool_bar2.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
