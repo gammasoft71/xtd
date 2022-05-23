@@ -67,11 +67,16 @@ namespace xtd {
         
         void on_click(const xtd::event_args& e) override;
         void on_mouse_down(const mouse_event_args& e) override;
+        void on_mouse_enter(const event_args& e) override;
+        void on_mouse_leave(const event_args& e) override;
+        void on_mouse_move(const mouse_event_args& e) override;
+        void on_mouse_up(const mouse_event_args& e) override;
         void on_paint(paint_event_args& e) override;
 
       private:
         friend tool_bar;
         
+        xtd::drawing::rectangle drop_down_rectangle() const;
         void update_layout();
         void update_size();
 
@@ -79,6 +84,8 @@ namespace xtd {
           const xtd::forms::control* control = nullptr;
           xtd::forms::context_menu* drop_down_menu = nullptr;
           std::optional<tool_bar_button_ref> tool_bar_button;
+          bool mouse_on_drop_down_menu = false;
+          bool mouse_down_on_drop_down_menu = false;
           bool flat = false;
           bool show_icon = true;
           bool show_text = false;
