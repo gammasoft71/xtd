@@ -158,9 +158,11 @@ control& tool_bar::tool_bar_button_control::text(const xtd::ustring& value) {
 
 void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
   button::on_click(e);
-  if (data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position())) && data_->drop_down_menu)
+  if (data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position())) && data_->drop_down_menu) {
     data_->drop_down_menu->show(parent().value().get(), point(left(), bottom() + 2));
-  else {
+    data_->mouse_down_on_drop_down_menu = false;
+    invalidate();
+  } else {
     if (data_->tool_bar_button.has_value()) {
       if (data_->style == tool_bar_button_style::toggle_button) {
         data_->pushed = !data_->pushed;
