@@ -74,9 +74,16 @@ button_base& tool_bar::tool_bar_button_control::image(const xtd::drawing::image&
   return *this;
 }
 
-xtd::drawing::size tool_bar::tool_bar_button_control::image_size() const {
-  if (image() == drawing::image::empty) return parent().has_value() ? as<tool_bar>(parent().value().get()).image_size() : xtd::drawing::size::empty;
-  return image().size();
+const xtd::drawing::size& tool_bar::tool_bar_button_control::image_size() const {
+  return data_->image_size;
+}
+
+void tool_bar::tool_bar_button_control::image_size(const xtd::drawing::size& value) {
+  if (data_->image_size != value) {
+    data_->image_size = value;
+    update_size();
+    update_layout();
+  }
 }
 
 bool tool_bar::tool_bar_button_control::is_horizontal() const {
@@ -192,64 +199,89 @@ void tool_bar::tool_bar_button_control::on_mouse_leave(const event_args& e) {
 void tool_bar::tool_bar_button_control::on_mouse_up(const mouse_event_args& e) {
   if (e.button() == mouse_buttons::left && data_->style == tool_bar_button_style::drop_down_button && drawing::rectangle(width() - 32, 0, width(), height()).contains(e.location()) && data_->drop_down_menu) {
     data_->drop_down_menu->show(parent().value().get(), point(left(), bottom() + 2));
-    control::on_mouse_down(e);
+    control::on_mouse_up(e);
   } else
-    button::on_mouse_down(e);
+    button::on_mouse_up(e);
 }
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
-  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  if (data_->style == tool_bar_button_style::push_button || data_->style == tool_bar_button_style::toggle_button) {
-    tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), data_->pushed ? visual_styles::push_button_state::checked : state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
-  } else if (data_->style == tool_bar_button_style::drop_down_button) {
-    auto button_rect = e.clip_rectangle();
-    button_rect.width(button_rect.width() - 32);
-    visual_styles::push_button_state current_state = state();
-    if (data_->mouse_on_drop_down_menu) current_state = visual_styles::push_button_state::normal;
-    tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), button_rect, current_state, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
-    xtd::forms::style_sheets::tool_bar_button current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
-    if (data_->mouse_on_drop_down_menu) current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::hover);
-    if (data_->mouse_down_on_drop_down_menu) current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::pressed);
-    auto center_drop_down = point(e.clip_rectangle().right() - 16, e.clip_rectangle().top() + e.clip_rectangle().height() / 2);
-    box_renderer::draw_box(e.graphics(), drop_down_rectangle(), current_style_sheet);
-    e.graphics().fill_polygon(solid_brush(current_style_sheet.color()), vector<point> {point {center_drop_down.x() - 8, center_drop_down.y() - 4}, point {center_drop_down.x() + 8, center_drop_down.y() - 4}, point {center_drop_down.x(), center_drop_down.y() + 4} });
-  } else if (data_->style == tool_bar_button_style::separator || data_->style == tool_bar_button_style::stretchable_separator) {
-    if (data_->flat) {
-      auto percent_of_color = 1.0 / 6;
-      auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
-      if (is_horizontal()) {
-        auto left = image_size().width() / 4;
-        auto top = 4;
-        auto right = left;
-        auto bottom = e.clip_rectangle().height() - 4;
-        e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
-      } else {
-        auto left = 4;
-        auto top = image_size().height() / 4;
-        auto right = e.clip_rectangle().width() - 4;
-        auto bottom = top;
-        e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
-      }
-    }
-  } else if (data_->style == tool_bar_button_style::control) {
-    xtd::forms::style_sheets::tool_bar_button current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
-    current_style_sheet.font(font());
-    xtd::drawing::rectangle text_rect = current_style_sheet.get_content_rectangle(e.clip_rectangle());
-    if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
-      text_rect.width(text_rect.width() - data_->control->width() - 4);
-      text_rect.x(text_rect.x() + data_->control->width() + 4);
-    } else {
-      text_rect.height(text_rect.height() - data_->control->height() - 2);
-      text_rect.y(text_rect.y() + data_->control->height() + 2);
-    }
-    text_renderer::draw_text(e.graphics(), text_rect, text(), current_style_sheet);
-  }
+  if (data_->style == tool_bar_button_style::push_button) draw_push_button(e);
+  else if (data_->style == tool_bar_button_style::toggle_button) draw_toggle_button(e);
+  else if (data_->style == tool_bar_button_style::separator) draw_separator(e);
+  else if (data_->style == tool_bar_button_style::drop_down_button) draw_drop_down_button(e);
+  else if (data_->style == tool_bar_button_style::stretchable_separator) draw_stretchable_separator(e);
+  else if (data_->style == tool_bar_button_style::control) draw_control(e);
   control::on_paint(e);
+}
+
+void tool_bar::tool_bar_button_control::draw_push_button(xtd::forms::paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
+}
+
+void tool_bar::tool_bar_button_control::draw_toggle_button(xtd::forms::paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), e.clip_rectangle(), data_->pushed ? visual_styles::push_button_state::checked : state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
+}
+
+void tool_bar::tool_bar_button_control::draw_drop_down_button(xtd::forms::paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  auto button_rect = e.clip_rectangle();
+  button_rect.width(button_rect.width() - drop_down_rectangle().width());
+  visual_styles::push_button_state current_state = state();
+  if (data_->mouse_on_drop_down_menu) current_state = visual_styles::push_button_state::normal;
+  tool_bar_button_renderer::draw_tool_bar_button(style, e.graphics(), button_rect, current_state, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
+  xtd::forms::style_sheets::tool_bar_button current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
+  if (data_->mouse_on_drop_down_menu) current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::hover);
+  if (data_->mouse_down_on_drop_down_menu) current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::pressed);
+  auto center_drop_down = point(e.clip_rectangle().right() - drop_down_rectangle().width() / 2, e.clip_rectangle().top() + drop_down_rectangle().height() / 2);
+  auto drop_down_size = drawing::size(16 , 8);
+  box_renderer::draw_box(e.graphics(), drop_down_rectangle(), current_style_sheet);
+  e.graphics().fill_polygon(solid_brush(current_style_sheet.color()), vector<point> {point {center_drop_down.x() - drop_down_size.width() / 2, center_drop_down.y() - drop_down_size.height() / 2}, point {center_drop_down.x() + drop_down_size.width() / 2, center_drop_down.y() - drop_down_size.height() / 2}, point {center_drop_down.x(), center_drop_down.y() + drop_down_size.height() / 2} });
+}
+
+void tool_bar::tool_bar_button_control::draw_separator(xtd::forms::paint_event_args& e) {
+  if (data_->flat) {
+    auto percent_of_color = 1.0 / 6;
+    auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
+    if (is_horizontal()) {
+      auto left = image_size().width() / 4;
+      auto top = 4;
+      auto right = left;
+      auto bottom = e.clip_rectangle().height() - 4;
+      e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
+    } else {
+      auto left = 4;
+      auto top = image_size().height() / 4;
+      auto right = e.clip_rectangle().width() - 4;
+      auto bottom = top;
+      e.graphics().draw_line(pen {color}, point {left, top}, point {right, bottom});
+    }
+  }
+}
+
+void tool_bar::tool_bar_button_control::draw_stretchable_separator(xtd::forms::paint_event_args& e) {
+  draw_separator(e);
+}
+
+void tool_bar::tool_bar_button_control::draw_control(xtd::forms::paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  xtd::forms::style_sheets::tool_bar_button current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
+  current_style_sheet.font(font());
+  xtd::drawing::rectangle text_rect = current_style_sheet.get_content_rectangle(e.clip_rectangle());
+  if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
+    text_rect.width(text_rect.width() - data_->control->width() - 4);
+    text_rect.x(text_rect.x() + data_->control->width() + 4);
+  } else {
+    text_rect.height(text_rect.height() - data_->control->height() - 2);
+    text_rect.y(text_rect.y() + data_->control->height() + 2);
+  }
+  text_renderer::draw_text(e.graphics(), text_rect, text(), current_style_sheet);
 }
 
 xtd::drawing::rectangle tool_bar::tool_bar_button_control::drop_down_rectangle() const {
   if (data_->style != tool_bar_button_style::drop_down_button) return {};
-  return {width() - 32, 0, width(), height()};
+  return {width() - image_size().width() - 4, 0, image_size().width() + 4, height()};
 }
 
 void tool_bar::tool_bar_button_control::update_layout() {
@@ -269,7 +301,7 @@ void tool_bar::tool_bar_button_control::update_layout() {
 void tool_bar::tool_bar_button_control::update_size() {
   auto size = this->size();
   auto text_size = measure_text();
-  auto drop_down_size = data_->style == tool_bar_button_style::drop_down_button ? drawing::size(32, 0) : drawing::size::empty;
+  auto drop_down_size = drop_down_rectangle().size();
 
   if (data_->style == tool_bar_button_style::control && data_->control) {
     if (size.height() < data_->control->height()) size.height(data_->control->height());
@@ -561,6 +593,7 @@ void tool_bar::fill() {
       else button_control->dock(dock_style::top);
       button_control->enabled(button_item.enabled());
       button_control->flat(appearnce() == tool_bar_appearance::flat);
+      button_control->image_size(image_size());
       button_control->show_icon(data_->show_icon);
       button_control->show_text(data_->show_text);
       button_control->size(button_size());

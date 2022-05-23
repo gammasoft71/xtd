@@ -48,7 +48,8 @@ namespace xtd {
         void flat(bool value);
         using xtd::forms::button_base::image;
         button_base& image(const xtd::drawing::image& value) override;
-        xtd::drawing::size image_size() const;
+        const xtd::drawing::size& image_size() const;
+        void image_size(const xtd::drawing::size& value);
         bool is_horizontal() const;
         void pushed(bool value);
         void show_icon(bool value);
@@ -76,6 +77,12 @@ namespace xtd {
       private:
         friend tool_bar;
         
+        void draw_push_button(xtd::forms::paint_event_args& e);
+        void draw_toggle_button(xtd::forms::paint_event_args& e);
+        void draw_drop_down_button(xtd::forms::paint_event_args& e);
+        void draw_separator(xtd::forms::paint_event_args& e);
+        void draw_stretchable_separator(xtd::forms::paint_event_args& e);
+        void draw_control(xtd::forms::paint_event_args& e);
         xtd::drawing::rectangle drop_down_rectangle() const;
         void update_layout();
         void update_size();
@@ -83,6 +90,7 @@ namespace xtd {
         struct data {
           const xtd::forms::control* control = nullptr;
           xtd::forms::context_menu* drop_down_menu = nullptr;
+          xtd::drawing::size image_size;
           std::optional<tool_bar_button_ref> tool_bar_button;
           bool mouse_on_drop_down_menu = false;
           bool mouse_down_on_drop_down_menu = false;
