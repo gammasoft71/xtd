@@ -160,6 +160,7 @@ void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
   button::on_click(e);
   if (data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position())) && data_->drop_down_menu) {
     data_->drop_down_menu->show(parent().value().get(), point(left(), bottom() + 2));
+    data_->mouse_on_drop_down_menu = false;
     data_->mouse_down_on_drop_down_menu = false;
     invalidate();
   } else {
