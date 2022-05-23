@@ -239,7 +239,7 @@ void tool_bar::tool_bar_button_control::draw_drop_down_button(xtd::forms::paint_
   if (data_->mouse_on_drop_down_menu) current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::hover);
   if (data_->mouse_down_on_drop_down_menu) current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::pressed);
   auto center_drop_down = point(e.clip_rectangle().right() - drop_down_rectangle().width() / 2, e.clip_rectangle().top() + drop_down_rectangle().height() / 2);
-  auto drop_down_size = drawing::size(16 , 8);
+  auto drop_down_size = drawing::size(drop_down_rectangle().width() - 4, (drop_down_rectangle().width() - 4) / 2);
   box_renderer::draw_box(e.graphics(), drop_down_rectangle(), current_style_sheet);
   e.graphics().fill_polygon(solid_brush(current_style_sheet.color()), vector<point> {point {center_drop_down.x() - drop_down_size.width() / 2, center_drop_down.y() - drop_down_size.height() / 2}, point {center_drop_down.x() + drop_down_size.width() / 2, center_drop_down.y() - drop_down_size.height() / 2}, point {center_drop_down.x(), center_drop_down.y() + drop_down_size.height() / 2} });
 }
@@ -285,7 +285,7 @@ void tool_bar::tool_bar_button_control::draw_control(xtd::forms::paint_event_arg
 
 xtd::drawing::rectangle tool_bar::tool_bar_button_control::drop_down_rectangle() const {
   if (data_->style != tool_bar_button_style::drop_down_button) return {};
-  return {width() - image_size().width() - 4, 0, image_size().width() + 4, height()};
+  return {width() - 16, 0, 16, height()};
 }
 
 void tool_bar::tool_bar_button_control::update_layout() {
