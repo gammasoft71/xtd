@@ -157,14 +157,18 @@ control& tool_bar::tool_bar_button_control::text(const xtd::ustring& value) {
 }
 
 void tool_bar::tool_bar_button_control::on_click(const xtd::event_args& e) {
-  xtd::forms::button::on_click(e);
-  if (data_->tool_bar_button.has_value()) {
-    if (data_->style == tool_bar_button_style::toggle_button) {
-      data_->pushed = !data_->pushed;
-      data_->tool_bar_button.value().get().pushed(data_->pushed);
+  button::on_click(e);
+  if (data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position())) && data_->drop_down_menu)
+    data_->drop_down_menu->show(parent().value().get(), point(left(), bottom() + 2));
+  else {
+    if (data_->tool_bar_button.has_value()) {
+      if (data_->style == tool_bar_button_style::toggle_button) {
+        data_->pushed = !data_->pushed;
+        data_->tool_bar_button.value().get().pushed(data_->pushed);
+      }
+      if (data_->style != tool_bar_button_style::separator && data_->style != tool_bar_button_style::stretchable_separator && data_->style != tool_bar_button_style::control && parent().has_value())
+        as<tool_bar>(parent().value().get()).on_button_click(xtd::forms::tool_bar_button_click_event_args(data_->tool_bar_button.value().get()));
     }
-    if (data_->style != tool_bar_button_style::separator && data_->style != tool_bar_button_style::stretchable_separator && data_->style != tool_bar_button_style::control && parent().has_value())
-      as<tool_bar>(parent().value().get()).on_button_click(xtd::forms::tool_bar_button_click_event_args(data_->tool_bar_button.value().get()));
   }
 }
 
@@ -173,7 +177,7 @@ void tool_bar::tool_bar_button_control::on_mouse_down(const mouse_event_args& e)
     data_->mouse_down_on_drop_down_menu = true;
     invalidate();
   } else
-    xtd::forms::button::on_mouse_down(e);
+    button::on_mouse_down(e);
 }
 
 void tool_bar::tool_bar_button_control::on_mouse_enter(const event_args& e) {
@@ -197,11 +201,11 @@ void tool_bar::tool_bar_button_control::on_mouse_leave(const event_args& e) {
 }
 
 void tool_bar::tool_bar_button_control::on_mouse_up(const mouse_event_args& e) {
-  if (e.button() == mouse_buttons::left && data_->style == tool_bar_button_style::drop_down_button && drawing::rectangle(width() - 32, 0, width(), height()).contains(e.location()) && data_->drop_down_menu) {
-    data_->drop_down_menu->show(parent().value().get(), point(left(), bottom() + 2));
-    control::on_mouse_up(e);
-  } else
-    button::on_mouse_up(e);
+  if (e.button() == mouse_buttons::left && data_->style == tool_bar_button_style::drop_down_button) {
+    data_->mouse_down_on_drop_down_menu = false;
+    invalidate();
+  }
+  button::on_mouse_down(e);
 }
 
 void tool_bar::tool_bar_button_control::on_paint(paint_event_args& e) {
