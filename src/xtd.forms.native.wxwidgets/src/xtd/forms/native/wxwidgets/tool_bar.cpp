@@ -3,22 +3,7 @@
 #include <xtd/cdebug.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/tool_bar.h>
-// Workaround : When wxWidgets destroy the tool bar tool with a control, it destroy the control. But with xtd, the control is managed by xtd and it can be destroyed.
-#if !defined (WIN32)
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wkeyword-macro"
-#endif
-#define protected public
-#define private public
-// end Workaround
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tool_bar.h"
-// Workaround : When wxWidgets destroy the tool bar tool with a control, it destroy the control. But with xtd, the control is managed by xtd and it can be destroyed.
-#undef protected
-#undef private
-#if !defined (WIN32)
-#pragma clang diagnostic pop
-#endif
-// end Workaround
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
@@ -114,14 +99,6 @@ bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
   }
 
   if (tool_bar == 0) {
-    // Workaround : When wxWidgets destroy the tool bar tool with a control or drop down menu, it destroy the control and the drop down menu. But with xtd, the control and the drop down menu are managed by xtd and they can be destroyed.
-    // To prevent destroy control and drop down menu change the tool bar tool style to wxTOOL_STYLE_BUTTON et set drop down menu to null...
-    if (static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar() != nullptr)
-      for (size_t index = 0; index < static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar()->GetToolsCount(); ++index) {
-        static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar()->GetToolByPos(index)->m_dropdownMenu = nullptr;
-        static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar()->GetToolByPos(index)->m_toolStyle = wxTOOL_STYLE_BUTTON;
-      }
-    /// end Workaround
     static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(nullptr);
     return true;
   }
