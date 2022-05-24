@@ -36,6 +36,10 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::tool_bar control.
     /// @include tool_bar.cpp
+    /// @remarks xtd::forms::tool_bar controls are used to display xtd::forms::tool_bar_button controls that can appear as a standard button, a toggle-style button, or a drop-down style button. You can assign images to the buttons by creating an xtd::forms::image_list, assigning it to the xtd::forms::tool_bar::image_list property of the toolbar, and assigning the image index value to the xtd::forms::tool_bar_button::image_index property each xtd::forms::tool_bar_button. You can then assign text to be displayed underneath or to the right of the image by setting the xtd::forms::tool_bar_button::text property of the xtd::forms::tool_bar_button.
+    /// @remarks Set the xtd::forms::tool_bar::appearance property of the toolbar to xtd::forms::tool_bar_appearance::flat to give the toolbar and its buttons a flat appearance. As the mouse pointer moves over the buttons, their appearance changes to three-dimensional. Toolbar buttons can be divided into logical groups by using separators. A separator is a toolbar button with the xtd::forms::tool_bar_button::style property set to xtd::forms::tool_bar_button_style::separator. Button separators appear as lines rather than spaces between the buttons when the toolbar has a flat appearance. If the xtd::forms::tool_bar::appearance property is set to xtd::forms::tool_bar_appearance::normal, the toolbar buttons appear raised and three-dimensional.
+    /// @remarks If you specify a value for the xtd::forms::tool_bar::button_size property, all buttons in the tool bar are restricted to the specified size. Otherwise, the buttons adjust their size depending on their content, and the xtd::forms::tool_bar::button_size property returns the initial size of the largest button.
+    /// @remarks To create a collection of xtd::forms::tool_bar_button controls to display on the xtd::forms::tool_bar, add the buttons individually by using the xtd::forms::tool_bar::tool_bar_button_collection::push_back or xtd::forms::tool_bar::tool_bar_button_collection::insert methods of the xtd::forms::tool_bar::buttons property.
     class forms_export_ tool_bar : public control {
       class tool_bar_button_control;
       
@@ -104,7 +108,9 @@ namespace xtd {
       tool_bar_button_collection& buttons();
     
       xtd::drawing::font default_font() const override;
-      
+
+      drawing::size default_size() const override;
+
       dock_style dock() const override;
       control& dock(dock_style dock) override;
       

@@ -227,7 +227,7 @@ xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   if (class_name == "tabpage") return {200, 100};
   if (class_name == "textbox") return {100, is_gnome ? 34 : 21};
   if (class_name == "togglebutton") return {104, is_gnome ? 34 : 25};
-  if (class_name == "toolbar") return {300, 300};
+  if (class_name == "toolbar") return {100, 23};
   if (class_name == "trackbar") return {104, 45};
   if (class_name == "updownbutton") return {is_gnome ? 71 : 18, 34};
   if (class_name == "usercontrol") return {150, 150};
