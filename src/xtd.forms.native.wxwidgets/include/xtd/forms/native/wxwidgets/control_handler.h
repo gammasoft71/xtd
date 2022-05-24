@@ -27,6 +27,11 @@ namespace xtd {
           return wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
         
+        virtual bool Destroy() {
+          if (!control_) return false;
+          return control_->Destroy();
+        }
+        
         virtual wxRect GetClientRect() const {
           if (!control_) return {};
           return control_->GetClientRect();

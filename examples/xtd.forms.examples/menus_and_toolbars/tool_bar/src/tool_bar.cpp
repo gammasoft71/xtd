@@ -34,7 +34,6 @@ namespace examples {
       tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, help_tool_bar_button});
       tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
 
-      tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
       tool_bar2.dock(dock_style::bottom);
       tool_bar2.show_text(true);
       tool_bar2.text_align(xtd::forms::tool_bar_text_align::right);

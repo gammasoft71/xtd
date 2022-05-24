@@ -20,6 +20,9 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
+// Workaround : When wxWidgets destroy the tool bar tool with a control, it destroy the control. But with xtd, the control is managed by xtd and it can be destroyed.
+// wx_tool_bar.h must be include before other...
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tool_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box.h"
@@ -53,7 +56,6 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_page.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_text_box.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_toggle_button.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tool_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_track_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_up_down_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_user_control.h"
@@ -97,6 +99,7 @@ void control::back_color(intptr_t control, const color& color) {
   }
 
 #if !defined(WIN32)
+  if (dynamic_cast<wx_user_panel*>(reinterpret_cast<control_handler*>(control)->control())) return;
   if (dynamic_cast<wx_user_window*>(reinterpret_cast<control_handler*>(control)->control())) return;
 #endif
 
@@ -239,7 +242,7 @@ void control::destroy(intptr_t control) {
   if (reinterpret_cast<control_handler*>(control)->control() == 0 || !wxTheApp) return;
   reinterpret_cast<control_handler*>(control)->control()->Unlink();
   reinterpret_cast<control_handler*>(control)->control()->DeletePendingEvents();
-  reinterpret_cast<control_handler*>(control)->control()->Destroy();
+  reinterpret_cast<control_handler*>(control)->Destroy();
   // Do not delete control_handler here because wxwidgets defers the deletion of wxWindow in the idle event so the deletion of handler_control will also be done in the idle event.
   __control_handler_to_delete_items__.push_back(reinterpret_cast<class control_handler*>(control));
 }

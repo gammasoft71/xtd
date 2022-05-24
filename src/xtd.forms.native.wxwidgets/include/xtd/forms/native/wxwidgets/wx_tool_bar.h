@@ -5,13 +5,28 @@
 #endif
 /// @endcond
 
+// Workaround : When wxWidgets destroy the tool bar tool with a control, it destroy the control. But with xtd, the control is managed by xtd and it can be destroyed.
+#if !defined (WIN32)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wkeyword-macro"
+#endif
+#define protected public
+#define private public
+// end Workaround
+#include <wx/toolbar.h>
+// Workaround : When wxWidgets destroy the tool bar tool with a control, it destroy the control. But with xtd, the control is managed by xtd and it can be destroyed.
+#undef protected
+#undef private
+#if !defined (WIN32)
+#pragma clang diagnostic pop
+#endif
+// end Workaround
 #include <codecvt>
 #include <xtd/argument_exception.h>
 #include <xtd/convert_string.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/tool_bar_styles.h>
-#include <wx/toolbar.h>
 #include <wx/artprov.h>
 #include "control_handler.h"
 
@@ -52,6 +67,18 @@ namespace xtd {
           if ((style & TBSTYLE_TOOLTIPS) != TBSTYLE_TOOLTIPS) wx_style |= wxTB_NO_TOOLTIPS;
 
           return wx_style;
+        }
+
+        bool Destroy() override {
+          // Workaround : When wxWidgets destroy the tool bar tool with a control or drop down menu, it destroy the control and the drop down menu. But with xtd, the control and the drop down menu are managed by xtd and they can be destroyed.
+          // To prevent destroy control and drop down menu change the tool bar tool style to wxTOOL_STYLE_BUTTON et set drop down menu to null...
+          for (size_t index = 0; index < static_cast<wxToolBar*>(control())->GetToolsCount(); ++index) {
+            static_cast<wxToolBar*>(control())->GetToolByPos(index)->m_dropdownMenu = nullptr;
+            static_cast<wxToolBar*>(control())->GetToolByPos(index)->m_toolStyle = wxTOOL_STYLE_BUTTON;
+          }
+          /// end Workaround
+
+          return control()->Destroy();
         }
 
         void SetClientSize(int32_t width, int32_t height) override {
