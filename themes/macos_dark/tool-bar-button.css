@@ -3,10 +3,10 @@
 
 tool-bar-button {
   border-style: solid;
-  border-color: system-color(control);
+  border-color: transparent;
   border-width: 1px;
   border-radius: 5px;
-  background-color: system-color(control);
+  background-color: transparent;
   padding: 1px 1px 3px 1px;
   color: rgba(191, 191, 191, 0.847);
 }
