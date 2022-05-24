@@ -27,7 +27,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Provides button control renderer methods.
+    /// @brief Provides tool bar button renderer methods.
     /// @code
     /// class forms_export_ tool_bar_button_renderer static_
     /// @endcode
@@ -49,6 +49,7 @@ namespace xtd {
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
       /// @param back_color The background color for the button control.
+      /// @param appearance The xtd::forms::flat_appearance that represents the flat appearance of the tool bar button.
       /// @param text The text of the button control.
       /// @param text_flags Contains the display and layout information for text strings.
       /// @param fore_color The foreground color for the button control.
