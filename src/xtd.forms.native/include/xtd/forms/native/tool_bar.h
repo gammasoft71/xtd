@@ -37,18 +37,19 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        static intptr_t add_tool_bar_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::drawing::image& image, bool enabled, bool visible);
-        static intptr_t add_tool_bar_drop_down_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::drawing::image& image, bool enabled, bool visible, intptr_t drop_down_menu);
-        static intptr_t add_tool_bar_toggle_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
+        static intptr_t add_tool_bar_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible);
+        static intptr_t add_tool_bar_drop_down_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible, intptr_t drop_down_menu);
+        static intptr_t add_tool_bar_toggle_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
         static intptr_t add_tool_bar_separator(intptr_t tool_bar);
         static intptr_t add_tool_bar_stretchable_separator(intptr_t tool_bar);
-        static intptr_t add_tool_bar_control(intptr_t tool_bar, intptr_t control, const xtd::ustring& text);
+        static intptr_t add_tool_bar_control(intptr_t tool_bar, intptr_t control, const xtd::ustring& text, const xtd::ustring& tool_tip_text);
         /// @brief Sets the tool_bar that is displayed in the form.
         /// @param control Control window handle.
         /// @param tool_bar A tool bar handle that represents the tool bar to display in the form.
         /// @warning Internal use only
         static bool set_system_tool_bar(intptr_t control, intptr_t tool_bar);
-        static void update_tool_bar_item(intptr_t tool_bar, intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
+        static void update_tool_bar_item(intptr_t tool_bar, intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
+        static xtd::drawing::rectangle tool_bar_item_rectangle(intptr_t tool_bar, intptr_t handle);
         /// @}
       };
     }

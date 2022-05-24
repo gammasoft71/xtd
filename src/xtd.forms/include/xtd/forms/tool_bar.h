@@ -186,6 +186,9 @@ namespace xtd {
       virtual bool show_text() const;
       virtual tool_bar& show_text(bool value);
       
+      virtual bool show_tool_tips() const;
+      virtual tool_bar& show_tool_tips(bool value);
+      
       virtual xtd::forms::tool_bar_text_align text_align() const;
       virtual tool_bar& text_align(xtd::forms::tool_bar_text_align value);
       /// @}
@@ -234,7 +237,7 @@ namespace xtd {
       void on_item_removed(size_t pos, tool_bar_button_ref item);
 
       void resize_stretchable_separtors();
-      void update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
+      void update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
 
       void wm_click(const message& message);
       
@@ -249,6 +252,7 @@ namespace xtd {
         dock_style non_system_dock = dock_style::none;
         bool show_icon = true;
         bool show_text = false;
+        bool show_tool_tips = false;
         std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> stretchable_separators;
         std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> tool_bar_buttons;
         std::vector<intptr_t> system_tool_bar_button_handles;

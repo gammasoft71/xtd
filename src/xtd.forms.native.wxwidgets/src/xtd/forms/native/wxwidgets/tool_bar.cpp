@@ -22,9 +22,10 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t tool_bar::add_tool_bar_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::drawing::image& image, bool enabled, bool visible) {
+intptr_t tool_bar::add_tool_bar_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible) {
   if (!tool_bar || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -33,10 +34,11 @@ intptr_t tool_bar::add_tool_bar_button(intptr_t tool_bar, const xtd::ustring& te
   
   auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image.handle()));
   tool_bar_item->Enable(enabled && visible);
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text));
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }
 
-intptr_t tool_bar::add_tool_bar_drop_down_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::drawing::image& image, bool enabled, bool visible, intptr_t drop_down_menu) {
+intptr_t tool_bar::add_tool_bar_drop_down_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool enabled, bool visible, intptr_t drop_down_menu) {
   if (!tool_bar || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -46,10 +48,11 @@ intptr_t tool_bar::add_tool_bar_drop_down_button(intptr_t tool_bar, const xtd::u
   auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image.handle()), wxEmptyString, wxITEM_DROPDOWN);
   tool_bar_item->Enable(enabled && visible);
   tool_bar_item->SetDropdownMenu(reinterpret_cast<wxMenu*>(drop_down_menu));
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text));
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }
 
-intptr_t tool_bar::add_tool_bar_toggle_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
+intptr_t tool_bar::add_tool_bar_toggle_button(intptr_t tool_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!tool_bar || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -57,8 +60,9 @@ intptr_t tool_bar::add_tool_bar_toggle_button(intptr_t tool_bar, const xtd::ustr
   }
   
   auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text), *reinterpret_cast<wxImage*>(image.handle()), wxEmptyString, wxITEM_CHECK);
-  tool_bar_item->Toggle(pushed);
   tool_bar_item->Enable(enabled && visible);
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text));
+  tool_bar_item->Toggle(pushed);
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }
 
@@ -84,7 +88,7 @@ intptr_t tool_bar::add_tool_bar_stretchable_separator(intptr_t tool_bar) {
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }
 
-intptr_t tool_bar::add_tool_bar_control(intptr_t tool_bar, intptr_t control, const xtd::ustring& text) {
+intptr_t tool_bar::add_tool_bar_control(intptr_t tool_bar, intptr_t control, const xtd::ustring& text, const xtd::ustring& tool_tip_text) {
   if (!tool_bar || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -97,6 +101,7 @@ intptr_t tool_bar::add_tool_bar_control(intptr_t tool_bar, intptr_t control, con
   }
   
   auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddControl(control ? static_cast<wxControl*>(reinterpret_cast<control_handler*>(control)->control()) : new wxControl(reinterpret_cast<control_handler*>(tool_bar)->control(), wxID_ANY), convert_string::to_wstring(text));
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text));
   return static_cast<intptr_t>(tool_bar_item->GetId());
 }
 
@@ -128,7 +133,7 @@ bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
   return true;
 }
 
-void tool_bar::update_tool_bar_item(intptr_t tool_bar, intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
+void tool_bar::update_tool_bar_item(intptr_t tool_bar, intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!tool_bar || !handle || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -140,6 +145,19 @@ void tool_bar::update_tool_bar_item(intptr_t tool_bar, intptr_t handle, const xt
 
   tool_bar_item->SetLabel(convert_string::to_wstring(text));
   tool_bar_item->SetNormalBitmap(*reinterpret_cast<wxImage*>(image.handle()));
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text));
   tool_bar_item->SetToggle(pushed);
   tool_bar_item->Enable(enabled && visible);
+}
+
+rectangle tool_bar::tool_bar_item_rectangle(intptr_t tool_bar, intptr_t handle) {
+  if (!tool_bar || !handle || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(tool_bar)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return {};
+  }
+  
+  auto tool_bar_item = dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->FindById(static_cast<int>(handle));
+  if (!tool_bar_item) throw argument_exception(csf_);
+  return {};
 }
