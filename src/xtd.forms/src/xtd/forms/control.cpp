@@ -228,7 +228,7 @@ bool control::can_focus() const {
 }
 
 bool control::can_select() const {
-  return enabled() &&  visible() && get_style(control_styles::selectable);
+  return enabled() && visible() && get_style(control_styles::selectable);
 }
 
 bool control::can_raise_events() const {
