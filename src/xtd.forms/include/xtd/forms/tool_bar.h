@@ -37,73 +37,7 @@ namespace xtd {
     /// The following code example demonstrates the use of xtd::forms::tool_bar control.
     /// @include tool_bar.cpp
     class forms_export_ tool_bar : public control {
-      class tool_bar_button_control : public xtd::forms::button {
-      public:
-        tool_bar_button_control();
-        
-        xtd::drawing::font default_font() const override;
-        
-        void control(const xtd::forms::control* value);
-        void drop_down_menu(xtd::forms::context_menu* value);
-        void flat(bool value);
-        using xtd::forms::button_base::image;
-        button_base& image(const xtd::drawing::image& value) override;
-        const xtd::drawing::size& image_size() const;
-        void image_size(const xtd::drawing::size& value);
-        bool is_horizontal() const;
-        void pushed(bool value);
-        void show_icon(bool value);
-        void show_text(bool value);
-        xtd::drawing::size size() const override;
-        xtd::forms::control& size(const xtd::drawing::size& value) override;
-        xtd::forms::tool_bar_button_style style() const;
-        void style(xtd::forms::tool_bar_button_style value);
-        using xtd::forms::control::text;
-        xtd::forms::control& text(const xtd::ustring& value) override;
-        using xtd::forms::button_base::text_align;
-        void tool_bar_text_align(xtd::forms::tool_bar_text_align value);
-        void tool_bar_button(tool_bar_button_ref value) {data_->tool_bar_button = value;}
-
-      protected:
-        
-        void on_click(const xtd::event_args& e) override;
-        void on_mouse_down(const mouse_event_args& e) override;
-        void on_mouse_enter(const event_args& e) override;
-        void on_mouse_leave(const event_args& e) override;
-        void on_mouse_move(const mouse_event_args& e) override;
-        void on_mouse_up(const mouse_event_args& e) override;
-        void on_paint(paint_event_args& e) override;
-
-      private:
-        friend tool_bar;
-        
-        void draw_push_button(xtd::forms::paint_event_args& e);
-        void draw_toggle_button(xtd::forms::paint_event_args& e);
-        void draw_drop_down_button(xtd::forms::paint_event_args& e);
-        void draw_separator(xtd::forms::paint_event_args& e);
-        void draw_stretchable_separator(xtd::forms::paint_event_args& e);
-        void draw_control(xtd::forms::paint_event_args& e);
-        xtd::drawing::rectangle drop_down_rectangle() const;
-        void update_layout();
-        void update_size();
-
-        struct data {
-          const xtd::forms::control* control = nullptr;
-          xtd::forms::context_menu* drop_down_menu = nullptr;
-          xtd::drawing::size image_size;
-          std::optional<tool_bar_button_ref> tool_bar_button;
-          bool mouse_on_drop_down_menu = false;
-          bool mouse_down_on_drop_down_menu = false;
-          bool flat = false;
-          bool show_icon = true;
-          bool show_text = false;
-          bool pushed = false;
-          xtd::forms::tool_bar_button_style style = xtd::forms::tool_bar_button_style::push_button;
-          xtd::forms::tool_bar_text_align tool_bar_text_align = xtd::forms::tool_bar_text_align::underneath;
-        };
-        
-        std::shared_ptr<data> data_ = std::make_shared<data>();
-      };
+      class tool_bar_button_control;
       
     public:
       /// @name Alias
