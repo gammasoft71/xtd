@@ -484,6 +484,18 @@ tool_bar& tool_bar::show_text(bool value) {
   return *this;
 }
 
+bool tool_bar::show_tool_tips() const {
+  return data_->show_tool_tips;
+}
+
+tool_bar& tool_bar::show_tool_tips(bool value) {
+  if (data_->show_tool_tips != value) {
+    data_->show_tool_tips = value;
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  }
+  return *this;
+}
+
 xtd::forms::tool_bar_text_align tool_bar::text_align() const {
   return data_->text_align;
 }
@@ -507,8 +519,9 @@ forms::create_params tool_bar::create_params() const {
   if (data_->non_system_dock == dock_style::left) create_params.style(create_params.style() | TBSTYLE_LEFT);
   else if (data_->non_system_dock == dock_style::right) create_params.style(create_params.style() | TBSTYLE_RIGHT);
   else if (data_->non_system_dock == dock_style::bottom) create_params.style(create_params.style() | TBSTYLE_BOTTOM);
-  if (data_->show_text) create_params.style(create_params.style() | TBSTYLE_SHOWTEXT);
   if (!data_->show_icon) create_params.style(create_params.style() | TBSTYLE_NOSHOWICON);
+  if (data_->show_text) create_params.style(create_params.style() | TBSTYLE_SHOWTEXT);
+  if (!data_->show_tool_tips) create_params.style(create_params.style() | TBSTYLE_TOOLTIPS);
   if (data_->text_align == tool_bar_text_align::right) create_params.style(create_params.style() | TBSTYLE_TEXTRIGHTALIGN);
   return create_params;
 }
@@ -576,21 +589,22 @@ void tool_bar::fill() {
     intptr_t control_handle = 0;
     if (is_system_tool_bar()) {
       if (reversed_buttons[index].get().style() == tool_bar_button_style::push_button)
-        control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
+        control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::toggle_button)
-        control_handle = native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_buttons[index].get().pushed(), button_item.enabled(), button_item.visible());
+        control_handle = native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_buttons[index].get().pushed(), button_item.enabled(), button_item.visible());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::separator)
         control_handle = native::tool_bar::add_tool_bar_separator(handle());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::drop_down_button)
-        control_handle = native::tool_bar::add_tool_bar_drop_down_button(handle(), button_item.text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible(), button_item.drop_down_menu().has_value() ? button_item.drop_down_menu().value().get().handle() : 0);
+        control_handle = native::tool_bar::add_tool_bar_drop_down_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible(), button_item.drop_down_menu().has_value() ? button_item.drop_down_menu().value().get().handle() : 0);
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::stretchable_separator)
         control_handle = native::tool_bar::add_tool_bar_stretchable_separator(handle());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::control) {
         if (button_item.control().has_value()) button_item.control().value().get().parent(*this);
-        control_handle = native::tool_bar::add_tool_bar_control(handle(), button_item.control().has_value() ? button_item.control().value().get().handle() : 0, button_item.text());
+        control_handle = native::tool_bar::add_tool_bar_control(handle(), button_item.control().has_value() ? button_item.control().value().get().handle() : 0, button_item.text(), button_item.tool_tip_text());
       }
       reversed_buttons[index].get().data_->handle = control_handle;
       data_->system_tool_bar_button_handles.push_back(control_handle);
+      button_item.data_->rectangle = drawing::rectangle(native::tool_bar::tool_bar_item_rectangle(handle(), control_handle));
     } else {
       auto button_control = std::make_shared<tool_bar_button_control>();
       button_item.data_->handle = reinterpret_cast<intptr_t>(button_control.get());
@@ -621,6 +635,8 @@ void tool_bar::fill() {
       if (button_item.style() == tool_bar_button_style::drop_down_button && button_item.drop_down_menu().has_value()) {
         button_control->drop_down_menu(const_cast<forms::context_menu*>(&button_item.drop_down_menu().value().get()));
       }
+      
+      /// @todo Add xtd::forms::tool_tip when implemented.
 
       if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
       if (data_->show_text) button_control->text(button_item.text());
@@ -632,6 +648,7 @@ void tool_bar::fill() {
       }
 
       data_->tool_bar_buttons.push_back(button_control);
+      button_item.data_->rectangle = drawing::rectangle(button_control->location(), button_control->size());
     }
   }
   if (is_system_tool_bar()) {
@@ -687,10 +704,10 @@ void tool_bar::resize_stretchable_separtors() {
   }
 }
 
-void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
+void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!handle) return;
   if (is_system_tool_bar())
-    native::tool_bar::update_tool_bar_item(this->handle(), handle, text, image, pushed, enabled, visible);
+    native::tool_bar::update_tool_bar_item(this->handle(), handle, text, tool_tip_text, image, pushed, enabled, visible);
   else {
     reinterpret_cast<tool_bar_button_control*>(handle)->text(text);
     reinterpret_cast<tool_bar_button_control*>(handle)->text(text);
