@@ -23,6 +23,9 @@ jobs:
       uses: egor-tensin/setup-gcc@v1
       with:
         version: 11
+
+    - name: Setup openGL
+      uses: openrndr/setup-opengl@v1.1
         
     - name: Checkout
       uses: actions/checkout@v2
