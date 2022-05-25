@@ -6,7 +6,7 @@ git clone https://github.com/wxwidgets/wxwidgets.git -b v3.1.6 --depth 1
 cd wxwidgets
 git submodule update --init
 mkdir build_cmake && cd build_cmake
-cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_COMPILER=g++-9 -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
+cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_COMPILER=g++-9 -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local -DwxUSE_OPENGL=OFF
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --target install -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
