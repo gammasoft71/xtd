@@ -29,12 +29,13 @@ namespace examples {
         list_box1.selected_index(list_box1.items().size() - 1);
       };
       
-      //tool_bar1.appearnce(xtd::forms::tool_bar_appearance::system);
+      //tool_bar1.appearance(xtd::forms::tool_bar_appearance::system);
       tool_bar1.dock(dock_style::top);
-      tool_bar1.appearnce(xtd::forms::tool_bar_appearance::flat);
+      tool_bar1.appearance(xtd::forms::tool_bar_appearance::flat);
       tool_bar1.show_text(true);
       //tool_bar1.show_icon(false);
       tool_bar1.text_align(xtd::forms::tool_bar_text_align::underneath);
+      tool_bar1.show_tool_tips(true);
       
       tool_bar1.image_list().image_size({24, 24});
       tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
@@ -42,7 +43,7 @@ namespace examples {
       tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
 
       tool_bar2.dock(dock_style::bottom);
-      tool_bar2.appearnce(xtd::forms::tool_bar_appearance::flat);
+      tool_bar2.appearance(xtd::forms::tool_bar_appearance::flat);
       tool_bar2.show_text(true);
       //tool_bar2.show_icon(false);
       //tool_bar2.text_align(xtd::forms::tool_bar_text_align::right);
@@ -51,8 +52,6 @@ namespace examples {
       tool_bar2.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
       tool_bar2.buttons().push_back_range({new_tool_bar_button2, open_tool_bar_button2, save_tool_bar_button2, print_tool_bar_button2, tool_bar2_separator1, cut_tool_bar_button2, copy_tool_bar_button2, paste_tool_bar_button2, tool_bar2_separator2, choice_tool_bar_button2, tool_bar2_separator3, help_tool_bar_button2});
       tool_bar2.button_click += {*this, &form1::on_tool_bar_button_click};
-      
-      help_tool_bar_button.drop_down_menu(nullptr);
     }
     
   private:
