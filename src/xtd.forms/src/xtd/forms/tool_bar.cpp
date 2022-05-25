@@ -135,6 +135,18 @@ drawing::size tool_bar::default_size() const {
   return native::control::default_size("toolbar");
 }
 
+bool tool_bar::drop_down_arrows() const {
+  return data_->drop_down_arrows;
+}
+
+tool_bar& tool_bar::drop_down_arrows(bool value) {
+  if (data_->drop_down_arrows != value) {
+    data_->drop_down_arrows = value;
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  }
+  return *this;
+}
+
 const xtd::forms::image_list& tool_bar::image_list() const {
   return data_->image_list;
 }
@@ -297,7 +309,7 @@ void tool_bar::fill() {
     auto& button_item = reversed_buttons[index].get();
     intptr_t control_handle = 0;
     if (is_system_tool_bar()) {
-      if (reversed_buttons[index].get().style() == tool_bar_button_style::push_button)
+      if (reversed_buttons[index].get().style() == tool_bar_button_style::push_button || (!data_->drop_down_arrows && button_item.style() == tool_bar_button_style::drop_down_button))
         control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
       else if (reversed_buttons[index].get().style() == tool_bar_button_style::toggle_button)
         control_handle = native::tool_bar::add_tool_bar_toggle_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_buttons[index].get().pushed(), button_item.enabled(), button_item.visible());
@@ -327,7 +339,10 @@ void tool_bar::fill() {
       button_control->show_icon(data_->show_icon);
       button_control->show_text(data_->show_text);
       button_control->size(button_size());
-      button_control->style(button_item.style());
+      if (!data_->drop_down_arrows && button_item.style() == tool_bar_button_style::drop_down_button)
+        button_control->style(tool_bar_button_style::push_button);
+      else
+        button_control->style(button_item.style());
       button_control->tool_bar_text_align(data_->text_align);
       button_control->pushed(button_item.pushed());
       button_control->visible(button_item.visible());

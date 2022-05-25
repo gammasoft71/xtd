@@ -126,15 +126,37 @@ namespace xtd {
       dock_style dock() const override;
       control& dock(dock_style dock) override;
       
+      /// @brief Gets a value indicating whether drop-down buttons on a toolbar display down arrows.
+      /// @return true if drop-down toolbar buttons display down arrows; otherwise, false. The default is true.
+      /// @remarks When xtd::forms::tool_bar::drop_down_arrows is set to false, no down arrows display on drop-down style toolbar buttons. When the user clicks the drop-down button on the toolbar, the menu drops down for selection. When the drop-down arrow is displayed, the user must press the down arrow to display the menu.
+      virtual bool drop_down_arrows() const;
+      /// @brief Sets a value indicating whether drop-down buttons on a toolbar display down arrows.
+      /// @param value true if drop-down toolbar buttons display down arrows; otherwise, false. The default is true.
+      /// @return Current tool_bar instance.
+      /// @remarks When xtd::forms::tool_bar::drop_down_arrows is set to false, no down arrows display on drop-down style toolbar buttons. When the user clicks the drop-down button on the toolbar, the menu drops down for selection. When the drop-down arrow is displayed, the user must press the down arrow to display the menu.
+      virtual tool_bar& drop_down_arrows(bool value);
+      
+      /// @brief Gets the collection of images available to the toolbar button controls.
+      /// @return An xtd::forms::image_list that contains images available to the xtd::forms::tool_bar_button controls. The default is empty.
+      /// @remarks If you create an xtd::drawing::image_list and assign it to the xtd::forms::toll_bar::image_list property, you can assign an image from the collection to the xtd:forms::tool_bar_button controls by assigning the image's index value to the xtd:forms::tool_bar_button::image_index property of the toolbar button.
       const xtd::forms::image_list& image_list() const;
+      /// @brief Gets the collection of images available to the toolbar button controls.
+      /// @return An xtd::forms::image_list that contains images available to the xtd::forms::tool_bar_button controls. The default is empty.
+      /// @remarks If you create an xtd::drawing::image_list and assign it to the xtd::forms::toll_bar::image_list property, you can assign an image from the collection to the xtd:forms::tool_bar_button controls by assigning the image's index value to the xtd:forms::tool_bar_button::image_index property of the toolbar button.
       xtd::forms::image_list& image_list();
+      /// @brief Sets the collection of images available to the toolbar button controls.
+      /// @param value An xtd::forms::image_list that contains images available to the xtd::forms::tool_bar_button controls. The default is empty.
+      /// @return Current tool_bar instance.
+      /// @remarks If you create an xtd::drawing::image_list and assign it to the xtd::forms::toll_bar::image_list property, you can assign an image from the collection to the xtd:forms::tool_bar_button controls by assigning the image's index value to the xtd:forms::tool_bar_button::image_index property of the toolbar button.
       tool_bar& image_list(const xtd::forms::image_list& value);
       
+      /// @brief Gets the size of the images in the image list assigned to the toolbar.
+      /// @return A xtd::drawing::size that represents the size of the images (in the xtd::forms::image_list) assigned to the xtd::forms::tool_bar.
       virtual xtd::drawing::size image_size() const;
 
       virtual bool show_icon() const;
       virtual tool_bar& show_icon(bool value);
-      
+
       virtual bool show_text() const;
       virtual tool_bar& show_text(bool value);
       
@@ -198,6 +220,7 @@ namespace xtd {
         forms::border_sides border_sides = forms::border_sides::all;
         std::optional<xtd::forms::border_style> border_style;
         std::optional<xtd::drawing::size> button_size;
+        bool drop_down_arrows = true;
         xtd::forms::image_list image_list;
         tool_bar_button_collection buttons;
         bool is_system_tool_bar = false;
