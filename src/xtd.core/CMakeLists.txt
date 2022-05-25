@@ -6,7 +6,7 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 
-add_references(xtd.3rdparty.call_stack ${XTD_CORE_NATIVE_LIBRARY})
+add_references(${XTD_CORE_NATIVE_LIBRARY} xtd.3rdparty.call_stack)
 add_sources(
   include/xtd/abstract.h
   include/xtd/action.h
