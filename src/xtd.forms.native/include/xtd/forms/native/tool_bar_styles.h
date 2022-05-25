@@ -111,3 +111,10 @@ constexpr size_t TBSTYLE_RIGHT = 0x00200000;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr size_t TBSTYLE_NOSHOWICON = 0x00400000;
+/// @brief Specifies that the tool bar divider is no visible.
+/// @par Library
+/// xtd.forms.native
+/// @ingroup xtd_forms_native tbstyle
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr size_t TBSTYLE_NODIVIDER = 0x00800000;

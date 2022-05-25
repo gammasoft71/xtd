@@ -60,6 +60,7 @@ namespace xtd {
           else if ((style & TBSTYLE_RIGHT) == TBSTYLE_RIGHT) wx_style |= wxTB_RIGHT;
           else wx_style |= wxTB_TOP;
           
+          if ((style & TBSTYLE_NODIVIDER) == TBSTYLE_NODIVIDER) wx_style |= wxTB_NODIVIDER;
           if ((style & TBSTYLE_NOSHOWICON) == TBSTYLE_NOSHOWICON) wx_style |= wxTB_NOICONS;
           if ((style & TBSTYLE_SHOWTEXT) == TBSTYLE_SHOWTEXT) wx_style |= wxTB_TEXT;
           if ((style & TBSTYLE_TEXTRIGHTALIGN) == TBSTYLE_TEXTRIGHTALIGN) wx_style |= wxTB_HORZ_LAYOUT;

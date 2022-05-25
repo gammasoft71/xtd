@@ -123,6 +123,18 @@ namespace xtd {
 
       drawing::size default_size() const override;
 
+      /// @brief Gets a value indicating whether the toolbar displays a divider.
+      /// @return true if the toolbar displays a divider; otherwise, false. The default is true.
+      /// @remarks Dividers are displayed to help distinguish the toolbar from adjacent controls, such as menus. A divider is displayed as a raised edge along the top of the xtd::forms::tool_bar control.
+      /// @note Only on Windows and if xtd::forms::tool_bar::appearnce is set to xtd::forms::tool_bar_appearnce::system.
+      virtual bool divider() const;
+      /// @brief Sets a value indicating whether the toolbar displays a divider.
+      /// @param value true if the toolbar displays a divider; otherwise, false. The default is true.
+      /// @return Current tool_bar instance.
+      /// @remarks Dividers are displayed to help distinguish the toolbar from adjacent controls, such as menus. A divider is displayed as a raised edge along the top of the xtd::forms::tool_bar control.
+      /// @note Only on Windows and if xtd::forms::tool_bar::appearnce is set to xtd::forms::tool_bar_appearnce::system.
+      virtual tool_bar& divider(bool value);
+
       dock_style dock() const override;
       control& dock(dock_style dock) override;
       
@@ -154,32 +166,66 @@ namespace xtd {
       /// @return A xtd::drawing::size that represents the size of the images (in the xtd::forms::image_list) assigned to the xtd::forms::tool_bar.
       virtual xtd::drawing::size image_size() const;
 
+      /// @brief Gets a value indicating whether the toolbar displays the image for each button.
+      /// @return true if the toolbar display the image for each button; otherwise, false. The default is true.
       virtual bool show_icon() const;
+      /// @brief Sets a value indicating whether the toolbar displays the image for each button.
+      /// @param value true if the toolbar display the image for each button; otherwise, false. The default is true.
+      /// @return Current tool_bar instance.
       virtual tool_bar& show_icon(bool value);
 
+      /// @brief Gets a value indicating whether the toolbar displays the text for each button.
+      /// @return true if the toolbar display the text for each button; otherwise, false. The default is false.
       virtual bool show_text() const;
+      /// @brief Sets a value indicating whether the toolbar displays the text for each button.
+      /// @param value true if the toolbar display the text for each button; otherwise, false. The default is false.
+      /// @return Current tool_bar instance.
       virtual tool_bar& show_text(bool value);
       
+      /// @brief Gets a value indicating whether the toolbar displays a xtd::forms::tool_tip for each button.
+      /// @return true if the toolbar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false.
+      /// @remarks To set the text displayed by the xtd::forms::tool_tip, set the xtd::forms::tool_bar_button::tool_tip_text property of each xtd::forms::tool_bar_button on the xtd::forms::tool_bar. To cause the xtd::forms::tool_tip to display as the user moves the mouse pointer over the toolbar button, set the xtd::forms::tool_bar::show_tool_tips property to true.
       virtual bool show_tool_tips() const;
+      /// @brief Sets a value indicating whether the toolbar displays a xtd::forms::tool_tip for each button.
+      /// @param value true if the toolbar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false.
+      /// @return Current tool_bar instance.
+      /// @remarks To set the text displayed by the xtd::forms::tool_tip, set the xtd::forms::tool_bar_button::tool_tip_text property of each xtd::forms::tool_bar_button on the xtd::forms::tool_bar. To cause the xtd::forms::tool_tip to display as the user moves the mouse pointer over the toolbar button, set the xtd::forms::tool_bar::show_tool_tips property to true.
       virtual tool_bar& show_tool_tips(bool value);
       
+      /// @brief Gets the alignment of text in relation to each image displayed on the toolbar button controls.
+      /// @return One of the xtd::forms::tool_bar_text_align values. The default is xtd::forms::tool_bar_text_align::underneath.
+      /// @remarks The xtd::forms::tool_bar::text can be aligned underneath or to the right of the image displayed on the xtd::forms::tool_bar_button controls.
       virtual xtd::forms::tool_bar_text_align text_align() const;
+      /// @brief Sets the alignment of text in relation to each image displayed on the toolbar button controls.
+      /// @param value One of the xtd::forms::tool_bar_text_align values. The default is xtd::forms::tool_bar_text_align::underneath.
+      /// @return Current tool_bar instance.
+      /// @remarks The xtd::forms::tool_bar::text can be aligned underneath or to the right of the image displayed on the xtd::forms::tool_bar_button controls.
       virtual tool_bar& text_align(xtd::forms::tool_bar_text_align value);
+
+      /// @brief Gets a value indicating whether the toolbar buttons wrap to the next line if the toolbar becomes too small to display all the buttons on the same line.
+      /// @return true if the toolbar buttons wrap to another line if the toolbar becomes too small to display all the buttons on the same line; otherwise, false. The default value is true.
+      /// @note Not implemented yet.
+      virtual bool wrappable() const;
+      /// @brief Gets a value indicating whether the toolbar buttons wrap to the next line if the toolbar becomes too small to display all the buttons on the same line.
+      /// @param value true if the toolbar buttons wrap to another line if the toolbar becomes too small to display all the buttons on the same line; otherwise, false. The default value is true.
+      /// @return Current tool_bar instance.
+      /// @remarks Toolbar buttons can be divided into logical groups by using separators. A separator is a toolbar button with the xtd::forms::tool_bar::style property set to xtd::forms::tool_bar_button_style::separator. If the xtd::forms::tool_bar::wrappable property is set to true and the toolbar becomes too small to display all the buttons on the same line, the toolbar is broken into additional lines, with the breaks occurring at the separators. This ensures that button groups stay together. Toolbar buttons that are not in a group can be separated when the toolbar wraps. The toolbar can become too small to display all its buttons on the same line if its parent xtd::forms:form is resized.
+      /// @note Not implemented yet.
+      virtual tool_bar& wrappable(bool value);
       /// @}
       
       /// @name Events
       
       /// @{
+      /// @brief Occurs when a xtd::forms::tool_bar_button on the xtd::forms::tool_bar is clicked.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       xtd::event<tool_bar, xtd::forms::tool_bar_button_click_event_handler> button_click;
-      /// @}
-      
-    protected:
-      /// @name protected methods
-      
-      /// @{
-      void on_button_click(const xtd::forms::tool_bar_button_click_event_args& e);
-      /// @}
 
+      /// @brief Occurs when a drop-down style xtd::forms::tool_bar_button or its down arrow is clicked.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      xtd::event<tool_bar, xtd::forms::tool_bar_button_click_event_handler> button_drop_down;
+      /// @}
+      
     protected:
       friend tool_bar_button;
       friend form;
@@ -187,24 +233,45 @@ namespace xtd {
       /// @name Protetced properties
       
       /// @{
-      virtual bool is_horizontal() const;      
-      virtual bool is_system_tool_bar() const;
-      virtual tool_bar& is_system_tool_bar(bool value);
+      forms::create_params create_params() const override;
       /// @}
       
       /// @name Protetced methods
       
       /// @{
-      forms::create_params create_params() const override;
+      /// @brief Raises the xtd::forms::tool_bar::button_click event.
+      /// @param e A xtd::forms::tool_bar_button_click_event_args that contains the event data.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks The xtd::forms::tool_bar::on_button_click method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      /// @par Notes to Inheritors
+      /// When overriding xtd::forms::tool_bar::on_button_click in a derived class, be sure to call the base class's xtd::forms::tool_bar::on_button_click method so that registered delegates receive the event.
+      void on_button_click(const xtd::forms::tool_bar_button_click_event_args& e);
+      
+      /// @brief Raises the xtd::forms::tool_bar::button_drop_down event.
+      /// @param e A xtd::forms::tool_bar_button_click_event_args that contains the event data.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks The xtd::forms::tool_bar::on_button_click method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      /// @par Notes to Inheritors
+      /// When overriding xtd::forms::tool_bar::on_button_drop_down in a derived class, be sure to call the base class's xtd::forms::tool_bar::on_button_drop_down method so that registered delegates receive the event.
+      void on_button_drop_down(const xtd::forms::tool_bar_button_click_event_args& e);
+      
       void on_handle_created(const event_args& e) override;
+      
       void on_handle_destroyed(const event_args& e) override;
+      
       void on_paint(xtd::forms::paint_event_args& e) override;
+      
       void on_resize(const event_args& e) override;
+      
       void wnd_proc(message& message) override;
       /// @}
       
     private:
       void fill();
+
+      bool is_horizontal() const;
+      bool is_system_tool_bar() const;
+      tool_bar& is_system_tool_bar(bool value);
 
       void on_item_added(size_t pos, tool_bar_button_ref item);
       void on_item_updated(size_t pos, tool_bar_button_ref item);
@@ -220,6 +287,7 @@ namespace xtd {
         forms::border_sides border_sides = forms::border_sides::all;
         std::optional<xtd::forms::border_style> border_style;
         std::optional<xtd::drawing::size> button_size;
+        bool divider = true;
         bool drop_down_arrows = true;
         xtd::forms::image_list image_list;
         tool_bar_button_collection buttons;
@@ -232,6 +300,7 @@ namespace xtd {
         std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> tool_bar_buttons;
         std::vector<intptr_t> system_tool_bar_button_handles;
         xtd::forms::tool_bar_text_align text_align = xtd::forms::tool_bar_text_align::underneath;
+        bool wrappable = false;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

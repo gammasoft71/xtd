@@ -109,6 +109,19 @@ tool_bar& tool_bar::button_size(std::nullptr_t) {
   return *this;
 }
 
+bool tool_bar::divider() const {
+  return data_->divider;
+}
+
+tool_bar& tool_bar::divider(bool value) {
+  if (data_->divider != value) {
+    data_->divider = value;
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
 dock_style tool_bar::dock() const {
   //if (is_system_tool_bar()) return data_->non_system_dock;
   return control::dock();
@@ -226,6 +239,19 @@ tool_bar& tool_bar::text_align(xtd::forms::tool_bar_text_align value) {
   return *this;
 }
 
+bool tool_bar::wrappable() const {
+  return data_->wrappable;
+}
+
+tool_bar& tool_bar::wrappable(bool value) {
+  if (data_->wrappable != value) {
+    data_->wrappable = value;
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
 forms::create_params tool_bar::create_params() const {
   forms::create_params create_params = control::create_params();
   
@@ -233,6 +259,7 @@ forms::create_params tool_bar::create_params() const {
     create_params.class_name("toolbar");
   
   if (data_->appearnce == tool_bar_appearance::flat) create_params.style(create_params.style() | TBSTYLE_FLAT);
+  if (!data_->divider) create_params.style(create_params.style() | TBSTYLE_NODIVIDER);
   if (data_->non_system_dock == dock_style::left) create_params.style(create_params.style() | TBSTYLE_LEFT);
   else if (data_->non_system_dock == dock_style::right) create_params.style(create_params.style() | TBSTYLE_RIGHT);
   else if (data_->non_system_dock == dock_style::bottom) create_params.style(create_params.style() | TBSTYLE_BOTTOM);
@@ -240,12 +267,19 @@ forms::create_params tool_bar::create_params() const {
   if (data_->show_text) create_params.style(create_params.style() | TBSTYLE_SHOWTEXT);
   if (!data_->show_tool_tips) create_params.style(create_params.style() | TBSTYLE_TOOLTIPS);
   if (data_->text_align == tool_bar_text_align::right) create_params.style(create_params.style() | TBSTYLE_TEXTRIGHTALIGN);
+  if (data_->wrappable) create_params.style(create_params.style() | TBSTYLE_WRAPABLE);
 
   return create_params;
 }
 
 void tool_bar::on_button_click(const xtd::forms::tool_bar_button_click_event_args &e) {
   button_click(*this, e);
+}
+
+void tool_bar::on_button_drop_down(const xtd::forms::tool_bar_button_click_event_args &e) {
+  if (e.button().drop_down_menu().has_value() && e.handle())
+    e.button().drop_down_menu().value().get().show(*this, xtd::drawing::point(reinterpret_cast<tool_bar_button_control*>(e.handle())->left(), reinterpret_cast<tool_bar_button_control*>(e.handle())->bottom() + 2));
+  button_drop_down(*this, e);
 }
 
 void tool_bar::on_handle_created(const event_args& e) {
