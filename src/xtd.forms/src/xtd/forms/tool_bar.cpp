@@ -48,13 +48,13 @@ tool_bar::tool_bar() {
   set_can_focus(false);
 }
 
-xtd::forms::tool_bar_appearance tool_bar::appearnce() const {
-  return data_->appearnce;
+xtd::forms::tool_bar_appearance tool_bar::appearance() const {
+  return data_->appearance;
 }
 
-tool_bar& tool_bar::appearnce(xtd::forms::tool_bar_appearance value) {
-  if (data_->appearnce != value) {
-    data_->appearnce = value;
+tool_bar& tool_bar::appearance(xtd::forms::tool_bar_appearance value) {
+  if (data_->appearance != value) {
+    data_->appearance = value;
     if (value != tool_bar_appearance::system) invalidate();
     else  post_recreate_handle();
   }
@@ -258,7 +258,7 @@ forms::create_params tool_bar::create_params() const {
   if (is_system_tool_bar())
     create_params.class_name("toolbar");
   
-  if (data_->appearnce == tool_bar_appearance::flat) create_params.style(create_params.style() | TBSTYLE_FLAT);
+  if (data_->appearance == tool_bar_appearance::flat) create_params.style(create_params.style() | TBSTYLE_FLAT);
   if (!data_->divider) create_params.style(create_params.style() | TBSTYLE_NODIVIDER);
   if (data_->non_system_dock == dock_style::left) create_params.style(create_params.style() | TBSTYLE_LEFT);
   else if (data_->non_system_dock == dock_style::right) create_params.style(create_params.style() | TBSTYLE_RIGHT);
@@ -312,7 +312,7 @@ bool tool_bar::is_horizontal() const {
 }
 
 bool tool_bar::is_system_tool_bar() const {
-  auto result = data_->is_system_tool_bar || data_->appearnce == tool_bar_appearance::system;
+  auto result = data_->is_system_tool_bar || data_->appearance == tool_bar_appearance::system;
   return result;
 }
 
@@ -368,7 +368,7 @@ void tool_bar::fill() {
       if (is_horizontal()) button_control->dock(dock_style::left);
       else button_control->dock(dock_style::top);
       button_control->enabled(button_item.enabled());
-      button_control->flat(appearnce() == tool_bar_appearance::flat);
+      button_control->flat(appearance() == tool_bar_appearance::flat);
       button_control->image_size(image_size());
       button_control->show_icon(data_->show_icon);
       button_control->show_text(data_->show_text);
