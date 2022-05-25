@@ -65,12 +65,12 @@ namespace xtd {
       /// @brief Gets the value that determines the appearance of a toolbar control and its buttons.
       /// @return One of the xtd::forms::tool_bar_appearance values. The default is xtd::forms::tool_bar::appearance::normal.
       /// @remarks The xtd::forms::tool_bar::appearance property affects the appearance of the buttons assigned to the toolbar. When the appearance is set to xtd::forms::tool_bar_appearance::normal, the toolbar's buttons appear three-dimensional and raised. Set the xtd::forms::tool_bar::appearance property of the toolbar to xtd::forms::tool_bar_ppearance::flat to give the toolbar's buttons a flat appearance. As the mouse pointer moves over the flat buttons, they appear raised and three-dimensional. Separators on a xtd::forms::tool_bar with the xtd::forms::tool_bar::appearance property set to xtd::forms::tool_bar_appearance::flat appear as etched lines rather than spaces between the raised buttons. The flat style buttons give your application a more Web-like look.
-      virtual xtd::forms::tool_bar_appearance appearnce() const;
+      virtual xtd::forms::tool_bar_appearance appearance() const;
       /// @brief Sets the value that determines the appearance of a toolbar control and its buttons.
       /// @param value One of the xtd::forms::tool_bar_appearance values. The default is xtd::forms::tool_bar::appearance::normal.
       /// @return Current tool_bar instance.
       /// @remarks The xtd::forms::tool_bar::appearance property affects the appearance of the buttons assigned to the toolbar. When the appearance is set to xtd::forms::tool_bar_appearance::normal, the toolbar's buttons appear three-dimensional and raised. Set the xtd::forms::tool_bar::appearance property of the toolbar to xtd::forms::tool_bar_ppearance::flat to give the toolbar's buttons a flat appearance. As the mouse pointer moves over the flat buttons, they appear raised and three-dimensional. Separators on a xtd::forms::tool_bar with the xtd::forms::tool_bar::appearance property set to xtd::forms::tool_bar_appearance::flat appear as etched lines rather than spaces between the raised buttons. The flat style buttons give your application a more Web-like look.
-      virtual tool_bar& appearnce(xtd::forms::tool_bar_appearance value);
+      virtual tool_bar& appearance(xtd::forms::tool_bar_appearance value);
 
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
@@ -126,13 +126,13 @@ namespace xtd {
       /// @brief Gets a value indicating whether the toolbar displays a divider.
       /// @return true if the toolbar displays a divider; otherwise, false. The default is true.
       /// @remarks Dividers are displayed to help distinguish the toolbar from adjacent controls, such as menus. A divider is displayed as a raised edge along the top of the xtd::forms::tool_bar control.
-      /// @note Only on Windows and if xtd::forms::tool_bar::appearnce is set to xtd::forms::tool_bar_appearnce::system.
+      /// @note Only on Windows and if xtd::forms::tool_bar::appearance is set to xtd::forms::tool_bar_appearance::system.
       virtual bool divider() const;
       /// @brief Sets a value indicating whether the toolbar displays a divider.
       /// @param value true if the toolbar displays a divider; otherwise, false. The default is true.
       /// @return Current tool_bar instance.
       /// @remarks Dividers are displayed to help distinguish the toolbar from adjacent controls, such as menus. A divider is displayed as a raised edge along the top of the xtd::forms::tool_bar control.
-      /// @note Only on Windows and if xtd::forms::tool_bar::appearnce is set to xtd::forms::tool_bar_appearnce::system.
+      /// @note Only on Windows and if xtd::forms::tool_bar::appearance is set to xtd::forms::tool_bar_appearance::system.
       virtual tool_bar& divider(bool value);
 
       dock_style dock() const override;
@@ -283,7 +283,7 @@ namespace xtd {
       void wm_click(const message& message);
       
       struct data {
-        xtd::forms::tool_bar_appearance appearnce = xtd::forms::tool_bar_appearance::normal;
+        xtd::forms::tool_bar_appearance appearance = xtd::forms::tool_bar_appearance::normal;
         forms::border_sides border_sides = forms::border_sides::all;
         std::optional<xtd::forms::border_style> border_style;
         std::optional<xtd::drawing::size> button_size;
