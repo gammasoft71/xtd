@@ -31,18 +31,27 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::forms::tool_bar_button_click_event_args class.
       /// @param button The xtd::forms::tool_bar_butto that was clicked.
       tool_bar_button_click_event_args(const xtd::forms::tool_bar_button& button) : button_(button) {}
+      /// @brief Initializes a new instance of the xtd::forms::tool_bar_button_click_event_args class.
+      /// @param button The xtd::forms::tool_bar_button that was clicked.
+      /// @param handle An internal handle.
+      tool_bar_button_click_event_args(const xtd::forms::tool_bar_button& button, intptr_t handle) : button_(button), handle_(handle) {}
       /// @}
       
       /// @name Properties
       
       /// @{
-      /// @brief Gets or sets the xtd::forms::tool_bar_button that was clicked.
+      /// @brief Gets the xtd::forms::tool_bar_button that was clicked.
       /// @return The xtd::forms::tool_bar_button that was clicked.
       const xtd::forms::tool_bar_button& button() const {return button_;}
+
+      /// @brief Gets internal handle.
+      /// @return Internal handle.
+      intptr_t handle() const {return handle_;}
       /// @}
       
     private:
       xtd::forms::tool_bar_button button_;
+      intptr_t handle_;
     };
   }
 }
