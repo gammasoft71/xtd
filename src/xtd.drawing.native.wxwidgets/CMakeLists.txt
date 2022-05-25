@@ -15,10 +15,10 @@ elseif (UNIX)
   link_directories(${GTK_LIBRARY_DIRS})
   set(XTD_EXTRA_LIBS ${GTK_LIBRARIES})
 endif()
-find_package(wxWidgets REQUIRED COMPONENTS base core xrc)
+find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 add_include_directories(include)
-add_references(xtd.core xtd.drawing.native ${wxWidgets_LIBRARIES} ${XTD_EXTRA_LIBS})
+add_references(xtd.drawing.native xtd.core ${wxWidgets_LIBRARIES} ${XTD_EXTRA_LIBS})
 add_sources(
   include/xtd/xtd.drawing.native.wxwidgets.h
   include/xtd/xtd.drawing.native.wxwidgets
