@@ -204,13 +204,13 @@ namespace xtd {
 
       /// @brief Gets a value indicating whether the toolbar buttons wrap to the next line if the toolbar becomes too small to display all the buttons on the same line.
       /// @return true if the toolbar buttons wrap to another line if the toolbar becomes too small to display all the buttons on the same line; otherwise, false. The default value is true.
-      /// @note Not implemented yet.
+      /// @note Not yet implemented.
       virtual bool wrappable() const;
       /// @brief Gets a value indicating whether the toolbar buttons wrap to the next line if the toolbar becomes too small to display all the buttons on the same line.
       /// @param value true if the toolbar buttons wrap to another line if the toolbar becomes too small to display all the buttons on the same line; otherwise, false. The default value is true.
       /// @return Current tool_bar instance.
       /// @remarks Toolbar buttons can be divided into logical groups by using separators. A separator is a toolbar button with the xtd::forms::tool_bar::style property set to xtd::forms::tool_bar_button_style::separator. If the xtd::forms::tool_bar::wrappable property is set to true and the toolbar becomes too small to display all the buttons on the same line, the toolbar is broken into additional lines, with the breaks occurring at the separators. This ensures that button groups stay together. Toolbar buttons that are not in a group can be separated when the toolbar wraps. The toolbar can become too small to display all its buttons on the same line if its parent xtd::forms:form is resized.
-      /// @note Not implemented yet.
+      /// @note Not yet implemented.
       virtual tool_bar& wrappable(bool value);
       /// @}
       
