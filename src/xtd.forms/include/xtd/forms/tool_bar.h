@@ -82,21 +82,18 @@ namespace xtd {
       
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
-      /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
+      /// @remarks The xtd::forms::tool_bar can take on a sunken, three-dimensional appearance when the xtd::forms::tool_bar::border_style property is set to xtd::forms::border_style::fixed_3d. To display a flat thin border around the toolbar control, set the xtd::forms::tool_bar::border_style property to xtd::forms::border_style.fixed_single.
       virtual forms::border_style border_style() const {return data_->border_style.value_or(xtd::forms::border_style::none);}
       /// @brief Sets the border style for the control.
-      /// @param border_style One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
+      /// @param value One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @return Current tool_bar instance.
-      /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual tool_bar& border_style(forms::border_style border_style);
+      /// @remarks The xtd::forms::tool_bar can take on a sunken, three-dimensional appearance when the xtd::forms::tool_bar::border_style property is set to xtd::forms::border_style::fixed_3d. To display a flat thin border around the toolbar control, set the xtd::forms::tool_bar::border_style property to xtd::forms::border_style.fixed_single.
+      virtual tool_bar& border_style(forms::border_style value);
       /// @brief Reets the border style for the control.
-      /// @param border_style nullptr.
+      /// @param value nullptr.
       /// @return Current tool_bar instance.
-      /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual xtd::forms::tool_bar& border_style(std::nullptr_t border_style);
-
-      virtual xtd::drawing::size button_size() const;
-      virtual tool_bar& button_size(const xtd::drawing::size& value);
+      /// @remarks The xtd::forms::tool_bar can take on a sunken, three-dimensional appearance when the xtd::forms::tool_bar::border_style property is set to xtd::forms::border_style::fixed_3d. To display a flat thin border around the toolbar control, set the xtd::forms::tool_bar::border_style property to xtd::forms::border_style.fixed_single.
+      virtual xtd::forms::tool_bar& border_style(std::nullptr_t value);
         
       /// @brief Gets the collection of xtd::forms::tool_bar_button controls assigned to the toolbar control.
       /// @return A xtd::forms::tool_bar::tool_bar_button_collection that contains a collection of xtd::forms::tool_bar_button controls.
@@ -106,7 +103,22 @@ namespace xtd {
       /// @return A xtd::forms::tool_bar::tool_bar_button_collection that contains a collection of xtd::forms::tool_bar_button controls.
       /// @remarks The xtd::forms::tool_bar::item property is a zero-based indexed collection used to hold all the xtd::forms::tool_bar_button controls assigned to the toolbar. Because the property is read-only, it can not be assigned a collection of toolbar buttons directly. Toolbar item can be added or removed by using the methods inherited from the xtd::forms::tool_bar::tool_bar_button_collection class. Use the xtd::forms::tool_bar::tool_bar_button_collection::push_back method to add individual buttons and the xtd::forms::tool_bar::tool_bar_button_collection::erase method to delete a item. Call the xtd::forms::tool_bar::tool_bar_button_collection::clear method to remove all the buttons from the collection.
       tool_bar_button_collection& buttons();
-    
+
+      /// @brief Gets the size of the buttons on the toolbar control.
+      /// @return A xtd::drawing::size object that represents the size of the xtd::forms::tool_bar_button controls on the toolbar. The default size has a width of 24 pixels and a height of 22 pixels, or large enough to accommodate the xtd::drawing::image and text, whichever is greater.
+      /// @remarks If the xtd::forms::tool_bar::button_size is not set, it is set to its default. Alternatively, a xtd::forms::tool_bar::size is computed to accommodate the largest xtd::drawing::image and text assigned to the xtd::forms::tool_bar_button controls.
+      virtual xtd::drawing::size button_size() const;
+      /// @brief Sets the size of the buttons on the toolbar control.
+      /// @param value A xtd::drawing::size object that represents the size of the xtd::forms::tool_bar_button controls on the toolbar. The default size has a width of 24 pixels and a height of 22 pixels, or large enough to accommodate the xtd::drawing::image and text, whichever is greater.
+      /// @return Current tool_bar instance.
+      /// @remarks If the xtd::forms::tool_bar::button_size is not set, it is set to its default. Alternatively, a xtd::forms::tool_bar::size is computed to accommodate the largest xtd::drawing::image and text assigned to the xtd::forms::tool_bar_button controls.
+      virtual tool_bar& button_size(const xtd::drawing::size& value);
+      /// @brief Resets the size of the buttons on the toolbar control.
+      /// @param value nullptr.
+      /// @return Current tool_bar instance.
+      /// @remarks If the xtd::forms::tool_bar::button_size is not set, it is set to its default. Alternatively, a xtd::forms::tool_bar::size is computed to accommodate the largest xtd::drawing::image and text assigned to the xtd::forms::tool_bar_button controls.
+      virtual tool_bar& button_size(std::nullptr_t value);
+
       xtd::drawing::font default_font() const override;
 
       drawing::size default_size() const override;

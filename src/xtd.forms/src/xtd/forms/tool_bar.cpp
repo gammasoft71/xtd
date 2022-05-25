@@ -100,6 +100,15 @@ tool_bar& tool_bar::button_size(const xtd::drawing::size& value) {
   return *this;
 }
 
+tool_bar& tool_bar::button_size(std::nullptr_t) {
+  if (data_->button_size.has_value()) {
+    data_->button_size.reset();
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
 dock_style tool_bar::dock() const {
   //if (is_system_tool_bar()) return data_->non_system_dock;
   return control::dock();
@@ -275,13 +284,15 @@ tool_bar& tool_bar::is_system_tool_bar(bool value) {
 }
 
 void tool_bar::fill() {
+  if (data_->buttons.size() == 0) return;
   suspend_layout();
   controls().clear();
   data_->stretchable_separators.clear();
   data_->tool_bar_buttons.clear();
   auto reversed_buttons = data_->buttons;
   if (!is_system_tool_bar()) std::reverse(reversed_buttons.begin(), reversed_buttons.end());
-  if (!is_system_tool_bar() && auto_size()) size({padding().left() + padding().right(), padding().top() + padding().bottom()});
+  if (!is_system_tool_bar() && auto_size())
+    size({padding().left() + padding().right(), padding().top() + padding().bottom()});
   for (size_t index = 0; index < reversed_buttons.size(); ++index) {
     auto& button_item = reversed_buttons[index].get();
     intptr_t control_handle = 0;
@@ -339,10 +350,9 @@ void tool_bar::fill() {
       if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
       if (data_->show_text) button_control->text(button_item.text());
 
-      if (is_horizontal() && height() < button_control->height()) height(button_control->height() + padding().top() + padding().bottom());
-      if (!is_horizontal() && width() < button_control->width()) width(button_control->width() + padding().left() + padding().right());
-
       if (auto_size()) {
+        if (is_horizontal() && height() < button_control->height()) height(button_control->height() + padding().top() + padding().bottom());
+        if (!is_horizontal() && width() < button_control->width()) width(button_control->width() + padding().left() + padding().right());
         if (is_horizontal()) width(width() + button_control->width());
         else height(height() + button_control->height());
       }
