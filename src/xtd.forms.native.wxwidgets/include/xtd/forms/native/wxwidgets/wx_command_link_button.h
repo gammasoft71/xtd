@@ -31,7 +31,7 @@ namespace xtd {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           owner_draw_ = (create_params.style() & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_) {
-            control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+            control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()));
             reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh");
           } else {
             control_handler::create<wxCommandLinkButton>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxEmptyString, wxEmptyString, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
