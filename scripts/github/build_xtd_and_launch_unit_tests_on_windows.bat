@@ -8,7 +8,7 @@ cd wxwidgets
 git submodule update --init
 mkdir build_cmake 
 cd build_cmake
-cmake .. -G "Visual Studio 16 2019" -A %BUILD_OPTION% -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
+cmake .. -G "Visual Studio 17 2022"" -A %BUILD_OPTION% -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 cmake --build . --config %BUILD_TYPE% --target install
 cd ../../../..
 
@@ -16,7 +16,7 @@ cd ../../../..
 git submodule update --init
 mkdir build
 cd build
-cmake .. -G "Visual Studio 16 2019" -A %BUILD_OPTION% -DXTD_BUILD_TESTS_XTD_CORE=ON -DXTD_BUILD_TESTS_XTD_DRAWING=ON -DXTD_BUILD_TESTS_XTD_FORMS=OFF -DXTD_BUILD_TESTS_XTD_TUNIT=ON -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
+cmake .. -G "Visual Studio 17 2022"" -A %BUILD_OPTION% -DXTD_BUILD_TESTS_XTD_CORE=ON -DXTD_BUILD_TESTS_XTD_DRAWING=ON -DXTD_BUILD_TESTS_XTD_FORMS=OFF -DXTD_BUILD_TESTS_XTD_TUNIT=ON -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 if %ERRORLEVEL% NEQ 0 exit 1
 cmake --build . --config %BUILD_TYPE% --target install
 if %ERRORLEVEL% NEQ 0 exit 1
