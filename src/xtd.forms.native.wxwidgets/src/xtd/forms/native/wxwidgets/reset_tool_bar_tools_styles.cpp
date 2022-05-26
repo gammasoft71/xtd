@@ -7,32 +7,32 @@
 // See https://stackoverflow.com/questions/424104/can-i-access-private-members-from-outside-the-class-without-using-friends for more info.
 
 namespace {
-  struct wxToolBarToolBase_dropdownMenu {
+  struct wxToolBarToolBase_m_dropdownMenu {
     typedef wxMenu* wxToolBarToolBase::* type;
-    friend type get(wxToolBarToolBase_dropdownMenu);
+    friend type get(wxToolBarToolBase_m_dropdownMenu);
   };
 
-  struct wxToolBarToolBase_toolStyle {
+  struct wxToolBarToolBase_m_toolStyle {
     typedef wxToolBarToolStyle wxToolBarToolBase::* type;
-    friend type get(wxToolBarToolBase_toolStyle);
+    friend type get(wxToolBarToolBase_m_toolStyle);
   };
 
-  template<typename Tag, typename Tag::type M>
-  struct robbery {
-    friend typename Tag::type get(Tag) {
-      return M;
+  template<typename tag_t, typename tag_t::type memeber_t>
+  struct steal_private_member {
+    friend typename tag_t::type get(tag_t) {
+      return memeber_t;
     }
   };
 
-  template struct robbery<wxToolBarToolBase_dropdownMenu, &wxToolBarToolBase::m_dropdownMenu>;
-  template struct robbery<wxToolBarToolBase_toolStyle, &wxToolBarToolBase::m_toolStyle>;
+  template struct steal_private_member<wxToolBarToolBase_m_dropdownMenu, &wxToolBarToolBase::m_dropdownMenu>;
+  template struct steal_private_member<wxToolBarToolBase_m_toolStyle, &wxToolBarToolBase::m_toolStyle>;
 }
 
 void __reset_tool_bar_tools_styles__(wxToolBar* toolBar) {
   for (size_t index = 0; index < toolBar->GetToolsCount(); ++index) {
     auto wx_tool_bar_tool = toolBar->GetToolByPos(static_cast<int32_t>(index));
-    wx_tool_bar_tool->*get(wxToolBarToolBase_dropdownMenu()) = nullptr;
-    wx_tool_bar_tool->*get(wxToolBarToolBase_toolStyle()) = wxTOOL_STYLE_BUTTON;
+    wx_tool_bar_tool->*get(wxToolBarToolBase_m_dropdownMenu()) = nullptr;
+    wx_tool_bar_tool->*get(wxToolBarToolBase_m_toolStyle()) = wxTOOL_STYLE_BUTTON;
   }
 }
 
