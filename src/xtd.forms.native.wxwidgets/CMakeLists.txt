@@ -109,6 +109,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/progress_dialog.cpp
   src/xtd/forms/native/wxwidgets/radio_button.cpp
   src/xtd/forms/native/wxwidgets/replace_dialog.cpp
+  src/xtd/forms/native/wxwidgets/reset_tool_bar_tools_styles.cpp
   src/xtd/forms/native/wxwidgets/scroll_bar.cpp
   src/xtd/forms/native/wxwidgets/screen.cpp
   src/xtd/forms/native/wxwidgets/settings.cpp

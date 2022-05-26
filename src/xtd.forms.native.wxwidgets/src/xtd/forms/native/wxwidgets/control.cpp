@@ -20,9 +20,6 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
-// Workaround : When wxWidgets destroy the tool bar tool with a control, it destroy the control. But with xtd, the control is managed by xtd and it can be destroyed.
-// wx_tool_bar.h must be include before other...
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tool_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box.h"
@@ -56,6 +53,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_page.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_text_box.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_toggle_button.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tool_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_track_bar.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_up_down_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_user_control.h"
