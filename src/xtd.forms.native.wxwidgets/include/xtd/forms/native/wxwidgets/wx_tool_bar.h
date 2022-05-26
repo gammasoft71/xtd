@@ -29,8 +29,10 @@ namespace xtd {
         explicit wx_tool_bar(const forms::create_params& create_params) {
           if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           control_handler::create<wxToolBar>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, style_to_wx_style(create_params.style(), create_params.ex_style()));
-          // On Windows the default size icon of toolbar is 16x16 and not 32x32...
-          static_cast<wxToolBar*>(control())->SetToolBitmapSize(wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows" ? wxSize(16, 16) : wxSize(32, 32));
+          // On Windows the default size icon of toolbar is 16x16, on macOS is 32x32 and on gtk is 24x24...
+          if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") static_cast<wxToolBar*>(control())->SetToolBitmapSize({16, 16});
+          else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") static_cast<wxToolBar*>(control())->SetToolBitmapSize({32, 32});
+          else static_cast<wxToolBar*>(control())->SetToolBitmapSize({24, 24});
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
