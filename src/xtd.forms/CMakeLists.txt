@@ -125,6 +125,7 @@ add_sources(
   include/xtd/forms/group_box.h
   include/xtd/forms/help_event_args.h
   include/xtd/forms/help_event_handler.h
+  include/xtd/forms/horizontal_alignment.h
   include/xtd/forms/horizontal_control_layout_style.h
   include/xtd/forms/horizontal_control_layout_style_collection.h
   include/xtd/forms/horizontal_layout_panel.h
@@ -232,6 +233,8 @@ add_sources(
   include/xtd/forms/splitter.h
   include/xtd/forms/splitter_panel.h
   include/xtd/forms/splitter_style.h
+  include/xtd/forms/status_bar_panel_border_style.h
+  include/xtd/forms/status_bar_panel_style.h
   include/xtd/forms/switch_button.h
   include/xtd/forms/switch_button_renderer.h
   include/xtd/forms/system_information.h
