@@ -52,6 +52,7 @@ add_sources(
   include/xtd/forms/native/wxwidgets/wx_progress_bar.h
   include/xtd/forms/native/wxwidgets/wx_radio_button.h
   include/xtd/forms/native/wxwidgets/wx_scroll_bar.h
+  include/xtd/forms/native/wxwidgets/wx_status_bar.h
   include/xtd/forms/native/wxwidgets/wx_switch_button.h
   include/xtd/forms/native/wxwidgets/wx_tab_control.h
   include/xtd/forms/native/wxwidgets/wx_tab_page.h
@@ -113,6 +114,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/scroll_bar.cpp
   src/xtd/forms/native/wxwidgets/screen.cpp
   src/xtd/forms/native/wxwidgets/settings.cpp
+  src/xtd/forms/native/wxwidgets/status_bar.cpp
   src/xtd/forms/native/wxwidgets/switch_button.cpp
   src/xtd/forms/native/wxwidgets/system_information.cpp
   src/xtd/forms/native/wxwidgets/tab_control.cpp
