@@ -52,6 +52,14 @@ namespace xtd {
       fixed_single = solid,
       /// @brief A three-dimensional border. Same as xtd::forms::border_style::inset.
       fixed_3d = inset,
+      /// @brief A sunken border. Same as xtd::forms::border_style::inset.
+      sunken = inset,
+      /// @brief A raised border. Same as xtd::forms::border_style::outset.
+      raised = outset,
+      /// @brief A bevel sunken border. Same as xtd::forms::border_style::bevel_inset.
+      bevel_sunken = bevel_inset,
+      /// @brief A bevel raised border. Same as xtd::forms::border_style::bevel_outset.
+      bevel_raised = bevel_outset,
     };
     
     /// @cond
