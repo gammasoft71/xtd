@@ -21,7 +21,7 @@ namespace {
   }
 }
 
-intptr_t status_bar::add_status_bar_panel(intptr_t status_bar, int border_style, const xtd::ustring& text, const xtd::drawing::image& image, bool visible, int width, bool stretchable) {
+intptr_t status_bar::add_status_bar_panel(intptr_t status_bar, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable) {
   if (!status_bar || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -82,7 +82,7 @@ bool status_bar::set_system_status_bar(intptr_t control, intptr_t status_bar) {
   return true;
 }
 
-void status_bar::update_status_bar_item(intptr_t status_bar, intptr_t handle, int border_style, const xtd::ustring& text, const xtd::drawing::image& image, bool visible, int width, bool stretchable) {
+void status_bar::update_status_bar_item(intptr_t status_bar, intptr_t handle, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable) {
   if (!status_bar || !handle || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
