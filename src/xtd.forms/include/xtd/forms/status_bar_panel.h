@@ -32,7 +32,7 @@ namespace xtd {
     /// @include status_bar.cpp
     /// @remarks A xtd::forms::status_bar_panel represents an individual panel in the xtd::forms::status_bar::status_bar_panel_collection of a xtd::forms::status_bar control. A xtd::forms::status_bar_panel can contain text and/or an image that can be used to reflect the status of an application. Use the xtd::forms::status_bar::status_bar_panel_collection, accessible through the xtd::forms::status_bar::panels property of a xtd::forms::status_bar control, to retrieve, add, or remove an individual xtd::forms::status_bar_panel.
     /// @remarks The xtd::forms::status_bar_panel provides properties that enable you to modify the display behavior of a panel within a xtd::forms::status_bar control. You can use the xtd::forms::status_bar_panel::image property to display an image within a panel. This property can be used to provide a graphical representation of state in an application. The xtd::forms::status_bar_panel::alignment property enables you to specify how text and/or an image is aligned within the panel. To ensure that your panel is sized properly to fit the text of the panel, you can use the xtd::forms::status_bar_panel::auto_size property to automatically resize the panel to fit the text of the panel or to fill the remaining space within the xtd::forms::status_bar control. The xtd::forms::status_bar_panel::min_width property enables you to specify a minimum width for the panel to ensure that it does not get smaller than the data it is intended to display.
-    /// @remarks The StatusBar control is typically used to display Help information or state information about your application. Often, it is important to display additional information about data that is presented in a panel. You can use the ToolTipText property to display information whenever the mouse pointer rests on a panel.
+    /// @remarks The xtd::forms::status_bar control is typically used to display Help information or state information about your application. Often, it is important to display additional information about data that is presented in a panel. You can use the xtd::forms::status_bar_panel::tool_tip_text property to display information whenever the mouse pointer rests on a panel.
     /// @remarks Although the xtd::forms::status_bar control is typically used to display textual information, you can also provide your own type of display to a xtd::forms::status_bar_panel. The xtd::forms::status_bar_panel::style property enables you to specify how the xtd::forms::status_bar_panel will be drawn. By default, the xtd::forms::status_bar_panel::style property is used to display the value of the xtd::forms::status_bar_panel_style::text property (and an image, if specified in the xtd::forms::status_bar_panel::image property). If the property is set to xtd::forms::status_bar_panel_style::owner_draw, you can draw your own information into the panel. You can use this feature to draw a progress bar or an animated image in the panel.
     /// @remarks When you create an instance of the xtd::forms::status_bar_panel class, the read/write properties are set to initial values. For a list of these values, see the xtd::forms::status_bar_panel::status_bar_panel constructor.
     class status_bar_panel : public xtd::forms::component {
@@ -42,17 +42,17 @@ namespace xtd {
       /// @{
       /// @brief Initialises a new instance of xtd::forms::status_bar_panel class.
       /// @remarks When you create an instance of StatusBarPanel, the following read/write properties are set to initial values.
-      /// | Property                                    | Initial value                                                 |
-      /// |---------------------------------------------|---------------------------------------------------------------|
-      /// | xtd::forms::status_bar_panel::alignment     | xtd::forms::horizontal::alignment::left                       |
-      /// | xtd::forms::status_bar_panel::auto_size     | xtd::forms::horizontal::status_bar_panel_auto_size::none      |
-      /// | xtd::forms::status_bar_panel::border_style  | xtd::forms::horizontal::status_bar_panel_border_style::sunken |
-      /// | xtd::forms::status_bar_panel::image         | xtd::drawing::image::empty                                    |
-      /// | xtd::forms::status_bar_panel::min_width     | 10                                                            |
-      /// | xtd::forms::status_bar_panel::style         | xtd::forms::horizontal::status_bar_panel_style::text          |
-      /// | xtd::forms::status_bar_panel::text          | xtd::ustring::empty_string                                    |
-      /// | xtd::forms::status_bar_panel::tool_tip_text | xtd::ustring::empty_string                                    |
-      /// | xtd::forms::status_bar_panel::width         | 100                                                           |
+      /// | Property                                    | Initial value                                     |
+      /// |---------------------------------------------|---------------------------------------------------|
+      /// | xtd::forms::status_bar_panel::alignment     | xtd::forms::horizontal_alignment::left            |
+      /// | xtd::forms::status_bar_panel::auto_size     | xtd::forms::status_bar_panel_auto_size::none      |
+      /// | xtd::forms::status_bar_panel::border_style  | xtd::forms::status_bar_panel_border_style::sunken |
+      /// | xtd::forms::status_bar_panel::image         | xtd::drawing::image::empty                        |
+      /// | xtd::forms::status_bar_panel::min_width     | 10                                                |
+      /// | xtd::forms::status_bar_panel::style         | xtd::forms::status_bar_panel_style::text          |
+      /// | xtd::forms::status_bar_panel::text          | xtd::ustring::empty_string                        |
+      /// | xtd::forms::status_bar_panel::tool_tip_text | xtd::ustring::empty_string                        |
+      /// | xtd::forms::status_bar_panel::width         | 100                                               |
       status_bar_panel() = default;
       /// @}
       
