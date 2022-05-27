@@ -232,6 +232,7 @@
 #include "xtd/forms/splitter_panel.h"
 #include "xtd/forms/splitter_style.h"
 #include "xtd/forms/splitter.h"
+#include "xtd/forms/status_bar_panel.h"
 #include "xtd/forms/status_bar_panel_auto_size.h"
 #include "xtd/forms/status_bar_panel_border_style.h"
 #include "xtd/forms/status_bar_panel_style.h"
