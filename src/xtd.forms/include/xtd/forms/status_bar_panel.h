@@ -21,7 +21,7 @@ namespace xtd {
     class status_bar;
     /// @endcond
     
-    /// @brief Represents a status bar panel.
+    /// @brief Represents a xtd::forms::status_bar panel.
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -29,18 +29,30 @@ namespace xtd {
     /// @ingroup xtd_forms  menus_and_toolbars
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::status_bar_panel control.
-    /// @include tool_bar.cpp
-    /// @remarks xtd::forms::status_bar_panel controls are parented by xtd::forms::tool_bar controls. Common properties to set once the toolbar button has been created are xtd::forms::status_bar_panel::text and xtd::forms::status_bar_panel::image_index. Set the xtd::forms::status_bar_panel::text property of the button to display text beneath or to the right of the image. To assign images to the buttons by creating an xtd::forms::image_list, assigning it to the xtd::forms::tool_bar::image_list property of the toolbar; then assign the image index value to the xtd::forms::status_bar_panel::image_index property of the button.
-    /// @remarks To change the appearance of the toolbar buttons assigned to the toolbar, set the xtd::forms::tool_bar::appearance property of the parent toolbar control. The xtd::forms::tool_bar_appearance::flat appearance gives the buttons a flat appearance. As the mouse pointer moves over the buttons, their appearance changes to three-dimensional. Button separators appear as lines rather than spaces between the buttons when the buttons have a flat appearance. If the xtd::forms::tool_bar::appearance property is set to xtd::forms::tool_bar_appearance::normal, the buttons appear raised and three-dimensional, and the separators appear as a gap between the buttons.
-    /// @remarks You can assign a xtd::forms::context_menu to a button if the xtd::forms::status_bar_panel::style property is set to xtd::forms::status_bar_panel_style::drop_down. When the button is clicked, the assigned menu is displayed.
-    /// @remarks To create a collection of xtd::forms::status_bar_panel controls to display on a xtd::forms::tool_bar, add the buttons individually by using the xtd::forms::tool_bar::status_bar_panel_collection::push_back method of the xtd::forms::tool_bar::buttons property. Alternatively, you can add several toolbar buttons using the xtd::forms::tool_bar::status_bar_panel_collection.push_back_range method.
+    /// @include status_bar.cpp
+    /// @remarks A xtd::forms::status_bar_panel represents an individual panel in the xtd::forms::status_bar::status_bar_panel_collection of a xtd::forms::status_bar control. A xtd::forms::status_bar_panel can contain text and/or an image that can be used to reflect the status of an application. Use the xtd::forms::status_bar::status_bar_panel_collection, accessible through the xtd::forms::status_bar::panels property of a xtd::forms::status_bar control, to retrieve, add, or remove an individual xtd::forms::status_bar_panel.
+    /// @remarks The xtd::forms::status_bar_panel provides properties that enable you to modify the display behavior of a panel within a xtd::forms::status_bar control. You can use the xtd::forms::status_bar_panel::image property to display an image within a panel. This property can be used to provide a graphical representation of state in an application. The xtd::forms::status_bar_panel::alignment property enables you to specify how text and/or an image is aligned within the panel. To ensure that your panel is sized properly to fit the text of the panel, you can use the xtd::forms::status_bar_panel::auto_size property to automatically resize the panel to fit the text of the panel or to fill the remaining space within the xtd::forms::status_bar control. The xtd::forms::status_bar_panel::min_width property enables you to specify a minimum width for the panel to ensure that it does not get smaller than the data it is intended to display.
+    /// @remarks The StatusBar control is typically used to display Help information or state information about your application. Often, it is important to display additional information about data that is presented in a panel. You can use the ToolTipText property to display information whenever the mouse pointer rests on a panel.
+    /// @remarks Although the xtd::forms::status_bar control is typically used to display textual information, you can also provide your own type of display to a xtd::forms::status_bar_panel. The xtd::forms::status_bar_panel::style property enables you to specify how the xtd::forms::status_bar_panel will be drawn. By default, the xtd::forms::status_bar_panel::style property is used to display the value of the xtd::forms::status_bar_panel_style::text property (and an image, if specified in the xtd::forms::status_bar_panel::image property). If the property is set to xtd::forms::status_bar_panel_style::owner_draw, you can draw your own information into the panel. You can use this feature to draw a progress bar or an animated image in the panel.
+    /// @remarks When you create an instance of the xtd::forms::status_bar_panel class, the read/write properties are set to initial values. For a list of these values, see the xtd::forms::status_bar_panel::status_bar_panel constructor.
     class status_bar_panel : public xtd::forms::component {
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initialises a new instance of xtd::forms::status_bar_panel class.
-      /// @remarks A newly created xtd::forms::status_bar_panel has no default xtd::forms::status_bar_panel::text or xtd::drawing::image assigned to it. The button's default style is xtd::status_bar_panel_style::push_button.
+      /// @remarks When you create an instance of StatusBarPanel, the following read/write properties are set to initial values.
+      /// | Property                                    | Initial value                                                 |
+      /// |---------------------------------------------|---------------------------------------------------------------|
+      /// | xtd::forms::status_bar_panel::alignment     | xtd::forms::horizontal::alignment::left                       |
+      /// | xtd::forms::status_bar_panel::auto_size     | xtd::forms::horizontal::status_bar_panel_auto_size::none      |
+      /// | xtd::forms::status_bar_panel::border_style  | xtd::forms::horizontal::status_bar_panel_border_style::sunken |
+      /// | xtd::forms::status_bar_panel::image         | xtd::drawing::image::empty                                    |
+      /// | xtd::forms::status_bar_panel::min_width     | 10                                                            |
+      /// | xtd::forms::status_bar_panel::style         | xtd::forms::horizontal::status_bar_panel_style::text          |
+      /// | xtd::forms::status_bar_panel::text          | xtd::ustring::empty_string                                    |
+      /// | xtd::forms::status_bar_panel::tool_tip_text | xtd::ustring::empty_string                                    |
+      /// | xtd::forms::status_bar_panel::width         | 100                                                           |
       status_bar_panel() = default;
       /// @}
       
@@ -198,27 +210,27 @@ namespace xtd {
       /// @remarks This method is used to start the initialization of a component that is used on a form or used by another component. The xtd::forms::status_bar_panel::end_init method ends the initialization. Using the xtd::forms::status_bar_panel::begin_init and xtd::forms::status_bar_panel::end_init methods prevents the control from being used before it is fully initialized.
       void begin_init();
       
-      /// @brief A factory to create a control toolbar button with specified text and control.
-      /// @param text The text displayed on the toolbar button.
-      /// @param control A xtd::forms::control to be displayed in the control toolbar button.
+      /// @brief A factory to create a control status bar panel with specified text and control.
+      /// @param text The text displayed on the status bar panel.
+      /// @param control A xtd::forms::control to be displayed in the control status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
       static status_bar_panel create_control(const xtd::ustring& text, const xtd::forms::control& control);
-      /// @brief A factory to create a control toolbar button with specified control.
-      /// @param control A xtd::forms::control to be displayed in the control toolbar button.
+      /// @brief A factory to create a control status bar panel with specified control.
+      /// @param control A xtd::forms::control to be displayed in the control status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
       static status_bar_panel create_control(const xtd::forms::control& control);
 
-      /// @brief A factory to create a toolbar button with specified text.
-      /// @param text The text displayed on the toolbar button.
+      /// @brief A factory to create a status bar panel with specified text.
+      /// @param text The text displayed on the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
       static status_bar_panel create_panel(const xtd::ustring& text);
-      /// @brief A factory to create a toolbar button with specified image index.
-      /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
+      /// @brief A factory to create a status bar panel with specified image index.
+      /// @param image_index The index value of the xtd::drawing::image assigned to the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
       static status_bar_panel create_panel(size_t image_index);
-      /// @brief A factory to create a toolbar button with specified text and image index.
-      /// @param text The text displayed on the toolbar button.
-      /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
+      /// @brief A factory to create a status bar panel with specified text and image index.
+      /// @param text The text displayed on the status bar panel.
+      /// @param image_index The index value of the xtd::drawing::image assigned to the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
       static status_bar_panel create_panel(const xtd::ustring& text, size_t image_index);
       
@@ -241,14 +253,14 @@ namespace xtd {
         xtd::forms::control* control = nullptr;
         intptr_t handle = 0;
         xtd::drawing::image image;
-        int32_t min_width;
+        int32_t min_width = 10;
         xtd::ustring name;
         xtd::forms::status_bar* parent = nullptr;
         xtd::forms::status_bar_panel_style style = xtd::forms::status_bar_panel_style::text;
         std::any tag;
         xtd::ustring text;
         xtd::ustring tool_tip_text;
-        int32_t width;
+        int32_t width = 100;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
