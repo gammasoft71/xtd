@@ -19,12 +19,12 @@ namespace xtd {
       /// @brief The xtd::forms::status_bar_panel shares the available space on the xtd::forms::status_bar (the space not taken up by other panels whose xtd::forms::status_bar_panel::auto_size property is set to None or xtd::forms::status_bar_panel_auto_size::contents) with other panels that have their xtd::forms::status_bar_panel::auto_size property set to xtd::forms::status_bar_panel_auto_size::spring.
       spring = 2,
       /// @brief The width of the xtd::forms::status_bar_panel is determined by its contents.
-      content = 3,
+      contents = 3,
     };
     
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, status_bar_panel_auto_size value) {return os << to_string(value, {{status_bar_panel_auto_size::none, "none"}, {status_bar_panel_auto_size::spring, "spring"}, {status_bar_panel_auto_size::content, "content"}});}
-    inline std::wostream& operator<<(std::wostream& os, status_bar_panel_auto_size value) {return os << to_string(value, {{status_bar_panel_auto_size::none, L"none"},{status_bar_panel_auto_size::spring, L"spring"}, {status_bar_panel_auto_size::content, L"content"}});}
+    inline std::ostream& operator<<(std::ostream& os, status_bar_panel_auto_size value) {return os << to_string(value, {{status_bar_panel_auto_size::none, "none"}, {status_bar_panel_auto_size::spring, "spring"}, {status_bar_panel_auto_size::contents, "contents"}});}
+    inline std::wostream& operator<<(std::wostream& os, status_bar_panel_auto_size value) {return os << to_string(value, {{status_bar_panel_auto_size::none, L"none"},{status_bar_panel_auto_size::spring, L"spring"}, {status_bar_panel_auto_size::contents, L"contents"}});}
     /// @endcond
   }
 }

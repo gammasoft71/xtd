@@ -247,7 +247,7 @@ namespace xtd {
       friend xtd::forms::status_bar;
       struct data {
         xtd::forms::horizontal_alignment alignment = xtd::forms::horizontal_alignment::left;
-        xtd::forms::status_bar_panel_auto_size auto_size = xtd::forms::status_bar_panel_auto_size::content;
+        xtd::forms::status_bar_panel_auto_size auto_size = xtd::forms::status_bar_panel_auto_size::none;
         bool init_mode = false;
         xtd::forms::status_bar_panel_border_style border_style = xtd::forms::status_bar_panel_border_style::sunken;
         xtd::forms::control* control = nullptr;
