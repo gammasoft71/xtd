@@ -225,14 +225,14 @@ namespace xtd {
       /// @return New xtd::forms::status_bar_panel created.
       static status_bar_panel create_panel(const xtd::ustring& text);
       /// @brief A factory to create a status bar panel with specified image index.
-      /// @param image_index The index value of the xtd::drawing::image assigned to the status bar panel.
+      /// @param image The xtd::drawing::image assigned to the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
-      static status_bar_panel create_panel(size_t image_index);
+      static status_bar_panel create_panel(const xtd::drawing::image& image);
       /// @brief A factory to create a status bar panel with specified text and image index.
       /// @param text The text displayed on the status bar panel.
-      /// @param image_index The index value of the xtd::drawing::image assigned to the status bar panel.
+      /// @param image The xtd::drawing::image assigned to the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
-      static status_bar_panel create_panel(const xtd::ustring& text, size_t image_index);
+      static status_bar_panel create_panel(const xtd::ustring& text, const xtd::drawing::image& image);
       
       /// @brief Ends the initialization of a xtd::forms::status_bar_panel.
       /// @remarks This method is used to end the initialization of a component that is used on a form or used by another component. The xtd::forms::status_bar_panel::end_init method ends the initialization. Using the xtd::forms::status_bar_panel::begin_init and xtd::forms::status_bar_panel::end_init methods prevents the control from being used before it is fully initialized.
