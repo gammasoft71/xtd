@@ -71,7 +71,7 @@ namespace xtd {
       
       /// @brief Gets a xtd::drawing::font that is used to display text in the tool bar.
       /// @return A xtd::drawing::font that is used to display text in the tool bar.
-      static xtd::drawing::font toolbar_font();
+      static xtd::drawing::font tool_font();
       /// @}
     };
   }

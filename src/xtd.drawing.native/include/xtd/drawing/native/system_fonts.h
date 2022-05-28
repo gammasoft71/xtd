@@ -77,7 +77,7 @@ namespace xtd {
         /// @brief Gets a font that is used to display text in the tool bar.
         /// @return A font handle that is used to display text in the tool bar.
         /// @warning Internal use only
-        static intptr_t toolbar_font();
+        static intptr_t tool_font();
         /// @}
       };
     }

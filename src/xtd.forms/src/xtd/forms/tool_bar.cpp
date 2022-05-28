@@ -141,7 +141,7 @@ control& tool_bar::dock(dock_style dock) {
 }
 
 xtd::drawing::font tool_bar::default_font() const {
-  return xtd::drawing::system_fonts::toolbar_font();
+  return xtd::drawing::system_fonts::tool_font();
 }
 
 drawing::size tool_bar::default_size() const {
