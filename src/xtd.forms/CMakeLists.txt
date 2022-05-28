@@ -90,6 +90,8 @@ add_sources(
   include/xtd/forms/domain_up_down.h
   include/xtd/forms/dot_matrix_display.h
   include/xtd/forms/dot_matrix_style.h
+  include/xtd/forms/draw_item_event_args.h
+  include/xtd/forms/draw_item_event_handler.h
   include/xtd/forms/emoticon.h
   include/xtd/forms/emoticons.h
   include/xtd/forms/enable_debug.h
@@ -234,9 +236,13 @@ add_sources(
   include/xtd/forms/splitter_panel.h
   include/xtd/forms/splitter_style.h
   include/xtd/forms/status_bar.h
+  include/xtd/forms/status_bar_draw_item_event_args.h
+  include/xtd/forms/status_bar_draw_item_event_handler.h
   include/xtd/forms/status_bar_panel.h
   include/xtd/forms/status_bar_panel_auto_size.h
   include/xtd/forms/status_bar_panel_border_style.h
+  include/xtd/forms/status_bar_panel_click_event_args.h
+  include/xtd/forms/status_bar_panel_click_event_handler.h
   include/xtd/forms/status_bar_panel_style.h
   include/xtd/forms/switch_button.h
   include/xtd/forms/switch_button_renderer.h

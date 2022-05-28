@@ -29,7 +29,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::tool_bar_button_click_event_args class.
-      /// @param button The xtd::forms::tool_bar_butto that was clicked.
+      /// @param button The xtd::forms::tool_bar_button that was clicked.
       tool_bar_button_click_event_args(const xtd::forms::tool_bar_button& button) : button_(button) {}
       /// @brief Initializes a new instance of the xtd::forms::tool_bar_button_click_event_args class.
       /// @param button The xtd::forms::tool_bar_button that was clicked.
@@ -51,7 +51,7 @@ namespace xtd {
       
     private:
       xtd::forms::tool_bar_button button_;
-      intptr_t handle_;
+      intptr_t handle_ = 0;
     };
   }
 }
