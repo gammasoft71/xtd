@@ -6,6 +6,8 @@
 #include <vector>
 #include "panel.h"
 #include "status_bar_panel.h"
+#include "status_bar_draw_item_event_handler.h"
+#include "status_bar_panel_click_event_handler.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
