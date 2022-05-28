@@ -20,7 +20,7 @@ namespace xtd {
     /// xtd::forms
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms forms
+    /// @ingroup xtd_forms events
     /// @remarks
     class link_label_clicked_event_args : public xtd::event_args {
     public:
