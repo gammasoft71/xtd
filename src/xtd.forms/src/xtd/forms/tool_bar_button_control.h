@@ -16,7 +16,7 @@ public:
     }
   }
   
-  xtd::drawing::font default_font() const override {return xtd::drawing::system_fonts::toolbar_font();}
+  xtd::drawing::font default_font() const override {return xtd::drawing::system_fonts::tool_font();}
   
   void drop_down_menu(xtd::forms::context_menu* value) {
     if (data_->drop_down_menu != value) {
