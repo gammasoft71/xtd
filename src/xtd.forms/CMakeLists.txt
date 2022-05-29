@@ -319,6 +319,8 @@ add_sources(
   include/xtd/forms/style_sheets/padding.h
   include/xtd/forms/style_sheets/panel.h
   include/xtd/forms/style_sheets/pseudo_state.h
+  include/xtd/forms/style_sheets/status_bar.h
+  include/xtd/forms/style_sheets/status_bar_panel.h
   include/xtd/forms/style_sheets/style_sheet.h
   include/xtd/forms/style_sheets/system_colors.h
   include/xtd/forms/style_sheets/text_decoration.h
