@@ -17,6 +17,8 @@
 #include "label.h"
 #include "panel.h"
 #include "pseudo_state.h"
+#include "status_bar.h"
+#include "status_bar_panel.h"
 #include "system_colors.h"
 #include "theme.h"
 #include "user_control.h"
@@ -73,6 +75,10 @@ namespace xtd {
         using style_sheets_t = std::map<xtd::ustring, style_sheet>;
         /// @brief Represents a style_sheet names collection.
         using style_sheet_names_t = std::vector<xtd::ustring>;
+        /// @brief Represents a style sheet tool_bars collection.
+        using status_bars_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::status_bar>;
+        /// @brief Represents a style sheet buttons collection.
+        using status_bar_panels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::status_bar_panel>;
         /// @brief Represents a style sheet toggle buttons collection.
         using toggle_buttons_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::toggle_button>;
         /// @brief Represents a style sheet tool_bars collection.
@@ -220,6 +226,28 @@ namespace xtd {
         /// @brief Gets the style sheet toggle_buttons collection of this instance.
         /// @return The style sheet buttons collection.
         const toggle_buttons_t& popup_toggle_buttons() const noexcept;
+        
+        /// @brief Gets the style sheet status_bar for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet status_bar for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        xtd::forms::style_sheets::status_bar status_bar() const noexcept;
+        /// @brief Gets the style sheet status_bar for specified pseudo state.
+        /// @return A style_sheet status_bar.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
+        xtd::forms::style_sheets::status_bar status_bar(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet status_bar collection of this instance.
+        /// @return The style sheet status_bar collection.
+        const status_bars_t& status_bars() const noexcept;
+        
+        /// @brief Gets the style sheet status bar panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet status bar panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        xtd::forms::style_sheets::status_bar_panel status_bar_panel() const noexcept;
+        /// @brief Gets the style sheet status bar panel for specified pseudo state.
+        /// @return A style_sheet status bar panel.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
+        xtd::forms::style_sheets::status_bar_panel status_bar_panel(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet status bar panels collection of this instance.
+        /// @return The style sheet status bar panels collection.
+        const status_bar_panels_t& status_bar_panels() const noexcept;
 
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheets.
         /// @return The installed xtd::forms::style_sheets::style_sheet style sheets.
@@ -409,6 +437,8 @@ namespace xtd {
         void panel_reader(xtd::web::css::css_reader& reader) noexcept;
         void popup_button_reader(xtd::web::css::css_reader& reader) noexcept;
         void popup_toggle_button_reader(xtd::web::css::css_reader& reader) noexcept;
+        void status_bar_reader(xtd::web::css::css_reader& reader) noexcept;
+        void status_bar_panel_reader(xtd::web::css::css_reader& reader) noexcept;
         void system_colors_reader(xtd::web::css::css_reader& reader) noexcept;
         void theme_reader(xtd::web::css::css_reader& reader) noexcept;
         void toggle_button_reader(xtd::web::css::css_reader& reader) noexcept;
@@ -449,6 +479,8 @@ namespace xtd {
           labels_t labels;
           panels_t panels;
           buttons_t popup_buttons;
+          status_bars_t status_bars;
+          status_bar_panels_t status_bar_panels;
           toggle_buttons_t popup_toggle_buttons;
           toggle_buttons_t toggle_buttons;
           tool_bars_t tool_bars;
