@@ -1,0 +1,10 @@
+/* Contains status-bar definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+status-bar {
+  background-color: transparent;
+  border-color: system-color(control-light-light);
+  border-style: outset none outset none;
+  border-width: 1px;
+  color: system-color(control-text);
+}
