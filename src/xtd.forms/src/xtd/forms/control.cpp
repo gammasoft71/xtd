@@ -1110,6 +1110,8 @@ void control::on_mouse_double_click(const mouse_event_args& e) {
 }
 
 void control::on_mouse_down(const mouse_event_args& e) {
+  if (mouse_buttons_ == forms::mouse_buttons::right && data_->context_menu.has_value())
+    native::control::context_menu(handle(), data_->context_menu.value().get().handle(), e.location());
   if (control_appearance() == xtd::forms::control_appearance::standard && enabled()) {
     data_->control_state = xtd::forms::visual_styles::control_state::pressed;
     //invalidate();
@@ -1640,8 +1642,7 @@ void control::wm_mouse_down(message& message) {
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   mouse_buttons_ |= e.button();
-  if (mouse_buttons_ == forms::mouse_buttons::right && data_->context_menu.has_value()) native::control::context_menu(handle(), data_->context_menu.value().get().handle(), e.location());
-  else def_wnd_proc(message);
+  def_wnd_proc(message);
   on_mouse_down(e);
 }
 

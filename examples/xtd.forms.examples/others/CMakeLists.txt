@@ -35,6 +35,7 @@ add_projects(
   input_dialog_password
   labels_and_unicode_text
   lcd_label2
+  lcd_label3
   lcd_label_with_dot_matrix
   lcd_label_with_fourteen_segment
   lcd_label_with_nine_segment
