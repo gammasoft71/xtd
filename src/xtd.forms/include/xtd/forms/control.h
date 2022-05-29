@@ -466,7 +466,7 @@ namespace xtd {
       /// @return A rectangle that represents the display area of the control.
       virtual drawing::rectangle display_rectangle() const;
       
-      /// @brief Gets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
+      /// @brief Gets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @return One of the dock_style values. The default is none.
       /// @remarks Use the dock property to define how a control is automatically resized as its parent control is resized. For example, setting dock to dock_style::left causes the control to align itself with the left edges of its parent control and to resize as the parent control is resized. Controls are docked in their Z-order, which is the visual layering of controls on a form along the form's Z-axis (depth).
       /// @remarks A control can be docked to one edge of its parent container or can be docked to all edges and fill the parent container.
@@ -475,7 +475,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding the dock property in a derived class, use the base class's dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the dock property; you can override only one if needed.
       virtual dock_style dock() const;
-      /// @brief Sets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
+      /// @brief Sets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @param dock One of the dock_style values. The default is none.
       /// @return Current control.
       /// @remarks Use the dock property to define how a control is automatically resized as its parent control is resized. For example, setting dock to dock_style::left causes the control to align itself with the left edges of its parent control and to resize as the parent control is resized. Controls are docked in their Z-order, which is the visual layering of controls on a form along the form's Z-axis (depth).
