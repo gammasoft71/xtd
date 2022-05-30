@@ -7,6 +7,7 @@
 
 #include <xtd/delegate.h>
 #include <xtd/event_args.h>
+#include <wx/app.h>
 #include <wx/timer.h>
 
 namespace xtd {
@@ -32,7 +33,7 @@ namespace xtd {
         void on_tick(wxTimerEvent& event) {
           try {
             tick_(event_args::empty);
-            wxYield();
+            if (wxTheApp) wxTheApp->Yield();
           } catch (...) {
           }
         }
