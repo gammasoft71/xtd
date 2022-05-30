@@ -79,6 +79,7 @@ namespace xtd {
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
           #elif defined(__APPLE__)
+          /*
           control()->Bind(wxEVT_MAXIMIZE, [this](wxMaximizeEvent& e) {
             if (fixed) {
               wxTopLevelWindow* frame = static_cast<wxTopLevelWindow*>(control());
@@ -112,6 +113,7 @@ namespace xtd {
           });
 
           fixed = (create_params.style() & WS_THICKFRAME) != WS_THICKFRAME;
+           */
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
             control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
@@ -208,18 +210,20 @@ namespace xtd {
           #if defined(__APPLE__)
           if (width < 75) width = 75;
           if (height < 23) height = 23;
+          /*
           if (fixed) {
             control()->SetMinClientSize(wxDefaultSize);
             control()->SetMaxClientSize(wxDefaultSize);
-          }
+          }*/
           #endif
           control()->SetClientSize(wxSize(width, height));
           #if defined(__APPLE__)
+          /*
           if (fixed) {
             control()->SetMinClientSize(wxSize(width, height));
             control()->SetMaxClientSize(wxSize(width, height));
             previous_size = GetSize();
-          }
+          } */
           #endif
         }
         
@@ -234,18 +238,20 @@ namespace xtd {
           #if defined(__APPLE__)
           if (width < 75) width = 75;
           if (height < 23) height = 23;
+          /*
           if (fixed) {
             control()->SetMinSize(wxDefaultSize);
             control()->SetMaxSize(wxDefaultSize);
-          }
+          } */
           #endif
           control_handler::SetSize(width, height);
           #if defined(__APPLE__)
+          /*
           if (fixed) {
             control()->SetMinSize(wxSize(width, height));
             control()->SetMaxSize(wxSize(width, height));
             previous_size = wxSize(width, height);
-          }
+          } */
           #endif
         }
         
@@ -269,9 +275,9 @@ namespace xtd {
         wxPoint location_;
         inline static const wxPoint invalid_location {-100000, -100000};
         #elif defined(__APPLE__)
-        bool fixed = false;
+        //bool fixed = false;
         wxSize previous_size = wxDefaultSize;
-        bool is_maximize_or_fullscreen = false;
+        //bool is_maximize_or_fullscreen = false;
         #endif
       };
     }
