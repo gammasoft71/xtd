@@ -209,11 +209,14 @@ int32_t form::show_sheet_dialog(intptr_t control) {
   int32_t result = wxID_ANY;
   dialog->ShowWindowModal();
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&](wxWindowModalDialogEvent & event) {
+    dialog->Unlink();
+    dialog->DeletePendingEvents();
     result = event.GetReturnCode();
+    event.Skip(true);
   });
   while (result == wxID_ANY) {
-    wxYield();
-    sleep_for(100ms);
+    if (wxTheApp) wxTheApp->Yield(true);
+    //sleep_for(10ms);
   }
   return result;
   #else
