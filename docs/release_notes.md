@@ -16,6 +16,7 @@
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - folder_browser_box - [#139](https://github.com/gammasoft71/xtd/issues/139)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - tool_bar_renderer - [#130](https://github.com/gammasoft71/xtd/issues/130)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - user_control_renderer - [#100](https://github.com/gammasoft71/xtd/issues/100)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - tool_bar - [#99](https://github.com/gammasoft71/xtd/issues/99)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - toggle_button_renderer - [#98](https://github.com/gammasoft71/xtd/issues/98)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - text_renderer - [#96](https://github.com/gammasoft71/xtd/issues/96)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - save_file_box - [#89](https://github.com/gammasoft71/xtd/issues/89)
