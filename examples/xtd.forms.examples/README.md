@@ -71,6 +71,7 @@
 * **context_menu_strip** represents a shortcut menu.
 * [main_menu](menus_and_toolbars/main_menu/README.md) represents a main menu system for a form.
 * **menu_strip** represents a menu system for a form.
+* **status_bar** represents a Windows status bar control.
 * **status_strip** represents a Windows status bar control.
 * [tool_bar](menus_and_toolbars/tool_bar/README.md) represents a tool bar for a form.
 * **tool_strip** represents a container for Windows toolbar objects.
