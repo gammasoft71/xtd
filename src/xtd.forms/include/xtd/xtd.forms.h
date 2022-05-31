@@ -177,6 +177,7 @@
 #include "xtd/forms/message_dialog_icon.h"
 #include "xtd/forms/message_dialog_options.h"
 #include "xtd/forms/message_dialog.h"
+#include "xtd/forms/message_notifier.h"
 #include "xtd/forms/message_loop_callback.h"
 #include "xtd/forms/message.h"
 #include "xtd/forms/month_calendar.h"

@@ -114,8 +114,37 @@ namespace examples {
     tool_bar_button tool_bar2_separator3 = tool_bar_button::create_stretchable_separator();
     tool_bar_button help_tool_bar_button2 = tool_bar_button::create_drop_down_button(system_texts::help(), 7, context_menu2);
   };
+
+  class form2 : public form {
+   public:
+     form2() {
+       text("Message notifier example");
+       client_size({350, 200});
+       btn.parent(*this)
+          .text("notify")
+          .size({200, 35})
+          .click += [] {
+            message_notifier notifier;
+            notifier.title("Title...")
+                    .message("message...")
+                    .icon(message_notifier_icon::information)
+                    .buttons(message_notifier_buttons::yes_no_cancel)
+                    .notifier_closed += [&](object&, const notifier_closed_event_args& e) {
+                      if (e.notifier_result() == notifier_result::ok) // or: if (notifier.notifier_result() == notifier_result::ok)
+                         diagnostics::debug::write_line("notifier closed: action ok");
+
+                    };
+            notifier_result res = notifier.show();
+            diagnostics::debug::write_line("notifier result: {}", res);
+          };
+
+     }
+  private:
+    button btn;
+
+  };
 }
 
 int main() {
-  application::run(examples::form1());
+    application::run(examples::form2());
 }
