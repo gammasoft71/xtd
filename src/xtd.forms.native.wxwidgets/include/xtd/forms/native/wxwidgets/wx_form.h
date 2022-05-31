@@ -79,13 +79,18 @@ namespace xtd {
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
           #elif defined(__APPLE__)
-          /*
           control()->Bind(wxEVT_MAXIMIZE, [this](wxMaximizeEvent& e) {
             if (fixed) {
               wxTopLevelWindow* frame = static_cast<wxTopLevelWindow*>(control());
               is_maximize_or_fullscreen = true;
-              frame->SetMinSize(wxDefaultSize);
-              frame->SetMaxSize(wxDefaultSize);
+              auto current_size = frame->GetMinSize();
+              if (current_size.GetWidth() > wxDefaultSize.GetWidth() || current_size.GetHeight() > wxDefaultSize.GetHeight()) {
+                frame->SetMinSize(wxDefaultSize);
+                frame->SetMaxSize(wxDefaultSize);
+              } else {
+                frame->SetMaxSize(wxDefaultSize);
+                frame->SetMinSize(wxDefaultSize);
+              }
             }
             e.Skip();
           });
@@ -94,8 +99,14 @@ namespace xtd {
             if (fixed) {
               wxTopLevelWindow* frame = static_cast<wxTopLevelWindow*>(control());
               is_maximize_or_fullscreen = true;
-              frame->SetMinSize(wxDefaultSize);
-              frame->SetMaxSize(wxDefaultSize);
+              auto current_size = frame->GetMinSize();
+              if (current_size.GetWidth() > wxDefaultSize.GetWidth() || current_size.GetHeight() > wxDefaultSize.GetHeight()) {
+                frame->SetMinSize(wxDefaultSize);
+                frame->SetMaxSize(wxDefaultSize);
+              } else {
+                frame->SetMaxSize(wxDefaultSize);
+                frame->SetMinSize(wxDefaultSize);
+              }
             }
             e.Skip();
           });
@@ -105,15 +116,20 @@ namespace xtd {
               wxTopLevelWindow* frame = static_cast<wxTopLevelWindow*>(control());
               if (is_maximize_or_fullscreen) is_maximize_or_fullscreen = false;
               else {
-                frame->SetMinSize(previous_size);
-                frame->SetMaxSize(previous_size);
+                auto current_size = frame->GetMinSize();
+                if (current_size.GetWidth() > previous_size.GetWidth() || current_size.GetHeight() > previous_size.GetHeight()) {
+                  frame->SetMinSize(previous_size);
+                  frame->SetMaxSize(previous_size);
+                } else {
+                  frame->SetMaxSize(previous_size);
+                  frame->SetMinSize(previous_size);
+                }
               }
             }
             e.Skip();
           });
 
           fixed = (create_params.style() & WS_THICKFRAME) != WS_THICKFRAME;
-           */
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
             control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
@@ -210,20 +226,30 @@ namespace xtd {
           #if defined(__APPLE__)
           if (width < 75) width = 75;
           if (height < 23) height = 23;
-          /*
           if (fixed) {
-            control()->SetMinClientSize(wxDefaultSize);
-            control()->SetMaxClientSize(wxDefaultSize);
-          }*/
+            auto current_size = control()->GetMinClientSize();
+            if (current_size.GetWidth() > wxDefaultSize.GetWidth() || current_size.GetHeight() > wxDefaultSize.GetHeight()) {
+              control()->SetMinClientSize(wxDefaultSize);
+              control()->SetMaxClientSize(wxDefaultSize);
+            } else {
+              control()->SetMaxClientSize(wxDefaultSize);
+              control()->SetMinClientSize(wxDefaultSize);
+            }
+          }
           #endif
           control()->SetClientSize(wxSize(width, height));
           #if defined(__APPLE__)
-          /*
           if (fixed) {
-            control()->SetMinClientSize(wxSize(width, height));
-            control()->SetMaxClientSize(wxSize(width, height));
+            auto current_size = control()->GetMinClientSize();
+            if (current_size.GetWidth() > width || current_size.GetHeight() > height) {
+              control()->SetMinClientSize(wxSize(width, height));
+              control()->SetMaxClientSize(wxSize(width, height));
+            } else {
+              control()->SetMaxClientSize(wxSize(width, height));
+              control()->SetMinClientSize(wxSize(width, height));
+            }
             previous_size = GetSize();
-          } */
+          }
           #endif
         }
         
@@ -238,20 +264,30 @@ namespace xtd {
           #if defined(__APPLE__)
           if (width < 75) width = 75;
           if (height < 23) height = 23;
-          /*
           if (fixed) {
-            control()->SetMinSize(wxDefaultSize);
-            control()->SetMaxSize(wxDefaultSize);
-          } */
+            auto current_size = control()->GetMinSize();
+            if (current_size.GetWidth() > wxDefaultSize.GetWidth() || current_size.GetHeight() > wxDefaultSize.GetHeight()) {
+              control()->SetMinSize(wxDefaultSize);
+              control()->SetMaxSize(wxDefaultSize);
+            } else {
+              control()->SetMaxSize(wxDefaultSize);
+              control()->SetMinSize(wxDefaultSize);
+            }
+          }
           #endif
           control_handler::SetSize(width, height);
           #if defined(__APPLE__)
-          /*
           if (fixed) {
-            control()->SetMinSize(wxSize(width, height));
-            control()->SetMaxSize(wxSize(width, height));
+            auto current_size = control()->GetMinSize();
+            if (current_size.GetWidth() > width || current_size.GetHeight() > height) {
+              control()->SetMinSize(wxSize(width, height));
+              control()->SetMaxSize(wxSize(width, height));
+            } else {
+              control()->SetMaxSize(wxSize(width, height));
+              control()->SetMinSize(wxSize(width, height));
+            }
             previous_size = wxSize(width, height);
-          } */
+          }
           #endif
         }
         
@@ -275,9 +311,9 @@ namespace xtd {
         wxPoint location_;
         inline static const wxPoint invalid_location {-100000, -100000};
         #elif defined(__APPLE__)
-        //bool fixed = false;
+        bool fixed = false;
         wxSize previous_size = wxDefaultSize;
-        //bool is_maximize_or_fullscreen = false;
+        bool is_maximize_or_fullscreen = false;
         #endif
       };
     }
