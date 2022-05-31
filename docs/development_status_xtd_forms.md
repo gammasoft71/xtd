@@ -302,7 +302,7 @@
 | [toggle_button](../src/xtd.forms/include/xtd/forms/toggle_button.h)                                                           | class        | ![progress](pictures/progress100.png) |
 | [toggle_button_renderer](../src/xtd.forms/include/xtd/forms/toggle_button_renderer.h)                                         | static class | ![progress](pictures/progress100.png) |
 | [toggle_buttons](../src/xtd.forms/include/xtd/forms/toggle_buttons.h)                                                         | static class | ![progress](pictures/progress100.png) |
-| [tool_bar](../src/xtd.forms/include/xtd/forms/tool_bar.h)                                                                     | class        | ![progress](pictures/progress50.png)  |
+| [tool_bar](../src/xtd.forms/include/xtd/forms/tool_bar.h)                                                                     | class        | ![progress](pictures/progress100.png) |
 | [tool_bar_images](../src/xtd.forms/include/xtd/forms/tool_bar_images.h)                                                       | static class | ![progress](pictures/progress100.png) |
 | [tool_strip](../src/xtd.forms/include/xtd/forms/tool_strip.h)                                                                 | class        | ![progress](pictures/progress0.png)   |
 | [tool_strip_container](../src/xtd.forms/include/xtd/forms/tool_strip_container.h)                                             | class        | ![progress](pictures/progress0.png)   |
