@@ -181,21 +181,21 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      /// @brief Initializes a new instance of the control class with default settings.
-      /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
+      /// @brief Initializes a new instance of the xtd::forms::control class with default settings.
+      /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       control();
-      /// @brief Initializes a new instance of the control class with specific text.
+      /// @brief Initializes a new instance of the xtd::forms::control class with specific text.
       /// @param text The text displayed by the control.
-      /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
-      /// @remarks This version of the control constructor sets the initial text property value to the text parameter value.
+      /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
+      /// @remarks This version of the xtd::forms::control constructor sets the initial xtd::forms::control::text property value to the text parameter value.
       explicit control(const xtd::ustring& text) : control() {
         this->text(text);
       }
-      /// @brief Initializes a new instance of the control class as a child control, with specific text.
+      /// @brief Initializes a new instance of the xtd::forms::control class as a child control, with specific text.
       /// @param parent The control to be the parent of the control.
       /// @param text The text displayed by the control.
-      /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
-      /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection.
+      /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
+      /// @remarks This version of the control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection.
       explicit control(const control& parent, const xtd::ustring& text) : control() {
         this->parent(parent);
         this->text(text);
@@ -207,7 +207,7 @@ namespace xtd {
       /// @param width The width of the control, in pixels. The value is assigned to the width property.
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
-      /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The initial size and location of the control are determined by the left, top, width and height parameter values.
+      /// @remarks This version of the control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The initial xtd::forms::control::size and xtd::forms::control::location of the control are determined by the left, top, width and height parameter values.
       explicit control(const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->text(text);
         this->left(left);
@@ -215,15 +215,15 @@ namespace xtd {
         this->width(width);
         this->height(height);
       }
-      /// @brief Initializes a new instance of the control class as a child control, with specific text, size, and location.
+      /// @brief Initializes a new instance of the xtd::forms::control class as a child control, with specific text, size, and location.
       /// @param parent The control to be the parent of the control.
       /// @param text The text displayed by the control.
-      /// @param left The x position of the control, in pixels, from the left edge of the control's container. The value is assigned to the left property.
-      /// @param top The y position of the control, in pixels, from the top edge of the control's container. The value is assigned to the top property.
-      /// @param width The width of the control, in pixels. The value is assigned to the width property.
-      /// @param height The height of the control, in pixels. The value is assigned to the height property.
-      /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
-      /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection. The initial size and location of the control are determined by the left, top, width and height parameter values.
+      /// @param left The x position of the control, in pixels, from the left edge of the control's container. The value is assigned to the xtd::forms::control::left property.
+      /// @param top The y position of the control, in pixels, from the top edge of the control's container. The value is assigned to the xtd::forms::control::top property.
+      /// @param width The width of the control, in pixels. The value is assigned to the xtd::forms::control::width property.
+      /// @param height The height of the control, in pixels. The value is assigned to the xtd::forms::control::height property.
+      /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
+      /// @remarks This version of the xtd::forms::control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The constructor also adds the control to the xtd::forms::control::parent control's control::control_collection. The initial xtd::forms::control::size and xtd::forms::control::location of the control are determined by the left, top, width and height parameter values.
       explicit control(const control& parent, const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->parent(parent);
         this->text(text);
@@ -244,26 +244,26 @@ namespace xtd {
       
       /// @{
       /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
-      /// @return A bitwise combination of the anchor_styles values. The default is top and left.
-      /// @remarks Use the anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
-      /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose anchor property value is set to top and bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
-      /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
+      /// @return A bitwise combination of the xtd::forms::anchor_styles values. The default is xtd::forms::anchor_styles::top and xtd::forms::anchor_styles::left.
+      /// @remarks Use the xtd::forms::control::anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
+      /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose xtd::forms::control::anchor property value is set to xtd::forms::canchor_styles::top and xtd::forms::anchor_styles::bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
+      /// @note The xtd::forms::control::anchor and xtd::forms::control::dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
       /// @par Notes to Inheritors
-      /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
+      /// When overriding the xtd::forms::control::anchor property in a derived class, use the base class's xtd::forms::control::anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::anchor property; you can override only one if needed.
       virtual anchor_styles anchor() const;
       /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
-      /// @param anchor A bitwise combination of the anchor_styles values. The default is top and left.
+      /// @param anchor A bitwise combination of the xtd::forms::anchor_styles values. The default is xtd::forms::anchor_styles::top and xtd::forms::anchor_styles::left.
       /// @return Current control.
-      /// @remarks Use the anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
-      /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose anchor property value is set to top and bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
-      /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
-      /// @warning Set the xtd::forms::control::anchor property after setting the location and size.
+      /// @remarks Use the xtd::forms::control::anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
+      /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose xtd::forms::control::anchor property value is set to xtd::forms::anchor_styles::top and xtd::forms::anchor_styles::bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
+      /// @note The xtd::forms::control::anchor and xtd::forms::control::dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
+      /// @warning Set the xtd::forms::control::anchor property after setting the xtd::forms::control::location and xtd::forms::control::size.
       /// @par Notes to Inheritors
       /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
       virtual control& anchor(anchor_styles anchor);
       
       /// @brief Gets where this control is scrolled to in scroll_control_into_view(control).
-      /// @return A point specifying the scroll location. The default is the upper-left corner of the control.
+      /// @return A xtd::drawing::point specifying the scroll location. The default is the upper-left corner of the control.
       virtual drawing::point auto_scroll_point() const;
       
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
@@ -277,17 +277,17 @@ namespace xtd {
       virtual control& auto_size(bool auto_size);
       
       /// @brief Gets the background color for the control.
-      /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
-      /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
-      /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
+      /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
+      /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to true.
+      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default.
       virtual drawing::color back_color() const;
       /// @brief Sets the background color for the control.
-      /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
+      /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
       /// @return Current control.
-      /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
-      /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
+      /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to true.
+      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default.
       /// @par Notes to Inheritors
-      /// When overriding the back_color property in a derived class, use the base class's back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the back_color property; you can override only one if needed.
+      /// When overriding the xtd::forms::control::back_color property in a derived class, use the base class's xtd::forms::control::back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::back_color property; you can override only one if needed.
       virtual control& back_color(const drawing::color& color);
       /// @cond
       virtual control& back_color(std::nullptr_t);
