@@ -64,6 +64,8 @@ add_sources(
   include/xtd/forms/native/menu_item_kind.h
   include/xtd/forms/native/message_box.h
   include/xtd/forms/native/message_box_styles.h
+  include/xtd/forms/native/message_notifier.h
+  include/xtd/forms/native/message_notifier_styles.h
   include/xtd/forms/native/month_calendar.h
   include/xtd/forms/native/month_calendar_styles.h
   include/xtd/forms/native/mouse_key.h

@@ -101,6 +101,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/menu.cpp
   src/xtd/forms/native/wxwidgets/menu_item.cpp
   src/xtd/forms/native/wxwidgets/message_box.cpp
+  src/xtd/forms/native/wxwidgets/message_notifier.cpp
   src/xtd/forms/native/wxwidgets/month_calendar.cpp
   src/xtd/forms/native/wxwidgets/numeric_up_down.cpp
   src/xtd/forms/native/wxwidgets/panel.cpp
