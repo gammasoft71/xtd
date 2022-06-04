@@ -123,19 +123,21 @@ namespace examples {
        btn.parent(*this)
           .text("notify")
           .size({200, 35})
-          .click += [] {
+          .click += [&] {
             message_notifier notifier;
-            notifier.title("Title...")
-                    .message("message...")
-                    .icon(message_notifier_icon::information)
-                    .buttons(message_notifier_buttons::yes_no_cancel)
-                    .notifier_closed += [&](object&, const notifier_closed_event_args& e) {
-                      if (e.notifier_result() == notifier_result::ok) // or: if (notifier.notifier_result() == notifier_result::ok)
-                         diagnostics::debug::write_line("notifier closed: action ok");
+            notifier.title("Title...");
+            notifier.message("message...");
+            notifier.notifier_icon(message_notifier_icon::warning);
+            notifier.buttons(message_notifier_buttons::yes_no_cancel);
+            notifier.close_timeout_enabled(true);
+            notifier.close_timeout_interval(std::chrono::seconds(10) + std::chrono::milliseconds(300));
 
-                    };
-            notifier_result res = notifier.show();
-            diagnostics::debug::write_line("notifier result: {}", res);
+            notifier.notifier_closed += [&](object&, const notifier_closed_event_args& e) {
+                //if (e.notifier_result() == notifier_result::ok) // or: if (notifier.notifier_result() == notifier_result::ok)
+                diagnostics::debug::write_line("notifier closed");
+
+            };
+            notifier.show(*this);
           };
 
      }
@@ -146,5 +148,5 @@ namespace examples {
 }
 
 int main() {
-    application::run(examples::form2());
+  application::run(examples::form2());
 }
