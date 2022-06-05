@@ -125,12 +125,13 @@ namespace examples {
           .size({200, 35})
           .click += [&] {
             message_notifier notifier;
-            notifier.title("Title...");
-            notifier.message("message...");
-            notifier.notifier_icon(message_notifier_icon::warning);
+            notifier.title("This is a notification title");
+            notifier.message("Where this is the notification message, which can be longer than the title sometimes.");
+            notifier.icon(xtd::drawing::system_icons::xtd_logo());
+            //notifier.notifier_icon(message_notifier_icon::warning);
             notifier.buttons(message_notifier_buttons::yes_no_cancel);
             notifier.close_timeout_enabled(true);
-            notifier.close_timeout_interval(std::chrono::seconds(10) + std::chrono::milliseconds(300));
+            notifier.close_timeout_interval(std::chrono::seconds(2) + std::chrono::milliseconds(1000));
 
             notifier.notifier_closed += [&](object&, const notifier_closed_event_args& e) {
                 //if (e.notifier_result() == notifier_result::ok) // or: if (notifier.notifier_result() == notifier_result::ok)
