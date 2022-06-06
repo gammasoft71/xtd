@@ -4,9 +4,9 @@ This code example shows how to use [xtd::diagnostics::process_start_info](../../
 
 # Sources
 
-[CMakeLists.txt](CMakeLists.txt)
-
 [src/start_args_echo.cpp](src/start_args_echo.cpp)
+
+[CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
