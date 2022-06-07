@@ -1,4 +1,4 @@
-# Common controls examples
+# Controls examples
 
 [This folder](.) contains common controls examples.
 
