@@ -1,4 +1,4 @@
-# Control containers examples
+# Containers examples
 
 [This folder](.) contains containers examples.
 
