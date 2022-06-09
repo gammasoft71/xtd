@@ -2,7 +2,7 @@
 
 # Hello World
 
-First, download and install the [xtd](downloads.md) on your computer.
+First, [download and install](downloads.md) the [xtd](home.md) on your computer.
 
 Next, open a terminal, Command Prompt, or bash. Enter the following xtdc commands to create and run an xtd application:
 
