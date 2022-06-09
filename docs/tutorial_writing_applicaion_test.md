@@ -36,7 +36,7 @@ namespace unit_tests {
 }
 
 
-int main(int argc, char* argv[]) {
+int main() {
   return console_unit_test().run();
 }
 ```
@@ -58,7 +58,7 @@ namespace unit_tests {
 }
 
 
-int main(int argc, char* argv[]) {
+int main() {
   return xtd::tunit::console_unit_test().run();
 }
 ```
