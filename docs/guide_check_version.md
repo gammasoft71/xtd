@@ -18,7 +18,7 @@ You get output similar to the following.
 xtdc version 0.2.0, © 2022 by Gammasoft
 ```
 
-The xtdc version corresponds to the xtd version.
+The [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) version corresponds to the xtd version.
 
 # More information
 
