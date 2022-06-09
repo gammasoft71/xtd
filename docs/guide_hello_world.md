@@ -4,7 +4,7 @@
 
 First, [download and install](downloads.md) the [xtd](home.md) on your computer.
 
-Next, open a terminal, Command Prompt, or bash. Enter the following xtdc commands to create and run an xtd application:
+Next, open a terminal, Command Prompt, or bash. Enter the following [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) commands to create and run an [xtd](home.md) application:
 
 ```shell
 xtdc new console sample1
