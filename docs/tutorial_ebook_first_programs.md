@@ -64,7 +64,7 @@ See [cmake](htps:\\cmake.org) for more information.
 
 ![Screenshot](pictures/examples/tutorial/simple.png)
 
-Figure: simple
+*Figure: simple*
 
 ## Application icon
 
@@ -101,7 +101,7 @@ To display an application icon is a matter of one code line.
 
 ![Screenshot](pictures/examples/tutorial/icon.png)
 
-Figure: icon
+*Figure: icon*
 
 ## A simple button
 
@@ -178,7 +178,7 @@ Inside the ***on_quit()*** method, we call the ***close()*** method. This will c
 
 ![Screenshot](pictures/examples/tutorial/button.png)
 
-Figure: button
+*Figure: button*
 
 ## Controls communicate
 
