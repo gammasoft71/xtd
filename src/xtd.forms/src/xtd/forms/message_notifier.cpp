@@ -123,6 +123,16 @@ namespace {
     vertical_layout_panel v_layout_title_message_;
     vertical_layout_panel v_layout_buttons_;
     std::vector<button> buttons;
+    /*
+            Standard Notification
+                                           (X)
+     ________________________________________
+    |          |                    | BUTTON1 |
+    |          |   label title      | BUTTON2 |
+    |   icon   | ------------------ | BUTTON3 |
+    |          |   label message    | BUTTON4 |
+    |__________|____________________|_________|
+    */
   };
 }
 
