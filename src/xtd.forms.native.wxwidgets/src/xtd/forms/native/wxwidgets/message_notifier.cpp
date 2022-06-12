@@ -10,7 +10,6 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-#include <xtd/diagnostics/debug.h>
 
 //int32_t convert_to_buttons(uint32_t style){
 //    switch(style)
@@ -26,45 +25,40 @@ int32_t convert_to_icon(uint32_t style) {
     return wxICON_NONE;
 }
 
-void message_notifier::show(intptr control, const xtd::ustring& title,
+
+void message_notifier::show(intptr_t hwnd, const xtd::ustring& title,
                  const xtd::ustring& message,
                  const xtd::drawing::icon& icon,
-                 uint32_t style, // contains (buttons + icon) styles.
+                 uint32_t style,
                  bool close_timeout_enabled_,
                  std::chrono::system_clock::duration close_timeout_interval,
-                 xtd::delegate<void()> on_notifier_closed)
-{
-    if (!wxTheApp) throw argument_exception(csf_);
+                 xtd::delegate<void()> on_notifier_closed) {
 
-   wxNotificationMessage notifmsg;
-   notifmsg.SetParent(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control());
-   notifmsg.SetTitle(convert_string::to_wstring(title));
-   notifmsg.SetMessage(convert_string::to_wstring(message));
+   if (!wxTheApp) throw argument_exception(csf_);
+   auto notifmsg = std::make_unique<wxNotificationMessage>();
+   notifmsg->SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
+   notifmsg->SetTitle(convert_string::to_wstring(title));
+   notifmsg->SetMessage(convert_string::to_wstring(message));
    if(icon != xtd::drawing::icon::empty)
-      notifmsg.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
+      notifmsg->SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
    else
-      notifmsg.SetFlags(convert_to_icon(style));
+      notifmsg->SetFlags(convert_to_icon(style));
 
     // Events
-   notifmsg.Bind(wxEVT_NOTIFICATION_MESSAGE_DISMISSED, [on_notifier_closed](wxCommandEvent& event) {
-       xtd::diagnostics::debug::write_line("wxEVT_NOTIFICATION_MESSAGE_DISMISSED");
+   notifmsg->Bind(wxEVT_NOTIFICATION_MESSAGE_DISMISSED, [on_notifier_closed](wxCommandEvent& event) {
        on_notifier_closed();
        event.Skip();
     });
-//   notifmsg.Bind(wxEVT_NOTIFICATION_MESSAGE_CLICK, [on_notifier_clicked](wxCommandEvent& event) {
-//       xtd::diagnostics::debug::write_line("wxEVT_NOTIFICATION_MESSAGE_CLICK");
-//       on_notifier_clicked();
+//   notifmsg->Bind(wxEVT_NOTIFICATION_MESSAGE_CLICK, [on_notifier_closed](wxCommandEvent& event) {
+//       on_notifier_closed();
 //       event.Skip();
 //    });
-//   notifmsg.Bind(wxEVT_NOTIFICATION_MESSAGE_ACTION, [on_notifier_closed](wxCommandEvent& event) {
-//       xtd::diagnostics::debug::write_line("wxEVT_NOTIFICATION_MESSAGE_ACTION");
-//       on_notifier_action(event.GetId());
+//   notifmsg->Bind(wxEVT_NOTIFICATION_MESSAGE_ACTION, [on_notifier_closed](wxCommandEvent& event) {
+//       on_notifier_closed(/*event.GetId()*/);
 //       event.Skip();
 //    });
 
-   notifmsg.Show(close_timeout_enabled_ ? static_cast<int32_t>(std::chrono::duration_cast<std::chrono::seconds>(close_timeout_interval).count()) : static_cast<int32_t>(wxNotificationMessage::Timeout_Never)); // Timeout_Never notification will never timeout
-
-   // TODO: Problem -> Since system notifications are detached from app main thread,
-   // the notification message bindings get unbound after this scope exit, which makes
-   // the callback on_notifier_closed never be called.
+   notifmsg->Show(close_timeout_enabled_ ? static_cast<int32_t>(std::chrono::duration_cast<std::chrono::seconds>(close_timeout_interval).count()) : static_cast<int32_t>(wxNotificationMessage::Timeout_Never));
 }
+
+
