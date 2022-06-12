@@ -48,5 +48,5 @@ void about_dialog::show(intptr_t hwnd, const xtd::drawing::icon& icon, const ust
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
-  wxAboutBox(about_info);
+  wxAboutBox(about_info, hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
 }
