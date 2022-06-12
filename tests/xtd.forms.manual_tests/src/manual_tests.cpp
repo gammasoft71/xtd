@@ -120,11 +120,13 @@ namespace examples {
      form2() {
        text("Message notifier example");
        client_size({350, 200});
+       start_position(form_start_position::center_screen);
        btn.parent(*this)
           .text("notify")
           .size({200, 35})
           .click += [&] {
             message_notifier notifier;
+            notifier.notifier_style(xtd::forms::notifier_style::standard);
             notifier.title("This is a notification title");
             notifier.message("Where this is the notification message, which can be longer than the title sometimes.");
             notifier.icon(xtd::drawing::system_icons::xtd_logo());
@@ -136,15 +138,13 @@ namespace examples {
             notifier.notifier_closed += [&](object&, const notifier_closed_event_args& e) {
                 //if (e.notifier_result() == notifier_result::ok) // or: if (notifier.notifier_result() == notifier_result::ok)
                 diagnostics::debug::write_line("notifier closed");
-
             };
-            notifier.show(*this);
+            notifier.show();
           };
 
      }
   private:
     button btn;
-
   };
 }
 

@@ -10,6 +10,7 @@
 #include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 #include <xtd/drawing/icon.h>
+#include <xtd/guid.h>
 #include <chrono>
 // TODO: Documentation
 
@@ -21,8 +22,8 @@ namespace xtd {
       class forms_native_export_ message_notifier final static_ {
         friend xtd::forms::message_notifier;
       protected:
-
-        static void show(intptr control,
+        /// @param hwnd Parent window handle.
+        static void show(intptr_t hwnd,
                          const xtd::ustring& title,
                          const xtd::ustring& message,
                          const xtd::drawing::icon& icon,
@@ -30,6 +31,7 @@ namespace xtd {
                          bool close_timeout_enabled_,
                          std::chrono::system_clock::duration close_timeout_interval,
                          xtd::delegate<void()> on_notifier_closed);
+
 
 
 

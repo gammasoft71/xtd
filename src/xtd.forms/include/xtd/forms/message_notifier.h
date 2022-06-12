@@ -41,8 +41,8 @@ namespace xtd {
       xtd::ustring message() const { return message_; }
       message_notifier& message(const xtd::ustring& message) { message_ = message; return *this; }
 
-      const xtd::drawing::icon& icon() const { return icon_; }
-      message_notifier& icon(const xtd::drawing::icon& icon) {icon_ = icon; return *this; }
+      const xtd::drawing::image& icon() const { return icon_; }
+      message_notifier& icon(const xtd::drawing::icon& icon) {icon_ = icon.to_bitmap(); return *this; }
       xtd::forms::message_notifier_icon notifier_icon() const { return notifier_icon_; }
       message_notifier& notifier_icon(xtd::forms::message_notifier_icon icon) {notifier_icon_ = icon; return *this; }
 
@@ -60,6 +60,9 @@ namespace xtd {
 
       xtd::forms::notifier_result notifier_result() const { return result_; }
 
+      void reset();
+
+      void show();
       void show(const iwin32_window& owner);
 
     public: /** Events */
@@ -74,7 +77,7 @@ namespace xtd {
     private:
       xtd::ustring title_;
       xtd::ustring message_;
-      xtd::drawing::icon icon_ = xtd::drawing::icon::empty;
+      xtd::drawing::image icon_ = xtd::drawing::image::empty;
       xtd::forms::message_notifier_icon notifier_icon_ = xtd::forms::message_notifier_icon::none;
       xtd::forms::message_notifier_buttons buttons_ = xtd::forms::message_notifier_buttons::none;
       bool close_timeout_enabled_ = false;
