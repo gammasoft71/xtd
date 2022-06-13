@@ -33,10 +33,10 @@ namespace xtd {
   /// @ingroup xtd_core system system_information
   class core_export_ environment final static_ {
   public:
-    /// @enum special_folder
+    /// @enum xtd::environment::special_folder
     /// @brief Specifies enumerated constants used to retrieve directory paths to system special folders.
     /// @remarks The system special folders are folders such as Program Files, Programs, System, or Startup, which contain common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
-    /// @remarks The get_folder_path method returns the locations associated with this enumeration. The locations of these folders can have different values on different operating systems, the user can change some of the locations, and the locations are localized.
+    /// @remarks The xtd::environment::get_folder_path method returns the locations associated with this enumeration. The locations of these folders can have different values on different operating systems, the user can change some of the locations, and the locations are localized.
     /// @remarks For more information about special folders, see the KNOWNFOLDERID constants in the Windows documentation.
     /// @remarks The list below typically represents special folders by OS :
     /// | Name                     | android                    | iOS                              | Linux                      | macOS                            | Windows                                                                                              |
@@ -190,7 +190,7 @@ namespace xtd {
     };
     
     /// @brief Specifies options to use for getting the path to a special folder.
-    /// @remarks The System.Environment.SpecialFolderOption enumeration is used to define the precise behavior of the Environment.GetFolderPath method.
+    /// @remarks The xtd::environment::specia_folder_option enumeration is used to define the precise behavior of the xtd::environment::get_folder_path method.
     enum class special_folder_option {
       /// @brief The path to the folder is verified. If the folder exists, the path is returned. If the folder does not exist, an empty string is returned. This is the default behavior.
       none = 0,
@@ -217,7 +217,7 @@ namespace xtd {
       return compiler;
     }
     
-    /// @brief Gets an xtd::cpp_standard object that contains the current c++ standard identifier and version number.
+    /// @brief Gets an xtd::cpp_version object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
     static xtd::cpp_language cpp_version() {
       static xtd::cpp_language cpp_language;
