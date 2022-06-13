@@ -190,7 +190,7 @@ namespace xtd {
     };
     
     /// @brief Specifies options to use for getting the path to a special folder.
-    /// @remarks The xtd::environment::specia_folder_option enumeration is used to define the precise behavior of the xtd::environment::get_folder_path method.
+    /// @remarks The xtd::environment::special_folder_option enumeration is used to define the precise behavior of the xtd::environment::get_folder_path method.
     enum class special_folder_option {
       /// @brief The path to the folder is verified. If the folder exists, the path is returned. If the folder does not exist, an empty string is returned. This is the default behavior.
       none = 0,
