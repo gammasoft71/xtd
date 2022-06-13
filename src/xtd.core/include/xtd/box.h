@@ -512,8 +512,7 @@ namespace xtd {
   /// wchar_t unboxed_object = L'a';
   /// wchar_object boxed_object = unboxed_object;
   /// auto result = stringer(boxed_object);
-  /// console::write_line("result = {}", r
-  /// esult); // Display: result = a;
+  /// console::write_line("result = {}", result); // Display: result = a;
   /// @endcode
   using wchar_object = box_integer<wchar_t>;
   
