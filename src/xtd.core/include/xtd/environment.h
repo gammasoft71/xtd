@@ -206,18 +206,18 @@ namespace xtd {
     /// @brief Gets the command line for this process.
     /// @return A string containing command-line arguments.
     /// @remarks This method provides access to the program name and any arguments specified on the command line when the current process was started.
-    /// @remarks The program name can include path information, but is not required to do so. Use the get_command_line_args method to retrieve the command-line information parsed and stored in an array of strings.
+    /// @remarks The program name can include path information, but is not required to do so. Use the xtd::environment::get_command_line_args method to retrieve the command-line information parsed and stored in an array of strings.
     /// @remarks The maximum size of the command-line buffer is not set to a specific number of characters; it varies depending on the operating system that is running on the computer.
     static xtd::ustring command_line() {return xtd::ustring::join(" ", get_command_line_args());}
     
-    /// @brief Gets an cpp_standard object that contains the current c++ standard identifier and version number.
-    /// @return An object that contains the c++ standard identifier and version number.
+    /// @brief Gets an xtd::compiler object that contains the current compiler identifier.
+    /// @return An object that contains the compiler identifier.
     static xtd::compiler compiler_version() {
       static xtd::compiler compiler;
       return compiler;
     }
     
-    /// @brief Gets an cpp_standard object that contains the current c++ standard identifier and version number.
+    /// @brief Gets an xtd::cpp_standard object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
     static xtd::cpp_language cpp_version() {
       static xtd::cpp_language cpp_language;
@@ -245,13 +245,13 @@ namespace xtd {
     /// @brief Gets the exit code of the process.
     /// @return A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
-    /// @warning The exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
+    /// @warning The xtd::environment::exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
     static int exit_code();
     /// @brief Sets the exit code of the process.
     /// @param value A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
-    /// @warning The exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
+    /// @warning The xtd::environment::exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
     static void exit_code(int value);
     
@@ -282,7 +282,7 @@ namespace xtd {
       return os;
     }
     
-    /// @brief Gets an operating_system object that contains the current platform identifier and version number.
+    /// @brief Gets an xtd::operating_system object that contains the current platform identifier and version number.
     /// @return An object that contains the platform identifier and version number.
     static xtd::operating_system os_version();
     
@@ -290,8 +290,8 @@ namespace xtd {
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
     static uint32_t processor_count() {return processor_information().core_count();}
     
-    /// @brief Gets an operating_system object that contains the current platform identifier and version number.
-    /// @return An object that contains the platform identifier and version number.
+    /// @brief Gets an xtd::processor object that contains the processor identifier.
+    /// @return An object that contains the procesor identifier.
     static xtd::processor processor_information();
     
     /// @brief Gets current stack trace information.
@@ -337,7 +337,7 @@ namespace xtd {
     
     /// @{
     /// @brief Terminates this process and returns an exit code to the operating system.
-    /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
+    /// @param xtd::environment::exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
     /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
     static void exit(int exit_code) {::_Exit(exit_code);}
     
@@ -379,14 +379,14 @@ namespace xtd {
     /// | MyApp 'alpha with spaces' beta               | MyApp, 'alpha, with, spaces', beta         |
     /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
-    /// @remarks To obtain the command line as a single string, use the command_line method.
+    /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
     static xtd::collections::specialized::string_vector get_command_line_args();
     
     /// @brief Retrieves the value of an environment variable from the current process.
     /// @param variable The name of the environment variable.
     /// @return xtd::ustring The value of the environment variable specified by variable, or empty "" if the environment variable is not found.
-    /// @remarks The get_environment_variable(xtd::ustring) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the get_environment_variable(xtd::ustring, xtd::environment_variable_target) method with a target value of xtd::environment_variable_target.process.
-    /// @remarks To retrieve all environment variables along with their values, call the get_environment_variables method.
+    /// @remarks The get_environment_variable(xtd::ustring) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the xtd::environment::get_environment_variable(xtd::ustring, xtd::environment_variable_target) method with a target value of xtd::environment_variable_target::process.
+    /// @remarks To retrieve all environment variables along with their values, call the xtd::environment::get_environment_variables method.
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
     static xtd::ustring get_environment_variable(const xtd::ustring& variable) {return get_environment_variable(variable, environment_variable_target::process);}
     
@@ -395,7 +395,7 @@ namespace xtd {
     /// @param target One of the EnvironmentVariableTarget values.
     /// @exception std::invalid_argument target is not a valid environment_variable_target value.
     /// @return xtd::ustring The value of the environment variable specified by the variable and target parameters, or empty "" if the environment variable is not found.
-    /// @remarks To retrieve all environment variables along with their values, call the get_environment_variables method.
+    /// @remarks To retrieve all environment variables along with their values, call the xtd::environment::get_environment_variables method.
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
     /// @todo Add xtd::registry and uncomment lines.
     static xtd::ustring get_environment_variable(const xtd::ustring& variable, environment_variable_target target);
@@ -435,7 +435,7 @@ namespace xtd {
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.
     /// @param value A value to assign to variable.
-    /// @remarks Calling this method is equivalent to calling the set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) overload with a value of environment_variable_target::process for the target argument.
+    /// @remarks Calling this method is equivalent to calling the xtd::environment::set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) overload with a value of xtd::environment_variable_target::process for the target argument.
     /// @remarks If the value argument is not empty and the environment variable named by the variable parameter does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified. Because the environment variable is defined in the environment block of the current process only, it does not persist after the process has ended.
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value) {
@@ -445,8 +445,8 @@ namespace xtd {
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process or in the Windows operating system registry key reserved for the current user or local machine.
     /// @param variable The name of an environment variable.
     /// @param value A value to assign to variable.
-    /// @remarks The set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) method lets you define an environment variable that is available to the current process (the environment_variable_target::process value). Environment variables that are unique to the current process environment block persist only until the process ends.
-    /// @remarks In addition, on Windows systems only, the set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) method lets you define an environment variable that is available to all processes that run on a machine (the environment_variable_target::machine value) and to all processes run by a user (the environment_variable_target::user value). Per-machine and per-user environment variables are copied into the environment block of the current process.
+    /// @remarks The xtd::environment::set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) method lets you define an environment variable that is available to the current process (the xtd::environment_variable_target::process value). Environment variables that are unique to the current process environment block persist only until the process ends.
+    /// @remarks In addition, on Windows systems only, the xtd::environment::set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) method lets you define an environment variable that is available to all processes that run on a machine (the xtd::environment_variable_target::machine value) and to all processes run by a user (the xtd::environment_variable_target::user value). Per-machine and per-user environment variables are copied into the environment block of the current process.
     /// @remarks If the value argument is not empty and the environment variable named by the variable argument does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified.
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
