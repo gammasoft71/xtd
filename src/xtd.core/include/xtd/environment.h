@@ -210,14 +210,14 @@ namespace xtd {
     /// @remarks The maximum size of the command-line buffer is not set to a specific number of characters; it varies depending on the operating system that is running on the computer.
     static xtd::ustring command_line() {return xtd::ustring::join(" ", get_command_line_args());}
     
-    /// @brief Gets an xtd::compiler object that contains the current compiler identifier.
-    /// @return An object that contains the compiler identifier.
+    /// @brief Gets an xtd::compiler object that contains the current compiler identifier and version number.
+    /// @return An object that contains the compiler identifier and version number.
     static xtd::compiler compiler_version() {
       static xtd::compiler compiler;
       return compiler;
     }
     
-    /// @brief Gets an xtd::cpp_version object that contains the current c++ standard identifier and version number.
+    /// @brief Gets an xtd::cpp_language object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
     static xtd::cpp_language cpp_version() {
       static xtd::cpp_language cpp_language;
