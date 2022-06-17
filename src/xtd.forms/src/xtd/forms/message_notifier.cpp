@@ -23,7 +23,12 @@ using namespace xtd::forms;
    //- Callbacks
    //- Start position to be bottom/top right
    //- Fix issue when notification message is too long, layouts intersect
+   //- Adapt changes to both show(hwnd) and show()
+   //- fix (xtd.forms.manual_tests:32885): Gtk-CRITICAL **: 14:30:31.503: gtk_window_resize: assertion 'height > 0' failed
+
 #include <xtd/drawing/system_colors.h>
+#include <xtd/diagnostics/debug.h>
+
 namespace {
 class message_notifier_standard : public form {
 public:
@@ -51,7 +56,8 @@ public:
 
 //      picture_box_icon_.back_color(xtd::drawing::system_colors::accent().blue);
 //      v_layout_title_message_.back_color(xtd::drawing::system_colors::accent().green);
-//      v_layout_buttons_.back_color(xtd::drawing::system_colors::accent().orange);
+      v_layout_buttons_.back_color(xtd::drawing::system_colors::accent().orange);
+      close_button_.back_color(xtd::drawing::system_colors::accent().cyan);
 
       picture_box_icon_.height(64);
       picture_box_icon_.size_mode(picture_box_size_mode::center_image);
@@ -63,7 +69,6 @@ public:
       v_layout_title_message_.controls().push_back_range({label_title_, label_message_});
       v_layout_title_message_.control_layout_style(label_title_, {.40f, size_type::percent, true});
       v_layout_title_message_.control_layout_style(label_message_, {.60f, size_type::percent, true});
-     // v_layout_title_message_.auto_size_mode(auto_size_mode::grow_and_shrink);
       v_layout_title_message_.border_style(border_style::none);
       v_layout_title_message_.dock(dock_style::fill);
 
@@ -83,34 +88,37 @@ public:
       v_layout_buttons_.border_style(border_style::none);
       v_layout_buttons_.padding(forms::padding(2));
       v_layout_buttons_.dock(dock_style::fill);
-      v_layout_buttons_.anchor(anchor_styles::right);
+      //v_layout_buttons_.anchor(anchor_styles::right);
 
-//      close_button_.parent(v_layout_buttons_);
-//      close_button_.dock(dock_style::right);
-//      close_button_.size({16,16});
-//      close_button_.size_mode(picture_box_size_mode::center_image);
-//      close_button_.margin(forms::padding(0));
-//      close_button_.padding(forms::padding(0));
-//      close_button_.image(xtd::drawing::system_images::from_name("dialog-cancel", xtd::drawing::size(16, 16)));
-//      close_button_.click += [&]{
-//         // TODO: onclose event with result none.
-
-//          form::close();
-//      };
-//      form::mouse_enter += [&]{
-//          close_button_.visible(true);
-//      };
-//      form::mouse_leave += [&]{
-//          close_button_.visible(false);
-//      };
+      close_button_.parent(v_layout_buttons_);
+      close_button_.dock(dock_style::right);
+      //close_button_.anchor(anchor_styles::right);
+      //close_button_.location({form::width() - 16, 0});
+      //close_button_.size({16,16});
+      //close_button_.anchor(anchor_styles::all);
+      close_button_.auto_size(true);
+      close_button_.size_mode(picture_box_size_mode::center_image);
+      //close_button_.margin(forms::padding());
+      close_button_.padding(forms::padding(5));
+      close_button_.image(xtd::drawing::system_images::from_name("dialog-cancel", xtd::drawing::size(16, 16)));
+      close_button_.click += [&] {
+          on_notifier_closed_(notifier_result::none);
+          form::close();
+      };
+      form::mouse_enter += [&] {
+          //close_button_.visible(true);
+      };
+      form::mouse_leave += [&] {
+          //close_button_.visible(false);
+      };
       switch(buttons) {
           case message_notifier_buttons::ok:
           {
               std::unique_ptr<button> ok_btn = std::make_unique<button>();
               ok_btn->parent(v_layout_buttons_).text("ok");
               ok_btn->click += [&] {
-                 //form::close();
-                  //on_notifier_closed_(notifier_result::ok);
+                  on_notifier_closed_(notifier_result::ok);
+                 form::close();
               };
               buttons_.push_back(std::move(ok_btn));
               break;
@@ -121,11 +129,13 @@ public:
               std::unique_ptr<button> cancel_btn = std::make_unique<button>();;
               ok_btn->parent(v_layout_buttons_).text("ok");
               ok_btn->click += [&] {
-
+                  on_notifier_closed_(notifier_result::ok);
+                  form::close();
               };
               cancel_btn->parent(v_layout_buttons_).text("cancel");
               cancel_btn->click += [&] {
-
+                  on_notifier_closed_(notifier_result::cancel);
+                  form::close();
               };
               buttons_.push_back(std::move(ok_btn));
               buttons_.push_back(std::move(cancel_btn));
@@ -137,11 +147,13 @@ public:
               std::unique_ptr<button> no_btn = std::make_unique<button>();
               yes_btn->parent(v_layout_buttons_).text("yes");
               yes_btn->click += [&] {
-
+                  on_notifier_closed_(notifier_result::yes);
+                  form::close();
               };
               no_btn->parent(v_layout_buttons_).text("no");
               no_btn->click += [&] {
-
+                  on_notifier_closed_(notifier_result::no);
+                  form::close();
               };
               buttons_.push_back(std::move(yes_btn));
               buttons_.push_back(std::move(no_btn));
@@ -154,15 +166,18 @@ public:
               std::unique_ptr<button> cancel_btn = std::make_unique<button>();
               yes_btn->parent(v_layout_buttons_).text("yes");
               yes_btn->click += [&] {
-
+                  on_notifier_closed_(notifier_result::yes);
+                  form::close();
               };
               no_btn->parent(v_layout_buttons_).text("no");
               no_btn->click += [&] {
-
+                   on_notifier_closed_(notifier_result::no);
+                   form::close();
               };
               cancel_btn->parent(v_layout_buttons_).text("cancel");
               cancel_btn->click += [&] {
-
+                   on_notifier_closed_(notifier_result::cancel);
+                   form::close();
               };
               buttons_.push_back(std::move(yes_btn));
               buttons_.push_back(std::move(no_btn));
@@ -175,11 +190,13 @@ public:
               std::unique_ptr<button> cancel_btn = std::make_unique<button>();
               retry_btn->parent(v_layout_buttons_).text("retry");
               retry_btn->click += [&] {
-
+                   on_notifier_closed_(notifier_result::retry);
+                   form::close();
               };
               cancel_btn->parent(v_layout_buttons_).text("cancel");
               cancel_btn->click += [&] {
-
+                   on_notifier_closed_(notifier_result::cancel);
+                   form::close();
               };
               buttons_.push_back(std::move(retry_btn));
               buttons_.push_back(std::move(cancel_btn));
@@ -192,15 +209,18 @@ public:
               std::unique_ptr<button> ignore_btn = std::make_unique<button>();
               abort_btn->parent(v_layout_buttons_).text("abort");
               abort_btn->click += [&] {
-
+                   on_notifier_closed_(notifier_result::abort);
+                   form::close();
               };
               retry_btn->parent(v_layout_buttons_).text("retry");
               retry_btn->click += [&] {
-
+                   on_notifier_closed_(notifier_result::retry);
+                   form::close();
               };
               ignore_btn->parent(v_layout_buttons_).text("ignore");
               ignore_btn->click += [&] {
-
+                   on_notifier_closed_(notifier_result::ignore);
+                   form::close();
               };
               buttons_.push_back(std::move(abort_btn));
               buttons_.push_back(std::move(retry_btn));
@@ -227,20 +247,18 @@ public:
                                     message_notifier_buttons buttons,
                                     bool close_timeout_enabled_,
                                     std::chrono::system_clock::duration close_timeout_interval,
-                                    xtd::delegate<void()> on_notifier_closed)
+                                    xtd::delegate<void(forms::notifier_result)> on_notifier_closed)
   {
       if (message_notifier != nullptr) {
-        message_notifier->activate();
-        return;
+        delete message_notifier;
       }
       message_notifier = new message_notifier_standard(buttons);
 
       // Icon
       if (icon != xtd::drawing::icon::empty)
         message_notifier->picture_box_icon_.image(xtd::drawing::bitmap(icon.to_bitmap(), {64, 64}));
-      else if(notifier_icon != message_notifier_icon::none)
-       {
-          switch(notifier_icon){
+      else if(notifier_icon != message_notifier_icon::none) {
+          switch(notifier_icon) {
           case message_notifier_icon::information:
               message_notifier->picture_box_icon_.image(xtd::drawing::system_images::from_name("dialog-information", xtd::drawing::size(64, 64)));
             break;
@@ -255,7 +273,7 @@ public:
           }
       }
       else
-          message_notifier->picture_box_icon_.size({0, 0}).visible(false);
+          message_notifier->picture_box_icon_.visible(false);
 
       // Title
       message_notifier->label_title_.text(title);
@@ -274,13 +292,15 @@ public:
   }
 
 private:
-  void on_form_closed(const form_closed_event_args& e) override {
-    form::on_form_closed(e);
-    message_notifier->on_notifier_closed_();
-    delete message_notifier;
-  }
+
+  // we dont need this if we're closing the window witha dialog-cancel icon
+//  void on_form_closed(const form_closed_event_args& e) override {
+//    form::on_form_closed(e);
+//    message_notifier->on_notifier_closed_(notifier_result::none);
+//    delete message_notifier;
+//  }
   inline static message_notifier_standard* message_notifier = nullptr;
-  xtd::delegate<void()> on_notifier_closed_;
+  xtd::delegate<void(notifier_result)> on_notifier_closed_;
   picture_box picture_box_icon_;
   label label_title_;
   label label_message_;
@@ -320,26 +340,39 @@ void message_notifier::reset()
 
 
 void message_notifier::show() {
-    auto notifier_closed_callback = xtd::delegate<void()>([this]()
-    {
-      this->on_notifier_closed(notifier_closed_event_args{});
-    });
+
 
     if (notifier_style_ == xtd::forms::notifier_style::system)
+    {
+        auto notifier_closed_callback = xtd::delegate<void()>([this]()
+        {
+          this->on_notifier_closed(notifier_closed_event_args{});
+        });
       native::message_notifier::show(0,
                                    title_,
                                    message_,
                                    xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)),
                                    static_cast<uint32_t>(notifier_icon_) + static_cast<uint32_t>(buttons_),
-                                   close_timeout_enabled_, close_timeout_interval_, notifier_closed_callback);
+                                   close_timeout_enabled_,
+                                   close_timeout_interval_,
+                                   notifier_closed_callback);
+
+    }
     else
+     {
         message_notifier_standard::show(0,
                                         title_,
                                         message_,
                                         xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)),
                                         notifier_icon_,
                                         buttons_,
-                                        close_timeout_enabled_, close_timeout_interval_, notifier_closed_callback);
+                                        close_timeout_enabled_,
+                                        close_timeout_interval_,
+                                        xtd::delegate<void(forms::notifier_result)>([this] (forms::notifier_result res)
+                                        {
+                                                on_notifier_closed(notifier_closed_event_args{ res });
+                                        }));
+    }
 }
 
 
