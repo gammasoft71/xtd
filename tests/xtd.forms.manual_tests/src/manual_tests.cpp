@@ -125,7 +125,7 @@ namespace examples {
           .text("notify")
           .size({200, 35})
           .click += [&] {
-            message_notifier notifier;
+            notifier.reset();
             notifier.notifier_style(notifier_style::standard);
             notifier.title("This is a notification title");
             notifier.message("Where this is the notification message");
@@ -136,15 +136,17 @@ namespace examples {
             notifier.close_timeout_interval(std::chrono::seconds(2) + std::chrono::milliseconds(1000));
 
             notifier.notifier_closed += [&](object&, const notifier_closed_event_args& e) {
+                diagnostics::debug::write_line("notifier closed => {}", e.notifier_result());
                 //if (e.notifier_result() == notifier_result::ok) // or: if (notifier.notifier_result() == notifier_result::ok)
-                diagnostics::debug::write_line("notifier closed");
             };
             notifier.show();
           };
 
      }
+
   private:
     button btn;
+    message_notifier notifier;
   };
 }
 
