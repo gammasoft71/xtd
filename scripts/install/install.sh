@@ -37,7 +37,7 @@ fi
 echo  "Using up to ${build_cores} build cores"
 
 # install needed packages and libraries for known distribution
-echo "install needed packages and libraries..."
+echo "Installing needed packages and libraries..."
 case "$OSTYPE" in
   *"Darwin"*) brew update; brew install cmake;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libgsound-dev libgtk-3-dev cmake -y;;
@@ -45,7 +45,7 @@ case "$OSTYPE" in
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install cmake gsound-devel gtk3-devel -y;;
 esac
 
-echo "dowload and install wxwidgets..."
+echo "Downloading and installing wxwidgets..."
 mkdir -p build/3rdparty/
 pushd build/3rdparty
 git clone https://github.com/wxwidgets/wxwidgets.git -b $WXWIDGETS_VERSION --depth 1
@@ -69,7 +69,7 @@ popd
 popd
 
 # generate, build and install xtd
-echo "install xtd..."
+echo "Installing xtd..."
 mkdir build
 pushd build
 mkdir Release && mkdir Debug
@@ -108,7 +108,7 @@ sudo cp build/Release/install_manifest.txt /usr/local/share/xtd/xtd_release_inst
 sudo cp build/Debug/install_manifest.txt /usr/local/share/xtd/xtd_debug_install_manifest.txt
 
 # launch xtd-gui
-echo "launch xtdc-gui..."
+echo "Launching xtdc-gui..."
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   start "C:\Program Files (x86)\xtd\bin\xtdc-gui.exe"
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
