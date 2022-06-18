@@ -16,11 +16,11 @@ echo   Operating System is Windows
 whoami /Groups | find "12288" > nul 2>&1
 if %ERRORLEVEL% neq 0 (
   echo You are not in administrator mode!
-  echo Run cmd as administrator before execute install.
+  echo Run cmd as administrator before executing install.
   exit /B 1
 )
 
-echo dowload and install wxwidgets...
+echo Downloading and installing wxwidgets...
 mkdir build\3rdparty
 cd build\3rdparty
 git clone https://github.com/wxWidgets/wxWidgets.git -b %WXWIDGETS_VERSION% --depth 1
@@ -35,7 +35,7 @@ cmake --build . --target install --config Release
 cd ..\..\..\..
 
 :: generate, build and install xtd
-echo install xtd...
+echo Installing xtd...
 mkdir build
 cd build
 cmake .. %*
@@ -77,7 +77,7 @@ if not errorlevel 1 (
 )
 
 :: launch xtdc-gui
-echo launch xtdc-gui...
+echo Launching xtdc-gui...
 start "xtdc-gui" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
 
 goto :eof
