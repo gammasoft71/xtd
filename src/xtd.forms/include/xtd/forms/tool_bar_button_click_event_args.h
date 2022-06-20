@@ -43,7 +43,7 @@ namespace xtd {
       /// @brief Gets the xtd::forms::tool_bar_button that was clicked.
       /// @return The xtd::forms::tool_bar_button that was clicked.
       const xtd::forms::tool_bar_button& button() const {return button_;}
-
+      
       /// @brief Gets internal handle.
       /// @return Internal handle.
       intptr_t handle() const {return handle_;}

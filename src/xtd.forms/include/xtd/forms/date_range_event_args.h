@@ -44,7 +44,7 @@ namespace xtd {
       /// @brief Gets the last date/time value in the range that the user has selected.
       /// @return A xtd::date_time that represents the last date in the date range that the user has selected.
       const xtd::date_time& end() const {return end_;}
-
+      
       /// @brief Gets the first date/time value in the range that the user has selected.
       /// @return A xtd::date_time that represents the first date in the date range that the user has selected.
       const xtd::date_time& start() const {return start_;}

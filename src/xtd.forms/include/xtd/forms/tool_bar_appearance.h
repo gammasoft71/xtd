@@ -27,7 +27,7 @@ namespace xtd {
     
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, tool_bar_appearance value) {return os << to_string(value, {{tool_bar_appearance::normal, "normal"}, {tool_bar_appearance::flat, "flat"}, {tool_bar_appearance::system, "system"}});}
-    inline std::wostream& operator<<(std::wostream& os, tool_bar_appearance value) {return os << to_string(value, {{tool_bar_appearance::normal, L"normal"},{tool_bar_appearance::flat, L"flat"},{tool_bar_appearance::system, L"system"}});}
+    inline std::wostream& operator<<(std::wostream& os, tool_bar_appearance value) {return os << to_string(value, {{tool_bar_appearance::normal, L"normal"}, {tool_bar_appearance::flat, L"flat"}, {tool_bar_appearance::system, L"system"}});}
     /// @endcond
   }
 }

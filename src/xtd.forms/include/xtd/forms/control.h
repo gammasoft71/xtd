@@ -680,7 +680,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the control is currently re-creating its handle.
       /// @return true if the control is currently re-creating its handle; otherwise, false.
       bool recreating_handle() const;
-
+      
       /// @brief Gets the window region associated with the control.
       /// @return The window xtd::drawing::region associated with the control.
       /// @remarks The window region is a collection of pixels within the window where the operating system permits drawing. The operating system does not display any portion of a window that lies outside of the window region. The coordinates of a control's region are relative to the upper-left corner of the control, not the client area of the control.
@@ -692,7 +692,7 @@ namespace xtd {
       /// @remarks The window region is a collection of pixels within the window where the operating system permits drawing. The operating system does not display any portion of a window that lies outside of the window region. The coordinates of a control's region are relative to the upper-left corner of the control, not the client area of the control.
       /// @note The collection of pixels contained with the region can be noncontiguous.
       virtual control& region(const xtd::drawing::region& value);
-
+      
       /// @brief Gets the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
       /// @return An int32_t representing the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
       virtual int32_t right() const;
@@ -755,7 +755,7 @@ namespace xtd {
       /// @return An intptr_t that contains the toolkit handle (HWND) of the control.
       /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::toolkit_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::toolkit_handle returns the toolkit handle.
       intptr_t toolkit_handle() const;
-
+      
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @return An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       virtual int32_t top() const;
@@ -1290,7 +1290,7 @@ namespace xtd {
       /// @remarks This event is raised if the font property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> font_changed;
-
+      
       /// @brief Occurs when the user requests help for a control.
       /// @ingroup events
       /// @remarks The xtd::forms::control::help_requested event is commonly raised when the user presses the F1 key or an associated context-sensitive help button is clicked.
@@ -1537,7 +1537,7 @@ namespace xtd {
       /// @brief Occurs when the value of the xtd::forms::control::region property changes.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> region_changed;
-
+      
       /// @brief Occurs when the control is resized.
       /// @ingroup events
       /// @remarks To determine the size of the resized control, you can cast the sender parameter of the registered control_event_handler method to a control and get its size property (or height and width properties individually).
@@ -1701,12 +1701,12 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_handle_destroyed(const event_args& e);
-
+      
       /// @brief Raises the control::help_requested event.
       /// @param e A xtd::forms::help_event_args that contains the event data.
       /// @ingroup events
       virtual void on_help_requested(help_event_args& e);
-
+      
       /// @brief Raises the control::key_down event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1822,12 +1822,12 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_parent_font_changed(const event_args& e);
-
+      
       /// @brief Raises the control::region event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_resize(const event_args& e);
-
+      
       /// @brief Raises the xtd::forms::control::region_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -2001,7 +2001,7 @@ namespace xtd {
       static forms::mouse_buttons mouse_buttons_;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
-
+      
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }

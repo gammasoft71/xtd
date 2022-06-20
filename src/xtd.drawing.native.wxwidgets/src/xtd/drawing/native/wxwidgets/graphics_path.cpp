@@ -23,7 +23,7 @@ namespace {
         it->second.erase(it->second.begin() + it->second.size() - 1);
       }
     }
-
+    
     static void close_all_figure(wxGraphicsPath* path) {
       auto it = figures_.find(path);
       if (it != figures_.end()) {
@@ -31,11 +31,11 @@ namespace {
         figures_.erase(it);
       }
     }
-
+    
     static void new_figure(wxGraphicsPath* path) noexcept {
       figures_[path].push_back(false);
     }
-
+    
     static void start(wxGraphicsPath* path, double current_point_x, double current_point_y) {
       start(path, wxPoint2DDouble(current_point_x, current_point_y));
     }
@@ -91,9 +91,8 @@ void graphics_path::add_beziers(intptr_t handle, std::vector<std::pair<float, fl
   if (!handle) return;
   figures::start(reinterpret_cast<wxGraphicsPath*>(handle), points[0].first, points[0].second);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddLineToPoint(points[0].first, points[0].second);
-  for (auto index = 1U; points.size(); index += 3) {
+  for (auto index = 1U; points.size(); index += 3)
     reinterpret_cast<wxGraphicsPath*>(handle)->AddCurveToPoint(points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
-  }
 }
 
 void graphics_path::add_closed_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension) {

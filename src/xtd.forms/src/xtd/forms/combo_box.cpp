@@ -109,9 +109,9 @@ forms::create_params combo_box::create_params() const {
     case combo_box_style::drop_down: create_params.style(create_params.style() | CBS_DROPDOWN); break;
     case combo_box_style::simple: create_params.style(create_params.style() | CBS_SIMPLE); break;
   }
-
+  
   create_params.size(native::control::default_size(create_params.class_name()));
-
+  
   return create_params;
 }
 
@@ -126,7 +126,7 @@ void combo_box::on_handle_created(const event_args& e) {
   drop_down_height_ = static_cast<int32_t>(font().get_height()) * 9;
   if (drop_down_style_ == combo_box_style::simple && size().height() == default_size().height() && size().height() < drop_down_height_)
     size({size().width(), drop_down_height_});
-  
+    
   items_.sorted(sorted_);
   for (size_t index = 0; index < items_.size(); ++index)
     native::combo_box::insert_item(handle(), index, items_[index].value());

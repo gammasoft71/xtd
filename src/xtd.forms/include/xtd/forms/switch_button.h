@@ -68,7 +68,7 @@ namespace xtd {
         return *this;
       }
       /// @endcond
-
+      
       /// @brief Gets the default size of the control.
       /// @return The default size.
       drawing::size default_size() const override {return {50, 25};}

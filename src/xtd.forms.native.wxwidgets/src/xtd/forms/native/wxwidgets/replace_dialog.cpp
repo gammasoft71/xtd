@@ -29,10 +29,10 @@ namespace {
 
 class wxReplaceDialog : public wxFindReplaceDialog {
 public:
-  wxReplaceDialog(intptr_t hwnd, wxFindReplaceData *data, const wxString& title, int style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), replace(replace), dialog_closed(dialog_closed), hwnd(hwnd) {
-#if !defined(__WXMSW__)
+  wxReplaceDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), replace(replace), dialog_closed(dialog_closed), hwnd(hwnd) {
+    #if !defined(__WXMSW__)
     m_radioDir->Hide();
-#endif
+    #endif
   }
   
   int style = 0;
@@ -48,7 +48,7 @@ public:
 
 intptr_t replace_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, const xtd::ustring& replace_string, bool show_whole_word, bool show_match_case, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed) {
   if (!wxTheApp) return 0;
-
+  
   int32_t find_replace_flags = 0;
   if (whole_word) find_replace_flags |= wxFindReplaceFlags::wxFR_WHOLEWORD;
   if (match_case) find_replace_flags |= wxFindReplaceFlags::wxFR_MATCHCASE;
@@ -56,65 +56,65 @@ intptr_t replace_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing:
   find_replace_data->SetFlags(find_replace_flags);
   find_replace_data->SetFindString(convert_string::to_wstring(find_string));
   find_replace_data->SetReplaceString(convert_string::to_wstring(replace_string));
-
-#if defined(__WXMSW__)
+  
+  #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
-#endif
-
+  #endif
+  
   int32_t dialog_style = wxFR_REPLACEDIALOG | wxFR_NOUPDOWN;
   if (!show_whole_word) dialog_style |= wxFR_NOWHOLEWORD;
   if (!show_match_case) dialog_style |= wxFR_NOMATCHCASE;
   wxReplaceDialog* replace_dialog = new wxReplaceDialog(hwnd, find_replace_data, convert_string::to_wstring(title), dialog_style, find_next, replace, dialog_closed);
-#if !defined(__WXMSW__)
+  #if !defined(__WXMSW__)
   replace_dialog->SetMinSize(replace_dialog->GetSize());
   replace_dialog->SetMaxSize(replace_dialog->GetSize());
-#endif
-
+  #endif
+  
   replace_dialog->whole_word = whole_word;
   replace_dialog->match_case = match_case;
   replace_dialog->find_string = convert_string::to_wstring(find_string);
   replace_dialog->replace_string = convert_string::to_wstring(replace_string);
-
-  replace_dialog->Bind(wxEVT_FIND_CLOSE, [replace_dialog, dialog_closed](wxFindDialogEvent& event) {
+  
+  replace_dialog->Bind(wxEVT_FIND_CLOSE, [replace_dialog, dialog_closed](wxFindDialogEvent & event) {
     replace_dialog->Hide();
     dialog_closed();
   });
-
-  replace_dialog->Bind(wxEVT_FIND, [replace_dialog, find_next](wxFindDialogEvent& event) {
+  
+  replace_dialog->Bind(wxEVT_FIND, [replace_dialog, find_next](wxFindDialogEvent & event) {
     replace_dialog->whole_word = (event.GetFlags() & wxFindReplaceFlags::wxFR_WHOLEWORD) == wxFindReplaceFlags::wxFR_WHOLEWORD;
     replace_dialog->match_case = (event.GetFlags() & wxFindReplaceFlags::wxFR_MATCHCASE) == wxFindReplaceFlags::wxFR_MATCHCASE;
     replace_dialog->find_string = event.GetFindString();
     replace_dialog->replace_string = event.GetReplaceString();
     find_next(xtd::drawing::point(replace_dialog->GetPosition().x, replace_dialog->GetPosition().y), xtd::convert_string::to_string(replace_dialog->find_string.c_str().AsWChar()), xtd::convert_string::to_string(replace_dialog->replace_string.c_str().AsWChar()), replace_dialog->whole_word, replace_dialog->match_case);
   });
-
-  replace_dialog->Bind(wxEVT_FIND_NEXT, [replace_dialog, find_next](wxFindDialogEvent& event) {
+  
+  replace_dialog->Bind(wxEVT_FIND_NEXT, [replace_dialog, find_next](wxFindDialogEvent & event) {
     replace_dialog->whole_word = (event.GetFlags() & wxFindReplaceFlags::wxFR_WHOLEWORD) == wxFindReplaceFlags::wxFR_WHOLEWORD;
     replace_dialog->match_case = (event.GetFlags() & wxFindReplaceFlags::wxFR_MATCHCASE) == wxFindReplaceFlags::wxFR_MATCHCASE;
     replace_dialog->find_string = event.GetFindString();
     replace_dialog->replace_string = event.GetReplaceString();
     find_next(xtd::drawing::point(replace_dialog->GetPosition().x, replace_dialog->GetPosition().y), xtd::convert_string::to_string(replace_dialog->find_string.c_str().AsWChar()), xtd::convert_string::to_string(replace_dialog->replace_string.c_str().AsWChar()), replace_dialog->whole_word, replace_dialog->match_case);
   });
-
-  replace_dialog->Bind(wxEVT_FIND_REPLACE, [replace_dialog, replace](wxFindDialogEvent& event) {
+  
+  replace_dialog->Bind(wxEVT_FIND_REPLACE, [replace_dialog, replace](wxFindDialogEvent & event) {
     replace_dialog->whole_word = (event.GetFlags() & wxFindReplaceFlags::wxFR_WHOLEWORD) == wxFindReplaceFlags::wxFR_WHOLEWORD;
     replace_dialog->match_case = (event.GetFlags() & wxFindReplaceFlags::wxFR_MATCHCASE) == wxFindReplaceFlags::wxFR_MATCHCASE;
     replace_dialog->find_string = event.GetFindString();
     replace_dialog->replace_string = event.GetReplaceString();
     replace(xtd::drawing::point(replace_dialog->GetPosition().x, replace_dialog->GetPosition().y), xtd::convert_string::to_string(replace_dialog->find_string.c_str().AsWChar()), xtd::convert_string::to_string(replace_dialog->replace_string.c_str().AsWChar()), false, replace_dialog->whole_word, replace_dialog->match_case);
   });
-
-  replace_dialog->Bind(wxEVT_FIND_REPLACE_ALL, [replace_dialog, replace](wxFindDialogEvent& event) {
+  
+  replace_dialog->Bind(wxEVT_FIND_REPLACE_ALL, [replace_dialog, replace](wxFindDialogEvent & event) {
     replace_dialog->whole_word = (event.GetFlags() & wxFindReplaceFlags::wxFR_WHOLEWORD) == wxFindReplaceFlags::wxFR_WHOLEWORD;
     replace_dialog->match_case = (event.GetFlags() & wxFindReplaceFlags::wxFR_MATCHCASE) == wxFindReplaceFlags::wxFR_MATCHCASE;
     replace_dialog->find_string = event.GetFindString();
     replace_dialog->replace_string = event.GetReplaceString();
     replace(xtd::drawing::point(replace_dialog->GetPosition().x, replace_dialog->GetPosition().y), xtd::convert_string::to_string(replace_dialog->find_string.c_str().AsWChar()), xtd::convert_string::to_string(replace_dialog->replace_string.c_str().AsWChar()), true, replace_dialog->whole_word, replace_dialog->match_case);
   });
-
+  
   if (location.has_value())
     replace_dialog->SetPosition({location.value().x(), location.value().y()});
-
+    
   return reinterpret_cast<intptr_t>(replace_dialog);
 }
 
@@ -134,10 +134,10 @@ void replace_dialog::destroy(intptr_t dialog) {
 
 void replace_dialog::show(intptr_t& dialog) {
   if (!dialog || !wxTheApp) return;
-
+  
   auto& old_dialog = *reinterpret_cast<wxReplaceDialog*>(dialog);
   dialog = create(old_dialog.hwnd, xtd::drawing::point(old_dialog.GetPosition().x, old_dialog.GetPosition().y), xtd::convert_string::to_string(old_dialog.GetTitle().c_str().AsWChar()), xtd::convert_string::to_string(old_dialog.find_string.c_str().AsWChar()), xtd::convert_string::to_string(old_dialog.replace_string.c_str().AsWChar()), (old_dialog.style & wxFR_NOWHOLEWORD) != wxFR_NOWHOLEWORD, (old_dialog.style & wxFR_NOMATCHCASE) != wxFR_NOMATCHCASE, old_dialog.whole_word, old_dialog.match_case, old_dialog.find_next, old_dialog.replace, old_dialog.dialog_closed);
   old_dialog.Destroy();
-
+  
   reinterpret_cast<wxReplaceDialog*>(dialog)->Show();
 }

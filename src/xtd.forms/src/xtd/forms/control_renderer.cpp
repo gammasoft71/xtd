@@ -32,6 +32,6 @@ void control_renderer::draw_control(const style_sheets::style_sheet& style_sheet
   }
   
   if (back_color) current_style_sheet.background_color(back_color.value());
-
+  
   box_renderer::draw_box(graphics, bounds, current_style_sheet);
 }

@@ -65,9 +65,9 @@ namespace xtd {
       
       /// @{
       xtd::drawing::font default_font() const override;
-
+      
       drawing::size default_size() const override;
-
+      
       dock_style dock() const override;
       control& dock(dock_style dock) override;
       
@@ -89,7 +89,7 @@ namespace xtd {
       /// @return Current status_bar instance.
       /// @remarks By default, the xtd::forms::status_bar control displays the value of its xtd::forms::status_bar::text property without any panels. When xtd::forms::status_bar::show_panels is set to true, any xtd::forms::status_bar objects specified in the StatusBar control are displayed. No panels are initially created when you create an instance of the xtd::forms::status_bar class. You can add panels to a xtd::forms::status_bar control by using the xtd::forms::status_bar::status_bar_panel_collection::push_back method of the xtd::forms::status_bar::status_bar_panel_collection class. This collection class can be accessed through the xtd::forms::status_bar::panels property of xtd::forms::status_bar.
       virtual status_bar& show_panels(bool value);
-
+      
       /// @brief Gets a value indicating whether a sizing grip is displayed in the lower-right corner of the control.
       /// @return true if a sizing grip is displayed; otherwise, false. The default is true.
       /// @remarks You can use this property to display a sizing grip to provide an indication to the user when a form is resizable. If the xtd::forms::form_border_style property of your xtd::forms::form is set to a border style that is not resizable, such as xtd::forms::form_border_style::fixed_3d or xtd::forms::form_border_style::fixed_dialog, you should set the xtd::forms::status_bar::sizing_grip property to false to prevent the user from thinking that the form can be resized.
@@ -109,7 +109,7 @@ namespace xtd {
       /// @remarks You can use this event to perform drawing operations in an owner-drawn xtd::forms::status_bar control. For example, if you display an owner-drawn xtd::forms::status_bar_panel that displays a progress bar, you can use this event to perform the drawing of the progress bar on the panel. The data provided to the event through the xtd::forms::status_bar_draw_item_event_args object passed as a parameter to the event handler enables you to determine the panel that needs to be drawn and the xtd::drawing::graphics to use to draw to the panel. This event is only raised when the xtd::forms::status_bar_panel::style property of a xtd::forms::status_bar_panel in a xtd::forms::status_bar control is set to xtd::forms::status_bar_panel_style::owner_draw.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       xtd::event<status_bar, xtd::forms::status_bar_draw_item_event_handler> draw_item;
-
+      
       /// @brief Occurs when a xtd::forms::status_bar_panel object on a xtd::forms::status_bar control is clicked.
       /// @remarks You can use this event to perform tasks when a panel within a xtd::forms::status_bar control is clicked. The data provided to the event through the xtd::forms::status_bar_panel_click_event_args passed as a parameter to the event handler enables you to determine the xtd::forms::status_bar_panel that was clicked by the user in order to perform tasks on the selected panel.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -150,18 +150,18 @@ namespace xtd {
       
     private:
       void fill();
-
+      
       bool is_horizontal() const;
       bool is_system_status_bar() const;
       status_bar& is_system_status_bar(bool value);
-
+      
       void on_item_added(size_t pos, status_bar_panel_ref item);
       void on_item_updated(size_t pos, status_bar_panel_ref item);
       void on_item_removed(size_t pos, status_bar_panel_ref item);
-
+      
       void resize_stretchable_panels();
       void update_toolbar_panel_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
-
+      
       struct data {
         status_bar_panel_collection panels;
         bool is_system_status_bar = false;

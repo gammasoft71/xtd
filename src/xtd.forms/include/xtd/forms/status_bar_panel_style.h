@@ -25,7 +25,7 @@ namespace xtd {
     
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, status_bar_panel_style value) {return os << to_string(value, {{status_bar_panel_style::text, "text"}, {status_bar_panel_style::owner_draw, "owner_draw"}, {status_bar_panel_style::control, "control"}});}
-    inline std::wostream& operator<<(std::wostream& os, status_bar_panel_style value) {return os << to_string(value, {{status_bar_panel_style::text, L"text"},{status_bar_panel_style::owner_draw, L"owner_draw"}, {status_bar_panel_style::control, L"control"}});}
+    inline std::wostream& operator<<(std::wostream& os, status_bar_panel_style value) {return os << to_string(value, {{status_bar_panel_style::text, L"text"}, {status_bar_panel_style::owner_draw, L"owner_draw"}, {status_bar_panel_style::control, L"control"}});}
     /// @endcond
   }
 }

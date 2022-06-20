@@ -31,7 +31,7 @@ namespace xtd {
     
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, tool_bar_button_style value) {return os << to_string(value, {{tool_bar_button_style::push_button, "push_button"}, {tool_bar_button_style::toggle_button, "toggle_button"}, {tool_bar_button_style::separator, "separator"}, {tool_bar_button_style::drop_down_button, "drop_down_button"}, {tool_bar_button_style::stretchable_separator, "stretchable_separator"}, {tool_bar_button_style::control, "control"}});}
-    inline std::wostream& operator<<(std::wostream& os, tool_bar_button_style value) {return os << to_string(value, {{tool_bar_button_style::push_button, L"push_button"},{tool_bar_button_style::toggle_button, L"toggle_button"}, {tool_bar_button_style::separator, L"separator"}, {tool_bar_button_style::drop_down_button, L"drop_down_button"}, {tool_bar_button_style::stretchable_separator, L"stretchable_separator"}, {tool_bar_button_style::control, L"control"}});}
+    inline std::wostream& operator<<(std::wostream& os, tool_bar_button_style value) {return os << to_string(value, {{tool_bar_button_style::push_button, L"push_button"}, {tool_bar_button_style::toggle_button, L"toggle_button"}, {tool_bar_button_style::separator, L"separator"}, {tool_bar_button_style::drop_down_button, L"drop_down_button"}, {tool_bar_button_style::stretchable_separator, L"stretchable_separator"}, {tool_bar_button_style::control, L"control"}});}
     /// @endcond
   }
 }

@@ -20,16 +20,16 @@ public:
     
     form_styles_tab_control.dock(dock_style::fill);
     form_styles_tab_control.controls().push_back_range({decorations_tab_page, window_state_tab_page, show_tab_page});
-
+    
     decorations_tab_page.text("decorations");
     decorations_tab_page.controls().push_back_range({form_border_style_choice, caption_label, caption_text_box, minimize_box_label, minimize_box_switch_button, maximize_box_label, maximize_box_switch_button, close_box_label, close_box_switch_button, control_box_label, control_box_switch_button, help_button_label, help_button_switch_button, show_icon_label, show_icon_switch_button, show_in_taskbar_label, show_in_taskbar_switch_button});
-
+    
     window_state_tab_page.text("state");
     window_state_tab_page.controls().push_back_range({state_full_screen_button, state_maximize_button, state_normal_button, state_minimize_button});
-
+    
     show_tab_page.text("show");
     show_tab_page.controls().push_back_range({show_normal_button, show_modeless_button, show_top_most_button, show_modal_button, show_sheet_button, show_sheet_modal_button});
-
+    
     form_border_style_choice.location({10, 10});
     form_border_style_choice.width(200);
     form_border_style_choice.items().push_back_range({{"none", forms::form_border_style::none}, {"fixed_single", forms::form_border_style::fixed_single}, {"fixed_3d", forms::form_border_style::fixed_3d}, {"fixed_dialog", forms::form_border_style::fixed_dialog}, {"sizable", forms::form_border_style::sizable}, {"fixed_tool_window", forms::form_border_style::fixed_tool_window}, {"sizable_tool_window", forms::form_border_style::sizable_tool_window}});
@@ -110,7 +110,7 @@ public:
     show_in_taskbar_switch_button.checked_changed += [&] {
       show_in_taskbar(show_in_taskbar_switch_button.checked());
     };
-
+    
     state_full_screen_button.location({10, 10});
     state_full_screen_button.text("Full screen");
     state_full_screen_button.size({90, 30});
@@ -138,7 +138,7 @@ public:
     state_minimize_button.click += [&] {
       window_state(form_window_state::minimized);
     };
-
+    
     show_normal_button.location({10, 10});
     show_normal_button.size({140, 30});
     show_normal_button.text("Show normal");
@@ -203,7 +203,7 @@ private:
   tab_page decorations_tab_page;
   tab_page window_state_tab_page;
   tab_page show_tab_page;
-
+  
   choice form_border_style_choice;
   label caption_label;
   text_box caption_text_box;
@@ -221,7 +221,7 @@ private:
   switch_button show_icon_switch_button;
   label show_in_taskbar_label;
   switch_button show_in_taskbar_switch_button;
-
+  
   button state_full_screen_button;
   button state_maximize_button;
   button state_normal_button;

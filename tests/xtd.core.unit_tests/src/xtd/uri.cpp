@@ -151,7 +151,7 @@ namespace unit_tests {
     }
     
     void test_method_(host_name_type) {
-      assert::are_equal(uri_host_name_type::dns,uri("  Http://yfi:MyPass@www.Contoso.com:8080/C:a ta%20log/ShowNew.htm?Date=ToDay#bOdy  ").host_name_type(),  csf_);
+      assert::are_equal(uri_host_name_type::dns, uri("  Http://yfi:MyPass@www.Contoso.com:8080/C:a ta%20log/ShowNew.htm?Date=ToDay#bOdy  ").host_name_type(),  csf_);
       assert::are_equal(uri_host_name_type::dns, uri("http://www.contoso.com/index.htm?date=today").host_name_type(), csf_);
       assert::are_equal(uri_host_name_type::dns, uri("http://www.contoso.com/index.htm#main").host_name_type(), csf_);
       assert::are_equal(uri_host_name_type::dns, uri("mailto:user@contoso.com?subject=uri").host_name_type(), csf_);
@@ -316,7 +316,7 @@ namespace unit_tests {
        assert::is_true(uri("http://host/path/path/file?query").is_base_of(uri("http://host/path/path/OtherFile?Query")), csf_);
        assert::is_true(uri("http://host/path/path/file?query").is_base_of(uri("http://host/path/path/")), csf_);
        assert::is_true(uri("http://host/path/path/file?query").is_base_of(uri("http://host/path/path/file")), csf_);
-       
+      
        assert::is_false(uri("http://host/path/path/file?query").is_base_of(uri("http://host/path/path")), csf_);
        assert::is_false(uri("http://host/path/path/file?query").is_base_of(uri("http://host/path/path?query")), csf_);
        assert::is_false(uri("http://host/path/path/file?query").is_base_of(uri("http://host/path/path#fragment")), csf_);

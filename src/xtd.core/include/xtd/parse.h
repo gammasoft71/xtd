@@ -20,7 +20,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<typename value_t>
   inline value_t parse(const std::string& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -29,7 +29,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<typename value_t>
   inline value_t parse(const std::string& str, const std::locale& locale) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -65,7 +65,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<typename value_t>
   inline value_t parse(const std::string& str, number_styles, const std::locale& locale) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -182,7 +182,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<>
   inline float parse<float>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<float>(str, styles, locale);}
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -191,7 +191,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<>
   inline double parse<double>(const std::string& str, number_styles styles) {return __parse_floating_point_number<double>(str, styles, std::locale());}
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -200,7 +200,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<>
   inline double parse<double>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<double>(str, styles, locale);}
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -209,7 +209,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<>
   inline long double parse<long double>(const std::string& str, number_styles styles) {return __parse_floating_point_number<long double>(str, styles, std::locale());}
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -218,7 +218,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<>
   inline long double parse<long double>(const std::string& str, number_styles styles, const std::locale& locale) {return __parse_floating_point_number<long double>(str, styles, locale);}
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -420,7 +420,7 @@ namespace xtd {
       return false;
     }
   }
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -431,7 +431,7 @@ namespace xtd {
   inline bool try_parse(const char_t* str, value_t& value) {
     return try_parse(std::basic_string<char_t>(str), value);
   }
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -442,7 +442,7 @@ namespace xtd {
   inline bool try_parse(const char_t* str, value_t& value, const std::locale& locale) {
     return try_parse(std::basic_string<char_t>(str), value, locale);
   }
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -458,7 +458,7 @@ namespace xtd {
       return false;
     }
   }
- 
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -474,7 +474,7 @@ namespace xtd {
       return false;
     }
   }
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -485,7 +485,7 @@ namespace xtd {
   inline bool try_parse(const char_t* str, value_t& value, number_styles style) {
     return try_parse(std::basic_string<char_t>(str), value, style);
   }
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd

@@ -180,7 +180,7 @@ namespace xtd {
       /// @param nullptr
       /// @return Current form.
       virtual form& owner(std::nullptr_t);
-
+      
       using container_control::parent;
       /// @brief Sets the parent container of the control.
       /// @param parent A control that represents the parent or container control of the control  or nullptr for none.
@@ -207,7 +207,7 @@ namespace xtd {
       /// @remarks You can use this property to prevent users from selecting your form through the Windows taskbar. For example, if you display a Find and Replace tool window in your application, you might want to prevent that window from being selected through the Windows taskbar because you would need both the application's main window and the Find and Replace tool window displayed in order to process searches appropriately.
       /// @remarks You will often wish to use this property when creating a form with the xtd::forms::form_border_style::fixed_tool_window style. Setting the xtd::forms::form_border_style::fixed_tool_window style does not alone guarantee that a window will not appear in the taskbar.
       virtual form& show_in_taskbar(bool value);
-
+      
       /// @brief Gets the starting position of the form at run time.
       /// @return A form_start_position that represents the starting position of the form.
       virtual form_start_position start_position() const {return start_position_;}
@@ -406,7 +406,7 @@ namespace xtd {
       void fill_in_create_params_border_styles(xtd::forms::create_params& cp) const;
       void fill_in_create_params_start_position(xtd::forms::create_params& cp) const;
       void fill_in_create_params_window_state(xtd::forms::create_params& cp) const;
-
+      
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;
       static std::optional<std::reference_wrapper<form>> active_form_;

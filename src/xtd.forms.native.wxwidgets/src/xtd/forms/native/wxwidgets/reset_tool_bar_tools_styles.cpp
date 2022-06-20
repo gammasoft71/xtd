@@ -11,19 +11,19 @@ namespace {
     typedef wxMenu* wxToolBarToolBase::* type;
     friend type get(wxToolBarToolBase_m_dropdownMenu);
   };
-
+  
   struct wxToolBarToolBase_m_toolStyle {
     typedef wxToolBarToolStyle wxToolBarToolBase::* type;
     friend type get(wxToolBarToolBase_m_toolStyle);
   };
-
+  
   template<typename tag_t, typename tag_t::type memeber_t>
   struct steal_private_member {
     friend typename tag_t::type get(tag_t) {
       return memeber_t;
     }
   };
-
+  
   template struct steal_private_member<wxToolBarToolBase_m_dropdownMenu, &wxToolBarToolBase::m_dropdownMenu>;
   template struct steal_private_member<wxToolBarToolBase_m_toolStyle, &wxToolBarToolBase::m_toolStyle>;
 }

@@ -105,7 +105,7 @@ namespace xtd {
         /// @return true if the interior of the region is empty when the transformation associated with graphics is applied; otherwise, false.
         /// @warning Internal use only
         static bool is_empty(intptr_t handle, intptr_t grpahics);
-
+        
         /// @brief Tests whether the region has an infinite interior.
         /// @param handle The region handle.
         /// @return true if the interior of the region is infinite; otherwise, false.

@@ -24,7 +24,7 @@ namespace xtd {
     
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, status_bar_panel_auto_size value) {return os << to_string(value, {{status_bar_panel_auto_size::none, "none"}, {status_bar_panel_auto_size::spring, "spring"}, {status_bar_panel_auto_size::contents, "contents"}});}
-    inline std::wostream& operator<<(std::wostream& os, status_bar_panel_auto_size value) {return os << to_string(value, {{status_bar_panel_auto_size::none, L"none"},{status_bar_panel_auto_size::spring, L"spring"}, {status_bar_panel_auto_size::contents, L"contents"}});}
+    inline std::wostream& operator<<(std::wostream& os, status_bar_panel_auto_size value) {return os << to_string(value, {{status_bar_panel_auto_size::none, L"none"}, {status_bar_panel_auto_size::spring, L"spring"}, {status_bar_panel_auto_size::contents, L"contents"}});}
     /// @endcond
   }
 }

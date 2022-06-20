@@ -8,7 +8,7 @@ public:
     flat_style(xtd::forms::flat_style::flat);
   }
   
-  void control(const xtd::forms::control* value){
+  void control(const xtd::forms::control* value) {
     if (data_->control != value) {
       data_->control = value;
       update_size();
@@ -261,11 +261,11 @@ private:
   }
   
   void update_layout() {
-    if (data_->show_text == false) {
+    if (data_->show_text == false)
       image_align(content_alignment::middle_center);
-    } else if (data_->show_text == true && data_->show_icon == false) {
+    else if (data_->show_text == true && data_->show_icon == false)
       text_align(content_alignment::middle_center);
-    } else if (data_->show_text == true && data_->show_icon == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
+    else if (data_->show_text == true && data_->show_icon == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
       image_align(content_alignment::middle_left);
       text_align(content_alignment::middle_left);
     }  else {

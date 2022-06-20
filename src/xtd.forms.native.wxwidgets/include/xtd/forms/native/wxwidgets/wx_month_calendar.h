@@ -23,7 +23,7 @@ namespace xtd {
       
       class wxMonthCalendar : public wxControl {
       public:
-
+      
         explicit wxMonthCalendar(wxWindow* parent, wxWindowID winid, const wxPoint& pos, const wxSize& size, long wx_styles) : wxControl(parent, winid, pos, size) {
           calendarCtrl = new wxCalendarCtrl(this, wxID_ANY, /*wxDefaultDateTime*/ wxDateTime(), {0, 0}, {240, 162}, wx_styles);
         }
@@ -52,12 +52,12 @@ namespace xtd {
           }
           #endif
         }
-
+        
         static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           
           if ((style & MCS_WEEKNUMBERS) == MCS_WEEKNUMBERS) wx_style |= wxCAL_SHOW_WEEK_NUMBERS;
-
+          
           return wx_style;
         }
         
@@ -114,7 +114,7 @@ namespace xtd {
           if (wx_month_calendar->current_month == wx_month_calendar->today_date.month() && wx_month_calendar->current_year == wx_month_calendar->today_date.year())
             wx_calendar_ctrl->Mark(wx_month_calendar->today_date.day(), wx_month_calendar->show_today_circle);
         }
-
+        
         std::vector<xtd::date_time> annually_bolded_dates;
         std::vector<xtd::date_time> bolded_dates;
         std::vector<xtd::date_time> monthly_bolded_dates;

@@ -59,7 +59,7 @@ void popup_panel::wnd_proc(message& message) {
 
 void popup_panel::wm_show(message& message) {
   panel::wnd_proc(message);
-
+  
   bool visible = message.lparam() != 0;
   if (get_state(state::visible) != visible) {
     set_state(state::visible, visible);

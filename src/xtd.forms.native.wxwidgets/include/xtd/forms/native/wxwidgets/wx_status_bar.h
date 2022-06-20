@@ -40,7 +40,7 @@ namespace xtd {
           if ((style & SBARS_SIZEGRIP) == SBARS_SIZEGRIP) wx_style |= wxSTB_SIZEGRIP;
           if ((style & SBARS_TOOLTIPS) == SBARS_TOOLTIPS) wx_style |= wxSTB_SHOW_TIPS;
           if ((style & SBARS_ELLIPSIZE) == SBARS_ELLIPSIZE) wx_style |= wxSTB_ELLIPSIZE_END;
-
+          
           return wx_style;
         }
         

@@ -142,7 +142,7 @@ namespace xtd {
         /// @return This current instance.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         control& outline_offset(xtd::forms::style_sheets::outline_offset value) noexcept;
-
+        
         xtd::forms::style_sheets::outline_radius outline_radius() const noexcept override;
         /// @brief Sets the radius is used to add rounded outlines to an element.
         /// @param value The radius is used to add rounded outlines to an element.
@@ -163,7 +163,7 @@ namespace xtd {
         /// @return This current instance.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         control& outline_width(xtd::forms::style_sheets::outline_width value) noexcept;
-
+        
         const xtd::forms::style_sheets::padding& padding() const noexcept override;
         /// @brief Sets the area area around the content.
         /// @param value The area around the content.

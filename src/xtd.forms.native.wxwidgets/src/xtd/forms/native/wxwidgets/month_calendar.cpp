@@ -47,10 +47,10 @@ void month_calendar::first_day_of_week(intptr_t control, uint32_t day) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-
+  
   wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl;
   auto style = wx_calendar_ctrl->GetWindowStyle();
-  style &= ~(wxCAL_MONDAY_FIRST|wxCAL_SUNDAY_FIRST);
+  style &= ~(wxCAL_MONDAY_FIRST | wxCAL_SUNDAY_FIRST);
   switch (day) {
     case 0: style |= wxCAL_MONDAY_FIRST; break;
     case 1: break;
@@ -181,7 +181,7 @@ void month_calendar::today_date(intptr_t control, const xtd::date_time& value) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-
+  
   reinterpret_cast<wx_month_calendar*>(control)->today_date = value;
   reinterpret_cast<wx_month_calendar*>(control)->change_attribute_dates(reinterpret_cast<wx_month_calendar*>(control));
 }

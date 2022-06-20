@@ -58,7 +58,7 @@ namespace xtd {
       /// @return Current label instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual xtd::forms::label& border_style(std::nullptr_t border_style);
-
+      
       /// @brief Gets the flat style appearance of the label control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
       /// @remarks When the flat_style property is set to xtd::forms::flat_style::system, any values assigned to the image_list, image, image_index, and image_align properties are ignored. In addition, the text_align property ignores any property values that are not vertical property settings. Horizontally aligned settings of the text_align property are aligned to the top of the control. For example, if you set the text_align property to content_alignment::top_center, content_alignment::middle_center, or content_alignment::bottom_center, when the flat_style property is set to xtd::forms::flat_style::system, the text in the label control will be aligned to the top and center locations within the bounds of the control.
@@ -86,7 +86,7 @@ namespace xtd {
       /// @brief Gets the alignment of the image on the label control.
       /// @param value One of the content_alignment values. The default is xtd::forms::content_alignment::middle_center.
       virtual xtd::forms::label& image_align(content_alignment value);
-
+      
       /// @brief Gets the image list index value of the image displayed on the label control.
       /// @return A zero-based index, which represents the image position in an image_list. The default is -1.
       /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
@@ -109,7 +109,7 @@ namespace xtd {
       /// @brief Sets the image_list that contains the image displayed on a label control.
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
       virtual xtd::forms::label& image_list(const forms::image_list& value);
-
+      
       /// @brief Gets a value that allows to draw a drop shadow under the text.
       /// @return true allows to draw a drop shadow under the text; otherwise false. The default is false.
       virtual bool shadow() const {return data_->shadow;}
@@ -148,7 +148,7 @@ namespace xtd {
       xtd::forms::create_params create_params() const override;
       xtd::drawing::size measure_control() const override;
       void on_font_changed(const xtd::event_args& e) override;
-
+      
       /// @brief Raises the button_base::image_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_image_changed(const xtd::event_args& e) {

@@ -70,7 +70,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks You can specify a xtd::forms::control to be displayed. This property is not used unless the xtd::forms::tool_bar_button::style property value is set to xtd::forms::tool_bar_button_style::control.
       tool_bar_button& control(std::nullptr_t value);
-
+      
       /// @brief Gets the menu to be displayed in the drop-down toolbar button.
       /// @return A xtd::forms::context_menu to be displayed in the drop-down toolbar button. The default is std::nullopt.
       /// @remarks You can specify a xtd::forms::context_menu to be displayed when the drop-down button is clicked. This property is not used unless the xtd::forms::tool_bar_button::style property value is set to xtd::forms::tool_bar_button_style::drop_down_button.
@@ -85,7 +85,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks You can specify a xtd::forms::context_menu to be displayed when the drop-down button is clicked. This property is not used unless the xtd::forms::tool_bar_button::style property value is set to xtd::forms::tool_bar_button_style::drop_down_button.
       tool_bar_button& drop_down_menu(std::nullptr_t value);
-
+      
       /// @brief Gets a value indicating whether the button is enabled.
       /// @return true if the button is enabled; otherwise, false. The default is true.
       /// @remarks When the xtd::forms::tool_bar_button::enabled property is set to false, the toolbar button cannot be clicked, and the button's appearance changes. The xtd::drawing::image and xtd::forms::tool_bar_button::text assigned to the button appear grayed out. If the image or text has multiple colors, they display in a monochromatic gray.
@@ -105,7 +105,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks The xtd::forms::tool_bar_button::image_index value references the indexed value of the images in an xtd::forms::tool_bar::image_list assigned to the parent xtd::forms::tool_bar control.
       tool_bar_button& image_index(size_t value);
-
+      
       /// @brief Gets the name of the button.
       /// @return The name of the button.
       /// @remarks You can use the button name as a key to retrieve the xtd::forms::tool_bar_button from the xtd::forms::tool_bar::buttons collection of a xtd::forms::tool_bar control.
@@ -119,7 +119,7 @@ namespace xtd {
       /// @brief Gets the toolbar control that the toolbar button is assigned to.
       /// @return The xtd::forms::tool_bar control that the xtd::forms::tool_bar_button is assigned to.
       std::optional<std::reference_wrapper<xtd::forms::tool_bar>> parent() const;
-
+      
       /// @brief Gets a value indicating whether a toggle-style toolbar button is currently in the pushed state.
       /// @return rue if a toggle-style toolbar button is currently in the pushed state; otherwise, false. The default is false.
       /// @remarks When xtd::forms::tool_bar_button::pushed is set to true, the toolbar button appears sunken or inset relative to the other buttons. This property has no effect unless the xtd::forms::tool_bar_button::style is set to xtd::forms::tool_bar_button_style::toggle_button.
@@ -129,12 +129,12 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks When xtd::forms::tool_bar_button::pushed is set to true, the toolbar button appears sunken or inset relative to the other buttons. This property has no effect unless the xtd::forms::tool_bar_button::style is set to xtd::forms::tool_bar_button_style::toggle_button.
       tool_bar_button& pushed(bool value);
-
+      
       /// @brief Gets the bounding rectangle for a toolbar button.
       /// @return The bounding xtd::drawing::rectangle for a toolbar button.
       /// @remarks If the xtd::forms::tool_bar and the current button are both xtd::forms::tool_bar_button::visible, then this property retrieves the bounding rectangle the button is currently contained in.
       const xtd::drawing::rectangle& rectangle() const;
-
+      
       /// @brief Gets the style of the toolbar button.
       /// @return One of the xtd::forms::tool_bar_button_style values. The default is xtd::forms::tool_bar_button_style::push_button.
       /// @remarks If the button xtd::forms::tool_bar_button::style is set to xtd::forms::tool_bar_button::drop_down_button you can specify a xtd::forms::menu_contex to be displayed when the drop-down button is pressed. If the style is set to xtd::forms::tool_bar_button_style::separator, the toolbar button appears as a button separator and not as a button. The xtd::forms::tool_bar_button_style::toggle_button style causes the toolbar button to act like a toggle button; it can be in an on or off state. If the style is set to xtd::forms::tool_bar_button_style::stretchable_separator, the toolbar button appears as a stretchable button separator and not as a button. If the button xtd::forms::tool_bar_button::style is set to xtd::forms::tool_bar_button::control you can specify a xtd::forms::control to be displayed when the button.
@@ -144,7 +144,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks If the button xtd::forms::tool_bar_button::style is set to xtd::forms::tool_bar_button::drop_down_button you can specify a xtd::forms::menu_contex to be displayed when the drop-down button is pressed. If the style is set to xtd::forms::tool_bar_button_style::separator, the toolbar button appears as a button separator and not as a button. The xtd::forms::tool_bar_button_style::toggle_button style causes the toolbar button to act like a toggle button; it can be in an on or off state. If the style is set to xtd::forms::tool_bar_button_style::stretchable_separator, the toolbar button appears as a stretchable button separator and not as a button. If the button xtd::forms::tool_bar_button::style is set to xtd::forms::tool_bar_button::control you can specify a xtd::forms::control to be displayed when the button.
       tool_bar_button& style(xtd::forms::tool_bar_button_style value);
-
+      
       /// @brief Gets the object that contains data about the toolbar button.
       /// @return An std::any that contains data about the toolbar button. The default is empty.
       /// @remarks Retrieves or assigns the data currently associated with the toolbar button. Any std::any type can be assigned to this property.
@@ -154,7 +154,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks Retrieves or assigns the data currently associated with the toolbar button. Any std::any type can be assigned to this property.
       tool_bar_button& tag(std::any value);
-
+      
       /// @brief Gets the text displayed on the toolbar button.
       /// @return The text displayed on the toolbar button. The default is an empty string ("").
       /// @remarks The default the xtd::forms::tool_bar_button::text property value is an empty string ("") unless you created the control with the xtd::forms::tool_bar constructor that accepts the text string as a parameter. The orientation of the text on the toolbar button is determined by the xtd::forms::tool_bar::text_align property of the button's parentxtd::forms::tool_bar, which can be set to one of the xtd::forms::tool_bar_text_align enumeration values. The orientation is in relation to the image assigned to the button. If no image is assigned to the button, there will be space left for one on the surface of the toolbar button.
@@ -164,7 +164,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks The default the xtd::forms::tool_bar_button::text property value is an empty string ("") unless you created the control with the xtd::forms::tool_bar constructor that accepts the text string as a parameter. The orientation of the text on the toolbar button is determined by the xtd::forms::tool_bar::text_align property of the button's parentxtd::forms::tool_bar, which can be set to one of the xtd::forms::tool_bar_text_align enumeration values. The orientation is in relation to the image assigned to the button. If no image is assigned to the button, there will be space left for one on the surface of the toolbar button.
       tool_bar_button& text(const xtd::ustring& value);
-
+      
       /// @brief Gets the text that appears as a xtd::forms::tool_tip for the button.
       /// @return The text that is displayed when the mouse pointer moves over the toolbar button. The default is an empty string ("").
       /// @remarks To enable the display of the xtd::forms::tool_tip text when the mouse pointer is moved over the button, set the xtd::forms::tool_bar::show_tool_tips property of the button's parent xtd::forms::tool_bar to true.
@@ -174,7 +174,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks To enable the display of the xtd::forms::tool_tip text when the mouse pointer is moved over the button, set the xtd::forms::tool_bar::show_tool_tips property of the button's parent xtd::forms::tool_bar to true.
       tool_bar_button& tool_tip_text(const xtd::ustring& value);
-
+      
       /// @brief Gets a value indicating whether the toolbar button is visible.
       /// @return true if the toolbar button is visible; otherwise, false. The default is true.
       /// @remarks If the toolbar button is not visible, it will not be displayed on the toolbar, and therefore cannot receive user input.
@@ -198,7 +198,7 @@ namespace xtd {
       /// @param control A xtd::forms::control to be displayed in the control toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
       static tool_bar_button create_control(const xtd::forms::control& control);
-
+      
       /// @brief A factory to create a drop-down toolbar button with specified text and context menu.
       /// @param text The text displayed on the toolbar button.
       /// @param drop_down_menu A xtd::forms::context_menu to be displayed in the drop-down toolbar button.
@@ -215,7 +215,7 @@ namespace xtd {
       /// @param drop_down_menu A xtd::forms::context_menu to be displayed in the drop-down toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
       static tool_bar_button create_drop_down_button(const xtd::ustring& text, size_t image_index, const xtd::forms::context_menu& drop_down_menu);
-
+      
       /// @brief A factory to create a toolbar button with specified text.
       /// @param text The text displayed on the toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
@@ -229,15 +229,15 @@ namespace xtd {
       /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
       static tool_bar_button create_push_button(const xtd::ustring& text, size_t image_index);
-
+      
       /// @brief A factory to create a toolbar separator
       /// @return New xtd::forms::tool_bar_button created.
       static tool_bar_button create_separator();
-
+      
       /// @brief A factory to create a toolbar stretchable separator
       /// @return New xtd::forms::tool_bar_button created.
       static tool_bar_button create_stretchable_separator();
-
+      
       /// @brief A factory to create a toolbar toggle button with specified text.
       /// @param text The text displayed on the toolbar button.
       /// @return New xtd::forms::tool_bar_button created.

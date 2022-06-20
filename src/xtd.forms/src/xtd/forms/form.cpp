@@ -242,9 +242,9 @@ control& form::visible(bool visible) {
     previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
     recreate_handle();
   }
-
+  
   application::raise_idle(event_args::empty);
-
+  
   container_control::visible(visible);
   if (active_form().has_value() && active_form().value().get().handle() == handle() && active_control_.has_value())
     active_control_.value().get().focus();
@@ -348,11 +348,11 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
 forms::create_params form::create_params() const {
   forms::create_params cp = container_control::create_params();
   cp.style(cp.style() & ~WS_CHILD);
-
+  
   cp.class_name("form");
   
   cp.style(cp.style() | WS_CLIPCHILDREN);
-
+  
   if (get_state(state::modal)) cp.ex_style(cp.ex_style() | WS_EX_MODALWINDOW);
   
   if (owner_ != nullptr) cp.parent(owner_->handle());
@@ -366,30 +366,30 @@ forms::create_params form::create_params() const {
     // It doesn't seem to make sense to allow a top-level form to be disabled
     //
     cp.style(cp.style() & ~WS_DISABLED);
-  
+    
   if (top_level() && opacity() != 0)
     cp.ex_style(cp.ex_style() | WS_EX_LAYERED);
-  
+    
   fill_in_create_params_border_styles(cp);
   fill_in_create_params_window_state(cp);
   fill_in_create_params_border_icons(cp);
   
   if (show_in_taskbar_)
     cp.ex_style(cp.ex_style() | WS_EX_APPWINDOW);
-  
+    
   xtd::forms::form_border_style border_style = form_border_style();
   if (!show_icon_ && (border_style == xtd::forms::form_border_style::sizable || border_style == xtd::forms::form_border_style::fixed_3d || border_style == xtd::forms::form_border_style::fixed_single))
     cp.ex_style(cp.ex_style() | WS_EX_DLGMODALFRAME);
-  
+    
   if (top_level())
     fill_in_create_params_start_position(cp);
-
+    
   /*
   if (right_to_left == xtd::forms::right_to_left::yes && right_to_left_layout() == true) {
     cp.ex_style(cp.ex_style() | WS_EX_LAYOUTRTL | WS_EX_NOINHERITLAYOUT);
     cp.ex_style(cp.ex_style() & ~(WS_EX_RTLREADING | WS_EX_RIGHT | WS_EX_LEFTSCROLLBAR));
   }*/
-
+  
   //diagnostics::debug::write_line("create_params = {}, style = {}, ex_style = {}", cp, __windows_style_to_string__(cp.style()), __windows_extended_style_to_string__(cp.ex_style()));
   
   return cp;
@@ -569,27 +569,27 @@ void form::fill_in_create_params_border_icons(xtd::forms::create_params& cp) con
   else {
     if (!text().empty())
       cp.style(cp.style() | WS_CAPTION);
-    
+      
     if (control_box_)
       cp.style(cp.style() | WS_SYSMENU | WS_CAPTION);
     else
       cp.style(cp.style() & ~WS_SYSMENU);
-    
+      
     if (!close_box_)
       cp.class_style(cp.class_style() | CS_NOCLOSE);
     else
       cp.class_style(cp.class_style() & ~CS_NOCLOSE);
-    
+      
     if (maximize_box_)
       cp.style(cp.style() | WS_MAXIMIZEBOX);
     else
       cp.style(cp.style() & ~WS_MAXIMIZEBOX);
-    
+      
     if (minimize_box_)
       cp.style(cp.style() | WS_MINIMIZEBOX);
     else
       cp.style(cp.style() & ~WS_MINIMIZEBOX);
-    
+      
     if (help_button_ && !maximize_box_ && !minimize_box_ && control_box_)
       cp.ex_style(cp.ex_style() | WS_EX_CONTEXTHELP);
     else
@@ -601,7 +601,7 @@ void form::fill_in_create_params_start_position(xtd::forms::create_params& cp) c
   static int32_t default_location = 0;
   if (default_location == 0)
     default_location = xtd::random().next(4, 20) * 10;
-  
+    
   if (previous_screen_) {
     switch (start_position_) {
       case form_start_position::manual:

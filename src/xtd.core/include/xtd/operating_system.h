@@ -175,7 +175,7 @@ namespace xtd {
     /// @brief Determines whether the current platform is Windows CE.
     /// @return true if the current platform is Windows CE; otherwise, false.
     bool is_windows_ce() const noexcept {return platform_ == xtd::platform_id::win_ce;}
-
+    
     /// @brief Determines whether the current platform is Windows family.
     /// @return true if the current platform is Windows family; otherwise, false.
     bool is_windows_platform() const noexcept {return platform_ == xtd::platform_id::win32_nt || platform_ == xtd::platform_id::win32s || platform_ == xtd::platform_id::win32_windows || platform_ == xtd::platform_id::win_ce || platform_ == xtd::platform_id::xbox;}
@@ -183,7 +183,7 @@ namespace xtd {
     /// @brief Determines whether the current platform is xbox.
     /// @return true if the current platform is xbox; otherwise, false.
     bool is_xbox() const noexcept {return platform_ == xtd::platform_id::xbox;}
-
+    
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
     xtd::ustring to_string() const noexcept override {return version_string();}

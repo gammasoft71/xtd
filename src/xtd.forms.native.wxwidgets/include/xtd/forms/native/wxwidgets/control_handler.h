@@ -41,7 +41,7 @@ namespace xtd {
           if (!control_) return {};
           return control_->GetClientSize();
         }
-
+        
         virtual wxPoint GetPosition() const {
           if (!control_) return {};
           return control_->GetPosition();
@@ -51,7 +51,7 @@ namespace xtd {
           if (!control_) return {};
           return control_->GetSize();
         }
-
+        
         virtual void SetBackgroundColour(const wxColour& colour) {
           if (!control_) return;
           control_->SetBackgroundColour(colour);

@@ -41,12 +41,12 @@ namespace xtd {
         /// @return The name of the toolkit.
         /// @warning Internal use only
         static xtd::ustring name();
-
+        
         /// @brief Gets the description of the toolkit.
         /// @return The description of the toolkit.
         /// @warning Internal use only
         static xtd::ustring description();
-
+        
         /// @brief Gets the version of the toolkit.
         /// @return The version of the toolkit.
         /// @warning Internal use only

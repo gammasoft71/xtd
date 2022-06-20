@@ -89,7 +89,7 @@ namespace xtd {
       /// | unchecked     | The CheckBox is empty.                            | The control appears raised. |
       /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.   |
       virtual toggle_button& check_state(forms::check_state check_state);
-
+      
       /// @brief Gets a value indicating whether the toggle_button will allow three check states rather than two.
       /// @return true if the toggle_button is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.

@@ -573,7 +573,7 @@ namespace xtd {
     /// | news:123456@contoso.com                     | news:   | news:123456@contoso.com | news:123456@contoso.com                    | <None>                                      |
     /// | file://server/filename.ext                  | file:// | file://server           | file://server/filename.ext                 | file://server/filename.ext                  |
     xtd::ustring get_left_part(xtd::uri_partial part) const;
-        
+    
     /// @brief Converts a specified character into its hexadecimal equivalent.
     /// @param character The character to convert to hexadecimal representation.
     /// @return string The hexadecimal representation of the specified character.

@@ -42,7 +42,7 @@ tool_bar::tool_bar() {
   if (environment::os_version().is_windows_platform()) data_->image_list.image_size(drawing::size {16, 16});
   else if (environment::os_version().is_macos_platform()) data_->image_list.image_size(drawing::size {32, 32});
   else data_->image_list.image_size(drawing::size {24, 24});
-
+  
   auto_size(true);
   padding(forms::padding {2});
   set_can_focus(false);
@@ -257,7 +257,7 @@ forms::create_params tool_bar::create_params() const {
   
   if (is_system_tool_bar())
     create_params.class_name("toolbar");
-  
+    
   if (data_->appearance == tool_bar_appearance::flat) create_params.style(create_params.style() | TBSTYLE_FLAT);
   if (!data_->divider) create_params.style(create_params.style() | TBSTYLE_NODIVIDER);
   if (data_->non_system_dock == dock_style::left) create_params.style(create_params.style() | TBSTYLE_LEFT);
@@ -268,15 +268,15 @@ forms::create_params tool_bar::create_params() const {
   if (!data_->show_tool_tips) create_params.style(create_params.style() | TBSTYLE_TOOLTIPS);
   if (data_->text_align == tool_bar_text_align::right) create_params.style(create_params.style() | TBSTYLE_TEXTRIGHTALIGN);
   if (data_->wrappable) create_params.style(create_params.style() | TBSTYLE_WRAPABLE);
-
+  
   return create_params;
 }
 
-void tool_bar::on_button_click(const xtd::forms::tool_bar_button_click_event_args &e) {
+void tool_bar::on_button_click(const xtd::forms::tool_bar_button_click_event_args& e) {
   button_click(*this, e);
 }
 
-void tool_bar::on_button_drop_down(const xtd::forms::tool_bar_button_click_event_args &e) {
+void tool_bar::on_button_drop_down(const xtd::forms::tool_bar_button_click_event_args& e) {
   if (e.button().drop_down_menu().has_value() && e.handle())
     e.button().drop_down_menu().value().get().show(*this, xtd::drawing::point(reinterpret_cast<tool_bar_button_control*>(e.handle())->left(), reinterpret_cast<tool_bar_button_control*>(e.handle())->bottom() + 2));
   button_drop_down(*this, e);
@@ -390,24 +390,23 @@ void tool_bar::fill() {
         button_control->control(&button_item.control().value().get());
         button_item.control().value().get().parent(*button_control);
       }
-      if (button_item.style() == tool_bar_button_style::drop_down_button && button_item.drop_down_menu().has_value()) {
+      if (button_item.style() == tool_bar_button_style::drop_down_button && button_item.drop_down_menu().has_value())
         button_control->drop_down_menu(const_cast<forms::context_menu*>(&button_item.drop_down_menu().value().get()));
-      }
-      
+        
       /// @todo Add xtd::forms::tool_tip when implemented.
-
+      
       if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
       if (data_->show_text) button_control->text(button_item.text());
-
+      
       if (auto_size()) {
         if (is_horizontal() && height() < button_control->height()) height(button_control->height() + padding().top() + padding().bottom());
         if (!is_horizontal() && width() < button_control->width()) width(button_control->width() + padding().left() + padding().right());
         if (is_horizontal()) width(width() + button_control->width());
         else height(height() + button_control->height());
       }
-
+      
       button_item.data_->rectangle = drawing::rectangle(button_control->location(), button_control->size());
-
+      
       data_->tool_bar_buttons.push_back(button_control);
     }
   }
@@ -490,12 +489,12 @@ void tool_bar::wm_click(const message& message) {
       found_button_or_menu = true;
     }
   }
-
+  
   for (size_t index = 0; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
     if (data_->buttons[index].get().style() == tool_bar_button_style::drop_down_button && data_->buttons[index].get().drop_down_menu().has_value())
       found_button_or_menu = on_context_menu_item_click(data_->buttons[index].get().drop_down_menu().value(), message.wparam());
   }
-        
+  
   if (!found_button_or_menu)
     on_click(event_args::empty);
 }

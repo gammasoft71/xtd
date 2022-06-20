@@ -100,7 +100,7 @@ void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build,
   // https://stackoverflow.com/questions/32115255/c-how-to-detect-windows-10
   NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
   OSVERSIONINFOEXW os_info;
-
+  
   *(FARPROC*)&RtlGetVersion = GetProcAddress(GetModuleHandleA("ntdll"), "RtlGetVersion");
   if (RtlGetVersion != nullptr) {
     os_info.dwOSVersionInfoSize = sizeof(os_info);
@@ -112,7 +112,7 @@ void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build,
   } else {
 #pragma warning(push)
 #pragma warning(disable : 4996)
-    OSVERSIONINFOEX version_info{};
+    OSVERSIONINFOEX version_info {};
     version_info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
     if (GetVersionEx((LPOSVERSIONINFO)&version_info)) {
       major = version_info.dwMajorVersion;

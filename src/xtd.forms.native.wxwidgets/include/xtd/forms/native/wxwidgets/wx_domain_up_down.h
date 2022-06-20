@@ -50,16 +50,16 @@ namespace xtd {
             wxPostEvent(this, wxCommandEvent(wxEVT_TEXT, GetId()));
           });
           
-#if defined(__WXMSW__)
+          #if defined(__WXMSW__)
           textBox->SetSize(GetSize() - wxSize(17, 0));
           upDown->SetPosition(wxPoint(GetSize().GetWidth() - 17, 0));
           upDown->SetSize(17, GetSize().GetHeight());
-#else
+          #else
           textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth(), 0));
           upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), 0));
           upDown->SetSize(upDown->GetSize().GetWidth(), GetSize().GetHeight());
-#endif
-
+          #endif
+          
           upDown->SetRange(0, static_cast<int>(items.GetCount()) - 1);
           upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent & event) {
             if (index == std::numeric_limits<size_t>::max())
