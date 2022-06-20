@@ -79,7 +79,7 @@ namespace xtd {
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
           #elif defined(__APPLE__)
-          control()->Bind(wxEVT_MAXIMIZE, [this](wxMaximizeEvent& e) {
+          control()->Bind(wxEVT_MAXIMIZE, [this](wxMaximizeEvent & e) {
             if (fixed) {
               wxTopLevelWindow* frame = static_cast<wxTopLevelWindow*>(control());
               is_maximize_or_fullscreen = true;
@@ -95,7 +95,7 @@ namespace xtd {
             e.Skip();
           });
           
-          control()->Bind(wxEVT_FULLSCREEN, [this](wxFullScreenEvent& e) {
+          control()->Bind(wxEVT_FULLSCREEN, [this](wxFullScreenEvent & e) {
             if (fixed) {
               wxTopLevelWindow* frame = static_cast<wxTopLevelWindow*>(control());
               is_maximize_or_fullscreen = true;
@@ -111,7 +111,7 @@ namespace xtd {
             e.Skip();
           });
           
-          control()->Bind(wxEVT_SIZE, [this](wxSizeEvent& e) {
+          control()->Bind(wxEVT_SIZE, [this](wxSizeEvent & e) {
             if (fixed) {
               wxTopLevelWindow* frame = static_cast<wxTopLevelWindow*>(control());
               if (is_maximize_or_fullscreen) is_maximize_or_fullscreen = false;
@@ -128,7 +128,7 @@ namespace xtd {
             }
             e.Skip();
           });
-
+          
           fixed = (create_params.style() & WS_THICKFRAME) != WS_THICKFRAME;
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
@@ -137,7 +137,7 @@ namespace xtd {
           #endif
           
           #if defined(__WXGTK__)
-          control()->Bind(wxEVT_MOVE, [&](wxMoveEvent& event) {
+          control()->Bind(wxEVT_MOVE, [&](wxMoveEvent & event) {
             if (event.GetPosition() == invalid_location) return;
             location_ = event.GetPosition();
           });
@@ -164,21 +164,21 @@ namespace xtd {
           
           if ((style & WS_CLIPCHILDREN) == WS_CLIPCHILDREN) wx_style |= wxCLIP_CHILDREN;
           if ((style & WS_CAPTION) == WS_CAPTION) wx_style |= wxCAPTION;
-
+          
           if ((style & WS_THICKFRAME) == WS_THICKFRAME) wx_style |= wxRESIZE_BORDER;
           if ((ex_style & WS_EX_TOOLWINDOW) == WS_EX_TOOLWINDOW) wx_style |= wxFRAME_TOOL_WINDOW;
-
+          
           if ((ex_style & WS_EX_TOPMOST) == WS_EX_TOPMOST) wx_style |= wxSTAY_ON_TOP;
           else if (parent && (style & WS_CHILD) != WS_CHILD) wx_style |= wxFRAME_FLOAT_ON_PARENT;
           if ((ex_style & WS_EX_APPWINDOW) != WS_EX_APPWINDOW) wx_style |= wxFRAME_NO_TASKBAR;
-
+          
           if ((style & WS_SYSMENU) == WS_SYSMENU) {
             if ((style & WS_MAXIMIZEBOX) == WS_MAXIMIZEBOX) wx_style |= wxMAXIMIZE_BOX;
             if ((style & WS_MINIMIZEBOX) == WS_MINIMIZEBOX) wx_style |= wxMINIMIZE_BOX;
             if ((class_style & CS_NOCLOSE) != CS_NOCLOSE) wx_style |= wxCLOSE_BOX;
             if ((ex_style & WS_EX_DLGMODALFRAME) != WS_EX_DLGMODALFRAME) wx_style |= wxSYSTEM_MENU;
           }
-
+          
           //cdebug << ustring::format("style = 0x{:X}, ex_style = 0x{:X}, wx_style = 0x{:X}", style, ex_style, wx_style) << std::endl;
           
           return wx_style;
@@ -204,14 +204,14 @@ namespace xtd {
           return control_handler::GetPosition();
         }
         #endif
-
+        
         void SetBackgroundColour(const wxColour& colour) override {
           control_handler::SetBackgroundColour(colour);
           #if !defined(__APPLE__)
           panel_->SetBackgroundColour(colour);
           #endif
         }
-
+        
         void SetCursor(const wxCursor& cursor) override {
           control_handler::SetCursor(cursor);
           panel_->SetCursor(cursor);
@@ -259,7 +259,7 @@ namespace xtd {
           control_handler::SetPosition(location);
         }
         #endif
-
+        
         void SetSize(int32_t width, int32_t height) override {
           #if defined(__APPLE__)
           if (width < 75) width = 75;
@@ -303,7 +303,7 @@ namespace xtd {
           }
         }
         #endif
-
+        
       private:
         wxBoxSizer* boxSizer_;
         wxMainPanel* panel_;

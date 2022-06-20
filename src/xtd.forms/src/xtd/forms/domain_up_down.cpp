@@ -15,7 +15,7 @@ using namespace xtd::forms;
 
 domain_up_down::domain_up_down() {
   control_appearance(forms::control_appearance::system);
-
+  
   items_.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::domain_up_down::insert_item(handle(), pos, item.value());
     domain_up_down::item selected_item;

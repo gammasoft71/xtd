@@ -94,12 +94,12 @@ namespace xtd {
         /// @param control Control window handle.
         /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
         /// @warning Internal use only
-        static void opacity(intptr_t control, double opacity);        
+        static void opacity(intptr_t control, double opacity);
         /// @brief Restore form in normal state (not minimized, not maximized and not full screen).
         /// @param control Control window handle.
         /// @warning Internal use only
         static void restore(intptr_t control);
-
+        
         /// @brief Sets the shape of the window to that depicted by region.
         /// @param control Control window handle.
         /// @param region The region to set shape;

@@ -66,7 +66,7 @@ private:
     buttons.push_back(button_ptr);
     button_ptr->three_state(true).check_state(forms::check_state::indeterminate).flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({130, 10});
     button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({130, 10});
-
+    
     button_ptr = make_shared<toggle_button>();
     buttons.push_back(button_ptr);
     button_ptr->flat_style(style).text(ustring::format("Buttton {}", ++button_number)).parent(parent_control).location({250, 10}).enabled(false);

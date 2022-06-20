@@ -231,7 +231,7 @@ ip_address ip_address::parse(const ustring& str) {
       if (it->empty()) {
         *it = "0";
         auto fill_count = 8 - address_parts.size();
-        for  (size_t fc = 0; fc < fill_count; ++fc)
+        for (size_t fc = 0; fc < fill_count; ++fc)
           address_parts.insert(it, "0");
       }
     }
@@ -254,7 +254,7 @@ ustring ip_address::to_string() const noexcept {
   for (size_t index = 0; index < 8; ++index) {
     if (index < 7 && numbers_[index] == 0 && numbers_[index + 1] == 0) {
       if (index == 0) str = ":";
-      while  (index < 7 && numbers_[index + 1] == 0) ++index;
+      while (index < 7 && numbers_[index + 1] == 0) ++index;
       if (index < 8) str += ":";
     } else {
       str += ustring::format("{:x}", numbers_[index]);

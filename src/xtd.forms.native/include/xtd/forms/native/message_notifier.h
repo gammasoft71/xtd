@@ -24,17 +24,17 @@ namespace xtd {
       protected:
         /// @param hwnd Parent window handle.
         static void show(intptr_t hwnd,
-                         const xtd::ustring& title,
-                         const xtd::ustring& message,
-                         const xtd::drawing::icon& icon,
-                         uint32_t style,
-                         bool close_timeout_enabled_,
-                         std::chrono::system_clock::duration close_timeout_interval,
-                         xtd::delegate<void()> on_notifier_closed);
-
-
-
-
+          const xtd::ustring& title,
+          const xtd::ustring& message,
+          const xtd::drawing::icon& icon,
+          uint32_t style,
+          bool close_timeout_enabled_,
+          std::chrono::system_clock::duration close_timeout_interval,
+          xtd::delegate<void()> on_notifier_closed);
+          
+          
+          
+          
       };
     }
   }

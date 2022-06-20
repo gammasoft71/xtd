@@ -96,12 +96,12 @@ void control::back_color(intptr_t control, const color& color) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-
-#if !defined(WIN32)
+  
+  #if !defined(WIN32)
   if (dynamic_cast<wx_user_panel*>(reinterpret_cast<control_handler*>(control)->control())) return;
   if (dynamic_cast<wx_user_window*>(reinterpret_cast<control_handler*>(control)->control())) return;
-#endif
-
+  #endif
+  
   reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
 
@@ -556,6 +556,6 @@ void control::suspend_layout(intptr_t control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-
+  
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }

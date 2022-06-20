@@ -98,7 +98,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks You can use this property to differentiate a panel from other panels in a td::forms::status_bar control.
       status_bar& border_style(xtd::forms::status_bar_panel_border_style value);
-
+      
       /// @brief Gets the control to be displayed in the control status bar panel.
       /// @return A xtd::forms::control to be displayed in the control status bar panel. The default is std::nullopt.
       /// @remarks You can specify a xtd::forms::control to be displayed. This property is not used unless the xtd::forms::status_bar_panel::style property value is set to xtd::forms::status_bar_panel_style::control.
@@ -125,7 +125,7 @@ namespace xtd {
       /// @remarks You can use this property to display an image that represents the state of your application or a process within your application. For example, you can display an image in a xtd::forms::status_bar_panel to indicate whether a file save operation is in progress or complete.
       /// @note There is no way to independently position an image within the xtd::forms::status_bar_panel. For example, you cannot position an image to the left side of the xtd::forms::status_bar_panel while aligning the text on the right side using the xtd::forms::status_bar_panel::alignment property. The image is always positioned to the left side of the panel's text regardless of how the text is aligned.
       status_bar_panel& image(const xtd::drawing::image& value);
-
+      
       /// @brief Gets the minimum allowed width of the status bar panel within the xtd::forms::status_bar control.
       /// @return The minimum width, in pixels, of the xtd::forms::status_bar_panel
       /// @remarks The xtd::forms::status_bar_panel::min_width property is used when the xtd::forms::status_bar_panel::auto_size property is set to xtd::forms::status_bar_panel_auto_size::contents or xtd::forms::status_bar_panel_auto_size::spring to prevent the xtd::forms::status_bar_panel from automatically resizing to a width that is too small. When the xtd::forms::status_bar_panel::auto_size property is set to xtd::forms::status_bar_panel_auto_size::none, the xtd::forms::status_bar_panel::min_width property is automatically set to the same value as the xtd::forms::status_bar_panel::width property.
@@ -149,7 +149,7 @@ namespace xtd {
       /// @brief Gets the xtd::forms::status_bar control that the status bar panel is assigned to.
       /// @return The xtd::forms::status_bar control that the xtd::forms::status_bar_panel is assigned to.
       std::optional<std::reference_wrapper<xtd::forms::tool_bar>> parent() const noexcept;
-
+      
       /// @brief Gets the style of the status bar panel.
       /// @return One of the xtd::forms::status_bar_panel_style values. The default is xtd::forms::status_bar_panel_style::text.
       /// @remarks You can use this property to indicate whether a xtd::forms::status_bar_panel displays text or whether the panel is managed as an owner-drawn xtd::forms::status_bar_panel. To determine when a xtd::forms::status_bar_panel needs to be drawn, create an event handler for the xtd::forms::status_bar::draw_item event of the xtd::forms::status_bar control. The xtd::forms::status_bar_draw_item_event_args passed as a parameter to an event handler of the xtd::forms::status_bar::draw_item event enables you to determine which panel needs to be drawn. The xtd::forms::status_bar_draw_item_event_args also provides a xtd::drawing::graphics object you can use to perform drawing tasks on the xtd::forms::status_bar_panel.
@@ -159,7 +159,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks You can use this property to indicate whether a xtd::forms::status_bar_panel displays text or whether the panel is managed as an owner-drawn xtd::forms::status_bar_panel. To determine when a xtd::forms::status_bar_panel needs to be drawn, create an event handler for the xtd::forms::status_bar::draw_item event of the xtd::forms::status_bar control. The xtd::forms::status_bar_draw_item_event_args passed as a parameter to an event handler of the xtd::forms::status_bar::draw_item event enables you to determine which panel needs to be drawn. The xtd::forms::status_bar_draw_item_event_args also provides a xtd::drawing::graphics object you can use to perform drawing tasks on the xtd::forms::status_bar_panel.
       status_bar_panel& style(xtd::forms::status_bar_panel_style value);
-
+      
       /// @brief Gets an object that contains data about the xtd::forms::status_bar_panel.
       /// @return An std::any that contains data about the xtd::forms::status_bar_panel. The default is empty.
       /// @remarks Retrieves or assigns the data currently associated with the xtd::forms::status_bar_panel. Any std::any type can be assigned to this property.
@@ -169,7 +169,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks Retrieves or assigns the data currently associated with the xtd::forms::status_bar_panel. Any std::any type can be assigned to this property.
       status_bar_panel& tag(std::any value);
-
+      
       /// @brief Gets the text of the status bar panel.
       /// @return The text displayed in the panel. The default is an empty string ("").
       /// @remarks This property represents the text that is displayed when the xtd::forms::status_bar_panel::style property is set to xtd::forms::status_bar_panel::text. You can use this property to display information about your application in a xtd::forms::status_bar control. For example, you can use the xtd::forms::status_bar_panel::text property to display Help information when the user moves the mouse over a menu or to display the name and location of a file that is opened in an application. To align the text within a xtd::forms::status_bar_panel, use the xtd::forms::status_bar_panel::alignment property.
@@ -179,7 +179,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks This property represents the text that is displayed when the xtd::forms::status_bar_panel::style property is set to xtd::forms::status_bar_panel::text. You can use this property to display information about your application in a xtd::forms::status_bar control. For example, you can use the xtd::forms::status_bar_panel::text property to display Help information when the user moves the mouse over a menu or to display the name and location of a file that is opened in an application. To align the text within a xtd::forms::status_bar_panel, use the xtd::forms::status_bar_panel::alignment property.
       status_bar_panel& text(const xtd::ustring& value);
-
+      
       /// @brief Gets ToolTip text associated with the status bar panel.
       /// @return The ToolTip text for the panel.
       /// @remarks You can use this property to display additional information in a ToolTip when the mouse pointer rests on a xtd::forms::status_bar_panel. For example, you can display a ToolTip that provides data transfer speed for a xtd::forms::status_bar_panel that displays the status of a file transfer.
@@ -219,7 +219,7 @@ namespace xtd {
       /// @param control A xtd::forms::control to be displayed in the control status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
       static status_bar_panel create_control(const xtd::forms::control& control);
-
+      
       /// @brief A factory to create a status bar panel with specified text.
       /// @param text The text displayed on the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.

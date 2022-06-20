@@ -60,7 +60,7 @@ namespace xtd {
       /// @param size nullptr.
       /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& border_radius(std::nullptr_t radius);
-
+      
       /// @brief Gets a value that specifies the size, in pixels, of the border around the button.
       /// @return An int32_t representing the size, in pixels, of the border around the button.
       std::optional<int32_t> border_size() const;
@@ -72,7 +72,7 @@ namespace xtd {
       /// @param size nullptr.
       /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& border_size(std::nullptr_t size);
-
+      
       /// @brief Gets the color of the client area of the button when the button is checked and the mouse pointer is outside the bounds of the control.
       /// @return A xtd::drawing::color structure representing the color of the client area of the button.
       std::optional<xtd::drawing::color> checked_back_color() const;

@@ -166,7 +166,7 @@ namespace xtd {
         /// @brief Gets the style sheet toggle_buttons collection of this instance.
         /// @return The style sheet buttons collection.
         const toggle_buttons_t& flat_toggle_buttons() const noexcept;
-
+        
         /// @brief Gets the style sheet form for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet form for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         xtd::forms::style_sheets::form form() const noexcept;
@@ -204,7 +204,7 @@ namespace xtd {
         /// @brief Gets the style sheet panels collection of this instance.
         /// @return The style sheet panels collection.
         const panels_t& panels() const noexcept;
-
+        
         /// @brief Gets the style sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         xtd::forms::style_sheets::button popup_button() const noexcept;
@@ -215,7 +215,7 @@ namespace xtd {
         /// @brief Gets the style sheet buttons collection of this instance.
         /// @return The style sheet buttons collection.
         const buttons_t& popup_buttons() const noexcept;
-
+        
         /// @brief Gets the style sheet toggle_button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         xtd::forms::style_sheets::toggle_button popup_toggle_button() const noexcept;
@@ -248,7 +248,7 @@ namespace xtd {
         /// @brief Gets the style sheet status bar panels collection of this instance.
         /// @return The style sheet status bar panels collection.
         const status_bar_panels_t& status_bar_panels() const noexcept;
-
+        
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheets.
         /// @return The installed xtd::forms::style_sheets::style_sheet style sheets.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
@@ -272,7 +272,7 @@ namespace xtd {
         /// @brief Gets The style sheet theme of this instance.
         /// @return The style sheet theme collection.
         const xtd::forms::style_sheets::theme& theme() const noexcept;
-
+        
         /// @brief Gets the style sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         xtd::forms::style_sheets::toggle_button toggle_button() const noexcept;
@@ -306,7 +306,7 @@ namespace xtd {
         /// @return The style sheet tool bar buttons collection.
         const tool_bar_buttons_t& tool_bar_buttons() const noexcept;
         
-       /// @brief Gets the style sheet user_control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @brief Gets the style sheet user_control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet control for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         xtd::forms::style_sheets::user_control user_control() const noexcept;
         /// @brief Gets the style sheet user_control for specified pseudo state.
@@ -412,7 +412,7 @@ namespace xtd {
         xtd::forms::style_sheets::text_decoration text_decoration_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_decoration& default_value) const noexcept;
         xtd::forms::style_sheets::text_transformation text_transformation_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_transformation& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
-     
+        
         template<typename type_t, typename collection_t>
         type_t get_state_control(const collection_t& collection, pseudo_state state) const noexcept {
           auto result = type_t();
@@ -422,7 +422,7 @@ namespace xtd {
           if (it != collection.end()) result = it->second;
           return result;
         }
-
+        
         static void on_style_sheet_changed(const xtd::event_args& e);
         static void on_system_colors_changed(const event_args& e);
         std::vector<xtd::ustring> split_values_from_text(const xtd::ustring& text) const noexcept;
@@ -445,7 +445,7 @@ namespace xtd {
         void tool_bar_reader(xtd::web::css::css_reader& reader) noexcept;
         void tool_bar_button_reader(xtd::web::css::css_reader& reader) noexcept;
         void user_control_reader(xtd::web::css::css_reader& reader) noexcept;
-
+        
         //static style_sheet system_style_sheet_gnome_dark() noexcept; // Declared in system_style_sheet_gnome_dark.cpp
         //static style_sheet system_style_sheet_gnome_light() noexcept; // Declared in system_style_sheet_gnome_light.cpp
         //static style_sheet system_style_sheet_kde_dark() noexcept; // Declared in system_style_sheet_kde_dark.cpp
@@ -489,12 +489,12 @@ namespace xtd {
           xtd::forms::style_sheets::system_colors system_colors;
           xtd::forms::style_sheets::theme theme;
         };
-
+        
         static style_sheet current_style_sheet_;
         static style_sheets_t style_sheets_;
         static style_sheet_names_t style_sheet_names_;
         static style_sheet system_style_sheet_;
-
+        
         std::shared_ptr<data> data_ = std::make_shared<data>();
       };
     }

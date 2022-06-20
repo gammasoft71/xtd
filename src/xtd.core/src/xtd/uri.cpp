@@ -46,7 +46,7 @@ ustring uri::dns_safe_host() const {
   if (!str.empty()) {
     auto address = ip_address();
     if (ip_address::try_parse(str, address) == true && address.address_family() == sockets::address_family::inter_network_v6 && str[0] == '[' && str[str.size() - 1] == ']')
-      return str.substring(1, str.size()-2);
+      return str.substring(1, str.size() - 2);
   }
   return get_components(uri_components::host, uri_format::safe_unescaped);
 }
@@ -79,7 +79,7 @@ ustring uri::idn_host() const {
   if (!str.empty()) {
     auto address = ip_address();
     if (ip_address::try_parse(str, address) == true && address.address_family() == sockets::address_family::inter_network_v6 && str[0] == '[' && str[str.size() - 1] == ']')
-      return str.substring(1, str.size()-2);
+      return str.substring(1, str.size() - 2);
   }
   return get_components(uri_components::host, uri_format::safe_unescaped);
 }
@@ -196,7 +196,7 @@ ustring uri::escape_data_string(const ustring& value) {
   auto escape_needed = false;
   for (size_t index = 0; !escape_needed && index < value.size(); ++index)
     escape_needed = !is_hex_encoding(value, index) && need_to_escape_data_char(value[index]);
-  
+    
   if (escape_needed) {
     auto ret_value = ustring::empty_string();
     for (size_t index = 0; index < value.size(); ++index) {
@@ -215,7 +215,7 @@ ustring uri::escape_uri_string(const ustring& value) {
   auto escape_needed = false;
   for (size_t index = 0; !escape_needed && index < value.size(); ++index)
     escape_needed = !is_hex_encoding(value, index) && need_to_escape_uri_char(value[index]);
-  
+    
   if (escape_needed) {
     ustring ret_value;
     for (size_t index = 0; index < value.size(); ++index) {
@@ -243,7 +243,7 @@ ustring uri::get_components(uri_components components, uri_format format) const 
   if ((components & uri_components::scheme) == uri_components::scheme && (components & ~uri_components::scheme) != uri_components::none) str += format_componant(scheme_delimiter_, format);
   if ((components & uri_components::user_info) == uri_components::user_info) str += format_componant(user_info_, format);
   if ((components & uri_components::user_info) == uri_components::user_info && user_info_.size() && (components & ~uri_components::user_info) != uri_components::none) str += format_componant("@", format);
-  if ((components &uri_components::host) == uri_components::host) str += format_host_componant(host_, format);
+  if ((components & uri_components::host) == uri_components::host) str += format_host_componant(host_, format);
   if ((components & uri_components::port) == uri_components::port && port_.size() && (components & ~uri_components::port) != uri_components::none) str += format_componant(":", format);
   if ((components & uri_components::port) == uri_components::port) str += format_componant(port_, format);
   if ((components & uri_components::path) == uri_components::path) str += format_componant(path_, format);
@@ -306,7 +306,7 @@ bool uri::is_well_formed_original_string() {
   
   for (size_t index = 0; !well_formated_original_string && index < original_uri_.size(); ++index)
     well_formated_original_string = !(is_hex_encoding(original_uri_, index) || need_to_escape_uri_char(original_uri_[index]));
-  
+    
   if (well_formated_original_string == true) well_formated_original_string = path::is_path_rooted(original_uri_);
   if (well_formated_original_string == true) well_formated_original_string = original_uri_.index_of('\\') != ustring::npos;
   if (well_formated_original_string == true) well_formated_original_string = !(scheme_delimiter_.size() == 0 && host_.size() != 0);
@@ -333,7 +333,7 @@ ustring uri::unescape_data_string(const ustring& value) {
   auto unescape_needed = false;
   for (size_t index = 0; !unescape_needed && index < value.size(); ++index)
     unescape_needed = is_hex_encoding(value, index);
-  
+    
   if (!unescape_needed) return value;
   
   auto ret_value = ustring::empty_string();
@@ -399,7 +399,7 @@ void uri::set_host(ustring& escape_uri) {
     if (index_start == ustring::npos) index_start = escape_uri.size();
     if (index_start != ustring::npos) {
       host_ = escape_uri.remove(index_start + 1).to_lower();
-      escape_uri = escape_uri.substring(index_start  +1);
+      escape_uri = escape_uri.substring(index_start  + 1);
     }
   } else {
     auto index_start = escape_uri.index_of_any({':', '/', '?', '#'});

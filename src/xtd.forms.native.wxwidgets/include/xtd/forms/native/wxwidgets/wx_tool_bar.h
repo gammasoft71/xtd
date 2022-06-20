@@ -55,25 +55,25 @@ namespace xtd {
           if ((style & TBSTYLE_TEXTRIGHTALIGN) == TBSTYLE_TEXTRIGHTALIGN) wx_style |= wxTB_HORZ_LAYOUT;
           if ((style & TBSTYLE_FLAT) == TBSTYLE_FLAT) wx_style |= wxTB_FLAT;
           if ((style & TBSTYLE_TOOLTIPS) != TBSTYLE_TOOLTIPS) wx_style |= wxTB_NO_TOOLTIPS;
-
+          
           return wx_style;
         }
-
+        
         bool Destroy() override {
           // Workaround : When wxWidgets destroy the tool bar tool with a control or drop down menu, it destroy the control and the drop down menu. But with xtd, the control and the drop down menu are managed by xtd and they can be destroyed.
           // To prevent destroy control and drop down menu change the tool bar tool style to wxTOOL_STYLE_BUTTON et set drop down menu to null...
           __reset_tool_bar_tools_styles__(static_cast<wxToolBar*>(control()));
           /// end Workaround
-
+          
           return control()->Destroy();
         }
-
+        
         void SetClientSize(int32_t width, int32_t height) override {
         }
-
+        
         void SetPosition(const wxPoint& location) override {
         }
-
+        
         void SetSize(int32_t width, int32_t height) override {
         }
       };

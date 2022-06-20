@@ -55,7 +55,7 @@ namespace xtd {
       /// @brief Gets the whole word value.
       /// @return true if whole word option selected; otherwise false. The default is false.
       bool whole_word() const {return whole_word_;}
-
+      
       /// @}
       
     private:

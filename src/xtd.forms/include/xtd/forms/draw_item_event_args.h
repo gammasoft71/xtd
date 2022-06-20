@@ -64,7 +64,7 @@ namespace xtd {
       /// @return The xtd::drawing::font that is assigned to the item being drawn.
       /// @remarks A suggested xtd::drawing::font, usually the xtd::forms::control::font property of the parent control.
       const xtd::drawing::font& font() const noexcept {return font_;}
-
+      
       /// @brief Gets the foreground color of the of the item being drawn.
       /// @return The foreground xtd::drawing::color of the item being drawn.
       /// @remarks If the item's state is xtd::forms::draw_item_state::selected, the xtd::forms::drawing_item_event_args::fore_color is set to xtd::drawing::system_colors::highlight_text. If the item's state is not xtd::forms::draw_item_state::selected, the xtd::forms::drawing_item_event_args::fore_color property is set to xtd::drawing::system_colors::window.
@@ -73,7 +73,7 @@ namespace xtd {
       /// @brief Gets the graphics surface to draw the item on.
       /// @return The xtd::drawing::graphics surface to draw the item on.
       xtd::drawing::graphics& graphics() noexcept {return *graphics_;}
-
+      
       /// @brief Gets the index value of the item that is being drawn.
       /// @return The numeric value that represents the xtd::forms::control::control_collection::operator[] value of the item being drawn.
       /// @remarks This property returns the xtd::forms::control::control_collection::operator[] value of the item being drawn in the xtd::forms::control::control_collection. This property can return xtd::forms::control::control_collection::npos if items were removed from the list.

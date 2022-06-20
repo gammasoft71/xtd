@@ -95,7 +95,7 @@ namespace xtd {
         /// @return The offset specifies the width of the outlines.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         virtual xtd::forms::style_sheets::outline_offset outline_offset() const noexcept = 0;
-
+        
         /// @brief Gets the radius is used to add rounded outline to an element.
         /// @return The radius is used to add rounded outline to an element.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.

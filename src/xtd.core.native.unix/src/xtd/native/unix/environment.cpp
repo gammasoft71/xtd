@@ -62,16 +62,16 @@ std::string environment::get_desktop_environment() {
 }
 
 std::string environment::get_desktop_theme() {
-#if defined(__APPLE__)
-  return unix::strings::contains(create_process("defaults read -g AppleInterfaceStyle"), "Dark" ) ? "macos dark" : "macos";
-#else
+  #if defined(__APPLE__)
+  return unix::strings::contains(create_process("defaults read -g AppleInterfaceStyle"), "Dark") ? "macos dark" : "macos";
+  #else
   auto desktop = get_desktop_environment();
   if (desktop != "gnome") return desktop;
   auto current_theme = create_process("gsettings get org.gnome.desktop.interface gtk-theme");
   if (current_theme.size() >= 4)
     current_theme = unix::strings::substring(current_theme, 1, current_theme.size() - 3);
   return current_theme;
-#endif
+  #endif
 }
 
 std::string environment::get_environment_variable(const std::string& variable) {

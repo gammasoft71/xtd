@@ -107,7 +107,7 @@ void button_renderer::draw_flat_button(const style_sheets::style_sheet& style_sh
   if (appearance.checked_back_color().has_value() && button_state == push_button_state::checked) current_style_sheet.background_color(appearance.checked_back_color().value());
   if (appearance.mouse_down_back_color().has_value() && button_state == push_button_state::pressed) current_style_sheet.background_color(appearance.mouse_down_back_color().value());
   if (appearance.mouse_over_back_color().has_value() && button_state == push_button_state::hot) current_style_sheet.background_color(appearance.mouse_over_back_color().value());
-
+  
   box_renderer::draw_box(graphics, bounds, current_style_sheet);
   auto content_rectangle = current_style_sheet.get_content_rectangle(bounds);
   image_renderer::draw_image(graphics, content_rectangle, image, button_state != push_button_state::disabled, current_style_sheet.get_solid_background_color(), current_style_sheet);
@@ -139,7 +139,7 @@ void button_renderer::draw_popup_button(const style_sheets::style_sheet& style_s
   if (appearance.checked_back_color().has_value() && button_state == push_button_state::checked) current_style_sheet.background_color(appearance.checked_back_color().value());
   if (appearance.mouse_down_back_color().has_value() && button_state == push_button_state::pressed) current_style_sheet.background_color(appearance.mouse_down_back_color().value());
   if (appearance.mouse_over_back_color().has_value() && button_state == push_button_state::hot) current_style_sheet.background_color(appearance.mouse_over_back_color().value());
-
+  
   box_renderer::draw_box(graphics, bounds, current_style_sheet);
   auto content_rectangle = current_style_sheet.get_content_rectangle(bounds);
   image_renderer::draw_image(graphics, content_rectangle, image, button_state != push_button_state::disabled, current_style_sheet.get_solid_background_color(), current_style_sheet);

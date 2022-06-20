@@ -35,7 +35,7 @@ void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& sty
     current_style_sheet.border_width(style_sheets::border_width(border_width));
     current_style_sheet.border_radius(style_sheets::border_radius(border_radius));
   }
-
+  
   box_renderer::draw_box(graphics, bounds, current_style_sheet);
   auto content_rectangle = current_style_sheet.get_content_rectangle(bounds);
   image_renderer::draw_image(graphics, content_rectangle, image, label_state != label_state::disabled, current_style_sheet.get_solid_background_color(), current_style_sheet);

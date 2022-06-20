@@ -108,7 +108,7 @@ namespace xtd {
         dialog.description(description).root_folder(root_folder).show_new_folder_button(show_new_folder_button).auto_upgrade_enable(auto_upgrade_enable).selected_path(selected_path);
         const auto result = owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
         if (result == dialog_result::ok) selected_path = dialog.selected_path();
-         return result;
+        return result;
       }
     };
   }

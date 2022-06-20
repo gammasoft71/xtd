@@ -26,11 +26,11 @@ namespace xtd {
       class wxPopup : public wxPopupTransientWindow {
         friend xtd::forms::native::wx_popup_panel;
       public:
-        wxPopup(wxWindow *parent, int styles) {
+        wxPopup(wxWindow* parent, int styles) {
           Create(parent, styles);
         }
         
-        void Popup(wxWindow *focus = nullptr) override {
+        void Popup(wxWindow* focus = nullptr) override {
           /// Workaround : with wxWidgets version <= 3.1.5 when first using the wxPopupTransientWindow, it does not respond on macOS....
           #if defined(__APPLE__)
           if (first_used) {
@@ -43,13 +43,13 @@ namespace xtd {
         
         bool IgnoreMouseMessages() const {return ignoreMouseMessages;}
         void IgnoreMouseMessages(bool value) {ignoreMouseMessages = value;}
- 
+        
         void Dismiss() override {
           wxPopupTransientWindow::Dismiss();
         }
         
       protected:
-        bool ProcessLeftDown(wxMouseEvent &event) override {
+        bool ProcessLeftDown(wxMouseEvent& event) override {
           return ignoreMouseMessages;
         }
         
@@ -96,7 +96,7 @@ namespace xtd {
         
         control_handler* control_handler_ = nullptr;
       };
-
+      
       class wx_popup_panel : public control_handler {
         friend xtd::forms::native::control;
         friend xtd::forms::native::popup_panel;
@@ -127,7 +127,7 @@ namespace xtd {
             panel_->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
           #endif
-       }
+        }
         
         static long popup_panel_style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = wxFRAME_SHAPED | wxPU_CONTAINS_CONTROLS;
@@ -150,7 +150,7 @@ namespace xtd {
           
           return wx_style;
         }
-
+        
         wxWindow* main_control() const override {
           return panel_;
         }
@@ -175,7 +175,7 @@ namespace xtd {
           control_handler::SetForegroundColour(colour);
           panel_->SetForegroundColour(colour);
         }
-
+        
         wxSize GetClientSize() const override {
           return control()->GetSize();
         }
@@ -183,7 +183,7 @@ namespace xtd {
         void SetClientSize(int32_t width, int32_t height) override {
           SetSize(width, height);
         }
- 
+        
         void SetPosition(const wxPoint& pt) override {
           location_ = pt;
           if (control()->GetParent())

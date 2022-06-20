@@ -28,7 +28,7 @@ namespace {
     if (func.Contains("GetHeight") && cond == "\"IsOk()\"" && msg == "invalid bitmap") return;
     // Workaround: wxWidgets generates an assert if bitmap is empty.
     if (func.Contains("GetWidth") && cond == "\"IsOk()\"" && msg == "invalid bitmap") return;
-
+    
     debug::write_line_if(show_wx_assert.enabled(), "wxAssert");
     debug::write_line_if(show_wx_assert.enabled(), "--------");
     debug::write_line_if(show_wx_assert.enabled(), ustring::format("cond={}, msg={}", cond, msg));

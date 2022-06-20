@@ -40,6 +40,6 @@ void user_control_renderer::draw_user_control(const style_sheets::style_sheet& s
     current_style_sheet.border_width(style_sheets::border_width(border_width));
     current_style_sheet.border_radius(style_sheets::border_radius(border_radius));
   }
-
+  
   box_renderer::draw_box(graphics, bounds, current_style_sheet);
 }

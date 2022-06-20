@@ -39,7 +39,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, const xtd::ustring& title, drawing:
     gtk_color_chooser_get_rgba(GTK_COLOR_CHOOSER(dialog), &gdk_rgba);
     color = drawing::color::from_argb(gdk_rgba.alpha * 255, gdk_rgba.red * 255, gdk_rgba.green * 255, gdk_rgba.blue * 255);
   }
-  gtk_widget_destroy (dialog);
+  gtk_widget_destroy(dialog);
   return result;
 }
 #else

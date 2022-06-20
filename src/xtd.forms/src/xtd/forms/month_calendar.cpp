@@ -324,11 +324,11 @@ void month_calendar::update_bolded_dates() {
 forms::create_params month_calendar::create_params() const {
   forms::create_params create_params = control::create_params();
   create_params.class_name("monthcalendar");
- 
+  
   if (!data_->show_today) create_params.style(create_params.style() | MCS_NOTODAY);
   if (!data_->show_today_circle) create_params.style(create_params.style() | MCS_NOTODAYCIRCLE);
   if (data_->show_week_numbers) create_params.style(create_params.style() | MCS_WEEKNUMBERS);
-
+  
   return create_params;
 }
 

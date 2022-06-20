@@ -146,7 +146,7 @@ namespace xtd {
         value_type operator*() const;
         xtd::io::directory_info::directory_iterator begin() const;
         xtd::io::directory_info::directory_iterator end() const;
-
+        
         xtd::ustring path() const;
         xtd::ustring pattern() const;
         /// @endcond
@@ -180,7 +180,7 @@ namespace xtd {
         value_type operator*() const;
         xtd::io::directory_info::file_iterator begin() const;
         xtd::io::directory_info::file_iterator end() const;
-
+        
         xtd::ustring path() const;
         xtd::ustring pattern() const;
         /// @endcond
@@ -200,8 +200,8 @@ namespace xtd {
         using iterator_category = std::input_iterator_tag;
         using value_type = std::shared_ptr<xtd::io::file_system_info>;
         using difference_type = std::shared_ptr<xtd::io::file_system_info>;
-        using pointer = std::shared_ptr<xtd::io::file_system_info>*;
-        using reference = std::shared_ptr<xtd::io::file_system_info>&;
+        using pointer = std::shared_ptr<xtd::io::file_system_info>* ;
+        using reference = std::shared_ptr<xtd::io::file_system_info>& ;
         
         file_system_info_iterator();
         file_system_info_iterator(const file_system_info_iterator&) = default;
@@ -214,7 +214,7 @@ namespace xtd {
         value_type operator*() const;
         xtd::io::directory_info::file_system_info_iterator begin() const;
         xtd::io::directory_info::file_system_info_iterator end() const;
-
+        
         xtd::ustring path() const;
         xtd::ustring pattern() const;
         /// @endcond

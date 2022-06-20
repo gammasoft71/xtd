@@ -12,8 +12,8 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core exceptions
-    class uri_format_exception : public format_exception {
-    public:
+  class uri_format_exception : public format_exception {
+  public:
     /// @name Constructors
     
     /// @{

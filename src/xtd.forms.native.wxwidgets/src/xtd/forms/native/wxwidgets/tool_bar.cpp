@@ -97,12 +97,12 @@ bool tool_bar::set_system_tool_bar(intptr_t control, intptr_t tool_bar) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return false;
   }
-
+  
   if (tool_bar == 0) {
     static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(nullptr);
     return true;
   }
-
+  
   if (static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->GetToolBar() == nullptr) {
     static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetToolBar(static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control()));
     dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->Realize();
@@ -116,10 +116,10 @@ void tool_bar::update_tool_bar_item(intptr_t tool_bar, intptr_t handle, const xt
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(tool_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-
+  
   auto tool_bar_item = dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->FindById(static_cast<int>(handle));
   if (!tool_bar_item) throw argument_exception(csf_);
-
+  
   tool_bar_item->SetLabel(convert_string::to_wstring(text));
   tool_bar_item->SetNormalBitmap(*reinterpret_cast<wxImage*>(image.handle()));
   tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text));

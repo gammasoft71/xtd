@@ -71,10 +71,10 @@ namespace xtd {
         bool operator==(directory_iterator other) const;
         bool operator!=(directory_iterator other) const {return !operator==(other);}
         value_type operator*() const;
-
+        
         xtd::native::directory::directory_iterator begin() const;
         xtd::native::directory::directory_iterator end() const;
-
+        
         const std::string& path() const;
         const std::string& pattern() const;
         /// @endcond
@@ -110,7 +110,7 @@ namespace xtd {
         value_type operator*() const;
         xtd::native::directory::file_iterator begin() const;
         xtd::native::directory::file_iterator end() const;
-
+        
         const std::string& path() const;
         const std::string& pattern() const;
         /// @endcond
@@ -146,7 +146,7 @@ namespace xtd {
         value_type operator*() const;
         xtd::native::directory::file_and_directory_iterator begin() const;
         xtd::native::directory::file_and_directory_iterator end() const;
-
+        
         const std::string& path() const;
         const std::string& pattern() const;
         /// @endcond

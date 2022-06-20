@@ -1069,7 +1069,7 @@ void control::on_handle_destroyed(const event_args& e) {
   if (can_raise_events()) handle_destroyed(*this, e);
 }
 
-void control::on_help_requested(help_event_args &e) {
+void control::on_help_requested(help_event_args& e) {
   if (can_raise_events()) help_requested(*this, e);
 }
 
@@ -1434,17 +1434,17 @@ void control::def_wnd_proc(message& message) {
 void control::recreate_handle() {
   if (is_handle_created()) {
     set_state(state::recreate, true);
-    for (auto control : controls()) 
+    for (auto control : controls())
       control.get().set_state(state::parent_recreating, true);
-    
+      
     destroy_handle();
     create_handle();
     
-    for (auto control : controls()) 
+    for (auto control : controls())
       control.get().set_state(state::parent_recreating, false);
     set_state(state::recreate, false);
     data_->recreate_handle_posted = false;
-
+    
     perform_layout();
   }
 }
@@ -1497,7 +1497,7 @@ void control::on_parent_size_changed(object& sender, const event_args& e) {
 }
 
 void control::post_recreate_handle() {
-  if(data_->handle)
+  if (data_->handle)
     data_->recreate_handle_posted = true;
 }
 
@@ -1606,7 +1606,7 @@ void control::wm_enter_idle(message& message) {
     control.get().wnd_proc(message);
   if (data_->recreate_handle_posted)
     recreate_handle();
- }
+}
 
 void control::wm_key_char(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), ustring::format("({}) receive message [{}]", *this, message));
@@ -1697,7 +1697,7 @@ void control::wm_mouse_move(message& message) {
   on_mouse_move(e);
 }
 
-void control::wm_menu_command(message &message) {
+void control::wm_menu_command(message& message) {
   def_wnd_proc(message);
   if (data_->context_menu.has_value())
     on_context_menu_item_click(data_->context_menu.value().get(), message.wparam());

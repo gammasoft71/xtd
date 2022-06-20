@@ -73,11 +73,11 @@ namespace xtd {
         /// @brief Gets the xtd::forms::month_calendar::hit_area that represents the area of the calendar evaluated by the hit-test operation.
         /// @return One of the xtd::forms::month_calendar::hit_area values. The default is xtd::forms::month_calendar::hit_area::nowhere.
         xtd::forms::month_calendar::hit_area hit_area() const noexcept {return hit_area_;}
-
+        
         /// @brief Gets the point that was hit-tested.
         /// @return A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y values tested.
         const xtd::drawing::point& point() const noexcept {return point_;}
-
+        
         /// @brief Gets the time information specific to the location that was hit-tested.
         /// @return The time information specific to the location that was hit-tested.
         /// @remarks The xtd::forms::month_calendar::hit_test_info::time property contains a valid date when the xtd::forms::month_calendar::hit_area property is set to xtd::forms::month_calendar::hit_area::date or xtd::forms::month_calendar::hit_area::week_numbers.
@@ -95,7 +95,7 @@ namespace xtd {
       
       /// @name Constructors
       /// @{
-
+      
       /// @brief Initializes a new instance of the month_calendar class.
       /// @par Examples
       /// The following code example demonstrates the use of month_calendar control.
@@ -106,7 +106,7 @@ namespace xtd {
       
       /// @name Properties
       /// @{
-
+      
       /// @brief Gets the array of xtd::date_time objects that determines which annual days are displayed in bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
@@ -116,7 +116,7 @@ namespace xtd {
       /// @return Current month_calendar.
       /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
       month_calendar& annually_bolded_dates(const std::vector<xtd::date_time>& value);
-
+      
       /// @brief Gets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
@@ -126,7 +126,7 @@ namespace xtd {
       /// @return Current month_calendar.
       /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
       month_calendar& bolded_dates(const std::vector<xtd::date_time>& value);
-
+      
       /// @brief Gets the number of columns and rows of months displayed.
       /// @return A xtd::drawing::size with the number of columns and rows to use to display the calendar.
       /// @remarks Only one calendar year is displayed at a time, and the maximum number of months that can be displayed is 12. Valid combinations of columns and rows make a maximum product of 12; for values greater than 12, the display is modified on a best-fit basis.
@@ -136,7 +136,7 @@ namespace xtd {
       /// @return Current month_calendar.
       /// @remarks Only one calendar year is displayed at a time, and the maximum number of months that can be displayed is 12. Valid combinations of columns and rows make a maximum product of 12; for values greater than 12, the display is modified on a best-fit basis.
       month_calendar& calendar_dimensions(const xtd::drawing::size& value);
-
+      
       /// @brief Gets the first day of the week as displayed in the month calendar.
       /// @return One of the xtd::forms::day values. The default is td::forms::day::default_day.
       xtd::forms::day first_day_of_week() const;
@@ -200,7 +200,7 @@ namespace xtd {
       /// @note xtd::forms::month_calendar::max_selection_count represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), then xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
       /// @note Setting the xtd::forms::month_calendar::selection_range for a xtd::forms::month_calendar control that has visual styles enabled will result in the selection range not painting correctly on the control.
       month_calendar& selection_end(xtd::date_time value);
-
+      
       /// @brief Gets the selected range of dates for a month calendar control.
       /// @return A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @remarks Setting this property is functionally equivalent to using the xtd::forms::month_calendar::set_selection_range method. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end properties. You cannot change the start and end dates by setting the xtd::forms::selection_range::start or xtd::forms::selection_range::end property values of the xtd::forms::month_calendar::selection_range property. You should use xtd::forms::month_calendar::selection_start, xtd::forms::month_calendar::selection_end, or xtd::forms::month_calendar::set_selection_range.
@@ -248,7 +248,7 @@ namespace xtd {
       /// @return Current month_calendar.
       /// @remarks If xtd::forms::month_calendar::show_today_circle is true, and visual styles are enabled and supported on the computer running the application, today's date will be enclosed in a square, otherwise today's date will be circled.
       month_calendar& show_today_circle(bool value);
-
+      
       /// @brief Gets a value indicating whether the month calendar control displays week numbers (1-52) to the left of each row of days.
       /// @return true if the week numbers are displayed; otherwise, false. The default is false.
       bool show_week_numbers() const;
@@ -289,7 +289,7 @@ namespace xtd {
       /// @return Current month_calendar.
       /// @remarks By default, the xtd::forms::month_calendar::today_date property returns the current system date, and the xtd::forms::month_calendar::today_date_set property is false. Setting the TodayDate property sets the xtd::forms::month_calendar::today_date_set property to true and, from that point, the value returned by the xtd::forms::month_calendar::roday_date property is the one the user sets.
       month_calendar& today_date(const xtd::date_time& value);
-
+      
       /// @brief Gets a value indicating whether the xtd::forms::month_calendar::today_date property has been explicitly set.
       /// @return true if the value for the xtd::forms::month_calendar::today_date property has been explicitly set; otherwise, false. The default is false.
       bool today_date_set() const;
@@ -320,7 +320,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<month_calendar, xtd::forms::date_range_event_handler> date_selected;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -329,13 +329,13 @@ namespace xtd {
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method afterward to update the display.
       /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::annually_bolded_dates property.
       void add_annually_bolded_date(const xtd::date_time& date);
-
+      
       /// @brief Adds a day to be displayed in bold in the month calendar.
       /// @param date The date to be displayed in bold.
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method afterward to update the display.
       /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::bolded_dates property.
       void add_bolded_date(const xtd::date_time& date);
-
+      
       /// @brief Adds a day that is displayed in bold on a monthly basis in the month calendar.
       /// @param date The date to be displayed in bold.
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method afterward to update the display.
@@ -351,7 +351,7 @@ namespace xtd {
       /// @param point A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y coordinates of the point to be hit tested.
       /// @return A xtd::forms::month_calendar::hit_test_info that contains information about the specified point on the xtd::forms::month_calendar.
       xtd::forms::month_calendar::hit_test_info hit_test(const xtd::drawing::point& point) const;
-
+      
       /// @brief Removes all the annually bold dates.
       /// @remarks This method clears all dates from the xtd::forms::month_calendar::annually_bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_annually_bolded_date method.
       /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
@@ -371,17 +371,17 @@ namespace xtd {
       /// @param date The date to remove from the date list.
       /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
       void remove_annually_bolded_dates(const xtd::date_time& date);
-
+      
       /// @brief Removes the specified date from the list of the nonrecurring bold dates.
       /// @param date The date to remove from the date list.
       /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
       void remove_bolded_dates(const xtd::date_time& date);
-
+      
       /// @brief Removes the specified date from the list of monthly bold dates.
       /// @param date The date to remove from the date list.
       /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
       void remove_monthly_bolded_dates(const xtd::date_time& date);
-
+      
       /// @brief Sets the number of columns and rows of months to display.
       /// @param x The number of columns.
       /// @param y The number of rows.
@@ -392,7 +392,7 @@ namespace xtd {
       /// @param date The date to be selected.
       /// @remarks This method sets the xtd::forms::month_calendar::selection_start and the xtd::forms::month_calendar::selection_end properties to the specified date. This method is the functional equivalent of setting the selection range to a single day through the xtd::forms::month_calendar::set_selection_range method or the xtd::forms::month_calendar::selection_range property.
       void set_date(const xtd::date_time& date);
-
+      
       /// @brief Sets the selected dates in a month calendar control to the specified date range.
       /// @param date1 The beginning date of the selection range.
       /// @param date2 The end date of the selection range.
@@ -406,7 +406,7 @@ namespace xtd {
       /// @remarks Use the xtd::forms::month_calendar::update_bolded_dates method to reflect changes made to xtd::forms::month_calendar::annually_bolded_dates, xtd::forms::month_calendar::monthly_bolded_dates, or xtd::forms::month_calendar::bolded_dates properties, either directly by modifying elements of the array or by using the add or remove methods provided to modify the date lists.
       void update_bolded_dates();
       /// @}
-
+      
     protected:
       /// @name Protected methods
       

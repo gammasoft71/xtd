@@ -34,12 +34,12 @@ public:
     
     tab_page_popup.parent(tab_control);
     tab_page_popup.text("Popup");
-
+    
     create_labels(tab_page_system, flat_style::system);
     create_labels(tab_page_standard, flat_style::standard);
     create_labels(tab_page_flat, flat_style::flat);
     create_labels(tab_page_popup, flat_style::popup);
-
+    
     style_sheet_choice.parent(*this);
     style_sheet_choice.dock(dock_style::bottom);
     style_sheet_choice.items({"GNOME (dark)", "GNOME (light)", "KDE (dark)", "KDE (light)", "macOS (dark)", "macOS (light)", "Windows (dark)", "Windows (light)", "default"});
@@ -198,7 +198,7 @@ private:
   forms::tab_page tab_page_standard;
   forms::tab_page tab_page_flat;
   forms::tab_page tab_page_popup;
-
+  
   choice style_sheet_choice;
   
   labels_t labels;

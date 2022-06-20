@@ -86,7 +86,7 @@ namespace xtd {
       /// @param e An event_args that contains the event data.
       void on_handle_created(const event_args& e) override;
       void on_paint(paint_event_args& e) override;
-
+      
       drawing::size measure_control() const override;
       /// @}
       

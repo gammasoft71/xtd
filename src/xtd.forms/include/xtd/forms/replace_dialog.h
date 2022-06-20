@@ -34,11 +34,11 @@ namespace xtd {
       /// @brief Initializes a new instance of the replace_dialog class.
       replace_dialog() = default;
       /// @}
-
+      
       /// @cond
       ~replace_dialog();
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -73,7 +73,7 @@ namespace xtd {
       /// @param value true if match case option selected; otherwise false. The default is false.
       /// @return Current replace_dialog instance.
       replace_dialog& match_case(bool value);
-
+      
       /// @brief Gets a value that indicates whether match case option is shown.
       /// @return true if match case option is shown; otherwise false. The default is true.
       bool show_match_case() const;
@@ -81,7 +81,7 @@ namespace xtd {
       /// @param value true if match case option is shown; otherwise false. The default is true.
       /// @return Current replace_dialog instance.
       replace_dialog& show_match_case(bool value);
-
+      
       /// @brief Gets a value that indicates whether whole word option is shown.
       /// @return true if whole word option is shown; otherwise false. The default is true.
       bool show_whole_word() const;
@@ -89,7 +89,7 @@ namespace xtd {
       /// @param value true if whole word option is shown; otherwise false. The default is true.
       /// @return Current replace_dialog instance.
       replace_dialog& show_whole_word(bool value);
-
+      
       /// @brief Gets the find dialog title.
       /// @return The find dialog title.
       const xtd::ustring& title() const;
@@ -97,7 +97,7 @@ namespace xtd {
       /// @param value The find dialog title.
       /// @return Current replace_dialog instance.
       replace_dialog& title(const xtd::ustring& value);
-
+      
       /// @brief Gets the whole word value.
       /// @return true if whole word option selected; otherwise false. The default is false.
       bool whole_word() const;
@@ -106,7 +106,7 @@ namespace xtd {
       /// @return Current replace_dialog instance.
       replace_dialog& whole_word(bool value);
       /// @}
-
+      
       /// @name Events
       
       /// @{
@@ -131,7 +131,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       xtd::event<replace_dialog, xtd::forms::dialog_closed_event_handler> dialog_closed;
       /// @}
-
+      
       /// @name Methods
       
       /// @{

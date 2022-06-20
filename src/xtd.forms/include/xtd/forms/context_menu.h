@@ -35,7 +35,7 @@ namespace xtd {
       context_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
       ~context_menu();
       /// @endcond
-
+      
       /// @name Ppublic methods
       
       /// @{
