@@ -248,7 +248,9 @@ add_sources(
   include/xtd/forms/status_bar_panel_border_style.h
   include/xtd/forms/status_bar_panel_click_event_args.h
   include/xtd/forms/status_bar_panel_click_event_handler.h
+  include/xtd/forms/status_bar_panel_renderer.h
   include/xtd/forms/status_bar_panel_style.h
+  include/xtd/forms/status_bar_renderer.h
   include/xtd/forms/switch_button.h
   include/xtd/forms/switch_button_renderer.h
   include/xtd/forms/system_information.h
@@ -432,6 +434,11 @@ add_sources(
   src/xtd/forms/settings.cpp
   src/xtd/forms/split_container.cpp
   src/xtd/forms/splitter.cpp
+  src/xtd/forms/status_bar.cpp
+  src/xtd/forms/status_bar_panel.cpp
+  src/xtd/forms/status_bar_panel_control.h
+  src/xtd/forms/status_bar_panel_renderer.cpp
+  src/xtd/forms/status_bar_renderer.cpp
   src/xtd/forms/switch_button_renderer.cpp
   src/xtd/forms/system_information.cpp
   src/xtd/forms/system_texts.cpp
@@ -449,10 +456,10 @@ add_sources(
   src/xtd/forms/toggle_button.cpp
   src/xtd/forms/toggle_button_renderer.cpp
   src/xtd/forms/tool_bar.cpp
-  src/xtd/forms/tool_bar_renderer.cpp
   src/xtd/forms/tool_bar_button.cpp
   src/xtd/forms/tool_bar_button_control.h
   src/xtd/forms/tool_bar_button_renderer.cpp
+  src/xtd/forms/tool_bar_renderer.cpp
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp
   src/xtd/forms/up_down_button.cpp

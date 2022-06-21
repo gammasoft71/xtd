@@ -43,6 +43,7 @@ namespace xtd {
     class light_button;
     class message;
     class paint_event_args;
+    class status_bar;
     class tool_bar;
     /// @endcond
     
@@ -72,6 +73,7 @@ namespace xtd {
         friend xtd::forms::light_button;
         friend xtd::forms::message;
         friend xtd::forms::paint_event_args;
+        friend xtd::forms::status_bar;
         friend xtd::forms::tool_bar;
         friend xtd::forms::native::form;
       protected:
