@@ -108,6 +108,10 @@ namespace xtd {
         /// @param wnd_proc A wnd proc delegate to register.
         /// @warning Internal use only
         static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
+        /// @brief Shuts down the application and starts a new instance immediately.
+        /// @param exit_after_restart If this option is enabled, the current application will be closed after the new application is created.
+        /// @warning Internal use only
+        static void restart(bool exit_after_restart);
         /// @brief Begins running a standard application message loop on the current thread.
         /// @warning Internal use only
         static void run();

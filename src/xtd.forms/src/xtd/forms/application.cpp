@@ -22,6 +22,7 @@
 using namespace std;
 using namespace std::chrono;
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::forms;
 using namespace xtd::reflection;
 
@@ -47,7 +48,6 @@ namespace {
   using message_filter_collection = std::vector<message_filter_ref>;
   
   static message_filter_collection message_filters;
-  static bool restart_asked = false;
   
   bool message_filter_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
     bool block = false;
@@ -245,22 +245,8 @@ void application::exit() {
 }
 
 void application::exit(cancel_event_args& e) {
-  bool cancel_exit = false;
-  for (auto f : application::open_forms()) {
-    form_closing_event_args closing_args;
-    f.get().on_form_closing(closing_args);
-    if (closing_args.cancel()) {
-      cancel_exit = true;
-      break;
-    }
-  }
-  
-  e.cancel(cancel_exit);
-  if (!cancel_exit) {
-    for (auto f : application::open_forms())
-      f.get().on_form_closed(form_closed_event_args());
-    native::application::exit();
-  }
+  e.cancel(!close_forms());
+  if (!e.cancel()) native::application::exit();
 }
 
 void application::exit_thread() {
@@ -290,10 +276,7 @@ void application::remove_message_filter(const imessage_filter& value) {
 }
 
 void application::restart() {
-  cancel_event_args e;
-  application::exit(e);
-  if (!e.cancel())
-    restart_asked = true;
+  native::application::restart(close_forms());
 }
 
 void application::run() {
@@ -304,11 +287,13 @@ void application::run() {
 
 void application::run(application_context& context) {
   if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running"_t, current_stack_frame_);
+
   cursor::current(cursors::default_cursor());
   context.thread_exit += application::on_app_thread_exit;
   native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));
   native::application::register_thread_exception(delegate<bool()>(on_app_thread_exception));
   native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
+
   application::message_loop_ = true;
   if (context.main_form_ != nullptr) context.main_form().show();
   native::application::run();
@@ -319,17 +304,6 @@ void application::run(application_context& context) {
 void application::run(const form& form) {
   application_context context(form);
   application::run(context);
-  if (restart_asked) {
-    std::vector<ustring> command_line_args = environment::get_command_line_args();
-    char** argv = new char* [command_line_args.size() + 1];
-    for (size_t index = 0; index < command_line_args.size(); index++)
-      argv[index] = command_line_args[index].data();
-    argv[command_line_args.size()] = 0;
-    /// @todo Replace following lines by xtd::diagnostics::process...
-    execv(argv[0], argv);
-    delete[] argv;
-    _Exit(0);
-  }
 }
 
 void application::theme(const xtd::ustring& theme_name) {
@@ -366,6 +340,19 @@ const xtd::forms::theme& application::theme() {
 
 const std::vector<xtd::ustring>& application::theme_names() {
   return theme::theme_names();
+}
+
+bool application::close_forms() {
+  for (auto f : application::open_forms()) {
+    form_closing_event_args closing_args;
+    f.get().on_form_closing(closing_args);
+    if (closing_args.cancel()) return false;
+  }
+  
+  for (auto f : application::open_forms())
+    f.get().on_form_closed(form_closed_event_args());
+  
+  return true;
 }
 
 void application::on_app_thread_exit(object& sender, const event_args& e) {
