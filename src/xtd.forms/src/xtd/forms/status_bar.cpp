@@ -78,6 +78,18 @@ status_bar::status_bar_panel_collection& status_bar::panels() {
   return data_->panels;
 }
 
+bool status_bar::show_panels() const {
+  return data_->show_panels;
+}
+
+status_bar& status_bar::show_panels(bool value) {
+  if (data_->show_panels != value) {
+    data_->show_panels = value;
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  }
+  return *this;
+}
+
 bool status_bar::show_tool_tips() const {
   return data_->show_tool_tips;
 }
@@ -85,6 +97,18 @@ bool status_bar::show_tool_tips() const {
 status_bar& status_bar::show_tool_tips(bool value) {
   if (data_->show_tool_tips != value) {
     data_->show_tool_tips = value;
+    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  }
+  return *this;
+}
+
+bool status_bar::sizing_grip() const {
+  return data_->sizing_grip;
+}
+
+status_bar& status_bar::sizing_grip(bool value) {
+  if (data_->sizing_grip != value) {
+    data_->sizing_grip = value;
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   }
   return *this;
@@ -103,6 +127,14 @@ forms::create_params status_bar::create_params() const {
   if (data_->sizing_grip) create_params.style(create_params.style() | SBARS_SIZEGRIP);
   
   return create_params;
+}
+
+void status_bar::on_draw_item(xtd::forms::status_bar_draw_item_event_args& e) {
+  
+}
+
+void status_bar::on_panel_click(const xtd::forms::status_bar_panel_click_event_args& e) {
+  
 }
 
 void status_bar::on_handle_created(const event_args& e) {
