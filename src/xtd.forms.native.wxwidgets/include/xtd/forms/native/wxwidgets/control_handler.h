@@ -62,6 +62,11 @@ namespace xtd {
           control_->SetCursor(cursor);
         }
         
+        virtual void SetLabel(const wxString& label) {
+          if (!control_) return;
+          control_->SetLabel(label);
+        }
+        
         virtual void SetForegroundColour(const wxColour& colour) {
           if (!control_) return;
           control_->SetForegroundColour(colour);

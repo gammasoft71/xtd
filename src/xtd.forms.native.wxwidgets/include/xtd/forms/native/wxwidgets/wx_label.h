@@ -36,6 +36,14 @@ namespace xtd {
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
           #endif
+          text_ = wxString(xtd::convert_string::to_wstring(create_params.caption()));
+          
+          if (!owner_draw_) {
+            control()->Bind(wxEVT_SIZE, [&](wxSizeEvent& e) {
+              static_cast<wxStaticText*>(control())->SetLabel(text_);
+              static_cast<wxStaticText*>(control())->Wrap(e.GetSize().GetWidth());
+            });
+          }
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
@@ -57,7 +65,15 @@ namespace xtd {
           return wx_style;
         }
         
+        
+        void SetLabel(const wxString& label) override  {
+          text_ = label;
+          control_handler::SetLabel(label);
+        }
+
+        
         bool owner_draw_ = false;
+        wxString text_;
       };
     }
   }
