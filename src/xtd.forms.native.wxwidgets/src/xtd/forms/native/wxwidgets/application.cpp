@@ -201,15 +201,6 @@ void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, i
 }
 
 void application::restart(bool exit_after_restart) {
-  /*
-  std::vector<ustring> command_line_args = environment::get_command_line_args();
-  char** argv = new char* [command_line_args.size() + 1];
-  for (size_t index = 0; index < command_line_args.size(); index++)
-    argv[index] = command_line_args[index].data();
-  argv[command_line_args.size()] = 0;
-  execv(argv[0], argv);
-  delete[] argv;
-  */
   wxExecute(environment::command_line());
   if (exit_after_restart) environment::exit(0);
 }

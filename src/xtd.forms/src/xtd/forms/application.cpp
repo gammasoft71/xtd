@@ -245,7 +245,7 @@ void application::exit() {
 }
 
 void application::exit(cancel_event_args& e) {
-  e.cancel(!close_forms());
+  e.cancel(!close_open_forms());
   if (!e.cancel()) native::application::exit();
 }
 
@@ -276,7 +276,7 @@ void application::remove_message_filter(const imessage_filter& value) {
 }
 
 void application::restart() {
-  native::application::restart(close_forms());
+  native::application::restart(close_open_forms());
 }
 
 void application::run() {
@@ -342,15 +342,15 @@ const std::vector<xtd::ustring>& application::theme_names() {
   return theme::theme_names();
 }
 
-bool application::close_forms() {
-  for (auto f : application::open_forms()) {
+bool application::close_open_forms() {
+  for (auto open_form : application::open_forms()) {
     form_closing_event_args closing_args;
-    f.get().on_form_closing(closing_args);
+    open_form.get().on_form_closing(closing_args);
     if (closing_args.cancel()) return false;
   }
   
-  for (auto f : application::open_forms())
-    f.get().on_form_closed(form_closed_event_args());
+  for (auto open_form : application::open_forms())
+    open_form.get().on_form_closed(form_closed_event_args());
   
   return true;
 }
