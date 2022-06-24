@@ -99,7 +99,7 @@ namespace xtd {
       /// @return Current tool_bar instance.
       /// @remarks To set the text displayed by the xtd::forms::tool_tip, set the xtd::forms::tool_bar_button::tool_tip_text property of each xtd::forms::tool_bar_button on the xtd::forms::tool_bar. To cause the xtd::forms::tool_tip to display as the user moves the mouse pointer over the status bar button, set the xtd::forms::tool_bar::show_tool_tips property to true.
       virtual status_bar& show_tool_tips(bool value);
-
+      
       /// @brief Gets a value indicating whether a sizing grip is displayed in the lower-right corner of the control.
       /// @return true if a sizing grip is displayed; otherwise, false. The default is true.
       /// @remarks You can use this property to display a sizing grip to provide an indication to the user when a form is resizable. If the xtd::forms::form_border_style property of your xtd::forms::form is set to a border style that is not resizable, such as xtd::forms::form_border_style::fixed_3d or xtd::forms::form_border_style::fixed_dialog, you should set the xtd::forms::status_bar::sizing_grip property to false to prevent the user from thinking that the form can be resized.
