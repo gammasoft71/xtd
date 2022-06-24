@@ -11,6 +11,7 @@
 #include <cmath>
 #include <xtd/drawing/native/hot_key_prefixes.h>
 #include <xtd/drawing/native/string_trimmings.h>
+#include <xtd/convert_string.h>
 #include <wx/control.h>
 #include <wx/dcclient.h>
 #include <wx/dcmemory.h>
@@ -39,7 +40,7 @@ namespace xtd {
             if (angle == 0) {
               auto hot_key_prefix_location = GetHotKeyPrefixLocations(text);
               auto text_to_draw = FormatString(dc, text, width, align, hot_key_prefix, trimming);
-              dc.DrawLabel(text_to_draw, wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
+              dc.DrawLabel(wrap_text(dc, text_to_draw, width), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             } else
               dc.DrawRotatedText(text, x, y, -angle);
             if (angle == 0) dc.DestroyClippingRegion();
@@ -64,7 +65,7 @@ namespace xtd {
             bitmap_mask_dc.SetFont(font);
             bitmap_mask_dc.SetTextForeground(wxColour(255, 255, 255));
             if (angle == 0)
-              bitmap_mask_dc.DrawLabel(text, wxRect(x, y, width, height), align);
+              bitmap_mask_dc.DrawLabel(wrap_text(bitmap_mask_dc, text, width), wxRect(x, y, width, height), align);
             else
               bitmap_mask_dc.DrawRotatedText(text, x, y, -angle);
               
@@ -124,6 +125,25 @@ namespace xtd {
           for (auto index = 0U; index < str.size() - 1; index++)
             if (str[index] == '&' && str[index + 1] != '&') return static_cast<int32_t>(index);
           return -1;
+        }
+        
+        static int32_t get_text_width(wxDC& dc, const wxString& str) noexcept {
+          int32_t text_width = 0, text_height = 0;
+          dc.GetTextExtent(str, &text_width, &text_height);
+          return text_width;
+        }
+        
+        static wxString wrap_text(wxDC& dc, const wxString& string, int32_t width) noexcept {
+          std::vector<xtd::ustring> words = xtd::convert_string::to_ustring(string.c_str().AsWChar()).split({' '});
+          std::vector<xtd::ustring> lines;
+          
+          for (size_t index = 0; index < words.size(); ++index) {
+            lines.push_back(words[index]);
+            while (index + 1 < words.size() && get_text_width(dc, convert_string::to_wstring(lines[lines.size() - 1] + " " + words[index + 1])) <= width)
+              lines[lines.size() - 1] += " " + words[++index];
+          }
+          
+          return convert_string::to_wstring(xtd::ustring::join("\n", lines));
         }
       };
     }
