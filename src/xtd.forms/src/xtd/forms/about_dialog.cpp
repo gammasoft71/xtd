@@ -130,7 +130,7 @@ namespace {
       
       text_box_license_.multiline(true);
       text_box_license_.read_only(true);
-      text_box_license_.word_wrap(false);
+      text_box_license_.word_wrap(true);
       text_box_license_.dock(dock_style::fill);
     }
     
