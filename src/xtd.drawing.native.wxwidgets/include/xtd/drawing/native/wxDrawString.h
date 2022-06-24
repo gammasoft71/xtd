@@ -134,16 +134,24 @@ namespace xtd {
         }
         
         static wxString wrap_text(wxDC& dc, const wxString& string, int32_t width) noexcept {
-          std::vector<xtd::ustring> words = xtd::convert_string::to_ustring(string.c_str().AsWChar()).split({' '});
-          std::vector<xtd::ustring> lines;
+          xtd::ustring result;
+          bool start = true;
           
-          for (size_t index = 0; index < words.size(); ++index) {
-            lines.push_back(words[index]);
-            while (index + 1 < words.size() && get_text_width(dc, convert_string::to_wstring(lines[lines.size() - 1] + " " + words[index + 1])) <= width)
-              lines[lines.size() - 1] += " " + words[++index];
+          for (auto sentence : xtd::convert_string::to_ustring(string.c_str().AsWChar()).split({'\n'})) {
+            if (start) start = false;
+            else result += "\n";
+            std::vector<xtd::ustring> words = sentence.split({' '});
+            std::vector<xtd::ustring> lines;
+            
+            for (size_t index = 0; index < words.size(); ++index) {
+              lines.push_back(words[index]);
+              while (index + 1 < words.size() && get_text_width(dc, convert_string::to_wstring(lines[lines.size() - 1] + " " + words[index + 1])) <= width)
+                lines[lines.size() - 1] += " " + words[++index];
+            }
+            result += xtd::ustring::join("\n", lines);
           }
           
-          return convert_string::to_wstring(xtd::ustring::join("\n", lines));
+          return convert_string::to_wstring(result);
         }
       };
     }
