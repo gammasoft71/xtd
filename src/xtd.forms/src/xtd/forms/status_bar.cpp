@@ -130,11 +130,11 @@ forms::create_params status_bar::create_params() const {
 }
 
 void status_bar::on_draw_item(xtd::forms::status_bar_draw_item_event_args& e) {
-  
+
 }
 
 void status_bar::on_panel_click(const xtd::forms::status_bar_panel_click_event_args& e) {
-  
+
 }
 
 void status_bar::on_handle_created(const event_args& e) {
@@ -247,21 +247,21 @@ void status_bar::fill() {
       }
       if (button_item.style() == status_bar_panel_style::drop_down_button && button_item.drop_down_menu().has_value())
         button_control->drop_down_menu(const_cast<forms::context_menu*>(&button_item.drop_down_menu().value().get()));
-        
+  
       /// @todo Add xtd::forms::tool_tip when implemented.
-      
+  
       if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
       if (data_->show_text) button_control->text(button_item.text());
-      
+  
       if (auto_size()) {
         if (is_horizontal() && height() < button_control->height()) height(button_control->height() + padding().top() + padding().bottom());
         if (!is_horizontal() && width() < button_control->width()) width(button_control->width() + padding().left() + padding().right());
         if (is_horizontal()) width(width() + button_control->width());
         else height(height() + button_control->height());
       }
-      
+  
       button_item.data_->rectangle = drawing::rectangle(button_control->location(), button_control->size());
-      
+  
       data_->status_bar_panels.push_back(button_control);
     }
   }
@@ -304,7 +304,7 @@ void status_bar::resize_spring_panels() {
       if (status_bar_panel->style() != status_bar_panel_style::stretchable_separator && status_bar_panel->visible())
         remaining_size -= is_horizontal() ? status_bar_panel->size().width() : status_bar_panel->size().height();
     }
-    
+  
     auto stretchable_size = remaining_size / as<int32_t>(data_->spring_panels.size());
     for (auto stretchable_separator : data_->spring_panels) {
       auto default_stretchable_size = (is_horizontal() ? image_size().width() : image_size().height()) / 2;

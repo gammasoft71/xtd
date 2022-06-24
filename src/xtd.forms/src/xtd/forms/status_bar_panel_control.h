@@ -25,9 +25,9 @@ public:
     }
     return *this;
   }
-    
+  
   bool is_horizontal() const {return dock() == dock_style::left || dock() == dock_style::right;}
-    
+  
   xtd::drawing::size size() const override {return control::size();}
   
   xtd::forms::control& size(const xtd::drawing::size& value) override {
@@ -79,7 +79,7 @@ private:
     auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
     status_bar_panel_renderer::draw_status_bar_panel(style, e.graphics(), e.clip_rectangle(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
   }
-    
+  
   void draw_control(xtd::forms::paint_event_args& e) {
     auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
     xtd::forms::style_sheets::status_bar_panel current_style_sheet = style.status_bar_panel(xtd::forms::style_sheets::pseudo_state::standard);

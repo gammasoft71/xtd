@@ -39,7 +39,7 @@ namespace xtd {
           text_ = wxString(xtd::convert_string::to_wstring(create_params.caption()));
           
           if (!owner_draw_) {
-            control()->Bind(wxEVT_SIZE, [&](wxSizeEvent& e) {
+            control()->Bind(wxEVT_SIZE, [&](wxSizeEvent & e) {
               static_cast<wxStaticText*>(control())->SetLabel(text_);
               static_cast<wxStaticText*>(control())->Wrap(e.GetSize().GetWidth());
             });
@@ -70,7 +70,7 @@ namespace xtd {
           text_ = label;
           control_handler::SetLabel(label);
         }
-
+        
         
         bool owner_draw_ = false;
         wxString text_;
