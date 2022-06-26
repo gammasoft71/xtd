@@ -56,8 +56,6 @@ namespace examples {
   public:
     form3() {
       client_size({300, button1.height() + button2.height() + 10});
-      back_color(drawing::color::cyan);
-      fore_color(drawing::color::black);
       form_border_style(forms::form_border_style::none);
       padding(forms::padding(5));
       start_position(xtd::forms::form_start_position::manual);
@@ -69,10 +67,10 @@ namespace examples {
       region(drawing::region(path));
 
       // Top right screen location :
-      //location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
+      location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
 
       // Bottom right screen location :
-      location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().bottom() - client_size().height() - 5});
+      //location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().bottom() - client_size().height() - 5});
       
       layout_panel1.controls().push_back_range({panel1, layout_panel2});
       layout_panel1.control_layout_style(panel1, {1.0f, size_type::percent, true});
