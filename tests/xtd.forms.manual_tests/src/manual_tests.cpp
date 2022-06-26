@@ -7,112 +7,15 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("Toolbar example");
+      text("Status bar example");
       client_size({820, 500});
       
-      controls().push_back_range({list_box1, tool_bar2, tool_bar1});
-      tool_bar(tool_bar1);
-      
-      list_box1.dock(dock_style::fill);
-      
-      choice1.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
-      choice1.selected_index(0);
-      choice1.selected_value_changed += [&] {
-        list_box1.items().push_back(ustring::format("Choice item {} selected", choice1.selected_item()));
-        list_box1.selected_index(list_box1.items().size() - 1);
-      };
-      
-      choice2.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
-      choice2.selected_index(0);
-      choice2.selected_value_changed += [&] {
-        list_box1.items().push_back(ustring::format("Choice item {} clicked", choice2.selected_item()));
-        list_box1.selected_index(list_box1.items().size() - 1);
-      };
-      
-      //tool_bar1.appearance(xtd::forms::tool_bar_appearance::system);
-      tool_bar1.dock(dock_style::top);
-      tool_bar1.appearance(xtd::forms::tool_bar_appearance::flat);
-      tool_bar1.show_text(true);
-      //tool_bar1.show_icon(false);
-      tool_bar1.text_align(xtd::forms::tool_bar_text_align::underneath);
-      tool_bar1.show_tool_tips(true);
-      
-      tool_bar1.image_list().image_size({24, 24});
-      tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
-      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, help_tool_bar_button});
-      tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
-      
-      tool_bar2.dock(dock_style::bottom);
-      tool_bar2.appearance(xtd::forms::tool_bar_appearance::flat);
-      tool_bar2.show_text(true);
-      //tool_bar2.show_icon(false);
-      //tool_bar2.text_align(xtd::forms::tool_bar_text_align::right);
-      
-      tool_bar2.image_list().image_size({24, 24});
-      tool_bar2.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
-      tool_bar2.buttons().push_back_range({new_tool_bar_button2, open_tool_bar_button2, save_tool_bar_button2, print_tool_bar_button2, tool_bar2_separator1, cut_tool_bar_button2, copy_tool_bar_button2, paste_tool_bar_button2, tool_bar2_separator2, choice_tool_bar_button2, tool_bar2_separator3, help_tool_bar_button2});
-      tool_bar2.button_click += {*this, &form1::on_tool_bar_button_click};
+      status_bar1.parent(*this);
+      status_bar1.dock(dock_style::bottom);
     }
     
   private:
-    void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
-      if (e.button().style() == tool_bar_button_style::toggle_button)
-        list_box1.items().push_back(ustring::format("Tool bar button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
-      else
-        list_box1.items().push_back(ustring::format("Tool bar button {} clicked", e.button().text()));
-      list_box1.selected_index(list_box1.items().size() - 1);
-    }
-    
-    void on_menu_click(object& sender, const event_args& e) {
-      list_box1.items().push_back(ustring::format("Menu item {} clicked", as<menu_item>(sender).text()));
-      list_box1.selected_index(list_box1.items().size() - 1);
-    }
-    
-    list_box list_box1;
-    
-    menu_item context_help_context_menu_item {"Help context", {*this, &form1::on_menu_click}};
-    menu_item context_help_index_menu_item {"Help index", {*this, &form1::on_menu_click}};
-    menu_item context_help_search_menu_item {"Help search", {*this, &form1::on_menu_click}};
-    menu_item context_separator_menu_item {"-"};
-    menu_item context_about_menu_item {system_texts::about(), {*this, &form1::on_menu_click}};
-    forms::context_menu context_menu1 {context_help_context_menu_item, context_help_index_menu_item, context_help_search_menu_item, context_separator_menu_item, context_about_menu_item};
-    
-    forms::tool_bar tool_bar1;
-    choice choice1;
-    tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);
-    tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(system_texts::open(), 1);
-    tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(system_texts::save(), 2);
-    tool_bar_button print_tool_bar_button = tool_bar_button::create_push_button(system_texts::print(), 3);
-    tool_bar_button tool_bar1_separator1 = tool_bar_button::create_separator();
-    tool_bar_button cut_tool_bar_button = tool_bar_button::create_push_button(system_texts::cut(), 4);
-    tool_bar_button copy_tool_bar_button = tool_bar_button::create_push_button(system_texts::copy(), 5);
-    tool_bar_button paste_tool_bar_button = tool_bar_button::create_push_button(system_texts::paste(), 6);
-    tool_bar_button tool_bar1_separator2 = tool_bar_button::create_separator();
-    tool_bar_button choice_tool_bar_button = tool_bar_button::create_control("Items", choice1);
-    tool_bar_button tool_bar1_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button help_tool_bar_button = tool_bar_button::create_drop_down_button(system_texts::help(), 7, context_menu1);
-    
-    menu_item context_help_context_menu_item2 {"Help context", {*this, &form1::on_menu_click}};
-    menu_item context_help_index_menu_item2 {"Help index", {*this, &form1::on_menu_click}};
-    menu_item context_help_search_menu_item2 {"Help search", {*this, &form1::on_menu_click}};
-    menu_item context_separator_menu_item2 {"-"};
-    menu_item context_about_menu_item2 {system_texts::about(), {*this, &form1::on_menu_click}};
-    forms::context_menu context_menu2 {context_help_context_menu_item2, context_help_index_menu_item2, context_help_search_menu_item2, context_separator_menu_item2, context_about_menu_item2};
-    
-    forms::tool_bar tool_bar2;
-    choice choice2;
-    tool_bar_button new_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::new_(), 0);
-    tool_bar_button open_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::open(), 1);
-    tool_bar_button save_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::save(), 2);
-    tool_bar_button print_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::print(), 3);
-    tool_bar_button tool_bar2_separator1 = tool_bar_button::create_separator();
-    tool_bar_button cut_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::cut(), 4);
-    tool_bar_button copy_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::copy(), 5);
-    tool_bar_button paste_tool_bar_button2 = tool_bar_button::create_push_button(system_texts::paste(), 6);
-    tool_bar_button tool_bar2_separator2 = tool_bar_button::create_separator();
-    tool_bar_button choice_tool_bar_button2 = tool_bar_button::create_control("Items", choice2);
-    tool_bar_button tool_bar2_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button help_tool_bar_button2 = tool_bar_button::create_drop_down_button(system_texts::help(), 7, context_menu2);
+    status_bar status_bar1;
   };
   
   class form2 : public form {
@@ -148,8 +51,66 @@ namespace examples {
     button btn;
     message_notifier notifier;
   };
+  
+  class form3 : public form {
+  public:
+    form3() {
+      client_size({300, button1.height() + button2.height() + 10});
+      back_color(drawing::color::cyan);
+      fore_color(drawing::color::black);
+      form_border_style(forms::form_border_style::none);
+      padding(forms::padding(5));
+      start_position(xtd::forms::form_start_position::manual);
+      top_most(true);
+
+      /// Set round rectangle form :
+      drawing::drawing2d::graphics_path path;
+      path.add_rounded_rectangle(client_rectangle(), 7);
+      region(drawing::region(path));
+
+      // Top right screen location :
+      //location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
+
+      // Bottom right screen location :
+      location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().bottom() - client_size().height() - 5});
+      
+      layout_panel1.controls().push_back_range({panel1, layout_panel2});
+      layout_panel1.control_layout_style(panel1, {1.0f, size_type::percent, true});
+      layout_panel1.control_layout_style(layout_panel2, {75, size_type::absolute});
+      layout_panel1.dock(dock_style::fill);
+      layout_panel1.parent(*this);
+
+      panel1.padding(forms::padding(5));
+
+      label1.parent(panel1);
+      label1.dock(dock_style::fill);
+      
+      // The following text is wrapped in label :
+      label1.text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.\n\nUt velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna.\n\nAliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.");
+      
+      layout_panel2.controls().push_back_range({button1, button2});
+      
+      button1.text("Ok");
+      button1.click += [&] {
+        close();
+      };
+
+      button2.text("Cancel");
+      button2.click += [&] {
+        close();
+      };
+    };
+    
+  private:
+    horizontal_layout_panel layout_panel1;
+    panel panel1;
+    label label1;
+    vertical_layout_panel layout_panel2;
+    button button1;
+    button button2;
+  };
 }
 
 int main() {
-  application::run(examples::form2());
+  application::run(examples::form3());
 }
