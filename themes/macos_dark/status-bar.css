@@ -6,7 +6,7 @@ status-bar {
   border-color: system-color(control-dark-dark);
   border-style: outset none outset none;
   border-width: 1px;
-  color: system-color(control-text);
+  color:  rgba(191, 191, 191, 0.847);
   padding-left: 5px;
   text-align: middle left;
 }

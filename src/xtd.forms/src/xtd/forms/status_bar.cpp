@@ -63,7 +63,7 @@ control& status_bar::dock(dock_style dock) {
 }
 
 xtd::drawing::font status_bar::default_font() const {
-  return xtd::drawing::system_fonts::tool_font();
+  return xtd::drawing::system_fonts::status_font();
 }
 
 drawing::size status_bar::default_size() const {
@@ -156,7 +156,7 @@ void status_bar::on_paint(xtd::forms::paint_event_args& e) {
   if (control_appearance() == forms::control_appearance::standard) {
     status_bar_renderer::draw_status_bar(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, std::nullopt, xtd::forms::border_sides::all);
     if (!data_->show_panels)
-      status_bar_renderer::draw_text_status_bar(style, e.graphics(), e.clip_rectangle(), text(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt);
+      status_bar_renderer::draw_text_status_bar(style, e.graphics(), e.clip_rectangle(), text(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font());
   }
 }
 
