@@ -44,6 +44,7 @@ tool_bar::tool_bar() {
   else data_->image_list.image_size(drawing::size {24, 24});
   
   auto_size(true);
+  dock(dock_style::top);
   padding(forms::padding {2});
   set_can_focus(false);
 }
