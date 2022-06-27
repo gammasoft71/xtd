@@ -173,7 +173,7 @@ namespace {
       
       about_dialog->link_label_website_.height(static_cast<int32_t>(23 * (!website_label.empty() ? website_label : website).split({'\n'}).size()));
       about_dialog->link_label_website_.text(!website_label.empty() ? website_label : website);
-      about_dialog->link_label_website_.link_clicked += [&](object & sender, link_label_clicked_event_args & e) {
+      about_dialog->link_label_website_.link_clicked += [website](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         diagnostics::process::start(website);
       };
