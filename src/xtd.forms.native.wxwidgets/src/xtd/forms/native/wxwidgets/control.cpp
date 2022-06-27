@@ -199,14 +199,15 @@ intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, int
 
 xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   static auto is_gnome = environment::os_version().desktop_environment() == "gnome";
-  
+  static auto is_macos = environment::os_version().desktop_environment() == "macos";
+
   if (class_name == "button") return {75, is_gnome ? 34 : 25};
   if (class_name == "checkbox") return {104, 25};
   if (class_name == "checkedlistbox") return {120, 90};
-  if (class_name == "choice") return {130, is_gnome ? 34 : 23};
+  if (class_name == "choice") return {130, is_gnome ? 34 : is_macos ? 26 : 23};
   if (class_name == "collapsiblepanel") return {0, 0};
   if (class_name == "colorpicker") return {100, 34};
-  if (class_name == "combobox") return {130, is_gnome ? 34 : 23};
+  if (class_name == "combobox") return {130, is_gnome ? 34 : is_macos ? 26 : 23};
   if (class_name == "commandlinkbutton") return {200, 60};
   if (class_name == "datetimepicker") return {100, is_gnome ? 34 : 25};
   if (class_name == "domainupdown") return {150, is_gnome ? 34 : 21};

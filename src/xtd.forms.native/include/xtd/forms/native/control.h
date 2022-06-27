@@ -239,6 +239,7 @@ namespace xtd {
         ///
         /// ** is 34 on "gnome" environment
         /// ** is 71 on "gnome" environment
+        /// @remarks On macOS "choice" and "combobox" have a height of 26.
         /// @warning Internal use only
         static xtd::drawing::size default_size(const xtd::ustring& class_name);
         
