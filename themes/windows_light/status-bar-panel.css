@@ -1,0 +1,33 @@
+/* Contains status-bar-panel definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+status-bar-panel {
+  border-style: inside;
+  border-color: system-color(control-text);
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: system-color(control);
+  padding: 1px 1px 3px 1px;
+  color: system-color(control-text);
+}
+
+status-bar-panel:hover {
+  border-color: #CBCCCC;
+  background-color: #CBCCCC;
+}
+
+status-bar-panel:pressed {
+  border-color: #CBCCCC;
+  background-color: #CBCCCC;
+}
+
+status-bar-panel:checked {
+  border-color: #CBCCCC;
+  background-color: #CBCCCC;
+}
+
+status-bar-panel:disabled {  
+  border-color: #F1F2F3;
+  background-color: #F1F2F3;
+  color: system-color(gray-text);
+}

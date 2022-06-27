@@ -39,7 +39,7 @@ status_bar::status_bar() {
   data_->panels.item_updated += {*this, &status_bar::on_item_updated};
   data_->panels.item_removed += {*this, &status_bar::on_item_removed};
   
-  auto_size(true);
+  dock(dock_style::bottom);
   padding(forms::padding {2});
   set_can_focus(false);
 }
@@ -153,7 +153,11 @@ void status_bar::on_handle_destroyed(const event_args& e) {
 void status_bar::on_paint(xtd::forms::paint_event_args& e) {
   control::on_paint(e);
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  if (control_appearance() == forms::control_appearance::standard) status_bar_renderer::draw_status_bar(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, std::nullopt, xtd::forms::border_sides::all);
+  if (control_appearance() == forms::control_appearance::standard) {
+    status_bar_renderer::draw_status_bar(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, std::nullopt, xtd::forms::border_sides::all);
+    if (!data_->show_panels)
+      status_bar_renderer::draw_text_status_bar(style, e.graphics(), e.clip_rectangle(), text(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt);
+  }
 }
 
 void status_bar::on_resize(const event_args& e) {

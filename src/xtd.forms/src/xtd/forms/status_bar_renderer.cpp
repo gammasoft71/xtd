@@ -1,5 +1,6 @@
 #include <tuple>
 #include "../../../include/xtd/forms/status_bar_renderer.h"
+#include "../../../include/xtd/forms/text_renderer.h"
 #include "../../../include/xtd/forms/style_sheets/status_bar.h"
 #include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
 #include "../../../include/xtd/forms/style_sheets/style_sheet.h"
@@ -12,13 +13,7 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::forms::visual_styles;
 
 void status_bar_renderer::draw_status_bar(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color, const std::optional<border_style>& border, xtd::forms::border_sides sides) {
-  style_sheets::status_bar current_style_sheet;
-  switch (form_state) {
-    case control_state::normal: current_style_sheet = style_sheet.status_bar(style_sheets::pseudo_state::standard); break;
-    case control_state::hot: current_style_sheet = style_sheet.status_bar(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
-    case control_state::pressed: current_style_sheet = style_sheet.status_bar(style_sheets::pseudo_state::standard | pseudo_state::pressed); break;
-    case control_state::disabled: current_style_sheet = style_sheet.status_bar(style_sheets::pseudo_state::standard | pseudo_state::disabled); break;
-  }
+  style_sheets::status_bar current_style_sheet = style_sheet.status_bar(style_sheets::pseudo_state::standard);
   
   if (back_color) current_style_sheet.background_color(back_color.value());
   if (border) {
@@ -31,4 +26,14 @@ void status_bar_renderer::draw_status_bar(const xtd::forms::style_sheets::style_
   }
   
   box_renderer::draw_box(graphics, bounds, current_style_sheet);
+}
+
+void status_bar_renderer::draw_text_status_bar(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font) {
+  status_bar_panel current_style_sheet = style_sheet.status_bar(pseudo_state::standard);
+
+  if (fore_color.has_value()) current_style_sheet.color(fore_color.value());
+  if (font.has_value()) current_style_sheet.font(font.value());
+  
+  auto content_rectangle = current_style_sheet.get_content_rectangle(bounds);
+  text_renderer::draw_text(graphics, content_rectangle, text, current_style_sheet);
 }
