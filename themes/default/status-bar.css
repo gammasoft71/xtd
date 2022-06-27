@@ -7,6 +7,6 @@ status-bar {
   border-style: outset;
   border-width: 1px;
   color: system-color(control-text);
-  padding: 0px 0px 0px 10px;
+  padding-left: 5px;
   text-align: middle left;
 }
