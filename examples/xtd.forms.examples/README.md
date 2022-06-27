@@ -71,7 +71,7 @@
 * **context_menu_strip** represents a shortcut menu.
 * [main_menu](menus_and_toolbars/main_menu/README.md) represents a main menu system for a form.
 * **menu_strip** represents a menu system for a form.
-* **status_bar** represents a Windows status bar control.
+* [status_bar](menus_and_toolbars/status_bar/README.md) represents a Windows status bar control.
 * **status_strip** represents a Windows status bar control.
 * [tool_bar](menus_and_toolbars/tool_bar/README.md) represents a tool bar for a form.
 * **tool_strip** represents a container for Windows toolbar objects.
@@ -273,6 +273,7 @@
 * [settings2](others/settings_example2/README.md) represents settings application.
 * [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
+* [status_bar_without_panels](others/status_bar_without_panels/README.md) represents a Windows status bar control without panels.
 * [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls.
 * [system_images2](others/system_images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [system_images3](others/system_images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.

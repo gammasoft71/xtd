@@ -48,6 +48,7 @@ add_projects(
   settings_example2
   smileys
   some_controls
+  status_bar_without_panels
   stopwatch_form
   system_images2
   system_images3
