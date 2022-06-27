@@ -3,8 +3,8 @@
 
 status-bar {
   background-color: transparent;
-  border-color: system-color(control-light-light);
-  border-style: outset none outset none;
+  border-color: #DFDFDE;
+  border-style: solid none solid none;
   border-width: 1px;
   color: system-color(control-text);
   padding-left: 5px;
