@@ -1239,6 +1239,7 @@ void control::on_tab_stop_changed(const event_args& e) {
 
 void control::on_text_changed(const event_args& e) {
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
+  if (data_->control_appearance == forms::control_appearance::standard) invalidate();
   perform_layout();
   if (can_raise_events()) text_changed(*this, e);
 }
