@@ -561,6 +561,50 @@ margin style_sheet::margin_from_css(const xtd::ustring& css_text, const margin& 
   return result;
 }
 
+margin style_sheet::margin_bottom_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  
+  margin result = default_value;
+  if (values.size() < 1 || values.size() > 1) return result;
+  
+  result.bottom(length_from_css(values[0], default_value.bottom()));
+  
+  return result;
+}
+
+margin style_sheet::margin_left_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  
+  margin result = default_value;
+  if (values.size() < 1 || values.size() > 1) return result;
+  
+  result.left(length_from_css(values[0], default_value.left()));
+  
+  return result;
+}
+
+margin style_sheet::margin_right_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  
+  margin result = default_value;
+  if (values.size() < 1 || values.size() > 1) return result;
+  
+  result.right(length_from_css(values[0], default_value.right()));
+  
+  return result;
+}
+
+margin style_sheet::margin_top_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  
+  margin result = default_value;
+  if (values.size() < 1 || values.size() > 1) return result;
+  
+  result.top(length_from_css(values[0], default_value.top()));
+  
+  return result;
+}
+
 style_sheets::padding style_sheet::padding_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   if (values.size() < 1 || values.size() > 4) return default_value;
@@ -571,6 +615,50 @@ style_sheets::padding style_sheet::padding_from_css(const xtd::ustring& css_text
   if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
   if (values.size() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
   if (values.size() == 4) result.left(length_from_css(values[3], default_value.right()));
+  
+  return result;
+}
+
+style_sheets::padding style_sheet::padding_bottom_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  style_sheets::padding result = default_value;
+  
+  if (values.size() < 1 || values.size() > 1) return result;
+  
+  result.bottom(length_from_css(values[0], default_value.bottom()));
+  
+  return result;
+}
+
+style_sheets::padding style_sheet::padding_left_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  style_sheets::padding result = default_value;
+  
+  if (values.size() < 1 || values.size() > 1) return result;
+  
+  result.left(length_from_css(values[0], default_value.left()));
+  
+  return result;
+}
+
+style_sheets::padding style_sheet::padding_right_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  style_sheets::padding result = default_value;
+  
+  if (values.size() < 1 || values.size() > 1) return result;
+  
+  result.right(length_from_css(values[0], default_value.right()));
+  
+  return result;
+}
+
+style_sheets::padding style_sheet::padding_top_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+  auto values = css_text.to_lower().split();
+  style_sheets::padding result = default_value;
+  
+  if (values.size() < 1 || values.size() > 1) return result;
+  
+  result.top(length_from_css(values[0], default_value.top()));
   
   return result;
 }
@@ -708,6 +796,10 @@ void style_sheet::control_reader(xtd::web::css::css_reader& reader) noexcept {
 void style_sheet::fill_control(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept {
   for (auto property : selectors_iterator->second.properties()) {
     if (property.first == "margin") control.margin(margin_from_css(property.second.to_string(), margin(0)));
+    if (property.first == "margin-bottom") control.margin(margin_bottom_from_css(property.second.to_string(), control.margin()));
+    if (property.first == "margin-left") control.margin(margin_left_from_css(property.second.to_string(), control.margin()));
+    if (property.first == "margin-right") control.margin(margin_right_from_css(property.second.to_string(), control.margin()));
+    if (property.first == "margin-top") control.margin(margin_top_from_css(property.second.to_string(), control.margin()));
     if (property.first == "border-style") control.border_style(border_style_from_css(property.second.to_string(), border_style(border_type::none)));
     if (property.first == "border-color") control.border_color(border_color_from_css(property.second.to_string(), border_color(color::transparent)));
     if (property.first == "border-width") control.border_width(border_width_from_css(property.second.to_string(), border_width(1)));
@@ -718,6 +810,10 @@ void style_sheet::fill_control(xtd::web::css::selector_map::const_iterator& sele
     if (property.first == "outline-width") control.outline_width(border_width_from_css(property.second.to_string(), outline_width(1)));
     if (property.first == "outline-radius") control.outline_radius(border_radius_from_css(property.second.to_string(), outline_radius(0)));
     if (property.first == "padding") control.padding(margin_from_css(property.second.to_string(), padding(0)));
+    if (property.first == "padding-bottom") control.padding(margin_bottom_from_css(property.second.to_string(), control.padding()));
+    if (property.first == "padding-left") control.padding(margin_left_from_css(property.second.to_string(), control.padding()));
+    if (property.first == "padding-right") control.padding(margin_right_from_css(property.second.to_string(), control.padding()));
+    if (property.first == "padding-top") control.padding(margin_top_from_css(property.second.to_string(), control.padding()));
     if (property.first == "height") control.height(length_from_css(property.second.to_string(), length(25)));
     if (property.first == "width") control.width(length_from_css(property.second.to_string(), length(75)));
     if (property.first == "background-color") control.background_color(background_color_from_css(property.second.to_string(), color::transparent));

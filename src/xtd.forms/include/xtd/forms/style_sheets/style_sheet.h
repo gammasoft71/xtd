@@ -406,7 +406,15 @@ namespace xtd {
         xtd::drawing::color color_from_css(const xtd::ustring& css_text, const xtd::drawing::color& default_value) const noexcept;
         length length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept;
         margin margin_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
+        margin margin_bottom_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
+        margin margin_left_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
+        margin margin_right_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
+        margin margin_top_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept;
         padding padding_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
+        padding padding_bottom_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
+        padding padding_left_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
+        padding padding_right_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
+        padding padding_top_from_css(const xtd::ustring& css_text, const padding& default_value) const noexcept;
         ustring string_from_css(const xtd::ustring& css_text, const xtd::ustring& default_value) const noexcept;
         xtd::forms::content_alignment text_align_from_css(const xtd::ustring& css_text, const xtd::forms::content_alignment& default_value) const noexcept;
         xtd::forms::style_sheets::text_decoration text_decoration_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_decoration& default_value) const noexcept;
