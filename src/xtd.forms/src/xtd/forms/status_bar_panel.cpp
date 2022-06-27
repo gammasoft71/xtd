@@ -25,6 +25,18 @@ status_bar_panel& status_bar_panel::control(std::nullptr_t value) {
   return *this;
 }
 
+const drawing::image& status_bar_panel::image() const noexcept {
+  return data_->image;
+}
+
+status_bar_panel& status_bar_panel::image(const xtd::drawing::image& value) {
+  if (data_->image != value) {
+    data_->image = value;
+    if (data_->parent) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image);
+  }
+  return *this;
+}
+
 const ustring& status_bar_panel::name() const noexcept {
   return data_->name;
 }
@@ -95,6 +107,28 @@ status_bar_panel status_bar_panel::create_control(const xtd::forms::control& con
   status_bar_panel result;
   result.control(control);
   result.style(xtd::forms::status_bar_panel_style::control);
+  return result;
+}
+
+status_bar_panel status_bar_panel::create_panel(const xtd::ustring& text) {
+  status_bar_panel result;
+  result.style(xtd::forms::status_bar_panel_style::text);
+  result.text(text);
+  return result;
+}
+
+status_bar_panel status_bar_panel::create_panel(const xtd::drawing::image& image) {
+  status_bar_panel result;
+  result.style(xtd::forms::status_bar_panel_style::text);
+  result.image(image);
+  return result;
+}
+
+status_bar_panel status_bar_panel::create_panel(const xtd::ustring& text, const xtd::drawing::image& image) {
+  status_bar_panel result;
+  result.image(image);
+  result.style(xtd::forms::status_bar_panel_style::text);
+  result.text(text);
   return result;
 }
 
