@@ -4,27 +4,27 @@
 system-colors {
   accent: #15539E;
   accent-text: white;
-  active-border: #333333;
+  active-border: #353535;
   active-caption: #282828;
   active-caption-text: #EEEEEC;
   app-workspace: #2D2D2D;
   button-face: #333333;
   button-highlight: #373737;
   button-shadow: #1B1B1B;
-  control: #333333;
+  control: #353535;
   control-dark: #1B1B1B;
   control-dark-dark: black;
-  control-light: #333333;
+  control-light: #353535;
   control-light-light: #373737;
   control-text: #EEEEEC;
-  desktop: #333333;
+  desktop: #353535;
   gradient-active-caption: #282828;
   gradient-inactive-caption: #353535;
   gray-text: #919190;
   highlight: #15539E;
   highlight-text: white;
   hot-track: #3584E4;
-  inactive-border: #333333;
+  inactive-border: #353535;
   inactive-caption: #353535;
   inactive-caption-text: #EEEEEC;
   info: rgba(0, 0, 0, 0.8);
@@ -33,11 +33,11 @@ system-colors {
   menu-bar: #353535;
   menu-highlight: #15539E;
   menu-text: #EEEEEC;
-  scroll-bar: #333333;
+  scroll-bar: #353535;
   text-box: #2D2D2D;
   text-box-text: white;
   window: #2D2D2D;
-  window-frame: #333333;
+  window-frame: #353535;
   window-text: white;
 }
 

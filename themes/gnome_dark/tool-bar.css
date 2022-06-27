@@ -3,8 +3,8 @@
 
 tool-bar {
   background-color: transparent;
-  border-color: system-color(control-dark-dark);
-  border-style: outset none outset none;
+  border-color: #303030;
+  border-style: solid none solid none;
   border-width: 1px;
   color: system-color(control-text);
 }
