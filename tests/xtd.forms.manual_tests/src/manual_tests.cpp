@@ -52,6 +52,7 @@ namespace examples {
     message_notifier notifier;
   };
   
+  // Example of notification form with layout...
   class form3 : public form {
   public:
     form3() {
@@ -60,15 +61,15 @@ namespace examples {
       padding(forms::padding(5));
       start_position(xtd::forms::form_start_position::manual);
       top_most(true);
-
+      
       /// Set round rectangle form :
       drawing::drawing2d::graphics_path path;
       path.add_rounded_rectangle(client_rectangle(), 7);
       region(drawing::region(path));
-
+      
       // Top right screen location :
       location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
-
+      
       // Bottom right screen location :
       //location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().bottom() - client_size().height() - 5});
       
@@ -77,9 +78,9 @@ namespace examples {
       layout_panel1.control_layout_style(layout_panel2, {75, size_type::absolute});
       layout_panel1.dock(dock_style::fill);
       layout_panel1.parent(*this);
-
+      
       panel1.padding(forms::padding(5));
-
+      
       label1.parent(panel1);
       label1.dock(dock_style::fill);
       
@@ -92,7 +93,7 @@ namespace examples {
       button1.click += [&] {
         close();
       };
-
+      
       button2.text("Cancel");
       button2.click += [&] {
         close();
@@ -107,8 +108,65 @@ namespace examples {
     button button1;
     button button2;
   };
+  
+  // Example of notification form with docking...
+  class form4 : public form {
+  public:
+    form4() {
+      controls().push_back_range({panel1, panel2});
+      client_size({300, button1.height() + button2.height() + 10});
+      form_border_style(forms::form_border_style::none);
+      start_position(xtd::forms::form_start_position::manual);
+      top_most(true);
+      
+      /// Set round rectangle form :
+      drawing::drawing2d::graphics_path path;
+      path.add_rounded_rectangle(client_rectangle(), 7);
+      region(drawing::region(path));
+      
+      // Top right screen location :
+      location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
+      
+      // Bottom right screen location :
+      //location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().bottom() - client_size().height() - 5});
+      
+      panel1.controls().push_back(label1);
+      panel1.dock(dock_style::fill);
+      panel1.parent(*this);
+      panel1.padding(forms::padding(5));
+      
+      label1.dock(dock_style::fill);
+      
+      // The following text is wrapped in label :
+      label1.text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.\n\nUt velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna.\n\nAliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.");
+      
+      panel2.controls().push_back_range({button2, button1});
+      panel2.dock(dock_style::right);
+      panel2.width(85);
+      panel2.padding(forms::padding(5));
+
+      button1.text("Ok");
+      button1.dock(dock_style::top);
+      button1.click += [&] {
+        close();
+      };
+
+      button2.text("Cancel");
+      button2.dock(dock_style::top);
+      button2.click += [&] {
+        close();
+      };
+    };
+    
+  private:
+    panel panel1;
+    label label1;
+    panel panel2;
+    button button1;
+    button button2;
+  };
 }
 
 int main() {
-  application::run(examples::form3());
+  application::run(examples::form4());
 }
