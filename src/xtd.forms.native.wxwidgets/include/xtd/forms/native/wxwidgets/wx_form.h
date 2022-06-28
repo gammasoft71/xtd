@@ -65,23 +65,26 @@ namespace xtd {
       };
       
       class wx_form : public control_handler {
+#if defined(__WIN32__)
+        static const int32_t min_width = 122;
+        static const int32_t min_height = 32;
+#elif defined(__WXGTK__)
+        static const int32_t min_width = 107;
+        static const int32_t min_height = 46;
+#elif defined(__APPLE__)
+        static const int32_t min_width = 75;
+        static const int32_t min_height = 23;
+#else
+        static const int32_t min_width = 122;
+        static const int32_t min_height = 32;
+#endif
+        
       public:
         explicit wx_form(const forms::create_params& create_params) {
           wxPoint location = wxPoint(create_params.x(), create_params.y());
           wxSize size = wxSize(create_params.width(), create_params.height());
-          #if defined(__WIN32__)
-          if (size.GetWidth() > -1 && size.GetWidth() < 122) size.SetWidth(122);
-          if (size.GetHeight() > -1 && size.GetHeight() < 32) size.SetHeight(32);
-          #elif defined(__WXGTK__)
-          if (size.GetWidth() > -1 && size.GetWidth() < 107) size.SetWidth(107);
-          if (size.GetHeight() > -1 && size.GetHeight() < 46) size.SetHeight(46);
-          #elif defined(__APPLE__)
-          if (size.GetWidth() > -1 && size.GetWidth() < 75) size.SetWidth(75);
-          if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
-          #else
-          if (size.GetWidth() > -1 && size.GetWidth() < 75) size.SetWidth(75);
-          if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
-          #endif
+          if (size.GetWidth() > -1 && size.GetWidth() < min_width) size.SetWidth(min_width);
+          if (size.GetHeight() > -1 && size.GetHeight() < min_height) size.SetHeight(min_height);
           if ((create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || (create_params.ex_style() & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) control_handler::create<wxDialog>(create_params.parent() ? (reinterpret_cast<control_handler*>(create_params.parent())->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
           else control_handler::create<wxFrame>(create_params.parent() && (create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST ? (reinterpret_cast<control_handler*>(create_params.parent())->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
           #if defined(__WIN32__)
@@ -234,19 +237,7 @@ namespace xtd {
         }
         
         void SetClientSize(int32_t width, int32_t height) override {
-          #if defined(__WIN32__)
-          if (width < 122) width = 122;
-          if (height < 0) height = 0;
-          #elif  defined(__WXGTK__)
-          if (width < 107) width = 107;
-          if (height < 12) height = 12;
-          #elif defined(__APPLE__)
-          if (width < 75) width = 75;
-          if (height < 0) height = 0;
-          #else
-          if (width < 122) width = 122;
-          if (height < 0) height = 0;
-          #endif
+          if (width < min_width) width = min_width;
           #if defined(__APPLE__)
           if (fixed) {
             auto current_size = control()->GetMinClientSize();
@@ -275,6 +266,16 @@ namespace xtd {
           #endif
         }
         
+        void SetMinClientSize(const wxSize& size) override {
+          wxSize min_size(size.GetWidth() < min_width ? min_width : size.GetWidth(), size.GetHeight());
+          control_handler::SetMinClientSize(min_size);
+        }
+        
+        void SetMinSize(const wxSize& size) override {
+          wxSize min_size(size.GetWidth() < min_width ? min_width : size.GetWidth(), size.GetHeight() < min_height ? min_height : size.GetHeight());
+          control_handler::SetMinSize(min_size);
+        }
+
         #if defined(__WXGTK__)
         void SetPosition(const wxPoint& location) override {
           location_ = location;
@@ -283,19 +284,8 @@ namespace xtd {
         #endif
         
         void SetSize(int32_t width, int32_t height) override {
-          #if defined(__WIN32__)
-          if (width < 122) width = 122;
-          if (height < 32) height = 32;
-          #elif  defined(__WXGTK__)
-          if (width < 107) width = 107;
-          if (height < 46) height = 46;
-          #elif defined(__APPLE__)
-          if (width < 75) width = 75;
-          if (height < 23) height = 23;
-          #else
-          if (width < 122) width = 122;
-          if (height < 32) height = 32;
-          #endif
+          if (width < min_width) width = min_width;
+          if (height < min_height) height = min_height;
           #if defined(__APPLE__)
           if (fixed) {
             auto current_size = control()->GetMinSize();

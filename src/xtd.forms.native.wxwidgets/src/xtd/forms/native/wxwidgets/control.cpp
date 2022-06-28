@@ -400,7 +400,7 @@ void control::minimum_client_size(intptr_t control, const drawing::size& size) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  reinterpret_cast<control_handler*>(control)->control()->SetMinClientSize({size.width(), size.height()});
+  reinterpret_cast<control_handler*>(control)->SetMinClientSize({size.width(), size.height()});
 }
 
 void control::minimum_size(intptr_t control, const drawing::size& size) {
@@ -409,7 +409,7 @@ void control::minimum_size(intptr_t control, const drawing::size& size) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  reinterpret_cast<control_handler*>(control)->control()->SetMinSize({size.width(), size.height()});
+  reinterpret_cast<control_handler*>(control)->SetMinSize({size.width(), size.height()});
 }
 
 drawing::point control::point_to_screen(intptr_t control, const drawing::point& p) {

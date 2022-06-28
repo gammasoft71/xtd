@@ -72,11 +72,21 @@ namespace xtd {
           control_->SetForegroundColour(colour);
         }
         
+        virtual void SetMinClientSize(const wxSize& size) {
+          if (!control_) return;
+          control_->SetMinClientSize(size);
+        }
+        
+        virtual void SetMinSize(const wxSize& size) {
+          if (!control_) return;
+          control_->SetMinSize(size);
+        }
+        
         virtual void SetPosition(const wxPoint& location) {
           if (!control_) return;
           control_->SetPosition(location);
         }
-        
+
         virtual void SetClientSize(int32_t width, int32_t height) {
           if (!control_) return;
           control_->SetClientSize(width, height);
