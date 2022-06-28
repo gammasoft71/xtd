@@ -421,7 +421,9 @@ void form::wm_close(message& message) {
   on_form_closing(event_args);
   message.result(event_args.cancel() == true);
   if (event_args.cancel() != true) {
-    if (get_state(state::modal)) {
+    if (!get_state(state::modal))
+      hide();
+    else {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
       application::raise_leave_thread_modal(event_args::empty);
@@ -430,7 +432,6 @@ void form::wm_close(message& message) {
       post_recreate_handle();
     }
     can_close_ = true;
-    hide();
     on_form_closed(form_closed_event_args());
   }
 }
