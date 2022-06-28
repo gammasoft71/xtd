@@ -417,10 +417,12 @@ void form::wm_activate(message& message) {
 }
 
 void form::wm_close(message& message) {
+  if (can_close_) return;
   form_closing_event_args event_args;
   on_form_closing(event_args);
   message.result(event_args.cancel() == true);
   if (event_args.cancel() != true) {
+    can_close_ = true;
     if (!get_state(state::modal))
       hide();
     else {
@@ -431,7 +433,6 @@ void form::wm_close(message& message) {
       set_state(state::modal, false);
       post_recreate_handle();
     }
-    can_close_ = true;
     on_form_closed(form_closed_event_args());
   }
 }
