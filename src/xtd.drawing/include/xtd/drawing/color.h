@@ -26,9 +26,9 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     /// @remarks Named colors are represented by using the properties of the xtd::drawing::color structure. For more information about these colors, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">see Colors by Name</a>.
-    /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). Each of the four components is a number from 0 through 255, with 0 representing no intensity and 255 representing full intensity. The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. To determine the alpha, red, green, or blue component of a color, use the A, R, G, or B property, respectively. You can create a custom color by using one of the from_argb methods
+    /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). Each of the four components is a number from 0 through 255, with 0 representing no intensity and 255 representing full intensity. The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. To determine the alpha, red, green, or blue component of a color, use the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, or xtd::drawing::color::b property, respectively. You can create a custom color by using one of the from_argb methods
     /// @par Examples
-    /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
+    /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
     /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
     /// @code
     /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -501,7 +501,7 @@ namespace xtd {
       /// @return byte The alpha component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
+      /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -520,7 +520,7 @@ namespace xtd {
       /// @return byte The blue component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
+      /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -539,7 +539,7 @@ namespace xtd {
       /// @return byte The green component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
+      /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -576,11 +576,11 @@ namespace xtd {
       bool is_light() const {return get_lightness() >= lightness_threshold;}
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
-      /// @return bool Returns true if this xtd::drawing::color was created by using either the FromName method or the FromKnownColor method; otherwise, false.
+      /// @return bool Returns true if this xtd::drawing::color was created by using either the xtd::drawing::color::from_name method or the FromKnownColor method; otherwise, false.
       bool is_named_color() const {return name_ != ustring::format("{:X8}", argb_) && name_ != "0";}
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a system color. A system color is a color that is used in a Windows display element. System colors are represented by elements of the xtd::drawing::known_color enumeration.
-      /// @return bool Returns true if this xtd::drawing::color was created from a system color by using either the FromName method or the FromKnownColor method; otherwise, false.
+      /// @return bool Returns true if this xtd::drawing::color was created from a system color by using either the xtd::drawing::color::from_name method or the FromKnownColor method; otherwise, false.
       bool is_system_color() const;
       
       /// @brief Gets the name of this xtd::drawing::color.
@@ -591,7 +591,7 @@ namespace xtd {
       /// @return byte The red component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
+      /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -934,9 +934,9 @@ namespace xtd {
       /// @brief Creates a xtd::drawing::color class from the specified name of a predefined color.
       /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. If the name parameter is not the valid name of a predefined color, the FromName method creates a xtd::drawing::color structure that has an ARGB value of 0 (that is, all ARGB components are 0).
+      /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. If the name parameter is not the valid name of a predefined color, the xtd::drawing::color::from_name method creates a xtd::drawing::color structure that has an ARGB value of 0 (that is, all ARGB components are 0).
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
+      /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -1166,8 +1166,8 @@ namespace xtd {
       uint32_t to_argb() const;
       
       /// @brief Gets the xtd::drawing::known_color value of this xtd::drawing::color class.
-      /// @return xtd::drawing::known_color An element of the xtd::drawing::known_color enumeration, if the xtd::drawing::color is created from a predefined color by using either the FromName method or the FromKnownColor method; otherwise, 0.
-      /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. When the ToKnownColor method is applied to a xtd::drawing::color structure that is created by using the FromArgb method, ToKnownColor returns 0, even if the ARGB value matches the ARGB value of a predefined color. ToKnownColor also returns 0 when it is applied to a xtd::drawing::color structure that is created by using the FromName method with a string name that is not valid.
+      /// @return xtd::drawing::known_color An element of the xtd::drawing::known_color enumeration, if the xtd::drawing::color is created from a predefined color by using either the xtd::drawing::color::from_name method or the FromKnownColor method; otherwise, 0.
+      /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. When the ToKnownColor method is applied to a xtd::drawing::color structure that is created by using the FromArgb method, ToKnownColor returns 0, even if the ARGB value matches the ARGB value of a predefined color. ToKnownColor also returns 0 when it is applied to a xtd::drawing::color structure that is created by using the xtd::drawing::color::from_name method with a string name that is not valid.
       xtd::drawing::known_color to_known_color() const;
       
       /// @brief Creates a human-readable string that represents this color class.
