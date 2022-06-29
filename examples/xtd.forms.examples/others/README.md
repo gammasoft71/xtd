@@ -21,6 +21,7 @@
 * [form_and_main](form_and_main/README.md) demonstrates how to use startup_ keyword.
 * [form_and_thread](form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../src/xtd.forms/include/xtd/forms/form.h) method.
 * [form_background_image](form_background_image/README.md) demonstrates how to use [xtd::forms::forms](../../../src/xtd.forms/include/xtd/forms/form.h) class with image_background property.
+* [form_decoration](form_decoration/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) decoration (title, icon, control boxes and border).
 * [form_resize](form_resize/README.md) shows how to set minimum size, set maximum size, move and resize a form.
 * [form_show](form_show/README.md) demontrate how to launch form as normal window, modeless window and modal window.
 * [form_window_state](form_window_state/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) window state.

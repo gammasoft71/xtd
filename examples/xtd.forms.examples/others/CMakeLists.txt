@@ -26,6 +26,7 @@ add_projects(
   form_and_main
   form_and_thread
   form_background_image
+  form_decoration
   form_resize
   form_show
   form_window_state
