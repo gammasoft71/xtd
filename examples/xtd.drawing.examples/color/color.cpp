@@ -13,6 +13,7 @@ int main() {
   cout << ustring::format("Color::from_argb(255, 253, 2, 0) = {0}", color::from_argb(255, 253, 2, 0)) << endl;
   cout << ustring::format("color::from_name(\"dodger_blue\") = {0}", color::from_name("dodger_blue")) << endl;
   cout << ustring::format("color::from_name(\"dodger blue\") = {0}", color::from_name("dodger blue")) << endl;
+  cout << ustring::format("color::from_name(\"dodgerblue\") = {0}", color::from_name("dodgerblue")) << endl;
 }
 
 // This code produces the following output:
@@ -24,3 +25,4 @@ int main() {
 // Color::from_argb(255, 253, 2, 0) = color [a=255, r=253, g=2, b=0]
 // color::from_name("dodger_blue") = color [dodger_blue]
 // color::from_name("dodger blue") = color [dodger_blue]
+// color::from_name("dodgerblue") = color [dodger_blue]
