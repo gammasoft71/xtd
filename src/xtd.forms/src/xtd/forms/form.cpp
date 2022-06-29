@@ -302,6 +302,7 @@ bool form::pre_process_message(xtd::forms::message& message) {
 }
 
 forms::dialog_result form::show_dialog() {
+  can_close_ = false;
   set_state(state::modal, true);
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
@@ -313,6 +314,7 @@ forms::dialog_result form::show_dialog() {
 }
 
 forms::dialog_result form::show_dialog(const iwin32_window& owner) {
+  can_close_ = false;
   parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
   if (owner.handle() != handle()) set_parent(owner.handle());
@@ -324,6 +326,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
 }
 
 void form::show_sheet(const iwin32_window& owner) {
+  can_close_ = false;
   parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
   if (owner.handle() != handle()) set_parent(owner.handle());
@@ -335,6 +338,7 @@ void form::show_sheet(const iwin32_window& owner) {
 }
 
 forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
+  can_close_ = false;
   parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
   if (owner.handle() != handle()) set_parent(owner.handle());
