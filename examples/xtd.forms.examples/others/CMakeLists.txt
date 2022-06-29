@@ -29,6 +29,7 @@ add_projects(
   form_decoration
   form_resize
   form_show
+  form_show_hide
   form_window_state
   group_box_and_check_box
   group_box_and_radio_button
