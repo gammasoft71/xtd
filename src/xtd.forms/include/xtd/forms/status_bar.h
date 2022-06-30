@@ -97,7 +97,7 @@ namespace xtd {
       /// @brief Sets a value indicating whether the status bar displays a xtd::forms::tool_tip for each button.
       /// @param value true if the status bar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false.
       /// @return Current tool_bar instance.
-      /// @remarks To set the text displayed by the xtd::forms::tool_tip, set the xtd::forms::tool_bar_button::tool_tip_text property of each xtd::forms::tool_bar_button on the xtd::forms::tool_bar. To cause the xtd::forms::tool_tip to display as the user moves the mouse pointer over the status bar button, set the xtd::forms::tool_bar::show_tool_tips property to true.
+      /// @remarks To set the text displayed by the xtd::forms::tool_tip, set the xtd::forms::tool_bar_button::tool_tip_text property of each xtd::forms::tool_bar_button on the xtd::forms::tool_bar. To cause the xtd::forms::tool_tip to display as the user moves the mouse pointer over the status bar panel, set the xtd::forms::tool_bar::show_tool_tips property to true.
       virtual status_bar& show_tool_tips(bool value);
       
       /// @brief Gets a value indicating whether a sizing grip is displayed in the lower-right corner of the control.
