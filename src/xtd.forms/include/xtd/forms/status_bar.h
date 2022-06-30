@@ -27,7 +27,7 @@ namespace xtd {
     /// xtd::forms
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms  menus_and_status bars
+    /// @ingroup xtd_forms menus_and_toolbars
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::status_bar control.
     /// @include status_bar.cpp
