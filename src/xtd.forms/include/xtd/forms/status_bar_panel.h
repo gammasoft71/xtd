@@ -75,7 +75,7 @@ namespace xtd {
       /// @param value One of the xtd::forms::horizontal_alignment values. The default is xtd::forms::horizontal_alignment::left.
       /// @return This current instance.
       /// @remarks You can use this property to horizontally align the text and/or image assigned to the xtd::forms::status_bar_panel::image property within the borders of the panel. Text and im ge can be aligned to the left, right, or center of the xtd::forms::status_bar_panel. There is no way to independently position animage within the xtd::forms::status_bar_panel. For example, you cannot position an icon to the left side of the xtd::forms::status_bar_panel while aligning the text on the right side. The image is always positioned to the left side of the text regardless of how the text is aligned.
-      status_bar& alignment(xtd::forms::horizontal_alignment value);
+      status_bar_panel& alignment(xtd::forms::horizontal_alignment value);
       
       /// @brief Gets a value indicating whether the status bar panel is automatically resized.
       /// @return One of the xtd::forms::status_bar_panel_auto_size values. The default is xtd::forms::status_bar_panel_auto_size::none.
@@ -87,7 +87,7 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks xtd::forms::status_bar_panel objects set to xtd::forms::status_bar_panel_auto_size::contents have precedence over those panels set to the xtd::forms::status_bar_panel_auto_size::spring value. For example, a xtd::forms::status_bar_panel that has its xtd::forms::status_bar_panel::auto_size property set to xtd::forms::status_bar_panel_auto_size::spring is shortened if a xtd::forms::status_bar_panel with the xtd::forms::status_bar_panel::auto_size property set to xtd::forms::status_bar_panel_auto_size::contents requires that space.
       /// @remarks You can use xtd::forms::status_bar_panel::auto_size to ensure that the contents of a xtd::forms::status_bar_panel are properly displayed in a xtd::forms::status_bar control that contains more than one panel. For example, you might want a panel that contains text to adjust automatically to the amount of text it is displaying (xtd::forms::status_bar_panel_auto_size::contents), while another panel on the xtd::forms::status_bar that displays an owner-drawn progress bar would need to be a fixed size (xtd::forms::status_bar_panel_auto_size::none).
-      status_bar& auto_size(xtd::forms::status_bar_panel_auto_size value);
+      status_bar_panel& auto_size(xtd::forms::status_bar_panel_auto_size value);
       
       /// @brief Gets the border style of the status bar panel.
       /// @return One of the xtd::forms::status_bar_panel_border_style values. The default is xtd::forms::status_bar_panel_border_style::sunken.
@@ -97,7 +97,7 @@ namespace xtd {
       /// @param value One of the xtd::forms::status_bar_panel_border_style values. The default is xtd::forms::status_bar_panel_border_style::sunken.
       /// @return This current instance.
       /// @remarks You can use this property to differentiate a panel from other panels in a td::forms::status_bar control.
-      status_bar& border_style(xtd::forms::status_bar_panel_border_style value);
+      status_bar_panel& border_style(xtd::forms::status_bar_panel_border_style value);
       
       /// @brief Gets the control to be displayed in the control status bar panel.
       /// @return A xtd::forms::control to be displayed in the control status bar panel. The default is std::nullopt.

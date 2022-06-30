@@ -5,6 +5,42 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
+xtd::forms::horizontal_alignment status_bar_panel::alignment() const noexcept {
+  return data_->alignment;
+}
+
+status_bar_panel& status_bar_panel::alignment(xtd::forms::horizontal_alignment value) {
+  if (data_->alignment != value) {
+    data_->alignment = value;
+    if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
+  }
+  return *this;
+}
+
+xtd::forms::status_bar_panel_auto_size status_bar_panel::auto_size() const noexcept {
+  return data_->auto_size;
+}
+
+status_bar_panel& status_bar_panel::auto_size(xtd::forms::status_bar_panel_auto_size value) {
+  if (data_->auto_size != value) {
+    data_->auto_size = value;
+    if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
+  }
+  return *this;
+}
+
+xtd::forms::status_bar_panel_border_style status_bar_panel::border_style() const noexcept {
+  return data_->border_style;
+}
+
+status_bar_panel& status_bar_panel::border_style(xtd::forms::status_bar_panel_border_style value) {
+  if (data_->border_style != value) {
+    data_->border_style = value;
+    if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
+  }
+  return *this;
+}
+
 optional<reference_wrapper<forms::control>> status_bar_panel::control() const noexcept {
   return data_->control ? optional<reference_wrapper<forms::control>>(*data_->control) : nullopt;
 }
@@ -32,7 +68,19 @@ const drawing::image& status_bar_panel::image() const noexcept {
 status_bar_panel& status_bar_panel::image(const xtd::drawing::image& value) {
   if (data_->image != value) {
     data_->image = value;
-    if (data_->parent) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image);
+    if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
+  }
+  return *this;
+}
+
+int32_t status_bar_panel::min_width() const noexcept {
+  return data_->min_width;
+}
+
+status_bar_panel& status_bar_panel::min_width(int32_t value) {
+  if (data_->min_width != value) {
+    data_->min_width = value;
+    if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
   }
   return *this;
 }
@@ -57,7 +105,7 @@ xtd::forms::status_bar_panel_style status_bar_panel::style() const noexcept {
 status_bar_panel& status_bar_panel::style(xtd::forms::status_bar_panel_style value) {
   if (data_->style != value) {
     data_->style = value;
-    if (data_->parent) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image);
+    if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
   }
   return *this;
 }
@@ -78,7 +126,7 @@ const ustring& status_bar_panel::text() const noexcept {
 status_bar_panel& status_bar_panel::text(const xtd::ustring& value) {
   if (data_->text != value) {
     data_->text = value;
-    if (data_->parent) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image);
+    if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
   }
   return *this;
 }
@@ -90,9 +138,25 @@ const ustring& status_bar_panel::tool_tip_text() const noexcept {
 status_bar_panel& status_bar_panel::tool_tip_text(const xtd::ustring& value) {
   if (data_->tool_tip_text != value) {
     data_->tool_tip_text = value;
-    if (data_->parent) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image);
+    if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
   }
   return *this;
+}
+
+int32_t status_bar_panel::width() const noexcept {
+  return data_->width;
+}
+
+status_bar_panel& status_bar_panel::width(int32_t value) {
+  if (data_->width != value) {
+    data_->width = value;
+    if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
+  }
+  return *this;
+}
+
+void status_bar_panel::begin_init() {
+  data_->init_mode = true;
 }
 
 status_bar_panel status_bar_panel::create_control(const xtd::ustring& text, const xtd::forms::control& control) {
@@ -130,6 +194,11 @@ status_bar_panel status_bar_panel::create_panel(const xtd::ustring& text, const 
   result.style(xtd::forms::status_bar_panel_style::text);
   result.text(text);
   return result;
+}
+
+void status_bar_panel::end_init() {
+  data_->init_mode = false;
+  if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
 }
 
 xtd::ustring status_bar_panel::to_string() const noexcept {
