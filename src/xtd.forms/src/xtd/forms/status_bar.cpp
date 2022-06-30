@@ -325,7 +325,7 @@ void status_bar::resize_spring_panels() {
    */
 }
 
-void status_bar::update_status_bar_panel_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image) {
+void status_bar::update_status_bar_panel_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32_t min_width, int32_t width) {
   if (!handle) return;
   if (is_system_status_bar()) {
     //native::status_bar::update_status_bar_item(this->handle(), handle, text, tool_tip_text, image, visible(), 100, false);
