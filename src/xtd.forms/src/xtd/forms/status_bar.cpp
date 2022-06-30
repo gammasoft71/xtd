@@ -331,8 +331,14 @@ void status_bar::update_status_bar_panel_control(intptr_t handle, const xtd::ust
     //native::status_bar::update_status_bar_item(this->handle(), handle, text, tool_tip_text, image, visible(), 100, false);
   } else {
     reinterpret_cast<status_bar_panel_control*>(handle)->text(text);
-    reinterpret_cast<status_bar_panel_control*>(handle)->text(text);
+    reinterpret_cast<status_bar_panel_control*>(handle)->tool_tip_text(tool_tip_text);
     reinterpret_cast<status_bar_panel_control*>(handle)->image(image);
+    reinterpret_cast<status_bar_panel_control*>(handle)->alignment(alignment);
+    reinterpret_cast<status_bar_panel_control*>(handle)->status_bar_panel_auto_size(auto_size);
+    reinterpret_cast<status_bar_panel_control*>(handle)->status_bar_panel_border_style(border_style);
+    reinterpret_cast<status_bar_panel_control*>(handle)->style(panel_style);
+    reinterpret_cast<status_bar_panel_control*>(handle)->min_width(min_width);
+    reinterpret_cast<status_bar_panel_control*>(handle)->width(width);
     resize_spring_panels();
   }
 }

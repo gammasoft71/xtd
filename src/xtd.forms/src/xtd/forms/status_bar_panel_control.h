@@ -1,6 +1,10 @@
 #pragma once
+#include "../../../include/xtd/forms/border_style.h"
+#include "../../../include/xtd/forms/horizontal_alignment.h"
+#include "../../../include/xtd/forms/image_renderer.h"
 #include "../../../include/xtd/forms/label.h"
 #include "../../../include/xtd/forms/status_bar.h"
+#include "../../../include/xtd/forms/status_bar_panel_border_style.h"
 
 class xtd::forms::status_bar::status_bar_panel_control : public xtd::forms::label {
 public:
@@ -8,6 +12,10 @@ public:
     set_can_focus(false);
   }
   
+  void alignment(xtd::forms::horizontal_alignment value) {
+    data_->alignment = value;
+  }
+
   void control(const xtd::forms::control* value) {
     if (data_->control != value) {
       data_->control = value;
@@ -27,6 +35,10 @@ public:
   }
   
   bool is_horizontal() const {return dock() == dock_style::left || dock() == dock_style::right;}
+  
+  void min_width(int32_t value) {
+    data_->min_width = value;
+  }
   
   xtd::drawing::size size() const override {return control::size();}
   
@@ -56,11 +68,19 @@ public:
     return *this;
   }
   
+  void tool_tip_text(const xtd::ustring& value) {
+    data_->tool_tip_text = value;
+  }
+
   void status_bar_panel_auto_size(xtd::forms::status_bar_panel_auto_size value) {
     if (data_->status_bar_panel_auto_size != value) {
       data_->status_bar_panel_auto_size = value;
       update_size();
     }
+  }
+  
+  void status_bar_panel_border_style( xtd::forms::status_bar_panel_border_style value) {
+    data_->status_bar_panel_border_style = value;
   }
   
   void status_bar_panel(status_bar_panel_ref value) {data_->status_bar_panel = value;}
@@ -84,7 +104,30 @@ private:
     auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
     xtd::forms::style_sheets::status_bar_panel current_style_sheet = style.status_bar_panel(xtd::forms::style_sheets::pseudo_state::standard);
     current_style_sheet.font(font());
-    xtd::drawing::rectangle text_rect = current_style_sheet.get_content_rectangle(e.clip_rectangle());
+    auto content_rectangle = current_style_sheet.get_content_rectangle(e.clip_rectangle());
+    auto image_rect = content_rectangle;
+    auto text_rect = content_rectangle;
+    if (data_->alignment == horizontal_alignment::left) {
+      image_rect.width(image().width());
+      image_rect.height(image().height());
+      text_rect.x(image_rect.x() + image_rect.width());
+      text_rect.width(text_rect.width() - image_rect.width());
+    } else if (data_->alignment == horizontal_alignment::center) {
+      auto image_and_text_width = image().width() +  e.graphics().measure_string(text(), current_style_sheet.font()).width();
+      image_rect.x(content_rectangle.width() / 2 - image_and_text_width / 2);
+      image_rect.width(image().width());
+      image_rect.height(image().height());
+      text_rect.x(image_rect.x() + image_rect.width());
+      text_rect.width(text_rect.width() - image_rect.width());
+    } else if (data_->alignment == horizontal_alignment::right) {
+      auto text_width = e.graphics().measure_string(text(), current_style_sheet.font()).width();
+      text_rect.x(text_rect.x() + content_rectangle.right() - text_width);
+      text_rect.width(text_rect.width() - text_width);
+      image_rect.x(text_rect.x() - image().width());
+      image_rect.width(image().width());
+      image_rect.height(image().height());
+    }
+    image_renderer::draw_image(e.graphics(), image_rect, image(), true, xtd::drawing::color::transparent, current_style_sheet);
     text_renderer::draw_text(e.graphics(), text_rect, text(), current_style_sheet);
   }
   
@@ -96,9 +139,13 @@ private:
   
   struct data {
     const xtd::forms::control* control = nullptr;
+    xtd::forms::horizontal_alignment alignment = xtd::forms::horizontal_alignment::left;
+    int32_t min_width = 0;
     std::optional<status_bar_panel_ref> status_bar_panel;
     xtd::forms::status_bar_panel_style style = xtd::forms::status_bar_panel_style::text;
+    xtd::forms::status_bar_panel_border_style status_bar_panel_border_style = xtd::forms::status_bar_panel_border_style::none;
     xtd::forms::status_bar_panel_auto_size status_bar_panel_auto_size = xtd::forms::status_bar_panel_auto_size::none;
+    xtd::ustring tool_tip_text;
   };
   
   std::shared_ptr<data> data_ = std::make_shared<data>();
