@@ -362,7 +362,7 @@ private:
   tool_bar_button tool_bar1_separator2 = tool_bar_button::create_stretchable_separator();
   tool_bar_button help_tool_bar_button = tool_bar_button::create_push_button(system_texts::help(), 7);
 
-  status_bar status_bar1;
+  forms::status_bar status_bar1;
 };
 
 startup_(form1);
