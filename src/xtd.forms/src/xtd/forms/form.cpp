@@ -203,6 +203,22 @@ form& form::top_level(bool top_level) {
   return *this;
 }
 
+form& form::status_bar(const forms::status_bar& value) {
+  if (!status_bar_.has_value() || &status_bar_.value().get() != &value) {
+    status_bar_ = const_cast<forms::status_bar&>(value);
+    status_bar_.value().get().is_system_status_bar(true);
+  }
+  return *this;
+}
+
+form& form::status_bar(std::nullptr_t) {
+  if (status_bar_.has_value()) {
+    status_bar_.value().get().is_system_status_bar(false);
+    status_bar_.reset();
+  }
+  return *this;
+}
+
 form& form::tool_bar(const forms::tool_bar& value) {
   if (!tool_bar_.has_value() || &tool_bar_.value().get() != &value) {
     tool_bar_ = const_cast<forms::tool_bar&>(value);

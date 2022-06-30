@@ -15,7 +15,7 @@ namespace examples {
     }
     
   private:
-    status_bar status_bar1;
+    forms::status_bar status_bar1;
   };
 }
 

@@ -44,7 +44,7 @@ namespace examples {
       return bitmap;
     }
 
-    status_bar status_bar1;
+    forms::status_bar status_bar1;
     status_bar_panel status_bar_panel1 = status_bar_panel::create_panel("Status one", image_from_color(color::light_green));
     status_bar_panel status_bar_panel2 = status_bar_panel::create_panel("Status two");
     status_bar_panel status_bar_panel3 = status_bar_panel::create_panel("Status three");
