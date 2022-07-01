@@ -93,13 +93,13 @@ public:
     
     check_box1.parent(tab_page_buttons);
     check_box1.auto_size(true);
+    check_box1.three_state(true);
     check_box1.checked(true);
     check_box1.location({10, 170});
     check_box1.text("Check 1");
     
     check_box2.parent(tab_page_buttons);
     check_box2.auto_size(true);
-    check_box2.three_state(true);
     check_box2.location({130, 170});
     check_box2.text("Check 2");
     
