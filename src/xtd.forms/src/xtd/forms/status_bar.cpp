@@ -11,6 +11,7 @@
 #include "../../../include/xtd/forms/status_bar.h"
 #include "../../../include/xtd/forms/status_bar_renderer.h"
 #include "../../../include/xtd/forms/status_bar_panel_renderer.h"
+#include "sizing_grip_control.h"
 #include "status_bar_panel_control.h"
 
 using namespace std;
@@ -35,6 +36,11 @@ namespace {
 }
 
 status_bar::status_bar() {
+  data_->sizing_grip_control = std::make_shared<sizing_grip_control>();
+  data_->sizing_grip_control->dock(dock_style::right);
+  data_->sizing_grip_control->parent(*this);
+  data_->sizing_grip_control->size({16, 16});
+  
   data_->panels.item_added += {*this, &status_bar::on_item_added};
   data_->panels.item_updated += {*this, &status_bar::on_item_updated};
   data_->panels.item_removed += {*this, &status_bar::on_item_removed};
@@ -110,6 +116,8 @@ status_bar& status_bar::sizing_grip(bool value) {
   if (data_->sizing_grip != value) {
     data_->sizing_grip = value;
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+    else
+      data_->sizing_grip_control->visible(value);
   }
   return *this;
 }

@@ -21,7 +21,7 @@ namespace {
   }
 }
 
-intptr_t status_bar::add_status_bar_panel(intptr_t status_bar, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable) {
+intptr_t status_bar::add_status_bar_panel(intptr_t status_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, int32_t alignment, int32_t auto_size, int32_t border_style, int32_t min_width, int32_t width) {
   if (!status_bar || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -30,7 +30,7 @@ intptr_t status_bar::add_status_bar_panel(intptr_t status_bar, int border_style,
   
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.push_back(to_wx_style(border_style));
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts.push_back(convert_string::to_wstring(text));
-  reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.push_back(stretchable ? -1 : width);
+  reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.push_back(auto_size == 3 ? -1 : width);
   
   int count = static_cast<int>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size());
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetFieldsCount(count);

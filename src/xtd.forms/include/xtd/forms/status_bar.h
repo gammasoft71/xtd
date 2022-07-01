@@ -38,7 +38,8 @@ namespace xtd {
     /// @remarks When you create an instance of xtd::forms::status_bar, the read/write properties are set to initial values. For a list of these values, see the xtd::forms::status_bar constructor.
     class forms_export_ status_bar : public control {
       class status_bar_panel_control;
-      
+      class sizing_grip_control;
+
     public:
       /// @name Alias
       
@@ -189,6 +190,7 @@ namespace xtd {
         bool show_panels = false;
         bool show_tool_tips = false;
         bool sizing_grip = true;
+        std::shared_ptr<class sizing_grip_control> sizing_grip_control;
         std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> spring_panels;
         std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> status_bar_panels;
         std::vector<intptr_t> system_status_bar_panel_handles;
