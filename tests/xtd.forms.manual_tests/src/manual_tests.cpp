@@ -10,10 +10,11 @@ namespace examples {
     form1() {
       text("Status bar example");
       client_size({820, 500});
-      status_bar(status_bar1);
+      //status_bar(status_bar1);
       
       status_bar1.parent(*this);
       status_bar1.panels().push_back_range({status_bar_panel1, status_bar_panel2, status_bar_panel3, status_bar_panel4});
+      //status_bar1.sizing_grip(false);
       //status_bar1.show_panels(true);
       
       status_bar_panel1.auto_size(xtd::forms::status_bar_panel_auto_size::contents);
