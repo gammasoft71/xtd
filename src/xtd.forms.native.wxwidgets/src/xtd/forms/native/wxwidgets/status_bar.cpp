@@ -82,6 +82,16 @@ bool status_bar::set_system_status_bar(intptr_t control, intptr_t status_bar) {
   return true;
 }
 
+bool status_bar::sizing_grip() {
+  if (environment::os_version().is_macos()) return false;
+  return true;
+}
+
+xtd::ustring status_bar::sizing_grip_cursor_name() {
+  if (environment::os_version().is_linux()) return "pan_se";
+  return "size_nwse";
+}
+
 void status_bar::update_status_bar_item(intptr_t status_bar, intptr_t handle, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable) {
   if (!status_bar || !handle || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {

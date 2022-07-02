@@ -59,6 +59,14 @@ namespace xtd {
         /// @param status_bar A tool bar handle that represents the status bar to display in the form.
         /// @warning Internal use only
         static bool set_system_status_bar(intptr_t control, intptr_t status_bar);
+        /// @brief Gets a value indicating whether OS displays a sizing grip.
+        /// @return true if OS displays a sizing grip; otherwise, false.
+        /// @warning Internal use only
+        static bool sizing_grip();
+        /// @brief Gets the cursor name used by sizing grip.
+        /// @return The cursor name used by sizing grip.
+        /// @warning Internal use only
+        static xtd::ustring sizing_grip_cursor_name();
         /// @brief Updates status bar item.
         /// @param tool_bar The status bar that contains the item.
         /// @param handle The status bar item handle.
