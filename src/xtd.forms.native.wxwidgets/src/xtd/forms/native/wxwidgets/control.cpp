@@ -376,42 +376,6 @@ void control::location(intptr_t control, const point& location) {
   reinterpret_cast<control_handler*>(control)->SetPosition({location.x(), location.y()});
 }
 
-void control::maximum_client_size(intptr_t control, const drawing::size& size) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return;
-  }
-  reinterpret_cast<control_handler*>(control)->control()->SetMaxClientSize({size.width() != 0 ? size.width() : -1, size.height() != 0 ? size.height() : -1});
-}
-
-void control::maximum_size(intptr_t control, const drawing::size& size) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return;
-  }
-  reinterpret_cast<control_handler*>(control)->control()->SetMaxSize({size.width() != 0 ? size.width() : -1, size.height() != 0 ? size.height() : -1});
-}
-
-void control::minimum_client_size(intptr_t control, const drawing::size& size) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return;
-  }
-  reinterpret_cast<control_handler*>(control)->SetMinClientSize({size.width(), size.height()});
-}
-
-void control::minimum_size(intptr_t control, const drawing::size& size) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return;
-  }
-  reinterpret_cast<control_handler*>(control)->SetMinSize({size.width(), size.height()});
-}
-
 drawing::point control::point_to_screen(intptr_t control, const drawing::point& p) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {

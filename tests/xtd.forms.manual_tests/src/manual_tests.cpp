@@ -9,7 +9,9 @@ namespace examples {
   public:
     form1() {
       text("Status bar example");
-      client_size({820, 500});
+      size({820, 500});
+      minimum_size({100, 50});
+      maximum_size(client_size());
       //status_bar(status_bar1);
       
       status_bar1.parent(*this);

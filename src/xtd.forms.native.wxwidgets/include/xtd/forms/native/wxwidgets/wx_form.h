@@ -266,16 +266,6 @@ namespace xtd {
           #endif
         }
         
-        void SetMinClientSize(const wxSize& size) override {
-          wxSize min_size(size.GetWidth() < min_width ? min_width : size.GetWidth(), size.GetHeight());
-          control_handler::SetMinClientSize(min_size);
-        }
-        
-        void SetMinSize(const wxSize& size) override {
-          wxSize min_size(size.GetWidth() < min_width ? min_width : size.GetWidth(), size.GetHeight() < min_height ? min_height : size.GetHeight());
-          control_handler::SetMinSize(min_size);
-        }
-
         #if defined(__WXGTK__)
         void SetPosition(const wxPoint& location) override {
           location_ = location;

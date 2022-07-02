@@ -501,7 +501,6 @@ control& control::maximum_client_size(const drawing::size& size) {
   if (data_->maximum_client_size != size) {
     data_->maximum_client_size = size;
     client_size({this->size().width() > maximum_client_size().width() ? data_->maximum_client_size.width() : client_size().width(), this->size().height() > maximum_client_size().height() ? maximum_client_size().height() : client_size().height()});
-    if (handle()) native::control::maximum_client_size(handle(), data_->maximum_client_size);
   }
   return *this;
 }
@@ -514,7 +513,6 @@ control& control::maximum_size(const drawing::size& size) {
   if (data_->maximum_size != size) {
     data_->maximum_size = size;
     this->size({this->size().width() > maximum_size().width() ? maximum_size().width() : this->size().width(), this->size().height() > maximum_size().height() ? maximum_size().height() : this->size().height()});
-    if (handle()) native::control::maximum_size(handle(), data_->maximum_size);
   }
   return *this;
 }
@@ -527,7 +525,6 @@ control& control::minimum_client_size(const drawing::size& size) {
   if (data_->minimum_client_size != size) {
     data_->minimum_client_size = size;
     client_size({this->size().width() < minimum_client_size().width() ? minimum_client_size().width() : client_size().width(), this->size().height() < minimum_client_size().height() ? minimum_client_size().height() : client_size().height()});
-    if (handle()) native::control::minimum_client_size(handle(), data_->minimum_client_size);
   }
   return *this;
 }
@@ -540,7 +537,6 @@ control& control::minimum_size(const drawing::size& size) {
   if (data_->minimum_size != size) {
     data_->minimum_size = size;
     this->size({this->size().width() < minimum_size().width() ? minimum_size().width() : this->size().width(), this->size().height() < minimum_size().height() ? minimum_size().height() : this->size().height()});
-    if (handle()) native::control::minimum_size(handle(), data_->minimum_size);
   }
   return *this;
 }
@@ -1033,15 +1029,10 @@ void control::on_got_focus(const event_args& e) {
 }
 
 void control::on_handle_created(const event_args& e) {
-  if (get_state(state::client_size_setted)) {
-    native::control::maximum_client_size(handle(), maximum_client_size());
-    native::control::minimum_client_size(handle(), minimum_client_size());
+  if (get_state(state::client_size_setted))
     native::control::client_size(handle(), client_size());
-  } else {
-    native::control::maximum_size(handle(), maximum_size());
-    native::control::minimum_size(handle(), minimum_size());
+  else
     native::control::size(handle(), this->size());
-  }
   if (data_->back_color.has_value() || back_color() != default_back_color()) native::control::back_color(handle(), back_color());
   if (data_->cursor.has_value() || cursor() != default_cursor()) native::control::cursor(handle(), cursor().handle());
   if (data_->fore_color.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle(), fore_color());
@@ -1220,10 +1211,35 @@ void control::on_region_changed(const event_args& e) {
 }
 
 void control::on_resize(const event_args& e) {
+  if (minimum_client_size() != xtd::drawing::size::empty && client_size().width() < minimum_client_size().width())
+    client_size({minimum_client_size().width(), client_size().height()});
+  
+  if (minimum_client_size() != xtd::drawing::size::empty && client_size().height() < minimum_client_size().height())
+    client_size({client_size().width(), minimum_client_size().height()});
+  
+  if (minimum_size() != xtd::drawing::size::empty && size().width() < minimum_size().width())
+    size({minimum_size().width(), size().height()});
+  
+  if (minimum_size() != xtd::drawing::size::empty && size().height() < minimum_size().height())
+    size({size().width(), minimum_size().height()});
+  
+  if (maximum_client_size() != xtd::drawing::size::empty && client_size().width() > maximum_client_size().width())
+    client_size({maximum_client_size().width(), client_size().height()});
+  
+  if (maximum_client_size() != xtd::drawing::size::empty && client_size().height() > maximum_client_size().height())
+    client_size({client_size().width(), maximum_client_size().height()});
+  
+  if (maximum_size() != xtd::drawing::size::empty && size().width() > maximum_size().width())
+    size({maximum_size().width(), size().height()});
+  
+  if (maximum_size() != xtd::drawing::size::empty && size().height() > maximum_size().height())
+    size({size().width(), maximum_size().height()});
+
   if (is_handle_created()) data_->client_rectangle = native::control::client_rectangle(handle());
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
   invalidate();
+
   if (can_raise_events()) resize(*this, e);
 }
 

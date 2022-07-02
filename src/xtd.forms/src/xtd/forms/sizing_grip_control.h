@@ -36,5 +36,4 @@ protected:
 private:
   friend status_bar;
   xtd::drawing::point mouse_location = xtd::drawing::point::empty;
-
 };
