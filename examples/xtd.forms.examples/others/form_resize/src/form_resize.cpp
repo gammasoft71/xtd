@@ -8,8 +8,8 @@ class form1 : public form {
 public:
   form1() {
     client_size({220, 115});
-    maximum_size(size() + drawing::size {300, 300});
-    minimum_size(size());
+    maximum_client_size(client_size() + drawing::size {300, 300});
+    minimum_client_size(client_size());
     controls().push_back_range({up_button, left_button, right_button, down_button, grow_button, shrink_button});
     text("Form resize example");
     
