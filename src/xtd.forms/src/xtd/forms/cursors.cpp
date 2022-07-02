@@ -1,8 +1,12 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/cursors.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <map>
+#include <xtd/argument_exception.h>
 #include "../../../include/xtd/forms/cursors.h"
 
+using namespace std;
+using namespace xtd;
 using namespace xtd::forms;
 
 cursor cursors::app_starting() {
@@ -159,6 +163,13 @@ cursor cursors::zoom_in() {
 
 cursor cursors::zoom_out() {
   return cursor(native::cursors::zoom_out(), true, "zoom_out");
+}
+
+cursor cursors::from_name(const xtd::ustring& name) {
+  static map<ustring, cursor> cursor_names {{"app_starting", cursors::app_starting()}, {"arrow", cursors::arrow()}, {"cell", cursors::cell()}, {"cross", cursors::cross()}, {"default_cursor", cursors::default_cursor()}, {"disappearing_item", cursors::disappearing_item()}, {"drag_copy", cursors::drag_copy()}, {"drag_link", cursors::drag_link()}, {"hand", cursors::hand()}, {"help", cursors::help()}, {"hsplit", cursors::hsplit()}, {"ibeam", cursors::ibeam()}, {"no", cursors::no()}, {"no_drag", cursors::no_drag()}, {"no_move_2d", cursors::no_move_2d()}, {"no_move_horiz", cursors::no_move_horiz()}, {"no_move_vert", cursors::no_move_vert()}, {"open_hand", cursors::open_hand()}, {"pan_east", cursors::pan_east()}, {"pan_ne", cursors::pan_ne()}, {"pan_north", cursors::pan_north()}, {"pan_nw", cursors::pan_nw()}, {"pan_se", cursors::pan_se()}, {"pan_south", cursors::pan_south()}, {"pan_sw", cursors::pan_sw()}, {"pan_west", cursors::pan_west()}, {"size_all", cursors::size_all()}, {"size_nesw", cursors::size_nesw()}, {"size_ns", cursors::size_ns()}, {"size_nwse", cursors::size_nwse()}, {"size_we", cursors::size_we()}, {"up_arrow", cursors::up_arrow()}, {"vibeam", cursors::vibeam()}, {"vsplit", cursors::vsplit()}, {"wait_cursor", cursors::wait_cursor()}, {"zoom_in", cursors::zoom_in()}, {"zoom_out", cursors::zoom_out()}};
+  auto it = cursor_names.find(name);
+  if (it == cursor_names.end()) throw argument_exception(ustring::format("The cursor name \"{}\" is invalid", name));
+  return it->second;
 }
 
 const std::vector<cursor>& cursors::get_cursors() {
