@@ -10,7 +10,7 @@ public:
     client_size({220, 115});
     maximum_client_size(client_size() + drawing::size {300, 300});
     minimum_client_size(client_size());
-    controls().push_back_range({up_button, left_button, right_button, down_button, grow_button, shrink_button});
+    controls().push_back_range({up_button, left_button, right_button, down_button, shrink_button, grow_button});
     text("Form resize example");
     
     up_button.auto_repeat(true);
@@ -41,18 +41,18 @@ public:
       top(top() + 10);
     };
     
-    grow_button.auto_repeat(true);
-    grow_button.bounds({150, 45, 25, 25});
-    grow_button.image(button_images::from_name("zoom-in"));
-    grow_button.click += [&] {
-      size(size() + drawing::size {10, 10});
-    };
-    
     shrink_button.auto_repeat(true);
-    shrink_button.bounds({185, 45, 25, 25});
+    shrink_button.bounds({150, 45, 25, 25});
     shrink_button.image(button_images::from_name("zoom-out"));
     shrink_button.click += [&] {
       size(size() - drawing::size {10, 10});
+    };
+
+    grow_button.auto_repeat(true);
+    grow_button.bounds({185, 45, 25, 25});
+    grow_button.image(button_images::from_name("zoom-in"));
+    grow_button.click += [&] {
+      size(size() + drawing::size {10, 10});
     };
   }
   
