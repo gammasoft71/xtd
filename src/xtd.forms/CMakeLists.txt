@@ -182,14 +182,12 @@ add_sources(
   include/xtd/forms/message_dialog_options.h
   include/xtd/forms/message_loop_callback.h
   include/xtd/forms/message_notifier.h
-  include/xtd/forms/message_notifier_icon.h
-  include/xtd/forms/message_notifier_buttons.h
+  include/xtd/forms/message_notifier_button.h
   include/xtd/forms/month_calendar.h
   include/xtd/forms/mouse_buttons.h
   include/xtd/forms/mouse_event_args.h
   include/xtd/forms/mouse_event_handler.h
   include/xtd/forms/nine_segment_display.h
-  include/xtd/forms/notifier_result.h
   include/xtd/forms/notifier_style.h
   include/xtd/forms/numeric_up_down.h
   include/xtd/forms/open_file_box.h

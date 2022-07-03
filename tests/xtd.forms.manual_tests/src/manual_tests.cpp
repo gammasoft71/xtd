@@ -70,28 +70,28 @@ namespace examples {
         message_notifier1.show();
       };
       
-      //message_notifier1.buttons().push_back_range({start_message_notifier_button, cancel_message_notifier_button});
+      message_notifier1.buttons().push_back_range({start_message_notifier_button, cancel_message_notifier_button});
       message_notifier1.close_timeout_enabled(true);
       message_notifier1.close_timeout_interval(2s);
       message_notifier1.icon(xtd::drawing::system_icons::question());
-      message_notifier1.message("Start the auto backup now. Note that if the backup started, you cannot turn it off until all files are synced.");
+      message_notifier1.message("Start the auto backup now. Note that once the backup is started, you can't cancel until its done.");
       message_notifier1.notifier_style(notifier_style::standard);
       message_notifier1.title("Backup");
-      //message_notifier1.button_click += {*this, &form2::on_message_notifier_button_click};
+      message_notifier1.button_click += {*this, &form2::on_message_notifier_button_click};
     }
     
   private:
-    /*
+
      void on_message_notifier_button_click(object& sender, const notifier_button_click_event_args& e) {
-     if (e.button() == start_message_notifier_button)
-     diagnostics::debug::write_line("Start backup");
-     else
-     diagnostics::debug::write_line("Cancel backup");
-     }*/
+         if (e.button() == start_message_notifier_button)
+            diagnostics::debug::write_line("Start backup");
+         else
+            diagnostics::debug::write_line("Cancel backup");
+     }
     
     button button1;
-    //message_notifier_button start_message_notifier_button {"&Start"};
-    //message_notifier_button cancel_message_notifier_button {"&Cancel"};
+    message_notifier_button start_message_notifier_button {"&Start"};
+    message_notifier_button cancel_message_notifier_button {"&Cancel"};
     message_notifier message_notifier1;
   };
   
@@ -219,15 +219,15 @@ namespace examples {
       top_most(true);
       form_border_style(forms::form_border_style::none);
       start_position(form_start_position::manual);
-      client_size({350, 160});
+      client_size({350, 200});
       location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
-      padding(forms::padding(5));
+      //padding(forms::padding(5));
       
       /// Set round rectangle form :
       drawing::drawing2d::graphics_path path;
-      path.add_rounded_rectangle(client_rectangle(), 7);
+      path.add_rounded_rectangle(client_rectangle(), 10);
       region(drawing::region(path));
-      
+
       //      back_color(drawing::color::white);
       //      h_layout_container_.back_color(drawing::color::yellow);
       //      v_layout_icon_.back_color(drawing::color::blue);
@@ -236,8 +236,8 @@ namespace examples {
       //      label_title_.back_color(drawing::color::pink);
       //      label_message_.back_color(drawing::color::cyan);
       
-      
       h_layout_container_.parent(*this);
+      //h_layout_container_.border_style(border_style::none);
       h_layout_container_.padding(forms::padding(5));
       h_layout_container_.controls().push_back_range({v_layout_icon_, v_layout_title_message_, v_layout_buttons_});
       h_layout_container_.dock(dock_style::fill);
@@ -247,7 +247,6 @@ namespace examples {
       
       v_layout_icon_.controls().push_back(picture_box_icon_);
       v_layout_icon_.dock(dock_style::top);
-      
       
       picture_box_icon_.image(xtd::drawing::system_icons::question().to_bitmap());
       picture_box_icon_.client_size({64, 64});
@@ -266,15 +265,15 @@ namespace examples {
       label_title_.font({label_title_.font(), label_title_.font().size() + 2, xtd::drawing::font_style::bold});
       label_title_.dock(dock_style::top);
       
-      label_message_.text("Start the auto backup now. Note that if the backup is started, you cannot turn it off until all files are synced.");
       label_message_.padding(forms::padding(5));
+      label_message_.text("Start the auto backup now.");
       label_message_.dock(dock_style::top);
       
       
       v_layout_buttons_.padding(forms::padding(5));
       v_layout_buttons_.dock(dock_style::fill);
       
-      for(auto txt : std::vector{ustring("Start"), ustring("Cancel"), ustring("Ignore"), ustring("Abort")}) {
+      for(auto txt : std::vector{ustring("Start")/*, ustring("Cancel"), ustring("Ignore"), ustring("Abort")*/}) {
         std::unique_ptr<button> btn = std::make_unique<button>();
         btn->parent(v_layout_buttons_)
           .text(txt)
@@ -285,6 +284,7 @@ namespace examples {
           };
         buttons_.push_back(std::move(btn));
       }
+
     };
     
   private:
@@ -301,6 +301,6 @@ namespace examples {
 
 
 int main() {
-  application::run(examples::form5());
+  application::run(examples::form2());
 }
 
