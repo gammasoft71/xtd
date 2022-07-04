@@ -301,6 +301,6 @@ namespace examples {
 
 
 int main() {
-  application::run(examples::form2());
+  application::run(examples::form1());
 }
 
