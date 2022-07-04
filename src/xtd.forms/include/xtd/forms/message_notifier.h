@@ -115,8 +115,6 @@ namespace xtd {
          button_click(*this, e);
       }
 
-      friend class message_notifier_standard;
-
     private:
       xtd::ustring title_;
       xtd::ustring message_;
