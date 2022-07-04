@@ -1,5 +1,6 @@
 #include <xtd/as.h>
 #include <xtd/convert_string.h>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/progress_dialog_flags.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/progress_dialog.h>
@@ -10,6 +11,7 @@
 #include <wx/timer.h>
 
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 namespace {
@@ -29,6 +31,7 @@ namespace {
   class wx_progress_dialog : public wxProgressDialog {
   public:
     wx_progress_dialog(const ustring& title, const ustring& message, int32_t maximum = 100, wxWindow* parent = nullptr, int32_t style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(convert_string::to_wstring(title), convert_string::to_wstring(message), maximum, parent, style) {
+      if (environment::os_version().is_macos()) SetBackgroundColour(wxColour(system_colors::control().r(), system_colors::control().g(), system_colors::control().b(), system_colors::control().a()));
       timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent & event) {
         if (event.GetTimer().GetId() == timer_marquee.GetId())
           Pulse();
