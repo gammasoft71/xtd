@@ -10,8 +10,6 @@ namespace examples {
     form1() {
       text("Status bar example");
       client_size({820, 500});
-      maximum_client_size(client_size());
-      minimum_client_size({100, 50});
       //status_bar(status_bar1);
       
       status_bar1.parent(*this);
