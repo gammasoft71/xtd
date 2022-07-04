@@ -30,7 +30,6 @@ namespace {
       client_size({350, 200});
       padding(forms::padding(5));
 
-
       if (environment::os_version().is_windows())
       {
           // Bottom right screen location
@@ -157,16 +156,9 @@ namespace {
 
     }
 
-    static void show([[maybe_unused]] intptr_t hwnd, message_notifier& mn) {
+    static void show([[maybe_unused]] intptr_t hwnd, const message_notifier& mn) {
         message_notifier_.reset(new message_notifier_standard(mn));
         dynamic_cast<form&>(*message_notifier_).show();
-//        if(message_notifier_)
-//        {
-//            delete message_notifier_;
-//            message_notifier_ = nullptr;
-//        }
-//        message_notifier_ = new message_notifier_standard(mn);
-//        dynamic_cast<form&>(*message_notifier_).show();
     }
     
   private:
@@ -181,7 +173,7 @@ namespace {
     std::vector<std::unique_ptr<button>> buttons_;
     timer timer_;
 
-    // TODO
+    // TODO: spawn notifications bellow or above each other
     struct previous_message_notifier_coords {
         drawing::point location;
         drawing::size size;
