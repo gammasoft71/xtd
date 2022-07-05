@@ -48,6 +48,7 @@ status_bar::status_bar() {
   data_->panels.item_removed += {*this, &status_bar::on_item_removed};
   
   dock(dock_style::bottom);
+  padding(forms::padding {0, 1, 0, 0});
   set_can_focus(false);
 }
 
