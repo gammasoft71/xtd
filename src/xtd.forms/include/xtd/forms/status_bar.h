@@ -163,7 +163,9 @@ namespace xtd {
       void on_handle_destroyed(const event_args& e) override;
       
       void on_paint(xtd::forms::paint_event_args& e) override;
-      
+
+      void on_main_panel_paint(object& sender, xtd::forms::paint_event_args& e);
+
       void on_resize(const event_args& e) override;
       
       void wnd_proc(message& message) override;
@@ -190,6 +192,7 @@ namespace xtd {
         bool show_panels = false;
         bool show_tool_tips = false;
         bool sizing_grip = true;
+        panel main_panel;
         std::shared_ptr<class sizing_grip_control> sizing_grip_control;
         std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> spring_panels;
         std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> status_bar_panels;
