@@ -36,13 +36,17 @@ namespace {
 }
 
 status_bar::status_bar() {
+  data_->main_panel.parent(*this);
+  data_->main_panel.dock(dock_style::fill);
+  data_->main_panel.paint += {*this, &status_bar::on_main_panel_paint};
+  
   data_->sizing_grip_control = std::make_shared<sizing_grip_control>();
   data_->sizing_grip_control->cursor(cursors::from_name(native::status_bar::sizing_grip_cursor_name()));
   data_->sizing_grip_control->dock(dock_style::right);
   data_->sizing_grip_control->parent(*this);
   data_->sizing_grip_control->visible(data_->sizing_grip && native::status_bar::sizing_grip());
   data_->sizing_grip_control->size({16, 16});
-  
+
   data_->panels.item_added += {*this, &status_bar::on_item_added};
   data_->panels.item_updated += {*this, &status_bar::on_item_updated};
   data_->panels.item_removed += {*this, &status_bar::on_item_removed};
@@ -162,11 +166,14 @@ void status_bar::on_handle_destroyed(const event_args& e) {
 void status_bar::on_paint(xtd::forms::paint_event_args& e) {
   control::on_paint(e);
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  if (control_appearance() == forms::control_appearance::standard) {
+  if (control_appearance() == forms::control_appearance::standard)
     status_bar_renderer::draw_status_bar(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, std::nullopt, xtd::forms::border_sides::all);
-    if (!data_->show_panels)
-      status_bar_renderer::draw_text_status_bar(style, e.graphics(), e.clip_rectangle(), text(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font());
-  }
+}
+
+void status_bar::on_main_panel_paint(object& sender, xtd::forms::paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  if (control_appearance() == forms::control_appearance::standard && !data_->show_panels)
+    status_bar_renderer::draw_text_status_bar(style, e.graphics(), e.clip_rectangle(), text(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font());
 }
 
 void status_bar::on_resize(const event_args& e) {

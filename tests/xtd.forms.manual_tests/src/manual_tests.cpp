@@ -16,6 +16,7 @@ namespace examples {
       status_bar1.panels().push_back_range({status_bar_panel1, status_bar_panel2, status_bar_panel3, status_bar_panel4});
       //status_bar1.sizing_grip(false);
       //status_bar1.show_panels(true);
+      status_bar1.text("Shows status information without panels...");
       
       status_bar_panel1.auto_size(xtd::forms::status_bar_panel_auto_size::contents);
       status_bar_panel1.border_style(xtd::forms::status_bar_panel_border_style::sunken);
