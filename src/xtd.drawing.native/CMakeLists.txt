@@ -35,6 +35,7 @@ add_sources(
   include/xtd/drawing/native/rotate_flip_types.h
   include/xtd/drawing/native/smoothing_modes.h
   include/xtd/drawing/native/string_alignments.h
+  include/xtd/drawing/native/string_formats.h
   include/xtd/drawing/native/string_trimmings.h
   include/xtd/drawing/native/system_colors.h
   include/xtd/drawing/native/system_fonts.h

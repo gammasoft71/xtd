@@ -10,6 +10,7 @@
 #include "hdc_wrapper.h"
 #include <cmath>
 #include <xtd/drawing/native/hot_key_prefixes.h>
+#include <xtd/drawing/native/string_formats.h>
 #include <xtd/drawing/native/string_trimmings.h>
 #include <xtd/convert_string.h>
 #include <wx/control.h>
@@ -27,14 +28,16 @@ namespace xtd {
         static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming) {
           float width = 0.0f, height = 0.0f;
           measure_string(handle, text, font, width, height);
-          DrawString(handle, text, font, brush, x, y, width, height, angle, align, hot_key_prefix, trimming, true);
+          DrawString(handle, text, font, brush, x, y, width, height, angle, align, hot_key_prefix, trimming, 0);
         }
         
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming, bool no_wrap) {
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming, int32_t string_formats) {
+          bool no_wrap = (string_formats & SF_NO_WRAP) == SF_NO_WRAP;
+          bool no_clip = (string_formats & SF_NO_CLIP) == SF_NO_CLIP;
           float max_size = math::max(width, height);
           if (brush.is_solid_brush()) {
             wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
-            if (angle == 0) dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
+            if (!no_clip && angle == 0) dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
             dc.SetFont(font);
             dc.SetTextForeground(brush.get_solid_brush().color);
             if (angle == 0) {
@@ -43,7 +46,7 @@ namespace xtd {
               dc.DrawLabel(no_wrap ? text_to_draw : wrap_text(dc, text_to_draw, width), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             } else
               dc.DrawRotatedText(text, x, y, -angle);
-            if (angle == 0) dc.DestroyClippingRegion();
+            if (!no_clip && angle == 0) dc.DestroyClippingRegion();
           } else {
             wxImage image(x + max_size, y + max_size);
             if (brush.is_conical_gradiant_brush())
@@ -71,9 +74,9 @@ namespace xtd {
               
             image.SetMaskFromImage(bitmap_mask.ConvertToImage(), 0, 0, 0);
             wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-            if (angle == 0) graphics.Clip(x, y, width, height);
+            if (!no_clip && angle == 0) graphics.Clip(x, y, width, height);
             graphics.DrawBitmap(wxBitmap(image), 0, 0, max_size + x, max_size + y);
-            if (angle == 0) graphics.ResetClip();
+            if (!no_clip && angle == 0) graphics.ResetClip();
           }
         }
         

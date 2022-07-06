@@ -2,6 +2,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::drawing::text;
 using namespace xtd::drawing::drawing2d;
 using namespace xtd::forms;
 
@@ -19,30 +20,146 @@ public:
     tab_control.parent(*this);
     tab_control.dock(dock_style::fill);
     
-    tab_page_color.parent(tab_control);
-    tab_page_color.text("Color");
-    tab_page_color.paint += {*this, &strings_form::draw_strings_with_color};
+    color_tab_page.parent(tab_control);
+    color_tab_page.text("Color");
+    color_tab_page.paint += {*this, &strings_form::draw_strings_with_color};
     
-    tab_page_linear_gradient.parent(tab_control);
-    tab_page_linear_gradient.text("Linear gradient");
-    tab_page_linear_gradient.paint += {*this, &strings_form::draw_strings_with_linear_gradient};
+    linear_gradient_tab_page.parent(tab_control);
+    linear_gradient_tab_page.text("Linear gradient");
+    linear_gradient_tab_page.paint += {*this, &strings_form::draw_strings_with_linear_gradient};
     
-    tab_page_multilines.parent(tab_control);
-    tab_page_multilines.text("Multiline");
-    tab_page_multilines.paint += {*this, &strings_form::draw_strings_multilines};
+    multilines_tab_page.parent(tab_control);
+    multilines_tab_page.text("Multiline");
+    multilines_tab_page.paint += {*this, &strings_form::draw_strings_multilines};
     
-    tab_page_hot_key_prefix.parent(tab_control);
-    tab_page_hot_key_prefix.text("Prefix");
-    tab_page_hot_key_prefix.paint += {*this, &strings_form::draw_strings_hot_key_prefix};
+    hotkey_prefix_tab_page.parent(tab_control);
+    hotkey_prefix_tab_page.text("Prefix");
+    hotkey_prefix_tab_page.paint += {*this, &strings_form::draw_strings_hotkey_prefix};
+    
+    string_format_tab_page.parent(tab_control);
+    string_format_tab_page.text("String format");
+    string_format_tab_page.paint += {*this, &strings_form::draw_strings_with_string_format};
+    
+    string_format_tab_page.controls().push_back_range({alignmentLabel, alignmentComboBox, lineAlignmentLabel, lineAlignmentComboBox, trimmingLabel, trimmingComboBox, hotKeyPrefixLabel, hotKeyPrefixComboBox, formatFlagsGroupBox});
+    
+    alignmentLabel.auto_size(true);
+    alignmentLabel.location({10, 12});
+    alignmentLabel.text("Alignment");
+    
+    alignmentComboBox.drop_down_style(combo_box_style::drop_down_list);
+    alignmentComboBox.items().push_back_range({{"near", string_alignment::near}, {"center", string_alignment::center}, {"far", string_alignment::far}});
+    alignmentComboBox.location({120, 10});
+    alignmentComboBox.selected_index(0);
+    alignmentComboBox.selected_index_changed += [&] {invalidate();};
+    
+    lineAlignmentLabel.auto_size(true);
+    lineAlignmentLabel.location({280, 12});
+    lineAlignmentLabel.text("Line alignment");
+    
+    lineAlignmentComboBox.drop_down_style(combo_box_style::drop_down_list);
+    lineAlignmentComboBox.items().push_back_range({{"near", string_alignment::near}, {"center", string_alignment::center}, {"far", string_alignment::far}});
+    lineAlignmentComboBox.location({390, 10});
+    lineAlignmentComboBox.selected_index(0);
+    lineAlignmentComboBox.selected_index_changed += [&] {invalidate();};
+    
+    trimmingLabel.auto_size(true);
+    trimmingLabel.location({10, 42});
+    trimmingLabel.text("Trimming");
+    
+    trimmingComboBox.drop_down_style(combo_box_style::drop_down_list);
+    trimmingComboBox.items().push_back_range({{"none", string_trimming::none}, {"character", string_trimming::character}, {"word", string_trimming::word}, {"ellipsis_character", string_trimming::ellipsis_character}, {"ellipsis_word", string_trimming::ellipsis_word}, {"ellipsis_path", string_trimming::ellipsis_path}});
+    trimmingComboBox.location({120, 40});
+    trimmingComboBox.selected_index(0);
+    trimmingComboBox.selected_index_changed += [&] {invalidate();};
+    
+    hotKeyPrefixLabel.auto_size(true);
+    hotKeyPrefixLabel.location({280, 42});
+    hotKeyPrefixLabel.text("Hotkey prefix");
+    
+    hotKeyPrefixComboBox.drop_down_style(combo_box_style::drop_down_list);
+    hotKeyPrefixComboBox.items().push_back_range({{"none", hotkey_prefix::none}, {"show", hotkey_prefix::show}, {"hide", hotkey_prefix::hide}});
+    hotKeyPrefixComboBox.location({390, 40});
+    hotKeyPrefixComboBox.selected_index(0);
+    hotKeyPrefixComboBox.selected_index_changed += [&] {invalidate();};
+    
+    formatFlagsGroupBox.controls().push_back_range({directionRightToLeftCheckBox, directionVerticalCheckBox, FitBlackBoxCheckBox, DisplayFormatControlCheckBox, NoFontFallbackCheckBox, MeasureTrailingSpacesCheckBox, NoWrapCheckBox, LineLimitCheckBox, NoClipCheckBox});
+    formatFlagsGroupBox.location({10, 70});
+    formatFlagsGroupBox.size({500, 185});
+    formatFlagsGroupBox.text("Fromat flags");
+    
+    directionRightToLeftCheckBox.auto_size(true);
+    directionRightToLeftCheckBox.location({10, 10});
+    directionRightToLeftCheckBox.text("Direction right to left");
+    directionRightToLeftCheckBox.checked_changed += [&] {invalidate();};
+    
+    directionVerticalCheckBox.auto_size(true);
+    directionVerticalCheckBox.location({270, 10});
+    directionVerticalCheckBox.text("Direction vertical");
+    directionVerticalCheckBox.checked_changed += [&] {invalidate();};
+    
+    FitBlackBoxCheckBox.auto_size(true);
+    FitBlackBoxCheckBox.location({10, 40});
+    FitBlackBoxCheckBox.text("Fit back box");
+    FitBlackBoxCheckBox.checked_changed += [&] {invalidate();};
+    
+    DisplayFormatControlCheckBox.auto_size(true);
+    DisplayFormatControlCheckBox.location({270, 40});
+    DisplayFormatControlCheckBox.text("Display format control");
+    DisplayFormatControlCheckBox.checked_changed += [&] {invalidate();};
+    
+    NoFontFallbackCheckBox.auto_size(true);
+    NoFontFallbackCheckBox.location({10, 70});
+    NoFontFallbackCheckBox.text("No font failback");
+    NoFontFallbackCheckBox.checked_changed += [&] {invalidate();};
+    
+    MeasureTrailingSpacesCheckBox.auto_size(true);
+    MeasureTrailingSpacesCheckBox.location({270, 70});
+    MeasureTrailingSpacesCheckBox.text("Measure trailing spaces");
+    MeasureTrailingSpacesCheckBox.checked_changed += [&] {invalidate();};
+    
+    NoWrapCheckBox.auto_size(true);
+    NoWrapCheckBox.location({10, 100});
+    NoWrapCheckBox.text("No wrap");
+    NoWrapCheckBox.checked_changed += [&] {invalidate();};
+    
+    LineLimitCheckBox.auto_size(true);
+    LineLimitCheckBox.location({270, 100});
+    LineLimitCheckBox.text("Line limit");
+    LineLimitCheckBox.checked_changed += [&] {invalidate();};
+    
+    NoClipCheckBox.auto_size(true);
+    NoClipCheckBox.location({10, 130});
+    NoClipCheckBox.text("No clip");
+    NoClipCheckBox.checked_changed += [&] {invalidate();};
   }
   
 private:
   forms::tab_control tab_control;
-  forms::tab_page tab_page_color;
-  forms::tab_page tab_page_linear_gradient;
-  forms::tab_page tab_page_multilines;
-  forms::tab_page tab_page_hot_key_prefix;
+  forms::tab_page color_tab_page;
+  forms::tab_page linear_gradient_tab_page;
+  forms::tab_page multilines_tab_page;
+  forms::tab_page hotkey_prefix_tab_page;
+  forms::tab_page string_format_tab_page;
   
+  label alignmentLabel;
+  combo_box alignmentComboBox;
+  label lineAlignmentLabel;
+  combo_box lineAlignmentComboBox;
+  label trimmingLabel;
+  combo_box trimmingComboBox;
+  label hotKeyPrefixLabel;
+  combo_box hotKeyPrefixComboBox;
+  group_box formatFlagsGroupBox;
+  check_box directionRightToLeftCheckBox;
+  check_box directionVerticalCheckBox;
+  check_box FitBlackBoxCheckBox;
+  check_box DisplayFormatControlCheckBox;
+  check_box NoFontFallbackCheckBox;
+  check_box MeasureTrailingSpacesCheckBox;
+  check_box NoWrapCheckBox;
+  check_box LineLimitCheckBox;
+  check_box NoClipCheckBox;
+
   const ustring regular_str = u8"Regular text - 普通文本";
   const ustring italic_str = u8"Italic text - 斜体文字";
   const ustring bold_str = u8"Bold text - 黑体字";
@@ -102,12 +219,42 @@ private:
     e.graphics().draw_rotated_string(bold_str, bold_font, linear_gradient_brush(rectangle_f(point_f(400, 250), size_f(text_size.width(), text_size.height())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(400, 250), 45);
   }
   
-  void draw_strings_hot_key_prefix(object& sender, paint_event_args& e) {
+  void draw_strings_hotkey_prefix(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
-    e.graphics().draw_string("&No hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 50), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::none));
-    e.graphics().draw_string("&Show hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 150), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::show));
-    e.graphics().draw_string("&Hide hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 250), string_format().hotkey_prefix(xtd::drawing::hotkey_prefix::hide));
+    e.graphics().draw_string("&No hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 50), string_format().hotkey_prefix(xtd::drawing::text::hotkey_prefix::none));
+    e.graphics().draw_string("&Show hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 150), string_format().hotkey_prefix(xtd::drawing::text::hotkey_prefix::show));
+    e.graphics().draw_string("&Hide hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 250), string_format().hotkey_prefix(xtd::drawing::text::hotkey_prefix::hide));
+  }
+  
+  void draw_strings_with_string_format(object& sender, paint_event_args& e) {
+    auto rect = rectangle(10, 270, e.clip_rectangle().width() - 100, e.clip_rectangle().height() - 487);
+    
+    e.graphics().fill_rectangle(solid_brush(color::dark_cyan), rect);
+    
+    auto text = "&Lorem &ipsum &&dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.\n\nUt velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna.\n\nAliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.\n"_s;
+    
+    string_format format;
+    
+    format.alignment(any_cast<string_alignment>(alignmentComboBox.selected_item().tag()));
+    
+    format.line_alignment(any_cast<string_alignment>(lineAlignmentComboBox.selected_item().tag()));
+
+    format.trimming(any_cast<string_trimming>(trimmingComboBox.selected_item().tag()));
+    
+    format.hotkey_prefix(any_cast<hotkey_prefix>(hotKeyPrefixComboBox.selected_item().tag()));
+    
+    if (directionRightToLeftCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::direction_right_to_left);
+    if (directionVerticalCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::direction_vertical);
+    if (FitBlackBoxCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::fit_black_box);
+    if (DisplayFormatControlCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::display_format_control);
+    if (NoFontFallbackCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::no_font_fallback);
+    if (MeasureTrailingSpacesCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::measure_trailing_spaces);
+    if (NoWrapCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::no_wrap);
+    if (LineLimitCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::line_limit);
+    if (NoClipCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::no_clip);
+    
+    e.graphics().draw_string(text, font(), solid_brush(color::black), rect, format);
   }
   
   void draw_strings_multilines(object& sender, paint_event_args& e) {
