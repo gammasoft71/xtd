@@ -191,6 +191,9 @@ namespace xtd {
         /// @remarks You need to know how the box model works.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_box_model.md">Box Model</a>.
         control& width(std::optional<xtd::forms::style_sheets::length> value) noexcept;
+        
+        xtd::forms::style_sheets::white_space white_space() const noexcept override;
+        control& white_space(xtd::forms::style_sheets::white_space value) noexcept;
         /// @}
         
         /// @name Methods
@@ -231,6 +234,7 @@ namespace xtd {
         xtd::forms::style_sheets::text_decoration decoration_ = xtd::forms::style_sheets::text_decoration::none;
         xtd::forms::style_sheets::text_transformation transformation_ = xtd::forms::style_sheets::text_transformation::none;
         xtd::forms::content_alignment image_alignment_ = xtd::forms::content_alignment::middle_center;
+        xtd::forms::style_sheets::white_space white_space_ = xtd::forms::style_sheets::white_space::normal;
       };
     }
   }

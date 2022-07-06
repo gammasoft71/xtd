@@ -12,6 +12,7 @@
 #include <xtd/forms/content_alignment.h>
 #include "text_decoration.h"
 #include "text_transformation.h"
+#include "white_space.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -56,9 +57,16 @@ namespace xtd {
         /// @return One of xtd::forms::style_sheets::text_transformation values.
         virtual xtd::forms::style_sheets::text_transformation transformation() const noexcept = 0;
         
+        virtual xtd::forms::style_sheets::white_space white_space() const noexcept = 0;
+        /// @}
+        
+        /// @name Methods
+        
+        /// @{
         /// @brief Gets the string format of the text.
         /// @return The string format used by xtd::drawing::graphics::draw_text method to draw a text.
         virtual xtd::drawing::string_format make_string_format() const noexcept = 0;
+        /// @}
       };
     }
   }

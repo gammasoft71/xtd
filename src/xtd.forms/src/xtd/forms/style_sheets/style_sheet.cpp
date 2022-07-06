@@ -713,6 +713,13 @@ uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value)
   return result;;
 }
 
+white_space style_sheet::white_space_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::white_space& default_value) const noexcept {
+  map<ustring, white_space> white_spaces {{"normal", white_space::normal}, {"nowrap", white_space::no_wrap}, {"pre", white_space::pre}, {"pre-line", white_space::pre_line}, {"pre-wrap", white_space::pre_wrap}};
+  auto it = white_spaces.find(css_text.to_lower());
+  if (it == white_spaces.end()) return default_value;
+  return it->second;
+}
+
 void style_sheet::on_style_sheet_changed(const xtd::event_args& e) {
   /*
   std::function<void(xtd::forms::control&)> update_control = [&](xtd::forms::control & control) {
@@ -824,6 +831,7 @@ void style_sheet::fill_control(xtd::web::css::selector_map::const_iterator& sele
     if (property.first == "text-decoration") control.decoration(text_decoration_from_css(property.second.to_string(), text_decoration::none));
     if (property.first == "text-transformation") control.transformation(text_transformation_from_css(property.second.to_string(), text_transformation::none));
     if (property.first == "image-align") control.image_alignment(text_align_from_css(property.second.to_string(), content_alignment::middle_center));
+    if (property.first == "white-space") control.white_space(white_space_from_css(property.second.to_string(), xtd::forms::style_sheets::white_space::normal));
   }
 }
 

@@ -9,4 +9,5 @@ status-bar {
   color:  rgba(191, 191, 191, 0.847);
   padding-left: 5px;
   text-align: middle left;
+  white-space: nowrap;
 }

@@ -142,6 +142,15 @@ style_sheets::control& style_sheets::control::padding(const style_sheets::paddin
   return *this;
 }
 
+content_alignment style_sheets::control::text_alignment() const noexcept {
+  return text_alignment_;
+}
+
+style_sheets::control& style_sheets::control::text_alignment(content_alignment value) noexcept {
+  text_alignment_ = value;
+  return *this;
+}
+
 optional<length> style_sheets::control::width() const noexcept {
   return width_;
 }
@@ -151,12 +160,12 @@ style_sheets::control& style_sheets::control::width(optional<length> value) noex
   return *this;
 }
 
-content_alignment style_sheets::control::text_alignment() const noexcept {
-  return text_alignment_;
+xtd::forms::style_sheets::white_space style_sheets::control::white_space() const noexcept {
+  return white_space_;
 }
 
-style_sheets::control& style_sheets::control::text_alignment(content_alignment value) noexcept {
-  text_alignment_ = value;
+style_sheets::control& style_sheets::control::white_space(xtd::forms::style_sheets::white_space value) noexcept {
+  white_space_ = value;
   return *this;
 }
 
@@ -290,6 +299,10 @@ string_format style_sheets::control::control::make_string_format() const noexcep
   if (text_alignment() == content_alignment::bottom_right) {
     format.alignment(xtd::drawing::string_alignment::far);
     format.line_alignment(xtd::drawing::string_alignment::far);
+  }
+  
+  if (white_space() == xtd::forms::style_sheets::white_space::no_wrap) {
+    format.format_flags(format.format_flags() | xtd::drawing::string_format_flags::no_wrap);
   }
   
   format.hotkey_prefix(xtd::drawing::hotkey_prefix::hide);

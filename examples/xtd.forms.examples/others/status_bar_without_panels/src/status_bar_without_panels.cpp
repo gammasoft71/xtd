@@ -8,7 +8,6 @@ namespace examples {
   public:
     form1() {
       text("Status bar without panels example");
-      client_size({820, 500});
       
       status_bar1.parent(*this);
       status_bar1.text("Shows status information without panels...");
