@@ -8,6 +8,7 @@ status-bar {
   border-width: 1px;
   color: system-color(control-text);
   padding-left: 5px;
+  padding-right: 5px;
   text-align: middle left;
   white-space: nowrap;
 }
