@@ -6,10 +6,10 @@
 #include <ostream>
 #include <xtd/object.h>
 #include "../drawing_export.h"
-#include "hotkey_prefix.h"
 #include "string_alignment.h"
 #include "string_format_flags.h"
 #include "string_trimming.h"
+#include "text/hotkey_prefix.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -103,11 +103,11 @@ namespace xtd {
       /// @brief Gets the HotkeyPrefix object for this string_format object.
       /// @return The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
       /// @remarks In a graphical user interface, a hot key is the underlined letter in a word (usually combined with another key, such as the Alt key) that you can press on the keyboard to activate the functionality that the word represents.
-      xtd::drawing::hotkey_prefix hotkey_prefix() const {return hotkey_prefix_;}
+      xtd::drawing::text::hotkey_prefix hotkey_prefix() const {return hotkey_prefix_;}
       /// @brief Sets the HotkeyPrefix object for this string_format object.
       /// @param hotkey_prefix The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
       /// @remarks In a graphical user interface, a hot key is the underlined letter in a word (usually combined with another key, such as the Alt key) that you can press on the keyboard to activate the functionality that the word represents.
-      xtd::drawing::string_format&  hotkey_prefix(xtd::drawing::hotkey_prefix hotkey_prefix) {
+      xtd::drawing::string_format&  hotkey_prefix(xtd::drawing::text::hotkey_prefix hotkey_prefix) {
         hotkey_prefix_ = hotkey_prefix;
         return *this;
       }
@@ -136,7 +136,7 @@ namespace xtd {
       /// @}
       
     private:
-      xtd::drawing::hotkey_prefix hotkey_prefix_ = xtd::drawing::hotkey_prefix::none;
+      xtd::drawing::text::hotkey_prefix hotkey_prefix_ = xtd::drawing::text::hotkey_prefix::none;
       xtd::drawing::string_format_flags format_flags_ = static_cast<xtd::drawing::string_format_flags>(0);
       xtd::drawing::string_alignment alignment_ = xtd::drawing::string_alignment::near;
       xtd::drawing::string_alignment line_alignment_ = xtd::drawing::string_alignment::near;

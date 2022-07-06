@@ -305,7 +305,7 @@ string_format style_sheets::control::control::make_string_format() const noexcep
     format.format_flags(format.format_flags() | xtd::drawing::string_format_flags::no_wrap);
   }
   
-  format.hotkey_prefix(xtd::drawing::hotkey_prefix::hide);
+  format.hotkey_prefix(xtd::drawing::text::hotkey_prefix::hide);
   
   return format;
 }

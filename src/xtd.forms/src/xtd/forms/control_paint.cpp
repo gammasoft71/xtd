@@ -357,9 +357,9 @@ xtd::drawing::string_format control_paint::string_format(xtd::forms::text_format
   else if ((flags & text_format_flags::bottom) == text_format_flags::bottom) string_format.line_alignment(xtd::drawing::string_alignment::far);
   else string_format.line_alignment(xtd::drawing::string_alignment::near);
   
-  if ((flags & text_format_flags::no_prefix) == text_format_flags::no_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::none);
-  else if ((flags & text_format_flags::hide_prefix) == text_format_flags::hide_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::hide);
-  else string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::show);
+  if ((flags & text_format_flags::no_prefix) == text_format_flags::no_prefix) string_format.hotkey_prefix(xtd::drawing::text::hotkey_prefix::none);
+  else if ((flags & text_format_flags::hide_prefix) == text_format_flags::hide_prefix) string_format.hotkey_prefix(xtd::drawing::text::hotkey_prefix::hide);
+  else string_format.hotkey_prefix(xtd::drawing::text::hotkey_prefix::show);
   
   return string_format;
 }

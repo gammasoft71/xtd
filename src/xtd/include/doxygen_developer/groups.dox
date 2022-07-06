@@ -264,6 +264,11 @@
 /// @warning Internal use only
 /// @ingroup native
 
+/// @defgroup sf string format
+/// @brief string format definitions.
+/// @warning Internal use only
+/// @ingroup native
+
 /// @defgroup sb scroll bar styles
 /// @brief scroll bar styles definitions.
 /// @warning Internal use only

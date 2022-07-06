@@ -271,7 +271,7 @@ namespace xtd {
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @param no_wrap True if the text wrapping between lines when formatting within a rectangle is disabled; otherwise false.
         /// @warning Internal use only
-        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, bool no_wrap);
+        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, int32_t string_formats);
         
         /// @brief Fills the interior of a closed cardinal spline curve defined by an array of std::pair<float, float> structures.
         /// @param handle The graphics handle.
