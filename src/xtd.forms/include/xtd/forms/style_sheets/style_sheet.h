@@ -315,7 +315,7 @@ namespace xtd {
         xtd::forms::style_sheets::user_control user_control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
         /// @brief Gets the style sheet user_control collection of this instance.
         /// @return The style sheet controls collection.
-        const user_controls_t& user_controls() const noexcept;
+        const user_controls_t& user_controls() const noexcept;        
         /// @}
         
         /// @name Methods
@@ -420,6 +420,7 @@ namespace xtd {
         xtd::forms::style_sheets::text_decoration text_decoration_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_decoration& default_value) const noexcept;
         xtd::forms::style_sheets::text_transformation text_transformation_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::text_transformation& default_value) const noexcept;
         xtd::uri uri_from_css(const xtd::ustring& css_text, const xtd::uri& default_value) const noexcept;
+        xtd::forms::style_sheets::white_space white_space_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::white_space& default_value) const noexcept;
         
         template<typename type_t, typename collection_t>
         type_t get_state_control(const collection_t& collection, pseudo_state state) const noexcept {

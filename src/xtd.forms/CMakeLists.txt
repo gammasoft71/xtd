@@ -335,6 +335,7 @@ add_sources(
   include/xtd/forms/style_sheets/tool_bar.h
   include/xtd/forms/style_sheets/tool_bar_button.h
   include/xtd/forms/style_sheets/user_control.h
+  include/xtd/forms/style_sheets/white_space.h
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/control_state.h
   include/xtd/forms/visual_styles/form_state.h

@@ -27,10 +27,10 @@ namespace xtd {
         static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming) {
           float width = 0.0f, height = 0.0f;
           measure_string(handle, text, font, width, height);
-          DrawString(handle, text, font, brush, x, y, width, height, angle, align, hot_key_prefix, trimming);
+          DrawString(handle, text, font, brush, x, y, width, height, angle, align, hot_key_prefix, trimming, true);
         }
         
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming) {
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming, bool no_wrap) {
           float max_size = math::max(width, height);
           if (brush.is_solid_brush()) {
             wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
@@ -40,7 +40,7 @@ namespace xtd {
             if (angle == 0) {
               auto hot_key_prefix_location = GetHotKeyPrefixLocations(text);
               auto text_to_draw = FormatString(dc, text, width, align, hot_key_prefix, trimming);
-              dc.DrawLabel(wrap_text(dc, text_to_draw, width), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
+              dc.DrawLabel(no_wrap ? text_to_draw : wrap_text(dc, text_to_draw, width), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             } else
               dc.DrawRotatedText(text, x, y, -angle);
             if (angle == 0) dc.DestroyClippingRegion();
@@ -65,7 +65,7 @@ namespace xtd {
             bitmap_mask_dc.SetFont(font);
             bitmap_mask_dc.SetTextForeground(wxColour(255, 255, 255));
             if (angle == 0)
-              bitmap_mask_dc.DrawLabel(wrap_text(bitmap_mask_dc, text, width), wxRect(x, y, width, height), align);
+              bitmap_mask_dc.DrawLabel(no_wrap ? text : wrap_text(bitmap_mask_dc, text, width), wxRect(x, y, width, height), align);
             else
               bitmap_mask_dc.DrawRotatedText(text, x, y, -angle);
               

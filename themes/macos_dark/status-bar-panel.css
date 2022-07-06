@@ -9,6 +9,7 @@ status-bar-panel {
   background-color: transparent;
   padding: 1px 1px 3px 1px;
   color: rgba(191, 191, 191, 0.847);
+  white-space: nowrap;
 }
 
 status-bar-panel:hover {

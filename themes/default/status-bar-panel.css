@@ -8,6 +8,7 @@ status-bar-panel {
   background-color: system-color(control);
   padding: 1px;
   color: system-color(control-text);
+  white-space: nowrap;
 }
 
 status-bar-panel:hover {
