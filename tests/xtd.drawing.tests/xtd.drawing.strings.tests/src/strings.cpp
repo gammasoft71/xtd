@@ -228,9 +228,11 @@ private:
   }
   
   void draw_strings_with_string_format(object& sender, paint_event_args& e) {
+
     auto rect = rectangle(10, 270, e.clip_rectangle().width() - 100, e.clip_rectangle().height() - 487);
-    
-    e.graphics().fill_rectangle(solid_brush(color::dark_cyan), rect);
+    draw_grid(rect, e.graphics());
+
+    e.graphics().draw_rectangle(pen(system_colors::control_text()), rect);
     
     auto text = "&Lorem &ipsum &&dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.\n\nUt velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna.\n\nAliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.\n"_s;
     
@@ -254,18 +256,19 @@ private:
     if (LineLimitCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::line_limit);
     if (NoClipCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::no_clip);
     
-    e.graphics().draw_string(text, font(), solid_brush(color::black), rect, format);
+    const xtd::drawing::font font = xtd::drawing::font(system_fonts::default_font(), 16, font_style::regular);
+    e.graphics().draw_string(text, font, solid_brush(system_colors::control_text()), rect, format);
   }
   
   void draw_strings_multilines(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
     const xtd::drawing::font font = xtd::drawing::font(system_fonts::default_font(), 16, font_style::regular);
-    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::control_text()), point(50, 50));
-    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::control_text()), point(50, 250), string_format().alignment(xtd::drawing::string_alignment::center));
-    e.graphics().draw_string("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat.", font, solid_brush(system_colors::control_text()), point(50, 450), string_format().alignment(xtd::drawing::string_alignment::far));
+    auto text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nSed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,\nultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a,\nsemper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie,\nenim est eleifend mi, non fermentum diam nisl sit amet erat."_s;
+    e.graphics().draw_string(text, font, solid_brush(system_colors::control_text()), point(50, 50));
+    e.graphics().draw_string(text, font, solid_brush(system_colors::control_text()), point(50, 250), string_format().alignment(xtd::drawing::string_alignment::center));
+    e.graphics().draw_string(text, font, solid_brush(system_colors::control_text()), point(50, 450), string_format().alignment(xtd::drawing::string_alignment::far));
   }
 };
 
 startup_(strings_form);
-
