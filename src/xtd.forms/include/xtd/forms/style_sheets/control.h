@@ -193,6 +193,9 @@ namespace xtd {
         control& width(std::optional<xtd::forms::style_sheets::length> value) noexcept;
         
         xtd::forms::style_sheets::white_space white_space() const noexcept override;
+        /// @brief Sets how white-space inside an element is handled.
+        /// @param value One of xtd::forms::style_sheets::white_space values.
+        /// @return This current instance.
         control& white_space(xtd::forms::style_sheets::white_space value) noexcept;
         /// @}
         

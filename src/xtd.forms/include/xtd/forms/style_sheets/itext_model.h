@@ -57,6 +57,8 @@ namespace xtd {
         /// @return One of xtd::forms::style_sheets::text_transformation values.
         virtual xtd::forms::style_sheets::text_transformation transformation() const noexcept = 0;
         
+        /// @brief Gets how white-space inside an element is handled.
+        /// @return One of xtd::forms::style_sheets::white_space values.
         virtual xtd::forms::style_sheets::white_space white_space() const noexcept = 0;
         /// @}
         
