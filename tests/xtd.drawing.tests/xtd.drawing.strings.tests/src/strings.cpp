@@ -229,7 +229,7 @@ private:
   
   void draw_strings_with_string_format(object& sender, paint_event_args& e) {
 
-    auto rect = rectangle(10, 270, e.clip_rectangle().width() - 100, e.clip_rectangle().height() - 487);
+    auto rect = rectangle(100, 320, e.clip_rectangle().width() - 200, e.clip_rectangle().height() - 487);
     draw_grid(rect, e.graphics());
 
     e.graphics().draw_rectangle(pen(system_colors::control_text()), rect);
