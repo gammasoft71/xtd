@@ -62,9 +62,9 @@ namespace xtd {
             if (angle == 0) {
               auto hot_key_prefix_location = GetHotKeyPrefixLocations(text);
               auto text_to_draw = FormatString(dc, text, width, align, hot_key_prefix, trimming);
-              dc.DrawLabel(no_wrap ? text_to_draw : wrap_text(dc, text_to_draw, width), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
+              dc.DrawLabel(no_wrap ? text_to_draw : wrap_text(dc, text_to_draw, std::ceil(width)), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             } else
-              dc.DrawRotatedText(no_wrap ? text : wrap_text(dc, text, (string_formats & SF_VERTICAL) & SF_VERTICAL ? height : width), x, y, -angle);
+              dc.DrawRotatedText(no_wrap ? text : wrap_text(dc, text, std::ceil((string_formats & SF_VERTICAL) & SF_VERTICAL ? height : width)), x, y, -angle);
             if (!no_clip) dc.DestroyClippingRegion();
           } else {
             wxImage image(x + max_size, y + max_size);
@@ -87,9 +87,9 @@ namespace xtd {
             bitmap_mask_dc.SetFont(font);
             bitmap_mask_dc.SetTextForeground(wxColour(255, 255, 255));
             if (angle == 0)
-              bitmap_mask_dc.DrawLabel(no_wrap ? text : wrap_text(bitmap_mask_dc, text, width), wxRect(x, y, width, height), align);
+              bitmap_mask_dc.DrawLabel(no_wrap ? text : wrap_text(bitmap_mask_dc, text, std::ceil(width)), wxRect(x, y, width, height), align);
             else
-              bitmap_mask_dc.DrawRotatedText(no_wrap ? text : wrap_text(bitmap_mask_dc, text, (string_formats & SF_VERTICAL) & SF_VERTICAL ? height : width), x, y, -angle);
+              bitmap_mask_dc.DrawRotatedText(no_wrap ? text : wrap_text(bitmap_mask_dc, text, std::ceil((string_formats & SF_VERTICAL) & SF_VERTICAL ? height : width)), x, y, -angle);
               
             image.SetMaskFromImage(bitmap_mask.ConvertToImage(), 0, 0, 0);
             wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
