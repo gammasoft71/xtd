@@ -69,9 +69,9 @@ namespace xtd {
             if (angle == 0) {
               auto hot_key_prefix_location = GetHotKeyPrefixLocations(text);
               auto text_to_draw = FormatString(dc, text, width, align, hot_key_prefix, trimming);
-              dc.DrawLabel(no_wrap ? text_to_draw : wrap_text(dc, text_to_draw, font, width, line_limit ? height : 0), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
+              dc.DrawLabel(no_wrap ? text_to_draw : wrap_text(dc, text_to_draw, font, width, height, line_limit, direction_vertical), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             } else
-              dc.DrawRotatedText(no_wrap ? text : wrap_text(dc, text, font, direction_vertical ? height : width, line_limit ? direction_vertical ? width : height : 0), x, y, -angle);
+              dc.DrawRotatedText(no_wrap ? text : wrap_text(dc, text, font, width, height, line_limit, direction_vertical), x, y, -angle);
             if (!no_clip) dc.DestroyClippingRegion();
           } else {
             wxImage image(x + max_size, y + max_size);
@@ -94,9 +94,9 @@ namespace xtd {
             bitmap_mask_dc.SetFont(font);
             bitmap_mask_dc.SetTextForeground(wxColour(255, 255, 255));
             if (angle == 0)
-              bitmap_mask_dc.DrawLabel(no_wrap ? text : wrap_text(bitmap_mask_dc, text, font, width, height), wxRect(x, y, width, height), align);
+              bitmap_mask_dc.DrawLabel(no_wrap ? text : wrap_text(bitmap_mask_dc, text, font, width, height, line_limit, direction_vertical), wxRect(x, y, width, height), align);
             else
-              bitmap_mask_dc.DrawRotatedText(no_wrap ? text : wrap_text(bitmap_mask_dc, text, font, direction_vertical ? height : width, line_limit ? direction_vertical ? width : height : 0), x, y, -angle);
+              bitmap_mask_dc.DrawRotatedText(no_wrap ? text : wrap_text(bitmap_mask_dc, text, font, width, height, line_limit, direction_vertical), x, y, -angle);
               
             image.SetMaskFromImage(bitmap_mask.ConvertToImage(), 0, 0, 0);
             wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
@@ -160,7 +160,8 @@ namespace xtd {
           return height;
         }
         
-        static wxString wrap_text(wxDC& dc, const wxString& string, const wxFont& font, int32_t width, int32_t height) noexcept {
+        static wxString wrap_text(wxDC& dc, const wxString& string, const wxFont& font, int32_t width, int32_t height, bool line_limit, bool direction_vertical) noexcept {
+          if (direction_vertical) std::swap(width, height);
           auto string_lines = wxSplit(string, '\n');
           wxArrayString result_lines;
 
@@ -179,10 +180,9 @@ namespace xtd {
           }
           
           wxString result;
+          if (direction_vertical) height = -height;
           for (auto& line : result_lines) {
-            auto result_height = get_text_height(dc, result + (line.size() ?  line : " ") + "\n", font);
-            if (height != 0 && result_height > height)
-              break;
+            if (line_limit && get_text_height(dc, result + (line.size() ?  line : " ") + "\n", font) > height) break;
             result += (line.size() ?  line : " ") + "\n";
           }
           if (result.size() > 0) result.Remove(result.size() - 1);
