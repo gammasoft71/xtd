@@ -36,6 +36,7 @@ namespace xtd {
           bool no_wrap = (string_formats & SF_NO_WRAP) == SF_NO_WRAP;
           bool no_clip = (string_formats & SF_NO_CLIP) == SF_NO_CLIP || (width == 0 && height == 0); // && angle == 0;
           bool line_limit = (string_formats & SF_LINE_LIMIT) == SF_LINE_LIMIT;
+          bool direction_vertical = (string_formats & SF_VERTICAL) == SF_VERTICAL;
 
           if ((string_formats & SF_RIGHT_TO_LEFT) & SF_RIGHT_TO_LEFT) {
             int32_t new_align = static_cast<int32_t>(align);
@@ -53,7 +54,7 @@ namespace xtd {
             measure_string(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), text, font, width, height);
           }
           
-          if ((string_formats & SF_VERTICAL) & SF_VERTICAL) {
+          if (direction_vertical) {
             x = x + width;
             width = -width;
             angle += 90.0f;
@@ -70,7 +71,7 @@ namespace xtd {
               auto text_to_draw = FormatString(dc, text, width, align, hot_key_prefix, trimming);
               dc.DrawLabel(no_wrap ? text_to_draw : wrap_text(dc, text_to_draw, font, width, line_limit ? height : 0), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             } else
-              dc.DrawRotatedText(no_wrap ? text : wrap_text(dc, text, font, (string_formats & SF_VERTICAL) & SF_VERTICAL ? height : width, line_limit ? (string_formats & SF_VERTICAL) & SF_VERTICAL ? width : height : 0), x, y, -angle);
+              dc.DrawRotatedText(no_wrap ? text : wrap_text(dc, text, font, direction_vertical ? height : width, line_limit ? direction_vertical ? width : height : 0), x, y, -angle);
             if (!no_clip) dc.DestroyClippingRegion();
           } else {
             wxImage image(x + max_size, y + max_size);
@@ -95,7 +96,7 @@ namespace xtd {
             if (angle == 0)
               bitmap_mask_dc.DrawLabel(no_wrap ? text : wrap_text(bitmap_mask_dc, text, font, width, height), wxRect(x, y, width, height), align);
             else
-              bitmap_mask_dc.DrawRotatedText(no_wrap ? text : wrap_text(bitmap_mask_dc, text, font, (string_formats & SF_VERTICAL) & SF_VERTICAL ? height : width, line_limit ? (string_formats & SF_VERTICAL) & SF_VERTICAL ? width : height : 0), x, y, -angle);
+              bitmap_mask_dc.DrawRotatedText(no_wrap ? text : wrap_text(bitmap_mask_dc, text, font, direction_vertical ? height : width, line_limit ? direction_vertical ? width : height : 0), x, y, -angle);
               
             image.SetMaskFromImage(bitmap_mask.ConvertToImage(), 0, 0, 0);
             wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
@@ -111,12 +112,12 @@ namespace xtd {
           dc.SetFont(font);
           auto strings = wxSplit(text, '\n');
           for (auto string : strings) {
-            double line_width = 0, line_height = 0;
+            double line_width = 0.0, line_height = 0.0;
             wxSize line_size = dc.GetTextExtent(string);
             line_width = line_size.GetWidth();
             line_height = line_size.GetHeight();
-            width = std::max(width, static_cast<int32_t>(line_width));
-            height += line_height;
+            width = std::max(width, static_cast<int32_t>(std::ceil(line_width)));
+            height += static_cast<int32_t>(std::ceil(line_height));
             
             // Workaround : with wxWidgets version <= 3.1.5 width size text is too small on macOS and linux.
             if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && font.GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(dc.GetFontMetrics().averageWidth / 2.3f);
@@ -160,7 +161,7 @@ namespace xtd {
         }
         
         static wxString wrap_text(wxDC& dc, const wxString& string, const wxFont& font, int32_t width, int32_t height) noexcept {
-          auto string_lines =  ustring(string.ToStdWstring()).split({'\n'}); //wxSplit(string, '\n');
+          auto string_lines = wxSplit(string, '\n');
           wxArrayString result_lines;
 
           for (auto sentence : string_lines) {
@@ -168,20 +169,21 @@ namespace xtd {
             auto words = wxSplit(sentence, ' ');
             for (size_t index = 0; index < words.size(); ++index) {
               result_lines[result_lines.size() - 1] += words[index];
-              while (index + 1 < words.size())
-              if (get_text_width(dc, result_lines[result_lines.size() - 1] + words[index + 1] + " ", font) <= width)
-                result_lines[result_lines.size() - 1] += words[++index] + " ";
-              else
-                result_lines.push_back("");
+              while (index + 1 < words.size()) {
+                if (get_text_width(dc, result_lines[result_lines.size() - 1] + (result_lines[result_lines.size() - 1].size() ? " " : "") + words[index + 1], font) <= width)
+                  result_lines[result_lines.size() - 1] += (result_lines[result_lines.size() - 1].size() ? " " : "") + words[++index];
+                else
+                  result_lines.push_back("");
+              }
             }
           }
           
           wxString result;
           for (auto& line : result_lines) {
-            auto result_height = get_text_height(dc, result + line + "\n", font);
+            auto result_height = get_text_height(dc, result + (line.size() ?  line : " ") + "\n", font);
             if (height != 0 && result_height > height)
               break;
-            result += line + "\n";
+            result += (line.size() ?  line : " ") + "\n";
           }
           if (result.size() > 0) result.Remove(result.size() - 1);
           
