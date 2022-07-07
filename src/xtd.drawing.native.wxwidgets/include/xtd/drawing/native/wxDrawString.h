@@ -180,7 +180,7 @@ namespace xtd {
           }
           
           wxString result;
-          if (direction_vertical) height = -height;
+          if (direction_vertical) height = std::abs(height);
           for (auto& line : result_lines) {
             if (line_limit && get_text_height(dc, result + (line.size() ?  line : " ") + "\n", font) > height) break;
             result += (line.size() ?  line : " ") + "\n";
