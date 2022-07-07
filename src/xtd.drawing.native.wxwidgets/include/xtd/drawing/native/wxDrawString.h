@@ -182,8 +182,8 @@ namespace xtd {
           wxString result;
           if (direction_vertical) height = std::abs(height);
           for (auto& line : result_lines) {
-            if (line_limit && get_text_height(dc, result + (line.size() ?  line : " ") + "\n", font) > height) break;
-            result += (line.size() ?  line : " ") + "\n";
+            if (line_limit && get_text_height(dc, result + (line.size() ?  line : wxString(" ")) + "\n", font) > height) break;
+            result += (line.size() ?  line : wxString(" ")) + "\n";
           }
           if (result.size() > 0) result.Remove(result.size() - 1);
           
