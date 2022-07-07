@@ -166,16 +166,12 @@ namespace xtd {
           wxArrayString result_lines;
 
           for (auto sentence : string_lines) {
-            result_lines.push_back("");
             auto words = wxSplit(sentence, ' ');
-            for (size_t index = 0; index < words.size(); ++index) {
-              result_lines[result_lines.size() - 1] += words[index];
-              while (index + 1 < words.size()) {
-                if (get_text_width(dc, result_lines[result_lines.size() - 1] + (result_lines[result_lines.size() - 1].size() ? " " : "") + words[index + 1], font) <= width)
-                  result_lines[result_lines.size() - 1] += (result_lines[result_lines.size() - 1].size() ? " " : "") + words[++index];
-                else
-                  result_lines.push_back("");
-              }
+            if (words.size() == 0) result_lines.push_back(" ");
+            else for (size_t index = 0; index < words.size(); ++index) {
+              result_lines.push_back(words[index]);
+              while (index + 1 < words.size() && get_text_width(dc, result_lines[result_lines.size() - 1] + " " + words[index + 1], font) <= width)
+                result_lines[result_lines.size() - 1] += " " + words[++index];
             }
           }
           
