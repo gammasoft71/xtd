@@ -256,7 +256,7 @@ private:
     if (LineLimitCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::line_limit);
     if (NoClipCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::no_clip);
     
-    const xtd::drawing::font font = xtd::drawing::font(system_fonts::default_font(), 16, font_style::regular);
+    auto font = xtd::drawing::font(system_fonts::default_font(), 16, font_style::regular);
     e.graphics().draw_string(text, font, solid_brush(system_colors::control_text()), rect, format);
   }
   
