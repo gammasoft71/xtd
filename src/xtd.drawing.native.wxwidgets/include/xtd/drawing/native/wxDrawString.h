@@ -147,38 +147,43 @@ namespace xtd {
           return -1;
         }
         
-        static int32_t get_text_width(wxDC& dc, const wxString& str) noexcept {
-          int32_t text_width = 0, text_height = 0;
-          dc.GetTextExtent(str, &text_width, &text_height);
-          return text_width;
+        static int32_t get_text_width(wxDC& dc, const wxString& str, const wxFont& font) noexcept {
+          int32_t width = 0, height = 0;
+          measure_string(dc, str, font, width, height);
+          return width;
+        }
+        
+        static int32_t get_text_height(wxDC& dc, const wxString& str, const wxFont& font) noexcept {
+          int32_t width = 0, height = 0;
+          measure_string(dc, str, font, width, height);
+          return height;
         }
         
         static wxString wrap_text(wxDC& dc, const wxString& string, const wxFont& font, int32_t width, int32_t height) noexcept {
-          wxString result;
-          bool start = true;
-          
-          for (auto sentence : wxSplit(string, '\n')) {
-            if (start) start = false;
-            else result += "\n";
+          auto string_lines =  ustring(string.ToStdWstring()).split({'\n'}); //wxSplit(string, '\n');
+          wxArrayString result_lines;
+
+          for (auto sentence : string_lines) {
+            result_lines.push_back("");
             auto words = wxSplit(sentence, ' ');
-            wxArrayString lines;
-            
             for (size_t index = 0; index < words.size(); ++index) {
-              lines.push_back(words[index]);
-              while (index + 1 < words.size() && get_text_width(dc, lines[lines.size() - 1] + " " + words[index + 1]) <= width)
-                lines[lines.size() - 1] += " " + words[++index];
-            }
-            auto previous_result = result;
-            result += wxJoin(lines, '\n');
-            if (height != 0) {
-              int32_t measured_width = 0.0f, measured_height = 0.0f;
-              measure_string(dc, result, font, measured_width, measured_height);
-              if (measured_height > height) {
-                result = previous_result;
-                break;
-              }
+              result_lines[result_lines.size() - 1] += words[index];
+              while (index + 1 < words.size())
+              if (get_text_width(dc, result_lines[result_lines.size() - 1] + words[index + 1] + " ", font) <= width)
+                result_lines[result_lines.size() - 1] += words[++index] + " ";
+              else
+                result_lines.push_back("");
             }
           }
+          
+          wxString result;
+          for (auto& line : result_lines) {
+            auto result_height = get_text_height(dc, result + line + "\n", font);
+            if (height != 0 && result_height > height)
+              break;
+            result += line + "\n";
+          }
+          if (result.size() > 0) result.Remove(result.size() - 1);
           
           return result;
         }
