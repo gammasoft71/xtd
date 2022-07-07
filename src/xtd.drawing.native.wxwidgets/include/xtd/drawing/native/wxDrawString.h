@@ -26,18 +26,37 @@ namespace xtd {
       class wxDrawString {
       public:
         static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming) {
-          float width = 0.0f, height = 0.0f;
-          measure_string(handle, text, font, width, height);
-          DrawString(handle, text, font, brush, x, y, width, height, angle, align, hot_key_prefix, trimming, 0);
+          DrawString(handle, text, font, brush, x, y, 0.0f, 0.0f, angle, align, hot_key_prefix, trimming, 0);
         }
         
         static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float width, float height, float angle, wxAlignment align, int32_t hot_key_prefix, int32_t trimming, int32_t string_formats) {
           bool no_wrap = (string_formats & SF_NO_WRAP) == SF_NO_WRAP;
-          bool no_clip = (string_formats & SF_NO_CLIP) == SF_NO_CLIP;
+          bool no_clip = (string_formats & SF_NO_CLIP) == SF_NO_CLIP || (width == 0.0f && height == 0.0f); // && angle == 0;
+
+          if ((string_formats & SF_RIGHT_TO_LEFT) & SF_RIGHT_TO_LEFT) {
+            int32_t new_align = static_cast<int32_t>(align);
+            if ((new_align & wxALIGN_LEFT) == wxALIGN_LEFT) {
+              new_align &= ~wxALIGN_LEFT;
+              new_align |= wxALIGN_RIGHT;
+            } else if ((align & wxALIGN_RIGHT) == wxALIGN_RIGHT) {
+              new_align &= ~wxALIGN_RIGHT;
+              new_align |= wxALIGN_LEFT;
+            }
+            align = static_cast<wxAlignment>(new_align);
+          }
+
+          if (width == 0 && height == 0) measure_string(handle, text, font, width, height);
+          
+          if ((string_formats & SF_VERTICAL) & SF_VERTICAL) {
+            x = x + width;
+            width = -width;
+            angle += 90.0f;
+          }
+
           float max_size = math::max(width, height);
           if (brush.is_solid_brush()) {
             wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
-            if (!no_clip && angle == 0) dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
+            if (!no_clip) dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
             dc.SetFont(font);
             dc.SetTextForeground(brush.get_solid_brush().color);
             if (angle == 0) {
@@ -45,8 +64,8 @@ namespace xtd {
               auto text_to_draw = FormatString(dc, text, width, align, hot_key_prefix, trimming);
               dc.DrawLabel(no_wrap ? text_to_draw : wrap_text(dc, text_to_draw, width), wxRect(x, y, width, height), align, hot_key_prefix == HKP_SHOW ? hot_key_prefix_location : -1);
             } else
-              dc.DrawRotatedText(text, x, y, -angle);
-            if (!no_clip && angle == 0) dc.DestroyClippingRegion();
+              dc.DrawRotatedText(no_wrap ? text : wrap_text(dc, text, (string_formats & SF_VERTICAL) & SF_VERTICAL ? height : width), x, y, -angle);
+            if (!no_clip) dc.DestroyClippingRegion();
           } else {
             wxImage image(x + max_size, y + max_size);
             if (brush.is_conical_gradiant_brush())
@@ -70,13 +89,13 @@ namespace xtd {
             if (angle == 0)
               bitmap_mask_dc.DrawLabel(no_wrap ? text : wrap_text(bitmap_mask_dc, text, width), wxRect(x, y, width, height), align);
             else
-              bitmap_mask_dc.DrawRotatedText(text, x, y, -angle);
+              bitmap_mask_dc.DrawRotatedText(no_wrap ? text : wrap_text(bitmap_mask_dc, text, (string_formats & SF_VERTICAL) & SF_VERTICAL ? height : width), x, y, -angle);
               
             image.SetMaskFromImage(bitmap_mask.ConvertToImage(), 0, 0, 0);
             wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-            if (!no_clip && angle == 0) graphics.Clip(x, y, width, height);
+            if (!no_clip) graphics.Clip(x, y, width, height);
             graphics.DrawBitmap(wxBitmap(image), 0, 0, max_size + x, max_size + y);
-            if (!no_clip && angle == 0) graphics.ResetClip();
+            if (!no_clip) graphics.ResetClip();
           }
         }
         
