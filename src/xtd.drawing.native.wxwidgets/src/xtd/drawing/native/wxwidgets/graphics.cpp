@@ -606,7 +606,7 @@ void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t fon
   size_t line_index = 0U;
   auto strings = text.split({ '\n' });
   for (auto string : strings) {
-    wxString text_to_draw = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
+    wxString text_to_draw = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, hot_key_prefix, trimming);
     if (++line_index > lines_filled) break;
     double line_width = 0, line_height = 0;
     reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
