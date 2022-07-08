@@ -32,10 +32,7 @@ namespace xtd {
         static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float widthF, float heightF, float angle, wxAlignment align, int32_t hotKeyPrefix, int32_t trimming, int32_t stringFormats) {
           auto width = static_cast<int32_t>(std::floor(widthF));
           auto height = static_cast<int32_t>(std::floor(heightF));
-
-          auto noWrap = (stringFormats & SF_NO_WRAP) == SF_NO_WRAP;
           auto noClip = (stringFormats & SF_NO_CLIP) == SF_NO_CLIP || (width == 0 && height == 0); // && angle == 0;
-          auto lineLimit = (stringFormats & SF_LINE_LIMIT) == SF_LINE_LIMIT;
           auto directionVertical = (stringFormats & SF_VERTICAL) == SF_VERTICAL;
           auto rightToLeft = (stringFormats & SF_RIGHT_TO_LEFT) == SF_RIGHT_TO_LEFT;
 
@@ -51,60 +48,24 @@ namespace xtd {
             align = static_cast<wxAlignment>(newAlign);
           }
 
-          if (width == 0 && height == 0)
-            MeasureString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), text, font, width, height);
+          if (width == 0 && height == 0) MeasureString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), text, font, width, height);
           
           if (directionVertical) {
             x = x + width;
             width = -width;
             angle += 90.0f;
           }
-
-          auto maxSize = math::max(width, height);
           
           auto& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
           dc.SetFont(font);
-          auto hotKeyPrefixLocation = GetHotKeyPrefixLocations(text);
-          auto textToDraw = FormatString(dc, text, width, hotKeyPrefix, trimming);
-          
-          if (!noWrap)
-            textToDraw = WrapText(dc, textToDraw, font, width, height, lineLimit, directionVertical);
 
-          if (brush.is_solid_brush()) {
-            if (!noClip) dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
-            dc.SetTextForeground(brush.get_solid_brush().color);
-            if (angle == 0) dc.DrawLabel(textToDraw, wxRect(x, y, width, height), align, hotKeyPrefix == HKP_SHOW ? hotKeyPrefixLocation : -1);
-            else dc.DrawRotatedText(textToDraw, x, y, -angle);
-            if (!noClip) dc.DestroyClippingRegion();
-          } else {
-            wxImage image(x + maxSize, y + maxSize);
-            if (brush.is_conical_gradiant_brush())
-              image = wxConicalGradient::CreateBitmap(wxSize(maxSize, maxSize), brush.get_conical_gradiant_brush().colors, brush.get_conical_gradiant_brush().center_point, brush.get_conical_gradiant_brush().angle).ConvertToImage();
-            else {
-              image.InitAlpha();
-              for (auto y1 = 0; y1 < static_cast<int32_t>(maxSize + y); y1++)
-                for (auto x1 = 0; x1 < static_cast<int32_t>(maxSize + x); x1++)
-                  image.SetAlpha(x1, y1, 0);
-              wxBitmap bitmap(image);
-              auto bitmapGraphics = wxGraphicsContext::Create(wxMemoryDC(bitmap));
-              bitmapGraphics->SetBrush(wx_brush::to_graphics_brush(*reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics(), brush));
-              bitmapGraphics->DrawRectangle(0, 0, maxSize + x, maxSize + y);
-              image = bitmap.ConvertToImage();
-            }
-            
-            wxBitmap bitmapMask(x + maxSize, y + maxSize);
-            wxMemoryDC bitmapMaskDc(bitmapMask);
-            bitmapMaskDc.SetFont(font);
-            bitmapMaskDc.SetTextForeground(wxColour(255, 255, 255));
-            if (angle == 0) bitmapMaskDc.DrawLabel(textToDraw, wxRect(x, y, width, height), align);
-            else bitmapMaskDc.DrawRotatedText(textToDraw, x, y, -angle);
-              
-            image.SetMaskFromImage(bitmapMask.ConvertToImage(), 0, 0, 0);
-            wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-            if (!noClip) graphics.Clip(x, y, width, height);
-            graphics.DrawBitmap(wxBitmap(image), 0, 0, maxSize + x, maxSize + y);
-            if (!noClip) graphics.ResetClip();
-          }
+          wxArrayString strings;
+          if ((stringFormats & SF_NO_WRAP) != SF_NO_WRAP) strings = WrapText(dc, text, font, width, height, directionVertical);
+          else strings.push_back(text);
+          auto string = ToString(dc, FormatString(dc, strings, width, height, hotKeyPrefix, trimming, directionVertical), font, width, height, (stringFormats & SF_LINE_LIMIT) == SF_LINE_LIMIT, directionVertical);
+
+          if (brush.is_solid_brush()) DrawStringWithSolidBrush(dc, string, font, brush, x, y, width, height, angle, align, hotKeyPrefix, noClip);
+          else DrawStringWithGradientBrush(handle, string, font, brush, x, y, width, height, angle, align, hotKeyPrefix, noClip);
         }
         
         static void MeasureString(wxDC& dc, const wxString& text, const wxFont& font, int32_t& width, int32_t& height) {
@@ -142,20 +103,65 @@ namespace xtd {
           }
           return result;
         }
-        
+
       private:
+        static void DrawStringWithSolidBrush(wxDC& dc, const wxString& string, const wxFont& font, const wx_brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, float angle, wxAlignment align, int32_t hotKeyPrefix, bool noClip) {
+          if (!noClip) dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
+          dc.SetTextForeground(brush.get_solid_brush().color);
+          auto hotKeyPrefixLocation = GetHotKeyPrefixLocations(string);
+          if (angle == 0) dc.DrawLabel(string, wxRect(x, y, width, height), align, hotKeyPrefix == HKP_SHOW ? hotKeyPrefixLocation : -1);
+          else dc.DrawRotatedText(string, x, y, -angle);
+          if (!noClip) dc.DestroyClippingRegion();
+        }
+
+        static void DrawStringWithGradientBrush(intptr_t handle, const wxString& string, const wxFont& font, const wx_brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, float angle, wxAlignment align, int32_t hotKeyPrefix, bool noClip) {
+          auto maxSize = math::max(width, height);
+          wxImage image(x + maxSize, y + maxSize);
+          if (brush.is_conical_gradiant_brush())
+            image = wxConicalGradient::CreateBitmap(wxSize(maxSize, maxSize), brush.get_conical_gradiant_brush().colors, brush.get_conical_gradiant_brush().center_point, brush.get_conical_gradiant_brush().angle).ConvertToImage();
+          else {
+            image.InitAlpha();
+            for (auto y1 = 0; y1 < static_cast<int32_t>(maxSize + y); y1++)
+              for (auto x1 = 0; x1 < static_cast<int32_t>(maxSize + x); x1++)
+                image.SetAlpha(x1, y1, 0);
+            wxBitmap bitmap(image);
+            auto bitmapGraphics = wxGraphicsContext::Create(wxMemoryDC(bitmap));
+            bitmapGraphics->SetBrush(wx_brush::to_graphics_brush(*reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics(), brush));
+            bitmapGraphics->DrawRectangle(0, 0, maxSize + x, maxSize + y);
+            image = bitmap.ConvertToImage();
+          }
+          
+          wxBitmap bitmapMask(x + maxSize, y + maxSize);
+          wxMemoryDC bitmapMaskDc(bitmapMask);
+          bitmapMaskDc.SetFont(font);
+          bitmapMaskDc.SetTextForeground(wxColour(255, 255, 255));
+          auto hotKeyPrefixLocation = GetHotKeyPrefixLocations(string);
+          if (angle == 0) bitmapMaskDc.DrawLabel(string, wxRect(x, y, width, height), align, hotKeyPrefix == HKP_SHOW ? hotKeyPrefixLocation : -1);
+          else bitmapMaskDc.DrawRotatedText(string, x, y, -angle);
+          
+          image.SetMaskFromImage(bitmapMask.ConvertToImage(), 0, 0, 0);
+          wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+          if (!noClip) graphics.Clip(x, y, width, height);
+          graphics.DrawBitmap(wxBitmap(image), 0, 0, maxSize + x, maxSize + y);
+          if (!noClip) graphics.ResetClip();
+        }
+        
+        static wxArrayString FormatString(wxDC& dc, const wxArrayString& strings, int32_t width, int32_t height, int32_t hotKeyPrefix, int32_t trimming, bool directionVertical) {
+          if (directionVertical) {
+            std::swap(width, height);
+            height = std::abs(height);
+          }
+          auto results = strings;
+          for (auto& string : results)
+            string = FormatString(dc, string, width, hotKeyPrefix, trimming);
+          return results;
+        }
+
         static int32_t GetHotKeyPrefixLocations(const wxString& str) {
           if (str.IsEmpty()) return -1;
           for (auto index = 0U; index < str.size() - 1; index++)
             if (str[index] == '&' && str[index + 1] != '&') return static_cast<int32_t>(index);
           return -1;
-        }
-        
-        static int32_t GetTextWidth(wxDC& dc, const wxString& str, const wxFont& font) noexcept {
-          auto width = 0;
-          auto height = 0;
-          MeasureString(dc, str, font, width, height);
-          return width;
         }
         
         static int32_t GetTextHeight(wxDC& dc, const wxString& str, const wxFont& font) noexcept {
@@ -164,31 +170,43 @@ namespace xtd {
           MeasureString(dc, str, font, width, height);
           return height;
         }
-        
-        static wxString WrapText(wxDC& dc, const wxString& string, const wxFont& font, int32_t width, int32_t height, bool lineLimit, bool directionVertical) noexcept {
-          if (directionVertical) std::swap(width, height);
-          auto string_lines = wxSplit(string, '\n');
-          wxArrayString result_lines;
 
-          for (auto sentence : string_lines) {
-            auto words = wxSplit(sentence, ' ');
-            if (words.size() == 0) result_lines.push_back(" ");
-            else for (auto index = 0U; index < words.size(); ++index) {
-              result_lines.push_back(words[index]);
-              while (index + 1 < words.size() && GetTextWidth(dc, result_lines[result_lines.size() - 1] + " " + words[index + 1], font) <= width)
-                result_lines[result_lines.size() - 1] += " " + words[++index];
-            }
-          }
-          
+        static int32_t GetTextWidth(wxDC& dc, const wxString& str, const wxFont& font) noexcept {
+          auto width = 0;
+          auto height = 0;
+          MeasureString(dc, str, font, width, height);
+          return width;
+        }
+        
+        static wxString ToString(wxDC& dc, const wxArrayString& strings, const wxFont& font, int32_t width, int32_t height, bool lineLimit, bool directionVertical) {
           wxString result;
-          if (directionVertical) height = std::abs(height);
-          for (auto& line : result_lines) {
-            if (lineLimit && GetTextHeight(dc, result + (line.size() ?  line : wxString(" ")) + "\n", font) > height) break;
-            result += (line.size() ?  line : wxString(" ")) + "\n";
+          if (directionVertical) {
+            std::swap(width, height);
+            height = std::abs(height);
+          }
+          for (auto& string : strings) {
+            if (lineLimit && GetTextHeight(dc, result + (string.size() ?  string : wxString(" ")) + "\n", font) > height) break;
+            result += (string.size() ?  string : wxString(" ")) + "\n";
           }
           if (result.size() > 0) result.Remove(result.size() - 1);
-          
           return result;
+        }
+
+        static wxArrayString WrapText(wxDC& dc, const wxString& string, const wxFont& font, int32_t width, int32_t height, bool directionVertical) noexcept {
+          if (directionVertical) std::swap(width, height);
+          auto strings = wxSplit(string, '\n');
+          wxArrayString results;
+
+          for (auto sentence : strings) {
+            auto words = wxSplit(sentence, ' ');
+            if (words.size() == 0) results.push_back(" ");
+            else for (auto index = 0U; index < words.size(); ++index) {
+              results.push_back(words[index]);
+              while (index + 1 < words.size() && GetTextWidth(dc, results[results.size() - 1] + " " + words[index + 1], font) <= width)
+                results[results.size() - 1] += " " + words[++index];
+            }
+          }
+          return results;
         }
       };
     }
