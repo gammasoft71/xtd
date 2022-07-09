@@ -12,7 +12,7 @@ using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 using namespace xtd::forms::visual_styles;
 
-void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::label_state label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides, bool shadow) {
+void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::label_state label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides, bool shadow, bool auto_ellipsis) {
   auto pseudo_state_base = pseudo_state::standard;
   
   label current_style_sheet;
@@ -35,6 +35,7 @@ void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& sty
     current_style_sheet.border_width(style_sheets::border_width(border_width));
     current_style_sheet.border_radius(style_sheets::border_radius(border_radius));
   }
+  current_style_sheet.auto_ellipsis(auto_ellipsis);
   
   box_renderer::draw_box(graphics, bounds, current_style_sheet);
   auto content_rectangle = current_style_sheet.get_content_rectangle(bounds);

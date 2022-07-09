@@ -47,6 +47,12 @@ namespace xtd {
         /// @name Properties
         
         /// @{
+        bool auto_ellipsis() const noexcept override;
+        /// @brief Sets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
+        /// @param value true if the additional control text is to be indicated by an ellipsis; otherwise, false.
+        /// @return This current instance.
+        control& auto_ellipsis(bool value) noexcept;
+
         const xtd::drawing::color& background_color() const noexcept override;
         /// @brief Sets the background color is used to add background effects to the box.
         /// @param value The background color is used to add background effects to the box.
@@ -216,6 +222,7 @@ namespace xtd {
         /// @}
         
       private:
+        bool auto_ellipsis_ = false;
         xtd::forms::style_sheets::margin margin_ {length(0)};
         xtd::forms::style_sheets::border_color border_color_ {xtd::drawing::color::black};
         xtd::forms::style_sheets::border_radius border_radius_ {length(0)};

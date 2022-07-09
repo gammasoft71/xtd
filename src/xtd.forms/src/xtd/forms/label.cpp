@@ -33,10 +33,20 @@ label& label::border_sides(forms::border_sides border_sides) {
   return *this;
 }
 
+label& label::auto_ellipsis(bool value) {
+  if (data_->auto_ellipsis != value) {
+    data_->auto_ellipsis = value;
+    if (flat_style() == forms::flat_style::system) post_recreate_handle();
+    else invalidate();
+  }
+  return *this;
+}
+
 label& label::border_style(xtd::forms::border_style border_style) {
   if (data_->border_style != border_style) {
     data_->border_style = border_style;
-    post_recreate_handle();
+    if (flat_style() == forms::flat_style::system) post_recreate_handle();
+    else invalidate();
   }
   return *this;
 }
@@ -125,6 +135,8 @@ forms::create_params label::create_params() const {
     else if (data_->border_style.value_or(xtd::forms::border_style::none) != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   } else create_params.style(create_params.style() | SS_OWNERDRAW);
   
+  if (data_->auto_ellipsis) create_params.style(create_params.style() | SS_ENDELLIPSIS);
+  
   switch (data_->text_align) {
     case content_alignment::top_left: create_params.style(create_params.style() | SS_TOP | SS_LEFT); break;
     case content_alignment::top_center: create_params.style(create_params.style() | SS_TOP  | SS_CENTER); break;
@@ -154,7 +166,7 @@ void label::on_paint(paint_event_args& e) {
   control::on_paint(e);
   if (data_->flat_style != xtd::forms::flat_style::system) {
     auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-    label_renderer::draw_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align(), data_->border_style, data_->border_sides, shadow());
+    label_renderer::draw_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align(), data_->border_style, data_->border_sides, shadow(), auto_ellipsis());
   }
 }
 
