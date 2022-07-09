@@ -34,6 +34,7 @@ namespace xtd {
           auto height = static_cast<int32_t>(std::floor(heightF));
           auto noClip = (stringFormats & SF_NO_CLIP) == SF_NO_CLIP || (width == 0 && height == 0); // && angle == 0;
           auto directionVertical = (stringFormats & SF_VERTICAL) == SF_VERTICAL;
+          auto measureTrailingSpaces = (stringFormats & SF_MEASURE_TRAILING_SPACES) == SF_MEASURE_TRAILING_SPACES;
           auto rightToLeft = (stringFormats & SF_RIGHT_TO_LEFT) == SF_RIGHT_TO_LEFT;
 
           if (rightToLeft) {
@@ -48,7 +49,7 @@ namespace xtd {
             align = static_cast<wxAlignment>(newAlign);
           }
 
-          if (width == 0 && height == 0) MeasureString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), text, font, width, height);
+          if (width == 0 && height == 0) MeasureString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), text, font, width, height, measureTrailingSpaces);
           
           if (directionVertical) {
             x = x + width;
@@ -60,7 +61,7 @@ namespace xtd {
           dc.SetFont(font);
 
           wxArrayString strings;
-          if ((stringFormats & SF_NO_WRAP) != SF_NO_WRAP) strings = WrapText(dc, text, font, width, height, directionVertical);
+          if ((stringFormats & SF_NO_WRAP) != SF_NO_WRAP) strings = WrapText(dc, text, font, width, height, directionVertical, measureTrailingSpaces);
           else strings.push_back(text);
           auto string = ToString(dc, FormatString(dc, strings, width, height, hotKeyPrefix, trimming, directionVertical), font, width, height, (stringFormats & SF_LINE_LIMIT) == SF_LINE_LIMIT, directionVertical);
 
@@ -68,7 +69,7 @@ namespace xtd {
           else DrawStringWithGradientBrush(handle, string, font, brush, x, y, width, height, angle, align, hotKeyPrefix, noClip);
         }
         
-        static void MeasureString(wxDC& dc, const wxString& text, const wxFont& font, int32_t& width, int32_t& height) {
+        static void MeasureString(wxDC& dc, const wxString& text, const wxFont& font, int32_t& width, int32_t& height, bool measureTrailingSpaces) {
           width = 0;
           height = 0;
           dc.SetFont(font);
@@ -76,7 +77,7 @@ namespace xtd {
           for (auto string : strings) {
             auto lineWidth = 0.0;
             auto lineHeight = 0.0;
-            auto lineSize = dc.GetTextExtent(string);
+            auto lineSize = dc.GetTextExtent(measureTrailingSpaces ? string : string.Trim());
             lineWidth = lineSize.GetWidth();
             lineHeight = lineSize.GetHeight();
             width = std::max(width, static_cast<int32_t>(std::ceil(lineWidth)));
@@ -167,14 +168,14 @@ namespace xtd {
         static int32_t GetTextHeight(wxDC& dc, const wxString& str, const wxFont& font) noexcept {
           auto width = 0;
           auto height = 0;
-          MeasureString(dc, str, font, width, height);
+          MeasureString(dc, str, font, width, height, true);
           return height;
         }
 
-        static int32_t GetTextWidth(wxDC& dc, const wxString& str, const wxFont& font) noexcept {
+        static int32_t GetTextWidth(wxDC& dc, const wxString& str, const wxFont& font, bool measureTrailingSpaces) noexcept {
           auto width = 0;
           auto height = 0;
-          MeasureString(dc, str, font, width, height);
+          MeasureString(dc, str, font, width, height, measureTrailingSpaces);
           return width;
         }
         
@@ -192,7 +193,7 @@ namespace xtd {
           return result;
         }
 
-        static wxArrayString WrapText(wxDC& dc, const wxString& string, const wxFont& font, int32_t width, int32_t height, bool directionVertical) noexcept {
+        static wxArrayString WrapText(wxDC& dc, const wxString& string, const wxFont& font, int32_t width, int32_t height, bool directionVertical, bool measureTrailingSpaces) noexcept {
           if (directionVertical) std::swap(width, height);
           auto strings = wxSplit(string, '\n');
           wxArrayString results;
@@ -202,7 +203,7 @@ namespace xtd {
             if (words.size() == 0) results.push_back(" ");
             else for (auto index = 0U; index < words.size(); ++index) {
               results.push_back(words[index]);
-              while (index + 1 < words.size() && GetTextWidth(dc, results[results.size() - 1] + " " + words[index + 1], font) <= width)
+              while (index + 1 < words.size() && GetTextWidth(dc, results[results.size() - 1] + " " + words[index + 1], font, measureTrailingSpaces) <= width)
                 results[results.size() - 1] += " " + words[++index];
             }
           }

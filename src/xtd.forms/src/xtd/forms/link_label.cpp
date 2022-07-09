@@ -180,7 +180,7 @@ void link_label::on_paint(paint_event_args& e) {
       
       if (index < link.start()) {
         text = line.substring(line_index, link.start() - line_index);
-        size_text = drawing::size::ceiling(e.graphics().measure_string(text, font()));
+        size_text = drawing::size::ceiling(e.graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
         if (enabled())
           e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
         else
@@ -190,7 +190,7 @@ void link_label::on_paint(paint_event_args& e) {
       }
       if (index <= link.start() && line.length() + index > link.start()) {
         text = line.substring(link.start() - index, link.length());
-        size_text = drawing::size::ceiling(e.graphics().measure_string(text, link_font()));
+        size_text = drawing::size::ceiling(e.graphics().measure_string(text, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
         if (enabled())
           e.graphics().draw_string(text, link_font(), solid_brush(color), {text_location, size_text});
         else
@@ -202,7 +202,7 @@ void link_label::on_paint(paint_event_args& e) {
     
     if (line_index < line.length()) {
       text = line.substring(line_index, line.length());
-      size_text = drawing::size::ceiling(e.graphics().measure_string(text, font()));
+      size_text = drawing::size::ceiling(e.graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
       if (enabled())
         e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
       else
@@ -241,7 +241,7 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const {
   size_t line_index = 0;
   for (auto line : text().split({'\n'})) {
     point text_location;
-    drawing::size text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font()));
+    drawing::size text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
     switch (text_align()) {
       case content_alignment::top_left: text_location = point(0, text_size.height() * as<int32_t>(line_number)); break;
       case content_alignment::top_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, text_size.height() * as<int32_t>(line_number)); break;
@@ -272,14 +272,14 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
     for (auto link : links_) {
       if (index < link.start()) {
         text = line.substring(line_index, link.start() - line_index);
-        size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font()));
+        size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
         text_rects.push_back({{text_location, size_text}, false});
         text_location.x(text_location.x() + size_text.width());
         line_index += text.length();
       }
       if (index <= link.start() && line.length() + index > link.start()) {
         text = line.substring(link.start() - index, link.length());
-        size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, link_font()));
+        size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
         text_rects.push_back({{text_location, size_text}, true});
         text_location.x(text_location.x() + size_text.width());
         line_index = link.start() - index + text.length();
@@ -288,7 +288,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
     
     if (line_index < line.length()) {
       text = line.substring(line_index, line.length());
-      size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font()));
+      size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
       text_rects.push_back({{text_location, size_text}, false});
       line_index = line.length();
     }

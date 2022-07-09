@@ -943,7 +943,7 @@ drawing::size control::measure_control() const {
 }
 
 drawing::size control::measure_text() const {
-  return drawing::size::ceiling(screen::create_graphics().measure_string(data_->text, font())) + drawing::size(2, 1);
+  return drawing::size::ceiling(screen::create_graphics().measure_string(data_->text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces))) + drawing::size(2, 1);
 }
 
 void control::on_auto_size_changed(const event_args& e) {
