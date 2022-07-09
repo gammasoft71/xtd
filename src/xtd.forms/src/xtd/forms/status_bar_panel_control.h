@@ -108,14 +108,14 @@ private:
       text_rect.x(image_rect.x() + image_rect.width());
       text_rect.width(text_rect.width() - image_rect.width());
     } else if (data_->alignment == horizontal_alignment::center) {
-      auto image_and_text_width = image().width() + as<int32_t>(e.graphics().measure_string(text(), current_style_sheet.font()).width());
+      auto image_and_text_width = image().width() + as<int32_t>(e.graphics().measure_string(text(), current_style_sheet.font(), xtd::drawing::size_f(0.0f, 0.0f), xtd::drawing::string_format(xtd::drawing::string_format_flags::measure_trailing_spaces)).width());
       image_rect.x(content_rectangle.width() / 2 - image_and_text_width / 2);
       image_rect.width(image().width());
       image_rect.height(image().height());
       text_rect.x(image_rect.x() + image_rect.width());
       text_rect.width(text_rect.width() - image_rect.width());
     } else if (data_->alignment == horizontal_alignment::right) {
-      auto text_width = as<int32_t>(e.graphics().measure_string(text(), current_style_sheet.font()).width());
+      auto text_width = as<int32_t>(e.graphics().measure_string(text(), current_style_sheet.font(), xtd::drawing::size_f(0.0f, 0.0f), xtd::drawing::string_format(xtd::drawing::string_format_flags::measure_trailing_spaces)).width());
       text_rect.x(text_rect.x() + content_rectangle.right() - text_width);
       text_rect.width(text_rect.width() - text_width);
       image_rect.x(text_rect.x() - image().width());

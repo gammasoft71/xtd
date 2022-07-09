@@ -599,7 +599,7 @@ void graphics::interpolation_mode(intptr_t handle, int32_t interpolation_mode) {
   }
 }
 
-void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, size_t characters_fitted, size_t lines_filled) {
+void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
   if (!handle) return;
   width = 0;
   height = 0;
@@ -610,7 +610,7 @@ void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t fon
     if (++line_index > lines_filled) break;
     double line_width = 0, line_height = 0;
     reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
-    wxSize line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().GetTextExtent(text_to_draw);
+    wxSize line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().GetTextExtent(measure_trailing_spaces ? text_to_draw : text_to_draw.Trim());
     line_width = line_size.GetWidth();
     line_height = line_size.GetHeight();
     width = std::max(width, static_cast<float>(line_width));
