@@ -599,6 +599,7 @@ void graphics::interpolation_mode(intptr_t handle, int32_t interpolation_mode) {
   }
 }
 
+/*
 void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
   if (!handle) return;
   width = 0;
@@ -619,6 +620,23 @@ void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t fon
     // Workaround : with wxWidgets version <= 3.1.5 width size text is too small on macOS and linux.
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().GetFontMetrics().averageWidth / 2.3f);
   }
+}
+*/
+ 
+void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
+  if (!handle) return;
+  width = 0.0f;
+  height = 0.0f;
+  size_t line_index = 0U;
+  auto strings = text.split({ '\n' });
+  wxString formated_text;
+  for (auto string : strings) {
+    wxString line_string = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, hot_key_prefix, trimming);
+    if (++line_index > lines_filled) break;
+    formated_text += line_string + wxString("\n");
+  }
+  if (formated_text.size()) formated_text.Remove(formated_text.size() - 1);
+  wxDrawString::MeasureString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), formated_text, *reinterpret_cast<wxFont*>(font), width, height, measure_trailing_spaces);
 }
 
 void graphics::pixel_offset_mode(intptr_t handle, int32_t pixel_offset_mode) {

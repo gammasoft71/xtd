@@ -7,6 +7,15 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
 
+bool style_sheets::control::auto_ellipsis() const noexcept {
+  return auto_ellipsis_;
+}
+
+style_sheets::control& style_sheets::control::auto_ellipsis(bool value) noexcept {
+  auto_ellipsis_ = value;
+  return *this;
+}
+
 const drawing::color& style_sheets::control::background_color() const noexcept {
   return background_color_;
 }
@@ -306,6 +315,10 @@ string_format style_sheets::control::control::make_string_format() const noexcep
   }
   
   format.hotkey_prefix(xtd::drawing::text::hotkey_prefix::hide);
+  if (auto_ellipsis()) {
+    format.trimming(xtd::drawing::string_trimming::ellipsis_character);
+    format.format_flags(format.format_flags() | xtd::drawing::string_format_flags::no_wrap);
+  }
   
   return format;
 }

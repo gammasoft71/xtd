@@ -69,9 +69,9 @@ namespace xtd {
           else DrawStringWithGradientBrush(handle, string, font, brush, x, y, width, height, angle, align, hotKeyPrefix, noClip);
         }
         
-        static void MeasureString(wxDC& dc, const wxString& text, const wxFont& font, int32_t& width, int32_t& height, bool measureTrailingSpaces) {
-          width = 0;
-          height = 0;
+        static void MeasureString(wxDC& dc, const wxString& text, const wxFont& font, float& width, float& height, bool measureTrailingSpaces) {
+          width = 0.0f;
+          height = 0.0f;
           dc.SetFont(font);
           auto strings = wxSplit(text, '\n');
           for (auto string : strings) {
@@ -80,12 +80,20 @@ namespace xtd {
             auto lineSize = dc.GetTextExtent(measureTrailingSpaces ? string : string.Trim());
             lineWidth = lineSize.GetWidth();
             lineHeight = lineSize.GetHeight();
-            width = std::max(width, static_cast<int32_t>(std::ceil(lineWidth)));
-            height += static_cast<int32_t>(std::ceil(lineHeight));
+            width = std::max(width, static_cast<float>(lineWidth));
+            height += static_cast<float>(lineHeight);
             
             // Workaround : with wxWidgets version <= 3.1.5 width size text is too small on macOS and linux.
             if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && font.GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(dc.GetFontMetrics().averageWidth / 2.3f);
           }
+        }
+        
+        static void MeasureString(wxDC& dc, const wxString& text, const wxFont& font, int32_t& width, int32_t& height, bool measureTrailingSpaces) {
+          auto widthF = 0.0f;
+          auto heightF = 0.0f;
+          MeasureString(dc, text, font, widthF, heightF, measureTrailingSpaces);
+          width = static_cast<float>(std::ceil(widthF));
+          height = static_cast<float>(std::ceil(heightF));
         }
 
         static wxString FormatString(wxDC& dc, const wxString& string, float width, int32_t hotKeyPrefix, int32_t trimming) {
