@@ -12,6 +12,7 @@
 #include <xtd/drawing/native/hot_key_prefixes.h>
 #include <xtd/drawing/native/string_formats.h>
 #include <xtd/drawing/native/string_trimmings.h>
+#include <xtd/io/path.h>
 #include <xtd/convert_string.h>
 #include <wx/control.h>
 #include <wx/dcclient.h>
@@ -102,20 +103,64 @@ namespace xtd {
 
         static wxString TrimString(wxDC& dc, const wxString& string, const wxFont& font, float width, int32_t trimming) {
           dc.SetFont(font);
-          auto result = string;
-          switch (trimming) {
-            case ST_NONE: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_NONE); break;
-            case ST_CHARACTER: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-            case ST_WORD: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-            case ST_ELLIPSIS_CHARACTER: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_END, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-            case ST_ELLIPSIS_WORD: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_END, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-            case ST_ELLIPSIS_PATH: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_MIDDLE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
-            default: break;
+          auto strings = wxSplit(string, '\n');
+          auto results = strings;
+          for (auto& line : results) {
+            switch (trimming) {
+              case ST_NONE: break;
+              case ST_CHARACTER: line = TrimmingCharacter(dc, line, font, width, ""); break;
+              case ST_WORD: line = TrimmingWord(dc, line, font, width, ""); break;
+              case ST_ELLIPSIS_CHARACTER:  line = TrimmingCharacter(dc, line, font, width, "..."); break;
+              case ST_ELLIPSIS_WORD: line = TrimmingWord(dc, line, font, width, "..."); break;
+              case ST_ELLIPSIS_PATH: line = TrimmingPath(dc, line, font, width, "..."); break;
+              default: break;
+            }
           }
-          return result;
+          return wxJoin(results, '\n');
         }
 
       private:
+        static wxString TrimmingCharacter(wxDC& dc, const wxString& string, const wxFont& font, float width, const wxString& ellips) {
+          if (GetTextWidth(dc, string, font, true) < width)  return string;
+
+          wxString result;
+          for (auto index = 0U; index < string.size(); ++index) {
+            if (GetTextWidth(dc, (result + string[index]).Trim() + ellips, font, true) > width) return result + ellips;
+            result += string[index];
+          }
+          
+          return result;
+        }
+
+        static wxString TrimmingWord(wxDC& dc, const wxString& string, const wxFont& font, float width, const wxString& ellips) {
+          if (GetTextWidth(dc, string, font, false) < width) return string;
+          
+          wxString result;
+          auto words = wxSplit(string, ' ');
+          for (auto index = 0U; index < words.size(); ++index) {
+            auto space = index ? " " : "";
+            if (GetTextWidth(dc, (result + space + words[index]).Trim() + ellips, font, true) > width)  return result + ellips;
+            result += space + words[index];
+          }
+          
+          return result;
+        }
+
+        static wxString TrimmingPath(wxDC& dc, const wxString& string, const wxFont& font, float width, const wxString& ellips) {
+          if (GetTextWidth(dc, string, font, true) < width)  return string;
+          
+          wxString result;
+          auto paths = wxSplit(string, xtd::io::path::directory_separator_char());
+          if (GetTextWidth(dc, paths[paths.size() - 1], font, true) > width)  return paths[paths.size() - 1];
+          for (auto index = 0U; index < paths.size() - 1; ++index) {
+            auto separator = index ? wxString(xtd::io::path::directory_separator_char()) : "";
+            if (GetTextWidth(dc, result + separator + ellips + xtd::io::path::directory_separator_char() + paths[index] + xtd::io::path::directory_separator_char() + paths[paths.size() - 1], font, true) > width)  return result + xtd::io::path::directory_separator_char() + ellips + xtd::io::path::directory_separator_char() + paths[paths.size() - 1];
+            result += separator + paths[index];
+          }
+          
+          return result + xtd::io::path::directory_separator_char() + paths[paths.size() - 1];
+        }
+
         static void DrawStringWithSolidBrush(wxDC& dc, const wxString& string, const wxFont& font, const wx_brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, float angle, wxAlignment align, int32_t hotKeyPrefix, bool noClip) {
           if (!noClip) dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
           dc.SetTextForeground(brush.get_solid_brush().color);
