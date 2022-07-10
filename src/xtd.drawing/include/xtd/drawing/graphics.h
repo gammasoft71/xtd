@@ -1277,6 +1277,13 @@ namespace xtd {
       /// @remarks The translation operation consists of multiplying the transformation matrix by a matrix whose translation part is the dx and dy parameters. This method prepends or appends the transformation matrix of the xtd::drawing::graphics by the translation matrix according to the order parameter.
       void translate_transform(float dx, float dy, xtd::drawing::drawing2d::matrix_order order);
       
+      /// @brief Trims the specified string for a specified width with the specified xtd::drawing::font and with the specified xtd::drawing::string_trimming.
+      /// @param text xtd::ustring to measure.
+      /// @param font xtd::drawing::font that defines the text format of the string.
+      /// @param width Specifies the maximum width for the text.
+      /// @param trimming One of xtd::drawing::string_trimming values.
+      xtd::ustring trim_string(const xtd::ustring& text, const xtd::drawing::font& font, float width, xtd::drawing::string_trimming trimming);
+      
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       /// @}
       

@@ -890,6 +890,12 @@ void graphics::translate_transform(float dx, float dy, matrix_order order) {
   native::graphics::translate_transform(handle(), to_pixels(dx), to_pixels(dy), static_cast<int32_t>(order));
 }
 
+ustring graphics::trim_string(const ustring& text, const font& font, float width, string_trimming trimming) {
+  ustring result = text;
+  
+  return native::graphics::trim_string(handle(), text, font.handle(), width, static_cast<int32_t>(trimming));
+}
+
 float graphics::to_page_unit(float value) const {
   return to_page_unit(value, data_->page_unit, data_->page_scale, dpi_x());
 }

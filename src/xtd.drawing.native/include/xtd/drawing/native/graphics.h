@@ -521,6 +521,15 @@ namespace xtd {
         /// @warning Internal use only
         static void translate_transform(intptr_t handle, float dx, float dy, int32_t order);
         
+        /// @brief Trims the specified string for a specified width with the specified font and trimming.
+        /// @param handle The graphics handle.
+        /// @param text xtd::ustring to measure.
+        /// @param font A font handle that defines the text format of the string.
+        /// @param width The width of the text.
+        /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
+        /// @warning Internal use only
+        static xtd::ustring trim_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float width, int32_t trimming);
+
         /// @brief Gets the bounding rectangle of the visible clipping region of the graphics.
         /// @param handle The graphics handle.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle for the visible clipping region of the graphics.
