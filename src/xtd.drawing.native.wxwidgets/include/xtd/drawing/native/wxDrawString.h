@@ -97,7 +97,12 @@ namespace xtd {
         }
 
         static wxString FormatString(wxDC& dc, const wxString& string, float width, int32_t hotKeyPrefix, int32_t trimming) {
-          auto result = hotKeyPrefix != HKP_NONE ? RemoveHotKeyPrefixLocations(string) : string;
+          return TrimString(dc, hotKeyPrefix != HKP_NONE ? RemoveHotKeyPrefixLocations(string) : string, dc.GetFont(), width, trimming);
+        }
+
+        static wxString TrimString(wxDC& dc, const wxString& string, const wxFont& font, float width, int32_t trimming) {
+          dc.SetFont(font);
+          auto result = string;
           switch (trimming) {
             case ST_NONE: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_NONE); break;
             case ST_CHARACTER: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;

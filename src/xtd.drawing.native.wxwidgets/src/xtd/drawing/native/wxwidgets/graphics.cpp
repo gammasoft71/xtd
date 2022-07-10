@@ -730,6 +730,10 @@ void graphics::translate_transform(intptr_t handle, float dx, float dy, int32_t 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
+xtd::ustring graphics::trim_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float width, int32_t trimming) {
+  return convert_string::to_string(wxDrawString::TrimString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), width, trimming).c_str().AsWChar());
+}
+
 void graphics::visible_clip_bounds(intptr_t handle, float& x, float& y, float& width, float& height) {
   double wx_x = 0.0, wx_y = 0.0, wx_width = 0.0, wx_height = 0.0;
   if (handle) reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->GetClipBox(&wx_x, &wx_y, &wx_width, &wx_height);
