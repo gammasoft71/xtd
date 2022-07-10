@@ -36,6 +36,10 @@ public:
     hotkey_prefix_tab_page.text("Prefix");
     hotkey_prefix_tab_page.paint += {*this, &strings_form::draw_strings_hotkey_prefix};
     
+    trim_tab_page.parent(tab_control);
+    trim_tab_page.text("Trimming");
+    trim_tab_page.paint += {*this, &strings_form::draw_strings_trim};
+    
     string_format_tab_page.parent(tab_control);
     string_format_tab_page.text("String format");
     string_format_tab_page.paint += {*this, &strings_form::draw_strings_with_string_format};
@@ -139,6 +143,7 @@ private:
   forms::tab_page linear_gradient_tab_page;
   forms::tab_page multilines_tab_page;
   forms::tab_page hotkey_prefix_tab_page;
+  forms::tab_page trim_tab_page;
   forms::tab_page string_format_tab_page;
   
   label alignmentLabel;
@@ -225,6 +230,19 @@ private:
     e.graphics().draw_string("&No hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 50), string_format().hotkey_prefix(xtd::drawing::text::hotkey_prefix::none));
     e.graphics().draw_string("&Show hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 150), string_format().hotkey_prefix(xtd::drawing::text::hotkey_prefix::show));
     e.graphics().draw_string("&Hide hotkey prefix", regular_font, solid_brush(system_colors::control_text()), point(50, 250), string_format().hotkey_prefix(xtd::drawing::text::hotkey_prefix::hide));
+  }
+  
+  void draw_strings_trim(object& sender, paint_event_args& e) {
+    draw_grid(e.clip_rectangle(), e.graphics());
+    auto text = "Lorem ipsum dolor sitas amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,"_s;
+    auto text_size = e.graphics().measure_string(text, regular_font);
+
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 50.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::none));
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 150.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::character));
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 250.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::word));
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 350.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_character));
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 450.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_word));
+    e.graphics().draw_string(ustring::format("/directory1{0}directory2{0}directory3{0}directory4{0}directory5{0}directory6{0}file.txt", xtd::io::path::directory_separator_char()), regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 550.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_path));
   }
   
   void draw_strings_with_string_format(object& sender, paint_event_args& e) {
