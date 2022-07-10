@@ -296,9 +296,25 @@ namespace examples {
     label label_message_;
     std::vector<std::unique_ptr<button>> buttons_;
   };
+
+  class form6 : public form {
+  public:
+    form6() {
+      //text("Label example");
+      
+      label3.parent(*this);
+      label3.location({10, 70});
+      label3.size({100, 23});
+      //label3.auto_ellipsis(true);
+      label3.text(label3.create_graphics().trim_string("A large label text with auto size property set to true.", label3.font(), label3.width(), xtd::drawing::string_trimming::ellipsis_character));
+    }
+    
+  private:
+    label label3;
+  };
 }
 
 int main() {
-  application::run(examples::form1());
+  application::run(examples::form6());
 }
 
