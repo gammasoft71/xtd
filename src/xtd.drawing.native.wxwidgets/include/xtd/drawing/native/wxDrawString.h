@@ -97,10 +97,7 @@ namespace xtd {
         }
 
         static wxString FormatString(wxDC& dc, const wxString& string, float width, int32_t hotKeyPrefix, int32_t trimming) {
-          auto result = string;
-          auto hotKeyPrefixLocation = GetHotKeyPrefixLocations(result);
-          if (hotKeyPrefix != HKP_NONE && hotKeyPrefixLocation != -1)
-            result = result.Remove(hotKeyPrefixLocation, 1);
+          auto result = hotKeyPrefix != HKP_NONE ? RemoveHotKeyPrefixLocations(string) : string;
           switch (trimming) {
             case ST_NONE: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_NONE); break;
             case ST_CHARACTER: result = wxControl::Ellipsize(result, dc, wxEllipsizeMode::wxELLIPSIZE_NONE, width, wxEllipsizeFlags::wxELLIPSIZE_FLAGS_DEFAULT); break;
@@ -117,7 +114,7 @@ namespace xtd {
         static void DrawStringWithSolidBrush(wxDC& dc, const wxString& string, const wxFont& font, const wx_brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, float angle, wxAlignment align, int32_t hotKeyPrefix, bool noClip) {
           if (!noClip) dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
           dc.SetTextForeground(brush.get_solid_brush().color);
-          auto hotKeyPrefixLocation = GetHotKeyPrefixLocations(string);
+          auto hotKeyPrefixLocation = GetFirstHotKeyPrefixLocations(string);
           if (angle == 0) dc.DrawLabel(string, wxRect(x, y, width, height), align, hotKeyPrefix == HKP_SHOW ? hotKeyPrefixLocation : -1);
           else dc.DrawRotatedText(string, x, y, -angle);
           if (!noClip) dc.DestroyClippingRegion();
@@ -144,7 +141,7 @@ namespace xtd {
           wxMemoryDC bitmapMaskDc(bitmapMask);
           bitmapMaskDc.SetFont(font);
           bitmapMaskDc.SetTextForeground(wxColour(255, 255, 255));
-          auto hotKeyPrefixLocation = GetHotKeyPrefixLocations(string);
+          auto hotKeyPrefixLocation = GetFirstHotKeyPrefixLocations(string);
           if (angle == 0) bitmapMaskDc.DrawLabel(string, wxRect(x, y, width, height), align, hotKeyPrefix == HKP_SHOW ? hotKeyPrefixLocation : -1);
           else bitmapMaskDc.DrawRotatedText(string, x, y, -angle);
           
@@ -165,8 +162,8 @@ namespace xtd {
             string = FormatString(dc, string, width, hotKeyPrefix, trimming);
           return results;
         }
-
-        static int32_t GetHotKeyPrefixLocations(const wxString& str) {
+        
+        static int32_t GetFirstHotKeyPrefixLocations(const wxString& str) {
           if (str.IsEmpty()) return -1;
           for (auto index = 0U; index < str.size() - 1; index++)
             if (str[index] == '&' && str[index + 1] != '&') return static_cast<int32_t>(index);
@@ -186,7 +183,16 @@ namespace xtd {
           MeasureString(dc, str, font, width, height, measureTrailingSpaces);
           return width;
         }
-        
+
+        static wxString RemoveHotKeyPrefixLocations(const wxString& str) {
+          wxString result;
+          if (str.IsEmpty() && GetFirstHotKeyPrefixLocations(str) == -1) return str;
+          for (auto index = 0U; index < str.size() - 1; index++)
+            if (str[index] != '&' || str[index + 1] == '&') result += str[index];
+          result += str[str.size() - 1];
+          return result;
+        }
+
         static wxString ToString(wxDC& dc, const wxArrayString& strings, const wxFont& font, int32_t width, int32_t height, bool lineLimit, bool directionVertical) {
           wxString result;
           if (directionVertical) {
