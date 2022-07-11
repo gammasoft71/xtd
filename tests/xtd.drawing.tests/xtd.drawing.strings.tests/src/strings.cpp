@@ -242,7 +242,7 @@ private:
     e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 250.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::word));
     e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 350.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_character));
     e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 450.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_word));
-    e.graphics().draw_string(ustring::format("/directory1{0}directory2{0}directory3{0}directory4{0}directory5{0}directory6{0}file.txt", xtd::io::path::directory_separator_char()), regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 550.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_path));
+    e.graphics().draw_string(ustring::format("{0}directory1{0}directory2{0}directory3{0}directory4{0}directory5{0}directory6{0}file.txt", xtd::io::path::directory_separator_char()), regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 550.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_path));
   }
   
   void draw_strings_with_string_format(object& sender, paint_event_args& e) {
