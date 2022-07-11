@@ -153,7 +153,7 @@ namespace xtd {
           auto paths = wxSplit(string, xtd::io::path::directory_separator_char());
           if (GetTextWidth(dc, paths[paths.size() - 1], font, true) > width)  return paths[paths.size() - 1];
           for (auto index = 0U; index < paths.size() - 1; ++index) {
-            auto separator = index ? wxString(xtd::io::path::directory_separator_char()) : "";
+            auto separator = index ? wxString(xtd::io::path::directory_separator_char()) : wxString("");
             if (GetTextWidth(dc, result + separator + ellips + xtd::io::path::directory_separator_char() + paths[index] + xtd::io::path::directory_separator_char() + paths[paths.size() - 1], font, true) > width)  return result + xtd::io::path::directory_separator_char() + ellips + xtd::io::path::directory_separator_char() + paths[paths.size() - 1];
             result += separator + paths[index];
           }
