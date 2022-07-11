@@ -67,27 +67,27 @@ public:
     lineAlignmentComboBox.selected_index_changed += [&] {invalidate();};
     
     trimmingLabel.auto_size(true);
-    trimmingLabel.location({10, 42});
+    trimmingLabel.location({10, 52});
     trimmingLabel.text("Trimming");
     
     trimmingComboBox.drop_down_style(combo_box_style::drop_down_list);
     trimmingComboBox.items().push_back_range({{"none", string_trimming::none}, {"character", string_trimming::character}, {"word", string_trimming::word}, {"ellipsis_character", string_trimming::ellipsis_character}, {"ellipsis_word", string_trimming::ellipsis_word}, {"ellipsis_path", string_trimming::ellipsis_path}});
-    trimmingComboBox.location({120, 40});
+    trimmingComboBox.location({120, 50});
     trimmingComboBox.selected_index(0);
     trimmingComboBox.selected_index_changed += [&] {invalidate();};
     
     hotKeyPrefixLabel.auto_size(true);
-    hotKeyPrefixLabel.location({280, 42});
+    hotKeyPrefixLabel.location({280, 52});
     hotKeyPrefixLabel.text("Hotkey prefix");
     
     hotKeyPrefixComboBox.drop_down_style(combo_box_style::drop_down_list);
     hotKeyPrefixComboBox.items().push_back_range({{"none", hotkey_prefix::none}, {"show", hotkey_prefix::show}, {"hide", hotkey_prefix::hide}});
-    hotKeyPrefixComboBox.location({390, 40});
+    hotKeyPrefixComboBox.location({390, 50});
     hotKeyPrefixComboBox.selected_index(0);
     hotKeyPrefixComboBox.selected_index_changed += [&] {invalidate();};
     
     formatFlagsGroupBox.controls().push_back_range({directionRightToLeftCheckBox, directionVerticalCheckBox, FitBlackBoxCheckBox, DisplayFormatControlCheckBox, NoFontFallbackCheckBox, MeasureTrailingSpacesCheckBox, NoWrapCheckBox, LineLimitCheckBox, NoClipCheckBox});
-    formatFlagsGroupBox.location({10, 70});
+    formatFlagsGroupBox.location({10, 90});
     formatFlagsGroupBox.size({500, 185});
     formatFlagsGroupBox.text("Fromat flags");
     
@@ -247,7 +247,7 @@ private:
   
   void draw_strings_with_string_format(object& sender, paint_event_args& e) {
 
-    auto rect = rectangle(100, 320, e.clip_rectangle().width() - 200, e.clip_rectangle().height() - 487);
+    auto rect = rectangle(100, 340, e.clip_rectangle().width() - 200, e.clip_rectangle().height() - 487);
     draw_grid(rect, e.graphics());
 
     e.graphics().draw_rectangle(pen(system_colors::control_text()), rect);
