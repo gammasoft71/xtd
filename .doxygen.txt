@@ -21,7 +21,8 @@
 
 EXAMPLE_PATH          = @CMAKE_CURRENT_SOURCE_DIR@/examples
 HTML_EXTRA_FILES      = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/favicon.png
-HTML_EXTRA_STYLESHEET = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/custom.css @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/custom_dark_theme.css @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/custom_images.css
+#HTML_EXTRA_STYLESHEET = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/custom.css @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/custom_dark_theme.css @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/custom_images.css
+HTML_EXTRA_STYLESHEET = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/doxygen-awesome-css/doxygen-awesome.css
 HTML_FOOTER           = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/html_footer.html
 HTML_HEADER           = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/html_header.html
 IMAGE_PATH            = @CMAKE_CURRENT_SOURCE_DIR@/docs/pictures
