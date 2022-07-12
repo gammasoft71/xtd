@@ -196,9 +196,3 @@
 ///   SUCCEED 2 tests.
 /// End 2 tests from 1 test case ran. (0 ms total)
 /// @endcode
-///
-/// @section GettingStartedSection Getting Started
-///
-///  * <a href="https://gammasoft71.wixsite.com/xtdpro/download">Installation</a> provides download and install documentation.
-///  * <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guides.md">Guides</a> provides xtd guides and tutorials.
-///  * <a href="https://github.com/gammasoft71/xtd/blob/master/examples/README.md">Examples</a> provides some examples.
