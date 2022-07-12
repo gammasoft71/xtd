@@ -54,7 +54,7 @@ public:
     alignmentComboBox.items().push_back_range({{"near", string_alignment::near}, {"center", string_alignment::center}, {"far", string_alignment::far}});
     alignmentComboBox.location({120, 10});
     alignmentComboBox.selected_index(0);
-    alignmentComboBox.selected_index_changed += [&] {invalidate();};
+    alignmentComboBox.selected_index_changed += [&] {string_format_tab_page.invalidate(false);};
     
     lineAlignmentLabel.auto_size(true);
     lineAlignmentLabel.location({280, 12});
@@ -64,7 +64,7 @@ public:
     lineAlignmentComboBox.items().push_back_range({{"near", string_alignment::near}, {"center", string_alignment::center}, {"far", string_alignment::far}});
     lineAlignmentComboBox.location({390, 10});
     lineAlignmentComboBox.selected_index(0);
-    lineAlignmentComboBox.selected_index_changed += [&] {invalidate();};
+    lineAlignmentComboBox.selected_index_changed += [&] {string_format_tab_page.invalidate(false);};
     
     trimmingLabel.auto_size(true);
     trimmingLabel.location({10, 52});
@@ -74,7 +74,7 @@ public:
     trimmingComboBox.items().push_back_range({{"none", string_trimming::none}, {"character", string_trimming::character}, {"word", string_trimming::word}, {"ellipsis_character", string_trimming::ellipsis_character}, {"ellipsis_word", string_trimming::ellipsis_word}, {"ellipsis_path", string_trimming::ellipsis_path}});
     trimmingComboBox.location({120, 50});
     trimmingComboBox.selected_index(0);
-    trimmingComboBox.selected_index_changed += [&] {invalidate();};
+    trimmingComboBox.selected_index_changed += [&] {string_format_tab_page.invalidate(false);};
     
     hotKeyPrefixLabel.auto_size(true);
     hotKeyPrefixLabel.location({280, 52});
@@ -84,7 +84,7 @@ public:
     hotKeyPrefixComboBox.items().push_back_range({{"none", hotkey_prefix::none}, {"show", hotkey_prefix::show}, {"hide", hotkey_prefix::hide}});
     hotKeyPrefixComboBox.location({390, 50});
     hotKeyPrefixComboBox.selected_index(0);
-    hotKeyPrefixComboBox.selected_index_changed += [&] {invalidate();};
+    hotKeyPrefixComboBox.selected_index_changed += [&] {string_format_tab_page.invalidate(false);};
     
     formatFlagsGroupBox.controls().push_back_range({directionRightToLeftCheckBox, directionVerticalCheckBox, FitBlackBoxCheckBox, DisplayFormatControlCheckBox, NoFontFallbackCheckBox, MeasureTrailingSpacesCheckBox, NoWrapCheckBox, LineLimitCheckBox, NoClipCheckBox});
     formatFlagsGroupBox.location({10, 90});
@@ -94,47 +94,47 @@ public:
     directionRightToLeftCheckBox.auto_size(true);
     directionRightToLeftCheckBox.location({10, 10});
     directionRightToLeftCheckBox.text("Direction right to left");
-    directionRightToLeftCheckBox.checked_changed += [&] {invalidate();};
+    directionRightToLeftCheckBox.checked_changed += [&] {string_format_tab_page.invalidate(false);};
     
     directionVerticalCheckBox.auto_size(true);
     directionVerticalCheckBox.location({270, 10});
     directionVerticalCheckBox.text("Direction vertical");
-    directionVerticalCheckBox.checked_changed += [&] {invalidate();};
+    directionVerticalCheckBox.checked_changed += [&] {string_format_tab_page.invalidate(false);};
     
     FitBlackBoxCheckBox.auto_size(true);
     FitBlackBoxCheckBox.location({10, 40});
     FitBlackBoxCheckBox.text("Fit back box");
-    FitBlackBoxCheckBox.checked_changed += [&] {invalidate();};
+    FitBlackBoxCheckBox.checked_changed += [&] {string_format_tab_page.invalidate(false);};
     
     DisplayFormatControlCheckBox.auto_size(true);
     DisplayFormatControlCheckBox.location({270, 40});
     DisplayFormatControlCheckBox.text("Display format control");
-    DisplayFormatControlCheckBox.checked_changed += [&] {invalidate();};
+    DisplayFormatControlCheckBox.checked_changed += [&] {string_format_tab_page.invalidate(false);};
     
     NoFontFallbackCheckBox.auto_size(true);
     NoFontFallbackCheckBox.location({10, 70});
     NoFontFallbackCheckBox.text("No font failback");
-    NoFontFallbackCheckBox.checked_changed += [&] {invalidate();};
+    NoFontFallbackCheckBox.checked_changed += [&] {string_format_tab_page.invalidate(false);};
     
     MeasureTrailingSpacesCheckBox.auto_size(true);
     MeasureTrailingSpacesCheckBox.location({270, 70});
     MeasureTrailingSpacesCheckBox.text("Measure trailing spaces");
-    MeasureTrailingSpacesCheckBox.checked_changed += [&] {invalidate();};
+    MeasureTrailingSpacesCheckBox.checked_changed += [&] {string_format_tab_page.invalidate(false);};
     
     NoWrapCheckBox.auto_size(true);
     NoWrapCheckBox.location({10, 100});
     NoWrapCheckBox.text("No wrap");
-    NoWrapCheckBox.checked_changed += [&] {invalidate();};
+    NoWrapCheckBox.checked_changed += [&] {string_format_tab_page.invalidate(false);};
     
     LineLimitCheckBox.auto_size(true);
     LineLimitCheckBox.location({270, 100});
     LineLimitCheckBox.text("Line limit");
-    LineLimitCheckBox.checked_changed += [&] {invalidate();};
+    LineLimitCheckBox.checked_changed += [&] {string_format_tab_page.invalidate(false);};
     
     NoClipCheckBox.auto_size(true);
     NoClipCheckBox.location({10, 130});
     NoClipCheckBox.text("No clip");
-    NoClipCheckBox.checked_changed += [&] {invalidate();};
+    NoClipCheckBox.checked_changed += [&] {string_format_tab_page.invalidate(false);};
   }
   
 private:
