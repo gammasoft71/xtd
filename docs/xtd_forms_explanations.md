@@ -535,7 +535,7 @@ If he doesn't know exactly how his control will evolve, the best is to use [xtd:
 
 ## Containers
 
-Containers are a specialization of controls. Although by line any control can be a container (see #parent-and-childs).
+Containers are a specialization of controls. Although by line any control can be a container (see #parent-and-childdren).
 
 The base class of a container is [xtd::forms::container_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/container_control.h).
 
