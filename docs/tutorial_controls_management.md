@@ -2,13 +2,21 @@
 
 # Controls management
 
-Objects that inherit xtd::forms::control are not copyable.
+* Objects that inherit xtd::forms::control are not copyable.
+* No object of the xtd.forms library manages controls for you. 
 
-No object of the xtd.forms library manages controls for you. 
+You are responsible for their creation and destruction. 
+The objects of the xtd.forms library only contain references to controls.
 
-You are responsible for their creation and destruction. The objects of the xtd.forms library only contain references to controls.
+The xtd.forms library does not manage memory for you.
 
-## Remarks
+Each control manages its own resources on the RAII programming idiom. And it does not manage your objects.
+
+For example a form that contains a reference to a label, the label will never be destroyed when the form is destroyed.
+The form will only delete the reference on the label and it also remove the resource handle. 
+So it is you who will have to delete the label instance. The xtd.forms library will never assume what you would like to do next with your control.
+
+## Copy of control
 
 Because of the events, the controls cannot be copied.
 
@@ -101,7 +109,7 @@ No more events will be called.
 So to conclude. not knowing what the user of the library will want to do. 
 The controls can NEVER be copied. And to be more precise a class that contains an event can NEVER be copied.
 
-## parent - child
+## Create and destroy a control
 
 When you create a label and add it to the main window as in the example below :
 
@@ -166,6 +174,37 @@ int main() {
   xtd::forms::application::run(main_form);
 }
 ```
+
+Always keep in mind which controls are used by which control.
+
+### Best (easy) way
+
+An easy way to do this is OO programming. Just create a class that contains its child controls. 
+This way as soon as the class is destroyed, its child controls will be destroyed too. 
+
+Like in the following example:
+
+```c++
+#include <xtd/xtd>
+
+class main_form : public xtd::forms::form {
+public:
+  main_form() {
+    controls().push_back(my_label);
+    
+    my_label.text("Hello, World!");
+  }
+
+private:
+  xtd::forms::label my_label;
+};
+
+int main() {
+  xtd::forms::application::run(main_form());
+}
+```
+
+In addition, you will respect the RAII programming idiom.
 
 ## See also
 
