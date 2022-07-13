@@ -288,7 +288,7 @@ forms::control_appearance control::control_appearance() const {
 control& control::control_appearance(forms::control_appearance value) {
   if (data_->control_appearance != value) {
     data_->control_appearance = value;
-    post_recreate_handle();
+    on_control_appearance_changed(event_args::empty);
   }
   return *this;
 }
@@ -964,6 +964,11 @@ void control::on_background_image_changed(const event_args& e) {
 void control::on_background_image_layout_changed(const event_args& e) {
   refresh();
   if (can_raise_events()) background_image_layout_changed(*this, e);
+}
+
+void control::on_control_appearance_changed(const event_args& e) {
+  post_recreate_handle();
+  if (can_raise_events()) control_appearance_changed(*this, e);
 }
 
 void control::on_create_control() {
