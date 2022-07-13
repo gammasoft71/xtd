@@ -109,6 +109,9 @@ No more events will be called.
 So to conclude. not knowing what the user of the library will want to do. 
 The controls can NEVER be copied. And to be more precise a class that contains an event can NEVER be copied.
 
+If you want to have a share (not a copy) of a control, then use [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr) of the std.
+[std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr) is the best way to share a resource. 
+
 # Create and destroy a control
 
 When you create a label and add it to the main window as in the example below :
@@ -205,6 +208,74 @@ int main() {
 ```
 
 In addition, you will respect the [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom.
+
+# Close form
+
+Similarly, when you close a form, the child controls will never be destroyed. The form is closed, if it is a mmodal form, the result will be returned, but the controls are not destroyed. It is therefore your responsibility to destroy the child control(s).
+So a closed form can be renewed at any time. There is no risk of memory leak or unallocated control when reopening (unless you have decided to do so).
+
+The following example illustrates how closing the form works:
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({320, 325});
+    controls().push_back_range({close_button, show_button, hide_button, cancel_close_check_box});
+    text("Form shaw and hide example");
+
+    close_button.location({10, 10});
+    close_button.size({100, 40});
+    close_button.text("Close");
+    close_button.click += [&] {
+      form2.close();
+    };
+    
+    show_button.location({10, 60});
+    show_button.size({100, 40});
+    show_button.text("Show");
+    show_button.click += [&] {
+      form2.show();
+    };
+    
+    hide_button.location({10, 110});
+    hide_button.size({100, 40});
+    hide_button.text("Hide");
+    hide_button.click += [&] {
+      form2.hide();
+    };
+    
+    cancel_close_check_box.location({10, 160});
+    cancel_close_check_box.size({100, 40});
+    cancel_close_check_box.text("cancel close");
+
+    form2.text("Close count = 0");
+    form2.form_closing += [&](object& seander, form_closing_event_args& e) {
+      e.cancel(cancel_close_check_box.checked());
+    };
+    form2.form_closed += [&] {
+      static auto close_count = 0;
+      form2.text(ustring::format("Close count = {}", ++close_count));
+    };
+  }
+  
+private:
+  button close_button;
+  button show_button;
+  button hide_button;
+  check_box cancel_close_check_box;
+  form form2;
+};
+
+int main() {
+  application::run(form1());
+}
+```
 
 ## See also
 
