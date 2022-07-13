@@ -380,7 +380,7 @@ The following sequence diagram shows the update of a control that is not nativel
 
 ![image](pictures/diagrams/uml/xtd_forms/control_update_without_parent.png)
 
-The following sequence diagram shows the update of a control that is not natively created.
+The following sequence diagram shows the update of a control that is natively created.
 
 ![image](pictures/diagrams/uml/xtd_forms/control_update_with_parent.png)
 
