@@ -20,6 +20,7 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 * [Position and layout of controls](tutorial_position_and_layout_of_controls.md) provides a tutorial on the position and layout of the controls.
 * [Form](tutorial_form.md) provides a tutorial for using xtd::forms::form.
 * [How to make thread-safe calls](tutorial_thread_safe_control_call.md) provides a tutorial to show how to make thread-safe calls to controls.
+* [Controls management](tutorial_controls_management.md) describes how to manage the controls.
 * [xtd.forms explanations](xtd_forms_explanations.md) provides explanations on how xtd.forms works.
 
 ## xtd.tunit
