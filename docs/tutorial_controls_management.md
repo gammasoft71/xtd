@@ -12,6 +12,10 @@
   
   Each control manages its own resources on the [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom. And it does not manage your objects.
 
+* A control can be created on the stack or dynamically in the heap.  If you know in advance which controls need to be created you can do it on the stack.  On the other hand, if the controls are not known in advance, you will have to create them dynamically with or without a smart pointer.  Control management is up to you, the xtd.forms library doesn't care how you create controls.  
+
+  The xtd library does not contain a smart pointer, the std has what it takes.
+
 For example a form that contains a reference to a label, the label will never be destroyed when the form is destroyed.
 The form will only delete the reference on the label and it also remove the resource handle. 
 So it is you who will have to delete the label instance. The [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library will never assume what you would like to do next with your control.
