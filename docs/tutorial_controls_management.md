@@ -4,10 +4,12 @@
 
 * Objects that inherit [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) are not copyable.
 * No object of the [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library manages controls for you. 
+  
   You are responsible for their creation and destruction. 
   The objects of the [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library only contain references to controls.
 
 * The [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library does not manage memory for you.
+  
   Each control manages its own resources on the [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom. And it does not manage your objects.
 
 For example a form that contains a reference to a label, the label will never be destroyed when the form is destroyed.
