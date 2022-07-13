@@ -106,11 +106,13 @@ Static functions contained in static classes like this :
 ```c++
 namespace xtd {
   namepsace forms {
-    class control static_ {
-    protected:
-      static intptr_t create(const create_params& create_params);
-      // ...
-    };
+    namespace native {
+      class control static_ {
+      protected:
+        static intptr_t create(const create_params& create_params);
+        // ...
+      };
+    }
   }
 }
 ```
@@ -120,10 +122,12 @@ or this :
 ```c++
 namespace xtd {
   namepsace forms {
-    class button static_ {
-    protected:
-      static void set_default_button(intptr_t control);
-    };
+    namespace native {
+      class button static_ {
+      protected:
+        static void set_default_button(intptr_t control);
+      };
+    }
   }
 }
 ```
