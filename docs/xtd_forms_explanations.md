@@ -105,7 +105,7 @@ Static functions contained in static classes like this :
 
 ```c++
 namespace xtd {
-  namepsace forms {
+  namespace forms {
     namespace native {
       class control static_ {
       protected:
@@ -121,7 +121,7 @@ or this :
 
 ```c++
 namespace xtd {
-  namepsace forms {
+  namespace forms {
     namespace native {
       class button static_ {
       protected:
