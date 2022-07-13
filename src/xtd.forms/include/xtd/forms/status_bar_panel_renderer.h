@@ -12,7 +12,6 @@
 #include "../forms_export.h"
 #include "box_renderer.h"
 #include "flat_button_appearance.h"
-#include "flat_style.h"
 #include "text_renderer.h"
 #include "visual_styles/push_button_state.h"
 
