@@ -15,13 +15,17 @@ For any control or dialog box, you can decide to use the native version in the f
  my_control.control_appearance(xtd::forms::control_appearance::system);
 ```
 
-- Buttons and labels
+- Buttons, group boxes and labels
+
+You can use [control_appearance](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a6acf5a01e6111bd58f198aafa3e3f39e) property like other controls, but [flat_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button__base.html#a67a342814aa63e8a45decd3d70e36428) property adds two additional options : flat and popup.
 
 ```c++
  my_button.flat_style(xtd::forms::flat_style::system);
 ```
 
 - Dialogs
+
+A dialog is not a control, so to avoid confusion, this property is called dialog_style.
 
 ```c++
  my_dialog.dialog_style(xtd::forms::dialog_style::system);
