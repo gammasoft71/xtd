@@ -1,4 +1,3 @@
-#define TRACE
 #include <xtd/xtd>
 
 using namespace xtd;
