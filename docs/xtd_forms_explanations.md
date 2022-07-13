@@ -587,7 +587,7 @@ To use the automatic mode you just have to set the property [xtd::forms::scrolla
 
 Layouts are containers that automatically organize controls in a specific order.
 
-The are some kinds layout panel :
+There are several types of layout panel :
 
 * [xtd::forms::fixed_layout_panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/fixed_layout_panel.h) is used to group collections of fixed aligned controls (Exactly the same as [xtd::forms::panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/panel.h)).
 * [xtd::forms::flow_layout_panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/flow_layout_panel.h) is used to group collections of fixed aligned controls.
