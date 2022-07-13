@@ -16,7 +16,7 @@ For example a form that contains a reference to a label, the label will never be
 The form will only delete the reference on the label and it also remove the resource handle. 
 So it is you who will have to delete the label instance. The [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library will never assume what you would like to do next with your control.
 
-## Copy of control
+# Copy of control
 
 Because of the [events](https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_events.md), the controls cannot be copied.
 
@@ -109,7 +109,7 @@ No more events will be called.
 So to conclude. not knowing what the user of the library will want to do. 
 The controls can NEVER be copied. And to be more precise a class that contains an event can NEVER be copied.
 
-## Create and destroy a control
+# Create and destroy a control
 
 When you create a label and add it to the main window as in the example below :
 
@@ -131,7 +131,7 @@ You must keep the instance my_label a live until the main_form is alive.
 
 Indeed, my_label will be destroyed after main_form when the main function is finished.
 
-### The following code is wrong :
+## The following code is wrong :
 
 ```c++
 #include <xtd/xtd>
@@ -154,7 +154,7 @@ int main() {
 Indeed, you create my_label in the add_label method and when the method ends, my_label is deleted. But my_form contains a reference to the child control my_label.
 So the main_form will try to handle a deleted child. THERE MAY BE MEMORY CORRUPTION.
 
-### You should have written this instead:
+## You should have written this instead:
 
 ```c++
 #include <xtd/xtd>
@@ -177,7 +177,7 @@ int main() {
 
 Always keep in mind which controls are used by which control.
 
-### Best (easy) way
+## Best (easy) way
 
 An easy way to do this is OO programming. Just create a class that contains its child controls. 
 This way as soon as the class is destroyed, its child controls will be destroyed too. 
