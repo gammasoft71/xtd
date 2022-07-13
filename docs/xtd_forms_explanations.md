@@ -660,7 +660,7 @@ Not yet implemented.
 
 ### Dialog
 
-A dialog does not have a defined type, it is a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
+A dialog has no defined type, it is a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
 
 The only difference is that a dialog cannot have a menu, a toolbar or a status bar.
 
