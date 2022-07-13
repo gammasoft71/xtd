@@ -211,7 +211,7 @@ In addition, you will respect the [RAII](https://en.wikipedia.org/wiki/Resource_
 
 # Close form
 
-Similarly, when you close a form, the child controls will never be destroyed. The form is closed, if it is a mmodal form, the result will be returned, but the controls are not destroyed. It is therefore your responsibility to destroy the child control(s).
+Similarly, when you close a form, the child controls will never be destroyed. The form is closed, if it is a modal form (dialog), the result will be returned, but the controls are not destroyed. It is therefore your responsibility to destroy the child control(s).
 So a closed form can be renewed at any time. There is no risk of memory leak or unallocated control when reopening (unless you have decided to do so).
 
 The following example illustrates how closing the form works:
