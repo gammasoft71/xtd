@@ -154,8 +154,7 @@ int main() {
 }
 ```
 
-Indeed, you create my_label in the add_label method and when the method ends, my_label is deleted. But my_form contains a reference to the child control my_label.
-So the main_form will try to handle a deleted child. THERE MAY BE MEMORY CORRUPTION.
+Indeed, you create my_label in the add_label method and when the method ends, my_label is deleted. when my_label is deleted, it remove automatically the reference on its control parent, in this case main_form. After add_label method ends, main_form does not contains my_label.
 
 ## You should have written this instead:
 
