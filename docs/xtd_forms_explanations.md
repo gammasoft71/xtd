@@ -99,7 +99,7 @@ Like the whole [xtd framework](xtd_explanations.md), **xtd.forms** provides a hi
 
 The role of this API is the same as that of the Java JVM API or the Common Language Runtime (CLR) of the .Net Framework.
 
-The structure is still the same as for **xtd.native** or **xtd.drawing.native** :
+The structure is still the same as for **xtd.core.native** or **xtd.drawing.native** :
 
 Static functions contained in static classes like this :
 
