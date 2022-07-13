@@ -154,7 +154,7 @@ int main() {
 }
 ```
 
-Indeed, you create my_label in the add_label method and when the method ends, my_label is deleted. when my_label is deleted, it remove automatically the reference on its control parent, in this case main_form. After add_label method ends, main_form does not contains my_label.
+Indeed, you create my_label in the add_label method and when the method ends, my_label is deleted. when my_label is deleted, it remove automatically the reference on its control parent, in this case main_form. After add_label method ends, main_form does not contains my_label. You can see that it has no memory corruption. It's just like you haven't done anything.
 
 ## You should have written this instead:
 
