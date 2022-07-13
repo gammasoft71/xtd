@@ -44,6 +44,16 @@ namespace xtd {
       /// @param value One of the xtd::forms::auto_size_mode values. The default is xtd::forms::auto_size_mode::grow_only.
       /// @return Current group_box.
       virtual group_box& auto_size_mode(forms::auto_size_mode value);
+      
+      using control::control_appearance;
+      control& control_appearance(forms::control_appearance value) override;
+      
+      /// @brief Gets the flat style appearance of the xtd::forms::group_box control.
+      /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
+      virtual xtd::forms::flat_style flat_style() const {return flat_style_;}
+      /// @brief Sets the flat style appearance of the xtd::forms::group_box control.
+      /// @param flat_style One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
+      virtual xtd::forms::group_box& flat_style(xtd::forms::flat_style flat_style);
       /// @}
       
     protected:
@@ -58,7 +68,6 @@ namespace xtd {
       /// }
       
     private:
-      using control::control_appearance;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::system;
     };
   }

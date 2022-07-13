@@ -56,6 +56,9 @@ namespace xtd {
         return *this;
       }
       
+      using control::control_appearance;
+      control& control_appearance(forms::control_appearance value) override;
+
       /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
       /// @return The xtd::forms::flat_button_appearance appearance.
       const xtd::forms::flat_button_appearance& flat_appearance() const {return data_->flat_appearance;}
@@ -215,9 +218,7 @@ namespace xtd {
       xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle);
       /// @endcond
       
-    private:
-      using control::control_appearance;
-      
+    private:      
       struct data {
         bool auto_ellipsis = false;
         xtd::forms::flat_button_appearance flat_appearance;

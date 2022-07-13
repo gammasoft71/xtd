@@ -71,6 +71,9 @@ namespace xtd {
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual xtd::forms::label& border_style(std::nullptr_t border_style);
       
+      using control::control_appearance;
+      control& control_appearance(forms::control_appearance value) override;
+
       /// @brief Gets the flat style appearance of the label control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
       /// @remarks When the flat_style property is set to xtd::forms::flat_style::system, any values assigned to the image_list, image, image_index, and image_align properties are ignored. In addition, the text_align property ignores any property values that are not vertical property settings. Horizontally aligned settings of the text_align property are aligned to the top of the control. For example, if you set the text_align property to content_alignment::top_center, content_alignment::middle_center, or content_alignment::bottom_center, when the flat_style property is set to xtd::forms::flat_style::system, the text in the label control will be aligned to the top and center locations within the bounds of the control.
@@ -181,8 +184,6 @@ namespace xtd {
       /// @}
       
     private:
-      using control::control_appearance;
-      
       struct data {
         bool auto_ellipsis = false;
         xtd::forms::border_sides border_sides = xtd::forms::border_sides::all;

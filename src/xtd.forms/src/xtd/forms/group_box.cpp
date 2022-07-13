@@ -22,6 +22,24 @@ group_box& group_box::auto_size_mode(forms::auto_size_mode value) {
   return *this;
 }
 
+control& group_box::control_appearance(forms::control_appearance value) {
+  control::control_appearance(value);
+  if (value == forms::control_appearance::system && flat_style_ != xtd::forms::flat_style::system)
+    flat_style(xtd::forms::flat_style::system);
+  else if (value == forms::control_appearance::standard && flat_style_ == xtd::forms::flat_style::system)
+    flat_style(xtd::forms::flat_style::standard);
+  return *this;
+}
+
+group_box& group_box::flat_style(xtd::forms::flat_style flat_style) {
+  if (flat_style_ != flat_style) {
+    flat_style_ = flat_style;
+    control_appearance(flat_style_ == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
+    recreate_handle();
+  }
+  return *this;
+}
+
 forms::create_params group_box::create_params() const {
   forms::create_params create_params = control::create_params();
   

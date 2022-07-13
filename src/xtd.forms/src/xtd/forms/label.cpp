@@ -60,11 +60,21 @@ label& label::border_style(std::nullptr_t) {
   return *this;
 }
 
+control& label::control_appearance(forms::control_appearance value) {
+  control::control_appearance(value);
+  if (value == forms::control_appearance::system && data_->flat_style != xtd::forms::flat_style::system)
+    flat_style(xtd::forms::flat_style::system);
+  else if (value == forms::control_appearance::standard && data_->flat_style == xtd::forms::flat_style::system)
+    flat_style(xtd::forms::flat_style::standard);
+  return *this;
+}
+
+
 label& label::flat_style(xtd::forms::flat_style flat_style) {
   if (data_->flat_style != flat_style) {
     data_->flat_style = flat_style;
     control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
-    post_recreate_handle();
+    recreate_handle();
   }
   return *this;
 }
