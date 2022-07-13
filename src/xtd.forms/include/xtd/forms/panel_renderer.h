@@ -7,7 +7,6 @@
 #include <xtd/drawing/graphics.h>
 #include "border_sides.h"
 #include "border_style.h"
-#include "flat_style.h"
 #include "visual_styles/form_state.h"
 #include "box_renderer.h"
 
