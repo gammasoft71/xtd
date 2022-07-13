@@ -165,7 +165,7 @@ Indeed, you create my_label in the add_label method and when the method ends, my
 ```c++
 #include <xtd/xtd>
 
-std::unique_ptr<xtd::forms::label> add_label(xtd::forms::form& f) {
+auto add_label(xtd::forms::form& f) {
   auto my_label = std::make_unique<xtd::forms::label>();
   my_label->text("Hello, World!");
 
