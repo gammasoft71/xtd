@@ -142,6 +142,19 @@ forms::create_params status_bar::create_params() const {
   return create_params;
 }
 
+void status_bar::on_control_appearance_changed(const xtd::event_args&) {
+  if (control_appearance() == forms::control_appearance::system) {
+    data_->non_system_dock = control::dock();
+    control::dock(dock_style::none);
+    data_->main_panel.visible(false);
+    data_->sizing_grip_control->visible(false);
+  } else {
+    control::dock(data_->non_system_dock);
+    data_->main_panel.visible(true);
+    data_->sizing_grip_control->visible(data_->sizing_grip && native::status_bar::sizing_grip());
+  }
+}
+
 void status_bar::on_draw_item(xtd::forms::status_bar_draw_item_event_args& e) {
 
 }
@@ -192,11 +205,7 @@ bool status_bar::is_system_status_bar() const {
 
 status_bar& status_bar::is_system_status_bar(bool value) {
   if (data_->is_system_status_bar != value) {
-    if (!value) control::dock(data_->non_system_dock);
-    else {
-      data_->non_system_dock = control::dock();
-      control::dock(dock_style::none);
-    }
+    control_appearance(value ? forms::control_appearance::system : forms::control_appearance::standard);
     data_->is_system_status_bar = value;
     post_recreate_handle();
   }
