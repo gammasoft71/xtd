@@ -178,6 +178,7 @@ namespace xtd {
       bool is_system_status_bar() const;
       status_bar& is_system_status_bar(bool value);
       
+      void on_control_appearance_changed(const xtd::event_args&) override;
       void on_item_added(size_t pos, status_bar_panel_ref item);
       void on_item_updated(size_t pos, status_bar_panel_ref item);
       void on_item_removed(size_t pos, status_bar_panel_ref item);
