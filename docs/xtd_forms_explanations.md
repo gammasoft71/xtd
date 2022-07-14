@@ -99,18 +99,20 @@ Like the whole [xtd framework](xtd_explanations.md), **xtd.forms** provides a hi
 
 The role of this API is the same as that of the Java JVM API or the Common Language Runtime (CLR) of the .Net Framework.
 
-The structure is still the same as for **xtd.native** or **xtd.drawing.native** :
+The structure is still the same as for **xtd.core.native** or **xtd.drawing.native** :
 
 Static functions contained in static classes like this :
 
 ```c++
 namespace xtd {
-  namepsace forms {
-    class control static_ {
-    protected:
-      static intptr_t create(const create_params& create_params);
-      // ...
-    };
+  namespace forms {
+    namespace native {
+      class control static_ {
+      protected:
+        static intptr_t create(const create_params& create_params);
+        // ...
+      };
+    }
   }
 }
 ```
@@ -119,11 +121,13 @@ or this :
 
 ```c++
 namespace xtd {
-  namepsace forms {
-    class button static_ {
-    protected:
-      static void set_default_button(intptr_t control);
-    };
+  namespace forms {
+    namespace native {
+      class button static_ {
+      protected:
+        static void set_default_button(intptr_t control);
+      };
+    }
   }
 }
 ```
@@ -224,7 +228,7 @@ The control class provides all properties, functions and [events](tutorial_event
 
 The controls do not have the same completeness. They could be classified in different categories like this:
 
-* Simple controls : [xtd::forms::labe](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/label.h)l, [xtd::forms::button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/button.h), [xtd::forms::text_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/text_box.h), ...
+* Simple controls : [xtd::forms::label](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/label.h), [xtd::forms::button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/button.h), [xtd::forms::text_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/text_box.h), ...
 * List controls : [xtd::forms::combo_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/combo_box.h), [xtd::forms::list_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/list_box.h), ...
 * Picker controls : [xtd::forms::color_picker](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/color_picker.h), [xtd::forms::date_time_picker](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/date_time_picjer.h), ...
 * Complex controls : [xtd::forms::list_view](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/list_view.h), [xtd::forms::tree_view](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/tree_wiew.h), [xtd::forms::rich_text_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/rich_text_box.h), ...
@@ -376,7 +380,7 @@ The following sequence diagram shows the update of a control that is not nativel
 
 ![image](pictures/diagrams/uml/xtd_forms/control_update_without_parent.png)
 
-The following sequence diagram shows the update of a control that is not natively created.
+The following sequence diagram shows the update of a control that is natively created.
 
 ![image](pictures/diagrams/uml/xtd_forms/control_update_with_parent.png)
 
@@ -531,7 +535,7 @@ If he doesn't know exactly how his control will evolve, the best is to use [xtd:
 
 ## Containers
 
-Containers are a specialization of controls. Although by line any control can be a container (see #parent-and-childs).
+Containers are a specialization of controls. Although by line any control can be a container (see [Parent and Childdren](#parent-and-childdren)).
 
 The base class of a container is [xtd::forms::container_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/container_control.h).
 
@@ -583,7 +587,7 @@ To use the automatic mode you just have to set the property [xtd::forms::scrolla
 
 Layouts are containers that automatically organize controls in a specific order.
 
-The are some kinds layout panel :
+There are several types of layout panel :
 
 * [xtd::forms::fixed_layout_panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/fixed_layout_panel.h) is used to group collections of fixed aligned controls (Exactly the same as [xtd::forms::panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/panel.h)).
 * [xtd::forms::flow_layout_panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/flow_layout_panel.h) is used to group collections of fixed aligned controls.
@@ -656,7 +660,7 @@ Not yet implemented.
 
 ### Dialog
 
-A dialog does not have a defined type, it is a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
+A dialog has no defined type, it is a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
 
 The only difference is that a dialog cannot have a menu, a toolbar or a status bar.
 
