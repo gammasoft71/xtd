@@ -925,8 +925,12 @@ forms::create_params control::create_params() const {
   
   create_params.caption(data_->text);
   create_params.class_style(CS_DBLCLKS);
-  create_params.style(WS_VISIBLE | WS_CHILD);
+
+  create_params.style(WS_CHILD);
+  if (!enabled()) create_params.style(create_params.style() | WS_DISABLED);
   if (get_state(control::state::tab_stop)) create_params.style(create_params.style() | WS_TABSTOP);
+  if (visible()) create_params.style(create_params.style() | WS_VISIBLE);
+
   if (parent().has_value()) create_params.parent(parent().value().get().handle());
   create_params.location(data_->location);
   create_params.size(data_->size.value_or(drawing::size(0, 0)));

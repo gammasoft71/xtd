@@ -363,7 +363,7 @@ namespace unit_tests {
       // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
     }
     
-    void test_method_(create_params) {
+    void test_method_(create_params_default_values) {
       class custom_control : public control {
       public:
         custom_control() = default;
@@ -387,6 +387,82 @@ namespace unit_tests {
       assert::is_zero(cp.y(), csf_);
     }
     
+    void test_method_(create_params_disabled) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        using control::create_params;
+      };
+      custom_control control;
+      control.enabled(false);
+      
+      forms::create_params cp = control.create_params();
+      assert::is_empty(cp.caption(), csf_);
+      assert::is_empty(cp.class_name(), csf_);
+      assert::are_equal(CS_DBLCLKS, cp.class_style(), csf_);
+      assert::is_zero(cp.ex_style(), csf_);
+      assert::is_zero(cp.height(), csf_);
+      assert::are_equal(drawing::point::empty, cp.location(), csf_);
+      assert::is_zero(cp.param(), csf_);
+      assert::is_zero(cp.parent(), csf_);
+      assert::are_equal(WS_VISIBLE|WS_DISABLED|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(drawing::size::empty, cp.size(), csf_);
+      assert::is_zero(cp.width(), csf_);
+      assert::is_zero(cp.x(), csf_);
+      assert::is_zero(cp.y(), csf_);
+    }
+
+    void test_method_(create_params_hide) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        using control::create_params;
+      };
+      custom_control control;
+      control.visible(false);
+
+      forms::create_params cp = control.create_params();
+      assert::is_empty(cp.caption(), csf_);
+      assert::is_empty(cp.class_name(), csf_);
+      assert::are_equal(CS_DBLCLKS, cp.class_style(), csf_);
+      assert::is_zero(cp.ex_style(), csf_);
+      assert::is_zero(cp.height(), csf_);
+      assert::are_equal(drawing::point::empty, cp.location(), csf_);
+      assert::is_zero(cp.param(), csf_);
+      assert::is_zero(cp.parent(), csf_);
+      assert::are_equal(WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(drawing::size::empty, cp.size(), csf_);
+      assert::is_zero(cp.width(), csf_);
+      assert::is_zero(cp.x(), csf_);
+      assert::is_zero(cp.y(), csf_);
+    }
+    
+    void test_method_(create_params_parent) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        using control::create_params;
+      };
+      forms::form form;
+      custom_control control;
+      control.parent(form);
+      
+      forms::create_params cp = control.create_params();
+      assert::is_empty(cp.caption(), csf_);
+      assert::is_empty(cp.class_name(), csf_);
+      assert::are_equal(CS_DBLCLKS, cp.class_style(), csf_);
+      assert::is_zero(cp.ex_style(), csf_);
+      assert::is_zero(cp.height(), csf_);
+      assert::are_equal(drawing::point::empty, cp.location(), csf_);
+      assert::is_zero(cp.param(), csf_);
+      assert::are_equal(form.handle(), cp.parent(), csf_);
+      assert::are_equal(WS_VISIBLE|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(drawing::size::empty, cp.size(), csf_);
+      assert::is_zero(cp.width(), csf_);
+      assert::is_zero(cp.x(), csf_);
+      assert::is_zero(cp.y(), csf_);
+    }
+
     void test_method_(create_params_with_some_values) {
       class custom_control : public control {
       public:
@@ -395,11 +471,13 @@ namespace unit_tests {
       };
       forms::form form;
       custom_control control;
+      control.enabled(false);
       control.location({10, 20});
       control.parent(form);
       control.size({100, 50});
       control.tab_stop(false);
       control.text("Value");
+      control.visible(false);
       
       forms::create_params cp = control.create_params();
       assert::are_equal("Value", cp.caption(), csf_);
@@ -410,7 +488,7 @@ namespace unit_tests {
       assert::are_equal(drawing::point(10, 20), cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::are_equal(form.handle(), cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE|WS_CHILD, cp.style(), csf_);
+      assert::are_equal(WS_DISABLED|WS_CHILD, cp.style(), csf_);
       assert::are_equal(drawing::size(100, 50), cp.size(), csf_);
       assert::are_equal(100, cp.width(), csf_);
       assert::are_equal(10, cp.x(), csf_);
