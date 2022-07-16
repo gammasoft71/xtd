@@ -244,10 +244,12 @@ void control::check_for_illegal_cross_thread_calls(bool value) {
 }
 
 const drawing::rectangle& control::client_rectangle() const {
+  if (!handle()) data_->client_rectangle = {point {0, 0}, client_size()};
   return data_->client_rectangle;
 }
 
 const drawing::size& control::client_size() const {
+  if (!handle()) data_->client_size = {width(), height()};
   return data_->client_size;
 }
 
@@ -342,7 +344,7 @@ drawing::size control::default_size() const {
 }
 
 drawing::rectangle control::display_rectangle() const {
-  return data_->client_rectangle;
+  return client_rectangle();
 }
 
 dock_style control::dock() const {
