@@ -1587,10 +1587,9 @@ namespace xtd {
       friend class paint_event_args;
       friend class screen;
       
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
-      
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::control_state values.
       xtd::forms::visual_styles::control_state control_state() const noexcept {return data_->control_state;}
@@ -1601,7 +1600,11 @@ namespace xtd {
       /// @par Notes for inheritors
       /// When overriding the create_params property in a derived class, use the base class's create_params property to extend the base implementation. Otherwise, you must provide all the implementation.
       virtual forms::create_params create_params() const;
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       /// @brief Sends the specified message to the default window procedure.
       /// @param message The Windows Message to process.
       virtual void def_wnd_proc(message& message);
