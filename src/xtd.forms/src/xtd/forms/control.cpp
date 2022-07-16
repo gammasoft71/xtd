@@ -12,6 +12,7 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
+#include <xtd/forms/native/class_styles.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/mouse_key.h>
@@ -923,8 +924,9 @@ forms::create_params control::create_params() const {
   forms::create_params create_params;
   
   create_params.caption(data_->text);
+  create_params.class_style(CS_DBLCLKS);
   create_params.style(WS_VISIBLE | WS_CHILD);
-  if (get_state(control::state::tab_stop)) create_params.style(WS_TABSTOP);
+  if (get_state(control::state::tab_stop)) create_params.style(create_params.style() | WS_TABSTOP);
   if (parent().has_value()) create_params.parent(parent().value().get().handle());
   create_params.location(data_->location);
   //create_params.size(size());
