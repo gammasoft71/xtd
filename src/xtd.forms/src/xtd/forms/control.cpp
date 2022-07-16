@@ -567,7 +567,7 @@ control& control::name(const xtd::ustring& name) {
 }
 
 intptr_t control::native_handle() const {
-  return native::control::native_handle(handle());
+  return handle() ? native::control::native_handle(handle()) : 0;
 }
 
 forms::padding control::padding() const {
@@ -697,7 +697,7 @@ control& control::text(const ustring& text) {
 }
 
 intptr_t control::toolkit_handle() const {
-  return native::control::toolkit_handle(handle());
+  return handle() ? native::control::toolkit_handle(handle()) : 0;
 }
 
 int32_t control::top() const {
