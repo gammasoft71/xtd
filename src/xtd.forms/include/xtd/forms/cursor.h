@@ -134,7 +134,7 @@ namespace xtd {
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const cursor& value) noexcept {return os << value.to_string();}
-      bool operator==(const cursor& value) const {return data_ == value.data_;}
+      bool operator==(const cursor& value) const {return data_ == value.data_ || (!data_->name_.empty() && data_->name_ == value.data_->name_);}
       bool operator!=(const cursor& value) const {return !operator==(value);}
       /// @endcond
       
