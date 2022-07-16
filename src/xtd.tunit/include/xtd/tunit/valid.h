@@ -1776,6 +1776,64 @@ namespace xtd {
         }
       }
       
+      /// @brief Validates that the optional is not std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1 = "Anything";
+      /// std::optional<std::string> s2;
+      /// xtd::tunit::valid::is_not_null(s1); // test ok.
+      /// xtd::tunit::valid::is_not_null(s2); // test fails.
+      /// @endcode
+      template<typename optional_t>
+      static void is_not_null(const std::optional<optional_t>& opt) {is_not_null(opt, "", xtd::diagnostics::stack_frame::empty());}
+      
+      /// @brief Validates that the optional is not std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1 = "Anything";
+      /// std::optional<std::string> s2;
+      /// xtd::tunit::valid::is_not_null(s1, csf_); // test ok.
+      /// xtd::tunit::valid::is_not_null(s2, csf_); // test fails.
+      /// @endcode
+      template<typename optional_t>
+      static void is_not_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(opt, "", stack_frame);}
+      
+      /// @brief Validates that the optional is not std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1 = "Anything";
+      /// std::optional<std::string> s2;
+      /// xtd::tunit::valid::is_not_null(s1, "User message..."); // test ok.
+      /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test fails.
+      /// @endcode
+      template<typename optional_t>
+      static void is_not_null(const std::optional<optional_t>& opt, const xtd::ustring& message) {is_not_null(opt, message, xtd::diagnostics::stack_frame::empty());}
+      
+      /// @brief Validates that the optional is not std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1 = "Anything";
+      /// std::optional<std::string> s2;
+      /// xtd::tunit::valid::is_not_null(s1, "User message...", csf_); // test ok.
+      /// xtd::tunit::valid::is_not_null(s2, "User message...", csf_); // test fails.
+      /// @endcode
+      template<typename optional_t>
+      static void is_not_null(const std::optional<optional_t>& opt, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        try {
+          assert::is_not_null(opt, message, stack_frame);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @par Examples
@@ -2113,6 +2171,64 @@ namespace xtd {
       static void is_null(const pointer_t* pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_null(pointer, message, stack_frame);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      /// @brief Validates that the optional is std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1;
+      /// std::optional<std::string> s2 = "Anything";
+      /// xtd::tunit::valid::is_null(s1); // test ok.
+      /// xtd::tunit::valid::is_null(s2); // test fails.
+      /// @endcode
+      template<typename optional_t>
+      static void is_null(const std::optional<optional_t>& opt) {is_null(opt, "", xtd::diagnostics::stack_frame::empty());}
+      
+      /// @brief Validates that the optional is std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1;
+      /// std::optional<std::string> s2 = "Anything";
+      /// xtd::tunit::valid::is_null(s1, csf_); // test ok.
+      /// xtd::tunit::valid::is_null(s2, csf_); // test fails.
+      /// @endcode
+      template<typename optional_t>
+      static void is_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame) {is_null(opt, "", stack_frame);}
+      
+      /// @brief Validates that the optional is std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// std::unique_ptr<std::string> s1;
+      /// std::unique_ptr<std::string> s2 = "Anything";
+      /// xtd::tunit::valid::is_null(s1, "User message..."); // test ok.
+      /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
+      /// @endcode
+      template<typename optional_t>
+      static void is_null(const std::optional<optional_t>& opt, const xtd::ustring& message) {is_null(opt, message, xtd::diagnostics::stack_frame::empty());}
+      
+      /// @brief Validates that the optional is std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1;
+      /// std::optional<std::string> s2 = "Anything";
+      /// xtd::tunit::valid::is_null(s1, "User message...", csf_); // test ok.
+      /// xtd::tunit::valid::is_null(s2, "User message...", csf_); // test fails.
+      /// @endcode
+      template<typename optional_t>
+      static void is_null(const std::optional<optional_t>& opt, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        try {
+          assert::is_null(opt, message, stack_frame);
         } catch (...) {
           base_assert::error();
         }

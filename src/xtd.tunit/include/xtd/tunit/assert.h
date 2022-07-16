@@ -1836,6 +1836,67 @@ namespace xtd {
           base_assert::fail("not null", "null", message, stack_frame);
       }
       
+      /// @brief Asserts that the optional is not std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1 = "Anything";
+      /// std::optional<std::string> s2;
+      /// xtd::tunit::assert::is_not_null(s1); // test ok.
+      /// xtd::tunit::assert::is_not_null(s2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename optional_t>
+      static void is_not_null(const std::optional<optional_t>& opt) {is_not_null(opt, "", xtd::diagnostics::stack_frame::empty());}
+      
+      /// @brief Asserts that the optional is not std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1 = "Anything";
+      /// std::optional<std::string> s2;
+      /// xtd::tunit::assert::is_not_null(s1, csf_); // test ok.
+      /// xtd::tunit::assert::is_not_null(s2, csf_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename optional_t>
+      static void is_not_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(opt, "", stack_frame);}
+      
+      /// @brief Asserts that the optional is not std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1 = "Anything";
+      /// std::optional<std::string> s2;
+      /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename optional_t>
+      static void is_not_null(const std::optional<optional_t>& opt, const xtd::ustring& message) {is_not_null(opt, message, xtd::diagnostics::stack_frame::empty());}
+      
+      /// @brief Asserts that the optional is not std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1 = "Anything";
+      /// std::optional<std::string> s2;
+      /// xtd::tunit::assert::is_not_null(s1, "User message...", csf_); // test ok.
+      /// xtd::tunit::assert::is_not_null(s2, "User message...", csf_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename optional_t>
+      static void is_not_null(const std::optional<optional_t>& opt, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (opt != std::nullopt)
+          succeed(message, stack_frame);
+        else
+          base_assert::fail("not null", "null", message, stack_frame);
+      }
+
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -2188,6 +2249,67 @@ namespace xtd {
           base_assert::fail("null", "not null", message, stack_frame);
       }
       
+      /// @brief Asserts that the optional is std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1;
+      /// std::optional<std::string> s2 = "Anything";
+      /// xtd::tunit::assert::is_null(s1); // test ok.
+      /// xtd::tunit::assert::is_null(s2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename optional_t>
+      static void is_null(const std::optional<optional_t>& opt) {is_null(opt, "", xtd::diagnostics::stack_frame::empty());}
+      
+      /// @brief Asserts that the optional is std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1;
+      /// std::optional<std::string> s2 = "Anything";
+      /// xtd::tunit::assert::is_null(s1, csf_); // test ok.
+      /// xtd::tunit::assert::is_null(s2, csf_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename optional_t>
+      static void is_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame) {is_null(opt, "", stack_frame);}
+      
+      /// @brief Asserts that the optional is std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1;
+      /// std::optional<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename optional_t>
+      static void is_null(const std::optional<optional_t>& opt, const xtd::ustring& message) {is_null(opt, message, xtd::diagnostics::stack_frame::empty());}
+      
+      /// @brief Asserts that the optional is std::nullopt.
+      /// @param opt The optional to check is std::nullopt.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::optional<std::string> s1;
+      /// std::optional<std::string> s2 = "Anything";
+      /// xtd::tunit::assert::is_null(s1, "User message...", csf_); // test ok.
+      /// xtd::tunit::assert::is_null(s2, "User message...", csf_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename optional_t>
+      static void is_null(const std::optional<optional_t>& opt, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (opt == std::nullopt)
+          succeed(message, stack_frame);
+        else
+          base_assert::fail("null", "not null", message, stack_frame);
+      }
+
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::assertion_error If bad assertion.
