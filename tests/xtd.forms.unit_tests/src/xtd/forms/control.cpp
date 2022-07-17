@@ -1202,5 +1202,109 @@ namespace unit_tests {
       form.back_color(color::spring_green);
       assert::is_true(control.on_parent_back_color_changed_raised, csf_);
     }
+
+    void test_method_(on_parent_cursor_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_parent_cursor_changed_raised = false;
+        
+      protected:
+        void on_parent_cursor_changed(const event_args& e) override {
+          control::on_parent_cursor_changed(e);
+          on_parent_cursor_changed_raised = true;
+        };
+      };
+      custom_control control;
+      forms::form form;
+      control.parent(form);
+      
+      assert::is_false(control.on_parent_cursor_changed_raised, csf_);
+      form.cursor(cursors::cross());
+      assert::is_true(control.on_parent_cursor_changed_raised, csf_);
+    }
+
+    void test_method_(on_parent_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_parent_changed_raised = false;
+        
+      protected:
+        void on_parent_changed(const event_args& e) override {
+          control::on_parent_changed(e);
+          on_parent_changed_raised = true;
+        };
+      };
+      custom_control control;
+      forms::form form;
+      
+      assert::is_false(control.on_parent_changed_raised, csf_);
+      control.parent(form);
+      assert::is_true(control.on_parent_changed_raised, csf_);
+    }
+
+    void test_method_(on_parent_enabled_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_parent_enabled_changed_raised = false;
+        
+      protected:
+        void on_parent_enabled_changed(const event_args& e) override {
+          control::on_parent_enabled_changed(e);
+          on_parent_enabled_changed_raised = true;
+        };
+      };
+      custom_control control;
+      forms::form form;
+      control.parent(form);
+
+      assert::is_false(control.on_parent_enabled_changed_raised, csf_);
+      form.enabled(false);
+      assert::is_true(control.on_parent_enabled_changed_raised, csf_);
+    }
+    
+    void test_method_(on_parent_fore_color_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_parent_fore_color_changed_raised = false;
+        
+      protected:
+        void on_parent_fore_color_changed(const event_args& e) override {
+          control::on_parent_fore_color_changed(e);
+          on_parent_fore_color_changed_raised = true;
+        };
+      };
+      custom_control control;
+      forms::form form;
+      control.parent(form);
+
+      assert::is_false(control.on_parent_fore_color_changed_raised, csf_);
+      form.fore_color(color::spring_green);
+      assert::is_true(control.on_parent_fore_color_changed_raised, csf_);
+    }
+    
+    void test_method_(on_parent_font_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_parent_font_changed_raised = false;
+        
+      protected:
+        void on_parent_font_changed(const event_args& e) override {
+          control::on_parent_font_changed(e);
+          on_parent_font_changed_raised = true;
+        };
+      };
+      custom_control control;
+      forms::form form;
+      control.parent(form);
+
+      assert::is_false(control.on_parent_font_changed_raised, csf_);
+      form.font(system_fonts::tool_font());
+      assert::is_true(control.on_parent_font_changed_raised, csf_);
+    }
   };
 }
