@@ -839,6 +839,7 @@ namespace unit_tests {
     void test_method_(set_background_image_layout_with_parent) {
       forms::form form;
       control control;
+      control.parent(form);
       control.background_image_layout(image_layout::zoom);
       assert::are_equal(image_layout::zoom, control.background_image_layout(), csf_);
     }
@@ -847,13 +848,50 @@ namespace unit_tests {
       control control;
       control.client_size({100, 50});
       assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
+      assert::are_equal(drawing::rectangle(0, 0, 100, 50), control.client_rectangle(), csf_);
+      assert::are_equal(drawing::rectangle(0, 0, 100, 50), control.display_rectangle(), csf_);
     }
     
     void test_method_(set_client_size_with_parent) {
       forms::form form;
       control control;
+      control.parent(form);
       control.client_size({100, 50});
       assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
+      assert::are_equal(drawing::rectangle(0, 0, 100, 50), control.client_rectangle(), csf_);
+      assert::are_equal(drawing::rectangle(0, 0, 100, 50), control.display_rectangle(), csf_);
+    }
+    
+    void test_method_(set_context_menu_without_parent) {
+      control control;
+      menu_item context_menu_item1("Item1", [&] {});
+      forms::context_menu context_menu1({context_menu_item1});
+      control.context_menu(context_menu1);
+      assert::are_same(context_menu1, control.context_menu().value().get(), csf_);
+    }
+    
+    void test_method_(set_context_menu_with_parent) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      menu_item context_menu_item1("Item1", [&] {});
+      forms::context_menu context_menu1({context_menu_item1});
+      control.context_menu(context_menu1);
+      assert::are_same(context_menu1, control.context_menu().value().get(), csf_);
+    }
+    
+    void test_method_(set_control_appearance_without_parent) {
+      control control;
+      control.control_appearance(forms::control_appearance::system);
+      assert::are_equal(forms::control_appearance::system, control.control_appearance(), csf_);
+    }
+    
+    void test_method_(set_control_appearancewith_parent) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      control.control_appearance(forms::control_appearance::system);
+      assert::are_equal(forms::control_appearance::system, control.control_appearance(), csf_);
     }
 
     void test_method_(on_auto_size_changed) {
