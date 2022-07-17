@@ -504,7 +504,7 @@ const drawing::size& control::maximum_client_size() const {
 control& control::maximum_client_size(const drawing::size& size) {
   if (data_->maximum_client_size != size) {
     data_->maximum_client_size = size;
-    client_size({this->size().width() > maximum_client_size().width() ? data_->maximum_client_size.width() : client_size().width(), this->size().height() > maximum_client_size().height() ? maximum_client_size().height() : client_size().height()});
+    client_size({this->client_size().width() > maximum_client_size().width() ? data_->maximum_client_size.width() : client_size().width(), this->client_size().height() > maximum_client_size().height() ? maximum_client_size().height() : client_size().height()});
     if (handle()) native::control::maximum_client_size(handle(), data_->maximum_client_size);
   }
   return *this;
@@ -530,7 +530,7 @@ const drawing::size& control::minimum_client_size() const {
 control& control::minimum_client_size(const drawing::size& size) {
   if (data_->minimum_client_size != size) {
     data_->minimum_client_size = size;
-    client_size({this->size().width() < minimum_client_size().width() ? minimum_client_size().width() : client_size().width(), this->size().height() < minimum_client_size().height() ? minimum_client_size().height() : client_size().height()});
+    client_size({this->client_size().width() < minimum_client_size().width() ? minimum_client_size().width() : client_size().width(), this->client_size().height() < minimum_client_size().height() ? minimum_client_size().height() : client_size().height()});
     if (handle()) native::control::minimum_client_size(handle(), data_->minimum_client_size);
   }
   return *this;
