@@ -1203,6 +1203,40 @@ namespace unit_tests {
       assert::are_same(control, control2.parent().value().get(), csf_);
       assert::are_same(control, control3.parent().value().get(), csf_);
     }
+    
+    void test_method_(set_region_without_parent) {
+      forms::control control;
+      drawing::region region1;
+      control.region(region1);
+      assert::are_equal(region1, control.region(), csf_);
+    }
+    
+    void test_method_(set_region_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      drawing::region region1;
+      control.region(region1);
+      assert::are_equal(region1, control.region(), csf_);
+    }
+    
+    void test_method_(set_size_without_parent) {
+      forms::control control;
+      control.size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
+      assert::are_equal(100, control.width(), csf_);
+      assert::are_equal(50, control.height(), csf_);
+    }
+    
+    void test_method_(set_size_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
+      assert::are_equal(100, control.width(), csf_);
+      assert::are_equal(50, control.height(), csf_);
+    }
 
     void test_method_(on_auto_size_changed) {
       class custom_control : public control {
