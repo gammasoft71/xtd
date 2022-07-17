@@ -829,6 +829,32 @@ namespace unit_tests {
       control.background_image(img);
       assert::are_equal(img, control.background_image(), csf_);
     }
+    
+    void test_method_(set_background_image_layout_without_parent) {
+      control control;
+      control.background_image_layout(image_layout::zoom);
+      assert::are_equal(image_layout::zoom, control.background_image_layout(), csf_);
+    }
+    
+    void test_method_(set_background_image_layout_with_parent) {
+      forms::form form;
+      control control;
+      control.background_image_layout(image_layout::zoom);
+      assert::are_equal(image_layout::zoom, control.background_image_layout(), csf_);
+    }
+    
+    void test_method_(set_client_size_without_parent) {
+      control control;
+      control.client_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
+    }
+    
+    void test_method_(set_client_size_with_parent) {
+      forms::form form;
+      control control;
+      control.client_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
+    }
 
     void test_method_(on_auto_size_changed) {
       class custom_control : public control {
