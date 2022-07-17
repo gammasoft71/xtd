@@ -250,7 +250,8 @@ const drawing::rectangle& control::client_rectangle() const {
 }
 
 const drawing::size& control::client_size() const {
-  if (!handle()) data_->client_size = {width(), height()};
+  if (!handle() && data_->client_size.width() == 0 && width() != 0) data_->client_size = {width(), data_->client_size.height()};
+  if (!handle() && data_->client_size.height() == 0 && height() != 0) data_->client_size = {data_->client_size.width(), height()};
   return data_->client_size;
 }
 
