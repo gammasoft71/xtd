@@ -362,7 +362,84 @@ namespace unit_tests {
       // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
       // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
     }
+ 
+    void test_method_(create_control_without_parent) {
+      control control;
+      assert::throws<argument_exception>([&] {control.create_control();}, csf_);
+    }
     
+    void test_method_(create_control_set_parent) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      assert::are_equal(1U, form.controls().size(), csf_);
+      assert::are_equal(control, form.controls()[0].get(), csf_);
+      assert::are_equal(anchor_styles::left | anchor_styles::top, control.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, control.auto_scroll_point(), csf_);
+      assert::is_false(control.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), control.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, control.background_image(), csf_);
+      assert::are_equal(image_layout::tile, control.background_image_layout(), csf_);
+      assert::is_zero(control.bottom(), csf_);
+      assert::are_equal(drawing::rectangle::empty, control.bounds(), csf_);
+      assert::is_false(control.can_focus(), csf_);
+      assert::is_true(control.can_raise_events(), csf_);
+      assert::is_true(control.can_select(), csf_);
+      assert::are_equal(drawing::rectangle::empty, control.client_rectangle(), csf_);
+      assert::are_equal(drawing::size::empty, control.client_size(), csf_);
+      assert::are_equal("Gammasoft", control.company_name(), csf_);
+      assert::is_null(control.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::standard, control.control_appearance(), csf_);
+      assert::is_empty(control.controls(), csf_);
+      assert::is_true(control.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), control.cursor(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), control.default_back_color(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), control.default_cursor(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), control.default_font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), control.default_fore_color(), csf_);
+      assert::are_equal(drawing::size::empty, control.default_size(), csf_);
+      assert::are_equal(drawing::rectangle::empty, control.display_rectangle(), csf_);
+      assert::are_equal(forms::dock_style::none, control.dock(), csf_);
+      assert::is_false(control.double_buffered(), csf_);
+      assert::is_true(control.enabled(), csf_);
+      assert::is_false(control.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), control.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), control.fore_color(), csf_);
+      assert::is_not_zero(control.handle(), csf_);
+      assert::is_zero(control.height(), csf_);
+      assert::is_false(control.invoke_required(), csf_);
+      assert::is_true(control.is_handle_created(), csf_);
+      assert::is_zero(control.left(), csf_);
+      assert::are_equal(drawing::point::empty, control.location(), csf_);
+      assert::are_equal(forms::padding(3), control.margin(), csf_);
+      assert::are_equal(drawing::size::empty, control.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, control.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, control.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, control.minimum_size(), csf_);
+      assert::is_not_zero(control.native_handle(), csf_);
+      assert::is_empty(control.name(), csf_);
+      assert::are_equal(forms::padding(0), control.padding(), csf_);
+      assert::are_equal(form, control.parent().value().get(), csf_);
+      assert::are_equal("xtd", control.product_name(), csf_);
+      assert::is_not_zero(control.region().handle(), csf_);
+      assert::is_zero(control.right(), csf_);
+      assert::are_equal(drawing::size::empty, control.size(), csf_);
+      assert::is_empty(control.style_sheet().theme().name(), csf_);
+      assert::is_true(control.tab_stop(), csf_);
+      assert::is_false(control.tag().has_value(), csf_);
+      assert::is_empty(control.text(), csf_);
+      assert::is_not_zero(control.toolkit_handle(), csf_);
+      assert::is_zero(control.top(), csf_);
+      assert::are_equal(form, control.top_level_control().value().get(), csf_);
+      assert::is_true(control.visible(), csf_);
+      assert::is_zero(control.width(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+    }
+
     void test_method_(create_params_default_values) {
       class custom_control : public control {
       public:
@@ -594,6 +671,88 @@ namespace unit_tests {
       assert::are_equal(10, cp.x(), csf_);
       assert::are_equal(20, cp.y(), csf_);
     }
+    
+    void test_method_(set_parent_with_controls_push_back) {
+      forms::form form;
+      control control;
+      form.controls().push_back(control);
+      assert::are_equal(1U, form.controls().size(), csf_);
+      assert::are_equal(control, form.controls()[0].get(), csf_);
+      assert::is_not_zero(control.handle(), csf_);
+    }
+    
+    void test_method_(set_parent_with_control_set_parent) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      assert::are_equal(1U, form.controls().size(), csf_);
+      assert::are_equal(control, form.controls()[0].get(), csf_);
+      assert::is_not_zero(control.handle(), csf_);
+    }
+
+    void test_method_(ambient_property_back_color) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      assert::are_equal(form.back_color(), control.back_color(), csf_);
+    }
+    
+    void test_method_(ambient_property_cursor) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      assert::are_equal(form.cursor(), control.cursor(), csf_);
+    }
+    
+    void test_method_(ambient_property_font) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      assert::are_equal(form.font(), control.font(), csf_);
+    }
+
+    void test_method_(ambient_property_fore_color) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      assert::are_equal(form.fore_color(), control.fore_color(), csf_);
+    }
+
+    void test_method_(ambient_property_change_parent_back_color) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      form.back_color(color::spring_green);
+      assert::are_equal(color::spring_green, form.back_color(), csf_);
+      assert::are_equal(form.back_color(), control.back_color(), csf_);
+    }
+
+    void test_method_(ambient_property_change_parent_cursor) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      form.cursor(cursors::cross());
+      assert::are_equal(cursors::cross(), form.cursor(), csf_);
+      assert::are_equal(form.cursor(), control.cursor(), csf_);
+    }
+    
+    void test_method_(ambient_property_change_parent_font) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      form.font(system_fonts::tool_font());
+      assert::are_equal(system_fonts::tool_font(), form.font(), csf_);
+      assert::are_equal(form.font(), control.font(), csf_);
+    }
+    
+    void test_method_(ambient_property_change_parent_fore_color) {
+      forms::form form;
+      control control;
+      control.parent(form);
+      form.fore_color(color::spring_green);
+      assert::are_equal(color::spring_green, form.fore_color(), csf_);
+      assert::are_equal(form.fore_color(), control.fore_color(), csf_);
+    }
 
     void test_method_(set_anchor_without_parent) {
       control control;
@@ -669,136 +828,6 @@ namespace unit_tests {
       image img = system_images::from_name("xtd");
       control.background_image(img);
       assert::are_equal(img, control.background_image(), csf_);
-    }
-
-    void test_method_(create_control_without_parent) {
-      control control;
-      assert::throws<argument_exception>([&] {control.create_control();}, csf_);
-    }
-    
-    void test_method_(create_control_set_parent) {
-      forms::form form;
-      control control;
-      control.parent(form);
-      assert::are_equal(1U, form.controls().size(), csf_);
-      assert::are_equal(control, form.controls()[0].get(), csf_);
-      assert::are_equal(anchor_styles::left | anchor_styles::top, control.anchor(), csf_);
-      assert::are_equal(drawing::point::empty, control.auto_scroll_point(), csf_);
-      assert::is_false(control.auto_size(), csf_);
-      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), control.back_color(), csf_);
-      assert::are_equal(drawing::image::empty, control.background_image(), csf_);
-      assert::are_equal(image_layout::tile, control.background_image_layout(), csf_);
-      assert::is_zero(control.bottom(), csf_);
-      assert::are_equal(drawing::rectangle::empty, control.bounds(), csf_);
-      assert::is_false(control.can_focus(), csf_);
-      assert::is_true(control.can_raise_events(), csf_);
-      assert::is_true(control.can_select(), csf_);
-      assert::are_equal(drawing::rectangle::empty, control.client_rectangle(), csf_);
-      assert::are_equal(drawing::size::empty, control.client_size(), csf_);
-      assert::are_equal("Gammasoft", control.company_name(), csf_);
-      assert::is_null(control.context_menu(), csf_);
-      assert::are_equal(forms::control_appearance::standard, control.control_appearance(), csf_);
-      assert::is_empty(control.controls(), csf_);
-      assert::is_true(control.created(), csf_);
-      assert::are_equal(forms::cursors::default_cursor(), control.cursor(), csf_);
-      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), control.default_back_color(), csf_);
-      assert::are_equal(forms::cursors::default_cursor(), control.default_cursor(), csf_);
-      assert::are_equal(drawing::system_fonts::default_font(), control.default_font(), csf_);
-      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), control.default_fore_color(), csf_);
-      assert::are_equal(drawing::size::empty, control.default_size(), csf_);
-      assert::are_equal(drawing::rectangle::empty, control.display_rectangle(), csf_);
-      assert::are_equal(forms::dock_style::none, control.dock(), csf_);
-      assert::is_false(control.double_buffered(), csf_);
-      assert::is_true(control.enabled(), csf_);
-      assert::is_false(control.focused(), csf_);
-      assert::are_equal(drawing::system_fonts::default_font(), control.font(), csf_);
-      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), control.fore_color(), csf_);
-      assert::is_not_zero(control.handle(), csf_);
-      assert::is_zero(control.height(), csf_);
-      assert::is_false(control.invoke_required(), csf_);
-      assert::is_true(control.is_handle_created(), csf_);
-      assert::is_zero(control.left(), csf_);
-      assert::are_equal(drawing::point::empty, control.location(), csf_);
-      assert::are_equal(forms::padding(3), control.margin(), csf_);
-      assert::are_equal(drawing::size::empty, control.maximum_client_size(), csf_);
-      assert::are_equal(drawing::size::empty, control.maximum_size(), csf_);
-      assert::are_equal(drawing::size::empty, control.minimum_client_size(), csf_);
-      assert::are_equal(drawing::size::empty, control.minimum_size(), csf_);
-      assert::is_not_zero(control.native_handle(), csf_);
-      assert::is_empty(control.name(), csf_);
-      assert::are_equal(forms::padding(0), control.padding(), csf_);
-      assert::are_equal(form, control.parent().value().get(), csf_);
-      assert::are_equal("xtd", control.product_name(), csf_);
-      assert::is_not_zero(control.region().handle(), csf_);
-      assert::is_zero(control.right(), csf_);
-      assert::are_equal(drawing::size::empty, control.size(), csf_);
-      assert::is_empty(control.style_sheet().theme().name(), csf_);
-      assert::is_true(control.tab_stop(), csf_);
-      assert::is_false(control.tag().has_value(), csf_);
-      assert::is_empty(control.text(), csf_);
-      assert::is_not_zero(control.toolkit_handle(), csf_);
-      assert::is_zero(control.top(), csf_);
-      assert::are_equal(form, control.top_level_control().value().get(), csf_);
-      assert::is_true(control.visible(), csf_);
-      assert::is_zero(control.width(), csf_);
-      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
-      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
-      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
-      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
-      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
-    }
-    
-    void test_method_(create_control_and_parent_controls_push_back) {
-      forms::form form;
-      control control;
-      form.controls().push_back(control);
-      assert::are_equal(1U, form.controls().size(), csf_);
-      assert::are_equal(control, form.controls()[0].get(), csf_);
-   }
-    
-    void test_method_(create_control_with_parent_back_color) {
-      forms::form form;
-      control control;
-      control.parent(form);
-      assert::are_equal(form.back_color(), control.back_color(), csf_);
-    }
-    
-    void test_method_(create_control_with_parent_fore_color) {
-      forms::form form;
-      control control;
-      control.parent(form);
-      assert::are_equal(form.fore_color(), control.fore_color(), csf_);
-    }
-    
-    void test_method_(create_control_with_parent_handle) {
-      forms::form form;
-      control control;
-      control.parent(form);
-      assert::is_not_zero(control.handle(), csf_);
-    }
-    
-    void test_method_(create_control_with_parent_parent) {
-      forms::form form;
-      control control;
-      control.parent(form);
-      assert::is_true(control.parent().has_value(), csf_);
-      assert::are_equal(form, control.parent().value().get(), csf_);
-    }
-    
-    void test_method_(change_parent_back_color) {
-      forms::form form;
-      control control;
-      control.parent(form);
-      form.back_color(color::spring_green);
-      assert::are_equal(form.back_color(), control.back_color(), csf_);
-    }
-    
-    void test_method_(change_parent_fore_color) {
-      forms::form form;
-      control control;
-      control.parent(form);
-      form.fore_color(color::spring_green);
-      assert::are_equal(form.fore_color(), control.fore_color(), csf_);
     }
   };
 }
