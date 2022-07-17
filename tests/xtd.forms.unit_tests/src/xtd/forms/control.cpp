@@ -844,6 +844,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.auto_size(false);
       assert::is_false(control.on_auto_size_changed_raised, csf_);
       control.auto_size(true);
       assert::is_true(control.on_auto_size_changed_raised, csf_);
@@ -863,6 +864,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.back_color(nullptr);
       assert::is_false(control.on_back_color_changed_raised, csf_);
       control.back_color(color::spring_green);
       assert::is_true(control.on_back_color_changed_raised, csf_);
@@ -882,6 +884,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.background_image(image::empty);
       assert::is_false(control.on_background_image_changed_raised, csf_);
       control.background_image(system_images::from_name("xtd"));
       assert::is_true(control.on_background_image_changed_raised, csf_);
@@ -901,6 +904,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.background_image_layout(image_layout::tile);
       assert::is_false(control.on_background_image_layout_changed_raised, csf_);
       control.background_image_layout(image_layout::zoom);
       assert::is_true(control.on_background_image_layout_changed_raised, csf_);
@@ -920,6 +924,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.control_appearance(forms::control_appearance::standard);
       assert::is_false(control.on_control_appearance_changed_raised, csf_);
       control.control_appearance(forms::control_appearance::system);
       assert::is_true(control.on_control_appearance_changed_raised, csf_);
@@ -939,6 +944,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      //control.client_size({0, 0}); // Do not activate this line because if client_size is not activated, it will be activated even for an identical value.
       assert::is_false(control.on_client_size_changed_raised, csf_);
       control.client_size({100, 50});
       assert::is_true(control.on_client_size_changed_raised, csf_);
@@ -1000,6 +1006,7 @@ namespace unit_tests {
       custom_control control;
       
       forms::form form;
+      control.parent(nullptr);
       assert::is_false(control.on_create_control_raised, csf_);
       control.parent(form);
       assert::is_true(control.on_create_control_raised, csf_);
@@ -1019,6 +1026,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.cursor(nullptr);
       assert::is_false(control.on_cursor_changed_raised, csf_);
       control.cursor(cursors::cross());
       assert::is_true(control.on_cursor_changed_raised, csf_);
@@ -1038,6 +1046,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.dock(dock_style::none);
       assert::is_false(control.on_dock_changed_raised, csf_);
       control.dock(dock_style::fill);
       assert::is_true(control.on_dock_changed_raised, csf_);
@@ -1057,6 +1066,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.enabled(true);
       assert::is_false(control.on_enabled_changed_raised, csf_);
       control.enabled(false);
       assert::is_true(control.on_enabled_changed_raised, csf_);
@@ -1076,6 +1086,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.fore_color(nullptr);
       assert::is_false(control.on_fore_color_changed_raised, csf_);
       control.fore_color(color::spring_green);
       assert::is_true(control.on_fore_color_changed_raised, csf_);
@@ -1095,6 +1106,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.font(nullptr);
       assert::is_false(control.on_font_changed_raised, csf_);
       control.font(system_fonts::tool_font());
       assert::is_true(control.on_font_changed_raised, csf_);
@@ -1177,6 +1189,7 @@ namespace unit_tests {
       };
       custom_control control;
       
+      control.location({0, 0});
       assert::is_false(control.on_location_changed_raised, csf_);
       control.location({10, 20});
       assert::is_true(control.on_location_changed_raised, csf_);
@@ -1198,6 +1211,7 @@ namespace unit_tests {
       forms::form form;
       control.parent(form);
       
+      form.back_color(nullptr);
       assert::is_false(control.on_parent_back_color_changed_raised, csf_);
       form.back_color(color::spring_green);
       assert::is_true(control.on_parent_back_color_changed_raised, csf_);
@@ -1219,6 +1233,7 @@ namespace unit_tests {
       forms::form form;
       control.parent(form);
       
+      form.cursor(nullptr);
       assert::is_false(control.on_parent_cursor_changed_raised, csf_);
       form.cursor(cursors::cross());
       assert::is_true(control.on_parent_cursor_changed_raised, csf_);
@@ -1239,6 +1254,7 @@ namespace unit_tests {
       custom_control control;
       forms::form form;
       
+      control.parent(nullptr);
       assert::is_false(control.on_parent_changed_raised, csf_);
       control.parent(form);
       assert::is_true(control.on_parent_changed_raised, csf_);
@@ -1260,6 +1276,7 @@ namespace unit_tests {
       forms::form form;
       control.parent(form);
 
+      form.enabled(true);
       assert::is_false(control.on_parent_enabled_changed_raised, csf_);
       form.enabled(false);
       assert::is_true(control.on_parent_enabled_changed_raised, csf_);
@@ -1281,6 +1298,7 @@ namespace unit_tests {
       forms::form form;
       control.parent(form);
 
+      form.fore_color(nullptr);
       assert::is_false(control.on_parent_fore_color_changed_raised, csf_);
       form.fore_color(color::spring_green);
       assert::is_true(control.on_parent_fore_color_changed_raised, csf_);
@@ -1302,9 +1320,130 @@ namespace unit_tests {
       forms::form form;
       control.parent(form);
 
+      form.font(nullptr);
       assert::is_false(control.on_parent_font_changed_raised, csf_);
       form.font(system_fonts::tool_font());
       assert::is_true(control.on_parent_font_changed_raised, csf_);
+    }
+
+    void test_method_(on_resize) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_resize_raised = false;
+        
+      protected:
+        void on_resize(const event_args& e) override {
+          control::on_resize(e);
+          on_resize_raised = true;
+        };
+      };
+      custom_control control;
+      
+      control.size({0, 0});
+      assert::is_false(control.on_resize_raised, csf_);
+      control.size({100, 50});
+      assert::is_true(control.on_resize_raised, csf_);
+    }
+
+    void test_method_(on_region_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_region_changed_raised = false;
+        
+      protected:
+        void on_region_changed(const event_args& e) override {
+          control::on_region_changed(e);
+          on_region_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      control.region(control.region());
+      assert::is_false(control.on_region_changed_raised, csf_);
+      control.region(xtd::drawing::region());
+      assert::is_true(control.on_region_changed_raised, csf_);
+    }
+
+    void test_method_(on_size_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_size_changed_raised = false;
+        
+      protected:
+        void on_size_changed(const event_args& e) override {
+          control::on_size_changed(e);
+          on_size_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      control.size({0, 0});
+      assert::is_false(control.on_size_changed_raised, csf_);
+      control.size({100, 50});
+      assert::is_true(control.on_size_changed_raised, csf_);
+    }
+
+    void test_method_(on_tab_stop_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_tab_stop_changed_raised = false;
+        
+      protected:
+        void on_tab_stop_changed(const event_args& e) override {
+          control::on_tab_stop_changed(e);
+          on_tab_stop_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      control.tab_stop(true);
+      assert::is_false(control.on_tab_stop_changed_raised, csf_);
+      control.tab_stop(false);
+      assert::is_true(control.on_tab_stop_changed_raised, csf_);
+    }
+
+    void test_method_(on_text_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_text_changed_raised = false;
+        
+      protected:
+        void on_text_changed(const event_args& e) override {
+          control::on_text_changed(e);
+          on_text_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      control.text("");
+      assert::is_false(control.on_text_changed_raised, csf_);
+      control.text("Value");
+      assert::is_true(control.on_text_changed_raised, csf_);
+    }
+
+    void test_method_(on_visible_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_visible_changed_raised = false;
+        
+      protected:
+        void on_visible_changed(const event_args& e) override {
+          control::on_visible_changed(e);
+          on_visible_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      control.visible(true);
+      assert::is_false(control.on_visible_changed_raised, csf_);
+      control.visible(false);
+      assert::is_true(control.on_visible_changed_raised, csf_);
     }
   };
 }
