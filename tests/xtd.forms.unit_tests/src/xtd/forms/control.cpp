@@ -887,12 +887,187 @@ namespace unit_tests {
       assert::is_true(control.on_background_image_changed_raised, csf_);
     }
 
+    void test_method_(on_background_image_layout_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_background_image_layout_changed_raised = false;
+        
+      protected:
+        void on_background_image_layout_changed(const event_args& e) override {
+          control::on_background_image_layout_changed(e);
+          on_background_image_layout_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_background_image_layout_changed_raised, csf_);
+      control.background_image_layout(image_layout::zoom);
+      assert::is_true(control.on_background_image_layout_changed_raised, csf_);
+    }
+
+    void test_method_(on_control_appearance_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_control_appearance_changed_raised = false;
+        
+      protected:
+        void on_control_appearance_changed(const event_args& e) override {
+          control::on_control_appearance_changed(e);
+          on_control_appearance_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_control_appearance_changed_raised, csf_);
+      control.control_appearance(forms::control_appearance::system);
+      assert::is_true(control.on_control_appearance_changed_raised, csf_);
+    }
+
+    void test_method_(on_client_size_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_client_size_changed_raised = false;
+        
+      protected:
+        void on_client_size_changed(const event_args& e) override {
+          control::on_client_size_changed(e);
+          on_client_size_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_client_size_changed_raised, csf_);
+      control.client_size({100, 50});
+      assert::is_true(control.on_client_size_changed_raised, csf_);
+    }
+
+    void test_method_(on_control_added) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_control_added_raised = false;
+        
+      protected:
+        void on_control_added(const control_event_args& e) override {
+          control::on_control_added(e);
+          on_control_added_raised = true;
+        };
+      };
+      custom_control control;
+      
+      forms::control child_control;
+      assert::is_false(control.on_control_added_raised, csf_);
+      control.controls().push_back(child_control);
+      assert::is_true(control.on_control_added_raised, csf_);
+    }
+
+    void test_method_(on_control_removed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_control_removed_raised = false;
+        
+      protected:
+        void on_control_removed(const control_event_args& e) override {
+          control::on_control_removed(e);
+          on_control_removed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      forms::control child_control;
+      control.controls().push_back(child_control);
+      assert::is_false(control.on_control_removed_raised, csf_);
+      control.controls().erase_at(0);
+      assert::is_true(control.on_control_removed_raised, csf_);
+    }
+
+    void test_method_(on_create_control) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_create_control_raised = false;
+        
+      protected:
+        void on_create_control() override {
+          control::on_create_control();
+          on_create_control_raised = true;
+        };
+      };
+      custom_control control;
+      
+      forms::form form;
+      assert::is_false(control.on_create_control_raised, csf_);
+      control.parent(form);
+      assert::is_true(control.on_create_control_raised, csf_);
+    }
+
+    void test_method_(on_cursor_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_cursor_changed_raised = false;
+        
+      protected:
+        void on_cursor_changed(const event_args& e) override {
+          control::on_cursor_changed(e);
+          on_cursor_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_cursor_changed_raised, csf_);
+      control.cursor(cursors::cross());
+      assert::is_true(control.on_cursor_changed_raised, csf_);
+    }
+
+    void test_method_(on_dock_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_dock_changed_raised = false;
+        
+      protected:
+        void on_dock_changed(const event_args& e) override {
+          control::on_dock_changed(e);
+          on_dock_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_dock_changed_raised, csf_);
+      control.dock(dock_style::fill);
+      assert::is_true(control.on_dock_changed_raised, csf_);
+    }
+
+    void test_method_(on_enabled_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_enabled_changed_raised = false;
+        
+      protected:
+        void on_enabled_changed(const event_args& e) override {
+          control::on_enabled_changed(e);
+          on_enabled_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_enabled_changed_raised, csf_);
+      control.enabled(false);
+      assert::is_true(control.on_enabled_changed_raised, csf_);
+    }
+
     void test_method_(on_fore_color_changed) {
       class custom_control : public control {
       public:
         custom_control() = default;
         bool on_fore_color_changed_raised = false;
-      
+        
       protected:
         void on_fore_color_changed(const event_args& e) override {
           control::on_fore_color_changed(e);
@@ -904,6 +1079,128 @@ namespace unit_tests {
       assert::is_false(control.on_fore_color_changed_raised, csf_);
       control.fore_color(color::spring_green);
       assert::is_true(control.on_fore_color_changed_raised, csf_);
+    }
+
+    void test_method_(on_font_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_font_changed_raised = false;
+        
+      protected:
+        void on_font_changed(const event_args& e) override {
+          control::on_font_changed(e);
+          on_font_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_font_changed_raised, csf_);
+      control.font(system_fonts::tool_font());
+      assert::is_true(control.on_font_changed_raised, csf_);
+    }
+
+    void test_method_(on_handle_created) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_handle_created_raised = false;
+        
+      protected:
+        void on_handle_created(const event_args& e) override {
+          control::on_handle_created(e);
+          on_handle_created_raised = true;
+        };
+      };
+      custom_control control;
+      
+      forms::form form;
+      assert::is_false(control.on_handle_created_raised, csf_);
+      control.parent(form);
+      assert::is_true(control.on_handle_created_raised, csf_);
+    }
+
+    void test_method_(on_handle_destroyed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_handle_destroyed_raised = false;
+        
+      protected:
+        void on_handle_destroyed(const event_args& e) override {
+          control::on_handle_destroyed(e);
+          on_handle_destroyed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      forms::form form;
+      control.parent(form);
+      assert::is_false(control.on_handle_destroyed_raised, csf_);
+      control.parent(nullptr);
+      assert::is_true(control.on_handle_destroyed_raised, csf_);
+    }
+
+    void test_method_(on_layout) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_layout_raised = false;
+        
+      protected:
+        void on_layout(const event_args& e) override {
+          control::on_layout(e);
+          on_layout_raised = true;
+        };
+      };
+      custom_control control;
+      
+      forms::form form;
+      control.parent(form);
+      control.on_layout_raised = false;
+      assert::is_false(control.on_layout_raised, csf_);
+      control.perform_layout();
+      assert::is_true(control.on_layout_raised, csf_);
+    }
+
+    void test_method_(on_location_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_location_changed_raised = false;
+        
+      protected:
+        void on_location_changed(const event_args& e) override {
+          control::on_location_changed(e);
+          on_location_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_location_changed_raised, csf_);
+      control.location({10, 20});
+      assert::is_true(control.on_location_changed_raised, csf_);
+    }
+
+    void test_method_(on_parent_back_color_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_parent_back_color_changed_raised = false;
+        
+      protected:
+        void on_parent_back_color_changed(const event_args& e) override {
+          control::on_parent_back_color_changed(e);
+          on_parent_back_color_changed_raised = true;
+        };
+      };
+      custom_control control;
+      forms::form form;
+      control.parent(form);
+      
+      assert::is_false(control.on_parent_back_color_changed_raised, csf_);
+      form.back_color(color::spring_green);
+      assert::is_true(control.on_parent_back_color_changed_raised, csf_);
     }
   };
 }
