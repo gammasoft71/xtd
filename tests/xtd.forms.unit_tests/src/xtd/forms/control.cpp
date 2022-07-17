@@ -906,6 +906,9 @@ namespace unit_tests {
       assert::are_same(control1, control.controls()[0].get(), csf_);
       assert::are_same(control2, control.controls()[1].get(), csf_);
       assert::are_same(control3, control.controls()[2].get(), csf_);
+      assert::is_null(control1.parent(), csf_);
+      assert::is_null(control2.parent(), csf_);
+      assert::is_null(control3.parent(), csf_);
     }
     
     void test_method_(set_controls_with_parent) {
@@ -922,6 +925,9 @@ namespace unit_tests {
       assert::are_same(control1, control.controls()[0].get(), csf_);
       assert::are_same(control2, control.controls()[1].get(), csf_);
       assert::are_same(control3, control.controls()[2].get(), csf_);
+      assert::are_same(control, control1.parent().value().get(), csf_);
+      assert::are_same(control, control2.parent().value().get(), csf_);
+      assert::are_same(control, control3.parent().value().get(), csf_);
     }
     
     void test_method_(set_cursor_without_parent) {
@@ -1006,6 +1012,196 @@ namespace unit_tests {
       control.parent(form);
       control.fore_color(color::spring_green);
       assert::are_equal(color::spring_green, control.fore_color(), csf_);
+    }
+    
+    void test_method_(set_height_without_parent) {
+      forms::control control;
+      control.height(50);
+      assert::are_equal(50, control.height(), csf_);
+      assert::are_equal(drawing::size(0, 50), control.size(), csf_);
+    }
+    
+    void test_method_(set_height_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.height(50);
+      assert::are_equal(50, control.height(), csf_);
+      assert::are_equal(drawing::size(0, 50), control.size(), csf_);
+    }
+    
+    void test_method_(set_left_without_parent) {
+      forms::control control;
+      control.left(10);
+      assert::are_equal(10, control.left(), csf_);
+      assert::are_equal(drawing::point(10, 0), control.location(), csf_);
+    }
+    
+    void test_method_(set_left_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.left(10);
+      assert::are_equal(10, control.left(), csf_);
+      assert::are_equal(drawing::point(10, 0), control.location(), csf_);
+    }
+    
+    void test_method_(set_location_without_parent) {
+      forms::control control;
+      control.location({10, 20});
+      assert::are_equal(drawing::point(10, 20), control.location(), csf_);
+      assert::are_equal(10, control.left(), csf_);
+      assert::are_equal(20, control.top(), csf_);
+    }
+
+    void test_method_(set_location_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.location({10, 20});
+      assert::are_equal(drawing::point(10, 20), control.location(), csf_);
+      assert::are_equal(10, control.left(), csf_);
+      assert::are_equal(20, control.top(), csf_);
+    }
+
+    void test_method_(set_margin_without_parent) {
+      forms::control control;
+      control.margin(forms::padding(10));
+      assert::are_equal(forms::padding(10), control.margin(), csf_);
+    }
+    
+    void test_method_(set_margin_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.margin(forms::padding(10));
+      assert::are_equal(forms::padding(10), control.margin(), csf_);
+    }
+    
+    void test_method_(set_maximum_client_size_without_parent) {
+      forms::control control;
+      control.client_size({300, 300});
+      control.maximum_client_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
+    }
+    
+    void test_method_(set_maximum_client_size_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.client_size({300, 300});
+      control.maximum_client_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
+    }
+    
+    void test_method_(set_maximum_size_without_parent) {
+      forms::control control;
+      control.size({300, 300});
+      control.maximum_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.maximum_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
+    }
+    
+    void test_method_(set_maximum_size_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.size({300, 300});
+      control.maximum_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.maximum_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
+    }
+    
+    void test_method_(set_minimum_client_size_without_parent) {
+      forms::control control;
+      control.minimum_client_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
+    }
+    
+    void test_method_(set_minimum_client_size_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.minimum_client_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
+    }
+    
+    void test_method_(set_minimum_size_without_parent) {
+      forms::control control;
+      control.minimum_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.minimum_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
+    }
+    
+    void test_method_(set_minimum_size_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.minimum_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), control.minimum_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
+    }
+    
+    void test_method_(set_name_without_parent) {
+      forms::control control;
+      control.name("Value");
+      assert::are_equal("Value", control.name(), csf_);
+    }
+    
+    void test_method_(set_name_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.name("Value");
+      assert::are_equal("Value", control.name(), csf_);
+    }
+
+    void test_method_(set_padding_without_parent) {
+      forms::control control;
+      control.padding(forms::padding(10));
+      assert::are_equal(forms::padding(10), control.padding(), csf_);
+    }
+    
+    void test_method_(set_padding_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.padding(forms::padding(10));
+      assert::are_equal(forms::padding(10), control.padding(), csf_);
+    }
+    
+    void test_method_(set_parent_without_parent) {
+      forms::control control;
+      forms::control control1;
+      forms::control control2;
+      forms::control control3;
+      control1.parent(control);
+      control2.parent(control);
+      control3.parent(control);
+      assert::are_equal(3U, control.controls().size(), csf_);
+      assert::is_null(control1.parent(), csf_);
+      assert::is_null(control2.parent(), csf_);
+      assert::is_null(control3.parent(), csf_);
+    }
+    
+    void test_method_(set_parent_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      forms::control control1;
+      forms::control control2;
+      forms::control control3;
+      control1.parent(control);
+      control2.parent(control);
+      control3.parent(control);
+      assert::are_equal(3U, control.controls().size(), csf_);
+      assert::are_same(control, control1.parent().value().get(), csf_);
+      assert::are_same(control, control2.parent().value().get(), csf_);
+      assert::are_same(control, control3.parent().value().get(), csf_);
     }
 
     void test_method_(on_auto_size_changed) {
