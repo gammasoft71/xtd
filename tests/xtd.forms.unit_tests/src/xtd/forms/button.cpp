@@ -2,6 +2,7 @@
 #include <xtd/forms/form.h>
 #include <xtd/xtd.tunit>
 
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::tunit;
@@ -9,9 +10,21 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class test_class_(test_button) {
   public:
+    void test_method_(constructor) {
+      forms::button button;
+      assert::is_false(button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::standard, button.flat_style(), csf_);
+      assert::are_equal(image::empty, button.image(), csf_);
+      assert::are_equal(image_list::empty, button.image_list(), csf_);
+      assert::are_equal(-1, button.image_index(), csf_);
+      assert::are_equal(content_alignment::middle_center, button.image_align(), csf_);
+      assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+    }
+
     void test_method_(perform_click_form_button) {
       form form;
-      button button;
+      forms::button button;
       button.parent(form);
       int click_control_check = 0;
       button.click += [&] {
@@ -26,7 +39,7 @@ namespace unit_tests {
       form form;
       panel panel;
       panel.parent(form);
-      button button;
+      forms::button button;
       button.parent(panel);
       int click_control_check = 0;
       button.click += [&] {
@@ -38,7 +51,7 @@ namespace unit_tests {
     
     void test_method_(set_client_size) {
       form form;
-      button button;
+      forms::button button;
       button.parent(form);
       button.client_size({100, 50});
       assert::are_equal(size(100, 50), button.client_size(), csf_);
@@ -46,7 +59,7 @@ namespace unit_tests {
     
     void test_method_(set_size) {
       form form;
-      button button;
+      forms::button button;
       button.parent(form);
       button.size({100, 50});
       assert::are_equal(size(100, 50), button.size(), csf_);

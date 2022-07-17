@@ -368,7 +368,7 @@ namespace unit_tests {
       assert::throws<argument_exception>([&] {control.create_control();}, csf_);
     }
     
-    void test_method_(create_control_set_parent) {
+    void test_method_(create_control_with_parent) {
       forms::form form;
       control control;
       control.parent(form);
@@ -828,6 +828,82 @@ namespace unit_tests {
       image img = system_images::from_name("xtd");
       control.background_image(img);
       assert::are_equal(img, control.background_image(), csf_);
+    }
+
+    void test_method_(on_auto_size_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_auto_size_changed_raised = false;
+
+      protected:
+        void on_auto_size_changed(const event_args& e) override {
+          control::on_auto_size_changed(e);
+          on_auto_size_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_auto_size_changed_raised, csf_);
+      control.auto_size(true);
+      assert::is_true(control.on_auto_size_changed_raised, csf_);
+    }
+
+    void test_method_(on_back_color_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_back_color_changed_raised = false;
+        
+      protected:
+        void on_back_color_changed(const event_args& e) override {
+          control::on_back_color_changed(e);
+          on_back_color_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_back_color_changed_raised, csf_);
+      control.back_color(color::spring_green);
+      assert::is_true(control.on_back_color_changed_raised, csf_);
+    }
+
+    void test_method_(on_background_image_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_background_image_changed_raised = false;
+        
+      protected:
+        void on_background_image_changed(const event_args& e) override {
+          control::on_background_image_changed(e);
+          on_background_image_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_background_image_changed_raised, csf_);
+      control.background_image(system_images::from_name("xtd"));
+      assert::is_true(control.on_background_image_changed_raised, csf_);
+    }
+
+    void test_method_(on_fore_color_changed) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        bool on_fore_color_changed_raised = false;
+      
+      protected:
+        void on_fore_color_changed(const event_args& e) override {
+          control::on_fore_color_changed(e);
+          on_fore_color_changed_raised = true;
+        };
+      };
+      custom_control control;
+      
+      assert::is_false(control.on_fore_color_changed_raised, csf_);
+      control.fore_color(color::spring_green);
+      assert::is_true(control.on_fore_color_changed_raised, csf_);
     }
   };
 }

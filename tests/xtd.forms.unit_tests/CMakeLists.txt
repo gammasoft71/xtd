@@ -14,7 +14,9 @@ add_sources(
   src/xtd/forms/lcd_label.cpp
   src/xtd/forms/list_box.cpp
   src/xtd/forms/main_menu.cpp
+  src/xtd/forms/radio_button.cpp 
   src/xtd/forms/system_information.cpp
+  src/xtd/forms/toggle_button.cpp 
   src/xtd/forms/layout/arranged_element_collection.cpp 
   src/xtd/forms/style_sheets/border_color.cpp 
   src/xtd/forms/style_sheets/background_image.cpp 
