@@ -387,7 +387,7 @@ namespace unit_tests {
       assert::is_zero(cp.y(), csf_);
     }
     
-    void test_method_(create_params_disabled) {
+    void test_method_(create_params_enabled_false) {
       class custom_control : public control {
       public:
         custom_control() = default;
@@ -411,32 +411,32 @@ namespace unit_tests {
       assert::is_zero(cp.x(), csf_);
       assert::is_zero(cp.y(), csf_);
     }
-
-    void test_method_(create_params_hide) {
+    
+    void test_method_(create_params_location) {
       class custom_control : public control {
       public:
         custom_control() = default;
         using control::create_params;
       };
       custom_control control;
-      control.visible(false);
-
+      control.location({10, 20});
+      
       forms::create_params cp = control.create_params();
       assert::is_empty(cp.caption(), csf_);
       assert::is_empty(cp.class_name(), csf_);
       assert::are_equal(CS_DBLCLKS, cp.class_style(), csf_);
       assert::is_zero(cp.ex_style(), csf_);
       assert::is_zero(cp.height(), csf_);
-      assert::are_equal(drawing::point::empty, cp.location(), csf_);
+      assert::are_equal(drawing::point(10, 20), cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_VISIBLE|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
-      assert::is_zero(cp.x(), csf_);
-      assert::is_zero(cp.y(), csf_);
+      assert::are_equal(10, cp.x(), csf_);
+      assert::are_equal(20, cp.y(), csf_);
     }
-    
+
     void test_method_(create_params_parent) {
       class custom_control : public control {
       public:
@@ -457,6 +457,106 @@ namespace unit_tests {
       assert::is_zero(cp.param(), csf_);
       assert::are_equal(form.handle(), cp.parent(), csf_);
       assert::are_equal(WS_VISIBLE|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(drawing::size::empty, cp.size(), csf_);
+      assert::is_zero(cp.width(), csf_);
+      assert::is_zero(cp.x(), csf_);
+      assert::is_zero(cp.y(), csf_);
+    }
+    
+    void test_method_(create_params_size) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        using control::create_params;
+      };
+      custom_control control;
+      control.size({100, 50});
+      
+      forms::create_params cp = control.create_params();
+      assert::is_empty(cp.caption(), csf_);
+      assert::is_empty(cp.class_name(), csf_);
+      assert::are_equal(CS_DBLCLKS, cp.class_style(), csf_);
+      assert::is_zero(cp.ex_style(), csf_);
+      assert::are_equal(50, cp.height(), csf_);
+      assert::are_equal(drawing::point::empty, cp.location(), csf_);
+      assert::is_zero(cp.param(), csf_);
+      assert::is_zero(cp.parent(), csf_);
+      assert::are_equal(WS_VISIBLE|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(drawing::size(100, 50), cp.size(), csf_);
+      assert::are_equal(100, cp.width(), csf_);
+      assert::is_zero(cp.x(), csf_);
+      assert::is_zero(cp.y(), csf_);
+    }
+    
+    void test_method_(create_params_tab_stop_false) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        using control::create_params;
+      };
+      custom_control control;
+      control.tab_stop(false);
+      
+      forms::create_params cp = control.create_params();
+      assert::is_empty(cp.caption(), csf_);
+      assert::is_empty(cp.class_name(), csf_);
+      assert::are_equal(CS_DBLCLKS, cp.class_style(), csf_);
+      assert::is_zero(cp.ex_style(), csf_);
+      assert::is_zero(cp.height(), csf_);
+      assert::are_equal(drawing::point::empty, cp.location(), csf_);
+      assert::is_zero(cp.param(), csf_);
+      assert::is_zero(cp.parent(), csf_);
+      assert::are_equal(WS_VISIBLE|WS_CHILD, cp.style(), csf_);
+      assert::are_equal(drawing::size::empty, cp.size(), csf_);
+      assert::is_zero(cp.width(), csf_);
+      assert::is_zero(cp.x(), csf_);
+      assert::is_zero(cp.y(), csf_);
+    }
+
+    void test_method_(create_params_text) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        using control::create_params;
+      };
+      custom_control control;
+      control.text("Value");
+      
+      forms::create_params cp = control.create_params();
+      assert::are_equal("Value", cp.caption(), csf_);
+      assert::is_empty(cp.class_name(), csf_);
+      assert::are_equal(CS_DBLCLKS, cp.class_style(), csf_);
+      assert::is_zero(cp.ex_style(), csf_);
+      assert::is_zero(cp.height(), csf_);
+      assert::are_equal(drawing::point::empty, cp.location(), csf_);
+      assert::is_zero(cp.param(), csf_);
+      assert::is_zero(cp.parent(), csf_);
+      assert::are_equal(WS_CHILD|WS_TABSTOP|WS_VISIBLE, cp.style(), csf_);
+      assert::are_equal(drawing::size::empty, cp.size(), csf_);
+      assert::is_zero(cp.width(), csf_);
+      assert::is_zero(cp.x(), csf_);
+      assert::is_zero(cp.y(), csf_);
+    }
+
+    void test_method_(create_params_visible_false) {
+      class custom_control : public control {
+      public:
+        custom_control() = default;
+        using control::create_params;
+      };
+      custom_control control;
+      control.visible(false);
+      
+      forms::create_params cp = control.create_params();
+      assert::is_empty(cp.caption(), csf_);
+      assert::is_empty(cp.class_name(), csf_);
+      assert::are_equal(CS_DBLCLKS, cp.class_style(), csf_);
+      assert::is_zero(cp.ex_style(), csf_);
+      assert::is_zero(cp.height(), csf_);
+      assert::are_equal(drawing::point::empty, cp.location(), csf_);
+      assert::is_zero(cp.param(), csf_);
+      assert::is_zero(cp.parent(), csf_);
+      assert::are_equal(WS_CHILD|WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
