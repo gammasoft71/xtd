@@ -441,12 +441,12 @@ namespace unit_tests {
     }
 
     void test_method_(create_params_default_values) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         using control::create_params;
       };
-      custom_control control;
+      control_for_test control;
       
       forms::create_params cp = control.create_params();
       assert::is_empty(cp.caption(), csf_);
@@ -465,12 +465,12 @@ namespace unit_tests {
     }
     
     void test_method_(create_params_enabled_false) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         using control::create_params;
       };
-      custom_control control;
+      control_for_test control;
       control.enabled(false);
       
       forms::create_params cp = control.create_params();
@@ -490,12 +490,12 @@ namespace unit_tests {
     }
     
     void test_method_(create_params_location) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         using control::create_params;
       };
-      custom_control control;
+      control_for_test control;
       control.location({10, 20});
       
       forms::create_params cp = control.create_params();
@@ -515,13 +515,13 @@ namespace unit_tests {
     }
 
     void test_method_(create_params_parent) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         using control::create_params;
       };
       forms::form form;
-      custom_control control;
+      control_for_test control;
       control.parent(form);
       
       forms::create_params cp = control.create_params();
@@ -541,12 +541,12 @@ namespace unit_tests {
     }
     
     void test_method_(create_params_size) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         using control::create_params;
       };
-      custom_control control;
+      control_for_test control;
       control.size({100, 50});
       
       forms::create_params cp = control.create_params();
@@ -566,12 +566,12 @@ namespace unit_tests {
     }
     
     void test_method_(create_params_tab_stop_false) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         using control::create_params;
       };
-      custom_control control;
+      control_for_test control;
       control.tab_stop(false);
       
       forms::create_params cp = control.create_params();
@@ -591,12 +591,12 @@ namespace unit_tests {
     }
 
     void test_method_(create_params_text) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         using control::create_params;
       };
-      custom_control control;
+      control_for_test control;
       control.text("Value");
       
       forms::create_params cp = control.create_params();
@@ -616,12 +616,12 @@ namespace unit_tests {
     }
 
     void test_method_(create_params_visible_false) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         using control::create_params;
       };
-      custom_control control;
+      control_for_test control;
       control.visible(false);
       
       forms::create_params cp = control.create_params();
@@ -641,13 +641,13 @@ namespace unit_tests {
     }
 
     void test_method_(create_params_with_some_values) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         using control::create_params;
       };
       forms::form form;
-      custom_control control;
+      control_for_test control;
       control.enabled(false);
       control.location({10, 20});
       control.parent(form);
@@ -1237,11 +1237,110 @@ namespace unit_tests {
       assert::are_equal(100, control.width(), csf_);
       assert::are_equal(50, control.height(), csf_);
     }
+    
+    void test_method_(set_style_sheet_without_parent) {
+      forms::control control;
+      style_sheets::style_sheet ss("control {"
+                                   "  border-style: solid;"
+                                   "  border-color: blue;"
+                                   "}");
+      control.style_sheet(ss);
+      assert::are_equal(ss, control.style_sheet(), csf_);
+    }
+    
+    void test_method_(set_style_sheet_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      style_sheets::style_sheet ss("control {"
+                                   "  border-style: solid;"
+                                   "  border-color: blue;"
+                                   "}");
+      control.style_sheet(ss);
+      assert::are_equal(ss, control.style_sheet(), csf_);
+    }
+    
+    void test_method_(set_tab_stop_without_parent) {
+      forms::control control;
+      control.tab_stop(false);
+      assert::is_false(control.tab_stop(), csf_);
+    }
+    
+    void test_method_(set_tab_stop_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.tab_stop(false);
+      assert::is_false(control.tab_stop(), csf_);
+    }
+    
+    void test_method_(set_tag_without_parent) {
+      forms::control control;
+      control.tag("my tag");
+      assert::are_equal("my tag", as<ustring>(control.tag()), csf_);
+    }
+    
+    void test_method_(set_tag_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.tag("my tag");
+      assert::are_equal("my tag", as<ustring>(control.tag()), csf_);
+    }
+    
+    void test_method_(set_text_without_parent) {
+      forms::control control;
+      control.text("my text");
+      assert::are_equal("my text", control.text(), csf_);
+    }
+    
+    void test_method_(set_text_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.text("my text");
+      assert::are_equal("my text", control.text(), csf_);
+    }
+    
+    void test_method_(set_top_without_parent) {
+      forms::control control;
+      control.top(20);
+      assert::are_equal(20, control.top(), csf_);
+      assert::are_equal(drawing::point(0, 20), control.location(), csf_);
+    }
+    
+    void test_method_(set_top_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.top(20);
+      assert::are_equal(20, control.top(), csf_);
+      assert::are_equal(drawing::point(0, 20), control.location(), csf_);
+    }
+    
+    void test_method_(set_visible_without_parent) {
+      forms::control control;
+      control.visible(false);
+      assert::is_false(control.visible(), csf_);
+    }
+    
+    void test_method_(set_visible_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.visible(false);
+      assert::is_false(control.visible(), csf_);
+    }
+    
+    void test_method_(set_check_for_illegal_cross_thread_call) {
+      forms::control::check_for_illegal_cross_thread_calls(false);
+      assert::is_false(forms::control::check_for_illegal_cross_thread_calls(), csf_);
+    }
 
     void test_method_(on_auto_size_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_auto_size_changed_raised = false;
 
       protected:
@@ -1250,7 +1349,7 @@ namespace unit_tests {
           on_auto_size_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.auto_size(false);
       assert::is_false(control.on_auto_size_changed_raised, csf_);
@@ -1259,9 +1358,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_back_color_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_back_color_changed_raised = false;
         
       protected:
@@ -1270,7 +1369,7 @@ namespace unit_tests {
           on_back_color_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.back_color(nullptr);
       assert::is_false(control.on_back_color_changed_raised, csf_);
@@ -1279,9 +1378,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_background_image_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_background_image_changed_raised = false;
         
       protected:
@@ -1290,7 +1389,7 @@ namespace unit_tests {
           on_background_image_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.background_image(image::empty);
       assert::is_false(control.on_background_image_changed_raised, csf_);
@@ -1299,9 +1398,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_background_image_layout_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_background_image_layout_changed_raised = false;
         
       protected:
@@ -1310,7 +1409,7 @@ namespace unit_tests {
           on_background_image_layout_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.background_image_layout(image_layout::tile);
       assert::is_false(control.on_background_image_layout_changed_raised, csf_);
@@ -1319,9 +1418,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_control_appearance_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_control_appearance_changed_raised = false;
         
       protected:
@@ -1330,7 +1429,7 @@ namespace unit_tests {
           on_control_appearance_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.control_appearance(forms::control_appearance::standard);
       assert::is_false(control.on_control_appearance_changed_raised, csf_);
@@ -1339,9 +1438,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_client_size_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_client_size_changed_raised = false;
         
       protected:
@@ -1350,7 +1449,7 @@ namespace unit_tests {
           on_client_size_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       //control.client_size({0, 0}); // Do not activate this line because if client_size is not activated, it will be activated even for an identical value.
       assert::is_false(control.on_client_size_changed_raised, csf_);
@@ -1359,9 +1458,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_control_added) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_control_added_raised = false;
         
       protected:
@@ -1370,7 +1469,7 @@ namespace unit_tests {
           on_control_added_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       forms::control child_control;
       assert::is_false(control.on_control_added_raised, csf_);
@@ -1379,9 +1478,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_control_removed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_control_removed_raised = false;
         
       protected:
@@ -1390,7 +1489,7 @@ namespace unit_tests {
           on_control_removed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       forms::control child_control;
       control.controls().push_back(child_control);
@@ -1400,9 +1499,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_create_control) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_create_control_raised = false;
         
       protected:
@@ -1411,7 +1510,7 @@ namespace unit_tests {
           on_create_control_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       forms::form form;
       control.parent(nullptr);
@@ -1421,9 +1520,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_cursor_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_cursor_changed_raised = false;
         
       protected:
@@ -1432,7 +1531,7 @@ namespace unit_tests {
           on_cursor_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.cursor(nullptr);
       assert::is_false(control.on_cursor_changed_raised, csf_);
@@ -1441,9 +1540,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_dock_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_dock_changed_raised = false;
         
       protected:
@@ -1452,7 +1551,7 @@ namespace unit_tests {
           on_dock_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.dock(dock_style::none);
       assert::is_false(control.on_dock_changed_raised, csf_);
@@ -1461,9 +1560,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_enabled_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_enabled_changed_raised = false;
         
       protected:
@@ -1472,7 +1571,7 @@ namespace unit_tests {
           on_enabled_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.enabled(true);
       assert::is_false(control.on_enabled_changed_raised, csf_);
@@ -1481,9 +1580,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_fore_color_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_fore_color_changed_raised = false;
         
       protected:
@@ -1492,7 +1591,7 @@ namespace unit_tests {
           on_fore_color_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.fore_color(nullptr);
       assert::is_false(control.on_fore_color_changed_raised, csf_);
@@ -1501,9 +1600,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_font_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_font_changed_raised = false;
         
       protected:
@@ -1512,7 +1611,7 @@ namespace unit_tests {
           on_font_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.font(nullptr);
       assert::is_false(control.on_font_changed_raised, csf_);
@@ -1521,9 +1620,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_handle_created) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_handle_created_raised = false;
         
       protected:
@@ -1532,7 +1631,7 @@ namespace unit_tests {
           on_handle_created_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       forms::form form;
       assert::is_false(control.on_handle_created_raised, csf_);
@@ -1541,9 +1640,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_handle_destroyed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_handle_destroyed_raised = false;
         
       protected:
@@ -1552,7 +1651,7 @@ namespace unit_tests {
           on_handle_destroyed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       forms::form form;
       control.parent(form);
@@ -1562,9 +1661,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_layout) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_layout_raised = false;
         
       protected:
@@ -1573,7 +1672,7 @@ namespace unit_tests {
           on_layout_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       forms::form form;
       control.parent(form);
@@ -1584,9 +1683,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_location_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_location_changed_raised = false;
         
       protected:
@@ -1595,7 +1694,7 @@ namespace unit_tests {
           on_location_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.location({0, 0});
       assert::is_false(control.on_location_changed_raised, csf_);
@@ -1604,9 +1703,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_parent_back_color_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_parent_back_color_changed_raised = false;
         
       protected:
@@ -1615,7 +1714,7 @@ namespace unit_tests {
           on_parent_back_color_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       forms::form form;
       control.parent(form);
       
@@ -1626,9 +1725,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_parent_cursor_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_parent_cursor_changed_raised = false;
         
       protected:
@@ -1637,7 +1736,7 @@ namespace unit_tests {
           on_parent_cursor_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       forms::form form;
       control.parent(form);
       
@@ -1648,9 +1747,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_parent_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_parent_changed_raised = false;
         
       protected:
@@ -1659,7 +1758,7 @@ namespace unit_tests {
           on_parent_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       forms::form form;
       
       control.parent(nullptr);
@@ -1669,9 +1768,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_parent_enabled_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_parent_enabled_changed_raised = false;
         
       protected:
@@ -1680,7 +1779,7 @@ namespace unit_tests {
           on_parent_enabled_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       forms::form form;
       control.parent(form);
 
@@ -1691,9 +1790,9 @@ namespace unit_tests {
     }
     
     void test_method_(on_parent_fore_color_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_parent_fore_color_changed_raised = false;
         
       protected:
@@ -1702,7 +1801,7 @@ namespace unit_tests {
           on_parent_fore_color_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       forms::form form;
       control.parent(form);
 
@@ -1713,9 +1812,9 @@ namespace unit_tests {
     }
     
     void test_method_(on_parent_font_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_parent_font_changed_raised = false;
         
       protected:
@@ -1724,7 +1823,7 @@ namespace unit_tests {
           on_parent_font_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       forms::form form;
       control.parent(form);
 
@@ -1735,9 +1834,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_resize) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_resize_raised = false;
         
       protected:
@@ -1746,7 +1845,7 @@ namespace unit_tests {
           on_resize_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.size({0, 0});
       assert::is_false(control.on_resize_raised, csf_);
@@ -1755,9 +1854,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_region_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_region_changed_raised = false;
         
       protected:
@@ -1766,7 +1865,7 @@ namespace unit_tests {
           on_region_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.region(control.region());
       assert::is_false(control.on_region_changed_raised, csf_);
@@ -1775,9 +1874,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_size_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_size_changed_raised = false;
         
       protected:
@@ -1786,7 +1885,7 @@ namespace unit_tests {
           on_size_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.size({0, 0});
       assert::is_false(control.on_size_changed_raised, csf_);
@@ -1795,9 +1894,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_tab_stop_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_tab_stop_changed_raised = false;
         
       protected:
@@ -1806,7 +1905,7 @@ namespace unit_tests {
           on_tab_stop_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.tab_stop(true);
       assert::is_false(control.on_tab_stop_changed_raised, csf_);
@@ -1815,9 +1914,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_text_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_text_changed_raised = false;
         
       protected:
@@ -1826,7 +1925,7 @@ namespace unit_tests {
           on_text_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.text("");
       assert::is_false(control.on_text_changed_raised, csf_);
@@ -1835,9 +1934,9 @@ namespace unit_tests {
     }
 
     void test_method_(on_visible_changed) {
-      class custom_control : public control {
+      class control_for_test : public control {
       public:
-        custom_control() = default;
+        control_for_test() = default;
         bool on_visible_changed_raised = false;
         
       protected:
@@ -1846,7 +1945,7 @@ namespace unit_tests {
           on_visible_changed_raised = true;
         };
       };
-      custom_control control;
+      control_for_test control;
       
       control.visible(true);
       assert::is_false(control.on_visible_changed_raised, csf_);
