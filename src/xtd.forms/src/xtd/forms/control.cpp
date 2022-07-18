@@ -838,6 +838,7 @@ forms::auto_size_mode control::get_auto_size_mode() const {
 }
 
 size_t control::get_child_index(intptr_t child) const {
+  if (child == 0) return control_collection::npos;
   for (size_t index = 0; index < controls().size(); ++index)
     if (controls()[index].get().handle() == child) return index;
   throw xtd::argument_exception(current_stack_frame_);
