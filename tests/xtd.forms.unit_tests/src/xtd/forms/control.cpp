@@ -1465,6 +1465,21 @@ namespace unit_tests {
       control.hide();
       assert::is_false(control.visible());
     }
+    
+    void test_method_(resume_layout_after_suspend_layout) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.suspend_layout();
+      assert::does_not_throw([&]{control.resume_layout();}, csf_);
+    }
+    
+    void test_method_(resume_layout_without_suspend_layout) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      assert::does_not_throw([&]{control.resume_layout();}, csf_);
+    }
 
     void test_method_(on_auto_size_changed) {
       class control_for_test : public control {
