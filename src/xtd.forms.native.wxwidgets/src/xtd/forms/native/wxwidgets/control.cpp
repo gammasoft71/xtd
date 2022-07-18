@@ -521,7 +521,11 @@ void control::resume_layout(intptr_t control) {
     return;
   }
   
+  if (!reinterpret_cast<control_handler*>(control)->LayoutSuspended())
+    suspend_layout(control);
+
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
+  reinterpret_cast<control_handler*>(control)->LayoutSuspended(false);
 }
 
 void control::unregister_wnd_proc(intptr_t control) {
@@ -559,4 +563,5 @@ void control::suspend_layout(intptr_t control) {
   }
   
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
+  reinterpret_cast<control_handler*>(control)->LayoutSuspended(true);
 }

@@ -102,6 +102,9 @@ namespace xtd {
           control_->Show(visible);
         }
         
+        bool LayoutSuspended() const noexcept {return suspended_;}
+        void LayoutSuspended(bool value) noexcept {suspended_ = value;}
+
         static long common_window_style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           
@@ -128,6 +131,7 @@ namespace xtd {
         
       private:
         wxWindow* control_ = nullptr;
+        bool suspended_ = false;
       };
     }
   }
