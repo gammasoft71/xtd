@@ -750,7 +750,7 @@ std::shared_ptr<xtd::iasync_result> control::begin_invoke(delegate<void()> value
 }
 
 shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
-  while (!xtd::forms::application::message_loop()) this_thread::sleep_for(10ms);
+  //while (!xtd::forms::application::message_loop()) this_thread::sleep_for(10ms);
   shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
   async->async_mutex().lock();
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, value, args, async->async_mutex_, async->is_completed_);
@@ -802,35 +802,6 @@ graphics control::create_graphics() const {
   if (!is_handle_created())
     throw invalid_operation_exception(csf_);
   return graphics(native::control::create_graphics(handle()));
-}
-
-void control::create_handle() {
-  set_state(state::creating_handle, true);
-  auto params = create_params();
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
-  data_->handle = native::control::create(params);
-  suspend_layout();
-  handles_[handle()] = this;
-  native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
-  for (auto child : data_->controls) {
-    child.get().data_->parent = handle();
-    child.get().create_handle();
-  }
-  on_handle_created(event_args::empty);
-  set_state(state::creating_handle, false);
-  resume_layout();
-}
-
-void control::destroy_handle() {
-  if (!is_handle_created()) return;
-  native::control::unregister_wnd_proc(handle());
-  suspend_layout();
-  for (auto child : data_->controls)
-    child.get().destroy_handle();
-  handles_.erase(handle());
-  on_handle_destroyed(event_args::empty);
-  native::control::destroy(handle());
-  data_->handle = 0;
 }
 
 bool control::focus() {
@@ -1464,6 +1435,35 @@ void control::wnd_proc(message& message) {
     case WM_ENTERIDLE: wm_enter_idle(message); break;
     default: def_wnd_proc(message); break;
   }
+}
+
+void control::create_handle() {
+  set_state(state::creating_handle, true);
+  auto params = create_params();
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
+  data_->handle = native::control::create(params);
+  suspend_layout();
+  handles_[handle()] = this;
+  native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
+  for (auto child : data_->controls) {
+    child.get().data_->parent = handle();
+    child.get().create_handle();
+  }
+  on_handle_created(event_args::empty);
+  set_state(state::creating_handle, false);
+  resume_layout();
+}
+
+void control::destroy_handle() {
+  if (!is_handle_created()) return;
+  native::control::unregister_wnd_proc(handle());
+  suspend_layout();
+  for (auto child : data_->controls)
+    child.get().destroy_handle();
+  handles_.erase(handle());
+  on_handle_destroyed(event_args::empty);
+  native::control::destroy(handle());
+  data_->handle = 0;
 }
 
 void control::def_wnd_proc(message& message) {
