@@ -1451,6 +1451,20 @@ namespace unit_tests {
       assert::are_equal(2U, control.get_child_index(control3.handle()), csf_);
       assert::are_equal(forms::control::control_collection::npos, control.get_child_index(control4.handle()), csf_);
     }
+    
+    void test_method_(hide_without_parent) {
+      forms::control control;
+      control.hide();
+      assert::is_false(control.visible());
+    }
+    
+    void test_method_(hide_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.hide();
+      assert::is_false(control.visible());
+    }
 
     void test_method_(on_auto_size_changed) {
       class control_for_test : public control {
@@ -2066,6 +2080,21 @@ namespace unit_tests {
       assert::is_false(control.on_visible_changed_raised, csf_);
       control.visible(false);
       assert::is_true(control.on_visible_changed_raised, csf_);
+    }
+    
+    void test_method_(recreate_handle) {
+      class control_for_test : public control {
+      public:
+        control_for_test() = default;
+        using control::recreate_handle;
+      };
+      forms::form form;
+      control_for_test control;
+      control.parent(form);
+      
+      auto initial_handle = control.handle();
+      control.recreate_handle();
+      assert::are_not_equal(initial_handle, control.handle());
     }
   };
 }
