@@ -894,22 +894,11 @@ namespace xtd {
       /// @remarks The graphics object that you retrieve through the create_graphics method should not normally be retained after the current Windows message has been processed, because anything painted with that object will be erased with the next WM_PAINT message. Therefore you cannot cache the graphics object for reuse, except to use non-visual methods like xtd::drawing::graphics::measure_string. Instead, you must call create_graphics every time that you want to use the graphics object.
       drawing::graphics create_graphics() const;
       
-      /// @brief Creates a handle for the control.
-      /// @remarks You typically should not call the create_handle method directly. The preferred method is to call the create_control method, which forces a handle to be created for the control and its child controls when the control is created.
-      /// @par Notes to Inheritors
-      /// When overriding create_handle() in a derived class, be sure to call the base class's create_handle() method to ensure that the handle is created.
-      virtual void create_handle();
-      
       /// @brief Forces the destruction of the visible control, including the destruction of the handle and any visible child controls.
       /// @remarks The destroy_control method forces a handle to be destroyed for the control and its child controls.
       /// @par Notes to Inheritors
       /// When overriding destroy_control() in a derived class, be sure to call the base class's destroy_control() method to ensure that the handle is destroyed.
       virtual void destroy_control();
-      
-      /// @brief Destroys the handle associated with the control.
-      /// @par Notes to Inheritors
-      /// When overriding destroy_handle() in a derived class, be sure to call the base class's destroy_handle() method to ensure that the handle is destroyed.
-      virtual void destroy_handle();
       
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
@@ -1605,6 +1594,17 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @brief Creates a handle for the control.
+      /// @remarks You typically should not call the create_handle method directly. The preferred method is to call the create_control method, which forces a handle to be created for the control and its child controls when the control is created.
+      /// @par Notes to Inheritors
+      /// When overriding create_handle() in a derived class, be sure to call the base class's create_handle() method to ensure that the handle is created.
+      virtual void create_handle();
+      
+      /// @brief Destroys the handle associated with the control.
+      /// @par Notes to Inheritors
+      /// When overriding destroy_handle() in a derived class, be sure to call the base class's destroy_handle() method to ensure that the handle is destroyed.
+      virtual void destroy_handle();
+
       /// @brief Sends the specified message to the default window procedure.
       /// @param message The Windows Message to process.
       virtual void def_wnd_proc(message& message);
