@@ -89,7 +89,7 @@ namespace xtd {
         
         /// @{
         /// @brief This is a special value equal to the maximum value representable by the type size_t.
-        static const size_type npos = std::numeric_limits<size_type>::max();
+        inline static const size_t npos = std::numeric_limits<size_t>::max();
         /// @}
         
         /// @name Constructors
