@@ -7,6 +7,7 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_references(xtd.forms)
 add_sources(
   src/main.cpp 
+  src/xtd/forms/button_base.cpp 
   src/xtd/forms/button.cpp 
   src/xtd/forms/check_box.cpp 
   src/xtd/forms/control.cpp 
