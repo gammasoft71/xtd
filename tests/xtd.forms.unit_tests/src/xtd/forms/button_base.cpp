@@ -1,4 +1,5 @@
 #include <xtd/forms/button.h>
+#include <xtd/drawing/system_images.h>
 #include <xtd/forms/form.h>
 #include <xtd/xtd.tunit>
 
@@ -9,12 +10,12 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test_button_base) {
-    class button_base_for_test : public button_base {
-    public:
-      button_base_for_test() = default;
-    };
   public:
     void test_method_(constructor) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
       button_base_for_test button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor(), csf_);
       assert::are_equal(drawing::point::empty, button.auto_scroll_point(), csf_);
@@ -90,5 +91,109 @@ namespace unit_tests {
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
     }
+    
+    void test_method_(auto_elipsis_without_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      button_base_for_test button;
+      button.auto_ellipsis(true);
+      assert::is_true(button.auto_ellipsis(), csf_);
+    }
+    
+    void test_method_(auto_elipsis_with_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      forms::form form;
+      button_base_for_test button;
+      button.parent(form);
+      button.auto_ellipsis(true);
+      assert::is_true(button.auto_ellipsis(), csf_);
+    }
+    
+    void test_method_(auto_size_without_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      button_base_for_test button;
+      button.auto_size(true);
+      assert::is_true(button.auto_size(), csf_);
+    }
+    
+    void test_method_(auto_size_with_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      forms::form form;
+      button_base_for_test button;
+      button.parent(form);
+      button.auto_size(true);
+      assert::is_true(button.auto_size(), csf_);
+    }
+    
+    void test_method_(flat_appearance_without_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      button_base_for_test button;
+      flat_button_appearance appearance;
+      appearance.border_color(xtd::drawing::color::spring_green);
+      button.flat_appearance(appearance);
+      assert::are_equal(appearance, button.flat_appearance(), csf_);
+    }
+    
+    void test_method_(flat_appearance_with_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      forms::form form;
+      button_base_for_test button;
+      button.parent(form);
+      button.auto_size(true);
+      assert::is_true(button.auto_size(), csf_);
+    }
+
+    void test_method_(image_changed) {
+      bool image_changed_raised = false;
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      button_base_for_test button;
+      button.image_changed += [&]() {
+        image_changed_raised = true;
+      };
+      
+      button.image(image::empty);
+      assert::is_false(image_changed_raised, csf_);
+      button.image(system_images::from_name("xtd"));
+      assert::is_true(image_changed_raised, csf_);
+    }
+    
+    void test_method_(on_image_changed) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+        bool on_image_changed_raised = false;
+        void on_image_changed(const xtd::event_args &e) override {
+          button_base::on_image_changed(e);
+          on_image_changed_raised = true;
+        }
+      };
+      button_base_for_test button;
+      
+      button.image(image::empty);
+      assert::is_false(button.on_image_changed_raised, csf_);
+      button.image(system_images::from_name("xtd"));
+      assert::is_true(button.on_image_changed_raised, csf_);
+    }
   };
 }
+
