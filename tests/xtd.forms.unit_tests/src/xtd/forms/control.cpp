@@ -596,7 +596,7 @@ namespace unit_tests {
       assert::are_equal(20, cp.y(), csf_);
     }
     
-    void test_method_(set_parent_with_controls_push_back) {
+    void test_method_(parent_with_controls_push_back) {
       forms::form form;
       forms::control control;
       form.controls().push_back(control);
@@ -605,7 +605,7 @@ namespace unit_tests {
       assert::is_not_zero(control.handle(), csf_);
     }
     
-    void test_method_(set_parent_with_control_set_parent) {
+    void test_method_(parent_with_control_set_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -678,13 +678,13 @@ namespace unit_tests {
       assert::are_equal(form.fore_color(), control.fore_color(), csf_);
     }
 
-    void test_method_(set_anchor_without_parent) {
+    void test_method_(anchor_without_parent) {
       forms::control control;
       control.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       assert::are_equal(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom, control.anchor(), csf_);
     }
     
-    void test_method_(set_anchor_with_parent) {
+    void test_method_(anchor_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -692,13 +692,13 @@ namespace unit_tests {
       assert::are_equal(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom, control.anchor(), csf_);
     }
     
-    void test_method_(set_auto_size_without_parent) {
+    void test_method_(auto_size_without_parent) {
       forms::control control;
       control.auto_size(true);
       assert::is_true(control.auto_size(), csf_);
     }
     
-    void test_method_(set_auto_size_with_parent) {
+    void test_method_(auto_size_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -706,13 +706,13 @@ namespace unit_tests {
       assert::is_true(control.auto_size(), csf_);
     }
     
-    void test_method_(set_back_color_without_parent) {
+    void test_method_(back_color_without_parent) {
       forms::control control;
       control.back_color(color::blue);
       assert::are_equal(color::blue, control.back_color(), csf_);
     }
     
-    void test_method_(set_back_color_with_parent) {
+    void test_method_(back_color_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -720,32 +720,32 @@ namespace unit_tests {
       assert::are_equal(color::blue, control.back_color(), csf_);
     }
     
-    void test_method_(reset_back_color_without_parent) {
+    void test_method_(back_color_nullptr__without_parent) {
       forms::control control;
       control.back_color(color::blue);
       assert::are_equal(color::blue, control.back_color(), csf_);
       control.back_color(nullptr);
-      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), control.back_color(), csf_);
+      assert::are_equal(control.default_back_color(), control.back_color(), csf_);
     }
     
-    void test_method_(reset_back_color_with_parent) {
+    void test_method_(back_color_nullptr_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
       control.back_color(color::blue);
       assert::are_equal(color::blue, control.back_color(), csf_);
       control.back_color(nullptr);
-      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), control.back_color(), csf_);
+      assert::are_equal(control.default_back_color(), control.back_color(), csf_);
     }
     
-    void test_method_(set_background_image_without_parent) {
+    void test_method_(background_image_without_parent) {
       forms::control control;
       image img = system_images::from_name("xtd");
       control.background_image(img);
       assert::are_equal(img, control.background_image(), csf_);
     }
     
-    void test_method_(set_background_image_with_parent) {
+    void test_method_(background_image_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -754,13 +754,13 @@ namespace unit_tests {
       assert::are_equal(img, control.background_image(), csf_);
     }
     
-    void test_method_(set_background_image_layout_without_parent) {
+    void test_method_(background_image_layout_without_parent) {
       forms::control control;
       control.background_image_layout(image_layout::zoom);
       assert::are_equal(image_layout::zoom, control.background_image_layout(), csf_);
     }
     
-    void test_method_(set_background_image_layout_with_parent) {
+    void test_method_(background_image_layout_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -768,7 +768,7 @@ namespace unit_tests {
       assert::are_equal(image_layout::zoom, control.background_image_layout(), csf_);
     }
     
-    void test_method_(set_client_size_without_parent) {
+    void test_method_(client_size_without_parent) {
       forms::control control;
       control.client_size({100, 50});
       assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
@@ -776,7 +776,7 @@ namespace unit_tests {
       assert::are_equal(drawing::rectangle(0, 0, 100, 50), control.display_rectangle(), csf_);
     }
     
-    void test_method_(set_client_size_with_parent) {
+    void test_method_(client_size_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -786,7 +786,7 @@ namespace unit_tests {
       assert::are_equal(drawing::rectangle(0, 0, 100, 50), control.display_rectangle(), csf_);
     }
     
-    void test_method_(set_context_menu_without_parent) {
+    void test_method_(context_menu_without_parent) {
       forms::control control;
       menu_item context_menu_item1("Item1", [&] {});
       forms::context_menu context_menu1({context_menu_item1});
@@ -794,7 +794,7 @@ namespace unit_tests {
       assert::are_same(context_menu1, control.context_menu().value().get(), csf_);
     }
     
-    void test_method_(set_context_menu_with_parent) {
+    void test_method_(context_menu_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -804,13 +804,13 @@ namespace unit_tests {
       assert::are_same(context_menu1, control.context_menu().value().get(), csf_);
     }
     
-    void test_method_(set_control_appearance_without_parent) {
+    void test_method_(control_appearance_without_parent) {
       forms::control control;
       control.control_appearance(forms::control_appearance::system);
       assert::are_equal(forms::control_appearance::system, control.control_appearance(), csf_);
     }
     
-    void test_method_(set_control_appearance_with_parent) {
+    void test_method_(control_appearance_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -818,7 +818,7 @@ namespace unit_tests {
       assert::are_equal(forms::control_appearance::system, control.control_appearance(), csf_);
     }
     
-    void test_method_(set_controls_without_parent) {
+    void test_method_(controls_without_parent) {
       forms::control control;
       forms::control control1;
       forms::control control2;
@@ -835,7 +835,7 @@ namespace unit_tests {
       assert::is_null(control3.parent(), csf_);
     }
     
-    void test_method_(set_controls_with_parent) {
+    void test_method_(controls_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -854,13 +854,13 @@ namespace unit_tests {
       assert::are_same(control, control3.parent().value().get(), csf_);
     }
     
-    void test_method_(set_cursor_without_parent) {
+    void test_method_(cursor_without_parent) {
       forms::control control;
       control.cursor(cursors::cross());
       assert::are_equal(cursors::cross(), control.cursor(), csf_);
     }
     
-    void test_method_(set_cursor_with_parent) {
+    void test_method_(cursor_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -868,13 +868,31 @@ namespace unit_tests {
       assert::are_equal(cursors::cross(), control.cursor(), csf_);
     }
     
-    void test_method_(set_dock_without_parent) {
+    void test_method_(cursor_nullptr_without_parent) {
+      forms::control control;
+      control.cursor(cursors::cross());
+      assert::are_equal(cursors::cross(), control.cursor(), csf_);
+      control.cursor(nullptr);
+      assert::are_equal(control.default_cursor(), control.cursor(), csf_);
+    }
+    
+    void test_method_(cursor_nullptr_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.cursor(cursors::cross());
+      assert::are_equal(cursors::cross(), control.cursor(), csf_);
+      control.cursor(nullptr);
+      assert::are_equal(control.default_cursor(), control.cursor(), csf_);
+    }
+
+    void test_method_(dock_without_parent) {
       forms::control control;
       control.dock(dock_style::fill);
       assert::are_equal(dock_style::fill, control.dock(), csf_);
     }
-    
-    void test_method_(set_dock_with_parent) {
+
+    void test_method_(dock_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -882,13 +900,13 @@ namespace unit_tests {
       assert::are_equal(dock_style::fill, control.dock(), csf_);
     }
     
-    void test_method_(set_double_buffered_without_parent) {
+    void test_method_(double_buffered_without_parent) {
       forms::control control;
       control.double_buffered(true);
       assert::is_true(control.double_buffered(), csf_);
     }
     
-    void test_method_(set_double_buffered_with_parent) {
+    void test_method_(double_buffered_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -896,13 +914,13 @@ namespace unit_tests {
       assert::is_true(control.double_buffered(), csf_);
     }
     
-    void test_method_(set_enabled_without_parent) {
+    void test_method_(enabled_without_parent) {
       forms::control control;
       control.enabled(false);
       assert::is_false(control.double_buffered(), csf_);
     }
     
-    void test_method_(set_enabled_with_parent) {
+    void test_method_(enabled_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -910,13 +928,13 @@ namespace unit_tests {
       assert::is_false(control.double_buffered(), csf_);
     }
     
-    void test_method_(set_font_without_parent) {
+    void test_method_(font_without_parent) {
       forms::control control;
       control.font(system_fonts::tool_font());
       assert::are_equal(system_fonts::tool_font(), control.font(), csf_);
     }
     
-    void test_method_(set_font_with_parent) {
+    void test_method_(font_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -924,13 +942,31 @@ namespace unit_tests {
       assert::are_equal(system_fonts::tool_font(), control.font(), csf_);
     }
     
-    void test_method_(set_fore_color_without_parent) {
+    void test_method_(font_nullptr_without_parent) {
+      forms::control control;
+      control.font(system_fonts::tool_font());
+      assert::are_equal(system_fonts::tool_font(), control.font(), csf_);
+      control.font(nullptr);
+      assert::are_equal(control.default_font(), control.font(), csf_);
+    }
+    
+    void test_method_(font_nullptr_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.font(system_fonts::tool_font());
+      assert::are_equal(system_fonts::tool_font(), control.font(), csf_);
+      control.font(nullptr);
+      assert::are_equal(control.default_font(), control.font(), csf_);
+    }
+
+    void test_method_(fore_color_without_parent) {
       forms::control control;
       control.fore_color(color::spring_green);
       assert::are_equal(color::spring_green, control.fore_color(), csf_);
     }
     
-    void test_method_(set_fore_color_with_parent) {
+    void test_method_(fore_color_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -938,14 +974,32 @@ namespace unit_tests {
       assert::are_equal(color::spring_green, control.fore_color(), csf_);
     }
     
-    void test_method_(set_height_without_parent) {
+    void test_method_(fore_color_nullptr_without_parent) {
+      forms::control control;
+      control.fore_color(color::blue);
+      assert::are_equal(color::blue, control.fore_color(), csf_);
+      control.fore_color(nullptr);
+      assert::are_equal(control.default_fore_color(), control.fore_color(), csf_);
+    }
+    
+    void test_method_(fore_color_nullptr_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.fore_color(color::blue);
+      assert::are_equal(color::blue, control.fore_color(), csf_);
+      control.fore_color(nullptr);
+      assert::are_equal(control.default_fore_color(), control.fore_color(), csf_);
+    }
+
+    void test_method_(height_without_parent) {
       forms::control control;
       control.height(50);
       assert::are_equal(50, control.height(), csf_);
       assert::are_equal(drawing::size(0, 50), control.size(), csf_);
     }
     
-    void test_method_(set_height_with_parent) {
+    void test_method_(height_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -954,14 +1008,14 @@ namespace unit_tests {
       assert::are_equal(drawing::size(0, 50), control.size(), csf_);
     }
     
-    void test_method_(set_left_without_parent) {
+    void test_method_(left_without_parent) {
       forms::control control;
       control.left(10);
       assert::are_equal(10, control.left(), csf_);
       assert::are_equal(drawing::point(10, 0), control.location(), csf_);
     }
     
-    void test_method_(set_left_with_parent) {
+    void test_method_(left_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -970,7 +1024,7 @@ namespace unit_tests {
       assert::are_equal(drawing::point(10, 0), control.location(), csf_);
     }
     
-    void test_method_(set_location_without_parent) {
+    void test_method_(location_without_parent) {
       forms::control control;
       control.location({10, 20});
       assert::are_equal(drawing::point(10, 20), control.location(), csf_);
@@ -978,7 +1032,7 @@ namespace unit_tests {
       assert::are_equal(20, control.top(), csf_);
     }
 
-    void test_method_(set_location_with_parent) {
+    void test_method_(location_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -988,13 +1042,13 @@ namespace unit_tests {
       assert::are_equal(20, control.top(), csf_);
     }
 
-    void test_method_(set_margin_without_parent) {
+    void test_method_(margin_without_parent) {
       forms::control control;
       control.margin(forms::padding(10));
       assert::are_equal(forms::padding(10), control.margin(), csf_);
     }
     
-    void test_method_(set_margin_with_parent) {
+    void test_method_(margin_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1002,7 +1056,7 @@ namespace unit_tests {
       assert::are_equal(forms::padding(10), control.margin(), csf_);
     }
     
-    void test_method_(set_maximum_client_size_without_parent) {
+    void test_method_(maximum_client_size_without_parent) {
       forms::control control;
       control.client_size({300, 300});
       control.maximum_client_size({100, 50});
@@ -1010,7 +1064,7 @@ namespace unit_tests {
       assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
     }
     
-    void test_method_(set_maximum_client_size_with_parent) {
+    void test_method_(maximum_client_size_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1020,7 +1074,7 @@ namespace unit_tests {
       assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
     }
     
-    void test_method_(set_maximum_size_without_parent) {
+    void test_method_(maximum_size_without_parent) {
       forms::control control;
       control.size({300, 300});
       control.maximum_size({100, 50});
@@ -1028,7 +1082,7 @@ namespace unit_tests {
       assert::are_equal(drawing::size(100, 50), control.size(), csf_);
     }
     
-    void test_method_(set_maximum_size_with_parent) {
+    void test_method_(maximum_size_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1038,14 +1092,14 @@ namespace unit_tests {
       assert::are_equal(drawing::size(100, 50), control.size(), csf_);
     }
     
-    void test_method_(set_minimum_client_size_without_parent) {
+    void test_method_(minimum_client_size_without_parent) {
       forms::control control;
       control.minimum_client_size({100, 50});
       assert::are_equal(drawing::size(100, 50), control.minimum_client_size(), csf_);
       assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
     }
     
-    void test_method_(set_minimum_client_size_with_parent) {
+    void test_method_(minimum_client_size_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1054,14 +1108,14 @@ namespace unit_tests {
       assert::are_equal(drawing::size(100, 50), control.client_size(), csf_);
     }
     
-    void test_method_(set_minimum_size_without_parent) {
+    void test_method_(minimum_size_without_parent) {
       forms::control control;
       control.minimum_size({100, 50});
       assert::are_equal(drawing::size(100, 50), control.minimum_size(), csf_);
       assert::are_equal(drawing::size(100, 50), control.size(), csf_);
     }
     
-    void test_method_(set_minimum_size_with_parent) {
+    void test_method_(minimum_size_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1070,13 +1124,13 @@ namespace unit_tests {
       assert::are_equal(drawing::size(100, 50), control.size(), csf_);
     }
     
-    void test_method_(set_name_without_parent) {
+    void test_method_(name_without_parent) {
       forms::control control;
       control.name("Value");
       assert::are_equal("Value", control.name(), csf_);
     }
     
-    void test_method_(set_name_with_parent) {
+    void test_method_(name_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1084,13 +1138,13 @@ namespace unit_tests {
       assert::are_equal("Value", control.name(), csf_);
     }
 
-    void test_method_(set_padding_without_parent) {
+    void test_method_(padding_without_parent) {
       forms::control control;
       control.padding(forms::padding(10));
       assert::are_equal(forms::padding(10), control.padding(), csf_);
     }
     
-    void test_method_(set_padding_with_parent) {
+    void test_method_(padding_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1098,7 +1152,7 @@ namespace unit_tests {
       assert::are_equal(forms::padding(10), control.padding(), csf_);
     }
     
-    void test_method_(set_parent_without_parent) {
+    void test_method_(parent_without_parent) {
       forms::control control;
       forms::control control1;
       forms::control control2;
@@ -1112,7 +1166,7 @@ namespace unit_tests {
       assert::is_null(control3.parent(), csf_);
     }
     
-    void test_method_(set_parent_with_parent) {
+    void test_method_(parent_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1128,14 +1182,25 @@ namespace unit_tests {
       assert::are_same(control, control3.parent().value().get(), csf_);
     }
     
-    void test_method_(set_region_without_parent) {
+    void test_method_(parent_nullptr_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      forms::control control1;
+      control1.parent(control);
+      assert::are_same(control, control1.parent().value().get(), csf_);
+      control1.parent(nullptr);
+      assert::is_null(control1.parent(), csf_);
+    }
+
+    void test_method_(region_without_parent) {
       forms::control control;
       drawing::region region1;
       control.region(region1);
       assert::are_equal(region1, control.region(), csf_);
     }
     
-    void test_method_(set_region_with_parent) {
+    void test_method_(region_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1144,7 +1209,7 @@ namespace unit_tests {
       assert::are_equal(region1, control.region(), csf_);
     }
     
-    void test_method_(set_size_without_parent) {
+    void test_method_(size_without_parent) {
       forms::control control;
       control.size({100, 50});
       assert::are_equal(drawing::size(100, 50), control.size(), csf_);
@@ -1152,7 +1217,7 @@ namespace unit_tests {
       assert::are_equal(50, control.height(), csf_);
     }
     
-    void test_method_(set_size_with_parent) {
+    void test_method_(size_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1162,7 +1227,7 @@ namespace unit_tests {
       assert::are_equal(50, control.height(), csf_);
     }
     
-    void test_method_(set_style_sheet_without_parent) {
+    void test_method_(style_sheet_without_parent) {
       forms::control control;
       style_sheets::style_sheet ss("control {"
                                    "  border-style: solid;"
@@ -1172,7 +1237,7 @@ namespace unit_tests {
       assert::are_equal(ss, control.style_sheet(), csf_);
     }
     
-    void test_method_(set_style_sheet_with_parent) {
+    void test_method_(style_sheet_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1184,13 +1249,13 @@ namespace unit_tests {
       assert::are_equal(ss, control.style_sheet(), csf_);
     }
     
-    void test_method_(set_tab_stop_without_parent) {
+    void test_method_(tab_stop_without_parent) {
       forms::control control;
       control.tab_stop(false);
       assert::is_false(control.tab_stop(), csf_);
     }
     
-    void test_method_(set_tab_stop_with_parent) {
+    void test_method_(tab_stop_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1198,13 +1263,13 @@ namespace unit_tests {
       assert::is_false(control.tab_stop(), csf_);
     }
     
-    void test_method_(set_tag_without_parent) {
+    void test_method_(tag_without_parent) {
       forms::control control;
       control.tag("my tag");
       assert::are_equal("my tag", as<ustring>(control.tag()), csf_);
     }
     
-    void test_method_(set_tag_with_parent) {
+    void test_method_(tag_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1212,13 +1277,13 @@ namespace unit_tests {
       assert::are_equal("my tag", as<ustring>(control.tag()), csf_);
     }
     
-    void test_method_(set_text_without_parent) {
+    void test_method_(text_without_parent) {
       forms::control control;
       control.text("my text");
       assert::are_equal("my text", control.text(), csf_);
     }
     
-    void test_method_(set_text_with_parent) {
+    void test_method_(text_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1226,14 +1291,14 @@ namespace unit_tests {
       assert::are_equal("my text", control.text(), csf_);
     }
     
-    void test_method_(set_top_without_parent) {
+    void test_method_(top_without_parent) {
       forms::control control;
       control.top(20);
       assert::are_equal(20, control.top(), csf_);
       assert::are_equal(drawing::point(0, 20), control.location(), csf_);
     }
     
-    void test_method_(set_top_with_parent) {
+    void test_method_(top_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1242,13 +1307,13 @@ namespace unit_tests {
       assert::are_equal(drawing::point(0, 20), control.location(), csf_);
     }
     
-    void test_method_(set_visible_without_parent) {
+    void test_method_(visible_without_parent) {
       forms::control control;
       control.visible(false);
       assert::is_false(control.visible(), csf_);
     }
     
-    void test_method_(set_visible_with_parent) {
+    void test_method_(visible_with_parent) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1256,7 +1321,7 @@ namespace unit_tests {
       assert::is_false(control.visible(), csf_);
     }
     
-    void test_method_(set_check_for_illegal_cross_thread_call) {
+    void test_method_(check_for_illegal_cross_thread_call) {
       forms::control::check_for_illegal_cross_thread_calls(false);
       assert::is_false(forms::control::check_for_illegal_cross_thread_calls(), csf_);
     }
@@ -1479,6 +1544,39 @@ namespace unit_tests {
       forms::control control;
       control.parent(form);
       assert::does_not_throw([&]{control.resume_layout();}, csf_);
+    }
+    
+    void test_method_(show_without_parent) {
+      forms::control control;
+      control.visible(false);
+      control.show();
+      assert::is_true(control.visible());
+    }
+    
+    void test_method_(show_with_parent) {
+      forms::form form;
+      forms::control control;
+      control.parent(form);
+      control.visible(false);
+      control.show();
+      assert::is_true(control.visible());
+    }
+    
+    void test_method_(to_string) {
+      forms::control control;
+      assert::are_equal("xtd::forms::control", control.to_string());
+    }
+    
+    void test_method_(to_string_with_name) {
+      forms::control control;
+      control.name("my_name");
+      assert::are_equal("xtd::forms::control, name: my_name", control.to_string());
+    }
+    
+    void test_method_(to_string_with_text) {
+      forms::control control;
+      control.text("my_text");
+      assert::are_equal("xtd::forms::control, text: my_text", control.to_string());
     }
 
     void test_method_(on_auto_size_changed) {
