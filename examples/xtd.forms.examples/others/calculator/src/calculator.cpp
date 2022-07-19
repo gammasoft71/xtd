@@ -40,11 +40,11 @@ namespace calculator {
       
       button_clear.parent(*this);
       button_clear.back_color(drawing::color::from_argb(64, 64, 64));
-      button_clear.flat_appearance().mouse_down_back_color(drawing::color::from_argb(102, 102, 102));
-      button_clear.flat_appearance().mouse_over_back_color(drawing::color::from_argb(64, 64, 64));
-      button_clear.flat_appearance().border_color(drawing::color::from_argb(44, 44, 47));
-      button_clear.flat_appearance().border_radius(0);
-      button_clear.flat_appearance().border_size(0);
+      button_clear.flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))
+        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))
+        .border_color(drawing::color::from_argb(44, 44, 47))
+        .border_radius(0)
+        .border_size(0));
       button_clear.flat_style(xtd::forms::flat_style::flat);
       button_clear.location({0, 60});
       button_clear.text("C");
@@ -53,11 +53,11 @@ namespace calculator {
       
       button_plus_minus.parent(*this);
       button_plus_minus.back_color(drawing::color::from_argb(64, 64, 64));
-      button_plus_minus.flat_appearance().mouse_down_back_color(drawing::color::from_argb(102, 102, 102));
-      button_plus_minus.flat_appearance().mouse_over_back_color(drawing::color::from_argb(64, 64, 64));
-      button_plus_minus.flat_appearance().border_color(drawing::color::from_argb(44, 44, 47));
-      button_plus_minus.flat_appearance().border_radius(0);
-      button_plus_minus.flat_appearance().border_size(0);
+      button_plus_minus.flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))
+        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))
+        .border_color(drawing::color::from_argb(44, 44, 47))
+        .border_radius(0)
+        .border_size(0));
       button_plus_minus.flat_style(xtd::forms::flat_style::flat);
       button_plus_minus.location({61, 60});
       button_plus_minus.text("+/-");
@@ -66,11 +66,11 @@ namespace calculator {
       
       button_percent.parent(*this);
       button_percent.back_color(drawing::color::from_argb(64, 64, 64));
-      button_percent.flat_appearance().mouse_down_back_color(drawing::color::from_argb(102, 102, 102));
-      button_percent.flat_appearance().mouse_over_back_color(drawing::color::from_argb(64, 64, 64));
-      button_percent.flat_appearance().border_color(drawing::color::from_argb(44, 44, 47));
-      button_percent.flat_appearance().border_radius(0);
-      button_percent.flat_appearance().border_size(0);
+      button_percent.flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))
+        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))
+        .border_color(drawing::color::from_argb(44, 44, 47))
+        .border_radius(0)
+        .border_size(0));
       button_percent.flat_style(xtd::forms::flat_style::flat);
       button_percent.location({122, 60});
       button_percent.text("%");
@@ -79,11 +79,11 @@ namespace calculator {
       
       button_decimal.parent(*this);
       button_decimal.back_color(drawing::color::from_argb(102, 102, 102));
-      button_decimal.flat_appearance().mouse_down_back_color(drawing::color::from_argb(144, 144, 144));
-      button_decimal.flat_appearance().mouse_over_back_color(drawing::color::from_argb(102, 102, 102));
-      button_decimal.flat_appearance().border_color(drawing::color::from_argb(44, 44, 47));
-      button_decimal.flat_appearance().border_radius(0);
-      button_decimal.flat_appearance().border_size(0);
+      button_decimal.flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(144, 144, 144))
+        .mouse_over_back_color(drawing::color::from_argb(102, 102, 102))
+        .border_color(drawing::color::from_argb(44, 44, 47))
+        .border_radius(0)
+        .border_size(0));
       button_decimal.flat_style(xtd::forms::flat_style::flat);
       button_decimal.location({122, 264});
       button_decimal.text(".");
@@ -94,11 +94,11 @@ namespace calculator {
       for (int i = 0; i < 10; i++) {
         button_numbers[i].parent(*this);
         button_numbers[i].back_color(drawing::color::from_argb(102, 102, 102));
-        button_numbers[i].flat_appearance().mouse_down_back_color(drawing::color::from_argb(144, 144, 144));
-        button_numbers[i].flat_appearance().mouse_over_back_color(drawing::color::from_argb(102, 102, 102));
-        button_numbers[i].flat_appearance().border_color(drawing::color::from_argb(44, 44, 47));
-        button_numbers[i].flat_appearance().border_radius(0);
-        button_numbers[i].flat_appearance().border_size(0);
+        button_numbers[i].flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(144, 144, 144))
+          .mouse_over_back_color(drawing::color::from_argb(102, 102, 102))
+          .border_color(drawing::color::from_argb(44, 44, 47))
+          .border_radius(0)
+          .border_size(0));
         button_numbers[i].flat_style(xtd::forms::flat_style::flat);
         button_numbers[i].text(ustring::format("{}", i));
         button_numbers[i].location(button_number_locations[i]);
@@ -112,11 +112,11 @@ namespace calculator {
       for (int i = 0; i < 5; i++) {
         button_operators[i].parent(*this);
         button_operators[i].back_color(drawing::color::from_argb(255, 159, 11));
-        button_operators[i].flat_appearance().mouse_down_back_color(drawing::color::from_argb(234, 138, 0));
-        button_operators[i].flat_appearance().mouse_over_back_color(drawing::color::from_argb(255, 159, 11));
-        button_operators[i].flat_appearance().border_color(drawing::color::from_argb(44, 44, 47));
-        button_operators[i].flat_appearance().border_radius(0);
-        button_operators[i].flat_appearance().border_size(0);
+        button_operators[i].flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(234, 138, 0))
+          .mouse_over_back_color(drawing::color::from_argb(255, 159, 11))
+          .border_color(drawing::color::from_argb(44, 44, 47))
+          .border_radius(0)
+          .border_size(0));
         button_operators[i].flat_style(xtd::forms::flat_style::flat);
         button_operators[i].text(button_operator_texts[i]);
         button_operators[i].location(button_operator_locations[i]);

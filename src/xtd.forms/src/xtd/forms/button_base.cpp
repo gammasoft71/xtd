@@ -20,9 +20,17 @@ control& button_base::control_appearance(forms::control_appearance value) {
   return *this;
 }
 
-button_base& button_base::flat_style(xtd::forms::flat_style flat_style) {
-  if (data_->flat_style != flat_style) {
-    data_->flat_style = flat_style;
+button_base& button_base::flat_appearance(const xtd::forms::flat_button_appearance& value) {
+  if (data_->flat_appearance != value) {
+    data_->flat_appearance = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+button_base& button_base::flat_style(xtd::forms::flat_style value) {
+  if (data_->flat_style != value) {
+    data_->flat_style = value;
     control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
     recreate_handle();
   }

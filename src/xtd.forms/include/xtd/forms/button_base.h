@@ -61,17 +61,17 @@ namespace xtd {
 
       /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
       /// @return The xtd::forms::flat_button_appearance appearance.
-      const xtd::forms::flat_button_appearance& flat_appearance() const {return data_->flat_appearance;}
-      /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
-      /// @return The xtd::forms::flat_button_appearance appearance.
-      xtd::forms::flat_button_appearance& flat_appearance() {return data_->flat_appearance;}
-      
+      virtual const xtd::forms::flat_button_appearance& flat_appearance() const {return data_->flat_appearance;}
+      /// @brief Sets the appearance of the border and the colors used to indicate check state and mouse state.
+      /// @param value The xtd::forms::flat_button_appearance appearance.
+      virtual xtd::forms::button_base& flat_appearance(const xtd::forms::flat_button_appearance& value);
+
       /// @brief Gets the flat style appearance of the button control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
       virtual xtd::forms::flat_style flat_style() const {return data_->flat_style;}
       /// @brief Sets the flat style appearance of the button control.
-      /// @param flat_style One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
-      virtual xtd::forms::button_base& flat_style(xtd::forms::flat_style flat_style);
+      /// @param value One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
+      virtual xtd::forms::button_base& flat_style(xtd::forms::flat_style value);
       
       /// @brief Gets the image that is displayed on a button control.
       /// @return The Image displayed on the button control. The default value is xtd::drawing::image::empty.

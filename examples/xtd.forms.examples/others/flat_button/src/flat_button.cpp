@@ -18,10 +18,10 @@ public:
     
     button2.location({50, 80});
     button2.back_color(color::green);
-    button2.flat_appearance().border_color(color::light_green);
-    button2.flat_appearance().border_size(2);
-    button2.flat_appearance().mouse_over_back_color(color::light_green);
-    button2.flat_appearance().mouse_down_back_color(color::dark_green);
+    button2.flat_appearance(flat_button_appearance().border_color(color::light_green)
+      .border_size(2)
+      .mouse_over_back_color(color::light_green)
+      .mouse_down_back_color(color::dark_green));
     button2.flat_style(xtd::forms::flat_style::flat);
     button2.text("button2");
     
@@ -33,7 +33,7 @@ public:
     button3.text("Gammasoft");
     
     button4.location({50, 155});
-    button4.flat_appearance().border_size(0);
+    button4.flat_appearance(flat_button_appearance().border_size(0));
     button4.flat_style(xtd::forms::flat_style::flat);
     button4.size({70, 70});
     button4.image(image::from_data(gammasoft_64x64_xpm));
