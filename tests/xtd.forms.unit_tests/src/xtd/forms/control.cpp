@@ -1487,7 +1487,7 @@ namespace unit_tests {
 
     void test_method_(focus_without_parent) {
       forms::control control;
-      assert::is_false(control.focus());
+      assert::is_false(control.focus(), csf_);
       assert::is_false(control.focused(), csf_);
     }
     
@@ -1495,13 +1495,13 @@ namespace unit_tests {
       forms::form form;
       forms::control control;
       control.parent(form);
-      assert::is_true(control.focus());
+      assert::is_true(control.focus(), csf_);
       assert::is_true(control.focused(), csf_);
     }
     
     void test_method_(get_auto_size_mode) {
       forms::control control;
-      assert::are_equal(auto_size_mode::grow_and_shrink, control.get_auto_size_mode());
+      assert::are_equal(auto_size_mode::grow_and_shrink, control.get_auto_size_mode(), csf_);
     }
     
     void test_method_(get_child_index_without_parent) {
@@ -1535,7 +1535,7 @@ namespace unit_tests {
     void test_method_(hide_without_parent) {
       forms::control control;
       control.hide();
-      assert::is_false(control.visible());
+      assert::is_false(control.visible(), csf_);
     }
     
     void test_method_(hide_with_parent) {
@@ -1543,7 +1543,7 @@ namespace unit_tests {
       forms::control control;
       control.parent(form);
       control.hide();
-      assert::is_false(control.visible());
+      assert::is_false(control.visible(), csf_);
     }
     
     void test_method_(resume_layout_after_suspend_layout) {
@@ -1565,7 +1565,7 @@ namespace unit_tests {
       forms::control control;
       control.visible(false);
       control.show();
-      assert::is_true(control.visible());
+      assert::is_true(control.visible(), csf_);
     }
     
     void test_method_(show_with_parent) {
@@ -1574,24 +1574,124 @@ namespace unit_tests {
       control.parent(form);
       control.visible(false);
       control.show();
-      assert::is_true(control.visible());
+      assert::is_true(control.visible(), csf_);
     }
     
     void test_method_(to_string) {
       forms::control control;
-      assert::are_equal("xtd::forms::control", control.to_string());
+      assert::are_equal("xtd::forms::control", control.to_string(), csf_);
     }
     
     void test_method_(to_string_with_name) {
       forms::control control;
       control.name("my_name");
-      assert::are_equal("xtd::forms::control, name: my_name", control.to_string());
+      assert::are_equal("xtd::forms::control, name: my_name", control.to_string(), csf_);
     }
     
     void test_method_(to_string_with_text) {
       forms::control control;
       control.text("my_text");
-      assert::are_equal("xtd::forms::control, text: my_text", control.to_string());
+      assert::are_equal("xtd::forms::control, text: my_text", control.to_string(), csf_);
+    }
+    
+    void test_method_(create_with_default_arguments) {
+      auto control = forms::control::create<forms::control>();
+      assert::is_not_null(control, csf_);
+      assert::is_null(control->parent(), csf_);
+      assert::is_zero(control->handle(), csf_);
+      assert::is_empty(control->text(), csf_);
+      assert::are_equal(drawing::point(0, 0), control->location(), csf_);
+      assert::are_equal(drawing::size(0, 0), control->size(), csf_);
+      assert::are_equal(control->default_back_color(), control->back_color(), csf_);
+      assert::are_equal(control->default_fore_color(), control->fore_color(), csf_);
+    }
+    
+    void test_method_(create_with_parent_default_arguments) {
+      forms::form form;
+      auto control = forms::control::create<forms::control>(form);
+      assert::is_not_null(control, csf_);
+      assert::are_same(form, control->parent().value().get(), csf_);
+      assert::is_not_zero(control->handle(), csf_);
+      assert::is_empty(control->text(), csf_);
+      assert::are_equal(drawing::point(0, 0), control->location(), csf_);
+      assert::are_equal(drawing::size(0, 0), control->size(), csf_);
+      assert::are_equal(control->default_back_color(), control->back_color(), csf_);
+      assert::are_equal(control->default_fore_color(), control->fore_color(), csf_);
+    }
+    
+    void test_method_(create_with_arguments) {
+      auto control = forms::control::create<forms::control>(drawing::point(10, 20), drawing::size(100, 50), drawing::color::cyan, drawing::color::black);
+      assert::is_not_null(control, csf_);
+      assert::is_null(control->parent(), csf_);
+      assert::is_zero(control->handle(), csf_);
+      assert::is_empty(control->text(), csf_);
+      assert::are_equal(drawing::point(10, 20), control->location(), csf_);
+      assert::are_equal(drawing::size(100, 50), control->size(), csf_);
+      assert::are_equal(drawing::color::cyan, control->back_color(), csf_);
+      assert::are_equal(drawing::color::black, control->fore_color(), csf_);
+    }
+    
+    void test_method_(create_with_parent_and_arguments) {
+      forms::form form;
+      auto control = forms::control::create<forms::control>(form, drawing::point(10, 20), drawing::size(100, 50), drawing::color::cyan, drawing::color::black);
+      assert::is_not_null(control, csf_);
+      assert::are_same(form, control->parent().value().get(), csf_);
+      assert::is_not_zero(control->handle(), csf_);
+      assert::is_empty(control->text(), csf_);
+      assert::are_equal(drawing::point(10, 20), control->location(), csf_);
+      assert::are_equal(drawing::size(100, 50), control->size(), csf_);
+      assert::are_equal(drawing::color::cyan, control->back_color(), csf_);
+      assert::are_equal(drawing::color::black, control->fore_color(), csf_);
+    }
+
+    void test_method_(create_with_text_and_default_arguments) {
+      auto control = forms::control::create<forms::control>("my_text");
+      assert::is_not_null(control, csf_);
+      assert::is_null(control->parent(), csf_);
+      assert::is_zero(control->handle(), csf_);
+      assert::are_equal("my_text", control->text(), csf_);
+      assert::are_equal(drawing::point(0, 0), control->location(), csf_);
+      assert::are_equal(drawing::size(0, 0), control->size(), csf_);
+      assert::are_equal(control->default_back_color(), control->back_color(), csf_);
+      assert::are_equal(control->default_fore_color(), control->fore_color(), csf_);
+    }
+    
+    void test_method_(create_with_parent_text_and_default_arguments) {
+      forms::form form;
+      auto control = forms::control::create<forms::control>(form, "my_text");
+      assert::is_not_null(control, csf_);
+      assert::are_same(form, control->parent().value().get(), csf_);
+      assert::is_not_zero(control->handle(), csf_);
+      assert::are_equal("my_text", control->text(), csf_);
+      assert::are_equal(drawing::point(0, 0), control->location(), csf_);
+      assert::are_equal(drawing::size(0, 0), control->size(), csf_);
+      assert::are_equal(control->default_back_color(), control->back_color(), csf_);
+      assert::are_equal(control->default_fore_color(), control->fore_color(), csf_);
+    }
+
+    void test_method_(create_with_text_and_arguments) {
+      auto control = forms::control::create<forms::control>("my_text", drawing::point(10, 20), drawing::size(100, 50), drawing::color::cyan, drawing::color::black);
+      assert::is_not_null(control, csf_);
+      assert::is_null(control->parent(), csf_);
+      assert::is_zero(control->handle(), csf_);
+      assert::are_equal("my_text", control->text(), csf_);
+      assert::are_equal(drawing::point(10, 20), control->location(), csf_);
+      assert::are_equal(drawing::size(100, 50), control->size(), csf_);
+      assert::are_equal(drawing::color::cyan, control->back_color(), csf_);
+      assert::are_equal(drawing::color::black, control->fore_color(), csf_);
+    }
+    
+    void test_method_(create_with_parent_text_and_arguments) {
+      forms::form form;
+      auto control = forms::control::create<forms::control>(form, "my_text", drawing::point(10, 20), drawing::size(100, 50), drawing::color::cyan, drawing::color::black);
+      assert::is_not_null(control, csf_);
+      assert::are_same(form, control->parent().value().get(), csf_);
+      assert::is_not_zero(control->handle(), csf_);
+      assert::are_equal("my_text", control->text(), csf_);
+      assert::are_equal(drawing::point(10, 20), control->location(), csf_);
+      assert::are_equal(drawing::size(100, 50), control->size(), csf_);
+      assert::are_equal(drawing::color::cyan, control->back_color(), csf_);
+      assert::are_equal(drawing::color::black, control->fore_color(), csf_);
     }
 
     void test_method_(on_auto_size_changed) {
@@ -2222,7 +2322,7 @@ namespace unit_tests {
       
       auto initial_handle = control.handle();
       control.recreate_handle();
-      assert::are_not_equal(initial_handle, control.handle());
+      assert::are_not_equal(initial_handle, control.handle(), csf_);
     }
   };
 }
