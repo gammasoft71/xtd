@@ -136,32 +136,6 @@ namespace unit_tests {
       assert::is_true(button.auto_size(), csf_);
     }
     
-    void test_method_(flat_appearance_without_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
-      button_base_for_test button;
-      auto appearance = flat_button_appearance().border_color(drawing::color::spring_green);
-      button.flat_appearance(appearance);
-      assert::are_equal(appearance, button.flat_appearance(), csf_);
-      assert::are_equal(drawing::color::spring_green, button.flat_appearance().border_color(), csf_);
-    }
-    
-    void test_method_(flat_appearance_with_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
-      forms::form form;
-      button_base_for_test button;
-      button.parent(form);
-      auto appearance = flat_button_appearance().border_color(drawing::color::spring_green);
-      button.flat_appearance(appearance);
-      assert::are_equal(appearance, button.flat_appearance(), csf_);
-      assert::are_equal(drawing::color::spring_green, button.flat_appearance().border_color(), csf_);
-    }
-    
     void test_method_(control_appearance_without_parent) {
       class button_base_for_test : public button_base {
       public:
@@ -192,6 +166,32 @@ namespace unit_tests {
       button.control_appearance(xtd::forms::control_appearance::standard);
       assert::are_equal(xtd::forms::control_appearance::standard, button.control_appearance(), csf_);
       assert::are_equal(xtd::forms::flat_style::standard, button.flat_style(), csf_);
+    }
+
+    void test_method_(flat_appearance_without_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      button_base_for_test button;
+      auto appearance = flat_button_appearance().border_color(drawing::color::spring_green);
+      button.flat_appearance(appearance);
+      assert::are_equal(appearance, button.flat_appearance(), csf_);
+      assert::are_equal(drawing::color::spring_green, button.flat_appearance().border_color(), csf_);
+    }
+    
+    void test_method_(flat_appearance_with_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      forms::form form;
+      button_base_for_test button;
+      button.parent(form);
+      auto appearance = flat_button_appearance().border_color(drawing::color::spring_green);
+      button.flat_appearance(appearance);
+      assert::are_equal(appearance, button.flat_appearance(), csf_);
+      assert::are_equal(drawing::color::spring_green, button.flat_appearance().border_color(), csf_);
     }
 
     void test_method_(flat_style_without_parent) {
