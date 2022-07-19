@@ -1693,7 +1693,70 @@ namespace unit_tests {
       assert::are_equal(drawing::color::cyan, control->back_color(), csf_);
       assert::are_equal(drawing::color::black, control->fore_color(), csf_);
     }
+    
+    void test_method_(from_child_handle) {
+      forms::form form;
+      forms::control control1;
+      forms::control control2;
+      forms::control control3;
+      control1.parent(form);
+      control2.parent(control1);
+      
+      assert::is_null(forms::control::from_child_handle(form.handle()), csf_);
+      assert::are_same(form, forms::control::from_child_handle(control1.handle()).value().get(), csf_);
+      assert::are_same(control1, forms::control::from_child_handle(control2.handle()).value().get(), csf_);
+      assert::is_null(forms::control::from_child_handle(control3.handle()), csf_);
+      assert::is_null(forms::control::from_handle(1234), csf_);
+   }
+    
+    void test_method_(from_handle) {
+      forms::form form;
+      forms::control control1;
+      forms::control control2;
+      forms::control control3;
+      control1.parent(form);
+      control2.parent(control1);
+      
+      assert::are_same(form, forms::control::from_handle(form.handle()).value().get(), csf_);
+      assert::are_same(control1, forms::control::from_handle(control1.handle()).value().get(), csf_);
+      assert::are_same(control2, forms::control::from_handle(control2.handle()).value().get(), csf_);
+      assert::is_null(forms::control::from_handle(control3.handle()), csf_);
+      assert::is_null(forms::control::from_handle(1234), csf_);
+    }
+    
+    void test_method_(control_insertion_operator) {
+      forms::form form;
+      forms::control control1;
+      forms::control control2;
 
+      form << control1;
+      control1 << control2;
+      
+      assert::is_null(form.parent(), csf_);
+      assert::are_same(form, control1.parent().value().get(), csf_);
+      assert::are_same(control1, control2.parent().value().get(), csf_);
+    }
+    
+    void test_method_(control_extraction_operator) {
+      forms::form form;
+      forms::control control1;
+      forms::control control2;
+      
+      control1.parent(form);
+      control2.parent(control1);
+      
+      assert::is_null(form.parent(), csf_);
+      assert::are_same(form, control1.parent().value().get(), csf_);
+      assert::are_same(control1, control2.parent().value().get(), csf_);
+      
+      control1 >> control2;
+      form >> control1;
+
+      assert::is_null(form.parent(), csf_);
+      assert::is_null(control1.parent(), csf_);
+      assert::is_null(control2.parent(), csf_);
+    }
+    
     void test_method_(on_auto_size_changed) {
       class control_for_test : public control {
       public:
