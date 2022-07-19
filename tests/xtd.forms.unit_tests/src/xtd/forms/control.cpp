@@ -1182,7 +1182,7 @@ namespace unit_tests {
       assert::are_same(control, control3.parent().value().get(), csf_);
     }
     
-    void test_method_(parent_nullptr_with_parent) {
+    void test_method_(parent_nullptr) {
       forms::form form;
       forms::control control;
       control.parent(form);
@@ -1191,6 +1191,21 @@ namespace unit_tests {
       assert::are_same(control, control1.parent().value().get(), csf_);
       control1.parent(nullptr);
       assert::is_null(control1.parent(), csf_);
+    }
+    
+    void test_method_(parent_with_other_control) {
+      forms::form form1;
+      forms::form form2;
+      forms::control control;
+      control.parent(form1);
+      assert::are_equal(1U, form1.controls().size(), csf_);
+      assert::are_equal(0U, form2.controls().size(), csf_);
+      assert::are_same(form1, control.parent().value().get(), csf_);
+
+      control.parent(form2);
+      assert::are_equal(0U, form1.controls().size(), csf_);
+      assert::are_equal(1U, form2.controls().size(), csf_);
+      assert::are_same(form2, control.parent().value().get(), csf_);
     }
 
     void test_method_(region_without_parent) {
