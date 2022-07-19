@@ -142,10 +142,10 @@ namespace unit_tests {
         button_base_for_test() = default;
       };
       button_base_for_test button;
-      flat_button_appearance appearance;
-      appearance.border_color(xtd::drawing::color::spring_green);
+      auto appearance = flat_button_appearance().border_color(drawing::color::spring_green);
       button.flat_appearance(appearance);
       assert::are_equal(appearance, button.flat_appearance(), csf_);
+      assert::are_equal(drawing::color::spring_green, button.flat_appearance().border_color(), csf_);
     }
     
     void test_method_(flat_appearance_with_parent) {
@@ -156,8 +156,74 @@ namespace unit_tests {
       forms::form form;
       button_base_for_test button;
       button.parent(form);
-      button.auto_size(true);
-      assert::is_true(button.auto_size(), csf_);
+      auto appearance = flat_button_appearance().border_color(drawing::color::spring_green);
+      button.flat_appearance(appearance);
+      assert::are_equal(appearance, button.flat_appearance(), csf_);
+      assert::are_equal(drawing::color::spring_green, button.flat_appearance().border_color(), csf_);
+    }
+    
+    void test_method_(control_appearance_without_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      button_base_for_test button;
+      button.control_appearance(xtd::forms::control_appearance::system);
+      assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance(), csf_);
+      assert::are_equal(xtd::forms::flat_style::system, button.flat_style(), csf_);
+      
+      button.control_appearance(xtd::forms::control_appearance::standard);
+      assert::are_equal(xtd::forms::control_appearance::standard, button.control_appearance(), csf_);
+      assert::are_equal(xtd::forms::flat_style::standard, button.flat_style(), csf_);
+    }
+    
+    void test_method_(control_appearance_with_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      forms::form form;
+      button_base_for_test button;
+      button.parent(form);
+      button.control_appearance(xtd::forms::control_appearance::system);
+      assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance(), csf_);
+      assert::are_equal(xtd::forms::flat_style::system, button.flat_style(), csf_);
+      
+      button.control_appearance(xtd::forms::control_appearance::standard);
+      assert::are_equal(xtd::forms::control_appearance::standard, button.control_appearance(), csf_);
+      assert::are_equal(xtd::forms::flat_style::standard, button.flat_style(), csf_);
+    }
+
+    void test_method_(flat_style_without_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      button_base_for_test button;
+      button.flat_style(xtd::forms::flat_style::flat);
+      assert::are_equal(xtd::forms::flat_style::flat, button.flat_style(), csf_);
+      assert::are_equal(xtd::forms::control_appearance::standard, button.control_appearance(), csf_);
+
+      button.flat_style(xtd::forms::flat_style::system);
+      assert::are_equal(xtd::forms::flat_style::system, button.flat_style(), csf_);
+      assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance(), csf_);
+    }
+    
+    void test_method_(flat_style_with_parent) {
+      class button_base_for_test : public button_base {
+      public:
+        button_base_for_test() = default;
+      };
+      forms::form form;
+      button_base_for_test button;
+      button.parent(form);
+      button.flat_style(xtd::forms::flat_style::flat);
+      assert::are_equal(xtd::forms::flat_style::flat, button.flat_style(), csf_);
+      assert::are_equal(xtd::forms::control_appearance::standard, button.control_appearance(), csf_);
+      
+      button.flat_style(xtd::forms::flat_style::system);
+      assert::are_equal(xtd::forms::flat_style::system, button.flat_style(), csf_);
+      assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance(), csf_);
     }
 
     void test_method_(image_changed) {
