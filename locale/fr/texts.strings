@@ -95,7 +95,7 @@ key "&First"
 value "&Première"
 
 key "&Floppy"
-value "&Floppy"
+value "&Disquette"
 
 key "&Font"
 value "&Police"
@@ -104,7 +104,7 @@ key "&Forward"
 value "&Transmettre"
 
 key "&Harddisk"
-value "&Harddisk"
+value "&Disque dur"
 
 key "&Help"
 value "&Aide"
@@ -161,7 +161,7 @@ key "&Paste"
 value "&Coller"
 
 key "&Preferences"
-value "&PréférencesPréférences"
+value "&Préférences"
 
 key "&Previous"
 value "&Précédent"
