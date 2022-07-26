@@ -10,6 +10,7 @@ This section contains the xtd documentation. ​
 * [Guides](guides.md) provides xtd guides and tutorials.
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html) provides online user reference guide.
 * [Design Guidelines](design_guidelines.md) provides guidelines for designing libraries that extend and interact with the xtd.
+* [kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
 * [Development status](development_status.md) provides information about classes and libraries development status.
 * [Translation status](translations_status.md) provides information about translations status.
 * [Roadmap](roadmap.md) provides xtd roadmap.
