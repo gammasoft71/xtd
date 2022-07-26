@@ -14,6 +14,8 @@ namespace xtd {
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit
+    /// @remarks Validations are the same as assertions with the difference, no exception is thrown, but an error is generated.
+    /// @remarks If a validation fails, he test can be continued to the end or to an assertion is generated.
     /// @par Examples
     /// This example show how to used some methods :
     /// @include valid.cpp
