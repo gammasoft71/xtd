@@ -21,7 +21,7 @@
 
 [![architecture_logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/block_diagram_onion.png)](https://github.com/gammasoft71/xtd/blob/master/docs/hierarchy.md)
 
-These libraries are grouped by theme :
+These libraries are grouped by package :
 
 ### system
 
