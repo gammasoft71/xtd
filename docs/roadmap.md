@@ -19,7 +19,7 @@
 * This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates.
 * The current plan is not set in stone. Some tasks can be moved from one release to another. New tasks can also be added. But this has at least the merit to have a global view on the tasks to be done.
 * You can follow the evolution of the development. We keep the status up to date.
-* [Kan-ban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
+* [Kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
 
 ## Release 0.2.0 (beta)
 
