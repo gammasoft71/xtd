@@ -21,6 +21,11 @@
 | [English](../locale/en) | ![progresser](pictures/progress100.png) |
 | [French](../locale/fr)  | ![progresser](pictures/progress100.png) |
 
+## See also
+
+* [Development status](https://github.com/gammasoft71/xtd/blob/master/docs/development_status.md)
+* [Documentation](documentation.md)
+
 ______________________________________________________________________________________________
 
 © 2022 Gammasoft.
