@@ -5,7 +5,7 @@
 [![libraries_img](pictures/block_diagram_onion.png)](hierarchy.md)
 
 
-# xtd is composed of several libraries
+## xtd is composed of several libraries
 
 These libraries are grouped by package :
 
@@ -30,7 +30,10 @@ The [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) lib
 The [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) library is a unit-testing framework for modern C++17/20. Initially ported from [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
 
-See [xtd libraries hierarchy](hierarchy.md).
+## See also
+
+* [xtd libraries hierarchy](hierarchy.md)
+* [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
 
