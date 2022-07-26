@@ -45,6 +45,10 @@
 
 ## See also
 
+* [xtd - kanban board](https://github.com/users/gammasoft71/projects/3)
+* [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md)
+* [Release notes](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md)
+* [Translation status](https://github.com/gammasoft71/xtd/blob/master/docs/translations_status.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
