@@ -8,6 +8,10 @@
 
 [![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://github.com/gammasoft71/xtd/blob/master/docs/license.md) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#c++17) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html) [![wiki](https://img.shields.io/badge/wiki-documentation-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/home.md) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.wixsite.com/xtdpro) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
  
+# Latest news
+
+* [Release xtd 0.1.0 (beta) - October 10, 2021](news.md#release-xtd-010-beta-october-10-2021) 
+
 ## Features
 
 * Free and open-source ([MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md));
@@ -17,11 +21,11 @@
 * written in efficient, modern C++17 / C++20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
 * and [highly portable](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#operating-system-supported);
 
-## xtd is composed of several libraries
+## xtd libraries architecture
 
 [![architecture_logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/block_diagram_onion.png)](https://github.com/gammasoft71/xtd/blob/master/docs/hierarchy.md)
 
-These libraries are grouped by package :
+xtd is composed of several libraries grouped by package.
 
 ### system
 
@@ -42,15 +46,6 @@ The [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) lib
 
 [![tunit](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.tunit.png)](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html)
 The [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) library is a unit-testing framework for modern C++17/20. Initially ported from [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
-
-## Links
-
-For more information about xtd see :
-* [website](https://gammasoft71.wixsite.com/xtdpro)
-* [wiki](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
-* [github](https://github.com/gammasoft71/xtd) 
-* [project](https://sourceforge.net/projects/xtdpro/) 
-* [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)
 
 ## Getting Started
 
@@ -326,3 +321,11 @@ ________________________________________________________________________________
 [![painting](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/painting.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)
 
 [painting (on Ubuntu)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)
+
+## See also
+
+* [website](https://gammasoft71.wixsite.com/xtdpro)
+* [wiki](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
+* [github](https://github.com/gammasoft71/xtd) 
+* [project](https://sourceforge.net/projects/xtdpro/) 
+* [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)
