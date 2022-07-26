@@ -1,3 +1,7 @@
+.image {
+   text-align: left;
+}
+
 div.image img[src="tg.png"]{
   width:128px;
   height:96px;
