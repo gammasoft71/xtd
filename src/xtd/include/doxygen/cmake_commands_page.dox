@@ -278,7 +278,6 @@
 ///  add_sources(my_project.cpp)
 ///  add_references(xtd.drawing xtd.drawing.native)
 ///
-///  target_name("my_exe")
 ///  target_type(CONSOLE_APPLICATION)
 /// @endcode
 ///
@@ -775,7 +774,7 @@
 ///  * ON Registered
 ///  * OFF Not registered
 ///
-/// @see @ref ApplicationNoRegisterSubSection
+/// @see @ref TargetRegisteredSubSection
 ///
 /// @subsection TargetTypeVariableSubSection TARGET_TYPE
 /// @brief Contains application type.

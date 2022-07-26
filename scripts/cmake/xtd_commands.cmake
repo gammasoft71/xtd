@@ -263,7 +263,6 @@ endmacro()
 ##  add_sources(my_project.cpp)
 ##  add_references(xtd.string xtd.core)
 ##
-##  target_name("my_exe")
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
 macro(target_type TYPE)
