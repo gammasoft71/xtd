@@ -26,7 +26,6 @@ These libraries are grouped by theme :
 ### system
 
 [![core](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.core.png)](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html)
-
 The [xtd.core](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html) library is modern C++17/20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
 
 ### drawing
