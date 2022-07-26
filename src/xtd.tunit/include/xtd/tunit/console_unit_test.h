@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd::tunit
     /// @par Library
     /// xtd.tunit
-    /// @ingroup xtd_tunit
+    /// @ingroup xtd_tunit tunit
     /// @remarks All messages are displayed on the console.
     /// @par Examples
     /// This example shows how to instantiate and launch tests with console unit test.

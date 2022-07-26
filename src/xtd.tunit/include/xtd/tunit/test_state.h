@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd::tunit
     /// @par Library
     /// xtd.tunit
-    /// @ingroup xtd_tunit
+    /// @ingroup xtd_tunit tunit
     enum class test_state {
       /// @brief Test is considered.
       considered,

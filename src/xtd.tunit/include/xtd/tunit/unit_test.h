@@ -28,7 +28,7 @@ namespace xtd {
     /// xtd::tunit
     /// @par Library
     /// xtd.tunit
-    /// @ingroup xtd_tunit
+    /// @ingroup xtd_tunit tunit
     class tunit_export_ unit_test {
     public:
       explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept;
