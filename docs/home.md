@@ -48,15 +48,14 @@ See [xtd libraries hierarchy](hierarchy.md).
 # Objectives and Mission
 
 * xtd is a powerful, yet easy to use platform to build your applications upon
-* xtd allows you to build highly portable applications (write once – compile and run anywhere)
 * xtd is modular and scalable from embedded applications
 * xtd provides consistent, comprehensive and comprehensible programming interfaces
 * xtd favors simplicity over complexity ("as simple as possible, but not simpler")
-* xtd aims for consistency in design, coding style and documentation
+* xtd aims for consistency in [design](https://github.com/gammasoft71/xtd/blob/master/docs/documentation.md), [coding style](https://github.com/gammasoft71/xtd/blob/master/docs/coding_conventions_guidelines.md) and [documentation](https://codedocs.xyz/gammasoft71/xtd/index.html)
 * xtd emphasizes source code quality, in terms of readability, comprehensiveness, consistency, style and testability
 * xtd aims to make C++ programming fun again Guiding Principles
-* Strong focus on code quality, style, consistency and code readability –all code must satisfy our coding style guide
-* Strong focus on tests (automated unit tests with high coverage)
+* Strong focus on code quality, style, consistency and code readability – all code must satisfy our [coding style guide](https://github.com/gammasoft71/xtd/blob/master/docs/design_guidelines.md)
+* Strong focus on tests (automated [unit tests](https://github.com/gammasoft71/xtd/tree/master/tests) with high coverage)
 * Build on top of solid foundations – use existing proven C, C++ or Objective-C libraries (e.g. Win32 APi, Gtk4, AppKit,...) where it makes sense
 
 # Getting Started
