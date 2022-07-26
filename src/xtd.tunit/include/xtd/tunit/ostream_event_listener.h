@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd::tunit
     /// @par Library
     /// xtd.tunit
-    /// @ingroup xtd_tunit
+    /// @ingroup xtd_tunit tunit
     /// @remarks This class is use by console_unit_test.
     /// @remarks you can use this class as you want as for example communicate between network.
     /// @par Examples

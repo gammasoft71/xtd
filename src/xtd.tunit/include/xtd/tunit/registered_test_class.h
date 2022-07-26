@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd::tunit
     /// @par Library
     /// xtd.tunit
-    /// @ingroup xtd_tunit
+    /// @ingroup xtd_tunit tunit
     class registered_test_class final {
     public:
       registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept : tc_(test_class) {tc_->name_ = name;}

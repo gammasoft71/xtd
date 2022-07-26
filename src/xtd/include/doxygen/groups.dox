@@ -96,6 +96,21 @@
 /// @defgroup types types
 /// @brief Types definitions
 
+/// @defgroup tunit unit tests
+/// @brief Unit tests definitions
+
+/// @defgroup assertions assertions
+/// @brief Assertions definitions
+/// @ingroup tunit
+
+/// @defgroup assumptions assumptions
+/// @brief Assumptions definitions
+/// @ingroup tunit
+
+/// @defgroup validations validations
+/// @brief validations definitions
+/// @ingroup tunit
+
 /// @defgroup gui forms
 /// @brief All needed for GUI application.
 

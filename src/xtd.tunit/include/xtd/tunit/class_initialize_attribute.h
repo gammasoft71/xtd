@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd::tunit
     /// @par Library
     /// xtd.tunit
-    /// @ingroup xtd_tunit
+    /// @ingroup xtd_tunit tunit
     class class_initialize_attribute {
     public:
       /// @brief Creates new instance of class initialize_attribute attribute.

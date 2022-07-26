@@ -15,7 +15,7 @@ namespace xtd {
     /// xtd::tunit
     /// @par Library
     /// xtd.tunit
-    /// @ingroup xtd_tunit
+    /// @ingroup xtd_tunit tunit
     /// @remarks Override this class for create your own event listener.
     /// @par Examples
     /// The follow example shows how to create your own listener event for simulate gtest output.

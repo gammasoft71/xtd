@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd::tunit
     /// @par Library
     /// xtd.tunit
-    /// @ingroup xtd_tunit
+    /// @ingroup xtd_tunit tunit
     class class_cleanup_attribute {
     public:
       /// @brief Creates new instance of class_cleanup_attribute attribute.
@@ -37,7 +37,7 @@ namespace xtd {
 /// @brief Add cleanup class method to class test.
 /// @par Library
 /// xtd.tunit
-/// @ingroup xtd_tunit
+/// @ingroup xtd_tunit tunit
 /// @param method_name cleanup class method to add.
 #define class_cleanup_(method_name) \
   __##method_name##_static() {} \
