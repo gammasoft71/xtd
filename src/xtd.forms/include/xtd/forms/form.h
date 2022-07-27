@@ -423,7 +423,7 @@ namespace xtd {
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;
       static std::optional<std::reference_wrapper<form>> active_form_;
-      bool can_close_ = false;
+      bool closed_ = false;
       bool close_box_ = true;
       bool control_box_ = true;
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
