@@ -104,8 +104,8 @@ namespace xtd {
       /// @remarks The default implementation of this method calls exit_thread_core.
       virtual void on_main_form_closed(object& sender, const event_args& e) {
         if (!main_form_->visible()) {
-          if (!main_form_->can_close_) main_form_->close();
-          if (main_form_->can_close_) {
+          if (!main_form_->closed_) main_form_->close();
+          if (main_form_->closed_) {
             main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
             exit_thread_core();
           }

@@ -269,9 +269,9 @@ control& form::visible(bool visible) {
     window_state(current_window_state.value());
   if (visible) {
     internal_set_window_state();
-    can_close_ = false;
     if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   }
+  closed_ = false;
   return *this;
 }
 
@@ -318,7 +318,7 @@ bool form::pre_process_message(xtd::forms::message& message) {
 }
 
 forms::dialog_result form::show_dialog() {
-  can_close_ = false;
+  closed_ = false;
   set_state(state::modal, true);
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
@@ -330,7 +330,7 @@ forms::dialog_result form::show_dialog() {
 }
 
 forms::dialog_result form::show_dialog(const iwin32_window& owner) {
-  can_close_ = false;
+  closed_ = false;
   parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
   if (owner.handle() != handle()) set_parent(owner.handle());
@@ -342,7 +342,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
 }
 
 void form::show_sheet(const iwin32_window& owner) {
-  can_close_ = false;
+  closed_ = false;
   parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
   if (owner.handle() != handle()) set_parent(owner.handle());
@@ -354,7 +354,7 @@ void form::show_sheet(const iwin32_window& owner) {
 }
 
 forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
-  can_close_ = false;
+  closed_ = false;
   parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
   if (owner.handle() != handle()) set_parent(owner.handle());
@@ -437,12 +437,11 @@ void form::wm_activate(message& message) {
 }
 
 void form::wm_close(message& message) {
-  if (can_close_) return;
+  if (closed_) return;
   form_closing_event_args event_args;
   on_form_closing(event_args);
   message.result(event_args.cancel() == true);
   if (event_args.cancel() != true) {
-    can_close_ = true;
     if (!get_state(state::modal))
       hide();
     else {
@@ -453,6 +452,7 @@ void form::wm_close(message& message) {
       set_state(state::modal, false);
       post_recreate_handle();
     }
+    closed_ = true;
     on_form_closed(form_closed_event_args());
   }
 }
