@@ -329,3 +329,7 @@ Now you are ready to make your first contribution to xtd.
 * [github](https://github.com/gammasoft71/xtd) 
 * [project](https://sourceforge.net/projects/xtdpro/) 
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html)
+
+______________________________________________________________________________________________
+
+© 2022 Gammasoft.
