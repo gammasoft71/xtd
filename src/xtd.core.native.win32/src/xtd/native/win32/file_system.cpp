@@ -80,7 +80,7 @@ int32_t file_system::set_creation_time(const string& path, time_t creation_time)
   return -1;
 }
 
-int32_t file_system::set_file_attributes(const string& path, int32_t attributes) {
+int32_t file_system::set_attributes(const string& path, int32_t attributes) {
   /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
   return -1;
 }
