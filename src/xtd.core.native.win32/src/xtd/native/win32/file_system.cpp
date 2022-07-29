@@ -1,6 +1,8 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file_system.h>
+#include <xtd/native/file_attribute.h>
+#include <xtd/native/file_permission.h>
 #include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <filesystem>
