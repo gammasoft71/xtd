@@ -8,7 +8,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    if (environment::os_version().is_windows()) file::write_all_text(io::path::combine(io::path::get_temp_path(), "say.cmd"), "@echo Set Speaker=CreateObject(\"sapi.spvoice\") > %TEMP%\\say_.vbs\n@echo Speaker.Speak %* >> %TEMP%\\say_.vbs\n@%TEMP%\\say_.vbs");
+    if (environment::os_version().is_windows()) file::write_all_text(io::path::combine(io::path::get_temp_path(), "say.cmd"), "@echo Set Speaker=CreateObject(\"sapi.spvoice\") > %TEMP%\\say_.vbs\n@echo Speaker.Speak \"%*\" >> %TEMP%\\say_.vbs\n@%TEMP%\\say_.vbs");
     else if (environment::os_version().is_macos()) file::write_all_text(io::path::combine(io::path::get_temp_path(), "say.cmd"), "say \"$*\"");
     else file::write_all_text(io::path::combine(io::path::get_temp_path(), "say.cmd"), "spd-say \"$*\"");
     file::set_permissions(io::path::combine(io::path::get_temp_path(), "say.cmd"), file_permissions::owner_all);
@@ -19,7 +19,7 @@ public:
     button1.parent(*this);
     button1.text("Say...");
     button1.click += [&] {
-      process::start(process_start_info(io::path::combine(io::path::get_temp_path(), "say.cmd"), "\"Hello, World!\"").use_shell_execute(false).create_no_window(true));
+      process::start(process_start_info(io::path::combine(io::path::get_temp_path(), "say.cmd"), "Hello, World!").use_shell_execute(false).create_no_window(true));
     };
   }
   
