@@ -125,7 +125,7 @@ int32_t file_system::set_attributes(const std::string& path, int32_t attributes)
 int32_t file_system::set_creation_time(const std::string& path, time_t creation_time) {
   // There is no creation time on linux so we update the last modification time instead...
   utimbuf times;
-  time_t creation_time_old, last_access_time, last_write_time;
+  time_t creation_time_old = 0, last_access_time = 0, last_write_time = 0;
   get_file_times(path, creation_time_old, last_access_time, last_write_time);
   times.actime = last_access_time;
   times.modtime = creation_time;
@@ -134,7 +134,7 @@ int32_t file_system::set_creation_time(const std::string& path, time_t creation_
 
 int32_t file_system::set_last_access_time(const std::string& path, time_t last_access_time) {
   utimbuf times;
-  time_t creation_time, last_access_time_old, last_write_time;
+  time_t creation_time = 0, last_access_time_old = 0, last_write_time = 0;
   get_file_times(path, creation_time, last_access_time_old, last_write_time);
   times.actime = last_access_time;
   times.modtime = last_write_time;
@@ -143,7 +143,7 @@ int32_t file_system::set_last_access_time(const std::string& path, time_t last_a
 
 int32_t file_system::set_last_write_time(const std::string& path, time_t last_write_time) {
   utimbuf times;
-  time_t creation_time, last_access_time, last_write_time_old;
+  time_t creation_time = 0, last_access_time = 0, last_write_time_old = 0;
   get_file_times(path, creation_time, last_access_time, last_write_time_old);
   times.actime = last_access_time;
   times.modtime = last_write_time;
