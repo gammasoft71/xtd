@@ -8,7 +8,7 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::net::sockets::tests {
   class test_class_(socket_tests) {
   public:
     void test_method_(os_supports_ip_v4) {

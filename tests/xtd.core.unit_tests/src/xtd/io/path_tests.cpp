@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::io::tests {
   class test_class_(path_tests) {
   public:
     void test_method_(alt_directory_separator_char) {

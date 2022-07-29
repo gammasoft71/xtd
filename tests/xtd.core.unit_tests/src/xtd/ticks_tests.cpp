@@ -6,7 +6,7 @@ using namespace std::literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(ticks_tests) {
   public:
     void test_method_(create_ticks_0) {

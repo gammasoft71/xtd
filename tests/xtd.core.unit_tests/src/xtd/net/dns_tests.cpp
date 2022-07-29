@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::net::tests {
   class test_class_(dns_tests) {
   public:
     void test_method_(get_host_name) {

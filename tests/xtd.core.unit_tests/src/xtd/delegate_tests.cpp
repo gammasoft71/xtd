@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   // The class test must be declared with test_class_ helper.
   class test_class_(delegate_tests) {
   public:

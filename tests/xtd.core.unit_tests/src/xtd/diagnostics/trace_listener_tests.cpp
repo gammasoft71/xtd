@@ -6,7 +6,7 @@
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::diagnostics::tests {
   class test_class_(trace_listener_tests) {
     class unit_test_trace_listener : public trace_listener {
     public:

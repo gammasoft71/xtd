@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::threading::tests {
   class test_class_(interlocked_tests) {
   public:
     void test_method_(add_int32) {

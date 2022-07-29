@@ -7,7 +7,7 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::net::tests {
   class tend_point : public end_point {
   public:
     tend_point() : end_point(sockets::address_family::inter_network) {}

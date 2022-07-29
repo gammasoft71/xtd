@@ -32,7 +32,7 @@ public:
   }
 };
 
-namespace unit_tests {
+namespace xtd::forms::style_sheets::tests {
   class test_class_(style_sheet_tests) {
   public:
     void test_method_(style_sheets) {

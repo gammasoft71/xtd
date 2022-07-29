@@ -6,7 +6,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::forms::tests {
   class test_class_(form_tests) {
   public:
     void test_method_(new_form_back_color) {

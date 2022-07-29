@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::io::tests {
   class test_class_(stream_writer_tests) {
   public:
     void test_method_(create_stream_writer_from_stringstream) {

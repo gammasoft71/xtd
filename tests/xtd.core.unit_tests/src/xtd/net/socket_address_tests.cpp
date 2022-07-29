@@ -6,7 +6,7 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::net::tests {
   class test_class_(socket_address_tests) {
   public:
     void test_method_(create_socket_address_with_address_family_unnown) {

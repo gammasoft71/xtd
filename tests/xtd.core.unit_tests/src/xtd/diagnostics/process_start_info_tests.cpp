@@ -5,7 +5,7 @@
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::diagnostics::tests {
   class test_class_(process_start_info_tests) {
   public:
     void test_method_(create_process_start_info) {

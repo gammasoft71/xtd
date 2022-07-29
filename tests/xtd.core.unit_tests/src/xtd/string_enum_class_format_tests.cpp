@@ -7,7 +7,7 @@ using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   enum class day {
     sunday,
     monday,
@@ -18,21 +18,19 @@ namespace unit_tests {
     saturday
   };
   
-  std::ostream& operator<<(std::ostream& os, unit_tests::day d) {
+  std::ostream& operator<<(std::ostream& os, xtd::tests::day d) {
     switch (d) {
-      case unit_tests::day::sunday: os << "sunday"; break;
-      case unit_tests::day::monday: os << "monday"; break;
-      case unit_tests::day::tuesday: os << "tuesday"; break;
-      case unit_tests::day::wednesday: os << "wednesday"; break;
-      case unit_tests::day::thursday: os << "thursday"; break;
-      case unit_tests::day::friday: os << "friday"; break;
-      case unit_tests::day::saturday: os << "saturday"; break;
+      case xtd::tests::day::sunday: os << "sunday"; break;
+      case xtd::tests::day::monday: os << "monday"; break;
+      case xtd::tests::day::tuesday: os << "tuesday"; break;
+      case xtd::tests::day::wednesday: os << "wednesday"; break;
+      case xtd::tests::day::thursday: os << "thursday"; break;
+      case xtd::tests::day::friday: os << "friday"; break;
+      case xtd::tests::day::saturday: os << "saturday"; break;
     }
     return os;
   }
-}
 
-namespace unit_tests {
   class test_class_(string_enum_class_format_tests) {
   public:
     void test_method_(format_sunday_with_default_argument) {

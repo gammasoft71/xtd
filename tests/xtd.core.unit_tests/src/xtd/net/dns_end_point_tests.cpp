@@ -6,7 +6,7 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::net::tests {
   class test_class_(dns_end_point_tests) {
   public:
     void test_method_(constructor_with_host_and_port) {

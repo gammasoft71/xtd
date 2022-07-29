@@ -6,7 +6,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(convert_tests) {
     enum class values {
       zero,

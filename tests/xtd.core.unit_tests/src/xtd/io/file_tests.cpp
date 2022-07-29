@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::io::tests {
   class test_class_(file_tests) {
   public:
     static constexpr auto test_file_name = "file.txt";

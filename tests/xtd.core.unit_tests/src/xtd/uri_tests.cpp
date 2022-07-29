@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(uri_tests) {
   public:
     void test_method_(constructor_with_absolute_uri) {

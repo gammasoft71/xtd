@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::io::tests {
   class test_class_(io_exception_tests) {
   public:
     void test_method_(default_creator) {

@@ -7,7 +7,7 @@ using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(date_time_tests) {
     static std::tm make_tm(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second) {
       std::tm date = {};

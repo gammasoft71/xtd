@@ -13,7 +13,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::forms::tests {
   class test_class_(system_information_tests) {
   public:
     void test_method_(active_window_tracking_delay) {
