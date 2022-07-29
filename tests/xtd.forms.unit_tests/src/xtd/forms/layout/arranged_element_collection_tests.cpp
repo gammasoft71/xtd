@@ -9,7 +9,7 @@ using namespace xtd::forms;
 using namespace xtd::forms::layout;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::forms::layout::tests {
   class test_class_(arranged_element_collection_tests) {
   public:
     void test_method_(new_collection) {

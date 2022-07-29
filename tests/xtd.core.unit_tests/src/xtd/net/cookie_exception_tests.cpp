@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::net::tests {
   class test_class_(cookie_exception_tests) {
   public:
     void test_method_(default_creator) {

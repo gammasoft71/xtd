@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::net::tests {
   class test_class_(ip_host_entry_tests) {
   public:
     void test_method_(create_with_default_constructor) {

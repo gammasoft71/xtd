@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(as_tests) {
   public:
     void test_method_(bool_as_int) {

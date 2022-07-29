@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(argument_out_of_range_exception_tests) {
   public:
     void test_method_(default_creator) {

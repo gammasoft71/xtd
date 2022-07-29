@@ -78,7 +78,7 @@ namespace {
   }
 }
 
-namespace unit_tests {
+namespace xtd::tests {
   template <typename value_t>
   class wstring_date_time_format_tests;
   

@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(ustring_tests) {
   public:
     void test_method_(default_constructor) {

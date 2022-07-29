@@ -1,7 +1,7 @@
 #pragma once
 #include <xtd/xtd.tunit>
 
-namespace unit_tests {
+namespace xtd::tests {
   class bytes_assert final : private xtd::tunit::base_assert {
     static bool is_little_endian() {
       static constexpr const int32_t endian = 1;

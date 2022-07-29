@@ -4,7 +4,7 @@
 using namespace xtd::security;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::security::tests {
   class test_class_(secure_string_tests) {
   public:
     void test_method_(create_secure_string) {

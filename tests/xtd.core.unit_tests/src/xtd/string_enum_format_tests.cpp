@@ -30,7 +30,7 @@ std::ostream& operator<<(std::ostream& os, day d) {
   return os;
 }
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(string_enum_format_tests) {
   public:
     void test_method_(format_sunday_with_default_argument) {

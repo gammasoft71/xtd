@@ -6,7 +6,7 @@ using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(wstring_string_format_tests) {
   public:
     void test_method_(format_string_with_default_argument) {

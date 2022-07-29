@@ -7,7 +7,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::style_sheets;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::forms::style_sheets::tests {
   class test_class_(background_image_tests) {
   public:
     void test_method_(create_with_default_constructor) {

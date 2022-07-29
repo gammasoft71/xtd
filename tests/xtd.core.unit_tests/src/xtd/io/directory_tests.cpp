@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::io::tests {
   class test_class_(directory_tests) {
     inline static const ustring test_path = path::combine(path::get_temp_path(), "test_directory");
     void test_initialize_(test_initialize) {

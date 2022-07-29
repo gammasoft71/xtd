@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(console_key_info_tests) {
   public:
     void test_method_(create_empty_console_key_info) {

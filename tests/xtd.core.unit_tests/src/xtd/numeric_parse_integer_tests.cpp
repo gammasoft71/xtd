@@ -7,7 +7,7 @@ using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tests {
   template <typename Value>
   class numeric_parse_string_integer_tests;
   

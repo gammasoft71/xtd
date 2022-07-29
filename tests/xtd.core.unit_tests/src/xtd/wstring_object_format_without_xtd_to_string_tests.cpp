@@ -18,7 +18,7 @@ std::basic_ostream<Char>& operator<<(std::basic_ostream<Char>& os, const ::size_
   return os << "(" << p.w << ", " << p.h << ")";
 }
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(wstring_object_format_without_xtd_to_string_tests) {
   public:
     void test_method_(format_location_with_default_argument) {

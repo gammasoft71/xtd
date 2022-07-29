@@ -36,7 +36,7 @@ namespace xtd {
   }
 }
 
-namespace unit_tests {
+namespace xtd::tests {
   class test_class_(wstring_object_format_tests) {
   public:
     void test_method_(format_point_with_default_argument) {

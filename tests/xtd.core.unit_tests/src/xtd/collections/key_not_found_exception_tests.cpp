@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::collections;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::collections::tests {
   class test_class_(key_not_found_exception_tests) {
   public:
     void test_method_(default_creator) {

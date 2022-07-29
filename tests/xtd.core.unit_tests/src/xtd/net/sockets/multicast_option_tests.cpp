@@ -7,7 +7,7 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::net::sockets::tests {
   class test_class_(multicast_option_tests) {
   public:
     void test_method_(default_constructor) {
