@@ -2,7 +2,7 @@
 #include <xtd/xtd.tunit>
 #include <string>
 
-namespace unit_tests {
+namespace xtd::tunit::tests {
   class test_class_(test_assert_is_empty_string_failed) {
   public:
     void test_method_(test_case_failed) {

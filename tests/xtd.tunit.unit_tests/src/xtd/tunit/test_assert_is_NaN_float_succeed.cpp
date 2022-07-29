@@ -2,7 +2,7 @@
 #include <xtd/xtd.tunit>
 #include <limits>
 
-namespace unit_tests {
+namespace xtd::tunit::tests {
   class test_class_(test_assert_is_NaN_float_succeed) {
   public:
     void test_method_(test_case_succeed) {

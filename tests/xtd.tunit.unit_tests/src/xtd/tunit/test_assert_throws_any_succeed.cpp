@@ -2,7 +2,7 @@
 #include <xtd/xtd.tunit>
 #include <vector>
 
-namespace unit_tests {
+namespace xtd::tunit::tests {
   class test_class_(test_assert_throws_any_succeed) {
   public:
     void test_method_(test_case_succeed) {

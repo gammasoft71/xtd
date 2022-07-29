@@ -1,7 +1,7 @@
 #include "assert_unit_tests.h"
 #include <xtd/xtd.tunit>
 
-namespace unit_tests {
+namespace xtd::tunit::tests {
   class test_class_(one_test_one_test_case) {
   public:
     void test_method_(test_case1) {

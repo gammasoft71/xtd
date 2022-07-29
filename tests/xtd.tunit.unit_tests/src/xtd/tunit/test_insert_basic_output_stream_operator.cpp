@@ -19,7 +19,8 @@
 #include <utility>
 #include <vector>
 
-namespace unit_tests {
+//namespace xtd::tunit::tests {
+namespace tunit::tests {
   void test_(test_insert_basic_output_stream_operator, test_bool) {
     bool b = true;
     std::stringstream ss;

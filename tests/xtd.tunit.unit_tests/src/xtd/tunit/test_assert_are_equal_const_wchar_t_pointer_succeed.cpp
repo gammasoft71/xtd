@@ -1,7 +1,7 @@
 #include "assert_unit_tests.h"
 #include <xtd/xtd.tunit>
 
-namespace unit_tests {
+namespace xtd::tunit::tests {
   class test_class_(test_assert_are_equal_const_wchar_t_pointer_succeed) {
   public:
     void test_method_(test_case_succeed) {
