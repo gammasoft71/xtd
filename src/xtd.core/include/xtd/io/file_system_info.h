@@ -570,7 +570,22 @@ namespace xtd {
       /// @remarks For a file, xtd::io::file_system_info::name returns only the file name and file name extension, such as my_file.txt, not c:\dir\my_file.txt.
       virtual xtd::ustring name() const = 0;
       
+      /// @brief Gets the permissions for the current file or directory.
+      /// @return xtd::io::file_permissions of the current xtd::io::file_system_info.
+      /// @exception xtd::io::file_not_found_exception The specified file doesn't exist. Only thrown when setting the property value.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid. For example, it's on an unmapped drive. Only thrown when setting the property value.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::argument_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::io_exception xtd::io::file_system_info::refresh() cannot initialize the data.
       xtd::io::file_permissions permissions() const;
+      /// @brief Sets the permissions for the current file or directory.
+      /// @param value xtd::io::file_permissions of the current xtd::io::file_system_info.
+      /// @exception xtd::io::file_not_found_exception The specified file doesn't exist. Only thrown when setting the property value.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid. For example, it's on an unmapped drive. Only thrown when setting the property value.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::argument_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::io_exception xtd::io::file_system_info::refresh() cannot initialize the data.
+      /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
       xtd::io::file_system_info& permissions(xtd::io::file_permissions value);
       /// @}
       
