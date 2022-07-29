@@ -1,6 +1,5 @@
 #include <xtd/xtd>
 
-using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::io;
