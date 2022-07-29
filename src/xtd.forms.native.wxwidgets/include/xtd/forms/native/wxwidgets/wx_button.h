@@ -34,10 +34,8 @@ namespace xtd {
           if (owner_draw_) {
             control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()));
             reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh");
-          } else {
-            control_handler::create<wxButton>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
-            SetSize(create_params.width(), create_params.height());
-          }
+          } else control_handler::create<wxButton>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+          SetSize(create_params.width(), create_params.height());
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::button_face().r(), xtd::drawing::system_colors::button_face().g(), xtd::drawing::system_colors::button_face().b(), xtd::drawing::system_colors::button_face().a()));
