@@ -2,7 +2,7 @@
 #include <xtd/xtd.tunit>
 
 
-namespace unit_tests {
+namespace xtd::tunit::tests {
   class test_class_(one_test_two_test_cases_and_one_ignore_test_case) {
   public:
     void test_method_(test_case1) {
