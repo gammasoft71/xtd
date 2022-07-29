@@ -46,7 +46,7 @@ void file_info::is_read_only(bool value) {
   if (native::file_system::get_attributes(full_path_, attributes) != 0) throw io_exception(csf_);
   if (value) attributes |= static_cast<int32_t>(file_attributes::read_only);
   else attributes &= ~static_cast<int32_t>(file_attributes::read_only);
-  if (native::file_system::set_file_attributes(full_path_, attributes) != 0) throw io_exception(csf_);
+  if (native::file_system::set_attributes(full_path_, attributes) != 0) throw io_exception(csf_);
 }
 
 size_t file_info::length() const {

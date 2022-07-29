@@ -1172,7 +1172,7 @@ namespace xtd {
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static xtd::date_time get_last_access_time(const xtd::ustring& path);
-      
+
       /// @brief Returns the date and time the specified file or directory was last written to.
       /// @param path The file or directory for which to obtain modification date and time information.
       /// @return A xtd::date_time class that is set to the date and time the specified file or directory was last written to. This value is expressed in local time.
@@ -1444,6 +1444,12 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static xtd::io::directory_info get_parent(const xtd::ustring& path);
       
+      /// @brief Gets the xtd::io::file_permissions of the directory on the path.
+      /// @param path The path to the directory.
+      /// @return The xtd::io::file_permissions of the directory on the path.
+      /// @exception xtd::io::directory_not_found_exception if directory src does not exists.
+      static xtd::io::file_permissions get_permissions(const xtd::ustring& path);
+
       /// @brief Moves a file or a directory and its contents to a new location.
       /// @param source_dir_name The path of the file or directory to move.
       /// @param dest_dir_name The path to the new location for source_dir_name. If source_dir_name is a file, then dest_dir_name must also be a file name.
@@ -1831,6 +1837,18 @@ namespace xtd {
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
       static void set_last_write_time(const xtd::ustring& path, const xtd::date_time& last_write_time);
+
+      /// @brief Sets the specified xtd::io::file_permissions of the directory on the specified path.
+      /// @param path The path to the directory.
+      /// @param attributes A bitwise combination of the enumeration values.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, directory name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      static void set_permissions(const xtd::ustring& path, xtd::io::file_permissions permissions);
       /// @}
     };
   }

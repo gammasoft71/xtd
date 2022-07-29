@@ -13,6 +13,7 @@
 #include "../static.h"
 #include "../ustring.h"
 #include "file_attributes.h"
+#include "file_permissions.h"
 #include "stream_reader.h"
 #include "stream_writer.h"
 
@@ -154,6 +155,12 @@ namespace xtd {
       /// @exception xtd::not_supported_excpttion path is in an invalid format.
       static xtd::date_time get_last_write_time(const xtd::ustring& path);
       
+      /// @brief Gets the xtd::io::file_permissions of the file on the path.
+      /// @param path The path to the file.
+      /// @return The xtd::io::file_permissions of the file on the path.
+      /// @exception xtd::io::file_not_found_exception if file src does not exists.
+      static xtd::io::file_permissions get_permissions(const xtd::ustring& path);
+      
       /// @brief Moves a specified file to a new location, providing the option to specify a new file name.
       /// @param src The name of the file to move.
       /// @param dest The new path for the file.
@@ -247,6 +254,69 @@ namespace xtd {
       /// @return false source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal false and destination_backup_file_name bad format or on ani io error; otherwise true.
       static void replace(const xtd::ustring& source_file_name, const xtd::ustring& destination_file_name, const xtd::ustring& destination_backup_file_name);
       
+      /// @brief Sets the specified xtd::io::file_attributes of the file on the specified path.
+      /// @param path The path to the file.
+      /// @param attributes A bitwise combination of the enumeration values.
+      /// @exception xtd::io::io_exception The file specified by path is a directory.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::file_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks Certain file attributes, such as xtd::io::file_attributes::hidden and xtd::io::file_attributes::read_only, can be combined. Other attributes, such as xtd::io::file_attributes::normal, must be used alone.
+      /// @remarks It is not possible to change the compression status of a xtd::io::file object using the xtd::io::file::set_attributes method.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      static void set_attributes(const xtd::ustring& path, xtd::io::file_attributes attributes);
+
+      /// @brief Sets the date and time the file was created.
+      /// @param path The file for which to set the creation date and time information.
+      /// @param creation_time A xtd::date_time containing the value to set for the creation date and time of path. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The file specified by path is a directory.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::file_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks NTFS-formatted drives may cache file meta-info, such as file creation time, for a short period of time. As a result, it may be necessary to explicitly set the creation time of a file if you are overwriting or replacing an existing file.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      static void set_creation_time(const xtd::ustring& path, const xtd::date_time& creation_time);
+
+      /// @brief Sets the date and time the specified file was last accessed.
+      /// @param path The file for which to set the access date and time information.
+      /// @param last_access_time A xtd::date_time containing the value to set for the last access date and time of path. This value is expressed in local
+      /// @exception xtd::io::io_exception The file specified by path is a directory.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::file_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      static void set_last_access_time(const xtd::ustring& path, const xtd::date_time& last_access_time);
+
+      /// @brief Sets the date and time that the specified file was last written to.
+      /// @param path The file for which to set the date and time information.
+      /// @param last_write_time A xtd::date_time containing the value to set for the last write date and time of path. This value is expressed in local time.
+      /// @exception xtd::io::io_exception The file specified by path is a directory.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::file_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      static void set_last_write_time(const xtd::ustring& path, const xtd::date_time& last_write_time);
+
+      /// @brief Sets the specified xtd::io::file_permissions of the file on the specified path.
+      /// @param path The path to the file.
+      /// @param attributes A bitwise combination of the enumeration values.
+      /// @exception xtd::io::io_exception The file specified by path is a directory.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::file_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      static void set_permissions(const xtd::ustring& path, xtd::io::file_permissions permissions);
+
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to write to the file.
